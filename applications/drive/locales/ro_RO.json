@@ -3469,9 +3469,6 @@
       "External accounts are not supported yet": [
         "Conturile externe încă nu sunt acceptate."
       ],
-      "External invitations are not available yet.": [
-        "Invitațiile externe nu sunt încă disponibile."
-      ],
       "External invitations are temporarily disabled.": [
         "Invitațiile externe sunt dezactivate temporar."
       ],
@@ -4340,6 +4337,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Viteză foarte mare"
       ]
     },
     "fido2: Error": {
@@ -5214,12 +5216,6 @@
       "Anonymous": [
         "Anonim"
       ],
-      "Anyone with this link can access your file.": [
-        "Oricine are această legătură web vă poate accesa fișierul."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Oricine are această legătură web vă poate accesa folderul."
-      ],
       "Apr": [
         "Apr"
       ],
@@ -5391,12 +5387,6 @@
       ],
       "Creating": [
         "Se crează"
-      ],
-      "Creating link to file": [
-        "Se creează legătura către fișier."
-      ],
-      "Creating link to folder": [
-        "Se creează legătura către folder"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior"
@@ -5578,15 +5568,6 @@
       ],
       "Failed": [
         "Eșuat"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Generarea unei legături web securizate a eșuat. Motivul este: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Generarea legăturii web securizate a eșuat. Reîncercați mai târziu."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "A eșuat deschiderea unei legături web securizate. Motivul este: ${ error }"
       ],
       "Feb": [
         "Feb"
@@ -5970,12 +5951,6 @@
       "One time import": [
         "Importare unică"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Numai persoanele care au legătura și parola pot accesa acest fișier."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Numai persoanele care au legătura și parola pot accesa acest folder."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
       ],
@@ -6103,12 +6078,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
-      ],
-      "Preparing link to file": [
-        "Se pregătește legătura către fișier."
-      ],
-      "Preparing link to folder": [
-        "Se pregătește legătura către folder"
       ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
@@ -6428,9 +6397,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură web ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Această legătură web a fost creată într-o versiune Drive mai veche și nu poate fi modificată. Ștergeți-o și creați una nouă pentru a schimba setările."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Aceasta înseamnă că ISP-ul și site-urile web pe care le vizitați nu vă pot corela informațiile personale cu activitatea dvs. online."
@@ -9398,9 +9364,6 @@
       "Public link access updated": [
         "Accesul la legătura web publică s-a actualizat."
       ],
-      "Public link update access failed ": [
-        "Nu s-a putut accesa actualizarea legăturii web publice."
-      ],
       "Root folder failed to be loaded": [
         "Folderul rădăcină nu s-a putut încărca."
       ],
@@ -9443,9 +9406,6 @@
       "The item was successfully added to your drive": [
         "Articolul a fost adăugat la Drive."
       ],
-      "The link to your item failed to be deleted": [
-        "Legătura către element nu a putut fi ștearsă."
-      ],
       "The link to your item was deleted": [
         "Legătura către element a fost ștearsă."
       ],
@@ -9463,9 +9423,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Fișierele vechi vor fi șterse în 72 de ore."
-      ],
-      "Your settings failed to be saved": [
-        "Setările nu au putut fi salvate."
       ],
       "Your settings have been changed successfully": [
         "Setările au fost modificate cu succes."
@@ -10362,9 +10319,6 @@
       ],
       "Select state": [
         "Selectare țară"
-      ],
-      "Set date": [
-        "Setare dată"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
@@ -11956,40 +11910,6 @@
         "${ seconds } de secunde"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } oră",
-        "${ hours } ore",
-        "${ hours } de ore"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 ore",
-        "${ hoursInt },5 ore",
-        "${ hoursInt },5 de ore"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minute",
-        "${ minutes } de minute"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Descărcări"
@@ -12728,9 +12648,6 @@
       ],
       "Select link expiration date": [
         "Selectați data expirării legăturii web"
-      ],
-      "Select link expiration time": [
-        "Selectați ora expirării legăturii web"
       ],
       "Set recovery methods": [
         "Setați metodele de recuperare"

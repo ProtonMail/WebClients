@@ -1448,6 +1448,14 @@
         "Událost není podporována"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } další výsledek není zobrazen",
+        "${ hiddenResultsCount } další výsledky nejsou zobrazeny",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po skončení zkušební verze ${ formattedDate } začne placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud zrušíte předplatné před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
@@ -3488,19 +3496,16 @@
         "Chyba při čtení souboru"
       ],
       "Expanding non-existent directory tree item": [
-        "Rozbalení neexistující položky adresářového stromu"
+        "Rozbalování neexistující položky adresářového stromu"
       ],
       "Expanding non-expandable directory tree item": [
-        "Rozbalování nerozbalitelné položky stromové struktury adresáře"
+        "Rozbalování nerozbalitelné položky adresářového stromu"
       ],
       "Expected structure attached": [
         "Očekávaná struktura připojena"
       ],
       "External accounts are not supported yet": [
         "Externí účty nejsou zatím podporovány"
-      ],
-      "External invitations are not available yet.": [
-        "Externí pozvánky zatím nejsou dostupné."
       ],
       "External invitations are temporarily disabled.": [
         "Externí pozvánky jsou dočasně zakázány."
@@ -4378,6 +4383,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blesková rychlost"
       ]
     },
     "fido2: Error": {
@@ -5303,12 +5313,6 @@
       "Anonymous": [
         "Anonymní"
       ],
-      "Anyone with this link can access your file.": [
-        "Kdokoli s tímto odkazem má přístup k vašemu souboru."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Kdokoli s tímto odkazem má přístup k vaší složce."
-      ],
       "Apr": [
         "Dub"
       ],
@@ -5482,12 +5486,6 @@
       ],
       "Creating": [
         "Vytváření"
-      ],
-      "Creating link to file": [
-        "Vytváření odkazu na soubor"
-      ],
-      "Creating link to folder": [
-        "Vytváření odkazu na složku"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -5671,15 +5669,6 @@
       ],
       "Failed": [
         "Selhalo"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Nepovedlo se vygenerovat bezpečený odkaz. Důvod: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Nepovedlo se vygenerovat zabezpečený odkaz. Zkuste to později"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Nepodařilo se otevřít zabezpečený odkaz. Důvod: ${ error }"
       ],
       "Feb": [
         "Úno"
@@ -6068,12 +6057,6 @@
       "One time import": [
         "Jednorázový import"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Kdokoli s tímto odkazem a heslem má přístup k tomuto souboru."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Kdokoli s tímto odkazem a heslem má přístup k této složce."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Otevřete průvodce, kde najdete doporučené kroky a užitečné odkazy."
       ],
@@ -6202,12 +6185,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, vyčkejte dokud nenajdeme kontakty, které jsou šifrované neaktivním klíčem."
-      ],
-      "Preparing link to file": [
-        "Příprava odkazu na soubor"
-      ],
-      "Preparing link to folder": [
-        "Příprava odkazu na složku"
       ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
@@ -6532,9 +6509,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Odkaz byl vytvořen v předchozí verzi aplikace a nelze jej upravit. Chcete-li změnit jeho nastavení, odkaz smažte a vytvořte nový."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "To znamená, že ISP a webové stránky, které navštěvujete, nemohou spojit vaše osobní údaje s vaší online aktivitou."
@@ -9350,6 +9324,12 @@
         "${ errors.length } položek se nepodařilo zkopírovat",
         "${ errors.length } položek se nepodařilo zkopírovat"
       ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } položku se nepodařilo přesunout do koše",
+        "${ errors.length } položky se nepodařilo přesunout do koše",
+        "${ errors.length } položek se nepodařilo přesunout do koše",
+        "${ errors.length } položek se nepodařilo přesunout do koše"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } fotku se nepodařilo odebrat z ${ albumLink.name }\"",
         "${ nbFailures } fotky se nepodařilo odebrat z ${ albumLink.name }\"",
@@ -9373,6 +9353,12 @@
         "${ nbSuccesses } fotky byly odebrány z \"${ albumLink.name }\"",
         "${ nbSuccesses } fotek bylo odebráno z \"${ albumLink.name }\"",
         "${ nbSuccesses } fotek bylo odebráno z \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } zkopírovaná položka přesunuta do koše",
+        "${ numberOfItems } zkopírované položky přesunuty do koše",
+        "${ numberOfItems } zkopírovaných položek přesunuto do koše",
+        "${ numberOfItems } zkopírovaných položek přesunuto do koše"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka smazána",
@@ -9479,6 +9465,9 @@
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
       ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Kopie \"${ name }\" přesunuta do koše"
+      ],
       "Device failed to be removed": [
         "Zařízení se nepodařilo odstranit"
       ],
@@ -9581,9 +9570,6 @@
       "Public link access updated": [
         "Veřejný přístup k odkazům aktualizován"
       ],
-      "Public link update access failed ": [
-        "Přístup k aktualizaci veřejného odkazu selhal "
-      ],
       "Root folder failed to be loaded": [
         "Kořenovou složku se nepodařilo načíst"
       ],
@@ -9629,9 +9615,6 @@
       "The item was successfully added to your drive": [
         "Položka byla úspěšně přidána na váš disk"
       ],
-      "The link to your item failed to be deleted": [
-        "Odkaz na položku se nepodařilo odstranit"
-      ],
       "The link to your item was deleted": [
         "Odkaz na položku byl odstraněn"
       ],
@@ -9649,9 +9632,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré soubory budou smazány do 72 hodin"
-      ],
-      "Your settings failed to be saved": [
-        "Vaše nastavení se nepodařilo uložit"
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavení bylo úspěšně změněno"
@@ -10556,9 +10536,6 @@
       "Select state": [
         "Vyberte stav"
       ],
-      "Set date": [
-        "Nastavte datum"
-      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dejte nám vědět, co si myslíte, že by mohlo vylepšit ${ BRAND_NAME }"
       ],
@@ -11401,6 +11378,9 @@
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
       ],
+      "Storage used": [
+        "Využité úložiště"
+      ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Chcete-li pokračovat v nahrávání a synchronizaci souborů, uvolněte místo nebo navyšte na tarif s větším úložištěm."
       ],
@@ -12192,46 +12172,6 @@
         "${ seconds } sekund"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h",
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } hodina",
-        "${ hours } hodiny",
-        "${ hours } hodin",
-        "${ hours } hodin"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 hodiny",
-        "${ hoursInt }.5 hodiny",
-        "${ hoursInt }.5 hodiny",
-        "${ hoursInt }.5 hodiny"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minut"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "počet stažení"
@@ -12985,9 +12925,6 @@
       ],
       "Select link expiration date": [
         "Vyberte datum pro vypršení platnosti odkazu"
-      ],
-      "Select link expiration time": [
-        "Vyberte čas vypršení platnosti odkazu"
       ],
       "Set recovery methods": [
         "Nastavit metody obnovení"

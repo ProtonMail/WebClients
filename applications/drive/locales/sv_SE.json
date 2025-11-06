@@ -1421,6 +1421,12 @@
         "Händelse stöds inte"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } fler resultat visas inte",
+        "${ hiddenResultsCount } fler resultat visas inte"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
@@ -3439,9 +3445,6 @@
       "External accounts are not supported yet": [
         "Externa konton stöds inte ännu"
       ],
-      "External invitations are not available yet.": [
-        "Externa inbjudningar är inte tillgängliga ännu."
-      ],
       "External invitations are temporarily disabled.": [
         "Externa inbjudningar är tillfälligt inaktiverade."
       ],
@@ -4295,6 +4298,11 @@
         "Obegränsat antal hide-my-email-alias"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blixtsnabb hastighet"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
@@ -4842,6 +4850,9 @@
         "${ canceledCount } avbruten",
         "${ canceledCount } avbrutna"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } av ${ items.length } överföringar slutförda"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kontakt innehåller flera e-postadresser.",
         "${ contactCount } kontakter innehåller flera e-postadresser."
@@ -5113,12 +5124,6 @@
       "Anonymous": [
         "Anonymt"
       ],
-      "Anyone with this link can access your file.": [
-        "Alla med denna länk kan komma åt din fil."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Alla med denna länk kan komma åt din mapp."
-      ],
       "Apr": [
         "Apr"
       ],
@@ -5288,12 +5293,6 @@
       ],
       "Creating": [
         "Skapar"
-      ],
-      "Creating link to file": [
-        "Skapar länk till fil"
-      ],
-      "Creating link to folder": [
-        "Skapar länk till mapp"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
@@ -5474,15 +5473,6 @@
       "Failed": [
         "Misslyckades"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Misslyckades att generera en säker länk. Orsaken är: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Misslyckades att generera en säker länk. Försök igen senare"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Misslyckades att öppna en säker länk. Orsaken är: ${ error }"
-      ],
       "Feb": [
         "Feb"
       ],
@@ -5651,6 +5641,9 @@
       ],
       "It's better to have:": [
         "Det är bättre att ha:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Det är inte möjligt att kopiera mappen till sig själv"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Objekt i papperskorgen blir kvar här tills du tar bort dem permanent"
@@ -5860,12 +5853,6 @@
       "One time import": [
         "Engångsimport"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Endast personer med länken och lösenordet kan komma åt denna fil."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Endast personer med länken och lösenordet kan komma åt denna mapp."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Öppna guiden för rekommenderade åtgärder och användbara länkar."
       ],
@@ -5992,12 +5979,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vänta medan vi letar efter kontakter som innehåller data krypterad med den inaktiva nyckeln."
-      ],
-      "Preparing link to file": [
-        "Förbereder länk till fil"
-      ],
-      "Preparing link to folder": [
-        "Förbereder länk till mapp"
       ],
       "Preview failed to be loaded": [
         "Förhandsgranskning misslyckades att laddas"
@@ -6318,9 +6299,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Denna länk kan vara en homografisk attack. Kontrollera att det är denna länk du vill besöka, eller öppna den inte."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Denna länk skapades med en gammal version av Drive och kan inte ändras. Ta bort denna länk och skapa en ny för att ändra inställningarna."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Det innebär att din internetleverantör och de webbplatser du besöker inte kan koppla samman din personliga information med din onlineaktivitet."
@@ -9069,6 +9047,9 @@
       "\"${ name }\" saved successfully": [
         "”${ name }” har sparats"
       ],
+      "\"${ name }\" successfully copied": [
+        "”${ name }” kopierades"
+      ],
       "\"${ name }\" successfully moved": [
         "“${ name }“ flyttades utan problem"
       ],
@@ -9081,6 +9062,14 @@
       "${ count } item failed to be decrypted": [
         "${ count } objekt kunde inte dekrypteras",
         "${ count } objekt kunde inte dekrypteras"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } objekt misslyckades att kopieras",
+        "${ errors.length } objekt misslyckades att kopieras"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } objekt misslyckades att flyttas till papperskorg",
+        "${ errors.length } objekt misslyckades att flyttas till papperskorg"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } foto kunde inte tas bort från “${ albumLink.name }“",
@@ -9097,6 +9086,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } foto har tagits bort från “${ albumLink.name }“",
         "${ nbSuccesses } foton har tagits bort från “${ albumLink.name }“"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } kopierat objekt flyttades till papperskorg",
+        "${ numberOfItems } kopierade objekt flyttades till papperskorg"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } objekt borttaget",
@@ -9133,6 +9126,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } objekt återställdes från papperskorg",
         "${ numberOfItems } objekt återställdes från papperskorg"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } objekt kopierades",
+        "${ numberOfItems } objekt kopierades"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } objekt har flyttats",
@@ -9176,6 +9173,9 @@
       ],
       "Contact group updated": [
         "Kontaktgrupp uppdaterad"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Kopia av “${ name }“ flyttades till papperskorg"
       ],
       "Device failed to be removed": [
         "Enhet kunde inte tas bort"
@@ -9271,9 +9271,6 @@
       "Public link access updated": [
         "Offentlig länkåtkomst uppdaterad"
       ],
-      "Public link update access failed ": [
-        "Uppdatering av offentlig länkåtkomst misslyckades "
-      ],
       "Root folder failed to be loaded": [
         "Misslyckades att ladda rotmapp"
       ],
@@ -9313,9 +9310,6 @@
       "The item was successfully added to your drive": [
         "Objektet lades till på din Drive"
       ],
-      "The link to your item failed to be deleted": [
-        "Länken till ditt objekt misslyckades att tas bort"
-      ],
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
       ],
@@ -9333,9 +9327,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Dina gamla filer kommer att tas bort inom 72 timmar"
-      ],
-      "Your settings failed to be saved": [
-        "Dina inställningar misslyckades att sparas"
       ],
       "Your settings have been changed successfully": [
         "Dina inställningar har ändrats"
@@ -9962,6 +9953,12 @@
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
+      "VAT": [
+        "Moms"
+      ],
+      "VAT number": [
+        "Momsnummer"
+      ],
       "You already have a subscription to this plan.": [
         "Du har redan en prenumeration på detta paket."
       ],
@@ -10048,6 +10045,9 @@
       "Add EIN": [
         "Lägg till EIN"
       ],
+      "Add VAT number": [
+        "Lägg till momsnummer"
+      ],
       "Business Number": [
         "Företagsnummer"
       ],
@@ -10059,6 +10059,9 @@
       ],
       "Edit EIN": [
         "Redigera EIN"
+      ],
+      "Edit VAT number": [
+        "Redigera momsnummer"
       ],
       "EIN": [
         "EIN"
@@ -10196,9 +10199,6 @@
       ],
       "Select state": [
         "Välj delstat"
-      ],
-      "Set date": [
-        "Ställ in datum"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
@@ -11747,34 +11747,6 @@
         "${ seconds } sekunder"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } timme",
-        "${ hours } timmar"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 t",
-        "${ hoursInt }.5 t"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } timme",
-        "${ hours } timmar"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 timme",
-        "${ hoursInt }.5 timmar"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuter"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# nedladdningar"
@@ -12505,9 +12477,6 @@
       "Select link expiration date": [
         "Välj länkens utgångsdatum"
       ],
-      "Select link expiration time": [
-        "Välj länkens utgångstid"
-      ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
       ],
@@ -13071,6 +13040,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
       ]
     }
   }

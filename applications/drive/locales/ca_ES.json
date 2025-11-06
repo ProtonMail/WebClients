@@ -1424,6 +1424,12 @@
         "Esdeveniment no suportat"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat més no mostrat",
+        "${ hiddenResultsCount } resultats més no mostrats"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
@@ -1725,7 +1731,7 @@
         "Problema de configuració manual"
       ],
       "Meet problem": [
-        "Coneixeu el problema"
+        "Problema amb Meet"
       ],
       "Other": [
         "Altres"
@@ -3463,9 +3469,6 @@
       "External accounts are not supported yet": [
         "Els comptes externs encara no estan suportats"
       ],
-      "External invitations are not available yet.": [
-        "Les invitacions externes encara no estan disponibles."
-      ],
       "External invitations are temporarily disabled.": [
         "Les invitacions externes estan desactivades temporalment."
       ],
@@ -4328,6 +4331,11 @@
         "Nombre il·limitat d'àlies hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocitats ultraràpides"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
@@ -5149,12 +5157,6 @@
       "Anonymous": [
         "Anònim"
       ],
-      "Anyone with this link can access your file.": [
-        "Qualsevol que tingui aquest enllaç pot accedir al fitxer."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Qualsevol que tingui aquest enllaç pot accedir a la carpeta."
-      ],
       "Apr": [
         "abr."
       ],
@@ -5324,12 +5326,6 @@
       ],
       "Creating": [
         "S'està creant"
-      ],
-      "Creating link to file": [
-        "Preparant el enllaç al fitxer"
-      ],
-      "Creating link to folder": [
-        "S'està creant l'enllaç a la carpeta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crèdit per la part no utilitzada de la vostra subscripció del pla anterior"
@@ -5509,15 +5505,6 @@
       ],
       "Failed": [
         "Error"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "No s'ha pogut generar un enllaç segur. El motiu és: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "No s'ha pogut generar un enllaç segur. Torna-ho a provar més tard"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Error obrint un enllaç segur. La raó és: ${ error }"
       ],
       "Feb": [
         "febr."
@@ -5902,12 +5889,6 @@
       "One time import": [
         "Importació única"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Només les persones amb l'enllaç i la contrasenya poden accedir a aquesta carpeta."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per obtenir accions recomanades i enllaços útils."
       ],
@@ -6034,12 +6015,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
-      ],
-      "Preparing link to file": [
-        "S'està preparant l'enllaç al fitxer"
-      ],
-      "Preparing link to folder": [
-        "S'està preparant l'enllaç a la carpeta"
       ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
@@ -6360,9 +6335,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Aquest enllaç es va crear en una versió antiga de Drive i no es pot modificar. Elimineu l'enllaç i creeu-ne un de nou per canviar-ne la configuració."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Això vol dir que el vostre proveïdor d'accés a internet i els llocs web que visiteu no poden connectar la vostra informació personal amb la vostra activitat en línia."
@@ -9144,6 +9116,10 @@
         "No s'ha pogut copiar ${ errors.length } element",
         "No s'han pogut copiar ${ errors.length } elements"
       ],
+      "${ errors.length } item failed to be trashed": [
+        "No s'ha pogut moure ${ errors.length } element a la paperera",
+        "No s'han pogut moure ${ errors.length } element a la paperera"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "No s'ha pogut eliminar ${ nbFailures } foto de «${ albumLink.name }»",
         "No s'han pogut eliminar ${ nbFailures } fotos de «${ albumLink.name }»"
@@ -9159,6 +9135,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "S'ha esborrat ${ nbSuccesses } foto de \"${ albumLink.name }\"",
         "S'han esborrat ${ nbSuccesses } fotos de \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "S'ha mogut ${ numberOfItems } element copiat a la paperera",
+        "S'han mogut ${ numberOfItems } elements copiats a la paperera"
       ],
       "${ numberOfItems } item deleted": [
         "S'ha eliminat ${ numberOfItems } element",
@@ -9242,6 +9222,9 @@
       ],
       "Contact group updated": [
         "Grup de contactes actualitzat"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "La còpia de \"${ name }\" s'ha mogut a la paperera"
       ],
       "Device failed to be removed": [
         "No s'ha pogut esborrar el dispositiu."
@@ -9337,9 +9320,6 @@
       "Public link access updated": [
         "S'ha actualitzat l'accés a l'enllaç públic."
       ],
-      "Public link update access failed ": [
-        "No s'ha pogut accedir a l'actualització de l'enllaç públic "
-      ],
       "Root folder failed to be loaded": [
         "No s'ha pogut carregar la carpeta arrel"
       ],
@@ -9379,9 +9359,6 @@
       "The item was successfully added to your drive": [
         "L'element s'ha afegit a la vostra unitat."
       ],
-      "The link to your item failed to be deleted": [
-        "No s'ha pogut eliminar l'enllaç a l'element"
-      ],
       "The link to your item was deleted": [
         "S'ha eliminat l'enllaç a l'element"
       ],
@@ -9399,9 +9376,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Els vostres fitxers antics s'eliminaran en 72 hores"
-      ],
-      "Your settings failed to be saved": [
-        "No s'ha pogut desar la configuració"
       ],
       "Your settings have been changed successfully": [
         "La configuració s'ha modificat."
@@ -10292,9 +10266,6 @@
       "Select state": [
         "Seleccioneu l'estat"
       ],
-      "Set date": [
-        "Establiu una data"
-      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Compartiu el que penseu que podria millorar ${ BRAND_NAME }"
       ],
@@ -11081,6 +11052,9 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ app } storage used": [
+        "Emmagatzematge de ${ app } utilitzat"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
@@ -11092,6 +11066,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Per a tots els serveis de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Emmagatzematge utilitzat"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Per a continuar carregant i sincronitzant fitxers, allibereu espai o milloreu per a obtenir més emmagatzematge."
@@ -11842,34 +11819,6 @@
         "${ seconds } segons"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 hores",
-        "${ hoursInt },5 hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Nombre de descàrregues"
@@ -12599,9 +12548,6 @@
       ],
       "Select link expiration date": [
         "Selecciona la data de caducitat de l'enllaç"
-      ],
-      "Select link expiration time": [
-        "Selecciona el temps de caducitat de l'enllaç"
       ],
       "Set recovery methods": [
         "Configuració dels mètodes de recuperació"

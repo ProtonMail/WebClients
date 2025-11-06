@@ -3132,9 +3132,6 @@
       "External accounts are not supported yet": [
         "外部邀請函上未支援。"
       ],
-      "External invitations are not available yet.": [
-        "外部邀請函上未就緒。"
-      ],
       "External invitations are temporarily disabled.": [
         "外部邀請函已暫時關閉。"
       ],
@@ -4583,12 +4580,6 @@
       "Anonymous": [
         "匿名"
       ],
-      "Anyone with this link can access your file.": [
-        "任何人擁有此連結均可存取您的檔案。"
-      ],
-      "Anyone with this link can access your folder.": [
-        "任何人憑此連結均可存取您的資料夾。"
-      ],
       "Apr": [
         "四月"
       ],
@@ -4741,12 +4732,6 @@
       ],
       "Creating": [
         "正在創建"
-      ],
-      "Creating link to file": [
-        "正在創建檔案連結"
-      ],
-      "Creating link to folder": [
-        "正在創建資料夾連結"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
@@ -4909,15 +4894,6 @@
       ],
       "Failed": [
         "失敗"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "產生安全連結失敗。原因：${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "無法產生安全連結，請稍後再試。"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "開啟安全連結失敗。原因：${ error }"
       ],
       "Feb": [
         "二月"
@@ -5261,12 +5237,6 @@
       "One time import": [
         "一次性匯入"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "僅同時擁有連結與密碼的人才能存取此檔案。"
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "僅同時擁有連結與密碼的人才能存取此檔案。"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "開啟指南，以查看建議的動作和實用連結。"
       ],
@@ -5386,12 +5356,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
-      ],
-      "Preparing link to file": [
-        "檔案連結準備中"
-      ],
-      "Preparing link to folder": [
-        "資料夾連結準備中"
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
@@ -5671,9 +5635,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "此連結乃以舊 Drive 版本創建，無法修改。請刪除此連結並創建新的連結以變更設定。"
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "這表示您的 ISP 和您造訪的網站無法將您的個人資訊與您的線上活動連線。"
@@ -8333,9 +8294,6 @@
       "Public link access updated": [
         "公開網址已更新存取權"
       ],
-      "Public link update access failed ": [
-        "公開網址更新存取權失敗 "
-      ],
       "Root folder failed to be loaded": [
         "根資料夾載入失敗"
       ],
@@ -8360,9 +8318,6 @@
       "The item was successfully added to your drive": [
         "此項目成功加入您的雲端磁碟"
       ],
-      "The link to your item failed to be deleted": [
-        "未能刪除指向您項目的連結"
-      ],
       "The link to your item was deleted": [
         "指向您的項目的連結已刪除"
       ],
@@ -8374,9 +8329,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "您的舊資料夾將於72小時後刪除"
-      ],
-      "Your settings failed to be saved": [
-        "無法儲存您的設定"
       ],
       "Your settings have been changed successfully": [
         "您的設定已成功變更。"
@@ -9084,9 +9036,6 @@
       ],
       "Select state": [
         "請選州"
-      ],
-      "Set date": [
-        "設定日期"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "分享您認為可以讓 ${ BRAND_NAME } 更好的方法"
@@ -10415,28 +10364,6 @@
         "${ seconds } 秒"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours }小時"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5小時"
-      ],
-      "${ minutes } min": [
-        "${ minutes }分鐘"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours }小時"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5小時"
-      ],
-      "${ minutes } minute": [
-        "${ minutes }分鐘"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "下載#次數"
@@ -11031,9 +10958,6 @@
       ],
       "Select link expiration date": [
         "選擇連結到期日"
-      ],
-      "Select link expiration time": [
-        "選擇連結到期時間"
       ],
       "Set recovery methods": [
         "設定復原方式"

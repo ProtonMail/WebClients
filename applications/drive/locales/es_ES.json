@@ -1421,6 +1421,12 @@
         "Evento no admitido"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no mostrado",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
@@ -1493,6 +1499,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -1514,6 +1523,9 @@
       "Password health alerts": [
         "Alertas de estado de las contraseñas"
       ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
       "Unlimited folders, labels and filters": [
         "Número ilimitado de carpetas, etiquetas y filtros"
       ],
@@ -1527,6 +1539,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -1672,6 +1687,9 @@
       ],
       "Application problem": [
         "Problema con la aplicación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -3165,6 +3183,9 @@
       "/month": [
         "/mes"
       ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
       "2 user accounts": [
         "2 cuentas de usuario"
       ],
@@ -3178,11 +3199,17 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Obtén 4 veces más almacenamiento"
+      ],
+      "Share your plan": [
+        "Comparte tu plan"
       ]
     },
     "Duo offer: Title": {
       "Get 4x more storage with ${ BRAND_NAME } Duo": [
         "Obtén 4 veces más almacenamiento con ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Compartir los beneficios de tu plan con ${ BRAND_NAME } Duo"
       ]
     },
     "Edit billing address form note": {
@@ -3424,14 +3451,14 @@
       "Error reading file": [
         "Error al leer el archivo"
       ],
+      "Expanding non-expandable directory tree item": [
+        "Expandiendo elemento de árbol de directorios no expandible"
+      ],
       "Expected structure attached": [
         "Se adjunta la estructura esperada"
       ],
       "External accounts are not supported yet": [
         "Las cuentas externas aún no son admitidas."
-      ],
-      "External invitations are not available yet.": [
-        "Las invitaciones externas aún no están disponibles."
       ],
       "External invitations are temporarily disabled.": [
         "Las invitaciones externas están desactivadas temporalmente."
@@ -4283,6 +4310,11 @@
         "Alias hide-my-email ilimitados"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidades ultrarrápidas"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con tu clave de seguridad. Inténtalo de nuevo."
@@ -4830,6 +4862,9 @@
         "${ canceledCount } cancelado",
         "${ canceledCount } cancelados"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } de ${ items.length } transferencias completadas"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "El contacto ${ contactCount } contiene múltiples direcciones de correo.",
         "Los contactos ${ contactCount } contienen múltiples direcciones de correo."
@@ -5101,12 +5136,6 @@
       "Anonymous": [
         "Anónimo"
       ],
-      "Anyone with this link can access your file.": [
-        "Cualquier persona que tenga este enlace puede acceder a tu archivo."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Cualquier persona con este enlace puede acceder a tu carpeta."
-      ],
       "Apr": [
         "Abr."
       ],
@@ -5276,12 +5305,6 @@
       ],
       "Creating": [
         "Creando"
-      ],
-      "Creating link to file": [
-        "Creando enlace al archivo"
-      ],
-      "Creating link to folder": [
-        "Creando enlace a la carpeta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
@@ -5462,15 +5485,6 @@
       "Failed": [
         "Error"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Error al generar un enlace seguro. Motivo: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Error al generar un enlace seguro. Inténtalo de nuevo más tarde."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Error al abrir un enlace seguro. Motivo: ${ error }"
-      ],
       "Feb": [
         "Feb."
       ],
@@ -5536,6 +5550,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Ve a \"Mis archivos\" y carga algunos archivos primero."
+      ],
+      "Google Pay mark": [
+        "marca de Google Pay"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear tu actividad en línea. Ocultando tu IP real y cifrando tu actividad de navegación se vuelve privada."
@@ -5639,6 +5656,9 @@
       ],
       "It's better to have:": [
         "Es mejor tener:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "No es posible copiar la carpeta a sí misma"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borres permanentemente."
@@ -5848,12 +5868,6 @@
       "One time import": [
         "Importación única"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Solo las personas con el enlace y la contraseña tienen acceso a esta carpeta."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Abre la guía para ver las acciones recomendadas y los enlaces útiles."
       ],
@@ -5981,12 +5995,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espera mientras buscamos contactos que contengan datos cifrados con la clave inactiva."
       ],
-      "Preparing link to file": [
-        "Preparando enlace al archivo"
-      ],
-      "Preparing link to folder": [
-        "Preparando enlace a la carpeta"
-      ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
@@ -6079,6 +6087,9 @@
       ],
       "Search Enabled": [
         "Búsqueda activada"
+      ],
+      "Select a folder to copy to.": [
+        "Selecciona una carpeta para copiar."
       ],
       "Select a folder to move to.": [
         "Selecciona una carpeta para mover."
@@ -6303,9 +6314,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Se ha creado este enlace con una versión antigua de Drive y no se puede modificar. Elimínalo y crea uno nuevo para cambiar tu configuración."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Esto significa que tu proveedor de servicios de internet y los sitios web que visitas no pueden conectar tu información personal con tu actividad en línea."
@@ -7001,6 +7009,9 @@
       "Billing cycle": [
         "Ciclo de facturación"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -7199,6 +7210,9 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -9061,6 +9075,9 @@
       "\"${ name }\" saved successfully": [
         "Se ha guardado \"${ name }\"."
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" se ha copiado"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" se ha movido."
       ],
@@ -9073,6 +9090,14 @@
       "${ count } item failed to be decrypted": [
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "Error al copiar ${ errors.length } elemento",
+        "Error al copiar ${ errors.length } elementos"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } elemento no se pudo mover a la papelera",
+        "${ errors.length } elementos no se pudieron mover a la papelera."
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "No se pudo borrar ${ nbFailures } foto de «${ albumLink.name }»",
@@ -9089,6 +9114,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } foto fue eliminada de «${ albumLink.name }»",
         "${ nbSuccesses } fotos fueron eliminadas de «${ albumLink.name }»"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } elemento copiado movido a la papelera",
+        "${ numberOfItems } elementos copiados movidos a la papelera"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminado",
@@ -9125,6 +9154,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } elemento restaurado de la papelera",
         "${ numberOfItems } elementos restaurados de la papelera"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } elemento copiado",
+        "${ numberOfItems } elementos copiados"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } elemento movido",
@@ -9168,6 +9201,9 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Copia de \\\"${ name }\\\" se ha movido a la papelera."
       ],
       "Device failed to be removed": [
         "Error al eliminar el dispositivo"
@@ -9263,9 +9299,6 @@
       "Public link access updated": [
         "Se ha actualizado el acceso al enlace público."
       ],
-      "Public link update access failed ": [
-        "Error al acceder a la actualización del enlace público "
-      ],
       "Root folder failed to be loaded": [
         "Error al cargar la carpeta raíz"
       ],
@@ -9305,9 +9338,6 @@
       "The item was successfully added to your drive": [
         "Se ha añadido el elemento al drive."
       ],
-      "The link to your item failed to be deleted": [
-        "Error al eliminar el enlace a tu elemento"
-      ],
       "The link to your item was deleted": [
         "Se ha eliminado el enlace a tu elemento."
       ],
@@ -9325,9 +9355,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Se eliminarán tus archivos antiguos en 72 horas."
-      ],
-      "Your settings failed to be saved": [
-        "Error al guardar tu configuración"
       ],
       "Your settings have been changed successfully": [
         "Se ha modificado tu configuración."
@@ -9550,6 +9577,9 @@
       "Edit documents online": [
         "Edita documentos online"
       ],
+      "Encryption happens automatically": [
+        "El cifrado se realiza automáticamente"
+      ],
       "End-to-end encrypted storage for your files": [
         "Almacenamiento cifrado de extremo a extremo para tus archivos"
       ],
@@ -9751,6 +9781,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -9872,6 +9905,9 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Método de pago necesario para que la suscripción se active después de que termine la prueba."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -9890,6 +9926,17 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido para ${ couponRedemptions } renovaciones."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial de descuento es válido para el primer ${ subscriptionLength } mes.",
+        "El precio especial de descuento es válido para los primeros ${ subscriptionLength } meses."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelarlo en cualquier momento."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "La oferta especial es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puedes cancelarla en cualquier momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
@@ -9912,6 +9959,9 @@
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las futuras facturas"
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con tu plan actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
@@ -9924,6 +9974,12 @@
       "VAT number": [
         "Número de IVA"
       ],
+      "You already have a subscription to this plan.": [
+        "Ya tienes una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tienes una suscripción a este plan. Puedes cambiar tu suscripción en ${ subscriptionPlatform }."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
@@ -9935,6 +9991,9 @@
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
       ]
     },
     "Payments.Error": {
@@ -10161,9 +10220,6 @@
       ],
       "Select state": [
         "Seleccionar el estado"
-      ],
-      "Set date": [
-        "Establecer una fecha"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Comparte lo que crees que podría mejorar ${ BRAND_NAME }"
@@ -11712,34 +11768,6 @@
         "${ seconds } segundos"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 horas",
-        "${ hoursInt },5 horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# de descargas"
@@ -12461,9 +12489,6 @@
       "Select link expiration date": [
         "Selecciona la fecha de expiración del enlace."
       ],
-      "Select link expiration time": [
-        "Selecciona la hora de expiración del enlace."
-      ],
       "Set recovery methods": [
         "Establecer los métodos de recuperación"
       ],
@@ -12730,6 +12755,9 @@
       ],
       "Your welcome actions": [
         "Tus acciones de bienvenida"
+      ],
+      "You’re off to a great start!": [
+        "¡Vas por muy buen camino!"
       ],
       "You’ve got 5 GB of storage": [
         "Has obtenido 5 GB de almacenamiento."

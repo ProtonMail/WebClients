@@ -258,6 +258,9 @@
       "Continue with Outlook": [
         "Працягнуць з Outlook"
       ],
+      "Copy": [
+        "Скапіяваць"
+      ],
       "Copy address": [
         "Скапіяваць адрас"
       ],
@@ -1443,6 +1446,14 @@
       ],
       "Unsupported event": [
         "Падзея не падтрымліваецца"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Яшчэ ${ hiddenResultsCount } вынік не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікі не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3409,6 +3420,9 @@
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
+      "Cannot load \"My files\" root folder": [
+        "Немагчыма загрузіць каранёвую папку \"Мае файлы\""
+      ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
       ],
@@ -3481,14 +3495,17 @@
       "Error reading file": [
         "Памылка пры чытанні файла"
       ],
+      "Expanding non-existent directory tree item": [
+        "Разгортванне неіснуючага элемента дрэва каталогаў"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Разгортванне нерасшыральнага элемента дрэва каталогаў"
+      ],
       "Expected structure attached": [
         "Чаканая структура далучана"
       ],
       "External accounts are not supported yet": [
         "Знешнія ўліковыя запісы пакуль не падтрымліваюцца"
-      ],
-      "External invitations are not available yet.": [
-        "Знешнія запрашэнні пакуль недаступны."
       ],
       "External invitations are temporarily disabled.": [
         "Знешнія запрашэнні часова адключаны."
@@ -4366,6 +4383,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Звышвысокія хуткасці"
       ]
     },
     "fido2: Error": {
@@ -5291,12 +5313,6 @@
       "Anonymous": [
         "Ананімны"
       ],
-      "Anyone with this link can access your file.": [
-        "Любы карыстальнік з гэтай спасылкай зможа атрымаць доступ да вашага файла."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Любы карыстальнік з гэтай спасылкай зможа атрымаць доступ да вашай папкі."
-      ],
       "Apr": [
         "Кра"
       ],
@@ -5470,12 +5486,6 @@
       ],
       "Creating": [
         "Стварэнне"
-      ],
-      "Creating link to file": [
-        "Стварэнне спасылкі на файл"
-      ],
-      "Creating link to folder": [
-        "Стварэнне спасылкі на папку"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Крэдыты для нявыкарыстанай часткі вашага папярэдняга плана падпіскі"
@@ -5660,15 +5670,6 @@
       "Failed": [
         "Збой"
       ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Не ўдалося згенерыраваць бяспечную спасылку. Прычына: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Не ўдалося згенерыраваць бяспечную спасылку. Паспрабуйце яшчэ раз пазней"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Не ўдалося адкрыць бяспечную спасылку. Прычына: ${ error }"
-      ],
       "Feb": [
         "Лют"
       ],
@@ -5842,6 +5843,9 @@
       ],
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Немагчыма скапіяваць папку саму ў сябе"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Элементы будуць заставацца ў сметніцы, пакуль вы не выдаліце іх незваротна"
@@ -6053,12 +6057,6 @@
       "One time import": [
         "Аднаразовае імпартаванне"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Толькі карыстальнікі са спасылкай і паролем змогуць атрымаць доступ да гэтага файла."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Толькі карыстальнікі са спасылкай і паролем змогуць атрымаць доступ да гэтай папкі."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Адкрыццё дапаможніка з рэкамендаванымі дзеяннямі і карыснымі спасылкамі."
       ],
@@ -6188,12 +6186,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
       ],
-      "Preparing link to file": [
-        "Падрыхтоўка спасылкі на файл"
-      ],
-      "Preparing link to folder": [
-        "Падрыхтоўка спасылкі на папку"
-      ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
       ],
@@ -6287,8 +6279,11 @@
       "Search Enabled": [
         "Пошук уключаны"
       ],
+      "Select a folder to copy to.": [
+        "Выберыце папку, у якую хочаце скапіяваць."
+      ],
       "Select a folder to move to.": [
-        "Выберыце папку для перамяшчэння."
+        "Выберыце папку, у якую хочаце перамясціць."
       ],
       "Select all items for": [
         "Выбраць усе элементы для"
@@ -6514,9 +6509,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Гэта спасылка можа быць гамаграфічнай атакай. Спраўдзіце спасылку, якую вы хочаце наведаць або не пераходзьце па ёй."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Спасылка створана ў папярэдняй версіі Drive, таму яе немагчыма змяніць. Для змянення налад, выдаліце гэту спасылку і стварыце новую."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Гэта азначае, што ваш пастаўшчык паслуг інтэрнэту і вэб-сайты не змогуць атрымліваць асабістыя звесткі з вашай актыўнасцю ў інтэрнэце."
@@ -9359,6 +9351,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" паспяхова захаваны"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" паспяхова скапіявана"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" паспяхова перамешчаны"
       ],
@@ -9373,6 +9368,18 @@
         "Не ўдалося расшыфраваць ${ count } элементы",
         "Не ўдалося расшыфраваць ${ count } элементаў",
         "Не ўдалося расшыфраваць ${ count } элементаў"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "Не ўдалося скапіяваць ${ errors.length } элемент",
+        "Не ўдалося скапіяваць ${ errors.length } элементы",
+        "Не ўдалося скапіяваць ${ errors.length } элементаў",
+        "Не ўдалося скапіяваць ${ errors.length } элементаў"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "Не ўдалося выдаліць ${ errors.length } элемент",
+        "Не ўдалося выдаліць ${ errors.length } элементы",
+        "Не ўдалося выдаліць ${ errors.length } элементаў",
+        "Не ўдалося выдаліць ${ errors.length } элементаў"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } фатаграфію не ўдалося выдаліць з \"${ albumLink.name }\"",
@@ -9397,6 +9404,12 @@
         "${ nbSuccesses } фатаграфіі былі выдалены з ${ albumLink.name }\"",
         "${ nbSuccesses } фатаграфій былі выдалены з ${ albumLink.name }\"",
         "${ nbSuccesses } фатаграфій былі выдалены з ${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } элемент скапіяваны ў сметніцу",
+        "${ numberOfItems } элементы скапіяваны ў сметніцу",
+        "${ numberOfItems } элементаў скапіяваны ў сметніцу",
+        "${ numberOfItems } элементаў скапіяваны ў сметніцу"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",
@@ -9452,6 +9465,12 @@
         "${ numberOfItems } элементаў адноўлены са сметніцы",
         "${ numberOfItems } элементы адноўлены са сметніцы"
       ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } элемент паспяхова скапіяваны",
+        "${ numberOfItems } элементы паспяхова скапіяваны",
+        "${ numberOfItems } элементаў паспяхова скапіяваны",
+        "${ numberOfItems } элементаў паспяхова скапіяваны"
+      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } элемент паспяхова перамешчаны",
         "${ numberOfItems } элементы паспяхова перамешчаны",
@@ -9496,6 +9515,9 @@
       ],
       "Contact group updated": [
         "Група кантактаў абноўлена"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Копія \"${ name }\" перамешчана ў сметніцу"
       ],
       "Device failed to be removed": [
         "Не ўдалося выдаліць прыладу"
@@ -9599,9 +9621,6 @@
       "Public link access updated": [
         "Доступ да публічнай спасылкі абноўлены"
       ],
-      "Public link update access failed ": [
-        "Збой доступу да абнаўлення публічнай спасылкі "
-      ],
       "Root folder failed to be loaded": [
         "Не ўдалося загрузіць каранёвую папку"
       ],
@@ -9647,9 +9666,6 @@
       "The item was successfully added to your drive": [
         "Элемент паспяхова дадзены ў ваш дыск"
       ],
-      "The link to your item failed to be deleted": [
-        "Не ўдалося выдаліць спасылку на ваш элемент"
-      ],
       "The link to your item was deleted": [
         "Спасылка на ваш элемент была выдалена"
       ],
@@ -9667,9 +9683,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Вашы старыя файлы будуць выдалены на працягу 72 гадзін"
-      ],
-      "Your settings failed to be saved": [
-        "Не ўдалося захаваць вашы налады"
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
@@ -10573,9 +10586,6 @@
       ],
       "Select state": [
         "Выбраць штат"
-      ],
-      "Set date": [
-        "Задаць дату"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
@@ -12210,46 +12220,6 @@
         "${ seconds } секунд"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } гадз",
-        "${ hours } гадз",
-        "${ hours } гадз",
-        "${ hours } г"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 г",
-        "${ hoursInt },5 г",
-        "${ hoursInt },5 г",
-        "${ hoursInt },5 г"
-      ],
-      "${ minutes } min": [
-        "${ minutes } хв",
-        "${ minutes } хв",
-        "${ minutes } хв",
-        "${ minutes } хв"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } гадзіна",
-        "${ hours } гадзіны",
-        "${ hours } гадзін",
-        "${ hours } гадзін"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 гадзіны",
-        "${ hoursInt },5 гадзіны",
-        "${ hoursInt },5 гадзіны",
-        "${ hoursInt },5 гадзіны"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвіліна",
-        "${ minutes } хвіліны",
-        "${ minutes } хвілін",
-        "${ minutes } хвілін"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Колькасць спампоўванняў"
@@ -12764,6 +12734,9 @@
       "Logs": [
         "Журналы"
       ],
+      "Make a copy": [
+        "Зрабіць копію"
+      ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
       ],
@@ -13000,9 +12973,6 @@
       ],
       "Select link expiration date": [
         "Выберыце дату завяршэння тэрміну дзеяння спасылкі"
-      ],
-      "Select link expiration time": [
-        "Выберыце час завяршэння тэрміну дзеяння спасылкі"
       ],
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"

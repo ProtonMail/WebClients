@@ -3445,9 +3445,6 @@
       "External accounts are not supported yet": [
         "Eksterne konti understøttes ikke endnu"
       ],
-      "External invitations are not available yet.": [
-        "Eksterne invitationer er ikke mulige endnu."
-      ],
       "External invitations are temporarily disabled.": [
         "Eksterne invitationer er midlertidigt deaktiveret."
       ],
@@ -4304,6 +4301,11 @@
         "Ubegrænsede hide-my-email-aliasser"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Lynhurtige hastigheder"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
@@ -5125,12 +5127,6 @@
       "Anonymous": [
         "Anonym"
       ],
-      "Anyone with this link can access your file.": [
-        "Alle med dette link kan få adgang til din fil."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Alle med dette link kan få adgang til din mappe."
-      ],
       "Apr": [
         "Apr"
       ],
@@ -5300,12 +5296,6 @@
       ],
       "Creating": [
         "Opretter"
-      ],
-      "Creating link to file": [
-        "Opretter link til fil"
-      ],
-      "Creating link to folder": [
-        "Opretter link til mappe"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
@@ -5485,15 +5475,6 @@
       ],
       "Failed": [
         "Mislykkedes"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Det lykkedes ikke at generere et sikkert link. Årsagen er: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Kunne ikke skabe et sikkert link. Prøv igen senere"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Kunne ikke åbne et sikkert link. Årsagen er: ${ error }"
       ],
       "Feb": [
         "Feb"
@@ -5875,12 +5856,6 @@
       "One time import": [
         "Engangsimport"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Kun personer med linket og adgangskoden kan få adgang til denne fil."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Kun personer med linket og adgangskoden kan få adgang til denne mappe."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Åbn vejledningen for anbefalede handlinger og nyttige links."
       ],
@@ -6007,12 +5982,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
-      ],
-      "Preparing link to file": [
-        "Forbereder link til fil"
-      ],
-      "Preparing link to folder": [
-        "Forbereder link til mappe"
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
@@ -6330,9 +6299,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Linket blev oprettet i en ældre Drive-version og kan ikke ændres. Slet linket og opret et nyt for at ændre indstillingerne."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Det betyder, at din internetudbyder og de websteder, du besøger, ikke kan forbinde dine personlige oplysninger med din online-aktivitet."
@@ -9236,9 +9202,6 @@
       "Public link access updated": [
         "Adgang til offentligt link opdateret"
       ],
-      "Public link update access failed ": [
-        "Adgang til opdatering af offentligt link mislykkedes "
-      ],
       "Root folder failed to be loaded": [
         "Rodmappe kunne ikke indlæses"
       ],
@@ -9278,9 +9241,6 @@
       "The item was successfully added to your drive": [
         "Elementet blev tilføjet dit drev"
       ],
-      "The link to your item failed to be deleted": [
-        "Linket til dit element kunne ikke slettes"
-      ],
       "The link to your item was deleted": [
         "Linket til dit element blev slettet"
       ],
@@ -9298,9 +9258,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer vil blive slettet om 72 timer"
-      ],
-      "Your settings failed to be saved": [
-        "Dine indstillinger kunne ikke gemmes"
       ],
       "Your settings have been changed successfully": [
         "Dine indstillinger er blevet ændret"
@@ -10190,9 +10147,6 @@
       ],
       "Select state": [
         "Vælg stat"
-      ],
-      "Set date": [
-        "Angiv dato"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Fortæl, hvordan du tror, ${ BRAND_NAME } kan blive bedre"
@@ -11726,34 +11680,6 @@
         "${ seconds } sekunder"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours }. time",
-        "${ hours } timer"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 t",
-        "${ hoursInt },5 t"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 time",
-        "${ hoursInt },5 timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minutter"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# af downloads"
@@ -12480,9 +12406,6 @@
       ],
       "Select link expiration date": [
         "Vælg link-udløbsdato"
-      ],
-      "Select link expiration time": [
-        "Vælg link-udløbstid"
       ],
       "Set recovery methods": [
         "Indstil gendannelsesmetoder"

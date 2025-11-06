@@ -1424,6 +1424,12 @@
         "Nicht unterstützter Termin"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } weiteres Ergebnis nicht angezeigt",
+        "${ hiddenResultsCount } weitere Ergebnisse nicht angezeigt"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
@@ -3463,9 +3469,6 @@
       "External accounts are not supported yet": [
         "Externe Konten werden noch nicht unterstützt"
       ],
-      "External invitations are not available yet.": [
-        "Externe Einladungen sind noch nicht verfügbar."
-      ],
       "External invitations are temporarily disabled.": [
         "Externe Einladungen sind vorübergehend deaktiviert."
       ],
@@ -4328,6 +4331,11 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blitzschnelle Geschwindigkeiten"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
@@ -5149,12 +5157,6 @@
       "Anonymous": [
         "Anonym"
       ],
-      "Anyone with this link can access your file.": [
-        "Jeder mit diesem Link kann auf deine Datei zugreifen."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Jeder mit diesem Link kann auf deinen Ordner zugreifen."
-      ],
       "Apr": [
         "Apr"
       ],
@@ -5324,12 +5326,6 @@
       ],
       "Creating": [
         "Wird erstellt"
-      ],
-      "Creating link to file": [
-        "Link zur Datei wird erstellt"
-      ],
-      "Creating link to folder": [
-        "Link zum Ordner wird erstellt"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
@@ -5509,15 +5505,6 @@
       ],
       "Failed": [
         "Fehlgeschlagen"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Sicherer Link konnte nicht generiert werden. Grund: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Sicherer Link konnte nicht generiert werden. Versuche es später erneut."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Sicherer Link konnte nicht geöffnet werden. Fehler: ${ error }"
       ],
       "Feb": [
         "Feb"
@@ -5902,12 +5889,6 @@
       "One time import": [
         "Einmaliger Import"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Nur die Personen mit dem Link und dem Passwort können auf diese Datei zugreifen."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Nur die Personen mit dem Link und dem Passwort können auf diesen Ordner zugreifen."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Öffne die Anleitung für empfohlene Aktionen und hilfreiche Links."
       ],
@@ -6034,12 +6015,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die Daten enthalten, die mit dem inaktiven Schlüssel verschlüsselt sind."
-      ],
-      "Preparing link to file": [
-        "Link zur Datei wird vorbereitet"
-      ],
-      "Preparing link to folder": [
-        "Link zum Ordner wird vorbereitet"
       ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
@@ -6360,9 +6335,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Dieser Link wurde mit einer alten Drive-Version erstellt und kann nicht geändert werden. Lösche diesen Link und erstelle eine neuen, um die Einstellungen zu ändern."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Das bedeutet, dass dein Internetdienstanbieter und die von dir besuchten Websites deine persönlichen Daten nicht mit deinen Online-Aktivitäten in Verbindung bringen können."
@@ -9141,6 +9113,10 @@
         "${ errors.length } Eintrag konnte nicht kopiert werden",
         "${ errors.length } Einträge konnten nicht kopiert werden"
       ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } Eintrag konnte nicht in den Papierkorb verschoben werden",
+        "${ errors.length } Einträge konnten nicht in den Papierkorb verschoben werden"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } Foto konnte nicht aus \"${ albumLink.name }\" entfernt werden",
         "${ nbFailures } Fotos konnten nicht aus \"${ albumLink.name }\" entfernt werden"
@@ -9156,6 +9132,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } Foto wurde aus \"${ albumLink.name }\" entfernt",
         "${ nbSuccesses } Fotos wurden aus \"${ albumLink.name }\" entfernt"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } kopierter Eintrag wurde in den Papierkorb verschoben",
+        "${ numberOfItems } kopierte Einträge wurden in den Papierkorb verschoben"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } Eintrag gelöscht",
@@ -9239,6 +9219,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Kopie von \"${ name }\" in den Papierkorb verschoben"
       ],
       "Device failed to be removed": [
         "Gerät konnte nicht entfernt werden"
@@ -9334,9 +9317,6 @@
       "Public link access updated": [
         "Öffentlicher Link-Zugang aktualisiert"
       ],
-      "Public link update access failed ": [
-        "Update-Zugriff auf öffentlichen Link fehlgeschlagen "
-      ],
       "Root folder failed to be loaded": [
         "Stammordner konnte nicht geladen werden"
       ],
@@ -9376,9 +9356,6 @@
       "The item was successfully added to your drive": [
         "Das Objekt wurde erfolgreich zu deinem Laufwerk hinzugefügt"
       ],
-      "The link to your item failed to be deleted": [
-        "Der Link zu deinem Element konnte nicht gelöscht werden"
-      ],
       "The link to your item was deleted": [
         "Der Link zu deinem Element wurde gelöscht"
       ],
@@ -9396,9 +9373,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Deine alten Dateien werden innerhalb der nächsten 72 Stunden gelöscht"
-      ],
-      "Your settings failed to be saved": [
-        "Deine Einstellungen konnten nicht gespeichert werden"
       ],
       "Your settings have been changed successfully": [
         "Deine Einstellungen wurden erfolgreich geändert"
@@ -10289,9 +10263,6 @@
       "Select state": [
         "Bundesland wählen"
       ],
-      "Set date": [
-        "Datum festlegen"
-      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
       ],
@@ -11078,6 +11049,9 @@
       "${ app } storage": [
         "${ app }-Speicherplatz"
       ],
+      "${ app } storage used": [
+        "${ app } Speicher genutzt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % voll."
       ],
@@ -11089,6 +11063,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Für alle ${ BRAND_NAME }-Dienste"
+      ],
+      "Storage used": [
+        "Speicher genutzt"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Um weiterhin Dateien hochzuladen und zu synchronisieren, räume etwas Speicherplatz frei oder führe ein Upgrade durch für zusätzlichen Speicherplatz."
@@ -11839,34 +11816,6 @@
         "${ seconds } Sekunden"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } Stunde",
-        "${ hours } Stunden"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 Stunden",
-        "${ hoursInt }.5 Stunden"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } Minute",
-        "${ minutes } Minuten"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# Anzahl Downloads"
@@ -12596,9 +12545,6 @@
       ],
       "Select link expiration date": [
         "Ablaufdatum des Links wählen"
-      ],
-      "Select link expiration time": [
-        "Ablaufzeit des Links wählen"
       ],
       "Set recovery methods": [
         "Wiederherstellungsmethoden festlegen"

@@ -3224,9 +3224,6 @@
       "External accounts are not supported yet": [
         "As contas externas ainda não são suportadas."
       ],
-      "External invitations are not available yet.": [
-        "O convites externos ainda não estão disponíveis."
-      ],
       "External invitations are temporarily disabled.": [
         "Os convites externos estão temporariamente desativados."
       ],
@@ -4015,6 +4012,11 @@
         "Aliases ilimitados do Hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidades ultrarrápidas"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo correu mal ao autenticar com a sua chave de segurança. Tente novamente."
@@ -4800,12 +4802,6 @@
       "Anonymous": [
         "Anónimo"
       ],
-      "Anyone with this link can access your file.": [
-        "Qualquer pessoa com esta ligação terá acesso ao ficheiro."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Qualquer pessoa com esta ligação terá acesso ao ficheiro."
-      ],
       "Apr": [
         "Abr."
       ],
@@ -4969,12 +4965,6 @@
       ],
       "Creating": [
         "Criação"
-      ],
-      "Creating link to file": [
-        "A criar ligação ao ficheiro"
-      ],
-      "Creating link to folder": [
-        "A criar uma ligação para a pasta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
@@ -5145,15 +5135,6 @@
       ],
       "Failed": [
         "Erro"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Erro ao gerar uma ligação segura. O motivo é: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Erro ao gerar uma ligação segura. Tente novamente mais tarde"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Erro ao abrir uma ligação segura. O motivo é: ${ error }"
       ],
       "Feb": [
         "Fev."
@@ -5517,12 +5498,6 @@
       "One time import": [
         "Importação única"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Só as pessoas com a ligação e a palavra-passe podem aceder ao ficheiro."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Só as pessoas com a ligação e a palavra-passe podem aceder a esta pasta."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra o guia para ações recomendadas e ligações úteis."
       ],
@@ -5649,12 +5624,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto pesquisamos contactos que contenham dados encriptados com a chave inativa."
-      ],
-      "Preparing link to file": [
-        "A preparar ligação ao ficheiro"
-      ],
-      "Preparing link to folder": [
-        "A preparar uma ligação à pasta"
       ],
       "Preview failed to be loaded": [
         "Erro no carregamento da pré-visualização"
@@ -5963,9 +5932,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Este link foi criado com uma versão antiga do Drive e não pode ser modificado. Elimine esta ligação e crie uma para alterar as definições."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Isto significa que o seu ISP e os sítios web que visita não podem ligar as suas informações pessoais com a sua atividade online."
@@ -8815,9 +8781,6 @@
       "Public link access updated": [
         "O acesso à ligação pública foi atualizada."
       ],
-      "Public link update access failed ": [
-        "Erro ao atualizar a ligação pública "
-      ],
       "Root folder failed to be loaded": [
         "Erro ao carregar a pasta principal"
       ],
@@ -8849,9 +8812,6 @@
       "The item was successfully added to your drive": [
         "O item foi adicionado ao seu drive."
       ],
-      "The link to your item failed to be deleted": [
-        "Erro ao eliminar a ligação ao item"
-      ],
       "The link to your item was deleted": [
         "A ligação ao seu item foi eliminada."
       ],
@@ -8866,9 +8826,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Os seus ficheiros antigos serão eliminados em 72 horas."
-      ],
-      "Your settings failed to be saved": [
-        "Erro ao guardar as suas definições"
       ],
       "Your settings have been changed successfully": [
         "As suas definições foram alteradas."
@@ -9587,9 +9544,6 @@
       ],
       "Select state": [
         "Selecionar estado"
-      ],
-      "Set date": [
-        "Definir data"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Partilhe o que pensa que poderia tornar a ${ BRAND_NAME } melhor"
@@ -11059,34 +11013,6 @@
         "${ seconds } segundos"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 hora.",
-        "${ hoursInt }.5 horas."
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Número de transferências"
@@ -11743,9 +11669,6 @@
         "Seleccionar grupo de contactos"
       ],
       "Select link expiration date": [
-        "Selecionar data de validade da ligação"
-      ],
-      "Select link expiration time": [
         "Selecionar data de validade da ligação"
       ],
       "Set recovery methods": [

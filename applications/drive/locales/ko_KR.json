@@ -3433,9 +3433,6 @@
       "External accounts are not supported yet": [
         "외부 계정은 아직 지원하지 않습니다"
       ],
-      "External invitations are not available yet.": [
-        "외부 초대를 아직 사용할 수 없습니다."
-      ],
       "External invitations are temporarily disabled.": [
         "외부 초대가 일시적으로 비활성화 되었습니다."
       ],
@@ -4290,6 +4287,11 @@
         "무제한 hide-my-email 별칭"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "초고속 속도"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
@@ -5060,12 +5062,6 @@
       "Anonymous": [
         "익명"
       ],
-      "Anyone with this link can access your file.": [
-        "링크를 가지고 있는 모든 사람이 파일을 볼 수 있습니다."
-      ],
-      "Anyone with this link can access your folder.": [
-        "링크를 가지고 있는 모든 사람이 폴더를 볼 수 있습니다."
-      ],
       "Apr": [
         "4월"
       ],
@@ -5233,12 +5229,6 @@
       ],
       "Creating": [
         "만들기"
-      ],
-      "Creating link to file": [
-        "파일 링크를 만드는 중"
-      ],
-      "Creating link to folder": [
-        "폴더 링크를 만드는 중"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -5416,15 +5406,6 @@
       ],
       "Failed": [
         "실패"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "보안 링크 생성 실패. 사유: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "보안 링크 생성 실패. 나중에 다시 시도하세요"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "보안 링크 열기 실패. 사유: ${ error }"
       ],
       "Feb": [
         "2월"
@@ -5804,12 +5785,6 @@
       "One time import": [
         "한 번만 가져오기"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "링크와 비밀번호를 가지고 있는 사람만 이 파일에 접근할 수 있습니다."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "링크와 비밀번호를 가지고 있는 사람만 이 폴더에 접근할 수 있습니다."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "권장 조치 및 유용한 링크들이 포함된 가이드를 열어보세요."
       ],
@@ -5935,12 +5910,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "비활성 키로 암호화된 데이터가 포함된 연락처를 찾는 동안 기다려 주세요."
-      ],
-      "Preparing link to file": [
-        "파일 링크를 준비하는 중"
-      ],
-      "Preparing link to folder": [
-        "폴더 링크를 준비하는 중"
       ],
       "Preview failed to be loaded": [
         "미리보기 불러오는 중 문제 발생"
@@ -6256,9 +6225,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "이 링크는 호모그래프(homograph) 공격 일 수 있습니다. 방문하려는 링크가 정확한지 확인하거나 열지 마세요."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "이 링크는 이전 Drive 버전으로 만들어졌으며 수정할 수 없습니다. 이 링크를 삭제하고 새 링크를 만들어 설정을 변경하십시오."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "즉 ISP와 방문한 웹사이트가 사용자의 개인 정보를 온라인 활동과 연관지을 수 없다는 것이죠."
@@ -9098,9 +9064,6 @@
       "Public link access updated": [
         "공개 링크 접근이 업데이트되었습니다."
       ],
-      "Public link update access failed ": [
-        "공개 링크 업데이트 접근 실패 "
-      ],
       "Root folder failed to be loaded": [
         "루트 폴더 불러오는 중 문제 발생"
       ],
@@ -9137,9 +9100,6 @@
       "The item was successfully added to your drive": [
         "항목이 Drive로 성공적으로 추가되었습니다."
       ],
-      "The link to your item failed to be deleted": [
-        "아이템의 링크 실패로 인해 삭제됩니다"
-      ],
       "The link to your item was deleted": [
         "항목의 링크가 삭제되었습니다"
       ],
@@ -9157,9 +9117,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "사용자의 오래된 파일이 72시간 내에 삭제됩니다"
-      ],
-      "Your settings failed to be saved": [
-        "설정을 저장하지 못했습니다"
       ],
       "Your settings have been changed successfully": [
         "설정을 저장했습니다"
@@ -10042,9 +9999,6 @@
       ],
       "Select state": [
         "시・도 선택"
-      ],
-      "Set date": [
-        "날짜 설정"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "무엇이 ${ BRAND_NAME }을 더 좋게 만들 수 있을지 공유해주세요"
@@ -11550,28 +11504,6 @@
         "${ seconds }초"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours }시간"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5시간"
-      ],
-      "${ minutes } min": [
-        "${ minutes }분"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours }시간"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5시간"
-      ],
-      "${ minutes } minute": [
-        "${ minutes }분"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "다운로드 횟수"
@@ -12286,9 +12218,6 @@
       ],
       "Select link expiration date": [
         "링크 만료 날짜 선택"
-      ],
-      "Select link expiration time": [
-        "링크 만료 시간 선택"
       ],
       "Set recovery methods": [
         "복구 방법 마련하기"
