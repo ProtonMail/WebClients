@@ -1,4 +1,12 @@
-import { type CYCLE, type Currency, type Cycle, type Plan, type Subscription, getPlansMap } from '@proton/payments';
+import {
+    type CYCLE,
+    type Currency,
+    type Cycle,
+    type Plan,
+    type Subscription,
+    getPlan,
+    getPlansMap,
+} from '@proton/payments';
 
 import { getAllowedCycles } from '../helpers/getAllowedCycles';
 
@@ -38,12 +46,21 @@ export const getUpsellAmountAndSavings = ({
 }: UpsellAmountAndSavingsProps): [number, string] => {
     const plansMap = getPlansMap(plans, currency, false);
     const allowedCycles = getAllowedCycles({ subscription, planIDs: { [upsellPlan.Name]: 1 }, currency, plansMap });
-    const { Amount: currentAmount, Cycle: currentCycle } = subscription;
-    const upsellCycle = getUpsellCycle(currentCycle, allowedCycles);
+    const currentPlan = getPlan(subscription);
+
+    if (!currentPlan) {
+        return [0, '0%'];
+    }
+
+    const upsellCycle = getUpsellCycle(currentPlan.Cycle, allowedCycles);
     const { Pricing: upsellPricing } = upsellPlan;
     const upsellAmountPerCycle = upsellPricing[upsellCycle] ?? 0;
     const upsellMonthlyAmount = upsellAmountPerCycle / upsellCycle;
-    const upsellSavings = getSavings({ currentAmount, currentCycle, upsellMonthlyAmount });
+    const upsellSavings = getSavings({
+        currentAmount: currentPlan.Amount,
+        currentCycle: currentPlan.Cycle,
+        upsellMonthlyAmount,
+    });
 
     return [upsellMonthlyAmount, `${upsellSavings}%`];
 };

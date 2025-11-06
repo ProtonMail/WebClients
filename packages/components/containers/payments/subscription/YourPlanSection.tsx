@@ -11,8 +11,16 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import { FREE_PLAN, getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, hasLumo, isTrial } from '@proton/payments';
+import {
+    FREE_PLAN,
+    getCanSubscriptionAccessDuoPlan,
+    getHasVpnB2BPlan,
+    hasLumo,
+    isAutoRenewTrial,
+    isTrial,
+} from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -60,8 +68,11 @@ const YourPlanSectionInner = ({ app }: Props) => {
         canAccessDuoPlan,
         user,
         telemetryFlow,
+        isReferralExpansionEnabled,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
+
+    const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
 
     const loading =
         loadingSubscription ||
@@ -81,17 +92,16 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const shouldRenderSubscription =
         user.canPay || (subscription && !isTrial(subscription) && !isReferralExpansionEnabled);
     const shouldRenderPendingInvitation = !!invites.length;
+    const shouldRenderTrialInfo =
+        isReferralExpansionEnabled &&
+        isTrial(subscription) &&
+        ((!hasTrialPaymentMethods && !isAutoRenewTrial(subscription)) || isAutoRenewTrial(subscription));
     // Upsell panel if the user has a subscription and is not vpn or wallet
     const shouldRenderUpsells =
-        !isVpnB2b &&
-        !isWalletEA &&
-        shouldRenderSubscription &&
-        !hasLumo(subscription) &&
-        !(isTrial(subscription) && isReferralExpansionEnabled);
+        !isVpnB2b && !isWalletEA && shouldRenderSubscription && !hasLumo(subscription) && !shouldRenderTrialInfo;
     // Usage panel is displayed for members of B2B plans except VPN B2B
     const shouldRenderUsagePanel =
         (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;
-    const shouldRenderTrialInfo = isTrial(subscription) && isReferralExpansionEnabled;
 
     // By default, for style consistency, we display every setting in `SettingsSectionWide`
     // But since 3 panels don't fit in this section (or are too tightly packed),
@@ -128,9 +138,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
                 )}
                 {shouldRenderUpsells && <UpsellPanels upsells={upsells} subscription={subscription} />}
-                {shouldRenderTrialInfo && (
-                    <TrialInfo />
-                )}
+                {shouldRenderTrialInfo && <TrialInfo />}
                 {shouldRenderPendingInvitation && <PendingInvitationsPanel invites={invites} />}
             </div>
         </SettingsSection>

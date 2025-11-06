@@ -321,7 +321,7 @@ const TrialInfoActionButton = () => {
 
     return (
         <>
-            {renderModal && <TrialInfoModal {...modalProps} />}
+            {renderModal && <TrialInfoModal modalProps={modalProps} />}
             <InlineLinkButton className="color-inherit" onClick={() => setModalOpen(true)}>
                 {c('Action').t`Learn more`}
             </InlineLinkButton>
