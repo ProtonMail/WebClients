@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { Hamburger } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
@@ -32,10 +31,8 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
     const isGuest = useIsGuest();
     const { isVisible: isSideMenuOpen, toggle: toggleSideMenu } = useSidebar();
     const { isSmallScreen } = useSidebar();
-    const isLumoB2BEnabled = useFlag('LumoB2B');
 
     const isMobileDevice = getIsMobileDevice();
-    const showB2BSignUpLink = isLumoB2BEnabled && !isMobileDevice;
 
     return (
         <>
@@ -59,17 +56,15 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
                                     className="inline-flex py-3 px-4 color-weak text-no-decoration"
                                 >{c('collider_2025: b2b').t`By ${BRAND_NAME}`}</Href>
                             </li>
-                            {showB2BSignUpLink && (
-                                <li className="pt-1 no-print">
-                                    <Href
-                                        href="https://lumo.proton.me/business"
-                                        className="inline-flex py-3 px-4 color-weak text-no-decoration flex flex-row items-center gap-1"
-                                    >
-                                        {c('collider_2025: Top nav link').t`For Business`}
-                                        <NewLabel />
-                                    </Href>
-                                </li>
-                            )}
+                            <li className="pt-1 no-print">
+                                <Href
+                                    href="https://lumo.proton.me/business"
+                                    className="inline-flex py-3 px-4 color-weak text-no-decoration flex flex-row items-center gap-1"
+                                >
+                                    {c('collider_2025: Top nav link').t`For Business`}
+                                    <NewLabel />
+                                </Href>
+                            </li>
                             {isGuest && !isMobileDevice && (
                                 <li className="ml-auto hidden lg:inline-flex no-print">
                                     <Href
