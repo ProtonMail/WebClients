@@ -1,6 +1,6 @@
 import type { Participant } from 'livekit-client';
 
-import { IcThreeDotsHorizontal } from '@proton/icons';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 
 import { SpeakerIndicator } from '../components/SpeakerIndicator/SpeakerIndicator';
 

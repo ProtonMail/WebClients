@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcArrowLeft } from '@proton/icons';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 import { Aside } from '../../components/Layout/Aside';
 import { Footer } from '../../components/Layout/Footer';

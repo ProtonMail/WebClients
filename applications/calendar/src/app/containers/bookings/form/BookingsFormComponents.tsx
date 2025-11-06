@@ -2,7 +2,7 @@ import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
-import { IcMapPin } from '@proton/icons';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 
 import { BookingLocation } from '../bookingsProvider/interface';
 

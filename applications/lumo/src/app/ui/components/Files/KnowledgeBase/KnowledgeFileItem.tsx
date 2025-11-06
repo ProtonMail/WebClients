@@ -4,7 +4,9 @@ import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
 import { FileIcon, Icon } from '@proton/components';
-import { IcCross, IcMinusCircle, IcPlusCircle } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
+import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
 import { CONTEXT_LIMITS } from '../../../../llm/utils';
 import { getSizeColor, useFileItemData } from '../fileUtils';

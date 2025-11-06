@@ -7,15 +7,13 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import {
-    IcCalendarGrid,
-    IcCalendarListCheck,
-    IcClock,
-    IcCrossBig,
-    IcFileLines,
-    IcMapPin,
-    IcTextTitle,
-} from '@proton/icons';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcFileLines } from '@proton/icons/icons/IcFileLines';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 

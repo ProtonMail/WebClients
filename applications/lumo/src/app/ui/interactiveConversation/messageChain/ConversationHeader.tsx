@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { InputFieldTwo } from '@proton/components';
-import { IcMonitor } from '@proton/icons';
+import { IcMonitor } from '@proton/icons/icons/IcMonitor';
 
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import { useGhostChat } from '../../../providers/GhostChatProvider';

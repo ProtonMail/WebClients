@@ -8,7 +8,8 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
-import { IcArrowLeft, IcShield } from '@proton/icons';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcShield } from '@proton/icons/icons/IcShield';
 import {
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,

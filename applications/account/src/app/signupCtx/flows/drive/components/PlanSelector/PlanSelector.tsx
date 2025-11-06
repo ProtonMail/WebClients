@@ -6,7 +6,11 @@ import { c } from 'ttag';
 
 import { CurrencySelector, SkeletonLoader } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { IcBrandProtonMail, IcBrandProtonPass, IcBrandProtonVpn, IcShield, IcUsers } from '@proton/icons';
+import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';
+import { IcBrandProtonPass } from '@proton/icons/icons/IcBrandProtonPass';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { IcShield } from '@proton/icons/icons/IcShield';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { CYCLE, type Currency, type Cycle, PLANS, PLAN_NAMES, type PlanIDs, type PlansMap } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';

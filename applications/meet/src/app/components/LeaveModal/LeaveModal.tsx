@@ -5,7 +5,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
-import { IcMeetPhone } from '@proton/icons';
+import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
 import clsx from '@proton/utils/clsx';
 
 import { useMeetContext } from '../../contexts/MeetContext';

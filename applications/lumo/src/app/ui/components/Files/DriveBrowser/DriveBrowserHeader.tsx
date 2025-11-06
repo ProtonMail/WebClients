@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { IcArrowLeft, IcCross } from '@proton/icons';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 interface DriveBrowserHeaderProps {

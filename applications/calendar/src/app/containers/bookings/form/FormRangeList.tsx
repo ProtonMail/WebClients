@@ -4,7 +4,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import { DateInputTwo } from '@proton/components/index';
-import { IcPlus, IcTrash } from '@proton/icons';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';

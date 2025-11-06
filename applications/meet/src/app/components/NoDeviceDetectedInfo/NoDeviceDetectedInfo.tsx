@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
-import { IcCross } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';

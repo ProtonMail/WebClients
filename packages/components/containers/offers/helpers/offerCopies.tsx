@@ -1,9 +1,9 @@
 import { Fragment, type ReactElement } from 'react';
 
-import type { IconName } from 'packages/icons';
 import { c, msgid } from 'ttag';
 
 import { getOwnDomainText } from '@proton/components/containers/payments/features/mail';
+import type { IconName } from '@proton/icons/types';
 import { CYCLE, PLANS, PLAN_NAMES, type PlanIDs, getRenewCycle } from '@proton/payments';
 import {
     BRAND_NAME,

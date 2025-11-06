@@ -4,7 +4,9 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcGlobe, IcMicrophone, IcPaperClip } from '@proton/icons';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcMicrophone } from '@proton/icons/icons/IcMicrophone';
+import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useWebSearch } from '../../../providers/WebSearchProvider';

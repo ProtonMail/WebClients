@@ -18,7 +18,7 @@ import {
     Spotlight,
     ZoomUpsellModal,
 } from '@proton/components';
-import { IcVideoCamera } from '@proton/icons';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';

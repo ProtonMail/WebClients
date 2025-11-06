@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
 import { CircularProgress, FileIcon, Icon } from '@proton/components';
-import { IcCross } from '@proton/icons';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
 import type { Attachment } from '../../../../types';
 import { mimeToHuman } from '../../../../util/filetypes';

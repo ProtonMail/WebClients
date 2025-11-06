@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import IconRow from '@proton/components/components/iconRow/IconRow';
-import { IcVideoCamera } from '@proton/icons';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';

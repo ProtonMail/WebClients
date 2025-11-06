@@ -8,7 +8,7 @@ import { Alert3ds, SkeletonLoader } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
-import { IcArrowLeft } from '@proton/icons';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import {
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,

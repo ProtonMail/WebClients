@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
-import { IcMeetSend } from '@proton/icons';
+import { IcMeetSend } from '@proton/icons/icons/IcMeetSend';
 import clsx from '@proton/utils/clsx';
 
 import { trimMessage } from '../../utils/trim-message';

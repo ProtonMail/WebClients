@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcChevronLeft, IcChevronRight } from '@proton/icons';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 interface PaginationProps {
     totalPages: number;

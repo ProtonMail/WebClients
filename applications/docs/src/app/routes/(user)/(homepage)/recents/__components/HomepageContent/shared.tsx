@@ -1,7 +1,7 @@
 import type { MimeName } from '@proton/components/components/icon/MimeIcon'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import clsx from '@proton/utils/clsx'
-import type { IconName } from 'packages/icons'
+import type { IconName } from '@proton/icons/types'
 import type { ComponentPropsWithoutRef } from 'react'
 
 export type ContentSheetProps = ComponentPropsWithoutRef<'div'> & {
