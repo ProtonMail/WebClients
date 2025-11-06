@@ -37,14 +37,14 @@ const PmMeButton = ({ children }: { children: ReactNode }) => {
 
     return (
         <>
-            {authModal((props) => {
+            {authModal(({ onResolve, onReject, ...props }) => {
                 return (
                     <AuthModal
                         {...props}
                         scope="locked"
                         config={queryUnlock()}
-                        onCancel={props.onReject}
-                        onSuccess={props.onResolve}
+                        onCancel={onReject}
+                        onSuccess={onResolve}
                     />
                 );
             })}
