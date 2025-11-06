@@ -22,6 +22,7 @@ import TransferManagerLegacy from '../components/TransferManager/TransferManager
 import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import config from '../config';
+import { useFlagsDriveSDKTransfer } from '../flags/useFlagsDriveSDKTransfer';
 import { useRunningFreeUploadTimer } from '../hooks/drive/freeUpload/useRunningFreeUploadTimer';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
@@ -167,6 +168,8 @@ function InitContainer() {
         };
     }, []);
 
+    const isForPhotos = window.location.pathname.includes('/photos');
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos });
     const freeUploadOverModal = useRunningFreeUploadTimer(defaultShareRoot.createTime);
 
     if (loading) {
@@ -214,9 +217,9 @@ function InitContainer() {
             <ModalsChildren />
             <FloatingElements>
                 <GiftFloatingButton />
-                <TransferManagerLegacy />
+                {!isSDKTransferEnabled && <TransferManagerLegacy />}
                 {/* TransferManager will be showed in case we don't have new upload/download */}
-                <TransferManager />
+                {isSDKTransferEnabled && <TransferManager />}
             </FloatingElements>
             <DriveWindow>
                 <Routes>
