@@ -689,6 +689,9 @@
       "Remove gift code": [
         "Retirer le code-cadeau"
       ],
+      "Remove the booking range": [
+        "Retirer la plage de réservation"
+      ],
       "Remove this notification": [
         "Retirer cette notification"
       ],
@@ -823,6 +826,9 @@
       ],
       "Skip verification": [
         "Ignorer la vérification"
+      ],
+      "Split current booking range": [
+        "Diviser la plage de réservation actuelle"
       ],
       "Start import": [
         "Démarrer l'importation"
@@ -1259,6 +1265,12 @@
     "Attendee role": {
       "Optional": [
         "Facultatif"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } autre résultat non affiché",
+        "${ hiddenResultsCount } autres résultats non affichés"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -4500,6 +4512,11 @@
         "Nombre illimité d'alias « hide-my-email »"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Vitesses extrêmement élevées"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
@@ -5892,9 +5909,9 @@
       "Removed participants will be notified.": [
         "Les participants retirés seront informés."
       ],
-      "Saving event...": [
-        "Enregistrement de l'événement...",
-        "Enregistrement des événements..."
+      "Saving event": [
+        "Enregistrement de l'événement",
+        "Enregistrement des événements"
       ],
       "Scan the QR code with your mobile device": [
         "Scannez le QR code avec votre appareil mobile."
@@ -7110,6 +7127,17 @@
       ],
       "Zoom meeting": [
         "Réunion Zoom"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Date de la plage de réservation"
+      ],
+      "End time of the booking range": [
+        "Heure de fin de la plage de réservation"
+      ],
+      "Start time of the booking range": [
+        "Heure de début de la plage horaire de réservation"
       ]
     },
     "Label for contact group color": {
@@ -10368,6 +10396,9 @@
       "${ app } storage": [
         "espace de stockage de ${ app }"
       ],
+      "${ app } storage used": [
+        "Espace de stockage utilisé de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } plein à ${ percentage } %"
       ],
@@ -10379,6 +10410,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pour tous les services ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Espace de stockage utilisé"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ upgrade }."

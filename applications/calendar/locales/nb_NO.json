@@ -186,6 +186,9 @@
       "Confirm": [
         "Bekreft"
       ],
+      "Confirm booking": [
+        "Bekreft bestilling"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekreft åpning av kobling ${ linkToShow }"
       ],
@@ -227,6 +230,9 @@
       ],
       "Copy link": [
         "Kopier kobling"
+      ],
+      "Copy link and close": [
+        "Kopier kobling og lukk"
       ],
       "Copy password": [
         "Kopier passord"
@@ -683,6 +689,9 @@
       "Remove gift code": [
         "Fjern gavekode"
       ],
+      "Remove the booking range": [
+        "Fjern bestillingsintervallet"
+      ],
       "Remove this notification": [
         "Slett dette varslet"
       ],
@@ -817,6 +826,9 @@
       ],
       "Skip verification": [
         "Hopp over bekreftelse"
+      ],
+      "Split current booking range": [
+        "Del gjeldende bestillingsintervall"
       ],
       "Start import": [
         "Start importen"
@@ -1253,6 +1265,12 @@
     "Attendee role": {
       "Optional": [
         "Valgfritt"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat til som ikke vises",
+        "${ hiddenResultsCount } resultater til som ikke vises"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3198,6 +3216,9 @@
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Du vil motta en sikker e-post med detaljene snart."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
       ]
@@ -3596,6 +3617,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
       ],
+      "Content verification failed": [
+        "Innholdsverifisering mislyktes"
+      ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
       ],
@@ -3766,6 +3790,9 @@
       ],
       "Name required": [
         "Navn kreves"
+      ],
+      "No booking page data received": [
+        "Ingen bestillingssidedata mottatt"
       ],
       "No calendars found to import": [
         "Fant ingen kalendere å importere"
@@ -4488,6 +4515,11 @@
         "Ubegrenset antall hide-my-email-aliaser"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Lynraske hastigheter"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
@@ -4574,6 +4606,11 @@
       ],
       "Very small": [
         "Veldig liten"
+      ]
+    },
+    "Form": {
+      "Your contact info": [
+        "Kontaktinformasjonen din"
       ]
     },
     "Google Meet": {
@@ -5257,6 +5294,15 @@
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
+      "Booking already exists.": [
+        "Bestilling finnes allerede."
+      ],
+      "Booking cannot be added in the past.": [
+        "En bestilling kan ikke legges til i fortiden."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Bestillingen overlapper med en eksisterende bestilling."
+      ],
       "Booking page example": [
         "Eksempel på bestillingsside"
       ],
@@ -5697,6 +5743,9 @@
       "New": [
         "Ny"
       ],
+      "No available slots for this day": [
+        "Ingen ledige tidspunkter denne dagen"
+      ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
       ],
@@ -5863,9 +5912,9 @@
       "Removed participants will be notified.": [
         "Fjernede deltakere vil bli varslet."
       ],
-      "Saving event...": [
-        "Lagrer hendelse...",
-        "Lagrer hendelser..."
+      "Saving event": [
+        "Lagrer hendelsen",
+        "Lagrer hendelser"
       ],
       "Scan the QR code with your mobile device": [
         "Skann QR-koden med mobilenheten din"
@@ -5899,6 +5948,9 @@
       ],
       "Setting up your new address…": [
         "Konfigurerer den nye adressen din…"
+      ],
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Del denne siden for å la andre bestille tid i kalenderen din. Du kan administrere den når som helst i sidefeltet under bestillingssider."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
@@ -6132,6 +6184,9 @@
       "What should people know before booking?": [
         "Hva bør folk vite før de bestiller?"
       ],
+      "When are you free?": [
+        "Når er du ledig?"
+      ],
       "When working remotely": [
         "Når du jobber eksternt"
       ],
@@ -6232,6 +6287,9 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke angre denne handlingen."
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "Du kan ikke ha mer enn ${ MAX_BOOKING_SLOTS } bestillingstider på en side."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
@@ -7078,6 +7136,17 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Dato for bestillingsintervallet"
+      ],
+      "End time of the booking range": [
+        "Sluttidspunkt for bestillingsintervallet"
+      ],
+      "Start time of the booking range": [
+        "Starttidspunkt for bestillingsintervallet"
       ]
     },
     "Label for contact group color": {
@@ -10336,6 +10405,9 @@
       "${ app } storage": [
         "${ app }-lagring"
       ],
+      "${ app } storage used": [
+        "Lagringsplass brukt ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% full"
       ],
@@ -10347,6 +10419,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Storage used": [
+        "Lagringsplass brukt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ upgrade }"
@@ -11487,6 +11562,9 @@
       "High security for your account": [
         "Høy sikkerhet for kontoen din"
       ],
+      "Host": [
+        "Vert"
+      ],
       "How does it all work?": [
         "Hvordan fungerer alt?"
       ],
@@ -11859,6 +11937,9 @@
       ],
       "Your account is protected": [
         "Kontoen din er beskyttet"
+      ],
+      "Your booking is confirmed": [
+        "Bestillingen din er bekreftet"
       ],
       "Your booking page is ready": [
         "Bestillingssiden din er klar"

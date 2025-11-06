@@ -230,6 +230,9 @@
       "Copy link": [
         "リンクをコピー"
       ],
+      "Copy link and close": [
+        "リンクをコピーして閉じる"
+      ],
       "Copy password": [
         "パスワードをコピー"
       ],
@@ -1246,6 +1249,11 @@
     "Attendee role": {
       "Optional": [
         "任意"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 件の追加の結果は表示されていません"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3179,6 +3187,9 @@
       "Your account and data recovery methods are set.": [
         "アカウントとデータの回復手段が設定されています。"
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "まもなく、詳細が記載された安全なメールをお客様にお届けします。"
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
       ]
@@ -4458,6 +4469,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無制限の Hide-my-email エイリアス"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "最高速の速度"
       ]
     },
     "fido2: Error": {
@@ -5811,9 +5827,6 @@
       "Removed participants will be notified.": [
         "削除した参加者には通知されます。"
       ],
-      "Saving event...": [
-        "イベントを保存中…"
-      ],
       "Scan the QR code with your mobile device": [
         "携帯デバイスでQRコードを読み込んでください。"
       ],
@@ -5846,6 +5859,9 @@
       ],
       "Setting up your new address…": [
         "新しいアドレスを設定中…"
+      ],
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "他のお客様がお客様のカレンダーで時間を予約できるように、このページを共有してください。サイドバーの「予約ページ」から、いつでも管理できます。"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -11309,6 +11325,9 @@
       "High security for your account": [
         "アカウントの高度なセキュリティ"
       ],
+      "Host": [
+        "ホスト"
+      ],
       "How does it all work?": [
         "どのように機能しますか？"
       ],
@@ -11680,6 +11699,9 @@
       ],
       "Your account is protected": [
         "あなたのアカウントは保護されています"
+      ],
+      "Your booking is confirmed": [
+        "お客様のご予約が確認されました"
       ],
       "Your booking page is ready": [
         "予約ページの準備ができました"

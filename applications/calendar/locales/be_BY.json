@@ -233,6 +233,9 @@
       "Copy link": [
         "Скапіяваць спасылку"
       ],
+      "Copy link and close": [
+        "Скапіяваць спасылку і закрыць"
+      ],
       "Copy password": [
         "Скапіяваць пароль"
       ],
@@ -692,6 +695,9 @@
       "Remove gift code": [
         "Выдаліць падарункавы код"
       ],
+      "Remove the booking range": [
+        "Выдаліць дыяпазон браніравання"
+      ],
       "Remove this notification": [
         "Выдаліць гэта апавяшчэнне"
       ],
@@ -826,6 +832,9 @@
       ],
       "Skip verification": [
         "Прапусціць праверку"
+      ],
+      "Split current booking range": [
+        "Разбіць бягучы дыяпазон браніравання"
       ],
       "Start import": [
         "Пачаць імпартаванне"
@@ -1276,6 +1285,14 @@
     "Attendee role": {
       "Optional": [
         "Неабавязкова"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Яшчэ ${ hiddenResultsCount } вынік не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікі не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны",
+        "Яшчэ ${ hiddenResultsCount } вынікаў не паказаны"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3245,6 +3262,9 @@
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Неўзабаве вы атрымаеце бяспечны электронны ліст з падрабязнасцямі."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
       ]
@@ -4569,6 +4589,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Звышвысокія хуткасці"
       ]
     },
     "fido2: Error": {
@@ -6045,11 +6070,11 @@
       "Removed participants will be notified.": [
         "Выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
-      "Saving event...": [
-        "Захаванне падзеі...",
-        "Захаванне падзей...",
-        "Захаванне падзей...",
-        "Захаванне падзей..."
+      "Saving event": [
+        "Захаванне падзеі",
+        "Захаванне падзей",
+        "Захаванне падзей",
+        "Захаванне падзей"
       ],
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
@@ -6083,6 +6108,9 @@
       ],
       "Setting up your new address…": [
         "Наладжванне вашага новага адраса…"
+      ],
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Абагуліце гэту старонку, каб іншыя маглі забраніраваць час у вашым календары. Вы зможаце кіраваць ёй у любы час на бакавой панэлі ў раздзеле \"Старонкі браніравання\"."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
@@ -7290,6 +7318,17 @@
       ],
       "Zoom meeting": [
         "Сустрэча па Zoom"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Дата дыяпазону браніравання"
+      ],
+      "End time of the booking range": [
+        "Час завяршэння дыяпазону браніравання"
+      ],
+      "Start time of the booking range": [
+        "Час пачатку дыяпазону браніравання"
       ]
     },
     "Label for contact group color": {
@@ -11939,6 +11978,9 @@
       "High security for your account": [
         "Высокая бяспека для вашага ўліковага запісу"
       ],
+      "Host": [
+        "Арганізатар"
+      ],
       "How does it all work?": [
         "Як гэта ўсё працуе?"
       ],
@@ -12313,6 +12355,9 @@
       ],
       "Your account is protected": [
         "Ваш уліковы запіс абаронены"
+      ],
+      "Your booking is confirmed": [
+        "Ваша браніраванне пацверджана"
       ],
       "Your booking page is ready": [
         "Ваша старонка браніравання гатова"
