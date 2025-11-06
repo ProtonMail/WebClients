@@ -7,7 +7,7 @@ import { queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings'
 import { base64URLStringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
-import { deriveBookingUid } from '../containers/bookings/bookingCryptoUtils';
+import { deriveBookingUid } from '../containers/bookings/utils/bookingCryptoUtils';
 import { useBookingStore } from './booking.store';
 import { decryptBookingContent } from './utils/decryptBookingContent';
 import { generateWeekRangesFromDays } from './utils/generateWeekRangesFromDays';

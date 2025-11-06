@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 
-import { type PartDayEventProps, PartDayEventView } from '../../components/events/PartDayEvent';
-import type { CalendarViewEvent } from '../../containers/calendar/interface';
-import { getBookingSlotStyle } from '../../helpers/color';
+import { type PartDayEventProps, PartDayEventView } from '../../../components/events/PartDayEvent';
+import { getBookingSlotStyle } from '../../../helpers/color';
+import type { CalendarViewEvent } from '../../calendar/interface';
+import { useBookings } from '../bookingsProvider/BookingsProvider';
 
 import './PartDayBookingEvent.scss';
 
@@ -14,7 +15,7 @@ interface PartDayBusyEventProps
     event: CalendarViewEvent;
 }
 
-export const TemporaryPartDayBookingEvent = ({
+export const PartDayBookingEvent = ({
     size,
     style,
     event,
@@ -22,6 +23,8 @@ export const TemporaryPartDayBookingEvent = ({
     eventRef,
     eventPartDuration,
 }: PartDayBusyEventProps) => {
+    const { formData } = useBookings();
+
     const eventStyle = useMemo(() => {
         return getBookingSlotStyle(event.data.calendarData.Color, style);
     }, [event.data.calendarData.Color, style]);
@@ -38,7 +41,13 @@ export const TemporaryPartDayBookingEvent = ({
             isLoaded
             eventPartDuration={eventPartDuration}
         >
-            <div data-testid="calendar-day-week-view:part-day-event"></div>
+            <div
+                data-testid="calendar-day-week-view:part-day-event"
+                className={`booking-cell h-full w-full rounded-sm booking-cell--duration-${formData.duration}`}
+                style={{
+                    '--booking-duration-color': eventStyle['--booking-cell-background'] || '',
+                }}
+            ></div>
         </PartDayEventView>
     );
 };
