@@ -20,6 +20,7 @@ export const DESKTOP_FEATURES = {
     StatsTelemetry: true,
     RestrictedThemeSelection: true,
     ClearAppModal: true,
+    SnapSupport: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {
