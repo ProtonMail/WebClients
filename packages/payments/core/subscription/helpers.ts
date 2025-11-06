@@ -434,6 +434,10 @@ export const isAutoRenewTrial = (subscription: Subscription | undefined) => {
     );
 };
 
+export const isTrialRenewing = (subscription: Subscription | undefined) => {
+    return isTrial(subscription) && subscription?.Renew;
+};
+
 export const isTrialExpired = (subscription: Subscription | undefined) => {
     if (!isTrial(subscription)) {
         return false;

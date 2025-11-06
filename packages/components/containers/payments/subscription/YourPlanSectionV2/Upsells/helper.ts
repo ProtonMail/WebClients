@@ -5,6 +5,7 @@ import {
     type FreeSubscription,
     type PLANS,
     type Subscription,
+    getPlan,
     getPlanName,
     isFreeSubscription,
 } from '@proton/payments';
@@ -30,7 +31,9 @@ export const useSubscriptionPriceComparison = (
     };
 
     return useMemo(() => {
-        if (!subscription || isFreeSubscription(subscription) || plansMapLoading) {
+        const currentPlan = getPlan(subscription);
+
+        if (!subscription || isFreeSubscription(subscription) || plansMapLoading || !currentPlan) {
             return returnFalse;
         }
 
@@ -56,11 +59,12 @@ export const useSubscriptionPriceComparison = (
         );
 
         const cycleLength = subscription.Cycle;
+        const amount = subscription.IsTrial ? currentPlan.Amount : subscription.Amount;
 
         // Compare against the same cycle price
         const price = pricingOptions[cycleLength];
         const normalizedPricePrice = price ? price / cycleLength : undefined;
-        const normalizedSubscriptionPrice = subscription.Amount / cycleLength;
+        const normalizedSubscriptionPrice = amount / cycleLength;
         const priceDifference =
             normalizedPricePrice !== undefined ? Math.max(0, normalizedPricePrice - normalizedSubscriptionPrice) : 0;
         const showPriceDifference = priceDifference > 0;

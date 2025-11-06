@@ -9,6 +9,7 @@ export enum REACTIVATE_SOURCE {
     cancellationFlow = 'cancellation_flow',
     reminderModal = 'reminder_modal',
     banners = 'banners',
+    trial = 'trial',
 }
 
 // We send a string since it comes from a query params, the value is validated in the function
@@ -20,6 +21,8 @@ const validateSource = (source: string) => {
             return REACTIVATE_SOURCE.reminderModal;
         case 'banners':
             return REACTIVATE_SOURCE.banners;
+        case 'trial':
+            return REACTIVATE_SOURCE.trial;
         default:
             return REACTIVATE_SOURCE.default;
     }
