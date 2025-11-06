@@ -29,7 +29,7 @@
         "jsdom@npm:^26.1.0": "patch:jsdom@npm%3A26.1.0#~/.yarn/patches/jsdom-npm-26.1.0-3857255f02.patch",
         "json5": "^2.2.3",
         "merge": "^2.1.1",
-        "node-gyp": "^11.4.2",
+        "node-gyp": "^11.5.0",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
         "terser": "^5.44.0",
@@ -48,11 +48,11 @@
         "@trivago/prettier-plugin-sort-imports": "^5.2.2",
         "@types/jest-when": "^3.5.5",
         "husky": "^9.1.7",
-        "lint-staged": "^16.2.3",
+        "lint-staged": "^16.2.6",
         "nyc": "^17.1.0",
         "prettier": "^3.6.2",
         "sort-package-json": "^3.4.0",
-        "turbo": "^2.5.8"
+        "turbo": "^2.6.0"
     },
     "packageManager": "yarn@4.10.3",
     "engines": {

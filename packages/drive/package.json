@@ -11,13 +11,13 @@
     },
     "dependencies": {
         "@protontech/drive-sdk": "^0.6.0",
-        "@types/node": "^22.18.8"
+        "@types/node": "^22.18.13"
     },
     "devDependencies": {
         "@types/jest": "^30.0.0",
-        "eslint": "^9.37.0",
+        "eslint": "^9.39.0",
         "jest": "^30.2.0",
-        "ts-jest": "^29.4.4",
+        "ts-jest": "^29.4.5",
         "ts-loader": "^9.5.4",
         "ts-node": "^10.9.2",
         "typescript": "^5.9.3",
