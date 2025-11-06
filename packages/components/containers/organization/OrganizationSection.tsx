@@ -94,14 +94,14 @@ const OrganizationSection = ({ app, organization }: Props) => {
 
     return (
         <>
-            {authModal((props) => {
+            {authModal(({ onResolve, onReject, ...props }) => {
                 return (
                     <AuthModal
                         {...props}
                         scope="password"
                         config={unlockPasswordChanges()}
-                        onCancel={props.onReject}
-                        onSuccess={props.onResolve}
+                        onCancel={onReject}
+                        onSuccess={onResolve}
                     />
                 );
             })}
@@ -238,7 +238,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                         setSetupOrganizationModal(true);
                                     };
 
-                                    withLoading(run().catch(errorHandler));
+                                    withLoading(run()).catch(errorHandler);
                                 }}
                             >{c('Action').t`Enable multi-user support`}</Button>
                         </>

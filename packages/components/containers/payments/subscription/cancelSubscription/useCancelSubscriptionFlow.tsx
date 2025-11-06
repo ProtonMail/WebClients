@@ -126,72 +126,58 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
     const modals = (
         <>
-            {cancelTrialModal((props) => {
-                return <CancelTrialModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
+            {cancelTrialModal(({ onResolve, onReject, ...props }) => {
+                return <CancelTrialModal {...props} onConfirm={onResolve} onClose={onReject} />;
             })}
-            {downgradeModal((props) => {
-                return <DowngradeModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
+            {downgradeModal(({ onResolve, onReject, ...props }) => {
+                return <DowngradeModal {...props} onConfirm={onResolve} onClose={onReject} />;
             })}
 
             {organization &&
-                memberDowngradeModal((props) => {
+                memberDowngradeModal(({ onResolve, onReject, ...props }) => {
                     return (
                         <MemberDowngradeModal
                             organization={organization}
                             {...props}
-                            onConfirm={props.onResolve}
-                            onClose={props.onReject}
+                            onConfirm={onResolve}
+                            onClose={onReject}
                         />
                     );
                 })}
             {organization &&
-                lossLoyaltyModal((props) => {
+                lossLoyaltyModal(({ onResolve, onReject, ...props }) => {
                     return (
                         <LossLoyaltyModal
                             organization={organization}
                             {...props}
-                            onConfirm={props.onResolve}
-                            onClose={props.onReject}
+                            onConfirm={onResolve}
+                            onClose={onReject}
                         />
                     );
                 })}
-            {calendarDowngradeModal((props) => {
-                return (
-                    <CalendarDowngradeModal
-                        isDowngrade
-                        {...props}
-                        onConfirm={props.onResolve}
-                        onClose={props.onReject}
-                    />
-                );
+            {calendarDowngradeModal(({ onResolve, onReject, ...props }) => {
+                return <CalendarDowngradeModal isDowngrade {...props} onConfirm={onResolve} onClose={onReject} />;
             })}
-            {highlightPlanDowngradeModal((props) => {
-                return <HighlightPlanDowngradeModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
+            {highlightPlanDowngradeModal(({ onResolve, onReject, ...props }) => {
+                return <HighlightPlanDowngradeModal {...props} onConfirm={onResolve} onClose={onReject} />;
             })}
             {subscription &&
-                inAppPurchaseModal((props) => {
-                    return <InAppPurchaseModal {...props} subscription={subscription} onClose={props.onReject} />;
+                inAppPurchaseModal(({ onResolve, onReject, ...props }) => {
+                    return <InAppPurchaseModal {...props} subscription={subscription} onClose={onReject} />;
                 })}
 
             {currentPlanId ? upsellModal : null}
-            {discountWarningModal((props) => {
-                return (
-                    <DiscountWarningModal
-                        {...props}
-                        type="downgrade"
-                        onConfirm={props.onResolve}
-                        onClose={props.onReject}
-                    />
-                );
+            {discountWarningModal(({ onResolve, onReject, ...props }) => {
+                return <DiscountWarningModal {...props} type="downgrade" onConfirm={onResolve} onClose={onReject} />;
             })}
             {subscription &&
-                passLaunchOfferDowngradeModal((props) => {
+                passLaunchOfferDowngradeModal(({ onResolve, onReject, ...props }) => {
                     return (
                         <PassLaunchOfferDowngradeModal
                             {...props}
                             subscription={subscription}
-                            onConfirm={props.onResolve}
-                            onClose={props.onReject}
+                            onConfirm={onResolve}
+                            onClose={onReject}
                         />
                     );
                 })}

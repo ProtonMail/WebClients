@@ -102,19 +102,11 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
             {incompatibleBrowserModal.render && (
                 <AssistantIncompatibleBrowserModal modalProps={incompatibleBrowserModal.modalProps} />
             )}
-            {hardwareModalPromise((props) => (
-                <AssistantIncompatibleHardwareModal
-                    modalProps={props}
-                    onResolve={props.onResolve}
-                    onReject={props.onReject}
-                />
+            {hardwareModalPromise(({ onResolve, onReject, ...props }) => (
+                <AssistantIncompatibleHardwareModal modalProps={props} onResolve={onResolve} onReject={onReject} />
             ))}
-            {browserModalPromise((props) => (
-                <AssistantIncompatibleBrowserModal
-                    modalProps={props}
-                    onResolve={props.onResolve}
-                    onReject={props.onReject}
-                />
+            {browserModalPromise(({ onResolve, onReject, ...props }) => (
+                <AssistantIncompatibleBrowserModal modalProps={props} onResolve={onResolve} onReject={onReject} />
             ))}
         </ComposerAssistantContext.Provider>
     );

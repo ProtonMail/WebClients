@@ -145,13 +145,8 @@ function LabelsSection({ showPromptOnAction }: Props) {
                 </>
             )}
 
-            {confirmModal((props) => (
-                <ConfirmSortModal
-                    modalProps={props}
-                    onReject={props.onReject}
-                    onResolve={props.onResolve}
-                    type="label"
-                />
+            {confirmModal(({ onResolve, onReject, ...props }) => (
+                <ConfirmSortModal modalProps={props} onReject={onReject} onResolve={onResolve} type="label" />
             ))}
         </SettingsSection>
     );

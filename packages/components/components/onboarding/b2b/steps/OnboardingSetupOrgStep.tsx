@@ -166,7 +166,7 @@ const OnboardingSetupOrgStep = ({ onNextStep, onChangeModalSize }: Props) => {
                     </ModalTwoFooter>
                 </>
             )}
-            {authModal(({ onReject, onResolve, ...props }) => {
+            {authModal(({ onResolve, onReject, ...props }) => {
                 return (
                     <AuthModal
                         {...props}
