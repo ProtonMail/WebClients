@@ -10,6 +10,7 @@ export const selectSyncStore = (state: EasySwitchState): SyncState => state.sync
 export const selectSync = (state: EasySwitchState): SyncMap => state.sync.syncs;
 
 export const selectCreateSyncState = createSelector(selectSyncStore, (state) => state.creatingLoading);
+export const selectSyncListLoadingState = createSelector(selectSyncStore, (state) => state.listLoading);
 
 export const selectSyncIds = createSelector(selectSync, (sync) => {
     return Object.keys(sync);

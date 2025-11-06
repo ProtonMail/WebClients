@@ -1,3 +1,4 @@
+import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
 export enum ModalType {
@@ -5,6 +6,7 @@ export enum ModalType {
     Snooze = 'snooze',
     Unsubscribe = 'unsubscribe',
     CategoriesViewB2BOnboarding = 'categoriesViewB2BOnboarding',
+    BYOESpotlight = 'BYOESpotlight',
 }
 
 export interface ScheduleModalPayload {
@@ -38,11 +40,20 @@ export interface CategoriesViewB2BOnboardingModalPayload {
     };
 }
 
+export interface BYOESpotlightModalPayload {
+    type: ModalType.BYOESpotlight;
+    value: {
+        forwardingSyncs: Sync[];
+        onDisplayed: () => void;
+    };
+}
+
 export type ModalPayload =
     | ScheduleModalPayload
     | SnoozeModalPayload
     | UnsubscribeModalPayload
-    | CategoriesViewB2BOnboardingModalPayload;
+    | CategoriesViewB2BOnboardingModalPayload
+    | BYOESpotlightModalPayload;
 export type ModalListener = (payload: ModalPayload) => void;
 
 export interface GlobalModal {

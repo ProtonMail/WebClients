@@ -134,3 +134,8 @@ jest.mock('proton-mail/components/list/list-telemetry/useListTelemetry.tsx', () 
         return 'INBOX';
     },
 }));
+
+jest.mock('./src/app/hooks/useShowBYOESpotlightModal', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
