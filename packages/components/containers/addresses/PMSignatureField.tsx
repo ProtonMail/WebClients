@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account';
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -20,10 +19,10 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import signatureImg from '@proton/styles/assets/img/illustrations/new-upsells-img/tools.svg';
 
-import { canUpdateSignature } from './helper';
-
 interface Props {
     id: string;
+    enabled: boolean;
+    locked: boolean;
 }
 
 const upsellRef = getUpsellRef({
@@ -33,7 +32,7 @@ const upsellRef = getUpsellRef({
     isSettings: true,
 });
 
-const PMSignature = ({ id }: Props) => {
+const PMSignature = ({ id, enabled, locked }: Props) => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const dispatch = useDispatch();
@@ -41,14 +40,17 @@ const PMSignature = ({ id }: Props) => {
     const [user, loadingUser] = useUser();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [organization, loadingOrganization] = useOrganization();
-    const loadingData = loadingMailSettings || loadingUserSettings || loadingUser || loadingOrganization;
 
     const [loading, withLoading] = useLoading();
     const { state, toggle } = useToggle(!!mailSettings.PMSignature);
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const pmSignatureEnabled = canUpdateSignature(user, organization, mailSettings);
+    if (loadingMailSettings || loadingUserSettings || loadingUser) {
+        return null;
+    }
+
+    // Users with no paid mail plan should be able to disable the feature as it shows an upsell
+    const toggleLocked = user.hasPaidMail && locked;
 
     const handleChange = async (checked: number) => {
         const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePMSignature(checked));
@@ -56,10 +58,6 @@ const PMSignature = ({ id }: Props) => {
         toggle();
         createNotification({ text: c('Success').t`Preference saved` });
     };
-
-    if (loadingData) {
-        return null;
-    }
 
     return (
         <div className="flex flex-1 align-items-center">
@@ -76,12 +74,8 @@ const PMSignature = ({ id }: Props) => {
             <div className="ml-0 md:ml-2 pt-2" data-testid="settings:identity-section:signature-toggle">
                 <Toggle
                     loading={loading}
-                    title={
-                        pmSignatureEnabled
-                            ? undefined
-                            : c('Tooltip: PM signature locked').t`This signature cannot be modified`
-                    }
-                    disabled={!pmSignatureEnabled}
+                    title={enabled ? undefined : c('Tooltip: PM signature locked').t`This signature cannot be modified`}
+                    disabled={toggleLocked}
                     id={id}
                     checked={state}
                     onChange={({ target }) => {
