@@ -136,7 +136,7 @@ const AlsoInYourPlanSection = ({ app, children }: PropsWithChildren<{ app: APP_N
                             gradient="vertical"
                             contentCentered={false}
                             description={
-                                <div className="flex items-center gap-3 p-1">
+                                <div className="flex flex-nowrap items-center gap-3 p-1">
                                     <div className="flex shrink-0 items-center justify-center rounded-lg bg-norm p-2 flex-column md:flex-row flex-nowrap text-left">
                                         <img src={bundleLogo} alt="" className="w-12 ratio-square" />
                                     </div>
