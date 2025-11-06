@@ -19,11 +19,11 @@ import {
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
+import { useBookings } from '../bookingsProvider/BookingsProvider';
+import { BookingLocation, BookingState } from '../bookingsProvider/interface';
+import { getBookingLocationOption, validateFormData } from '../utils/bookingHelpers';
 import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
-import { getBookingLocationOption, validateFormData } from './bookingHelpers';
-import { useBookings } from './bookingsProvider/BookingsProvider';
-import { BookingLocation, BookingState } from './bookingsProvider/interface';
-import { FormRangeList } from './form/FormRangeList';
+import { FormRangeList } from './FormRangeList';
 
 export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration({ includeShortDurations: true, shortLabels: true });

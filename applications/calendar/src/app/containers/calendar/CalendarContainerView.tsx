@@ -59,8 +59,8 @@ import CalendarQuickSettings from '../../components/drawer/CalendarQuickSettings
 import getDateRangeText from '../../components/getDateRangeText';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
-import { BookingSidebar } from '../bookings/BookingSidebar';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
+import { BookingSidebar } from '../bookings/form/BookingSidebar';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import { getMonthDateRange } from './eventStore/prefetching/getMonthDateRange';

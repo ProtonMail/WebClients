@@ -18,13 +18,13 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
-import { encryptBookingPage } from '../bookingCryptoUtils';
+import { encryptBookingPage } from '../utils/bookingCryptoUtils';
 import {
     generateBookingRangeID,
     generateDefaultBookingRange,
     generateSlotsFromRange,
     hasAlreadyARangeForDay,
-} from '../bookingHelpers';
+} from '../utils/bookingHelpers';
 import type { BookingRange, Slot } from './interface';
 import { type BookingFormData, BookingLocation, BookingState, DEFAULT_EVENT_DURATION } from './interface';
 

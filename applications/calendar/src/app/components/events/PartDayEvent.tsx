@@ -4,9 +4,9 @@ import { forwardRef } from 'react';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { PartDayBookingEvent } from '../../containers/bookings/PartDayBookingEvent';
-import { TemporaryPartDayBookingEvent } from '../../containers/bookings/TemporaryPartDayBookingEvent';
-import { isBookingSlotEvent, isTemporaryBookingSlotEvent } from '../../containers/bookings/bookingHelpers';
+import { PartDayBookingEvent } from '../../containers/bookings/timeGridView/PartDayBookingEvent';
+import { TemporaryPartDayBookingEvent } from '../../containers/bookings/timeGridView/TemporaryPartDayBookingEvent';
+import { isBookingSlotEvent, isTemporaryBookingSlotEvent } from '../../containers/bookings/utils/bookingHelpers';
 import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,

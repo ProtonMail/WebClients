@@ -4,7 +4,7 @@ import IconRow from '@proton/components/components/iconRow/IconRow';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import { IcMapPin } from '@proton/icons';
 
-import { BookingLocation } from './bookingsProvider/interface';
+import { BookingLocation } from '../bookingsProvider/interface';
 
 interface FormIconRowProps extends PropsWithChildren {
     title: string;
