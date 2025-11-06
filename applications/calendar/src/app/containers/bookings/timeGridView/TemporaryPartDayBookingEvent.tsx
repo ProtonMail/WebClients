@@ -4,8 +4,6 @@ import { type PartDayEventProps, PartDayEventView } from '../../../components/ev
 import { getBookingSlotStyle } from '../../../helpers/color';
 import type { CalendarViewEvent } from '../../calendar/interface';
 
-import './PartDayBookingEvent.scss';
-
 interface PartDayBusyEventProps
     extends Pick<
         PartDayEventProps,

@@ -6,9 +6,9 @@ import TimeInput from '@proton/components/components/input/TimeInput';
 import { DateInputTwo } from '@proton/components/index';
 import { IcPlus, IcTrash } from '@proton/icons';
 
-import { createBookingRangeNextAvailableTime, validateFormData } from '../bookingHelpers';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
+import { createBookingRangeNextAvailableTime, validateFormData } from '../utils/bookingHelpers';
 
 export const FormRangeList = () => {
     const { bookingRange, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
