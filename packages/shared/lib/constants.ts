@@ -960,6 +960,7 @@ export enum SERVER_FEATURES {
 export enum CLIENT_TYPES {
     MAIL = 1,
     VPN = 2,
+    DRIVE = 4,
     PASS = 5,
     WALLET = 6,
     LUMO = 9,
