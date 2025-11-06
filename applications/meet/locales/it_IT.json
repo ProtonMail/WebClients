@@ -59,6 +59,9 @@
       "Copy link": [
         "Copia link"
       ],
+      "Create meeting": [
+        "Crea la riunione"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -83,6 +86,9 @@
       "Enable video": [
         "Abilita video"
       ],
+      "End meeting for all": [
+        "Termina la riunione per tutti"
+      ],
       "Forgot password?": [
         "Hai dimenticato la password?"
       ],
@@ -103,6 +109,9 @@
       ],
       "Hide timezones": [
         "Nascondi fusi orari"
+      ],
+      "Join": [
+        "Partecipa"
       ],
       "Join meeting": [
         "Unisciti alla riunione"
@@ -182,6 +191,9 @@
       "Search countries": [
         "Cerca tra i paesi"
       ],
+      "Send an encrypted message": [
+        "Invia un messaggio cifrato"
+      ],
       "Settings": [
         "Consenti"
       ],
@@ -212,8 +224,14 @@
       "Start meeting": [
         "Inizia la riunione"
       ],
+      "Stay in meeting": [
+        "Resta nella riunione"
+      ],
       "Stop incoming video": [
         "Interrompi il video in arrivo"
+      ],
+      "Stop presenting": [
+        "Interrompi la presentazione"
       ],
       "Stop receiving video": [
         "Interrompi la ricezione del video"
@@ -236,6 +254,9 @@
       "Use camera": [
         "Usa la webcam"
       ],
+      "Use microphone": [
+        "Utilizza il microfono"
+      ],
       "Use recovery code": [
         "Usa un codice di recupero"
       ],
@@ -250,14 +271,32 @@
       ]
     },
     "Alt": {
+      "Audio settings": [
+        "Impostazioni audio"
+      ],
       "Blur background": [
         "Sfocatura dello sfondo"
       ],
       "Chat": [
         "Chat"
       ],
+      "Close": [
+        "Chiudi"
+      ],
+      "Close search": [
+        "Chiudi ricerca"
+      ],
+      "Copy meeting link": [
+        "Copia il link della riunione"
+      ],
       "Go to dashboard": [
         "Vai alla dashboard"
+      ],
+      "Leave": [
+        "Abbandona"
+      ],
+      "Leave Meeting": [
+        "Lascia la riunione"
       ],
       "Lock meeting": [
         "Blocca riunione"
@@ -270,6 +309,12 @@
       ],
       "Open chat message search": [
         "Apri la ricerca messaggi della chat"
+      ],
+      "Open participants search": [
+        "Apri la ricerca dei partecipanti"
+      ],
+      "Participant host control options": [
+        "Opzioni di controllo per i partecipanti"
       ],
       "Participants": [
         "Partecipanti"
@@ -294,6 +339,9 @@
       ],
       "Toggle chat": [
         "Attiva/disattiva chat."
+      ],
+      "Toggle meeting details": [
+        "Attiva/disattiva i dettagli della riunione"
       ],
       "Toggle microphone": [
         "Attiva/disattiva microfono"
@@ -1284,8 +1332,14 @@
       "Failed to create meeting": [
         "Impossibile creare la riunione"
       ],
+      "Failed to create personal meeting, please refresh the page": [
+        "Impossibile creare la riunione personale, per favore aggiorna la pagina."
+      ],
       "Failed to decrypt session key": [
         "Decriptazione della chiave di sessione non riuscita"
+      ],
+      "Failed to get meeting info": [
+        "Impossibile recuperare le informazioni sulla riunione"
       ],
       "Failed to get room name": [
         "Impossibile ottenere il nome della stanza"
@@ -1301,6 +1355,9 @@
       ],
       "Failed to lock meeting": [
         "Impossibile bloccare la riunione"
+      ],
+      "Failed to rotate personal meeting link": [
+        "Impossibile reimpostare il link della riunione personale"
       ],
       "Failed to start screen share": [
         "Impossibile avviare la condivisione dello schermo"
@@ -1349,6 +1406,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Questo incontro è su una versione obsoleta, l'organizzatore deve terminarlo e aggiornare Meet per riavviare con l'ultima versione."
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
@@ -1481,8 +1541,14 @@
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } ti ha invitato a una riunione di ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:"
       ],
+      "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:\n\n${ time }\n\n${ meetingLink }\n\nMeeting ID: ${ id }": [
+        "${ user.DisplayName } ti ha invitato a una riunione di ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:\n\n${ time }\n\n${ meetingLink }\n\nID riunione: ${ id }"
+      ],
       "${ user.DisplayName }'s Meeting": [
         "Riunione di ${ user.DisplayName }"
+      ],
+      "(you)": [
+        "(tu)"
       ],
       "<Removed dangerous URL>": [
         "<Removed dangerous URL>"
@@ -1505,6 +1571,9 @@
       "camera": [
         "webcam"
       ],
+      "Chat with everyone": [
+        "Chatta con tutti"
+      ],
       "Check your system settings to make sure that a camera is available.": [
         "Controlla le tue impostazioni di sistema per assicurarti che una fotocamera sia disponibile."
       ],
@@ -1513,6 +1582,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
+      ],
+      "Coming soon": [
+        "In arrivo"
       ],
       "Connection lost": [
         "Connessione persa"
@@ -1541,8 +1613,14 @@
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
+      "End-to-end encryption is active for audio and video.": [
+        "La crittografia end-to-end è attiva per audio e video."
+      ],
       "End-to-end encryption is active for screen share": [
         "La crittografia end-to-end è attiva per la condivisione dello schermo."
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "La crittografia end-to-end è attiva per questa chat."
       ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione."
@@ -1562,6 +1640,9 @@
       "Every call, screen share, and chat is end-to-end encrypted to protect your most important connections.": [
         "Ogni chiamata, condivisione schermo e chat è crittografato end-to-end per proteggere le tue connessioni più importanti."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.": [
+        "Per maggiore sicurezza, puoi impostare una frase d'accesso. Non sarà inclusa nell'invito al calendario, ricorda di condividerla con i tuoi ospiti separatamente."
+      ],
       "Free meeting": [
         "Incontro gratuito"
       ],
@@ -1574,8 +1655,14 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
+      "If you’re using Firefox, make sure PeerConnection is enabled.": [
+        "Se stai usando Firefox, assicurati che PeerConnection sia attivato."
+      ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
+      ],
+      "Invitation preview": [
+        "Anteprima invito"
       ],
       "is presenting": [
         "sta presentando"
@@ -1585,6 +1672,9 @@
       ],
       "Learn more": [
         "Scopri di più"
+      ],
+      "Left": [
+        "Rimasti"
       ],
       "Loading": [
         "Caricamento in corso"
@@ -1604,6 +1694,9 @@
       "Meeting ID: ${ id }": [
         "ID riunione: ${ id }"
       ],
+      "Meeting link": [
+        "Collegamento alla riunione"
+      ],
       "Meeting locked. No new participants can join": [
         "Riunione bloccata. Nessun nuovo partecipante può unirsi"
       ],
@@ -1613,14 +1706,23 @@
       "Member": [
         "Membro"
       ],
+      "microphone": [
+        "microfono"
+      ],
       "New": [
         "Nuovo"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Nessun ${ microphoneLinkButton }${ andString }${ cameraLinkButton } rilevato."
       ],
+      "No camera detected": [
+        "Nessuna webcam rilevata"
+      ],
       "No camera detected.": [
         "Nessuna webcam rilevata."
+      ],
+      "No microphone detected": [
+        "Nessun microfono rilevato"
       ],
       "No microphone detected.": [
         "Nessun microfono rilevato."
@@ -1646,8 +1748,14 @@
       "Permission denied": [
         "Autorizzazione negata"
       ],
+      "Permissions not given.": [
+        "Autorizzazioni non concesse."
+      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Abilita l’accesso al tuo ${ microphoneLinkButton }${ andString }${ cameraLinkButton } per un’esperienza ottimale."
+      ],
+      "Please enter the passphrase to decrypt and view this meeting": [
+        "Inserisci la frase d'accesso per decriptare e visualizzare questa riunione"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
@@ -1660,6 +1768,9 @@
       ],
       "Select a camera": [
         "Seleziona una webcam"
+      ],
+      "Select a microphone": [
+        "Seleziona un microfono"
       ],
       "Select a speaker": [
         "Seleziona un altoparlante"
@@ -1679,6 +1790,9 @@
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Condividi questo link per invitare altri. Puoi anche trovarlo in qualsiasi momento cliccando sull'icona info nella barra degli strumenti."
       ],
+      "Stop sharing your screen": [
+        "Interrompi la condivisione del tuo schermo"
+      ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Questa è una chat crittografata end-to-end con messaggi effimeri. Dopo che lasci la chiamata, non potrai accedere a questa chat."
       ],
@@ -1687,6 +1801,9 @@
       ],
       "This meeting is password protected": [
         "Questa riunione è protetta da password"
+      ],
+      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
+        "Questa riunione è protetta da crittografia end-to-end con Messaging Layer Security (MLS)."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
@@ -1726,6 +1843,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Puoi comunque disattivare il microfono e la webcam in qualsiasi momento durante la riunione"
+      ],
+      "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
+        "Sei stato invitato a partecipare a una riunione sicura. Conferma il tuo nome e clicca qui sotto per entrare."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
@@ -1819,8 +1939,14 @@
       "Verification code": [
         "Codice di verifica"
       ],
+      "Video": [
+        "Video"
+      ],
       "What happened?": [
         "Cos'è successo?"
+      ],
+      "Your name": [
+        "Il tuo nome"
       ],
       "Your password (admin)": [
         "La tua password (admin)"
@@ -1856,6 +1982,9 @@
     "meet_2025 Action": {
       "Leave meeting": [
         "Lascia la riunione"
+      ],
+      "Stay in the meeting": [
+        "Resta nella riunione"
       ]
     },
     "meet_2025 Error": {
@@ -1866,6 +1995,9 @@
     "Notification": {
       "Coming soon": [
         "In arrivo"
+      ],
+      "Copied to clipboard": [
+        "Copiato negli appunti"
       ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
@@ -1889,14 +2021,23 @@
       "E.g., ": [
         "Ad es "
       ],
+      "Enter meeting title": [
+        "Inserisci il titolo della riunione"
+      ],
       "Enter passphrase": [
         "Inserisci la frase di accesso"
       ],
       "Enter secret passphrase": [
         "Inserisci frase d'accesso segreta"
       ],
+      "Enter time": [
+        "Inserisci ora"
+      ],
       "Find...": [
         "Cerca..."
+      ],
+      "Loading...": [
+        "Caricamento in corso..."
       ],
       "Password": [
         "Password"
@@ -1906,6 +2047,12 @@
       ],
       "Select": [
         "Seleziona"
+      ],
+      "Type an encrypted message...": [
+        "Digita un messaggio crittografato..."
+      ],
+      "Type your name": [
+        "Digita il tuo nome"
       ]
     },
     "Safety review": {
@@ -2025,6 +2172,9 @@
       "Enter your password": [
         "Inserisci la tua password"
       ],
+      "Epoch": [
+        "Epoca"
+      ],
       "Help and feedback": [
         "Aiuto e feedback"
       ],
@@ -2054,6 +2204,9 @@
       ],
       "Minicalendar": [
         "Mini calendario"
+      ],
+      "MLS state": [
+        "Stato MLS"
       ],
       "Participants": [
         "Partecipanti"
