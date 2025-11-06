@@ -2411,6 +2411,11 @@
         "Ubegrenset antall hide-my-email-aliaser"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Lynraske hastigheter"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
@@ -4973,6 +4978,9 @@
       "${ app } storage": [
         "${ app }-lagring"
       ],
+      "${ app } storage used": [
+        "Lagringsplass brukt ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% full"
       ],
@@ -4981,6 +4989,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Storage used": [
+        "Lagringsplass brukt"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vi legger til kredittene for den gjenværende tiden til ${ BRAND_NAME }-kontoen din."

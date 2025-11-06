@@ -86,6 +86,9 @@
       "Add PayPal": [
         "Legg til PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Legg til vervekobling til ${ MAIL_APP_NAME }-signaturen"
+      ],
       "Add user": [
         "Legg til bruker"
       ],
@@ -1067,6 +1070,10 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
+        "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ekstra egendefinert domene",
         "${ domains } ekstra egendefinerte domener"
@@ -1074,6 +1081,10 @@
       "${ ips } server": [
         "${ ips } tjener",
         "${ ips } tjenere"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
+        "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } brukere)"
       ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
@@ -1086,6 +1097,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } egendefinert domene",
+        "${ quantity } egendefinerte domener"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } lisens",
@@ -1399,6 +1414,12 @@
       ],
       "Unsupported event": [
         "Ikke støttet hendelse"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat til som ikke vises",
+        "${ hiddenResultsCount } resultater til som ikke vises"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1896,6 +1917,9 @@
       "Continue your subscription": [
         "Fortsett abonnementet"
       ],
+      "Copy": [
+        "Kopier"
+      ],
       "Create label": [
         "Opprett etikett"
       ],
@@ -1907,6 +1931,9 @@
       ],
       "Remind me later": [
         "Påminn meg senere"
+      ],
+      "Send": [
+        "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funksjoner"
@@ -3235,11 +3262,17 @@
       "To start, give your organization a name.": [
         "For å starte, gi organisasjonen din et navn."
       ],
+      "Track the status and activity of your referrals": [
+        "Spor statusen og aktiviteten til vervingene dine"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Du vil motta ${ referralInfo.referrerRewardAmount } i ${ BRAND_NAME }-kreditt når personen du inviterer registrerer seg for en ${ BRAND_NAME }-plan, og de vil også få ${ referralInfo.refereeRewardAmount } i kreditter for å komme i gang."
       ]
     },
     "description": {
@@ -4741,6 +4774,9 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } enheter"
       ],
+      "@pm.me address": [
+        "@pm.me-adresse"
+      ],
       "Ad-blocker and malware protection": [
         "Annonseblokkering og skadevarebeskyttelse"
       ],
@@ -5108,6 +5144,9 @@
       ],
       "Domain": [
         "Domene"
+      ],
+      "Drag to reorder": [
+        "Dra for å omorganisere"
       ],
       "Status": [
         "Status"
@@ -5527,6 +5566,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabatt"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } er ugyldig"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: bilde i full størrelse"
       ],
@@ -5687,6 +5729,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importer dine eksisterende koder** fra andre 2FA-apper, som Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter vennene dine** til ${ BRAND_NAME } med vervekoblingen."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
@@ -5993,6 +6038,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopier foreslått passord til utklippstavlen"
+      ],
+      "Copy your referral link": [
+        "Kopier vervekoblingen din"
       ],
       "Country code": [
         "Landskode"
@@ -6326,6 +6374,12 @@
       "Get ${ upsellPlanName }": [
         "Skaff deg ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Få **${ referrerRewardAmount } kreditter** for hver venn som abonnerer."
+      ],
+      "Get started with the referral link above.": [
+        "Kom i gang med vervekoblingen ovenfor."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
       ],
@@ -6476,6 +6530,13 @@
       ],
       "Invite rejected": [
         "Invitasjon avslått"
+      ],
+      "Invite successfully sent": [
+        "Invitasjon ble sendt",
+        "Invitasjonene ble sendt"
+      ],
+      "Invited": [
+        "Invitert"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dager å endre en tjeners land, så sørg for at valget ditt er riktig."
@@ -6758,6 +6819,9 @@
       "P2P": [
         "P2P"
       ],
+      "Paid for a plan": [
+        "Betalt for en plan"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - tilpasset e-post bekreftet"
       ],
@@ -6880,6 +6944,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Offentlige personer, journalister, ledere og andre som kan være målet for cyberangrep, oppfordres sterkt til å aktivere ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Offentlig kobling til invitasjon"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling av dokumenter støttes enda ikke."
       ],
@@ -6891,6 +6958,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
+      ],
+      "Referral link copied to your clipboard": [
+        "Vervekobling kopiert til utklippstavlen din"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
@@ -6967,6 +7037,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Send e-poster for å oppmuntre dine medlemmer til å beskytte deres kontoer med 2FA."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-post."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
       ],
@@ -7016,6 +7089,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logg på ${ MAIL_APP_NAME } for å aktivere din adresse"
       ],
+      "Signed up": [
+        "Registrert"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
       ],
@@ -7037,9 +7113,6 @@
       "Step ${ step }": [
         "Trinn ${ step }",
         "Trinn ${ step }"
-      ],
-      "Storage": [
-        "Lagring"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -7615,6 +7688,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruke følgende påloggingsinformasjon for å koble til en ${ VPN_APP_NAME }-tjener ved å bruke en tredje-part, åpen kilde VPN-app, som Tunnelblick for macOS eller OpenVPN for GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Du kan ikke sendre flere enn ${ emailSendLimitNumber } e-postinvitasjon de neste 24 timene",
+        "Du kan ikke sendre flere enn ${ emailSendLimitNumber } e-postinvitasjoner de neste 24 timene"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Du kan ikke verve ${ MAIL_APP_NAME }-brukere"
+      ],
+      "You don't have any referrals.": [
+        "Du har ingen vervinger."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ],
@@ -7723,6 +7806,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Din gratis prøveperiode inkluderer én dedikert tjener."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Vennene dine får **2 uker gratis** på den valgte planen."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
@@ -7959,6 +8045,9 @@
       "Account storage": [
         "Kontolagring"
       ],
+      "Activity": [
+        "Aktivitet"
+      ],
       "Add all organization members": [
         "Legg til alle organisasjonsmedlemmene"
       ],
@@ -8018,6 +8107,9 @@
       ],
       "Authenticator app": [
         "Autentiseringsapp"
+      ],
+      "Awarded": [
+        "Belønnet"
       ],
       "Backup password": [
         "Reservepassord"
@@ -8150,6 +8242,9 @@
       ],
       "Current email": [
         "Nåværende e-post"
+      ],
+      "Date": [
+        "Dato"
       ],
       "Default language": [
         "Standard språk"
@@ -8294,6 +8389,9 @@
       ],
       "Interval": [
         "Intervall"
+      ],
+      "Invite via email": [
+        "Inviter via e-post"
       ],
       "Issuer ID": [
         "Utsteder-ID"
@@ -8454,6 +8552,9 @@
       "Payment method": [
         "Betalingsmåte"
       ],
+      "Pending": [
+        "Ventende"
+      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -8517,6 +8618,9 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Reward": [
+        "Belønning"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -8534,6 +8638,9 @@
       ],
       "Server name": [
         "Tjenernavn"
+      ],
+      "Share your referral link": [
+        "Del vervekoblingen din"
       ],
       "Show ${ n } administrator": [
         "Vis ${ n } administrator",
@@ -8895,6 +9002,9 @@
       ],
       "Terms": [
         "Vilkår"
+      ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
       ],
       "Trouble signing in?": [
         "Problemer med å logge på?"
@@ -12904,6 +13014,9 @@
       "${ app } storage": [
         "${ app }-lagring"
       ],
+      "${ app } storage used": [
+        "Lagringsplass brukt ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% full"
       ],
@@ -12915,6 +13028,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME }-tjenester"
+      ],
+      "Storage used": [
+        "Lagringsplass brukt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "For å fortsette å bruke ${ BRAND_NAME }-produkter må du frigjøre plass eller ${ upgrade }"
@@ -13836,6 +13952,14 @@
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } venn invitert",
+        "${ friendsInvited } venner invitert"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } venn abonnerte",
+        "${ friendsSubscribed } venner abonnerte"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME }-klienter"
       ],
@@ -14108,6 +14232,9 @@
       "Creating user accounts": [
         "Oppretter brukerkontoer"
       ],
+      "Credit earned": [
+        "Kreditt tjent"
+      ],
       "Credits": [
         "Kreditter"
       ],
@@ -14347,6 +14474,9 @@
       "Gift code": [
         "Gavekode"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Gi ${ refereeRewardAmount } og 2 uker gratis. Få ${ referrerRewardAmount } kreditter."
+      ],
       "Groups": [
         "Grupper"
       ],
@@ -14389,6 +14519,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
+      ],
+      "Invite friends. Get credits.": [
+        "Inviter venner. Få kreditter."
       ],
       "Invoices": [
         "Fakturaer"
@@ -14500,6 +14633,9 @@
       ],
       "Recovery": [
         "Gjenoppretting"
+      ],
+      "Refer a friend": [
+        "Verv en venn"
       ],
       "Remove all members?": [
         "Fjern alle medlemmer?"
@@ -14781,6 +14917,9 @@
       "Your plan": [
         "Din plan"
       ],
+      "Your referrals": [
+        "Dine vervinger"
+      ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
       ],
@@ -14920,6 +15059,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Opprinnelse IP-adresse og Internett-leverandør (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Angir den følgende bunnteksten i e-poster du sender ut: ${ signature } Koblingen peker til din vervekobling. Bunnteksten vises under signaturen din. Du kan tilpasse signaturen din når som helst i innstillinger."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Retningslinjer for delte tjenere kan brukes på enkeltbrukere eller grupper"
@@ -15570,6 +15712,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved å slette dette telefonnummeret vil du ikke lenger kunne gjenopprette kontoen din."
+      ],
+      "Please add at least one recipient.": [
+        "Legg til minst én mottaker."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."

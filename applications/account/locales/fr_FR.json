@@ -1712,6 +1712,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
@@ -1719,6 +1726,10 @@
       "${ ips } server": [
         "${ ips } serveur",
         "${ ips } serveurs"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
       ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
@@ -1731,6 +1742,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
@@ -2111,6 +2126,12 @@
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
         "Ajouter au calendrier et marquer comme étant en attente."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } autre résultat non affiché",
+        "${ hiddenResultsCount } autres résultats non affichés"
       ]
     },
     "Autoresponse": {
@@ -2520,6 +2541,9 @@
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Apprenez à activer ${ VPN_APP_NAME } sur votre routeur."
       ],
+      "Protect your business communications": [
+        "Protégez vos communications d'entreprise"
+      ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Protégez votre entreprise contre les violations de données et rendez le travail à distance plus sûr avec un VPN d'entreprise."
       ],
@@ -2540,6 +2564,12 @@
       ],
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Nous expliquons comment changer les adresses IP externes et locales de votre appareil Windows."
+      ],
+      "What is an email alias?": [
+        "Qu'est-ce qu'un alias d'adresse e-mail ?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Qu'est-ce que le chiffrement de bout en bout et comment fonctionne-t-il ?"
       ],
       "Which VPN protocol is the best?": [
         "Quel est le meilleur protocole VPN ?"
@@ -4329,6 +4359,17 @@
         "Tous les ${ interval } jours, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Découvrez une véritable liberté en ligne et protégez votre vie privée."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Profitez pleinement de votre abonnement ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Protégez vos fichiers, photos et documents avec ${ maxDriveSpace } de stockage cloud gratuit."
+      ]
+    },
     "Day": {
       "Friday": [
         "Vendredi"
@@ -4784,6 +4825,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "L’obtenir sur Google Play"
       ],
       "Get the app": [
         "Obtenez l'application"
@@ -7139,6 +7183,9 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } appareils"
       ],
+      "@pm.me address": [
+        "Adresse @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueur de publicité et protection contre les logiciels malveillants"
       ],
@@ -7728,6 +7775,9 @@
       ],
       "Domain": [
         "Domaine"
+      ],
+      "Drag to reorder": [
+        "Faire glisser pour réorganiser"
       ],
       "Status": [
         "État"
@@ -10543,9 +10593,6 @@
         "Étape ${ step }",
         "Étape ${ step }"
       ],
-      "Storage": [
-        "Espace de stockage"
-      ],
       "Storage allocated to other users in this organisation": [
         "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
       ],
@@ -13223,6 +13270,9 @@
       ],
       "Share your referral link": [
         "Partagez votre lien de parrainage"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Partagé entre ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Afficher ${ n } administrateur",
@@ -20065,6 +20115,9 @@
       "${ app } storage": [
         "espace de stockage de ${ app }"
       ],
+      "${ app } storage used": [
+        "Espace de stockage utilisé de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } plein à ${ percentage } %"
       ],
@@ -20085,6 +20138,9 @@
       ],
       "Get more storage": [
         "Obtenir plus d'espace de stockage"
+      ],
+      "Storage used": [
+        "Espace de stockage utilisé"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ upgrade }."

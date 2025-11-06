@@ -1493,7 +1493,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -5590,6 +5591,11 @@
         "Ubegrænsede hide-my-email-aliasser"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Lynhurtige hastigheder"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
@@ -7495,8 +7501,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7982,17 +7987,11 @@
       "Saved: ${ dateString }": [
         "Gemt: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Gemmer kladde…"
-      ],
       "Scan the QR code with your mobile device": [
         "Scan QR-koden med din mobilenhed"
       ],
       "Scheduled send of this message will be canceled.": [
         "Planlagt afsendelse af denne besked aflyses."
-      ],
-      "Scheduling message...": [
-        "Planlægger besked..."
       ],
       "Scribe panel": [
         "Scribe-panel"
@@ -8036,9 +8035,6 @@
       ],
       "Sending": [
         "Afsender"
-      ],
-      "Sending message...": [
-        "Sender besked ..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Afsendelse af beskeder fra @pm.me-adresse er en betalt funktion. Din besked afsendes via din standardadresse ${ email }"

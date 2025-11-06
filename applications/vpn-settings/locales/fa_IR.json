@@ -945,11 +945,17 @@
       "Continue using ${ planTitle }": [
         "ادامه با استفاده از ${ planTitle }"
       ],
+      "Copy": [
+        "روگرفت"
+      ],
       "Create label": [
         "ایجاد برچسب"
       ],
       "Maybe later": [
         "شاید بعدا"
+      ],
+      "Send": [
+        "ارسال"
       ],
       "Take a tour": [
         "نمایش آموزش"
@@ -3148,6 +3154,9 @@
         "${ calendarsToBeMergedCount } تقویم ادغام شده",
         "${ calendarsToBeMergedCount } تقویم ادغام شده"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } نامعتبر است"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } و ${ CALENDAR_APP_NAME }"
       ],
@@ -3519,6 +3528,10 @@
       "Internet connection restored.": [
         "اتصال اینترنت برقرار شد."
       ],
+      "Invite successfully sent": [
+        "دعوت با موفقیت ارسال شد",
+        "دعوت ها با موفقیت ارسال شدند"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "تنها کافیست انتخاب خود را تأیید کنید سپس ما بقیهٔ کار را انجام می‌دهیم."
       ],
@@ -3633,6 +3646,9 @@
       "Protected by Swiss privacy laws": [
         "محافظت شده توسط قوانین حریم خصوصی سوئیس"
       ],
+      "Public link invite": [
+        "دعوتنامه لینک عمومی"
+      ],
       "Recently used servers:": [
         "سرورهای تازه استفاده شده:"
       ],
@@ -3641,6 +3657,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "اطلاعات بازیابی بر روی این دستگاه باقی خواهد ماند مگر اینکه شما آن را برای حذف انتخاب کنید."
+      ],
+      "Referral link copied to your clipboard": [
+        "لینک معرف به کلیپبورد کپی شد"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "بازخوانی صفحه یا ${ link } بطور خودکار بیشتر مسائل را حل خواهد کرد."
@@ -3678,15 +3697,15 @@
       "Set up your organization": [
         "سازمان خود را راه اندازی کنید"
       ],
+      "Signed up": [
+        "ثبت نام انجام شد"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجا که شما یک کاربر وفادار هستید، حساب شما امکانات اضافی فعال شده‌ای دارد."
       ],
       "Step ${ step }": [
         "قدم ${ step }",
         "مرحله ${ step }"
-      ],
-      "Storage": [
-        "حافظه"
       ],
       "Storage allocated to other users in this organisation": [
         "فضای ذخیره سازی اختصاص داده شده به کابران دیگر این سازمان"
@@ -3891,6 +3910,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "میتوانید با استفاده از اطلاعات ذیل به یک سرور ${ VPN_APP_NAME } با استفاده از برنامه های VPN متن باز دیگر مانند Tunnelblick برای macOS یا OpenVPN برای لینوکس/GNU متصل شوید."
       ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "شما نمیتوانید ${ MAIL_APP_NAME } کاربر را معرفی کنید"
+      ],
       "You have no invoices.": [
         "شما هیچ صورت‌حسابی ندارید."
       ],
@@ -4051,6 +4073,9 @@
       "Account storage": [
         "فضای ذخیره‌‌سازی حساب کاربری"
       ],
+      "Activity": [
+        "فعالیت"
+      ],
       "Address": [
         "نشانی"
       ],
@@ -4189,6 +4214,9 @@
       "Current display name": [
         "نام نمایشی فعلی"
       ],
+      "Date": [
+        "تاریخ"
+      ],
       "Default language": [
         "زبان پیش‌فرض"
       ],
@@ -4287,6 +4315,9 @@
       ],
       "Interval": [
         "بازه"
+      ],
+      "Invite via email": [
+        "دعوت بوسیله ایمیل"
       ],
       "Keep me signed in": [
         "مرا در سیستم نگهدار"
@@ -4404,6 +4435,9 @@
       ],
       "Payment method": [
         "روش پرداخت"
+      ],
+      "Pending": [
+        "در انتظار"
       ],
       "Phone number": [
         "شماره تلفن"
@@ -6842,6 +6876,9 @@
       "Recovery": [
         "بازیابی"
       ],
+      "Refer a friend": [
+        "معرفی به یک دوست"
+      ],
       "Report a problem": [
         "گزارش یک مشکل"
       ],
@@ -7250,6 +7287,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "با حذف این شماره تلفن، شما دیگر قادر به بازیابی حساب خود نخواهید بود."
+      ],
+      "Please add at least one recipient.": [
+        "لطفا حداقل یک گیرنده اضافه کنید."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "گزارش‌ها رمزنگاری سرتاسری نیستند، لطفا هیچ اطلاعات حساسی ارسال نکنید."

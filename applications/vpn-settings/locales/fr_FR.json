@@ -86,6 +86,9 @@
       "Add PayPal": [
         "Ajouter PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Ajouter votre lien de parrainage à la signature de ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Ajouter un utilisateur"
       ],
@@ -1067,6 +1070,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateur)",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe (pour ${ quantity } utilisateurs)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domaine personnalisé supplémentaire",
         "${ domains } domaines personnalisés supplémentaires"
@@ -1074,6 +1084,10 @@
       "${ ips } server": [
         "${ ips } serveur",
         "${ ips } serveurs"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateur)",
+        "Assistant IA ${ LUMO_APP_NAME } (pour ${ quantity } utilisateurs)"
       ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
@@ -1086,6 +1100,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domaine personnalisé",
+        "${ quantity } domaines personnalisés"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
@@ -1399,6 +1417,12 @@
       ],
       "Unsupported event": [
         "L'événement n'est pas pris en charge."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } autre résultat non affiché",
+        "${ hiddenResultsCount } autres résultats non affichés"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1896,6 +1920,9 @@
       "Continue your subscription": [
         "Poursuivre votre abonnement"
       ],
+      "Copy": [
+        "Copier"
+      ],
       "Create label": [
         "Créez un label"
       ],
@@ -1907,6 +1934,9 @@
       ],
       "Remind me later": [
         "Me le rappeler plus tard"
+      ],
+      "Send": [
+        "Envoyer"
       ],
       "Set up other features": [
         "Configurez d'autres fonctionnalités"
@@ -3235,11 +3265,17 @@
       "To start, give your organization a name.": [
         "Pour commencer, donnez un nom à votre organisation."
       ],
+      "Track the status and activity of your referrals": [
+        "Suivez l'état et l'activité de vos parrainages"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilisez ce guide pour que votre organisation bénéficie rapidement du chiffrement et de l’écosystème de respect de la vie privée de pointe de ${ BRAND_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Vous recevrez ${ referralInfo.referrerRewardAmount } sous forme de crédits ${ BRAND_NAME } lorsque la personne que vous invitez s'inscrira à un abonnement ${ BRAND_NAME }, et qu'elle recevra également ${ referralInfo.refereeRewardAmount } sous forme de crédits pour commencer."
       ]
     },
     "description": {
@@ -4741,6 +4777,9 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } appareils"
       ],
+      "@pm.me address": [
+        "Adresse @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueur de publicité et protection contre les logiciels malveillants"
       ],
@@ -5108,6 +5147,9 @@
       ],
       "Domain": [
         "Domaine"
+      ],
+      "Drag to reorder": [
+        "Faire glisser pour réorganiser"
       ],
       "Status": [
         "État"
@@ -5527,6 +5569,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent } % de réduction"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } n'est pas valide."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName } : image en taille réelle"
       ],
@@ -5687,6 +5732,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importez vos codes existants** depuis d'autres applications A2F, telles que Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitez vos amis** sur ${ BRAND_NAME } avec votre lien de parrainage."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Étape 1 :** Invitez vos amis sur ${ BRAND_NAME } avec votre lien de parrainage."
@@ -5993,6 +6041,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Copiez la suggestion de mot de passe dans le presse-papiers."
+      ],
+      "Copy your referral link": [
+        "Copiez votre lien de parrainage."
       ],
       "Country code": [
         "Indicatif du pays"
@@ -6326,6 +6377,12 @@
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Obtenez **${ referrerRewardAmount } de crédits** pour chacun de vos amis qui s'abonne."
+      ],
+      "Get started with the referral link above.": [
+        "Commencez par le lien de parrainage ci-dessus."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
       ],
@@ -6476,6 +6533,13 @@
       ],
       "Invite rejected": [
         "L'invitation a été refusée."
+      ],
+      "Invite successfully sent": [
+        "L'invitation a été envoyée.",
+        "Les invitations ont été envoyées."
+      ],
+      "Invited": [
+        "Invité"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Cela prend 10 jours pour modifier le pays d'un serveur. Assurez-vous que votre sélection soit correcte."
@@ -6755,6 +6819,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Il y a d'autres administrateurs dans votre organisation, vous devez leur communiquer le nouveau mot de passe."
       ],
+      "Paid for a plan": [
+        "Vous avez payé pour un abonnement."
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - l'e-mail personnalisé a été confirmé."
       ],
@@ -6877,6 +6944,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Si vous êtes une personnalité publique, un journaliste, un dirigeant ou une personne susceptible d'être la cible de cyberattaques, nous vous recommandons d'activer ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Lien d'invitation public"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Le partage public de documents n'est pas encore pris en charge."
       ],
@@ -6888,6 +6958,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
+      ],
+      "Referral link copied to your clipboard": [
+        "Le lien de parrainage est copié dans votre presse-papiers."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
@@ -6964,6 +7037,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envoyez un message à vos membres pour les encourager à protéger leurs comptes en utilisant l'authentification à deux facteurs."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }.</a>"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Les paiements via SEPA ne sont pas disponibles pour l'instant. Réessayez ultérieurement."
       ],
@@ -7013,6 +7089,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Connectez-vous à ${ MAIL_APP_NAME } pour activer votre adresse."
       ],
+      "Signed up": [
+        "Inscrit"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
@@ -7034,9 +7113,6 @@
       "Step ${ step }": [
         "Étape ${ step }",
         "Étape ${ step }"
-      ],
-      "Storage": [
-        "Espace de stockage"
       ],
       "Storage allocated to other users in this organisation": [
         "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
@@ -7612,6 +7688,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application VPN open source tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Vous ne pouvez pas envoyer plus d'${ emailSendLimitNumber } message d'invitation au cours des 24 prochaines heures.",
+        "Vous ne pouvez pas envoyer plus de ${ emailSendLimitNumber } messages d'invitation au cours des 24 prochaines heures."
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Vous ne pouvez pas parrainer les utilisateurs de ${ MAIL_APP_NAME }."
+      ],
+      "You don't have any referrals.": [
+        "Vous n'avez aucun parrainage."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
@@ -7720,6 +7806,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Votre essai gratuit inclut 1 serveur dédié."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Vos amis bénéficieront de **2 semaines gratuites** sur l'abonnement qu'ils auront choisi."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vos informations sont en sécurité avec nous. Nous ne vous contacterons que si cela est nécessaire pour fournir nos services."
@@ -7956,6 +8045,9 @@
       "Account storage": [
         "Espace de stockage du compte"
       ],
+      "Activity": [
+        "Activité"
+      ],
       "Add all organization members": [
         "Ajouter tous les membres de l'organisation"
       ],
@@ -8015,6 +8107,9 @@
       ],
       "Authenticator app": [
         "Application d'authentification"
+      ],
+      "Awarded": [
+        "Attribué"
       ],
       "Backup password": [
         "Mot de passe de secours"
@@ -8147,6 +8242,9 @@
       ],
       "Current email": [
         "Adresse e-mail actuelle"
+      ],
+      "Date": [
+        "Date"
       ],
       "Default language": [
         "Langue par défaut"
@@ -8291,6 +8389,9 @@
       ],
       "Interval": [
         "Intervalle"
+      ],
+      "Invite via email": [
+        "Inviter par e-mail"
       ],
       "Issuer ID": [
         "ID de l'émetteur"
@@ -8451,6 +8552,9 @@
       "Payment method": [
         "Moyen de paiement"
       ],
+      "Pending": [
+        "En attente"
+      ],
       "Phone number": [
         "Numéro de téléphone"
       ],
@@ -8514,6 +8618,9 @@
       "Reveal password": [
         "Afficher le mot de passe"
       ],
+      "Reward": [
+        "Récompense"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
@@ -8531,6 +8638,12 @@
       ],
       "Server name": [
         "Nom du serveur"
+      ],
+      "Share your referral link": [
+        "Partagez votre lien de parrainage"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Partagé entre ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Afficher ${ n } administrateur",
@@ -8888,6 +9001,9 @@
         "Se connecter"
       ],
       "Terms": [
+        "Conditions générales d'utilisation"
+      ],
+      "Terms and conditions": [
         "Conditions générales d'utilisation"
       ],
       "Trouble signing in?": [
@@ -12895,6 +13011,9 @@
       "${ app } storage": [
         "espace de stockage de ${ app }"
       ],
+      "${ app } storage used": [
+        "Espace de stockage utilisé de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } plein à ${ percentage } %"
       ],
@@ -12906,6 +13025,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pour tous les services ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Espace de stockage utilisé"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pour continuer à utiliser les produits ${ BRAND_NAME }, libérez de l’espace ou ${ upgrade }."
@@ -13831,6 +13953,14 @@
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } ami invité",
+        "${ friendsInvited } amis invités"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } ami abonné",
+        "${ friendsSubscribed } amis se sont abonnés"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clients ${ VPN_APP_NAME }"
       ],
@@ -14103,6 +14233,9 @@
       "Creating user accounts": [
         "Création de comptes utilisateurs"
       ],
+      "Credit earned": [
+        "Crédit gagné"
+      ],
       "Credits": [
         "Crédits"
       ],
@@ -14342,6 +14475,9 @@
       "Gift code": [
         "Code-cadeau"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Donnez ${ refereeRewardAmount } et 2 semaines gratuites. Recevez ${ referrerRewardAmount } crédits."
+      ],
       "Groups": [
         "Groupes"
       ],
@@ -14384,6 +14520,9 @@
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Invite friends. Get credits.": [
+        "Invitez vos amis et recevez des crédits."
       ],
       "Invoices": [
         "Factures"
@@ -14495,6 +14634,9 @@
       ],
       "Recovery": [
         "Récupération"
+      ],
+      "Refer a friend": [
+        "Parrainer un ami"
       ],
       "Remove all members?": [
         "Retirer tous les membres ?"
@@ -14776,6 +14918,9 @@
       "Your plan": [
         "Votre abonnement"
       ],
+      "Your referrals": [
+        "Vos références"
+      ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
       ],
@@ -14915,6 +15060,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adresse IP d'origine et fournisseur d'accès internet (FAI)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Ajoute le message suivant sous votre signature d'e-mail : ${ signature } Le lien renvoie vers votre lien de parrainage. Vous pouvez toujours personnaliser votre signature dans les paramètres."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Les politiques de serveur partagé peuvent être appliquées à chaque utilisateur ou à des groupes."
@@ -15550,6 +15698,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "En supprimant ce numéro de téléphone, vous ne pourrez plus récupérer votre compte."
+      ],
+      "Please add at least one recipient.": [
+        "Ajoutez au moins un destinataire."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."

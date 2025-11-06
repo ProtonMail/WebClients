@@ -3364,9 +3364,6 @@
       "External accounts are not supported yet": [
         "Externe accounts worden nog niet ondersteund"
       ],
-      "External invitations are not available yet.": [
-        "Externe uitnodigingen zijn nog niet beschikbaar."
-      ],
       "External invitations are temporarily disabled.": [
         "Externe uitnodigingen zijn tijdelijk uitgeschakeld."
       ],
@@ -4197,6 +4194,11 @@
         "Onbeperkt aantal hide-my-email-aliassen"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Hoge snelheden"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
@@ -5006,12 +5008,6 @@
       "Anonymous": [
         "Anoniem"
       ],
-      "Anyone with this link can access your file.": [
-        "Iedereen met deze link heeft toegang tot dit bestand."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Iedereen met deze link heeft toegang tot deze map."
-      ],
       "Apr": [
         "Apr"
       ],
@@ -5175,12 +5171,6 @@
       ],
       "Creating": [
         "Aanmaken"
-      ],
-      "Creating link to file": [
-        "Link naar bestand maken"
-      ],
-      "Creating link to folder": [
-        "Link naar map maken"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
@@ -5357,15 +5347,6 @@
       ],
       "Failed": [
         "Mislukt"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Genereren van beveiligde koppeling mislukt. De reden is: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Genereren van beveiligde koppeling mislukt. Probeer het later opnieuw"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
       ],
       "Feb": [
         "Feb"
@@ -5741,12 +5722,6 @@
       "One time import": [
         "Eenmalige import"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Open de handleiding voor aanbevolen acties en nuttige koppelingen."
       ],
@@ -5873,12 +5848,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
-      ],
-      "Preparing link to file": [
-        "Link naar bestand wordt voorbereid"
-      ],
-      "Preparing link to folder": [
-        "Link naar map wordt voorbereid"
       ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
@@ -6196,9 +6165,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Deze koppeling is gemaakt met een oude versie van Drive en kan niet worden aangepast. Verwijder deze link en creeër een nieuwe om de instellingen te wijzigen."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Dit betekent dat uw internetprovider en de websites die u bezoekt, uw persoonlijke gegevens niet kunnen koppelen aan uw online activiteiten."
@@ -9066,9 +9032,6 @@
       "Public link access updated": [
         "Toegang publieke link aangepast"
       ],
-      "Public link update access failed ": [
-        "Toegang publieke link kon niet aangepast worden "
-      ],
       "Root folder failed to be loaded": [
         "Hoofdmap kon niet geladen worden"
       ],
@@ -9108,9 +9071,6 @@
       "The item was successfully added to your drive": [
         "Het item is succesvol toegevoegd aan uw drive"
       ],
-      "The link to your item failed to be deleted": [
-        "De link naar uw item kon niet worden verwijderd"
-      ],
       "The link to your item was deleted": [
         "De link naar uw item werd verwijderd"
       ],
@@ -9125,9 +9085,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Uw oude bestanden worden binnen 72 uur verwijderd"
-      ],
-      "Your settings failed to be saved": [
-        "Uw instellingen konden niet worden bewaard"
       ],
       "Your settings have been changed successfully": [
         "Uw instellingen zijn succesvol gewijzigd."
@@ -9920,9 +9877,6 @@
       ],
       "Select state": [
         "Selecteer provincie"
-      ],
-      "Set date": [
-        "Datum instellen"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
@@ -11427,34 +11381,6 @@
         "${ seconds } seconden"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } u",
-        "${ hours } u"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 u",
-        "${ hoursInt },5 u"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } uur",
-        "${ hours } uren"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 uur",
-        "${ hoursInt },5 uren"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# downloads"
@@ -12166,9 +12092,6 @@
       ],
       "Select link expiration date": [
         "Selecteer vervaldatum link"
-      ],
-      "Select link expiration time": [
-        "Selecteer vervaltijd link"
       ],
       "Set recovery methods": [
         "Herstelmethoden instellen"

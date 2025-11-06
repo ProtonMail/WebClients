@@ -3398,12 +3398,6 @@
       "And access it from anywhere": [
         "Kcem ɣur-s seg wanda i ak-yehwa"
       ],
-      "Anyone with this link can access your file.": [
-        "Kra n win i yesɛan aseɣwen-a yezmer ad yekcem ɣer ufaylu-ik•im."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Kra n win i yesɛan aseɣwen-a yezmer ad yekcem ɣer ukaram-ik•im."
-      ],
       "Apr": [
         "Yeb"
       ],
@@ -3516,12 +3510,6 @@
       "Creating": [
         "Timerna"
       ],
-      "Creating link to file": [
-        "Asnulfu n useɣwen ɣer ufaylu"
-      ],
-      "Creating link to folder": [
-        "Asnulfu n useɣwen ɣer ukaram"
-      ],
       "Current plan": [
         "Aɣawas amiran"
       ],
@@ -3631,15 +3619,6 @@
       ],
       "Failed": [
         "Yecceḍ"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Tuccḍa deg usirew n useɣwen aɣellsan. Tamentilt d: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Asirew n useɣwen aɣellsan ur yeddi ara. Ɛreḍ tikkelt-nniḍen ticki"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Tuccḍa deg ulday n useɣwen aɣellsan. Tamentilt d: ${ error }"
       ],
       "Feb": [
         "Fuṛ"
@@ -3849,12 +3828,6 @@
       "of": [
         "si"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Anagar imdanen i yesɛan aseɣwen d wawal uffir i izemren ad kecmen ɣer ufaylu-a."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Anagar imdanen i yesɛan aseɣwen d wawal uffir i izemren ad kecmen ɣer ukaram-a."
-      ],
       "Organization size": [
         "Teɣzi n tkebbanit"
       ],
@@ -3909,12 +3882,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Ttxil-k•m arǧu ad nwali ma llan yinermisen igebren isefka ittuwgelhenen s tsarut tarurmidt."
-      ],
-      "Preparing link to file": [
-        "Aheyyi n useɣwen ɣer ufaylu"
-      ],
-      "Preparing link to folder": [
-        "Aheyyi n useɣwen ɣer ukaram"
       ],
       "Preview failed to be loaded": [
         "Taskant tegguma ad d-yali"
@@ -5532,9 +5499,6 @@
       "Subfolder failed to be loaded": [
         "Akaram arnaw yegguma ad d-yali"
       ],
-      "The link to your item failed to be deleted": [
-        "Ulamek tukksa n uaseɣwen ɣer uferdis-inek•m"
-      ],
       "The link to your item was deleted": [
         "Aseɣwen ɣer uferdis-inek m yettwakkes"
       ],
@@ -5543,9 +5507,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Ifuyla-k iqburen ad ttwakksen"
-      ],
-      "Your settings failed to be saved": [
-        "Iɣewwaren-ik ugin ad ttwaskelsen"
       ],
       "Your settings have been changed successfully": [
         "Iɣewwaren-ik·im ggwabeddlen war ugur"
@@ -6431,34 +6392,6 @@
         "${ seconds } n tsinin"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 srg",
-        "${ hoursInt }.5 srg"
-      ],
-      "${ minutes } min": [
-        "${ minutes } tsd",
-        "${ minutes } tsdn"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 usrag",
-        "${ hoursInt }.5 yisragen"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# n yisadaren"
@@ -6921,9 +6854,6 @@
       ],
       "Select link expiration date": [
         "Fren azemz n taggara n useɣwen"
-      ],
-      "Select link expiration time": [
-        "Fren akud n taggara n useɣwen"
       ],
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"

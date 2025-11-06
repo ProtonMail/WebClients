@@ -1496,7 +1496,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -2019,6 +2020,12 @@
       ],
       "Sender verification passed": [
         "Η επαλήθευση του αποστολέα ολοκληρώθηκε επιτυχώς"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ακόμη αποτέλεσμα δεν εμφανίζεται",
+        "${ hiddenResultsCount } ακόμη αποτελέσματα δεν εμφανίζονται"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5602,6 +5609,11 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Αστραπιαίες ταχύτητες"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
@@ -7507,8 +7519,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7994,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "Αποθηκεύτηκε: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Αποθήκευση προχείρου…"
+      "Saving draft": [
+        "Αποθήκευση προχείρου"
       ],
       "Scan the QR code with your mobile device": [
         "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
@@ -8003,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "Η προγραμματισμένη αποστολή αυτού του μηνύματος θα ακυρωθεί."
       ],
-      "Scheduling message...": [
-        "Γίνεται προγραμματισμός μηνύματος..."
+      "Scheduling message": [
+        "Γίνεται προγραμματισμός μηνύματος"
       ],
       "Scribe panel": [
         "Scribe πλαίσιο"
@@ -8049,8 +8060,8 @@
       "Sending": [
         "Γίνεται αποστολή"
       ],
-      "Sending message...": [
-        "Αποστολή μηνύματος..."
+      "Sending message": [
+        "Το μήνυμα αποστέλλεται"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Η αποστολή μηνυμάτων από τη διεύθυνση @ pm.me είναι μια λειτουργία για λογαριασμούς επι πληρωμή. Το μήνυμά σας θα σταλεί από την προεπιλεγμένη διεύθυνση ${ email }"
@@ -13647,6 +13658,9 @@
       "${ app } storage": [
         "Αποθηκευτικός χώρος ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } αποθηκευτικός χώρος σε χρήση"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
       ],
@@ -13658,6 +13672,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Αποθηκευτικός χώρος σε χρήση"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Για να συνεχίσετε τη μεταφόρτωση και το συγχρονισμό αρχείων, ελευθερώστε χώρο ή κάντε αναβάθμιση για περισσότερο χώρο αποθήκευσης."

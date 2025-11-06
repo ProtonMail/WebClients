@@ -1424,6 +1424,12 @@
         "Evento no compatible"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no se muestra",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará si cancela antes del ${ formattedDate }."
@@ -3463,9 +3469,6 @@
       "External accounts are not supported yet": [
         "Las cuentas externas aún no son admitidas."
       ],
-      "External invitations are not available yet.": [
-        "Las invitaciones externas aún no están disponibles."
-      ],
       "External invitations are temporarily disabled.": [
         "Las invitaciones externas están desactivadas temporalmente."
       ],
@@ -4328,6 +4331,11 @@
         "Alias hide-my-email ilimitados"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidades ultrarrápidas"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
@@ -5149,12 +5157,6 @@
       "Anonymous": [
         "Anónimo"
       ],
-      "Anyone with this link can access your file.": [
-        "Cualquiera que tenga este enlace puede acceder al archivo."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Cualquiera que tenga este enlace puede acceder a la carpeta."
-      ],
       "Apr": [
         "Abr."
       ],
@@ -5324,12 +5326,6 @@
       ],
       "Creating": [
         "Creando"
-      ],
-      "Creating link to file": [
-        "Creando enlace al archivo"
-      ],
-      "Creating link to folder": [
-        "Creando enlace a la carpeta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de la suscripción al plan anterior"
@@ -5509,15 +5505,6 @@
       ],
       "Failed": [
         "Error"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Error al generar un enlace seguro. Motivo: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Error al generar un enlace seguro. Inténtelo de nuevo más tarde."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Error al abrir el enlace seguro. El motivo es: ${ error }"
       ],
       "Feb": [
         "Feb."
@@ -5902,12 +5889,6 @@
       "One time import": [
         "Importación única"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Solo las personas con el enlace y la contraseña pueden acceder a esta carpeta."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra la guía para ver las acciones recomendadas y los enlaces útiles."
       ],
@@ -6034,12 +6015,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espere mientras se buscan contactos que contengan datos cifrados con la clave inactiva."
-      ],
-      "Preparing link to file": [
-        "Preparando enlace al archivo"
-      ],
-      "Preparing link to folder": [
-        "Preparando enlace a la carpeta"
       ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
@@ -6360,9 +6335,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que quiere visitar o no lo abra."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Este enlace se creó con una versión anterior de Drive y no se puede modificar. Elimine este enlace y cree uno nuevo para cambiar los ajustes."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Esto significa que su proveedor de servicios de internet y los sitios web que visita no pueden conectar su información personal con su actividad en línea."
@@ -9337,9 +9309,6 @@
       "Public link access updated": [
         "Se actualizó el acceso al enlace público."
       ],
-      "Public link update access failed ": [
-        "Error al acceder a la actualización del enlace público "
-      ],
       "Root folder failed to be loaded": [
         "Error al cargar la carpeta raíz"
       ],
@@ -9379,9 +9348,6 @@
       "The item was successfully added to your drive": [
         "Se agregó el elemento a su drive."
       ],
-      "The link to your item failed to be deleted": [
-        "Error al eliminar el enlace al elemento"
-      ],
       "The link to your item was deleted": [
         "El enlace al elemento fue eliminado"
       ],
@@ -9399,9 +9365,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Los archivos antiguos serán eliminados en 72 horas"
-      ],
-      "Your settings failed to be saved": [
-        "Error al guardar sus ajustes"
       ],
       "Your settings have been changed successfully": [
         "Los ajustes se han cambiado."
@@ -10291,9 +10254,6 @@
       ],
       "Select state": [
         "Seleccionar estado"
-      ],
-      "Set date": [
-        "Establecer fecha"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Comparta lo que cree que podría mejorar ${ BRAND_NAME }"
@@ -11842,34 +11802,6 @@
         "${ seconds } segundos"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 horas",
-        "${ hoursInt },5 horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# de descargas"
@@ -12599,9 +12531,6 @@
       ],
       "Select link expiration date": [
         "Seleccione la fecha de expiración del enlace"
-      ],
-      "Select link expiration time": [
-        "Seleccione la hora de expiración del enlace"
       ],
       "Set recovery methods": [
         "Establecer métodos de recuperación"

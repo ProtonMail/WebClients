@@ -3126,9 +3126,6 @@
       "External accounts are not supported yet": [
         "Zunanji računi še niso podprti."
       ],
-      "External invitations are not available yet.": [
-        "Zunanja povabila še niso na voljo."
-      ],
       "External invitations are temporarily disabled.": [
         "Zunanja povabila so začasno onemogočena."
       ],
@@ -3874,6 +3871,11 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov hide-my-email"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Bliskovite hitrosti"
       ]
     },
     "fido2: Error": {
@@ -4733,12 +4735,6 @@
       "Anonymous": [
         "Anonimno"
       ],
-      "Anyone with this link can access your file.": [
-        "Kdor koli s to povezavo lahko dostopa do vaše datoteke."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Kdor koli s to povezavo lahko dostopa do vaše mape."
-      ],
       "Are you sure you want to discard your changes?": [
         "Ali ste prepričani, da želite zavreči spremembe?"
       ],
@@ -4891,12 +4887,6 @@
       ],
       "Creating": [
         "Ustvarjam"
-      ],
-      "Creating link to file": [
-        "Ustvarjanje povezave do datoteke"
-      ],
-      "Creating link to folder": [
-        "Ustvarjanje povezave do mape"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Dobropis za neporabljen naročnine prejšnjega paketa"
@@ -5062,15 +5052,6 @@
       ],
       "Failed": [
         "Neuspešno"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Varne povezave ni bilo mogoče ustvariti. Razlog je: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Varne povezave ni bilo mogoče ustvariti. Poskusi znova kasneje"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Varne povezave ni bilo mogoče odpreti. Razlog je: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "Datoteka \"${ name }\" je bila med prenosom izbrisana"
@@ -5411,12 +5392,6 @@
       "One time import": [
         "Enkraten uvoz"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Do te datoteke lahko dostopajo samo osebe s povezavo in geslom."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Do te mape lahko dostopajo samo osebe s povezavo in geslom."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Odprite priročnik za priporočena dejanja in koristne povezave."
       ],
@@ -5536,12 +5511,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Počakajte, poteka iskanje stikov, ki vsebujejo podatke, šifrirane z neaktivnim ključem."
-      ],
-      "Preparing link to file": [
-        "Priprava povezave do datoteke"
-      ],
-      "Preparing link to folder": [
-        "Priprava povezave do mape"
       ],
       "Preview failed to be loaded": [
         "Predogleda ni bilo mogoče naložiti"
@@ -5833,9 +5802,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ta povezava je lahko homografski napad. Preverite, ali je to povezava, ki jo želite obiskati, ali pa je ne odpirajte."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Ta povezava je bila ustvarjena s starejšo različico Drive in je ni mogoče spremeniti. Če želite spremeniti nastavitve, najprej izbrišite obstoječo povezavo in nato ustvarite novo."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "To pomeni, da vaš ponudnik internetnih storitev in spletne strani, ki jih obiskujete, ne morejo povezati vaših osebnih podatkov z vašo spletno aktivnostjo."
@@ -8699,9 +8665,6 @@
       "The item was successfully added to your drive": [
         "Predmet je bil dodan v vaš Drive."
       ],
-      "The link to your item failed to be deleted": [
-        "Povezave do vašega predmeta ni bilo mogoče izbrisati"
-      ],
       "The link to your item was deleted": [
         "Povezava do vašega predmeta je bila izbrisana"
       ],
@@ -8713,9 +8676,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše stare datoteke bodo izbrisane v 72 urah."
-      ],
-      "Your settings failed to be saved": [
-        "Vaših nastavitev ni bilo mogoče shraniti"
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavitve so bile uspešno spremenjene"
@@ -9316,9 +9276,6 @@
       ],
       "Select state": [
         "Izberite stanje"
-      ],
-      "Set date": [
-        "Nastavite datum"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Delite, kaj bi po vašem mnenju lahko izboljšalo ${ BRAND_NAME }"
@@ -10772,46 +10729,6 @@
         "${ seconds } sekund"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } ura",
-        "${ hours } uri",
-        "${ hours } ure",
-        "${ hours } ur"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 ure",
-        "${ hoursInt },5 ure",
-        "${ hoursInt },5 ure",
-        "${ hoursInt },5 ure"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } ura",
-        "${ hours } uri",
-        "${ hours } ure",
-        "${ hours } ur"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 ure",
-        "${ hoursInt },5 ure",
-        "${ hoursInt },5 ure",
-        "${ hoursInt },5 ure"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuti",
-        "${ minutes } minute",
-        "${ minutes } minut"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Število prenosov"
@@ -11469,9 +11386,6 @@
       ],
       "Select link expiration date": [
         "Izberite datum poteka povezave"
-      ],
-      "Select link expiration time": [
-        "Izberite čas poteka povezave"
       ],
       "Set recovery methods": [
         "Nastavite načine obnovitve"

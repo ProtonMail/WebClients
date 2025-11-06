@@ -27,6 +27,22 @@
         "Inténtalo de nuevo"
       ]
     },
+    "authenticator-2025:Import": {
+      "${ count } item was skipped. HOTP isn’t currently supported.": [
+        "${ count } elemento fue omitido. HOTP no es compatible actualmente.",
+        "${ count } elementos se omitieron. HOTP no es compatible actualmente."
+      ],
+      "Imported ${ totalImports } code": [
+        "${ totalImports } código importado",
+        "${ totalImports } códigos importados"
+      ]
+    },
+    "authenticator-2025:Warning": {
+      "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
+        "Contraseña incorrecta. Te queda ${ remainingCount } intento, después de eso, tus datos serán borrados.",
+        "Contraseña incorrecta. Te quedan ${ remainingCount } intentos; después de eso, tus datos se borrarán."
+      ]
+    },
     "Error": {
       "Authentication error": [
         "Error de autenticación"

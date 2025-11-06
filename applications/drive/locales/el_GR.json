@@ -1424,6 +1424,12 @@
         "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ακόμη αποτέλεσμα δεν εμφανίζεται",
+        "${ hiddenResultsCount } ακόμη αποτελέσματα δεν εμφανίζονται"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
@@ -3463,9 +3469,6 @@
       "External accounts are not supported yet": [
         "Οι εξωτερικοί λογαριασμοί δεν υποστηρίζονται ακόμα"
       ],
-      "External invitations are not available yet.": [
-        "Οι εξωτερικές προσκλήσεις δεν είναι ακόμη διαθέσιμες."
-      ],
       "External invitations are temporarily disabled.": [
         "Οι εξωτερικές προσκλήσεις είναι προσωρινά απενεργοποιημένες"
       ],
@@ -4328,6 +4331,11 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Αστραπιαίες ταχύτητες"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
@@ -5149,12 +5157,6 @@
       "Anonymous": [
         "Ανώνυμος"
       ],
-      "Anyone with this link can access your file.": [
-        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να προσπελάσει το αρχείο σας."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να έχει πρόσβαση στον φάκελό σας."
-      ],
       "Apr": [
         "Απρ"
       ],
@@ -5324,12 +5326,6 @@
       ],
       "Creating": [
         "Δημιουργία"
-      ],
-      "Creating link to file": [
-        "Δημιουργία συνδέσμου προς το αρχείο"
-      ],
-      "Creating link to folder": [
-        "Δημιουργία συνδέσμου προς το φάκελο"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
@@ -5509,15 +5505,6 @@
       ],
       "Failed": [
         "Απέτυχε"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Αποτυχία δημιουργίας ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Αποτυχία δημιουργίας ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά αργότερα"
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
       ],
       "Feb": [
         "Φεβ"
@@ -5902,12 +5889,6 @@
       "One time import": [
         "Εφάπαξ εισαγωγή"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Μόνο άτομα που έχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση σε αυτό το φάκελο."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Ανοίξτε τον οδηγό για προτεινόμενες ενέργειες και χρήσιμους συνδέσμους."
       ],
@@ -6034,12 +6015,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
-      ],
-      "Preparing link to file": [
-        "Προετοιμασία συνδέσμου προς το αρχείο"
-      ],
-      "Preparing link to folder": [
-        "Προετοιμασία συνδέσμου προς το φάκελο"
       ],
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
@@ -6360,9 +6335,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί, επειδή δημιουργήθηκε σε παρωχημένη έκδοση του Drive. Για να αλλάξετε τις ρυθμίσεις, διαγράψτε τον και δημιουργήστε έναν νέο."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Αυτό σημαίνει ότι ο ISP σας και οι ιστότοποι που επισκέπτεστε δεν μπορούν να συνδέσουν τα προσωπικά σας στοιχεία με τη δραστηριότητά σας στο Internet."
@@ -9084,6 +9056,10 @@
         "${ errors.length } στοιχείο απέτυχε να αντιγραφεί",
         "${ errors.length } στοιχεία απέτυχαν να αντιγραφούν"
       ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } στοιχείο απέτυχε να μετακινηθεί στον κάδο απορριμμάτων",
+        "${ errors.length } στοιχεία απέτυχαν να μετακινηθούν στον κάδο απορριμμάτων"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } φωτογραφία δεν μπορεί να καταργηθεί από το \"${ albumLink.name }\"",
         "${ nbFailures } φωτογραφία δεν μπορούν να καταργηθούν από το \"${ albumLink.name }\""
@@ -9099,6 +9075,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } φωτογραφία έχει αφαιρεθεί από το \"${ albumLink.name }\"",
         "${ nbSuccesses } φωτογραφίες έχουν αφαιρεθεί από το \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } αντιγραμμένο στοιχείο μετακινήθηκε στον κάδο απορριμμάτων",
+        "${ numberOfItems } αντιγραμμένα στοιχεία μετακινήθηκαν στον κάδο απορριμμάτων"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } στοιχείο διαγράφηκε",
@@ -9182,6 +9162,9 @@
       ],
       "Contact group updated": [
         "Η ομάδα επαφών ενημερώθηκε"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Αντίγραφο του \"${ name }\" μετακινήθηκε στον κάδο απορριμμάτων"
       ],
       "Device failed to be removed": [
         "Αποτυχία αφαίρεσης συσκευής"
@@ -9277,9 +9260,6 @@
       "Public link access updated": [
         "Ενημερώθηκε η πρόσβαση σε δημόσιο σύνδεσμο"
       ],
-      "Public link update access failed ": [
-        "Αποτυχία ενημέρωσης πρόσβασης σε δημόσιο σύνδεσμο "
-      ],
       "Root folder failed to be loaded": [
         "Απέτυχε η φόρτωση του ριζικού φακέλου"
       ],
@@ -9319,9 +9299,6 @@
       "The item was successfully added to your drive": [
         "Το στοιχείο προστέθηκε με επιτυχία στο δίσκο σας"
       ],
-      "The link to your item failed to be deleted": [
-        "Αποτυχία διαγραφής του συνδέσμου για το στοιχείο σας"
-      ],
       "The link to your item was deleted": [
         "Ο σύνδεσμος προς το στοιχείο σας διαγράφηκε"
       ],
@@ -9339,9 +9316,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Τα παλιά αρχεία σας θα διαγραφούν σε 72 ώρες"
-      ],
-      "Your settings failed to be saved": [
-        "Αποτυχία αποθήκευσης των ρυθμίσεών σας"
       ],
       "Your settings have been changed successfully": [
         "Οι ρυθμίσεις σας άλλαξαν επιτυχώς"
@@ -10232,9 +10206,6 @@
       "Select state": [
         "Επιλέξτε νομό/περιοχή"
       ],
-      "Set date": [
-        "Ορισμός ημερομηνίας"
-      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Μοιραστείτε αυτό που πιστεύετε ότι θα μπορούσε να κάνει το ${ BRAND_NAME } καλύτερο"
       ],
@@ -11021,6 +10992,9 @@
       "${ app } storage": [
         "Αποθηκευτικός χώρος ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } αποθηκευτικός χώρος σε χρήση"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
       ],
@@ -11032,6 +11006,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Αποθηκευτικός χώρος σε χρήση"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Για να συνεχίσετε τη μεταφόρτωση και το συγχρονισμό αρχείων, ελευθερώστε χώρο ή κάντε αναβάθμιση για περισσότερο χώρο αποθήκευσης."
@@ -11782,34 +11759,6 @@
         "${ seconds } δευτερόλεπτα"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } ώ",
-        "${ hours } ώ"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ώ",
-        "${ hoursInt }.5 ώ"
-      ],
-      "${ minutes } min": [
-        "${ minutes } λ.",
-        "${ minutes } λ."
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }μιση ώρα",
-        "${ hoursInt }μιση ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# λήψεων"
@@ -12539,9 +12488,6 @@
       ],
       "Select link expiration date": [
         "Επιλέξτε ημερομηνία λήξης συνδέσμου"
-      ],
-      "Select link expiration time": [
-        "Επιλέξτε το χρόνο λήξης του συνδέσμου"
       ],
       "Set recovery methods": [
         "Ορισμός μεθόδων ανάκτησης"

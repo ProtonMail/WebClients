@@ -689,6 +689,9 @@
       "Remove gift code": [
         "Esborra el codi de regal"
       ],
+      "Remove the booking range": [
+        "Esborreu l'interval de la reserva"
+      ],
       "Remove this notification": [
         "Esborra aquesta notificació"
       ],
@@ -823,6 +826,9 @@
       ],
       "Skip verification": [
         "Omet la verificació"
+      ],
+      "Split current booking range": [
+        "Dividiu l'interval de la reserva actual"
       ],
       "Start import": [
         "Comença la importació"
@@ -1261,6 +1267,12 @@
         "Opcional"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat més no mostrat",
+        "${ hiddenResultsCount } resultats més no mostrats"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
@@ -1562,7 +1574,7 @@
         "Problema de configuració manual"
       ],
       "Meet problem": [
-        "Coneixeu el problema"
+        "Problema amb Meet"
       ],
       "Other": [
         "Altres"
@@ -4503,6 +4515,11 @@
         "Nombre il·limitat d'àlies hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocitats ultraràpides"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
@@ -5895,9 +5912,9 @@
       "Removed participants will be notified.": [
         "Els participants esborrats seran notificats."
       ],
-      "Saving event...": [
-        "Desant l'esdeveniment...",
-        "Desant els esdeveniments..."
+      "Saving event": [
+        "Desant esdeveniment",
+        "S'estan desant els esdeveniments"
       ],
       "Scan the QR code with your mobile device": [
         "Escanegeu el codi QR amb el vostre dispositiu mòbil"
@@ -7119,6 +7136,17 @@
       ],
       "Zoom meeting": [
         "Reunió per Zoom"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Data de l'interval de la reserva"
+      ],
+      "End time of the booking range": [
+        "Hora de finalització de l'interval de la reserva"
+      ],
+      "Start time of the booking range": [
+        "Hora d'inici de l'interval de la reserva"
       ]
     },
     "Label for contact group color": {
@@ -10377,6 +10405,9 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ app } storage used": [
+        "Emmagatzematge de ${ app } utilitzat"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
@@ -10388,6 +10419,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Per a tots els serveis de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Emmagatzematge utilitzat"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Per continuar utilitzant els productes de ${ BRAND_NAME }, allibereu espai o ${ upgrade }."

@@ -1496,7 +1496,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -2019,6 +2020,12 @@
       ],
       "Sender verification passed": [
         "Verificación del remitente aprobada"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no se muestra",
+        "${ hiddenResultsCount } más resultados no mostrados"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -5602,6 +5609,11 @@
         "Alias hide-my-email ilimitados"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidades ultrarrápidas"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
@@ -7507,8 +7519,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7994,8 +8005,8 @@
       "Saved: ${ dateString }": [
         "Guardado: el ${ dateString }"
       ],
-      "Saving draft…": [
-        "Guardando borrador…"
+      "Saving draft": [
+        "Guardando borrador"
       ],
       "Scan the QR code with your mobile device": [
         "Escanee el código QR con su dispositivo móvil."
@@ -8003,8 +8014,8 @@
       "Scheduled send of this message will be canceled.": [
         "Se cancelará el envío programado de este mensaje."
       ],
-      "Scheduling message...": [
-        "Programando mensaje..."
+      "Scheduling message": [
+        "Programando el mensaje"
       ],
       "Scribe panel": [
         "Panel de Scribe"
@@ -8049,8 +8060,8 @@
       "Sending": [
         "Enviando"
       ],
-      "Sending message...": [
-        "Enviando el mensaje..."
+      "Sending message": [
+        "Enviando el mensaje"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "El envío de mensajes desde la dirección @pm.me es una función de pago. El mensaje será enviado desde la dirección predeterminada ${ email }"

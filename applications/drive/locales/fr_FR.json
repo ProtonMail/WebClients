@@ -1424,6 +1424,12 @@
         "L'événement n'est pas pris en charge."
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } autre résultat non affiché",
+        "${ hiddenResultsCount } autres résultats non affichés"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
@@ -3454,9 +3460,6 @@
       "External accounts are not supported yet": [
         "Les comptes externes ne sont pas encore pris en charge."
       ],
-      "External invitations are not available yet.": [
-        "Les invitations externes ne sont pas encore disponibles."
-      ],
       "External invitations are temporarily disabled.": [
         "Les invitations externes ont été temporairement désactivées."
       ],
@@ -4319,6 +4322,11 @@
         "Nombre illimité d'alias « hide-my-email »"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Vitesses extrêmement élevées"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
@@ -5140,12 +5148,6 @@
       "Anonymous": [
         "Anonyme"
       ],
-      "Anyone with this link can access your file.": [
-        "Toute personne ayant ce lien peut accéder à votre fichier."
-      ],
-      "Anyone with this link can access your folder.": [
-        "Toute personne ayant ce lien peut accéder à votre dossier."
-      ],
       "Apr": [
         "Avr."
       ],
@@ -5315,12 +5317,6 @@
       ],
       "Creating": [
         "Création"
-      ],
-      "Creating link to file": [
-        "Création du lien vers le fichier"
-      ],
-      "Creating link to folder": [
-        "Création du lien vers le dossier"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
@@ -5500,15 +5496,6 @@
       ],
       "Failed": [
         "Échec"
-      ],
-      "Failed to generate a secure link. The reason is: ${ error }": [
-        "Le lien sécurisé n'a pas pu être généré : ${ error }."
-      ],
-      "Failed to generate a secure link. Try again later": [
-        "Le lien sécurisé n'a pas pu être généré. Nous vous invitons à réessayer plus tard."
-      ],
-      "Failed to open a secure link. The reason is: ${ error }": [
-        "Le lien sécurisé n'a pas pu être ouvert : ${ error }."
       ],
       "Feb": [
         "Fév."
@@ -5890,12 +5877,6 @@
       "One time import": [
         "Importation unique"
       ],
-      "Only the people with the link and the password can access this file.": [
-        "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce fichier."
-      ],
-      "Only the people with the link and the password can access this folder.": [
-        "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Ouvrez le guide pour les actions recommandées et les liens utiles."
       ],
@@ -6022,12 +6003,6 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Veuillez patienter pendant que nous cherchons les contacts qui contiennent des données chiffrées avec la clé inactive."
-      ],
-      "Preparing link to file": [
-        "Préparation du lien vers le fichier"
-      ],
-      "Preparing link to folder": [
-        "Préparation du lien vers le dossier"
       ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé."
@@ -6345,9 +6320,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Ce lien a été créé dans une ancienne version de Drive et ne peut pas être modifié. Supprimez ce lien et créez-en un nouveau pour modifier les paramètres."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Cela signifie que votre FAI et les sites internet que vous visitez ne peuvent pas lier vos informations personnelles à vos activités en ligne."
@@ -9311,9 +9283,6 @@
       "Public link access updated": [
         "L'accès au lien public a été mis à jour."
       ],
-      "Public link update access failed ": [
-        "L'accès à la mise à jour du lien public n'a pas abouti "
-      ],
       "Root folder failed to be loaded": [
         "Le dossier racine n'a pas pu être chargé."
       ],
@@ -9353,9 +9322,6 @@
       "The item was successfully added to your drive": [
         "L'élément a été ajouté à votre drive."
       ],
-      "The link to your item failed to be deleted": [
-        "Le lien vers votre élément n'a pas pu être supprimé."
-      ],
       "The link to your item was deleted": [
         "Le lien vers votre élément a été supprimé."
       ],
@@ -9373,9 +9339,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Vos anciens fichiers seront supprimés dans 72 heures."
-      ],
-      "Your settings failed to be saved": [
-        "Vos paramètres n'ont pas pu être enregistrés."
       ],
       "Your settings have been changed successfully": [
         "Vos réglages ont été modifiés."
@@ -10266,9 +10229,6 @@
       "Select state": [
         "Sélectionner l'état"
       ],
-      "Set date": [
-        "Définir la date"
-      ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dites-nous ce qui, selon vous, pourrait améliorer ${ BRAND_NAME }."
       ],
@@ -11055,6 +11015,9 @@
       "${ app } storage": [
         "espace de stockage de ${ app }"
       ],
+      "${ app } storage used": [
+        "Espace de stockage utilisé de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } plein à ${ percentage } %"
       ],
@@ -11066,6 +11029,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pour tous les services ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Espace de stockage utilisé"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Pour continuer à importer ou synchroniser vos fichiers, veuillez libérer de l'espace ou changer d'abonnement pour en obtenir davantage."
@@ -11816,34 +11782,6 @@
         "${ seconds } secondes"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 heure",
-        "${ hoursInt },5 heures"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Nombre de téléchargements"
@@ -12573,9 +12511,6 @@
       ],
       "Select link expiration date": [
         "Sélectionner la date d'expiration du lien"
-      ],
-      "Select link expiration time": [
-        "Sélectionner le délai d'expiration du lien"
       ],
       "Set recovery methods": [
         "Définir les méthodes de récupération"

@@ -231,6 +231,9 @@
       "Copy link": [
         "Copiar link"
       ],
+      "Copy link and close": [
+        "Copiar link e fechar"
+      ],
       "Copy password": [
         "Copiar senha"
       ],
@@ -1256,6 +1259,12 @@
     "Attendee role": {
       "Optional": [
         "Opcional"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Mais ${ hiddenResultsCount } resultado não exibido",
+        "Mais ${ hiddenResultsCount } resultados não exibidos"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3201,6 +3210,9 @@
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Você receberá um e-mail seguro com os detalhes em breve."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
       ]
@@ -3772,6 +3784,9 @@
       ],
       "Name required": [
         "Nome obrigatório"
+      ],
+      "No booking page data received": [
+        "Nenhum dado de página de reserva recebido"
       ],
       "No calendars found to import": [
         "Nenhum calendário encontrado para importação"
@@ -4492,6 +4507,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocidade ultrarrápida"
       ]
     },
     "fido2: Error": {
@@ -5886,9 +5906,9 @@
       "Removed participants will be notified.": [
         "Os participantes removidos serão notificados."
       ],
-      "Saving event...": [
-        "Salvando evento...",
-        "Salvando eventos..."
+      "Saving event": [
+        "Salvando evento",
+        "Salvando eventos"
       ],
       "Scan the QR code with your mobile device": [
         "Escaneie o código QR com seu dispositivo móvel"
@@ -5922,6 +5942,9 @@
       ],
       "Setting up your new address…": [
         "Configurando seu novo endereço…"
+      ],
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Compartilhe esta página para que outras pessoas possam agendar um horário no seu calendário. Você pode gerenciá-la a qualquer momento na barra lateral em Páginas de agendamento."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
@@ -10376,6 +10399,9 @@
       "${ app } storage": [
         "armazenamento do ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } de armazenamento usado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% cheio"
       ],
@@ -10387,6 +10413,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos os serviços da ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "De armazenamento usado"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para continuar a usar os produtos ${ BRAND_NAME }, libere espaço ou faça um ${ upgrade }"
@@ -11527,6 +11556,9 @@
       "High security for your account": [
         "Segurança elevada para sua conta"
       ],
+      "Host": [
+        "Anfitrião"
+      ],
       "How does it all work?": [
         "Como tudo isso funciona?"
       ],
@@ -11899,6 +11931,9 @@
       ],
       "Your account is protected": [
         "Sua conta está protegida"
+      ],
+      "Your booking is confirmed": [
+        "Sua reserva está confirmada"
       ],
       "Your booking page is ready": [
         "Sua página de agendamentos está pronta"

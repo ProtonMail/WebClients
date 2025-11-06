@@ -859,7 +859,7 @@
         "Problema de configuració manual"
       ],
       "Meet problem": [
-        "Coneixeu el problema"
+        "Problema amb Meet"
       ],
       "Other": [
         "Altres"
@@ -2409,6 +2409,11 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Nombre il·limitat d'àlies hide-my-email"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Velocitats ultraràpides"
       ]
     },
     "fido2: Error": {
@@ -4973,6 +4978,9 @@
       "${ app } storage": [
         "emmagatzematge de ${ app }"
       ],
+      "${ app } storage used": [
+        "Emmagatzematge de ${ app } utilitzat"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ple al ${ percentage }%"
       ],
@@ -4981,6 +4989,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Per a tots els serveis de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Emmagatzematge utilitzat"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Afegirem els crèdits del temps restant al vostre compte de ${ BRAND_NAME }."

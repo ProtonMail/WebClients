@@ -689,6 +689,9 @@
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
+      "Remove the booking range": [
+        "Κατάργηση του εύρους κράτησης"
+      ],
       "Remove this notification": [
         "Αφαίρεση ειδοποίησης"
       ],
@@ -823,6 +826,9 @@
       ],
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
+      ],
+      "Split current booking range": [
+        "Διαχωρισμός τρέχοντος εύρους κράτησης"
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
@@ -1259,6 +1265,12 @@
     "Attendee role": {
       "Optional": [
         "Προαιρετικό"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } ακόμη αποτέλεσμα δεν εμφανίζεται",
+        "${ hiddenResultsCount } ακόμη αποτελέσματα δεν εμφανίζονται"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -4503,6 +4515,11 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Αστραπιαίες ταχύτητες"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
@@ -5895,9 +5912,9 @@
       "Removed participants will be notified.": [
         "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
       ],
-      "Saving event...": [
-        "Αποθήκευση εκδήλωσης...",
-        "Αποθήκευση εκδηλώσεων..."
+      "Saving event": [
+        "Αποθήκευση εκδήλωσης",
+        "Αποθήκευση εκδηλώσεων"
       ],
       "Scan the QR code with your mobile device": [
         "Σαρώστε τον κωδικό QR με την κινητή συσκευή σας"
@@ -7119,6 +7136,17 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Ημερομηνία του εύρους κράτησης"
+      ],
+      "End time of the booking range": [
+        "Ώρα λήξης του εύρους κράτησης"
+      ],
+      "Start time of the booking range": [
+        "Ώρα έναρξης του εύρους κράτησης"
       ]
     },
     "Label for contact group color": {
@@ -10377,6 +10405,9 @@
       "${ app } storage": [
         "Αποθηκευτικός χώρος ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } αποθηκευτικός χώρος σε χρήση"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
       ],
@@ -10388,6 +10419,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Αποθηκευτικός χώρος σε χρήση"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Για να συνεχίσετε να χρησιμοποιείτε τα προϊόντα ${ BRAND_NAME }, απελευθερώστε χώρο ή ${ upgrade }"

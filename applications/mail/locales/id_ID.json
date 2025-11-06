@@ -1491,6 +1491,9 @@
       "Trust": [
         "Percayai"
       ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -5543,6 +5546,11 @@
         "Tanpa batasan jumlah alias hide-my-email"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Kecepatan secepat kilat"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Terdapat kesalahan dalam mengautentikasi kunci keamanan Anda. Silakan coba lagi."
@@ -7849,17 +7857,11 @@
       "Saved: ${ dateString }": [
         "Disimpan: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Menyimpan draf…"
-      ],
       "Scan the QR code with your mobile device": [
         "Pindai kode QR dengan perangkat seluler Anda"
       ],
       "Scheduled send of this message will be canceled.": [
         "Pengiriman terjadwal pesan ini akan dibatalkan."
-      ],
-      "Scheduling message...": [
-        "Menjadwalkan pesan..."
       ],
       "Scribe panel": [
         "Panel Scribe"
@@ -7902,9 +7904,6 @@
       ],
       "Sending": [
         "Mengirim"
-      ],
-      "Sending message...": [
-        "Mengirim pesan..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Pengiriman pesan dari alamat @pm.me merupakan fitur berbayar. Pesan Anda akan dikirim dari alamat bawaan Anda ${ email }"

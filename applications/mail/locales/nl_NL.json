@@ -1468,9 +1468,6 @@
       "Trust": [
         "Vertrouwen"
       ],
-      "Trust key": [
-        "Vertrouwde sleutel"
-      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -5492,6 +5489,11 @@
         "Onbeperkt aantal hide-my-email-aliassen"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Hoge snelheden"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Er is iets fout gegaan bij het verifiëren van uw beveiligingssleutel. Probeer het opnieuw."
@@ -7355,8 +7357,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7839,17 +7840,11 @@
       "Saved: ${ dateString }": [
         "Opgeslagen: ${ dateString }"
       ],
-      "Saving draft…": [
-        "Concept opslaan…"
-      ],
       "Scan the QR code with your mobile device": [
         "Scan de QR-code met uw mobiele apparaat"
       ],
       "Scheduled send of this message will be canceled.": [
         "Geplande verzending van dit bericht zal worden geannuleerd."
-      ],
-      "Scheduling message...": [
-        "Bericht plannen..."
       ],
       "Scribe panel": [
         "Scribepaneel"
@@ -7893,9 +7888,6 @@
       ],
       "Sending": [
         "Bezig met verzenden"
-      ],
-      "Sending message...": [
-        "Bericht verzenden..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Berichten versturen vanaf een @pm.me-adres is enkel beschikbaar voor betalende gebruikers. Uw bericht wordt verzonden vanaf ${ email }"

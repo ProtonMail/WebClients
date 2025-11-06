@@ -86,6 +86,9 @@
       "Add PayPal": [
         "PayPal ekle"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "${ MAIL_APP_NAME } imzasına öneri bağlantısı ekleyin"
+      ],
       "Add user": [
         "Kullanıcı ekle"
       ],
@@ -1896,6 +1899,9 @@
       "Continue your subscription": [
         "Aboneliğinizi kullanmayı sürdürün"
       ],
+      "Copy": [
+        "Kopyala"
+      ],
       "Create label": [
         "Etiket oluştur"
       ],
@@ -1907,6 +1913,9 @@
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
+      ],
+      "Send": [
+        "Gönder"
       ],
       "Set up other features": [
         "Diğer özellikleri ayarlayın"
@@ -3235,11 +3244,17 @@
       "To start, give your organization a name.": [
         "Başlamak için, kuruluşunuzun adını yazın."
       ],
+      "Track the status and activity of your referrals": [
+        "Önerilerinizin etkinliklerini ve durumunu izleyin"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesi ile hesap açtığında, size ${ BRAND_NAME } için ${ referralInfo.referrerRewardAmount } kredi ve arkadaşınıza da başlaması için ${ referralInfo.refereeRewardAmount } kredi verilir."
       ]
     },
     "description": {
@@ -5527,6 +5542,9 @@
       "${ discountPercent }% discount": [
         "%${ discountPercent } indirim"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } geçersiz"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: tam boyutlu görsel"
       ],
@@ -5687,6 +5705,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator gibi diğer iki adımlı doğrulama uygulamalarında **var olan kodlarınızı içe aktarın**."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Arkadaşlarınızı** öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**1. adım:** Arkadaşlarınızı öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
@@ -5993,6 +6014,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Önerilen parolayı panoya kopyala"
+      ],
+      "Copy your referral link": [
+        "Öneri bağlantınızı kopyalayın"
       ],
       "Country code": [
         "Ülke kodu"
@@ -6326,6 +6350,12 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Abone olan her arkadaşınız için **${ referrerRewardAmount } kredi** kazanın."
+      ],
+      "Get started with the referral link above.": [
+        "Yukarıdaki öneri bağlantısı ile başlayın."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Kimlik hizmeti sağlayıcınıza gidin, ${ appName } için SAML üst verileri alın ve buradan içe aktarın."
       ],
@@ -6476,6 +6506,13 @@
       ],
       "Invite rejected": [
         "Davet reddedildi"
+      ],
+      "Invite successfully sent": [
+        "Davet gönderildi",
+        "Davetler gönderildi"
+      ],
+      "Invited": [
+        "Davet edilmiş"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Bir sunucunun ülkesini değiştirmek 10 gün sürer. Bu yüzden seçiminizin doğru olduğundan emin olun."
@@ -6755,6 +6792,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
       ],
+      "Paid for a plan": [
+        "Bir tarife ödemesi yaptı"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - Özel e-posta adresi doğrulandı"
       ],
@@ -6877,6 +6917,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Tanınmış kişiler, gazeteciler, yöneticiler ve siber saldırıların hedefi olabilecek diğer kişilerin, ${ PROTON_SENTINEL_NAME } özelliğini açması önemle önerilir."
       ],
+      "Public link invite": [
+        "Herkese açık davet bağlantısı"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
@@ -6888,6 +6931,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
+      ],
+      "Referral link copied to your clipboard": [
+        "Öneri bağlantısı panonuza kopyalandı"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -6964,6 +7010,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Üyelerinize hesaplarını iki adımlı doğrulama ile korumaya özendiren e-postalar gönderin."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Şu anda SEPA ödemeleri yapılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -7013,6 +7062,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
       ],
+      "Signed up": [
+        "Hesap açtı"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
@@ -7034,9 +7086,6 @@
       "Step ${ step }": [
         "${ step }. adım",
         "${ step }. adım"
-      ],
-      "Storage": [
-        "Depolama alanı"
       ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
@@ -7608,6 +7657,16 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Bir ${ VPN_APP_NAME } sunucusuna macOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz",
+        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "${ MAIL_APP_NAME } kullanıcılarını kaynak gösteremezsiniz"
+      ],
+      "You don't have any referrals.": [
+        "Herhangi bir öneriniz yok."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
       ],
@@ -7716,6 +7775,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Ücretsiz denemenizde size ayrılmış 1 sunucu bulunur."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Arkadaşlarınız, seçtikleri tarifeyi **2 hafta ücretsiz** kullanabilir."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
@@ -7952,6 +8014,9 @@
       "Account storage": [
         "Hesap depolama alanı"
       ],
+      "Activity": [
+        "Etkinlik"
+      ],
       "Add all organization members": [
         "Tüm kuruluş üyelerini ekle"
       ],
@@ -8011,6 +8076,9 @@
       ],
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
+      ],
+      "Awarded": [
+        "Hediye edilen"
       ],
       "Backup password": [
         "Yedek parola"
@@ -8143,6 +8211,9 @@
       ],
       "Current email": [
         "Geçerli e-posta"
+      ],
+      "Date": [
+        "Tarih"
       ],
       "Default language": [
         "Varsayılan dil"
@@ -8287,6 +8358,9 @@
       ],
       "Interval": [
         "Aralık"
+      ],
+      "Invite via email": [
+        "E-posta ile davet edin"
       ],
       "Issuer ID": [
         "Yayıncı kimliği"
@@ -8447,6 +8521,9 @@
       "Payment method": [
         "Ödeme yöntemi"
       ],
+      "Pending": [
+        "Bekliyor"
+      ],
       "Phone number": [
         "Telefon numarası"
       ],
@@ -8510,6 +8587,9 @@
       "Reveal password": [
         "Parolayı görüntüle"
       ],
+      "Reward": [
+        "Ödül"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -8527,6 +8607,9 @@
       ],
       "Server name": [
         "Sunucu adı"
+      ],
+      "Share your referral link": [
+        "Öneri bağlantınızı paylaşın"
       ],
       "Show ${ n } administrator": [
         "${ n } yöneticiyi görüntüle",
@@ -8885,6 +8968,9 @@
       ],
       "Terms": [
         "Koşullar"
+      ],
+      "Terms and conditions": [
+        "Hüküm ve koşullar"
       ],
       "Trouble signing in?": [
         "Oturum açmakta sorun mu yaşıyorsunuz?"
@@ -13793,6 +13879,14 @@
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } arkadaş davet edildi",
+        "${ friendsInvited } arkadaş davet edildi"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } arkadaş abone oldu",
+        "${ friendsSubscribed } arkadaş abone oldu"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } istemcileri"
       ],
@@ -14065,6 +14159,9 @@
       "Creating user accounts": [
         "Kullanıcı hesapları ekleniyor"
       ],
+      "Credit earned": [
+        "Kazanılan kredi"
+      ],
       "Credits": [
         "Kredi"
       ],
@@ -14304,6 +14401,9 @@
       "Gift code": [
         "Hediye kodu"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "${ refereeRewardAmount } ve 2 hafta ücretsiz kullanım verin. ${ referrerRewardAmount } kredi kazanın."
+      ],
       "Groups": [
         "Gruplar"
       ],
@@ -14346,6 +14446,9 @@
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Invite friends. Get credits.": [
+        "Arkadaşlarınızı davet edin. Kredi kazanın."
       ],
       "Invoices": [
         "Faturalar"
@@ -14457,6 +14560,9 @@
       ],
       "Recovery": [
         "Kurtarma"
+      ],
+      "Refer a friend": [
+        "Arkadaşınıza önerin"
       ],
       "Remove all members?": [
         "Tüm üyeler kaldırılsın mı?"
@@ -14738,6 +14844,9 @@
       "Your plan": [
         "Tarifeniz"
       ],
+      "Your referrals": [
+        "Önerileriniz"
+      ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
       ],
@@ -14877,6 +14986,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Kaynak IP adresi ve internet hizmet sağlayıcısı (İSS)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Gönderdiğiniz e-postalara şu alt bilgi eklenir: ${ signature } Bağlantı, öneri bağlantınıza yönlenir. Alt bilgi, imzanızın altında görüntülenir. İmzanızı istediğiniz zaman ayarlar bölümünden kişiselleştirebilirsiniz."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Paylaşılan sunucu ilkeleri bireysel kullanıcılara veya gruplara uygulanabilir"
@@ -15508,6 +15620,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
+      ],
+      "Please add at least one recipient.": [
+        "Lütfen en az bir alıcı ekleyin."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

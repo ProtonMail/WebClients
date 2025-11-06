@@ -1397,6 +1397,9 @@
       "Continue your subscription": [
         "अपनी सदस्यता जारी रखें"
       ],
+      "Copy": [
+        "कॉपी करें"
+      ],
       "Create label": [
         "लेबल बनाएं"
       ],
@@ -1408,6 +1411,9 @@
       ],
       "Remind me later": [
         "मुझे बाद में याद दिलाएं"
+      ],
+      "Send": [
+        "भेजें"
       ],
       "Set up other features": [
         "अन्य सुविधाओं को सेटअप करें"
@@ -4438,6 +4444,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% छूट"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } अमान्य है"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: पूरे साइज़ का तस्वीर"
       ],
@@ -4817,6 +4826,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "दिए गए पासवर्ड को क्लिपबोर्ड पे कॉपी करें"
+      ],
+      "Copy your referral link": [
+        "अपना रेफरल लिंक कॉपी करें"
       ],
       "Country code": [
         "देश का कोड"
@@ -5228,6 +5240,13 @@
       "Invite rejected": [
         "न्योता ठुकराया गया"
       ],
+      "Invite successfully sent": [
+        "न्योता सफलतापूर्वक भेजा गया",
+        "न्योते सफलतापूर्वक भेजे गए"
+      ],
+      "Invited": [
+        "आमंत्रित"
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "सर्वर के देश को बदलने में 10 दिन लगते हैं, इसलिए सुनिश्चित करें कि आपका चयन सही है।"
       ],
@@ -5556,6 +5575,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "सार्वजनिक हस्तियों, पत्रकारों, अधिकारियों और अन्य लोगों को, जो साइबर हमलों का लक्ष्य हो सकते हैं, ${ PROTON_SENTINEL_NAME } को सक्षम करने के लिए अत्यधिक प्रोत्साहित किया जाता है।"
       ],
+      "Public link invite": [
+        "सार्वजनिक लिंक आमंत्रण"
+      ],
       "Recently used servers:": [
         "हाल में उपयोग किए गए सर्वर:"
       ],
@@ -5564,6 +5586,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "पुनर्प्राप्ति जानकारी इस उपकरण पर तब तक बनी रहेगी जब तक कि आप इसे हटाना नहीं चुनते."
+      ],
+      "Referral link copied to your clipboard": [
+        "रेफ़रल लिंक आपके क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "पृष्ठ को ताज़ा करने या ${ link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
@@ -5628,6 +5653,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "अपने सदस्यों को अपने खातों को 2FA से सुरक्षित रखने के लिए ईमेल भेजें।"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> सुरक्षित ईमेल से भेजा गया।"
+      ],
       "Server is currently down": [
         "इस समय सर्वर धीमा है"
       ],
@@ -5671,6 +5699,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "अपना पता सक्रिय करने के लिए ${ MAIL_APP_NAME } पे साइनइन करें"
       ],
+      "Signed up": [
+        "साइनअप किया"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
@@ -5686,9 +5717,6 @@
       "Step ${ step }": [
         "कदम ${ step }",
         "कदम ${ step }"
-      ],
-      "Storage": [
-        "स्टोरेज"
       ],
       "Storage allocated to other users in this organisation": [
         "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
@@ -6176,6 +6204,13 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "आप ${ VPN_APP_NAME } सर्वर से किसी तृतीय-पक्ष, ओपन सोर्स VPN ऐप का उपयोग करके कनेक्ट करने के लिए निम्न क्रेडेंशियल का उपयोग कर सकते हैं, जैसे macOS के लिए Tunnelblick या GNU/Linux के लिए OpenVPN।"
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "अगले 24 घंटे में ${ emailSendLimitNumber } से ज़्यादा न्योता नहीं भेजा जा सकता",
+        "अगले 24 घंटे में ${ emailSendLimitNumber } से ज़्यादा न्योते नहीं भेजे जा सकते"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "आप ${ MAIL_APP_NAME } यूज़र को रेफर नहीं कर सकते"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "यदि आपका पासवर्ड या अन्य डाटा किसी तीसरें-पार्टी से लीक हुआ है, तो आपको सूचित किया जाएगा।"
       ],
@@ -6448,6 +6483,9 @@
       "Account storage": [
         "खाता संग्रहण"
       ],
+      "Activity": [
+        "चहलपहल"
+      ],
       "Add all organization members": [
         "सभी संगठन सदस्य जोड़ें"
       ],
@@ -6504,6 +6542,9 @@
       ],
       "Authenticator app": [
         "प्रमाणीकरण अनुप्रयोग"
+      ],
+      "Awarded": [
+        "इनाम"
       ],
       "Backup password": [
         "बैकअप पासवर्ड"
@@ -6624,6 +6665,9 @@
       ],
       "Current email": [
         "वर्तमान ईमेल"
+      ],
+      "Date": [
+        "तारीख"
       ],
       "Default language": [
         "डिफ़ॉल्ट भाषा"
@@ -6756,6 +6800,9 @@
       ],
       "Interval": [
         "अंतराल"
+      ],
+      "Invite via email": [
+        "ईमेल के माध्यम से आमंत्रित करें"
       ],
       "Issuer ID": [
         "जारीकर्ता आईडी"
@@ -6903,6 +6950,9 @@
       ],
       "Payment method": [
         "भुगतान तरीका"
+      ],
+      "Pending": [
+        "लंबित"
       ],
       "Phone number": [
         "फोन नंबर"
@@ -11402,6 +11452,9 @@
       "Recovery": [
         "पुनर्प्राप्ति"
       ],
+      "Refer a friend": [
+        "एक मित्र को सूचित करें"
+      ],
       "Remove all members?": [
         "सभी सदस्यों को हटाएं?"
       ],
@@ -11746,6 +11799,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "जो सदस्य 2-एफए का उपयोग नहीं करते हैं, उन्हें एक ईमेल प्राप्त होगा जिसमें उनसे इसे यथाशीघ्र सक्षम करने के लिए कहा जाएगा। सिंगल साइन-ऑन उपयोगकर्ताओं को ईमेल रिमाइंडर नहीं मिलेगा"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "आपके भेजे गए ईमेल के फुटर में ये डाल देगा: ${ signature } लिंक आपके रेफरल लिंक पे ले जाएगा। फुटर आपके हस्ताक्षर के नीचे आएगा। आप सेटिंग में अपने हस्ताक्षर को कभी भी बदल सकते है।"
       ],
       "Shared server policies can be applied to individual users or groups": [
         "साझा सर्वर नीतियाँ को व्यक्तिगत उपयोगकर्ताओं या ग्रुप पर लागू की जा सकती हैं"
@@ -12294,6 +12350,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "इस फ़ोन नंबर को हटाने से, आप अपने खाते को पुनर्प्राप्त नहीं कर पाएंगे।"
+      ],
+      "Please add at least one recipient.": [
+        "कृपया कम-से-कम एक प्राप्तकर्ता डालें।"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "रिपोर्ट एंड-टू-एंड एन्क्रिप्टेड नहीं हैं, कृपया कोई संवेदनशील जानकारी न भेजें।"

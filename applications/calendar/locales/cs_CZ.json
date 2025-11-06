@@ -249,7 +249,7 @@
         "Vytvořit rezervační stránku"
       ],
       "Create a new bookings page": [
-        "Vytvořit novou stránku rezervací"
+        "Vytvořit novou rezervační stránku"
       ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
@@ -695,6 +695,9 @@
       "Remove gift code": [
         "Odstranit dárkový kód"
       ],
+      "Remove the booking range": [
+        "Odebrat rozsah rezervace"
+      ],
       "Remove this notification": [
         "Odstranit toto oznámení"
       ],
@@ -829,6 +832,9 @@
       ],
       "Skip verification": [
         "Přeskočit ověření"
+      ],
+      "Split current booking range": [
+        "Rozdělení aktuálního rozsahu rezervace"
       ],
       "Start import": [
         "Spustit import"
@@ -1279,6 +1285,14 @@
     "Attendee role": {
       "Optional": [
         "Volitelné"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } další výsledek není zobrazen",
+        "${ hiddenResultsCount } další výsledky nejsou zobrazeny",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno",
+        "${ hiddenResultsCount } dalších výsledků není zobrazeno"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3658,7 +3672,7 @@
         "Vyhledávání obsahu nelze povolit. Restartujte aplikaci nebo smažte data."
       ],
       "Content verification failed": [
-        "Ověření obsahu se nezdařilo"
+        "Ověření obsahu selhalo"
       ],
       "Could not open created vault": [
         "Nelze otevřít vytvořený trezor"
@@ -3838,7 +3852,7 @@
         "Název je povinný"
       ],
       "No booking page data received": [
-        "Nebyly přijaty žádné údaje ze stránky rezervace"
+        "Nebyly přijaty žádné údaje z rezervační stránky"
       ],
       "No calendars found to import": [
         "Nebyly nalezeny žádné kalendáře k importu"
@@ -4575,6 +4589,11 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů Hide-my-email"
+      ]
+    },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blesková rychlost"
       ]
     },
     "fido2: Error": {
@@ -5881,7 +5900,7 @@
         "Nově"
       ],
       "No available slots for this day": [
-        "Na tento den nejsou k dispozici žádné volné termíny."
+        "V tomto dni nejsou k dispozici žádné volné termíny"
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
@@ -6051,11 +6070,11 @@
       "Removed participants will be notified.": [
         "Odebraní účastníci budou upozorněni."
       ],
-      "Saving event...": [
-        "Ukládání události...",
-        "Ukládání událostí...",
-        "Ukládání událostí...",
-        "Ukládání událostí..."
+      "Saving event": [
+        "Ukládání události",
+        "Ukládání událostí",
+        "Ukládání událostí",
+        "Ukládání událostí"
       ],
       "Scan the QR code with your mobile device": [
         "Naskenujte kód QR pomocí mobilního zařízení"
@@ -6436,7 +6455,7 @@
         "Tuto akci nemůžete vzít zpět."
       ],
       "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "Na stránce nelze mít více než ${ MAX_BOOKING_SLOTS } rezervačních slotů."
+        "Na stránce nelze mít více než ${ MAX_BOOKING_SLOTS } rezervačních termínů."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -7301,6 +7320,17 @@
         "Schůzka na Zoomu"
       ]
     },
+    "label": {
+      "Date of the booking range": [
+        "Datum rozsahu rezervace"
+      ],
+      "End time of the booking range": [
+        "Čas ukončení rozsahu rezervace"
+      ],
+      "Start time of the booking range": [
+        "Čas zahájení rozsahu rezervace"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Barva"
@@ -7367,7 +7397,7 @@
         "Přidat dárkový kód"
       ],
       "Bookings pages": [
-        "Stránky rezervací"
+        "Rezervační stránky"
       ],
       "Calendars": [
         "Kalendáře"
@@ -10748,6 +10778,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pro všechny služby ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Využité úložiště"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Chcete-li dále používat produkty ${ BRAND_NAME }, uvolněte místo nebo ${ upgrade }"

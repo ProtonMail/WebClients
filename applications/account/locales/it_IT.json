@@ -753,6 +753,9 @@
       "Get a new encrypted email address": [
         "Ottieni un nuovo indirizzo email crittografato"
       ],
+      "Get Deal": [
+        "Ottieni offerta"
+      ],
       "Get in touch": [
         "Mettiti in contatto"
       ],
@@ -2108,6 +2111,12 @@
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
         "Aggiungi al calendario e contrassegna come in attesa"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } altro risultato non mostrato",
+        "${ hiddenResultsCount } altri risultati non mostrati"
       ]
     },
     "Autoresponse": {
@@ -4933,6 +4942,9 @@
       "120 minutes": [
         "120 minuti"
       ],
+      "15 minutes": [
+        "15 minuti"
+      ],
       "15m": [
         "15min"
       ],
@@ -7719,6 +7731,9 @@
       ],
       "Domain": [
         "Dominio"
+      ],
+      "Drag to reorder": [
+        "Trascina per ordinare"
       ],
       "Status": [
         "Stato"
@@ -10536,9 +10551,6 @@
       "Step ${ step }": [
         "Passaggio ${ step }",
         "Passaggio ${ step }"
-      ],
-      "Storage": [
-        "Archiviazione"
       ],
       "Storage allocated to other users in this organisation": [
         "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
@@ -16557,11 +16569,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Sede in Svizzera, conforme al GDPR"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ma puoi ottenere uno sconto del ${ discountPercentString } effettuando l'upgrade a **${ upsellPlanTitle }** - costa solo ${ relativePrice } in più al mese."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Ma puoi ottenere uno sconto del ${ discountPercentString } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ma puoi sbloccare **${ unlockPlanTitle }** e altri servizi ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }** — costa solo ${ relativePrice } in più al mese."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Ma puoi sbloccare **${ unlockPlanTitle }** e altri servizi di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ma puoi effettuare l’upgrade a **${ upsellPlanTitle }** — costa solo ${ relativePrice } in più al mese."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Ma puoi effettuare l'upgrade a **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Continuando accetti i nostri ${ termsAndConditionsLink } e ${ privacyPolicyLink }."
@@ -17886,6 +17910,11 @@
       ],
       "Scopes cannot have the same value": [
         "Gli ambiti non possono avere lo stesso valore"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } caratteri"
       ]
     },
     "retention_policy_2025_Info": {

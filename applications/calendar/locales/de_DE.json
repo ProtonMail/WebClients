@@ -689,6 +689,9 @@
       "Remove gift code": [
         "Geschenkgutschein entfernen"
       ],
+      "Remove the booking range": [
+        "Buchungszeitraum entfernen"
+      ],
       "Remove this notification": [
         "Diese Benachrichtigung entfernen"
       ],
@@ -823,6 +826,9 @@
       ],
       "Skip verification": [
         "Überprüfung überspringen"
+      ],
+      "Split current booking range": [
+        "Aktuellen Buchungszeitraum aufteilen"
       ],
       "Start import": [
         "Importvorgang starten"
@@ -1259,6 +1265,12 @@
     "Attendee role": {
       "Optional": [
         "Optional"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } weiteres Ergebnis nicht angezeigt",
+        "${ hiddenResultsCount } weitere Ergebnisse nicht angezeigt"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -4503,6 +4515,11 @@
         "Unbegrenzte hide-my-email-Aliasse"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Blitzschnelle Geschwindigkeiten"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit Ihrem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte erneut versuchen."
@@ -5895,9 +5912,9 @@
       "Removed participants will be notified.": [
         "Entfernte Teilnehmer werden benachrichtigt."
       ],
-      "Saving event...": [
-        "Termin wird gespeichert...",
-        "Termine werden gespeichert..."
+      "Saving event": [
+        "Termin wird gespeichert",
+        "Termine werden gespeichert"
       ],
       "Scan the QR code with your mobile device": [
         "Scanne den QR-Code mit deinem Mobilgerät."
@@ -7119,6 +7136,17 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Datum des Buchungszeitraums"
+      ],
+      "End time of the booking range": [
+        "Endzeit des Buchungszeitraums"
+      ],
+      "Start time of the booking range": [
+        "Startzeit des Buchungszeitraums"
       ]
     },
     "Label for contact group color": {
@@ -10377,6 +10405,9 @@
       "${ app } storage": [
         "${ app }-Speicherplatz"
       ],
+      "${ app } storage used": [
+        "${ app } Speicher genutzt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % voll."
       ],
@@ -10388,6 +10419,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Für alle ${ BRAND_NAME }-Dienste"
+      ],
+      "Storage used": [
+        "Speicher genutzt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Um ${ BRAND_NAME }-Produkte weiterhin nutzen zu können, schaffe Speicherplatz oder führe ein ${ upgrade } durch."
