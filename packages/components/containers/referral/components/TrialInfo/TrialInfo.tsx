@@ -5,6 +5,7 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -13,13 +14,16 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { subscriptionExpires } from '@proton/components/containers/payments/subscription/helpers';
+import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
+import { SettingsLink } from '@proton/components/index';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { PLANS, PLAN_NAMES, getPlanTitle, isAutoRenewTrial } from '@proton/payments';
+import { isTrialRenewing } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -27,6 +31,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 
 import credits from './credits.svg';
 import downgrade from './downgrade.svg';
+import reactivate from './reactivate.svg';
 
 const TrialInfoHeader = () => {
     return c('Title').t`How your free trial works`;
@@ -49,76 +54,86 @@ const TrialInfoContent = () => {
                 {getBoldFormattedText(c('Referral').t`Enjoy **${planTitle}** for free until **${textDate}**.`)}
             </p>
 
-            <div className="grid grid-cols-2 gap-2">
-                {!isAutoRenewTrial(subscription) && (
-                    <>
-                        <div
-                            className="rounded border p-4"
-                            style={{
-                                borderColor: '#00BB981A',
-                                background: 'linear-gradient(268.44deg, #FAFFFC -1.65%, #EBFFF8 100%)',
-                            }}
-                        >
-                            <img src={credits} alt="" className="mb-2" />
-                            <p className="m-0">
-                                {getBoldFormattedText(
-                                    c('Referral')
-                                        .t`**If you subscribe before this date,** you'll get **${referrerRewardAmount}** in credits.`
-                                )}
-                            </p>
-                        </div>
-                        <div
-                            className="rounded border p-4"
-                            style={{
-                                borderColor: '#2800CE0D',
-                                background: 'linear-gradient(268.44deg, #FBFAFF -1.65%, #F3F0FF 100%)',
-                            }}
-                        >
-                            <img src={downgrade} alt="" className="mb-2" />
-                            <p className="m-0">
-                                {getBoldFormattedText(
-                                    c('Referral')
-                                        .t`**If you don't subscribe,** you'll be **downgraded** to ${BRAND_NAME} ${PLAN_NAMES[PLANS.FREE]}.`
-                                )}
-                            </p>
-                        </div>
-                    </>
-                )}
-                {isAutoRenewTrial(subscription) && (
-                    <>
-                        <div
-                            className="rounded border p-4"
-                            style={{
-                                borderColor: '#2800CE0D',
-                                background: 'linear-gradient(268.44deg, #FBFAFF -1.65%, #F3F0FF 100%)',
-                            }}
-                        >
-                            <img src={downgrade} alt="" className="mb-2" />
-                            <p className="m-0">
-                                {getBoldFormattedText(
-                                    c('Referral')
-                                        .t`**If you cancel before this date,** you will be **downgraded** to ${BRAND_NAME} ${PLAN_NAMES[PLANS.FREE]} when the trial ends.`
-                                )}
-                            </p>
-                        </div>
-                        <div
-                            className="rounded border p-4"
-                            style={{
-                                borderColor: '#00BB981A',
-                                background: 'linear-gradient(268.44deg, #FAFFFC -1.65%, #EBFFF8 100%)',
-                            }}
-                        >
-                            <img src={credits} alt="" className="mb-2" />
-                            <p className="m-0">
-                                {getBoldFormattedText(
-                                    c('Referral')
-                                        .t`**If you don’t cancel,** your full plan will start and you’ll get **${referrerRewardAmount}** in credits.`
-                                )}
-                            </p>
-                        </div>
-                    </>
-                )}
-            </div>
+            {!isAutoRenewTrial(subscription) ? (
+                <div className="grid grid-cols-2 gap-2">
+                    <div
+                        className="rounded border p-4"
+                        style={{
+                            borderColor: '#00BB981A',
+                            background: 'linear-gradient(268.44deg, #FAFFFC -1.65%, #EBFFF8 100%)',
+                        }}
+                    >
+                        <img src={credits} alt="" className="mb-2" />
+                        <p className="m-0">
+                            {getBoldFormattedText(
+                                c('Referral')
+                                    .t`**If you subscribe before this date,** you'll get **${referrerRewardAmount}** in credits.`
+                            )}
+                        </p>
+                    </div>
+                    <div
+                        className="rounded border p-4"
+                        style={{
+                            borderColor: '#2800CE0D',
+                            background: 'linear-gradient(268.44deg, #FBFAFF -1.65%, #F3F0FF 100%)',
+                        }}
+                    >
+                        <img src={downgrade} alt="" className="mb-2" />
+                        <p className="m-0">
+                            {getBoldFormattedText(
+                                c('Referral')
+                                    .t`**If you don't subscribe,** you'll be **downgraded** to ${BRAND_NAME} ${PLAN_NAMES[PLANS.FREE]}.`
+                            )}
+                        </p>
+                    </div>
+                </div>
+            ) : null}
+            {isAutoRenewTrial(subscription) && isTrialRenewing(subscription) ? (
+                <div className="grid grid-cols-2 gap-2">
+                    <div
+                        className="rounded border p-4"
+                        style={{
+                            borderColor: '#2800CE0D',
+                            background: 'linear-gradient(268.44deg, #FBFAFF -1.65%, #F3F0FF 100%)',
+                        }}
+                    >
+                        <img src={downgrade} alt="" className="mb-2" />
+                        <p className="m-0">
+                            {getBoldFormattedText(
+                                c('Referral')
+                                    .t`**If you cancel before this date,** you will be **downgraded** to ${BRAND_NAME} ${PLAN_NAMES[PLANS.FREE]} when the trial ends.`
+                            )}
+                        </p>
+                    </div>
+                    <div
+                        className="rounded border p-4"
+                        style={{
+                            borderColor: '#00BB981A',
+                            background: 'linear-gradient(268.44deg, #FAFFFC -1.65%, #EBFFF8 100%)',
+                        }}
+                    >
+                        <img src={credits} alt="" className="mb-2" />
+                        <p className="m-0">
+                            {getBoldFormattedText(
+                                c('Referral')
+                                    .t`**If you don’t cancel,** your full plan will start and you’ll get **${referrerRewardAmount}** in credits.`
+                            )}
+                        </p>
+                    </div>
+                </div>
+            ) : null}
+
+            {isAutoRenewTrial(subscription) && !isTrialRenewing(subscription) ? (
+                <div className="flex flex-column w-full items-center justify-center">
+                    <img src={reactivate} alt="" className="mb-2" width={264} height={148} />
+                    <p className="m-0">
+                        {getBoldFormattedText(
+                            c('Referral')
+                                .t`After that date, your account will be downgraded to **${BRAND_NAME} Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.`
+                        )}
+                    </p>
+                </div>
+            ) : null}
 
             <p className="my-4">
                 {!isAutoRenewTrial(subscription) &&
@@ -134,18 +149,23 @@ const TrialInfoContent = () => {
                               c('Referral')
                                   .t`Last chance to explore all the powerful features that **${planTitle}** has to offer.`
                           ))}
-                {isAutoRenewTrial(subscription) &&
-                    c('Referral')
-                        .t`Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.`}
+                {isAutoRenewTrial(subscription) && isTrialRenewing(subscription)
+                    ? c('Referral')
+                          .t`Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.`
+                    : null}
             </p>
         </>
     );
 };
 
-const TrialInfoFooter = (props?: Partial<ModalStateProps>) => {
+interface TrialInfoFooterProps {
+    modalProps?: Partial<ModalStateProps>;
+}
+
+const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
     const [subscription, loadingSubscription] = useSubscription();
     const { APP_NAME } = useConfig();
-    const { onClose } = props || {};
+    const { onClose } = modalProps || {};
     const telemetryFlow = useDashboardPaymentFlow(APP_NAME);
     const [openSubscriptionModal] = useSubscriptionModal();
     const goToSettings = useSettingsLink();
@@ -165,16 +185,44 @@ const TrialInfoFooter = (props?: Partial<ModalStateProps>) => {
         if (onClose) {
             onClose();
         }
-        goToSettings('/subscription#cancel-subscription');
+        goToSettings('/dashboard#cancel-subscription');
     };
 
     if (loadingSubscription) {
         return <Loader />;
     }
 
-    return (
-        <>
-            {isAutoRenewTrial(subscription) ? (
+    const Action = () => {
+        if (!subscription) {
+            return null;
+        }
+
+        const reactivateLinkData = getReactivateSubscriptionAction(subscription, REACTIVATE_SOURCE.trial);
+
+        const reactivateLink =
+            reactivateLinkData.type === 'internal' ? (
+                <ButtonLike
+                    onClick={onClose}
+                    as={SettingsLink}
+                    data-testid="reactivate-link"
+                    key="reactivate-subscription-internal"
+                    path={reactivateLinkData.path}
+                    color="norm"
+                    fullWidth
+                >{c('Link').t`Reactivate subscription`}</ButtonLike>
+            ) : (
+                <ButtonLike
+                    as={Href}
+                    data-testid="reactivate-link"
+                    key="reactivate-subscription-external"
+                    href={reactivateLinkData.href}
+                    fullWidth
+                    color="norm"
+                >{c('Link').t`Reactivate subscription`}</ButtonLike>
+            );
+
+        if (isAutoRenewTrial(subscription) && isTrialRenewing(subscription)) {
+            return (
                 <Button
                     onClick={handleCancelSubscription}
                     size="large"
@@ -185,17 +233,28 @@ const TrialInfoFooter = (props?: Partial<ModalStateProps>) => {
                 >
                     {c('Action').t`Cancel subscription`}
                 </Button>
-            ) : (
-                <Button
-                    onClick={handleExplorePlans}
-                    size="large"
-                    color="norm"
-                    fullWidth
-                    data-testid="trial-info-subscribe-now"
-                >
-                    {c('Action').t`Subscribe now`}
-                </Button>
-            )}
+            );
+        }
+        if (isAutoRenewTrial(subscription) && !isTrialRenewing(subscription)) {
+            return reactivateLink;
+        }
+
+        return (
+            <Button
+                onClick={handleExplorePlans}
+                size="large"
+                color="norm"
+                fullWidth
+                data-testid="trial-info-subscribe-now"
+            >
+                {c('Action').t`Subscribe now`}
+            </Button>
+        );
+    };
+
+    return (
+        <>
+            <Action />
 
             <ButtonLike
                 as="a"
@@ -215,14 +274,9 @@ const TrialInfoFooter = (props?: Partial<ModalStateProps>) => {
 
 const TrialInfo = () => {
     const [subscription, loadingSubscription] = useSubscription();
-    const { subscriptionExpiresSoon, renewDisabled } = subscriptionExpires(subscription);
 
-    if (loadingSubscription) {
+    if (loadingSubscription || !subscription) {
         return <Loader />;
-    }
-
-    if (subscriptionExpiresSoon && renewDisabled) {
-        return null;
     }
 
     return (
@@ -238,16 +292,20 @@ const TrialInfo = () => {
     );
 };
 
-export const TrialInfoModal = (props: ModalStateProps) => {
+interface TrialInfoModalProps {
+    modalProps: ModalStateProps;
+}
+
+export const TrialInfoModal = ({ modalProps }: TrialInfoModalProps) => {
     return (
         <>
-            <ModalTwo {...props}>
+            <ModalTwo {...modalProps}>
                 <ModalTwoHeader title={<TrialInfoHeader />} />
                 <ModalTwoContent>
                     <TrialInfoContent />
                 </ModalTwoContent>
                 <ModalTwoFooter>
-                    <TrialInfoFooter {...props} />
+                    <TrialInfoFooter modalProps={modalProps} />
                 </ModalTwoFooter>
             </ModalTwo>
         </>

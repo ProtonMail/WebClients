@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -24,6 +25,7 @@ import {
     isManagedExternally,
     isTrial,
 } from '@proton/payments';
+import { isTrialRenewing, willTrialExpireInLessThan1Week } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -31,8 +33,10 @@ import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
+import { REACTIVATE_SOURCE } from '../cancellationFlow/useCancellationTelemetry';
 import { SUBSCRIPTION_STEPS } from '../constants';
 import { subscriptionExpires } from '../helpers';
+import { getReactivateSubscriptionAction } from '../helpers/subscriptionExpires';
 import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
 import { BillingDateSection, FreeVPNFeatures, ServersSection, UsersSection } from './PlanFeatureSections';
 import { PlanIcon } from './PlanIcon';
@@ -89,7 +93,6 @@ const AddonSection = ({
 
 const TrialInfoBadge = ({ subscription }: { subscription: Subscription }) => {
     const [modalProps, setModal, renderModal] = useModalState();
-    const { subscriptionExpiresSoon, renewDisabled } = subscriptionExpires(subscription);
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
 
     const pill = (
@@ -101,10 +104,6 @@ const TrialInfoBadge = ({ subscription }: { subscription: Subscription }) => {
         return null;
     }
 
-    if (subscriptionExpiresSoon && renewDisabled) {
-        return pill;
-    }
-
     return (
         <>
             <button
@@ -114,7 +113,7 @@ const TrialInfoBadge = ({ subscription }: { subscription: Subscription }) => {
             >
                 {pill}
             </button>
-            {renderModal && <TrialInfoModal {...modalProps} />}
+            {renderModal && <TrialInfoModal modalProps={modalProps} />}
         </>
     );
 };
@@ -209,16 +208,54 @@ export const CurrentPlanInfoSection = ({
         });
 
     const handleCancelSubscription = () => {
-        goToSettings('/subscription#cancel-subscription');
+        goToSettings('/dashboard#cancel-subscription');
     };
 
+    const reactivateLinkData = getReactivateSubscriptionAction(subscription, REACTIVATE_SOURCE.default);
+
+    const reactivateLink =
+        reactivateLinkData.type === 'internal' ? (
+            <ButtonLike
+                as={SettingsLink}
+                data-testid="reactivate-link"
+                key="reactivate-subscription-internal"
+                path={reactivateLinkData.path}
+            >{c('Link').t`Reactivate now`}</ButtonLike>
+        ) : (
+            <ButtonLike
+                as={Href}
+                data-testid="reactivate-link"
+                key="reactivate-subscription-external"
+                href={reactivateLinkData.href}
+            >{c('Link').t`Reactivate now`}</ButtonLike>
+        );
+
+    const { subscriptionExpiresSoon } = subscriptionExpires(subscription);
+
     const cta = (() => {
-        if (showEditBillingDetails && isAutoRenewTrial(subscription)) {
+        if (
+            showEditBillingDetails &&
+            !isAutoRenewTrial(subscription) &&
+            willTrialExpireInLessThan1Week(subscription) &&
+            subscriptionExpiresSoon
+        ) {
+            return (
+                <Button onClick={() => handleEditPayment(SUBSCRIPTION_STEPS.CHECKOUT)} data-testid="subscribe">
+                    {c('Action').t`Subscribe`}
+                </Button>
+            );
+        }
+
+        if (showEditBillingDetails && isAutoRenewTrial(subscription) && isTrialRenewing(subscription)) {
             return (
                 <Button onClick={handleCancelSubscription} data-testid="edit-billing-details-trial-cancel-subscription">
                     {c('Action').t`Cancel subscription`}
                 </Button>
             );
+        }
+
+        if (showEditBillingDetails && isAutoRenewTrial(subscription) && !isTrialRenewing(subscription)) {
+            return reactivateLink;
         }
 
         if (showEditBillingDetails && editBillingCycle) {

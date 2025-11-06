@@ -374,7 +374,11 @@ const MainContainer = () => {
          */
         if (getIsSectionAvailable(routes.account.routes.subscription)) {
             if (location.pathname === `/${appSlug}${routes.account.routes.dashboard.to}`) {
-                if (location.hash === '#invoices' || location.hash === '#your-subscriptions') {
+                if (
+                    location.hash === '#invoices' ||
+                    location.hash === '#your-subscriptions' ||
+                    location.hash === '#cancel-subscription'
+                ) {
                     return (
                         <Redirect
                             to={`/${appSlug}${routes.account.routes.subscription.to}${location.search}${location.hash}`}

@@ -10,7 +10,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import step1 from './step1.svg';
@@ -28,6 +28,8 @@ export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: 
     const { APP_NAME: currentApp } = useConfig();
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount, maxRewardAmount } = referralInfo.uiData;
+
+    const openInCurrentTab = currentApp === APPS.PROTONACCOUNT || currentApp === APPS.PROTONVPN_SETTINGS;
 
     return (
         <Spotlight
@@ -102,13 +104,14 @@ export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: 
 
                     <ButtonLike
                         as={SettingsLink}
-                        target="_blank"
+                        target={openInCurrentTab ? '_self' : '_blank'}
                         path="/referral"
                         app={currentApp}
                         fullWidth
                         color="norm"
                         shape="solid"
                         className="mt-2"
+                        onClick={onClose}
                     >{c('Referral').t`Start earning credits`}</ButtonLike>
 
                     <Button shape="underline" color="norm" className="text-sm" onClick={onDismiss}>
