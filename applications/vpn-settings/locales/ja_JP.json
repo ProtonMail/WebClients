@@ -86,6 +86,9 @@
       "Add PayPal": [
         "PayPal を追加"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "${ MAIL_APP_NAME }の署名に紹介リンクを追加する"
+      ],
       "Add user": [
         "ユーザーを追加"
       ],
@@ -1395,6 +1398,11 @@
         "サポートされていない予定です"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } 件の追加の結果は表示されていません"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
@@ -1886,6 +1894,9 @@
       "Continue your subscription": [
         "サブスクリプションを継続する"
       ],
+      "Copy": [
+        "コピー"
+      ],
       "Create label": [
         "ラベルを作成"
       ],
@@ -1897,6 +1908,9 @@
       ],
       "Remind me later": [
         "後で通知する"
+      ],
+      "Send": [
+        "送信"
       ],
       "Set up other features": [
         "他の機能を設定"
@@ -3221,11 +3235,17 @@
       "To start, give your organization a name.": [
         "まず、組織に名前を付けてください。"
       ],
+      "Track the status and activity of your referrals": [
+        "招待の状態やアクティビティを確認します"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "招待した人が${ BRAND_NAME }のプランにサインアップすると、お客様は${ BRAND_NAME }のクレジットで${ referralInfo.referrerRewardAmount }を受け取り、その方も開始時に${ referralInfo.refereeRewardAmount }のクレジットを受け取ることができます。"
       ]
     },
     "description": {
@@ -5480,6 +5500,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }%割引"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } は無効です"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: 元サイズの画像"
       ],
@@ -5620,6 +5643,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator などの他の2要素認証アプリから、**既存のコードをインポート**"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "招待リンクで${ BRAND_NAME }に**友達を招待してください**"
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
@@ -5917,6 +5943,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "提案されたパスワードをクリップボードにコピーする"
+      ],
+      "Copy your referral link": [
+        "招待リンクをコピー"
       ],
       "Country code": [
         "国コード"
@@ -6245,6 +6274,12 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } を入手"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "友達が登録するたびに、**${ referrerRewardAmount } クレジット**を獲得できます。"
+      ],
+      "Get started with the referral link above.": [
+        "上記の紹介リンクから始めてください。"
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "ID プロバイダーに移動し、${ appName } の SAML メタデータを取得し、ここにインポートします。"
       ],
@@ -6394,6 +6429,12 @@
       ],
       "Invite rejected": [
         "招待が拒否されました"
+      ],
+      "Invite successfully sent": [
+        "招待状が正常に送信されました"
+      ],
+      "Invited": [
+        "招待済み"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "サーバーの国を変更するには 10 日かかるので、選択が正しいことを確認してください。"
@@ -6671,6 +6712,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "組織に他の管理者がいる場合、あなたの責任で新しいパスワードを伝えてください。"
       ],
+      "Paid for a plan": [
+        "支払い済みのプラン"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - カスタムメールが確認されました"
       ],
@@ -6791,6 +6835,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "サイバー攻撃の標的になる可能性がある公人、ジャーナリスト、幹部などは、${ PROTON_SENTINEL_NAME } を有効にしておくことが強く推奨されています。"
       ],
+      "Public link invite": [
+        "公開リンク招待"
+      ],
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
       ],
@@ -6802,6 +6849,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
+      ],
+      "Referral link copied to your clipboard": [
+        "招待リンクをクリップボードにコピーしました"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
@@ -6878,6 +6928,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "メンバーに2要素認証でアカウントを保護するよう促すメールを送る。"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "安全なメールシステム <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPAでのお支払は現在一時的に利用できません。後で再試行してください。"
       ],
@@ -6926,6 +6979,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "${ MAIL_APP_NAME } にサインインしてアドレスを有効にしてください"
       ],
+      "Signed up": [
+        "サインアップ済み"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
@@ -6946,9 +7002,6 @@
       ],
       "Step ${ step }": [
         "ステップ ${ step }"
-      ],
-      "Storage": [
-        "ストレージ容量"
       ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"
@@ -7514,6 +7567,15 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "今後 24 時間は ${ emailSendLimitNumber } 件を超える招待メールを送信できません"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "${ MAIL_APP_NAME } のユーザーは招待できません"
+      ],
+      "You don't have any referrals.": [
+        "紹介はまだありません。"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
       ],
@@ -7618,6 +7680,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "お客様の無料トライアルには1台の専用サーバーが含まれています。"
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "あなたの友達は選択されたプランを**2週間無料**で利用できます。"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
@@ -7847,6 +7912,9 @@
       "Account storage": [
         "アカウントの容量"
       ],
+      "Activity": [
+        "アクティビティ"
+      ],
       "Add all organization members": [
         "全ての組織メンバーを追加する"
       ],
@@ -7906,6 +7974,9 @@
       ],
       "Authenticator app": [
         "認証アプリ"
+      ],
+      "Awarded": [
+        "進呈"
       ],
       "Backup password": [
         "バックアップパスワード"
@@ -8038,6 +8109,9 @@
       ],
       "Current email": [
         "現在のメール"
+      ],
+      "Date": [
+        "日付"
       ],
       "Default language": [
         "デフォルトの言語"
@@ -8182,6 +8256,9 @@
       ],
       "Interval": [
         "間隔"
+      ],
+      "Invite via email": [
+        "メール経由で招待"
       ],
       "Issuer ID": [
         "発行者ID"
@@ -8342,6 +8419,9 @@
       "Payment method": [
         "支払い方法"
       ],
+      "Pending": [
+        "保留中"
+      ],
       "Phone number": [
         "電話番号"
       ],
@@ -8405,6 +8485,9 @@
       "Reveal password": [
         "パスワードを表示する"
       ],
+      "Reward": [
+        "特典"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "ジュネーブ、1228 Plan-les-Ouates、Route de la Galaise 32"
       ],
@@ -8422,6 +8505,9 @@
       ],
       "Server name": [
         "サーバー名"
+      ],
+      "Share your referral link": [
+        "紹介リンクを共有"
       ],
       "Show ${ n } administrator": [
         "${ n }人の管理者を表示"
@@ -8777,6 +8863,9 @@
         "サインイン"
       ],
       "Terms": [
+        "利用規約"
+      ],
+      "Terms and conditions": [
         "利用規約"
       ],
       "Trouble signing in?": [
@@ -13610,6 +13699,12 @@
       "${ feature } is now active": [
         "${ feature } は現在アクティブです"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited }人の友達を招待しました"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed }人の友達が登録しました"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } クライアント"
       ],
@@ -13880,6 +13975,9 @@
       "Creating user accounts": [
         "アカウントを作成中"
       ],
+      "Credit earned": [
+        "獲得したクレジット"
+      ],
       "Credits": [
         "クレジット"
       ],
@@ -14117,6 +14215,9 @@
       "Gift code": [
         "ギフトコード"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "${ refereeRewardAmount }を与え、2週間の無料期間を提供します。${ referrerRewardAmount }クレジットを取得してください。"
+      ],
       "Groups": [
         "グループ"
       ],
@@ -14158,6 +14259,9 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
+      ],
+      "Invite friends. Get credits.": [
+        "友達を招待。クレジットを獲得。"
       ],
       "Invoices": [
         "請求書"
@@ -14269,6 +14373,9 @@
       ],
       "Recovery": [
         "回復"
+      ],
+      "Refer a friend": [
+        "友達を招待"
       ],
       "Remove all members?": [
         "すべてのメンバーを削除しますか？"
@@ -14549,6 +14656,9 @@
       "Your plan": [
         "現在のプラン"
       ],
+      "Your referrals": [
+        "あなたの紹介"
+      ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
       ],
@@ -14688,6 +14798,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "発信元IPアドレスおよびインターネットサービスプロバイダ (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "あなたが送信するメールに以下のフッターを設定します: ${ signature } リンクはあなたの紹介リンクを指しています。フッターはあなたの署名の下に表示されます。署名は設定でいつでも個別にカスタマイズできます。"
       ],
       "Shared server policies can be applied to individual users or groups": [
         "共有サーバーポリシーは、個々のユーザーまたはグループに適用できます"
@@ -15306,6 +15419,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "この電話番号を削除すると、今後あなたのアカウントを回復することができなくなります。"
+      ],
+      "Please add at least one recipient.": [
+        "少なくとも 1 件の宛先を追加してください。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"

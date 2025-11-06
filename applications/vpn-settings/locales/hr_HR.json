@@ -1209,11 +1209,17 @@
       "Continue your subscription": [
         "Nastavi svoju pretplatu"
       ],
+      "Copy": [
+        "Kopiraj"
+      ],
       "Create label": [
         "Stvori oznaku"
       ],
       "Maybe later": [
         "Možda kasnije"
+      ],
+      "Send": [
+        "Pošalji"
       ],
       "Take a tour": [
         "Započnite obilazak"
@@ -2328,6 +2334,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Primit ćete ${ referralInfo.referrerRewardAmount } u ${ BRAND_NAME } kreditu kada se osoba koju pozovete registrira za ${ BRAND_NAME } plan, a ona će također dobiti ${ referralInfo.refereeRewardAmount } u kreditima za početak."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4072,6 +4081,9 @@
       "Get ${ upsellPlanName }": [
         "Nabavite ${ upsellPlanName }"
       ],
+      "Get started with the referral link above.": [
+        "Započnite s poveznicom za preporuku iznad."
+      ],
       "Got it": [
         "Razumijem"
       ],
@@ -4170,6 +4182,14 @@
       ],
       "Invite for organization created": [
         "Pozivnica za organizaciju stvorena"
+      ],
+      "Invite successfully sent": [
+        "Pozivnica je uspješno poslana",
+        "Pozivnice su uspješno poslane",
+        "Pozivnice su uspješno poslane"
+      ],
+      "Invited": [
+        "Pozvani"
       ],
       "It's better to have:": [
         "Bolje je imati:"
@@ -4303,6 +4323,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
       ],
+      "Paid for a plan": [
+        "Plaćeno za plan"
+      ],
       "password": [
         "lozinka"
       ],
@@ -4345,11 +4368,17 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Javne osobe, novinari, rukovoditelji i drugi koji bi mogli biti meta kibernetičkih napada toplo se potiču da omoguće ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Javna poveznica za poziv"
+      ],
       "Recently used servers:": [
         "Nedavno korišteni poslužitelji:"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Preporučeno na pouzdanim uređajima. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Referral link copied to your clipboard": [
+        "Referalna poveznica je kopirana u Vaš međuspremnik"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
@@ -4408,6 +4437,9 @@
       "Shared vault updated": [
         "Dijeljeni trezor je ažuriran"
       ],
+      "Signed up": [
+        "Registriran/a"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
@@ -4418,9 +4450,6 @@
         "Korak ${ step }",
         "Korak ${ step }",
         "Korak ${ step }"
-      ],
-      "Storage": [
-        "Prostor za pohranu"
       ],
       "Storage for users": [
         "Pohrana za korisnike"
@@ -4665,6 +4694,9 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
       ],
+      "You don't have any referrals.": [
+        "Nemate preporuka."
+      ],
       "You have no invoices.": [
         "Nemate faktura."
       ],
@@ -4712,6 +4744,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Vaš besplatni probni period uključuje 1 namjenski poslužitelj."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Vaši prijatelji dobivaju **2 tjedna besplatno** na svom odabranom planu."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
@@ -4888,6 +4923,9 @@
       "Account storage": [
         "Prostor za pohranu računa"
       ],
+      "Activity": [
+        "Aktivnost"
+      ],
       "Add group member": [
         "Dodaj člana grupe"
       ],
@@ -4935,6 +4973,9 @@
       ],
       "Authenticator app": [
         "Aplikacija autentifikatora"
+      ],
+      "Awarded": [
+        "Dodijeljeno"
       ],
       "Backup password": [
         "Rezervna lozinka"
@@ -5047,6 +5088,9 @@
       "Current email": [
         "Trenutna adresa e-pošte"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Default language": [
         "Zadani jezik"
       ],
@@ -5154,6 +5198,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite via email": [
+        "Pozovi putem e-pošte"
       ],
       "Keep me signed in": [
         "Ostanite prijavljeni"
@@ -5275,6 +5322,9 @@
       "Payment method": [
         "Način plaćanja"
       ],
+      "Pending": [
+        "Na čekanju"
+      ],
       "Phone number": [
         "Broj telefona"
       ],
@@ -5314,6 +5364,9 @@
       "Reveal password": [
         "Prikaži lozinku"
       ],
+      "Reward": [
+        "Nagrada"
+      ],
       "Search": [
         "Pretraži"
       ],
@@ -5322,6 +5375,9 @@
       ],
       "Sequences": [
         "Sekvence"
+      ],
+      "Share your referral link": [
+        "Podijeli svoju poveznicu preporuke"
       ],
       "Spam": [
         "Neželjena pošta"
@@ -5563,6 +5619,9 @@
       ],
       "Terms": [
         "Uvjeti"
+      ],
+      "Terms and conditions": [
+        "Uvjeti i odredbe"
       ],
       "Upgrade your plan": [
         "Nadogradite vaš plan"
@@ -8579,6 +8638,9 @@
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
       ],
+      "Invite friends. Get credits.": [
+        "Pozovite prijatelje. Dobijte kredite."
+      ],
       "Invoices": [
         "Fakture"
       ],
@@ -8677,6 +8739,9 @@
       ],
       "Recovery": [
         "Oporavak"
+      ],
+      "Refer a friend": [
+        "Uputi prijatelja"
       ],
       "Remove all members?": [
         "Ukloniti sve članove?"
@@ -8927,6 +8992,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Članovi koji ne koriste 2FA primit će e-poštu s molbom da je omoguće što je prije moguće. Korisnici jedinstvene prijave neće primiti podsjetnik e-poštom."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Postavlja sljedeće podnožje u e-pošti koju šaljete: ${ signature }. Poveznica upućuje na Vašu preporučnu poveznicu. Podnožje će se pojaviti ispod Vašeg potpisa. Potpis možete personalizirati bilo kada u ikoni zupčanika."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Dijeljena poslužiteljska pravila mogu se primijeniti na pojedinačne korisnike ili grupe"
@@ -9311,6 +9379,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Brisanjem ovog broj telefona više nećete moći vratiti svoj račun."
+      ],
+      "Please add at least one recipient.": [
+        "Molim unesite barem jednog primatelja."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."

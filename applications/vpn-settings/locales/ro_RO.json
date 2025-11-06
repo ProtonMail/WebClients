@@ -86,6 +86,9 @@
       "Add PayPal": [
         "Adăugare PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Adăugare legătură web de recomandare la semnătura ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Adăugare utilizator"
       ],
@@ -1906,6 +1909,9 @@
       "Continue your subscription": [
         "Păstrare abonament"
       ],
+      "Copy": [
+        "Copiere"
+      ],
       "Create label": [
         "Creare etichetă"
       ],
@@ -1917,6 +1923,9 @@
       ],
       "Remind me later": [
         "Amintește-mi mai târziu"
+      ],
+      "Send": [
+        "Trimitere"
       ],
       "Set up other features": [
         "Setare alte funcții"
@@ -3249,11 +3258,17 @@
       "To start, give your organization a name.": [
         "Pentru a începe, dați un nume organizației."
       ],
+      "Track the status and activity of your referrals": [
+        "Urmăriți starea și activitatea celor recomandați."
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Veți primi ${ referralInfo.referrerRewardAmount } în credite ${ BRAND_NAME } atunci când persoana pe care o invitați se înscrie la un plan ${ BRAND_NAME } și aceasta va primi ${ referralInfo.refereeRewardAmount } în credite pentru a începe."
       ]
     },
     "description": {
@@ -5574,6 +5589,9 @@
       "${ discountPercent }% discount": [
         "Reducere ${ discountPercent }%"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } nu este validă"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagine completă"
       ],
@@ -5754,6 +5772,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importați-vă codurile existente** din alte aplicații de A2F, precum Google Authenticator."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
@@ -6069,6 +6090,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Copiați parola sugerată în memorie."
+      ],
+      "Copy your referral link": [
+        "Copiere legătură web de recomandare"
       ],
       "Country code": [
         "Cod țară"
@@ -6407,6 +6431,12 @@
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Obțineți **${ referrerRewardAmount } credite** pentru fiecare prieten care se abonează."
+      ],
+      "Get started with the referral link above.": [
+        "Începeți cu legătura web de recomandate de mai sus."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
       ],
@@ -6558,6 +6588,14 @@
       ],
       "Invite rejected": [
         "Invitație refuzată"
+      ],
+      "Invite successfully sent": [
+        "Invitație trimisă cu succes",
+        "Invitații trimise cu succes.",
+        "Invitații trimise cu succes."
+      ],
+      "Invited": [
+        "Invitat"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Durează 10 zile pentru a schimba serverul unei țări, așa că asigurați-vă că l-ați ales pe cel potrivit."
@@ -6842,6 +6880,9 @@
       "P2P": [
         "P2P"
       ],
+      "Paid for a plan": [
+        "Plătit pentru un plan"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - e-mail personal confirmat"
       ],
@@ -6966,6 +7007,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Persoanele publice, jurnaliștii, directorii și alții care pot fi ținta atacurilor cibernetice sunt foarte încurajați să activeze ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "legătură web publică invitație"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
       ],
@@ -6977,6 +7021,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
+      ],
+      "Referral link copied to your clipboard": [
+        "Legătura de recomandare a fost copiată în memorie."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
@@ -7053,6 +7100,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Trimiteți mesaje membrilor pentru a-i încuraja să-ți protejeze contul prin autentificarea cu doi factori."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "E-mail securizat trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Momentan, plățile prin SEPA nu sunt disponibile. Reîncercați mai târziu."
       ],
@@ -7103,6 +7153,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
       ],
+      "Signed up": [
+        "Înscris"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
@@ -7125,9 +7178,6 @@
         "Pasul ${ step }",
         "Pasul ${ step }",
         "Pasul ${ step }"
-      ],
-      "Storage": [
-        "Spațiu de stocare"
       ],
       "Storage allocated to other users in this organisation": [
         "Spațiu alocat altor utilizatori din această organizație"
@@ -7713,6 +7763,17 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puteți utiliza următoarele date pentru a vă conecta la un server ${ VPN_APP_NAME } folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Nu puteți trimite mai mult de o invitație în următoarele 24 de ore.",
+        "Nu puteți trimite mai mult de ${ emailSendLimitNumber } invitații în următoarele 24 de ore.",
+        "Nu puteți trimite mai mult de ${ emailSendLimitNumber } de invitații în următoarele 24 de ore."
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Nu puteți recomanda utilizatori ai ${ MAIL_APP_NAME }."
+      ],
+      "You don't have any referrals.": [
+        "Nu aveți persoane recomandate."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
@@ -7825,6 +7886,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Perioada de probare gratuită include un server dedicat."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Cei recomandați vor primi **două săptămâni gratuite** pentru planul ales de ei."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
@@ -8068,6 +8132,9 @@
       "Account storage": [
         "Spațiu cont"
       ],
+      "Activity": [
+        "Activitate"
+      ],
       "Add all organization members": [
         "Adăugare toți membrii organizației"
       ],
@@ -8127,6 +8194,9 @@
       ],
       "Authenticator app": [
         "Aplicație Authenticator"
+      ],
+      "Awarded": [
+        "Acreditat"
       ],
       "Backup password": [
         "Parola de rezervă"
@@ -8259,6 +8329,9 @@
       ],
       "Current email": [
         "E-mail actual"
+      ],
+      "Date": [
+        "Data"
       ],
       "Default language": [
         "Limba implicită"
@@ -8403,6 +8476,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite via email": [
+        "Invitați prin e-mail"
       ],
       "Issuer ID": [
         "ID emitent"
@@ -8563,6 +8639,9 @@
       "Payment method": [
         "Metoda de plată"
       ],
+      "Pending": [
+        "În așteptare"
+      ],
       "Phone number": [
         "Număr de telefon"
       ],
@@ -8626,6 +8705,9 @@
       "Reveal password": [
         "Afișare parolă"
       ],
+      "Reward": [
+        "Recompensă"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -8643,6 +8725,9 @@
       ],
       "Server name": [
         "Nume server"
+      ],
+      "Share your referral link": [
+        "Partajați-vă legătura web de recomandare"
       ],
       "Show ${ n } administrator": [
         "Afișare ${ n } administrator",
@@ -9006,6 +9091,9 @@
       ],
       "Terms": [
         "Termeni"
+      ],
+      "Terms and conditions": [
+        "Termeni și condiții"
       ],
       "Trouble signing in?": [
         "Aveți probleme la autentificare?"
@@ -14032,6 +14120,16 @@
       "${ feature } is now active": [
         "${ feature } este acum activă"
       ],
+      "${ friendsInvited } Friend invited": [
+        "Persoane invitate: ${ friendsInvited }",
+        "Persoane invitate: ${ friendsInvited }",
+        "Persoane invitate: ${ friendsInvited }"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "Persoane abonate: ${ friendsSubscribed }",
+        "Persoane abonate: ${ friendsSubscribed }",
+        "Persoane abonate: ${ friendsSubscribed }"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clieți ${ VPN_APP_NAME }"
       ],
@@ -14306,6 +14404,9 @@
       "Creating user accounts": [
         "Se creează conturile de utilizator"
       ],
+      "Credit earned": [
+        "Credite câștigate"
+      ],
       "Credits": [
         "Credite"
       ],
@@ -14547,6 +14648,9 @@
       "Gift code": [
         "Cod cadou"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Acordați ${ refereeRewardAmount } în credite și două săptămâni gratuite. Obțineți ${ referrerRewardAmount } în credite."
+      ],
       "Groups": [
         "Grupuri"
       ],
@@ -14590,6 +14694,9 @@
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
+      ],
+      "Invite friends. Get credits.": [
+        "Invitați prieteni. Obțineți credite."
       ],
       "Invoices": [
         "Facturi"
@@ -14701,6 +14808,9 @@
       ],
       "Recovery": [
         "Recuperare"
+      ],
+      "Refer a friend": [
+        "Recomandați pe cineva"
       ],
       "Remove all members?": [
         "Eliminați toți membrii?"
@@ -14983,6 +15093,9 @@
       "Your plan": [
         "Plan actual"
       ],
+      "Your referrals": [
+        "Persoane recomandate"
+      ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
       ],
@@ -15122,6 +15235,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adresa IP de origine și furnizorul de servicii de internet (ISP)."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Setează următorul subsol în e-mailurile pe care le trimiteți: ${ signature }. Legătura web duce spre legătura web personală de recomandare. Subsolul va apărea sub semnătura personală. Puteți modifica semnătura oricând în setări."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Regulile partajate ale serverului pot fi aplicate la utilizatori sau grupuri."
@@ -15787,6 +15903,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ștergând acest număr de telefon, nu veți mai putea să vă recuperați contul."
+      ],
+      "Please add at least one recipient.": [
+        "Adăugați cel puțin un destinatar."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."

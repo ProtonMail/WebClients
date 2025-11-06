@@ -53,6 +53,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Añadir dirección de ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Añadir una cuenta"
       ],
@@ -82,6 +85,9 @@
       ],
       "Add PayPal": [
         "Añadir PayPal"
+      ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Añadir un enlace de referidos en la firma de ${ MAIL_APP_NAME }"
       ],
       "Add user": [
         "Añadir usuario"
@@ -1398,6 +1404,12 @@
         "Evento no admitido"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultado más no mostrado",
+        "${ hiddenResultsCount } más resultados no mostrados"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
@@ -1538,6 +1550,9 @@
       "1 user account": [
         "1 cuenta de usuario"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
       "6 user accounts": [
         "6 cuentas de usuario"
       ],
@@ -1559,6 +1574,9 @@
       "Password health alerts": [
         "Alertas de estado de las contraseñas"
       ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
       "Unlimited folders, labels and filters": [
         "Número ilimitado de carpetas, etiquetas y filtros"
       ],
@@ -1572,6 +1590,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -1792,6 +1813,9 @@
       "Application problem": [
         "Problema con la aplicación"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bridge problem": [
         "Problema con el Bridge"
       ],
@@ -1881,6 +1905,9 @@
       "Continue your subscription": [
         "Continuar con tu suscripción"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Create label": [
         "Crea una etiqueta"
       ],
@@ -1892,6 +1919,9 @@
       ],
       "Remind me later": [
         "Recordarme más tarde"
+      ],
+      "Send": [
+        "Enviar"
       ],
       "Set up other features": [
         "Configura otras funciones"
@@ -3220,11 +3250,17 @@
       "To start, give your organization a name.": [
         "Para empezar, asigna un nombre a tu organización."
       ],
+      "Track the status and activity of your referrals": [
+        "Sigue el estado y la actividad de tus referidos"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa esta guía para que tu organización se beneficie rápidamente del cifrado y el ecosistema de privacidad líderes del sector de ${ BRAND_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Recibirás ${ referralInfo.referrerRewardAmount } en crédito de ${ BRAND_NAME } cuando la persona que invites se registre para un plan de ${ BRAND_NAME }, y también recibirán ${ referralInfo.refereeRewardAmount } en créditos para empezar."
       ]
     },
     "description": {
@@ -3457,6 +3493,9 @@
       "/month": [
         "/mes"
       ],
+      "2 TB of storage to share": [
+        "2 TB de almacenamiento para compartir"
+      ],
       "2 user accounts": [
         "2 cuentas de usuario"
       ],
@@ -3470,11 +3509,17 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Obtén 4 veces más almacenamiento"
+      ],
+      "Share your plan": [
+        "Comparte tu plan"
       ]
     },
     "Duo offer: Title": {
       "Get 4x more storage with ${ BRAND_NAME } Duo": [
         "Obtén 4 veces más almacenamiento con ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Compartir los beneficios de tu plan con ${ BRAND_NAME } Duo"
       ]
     },
     "Easy switch": {
@@ -5085,6 +5130,9 @@
       "Domain": [
         "Dominio"
       ],
+      "Drag to reorder": [
+        "Arrastrar para reordenar"
+      ],
       "Status": [
         "Estado"
       ],
@@ -5503,6 +5551,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descuento"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } no es válida."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
       ],
@@ -5663,6 +5714,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importa tus códigos existentes** de otras aplicaciones 2FA, como Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invita a tus amigos** a ${ BRAND_NAME } con tu enlace de referidos."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Paso 1:** Invita a tus amigos a ${ BRAND_NAME } con tu enlace de referidos."
@@ -5969,6 +6023,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Copiar la contraseña sugerida en el portapapeles"
+      ],
+      "Copy your referral link": [
+        "Copia tu enlace de referido"
       ],
       "Country code": [
         "Código de país"
@@ -6302,8 +6359,17 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Consigue **${ referrerRewardAmount } créditos** por cada amigo que se suscriba."
+      ],
+      "Get started with the referral link above.": [
+        "Empieza con el enlace de referido de arriba."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ve a tu proveedor de identidad, obtén los metadatos de SAML para ${ appName } e impórtalos aquí."
+      ],
+      "Google Pay mark": [
+        "marca de Google Pay"
       ],
       "Got it": [
         "Entendido"
@@ -6449,6 +6515,13 @@
       ],
       "Invite rejected": [
         "Se ha rechazado la invitación."
+      ],
+      "Invite successfully sent": [
+        "Invitación enviada",
+        "Invitaciones enviadas"
+      ],
+      "Invited": [
+        "Invitado"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Se necesitan 10 días para cambiar el país de un servidor, así que asegúrate de que tu selección sea correcta."
@@ -6728,6 +6801,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existen otros administradores en tu organización. Eres responsable de comunicarles la nueva contraseña."
       ],
+      "Paid for a plan": [
+        "Pagado por un plan"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - se ha confirmado el correo personalizado."
       ],
@@ -6850,6 +6926,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Figuras públicas, periodistas, ejecutivos y demás que puedan ser objetivos de ciberataques se les recomienda activar ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Enlace de invitación público"
+      ],
       "Public sharing of documents is not yet supported.": [
         "La compartición pública de documentos aún no está disponible."
       ],
@@ -6861,6 +6940,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
+      ],
+      "Referral link copied to your clipboard": [
+        "El enlace de referido se ha copiado en el portapapeles"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
@@ -6937,6 +7019,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envía correos electrónicos para invitar a tus miembros a proteger sus cuentas con autenticación de dos factores (2FA)."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado con el correo electrónico seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
       ],
@@ -6986,6 +7071,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicia sesión en ${ MAIL_APP_NAME } para activar tu dirección"
       ],
+      "Signed up": [
+        "Registrado"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
       ],
@@ -7007,9 +7095,6 @@
       "Step ${ step }": [
         "Paso ${ step }",
         "Paso ${ step }"
-      ],
-      "Storage": [
-        "Almacenamiento"
       ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios de esta organización"
@@ -7489,6 +7574,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME }."
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Con categorías de correo electrónico, los mensajes importantes llegan a tu bandeja de entrada principal. Todo lo demás se organiza en categorías."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Con grupos puedes enviar correos electrónicos a todos sus miembros de manera rápida y sencilla"
       ],
@@ -7581,6 +7669,16 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puedes utilizar las siguientes credenciales para conectarte a un servidor ${ VPN_APP_NAME } usando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "No puedes enviar más de ${ emailSendLimitNumber } invitación de correo hasta pasadas 24 horas.",
+        "No puedes enviar más de ${ emailSendLimitNumber } invitaciones de correo hasta pasadas 24 horas."
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "No puedes recomendar a usuarios de ${ MAIL_APP_NAME }."
+      ],
+      "You don't have any referrals.": [
+        "No tienes ningún referido."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -7690,6 +7788,9 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Tu prueba gratuita incluye 1 servidor dedicado."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Tus amigos obtienen **2 semanas gratis** en el plan que elijan."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tus datos están a salvo con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
@@ -7913,6 +8014,10 @@
         "${ nbDay } día",
         "${ nbDay } días"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } de ${ maxAddresses } dirección de correo electrónico",
+        "${ usedAddresses } de ${ maxAddresses } direcciones de correo"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
       ],
@@ -7921,6 +8026,9 @@
       ],
       "Account storage": [
         "Almacenamiento de la cuenta"
+      ],
+      "Activity": [
+        "Actividad"
       ],
       "Add all organization members": [
         "Añadir todos los miembros de la organización"
@@ -7982,11 +8090,17 @@
       "Authenticator app": [
         "Aplicación de autenticación"
       ],
+      "Awarded": [
+        "Galardonado"
+      ],
       "Backup password": [
         "Contraseña de respaldo"
       ],
       "Billing cycle": [
         "Ciclo de facturación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Block": [
         "Direcciones bloqueadas"
@@ -8111,6 +8225,9 @@
       "Current email": [
         "Correo electrónico actual"
       ],
+      "Date": [
+        "Fecha"
+      ],
       "Default language": [
         "Idioma por defecto"
       ],
@@ -8207,6 +8324,9 @@
       "Gateway name": [
         "Nombre de la puerta de enlace"
       ],
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ],
       "Gift code": [
         "Código promocional"
       ],
@@ -8251,6 +8371,9 @@
       ],
       "Interval": [
         "Intervalo"
+      ],
+      "Invite via email": [
+        "Invitar por correo electrónico"
       ],
       "Issuer ID": [
         "ID del emisor"
@@ -8305,6 +8428,9 @@
       ],
       "Method for importing metadata": [
         "Método para importar metadatos"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Mínimo ${ MIN_CHARS } caracteres"
       ],
       "Minimum number of characters": [
         "Número mínimo de caracteres"
@@ -8408,6 +8534,9 @@
       "Payment method": [
         "Método de pago"
       ],
+      "Pending": [
+        "Pendiente"
+      ],
       "Phone number": [
         "Número de teléfono"
       ],
@@ -8471,6 +8600,9 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
+      "Reward": [
+        "Recompensa"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
       ],
@@ -8488,6 +8620,9 @@
       ],
       "Server name": [
         "Nombre del servidor"
+      ],
+      "Share your referral link": [
+        "Comparte tu enlace de referidos"
       ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
@@ -8621,6 +8756,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Para"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } dirección de correo electrónico",
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } direcciones de correo"
       ]
     },
     "Label for adding a new custom domain": {
@@ -8840,6 +8981,9 @@
       ],
       "Terms": [
         "Términos"
+      ],
+      "Terms and conditions": [
+        "Términos y condiciones"
       ],
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
@@ -10799,6 +10943,9 @@
       "Advanced account protection": [
         "Protección de cuentas avanzada"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10GB)"
+      ],
       "Team policies": [
         "Políticas de equipo"
       ]
@@ -11000,6 +11147,9 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Método de pago necesario para que la suscripción se active después de que termine la prueba."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -11025,6 +11175,17 @@
         "El cupón es válido por ${ couponRedemptions } renovación.",
         "El cupón es válido para ${ couponRedemptions } renovaciones."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial de descuento es válido para el primer ${ subscriptionLength } mes.",
+        "El precio especial de descuento es válido para los primeros ${ subscriptionLength } meses."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
+        "El precio con descuento especial es válido para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelarlo en cualquier momento."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "La oferta especial es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puedes cancelarla en cualquier momento."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
         "El precio especial de descuento de ${ priceWithDiscount } es válido para los primeros ${ subscriptionLength } meses."
@@ -11049,6 +11210,9 @@
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las futuras facturas"
       ],
+      "This offer is not available with your current plan.": [
+        "Esta oferta no está disponible con tu plan actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
@@ -11060,6 +11224,12 @@
       ],
       "VAT number": [
         "Número de IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ya tienes una suscripción a este plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ya tienes una suscripción a este plan. Puedes cambiar tu suscripción en ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se te cobrará ${ amountToCharge } a tu método de pago seleccionado."
@@ -11075,6 +11245,9 @@
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
       ]
     },
     "Payments.Error": {
@@ -13753,6 +13926,14 @@
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } amigo invitado",
+        "${ friendsInvited } amigos invitados"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } amigo suscrito",
+        "${ friendsSubscribed } amigos suscritos"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clientes de ${ VPN_APP_NAME }"
       ],
@@ -14025,6 +14206,9 @@
       "Creating user accounts": [
         "Creación de cuentas de usuario"
       ],
+      "Credit earned": [
+        "Crédito ganado"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -14179,6 +14363,9 @@
       "Email": [
         "Correo electrónico"
       ],
+      "Email categories": [
+        "Categorías de correo electrónico"
+      ],
       "Email subscriptions": [
         "Boletines electrónicos"
       ],
@@ -14261,6 +14448,9 @@
       "Gift code": [
         "Código promocional"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Regala ${ refereeRewardAmount } y 2 semanas gratis. Obtén ${ referrerRewardAmount } en créditos."
+      ],
       "Groups": [
         "Grupos"
       ],
@@ -14303,6 +14493,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Invite friends. Get credits.": [
+        "Invita a tus amigos. Obtén créditos."
       ],
       "Invoices": [
         "Facturas"
@@ -14414,6 +14607,9 @@
       ],
       "Recovery": [
         "Recuperación"
+      ],
+      "Refer a friend": [
+        "Recomendar a un amigo"
       ],
       "Remove all members?": [
         "¿Eliminar todos los miembros?"
@@ -14695,6 +14891,9 @@
       "Your plan": [
         "Tu plan"
       ],
+      "Your referrals": [
+        "Tus referidos"
+      ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
       ],
@@ -14834,6 +15033,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Dirección IP de origen y proveedor de servicios de internet (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Establece el siguiente pie de página en los correos electrónicos que envíes: ${ signature }. El enlace apunta a tu enlace de referido. El pie de página aparecerá debajo de tu firma. Puedes personalizar tu firma en cualquier momento en la configuración."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Las políticas de servidor compartido se pueden aplicar a cada usuario o a grupos."
@@ -15469,6 +15671,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Al eliminar este número de teléfono, ya no podrás recuperar tu cuenta."
+      ],
+      "Please add at least one recipient.": [
+        "Añade al menos un destinatario."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."

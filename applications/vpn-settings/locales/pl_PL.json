@@ -75,6 +75,9 @@
       "Add PayPal": [
         "Dodaj konto PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Dodaj link polecający do podpisu ${ MAIL_APP_NAME }"
+      ],
       "Add user": [
         "Dodaj użytkownika"
       ],
@@ -1827,6 +1830,9 @@
       "Continue your subscription": [
         "Kontynuuj subskrypcję"
       ],
+      "Copy": [
+        "Kopiuj"
+      ],
       "Create label": [
         "Utwórz etykietę"
       ],
@@ -1838,6 +1844,9 @@
       ],
       "Remind me later": [
         "Przypomnij później"
+      ],
+      "Send": [
+        "Wyślij"
       ],
       "Set up other features": [
         "Skonfiguruj inne funkcje"
@@ -3135,6 +3144,9 @@
       ],
       "To start, give your organization a name.": [
         "Rozpocznij od nazwania organizacji."
+      ],
+      "Track the status and activity of your referrals": [
+        "Sprawdź status i aktywność linku polecającego"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Skorzystaj z przewodnika, aby Twoja organizacja zaczęła szybko czerpać korzyści z wiodącego w branży ekosystemu szyfrowania i prywatności ${ BRAND_NAME }."
@@ -5414,6 +5426,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% zniżki"
       ],
+      "${ emailAddress } is invalid": [
+        "Adres e-mail ${ emailAddress } jest nieprawidłowy"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: obraz w pełnym rozmiarze"
       ],
@@ -5611,6 +5626,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importuj obecne kody** z innych aplikacji uwierzytelniających, takich jak Google Authenticator"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Zaproś znajomych** do ${ BRAND_NAME } za pomocą linku polecającego."
       ],
       "**Sync codes** to all your devices": [
         "**Synchronizuj kody** na wszystkich urządzeniach"
@@ -5899,6 +5917,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "Kopiuj sugerowane hasło do schowka"
+      ],
+      "Copy your referral link": [
+        "Kopiuj link polecający"
       ],
       "Country code": [
         "Kod kraju"
@@ -6224,6 +6245,9 @@
       "Get ${ upsellPlanName }": [
         "Wybierz plan ${ upsellPlanName }"
       ],
+      "Get started with the referral link above.": [
+        "Zacznij od powyższego linku polecającego."
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Przejdź do swojego dostawcy tożsamości, pobierz metadane SAML dla ${ appName } i zaimportuj je tutaj."
       ],
@@ -6364,6 +6388,15 @@
       ],
       "Invite rejected": [
         "Odrzucenie zaproszenia"
+      ],
+      "Invite successfully sent": [
+        "Zaproszenie zostało wysłane",
+        "Zaproszenia zostały wysłane",
+        "Zaproszenia zostały wysłane",
+        "Zaproszenia zostały wysłane"
+      ],
+      "Invited": [
+        "Zaproszono"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Zmiana kraju serwera zajmie 10 dni, więc upewnij się, że wybór jest prawidłowy."
@@ -6635,6 +6668,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organizacja posiada jeszcze innych administratorów. Jesteś odpowiedzialny za przekazanie im nowego hasła."
       ],
+      "Paid for a plan": [
+        "Zapłacono za plan"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor — potwierdzenie niestandardowego adresu e-mail"
       ],
@@ -6758,6 +6794,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Osoby publiczne, dziennikarze, kierownictwo i inne osoby, które mogą być celem cyberataków powinni włączyć ochronę ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Publiczny link zaproszenia"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
@@ -6769,6 +6808,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
+      ],
+      "Referral link copied to your clipboard": [
+        "Link polecający został skopiowany do schowka"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
@@ -6839,6 +6881,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Wyślij wiadomości, aby zachęcić użytkowników do ochrony swoich kont za pomocą uwierzytelniania dwustopniowego."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Płatności SEPA nie są obecnie dostępne. Spróbuj ponownie później."
       ],
@@ -6887,6 +6932,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Aby aktywować adres, zaloguj się do poczty ${ MAIL_APP_NAME }"
       ],
+      "Signed up": [
+        "Zarejestrowany"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
@@ -6907,9 +6955,6 @@
         "Krok ${ step }",
         "Krok ${ step }",
         "Krok ${ step }"
-      ],
-      "Storage": [
-        "Przestrzeń dyskowa"
       ],
       "Storage allocated to other users in this organisation": [
         "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
@@ -7487,6 +7532,18 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Możesz użyć następujących danych logowania do połączenia się z serwerem ${ VPN_APP_NAME }, używając alternatywnych aplikacji VPN, takich jak: Tunnelblick na macOS czy OpenVPN na GNU/Linuksie."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Nie możesz wysłać więcej niż ${ emailSendLimitNumber } zaproszenie w ciągu doby",
+        "Nie możesz wysłać więcej niż ${ emailSendLimitNumber } zaproszenia w ciągu doby",
+        "Nie możesz wysłać więcej niż ${ emailSendLimitNumber } zaproszeń w ciągu doby",
+        "Nie możesz wysłać więcej niż ${ emailSendLimitNumber } zaproszeń w ciągu doby"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Nie możesz polecić użytkowników poczty ${ MAIL_APP_NAME }"
+      ],
+      "You don't have any referrals.": [
+        "Nie masz żadnych poleceń."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
       ],
@@ -7600,6 +7657,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Twoi znajomi otrzymają **2 tygodnie planu za darmo**."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Twoje dane są u nas bezpieczne. Skontaktujemy się z Tobą tylko wtedy, gdy będzie to konieczne."
@@ -7844,6 +7904,9 @@
       "Account storage": [
         "Przestrzeń dyskowa konta"
       ],
+      "Activity": [
+        "Aktywność"
+      ],
       "Add all organization members": [
         "Dodaj wszystkich użytkowników organizacji"
       ],
@@ -7903,6 +7966,9 @@
       ],
       "Authenticator app": [
         "Aplikacja uwierzytelniająca"
+      ],
+      "Awarded": [
+        "Przyznano"
       ],
       "Backup password": [
         "Hasło zapasowe"
@@ -8032,6 +8098,9 @@
       ],
       "Current email": [
         "Obecny adres"
+      ],
+      "Date": [
+        "Data"
       ],
       "Default language": [
         "Język domyślny"
@@ -8170,6 +8239,9 @@
       ],
       "Interval": [
         "Częstotliwość"
+      ],
+      "Invite via email": [
+        "Zaproś przez wiadomość"
       ],
       "Issuer ID": [
         "Identyfikator dostawcy"
@@ -8327,6 +8399,9 @@
       "Payment method": [
         "Metoda płatności"
       ],
+      "Pending": [
+        "Oczekuje"
+      ],
       "Phone number": [
         "Numer telefonu"
       ],
@@ -8390,6 +8465,9 @@
       "Reveal password": [
         "Pokaż hasło"
       ],
+      "Reward": [
+        "Nagroda"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -8404,6 +8482,9 @@
       ],
       "Sequences": [
         "Sekwencje"
+      ],
+      "Share your referral link": [
+        "Udostępnij link polecający"
       ],
       "Show ${ n } administrator": [
         "Pokaż ${ n } administratora",
@@ -8757,6 +8838,9 @@
         "Zaloguj się"
       ],
       "Terms": [
+        "Regulamin"
+      ],
+      "Terms and conditions": [
         "Regulamin"
       ],
       "Trouble signing in?": [
@@ -14164,6 +14248,9 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
+      "Invite friends. Get credits.": [
+        "Zaproś znajomych. Zdobądź środki."
+      ],
       "Invoices": [
         "Faktury"
       ],
@@ -14271,6 +14358,9 @@
       ],
       "Recovery": [
         "Odzyskiwanie"
+      ],
+      "Refer a friend": [
+        "Poleć znajomemu"
       ],
       "Remove all members?": [
         "Usunąć wszystkich użytkowników?"
@@ -14533,6 +14623,9 @@
       "Your plan": [
         "Twój plan"
       ],
+      "Your referrals": [
+        "Twoje polecenia"
+      ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
       ],
@@ -14669,6 +14762,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adres IP i dostawca Internetu (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Ustawia stopkę w wysyłanych wiadomościach: ${ signature } Link wskazuje na Twój link polecający. Stopka zostanie dodana pod Twoim podpisem. Podpis możesz spersonalizować w ustawieniach."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Zasady udostępnionego serwera mogą być użyte do poszczególnych użytkowników lub grup"
@@ -15312,6 +15408,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Usuwając ten numer telefonu, stracisz możliwość odzyskiwania swojego konta."
+      ],
+      "Please add at least one recipient.": [
+        "Wpisz co najmniej jednego odbiorcę."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."

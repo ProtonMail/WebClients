@@ -1462,11 +1462,17 @@
       "Continue your subscription": [
         "Поновіть свою передплату"
       ],
+      "Copy": [
+        "Копіювати"
+      ],
       "Create label": [
         "Створити мітку"
       ],
       "Maybe later": [
         "Можливо пізніше"
+      ],
+      "Send": [
+        "Надіслати"
       ],
       "Take a tour": [
         "Показати знайомство"
@@ -2705,6 +2711,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Щоб імпортувати свої контакти з Google або Outlook, ${ easySwitchLink }."
+      ],
+      "Track the status and activity of your referrals": [
+        "Відстежуйте стан і активність ваших запрошень"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -4777,6 +4786,9 @@
         "${ countriesCount } країн увімкнено",
         "${ countriesCount } країна(и) увімкнена/і"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } е-пошти недійсна"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: повнорозмірне зображення"
       ],
@@ -5215,6 +5227,9 @@
       "Copy the suggested password to clipboard": [
         "Скопіюйте запропонований пароль до буфера обміну"
       ],
+      "Copy your referral link": [
+        "Скопіюйте своє реферальне посилання"
+      ],
       "Country code": [
         "Код країни"
       ],
@@ -5620,6 +5635,15 @@
       "Invite rejected": [
         "Запрошення відхилено"
       ],
+      "Invite successfully sent": [
+        "Запрошення успішно надіслано",
+        "Запрошення успішно надіслані",
+        "Запрошення успішно надіслані",
+        "Запрошення успішно надіслані"
+      ],
+      "Invited": [
+        "Запрошено"
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Зміна країни сервера займає 10 днів, тому переконайтеся, що ви вибрали правильну країну."
       ],
@@ -5959,6 +5983,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "Громадським діячам, журналістам, керівникам та іншим особам, які можуть стати об'єктом кібератак, наполегливо рекомендується ввімкнути ${ PROTON_SENTINEL_NAME }."
       ],
+      "Public link invite": [
+        "Запрошення загальнодоступним посиланням"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Загальнодоступний обмін документами наразі не підтримується."
       ],
@@ -5970,6 +5997,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
+      ],
+      "Referral link copied to your clipboard": [
+        "Реферальне посилання успішно скопійовано до буферу обміну"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
@@ -6037,6 +6067,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Надішліть електронні листи своїм користувачам, щоб заохотити їх захистити свої облікові записи за допомогою двоетапної перевірки."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Платежі SEPA наразі недоступні. Спробуйте пізніше."
       ],
@@ -6076,6 +6109,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
       ],
+      "Signed up": [
+        "Зареєстровано"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
@@ -6093,9 +6129,6 @@
         "Крок ${ step }",
         "Крок ${ step }",
         "Крок ${ step }"
-      ],
-      "Storage": [
-        "Сховище"
       ],
       "Storage allocated to other users in this organisation": [
         "Обсяг сховища, розподілений між іншими користувачами в цій організації"
@@ -6592,6 +6625,15 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ${ VPN_APP_NAME } через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошення електронною поштою впродовж наступних 24 годин",
+        "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошення електронною поштою впродовж наступних 24 годин",
+        "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошень електронною поштою впродовж наступних 24 годин",
+        "Ви не можете надіслати більше ніж ${ emailSendLimitNumber } запрошення електронною поштою впродовж наступних 24 годин"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "Ви не можете запрошувати користувачів ${ MAIL_APP_NAME }"
+      ],
       "You have ${ availableCount } new server available.": [
         "Вам доступний ${ availableCount } новий сервер.",
         "Вам доступні ${ availableCount } нові сервери.",
@@ -6888,6 +6930,9 @@
       "Account storage": [
         "Сховище облікового запису"
       ],
+      "Activity": [
+        "Діяльність"
+      ],
       "Add all organization members": [
         "Додати всіх учасників організації"
       ],
@@ -6941,6 +6986,9 @@
       ],
       "Authenticator app": [
         "Програма автентифікації"
+      ],
+      "Awarded": [
+        "Нагороди"
       ],
       "Backup password": [
         "Резервний пароль"
@@ -7064,6 +7112,9 @@
       ],
       "Current email": [
         "Поточна адреса електронної пошти"
+      ],
+      "Date": [
+        "Дата"
       ],
       "Default language": [
         "Типова мова"
@@ -7196,6 +7247,9 @@
       ],
       "Interval": [
         "Інтервал"
+      ],
+      "Invite via email": [
+        "Запросити електронною поштою"
       ],
       "Issuer ID": [
         "ID видавця"
@@ -7337,6 +7391,9 @@
       ],
       "Payment method": [
         "Спосіб оплати"
+      ],
+      "Pending": [
+        "У черзі"
       ],
       "Phone number": [
         "Номер телефону"
@@ -12572,6 +12629,9 @@
       "Recovery": [
         "Відновлення"
       ],
+      "Refer a friend": [
+        "Запросити друга"
+      ],
       "Remove all members?": [
         "Видалити всіх учасників?"
       ],
@@ -12912,6 +12972,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Встановлює наступний нижній колонтитул в електронних листах, які ви надсилаєте: ${ signature }. Посилання вказує на ваше перенаправлене посилання. Нижній колонтитул з'явиться під вашим підписом. Ви можете будь-коли персоналізувати свій підпис у налаштуваннях."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Вкажіть домен, якому дозволено автентифікацію з SAML SSO"
@@ -13468,6 +13531,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Видаливши цей номер телефону, ви більше не зможете відновити свій обліковий запис."
+      ],
+      "Please add at least one recipient.": [
+        "Додайте принаймні одного отримувача."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."

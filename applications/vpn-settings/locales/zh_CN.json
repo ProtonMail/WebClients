@@ -75,6 +75,9 @@
       "Add PayPal": [
         "添加 PayPal"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "将推荐链接添加到 ${ MAIL_APP_NAME } 签名中"
+      ],
       "Add user": [
         "添加用户"
       ],
@@ -1741,6 +1744,9 @@
       "Continue your subscription": [
         "继续您的订阅"
       ],
+      "Copy": [
+        "复制"
+      ],
       "Create label": [
         "新建标签"
       ],
@@ -1752,6 +1758,9 @@
       ],
       "Remind me later": [
         "稍后提醒我"
+      ],
+      "Send": [
+        "发送"
       ],
       "Set up other features": [
         "设置其他功能"
@@ -3032,11 +3041,17 @@
       "To start, give your organization a name.": [
         "首先，请为您的组织命名。"
       ],
+      "Track the status and activity of your referrals": [
+        "实时跟踪已发出的邀请动态"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "当您邀请他人注册${ BRAND_NAME }时，您将获得${ referralInfo.referrerRewardAmount }的${ BRAND_NAME }余额奖励，并且被邀请人也将获得${ referralInfo.refereeRewardAmount }余额奖励以供使用。"
       ]
     },
     "description": {
@@ -5224,6 +5239,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% 折扣"
       ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } 无效"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }：完整图片"
       ],
@@ -5361,6 +5379,9 @@
       ],
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "从其他双重验证应用（如 Google Authenticator）**导入现有的验证码**"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "使用您的推荐链接**邀请您的朋友**体验 ${ BRAND_NAME }"
       ],
       "**Sync codes** to all your devices": [
         "在所有设备之间**同步验证码**"
@@ -5634,6 +5655,9 @@
       ],
       "Copy the suggested password to clipboard": [
         "将建议的密码复制到剪贴板"
+      ],
+      "Copy your referral link": [
+        "复制您的推荐链接"
       ],
       "Country code": [
         "国家/地区代码"
@@ -5938,6 +5962,12 @@
       "Get ${ upsellPlanName }": [
         "开通 ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "每当一位朋友订阅，您将获得**${ referrerRewardAmount }余额奖励**。"
+      ],
+      "Get started with the referral link above.": [
+        "立即通过上方推荐链接开始使用。"
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "访问身份供应商，获取 ${ appName } 的 SAML 元数据并导入此处。"
       ],
@@ -6075,6 +6105,12 @@
       ],
       "Invite rejected": [
         "邀请被拒绝"
+      ],
+      "Invite successfully sent": [
+        "已成功发送邀请"
+      ],
+      "Invited": [
+        "已邀请"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "更改服务器的国家/地区需要 10 天时间，因此请确保您的选择正确。"
@@ -6343,6 +6379,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的机构中还有其他管理员，您需要将新密码告知他们。"
       ],
+      "Paid for a plan": [
+        "已开通套餐"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - 自定义电子邮件已确认"
       ],
@@ -6460,6 +6499,9 @@
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
         "如果您是公众人物、记者、政企高层等网络攻击的常见对象，强烈建议您启用 ${ PROTON_SENTINEL_NAME }。"
       ],
+      "Public link invite": [
+        "公开链接邀请"
+      ],
       "Public sharing of documents is not yet supported.": [
         "暂不支持公开分享。"
       ],
@@ -6471,6 +6513,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
+      ],
+      "Referral link copied to your clipboard": [
+        "邀请链接已复制"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${ link }来解决。"
@@ -6541,6 +6586,9 @@
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "发送电子邮件鼓励您的成员通过 2FA 保护他们的账户。"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
+      ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA 付款目前尚不可用，请稍后再试。"
       ],
@@ -6589,6 +6637,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登录 ${ MAIL_APP_NAME } 以激活您的地址"
       ],
+      "Signed up": [
+        "已注册"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
@@ -6606,9 +6657,6 @@
       ],
       "Step ${ step }": [
         "步骤 ${ step }"
-      ],
-      "Storage": [
-        "存储"
       ],
       "Storage allocated to other users in this organisation": [
         "此组织其他成员的存储空间分配量"
@@ -7156,6 +7204,15 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "可以使用以下凭据，通过诸如 macOS 下的 Tunnelblick 和 GNU/Linux 下的 OpenVPN 等第三方开源 VPN 客户端，连接到 ${ VPN_APP_NAME } 服务器。"
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
+      ],
+      "You cannot refer ${ MAIL_APP_NAME } users": [
+        "您不能邀请其他 ${ MAIL_APP_NAME } 用户"
+      ],
+      "You don't have any referrals.": [
+        "您目前没有推荐记录。"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
       ],
@@ -7257,6 +7314,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "您的朋友可享受所选套餐的 **2 周**免费试用期。"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的个人信息交由我们处理是安全的，我们只会在提供服务所必需的情况下联系您。"
@@ -7480,6 +7540,9 @@
       "Account storage": [
         "账户存储空间"
       ],
+      "Activity": [
+        "进展"
+      ],
       "Add all organization members": [
         "添加所有组织成员"
       ],
@@ -7539,6 +7602,9 @@
       ],
       "Authenticator app": [
         "身份验证应用"
+      ],
+      "Awarded": [
+        "已奖励"
       ],
       "Backup password": [
         "备用密码"
@@ -7668,6 +7734,9 @@
       ],
       "Current email": [
         "当前邮箱"
+      ],
+      "Date": [
+        "日期"
       ],
       "Default language": [
         "默认语言"
@@ -7806,6 +7875,9 @@
       ],
       "Interval": [
         "验证码更新周期"
+      ],
+      "Invite via email": [
+        "通过电子邮件邀请"
       ],
       "Issuer ID": [
         "颁发者标号"
@@ -7966,6 +8038,9 @@
       "Payment method": [
         "付款方式"
       ],
+      "Pending": [
+        "等待"
+      ],
       "Phone number": [
         "电话号码"
       ],
@@ -8029,6 +8104,9 @@
       "Reveal password": [
         "显示密码"
       ],
+      "Reward": [
+        "奖励"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -8043,6 +8121,9 @@
       ],
       "Sequences": [
         "序列"
+      ],
+      "Share your referral link": [
+        "分享您的推荐链接"
       ],
       "Show ${ n } administrator": [
         "显示 ${ n } 位管理员"
@@ -8387,6 +8468,9 @@
         "登录"
       ],
       "Terms": [
+        "服务条款"
+      ],
+      "Terms and conditions": [
         "服务条款"
       ],
       "Trouble signing in?": [
@@ -13379,6 +13463,9 @@
       "Gift code": [
         "礼品码"
       ],
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "给予${ refereeRewardAmount }余额奖励及2周免费服务，获得${ referrerRewardAmount }余额奖励。"
+      ],
       "Groups": [
         "群组"
       ],
@@ -13417,6 +13504,9 @@
       ],
       "Invalid verification code": [
         "验证码无效"
+      ],
+      "Invite friends. Get credits.": [
+        "邀请朋友，获取余额奖励。"
       ],
       "Invoices": [
         "账单"
@@ -13525,6 +13615,9 @@
       ],
       "Recovery": [
         "恢复"
+      ],
+      "Refer a friend": [
+        "邀请好友"
       ],
       "Remove all members?": [
         "移除全部成员？"
@@ -13784,6 +13877,9 @@
       "Your plan": [
         "您的账户等级"
       ],
+      "Your referrals": [
+        "您的推荐"
+      ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
       ],
@@ -13920,6 +14016,9 @@
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "来源 IP 地址和互联网服务提供商 (ISP)"
+      ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "在您发出的邮件中通过来源标识分享您的邀请链接，如：${ signature }这段标识文字将置于您的落款下方。您可以随时在设置中修改落款。"
       ],
       "Shared server policies can be applied to individual users or groups": [
         "共享服务器策略可应用于单个用户或组"
@@ -14500,6 +14599,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "删除此号码后，您将无法再重置账户密码。"
+      ],
+      "Please add at least one recipient.": [
+        "请添加至少一名收件人。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
