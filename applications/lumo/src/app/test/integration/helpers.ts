@@ -135,11 +135,13 @@ function createTestStore({
     listenerMiddleware,
     sagaMiddleware,
     actionHistoryMiddleware,
+    extraThunkArguments,
 }: {
     preloadedState?: Partial<any>;
     listenerMiddleware: any;
     sagaMiddleware?: any;
     actionHistoryMiddleware: any;
+    extraThunkArguments: any;
 }) {
     const { configureStore } = require('@reduxjs/toolkit');
     const { rootReducer } = require('../../redux/rootReducer');
@@ -156,6 +158,7 @@ function createTestStore({
             const m1 = getDefaultMiddleware({
                 serializableCheck: false, // Simplified for tests
                 immutableCheck: isDevMode && !isTest,
+                thunk: { extraArgument: extraThunkArguments },
             });
             const m2 = m1.prepend(listenerMiddleware.middleware);
             const m3 = sagaMiddleware ? m2.concat(sagaMiddleware) : m2;
@@ -216,18 +219,18 @@ export async function setupTestEnvironment({
     const lumoApi = new LumoApi(USER_TEST_UID);
     const dbApi = existingDbApi || new DbApi(mockUser.ID);
 
-    const listenerMiddleware = createLumoListenerMiddleware({
-        extra: {
-            config: testConfig,
-            api,
-            authentication,
-            history,
-            eventManager,
-            unleashClient,
-            dbApi,
-            lumoApi,
-        },
-    });
+    const extra = {
+        config: testConfig,
+        api,
+        authentication,
+        history,
+        eventManager,
+        unleashClient,
+        dbApi,
+        lumoApi,
+    };
+
+    const listenerMiddleware = createLumoListenerMiddleware({ extra });
 
     const sagaMiddleware: LumoSaga = createSagaMiddleware<LumoSagaContext>({
         context: { dbApi, lumoApi } as LumoSagaContext,
@@ -243,6 +246,7 @@ export async function setupTestEnvironment({
         preloadedState: preloadedState ?? {},
         sagaMiddleware,
         actionHistoryMiddleware,
+        extraThunkArguments: extra,
     });
     const dispatch = store.dispatch;
 
