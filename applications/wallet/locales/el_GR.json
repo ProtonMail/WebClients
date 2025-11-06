@@ -2411,6 +2411,11 @@
         "Απεριόριστα hide-my-email ψευδώνυμα"
       ]
     },
+    "Features": {
+      "Lightning-fast speeds": [
+        "Αστραπιαίες ταχύτητες"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
@@ -4973,6 +4978,9 @@
       "${ app } storage": [
         "Αποθηκευτικός χώρος ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } αποθηκευτικός χώρος σε χρήση"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% γεμάτος"
       ],
@@ -4981,6 +4989,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Αποθηκευτικός χώρος σε χρήση"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον ${ BRAND_NAME } λογαριασμό σας."
