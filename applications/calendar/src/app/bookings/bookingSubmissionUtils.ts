@@ -11,7 +11,7 @@ import { convertUTCDateTimeToZone, fromUTCDate } from '@proton/shared/lib/date/t
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import config from '../config';
-import { decryptBookingSessionKey } from '../containers/bookings/bookingCryptoUtils';
+import { decryptBookingSessionKey } from '../containers/bookings/utils/bookingCryptoUtils';
 import type { BookingDetails, BookingTimeslot } from './booking.store';
 
 interface PrepareBookingSubmissionParams {

@@ -7,7 +7,7 @@ import { useApi } from '@proton/components';
 import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { extractBookingUidFromSecret } from '../containers/bookings/bookingCryptoUtils';
+import { extractBookingUidFromSecret } from '../containers/bookings/utils/bookingCryptoUtils';
 import { useBookingStore } from './booking.store';
 import type { BookingTimeslot } from './booking.store';
 import { prepareBookingSubmission } from './bookingSubmissionUtils';

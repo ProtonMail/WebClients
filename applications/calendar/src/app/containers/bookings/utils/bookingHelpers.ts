@@ -7,14 +7,14 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import type { CalendarViewBusyEvent, CalendarViewEvent } from '../calendar/interface';
-import type { BookingFormData, BookingFormValidation, BookingRange, Slot } from './bookingsProvider/interface';
+import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
 import {
     BOOKING_SLOT_ID,
     BookingLocation,
     MAX_BOOKING_SLOTS,
     TEMPORARY_BOOKING_SLOT,
-} from './bookingsProvider/interface';
+} from '../bookingsProvider/interface';
+import type { BookingFormData, BookingFormValidation, BookingRange, Slot } from '../bookingsProvider/interface';
 
 export const createBookingLink = (secretBytes: Uint8Array<ArrayBuffer>) => {
     const base64Secret = uint8ArrayToPaddedBase64URLString(secretBytes);

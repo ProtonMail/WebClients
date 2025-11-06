@@ -3,6 +3,8 @@ import { addHours, isFriday, isMonday, isWeekend } from 'date-fns';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 
+import type { BookingRange } from '../bookingsProvider/interface';
+import { type BookingFormData, BookingLocation } from '../bookingsProvider/interface';
 import {
     JSONFormatData,
     JSONFormatTextData,
@@ -10,8 +12,6 @@ import {
     generateSlotsFromRange,
     validateFormData,
 } from './bookingHelpers';
-import type { BookingRange } from './bookingsProvider/interface';
-import { type BookingFormData, BookingLocation } from './bookingsProvider/interface';
 
 describe('booking helpers', () => {
     describe('generateSlotsFromRange', () => {
