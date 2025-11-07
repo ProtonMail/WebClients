@@ -43,6 +43,7 @@ import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';
 import OrganizationSectionUpsell from './OrganizationSectionUpsell';
 import SetupOrganizationModal from './SetupOrganizationModal';
+import SetupOrganizationNameModal from './SetupOrganizationNameModal';
 import OrganizationLogoModal from './logoUpload/OrganizationLogoModal';
 import OrganizationLogoRemovalModal from './logoUpload/OrganizationLogoRemovalModal';
 import OrganizationLogoTipsModal from './logoUpload/OrganizationLogoTipsModal';
@@ -66,6 +67,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [editOrganizationIdentityProps, setEditOrganizationIdentityModal, renderEditOrganizationIdentityModal] =
         useModalState();
     const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
+    const [setupOrganizationNameProps, /* setSetupOrganizationNameModal */, renderSetupOrganizationNameModal] = // TODO enable where needed
+        useModalState();
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const [setupOrganizationModalProps, setSetupOrganizationModal, renderSetupOrganizationModal] = useModalState();
     const errorHandler = useErrorHandler();
@@ -128,6 +131,9 @@ const OrganizationSection = ({ app, organization }: Props) => {
             )}
             {renderEditOrganizationNameModal && (
                 <OrganizationNameModal organization={organization} {...editOrganizationNameProps} />
+            )}
+            {renderSetupOrganizationNameModal && (
+                <SetupOrganizationNameModal organization={organization} {...setupOrganizationNameProps} />
             )}
             {renderEditOrganizationIdentityModal && (
                 <EditOrganizationIdentityModal

@@ -28,6 +28,10 @@ const useFormErrors = () => {
             errorsMapRef.current = [];
             rerender({});
         },
+        /**
+         * Synchronously rerenders the form, causing re-evaluation of validators.
+         * Returns `true` if the form is valid.
+         */
         onFormSubmit: (element?: HTMLElement) => {
             isSubmittedRef.current = true;
             if (element) {

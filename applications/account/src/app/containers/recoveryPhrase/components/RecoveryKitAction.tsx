@@ -4,9 +4,9 @@ import { Button } from '@proton/atoms';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import recoveryKitPdf from '@proton/styles/assets/img/illustrations/recovery-kit-pdf.svg';
 import clsx from '@proton/utils/clsx';
 
-import recoveryKitPdf from '../assets/recovery-kit-pdf.svg';
 import type useRecoveryKitDownload from '../useRecoveryKitDownload';
 import CopyRecoveryPhraseContainer from './CopyRecoveryPhraseContainer';
 

@@ -54,6 +54,7 @@ import {
     TVContainer,
     ThemesSection,
     TopBanners,
+    TopNavbarGetStartedButton,
     TopNavbarUpsell,
     TwoFactorSection,
     UnAuthenticated,
@@ -213,6 +214,7 @@ const MainContainer: FunctionComponent = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
+            onBoardingButton={<TopNavbarGetStartedButton />}
         />
     );
 
