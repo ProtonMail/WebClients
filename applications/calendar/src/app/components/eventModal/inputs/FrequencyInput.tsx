@@ -2,15 +2,10 @@ import React, { type ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenuButton,
-    DropdownSizeUnit,
-    Icon,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownButton, DropdownMenuButton, DropdownSizeUnit, usePopperAnchor } from '@proton/components';
 import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { END_TYPE, FREQUENCY, type MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays, getWeekday, isWeekday } from '@proton/shared/lib/date/date';
@@ -221,7 +216,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                 }}
                 {...rest}
             >
-                <Icon className="shrink-0" name="arrows-rotate" />
+                <IcArrowsRotate className="shrink-0" />
                 <span className="p-0 text-ellipsis" title={selectedOptionTitle}>
                     {selectedOptionTitle}
                 </span>
@@ -278,7 +273,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                                 <span className="pr-1">{text}</span>
                                 {selectedFrequency.title === title && (
                                     <span className="ml-auto flex color-primary">
-                                        <Icon name="checkmark" />
+                                        <IcCheckmark />
                                     </span>
                                 )}
                             </DropdownMenuButton>

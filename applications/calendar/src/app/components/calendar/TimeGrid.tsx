@@ -6,7 +6,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { ButtonGroup, Icon, useActiveBreakpoint, useElementRect } from '@proton/components';
+import { ButtonGroup, useActiveBreakpoint, useElementRect } from '@proton/components';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
@@ -368,12 +371,12 @@ const TimeGrid = ({
                             <ButtonGroup size="small" color="weak" shape="outline">
                                 <Tooltip title={previousDay}>
                                     <Button icon onClick={handleClickPrevDay}>
-                                        <Icon name="chevron-left" alt={previousDay} />
+                                        <IcChevronLeft alt={previousDay} />
                                     </Button>
                                 </Tooltip>
                                 <Tooltip title={nextDay}>
                                     <Button icon onClick={handleClickNextDay}>
-                                        <Icon name="chevron-right" alt={nextDay} />
+                                        <IcChevronRight alt={nextDay} />
                                     </Button>
                                 </Tooltip>
                             </ButtonGroup>

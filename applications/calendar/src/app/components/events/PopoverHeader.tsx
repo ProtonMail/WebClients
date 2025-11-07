@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+import { IcDots } from '@proton/icons/icons/IcDots';
 
 import PopoverCloseButton from './PopoverCloseButton';
 
@@ -16,7 +16,7 @@ const PopoverHeader = ({ children, onClose, actions, className, isDraggable = fa
     return (
         <header className={clsx(['eventpopover-header', className])} {...rest}>
             <div className="eventpopover-actions flex justify-end">
-                {isDraggable && <Icon name="dots" className="mr-auto my-auto color-weak" />}
+                {isDraggable && <IcDots className="mr-auto my-auto color-weak" />}
                 {actions}
                 {!!actions && <span className="eventpopover-actions-separator" />}
                 <PopoverCloseButton onClose={onClose} />

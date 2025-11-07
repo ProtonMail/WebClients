@@ -1,8 +1,14 @@
 import { c } from 'ttag';
 
+
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
+
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -131,7 +137,7 @@ const BusyParticipantRow = ({ attendee, contactEmailsMap, onDelete, onHighlight,
                         className="flex shrink-0 group-hover:opacity-100 group-hover:opacity-100-no-width"
                         onClick={handleVisibilityToggle}
                     >
-                        <Icon name={isVisible ? 'eye' : 'eye-slash'} alt={visibilityText} />
+                        {isVisible ? <IcEye alt={visibilityText} /> : <IcEyeSlash alt={visibilityText} />}
                     </Button>
                 </div>
             </Tooltip>
@@ -150,7 +156,11 @@ const BusyParticipantRow = ({ attendee, contactEmailsMap, onDelete, onHighlight,
                     className="flex shrink-0 group-hover:opacity-100 group-hover:opacity-100-no-width"
                     onClick={() => onToggleOptional(attendee)}
                 >
-                    <Icon name={isOptional ? 'user' : 'user-filled'} alt={c('Action').t`Remove this participant`} />
+                    {isOptional ? (
+                        <IcUser alt={c('Action').t`Remove this participant`} />
+                    ) : (
+                        <IcUserFilled alt={c('Action').t`Remove this participant`} />
+                    )}
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Remove this participant`}>
@@ -164,7 +174,7 @@ const BusyParticipantRow = ({ attendee, contactEmailsMap, onDelete, onHighlight,
                         onDelete(attendee);
                     }}
                 >
-                    <Icon name="cross" alt={c('Action').t`Remove this participant`} />
+                    <IcCross alt={c('Action').t`Remove this participant`} />
                 </Button>
             </Tooltip>
         </div>

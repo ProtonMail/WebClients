@@ -12,12 +12,12 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     IconRow,
     ProtonLogo,
     Spotlight,
     ZoomUpsellModal,
 } from '@proton/components';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
@@ -123,13 +123,13 @@ export const RowVideoConference = ({
             buttonContent: (
                 <div className="flex items-center gap-2">
                     {c('Label').t`Add Zoom meeting`}
-                    {user.hasPaidMail ? null : <Icon name="upgrade" className="color-primary" />}
+                    {user.hasPaidMail ? null : <IcUpgrade className="color-primary" />}
                 </div>
             ),
             itemContent: (
                 <>
                     <IcVideoCamera className="mr-2" size={5} /> {c('Label').t`Zoom meeting`}
-                    {user.hasPaidMail ? null : <Icon name="upgrade" className="ml-auto color-primary" />}
+                    {user.hasPaidMail ? null : <IcUpgrade className="ml-auto color-primary" />}
                 </>
             ),
             disabled: zoomIntegrationLoading,

@@ -7,11 +7,11 @@ import {
     AddressesAutocompleteTwo,
     Alert,
     Details,
-    Icon,
     Summary,
     useBusySlotsAvailable,
     useContactEmailsCache,
 } from '@proton/components';
+import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -210,7 +210,7 @@ const ParticipantsInput = ({
                     className="flex items-center color-weak mt-2 text-sm bg-weak rounded py-1 px-2"
                     data-testid="availability-unknown-banner"
                 >
-                    <Icon name="circle-half-filled" size={2.5} className="rotateZ-45 opacity-70 mr-2" />{' '}
+                    <IcCircleHalfFilled size={2.5} className="rotateZ-45 opacity-70 mr-2" />{' '}
                     {c('Description').t`Availability unknown`}
                 </div>
             )}

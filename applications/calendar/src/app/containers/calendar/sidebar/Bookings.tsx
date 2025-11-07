@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 
@@ -59,7 +59,7 @@ export const Bookings = ({ headerRef, disabled }: Props) => {
                                 onClick={handleCreate}
                                 data-testid="navigation-link:create-bookings-page"
                             >
-                                <Icon name="plus" alt={c('Action').t`Create a new bookings page`} />
+                                <IcPlus alt={c('Action').t`Create a new bookings page`} />
                             </button>
                         </Tooltip>
                     }

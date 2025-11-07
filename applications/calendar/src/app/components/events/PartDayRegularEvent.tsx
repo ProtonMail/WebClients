@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Icon } from '@proton/components';
 import { MINUTE } from '@proton/shared/lib/constants';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import clsx from '@proton/utils/clsx';
 
 import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
@@ -87,7 +87,7 @@ const PartDayRegularEvent = ({
         >
             {eventReadError ? (
                 <div className="flex flex-nowrap items-center">
-                    <Icon name="lock-filled" className="calendar-eventcell-lock-icon" />
+                    <IcLockFilled className="calendar-eventcell-lock-icon" />
                     <span className="flex-1 text-ellipsis">&nbsp;</span>
                 </div>
             ) : (
