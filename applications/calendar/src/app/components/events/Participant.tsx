@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon, usePopperAnchor } from '@proton/components';
+import { usePopperAnchor } from '@proton/components';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -89,7 +90,7 @@ const Participant = ({
                 className={clsx(['ml-1', !!comment && 'mt-1'])}
                 title={c('Action').t`More options`}
             >
-                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
+                <IcThreeDotsVertical alt={c('Action').t`More options`} />
             </Button>
             {displayDropdown && (
                 <ParticipantDropdown

@@ -5,7 +5,8 @@ import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, IllustrationPlaceholder, SkeletonLoader, useTheme } from '@proton/components';
+import { IllustrationPlaceholder, SkeletonLoader, useTheme } from '@proton/components';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { getPlaceholderSrc } from '@proton/mail';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
@@ -328,7 +329,7 @@ const CalendarSearchView = ({
                     {shouldDisplayCalendarDisplayWarning && (
                         <div className="bg-weak rounded m-2 px-4 py-2 flex">
                             <div className="shrink-0">
-                                <Icon name="magnifier" className="mr-2" />
+                                <IcMagnifier className="mr-2" />
                             </div>
                             <div className="flex-1 pl-1">
                                 {

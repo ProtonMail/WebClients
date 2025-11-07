@@ -1,7 +1,10 @@
 import type { CSSProperties, Ref } from 'react';
 import { useMemo } from 'react';
 
-import { Icon, useContactEmailsCache } from '@proton/components';
+import { useContactEmailsCache } from '@proton/components';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
@@ -76,17 +79,17 @@ const FullDayBusyEvent = ({
             >
                 <div className="flex flex-nowrap flex-1 items-center">
                     {!isAllDay ? (
-                        <Icon className="mr-2 shrink-0 calendar-dayeventcell-circle" size={4} name="circle-filled" />
+                        <IcCircleFilled className="mr-2 shrink-0 calendar-dayeventcell-circle" size={4} />
                     ) : null}
 
-                    {isOutsideStart ? <Icon name="chevron-left" size={3} className="shrink-0" /> : null}
+                    {isOutsideStart ? <IcChevronLeft size={3} className="shrink-0" /> : null}
 
                     <span data-testid="calendar-view:all-day-event" className="flex-1 text-ellipsis">
                         {startTimeString && <span className="calendar-dayeventcell-time">{startTimeString}</span>}
                         <span className="calendar-dayeventcell-title">{nameEmail}</span>
                     </span>
 
-                    {isOutsideEnd ? <Icon name="chevron-right" size={3} className="shrink-0" /> : null}
+                    {isOutsideEnd ? <IcChevronRight size={3} className="shrink-0" /> : null}
                 </div>
             </div>
         </div>

@@ -5,7 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -41,7 +44,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                         title={todayTitle}
                         onClick={onToday}
                     >
-                        <Icon name="calendar-today" alt={c('Action').t`Today`} />
+                        <IcCalendarToday alt={c('Action').t`Today`} />
                     </ToolbarButton>
                 </span>
                 <Vr className="mx-1 md:hidden" />
@@ -58,7 +61,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                     data-testid="calendar-toolbar:previous"
                     title={previous}
                     onClick={onPrev}
-                    icon={<Icon name="chevron-left" className="m-auto toolbar-icon" />}
+                    icon={<IcChevronLeft className="m-auto toolbar-icon" />}
                 >
                     <span className="sr-only">{previous}</span>
                 </ToolbarButton>
@@ -66,7 +69,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                     data-testid="calendar-toolbar:next"
                     title={next}
                     onClick={onNext}
-                    icon={<Icon name="chevron-right" className="m-auto toolbar-icon" />}
+                    icon={<IcChevronRight className="m-auto toolbar-icon" />}
                 >
                     <span className="sr-only">{next}</span>
                 </ToolbarButton>
