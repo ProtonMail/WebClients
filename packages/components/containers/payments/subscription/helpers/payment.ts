@@ -10,6 +10,7 @@ import {
     type Subscription,
     VPN_PASS_PROMOTION_COUPONS,
     getPlanFromIDs,
+    getPlanTitle,
     isFreeSubscription,
     isRegionalCurrency,
 } from '@proton/payments';
@@ -109,7 +110,8 @@ export function subscriptionExpires(
     const renewEnabled = !renewDisabled;
     const subscriptionExpiresSoon = renewDisabled;
 
-    const planName = latestSubscription.Plans?.[0]?.Title;
+    // This will never be undefined but the empty string is here to make TS happy
+    const planName = getPlanTitle(latestSubscription) ?? '';
 
     if (subscriptionExpiresSoon) {
         return {
