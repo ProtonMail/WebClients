@@ -66,6 +66,7 @@ import {
 } from '@proton/components';
 import NonPrivateRecoverySection from '@proton/components/containers/account/NonPrivateRecoveySection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
@@ -154,7 +155,11 @@ const AccountSettingsRouter = ({
                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                         style={{ '--max-w-custom': '1500px' }}
                     >
-                        <YourPlanSectionV2 app={app} editBillingCycle={true} />
+                        <YourPlanSectionV2
+                            app={app}
+                            editBillingCycle={true}
+                            cta={<DashboardComparePlansCTA app={app} />}
+                        />
                         <AssistantToggle />
                         <SubscriptionsSection />
                         <PaymentMethodsSection />
