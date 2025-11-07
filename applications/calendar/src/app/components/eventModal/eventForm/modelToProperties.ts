@@ -87,7 +87,7 @@ export const modelToGeneralProperties = ({
     return properties;
 };
 
-const modelToOrganizerProperties = ({ organizer }: EventModel) => {
+export const modelToOrganizerProperties = ({ organizer }: Partial<EventModel>) => {
     const organizerEmail = organizer?.email;
     if (!organizerEmail) {
         return {};
@@ -97,7 +97,7 @@ const modelToOrganizerProperties = ({ organizer }: EventModel) => {
     };
 };
 
-const modelToAttendeeProperties = ({ attendees }: EventModel) => {
+export const modelToAttendeeProperties = ({ attendees }: Partial<EventModel>) => {
     if (!Array.isArray(attendees) || !attendees.length) {
         return {};
     }
