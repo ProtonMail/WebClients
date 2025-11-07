@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
-import { IcShield2CheckFilled } from '@proton/icons';
+import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';

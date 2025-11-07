@@ -1,7 +1,8 @@
 import { Tooltip } from '@proton/atoms';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
-import type { IconSize } from '@proton/icons';
-import { IcMeetShield, IcMeetShieldFull } from '@proton/icons';
+import { IcMeetShield } from '@proton/icons/icons/IcMeetShield';
+import { IcMeetShieldFull } from '@proton/icons/icons/IcMeetShieldFull';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import './SecurityShield.scss';

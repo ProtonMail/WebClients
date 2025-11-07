@@ -1,8 +1,8 @@
 import { useLocalParticipant } from '@livekit/components-react';
 
 import type { IconProps } from '@proton/components/components/icon/Icon';
-import type { IconSize } from '@proton/icons';
-import { IcMeetMicrophone } from '@proton/icons';
+import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
+import type { IconSize } from '@proton/icons/types';
 
 import { useMicrophoneVolume } from '../hooks/useMicrophoneVolume';
 

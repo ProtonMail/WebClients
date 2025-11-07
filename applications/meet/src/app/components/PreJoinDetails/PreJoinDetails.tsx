@@ -5,7 +5,7 @@ import InputFieldStacked from '@proton/components/components/inputFieldStacked/I
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { IcMeetCopy } from '@proton/icons';
+import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 
 import './PreJoinDetails.scss';
 

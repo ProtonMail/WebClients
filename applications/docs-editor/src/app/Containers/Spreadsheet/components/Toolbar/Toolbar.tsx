@@ -22,7 +22,7 @@ import {
 } from '@rowsncolumns/spreadsheet'
 import * as Ariakit from '@ariakit/react'
 import type { IconData } from '../ui'
-import type { IconName } from '@proton/icons'
+import type { IconName } from '@proton/icons/types'
 import { InsertFormulaMenu } from '../shared/InsertFormulaMenu'
 import { MergeMenuItems } from '../shared/MergeMenuItems'
 

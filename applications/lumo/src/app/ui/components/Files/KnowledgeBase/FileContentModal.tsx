@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalProps } from '@proton/components';
-import { IcFileSlash } from '@proton/icons';
+import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 
 import type { Attachment } from '../../../../types';
 import { Role } from '../../../../types';

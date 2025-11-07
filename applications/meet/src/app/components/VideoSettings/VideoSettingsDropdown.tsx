@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
-import { IcCheckmark } from '@proton/icons';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';

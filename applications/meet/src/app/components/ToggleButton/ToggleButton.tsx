@@ -4,7 +4,8 @@ import { useRef } from 'react';
 import { Button, Tooltip } from '@proton/atoms';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
-import { IcChevronDown, IcChevronUp } from '@proton/icons';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import clsx from '@proton/utils/clsx';
 
 import type { PopUpControls } from '../../types';

@@ -6,7 +6,7 @@ import { Button, ButtonLike, Href, Tooltip } from '@proton/atoms';
 import { Collapsible, CollapsibleContent, CollapsibleHeader, Copy, Icon, IconRow } from '@proton/components';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { IcVideoCamera } from '@proton/icons';
+import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';

@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Icon, Prompt } from '@proton/components';
-import { IcExclamationTriangleFilled } from '@proton/icons';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 
 interface Props extends ModalProps {
     url: string;

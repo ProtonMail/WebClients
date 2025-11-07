@@ -6,14 +6,15 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { IcArrowUpLine, IcCheckmarkCircle, IcPlusCircle } from '@proton/icons';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 // Import extracted components
 import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 
 import { MAX_FILE_SIZE } from '../../../../constants';
-
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../../hooks/useDriveSDK';
 import { getAcceptAttributeString, isFileTypeSupported } from '../../../../util/filetypes';
@@ -180,7 +181,8 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
                 const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                 createNotification({
-                    text: c('collider_2025: Error').t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                    text: c('collider_2025: Error')
+                        .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
                     type: 'error',
                 });
                 return;
@@ -199,7 +201,8 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                     const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
                     const fileSizeFormatted = humanSize({ bytes: data.byteLength, unit: 'MB', fraction: 1 });
                     createNotification({
-                        text: c('collider_2025: Error').t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                        text: c('collider_2025: Error')
+                            .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
                         type: 'error',
                     });
                     return;
@@ -257,7 +260,8 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                         const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
                         const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                         createNotification({
-                            text: c('collider_2025: Error').t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                            text: c('collider_2025: Error')
+                                .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
                             type: 'error',
                         });
                         continue; // Skip this file and continue with the next one
@@ -538,9 +542,10 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                                                         // Estimate if file is too large for preview (roughly 150k tokens ≈ 600-750KB)
                                                         const estimatedTooLargeForPreview =
                                                             child.size && child.size > 750 * 1024; // 750KB threshold
-                                                        
+
                                                         // Check if file exceeds our 10MB upload limit
-                                                        const exceedsFileSizeLimit = child.size && child.size > MAX_FILE_SIZE;
+                                                        const exceedsFileSizeLimit =
+                                                            child.size && child.size > MAX_FILE_SIZE;
 
                                                         const getActionIcon = () => {
                                                             if (fileExists) {

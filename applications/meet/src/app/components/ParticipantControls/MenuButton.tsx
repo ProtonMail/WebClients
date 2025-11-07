@@ -4,7 +4,11 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { IcInfoCircle, IcMeetChat, IcMeetParticipants, IcMeetSettings, IcThreeDotsVertical } from '@proton/icons';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcMeetChat } from '@proton/icons/icons/IcMeetChat';
+import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
+import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useUIStateContext } from '../../contexts/UIStateContext';

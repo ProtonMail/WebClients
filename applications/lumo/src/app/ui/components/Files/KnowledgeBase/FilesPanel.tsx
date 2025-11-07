@@ -5,7 +5,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, SettingsLink, useNotifications } from '@proton/components';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
-import { IcArrowLeft, IcBrandProtonDrive, IcCross, IcInfoCircle } from '@proton/icons';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 

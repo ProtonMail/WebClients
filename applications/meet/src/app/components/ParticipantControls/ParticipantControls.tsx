@@ -3,15 +3,13 @@ import { useEffect, useRef } from 'react';
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
 import { c } from 'ttag';
 
-import {
-    IcInfoCircle,
-    IcMeetCamera,
-    IcMeetCameraOff,
-    IcMeetMicrophone,
-    IcMeetMicrophoneOff,
-    IcMeetParticipants,
-    IcMeetSettings,
-} from '@proton/icons';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
+import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
+import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
+import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
+import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
+import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';

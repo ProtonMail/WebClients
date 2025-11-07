@@ -3,8 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import type { IconSize } from '@proton/icons';
-import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophoneOff, IcMeetRotateCamera } from '@proton/icons';
+import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
+import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
+import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
+import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';

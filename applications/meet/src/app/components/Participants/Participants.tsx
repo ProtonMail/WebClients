@@ -6,7 +6,11 @@ import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button, CircleLoader, Tooltip } from '@proton/atoms';
-import { IcMagnifier, IcMeetCamera, IcMeetCameraOff, IcMeetEyeClosed, IcMeetMicrophoneOff } from '@proton/icons';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
+import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
+import { IcMeetEyeClosed } from '@proton/icons/icons/IcMeetEyeClosed';
+import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';

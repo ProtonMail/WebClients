@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import { DriveLogo, Price, SkeletonLoader, getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components';
-import { IcBagPercentFilled } from '@proton/icons';
+import { IcBagPercentFilled } from '@proton/icons/icons/IcBagPercentFilled';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';

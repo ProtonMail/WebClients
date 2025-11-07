@@ -6,7 +6,7 @@ import {
   CompositeOverflowDisclosure,
   type CompositeOverflowDisclosureProps,
 } from '@ariakit/react-core/composite/composite-overflow-disclosure'
-import type { IconName } from '@proton/icons'
+import type { IconName } from '@proton/icons/types'
 import clsx from '@proton/utils/clsx'
 import {
   type ComponentPropsWithRef,
