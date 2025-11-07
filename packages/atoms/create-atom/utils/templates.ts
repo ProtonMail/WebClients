@@ -19,11 +19,6 @@ export const getAtomTemplate = async (atomName: string, rootHtmlTag: string) => 
     return prettify(mustache.render(template, { atomName, rootHtmlTag }));
 };
 
-export const getIndexTemplate = async (atomName: string) => {
-    const template = await getTemplateFile(`index.ts.mustache`);
-    return prettify(mustache.render(template, { atomName }));
-};
-
 export const getTestTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.test.tsx.mustache`);
     return prettify(mustache.render(template, { atomName }));
@@ -42,17 +37,4 @@ export const getMdxTemplate = async (atomName: string) => {
 export const getStoriesTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.stories.tsx.mustache`);
     return prettify(mustache.render(template, { atomName }));
-};
-
-export const appendAtomToIndex = async (atomsDir: string, atomName: string) => {
-    const indexFilePath = `${atomsDir}/index.ts`;
-    const indexFile = await fs.readFile(indexFilePath, { encoding: 'utf-8' });
-    const lines = indexFile.split('\n');
-
-    lines.push(`export * from './${atomName}';`);
-    lines.sort();
-
-    const output = await prettify(lines.join('\n'));
-
-    await fs.writeFile(indexFilePath, output, { encoding: 'utf-8' });
 };
