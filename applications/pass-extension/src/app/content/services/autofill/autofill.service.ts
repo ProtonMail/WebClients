@@ -21,7 +21,6 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { nextTick } from '@proton/pass/utils/time/next-tick';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
-import noop from '@proton/utils/noop';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -272,34 +271,15 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                     const { formId, fieldId } = payload.refocus;
                     const refocusable = formManager?.getFormById(formId)?.getFieldById(fieldId);
 
+                    /** Re-lock tracked fields to prevent race conditions where cross-frame
+                     * "focus next field" requests arrive after autofill completes (common on
+                     * payment forms with address/card fields across iframes). */
+                    fields?.forEach((field) => field.interactivity.lock(AUTOFILL_LOCK_TIME));
+
                     refocusable?.interactivity.unlock();
                     refocusable?.focus({ preventAction: true });
 
-                    fields?.forEach((field) => {
-                        /** Re-lock tracked fields to prevent race conditions where cross-frame
-                         * "focus next field" requests arrive after autofill completes (common on
-                         * payment forms with address/card fields across iframes). */
-                        if (field.element !== refocusable?.element) {
-                            field.interactivity.lock(AUTOFILL_LOCK_TIME);
-                        }
-                    });
-
-                    nextTick(() => {
-                        state.processing = false;
-                        /** UX: if field is unfocused during interactivity
-                         * lock period, sync field to detach icon. */
-                        setTimeout(() => {
-                            void refocusable
-                                ?.isActive()
-                                .then((active) => {
-                                    if (refocusable.icon) {
-                                        if (active) refocusable.icon?.reposition();
-                                        else refocusable.icon?.detach();
-                                    }
-                                })
-                                .catch(noop);
-                        }, 250);
-                    });
+                    nextTick(() => (state.processing = false));
 
                     break;
             }

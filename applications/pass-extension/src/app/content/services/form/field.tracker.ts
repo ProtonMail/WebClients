@@ -3,7 +3,6 @@ import { InlinePortMessageType } from 'proton-pass-extension/app/content/service
 
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types';
-import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { createRAFController } from '@proton/pass/utils/dom/raf';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -94,8 +93,8 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
             /** Browsers may dequeue blur/focusout events when rapid focus
              * switches between frames/shadowRoots. In such cases, we try to
              * detect such dequeues to avoid missing blur clean-ups. */
-            state.focusTimeout = setTimeout(() => {
-                if (state.focused && !isActiveElement(field.element)) {
+            state.focusTimeout = setTimeout(async () => {
+                if (state.focused && !(await field.isActive())) {
                     logger.debug(`[FieldTracker] Browser "blur" dequeue detected`);
                     onBlur(evt);
                 }

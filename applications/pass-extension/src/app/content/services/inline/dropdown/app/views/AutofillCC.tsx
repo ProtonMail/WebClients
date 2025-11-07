@@ -105,7 +105,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                                                 type: 'creditCard',
                                             },
                                         });
-                                        controller.close({ preventAction: true });
+                                        controller.close();
                                     }}
                                     subTheme={SubTheme.LIME}
                                 />

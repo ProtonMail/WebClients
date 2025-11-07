@@ -153,7 +153,7 @@ export const createFieldHandles = ({
          * attached action effect : as there is no way to attach extra data to a focus event,
          * so we rely on adding custom properties on the field element itself */
         focus(options) {
-            if (options?.preventAction) field.preventAction();
+            if (options?.preventAction) field.preventAction(0);
             else actionTrap.release();
 
             const isFocusedField = isActiveElement(field.element);
@@ -228,7 +228,9 @@ export const createFieldHandles = ({
             return field.fieldId === fieldId && field.formId === formId;
         },
 
-        preventAction: (duration = 250) => actionTrap.trap(duration),
+        preventAction: (duration = 250) => {
+            return actionTrap.trap(duration);
+        },
 
         isActive: withContext<() => Promise<boolean>>(async (ctx) => {
             const focused = isActiveElement(field.element);
