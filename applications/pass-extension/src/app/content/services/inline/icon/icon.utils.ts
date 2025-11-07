@@ -52,25 +52,28 @@ type FieldOverrides = { ['padding-right']?: string };
 
 const FLICKER_TRESHOLD = 2;
 const OVERLAY_OFFSET = 1;
-
+const MAX_OVERLAY_CHECKS = 2;
 /** Calculates the maximum horizontal shift required for injected elements.
  * Determines the optimal positioning to avoid overlap with existing elements */
-export const computeIconShift = (options: {
-    /** X coordinate of the icon's intended center position */
-    x: number;
-    /** Y coordinate of the icon's intended center position */
-    y: number;
-    /** Radius of the circular icon (half of icon size) */
-    radius: number;
-    /** Maximum width of the input field - limits shift to 50% of this value */
-    maxWidth: number;
-    /** Bounding container element (form field wrapper or input itself) */
-    anchor: HTMLElement;
-    /** The input element we're positioning relative to */
-    target: HTMLElement;
-    /** Container for filtering (optional) */
-    parent?: HTMLElement | ShadowRoot;
-}): number => {
+export const computeIconShift = (
+    options: {
+        /** X coordinate of the icon's intended center position */
+        x: number;
+        /** Y coordinate of the icon's intended center position */
+        y: number;
+        /** Radius of the circular icon (half of icon size) */
+        radius: number;
+        /** Maximum width of the input field - limits shift to 50% of this value */
+        maxWidth: number;
+        /** Bounding container element (form field wrapper or input itself) */
+        anchor: HTMLElement;
+        /** The input element we're positioning relative to */
+        target: HTMLElement;
+        /** Container for filtering (optional) */
+        parent?: HTMLElement | ShadowRoot;
+    },
+    iteration: number = 1
+): number => {
     const restore: { el: HTMLElement; pointerEvents: string }[] = [];
 
     try {
@@ -134,6 +137,10 @@ export const computeIconShift = (options: {
             const { left } = el.getBoundingClientRect();
             const dx = Math.max(0, x + options.radius - left);
             if (dx > maxDx && dx < maxShift) maxDx = dx;
+        }
+
+        if (maxDx > 0 && iteration <= MAX_OVERLAY_CHECKS) {
+            return maxDx + computeIconShift({ ...options, x: options.x - maxDx }, iteration++);
         }
 
         return maxDx;
