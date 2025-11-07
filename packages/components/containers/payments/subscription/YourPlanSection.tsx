@@ -35,6 +35,7 @@ import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
 
 import './YourPlanSection.scss';
+import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 
 interface Props {
     app: APP_NAMES;
@@ -94,7 +95,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const shouldRenderPendingInvitation = !!invites.length;
     const shouldRenderTrialInfo =
         isReferralExpansionEnabled &&
-        isTrial(subscription) &&
+        isReferralTrial(subscription) &&
         ((!hasTrialPaymentMethods && !isAutoRenewTrial(subscription)) || isAutoRenewTrial(subscription));
     // Upsell panel if the user has a subscription and is not vpn or wallet
     const shouldRenderUpsells =

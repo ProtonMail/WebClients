@@ -23,6 +23,7 @@ import TrialCanceledModal from './TrialCanceledModal';
 import { OPEN_TRIAL_CANCELED_MODAL } from './constants';
 import LegacyReferralTopBanner from './trials/LegacyReferralTopBanner';
 import ReferralTopBanner from './trials/ReferralTopBanner';
+import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 
 const B2BTrialTopBanner = () => {
     const [closed, setClosed] = useState<boolean>(false);
@@ -93,7 +94,6 @@ const TrialTopBanner = ({ app }: { app: APP_NAMES }) => {
     const [organization] = useOrganization();
     const { APP_NAME } = useConfig();
     const isVpn = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const trial = isTrial(subscription);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
@@ -102,9 +102,9 @@ const TrialTopBanner = ({ app }: { app: APP_NAMES }) => {
 
     if (isB2BTrial) {
         topBanner = <B2BTrialTopBanner />;
-    } else if (trial && isReferralExpansionEnabled) {
+    } else if (isReferralTrial(subscription) && isReferralExpansionEnabled) {
         topBanner = <ReferralTopBanner app={app} />;
-    } else if (trial && !isVpn && app) {
+    } else if (isTrial(subscription) && !isVpn && app) {
         topBanner = <LegacyReferralTopBanner fromApp={app} />;
     }
 
