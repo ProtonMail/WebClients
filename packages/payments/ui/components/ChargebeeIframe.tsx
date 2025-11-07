@@ -1,4 +1,4 @@
-import { type RefObject, useEffect, useRef, useState } from 'react';
+import { type MutableRefObject, type RefObject, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -101,12 +101,16 @@ export const parseEvent = (data: any) => {
     return props;
 };
 
-export function sendMessageToIframe(iframeRef: RefObject<HTMLIFrameElement>, targetOrigin: string, message: any) {
+export function sendMessageToIframe(
+    iframeRef: RefObject<HTMLIFrameElement | null>,
+    targetOrigin: string,
+    message: any
+) {
     iframeRef.current?.contentWindow?.postMessage(JSON.stringify(message), targetOrigin);
 }
 
 export function listenToIframeEvents(
-    iframeRef: RefObject<HTMLIFrameElement>,
+    iframeRef: RefObject<HTMLIFrameElement | null>,
     callback: (e: MessageEvent<any>) => void
 ): RemoveEventListener {
     const listener = (e: MessageEvent<any>) => {
@@ -133,7 +137,7 @@ export const TIMEOUT_EXCEEDED_ERROR_TEXT = c('Payments').t`Timeout exceeded`;
 export function iframeAction<T>(
     type: string,
     payload: object,
-    iframeRef: RefObject<HTMLIFrameElement>,
+    iframeRef: RefObject<HTMLIFrameElement | null>,
     targetOrigin: string,
     signal?: AbortSignal,
     options?: IframeActionOptions
@@ -285,7 +289,7 @@ interface ChargebeeConfiguration {
 }
 
 export function useChargebeeHandles(
-    iframeRef: RefObject<HTMLIFrameElement>,
+    iframeRef: RefObject<HTMLIFrameElement | null>,
     targetOrigin: string
 ): ChargebeeIframeHandles & {
     notifyIframeLoaded: () => void;
@@ -609,7 +613,7 @@ export function useChargebeeHandles(
 export type CbIframeHandles = {
     handles: ChargebeeIframeHandles;
     events: ChargebeeIframeEvents;
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: MutableRefObject<HTMLIFrameElement | null>;
     iframeSrc: string;
     iframeLoadedRef: RefObject<boolean>;
     notifyIframeLoaded: () => void;
@@ -621,7 +625,7 @@ export function getIframeUrl() {
 }
 
 export const useCbIframe = (): CbIframeHandles => {
-    const iframeRef = useRef<HTMLIFrameElement>(null);
+    const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
     const iframeUrl = getIframeUrl();
     const iframeSrc = iframeUrl.toString();

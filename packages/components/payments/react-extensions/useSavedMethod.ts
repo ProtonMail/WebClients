@@ -41,7 +41,7 @@ export const useSavedMethod = (
     { amountAndCurrency, savedMethod, onChargeable, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
     { verifyPayment, api }: Dependencies
 ): SavedMethodProcessorHook => {
-    const paymentProcessorRef = useRef<SavedPaymentProcessor>();
+    const paymentProcessorRef = useRef<SavedPaymentProcessor | undefined>(undefined);
     if (!paymentProcessorRef.current && savedMethod) {
         paymentProcessorRef.current = new SavedPaymentProcessor(
             verifyPayment,

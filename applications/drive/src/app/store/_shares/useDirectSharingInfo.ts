@@ -21,8 +21,8 @@ export const useDirectSharingInfo = () => {
     const { getShare, getShareWithKey } = useShare();
     const { isReadOnlyMode } = useDriveSharingFlags();
     const isPublicContext = getIsPublicContext();
-    const defaultSharePromiseRef = useRef<Promise<ShareWithKey>>();
-    const photoSharePromiseRef = useRef<Promise<ShareWithKey | undefined>>();
+    const defaultSharePromiseRef = useRef<Promise<ShareWithKey> | undefined>(undefined);
+    const photoSharePromiseRef = useRef<Promise<ShareWithKey | undefined> | undefined>(undefined);
 
     if (!defaultSharePromiseRef.current && !isPublicContext) {
         defaultSharePromiseRef.current = getDefaultShare();
