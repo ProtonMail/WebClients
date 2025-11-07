@@ -1,4 +1,4 @@
-import { CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import type { FileToDocConversionResult } from '@proton/docs-core'
 import type { Result } from '@proton/docs-shared'
 import type { DecryptedNode, NodeMeta } from '@proton/drive-store'

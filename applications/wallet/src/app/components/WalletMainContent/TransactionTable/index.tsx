@@ -7,8 +7,7 @@ import arrowsExchange from '@proton/styles/assets/img/illustrations/arrows-excha
 import clsx from '@proton/utils/clsx';
 import type { DecryptedTransactionData, IWasmApiWalletData } from '@proton/wallet';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { SimplePaginator } from '../../../atoms';
+import { Button, SimplePaginator } from '../../../atoms';
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';
 import { type DataColumn, DataList } from '../../DataList';
 import { TransactionNoteModal } from '../../TransactionNoteModal';

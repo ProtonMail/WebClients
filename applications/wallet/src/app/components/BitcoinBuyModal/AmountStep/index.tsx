@@ -25,8 +25,7 @@ import rampLogo from '@proton/styles/assets/img/brand/ramp.svg';
 import { useWalletApiClients } from '@proton/wallet';
 
 import type { CoreSearchableSelectProps } from '../../../atoms';
-import { Button } from '@proton/atoms/Button/Button';
-import { Input, SearchableSelect, Select } from '../../../atoms';
+import { Button, Input, SearchableSelect, Select } from '../../../atoms';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
 import { Skeleton } from '../../../atoms/Skeleton';
 import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';

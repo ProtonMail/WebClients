@@ -14,8 +14,7 @@ import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '../../atoms';
+import { Button, ButtonLike } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import type { SubTheme } from '../../utils';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';

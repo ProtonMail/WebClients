@@ -1,4 +1,4 @@
-import { CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
 import { InvitesTable } from './InvitesTable'

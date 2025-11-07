@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import { useApplication } from '~/utils/application-context'
 import { c } from 'ttag'
 import { APPS, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants'

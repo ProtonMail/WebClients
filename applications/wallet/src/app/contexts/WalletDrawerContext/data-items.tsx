@@ -13,9 +13,7 @@ import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import {CoreButton } from '../../atoms';
+import { Button, ButtonLike, CoreButton } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { Price } from '../../atoms/Price';
 import { BoostTransactionModal } from '../../components/BoostTransactionModal';

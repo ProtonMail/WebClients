@@ -15,8 +15,7 @@ import walletUser from '@proton/styles/assets/img/wallet/wallet-user.jpg';
 import { useWalletApiClients } from '@proton/wallet';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Input } from '../../atoms';
+import { Button, Input } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { EmailSelect } from '../EmailSelect';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';

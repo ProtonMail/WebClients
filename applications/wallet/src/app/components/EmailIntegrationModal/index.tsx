@@ -11,9 +11,7 @@ import { Radio, useModalState } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import {Modal } from '../../atoms';
+import { Button, ButtonLike, Modal } from '../../atoms';
 import { WalletUpgradeBanner } from '../../utils';
 import { EmailAddressCreationModal } from '../EmailAddressCreationModal';
 import { WalletUpgradeModal } from '../WalletUpgradeModal';

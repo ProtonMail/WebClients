@@ -9,8 +9,7 @@ import { COMPUTE_BITCOIN_UNIT, type IWasmApiWalletData, PriorityTargetBlock } fr
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { CoreButton } from '../../../atoms';
+import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import Card from '../../../atoms/Card';
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';

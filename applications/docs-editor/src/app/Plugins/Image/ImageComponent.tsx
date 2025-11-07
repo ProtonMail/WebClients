@@ -25,7 +25,7 @@ import { $isImageNode } from './ImageNode'
 import { useCombinedRefs } from '@proton/hooks'
 import ImageResizer from './ImageResizer'
 import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
-import { CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { SET_IMAGE_SIZE_COMMAND } from './ImagePlugin'
 
 const imageCache = new Set()

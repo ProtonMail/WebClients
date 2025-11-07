@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import type { ModalOwnProps } from '@proton/components';
 import { TextAreaTwo } from '@proton/components';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Input, Modal } from '../../atoms';
+import { Button, Input, Modal } from '../../atoms';
 
 interface Props extends ModalOwnProps {
     title: string;

@@ -18,8 +18,7 @@ import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Input, Modal } from '../../atoms';
+import { Button, Input, Modal } from '../../atoms';
 
 interface Props extends ModalOwnProps {
     onAddressCreated?: (address: Address) => void;

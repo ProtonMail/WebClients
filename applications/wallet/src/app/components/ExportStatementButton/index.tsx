@@ -20,8 +20,7 @@ import type { IWasmApiWalletData, WalletChainDataByWalletId } from '@proton/wall
 import { useWalletAccountExchangeRate } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { CoreButton, Modal, Select } from '../../atoms';
+import { Button, CoreButton, Modal, Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { ExportFormat } from '../../utils';
@@ -75,7 +74,10 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
         }).filter(Boolean) as GetAccountsProps[];
     };
 
-    const getData = async (generator: WasmAccountStatementGenerator, format: ExportFormat): Promise<Uint8Array<ArrayBuffer>> => {
+    const getData = async (
+        generator: WasmAccountStatementGenerator,
+        format: ExportFormat
+    ): Promise<Uint8Array<ArrayBuffer>> => {
         const time = BigInt(Math.floor(date.getTime() / SECOND).toString());
 
         if (format === ExportFormat.CSV) {

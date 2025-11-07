@@ -1,6 +1,6 @@
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms'
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { Icon } from '@proton/components'
 import { DateFormatter } from '@proton/docs-core'
 import { ServerTime } from '@proton/docs-shared'

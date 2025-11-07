@@ -24,8 +24,7 @@ import { SIGNING_TYPES } from '@proton/wallet';
 import { getWasmMessageSigner } from '@proton/wallet/utils/messageSigner';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Input, Modal, Select } from '../../atoms';
+import { Button, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { getDescriptionBySigningType, getLabelBySigningType } from '../../utils';
