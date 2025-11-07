@@ -1,4 +1,15 @@
-import { addMinutes, eachDayOfInterval, endOfWeek, isBefore, isSameDay, isWeekend, set, startOfWeek } from 'date-fns';
+import {
+    addDays,
+    addMinutes,
+    eachDayOfInterval,
+    endOfWeek,
+    isBefore,
+    isSameDay,
+    isWeekend,
+    set,
+    startOfDay,
+    startOfWeek,
+} from 'date-fns';
 import { c } from 'ttag';
 
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
@@ -10,6 +21,7 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
 import {
     BOOKING_SLOT_ID,
+    BookingFormValidationReasons,
     BookingLocation,
     MAX_BOOKING_SLOTS,
     TEMPORARY_BOOKING_SLOT,
@@ -100,6 +112,7 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
     if (data.bookingSlots.length >= MAX_BOOKING_SLOTS) {
         return {
             type: 'error',
+            reason: BookingFormValidationReasons.TIME_SLOT_LIMIT,
             message: c('Info').t`You can’t have more than ${MAX_BOOKING_SLOTS} booking slots on a page.`,
         };
     }
@@ -107,12 +120,14 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
     if (data.title.trim().length === 0) {
         return {
             type: 'warning',
+            reason: BookingFormValidationReasons.TITLE_REQUIRED,
         };
     }
 
     if (data.bookingSlots.length === 0) {
         return {
             type: 'warning',
+            reason: BookingFormValidationReasons.TIME_SLOT_REQUIRED,
         };
     }
 
@@ -155,6 +170,19 @@ export const generateBookingRangeID = (start: Date, end: Date) => {
     return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
 };
 
+const createBookingRange = (date: Date, timezone: string) => {
+    // The range starts from 9 AM and ends at 5 PM
+    const start = set(date, { hours: 9 });
+    const end = set(date, { hours: 17 });
+
+    return {
+        id: generateBookingRangeID(start, end),
+        start,
+        end,
+        timezone,
+    };
+};
+
 /**
  * Returns an array of booking range going from 9am to 5pm on work days of the current week
  */
@@ -167,19 +195,32 @@ export const generateDefaultBookingRange = (userSettings: UserSettings, timezone
     })
         .filter((day) => !isWeekend(day))
         .map((day) => {
-            // The range starts from 9 AM and ends at 5 PM
-            const start = set(day, { hours: 9 });
-            const end = set(day, { hours: 17 });
-
-            return {
-                id: generateBookingRangeID(start, end),
-                start,
-                end,
-                timezone,
-            };
+            return createBookingRange(day, timezone);
         });
 };
 
 export const hasAlreadyARangeForDay = (bookings: BookingRange[], oldRangeId: string, start: Date): boolean => {
     return bookings.some((booking) => booking.id !== oldRangeId && isSameDay(booking.start, start));
+};
+
+export const createBookingRangeNextAvailableTime = (bookingRange: BookingRange[], timezone: string): BookingRange => {
+    const now = new Date();
+    const today = startOfDay(now);
+    const tomorrow = addDays(today, 1);
+
+    // We return tomorrow if it's free
+    if (!bookingRange.some((range) => isSameDay(range.start, tomorrow))) {
+        return createBookingRange(tomorrow, timezone);
+    }
+
+    let nextAvailableTime = tomorrow;
+    bookingRange.forEach((range) => {
+        if (isSameDay(range.start, nextAvailableTime)) {
+            nextAvailableTime = addDays(nextAvailableTime, 1);
+        } else {
+            return createBookingRange(nextAvailableTime, timezone);
+        }
+    });
+
+    return createBookingRange(nextAvailableTime, timezone);
 };
