@@ -356,6 +356,20 @@ export const getIsB2BAudienceFromSubscription = (subscription: Subscription | Fr
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BAudienceFromPlan(Name));
 };
 
+export const getIsFamilyAudienceFromSubscription = (subscription: Subscription | FreeSubscription | undefined) => {
+    return hasDuo(subscription) || hasFamily(subscription) || hasPassFamily(subscription);
+};
+
+export const getAudienceFromSubscription = (subscription: Subscription | FreeSubscription | undefined): Audience => {
+    if (getIsB2BAudienceFromSubscription(subscription)) {
+        return Audience.B2B;
+    } else if (getIsFamilyAudienceFromSubscription(subscription)) {
+        return Audience.FAMILY;
+    } else {
+        return Audience.B2C;
+    }
+};
+
 export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
 };
