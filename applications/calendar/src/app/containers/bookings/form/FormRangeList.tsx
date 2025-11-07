@@ -7,10 +7,12 @@ import { DateInputTwo } from '@proton/components/index';
 import { IcPlus, IcTrash } from '@proton/icons';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
-import type { BookingRange } from '../bookingsProvider/interface';
+import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
+import { createBookingRangeNextAvailableTime, validateFormData } from '../utils/bookingHelpers';
 
 export const FormRangeList = () => {
-    const { bookingRange, removeBookingRange, updateBookingRange } = useBookings();
+    const { bookingRange, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
+    const validation = validateFormData(formData);
 
     if (!bookingRange) {
         // TODO have a placeholder if no booking range is available
@@ -34,6 +36,14 @@ export const FormRangeList = () => {
         const newEnd = set(date, { hours: range.end.getHours(), minutes: range.end.getMinutes() });
 
         updateBookingRange(id, newStart, newEnd);
+    };
+
+    const handleAddDateClick = () => {
+        if (!formData.timezone) {
+            return;
+        }
+
+        addBookingRange(createBookingRangeNextAvailableTime(bookingRange, formData.timezone));
     };
 
     // TODO handle the cases where the recurring is enabled and adapt the UI
@@ -79,6 +89,14 @@ export const FormRangeList = () => {
                     </div>
                 </div>
             ))}
+            <Button
+                shape="underline"
+                color="norm"
+                className="mt-2"
+                size="small"
+                onClick={handleAddDateClick}
+                disabled={validation?.reason === BookingFormValidationReasons.TIME_SLOT_LIMIT}
+            >{c('Action').t`Add a date`}</Button>
         </div>
     );
 };

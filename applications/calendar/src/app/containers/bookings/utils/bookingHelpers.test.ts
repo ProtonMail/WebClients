@@ -1,13 +1,16 @@
-import { addHours, isFriday, isMonday, isWeekend } from 'date-fns';
+import { addDays, addHours, isFriday, isMonday, isSaturday, isWeekend, set } from 'date-fns';
 
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 
 import type { BookingRange } from '../bookingsProvider/interface';
-import { type BookingFormData, BookingLocation } from '../bookingsProvider/interface';
+import { type BookingFormData, BookingFormValidationReasons, BookingLocation } from '../bookingsProvider/interface';
 import {
     JSONFormatData,
     JSONFormatTextData,
+    createBookingRangeNextAvailableTime,
+    generateBookingRangeID,
     generateDefaultBookingRange,
     generateSlotsFromRange,
     validateFormData,
@@ -157,6 +160,7 @@ describe('booking helpers', () => {
 
             expect(result).toEqual({
                 type: 'warning',
+                reason: BookingFormValidationReasons.TITLE_REQUIRED,
             });
         });
 
@@ -165,6 +169,7 @@ describe('booking helpers', () => {
 
             expect(result).toEqual({
                 type: 'warning',
+                reason: BookingFormValidationReasons.TITLE_REQUIRED,
             });
         });
 
@@ -173,21 +178,12 @@ describe('booking helpers', () => {
 
             expect(result).toEqual({
                 type: 'warning',
+                reason: BookingFormValidationReasons.TIME_SLOT_REQUIRED,
             });
         });
     });
 
     describe('generateDefaultBookingRange', () => {
-        const originalTZ = process.env.TZ;
-
-        beforeAll(() => {
-            process.env.TZ = 'UTC';
-        });
-
-        afterAll(() => {
-            process.env.TZ = originalTZ;
-        });
-
         beforeEach(() => {
             jest.useFakeTimers();
             // This is a Thursday
@@ -232,6 +228,62 @@ describe('booking helpers', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.SUNDAY } as UserSettings;
             const res = generateDefaultBookingRange(userSettings, 'Europe/Zurich');
             checks(res);
+        });
+    });
+
+    describe('createBookingRangeNextAvailableTime', () => {
+        const today = new Date('2026-01-15T10:30:00Z');
+        beforeEach(() => {
+            jest.useFakeTimers();
+            // This is a Thursday
+            jest.setSystemTime(today);
+        });
+
+        afterEach(() => {
+            jest.useRealTimers();
+        });
+
+        const tomorrow = addDays(today, 1);
+        const tomorrowStart = set(tomorrow, { hours: 9 });
+        const tomorrowEnd = set(tomorrow, { hours: 17 });
+
+        const tomorrowRange = {
+            id: generateBookingRangeID(tomorrowStart, tomorrowEnd),
+            start: tomorrowStart,
+            end: tomorrowEnd,
+            timezone: 'Europe/Zurich',
+        };
+
+        const twoDaysAfterTomorrow = addDays(tomorrow, 2);
+        const twoDaysAfterTomorrowStart = set(twoDaysAfterTomorrow, { hours: 9 });
+        const twoDaysAfterTomorrowEnd = set(twoDaysAfterTomorrow, { hours: 17 });
+
+        const dayAfterTomorrowRange = {
+            id: generateBookingRangeID(twoDaysAfterTomorrowStart, twoDaysAfterTomorrowEnd),
+            start: twoDaysAfterTomorrowStart,
+            end: twoDaysAfterTomorrowEnd,
+            timezone: 'Europe/Zurich',
+        };
+
+        it('should return tomorrow if tomorrow is available', () => {
+            const res = createBookingRangeNextAvailableTime([], 'Europe/Zurich');
+            expect(isSameDay(res.start, tomorrow)).toBe(true);
+            expect(isSameDay(res.end, tomorrow)).toBe(true);
+            expect(isFriday(res.start)).toBe(true);
+        });
+
+        it('should return the day after tomorrow if tomorrow is not available', () => {
+            const res = createBookingRangeNextAvailableTime([tomorrowRange], 'Europe/Zurich');
+            expect(isSameDay(res.start, new Date('2026-01-17T08:00:00Z'))).toBe(true);
+            expect(isSameDay(res.end, new Date('2026-01-17T08:00:00Z'))).toBe(true);
+            expect(isSaturday(res.start)).toBe(true);
+        });
+
+        it('should return the date in-between tomorrow and the day after if both are taken', () => {
+            const res = createBookingRangeNextAvailableTime([tomorrowRange, dayAfterTomorrowRange], 'Europe/Zurich');
+            expect(isSameDay(res.start, new Date('2026-01-17T14:00:00Z'))).toBe(true);
+            expect(isSameDay(res.end, new Date('2026-01-17T14:00:00Z'))).toBe(true);
+            expect(isSaturday(res.start)).toBe(true);
         });
     });
 });
