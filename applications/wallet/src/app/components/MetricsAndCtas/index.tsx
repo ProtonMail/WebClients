@@ -15,8 +15,7 @@ import { BITCOIN, DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton
 import { usePriceGraphData, useWalletAccountExchangeRate } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { CoreButton } from '../../atoms/Button';
+import { Button, CoreButton } from '../../atoms/Button';
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';

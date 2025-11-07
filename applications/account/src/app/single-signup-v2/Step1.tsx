@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { InlineLinkButton } from '@proton/atoms/InlineLikeButton/InlineLikeButton';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr/Vr';
 import {
     CurrencySelector,

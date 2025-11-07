@@ -6,8 +6,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components';
 import { PLANS } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Modal } from '../../../atoms';
+import { Button, Modal } from '../../../atoms';
 import type { QuoteWithProvider } from './index';
 
 import './AztecoPaymentDetailsModal.scss';

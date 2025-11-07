@@ -17,7 +17,7 @@ import {
   WebsocketConnectionEvent,
   isDocumentState,
 } from '@proton/docs-core'
-import { CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { DebugMenu } from './DebugMenu'
 import type {
   CommentMarkNodeChangeData,

@@ -3,7 +3,7 @@ import { $isAutoLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { mergeRegister } from '@lexical/utils'
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms'
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { Icon } from '@proton/components'
 import clsx from '@proton/utils/clsx'
 import type { LexicalEditor } from 'lexical'

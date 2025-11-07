@@ -1,6 +1,6 @@
 import { c } from 'ttag'
 
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import type { ModalStateProps } from '@proton/components'
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, Toggle, useModalTwoStatic } from '@proton/components'
 import useLoading from '@proton/hooks/useLoading'

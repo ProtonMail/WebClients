@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import { c } from 'ttag'
 
 import type { ModalStateProps } from '@proton/components'

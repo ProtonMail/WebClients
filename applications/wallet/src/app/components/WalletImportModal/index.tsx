@@ -20,8 +20,7 @@ import {
 } from '@proton/components';
 import { useWalletSettings } from '@proton/wallet/store';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
+import { Button, CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import type { SubTheme } from '../../utils';

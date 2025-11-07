@@ -12,9 +12,8 @@ import { useFlag } from '@proton/unleash';
 import { useCountriesByProvider } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
+import { Button, SearchableSelect } from '../../../atoms';
 import type { CoreSearchableSelectProps } from '../../../atoms';
-import { Button } from '@proton/atoms/Button/Button';
-import { SearchableSelect } from '../../../atoms';
 import { ModalParagraph } from '../../../atoms/ModalParagraph';
 import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 

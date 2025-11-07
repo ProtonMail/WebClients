@@ -8,8 +8,7 @@ import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { CoreButton } from '../../../atoms';
+import { Button, CoreButton } from '../../../atoms';
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';
 import { AddressTable } from '../AddressTable';
 import { useAddressTable } from './useAddressTable';

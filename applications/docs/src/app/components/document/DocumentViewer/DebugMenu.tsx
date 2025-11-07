@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import { Icon } from '@proton/components'
 import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'

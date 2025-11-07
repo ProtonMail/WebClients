@@ -5,9 +5,8 @@ import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { WasmAccountSweeper, type WasmApiWalletAccount, type WasmBitcoinUnit, type WasmPsbt } from '@proton/andromeda';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Icon,
     MiddleEllipsis,
@@ -24,7 +23,7 @@ import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { CoreButton, Input } from '../../atoms';
+import { Button, CoreButton, Input } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { Price } from '../../atoms/Price';

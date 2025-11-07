@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { CoreButton } from '../../../atoms';
+import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import type { AccountWithChainData } from '../../../types';

@@ -2,7 +2,7 @@ import type { AuthenticatedDocControllerInterface, DocumentState } from '@proton
 import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button';
-import { CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components'
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'

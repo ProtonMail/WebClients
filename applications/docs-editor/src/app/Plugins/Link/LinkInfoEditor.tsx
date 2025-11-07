@@ -5,7 +5,7 @@ import type { LinkNode } from '@lexical/link'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import { createPortal } from 'react-dom'
 import { Button } from '@proton/atoms/Button/Button';
-import { Input } from '@proton/atoms'
+import { Input } from '@proton/atoms/Input/Input'
 import { Icon } from '@proton/components'
 import { mergeRegister } from '@lexical/utils'
 import { c } from 'ttag'

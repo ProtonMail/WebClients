@@ -19,8 +19,7 @@ import { COMPUTE_BITCOIN_UNIT, PriorityTargetBlock, type TransactionData, useWal
 import { DEFAULT_FEE_SETTINGS, useNetworkFees, useUserWalletSettings } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Modal } from '../../atoms';
+import { Button, Modal } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';

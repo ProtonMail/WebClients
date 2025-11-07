@@ -14,8 +14,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { BASE_INDEX_OPTIONS, SCRIPT_TYPES } from '@proton/wallet';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { CoreButtonLike, Input, Modal, Select } from '../../atoms';
+import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';

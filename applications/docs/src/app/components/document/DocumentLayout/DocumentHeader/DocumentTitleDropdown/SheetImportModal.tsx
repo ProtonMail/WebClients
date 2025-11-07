@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import type { ModalStateProps } from '@proton/components'
 import { Checkbox, Icon, ModalTwo, ModalTwoContent, SelectTwo, Option, useModalTwoStatic } from '@proton/components'
 import { SheetImportDestination, SheetImportSeparatorType, type SheetImportData } from '@proton/docs-shared'

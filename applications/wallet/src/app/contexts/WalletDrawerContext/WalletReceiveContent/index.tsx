@@ -11,8 +11,7 @@ import Info from '@proton/components/components/link/Info';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { Select } from '../../../atoms';
+import { Button, Select } from '../../../atoms';
 import { WalletAccountItem } from '../../../components/WalletAccountSelector';
 import { getAccountWithChainDataFromManyWallets } from '../../../utils';
 import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';
