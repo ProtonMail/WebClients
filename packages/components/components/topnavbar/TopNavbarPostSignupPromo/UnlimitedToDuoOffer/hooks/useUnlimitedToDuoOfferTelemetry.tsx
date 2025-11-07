@@ -23,7 +23,7 @@ export const useUnlimitedToDuoOfferTelemetry = () => {
             user,
             subscription,
             userSettings,
-            measurementGroup: TelemetryMeasurementGroups.unlimitedOffer2025,
+            measurementGroup: TelemetryMeasurementGroups.unlimitedToDuoOffer,
             event: options.event,
             dimensions: {
                 messageType: options.dimensions.messageType,
