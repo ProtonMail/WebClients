@@ -116,7 +116,7 @@ const modelToAttendeeProperties = ({ attendees }: EventModel) => {
     };
 };
 
-const modelToVideoConferenceProperties = ({
+export const modelToVideoConferenceProperties = ({
     conferenceId,
     conferencePassword,
     conferenceUrl,
@@ -146,7 +146,7 @@ const modelToVideoConferenceProperties = ({
     };
 };
 
-const modelToDescriptionProperties = ({
+export const modelToDescriptionProperties = ({
     description,
     conferenceId,
     conferencePassword,
@@ -174,7 +174,7 @@ const modelToDescriptionProperties = ({
 
     const newDescription = addVideoConfInfoToDescription({
         host: conferenceHost,
-        meedingURL: conferenceUrl,
+        meetingURL: conferenceUrl,
         password: conferencePassword,
         meetingId: conferenceId,
         description: slicedDescription,

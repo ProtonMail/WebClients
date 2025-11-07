@@ -33,6 +33,7 @@ export type BookingDetails = {
     bookingKeySalt: string;
     inviterDisplayName: string;
     inviterEmail: string;
+    withProtonMeetLink: boolean;
 };
 
 export type BookingSlotDetails = {

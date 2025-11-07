@@ -46,13 +46,13 @@ describe('video conf helpers', () => {
     });
 
     const baseZoomParams = {
-        meedingURL: 'https://zoom.us/j/123456789',
+        meetingURL: 'https://zoom.us/j/123456789',
         meetingId: '123456789',
         provider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
     };
 
     const baseProtonParams = {
-        meedingURL: 'https://meet.proton.me/meeting123',
+        meetingURL: 'https://meet.proton.me/meeting123',
         meetingId: 'meeting123',
         provider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
     };
@@ -73,7 +73,7 @@ describe('video conf helpers', () => {
             expect(
                 addVideoConfInfoToDescription({
                     ...baseZoomParams,
-                    meedingURL: undefined,
+                    meetingURL: undefined,
                     description,
                 })
             ).toBe(description);
@@ -97,7 +97,7 @@ describe('video conf helpers', () => {
             const expected = [
                 '',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Zoom Meeting: ${baseZoomParams.meedingURL} (ID: ${baseZoomParams.meetingId}, passcode: 123456)`,
+                `Join Zoom Meeting: ${baseZoomParams.meetingURL} (ID: ${baseZoomParams.meetingId}, passcode: 123456)`,
                 '',
                 'Meeting host: John Doe',
                 SEPARATOR_PROTON_EVENTS,
@@ -115,7 +115,7 @@ describe('video conf helpers', () => {
             const expected = [
                 '',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Proton Meet: ${baseProtonParams.meedingURL} (ID: ${baseProtonParams.meetingId})`,
+                `Join Proton Meet: ${baseProtonParams.meetingURL} (ID: ${baseProtonParams.meetingId})`,
                 '',
                 'Meeting host: Jane Smith',
                 SEPARATOR_PROTON_EVENTS,
@@ -134,7 +134,7 @@ describe('video conf helpers', () => {
             const expected = [
                 description,
                 SEPARATOR_PROTON_EVENTS,
-                `Join Zoom Meeting: ${baseZoomParams.meedingURL} (ID: ${baseZoomParams.meetingId})`,
+                `Join Zoom Meeting: ${baseZoomParams.meetingURL} (ID: ${baseZoomParams.meetingId})`,
                 '',
                 '',
                 SEPARATOR_PROTON_EVENTS,
@@ -149,7 +149,7 @@ describe('video conf helpers', () => {
             const expected = [
                 '',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Proton Meet: ${baseProtonParams.meedingURL} (ID: ${baseProtonParams.meetingId})`,
+                `Join Proton Meet: ${baseProtonParams.meetingURL} (ID: ${baseProtonParams.meetingId})`,
                 '',
                 '',
                 SEPARATOR_PROTON_EVENTS,
@@ -164,7 +164,7 @@ describe('video conf helpers', () => {
             const description = [
                 'Meeting agenda',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Zoom Meeting: ${baseZoomParams.meedingURL} (ID: ${baseZoomParams.meetingId})`,
+                `Join Zoom Meeting: ${baseZoomParams.meetingURL} (ID: ${baseZoomParams.meetingId})`,
                 '',
                 'Meeting host: John Doe',
                 SEPARATOR_PROTON_EVENTS,
@@ -178,11 +178,11 @@ describe('video conf helpers', () => {
             const description = [
                 'Meeting agenda',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Zoom Meeting: ${baseZoomParams.meedingURL} (ID: ${baseZoomParams.meetingId})`,
+                `Join Zoom Meeting: ${baseZoomParams.meetingURL} (ID: ${baseZoomParams.meetingId})`,
                 SEPARATOR_PROTON_EVENTS,
                 'Notes',
                 SEPARATOR_PROTON_EVENTS,
-                `Join Proton Meet: ${baseProtonParams.meedingURL} (ID: ${baseProtonParams.meetingId})`,
+                `Join Proton Meet: ${baseProtonParams.meetingURL} (ID: ${baseProtonParams.meetingId})`,
                 SEPARATOR_PROTON_EVENTS,
                 'End',
             ].join('\n');
@@ -198,7 +198,7 @@ describe('video conf helpers', () => {
         it('should handle description with only video conference info', () => {
             const description = [
                 SEPARATOR_PROTON_EVENTS,
-                `Join Zoom Meeting: ${baseZoomParams.meedingURL} (ID: ${baseZoomParams.meetingId})`,
+                `Join Zoom Meeting: ${baseZoomParams.meetingURL} (ID: ${baseZoomParams.meetingId})`,
                 SEPARATOR_PROTON_EVENTS,
             ].join('\n');
 

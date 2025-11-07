@@ -51,6 +51,10 @@ interface BookingContentData {
      * Event location
      */
     location: string;
+    /**
+     * Whether or not the location is a proton meet link
+     */
+    withProtonMeetLink: boolean;
 }
 
 /**
