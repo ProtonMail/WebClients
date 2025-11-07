@@ -13,7 +13,6 @@ yarn create-atom MyAtom
 This will create a `MyAtom` directory in `@proton/atoms` and output the following skeleton files
 
 ```
-index.ts // Exports all exports from component file
 MyAtom.mdx // Markdown docs for storybook
 MyAtom.scss // Contains the styles
 MyAtom.stories.tsx // Stories for storybook

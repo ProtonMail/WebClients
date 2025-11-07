@@ -5,9 +5,7 @@ import path from 'path';
 
 import { logComponentCreationError, logConclusion, logIntro, logItemCompletion } from './utils/log';
 import {
-    appendAtomToIndex,
     getAtomTemplate,
-    getIndexTemplate,
     getMdxTemplate,
     getStoriesTemplate,
     getStylesTemplate,
@@ -31,16 +29,13 @@ async function run(AtomName: string, options: { tag: string }) {
         process.exit(0);
     }
 
-    const [atomTemplate, indexTemplate, testTemplate, stylesTemplate, mdxTemplate, storiesTemplate] = await Promise.all(
-        [
-            getAtomTemplate(AtomName, rootHtmlTag),
-            getIndexTemplate(AtomName),
-            getTestTemplate(AtomName),
-            getStylesTemplate(AtomName),
-            getMdxTemplate(AtomName),
-            getStoriesTemplate(AtomName),
-        ]
-    );
+    const [atomTemplate, testTemplate, stylesTemplate, mdxTemplate, storiesTemplate] = await Promise.all([
+        getAtomTemplate(AtomName, rootHtmlTag),
+        getTestTemplate(AtomName),
+        getStylesTemplate(AtomName),
+        getMdxTemplate(AtomName),
+        getStoriesTemplate(AtomName),
+    ]);
 
     await fs.mkdir(atomDir);
     logItemCompletion('Directory created.');
@@ -48,12 +43,10 @@ async function run(AtomName: string, options: { tag: string }) {
     const writeTemplate = getWriteTemplate(atomDir);
     await Promise.all([
         writeTemplate(`${AtomName}.tsx`, atomTemplate),
-        writeTemplate('index.ts', indexTemplate),
         writeTemplate(`${AtomName}.test.tsx`, testTemplate),
         writeTemplate(`${AtomName}.scss`, stylesTemplate),
         writeTemplate(`${AtomName}.mdx`, mdxTemplate),
         writeTemplate(`${AtomName}.stories.tsx`, storiesTemplate),
-        appendAtomToIndex(atomsDir, AtomName),
     ]);
 
     logConclusion();
