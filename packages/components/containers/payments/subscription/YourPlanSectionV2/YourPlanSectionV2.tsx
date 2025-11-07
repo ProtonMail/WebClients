@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { useVPNServersCount } from '@proton/account';
@@ -18,9 +20,10 @@ import { CurrentPlanInfoSection } from './CurrentPlanInfoSection';
 interface YourPlanSectionV2Props {
     app: APP_NAMES;
     editBillingCycle?: boolean;
+    cta?: ReactNode;
 }
 
-const YourPlanSectionV2 = ({ app, editBillingCycle = false }: YourPlanSectionV2Props) => {
+const YourPlanSectionV2 = ({ app, editBillingCycle = false, cta }: YourPlanSectionV2Props) => {
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
@@ -40,7 +43,7 @@ const YourPlanSectionV2 = ({ app, editBillingCycle = false }: YourPlanSectionV2P
     return (
         <>
             <DashboardGrid>
-                <DashboardGridSectionHeader title={c('Headline').t`Your plan`} />
+                <DashboardGridSectionHeader title={c('Headline').t`Your plan`} cta={cta} />
                 <SubscriptionEndsBannerV2 app={app} />
                 <DashboardCard>
                     <DashboardCardContent>
