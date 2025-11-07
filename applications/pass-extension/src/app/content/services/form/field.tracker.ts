@@ -54,11 +54,11 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         if (state.focusTimeout) clearTimeout(state.focusTimeout);
         state.focused = false;
 
-        if (!ctx || field.actionPrevented) return;
+        if (!ctx) return;
 
         raf.request(
             onNextTick(async (handle: number) => {
-                if (handle !== raf.handle) return;
+                if (field.actionPrevented || handle !== raf.handle) return;
                 const active = await field.isActive();
 
                 if (handle === raf.handle && !active) {
@@ -76,9 +76,10 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         state.focused = true;
 
         const { action } = field;
-        if (!ctx || !action || field.actionPrevented) return;
+        if (!ctx || !action) return;
 
         raf.request(() => {
+            if (field.actionPrevented) return;
             if (state.focusTimeout) clearTimeout(state.focusTimeout);
 
             ctx.service.inline.icon.attach(field);
