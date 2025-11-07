@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { apiStatusReducer } from '@proton/account/apiStatus';
 import { featuresReducer } from '@proton/features/reducer';
 
+// TODO do we need to add listeners here?
 export const setupStore = () => {
     return configureStore({
         devTools: process.env.NODE_ENV !== 'production',
