@@ -4,6 +4,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcEarth } from '@proton/icons/icons/IcEarth';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useBookingStore } from '../../booking.store';
 
@@ -19,6 +20,7 @@ export const DetailsHeader = () => {
                 location: state.bookingDetails.location,
                 duration: state.bookingDetails.duration,
                 timezone: state.bookingDetails.timezone,
+                withProtonMeetLink: state.bookingDetails.withProtonMeetLink,
             };
         })
     );
@@ -26,6 +28,7 @@ export const DetailsHeader = () => {
     if (!bookingDetails) {
         return null;
     }
+
     return (
         <div className="mt-12">
             <h1 className="mb-2 text-2xl text-bold">{bookingDetails?.summary}</h1>
@@ -37,7 +40,9 @@ export const DetailsHeader = () => {
                 </div>
                 <div className="flex gap-3 items-center mb-2">
                     <IcMapPin />
-                    <span>{bookingDetails.location}</span>
+                    <span>{bookingDetails.withProtonMeetLink
+                        ? c('Info').t`${MEET_APP_NAME} video call`
+                        : bookingDetails.location}</span>
                 </div>
                 <div className="flex gap-3 items-center">
                     <IcEarth />

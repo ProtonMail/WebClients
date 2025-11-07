@@ -23,20 +23,20 @@ export const getVideoConfCopy = (service: VIDEO_CONF_SERVICES) => {
 
 export const addVideoConfInfoToDescription = ({
     host,
-    meedingURL,
+    meetingURL,
     password,
     meetingId,
     description = '',
     provider,
 }: {
     host?: string;
-    meedingURL?: string;
+    meetingURL?: string;
     password?: string;
     meetingId?: string;
     description?: string;
     provider?: VIDEO_CONFERENCE_PROVIDER;
 }): string => {
-    const hasVideoConfInfo = !!(meetingId && meedingURL && provider);
+    const hasVideoConfInfo = !!(meetingId && meetingURL && provider);
 
     if (!hasVideoConfInfo) {
         return description;
@@ -49,7 +49,7 @@ export const addVideoConfInfoToDescription = ({
 
     const videoConfDetails = `
 ${SEPARATOR_PROTON_EVENTS}
-Join ${providerLabels[provider]}: ${meedingURL} (ID: ${meetingId}${password ? `, passcode: ${password}` : ''})
+Join ${providerLabels[provider]}: ${meetingURL} (ID: ${meetingId}${password ? `, passcode: ${password}` : ''})
 
 ${host ? `Meeting host: ${host}` : ''}
 ${SEPARATOR_PROTON_EVENTS}`;
