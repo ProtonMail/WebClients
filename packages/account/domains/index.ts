@@ -80,6 +80,7 @@ const slice = createSlice({
         rejected: (state, action) => {
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
         removeDomain: (state, action: PayloadAction<Domain>) => {
             if (!state.value) {

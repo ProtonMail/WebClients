@@ -76,6 +76,7 @@ const slice = createSlice({
         rejected: (state, action) => {
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
     },
     extraReducers: (builder) => {
