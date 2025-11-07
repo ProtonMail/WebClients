@@ -3,6 +3,7 @@ import type { WorkerPoolInitOptions as CryptoWorkerOptions } from '@proton/crypt
 import { CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
 
 import { hasModulesSupport } from './browser';
+import { captureMessage } from './sentry';
 
 let promise: undefined | Promise<void>;
 
@@ -23,7 +24,16 @@ const init = async (options?: CryptoWorkerOptions) => {
         CryptoApi.init(options?.openpgpConfigOptions || {});
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     } else {
-        await CryptoWorkerPool.init(options);
+        await CryptoWorkerPool.init({
+            awaitOnFirstUseErrorCallback: options?.awaitOnFirstUse
+                ? (err: Error) =>
+                      captureMessage('CryptoWorkerPool init error', {
+                          level: 'error',
+                          extra: { message: err.message },
+                      })
+                : undefined,
+            ...options,
+        });
         CryptoProxy.setEndpoint(CryptoWorkerPool, (endpoint) => endpoint.destroy());
     }
 };

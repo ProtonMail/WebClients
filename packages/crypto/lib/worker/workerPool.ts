@@ -14,9 +14,16 @@ export interface WorkerPoolInitOptions {
     /**
      * Whether the waiting for the worker initialization should be done on first use of the WorkerPool,
      * instead of as part of `init`.
-     * Setting this to true makes `init` faster, but any worker loading errors will be thrown later on.
+     * Setting this to true makes `init` faster, but any worker loading errors will be thrown later on
+     * (see also `awaitOnFirstUseErrorCallback`).
      */
     awaitOnFirstUse?: boolean;
+    /**
+     * Callback triggered when the worker loading promise throws;
+     * it's intended for reporting purposes when using enabling the `awaitOnFirstUse` option,
+     * since the errors are not thrown by `init`.
+     */
+    awaitOnFirstUseErrorCallback?: (err: Error) => void;
     poolSize?: number;
     openpgpConfigOptions?: WorkerInitOptions;
 }
@@ -107,6 +114,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     return {
         init: async ({
             awaitOnFirstUse = false,
+            awaitOnFirstUseErrorCallback = () => {},
             poolSize = navigator.hardwareConcurrency || 1,
             openpgpConfigOptions = {},
         } = {}) => {
@@ -125,7 +133,10 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
                 }
                 mainThreadTransferHandlers.forEach(({ name, handler }) => transferHandlers.set(name, handler));
                 return workerPool;
-            })();
+            })().catch((err) => {
+                awaitOnFirstUseErrorCallback(err);
+                throw err;
+            });
 
             if (!awaitOnFirstUse) {
                 await workerPoolPromise;
