@@ -70,7 +70,7 @@ export const useExternalBookingLoader = () => {
                     throw new Error(c('Error').t`No booking page data received`);
                 }
 
-                const { summary, description, location } = await decryptBookingContent({
+                const { summary, description, location, withProtonMeetLink } = await decryptBookingContent({
                     encryptedContent: bookingPageData.EncryptedContent,
                     bookingSecretBytes,
                     bookingKeySalt: bookingPageData.BookingKeySalt,
@@ -84,6 +84,7 @@ export const useExternalBookingLoader = () => {
                     summary,
                     description,
                     location,
+                    withProtonMeetLink,
                     duration: bookingPageData.Duration ? bookingPageData.Duration / 60 : undefined,
                     timezone: bookingPageData.Timezone ?? undefined,
                     bookingKeySalt: bookingPageData.BookingKeySalt,

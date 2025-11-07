@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { fromUnixTime } from 'date-fns';
 
 import { useApi } from '@proton/components';
+import { useSaveMeeting } from '@proton/meet';
 import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
@@ -22,6 +23,7 @@ export const useExternalBookingActions = () => {
     const location = useLocation();
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const setBookingSlotDetails = useBookingStore((state) => state.setBookingSlotDetails);
+    const saveMeeting = useSaveMeeting();
 
     const history = useHistory();
 
@@ -46,6 +48,7 @@ export const useExternalBookingActions = () => {
                 attendeeEmail: attendeeInfo.email,
                 organizerName: bookingDetails.inviterDisplayName,
                 organizerEmail: bookingDetails.inviterEmail,
+                saveMeeting,
             });
 
             await api(
