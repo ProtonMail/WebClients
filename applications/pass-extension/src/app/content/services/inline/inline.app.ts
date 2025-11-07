@@ -17,6 +17,7 @@ import { animatePositionChange } from '@proton/pass/utils/dom/animation';
 import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
 import { createElement } from '@proton/pass/utils/dom/create-element';
 import { TopLayerManager } from '@proton/pass/utils/dom/popover';
+import { repaint } from '@proton/pass/utils/dom/repaint';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
@@ -237,6 +238,8 @@ export const createInlineApp = <T extends InlineRequest>({
         pubsub.publish({ type: 'close', state, options }); /* ⚠️ call before resetting state */
 
         iframe.classList.remove('visible');
+        repaint(iframe);
+
         state.visible = false;
         state.action = null;
 
@@ -261,6 +264,8 @@ export const createInlineApp = <T extends InlineRequest>({
             void sendPortMessage({ type: InlinePortMessageType.IFRAME_OPEN });
 
             iframe.classList.add('visible');
+            repaint(iframe);
+
             setIframeDimensions(dimensions(state));
             pubsub.publish({ type: 'open', state });
         } catch (error) {
