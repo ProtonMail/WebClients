@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
-import { differenceInMinutes } from 'date-fns';
+import { addMinutes, differenceInMinutes, isBefore } from 'date-fns';
 
 import { type PartDayEventProps, PartDayEventView } from '../../../components/events/PartDayEvent';
 import { getBookingSlotStyle } from '../../../helpers/color';
@@ -33,21 +33,29 @@ const BookingSlots = ({ start, end, backgroundColor }: BookingSlotsProps) => {
     const height = computeHeight(formData.duration, totalMinutes);
     const availableRanges = Math.floor(totalMinutes / formData.duration);
 
+    const getItemOpacity = useCallback(
+        (index: number) => {
+            const now = new Date();
+            const itemStart = addMinutes(start, index * formData.duration);
+            return isBefore(itemStart, now) ? 0.1 : 0.2;
+        },
+        [start, formData.duration]
+    );
+
     return Array.from({ length: availableRanges }).map((_, index) => (
         <div key={index} className="w-full py-px" style={{ height }}>
-            <div className="h-full rounded-sm" style={{ backgroundColor, opacity: 0.2 }} />
+            <div
+                className="h-full rounded-sm"
+                style={{
+                    backgroundColor,
+                    opacity: getItemOpacity(index),
+                }}
+            />
         </div>
     ));
 };
 
-export const PartDayBookingEvent = ({
-    size,
-    style,
-    event,
-    isBeforeNow,
-    eventRef,
-    eventPartDuration,
-}: PartDayBusyEventProps) => {
+export const PartDayBookingEvent = ({ size, style, event, eventRef, eventPartDuration }: PartDayBusyEventProps) => {
     const eventStyle = useMemo(() => {
         return getBookingSlotStyle(event.data.calendarData.Color, style);
     }, [event.data.calendarData.Color, style]);
@@ -58,7 +66,6 @@ export const PartDayBookingEvent = ({
             style={{
                 ...eventStyle,
             }}
-            isPast={isBeforeNow}
             isSelected={false}
             ref={eventRef}
             isLoaded
