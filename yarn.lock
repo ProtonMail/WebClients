@@ -3654,7 +3654,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.39.1, @eslint/js@npm:^9.39.0":
+"@eslint/js@npm:9.39.1, @eslint/js@npm:^9.39.1":
   version: 9.39.1
   resolution: "@eslint/js@npm:9.39.1"
   checksum: 10c0/6f7f26f8cdb7ad6327bbf9741973b6278eb946f18f70e35406e88194b0d5c522d0547a34a02f2a208eec95c5d1388cdf7ccb20039efd2e4cb6655615247a50f1
@@ -7927,7 +7927,7 @@ __metadata:
     "@types/deep-freeze": "npm:^0.1.5"
     date-fns: "npm:^2.30.0"
     deep-freeze: "npm:^0.0.1"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     react: "npm:^18.3.1"
@@ -7964,7 +7964,7 @@ __metadata:
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     msw: "npm:^2.11.6"
@@ -7991,7 +7991,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
     babel-jest: "npm:^30.2.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     typescript: "npm:^5.9.3"
     vite: "npm:^7.1.12"
@@ -8040,13 +8040,13 @@ __metadata:
     "@testing-library/react": "npm:^15.0.7"
     "@types/jest": "npm:^30.0.0"
     "@types/mustache": "npm:^4.2.6"
-    "@types/node": "npm:^22.18.13"
+    "@types/node": "npm:^22.19.0"
     "@types/react": "npm:^18.3.26"
     "@types/react-dom": "npm:^18.3.7"
     "@types/tinycolor2": "npm:^1.4.6"
     babel-loader: "npm:^10.0.0"
     commander: "npm:^12.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-storybook: "npm:^0.12.0"
     http-server: "npm:^14.1.1"
     jest: "npm:^30.2.0"
@@ -8076,7 +8076,7 @@ __metadata:
     "@reduxjs/toolkit": "npm:^2.10.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     react: "npm:^18.3.1"
@@ -8096,7 +8096,7 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@proton/styles": "workspace:^"
     concurrently: "npm:^8.2.2"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     postcss: "npm:^8.5.6"
     serve: "npm:^14.2.5"
@@ -8121,7 +8121,7 @@ __metadata:
     "@vercel/ncc": "npm:^0.38.4"
     async-retry: "npm:^1.3.3"
     commander: "npm:^12.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.5"
     ts-node: "npm:^10.9.2"
@@ -8138,7 +8138,7 @@ __metadata:
     "@proton/gitlab": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     axios: "npm:^1.13.1"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.5"
     ts-node: "npm:^10.9.2"
@@ -8167,10 +8167,10 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@types/css-tree": "npm:^2.3.11"
     "@types/jest": "npm:^30.0.0"
-    "@types/node": "npm:^22.18.13"
+    "@types/node": "npm:^22.19.0"
     "@types/tinycolor2": "npm:^1.4.6"
     css-tree: "npm:^2.3.1"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     prettier: "npm:^3.6.2"
     tinycolor2: "npm:^1.6.0"
@@ -8243,7 +8243,7 @@ __metadata:
     docx-preview: "npm:^0.3.7"
     dompurify: "npm:^3.3.0"
     emoji-mart: "npm:^5.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     formik: "npm:^2.4.6"
     ibantools: "npm:^4.5.1"
     jest: "npm:^30.2.0"
@@ -8284,7 +8284,7 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     typescript: "npm:^5.9.3"
   languageName: unknown
   linkType: soft
@@ -8299,7 +8299,7 @@ __metadata:
     chai: "npm:^5.3.3"
     chai-as-promised: "npm:^7.1.2"
     comlink: "npm:^4.4.2"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-chai-friendly: "npm:^1.1.0"
     eslint-plugin-jasmine: "npm:^4.2.2"
     karma: "npm:^6.4.4"
@@ -8348,8 +8348,8 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/mime-types": "npm:^2.1.4"
     "@types/react-window": "npm:^1.8.8"
-    eslint: "npm:^9.39.0"
-    fake-indexeddb: "npm:^6.2.2"
+    eslint: "npm:^9.39.1"
+    fake-indexeddb: "npm:^6.2.4"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     jest-when: "npm:3.7.0"
@@ -8373,7 +8373,7 @@ __metadata:
   dependencies:
     "@standardnotes/domain-core": "npm:^1.41.3"
     "@types/google-protobuf": "npm:^3.15.12"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.4"
     google-protobuf: "npm:^3.21.4"
@@ -8394,7 +8394,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@types/google-protobuf": "npm:^3.15.12"
     "@types/jest": "npm:^30.0.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     google-protobuf: "npm:^3.21.4"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
@@ -8453,7 +8453,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     cross-var: "npm:^1.1.0"
     ejs-webpack-loader: "npm:^2.2.2"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     exifreader: "npm:^4.32.0"
     heic-to: "npm:^1.3.0"
     jest: "npm:^30.2.0"
@@ -8485,8 +8485,8 @@ __metadata:
   dependencies:
     "@protontech/drive-sdk": "npm:^0.6.0"
     "@types/jest": "npm:^30.0.0"
-    "@types/node": "npm:^22.18.13"
-    eslint: "npm:^9.39.0"
+    "@types/node": "npm:^22.19.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.5"
     ts-loader: "npm:^9.5.4"
@@ -8508,7 +8508,7 @@ __metadata:
     "@proton/shared": "workspace:^"
     "@proton/utils": "workspace:^"
     "@types/jasmine": "npm:^5.1.12"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-jasmine: "npm:^4.2.2"
     idb: "npm:^8.0.3"
     jasmine: "npm:^5.12.0"
@@ -8532,9 +8532,9 @@ __metadata:
   resolution: "@proton/eslint-config-proton@workspace:packages/eslint-config-proton"
   dependencies:
     "@eslint/eslintrc": "npm:^3.3.1"
-    "@eslint/js": "npm:^9.39.0"
+    "@eslint/js": "npm:^9.39.1"
     "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "npm:^2.0.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-import-resolver-alias: "npm:^1.1.2"
     eslint-import-resolver-typescript: "npm:4.4.4"
@@ -8547,7 +8547,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-testing-library: "npm:^7.13.3"
-    typescript-eslint: "npm:^8.46.2"
+    typescript-eslint: "npm:^8.46.3"
   peerDependencies:
     prettier: 3.6.2
     typescript: ^5.9.3
@@ -8576,7 +8576,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     axios: "npm:^1.13.1"
-    eslint: "npm:^9.37.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.5"
     ts-node: "npm:^10.9.2"
@@ -8591,7 +8591,7 @@ __metadata:
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
     "@types/jest": "npm:^30.0.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     react: "npm:^18.3.1"
     react-test-renderer: "npm:^18.3.1"
@@ -8605,7 +8605,7 @@ __metadata:
   resolution: "@proton/i18n@workspace:packages/i18n"
   dependencies:
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     execa: "npm:^5.1.1"
     gettext-parser: "npm:^7.0.1"
     glob: "npm:^10.4.5"
@@ -8623,7 +8623,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@types/mustache": "npm:^4.2.6"
     "@types/react": "npm:^18.3.26"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jsdom: "npm:^27.1.0"
     mustache: "npm:^4.2.0"
     prettier: "npm:^3.6.2"
@@ -8653,7 +8653,7 @@ __metadata:
     "@proton/i18n": "workspace:^"
     "@proton/shared": "workspace:^"
     "@types/jasmine": "npm:^5.1.12"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-jasmine: "npm:^4.2.2"
     jasmine: "npm:^5.12.0"
     jasmine-core: "npm:^5.12.1"
@@ -8661,7 +8661,7 @@ __metadata:
     karma-chrome-launcher: "npm:^3.2.0"
     karma-jasmine: "npm:^5.1.0"
     karma-webpack: "npm:^5.0.1"
-    pkijs: "npm:^3.3.2"
+    pkijs: "npm:^3.3.3"
     playwright: "npm:^1.56.1"
     ts-loader: "npm:^9.5.4"
     typescript: "npm:^5.9.3"
@@ -8685,7 +8685,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@webgpu/types": "npm:^0.1.66"
     babel-jest: "npm:^30.2.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     react: "npm:^18.3.1"
@@ -8709,7 +8709,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     react: "npm:^18.3.1"
@@ -8732,7 +8732,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@types/turndown": "npm:^5.0.6"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     prettier: "npm:^3.6.2"
@@ -8760,7 +8760,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:3.2.4"
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     happy-dom: "npm:^20.0.10"
     prettier: "npm:^3.6.2"
     react: "npm:^18.3.1"
@@ -8776,8 +8776,8 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@types/node": "npm:^22.18.13"
-    eslint: "npm:^9.39.0"
+    "@types/node": "npm:^22.19.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-fetch-mock: "npm:^3.0.3"
     json-schema-to-typescript: "npm:^13.1.2"
@@ -8802,7 +8802,7 @@ __metadata:
     "@babel/runtime": "npm:^7.28.4"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.1"
     "@sentry/webpack-plugin": "npm:^1.21.0"
-    "@swc/core": "npm:^1.14.0"
+    "@swc/core": "npm:^1.15.0"
     autoprefixer: "npm:^10.4.21"
     babel-loader: "npm:^10.0.0"
     babel-plugin-transform-react-remove-prop-types: "npm:^0.4.24"
@@ -8814,7 +8814,7 @@ __metadata:
     css-minimizer-webpack-plugin: "npm:^7.0.2"
     dedent: "npm:^1.7.0"
     esbuild-loader: "npm:^4.4.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-webpack-plugin: "npm:^5.0.2"
     execa: "npm:^5.1.1"
     favicons: "npm:^7.2.0"
@@ -8885,8 +8885,8 @@ __metadata:
     circular-dependency-plugin: "npm:^5.2.2"
     client-zip: "npm:^2.5.0"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
-    fake-indexeddb: "npm:^6.2.2"
+    eslint: "npm:^9.39.1"
+    fake-indexeddb: "npm:^6.2.4"
     formik: "npm:^2.4.6"
     idb: "npm:^8.0.3"
     imask: "npm:^7.6.1"
@@ -8926,7 +8926,7 @@ __metadata:
     "@swc/jest": "npm:^0.2.39"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     react: "npm:^18.3.1"
@@ -8944,7 +8944,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     abortcontroller-polyfill: "npm:^1.7.8"
     core-js: "npm:^3.46.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     regenerator-runtime: "npm:^0.14.1"
     resize-observer: "npm:^1.0.4"
   languageName: unknown
@@ -8954,7 +8954,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/prettier-config-proton@workspace:packages/prettier-config"
   dependencies:
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     prettier: "npm:^3.6.2"
   languageName: unknown
   linkType: soft
@@ -8963,7 +8963,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/raw-images@workspace:packages/raw-images"
   dependencies:
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
   languageName: unknown
   linkType: soft
 
@@ -8997,7 +8997,7 @@ __metadata:
     "@pdfme/schemas": "npm:^5.4.2"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/utils": "workspace:^"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.5"
     typescript: "npm:^5.9.3"
@@ -9029,7 +9029,7 @@ __metadata:
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.10.1"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
     typescript: "npm:^5.9.3"
@@ -9044,7 +9044,7 @@ __metadata:
     "@reduxjs/toolkit": "npm:^2.10.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     react: "npm:^18.3.1"
@@ -9078,14 +9078,14 @@ __metadata:
     "@sentry/browser": "npm:^7.120.4"
     "@types/jasmine": "npm:^5.1.12"
     "@types/karma-junit-reporter": "npm:^2.0.4"
-    "@types/node": "npm:^22.18.13"
+    "@types/node": "npm:^22.19.0"
     "@types/papaparse": "npm:^5.3.16"
     "@types/ua-parser-js": "npm:^0.7.39"
     "@types/webpack-env": "npm:^1.18.8"
     "@webgpu/types": "npm:^0.1.66"
     date-fns: "npm:^2.30.0"
     dompurify: "npm:^3.3.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-jasmine: "npm:^4.2.2"
     file-saver: "npm:^2.0.5"
     ical.js: "npm:^1.5.0"
@@ -9120,7 +9120,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/sieve@workspace:packages/sieve"
   dependencies:
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.3"
@@ -9136,8 +9136,8 @@ __metadata:
     "@babel/register": "npm:^7.28.3"
     "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
-    bcryptjs: "npm:^3.0.2"
-    eslint: "npm:^9.39.0"
+    bcryptjs: "npm:^3.0.3"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     prettier: "npm:^3.6.2"
     ts-jest: "npm:^29.4.5"
@@ -9180,7 +9180,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
     "@types/jest": "npm:^30.0.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.5"
     ts-node: "npm:^10.9.2"
@@ -9194,7 +9194,7 @@ __metadata:
   dependencies:
     "@jackfranklin/test-data-bot": "npm:^2.1.0"
     cross-fetch: "npm:^4.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     msw: "npm:^2.11.6"
     typescript: "npm:^5.9.3"
   languageName: unknown
@@ -9229,7 +9229,7 @@ __metadata:
     "@types/react": "npm:^18.3.26"
     "@types/react-dom": "npm:^18.3.7"
     "@unleash/proxy-client-react": "npm:^5.0.1"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.3"
@@ -9248,7 +9248,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/jest-env": "workspace:^"
     "@types/jest": "npm:^30.0.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     lodash: "npm:^4.17.21"
     ts-jest: "npm:^29.4.5"
@@ -9288,7 +9288,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:3.2.4"
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     react: "npm:^18.3.1"
@@ -12275,7 +12275,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core@npm:^1.12.11, @swc/core@npm:^1.14.0":
+"@swc/core@npm:^1.12.11, @swc/core@npm:^1.15.0":
   version: 1.15.0
   resolution: "@swc/core@npm:1.15.0"
   dependencies:
@@ -14184,7 +14184,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.18.13, @types/node@npm:^22.5.5, @types/node@npm:^22.7.7":
+"@types/node@npm:^22.19.0, @types/node@npm:^22.5.5, @types/node@npm:^22.7.7":
   version: 22.19.0
   resolution: "@types/node@npm:22.19.0"
   dependencies:
@@ -18450,12 +18450,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bcryptjs@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "bcryptjs@npm:3.0.2"
+"bcryptjs@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "bcryptjs@npm:3.0.3"
   bin:
     bcrypt: bin/bcrypt
-  checksum: 10c0/a0923cac99f83e913f8f4e4f42df6a27c6593b24d509900331d1280c4050b1544e602a0ac67b43f7bb5c969991c3ed77fd72f19b7dc873be8ee794da3d925c7e
+  checksum: 10c0/127c94699f07eab5fbbb89d600c3f0e36ae6fd001e028139740b41fffb62a23a2743523fb88f442ae3308a27d4843b97ccb9e436d78f5c5899be187d0972c6d5
   languageName: node
   linkType: hard
 
@@ -24526,7 +24526,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.37.0, eslint@npm:^9.39.0":
+"eslint@npm:^9.39.1":
   version: 9.39.1
   resolution: "eslint@npm:9.39.1"
   dependencies:
@@ -25101,10 +25101,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fake-indexeddb@npm:^6.2.2":
-  version: 6.2.2
-  resolution: "fake-indexeddb@npm:6.2.2"
-  checksum: 10c0/5ad98f05beb22d8591af1bcf8500d1a92d9a17b3e2c380dfa669770b4fecdbadc1ccd9c8ba5429a92a30fd2562f6ab24238992522a8574ffd365d7b809677f0a
+"fake-indexeddb@npm:^6.2.4":
+  version: 6.2.5
+  resolution: "fake-indexeddb@npm:6.2.5"
+  checksum: 10c0/6c5e2fe84a61daa06d7ad63699d1041fe61847f15f92db12415634b3db94f363a64be9e08a3c3c4434af9c3c0132086b85c4d5dc5e8e06edae1e7daf70ce1f3c
   languageName: node
   linkType: hard
 
@@ -36165,7 +36165,7 @@ __metadata:
     "@pdfme/schemas": "npm:^5.4.2"
     "@pdfme/ui": "npm:^5.4.2"
     "@types/toastify-js": "npm:^1.12.4"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     toastify-js: "npm:^1.12.0"
     typescript: "npm:^5.9.3"
     vite: "npm:^7.1.12"
@@ -36432,7 +36432,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkijs@npm:^3.3.2":
+"pkijs@npm:^3.3.3":
   version: 3.3.3
   resolution: "pkijs@npm:3.3.3"
   dependencies:
@@ -37857,7 +37857,7 @@ __metadata:
     babel-jest: "npm:^30.2.0"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     lodash: "npm:^4.17.21"
@@ -37901,7 +37901,7 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     babel-jest: "npm:^30.2.0"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     moment: "npm:^2.30.1"
@@ -37955,7 +37955,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     dexie: "npm:^4.2.1"
     dexie-react-hooks: "npm:^1.1.7"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     formik: "npm:^2.4.6"
     html-webpack-plugin: "npm:^5.6.4"
     jest: "npm:^30.2.0"
@@ -38023,7 +38023,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
     dompurify: "npm:^3.3.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     html-webpack-plugin: "npm:^5.6.4"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
@@ -38107,7 +38107,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     docx: "npm:^8.5.0"
     docx-preview-cjs: "npm:0.3.7"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     lexical: "npm:0.30.0"
@@ -38171,7 +38171,7 @@ __metadata:
     buffer: "npm:^6.0.3"
     cross-env: "npm:^10.1.0"
     ejs-webpack-loader: "npm:^2.2.2"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     postcss: "npm:^8.5.6"
@@ -38248,7 +38248,7 @@ __metadata:
     cross-var: "npm:^1.1.0"
     date-fns: "npm:^2.30.0"
     ejs-webpack-loader: "npm:^2.2.2"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     exifreader: "npm:^4.32.0"
     heic-to: "npm:^1.3.0"
     history: "npm:^4.10.1"
@@ -38297,13 +38297,13 @@ __metadata:
     "@tpe/quark-client": "npm:1.3.1"
     "@types/chance": "npm:^1.1.7"
     "@types/fs-extra": "npm:^11.0.4"
-    "@types/node": "npm:^22.18.13"
+    "@types/node": "npm:^22.19.0"
     "@types/pdf-parse": "npm:^1.1.5"
     "@types/tinycolor2": "npm:^1.4.6"
     chance: "npm:^1.1.13"
     date-fns: "npm:^2.30.0"
     dotenv: "npm:^17.2.3"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-custom-rules: "workspace:^"
     eslint-plugin-import: "npm:^2.32.0"
     eslint-plugin-playwright: "npm:^2.3.0"
@@ -38350,7 +38350,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/lodash": "npm:^4.17.20"
     "@types/minimist": "npm:^1.2.5"
-    "@types/node": "npm:^22.18.13"
+    "@types/node": "npm:^22.19.0"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.2"
@@ -38359,7 +38359,7 @@ __metadata:
     electron-log: "npm:^5.4.3"
     electron-squirrel-startup: "npm:^1.0.1"
     electron-store: "npm:^8.2.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-import: "npm:^2.32.0"
     execa: "npm:^8.0.1"
     fork-ts-checker-webpack-plugin: "npm:^9.1.0"
@@ -38376,7 +38376,7 @@ __metadata:
     ttag: "npm:^1.8.12"
     ttag-cli: "npm:^1.11.2"
     typescript: "npm:^5.9.3"
-    typescript-eslint: "npm:^8.46.2"
+    typescript-eslint: "npm:^8.46.3"
     update-electron-app: "npm:^3.1.1"
     zod: "npm:^3.25.76"
   languageName: unknown
@@ -38405,7 +38405,7 @@ __metadata:
     "@tiptap/react": "npm:^2.27.1"
     "@tiptap/starter-kit": "npm:^2.27.1"
     "@types/jest": "npm:^30.0.0"
-    "@types/node": "npm:^22.18.13"
+    "@types/node": "npm:^22.19.0"
     "@types/react": "npm:^18.3.26"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-syntax-highlighter": "npm:^15.5.13"
@@ -38416,10 +38416,10 @@ __metadata:
     babel-plugin-transform-import-meta: "npm:^2.3.3"
     clsx: "npm:^2.1.1"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-config-prettier: "npm:^10.1.8"
     exceljs: "npm:^4.4.0"
-    fake-indexeddb: "npm:^6.2.2"
+    fake-indexeddb: "npm:^6.2.4"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
     json-stable-stringify: "npm:^1.3.0"
@@ -38467,7 +38467,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@vitejs/plugin-react": "npm:^4.7.0"
     diff-dom: "npm:^5.2.1"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     glob: "npm:^11.0.3"
     include-media: "npm:^2.0.0"
     inter-ui: "npm:^4.1.1"
@@ -38542,7 +38542,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
     dompurify: "npm:^3.3.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-config-prettier: "npm:^10.1.8"
     history: "npm:^4.10.1"
     html-webpack-plugin: "npm:^5.6.4"
@@ -38598,7 +38598,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/lodash": "npm:^4.17.20"
     "@types/minimist": "npm:^1.2.5"
-    "@types/node": "npm:^22.18.13"
+    "@types/node": "npm:^22.19.0"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.2"
@@ -38607,7 +38607,7 @@ __metadata:
     electron-log: "npm:^5.4.3"
     electron-squirrel-startup: "npm:^1.0.1"
     electron-store: "npm:^8.2.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-import: "npm:^2.32.0"
     execa: "npm:^8.0.1"
     fork-ts-checker-webpack-plugin: "npm:^9.1.0"
@@ -38623,7 +38623,7 @@ __metadata:
     ttag: "npm:^1.8.12"
     ttag-cli: "npm:^1.11.2"
     typescript: "npm:^5.9.3"
-    typescript-eslint: "npm:^8.46.2"
+    typescript-eslint: "npm:^8.46.3"
     update-electron-app: "npm:^3.1.1"
     zod: "npm:^3.25.76"
   languageName: unknown
@@ -38658,7 +38658,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:3.2.4"
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     happy-dom: "npm:^20.0.10"
     livekit-client: "npm:2.15.14"
     prettier: "npm:^3.6.2"
@@ -38699,7 +38699,7 @@ __metadata:
     electron: "npm:37.8.0"
     electron-log: "npm:^5.4.3"
     electron-store: "npm:^8.2.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     node-loader: "npm:^2.1.0"
     prettier: "npm:^3.6.2"
@@ -38728,7 +38728,7 @@ __metadata:
     argon2id: "npm:^1.0.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     prettier: "npm:^3.6.2"
     react-helmet: "npm:^6.1.0"
@@ -38764,7 +38764,7 @@ __metadata:
     "@proton/types": "workspace:^"
     "@proton/utils": "workspace:^"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.3"
@@ -38782,7 +38782,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     docx-preview: "npm:^0.3.7"
     esbuild: "npm:^0.25.12"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.3"
   languageName: unknown
@@ -38811,7 +38811,7 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     babel-loader: "npm:^10.0.0"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     eslint-plugin-storybook: "npm:^0.12.0"
     netlify-cli: "npm:17.38.1"
     prettier: "npm:^3.6.2"
@@ -38848,7 +38848,7 @@ __metadata:
     "@types/react-router-dom": "npm:^5.3.3"
     babel-jest: "npm:^30.2.0"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     react: "npm:^18.3.1"
@@ -38883,7 +38883,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     lodash: "npm:^4.17.21"
     prettier: "npm:^3.6.2"
     proton-account: "workspace:^"
@@ -38920,7 +38920,7 @@ __metadata:
     "@vitejs/plugin-react-swc": "npm:^3.11.0"
     chart.js: "npm:^4.5.1"
     cross-env: "npm:^10.1.0"
-    eslint: "npm:^9.39.0"
+    eslint: "npm:^9.39.1"
     happy-dom: "npm:^20.0.10"
     jsqr: "npm:^1.4.0"
     lodash: "npm:^4.17.21"
@@ -42162,7 +42162,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "scripts@workspace:utilities/scripts"
   dependencies:
-    "@types/node": "npm:^22.18.13"
+    "@types/node": "npm:^22.19.0"
     ts-node: "npm:^10.9.2"
   languageName: unknown
   linkType: soft
@@ -45855,7 +45855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.46.2":
+"typescript-eslint@npm:^8.46.3":
   version: 8.46.3
   resolution: "typescript-eslint@npm:8.46.3"
   dependencies:
