@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { configureStore } from '@reduxjs/toolkit';
@@ -93,4 +93,6 @@ const Component = () => {
     );
 };
 
-ReactDOM.render(<Component />, document.querySelector('.app-root'));
+const container = document.querySelector('.app-root');
+const root = createRoot(container!);
+root.render(<Component />);
