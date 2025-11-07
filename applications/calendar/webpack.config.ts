@@ -66,6 +66,10 @@ const result = (opts: WebpackEnvArguments): Configuration => {
         config.devServer.historyApiFallback = {
             rewrites: [
                 {
+                    from: /^\/u\/[0-9]+\/bookings/, // Matches `/u/X/bookings`
+                    to: '/bookings.html', // Serves `bookings.html`
+                },
+                {
                     from: /^\/bookings/, // Matches any path starting with `/bookings`
                     to: '/bookings.html', // Serves `bookings.html`
                 },
