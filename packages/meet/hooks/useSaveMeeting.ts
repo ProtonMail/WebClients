@@ -8,6 +8,13 @@ import type { CreateMeetingParams } from '../types/types';
 import { prepareMeetingCryptoData } from '../utils/cryptoUtils';
 import { useMeetErrorReporting } from './useMeetErrorReporting';
 
+export interface SaveMeetingParams {
+    params: CreateMeetingParams;
+    privateKey?: PrivateKeyReference;
+    addressId: string | null;
+    noPasswordSave?: boolean;
+}
+
 export const useSaveMeeting = () => {
     const api = useApi();
 
@@ -18,12 +25,7 @@ export const useSaveMeeting = () => {
         privateKey,
         addressId,
         noPasswordSave = false,
-    }: {
-        params: CreateMeetingParams;
-        privateKey?: PrivateKeyReference;
-        addressId: string | null;
-        noPasswordSave?: boolean;
-    }) => {
+    }: SaveMeetingParams) => {
         const {
             encryptedMeetingName,
             encryptedSessionKey,

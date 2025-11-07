@@ -1,6 +1,8 @@
 import { fromUnixTime } from 'date-fns';
 
 import { CryptoProxy, serverTime } from '@proton/crypto';
+import { getMeetingLink } from '@proton/meet';
+import type { SaveMeetingParams } from '@proton/meet/hooks/useSaveMeeting';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import { generateProtonCalendarUID } from '@proton/shared/lib/calendar/helper';
 import { serialize } from '@proton/shared/lib/calendar/vcal';
@@ -9,7 +11,10 @@ import { dateTimeToProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { convertUTCDateTimeToZone, fromUTCDate } from '@proton/shared/lib/date/timezone';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { type CreateMeetingResponse, MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 
+import { modelToDescriptionProperties } from '../components/eventModal/eventForm/modelToProperties';
 import config from '../config';
 import { decryptBookingSessionKey } from '../containers/bookings/utils/bookingCryptoUtils';
 import type { BookingDetails, BookingTimeslot } from './booking.store';
@@ -23,9 +28,55 @@ interface PrepareBookingSubmissionParams {
     attendeeEmail: string;
     organizerName: string;
     organizerEmail: string;
+    saveMeeting: (params: SaveMeetingParams) => Promise<{
+        response: CreateMeetingResponse;
+        passwordBase: string;
+    }>;
 }
 
 const prodId = getProdId(config);
+
+const getBookingConferenceDescription = async (
+    bookingDetails: BookingDetails,
+    timeslot: BookingTimeslot,
+    saveMeeting: (params: SaveMeetingParams) => Promise<{
+        response: CreateMeetingResponse;
+        passwordBase: string;
+    }>
+) => {
+    if (!bookingDetails.withProtonMeetLink) {
+        return { description: { value: bookingDetails.description } };
+    }
+
+    const startDate = fromUnixTime(timeslot.startTime);
+    const endDate = fromUnixTime(timeslot.endTime);
+
+    const { response, passwordBase } = await saveMeeting({
+        params: {
+            customPassword: '',
+            protonCalendar: true, // todo not sure we need to pass this
+            meetingName: bookingDetails.summary,
+            recurrence: null, // todo handle this once we support recurring events
+            startTime: startDate.toISOString(),
+            endTime: endDate.toISOString(),
+            timeZone: timeslot.timezone,
+            type: MeetingType.SCHEDULED,
+        },
+        addressId: null,
+        noPasswordSave: true,
+    });
+
+    const meetingId = response.Meeting.MeetingLinkName;
+    const meetingLink = getMeetingLink(response.Meeting.MeetingLinkName, passwordBase);
+
+    return modelToDescriptionProperties({
+        description: bookingDetails.description,
+        conferenceId: meetingId,
+        conferenceUrl: meetingLink,
+        conferenceHost: bookingDetails.inviterEmail,
+        conferenceProvider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
+    });
+};
 
 export const prepareBookingSubmission = async ({
     timeslot,
@@ -36,6 +87,7 @@ export const prepareBookingSubmission = async ({
     attendeeEmail,
     organizerName,
     organizerEmail,
+    saveMeeting,
 }: PrepareBookingSubmissionParams) => {
     const sharedSessionKey = await decryptBookingSessionKey(
         bookingSecretBase64Url,
@@ -49,6 +101,8 @@ export const prepareBookingSubmission = async ({
 
     const dtstart = convertUTCDateTimeToZone(fromUTCDate(startDate), timeslot.timezone);
     const dtend = convertUTCDateTimeToZone(fromUTCDate(endDate), timeslot.timezone);
+
+    const conferenceDescription = await getBookingConferenceDescription(bookingDetails, timeslot, saveMeeting);
 
     const uid = generateProtonCalendarUID();
     const timePartVevent = withDtstamp({
@@ -88,9 +142,9 @@ export const prepareBookingSubmission = async ({
         'x-pm-BookingUID': { value: bookingDetails.bookingUid },
         uid: { value: uid },
         summary: { value: bookingDetails.summary },
-        description: { value: bookingDetails.description },
+        ...conferenceDescription,
         dstamp: dateTimeToProperty(fromUTCDate(new Date(+serverTime())), true),
-        location: { value: bookingDetails.location },
+        location: { value: bookingDetails.location }, // TODO check if we need to do something when having meet link
     };
 
     const attendeePartVevent = {
