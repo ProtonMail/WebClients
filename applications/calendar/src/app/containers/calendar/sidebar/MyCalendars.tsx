@@ -11,8 +11,8 @@ import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SidebarListItemHeaderLink from '@proton/components/components/sidebar/SidebarListItemHeaderLink';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
@@ -104,7 +104,7 @@ export const MyCalendars = ({ myCalendars, calendars, holidaysCalendars, dropdow
                                         type="button"
                                         hasCaret={false}
                                         className="navigation-link-header-group-control flex"
-                                        content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
+                                        content={<IcPlus className="navigation-icon" alt={addCalendarText} />}
                                         ref={dropdownRef}
                                     >
                                         <DropdownMenu>
@@ -139,7 +139,7 @@ export const MyCalendars = ({ myCalendars, calendars, holidaysCalendars, dropdow
                                     onClick={handleCreatePersonalCalendar}
                                 >
                                     <Tooltip title={addCalendarText}>
-                                        <Icon name="plus" className="navigation-icon" alt={addCalendarText} />
+                                        <IcPlus className="navigation-icon" alt={addCalendarText} />
                                     </Tooltip>
                                 </Button>
                             )}

@@ -6,8 +6,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { ToolbarButton, useActiveBreakpoint } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 import { useCalendarSearch } from './CalendarSearchProvider';
 
@@ -94,16 +97,16 @@ const CalendarSearchInput = (
             className="shrink-0"
             title={searchText}
         >
-            <Icon name="magnifier" alt={searchText} />
+            <IcMagnifier alt={searchText} />
         </Button>
     ) : (
-        <Icon name="magnifier" alt={searchText} className="shrink-0" />
+        <IcMagnifier alt={searchText} className="shrink-0" />
     );
 
     return (
         <>
             <ToolbarButton
-                icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
+                icon={<IcArrowLeft alt={c('Action').t`Back`} />}
                 className="mr-2"
                 onClick={handleBack}
                 title={c('Action').t`Back`}
@@ -134,7 +137,7 @@ const CalendarSearchInput = (
                             inputContainerClassName="self-center"
                             prefix={
                                 loading ? (
-                                    <Icon name="arrow-rotate-right" className="location-refresh-rotate" />
+                                    <IcArrowRotateRight className="location-refresh-rotate" />
                                 ) : (
                                     prefixInputSearch
                                 )
@@ -154,7 +157,7 @@ const CalendarSearchInput = (
                                         icon={viewportWidth['<=small']}
                                     >
                                         <span className="hidden md:flex">{c('Action').t`Clear`}</span>
-                                        <Icon name="cross-big" className="md:hidden" />
+                                        <IcCrossBig className="md:hidden" />
                                     </Button>
                                 ) : null
                             }
