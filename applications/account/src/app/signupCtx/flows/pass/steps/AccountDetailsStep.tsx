@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { MailLogo } from '@proton/components';
-import { IcShield2CheckFilled } from '@proton/icons';
+import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SignupType } from '../../../../signup/interfaces';

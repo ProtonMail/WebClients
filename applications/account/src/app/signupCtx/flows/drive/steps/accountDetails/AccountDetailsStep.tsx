@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { IcArrowDown } from '@proton/icons';
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 
 import { Aside } from '../../components/Layout/Aside';

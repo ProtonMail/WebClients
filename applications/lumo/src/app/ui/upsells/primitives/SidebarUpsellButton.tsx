@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import type { IconName } from 'packages/icons';
 import { c } from 'ttag';
 
 import type { ButtonLike } from '@proton/atoms';
@@ -12,6 +11,7 @@ import {
     SidebarListItemSettingsLink,
 } from '@proton/components';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton';
+import type { IconName } from '@proton/icons/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

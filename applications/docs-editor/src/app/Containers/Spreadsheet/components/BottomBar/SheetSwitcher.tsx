@@ -5,7 +5,7 @@ import { Icon } from '../ui'
 import { type Ref, useMemo } from 'react'
 import { createComponent } from '../utils'
 import clsx from '@proton/utils/clsx'
-import { IcHamburger } from '@proton/icons'
+import { IcHamburger } from '@proton/icons/icons/IcHamburger'
 
 export interface SheetSwitcherButtonProps extends Ariakit.ToolbarItemProps {
   ref?: Ref<HTMLButtonElement>

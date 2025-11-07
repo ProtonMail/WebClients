@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Button, Tooltip } from '@proton/atoms';
 import { FileIcon, Icon } from '@proton/components';
-import {getFileTypeDescription, getMimeTypeFromExtension} from '../../../../util/filetypes';
-import { IcFolderFilled } from '@proton/icons';
+import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
+
+import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../../util/filetypes';
 import { formatFileSize } from '../fileUtils';
 
 export interface FileItemAction {
@@ -85,7 +86,7 @@ export const FileItemCard: React.FC<FileItemCardProps> = ({
             {/* File icon */}
             <div className="shrink-0 mr-3">
                 {file.type === 'folder' ? (
-                    <IcFolderFilled size={6} className="color-warning"/>
+                    <IcFolderFilled size={6} className="color-warning" />
                 ) : (
                     <FileIcon mimeType={file.mimeType || detectedMimeType} size={6} />
                 )}
@@ -109,21 +110,15 @@ export const FileItemCard: React.FC<FileItemCardProps> = ({
 
                 <div className="flex flex-row items-center gap-2 flex-nowrap">
                     <span className={`color-weak shrink-0 text-xs`}>
-                        {file.subtitle ||
-                            (file.type === 'file' ? fileTypeDescription : '')}
+                        {file.subtitle || (file.type === 'file' ? fileTypeDescription : '')}
                     </span>
 
-                    {file.size && (
-                        <span className={`color-weak shrink-0 text-xs`}>
-                            {formatFileSize(file.size)}
-                        </span>
-                    )}
+                    {file.size && <span className={`color-weak shrink-0 text-xs`}>{formatFileSize(file.size)}</span>}
 
                     {file.tokenCount && (
                         <span className="text-xs font-semibold color-info shrink-0">{file.tokenCount} tokens</span>
                     )}
                 </div>
-
             </div>
 
             {/* Actions on the right */}
@@ -151,9 +146,7 @@ export const FileItemCard: React.FC<FileItemCardProps> = ({
                     if (isDisabled) {
                         return (
                             <Tooltip key={index} title={action.label}>
-                                <span style={{ display: 'inline-block' }}>
-                                    {ButtonComponent}
-                                </span>
+                                <span style={{ display: 'inline-block' }}>{ButtonComponent}</span>
                             </Tooltip>
                         );
                     }

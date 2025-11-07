@@ -3,7 +3,7 @@ import type { Participant } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
-import { IcMeetMicrophoneOff } from '@proton/icons';
+import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 

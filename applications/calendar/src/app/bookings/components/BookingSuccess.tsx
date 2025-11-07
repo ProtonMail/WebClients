@@ -3,7 +3,12 @@ import type { ReactElement, ReactNode } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { IcCalendarGrid, IcCheckmarkCircle, IcClock, IcGlobe, IcMapPin, IcUserCircle } from '@proton/icons';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../booking.store';

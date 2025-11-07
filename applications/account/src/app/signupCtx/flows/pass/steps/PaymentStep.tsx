@@ -8,7 +8,7 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { IcShield } from '@proton/icons';
+import { IcShield } from '@proton/icons/icons/IcShield';
 import { PAYMENT_METHOD_TYPES, PLANS, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

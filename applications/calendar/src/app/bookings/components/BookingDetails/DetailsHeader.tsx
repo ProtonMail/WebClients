@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { IcClock, IcEarth, IcMapPin } from '@proton/icons';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 
 import { useBookingStore } from '../../booking.store';
 

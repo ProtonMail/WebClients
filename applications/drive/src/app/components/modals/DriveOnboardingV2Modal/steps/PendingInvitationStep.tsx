@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 
-import type { IconName } from 'packages/icons';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import type { IconName } from '@proton/icons/types';
 
 import { Container } from '../Container';
 import type { OnboardingProps } from '../interface';

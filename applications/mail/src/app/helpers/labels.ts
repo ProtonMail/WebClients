@@ -1,6 +1,6 @@
-import type { IconName } from 'packages/icons';
 import { c } from 'ttag';
 
+import type { IconName } from '@proton/icons/types';
 import { isCategoryLabel, labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

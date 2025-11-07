@@ -6,7 +6,9 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { IcCalendarCheckmark, IcCalendarDay, IcUpgrade } from '@proton/icons';
+import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
+import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { UpsellBookings } from './UpsellBookings';
 import { useBookings } from './bookingsProvider/BookingsProvider';

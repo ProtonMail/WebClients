@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcArrowDownLine } from '@proton/icons';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';

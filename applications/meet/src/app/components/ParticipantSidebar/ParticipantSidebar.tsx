@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcChevronLeft, IcChevronRight } from '@proton/icons';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import { useMeetContext } from '../../contexts/MeetContext';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';

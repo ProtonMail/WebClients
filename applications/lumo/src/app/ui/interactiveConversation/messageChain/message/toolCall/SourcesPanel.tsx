@@ -3,7 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { IcChevronRight } from '@proton/icons';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import type { Message } from '../../../../../types';
 import { ToolCallInfo } from './ToolCallInfo';

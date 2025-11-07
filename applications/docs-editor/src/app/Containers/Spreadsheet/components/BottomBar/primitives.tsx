@@ -1,7 +1,8 @@
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
 import { type ComponentPropsWithoutRef, type ReactNode, type Ref, forwardRef } from 'react'
-import { IcCrossSmall, IcPlus } from '@proton/icons'
+import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall'
+import { IcPlus } from '@proton/icons/icons/IcPlus'
 import { createComponent } from '../utils'
 
 export interface ContainerProps extends ComponentPropsWithoutRef<'div'> {}
