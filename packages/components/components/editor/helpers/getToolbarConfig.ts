@@ -1,4 +1,3 @@
-import { CompatibleChangeSource } from 'roosterjs';
 import type { Alignment, FormatState, IEditor } from 'roosterjs-editor-types';
 
 import { getRoosterDirection } from '@proton/components/components/editor/rooster/helpers/initRoosterEditor';
@@ -62,6 +61,7 @@ const cleanRoosterFont = (font: string | undefined) => font?.replaceAll('"', '')
 
 export const getToolbarConfig = async (editorInstance: IEditor | undefined, options: Options) => {
     const {
+        CompatibleChangeSource,
         clearFormat,
         createLink,
         getFormatState,
