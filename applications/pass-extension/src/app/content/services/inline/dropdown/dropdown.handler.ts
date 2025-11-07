@@ -44,7 +44,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 const layer = form?.element;
 
                 const close = () => dropdown.close();
-                const onFocusChange = onFocusChangeFactory(dropdown, field);
+                const onFocusChange = onFocusChangeFactory(dropdown, request);
 
                 const app = registry.attachDropdown(layer);
                 if (!app) return;
@@ -77,8 +77,9 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                                 listeners.removeAll();
                                 break;
                             case 'abort':
-                                if (!matchesDropdownAnchor(registry.dropdown?.anchor, request)) return;
-                                listeners.removeAll();
+                                if (matchesDropdownAnchor(registry.dropdown?.anchor, request)) {
+                                    listeners.removeAll();
+                                }
                                 break;
                         }
                     })
@@ -136,13 +137,12 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                     ? (() => {
                           switch (anchor.type) {
                               case 'field': {
-                                  const { fieldId } = anchor.field;
-                                  const { formId } = anchor.field.getFormHandle();
-                                  return { fieldId, formId };
+                                  const { fieldId, formId, frameId } = anchor.field;
+                                  return { fieldId, formId, frameId };
                               }
                               case 'frame': {
-                                  const { fieldId, formId } = anchor;
-                                  return { fieldId, formId };
+                                  const { fieldId, formId, frameId } = anchor;
+                                  return { fieldId, formId, frameId };
                               }
                           }
                       })()

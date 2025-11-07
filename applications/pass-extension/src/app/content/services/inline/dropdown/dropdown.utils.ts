@@ -28,13 +28,14 @@ export const onCloseEffects = onNextTick((field: FieldHandle, { refocus, prevent
     else if (!preventAction && !isActiveElement(field.element)) field.icon?.detach();
 });
 
-export const onFocusChangeFactory = (dropdown: DropdownHandler, field?: FieldHandle) =>
+export const onFocusChangeFactory = (dropdown: DropdownHandler, anchor: DropdownAnchor) =>
     onNextTick(async (_: Event) => {
-        if (field && isActiveElement(field?.element)) return;
+        const field = anchor.type === 'field' ? anchor.field : undefined;
+        if (field && isActiveElement(field.element)) return;
         else {
             if ((await dropdown.getState()).focused) return;
             if (!document.hasFocus()) field?.icon?.detach();
-            dropdown.close(field ? { type: 'field', field } : undefined);
+            dropdown.close(anchor);
         }
     });
 
@@ -52,19 +53,14 @@ export const onBackdropClick = (getField: () => Maybe<FieldHandle>, effect: () =
     if (!target || !excluded.includes(target)) effect();
 };
 
-export const matchesDropdownAnchor = (anchor: Maybe<MaybeNull<DropdownAnchor>>, payload: DropdownRequest): boolean => {
-    if (!anchor) return true;
+export const matchesDropdownAnchor = <T extends DropdownAnchor>(a: Maybe<MaybeNull<DropdownAnchor>>, b: T): boolean => {
+    if (!a) return false;
 
-    switch (payload.type) {
+    switch (b.type) {
         case 'field':
-            return anchor.type !== 'field' || anchor.field.element !== payload.field.element;
-
+            return a.type === b.type && a.field.element === b.field.element;
         case 'frame':
-            return (
-                anchor.type !== 'frame' ||
-                anchor.fieldFrameId !== payload.fieldFrameId ||
-                anchor.fieldId !== payload.fieldId
-            );
+            return a.type === b.type && a.frameId === b.frameId && a.formId === b.formId && a.fieldId === b.fieldId;
     }
 };
 
@@ -96,8 +92,8 @@ export const validateDropdownRequest = withContext<
     const { action, autofocused, autofilled } = request;
 
     /** If the dropdown anchor didn't change, noop */
-    const didAnchorChange = matchesDropdownAnchor(anchor, request);
-    if (!didAnchorChange) return false;
+    const match = matchesDropdownAnchor(anchor, request);
+    if (match) return false;
 
     /** Block autofocus requests on previously autofilled fields */
     const validInteraction = !(autofocused && autofilled);
@@ -133,9 +129,9 @@ export const intoDropdownAction = withContext<(request: DropdownRequest) => Prom
 
         const { action } = request;
         const url = ctx.getExtensionContext()?.tabUrl;
-        const frameId = request.type === 'frame' ? request.fieldFrameId : 0;
+        const frameId = request.type === 'frame' ? request.frameId : request.field.frameId;
         const fieldId = request.type === 'frame' ? request.fieldId : request.field.fieldId;
-        const formId = request.type === 'frame' ? request.formId : request.field.getFormHandle().formId;
+        const formId = request.type === 'frame' ? request.formId : request.field.formId;
         const origins = url ? resolveDropdownOrigins(request, url) : null;
 
         if (!(url && origins)) return;

@@ -1,4 +1,3 @@
-import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import type { Coords } from 'proton-pass-extension/types/inline';
 
 import type { MaybeNull, Result } from '@proton/pass/types';
@@ -33,14 +32,13 @@ export type FrameQueryResponse = {
 export type FrameQueryResult = Result<FrameQueryResponse>;
 export type FrameCheckResult = { visible: boolean };
 
-export type FrameFieldFocusInEvent = FrameQueryResponse & { action: DropdownAction };
-export type FrameFieldBlurEvent = FrameField;
-export type FrameFieldBlurResult = { detach: boolean };
-
 export type FrameField = {
+    /** Random uuid fro cross-frame identification */
     fieldId: string;
+    /** Parent form random uuid */
     formId: string;
-    fieldFrameId?: number;
+    /** FrameID of the current field */
+    frameId: number;
 };
 
 /** Relayed messages are most of the time forwarded to the service-worker

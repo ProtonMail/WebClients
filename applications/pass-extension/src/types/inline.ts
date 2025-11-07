@@ -11,33 +11,23 @@ export type DropdownStateDTO = {
     attachedField?: FrameField;
 };
 
-export type DropdownOpenDTO = FrameRelay<
-    {
-        /** Type of autofill action (login, identity, credit card, etc.) */
-        action: DropdownAction;
-        /** Field coordinates relative to containing frame. Used with `frameAttributes`
-         * during frame traversal to calculate absolute viewport positioning. */
-        coords: Coords;
-        /** Frame attributes for position identification during coordinate calculation */
-        frameAttributes: FrameAttributes;
-        /** Whether field was auto-focused vs user-initiated */
-        autofocused: boolean;
-        /** Wether field was previously autofilled */
-        autofilled: boolean;
-        /** Target input field identification data */
-        field: FrameField;
-        /** Origin URL of requesting frame */
-        origin: string;
-    },
-    {
-        /** Field frame ID. Maybe deeply nested and not resolvable
-         * from the top-frame */
-        fieldFrameId: FrameID;
-        /** Frame ID of the last visited frame when walking
-         * up from `fieldFrameId` up to the top-frame */
-        frameId: FrameID;
-    }
->;
+export type DropdownOpenDTO = {
+    /** Type of autofill action (login, identity, credit card, etc.) */
+    action: DropdownAction;
+    /** Field coordinates relative to containing frame. Used with `frameAttributes`
+     * during frame traversal to calculate absolute viewport positioning. */
+    coords: Coords;
+    /** Frame attributes for position identification during coordinate calculation */
+    frameAttributes: FrameAttributes;
+    /** Whether field was auto-focused vs user-initiated */
+    autofocused: boolean;
+    /** Wether field was previously autofilled */
+    autofilled: boolean;
+    /** Target input field identification data */
+    field: FrameField;
+    /** Origin URL of requesting frame */
+    origin: string;
+};
 
 export type DropdownOpenedDTO = FrameRelay<Required<FrameField>, { passive: boolean }>;
 export type DropdownCloseDTO = { field?: FrameField };

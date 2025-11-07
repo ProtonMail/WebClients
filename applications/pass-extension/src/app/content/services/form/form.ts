@@ -63,9 +63,10 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
     const listeners = createListenerStore();
     const data: ComputedFormData = {};
+    const formId = uniqueId(8);
 
     const formHandle: FormHandle = {
-        formId: uniqueId(8),
+        formId,
         canAutosave: canAutosave(options.form),
         element: form,
         formType: formType,
@@ -74,6 +75,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                 field,
                 createFieldHandles({
                     element: field,
+                    formId,
                     formType,
                     fieldType,
                     getFormHandle: () => formHandle,
@@ -133,12 +135,15 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
          * blocks actions, removes the field from tracking, and clears its flags. */
         detachField: withContext((ctx, element) => {
             const field = formHandle.fields.get(element);
-            field?.preventAction();
-            field?.detach();
+
             formHandle.fields.delete(element);
             removeClassifierFlags(element, { preserveIgnored: false });
 
-            ctx?.service.inline.dropdown.close(field ? { type: 'field', field } : undefined);
+            if (field) {
+                ctx?.service.inline.dropdown.close({ type: 'field', field });
+                field.preventAction();
+                field.detach();
+            }
         }),
 
         reconciliate: withContext((ctx, formType, fields) => {
@@ -179,6 +184,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                     currField ??
                     createFieldHandles({
                         element: field,
+                        formId,
                         formType,
                         fieldType,
                         getFormHandle: () => formHandle,
