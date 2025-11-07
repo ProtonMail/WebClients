@@ -2,7 +2,8 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InlineLinkButton } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Modal, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
