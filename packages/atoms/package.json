@@ -6,7 +6,6 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
-        ".": "./src/index.ts",
         "./Avatar/Avatar": "./src/Avatar/Avatar.tsx",
         "./Banner/Banner": "./src/Banner/Banner.tsx",
         "./Button/Button": "./src/Button/Button.tsx",
@@ -38,6 +37,7 @@
         "./Stepper/StepListItem": "./src/Stepper/StepListItem.tsx",
         "./Tooltip/Tooltip": "./src/Tooltip/Tooltip.tsx",
         "./UserAvatar/UserAvatar": "./src/UserAvatar/UserAvatar.tsx",
+        "./UserAvatar/getAccentColorForUsername": "./src/UserAvatar/getAccentColorForUsername",
         "./VerticalSteps/VerticalSteps": "./src/VerticalSteps/VerticalSteps.tsx",
         "./VerticalSteps/VerticalStep": "./src/VerticalSteps/VerticalStep.tsx",
         "./Vr/Vr": "./src/Vr/Vr.tsx"
