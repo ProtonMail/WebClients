@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, Button, ButtonLike, Tooltip } from '@proton/atoms';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, InputFieldTwo, SettingsLink, TextAreaTwo } from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

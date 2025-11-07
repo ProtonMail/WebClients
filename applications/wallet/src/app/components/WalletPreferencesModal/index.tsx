@@ -14,7 +14,8 @@ import {
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input, Modal, Select, SelectOption } from '../../atoms';
 import type { SubTheme } from '../../utils';
 import { getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';

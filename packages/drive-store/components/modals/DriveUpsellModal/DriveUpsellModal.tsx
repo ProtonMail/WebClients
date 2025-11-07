@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { useModalTwoStatic } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalSize } from '@proton/components/components/modalTwo/Modal';

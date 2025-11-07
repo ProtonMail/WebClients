@@ -2,7 +2,8 @@ import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Icon } from '@proton/components';
 import { getExtensionSupportedBrowser } from '@proton/pass/lib/extension/utils/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';

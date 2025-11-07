@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ImportProvider } from '@proton/activation/src/interface';
 import { selectOauthDraftProvider } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
 
 import CustomizeMailImportModal from '../../CustomizeMailImportModal/CustomizeMailImportModal';

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -15,7 +15,8 @@ import walletUser from '@proton/styles/assets/img/wallet/wallet-user.jpg';
 import { useWalletApiClients } from '@proton/wallet';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button, Input } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { EmailSelect } from '../EmailSelect';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';

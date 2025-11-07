@@ -8,7 +8,7 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useMembers } from '@proton/account/members/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { DropdownSizeUnit, type ModalOwnProps, Option, SelectTwo } from '@proton/components';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -18,7 +18,8 @@ import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { Button, Input, Modal } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input, Modal } from '../../atoms';
 
 interface Props extends ModalOwnProps {
     onAddressCreated?: (address: Address) => void;

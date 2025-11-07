@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon, SettingsLink, useNotifications } from '@proton/components';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';

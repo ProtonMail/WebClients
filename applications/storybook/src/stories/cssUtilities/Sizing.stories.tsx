@@ -1,4 +1,4 @@
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
 import mdx from './Sizing.mdx';

@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, UserDropdown, useConfig, useModalStateObject } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { securityCheckupSlice } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { AppLink, Icon, Logo, ProtonLogo, PublicTopBanners, useSecurityCheckup, useTheme } from '@proton/components';
 import { APPS, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';

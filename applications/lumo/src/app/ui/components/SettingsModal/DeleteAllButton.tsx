@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject, useNotifications } from '@proton/components';
 
 import { useLumoNavigate } from '../../../hooks/useLumoNavigate';

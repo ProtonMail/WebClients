@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { CircleLoader, UserAvatar } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
 import { useSortedList } from '@proton/components';
 import type { MemberRole } from '@proton/drive/index';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';

@@ -2,7 +2,9 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, NotificationDot, Pill } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
+import { Pill } from '@proton/atoms/Pill/Pill';
 import { ThemeColor } from '@proton/colors/types';
 import type { ModalProps } from '@proton/components';
 import {

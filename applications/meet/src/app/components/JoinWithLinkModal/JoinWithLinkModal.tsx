@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, TextAreaTwo } from '@proton/components';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';

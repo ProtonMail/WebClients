@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike, type ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useActiveBreakpoint, useModalStateObject, useMyCountry, useNotifications } from '@proton/components';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';

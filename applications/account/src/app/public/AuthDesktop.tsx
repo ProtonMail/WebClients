@@ -2,7 +2,7 @@ import { type ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getApplicationNameWithPlatform } from '@proton/shared/lib/apps/getApplicationNameWithPlatform';
 import { getAppName } from '@proton/shared/lib/apps/helper';

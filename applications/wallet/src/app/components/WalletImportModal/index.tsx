@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import type { WasmFiatCurrencySymbol } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ModalOwnProps } from '@proton/components';
 import {
     Collapsible,
@@ -20,7 +20,8 @@ import {
 } from '@proton/components';
 import { useWalletSettings } from '@proton/wallet/store';
 
-import { Button, CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import type { SubTheme } from '../../utils';

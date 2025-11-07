@@ -1,6 +1,6 @@
 import { type ReactNode, useMemo } from 'react';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal-color.svg';
 import clsx from '@proton/utils/clsx';

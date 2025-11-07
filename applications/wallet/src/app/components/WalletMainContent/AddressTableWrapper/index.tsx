@@ -3,12 +3,13 @@ import type { ChangeEvent, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { type WasmApiWalletAccount, WasmKeychainKind } from '@proton/andromeda';
-import { Input } from '@proton/atoms';
+import { Input } from '@proton/atoms/Input/Input';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, CoreButton } from '../../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CoreButton } from '../../../atoms';
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';
 import { AddressTable } from '../AddressTable';
 import { useAddressTable } from './useAddressTable';

@@ -1,4 +1,4 @@
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { InputButtonProps } from '@proton/components';
 import { InputButton } from '@proton/components';
 import clsx from '@proton/utils/clsx';

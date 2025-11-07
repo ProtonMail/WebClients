@@ -1,6 +1,7 @@
 import { type ElementType, type ReactNode, useMemo } from 'react';
 
-import { Button, type ButtonProps, Tooltip } from '@proton/atoms';
+import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';

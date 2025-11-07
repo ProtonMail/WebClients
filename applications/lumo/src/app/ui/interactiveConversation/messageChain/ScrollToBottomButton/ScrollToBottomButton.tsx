@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
 import './ScrollToBottomButton.scss';

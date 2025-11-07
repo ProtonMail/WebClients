@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import type { CircleLoaderProps } from './CircleLoader';
-import { CircleLoader, CircleLoaderSizeEnum } from './CircleLoader';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import {CircleLoaderSizeEnum } from './CircleLoader';
 
 const meta: Meta<typeof CircleLoader> = {
     args: {

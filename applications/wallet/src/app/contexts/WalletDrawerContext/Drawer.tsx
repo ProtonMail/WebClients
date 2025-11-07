@@ -1,7 +1,7 @@
 import type { CSSProperties, PropsWithChildren } from 'react';
 import { useRef } from 'react';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useHotkeys } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

@@ -1,4 +1,4 @@
-import { Vr } from '@proton/atoms';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 import { NodeType, splitNodeUid } from '@proton/drive';

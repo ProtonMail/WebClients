@@ -9,7 +9,8 @@ import {
     type SignInWithAnotherDeviceResult,
     signInWithAnotherDevicePull,
 } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { useLocalState } from '@proton/components';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';

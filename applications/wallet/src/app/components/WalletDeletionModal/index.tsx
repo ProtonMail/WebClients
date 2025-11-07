@@ -10,7 +10,8 @@ import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, ButtonLike } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { useBalance } from '../Balance/useBalance';
 import { useWalletDeletion } from './useWalletDeletion';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -10,7 +10,8 @@ import walletLockDark from '@proton/styles/assets/img/wallet/wallet-lock-dark.jp
 import walletLock from '@proton/styles/assets/img/wallet/wallet-lock.jpg';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button, CoreButtonLike } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CoreButtonLike } from '../../atoms';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 type ContentKind = 'wallet-seedphrase-introduction' | 'wallet-passphrase-introduction';

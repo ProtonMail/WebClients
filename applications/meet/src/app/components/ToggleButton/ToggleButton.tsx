@@ -1,7 +1,8 @@
 import type { RefObject } from 'react';
 import { useRef } from 'react';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';

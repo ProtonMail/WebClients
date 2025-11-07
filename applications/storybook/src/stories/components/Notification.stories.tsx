@@ -1,7 +1,8 @@
 import type { ChangeEvent, SetStateAction } from 'react';
 import { useState } from 'react';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { CreateNotificationOptions, CustomNotificationProps } from '@proton/components';
 import { Checkbox, InputFieldTwo, NotificationButton, RadioGroup, useNotifications } from '@proton/components';
 

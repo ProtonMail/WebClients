@@ -3,7 +3,10 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLikeButton/InlineLikeButton';
+import { Vr } from '@proton/atoms/Vr/Vr';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import {
     Alert3ds,
     type Breakpoints,

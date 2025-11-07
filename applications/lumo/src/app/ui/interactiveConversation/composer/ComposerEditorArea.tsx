@@ -1,7 +1,8 @@
 import { EditorContent } from '@tiptap/react';
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import lumoStart from '@proton/styles/assets/img/illustrations/lumo-arrow.svg';
 import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 

@@ -1,4 +1,6 @@
-import { Avatar, Button, Input, Tooltip } from '@proton/atoms'
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input, Tooltip } from '@proton/atoms'
 import {
   Dropdown,
   DropdownMenu,

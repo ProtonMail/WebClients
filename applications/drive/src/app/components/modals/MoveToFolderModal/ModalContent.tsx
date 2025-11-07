@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Alert, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 import type { DecryptedLink, TreeItem } from '../../../store';

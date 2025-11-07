@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { SettingsLink } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

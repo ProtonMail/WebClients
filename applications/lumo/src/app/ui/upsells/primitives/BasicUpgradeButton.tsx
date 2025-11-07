@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { SettingsLink } from '@proton/components';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton';
 import clsx from '@proton/utils/clsx';

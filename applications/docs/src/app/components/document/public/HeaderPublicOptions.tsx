@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Button, ButtonLike, Tooltip } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import {Tooltip } from '@proton/atoms'
 import { c } from 'ttag'
 import { useDocsContext } from '../context'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'

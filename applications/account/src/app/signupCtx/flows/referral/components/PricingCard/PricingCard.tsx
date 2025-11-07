@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import { VerticalStep, VerticalSteps } from '@proton/atoms';
+import { VerticalStep } from '@proton/atoms/VerticalSteps/VerticalStep';
+import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
 import { AppsLogos, CycleSelector, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import {

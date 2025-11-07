@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { FileIcon, Icon, Radio, useErrorHandler } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import orderBy from '@proton/utils/orderBy';

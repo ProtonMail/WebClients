@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import macosImg from '@proton/styles/assets/img/onboarding/drive-v2-macos.svg';

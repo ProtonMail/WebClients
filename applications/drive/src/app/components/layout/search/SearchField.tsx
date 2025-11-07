@@ -2,7 +2,9 @@ import React, { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { Input } from '@proton/atoms/Input/Input';
 import { Icon, Spotlight, usePopperAnchor } from '@proton/components';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

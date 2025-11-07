@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 interface Props {

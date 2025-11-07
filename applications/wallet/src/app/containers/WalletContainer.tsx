@@ -8,7 +8,8 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { Button, CoreButton } from '../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CoreButton } from '../atoms';
 import { LayoutViewLoader } from '../atoms/LayoutViewLoader';
 import { Balance } from '../components/Balance';
 import { BitcoinBuyModal } from '../components/BitcoinBuyModal';

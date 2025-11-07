@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useSettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import inviteImg from '@proton/styles/assets/img/onboarding/drive-v2-invite.png';

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { c, msgid } from 'ttag';
 
 import { Checkbox, Icon, Loader, TableHeaderCell, TableRowSticky } from '@proton/components'
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translations';
 

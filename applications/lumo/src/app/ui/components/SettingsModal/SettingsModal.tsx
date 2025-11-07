@@ -4,7 +4,9 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Avatar, Button, ButtonLike } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalOwnProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, SettingsLink, useConfig } from '@proton/components';
 import type { IconName } from '@proton/icons/types';

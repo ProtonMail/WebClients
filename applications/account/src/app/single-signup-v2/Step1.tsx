@@ -4,7 +4,10 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLikeButton/InlineLikeButton';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import {
     CurrencySelector,
     CycleSelector,

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { Checkbox, Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';

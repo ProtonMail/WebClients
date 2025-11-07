@@ -1,7 +1,7 @@
 import { type ChangeEvent, useRef, useState } from 'react';
 
 import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
-import type { InputProps } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms/Input/Input';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 
 import { countDecimal, formatNumberForDisplay, getDecimalStepByUnit, getPrecision } from '../utils';

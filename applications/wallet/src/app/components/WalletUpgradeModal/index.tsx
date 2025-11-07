@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
 import { PLANS, hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily, hasVisionary } from '@proton/payments';

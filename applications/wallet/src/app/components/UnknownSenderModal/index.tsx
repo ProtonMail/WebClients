@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components';
 import { Checkbox } from '@proton/components'
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useLoading from '@proton/hooks/useLoading';
 import walletNotFoundImg from '@proton/styles/assets/img/illustrations/wallet_not_found.svg';
 import clsx from '@proton/utils/clsx';
 
-import { Button, Input, Modal } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input, Modal } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { useUnknownSenderModal } from './useUnknownSenderModal';
 

@@ -3,7 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 
 import { Button } from '../Button/Button';
-import { Tooltip, TooltipTypeEnum } from './Tooltip';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { TooltipTypeEnum } from './Tooltip';
 
 const placements: PopperPlacement[] = ['bottom', 'left', 'right', 'top'];
 

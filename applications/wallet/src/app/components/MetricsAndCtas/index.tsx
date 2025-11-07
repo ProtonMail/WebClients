@@ -7,7 +7,7 @@ import last from 'lodash/last';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount, WasmPriceGraph } from '@proton/andromeda';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import btcDarkSvg from '@proton/styles/assets/img/illustrations/btc-dark.svg';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
@@ -15,7 +15,8 @@ import { BITCOIN, DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton
 import { usePriceGraphData, useWalletAccountExchangeRate } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button, CoreButton } from '../../atoms/Button';
+import { Button } from '@proton/atoms/Button/Button';
+import { CoreButton } from '../../atoms/Button';
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';

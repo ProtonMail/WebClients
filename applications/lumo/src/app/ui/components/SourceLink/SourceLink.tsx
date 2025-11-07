@@ -2,7 +2,7 @@ import React from 'react';
 
 import DOMPurify from 'dompurify';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 
 import type { SearchItem } from '../../../lib/toolCall/types';
 import { SourceFavIcon } from '../../interactiveConversation/messageChain/message/toolCall/SourcesBlock';

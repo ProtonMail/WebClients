@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 

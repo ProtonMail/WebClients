@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow';
 
-import { Vr } from '@proton/atoms';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
 import { getDevice } from '@proton/shared/lib/helpers/browser';

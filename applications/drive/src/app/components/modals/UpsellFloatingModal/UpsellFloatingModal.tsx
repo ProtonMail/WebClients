@@ -2,7 +2,9 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalProps } from '@proton/components';
 import { DriveLogo, Icon, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
 import Dialog from '@proton/components/components/dialog/Dialog';

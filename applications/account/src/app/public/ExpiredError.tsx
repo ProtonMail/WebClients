@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { BugModal, useModalState } from '@proton/components';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 

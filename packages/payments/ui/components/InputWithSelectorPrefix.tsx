@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Input, type InputProps } from '@proton/atoms';
+import { Input, type InputProps } from '@proton/atoms/Input/Input';
 import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 

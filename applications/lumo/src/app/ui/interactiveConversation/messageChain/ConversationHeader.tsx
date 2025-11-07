@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo } from '@proton/components';
 import { IcMonitor } from '@proton/icons/icons/IcMonitor';
 

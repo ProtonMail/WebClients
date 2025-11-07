@@ -2,7 +2,8 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { Icon } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';

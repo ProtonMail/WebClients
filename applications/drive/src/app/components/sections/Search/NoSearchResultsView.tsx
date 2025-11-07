@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 

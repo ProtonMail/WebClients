@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { InputFieldTwo, RequestNewCodeModal, useApi, useErrorHandler, useFormErrors } from '@proton/components';
 import type { RecoveryMethod, ValidateResetTokenResponse } from '@proton/components/containers/resetPassword/interface';
 import { useLoading } from '@proton/hooks';

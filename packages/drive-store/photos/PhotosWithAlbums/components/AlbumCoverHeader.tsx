@@ -2,7 +2,9 @@ import { fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Tooltip, UserAvatar } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
 import { Icon } from '@proton/components';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
