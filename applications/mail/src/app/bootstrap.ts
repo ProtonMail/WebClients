@@ -129,9 +129,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const preloadPromise = loadPreload();
         loadPreloadButIgnored();
 
-        bootstrap.loadCrypto({ appName, unleashClient });
-
-        const [MainContainer, userData] = await Promise.all([appContainerPromise, userPromise, unleashPromise]);
+        const [MainContainer, userData] = await Promise.all([
+            appContainerPromise,
+            userPromise,
+            bootstrap.loadCrypto({ appName, unleashClient }),
+            unleashPromise,
+        ]);
 
         // Initialize logger if the feature flag is enabled
         if (unleashClient.isEnabled('CollectLogs')) {

@@ -123,9 +123,12 @@ export const bootstrapApp = async ({
         const preloadPromise = loadPreload();
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
-        bootstrap.loadCrypto({ appName, unleashClient });
-
-        const [MainContainer, userData] = await Promise.all([appContainerPromise, userPromise, unleashPromise]);
+        const [MainContainer, userData] = await Promise.all([
+            appContainerPromise,
+            userPromise,
+            bootstrap.loadCrypto({ appName, unleashClient }),
+            unleashPromise,
+        ]);
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.

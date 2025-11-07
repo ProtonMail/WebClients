@@ -380,11 +380,7 @@ export const loadCrypto = ({
     appName: APP_NAMES;
     unleashClient: UnleashClient | undefined;
 }) => {
-    // Not awaited to avoid blocking the UI
-    loadCryptoWorker(getCryptoWorkerOptions(appName, {})).catch(() => {
-        // In case it fails to load, just reload the page to attempt a retry
-        window.location.reload();
-    });
+    return loadCryptoWorker(getCryptoWorkerOptions(appName, {}));
 };
 
 export const coreEventManagerV6 = ({ api }: { api: Api }) => {
@@ -567,7 +563,8 @@ export const publicApp = ({
         pathLocale,
     });
 
-    loadCrypto({ appName: app, unleashClient: undefined });
-
-    return loadLocalesPublicApp({ locales, localeCode, browserLocale });
+    return Promise.all([
+        loadCrypto({ appName: app, unleashClient: undefined }),
+        loadLocalesPublicApp({ locales, localeCode, browserLocale }),
+    ]);
 };

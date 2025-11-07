@@ -60,9 +60,12 @@ export const bootstrapApp = async ({
         const userPromise = loadUser();
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
-        bootstrap.loadCrypto({ appName, unleashClient });
-
-        const [MainContainer, userData] = await Promise.all([appContainerPromise, userPromise, unleashPromise]);
+        const [MainContainer, userData] = await Promise.all([
+            appContainerPromise,
+            userPromise,
+            bootstrap.loadCrypto({ appName, unleashClient }),
+            unleashPromise,
+        ]);
 
         if (!!userData.userSettings.Telemetry) {
             telemetry.init({

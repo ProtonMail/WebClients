@@ -79,7 +79,6 @@ const bootstrapApp = async () => {
     const unauthenticatedApi = createUnauthenticatedApi(api);
     const unleashClient = createUnleash({ api: unauthenticatedApi.apiCallback });
     const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
-    bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
 
     extendStore({ config, api, authentication, history, unleashClient });
 
@@ -88,6 +87,10 @@ const bootstrapApp = async () => {
 
     // need to await unleashPromise so prevent UI flickering when unleash flags updated later
     await unleashPromise;
+
+    // Load crypto worker
+    const appName = config.APP_NAME;
+    await bootstrap.loadCrypto({ appName, unleashClient });
 
     return {
         store,

@@ -118,8 +118,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             .finally(() => {
                 unleashFeature.end();
             });
-
-        bootstrap.loadCrypto({ appName, unleashClient });
+        const cryptoFeature = measureFeaturePerformance(api, Features.globalBootstrapAppCrypto);
+        cryptoFeature.start();
+        const cryptoPromise = bootstrap.loadCrypto({ appName, unleashClient }).finally(() => {
+            cryptoFeature.end();
+        });
 
         // Start the drive user setting request early (at the same time as the other requests). Errors are only dealt with after post load (which handles e.g. missing drive scopes etc).
         const driveUserSettingFeature = measureFeaturePerformance(api, Features.globalBootstrapAppDriveUserSettings);
@@ -129,7 +132,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         });
         const userDataFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserData);
         userDataFeature.start();
-        const [userData] = await Promise.all([userPromise, unleashPromise]);
+        const [userData] = await Promise.all([userPromise, cryptoPromise, unleashPromise]);
         userDataFeature.end();
 
         const setUserSuccessMetrics = (user: User) => {

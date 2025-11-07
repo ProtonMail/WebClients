@@ -163,11 +163,10 @@ const completeAppBootstrap = async ({
         dispatch(initEvent({ User: sessionResult.session.User }));
     }
 
-    bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
-
     const [userData, wasmApp] = await Promise.all([
         loadUserData(dispatch, config.APP_NAME),
         initializeWasmApp(authentication, appVersion),
+        bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
         bootstrap.unleashReady({ unleashClient }).catch(noop),
     ]);
 
@@ -255,9 +254,10 @@ export const bootstrapGuestApp = async (config: ProtonConfig) => {
     const unleashClient = bootstrap.createUnleash({ api: unauthenticatedApi.apiCallback });
     const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
 
-    bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient });
-
-    const wasmApp = await initializeWasmApp(authentication, appVersion);
+    const [wasmApp] = await Promise.all([
+        initializeWasmApp(authentication, appVersion),
+        bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient }),
+    ]);
 
     const history = createBrowserHistory({ basename: '/guest' });
 
