@@ -3,6 +3,12 @@ export enum Renew {
     Enabled = 1,
 }
 
+export enum TrialType {
+    ReferralProgram = 0,
+    FamilyPlan = 1,
+    Manual = 2,
+}
+
 export enum SubscriptionPlatform {
     Default = 0,
     iOS = 1,

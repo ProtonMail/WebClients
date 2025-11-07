@@ -25,7 +25,11 @@ import {
     isManagedExternally,
     isTrial,
 } from '@proton/payments';
-import { isTrialRenewing, willTrialExpireInLessThan1Week } from '@proton/payments/core/subscription/helpers';
+import {
+    isReferralTrial,
+    isTrialRenewing,
+    willTrialExpireInLessThan1Week,
+} from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -102,6 +106,10 @@ const TrialInfoBadge = ({ subscription }: { subscription: Subscription }) => {
 
     if (!isReferralExpansionEnabled || !isTrial(subscription)) {
         return null;
+    }
+
+    if (!isReferralTrial(subscription)) {
+        return pill;
     }
 
     return (

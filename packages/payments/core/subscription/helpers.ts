@@ -30,7 +30,7 @@ import {
 import type { PlansMap, SubscriptionPlan } from '../plan/interface';
 import { clearPlanIDs } from '../planIDs';
 import { isFreeSubscription } from '../type-guards';
-import { SubscriptionPlatform, TaxInclusive } from './constants';
+import { SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
 import { FREE_PLAN } from './freePlans';
 import type { Subscription, SubscriptionCheckForbiddenReason, SubscriptionCheckResponse } from './interface';
 import { SelectedPlan } from './selected-plan';
@@ -422,6 +422,14 @@ export const isTrial = (subscription: Subscription | FreeSubscription | undefine
     }
 
     return trial && getPlanName(subscription) === plan;
+};
+
+export const isReferralTrial = (subscription: Subscription | FreeSubscription | undefined) => {
+    if (isFreeSubscription(subscription) || !subscription) {
+        return false;
+    }
+
+    return isTrial(subscription) && subscription.TrialType === TrialType.ReferralProgram;
 };
 
 const autoRenewTrialPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.VPN2024, PLANS.BUNDLE]);
