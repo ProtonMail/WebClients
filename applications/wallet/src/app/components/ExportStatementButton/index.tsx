@@ -8,7 +8,7 @@ import {
     type WasmApiExchangeRate,
     type WasmApiWalletAccount,
 } from '@proton/andromeda';
-import type { ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Icon, useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks/index';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -20,7 +20,8 @@ import type { IWasmApiWalletData, WalletChainDataByWalletId } from '@proton/wall
 import { useWalletAccountExchangeRate } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button, CoreButton, Modal, Select } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CoreButton, Modal, Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { ExportFormat } from '../../utils';

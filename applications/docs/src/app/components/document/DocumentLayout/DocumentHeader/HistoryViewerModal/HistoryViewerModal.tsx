@@ -1,4 +1,5 @@
-import { Button, Input, Tooltip } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button';
+import { Input, Tooltip } from '@proton/atoms'
 import type { ModalStateProps } from '@proton/components'
 import {
   Icon,

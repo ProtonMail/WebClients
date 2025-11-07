@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import type { WasmScriptType } from '@proton/andromeda';
-import { Href, Tooltip } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
@@ -13,7 +14,8 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { BASE_INDEX_OPTIONS, SCRIPT_TYPES } from '@proton/wallet';
 
-import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';

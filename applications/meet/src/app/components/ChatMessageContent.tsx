@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { getHostname } from '@proton/components/helpers/url';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 import { isSubDomain } from '@proton/shared/lib/helpers/url';

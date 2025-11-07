@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { Icon } from '@proton/components';
 
 import { NewLabel } from '../components/NewLabel';

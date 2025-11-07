@@ -15,7 +15,7 @@ import {
     OAUTH_PROVIDER,
     type OAuthProps,
 } from '@proton/activation/src/interface';
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Icon, useModalState } from '@proton/components';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import useApi from '@proton/components/hooks/useApi';

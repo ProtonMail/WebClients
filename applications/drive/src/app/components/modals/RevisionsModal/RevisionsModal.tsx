@@ -3,7 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike, CircleLoader } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ModalStateProps } from '@proton/components';
 import {
     AppLink,

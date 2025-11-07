@@ -4,7 +4,8 @@ import { Link, Redirect } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { userSettingsThunk } from '@proton/account/userSettings';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { useApi, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';

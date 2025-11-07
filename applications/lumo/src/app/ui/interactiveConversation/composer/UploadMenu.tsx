@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';

@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import type { ButtonLikeProps } from '@proton/atoms';
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, type PopperPlacement } from '@proton/components';
 import type { IconSize } from '@proton/icons/types';
 

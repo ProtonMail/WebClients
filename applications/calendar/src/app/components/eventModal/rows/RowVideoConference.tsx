@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { ProtonMeetRow, ZoomRow, useProtonMeetIntegration, useZoomIntegration } from '@proton/calendar';
 import { PROTON_MEET_REGEX_LOCATION } from '@proton/calendar/components/videoConferencing/protonMeet/protonMeetHelpers';
 import {

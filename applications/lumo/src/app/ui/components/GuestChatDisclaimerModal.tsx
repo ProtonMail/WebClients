@@ -2,7 +2,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalProps } from '@proton/components';
 import { SettingsLink } from '@proton/components';
 import Prompt from '@proton/components/components/prompt/Prompt';

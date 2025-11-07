@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FileIcon, Icon } from '@proton/components';
 import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
 

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useParticipants } from '@livekit/components-react';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 

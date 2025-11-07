@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, usePopperAnchor } from '@proton/components';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import useFlag from '@proton/unleash/useFlag';

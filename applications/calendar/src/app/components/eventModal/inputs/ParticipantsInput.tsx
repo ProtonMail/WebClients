@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     AddressesAutocompleteTwo,
     Alert,

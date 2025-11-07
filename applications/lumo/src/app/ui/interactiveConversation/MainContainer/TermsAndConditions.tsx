@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 const TermsAndConditions = () => {

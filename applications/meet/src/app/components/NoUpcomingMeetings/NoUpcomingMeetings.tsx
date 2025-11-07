@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import callIcon from '@proton/styles/assets/img/meet/call-icon.svg';
 import useFlag from '@proton/unleash/useFlag';
 

@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useNotifications } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 

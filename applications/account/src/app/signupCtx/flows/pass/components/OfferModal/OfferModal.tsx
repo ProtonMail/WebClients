@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon, PassLogo } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { PaymentsCheckout } from '@proton/payments';

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { GenericError, useApi, useErrorHandler } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 // import type { ExternalForwardingResult } from '@proton/shared/lib/api/forwardings';

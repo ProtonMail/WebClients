@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoBoxHiding from '@proton/styles/assets/img/lumo/lumo-box-hiding.svg';

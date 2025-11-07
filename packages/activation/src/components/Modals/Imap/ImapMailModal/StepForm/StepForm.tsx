@@ -8,7 +8,8 @@ import {
     selectImapDraftProvider,
 } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import {
     Field,
     Form,

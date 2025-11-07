@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useActiveBreakpoint } from '@proton/components';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 

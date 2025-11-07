@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InlineLinkButton } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, useModalStateObject } from '@proton/components';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import lumoWhatsNewMobile from '@proton/styles/assets/img/lumo/lumo-whats-new-mobile.svg';

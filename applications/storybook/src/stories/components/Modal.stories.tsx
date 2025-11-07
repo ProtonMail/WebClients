@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalProps, ModalSize } from '@proton/components';
 import {
     BasicModal,

@@ -8,7 +8,7 @@ import { c, msgid } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { Slider, SliderSizeEnum } from '@proton/atoms';
+import { Slider, SliderSizeEnum } from '@proton/atoms/Slider/Slider';
 import { type ModalStateProps, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -19,7 +19,8 @@ import { COMPUTE_BITCOIN_UNIT, PriorityTargetBlock, type TransactionData, useWal
 import { DEFAULT_FEE_SETTINGS, useNetworkFees, useUserWalletSettings } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button, Modal } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Modal } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';

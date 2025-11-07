@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

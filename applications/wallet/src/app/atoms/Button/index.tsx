@@ -1,7 +1,8 @@
 import { type ElementType, type Ref, forwardRef } from 'react';
 
-import type { ButtonLikeProps, ButtonProps } from '@proton/atoms';
-import { Button as CoreButton, ButtonLike as CoreButtonLike } from '@proton/atoms';
+import { type ButtonProps, Button as CoreButton } from '@proton/atoms/Button/Button';
+import { ButtonLike as CoreButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import clsx from '@proton/utils/clsx';
 
 import './WalletButton.scss';

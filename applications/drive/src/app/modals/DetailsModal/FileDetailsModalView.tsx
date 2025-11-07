@@ -2,7 +2,9 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, BannerVariants, Button, Tooltip } from '@proton/atoms';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Collapsible,
     CollapsibleContent,

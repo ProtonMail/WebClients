@@ -2,7 +2,7 @@ import { type FC, type FormEvent, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Alert3ds, Icon } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';

@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import AuthDeviceItem from '@proton/account/sso/AuthDeviceItem';
-import { Button, Scroll } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import type { AuthCacheResult } from '@proton/components/containers/login/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 

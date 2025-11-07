@@ -1,7 +1,8 @@
 import type { CSSProperties } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
 import { localeCode } from '@proton/shared/lib/i18n';

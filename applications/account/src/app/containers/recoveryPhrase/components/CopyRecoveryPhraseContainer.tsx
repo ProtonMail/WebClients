@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { IcEye } from '@proton/icons/icons/IcEye';

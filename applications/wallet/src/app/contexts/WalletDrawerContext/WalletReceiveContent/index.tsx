@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import QRCode from '@proton/components/components/image/QRCode';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
@@ -11,7 +11,8 @@ import Info from '@proton/components/components/link/Info';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, Select } from '../../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Select } from '../../../atoms';
 import { WalletAccountItem } from '../../../components/WalletAccountSelector';
 import { getAccountWithChainDataFromManyWallets } from '../../../utils';
 import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';

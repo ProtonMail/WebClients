@@ -10,7 +10,8 @@ import useLoading from '@proton/hooks/useLoading';
 import { type IWasmApiWalletData, encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
 import { setWalletPassphrase, useWalletDispatch } from '@proton/wallet/store';
 
-import { Button, Input, Modal } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input, Modal } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';
 

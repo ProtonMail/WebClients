@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Input } from '@proton/atoms/Input/Input';
 import { Icon, Info, Price, useNotifications } from '@proton/components';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import type { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/payments';

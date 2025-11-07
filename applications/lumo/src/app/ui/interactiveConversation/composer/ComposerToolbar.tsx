@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMicrophone } from '@proton/icons/icons/IcMicrophone';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';

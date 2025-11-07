@@ -2,8 +2,9 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonProps } from '@proton/atoms';
-import { Button, Tooltip } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
 import { copyDomToClipboard } from '@proton/shared/lib/helpers/browser';
 

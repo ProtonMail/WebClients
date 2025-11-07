@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Icon, SettingsLink } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import lumoFavoritesTeaser from '@proton/styles/assets/img/lumo/lumo-favorites-teaser.svg';

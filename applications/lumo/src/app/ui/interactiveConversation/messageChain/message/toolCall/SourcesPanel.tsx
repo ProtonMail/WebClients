@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import type { Message } from '../../../../../types';

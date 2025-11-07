@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { TableCell } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 

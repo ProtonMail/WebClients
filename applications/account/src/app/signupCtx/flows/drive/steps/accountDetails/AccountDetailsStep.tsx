@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { Theme } from '@proton/components/containers/themes/ThemeCards';
 import ThemeSvg from '@proton/components/containers/themes/ThemeSvg';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';

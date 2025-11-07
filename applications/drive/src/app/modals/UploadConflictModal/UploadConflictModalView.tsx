@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Radio, Row } from '@proton/components';
 import type { ModalProps } from '@proton/components';
 import { NodeType } from '@proton/drive';

@@ -3,7 +3,7 @@ import type { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import type { WasmAccount, WasmAddressDetails, WasmApiWalletAccount } from '@proton/andromeda';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Copy, ModalTwo, ModalTwoContent, ModalTwoHeader, useModalState, useNotifications } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';

@@ -3,7 +3,8 @@ import { forwardRef, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import { ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';

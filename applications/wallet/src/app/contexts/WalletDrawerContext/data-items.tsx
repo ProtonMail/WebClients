@@ -5,14 +5,17 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
-import { Href, Tooltip } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, Info, MiddleEllipsis, useModalState } from '@proton/components';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
-import { Button, ButtonLike, CoreButton } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import {CoreButton } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { Price } from '../../atoms/Price';
 import { BoostTransactionModal } from '../../components/BoostTransactionModal';

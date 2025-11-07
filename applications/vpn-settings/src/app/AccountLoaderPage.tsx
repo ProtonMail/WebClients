@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ProtonLoader } from '@proton/atoms';
+import { ProtonLoader } from '@proton/atoms/ProtonLoader/ProtonLoader';
 import { TextLoader } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';

@@ -1,4 +1,4 @@
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { PopperPlacement } from '@proton/components/components/popper/interface';
 import { IcMeetShield } from '@proton/icons/icons/IcMeetShield';
 import { IcMeetShieldFull } from '@proton/icons/icons/IcMeetShieldFull';

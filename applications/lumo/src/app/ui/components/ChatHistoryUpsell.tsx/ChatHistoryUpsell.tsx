@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Icon, SettingsLink } from '@proton/components';
 
 import './ChatHistoryUpsell.scss';

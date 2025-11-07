@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Alert3ds, SkeletonLoader } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';

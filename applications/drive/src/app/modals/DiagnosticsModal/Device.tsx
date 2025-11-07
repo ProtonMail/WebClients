@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Row } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 

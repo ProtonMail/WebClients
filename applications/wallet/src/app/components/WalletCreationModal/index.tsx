@@ -18,7 +18,8 @@ import {
 } from '@proton/components';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
-import { Button, CoreButton, Input, Modal } from '../../atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CoreButton, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';

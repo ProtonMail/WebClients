@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcCross } from '@proton/icons/icons/IcCross';

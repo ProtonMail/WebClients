@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalStateProps } from '@proton/components';
 import { Price, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';

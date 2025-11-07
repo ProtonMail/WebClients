@@ -9,7 +9,7 @@ import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 import { convertRefTokensToSpans } from '../../../util/tokens';
 import { parseInteger } from '../../../util/number';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 
 /**
  * Progressive Markdown Renderer

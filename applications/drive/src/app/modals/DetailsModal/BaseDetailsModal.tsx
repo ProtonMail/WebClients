@@ -2,7 +2,8 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, BannerVariants, Button } from '@proton/atoms';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 

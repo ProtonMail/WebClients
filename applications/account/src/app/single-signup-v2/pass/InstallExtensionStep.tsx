@@ -3,7 +3,8 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, Href } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import {

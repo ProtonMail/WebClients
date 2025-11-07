@@ -1,4 +1,4 @@
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 
 import mdx from './PromotionButton.mdx';

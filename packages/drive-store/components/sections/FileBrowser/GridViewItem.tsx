@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Badge, Checkbox, FileNameDisplay, Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

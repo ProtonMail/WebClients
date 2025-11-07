@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
 
 interface Props {

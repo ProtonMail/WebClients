@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { OnboardingStepRenderCallback } from '@proton/components';
 import { OnboardingContent, OnboardingModal, OnboardingStep } from '@proton/components';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';

@@ -2,7 +2,10 @@ import { type Dispatch, Fragment, type SetStateAction, useCallback, useEffect, u
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader, InlineLinkButton, Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import type { OnLoginCallback } from '@proton/components';
 import {
     ConfirmSignOutModal,
