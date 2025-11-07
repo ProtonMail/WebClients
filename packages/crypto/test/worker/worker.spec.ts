@@ -27,7 +27,7 @@ describe('Worker API and Worker Pool Integration (behind CryptoProxy)', () => {
     });
 
     it('init - should throw if already initialised', async () => {
-        expect(() => CryptoWorker.init()).to.throw(/already initialised/);
+        await expect(CryptoWorker.init()).to.be.rejectedWith(/already initialised/);
     });
 
     runApiTests(CryptoProxy);

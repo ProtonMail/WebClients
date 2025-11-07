@@ -11,6 +11,12 @@ import { mainThreadTransferHandlers } from './transferHandlers';
 export interface WorkerInitOptions extends InitOptions {}
 
 export interface WorkerPoolInitOptions {
+    /**
+     * Whether the waiting for the worker initialization should be done on first use of the WorkerPool,
+     * instead of as part of `init`.
+     * Setting this to true makes `init` faster, but any worker loading errors will be thrown later on.
+     */
+    awaitOnFirstUse?: boolean;
     poolSize?: number;
     openpgpConfigOptions?: WorkerInitOptions;
 }
@@ -43,9 +49,8 @@ const errorReporter = (err: Error) => {
 
 // Singleton worker pool.
 export const CryptoWorkerPool: WorkerPoolInterface = (() => {
-    let workerPool: Remote<CryptoApi>[] | null = null;
+    let workerPoolPromise: Promise<Remote<CryptoApi>[]> | null = null;
     let i = -1;
-    let initPromise: Promise<void> | null = null;
 
     const initWorker = async (openpgpConfigOptions: WorkerInitOptions) => {
         // Webpack static analyser is not especially powerful at detecting web workers that require bundling,
@@ -78,13 +83,10 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
      * @param [fixed] - whether to always return the same worker
      */
     const getWorker = async (fixed = false): Promise<Remote<CryptoApi>> => {
-        if (initPromise == null) {
-            throw new Error('Uninitialised');
-        }
-        await initPromise;
-        if (workerPool == null) {
+        if (workerPoolPromise === null) {
             throw new Error('Uninitialised worker pool');
         }
+        const workerPool = await workerPoolPromise;
         if (fixed) {
             return workerPool[0];
         }
@@ -95,27 +97,25 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     // The return type is technically `Remote<CryptoApi>[]` but that removes some type inference capabilities that are
     // useful to type-check the internal worker pool functions.
     const getAllWorkers = async (): Promise<CryptoApi[]> => {
-        if (initPromise == null) {
-            throw new Error('Uninitialised');
-        }
-        await initPromise;
-        if (workerPool == null) {
+        if (workerPoolPromise === null) {
             throw new Error('Uninitialised worker pool');
         }
+        const workerPool = await workerPoolPromise;
         return workerPool as any as CryptoApi[];
     };
 
     return {
-        init: ({ poolSize = navigator.hardwareConcurrency || 1, openpgpConfigOptions = {} } = {}) => {
-            if (initPromise) {
-                throw new Error('already initialised');
+        init: async ({
+            awaitOnFirstUse = false,
+            poolSize = navigator.hardwareConcurrency || 1,
+            openpgpConfigOptions = {},
+        } = {}) => {
+            if (workerPoolPromise !== null) {
+                throw new Error('worker pool already initialised');
             }
-            initPromise = (async () => {
-                if (workerPool !== null) {
-                    throw new Error('worker pool already initialised');
-                }
+            workerPoolPromise = (async () => {
                 // We load one worker early to ensure the browser serves the cached resources to the rest of the pool
-                workerPool = [await initWorker(openpgpConfigOptions)];
+                let workerPool = [await initWorker(openpgpConfigOptions)];
                 if (poolSize > 1) {
                     workerPool = workerPool.concat(
                         await Promise.all(
@@ -124,16 +124,19 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
                     );
                 }
                 mainThreadTransferHandlers.forEach(({ name, handler }) => transferHandlers.set(name, handler));
+                return workerPool;
             })();
+
+            if (!awaitOnFirstUse) {
+                await workerPoolPromise;
+            }
         },
         destroy: async () => {
-            if (initPromise == null) {
-                throw new Error('Uninitialised');
+            if (workerPoolPromise) {
+                const workerPool = await workerPoolPromise;
+                await Promise.all(workerPool.map(destroyWorker));
+                workerPoolPromise = null;
             }
-            await initPromise;
-            workerPool && (await Promise.all(workerPool.map(destroyWorker)));
-            workerPool = null;
-            initPromise = null;
         },
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
         encryptMessage: async (opts) => (await getWorker()).encryptMessage(opts).catch(errorReporter),
