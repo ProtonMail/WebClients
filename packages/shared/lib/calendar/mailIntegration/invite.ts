@@ -660,8 +660,7 @@ ${commentText}`
 ${detailsWithComment}`
         : `${whenText}`;
 
-    const titleText = `TITLE:
-${eventTitle}`;
+    const titleText = `${c('Email body for invitation').t`TITLE:`}\n${eventTitle}`;
     const updateEventDetailsText = oldVevent
         ? getUpdateEmailBodyText({
               vevent,
