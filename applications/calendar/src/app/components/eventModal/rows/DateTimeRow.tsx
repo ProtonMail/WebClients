@@ -2,7 +2,7 @@ import { type ReactNode, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     DateInput,
     MemoizedIconRow as IconRow,

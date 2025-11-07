@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Prompt } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 

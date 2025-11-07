@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLike } from '@proton/atoms';
+import type { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import {
     Icon,
     SidebarListItem,

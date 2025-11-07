@@ -4,7 +4,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { WasmNetwork } from '@proton/andromeda';
-import { CircleLoader, Tooltip } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Dropdown, DropdownSizeUnit, Icon } from '@proton/components';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import type { Recipient } from '@proton/shared/lib/interfaces';

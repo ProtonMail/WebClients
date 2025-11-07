@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { SettingsLink } from '@proton/components';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';

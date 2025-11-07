@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { getTimeUnitLabels } from '@proton/activation/src/constants';
 import { TIME_PERIOD } from '@proton/activation/src/interface';
 import { Field, Icon, Label, Option, Row, SelectTwo } from '@proton/components'
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 
 interface Props {
     selectedPeriod: TIME_PERIOD;

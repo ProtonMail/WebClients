@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 import './SideBarSearch.scss';

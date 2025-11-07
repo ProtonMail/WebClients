@@ -19,7 +19,6 @@
     "scripts": {
         "build": "yarn generate && tsc -P build.tsconfig.json",
         "generate": "tsx ./bin/generateReactIcons.ts",
-        "lint": "eslint --quiet",
         "prepack": "yarn build"
     },
     "dependencies": {

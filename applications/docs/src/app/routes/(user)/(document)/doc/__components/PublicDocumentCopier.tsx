@@ -2,7 +2,7 @@ import { useEffect, useCallback } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { PostApplicationError } from '@proton/docs-core'
 import { c } from 'ttag'
-import { CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { APPS } from '@proton/shared/lib/constants'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type {

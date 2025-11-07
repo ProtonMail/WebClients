@@ -3,7 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import {
     Dropdown,
     DropdownButton,

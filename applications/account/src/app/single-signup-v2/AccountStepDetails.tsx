@@ -4,7 +4,8 @@ import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import BYOESignupButton from '@proton/activation/src/components/Signup/BYOESignupButton';
-import { CircleLoader, InlineLinkButton } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { PLANS } from '@proton/payments';

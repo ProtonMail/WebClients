@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { CurrencySelector, Price, useConfig, useModalState } from '@proton/components';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {

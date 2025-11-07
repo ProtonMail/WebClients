@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Pill } from '@proton/atoms';
+import { Pill } from '@proton/atoms/Pill/Pill';
 import type { ModalOwnProps, OpenSubscriptionModalCallback } from '@proton/components';
 import { SUBSCRIPTION_STEPS } from '@proton/components';
 import { PLANS } from '@proton/payments';

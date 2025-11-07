@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';

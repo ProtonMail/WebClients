@@ -3,7 +3,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useConversationFiles } from '../../../hooks/useConversationFiles';

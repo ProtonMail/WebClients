@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';

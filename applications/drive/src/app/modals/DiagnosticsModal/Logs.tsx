@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Badge } from '@proton/components';
 
 import { withHoc } from '../../hooks/withHoc';

@@ -1,6 +1,7 @@
 import type { CSSProperties, RefObject } from 'react';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';

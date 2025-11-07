@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo } from '@proton/components';
 import lockIcon from '@proton/styles/assets/img/meet/lock-icon.png';
 

@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import { ShortcutLabel } from '../Plugins/KeyboardShortcuts/ShortcutLabel'
 import type { ToolbarItemInterface } from './ToolbarItemInterface'
 import ToolbarTooltip from './ToolbarTooltip'

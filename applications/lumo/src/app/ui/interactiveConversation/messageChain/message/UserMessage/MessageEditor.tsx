@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { EditorContent } from '@tiptap/react';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../../../hooks/useTipTapEditor';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Input } from '@proton/atoms';
+import { Input } from '@proton/atoms/Input/Input';
 import { IconRow } from '@proton/components';
 import { LOCATION_INPUT_ID, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';

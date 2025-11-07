@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { mergeRegister } from '@lexical/utils'
 import { c } from 'ttag'
 
-import { CircleLoader } from '@proton/atoms'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import {
   Dropdown,
   DropdownButton,

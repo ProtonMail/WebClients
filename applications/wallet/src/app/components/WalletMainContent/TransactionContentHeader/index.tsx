@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { WasmSortOrder } from '@proton/andromeda';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 import type { IWasmApiWalletData } from '@proton/wallet';
 

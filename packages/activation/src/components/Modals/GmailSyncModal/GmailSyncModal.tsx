@@ -9,7 +9,7 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 
 import GmailSyncModalAnimation from './GmailSyncModalAnimation';

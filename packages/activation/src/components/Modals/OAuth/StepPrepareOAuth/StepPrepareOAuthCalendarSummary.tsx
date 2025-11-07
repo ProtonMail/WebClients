@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { updateCalendarData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon, useModalState } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 

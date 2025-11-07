@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components';
 import { Icon, Prompt } from '@proton/components';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';

@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon, IllustrationPlaceholder, SkeletonLoader, useTheme } from '@proton/components';
 import { getPlaceholderSrc } from '@proton/mail';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';

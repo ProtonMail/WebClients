@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { AuthCacheResult } from '@proton/components/containers/login/interface';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';

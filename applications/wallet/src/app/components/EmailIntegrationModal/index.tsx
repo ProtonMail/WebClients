@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { WasmApiEmailAddress } from '@proton/andromeda';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalOwnProps } from '@proton/components';
 import { Radio, useModalState } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';

@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 
-// import { Button } from '@proton/atoms';
+// import { Button } from '@proton/atoms/Button/Button';
 
 // import { worker } from './browser';
 

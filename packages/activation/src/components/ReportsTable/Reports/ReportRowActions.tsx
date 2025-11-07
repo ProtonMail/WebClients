@@ -4,7 +4,7 @@ import { ApiReportRollbackState } from '@proton/activation/src/api/api.interface
 import { deleteReportSummary, rollbackReportSummary } from '@proton/activation/src/logic/reports/reports.actions';
 import type { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 

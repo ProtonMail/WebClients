@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { AuthSecurityKeyContent } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';

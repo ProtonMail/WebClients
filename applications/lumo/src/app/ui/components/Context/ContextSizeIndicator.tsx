@@ -3,7 +3,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 
 import { calculateSingleAttachmentContextSize, getFileSizeLevel } from '../../../llm/utils';

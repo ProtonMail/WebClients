@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { MimeIcon, useConfirmActionModal } from '@proton/components';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 

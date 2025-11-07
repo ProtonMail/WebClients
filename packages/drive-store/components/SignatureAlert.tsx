@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Banner, BannerVariants } from '@proton/atoms';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { TextLoader } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

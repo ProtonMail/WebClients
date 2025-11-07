@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { ButtonGroup, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
 import mdx from './ButtonGroup.mdx';

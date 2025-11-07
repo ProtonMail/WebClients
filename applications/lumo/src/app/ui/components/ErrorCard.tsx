@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import lumoAlert from '@proton/styles/assets/img/lumo/lumo-cat-alert.svg';
 

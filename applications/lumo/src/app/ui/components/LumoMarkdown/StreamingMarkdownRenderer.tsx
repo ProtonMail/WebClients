@@ -8,7 +8,7 @@ import remarkGfm from 'remark-gfm';
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 import { ProgressiveMarkdownRenderer } from './ProgressiveMarkdownRenderer';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Copy } from '@proton/components';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 

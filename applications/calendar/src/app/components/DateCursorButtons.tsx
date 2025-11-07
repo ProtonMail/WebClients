@@ -3,7 +3,8 @@ import { useMemo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button, Vr } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { Icon, ToolbarButton } from '@proton/components';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';

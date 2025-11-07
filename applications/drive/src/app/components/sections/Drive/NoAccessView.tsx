@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import noAccessSvg from '@proton/styles/assets/img/illustrations/no-access.svg';
 
 import useDriveNavigation from '../../../hooks/drive/useNavigate';

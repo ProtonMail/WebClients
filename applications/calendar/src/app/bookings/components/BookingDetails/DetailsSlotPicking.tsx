@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import format from 'date-fns/format';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 
 import type { BookingTimeslot } from '../../booking.store';
 import { useBookingStore } from '../../booking.store';

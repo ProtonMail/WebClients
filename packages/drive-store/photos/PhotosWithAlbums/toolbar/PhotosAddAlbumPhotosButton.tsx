@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, type ButtonLikeSize } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { DropdownMenuButton, Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import type { SidebarConfig } from '@proton/components';
 import { getMailRouteTitles } from '@proton/components/containers/account/constants/settingsRouteTitles';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

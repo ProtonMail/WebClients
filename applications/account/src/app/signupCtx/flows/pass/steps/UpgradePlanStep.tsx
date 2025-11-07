@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';

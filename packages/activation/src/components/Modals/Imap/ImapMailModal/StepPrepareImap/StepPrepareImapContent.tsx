@@ -4,7 +4,7 @@ import { getTimeUnitLabels } from '@proton/activation/src/constants';
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import type { TIME_PERIOD } from '@proton/activation/src/interface';
 import { Icon, LabelStack } from '@proton/components'
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { Label } from '@proton/shared/lib/interfaces';
 
 interface Props {

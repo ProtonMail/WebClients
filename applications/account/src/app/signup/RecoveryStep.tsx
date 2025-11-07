@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { PromptProps } from '@proton/components';
 import { InputFieldTwo, PhoneInput, Prompt, useApi, useConfig, useFormErrors, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';

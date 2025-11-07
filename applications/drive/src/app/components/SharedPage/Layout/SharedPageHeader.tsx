@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Header, Icon, MainLogo, UnAuthenticatedAppsDropdown, useActiveBreakpoint } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';

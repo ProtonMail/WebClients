@@ -1,6 +1,6 @@
 import { type ReactNode, useMemo } from 'react';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import clsx from '@proton/utils/clsx';
 
 import type { ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';

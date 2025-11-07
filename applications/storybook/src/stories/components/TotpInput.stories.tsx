@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { InlineLinkButton } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Toggle, TotpInput } from '@proton/components';
 
 import mdx from './TotpInput.mdx';

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
-import { Vr } from '@proton/atoms';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { TimeZoneSelector, Toolbar, useElementBreakpoints } from '@proton/components';
 
 interface Props {

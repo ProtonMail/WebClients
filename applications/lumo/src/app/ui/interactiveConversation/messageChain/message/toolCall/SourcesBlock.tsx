@@ -3,7 +3,7 @@ import uniq from 'lodash/uniq';
 import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 
 import type { SearchItem } from '../../../../../lib/toolCall/types';

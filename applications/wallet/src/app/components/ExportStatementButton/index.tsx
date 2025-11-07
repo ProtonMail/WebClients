@@ -8,7 +8,7 @@ import {
     type WasmApiExchangeRate,
     type WasmApiWalletAccount,
 } from '@proton/andromeda';
-import type { ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Icon, useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks/index';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -74,7 +74,10 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
         }).filter(Boolean) as GetAccountsProps[];
     };
 
-    const getData = async (generator: WasmAccountStatementGenerator, format: ExportFormat): Promise<Uint8Array<ArrayBuffer>> => {
+    const getData = async (
+        generator: WasmAccountStatementGenerator,
+        format: ExportFormat
+    ): Promise<Uint8Array<ArrayBuffer>> => {
         const time = BigInt(Math.floor(date.getTime() / SECOND).toString());
 
         if (format === ExportFormat.CSV) {

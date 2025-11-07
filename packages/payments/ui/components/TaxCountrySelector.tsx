@@ -2,7 +2,8 @@ import { type ChangeEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton, Input } from '@proton/atoms';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Input } from '@proton/atoms/Input/Input';
 import clsx from '@proton/utils/clsx';
 
 import { getStateName, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';

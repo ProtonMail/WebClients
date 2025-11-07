@@ -1,6 +1,6 @@
 // import { c } from 'ttag';
 
-// import { ButtonLike } from '@proton/atoms';
+// import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 // import { Icon, SettingsLink, useConfig } from '@proton/components';
 // import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 // import type { IconName } from '@proton/icons/types';

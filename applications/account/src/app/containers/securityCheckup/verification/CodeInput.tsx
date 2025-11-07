@@ -3,7 +3,7 @@ import { type ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Form, InputFieldTwo, TotpInput, useApi, useFormErrors, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { CacheType } from '@proton/redux-utilities';

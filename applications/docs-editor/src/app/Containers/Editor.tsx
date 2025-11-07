@@ -53,9 +53,9 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import { YjsReadonlyPlugin } from '../Plugins/YjsReadonly/YjsReadonlyPlugin'
 import { useSyncedState } from '../Hooks/useSyncedState'
 import { FixBrokenListItemPlugin } from '../Plugins/FixBrokenListItemPlugin'
-import { getAccentColorForUsername } from '@proton/atoms'
 import { CustomCollaborationContextProvider } from '../Plugins/Collaboration/CustomCollaborationContext'
 import { FixBrokenTabNode } from '../Plugins/FixBrokenTabNode'
+import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 
 const TypingBotEnabled = false
 
