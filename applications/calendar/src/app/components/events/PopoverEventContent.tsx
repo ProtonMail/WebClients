@@ -9,12 +9,12 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
     IconRow,
     Info,
     useContactEmailsCache,
     useContactModals,
 } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -286,7 +286,7 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                                         collapseText={c('Participants collapse button label')
                                             .t`Collapse participants list`}
                                     >
-                                        <Icon name="chevron-down" />
+                                        <IcChevronDown />
                                     </CollapsibleHeaderIconButton>
                                 }
                             >

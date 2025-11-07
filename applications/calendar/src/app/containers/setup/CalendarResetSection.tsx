@@ -8,8 +8,8 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
 } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -58,7 +58,7 @@ const CalendarResetSection = ({ calendarsToReset = [], resetAll }: Props) => {
                         <CollapsibleHeader
                             suffix={
                                 <CollapsibleHeaderIconButton onClick={clickShow}>
-                                    <Icon name="chevron-down" />
+                                    <IcChevronDown />
                                 </CollapsibleHeaderIconButton>
                             }
                             disableFullWidth

@@ -1,8 +1,10 @@
 import type { CSSProperties } from 'react';
 
+
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
+
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -59,7 +61,7 @@ const BusyParticipantRowDot = ({ color, display, tooltipText, onClick, classname
                 onClick={onClick}
             >
                 {display === 'half-circle' && (
-                    <Icon name={'circle-half-filled'} size={2.5} className={clsx('opacity-70 rotateZ-45')} />
+                    <IcCircleHalfFilled size={2.5} className={clsx('opacity-70 rotateZ-45')} />
                 )}
             </div>
         </Tooltip>

@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import Icon from '@proton/components/components/icon/Icon';
 import SidebarPrimaryButton from '@proton/components/components/sidebar/SidebarPrimaryButton';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 
 import { BookingSidebarAction } from '../../bookings/BookingSidebarAction';
@@ -27,7 +27,7 @@ const PrimaryAction = ({ collapsed, onCreateEvent, group = false }: Props & { gr
                 className={clsx('hidden md:flex items-center justify-center flex-nowrap gap-2', collapsed && 'px-0')}
             >
                 {collapsed ? (
-                    <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
+                    <IcPlus className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
                 ) : (
                     <span className="text-ellipsis">{c('Action').t`New event`}</span>
                 )}

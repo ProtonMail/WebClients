@@ -3,7 +3,11 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { AppLink, Icon, ReloadSpinner } from '@proton/components';
+import { AppLink, ReloadSpinner } from '@proton/components';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import type { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
@@ -32,7 +36,7 @@ export const PopoverEditButton = ({ showButton, loading, onEdit }: EditButtonPro
                 icon
                 size="small"
             >
-                <Icon name="pen" alt={c('Edit event button tooltip').t`Edit event`} />
+                <IcPen alt={c('Edit event button tooltip').t`Edit event`} />
             </ButtonLike>
         </Tooltip>
     );
@@ -57,7 +61,7 @@ export const PopoverDeleteButton = ({ showButton, loading, onDelete }: DeleteBut
                 icon
                 size="small"
             >
-                <Icon name="trash" alt={c('Delete event button tooltip').t`Delete event`} />
+                <IcTrash alt={c('Delete event button tooltip').t`Delete event`} />
             </ButtonLike>
         </Tooltip>
     );
@@ -82,7 +86,7 @@ export const PopoverDuplicateButton = ({ showButton, loading, onDuplicate }: Dup
                 icon
                 size="small"
             >
-                <Icon name="squares" alt={c('Duplicate event button tooltip').t`Duplicate event`} />
+                <IcSquares alt={c('Duplicate event button tooltip').t`Duplicate event`} />
             </ButtonLike>
         </Tooltip>
     );
@@ -145,7 +149,7 @@ export const PopoverViewButton = ({
         <Tooltip title={viewText}>
             {isSearchView ? (
                 <ButtonLike data-testid="event-popover:open" shape="ghost" onClick={onViewClick} icon size="small">
-                    <Icon name="arrow-within-square" size={3.5} alt={viewText} />
+                    <IcArrowWithinSquare size={3.5} alt={viewText} />
                 </ButtonLike>
             ) : (
                 <AppLink
@@ -154,7 +158,7 @@ export const PopoverViewButton = ({
                     reloadDocument
                     className="mr-2 button button-small button-ghost-weak button-for-icon"
                 >
-                    <Icon name="arrow-within-square" size={3.5} alt={viewText} />
+                    <IcArrowWithinSquare size={3.5} alt={viewText} />
                 </AppLink>
             )}
         </Tooltip>

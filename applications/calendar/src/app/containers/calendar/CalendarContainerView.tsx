@@ -19,7 +19,6 @@ import {
     DrawerVisibilityButton,
     ErrorBoundary,
     FloatingButton,
-    Icon,
     LocalizedMiniCalendar,
     PrivateAppContainer,
     PrivateHeader,
@@ -35,6 +34,9 @@ import {
     useOpenDrawerOnLoad,
     useToggle,
 } from '@proton/components';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
@@ -429,7 +431,7 @@ const CalendarContainerView = ({
                             onClick={onClick}
                             disabled={noSelection || !onCreateEvent || isBookingActive}
                         >
-                            <Icon name="calendar-grid" alt={createEventText} />
+                            <IcCalendarGrid alt={createEventText} />
                         </Button>
                     </Tooltip>
                 );
@@ -490,7 +492,7 @@ const CalendarContainerView = ({
                 (isCalendarEncryptedSearchEnabled && isSearching) || isBookingActive ? null : (
                     <ToolbarButton
                         ref={searchSpotlightAnchorRef}
-                        icon={<Icon name="magnifier" alt={c('Action').t`Search`} />}
+                        icon={<IcMagnifier alt={c('Action').t`Search`} />}
                         title={c('Header').t`Search`}
                         onClick={handleClickSearch}
                     />
@@ -540,7 +542,7 @@ const CalendarContainerView = ({
                 floatingButton={
                     !isSearchView && (
                         <FloatingButton onClick={() => onCreateEvent?.()}>
-                            <Icon size={6} name="plus" className="m-auto" />
+                            <IcPlus size={6} className="m-auto" />
                         </FloatingButton>
                     )
                 }

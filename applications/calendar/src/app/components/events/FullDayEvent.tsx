@@ -2,7 +2,11 @@ import type { CSSProperties, KeyboardEvent, Ref } from 'react';
 import { useMemo } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { CalendarEventDateHeader, Icon } from '@proton/components';
+import { CalendarEventDateHeader } from '@proton/components';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import clsx from '@proton/utils/clsx';
 
 import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
@@ -94,12 +98,12 @@ const FullDayEvent = ({
     const content = (
         <div className="flex flex-nowrap flex-1 items-center">
             {!isAllDay ? (
-                <Icon className="mr-2 shrink-0 calendar-dayeventcell-circle" size={4} name="circle-filled" />
+                <IcCircleFilled className="mr-2 shrink-0 calendar-dayeventcell-circle" size={4} />
             ) : null}
 
-            {isOutsideStart ? <Icon name="chevron-left" size={3} className="shrink-0" /> : null}
+            {isOutsideStart ? <IcChevronLeft size={3} className="shrink-0" /> : null}
 
-            {eventReadError ? <Icon name="lock-filled" className="calendar-dayeventcell-lock-icon" /> : null}
+            {eventReadError ? <IcLockFilled className="calendar-dayeventcell-lock-icon" /> : null}
 
             <span data-testid="calendar-view:all-day-event" className="flex-1 text-ellipsis">
                 {startTimeString && <span className="calendar-dayeventcell-time">{startTimeString}</span>}
@@ -116,7 +120,7 @@ const FullDayEvent = ({
                 </div>
             </span>
 
-            {isOutsideEnd ? <Icon name="chevron-right" size={3} className="shrink-0" /> : null}
+            {isOutsideEnd ? <IcChevronRight size={3} className="shrink-0" /> : null}
         </div>
     );
 
