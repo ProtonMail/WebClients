@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { updateOrganizationName } from '@proton/account/organization/actions';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';

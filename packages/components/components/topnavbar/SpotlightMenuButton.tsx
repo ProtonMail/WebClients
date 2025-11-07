@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
@@ -194,7 +195,7 @@ export const SpotlightMenuButton = ({
                     title={dismissTitle}
                     className={clsx({ 'button-for-icon': viewportWidth['<=medium'] })}
                     onClick={onDismiss}
-                    icon={<IcCross className="m-0" />}
+                    icon={<IcCross className='m-0' />}
                 />
             </ButtonGroup>
         </Spotlight>
