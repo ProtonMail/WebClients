@@ -99,6 +99,7 @@ export const handleAsyncModel = <Returned, State, Extra, Options>(
         .addCase(cases.rejected, (state, action) => {
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
         });
 };
 
