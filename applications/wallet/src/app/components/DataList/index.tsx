@@ -60,7 +60,7 @@ export const DataList = <I extends { key: string }>({ columns, rows, canClickRow
     const { isNarrow } = useResponsiveContainerContext();
 
     const header = useMemo(() => {
-        if (!columns.some(({ header }) => header)) {
+        if (!columns.some(({ header }) => Boolean(header))) {
             return null;
         }
 
