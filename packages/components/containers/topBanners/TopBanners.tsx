@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import ErrorBoundary from '../app/ErrorBoundary';
 import AccessTypeTopBanner from './AccessTypeTopBanner';
 import BadAppVersionBanner from './BadAppVersionBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
@@ -21,7 +22,7 @@ interface Props {
 
 const TopBanners = ({ children, app }: Props) => {
     return (
-        <>
+        <ErrorBoundary component={null}>
             <UnpaidInvoiceTopBanner />
             <TrialTopBanner app={app} />
             <OnlineTopBanner />
@@ -34,7 +35,7 @@ const TopBanners = ({ children, app }: Props) => {
             <SubscriptionEndsBanner app={app} />
             <SessionRecoveryBanners />
             {children}
-        </>
+        </ErrorBoundary>
     );
 };
 
