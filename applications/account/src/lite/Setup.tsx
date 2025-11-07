@@ -36,7 +36,6 @@ import {
     getUnleashConfig,
 } from '@proton/unleash';
 import getRandomString from '@proton/utils/getRandomString';
-import noop from '@proton/utils/noop';
 
 import { useAccountDispatch } from '../app/store/hooks';
 import { extendStore } from '../app/store/store';
@@ -150,9 +149,12 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
                 return loadLocalesI18n({ locales, locale, browserLocaleCode, userSettings: undefined });
             };
 
-            loadCryptoWorker({ poolSize: 1 }).catch(noop);
-
-            await Promise.all([setupModels(), loadLocales(), createUnleashReadyPromise(unleashClient).promise]);
+            await Promise.all([
+                setupModels(),
+                loadLocales(),
+                loadCryptoWorker({ poolSize: 1 }),
+                createUnleashReadyPromise(unleashClient).promise,
+            ]);
 
             extendStore({ eventManager });
             eventManager.subscribe((event) => {

@@ -126,7 +126,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         };
 
         const userPromise = loadUser();
-        bootstrap.loadCrypto({ appName, unleashClient });
+        const cryptoPromise = bootstrap.loadCrypto({ appName, unleashClient });
         const eventManager = bootstrap.eventManager({ api: silentApi });
         bootstrap.unleashReady({ unleashClient }).catch(noop);
 
@@ -135,6 +135,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             if (!primaryAddress) {
                 throw new Error('Missing primary address');
             }
+            await cryptoPromise;
 
             // Get all user keys and address keys. One of them should decrypt the lumo master key.
             const allUserKeys = await dispatch(userKeysThunk());
