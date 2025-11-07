@@ -2,10 +2,6 @@ import type { DropdownAction } from 'proton-pass-extension/app/content/constants
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type {
-    InlineFieldTarget,
-    InlineFrameTarget,
-} from 'proton-pass-extension/app/content/services/inline/inline.abstract';
 import { type InlineAppHandler, createInlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -21,6 +17,7 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
+import type { InlineFieldTarget, InlineFrameTarget } from './dropdown.abstract';
 import { createDropdownFocusController } from './dropdown.focus';
 import { getDropdownPosition, intoDropdownAction, matchesDropdownAnchor, onCloseEffects } from './dropdown.utils';
 
@@ -40,12 +37,13 @@ export type DropdownRequest = {
     action: DropdownAction;
     /** Indicates that the request was triggered from a focus event */
     autofocused: boolean;
+    /** Indicates wether the initiator field was previously autofilled */
     autofilled: boolean;
 } & (InlineFieldTarget | InlineFrameTarget<{ coords: Coords; origin: string }>);
 
 export interface DropdownApp extends InlineAppHandler<DropdownRequest> {
     /** Important Note: the anchor state is heavily used to infer
-     * UX decisions with regards to dropdown interaction. If an anchor */
+     * UX decisions with regards to dropdown interaction */
     anchor: MaybeNull<DropdownAnchor>;
     focused: boolean;
 }
@@ -68,16 +66,11 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         const target = anchor.current;
 
         if (target?.type === 'frame') {
-            const { formId, fieldId, fieldFrameId } = target;
+            const { formId, fieldId, frameId } = target;
             void sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
-                    payload: {
-                        type: 'initial',
-                        fieldFrameId,
-                        formId,
-                        fieldId,
-                    },
+                    payload: { type: 'initial', frameId, formId, fieldId },
                 })
             );
         }
@@ -93,14 +86,14 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
             }
 
             case 'frame': {
-                const { formId, fieldId, fieldFrameId } = target;
+                const { formId, fieldId, frameId } = target;
                 void sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
                         payload: {
                             ...options,
                             type: 'initial',
-                            fieldFrameId,
+                            frameId,
                             formId,
                             fieldId,
                         },
@@ -249,14 +242,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
             anchor.current =
                 request.type === 'field'
                     ? { type: 'field', field: request.field }
-                    : {
-                          type: 'frame',
-                          frameId: request.frameId,
-                          fieldFrameId: request.fieldFrameId,
-                          frame: request.frame,
-                          fieldId: request.fieldId,
-                          formId: request.formId,
-                      };
+                    : { type: 'frame', fieldId: request.fieldId, formId: request.formId, frameId: request.frameId };
 
             iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_ACTION, payload });
             iframe.setPosition(getDropdownPosition(request));

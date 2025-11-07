@@ -153,7 +153,7 @@ export const createInlineService = () => {
         WorkerMessageType.INLINE_DROPDOWN_CLOSED,
         withSender(async ({ payload }, tabId) => {
             const frames = await getTabFrames(tabId);
-            const path = getFramePath(frames, payload.fieldFrameId);
+            const path = getFramePath(frames, payload.frameId);
 
             for (const frameId of path) {
                 if (frameId === 0) continue;
@@ -165,7 +165,7 @@ export const createInlineService = () => {
                             payload: {
                                 ...payload,
                                 type: 'relay',
-                                passive: frameId !== payload.fieldFrameId,
+                                passive: frameId !== payload.frameId,
                             },
                         }),
                         { frameId }
@@ -195,14 +195,7 @@ export const createInlineService = () => {
                     tabId,
                     backgroundMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_TOGGLE,
-                        payload: {
-                            ...payload,
-                            type: 'relay',
-                            coords: result.coords,
-                            frameId: result.frame.frameId,
-                            fieldFrameId: frameId,
-                            frameAttributes: result.frameAttributes,
-                        },
+                        payload: { ...payload, coords: result.coords },
                     }),
                     { frameId: 0 }
                 )
@@ -218,20 +211,17 @@ export const createInlineService = () => {
         WorkerMessageType.INLINE_DROPDOWN_OPENED,
         withSender(async ({ payload }, tabId) => {
             const frames = await getTabFrames(tabId);
-            const path = getFramePath(frames, payload.fieldFrameId);
+            const path = getFramePath(frames, payload.frameId);
 
             for (const frameId of path) {
                 if (frameId === 0) continue;
+                const passive = frameId !== payload.frameId;
                 void browser.tabs
                     .sendMessage(
                         tabId,
                         backgroundMessage({
                             type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
-                            payload: {
-                                ...payload,
-                                type: 'relay',
-                                passive: frameId !== payload.fieldFrameId,
-                            },
+                            payload: { ...payload, type: 'relay', passive },
                         }),
                         { frameId }
                     )

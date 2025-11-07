@@ -30,14 +30,14 @@ export const createPassiveInlineListeners = (channel: FrameMessageBroker) => {
      * events that the dropdown frame cannot detect (parent frame scroll/focus changes). */
     const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = ({ payload }) => {
         if (payload.type === 'relay' && payload.passive) {
-            const { fieldFrameId, fieldId, formId } = payload;
+            const { frameId, fieldId, formId } = payload;
 
             const close = () => {
                 listeners.removeAll();
                 sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSE,
-                        payload: { field: { fieldFrameId, fieldId, formId } },
+                        payload: { field: { frameId, fieldId, formId } },
                     })
                 ).catch(noop);
             };

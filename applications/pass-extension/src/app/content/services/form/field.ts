@@ -5,7 +5,7 @@ import { createAutofill } from 'proton-pass-extension/app/content/services/autof
 import type { InteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
 import { createInteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
 import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
-import { getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
+import { getFrameID, getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
 import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import { isVisible } from '@proton/pass/fathom';
@@ -27,6 +27,7 @@ import type { FormTracker } from './form.tracker';
 
 type CreateFieldHandlesOptions = {
     element: HTMLInputElement;
+    formId: string;
     formType: FormType;
     fieldType: FieldType;
     getFormHandle: () => FormHandle;
@@ -35,9 +36,7 @@ type CreateFieldHandlesOptions = {
 export type FieldAction = { type: DropdownAction; filterable?: boolean };
 export type FieldElement = HTMLInputElement | HTMLSelectElement;
 
-export interface FieldHandle {
-    /** Random uuid fro cross-frame identification */
-    fieldId: string;
+export interface FieldHandle extends FrameField {
     /** action attached for this field */
     action: MaybeNull<FieldAction>;
     actionPrevented: boolean;
@@ -98,13 +97,20 @@ const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, 
     }
 });
 
-export const createFieldHandles = ({ element, fieldType, getFormHandle }: CreateFieldHandlesOptions): FieldHandle => {
+export const createFieldHandles = ({
+    element,
+    fieldType,
+    formId,
+    getFormHandle,
+}: CreateFieldHandlesOptions): FieldHandle => {
     let anchor: MaybeNull<FieldAnchor> = null;
     const actionTrap = createElementTrap(element, 'actionPrevented');
     const interactivity = createInteractivityController(element);
 
     const field: FieldHandle = {
         fieldId: uniqueId(8),
+        formId,
+        frameId: getFrameID(),
         fieldType,
         element,
         icon: null,
@@ -219,7 +225,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
         matches: (frameField) => {
             if (!frameField) return false;
             const { fieldId, formId } = frameField;
-            return field.fieldId === fieldId && field.getFormHandle().formId === formId;
+            return field.fieldId === fieldId && field.formId === formId;
         },
 
         preventAction: (duration = 250) => actionTrap.trap(duration),
@@ -231,7 +237,7 @@ export const createFieldHandles = ({ element, fieldType, getFormHandle }: Create
             return (
                 ctx?.service.inline.dropdown
                     .getState()
-                    .then(({ focused, visible, attachedField }) => visible && focused && field.matches(attachedField))
+                    .then(({ visible, focused, attachedField }) => visible && focused && field.matches(attachedField))
                     .catch(() => false) ?? false
             );
         }),

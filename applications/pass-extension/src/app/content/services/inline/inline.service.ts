@@ -3,7 +3,6 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import { createIconRegistry } from 'proton-pass-extension/app/content/services/inline/icon/icon.registry';
-import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
@@ -29,10 +28,8 @@ export const createInlineService = ({
     const icon = createIconRegistry({ channel, dropdown, tag: elements.control, mainFrame });
 
     const onDropdownToggle: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_TOGGLE> = ({ payload }) => {
-        if (payload.type !== 'relay') return;
-
         const { autofilled, autofocused, field } = payload;
-        const { frameId, frameAttributes, fieldFrameId } = payload;
+        const { frameId, fieldId, formId } = field;
         const { coords, action, origin } = payload;
 
         const root = registry.root;
@@ -40,9 +37,6 @@ export const createInlineService = ({
 
         const top = rootRect.top + coords.top;
         const left = rootRect.left + coords.left;
-        const frame = getFrameElement(frameId, frameAttributes);
-
-        if (!frame) return;
 
         return dropdown.toggle({
             type: 'frame',
@@ -50,10 +44,8 @@ export const createInlineService = ({
             autofilled,
             autofocused,
             coords: { top, left },
-            fieldFrameId,
-            fieldId: field.fieldId,
-            formId: field.formId,
-            frame,
+            fieldId,
+            formId,
             frameId,
             origin,
         });
@@ -66,6 +58,7 @@ export const createInlineService = ({
                       type: 'frame',
                       formId: payload.field.formId,
                       fieldId: payload.field.fieldId,
+                      frameId: payload.field.frameId,
                   }
                 : undefined
         );

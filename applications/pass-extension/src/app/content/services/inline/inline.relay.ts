@@ -1,6 +1,7 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
+import type { InlineFieldTarget } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.abstract';
 import {
     onBackdropClick,
     onCloseEffects,
@@ -44,8 +45,9 @@ export const createInlineRelay = ({
 
             if (!(form && field)) return;
 
-            const close = () => dropdown.close({ type: 'field', field });
-            const onFocusChange = onFocusChangeFactory(dropdown, field);
+            const target: InlineFieldTarget = { type: 'field', field };
+            const close = () => dropdown.close(target);
+            const onFocusChange = onFocusChangeFactory(dropdown, target);
 
             /** Sub-frame scroll handling: close dropdown immediately instead of
              * expensive cross-frame repositioning. Top-frame UI elements cannot

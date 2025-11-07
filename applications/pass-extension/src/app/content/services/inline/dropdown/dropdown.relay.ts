@@ -34,8 +34,7 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
         toggle: withContext((ctx, req) => {
             if (req.type === 'frame') return;
 
-            const { fieldId } = req.field;
-            const formId = req.field.getFormHandle().formId;
+            const { fieldId, frameId, formId } = req.field;
 
             const origin = (() => {
                 /** IFrames with `about:blank` inherit parent document origin.
@@ -62,7 +61,7 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
                             autofilled: req.autofilled,
                             autofocused: req.autofocused,
                             frameAttributes: getFrameAttributes(),
-                            field: { fieldId, formId },
+                            field: { fieldId, formId, frameId },
                             origin,
                             coords: {
                                 top: top + height,
@@ -83,9 +82,8 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
                         payload: {
                             field: (() => {
                                 if (target && target?.type === 'field') {
-                                    const { fieldId } = target.field;
-                                    const formId = target.field.getFormHandle().formId;
-                                    return { fieldId, formId };
+                                    const { fieldId, frameId, formId } = target.field;
+                                    return { fieldId, formId, frameId };
                                 }
                             })(),
                         },

@@ -1,19 +1,20 @@
+import type { FrameField } from 'proton-pass-extension/types/frames';
+
 import type { CCFieldType } from '@proton/pass/fathom/labels';
 import type { CCItemData, SelectedItem } from '@proton/pass/types';
 
-export type WithAutofillOrigin<T> = T & {
-    fieldId: string;
-    formId: string;
-    frameId: number;
-    frameOrigin: string;
-    origin: string;
-};
+export type WithAutofillOrigin<T> = T &
+    FrameField & {
+        frameOrigin: string;
+        origin: string;
+    };
+
 export type AutofillItem = WithAutofillOrigin<SelectedItem>;
 
 export type AutofillSequence<T = {}> =
     | { status: 'start' }
     | ({ status: 'fill' } & T)
-    | { status: 'completed'; refocus: { formId: string; fieldId: string } };
+    | { status: 'completed'; refocus: FrameField };
 
 export type AutofillStatus = AutofillSequence['status'];
 
