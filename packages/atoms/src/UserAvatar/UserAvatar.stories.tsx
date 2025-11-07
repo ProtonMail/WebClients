@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { UserAvatar, UserAvatarSizeEnum } from '..';
+import { UserAvatar, UserAvatarSizeEnum } from './UserAvatar';
 
 const meta: Meta<typeof UserAvatar> = {
     args: {

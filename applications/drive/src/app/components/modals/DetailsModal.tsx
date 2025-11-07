@@ -3,7 +3,8 @@ import type { ReactNode } from 'react';
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalStateProps } from '@proton/components';
 import {
     Alert,

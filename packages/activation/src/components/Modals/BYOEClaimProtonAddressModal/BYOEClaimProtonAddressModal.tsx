@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { setupExternalUserForProton } from '@proton/account/addresses/actions';
 import useBYOEAddressData from '@proton/activation/src/hooks/useBYOEAddressData';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import {
     Form,
     InputFieldStacked,

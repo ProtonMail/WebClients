@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { ButtonLike } from '@proton/atoms';
+import type { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { SettingsLink } from '@proton/components';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';

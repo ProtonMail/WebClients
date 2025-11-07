@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon, TableCell } from '@proton/components';
 
 import { useItemContextMenu, useSelection } from '../FileBrowser';

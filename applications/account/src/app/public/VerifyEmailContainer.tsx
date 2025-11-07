@@ -3,7 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { GenericError, useApi, useErrorHandler } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { AuthCacheResult } from '@proton/components/containers/login/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 

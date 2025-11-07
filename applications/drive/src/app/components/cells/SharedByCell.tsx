@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Avatar, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
 import { Icon, TableCell } from '@proton/components';
 
 interface SharedByCellProps {

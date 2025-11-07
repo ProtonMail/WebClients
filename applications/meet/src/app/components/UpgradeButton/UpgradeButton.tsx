@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { SettingsLink } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';

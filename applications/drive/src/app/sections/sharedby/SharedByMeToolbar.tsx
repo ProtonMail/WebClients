@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow';
 
-import { Vr } from '@proton/atoms';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useConfirmActionModal } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 

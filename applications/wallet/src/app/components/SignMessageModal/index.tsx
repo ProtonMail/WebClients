@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { type WasmAccount, WasmSigningType } from '@proton/andromeda';
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     Collapsible,
     CollapsibleContent,

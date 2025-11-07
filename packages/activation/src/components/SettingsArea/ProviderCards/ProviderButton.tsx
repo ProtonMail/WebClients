@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { ImportProvider } from '@proton/activation/src/interface';
-import type { ButtonProps } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
 import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo_short.svg';

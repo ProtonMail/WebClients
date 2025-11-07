@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import type { WasmFiatCurrencySymbol } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ModalOwnProps } from '@proton/components';
 import {
     Collapsible,

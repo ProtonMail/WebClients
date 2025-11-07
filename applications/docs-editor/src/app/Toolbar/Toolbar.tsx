@@ -35,7 +35,7 @@ import {
 
 import { $isLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import {
   Dropdown,
   DropdownButton,

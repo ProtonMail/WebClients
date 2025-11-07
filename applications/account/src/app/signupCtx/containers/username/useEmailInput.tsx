@@ -2,7 +2,7 @@ import { type KeyboardEvent, type ReactNode, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Challenge, DropdownSizeUnit, Icon, InputFieldTwo, Option, SelectTwo } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

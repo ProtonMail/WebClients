@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { useTheme } from '@proton/components';
 import { freeTrialUpgradeClick, openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';

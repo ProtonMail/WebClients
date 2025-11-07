@@ -21,6 +21,7 @@
         "baseUrl": ".",
         "paths": {
             "@proton/icons/icons/*": ["./packages/icons/icons/*"],
+            "@proton/atoms/*": ["./packages/atoms/src/*"],
             "@proton/account/*": ["./packages/account/*"],
             "@proton/activation/*": ["./packages/activation/*"],
             "@proton/andromeda": ["./packages/wasm/andromeda/*"],

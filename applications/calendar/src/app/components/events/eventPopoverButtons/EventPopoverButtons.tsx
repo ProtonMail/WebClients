@@ -1,7 +1,8 @@
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { ButtonLike, Tooltip } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { AppLink, Icon, ReloadSpinner } from '@proton/components';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';

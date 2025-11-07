@@ -2,7 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { ButtonLike, Card } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Card } from '@proton/atoms/Card/Card';
 import { SettingsLink, SettingsSectionWide } from '@proton/components';
 import { PLANS } from '@proton/payments';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';

@@ -3,7 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ModalStateProps } from '@proton/components';
 import { GenericError, Prompt, useApi, useErrorHandler, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';

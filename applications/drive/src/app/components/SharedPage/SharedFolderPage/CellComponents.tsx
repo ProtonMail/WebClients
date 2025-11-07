@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Avatar, Button, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms';
+import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { Button } from '@proton/atoms/Button/Button';
+import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
 import { FileIcon, Icon, TableCell } from '@proton/components';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';

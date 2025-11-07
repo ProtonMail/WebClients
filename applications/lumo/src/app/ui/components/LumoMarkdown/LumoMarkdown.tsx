@@ -8,7 +8,7 @@ import remarkGfm from 'remark-gfm';
 // Import syntax highlighter (full Prism build with all languages)
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Copy } from '@proton/components';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 

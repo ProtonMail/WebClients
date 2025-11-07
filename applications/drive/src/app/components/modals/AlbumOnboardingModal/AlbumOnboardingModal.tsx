@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
 import { useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';

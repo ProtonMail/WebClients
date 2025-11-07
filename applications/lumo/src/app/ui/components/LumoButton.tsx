@@ -1,7 +1,8 @@
 import { clsx } from 'clsx';
 
-import type { ButtonLikeSize } from '@proton/atoms';
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { PopperPlacement } from '@proton/components';
 import { Icon } from '@proton/components';
 import type { IconName, IconSize } from '@proton/icons/types';

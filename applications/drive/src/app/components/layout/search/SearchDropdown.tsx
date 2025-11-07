@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownSizeUnit } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 

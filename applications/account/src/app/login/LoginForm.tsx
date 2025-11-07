@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import type { ChallengeRef, ChallengeResult } from '@proton/components';
 import {
     Challenge,

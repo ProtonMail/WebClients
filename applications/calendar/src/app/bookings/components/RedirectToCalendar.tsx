@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { ButtonLike, type ButtonLikeOwnProps } from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeOwnProps } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 

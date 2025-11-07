@@ -1,7 +1,8 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { CircularProgress, FileIcon, Icon } from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
 

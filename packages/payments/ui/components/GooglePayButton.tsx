@@ -1,6 +1,6 @@
 import { type ReactNode, useMemo } from 'react';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import googlePayGreySvg from '@proton/styles/assets/img/bank-icons/dark-gpay.svg';
 import clsx from '@proton/utils/clsx';
 

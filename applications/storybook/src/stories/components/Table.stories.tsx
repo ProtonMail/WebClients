@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 
 import mdx from './Table.mdx';

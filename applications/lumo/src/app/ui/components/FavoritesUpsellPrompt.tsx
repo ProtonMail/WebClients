@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ModalProps } from '@proton/components';
 import { SettingsLink } from '@proton/components';
 import Prompt from '@proton/components/components/prompt/Prompt';

@@ -5,7 +5,8 @@ import type { QRCode } from 'jsqr';
 import jsQR from 'jsqr';
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Icon, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { isMobile } from '@proton/shared/lib/helpers/browser';

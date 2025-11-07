@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InlineLinkButton, Vr } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import {
     Dropdown,
     DropdownButton,

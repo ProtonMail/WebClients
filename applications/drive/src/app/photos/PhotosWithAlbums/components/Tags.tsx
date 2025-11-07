@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon, UncontainedWrapper } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';

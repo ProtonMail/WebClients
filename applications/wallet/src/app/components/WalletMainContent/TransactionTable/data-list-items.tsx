@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiExchangeRate } from '@proton/andromeda';
-import { CircleLoader, Tooltip } from '@proton/atoms';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { SECOND } from '@proton/shared/lib/constants';
 import arrowReceiveDarkSvg from '@proton/styles/assets/img/illustrations/arrow-receive-dark.svg';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';

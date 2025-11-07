@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { selectActiveImportersErrors } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { Alert, SettingsParagraph } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

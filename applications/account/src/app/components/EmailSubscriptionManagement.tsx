@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { EmailSubscriptionToggleWithHeader } from '@proton/components/containers/account/EmailSubscriptionToggles';
 import {
     type EmailSubscription,

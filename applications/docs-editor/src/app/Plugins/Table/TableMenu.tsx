@@ -2,7 +2,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { $createTableSelection, $isTableNode, $isTableSelection } from '@lexical/table'
 import { $findMatchingParent, $insertNodeToNearestRoot, mergeRegister } from '@lexical/utils'
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import { ButtonGroup, DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, Toggle } from '@proton/components'
 import { $getSelection, $isRangeSelection, COMMAND_PRIORITY_EDITOR, SELECTION_CHANGE_COMMAND } from 'lexical'
 import { $generateJSONFromSelectedNodes, $generateNodesFromSerializedNodes } from '@lexical/clipboard'

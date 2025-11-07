@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 

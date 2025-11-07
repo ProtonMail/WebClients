@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
-import { Step, Stepper, StepperPositionEnum } from '@proton/atoms';
+import { Step } from '@proton/atoms/Stepper/Step';
+import { Stepper, StepperPositionEnum } from '@proton/atoms/Stepper/Stepper';
 import type { OnLoginCallback } from '@proton/components';
 import {
     HumanVerificationSteps,

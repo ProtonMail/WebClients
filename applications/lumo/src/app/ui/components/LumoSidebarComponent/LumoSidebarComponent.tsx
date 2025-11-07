@@ -3,7 +3,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Hamburger, Icon, UserDropdown, useFocusTrap } from '@proton/components';
 import lumoLogoFull from '@proton/styles/assets/img/lumo/lumo-logo-full.svg';
 import useConfig from '@proton/components/hooks/useConfig';

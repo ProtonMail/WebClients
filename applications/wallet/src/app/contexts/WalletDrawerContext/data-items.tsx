@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
-import { Href, Tooltip } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, Info, MiddleEllipsis, useModalState } from '@proton/components';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

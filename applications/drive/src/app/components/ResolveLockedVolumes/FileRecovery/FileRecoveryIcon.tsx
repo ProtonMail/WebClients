@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, useModalTwoStatic } from '@proton/components'
-import { Tooltip } from '@proton/atoms';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 
 import { useLockedVolume } from '../../../store';
 import FilesRecoveryModal from '../../modals/FilesRecoveryModal/FilesRecoveryModal';

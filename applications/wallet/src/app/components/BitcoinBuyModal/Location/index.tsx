@@ -4,7 +4,7 @@ import uniqBy from 'lodash/uniqBy';
 import { c } from 'ttag';
 
 import type { WasmApiCountry } from '@proton/andromeda';
-import { Href } from '@proton/atoms';
+import { Href } from '@proton/atoms/Href/Href';
 import { Icon } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
@@ -12,8 +12,8 @@ import { useFlag } from '@proton/unleash';
 import { useCountriesByProvider } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, SearchableSelect } from '../../../atoms';
+import type { CoreSearchableSelectProps } from '../../../atoms';
 import { ModalParagraph } from '../../../atoms/ModalParagraph';
 import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 

@@ -1,4 +1,6 @@
-import { Button, Tooltip, UserAvatar, UserAvatarSizeEnum } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
+import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar'
 import type { MouseEventHandler } from 'react'
 import { useCallback, useState } from 'react'
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, ToolbarButton } from '@proton/components'

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
+import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar } from '@proton/components';
 import { Icon, ToolbarButton } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';

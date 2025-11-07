@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { Icon } from '@proton/components';
 
 import { useLumoPlan } from '../../hooks/useLumoPlan';

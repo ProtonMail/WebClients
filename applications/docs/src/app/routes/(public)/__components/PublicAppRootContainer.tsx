@@ -5,7 +5,8 @@ import {
 } from '@proton/drive-store/lib/DriveStoreProvider'
 import { PublicApplicationContent } from './PublicApplicationContent'
 import { usePublicDriveCompat } from '@proton/drive-store/lib'
-import { Button, CircleLoader } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { c } from 'ttag'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 import clsx from '@proton/utils/clsx';

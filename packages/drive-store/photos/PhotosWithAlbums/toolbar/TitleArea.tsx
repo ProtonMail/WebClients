@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom-v5-compat';
 import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import { Icon } from '@proton/components';
 
 import useNavigate from '../../../hooks/drive/useNavigate';

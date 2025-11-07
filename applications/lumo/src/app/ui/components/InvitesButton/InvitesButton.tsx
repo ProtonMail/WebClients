@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import useModalState, { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 
 import { useLumoDispatch } from '../../../redux/hooks';

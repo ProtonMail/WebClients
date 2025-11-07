@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
 import noLinksSvg from '@proton/styles/assets/img/illustrations/empty-shared.svg';
 
 import { DriveEmptyView } from '../../layout/DriveEmptyView';

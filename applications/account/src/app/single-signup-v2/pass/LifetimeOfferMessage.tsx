@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { Currency } from '@proton/payments';
 import { PLANS, PLAN_NAMES } from '@proton/payments';

@@ -1,5 +1,5 @@
 import { Icon, InputFieldTwo } from '@proton/components'
-import { Button } from '@proton/atoms'
+import { Button } from '@proton/atoms/Button/Button'
 import { useUI } from '../../ui-store'
 import * as Ariakit from '@ariakit/react'
 import { createStringifier } from '../../stringifier'
