@@ -17,10 +17,14 @@ import type { ModelState } from '../interface';
 import type { OrganizationState } from '../organization';
 import { selectOrganization } from '../organization';
 
-const fetchPendingUserInvitations = (api: Api) =>
-    api<{ UserInvitations: PendingUserInvitation[] }>(getInvitations()).then(({ UserInvitations }) => {
-        return UserInvitations;
-    });
+const fetchPendingUserInvitations = (api: Api): Promise<PendingUserInvitation[]> =>
+    api<{ UserInvitations: PendingUserInvitation[] }>(getInvitations())
+        .then(({ UserInvitations }) => {
+            return UserInvitations;
+        })
+        .catch((): PendingUserInvitation[] => {
+            return [];
+        });
 
 const fetchUserInvitation = (invitationID: string, api: Api) => {
     return api<{ UserInvitation: PendingUserInvitation }>(getInvitation(invitationID)).then(({ UserInvitation }) => {
