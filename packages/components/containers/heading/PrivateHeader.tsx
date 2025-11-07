@@ -19,6 +19,7 @@ import useConfig from '../../hooks/useConfig';
 import useIsPaidUserCookie from '../../hooks/useIsPaidUserCookie';
 
 interface Props extends HeaderProps {
+    onBoardingButton?: ReactNode;
     settingsButton?: ReactNode;
     hideSettingsButton?: boolean;
     userDropdown?: ReactNode;
@@ -36,6 +37,7 @@ interface Props extends HeaderProps {
 
 const PrivateHeader = ({
     isSmallViewport,
+    onBoardingButton,
     upsellButton,
     userDropdown,
     settingsButton,
@@ -68,6 +70,7 @@ const PrivateHeader = ({
             <TopNavbar>
                 <TopNavbarList>
                     {!isSmallViewport && <TopNavbarB2BOnboardingButton />}
+                    {!isSmallViewport && onBoardingButton}
                     {upsellButton !== undefined ? upsellButton : !hideUpsellButton && <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {settingsButton && !hideSettingsButton ? (

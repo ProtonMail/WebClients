@@ -300,6 +300,13 @@ export { default as Toggle } from './components/toggle/Toggle';
 export { default as Toolbar } from './components/toolbar/Toolbar';
 export { default as ToolbarButton } from './components/toolbar/ToolbarButton';
 export { default as TopNavbar } from './components/topnavbar/TopNavbar';
+export {
+    SpotlightMenuButton,
+    type DisplayItem,
+    type DropdownDisplayItem,
+    type LinkDisplayItem,
+} from './components/topnavbar/SpotlightMenuButton';
+export { TopNavbarGetStartedButton } from './components/topnavbar/TopNavbarGetStartedButton';
 export { default as TopNavbarList } from './components/topnavbar/TopNavbarList';
 export { default as TopNavbarListItem } from './components/topnavbar/TopNavbarListItem';
 export { default as TopNavbarListItemButton } from './components/topnavbar/TopNavbarListItemButton';
