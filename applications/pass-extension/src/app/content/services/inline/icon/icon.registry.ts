@@ -67,6 +67,7 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
             if (!field.icon) {
                 const onClick = () => {
                     if (field.action) {
+                        field.focus({ preventAction: true });
                         dropdown.toggle({
                             type: 'field',
                             action: field.action.type,
