@@ -31442,6 +31442,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lumo-dev-proxy@workspace:utilities/lumo-dev-proxy":
+  version: 0.0.0-use.local
+  resolution: "lumo-dev-proxy@workspace:utilities/lumo-dev-proxy"
+  dependencies:
+    "@types/node": "npm:^22.18.13"
+    tsx: "npm:^4.20.6"
+  languageName: unknown
+  linkType: soft
+
 "luxon@npm:^3.2.1":
   version: 3.5.0
   resolution: "luxon@npm:3.5.0"
