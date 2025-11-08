@@ -11,6 +11,7 @@ export default defineConfig(
         name: 'register-react-plugins',
         plugins: {
             react,
+            // @ts-expect-error -- Types incompatibility
             'react-hooks': reactHooks,
             'jsx-a11y': jsxA11yPlugin.flatConfigs.recommended.plugins['jsx-a11y'],
             testingLibrary,
