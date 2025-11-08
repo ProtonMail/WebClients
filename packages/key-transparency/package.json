@@ -17,13 +17,13 @@
         "@proton/cross-storage": "workspace:^",
         "@proton/crypto": "workspace:^",
         "@proton/shared": "workspace:^",
-        "pkijs": "^3.3.2"
+        "pkijs": "^3.3.3"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@types/jasmine": "^5.1.12",
-        "eslint": "^9.39.0",
+        "eslint": "^9.39.1",
         "eslint-plugin-jasmine": "^4.2.2",
         "jasmine": "^5.12.0",
         "jasmine-core": "^5.12.1",
