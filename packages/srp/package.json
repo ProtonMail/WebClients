@@ -15,14 +15,14 @@
     },
     "dependencies": {
         "@proton/crypto": "workspace:^",
-        "bcryptjs": "^3.0.2"
+        "bcryptjs": "^3.0.3"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.28.5",
         "@babel/preset-typescript": "^7.28.5",
         "@babel/register": "^7.28.3",
         "@proton/eslint-config-proton": "workspace:^",
-        "eslint": "^9.39.0",
+        "eslint": "^9.39.1",
         "jest": "^30.2.0",
         "prettier": "^3.6.2",
         "ts-jest": "^29.4.5",

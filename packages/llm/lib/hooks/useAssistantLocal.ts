@@ -44,9 +44,9 @@ export const useAssistantLocal = ({ commonState, active }: Props): AssistantHook
     const llmManager = useRef<LlmManager | null>(null);
     const llmModel = useRef<LlmModel | null>(null);
 
-    const assistantConfigRef = useRef<AssistantConfig>();
+    const assistantConfigRef = useRef<AssistantConfig | undefined>(undefined);
     /** In order to be able to wait for config to be set */
-    const assistantConfigPromiseRef = useRef<Promise<void>>();
+    const assistantConfigPromiseRef = useRef<Promise<void> | undefined>(undefined);
 
     const [
         {
@@ -76,7 +76,7 @@ export const useAssistantLocal = ({ commonState, active }: Props): AssistantHook
     });
 
     const generatedTokensNumber = useRef(0);
-    const initPromise = useRef<Promise<void>>();
+    const initPromise = useRef<Promise<void> | undefined>(undefined);
 
     const {
         addSpecificError,

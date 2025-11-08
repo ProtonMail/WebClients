@@ -49,7 +49,7 @@ export const useSavedChargebeeMethod = (
     }: Props,
     { verifyPayment, api, handles, events }: Dependencies
 ): SavedChargebeeMethodProcessorHook => {
-    const paymentProcessorRef = useRef<SavedChargebeePaymentProcessor>();
+    const paymentProcessorRef = useRef<SavedChargebeePaymentProcessor | undefined>(undefined);
     if (!paymentProcessorRef.current && savedMethod) {
         paymentProcessorRef.current = new SavedChargebeePaymentProcessor(
             verifyPayment,

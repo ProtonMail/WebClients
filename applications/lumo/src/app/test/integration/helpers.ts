@@ -256,6 +256,9 @@ export async function setupTestEnvironment({
 
     const select = <T>(selector: LumoSelector<T>) => selector(store.getState());
 
+    // Wait a bit to ensure db is setup
+    await sleep(100);
+
     return {
         store,
         dispatch,
