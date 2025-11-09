@@ -220,7 +220,10 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             }
         }
 
-        const newBookingRange = [...(bookingRange || []), { ...data, id: dataId }];
+        const newBookingRange = [...(bookingRange || []), { ...data, id: dataId }].sort(
+            (a, b) => a.start.getTime() - b.start.getTime()
+        );
+
         const newSlots = generateSlotsFromRange({
             rangeID: dataId,
             start: data.start,

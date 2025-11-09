@@ -1,4 +1,4 @@
-import { addMinutes, set } from 'date-fns';
+import { addHours, addMinutes, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -47,6 +47,16 @@ export const FormRangeList = () => {
         addBookingRange(createBookingRangeNextAvailableTime(bookingRange, formData.timezone));
     };
 
+    const handlePlusClick = (range: BookingRange) => {
+        const newBookingRange = {
+            timezone: range.timezone,
+            start: addHours(range.end, 1),
+            end: addHours(range.end, 2),
+        };
+
+        addBookingRange(newBookingRange);
+    };
+
     const getUTCtime = (date: Date) => {
         return new Date(2000, 0, 1, date.getUTCHours(), date.getUTCMinutes());
     };
@@ -82,7 +92,7 @@ export const FormRangeList = () => {
                         />
                     </div>
                     <div className="flex flex-nowrap shrink-0">
-                        <Button icon shape="ghost">
+                        <Button icon shape="ghost" onClick={() => handlePlusClick(range)}>
                             <IcPlus
                                 name="plus"
                                 className="color-primary"
