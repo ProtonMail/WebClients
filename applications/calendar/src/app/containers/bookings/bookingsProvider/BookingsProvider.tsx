@@ -32,7 +32,8 @@ interface BookingsContextValue {
     submitForm: () => Promise<void>;
     isBookingActive: boolean;
     canCreateBooking: boolean;
-    changeBookingState: (state: BookingState) => void;
+    openBookingSidebar: (date: Date) => void;
+    closeBookingSidebar: () => void;
     formData: BookingFormData;
     updateFormData: (field: keyof BookingFormData, value: any) => void;
     loading: boolean;
@@ -83,7 +84,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const { createNotification } = useNotifications();
 
-    const initializeFormData = () => {
+    const initializeFormData = (currentUTCDate: Date) => {
         // Get the initial form data
 
         const newFormData = getInitialBookingFormState();
@@ -91,7 +92,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone() || '';
 
         // Generate the initial form data
-        const bookingRange = generateDefaultBookingRange(userSettings, timezone);
+        const bookingRange = generateDefaultBookingRange(userSettings, currentUTCDate, timezone);
         const bookingSlots = bookingRange
             .map((range) =>
                 generateSlotsFromRange({
@@ -235,14 +236,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         setFormData(newFormData);
     };
 
-    const changeBookingState = (state: BookingState) => {
-        if (state === BookingState.OFF) {
-            resetBookingState();
-        } else if (state === BookingState.CREATE_NEW) {
-            initializeFormData();
-        }
+    const openBookingSidebar = (currentDate: Date) => {
+        initializeFormData(currentDate);
+        setBookingsState(BookingState.CREATE_NEW);
+    };
 
-        setBookingsState(state);
+    const closeBookingSidebar = () => {
+        setBookingsState(BookingState.OFF);
     };
 
     const submitForm = async () => {
@@ -300,7 +300,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const value: BookingsContextValue = {
         canCreateBooking: writeableCalendars.length > 0,
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
-        changeBookingState,
+        openBookingSidebar,
+        closeBookingSidebar,
         formData,
         updateFormData,
         submitForm,
