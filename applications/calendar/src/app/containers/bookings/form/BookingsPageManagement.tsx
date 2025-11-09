@@ -54,6 +54,7 @@ export const Form = () => {
                 <div className="flex gap-1">
                     {scheduleOptions.map((option) => (
                         <Button
+                            key={option.value}
                             onClick={() => updateFormData('duration', option.value)}
                             shape={formData.duration === option.value ? 'solid' : 'outline'}
                             color="weak"

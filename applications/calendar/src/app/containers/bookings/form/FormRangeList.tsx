@@ -16,7 +16,6 @@ export const FormRangeList = () => {
     const validation = validateFormData(formData);
 
     if (!bookingRange) {
-        // TODO have a placeholder if no booking range is available
         return null;
     }
 
