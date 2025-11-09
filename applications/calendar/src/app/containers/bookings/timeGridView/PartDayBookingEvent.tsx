@@ -2,6 +2,8 @@ import { useCallback, useMemo } from 'react';
 
 import { addMinutes, differenceInMinutes, isBefore } from 'date-fns';
 
+import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
+
 import { type PartDayEventProps, PartDayEventView } from '../../../components/events/PartDayEvent';
 import { getBookingSlotStyle } from '../../../helpers/color';
 import type { CalendarViewEvent } from '../../calendar/interface';
@@ -36,10 +38,11 @@ const BookingSlots = ({ start, end, backgroundColor }: BookingSlotsProps) => {
     const getItemOpacity = useCallback(
         (index: number) => {
             const now = new Date();
+            const nowWithTz = fromUTCDateToLocalFakeUTCDate(now, false, formData.timezone);
             const itemStart = addMinutes(start, index * formData.duration);
-            return isBefore(itemStart, now) ? 0.1 : 0.2;
+            return isBefore(itemStart, nowWithTz) ? 0.1 : 0.2;
         },
-        [start, formData.duration]
+        [start, formData.duration, formData.timezone]
     );
 
     return Array.from({ length: availableRanges }).map((_, index) => (
