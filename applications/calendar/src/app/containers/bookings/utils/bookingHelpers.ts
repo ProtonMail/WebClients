@@ -188,12 +188,16 @@ const createBookingRange = (date: Date, timezone: string) => {
 /**
  * Returns an array of booking range going from 9am to 5pm on work days of the current week
  */
-export const generateDefaultBookingRange = (userSettings: UserSettings, timezone: string): BookingRange[] => {
+export const generateDefaultBookingRange = (
+    userSettings: UserSettings,
+    startDate: Date,
+    timezone: string
+): BookingRange[] => {
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
 
     return eachDayOfInterval({
-        start: startOfWeek(new Date(), { weekStartsOn }),
-        end: endOfWeek(new Date(), { weekStartsOn }),
+        start: startOfWeek(startDate, { weekStartsOn }),
+        end: endOfWeek(startDate, { weekStartsOn }),
     })
         .filter((day) => !isWeekend(day))
         .map((day) => {
