@@ -47,6 +47,10 @@ export const FormRangeList = () => {
         addBookingRange(createBookingRangeNextAvailableTime(bookingRange, formData.timezone));
     };
 
+    const getUTCtime = (date: Date) => {
+        return new Date(2000, 0, 1, date.getUTCHours(), date.getUTCMinutes());
+    };
+
     // TODO handle the cases where the recurring is enabled and adapt the UI
     return (
         <div>
@@ -64,7 +68,7 @@ export const FormRangeList = () => {
                             .t`Start time of the booking range`}</label>
                         <TimeInput
                             id={`range-start-time-${range.id}`}
-                            value={range.start}
+                            value={getUTCtime(range.start)}
                             onChange={(value) => handleTimeChange(range.id, value, range.end)}
                         />
                         -
@@ -72,7 +76,7 @@ export const FormRangeList = () => {
                             .t`End time of the booking range`}</label>
                         <TimeInput
                             id={`range-end-time-${range.id}`}
-                            value={range.end}
+                            value={getUTCtime(range.end)}
                             onChange={(value) => handleTimeChange(range.id, range.start, value)}
                         />
                     </div>

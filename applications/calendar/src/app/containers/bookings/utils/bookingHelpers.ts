@@ -6,13 +6,13 @@ import {
     isBefore,
     isSameDay,
     isWeekend,
-    set,
     startOfDay,
     startOfWeek,
 } from 'date-fns';
 import { c } from 'ttag';
 
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
@@ -171,9 +171,11 @@ export const generateBookingRangeID = (start: Date, end: Date) => {
 };
 
 const createBookingRange = (date: Date, timezone: string) => {
-    // The range starts from 9 AM and ends at 5 PM
-    const start = set(date, { hours: 9 });
-    const end = set(date, { hours: 17 });
+    const { year, month, day } = fromLocalDate(date);
+
+    // Now safely create UTC dates for 9AM–5PM *on the same local day*
+    const start = toUTCDate({ year, month, day, hours: 9 });
+    const end = toUTCDate({ year, month, day, hours: 17 });
 
     return {
         id: generateBookingRangeID(start, end),
