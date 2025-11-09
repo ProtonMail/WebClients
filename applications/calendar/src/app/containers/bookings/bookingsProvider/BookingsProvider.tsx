@@ -14,7 +14,7 @@ import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddress
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
-import { getTimezone } from '@proton/shared/lib/date/timezone';
+import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/date/timezone';
 
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
@@ -85,10 +85,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const initializeFormData = () => {
         // Get the initial form data
+
         const newFormData = getInitialBookingFormState();
+        const timezone =
+            calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone() || '';
 
         // Generate the initial form data
-        const bookingRange = generateDefaultBookingRange(userSettings, '');
+        const bookingRange = generateDefaultBookingRange(userSettings, timezone);
         const bookingSlots = bookingRange
             .map((range) =>
                 generateSlotsFromRange({
@@ -103,6 +106,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
         // Set the initial form data
         newFormData.bookingSlots = bookingSlots;
+        newFormData.timezone = timezone;
         newFormData.duration = CalendarSettings?.DefaultEventDuration || DEFAULT_EVENT_DURATION;
         newFormData.selectedCalendar = preferredWritableCal?.ID || writeableCalendars[0].ID;
 
@@ -189,7 +193,9 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const addBookingRange = (data: Omit<BookingRange, 'id'>) => {
-        if (isBefore(data.start, new Date())) {
+        const now = new Date();
+        const nowWithTz = fromUTCDateToLocalFakeUTCDate(now, false, data.timezone);
+        if (isBefore(data.start, nowWithTz)) {
             createNotification({ text: c('Info').t`Booking cannot be added in the past.` });
             return;
         }
