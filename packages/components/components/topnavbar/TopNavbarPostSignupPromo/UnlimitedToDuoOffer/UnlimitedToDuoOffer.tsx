@@ -136,13 +136,7 @@ export const UnlimitedToDuoOffer = () => {
             promoChildren={spotlightConfig.topButton?.title}
             promoColor="norm"
             spotlightShow={spotlightState}
-            spotlightOnClose={() => {
-                sendTelemetryReportUnlimitedToDuo({
-                    event: TelemetryUnlimitedToDuoOffer.closeOffer,
-                    dimensions: { messageType: spotlightConfig.type },
-                });
-                handleClose();
-            }}
+            spotlightOnClose={handleClose}
             spotlightInnerClassName="spotlight-inner--center"
             spotlightContent={
                 <UnlimitedToDuoOfferContent
