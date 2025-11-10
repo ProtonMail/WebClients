@@ -20,8 +20,9 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { FlagProvider } from '@proton/unleash';
 
 import config from '../../../config';
+import { extraThunkArguments } from '../../../store/thunk';
 import { BookingsRouter } from '../BookingsRouter';
-import type { BookingAuthBootstrapResult } from '../interface';
+import type { BookingBootstrapResult } from '../interface';
 import { bookingAuthBootstrap } from './bookingAuthBootstrap';
 
 export const BookingAuthApp = () => {
@@ -29,7 +30,7 @@ export const BookingAuthApp = () => {
 
     const [error, setError] = useState<string | null>(null);
 
-    const bootstrapRef = useRef<BookingAuthBootstrapResult>();
+    const bootstrapRef = useRef<BookingBootstrapResult>();
 
     useEffect(() => {
         const initializeApp = async () => {
@@ -64,18 +65,18 @@ export const BookingAuthApp = () => {
         );
     }
 
-    const { store, api, unleashClient, authentication, history } = bootstrapRef.current!;
+    const { store } = bootstrapRef.current!;
 
     return (
         <ProtonApp config={config}>
             <ProtonStoreProvider store={store}>
-                <AuthenticationProvider store={authentication}>
-                    <FlagProvider unleashClient={unleashClient}>
-                        <ApiProvider api={api}>
+                <AuthenticationProvider store={extraThunkArguments.authentication}>
+                    <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
+                        <ApiProvider api={extraThunkArguments.api}>
                             <ErrorBoundary big component={<StandardErrorPage big />}>
                                 <NotificationsChildren />
                                 <ModalsChildren />
-                                <Router history={history}>
+                                <Router history={extraThunkArguments.history}>
                                     <BookingsRouter />
                                 </Router>
                             </ErrorBoundary>
