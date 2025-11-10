@@ -7,9 +7,9 @@ import { createAsyncQueue } from './utils/asyncQueue';
 export type { ArchiveItem } from './downloadTypes';
 
 type ArchiveTracker = {
-    registerFile(uid: string): void;
-    updateDownloadProgress(uid: string, downloadedBytes: number): void;
-    attachController(entry: DownloadableItem, controller: DownloadController): void;
+    registerFile(taskId: string): void;
+    updateDownloadProgress(taskId: string, downloadedBytes: number): void;
+    attachController(taskId: string, controller: DownloadController): void;
     pauseAll(): void;
     resumeAll(): void;
     waitForCompletion(): Promise<void>;
@@ -32,22 +32,22 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): Ar
     };
 
     return {
-        registerFile(uid: string) {
-            downloadedBytesMap[uid] = 0;
+        registerFile(taskId: string) {
+            downloadedBytesMap[taskId] = 0;
         },
-        updateDownloadProgress(uid: string, downloadedBytes: number) {
-            downloadedBytesMap[uid] = downloadedBytes;
+        updateDownloadProgress(taskId: string, downloadedBytes: number) {
+            downloadedBytesMap[taskId] = downloadedBytes;
             updateTotalProgress();
         },
-        attachController(entry: DownloadableItem, controller: DownloadController) {
-            controllerByUid.set(entry.uid, controller);
+        attachController(taskId: string, controller: DownloadController) {
+            controllerByUid.set(taskId, controller);
 
             const completionPromise = controller.completion().finally(() => {
-                completionPromises.delete(entry.uid);
-                controllerByUid.delete(entry.uid);
+                completionPromises.delete(taskId);
+                controllerByUid.delete(taskId);
             });
 
-            completionPromises.set(entry.uid, completionPromise);
+            completionPromises.set(taskId, completionPromise);
         },
         pauseAll() {
             controllerByUid.forEach((ctrl) => ctrl.pause());
@@ -72,8 +72,10 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): Ar
  * It does not wait for the network transfer to finish.
  */
 const createArchiveItem = async (
+    taskId: string,
     entry: DownloadableItem,
     tracker: ArchiveTracker,
+    scheduler: DownloadScheduler,
     abortSignal: AbortSignal
 ): Promise<ArchiveItem> => {
     if (!entry.isFile) {
@@ -88,18 +90,19 @@ const createArchiveItem = async (
     const downloader = await drive.getFileDownloader(entry.uid, abortSignal);
 
     const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
-    tracker.registerFile(entry.uid);
+    tracker.registerFile(taskId);
 
     let controller: DownloadController;
     try {
         controller = downloader.downloadToStream(writable, (downloadedBytes) => {
-            tracker.updateDownloadProgress(entry.uid, downloadedBytes);
+            tracker.updateDownloadProgress(taskId, downloadedBytes);
+            scheduler.updateDownloadProgress(taskId, downloadedBytes);
         });
     } catch (error) {
         throw error;
     }
 
-    tracker.attachController(entry, controller);
+    tracker.attachController(taskId, controller);
 
     return {
         isFile: true,
@@ -159,12 +162,13 @@ export class ArchiveStreamGenerator {
         })();
     }
 
-    private insertArchiveEntryInScheduler(entry: DownloadableItem) {
+    private insertArchiveEntryInScheduler(taskId: string, entry: DownloadableItem) {
         const downloadTask: DownloadQueueTask = {
-            nodes: [],
+            taskId,
+            node: entry,
             start: async () => {
                 this.pendingArchiveTasks += 1;
-                const archivePromise = createArchiveItem(entry, this.tracker, this.abortSignal);
+                const archivePromise = createArchiveItem(taskId, entry, this.tracker, this.scheduler, this.abortSignal);
 
                 archivePromise
                     .then((item) => {
@@ -197,7 +201,8 @@ export class ArchiveStreamGenerator {
     private async scheduleEntries(): Promise<void> {
         try {
             for await (const entry of this.entries) {
-                this.insertArchiveEntryInScheduler(entry);
+                const taskId = this.scheduler.generateTaskId();
+                this.insertArchiveEntryInScheduler(taskId, entry);
             }
             this.schedulingCompleted = true;
             this.maybeCloseQueue();

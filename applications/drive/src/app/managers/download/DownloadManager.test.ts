@@ -1,12 +1,17 @@
 import type { DownloadableItem } from './downloadTypes';
 import { createDeferred, createEmptyAsyncGenerator, flushAsync, trackInstances, waitForCondition } from './testUtils';
 
-const schedulerTracker = trackInstances((...args: unknown[]) => ({
-    constructorArgs: args,
-    scheduleDownload: jest.fn(),
-    cancelDownload: jest.fn(),
-    clearDownloads: jest.fn(),
-}));
+const schedulerTracker = trackInstances((...args: unknown[]) => {
+    let counter = 0;
+    return {
+        constructorArgs: args,
+        scheduleDownload: jest.fn(),
+        cancelDownload: jest.fn(),
+        clearDownloads: jest.fn(),
+        generateTaskId: jest.fn(() => `scheduler-task-${++counter}`),
+        updateDownloadProgress: jest.fn(),
+    };
+});
 
 const archiveStreamGeneratorTracker = trackInstances((...args: unknown[]) => ({
     constructorArgs: args,
@@ -258,7 +263,7 @@ describe('DownloadManager', () => {
 
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
         const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
-        expect(scheduledTask.nodes).toEqual([node]);
+        expect(scheduledTask.node).toEqual(node);
 
         const handle = await scheduledTask.start();
 
@@ -344,7 +349,7 @@ describe('DownloadManager', () => {
         expect(storeMockState.addDownloadItem).not.toHaveBeenCalled();
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
         const retriedTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
-        expect(retriedTask.nodes).toEqual([node]);
+        expect(retriedTask.node).toEqual(node);
     });
 
     it('should reuse existing queue items when retrying an archive download', async () => {

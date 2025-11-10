@@ -34,6 +34,14 @@ export function nodesStructureTraversal(nodes: DownloadableItem[], signal: Abort
         try {
             for await (const entry of fetchQueue.iterator()) {
                 pendingFetchTasks -= 1;
+
+                if (entry.isFile) {
+                    const maybeNode = await drive.getNode(entry.uid);
+                    const { node } = getNodeEntity(maybeNode);
+                    entry.storageSize = node.activeRevision?.storageSize ?? 0;
+                    archiveStorageSizeInBytes += entry.storageSize;
+                }
+
                 nodesQueue.push(entry);
 
                 if (!entry.isFile) {
@@ -44,10 +52,6 @@ export function nodesStructureTraversal(nodes: DownloadableItem[], signal: Abort
                         archiveStorageSizeInBytes += node.activeRevision?.storageSize ?? 0;
                         enqueueForFetch(childEntry);
                     }
-                } else {
-                    const maybeNode = await drive.getNode(entry.uid);
-                    const { node } = getNodeEntity(maybeNode);
-                    archiveStorageSizeInBytes += node.activeRevision?.storageSize ?? 0;
                 }
                 if (pendingFetchTasks === 0) {
                     fetchQueue.close();
