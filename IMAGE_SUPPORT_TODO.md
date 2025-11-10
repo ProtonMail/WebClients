@@ -60,15 +60,15 @@ markdown syntax and rendered inline with preview/modal UI.
 
 ### Phase 3.5: Streaming image_data Integration
 
-- [ ] Create Redux action to add attachment to message
+- [x] Create Redux action to add attachment to message
     - New action: addImageAttachment(messageId, attachment)
     - Reducer: append to message.attachments array
-- [ ] Handle image_data in redux integration (integrations/redux.ts:149)
+- [x] Handle image_data in redux integration (integrations/redux.ts:149)
     - Decode base64 data to Uint8Array
     - Create Attachment object with role='assistant'
     - Dispatch addImageAttachment action
     - Dispatch appendChunk with markdown: `\n\n![...](attachment:{image_id})\n\n`
-- [ ] Handle image_data in llm flow (llm/index.ts:243)
+- [x] Handle image_data in llm flow (llm/index.ts:243)
     - Same logic as redux integration
     - Handle encrypted content if needed
 - [ ] Test end-to-end image generation from LLM

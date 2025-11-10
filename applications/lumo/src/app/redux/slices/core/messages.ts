@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteMessage } from '../../../remote/types';
-import type { ChunkAction, FinishMessageAction, Message, MessageId, MessagePub } from '../../../types';
+import type { Attachment, ChunkAction, FinishMessageAction, Message, MessageId, MessagePub, ShallowAttachment } from '../../../types';
 
 export type PushMessageRequest = {
     id: MessageId;
@@ -16,11 +16,17 @@ export type PushMessageFailure = PushMessageRequest & {
     error: string;
 };
 
+export type AddImageAttachmentAction = {
+    messageId: MessageId;
+    attachment: ShallowAttachment;
+};
+
 // Low-level Redux store operations without side-effects.
 export const addMessage = createAction<MessagePub>('lumo/message/add');
 export const appendChunk = createAction<ChunkAction>('lumo/message/appendChunk');
 export const setToolCall = createAction<ChunkAction>('lumo/message/setToolCall');
 export const setToolResult = createAction<ChunkAction>('lumo/message/setToolResult');
+export const addImageAttachment = createAction<AddImageAttachmentAction>('lumo/message/addImageAttachment');
 export const finishMessage = createAction<FinishMessageAction>('lumo/message/finish');
 export const deleteMessage = createAction<MessageId>('lumo/message/delete');
 export const deleteAllMessages = createAction('lumo/message/deleteAll');
@@ -79,6 +85,16 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 return;
             }
             message.toolResult = chunk.content;
+        })
+        .addCase(addImageAttachment, (state, action) => {
+            const { messageId, attachment } = action.payload;
+            const message = state[messageId];
+            if (!message) {
+                console.warn(`cannot add image attachment to message ${messageId}: not found in Redux state`);
+                return;
+            }
+            message.attachments ??= [];
+            message.attachments.push(attachment);
         })
         .addCase(finishMessage, (state, action) => {
             const finishAction = action.payload;
