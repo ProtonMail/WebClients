@@ -587,6 +587,7 @@ export type AttachmentPriv = {
     originalRowCount?: number; // original number of rows in CSV/Excel files
     processedRowCount?: number; // number of rows actually processed
     tokenCount?: number; // cached token count for LLM context size calculation
+    role?: 'user' | 'assistant'; // source of attachment, defaults to 'user' for backward compatibility
 };
 
 // This contains metadata as well as the complete blob data.
@@ -600,6 +601,7 @@ export type SerializedAttachment = AttachmentPub & Partial<Encrypted> & LocalFla
 export type DeletedAttachment = Omit<SerializedAttachment, 'encrypted'> & Deleted;
 export type SerializedAttachmentMap = Record<AttachmentId, SerializedAttachment>;
 
+// FIXME!!! `null` isn't allowed on optional fields `?`, the `... == null` clauses MUST BE REMOVED from the guard function
 export function isAttachmentPub(value: any): value is AttachmentPub {
     return (
         typeof value === 'object' &&
@@ -626,6 +628,7 @@ export function isAttachmentPub(value: any): value is AttachmentPub {
     );
 }
 
+// FIXME!!! `null` isn't allowed on optional fields `?`, the `... == null` clauses MUST BE REMOVED from the guard function
 export function isAttachmentPriv(value: any): value is AttachmentPriv {
     return (
         typeof value === 'object' &&
@@ -641,7 +644,8 @@ export function isAttachmentPriv(value: any): value is AttachmentPriv {
         (value.processedRowCount === undefined ||
             value.processedRowCount === null ||
             typeof value.processedRowCount === 'number') &&
-        (value.tokenCount === undefined || value.tokenCount === null || typeof value.tokenCount === 'number')
+        (value.tokenCount === undefined || value.tokenCount === null || typeof value.tokenCount === 'number') &&
+        (value.role === undefined || value.role === null || value.role === 'user' || value.role === 'assistant')
     );
 }
 
@@ -684,8 +688,9 @@ export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
 }
 
 export function getAttachmentPriv(m: AttachmentPriv): AttachmentPriv {
-    const { filename, data, markdown, errorMessage, truncated, originalRowCount, processedRowCount, tokenCount } = m;
-    return { filename, data, markdown, errorMessage, truncated, originalRowCount, processedRowCount, tokenCount };
+    const { filename, data, markdown, errorMessage, truncated, originalRowCount, processedRowCount, tokenCount, role } =
+        m;
+    return { filename, data, markdown, errorMessage, truncated, originalRowCount, processedRowCount, tokenCount, role };
 }
 
 export function splitAttachment(m: Attachment): {
@@ -722,6 +727,7 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         originalRowCount,
         processedRowCount,
         tokenCount,
+        role,
     } = attachment;
     return {
         id,
@@ -744,6 +750,7 @@ export function cleanAttachment(attachment: Attachment): Attachment {
         ...(originalRowCount !== undefined && { originalRowCount }),
         ...(processedRowCount !== undefined && { processedRowCount }),
         ...(tokenCount !== undefined && { tokenCount }),
+        ...(role !== undefined && { role }),
     };
 }
 
