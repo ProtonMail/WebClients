@@ -294,9 +294,6 @@ const CalendarContainer = ({
     const view = (() => {
         if (isBookingActive) {
             // We want to reset the custom range if present to have the week view
-            if (customRange) {
-                setCustom({ range: undefined });
-            }
             return VIEWS.WEEK;
         }
 
@@ -347,7 +344,9 @@ const CalendarContainer = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-BF5273
     }, [view]);
 
-    const range = viewportWidth['<=small'] ? 0 : getRange(view, customRange);
+    // We don't want the custom range when booking is active, and we want to preserve it's value to go back once booking is done
+    const tmpCustomRange = isBookingActive ? undefined : customRange;
+    const range = viewportWidth['<=small'] ? 0 : getRange(view, tmpCustomRange);
     const weekStartsOn = getWeekStartsOn(userSettings);
     const displayWeekNumbers = getDisplayWeekNumbers(calendarUserSettings);
     const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarUserSettings);
