@@ -10,6 +10,7 @@ import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
@@ -148,7 +149,7 @@ export const ParticipantControls = () => {
                     {roomName}
                 </div>
                 <div className="participant-controls-buttons flex flex-nowrap gap-2">
-                    {isLargerThanMd && !isNarrowHeight ? (
+                    {!isMobile() ? (
                         <>
                             <ToggleButton
                                 OnIconComponent={MicrophoneWithVolumeWithMicrophoneState}
@@ -164,7 +165,11 @@ export const ParticipantControls = () => {
                                         return;
                                     }
 
-                                    void toggleAudio({ isEnabled: !isMicrophoneEnabled, audioDeviceId });
+                                    void toggleAudio({
+                                        isEnabled: !isMicrophoneEnabled,
+                                        audioDeviceId,
+                                        preserveCache: true,
+                                    });
                                 }}
                                 Content={AudioSettings}
                                 popUp={PopUpControls.Microphone}
@@ -199,6 +204,7 @@ export const ParticipantControls = () => {
                                         void toggleVideo({
                                             isEnabled: !isCameraEnabled,
                                             videoDeviceId,
+                                            preserveCache: true,
                                         });
                                     }
                                 }}
@@ -233,7 +239,11 @@ export const ParticipantControls = () => {
                                         return;
                                     }
 
-                                    void toggleAudio({ isEnabled: !isMicrophoneEnabled, audioDeviceId });
+                                    void toggleAudio({
+                                        isEnabled: !isMicrophoneEnabled,
+                                        audioDeviceId,
+                                        preserveCache: true,
+                                    });
                                 }}
                                 indicatorContent={microphoneHasWarning ? '!' : undefined}
                                 indicatorStatus={microphoneHasWarning ? 'warning' : 'success'}
@@ -253,7 +263,11 @@ export const ParticipantControls = () => {
                                     }
 
                                     if (videoDeviceId) {
-                                        void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
+                                        void toggleVideo({
+                                            isEnabled: !isCameraEnabled,
+                                            videoDeviceId,
+                                            preserveCache: true,
+                                        });
                                     }
                                 }}
                                 indicatorContent={cameraHasWarning ? '!' : undefined}

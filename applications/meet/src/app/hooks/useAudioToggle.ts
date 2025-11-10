@@ -5,15 +5,18 @@ import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
 import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
 import { Track } from 'livekit-client';
 
+import { DEFAULT_DEVICE_ID } from '../constants';
 import { audioQuality } from '../qualityConstants';
 import type { SwitchActiveDevice } from '../types';
+import { isAudioSessionAvailable, restoreIOSAudioQuality, setAudioSessionType } from '../utils/ios-audio-session';
 
 const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
 
 export const useAudioToggle = (
     activeMicrophoneDeviceId: string,
     switchActiveDevice: SwitchActiveDevice,
-    initialAudioState: boolean
+    initialAudioState: boolean,
+    systemDefaultMicrophone: MediaDeviceInfo
 ) => {
     const [noiseFilter, setNoiseFilter] = useState(isAdvancedNoiseFilterSupported);
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
@@ -31,15 +34,19 @@ export const useAudioToggle = (
             isEnabled?: boolean;
             audioDeviceId?: string | null;
             enableNoiseFilter?: boolean;
+            preserveCache?: boolean;
         } = {}
     ) => {
         const {
             isEnabled = prevEnabled.current ?? initialAudioState,
             audioDeviceId = activeMicrophoneDeviceId,
             enableNoiseFilter = noiseFilter,
+            preserveCache,
         } = params;
 
-        if (toggleInProgress.current || !audioDeviceId) {
+        const deviceId = audioDeviceId === DEFAULT_DEVICE_ID ? systemDefaultMicrophone.deviceId : audioDeviceId;
+
+        if (toggleInProgress.current || !deviceId) {
             return;
         }
 
@@ -48,25 +55,44 @@ export const useAudioToggle = (
 
         toggleInProgress.current = true;
 
+        // On iOS Safari, we need to let the system decide which device to use by not specifying a deviceId constraint.
+        // The audioSession workaround will ensure the correct external device (AirPods, wired headset) is selected.
+        const useIOSWorkaround = isAudioSessionAvailable();
+
         const audio = {
-            deviceId: { exact: audioDeviceId as string },
+            ...(useIOSWorkaround ? {} : { deviceId: { exact: deviceId as string } }),
             autoGainControl: true,
             echoCancellation: true,
             noiseSuppression: enableNoiseFilter,
         };
 
         try {
-            await localParticipant.setMicrophoneEnabled(
-                isEnabled && !!audioDeviceId,
-                audioDeviceId ? audio : undefined,
-                {
-                    audioPreset: {
-                        maxBitrate: audioQuality,
-                    },
-                }
-            );
+            // Apply iOS Safari audioSession workaround before enabling microphone
+            // This ensures the correct device is selected and audio routing is correct
+            if (useIOSWorkaround && isEnabled) {
+                setAudioSessionType('auto');
+            }
 
-            await switchActiveDevice('audioinput', audioDeviceId);
+            await localParticipant.setMicrophoneEnabled(isEnabled && !!deviceId, deviceId ? audio : undefined, {
+                audioPreset: {
+                    maxBitrate: audioQuality,
+                },
+            });
+
+            if (useIOSWorkaround) {
+                if (isEnabled) {
+                    setAudioSessionType('play-and-record');
+                } else {
+                    restoreIOSAudioQuality();
+                }
+            }
+
+            await switchActiveDevice({
+                deviceType: 'audioinput',
+                deviceId,
+                isSystemDefaultDevice: audioDeviceId === DEFAULT_DEVICE_ID,
+                preserveDefaultDevice: !!preserveCache,
+            });
 
             const audioTrack = [...localParticipant.audioTrackPublications.values()].find(
                 (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare && item.audioTrack
