@@ -1,5 +1,3 @@
-import ReactTestUtils from 'react-dom/test-utils';
-
 // Select option is broken on react. Correct the HTML here.
 export const normalizeSelectOptions = (el: HTMLElement) => {
     el.querySelectorAll('select').forEach((selectEl) => {
@@ -12,6 +10,19 @@ export const normalizeSelectOptions = (el: HTMLElement) => {
             }
         }
     });
+};
+
+// To trigger the `onChange` handler and bypass the dedupe functionality which doesn't trigger it in react.
+// Taken from https://github.com/facebook/react/issues/10135#issuecomment-314441175
+const setNativeValue = (element: HTMLInputElement, value: string) => {
+    const valueSetter = Object.getOwnPropertyDescriptor(element, 'value')?.set;
+    const prototype = Object.getPrototypeOf(element);
+    const prototypeValueSetter = Object.getOwnPropertyDescriptor(prototype, 'value')?.set;
+    if (valueSetter && valueSetter !== prototypeValueSetter) {
+        prototypeValueSetter?.call(element, value);
+    } else {
+        valueSetter?.call(element, value);
+    }
 };
 
 interface EventPayload {
@@ -29,20 +40,21 @@ export const handleEvent = (renderEl: HTMLElement | undefined, eventPayload: Eve
     if (type === 'keydown' && id) {
         const inputEl = renderEl.querySelector<HTMLInputElement>(`#${id}`);
         if (inputEl) {
-            ReactTestUtils.Simulate.keyDown(inputEl, { key: eventPayload.key });
+            inputEl.dispatchEvent(new KeyboardEvent('keydown', { key: eventPayload.key, bubbles: true }));
         }
     }
     if (type === 'input' && id) {
         const inputEl = renderEl.querySelector<HTMLInputElement>(`#${id}`);
         if (inputEl) {
-            inputEl.value = eventPayload.value || '';
-            ReactTestUtils.Simulate.change(inputEl);
+            setNativeValue(inputEl, eventPayload.value || '');
+            inputEl.dispatchEvent(new Event('input', { bubbles: true }));
+            inputEl.dispatchEvent(new Event('change', { bubbles: true }));
         }
     }
     if (type === 'click' && id) {
         const targetEl = renderEl.querySelector(`#${id}`);
         if (targetEl) {
-            ReactTestUtils.Simulate.click(targetEl);
+            targetEl.dispatchEvent(new MouseEvent('click', { bubbles: true }));
         }
     }
 };
