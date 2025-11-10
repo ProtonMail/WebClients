@@ -71,7 +71,7 @@ const tabIndexToTransferGroup = {
 
 type TabIndices = keyof typeof tabIndexToTransferGroup;
 
-const TransferManagerLegacy = ({
+const TransferManagerLegacyInner = ({
     downloads,
     uploads,
     stats,
@@ -339,7 +339,7 @@ const TransferManagerLegacy = ({
  * list element will be *always* present in DOM for correct transfer manager list
  * width calculation.
  */
-const TransferManagerContainer = ({
+export const TransferManagerLegacy = ({
     onVirusReport,
 }: {
     onVirusReport?: (params: { transferId: string; linkId?: string; errorMessage?: string }) => void;
@@ -352,7 +352,7 @@ const TransferManagerContainer = ({
     }
 
     return (
-        <TransferManagerLegacy
+        <TransferManagerLegacyInner
             downloads={downloads}
             uploads={uploads}
             stats={stats}
@@ -363,5 +363,3 @@ const TransferManagerContainer = ({
         />
     );
 };
-
-export default TransferManagerContainer;
