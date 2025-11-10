@@ -377,6 +377,23 @@ describe('Matchers', () => {
             });
         });
 
+        test('handles wildcard combined with expand patterns', () => {
+            const compiled = compileRules({
+                version: '2',
+                rules: { '{*,*.*}.example.com': { exclude: ['wildcard'] } },
+            });
+
+            expect(matchRules(compiled, new URL('https://api.example.com'))).toEqual({
+                version: '2',
+                exclude: ['wildcard'],
+            });
+
+            expect(matchRules(compiled, new URL('https://123.api.example.com'))).toEqual({
+                version: '2',
+                exclude: ['wildcard'],
+            });
+        });
+
         test('merges rules with wildcard and exact matches', () => {
             const compiled = compileRules({
                 version: '2',
