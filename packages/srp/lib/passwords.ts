@@ -17,12 +17,12 @@ import { cleanUsername } from './utils/username';
  * Expand a hash
  */
 export const expandHash = async (input: Uint8Array<ArrayBuffer>) => {
-    const promises = [];
-    const arr = mergeUint8Arrays([input, new Uint8Array([0])]);
-    for (let i = 1; i <= 4; i++) {
-        promises.push(CryptoProxy.computeHash({ algorithm: 'SHA512', data: arr }));
-        arr[arr.length - 1] = i;
-    }
+    const promises = new Array(4).fill(null).map((_, i) =>
+        CryptoProxy.computeHash({
+            algorithm: 'SHA512',
+            data: mergeUint8Arrays([input, new Uint8Array([i])]),
+        })
+    );
     return mergeUint8Arrays(await Promise.all(promises));
 };
 

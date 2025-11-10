@@ -11,10 +11,11 @@ export const getCryptoWorkerOptions = (
     // This is to avoid loading too many workers to prevent load issues.
     if (appName === APPS.PROTONACCOUNT || appName === APPS.PROTONVPN_SETTINGS) {
         return {
+            awaitOnFirstUse: true,
             poolSize: clamp(navigator.hardwareConcurrency, 1, 2),
             openpgpConfigOptions,
         };
     }
 
-    return { openpgpConfigOptions };
+    return { openpgpConfigOptions, awaitOnFirstUse: true };
 };

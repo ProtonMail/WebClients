@@ -11,6 +11,19 @@ import { mainThreadTransferHandlers } from './transferHandlers';
 export interface WorkerInitOptions extends InitOptions {}
 
 export interface WorkerPoolInitOptions {
+    /**
+     * Whether the waiting for the worker initialization should be done on first use of the WorkerPool,
+     * instead of as part of `init`.
+     * Setting this to true makes `init` faster, but any worker loading errors will be thrown later on
+     * (see also `awaitOnFirstUseErrorCallback`).
+     */
+    awaitOnFirstUse?: boolean;
+    /**
+     * Callback triggered when the worker loading promise throws;
+     * it's intended for reporting purposes when using enabling the `awaitOnFirstUse` option,
+     * since the errors are not thrown by `init`.
+     */
+    awaitOnFirstUseErrorCallback?: (err: Error) => void;
     poolSize?: number;
     openpgpConfigOptions?: WorkerInitOptions;
 }
@@ -43,7 +56,7 @@ const errorReporter = (err: Error) => {
 
 // Singleton worker pool.
 export const CryptoWorkerPool: WorkerPoolInterface = (() => {
-    let workerPool: Remote<CryptoApi>[] | null = null;
+    let workerPoolPromise: Promise<Remote<CryptoApi>[]> | null = null;
     let i = -1;
 
     const initWorker = async (openpgpConfigOptions: WorkerInitOptions) => {
@@ -76,10 +89,11 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
      * (wasm module & allocated memory) across calls.
      * @param [fixed] - whether to always return the same worker
      */
-    const getWorker = (fixed = false): Remote<CryptoApi> => {
-        if (workerPool == null) {
+    const getWorker = async (fixed = false): Promise<Remote<CryptoApi>> => {
+        if (workerPoolPromise === null) {
             throw new Error('Uninitialised worker pool');
         }
+        const workerPool = await workerPoolPromise;
         if (fixed) {
             return workerPool[0];
         }
@@ -89,62 +103,84 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
 
     // The return type is technically `Remote<CryptoApi>[]` but that removes some type inference capabilities that are
     // useful to type-check the internal worker pool functions.
-    const getAllWorkers = (): CryptoApi[] => {
-        if (workerPool == null) {
+    const getAllWorkers = async (): Promise<CryptoApi[]> => {
+        if (workerPoolPromise === null) {
             throw new Error('Uninitialised worker pool');
         }
+        const workerPool = await workerPoolPromise;
         return workerPool as any as CryptoApi[];
     };
 
     return {
-        init: async ({ poolSize = navigator.hardwareConcurrency || 1, openpgpConfigOptions = {} } = {}) => {
-            if (workerPool !== null) {
+        init: async ({
+            awaitOnFirstUse = false,
+            awaitOnFirstUseErrorCallback = () => {},
+            poolSize = navigator.hardwareConcurrency || 1,
+            openpgpConfigOptions = {},
+        } = {}) => {
+            if (workerPoolPromise !== null) {
                 throw new Error('worker pool already initialised');
             }
-            // We load one worker early to ensure the browser serves the cached resources to the rest of the pool
-            workerPool = [await initWorker(openpgpConfigOptions)];
-            if (poolSize > 1) {
-                workerPool = workerPool.concat(
-                    await Promise.all(new Array(poolSize - 1).fill(null).map(() => initWorker(openpgpConfigOptions)))
-                );
+            workerPoolPromise = (async () => {
+                // We load one worker early to ensure the browser serves the cached resources to the rest of the pool
+                let workerPool = [await initWorker(openpgpConfigOptions)];
+                if (poolSize > 1) {
+                    workerPool = workerPool.concat(
+                        await Promise.all(
+                            new Array(poolSize - 1).fill(null).map(() => initWorker(openpgpConfigOptions))
+                        )
+                    );
+                }
+                mainThreadTransferHandlers.forEach(({ name, handler }) => transferHandlers.set(name, handler));
+                return workerPool;
+            })().catch((err) => {
+                awaitOnFirstUseErrorCallback(err);
+                throw err;
+            });
+
+            if (!awaitOnFirstUse) {
+                await workerPoolPromise;
             }
-            mainThreadTransferHandlers.forEach(({ name, handler }) => transferHandlers.set(name, handler));
         },
         destroy: async () => {
-            workerPool && (await Promise.all(workerPool.map(destroyWorker)));
-            workerPool = null;
+            if (workerPoolPromise) {
+                const workerPool = await workerPoolPromise;
+                await Promise.all(workerPool.map(destroyWorker));
+                workerPoolPromise = null;
+            }
         },
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
-        encryptMessage: (opts) => getWorker().encryptMessage(opts).catch(errorReporter),
-        decryptMessage: (opts) => getWorker().decryptMessage(opts).catch(errorReporter),
+        encryptMessage: async (opts) => (await getWorker()).encryptMessage(opts).catch(errorReporter),
+        decryptMessage: async (opts) => (await getWorker()).decryptMessage(opts).catch(errorReporter),
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
-        signMessage: (opts) => getWorker().signMessage(opts).catch(errorReporter),
+        signMessage: async (opts) => (await getWorker()).signMessage(opts).catch(errorReporter),
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
-        verifyMessage: (opts) => getWorker().verifyMessage(opts),
-        verifyCleartextMessage: (opts) => getWorker().verifyCleartextMessage(opts).catch(errorReporter),
-        processMIME: (opts) => getWorker().processMIME(opts).catch(errorReporter),
-        computeHash: (opts) => getWorker().computeHash(opts).catch(errorReporter),
-        computeHashStream: (opts) => getWorker().computeHashStream(opts).catch(errorReporter),
-        computeArgon2: (opts) => getWorker(true).computeArgon2(opts).catch(errorReporter),
+        verifyMessage: async (opts) => (await getWorker()).verifyMessage(opts),
+        verifyCleartextMessage: async (opts) => (await getWorker()).verifyCleartextMessage(opts).catch(errorReporter),
+        processMIME: async (opts) => (await getWorker()).processMIME(opts).catch(errorReporter),
+        computeHash: async (opts) => (await getWorker()).computeHash(opts).catch(errorReporter),
+        computeHashStream: async (opts) => (await getWorker()).computeHashStream(opts).catch(errorReporter),
+        computeArgon2: async (opts) => (await getWorker(true)).computeArgon2(opts).catch(errorReporter),
 
-        generateSessionKey: (opts) => getWorker().generateSessionKey(opts).catch(errorReporter),
-        generateSessionKeyForAlgorithm: (opts) => getWorker().generateSessionKeyForAlgorithm(opts).catch(errorReporter),
-        encryptSessionKey: (opts) => getWorker().encryptSessionKey(opts).catch(errorReporter),
-        decryptSessionKey: (opts) => getWorker().decryptSessionKey(opts).catch(errorReporter),
+        generateSessionKey: async (opts) => (await getWorker()).generateSessionKey(opts).catch(errorReporter),
+        generateSessionKeyForAlgorithm: async (opts) =>
+            (await getWorker()).generateSessionKeyForAlgorithm(opts).catch(errorReporter),
+        encryptSessionKey: async (opts) => (await getWorker()).encryptSessionKey(opts).catch(errorReporter),
+        decryptSessionKey: async (opts) => (await getWorker()).decryptSessionKey(opts).catch(errorReporter),
         importPrivateKey: async (opts) => {
-            const [first, ...rest] = getAllWorkers();
+            const [first, ...rest] = await getAllWorkers();
             const result = await first.importPrivateKey(opts).catch(errorReporter);
             await Promise.all(rest.map((worker) => worker.importPrivateKey(opts, result._idx)));
             return result;
         },
         importPublicKey: async (opts) => {
-            const [first, ...rest] = getAllWorkers();
+            const [first, ...rest] = await getAllWorkers();
             const result = await first.importPublicKey(opts).catch(errorReporter);
             await Promise.all(rest.map((worker) => worker.importPublicKey(opts, result._idx)));
             return result;
         },
         generateKey: async (opts) => {
-            const [first, ...rest] = getAllWorkers();
+            const [first, ...rest] = await getAllWorkers();
             const keyReference = await first.generateKey(opts).catch(errorReporter);
             const key = await first.exportPrivateKey({ privateKey: keyReference, passphrase: null, format: 'binary' });
             await Promise.all(
@@ -153,7 +189,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
             return keyReference;
         },
         reformatKey: async (opts) => {
-            const [first, ...rest] = getAllWorkers();
+            const [first, ...rest] = await getAllWorkers();
             const keyReference = await first.reformatKey(opts).catch(errorReporter);
             const key = await first.exportPrivateKey({ privateKey: keyReference, passphrase: null, format: 'binary' });
             await Promise.all(
@@ -161,16 +197,17 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
             );
             return keyReference;
         },
-        generateE2EEForwardingMaterial: (opts) => getWorker().generateE2EEForwardingMaterial(opts).catch(errorReporter),
+        generateE2EEForwardingMaterial: async (opts) =>
+            (await getWorker()).generateE2EEForwardingMaterial(opts).catch(errorReporter),
         doesKeySupportE2EEForwarding: async (opts) =>
-            getWorker().doesKeySupportE2EEForwarding(opts).catch(errorReporter),
-        isE2EEForwardingKey: async (opts) => getWorker().isE2EEForwardingKey(opts).catch(errorReporter),
+            (await getWorker()).doesKeySupportE2EEForwarding(opts).catch(errorReporter),
+        isE2EEForwardingKey: async (opts) => (await getWorker()).isE2EEForwardingKey(opts).catch(errorReporter),
 
         replaceUserIDs: async (opts) => {
-            await Promise.all(getAllWorkers().map((worker) => worker.replaceUserIDs(opts)));
+            await Promise.all((await getAllWorkers()).map((worker) => worker.replaceUserIDs(opts)));
         },
         cloneKeyAndChangeUserIDs: async (opts) => {
-            const [first, ...rest] = getAllWorkers();
+            const [first, ...rest] = await getAllWorkers();
             const keyReference = await first.cloneKeyAndChangeUserIDs(opts).catch(errorReporter);
             const key = await first.exportPrivateKey({ privateKey: keyReference, passphrase: null, format: 'binary' });
             await Promise.all(
@@ -178,24 +215,24 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
             );
             return keyReference;
         },
-        exportPublicKey: (opts) => getWorker().exportPublicKey(opts).catch(errorReporter),
-        exportPrivateKey: (opts) => getWorker().exportPrivateKey(opts).catch(errorReporter),
+        exportPublicKey: async (opts) => (await getWorker()).exportPublicKey(opts).catch(errorReporter),
+        exportPrivateKey: async (opts) => (await getWorker()).exportPrivateKey(opts).catch(errorReporter),
         clearKeyStore: async () => {
-            await Promise.all(getAllWorkers().map((worker) => worker.clearKeyStore()));
+            await Promise.all((await getAllWorkers()).map((worker) => worker.clearKeyStore()));
         },
         clearKey: async (opts) => {
-            await Promise.all(getAllWorkers().map((worker) => worker.clearKey(opts)));
+            await Promise.all((await getAllWorkers()).map((worker) => worker.clearKey(opts)));
         },
 
-        isExpiredKey: (opts) => getWorker().isExpiredKey(opts).catch(errorReporter),
-        isRevokedKey: (opts) => getWorker().isRevokedKey(opts).catch(errorReporter),
-        canKeyEncrypt: (opts) => getWorker().canKeyEncrypt(opts).catch(errorReporter),
-        getMessageInfo: (opts) => getWorker().getMessageInfo(opts).catch(errorReporter),
-        getKeyInfo: (opts) => getWorker().getKeyInfo(opts).catch(errorReporter),
-        getSignatureInfo: (opts) => getWorker().getSignatureInfo(opts).catch(errorReporter),
-        getArmoredKeys: (opts) => getWorker().getArmoredKeys(opts),
-        getArmoredSignature: (opts) => getWorker().getArmoredSignature(opts),
-        getArmoredMessage: (opts) => getWorker().getArmoredMessage(opts),
+        isExpiredKey: async (opts) => (await getWorker()).isExpiredKey(opts).catch(errorReporter),
+        isRevokedKey: async (opts) => (await getWorker()).isRevokedKey(opts).catch(errorReporter),
+        canKeyEncrypt: async (opts) => (await getWorker()).canKeyEncrypt(opts).catch(errorReporter),
+        getMessageInfo: async (opts) => (await getWorker()).getMessageInfo(opts).catch(errorReporter),
+        getKeyInfo: async (opts) => (await getWorker()).getKeyInfo(opts).catch(errorReporter),
+        getSignatureInfo: async (opts) => (await getWorker()).getSignatureInfo(opts).catch(errorReporter),
+        getArmoredKeys: async (opts) => (await getWorker()).getArmoredKeys(opts),
+        getArmoredSignature: async (opts) => (await getWorker()).getArmoredSignature(opts),
+        getArmoredMessage: async (opts) => (await getWorker()).getArmoredMessage(opts),
     } as WorkerPoolInterface; // casting needed to 'reuse' CryptoApi's parametric types declarations and preserve dynamic inference of
     // the output types based on the input ones.
 })();
