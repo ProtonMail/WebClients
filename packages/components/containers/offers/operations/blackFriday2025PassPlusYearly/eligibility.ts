@@ -22,9 +22,17 @@ interface Props {
     offerConfig: OfferConfig;
     lastSubscriptionEnd?: number;
     preferredCurrency: Currency;
+    userInExperiment?: boolean;
 }
 
-const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCurrency }: Props) => {
+const isEligible = ({
+    subscription,
+    protonConfig,
+    user,
+    offerConfig,
+    preferredCurrency,
+    userInExperiment = false,
+}: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
         protonConfig?.APP_NAME === APPS.PROTONPASS ||
@@ -45,6 +53,10 @@ const isEligible = ({ subscription, protonConfig, user, offerConfig, preferredCu
         isExternal ||
         hasForbiddenPassSubscription
     ) {
+        return false;
+    }
+
+    if (userInExperiment) {
         return false;
     }
 
