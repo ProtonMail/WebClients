@@ -1,34 +1,41 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import { ConnectionState, type LocalTrack, Room, RoomEvent, Track } from 'livekit-client';
 
-import { DEFAULT_DEVICE_ID } from '../constants';
-import type { SwitchActiveDevice } from '../types';
+import type { DeviceState, SwitchActiveDevice } from '../types';
 import { supportsSetSinkId } from '../utils/browser';
-import { filterDevices } from '../utils/filterDevices';
+import { filterDevices, isDefaultDevice } from '../utils/device-utils';
 
 interface UseDynamicDeviceHandlingParams {
     toggleVideo: ({
         isEnabled,
         videoDeviceId,
         forceUpdate,
+        preserveCache,
     }: {
         isEnabled?: boolean;
         videoDeviceId?: string;
         forceUpdate?: boolean;
+        preserveCache?: boolean;
     }) => Promise<void>;
     toggleAudio: ({
         isEnabled,
         audioDeviceId,
+        preserveCache,
     }: {
         isEnabled?: boolean;
         audioDeviceId?: string | null;
+        preserveCache?: boolean;
     }) => Promise<void>;
     switchActiveDevice: SwitchActiveDevice;
     activeMicrophoneDeviceId: string;
     activeAudioOutputDeviceId: string;
     activeCameraDeviceId: string;
+    cameraState: DeviceState;
+    microphoneState: DeviceState;
+    speakerState: DeviceState;
+    getDefaultDevice: (devices: MediaDeviceInfo[]) => MediaDeviceInfo;
 }
 
 export const useDynamicDeviceHandling = ({
@@ -38,23 +45,67 @@ export const useDynamicDeviceHandling = ({
     activeMicrophoneDeviceId,
     activeAudioOutputDeviceId,
     activeCameraDeviceId,
+    cameraState,
+    microphoneState,
+    speakerState,
+    getDefaultDevice,
 }: UseDynamicDeviceHandlingParams) => {
     const room = useRoomContext();
+
+    // Track previous system default device IDs to detect OS default device changes
+    const previousSystemDefaultsRef = useRef<{
+        microphone: string | null;
+        camera: string | null;
+        speaker: string | null;
+    }>({
+        microphone: microphoneState.systemDefault?.deviceId ?? null,
+        camera: cameraState.systemDefault?.deviceId ?? null,
+        speaker: speakerState.systemDefault?.deviceId ?? null,
+    });
 
     const dynamicDeviceUpdate = useCallback(
         ({
             deviceList,
             deviceId,
+            cachedDeviceId,
+            systemDefaultDevice,
+            previousSystemDefaultDeviceId,
+            useSystemDefault,
             updateFunction,
         }: {
             deviceList: MediaDeviceInfo[];
             deviceId: string | null;
+            cachedDeviceId: string | null;
+            systemDefaultDevice: MediaDeviceInfo;
+            previousSystemDefaultDeviceId: string | null;
+            useSystemDefault: boolean;
             updateFunction: (newDeviceId: string) => void;
         }) => {
+            // Handle case where OS default device changed and user is using default option
+            if (
+                useSystemDefault &&
+                previousSystemDefaultDeviceId &&
+                previousSystemDefaultDeviceId !== systemDefaultDevice.deviceId
+            ) {
+                updateFunction(systemDefaultDevice.deviceId);
+                return;
+            }
+
+            // Handle case where user plugs back device
+            if (cachedDeviceId && deviceList.find((device) => device.deviceId === cachedDeviceId)) {
+                updateFunction(cachedDeviceId);
+                return;
+            }
+
             const currentDevice = deviceList.find((device) => device.deviceId === deviceId);
 
-            if (!currentDevice && deviceList.length > 0 && deviceId !== DEFAULT_DEVICE_ID) {
-                updateFunction(deviceList[0].deviceId);
+            // Handle case where user unplugs device
+            if (!currentDevice && deviceList.length > 0 && !isDefaultDevice(deviceId)) {
+                if (!deviceList.find((device) => device.deviceId === systemDefaultDevice.deviceId)) {
+                    updateFunction(deviceList[0].deviceId);
+                    return;
+                }
+                updateFunction(systemDefaultDevice.deviceId);
                 return;
             }
         },
@@ -81,44 +132,87 @@ export const useDynamicDeviceHandling = ({
         const camerasAfterDeviceChange = filterDevices(cameras);
         const speakersAfterDeviceChange = filterDevices(speakers);
 
-        dynamicDeviceUpdate({
-            deviceList: microphonesAfterDeviceChange,
-            deviceId: activeMicrophoneDeviceId,
-            updateFunction: (newDeviceId: string) => {
-                if (room.state === ConnectionState.Connected) {
-                    void toggleAudio({ audioDeviceId: newDeviceId });
-                } else {
-                    void switchActiveDevice('audioinput', newDeviceId);
-                }
-            },
-        });
-        dynamicDeviceUpdate({
-            deviceList: camerasAfterDeviceChange,
-            deviceId: activeCameraDeviceId,
-            updateFunction: async (newDeviceId: string) => {
-                if (room.state === ConnectionState.Connected) {
-                    const cameraTrack = room.localParticipant.getTrackPublication(Track.Source.Camera)?.track;
+        // Get fresh system default devices from the newly fetched device lists
+        const currentMicrophoneSystemDefault = getDefaultDevice(microphones);
+        const currentCameraSystemDefault = getDefaultDevice(cameras);
+        const currentSpeakerSystemDefault = getDefaultDevice(speakers);
 
-                    // In case of unplugging a device, we need this extra cleanup if there was a background blur processor
-                    if (cameraTrack?.getProcessor()) {
-                        await room.localParticipant.unpublishTrack(cameraTrack as LocalTrack);
+        const deviceConfigs = [
+            {
+                deviceList: microphonesAfterDeviceChange,
+                deviceId: activeMicrophoneDeviceId,
+                cachedDeviceId: microphoneState.cachedDeviceId,
+                systemDefaultDevice: currentMicrophoneSystemDefault,
+                previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.microphone,
+                useSystemDefault: microphoneState.useSystemDefault,
+                updateFunction: (newDeviceId: string) => {
+                    if (room.state === ConnectionState.Connected) {
+                        void toggleAudio({ audioDeviceId: newDeviceId, preserveCache: true });
+                    } else {
+                        void switchActiveDevice({
+                            deviceType: 'audioinput',
+                            deviceId: newDeviceId,
+                            isSystemDefaultDevice: microphoneState.useSystemDefault,
+                            preserveDefaultDevice: true,
+                        });
                     }
+                },
+            },
+            {
+                deviceList: camerasAfterDeviceChange,
+                deviceId: activeCameraDeviceId,
+                cachedDeviceId: cameraState.cachedDeviceId,
+                systemDefaultDevice: currentCameraSystemDefault,
+                previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.camera,
+                useSystemDefault: cameraState.useSystemDefault,
+                updateFunction: async (newDeviceId: string) => {
+                    if (room.state === ConnectionState.Connected) {
+                        const cameraTrack = room.localParticipant.getTrackPublication(Track.Source.Camera)?.track;
 
-                    void toggleVideo({ videoDeviceId: newDeviceId, forceUpdate: true });
-                } else {
-                    void switchActiveDevice('videoinput', newDeviceId);
-                }
+                        // In case of unplugging a device, we need this extra cleanup if there was a background blur processor
+                        if (cameraTrack?.getProcessor()) {
+                            await room.localParticipant.unpublishTrack(cameraTrack as LocalTrack);
+                        }
+
+                        void toggleVideo({ videoDeviceId: newDeviceId, forceUpdate: true, preserveCache: true });
+                    } else {
+                        void switchActiveDevice({
+                            deviceType: 'videoinput',
+                            deviceId: newDeviceId,
+                            isSystemDefaultDevice: cameraState.useSystemDefault,
+                            preserveDefaultDevice: true,
+                        });
+                    }
+                },
             },
-        });
-        dynamicDeviceUpdate({
-            deviceList: speakersAfterDeviceChange,
-            deviceId: activeAudioOutputDeviceId,
-            updateFunction: (newDeviceId: string) => {
-                if (supportsSetSinkId()) {
-                    void switchActiveDevice('audiooutput', newDeviceId);
-                }
+            {
+                deviceList: speakersAfterDeviceChange,
+                deviceId: activeAudioOutputDeviceId,
+                cachedDeviceId: speakerState.cachedDeviceId,
+                systemDefaultDevice: currentSpeakerSystemDefault,
+                previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.speaker,
+                useSystemDefault: speakerState.useSystemDefault,
+                updateFunction: (newDeviceId: string) => {
+                    if (supportsSetSinkId()) {
+                        void switchActiveDevice({
+                            deviceType: 'audiooutput',
+                            deviceId: newDeviceId,
+                            isSystemDefaultDevice: speakerState.useSystemDefault,
+                            preserveDefaultDevice: true,
+                        });
+                    }
+                },
             },
-        });
+        ];
+
+        deviceConfigs.forEach((config) => dynamicDeviceUpdate(config));
+
+        // Update the ref with current system default device IDs for next change detection
+        previousSystemDefaultsRef.current = {
+            microphone: currentMicrophoneSystemDefault.deviceId,
+            camera: currentCameraSystemDefault.deviceId,
+            speaker: currentSpeakerSystemDefault.deviceId,
+        };
     }, [
         room,
         toggleAudio,
@@ -127,6 +221,10 @@ export const useDynamicDeviceHandling = ({
         activeCameraDeviceId,
         activeAudioOutputDeviceId,
         switchActiveDevice,
+        cameraState,
+        microphoneState,
+        speakerState,
+        dynamicDeviceUpdate,
     ]);
 
     useEffect(() => {

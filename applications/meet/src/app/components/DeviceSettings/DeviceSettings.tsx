@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,11 +8,15 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import type { IconSize } from '@proton/icons/types';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
+import { supportsSetSinkId } from '../../utils/browser';
+import { filterDevices, isDefaultDevice, resolveDevice } from '../../utils/device-utils';
 import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
@@ -33,9 +37,9 @@ interface DeviceSettingsProps {
     selectedCameraId: string;
     selectedMicrophoneId: string;
     selectedAudioOutputDeviceId: string;
-    onCameraChange: (camera: MediaDeviceInfo) => void;
-    onMicrophoneChange: (microphone: MediaDeviceInfo) => void;
-    onAudioOutputDeviceChange: (speaker: MediaDeviceInfo) => void;
+    onCameraChange: (camera: MediaDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
+    onMicrophoneChange: (microphone: MediaDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
+    onAudioOutputDeviceChange: (speaker: MediaDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
     displayName: string;
     colorIndex: number;
     isLoading: boolean;
@@ -64,6 +68,9 @@ export const DeviceSettings = ({
         handleRotateCamera,
         initialCameraState,
         facingMode,
+        cameraState,
+        microphoneState,
+        speakerState,
     } = useMediaManagementContext();
 
     const noCameraPermission = camera !== 'granted';
@@ -79,17 +86,31 @@ export const DeviceSettings = ({
 
     const [isAudioSettingsOpen, setIsAudioSettingsOpen] = useState(false);
     const [isVideoSettingsOpen, setIsVideoSettingsOpen] = useState(false);
+    const { isLoading: isDeviceLoading, withLoading } = useDeviceLoading();
 
-    const handleMicrophoneChange = (deviceId: string) => {
-        onMicrophoneChange(microphones.find((microphone) => microphone.deviceId === deviceId)!);
+    const filteredMicrophones = useMemo(() => filterDevices(microphones), [microphones]);
+    const filteredSpeakers = useMemo(() => filterDevices(speakers), [speakers]);
+    const filteredCameras = useMemo(() => filterDevices(cameras), [cameras]);
+
+    const handleMicrophoneChange = async (deviceId: string) => {
+        await onMicrophoneChange(
+            resolveDevice(deviceId, filteredMicrophones, microphoneState.systemDefault!),
+            isDefaultDevice(deviceId)
+        );
     };
 
-    const handleOutputDeviceChange = (deviceId: string) => {
-        onAudioOutputDeviceChange(speakers.find((speaker) => speaker.deviceId === deviceId)!);
+    const handleOutputDeviceChange = async (deviceId: string) => {
+        await onAudioOutputDeviceChange(
+            resolveDevice(deviceId, filteredSpeakers, speakerState.systemDefault!),
+            isDefaultDevice(deviceId)
+        );
     };
 
-    const handleCameraChange = (deviceId: string) => {
-        onCameraChange(cameras.find((camera) => camera.deviceId === deviceId)!);
+    const handleCameraChange = async (deviceId: string) => {
+        await onCameraChange(
+            resolveDevice(deviceId, filteredCameras, cameraState.systemDefault!),
+            isDefaultDevice(deviceId)
+        );
     };
 
     const { activeBreakpoint } = useActiveBreakpoint();
@@ -103,9 +124,18 @@ export const DeviceSettings = ({
         const audioDevice = microphones.find((mic) => mic.deviceId === selectedMicrophoneId);
         const activeOutputDevice = speakers.find((speaker) => speaker.deviceId === selectedAudioOutputDeviceId);
 
-        const isCustomCombination =
-            audioDevice && activeOutputDevice && audioDevice.groupId !== activeOutputDevice.groupId;
-        microphoneLabel = isCustomCombination ? c('Info').t`Custom combination` : (audioDevice?.label ?? '');
+        if (
+            audioDevice &&
+            activeOutputDevice &&
+            audioDevice.groupId !== activeOutputDevice.groupId &&
+            supportsSetSinkId()
+        ) {
+            microphoneLabel = c('Info').t`Custom combination`;
+        } else if (microphoneState.useSystemDefault || !microphoneState.cachedAvailable) {
+            microphoneLabel = microphoneState.systemDefaultLabel;
+        } else {
+            microphoneLabel = audioDevice?.label ?? microphoneState.systemDefaultLabel;
+        }
     }
 
     let cameraLabel;
@@ -115,7 +145,10 @@ export const DeviceSettings = ({
         cameraLabel = c('Info').t`No camera detected.`;
     } else {
         const selectedCamera = cameras.find((camera) => camera.deviceId === selectedCameraId);
-        cameraLabel = selectedCamera?.label ?? '';
+        cameraLabel =
+            cameraState.useSystemDefault || !cameraState.cachedAvailable
+                ? cameraState.systemDefaultLabel
+                : (selectedCamera?.label ?? cameraState.systemDefaultLabel);
     }
 
     return (
@@ -199,51 +232,65 @@ export const DeviceSettings = ({
                     />
                 </div>
             </div>
-            <div className="device-selectors hidden sm:flex flex-nowrap gap-2 mt-2">
-                <DeviceSelect
-                    label={microphoneLabel}
-                    icon="meet-microphone"
-                    title={c('Label').t`Audio`}
-                    disabled={microphoneHasWarning}
-                    isOpen={isAudioSettingsOpen}
-                    setIsOpen={(newIsOpen) => {
-                        setIsAudioSettingsOpen(newIsOpen);
+            {!isMobile() && (
+                <div className="device-selectors flex flex-nowrap gap-2 mt-2">
+                    <DeviceSelect
+                        label={microphoneLabel}
+                        icon="meet-microphone"
+                        title={c('Label').t`Audio`}
+                        disabled={microphoneHasWarning}
+                        isOpen={isAudioSettingsOpen}
+                        setIsOpen={(newIsOpen) => {
+                            setIsAudioSettingsOpen(newIsOpen);
 
-                        if (newIsOpen) {
-                            setIsVideoSettingsOpen(false);
-                        }
-                    }}
-                    Content={AudioSettingsDropdown}
-                    contentProps={{
-                        microphones,
-                        speakers,
-                        handleInputDeviceChange: handleMicrophoneChange,
-                        handleOutputDeviceChange: handleOutputDeviceChange,
-                        audioDeviceId: selectedMicrophoneId,
-                        activeOutputDeviceId: selectedAudioOutputDeviceId,
-                    }}
-                />
-                <DeviceSelect
-                    label={cameraLabel}
-                    icon="meet-camera"
-                    title={c('Label').t`Video`}
-                    disabled={cameraHasWarning}
-                    isOpen={isVideoSettingsOpen}
-                    setIsOpen={(newIsOpen) => {
-                        setIsVideoSettingsOpen(newIsOpen);
+                            if (newIsOpen) {
+                                setIsVideoSettingsOpen(false);
+                            }
+                        }}
+                        Content={AudioSettingsDropdown}
+                        contentProps={{
+                            microphones: filteredMicrophones,
+                            speakers: filteredSpeakers,
+                            handleInputDeviceChange: handleMicrophoneChange,
+                            handleOutputDeviceChange: handleOutputDeviceChange,
+                            audioDeviceId: selectedMicrophoneId,
+                            activeOutputDeviceId: selectedAudioOutputDeviceId,
+                            microphoneState,
+                            speakerState,
+                            isMicrophoneLoading: (deviceId: string) => isDeviceLoading('microphone', deviceId),
+                            isSpeakerLoading: (deviceId: string) => isDeviceLoading('speaker', deviceId),
+                            withMicrophoneLoading: (deviceId: string, operation: () => Promise<void>) =>
+                                withLoading('microphone', deviceId, operation),
+                            withSpeakerLoading: (deviceId: string, operation: () => Promise<void>) =>
+                                withLoading('speaker', deviceId, operation),
+                        }}
+                    />
+                    <DeviceSelect
+                        label={cameraLabel}
+                        icon="meet-camera"
+                        title={c('Label').t`Video`}
+                        disabled={cameraHasWarning}
+                        isOpen={isVideoSettingsOpen}
+                        setIsOpen={(newIsOpen) => {
+                            setIsVideoSettingsOpen(newIsOpen);
 
-                        if (newIsOpen) {
-                            setIsAudioSettingsOpen(false);
-                        }
-                    }}
-                    Content={VideoSettingsDropdown}
-                    contentProps={{
-                        handleCameraChange,
-                        videoDeviceId: selectedCameraId,
-                        cameras,
-                    }}
-                />
-            </div>
+                            if (newIsOpen) {
+                                setIsAudioSettingsOpen(false);
+                            }
+                        }}
+                        Content={VideoSettingsDropdown}
+                        contentProps={{
+                            handleCameraChange,
+                            videoDeviceId: selectedCameraId,
+                            cameraState,
+                            cameras: filteredCameras,
+                            isCameraLoading: (deviceId: string) => isDeviceLoading('camera', deviceId),
+                            withCameraLoading: (deviceId: string, operation: () => Promise<void>) =>
+                                withLoading('camera', deviceId, operation),
+                        }}
+                    />
+                </div>
+            )}
         </div>
     );
 };

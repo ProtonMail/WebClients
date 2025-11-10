@@ -1,27 +1,65 @@
 import { useMediaDevices } from '@livekit/components-react';
 
-import { getStoredDevices } from '../utils/deviceStorage';
-import { filterDevices } from '../utils/filterDevices';
+import { useStoredDevices } from '../contexts/StoredDevicesContext';
+import type { DeviceState } from '../types';
+import { filterDevices, getDefaultLabel, isDefaultDevice } from '../utils/device-utils';
+
+const getDefaultDevice = (devices: MediaDeviceInfo[]): MediaDeviceInfo => {
+    const defaultDevice = devices.find((d) => isDefaultDevice(d.deviceId));
+    if (defaultDevice) {
+        const duplicatedDevice = devices.find(
+            (d) => d.groupId === defaultDevice.groupId && !isDefaultDevice(d.deviceId)
+        );
+        return duplicatedDevice ?? filterDevices(devices)[0] ?? devices[0];
+    }
+    return devices[0];
+};
+
+const isDeviceAvailable = (devices: MediaDeviceInfo[], deviceId: string | null): boolean => {
+    return !!devices.find((d) => d.deviceId === deviceId);
+};
 
 export const useDevices = () => {
-    const cameras = filterDevices(useMediaDevices({ kind: 'videoinput' }));
-    const microphones = filterDevices(useMediaDevices({ kind: 'audioinput' }));
-    const speakers = filterDevices(useMediaDevices({ kind: 'audiooutput' }));
+    const cameras = useMediaDevices({ kind: 'videoinput' });
+    const microphones = useMediaDevices({ kind: 'audioinput' });
+    const speakers = useMediaDevices({ kind: 'audiooutput' });
 
-    const storedDevices = getStoredDevices();
+    const { storedDevices } = useStoredDevices();
 
+    const systemDefaultMicrophone = getDefaultDevice(microphones);
     const defaultMicrophone =
-        microphones.find((m) => m.deviceId === storedDevices.audioDeviceId) ??
-        microphones.find((m) => m.deviceId === 'default') ??
-        microphones[0];
-    const defaultCamera =
-        cameras.find((c) => c.deviceId === storedDevices.videoDeviceId) ??
-        cameras.find((c) => c.deviceId === 'default') ??
-        cameras[0];
+        microphones.find((m) => m.deviceId === storedDevices.audioDeviceId) ?? systemDefaultMicrophone;
+
+    const systemDefaultCamera = getDefaultDevice(cameras);
+    const defaultCamera = cameras.find((m) => m.deviceId === storedDevices.videoDeviceId) ?? systemDefaultCamera;
+
+    const systemDefaultSpeaker = getDefaultDevice(speakers);
     const defaultSpeaker =
-        speakers.find((s) => s.deviceId === storedDevices.audioOutputDeviceId) ??
-        speakers.find((s) => s.deviceId === 'default') ??
-        speakers[0];
+        speakers.find((m) => m.deviceId === storedDevices.audioOutputDeviceId) ?? systemDefaultSpeaker;
+
+    const microphoneState: DeviceState = {
+        systemDefault: systemDefaultMicrophone,
+        systemDefaultLabel: getDefaultLabel(systemDefaultMicrophone),
+        useSystemDefault: storedDevices.audioDeviceId === null,
+        cachedAvailable: isDeviceAvailable(microphones, storedDevices.audioDeviceId),
+        cachedDeviceId: storedDevices.audioDeviceId,
+    };
+
+    const cameraState: DeviceState = {
+        systemDefault: systemDefaultCamera,
+        systemDefaultLabel: getDefaultLabel(systemDefaultCamera),
+        useSystemDefault: storedDevices.videoDeviceId === null,
+        cachedAvailable: isDeviceAvailable(cameras, storedDevices.videoDeviceId),
+        cachedDeviceId: storedDevices.videoDeviceId,
+    };
+
+    const speakerState: DeviceState = {
+        systemDefault: systemDefaultSpeaker,
+        systemDefaultLabel: getDefaultLabel(systemDefaultSpeaker),
+        useSystemDefault: storedDevices.audioOutputDeviceId === null,
+        cachedAvailable: isDeviceAvailable(speakers, storedDevices.audioOutputDeviceId),
+        cachedDeviceId: storedDevices.audioOutputDeviceId,
+    };
 
     return {
         cameras,
@@ -30,5 +68,9 @@ export const useDevices = () => {
         defaultMicrophone,
         defaultCamera,
         defaultSpeaker,
+        microphoneState,
+        cameraState,
+        speakerState,
+        getDefaultDevice,
     };
 };
