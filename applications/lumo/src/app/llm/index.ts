@@ -281,6 +281,16 @@ export function getCallbacks(
                         break;
                 }
                 break;
+
+            case 'image_data':
+                console.log('[IMAGE_DATA] Received in chunkCallback', {
+                    image_id: m.image_id,
+                    data: m.data ? `${m.data.substring(0, 50)}... (${m.data.length} chars)` : 'none',
+                    is_final: m.is_final,
+                    seed: m.seed,
+                });
+                // TODO: Handle image data (store in Redux, display in UI, etc.)
+                break;
         }
         return {}; // No error
     };
