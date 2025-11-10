@@ -1,4 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
+
+import { Icon } from '@proton/components';
+import { Button } from '@proton/atoms';
 
 import type { Attachment } from '../../../types';
 
@@ -8,53 +12,112 @@ interface InlineImageComponentProps {
 }
 
 export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ attachment, alt }) => {
-    console.log('[IMAGE_DEBUG] InlineImageComponent render', {
-        hasAttachment: !!attachment,
-        attachmentId: attachment?.id,
-        hasData: !!attachment?.data,
-        dataLength: attachment?.data?.length,
-        mimeType: attachment?.mimeType,
-        alt,
-    });
+    const [showModal, setShowModal] = useState(false);
+    const [showDownload, setShowDownload] = useState(false);
 
     const imageDataUrl = useMemo(() => {
         if (!attachment?.data) {
-            console.log('[IMAGE_DEBUG] InlineImageComponent: No attachment data');
             return null;
         }
 
         const mimeType = attachment.mimeType || 'image/png';
         const blob = new Blob([attachment.data], { type: mimeType });
-        const url = URL.createObjectURL(blob);
-        console.log('[IMAGE_DEBUG] InlineImageComponent: Created blob URL', {
-            url,
-            blobSize: blob.size,
-            mimeType,
-        });
-        return url;
+        return URL.createObjectURL(blob);
     }, [attachment?.data, attachment?.mimeType]);
 
     if (!attachment) {
-        console.log('[IMAGE_DEBUG] InlineImageComponent: No attachment, returning null');
         return null;
     }
 
     if (!imageDataUrl) {
-        console.log('[IMAGE_DEBUG] InlineImageComponent: No imageDataUrl, returning null');
         return null;
     }
 
-    console.log('[IMAGE_DEBUG] InlineImageComponent: Rendering image', { imageDataUrl });
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = imageDataUrl;
+        link.download = attachment.filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
     return (
-        <div className="inline-image-container">
-            <img
-                src={imageDataUrl}
-                alt={alt || attachment.filename}
-                style={{ maxWidth: '300px', display: 'block' }}
-                onLoad={() => console.log('[IMAGE_DEBUG] Image loaded successfully')}
-                onError={(e) => console.error('[IMAGE_DEBUG] Image load error', e)}
-            />
-        </div>
+        <>
+            <div
+                className="inline-image-preview relative cursor-pointer"
+                onClick={() => setShowModal(true)}
+                onMouseEnter={() => setShowDownload(true)}
+                onMouseLeave={() => setShowDownload(false)}
+                style={{ display: 'inline-block', position: 'relative' }}
+            >
+                <img
+                    src={imageDataUrl}
+                    alt={alt || attachment.filename}
+                    style={{
+                        maxWidth: '300px',
+                        display: 'block',
+                        borderRadius: '8px',
+                    }}
+                />
+                {showDownload && (
+                    <div
+                        className="absolute top-2 right-2"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            handleDownload();
+                        }}
+                    >
+                        <Button
+                            shape="solid"
+                            color="weak"
+                            size="small"
+                            icon
+                            className="rounded bg-norm shadow-norm"
+                        >
+                            <Icon name="arrow-down-line" size={4} />
+                        </Button>
+                    </div>
+                )}
+            </div>
+
+            {showModal &&
+                createPortal(
+                    <div
+                        className="fixed inset-0 flex items-center justify-center"
+                        style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', zIndex: 9999 }}
+                        onClick={() => setShowModal(false)}
+                    >
+                        <div className="relative max-w-[90vw] max-h-[90vh]">
+                            <img
+                                src={imageDataUrl}
+                                alt={alt || attachment.filename}
+                                style={{
+                                    maxWidth: '90vw',
+                                    maxHeight: '90vh',
+                                    objectFit: 'contain',
+                                }}
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                            <div className="absolute top-4 right-4">
+                                <Button
+                                    shape="solid"
+                                    color="weak"
+                                    size="small"
+                                    icon
+                                    className="rounded bg-norm shadow-norm"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowModal(false);
+                                    }}
+                                >
+                                    <Icon name="cross" size={4} />
+                                </Button>
+                            </div>
+                        </div>
+                    </div>,
+                    document.body
+                )}
+        </>
     );
 };

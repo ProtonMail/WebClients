@@ -81,26 +81,30 @@ markdown syntax and rendered inline with preview/modal UI.
 - [x] Debug why images aren't showing (with user) - found react-markdown strips attachment: URLs
 - [x] Fix react-markdown URL sanitization (add urlTransform to preserve attachment: scheme)
 - [x] Test end-to-end image generation from LLM - WORKS!
-- [ ] Clean up debug console.log calls
+- [x] Clean up debug console.log calls (all [IMAGE_DEBUG] logs)
+- [x] Remove img renderer from LumoMarkdown (only used for user messages, no inline images)
+- [x] Review code for refactoring opportunities (common code, cleanup)
+    - Factored out createImageAttachment and generateImageMarkdown helpers
 - [ ] Configure Redux middleware to ignore Uint8Array warnings
 
 ### Phase 4: UI Enhancement
 
-- [ ] Add click-to-expand modal to InlineImageComponent
+- [x] Add click-to-expand modal to InlineImageComponent
     - Dark background overlay
     - Full-size image display
     - Click outside to close
-- [ ] Add hover download button
+    - Use React Portal to escape markdown DOM structure
+- [x] Add hover download button
     - Positioned over preview
     - Triggers download with proper filename
-- [ ] Apply appropriate styling
+- [x] Apply appropriate styling
 
 ### Phase 5: User Message Support
 
 - [x] Add same img renderer to LumoMarkdown component
 - [x] Pass attachments prop from UserMessage component
-- [ ] Verify parity between assistant/user rendering
-- [ ] Test both message types
+- [x] Verify parity between assistant/user rendering
+- [x] Test both message types - N/A (user messages don't have inline images)
 
 ### Phase 6: Integration Testing
 
