@@ -44,6 +44,7 @@ export interface CalendarSidebarProps {
     onToggleExpand: () => void;
     onCreateEvent?: () => void;
     onCreateCalendar?: (id: string) => void;
+    utcDate: Date;
 }
 
 const CalendarSidebar = ({
@@ -53,6 +54,7 @@ const CalendarSidebar = ({
     miniCalendar,
     onCreateEvent,
     onCreateCalendar,
+    utcDate,
 }: CalendarSidebarProps) => {
     const api = useApi();
     const [user] = useUser();
@@ -112,7 +114,7 @@ const CalendarSidebar = ({
             onToggleExpand={onToggleExpand}
             primary={
                 <ProtonMeetSpotlightWrapper>
-                    <PrimaryButton collapsed={collapsed} onCreateEvent={onCreateEvent} />
+                    <PrimaryButton collapsed={collapsed} onCreateEvent={onCreateEvent} utcDate={utcDate} />
                 </ProtonMeetSpotlightWrapper>
             }
             version={<AppVersion />}
@@ -138,7 +140,7 @@ const CalendarSidebar = ({
                                 headerRef={headerRef}
                                 loadingSubscribedCalendars={loadingSubscribedCalendars}
                             />
-                            <Bookings headerRef={headerRef} disabled={!onCreateEvent} />
+                            <Bookings headerRef={headerRef} utcDate={utcDate} disabled={!onCreateEvent} />
                         </div>
                         {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
                     </>

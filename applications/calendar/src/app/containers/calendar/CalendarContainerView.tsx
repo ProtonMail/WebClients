@@ -4,10 +4,10 @@ import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } fro
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import {
     AppLink,
     ContactDrawerAppButton,
@@ -34,13 +34,13 @@ import {
     useOpenDrawerOnLoad,
     useToggle,
 } from '@proton/components';
-import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
-import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useContactGroups } from '@proton/mail';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -614,6 +614,7 @@ const CalendarContainerView = ({
                         onToggleExpand={onToggleExpand}
                         onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
                         onCreateCalendar={onCreateCalendarFromSidebar}
+                        utcDate={utcDate}
                         miniCalendar={
                             <LocalizedMiniCalendar
                                 min={MINIMUM_DATE}

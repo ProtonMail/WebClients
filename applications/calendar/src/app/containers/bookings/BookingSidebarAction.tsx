@@ -12,16 +12,16 @@ import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { UpsellBookings } from './UpsellBookings';
 import { useBookings } from './bookingsProvider/BookingsProvider';
-import { BookingState } from './bookingsProvider/interface';
 
 interface Props {
     onCreateEvent?: () => void;
     disabled?: boolean;
+    utcDate: Date;
 }
 
-export const BookingSidebarAction = ({ onCreateEvent, disabled }: Props) => {
+export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props) => {
     const [user] = useUser();
-    const { changeBookingState, canCreateBooking } = useBookings();
+    const { openBookingSidebar, canCreateBooking } = useBookings();
 
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
@@ -31,7 +31,7 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled }: Props) => {
             return;
         }
 
-        changeBookingState(BookingState.CREATE_NEW);
+        openBookingSidebar(utcDate);
     };
 
     return (

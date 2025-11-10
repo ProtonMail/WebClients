@@ -12,9 +12,16 @@ import { useBookingsAvailability } from '../../bookings/useBookingsAvailability'
 interface Props {
     collapsed: boolean;
     onCreateEvent?: () => void;
+    utcDate: Date;
 }
 
-const PrimaryAction = ({ collapsed, onCreateEvent, group = false }: Props & { group?: boolean }) => {
+interface PrimaryActionProps {
+    collapsed: boolean;
+    onCreateEvent?: () => void;
+    group?: boolean;
+}
+
+const PrimaryAction = ({ collapsed, onCreateEvent, group = false }: PrimaryActionProps) => {
     return (
         <Tooltip title={collapsed ? c('Action').t`New event` : null}>
             <SidebarPrimaryButton
@@ -36,7 +43,7 @@ const PrimaryAction = ({ collapsed, onCreateEvent, group = false }: Props & { gr
     );
 };
 
-export const PrimaryButton = ({ collapsed, onCreateEvent }: Props) => {
+export const PrimaryButton = ({ collapsed, onCreateEvent, utcDate }: Props) => {
     const isBookingAvailable = useBookingsAvailability();
 
     if (collapsed || !isBookingAvailable) {
@@ -46,7 +53,7 @@ export const PrimaryButton = ({ collapsed, onCreateEvent }: Props) => {
     return (
         <ButtonGroup color="norm" shape="solid" size="large" className="w-full">
             <PrimaryAction collapsed={collapsed} onCreateEvent={onCreateEvent} group />
-            <BookingSidebarAction onCreateEvent={onCreateEvent} disabled={!onCreateEvent} />
+            <BookingSidebarAction onCreateEvent={onCreateEvent} disabled={!onCreateEvent} utcDate={utcDate} />
         </ButtonGroup>
     );
 };

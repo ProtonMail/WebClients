@@ -5,29 +5,28 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { UpsellBookings } from '../../bookings/UpsellBookings';
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
-import { BookingState } from '../../bookings/bookingsProvider/interface';
 import { useBookingsAvailability } from '../../bookings/useBookingsAvailability';
 
 interface Props {
     headerRef: React.RefObject<HTMLDivElement>;
+    utcDate: Date;
     disabled: boolean;
 }
 
 // TODO have an empty state placeholder
-// TODO handle the state of the plus button
-export const Bookings = ({ headerRef, disabled }: Props) => {
+export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
     const [displayBookings, setDisplayBookings] = useState(true);
     const [user] = useUser();
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
     const isBookingsAvailable = useBookingsAvailability();
-    const { changeBookingState, canCreateBooking } = useBookings();
+    const { openBookingSidebar, canCreateBooking } = useBookings();
 
     if (!isBookingsAvailable) {
         return null;
@@ -35,7 +34,7 @@ export const Bookings = ({ headerRef, disabled }: Props) => {
 
     const handleCreate = () => {
         if (user.hasPaidMail) {
-            changeBookingState(BookingState.CREATE_NEW);
+            openBookingSidebar(utcDate);
         } else {
             setModalOpen(true);
         }
