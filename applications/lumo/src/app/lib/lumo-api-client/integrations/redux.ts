@@ -7,6 +7,7 @@ import {
 } from '../../../redux/slices/core/conversations';
 // Redux action creators
 import {
+    addImageAttachment,
     appendChunk,
     deleteMessage,
     finishMessage,
@@ -14,8 +15,11 @@ import {
     setToolCall,
     setToolResult,
 } from '../../../redux/slices/core/messages';
+import { addAttachment } from '../../../redux/slices/core/attachments';
 import type { LumoDispatch } from '../../../redux/store';
+import type { ShallowAttachment } from '../../../types';
 import { ConversationStatus, Role } from '../../../types';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { LumoApiClient } from '../core/client';
 import type { AssistantCallOptions, GenerationToFrontendMessage, LumoApiClientConfig, Turn } from '../core/types';
 import { postProcessTitle } from '../utils';
@@ -153,7 +157,40 @@ export function sendMessageWithRedux(
                             is_final: message.is_final,
                             seed: message.seed,
                         });
-                        // TODO: Dispatch Redux action to store image data
+
+                        if (message.image_id && message.data && messageId && spaceId) {
+                            // Decode base64 to Uint8Array
+                            const imageData = base64StringToUint8Array(message.data);
+
+                            // Create attachment with role='assistant'
+                            const attachment: ShallowAttachment = {
+                                id: message.image_id,
+                                spaceId,
+                                filename: 'generated-image.png',
+                                uploadedAt: new Date().toISOString(),
+                                mimeType: 'image/png',
+                                rawBytes: imageData.length,
+                                role: 'assistant',
+                            };
+
+                            // Add attachment to Redux store (attachments slice)
+                            dispatch(addAttachment({
+                                ...attachment,
+                                data: imageData,
+                            }));
+
+                            // Add attachment reference to message
+                            dispatch(addImageAttachment({
+                                messageId,
+                                attachment,
+                            }));
+
+                            // Append markdown reference to message content
+                            dispatch(appendChunk({
+                                messageId,
+                                content: `\n\n![Generated image](attachment:${message.image_id})\n\n`,
+                            }));
+                        }
                         break;
                 }
 
