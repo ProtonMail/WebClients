@@ -131,7 +131,7 @@ type SpreadsheetStateDependencies = {
 }
 
 function useSpreadsheetState({ localState, ...deps }: SpreadsheetStateDependencies) {
-  return useSpreadsheetStateOriginal({ ...localState, ...deps })
+  return useSpreadsheetStateOriginal({ ...localState, ...deps, enableExcelfileDragDrop: false })
 }
 
 type SpreadsheetState = ReturnType<typeof useSpreadsheetState>

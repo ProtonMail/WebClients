@@ -152,6 +152,9 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           sheetId = newSheet.sheetId
           cellCoords = { rowIndex: 1, columnIndex: 1 }
         }
+        if (data.destination === SheetImportDestination.ReplaceCurrentSheet) {
+          cellCoords = { rowIndex: 1, columnIndex: 1 }
+        }
         onInsertFile(data.file, sheetId, cellCoords, {
           preserveFormatting: data.shouldConvertCellContents,
           replaceSheetData: data.destination === SheetImportDestination.ReplaceCurrentSheet,
