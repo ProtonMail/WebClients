@@ -13,8 +13,8 @@ RewriteRule ^assets/ - [L]
 RewriteRule ^$ /index.html [NC,L]
 
 # Redirect all bookings requests to the bookings bundle
-RewriteRule ^bookings/.* /bookings.html [NC,L]
-RewriteRule ^u/[0-9]+/bookings /bookings.html [NC,L]
+RewriteRule ^bookings(?:/.*)?$ /bookings.html [NC,L]
+RewriteRule ^u/[0-9]+/bookings/?$ /bookings.html [NC,L]
 
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]
