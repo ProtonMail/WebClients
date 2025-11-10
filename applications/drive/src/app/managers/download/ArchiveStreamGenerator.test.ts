@@ -27,6 +27,7 @@ const ensureTransformStream = () => {
 
 const schedulerTracker = trackInstances(() => {
     const tasks: DownloadQueueTask[] = [];
+    let counter = 0;
     return {
         scheduleDownload: jest.fn((task: DownloadQueueTask) => {
             tasks.push(task);
@@ -34,6 +35,8 @@ const schedulerTracker = trackInstances(() => {
         }),
         cancelDownload: jest.fn(),
         clearDownloads: jest.fn(),
+        generateTaskId: jest.fn(() => `task-${++counter}`),
+        updateDownloadProgress: jest.fn(),
         _tasks: tasks,
     };
 });

@@ -39,7 +39,8 @@ export type DownloadQueueTaskHandle = {
 };
 
 export type DownloadQueueTask = {
-    nodes: DownloadableItem[];
+    taskId: string;
+    node: DownloadableItem;
     storageSizeEstimate?: number;
     start: () => Promise<DownloadQueueTaskHandle>;
 };
@@ -48,4 +49,6 @@ export type DownloadScheduler = {
     scheduleDownload(task: DownloadQueueTask): string;
     cancelDownload(taskId: string): void;
     clearDownloads(): void;
+    generateTaskId(): string;
+    updateDownloadProgress(taskId: string, downloadedBytes: number): void;
 };
