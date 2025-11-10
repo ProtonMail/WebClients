@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useMediaManagementContext } from '../contexts/MediaManagementContext';
+import { restoreIOSAudioQuality, withIOSAudioSessionWorkaround } from '../utils/ios-audio-session';
+
 function calculateRms(data: Uint8Array<ArrayBuffer>) {
     let sum = 0;
     for (let i = 0; i < data.length; i++) {
@@ -10,6 +13,7 @@ function calculateRms(data: Uint8Array<ArrayBuffer>) {
 }
 
 function startMicVolumeAnalysis(
+    microphone: MediaDeviceInfo,
     setVolume: (v: number) => void,
     throttleMs: number,
     lastUpdateRef: React.MutableRefObject<number>
@@ -20,7 +24,7 @@ function startMicVolumeAnalysis(
 
     const cleanup = () => {
         if (audioContext) {
-            audioContext.close();
+            void audioContext.close();
             audioContext = null;
         }
         if (raf) {
@@ -30,11 +34,11 @@ function startMicVolumeAnalysis(
         if (stream) {
             stream.getTracks().forEach((track) => track.stop());
             stream = null;
+            restoreIOSAudioQuality();
         }
     };
 
-    navigator.mediaDevices
-        .getUserMedia({ audio: true })
+    withIOSAudioSessionWorkaround(async () => navigator.mediaDevices.getUserMedia({ audio: true }))
         .then((mediaStream) => {
             stream = mediaStream;
             audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -68,21 +72,22 @@ function startMicVolumeAnalysis(
 }
 
 export const useMicrophoneVolume = (isMicOn: boolean, throttleMs: number = 100) => {
+    const { defaultMicrophone } = useMediaManagementContext();
     const [volume, setVolume] = useState(0);
     const lastUpdateRef = useRef<number>(0);
 
     useEffect(() => {
-        if (!isMicOn) {
+        if (!isMicOn || !defaultMicrophone) {
             setVolume(0);
             return;
         }
 
-        const cleanup = startMicVolumeAnalysis(setVolume, throttleMs, lastUpdateRef);
+        const cleanup = startMicVolumeAnalysis(defaultMicrophone, setVolume, throttleMs, lastUpdateRef);
 
         return () => {
             cleanup();
         };
-    }, [isMicOn, throttleMs]);
+    }, [isMicOn, throttleMs, defaultMicrophone]);
 
     return volume;
 };
