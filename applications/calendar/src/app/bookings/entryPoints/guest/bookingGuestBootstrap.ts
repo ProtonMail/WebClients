@@ -9,7 +9,6 @@ import {
     unleashReady,
 } from '@proton/account/bootstrap';
 import { initMainHost } from '@proton/cross-storage/lib';
-import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
@@ -46,7 +45,7 @@ export const bookingGuestBootstrap = async (): Promise<BookingGuestBootstrapResu
 
     extendStore({
         config,
-        api: unauthenticatedApi.apiCallback as ApiWithListener,
+        api,
         authentication,
         history,
         unleashClient,
@@ -57,9 +56,6 @@ export const bookingGuestBootstrap = async (): Promise<BookingGuestBootstrapResu
 
     return {
         store: setupStore(),
-        unleashClient,
         unauthenticatedApi,
-        authentication,
-        history,
     };
 };
