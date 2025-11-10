@@ -6,9 +6,10 @@ import TimeInput from '@proton/components/components/input/TimeInput';
 import { DateInputTwo } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { fromLocalDate, fromUTCDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
-import { BookingFormValidationReasons, type BookingRange, DEFAULT_EVENT_DURATION } from '../bookingsProvider/interface';
+import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
 import { createBookingRangeNextAvailableTime, validateFormData } from '../utils/bookingHelpers';
 
 export const FormRangeList = () => {
@@ -19,14 +20,19 @@ export const FormRangeList = () => {
         return null;
     }
 
-    const handleTimeChange = (id: string, start?: Date, end?: Date) => {
-        if (!start || !end) {
-            return;
-        }
-
-        updateBookingRange(id, start, end);
+    // We need to convert the local time back to UTC before storing them
+    const handleStartChange = (range: BookingRange, start: Date) => {
+        const utcStart = toUTCDate(fromLocalDate(start));
+        updateBookingRange(range.id, utcStart, range.end);
     };
 
+    // We need to convert the local time back to UTC before storing them
+    const handleEndChange = (range: BookingRange, end: Date) => {
+        const utcEnd = toUTCDate(fromLocalDate(end));
+        updateBookingRange(range.id, range.start, utcEnd);
+    };
+
+    // No need to convert the start and end time here as they are already in UTC
     const handleDateChange = (id: string, range: BookingRange, date?: Date) => {
         if (!date) {
             return;
@@ -56,8 +62,9 @@ export const FormRangeList = () => {
         addBookingRange(newBookingRange);
     };
 
-    const getUTCtime = (date: Date) => {
-        return new Date(2000, 0, 1, date.getUTCHours(), date.getUTCMinutes());
+    // We need to convert the UTC time of the range to local time for select
+    const toLocalDateTime = (date: Date) => {
+        return toLocalDate(fromUTCDate(date));
     };
 
     // TODO handle the cases where the recurring is enabled and adapt the UI
@@ -77,17 +84,17 @@ export const FormRangeList = () => {
                             .t`Start time of the booking range`}</label>
                         <TimeInput
                             id={`range-start-time-${range.id}`}
-                            value={getUTCtime(range.start)}
-                            onChange={(value) => handleTimeChange(range.id, value, range.end)}
+                            value={toLocalDateTime(range.start)}
+                            onChange={(value) => handleStartChange(range, value)}
                         />
                         -
                         <label htmlFor={`range-end-time-${range.id}`} className="sr-only">{c('label')
                             .t`End time of the booking range`}</label>
                         <TimeInput
                             id={`range-end-time-${range.id}`}
-                            value={getUTCtime(range.end)}
-                            min={addMinutes(getUTCtime(range.start), DEFAULT_EVENT_DURATION)}
-                            onChange={(value) => handleTimeChange(range.id, range.start, value)}
+                            value={toLocalDateTime(range.end)}
+                            min={addMinutes(toLocalDateTime(range.start), formData.duration)}
+                            onChange={(value) => handleEndChange(range, value)}
                         />
                     </div>
                     <div className="flex flex-nowrap shrink-0">

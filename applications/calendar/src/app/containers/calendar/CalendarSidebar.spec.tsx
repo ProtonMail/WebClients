@@ -158,6 +158,7 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
         calendars: [mockCalendar],
         miniCalendar: <span>mockedMiniCalendar</span>,
         onCreateCalendar: noop,
+        utcDate: new Date(),
     };
     mockUseAuthentication({} as any);
     const history = createMemoryHistory();
