@@ -1,5 +1,6 @@
 export enum ModalType {
     BookingPageCreation = 'bookingPageCreation',
+    BookingPageConfirmClose = 'bookingPageConfirmClose',
 }
 
 export interface BookingPageCreationModalPayload {
@@ -10,7 +11,14 @@ export interface BookingPageCreationModalPayload {
     };
 }
 
-export type ModalPayload = BookingPageCreationModalPayload;
+export interface BookingPageConfirmCloseModalPayload {
+    type: ModalType.BookingPageConfirmClose;
+    value: {
+        onClose: () => void;
+    };
+}
+
+export type ModalPayload = BookingPageCreationModalPayload | BookingPageConfirmCloseModalPayload;
 export type ModalListener = (payload: ModalPayload) => void;
 
 export interface GlobalModal {

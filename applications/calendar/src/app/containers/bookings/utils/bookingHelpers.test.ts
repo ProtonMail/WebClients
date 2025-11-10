@@ -214,19 +214,19 @@ describe('booking helpers', () => {
 
         it('should return the correct range when week starts on Monday', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
-            const res = generateDefaultBookingRange(userSettings, 'Europe/Zurich');
+            const res = generateDefaultBookingRange(userSettings, new Date(), 'Europe/Zurich');
             checks(res);
         });
 
         it('should return the correct range when week starts on Saturday', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.SATURDAY } as UserSettings;
-            const res = generateDefaultBookingRange(userSettings, 'Europe/Zurich');
+            const res = generateDefaultBookingRange(userSettings, new Date(), 'Europe/Zurich');
             checks(res);
         });
 
         it('should return the correct range when week starts on Sunday', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.SUNDAY } as UserSettings;
-            const res = generateDefaultBookingRange(userSettings, 'Europe/Zurich');
+            const res = generateDefaultBookingRange(userSettings, new Date(), 'Europe/Zurich');
             checks(res);
         });
     });

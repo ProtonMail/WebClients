@@ -18,7 +18,7 @@ import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
-import { BookingLocation, BookingState } from '../bookingsProvider/interface';
+import { BookingLocation } from '../bookingsProvider/interface';
 import { getBookingLocationOption, validateFormData } from '../utils/bookingHelpers';
 import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { FormRangeList } from './FormRangeList';
@@ -54,6 +54,7 @@ export const Form = () => {
                 <div className="flex gap-1">
                     {scheduleOptions.map((option) => (
                         <Button
+                            key={option.value}
                             onClick={() => updateFormData('duration', option.value)}
                             shape={formData.duration === option.value ? 'solid' : 'outline'}
                             color="weak"
@@ -143,17 +144,17 @@ export const Form = () => {
 };
 
 const Header = () => {
-    const { changeBookingState } = useBookings();
+    const { closeBookingSidebar } = useBookings();
 
     return (
-        <Button icon shape="ghost" onClick={() => changeBookingState(BookingState.OFF)}>
-            <IcCrossBig />
+        <Button icon shape="ghost" onClick={() => closeBookingSidebar()}>
+            <IcCrossBig alt={c('Action').t`Close sidebar`} />
         </Button>
     );
 };
 
 const Buttons = () => {
-    const { changeBookingState, submitForm, formData, loading } = useBookings();
+    const { closeBookingSidebar, submitForm, formData, loading } = useBookings();
 
     const validation = validateFormData(formData);
     const isError = validation && validation.type === 'error';
@@ -162,8 +163,7 @@ const Buttons = () => {
         <>
             {isError ? <p className="color-danger text-sm text-right m-0 mb-2">{validation.message}</p> : null}
             <div className="flex justify-space-between gap-6">
-                <Button disabled={loading} onClick={() => changeBookingState(BookingState.OFF)}>{c('Action')
-                    .t`Cancel`}</Button>
+                <Button disabled={loading} onClick={() => closeBookingSidebar()}>{c('Action').t`Cancel`}</Button>
                 <Button disabled={!!validation} loading={loading} color="norm" type="submit" onClick={submitForm}>{c(
                     'Action'
                 ).t`Create booking page`}</Button>
