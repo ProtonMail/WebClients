@@ -3,6 +3,7 @@ import { Router } from 'react-router-dom';
 
 import {
     ApiContext,
+    ApiProvider,
     AuthenticationProvider,
     ErrorBoundary,
     LoaderPage,
@@ -20,6 +21,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { FlagProvider } from '@proton/unleash';
 
 import config from '../../../config';
+import { extraThunkArguments } from '../../../store/thunk';
 import { BookingsRouter } from '../BookingsRouter';
 import type { BookingGuestBootstrapResult } from '../interface';
 import { bookingGuestBootstrap } from './bookingGuestBootstrap';
@@ -63,22 +65,24 @@ export const BookingGuestApp = () => {
         );
     }
 
-    const { store, unauthenticatedApi, unleashClient, authentication, history } = bootstrapRef.current!;
+    const { store, unauthenticatedApi } = bootstrapRef.current!;
 
     return (
         <ProtonApp config={config}>
             <ProtonStoreProvider store={store}>
-                <AuthenticationProvider store={authentication}>
-                    <FlagProvider unleashClient={unleashClient}>
-                        <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
-                            <ErrorBoundary big component={<StandardErrorPage big />}>
-                                <NotificationsChildren />
-                                <ModalsChildren />
-                                <Router history={history}>
-                                    <BookingsRouter isGuest />
-                                </Router>
-                            </ErrorBoundary>
-                        </ApiContext.Provider>
+                <AuthenticationProvider store={extraThunkArguments.authentication}>
+                    <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
+                        <ApiProvider api={extraThunkArguments.api}>
+                            <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
+                                <ErrorBoundary big component={<StandardErrorPage big />}>
+                                    <NotificationsChildren />
+                                    <ModalsChildren />
+                                    <Router history={extraThunkArguments.history}>
+                                        <BookingsRouter isGuest />
+                                    </Router>
+                                </ErrorBoundary>
+                            </ApiContext.Provider>
+                        </ApiProvider>
                     </FlagProvider>
                 </AuthenticationProvider>
             </ProtonStoreProvider>

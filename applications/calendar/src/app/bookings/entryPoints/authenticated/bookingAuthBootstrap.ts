@@ -19,9 +19,9 @@ import config from '../../../config';
 import locales from '../../../locales';
 import { setupStore } from '../../../store/bookingsStore';
 import { extendStore } from '../../../store/store';
-import type { BookingAuthBootstrapResult } from '../interface';
+import type { BookingBootstrapResult } from '../interface';
 
-export const bookingAuthBootstrap = async (): Promise<BookingAuthBootstrapResult | 'redirect'> => {
+export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | 'redirect'> => {
     const accountSessions = readAccountSessions();
     if (!accountSessions) {
         return 'redirect';
@@ -63,10 +63,6 @@ export const bookingAuthBootstrap = async (): Promise<BookingAuthBootstrapResult
 
         return {
             store: setupStore(),
-            api,
-            unleashClient,
-            authentication,
-            history,
         };
     };
 
