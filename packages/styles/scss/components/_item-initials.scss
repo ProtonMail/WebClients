@@ -2,7 +2,7 @@
 	inline-size: rem($conversation-icon-size);
 	block-size: rem($conversation-icon-size);
 	font-size: rem(12);
-	background-color: var(--background-strong);
+	background-color: var(--item-icon-background-color, var(--background-strong));
 
 	&--small {
 		inline-size: rem($conversation-icon-size-small);
