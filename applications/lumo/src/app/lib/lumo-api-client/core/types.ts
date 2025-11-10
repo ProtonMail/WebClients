@@ -24,7 +24,7 @@ export type AesGcmCryptoKey = {
     encryptKey: CryptoKey;
 };
 
-export type ToolName = 'proton_info' | 'web_search' | 'weather' | 'stock' | 'cryptocurrency';
+export type ToolName = 'proton_info' | 'web_search' | 'weather' | 'stock' | 'cryptocurrency' | 'generate_image';
 
 export type RequestableGenerationTarget = 'message' | 'title';
 export type GenerationTarget = 'message' | 'title' | 'tool_call' | 'tool_result';
@@ -44,6 +44,13 @@ export type GenerationToFrontendMessage =
     | { type: 'queued'; target?: GenerationTarget }
     | { type: 'ingesting'; target: GenerationTarget }
     | { type: 'token_data'; target: GenerationTarget; count: number; content: string; encrypted?: boolean }
+    | {
+          type: 'image_data';
+          image_id?: string;
+          data?: string;
+          is_final?: boolean;
+          seed?: number;
+      }
     | { type: 'done' }
     | { type: 'timeout' }
     | { type: 'error' }
@@ -122,6 +129,18 @@ export function isGenerationToFrontendMessage(obj: any): obj is GenerationToFron
                 typeof obj.content === 'string' &&
                 (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
             );
+
+        case 'image_data':
+            const isValid = (
+                (!('image_id' in obj) || typeof obj.image_id === 'string') &&
+                (!('data' in obj) || typeof obj.data === 'string') &&
+                (!('is_final' in obj) || typeof obj.is_final === 'boolean') &&
+                (!('seed' in obj) || typeof obj.seed === 'number')
+            );
+            if (!isValid) {
+                console.warn('[IMAGE_DATA] Type guard failed:', obj);
+            }
+            return isValid;
 
         default:
             return false;
