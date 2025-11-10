@@ -54,10 +54,19 @@ describe('transformStyleAttributes', () => {
     // had to extract the method for testing, because of a crazy issue of JSDOM - see after
     describe('handleTopLeftPropertiesRemoval', () => {
         it('Should remove top and left from style attributes', () => {
-            const a = handleTopLeftPropertiesRemoval({ top: '12px', left: '4ex' });
+            const a = handleTopLeftPropertiesRemoval({
+                top: '12px',
+                left: '4ex',
+                insetInlineStart: '10px',
+                insetBlockStart: '20px',
+                insetBlockEnd: '30px',
+            });
 
             expect(a.keys()).toContain('top');
             expect(a.keys()).toContain('left');
+            expect(a.keys()).toContain('insetInlineStart');
+            expect(a.keys()).toContain('insetBlockStart');
+            expect(a.keys()).toContain('insetBlockEnd');
             a.forEach((value) => {
                 expect(value).toBe('unset');
             });
