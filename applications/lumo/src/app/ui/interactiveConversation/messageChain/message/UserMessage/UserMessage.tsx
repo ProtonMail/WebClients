@@ -63,19 +63,20 @@ interface UserMessageProps {
     siblingInfo: SiblingInfo;
     handleEditMessage: HandleEditMessage;
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
-    onOpenFiles?: (message: Message) => void;
+    onOpenFiles?: (message: Message) => void; // FIXME: unused?
 }
 
-const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef, onOpenFiles }: UserMessageProps) => {
+ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef, onOpenFiles }: UserMessageProps) => {
     const [isEditing, setIsEditing] = useState(false);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const { isWebSearchButtonToggled } = useWebSearch();
 
     // Get full attachment data from Redux (shallow attachments in message only contain ID and basic metadata)
     const allAttachments = useLumoSelector(selectAttachments);
-    
+
     // Only show manually uploaded attachments to THIS message
     // Exclude auto-retrieved files (both Drive files and project files retrieved via RAG)
+    // Also exclude assistant-generated files (like AI-generated images)
     // We check BOTH the shallow attachment (from message) AND full attachment (from Redux)
     // because the autoRetrieved flag may only exist on the shallow attachment
     const manualAttachments = (message.attachments || [])
@@ -83,15 +84,29 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
             const fullAttachment = allAttachments[shallowAttachment.id];
             // Check autoRetrieved on both shallow and full attachment
             const isAutoRetrieved = shallowAttachment.autoRetrieved || fullAttachment?.autoRetrieved;
-            
+
             if (isAutoRetrieved) {
                 return null; // Exclude auto-retrieved files (Drive or project files)
             }
+
+            // Exclude assistant-generated attachments
+            if (fullAttachment?.role === 'assistant') {
+                return null;
+            }
+
             return fullAttachment || null;
         })
         .filter(Boolean) as Attachment[];
-    
+
     const hasAttachments = manualAttachments.length > 0;
+
+    console.log('[IMAGE_DEBUG] UserMessage attachments', {
+        messageId: message.id,
+        shallowAttachments: message.attachments,
+        manualAttachmentsCount: manualAttachments.length,
+        manualAttachments: manualAttachments.map(a => ({ id: a.id, role: a.role, filename: a.filename })),
+        hasAttachments,
+    });
 
     const { contentRef, isCollapsed, showCollapseButton, toggleCollapse } = useCollapsibleMessageContent(message);
     const canBeCollapsed = showCollapseButton || hasAttachments;

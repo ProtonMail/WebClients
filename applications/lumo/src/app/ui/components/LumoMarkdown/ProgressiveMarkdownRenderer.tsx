@@ -13,6 +13,8 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import { useCopyNotification } from '../../../hooks/useCopyNotification';
 import type { SearchItem } from '../../../lib/toolCall/types';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+import { useLumoSelector } from '../../../redux/hooks';
+import { selectAttachments } from '../../../redux/selectors';
 import { parseInteger } from '../../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../../util/tokens';
 import LumoCopyButton from '../../interactiveConversation/messageChain/message/actionToolbar/LumoCopyButton';
@@ -158,6 +160,9 @@ const MarkdownBlock: React.FC<{
     message: any;
 }> = React.memo(
     ({ content, theme, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
+        // Get full attachments from Redux store (message.attachments only has shallow data)
+        const allAttachments = useLumoSelector(selectAttachments);
+
         // RefLink component for source references
         const RefLink = useMemo(
             () =>
@@ -273,7 +278,8 @@ const MarkdownBlock: React.FC<{
                     // Handle attachment: URLs
                     if (src?.startsWith('attachment:')) {
                         const attachmentId = src.substring('attachment:'.length);
-                        const attachment = message.attachments?.find((a: any) => a.id === attachmentId);
+                        // Look up full attachment from Redux (not from message.attachments which is shallow)
+                        const attachment = allAttachments[attachmentId];
                         return <InlineImageComponent attachment={attachment} alt={alt} />;
                     }
 
@@ -288,7 +294,7 @@ const MarkdownBlock: React.FC<{
                     );
                 },
             }),
-            [CodeBlock, RefLink, handleLinkClick, message.attachments]
+            [CodeBlock, RefLink, handleLinkClick, allAttachments]
         );
 
         return (
@@ -296,6 +302,14 @@ const MarkdownBlock: React.FC<{
                 remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: false }]]}
                 rehypePlugins={[() => rehypeKatex({ output: 'mathml' })]}
                 components={components}
+                urlTransform={(url) => {
+                    // Preserve attachment: URLs, sanitize everything else
+                    if (url.startsWith('attachment:')) {
+                        return url;
+                    }
+                    // Default sanitization for other URLs
+                    return url;
+                }}
             >
                 {content}
             </Markdown>

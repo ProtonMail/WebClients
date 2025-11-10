@@ -1,12 +1,8 @@
 import React, { useMemo } from 'react';
 import Markdown from 'react-markdown';
-import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import remarkGfm from 'remark-gfm';
-
-// Import syntax highlighter (full Prism build with all languages)
-import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Copy } from '@proton/components';
@@ -14,11 +10,15 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import type { SearchItem } from '../../../lib/toolCall/types';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+import { useLumoSelector } from '../../../redux/hooks';
+import { selectAttachments } from '../../../redux/selectors';
 import type { Message } from '../../../types';
 import { parseInteger } from '../../../util/number';
 import { convertRefTokensToSpans } from '../../../util/tokens';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
 import { InlineImageComponent } from './InlineImageComponent';
+// Import syntax highlighter (full Prism build with all languages)
+import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
 import './LumoMarkdown.scss';
 
@@ -173,6 +173,16 @@ const LumoMarkdown = React.memo(
         toolCallResults?: SearchItem[] | null;
         sourcesContainerRef?: React.RefObject<HTMLDivElement>;
     }) => {
+        // Get full attachments from Redux store (message.attachments only has shallow data)
+        const allAttachments = useLumoSelector(selectAttachments);
+
+        console.log('[IMAGE_DEBUG] LumoMarkdown render', {
+            messageId: message.id,
+            contentLength: content?.length,
+            hasAttachmentMarkdown: content?.includes('attachment:'),
+            contentPreview: content?.substring(content.length - 200),
+        });
+
         // Process REF tokens and convert to links
         const processedContent = useMemo(() => convertRefTokensToSpans(content ?? ''), [content]);
 
@@ -201,8 +211,22 @@ const LumoMarkdown = React.memo(
                     // Handle attachment: URLs
                     if (src?.startsWith('attachment:')) {
                         const attachmentId = src.substring('attachment:'.length);
-                        const attachment = message.attachments?.find((a) => a.id === attachmentId);
+                        console.log('[IMAGE_DEBUG] LumoMarkdown img renderer', {
+                            attachmentId,
+                            src,
+                            hasAllAttachments: !!allAttachments,
+                            attachmentExists: !!allAttachments[attachmentId],
+                            attachment: allAttachments[attachmentId],
+                        });
+                        // Look up full attachment from Redux (not from message.attachments which is shallow)
+                        const attachment = allAttachments[attachmentId];
+                        console.log(
+                            `[IMAGE_DEBUG] in LumoMarkdown (memo) img renderer (memo) for attachment ${attachmentId}`
+                        );
                         return <InlineImageComponent attachment={attachment} alt={alt} />;
+                    } else {
+                        console.log(`[IMAGE_DEBUG] img src = ${src}"`);
+                        console.log(`[IMAGE_DEBUG] img src does not start with "attachment:"`);
                     }
 
                     // For security, don't render other images
@@ -245,14 +269,23 @@ const LumoMarkdown = React.memo(
                     );
                 },
             }),
-            [onCopy, handleLinkClick, toolCallResults, sourcesContainerRef, message.attachments]
+            [onCopy, handleLinkClick, toolCallResults, sourcesContainerRef, allAttachments]
         );
 
+        console.log(`[IMAGE_DEBUG] LumoMarkdown: processedContent =`, processedContent);
         return (
             <Markdown
                 remarkPlugins={[remarkGfm]}
                 skipHtml={true} // security
                 components={renderers}
+                urlTransform={(url) => {
+                    // Preserve attachment: URLs, sanitize everything else
+                    if (url.startsWith('attachment:')) {
+                        return url;
+                    }
+                    // Default sanitization for other URLs
+                    return url;
+                }}
             >
                 {processedContent}
             </Markdown>

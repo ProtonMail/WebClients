@@ -294,38 +294,53 @@ export function getCallbacks(
                 });
 
                 if (m.image_id && m.data) {
+                    console.log('[IMAGE_DEBUG] Processing image_data in LLM flow', {
+                        imageId: m.image_id,
+                        assistantMessageId,
+                        dataLength: m.data.length,
+                    });
+
                     // Decode base64 to Uint8Array (handle encrypted if needed)
                     const imageDataBase64 = m.data;
                     const imageData = base64StringToUint8Array(imageDataBase64);
+                    console.log('[IMAGE_DEBUG] Decoded image data', {
+                        byteLength: imageData.length,
+                        firstBytes: Array.from(imageData.slice(0, 10)),
+                    });
 
                     // Create attachment with role='assistant'
                     const attachment: ShallowAttachment = {
                         id: m.image_id,
                         spaceId,
-                        filename: 'generated-image.png',
+                        filename: `${m.image_id}.png`,
                         uploadedAt: new Date().toISOString(),
                         mimeType: 'image/png',
                         rawBytes: imageData.length,
                         role: 'assistant',
                     };
 
+                    console.log('[IMAGE_DEBUG] Created attachment object', attachment);
+
                     // Add attachment to Redux store (attachments slice)
                     dispatch(addAttachment({
                         ...attachment,
                         data: imageData,
                     }));
+                    console.log('[IMAGE_DEBUG] Dispatched addAttachment');
 
                     // Add attachment reference to message
                     dispatch(addImageAttachment({
                         messageId: assistantMessageId,
                         attachment,
                     }));
+                    console.log('[IMAGE_DEBUG] Dispatched addImageAttachment');
 
                     // Append markdown reference to message content
                     dispatch(appendChunk({
                         messageId: assistantMessageId,
                         content: `\n\n![Generated image](attachment:${m.image_id})\n\n`,
                     }));
+                    console.log('[IMAGE_DEBUG] Dispatched appendChunk with markdown');
                 }
                 break;
         }
