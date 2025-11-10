@@ -1,5 +1,8 @@
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+
+import { MAX_DOWNLOADING_BLOCKS, MAX_DOWNLOADING_FILES_LOAD } from '../../store/_downloads/constants';
 import { DownloadScheduler } from './DownloadScheduler';
-import type { DownloadQueueTask, DownloadQueueTaskHandle } from './downloadTypes';
+import type { DownloadQueueTask, DownloadQueueTaskHandle, DownloadableItem } from './downloadTypes';
 
 type Deferred<T> = {
     promise: Promise<T>;
@@ -17,26 +20,128 @@ function createDeferred<T = void>(): Deferred<T> {
     return { promise, resolve, reject };
 }
 
-function makeTask(start: jest.Mock<Promise<DownloadQueueTaskHandle>>): DownloadQueueTask {
+let taskCounter = 0;
+
+function makeTask(
+    start: jest.Mock<Promise<DownloadQueueTaskHandle>>,
+    overrides: Partial<DownloadQueueTask> = {}
+): DownloadQueueTask {
+    const {
+        taskId,
+        node,
+        storageSizeEstimate,
+        ...rest
+    } = overrides;
+
+    taskCounter += 1;
+    const resolvedTaskId = taskId ?? `task-${taskCounter}`;
+    const resolvedNode: DownloadableItem =
+        node ?? {
+            uid: `node-${taskCounter}`,
+            name: `file-${taskCounter}`,
+            isFile: true,
+        };
+
     return {
-        nodes: [],
+        taskId: resolvedTaskId,
+        node: resolvedNode,
+        storageSizeEstimate,
+        ...rest,
         start,
     };
 }
 
+const saturateConcurrency = (scheduler: DownloadScheduler, count = MAX_DOWNLOADING_FILES_LOAD) =>
+    Array.from({ length: count }, () => {
+        const completion = createDeferred<void>();
+        const start = jest.fn(async () => ({ completion: completion.promise }));
+        scheduler.scheduleDownload(makeTask(start));
+        return { completion, start };
+    });
+
 describe('DownloadScheduler', () => {
     beforeEach(() => {
         jest.useRealTimers();
+        taskCounter = 0;
     });
 
     it('should respect the maximum number of concurrent downloads', async () => {
-        const scheduler = new DownloadScheduler({ maxConcurrentDownloads: 1 });
+        const scheduler = new DownloadScheduler();
+        const blockingTasks = saturateConcurrency(scheduler);
+        const pendingStart = jest.fn(async () => ({ completion: Promise.resolve() }));
+        scheduler.scheduleDownload(makeTask(pendingStart));
+
+        await Promise.resolve();
+
+        blockingTasks.forEach(({ start }) => expect(start).toHaveBeenCalledTimes(1));
+        expect(pendingStart).not.toHaveBeenCalled();
+
+        blockingTasks[0].completion.resolve();
+        await Promise.resolve();
+        await Promise.resolve();
+
+        expect(pendingStart).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not start a task that was cancelled while pending', async () => {
+        const scheduler = new DownloadScheduler();
+        const blockingTasks = saturateConcurrency(scheduler);
+        const secondStart = jest.fn(async () => ({ completion: Promise.resolve() }));
+
+        const secondId = scheduler.scheduleDownload(makeTask(secondStart));
+
+        await Promise.resolve();
+
+        expect(secondStart).not.toHaveBeenCalled();
+
+        scheduler.cancelDownload(secondId);
+
+        blockingTasks[0].completion.resolve();
+        await Promise.resolve();
+        await Promise.resolve();
+
+        expect(secondStart).not.toHaveBeenCalled();
+    });
+
+    it('should clear pending and active downloads', async () => {
+        const scheduler = new DownloadScheduler();
+        const blockingTasks = saturateConcurrency(scheduler);
+        const pendingStart = jest.fn(async () => ({ completion: Promise.resolve() }));
+
+        scheduler.scheduleDownload(makeTask(pendingStart));
+        scheduler.clearDownloads();
+
+        blockingTasks.forEach(({ completion }) => completion.resolve());
+        await Promise.resolve();
+        await Promise.resolve();
+
+        expect(pendingStart).not.toHaveBeenCalled();
+    });
+
+    it('should generate unique task identifiers', () => {
+        const scheduler = new DownloadScheduler();
+
+        const ids = new Set([
+            scheduler.generateTaskId(),
+            scheduler.generateTaskId(),
+            scheduler.generateTaskId(),
+        ]);
+
+        expect(ids.size).toBe(3);
+        [...ids].forEach((id) => expect(id).toMatch(/^download-task-/));
+    });
+
+    it('should throttle downloads when starting another exceeds block load budget', async () => {
+        const scheduler = new DownloadScheduler();
+
         const firstCompletion = createDeferred<void>();
         const firstStart = jest.fn(async () => ({ completion: firstCompletion.promise }));
         const secondStart = jest.fn(async () => ({ completion: Promise.resolve() }));
 
-        scheduler.scheduleDownload(makeTask(firstStart));
-        scheduler.scheduleDownload(makeTask(secondStart));
+        scheduler.scheduleDownload(
+            makeTask(firstStart, { storageSizeEstimate: FILE_CHUNK_SIZE * (MAX_DOWNLOADING_BLOCKS + 5) })
+        );
+        scheduler.scheduleDownload(makeTask(secondStart, { storageSizeEstimate: FILE_CHUNK_SIZE * 6 }));
 
         await Promise.resolve();
 
@@ -50,56 +155,30 @@ describe('DownloadScheduler', () => {
         expect(secondStart).toHaveBeenCalledTimes(1);
     });
 
-    it('should not start a task that was cancelled while pending', async () => {
-        const scheduler = new DownloadScheduler({ maxConcurrentDownloads: 1 });
-        const firstCompletion = createDeferred<void>();
-        const firstStart = jest.fn(async () => ({ completion: firstCompletion.promise }));
-        const secondStart = jest.fn(async () => ({ completion: Promise.resolve() }));
-
-        scheduler.scheduleDownload(makeTask(firstStart));
-        const secondId = scheduler.scheduleDownload(makeTask(secondStart));
-
-        scheduler.cancelDownload(secondId);
-
-        await Promise.resolve();
-        expect(firstStart).toHaveBeenCalledTimes(1);
-        expect(secondStart).not.toHaveBeenCalled();
-
-        firstCompletion.resolve();
-        await Promise.resolve();
-        await Promise.resolve();
-
-        expect(secondStart).not.toHaveBeenCalled();
-    });
-
-    it('should clear pending and active downloads', async () => {
-        const scheduler = new DownloadScheduler({ maxConcurrentDownloads: 1 });
-        const firstCompletion = createDeferred<void>();
-        const firstStart = jest.fn(async () => ({ completion: firstCompletion.promise }));
-        const secondStart = jest.fn(async () => ({ completion: Promise.resolve() }));
-
-        scheduler.scheduleDownload(makeTask(firstStart));
-        scheduler.scheduleDownload(makeTask(secondStart));
-
-        scheduler.clearDownloads();
-
-        firstCompletion.resolve();
-        await Promise.resolve();
-        await Promise.resolve();
-
-        expect(secondStart).not.toHaveBeenCalled();
-    });
-
-    it('should generate unique task identifiers', () => {
+    it('should start additional downloads even when a prior task lacks a size estimate', async () => {
         const scheduler = new DownloadScheduler();
 
-        const ids = new Set([
-            scheduler.scheduleDownload(makeTask(jest.fn(async () => ({ completion: Promise.resolve() })))),
-            scheduler.scheduleDownload(makeTask(jest.fn(async () => ({ completion: Promise.resolve() })))),
-            scheduler.scheduleDownload(makeTask(jest.fn(async () => ({ completion: Promise.resolve() })))),
-        ]);
+        const firstCompletion = createDeferred<void>();
+        const firstStart = jest.fn(async () => ({ completion: firstCompletion.promise }));
+        const secondStart = jest.fn(async () => ({ completion: Promise.resolve() }));
 
-        expect(ids.size).toBe(3);
-        [...ids].forEach((id) => expect(id).toMatch(/^download-task-/));
+        scheduler.scheduleDownload(
+            makeTask(firstStart, {
+                node: { uid: 'unknown', name: 'mystery.bin', isFile: true },
+            })
+        );
+        scheduler.scheduleDownload(makeTask(secondStart, { storageSizeEstimate: FILE_CHUNK_SIZE }));
+
+        await Promise.resolve();
+
+        expect(firstStart).toHaveBeenCalledTimes(1);
+        expect(secondStart).toHaveBeenCalledTimes(1);
+
+        firstCompletion.resolve();
+        await Promise.resolve();
+        await Promise.resolve();
+
+        expect(secondStart).toHaveBeenCalledTimes(1);
     });
+
 });

@@ -121,6 +121,7 @@ describe('mapNodeToLegacyItem', () => {
             hasThumbnail: true,
             fileModifyTime: modifyTime / 1000,
             size: mockRevision.claimedSize,
+            storageSize: mockRevision.storageSize ?? 0,
             trashed: null,
             parentLinkId: parentId,
             parentUid: parentUid,

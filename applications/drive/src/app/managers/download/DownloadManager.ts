@@ -114,7 +114,9 @@ export class DownloadManager {
 
     private async scheduleSingleFileDownload(downloadId: string, node: DownloadableItem) {
         this.scheduler.scheduleDownload({
-            nodes: [node],
+            taskId: downloadId,
+            node,
+            storageSizeEstimate: node.storageSize,
             start: () => this.startSingleFileDownload(node, downloadId),
         });
     }
@@ -150,6 +152,7 @@ export class DownloadManager {
 
         const controller = fileDownloader.downloadToStream(writable, (downloadedBytes) => {
             updateDownloadItem(downloadId, { downloadedBytes });
+            this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
         });
 
         let streamForSaver: ReadableStream<Uint8Array<ArrayBuffer>>;
