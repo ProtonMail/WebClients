@@ -642,6 +642,17 @@ describe('forbidden plan transitions', () => {
         expect(result).toEqual(null);
     });
 
+    it('should be forbidden going from legacy vpn plus to lumo plus', () => {
+        const subscription = buildSubscription(PLANS.VPN);
+        const planIDs: PlanIDs = { [PLANS.LUMO]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual({
+            type: 'lumo-plus',
+            newPlanName: PLANS.VPN2024,
+            newPlanIDs: { [PLANS.VPN2024]: 1, [ADDON_NAMES.LUMO_VPN2024]: 1 },
+        });
+    });
+
     it('should be forbidden going from vpn plus to lumo plus', () => {
         const subscription = buildSubscription(PLANS.VPN2024);
         const planIDs: PlanIDs = { [PLANS.LUMO]: 1 };

@@ -698,6 +698,11 @@ export function isForbiddenLumoPlus({
         return false;
     }
     const currentPlanIDs = getPlanIDs(subscription);
+    // If the current plan is legacy VPN, we delete it and move to vpn 2024 since it has the lumo addon.
+    if (currentPlanIDs[PLANS.VPN]) {
+        delete currentPlanIDs[PLANS.VPN];
+        currentPlanIDs[PLANS.VPN2024] = 1;
+    }
     const currentPlanSupportedAddons = getSupportedAddons(currentPlanIDs);
 
     const currentPlanKey = getPlanNameFromIDs(currentPlanIDs);
