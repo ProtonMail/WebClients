@@ -28,7 +28,10 @@ export type LegacyItem = FileBrowserBaseItem & {
     shareUrl?: LinkShareUrl;
     signatureIssues?: SignatureIssues;
     signatureEmail?: string;
+    /** @deprecated use storageSize instead */
     size: number;
+    /** @description Storage size in bytes for the last revision of this entity (when the file is encrypted) */
+    storageSize?: number;
     trashed: number | null;
     parentLinkId: string;
     sharedOn?: number;
@@ -119,6 +122,7 @@ export const mapNodeToLegacyItem = async (
         hasThumbnail: node.type === NodeType.File,
         fileModifyTime: getLegacyModifiedTime(node),
         size: getNodeDisplaySize(node),
+        storageSize: node.activeRevision?.storageSize ?? 0,
         trashed: getLegacyTrashedTime(node),
         parentLinkId: node.parentUid ? splitNodeUid(node.parentUid).nodeId : '',
         linkId: splitNodeUid(node.uid).nodeId,
