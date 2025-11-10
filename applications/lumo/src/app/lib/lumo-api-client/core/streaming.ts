@@ -23,8 +23,9 @@ export class StreamProcessor {
             try {
                 const jsonStr = line.replace(/^data:\s*/, '');
                 const item = JSON.parse(jsonStr);
+                console.log('[STREAM] Parsed item:', item.type, item);
                 if (!isGenerationToFrontendMessage(item)) {
-                    console.warn('Unexpected format for json payload received from API server, ignoring');
+                    console.warn('Unexpected format for json payload received from API server, ignoring', item);
                     continue;
                 }
                 parsedData.push(item);

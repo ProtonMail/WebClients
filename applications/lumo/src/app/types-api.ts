@@ -35,6 +35,13 @@ export type GenerationToFrontendMessage =
     | { type: 'queued'; target?: GenerationTarget }
     | { type: 'ingesting'; target: GenerationTarget }
     | { type: 'token_data'; target: GenerationTarget; count: number; content: string; encrypted?: boolean }
+    | {
+          type: 'image_data';
+          image_id?: string;
+          data?: string;
+          is_final?: boolean;
+          seed?: number;
+      }
     | { type: 'done' }
     | { type: 'timeout' }
     | { type: 'error' }
@@ -69,6 +76,14 @@ export function isGenerationToFrontendMessage(obj: any): obj is GenerationToFron
                 typeof obj.count === 'number' &&
                 typeof obj.content === 'string' &&
                 (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
+            );
+
+        case 'image_data':
+            return (
+                (!('image_id' in obj) || typeof obj.image_id === 'string') &&
+                (!('data' in obj) || typeof obj.data === 'string') &&
+                (!('is_final' in obj) || typeof obj.is_final === 'boolean') &&
+                (!('seed' in obj) || typeof obj.seed === 'number')
             );
 
         default:
