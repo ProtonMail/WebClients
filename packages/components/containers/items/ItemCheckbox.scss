@@ -5,6 +5,66 @@
 	--item-checkbox-icon-text-color: inherit;
 }
 
+.recipient-color-0 {
+	--item-checkbox-background-color: #2e8378;
+}
+
+.recipient-color-1 {
+	--item-checkbox-background-color: #34a48a;
+}
+
+.recipient-color-2 {
+	--item-checkbox-background-color: #52cd96;
+}
+
+.recipient-color-3 {
+	--item-checkbox-background-color: #51be50;
+}
+
+.recipient-color-4 {
+	--item-checkbox-background-color: #3f8b8e;
+}
+
+.recipient-color-5 {
+	--item-checkbox-background-color: #764ac4;
+}
+
+.recipient-color-6 {
+	--item-checkbox-background-color: #9e66fc;
+}
+
+.recipient-color-7 {
+	--item-checkbox-background-color: #9c89ff;
+}
+
+.recipient-color-8 {
+	--item-checkbox-background-color: #a1439f;
+}
+
+.recipient-color-9 {
+	--item-checkbox-background-color: #7b3185;
+}
+
+.recipient-color-10 {
+	--item-checkbox-background-color: #495ea9;
+}
+
+.recipient-color-11 {
+	--item-checkbox-background-color: #4e7abb;
+}
+
+.recipient-color-12 {
+	--item-checkbox-background-color: #4989ff;
+}
+
+.recipient-color-13 {
+	--item-checkbox-background-color: #3fb0d9;
+}
+
+.recipient-color-14 {
+	--item-checkbox-background-color: #4f66df;
+}
+
 .item-checkbox {
 	& + .item-icon {
 		border: 0;
@@ -37,6 +97,18 @@
 		.item-icon {
 			background-color: var(--item-checkbox-background-color);
 			color: var(--item-checkbox-icon-text-color);
+
+			&[class*='recipient-color-'] {
+				&:not(:has(.item-sender-image)) {
+					color: white;
+				}
+
+				// if we have a sender image, we need to reset the background color and text color to default ones
+				&:has(.item-sender-image) {
+					--item-checkbox-background-color: var(--background-strong);
+					--item-checkbox-icon-text-color: inherit;
+				}
+			}
 		}
 	}
 
@@ -82,7 +154,7 @@
 	}
 }
 
-.item-icon,
+.item-icon:not([class*='recipient-color-']),
 .item-icon-compact:hover {
 	.unread & {
 		background-color: var(--email-item-unread-icon-background-color);
