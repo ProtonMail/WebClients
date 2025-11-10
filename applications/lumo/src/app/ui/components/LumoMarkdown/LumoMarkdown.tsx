@@ -18,6 +18,7 @@ import type { Message } from '../../../types';
 import { parseInteger } from '../../../util/number';
 import { convertRefTokensToSpans } from '../../../util/tokens';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
+import { InlineImageComponent } from './InlineImageComponent';
 
 import './LumoMarkdown.scss';
 
@@ -194,8 +195,18 @@ const LumoMarkdown = React.memo(
 
                     return <CodeBlock language={match?.[1] ?? 'plaintext'} value={childrenString} onCopy={onCopy} />;
                 },
-                img() {
-                    return null; // security
+                img(props: any) {
+                    const { src, alt } = props;
+
+                    // Handle attachment: URLs
+                    if (src?.startsWith('attachment:')) {
+                        const attachmentId = src.substring('attachment:'.length);
+                        const attachment = message.attachments?.find((a) => a.id === attachmentId);
+                        return <InlineImageComponent attachment={attachment} alt={alt} />;
+                    }
+
+                    // For security, don't render other images
+                    return null;
                 },
                 table(props: any) {
                     return (
@@ -234,7 +245,7 @@ const LumoMarkdown = React.memo(
                     );
                 },
             }),
-            [onCopy, handleLinkClick, toolCallResults, sourcesContainerRef]
+            [onCopy, handleLinkClick, toolCallResults, sourcesContainerRef, message.attachments]
         );
 
         return (
