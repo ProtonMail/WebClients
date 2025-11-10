@@ -53,7 +53,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         if (state.focusTimeout) clearTimeout(state.focusTimeout);
         state.focused = false;
 
-        if (!ctx) return;
+        if (!ctx || field.actionPrevented) return;
 
         raf.request(
             onNextTick(async (handle: number) => {
@@ -75,7 +75,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         state.focused = true;
 
         const { action } = field;
-        if (!ctx || !action) return;
+        if (!ctx || !action || field.actionPrevented) return;
 
         raf.request(() => {
             if (field.actionPrevented) return;
