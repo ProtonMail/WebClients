@@ -18,7 +18,7 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 import useFlag from '@proton/unleash/useFlag';
 
 import { FloatingElements } from '../components/FloatingElements/FloatingElements';
-import TransferManagerLegacy from '../components/TransferManager/TransferManager';
+import { TransferManagerLegacy } from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import config from '../config';
