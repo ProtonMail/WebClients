@@ -58,6 +58,21 @@ markdown syntax and rendered inline with preview/modal UI.
     - Handle missing attachment gracefully
 - [ ] Test with hardcoded markdown in message content
 
+### Phase 3.5: Streaming image_data Integration
+
+- [ ] Create Redux action to add attachment to message
+    - New action: addImageAttachment(messageId, attachment)
+    - Reducer: append to message.attachments array
+- [ ] Handle image_data in redux integration (integrations/redux.ts:149)
+    - Decode base64 data to Uint8Array
+    - Create Attachment object with role='assistant'
+    - Dispatch addImageAttachment action
+    - Dispatch appendChunk with markdown: `\n\n![...](attachment:{image_id})\n\n`
+- [ ] Handle image_data in llm flow (llm/index.ts:243)
+    - Same logic as redux integration
+    - Handle encrypted content if needed
+- [ ] Test end-to-end image generation from LLM
+
 ### Phase 4: UI Enhancement
 
 - [ ] Add click-to-expand modal to InlineImageComponent
@@ -99,6 +114,14 @@ markdown syntax and rendered inline with preview/modal UI.
 - [ ] Test backward compatibility with attachments without role field
 
 ## Technical Notes
+
+### Streaming Message Flow
+
+During LLM response streaming, server sends:
+- `token_data` messages: append text to message.content via appendChunk action
+- `image_data` messages: contain image_id (uuid), data (base64), is_final, seed
+  - Currently logged only at: integrations/redux.ts:149 and llm/index.ts:243
+  - Need to: create Attachment, add to message.attachments, append markdown to content
 
 ### Attachment Flow
 
