@@ -145,6 +145,16 @@ export function sendMessageWithRedux(
                                 break;
                         }
                         break;
+
+                    case 'image_data':
+                        console.log('[IMAGE_DATA] Received in Redux integration', {
+                            image_id: message.image_id,
+                            data: message.data ? `${message.data.substring(0, 50)}... (${message.data.length} chars)` : 'none',
+                            is_final: message.is_final,
+                            seed: message.seed,
+                        });
+                        // TODO: Dispatch Redux action to store image data
+                        break;
                 }
 
                 // Call the original callback if provided

@@ -15,6 +15,7 @@ import { makeChunkParserTransformStream } from './transforms/chunks';
 import { makeContextUpdaterTransformStream } from './transforms/context';
 import { makeDecryptionTransformStream } from './transforms/decrypt';
 import { makeFinishSink } from './transforms/finish';
+import { makeImageLoggerTransformStream } from './transforms/image-logger';
 import { makeSmoothingTransformStream } from './transforms/smoothing';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
@@ -39,7 +40,7 @@ const DEFAULT_CONFIG: Required<LumoApiClientConfig> = {
     endpoint: '', // No custom endpoint by default
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
     externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency'],
-    internalTools: ['proton_info'],
+    internalTools: ['proton_info', 'generate_image'],
     interceptors: {
         request: [],
         response: [],
@@ -175,6 +176,7 @@ export class LumoApiClient {
                         requestId,
                     })
                 )
+                .pipeThrough(makeImageLoggerTransformStream()) // noop - logs image_data
                 .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
                 .pipeThrough(makeSmoothingTransformStream(this.config.enableSmoothing))
                 .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext)); // calls callbacks with final chunks
