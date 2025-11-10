@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import { areIntervalsOverlapping, isBefore } from 'date-fns';
@@ -75,6 +75,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const getCalendarKeys = useGetCalendarKeys();
 
+    const initialFormData = useRef<BookingFormData | undefined>(undefined);
     const [formData, setFormData] = useState<BookingFormData>(getInitialBookingFormState());
 
     const { createNotification } = useNotifications();
@@ -108,6 +109,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
         setBookingRange(bookingRange);
         setFormData(newFormData);
+        initialFormData.current = newFormData;
     };
 
     const recomputeBookingSlots = (newDuration: number) => {
@@ -134,13 +136,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         }
 
         setFormData((prev) => ({ ...prev, [field]: value }));
-    };
-
-    const resetBookingState = () => {
-        const newFormData = getInitialBookingFormState();
-
-        setBookingRange([]);
-        setFormData(newFormData);
     };
 
     const updateBookingRange = (oldRangeId: string, start: Date, end: Date) => {
@@ -240,7 +235,26 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const closeBookingSidebar = () => {
-        setBookingsState(BookingState.OFF);
+        const formWasTouched =
+            formData.title !== initialFormData.current?.title ||
+            formData.description !== initialFormData.current?.description ||
+            formData.duration !== initialFormData.current?.duration ||
+            formData.selectedCalendar !== initialFormData.current?.selectedCalendar ||
+            formData.location !== initialFormData.current?.location ||
+            formData.bookingSlots.length !== initialFormData.current?.bookingSlots.length;
+
+        if (formWasTouched) {
+            notify({
+                type: ModalType.BookingPageConfirmClose,
+                value: {
+                    onClose: () => {
+                        setBookingsState(BookingState.OFF);
+                    },
+                },
+            });
+        } else {
+            setBookingsState(BookingState.OFF);
+        }
     };
 
     const submitForm = async () => {
@@ -283,7 +297,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                 value: {
                     bookingLink,
                     onClose: () => {
-                        resetBookingState();
                         setBookingsState(BookingState.OFF);
                     },
                 },
