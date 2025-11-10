@@ -19,12 +19,7 @@ import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/d
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { encryptBookingPage } from '../utils/bookingCryptoUtils';
-import {
-    generateBookingRangeID,
-    generateDefaultBookingRange,
-    generateSlotsFromRange,
-    hasAlreadyARangeForDay,
-} from '../utils/bookingHelpers';
+import { generateBookingRangeID, generateDefaultBookingRange, generateSlotsFromRange } from '../utils/bookingHelpers';
 import type { BookingRange, Slot } from './interface';
 import { type BookingFormData, BookingLocation, BookingState, DEFAULT_EVENT_DURATION } from './interface';
 
@@ -154,16 +149,16 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             throw new Error(`Booking range with id ${oldRangeId} not found or no bookingRange`);
         }
 
-        // If a range already exist this day we show an error
-        if (hasAlreadyARangeForDay(bookingRange, oldRangeId, start)) {
-            createNotification({ text: c('Info').t`Booking overlaps with an existing booking.` });
-            return;
-        }
-
         const newRangeId = generateBookingRangeID(start, end);
+        const newRange = {
+            id: newRangeId,
+            start,
+            end,
+            timezone: range.timezone,
+        };
 
         const newBookingRange = bookingRange
-            .map((range) => (range.id === oldRangeId ? { ...range, id: newRangeId, start, end } : range))
+            .map((range) => (range.id === oldRangeId ? newRange : range))
             .sort((a, b) => a.start.getTime() - b.start.getTime());
 
         const newSlots = generateSlotsFromRange({

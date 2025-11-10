@@ -195,18 +195,18 @@ export const generateDefaultBookingRange = (
 ): BookingRange[] => {
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
 
+    // We want to make sure the stored dates for the range is in UTC
+    const date = fromLocalDate(startDate);
+    const utc = toUTCDate({ ...date });
+
     return eachDayOfInterval({
-        start: startOfWeek(startDate, { weekStartsOn }),
-        end: endOfWeek(startDate, { weekStartsOn }),
+        start: startOfWeek(utc, { weekStartsOn }),
+        end: endOfWeek(utc, { weekStartsOn }),
     })
         .filter((day) => !isWeekend(day))
         .map((day) => {
             return createBookingRange(day, timezone);
         });
-};
-
-export const hasAlreadyARangeForDay = (bookings: BookingRange[], oldRangeId: string, start: Date): boolean => {
-    return bookings.some((booking) => booking.id !== oldRangeId && isSameDay(booking.start, start));
 };
 
 export const createBookingRangeNextAvailableTime = (bookingRange: BookingRange[], timezone: string): BookingRange => {
