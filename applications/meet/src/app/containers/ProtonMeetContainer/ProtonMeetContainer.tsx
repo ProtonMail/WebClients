@@ -5,6 +5,7 @@ import { ConnectionStateInfo, type GroupKeyInfo, MeetCoreErrorEnum } from '@prot
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
@@ -65,6 +66,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const { initializeDevices } = useMediaManagementContext();
 
+    const authentication = useAuthentication();
     const { createNotification } = useNotifications();
 
     const reportMeetError = useMeetErrorReporting();
@@ -198,7 +200,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         }
 
         try {
-            await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName);
+            const sessionId = authentication.hasSession() ? authentication.getUID() : null;
+            await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName, sessionId);
 
             await wasmApp.setMlsGroupUpdateHandler();
             await wasmApp.setLiveKitAdminChangeHandler();
