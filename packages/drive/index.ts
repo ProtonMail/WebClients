@@ -11,6 +11,7 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
+import { getClientUid } from './internal/clientUid';
 import { LatestEventIdProvider } from './internal/latestEventIdProvider';
 import { initOpenPGPCryptoModule } from './internal/openPGPCryptoModule';
 import { proxyDriveClientWithEventTracking } from './internal/proxyDriveClientWithEventTracking';
@@ -93,8 +94,6 @@ let photosEntitiesCacheSingleton: MemoryCache<string> | undefined;
 
 let loggingSingleton: (LogHandler & { getLogs: () => string[] }) | undefined;
 
-/** @deprecated only for transition to sdk */
-
 /**
  * Provides access to Drive SDK connected to the clients monorepo.
  *
@@ -128,8 +127,14 @@ export function useDrive() {
             userPlan?: UserPlan;
             logging?: LogHandler & { getLogs: () => string[] };
         }) => {
+            const clientUid = getClientUid();
+            const config = {
+                baseUrl: `${window.location.host}/api`,
+                clientUid,
+            };
+
             // eslint-disable-next-line no-console
-            console.debug(`[drive] Configuring ProtonDriveClient ${VERSION}`, options);
+            console.debug(`[drive] Configuring ProtonDriveClient ${VERSION}`, { options, config });
 
             if (driveSingleton) {
                 throw new Error('ProtonDriveClient is already configured. You can only configure it once.');
@@ -152,9 +157,7 @@ export function useDrive() {
                 openPGPCryptoModule,
                 srpModule,
                 latestEventIdProvider: driveLatestEventIdProvider,
-                config: {
-                    baseUrl: `${window.location.host}/api`,
-                },
+                config,
                 telemetry,
             });
             driveSingleton = proxyDriveClientWithEventTracking(driveClient, driveLatestEventIdProvider);
@@ -170,9 +173,7 @@ export function useDrive() {
                 openPGPCryptoModule,
                 srpModule,
                 latestEventIdProvider: photosLatestEventIdProvider,
-                config: {
-                    baseUrl: `${window.location.host}/api`,
-                },
+                config,
                 telemetry,
             });
             photosSingleton = proxyDriveClientWithEventTracking(photosClient, photosLatestEventIdProvider);
