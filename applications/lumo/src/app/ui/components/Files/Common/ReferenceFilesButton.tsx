@@ -55,12 +55,14 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
                   // For assistant messages, show the files that were used in context
                   return message.contextFiles
                       .map((id) => currentConversationAttachments[id])
-                      .filter((file): file is NonNullable<typeof file> => file !== null && file !== undefined);
+                      .filter((file): file is NonNullable<typeof file> => file !== null && file !== undefined)
+                      .filter((file) => file.role !== 'assistant'); // Exclude inline images
               } else if (message.attachments) {
                   // For user messages, show the attachments that were attached to this message
                   return message.attachments
                       .map((attachment) => currentConversationAttachments[attachment.id])
-                      .filter((file): file is NonNullable<typeof file> => file !== null && file !== undefined);
+                      .filter((file): file is NonNullable<typeof file> => file !== null && file !== undefined)
+                      .filter((file) => file.role !== 'assistant'); // Exclude inline images
               }
               return [];
           })()
@@ -69,7 +71,8 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
               return msg.attachments
                   .map((attachment) => currentConversationAttachments[attachment.id])
                   .filter((file): file is NonNullable<typeof file> => file !== null && file !== undefined)
-                  .filter((file) => !isFileExcludedForNextMessage(file, msg.id));
+                  .filter((file) => !isFileExcludedForNextMessage(file, msg.id))
+                  .filter((file) => file.role !== 'assistant'); // Exclude inline images
           });
 
     // Deduplicate files by driveNodeId (for auto-retrieved) or by filename (for manual)
