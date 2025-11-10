@@ -71,7 +71,18 @@ markdown syntax and rendered inline with preview/modal UI.
 - [x] Handle image_data in llm flow (llm/index.ts:243)
     - Same logic as redux integration
     - Handle encrypted content if needed
-- [ ] Test end-to-end image generation from LLM
+- [x] Fix inline image rendering (look up from Redux attachments store)
+- [x] Filter role='assistant' from attachment UI (UserMessage, knowledge base, ReferenceFilesButton)
+- [x] Fix filename pattern (use {uuid}.png instead of 'generated-image.png')
+- [x] Add debug logging to trace image rendering pipeline
+    - Log in image_data handlers (redux + llm)
+    - Log in InlineImageComponent
+    - Log attachment lookup in markdown renderers
+- [x] Debug why images aren't showing (with user) - found react-markdown strips attachment: URLs
+- [x] Fix react-markdown URL sanitization (add urlTransform to preserve attachment: scheme)
+- [x] Test end-to-end image generation from LLM - WORKS!
+- [ ] Clean up debug console.log calls
+- [ ] Configure Redux middleware to ignore Uint8Array warnings
 
 ### Phase 4: UI Enhancement
 
