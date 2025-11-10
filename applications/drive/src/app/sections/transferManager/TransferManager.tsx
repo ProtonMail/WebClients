@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
+import { useDrawerWidth } from '@proton/components/index';
+
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
@@ -16,6 +18,7 @@ export const TransferManager = () => {
     const { items, status } = useTransferManagerState();
     const { clearQueue } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
+    const drawerWidth = useDrawerWidth();
     const { pendingConflict } = useUploadQueueStore(
         useShallow((state) => ({
             pendingConflict: state.getFirstPendingConflict(),
@@ -50,7 +53,13 @@ export const TransferManager = () => {
     }
 
     return (
-        <div id="transfer-manager" className="transfer-manager-fixed-position">
+        <div
+            id="transfer-manager"
+            className="transfer-manager-fixed-position right-custom"
+            style={{
+                '--right-custom': `${drawerWidth + 32}px`, // 32 == 2rem
+            }}
+        >
             <section aria-label={c('Label').t`File transfer overview`}>
                 <TransferManagerHeader toggleMinimize={toggleMinimize} isMinimized={isMinimized} onClose={onClose} />
 
