@@ -3,8 +3,7 @@
 
 .transfer-manager-fixed-position {
 	position: fixed;
-	inset-block-end: 1.5rem;
-	inset-inline-end: 1.5rem;
+	inset-block-end: 2rem;
 	inline-size: var(--tm-width, 500px);
 	max-inline-size: var(--tm-width, 500px);
 	max-block-size: calc(100vh - 3rem);

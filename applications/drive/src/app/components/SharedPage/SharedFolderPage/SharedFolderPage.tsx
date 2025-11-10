@@ -19,7 +19,7 @@ import { isTransferActive } from '../../../utils/transfer';
 import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import { FloatingElementsPublic } from '../../FloatingElements/FloatingElementsPublic';
-import TransferManager from '../../TransferManager/TransferManager';
+import { TransferManagerLegacy } from '../../TransferManager/TransferManager';
 import { usePublicDetailsModal } from '../../modals/DetailsModal';
 import { useReportAbuseModal } from '../../modals/ReportAbuseModal/ReportAbuseModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
@@ -309,7 +309,7 @@ export default function SharedFolder({
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}
             </SharedPageLayout>
             <FloatingElementsPublic>
-                <TransferManager onVirusReport={handleVirusReport} />
+                <TransferManagerLegacy onVirusReport={handleVirusReport} />
             </FloatingElementsPublic>
             {reportAbuseModal}
         </FileBrowserStateProvider>
