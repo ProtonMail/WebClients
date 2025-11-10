@@ -17,9 +17,8 @@ import {
 } from '../../../redux/slices/core/messages';
 import { addAttachment } from '../../../redux/slices/core/attachments';
 import type { LumoDispatch } from '../../../redux/store';
-import type { ShallowAttachment } from '../../../types';
 import { ConversationStatus, Role } from '../../../types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { createImageAttachment, generateImageMarkdown } from '../../imageAttachment';
 import { LumoApiClient } from '../core/client';
 import type { AssistantCallOptions, GenerationToFrontendMessage, LumoApiClientConfig, Turn } from '../core/types';
 import { postProcessTitle } from '../utils';
@@ -159,52 +158,15 @@ export function sendMessageWithRedux(
                         });
 
                         if (message.image_id && message.data && messageId && spaceId) {
-                            console.log('[IMAGE_DEBUG] Processing image_data in Redux integration', {
-                                imageId: message.image_id,
-                                messageId,
-                                dataLength: message.data.length,
-                            });
+                            const { attachment, data: imageData } = createImageAttachment(
+                                message.image_id,
+                                message.data,
+                                spaceId
+                            );
 
-                            // Decode base64 to Uint8Array
-                            const imageData = base64StringToUint8Array(message.data);
-                            console.log('[IMAGE_DEBUG] Decoded image data', {
-                                byteLength: imageData.length,
-                                firstBytes: Array.from(imageData.slice(0, 10)),
-                            });
-
-                            // Create attachment with role='assistant'
-                            const attachment: ShallowAttachment = {
-                                id: message.image_id,
-                                spaceId,
-                                filename: `${message.image_id}.png`,
-                                uploadedAt: new Date().toISOString(),
-                                mimeType: 'image/png',
-                                rawBytes: imageData.length,
-                                role: 'assistant',
-                            };
-
-                            console.log('[IMAGE_DEBUG] Created attachment object', attachment);
-
-                            // Add attachment to Redux store (attachments slice)
-                            dispatch(addAttachment({
-                                ...attachment,
-                                data: imageData,
-                            }));
-                            console.log('[IMAGE_DEBUG] Dispatched addAttachment');
-
-                            // Add attachment reference to message
-                            dispatch(addImageAttachment({
-                                messageId,
-                                attachment,
-                            }));
-                            console.log('[IMAGE_DEBUG] Dispatched addImageAttachment');
-
-                            // Append markdown reference to message content
-                            dispatch(appendChunk({
-                                messageId,
-                                content: `\n\n![Generated image](attachment:${message.image_id})\n\n`,
-                            }));
-                            console.log('[IMAGE_DEBUG] Dispatched appendChunk with markdown');
+                            dispatch(addAttachment({ ...attachment, data: imageData }));
+                            dispatch(addImageAttachment({ messageId, attachment }));
+                            dispatch(appendChunk({ messageId, content: generateImageMarkdown(message.image_id) }));
                         }
                         break;
                 }
