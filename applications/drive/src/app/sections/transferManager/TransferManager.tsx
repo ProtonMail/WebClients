@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { useDrawerWidth } from '@proton/components/index';
+import { useBeforeUnload, useDrawerWidth } from '@proton/components';
 
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
 import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
@@ -19,6 +19,8 @@ export const TransferManager = () => {
     const { clearQueue } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
     const drawerWidth = useDrawerWidth();
+    const [leaveMessage, setLeaveMessage] = useState('');
+    useBeforeUnload(leaveMessage);
     const { pendingConflict } = useUploadQueueStore(
         useShallow((state) => ({
             pendingConflict: state.getFirstPendingConflict(),
@@ -36,6 +38,15 @@ export const TransferManager = () => {
             });
         }
     }, [pendingConflict, showUploadConflictModal]);
+
+    useEffect(() => {
+        if (status === TransferManagerStatus.InProgress) {
+            const message = c('Unload warning').t`Changes you made may not be saved.`;
+            setLeaveMessage(message);
+        } else {
+            setLeaveMessage('');
+        }
+    }, [status]);
 
     const toggleMinimize = () => {
         setMinimized((value) => !value);
