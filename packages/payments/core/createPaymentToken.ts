@@ -301,6 +301,16 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
         });
     }
 
+    if (!Bin) {
+        // If this happens, then it most likely means that the current domain name isn't whitelisted in Chargebee.
+        captureMessage('Payments: BIN is not found.', {
+            level: 'error',
+            extra: {
+                host: window.location.host,
+            },
+        });
+    }
+
     return Bin as string;
 }
 
