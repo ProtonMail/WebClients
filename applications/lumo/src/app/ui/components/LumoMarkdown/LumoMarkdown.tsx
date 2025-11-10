@@ -10,13 +10,10 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import type { SearchItem } from '../../../lib/toolCall/types';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
-import { useLumoSelector } from '../../../redux/hooks';
-import { selectAttachments } from '../../../redux/selectors';
 import type { Message } from '../../../types';
 import { parseInteger } from '../../../util/number';
 import { convertRefTokensToSpans } from '../../../util/tokens';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
-import { InlineImageComponent } from './InlineImageComponent';
 // Import syntax highlighter (full Prism build with all languages)
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
@@ -173,16 +170,6 @@ const LumoMarkdown = React.memo(
         toolCallResults?: SearchItem[] | null;
         sourcesContainerRef?: React.RefObject<HTMLDivElement>;
     }) => {
-        // Get full attachments from Redux store (message.attachments only has shallow data)
-        const allAttachments = useLumoSelector(selectAttachments);
-
-        console.log('[IMAGE_DEBUG] LumoMarkdown render', {
-            messageId: message.id,
-            contentLength: content?.length,
-            hasAttachmentMarkdown: content?.includes('attachment:'),
-            contentPreview: content?.substring(content.length - 200),
-        });
-
         // Process REF tokens and convert to links
         const processedContent = useMemo(() => convertRefTokensToSpans(content ?? ''), [content]);
 
@@ -205,31 +192,8 @@ const LumoMarkdown = React.memo(
 
                     return <CodeBlock language={match?.[1] ?? 'plaintext'} value={childrenString} onCopy={onCopy} />;
                 },
-                img(props: any) {
-                    const { src, alt } = props;
-
-                    // Handle attachment: URLs
-                    if (src?.startsWith('attachment:')) {
-                        const attachmentId = src.substring('attachment:'.length);
-                        console.log('[IMAGE_DEBUG] LumoMarkdown img renderer', {
-                            attachmentId,
-                            src,
-                            hasAllAttachments: !!allAttachments,
-                            attachmentExists: !!allAttachments[attachmentId],
-                            attachment: allAttachments[attachmentId],
-                        });
-                        // Look up full attachment from Redux (not from message.attachments which is shallow)
-                        const attachment = allAttachments[attachmentId];
-                        console.log(
-                            `[IMAGE_DEBUG] in LumoMarkdown (memo) img renderer (memo) for attachment ${attachmentId}`
-                        );
-                        return <InlineImageComponent attachment={attachment} alt={alt} />;
-                    } else {
-                        console.log(`[IMAGE_DEBUG] img src = ${src}"`);
-                        console.log(`[IMAGE_DEBUG] img src does not start with "attachment:"`);
-                    }
-
-                    // For security, don't render other images
+                img() {
+                    // For security, don't render images in user messages
                     return null;
                 },
                 table(props: any) {
@@ -269,24 +233,11 @@ const LumoMarkdown = React.memo(
                     );
                 },
             }),
-            [onCopy, handleLinkClick, toolCallResults, sourcesContainerRef, allAttachments]
+            [onCopy, handleLinkClick, toolCallResults, sourcesContainerRef]
         );
 
-        console.log(`[IMAGE_DEBUG] LumoMarkdown: processedContent =`, processedContent);
         return (
-            <Markdown
-                remarkPlugins={[remarkGfm]}
-                skipHtml={true} // security
-                components={renderers}
-                urlTransform={(url) => {
-                    // Preserve attachment: URLs, sanitize everything else
-                    if (url.startsWith('attachment:')) {
-                        return url;
-                    }
-                    // Default sanitization for other URLs
-                    return url;
-                }}
-            >
+            <Markdown remarkPlugins={[remarkGfm]} skipHtml={true} components={renderers}>
                 {processedContent}
             </Markdown>
         );
