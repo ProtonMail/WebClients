@@ -148,7 +148,7 @@ const Header = () => {
 
     return (
         <Button icon shape="ghost" onClick={() => closeBookingSidebar()}>
-            <IcCrossBig />
+            <IcCrossBig alt={c('Action').t`Close sidebar`} />
         </Button>
     );
 };
