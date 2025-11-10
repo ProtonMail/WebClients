@@ -99,14 +99,6 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
 
     const hasAttachments = manualAttachments.length > 0;
 
-    console.log('[IMAGE_DEBUG] UserMessage attachments', {
-        messageId: message.id,
-        shallowAttachments: message.attachments,
-        manualAttachmentsCount: manualAttachments.length,
-        manualAttachments: manualAttachments.map(a => ({ id: a.id, role: a.role, filename: a.filename })),
-        hasAttachments,
-    });
-
     const { contentRef, isCollapsed, showCollapseButton, toggleCollapse } = useCollapsibleMessageContent(message);
     const canBeCollapsed = showCollapseButton || hasAttachments;
 
