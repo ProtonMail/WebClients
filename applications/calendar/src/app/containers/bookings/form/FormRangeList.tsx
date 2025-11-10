@@ -1,11 +1,12 @@
-import { addHours, addMinutes, set } from 'date-fns';
+import { addHours, addMinutes, isSameDay, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import TimeInput from '@proton/components/components/input/TimeInput';
-import { DateInputTwo } from '@proton/components/index';
+import { DateInputTwo, useNotifications } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 import { fromLocalDate, fromUTCDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
@@ -15,6 +16,8 @@ import { createBookingRangeNextAvailableTime, validateFormData } from '../utils/
 export const FormRangeList = () => {
     const { bookingRange, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
     const validation = validateFormData(formData);
+
+    const { createNotification } = useNotifications();
 
     if (!bookingRange) {
         return null;
@@ -53,10 +56,27 @@ export const FormRangeList = () => {
     };
 
     const handlePlusClick = (range: BookingRange) => {
+        const lastBookingOfDay = bookingRange
+            .filter((r) => isSameDay(r.start, range.start))
+            .sort((a, b) => a.start.getTime() - b.start.getTime())
+            .at(-1);
+
+        if (!lastBookingOfDay) {
+            return;
+        }
+
+        const newStart = addHours(lastBookingOfDay.end, 1);
+        const newEnd = addHours(lastBookingOfDay.end, 2);
+
+        if (isNextDay(lastBookingOfDay.start, newStart)) {
+            createNotification({ text: c('Info').t`Cannot create booking range across days` });
+            return;
+        }
+
         const newBookingRange = {
-            timezone: range.timezone,
-            start: addHours(range.end, 1),
-            end: addHours(range.end, 2),
+            timezone: lastBookingOfDay.timezone,
+            start: newStart,
+            end: newEnd,
         };
 
         addBookingRange(newBookingRange);
