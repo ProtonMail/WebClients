@@ -12,13 +12,28 @@ const replaceViewportHeightUnit = (element: HTMLElement) => {
 };
 
 // had to extract the method, only because some testing issues
-export const handleTopLeftPropertiesRemoval = ({ left, top }: Record<'top' | 'left', string>): Map<string, string> => {
+export const handleTopLeftPropertiesRemoval = ({
+    left,
+    top,
+    insetInlineStart,
+    insetBlockStart,
+    insetBlockEnd,
+}: Record<'top' | 'left' | 'insetInlineStart' | 'insetBlockStart' | 'insetBlockEnd', string>): Map<string, string> => {
     const result = new Map();
     if (left) {
         result.set('left', 'unset');
     }
     if (top) {
         result.set('top', 'unset');
+    }
+    if (insetInlineStart) {
+        result.set('insetInlineStart', 'unset');
+    }
+    if (insetBlockStart) {
+        result.set('insetBlockStart', 'unset');
+    }
+    if (insetBlockEnd) {
+        result.set('insetBlockEnd', 'unset');
     }
     return result;
 };
@@ -27,6 +42,10 @@ export const handleTopLeftPropertiesRemoval = ({ left, top }: Record<'top' | 'le
 const replaceLeftTopProperties = (element: HTMLElement) => {
     const left = element.style.left;
     const top = element.style.top;
+
+    const insetInlineStart = element.style.insetInlineStart;
+    const insetBlockStart = element.style.insetBlockStart;
+    const insetBlockEnd = element.style.insetBlockEnd; // will consider insetInlineEnd in a later step
 
     if (left) {
         // additionnal fix for some emails that moreother do perform a sr-only-like on their content (🤦)
@@ -39,7 +58,15 @@ const replaceLeftTopProperties = (element: HTMLElement) => {
         }
     }
 
-    const results = handleTopLeftPropertiesRemoval({ top, left });
+    // additional fix for some emails that perform moreother some transform (left: 50%; transform: translate(-50%);) that makes the content invisible, even with left unset
+    if (insetInlineStart || left) {
+        const transform = element.style.transform;
+        if (transform && transform.includes('translate')) {
+            element.style.transform = 'none';
+        }
+    }
+
+    const results = handleTopLeftPropertiesRemoval({ top, left, insetInlineStart, insetBlockStart, insetBlockEnd });
 
     results.forEach((value, property) => {
         // @ts-expect-error // we send valid properties
