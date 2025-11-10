@@ -6,17 +6,20 @@ import {
     updateConversationStatus,
 } from '../redux/slices/core/conversations';
 import {
+    addImageAttachment,
     appendChunk,
     finishMessage,
     pushMessageRequest,
     setToolCall,
     setToolResult,
 } from '../redux/slices/core/messages';
+import { addAttachment } from '../redux/slices/core/attachments';
 import type { LumoDispatch } from '../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../services/errors/errorHandling';
-import type { Base64, ConversationId, Message, RequestId, SpaceId, Status, Turn } from '../types';
+import type { Base64, ConversationId, Message, RequestId, ShallowAttachment, SpaceId, Status, Turn } from '../types';
 import { ConversationStatus, Role } from '../types';
 import type { GenerationToFrontendMessage } from '../types-api';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { removeFileFromMessageContext } from './utils';
 
 export type ContextFilter = {
@@ -289,7 +292,41 @@ export function getCallbacks(
                     is_final: m.is_final,
                     seed: m.seed,
                 });
-                // TODO: Handle image data (store in Redux, display in UI, etc.)
+
+                if (m.image_id && m.data) {
+                    // Decode base64 to Uint8Array (handle encrypted if needed)
+                    const imageDataBase64 = m.data;
+                    const imageData = base64StringToUint8Array(imageDataBase64);
+
+                    // Create attachment with role='assistant'
+                    const attachment: ShallowAttachment = {
+                        id: m.image_id,
+                        spaceId,
+                        filename: 'generated-image.png',
+                        uploadedAt: new Date().toISOString(),
+                        mimeType: 'image/png',
+                        rawBytes: imageData.length,
+                        role: 'assistant',
+                    };
+
+                    // Add attachment to Redux store (attachments slice)
+                    dispatch(addAttachment({
+                        ...attachment,
+                        data: imageData,
+                    }));
+
+                    // Add attachment reference to message
+                    dispatch(addImageAttachment({
+                        messageId: assistantMessageId,
+                        attachment,
+                    }));
+
+                    // Append markdown reference to message content
+                    dispatch(appendChunk({
+                        messageId: assistantMessageId,
+                        content: `\n\n![Generated image](attachment:${m.image_id})\n\n`,
+                    }));
+                }
                 break;
         }
         return {}; // No error
