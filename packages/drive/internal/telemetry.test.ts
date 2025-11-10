@@ -3,7 +3,7 @@ import { MetricVolumeType } from '@protontech/drive-sdk';
 import metrics from '@proton/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
-import { MetricHandler } from './telemetry';
+import { MetricHandler, reduceSizePrecision } from './telemetry';
 
 jest.mock('@proton/metrics', () => ({
     drive_sdk_api_retry_succeeded_total: {
@@ -177,7 +177,7 @@ describe('MetricHandler', () => {
                     Labels: {},
                 });
                 expect(metrics.drive_sdk_upload_errors_file_size_histogram.observe).toHaveBeenCalledWith({
-                    Value: 1024,
+                    Value: 4095,
                     Labels: {},
                 });
                 expect(metrics.drive_sdk_upload_erroring_users_total.increment).toHaveBeenCalledWith({
@@ -369,7 +369,7 @@ describe('MetricHandler', () => {
                     Labels: {},
                 });
                 expect(metrics.drive_sdk_download_errors_file_size_histogram.observe).toHaveBeenCalledWith({
-                    Value: 1024,
+                    Value: 4095,
                     Labels: {},
                 });
                 expect(metrics.drive_sdk_download_erroring_users_total.increment).toHaveBeenCalledWith({
@@ -784,6 +784,19 @@ describe('MetricHandler', () => {
                     event: { eventName: 'unknownEvent', someProperty: 'value' },
                 },
             });
+        });
+    });
+
+    describe('reduceSizePrecision', () => {
+        it('should reduce size precision', () => {
+            expect(reduceSizePrecision(0)).toBe(0);
+            expect(reduceSizePrecision(1000)).toBe(4095);
+            expect(reduceSizePrecision(4095)).toBe(4095);
+            expect(reduceSizePrecision(4096)).toBe(100_000);
+            expect(reduceSizePrecision(90_000)).toBe(100_000);
+            expect(reduceSizePrecision(100_123_456)).toBe(100_100_000);
+            expect(reduceSizePrecision(123_456_789)).toBe(123_400_000);
+            expect(reduceSizePrecision(123_456_789_000)).toBe(123_456_700_000);
         });
     });
 });
