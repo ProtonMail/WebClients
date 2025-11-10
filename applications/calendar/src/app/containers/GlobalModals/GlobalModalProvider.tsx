@@ -1,5 +1,6 @@
 import { createContext, useContext, useRef } from 'react';
 
+import { GlobalBookingConfirmClose } from './GlobalBookingConfirmClose';
 import { GlobalBookingSuccess } from './GlobalBookingSuccess';
 import type { GlobalModal, ModalListener, ModalPayload } from './interface';
 
@@ -35,6 +36,7 @@ export const GlobalModalProvider = ({ children }: { children: React.ReactNode })
         <GlobalModalContext.Provider value={{ notify, subscribe }}>
             {children}
             <GlobalBookingSuccess />
+            <GlobalBookingConfirmClose />
         </GlobalModalContext.Provider>
     );
 };
