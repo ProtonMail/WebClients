@@ -34,6 +34,7 @@ export function CellTooltip({
   noteEditorCell,
   cell,
   onRequestPersistence,
+  onRequestShowNote,
   onRequestUpdateNote,
   onRequestCloseNote,
   onRequestPinTooltip,
@@ -65,6 +66,7 @@ export function CellTooltip({
         hyperlink={hyperlink}
         cell={cell}
         onRequestPersistence={onRequestPersistence}
+        onRequestShowNote={onRequestShowNote}
         onRequestUpdateNote={onRequestUpdateNote}
         onRequestCloseNote={onRequestCloseNote}
         sheetId={sheetId}
