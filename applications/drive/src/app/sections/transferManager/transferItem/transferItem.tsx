@@ -45,7 +45,10 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
         return <CircleLoader size="small" className="color-signal-info" />;
     }
     if (entry.status === BaseTransferStatus.Cancelled) {
-        return <Icon size={5} className="color-weak" name="minus-circle-filled" />;
+        return <Icon size={5} className="color-weak" name="cross-circle" />;
+    }
+    if (entry.status === UploadStatus.Skipped) {
+        return <Icon size={5} className="color-weak" name="cross-circle" />;
     }
     if (entry.status === BaseTransferStatus.Failed) {
         return <Icon size={5} className="color-danger" name="cross-circle-filled" />;
@@ -58,6 +61,11 @@ export const TransferItem = ({ entry, onShare }: Props) => {
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const transferredTotal = `${shortHumanSize(entry.transferredBytes)} / ${shortHumanSize(totalSize)}`;
     const { cancelTransfer, retryTransfer, goToLocation } = useTransferManagerActions();
+    const shouldHideSizeInfo = [
+        BaseTransferStatus.Finished,
+        BaseTransferStatus.Cancelled,
+        UploadStatus.Skipped,
+    ].includes(entry.status as BaseTransferStatus);
 
     return (
         <div
@@ -93,7 +101,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                             </Button>
                         </>
                     )}
-                    {entry.status !== BaseTransferStatus.Finished && (
+                    {!shouldHideSizeInfo && (
                         <>
                             <span aria-hidden="true" className="text-sm text-weak">
                                 &middot;
@@ -109,7 +117,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                 </div>
             </div>
             <div className="w-1/6">
-                {entry.status == BaseTransferStatus.Finished && (
+                {entry.status === BaseTransferStatus.Finished && entry.type === 'upload' && (
                     <Button color="weak" shape="solid" onClick={onShare}>
                         {c('Action').t`Share`}
                     </Button>
