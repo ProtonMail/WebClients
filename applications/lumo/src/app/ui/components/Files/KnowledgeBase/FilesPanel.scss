@@ -72,6 +72,12 @@ im.$media-expressions: $media-expressions;
 	border-radius: 16px;
 }
 
+.project-files-area {
+	background-color: rgb(var(--primary-rgb) / 0.05);
+	border: 1px solid rgb(var(--primary-rgb) / 0.2);
+	border-radius: 16px;
+}
+
 .knowledge-info-area {
 	background-color: rgb(229 228 225 / 0.3);
 }
