@@ -686,6 +686,9 @@
       "Remove gift code": [
         "ギフトコードを削除"
       ],
+      "Remove the booking range": [
+        "予約期間を削除"
+      ],
       "Remove this notification": [
         "この通知を削除"
       ],
@@ -820,6 +823,9 @@
       ],
       "Skip verification": [
         "検証をスキップする"
+      ],
+      "Split current booking range": [
+        "現在の予約期間を分割"
       ],
       "Start import": [
         "インポート開始"
@@ -5827,6 +5833,9 @@
       "Removed participants will be notified.": [
         "削除した参加者には通知されます。"
       ],
+      "Saving event": [
+        "予定を保存中"
+      ],
       "Scan the QR code with your mobile device": [
         "携帯デバイスでQRコードを読み込んでください。"
       ],
@@ -7036,6 +7045,17 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "予約期間の日付"
+      ],
+      "End time of the booking range": [
+        "予約期間の終了時刻"
+      ],
+      "Start time of the booking range": [
+        "予約期間の開始時刻"
       ]
     },
     "Label for contact group color": {
@@ -10204,6 +10224,9 @@
       "${ app } storage": [
         "${ app } ストレージ"
       ],
+      "${ app } storage used": [
+        "${ app } のストレージ使用量"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage }は${ percentage }%使用中です"
       ],
@@ -10215,6 +10238,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
+      ],
+      "Storage used": [
+        "使用中のストレージ"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }。"
@@ -11210,6 +11236,9 @@
       ],
       "Desktop": [
         "デスクトップ"
+      ],
+      "Discard changes?": [
+        "変更を破棄しますか?"
       ],
       "Does not repeat": [
         "繰り返さない"

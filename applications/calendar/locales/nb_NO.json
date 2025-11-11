@@ -50,6 +50,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add a date": [
+        "Legg til en dato"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -5083,6 +5086,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
       ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME }-videosamtale"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5563,7 +5569,7 @@
         "Geoblokkering"
       ],
       "Google Pay mark": [
-        "Google Pay-merke"
+        "Merk Google Pay"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
@@ -7289,6 +7295,9 @@
       "Reactivate now": [
         "Aktiver på nytt nå"
       ],
+      "Reactivate subscription": [
+        "Aktiver abonnementet på nytt"
+      ],
       "Request an invite": [
         "Be om en invitasjon"
       ],
@@ -7959,7 +7968,7 @@
         "Begrenset støtte"
       ],
       "Manage user permissions and access": [
-        "Administrere brukertillatelser og -tilgang"
+        "Administrer brukertillatelser og tilgang"
       ],
       "Multiple admin roles": [
         "Flere administratorroller"
@@ -9240,7 +9249,7 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielle rabattprisen gjelder for den første måneden av ${ subscriptionLength }.",
+        "Spesialrabattprisen gjelder for den første måneden [${ subscriptionLength }].",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
@@ -9690,6 +9699,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Etter den datoen vil kontoen din bli nedgradert til **${ BRAND_NAME } Free**. Hvis du ombestemmer deg, kan du **reaktivere abonnementet ditt** for å beholde tilgang til premiumfunksjoner."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Tjen opptil ${ maxRewardAmount } i kreditt. Du får ${ referrerRewardAmount } når personen du inviterer, abonnerer på en ${ BRAND_NAME }-plan."
@@ -10734,7 +10746,7 @@
         "Få bedriften din til å skille seg ut"
       ],
       "Manage your calendar": [
-        "Administrere kalenderen din"
+        "Administrer kalenderen din"
       ],
       "Online privacy, for your whole family": [
         "Personvern på nettet, for hele familien din"
@@ -11447,6 +11459,9 @@
       ],
       "Desktop": [
         "Skrivebord"
+      ],
+      "Discard changes?": [
+        "Forkaste endringer?"
       ],
       "Does not repeat": [
         "Gjentas ikke"

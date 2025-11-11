@@ -186,6 +186,9 @@
       "Confirm": [
         "დასტური"
       ],
+      "Confirm booking": [
+        "ჯავშნის დადასტურება"
+      ],
       "Confirm opening of link ${ linkToShow }": [
         "დაადასტურეთ ბმულის გახსნა ${ linkToShow }"
       ],
@@ -227,6 +230,9 @@
       ],
       "Copy link": [
         "ბმულის კოპირება"
+      ],
+      "Copy link and close": [
+        "ბმულის კოპირება და დახურვა"
       ],
       "Copy password": [
         "პაროლის კოპირება"
@@ -683,6 +689,9 @@
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
       ],
+      "Remove the booking range": [
+        "დაჯავშნის შუალედის წაშლა"
+      ],
       "Remove this notification": [
         "ამ შეტყობინების მოცილება"
       ],
@@ -817,6 +826,9 @@
       ],
       "Skip verification": [
         "შემოწმების გამოტოვება"
+      ],
+      "Split current booking range": [
+        "მიმდინარე დაჯავშნის შუალედის გაყოფა"
       ],
       "Start import": [
         "შემოტანის დაწყება"
@@ -1250,6 +1262,12 @@
     "Attendee role": {
       "Optional": [
         "არასავალდებულო"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი",
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3165,6 +3183,9 @@
       "Your account and data recovery methods are set.": [
         "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "თქვენ მალე მიიღებთ დაცულ ელფოსტას დეტალებით."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
       ]
@@ -3552,6 +3573,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "შემცველობაში ძებნის ჩართვა შეუძლებელია. მონაცემების გასასუფთავებლად, გთხოვთ, გადატვირთეთ აპლიკაცია."
       ],
+      "Content verification failed": [
+        "შემცველობის გადამოწმება ჩავარდა"
+      ],
       "Could not open created vault": [
         "შექმნილი საცავის გახსნა შეუძლებელია"
       ],
@@ -3722,6 +3746,9 @@
       ],
       "Name required": [
         "სახელი აუცილებელია"
+      ],
+      "No booking page data received": [
+        "ჯავშნის გვერდის მონაცემები მიღებული არაა"
       ],
       "No calendars found to import": [
         "შემოსატანი კალენდრები ვერ ვიპოვე"
@@ -4534,6 +4561,11 @@
         "ძალიან პატარა"
       ]
     },
+    "Form": {
+      "Your contact info": [
+        "თქვენი საკონტაქტო ინფორმაცია"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Google Meet-ზე მიერთება"
@@ -5185,6 +5217,15 @@
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
       ],
+      "Booking already exists.": [
+        "ჯავშანი უკვე არსებობს."
+      ],
+      "Booking cannot be added in the past.": [
+        "ჯავშნის წარსულში დამატება შეუძლებელია."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "დაჯავშნა კონფლიქტშია არსებულ ჯავშანთან."
+      ],
       "Booking page example": [
         "ჯავშნის გვერდის მაგალითი"
       ],
@@ -5610,6 +5651,9 @@
       "New": [
         "ახალი"
       ],
+      "No available slots for this day": [
+        "ამ დღისთვის თავისუფალი ადგილები არ არსებობს"
+      ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
       ],
@@ -5772,6 +5816,10 @@
       ],
       "Removed participants will be notified.": [
         "წაშლილი მონაწილეები გაფრთხილებულ იქნებიან."
+      ],
+      "Saving event": [
+        "მოვლენების შენახვა",
+        "მოვლენების შენახვა"
       ],
       "Scan the QR code with your mobile device": [
         "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
@@ -6017,6 +6065,9 @@
       "What should people know before booking?": [
         "რა უნდა იცოდეს ხალხმა შეხვედრის შესახებ?"
       ],
+      "When are you free?": [
+        "როდის ბრძანდებით თავისუფალი?"
+      ],
       "When working remotely": [
         "დისტანციურად მუშაობისას"
       ],
@@ -6117,6 +6168,9 @@
       ],
       "You cannot undo this action.": [
         "თქვენ არ შეგიძლიათ ამ ქმედების დაბრუნება."
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "ერთ გვერდზე ${ MAX_BOOKING_SLOTS }-ზე მეტი ჯავშანი ვერ გექნებათ."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -6953,6 +7007,17 @@
         "Zoom-ის შეხვედრა"
       ]
     },
+    "label": {
+      "Date of the booking range": [
+        "დაჯავშნის შუალედის თარიღი"
+      ],
+      "End time of the booking range": [
+        "დაჯავშნის შუალედის დასრულების დრო"
+      ],
+      "Start time of the booking range": [
+        "დაჯავშნის შუალედის დასაწყისის დრო"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "ფერი"
@@ -7092,6 +7157,9 @@
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
+      ],
+      "Reactivate subscription": [
+        "გამოწერის ხელახლა გააქტიურება"
       ],
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
@@ -9448,6 +9516,9 @@
       "Invited friends": [
         "მოწვეული მეგობრები"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "ბოლო შანსი, დაათვალიეროთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
+      ],
       "More sharing options": [
         "მეტი გაზიარების პარამეტრი"
       ],
@@ -10132,6 +10203,9 @@
       "${ app } storage": [
         "${ app } საცავი"
       ],
+      "${ app } storage used": [
+        "${ app } გამოყენებული საცავი"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } სავსეა ${ percentage }%"
       ],
@@ -10143,6 +10217,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ],
+      "Storage used": [
+        "გამოყენებული საცავი"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
@@ -11163,6 +11240,9 @@
       "Desktop": [
         "სამუშაო მაგიდა"
       ],
+      "Discard changes?": [
+        "ცვლილებების გაუქმება?"
+      ],
       "Does not repeat": [
         "არ მეორდება"
       ],
@@ -11276,6 +11356,9 @@
       ],
       "High security for your account": [
         "მაღალი უსაფრთხოება თქვენი ანგარიშისთვის"
+      ],
+      "Host": [
+        "ჰოსტი"
       ],
       "How does it all work?": [
         "როგორ მუშაობს ეს ყველაფერი?"
@@ -11649,6 +11732,9 @@
       ],
       "Your account is protected": [
         "თქვენი ანგარიში დაცულია"
+      ],
+      "Your booking is confirmed": [
+        "თქვენი ჯავშანი დადასტურებულია"
       ],
       "Your booking page is ready": [
         "თქვენი დაჯავშნის გვერდი მზადაა"
