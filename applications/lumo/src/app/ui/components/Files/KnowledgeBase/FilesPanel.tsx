@@ -39,6 +39,7 @@ interface FilesPanelProps {
     filterMessage?: Message; // Optional message to filter by
     onClearFilter?: () => void; // Optional callback to clear the filter
     initialShowDriveBrowser?: boolean; // Whether to show Drive browser initially
+    spaceId?: string; // Optional space ID to include space-level attachments
 }
 
 export const FilesPanel = ({
@@ -52,6 +53,7 @@ export const FilesPanel = ({
     filterMessage,
     onClearFilter,
     initialShowDriveBrowser = false,
+    spaceId,
 }: FilesPanelProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -64,10 +66,11 @@ export const FilesPanel = ({
     // Knowledge explanation state
     const [showKnowledgeExplanation, setShowKnowledgeExplanation] = useState(false);
 
-    const { allFiles, activeHistoricalFiles, unusedHistoricalFiles, nextQuestionFiles } = useFilteredFiles(
+    const { allFiles, activeHistoricalFiles, unusedHistoricalFiles, nextQuestionFiles, projectFiles } = useFilteredFiles(
         messageChain,
         currentAttachments,
-        filterMessage
+        filterMessage,
+        spaceId
     );
 
     const handleIncludeHistoricalFile = (file: any) => {
@@ -362,12 +365,34 @@ export const FilesPanel = ({
                     {/* When not filtering, show normal view */}
                     {!filterMessage && (
                         <>
-                            {/* Next Question Knowledge */}
-                            {nextQuestionFiles.length > 0 && (
+                            {/* Project Files Section */}
+                            {projectFiles && projectFiles.length > 0 && (
+                                <div className="mb-3 w-full p-4 project-files-area">
+                                    <h3 className="text-sm text-bold mb-3 flex items-center gap-2">
+                                        <Icon name="folder" size={4} />
+                                        {c('collider_2025: Info').t`Project files`}
+                                        <span className={'text-normal color-weak'}>{projectFiles.length}</span>
+                                    </h3>
+                                    {projectFiles.map((file) => (
+                                        <KnowledgeFileItem
+                                            key={file.id}
+                                            file={file}
+                                            onView={handleFileClick}
+                                            isActive={true}
+                                            showToggle={false}
+                                        />
+                                    ))}
+                                </div>
+                            )}
+
+                            {/* Next Question Knowledge - only show if there are non-project files */}
+                            {(currentAttachments.length > 0 || activeHistoricalFiles.length > 0) && (
                                 <div className="mb-3 w-full p-4 active-files-area">
                                     <h3 className="text-sm text-bold mb-3 flex items-center gap-2">
                                         {c('collider_2025: Info').t`Active`}
-                                        <span className={'text-normal color-weak'}>{nextQuestionFiles.length}</span>
+                                        <span className={'text-normal color-weak'}>
+                                            {currentAttachments.length + activeHistoricalFiles.length}
+                                        </span>
                                     </h3>
 
                                     {/* New uploads */}

@@ -288,6 +288,7 @@ const ConversationComponent = ({
                             handleOpenFiles={handleOpenFiles}
                             onShowDriveBrowser={handleShowDriveBrowser}
                             initialQuery={initialQuery}
+                            spaceId={conversation?.spaceId}
                         />
                     </div>
                     <p className="text-center relative color-weak text-xs my-2 hidden md:block">
@@ -310,6 +311,7 @@ const ConversationComponent = ({
                         filterMessage={openPanel.filterMessage}
                         onClearFilter={handleClearFilter}
                         initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                        spaceId={conversation?.spaceId}
                     />
                 )}
             </div>

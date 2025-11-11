@@ -181,6 +181,7 @@ const LumoSidebarContent = () => {
     const settingsModal = useModalStateObject();
     const [searchValue, setSearchValue] = useState('');
     const { APP_NAME } = useConfig();
+    const history = useHistory();
 
     // Don't render if sidebar is hidden
     if (!isVisible) {
@@ -218,6 +219,12 @@ const LumoSidebarContent = () => {
                 {!(isSmallScreen && isGuest) && (
                     <div className="sidebar-section">
                         <NewChatButton showText={showText} />
+                        <SidebarItem
+                            icon="folder"
+                            label={c('collider_2025:Button').t`Projects`}
+                            onClick={() => history.push('/projects')}
+                            showText={showText}
+                        />
                     </div>
                 )}
 
