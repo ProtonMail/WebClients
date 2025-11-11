@@ -1,8 +1,4 @@
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/em' as *;
-@use '~@proton/styles/scss/lib/include-media' as im;
-im.$breakpoints: $breakpoints-product;
-im.$media-expressions: $media-expressions;
+@import '~@proton/styles/scss/lib';
 
 .conversation-title {
 	max-inline-size: 24rem;
@@ -20,7 +16,13 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-	@include im.media('<=small') {
+	.project-breadcrumb {
+		&:hover {
+			background-color: var(--background-weak);
+		}
+	}
+
+	@include media('<=small') {
 		.conversation-header-title-view {
 			display: none;
 		}
