@@ -1,0 +1,220 @@
+.project-files-panel {
+    width: 400px;
+    border-left: 1px solid var(--border-weak);
+    background-color: var(--background-norm);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    @media (max-width: 1024px) {
+        width: 320px;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.project-files-section {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-weak);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.project-files-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.project-files-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-norm);
+}
+
+.project-files-section-content {
+    min-height: 60px;
+}
+
+.project-instructions-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-norm);
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.project-instructions-add {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--background-weak);
+    border: 1px dashed var(--border-norm);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-weak);
+    transition: all 0.15s ease;
+
+    &:hover {
+        background-color: var(--background-strong);
+        border-color: var(--interaction-norm);
+        color: var(--text-norm);
+    }
+
+    &:focus {
+        outline: 2px solid var(--focus-outline);
+        outline-offset: 2px;
+    }
+}
+
+.project-files-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.project-files-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 24px 16px;
+    background-color: var(--background-weak);
+    border: 1px dashed var(--border-norm);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+        background-color: var(--background-strong);
+        border-color: var(--interaction-norm);
+    }
+
+    &:focus {
+        outline: 2px solid var(--focus-outline);
+        outline-offset: 2px;
+    }
+}
+
+.project-files-add-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-norm);
+}
+
+.project-files-add-hint {
+    font-size: 12px;
+    color: var(--text-weak);
+    text-align: center;
+}
+
+.project-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-file-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background-color: var(--background-weak);
+    border: 1px solid var(--border-weak);
+    border-radius: 8px;
+    transition: all 0.15s ease;
+
+    &:hover {
+        background-color: var(--background-norm);
+        border-color: var(--border-norm);
+
+        .project-file-remove {
+            opacity: 1;
+        }
+    }
+}
+
+.project-file-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: var(--interaction-norm-minor-2);
+    color: var(--interaction-norm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.project-file-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.project-file-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-norm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-file-meta {
+    font-size: 12px;
+    color: var(--text-weak);
+}
+
+.project-file-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    background-color: var(--background-strong);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-weak);
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
+.project-file-remove {
+    background: transparent;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: var(--text-weak);
+    border-radius: 4px;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: all 0.15s ease;
+
+    &:hover {
+        background-color: var(--background-strong);
+        color: var(--signal-danger);
+        opacity: 1 !important;
+    }
+
+    &:focus {
+        outline: 2px solid var(--focus-outline);
+        outline-offset: 1px;
+        opacity: 1 !important;
+    }
+}
+
