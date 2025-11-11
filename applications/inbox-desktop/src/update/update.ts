@@ -1,15 +1,17 @@
 import { autoUpdater, app, dialog } from "electron";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
-import pkg from "../package.json";
-import { getPlatform, isSnap } from "./utils/helpers";
-import { getSettings } from "./store/settingsStore";
-import { verifyDownloadCertificate } from "./utils/keyPinning";
-import { updateLogger } from "./utils/log";
+import pkg from "../../package.json";
+import { getOSVersion, getPlatform, isMacMockable, isSnap } from "../utils/helpers";
+import { getSettings } from "../store/settingsStore";
+import { verifyDownloadCertificate } from "../utils/keyPinning";
+import { updateLogger } from "../utils/log";
 import { RELEASE_CATEGORIES, DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { DesktopVersion, VersionFile, VersionFileSchema } from "@proton/shared/lib/desktop/DesktopVersion";
-import { semver } from "./utils/external/packages/pass/utils/string/semver";
-import { updateSession } from "./utils/session";
+import { semver } from "../utils/external/packages/pass/utils/string/semver";
+import { updateSession } from "../utils/session";
 import { c } from "ttag";
+import { getFeatureFlagManager } from "../utils/flags/manager";
+import { FeatureFlag } from "../utils/flags/flags";
 
 export type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
@@ -90,7 +92,12 @@ async function checkForValidUpdates() {
         return;
     }
 
-    const newUpdate = getNewUpdate(local, availableVersions);
+    const ffManager = getFeatureFlagManager();
+    const newUpdate = getNewUpdate(
+        local,
+        availableVersions,
+        ffManager.isEnabled(FeatureFlag.ELECTRON_OS_VERSION_UPDATE_CONSTRAINTS_DISABLED),
+    );
     cachedLatestVersion = newUpdate ?? null;
 
     if (!newUpdate) {
@@ -113,7 +120,11 @@ async function checkForValidUpdates() {
     });
 }
 
-function getNewUpdate(local: LocalDesktopVersion, unorderedAvailableVersions: VersionFile): DesktopVersion | undefined {
+function getNewUpdate(
+    local: LocalDesktopVersion,
+    unorderedAvailableVersions: VersionFile,
+    electronAndOSVersionConstraintsDisabled: boolean = false,
+): DesktopVersion | undefined {
     const availableVersions = {
         Releases: unorderedAvailableVersions.Releases.sort((a: DesktopVersion, b: DesktopVersion) =>
             Math.sign(semver(b.Version) - semver(a.Version)),
@@ -144,13 +155,41 @@ function getNewUpdate(local: LocalDesktopVersion, unorderedAvailableVersions: Ve
             }
 
             if (!isANewerThanB(r.Version, local.Version)) {
-                updateLogger.info(
-                    "Skipping update: no newer version avaiable, local:",
-                    JSON.stringify(local),
-                    "latest:",
-                    JSON.stringify(r),
-                );
+                logUpdateCase(local, r, "Skipping update: no newer version available.");
                 return false;
+            }
+
+            if (!electronAndOSVersionConstraintsDisabled) {
+                if (r.MinimumAppVersion && !isANewerOrEqualToB(local.Version, r.MinimumAppVersion)) {
+                    logUpdateCase(
+                        local,
+                        r,
+                        "Skipping update: current version does not satisfy minimum version requirements.",
+                    );
+                    return false;
+                }
+
+                // OS constraints are only enabled on macOS.
+                if (r.MinimumOsVersion && isMacMockable()) {
+                    const osVersion = getOSVersion();
+                    if (!osVersion) {
+                        logUpdateCase(
+                            local,
+                            r,
+                            `Skipping update: minimum OS version is specified but could not determine host OS version ${osVersion}`,
+                        );
+                        return false;
+                    }
+
+                    if (!isANewerOrEqualToB(osVersion, r.MinimumOsVersion)) {
+                        logUpdateCase(
+                            local,
+                            r,
+                            "Skipping update: current OS version does not satisfy minimum OS version requirements.",
+                        );
+                        return false;
+                    }
+                }
             }
 
             if (local.RolloutProportion > r.RolloutProportion) {
@@ -174,6 +213,10 @@ function isANewerThanB(a: string, b: string) {
     return semver(a) > semver(b);
 }
 
+function isANewerOrEqualToB(a: string, b: string) {
+    return semver(a) >= semver(b);
+}
+
 async function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<VersionFile | undefined> {
     try {
         const response = await updateSession().fetch(getVersionURL(platform), { cache: "no-cache" });
@@ -183,6 +226,10 @@ async function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<Versio
         updateLogger.warn("Check update: failed to get available versions:", error);
         return undefined;
     }
+}
+
+function logUpdateCase(localVersion: LocalDesktopVersion, remoteVersion: DesktopVersion, debugInfo: string) {
+    updateLogger.info(debugInfo, "Local:", JSON.stringify(localVersion), "Remote:", JSON.stringify(remoteVersion));
 }
 
 export const getNewUpdateTestOnly = getNewUpdate;
