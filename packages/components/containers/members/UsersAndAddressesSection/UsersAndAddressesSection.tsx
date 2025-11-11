@@ -14,8 +14,8 @@ import {
 } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useCustomDomains } from '@proton/account/domains/hooks';
-import { useMembers } from '@proton/account/members/hooks';
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
+import useMembersAdvanced from '@proton/account/members/useMembersAdvanced';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey, useOrganizationKey } from '@proton/account/organizationKey/hooks';
@@ -32,6 +32,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { Pagination } from '@proton/components/components/pagination';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -73,7 +74,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasMailProduct, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
@@ -111,23 +112,39 @@ import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
 import UserAndAddressesSectionIntro from './UserAndAddressesSectionIntro';
+import UserRowSkeleton from './UserRowSkeleton';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
 
 const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: MutableRefObject<boolean> }) => {
     const { APP_NAME } = useConfig();
+    const [page, setPage] = useState(1);
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
     const getOrganizationKey = useGetOrganizationKey();
     const [samlSSO] = useSamlSSO();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [{ protonDomains, premiumDomains }] = useProtonDomains();
-    const [members, loadingMembers] = useMembers();
+    const [keywords, setKeywords] = useState('');
+    const {
+        data: rawMembers,
+        loading: loadingMembers,
+        sync: syncMembers,
+        total,
+        totalPages,
+    } = useMembersAdvanced({ page, pageSize: 10, keywords });
+
+    // convert raw members to enhanced members with partial addresses to prevent fetching addresses for each member in useMemberAddresses
+    const members = useMemo(
+        () => rawMembers.map((member: Member) => ({ ...member, addressState: 'partial' }) as EnhancedMember),
+        [rawMembers]
+    );
+    // The actual page considers the total pages and the page number, it's used to display the correct page number in the pagination UI
+    const actualPage = useMemo(() => Math.min(page, totalPages), [page, totalPages]);
     const [subscription, loadingSubscription] = useSubscription();
     const [addresses] = useAddresses();
     const [user] = useUser();
     const { value: memberAddressesMap, retry } = useMemberAddresses({ members, partial: true });
-    const [keywords, setKeywords] = useState('');
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
     const api = useSilentApi();
     const wrapError = useErrorWrapper();
@@ -219,27 +236,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleSearch = (value: string) => setKeywords(value);
 
-    const membersSelected = useMemo(() => {
-        if (!members) {
-            return [];
-        }
-        if (!keywords) {
-            return members;
-        }
-
-        const normalizedWords = normalize(keywords, true);
-
-        return members.filter((member) => {
-            const memberAddresses = memberAddressesMap?.[member.ID] || [];
-            const addressMatch = memberAddresses?.some((address) =>
-                normalize(address.Email, true).includes(normalizedWords)
-            );
-            const nameMatch = normalize(member.Name, true).includes(normalizedWords);
-
-            return addressMatch || nameMatch;
-        });
-    }, [keywords, members]);
-
     // Members for which addresses can be created
     const filteredMembers = (() => {
         if (useEmail) {
@@ -261,6 +257,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleDeleteUserConfirm = wrapError(async (member: Member) => {
         await dispatch(deleteMember({ api, member }));
+        await syncMembers();
         createNotification({ text: c('Success message').t`User deleted` });
     });
 
@@ -272,6 +269,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleResendMagicLinkInvite = wrapError(async (member: EnhancedMember) => {
         await api(resendUnprivatizationLink(member.ID));
+        await syncMembers();
         createNotification({ text: c('Success message').t`Invitation resent` });
     });
 
@@ -306,6 +304,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleRevokeUserSessions = wrapError(async (member: EnhancedMember) => {
         await api(revokeSessions(member.ID));
+        await syncMembers();
         createNotification({ text: c('Success message').t`Sessions revoked` });
     });
 
@@ -379,7 +378,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             createNotification({ text: getDomainError(), type: 'error' });
             return;
         }
-
         setSubUserCreateModalOpen(true);
     };
 
@@ -402,6 +400,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             status === MEMBER_STATE.STATUS_DISABLED
                 ? c('Success message').t`User disabled`
                 : c('Success message').t`User enabled`;
+        await syncMembers();
         createNotification({ text });
     });
 
@@ -414,8 +413,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         setTmpMemberID(member.ID);
         setChangeMemberPasswordModalOpen(true);
     };
-
-    const userFound = membersSelected.length;
 
     const tableLabel = [
         '',
@@ -631,7 +628,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 </div>
             </div>
             <span className="sr-only" aria-live="polite" aria-atomic="true">
-                {c('Info').ngettext(msgid`${userFound} user found`, `${userFound} users found`, userFound)}
+                {c('Info').ngettext(msgid`${total} user found`, `${total} users found`, total)}
             </span>
 
             <Table hasActions responsive="cards" data-testid="users-and-addresses-table">
@@ -640,242 +637,266 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         <UsersAndAddressesSectionHeader showFeaturesColumn={showFeaturesColumn} useEmail={useEmail} />
                     </tr>
                 </thead>
-                <TableBody loading={loadingMembers} colSpan={showFeaturesColumn ? 5 : 4}>
-                    {membersSelected.map((member) => {
-                        const memberAddresses = memberAddressesMap?.[member.ID] || [];
-                        const memberName = member.Name || memberAddresses[0]?.Email;
+                <TableBody colSpan={showFeaturesColumn ? 5 : 4}>
+                    {loadingMembers
+                        ? Array.from({ length: 10 }).map((_, index) => (
+                              // eslint-disable-next-line react/no-array-index-key
+                              <UserRowSkeleton key={`user-row-skeleton-${index}`} />
+                          ))
+                        : members.map((member) => {
+                              const memberAddresses = memberAddressesMap?.[member.ID] || [];
+                              const memberName = member.Name || memberAddresses[0]?.Email;
 
-                        const unprivatization = getMemberUnprivatizationMode(member);
+                              const unprivatization = getMemberUnprivatizationMode(member);
 
-                        const hasPendingAllowAdminAccessRequest =
-                            unprivatization.mode === MemberUnprivatizationMode.AdminAccess && unprivatization.pending;
+                              const hasPendingAllowAdminAccessRequest =
+                                  unprivatization.mode === MemberUnprivatizationMode.AdminAccess &&
+                                  unprivatization.pending;
 
-                        const hasMagicLinkLayout = unprivatization.mode === MemberUnprivatizationMode.MagicLinkInvite;
-                        const hasPendingMagicLinkInvite = hasMagicLinkLayout && unprivatization.pending;
-                        const canResendMagicLink = hasPendingMagicLinkInvite;
+                              const hasMagicLinkLayout =
+                                  unprivatization.mode === MemberUnprivatizationMode.MagicLinkInvite;
+                              const hasPendingMagicLinkInvite = hasMagicLinkLayout && unprivatization.pending;
+                              const canResendMagicLink = hasPendingMagicLinkInvite;
 
-                        const hasPendingFamilyInvitation = getIsMemberInvited(member);
-                        const isDisabled = getIsMemberDisabled(member);
+                              const hasPendingFamilyInvitation = getIsMemberInvited(member);
+                              const isDisabled = getIsMemberDisabled(member);
 
-                        const hasDisabledLayout = hasPendingMagicLinkInvite || isDisabled;
-                        const hasFeaturesColumn = !hasPendingMagicLinkInvite;
+                              const hasDisabledLayout = hasPendingMagicLinkInvite || isDisabled;
+                              const hasFeaturesColumn = !hasPendingMagicLinkInvite;
 
-                        const memberPermissions = getMemberPermissions({
-                            ssoDomainsSet,
-                            appName: APP_NAME,
-                            user,
-                            member,
-                            addresses: memberAddresses,
-                            organization,
-                            organizationKey,
-                            disableMemberSignIn: hasExternalMemberCapableB2BPlan,
-                        });
+                              const memberPermissions = getMemberPermissions({
+                                  ssoDomainsSet,
+                                  appName: APP_NAME,
+                                  user,
+                                  member,
+                                  addresses: memberAddresses,
+                                  organization,
+                                  organizationKey,
+                                  disableMemberSignIn: hasExternalMemberCapableB2BPlan,
+                              });
 
-                        const disableEdit = hasPendingFamilyInvitation && !allowStorageConfiguration;
+                              const disableEdit = hasPendingFamilyInvitation && !allowStorageConfiguration;
 
-                        const { hasTwoFactor, twoFactorTooltip } = getUser2FATagProps(member);
+                              const { hasTwoFactor, twoFactorTooltip } = getUser2FATagProps(member);
 
-                        return (
-                            <TableRow
-                                key={member.ID}
-                                labels={tableLabel}
-                                className={clsx('align-top', hasPendingFamilyInvitation && 'color-weak')}
-                            >
-                                <TableCell className="align-baseline">
-                                    <div className="flex items-center gap-3">
-                                        <div className="flex flex-nowrap items-center gap-3">
-                                            <Avatar className="shrink-0 text-rg" color="weak">
-                                                {getInitials(memberName)}
-                                            </Avatar>
-                                            <div
-                                                className="text-ellipsis shrink"
-                                                data-testid="users-and-addresses-table:memberName"
-                                                title={memberName}
-                                            >
-                                                {memberName}
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center gap-1">
-                                            {(() => {
-                                                if (!hasMagicLinkLayout) {
-                                                    return (
-                                                        <>
-                                                            {Boolean(member.Self) && (
-                                                                <UserTableBadge type="success">
-                                                                    {c('Users table: badge').t`It's you`}
-                                                                </UserTableBadge>
-                                                            )}
-                                                            {(() => {
-                                                                const result =
-                                                                    unprivatizationMemberState.members[member.ID];
-                                                                if (result?.type !== 'error') {
-                                                                    return;
+                              return (
+                                  <TableRow
+                                      key={member.ID}
+                                      labels={tableLabel}
+                                      className={clsx('align-top', hasPendingFamilyInvitation && 'color-weak')}
+                                  >
+                                      <TableCell className="align-baseline">
+                                          <div className="flex items-center gap-3">
+                                              <div className="flex flex-nowrap items-center gap-3">
+                                                  <Avatar className="shrink-0 text-rg" color="weak">
+                                                      {getInitials(memberName)}
+                                                  </Avatar>
+                                                  <div
+                                                      className="text-ellipsis shrink"
+                                                      data-testid="users-and-addresses-table:memberName"
+                                                      title={memberName}
+                                                  >
+                                                      {memberName}
+                                                  </div>
+                                              </div>
+                                              <div className="flex items-center gap-1">
+                                                  {(() => {
+                                                      if (!hasMagicLinkLayout) {
+                                                          return (
+                                                              <>
+                                                                  {Boolean(member.Self) && (
+                                                                      <UserTableBadge type="success">
+                                                                          {c('Users table: badge').t`It's you`}
+                                                                      </UserTableBadge>
+                                                                  )}
+                                                                  {(() => {
+                                                                      const result =
+                                                                          unprivatizationMemberState.members[member.ID];
+                                                                      if (result?.type !== 'error') {
+                                                                          return;
+                                                                      }
+                                                                      const error = result.error;
+                                                                      return (
+                                                                          <Tooltip
+                                                                              title={c('unprivatization')
+                                                                                  .t`Could not enable administrator access: ${error}`}
+                                                                              openDelay={0}
+                                                                          >
+                                                                              <Icon
+                                                                                  name="exclamation-triangle-filled"
+                                                                                  className="color-danger"
+                                                                              />
+                                                                          </Tooltip>
+                                                                      );
+                                                                  })()}
+                                                                  {allowPrivateMemberConfiguration &&
+                                                                      !isOrgAFamilyPlan &&
+                                                                      Boolean(member.Private) && (
+                                                                          <UserTableBadge
+                                                                              type="info"
+                                                                              tooltip={c('Users table: badge')
+                                                                                  .t`Administrators can't access the data of private users`}
+                                                                              data-testid="users-and-addresses-table:memberIsPrivate"
+                                                                          >
+                                                                              {c('Users table: badge').t`Private`}
+                                                                          </UserTableBadge>
+                                                                      )}
+
+                                                                  {member.NumAI > 0 &&
+                                                                      // if the current organization doesn't have access to
+                                                                      // Mail product then it doesn't make sense to show
+                                                                      // Writing Assistant benefit. For example, this happens
+                                                                      // to subusers of lumobiz2025 plan.
+                                                                      hasMailProduct(organization) && (
+                                                                          <UserTableBadge type="weak">
+                                                                              {c('Users table: badge')
+                                                                                  .t`Writing assistant`}
+                                                                          </UserTableBadge>
+                                                                      )}
+                                                                  {member.NumLumo > 0 && (
+                                                                      <UserTableBadge type="weak">
+                                                                          {LUMO_SHORT_APP_NAME}
+                                                                      </UserTableBadge>
+                                                                  )}
+                                                                  {Boolean(hasPendingAllowAdminAccessRequest) && (
+                                                                      <UserTableBadge
+                                                                          type="weak"
+                                                                          tooltip={c('unprivatization')
+                                                                              .t`Request to manage account sent, awaiting user approval`}
+                                                                      >
+                                                                          {c('Users table: badge')
+                                                                              .t`Pending admin access`}
+                                                                      </UserTableBadge>
+                                                                  )}
+                                                                  {hasTwoFactor && (
+                                                                      <UserTableBadge
+                                                                          type="weak"
+                                                                          tooltip={twoFactorTooltip}
+                                                                      >
+                                                                          {c('Users table: badge').t`2FA`}
+                                                                      </UserTableBadge>
+                                                                  )}
+                                                                  {Boolean(member.SSO) && (
+                                                                      <UserTableBadge
+                                                                          type="success"
+                                                                          tooltip={c('Users table: badge')
+                                                                              .t`SSO user provided by your identity provider`}
+                                                                      >
+                                                                          {c('Users table: badge').t`SSO`}
+                                                                      </UserTableBadge>
+                                                                  )}
+                                                                  {isDisabled && (
+                                                                      <UserTableBadge type="weak">
+                                                                          {c('Users table: badge').t`Inactive`}
+                                                                      </UserTableBadge>
+                                                                  )}
+                                                              </>
+                                                          );
+                                                      }
+
+                                                      if (hasPendingMagicLinkInvite) {
+                                                          return (
+                                                              <UserTableBadge
+                                                                  type="info"
+                                                                  tooltip={c('Users table: badge')
+                                                                      .t`Invitation sent, awaiting reply from the invited member`}
+                                                              >
+                                                                  {c('Users table: badge').t`Invite sent`}
+                                                              </UserTableBadge>
+                                                          );
+                                                      }
+                                                  })()}
+                                              </div>
+                                          </div>
+                                      </TableCell>
+                                      <TableCell
+                                          className="text-cut align-baseline"
+                                          data-testid="users-and-addresses-table:memberRole"
+                                      >
+                                          <div
+                                              className={clsx(
+                                                  'flex flex-column flex-nowrap',
+                                                  hasDisabledLayout && 'color-hint'
+                                              )}
+                                          >
+                                              <MemberRole member={member} />
+                                              {hasPendingFamilyInvitation && (
+                                                  <span>
+                                                      <UserTableBadge type="weak">
+                                                          {c('familyOffer_2023:Family plan').t`Pending`}
+                                                      </UserTableBadge>
+                                                  </span>
+                                              )}
+                                          </div>
+                                      </TableCell>
+                                      <TableCell className="align-baseline">
+                                          <div className={clsx(hasDisabledLayout && 'color-hint')}>
+                                              {hasPendingFamilyInvitation ? (
+                                                  <p className="m-0 text-ellipsis">{member.Name}</p>
+                                              ) : (
+                                                  <MemberAddresses addresses={memberAddresses} />
+                                              )}
+                                          </div>
+                                      </TableCell>
+                                      {showFeaturesColumn && (
+                                          <TableCell className="align-baseline">
+                                              {hasFeaturesColumn && (
+                                                  <MemberFeatures member={member} organization={organization} />
+                                              )}
+                                          </TableCell>
+                                      )}
+                                      <TableCell className="align-baseline">
+                                          <div>
+                                              {hasMagicLinkLayout ? (
+                                                  <MagicLinkMemberActions
+                                                      state={member.Unprivatization?.State}
+                                                      onEdit={() => handleEditUser(member)}
+                                                      onResend={
+                                                          canResendMagicLink
+                                                              ? () => {
+                                                                    setTmpMemberID(member.ID);
+                                                                    setResendInviteModalOpen(true);
                                                                 }
-                                                                const error = result.error;
-                                                                return (
-                                                                    <Tooltip
-                                                                        title={c('unprivatization')
-                                                                            .t`Could not enable administrator access: ${error}`}
-                                                                        openDelay={0}
-                                                                    >
-                                                                        <Icon
-                                                                            name="exclamation-triangle-filled"
-                                                                            className="color-danger"
-                                                                        />
-                                                                    </Tooltip>
-                                                                );
-                                                            })()}
-                                                            {allowPrivateMemberConfiguration &&
-                                                                !isOrgAFamilyPlan &&
-                                                                Boolean(member.Private) && (
-                                                                    <UserTableBadge
-                                                                        type="info"
-                                                                        tooltip={c('Users table: badge')
-                                                                            .t`Administrators can't access the data of private users`}
-                                                                        data-testid="users-and-addresses-table:memberIsPrivate"
-                                                                    >
-                                                                        {c('Users table: badge').t`Private`}
-                                                                    </UserTableBadge>
-                                                                )}
-
-                                                            {member.NumAI > 0 &&
-                                                                // if the current organization doesn't have access to
-                                                                // Mail product then it doesn't make sense to show
-                                                                // Writing Assistant benefit. For example, this happens
-                                                                // to subusers of lumobiz2025 plan.
-                                                                hasMailProduct(organization) && (
-                                                                    <UserTableBadge type="weak">
-                                                                        {c('Users table: badge').t`Writing assistant`}
-                                                                    </UserTableBadge>
-                                                                )}
-                                                            {member.NumLumo > 0 && (
-                                                                <UserTableBadge type="weak">
-                                                                    {LUMO_SHORT_APP_NAME}
-                                                                </UserTableBadge>
-                                                            )}
-                                                            {Boolean(hasPendingAllowAdminAccessRequest) && (
-                                                                <UserTableBadge
-                                                                    type="weak"
-                                                                    tooltip={c('unprivatization')
-                                                                        .t`Request to manage account sent, awaiting user approval`}
-                                                                >
-                                                                    {c('Users table: badge').t`Pending admin access`}
-                                                                </UserTableBadge>
-                                                            )}
-                                                            {hasTwoFactor && (
-                                                                <UserTableBadge type="weak" tooltip={twoFactorTooltip}>
-                                                                    {c('Users table: badge').t`2FA`}
-                                                                </UserTableBadge>
-                                                            )}
-                                                            {Boolean(member.SSO) && (
-                                                                <UserTableBadge
-                                                                    type="success"
-                                                                    tooltip={c('Users table: badge')
-                                                                        .t`SSO user provided by your identity provider`}
-                                                                >
-                                                                    {c('Users table: badge').t`SSO`}
-                                                                </UserTableBadge>
-                                                            )}
-                                                            {isDisabled && (
-                                                                <UserTableBadge type="weak">
-                                                                    {c('Users table: badge').t`Inactive`}
-                                                                </UserTableBadge>
-                                                            )}
-                                                        </>
-                                                    );
-                                                }
-
-                                                if (hasPendingMagicLinkInvite) {
-                                                    return (
-                                                        <UserTableBadge
-                                                            type="info"
-                                                            tooltip={c('Users table: badge')
-                                                                .t`Invitation sent, awaiting reply from the invited member`}
-                                                        >
-                                                            {c('Users table: badge').t`Invite sent`}
-                                                        </UserTableBadge>
-                                                    );
-                                                }
-                                            })()}
-                                        </div>
-                                    </div>
-                                </TableCell>
-                                <TableCell
-                                    className="text-cut align-baseline"
-                                    data-testid="users-and-addresses-table:memberRole"
-                                >
-                                    <div
-                                        className={clsx(
-                                            'flex flex-column flex-nowrap',
-                                            hasDisabledLayout && 'color-hint'
-                                        )}
-                                    >
-                                        <MemberRole member={member} />
-                                        {hasPendingFamilyInvitation && (
-                                            <span>
-                                                <UserTableBadge type="weak">
-                                                    {c('familyOffer_2023:Family plan').t`Pending`}
-                                                </UserTableBadge>
-                                            </span>
-                                        )}
-                                    </div>
-                                </TableCell>
-                                <TableCell className="align-baseline">
-                                    <div className={clsx(hasDisabledLayout && 'color-hint')}>
-                                        {hasPendingFamilyInvitation ? (
-                                            <p className="m-0 text-ellipsis">{member.Name}</p>
-                                        ) : (
-                                            <MemberAddresses addresses={memberAddresses} />
-                                        )}
-                                    </div>
-                                </TableCell>
-                                {showFeaturesColumn && (
-                                    <TableCell className="align-baseline">
-                                        {hasFeaturesColumn && (
-                                            <MemberFeatures member={member} organization={organization} />
-                                        )}
-                                    </TableCell>
-                                )}
-                                <TableCell className="align-baseline">
-                                    <div>
-                                        {hasMagicLinkLayout ? (
-                                            <MagicLinkMemberActions
-                                                state={member.Unprivatization?.State}
-                                                onEdit={() => handleEditUser(member)}
-                                                onResend={
-                                                    canResendMagicLink
-                                                        ? () => {
-                                                              setTmpMemberID(member.ID);
-                                                              setResendInviteModalOpen(true);
-                                                          }
-                                                        : undefined
-                                                }
-                                                onDelete={() => handleDeleteUserConfirm(member)}
-                                            />
-                                        ) : (
-                                            <MemberActions
-                                                permissions={memberPermissions}
-                                                onAddAddress={handleAddAddress}
-                                                onEdit={handleEditUser}
-                                                onUpdateMemberState={handleUpdateMemberState}
-                                                onDelete={handleDeleteUser}
-                                                onSetup={handleSetupUser}
-                                                onRevoke={handleRevokeUserSessions}
-                                                onAttachSSO={handleAttachSSO}
-                                                onDetachSSO={handleDetachSSO}
-                                                onLogin={handleLoginUser}
-                                                onChangePassword={handleChangeMemberPassword}
-                                                member={member}
-                                                disableEdit={disableEdit}
-                                            />
-                                        )}
-                                    </div>
-                                </TableCell>
-                            </TableRow>
-                        );
-                    })}
+                                                              : undefined
+                                                      }
+                                                      onDelete={() => handleDeleteUserConfirm(member)}
+                                                  />
+                                              ) : (
+                                                  <MemberActions
+                                                      permissions={memberPermissions}
+                                                      onAddAddress={handleAddAddress}
+                                                      onEdit={handleEditUser}
+                                                      onUpdateMemberState={handleUpdateMemberState}
+                                                      onDelete={handleDeleteUser}
+                                                      onSetup={handleSetupUser}
+                                                      onRevoke={handleRevokeUserSessions}
+                                                      onAttachSSO={handleAttachSSO}
+                                                      onDetachSSO={handleDetachSSO}
+                                                      onLogin={handleLoginUser}
+                                                      onChangePassword={handleChangeMemberPassword}
+                                                      member={member}
+                                                      disableEdit={disableEdit}
+                                                  />
+                                              )}
+                                          </div>
+                                      </TableCell>
+                                  </TableRow>
+                              );
+                          })}
                 </TableBody>
             </Table>
+            <div className="text-center">
+                <Pagination
+                    total={total}
+                    limit={10}
+                    onSelect={(page) => setPage(page)}
+                    page={actualPage}
+                    onNext={() => setPage(actualPage + 1)}
+                    onPrevious={() => setPage(actualPage - 1)}
+                    hasNext={actualPage < totalPages}
+                    hasPrevious={actualPage > 1}
+                />
+            </div>
         </SettingsSectionWide>
     );
 };
