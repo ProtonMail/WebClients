@@ -113,10 +113,24 @@ export function sendMessage({
             dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         }
 
-        // Create the new messages (user and assistant)
+        // Get space-level attachments (project files) and include them with the message
+        const allAttachmentsState = state.attachments;
+        const spaceAttachments = Object.values(allAttachmentsState).filter(
+            (att: any) => att.spaceId === spaceId && !att.processing && !att.error
+        );
+        
+        // Combine space attachments with provisional attachments (remove duplicates)
+        const allMessageAttachments = [...spaceAttachments];
+        attachments.forEach((att) => {
+            if (!allMessageAttachments.some((a) => a.id === att.id)) {
+                allMessageAttachments.push(att);
+            }
+        });
+
+        // Create the new messages (user and assistant) with all attachments
         const { userMessage, assistantMessage } = createMessagePair(
             newMessageContent,
-            attachments,
+            allMessageAttachments,
             conversationId,
             lastMessage,
             date1,

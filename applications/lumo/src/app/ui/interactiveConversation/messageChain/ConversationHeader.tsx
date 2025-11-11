@@ -1,15 +1,17 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo } from '@proton/components';
+import { Icon, InputFieldTwo } from '@proton/components';
 import { IcMonitor } from '@proton/icons/icons/IcMonitor';
 
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
-import { useLumoDispatch } from '../../../redux/hooks';
+import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { selectSpaceById } from '../../../redux/selectors';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import type { Conversation, Message } from '../../../types';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
@@ -29,6 +31,7 @@ interface Props {
 const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }: Props) => {
     const { id, title, spaceId } = conversation;
     const dispatch = useLumoDispatch();
+    const history = useHistory();
     const [conversationTitle, setConversationTitle] = useState(title);
     const [isEditing, setIsEditing] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -39,6 +42,11 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         location: 'header',
     });
     const { isSmallScreen } = useSidebar();
+    
+    // Get space/project info if this conversation is part of a project
+    const space = useLumoSelector(selectSpaceById(spaceId));
+    const isProjectConversation = space?.isProject;
+    const projectName = space?.projectName;
 
     // Count total files in conversation
     const totalFiles = messageChain.reduce((count, message) => {
@@ -162,6 +170,12 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         );
     }
 
+    const handleNavigateToProject = useCallback(() => {
+        if (spaceId) {
+            history.push(`/projects/${spaceId}`);
+        }
+    }, [spaceId, history]);
+
     const RenderTitle = ({ isEditing }: { isEditing: boolean }) => {
         if (isEditing) {
             return (
@@ -182,13 +196,29 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
             );
         }
         return (
-            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-            <span role="heading" aria-level={2} className="min-w-0 conversation-header-title-view">
-                <span className="sr-only">{c('collider_2025:Info').t`Current chat:`}</span>
-                <Button shape="ghost" onClick={startEditing} className="py-1 px-2 text-ellipsis w-full">
-                    {conversationTitle}
-                </Button>
-            </span>
+            <div className="flex flex-row items-center gap-1 min-w-0 conversation-header-title-view">
+                {isProjectConversation && projectName && (
+                    <>
+                        <Button
+                            shape="ghost"
+                            onClick={handleNavigateToProject}
+                            className="py-1 px-2 flex flex-row items-center gap-1 shrink-0 project-breadcrumb"
+                            title={c('collider_2025:Action').t`Go to project`}
+                        >
+                            <Icon name="folder" size={4} />
+                            <span className="text-sm color-weak">{projectName}</span>
+                        </Button>
+                        <Icon name="chevron-right" size={3} className="color-weak shrink-0" />
+                    </>
+                )}
+                {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
+                <span role="heading" aria-level={2} className="min-w-0 flex-1">
+                    <span className="sr-only">{c('collider_2025:Info').t`Current chat:`}</span>
+                    <Button shape="ghost" onClick={startEditing} className="py-1 px-2 text-ellipsis w-full">
+                        {conversationTitle}
+                    </Button>
+                </span>
+            </div>
         );
     };
 
