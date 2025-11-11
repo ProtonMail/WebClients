@@ -245,6 +245,9 @@
       "Create new policy": [
         "Стварыць новую палітыку"
       ],
+      "Create organization": [
+        "Стварыць арганізацыю"
+      ],
       "Create users": [
         "Стварыць карыстальнікаў"
       ],
@@ -463,6 +466,9 @@
       ],
       "Get more servers": [
         "Атрымаць больш сервераў"
+      ],
+      "Get more storage": [
+        "Атрымайце больш месца ў сховішчы"
       ],
       "Get the apps": [
         "Атрымаць праграмы"
@@ -914,6 +920,9 @@
       "Submit": [
         "Адправіць"
       ],
+      "Subscribe": [
+        "Падпісацца"
+      ],
       "Subscribe now": [
         "Падпісацца"
       ],
@@ -1070,6 +1079,15 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } дадатковы карыстальніцкі дамен",
         "${ domains } дадатковыя карыстальніцкія дамены",
@@ -1082,6 +1100,15 @@
         "${ ips } сервераў",
         "${ ips } сервераў"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Памочнік ШІ ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } асістэнт ШІ (для ${ quantity } карыстальніка)",
+        "${ LUMO_APP_NAME } асістэнт ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } асістэнт ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } асістэнт ШІ (для ${ quantity } карыстальнікаў)"
+      ],
       "${ price } per dedicated server": [
         "${ price } за вылучаны сервер"
       ],
@@ -1093,6 +1120,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } карыстальніцкі дамен",
+        "${ quantity } карыстальніцкія дамены",
+        "${ quantity } карыстальніцкіх даменаў",
+        "${ quantity } карыстальніцкіх даменаў"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
@@ -1915,8 +1948,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Дадаць карыстальнікаў уручную"
+      ],
       "Close": [
         "Закрыць"
+      ],
+      "Configure your network": [
+        "Сканфігурыруйце сваю сетку"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
@@ -1936,17 +1975,29 @@
       "Discover and set up features": [
         "Пазнаёміцца і наладзіць функцыі"
       ],
+      "Invite your team": [
+        "Запрасіце сваю каманду"
+      ],
+      "Manage global VPN permissions": [
+        "Кіраваць глабальнымі дазволамі VPN"
+      ],
       "Maybe later": [
         "Магчыма пазней"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
       ],
+      "Secure your organization": [
+        "Абараніць сваю арганізацыю"
+      ],
       "Send": [
         "Адправіць"
       ],
       "Set up other features": [
         "Наладзіць іншыя функцыі"
+      ],
+      "Set up SSO": [
+        "Наладзіць SSO"
       ],
       "Take a tour": [
         "Пачаць знаёмства"
@@ -3214,11 +3265,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Падключыце сваю CRM, вэб-сайт, прынтары і іншае."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Стварыце шлюз, каб даць карыстальнікам доступ да сваіх ІТ-рэсурсаў праз вылучаныя серверы."
+      ],
       "Create groups you can email with a single address.": [
         "Стварайце групы, на якія можна адпраўляць электронныя лісты, выкарыстоўваючы адзін адрас."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Стварайце новыя ўліковыя запісы карыстальнікаў або імпартуйце карыстальнікаў з SSO (адзінага ўваходу) забеспячэння SCIM."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Стварыце палітыку, каб вырашаць, хто можа падключацца да абагуленых сервераў у кожнай краіне."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Вырашыце, якія карыстальнікі могуць падключыцца да кожнага з нашых 120+ абагуленых серверных месцазнаходжанняў."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
@@ -3252,6 +3312,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Уключыце некаторыя спосабы аднаўлення, каб быць упэўненым у тым, што вы ніколі не страціце доступ да ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
@@ -4818,6 +4881,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } прылад"
       ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "@pm.me address": [
+        "адрас @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
       ],
@@ -4826,6 +4895,12 @@
       ],
       "and more premium features...": [
         "і іншыя прэміяльныя функцыі..."
+      ],
+      "Connect custom domain": [
+        "Падключэнне карыстальніцкага дамена"
+      ],
+      "Desktop app": [
+        "Праграма для камп'ютара"
       ],
       "Double VPN": [
         "Double VPN"
@@ -4838,6 +4913,9 @@
       ],
       "NetShield Ad-blocker": [
         "Блакіроўшчык рэкламы NetShield"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
       ],
       "Secure streaming": [
         "Бяспечная трансляцыя"
@@ -6526,6 +6604,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Атрымайце **${ referrerRewardAmount } крэдытаў** за кожнага сябра, які падпішацца."
       ],
+      "Get started": [
+        "Пачатак працы"
+      ],
       "Get started with the referral link above.": [
         "Пачніце па рэферальнай спасылцы вышэй."
       ],
@@ -7216,6 +7297,9 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Наладзьце сваю арганізацыю і пачніце абараняць свае даныя за некалькі простых крокаў."
+      ],
       "Setting up ${ feature }…": [
         "Наладжванне ${ feature }..."
       ],
@@ -7822,6 +7906,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы таксама можаце аб'яднаць імпартаваныя календары з існуючымі календарамі ${ BRAND_NAME }."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Вы можаце змяніць вылучэнне сховішча ў **Карыстальнікі і адрасы**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Вы можаце змяніць свой выбар у любы час у ${ settingsLink }."
       ],
@@ -8029,6 +8116,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
       ],
+      "Your storage": [
+        "Ваша сховішча"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
       ],
@@ -8122,9 +8212,19 @@
         "Толькі прагляд"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Так будзе выглядаць ваша арганізацыя для карыстальнікаў. Выгляд можна змяніць у любы час."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Памылковы адрас электроннай пошты"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Як называецца ваша арганізацыя?"
       ]
     },
     "invitation status": {
@@ -8536,6 +8636,12 @@
       "Folder location": [
         "Размяшчэнне папкі"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Для ${ DRIVE_SHORT_APP_NAME } і ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Для ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } і ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
       ],
@@ -8841,6 +8947,9 @@
       ],
       "Share your referral link": [
         "Абагуліць сваю рэферальную спасылку"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Абагулена паміж ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Паказаць ${ n } адміністратара",
@@ -9188,6 +9297,9 @@
       ],
       "Reactivate now": [
         "Актываваць паўторна"
+      ],
+      "Reactivate subscription": [
+        "Паўторная актывацыя падпіскі"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
@@ -11704,6 +11816,9 @@
       "End date": [
         "Дата завяршэння"
       ],
+      "Enter name": [
+        "Увядзіце назву"
+      ],
       "example@domain.com": [
         "pryklad@damen.com"
       ],
@@ -11999,6 +12114,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "Вы атрымаеце **${ referrerRewardAmount }** у крэдытах **пры падпісцы да гэтай даты**."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Пасля гэтай даты ваш уліковы запіс будзе паніжаны да ўзроўню **${ BRAND_NAME } Free**. Калі вы перадумаеце, вы можаце **паўторна актываваць сваю падпіску**, каб захаваць доступ да прэміяльных функцый."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Атрымлівайце асалоду ад **${ planTitle }** бясплатна да **${ textDate }**."
@@ -13351,6 +13469,9 @@
       "${ app } storage": [
         "сховішча ${ app }"
       ],
+      "${ app } storage used": [
+        "Выкарыстана сховішча ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } запоўнена на ${ percentage }%"
       ],
@@ -13362,6 +13483,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "За ўсе сэрвісы ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Выкарыстана сховішча"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
@@ -14058,6 +14182,9 @@
       "Organization logo updated": [
         "Лагатып арганізацыі абноўлены"
       ],
+      "Organization name set": [
+        "Назва арганізацыі зададзена"
+      ],
       "Organization name updated": [
         "Назва арганізацыі абноўлена"
       ],
@@ -14719,6 +14846,9 @@
       "Discard changes?": [
         "Адхіліць змены?"
       ],
+      "Dismiss setup checklist": [
+        "Адхіліць кантрольны спіс наладкі"
+      ],
       "Domain names": [
         "Даменныя імёны"
       ],
@@ -14856,6 +14986,9 @@
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
+      ],
+      "Get started": [
+        "Пачатак працы"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Атрымайце праграму на ўсе вашы прылады і абараняйце да ${ VPN_CONNECTIONS } адначасова."
@@ -15292,6 +15425,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Вітаем у ${ planName }"
+      ],
       "What would you like to import?": [
         "Што вы хочаце імпартаваць?"
       ],
@@ -15392,6 +15528,9 @@
     "Tooltip": {
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Змены на баку Gmail блакіруюць падключэнне ${ BRAND_NAME }. Дайце дазвол, каб аднавіць функцыянальнасць электроннай пошты."
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Дададзена ў ваш тарыфны план: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
@@ -15721,6 +15860,9 @@
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ VPN_APP_NAME } for Business."

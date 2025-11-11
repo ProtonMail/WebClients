@@ -420,6 +420,9 @@
       "Create new policy": [
         "Buat kebijakan baru"
       ],
+      "Create organization": [
+        "Buat organisasi"
+      ],
       "Create users": [
         "Buat pengguna"
       ],
@@ -753,6 +756,9 @@
       "Get a new encrypted email address": [
         "Dapatkan alamat email terenkripsi baru"
       ],
+      "Get Deal": [
+        "Dapatkan Penawaran Ini"
+      ],
       "Get in touch": [
         "Hubungi kami"
       ],
@@ -779,6 +785,9 @@
       ],
       "Get more servers": [
         "Dapatkan lebih banyak server"
+      ],
+      "Get more storage": [
+        "Dapatkan lebih banyak ruang penyimpanan"
       ],
       "Get Pass Family": [
         "Dapatkan Pass Family"
@@ -1473,6 +1482,9 @@
       "Submit": [
         "Kirim"
       ],
+      "Subscribe": [
+        "Langgan"
+      ],
       "Subscribe now": [
         "Langgan sekarang"
       ],
@@ -1709,11 +1721,23 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe (untuk ${ quantity } pengguna)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domain khusus tambahan"
       ],
       "${ ips } server": [
         "${ ips } server"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asisten AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asisten AI ${ LUMO_APP_NAME } (untuk ${ quantity } pengguna)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server khusus"
@@ -1726,6 +1750,9 @@
       ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domain khusus"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } kuota ${ LUMO_APP_NAME }"
@@ -2465,14 +2492,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Kebijakan tanpa log ${ VPN_APP_NAME } VPN telah dibuktikan oleh hasil audit eksternal"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Penghapusan otomatis**, **penundaan**, dan **penjadwalan email** terliput dalam paket langganan Anda."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Dukungan streaming** terliput pada paket langganan Anda."
+      ],
+      "11 tips to stop spam emails": [
+        "11 tips untuk menghentikan email spam"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Otomatiskan tindakan berulang untuk menyortir dan mengorganisir email yang masuk."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Apakah orang lain dapat melihat riwayat internet saya apabila kami saling berbagi WiFi yang sama?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Telusuri tips dari kami untuk mengelola kotak masuk Anda secara efektif agar Anda dapat tetap produktif dan terfokus."
+      ],
+      "Easily manage your inbox": [
+        "Kelola kotak masuk Anda dengan mudah"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Kelola kotak masuk Anda secara mudah dengan Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Aktifkan kill switch dan penghubungan otomatis pada pengaturan VPN Anda."
+      ],
+      "Get a clean inbox with filters": [
+        "Dapatkan kotak masuk yang bersih dengan filter"
       ],
       "Get round-the-clock protection": [
         "Dapatkan perlindungan sepanjang waktu"
@@ -2482,6 +2530,15 @@
       ],
       "How to change your IP address on Windows": [
         "Cara mengubah alamat IP Anda di Windows"
+      ],
+      "How to get a custom email domain": [
+        "Cara memperoleh domain email khusus"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Cara mencapai kotak masuk tanpa pesan yang belum terbaca: Kiat organisasi kotak masuk yang mengutamakan privasi"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Apabila Anda ingin mengembangkan identitas profesional Anda, penting adanya bagi Anda untuk mempelajari mengapa Anda perlu dan bagaimana caranya untuk membuat domain email khusus milik Anda sendiri. Kebanyakan orang hanya menggunakan alamat email gratis dengan domain bawaan yang disediakan oleh layanan email mereka."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Pada artikel ini, kita akan menelusuri siapa saja yang dapat melihat riwayat internet Anda pada saat Anda menggunakan WiFi, hal apa saja yang dapat mereka lihat, dan mengapa mereka bisa sampai melakukan hal ini."
@@ -2495,8 +2552,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Apakah Telegram aman untuk digunakan? Seperti yang akan kita bahas pada artikel ini, segala sesuatunya sangat tergantung dari bagaimana Anda menggunakan Telegram."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Pelajari cara untuk mengalahkan pesan sampah yang mengganggu dan dapat membahayakan. Email spam, yang juga dikenal sebagai pesan sampah, dapat menjelma menjadi sesuatu yang lebih berbahaya dari sekadar tumpukan sampah di kotak masuk Anda. Para penjahat siber dapat menggunakan pesan yang tidak diminta dan tidak diinginkan ini untuk meluncurkan serangan phishing dan menyebarkan malware."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Pelajari cara untuk mengaktifkan ${ VPN_APP_NAME } pada router Anda."
+      ],
+      "Protect your business communications": [
+        "Lindungi percapakan bisnis Anda"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Lindungi perusahaan Anda dari ancaman kebocoran data dan jadikan kerja jarak jauh Anda lebih aman dengan VPN perusahaan."
@@ -2504,11 +2567,26 @@
       "Protect your whole household with 1 device": [
         "Lindungi seluruh rumah tangga Anda dengan 1 perangkat"
       ],
+      "See and manage all your email subscriptions": [
+        "Lihat dan kelola seluruh langganan email Anda"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Tonton tayangan streaming dari seluruh platform besar dengan ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "Pelaku bisnis profesional menerima sekitar 120 email per harinya, atau kurang lebih setara dengan 43800 email per tahunnya. Terlepas dari pada industri apa Anda bekerja, jumlah ini adalah jumlah yang sangat banyak untuk ditangani."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "Dampak suatu insiden kebocoran data terhadap hidup Anda akan sangat bergantung dari jenis informasi apa yang bocor dan kepada siapa informasi ini dibocorkan. Respons yang cepat terhadap insiden ini sering kalinya dapat melindungi identitas digital Anda dan mencegah terjadinya kerugian apa pun."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Cara yang paling pribadi dan aman untuk berkomunikasi secara online adalah dengan menggunakan enkripsi end-to-end. Apabila Anda mengirimkan email yang terenkripsi end-to-end, email ini terenkripsi pada perangkat Anda (mis. iPhone, Android, atau laptop Anda) dan tidak akan didekripsi hingga email ini mencapai perangkat milik orang yang Anda tuju."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Artikel ini telah diperbarui untuk meliputi protokol VPN WireGuard dan Stealth."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Coba **tampilan Buletin** kami untuk merapikan kotak masuk Anda."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator menggunakan kombinasi serangkaian teknologi VPN mutakhir untuk meningkatkan stabilitas dan meningkatkan kecepatan koneksi Anda"
@@ -2519,11 +2597,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Kami membahas cara untuk mengubah alamat IP eksternal dan lokal milik perangkat Windows Anda."
       ],
+      "What is an email alias?": [
+        "Apa itu alias email?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Apa itu enkripsi end-to-end, dan bagaimana cara kerjanya?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Apa yang harus dilakukan apabila data Anda terpapar dalam insiden kebocoran data"
+      ],
       "Which VPN protocol is the best?": [
         "Protokol VPN manakah yang paling baik?"
       ],
       "Working with sensitive data?": [
         "Bekerja dengan data yang sensitif?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Berurusan dengan data yang sensitif? Gunakan ${ MAIL_APP_NAME } untuk melindungi komunikasi Anda dan membangun kepercayaan dengan klien."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Alamat email pribadi Anda adalah bagian yang penting dari identitas digital Anda. Seperti halnya nomor telepon, Anda tidak begitu saja membagikan alamat ini ke semua orang yang Anda temui. Inilah mengapa penting adanya bagi Anda untuk memiliki alamat email lainnya yang dapat Anda gunakan untuk berbagai keperluan yang berbeda."
       ]
     },
     "breadcrumb": {
@@ -3004,8 +3097,14 @@
       "Add ${ LUMO_APP_NAME }": [
         "Tambah ${ LUMO_APP_NAME }"
       ],
+      "AI assistant that respects business confidentiality": [
+        "Asisten AI yang menghargai kerahasiaan bisnis"
+      ],
       "Basic chat history": [
         "Riwayat percakapan dasar"
+      ],
+      "Compliance with data protection regulations": [
+        "Patuh terhadap peraturan perlindungan data"
       ],
       "Data never used for AI training": [
         "Data tidak pernah digunakan untuk melatih AI"
@@ -3042,6 +3141,9 @@
       ],
       "Web search access": [
         "Akses pencarian web"
+      ],
+      "Zero-access encryption": [
+        "Enkripsi zero-access"
       ]
     },
     "collider_2025: Navigation": {
@@ -4286,6 +4388,26 @@
         "Setiap ${ interval } hari, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Rasakan kebebasan online yang hakiki dan lindungi privasi Anda."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Dapatkan yang lebih dari langganan ${ planTitle } Anda."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Jadikan berkas, foto, dan dokumen Anda tetap aman dengan ruang penyimpanan cloud gratis ${ maxDriveSpace }."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Atur kata sandi yang aman tanpa harus repot."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Dengan ${ planTitlePlusMaybeBrand }, Anda memperoleh akses gratis ke ${ VPN_APP_NAME } dan berbagai layanan privasi lainnya."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Dengan ${ planTitlePlusMaybeBrand }, Anda akan memperoleh akses gratis ke seluruh layanan privasi ${ BRAND_NAME }."
+      ]
+    },
     "Day": {
       "Friday": [
         "Jumat"
@@ -4702,6 +4824,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4713,6 +4841,9 @@
       ],
       "Browser": [
         "Browser"
+      ],
+      "Calendar": [
+        "Calendar"
       ],
       "Chrome": [
         "Chrome"
@@ -4729,6 +4860,9 @@
       "Download for Windows": [
         "Unduh untuk Windows"
       ],
+      "Download on Snap store": [
+        "Unduh di Snap store"
+      ],
       "Download on the Apple App Store": [
         "Unduh di Apple App Store"
       ],
@@ -4740,6 +4874,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Dapatkan di Google Play"
       ],
       "Get the app": [
         "Dapatkan aplikasinya"
@@ -4773,6 +4910,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura atau lebih baru"
+      ],
+      "Mail": [
+        "Mail"
       ],
       "Mobile": [
         "Perangkat seluler"
@@ -5833,6 +5973,9 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "Failed to add group member": [
+        "Anggota grup gagal ditambahkan"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Gagal memperoleh sesi yang aktif. Silakan ${ refresh } atau coba lagi nanti."
       ],
@@ -5841,6 +5984,9 @@
       ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
+      ],
+      "Failed to lookup server. Please try again": [
+        "Server gagal dijangkau. Silakan coba lagi."
       ],
       "Failed to process the logo": [
         "Logo gagal diproses"
@@ -6124,6 +6270,9 @@
       "Request timed out": [
         "Waktu permintaan habis"
       ],
+      "Server not found": [
+        "Server tidak ditemukan"
+      ],
       "Session expired. Please refresh the page.": [
         "Sesi telah kedaluwarsa. Silakan muat ulang halaman."
       ],
@@ -6228,6 +6377,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Untuk membuat akun pengguna non-privat dan mengakses akun ini, Anda perlu untuk memulihkan hak administratif Anda."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Terlalu banyak permintaan. Silakan coba lagi setelah ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Terlalu banyak permintaan. Silakan coba lagi nanti."
       ],
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
@@ -7014,6 +7169,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } perangkat"
       ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "@pm.me address": [
+        "Alamat @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Pemblokir iklan dan perlindungan perangkat lunak jahat"
       ],
@@ -7022,6 +7183,12 @@
       ],
       "and more premium features...": [
         "dan berbagai fitur premium lainnya..."
+      ],
+      "Connect custom domain": [
+        "Hubungkan domain khusus"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
       ],
       "Double VPN": [
         "VPN berganda"
@@ -7034,6 +7201,9 @@
       ],
       "NetShield Ad-blocker": [
         "Pemblokir iklan NetShield"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
       ],
       "Secure streaming": [
         "Streaming aman"
@@ -7595,6 +7765,9 @@
       ],
       "Domain": [
         "Domain"
+      ],
+      "Drag to reorder": [
+        "Seret untuk mengubah urutan"
       ],
       "Status": [
         "Status"
@@ -10330,6 +10503,9 @@
       "Some keys successfully reactivated": [
         "Sebagian kunci berhasil diaktifkan ulang"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Sebagian server dapat tidak muncul pada daftar di atas. Carilah berdasarkan nama (mis. AT#62) untuk mencari server ini."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML."
       ],
@@ -11116,6 +11292,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Anda juga dapat menggabungkan kalender yang diimpor dengan kalender ${ BRAND_NAME } yang telah ada."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Anda dapat mengubah alokasi ruang penyimpanan di **Pengguna dan alamat**."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Anda dapat mengubah hal ini kapan saja di ${ settingsLink }."
       ],
@@ -11386,6 +11565,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
       ],
+      "Your storage": [
+        "Ruang penyimpanan Anda"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
       ],
@@ -11493,6 +11675,11 @@
         "Hanya melihat"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Nama ini adalah bagaimana organisasi Anda akan terlihat oleh pengguna. Anda dapat mengubah nama ini kapan saja."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Bukan alamat email yang valid"
@@ -11506,6 +11693,11 @@
     "Input placeholder": {
       "Add label": [
         "Tambah label"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Apa nama organisasi Anda?"
       ]
     },
     "invitation status": {
@@ -12540,6 +12732,12 @@
       "Font size": [
         "Ukuran huruf"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Untuk ${ DRIVE_SHORT_APP_NAME } dan ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Untuk ${ DRIVE_SHORT_APP_NAME }. ${ DOCS_SHORT_APP_NAME }. dan ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "untuk bulan pertama Anda"
       ],
@@ -12990,8 +13188,14 @@
       "Sequences": [
         "Urutan"
       ],
+      "Server name": [
+        "Nama server"
+      ],
       "Share your referral link": [
         "Bagikan tautan rujukan Anda"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Terbagi antara ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Tampilkan ${ n } administrator"
@@ -13040,6 +13244,9 @@
       ],
       "Special characters": [
         "Karakter khusus"
+      ],
+      "Special Offer!": [
+        "Penawaran Spesial!"
       ],
       "Starred": [
         "Dibintangi"
@@ -13748,6 +13955,19 @@
       ],
       "Enable detailed events": [
         "Aktifkan rekaman peristiwa terperinci"
+      ]
+    },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Lindungi seluruh lapisan bisnis Anda. Dapatkan ${ LUMO_SHORT_APP_NAME } Professional dengan seluruh aplikasi dan fitur premium ${ BRAND_NAME } for Business."
+      ]
+    },
+    "lumo_signup_2025: title": {
+      "For businesses": [
+        "Untuk bisnis"
+      ],
+      "For individuals": [
+        "Untuk individu"
       ]
     },
     "Mail import summary": {
@@ -16240,11 +16460,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Berbasis di Swiss dan tunduk terhadap GDPR"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Namun, Anda dapat memperoleh diskon ${ discountPercentString } dengan meningkatkan ke **${ upsellPlanTitle }** — hanya dengan menambah ${ relativePrice } per bulannya."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Namun, Anda dapat memperoleh diskon ${ discountPercentString } dengan meningkatkan ke **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Namun, Anda dapat mengakses **${ unlockPlanTitle }** dan lebih banyak layanan ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }** — hanya dengan menambah ${ relativePrice } per bulannya."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Namun, Anda dapat mengakses **${ unlockPlanTitle }** dan lebih banyak layanan ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Namun, Anda dapat meningkatkan ke **${ upsellPlanTitle }** — hanya dengan menambah ${ relativePrice } per bulannya."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Namun, Anda dapat meningkatkan ke **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Dengan melanjutkan, Anda menyatakan diri setuju terhadap ${ termsAndConditionsLink } dan ${ privacyPolicyLink } kami."
@@ -16612,6 +16844,9 @@
       ]
     },
     "Payments": {
+      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
+        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Jumlah tagihan setelah masa uji coba pada ${ formattedDate }"
       ],
@@ -16902,11 +17137,17 @@
       "E.g., ": [
         "Misalnya "
       ],
+      "e.g., AT#62": [
+        "mis. AT#62"
+      ],
       "Email address": [
         "Alamat email"
       ],
       "End date": [
         "Tanggal berakhir"
+      ],
+      "Enter name": [
+        "Masukkan nama"
       ],
       "example@domain.com": [
         "contoh@domain.com"
@@ -17518,6 +17759,11 @@
       ],
       "Scopes cannot have the same value": [
         "Cakupan tidak dapat memiliki nilai yang sama"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } karakter"
       ]
     },
     "retention_policy_2025_Info": {
@@ -19033,6 +19279,9 @@
       "Advanced security features": [
         "Fitur keamanan bertingkat lanjut"
       ],
+      "Advanced security features by ${ BRAND_NAME }": [
+        "Fitur keamanan mutakhir oleh ${ BRAND_NAME }"
+      ],
       "Advanced sharing security": [
         "Keamanan pembagian berkas bertingkat lanjut"
       ],
@@ -19072,6 +19321,9 @@
       "ISO 27001 certified": [
         "Tersertifikasi ISO 27001"
       ],
+      "Mail, calendar, file storage, and VPN included": [
+        "Meliputi email, kalender, ruang penyimpanan berkas, dan VPN"
+      ],
       "Open source and audited": [
         "Open source dan teraudit"
       ],
@@ -19092,6 +19344,9 @@
       ],
       "The only email service with:": [
         "Layanan email satu-satunya dengan:"
+      ],
+      "The only password manager with:": [
+        "Satu-satunya pengelola kata sandi dengan:"
       ],
       "Unlimited passwords": [
         "Tanpa batasan jumlah kata sandi"
@@ -20387,6 +20642,9 @@
       "Organization logo updated": [
         "Logo organisasi diperbarui"
       ],
+      "Organization name set": [
+        "Nama organisasi diatur"
+      ],
       "Organization name updated": [
         "Nama organisasi diperbarui"
       ],
@@ -21029,6 +21287,9 @@
       "Collaborate on documents": [
         "Berkolaborasi dalam dokumen"
       ],
+      "Compare plans": [
+        "Bandingkan paket"
+      ],
       "Composing": [
         "Penulisan"
       ],
@@ -21179,6 +21440,9 @@
       "Decrypt key": [
         "Dekripsi kunci"
       ],
+      "Deep dive into email blog posts": [
+        "Dalami postingan blog email"
+      ],
       "Deep dive into VPN blog posts": [
         "Dalami postingan blog VPN"
       ],
@@ -21278,6 +21542,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Unduh ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Unduh ${ PASS_APP_NAME } untuk perangkat Anda"
       ],
@@ -21376,6 +21643,9 @@
       ],
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Nikmati akses yang cepat dan terpadu ke email Anda dengan aplikasi khusus kami."
       ],
       "Enter endpoints into your identity provider": [
         "Masukkan endpoint ke penyedia identitas Anda"
@@ -21494,8 +21764,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Dapatkan **saldo senilai ${ referralInfo.uiData.refereeRewardAmount }** dengan ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Dapatkan akses ke aplikasi desktop dengan ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Dapatkan cakupan privasi yang menyeluruh"
+      ],
+      "Get more from your email": [
+        "Dapatkan yang lebih dari email Anda"
       ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
@@ -21902,6 +22178,9 @@
       "Schedule send:": [
         "Jadwalkan pengiriman:"
       ],
+      "Search for additional servers": [
+        "Cari server tambahan"
+      ],
       "Secure email based in Switzerland": [
         "Email aman berbasis di Swiss"
       ],
@@ -22235,6 +22514,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Selamat datang di ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Selamat datang di ${ planName }"
+      ],
       "What is an alias?": [
         "Apa itu alias?"
       ],
@@ -22423,6 +22705,9 @@
       ],
       "Account is disconnected": [
         "Akun terputus"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Add-on ditambahkan ke paket Anda: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
@@ -22953,6 +23238,9 @@
       ],
       "Did you know?": [
         "Tahukah Anda?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Lindungi organisasi Anda dari kebocoran data dengan ${ PLAN_NAMES[plan] }"
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Lindungi organisasi Anda dari pembobolan data dengan ${ VPN_APP_NAME } for Business."

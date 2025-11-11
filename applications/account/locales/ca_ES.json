@@ -420,6 +420,9 @@
       "Create new policy": [
         "Crea una política"
       ],
+      "Create organization": [
+        "Creeu l'organització"
+      ],
       "Create users": [
         "Crea usuaris"
       ],
@@ -1478,6 +1481,9 @@
       ],
       "Submit": [
         "Envia"
+      ],
+      "Subscribe": [
+        "Subscriviu-vos"
       ],
       "Subscribe now": [
         "Subscriviu-vos ara"
@@ -11465,6 +11471,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "També podeu combinar els calendaris importats amb calendaris ${ BRAND_NAME } existents."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Podeu canviar l'assignació d'emmagatzematge a **Usuaris i adreces**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Podeu canviar-ho en qualsevol moment a ${ settingsLink }."
       ],
@@ -11744,6 +11753,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
       ],
+      "Your storage": [
+        "El vostre emmagatzematge"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ],
@@ -11853,6 +11865,11 @@
         "Només lectura"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Així és com es mostrarà la vostra organització als usuaris. Ho podeu canviar en qualsevol moment."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "No és una adreça de correu electrònic vàlida."
@@ -11866,6 +11883,11 @@
     "Input placeholder": {
       "Add label": [
         "Afegeix etiqueta"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Quin és el nom de la vostra organització?"
       ]
     },
     "invitation status": {
@@ -13946,6 +13968,9 @@
       ],
       "Reactivate now": [
         "Reactiva ara"
+      ],
+      "Reactivate subscription": [
+        "Reactiveu la subscripció"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -17413,6 +17438,9 @@
       "End date": [
         "Data de fi"
       ],
+      "Enter name": [
+        "Introduïu un nom"
+      ],
       "example@domain.com": [
         "exemple@domini.com"
       ],
@@ -17875,6 +17903,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Gratuït**. Si canvieu d'opinió, podreu **reactivar la vostra subscripció** per mantenir l'accés a les funcions prèmium."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
@@ -20986,6 +21017,9 @@
       "Organization logo updated": [
         "S'ha actualitzat el logo de l'organització."
       ],
+      "Organization name set": [
+        "S'ha establert el nom de l'organització"
+      ],
       "Organization name updated": [
         "S'ha actualitzat el nom de l'organització."
       ],
@@ -22872,6 +22906,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Us donem la benvinguda a ${ planName }"
       ],
       "What is an alias?": [
         "Què és un àlies?"

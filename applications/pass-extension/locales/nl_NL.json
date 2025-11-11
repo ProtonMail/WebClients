@@ -299,9 +299,6 @@
       "Generating secure link...": [
         "Beveiligde link genereren..."
       ],
-      "Get mobile apps": [
-        "Download mobiele apps"
-      ],
       "Get Pass Business": [
         "Kies Pass Business"
       ],
@@ -425,23 +422,11 @@
       "OK": [
         "OK"
       ],
-      "Open in a window": [
-        "In een venster openen"
-      ],
       "Open navigation": [
         "Navigatie openen"
       ],
-      "Open web app": [
-        "Web-app openen"
-      ],
       "Organize vaults": [
         "Kluizen organiseren"
-      ],
-      "Pass for Android": [
-        "Proton Pass voor Android"
-      ],
-      "Pass for iOS": [
-        "Proton Pass voor iOS"
       ],
       "Pin item": [
         "Item vastpinnen"
@@ -1812,7 +1797,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"

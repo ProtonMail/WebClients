@@ -1495,10 +1495,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -6799,6 +6795,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresseverifisering med klarerte nøkler er aktivert for denne adressen. For å kunne sende til denne adressen skal de offentlige nøklene, som kan brukes for å sende, først angis som klarerte."
       ],
+      "Addresses settings": [
+        "Adresseinnstillinger"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Annonsører sporer surfingen din for å vise målrettede annonser. ${ VPN_APP_NAME } blokkerer sporere og annonser, noe som gjør tilkoblingen din raskere og forbedrer nettopplevelsen din."
       ],
@@ -7397,7 +7396,7 @@
         "Gi innkommende fakturaer en fargekodet etikett, for eksempel “${ suggestedLabelName }“. Når de er betalt, endre etiketten til “${ suggestedPaidLabelName }“."
       ],
       "Google Pay mark": [
-        "Google Pay-merke"
+        "Merk Google Pay"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
@@ -7519,7 +7518,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -10261,6 +10261,9 @@
       "Reactivate now": [
         "Aktiver på nytt nå"
       ],
+      "Reactivate subscription": [
+        "Aktiver abonnementet på nytt"
+      ],
       "Request an invite": [
         "Be om en invitasjon"
       ],
@@ -10976,7 +10979,7 @@
         "Begrenset støtte"
       ],
       "Manage user permissions and access": [
-        "Administrere brukertillatelser og -tilgang"
+        "Administrer brukertillatelser og tilgang"
       ],
       "Multiple admin roles": [
         "Flere administratorroller"
@@ -12252,7 +12255,7 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielle rabattprisen gjelder for den første måneden av ${ subscriptionLength }.",
+        "Spesialrabattprisen gjelder for den første måneden [${ subscriptionLength }].",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
@@ -12771,6 +12774,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Etter den datoen vil kontoen din bli nedgradert til **${ BRAND_NAME } Free**. Hvis du ombestemmer deg, kan du **reaktivere abonnementet ditt** for å beholde tilgang til premiumfunksjoner."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Tjen opptil ${ maxRewardAmount } i kreditt. Du får ${ referrerRewardAmount } når personen du inviterer, abonnerer på en ${ BRAND_NAME }-plan."
@@ -13980,7 +13986,7 @@
         "Få bedriften din til å skille seg ut"
       ],
       "Manage your calendar": [
-        "Administrere kalenderen din"
+        "Administrer kalenderen din"
       ],
       "Online privacy, for your whole family": [
         "Personvern på nettet, for hele familien din"

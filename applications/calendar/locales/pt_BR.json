@@ -50,6 +50,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add a date": [
+        "Adicionar data"
+      ],
       "Add account": [
         "Adicionar conta"
       ],
@@ -170,6 +173,9 @@
       ],
       "Close navigation": [
         "Fechar navegação"
+      ],
+      "Close sidebar": [
+        "Fechar barra lateral"
       ],
       "Close this banner": [
         "Fechar este painel"
@@ -689,6 +695,9 @@
       "Remove gift code": [
         "Remover código de vale-presente"
       ],
+      "Remove the booking range": [
+        "Remover o período do agendamento"
+      ],
       "Remove this notification": [
         "Remover esta notificação"
       ],
@@ -824,6 +833,9 @@
       "Skip verification": [
         "Pular verificação"
       ],
+      "Split current booking range": [
+        "Dividir o intervalo de reservas atual"
+      ],
       "Start import": [
         "Iniciar importação"
       ],
@@ -885,7 +897,7 @@
         "Atualizar frase de recuperação"
       ],
       "Update secret passphrase": [
-        "Atualizar passphrase secreta"
+        "Atualizar frase secreta"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -5077,6 +5089,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
       ],
+      "${ MEET_APP_NAME } video call": [
+        "Chamada de vídeo com ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
@@ -7132,6 +7147,17 @@
         "Reunião no Zoom"
       ]
     },
+    "label": {
+      "Date of the booking range": [
+        "Data do período de reserva"
+      ],
+      "End time of the booking range": [
+        "Horário de término do período de reserva"
+      ],
+      "Start time of the booking range": [
+        "Horário de início do período de reserva"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Cor"
@@ -7271,6 +7297,9 @@
       ],
       "Reactivate now": [
         "Reativar agora"
+      ],
+      "Reactivate subscription": [
+        "Reativar assinatura"
       ],
       "Request an invite": [
         "Solicitar um convite"
@@ -9685,6 +9714,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Após essa data, sua conta fará o downgrade para **${ BRAND_NAME } Free**. Se você mudar de ideia, você pode **reativar sua assinatura** para manter o acesso a recursos premium."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe até ${ maxRewardAmount } em crédito. Você receberá ${ referrerRewardAmount } quando a pessoa que você convidar se inscrever em um plano ${ BRAND_NAME }."
       ],
@@ -11441,6 +11473,9 @@
       ],
       "Desktop": [
         "Área de trabalho"
+      ],
+      "Discard changes?": [
+        "Descartar alterações?"
       ],
       "Does not repeat": [
         "Não repete"

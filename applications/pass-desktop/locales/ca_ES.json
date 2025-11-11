@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } per Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } per iOS"
+      ],
       "Accept": [
         "Accepta"
       ],
@@ -310,6 +316,9 @@
       "Get ${ PASS_APP_NAME }": [
         "Obteniu ${ PASS_APP_NAME }"
       ],
+      "Get mobile and desktop apps": [
+        "Obtingueu les aplicacions mòbils i d'escriptori"
+      ],
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
       ],
@@ -453,12 +462,6 @@
       ],
       "Organize vaults": [
         "Organitza les caixes fortes"
-      ],
-      "Pass for Android": [
-        "Pass per a Android"
-      ],
-      "Pass for iOS": [
-        "Pass per a iOS"
       ],
       "Pass Monitor": [
         "Pass Monitor"

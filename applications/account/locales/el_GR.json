@@ -420,6 +420,9 @@
       "Create new policy": [
         "Δημιουργία νέας πολιτικής"
       ],
+      "Create organization": [
+        "Δημιουργία οργανισμού"
+      ],
       "Create users": [
         "Δημιουργία χρηστών"
       ],
@@ -1478,6 +1481,9 @@
       ],
       "Submit": [
         "Υποβολή"
+      ],
+      "Subscribe": [
+        "Εγγραφή"
       ],
       "Subscribe now": [
         "Εγγραφείτε τώρα"
@@ -11465,6 +11471,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Μπορείτε να αλλάξετε την κατανομή αποθηκευτικού χώρου στην ενότητα **Χρήστες και διευθύνσεις**."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ${ settingsLink }."
       ],
@@ -11744,6 +11753,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
       ],
+      "Your storage": [
+        "Ο αποθηκευτικός σας χώρος"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ],
@@ -11853,6 +11865,11 @@
         "Μόνο για ανάγνωση"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Έτσι θα εμφανίζεται ο οργανισμός σας στους χρήστες. Μπορείτε να το αλλάξετε ανά πάσα στιγμή."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Μη έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -11866,6 +11883,11 @@
     "Input placeholder": {
       "Add label": [
         "Προσθήκη ετικέτας"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Ποιο είναι το όνομα του οργανισμού σας;"
       ]
     },
     "invitation status": {
@@ -13946,6 +13968,9 @@
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
+      ],
+      "Reactivate subscription": [
+        "Επανενεργοποίηση συνδρομής"
       ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
@@ -17413,6 +17438,9 @@
       "End date": [
         "Ημερομηνία Λήξης"
       ],
+      "Enter name": [
+        "Εισάγετε όνομα"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -17875,6 +17903,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Εάν εγγραφείτε πριν από αυτή την ημερομηνία,** θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Μετά από αυτή την ημερομηνία, ο λογαριασμός σας θα υποβαθμιστεί στο **${ BRAND_NAME } Free**. Αν αλλάξετε γνώμη, μπορείτε να **επανενεργοποιήσετε τη συνδρομή σας** για να διατηρήσετε την πρόσβασή σας στις premium λειτουργίες."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Απολαύστε το **${ planTitle }** δωρεάν μέχρι τις **${ textDate }**."
@@ -20983,6 +21014,9 @@
       "Organization logo updated": [
         "Το λογότυπο του οργανισμού ενημερώθηκε"
       ],
+      "Organization name set": [
+        "Τέθηκε το όνομα το οργανισμού"
+      ],
       "Organization name updated": [
         "Το όνομα του οργανισμού ενημερώθηκε"
       ],
@@ -22869,6 +22903,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Καλώς ήρθατε στο ${ planName }"
       ],
       "What is an alias?": [
         "Τι είναι το ψευδώνυμο;"

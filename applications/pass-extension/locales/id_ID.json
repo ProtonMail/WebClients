@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } untuk Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } untuk iOS"
+      ],
       "Accept": [
         "Terima"
       ],
@@ -308,8 +314,8 @@
       "Generating secure link...": [
         "Membuat tautan aman..."
       ],
-      "Get mobile apps": [
-        "Dapatkan Pass versi mobile"
+      "Get mobile and desktop apps": [
+        "Dapatkan Pass versi seluler dan desktop"
       ],
       "Get Pass Business": [
         "Dapatkan Pass Business"
@@ -434,23 +440,11 @@
       "OK": [
         "OK"
       ],
-      "Open in a window": [
-        "Buka Pass di jendela baru"
-      ],
       "Open navigation": [
         "Buka navigasi"
       ],
-      "Open web app": [
-        "Buka aplikasi web"
-      ],
       "Organize vaults": [
         "Organisir brankas"
-      ],
-      "Pass for Android": [
-        "Pass untuk Android"
-      ],
-      "Pass for iOS": [
-        "Pass untuk iOS"
       ],
       "Pin item": [
         "Sematkan item"
@@ -776,6 +770,9 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } merupakan metode autentikasi email yang dirancang untuk mendeteksi pemalsuan alamat pengirim pada saat proses pengiriman email. Mengatur SPF sangat disarankan demi menurunkan peluang email Anda berakhir pada folder Spam penerima."
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Brankas ini tidak akan dapat diakses dan konten di dalamnya tidak akan tersedia untuk digunakan pada fitur Cari atau Isi Otomatis."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Akun ini terindikasi rentan. Kunjungi layanan keamanan kami dan ubah kata sandi Anda."
@@ -1814,6 +1811,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2952,6 +2952,9 @@
       ],
       "Language": [
         "Bahasa"
+      ],
+      "Larger window": [
+        "Jendela yang lebih besar"
       ],
       "Last 2 weeks": [
         "2 minggu yang lalu"
@@ -4102,6 +4105,9 @@
       "Grant permissions": [
         "Berikan izin"
       ],
+      "Hidden vaults": [
+        "Brankas yang tersembunyi"
+      ],
       "Hide my email": [
         "Sembunyikan email saya"
       ],
@@ -4308,6 +4314,9 @@
       ],
       "Vault shared with you": [
         "Brankas yang dibagikan dengan Anda"
+      ],
+      "Visible vaults": [
+        "Brankas yang terlihat"
       ],
       "Weak password": [
         "Kata sandi lemah"

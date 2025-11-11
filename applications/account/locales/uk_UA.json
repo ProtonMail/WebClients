@@ -4684,6 +4684,9 @@
       "Failed to load OAuth modal.": [
         "Не вдалося завантажити діалогове вікно OAuth."
       ],
+      "Failed to lookup server. Please try again": [
+        "Не вдалося знайти сервер. Спробуйте ще раз"
+      ],
       "Failed to process the logo": [
         "Не вдалося обробити логотип"
       ],
@@ -4960,6 +4963,9 @@
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
+      "Server not found": [
+        "Сервер не знайдено"
+      ],
       "Session expired. Please refresh the page.": [
         "Сесія закінчилася. Будь ласка, оновіть сторінку."
       ],
@@ -5061,6 +5067,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Щоб створити неприватні облікові записи користувачів і отримати до них доступ, потрібно відновити свої повноваження адміністратора."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Забагато запитів. Будь ласка, спробуйте ще раз після ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Забагато запитів. Будь ласка, спробуйте ще раз пізніше."
       ],
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
@@ -8840,6 +8852,9 @@
       "Some keys successfully reactivated": [
         "Деякі ключі успішно повторно активовано"
       ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Деякі сервери можуть не відображатися у списку вище. Шукайте за назвою сервера (наприклад, AT#62), щоб їх знайти."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Вкажіть домен, якому дозволено автентифікацію з SAML SSO."
       ],
@@ -11145,6 +11160,9 @@
       ],
       "Send in": [
         "Надсилати вибраною мовою"
+      ],
+      "Server name": [
+        "Ім'я сервера"
       ],
       "Show ${ n } administrator": [
         "Показати ${ n } адміністратора",
@@ -14681,6 +14699,9 @@
       "E.g., ": [
         "Наприклад, "
       ],
+      "e.g., AT#62": [
+        "наприклад, AT#62"
+      ],
       "Email address": [
         "Адреса е-пошти"
       ],
@@ -17994,6 +18015,9 @@
       "Account recovery": [
         "Відновлення облікового запису"
       ],
+      "Account restricted": [
+        "Обліковий запис обмежено"
+      ],
       "Account suspended": [
         "Обліковий запис призупинено"
       ],
@@ -18923,6 +18947,9 @@
       ],
       "Schedule send:": [
         "Запланувати надсилання:"
+      ],
+      "Search for additional servers": [
+        "Пошук додаткових серверів"
       ],
       "Secure email based in Switzerland": [
         "Захищена електронна пошта, що розташована у Швейцарії"

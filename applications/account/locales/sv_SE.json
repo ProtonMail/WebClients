@@ -420,6 +420,9 @@
       "Create new policy": [
         "Skapa ny policy"
       ],
+      "Create organization": [
+        "Skapa organisation"
+      ],
       "Create users": [
         "Skapa användare"
       ],
@@ -1479,6 +1482,9 @@
       "Submit": [
         "Skicka"
       ],
+      "Subscribe": [
+        "Prenumerera"
+      ],
       "Subscribe now": [
         "Prenumerera nu"
       ],
@@ -1715,6 +1721,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ytterligare anpassad domän",
         "${ domains } ytterligare anpassade domäner"
@@ -2549,6 +2562,9 @@
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Lär dig hur man aktiverar ${ VPN_APP_NAME } på din router."
       ],
+      "Protect your business communications": [
+        "Skydda din företagskommunikation"
+      ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Skydda ditt företag från dataintrång och gör fjärrarbete säkrare med en företags-VPN."
       ],
@@ -2576,6 +2592,9 @@
       "What is an email alias?": [
         "Vad är ett e-postalias?"
       ],
+      "What is end-to-end encryption and how does it work?": [
+        "Vad är end-to-end-kryptering och hur fungerar det?"
+      ],
       "What to do if your data is leaked in a data breach": [
         "Vad man ska göra om din data är läckt i ett dataintrång"
       ],
@@ -2587,6 +2606,9 @@
       ],
       "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
         "Arbetar du med känslig data? Använd ${ MAIL_APP_NAME } för att skydda din kommunikation och bygga förtroende med klienter."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Din personliga e-postadress är en viktig del av din digitala identitet. Precis som ditt telefonnummer ger du det inte till alla du möter. Därför är det bra att ha andra e-postadresser som du kan använda för olika ändamål."
       ]
     },
     "breadcrumb": {
@@ -3099,6 +3121,9 @@
       ],
       "Web search access": [
         "Webbsökningsåtkomst"
+      ],
+      "Zero-access encryption": [
+        "Kryptering med noll åtkomst"
       ]
     },
     "collider_2025: Navigation": {
@@ -4350,6 +4375,9 @@
       ]
     },
     "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Upplev sann frihet online och skydda din integritet."
+      ],
       "Get more from your ${ planTitle } subscription.": [
         "Få ut mer av din ${ planTitle }-prenumeration."
       ],
@@ -11633,6 +11661,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer förnyas automatiskt varje månad."
       ],
+      "Your storage": [
+        "Ditt lagringsutrymme"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ],
@@ -13826,6 +13857,9 @@
       ],
       "Reactivate now": [
         "Återaktivera nu"
+      ],
+      "Reactivate subscription": [
+        "Återaktivera prenumeration"
       ],
       "Request an invite": [
         "Begär en inbjudan"
@@ -17304,6 +17338,9 @@
       "End date": [
         "Slutdatum"
       ],
+      "Enter name": [
+        "Ange namn"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -18054,6 +18091,9 @@
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to prevent attackers from taking over your account.": [
+        " **Inaktivera återställning via telefon** för att förhindra angripare från att ta över ditt konto."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Aktivera telefon för återställning** för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
       ],
@@ -18068,6 +18108,9 @@
       ],
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } för att säkerställa att din data kan återställas."
+      ],
+      "**Disable account reset by email** to prevent attackers from taking over your account.": [
+        "**Inaktivera kontoåterställning med e-post** för att förhindra angripare från att ta över ditt konto."
       ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Aktivera e-post för återställning** för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
@@ -20102,6 +20145,9 @@
       "${ app } storage": [
         "${ app } lagringsutrymme"
       ],
+      "${ app } storage used": [
+        "${ app } lagringsutrymme använt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fullt"
       ],
@@ -20122,6 +20168,9 @@
       ],
       "Get more storage": [
         "Skaffa mer lagringsutrymme"
+      ],
+      "Storage used": [
+        "Lagringsutrymme använt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ upgrade }"
@@ -20852,6 +20901,9 @@
       ],
       "Organization logo updated": [
         "Organisationens logga uppdaterad"
+      ],
+      "Organization name set": [
+        "Organisationsnamn inställt"
       ],
       "Organization name updated": [
         "Organisationsnamn uppdaterad"
@@ -21867,6 +21919,9 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Njut av snabb och sömlös åtkomst till din e-post med våra dedikerade appar."
+      ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter hos din identitetsleverantör"
       ],
@@ -22742,6 +22797,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Välkommen till ${ planName }"
       ],
       "What is an alias?": [
         "Vad är ett alias?"

@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } Android-სთვის"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } iOS-სთვის"
+      ],
       "Accept": [
         "დასტური"
       ],
@@ -310,6 +316,9 @@
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის მიღება"
       ],
+      "Get mobile and desktop apps": [
+        "მიიღეთ აპები მობილურისთვის და კომპიუტერისთვის"
+      ],
       "Get mobile apps": [
         "მობილური აპების დაყენება"
       ],
@@ -453,12 +462,6 @@
       ],
       "Organize vaults": [
         "საცავების დალაგება"
-      ],
-      "Pass for Android": [
-        "Pass-ი Android-სთვის"
-      ],
-      "Pass for iOS": [
-        "Pass-ი iOS-ისთვის"
       ],
       "Pass Monitor": [
         "Pass Monitor"

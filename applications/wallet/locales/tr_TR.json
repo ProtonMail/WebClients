@@ -4978,6 +4978,9 @@
       "${ app } storage": [
         "${ app } depolama alanı"
       ],
+      "${ app } storage used": [
+        "${ app } depolama alanı kullanıldı"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } %${ percentage } dolu"
       ],
@@ -4986,6 +4989,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "Storage used": [
+        "Kullanılan depolama alanı"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Kalan sürenize karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz."

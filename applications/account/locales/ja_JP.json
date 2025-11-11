@@ -783,6 +783,9 @@
       "Get more servers": [
         "サーバーを増やす"
       ],
+      "Get more storage": [
+        "ストレージを増やす"
+      ],
       "Get Pass Family": [
         "Pass Familyを入手"
       ],
@@ -1712,11 +1715,23 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ BRAND_NAME } Scribe執筆アシスタント"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } 追加カスタムドメイン"
       ],
       "${ ips } server": [
         "${ ips } 台のサーバー"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI アシスタント"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ LUMO_APP_NAME } AIアシスタント"
       ],
       "${ price } per dedicated server": [
         "専用サーバーあたり ${ price }"
@@ -1729,6 +1744,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個のカスタムドメイン"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } の ${ seats } シート"
@@ -2482,14 +2500,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "${ VPN_APP_NAME }のノーログポリシーが外部監査により確認されました"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**自動削除**、**スヌーズ**、**メールスケジューリング**は、お客様のサブスクリプションに含まれています。"
+      ],
       "**Streaming** is included in your subscription.": [
         "**ストリーミング** はサブスクリプションに含まれています。"
+      ],
+      "11 tips to stop spam emails": [
+        "迷惑メールを停止する11のヒント"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "受信メールを分類し整理するための繰り返し行うアクションを自動化します。"
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "同じWiFiを使用している場合、誰かが私のインターネット履歴を見ることができますか?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "お客様の受信トレイを効率的に管理し、生産性を維持して集中力を高めるためのヒントをご紹介します。"
+      ],
+      "Easily manage your inbox": [
+        "受信トレイを簡単に管理"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Mail Plusで受信トレイを簡単に管理"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "VPN設定でキルスイッチと自動接続を有効にします。"
+      ],
+      "Get a clean inbox with filters": [
+        "フィルター機能で受信トレイを整理しましょう"
       ],
       "Get round-the-clock protection": [
         "24時間体制で保護"
@@ -2499,6 +2538,15 @@
       ],
       "How to change your IP address on Windows": [
         "Windowsでお客様の IP アドレスを変更する方法"
+      ],
+      "How to get a custom email domain": [
+        "カスタムメールドメインを取得する方法"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "受信トレイをゼロにする方法：プライバシーを重視した受信トレイの整理術"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "専門的なユーザー情報を向上させたい場合は、カスタムメールドメインを作成する理由と方法を学ぶことが重要です。ほとんどのお客様は、ご利用のメールサービスから提供されるデフォルトドメインを含む無料のメールアドレスを使用しています。"
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "この記事では、WiFiを使用するときに誰がインターネット履歴を見られるか、彼らが何を見ることができるか、そしてなぜそれを行うかについて見ていきます。"
@@ -2512,8 +2560,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Telegramは安全ですか? この記事で説明するように、それはあなたがどのように使用するかによって非常に大きく異なります。"
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "迷惑で、かつ有害な可能性のある迷惑メールに対処する方法を学びましょう。迷惑メールは、お客様の受信トレイを単に煩わしく散らかすだけの存在ではありません。サイバー犯罪者は、これらの不正かつ不要なメッセージを利用して、フィッシング攻撃を仕掛けたり、マルウェアを拡散させたりする可能性があります。"
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "ルーターで ${ VPN_APP_NAME } を有効にする方法を学びましょう。"
+      ],
+      "Protect your business communications": [
+        "お客様のビジネスコミュニケーションを保護"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "企業をデータ侵害から保護し、企業VPNを使用してリモート作業をより安全にします。"
@@ -2521,11 +2575,26 @@
       "Protect your whole household with 1 device": [
         "1 台のデバイスで家庭全体を保護"
       ],
+      "See and manage all your email subscriptions": [
+        "すべてのメールサブスクリプションを表示および管理"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "すべての主要なプラットフォームから ${ PLAN_NAMES[PLANS.VPN2024] }でストリーミングします。"
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "平均的なビジネスパーソンは1日に約120通のメールを受け取ります。これは年間およそ43,800通に相当します。どの業界で働いていても、これは処理しきれないほどの膨大な業務メール量です。"
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "データ侵害がお客様の生活に与える影響は、どのような情報が漏洩したか、そして誰に漏洩したかによって大きく異なります。データ侵害に迅速に対応することで、多くの場合、お客様のデジタルユーザー情報を保護し、いかなる損失も防ぐことができます。"
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "オンラインで最もプライベートで安全なコミュニケーション方法は、エンドツーエンド暗号化を使用することです。お客様がエンドツーエンド暗号化メールを送信すると、お客様のデバイス (iPhone、Android、またはノートパソコン) で暗号化され、メッセージの送信先の方のデバイスに到達するまで復号化されません。"
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "この記事は、WireGuardおよびステルスVPNプロトコルを含むように更新されました。"
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "受信トレイを整理するには、**ニュースレター表示**をお試しください。"
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Acceleratorは、高度なVPN技術を組み合わせて接続の安定性を向上させ、接続速度を向上させます。"
@@ -2536,11 +2605,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "お客様のWindowsデバイスにおける外部およびローカルIPアドレスの変更方法について説明します。"
       ],
+      "What is an email alias?": [
+        "メールエイリアスとは何ですか？"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "エンドツーエンド暗号化とは何ですか、どのように機能しますか？"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "データ侵害でデータが漏洩した場合の対処法"
+      ],
       "Which VPN protocol is the best?": [
         "どのVPNプロトコルが一番良いですか？"
       ],
       "Working with sensitive data?": [
         "機密データを扱いますか？"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "機密データを扱っていますか？${ MAIL_APP_NAME } を使用してコミュニケーションを保護し、お客様との信頼を築きましょう。"
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "お客様の個人のメールアドレスは、お客様のデジタルユーザー情報の不可欠な一部です。電話番号と同様に、お客様は出会うすべての人にそれを教えることはありません。そのため、さまざまな目的に使用できる他のメールアドレスを持つことが役立ちます。"
       ]
     },
     "breadcrumb": {
@@ -4315,6 +4399,26 @@
         "${ interval } 日毎、${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "オンラインでの真の自由を体験し、プライバシーを守りましょう。"
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "${ planTitle } サブスクリプションからさらに入手。"
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "${ maxDriveSpace } の無料のクラウドストレージでファイル、写真、ドキュメントを安全に保管してください。"
+      ],
+      "Set secure passwords without the hassle.": [
+        "手間をかけずに安全なパスワードを設定。"
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "${ planTitlePlusMaybeBrand }では、 ${ VPN_APP_NAME } やその他のプライバシーサービスに無料でアクセスできます。"
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "${ planTitlePlusMaybeBrand }では、 ${ BRAND_NAME } の全てのプライバシーサービスに無料でアクセスできます。"
+      ]
+    },
     "Day": {
       "Friday": [
         "金曜日"
@@ -4731,6 +4835,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4742,6 +4852,9 @@
       ],
       "Browser": [
         "ブラウザ"
+      ],
+      "Calendar": [
+        "カレンダー"
       ],
       "Chrome": [
         "Chrome"
@@ -4758,6 +4871,9 @@
       "Download for Windows": [
         "Windows版をダウンロード"
       ],
+      "Download on Snap store": [
+        "Snap Storeでダウンロード"
+      ],
       "Download on the Apple App Store": [
         "Apple App Storeでダウンロード"
       ],
@@ -4769,6 +4885,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Google Playで入手"
       ],
       "Get the app": [
         "アプリを入手"
@@ -4802,6 +4921,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura 以降"
+      ],
+      "Mail": [
+        "メール"
       ],
       "Mobile": [
         "モバイル"
@@ -7099,6 +7221,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } 台のデバイス"
       ],
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "@pm.me address": [
+        "@pm.me メールアドレス"
+      ],
       "Ad-blocker and malware protection": [
         "広告ブロックとマルウェア保護"
       ],
@@ -7107,6 +7235,12 @@
       ],
       "and more premium features...": [
         "そして更に、プレミアムな機能が..."
+      ],
+      "Connect custom domain": [
+        "カスタムドメインを接続"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
       ],
       "Double VPN": [
         "ダブルVPN"
@@ -7119,6 +7253,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield による広告ブロック"
+      ],
+      "Priority support": [
+        "優先サポート"
       ],
       "Secure streaming": [
         "安全なストリーミング"
@@ -7680,6 +7817,9 @@
       ],
       "Domain": [
         "ドメイン"
+      ],
+      "Drag to reorder": [
+        "ドラッグして並び替え"
       ],
       "Status": [
         "状態"
@@ -12634,6 +12774,12 @@
       "Font size": [
         "フォントサイズ"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME } と ${ DOCS_SHORT_APP_NAME } 向けです。"
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME }、${ SHEETS_SHORT_APP_NAME }向け。"
+      ],
       "for your first month": [
         "最初の1か月間"
       ],
@@ -13092,6 +13238,9 @@
       ],
       "Share your referral link": [
         "紹介リンクを共有"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、 ${ WALLET_SHORT_APP_NAME } の間で共有されます。"
       ],
       "Show ${ n } administrator": [
         "${ n }人の管理者を表示"
@@ -16356,11 +16505,23 @@
       "Based in Switzerland, GDPR compliant": [
         "スイスに拠点を置き、GDPR に準拠"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "しかし、**${ upsellPlanTitle }** にアップグレードすると、${ discountPercentString } 割引を受けることができます。月額 ${ relativePrice } が追加されるだけです。"
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "しかし、**${ upsellPlanTitle }** にアップグレードすると、${ discountPercentString } 割引を受けることができます。"
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "ただし、**${ upsellPlanTitle }** にアップグレードすると、**${ unlockPlanTitle }** とすべてのプレミアム ${ BRAND_NAME } サービスのロックを解除できます。月額 ${ relativePrice } の追加料金がかかるだけです。"
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "しかし、**${ upsellPlanTitle }** にアップグレードしていただくことで、**${ unlockPlanTitle }** とその他の ${ BRAND_NAME } サービスのロックを解除できます。"
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "しかし、**${ upsellPlanTitle }** にアップグレードいただけます — 月額${ relativePrice }の追加料金でご利用いただけます。"
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "ただし、お客様は**${ upsellPlanTitle }**にアップグレードできます。"
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "続行すると、当社の ${ termsAndConditionsLink } と ${ privacyPolicyLink }に同意したことになります。"
@@ -19827,6 +19988,9 @@
       "${ app } storage": [
         "${ app } ストレージ"
       ],
+      "${ app } storage used": [
+        "${ app } のストレージ使用量"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage }は${ percentage }%使用中です"
       ],
@@ -19847,6 +20011,9 @@
       ],
       "Get more storage": [
         "ストレージを増やす"
+      ],
+      "Storage used": [
+        "使用中のストレージ"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }。"
@@ -21197,6 +21364,9 @@
       "Collaborate on documents": [
         "ドキュメントの共同編集"
       ],
+      "Compare plans": [
+        "プランを比較する"
+      ],
       "Composing": [
         "作成"
       ],
@@ -21347,6 +21517,9 @@
       "Decrypt key": [
         "キーを復号"
       ],
+      "Deep dive into email blog posts": [
+        "メールブログ投稿を深掘りする"
+      ],
       "Deep dive into VPN blog posts": [
         "VPNブログ投稿を深掘りする"
       ],
@@ -21446,6 +21619,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } アプリをダウンロード"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } をダウンロード"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "デバイスに${ PASS_APP_NAME }をダウンロード"
       ],
@@ -21544,6 +21720,9 @@
       ],
       "Enhance security with 2FA": [
         "2要素認証でセキュリティを強化"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "私たちの専用アプリで、お客様のメールに迅速かつシームレスにアクセスできます。"
       ],
       "Enter endpoints into your identity provider": [
         "IDプロバイダーにエンドポイントを入力します"
@@ -21662,8 +21841,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "**${ referralInfo.uiData.refereeRewardAmount }**分のクレジットを${ planTitle }で獲得"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "${ mailPlusPlanName }でデスクトップアプリにアクセスしてください。${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "徹底したプライバシー保護を入手。"
+      ],
+      "Get more from your email": [
+        "メールをさらに活用"
       ],
       "Get more from your VPN": [
         "VPNからさらに入手する"
@@ -22595,6 +22780,9 @@
       "Account is disconnected": [
         "アカウントは切断されました"
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "お客様のプランに追加されました: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
       ],
@@ -23127,6 +23315,9 @@
       ],
       "Did you know?": [
         "知ってましたか？"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "${ PLAN_NAMES[plan] } を利用して、お客様の組織をデータ侵害から保護します。"
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "${ VPN_APP_NAME } for Business を利用して、お客様の組織をデータ侵害から保護します。"

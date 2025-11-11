@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "Android için ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "iOS için ${ PASS_SHORT_APP_NAME }"
+      ],
       "Accept": [
         "Kabul et"
       ],
@@ -308,8 +314,8 @@
       "Generating secure link...": [
         "Güvenli bağlantı oluşturuluyor..."
       ],
-      "Get mobile apps": [
-        "Mobil uygulamaları edinin"
+      "Get mobile and desktop apps": [
+        "Mobil ve bilgisayar uygulamalarını edinin"
       ],
       "Get Pass Business": [
         "Pass Business edinin"
@@ -434,23 +440,11 @@
       "OK": [
         "Tamam"
       ],
-      "Open in a window": [
-        "Bir pencerede aç"
-      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
-      "Open web app": [
-        "İnternet uygulamasını aç"
-      ],
       "Organize vaults": [
         "Kasaları düzenle"
-      ],
-      "Pass for Android": [
-        "Android için Proton Pass"
-      ],
-      "Pass for iOS": [
-        "iOS için Proton Pass"
       ],
       "Pin item": [
         "Ögeyi sabitle"
@@ -1844,7 +1838,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3002,6 +2997,9 @@
       ],
       "Language": [
         "Dil"
+      ],
+      "Larger window": [
+        "Daha büyük pencere"
       ],
       "Last 2 weeks": [
         "Son 2 hafta"

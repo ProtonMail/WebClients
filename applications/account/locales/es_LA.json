@@ -420,6 +420,9 @@
       "Create new policy": [
         "Crear una política"
       ],
+      "Create organization": [
+        "Crear organización"
+      ],
       "Create users": [
         "Crear usuarios"
       ],
@@ -782,6 +785,9 @@
       ],
       "Get more servers": [
         "Obtener más servidores"
+      ],
+      "Get more storage": [
+        "Obtener más almacenamiento"
       ],
       "Get Pass Family": [
         "Obtener Pass Family"
@@ -1476,6 +1482,9 @@
       "Submit": [
         "Enviar"
       ],
+      "Subscribe": [
+        "Suscribirse"
+      ],
       "Subscribe now": [
         "Suscríbase ahora"
       ],
@@ -1712,6 +1721,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dominio personalizado adicional",
         "${ domains } dominios personalizados adicionales"
@@ -1719,6 +1735,13 @@
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistente de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuarios)"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -1731,6 +1754,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
@@ -2493,14 +2520,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Política de cero registros de ${ VPN_APP_NAME } confirmada por una auditoría externa"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Eliminación automática**, **pausar** y **programación de correo electrónico** están incluidos en su suscripción."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Streaming** incluido en su suscripción."
+      ],
+      "11 tips to stop spam emails": [
+        "11 consejos para detener el spam"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Automatice acciones recurrentes para clasificar y organizar correos electrónicos entrantes."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "¿Alguien puede ver mi historial de internet si usamos la misma red Wi-Fi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Descubra nuestros consejos para gestionar eficazmente su bandeja de entrada, para que mantenga la productividad y concentración."
+      ],
+      "Easily manage your inbox": [
+        "Gestione fácilmente su bandeja de entrada"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Gestione fácilmente su bandeja de entrada con Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Active el interruptor de bloqueo y la conexión automática en los ajustes de la VPN."
+      ],
+      "Get a clean inbox with filters": [
+        "Obtenga una bandeja de entrada limpia con ayuda de los filtros"
       ],
       "Get round-the-clock protection": [
         "Obtenga protección las 24 horas del día"
@@ -2510,6 +2558,15 @@
       ],
       "How to change your IP address on Windows": [
         "Cómo cambiar su dirección IP en Windows"
+      ],
+      "How to get a custom email domain": [
+        "Cómo obtener un dominio de correo personalizado"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Cómo alcanzar la bandeja de entrada cero: consejos para organizar la bandeja de entrada con la privacidad como prioridad"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Si desea elevar su identidad profesional, es importante aprender por qué y cómo crear un dominio de correo personalizado. La mayoría de las personas usan direcciones de correo gratuitas con dominios por defecto proporcionados por su servicio de correo electrónico."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "En este artículo, repasamos quién puede ver su historial de internet cuando usa Wi-Fi, lo que puede ver y por qué podría hacerlo."
@@ -2523,8 +2580,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "¿Es seguro usar Telegram? Como discutiremos en este artículo, eso depende de cómo quiere usarlo."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Aprenda cómo combatir el molesto y potencialmente dañino correo no deseado. Los correos spam, también conocidos como correo no deseado, pueden ser más que un simple molestia en su bandeja de entrada. Los ciberdelincuentes pueden usar estos mensajes no solicitados para lanzar ataques de suplantación y propagar malware."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Más información sobre cómo activar ${ VPN_APP_NAME } en su enrutador."
+      ],
+      "Protect your business communications": [
+        "Proteja sus comunicaciones empresariales"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Proteja su empresa de vulneraciones de datos y haga más seguro el trabajo remoto con una VPN empresarial."
@@ -2532,11 +2595,26 @@
       "Protect your whole household with 1 device": [
         "Proteja a toda su familia con un dispositivo"
       ],
+      "See and manage all your email subscriptions": [
+        "Vea y gestione todas sus suscripciones de correo"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Disfrute de las principales plataformas de streaming con ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "Un profesional promedio recibe alrededor de 120 correos electrónicos al día, lo que suma aproximadamente 43,800 al año. No importa en qué industria trabaje, esa es una cantidad abrumadora de correos electrónicos empresariales con la que lidiar."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "El impacto que una vulneración de datos puede tener en su vida depende en gran medida del tipo de información que fue expuesta y a quién. Una respuesta inmediata ante una filtración de datos puede, a menudo, proteger su identidad digital y evitar pérdidas."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "La forma más privada y segura de comunicarse en línea es mediante el cifrado de extremo a extremo. Si envía un correo usando este sistema, el mensaje se codifica en su dispositivo (su iPhone, Android o portátil) y no se descifra hasta que llega al dispositivo del destinatario."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Este artículo fue actualizado para incluir los protocolos VPN WireGuard y Stealth."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Pruebe la **vista de boletines** para organizar su bandeja de entrada."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator usa una combinación de tecnologías VPN avanzadas que mejoran la estabilidad de la conexión e incrementan la velocidad de conexión"
@@ -2547,11 +2625,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Explicamos cómo cambiar las direcciones IP externas y locales de su dispositivo de Windows."
       ],
+      "What is an email alias?": [
+        "¿Qué es un alias de correo?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "¿Qué es el cifrado de extremo a extremo y cómo funciona?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Qué hacer en caso de que se vea afectado por una filtración de datos"
+      ],
       "Which VPN protocol is the best?": [
         "¿Cuál es el mejor protocolo VPN?"
       ],
       "Working with sensitive data?": [
         "¿Trabaja con datos sensibles?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "¿Trabaja con datos sensibles? Use ${ MAIL_APP_NAME } para proteger sus comunicaciones y generar confianza con sus clientes."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Su dirección de correo personal es una parte esencial de su identidad digital. Al igual que su número de teléfono, no lo da a todo el mundo que conoce. Por eso es útil disponer de otras direcciones de correo que pueda usar para diferentes propósitos."
       ]
     },
     "breadcrumb": {
@@ -4335,6 +4428,26 @@
         "Cada ${ interval } días hasta ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Disfrute de verdadera libertad en línea y proteja su privacidad."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Obtenga más de su suscripción ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Mantenga seguros sus archivos, fotos y documentos con ${ maxDriveSpace } de almacenamiento gratuito en la nube."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Configure contraseñas seguras sin complicaciones."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Con ${ planTitlePlusMaybeBrand } puede obtener acceso gratuito a ${ VPN_APP_NAME } y otros servicios de privacidad."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Con ${ planTitlePlusMaybeBrand } obtiene acceso gratuito a todos los servicios de privacidad de ${ BRAND_NAME }."
+      ]
+    },
     "Day": {
       "Friday": [
         "Viernes"
@@ -4752,6 +4865,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4763,6 +4882,9 @@
       ],
       "Browser": [
         "Navegador"
+      ],
+      "Calendar": [
+        "Calendario"
       ],
       "Chrome": [
         "Chrome"
@@ -4779,6 +4901,9 @@
       "Download for Windows": [
         "Descargar para Windows"
       ],
+      "Download on Snap store": [
+        "Descargar desde la Snap Store"
+      ],
       "Download on the Apple App Store": [
         "Descargar en la App Store de Apple"
       ],
@@ -4790,6 +4915,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Obténgala en Google Play"
       ],
       "Get the app": [
         "Obtener la aplicación"
@@ -4823,6 +4951,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura o más reciente"
+      ],
+      "Mail": [
+        "Correo"
       ],
       "Mobile": [
         "Móvil"
@@ -7145,6 +7276,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } dispositivos"
       ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "@pm.me address": [
+        "Dirección @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -7153,6 +7290,12 @@
       ],
       "and more premium features...": [
         "y más funciones premium..."
+      ],
+      "Connect custom domain": [
+        "Conecte un dominio personalizado"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
       ],
       "Double VPN": [
         "Doble VPN"
@@ -7165,6 +7308,9 @@
       ],
       "NetShield Ad-blocker": [
         "Bloqueador de anuncios NetShield"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
       ],
       "Secure streaming": [
         "Streaming seguro"
@@ -7734,6 +7880,9 @@
       ],
       "Domain": [
         "Dominio"
+      ],
+      "Drag to reorder": [
+        "Arrastrar para reordenar"
       ],
       "Status": [
         "Estado"
@@ -11325,6 +11474,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "También puede fusionar calendarios importados con calendarios existentes de ${ BRAND_NAME }."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Puede cambiar la asignación de almacenamiento en **Usuario y direcciones**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Puede cambiar esto en cualquier momento en ${ settingsLink }."
       ],
@@ -11604,6 +11756,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
       ],
+      "Your storage": [
+        "Su almacenamiento"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Su suscripción se renovará automáticamente en ${ renewalTime }."
       ],
@@ -11713,6 +11868,11 @@
         "Solo lectura"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Así es como su organización aparecerá a los usuarios. Puede cambiarlo en cualquier momento."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "No es una dirección de correo electrónico válida."
@@ -11726,6 +11886,11 @@
     "Input placeholder": {
       "Add label": [
         "Agregar etiqueta"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "¿Cuál es el nombre de su organización?"
       ]
     },
     "invitation status": {
@@ -12768,6 +12933,12 @@
       "Font size": [
         "Tamaño de fuente"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Para ${ DRIVE_SHORT_APP_NAME } y ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Para ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } y ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "en su primer mes"
       ],
@@ -13226,6 +13397,9 @@
       ],
       "Share your referral link": [
         "Comparta su enlace de referidos"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Compartido entre ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
@@ -13797,6 +13971,9 @@
       ],
       "Reactivate now": [
         "Reactivar"
+      ],
+      "Reactivate subscription": [
+        "Reactivar la suscripción"
       ],
       "Request an invite": [
         "Solicitar una invitación"
@@ -17264,6 +17441,9 @@
       "End date": [
         "Fecha final"
       ],
+      "Enter name": [
+        "Ingresar un nombre"
+      ],
       "example@domain.com": [
         "ejemplo@dominio.com"
       ],
@@ -17726,6 +17906,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si se suscribe antes de esta fecha,** recibirá **${ referrerRewardAmount }** en créditos."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Después de esa fecha, su cuenta pasará a **${ BRAND_NAME } Free**. Si cambia de opinión, puede **reactivar su suscripción** para mantener el acceso a las funciones premium."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Disfrute de **${ planTitle }** gratis hasta el **${ textDate }**."
@@ -20077,6 +20260,9 @@
       "${ app } storage": [
         "almacenamiento de ${ app }"
       ],
+      "${ app } storage used": [
+        "almacenamiento de ${ app } usado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } lleno al ${ percentage }%"
       ],
@@ -20097,6 +20283,9 @@
       ],
       "Get more storage": [
         "Obtener más almacenamiento"
+      ],
+      "Storage used": [
+        "Almacenamiento usado"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para seguir utilizando los productos de ${ BRAND_NAME }, libere espacio o ${ upgrade }"
@@ -20828,6 +21017,9 @@
       "Organization logo updated": [
         "Logo de la organización actualizado"
       ],
+      "Organization name set": [
+        "Nombre de la organización establecido"
+      ],
       "Organization name updated": [
         "Nombre de la organización actualizado"
       ],
@@ -21483,6 +21675,9 @@
       "Collaborate on documents": [
         "Colabore en documentos"
       ],
+      "Compare plans": [
+        "Compare los planes"
+      ],
       "Composing": [
         "Escribir"
       ],
@@ -21634,6 +21829,9 @@
       "Decrypt key": [
         "Descifrar clave"
       ],
+      "Deep dive into email blog posts": [
+        "Análisis en profundidad de las publicaciones de nuestro blog de correo electrónico"
+      ],
       "Deep dive into VPN blog posts": [
         "Análisis en profundidad de las publicaciones de nuestro blog de VPN"
       ],
@@ -21734,6 +21932,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descargue las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Descargue ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Descargue ${ PASS_APP_NAME } en todos sus dispositivos"
       ],
@@ -21832,6 +22033,9 @@
       ],
       "Enhance security with 2FA": [
         "Mejore la seguridad con 2FA"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Acceda a sus correos electrónicos de forma rápida y sin interrupciones con nuestras aplicaciones especializadas."
       ],
       "Enter endpoints into your identity provider": [
         "Ingrese puntos finales en el proveedor de identidad"
@@ -21951,8 +22155,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Obtenga **${ referralInfo.uiData.refereeRewardAmount }** en créditos con ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Obtenga acceso a la aplicación de escritorio con ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Obtenga una cobertura de privacidad completa"
+      ],
+      "Get more from your email": [
+        "Obtenga más de su correo electrónico"
       ],
       "Get more from your VPN": [
         "Obtenga más de su VPN"
@@ -22697,6 +22907,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Le damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Le damos la bienvenida a ${ planName }"
+      ],
       "What is an alias?": [
         "¿Qué es un alias?"
       ],
@@ -22885,6 +23098,9 @@
       ],
       "Account is disconnected": [
         "La cuenta está desconectada"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Añadido a su plan: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
@@ -23420,6 +23636,9 @@
       ],
       "Did you know?": [
         "¿Lo sabía?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Proteja su organización de vulneraciones de datos con ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Proteja su organización de vulneraciones de datos con ${ VPN_APP_NAME } for Business."

@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Про ${ MAIL_APP_NAME }"
+      ],
       "Actual Size": [
         "Реальний розмір"
       ],
@@ -13,6 +16,9 @@
       ],
       "Clear application data": [
         "Очистити дані програми"
+      ],
+      "Close Window": [
+        "Закрити вікно"
       ],
       "Copy": [
         "Копіювати"
@@ -26,6 +32,9 @@
       "Force Reload": [
         "Примусове перезавантаження"
       ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Сховати ${ MAIL_APP_NAME }"
+      ],
       "Hide Others": [
         "Приховати інші"
       ],
@@ -35,8 +44,14 @@
       "Paste": [
         "Вставити"
       ],
+      "Paste and Match Style": [
+        "Вставити та підібрати стиль"
+      ],
       "Quit": [
         "Вийти"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "Вийти з ${ MAIL_APP_NAME }"
       ],
       "Redo": [
         "Повернути"
@@ -59,11 +74,23 @@
       "Start ${ MAIL_APP_NAME } at login": [
         "Почати ${ MAIL_APP_NAME } під час входу в систему"
       ],
+      "Start Speaking": [
+        "Почати озвучування"
+      ],
+      "Stop Speaking": [
+        "Зупинити озвучування"
+      ],
+      "Toggle Full Screen": [
+        "Перемкнути на весь екран"
+      ],
       "Undo": [
         "Скасувати"
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "Видалити ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Масштаб"
       ],
       "Zoom In": [
         "Збільшити"
@@ -92,6 +119,12 @@
       ],
       "Speech": [
         "Мовлення"
+      ],
+      "Start Speaking": [
+        "Почати озвучування"
+      ],
+      "Stop Speaking": [
+        "Зупинити озвучування"
       ]
     },
     "Context Menu": {
@@ -101,8 +134,14 @@
       "Cut": [
         "Вирізати"
       ],
+      "Look Up “${ text }”": [
+        "Знайти «${ text }»"
+      ],
       "Paste": [
         "Вставити"
+      ],
+      "Paste and Match Style": [
+        "Вставити та підібрати стиль"
       ],
       "Redo": [
         "Повернути"

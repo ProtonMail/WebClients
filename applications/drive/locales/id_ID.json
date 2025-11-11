@@ -144,6 +144,9 @@
       "Cancel upload": [
         "Batalkan pengunggahan"
       ],
+      "Cancel uploads": [
+        "Batalkan unggahan"
+      ],
       "Change": [
         "Ubah"
       ],
@@ -245,6 +248,9 @@
       ],
       "Continue with Outlook": [
         "Lanjut dengan Outlook"
+      ],
+      "Copy": [
+        "Salin"
       ],
       "Copy address": [
         "Salin alamat"
@@ -983,6 +989,9 @@
       ],
       "Show advanced PGP settings": [
         "Tampilkan pengaturan PGP lanjutan"
+      ],
+      "Show location": [
+        "Tampilkan lokasi"
       ],
       "Show more": [
         "Tampilkan lebih banyak"
@@ -3334,6 +3343,9 @@
       "Cannot export this contact": [
         "Kontak tidak dapat diekspor"
       ],
+      "Cannot load \"My files\" root folder": [
+        "Folder akar \"Berkas saya\" tidak dapat dimuat"
+      ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
@@ -3396,6 +3408,18 @@
       ],
       "Error decrypting a computer": [
         "Terjadi kesalahan mendekripsi komputer"
+      ],
+      "Error reading file": [
+        "Kesalahan membaca berkas"
+      ],
+      "Expanding non-existent directory tree item": [
+        "Memperluas item pohon direktori yang tidak ada"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Memperluas item pohon direktori yang tidak dapat diperluas"
+      ],
+      "Expected structure attached": [
+        "Struktur yang diharapkan terlampir"
       ],
       "External accounts are not supported yet": [
         "Akun eksternal untuk saat ini belum didukung"
@@ -3463,6 +3487,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Proses unduhan folder \"${ name }\" sedang berlangsung"
       ],
+      "Folder creation failed": [
+        "Pembuatan folder gagal"
+      ],
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
       ],
@@ -3498,6 +3525,9 @@
       ],
       "Invalid IBAN": [
         "IBAN tidak valid"
+      ],
+      "Invalid JSON file": [
+        "Berkas JSON tidak valid"
       ],
       "Invalid name": [
         "Nama tidak valid"
@@ -3787,8 +3817,14 @@
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
       ],
+      "Upload failed": [
+        "Unggahan gagal"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Unggahan bagi folder ini untuk sementara dinonaktifkan"
+      ],
+      "Upload not found": [
+        "Unggahan tidak ditemukan"
       ],
       "Username must begin with a letter or digit": [
         "Nama pengguna harus dimulai dengan huruf atau angka"
@@ -4771,6 +4807,9 @@
       "${ canceledCount } canceled": [
         "${ canceledCount } dibatalkan"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } dari ${ items.length } transfer diselesaikan"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kontak mengandung lebih dari satu alamat email."
       ],
@@ -4824,6 +4863,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress }% selesai"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
@@ -5242,6 +5284,9 @@
       "Download current logs": [
         "Unduh log saat ini"
       ],
+      "Download Failed": [
+        "Unduhan Gagal"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Unduhan ${ downloadFileName } akan dibatalkan"
       ],
@@ -5476,6 +5521,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
       ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
       "In restrictive countries": [
         "Di negara dengan pembatasan yang ketat"
       ],
@@ -5517,6 +5565,9 @@
       ],
       "It's better to have:": [
         "Kata sandi Anda sebaiknya mengandung:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Folder tidak dapat disalin ke dalam folder itu sendiri"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Item di sampah akan tetap ada di sini sampai Anda menghapusnya secara permanen"
@@ -5944,6 +5995,9 @@
       "Search Enabled": [
         "Pencarian Diaktifkan"
       ],
+      "Select a folder to copy to.": [
+        "Pilih folder tempat salinan ini akan dibuat."
+      ],
       "Select a folder to move to.": [
         "Pilih folder tujuan."
       ],
@@ -6175,6 +6229,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Kode unik ini dapat digunakan oleh situs web dan penyedia layanan internet (ISP) untuk menautkan lokasi dan riwayat penjelajahan Anda ke perangkat Anda"
       ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Tindakan ini akan membatalkan seluruh unggahan yang tersisa. Berkas yang dibatalkan tidak akan disimpan di ${ DRIVE_APP_NAME }."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Tindakan ini hanya akan menghapus album yang bersangkutan. Foto Anda akan tetap tersedia pada lini masa Anda. Tindakan ini tidak dapat diurungkan."
       ],
@@ -6189,6 +6246,12 @@
       ],
       "This will replace the existing file with the folder": [
         "Dengan ini, berkas yang telah ada akan diganti dengan folder"
+      ],
+      "This will replace the existing folder or file with the file": [
+        "Tindakan ini akan mengganti folder atau berkas yang telah ada dengan berkas ini"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "Tindakan ini akan mengganti folder atau berkas yang telah ada dengan folder ini"
       ],
       "This will replace the existing folder with the file": [
         "Dengan ini, folder yang telah ada akan diganti dengan berkas"
@@ -6313,6 +6376,9 @@
       "upgrade your storage": [
         "tingkatkan ruang penyimpanan Anda"
       ],
+      "Upload Failed": [
+        "Unggahan Gagal"
+      ],
       "Uploaded": [
         "Diunggah"
       ],
@@ -6357,6 +6423,9 @@
       ],
       "VPN IP": [
         "IP VPN"
+      ],
+      "Waiting": [
+        "Menunggu"
       ],
       "Want to sync files faster?": [
         "Ingin menyinkronkan berkas secara lebih cepat?"
@@ -7007,6 +7076,9 @@
       "File name": [
         "Nama berkas"
       ],
+      "File transfer overview": [
+        "Ikhtisar transfer berkas"
+      ],
       "First name": [
         "Nama depan"
       ],
@@ -7204,6 +7276,9 @@
       ],
       "Replace existing folder": [
         "Gantikan folder yang telah ada"
+      ],
+      "Replace existing folder or file": [
+        "Ganti folder atau berkas yang telah ada"
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
@@ -8851,6 +8926,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" berhasil disimpan"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" berhasil disalin"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" berhasil dipindahkan"
       ],
@@ -8863,6 +8941,12 @@
       "${ count } item failed to be decrypted": [
         "${ count } item gagal didekripsi"
       ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } item gagal disalin"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } item gagal dihapus"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } foto tidak dapat dihapus dari \"${ albumLink.name }\""
       ],
@@ -8874,6 +8958,9 @@
       ],
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } telah dihapus dari \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } item yang disalin dipindahkan ke sampah"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item dihapus"
@@ -8901,6 +8988,9 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item dipulihkan dari sampah"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } item berhasil disalin"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item berhasil dipindahkan"
@@ -8943,6 +9033,9 @@
       ],
       "Contact group updated": [
         "Grup kontak telah diperbarui"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Salinan \"${ name }\" dipindahkan ke sampah"
       ],
       "Device failed to be removed": [
         "Perangkat gagal dihapus"
@@ -9469,6 +9562,9 @@
       "Create new group": [
         "Buat grup baru"
       ],
+      "Expected strcuture": [
+        "Struktur yang diharapkan"
+      ],
       "Ignore group": [
         "Abaikan grup"
       ],
@@ -9480,6 +9576,9 @@
       ],
       "Only current location: ${ name }": [
         "Hanya lokasi saat ini: ${ name }"
+      ],
+      "Select JSON file": [
+        "Pilih berkas JSON"
       ],
       "Verify content": [
         "Verifikasi konten"
@@ -11545,6 +11644,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
+      "Cancel all uploads?": [
+        "Batalkan seluruh unggahan?"
+      ],
       "Cancel subscription?": [
         "Batalkan langganan?"
       ],
@@ -11913,6 +12015,9 @@
       ],
       "Logs": [
         "Log"
+      ],
+      "Make a copy": [
+        "Buat salinan"
       ],
       "Make a secure connection your default": [
         "Jadikan koneksi yang aman sebagai koneksi bawaan Anda"
@@ -12533,6 +12638,11 @@
       ],
       "Only": [
         "Hanya"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Perubahan yang Anda buat dapat tidak tersimpan."
       ]
     },
     "unprivatization": {

@@ -4449,7 +4449,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant un document nou..."
+        "S'està creant el document..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4548,7 +4548,7 @@
         "S'ha produït un error en convertir el document: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
-        "S'ha produït un error en carregar el document: ${ errorDetail }"
+        "Hi ha hagut un error en carregar el document: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error de sincronització"
@@ -4611,7 +4611,7 @@
         "Geobloqueig"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Rebeu actualitzacions per correu dels comentaris i suggeriments afegits als vostres documents."
+        "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
         "Rebeu notificacions sobre els comentaris"
@@ -4787,7 +4787,7 @@
         "Encara no s'han afegit contactes"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu un document."
+        "No s'ha especificat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu un document."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -6054,6 +6054,9 @@
       ],
       "Reactivate now": [
         "Reactiva ara"
+      ],
+      "Reactivate subscription": [
+        "Reactiveu la subscripció"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -8198,6 +8201,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Gratuït**. Si canvieu d'opinió, podreu **reactivar la vostra subscripció** per mantenir l'accés a les funcions prèmium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."

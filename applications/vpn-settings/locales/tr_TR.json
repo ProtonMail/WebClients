@@ -245,6 +245,9 @@
       "Create new policy": [
         "Yeni ilke oluştur"
       ],
+      "Create organization": [
+        "Kuruluş oluştur"
+      ],
       "Create users": [
         "Kullanıcılar ekle"
       ],
@@ -463,6 +466,9 @@
       ],
       "Get more servers": [
         "Daha fazla sunucu edinin"
+      ],
+      "Get more storage": [
+        "Daha fazla depolama alanı edinin"
       ],
       "Get the apps": [
         "Uygulamaları edinin"
@@ -914,6 +920,9 @@
       "Submit": [
         "Gönder"
       ],
+      "Subscribe": [
+        "Abone ol"
+      ],
       "Subscribe now": [
         "Şimdi abone olun"
       ],
@@ -1070,6 +1079,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)",
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
@@ -1077,6 +1093,13 @@
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } yapay zeka yardımcısı"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)",
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -1089,6 +1112,10 @@
       ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } özel etki alanı",
+        "${ quantity } özel etki alanı"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
@@ -1402,6 +1429,12 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var",
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1887,8 +1920,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Kullanıcıları el ile ekle"
+      ],
       "Close": [
         "Kapat"
+      ],
+      "Configure your network": [
+        "Ağınızı yapılandırın"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
@@ -1908,17 +1947,29 @@
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
       ],
+      "Invite your team": [
+        "Ekibinizi davet edin"
+      ],
+      "Manage global VPN permissions": [
+        "Genel VPN izinleri yönetimi"
+      ],
       "Maybe later": [
         "Belki sonra"
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
       ],
+      "Secure your organization": [
+        "Kuruluşunuzun güvenliğini sağlayın"
+      ],
       "Send": [
         "Gönder"
       ],
       "Set up other features": [
         "Diğer özellikleri ayarlayın"
+      ],
+      "Set up SSO": [
+        "Tek oturum açmayı ayarlayın"
       ],
       "Take a tour": [
         "Keşfedin"
@@ -3178,11 +3229,20 @@
       "Connect your CRM, website, printers, and more.": [
         "CRM uygulamanızı, sitenizi, yazıcılarınızı ve diğer şeyleri bağlayın."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Kullanıcılarınızın BT kaynaklarınıza size ayrılmış sunucular üzerinden erişebilmesi için bir ağ geçidi oluşturun."
+      ],
       "Create groups you can email with a single address.": [
         "Tek bir adresle e-posta gönderebileceğiniz gruplar oluşturun."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Yeni kullanıcı hesapları açın veya kullanıcıları SSO (tek oturum açma) SCIM ile içe aktarın."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Her ülkedeki paylaşılan sunuculara kimlerin bağlanabileceğini belirlemek için ilkeler oluşturun."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Hangi kullanıcıların 120 üzerinde paylaşılan sunucu konumumuzdan hangilerine bağlanabileceğine karar verin."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "E-postanıza ve takviminize bilgisayarınızdan ve mobil aygıtınızdan kolayca erişin."
@@ -3216,6 +3276,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Henüz yapmadıysanız, ${ VPN_APP_NAME } erişiminizi asla kaybetmemek için bazı kurtarma yöntemlerini açın."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
@@ -4756,6 +4819,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } aygıt"
       ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "@pm.me address": [
+        "@pm.me adresi"
+      ],
       "Ad-blocker and malware protection": [
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
@@ -4764,6 +4833,12 @@
       ],
       "and more premium features...": [
         "ve diğer ücretli özellikler..."
+      ],
+      "Connect custom domain": [
+        "Özel etki alanınızı bağlayın"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
       ],
       "Double VPN": [
         "Çift VPN"
@@ -4776,6 +4851,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield reklam engelleyici"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
       ],
       "Secure streaming": [
         "Güvenli yayın akışı"
@@ -5123,6 +5201,9 @@
       ],
       "Domain": [
         "Etki alanı"
+      ],
+      "Drag to reorder": [
+        "Sıralamak için sürükleyin"
       ],
       "Status": [
         "Durum"
@@ -6353,6 +6434,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Abone olan her arkadaşınız için **${ referrerRewardAmount } kredi** kazanın."
       ],
+      "Get started": [
+        "Başlayalım"
+      ],
       "Get started with the referral link above.": [
         "Yukarıdaki öneri bağlantısı ile başlayın."
       ],
@@ -7031,6 +7115,9 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Birkaç kolay adımda kuruluşunuzu ayarlayın ve verilerinizi korumaya başlayın."
+      ],
       "Setting up ${ feature }…": [
         "${ feature } ayarlanıyor…"
       ],
@@ -7617,6 +7704,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Ayrıca içe aktarılan takvimleri var olan ${ BRAND_NAME } takvimleriyle birleştirebilirsiniz."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Ayrılan depolama alanını **Kullanıcılar ve adresler** bölümünden değiştirebilirsiniz"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Bu ayarı istediğiniz zaman ${ settingsLink } bölümünden değiştirebilirsiniz."
       ],
@@ -7810,6 +7900,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ],
+      "Your storage": [
+        "Depolama alanınız"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
       ],
@@ -7899,9 +7992,19 @@
         "Yalnızca görüntüleme"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Kuruluşunuz kullanıcılara bu şekilde görünecek. Bunu dilediğiniz zaman değiştirebilirsiniz."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Geçerli bir e-posta adresi değil"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Kuruluşunuzun adı nedir?"
       ]
     },
     "invitation status": {
@@ -8305,6 +8408,12 @@
       "Folder location": [
         "Klasör konumu"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME } ve ${ DOCS_SHORT_APP_NAME } için."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } ve ${ SHEETS_SHORT_APP_NAME } için."
+      ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
       ],
@@ -8610,6 +8719,9 @@
       ],
       "Share your referral link": [
         "Öneri bağlantınızı paylaşın"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ WALLET_SHORT_APP_NAME } arasında paylaşılır."
       ],
       "Show ${ n } administrator": [
         "${ n } yöneticiyi görüntüle",
@@ -8953,6 +9065,9 @@
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
+      ],
+      "Reactivate subscription": [
+        "Aboneliği yeniden etkinleştir"
       ],
       "Request an invite": [
         "Davet iste"
@@ -11376,6 +11491,9 @@
       "End date": [
         "Bitiş tarihi"
       ],
+      "Enter name": [
+        "Adı yazın"
+      ],
       "example@domain.com": [
         "ornek@etkialani.com"
       ],
@@ -11667,6 +11785,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ planTitle }** tarifesini **${ textDate }** tarihine kadar ücretsiz kullanın."
@@ -12955,6 +13076,9 @@
       "${ app } storage": [
         "${ app } depolama alanı"
       ],
+      "${ app } storage used": [
+        "${ app } depolama alanı kullanıldı"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } %${ percentage } dolu"
       ],
@@ -12966,6 +13090,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "Storage used": [
+        "Kullanılan depolama alanı"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
@@ -13610,6 +13737,9 @@
       "Organization logo updated": [
         "Kuruluş logosu güncellendi"
       ],
+      "Organization name set": [
+        "Kuruluş adı ayarlandı"
+      ],
       "Organization name updated": [
         "Kuruluş adı güncellendi"
       ],
@@ -14253,6 +14383,9 @@
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
       ],
+      "Dismiss setup checklist": [
+        "Kurulum kontrol listesini atla"
+      ],
       "Domain names": [
         "Etki alanları"
       ],
@@ -14388,6 +14521,9 @@
       ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
+      ],
+      "Get started": [
+        "Başlayalım"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Uygulamayı tüm aygıtlarınıza indirin ve aynı anda ${ VPN_CONNECTIONS } aygıta kadar koruyun."
@@ -14820,6 +14956,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
       ],
+      "Welcome to ${ planName }": [
+        "${ planName } hizmetine hoş geldiniz"
+      ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
       ],
@@ -14920,6 +15059,9 @@
     "Tooltip": {
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Gmail tarafındaki bir değişiklik, ${ BRAND_NAME } bağlantısının kurulmasını engelliyor. E-posta özelliğini yeniden kullanabilmek için izin verin"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Tarifenize eklendi: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
@@ -15247,6 +15389,9 @@
       ],
       "Did you know?": [
         "Biliyor muydunuz?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "${ PLAN_NAMES[plan] } ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "${ VPN_APP_NAME } for Business ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."

@@ -245,6 +245,9 @@
       "Create new policy": [
         "Crea una política"
       ],
+      "Create organization": [
+        "Creeu l'organització"
+      ],
       "Create users": [
         "Crea usuaris"
       ],
@@ -916,6 +919,9 @@
       ],
       "Submit": [
         "Envia"
+      ],
+      "Subscribe": [
+        "Subscriviu-vos"
       ],
       "Subscribe now": [
         "Subscriviu-vos ara"
@@ -1914,8 +1920,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Afegiu usuaris manualment"
+      ],
       "Close": [
         "Tanca"
+      ],
+      "Configure your network": [
+        "Configureu la vostra xarxa"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
@@ -1935,17 +1947,29 @@
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
       ],
+      "Invite your team": [
+        "Convideu el vostre equip"
+      ],
+      "Manage global VPN permissions": [
+        "Gestioneu els permisos globals de la VPN"
+      ],
       "Maybe later": [
         "Potser més tard"
       ],
       "Remind me later": [
         "Recorda-m'ho més tard"
       ],
+      "Secure your organization": [
+        "Protegiu la vostra organització"
+      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configureu altres característiques"
+      ],
+      "Set up SSO": [
+        "Configureu l'SSO"
       ],
       "Take a tour": [
         "Feu una visita guiada"
@@ -3205,11 +3229,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Connecteu el CRM, lloc web, impressores i molt més."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Creeu una passarel·la per donar als vostres usuaris accés als vostres recursos de TI mitjançant servidors dedicats."
+      ],
       "Create groups you can email with a single address.": [
         "Creeu grups als quals podeu enviar correus amb una única adreça."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Creeu comptes d'usuari nous o importeu-ne amb l'aprovisionament SCIM d'SSO (inici de sessió únic)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creeu polítiques per a decidir qui es pot connectar als servidors compartits de cada país."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Decidiu quins usuaris es poden connectar a cadascuna de les nostres més de 120 ubicacions de servidor compartides."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accediu fàcilment al vostre correu i calendari a l'escriptori i al mòbil."
@@ -3243,6 +3276,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Si encara no ho heu fet, habiliteu alguns mètodes de recuperació per assegurar-vos que no perdeu mai l'accés a ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
@@ -6398,6 +6434,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Obtingueu **${ referrerRewardAmount } crèdits** per a cada amistat que se subscrigui."
       ],
+      "Get started": [
+        "Comenceu"
+      ],
       "Get started with the referral link above.": [
         "Comenceu amb l'enllaç de recomanació anterior."
       ],
@@ -7076,6 +7115,9 @@
       "Set up your organization": [
         "Configuració de la vostra organització"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Configureu la vostra organització i comenceu a protegir les vostres dades en pocs passos senzills."
+      ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
       ],
@@ -7662,6 +7704,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "També podeu combinar els calendaris importats amb calendaris ${ BRAND_NAME } existents."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Podeu canviar l'assignació d'emmagatzematge a **Usuaris i adreces**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Podeu canviar-ho en qualsevol moment a ${ settingsLink }."
       ],
@@ -7859,6 +7904,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
       ],
+      "Your storage": [
+        "El vostre emmagatzematge"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ],
@@ -7948,9 +7996,19 @@
         "Només lectura"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Així és com es mostrarà la vostra organització als usuaris. Ho podeu canviar en qualsevol moment."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "No és una adreça de correu electrònic vàlida."
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Quin és el nom de la vostra organització?"
       ]
     },
     "invitation status": {
@@ -9011,6 +9069,9 @@
       ],
       "Reactivate now": [
         "Reactiva ara"
+      ],
+      "Reactivate subscription": [
+        "Reactiveu la subscripció"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -11456,6 +11517,9 @@
       "End date": [
         "Data de fi"
       ],
+      "Enter name": [
+        "Introduïu un nom"
+      ],
       "example@domain.com": [
         "exemple@domini.com"
       ],
@@ -11747,6 +11811,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Gratuït**. Si canvieu d'opinió, podreu **reactivar la vostra subscripció** per mantenir l'accés a les funcions prèmium."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
@@ -13708,6 +13775,9 @@
       "Organization logo updated": [
         "S'ha actualitzat el logo de l'organització."
       ],
+      "Organization name set": [
+        "S'ha establert el nom de l'organització"
+      ],
       "Organization name updated": [
         "S'ha actualitzat el nom de l'organització."
       ],
@@ -14351,6 +14421,9 @@
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
+      "Dismiss setup checklist": [
+        "Descarteu la llista de comprovació de configuració"
+      ],
       "Domain names": [
         "Noms de domini"
       ],
@@ -14486,6 +14559,9 @@
       ],
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
+      ],
+      "Get started": [
+        "Comenceu"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Obteniu l'aplicació a tots els vostres dispositius i protegiu fins a ${ VPN_CONNECTIONS } al mateix temps."
@@ -14917,6 +14993,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Us donem la benvinguda a ${ planName }"
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"

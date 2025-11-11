@@ -937,6 +937,13 @@
         "Događaj nije podržan"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "još ${ hiddenResultsCount } rezultat nije prikazan",
+        "Još ${ hiddenResultsCount } rezultata nije prikazano",
+        "Još ${ hiddenResultsCount } rezultata nije prikazano"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kada ga otkažete, Vaš besplatni probni period neće biti pretvoren u plaćenu pretplatu, ali i dalje možete uživati u pogodnostima plana do kraja probnog perioda. Nakon toga, bit ćete unazađeni na ${ BRAND_NAME } Free plan."
@@ -3455,6 +3462,9 @@
       ],
       "Domain": [
         "Domena"
+      ],
+      "Drag to reorder": [
+        "Povuci za premještanje"
       ],
       "Status": [
         "Status"

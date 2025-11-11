@@ -420,6 +420,9 @@
       "Create new policy": [
         "Vytvoriť novú politiku"
       ],
+      "Create organization": [
+        "Vytvoriť organizáciu"
+      ],
       "Create users": [
         "Vytvoriť používateľov"
       ],
@@ -1478,6 +1481,9 @@
       ],
       "Submit": [
         "Potvrdiť"
+      ],
+      "Subscribe": [
+        "Predplatiť"
       ],
       "Subscribe now": [
         "Predplaťte si teraz"
@@ -11701,6 +11707,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Importované kalendáre môžete tiež zlúčiť s existujúcimi ${ BRAND_NAME } kalendármi."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Pridelenie úložného priestoru môžete zmeniť v časti **Používatelia a adresy**."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Toto môžete neskôr zmeniť v ${ settingsLink }."
       ],
@@ -11998,6 +12007,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý mesiac."
       ],
+      "Your storage": [
+        "Vaše úložisko"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše predplatné sa automaticky obnoví dňa ${ renewalTime }."
       ],
@@ -12111,6 +12123,11 @@
         "Iba zobrazenie"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Takto sa vaša organizácia zobrazí používateľom. Môžete to kedykoľvek zmeniť."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Neplatná emailová adresa"
@@ -12124,6 +12141,11 @@
     "Input placeholder": {
       "Add label": [
         "Pridať štítok"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Ako sa nazýva vaša organizácia?"
       ]
     },
     "invitation status": {
@@ -14218,6 +14240,9 @@
       ],
       "Reactivate now": [
         "Znovu aktivovať"
+      ],
+      "Reactivate subscription": [
+        "Obnoviť predplatné"
       ],
       "Request an invite": [
         "Požiadať o pozvánku"
@@ -17793,6 +17818,9 @@
       "End date": [
         "Dátum ukončenia"
       ],
+      "Enter name": [
+        "Zadajte názov"
+      ],
       "example@domain.com": [
         "priklad@domena.sk"
       ],
@@ -18259,6 +18287,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Ak si predplatíte pred týmto dátumom,** získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tomto dátume bude váš účet znížený na **${ BRAND_NAME } Free**. Ak si to rozmyslíte, môžete **opätovne obnoviť svoje predplatné** a zachovať si prístup k prémiovým funkciám."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užite si **${ planTitle }** zadarmo až do **${ textDate }**."
@@ -21505,6 +21536,9 @@
       "Organization logo updated": [
         "Logo organizácie aktualizované"
       ],
+      "Organization name set": [
+        "Názov organizácie nastavený"
+      ],
       "Organization name updated": [
         "Názov organizácie aktualizovaný"
       ],
@@ -23427,6 +23461,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Vitajte v ${ planName }"
       ],
       "What is an alias?": [
         "Čo je alias?"

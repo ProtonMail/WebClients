@@ -1496,8 +1496,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance",
-        "Clés de confiance"
+        "La clé est fiable"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -6799,6 +6798,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
       ],
+      "Addresses settings": [
+        "Paramètres des adresses"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Les annonceurs suivent votre navigation pour afficher des publicités ciblées. ${ VPN_APP_NAME } bloque les traqueurs et les publicités, rendant votre connexion plus rapide et améliorant votre expérience en ligne."
       ],
@@ -7519,7 +7521,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images."
       ],
       "Insert link": [
         "Insérer un lien"
@@ -10261,6 +10264,9 @@
       "Reactivate now": [
         "Réactiver maintenant"
       ],
+      "Reactivate subscription": [
+        "Réactiver l'abonnement"
+      ],
       "Request an invite": [
         "Demander une invitation"
       ],
@@ -12771,6 +12777,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si vous vous abonnez avant cette date,** vous recevrez **${ referrerRewardAmount }** en crédits."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Après cette date, votre compte passera à un abonnement inférieur à **${ BRAND_NAME } Gratuit**. Si vous changez d'avis, vous pouvez **réactiver votre abonnement** pour conserver l'accès aux fonctionnalités premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Gagnez jusqu'à ${ maxRewardAmount } en crédit. Vous recevrez ${ referrerRewardAmount } lorsque la personne que vous invitez s'abonnera à un abonnement ${ BRAND_NAME }."
