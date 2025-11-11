@@ -97,7 +97,7 @@ export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(functi
                 render={
                   <Ariakit.Combobox
                     ref={comboboxRef}
-                    className="h-[2.25rem] w-full shrink-0 rounded-[.5rem] border border-solid border-[transparent] px-3 pe-9 text-[.875rem] focus:border focus:border-[#6D4AFF] focus:outline-none focus:ring-[.1875rem] focus:ring-[#6D4AFF]/20 [&:not(:focus)]:hover:bg-[#C2C1C0]/20"
+                    className="h-[2.25rem] w-full shrink-0 rounded-[.625rem] border border-solid border-[transparent] px-3 pe-9 text-[.875rem] focus:border focus:border-[#6D4AFF] focus:outline-none focus:ring-[.1875rem] focus:ring-[#6D4AFF]/20 [&:not(:focus)]:hover:bg-[#C2C1C0]/20"
                     autoComplete="inline"
                     // On combobox blur, commit the value.
                     onBlur={() => commitValue(combobox)}

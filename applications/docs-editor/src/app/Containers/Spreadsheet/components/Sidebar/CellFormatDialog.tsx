@@ -1,27 +1,18 @@
 import * as Ariakit from '@ariakit/react'
-import { useFormatCellsDialogState, type useSpreadsheetState } from '@rowsncolumns/spreadsheet-state'
+import { useFormatCellsDialogState } from '@rowsncolumns/spreadsheet-state'
 import type {
   BorderStyle,
   CellFormat,
-  CellInterface,
   Color,
   HorizontalAlign,
   NumberFormat,
   NumberFormatType,
-  SelectionArea,
   WrapStrategy,
 } from '@rowsncolumns/common-types'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
-import {
-  type BorderLocation,
-  ColorSelector,
-  getStringifiedColor,
-  type SelectionAttributes,
-  type SpreadsheetTheme,
-  type VerticalAlign,
-} from '@rowsncolumns/spreadsheet'
+import { type BorderLocation, ColorSelector, getStringifiedColor, type VerticalAlign } from '@rowsncolumns/spreadsheet'
 import { MdBorderClear } from '@rowsncolumns/icons'
-import { getDefaultDateFormat, getDefaultTimeFormat, ssfFormat, ssfFormatColor, supplant } from '@rowsncolumns/utils'
+import { getDefaultDateFormat, ssfFormat, ssfFormatColor, supplant } from '@rowsncolumns/utils'
 import { forwardRef, Fragment, useMemo, useState } from 'react'
 import * as Icons from '../icons'
 import clsx from '@proton/utils/clsx'
@@ -52,28 +43,30 @@ import { createComponent } from '../utils'
 import { useUI } from '../../ui-store'
 import { FONT_FAMILY_DEFAULT, FONT_LABEL_BY_VALUE, FONT_SIZE_SUGGESTIONS, FONTS } from '../../constants'
 import { BORDER_LINE_STYLES, BORDER_LOCATIONS } from './borderData'
+import {
+  customFormats,
+  dateFormats,
+  getNumberFormatCategories,
+  horizontalAlignments,
+  timeFormats,
+  verticalAlignments,
+  wrapStrategies,
+} from './cell-format-utils'
+import { c } from 'ttag'
+import { createStringifier } from '../../stringifier'
+
+const { s } = createStringifier(strings)
 
 const FONT_FAMILY_DEFAULT_VALUE = '$default$' as const
 
 function renderDefaultFontLabel() {
   const defaultFont = FONT_LABEL_BY_VALUE[FONT_FAMILY_DEFAULT]
-  return `Default (${defaultFont})`
+  return c('sheets_2025:Spreadsheet editor toolbar').t`Default (${defaultFont})`
 }
 
 interface CellFormatDialogProps {
-  sheetId: number
-  activeCell: CellInterface
-  selections: SelectionArea<SelectionAttributes>[]
-  cellFormat?: CellFormat | null
   locale?: string
-  theme: SpreadsheetTheme
   currencySymbol?: string
-  isDarkMode?: boolean
-  onChangeBorder: ReturnType<typeof useSpreadsheetState>['onChangeBorder']
-  onChangeFormatting: ReturnType<typeof useSpreadsheetState>['onChangeFormatting']
-  getEffectiveValue: ReturnType<typeof useSpreadsheetState>['getEffectiveValue']
-  onMergeCells: ReturnType<typeof useSpreadsheetState>['onMergeCells']
-  onCancel?(): void
 }
 
 const BorderLocationButton = createComponent(function BorderLocationButton(props: Ariakit.RadioProps) {
@@ -88,386 +81,6 @@ const BorderLocationButton = createComponent(function BorderLocationButton(props
     />
   )
 })
-
-type NumberFormatCategory = {
-  name: string
-  value: NumberFormatType | string
-  description?: string
-  pattern?: string
-  options?: string[]
-}
-
-const getNumberFormatCategories = (locale?: string): NumberFormatCategory[] => [
-  {
-    name: 'General',
-    value: 'GENERAL',
-    description: 'General format cells have no specific number format.',
-  },
-  {
-    name: 'Number',
-    value: 'NUMBER',
-    description: 'Number is used for general display of numbers.',
-    pattern: '#.00',
-    options: ['Decimal', 'ThousandSeparator'],
-  },
-  {
-    name: 'Currency',
-    value: 'CURRENCY',
-    description: 'Currency formats are used for general monetary values.',
-    pattern: `"{currencySymbol}"* #,##0.00;"{currencySymbol}"* (#,##0.00);"{currencySymbol}"* "-"??;@`,
-    options: ['CurrencySymbol', 'Decimal'],
-  },
-  {
-    name: 'Accounting',
-    value: 'ACCOUNTING',
-    pattern: `"{currencySymbol}"* #,##0.00;"{currencySymbol}"* (#,##0.00);"{currencySymbol}"* "-"??;@`,
-    options: ['CurrencySymbol', 'Decimal'],
-  },
-  {
-    name: 'Date',
-    value: 'DATE',
-    description: 'Date formats display date and time serial numbers as date values.',
-    pattern: getDefaultDateFormat(locale),
-  },
-  {
-    name: 'Time',
-    value: 'DATE_TIME',
-    description: 'Time formats display date and time serial numbers as date values.',
-    pattern: getDefaultTimeFormat(),
-  },
-  {
-    name: 'Percentage',
-    value: 'PERCENT',
-    pattern: '0%',
-    options: ['Decimal'],
-  },
-  {
-    name: 'Fraction',
-    value: 'FRACTION',
-    pattern: '#/#',
-  },
-  {
-    name: 'Scientific',
-    value: 'SCIENTIFIC',
-    pattern: '0.00E+00',
-    options: ['Decimal'],
-  },
-  {
-    name: 'Text',
-    value: 'TEXT',
-  },
-  {
-    name: 'Custom',
-    value: 'CUSTOM',
-    pattern: 'General',
-  },
-]
-
-const customFormats: NumberFormat[] = [
-  {
-    type: 'GENERAL',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '0',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '##.00',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '#,##0',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '#,##0.00',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '#,##0;(#,##0)',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '#,##0;[Red](#,##0)',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '#,##0.00;(#,##0.00)',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '#,##0.00;[Red](#,##0.00)',
-  },
-  {
-    type: 'CURRENCY',
-    pattern: '"{currencySymbol}"#,##0;("{currencySymbol}"#,##0)',
-  },
-  {
-    type: 'CURRENCY',
-    pattern: '"{currencySymbol}"#,##0;[Red]("{currencySymbol}"#,##0)',
-  },
-  {
-    type: 'CURRENCY',
-    pattern: '"{currencySymbol}"#,##0.00;("{currencySymbol}"#,##0.00)',
-  },
-  {
-    type: 'CURRENCY',
-    pattern: '"{currencySymbol}"#,##0.00;[Red]("{currencySymbol}"#,##0.00)',
-  },
-  {
-    type: 'PERCENT',
-    pattern: '0%',
-  },
-  {
-    type: 'PERCENT',
-    pattern: '0.00%',
-  },
-  {
-    type: 'SCIENTIFIC',
-    pattern: '0.00E+00',
-  },
-  {
-    type: 'SCIENTIFIC',
-    pattern: '##0.0E+0',
-  },
-  {
-    type: 'FRACTION',
-    pattern: '# ?/?',
-  },
-  {
-    type: 'FRACTION',
-    pattern: '# ??/??',
-  },
-  {
-    type: 'DATE',
-    pattern: 'd/m/yy',
-  },
-  {
-    type: 'DATE',
-    pattern: 'd-mmm-yy',
-  },
-  {
-    type: 'DATE',
-    pattern: 'd-mmm',
-  },
-  {
-    type: 'DATE',
-    pattern: 'mmm-yy',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: 'h:mm AM/PM',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: 'h:mm:ss AM/PM',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: 'h:mm',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: 'h:mm:ss',
-  },
-  {
-    type: 'DATE',
-    pattern: 'd/m/yy h:mm',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: 'mm:ss',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: 'mm:ss.0',
-  },
-  {
-    type: 'TEXT',
-    pattern: '@',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: '[h]:mm:ss',
-  },
-  {
-    type: 'CURRENCY',
-    pattern: '"{currencySymbol}"* #,##0;"{currencySymbol}"* (#,##0);"{currencySymbol}"* "-";@',
-  },
-  {
-    type: 'ACCOUNTING',
-    pattern: '* #,##0;* (#,##0);* "-";@',
-  },
-  {
-    type: 'CURRENCY',
-    pattern: `"{currencySymbol}"* #,##0.00;"{currencySymbol}"* (#,##0.00);"{currencySymbol}"* "-"??;@`,
-  },
-  {
-    type: 'ACCOUNTING',
-    pattern: '* #,##0.00;* (#,##0.00);* "-"??;@',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: '[$-en-US]h:mm:ss AM/PM',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: '[$-en-US]hh:mm:ss AM/PM;@',
-  },
-  {
-    type: 'DATE',
-    pattern: '[$-en-US]m/d/yy h:mm AM/PM;@',
-  },
-  {
-    type: 'DATE_TIME',
-    pattern: '[$-en-US]h:mm AM/PM;@',
-  },
-  {
-    type: 'DATE',
-    pattern: 'd/m/yyyy',
-  },
-  {
-    type: 'NUMBER',
-    pattern: '00000',
-  },
-]
-
-const dateFormats: NumberFormat[] = [
-  {
-    pattern: 'dd/m/yy',
-    type: 'DATE',
-  },
-  {
-    pattern: 'dddd, dd mmmm yyyy',
-    type: 'DATE',
-  },
-  {
-    pattern: 'dd/mm/yyyy',
-    type: 'DATE',
-  },
-  {
-    pattern: 'dd/mm/yy',
-    type: 'DATE',
-  },
-  {
-    pattern: 'dd\\.mm\\.yyyy',
-    type: 'DATE',
-  },
-  {
-    pattern: 'yyyy-mm-dd',
-    type: 'DATE',
-  },
-  {
-    pattern: 'dd mmmm yyyy',
-    type: 'DATE',
-  },
-  {
-    pattern: 'dd-mmm',
-    type: 'DATE',
-  },
-  {
-    pattern: 'dd-mmm-yy',
-    type: 'DATE',
-  },
-  {
-    pattern: 'mmm-dd',
-    type: 'DATE',
-  },
-  {
-    pattern: 'mmmm-dd',
-    type: 'DATE',
-  },
-  {
-    pattern: 'mmm-dd, yyyy',
-    type: 'DATE',
-  },
-]
-
-const timeFormats: NumberFormat[] = [
-  {
-    pattern: 'hh:mm',
-    type: 'DATE_TIME',
-  },
-  {
-    pattern: 'h:mm AM/PM',
-    type: 'DATE_TIME',
-  },
-  {
-    pattern: 'hh:mm:ss',
-    type: 'DATE_TIME',
-  },
-  {
-    pattern: 'h:mm:ss AM/PM',
-    type: 'DATE_TIME',
-  },
-  {
-    pattern: 'd/m/yy h:mm AM/PM',
-    type: 'DATE',
-  },
-  {
-    pattern: 'd/m/yy hh:mm',
-    type: 'DATE',
-  },
-]
-
-const horizontalAlignments: { name: string; value: HorizontalAlign | 'General'; icon?: JSX.Element }[] = [
-  {
-    name: 'General',
-    value: 'General',
-  },
-  {
-    name: 'Left',
-    value: 'left',
-    icon: <Icon className="shrink-0" legacyName="text-align-left" />,
-  },
-  {
-    name: 'Center',
-    value: 'center',
-    icon: <Icon className="shrink-0" legacyName="text-align-center" />,
-  },
-  {
-    name: 'Right',
-    value: 'right',
-    icon: <Icon className="shrink-0" legacyName="text-align-right" />,
-  },
-]
-
-const verticalAlignments: { name: string; value: VerticalAlign; icon?: JSX.Element }[] = [
-  {
-    name: 'Top',
-    value: 'top',
-    icon: <Icon className="shrink-0" data={Icons.alignTop} />,
-  },
-  {
-    name: 'Center',
-    value: 'middle',
-    icon: <Icon className="shrink-0" data={Icons.alignVerticalCenter} />,
-  },
-  {
-    name: 'Bottom',
-    value: 'bottom',
-    icon: <Icon className="shrink-0" data={Icons.alignBottom} />,
-  },
-]
-
-const wrapStrategies: { name: string; value: WrapStrategy; icon?: JSX.Element }[] = [
-  {
-    name: 'Overflow',
-    value: 'overflow',
-    icon: <Icon className="shrink-0" data={Icons.textOverflow} />,
-  },
-  {
-    name: 'Clip',
-    value: 'clip',
-    icon: <Icon className="shrink-0" data={Icons.textClip} />,
-  },
-  {
-    name: 'Wrap',
-    value: 'wrap',
-    icon: <Icon className="shrink-0" data={Icons.textWrap} />,
-  },
-]
 
 const Tab = forwardRef<HTMLButtonElement, Ariakit.TabProps>(function Tab({ className, ...props }, ref) {
   return (
@@ -489,24 +102,24 @@ const TABS = {
   FONT: 'FONT',
   BORDER: 'BORDER',
 } as const
-// type TabId = (typeof TABS)[keyof typeof TABS]
 
 interface CellFormatEditorProps extends CellFormatDialogProps {
   onDone: () => void
 }
 
 function CellFormatEditor({
-  getEffectiveValue,
-  cellFormat,
-  sheetId,
-  theme,
-  currencySymbol = '$',
   onDone,
-  selections,
-  onChangeFormatting,
-  activeCell,
-  locale,
+  currencySymbol = '$', // TODO: figure out i18n
+  locale, // TODO: figure out i18n
 }: CellFormatEditorProps) {
+  const getEffectiveValue = useUI((ui) => ui.legacy.getEffectiveValue)
+  const cellFormat = useUI((ui) => ui.legacy.currentCellFormat)
+  const sheetId = useUI((ui) => ui.legacy.activeSheetId)
+  const theme = useUI((ui) => ui.legacy.theme)
+  const selections = useUI((ui) => ui.legacy.selections)
+  const onChangeFormatting = useUI((ui) => ui.legacy.onChangeFormatting)
+  const activeCell = useUI((ui) => ui.legacy.activeCell)
+
   const form = useForm({ defaultValues: cellFormat || {} })
   const formValue = form.watch()
   const pattern = formValue.numberFormat?.pattern
@@ -557,10 +170,10 @@ function CellFormatEditor({
       <form className="flex min-h-0 grow flex-col" onSubmit={form.handleSubmit(onSubmit)}>
         <div className="shrink-0 px-4">
           <Ariakit.TabList className="flex gap-4 border-b-[0.5px] border-[#EAE7E4]">
-            <Tab id={TABS.NUMBER}>Number</Tab>
-            <Tab id={TABS.ALIGNMENT}>Alignment</Tab>
-            <Tab id={TABS.FONT}>Font</Tab>
-            <Tab id={TABS.BORDER}>Border</Tab>
+            <Tab id={TABS.NUMBER}>{s('Number')}</Tab>
+            <Tab id={TABS.ALIGNMENT}>{s('Alignment')}</Tab>
+            <Tab id={TABS.FONT}>{s('Font')}</Tab>
+            <Tab id={TABS.BORDER}>{s('Border')}</Tab>
           </Ariakit.TabList>
         </div>
 
@@ -569,7 +182,7 @@ function CellFormatEditor({
             <Ariakit.TabPanel id={TABS.NUMBER} focusable={false}>
               <div className="flex min-w-0 flex-col gap-4">
                 <FormGroup>
-                  <FormLabel render={<p />}>Preview</FormLabel>
+                  <FormLabel render={<p />}>{s('Preview')}</FormLabel>
                   <div
                     style={{ color: formattedColor }}
                     className="flex h-[48px] min-w-0 items-center justify-center rounded-lg bg-[#F5F4F2] px-4 text-center text-sm"
@@ -579,7 +192,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Choose Category</FormLabel>
+                  <FormLabel>{s('Choose Category')}</FormLabel>
 
                   <Ariakit.SelectProvider
                     focusLoop
@@ -599,7 +212,7 @@ function CellFormatEditor({
                       }
                     }}
                   >
-                    <Select>{isCustom ? 'Custom' : (selectedCategory?.name ?? 'Choose Category')}</Select>
+                    <Select>{isCustom ? s('Custom') : (selectedCategory?.name ?? s('Choose Category'))}</Select>
                     <SelectPopover sameWidth>
                       <Ariakit.SelectGroup className="py-2">
                         {numberCategories.map(({ name, value }) => {
@@ -619,14 +232,14 @@ function CellFormatEditor({
                       if (opt === 'Decimal') {
                         return (
                           <FormGroup key={opt}>
-                            <FormLabel>Decimal places</FormLabel>
+                            <FormLabel>{s('Decimal places')}</FormLabel>
                             <Input
                               type="number"
                               min={0}
                               max={10}
                               value={decimalCount}
                               onChange={(event) => {
-                                const numDecimals = parseInt(event.target.value, 10)
+                                const numDecimals = Number.parseInt(event.target.value, 10)
                                 if (type) {
                                   form.setValue('numberFormat', {
                                     type,
@@ -642,7 +255,7 @@ function CellFormatEditor({
                       if (opt === 'ThousandSeparator') {
                         return (
                           <FormGroup key={opt}>
-                            <FormLabel>Thousands separator</FormLabel>
+                            <FormLabel>{s('Thousands separator')}</FormLabel>
                             <Ariakit.CheckboxProvider
                               value={usingThousandsSeparator}
                               setValue={(checked) => {
@@ -656,7 +269,7 @@ function CellFormatEditor({
                                 })
                               }}
                             >
-                              <FormCheckbox>Use 1000 Separator (,)</FormCheckbox>
+                              <FormCheckbox>{s('Use 1000 Separator (,)')}</FormCheckbox>
                             </Ariakit.CheckboxProvider>
                           </FormGroup>
                         )
@@ -665,12 +278,12 @@ function CellFormatEditor({
                       if (opt === 'CurrencySymbol') {
                         return (
                           <FormGroup key={opt}>
-                            <FormLabel>Currency Symbol</FormLabel>
+                            <FormLabel>{s('Currency Symbol')}</FormLabel>
                             <Input
                               defaultValue={currencySymbol}
                               onChange={(event) => {
                                 const currencyPattern = numberCategories.find((n) => n.value === 'CURRENCY')
-                                if (currencyPattern && currencyPattern.pattern) {
+                                if (currencyPattern?.pattern) {
                                   form.setValue('numberFormat', {
                                     type: 'CURRENCY',
                                     pattern: supplant(currencyPattern.pattern, {
@@ -690,7 +303,7 @@ function CellFormatEditor({
 
                 {isCustom ? (
                   <FormGroup>
-                    <FormLabel>Type</FormLabel>
+                    <FormLabel>{s('Type')}</FormLabel>
                     <div className="flex min-w-0 flex-col gap-2">
                       <Input
                         value={customFormatValue?.pattern ?? ''}
@@ -804,7 +417,7 @@ function CellFormatEditor({
             <Ariakit.TabPanel id={TABS.ALIGNMENT} focusable={false}>
               <div className="flex flex-col gap-4">
                 <FormGroup>
-                  <FormLabel>Horizontal Alignment</FormLabel>
+                  <FormLabel>{s('Horizontal Alignment')}</FormLabel>
                   <Ariakit.SelectProvider
                     value={formValue?.horizontalAlignment ?? 'General'}
                     setValue={(value) => form.setValue('horizontalAlignment', value as HorizontalAlign)}
@@ -815,7 +428,7 @@ function CellFormatEditor({
                           {selectedHAlignment.icon} {selectedHAlignment.name}
                         </Fragment>
                       ) : (
-                        'General'
+                        s('General')
                       )}
                     </Select>
                     <SelectPopover sameWidth>
@@ -834,7 +447,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Indent</FormLabel>
+                  <FormLabel>{s('Indent')}</FormLabel>
                   <Ariakit.SelectProvider
                     value={(formValue?.indent ?? 0).toString()}
                     setValue={(value) => {
@@ -855,7 +468,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Vertical Alignment</FormLabel>
+                  <FormLabel>{s('Vertical Alignment')}</FormLabel>
                   <Ariakit.SelectProvider
                     value={formValue?.verticalAlignment ?? 'bottom'}
                     setValue={(value) => form.setValue('verticalAlignment', value as VerticalAlign)}
@@ -866,7 +479,7 @@ function CellFormatEditor({
                           {selectedVAlignment.icon} {selectedVAlignment.name}
                         </Fragment>
                       ) : (
-                        'General'
+                        s('General')
                       )}
                     </Select>
                     <SelectPopover sameWidth>
@@ -885,7 +498,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Text control</FormLabel>
+                  <FormLabel>{s('Text control')}</FormLabel>
                   <div className="grid grid-cols-2 items-center gap-2">
                     <Ariakit.SelectProvider
                       value={cellFormat?.wrapStrategy ?? 'overflow'}
@@ -897,7 +510,7 @@ function CellFormatEditor({
                             {selectedWrapStrategy.icon} {selectedWrapStrategy.name}
                           </Fragment>
                         ) : (
-                          'Overflow'
+                          s('Overflow')
                         )}
                       </Select>
                       <SelectPopover>
@@ -924,7 +537,7 @@ function CellFormatEditor({
                         )}
                       >
                         <Icon className="shrink-0" data={Icons.merge} />
-                        Merge
+                        {s('Merge')}
                       </Ariakit.Button>
                       <Ariakit.MenuProvider>
                         <Ariakit.MenuButton
@@ -938,16 +551,16 @@ function CellFormatEditor({
                         <Menu>
                           <Ariakit.MenuGroup className="py-2">
                             <MenuItem disabled={!canMergeAll} onClick={mergeAll}>
-                              Merge all
+                              {s('Merge all')}
                             </MenuItem>
                             <MenuItem disabled={!canMergeVertically} onClick={mergeVertically}>
-                              Merge vertically
+                              {s('Merge vertically')}
                             </MenuItem>
                             <MenuItem disabled={!canMergeHorizontally} onClick={mergeHorizontally}>
-                              Merge horizontally
+                              {s('Merge horizontally')}
                             </MenuItem>
                             <MenuItem disabled={!canUnmerge} onClick={unmerge}>
-                              Unmerge
+                              {s('Unmerge')}
                             </MenuItem>
                           </Ariakit.MenuGroup>
                         </Menu>
@@ -961,7 +574,7 @@ function CellFormatEditor({
             <Ariakit.TabPanel id={TABS.FONT} focusable={false}>
               <div className="flex flex-col gap-4">
                 <FormGroup>
-                  <FormLabel>Font size</FormLabel>
+                  <FormLabel>{s('Font size')}</FormLabel>
                   <Ariakit.SelectProvider
                     value={formValue?.textFormat?.fontSize?.toString()}
                     setValue={(fontSize: string) => {
@@ -982,7 +595,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Font</FormLabel>
+                  <FormLabel>{s('Font')}</FormLabel>
                   <Ariakit.SelectProvider
                     value={fontFamily ?? FONT_FAMILY_DEFAULT_VALUE}
                     setValue={(f) => {
@@ -1006,7 +619,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Effects</FormLabel>
+                  <FormLabel>{s('Effects')}</FormLabel>
                   <div className="flex !flex-wrap items-center gap-3">
                     <ToggleButton
                       checked={formValue?.textFormat?.bold ?? false}
@@ -1015,7 +628,7 @@ function CellFormatEditor({
                       }}
                     >
                       <Icon className="shrink-0" legacyName="text-bold" />
-                      Bold
+                      {s('Bold')}
                     </ToggleButton>
                     <ToggleButton
                       checked={formValue?.textFormat?.italic ?? false}
@@ -1024,7 +637,7 @@ function CellFormatEditor({
                       }}
                     >
                       <Icon className="shrink-0" legacyName="text-italic" />
-                      Italic
+                      {s('Italic')}
                     </ToggleButton>
                     <ToggleButton
                       checked={formValue?.textFormat?.underline ?? false}
@@ -1033,7 +646,7 @@ function CellFormatEditor({
                       }}
                     >
                       <Icon className="shrink-0" legacyName="text-underline" />
-                      Underline
+                      {s('Underline')}
                     </ToggleButton>
                     <ToggleButton
                       checked={formValue?.textFormat?.strikethrough ?? false}
@@ -1042,13 +655,13 @@ function CellFormatEditor({
                       }}
                     >
                       <Icon className="shrink-0" legacyName="text-strikethrough" />
-                      Strikethrough
+                      {s('Strikethrough')}
                     </ToggleButton>
                   </div>
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Color</FormLabel>
+                  <FormLabel>{s('Color')}</FormLabel>
                   <div>
                     <Ariakit.PopoverProvider>
                       <Ariakit.PopoverDisclosure className="flex size-[36px] items-center justify-center rounded-lg border border-[#EAE7E4]">
@@ -1103,7 +716,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Border style</FormLabel>
+                  <FormLabel>{s('Border style')}</FormLabel>
                   <Ariakit.RadioProvider>
                     <div className="grid grid-cols-3 gap-2 rounded-lg border border-[#ADABA8] p-4">
                       {BORDER_LINE_STYLES.map(({ icon, style }) => {
@@ -1127,7 +740,7 @@ function CellFormatEditor({
                 </FormGroup>
 
                 <FormGroup>
-                  <FormLabel>Color</FormLabel>
+                  <FormLabel>{s('Color')}</FormLabel>
                   <div>
                     <Ariakit.PopoverProvider>
                       <Ariakit.PopoverDisclosure className="flex size-[36px] items-center justify-center rounded-lg">
@@ -1163,13 +776,13 @@ function CellFormatEditor({
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
             onClick={onDone}
           >
-            Cancel
+            {s('Cancel')}
           </button>
           <button
             type="submit"
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
           >
-            Save
+            {s('Save')}
           </button>
         </div>
       </form>
@@ -1177,15 +790,54 @@ function CellFormatEditor({
   )
 }
 
-export function CellFormatDialog(props: CellFormatDialogProps) {
+export function CellFormatDialog() {
   const [open, setOpen] = useFormatCellsDialogState()
 
   return (
     <SidebarDialog open={open} setOpen={setOpen}>
       <div className="flex h-full min-h-0 flex-col">
-        <SidebarDialogHeader title="Format cells" />
-        <CellFormatEditor {...props} onDone={() => setOpen(false)} />
+        <SidebarDialogHeader title={s('Format cells')} />
+        <CellFormatEditor onDone={() => setOpen(false)} />
       </div>
     </SidebarDialog>
   )
+}
+
+function strings() {
+  return {
+    Bold: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Bold`,
+    Italic: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Italic`,
+    Underline: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Underline`,
+    Strikethrough: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Strikethrough`,
+    Number: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Number`,
+    Alignment: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Alignment`,
+    Font: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Font`,
+    Border: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Border`,
+    Preview: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Preview`,
+    'Choose Category': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Choose Category`,
+    'Decimal places': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Decimal places`,
+    'Thousands separator': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Thousands separator`,
+    'Currency Symbol': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Currency Symbol`,
+    Type: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Type`,
+    Custom: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Custom`,
+    'Use 1000 Separator (,)': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Use 1000 Separator (,)`,
+    'Font size': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Font size`,
+    Effects: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Effects`,
+    Color: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Color`,
+    'Horizontal Alignment': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Horizontal Alignment`,
+    Indent: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Indent`,
+    'Vertical Alignment': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Vertical Alignment`,
+    'Text control': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Text control`,
+    Overflow: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Overflow`,
+    Merge: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Merge`,
+    'Merge all': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Merge all`,
+    'Merge vertically': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Merge vertically`,
+    'Merge horizontally': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Merge horizontally`,
+    Unmerge: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Unmerge`,
+    'Border style': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Border style`,
+    Save: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Save`,
+    Cancel: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Cancel`,
+    'Format cells': c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`Format cells`,
+    General: c('sheets_2025:Spreadsheet sidebar cell format editor dialog').t`General`,
+  }
 }

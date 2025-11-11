@@ -1,39 +1,39 @@
 import { DeleteSheetConfirmation, TableEditor } from '@rowsncolumns/spreadsheet-state'
-import type { ProtonSheetsState } from '../../state'
 import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
 import { SheetSearch } from './SheetSearch'
 import { InsertLinkDialog } from './InsertLink'
+import { useUI } from '../../ui-store'
 
-export type DialogsProps = {
-  state: ProtonSheetsState
-}
-
-export function Dialogs({ state }: DialogsProps) {
+export function Dialogs() {
   return (
     <>
+      <InsertLinkDialog />
+      <SheetSearch
+        isActive={useUI((ui) => ui.legacy.searchState.isSearchActive)}
+        onSubmit={useUI((ui) => ui.legacy.searchState.onSearch)}
+        onReset={useUI((ui) => ui.legacy.searchState.onResetSearch)}
+        onNext={useUI((ui) => ui.legacy.searchState.onFocusNextResult)}
+        onPrevious={useUI((ui) => ui.legacy.searchState.onFocusPreviousResult)}
+        disableNext={!useUI((ui) => ui.legacy.searchState.hasNextResult)}
+        disablePrevious={!useUI((ui) => ui.legacy.searchState.hasPreviousResult)}
+        currentResult={useUI((ui) => ui.legacy.searchState.currentResult)}
+        totalResults={useUI((ui) => ui.legacy.searchState.totalResults)}
+        searchQuery={useUI((ui) => ui.legacy.searchState.searchQuery)}
+      />
       {/* All dialogs below are legacy and will be incrementally replaced */}
       <ChartEditorDialog>
         <ChartEditor
-          sheetId={state.activeSheetId}
-          chart={state.chartsState.selectedChart}
-          onSubmit={state.chartsState.onUpdateChart}
+          sheetId={useUI((ui) => ui.sheets.activeId)}
+          chart={useUI((ui) => ui.charts.selected)}
+          onSubmit={useUI.$.charts.update}
         />
       </ChartEditorDialog>
-      <TableEditor sheetId={state.activeSheetId} onSubmit={state.onUpdateTable} theme={state.theme} />
-      <DeleteSheetConfirmation onDeleteSheet={state.onDeleteSheet} />
-      <SheetSearch
-        isActive={state.searchState.isSearchActive}
-        onSubmit={state.searchState.onSearch}
-        onReset={state.searchState.onResetSearch}
-        onNext={state.searchState.onFocusNextResult}
-        onPrevious={state.searchState.onFocusPreviousResult}
-        disableNext={!state.searchState.hasNextResult}
-        disablePrevious={!state.searchState.hasPreviousResult}
-        currentResult={state.searchState.currentResult}
-        totalResults={state.searchState.totalResults}
-        searchQuery={state.searchState.searchQuery}
+      <TableEditor
+        sheetId={useUI((ui) => ui.legacy.activeSheetId)}
+        onSubmit={useUI((ui) => ui.legacy.onUpdateTable)}
+        theme={useUI((ui) => ui.legacy.theme)}
       />
-      <InsertLinkDialog />
+      <DeleteSheetConfirmation onDeleteSheet={useUI((ui) => ui.legacy.onDeleteSheet)} />
     </>
   )
 }

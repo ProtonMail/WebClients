@@ -1,2 +1,2 @@
-export { BottomBar } from './BottomBar'
-export type { BottomBarProps } from './BottomBar'
+export { OldBottomBar } from './OldBottomBar'
+export type { OldBottomBarProps } from './OldBottomBar'

@@ -2,9 +2,7 @@ import React, { useMemo, useState, type PropsWithChildren } from 'react'
 import clsx from '@proton/utils/clsx'
 import { produce } from 'immer'
 import { useEvent } from '../utils'
-import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ConditionalFormatDialog } from './ConditionalFormatDialog'
-import type { ProtonSheetsState } from '../../state'
 import { SidebarContext, type SidebarContextValue, type SidebarDialogStore } from './shared'
 import { DataValidationDialog } from './DataValidationDialog'
 import { NamedRangeEditorDialog } from './NamedRangeEditorDialog'
@@ -84,51 +82,13 @@ function SidebarContainer(props: PropsWithChildren) {
   )
 }
 
-interface SidebarProps {
-  state: ProtonSheetsState
-}
-
-export function Sidebar({ state }: SidebarProps) {
+export function Sidebar() {
   return (
     <SidebarContainer>
-      <ConditionalFormatDialog
-        sheetId={state.activeSheetId}
-        theme={state.theme}
-        conditionalFormats={state.conditionalFormats}
-        functionDescriptions={FUNCTION_DESCRIPTIONS}
-        onCreateRule={state.onCreateConditionalFormattingRule}
-        onDeleteRule={state.onDeleteConditionalFormattingRule}
-        onUpdateRule={state.onUpdateConditionalFormattingRule}
-        onPreviewRule={state.onPreviewConditionalFormattingRule}
-      />
-      <DataValidationDialog
-        dataValidations={state.dataValidations}
-        sheetId={state.activeSheetId}
-        functionDescriptions={FUNCTION_DESCRIPTIONS}
-        onDeleteRules={state.onDeleteDataValidationRules}
-        onDeleteRule={state.onDeleteDataValidationRule}
-        onCreateRule={state.onCreateDataValidationRule}
-        onUpdateRule={state.onUpdateDataValidationRule}
-      />
-      <NamedRangeEditorDialog
-        sheetId={state.activeSheetId}
-        namedRanges={state.namedRanges}
-        onCreateNamedRange={state.onCreateNamedRange}
-        onUpdateNamedRange={state.onUpdateNamedRange}
-        onDeleteNamedRange={state.onDeleteNamedRange}
-        onRequestDefineNamedRange={state.onRequestDefineNamedRange}
-      />
-      <CellFormatDialog
-        sheetId={state.activeSheetId}
-        activeCell={state.activeCell}
-        selections={state.selections}
-        onChangeFormatting={state.onChangeFormatting}
-        cellFormat={state.currentCellFormat}
-        getEffectiveValue={state.getEffectiveValue}
-        onMergeCells={state.onMergeCells}
-        theme={state.theme}
-        onChangeBorder={state.onChangeBorder}
-      />
+      <ConditionalFormatDialog />
+      <DataValidationDialog />
+      <NamedRangeEditorDialog />
+      <CellFormatDialog />
     </SidebarContainer>
   )
 }

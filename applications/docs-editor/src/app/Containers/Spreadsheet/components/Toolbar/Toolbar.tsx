@@ -566,7 +566,13 @@ function InsertNote() {
 
 function InsertChart() {
   return (
-    <T.Item variant="label" icon={Icons.barChart} accessibilityLabel={s('Insert chart')} onClick={useUI.$.insert.chart}>
+    <T.Item
+      variant="label"
+      icon={Icons.barChart}
+      accessibilityLabel={s('Insert chart')}
+      onClick={useUI.$.insert.chart}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Chart')}
     </T.Item>
   )

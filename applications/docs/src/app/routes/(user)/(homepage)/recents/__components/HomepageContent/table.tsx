@@ -37,8 +37,8 @@ export function Title({ topLevelSticky, ...props }: TitleProps) {
     >
       {topLevelSticky ? (
         <div className="relative z-[-1] mx-[-1px] h-0">
-          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc]"></div>
-          <div className="bg-norm border-weak absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border"></div>
+          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc]" />
+          <div className="bg-norm border-weak absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border" />
         </div>
       ) : null}
       <div className="!flex h-full items-center justify-between pe-2 ps-5">{props.children}</div>
@@ -64,8 +64,8 @@ export function Head({ children, secondarySticky, topLevelSticky, topLevelSticky
     >
       {topLevelSticky ? (
         <div className={clsx('relative z-[-1] mx-[-1px] h-0', topLevelStickyOnlyOnMobile && 'small:!hidden')}>
-          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc]"></div>
-          <div className="bg-norm border-weak absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border !border-b-0"></div>
+          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc]" />
+          <div className="bg-norm border-weak absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border !border-b-0" />
         </div>
       ) : null}
       <div role="row" className="flex h-[2.75rem] items-center text-left">
