@@ -38,3 +38,16 @@ export const Default: Story = {
         </div>
     ),
 };
+
+export const RoundedDonuts: Story = {
+    args: {
+        rounded: true,
+        gap: 0,
+        segments: [[20, ThemeColor.Danger]],
+    },
+    render: (props) => (
+        <div style={{ width: 200, height: 200 }}>
+            <Donut {...props} />
+        </div>
+    ),
+};
