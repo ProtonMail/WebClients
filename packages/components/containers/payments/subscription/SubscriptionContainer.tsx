@@ -1394,7 +1394,7 @@ const SubscriptionContainerInner = ({
                                 paymentFacade={paymentFacade}
                                 paymentMethods={paymentFacade.methods}
                                 showPlanDescription={audience !== Audience.B2B}
-                                paymentNeeded={!model.paymentForbiddenReason.forbidden}
+                                paymentForbiddenReason={model.paymentForbiddenReason}
                                 taxCountry={taxCountry}
                                 user={user}
                                 couponConfig={couponConfig}

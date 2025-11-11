@@ -28,7 +28,8 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
         | PLANS.BUNDLE_PRO_2024
         | PLANS.VPN_PASS_BUNDLE
         | PLANS.PASS_FAMILY
-        | PLANS.PASS_LIFETIME;
+        | PLANS.PASS_LIFETIME
+        | PLANS.VPN_PASS_BUNDLE_BUSINESS;
     size?: number;
     dark?: boolean;
 }
@@ -55,10 +56,10 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     if (planName === PLANS.BUNDLE_PRO_2024) {
         return <img {...rest} src={protonBusinessSuite} width={size} alt="" />;
     }
-    if (planName === PLANS.VPN_PASS_BUNDLE && dark) {
+    if ((planName === PLANS.VPN_PASS_BUNDLE || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) && dark) {
         return <img {...rest} src={vpnPassBundleDark} width={size} alt="" />;
     }
-    if (planName === PLANS.VPN_PASS_BUNDLE) {
+    if (planName === PLANS.VPN_PASS_BUNDLE || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
         return <img {...rest} src={vpnPassBundle} width={size} alt="" />;
     }
     // Temporary fix to use Mail's logo for calendar until design creates one.

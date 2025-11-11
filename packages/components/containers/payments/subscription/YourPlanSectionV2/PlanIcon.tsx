@@ -19,6 +19,7 @@ import {
     hasPass,
     hasPassFamily,
     hasVPNPassBundle,
+    hasVPNPassProfessional,
     hasVisionary,
     hasVpnBusiness,
 } from '@proton/payments';
@@ -61,6 +62,14 @@ export const PlanIcon = ({
         return (
             <LogoIconShape size={size}>
                 <CustomLogo planName={PLANS.VPN_PASS_BUNDLE} app={app} size={size} />
+            </LogoIconShape>
+        );
+    }
+
+    if (hasVPNPassProfessional(subscription) || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) {
+        return (
+            <LogoIconShape size={size}>
+                <CustomLogo planName={PLANS.VPN_PASS_BUNDLE_BUSINESS} app={app} size={size} />
             </LogoIconShape>
         );
     }

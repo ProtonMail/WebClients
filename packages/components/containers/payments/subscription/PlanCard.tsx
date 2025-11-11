@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import Price, { type Props as PriceProps } from '@proton/components/components/price/Price';
-import { PLANS } from '@proton/payments';
+import { PLANS, getIsB2BAudienceFromPlan } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 
@@ -37,23 +37,15 @@ interface Action {
 type Props = Base & Partial<ActionElement> & Partial<Action>;
 
 const getCycleUnit = (planName: PLANS) => {
-    switch (planName) {
-        case PLANS.FREE:
-        case PLANS.PASS_LIFETIME:
-            return '';
-        case PLANS.MAIL_PRO:
-        case PLANS.MAIL_BUSINESS:
-        case PLANS.DRIVE_PRO:
-        case PLANS.BUNDLE_PRO:
-        case PLANS.BUNDLE_PRO_2024:
-        case PLANS.PASS_PRO:
-        case PLANS.PASS_BUSINESS:
-        case PLANS.VPN_PRO:
-        case PLANS.VPN_BUSINESS:
-            return c('Cycle').t`/user per month`;
-        default:
-            return c('Cycle').t`/month`;
+    if (planName === PLANS.FREE || planName === PLANS.PASS_LIFETIME) {
+        return '';
     }
+
+    if (getIsB2BAudienceFromPlan(planName)) {
+        return c('Cycle').t`/user per month`;
+    }
+
+    return c('Cycle').t`/month`;
 };
 
 const PlanCard = ({
@@ -111,7 +103,7 @@ const PlanCard = ({
                     </div>
                 ) : null}
                 <div className="flex flex-row items-center">
-                    <h2 className="h3 plan-selection-title flex text-bold text-capitalize mb-2" id={`desc_${planName}`}>
+                    <h2 className="h3 plan-selection-title flex text-bold mb-2" id={`desc_${planName}`}>
                         {planTitle}
                     </h2>
                 </div>

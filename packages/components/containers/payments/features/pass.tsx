@@ -405,6 +405,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getLoginsAndNotes('free'),
                 [PLANS.LUMO_BUSINESS]: getLoginsAndNotes('free'),
                 [PLANS.VISIONARY]: getLoginsAndNotes('paid'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getLoginsAndNotes('paid'),
             },
         },
         {
@@ -433,6 +434,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getDevices(),
                 [PLANS.VISIONARY]: getDevices(),
                 [PLANS.LUMO_BUSINESS]: getDevices(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getDevices(),
             },
         },
         {
@@ -461,6 +463,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getVaults(FREE_VAULTS),
                 [PLANS.VISIONARY]: getVaults(PASS_VISIONARY_VAULTS),
                 [PLANS.LUMO_BUSINESS]: getVaults(PASS_VISIONARY_VAULTS),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getVaults(PASS_BIZ_VAULTS),
             },
         },
         {
@@ -489,6 +492,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.VISIONARY]: getHideMyEmailAliases('unlimited'),
                 [PLANS.LUMO_BUSINESS]: getHideMyEmailAliases('unlimited'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getHideMyEmailAliases('unlimited'),
             },
         },
         {
@@ -517,6 +521,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: null,
                 [PLANS.VISIONARY]: getAdvancedAliasFeatures(true),
                 [PLANS.LUMO_BUSINESS]: getAdvancedAliasFeatures(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getAdvancedAliasFeatures(true),
             },
         },
         {
@@ -545,6 +550,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getVaultSharing(FREE_VAULT_SHARING),
                 [PLANS.VISIONARY]: getVaultSharing(PASS_VISIONARY_VAULT_SHARING),
                 [PLANS.LUMO_BUSINESS]: getVaultSharing(PASS_VISIONARY_VAULT_SHARING),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getVaultSharing(PASS_BIZ_VAULT_SHARING),
             },
         },
         {
@@ -573,6 +579,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: null,
                 [PLANS.VISIONARY]: getLinkSharing(),
                 [PLANS.LUMO_BUSINESS]: getLinkSharing(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getLinkSharing(),
             },
         },
         {
@@ -601,6 +608,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: get2FAAuthenticator(),
                 [PLANS.VISIONARY]: get2FAAuthenticator(true),
                 [PLANS.LUMO_BUSINESS]: get2FAAuthenticator(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: get2FAAuthenticator(true),
             },
         },
         {
@@ -629,6 +637,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getCustomFields(),
                 [PLANS.VISIONARY]: getCustomFields(true),
                 [PLANS.LUMO_BUSINESS]: getCustomFields(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getCustomFields(true),
             },
         },
         {
@@ -657,6 +666,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: null,
                 [PLANS.VISIONARY]: null,
                 [PLANS.LUMO_BUSINESS]: null,
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getGroupManagement(),
             },
         },
         {
@@ -685,6 +695,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getDataBreachMonitoring(),
                 [PLANS.VISIONARY]: getDataBreachMonitoring(true),
                 [PLANS.LUMO_BUSINESS]: getDataBreachMonitoring(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getDataBreachMonitoring(true),
             },
         },
     ];

@@ -31,6 +31,10 @@ describe('shouldShowMail', () => {
                 plan: PLANS.PASS_PRO,
                 expected: false,
             },
+            {
+                plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+                expected: false,
+            },
             // Undefined plan should return true
             {
                 plan: undefined,

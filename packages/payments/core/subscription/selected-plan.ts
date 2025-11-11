@@ -1,3 +1,4 @@
+import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import isFunction from '@proton/utils/isFunction';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -296,6 +297,10 @@ export class SelectedPlan {
             acc[addonPrefix] = true;
             return acc;
         }, {} as PresentAddonTypes);
+    }
+
+    isEqualTo(other: SelectedPlan): boolean {
+        return isEqual(this.planIDs, other.planIDs);
     }
 
     private capScribes(): SelectedPlan {
