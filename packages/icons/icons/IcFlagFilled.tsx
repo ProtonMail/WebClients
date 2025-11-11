@@ -21,7 +21,6 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 export const IcFlagFilled = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
     return (
         <>
-            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <svg
                 viewBox={viewBox}
                 className={`icon-size-${size} ${className}`}
