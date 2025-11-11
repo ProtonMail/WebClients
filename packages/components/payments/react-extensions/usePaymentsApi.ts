@@ -83,27 +83,21 @@ const queryFullBillingAddress = () => ({
     method: 'GET',
 });
 
-const putFullBillingAddress = (data: FullBillingAddress) => {
-    const { VatId, ...BillingAddress } = data;
-
+const putFullBillingAddress = (BillingAddress: FullBillingAddress) => {
     return {
         url: 'payments/v5/account/billing-information',
         method: 'PUT',
         data: {
-            VatId,
             BillingAddress,
         },
     };
 };
 
-const putInvoiceBillingAddress = (invoiceId: string, data: FullBillingAddress) => {
-    const { VatId, ...BillingAddress } = data;
-
+const putInvoiceBillingAddress = (invoiceId: string, BillingAddress: FullBillingAddress) => {
     return {
         url: `payments/v5/invoices/${invoiceId}/billing-information`,
         method: 'PUT',
         data: {
-            VatId,
             BillingAddress,
         },
     };
