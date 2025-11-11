@@ -37,7 +37,6 @@ export interface Props {
     onSelectDate?: (a1: Date) => void;
     onSelectDateRange?: (a1: DateTuple, resetRange?: boolean) => void;
     onMonthChange?: (a1: Date) => void;
-    onDisplayedDaysChange?: (days: Date[]) => void;
     formatDay?: (a1: Date) => string;
     getDayClassName?: (a1: Date) => string;
     weekStartsOn?: WeekStartsOn;
@@ -58,7 +57,6 @@ const MiniCalendar = ({
     onSelectDate,
     onSelectDateRange,
     onMonthChange,
-    onDisplayedDaysChange,
     formatDay = (date) => date.toString(),
     getDayClassName,
     weekStartsOn = 1,
@@ -124,10 +122,6 @@ const MiniCalendar = ({
     const days = useMemo(() => {
         return getDaysInMonth(activeDate, { weekStartsOn, weeks: numberOfWeeks - 1 });
     }, [activeDate, weekStartsOn, numberOfWeeks]);
-
-    useEffect(() => {
-        onDisplayedDaysChange?.(days);
-    }, [days, onDisplayedDaysChange]);
 
     const monthLabel = useMemo(() => {
         return `${months[activeDate.getMonth()]} ${activeDate.getFullYear()}`;

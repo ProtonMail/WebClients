@@ -1,15 +1,23 @@
+import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { BookingDetails } from '../components/BookingDetails/BookingDetails';
 import { BookingPageLayout } from '../components/BookingPageLaout';
 import { BookingSuccess } from '../components/BookingSuccess';
 import { NoMatch, Reason } from '../components/NoMatch';
+import { useExternalBookingLoader } from '../useExternalBookingLoader';
 
 interface Props {
     isGuest?: boolean;
 }
 
 export const BookingsRouter = ({}: Props) => {
+    const { loadPublicBooking } = useExternalBookingLoader();
+
+    useEffect(() => {
+        void loadPublicBooking(new Date());
+    }, [loadPublicBooking]);
+
     return (
         <BookingPageLayout>
             <Switch>
