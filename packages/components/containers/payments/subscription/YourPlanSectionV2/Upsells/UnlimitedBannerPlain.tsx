@@ -25,6 +25,7 @@ const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
 
     const plan = PLANS.BUNDLE;
     const { priceDifference, priceFallbackPerMonth, showPriceDifference } = useSubscriptionPriceComparison(
+        app,
         subscription,
         plan
     );
