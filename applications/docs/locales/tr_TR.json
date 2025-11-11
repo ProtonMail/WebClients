@@ -90,6 +90,9 @@
       "Apply": [
         "Uygula"
       ],
+      "Ask me next time": [
+        "Gelecek sefer yeniden sor"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
         "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir"
@@ -654,6 +657,9 @@
       "Save changes": [
         "Değişiklikleri kaydet"
       ],
+      "Save preferences": [
+        "Ayarları kaydet"
+      ],
       "Search": [
         "Arama"
       ],
@@ -662,6 +668,12 @@
       ],
       "Search recent documents": [
         "Son kullanılan belgelerde ara"
+      ],
+      "Search recent spreadsheets": [
+        "Son hesap tablolarını ara"
+      ],
+      "Search recents": [
+        "Son kullanılanlarda ara"
       ],
       "See how": [
         "Nasıl yapıldığını görün"
@@ -1063,6 +1075,12 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var",
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -4381,6 +4399,9 @@
       "Continue": [
         "İlerle"
       ],
+      "Converting document...": [
+        "Belge dönüştürülüyor..."
+      ],
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
@@ -4423,6 +4444,9 @@
       ],
       "Creating link to folder": [
         "Klasör bağlantısı oluşturuluyor"
+      ],
+      "Creating new document...": [
+        "Yeni belge oluşturuluyor..."
       ],
       "Current plan": [
         "Geçerli tarife"
@@ -4517,6 +4541,12 @@
       "Enter your own password (as trusted contact).": [
         "Kendi parolanızı yazın (güvenilen kişi olarak)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Belge dönüştürülürken sorun çıktı: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Belge yüklenirken sorun çıktı: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Eşitleme sorunu"
       ],
@@ -4576,6 +4606,12 @@
       ],
       "Geoblocking": [
         "Coğrafi engelleme"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Belgelerinize eklenen yorumlar ve öneriler için e-posta bildirimleri alın."
+      ],
+      "Get Notified About Comments": [
+        "Yorumlar ile ilgili bildirimler alın"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
@@ -4713,6 +4749,9 @@
       "Low Priority": [
         "Düşük Öncelik"
       ],
+      "Making a copy...": [
+        "Kopya oluşturuluyor..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
@@ -4743,6 +4782,9 @@
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Adreste bir belge belirtilmemiş. ${ DRIVE_APP_NAME } uygulamasına dönün ve bir belge seçin."
       ],
       "No email address": [
         "E-posta adresi yok"
@@ -5021,6 +5063,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Yazdığınız adres Slack üzerinden yanlış kopyalanmış gibi görünüyor. Slack üzerinden uzun bağlantıları kopyalarken, bağlantıya sağ tıklayın, ardından budanmış adres metnini doğrudan kopyalamak yerine \"Bağlantıyı kopyala\" seçeneğini kullanın."
       ],
       "There are no documents in the trash.": [
         "Çöpte herhangi bir belge yok."
@@ -5627,6 +5672,9 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
+      "Enable email notifications": [
+        "E-posta bildirimlerini aç"
+      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -5674,6 +5722,9 @@
       ],
       "Include application logs in bug report": [
         "Uygulama günlükleri sorun bildirimine eklensin"
+      ],
+      "Include document name in notification": [
+        "Bildirime belge adı eklensin"
       ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
@@ -6000,6 +6051,9 @@
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
+      ],
+      "Reactivate subscription": [
+        "Aboneliği yeniden etkinleştir"
       ],
       "Request an invite": [
         "Davet iste"
@@ -8088,6 +8142,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "${ maxRewardAmount } tutarına kadar kredi kazanın. Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda ${ referrerRewardAmount } alacaksınız."
       ],
@@ -8786,6 +8843,9 @@
       "${ app } storage": [
         "${ app } depolama alanı"
       ],
+      "${ app } storage used": [
+        "${ app } depolama alanı kullanıldı"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } %${ percentage } dolu"
       ],
@@ -8797,6 +8857,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "Storage used": [
+        "Kullanılan depolama alanı"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"

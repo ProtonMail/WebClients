@@ -90,6 +90,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Ask me next time": [
+        "Preguntarme la próxima vez"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
@@ -656,6 +659,9 @@
       ],
       "Save changes": [
         "Guardar los cambios"
+      ],
+      "Save preferences": [
+        "Guardar las preferencias"
       ],
       "Search": [
         "Buscar"
@@ -4396,6 +4402,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Converting document...": [
+        "Convirtiendo el documento..."
+      ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
       ],
@@ -4438,6 +4447,9 @@
       ],
       "Creating link to folder": [
         "Creando enlace a la carpeta"
+      ],
+      "Creating new document...": [
+        "Creando el documento..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4532,6 +4544,12 @@
       "Enter your own password (as trusted contact).": [
         "Ingrese su propia contraseña (como contacto de confianza)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Error al convertir el documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Error al cargar el documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Error al sincronizar"
       ],
@@ -4591,6 +4609,12 @@
       ],
       "Geoblocking": [
         "Bloqueo geográfico"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios añadidos a sus documentos."
+      ],
+      "Get Notified About Comments": [
+        "Recibir notificaciones sobre los comentarios"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear su actividad en línea. Ocultando su IP real y cifrando su actividad de navegación se vuelve privada."
@@ -4728,6 +4752,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Making a copy...": [
+        "Haciendo una copia..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
@@ -4758,6 +4785,9 @@
       ],
       "No contacts added yet": [
         "Ningún contacto agregado aún"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "No se proporcionó ningún documento en la URL. Regrese a ${ DRIVE_APP_NAME } y seleccione un documento."
       ],
       "No email address": [
         "No hay dirección de correo"
@@ -5036,6 +5066,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "La URL que ingresó parece haberse copiado de Slack incorrectamente. Al copiar enlaces largos de Slack, haga clic derecho en el enlace y luego seleccione «Copiar enlace» en lugar de copiar directamente el texto truncado de la URL."
       ],
       "There are no documents in the trash.": [
         "No hay documentos en la papelera."
@@ -5642,6 +5675,9 @@
       "Emails (last month)": [
         "Correos (último mes)"
       ],
+      "Enable email notifications": [
+        "Activar notificaciones por correo electrónico"
+      ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
       ],
@@ -5689,6 +5725,9 @@
       ],
       "Include application logs in bug report": [
         "Incluir registros de la aplicación en el informe de errores"
+      ],
+      "Include document name in notification": [
+        "Incluir el nombre del documento en las notificaciones"
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
@@ -6015,6 +6054,9 @@
       ],
       "Reactivate now": [
         "Reactivar"
+      ],
+      "Reactivate subscription": [
+        "Reactivar la suscripción"
       ],
       "Request an invite": [
         "Solicitar una invitación"
@@ -8160,6 +8202,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si se suscribe antes de esta fecha,** recibirá **${ referrerRewardAmount }** en créditos."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Después de esa fecha, su cuenta pasará a **${ BRAND_NAME } Free**. Si cambia de opinión, puede **reactivar su suscripción** para mantener el acceso a las funciones premium."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Gane hasta ${ maxRewardAmount } en créditos. Obtendrá ${ referrerRewardAmount } cuando la persona a quien invite se suscriba a un plan de ${ BRAND_NAME }."
       ],
@@ -8858,6 +8903,9 @@
       "${ app } storage": [
         "almacenamiento de ${ app }"
       ],
+      "${ app } storage used": [
+        "almacenamiento de ${ app } usado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } lleno al ${ percentage }%"
       ],
@@ -8869,6 +8917,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Almacenamiento usado"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para seguir utilizando los productos de ${ BRAND_NAME }, libere espacio o ${ upgrade }"

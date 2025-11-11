@@ -90,6 +90,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Ask me next time": [
+        "Perguntar na próxima vez"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "São permitidos no máximo ${ maxContacts } contato por grupo de contatos.",
         "São permitidos no máximo ${ maxContacts } contatos por grupo de contatos."
@@ -656,6 +659,9 @@
       ],
       "Save changes": [
         "Salvar alterações"
+      ],
+      "Save preferences": [
+        "Salvar as preferências"
       ],
       "Search": [
         "Pesquisar"
@@ -4396,6 +4402,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Converting document...": [
+        "Convertendo o documento..."
+      ],
       "Copy the link to clipboard": [
         "Copiar link para a área de transferência"
       ],
@@ -4438,6 +4447,9 @@
       ],
       "Creating link to folder": [
         "Criando link para a pasta"
+      ],
+      "Creating new document...": [
+        "Criando o documento..."
       ],
       "Current plan": [
         "Plano atual"
@@ -4532,6 +4544,12 @@
       "Enter your own password (as trusted contact).": [
         "Digite sua própria senha (como contato de confiança)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Erro ao converter o documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Erro ao carregar o documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Erro ao sincronizar"
       ],
@@ -4591,6 +4609,12 @@
       ],
       "Geoblocking": [
         "Bloqueio geográfico"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Receba atualizações por e-mail para comentários e sugestões adicionados nos seus documentos."
+      ],
+      "Get Notified About Comments": [
+        "Receber notificações sobre comentários"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Governos e provedores de internet (ISPs) podem monitorar sua atividade on-line. Ao ocultar seu IP real e criptografar sua atividade, sua navegação se torna privada."
@@ -4728,6 +4752,9 @@
       "Low Priority": [
         "Baixa prioridade"
       ],
+      "Making a copy...": [
+        "Fazendo uma cópia..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo de ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
         "Máximo de ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
@@ -4758,6 +4785,9 @@
       ],
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nenhum documento fornecido no URL. Retorne ao ${ DRIVE_APP_NAME } e selecione um documento."
       ],
       "No email address": [
         "Nenhum endereço de e-mail"
@@ -5036,6 +5066,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "O URL que você inseriu parece ter sido copiado incorretamente do Slack. Ao copiar links longos do Slack, clique com o botão direito no link e selecione \"Copiar o link\" em vez de copiar o texto do URL truncado diretamente."
       ],
       "There are no documents in the trash.": [
         "Não há documentos na lixeira."
@@ -5642,6 +5675,9 @@
       "Emails (last month)": [
         "E-mails (último mês)"
       ],
+      "Enable email notifications": [
+        "Ativar as notificações por e-mail"
+      ],
       "Encrypt emails": [
         "Criptografar e-mails"
       ],
@@ -5689,6 +5725,9 @@
       ],
       "Include application logs in bug report": [
         "Incluir os registros do aplicativo no relatório de erro"
+      ],
+      "Include document name in notification": [
+        "Incluir o nome do documento em notificações"
       ],
       "Include message and file name in invite email": [
         "Incluir mensagem e nome do arquivo no e-mail de convite."
@@ -6015,6 +6054,9 @@
       ],
       "Reactivate now": [
         "Reativar agora"
+      ],
+      "Reactivate subscription": [
+        "Reativar assinatura"
       ],
       "Request an invite": [
         "Solicitar um convite"
@@ -8158,6 +8200,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Após essa data, sua conta fará o downgrade para **${ BRAND_NAME } Free**. Se você mudar de ideia, você pode **reativar sua assinatura** para manter o acesso a recursos premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe até ${ maxRewardAmount } em crédito. Você receberá ${ referrerRewardAmount } quando a pessoa que você convidar se inscrever em um plano ${ BRAND_NAME }."

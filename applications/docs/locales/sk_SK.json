@@ -4910,7 +4910,7 @@
         "Zatiaľ neboli pridané žiadne kontakty"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "V adrese URL nie je uvedený žiadny dokument. Vráťte sa na ${ DRIVE_APP_NAME } a vyberte dokument."
+        "V URL adrese nie je uvedený žiadny dokument. Vráťte sa na ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žiadna emailová adresa"
@@ -5195,7 +5195,7 @@
         "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Vami zadaná adresa URL bola zrejme nesprávne skopírovaná zo služby Slack. Pri kopírovaní dlhých odkazov zo služby Slack kliknite pravým tlačidlom myši na odkaz a vyberte možnosť „Kopírovať odkaz“, namiesto priameho kopírovania skráteného textu adresy URL."
+        "Vami zadaná URL adresa bola zrejme nesprávne skopírovaná zo služby Slack. Pri kopírovaní dlhých odkazov zo služby Slack kliknite pravým tlačidlom myši na odkaz a vyberte možnosť „Kopírovať odkaz“, namiesto priameho kopírovania skráteného textu URL adresy."
       ],
       "There are no documents in the trash.": [
         "V koši nie sú žiadne dokumenty."
@@ -6193,6 +6193,9 @@
       ],
       "Reactivate now": [
         "Znovu aktivovať"
+      ],
+      "Reactivate subscription": [
+        "Obnoviť predplatné"
       ],
       "Request an invite": [
         "Požiadať o pozvánku"
@@ -8396,6 +8399,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Ak si predplatíte pred týmto dátumom,** získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tomto dátume bude váš účet znížený na **${ BRAND_NAME } Free**. Ak si to rozmyslíte, môžete **opätovne obnoviť svoje predplatné** a zachovať si prístup k prémiovým funkciám."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Získajte až ${ maxRewardAmount } v kreditoch. Získate ${ referrerRewardAmount }, keď si osoba, ktorú pozvete predplatí ${ BRAND_NAME } plán."
