@@ -5,7 +5,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import useConfig from '@proton/components/hooks/useConfig';
-import { PLANS, type PlanIDs } from '@proton/payments';
+import { type PlanIDs, getIsVpnB2BPlan, getPlanNameFromIDs } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
@@ -28,7 +28,8 @@ const SubscriptionThanks = ({ onClose, planIDs }: Props) => {
         getAppFromPathnameSafe(window.location.pathname) === APPS.PROTONVPN_SETTINGS;
 
     const description = (() => {
-        const hasSubscribedToVpnb2bPlan = !!planIDs[PLANS.VPN_PRO] || !!planIDs[PLANS.VPN_BUSINESS];
+        const planName = getPlanNameFromIDs(planIDs);
+        const hasSubscribedToVpnb2bPlan = !!planName && getIsVpnB2BPlan(planName);
         if (hasSubscribedToVpnb2bPlan) {
             return (
                 <p className="text-center mb-0 mt-2 color-weak text-wrap-balance" data-testid="more-info">{c('Info')

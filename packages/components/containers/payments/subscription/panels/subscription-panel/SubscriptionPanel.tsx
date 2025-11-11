@@ -25,6 +25,7 @@ import {
     hasPassFamily,
     hasVPN2024,
     hasVPNPassBundle,
+    hasVPNPassProfessional,
     hasVisionary,
     hasVpnBusiness,
     isTrial,
@@ -139,7 +140,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const items: Item[] = [
             getVPNConnectionsFeature(FREE_VPN_CONNECTIONS),
             {
-                icon: 'earth',
+                icon: 'earth' as const,
                 text: getFreeServers(vpnServers.free.servers, vpnServers.free.countries),
             },
         ];
@@ -166,19 +167,19 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const getVpnPlusItems = (): Item[] => {
         return [
             {
-                icon: 'brand-proton-vpn',
+                icon: 'brand-proton-vpn' as const,
                 text: maxVPNDevicesText,
             },
             {
-                icon: 'shield',
+                icon: 'shield' as const,
                 text: c('Subscription attribute').t`Built-in ad blocker (NetShield)`,
             },
             {
-                icon: 'play',
+                icon: 'play' as const,
                 text: c('Subscription attribute').t`Access to streaming services globally`,
             },
             {
-                icon: 'earth',
+                icon: 'earth' as const,
                 text: getPlusServers(vpnServers.paid.servers, vpnServers.paid.countries),
             },
         ];
@@ -265,7 +266,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
 
         return {
-            icon: 'speech-bubble',
+            icon: 'speech-bubble' as const,
             text: lumoText,
             actionElement,
         };
@@ -280,7 +281,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
 
         return {
-            icon: 'pen-sparks',
+            icon: 'pen-sparks' as const,
             text: writingAssistantText,
             actionElement,
         };
@@ -366,17 +367,41 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const getMoreButtonVpnUpsell = <GetMoreButton metricsSource="vpn-get-more" />;
 
         const items: Item[] = [
-            {
+            !!b2bUsersItem && {
                 ...b2bUsersItem,
                 actionElement: getMoreButtonVpnUpsell,
             },
             hasVpnBusiness(subscription) && {
-                icon: 'servers',
+                icon: 'servers' as const,
                 text: serverText,
                 actionElement: getMoreButtonVpnUpsell,
                 dataTestId: 'servers',
             },
-        ].filter(isTruthy) as Item[];
+        ].filter(isTruthy);
+
+        return (
+            <StripedList alternate="odd">
+                <SubscriptionItems user={user} items={items} />
+            </StripedList>
+        );
+    };
+
+    const getVpnPassProfessional = () => {
+        const getMoreButtonVpnUpsell = <GetMoreButton metricsSource="vpn-get-more" />;
+
+        const items: Item[] = [
+            !!b2bUsersItem && {
+                ...b2bUsersItem,
+                actionElement: getMoreButtonVpnUpsell,
+            },
+            {
+                icon: 'servers' as const,
+                text: serverText,
+                actionElement: getMoreButtonVpnUpsell,
+                dataTestId: 'servers',
+            },
+            getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),
+        ].filter(isTruthy);
 
         return (
             <StripedList alternate="odd">
@@ -389,22 +414,22 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const items: (Item | false)[] = [
             b2bUsersItem,
             {
-                icon: 'envelope',
+                icon: 'envelope' as const,
                 text: addressText,
             },
             !!MaxDomains &&
                 !!domainsText &&
                 // we need to hide the custom domains section for Pass B2B plans until SSO is implemented
                 !isPassB2bPlan && {
-                    icon: 'globe',
+                    icon: 'globe' as const,
                     text: domainsText,
                 },
             {
-                icon: 'calendar-checkmark',
+                icon: 'calendar-checkmark' as const,
                 text: calendarText,
             },
             {
-                icon: 'brand-proton-vpn',
+                icon: 'brand-proton-vpn' as const,
                 text: vpnText,
             },
             getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),
@@ -501,6 +526,9 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     }
                     if (hasPassFamily(subscription)) {
                         return getPassAppPassFamily();
+                    }
+                    if (hasVPNPassProfessional(subscription)) {
+                        return getVpnPassProfessional();
                     }
                     if (getHasVpnB2BPlan(subscription)) {
                         return getVpnB2B();

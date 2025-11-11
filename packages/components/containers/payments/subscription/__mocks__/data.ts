@@ -469,12 +469,6 @@ export const vpnBusinessUpsell = {
     },
 };
 
-export const vpnEnterpriseUpsell = {
-    planKey: 'VPN_ENTERPRISE',
-    title: 'VPN Enterprise',
-    description: 'Tailor-made solutions for larger organizations with specific security needs',
-};
-
 export const bundle2024Upsell = {
     planKey: 'bundlepro2024',
     title: 'Proton Business Suite',

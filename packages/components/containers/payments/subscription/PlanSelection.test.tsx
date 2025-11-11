@@ -45,16 +45,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
@@ -113,16 +103,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
@@ -180,16 +160,6 @@ describe('useAccessiblePlans', () => {
             currency: 'BRL',
             planIDs: {},
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -230,16 +200,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -297,16 +257,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
@@ -368,16 +318,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
@@ -438,16 +378,6 @@ describe('useAccessiblePlans', () => {
                 [PLANS.BUNDLE_PRO]: 1,
             },
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
@@ -508,16 +438,6 @@ describe('useAccessiblePlans', () => {
                 [PLANS.BUNDLE_PRO_2024]: 1,
             },
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
@@ -572,16 +492,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
@@ -641,16 +551,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONMAIL,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
@@ -684,16 +584,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONPASS,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
@@ -720,16 +610,6 @@ describe('useAccessiblePlans', () => {
             currency: 'USD',
             planIDs: {},
             app: APPS.PROTONPASS,
-            vpnServers: {
-                free: {
-                    servers: 9,
-                    countries: 4,
-                },
-                paid: {
-                    servers: 400,
-                    countries: 50,
-                },
-            },
             paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,

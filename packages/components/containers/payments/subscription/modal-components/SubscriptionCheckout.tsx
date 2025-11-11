@@ -11,21 +11,23 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
-import type { CheckoutModifiers, RequiredCheckResponse } from '@proton/payments';
+import type { CheckoutModifiers, RequiredCheckResponse, SubscriptionCheckForbiddenReason } from '@proton/payments';
 import {
     type Currency,
     type Cycle,
     type FreePlanDefault,
     type FullPlansMap,
-    PLANS,
     type Plan,
     type PlanIDs,
+    SelectedPlan,
     type Subscription,
     SubscriptionMode,
     TaxInclusive,
     formatTax,
     getCheckout,
+    getIsVpnPlan,
     getPlanFromPlanIDs,
+    getPlanNameFromIDs,
     hasPlanIDs,
     isLifetimePlanSelected,
 } from '@proton/payments';
@@ -59,13 +61,13 @@ type Props = {
     onChangeCurrency: (currency: Currency) => void;
     showPlanDescription?: boolean;
     subscription: Subscription;
-    paymentNeeded: boolean;
     paymentMethods: MethodsHook;
     user: UserModel;
     trial: boolean;
     couponConfig?: CouponConfigRendered;
     paymentFacade: PaymentFacade;
     taxCountry: TaxCountryHook;
+    paymentForbiddenReason: SubscriptionCheckForbiddenReason;
 };
 
 export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscription: Subscription) => {
@@ -100,13 +102,13 @@ const SubscriptionCheckout = ({
     onChangeCurrency,
     showPlanDescription = true,
     subscription,
-    paymentNeeded,
     paymentMethods,
     user,
     trial,
     couponConfig,
     paymentFacade,
     taxCountry,
+    paymentForbiddenReason,
     ...checkoutModifiers
 }: SubscriptionCheckoutProps) => {
     const { APP_NAME } = useConfig();
@@ -141,11 +143,14 @@ const SubscriptionCheckout = ({
     const isFreePlanSelected = !isPaidPlanSelected;
     const lifetimePlan = isLifetimePlanSelected(planIDs);
 
-    const hasGuarantee =
-        !!planIDs?.[PLANS.VPN2024] ||
-        !!planIDs?.[PLANS.VPN_PRO] ||
-        !!planIDs?.[PLANS.VPN_BUSINESS] ||
-        !!planIDs?.[PLANS.VPN_PASS_BUNDLE];
+    const planName = getPlanNameFromIDs(planIDs);
+
+    const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
+    const currentPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
+
+    const addonsModification =
+        selectedPlan.getPlanName() === currentPlan.getPlanName() && !selectedPlan.isEqualTo(currentPlan);
+    const hasGuarantee = getIsVpnPlan(planName) && !addonsModification && !paymentForbiddenReason.forbidden;
 
     const proration = checkResult.Proration ?? 0;
     const unusedCredit = checkResult.UnusedCredit ?? 0;
@@ -170,7 +175,7 @@ const SubscriptionCheckout = ({
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
-    const displayRenewNotice = isPaidPlanSelected && paymentNeeded;
+    const displayRenewNotice = isPaidPlanSelected && !paymentForbiddenReason.forbidden;
 
     const tax = formatTax(checkResult);
 

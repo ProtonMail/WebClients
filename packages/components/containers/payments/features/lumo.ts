@@ -138,6 +138,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getDailyChats('unlimited'),
                 [PLANS.LUMO_BUSINESS]: getDailyChats('unlimited'),
                 [PLANS.VISIONARY]: getDailyChats('unlimited'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getDailyChats('limited'),
             },
         },
         {
@@ -166,6 +167,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getWebSearchAccess(),
                 [PLANS.LUMO_BUSINESS]: getWebSearchAccess(),
                 [PLANS.VISIONARY]: getWebSearchAccess(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getWebSearchAccess(),
             },
         },
         {
@@ -194,6 +196,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getChatHistory('full'),
                 [PLANS.LUMO_BUSINESS]: getChatHistory('full'),
                 [PLANS.VISIONARY]: getChatHistory('full'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getChatHistory('basic'),
             },
         },
         {
@@ -222,6 +225,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getFavourites('unlimited'),
                 [PLANS.LUMO_BUSINESS]: getFavourites('unlimited'),
                 [PLANS.VISIONARY]: getFavourites('unlimited'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getFavourites('limited'),
             },
         },
         {
@@ -250,6 +254,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getUploadAndQuery('large'),
                 [PLANS.LUMO_BUSINESS]: getUploadAndQuery('large'),
                 [PLANS.VISIONARY]: getUploadAndQuery('large'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getUploadAndQuery('small'),
             },
         },
         {
@@ -278,6 +283,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getAccessToAdvancedAI(true),
                 [PLANS.LUMO_BUSINESS]: getAccessToAdvancedAI(true),
                 [PLANS.VISIONARY]: getAccessToAdvancedAI(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getAccessToAdvancedAI(false),
             },
         },
     ];

@@ -321,7 +321,7 @@ describe('hasCancellablePlan', () => {
     });
 
     it('should not be cancellable if plan is non-cancellable', () => {
-        const testCases = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO];
+        const testCases = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS];
 
         const subscription = buildSubscription();
 

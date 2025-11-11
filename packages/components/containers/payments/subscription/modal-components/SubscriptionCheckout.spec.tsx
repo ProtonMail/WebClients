@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { screen } from '@testing-library/react';
 
 import { CYCLE, FREE_PLAN, PLANS, type SubscriptionCheckResponse, SubscriptionMode } from '@proton/payments';
@@ -14,7 +16,13 @@ jest.mock('../../../../hooks/useConfig', () => ({
     }),
 }));
 
-jest.mock('../../Checkout', () => ({ children }: any) => <>{children}</>);
+jest.mock('../../Checkout', () => {
+    const MockChildrenOnly = ({ children }: { children: ReactNode }) => <>{children}</>;
+    return {
+        __esModule: true,
+        default: MockChildrenOnly,
+    };
+});
 
 const WrappedSubscriptionCheckout = (props: Omit<SubscriptionCheckoutProps, 'taxCountry'>) => {
     const taxCountry = useTaxCountry({
@@ -62,7 +70,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -93,7 +101,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -124,7 +132,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -157,7 +165,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription(undefined, {
                     PeriodEnd: 1668868986,
                 })}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -202,7 +210,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription(undefined, {
                     PeriodEnd: 1668868986,
                 })}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -254,7 +262,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription(undefined, {
                     PeriodEnd: 1668868986,
                 })}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -306,7 +314,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription(undefined, {
                     PeriodEnd: 1668868986,
                 })}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -336,7 +344,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -365,7 +373,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -394,7 +402,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -423,7 +431,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -452,7 +460,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
@@ -481,7 +489,7 @@ describe('SubscriptionCheckout', () => {
                 isScheduledChargedLater={false}
                 isScheduled={false}
                 subscription={buildSubscription()}
-                paymentNeeded={true}
+                paymentForbiddenReason={{ forbidden: false }}
                 paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}

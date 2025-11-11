@@ -452,6 +452,12 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     isTrialMode?: boolean;
 }
 
+function getAddonDisplayOrder(addonName: ADDON_NAMES): number {
+    // the lower the index of the addon type, the higher the priority.
+    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isScribeAddon, isLumoAddon] as const;
+    return mapping.findIndex((guard) => guard(addonName)) ?? mapping.length;
+}
+
 export const ProtonPlanCustomizer = ({
     cycle,
     mode,
@@ -485,6 +491,10 @@ export const ProtonPlanCustomizer = ({
         [allowedAddonTypes]
     );
 
+    const addons = (Object.keys(supportedAddons) as ADDON_NAMES[]).sort(
+        (a, b) => getAddonDisplayOrder(a) - getAddonDisplayOrder(b)
+    );
+
     return (
         <div
             className={clsx([
@@ -494,7 +504,7 @@ export const ProtonPlanCustomizer = ({
             ])}
             {...rest}
         >
-            {Object.keys(supportedAddons).map((key) => {
+            {addons.map((key) => {
                 const addonName = key as ADDON_NAMES;
 
                 if (!isAllowedAddon(addonName) || !plansMap[addonName]) {
