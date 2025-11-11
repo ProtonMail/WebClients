@@ -1,10 +1,10 @@
 import Loader from '@proton/components/components/loader/Loader';
 
 import { useBookingStore } from '../../booking.store';
+import { BookingsView } from '../BookingsView';
 import { NoMatch, Reason } from '../NoMatch';
 import { DetailsFooter } from './DetailsFooter';
 import { DetailsHeader } from './DetailsHeader';
-import { DetailsSlotPicking } from './DetailsSlotPicking';
 
 export const BookingDetails = () => {
     const isLoading = useBookingStore((state) => state.isLoading);
@@ -22,7 +22,7 @@ export const BookingDetails = () => {
     return (
         <div className="mt-12 max-w-custom mx-auto" style={{ '--max-w-custom': '640px' }}>
             <DetailsHeader />
-            <DetailsSlotPicking />
+            <BookingsView />
             <DetailsFooter />
         </div>
     );
