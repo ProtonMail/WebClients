@@ -11,6 +11,7 @@ import { useDevices } from '../hooks/useDevices';
 import { useDynamicDeviceHandling } from '../hooks/useDynamicDeviceHandling';
 import { useVideoToggle } from '../hooks/useVideoToggle';
 import type { SwitchActiveDevice } from '../types';
+import { supportsSetSinkId } from '../utils/browser';
 import { MediaManagementContext } from './MediaManagementContext';
 import { useStoredDevices } from './StoredDevicesContext';
 
@@ -53,7 +54,17 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const switchActiveDevice: SwitchActiveDevice = useCallback(
         async ({ deviceType, deviceId, isSystemDefaultDevice, preserveDefaultDevice = false }) => {
-            await room.switchActiveDevice(deviceType, deviceId);
+            if (deviceType === 'audiooutput' && !supportsSetSinkId()) {
+                return;
+            }
+
+            try {
+                void room.switchActiveDevice(deviceType, deviceId);
+            } catch (error) {
+                // eslint-disable-next-line no-console
+                console.error(error);
+                return;
+            }
 
             if (preserveDefaultDevice) {
                 return;
