@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } per Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } per iOS"
+      ],
       "Accept": [
         "Accetta"
       ],
@@ -310,6 +316,9 @@
       "Get ${ PASS_APP_NAME }": [
         "Ottieni ${ PASS_APP_NAME }"
       ],
+      "Get mobile and desktop apps": [
+        "Ottieni app mobili e per desktop"
+      ],
       "Get mobile apps": [
         "Scarica le applicazioni per dispositivi mobili"
       ],
@@ -453,12 +462,6 @@
       ],
       "Organize vaults": [
         "Gestisci le casseforti"
-      ],
-      "Pass for Android": [
-        "Pass per Android"
-      ],
-      "Pass for iOS": [
-        "Pass per iOS"
       ],
       "Pass Monitor": [
         "Pass Monitor"
