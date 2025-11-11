@@ -12,6 +12,7 @@ import {
     type Coupon,
     type Currency,
     type Cycle,
+    type FreeSubscription,
     PLANS,
     PLAN_NAMES,
     type PaymentsCheckout,
@@ -26,6 +27,7 @@ import {
     getPlanName,
     getPlanNameFromIDs,
     getPlanTitle,
+    isFreeSubscription,
     isLifetimePlanSelected,
 } from '@proton/payments';
 import { type APP_NAMES, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -64,7 +66,7 @@ const appendTermsAndConditionsLink = (
 
 type RenewalNoticeProps = {
     cycle: CYCLE;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
 } & Partial<CheckoutModifiers>;
 
 const getRegularRenewalNoticeText = ({
@@ -88,9 +90,9 @@ const getRegularRenewalNoticeText = ({
     // downgrade then user pays nothing now, and the scheduled subscription will still be created.
     // The payment happens when the upcoming subscription becomes the current one. So the next billing date is still
     // the end of the current subscription.
-    if ((isCustomBilling || isScheduledChargedLater) && subscription) {
+    if ((isCustomBilling || isScheduledChargedLater) && subscription && !isFreeSubscription(subscription)) {
         unixRenewalTime = subscription.PeriodEnd;
-    } else if (isScheduledChargedImmediately && subscription) {
+    } else if (isScheduledChargedImmediately && subscription && !isFreeSubscription(subscription)) {
         const periodEndMilliseconds = subscription.PeriodEnd * 1000;
         unixRenewalTime = +addMonths(periodEndMilliseconds, cycle) / 1000;
     }
@@ -286,7 +288,7 @@ export const getPassLifetimeRenewNoticeText = ({
     subscription,
     app,
 }: {
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
     app: APP_NAMES;
 }) => {
     const planName = getPlanName(subscription);
@@ -315,7 +317,7 @@ export const getLifetimeRenewNoticeText = ({
     app,
 }: {
     planIDs: PlanIDs;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
     app: APP_NAMES;
 }) => {
     const planName = getPlanNameFromIDs(planIDs);
@@ -416,7 +418,7 @@ export const getCheckoutRenewNoticeTextFromCheckResult = ({
     plansMap: PlansMap;
     planIDs: PlanIDs;
     short?: boolean;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
     app: APP_NAMES;
 }) => {
     const isTrial = checkResult.SubscriptionMode === SubscriptionMode.Trial;
