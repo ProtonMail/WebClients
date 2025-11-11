@@ -3,7 +3,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import { useBookingStore } from '../../booking.store';
 import { BookingsView } from '../BookingsView';
 import { NoMatch, Reason } from '../NoMatch';
-import { DetailsFooter } from './DetailsFooter';
+import { BookingFooter } from './BookingFooter';
 import { DetailsHeader } from './DetailsHeader';
 
 export const BookingDetails = () => {
@@ -20,10 +20,12 @@ export const BookingDetails = () => {
     }
 
     return (
-        <div className="mt-12 max-w-custom mx-auto" style={{ '--max-w-custom': '640px' }}>
-            <DetailsHeader />
-            <BookingsView />
-            <DetailsFooter />
+        <div className="mt-12 mx-auto">
+            <div className="flex gap-6">
+                <DetailsHeader />
+                <BookingsView />
+            </div>
+            <BookingFooter />
         </div>
     );
 };

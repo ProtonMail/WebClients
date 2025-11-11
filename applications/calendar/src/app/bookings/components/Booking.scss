@@ -1,0 +1,23 @@
+@import '~@proton/styles/scss/lib';
+
+body:has(.booking-main-container) {
+	// to check if has to be connected to taxonomy or same page for all cases
+	background: radial-gradient(199.62% 141.42% at 0% 100%, #efebff 0%, #eff6ff 20%, #f9fafb 50%);
+
+	--booking-color-title: #372580;
+	--text-norm: #4b5563;
+}
+
+.booking {
+	&-main-container {
+		block-size: 100%;
+	}
+
+	&-details-header {
+		inline-size: rem(360);
+	}
+
+	&-color-title {
+		color: var(--booking-color-title);
+	}
+}

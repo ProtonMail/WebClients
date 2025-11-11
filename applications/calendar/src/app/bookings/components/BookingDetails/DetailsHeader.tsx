@@ -2,8 +2,8 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { IcClock } from '@proton/icons/icons/IcClock';
-import { IcEarth } from '@proton/icons/icons/IcEarth';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useBookingStore } from '../../booking.store';
@@ -19,8 +19,9 @@ export const DetailsHeader = () => {
                 description: state.bookingDetails.description,
                 location: state.bookingDetails.location,
                 duration: state.bookingDetails.duration,
-                timezone: state.bookingDetails.timezone,
                 withProtonMeetLink: state.bookingDetails.withProtonMeetLink,
+                inviterDisplayName: state.bookingDetails.inviterDisplayName,
+                inviterEmail: state.bookingDetails.inviterEmail,
             };
         })
     );
@@ -30,23 +31,43 @@ export const DetailsHeader = () => {
     }
 
     return (
-        <div className="mt-12">
-            <h1 className="mb-2 text-2xl text-bold">{bookingDetails?.summary}</h1>
-            <p className="color-weak m-0 mb-6">{bookingDetails.description}</p>
-            <div className="color-weak">
-                <div className="flex gap-3 items-center mb-2">
-                    <IcClock />
-                    <span>{c('Info').t`${bookingDetails.duration} min duration`}</span>
+        <div className="rounded-lg max-w-custom p-12 flex flex-column flex-nowrap mb-8 bg-norm booking-details-header">
+            <h1 className="text-rg mb-2 color-primary text-bold">{c('Title').t`Appointment details`}</h1>
+            <h2 className="booking-color-title text-4xl m-0">{bookingDetails?.summary}</h2>
+            <p className="my-6 text-pre-wrap">{bookingDetails.description}</p>
+            <div className="flex flex-column flex-nowrap gap-4">
+                <div className="flex flex-nowrap flex-row gap-3 items-start">
+                    <div className="bg-weak shrink-0 rounded-full p-2">
+                        <IcUserCircle className="booking-color-title" size={6} />
+                    </div>
+                    <div className="flex-1">
+                        <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
+                        <div>{bookingDetails.inviterDisplayName}</div>
+                        <div>{bookingDetails.inviterEmail}</div>
+                    </div>
                 </div>
-                <div className="flex gap-3 items-center mb-2">
-                    <IcMapPin />
-                    <span>{bookingDetails.withProtonMeetLink
-                        ? c('Info').t`${MEET_APP_NAME} video call`
-                        : bookingDetails.location}</span>
+                <div className="flex flex-nowrap flex-row gap-3 items-start">
+                    <div className="bg-weak shrink-0 rounded-full p-2">
+                        <IcClock className="booking-color-title" size={6} />
+                    </div>
+                    <div className="flex-1">
+                        <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info')
+                            .t`Appointment duration`}</h3>
+                        <div>{c('Info').t`${bookingDetails.duration} min duration`}</div>
+                    </div>
                 </div>
-                <div className="flex gap-3 items-center">
-                    <IcEarth />
-                    <span>{bookingDetails.timezone}</span>
+                <div className="flex flex-nowrap flex-row gap-3 items-start">
+                    <div className="bg-weak shrink-0 rounded-full p-2">
+                        <IcMapPin className="booking-color-title" size={6} />
+                    </div>
+                    <div className="flex-1">
+                        <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Location`}</h3>
+                        <div>
+                            {bookingDetails.withProtonMeetLink
+                                ? c('Info').t`${MEET_APP_NAME} video call`
+                                : bookingDetails.location}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
