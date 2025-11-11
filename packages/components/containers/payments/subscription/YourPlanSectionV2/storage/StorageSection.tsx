@@ -76,6 +76,7 @@ function StorageSplitFreePlanTooltip({ spaceDetails, userSpace, isSheetsEnabled 
                 <DonutContainer>
                     <Donut
                         gap={0}
+                        rounded={true}
                         segments={[[spaceDetails.base.percentage, SpaceStateThemeColorMap[spaceDetails.base.type]]]}
                     />
                 </DonutContainer>
@@ -99,6 +100,7 @@ function StorageSplitFreePlanTooltip({ spaceDetails, userSpace, isSheetsEnabled 
             <div className="flex gap-2 items-center">
                 <DonutContainer>
                     <Donut
+                        rounded={true}
                         gap={0}
                         segments={[[spaceDetails.drive.percentage, SpaceStateThemeColorMap[spaceDetails.drive.type]]]}
                     />
@@ -143,6 +145,7 @@ function StorageSplitOrganizationTooltip({ organization, user }: StorageSplitOrg
                 <DonutContainer>
                     <Donut
                         gap={0}
+                        rounded={true}
                         segments={[
                             [orgSpaceDetails.pooled.percentage, SpaceStateThemeColorMap[orgSpaceDetails.pooled.type]],
                         ]}
@@ -169,6 +172,7 @@ function StorageSplitOrganizationTooltip({ organization, user }: StorageSplitOrg
                 <DonutContainer>
                     <Donut
                         gap={0}
+                        rounded={true}
                         segments={[
                             [userSpaceDetails.pooled.percentage, SpaceStateThemeColorMap[userSpaceDetails.pooled.type]],
                         ]}
@@ -326,7 +330,7 @@ export const StorageSection = ({
             key={label}
             icon={
                 <DonutContainer>
-                    <Donut gap={0} segments={[[usedSpace, graphColor]]} />
+                    <Donut gap={0} segments={[[usedSpace, graphColor]]} rounded={true} />
                 </DonutContainer>
             }
             title={label}
