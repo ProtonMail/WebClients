@@ -1,12 +1,14 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import { format, startOfMonth, startOfToday } from 'date-fns';
 
 import { Loader, LocalizedMiniCalendar } from '@proton/components';
+import { getDaysInMonth } from '@proton/components/components/miniCalendar/helper';
+import { getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../../booking.store';
+import { WEEKS_IN_MINI_CALENDAR } from '../../constants';
 import { useExternalBookingLoader } from '../../useExternalBookingLoader';
 
 import './BookingMiniCalendar.scss';
@@ -17,30 +19,15 @@ interface BookingMiniCalendarProps {
 }
 
 export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniCalendarProps) => {
-    const location = useLocation();
-    const bookingSecretBase64Url = location.hash.substring(1);
-    const { loadPublicBooking } = useExternalBookingLoader();
     const isLoading = useBookingStore((state) => state.isLoading);
     const getDaysWithSlots = useBookingStore((state) => state.getDaysWithSlots);
     const getAllDaySlots = useBookingStore((state) => state.getAllDaySlots);
-    const [displayedMonth, setDisplayedMonth] = useState(selectedDate);
-    const loadedMonthsRef = useRef<Set<string>>(new Set());
+    const [, setDisplayedMonth] = useState(selectedDate);
     const [hasInitialized, setHasInitialized] = useState(false);
 
     const daysWithSlots = getDaysWithSlots();
 
-    const handleDisplayedDaysChange = useCallback(
-        (days: Date[]) => {
-            const monthKey = format(displayedMonth, 'yyyy-MM', { locale: dateLocale });
-
-            if (!loadedMonthsRef.current.has(monthKey) && days.length > 0) {
-                loadedMonthsRef.current.add(monthKey);
-
-                void loadPublicBooking(bookingSecretBase64Url, days);
-            }
-        },
-        [bookingSecretBase64Url, loadPublicBooking, displayedMonth]
-    );
+    const { loadPublicBooking } = useExternalBookingLoader();
 
     useEffect(() => {
         setDisplayedMonth(startOfMonth(selectedDate));
@@ -68,6 +55,12 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
     };
 
     const handleMonthChange = (date: Date) => {
+        const startDate = getDaysInMonth(date, {
+            weekStartsOn: getWeekStartsOn(dateLocale),
+            weeks: WEEKS_IN_MINI_CALENDAR - 1,
+        });
+
+        void loadPublicBooking(startDate[0]);
         setDisplayedMonth(startOfMonth(date));
     };
 
@@ -82,12 +75,12 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
             )}
             <div className={isLoading ? 'opacity-50 pointer-events-none' : ''}>
                 <LocalizedMiniCalendar
+                    numberOfWeeks={WEEKS_IN_MINI_CALENDAR}
                     min={startOfToday()}
                     now={today}
                     date={selectedDate}
                     onSelectDate={handleSelectDate}
                     onMonthChange={handleMonthChange}
-                    onDisplayedDaysChange={handleDisplayedDaysChange}
                     hasCursors
                     getDayClassName={getDayClassName}
                 />
@@ -95,5 +88,3 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
         </div>
     );
 };
-
-export default BookingMiniCalendar;

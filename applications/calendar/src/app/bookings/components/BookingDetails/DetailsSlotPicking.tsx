@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import format from 'date-fns/format';
 import { c } from 'ttag';
 
@@ -9,7 +7,7 @@ import type { BookingTimeslot } from '../../booking.store';
 import { useBookingStore } from '../../booking.store';
 import { useExternalBookingActions } from '../../useExternalBookingActions';
 import { useBookingSlotModal } from '../BookingSlotModal';
-import BookingMiniCalendar from './BookingMiniCalendar';
+import { BookingMiniCalendar } from './BookingMiniCalendar';
 
 export const DetailsSlotPicking = () => {
     const { bookingDetails, submitBooking } = useExternalBookingActions();
@@ -20,28 +18,23 @@ export const DetailsSlotPicking = () => {
 
     const selectedDayTimeslots = getTimeslotsByDate(selectedDate);
 
-    const handleSelectDate = useCallback(
-        (date: Date) => {
-            setSelectedDate(date);
-        },
-        [setSelectedDate]
-    );
+    const handleSelectDate = (date: Date) => {
+        setSelectedDate(date);
+    };
 
-    const handleSlotClick = useCallback(
-        (timeslot: BookingTimeslot) => {
-            if (!bookingDetails) {
-                return;
-            }
-            showBookingSlotModal({
-                bookingDetails,
-                timeslot,
-                onConfirm: async (name, email) => {
-                    await submitBooking(timeslot, { name, email });
-                },
-            });
-        },
-        [bookingDetails, showBookingSlotModal, submitBooking]
-    );
+    const handleSlotClick = (timeslot: BookingTimeslot) => {
+        if (!bookingDetails) {
+            return;
+        }
+
+        showBookingSlotModal({
+            bookingDetails,
+            timeslot,
+            onConfirm: async (name, email) => {
+                await submitBooking(timeslot, { name, email });
+            },
+        });
+    };
 
     if (!bookingDetails) {
         return;
