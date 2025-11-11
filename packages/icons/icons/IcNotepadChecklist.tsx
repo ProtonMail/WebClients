@@ -28,6 +28,7 @@ export const IcNotepadChecklist = ({
 }: IconProps) => {
     return (
         <>
+            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <svg
                 viewBox={viewBox}
                 className={`icon-size-${size} ${className}`}
