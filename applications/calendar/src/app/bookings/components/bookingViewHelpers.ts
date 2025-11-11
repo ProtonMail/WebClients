@@ -1,5 +1,7 @@
 import { addDays, differenceInMinutes, endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 
+import type { ActiveBreakpoint } from '@proton/components/hooks/useActiveBreakpoint';
+
 import { DEFAULT_EVENT_DURATION } from '../../containers/bookings/bookingsProvider/interface';
 import type { BookingDetails, BookingTimeslotWithDate } from '../booking.store';
 
@@ -62,6 +64,20 @@ const generateRangeBookingArray = ({
     const slotsPerDay = Math.floor(differenceInMinutes(latestSlot, earliestSlot) / bookingDuration) + 1;
     const array = new Array(gridSize).fill(null).map(() => new Array(slotsPerDay).fill(null));
     return { array, slotsPerDay };
+};
+
+export const getGridCount = (activeBreakpoint: ActiveBreakpoint) => {
+    switch (activeBreakpoint) {
+        case 'xsmall':
+        case 'small':
+            return 3;
+        case 'medium':
+            return 5;
+        case 'large':
+        case 'xlarge':
+        case '2xlarge':
+            return 7;
+    }
 };
 
 export const getDaysRange = (gridSize: number, startDate: Date) => {
