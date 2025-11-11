@@ -66,11 +66,12 @@ const getDefaultConfig = (nbDay: number) => {
 export const useGateways = (organization: Organization | undefined, maxAge: number) => {
     const api = useApi();
 
-    const hasGatewaysAccess = organization && (
-        organization.PlanName === PLANS.VPN_BUSINESS ||
-        organization.PlanName === PLANS.BUNDLE_PRO ||
-        organization.PlanName === PLANS.BUNDLE_PRO_2024
-    );
+    const hasGatewaysAccess =
+        organization &&
+        (organization.PlanName === PLANS.VPN_BUSINESS ||
+            organization.PlanName === PLANS.BUNDLE_PRO ||
+            organization.PlanName === PLANS.BUNDLE_PRO_2024 ||
+            organization.PlanName === PLANS.VPN_PASS_BUNDLE_BUSINESS);
 
     // If there’s no result yet, define fallback config
     const nbDay = 7;
@@ -82,7 +83,7 @@ export const useGateways = (organization: Organization | undefined, maxAge: numb
                 Config: getDefaultConfig(nbDay),
                 Countries: [],
                 Locations: [],
-                Gateways : [],
+                Gateways: [],
                 Users: [],
             };
         }

@@ -44,6 +44,7 @@ describe('getLumoAddonNameByPlan', () => {
         [PLANS.VPN_BUSINESS, ADDON_NAMES.LUMO_VPN_BUSINESS],
         [PLANS.PASS_PRO, ADDON_NAMES.LUMO_PASS_PRO],
         [PLANS.PASS_BUSINESS, ADDON_NAMES.LUMO_PASS_BUSINESS],
+        [PLANS.VPN_PASS_BUNDLE_BUSINESS, ADDON_NAMES.LUMO_VPN_PASS_BUNDLE_BUSINESS],
     ])('returns %s -> %s', (plan, expectedAddon) => {
         expect(getLumoAddonNameByPlan(plan)).toBe(expectedAddon);
     });

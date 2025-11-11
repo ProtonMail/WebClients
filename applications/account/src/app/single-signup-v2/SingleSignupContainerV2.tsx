@@ -29,6 +29,7 @@ import {
     PLANS,
     getBillingAddressFromPaymentStatus,
     getHas2025OfferCoupon,
+    getIsB2BAudienceFromPlan,
     getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
@@ -103,7 +104,6 @@ import { getSessionsData } from './getSessionsData';
 import {
     getAccessiblePlans,
     getFreeSubscriptionData,
-    getIsProductB2BPlan,
     getOptimisticPlanCardSubscriptionData,
     getRelativeUpsellPrice,
     getSessionDataFromSignup,
@@ -450,7 +450,7 @@ const SingleSignupContainerV2 = ({
         }
 
         if (session.organization && !session.state.payable) {
-            if (getIsProductB2BPlan(planName)) {
+            if (getIsB2BAudienceFromPlan(planName)) {
                 setSubUserModal(true);
                 return;
             }

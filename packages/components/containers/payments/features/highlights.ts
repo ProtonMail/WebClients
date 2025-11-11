@@ -91,6 +91,7 @@ const getUsers = (): PlanCardFeature => {
                 included: true,
                 highlight: true,
             },
+            [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
         },
     };
 };
@@ -237,6 +238,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.LUMO]: getSupport('priority'),
                 [PLANS.LUMO_BUSINESS]: getSupport('priority'),
                 [PLANS.VISIONARY]: getSupport('priority'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSupport('priority'),
             },
         },
         {
@@ -265,6 +267,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.LUMO]: getSentinel(),
                 [PLANS.LUMO_BUSINESS]: getSentinel(),
                 [PLANS.VISIONARY]: getSentinel(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSentinel(true),
             },
         },
         {
@@ -293,6 +296,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.LUMO]: null,
                 [PLANS.LUMO_BUSINESS]: null,
                 [PLANS.VISIONARY]: null,
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
             },
         },
         {
@@ -322,6 +326,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.LUMO]: null,
                 [PLANS.LUMO_BUSINESS]: null,
                 [PLANS.VISIONARY]: null,
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getAdminPanel(),
             },
         },
     ];

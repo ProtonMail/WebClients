@@ -67,6 +67,7 @@ const PaymentMethodActions = ({ method, methods }: Props) => {
         const card: CardModel = toCardModel(method);
 
         dropdownActions.push({
+            key: 'edit',
             text: c('Action').t`Edit`,
             onClick: () => setEditModal({ card, method }),
             'data-testid': 'Edit',
@@ -75,12 +76,14 @@ const PaymentMethodActions = ({ method, methods }: Props) => {
 
     if (!method.IsDefault && !isExpired(method.Details)) {
         dropdownActions.push({
+            key: 'mark-default',
             text: c('Action').t`Mark as default`,
             onClick: markAsDefault,
         });
     }
 
     dropdownActions.push({
+        key: 'delete',
         text: c('Action').t`Delete`,
         actionType: 'delete',
         'data-testid': 'Delete',

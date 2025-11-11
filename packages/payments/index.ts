@@ -317,7 +317,7 @@ export type {
     StrictPlan,
     SubscriptionPlan,
 } from './core/plan/interface';
-export { getPlanFromIDs, hasFreePlanIDs, hasPlanIDs, setQuantity, switchPlan, getAddonsFromIDs } from './core/planIDs';
+export { getAddonsFromIDs, getPlanFromIDs, hasFreePlanIDs, hasPlanIDs, setQuantity, switchPlan } from './core/planIDs';
 export {
     getIpPricePerMonth,
     getPrice,
@@ -388,6 +388,7 @@ export {
     hasDuo,
     hasFamily,
     hasFree,
+    hasFreeOrPlus,
     hasIntentionalScheduledModification,
     hasLifetimeCoupon,
     hasLumo,
@@ -406,10 +407,12 @@ export {
     hasPlanWithAIAssistantIncluded,
     hasSomeAddonOrPlan,
     hasSomePlan,
+    hasTrialExpiredLessThan4Weeks,
     hasVisionary,
     hasVPN2024,
     hasVpnBusiness,
     hasVPNPassBundle,
+    hasVPNPassProfessional,
     hasVpnPro,
     isAnyManagedExternally,
     isAutoRenewTrial,
@@ -427,18 +430,16 @@ export {
     PLANS_WITH_AI_INCLUDED,
     regularCycles,
     willTrialExpireInLessThan1Week,
-    hasTrialExpiredLessThan4Weeks,
-    hasFreeOrPlus,
 } from './core/subscription/helpers';
 export {
     type Coupon,
     type EnrichedCheckResponse,
+    type EnrichedCoupon,
     type FullPlansMap,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
     type SubscriptionCheckResponse,
     type Tax,
-    type EnrichedCoupon,
 } from './core/subscription/interface';
 export {
     getAvailableCycles,

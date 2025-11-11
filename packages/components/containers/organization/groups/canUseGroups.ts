@@ -2,7 +2,7 @@ import { PLANS } from '@proton/payments';
 
 const groupsCompatiblePlans = new Set([PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY]);
 
-const vpnPlans = new Set([PLANS.VPN_BUSINESS, PLANS.VPN_PRO]);
+const vpnPlans = new Set([PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS]);
 
 const canUseGroups = (
     plan: PLANS | undefined,

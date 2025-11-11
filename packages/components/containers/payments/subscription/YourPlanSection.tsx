@@ -99,7 +99,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
         ((!hasTrialPaymentMethods && !isAutoRenewTrial(subscription)) || isAutoRenewTrial(subscription));
     // Upsell panel if the user has a subscription and is not vpn or wallet
     const shouldRenderUpsells =
-        !isVpnB2b && !isWalletEA && shouldRenderSubscription && !hasLumo(subscription) && !shouldRenderTrialInfo;
+        !isWalletEA && shouldRenderSubscription && !hasLumo(subscription) && !shouldRenderTrialInfo;
     // Usage panel is displayed for members of B2B plans except VPN B2B
     const shouldRenderUsagePanel =
         (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;

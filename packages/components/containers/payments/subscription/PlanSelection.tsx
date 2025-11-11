@@ -52,7 +52,6 @@ import {
     isRegionalCurrency,
     isSubscriptionCheckForbidden,
     isTrial,
-    mainCurrencies,
     switchPlan,
 } from '@proton/payments';
 import { OfferPrice } from '@proton/payments/ui';
@@ -70,7 +69,7 @@ import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
 import { getAllFeatures } from '../features';
 import type { ShortPlanLike } from '../features/interface';
 import { isShortPlanLike } from '../features/interface';
-import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
+import { getShortPlan } from '../features/plan';
 import PlanCard, { type HocPrice } from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
@@ -201,7 +200,6 @@ export type AccessiblePlansHookProps = {
 } & Pick<
     Props,
     | 'app'
-    | 'vpnServers'
     | 'selectedProductPlans'
     | 'subscription'
     | 'planIDs'
@@ -218,7 +216,6 @@ export function useAccessiblePlans({
     subscription,
     planIDs,
     app,
-    vpnServers,
     paymentStatus,
     user,
     plans,
@@ -313,19 +310,19 @@ export function useAccessiblePlans({
         ]);
     }
 
-    // some new regional currencies might support VPN enterprise too
-    const hasVpnEnterprise = mainCurrencies.includes(currency);
-
     const vpnB2BPlans = filterPlans([
         plansMap[PLANS.VPN_PRO],
         plansMap[PLANS.VPN_BUSINESS],
-        hasVpnEnterprise ? getVPNEnterprisePlan(vpnServers) : null,
+        plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS],
     ]);
 
+    // after the release of vpnpassbiz2025, please remove this check, assuming that this condition will always be true.
+    const hasVpnPassBiz2025Plan = !!plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS];
     const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
     const passB2BPlans = filterPlans([
-        plansMap[PLANS.PASS_PRO],
+        hasVpnPassBiz2025Plan ? null : plansMap[PLANS.PASS_PRO],
         plansMap[PLANS.PASS_BUSINESS],
+        hasVpnPassBiz2025Plan ? plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS] : null,
         plansMap[bundleProPlan],
     ]);
 

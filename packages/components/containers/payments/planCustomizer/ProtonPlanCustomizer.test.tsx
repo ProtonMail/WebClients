@@ -132,6 +132,14 @@ it.each([
         plan: PLANS.PASS_FAMILY,
         expectedCustomizers: [lumoAddonBannerTestId],
     },
+    {
+        plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+        expectedCustomizers: [`${ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS}-customizer`, lumoAddonBannerTestId],
+    },
+    {
+        plan: PLANS.LUMO_BUSINESS,
+        expectedCustomizers: [`${ADDON_NAMES.MEMBER_LUMO_BUSINESS}-customizer`],
+    },
 ])('should show available addons for $plan', ({ plan, expectedCustomizers }) => {
     const props: Props = {
         ...defaultProps,

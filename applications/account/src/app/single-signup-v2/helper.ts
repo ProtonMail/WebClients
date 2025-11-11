@@ -27,6 +27,7 @@ import {
     getFreeCheckResult,
     getHas2025OfferCoupon,
     getHasPlusPlan,
+    getIsB2BAudienceFromPlan,
     getIsPlanTransitionForbidden,
     getNormalCycleFromCustomCycle,
     getOptimisticCheckResult,
@@ -68,21 +69,6 @@ import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup
 import { type PlanCard, isRegularPlanCard } from './PlanCardSelector';
 import type { Options, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
 import { UpsellTypes } from './interface';
-
-export const getIsProductB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
-    const proPlans = [
-        PLANS.MAIL_PRO,
-        PLANS.MAIL_BUSINESS,
-        PLANS.DRIVE_PRO,
-        PLANS.DRIVE_BUSINESS,
-        PLANS.VPN_PRO,
-        PLANS.VPN_BUSINESS,
-        PLANS.PASS_PRO,
-        PLANS.PASS_BUSINESS,
-        PLANS.LUMO_BUSINESS,
-    ];
-    return proPlans.some((proPlan) => plan === proPlan);
-};
 
 export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
     return [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].some((bundlePlan) => plan === bundlePlan);
@@ -340,7 +326,10 @@ const getUpsell = ({
             }
         } else {
             if (audience === Audience.B2B) {
-                if (getIsProductB2BPlan(planParameters.plan.Name) || getIsBundleB2BPlan(planParameters.plan.Name)) {
+                if (
+                    getIsB2BAudienceFromPlan(planParameters.plan.Name) ||
+                    getIsBundleB2BPlan(planParameters.plan.Name)
+                ) {
                     return getUpsellData();
                 }
                 return noUpsell;
@@ -375,7 +364,7 @@ const getUpsell = ({
                     return getUpsellData({ [PLANS.FAMILY]: 1 });
                 }
 
-                if (getIsProductB2BPlan(currentPlan.Name) && !getIsBundleB2BPlan(planParameters.plan.Name)) {
+                if (getIsB2BAudienceFromPlan(currentPlan.Name) && !getIsBundleB2BPlan(planParameters.plan.Name)) {
                     return getUpsellData({ [PLANS.BUNDLE_PRO_2024]: 1 });
                 }
             }

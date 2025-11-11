@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { PLANS } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -420,18 +420,6 @@ export const getMultiPlatformSupportVPNFeature = (): PlanCardFeatureDefinition =
     text: c('new_plans: Upsell attribute').t`Multi-platform support`,
 });
 
-export const get24x7SupportVPNFeature = (): PlanCardFeatureDefinition => ({
-    icon: 'checkmark',
-    included: true,
-    text: c('new_plans: Upsell attribute').t`24/7 support`,
-});
-
-export const getRequire2FAVPNFeature = (): PlanCardFeatureDefinition => ({
-    icon: 'checkmark',
-    included: true,
-    text: c('new_plans: Upsell attribute').t`Require 2FA`,
-});
-
 export const getBrowserExtensionVPNFeature = (): PlanCardFeatureDefinition => ({
     icon: 'checkmark',
     included: true,
@@ -456,6 +444,12 @@ export const getB2BVPNConnectionsPerUserFeature = (
         icon: 'pass-shield-ok',
     };
 };
+
+export const getExistingVpnProfessionalBenefitsFeature = (): PlanCardFeatureDefinition => ({
+    text: c('new_plans: feature').t`Existing ${PLAN_NAMES[PLANS.VPN_BUSINESS]} benefits`,
+    included: true,
+    icon: 'checkmark',
+});
 
 export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeature[] => {
     const freeServers = getFreeServers(serversCount.free.servers, serversCount.free.countries);
@@ -488,6 +482,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.LUMO_BUSINESS]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.VISIONARY]: getVPNConnections(VPN_CONNECTIONS),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getVPNConnections(VPN_CONNECTIONS),
             },
         },
         {
@@ -517,6 +512,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getVPNConnections(1),
                 [PLANS.LUMO_BUSINESS]: getVPNConnections(1),
                 [PLANS.VISIONARY]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getVPNConnectionsB2B(VPN_CONNECTIONS),
             },
         },
         {
@@ -546,6 +542,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getVPNConnections(1),
                 [PLANS.LUMO_BUSINESS]: getVPNConnections(1),
                 [PLANS.VISIONARY]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getVPNConnectionsB2B(VPN_CONNECTIONS),
             },
         },
         {
@@ -574,6 +571,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getCountries(freeServers),
                 [PLANS.LUMO_BUSINESS]: getCountries(freeServers),
                 [PLANS.VISIONARY]: getCountries(plusServers),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getCountries(plusServers),
             },
         },
         {
@@ -602,6 +600,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getVPNSpeed('medium'),
                 [PLANS.LUMO_BUSINESS]: getVPNSpeed('medium'),
                 [PLANS.VISIONARY]: getVPNSpeed('highest'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getVPNSpeed('highest'),
             },
         },
         {
@@ -630,6 +629,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getNetShield(false),
                 [PLANS.LUMO_BUSINESS]: getNetShield(false),
                 [PLANS.VISIONARY]: getNetShield(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getNetShield(true),
             },
         },
         {
@@ -658,6 +658,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getStreaming(false),
                 [PLANS.LUMO_BUSINESS]: getStreaming(false),
                 [PLANS.VISIONARY]: getStreaming(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getStreaming(true),
             },
         },
         {
@@ -686,6 +687,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getP2P(false),
                 [PLANS.LUMO_BUSINESS]: getP2P(false),
                 [PLANS.VISIONARY]: getP2P(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getP2P(true),
             },
         },
         {
@@ -714,6 +716,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getDoubleHop(false),
                 [PLANS.LUMO_BUSINESS]: getDoubleHop(false),
                 [PLANS.VISIONARY]: getDoubleHop(true, true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getDoubleHop(true, true),
             },
         },
         {
@@ -742,6 +745,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getSecureCore(false),
                 [PLANS.LUMO_BUSINESS]: getSecureCore(false),
                 [PLANS.VISIONARY]: getSecureCore(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSecureCore(true),
             },
         },
         {
@@ -770,6 +774,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getTor(false),
                 [PLANS.LUMO_BUSINESS]: getTor(false),
                 [PLANS.VISIONARY]: getTor(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getTor(true),
             },
         },
         {
@@ -798,6 +803,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getNoLogs(),
                 [PLANS.LUMO_BUSINESS]: getNoLogs(),
                 [PLANS.VISIONARY]: getNoLogs(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getNoLogs(),
             },
         },
         {
@@ -826,6 +832,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getBandwidth(),
                 [PLANS.LUMO_BUSINESS]: getBandwidth(),
                 [PLANS.VISIONARY]: getBandwidth(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getBandwidth(),
             },
         },
         {
@@ -854,6 +861,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getDNSLeak(),
                 [PLANS.LUMO_BUSINESS]: getDNSLeak(),
                 [PLANS.VISIONARY]: getDNSLeak(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getDNSLeak(),
             },
         },
         {
@@ -882,6 +890,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getKillSwitch(),
                 [PLANS.LUMO_BUSINESS]: getKillSwitch(),
                 [PLANS.VISIONARY]: getKillSwitch(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getKillSwitch(),
             },
         },
         {
@@ -910,6 +919,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getEncryption(),
                 [PLANS.LUMO_BUSINESS]: getEncryption(),
                 [PLANS.VISIONARY]: getEncryption(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getEncryption(),
             },
         },
         {
@@ -938,6 +948,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getRouterSupport(),
                 [PLANS.LUMO_BUSINESS]: getRouterSupport(),
                 [PLANS.VISIONARY]: getRouterSupport(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getRouterSupport(),
             },
         },
         {
@@ -966,6 +977,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.LUMO]: getSplitTunnel(false),
                 [PLANS.LUMO_BUSINESS]: getSplitTunnel(false),
                 [PLANS.VISIONARY]: getSplitTunnel(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSplitTunnel(true),
             },
         },
     ];

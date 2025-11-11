@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PLANS } from '@proton/payments';
+import { PLANS, getIsB2BAudienceFromPlan } from '@proton/payments';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 
 import { MEMBER_ROLE, MEMBER_SUBSCRIBER } from '../constants';
@@ -38,19 +38,7 @@ export const getOrganizationDenomination = (organization?: Organization) => {
 };
 
 export const isOrganizationB2B = (organization?: Organization) => {
-    return [
-        PLANS.MAIL_PRO,
-        PLANS.MAIL_BUSINESS,
-        PLANS.DRIVE_PRO,
-        PLANS.DRIVE_BUSINESS,
-        PLANS.PASS_PRO,
-        PLANS.PASS_BUSINESS,
-        PLANS.VPN_PRO,
-        PLANS.VPN_BUSINESS,
-        PLANS.BUNDLE_PRO,
-        PLANS.BUNDLE_PRO_2024,
-        PLANS.LUMO_BUSINESS,
-    ].includes(organization?.PlanName as PLANS);
+    return getIsB2BAudienceFromPlan(organization?.PlanName);
 };
 
 export const getIsSMPTEligible = (organization?: Organization) => {
