@@ -41,20 +41,20 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
   }: ContainerProps,
   ref,
 ) {
-  const overflow = useCompositeOverflowStore()
+  const overflow = useCompositeOverflowStore({ placement: 'bottom-end' })
   const [toolbarContainerElement, setToolbarContainerElement] = useState<HTMLDivElement | null>(null)
   return (
-    <div ref={ref} {...props} className={clsx('select-none px-4 pb-3', props.className)}>
+    <div ref={ref} {...props} className={clsx('select-none pb-3', props.className)}>
       <div className="border-weak rounded-[1rem] border bg-[white] shadow-[0_4px_10px_0_rgba(0,0,0,0.06)]">
         <GroupsProvider toolbarContainerElement={toolbarContainerElement}>
-          <Ariakit.Toolbar className="flex grow gap-[.5rem]">
+          <Ariakit.Toolbar className="flex grow gap-[.5rem] py-[.375rem]">
             <div
-              className="flex grow items-center gap-[.5rem] overflow-hidden px-3 py-[.375rem]"
+              className="flex grow items-center gap-[.5rem] overflow-hidden px-[.375rem]"
               ref={setToolbarContainerElement}
             >
               <GroupTypeProvider type="main">{mainToolbarSlot}</GroupTypeProvider>
             </div>
-            <div className="flex shrink-0 items-center gap-[.5rem] px-3 py-[.375rem]">
+            <div className="flex shrink-0 items-center gap-[.5rem] px-[.375rem]">
               {overflowToolbarSlot ? (
                 <Overflow store={overflow} renderOverflowDisclosure={renderOverflowDisclosure}>
                   <GroupTypeProvider type="overflow">{overflowToolbarSlot}</GroupTypeProvider>
@@ -85,7 +85,7 @@ export function Overflow({ store, children, renderOverflowDisclosure, ...props }
 
       <Atoms.DropdownPopover
         {...Atoms.DROPDOWN_POPOVER_DEFAULTS}
-        className="flex !flex-wrap items-center gap-[.5rem] px-3 py-[.375rem]"
+        className="flex !flex-wrap items-center gap-[.5rem] !rounded-[1rem] !p-[.375rem]"
         render={<CompositeOverflow store={store}>{children}</CompositeOverflow>}
       />
     </>
@@ -145,7 +145,7 @@ export const Item = createComponent<ItemProps>(function Item({
   const outputProps = {
     ...props,
     className: clsx(
-      'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.5rem] text-[#0C0C14] focus:outline-none aria-disabled:text-[#8F8D8A]',
+      'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.625rem] text-[#0C0C14] focus:outline-none aria-disabled:text-[#8F8D8A]',
       'aria-expanded:bg-[#C2C1C0]/20',
       variant === 'icon' && 'p-[.625rem]',
       variant === 'icon-small' && 'p-[.375rem]',

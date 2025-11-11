@@ -216,6 +216,8 @@ export const GRID_THEME_PROPS: Partial<CanvasGridProps> = {
   headerTableBackgroundColor: '#FAFAFA',
   headerTableActiveBackgroundColor: '#E3F9EB',
   headerTableSelectedBackgroundColor: '#1EA885',
+  frozenShadowColor: '#d9d9d9',
+  frozenShadowThickness: 4,
 }
 
 export const OPEN_LINK_EVENT = 'open-link' as const

@@ -30,6 +30,7 @@ import { DocContextMenu } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 // table
 // -----
@@ -45,6 +46,7 @@ export type TableVariant =
 export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: TableVariant }
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
+  const { type } = useHomepageView()
   const contextMenuAnchorRef = useRef<HTMLDivElement>(null)
   const contextMenu = useContextMenu()
   const isRecents = variant.startsWith('recents')
@@ -55,7 +57,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
       <ContentSheet isBottom className="shrink-0 grow pb-4">
         <Table.Table>
           <Table.Title topLevelSticky>
-            {isRecents || isSearch ? c('Info').t`Recents` : c('Info').t`Trash`}
+            {isRecents || isSearch ? recentsLabelByType(type) : c('Info').t`Trash`}
             {isRecents && <SortSelect />}
           </Table.Title>
           {itemsSections.map(({ id, items }, sectionIndex) => (
@@ -81,6 +83,17 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
       />
     </>
   )
+}
+
+function recentsLabelByType(type: ProtonDocumentType | undefined): string {
+  switch (type) {
+    case undefined:
+      return c('Info').t`Recents`
+    case 'document':
+      return c('Info').t`Recent documents`
+    case 'spreadsheet':
+      return c('Info').t`Recent spreadsheets`
+  }
 }
 
 // head
@@ -137,9 +150,9 @@ function Head({ isSecondary = false, sectionId, variant, topLevelSticky }: HeadP
         // resort to this hack to ensure proper sizing of the main column header, so that other
         // previously stickied column headers are not obscured by it.
         <>
-          <Table.DataCell target="large" className="pointer-events-none opacity-0"></Table.DataCell>
-          <Table.DataCell target="medium" className="pointer-events-none opacity-0"></Table.DataCell>
-          <Table.DataCell target="medium" className="pointer-events-none opacity-0"></Table.DataCell>
+          <Table.DataCell target="large" className="pointer-events-none opacity-0" />
+          <Table.DataCell target="medium" className="pointer-events-none opacity-0" />
+          <Table.DataCell target="medium" className="pointer-events-none opacity-0" />
         </>
       )}
     </Table.Head>

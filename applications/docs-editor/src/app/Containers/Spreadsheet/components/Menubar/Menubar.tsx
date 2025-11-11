@@ -19,24 +19,20 @@ export interface MenubarProps extends Ariakit.MenubarProps {
   isPublicMode: boolean
 }
 
-export const Menubar = createComponent(function Menubar(props: MenubarProps) {
+export const Menubar = createComponent(function Menubar({ clientInvoker, isPublicMode, ...props }: MenubarProps) {
   return (
-    <div className="px-5">
-      <Ariakit.Menubar {...props} className={clsx('flex gap-5', props.className)}>
-        <FileMenu
-          renderMenuButton={<MenubarItem>{s('File')}</MenubarItem>}
-          clientInvoker={props.clientInvoker}
-          isPublicMode={props.isPublicMode}
-        />
-        <EditMenu renderMenuButton={<MenubarItem>{s('Edit')}</MenubarItem>} />
-        <ViewMenu renderMenuButton={<MenubarItem>{s('View')}</MenubarItem>} />
-        <InsertMenu renderMenuButton={<MenubarItem>{s('Insert')}</MenubarItem>} />
-        <FormatMenu renderMenuButton={<MenubarItem>{s('Format')}</MenubarItem>} />
-        <DataMenu renderMenuButton={<MenubarItem>{s('Data')}</MenubarItem>} />
-        {/* TODO: format menu */}
-        {/* TODO: data menu */}
-      </Ariakit.Menubar>
-    </div>
+    <Ariakit.Menubar {...props} className={clsx('flex gap-5', props.className)}>
+      <FileMenu
+        renderMenuButton={<MenubarItem>{s('File')}</MenubarItem>}
+        clientInvoker={clientInvoker}
+        isPublicMode={isPublicMode}
+      />
+      <EditMenu renderMenuButton={<MenubarItem>{s('Edit')}</MenubarItem>} />
+      <ViewMenu renderMenuButton={<MenubarItem>{s('View')}</MenubarItem>} />
+      <InsertMenu renderMenuButton={<MenubarItem>{s('Insert')}</MenubarItem>} />
+      <FormatMenu renderMenuButton={<MenubarItem>{s('Format')}</MenubarItem>} />
+      <DataMenu renderMenuButton={<MenubarItem>{s('Data')}</MenubarItem>} />
+    </Ariakit.Menubar>
   )
 })
 

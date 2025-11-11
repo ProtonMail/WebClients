@@ -140,7 +140,7 @@ function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
               render={
                 <Ariakit.Combobox
                   ref={comboboxRef}
-                  className="border-weak h-[1.875rem] w-[2.875rem] shrink-0 rounded-[.5rem] border text-center text-[.875rem] focus:border focus:border-[#6D4AFF] focus:outline-none focus:ring-[.1875rem] focus:ring-[#6D4AFF]/20"
+                  className="border-weak h-[1.875rem] w-[2.875rem] shrink-0 rounded-[.625rem] border text-center text-[.875rem] focus:border focus:border-[#6D4AFF] focus:outline-none focus:ring-[.1875rem] focus:ring-[#6D4AFF]/20"
                   autoComplete="inline"
                   // On combobox blur, reset the value
                   onBlur={() => combobox.setValue(String(realValue))}

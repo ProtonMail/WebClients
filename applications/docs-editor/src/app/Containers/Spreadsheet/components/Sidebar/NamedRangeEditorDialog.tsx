@@ -21,18 +21,10 @@ import { c } from 'ttag'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { createStringifier } from '../../stringifier'
 import { GenerateUUID } from '@proton/docs-shared'
+import { useUI } from '../../ui-store'
+import { useEvent } from '../utils'
 
 const { s } = createStringifier(strings)
-
-type NamedRangeEditorDialogProps = {
-  sheetId: number
-  onUpdateNamedRange: ReturnType<typeof useSpreadsheetState>['onUpdateNamedRange']
-  onCreateNamedRange: ReturnType<typeof useSpreadsheetState>['onCreateNamedRange']
-  onRequestDefineNamedRange: ReturnType<typeof useSpreadsheetState>['onRequestDefineNamedRange']
-  onDeleteNamedRange: (id: NamedRange['namedRangeId']) => void
-  idCreationStrategy?: UseSpreadsheetProps['idCreationStrategy']
-  namedRanges: NamedRange[]
-}
 
 interface NamedRangeListItemProps {
   namedRange: NamedRange
@@ -104,7 +96,7 @@ function NamedRangesList({
           onClick={onNewNamedRange}
         >
           <Icon legacyName="plus" />
-          {namedRanges.length > 0 ? 'Add another named range' : 'Add named range'}
+          {namedRanges.length > 0 ? s('Add another named range') : s('Add named range')}
         </button>
       </div>
     </div>
@@ -122,9 +114,9 @@ interface NamedRangeEditorProps {
   sheetId: number
   onDone: () => void
   onNewNamedRange: () => void
-  onUpdateNamedRange: NamedRangeEditorDialogProps['onUpdateNamedRange']
+  onUpdateNamedRange: ReturnType<typeof useSpreadsheetState>['onUpdateNamedRange']
   setNamedRangesState: React.Dispatch<React.SetStateAction<NamedRangesState>>
-  onCreateNamedRange: NamedRangeEditorDialogProps['onCreateNamedRange']
+  onCreateNamedRange: ReturnType<typeof useSpreadsheetState>['onCreateNamedRange']
   idCreationStrategy?: UseSpreadsheetProps['idCreationStrategy']
 }
 
@@ -170,13 +162,13 @@ function NamedRangeEditor({
         <div className="py-4">
           <div className="flex flex-col gap-4">
             <FormGroup>
-              <FormLabel htmlFor="name">Name</FormLabel>
+              <FormLabel htmlFor="name">{s('Name')}</FormLabel>
               <label className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3">
                 <input
                   id="name"
                   required
                   pattern="[^\s]+"
-                  title="Name should not contain spaces"
+                  title={s('Name should not contain spaces')}
                   autoFocus
                   className="h-full grow truncate text-sm !outline-none"
                   {...form.register('name')}
@@ -185,7 +177,7 @@ function NamedRangeEditor({
             </FormGroup>
 
             <FormGroup>
-              <FormLabel>Type</FormLabel>
+              <FormLabel>{s('Type')}</FormLabel>
 
               <Ariakit.RadioProvider
                 value={namedRangeType}
@@ -206,15 +198,15 @@ function NamedRangeEditor({
                 }}
               >
                 <Ariakit.RadioGroup className="flex items-center gap-4">
-                  <FormRadio value={NamedRangeTypes.Range}>Range</FormRadio>
-                  <FormRadio value={NamedRangeTypes.TextOrFormula}>Text or formula</FormRadio>
+                  <FormRadio value={NamedRangeTypes.Range}>{s('Range')}</FormRadio>
+                  <FormRadio value={NamedRangeTypes.TextOrFormula}>{s('Text or formula')}</FormRadio>
                 </Ariakit.RadioGroup>
               </Ariakit.RadioProvider>
             </FormGroup>
 
             {namedRangeType === NamedRangeTypes.Range ? (
               <FormGroup>
-                <FormLabel>Apply to range</FormLabel>
+                <FormLabel>{s('Apply to range')}</FormLabel>
                 <FormulaInput
                   onChange={(value) => {
                     const range = formulaToRange(value)
@@ -224,7 +216,7 @@ function NamedRangeEditor({
                   }}
                   value={range ? rangeToAddress(range) : '='}
                   required
-                  placeholder="Enter a formula"
+                  placeholder={s('Enter a formula')}
                   autoFocus
                   className="mb-0 w-full"
                 />
@@ -233,7 +225,7 @@ function NamedRangeEditor({
 
             {namedRangeType === NamedRangeTypes.TextOrFormula ? (
               <FormGroup>
-                <FormLabel>Enter text or formula</FormLabel>
+                <FormLabel>{s('Enter text or formula')}</FormLabel>
                 <FormulaInput
                   onChange={(value) => form.setValue('value', value)}
                   value={String(value ?? '')}
@@ -251,7 +243,7 @@ function NamedRangeEditor({
                 className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
               >
                 <Icon legacyName="plus" />
-                Add another named range
+                {s('Add another named range')}
               </button>
             </div>
           </div>
@@ -264,13 +256,13 @@ function NamedRangeEditor({
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onDone}
         >
-          Cancel
+          {s('Cancel')}
         </button>
         <button
           type="submit"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
         >
-          Save
+          {s('Save')}
         </button>
       </div>
     </form>
@@ -279,15 +271,14 @@ function NamedRangeEditor({
 
 type NamedRangesState = { type: 'list' } | { type: 'editNamedRange'; namedRange: NamedRange; key: string }
 
-function NamedRanges({
-  namedRanges,
-  sheetId,
-  onDeleteNamedRange,
-  onCreateNamedRange,
-  onUpdateNamedRange,
-  idCreationStrategy,
-  onRequestDefineNamedRange,
-}: NamedRangeEditorDialogProps) {
+function NamedRanges() {
+  const namedRanges = useUI((ui) => ui.legacy.namedRanges)
+  const sheetId = useUI((ui) => ui.legacy.activeSheetId)
+  const onDeleteNamedRange = useUI((ui) => ui.legacy.onDeleteNamedRange)
+  const onCreateNamedRange = useUI((ui) => ui.legacy.onCreateNamedRange)
+  const onUpdateNamedRange = useUI((ui) => ui.legacy.onUpdateNamedRange)
+  const onRequestDefineNamedRange = useUI((ui) => ui.legacy.onRequestDefineNamedRange)
+
   const api = useSpreadsheetApi()
   const namedRange = useEditingNamedRange()
   const [previousNamedRange, setPreviousNamedRange] = useState(namedRange)
@@ -301,13 +292,17 @@ function NamedRanges({
     setPreviousNamedRange(namedRange)
   }
 
-  const onNewNamedRange = () => {
+  const onNewNamedRange = useEvent(() => {
     const activeCell = api?.getActiveSheet()?.getActiveCell()
     const selections = api?.getActiveSheet()?.getSelections()
     if (activeCell && selections) {
       onRequestDefineNamedRange(sheetId, activeCell, selections)
     }
-  }
+  })
+  const setTypeToList = useEvent(() => () => setState({ type: 'list' }))
+  const onSelectNamedRange = useEvent((namedRange: NamedRange) =>
+    setState({ type: 'editNamedRange', namedRange, key: GenerateUUID() }),
+  )
 
   return (
     <Fragment>
@@ -315,9 +310,7 @@ function NamedRanges({
         <NamedRangesList
           namedRanges={namedRanges}
           sheetId={sheetId}
-          onSelectNamedRange={(namedRange) => {
-            setState({ type: 'editNamedRange', namedRange, key: GenerateUUID() })
-          }}
+          onSelectNamedRange={onSelectNamedRange}
           onNewNamedRange={onNewNamedRange}
           onDeleteNamedRange={onDeleteNamedRange}
         />
@@ -330,22 +323,21 @@ function NamedRanges({
           sheetId={sheetId}
           onCreateNamedRange={onCreateNamedRange}
           onUpdateNamedRange={onUpdateNamedRange}
-          onDone={() => setState({ type: 'list' })}
+          onDone={setTypeToList}
           onNewNamedRange={onNewNamedRange}
-          idCreationStrategy={idCreationStrategy}
         />
       ) : null}
     </Fragment>
   )
 }
 
-export function NamedRangeEditorDialog(props: NamedRangeEditorDialogProps) {
+export function NamedRangeEditorDialog() {
   const [open, setOpen] = useEditNamedRangeDialogState()
   return (
     <SidebarDialog open={open} setOpen={setOpen}>
       <div className="flex h-full min-h-0 flex-col">
-        <SidebarDialogHeader title="Named Ranges" />
-        <NamedRanges {...props} />
+        <SidebarDialogHeader title={s('Named Ranges')} />
+        <NamedRanges />
       </div>
     </SidebarDialog>
   )
@@ -353,6 +345,20 @@ export function NamedRangeEditorDialog(props: NamedRangeEditorDialogProps) {
 
 function strings() {
   return {
-    'Delete named range': c('sheets_2025:Spreadsheet sidebar named ranges dialog delete range').t`Delete named range`,
+    'Delete named range': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Delete named range`,
+    'Named Ranges': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Named Ranges`,
+    Name: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Name`,
+    'Name should not contain spaces': c('sheets_2025:Spreadsheet sidebar named ranges dialog')
+      .t`Name should not contain spaces`,
+    Type: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Type`,
+    Range: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Range`,
+    'Text or formula': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Text or formula`,
+    'Apply to range': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Apply to range`,
+    'Enter a formula': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Enter a formula`,
+    'Enter text or formula': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Enter text or formula`,
+    'Add another named range': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Add another named range`,
+    'Add named range': c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Add named range`,
+    Cancel: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Cancel`,
+    Save: c('sheets_2025:Spreadsheet sidebar named ranges dialog').t`Save`,
   }
 }

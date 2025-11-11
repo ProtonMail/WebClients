@@ -62,7 +62,7 @@ function useRenderHomepageView(): JSX.Element | null {
     // Document lists.
     case 'search':
       return <DocumentsTable itemsSections={state.itemSections} variant="search" />
-    case 'recents':
+    case 'recents': {
       let variant: TableVariant
       switch (state.sort) {
         case 'viewed':
@@ -87,6 +87,7 @@ function useRenderHomepageView(): JSX.Element | null {
           <DocumentsTable itemsSections={state.itemSections} variant={variant} />
         </>
       )
+    }
     case 'favorites':
       // TODO: implement favorites
       return null
@@ -156,7 +157,11 @@ function PreloadImages({ urls }: PreloadImagesProps) {
       return link
     })
 
-    return () => links.forEach((link) => link.remove())
+    return () => {
+      for (const link of links) {
+        link.remove()
+      }
+    }
   }, [urls])
 
   return null
