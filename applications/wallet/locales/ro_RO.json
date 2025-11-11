@@ -2774,7 +2774,7 @@
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
+        "Dacă veți continua cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
@@ -5035,6 +5035,9 @@
       "${ app } storage": [
         "Spațiul de stocare din ${ app }"
       ],
+      "${ app } storage used": [
+        "Spațiu utilizat de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } - ${ percentage }% ocupat"
       ],
@@ -5043,6 +5046,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pentru toate serviciile ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Spațiu utilizat"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."

@@ -503,6 +503,12 @@
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Maximum ${ TRIAL_MAX_SCRIBE_SEATS } Scribe licence lehet a próbaidőszakban."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Maximum ${ TRIAL_MAX_USERS } felhasználó lehet a próbaidőszakban."
+      ],
+      "You have reached the trial limit.": [
+        "Elérte a próbaverzió korlátját."
       ]
     },
     "b2b_trials_Action": {
@@ -794,6 +800,9 @@
       "Application problem": [
         "Probléma az alkalmazással"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bridge problem": [
         "A Birdge-zsel kapcsolatos probléma"
       ],
@@ -829,6 +838,9 @@
       ],
       "Manual setup problem": [
         "Probléma a kézi beállítással"
+      ],
+      "Meet problem": [
+        "Meet probléma"
       ],
       "Other": [
         "Egyéb"
@@ -990,14 +1002,37 @@
       ]
     },
     "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Hozzáférés fejlett MI modellekhez"
+      ],
       "Basic chat history": [
         "Alapszintű csevegési előzmények"
+      ],
+      "Full chat history with search": [
+        "Teljes csevegési előzmények, kereséssel"
       ],
       "Unlimited daily chats": [
         "Korlátlan napi csevegés"
       ],
+      "Unlimited favorites for quick access": [
+        "Korlátlan számú kedvenc, a gyors eléréshez"
+      ],
+      "Upload and query multiple large files": [
+        "Több nagy méretű fájl feltöltése és lekérdezése"
+      ],
       "Web search access": [
         "Webes keresési hozzáférés"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } egy adatvédelem-központú mesterséges intelligencia, amely segíti a tevékenységeiben, miközben adatai biztonságban maradnak. Aknázza ki lehetőségek teljes skáláját, és szerezzen korai hozzáférést az új funkciókhoz."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } hozzáadása"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Nagy sebességű csevegések és fejlett MI funkciók."
       ]
     },
     "color": {
@@ -2990,6 +3025,9 @@
       "Billing cycle": [
         "Számlázási ciklus"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Browser": [
         "Böngésző"
       ],
@@ -4307,6 +4345,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Ez idő alatt nem tudja módosítani vagy törölni az előfizetését. Kérjük, várjon, amíg a fizetés befejeződik, mielőtt bármilyen változtatással próbálkozna. Köszönjük türelmét."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }-t nem tartalmazza: ${ taxAmount }"
+      ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
         "${ taxRate }% adó nélkül: ${ taxAmount }"
       ],
@@ -4316,11 +4357,17 @@
       "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
         "${ taxRate }% ${ taxName }-t tartalmaz: ${ taxAmount }"
       ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% adót tartalmaz: ${ taxAmount }"
+      ],
       "MM/YY": [
         "HH/ÉÉ"
       ],
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Fizetési mód szükséges az előfizetés aktiválásához a próbaverzió lejárta után."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
@@ -4346,6 +4393,9 @@
         "A kedvezményes ár az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
         "A kedvezményes ár az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
       ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "A kedvezményes ár az első hónapra érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
         "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes."
@@ -4361,6 +4411,9 @@
         "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja.",
         "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja."
       ],
+      "This offer is not available with your current plan.": [
+        "Ez az ajánlat nem érhető el a jelenlegi csomagjával."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Ez a fizetési mód lesz az új alapértelmezett minden jövőbeli megújításhoz."
       ],
@@ -4370,11 +4423,17 @@
       "VAT": [
         "ÁFA"
       ],
+      "You already have a subscription to this plan.": [
+        "Már rendelkezik előfizetéssel ehhez a csomaghoz."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítjuk a PayPal oldalára."
       ],
       "Your payment is still being processed": [
         "A kifizetés még feldolgozás alatt van"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Az Ön előfizetése jelenleg kedvezménnyel rendelkezik. Az új promócióra való áttérés esetén, a meglévő kedvezmény a továbbiakban nem kerül alkalmazásra."
       ]
     },
     "Payments.Error": {
@@ -4405,6 +4464,9 @@
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-előfizetés fel nem használt részéért"
+      ],
+      "Credits will be added to your balance": [
+        "Kreditek az egyenlegéhez kerülnek hozzáadásra"
       ]
     },
     "Payments.plan_name": {
@@ -4748,6 +4810,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Minden ${ BRAND_NAME } szolgáltatáshoz"
+      ],
+      "Storage used": [
+        "Felhasznált tárhely"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "A fennmaradó időre járó krediteket hozzáadjuk a ${ BRAND_NAME } fiókjához."

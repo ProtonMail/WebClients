@@ -4983,6 +4983,9 @@
       "${ app } storage": [
         "Spazio di archiviazione di ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } archiviazione utilizzata"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } pieno al ${ percentage }%"
       ],
@@ -4991,6 +4994,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Per tutti i servizi ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Memoria utilizzata"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }."

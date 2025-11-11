@@ -4954,6 +4954,9 @@
       "${ app } storage": [
         "${ app } lagringsutrymme"
       ],
+      "${ app } storage used": [
+        "${ app } lagringsutrymme använt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fullt"
       ],
@@ -4962,6 +4965,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
+      ],
+      "Storage used": [
+        "Lagringsutrymme använt"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vi lägger till krediterna för den återstående tiden till ditt ${ BRAND_NAME }-konto."
