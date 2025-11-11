@@ -28,11 +28,22 @@ type Props = {
     onClose: () => void;
 };
 
+const getHeaderTextFromStatus = (status: TransferManagerStatus): string => {
+    switch (status) {
+        case TransferManagerStatus.InProgress:
+            return c('Info').t`In progress`;
+        case TransferManagerStatus.Failed:
+            return c('Info').t`Some items failed`;
+        default:
+            return c('Info').t`Done`;
+    }
+};
+
 export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: Props) => {
     const { progressPercentage, status, items } = useTransferManagerState();
     const { cancelAll, confirmModal } = useTransferManagerActions();
+    const headerText = getHeaderTextFromStatus(status);
     const normalizedProgress = Math.min(100, Math.max(0, Math.round(progressPercentage)));
-    const headerText = c('Info').t`In progress`;
     const progressText = c('Info').t`${normalizedProgress}% completed`;
     const cancelText = c('Action').t`Cancel all`;
     const pbStatus = getProgressBarStatus(status);
