@@ -503,6 +503,8 @@ export const getUpdatedPlanIDs = ({
         });
         return { upsell, planIDs };
     }
+
+    // not handling visionary-downgrade because V2 signup page already catches it with the AccessModal
 };
 
 const replaceBf2025LumoAddonCoupon = ({

@@ -633,7 +633,7 @@ export async function initializePaymentMethods({
     enableSepaB2C?: boolean;
     user?: User;
     planIDs?: PlanIDs;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
     canUseGooglePay?: boolean;
     isTrial?: boolean;

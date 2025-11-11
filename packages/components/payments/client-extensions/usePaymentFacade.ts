@@ -10,6 +10,7 @@ import {
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
     type Currency,
+    type FreeSubscription,
     PAYMENT_METHOD_TYPES,
     type PLANS,
     type PaymentMethodFlow,
@@ -97,7 +98,7 @@ type PaymentFacadeProps = {
     theme?: ThemeLike;
     billingAddress?: BillingAddress;
     user?: User;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
     onBeforeSepaPayment?: () => Promise<boolean>;
     planIDs?: PlanIDs;
     isTrial?: boolean;

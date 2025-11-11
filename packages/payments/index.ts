@@ -331,6 +331,7 @@ export {
 export { getRenewCycle } from './core/renewals';
 export { extractIBAN, type ExtendedExtractIBANResult } from './core/sepa';
 export { Audience, Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive } from './core/subscription/constants';
+export { getIsPlanTransitionForbidden, isForbiddenLumoPlus } from './core/subscription/forbidden-plan-transition';
 export { FREE_PLAN, getFreeCheckResult, getFreeTitle } from './core/subscription/freePlans';
 export {
     allCycles,
@@ -354,7 +355,6 @@ export {
     getHasSomeVpnPlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
-    getIsPlanTransitionForbidden,
     getIsVariableCycleOffer,
     getLongerCycle,
     getMaximumCycleForApp,
@@ -417,7 +417,6 @@ export {
     isAnyManagedExternally,
     isAutoRenewTrial,
     isCancellableOnlyViaSupport,
-    isForbiddenLumoPlus,
     isManagedExternally,
     isRegularCycle,
     isSubscriptionCheckForbidden,

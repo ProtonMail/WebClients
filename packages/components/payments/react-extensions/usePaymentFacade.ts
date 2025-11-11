@@ -11,6 +11,7 @@ import type {
     ChargebeePaypalModalHandles,
     Currency,
     Cycle,
+    FreeSubscription,
     GooglePayModalHandles,
     PLANS,
     PaymentMethodFlow,
@@ -230,7 +231,7 @@ export const usePaymentFacade = (
         enableSepaB2C?: boolean;
         onBeforeSepaPayment?: () => Promise<boolean>;
         planIDs?: PlanIDs;
-        subscription?: Subscription;
+        subscription?: Subscription | FreeSubscription;
         isTrial?: boolean;
         canUseApplePay?: boolean;
         canUseGooglePay?: boolean;
