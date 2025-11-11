@@ -23,6 +23,8 @@ export const DesktopVersionSchema = z.object({
     ),
     RolloutProportion: z.number(),
     ManualUpdate: z.array(z.string()).optional(),
+    MinimumOsVersion: z.string().optional(),
+    MinimumAppVersion: z.string().optional(),
 });
 
 export const VersionFileSchema = z.object({
