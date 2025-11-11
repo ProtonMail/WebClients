@@ -16,6 +16,12 @@
 		}
 	}
 
+	.project-breadcrumb {
+		&:hover {
+			background-color: var(--background-weak);
+		}
+	}
+
 	@include media('<=small') {
 		.conversation-header-title-view {
 			display: none;

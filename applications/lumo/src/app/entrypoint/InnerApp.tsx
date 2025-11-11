@@ -4,6 +4,8 @@ import { Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-rou
 import { MainLayout } from '../ui/MainLayout';
 import EligibilityGuard from '../ui/components/EligibillityGuard/EligibilityGuard';
 import PerformanceMonitor from '../ui/components/PerformanceMonitor';
+import { ProjectDetailView } from '../ui/projects/ProjectDetailView';
+import { ProjectsView } from '../ui/projects/ProjectsView';
 
 export type InnerAppProps = {
     conversationComponent: React.ComponentType<any>;
@@ -18,6 +20,8 @@ export function InnerApp({ conversationComponent, headerComponent }: InnerAppPro
             <Router basename={url}>
                 <MainLayout HeaderComponent={headerComponent}>
                     <Switch>
+                        <Route exact path="/projects" component={ProjectsView} />
+                        <Route path="/projects/:projectId" component={ProjectDetailView} />
                         <Route exact path="/" component={conversationComponent} />
                         <Route path="/c/:conversationId" component={conversationComponent} />
                     </Switch>
