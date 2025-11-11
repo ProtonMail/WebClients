@@ -24,7 +24,7 @@ import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents
 import { FormRangeList } from './FormRangeList';
 
 export const Form = () => {
-    const scheduleOptions = getCalendarEventDefaultDuration({ includeShortDurations: true, shortLabels: true });
+    const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
     const locationOptions = getBookingLocationOption();
 
     const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
