@@ -8,11 +8,8 @@ import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
 import {
     AccessibilitySection,
+    AccountDashboard,
     AccountRecoverySection,
-    AlsoInYourPlanProtonDrive,
-    AlsoInYourPlanProtonPass,
-    AlsoInYourPlanProtonVPN,
-    AlsoInYourPlanSection,
     AssistantToggle,
     AutomaticSubscriptionModal,
     CancelSubscriptionSection,
@@ -32,8 +29,6 @@ import {
     InvoicesSection,
     LanguageAndTimeSection,
     LogsSection,
-    MailBlogSection,
-    MailDownloadAndInfoSection,
     OverviewSection,
     PasswordsSection,
     PaymentMethodsSection,
@@ -89,7 +84,7 @@ const AccountSettingsRouter = ({
     const {
         routes: {
             vpnDashboardV2,
-            mailDashboardV2,
+            dashboardV2,
             subscription,
             dashboard,
             upgrade,
@@ -124,26 +119,11 @@ const AccountSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 </Route>
             )}
-            {getIsSectionAvailable(mailDashboardV2) && (
-                <Route path={getSectionPath(path, mailDashboardV2)}>
+            {getIsSectionAvailable(dashboardV2) && (
+                <Route path={getSectionPath(path, dashboardV2)}>
                     <DashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
-                    <PrivateMainSettingsArea
-                        config={mailDashboardV2}
-                        mainAreaClass="bg-lowered settings-cards"
-                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
-                        style={{ '--max-w-custom': '93.75rem' }}
-                    >
-                        <YourPlanSectionV2 app={app} />
-                        <YourPlanUpsellsSectionV2 app={app} />
-                        <MailDownloadAndInfoSection app={app} />
-                        <AlsoInYourPlanSection app={app}>
-                            <AlsoInYourPlanProtonPass />
-                            <AlsoInYourPlanProtonDrive />
-                            <AlsoInYourPlanProtonVPN />
-                        </AlsoInYourPlanSection>
-                        <MailBlogSection />
-                    </PrivateMainSettingsArea>
+                    <AccountDashboard app={app} config={dashboardV2} />
                 </Route>
             )}
             {getIsSectionAvailable(subscription) && (

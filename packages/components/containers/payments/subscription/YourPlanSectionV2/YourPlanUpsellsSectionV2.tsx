@@ -24,12 +24,15 @@ import {
     hasFamily,
     hasLumo,
     hasMail,
+    hasPass,
+    hasPassFamily,
     hasVPN2024,
     hasVPNPassBundle,
 } from '@proton/payments';
 import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import useVariant from '@proton/unleash/useVariant';
 import isTruthy from '@proton/utils/isTruthy';
@@ -44,9 +47,6 @@ import FamilyBanner from './Upsells/FamilyBanner';
 import FamilyBannerExtendSubscription, {
     useFamilyBannerExtendSubscription,
 } from './Upsells/FamilyBannerExtendSubscription';
-import MailPlusExtendSubscription, { useMailPlusExtendSubscription } from './Upsells/MailPlusExtendSubscription';
-import MailPlusFromFree, { useMailPlusFromFreeUpsells } from './Upsells/MailPlusFromFree';
-import PBSB2BBanner from './Upsells/PBSB2BBanner';
 import UnlimitedBannerExtendSubscription, {
     useUnlimitedBannerExtendSubscription,
 } from './Upsells/UnlimitedBannerExtendSubscription';
@@ -55,6 +55,14 @@ import UnlimitedBannerPlain from './Upsells/UnlimitedBannerPlain';
 import VPNB2BBanner from './Upsells/VPNB2BBanner';
 import VpnPlusExtendSubscription, { useVpnPlusExtendSubscription } from './Upsells/VpnPlusExtendSubscription';
 import VpnPlusFromFree, { useVpnPlusFromFreeUpsells } from './Upsells/VpnPlusFromFree';
+import MailPlusExtendSubscription, { useMailPlusExtendSubscription } from './Upsells/mail/MailPlusExtendSubscription';
+import MailPlusFromFree, { useMailPlusFromFreeUpsells } from './Upsells/mail/MailPlusFromFree';
+import PassFamilyBannerExtendSubscription, {
+    usePassFamilyBannerExtendSubscription,
+} from './Upsells/pass/PassFamilyBannerExtendSubscription';
+import PassPlusExtendSubscription, { usePassPlusExtendSubscription } from './Upsells/pass/PassPlusExtendSubscription';
+import PassPlusFromFree, { usePassPlusFromFreeUpsells } from './Upsells/pass/PassPlusFromFree';
+import PBSB2BBanner from './Upsells/PBSB2BBanner';
 
 export interface UpsellSectionBaseProps {
     app: APP_NAMES;
@@ -123,6 +131,9 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const unlimitedBannerExtendSubscriptionUpsells = useUnlimitedBannerExtendSubscription(upsellParams);
     const duoBannerExtendSubscriptionUpsells = useDuoBannerExtendSubscription(upsellParams);
     const familyBannerExtendSubscriptionUpsells = useFamilyBannerExtendSubscription(upsellParams);
+    const passPlusFromFreeUpsells = usePassPlusFromFreeUpsells(upsellParams);
+    const passPlusExtendSubscriptionUpsells = usePassPlusExtendSubscription(upsellParams);
+    const passFamilyBannerExtendSubscriptionUpsells = usePassFamilyBannerExtendSubscription(upsellParams);
 
     const upsellSections = [
         {
@@ -325,6 +336,59 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
+            ),
+        },
+        {
+            enabled:
+                (hasMailFree || hasPassFree || hasVPNFree || hasDriveFree || hasLumoPlus) && app === APPS.PROTONPASS,
+            upsells: [...passPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
+            element: (
+                <>
+                    <PassPlusFromFree subscription={subscription as Subscription} {...passPlusFromFreeUpsells} />
+                    <UnlimitedBannerGradient
+                        showProductCards={false}
+                        showUpsellPanels={false}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                </>
+            ),
+        },
+        {
+            enabled: (hasPass(subscription) && subscription?.Cycle === CYCLE.YEARLY) || hasPassLifetime(user),
+            upsells: passPlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
+            ),
+        },
+        {
+            enabled: hasPass(subscription),
+            upsells: passPlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <PassPlusExtendSubscription
+                        subscription={subscription as Subscription}
+                        {...passPlusExtendSubscriptionUpsells}
+                    />
+                    <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
+                </>
+            ),
+        },
+        {
+            enabled: hasPassFamily(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
+            element: (
+                <PassFamilyBannerExtendSubscription
+                    subscription={subscription as Subscription}
+                    showUpsellPanels={true}
+                    {...passFamilyBannerExtendSubscriptionUpsells}
+                />
             ),
         },
         {

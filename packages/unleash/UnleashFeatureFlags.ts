@@ -93,6 +93,7 @@ enum AccountFlag {
     DataRetentionPolicy = 'DataRetentionPolicy',
     UserGroupsNoCustomDomain = 'UserGroupsNoCustomDomain',
     MailDashboard = 'MailDashboard',
+    PassDashboard = 'PassDashboard',
 }
 
 enum PaymentsFlag {

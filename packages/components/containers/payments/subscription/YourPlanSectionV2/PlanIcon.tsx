@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import {
     type FreeSubscription,
@@ -15,12 +16,15 @@ import {
     hasFree,
     hasLumo,
     hasMail,
+    hasPass,
     hasPassFamily,
     hasVPNPassBundle,
     hasVisionary,
     hasVpnBusiness,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 import CustomLogo from './CustomLogo';
@@ -42,6 +46,7 @@ const LogoIconShape = ({ children, border = true, size }: { children: ReactNode;
 
 export const PlanIcon = ({
     app,
+    user,
     subscription,
     planName,
     size = 44, // size in px
@@ -50,6 +55,7 @@ export const PlanIcon = ({
     subscription?: Subscription | FreeSubscription;
     planName?: PLANS;
     size?: number;
+    user?: UserModel;
 }) => {
     if (hasVPNPassBundle(subscription) || planName === PLANS.VPN_PASS_BUNDLE) {
         return (
@@ -79,6 +85,13 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
+    if (hasPass(subscription) || planName === PLANS.PASS) {
+        return (
+            <LogoIconShape size={size}>
+                <PassLogo variant="glyph-only" scale={size / 44} />
+            </LogoIconShape>
+        );
+    }
     if (hasBundle(subscription) || hasVisionary(subscription) || planName === PLANS.BUNDLE) {
         return (
             <LogoIconShape border={false} size={size}>
@@ -93,10 +106,24 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (hasFamily(subscription) || hasPassFamily(subscription) || planName === PLANS.FAMILY) {
+    if (hasFamily(subscription) || planName === PLANS.FAMILY) {
         return (
             <LogoIconShape border={false} size={size}>
                 <CustomLogo planName={PLANS.FAMILY} app={app} />
+            </LogoIconShape>
+        );
+    }
+    if (hasPassFamily(subscription) || planName === PLANS.PASS_FAMILY) {
+        return (
+            <LogoIconShape border={false} size={size}>
+                <CustomLogo planName={PLANS.PASS_FAMILY} app={app} />
+            </LogoIconShape>
+        );
+    }
+    if (user && hasPassLifetime(user)) {
+        return (
+            <LogoIconShape border={false} size={size}>
+                <CustomLogo planName={PLANS.PASS_LIFETIME} app={app} />
             </LogoIconShape>
         );
     }
