@@ -420,6 +420,9 @@
       "Create new policy": [
         "Criar uma política"
       ],
+      "Create organization": [
+        "Criar organização"
+      ],
       "Create users": [
         "Criar usuários"
       ],
@@ -1479,6 +1482,9 @@
       "Submit": [
         "Enviar"
       ],
+      "Subscribe": [
+        "Inscrever-me"
+      ],
       "Subscribe now": [
         "Assine agora"
       ],
@@ -1732,6 +1738,10 @@
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "Assistente de IA da ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Assistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuário)",
+        "Assistente de IA ${ LUMO_APP_NAME } (para ${ quantity } usuários)"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -2510,14 +2520,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Política de não registro do ${ VPN_APP_NAME } confirmada por uma auditoria externa"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Exclusão automática**, **adiar** e **agendamento de e-mail** estão incluídos na sua assinatura."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Streaming** está incluído na sua assinatura."
+      ],
+      "11 tips to stop spam emails": [
+        "11 dicas para parar e-mails de spam"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Automatize ações recorrentes para classificar e organizar e-mails recebidos."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Alguém pode ver meu histórico de internet se usarmos o mesmo WiFi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Descubra nossas dicas para gerenciar sua caixa de entrada de forma eficaz e manter a produtividade e o foco."
+      ],
+      "Easily manage your inbox": [
+        "Gerencie facilmente sua caixa de entrada"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Gerencie facilmente sua caixa de entrada com Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Ative o kill switch e a conexão automática nas configurações da VPN."
+      ],
+      "Get a clean inbox with filters": [
+        "Tenha uma caixa de entrada limpa com filtros"
       ],
       "Get round-the-clock protection": [
         "Obtenha proteção 24 horas por dia"
@@ -2527,6 +2558,15 @@
       ],
       "How to change your IP address on Windows": [
         "Como mudar o seu enderenço de IP no Windows"
+      ],
+      "How to get a custom email domain": [
+        "Como obter um domínio de e-mail personalizado"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Como alcançar a caixa de entrada vazia: dicas de organização da caixa de entrada com foco na privacidade"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Se você quer elevar sua identidade profissional, é importante aprender por que e como criar um domínio de e-mail personalizado. A maioria das pessoas usa endereços de e-mail gratuitos com domínios padrão fornecidos pelo serviço de e-mail delas."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Neste artigo, veremos quem pode ver seu histórico da Internet quando você usa WiFi, o que eles podem ver e por que podem fazer isso."
@@ -2540,8 +2580,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "O Telegram é seguro para uso? Como discutiremos neste artigo, isso depende muito de como você o usa."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Aprenda como se livrar de e-mails indesejados e potencialmente prejudiciais. E-mails de spam, também conhecidos como lixo eletrônico, podem ser mais do que apenas uma bagunça irritante na sua caixa de entrada. Criminosos cibernéticos podem usar essas mensagens não solicitadas e indesejadas para lançar ataques de phishing e disseminar malware."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Aprenda como ativar o ${ VPN_APP_NAME } no seu roteador."
+      ],
+      "Protect your business communications": [
+        "Proteja as comunicações da sua empresa."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Proteja sua empresa contra violações de dados e torne o trabalho remoto mais seguro com uma VPN empresarial."
@@ -2549,11 +2595,26 @@
       "Protect your whole household with 1 device": [
         "Proteja toda a sua casa com 1 dispositivo"
       ],
+      "See and manage all your email subscriptions": [
+        "Veja e gerencie todas as suas assinaturas de e-mail."
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Faça streaming para todas as grandes plataformas com ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "O profissional médio recebe cerca de 120 e-mails por dia, o que totaliza aproximadamente 43.800 e-mails por ano. Não importa em qual setor você trabalhe, essa é uma quantidade esmagadora de e-mails de trabalho para lidar."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "O impacto que uma violação de dados pode ter na sua vida depende muito do tipo de informação que foi exposta e para quem. Uma reação rápida a uma violação de dados pode muitas vezes proteger a sua identidade digital e prevenir quaisquer perdas."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "A maneira mais privada e segura de se comunicar on-line é usando criptografia de ponta a ponta. Se você enviar um e-mail criptografado de ponta a ponta, ele é criptografado no seu dispositivo (seu iPhone, Android ou laptop) e não é descriptografado até chegar ao dispositivo da pessoa para quem você enviou a mensagem."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Este artigo foi atualizado para incluir os protocolos WireGuard e Stealth VPN."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Experimente a **visualização de newsletters** para organizar sua caixa de entrada."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator usa uma combinação de tecnologias VPN avançadas para melhorar a estabilidade da conexão e aumentar sua velocidade de conexão"
@@ -2567,11 +2628,23 @@
       "What is an email alias?": [
         "O que é um alias de e-mail?"
       ],
+      "What is end-to-end encryption and how does it work?": [
+        "O que é criptografia de ponta a ponta e como funciona?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "O que fazer se seus dados forem vazados em uma violação de dados"
+      ],
       "Which VPN protocol is the best?": [
         "Qual protocolo VPN é o melhor?"
       ],
       "Working with sensitive data?": [
         "Trabalhando com dados confidenciais?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Trabalhando com dados sensíveis? Use ${ MAIL_APP_NAME } para proteger suas comunicações e construir confiança com os clientes."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Seu endereço de e-mail pessoal é uma parte essencial da sua identidade digital. Assim como seu número de telefone, você não o fornece a todas as pessoas que conhece. Por isso, é útil ter outros endereços de e-mail que você possa usar para diferentes finalidades."
       ]
     },
     "breadcrumb": {
@@ -4356,6 +4429,9 @@
       ]
     },
     "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Experimente a verdadeira liberdade on-line e proteja sua privacidade."
+      ],
       "Get more from your ${ planTitle } subscription.": [
         "Aproveite ao máximo sua assinatura do ${ planTitle }."
       ],
@@ -7214,6 +7290,9 @@
       ],
       "and more premium features...": [
         "e outros recursos premium..."
+      ],
+      "Connect custom domain": [
+        "Conecte seu domínio personalizado"
       ],
       "Desktop app": [
         "Aplicativo para computador"
@@ -11398,6 +11477,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Você pode mesclar calendários importados com calendários existentes da ${ BRAND_NAME }."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Você pode alterar a alocação de armazenamento em **Usuários e endereços**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Você pode alterar isso a qualquer momento em ${ settingsLink }."
       ],
@@ -11677,6 +11759,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Seu plano começa em ${ renewalTime } e será renovado automaticamente todo mês."
       ],
+      "Your storage": [
+        "Seu armazenamento"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Sua assinatura será renovada automaticamente em ${ renewalTime }."
       ],
@@ -11786,6 +11871,11 @@
         "Somente leitura"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "É assim que sua organização aparecerá para os usuários. Você pode mudar isso a qualquer momento."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Não é um endereço de e-mail válido"
@@ -11799,6 +11889,11 @@
     "Input placeholder": {
       "Add label": [
         "Adicionar marcador"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Qual é o nome da sua organização?"
       ]
     },
     "invitation status": {
@@ -13882,6 +13977,9 @@
       ],
       "Reactivate now": [
         "Reativar agora"
+      ],
+      "Reactivate subscription": [
+        "Reativar assinatura"
       ],
       "Request an invite": [
         "Solicitar um convite"
@@ -17370,6 +17468,9 @@
       "End date": [
         "Data final"
       ],
+      "Enter name": [
+        "Inserir nome"
+      ],
       "example@domain.com": [
         "exemplo@dominio.com"
       ],
@@ -17832,6 +17933,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Após essa data, sua conta fará o downgrade para **${ BRAND_NAME } Free**. Se você mudar de ideia, você pode **reativar sua assinatura** para manter o acesso a recursos premium."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
@@ -20940,6 +21044,9 @@
       "Organization logo updated": [
         "Logotipo da organização atualizado"
       ],
+      "Organization name set": [
+        "Nome da organização definido"
+      ],
       "Organization name updated": [
         "Nome da organização atualizado"
       ],
@@ -21957,6 +22064,9 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com 2FA"
       ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Aproveite o acesso rápido e fácil aos seus e-mails com nossos aplicativos dedicados."
+      ],
       "Enter endpoints into your identity provider": [
         "Insira endpoints em seu provedor de identidade"
       ],
@@ -22074,6 +22184,9 @@
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Receba **${ referralInfo.uiData.refereeRewardAmount }** em créditos com ${ planTitle }"
+      ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Obtenha acesso ao aplicativo de desktop com ${ mailPlusPlanName }. ${ upgradeButton }"
       ],
       "Get complete privacy coverage": [
         "Obtenha a cobertura completa de privacidade"
@@ -22830,6 +22943,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Bem-vindo ao ${ planName }"
+      ],
       "What is an alias?": [
         "O que é um alias?"
       ],
@@ -23021,6 +23137,9 @@
       ],
       "Account is disconnected": [
         "A conta está desconectada"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Adicionado ao seu plano: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerenciar contas de usuários e conceder privilégios de administrador a outros usuários. Somente o administrador principal pode editar o plano da organização."
