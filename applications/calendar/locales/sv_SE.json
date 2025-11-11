@@ -50,6 +50,9 @@
       "Add": [
         "Lägg till"
       ],
+      "Add a date": [
+        "Lägg till ett datum"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -170,6 +173,9 @@
       ],
       "Close navigation": [
         "Stäng navigering"
+      ],
+      "Close sidebar": [
+        "Stäng sidopanel"
       ],
       "Close this banner": [
         "Stäng denna banner"
@@ -826,6 +832,9 @@
       ],
       "Skip verification": [
         "Hoppa över verifiering"
+      ],
+      "Split current booking range": [
+        "Dela nuvarande bokningsintervall"
       ],
       "Start import": [
         "Starta import"
@@ -5059,6 +5068,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } videosamtal"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5716,6 +5728,9 @@
       "New": [
         "Ny"
       ],
+      "No available slots for this day": [
+        "Inga tillgängliga luckor för denna dag"
+      ],
       "No contacts added yet": [
         "Inga kontakter tillagda ännu"
       ],
@@ -6255,6 +6270,9 @@
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
       ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "Du kan inte ha fler än ${ MAX_BOOKING_SLOTS } bokningsluckor på en sida."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
@@ -6275,6 +6293,9 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Du har tidigare avvisat denna inbjudan. Be ägaren om en ny inbjudan"
+      ],
+      "You will loose all unsaved changes.": [
+        "Du kommer förlora alla osparade ändringar."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
@@ -7249,6 +7270,9 @@
       ],
       "Reactivate now": [
         "Återaktivera nu"
+      ],
+      "Reactivate subscription": [
+        "Återaktivera prenumeration"
       ],
       "Request an invite": [
         "Begär en inbjudan"
@@ -10360,6 +10384,9 @@
       "${ app } storage": [
         "${ app } lagringsutrymme"
       ],
+      "${ app } storage used": [
+        "${ app } lagringsutrymme använt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fullt"
       ],
@@ -10371,6 +10398,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
+      ],
+      "Storage used": [
+        "Lagringsutrymme använt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ upgrade }"
@@ -11396,6 +11426,9 @@
       ],
       "Desktop": [
         "Stationär dator"
+      ],
+      "Discard changes?": [
+        "Ignorera ändringar?"
       ],
       "Does not repeat": [
         "Upprepas inte"

@@ -50,6 +50,9 @@
       "Add": [
         "Adăugare"
       ],
+      "Add a date": [
+        "Adăugare dată"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -172,6 +175,9 @@
       "Close navigation": [
         "Închidere navigare"
       ],
+      "Close sidebar": [
+        "Închidere bară laterală"
+      ],
       "Close this banner": [
         "Închidere norificare"
       ],
@@ -231,6 +237,9 @@
       ],
       "Copy link": [
         "Copiere legătură web"
+      ],
+      "Copy link and close": [
+        "Copiere legătură web și închidere"
       ],
       "Copy password": [
         "Copiere parolă"
@@ -689,6 +698,9 @@
       "Remove gift code": [
         "Eliminare cod cadou"
       ],
+      "Remove the booking range": [
+        "Eliminare interval de rezervare"
+      ],
       "Remove this notification": [
         "Eliminare această notificare"
       ],
@@ -823,6 +835,9 @@
       ],
       "Skip verification": [
         "Ignorare verificare"
+      ],
+      "Split current booking range": [
+        "Divizare perioadă curentă de rezervare"
       ],
       "Start import": [
         "Pornire importare"
@@ -1266,6 +1281,13 @@
     "Attendee role": {
       "Optional": [
         "Opțional"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3223,6 +3245,9 @@
       "Your account and data recovery methods are set.": [
         "Metodele de recuperare a contului și datelor sunt setate."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Veți primi în scurt timp un e-mail securizat cu detaliile."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
       ]
@@ -5124,6 +5149,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ MEET_APP_NAME } video call": [
+        "Apel video ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5380,6 +5408,9 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Nu găsiți evenimentele căutate? Unele evenimente din calendarele ascunse se potrivesc cu textul căutat. Pentru a vedea aceste rezultate, activați vizibilitatea pentru ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create booking range across days": [
+        "Nu se poate crea un interval de rezervare pe parcursul mai multor zile."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
@@ -5654,7 +5685,7 @@
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
+        "Dacă veți continua cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
@@ -5972,6 +6003,11 @@
       "Removed participants will be notified.": [
         "Participanţii eliminaţi vor fi notificaţi."
       ],
+      "Saving event": [
+        "Se salvează evenimentul",
+        "Se salvează evenimentele",
+        "Se salvează evenimentele"
+      ],
       "Scan the QR code with your mobile device": [
         "Scanați codul QR cu dispozitivul mobil"
       ],
@@ -6004,6 +6040,9 @@
       ],
       "Setting up your new address…": [
         "Vi se configurează noile adrese…"
+      ],
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Partajați această pagină pentru a le permite altora să-și rezerve timp în calendarul dvs. Îl puteți gestiona oricând în bara laterală, în „Pagini de rezervare”."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
@@ -6367,6 +6406,9 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anterior ați respins această invitație. Solicitați proprietarului o reinvitare."
+      ],
+      "You will loose all unsaved changes.": [
+        "Veți pierde toate modificările nesalvate."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
@@ -7202,6 +7244,17 @@
         "Conferință pe Zoom"
       ]
     },
+    "label": {
+      "Date of the booking range": [
+        "Data intervalului de rezervare"
+      ],
+      "End time of the booking range": [
+        "Ora de sfârșit a intervalului de rezervare"
+      ],
+      "Start time of the booking range": [
+        "Oră început interval de rezervare"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Culoare"
@@ -7341,6 +7394,9 @@
       ],
       "Reactivate now": [
         "Reactivare acum"
+      ],
+      "Reactivate subscription": [
+        "Reactivare abonament"
       ],
       "Request an invite": [
         "Solicitați o invitație"
@@ -9814,6 +9870,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Dacă vă abonați înainte de această dată**, veți primi **${ referrerRewardAmount }** în credite."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "După acea dată, contul va fi retrogradat la **${ BRAND_NAME } Free**. Dacă vă răzgândiți, vă puteți **reactiva abonamentul** pentru a vă păstra accesul la funcțiile speciale."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Câștigați până la ${ maxRewardAmount } în credite. Veți primi ${ referrerRewardAmount } atunci când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
       ],
@@ -10548,6 +10607,9 @@
       "${ app } storage": [
         "Spațiul de stocare din ${ app }"
       ],
+      "${ app } storage used": [
+        "Spațiu utilizat de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } - ${ percentage }% ocupat"
       ],
@@ -10559,6 +10621,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pentru toate serviciile ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Spațiu utilizat"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ upgrade }"
@@ -11615,6 +11680,9 @@
       "Desktop": [
         "Desktop"
       ],
+      "Discard changes?": [
+        "Anulare modificări?"
+      ],
       "Does not repeat": [
         "Nu se repetă"
       ],
@@ -11728,6 +11796,9 @@
       ],
       "High security for your account": [
         "Securitate maximă pentru cont"
+      ],
+      "Host": [
+        "Gazdă"
       ],
       "How does it all work?": [
         "Cum funcționează tot?"
@@ -12102,6 +12173,9 @@
       ],
       "Your account is protected": [
         "Contul este protejat"
+      ],
+      "Your booking is confirmed": [
+        "Rezervarea este confirmată"
       ],
       "Your booking page is ready": [
         "Pagina de rezervare este gata."
