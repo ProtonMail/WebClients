@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } für Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } für iOS"
+      ],
       "Accept": [
         "Annehmen"
       ],
@@ -304,6 +310,9 @@
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } holen"
       ],
+      "Get mobile and desktop apps": [
+        "Mobile und Desktop-Apps herunterladen"
+      ],
       "Get mobile apps": [
         "Mobile Apps holen"
       ],
@@ -441,12 +450,6 @@
       ],
       "Organize vaults": [
         "Tresore organisieren"
-      ],
-      "Pass for Android": [
-        "Pass für Android"
-      ],
-      "Pass for iOS": [
-        "Pass für iOS"
       ],
       "Pass Monitor": [
         "Pass Monitor"
@@ -1863,10 +1866,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"

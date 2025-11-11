@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "Android için ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "iOS için ${ PASS_SHORT_APP_NAME }"
+      ],
       "Accept": [
         "Kabul et"
       ],
@@ -304,6 +310,9 @@
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } tarifesini edinin"
       ],
+      "Get mobile and desktop apps": [
+        "Mobil ve bilgisayar uygulamalarını edinin"
+      ],
       "Get mobile apps": [
         "Mobil uygulamaları edinin"
       ],
@@ -441,12 +450,6 @@
       ],
       "Organize vaults": [
         "Kasaları düzenle"
-      ],
-      "Pass for Android": [
-        "Android için Proton Pass"
-      ],
-      "Pass for iOS": [
-        "iOS için Proton Pass"
       ],
       "Pass Monitor": [
         "Pass Monitor"
@@ -1863,10 +1866,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
