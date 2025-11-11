@@ -464,6 +464,9 @@
       "Get more servers": [
         "サーバーを増やす"
       ],
+      "Get more storage": [
+        "ストレージを増やす"
+      ],
       "Get the apps": [
         "アプリを入手"
       ],
@@ -1070,11 +1073,23 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ BRAND_NAME } Scribe執筆アシスタント"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } 追加カスタムドメイン"
       ],
       "${ ips } server": [
         "${ ips } 台のサーバー"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI アシスタント"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "(${ quantity }ユーザー向け) ${ LUMO_APP_NAME } AIアシスタント"
       ],
       "${ price } per dedicated server": [
         "専用サーバーあたり ${ price }"
@@ -1087,6 +1102,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } 個のカスタムドメイン"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } の ${ seats } シート"
@@ -4734,6 +4752,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } 台のデバイス"
       ],
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "@pm.me address": [
+        "@pm.me メールアドレス"
+      ],
       "Ad-blocker and malware protection": [
         "広告ブロックとマルウェア保護"
       ],
@@ -4742,6 +4766,12 @@
       ],
       "and more premium features...": [
         "そして更に、プレミアムな機能が..."
+      ],
+      "Connect custom domain": [
+        "カスタムドメインを接続"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
       ],
       "Double VPN": [
         "ダブルVPN"
@@ -4754,6 +4784,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield による広告ブロック"
+      ],
+      "Priority support": [
+        "優先サポート"
       ],
       "Secure streaming": [
         "安全なストリーミング"
@@ -5093,6 +5126,9 @@
       ],
       "Domain": [
         "ドメイン"
+      ],
+      "Drag to reorder": [
+        "ドラッグして並び替え"
       ],
       "Status": [
         "状態"
@@ -8203,6 +8239,12 @@
       "Folder location": [
         "フォルダーの場所"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME } と ${ DOCS_SHORT_APP_NAME } 向けです。"
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME }、${ SHEETS_SHORT_APP_NAME }向け。"
+      ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
@@ -8508,6 +8550,9 @@
       ],
       "Share your referral link": [
         "紹介リンクを共有"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、 ${ WALLET_SHORT_APP_NAME } の間で共有されます。"
       ],
       "Show ${ n } administrator": [
         "${ n }人の管理者を表示"
@@ -12790,6 +12835,9 @@
       "${ app } storage": [
         "${ app } ストレージ"
       ],
+      "${ app } storage used": [
+        "${ app } のストレージ使用量"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage }は${ percentage }%使用中です"
       ],
@@ -12801,6 +12849,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
+      ],
+      "Storage used": [
+        "使用中のストレージ"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }製品を引き続きご利用いただくには、容量を空けるか、${ upgrade }。"
@@ -14733,6 +14784,9 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Gmail側の変更により、${ BRAND_NAME }の接続がブロックされています。メール機能を再確立するには、許可を付与してください。"
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "お客様のプランに追加されました: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理者はユーザーのアカウントを管理することができ、他のユーザーに管理者権限を与えることができます。プライマリー管理者のみが組織のプランを変更できます。"
       ],
@@ -15058,6 +15112,9 @@
       ],
       "Did you know?": [
         "知ってましたか？"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "${ PLAN_NAMES[plan] } を利用して、お客様の組織をデータ侵害から保護します。"
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "${ VPN_APP_NAME } for Business を利用して、お客様の組織をデータ侵害から保護します。"

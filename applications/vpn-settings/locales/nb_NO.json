@@ -245,6 +245,9 @@
       "Create new policy": [
         "Opprett ny retningslinje"
       ],
+      "Create organization": [
+        "Opprett organisasjon"
+      ],
       "Create users": [
         "Opprett brukere"
       ],
@@ -463,6 +466,9 @@
       ],
       "Get more servers": [
         "Få flere tjenere"
+      ],
+      "Get more storage": [
+        "Skaff deg mer lagringskapasitet"
       ],
       "Get the apps": [
         "Skaff deg appene"
@@ -914,6 +920,9 @@
       "Submit": [
         "Send inn"
       ],
+      "Subscribe": [
+        "Abonner"
+      ],
       "Subscribe now": [
         "Abonner nå"
       ],
@@ -1070,6 +1079,9 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
         "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
@@ -1081,6 +1093,9 @@
       "${ ips } server": [
         "${ ips } tjener",
         "${ ips } tjenere"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-assistent"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
@@ -1905,8 +1920,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Legg til brukere manuelt"
+      ],
       "Close": [
         "Lukk"
+      ],
+      "Configure your network": [
+        "Konfigurer nettverket ditt"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsett å bruke ${ MAIL_APP_NAME }."
@@ -1926,17 +1947,29 @@
       "Discover and set up features": [
         "Oppdag og konfigurer funksjoner"
       ],
+      "Invite your team": [
+        "Inviter teamet ditt"
+      ],
+      "Manage global VPN permissions": [
+        "Administrer globale VPN-tillatelser"
+      ],
       "Maybe later": [
         "Kanskje senere"
       ],
       "Remind me later": [
         "Påminn meg senere"
       ],
+      "Secure your organization": [
+        "Sikre organisasjonen din"
+      ],
       "Send": [
         "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funksjoner"
+      ],
+      "Set up SSO": [
+        "Konfigurer SSO"
       ],
       "Take a tour": [
         "Få en omvisning"
@@ -3196,11 +3229,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Koble til CRM-en, nettstedet, skriverne dine og mer."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Opprett en porttjener for å gi brukerne dine tilgang til IT-ressurser via dedikerte tjenere."
+      ],
       "Create groups you can email with a single address.": [
         "Opprett grupper du kan sende e-post til med én enkelt adresse."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Opprett nye brukerkontoer eller importer brukere med SSO (enkeltpålogging) SCIM-klargjøring."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Opprett retningslinjer for å bestemme hvem som kan koble til delte tjenere i hvert land."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Bestem hvilke brukere som kan koble til hver av våre 120+ delte tjenerplasseringer."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Få enkel tilgang til e-posten og kalenderen din på datamaskin og mobil."
@@ -3234,6 +3276,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjelp teamet ditt med å lagre passord til sensitiv forretnings- og klientinformasjon på en sikker måte."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Hvis du ikke allerede har gjort det, aktiver noen gjenopprettingsmetoder for å forsikre deg om at du aldri mister tilgang til ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
@@ -4774,6 +4819,9 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } enheter"
       ],
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
       "@pm.me address": [
         "@pm.me-adresse"
       ],
@@ -4786,6 +4834,12 @@
       "and more premium features...": [
         "og flere premiumfunksjoner..."
       ],
+      "Connect custom domain": [
+        "Koble til egendefinert domene"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
       "Double VPN": [
         "Dobbel VPN"
       ],
@@ -4797,6 +4851,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield-annonseblokkerer"
+      ],
+      "Priority support": [
+        "Prioritert brukerstøtte"
       ],
       "Secure streaming": [
         "Sikker strømming"
@@ -6377,6 +6434,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Få **${ referrerRewardAmount } kreditter** for hver venn som abonnerer."
       ],
+      "Get started": [
+        "Kom i gang"
+      ],
       "Get started with the referral link above.": [
         "Kom i gang med vervekoblingen ovenfor."
       ],
@@ -6384,7 +6444,7 @@
         "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
       ],
       "Google Pay mark": [
-        "Google Pay-merke"
+        "Merk Google Pay"
       ],
       "Got it": [
         "Skjønner"
@@ -7058,6 +7118,9 @@
       "Set up your organization": [
         "Konfigurer organisasjonen din"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Konfigurer organisasjonen og begynn å beskytte dataene i noen få enkle trinn."
+      ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
       ],
@@ -7644,6 +7707,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan også slå sammen importerte kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Du kan endre lagringstildeling under **Brukere og adresser**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Du kan endre dette når som helst i ${ settingsLink }."
       ],
@@ -7841,6 +7907,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver måned."
       ],
+      "Your storage": [
+        "Din lagringsplass"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonnementet ditt fornyes automatisk ${ renewalTime }."
       ],
@@ -7930,9 +7999,19 @@
         "Vis bare"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Slik vil organisasjonen vises for brukere. Du kan endre det når som helst."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Ikke en gyldig e-postadresse"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Hva er navnet på organisasjonen din?"
       ]
     },
     "invitation status": {
@@ -8336,6 +8415,12 @@
       "Folder location": [
         "Mappeplassering"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "For ${ DRIVE_SHORT_APP_NAME } og ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } og ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -8641,6 +8726,9 @@
       ],
       "Share your referral link": [
         "Del vervekoblingen din"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Delt mellom ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Vis ${ n } administrator",
@@ -8987,6 +9075,9 @@
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
+      ],
+      "Reactivate subscription": [
+        "Aktiver abonnementet på nytt"
       ],
       "Request an invite": [
         "Be om en invitasjon"
@@ -9670,7 +9761,7 @@
         "Begrenset støtte"
       ],
       "Manage user permissions and access": [
-        "Administrere brukertillatelser og -tilgang"
+        "Administrer brukertillatelser og tilgang"
       ],
       "Multiple admin roles": [
         "Flere administratorroller"
@@ -11200,7 +11291,7 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielle rabattprisen gjelder for den første måneden av ${ subscriptionLength }.",
+        "Spesialrabattprisen gjelder for den første måneden [${ subscriptionLength }].",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
@@ -11434,6 +11525,9 @@
       ],
       "End date": [
         "Sluttdato"
+      ],
+      "Enter name": [
+        "Skriv inn navn"
       ],
       "example@domain.com": [
         "eksempel@domain.no"
@@ -11726,6 +11820,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Etter den datoen vil kontoen din bli nedgradert til **${ BRAND_NAME } Free**. Hvis du ombestemmer deg, kan du **reaktivere abonnementet ditt** for å beholde tilgang til premiumfunksjoner."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
@@ -13683,6 +13780,9 @@
       "Organization logo updated": [
         "Organisasjonslogo oppdatert"
       ],
+      "Organization name set": [
+        "Organisasjonsnavn angitt"
+      ],
       "Organization name updated": [
         "Organisasjonsnavn oppdatert"
       ],
@@ -14326,6 +14426,9 @@
       "Discard changes?": [
         "Forkaste endringer?"
       ],
+      "Dismiss setup checklist": [
+        "Avvis sjekkliste for oppsett"
+      ],
       "Domain names": [
         "Domenenavn"
       ],
@@ -14461,6 +14564,9 @@
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
+      ],
+      "Get started": [
+        "Kom i gang"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Skaff deg appen på alle enhetene dine og beskytt opptil ${ VPN_CONNECTIONS } samtidig."
@@ -14893,6 +14999,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Velkommen til ${ planName }"
+      ],
       "What would you like to import?": [
         "Hva ønsker du å importere?"
       ],
@@ -14993,6 +15102,9 @@
     "Tooltip": {
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "En endring på Gmail-siden blokkerer ${ BRAND_NAME } fra å koble til. Gi tillatelse til å gjenopprette e-postfunksjonaliteten"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Lagt til i planen din: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
@@ -15320,6 +15432,9 @@
       ],
       "Did you know?": [
         "Visste du at?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Beskytt organisasjonen din mot datainnbrudd med ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Beskytt organisasjonen din mot datainnbrudd med ${ VPN_APP_NAME } for bedrifter."

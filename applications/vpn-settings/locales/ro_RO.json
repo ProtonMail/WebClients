@@ -245,6 +245,9 @@
       "Create new policy": [
         "Creare regulă"
       ],
+      "Create organization": [
+        "Creare organizație"
+      ],
       "Create users": [
         "Creare utilizatori"
       ],
@@ -463,6 +466,9 @@
       ],
       "Get more servers": [
         "Obțineți mai multe servere"
+      ],
+      "Get more storage": [
+        "Obțineți mai mult spațiu de stocare"
       ],
       "Get the apps": [
         "Luați aplicațiile"
@@ -914,6 +920,9 @@
       "Submit": [
         "Trimitere"
       ],
+      "Subscribe": [
+        "Abonare"
+      ],
       "Subscribe now": [
         "Abonați-vă acum"
       ],
@@ -1070,6 +1079,14 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } de utilizatori)"
+      ],
       "${ domains } additional custom domain": [
         "Domenii personale adiționale: ${ domains }",
         "Domenii personale adiționale: ${ domains }",
@@ -1079,6 +1096,14 @@
         "${ ips } server",
         "${ ips } servere",
         "${ ips } de servere"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistent de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
@@ -1091,6 +1116,11 @@
       ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domeniu personal",
+        "${ quantity } domenii personale",
+        "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -1408,6 +1438,13 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1897,8 +1934,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Adăugați utilizatori manual"
+      ],
       "Close": [
         "Închidere"
+      ],
+      "Configure your network": [
+        "Configurare rețea"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
@@ -1918,17 +1961,29 @@
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
       ],
+      "Invite your team": [
+        "Invitați-vă echipa"
+      ],
+      "Manage global VPN permissions": [
+        "Gestionare permisiuni VPN globale"
+      ],
       "Maybe later": [
         "Poate mai târziu"
       ],
       "Remind me later": [
         "Amintește-mi mai târziu"
       ],
+      "Secure your organization": [
+        "Securizați-vă organizația"
+      ],
       "Send": [
         "Trimitere"
       ],
       "Set up other features": [
         "Setare alte funcții"
+      ],
+      "Set up SSO": [
+        "Configurare SSO"
       ],
       "Take a tour": [
         "Faceți un tur"
@@ -3192,11 +3247,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Creați o poartă de acces pentru a oferi utilizatorilor acces la resursele IT prin intermediul serverelor dedicate."
+      ],
       "Create groups you can email with a single address.": [
         "Creați grupuri cărora le puteți trimite mesaje cu o singură adresă."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Creați conturi noi de utilizator sau importați utilizatori cu furnizarea SCIM SSO (single sign-on)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Creați reguli pentru a decide cine se poate conecta la serverele partajate din fiecare țară."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Decideți care utilizatori se pot conecta la fiecare dintre cele peste 120 de locuri cu servere partajate."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accesați-vă cu ușurință adresa de e-mail și calendarul pe desktop și mobil."
@@ -3230,6 +3294,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Dacă nu ați făcut-o deja, activați unele metode de recuperare pentru a vă asigura că nu vă pierdeți niciodată accesul la ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
@@ -4783,6 +4850,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "Dispozitive: ${ VPN_CONNECTIONS }"
       ],
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "@pm.me address": [
+        "Adresa @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Protecție programe malițioase și blocare reclame"
       ],
@@ -4791,6 +4864,12 @@
       ],
       "and more premium features...": [
         "și alte funcții premium..."
+      ],
+      "Connect custom domain": [
+        "Conectare domeniu personal"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
       ],
       "Double VPN": [
         "VPN dublu"
@@ -4803,6 +4882,9 @@
       ],
       "NetShield Ad-blocker": [
         "Blocare reclame cu NetShield"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
       ],
       "Secure streaming": [
         "Transmisii în flux securizate"
@@ -5158,6 +5240,9 @@
       ],
       "Domain": [
         "Domeniu"
+      ],
+      "Drag to reorder": [
+        "Trageți pentru rearanjare"
       ],
       "Status": [
         "Stare"
@@ -6434,6 +6519,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Obțineți **${ referrerRewardAmount } credite** pentru fiecare prieten care se abonează."
       ],
+      "Get started": [
+        "Să începem"
+      ],
       "Get started with the referral link above.": [
         "Începeți cu legătura web de recomandate de mai sus."
       ],
@@ -6501,7 +6589,7 @@
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
+        "Dacă veți continua cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
@@ -7121,6 +7209,9 @@
       "Set up your organization": [
         "Setați organizația"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Configurați-vă organizația și începeți să vă protejați datele în câțiva pași simpli."
+      ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
       ],
@@ -7717,6 +7808,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele ${ BRAND_NAME } existente."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Puteți schimba alocarea de spațiu în **Utilizatori și adrese**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Puteți modifica asta oricând în ${ settingsLink }."
       ],
@@ -7922,6 +8016,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
+      "Your storage": [
+        "Spațiu de stocare"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
       ],
@@ -8013,9 +8110,19 @@
         "Numai vizualizare"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Acesta este numele pe care îl vor vedea utilizatorii organizație. Îl puteți modifica oricând."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Nu este o adresă de e-mail validă."
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Care este numele organizației?"
       ]
     },
     "invitation status": {
@@ -8423,6 +8530,12 @@
       "Folder location": [
         "Amplasare folder"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Pentru ${ DRIVE_SHORT_APP_NAME } și ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Pentru ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } și ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
@@ -8728,6 +8841,9 @@
       ],
       "Share your referral link": [
         "Partajați-vă legătura web de recomandare"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Partajat între ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Afișare ${ n } administrator",
@@ -9076,6 +9192,9 @@
       ],
       "Reactivate now": [
         "Reactivare acum"
+      ],
+      "Reactivate subscription": [
+        "Reactivare abonament"
       ],
       "Request an invite": [
         "Solicitați o invitație"
@@ -11554,6 +11673,9 @@
       "End date": [
         "Data de sfârșit"
       ],
+      "Enter name": [
+        "Introduceți numele"
+      ],
       "example@domain.com": [
         "exemplu@domeniu.com"
       ],
@@ -11847,6 +11969,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Dacă vă abonați înainte de această dată**, veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "După acea dată, contul va fi retrogradat la **${ BRAND_NAME } Free**. Dacă vă răzgândiți, vă puteți **reactiva abonamentul** pentru a vă păstra accesul la funcțiile speciale."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
@@ -13167,6 +13292,9 @@
       "${ app } storage": [
         "Spațiul de stocare din ${ app }"
       ],
+      "${ app } storage used": [
+        "Spațiu utilizat de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } - ${ percentage }% ocupat"
       ],
@@ -13178,6 +13306,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pentru toate serviciile ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Spațiu utilizat"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ upgrade }"
@@ -13847,6 +13978,9 @@
       "Organization logo updated": [
         "S-a actualizat sigla organizației"
       ],
+      "Organization name set": [
+        "Nume organizație setat"
+      ],
       "Organization name updated": [
         "S-a actualizat numele organizației"
       ],
@@ -14499,6 +14633,9 @@
       "Discard changes?": [
         "Anulare modificări?"
       ],
+      "Dismiss setup checklist": [
+        "Ignorare listă de verificare a configurării"
+      ],
       "Domain names": [
         "Nume domenii"
       ],
@@ -14635,6 +14772,9 @@
       ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
+      ],
+      "Get started": [
+        "Să începem"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Luați aplicația pe toate dispozitivele și protejați până la ${ VPN_CONNECTIONS } dispozitive simultan."
@@ -15069,6 +15209,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bun venit la ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Bun venit la ${ planName }"
+      ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
       ],
@@ -15169,6 +15312,9 @@
     "Tooltip": {
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "O modificare din partea Gmail blochează ${ BRAND_NAME } să se conecteze. Acordați permisiunea pentru a restabili funcționalitatea e-mailului."
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Adăugat la planul actual: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
@@ -15497,6 +15643,9 @@
       ],
       "Did you know?": [
         "Știați că?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Protejați-vă organizația împotriva compromiterii datelor cu ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protejați-vă organizația împotriva divulgărilor de date cu ${ VPN_APP_NAME } for Business."

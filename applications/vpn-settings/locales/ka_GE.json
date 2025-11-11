@@ -464,6 +464,9 @@
       "Get more servers": [
         "მეტი სერვერის მიღება"
       ],
+      "Get more storage": [
+        "მიიღეთ მეტი საცავი"
+      ],
       "Get the apps": [
         "აპების გადმოწერა"
       ],
@@ -914,6 +917,9 @@
       "Submit": [
         "დამტკიცება"
       ],
+      "Subscribe": [
+        "გამოწერა"
+      ],
       "Subscribe now": [
         "გამოიწერეთ ახლავე"
       ],
@@ -1070,6 +1076,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "წერის დამხმარე ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)",
+        "წერის დამხმარე ${ BRAND_NAME } Scribe (${ quantity } მომხმარებლისთვის)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } დამატებითი მორგებული დომენი",
         "${ domains } დამატებითი მორგებული დომენი"
@@ -1077,6 +1090,13 @@
       "${ ips } server": [
         "${ ips } სერვერი",
         "${ ips } სერვერი"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "ხი დამხმარე ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)",
+        "ხი დამხმარე ${ LUMO_APP_NAME } (${ quantity } მომხმარებლისთვის)"
       ],
       "${ price } per dedicated server": [
         "${ price } გამოყოფილი სერვერი"
@@ -1089,6 +1109,10 @@
       ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } მომხმარებლის დომენი",
+        "${ quantity } მომხმარებლის დომენი"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats }${ LUMO_APP_NAME } ლიცენზია",
@@ -1399,6 +1423,12 @@
       ],
       "Unsupported event": [
         "გაუთვალისწინებელი შემთხვევა"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი",
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1757,6 +1787,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "უყურეთ თქვენს საყვარელ ფილმებსა და სერიალებს"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "ჩვენ ვარჩევთ, როგორ შევცვალოთ გარე და ლოკალური IP მისამართები თქვენი Windows-ის მოწყობილობისთვის."
       ],
       "Which VPN protocol is the best?": [
         "რომელი VPN პროტოკოლია საუკეთესო?"
@@ -4682,6 +4715,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } მოწყობილობა"
       ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "@pm.me address": [
+        "@pm.me მისამართი"
+      ],
       "Ad-blocker and malware protection": [
         "რეკლამების დაბლოკვა და არასასურველი პროგრამებისგან დაცვა"
       ],
@@ -4690,6 +4729,12 @@
       ],
       "and more premium features...": [
         "და მეტი ფასიანი ფუნქცია..."
+      ],
+      "Connect custom domain": [
+        "მომხმარებლის დომენის დაკავშირება"
+      ],
+      "Desktop app": [
+        "კომპიუტერის აპი"
       ],
       "Double VPN": [
         "ორმაგი VPN"
@@ -4702,6 +4747,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield Ad-blocker"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
       ],
       "Secure streaming": [
         "დაცული სტრიმინგი"
@@ -5049,6 +5097,9 @@
       ],
       "Domain": [
         "დომენი"
+      ],
+      "Drag to reorder": [
+        "გადასალაგებლად გადაათრიეთ"
       ],
       "Status": [
         "სტატუსი"
@@ -6857,6 +6908,9 @@
       "Scan QR code instead": [
         "QR კოდის სკანირება"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "დაასკანერეთ ეს კოდი თქვენი ავთენტიკატორი აპით, რომ მოირგოთ თქვენი ანგარიში. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "SCIM-თან ინტეგრაცია გათიშულია"
       ],
@@ -7045,6 +7099,9 @@
       ],
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "ჯგუფების ფუნქცია თქვენს მიმდინარე სატარიფო გეგმაში მხარდაჭერილი არაა. ადრე შექმნილი ჯგუფები გათიშულია და მათი, მხოლოდ, წაშლა შეგიძლიათ."
+      ],
+      "The most secure and private two-factor authentication app, that's free and open-source.": [
+        "ყველაზე დაცული და კონფიდენციალური 2FA ავთენტიკატორი პროგრამა და ის უფასოა და ღია კოდით."
       ],
       "The name will be visible to your users while they are signed in.": [
         "სახელი, რომელიც გამოჩნდება, როცა თქვენი მომხმარებლები სისტემაში შედიან."
@@ -8138,6 +8195,9 @@
       "Folder location": [
         "საქაღალდის მდებარეობა"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME }-ისთვის და ${ DOCS_SHORT_APP_NAME }-ისთვის."
+      ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
       ],
@@ -8783,6 +8843,9 @@
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
+      ],
+      "Reactivate subscription": [
+        "გამოწერის ხელახლა გააქტიურება"
       ],
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
@@ -11445,6 +11508,9 @@
       "Invite friends. Get credits.": [
         "მოიწვიეთ მეგობრები და მიიღეთ კრედიტები."
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "ბოლო შანსი, დაათვალიეროთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
+      ],
       "Refer friends": [
         "რეკომენდაცია მეგობრებს"
       ],
@@ -12701,6 +12767,9 @@
       "${ app } storage": [
         "${ app } საცავი"
       ],
+      "${ app } storage used": [
+        "${ app } გამოყენებული საცავი"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } სავსეა ${ percentage }%"
       ],
@@ -12712,6 +12781,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ],
+      "Storage used": [
+        "გამოყენებული საცავი"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
@@ -14667,6 +14739,9 @@
       ]
     },
     "Tooltip": {
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "დაემატა თქვენს სატარიფო გეგმას: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "ადმინებს შეუძლიათ მომხმარებლის ანგარიშებს მართვა და სხვა მომხმარებლებისთვის ადმინის პრივილეგიების მიცემა. ორგანიზაციის სატარიფო გეგმის ჩასწორება, მხოლოდ, ძირითად ადმინს შეუძლია."
       ],
@@ -14990,6 +15065,9 @@
       ],
       "Did you know?": [
         "იცოდით?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "დაიცავით თქვენი ორგანიზაცია მონაცემების გაჟონვისგან ${ PLAN_NAMES[plan] }-ით."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "დაიცავით თქვენი ორგანიზაცია მონაცემების გაჟონვისგან ${ VPN_APP_NAME } for Business-ით."
