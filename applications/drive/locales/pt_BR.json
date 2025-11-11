@@ -7721,6 +7721,9 @@
       "Reactivate now": [
         "Reativar agora"
       ],
+      "Reactivate subscription": [
+        "Reativar assinatura"
+      ],
       "Request an invite": [
         "Solicitar um convite"
       ],
@@ -9115,6 +9118,10 @@
         "Erro ao copiar ${ errors.length } item",
         "Erro ao copiar ${ errors.length } itens"
       ],
+      "${ errors.length } item failed to be trashed": [
+        "Erro ao carregar ${ errors.length } item para a lixeira",
+        "Erro ao carregar ${ errors.length } itens para a lixeira"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } foto não pôde ser removida de «${ albumLink.name }»",
         "${ nbFailures } fotos não puderam ser removidas de «${ albumLink.name }»"
@@ -9130,6 +9137,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } foto foi removida de «${ albumLink.name }»",
         "${ nbSuccesses } fotos foram removidas de ${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } item copiado para a lixeira",
+        "${ numberOfItems } itens copiados para a lixeira"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item excluído",
@@ -9213,6 +9224,9 @@
       ],
       "Contact group updated": [
         "O grupo de contatos foi atualizado"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Cópia de \"${ name }\" movido para a lixeira"
       ],
       "Device failed to be removed": [
         "Erro ao remover o dispositivo"
@@ -10394,6 +10408,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Após essa data, sua conta fará o downgrade para **${ BRAND_NAME } Free**. Se você mudar de ideia, você pode **reativar sua assinatura** para manter o acesso a recursos premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe até ${ maxRewardAmount } em crédito. Você receberá ${ referrerRewardAmount } quando a pessoa que você convidar se inscrever em um plano ${ BRAND_NAME }."
@@ -12931,6 +12948,11 @@
       ],
       "Only": [
         "Somente"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "As alterações feitas podem não ser salvas."
       ]
     },
     "unprivatization": {

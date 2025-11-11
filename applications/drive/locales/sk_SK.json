@@ -7918,6 +7918,9 @@
       "Reactivate now": [
         "Znovu aktivovať"
       ],
+      "Reactivate subscription": [
+        "Obnoviť predplatné"
+      ],
       "Request an invite": [
         "Požiadať o pozvánku"
       ],
@@ -10677,6 +10680,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Ak si predplatíte pred týmto dátumom,** získate kredit v hodnote **${ referrerRewardAmount }**."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tomto dátume bude váš účet znížený na **${ BRAND_NAME } Free**. Ak si to rozmyslíte, môžete **opätovne obnoviť svoje predplatné** a zachovať si prístup k prémiovým funkciám."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Získajte až ${ maxRewardAmount } v kreditoch. Získate ${ referrerRewardAmount }, keď si osoba, ktorú pozvete predplatí ${ BRAND_NAME } plán."
       ],
@@ -13317,6 +13323,11 @@
       ],
       "Only": [
         "Iba"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Vykonané zmeny sa nemusia uložiť."
       ]
     },
     "unprivatization": {

@@ -252,6 +252,9 @@
       "Continue with Outlook": [
         "Outlook ile ilerle"
       ],
+      "Copy": [
+        "Kopyala"
+      ],
       "Copy address": [
         "Adresi kopyala"
       ],
@@ -1419,6 +1422,12 @@
       ],
       "Unsupported event": [
         "Etkinlik desteklenmiyor"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var",
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3377,6 +3386,9 @@
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
       ],
+      "Cannot load \"My files\" root folder": [
+        "\"Dosyalarım\" kök klasörü yüklenemedi"
+      ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
@@ -3444,6 +3456,12 @@
       ],
       "Error reading file": [
         "Dosya okunurken sorun çıktı"
+      ],
+      "Expanding non-existent directory tree item": [
+        "Var olmayan klasör ağacı ögesi genişletiliyor"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Genişletilemez klasör ağacı ögesi genişletiliyor"
       ],
       "Expected structure attached": [
         "Beklenen yapı eklendi"
@@ -5660,6 +5678,9 @@
       "It's better to have:": [
         "Şöyle olması daha iyidir:"
       ],
+      "It's not possible to copy the folder to itself": [
+        "Klasör kendi içine kopyalanamaz"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Çöp kutusundaki ögeler siz onları kalıcı olarak silene kadar tutulur"
       ],
@@ -6087,6 +6108,9 @@
       ],
       "Search Enabled": [
         "Arama özelliği açıldı"
+      ],
+      "Select a folder to copy to.": [
+        "Kopyalanacak bir klasör seçin."
       ],
       "Select a folder to move to.": [
         "Taşınacak bir klasör seçin."
@@ -7694,6 +7718,9 @@
       "Reactivate now": [
         "Yeniden etkinleştir"
       ],
+      "Reactivate subscription": [
+        "Aboneliği yeniden etkinleştir"
+      ],
       "Request an invite": [
         "Davet iste"
       ],
@@ -9012,6 +9039,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" kaydedildi"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" kopyalandı"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" taşındı"
       ],
@@ -9024,6 +9054,14 @@
       "${ count } item failed to be decrypted": [
         "${ count } ögenin şifresi çözülemedi",
         "${ count } ögenin şifresi çözülemedi"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } öge kopyalanamadı",
+        "${ errors.length } öge kopyalanamadı"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } öge çöpe atılamadı",
+        "${ errors.length } öge çöpe atılamadı"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } fotoğraf ${ albumLink.name } albümünden kaldırılamadı",
@@ -9040,6 +9078,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } fotoğraf ${ albumLink.name } albümünden kaldırıldı.",
         "${ nbSuccesses } fotoğraf ${ albumLink.name } albümünden kaldırıldı."
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } kopyalanan öge çöpe atıldı",
+        "${ numberOfItems } kopyalanan öge çöpe atıldı"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } öge silindi",
@@ -9076,6 +9118,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } öge çöpten çıkarıldı",
         "${ numberOfItems } öge çöpten çıkarıldı"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } öge kopyalandı",
+        "${ numberOfItems } öge kopyalandı"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } öge taşındı",
@@ -9119,6 +9165,9 @@
       ],
       "Contact group updated": [
         "Kişi grubu güncellendi"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "\"${ name }\" kopyası çöpe atıldı"
       ],
       "Device failed to be removed": [
         "Aygıt kaldırılamadı"
@@ -10295,6 +10344,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "${ maxRewardAmount } tutarına kadar kredi kazanın. Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda ${ referrerRewardAmount } alacaksınız."
       ],
@@ -10946,6 +10998,9 @@
       "${ app } storage": [
         "${ app } depolama alanı"
       ],
+      "${ app } storage used": [
+        "${ app } depolama alanı kullanıldı"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } %${ percentage } dolu"
       ],
@@ -10957,6 +11012,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "Storage used": [
+        "Kullanılan depolama alanı"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Dosyaları yüklemeyi ve eşitlemeyi sürdürebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
@@ -12199,6 +12257,9 @@
       "Logs": [
         "Günlük kayıtları"
       ],
+      "Make a copy": [
+        "Kopya oluştur"
+      ],
       "Make a secure connection your default": [
         "Bağlantınızın her zaman güvenli olmasını sağlayın"
       ],
@@ -12822,6 +12883,11 @@
       ],
       "Only": [
         "Yalnızca"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Yaptığınız değişiklikler kaydedilmeyebilir."
       ]
     },
     "unprivatization": {
