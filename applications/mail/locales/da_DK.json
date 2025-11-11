@@ -1493,8 +1493,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -2017,6 +2016,12 @@
       ],
       "Sender verification passed": [
         "Afsenderbekræftelse bestået"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat mere ikke vist",
+        "${ hiddenResultsCount } resultater mere ikke vist"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -6781,6 +6786,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressebekræftelse med Betroede nøgler er aktiv for denne e-mail. For at kunne sende til denne adresse skal de offentlige nøgler, som kan benyttes hertil, først gøres betroede."
       ],
+      "Addresses settings": [
+        "Adresseindstillinger"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Annoncører sporer din browsing for at vise målrettede annoncer. ${ VPN_APP_NAME } blokerer trackere og annoncer, hvilket gør din forbindelse hurtigere og forbedrer din onlineoplevelse."
       ],
@@ -7501,7 +7509,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7987,11 +7996,17 @@
       "Saved: ${ dateString }": [
         "Gemt: ${ dateString }"
       ],
+      "Saving draft": [
+        "Gemmer kladde"
+      ],
       "Scan the QR code with your mobile device": [
         "Scan QR-koden med din mobilenhed"
       ],
       "Scheduled send of this message will be canceled.": [
         "Planlagt afsendelse af denne besked aflyses."
+      ],
+      "Scheduling message": [
+        "Planlægger besked"
       ],
       "Scribe panel": [
         "Scribe-panel"
@@ -8035,6 +8050,9 @@
       ],
       "Sending": [
         "Afsender"
+      ],
+      "Sending message": [
+        "Sender besked"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Afsendelse af beskeder fra @pm.me-adresse er en betalt funktion. Din besked afsendes via din standardadresse ${ email }"
@@ -8600,6 +8618,9 @@
       ],
       "Week": [
         "Uge"
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Vi har opgraderet din ${ DRIVE_APP_NAME }-lagerplads til 5 GB. Hold dine vigtige filer og fotos krypteret."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Hvornår ønsker du, at din besked automatisk skal slettes fra modtagerens indbakke og din sendt-mappe?"
@@ -10230,6 +10251,9 @@
       ],
       "Reactivate now": [
         "Genaktiver nu"
+      ],
+      "Reactivate subscription": [
+        "Genaktiver abonnement"
       ],
       "Request an invite": [
         "Anmod om invitation"
@@ -12730,6 +12754,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } pr. henvisning"
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Efter den dato vil din konto blive nedgraderet til **${ BRAND_NAME } Free**. Hvis du ombestemmer dig, kan du **genaktivere dit abonnement** for at bevare adgangen til premium-funktioner."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Optjen op til ${ maxRewardAmount } i kredit. Du får ${ referrerRewardAmount }, når den person, du inviterer, abonnerer på et ${ BRAND_NAME }-abonnement."
       ],
@@ -13613,6 +13640,9 @@
       "${ app } storage": [
         "${ app } lagerplads"
       ],
+      "${ app } storage used": [
+        "${ app } lagerplads brugt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fuldt"
       ],
@@ -13624,6 +13654,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME } tjenester"
+      ],
+      "Storage used": [
+        "Anvendt lagerplads"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."

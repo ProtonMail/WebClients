@@ -1491,9 +1491,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -7401,7 +7398,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7886,11 +7883,17 @@
       "Saved: ${ dateString }": [
         "保存済み: ${ dateString }"
       ],
+      "Saving draft": [
+        "下書きを保存中"
+      ],
       "Scan the QR code with your mobile device": [
         "携帯デバイスでQRコードを読み込んでください。"
       ],
       "Scheduled send of this message will be canceled.": [
         "このメッセージの送信予約はキャンセルされました。"
+      ],
+      "Scheduling message": [
+        "メッセージを送信予約中"
       ],
       "Scribe panel": [
         "Scribe パネル"
@@ -7933,6 +7936,9 @@
       ],
       "Sending": [
         "送信中"
+      ],
+      "Sending message": [
+        "メッセージを送信中"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me からメッセージを送信するには有料プランが必要です。メッセージは既定のアドレスの ${ email } から送信されます。"
@@ -13430,6 +13436,9 @@
       "${ app } storage": [
         "${ app } ストレージ"
       ],
+      "${ app } storage used": [
+        "${ app } のストレージ使用量"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage }は${ percentage }%使用中です"
       ],
@@ -13441,6 +13450,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
+      ],
+      "Storage used": [
+        "使用中のストレージ"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "アップロードや同期を続けるには、容量を空けるかより大きな容量のプランにアップグレードしてください。"

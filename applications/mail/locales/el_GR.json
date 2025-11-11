@@ -1496,8 +1496,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -6799,6 +6798,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
       ],
+      "Addresses settings": [
+        "Ρυθμίσεις διευθύνσεων"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Οι διαφημιζόμενοι παρακολουθούν την περιήγησή σας για να εμφανίζουν στοχευμένες διαφημίσεις. Το ${ VPN_APP_NAME } αποκλείει ιχνηλάτες και διαφημίσεις, κάνοντας τη σύνδεσή σας ταχύτερη και βελτιώνοντας την εμπειρία σας στο διαδίκτυο."
       ],
@@ -7519,7 +7521,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -10261,6 +10264,9 @@
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
       ],
+      "Reactivate subscription": [
+        "Επανενεργοποίηση συνδρομής"
+      ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
       ],
@@ -12771,6 +12777,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Εάν εγγραφείτε πριν από αυτή την ημερομηνία,** θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Μετά από αυτή την ημερομηνία, ο λογαριασμός σας θα υποβαθμιστεί στο **${ BRAND_NAME } Free**. Αν αλλάξετε γνώμη, μπορείτε να **επανενεργοποιήσετε τη συνδρομή σας** για να διατηρήσετε την πρόσβασή σας στις premium λειτουργίες."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Κερδίστε έως και ${ maxRewardAmount } σε πίστωση. Θα λάβετε ${ referrerRewardAmount } όταν το άτομο που προσκαλέσατε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }."

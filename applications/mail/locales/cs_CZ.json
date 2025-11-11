@@ -1504,10 +1504,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7001,6 +6998,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Ověření Adresy pomocí Důvěryhodných Klíčů je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejným klíčům, které mohou být použity pro odesílání."
       ],
+      "Addresses settings": [
+        "Nastavení adres"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Inzerenti sledují vaše procházení, aby mohli zobrazovat cílené reklamy. ${ VPN_APP_NAME } blokuje sledovací prvky a reklamy, čímž zrychluje vaše připojení a zlepšuje váš online zážitek."
       ],
@@ -7755,7 +7755,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -10559,6 +10562,9 @@
       "Reactivate now": [
         "Znovu aktivovat"
       ],
+      "Reactivate subscription": [
+        "Znovu aktivovat předplatné"
+      ],
       "Request an invite": [
         "Požádat o pozvánku"
       ],
@@ -13160,6 +13166,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Pokud si předplatíte službu před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tomto datu bude váš účet převeden na **${ BRAND_NAME } Free**. Pokud si to rozmyslíte, můžete **znovu aktivovat předplatné** a zachovat si přístup k prémiovým funkcím."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Získejte až ${ maxRewardAmount } v kreditech. Získáte ${ referrerRewardAmount }, když se osoba, kterou pozvete, přihlásí k odběru tarifu ${ BRAND_NAME }."
       ],
@@ -14095,6 +14104,9 @@
     "storage_split: info": {
       "${ app } storage": [
         "úložiště ${ app }"
+      ],
+      "${ app } storage used": [
+        "${ app } úložiště využito"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } je zaplněno z ${ percentage } %"

@@ -1432,6 +1432,9 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar na chave"
+      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -7160,7 +7163,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -13454,6 +13458,10 @@
         "${ elementsCount } conversa removida de ${ labelName }.",
         "${ elementsCount } conversas removidas de ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversa removida de Com estrela.",
+        "${ elementsCount } conversas removidas de Com estrela."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversa adiada",
         "${ elementsCount } conversas adiadas"
@@ -13493,6 +13501,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
         "${ elementsCount } mensagens removidas de ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } mensagem removida de .",
+        "${ elementsCount } mensagens removidas de ."
       ],
       "Address copied to clipboard": [
         "Endereço copiado para a área de transferência"
