@@ -76,7 +76,11 @@ export type SpacePub = {
 };
 
 export type SpacePriv = {
-    // todo: title and other metadata
+    // Project metadata (optional - only for spaces used as projects)
+    projectName?: string;
+    projectInstructions?: string;
+    isProject?: boolean; // Flag to indicate this space is being used as a project
+    projectIcon?: string; // Icon identifier for the project (e.g., 'health', 'finance', 'legal')
     // do not remove
 };
 
@@ -127,8 +131,8 @@ export function isDeletedSpace(value: any): value is DeletedSpace {
 
 export function getSpacePriv(s: SpacePriv): SpacePriv {
     // Do not remove
-    const {} = s;
-    return {};
+    const { projectName, projectInstructions, isProject } = s;
+    return { projectName, projectInstructions, isProject };
 }
 
 export function getSpacePub(s: SpacePub): SpacePub {
@@ -154,11 +158,15 @@ export function splitSpace(s: Space): {
 }
 
 export function cleanSpace(space: Space): Space {
-    const { id, createdAt, spaceKey } = space;
+    const { id, createdAt, spaceKey, projectName, projectInstructions, isProject, projectIcon } = space;
     return {
         id,
         createdAt,
         spaceKey,
+        ...(projectName !== undefined && { projectName }),
+        ...(projectInstructions !== undefined && { projectInstructions }),
+        ...(isProject !== undefined && { isProject }),
+        ...(projectIcon !== undefined && { projectIcon }),
     };
 }
 
