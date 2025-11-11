@@ -34,6 +34,7 @@ import {
     DisplayablePaymentError,
     type EnrichedCheckResponse,
     type FreePlanDefault,
+    type FreeSubscription,
     type FullPlansMap,
     PAYMENT_METHOD_TYPES,
     PLANS,
@@ -110,6 +111,7 @@ import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanSelection from './PlanSelection';
 import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
+import { useVisionaryDowngradeWarningModal } from './VisionaryDowngradeWarningModal';
 import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { isCSCoupon } from './coupon-config/helpers';
@@ -171,7 +173,7 @@ const usePlansMapRef = ({
     plan,
 }: {
     user: UserModel;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     plans: Plan[];
     maybeCurrency?: Currency;
     paymentStatus: PaymentStatus;
@@ -243,7 +245,7 @@ export interface SubscriptionContainerProps {
     };
     telemetryFlow?: TelemetryPaymentFlow;
     render: (renderProps: RenderProps) => ReactNode;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     organization: Organization;
     plans: Plan[];
     freePlan: FreePlanDefault;
@@ -260,7 +262,11 @@ export interface SubscriptionContainerProps {
 /**
  * If user already has mobile lumo subscription then they can't buy lumo addon.
  */
-const canAddLumoAddon = (subscription: Subscription): boolean => {
+const canAddLumoAddon = (subscription: Subscription | FreeSubscription): boolean => {
+    if (isFreeSubscription(subscription)) {
+        return true;
+    }
+
     // Check if the current subscription or any of the secondary subscriptions has a mobile lumo subscription.
     return ![subscription, ...(subscription.SecondarySubscriptions ?? [])].some(
         (sub) => hasLumo(sub) && isManagedExternally(sub)
@@ -334,6 +340,13 @@ const SubscriptionContainerInner = ({
     const scribeEnabled = useAssistantFeatureEnabled();
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
+
+    const {
+        showVisionaryDowngradeWarning,
+        hideVisionaryDowngradeWarning,
+        visionaryDowngradeModal,
+        renderVisionaryDowngradeWarningText,
+    } = useVisionaryDowngradeWarningModal({ subscription });
 
     const [audience, setAudience] = useState(() => {
         if ((plan && getIsB2BAudienceFromPlan(plan)) || getIsB2BAudienceFromSubscription(subscription)) {
@@ -795,7 +808,7 @@ const SubscriptionContainerInner = ({
         return allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
     };
 
-    const normalizeModelBeforeCheck = (newModel: Model) => {
+    const normalizeModelBeforeCheck = async (newModel: Model) => {
         const planTransitionForbidden = getIsPlanTransitionForbidden({
             subscription,
             plansMap: plansMapRef.current,
@@ -826,6 +839,18 @@ const SubscriptionContainerInner = ({
             newModel.step = model.step;
             // Continue here with the rest of the steps so that we actually perform the rest of the call correctly (but just with reset plan ids)
         }
+
+        if (planTransitionForbidden?.type === 'visionary-downgrade') {
+            try {
+                // Throws an error in case if user rejects the change
+                await showVisionaryDowngradeWarning();
+            } catch {
+                onCancel?.();
+                return;
+            }
+        } else {
+            hideVisionaryDowngradeWarning();
+        }
     };
 
     const check = async (
@@ -846,7 +871,7 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        normalizeModelBeforeCheck(copyNewModel);
+        await normalizeModelBeforeCheck(copyNewModel);
 
         const dontQueryCheck = copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
 
@@ -1203,6 +1228,7 @@ const SubscriptionContainerInner = ({
             taxCountry={taxCountry}
             paymentFacade={paymentFacade}
             couponConfig={couponConfig}
+            showVisionaryWarning={renderVisionaryDowngradeWarningText}
         />
     );
 
@@ -1295,7 +1321,6 @@ const SubscriptionContainerInner = ({
                     coupon={maybeCoupon ?? undefined}
                 />
             )}
-
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
                 <div className="subscriptionCheckout-top-container gap-4 lg:gap-6">
                     <div className="flex-1 w-full md:w-auto pt-6">
@@ -1405,7 +1430,6 @@ const SubscriptionContainerInner = ({
                     </div>
                 </div>
             )}
-
             {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
                 <PostSubscriptionModalLoadingContent title={c('Info').t`Registering your subscription…`} />
             )}
@@ -1463,6 +1487,7 @@ const SubscriptionContainerInner = ({
                     }}
                 />
             )}
+            {visionaryDowngradeModal}
             {calendarDowngradeModal(({ onResolve, onReject, ...modalProps }) => {
                 return (
                     <CalendarDowngradeModal

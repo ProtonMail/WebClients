@@ -6,6 +6,7 @@ import {
     type AvailablePaymentMethod,
     type BillingAddress,
     type Currency,
+    type FreeSubscription,
     PAYMENT_METHOD_TYPES,
     type PLANS,
     type PaymentMethodFlow,
@@ -43,7 +44,7 @@ export interface Props {
     enableSepaB2C?: boolean;
     user?: User;
     planIDs?: PlanIDs;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
     canUseGooglePay?: boolean;
     isTrial?: boolean;
@@ -115,7 +116,7 @@ export const useMethods = (
         pendingEnableSepaB2C?: boolean;
         pendingUser?: User;
         pendingPlanIDs?: PlanIDs;
-        pendingSubscription?: Subscription;
+        pendingSubscription?: Subscription | FreeSubscription;
         pendingPaymentStatus?: PaymentStatus;
         pendingCanUseApplePay?: boolean;
         pendingCanUseGooglePay?: boolean;

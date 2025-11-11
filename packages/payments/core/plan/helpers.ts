@@ -282,7 +282,7 @@ export const shouldPassIsTrial = ({
     newPlanIDs: PlanIDs;
     oldPlanIDs: PlanIDs;
     newCycle: CYCLE;
-    oldCycle: CYCLE;
+    oldCycle: CYCLE | undefined;
     downgradeIsTrial: boolean;
 }) => {
     if (newCycle !== oldCycle && (!downgradeIsTrial || newCycle !== CYCLE.MONTHLY)) {

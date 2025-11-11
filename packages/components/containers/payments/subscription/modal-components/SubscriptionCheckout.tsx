@@ -11,7 +11,12 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
-import type { CheckoutModifiers, RequiredCheckResponse, SubscriptionCheckForbiddenReason } from '@proton/payments';
+import type {
+    CheckoutModifiers,
+    FreeSubscription,
+    RequiredCheckResponse,
+    SubscriptionCheckForbiddenReason,
+} from '@proton/payments';
 import {
     type Currency,
     type Cycle,
@@ -29,6 +34,7 @@ import {
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
     hasPlanIDs,
+    isFreeSubscription,
     isLifetimePlanSelected,
 } from '@proton/payments';
 import type { TaxCountryHook } from '@proton/payments/ui';
@@ -60,7 +66,7 @@ type Props = {
     gift?: ReactNode;
     onChangeCurrency: (currency: Currency) => void;
     showPlanDescription?: boolean;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     paymentMethods: MethodsHook;
     user: UserModel;
     trial: boolean;
@@ -70,7 +76,10 @@ type Props = {
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
 };
 
-export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscription: Subscription) => {
+export const useAvailableCurrenciesForPlan = (
+    plan: Plan | undefined,
+    subscription: Subscription | FreeSubscription
+) => {
     const [user] = useUser();
     const [paymentStatus] = usePaymentStatus();
     const [plansResult] = usePlans();
@@ -373,7 +382,9 @@ const SubscriptionCheckout = ({
                     currency={tax.currency}
                 />
             )}
-            {checkoutModifiers.isScheduled && <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />}
+            {checkoutModifiers.isScheduled && !isFreeSubscription(subscription) && (
+                <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />
+            )}
             <hr />
             <CheckoutRow
                 title={c('Title').t`Amount due`}
