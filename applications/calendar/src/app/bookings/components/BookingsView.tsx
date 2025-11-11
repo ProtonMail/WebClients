@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { addDays, format, isToday } from 'date-fns';
+import { format, isToday } from 'date-fns';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -12,6 +12,7 @@ import clsx from '@proton/utils/clsx';
 import { type BookingTimeslotWithDate, useBookingStore } from '../booking.store';
 import { BookSlotModal } from './BookSlotModal';
 import { BookingDetailsHeader } from './BookingDetails/BookingDetailsHeader';
+import { getDaysRange, getDaysSlotRange } from './bookingViewHelpers';
 
 const getGridCount = (activeBreakpoint: ActiveBreakpoint) => {
     switch (activeBreakpoint) {
@@ -30,57 +31,28 @@ const getGridCount = (activeBreakpoint: ActiveBreakpoint) => {
 export const BookingsView = () => {
     const [range, setRange] = useState<Date[]>([]);
     const [timeslot, setTimeslot] = useState<BookingTimeslotWithDate>();
-    const selectedDate = useBookingStore((state) => state.selectedDate);
     const [slotsArray, setSlotsArray] = useState<BookingTimeslotWithDate[][] | undefined[][]>([]);
 
     const getTimeslotsByDate = useBookingStore((state) => state.getTimeslotsByDate);
+    const bookingDetails = useBookingStore((state) => state.bookingDetails);
+    const selectedDate = useBookingStore((state) => state.selectedDate);
 
     const { activeBreakpoint } = useActiveBreakpoint();
     const gridSize = getGridCount(activeBreakpoint);
 
-    const [bookSlotModalProps, setBookSlotModalOpen, renderLinkConfirmationModal] = useModalState();
+    const [bookSlotModalProps, setBookSlotModalOpen, renderBookModal] = useModalState();
 
     useEffect(() => {
-        const tmpRange: Date[] = [];
-        const slotRange: BookingTimeslotWithDate[][] = [];
-
-        let mostTimeSlotsInGrid = 0;
-
-        // We initalize the array to contains the dates and the booking slots
-        for (let i = 0; i < gridSize; i++) {
-            const date = addDays(selectedDate, i);
-
-            tmpRange.push(date);
-
-            const timeslots = getTimeslotsByDate(date);
-            mostTimeSlotsInGrid = Math.max(mostTimeSlotsInGrid, timeslots.length);
-            slotRange.push(timeslots);
+        if (!bookingDetails) {
+            return;
         }
 
-        // We get the day with the most bookings that will be used to render the grid
-        // We create an array of arrays with the same length as the days with the most bookings
-        const rangeBooking: string[][] = new Array(gridSize).fill(new Array(mostTimeSlotsInGrid).fill(''));
-
-        const finalArray = rangeBooking.map((row, rowIndex) => {
-            // We return early if we have no slots for the day
-            if (slotRange[rowIndex].length === 0) {
-                return new Array(mostTimeSlotsInGrid).fill(undefined);
-            }
-            const rowState = row.map((_c, cellIndex) => {
-                const timeslot = slotRange[rowIndex][cellIndex];
-                if (timeslot) {
-                    return timeslot;
-                } else {
-                    return undefined;
-                }
-            });
-
-            return rowState;
-        });
+        const tmpRange = getDaysRange(gridSize, selectedDate);
+        const rangeBooking = getDaysSlotRange(gridSize, bookingDetails, getTimeslotsByDate);
 
         setRange(tmpRange);
-        setSlotsArray(finalArray);
-    }, [gridSize, getTimeslotsByDate, selectedDate]);
+        setSlotsArray(rangeBooking);
+    }, [gridSize, getTimeslotsByDate, bookingDetails, selectedDate]);
 
     return (
         <div>
@@ -125,7 +97,7 @@ export const BookingsView = () => {
                     </div>
                 ))}
             </div>
-            {renderLinkConfirmationModal && timeslot && <BookSlotModal timeslot={timeslot} {...bookSlotModalProps} />}
+            {renderBookModal && timeslot && <BookSlotModal timeslot={timeslot} {...bookSlotModalProps} />}
         </div>
     );
 };
