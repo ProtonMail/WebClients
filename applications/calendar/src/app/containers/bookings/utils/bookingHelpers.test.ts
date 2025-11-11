@@ -133,7 +133,7 @@ describe('booking helpers', () => {
 
     describe('validateFormData', () => {
         const validForm: BookingFormData = {
-            title: 'Page title',
+            summary: 'Page title',
             selectedCalendar: null,
             locationType: BookingLocation.MEET,
             duration: 60,
@@ -156,7 +156,7 @@ describe('booking helpers', () => {
         });
 
         it('should return warning if no title', () => {
-            const result = validateFormData({ ...validForm, title: '' });
+            const result = validateFormData({ ...validForm, summary: '' });
 
             expect(result).toEqual({
                 type: 'warning',
@@ -165,7 +165,7 @@ describe('booking helpers', () => {
         });
 
         it('should return warning if title only has spaces title', () => {
-            const result = validateFormData({ ...validForm, title: '  ' });
+            const result = validateFormData({ ...validForm, summary: '  ' });
 
             expect(result).toEqual({
                 type: 'warning',

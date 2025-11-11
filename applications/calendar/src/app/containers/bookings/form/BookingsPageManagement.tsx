@@ -38,8 +38,8 @@ export const Form = () => {
                     id="booking-title"
                     as={TextArea}
                     placeholder={c('Placeholder').t`Booking page title`}
-                    value={formData.title}
-                    onChange={(e) => updateFormData('title', e.target.value)}
+                    value={formData.summary}
+                    onChange={(e) => updateFormData('summary', e.target.value)}
                     maxLength={MAX_CHARS_API.TITLE}
                     assistContainerClassName="hidden"
                     inputContainerClassName="text-xl text-semibold"

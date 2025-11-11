@@ -39,6 +39,17 @@ export interface ExternalBookingPagePayload {
     AvailableSlots: ExternalBookingPageSlotsPayload[];
 }
 
+export interface InternalBookingPagePayload {
+    ID: string;
+    CalendarID: string;
+    BookingUID: string;
+    BookingKeySalt: string;
+    EncryptedSecret: string;
+    EncryptedContent: string;
+    CreateTime: number;
+    ModifyTime: number;
+}
+
 export interface BookingSlotConfirmationPayload {
     ContentPart: string;
     TimePart: string;
