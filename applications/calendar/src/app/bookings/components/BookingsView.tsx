@@ -4,7 +4,6 @@ import { format, isToday } from 'date-fns';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import type { ActiveBreakpoint } from '@proton/components/hooks/useActiveBreakpoint';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
@@ -12,21 +11,7 @@ import clsx from '@proton/utils/clsx';
 import { type BookingTimeslotWithDate, useBookingStore } from '../booking.store';
 import { BookSlotModal } from './BookSlotModal';
 import { BookingDetailsHeader } from './BookingDetails/BookingDetailsHeader';
-import { getDaysRange, getDaysSlotRange } from './bookingViewHelpers';
-
-const getGridCount = (activeBreakpoint: ActiveBreakpoint) => {
-    switch (activeBreakpoint) {
-        case 'xsmall':
-        case 'small':
-            return 3;
-        case 'medium':
-            return 5;
-        case 'large':
-        case 'xlarge':
-        case '2xlarge':
-            return 7;
-    }
-};
+import { getDaysRange, getDaysSlotRange, getGridCount } from './bookingViewHelpers';
 
 export const BookingsView = () => {
     const [range, setRange] = useState<Date[]>([]);
