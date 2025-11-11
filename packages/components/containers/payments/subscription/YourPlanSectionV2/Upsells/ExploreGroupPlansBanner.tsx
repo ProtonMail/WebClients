@@ -21,7 +21,7 @@ interface Props extends UpsellSectionBaseProps {
 
 const ExploreGroupPlansBanner = ({ subscription, app }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(subscription, PLANS.FAMILY);
+    const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, PLANS.FAMILY);
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const pricePerMonthPerUser = cheapestMonthlyPrice ? cheapestMonthlyPrice / FAMILY_MAX_USERS : undefined;

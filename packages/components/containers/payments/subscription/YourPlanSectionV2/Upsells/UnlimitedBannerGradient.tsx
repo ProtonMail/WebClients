@@ -284,6 +284,7 @@ interface Props extends UpsellsHook {
     showUpsellHeader?: boolean;
     gridSectionHeaderCopy?: string;
     subscription: Subscription;
+    app: APP_NAMES;
 }
 
 const UnlimitedBannerGradient = ({
@@ -299,6 +300,7 @@ const UnlimitedBannerGradient = ({
     plansMap,
     freePlan,
     user,
+    app,
 }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const [plansResult] = usePlans();
@@ -360,7 +362,7 @@ const UnlimitedBannerGradient = ({
         );
     };
 
-    const { priceDifference } = useSubscriptionPriceComparison(subscription, plan);
+    const { priceDifference } = useSubscriptionPriceComparison(app, subscription, plan);
 
     const priceString = getSimplePriceString(subscription.Currency, priceDifference);
 

@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { CYCLE, PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
-import { getHasConsumerVpnPlan } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -108,10 +107,11 @@ export const useVpnPlusExtendSubscription = ({
 
 interface Props extends UpsellsHook {
     subscription: Subscription;
+    app: APP_NAMES;
 }
 
-const VpnPlusExtendSubscription = ({ subscription, user, handleExplorePlans, upsells }: Props) => {
-    const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
+const VpnPlusExtendSubscription = ({ app, subscription, user, handleExplorePlans, upsells }: Props) => {
+    const { totalSavings, showSavings } = useSubscriptionPriceComparison(app, subscription);
 
     const plan = PLANS.VPN2024;
     const planName = PLAN_NAMES[plan];

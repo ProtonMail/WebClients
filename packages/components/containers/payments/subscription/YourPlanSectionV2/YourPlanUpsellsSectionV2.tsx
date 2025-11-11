@@ -47,6 +47,7 @@ import FamilyBanner from './Upsells/FamilyBanner';
 import FamilyBannerExtendSubscription, {
     useFamilyBannerExtendSubscription,
 } from './Upsells/FamilyBannerExtendSubscription';
+import PBSB2BBanner from './Upsells/PBSB2BBanner';
 import UnlimitedBannerExtendSubscription, {
     useUnlimitedBannerExtendSubscription,
 } from './Upsells/UnlimitedBannerExtendSubscription';
@@ -62,7 +63,6 @@ import PassFamilyBannerExtendSubscription, {
 } from './Upsells/pass/PassFamilyBannerExtendSubscription';
 import PassPlusExtendSubscription, { usePassPlusExtendSubscription } from './Upsells/pass/PassPlusExtendSubscription';
 import PassPlusFromFree, { usePassPlusFromFreeUpsells } from './Upsells/pass/PassPlusFromFree';
-import PBSB2BBanner from './Upsells/PBSB2BBanner';
 
 export interface UpsellSectionBaseProps {
     app: APP_NAMES;
@@ -151,6 +151,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 <>
                     <VpnPlusFromFree subscription={subscription as Subscription} {...vpnPlusFromFreeUpsells} />
                     <UnlimitedBannerGradient
+                        app={app}
                         showProductCards={false}
                         showUpsellPanels={false}
                         subscription={subscription as Subscription}
@@ -195,6 +196,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
+                    app={app}
                     showProductCards={true}
                     showUpsellPanels={true}
                     gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
@@ -212,6 +214,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
+                    app={app}
                     showProductCards={true}
                     showUpsellPanels={false}
                     showDiscoverButton={false}
@@ -230,6 +233,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
+                    app={app}
                     showProductCards={true}
                     showUpsellPanels={false}
                     showDiscoverButton={false}
@@ -249,6 +253,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             element: (
                 <>
                     <UnlimitedBannerGradient
+                        app={app}
                         showProductCards={true}
                         showUpsellPanels={false}
                         showDiscoverButton={false}
@@ -269,6 +274,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             element: (
                 <>
                     <VpnPlusExtendSubscription
+                        app={app}
                         subscription={subscription as Subscription}
                         {...vpnPlusExtendSubscriptionUpsells}
                     />
@@ -285,6 +291,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             element: (
                 <>
                     <UnlimitedBannerGradient
+                        app={app}
                         showProductCards={true}
                         showUpsellPanels={false}
                         showDiscoverButton={false}
@@ -304,6 +311,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 <>
                     <MailPlusFromFree subscription={subscription as Subscription} {...mailPlusFromFreeUpsells} />
                     <UnlimitedBannerGradient
+                        app={app}
                         showProductCards={false}
                         showUpsellPanels={false}
                         subscription={subscription as Subscription}
@@ -317,6 +325,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: mailPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
+                    app={app}
                     showProductCards={true}
                     showUpsellPanels={true}
                     gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
@@ -331,6 +340,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             element: (
                 <>
                     <MailPlusExtendSubscription
+                        app={app}
                         subscription={subscription as Subscription}
                         {...mailPlusExtendSubscriptionUpsells}
                     />
@@ -346,6 +356,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 <>
                     <PassPlusFromFree subscription={subscription as Subscription} {...passPlusFromFreeUpsells} />
                     <UnlimitedBannerGradient
+                        app={app}
                         showProductCards={false}
                         showUpsellPanels={false}
                         subscription={subscription as Subscription}
@@ -359,6 +370,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: passPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
+                    app={app}
                     showProductCards={true}
                     showUpsellPanels={true}
                     gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
@@ -373,6 +385,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             element: (
                 <>
                     <PassPlusExtendSubscription
+                        app={app}
                         subscription={subscription as Subscription}
                         {...passPlusExtendSubscriptionUpsells}
                     />
@@ -385,6 +398,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <PassFamilyBannerExtendSubscription
+                    app={app}
                     subscription={subscription as Subscription}
                     showUpsellPanels={true}
                     {...passFamilyBannerExtendSubscriptionUpsells}
@@ -396,6 +410,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: unlimitedBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <UnlimitedBannerExtendSubscription
+                    app={app}
                     subscription={subscription as Subscription}
                     showUpsellPanels={true}
                     {...unlimitedBannerExtendSubscriptionUpsells}
@@ -414,6 +429,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: duoBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <DuoBannerExtendSubscription
+                    app={app}
                     subscription={subscription as Subscription}
                     showUpsellPanels={true}
                     {...duoBannerExtendSubscriptionUpsells}
@@ -430,6 +446,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: familyBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <FamilyBannerExtendSubscription
+                    app={app}
                     subscription={subscription as Subscription}
                     showUpsellPanels={true}
                     {...familyBannerExtendSubscriptionUpsells}
@@ -453,6 +470,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
+                    app={app}
                     showProductCards={true}
                     showUpsellPanels={true}
                     gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
