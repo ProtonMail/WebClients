@@ -1,4 +1,5 @@
-import React, { forwardRef, memo, useEffect, useId, useLayoutEffect, useMemo } from 'react'
+import type React from 'react'
+import { forwardRef, memo, useEffect, useId, useLayoutEffect, useMemo } from 'react'
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
@@ -49,15 +50,11 @@ export const SidebarDialog = memo(
     const { onChange, closeDialog, activeDialogId } = useSidebarContext()
     const isActive = activeDialogId === id
 
-    const handleChange = useEvent(() => {
-      onChange({ id, open, setOpen })
-    })
+    const handleChange = useEvent(() => onChange({ id, open, setOpen }))
 
     useLayoutEffect(handleChange, [handleChange, open])
     useEffect(() => {
-      return () => {
-        closeDialog(id)
-      }
+      return () => closeDialog(id)
     }, [closeDialog, id])
 
     const contextValue = useMemo<SidebarDialogContextValue>(() => {
@@ -83,6 +80,6 @@ export const SidebarDialog = memo(
 
 function strings() {
   return {
-    Close: c('sheets_2025:Spreadsheet sidebar conditional format dialog close').t`Close`,
+    Close: c('sheets_2025:Spreadsheet sidebar dialog').t`Close`,
   }
 }
