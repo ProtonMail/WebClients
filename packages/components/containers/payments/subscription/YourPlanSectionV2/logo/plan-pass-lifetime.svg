@@ -1,0 +1,91 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_6303_8920)">
+        <g clip-path="url(#clip1_6303_8920)">
+            <rect width="44" height="44" fill="white" />
+            <rect width="44" height="44" fill="url(#paint0_linear_6303_8920)" fill-opacity="0.25" />
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.30074 16.1618C4.08497 19.3776 4.08497 24.5914 7.30074 27.8071C10.5165 31.0229 15.7303 31.0229 18.9461 27.8071L22 24.7532L25.054 27.8071C28.2698 31.0229 33.4835 31.0229 36.6993 27.8071C39.9151 24.5914 39.9151 19.3776 36.6993 16.1618C33.4835 12.9461 28.2698 12.9461 25.054 16.1618L22 19.2158L18.9461 16.1618C15.7303 12.9461 10.5165 12.9461 7.30074 16.1618ZM10.0875 25.0203C8.41089 23.3437 8.41089 20.6253 10.0875 18.9486C11.7642 17.272 14.4826 17.272 16.1593 18.9486L19.1951 21.9845L16.1593 25.0203C14.4826 26.697 11.7642 26.697 10.0875 25.0203ZM27.8408 25.0203C29.5175 26.697 32.2358 26.697 33.9125 25.0203C35.5892 23.3437 35.5892 20.6253 33.9125 18.9486C32.2358 17.272 29.5175 17.272 27.8408 18.9486L24.805 21.9845L27.8408 25.0203Z"
+                fill="url(#paint1_radial_6303_8920)"
+            />
+            <path
+                opacity="0.4"
+                d="M11.7627 17.9109C13.2569 17.4126 14.9708 17.7582 16.1603 18.9477L19.1962 21.9835L22.0213 19.235L22.0011 19.2148L18.9471 16.1609C17.9658 15.1795 16.7983 14.4976 15.5584 14.1152L11.7627 17.9109Z"
+                fill="url(#paint2_linear_6303_8920)"
+            />
+            <path
+                opacity="0.4"
+                d="M28.8701 29.9699L33.3401 25.4999C31.6652 26.6756 29.3381 26.5151 27.8413 25.0183L24.8054 21.9824L22.0005 24.7511L25.0545 27.8051C26.1478 28.8984 27.472 29.62 28.8701 29.9699Z"
+                fill="url(#paint3_linear_6303_8920)"
+            />
+        </g>
+    </g>
+    <path
+        d="M12 0.5H32C38.3513 0.5 43.5 5.64873 43.5 12V32C43.5 38.3513 38.3513 43.5 32 43.5H12C5.64873 43.5 0.5 38.3513 0.5 32V12C0.5 5.64873 5.64873 0.5 12 0.5Z"
+        stroke="#EAE7E4"
+    />
+    <defs>
+        <linearGradient
+            id="paint0_linear_6303_8920"
+            x1="44"
+            y1="51.6728"
+            x2="23.4572"
+            y2="-2.23213"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop stop-color="#FB83AE" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+        </linearGradient>
+        <radialGradient
+            id="paint1_radial_6303_8920"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientTransform="matrix(14.931 -11.0656 37.5731 10.7534 14.5148 30.0922)"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop stop-color="#FFD580" />
+            <stop offset="0.09375" stop-color="#F6C592" />
+            <stop offset="0.205" stop-color="#EBB6A2" />
+            <stop offset="0.324466" stop-color="#DFA5AF" />
+            <stop offset="0.42875" stop-color="#D397BE" />
+            <stop offset="0.53375" stop-color="#C486CB" />
+            <stop offset="0.64875" stop-color="#B578D9" />
+            <stop offset="0.77125" stop-color="#A166E5" />
+            <stop offset="0.89125" stop-color="#8B57F2" />
+            <stop offset="1" stop-color="#704CFF" />
+        </radialGradient>
+        <linearGradient
+            id="paint2_linear_6303_8920"
+            x1="16.0894"
+            y1="16.9787"
+            x2="20.3747"
+            y2="21.0503"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop stop-color="#372580" stop-opacity="0" />
+            <stop offset="1" stop-color="#372580" />
+        </linearGradient>
+        <linearGradient
+            id="paint3_linear_6303_8920"
+            x1="23.4785"
+            y1="23.3814"
+            x2="27.4196"
+            y2="26.8299"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop stop-color="#372580" />
+            <stop offset="1" stop-color="#372580" stop-opacity="0" />
+        </linearGradient>
+        <clipPath id="clip0_6303_8920">
+            <path
+                d="M0 12C0 5.37258 5.37258 0 12 0H32C38.6274 0 44 5.37258 44 12V32C44 38.6274 38.6274 44 32 44H12C5.37258 44 0 38.6274 0 32V12Z"
+                fill="white"
+            />
+        </clipPath>
+        <clipPath id="clip1_6303_8920">
+            <rect width="44" height="44" fill="white" />
+        </clipPath>
+    </defs>
+</svg>

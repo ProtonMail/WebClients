@@ -9,8 +9,10 @@ import driveFree from './logo/plan-drive-free.svg';
 import duo from './logo/plan-duo.svg';
 import family from './logo/plan-family.svg';
 import mailFree from './logo/plan-mail-free.svg';
+import passFamily from './logo/plan-pass-family.svg';
 import passFreeDark from './logo/plan-pass-free-dark.svg';
 import passFreeLight from './logo/plan-pass-free-light.svg';
+import passLifetime from './logo/plan-pass-lifetime.svg';
 import vpnBusiness from './logo/plan-vpn-business.svg';
 import vpnFree from './logo/plan-vpn-free.svg';
 import vpnPassBundleDark from './logo/plan-vpn-pass-bundle-dark.svg';
@@ -24,7 +26,9 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
         | PLANS.FAMILY
         | PLANS.VPN_BUSINESS
         | PLANS.BUNDLE_PRO_2024
-        | PLANS.VPN_PASS_BUNDLE;
+        | PLANS.VPN_PASS_BUNDLE
+        | PLANS.PASS_FAMILY
+        | PLANS.PASS_LIFETIME;
     size?: number;
     dark?: boolean;
 }
@@ -38,6 +42,12 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     }
     if (planName === PLANS.FAMILY) {
         return <img {...rest} src={family} width={size} alt="" />;
+    }
+    if (planName === PLANS.PASS_FAMILY) {
+        return <img {...rest} src={passFamily} width={size} alt="" />;
+    }
+    if (planName === PLANS.PASS_LIFETIME) {
+        return <img {...rest} src={passLifetime} width={size} alt="" />;
     }
     if (planName === PLANS.VPN_BUSINESS) {
         return <img {...rest} src={vpnBusiness} width={size} alt="" />;

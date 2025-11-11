@@ -9,8 +9,16 @@ import {
     getPlanName,
     isFreeSubscription,
 } from '@proton/payments';
+import type { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
-import { getAllowedCycles } from '../../helpers';
+import { SUBSCRIPTION_STEPS } from '../../constants';
+import {
+    type GetPlanUpsellArgs,
+    type MaybeUpsell,
+    defaultUpsellCycleB2C,
+    getAllowedCycles,
+    getUpsell,
+} from '../../helpers';
 
 export const useSubscriptionPriceComparison = (
     subscription?: Subscription | FreeSubscription,
@@ -103,4 +111,31 @@ export const useSubscriptionPriceComparison = (
             showSavings,
         };
     }, [subscription, plansMapLoading]);
+};
+
+type GetPlanUpsellV2Args = GetPlanUpsellArgs & {
+    plan: PLANS;
+    upsellPath: DASHBOARD_UPSELL_PATHS;
+};
+
+export const getDashboardUpsellV2 = ({ plan, openSubscriptionModal, ...rest }: GetPlanUpsellV2Args): MaybeUpsell => {
+    return getUpsell({
+        plan,
+        features: [],
+        title: rest.title,
+        customCycle: rest.customCycle || defaultUpsellCycleB2C,
+        description: '',
+        onUpgrade: () =>
+            openSubscriptionModal({
+                cycle: rest.customCycle || defaultUpsellCycleB2C,
+                plan,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+                telemetryFlow: rest.telemetryFlow,
+            }),
+        ...rest,
+    });
 };

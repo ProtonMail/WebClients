@@ -57,6 +57,8 @@ export const getRoutes = ({
     canDisplayNonPrivateEmailPhone,
     showMailDashboard,
     showMailDashboardVariant,
+    showPassDashboard,
+    showPassDashboardVariant,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -84,6 +86,8 @@ export const getRoutes = ({
             canDisplayNonPrivateEmailPhone,
             showMailDashboard,
             showMailDashboardVariant,
+            showPassDashboard,
+            showPassDashboardVariant,
         }),
         mail: getMailAppRoutes({
             app,

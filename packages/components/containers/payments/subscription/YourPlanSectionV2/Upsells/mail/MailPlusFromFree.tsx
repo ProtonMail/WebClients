@@ -4,23 +4,22 @@ import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
 import { DARK_WEB_MONITORING_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { PlanCardFeatureDefinition } from '../../../features/interface';
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../constants';
-import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers';
-import { defaultUpsellCycleB2C, getUpsell } from '../../helpers';
-import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
-import { PlanIcon } from '../PlanIcon';
-import PlanIconName from '../PlanIconName';
-import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
-import { getDashboardUpsellTitle } from '../helpers';
-import UpsellMultiBox from './UpsellMultiBox';
+import type { GetPlanUpsellArgs } from '../../../helpers';
+import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
+import { PlanIcon } from '../../PlanIcon';
+import PlanIconName from '../../PlanIconName';
+import type { UpsellSectionProps, UpsellsHook } from '../../YourPlanUpsellsSectionV2';
+import { getDashboardUpsellTitle } from '../../helpers';
+import UpsellMultiBox from '../UpsellMultiBox';
+import { getDashboardUpsellV2 } from '../helper';
 
 const getMailFeatures = (): PlanCardFeatureDefinition[] => {
     return [
@@ -61,33 +60,6 @@ const getMailFeatures = (): PlanCardFeatureDefinition[] => {
     ];
 };
 
-const getMailUpsell = ({ app, plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
-    const plan = PLANS.MAIL;
-
-    return getUpsell({
-        plan,
-        plansMap,
-        features: [],
-        app,
-        upsellPath: DASHBOARD_UPSELL_PATHS.MAILPLUS,
-        title: rest.title,
-        customCycle: rest.customCycle || defaultUpsellCycleB2C,
-        description: '',
-        onUpgrade: () =>
-            openSubscriptionModal({
-                cycle: rest.customCycle || defaultUpsellCycleB2C,
-                plan,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
-                telemetryFlow: rest.telemetryFlow,
-            }),
-        ...rest,
-    });
-};
-
 export const useMailPlusFromFreeUpsells = ({
     app,
     subscription,
@@ -118,14 +90,18 @@ export const useMailPlusFromFreeUpsells = ({
     };
 
     const upsells = [
-        getMailUpsell({
+        getDashboardUpsellV2({
             ...upsellsPayload,
+            upsellPath: DASHBOARD_UPSELL_PATHS.MAILPLUS,
+            plan: PLANS.MAIL,
             customCycle: CYCLE.MONTHLY,
             highlightPrice: true,
             title: getDashboardUpsellTitle(CYCLE.MONTHLY),
         }),
-        getMailUpsell({
+        getDashboardUpsellV2({
             ...upsellsPayload,
+            upsellPath: DASHBOARD_UPSELL_PATHS.MAILPLUS,
+            plan: PLANS.MAIL,
             customCycle: CYCLE.YEARLY,
             highlightPrice: true,
             title: getDashboardUpsellTitle(CYCLE.YEARLY),

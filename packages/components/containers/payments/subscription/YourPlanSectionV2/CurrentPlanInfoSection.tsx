@@ -42,7 +42,13 @@ import { SUBSCRIPTION_STEPS } from '../constants';
 import { subscriptionExpires } from '../helpers';
 import { getReactivateSubscriptionAction } from '../helpers/subscriptionExpires';
 import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
-import { BillingDateSection, FreeVPNFeatures, ServersSection, UsersSection } from './PlanFeatureSections';
+import {
+    BillingDateSection,
+    FreeVPNFeatures,
+    FreeVaultFeatures,
+    ServersSection,
+    UsersSection,
+} from './PlanFeatureSections';
 import { PlanIcon } from './PlanIcon';
 import PlanIconName from './PlanIconName';
 import {
@@ -157,7 +163,7 @@ const PlanNameSection = ({
 
     return (
         <PlanIconName
-            logo={<PlanIcon app={app} subscription={subscription} />}
+            logo={<PlanIcon app={app} user={user} subscription={subscription} />}
             topLine={topLine}
             bottomLine={<AddonSection user={user} subscription={subscription} maxMembers={maxMembers} />}
         />
@@ -311,6 +317,7 @@ export const CurrentPlanInfoSection = ({
                 <BillingDateSection subscription={subscription} />
                 <ServersSection app={app} organization={organization} />
                 <FreeVPNFeatures app={app} serversCount={serversCount} isFreeUser={isFree} />
+                <FreeVaultFeatures app={app} isFreeUser={isFree} user={user} />
             </div>
             {cta && <div className="flex items-center w-full xl:w-auto">{cta}</div>}
         </div>
