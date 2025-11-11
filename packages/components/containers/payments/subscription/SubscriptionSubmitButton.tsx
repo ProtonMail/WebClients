@@ -10,18 +10,22 @@ import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import {
     type Currency,
+    type FreeSubscription,
     PAYMENT_METHOD_TYPES,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
     type SubscriptionCheckResponse,
     SubscriptionMode,
+    SubscriptionPlatform,
     hasMigrationDiscount,
+    isFreeSubscription,
     isTrial,
 } from '@proton/payments';
 import { EditCardModal, InclusiveVatText, PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { getSubscriptionManagerName } from './InAppPurchaseModal';
+import { getVisionaryDowngradeWarningTextElement } from './VisionaryDowngradeWarningModal';
 import type { SUBSCRIPTION_STEPS } from './constants';
 import type { CouponConfigRendered } from './coupon-config/useCouponConfig';
 
@@ -34,11 +38,12 @@ type Props = {
     loading?: boolean;
     disabled?: boolean;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     hasPaymentMethod: boolean;
     taxCountry: TaxCountryHook;
     paymentFacade: PaymentFacade;
     couponConfig?: CouponConfigRendered;
+    showVisionaryWarning: boolean;
 };
 
 const InfoBanner = ({ children, variant }: PropsWithChildren & { variant?: BannerVariants }) => {
@@ -62,6 +67,7 @@ const SubscriptionSubmitButton = ({
     taxCountry,
     paymentFacade,
     couponConfig,
+    showVisionaryWarning,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const { APP_NAME } = useConfig();
@@ -94,6 +100,10 @@ const SubscriptionSubmitButton = ({
             if (paymentForbiddenReason.reason === 'already-subscribed') {
                 text = c('Payments').t`You already have a subscription to this plan.`;
             } else if (paymentForbiddenReason.reason === 'already-subscribed-externally') {
+                if (isFreeSubscription(subscription) || subscription.External === SubscriptionPlatform.Default) {
+                    return null;
+                }
+
                 const subscriptionPlatform = getSubscriptionManagerName(subscription.External);
                 // translator: subscription platform is either "Apple App Store" or "Google Play".
                 text = c('Payments')
@@ -179,6 +189,19 @@ const SubscriptionSubmitButton = ({
                 .t`Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.`}</InfoBanner>
         ) : null;
 
+    const visionaryWarning = showVisionaryWarning ? (
+        <InfoBanner variant={BannerVariants.WARNING}>
+            {getVisionaryDowngradeWarningTextElement(subscription)}
+        </InfoBanner>
+    ) : null;
+
+    const paymentWarnings = (
+        <>
+            {discountLossWarning}
+            {visionaryWarning}
+        </>
+    );
+
     return (
         <>
             <PayButton
@@ -193,7 +216,7 @@ const SubscriptionSubmitButton = ({
                 {...payButtonProps}
             />
             <InclusiveVatText checkResult={checkResult} className="text-sm color-weak text-center mt-1" />
-            {discountLossWarning}
+            {paymentWarnings}
         </>
     );
 };

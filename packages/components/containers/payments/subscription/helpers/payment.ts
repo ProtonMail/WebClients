@@ -87,7 +87,11 @@ export function subscriptionExpires(subscription: FreeSubscription, cancelled?: 
 export function subscriptionExpires(subscription: Subscription | undefined, cancelled?: boolean): SubscriptionResult;
 export function subscriptionExpires(subscription: Subscription, cancelled?: boolean): SubscriptionResult;
 export function subscriptionExpires(
-    subscription?: Subscription | FreeSubscription | null,
+    subscription: Subscription | FreeSubscription | undefined | null,
+    cancelled?: boolean
+): FreeSubscriptionResult | SubscriptionResult;
+export function subscriptionExpires(
+    subscription?: Subscription | FreeSubscription | undefined | null,
     cancelled = false
 ): FreeSubscriptionResult | SubscriptionResult {
     if (!subscription || isFreeSubscription(subscription)) {
