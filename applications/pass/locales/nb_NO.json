@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } for Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } for iOS"
+      ],
       "Accept": [
         "Aksepter"
       ],
@@ -304,6 +310,9 @@
       "Get ${ PASS_APP_NAME }": [
         "Skaff deg ${ PASS_APP_NAME }"
       ],
+      "Get mobile and desktop apps": [
+        "Skaff deg mobil- og skrivebordsapper"
+      ],
       "Get mobile apps": [
         "Skaff deg mobilapper"
       ],
@@ -441,12 +450,6 @@
       ],
       "Organize vaults": [
         "Organiser hvelv"
-      ],
-      "Pass for Android": [
-        "Pass for Android"
-      ],
-      "Pass for iOS": [
-        "Pass for iOS"
       ],
       "Pass Monitor": [
         "Pass Monitor"
@@ -1863,10 +1866,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"

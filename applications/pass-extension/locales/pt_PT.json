@@ -299,9 +299,6 @@
       "Generating secure link...": [
         "A gerar uma ligação segura..."
       ],
-      "Get mobile apps": [
-        "Transfere as aplicações móveis"
-      ],
       "Get Pass Business": [
         "Obter Pass Business"
       ],
@@ -425,20 +422,8 @@
       "OK": [
         "Aceitar"
       ],
-      "Open in a window": [
-        "Abrir numa janela"
-      ],
       "Open navigation": [
         "Abrir navegação"
-      ],
-      "Open web app": [
-        "Abrir a aplicação web"
-      ],
-      "Pass for Android": [
-        "Pass para Android"
-      ],
-      "Pass for iOS": [
-        "Pass para iOS"
       ],
       "Pin item": [
         "Fixar o item"
@@ -1806,7 +1791,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"

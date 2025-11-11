@@ -255,6 +255,9 @@
       "Continue with Outlook": [
         "Continuare cu Outlook"
       ],
+      "Copy": [
+        "Copiere"
+      ],
       "Copy address": [
         "Copiere adresă"
       ],
@@ -1431,6 +1434,13 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3393,6 +3403,9 @@
       "Cannot export this contact": [
         "Acest contact nu se poate exporta."
       ],
+      "Cannot load \"My files\" root folder": [
+        "Nu se poate încărca folderul rădăcină „Fișierele mele”."
+      ],
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat. Reîncercați."
       ],
@@ -3462,6 +3475,12 @@
       ],
       "Error reading file": [
         "Eroare la citirea fișierului."
+      ],
+      "Expanding non-existent directory tree item": [
+        "Extindere articol inexistent din arborele de foldere."
+      ],
+      "Expanding non-expandable directory tree item": [
+        "Extindere articol din arborele de foldere care nu poate fi extins."
       ],
       "Expected structure attached": [
         "Structură așteptată atașată."
@@ -5672,7 +5691,7 @@
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
+        "Dacă veți continua cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
@@ -5741,6 +5760,9 @@
       ],
       "It's better to have:": [
         "Este bine să aveți:"
+      ],
+      "It's not possible to copy the folder to itself": [
+        "Nu se poate copia folderul în el însuși."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Articolele din gunoi vor sta aici până când le veți șterge permanent."
@@ -6171,6 +6193,9 @@
       ],
       "Search Enabled": [
         "Căutare actvată."
+      ],
+      "Select a folder to copy to.": [
+        "Selectați un folder în care să copiați."
       ],
       "Select a folder to move to.": [
         "Selectați folderul sursă."
@@ -7793,6 +7818,9 @@
       "Reactivate now": [
         "Reactivare acum"
       ],
+      "Reactivate subscription": [
+        "Reactivare abonament"
+      ],
       "Request an invite": [
         "Solicitați o invitație"
       ],
@@ -9143,6 +9171,9 @@
       "\"${ name }\" saved successfully": [
         "„${ name }” a fost salvat."
       ],
+      "\"${ name }\" successfully copied": [
+        "„${ name }” s-a copiat."
+      ],
       "\"${ name }\" successfully moved": [
         "„${ name }” a fost mutat cu succes."
       ],
@@ -9156,6 +9187,16 @@
         "Nu s-a putut decripta un articol.",
         "Nu s-au putut decripta ${ count } articole.",
         "Nu s-au putut decripta ${ count } de articole."
+      ],
+      "${ errors.length } item failed to be copied": [
+        "Articole care nu s-au putut copia: ${ errors.length }",
+        "Articole care nu s-au putut copia: ${ errors.length }",
+        "Articole care nu s-au putut copia: ${ errors.length }"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "Articole care nu s-au putut șterge: ${ errors.length }",
+        "Articole care nu s-au putut șterge: ${ errors.length }",
+        "Articole care nu s-au putut șterge: ${ errors.length }"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
@@ -9176,6 +9217,11 @@
         "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
         "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
         "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "Articole copiate mutate în gunoi: ${ numberOfItems }",
+        "Articole copiate mutate în gunoi: ${ numberOfItems }",
+        "Articole copiate mutate în gunoi: ${ numberOfItems }"
       ],
       "${ numberOfItems } item deleted": [
         "Articole șterse: ${ numberOfItems }",
@@ -9222,6 +9268,11 @@
         "${ numberOfItems } articole au fost restaurate din «Gunoi».",
         "${ numberOfItems } de articole au fost restaurate din «Gunoi»."
       ],
+      "${ numberOfItems } item successfully copied": [
+        "Articole copiate: ${ numberOfItems }",
+        "Articole copiate: ${ numberOfItems }",
+        "Articole copiate: ${ numberOfItems }"
+      ],
       "${ numberOfItems } item successfully moved": [
         "Un element a fost mutat cu succes.",
         "${ numberOfItems } articole au fost mutate cu succes.",
@@ -9265,6 +9316,9 @@
       ],
       "Contact group updated": [
         "Grup de contacte actualizat"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Copia lui „${ name }” a fost mutată în gunoi."
       ],
       "Device failed to be removed": [
         "Dispozitivul nu a reușit să fie îndepărtat"
@@ -10458,6 +10512,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Dacă vă abonați înainte de această dată**, veți primi **${ referrerRewardAmount }** în credite."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "După acea dată, contul va fi retrogradat la **${ BRAND_NAME } Free**. Dacă vă răzgândiți, vă puteți **reactiva abonamentul** pentru a vă păstra accesul la funcțiile speciale."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Câștigați până la ${ maxRewardAmount } în credite. Veți primi ${ referrerRewardAmount } atunci când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
       ],
@@ -11128,6 +11185,9 @@
       "${ app } storage": [
         "Spațiul de stocare din ${ app }"
       ],
+      "${ app } storage used": [
+        "Spațiu utilizat de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } - ${ percentage }% ocupat"
       ],
@@ -11139,6 +11199,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Pentru toate serviciile ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Spațiu utilizat"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
@@ -12413,6 +12476,9 @@
       "Logs": [
         "Jurnale"
       ],
+      "Make a copy": [
+        "Creare copie"
+      ],
       "Make a secure connection your default": [
         "Faceți o conexiune sigură ca implicită"
       ],
@@ -13037,6 +13103,11 @@
       ],
       "Only": [
         "Doar"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Modificările efectuate nu pot fi salvate."
       ]
     },
     "unprivatization": {

@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } para Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } para iOS"
+      ],
       "Accept": [
         "Aceptar"
       ],
@@ -308,8 +314,8 @@
       "Generating secure link...": [
         "Generando un enlace seguro..."
       ],
-      "Get mobile apps": [
-        "Descargar las aplicaciones móviles"
+      "Get mobile and desktop apps": [
+        "Obtén aplicaciones móviles y de escritorio"
       ],
       "Get Pass Business": [
         "Obtén Pass Business"
@@ -434,23 +440,11 @@
       "OK": [
         "Aceptar"
       ],
-      "Open in a window": [
-        "Abrir en una ventana"
-      ],
       "Open navigation": [
         "Abrir la navegación"
       ],
-      "Open web app": [
-        "Abrir la aplicación web"
-      ],
       "Organize vaults": [
         "Organizar cajas fuertes"
-      ],
-      "Pass for Android": [
-        "Pass para Android"
-      ],
-      "Pass for iOS": [
-        "Pass para iOS"
       ],
       "Pin item": [
         "Anclar elemento"
@@ -1829,7 +1823,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2975,6 +2970,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Larger window": [
+        "Ampliar ventana"
       ],
       "Last 2 weeks": [
         "Últimas 2 semanas"

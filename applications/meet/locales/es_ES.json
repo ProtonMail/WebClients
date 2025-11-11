@@ -1312,6 +1312,9 @@
       ],
       "Start a call immediately then share the link with others.": [
         "Inicia una llamada inmediatamente, luego comparte el enlace con otros."
+      ],
+      "Use a link to join a meeting.": [
+        "Usa un enlace para unirte a una reunión."
       ]
     },
     "emergency_access": {
@@ -1598,6 +1601,12 @@
       "Custom combination": [
         "Combinación personalizada"
       ],
+      "Default": [
+        "Por defecto"
+      ],
+      "Default - ${ systemDefault.label }": [
+        "Por defecto - ${ systemDefault.label }"
+      ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
         "¿Quieres que la gente te ${ deviceContentType } en la reunión?"
       ],
@@ -1738,6 +1747,9 @@
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Nuestras reuniones cifradas de extremo a extremo protegen la privacidad y facilitan la verdadera libertad de expresión."
+      ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Pega tu enlace de ${ MEET_APP_NAME } para unirte a una reunión segura"
       ],
       "Permission denied": [
         "Permiso denegado"
@@ -2030,6 +2042,9 @@
       "Find...": [
         "Buscar..."
       ],
+      "https://meet.proton.me/join/id-abc#pwd-123": [
+        "https://meet.proton.me/join/id-abc#pwd-123"
+      ],
       "Loading...": [
         "Cargando..."
       ],
@@ -2187,8 +2202,14 @@
       "Invite link": [
         "Enlace de invitación"
       ],
+      "Join a meeting": [
+        "Unirse a una reunión"
+      ],
       "Join meeting": [
         "Unirse a la reunión"
+      ],
+      "Join with link": [
+        "Únete con enlace"
       ],
       "Joining meeting with ${ participantCount } other participants…": [
         "Uniéndote a la reunión con ${ participantCount } participantes más…"

@@ -7718,6 +7718,9 @@
       "Reactivate now": [
         "Jetzt reaktivieren"
       ],
+      "Reactivate subscription": [
+        "Abonnement reaktivieren"
+      ],
       "Request an invite": [
         "Einladung anfordern"
       ],
@@ -10398,6 +10401,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Wenn du vor diesem Datum abonnierst,** erhältst du **${ referrerRewardAmount }** an Guthaben."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Nach diesem Datum wird dein Konto auf **${ BRAND_NAME } Free** zurückgestuft. Wenn du es dir anders überlegst, kannst du dein **Abonnement reaktivieren**, um den Zugriff auf Premium-Funktionen zu behalten."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Verdiene bis zu ${ maxRewardAmount } Guthaben. Du erhältst ${ referrerRewardAmount }, wenn die von dir eingeladene Person ein ${ BRAND_NAME }-Abonnement abschließt."
       ],
@@ -12934,6 +12940,11 @@
       ],
       "Only": [
         "Nur"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Deine vorgenommenen Änderungen werden möglicherweise nicht gespeichert."
       ]
     },
     "unprivatization": {

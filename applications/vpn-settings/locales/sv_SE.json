@@ -245,6 +245,9 @@
       "Create new policy": [
         "Skapa ny policy"
       ],
+      "Create organization": [
+        "Skapa organisation"
+      ],
       "Create users": [
         "Skapa användare"
       ],
@@ -917,6 +920,9 @@
       "Submit": [
         "Skicka"
       ],
+      "Subscribe": [
+        "Prenumerera"
+      ],
       "Subscribe now": [
         "Prenumerera nu"
       ],
@@ -1073,6 +1079,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe skrivassistent (för ${ quantity } användare)",
+        "${ BRAND_NAME } Scribe skrivassistent för ${ quantity } användare)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ytterligare anpassad domän",
         "${ domains } ytterligare anpassade domäner"
@@ -1895,8 +1908,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Lägg till användare manuellt"
+      ],
       "Close": [
         "Stäng"
+      ],
+      "Configure your network": [
+        "Konfigurera ditt nätverk"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
@@ -1916,17 +1935,29 @@
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
       ],
+      "Invite your team": [
+        "Bjud in ditt team"
+      ],
+      "Manage global VPN permissions": [
+        "Hantera globala VPN-behörigheter"
+      ],
       "Maybe later": [
         "Kanske senare"
       ],
       "Remind me later": [
         "Påminn mig senare"
       ],
+      "Secure your organization": [
+        "Säkra din organisation"
+      ],
       "Send": [
         "Skicka"
       ],
       "Set up other features": [
         "Ställ in andra funktioner"
+      ],
+      "Set up SSO": [
+        "Ställ in SSO"
       ],
       "Take a tour": [
         "Ta en rundtur"
@@ -3186,6 +3217,9 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "Skapa policyer för att bestämma vem som kan ansluta till delade servrar i varje land."
       ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Bestäm vilka användare som kan ansluta till var och en av våra 120+ delade serverplatser."
+      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
       ],
@@ -3218,6 +3252,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Om du inte redan har gjort det, aktivera några återställningsmetoder för att säkerställa att du aldrig förlorar åtkomst till ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
@@ -6367,6 +6404,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Få **${ referrerRewardAmount } krediter** för varje vän som prenumererar."
       ],
+      "Get started": [
+        "Kom igång"
+      ],
       "Get started with the referral link above.": [
         "Kom igång med hänvisningslänken ovan."
       ],
@@ -7044,6 +7084,9 @@
       ],
       "Set up your organization": [
         "Ställ in din organisation"
+      ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Ställ in din organisation och börja skydda dina data i några enkla steg."
       ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
@@ -7817,6 +7860,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ditt schemalagda paket startar den ${ renewalTime } och kommer förnyas automatiskt varje månad."
+      ],
+      "Your storage": [
+        "Ditt lagringsutrymme"
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
@@ -8973,6 +9019,9 @@
       ],
       "Reactivate now": [
         "Återaktivera nu"
+      ],
+      "Reactivate subscription": [
+        "Återaktivera prenumeration"
       ],
       "Request an invite": [
         "Begär en inbjudan"
@@ -11413,6 +11462,9 @@
       "End date": [
         "Slutdatum"
       ],
+      "Enter name": [
+        "Ange namn"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -12986,6 +13038,9 @@
       "${ app } storage": [
         "${ app } lagringsutrymme"
       ],
+      "${ app } storage used": [
+        "${ app } lagringsutrymme använt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fullt"
       ],
@@ -12997,6 +13052,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
+      ],
+      "Storage used": [
+        "Lagringsutrymme använt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "För att fortsätta använda ${ BRAND_NAME }-produkter, frigör utrymme eller ${ upgrade }"
@@ -13652,6 +13710,9 @@
       ],
       "Organization logo updated": [
         "Organisationens logga uppdaterad"
+      ],
+      "Organization name set": [
+        "Organisationsnamn inställt"
       ],
       "Organization name updated": [
         "Organisationsnamn uppdaterad"
@@ -14432,6 +14493,9 @@
       "Get more from your VPN": [
         "Få ut mer av din VPN"
       ],
+      "Get started": [
+        "Kom igång"
+      ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Skaffa appen på alla dina enheter och skydda upp till ${ VPN_CONNECTIONS } samtidigt."
       ],
@@ -14862,6 +14926,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Välkommen till ${ planName }"
       ],
       "What would you like to import?": [
         "Vad vill du importera?"

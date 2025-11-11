@@ -1046,6 +1046,9 @@
       "Country code": [
         "Код країни"
       ],
+      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
+        "Створення кількох безплатних облікових записів заборонено нашими ${ termsLink }."
+      ],
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
       ],
@@ -1063,6 +1066,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
+      ],
+      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
+        "Увійдіть у ${ mailLink } для отримання додаткової інформації та видалення обмежень."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
@@ -1547,6 +1553,9 @@
       ]
     },
     "Title": {
+      "Account restricted": [
+        "Обліковий запис обмежено"
+      ],
       "Enter your password": [
         "Введіть ваш пароль"
       ],

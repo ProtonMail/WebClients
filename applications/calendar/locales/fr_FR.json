@@ -50,6 +50,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add a date": [
+        "Ajouter une date"
+      ],
       "Add account": [
         "Ajouter un compte"
       ],
@@ -170,6 +173,9 @@
       ],
       "Close navigation": [
         "Fermer la navigation"
+      ],
+      "Close sidebar": [
+        "Fermer la barre latérale"
       ],
       "Close this banner": [
         "Fermer cette bannière"
@@ -5080,6 +5086,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
       ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } appel vidéo"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'offre à vie de ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5323,6 +5332,9 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Vous ne trouvez pas ce que vous cherchez ? Certains événements dans vos calendriers masqués correspondent à votre recherche. Pour voir ces résultats, activez la visibilité de ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create booking range across days": [
+        "Impossible de créer une plage de réservation s'étendant sur plusieurs jours"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -6303,6 +6315,9 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Vous avez déjà refusé cette invitation. Demandez à l'organisateur de vous réinviter."
       ],
+      "You will loose all unsaved changes.": [
+        "Vous perdrez toutes les modifications non enregistrées."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
       ],
@@ -7279,6 +7294,9 @@
       ],
       "Reactivate now": [
         "Réactiver maintenant"
+      ],
+      "Reactivate subscription": [
+        "Réactiver l'abonnement"
       ],
       "Request an invite": [
         "Demander une invitation"
@@ -9682,6 +9700,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si vous vous abonnez avant cette date,** vous recevrez **${ referrerRewardAmount }** en crédits."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Après cette date, votre compte passera à un abonnement inférieur à **${ BRAND_NAME } Gratuit**. Si vous changez d'avis, vous pouvez **réactiver votre abonnement** pour conserver l'accès aux fonctionnalités premium."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Gagnez jusqu'à ${ maxRewardAmount } en crédit. Vous recevrez ${ referrerRewardAmount } lorsque la personne que vous invitez s'abonnera à un abonnement ${ BRAND_NAME }."
       ],
@@ -11438,6 +11459,9 @@
       ],
       "Desktop": [
         "Bureau"
+      ],
+      "Discard changes?": [
+        "Abandonner les modifications ?"
       ],
       "Does not repeat": [
         "Ne pas répéter"

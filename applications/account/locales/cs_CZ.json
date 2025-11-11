@@ -420,6 +420,9 @@
       "Create new policy": [
         "Vytvořit novou zásadu"
       ],
+      "Create organization": [
+        "Vytvořit organizaci"
+      ],
       "Create users": [
         "Vytvořit uživatele"
       ],
@@ -1478,6 +1481,9 @@
       ],
       "Submit": [
         "Odeslat"
+      ],
+      "Subscribe": [
+        "Předplatit"
       ],
       "Subscribe now": [
         "Předplatit si nyní"
@@ -2560,6 +2566,9 @@
       "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
         "Objevte naše tipy pro efektivní správu doručené pošty, abyste mohli zůstat produktivní a soustředění."
       ],
+      "Easily manage your inbox": [
+        "Snadná správa doručené pošty"
+      ],
       "Easily manage your inbox with Mail Plus": [
         "Snadno spravujte svou doručenou poštu s Mail Plus"
       ],
@@ -2580,6 +2589,12 @@
       ],
       "How to get a custom email domain": [
         "Jak získat vlastní e-mailovou doménu"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Jak dosáhnout prázdné doručené pošty: Tipy pro organizaci příchozí pošty s důrazem na soukromí"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Pokud chcete posílit svou profesní identitu, je důležité se dozvědět, proč a jak vytvořit vlastní e-mailovou doménu. Většina lidí používá bezplatné e-mailové adresy s výchozími doménami poskytovanými jejich e-mailovou službou."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "V tomto článku se podíváme na to, kdo může vidět vaši historii na internetu při používání Wi-Fi, co může vidět a proč."
@@ -2654,10 +2669,10 @@
         "Pracujete s citlivými údaji?"
       ],
       "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
-        "Pracujete s citlivými saty? Použijte ${ MAIL_APP_NAME } k ochraně vaší komunikace a budování důvěry u klientů."
+        "Pracujete s citlivými daty? Použijte ${ MAIL_APP_NAME } k ochraně vaší komunikace a budování důvěry u klientů."
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
-        "Vaše osobní e-mailová adresa je nezbytnou součástí vaší digitální identity. Stejně jako telefonní číslo ji nedáváte každému, koho potkáte. Proto je užitečné mít další e-mailové adresy, které můžete používat pro různé účely."
+        "Vaše osobní e-mailová adresa je důležitou součástí vaší digitální identity. Stejně jako telefonní číslo ji nedáváte každému, koho potkáte. Proto je užitečné mít další e-mailové adresy, které můžete používat pro různé účely."
       ]
     },
     "breadcrumb": {
@@ -11695,6 +11710,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Importované kalendáře můžete také sloučit s existujícími ${ BRAND_NAME } kalendáři."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Přidělení úložiště můžete změnit v části **Uživatelé a adresy**."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Toto můžete později změnit v ${ settingsLink }."
       ],
@@ -11992,6 +12010,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Váš naplánovaný tarif začíná ${ renewalTime } a bude každý měsíc automaticky obnoven."
       ],
+      "Your storage": [
+        "Vaše úložiště"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše předplatné se automaticky obnoví ${ renewalTime }."
       ],
@@ -12105,6 +12126,11 @@
         "Pouze zobrazení"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Takto se vaše organizace bude zobrazovat uživatelům. Můžete to kdykoli změnit."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Nejde o platnou e-mailovou adresu"
@@ -12118,6 +12144,11 @@
     "Input placeholder": {
       "Add label": [
         "Přidat štítek"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Jaký je název vaší organizace?"
       ]
     },
     "invitation status": {
@@ -13173,6 +13204,9 @@
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Pro ${ DRIVE_SHORT_APP_NAME } a ${ DOCS_SHORT_APP_NAME }."
       ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Pro ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } a ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "za první měsíc"
       ],
@@ -14212,6 +14246,9 @@
       ],
       "Reactivate now": [
         "Znovu aktivovat"
+      ],
+      "Reactivate subscription": [
+        "Znovu aktivovat předplatné"
       ],
       "Request an invite": [
         "Požádat o pozvánku"
@@ -17808,6 +17845,9 @@
       "End date": [
         "Datum ukončení"
       ],
+      "Enter name": [
+        "Zadejte název"
+      ],
       "example@domain.com": [
         "priklad@domena.cz"
       ],
@@ -18274,6 +18314,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Pokud si předplatíte službu před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tomto datu bude váš účet převeden na **${ BRAND_NAME } Free**. Pokud si to rozmyslíte, můžete **znovu aktivovat předplatné** a zachovat si přístup k prémiovým funkcím."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užívejte si **${ planTitle }** zdarma až do **${ textDate }**."
@@ -20717,6 +20760,9 @@
       "${ app } storage": [
         "úložiště ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } úložiště využito"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } je zaplněno z ${ percentage } %"
       ],
@@ -21517,6 +21563,9 @@
       "Organization logo updated": [
         "Logo organizace aktualizováno"
       ],
+      "Organization name set": [
+        "Název organizace nastaven"
+      ],
       "Organization name updated": [
         "Název organizace aktualizován"
       ],
@@ -22197,6 +22246,9 @@
       ],
       "Collaborate on documents": [
         "Spolupracovat na dokumentech"
+      ],
+      "Compare plans": [
+        "Porovnání tarifů"
       ],
       "Composing": [
         "Psaní"
@@ -23436,6 +23488,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vítejte v ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Vítejte v ${ planName }"
       ],
       "What is an alias?": [
         "Co je alias?"

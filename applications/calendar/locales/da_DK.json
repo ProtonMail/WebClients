@@ -1252,6 +1252,12 @@
         "Valgfri"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat mere ikke vist",
+        "${ hiddenResultsCount } resultater mere ikke vist"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Efter prøveperioden udløber den ${ formattedDate }, vil det blive et betalt abonnement, der automatisk fornyes hver ${ renewCycle } måned. Du vil ikke blive opkrævet betaling, hvis du opsiger før den ${ formattedDate }."
@@ -7212,6 +7218,9 @@
       "Reactivate now": [
         "Genaktiver nu"
       ],
+      "Reactivate subscription": [
+        "Genaktiver abonnement"
+      ],
       "Request an invite": [
         "Anmod om invitation"
       ],
@@ -9602,6 +9611,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } pr. henvisning"
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Efter den dato vil din konto blive nedgraderet til **${ BRAND_NAME } Free**. Hvis du ombestemmer dig, kan du **genaktivere dit abonnement** for at bevare adgangen til premium-funktioner."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Optjen op til ${ maxRewardAmount } i kredit. Du får ${ referrerRewardAmount }, når den person, du inviterer, abonnerer på et ${ BRAND_NAME }-abonnement."
       ],
@@ -10313,6 +10325,9 @@
       "${ app } storage": [
         "${ app } lagerplads"
       ],
+      "${ app } storage used": [
+        "${ app } lagerplads brugt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fuldt"
       ],
@@ -10324,6 +10339,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "For alle ${ BRAND_NAME } tjenester"
+      ],
+      "Storage used": [
+        "Anvendt lagerplads"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "For at fortsætte med at bruge ${ BRAND_NAME }-produkter, frigør plads eller ${ upgrade }"
@@ -11349,6 +11367,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Discard changes?": [
+        "Kassér ændringer?"
       ],
       "Does not repeat": [
         "Gentages ikke"

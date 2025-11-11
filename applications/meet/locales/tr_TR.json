@@ -1312,6 +1312,9 @@
       ],
       "Start a call immediately then share the link with others.": [
         "Hemen bir çağrı başlatın ve ardından bağlantıyı başkalarıyla paylaşın."
+      ],
+      "Use a link to join a meeting.": [
+        "Bir görüşmeye katılmak için bir bağlantı kullanın."
       ]
     },
     "emergency_access": {
@@ -1745,6 +1748,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Uçtan uca şifrelenmiş görüşmelerimiz gizliliği korur ve gerçek anlamda ifade özgürlüğü sağlar."
       ],
+      "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
+        "Güvenli bir görüşmeye katılmak için ${ MEET_APP_NAME } bağlantınızı yapıştırın."
+      ],
       "Permission denied": [
         "İzin verilmedi"
       ],
@@ -2036,6 +2042,9 @@
       "Find...": [
         "Bul..."
       ],
+      "https://meet.proton.me/join/id-abc#pwd-123": [
+        "https://meet.proton.me/join/kimlik-abc#prl-123"
+      ],
       "Loading...": [
         "Yükleniyor..."
       ],
@@ -2193,8 +2202,14 @@
       "Invite link": [
         "Davet bağlantısı"
       ],
+      "Join a meeting": [
+        "Bir görüşmeye katılın"
+      ],
       "Join meeting": [
         "Görüşmeye katıl"
+      ],
+      "Join with link": [
+        "Bağlantı ile katılın"
       ],
       "Joining meeting with ${ participantCount } other participants…": [
         "${ participantCount } diğer kişiyle görüşmeye katılınıyor…"

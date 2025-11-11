@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } pre Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } pre iOS"
+      ],
       "Accept": [
         "Prijať"
       ],
@@ -308,8 +314,8 @@
       "Generating secure link...": [
         "Vytváranie bezpečného odkazu..."
       ],
-      "Get mobile apps": [
-        "Získať mobilné aplikácie"
+      "Get mobile and desktop apps": [
+        "Získať mobilné a desktopové aplikácie"
       ],
       "Get Pass Business": [
         "Získajte Pass Business"
@@ -434,23 +440,11 @@
       "OK": [
         "OK"
       ],
-      "Open in a window": [
-        "Otvoriť v okne"
-      ],
       "Open navigation": [
         "Otvoriť menu"
       ],
-      "Open web app": [
-        "Otvoriť webovú aplikáciu"
-      ],
       "Organize vaults": [
         "Usporiadať trezory"
-      ],
-      "Pass for Android": [
-        "Proton Pass pre Android"
-      ],
-      "Pass for iOS": [
-        "Proton Pass pre iOS"
       ],
       "Pin item": [
         "Pripnúť položku"
@@ -1893,6 +1887,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -3087,6 +3087,9 @@
       ],
       "Language": [
         "Jazyk"
+      ],
+      "Larger window": [
+        "Väčšie okno"
       ],
       "Last 2 weeks": [
         "Posledné 2 týždne"

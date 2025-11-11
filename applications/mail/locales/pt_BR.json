@@ -1496,8 +1496,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1563,7 +1562,7 @@
         "Atualizar frase de recuperação"
       ],
       "Update secret passphrase": [
-        "Atualizar passphrase secreta"
+        "Atualizar frase secreta"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -2524,7 +2523,7 @@
         "${ participantName } já havia aceitado provisoriamente seu convite para uma ocorrência do evento."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "${ participantName } já havia aceitado provisoriamente seu convite."
+        "${ participantName } havia aceitado provisoriamente seu convite."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
         "${ participantName } havia proposto um novo horário para uma ocorrência deste evento. Esta proposta está desatualizada."
@@ -6799,6 +6798,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
       ],
+      "Addresses settings": [
+        "Configurações de endereços"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Os anunciantes rastreiam sua navegação para exibir anúncios segmentados. O ${ VPN_APP_NAME } bloqueia rastreadores e anúncios, tornando sua conexão mais rápida e melhorando sua experiência on-line."
       ],
@@ -7519,7 +7521,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -10261,6 +10264,9 @@
       "Reactivate now": [
         "Reativar agora"
       ],
+      "Reactivate subscription": [
+        "Reativar assinatura"
+      ],
       "Request an invite": [
         "Solicitar um convite"
       ],
@@ -12782,6 +12788,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Após essa data, sua conta fará o downgrade para **${ BRAND_NAME } Free**. Se você mudar de ideia, você pode **reativar sua assinatura** para manter o acesso a recursos premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe até ${ maxRewardAmount } em crédito. Você receberá ${ referrerRewardAmount } quando a pessoa que você convidar se inscrever em um plano ${ BRAND_NAME }."

@@ -420,6 +420,9 @@
       "Create new policy": [
         "Opprett ny retningslinje"
       ],
+      "Create organization": [
+        "Opprett organisasjon"
+      ],
       "Create users": [
         "Opprett brukere"
       ],
@@ -783,6 +786,9 @@
       "Get more servers": [
         "Få flere tjenere"
       ],
+      "Get more storage": [
+        "Skaff deg mer lagringskapasitet"
+      ],
       "Get Pass Family": [
         "Skaff deg Pass Family"
       ],
@@ -955,7 +961,7 @@
         "Administrer avansert kontobeskyttelse"
       ],
       "Manage communication preferences": [
-        "Administrere kommunikasjonsinnstillinger"
+        "Administrer kommunikasjonsinnstillinger"
       ],
       "Manage folders": [
         "Behandle mapper"
@@ -1476,6 +1482,9 @@
       "Submit": [
         "Send inn"
       ],
+      "Subscribe": [
+        "Abonner"
+      ],
       "Subscribe now": [
         "Abonner nå"
       ],
@@ -1712,6 +1721,9 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
         "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } bruker)",
         "${ BRAND_NAME } Scribe-skriveassistent (for ${ quantity } brukere)"
@@ -1723,6 +1735,9 @@
       "${ ips } server": [
         "${ ips } tjener",
         "${ ips } tjenere"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } KI-assistent"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "${ LUMO_APP_NAME } KI-assistent (for ${ quantity } bruker)",
@@ -2505,14 +2520,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "${ VPN_APP_NAME }s retningslinjer mot loggføring bekreftet av en ekstern revisjon"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Automatisk sletting**, **slumring** og **e-postplanlegging** er inkludert i abonnementet ditt."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Strømming** er inkludert i abonnementet ditt."
+      ],
+      "11 tips to stop spam emails": [
+        "11 tips for å stoppe søppelpost"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Automatiser gjentakende handlinger for å sortere og organisere innkommende e-poster."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Kan noen se internettloggen min hvis vi bruker samme WiFi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Oppdag våre tips for effektivt å administrere innboksen din slik at du kan forbli produktiv og fokusert."
+      ],
+      "Easily manage your inbox": [
+        "Administrer enkelt innboksen din"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Administrer enkelt innboksen din med Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Aktiver nødstopp og automatisk tilkobling i VPN-innstillingene dine."
+      ],
+      "Get a clean inbox with filters": [
+        "Få en ren innboks med filtre"
       ],
       "Get round-the-clock protection": [
         "Skaff deg beskyttelse døgnet rundt"
@@ -2522,6 +2558,15 @@
       ],
       "How to change your IP address on Windows": [
         "Hvordan endre IP-adressen din på Windows"
+      ],
+      "How to get a custom email domain": [
+        "Hvordan få et egendefinert e-postdomene"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Slik kommer du deg til innboks null: tips til organisering av innboksen med personvern først"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Hvis du vil heve din profesjonelle identitet, er det viktig å lære hvorfor og hvordan du oppretter et egendefinert e-postdomene. De fleste bruker gratis e-postadresser med standarddomener levert av e-posttjenesten deres."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "I denne artikkelen ser vi på hvem som kan se internettloggen din når du bruker WiFi, hva de kan se, og hvorfor de kan gjøre dette."
@@ -2535,8 +2580,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Er Telegram trygt å bruke? Som vi skal diskutere i denne artikkelen, avhenger det veldig av hvordan du bruker det."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Lær hvordan du kan bekjempe irriterende og potensielt skadelig søppelpost. Spam-e-poster, også kjent som søppelpost, kan være mer enn bare irriterende rot i innboksen din. Nettkriminelle kan bruke disse uønskede meldingene til å starte nettfiskingangrep og spre skadelig programvare."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Finn ut hvordan du aktiverer ${ VPN_APP_NAME } på ruteren."
+      ],
+      "Protect your business communications": [
+        "Beskytt forretningskommunikasjonen din"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Beskytt bedriften din mot datainnbrudd og gjør eksternt arbeid tryggere med et VPN for bedrifter."
@@ -2544,11 +2595,26 @@
       "Protect your whole household with 1 device": [
         "Beskytt hele husstanden med 1 enhet"
       ],
+      "See and manage all your email subscriptions": [
+        "Se og administrer alle dine e-postabonnementer"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Strøm fra alle større plattformer med ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "En gjennomsnittlig profesjonell mottar rundt 120 e-poster om dagen, noe som utgjør omtrent 43 800 e-poster i året. Uansett hvilken bransje du jobber i, er det en overveldende mengde forretnings-e-post å håndtere."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "Virkningen et databrudd kan ha på livet ditt, avhenger i stor grad av hvilken type informasjon som ble eksponert og for hvem. En rask reaksjon på et databrudd kan ofte beskytte din digitale identitet og forhindre tap."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Den mest private og sikre måten å kommunisere på nettet på er å bruke ende-til-ende-kryptering. Hvis du sender en ende-til-ende-kryptert e-post, krypteres den på enheten din (iPhone, Android eller bærbar PC) og dekrypteres ikke før den når enheten til personen du sendte meldingen til."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Denne artikkelen har blitt oppdatert for å inkludere WireGuard og Stealth VPN-protokollene."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Prøv ut **Nyhetsbrevvisning** for å rydde opp i innboksen din."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator bruker en kombinasjon av avanserte VPN-teknologier for å forbedre tilkoblingsstabiliteten og øke tilkoblingshastigheten din"
@@ -2559,11 +2625,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Vi diskuterer hvordan du endrer de eksterne og lokale IP-adressene til Windows-enheten din."
       ],
+      "What is an email alias?": [
+        "Hva er et e-postalias?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Hva er ende-til-ende-kryptering og hvordan fungerer det?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Hva du skal gjøre hvis dataene dine lekker ut i et datainnbrudd"
+      ],
       "Which VPN protocol is the best?": [
         "Hvilken VPN-protokoll er den beste?"
       ],
       "Working with sensitive data?": [
         "Jobber du med sensitive data?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Jobber du med sensitive data? Bruk ${ MAIL_APP_NAME } til å beskytte kommunikasjonen din og bygge tillit hos klientene."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Din personlige e-postadresse er en viktig del av din digitale identitet. Som telefonnummeret ditt, gir du det ikke til alle du møter. Derfor er det nyttig å ha andre e-postadresser du kan bruke til forskjellige formål."
       ]
     },
     "breadcrumb": {
@@ -4347,6 +4428,26 @@
         "Hver ${ interval } dag, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Opplev ekte frihet på nett og beskytt personvernet ditt."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Dra full nytte av ditt ${ planTitle }-abonnement."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Hold filene, bildene og dokumentene dine trygge med ${ maxDriveSpace } gratis skylagring."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Sett sikre passord uten problemer."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Med ${ planTitlePlusMaybeBrand } får du gratis tilgang til ${ VPN_APP_NAME } og andre personverntjenester."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Med ${ planTitlePlusMaybeBrand } får du gratis tilgang til alle ${ BRAND_NAME }-personverntjenester."
+      ]
+    },
     "Day": {
       "Friday": [
         "Fredag"
@@ -4764,6 +4865,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4775,6 +4882,9 @@
       ],
       "Browser": [
         "Nettleser"
+      ],
+      "Calendar": [
+        "Kalender"
       ],
       "Chrome": [
         "Chrome"
@@ -4791,6 +4901,9 @@
       "Download for Windows": [
         "Last ned for Windows"
       ],
+      "Download on Snap store": [
+        "Last ned på Snap Store"
+      ],
       "Download on the Apple App Store": [
         "Last ned på Apple App Store"
       ],
@@ -4802,6 +4915,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Hent den på Google Play"
       ],
       "Get the app": [
         "Skaff deg appen"
@@ -4835,6 +4951,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura eller senere"
+      ],
+      "Mail": [
+        "E-post"
       ],
       "Mobile": [
         "Mobil"
@@ -6901,7 +7020,7 @@
         "Administrer adresser"
       ],
       "Manage user accounts": [
-        "Administrere brukerkontoer"
+        "Administrer brukerkontoer"
       ],
       "Only ${ n } accepted invitation are allowed in a 6-month period.": [
         "Kun ${ n } akseptert invitasjon på 6 måneder er tillat.",
@@ -7154,6 +7273,9 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } enheter"
       ],
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
       "@pm.me address": [
         "@pm.me-adresse"
       ],
@@ -7166,6 +7288,12 @@
       "and more premium features...": [
         "og flere premiumfunksjoner..."
       ],
+      "Connect custom domain": [
+        "Koble til egendefinert domene"
+      ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
       "Double VPN": [
         "Dobbel VPN"
       ],
@@ -7177,6 +7305,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield-annonseblokkerer"
+      ],
+      "Priority support": [
+        "Prioritert brukerstøtte"
       ],
       "Secure streaming": [
         "Sikker strømming"
@@ -9515,7 +9646,7 @@
         "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
       ],
       "Google Pay mark": [
-        "Google Pay-merke"
+        "Merk Google Pay"
       ],
       "Got it": [
         "Skjønner"
@@ -11343,6 +11474,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan også slå sammen importerte kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Du kan endre lagringstildeling under **Brukere og adresser**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Du kan endre dette når som helst i ${ settingsLink }."
       ],
@@ -11622,6 +11756,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver måned."
       ],
+      "Your storage": [
+        "Din lagringsplass"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonnementet ditt fornyes automatisk ${ renewalTime }."
       ],
@@ -11731,6 +11868,11 @@
         "Vis bare"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Slik vil organisasjonen vises for brukere. Du kan endre det når som helst."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Ikke en gyldig e-postadresse"
@@ -11744,6 +11886,11 @@
     "Input placeholder": {
       "Add label": [
         "Legg til etikett"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Hva er navnet på organisasjonen din?"
       ]
     },
     "invitation status": {
@@ -12786,6 +12933,12 @@
       "Font size": [
         "Skriftstørrelse"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "For ${ DRIVE_SHORT_APP_NAME } og ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } og ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "for første måneden din"
       ],
@@ -13244,6 +13397,9 @@
       ],
       "Share your referral link": [
         "Del vervekoblingen din"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Delt mellom ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Vis ${ n } administrator",
@@ -13818,6 +13974,9 @@
       ],
       "Reactivate now": [
         "Aktiver på nytt nå"
+      ],
+      "Reactivate subscription": [
+        "Aktiver abonnementet på nytt"
       ],
       "Request an invite": [
         "Be om en invitasjon"
@@ -14838,7 +14997,7 @@
         "Begrenset støtte"
       ],
       "Manage user permissions and access": [
-        "Administrere brukertillatelser og -tilgang"
+        "Administrer brukertillatelser og tilgang"
       ],
       "Multiple admin roles": [
         "Flere administratorroller"
@@ -17052,7 +17211,7 @@
         "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielle rabattprisen gjelder for den første måneden av ${ subscriptionLength }.",
+        "Spesialrabattprisen gjelder for den første måneden [${ subscriptionLength }].",
         "Den spesielt rabatterte prisen er gyldig de første ${ subscriptionLength } månedene."
       ],
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
@@ -17305,6 +17464,9 @@
       ],
       "End date": [
         "Sluttdato"
+      ],
+      "Enter name": [
+        "Skriv inn navn"
       ],
       "example@domain.com": [
         "eksempel@domain.no"
@@ -17768,6 +17930,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Etter den datoen vil kontoen din bli nedgradert til **${ BRAND_NAME } Free**. Hvis du ombestemmer deg, kan du **reaktivere abonnementet ditt** for å beholde tilgang til premiumfunksjoner."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
@@ -20544,7 +20709,7 @@
         "Få bedriften din til å skille seg ut"
       ],
       "Manage your calendar": [
-        "Administrere kalenderen din"
+        "Administrer kalenderen din"
       ],
       "Online privacy, for your whole family": [
         "Personvern på nettet, for hele familien din"
@@ -20875,6 +21040,9 @@
       ],
       "Organization logo updated": [
         "Organisasjonslogo oppdatert"
+      ],
+      "Organization name set": [
+        "Organisasjonsnavn angitt"
       ],
       "Organization name updated": [
         "Organisasjonsnavn oppdatert"
@@ -21531,6 +21699,9 @@
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
       ],
+      "Compare plans": [
+        "Sammenlign planer"
+      ],
       "Composing": [
         "Skriving"
       ],
@@ -21682,6 +21853,9 @@
       "Decrypt key": [
         "Dekrypter nøkkel"
       ],
+      "Deep dive into email blog posts": [
+        "Dypdykk i e-postbloggartikler"
+      ],
       "Deep dive into VPN blog posts": [
         "Dypdykk i VPN-blogginnlegg"
       ],
@@ -21782,6 +21956,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Last ned ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Last ned ${ PASS_APP_NAME } for enhetene dine"
       ],
@@ -21880,6 +22057,9 @@
       ],
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Opplev rask og sømløs tilgang til e-postene dine med våre dedikerte apper."
       ],
       "Enter endpoints into your identity provider": [
         "Angi endepunkter i identitetsleverandøren"
@@ -21999,8 +22179,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i kreditter med ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Få tilgang til skrivebordsappen med ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Få fullstendig personverndekning"
+      ],
+      "Get more from your email": [
+        "Få mer ut av e-posten din"
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
@@ -22745,6 +22931,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Velkommen til ${ planName }"
+      ],
       "What is an alias?": [
         "Hva er et alias?"
       ],
@@ -22933,6 +23122,9 @@
       ],
       "Account is disconnected": [
         "Konto er frakoblet"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Lagt til i planen din: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
@@ -23468,6 +23660,9 @@
       ],
       "Did you know?": [
         "Visste du at?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Beskytt organisasjonen din mot datainnbrudd med ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Beskytt organisasjonen din mot datainnbrudd med ${ VPN_APP_NAME } for bedrifter."

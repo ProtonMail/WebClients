@@ -1450,8 +1450,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Додати користувачів вручну"
+      ],
       "Close": [
         "Закрити"
+      ],
+      "Configure your network": [
+        "Налаштувати свою мережу"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
@@ -1468,11 +1474,23 @@
       "Create label": [
         "Створити мітку"
       ],
+      "Invite your team": [
+        "Запросити свою команду"
+      ],
+      "Manage global VPN permissions": [
+        "Керувати глобальними дозволами VPN"
+      ],
       "Maybe later": [
         "Можливо пізніше"
       ],
+      "Secure your organization": [
+        "Захистити свою організацію"
+      ],
       "Send": [
         "Надіслати"
+      ],
+      "Set up SSO": [
+        "Налаштувати SSO"
       ],
       "Take a tour": [
         "Показати знайомство"
@@ -2682,8 +2700,17 @@
       "Connect your CRM, website, printers, and more.": [
         "Приєднайте вашу CRM, сайт, принтери і т.д."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Створіть мережевий шлюз, аби надати користувачам доступ до ваших ІТ-ресурсів через виділені сервери."
+      ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Створюйте нові облікові записи користувачів або імпортуйте користувачів за допомогою SSO (єдиного входу) та забезпечення SCIM."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Створити політику, щоби визначити, хто може під'єднуватися до спільних серверів у кожній країні."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Вирішіть, які користувачі можуть під’єднуватися до кожного з наших понад 120 спільних серверних розташувань."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
@@ -2696,6 +2723,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Якщо ви ще цього не зробили, ввімкніть кілька методів відновлення, щоби переконатися, що ви ніколи не втратите доступ до ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -3078,6 +3108,9 @@
       "Error connecting to the Bitcoin API.": [
         "Помилка підключення до Bitcoin API."
       ],
+      "Failed to lookup server. Please try again": [
+        "Не вдалося знайти сервер. Спробуйте ще раз"
+      ],
       "Failed to process the logo": [
         "Не вдалося обробити логотип"
       ],
@@ -3306,6 +3339,9 @@
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
+      "Server not found": [
+        "Сервер не знайдено"
+      ],
       "Signature verification failed": [
         "Неможливо перевірити підпис"
       ],
@@ -3383,6 +3419,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Щоб створити неприватні облікові записи користувачів і отримати до них доступ, потрібно відновити свої повноваження адміністратора."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Забагато запитів. Будь ласка, спробуйте ще раз після ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Забагато запитів. Будь ласка, спробуйте ще раз пізніше."
       ],
       "Try again later": [
         "Повторіть спробу пізніше"
@@ -5497,6 +5539,9 @@
       "Get ${ upsellPlanName }": [
         "Отримати ${ upsellPlanName }"
       ],
+      "Get started": [
+        "Початок роботи"
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перейдіть до свого провайдера ідентифікації, отримайте метадані SAML для ${ appName } та імпортуйте їх тут."
       ],
@@ -6088,6 +6133,9 @@
       "Set up your organization": [
         "Налаштуйте свою організацію"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Налаштуйте свою організацію і почніть захищати свої дані за кілька простих кроків."
+      ],
       "Setting up your new address…": [
         "Налаштування вашої нової адреси…"
       ],
@@ -6114,6 +6162,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
+      ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Деякі сервери можуть не відображатися у списку вище. Шукайте за назвою сервера (наприклад, AT#62), щоб їх знайти."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Вкажіть домен, якому дозволено автентифікацію з SAML SSO."
@@ -7463,6 +7514,9 @@
       ],
       "Second password": [
         "Другий пароль"
+      ],
+      "Server name": [
+        "Ім'я сервера"
       ],
       "Show ${ n } administrator": [
         "Показати ${ n } адміністратора",
@@ -9801,6 +9855,9 @@
       "E.g., ": [
         "Наприклад, "
       ],
+      "e.g., AT#62": [
+        "наприклад, AT#62"
+      ],
       "End date": [
         "Дата завершення"
       ],
@@ -12104,6 +12161,9 @@
       "Account": [
         "Обліковий запис"
       ],
+      "Account restricted": [
+        "Обліковий запис обмежено"
+      ],
       "Account suspended": [
         "Обліковий запис призупинено"
       ],
@@ -12380,6 +12440,9 @@
       "Discard changes?": [
         "Відхилити зміни?"
       ],
+      "Dismiss setup checklist": [
+        "Відмовитися від контрольного списку налаштування"
+      ],
       "Domain names": [
         "Домени"
       ],
@@ -12484,6 +12547,9 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Отримайте ${ vpnPlus } для доступу до всіх серверів"
+      ],
+      "Get started": [
+        "Початок роботи"
       ],
       "Get the apps": [
         "Отримати програми"
@@ -12670,6 +12736,9 @@
       ],
       "SAML authentication": [
         "Автентифікація SAML"
+      ],
+      "Search for additional servers": [
+        "Пошук додаткових серверів"
       ],
       "Security events": [
         "Події безпеки"

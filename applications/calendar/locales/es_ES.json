@@ -50,6 +50,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add a date": [
+        "Agregar una fecha"
+      ],
       "Add account": [
         "Añadir una cuenta"
       ],
@@ -170,6 +173,9 @@
       ],
       "Close navigation": [
         "Cerrar la navegación"
+      ],
+      "Close sidebar": [
+        "Cerrar la barra lateral"
       ],
       "Close this banner": [
         "Cerrar este banner"
@@ -5327,6 +5333,9 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "¿No encuentras los eventos que buscas? Algunos eventos en calendarios ocultos coinciden con tu búsqueda. Para ver esos resultados activa la visibilidad para ${ hiddenWithItemsCalendarList }."
       ],
+      "Cannot create booking range across days": [
+        "No puedes crear un rango de reserva que abarque varios días."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave y desactivar la alerta al mismo tiempo."
       ],
@@ -6312,6 +6321,9 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Ya habías rechazado esta invitación. Solicita al propietario una nueva invitación."
       ],
+      "You will loose all unsaved changes.": [
+        "Perderás todos los cambios no guardados."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderás el acceso a las funciones de ${ planTitle } en esta fecha."
       ],
@@ -7288,6 +7300,9 @@
       ],
       "Reactivate now": [
         "Reactivar"
+      ],
+      "Reactivate subscription": [
+        "Reactivar la suscripción"
       ],
       "Request an invite": [
         "Solicitar una invitación"
@@ -9691,6 +9706,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si te suscribes antes de esta fecha,** recibirás **${ referrerRewardAmount }** en créditos."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Después de esa fecha, tu cuenta pasará al plan inferior **${ BRAND_NAME } Gratuito**. Si cambias de opinión, puedes **reactivar tu suscripción** para mantener el acceso a las funciones prémium."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Gana hasta ${ maxRewardAmount } en crédito. Recibirás ${ referrerRewardAmount } cuando la persona que invites se suscriba a un plan de ${ BRAND_NAME }."
       ],
@@ -10405,6 +10423,9 @@
       "${ app } storage": [
         "almacenamiento de ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } de almacenamiento utilizado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } lleno al ${ percentage }%"
       ],
@@ -10416,6 +10437,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Almacenamiento utilizado"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para seguir usando los productos de ${ BRAND_NAME }, libera espacio o ${ upgrade }"
@@ -11441,6 +11465,9 @@
       ],
       "Desktop": [
         "Escritorio"
+      ],
+      "Discard changes?": [
+        "¿Descartar los cambios?"
       ],
       "Does not repeat": [
         "No se repite"

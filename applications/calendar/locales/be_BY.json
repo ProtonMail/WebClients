@@ -50,6 +50,9 @@
       "Add": [
         "Дадаць"
       ],
+      "Add a date": [
+        "Дадаць дату"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -172,6 +175,9 @@
       ],
       "Close navigation": [
         "Закрыць панэль навігацыі"
+      ],
+      "Close sidebar": [
+        "Закрыць бакавую панэль"
       ],
       "Close this banner": [
         "Закрыць гэты банер"
@@ -5203,6 +5209,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ MEET_APP_NAME } video call": [
+        "Відэазванок ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5472,6 +5481,9 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Не можаце знайсці падзеі, якія шукаеце? Некаторыя падзеі ў схаваных календарах адпавядаюць вашаму пошуку. Уключыце бачнасць для ${ hiddenWithItemsCalendarList }, каб убачыць гэтыя вынікі."
+      ],
+      "Cannot create booking range across days": [
+        "Немагчыма стварыць дыяпазон браніравання на некалькі дзён"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
@@ -6478,6 +6490,9 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Мінулы раз вы адхілілі запрашэнне. Папрасіце ўладальніка адправіць яго паўторна"
       ],
+      "You will loose all unsaved changes.": [
+        "Вы страціце ўсе незахаваныя змены."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Вы страціце доступ да функцый тарыфнага плана ${ planTitle } пасля гэтай даты."
       ],
@@ -7470,6 +7485,9 @@
       ],
       "Reactivate now": [
         "Актываваць паўторна"
+      ],
+      "Reactivate subscription": [
+        "Паўторная актывацыя падпіскі"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
@@ -10013,6 +10031,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "Вы атрымаеце **${ referrerRewardAmount }** у крэдытах **пры падпісцы да гэтай даты**."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Пасля гэтай даты ваш уліковы запіс будзе паніжаны да ўзроўню **${ BRAND_NAME } Free**. Калі вы перадумаеце, вы можаце **паўторна актываваць сваю падпіску**, каб захаваць доступ да прэміяльных функцый."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Зарабіце да ${ maxRewardAmount } у крэдытах. Вы атрымаеце ${ referrerRewardAmount }, калі запрошаная асоба падпішацца на тарыфны план ${ BRAND_NAME }."
       ],
@@ -10767,6 +10788,9 @@
       "${ app } storage": [
         "сховішча ${ app }"
       ],
+      "${ app } storage used": [
+        "Выкарыстана сховішча ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } запоўнена на ${ percentage }%"
       ],
@@ -10778,6 +10802,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Для ўсіх сэрвісаў ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Выкарыстана сховішча"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
@@ -11863,6 +11890,9 @@
       ],
       "Desktop": [
         "Для камп'ютара"
+      ],
+      "Discard changes?": [
+        "Адхіліць змены?"
       ],
       "Does not repeat": [
         "Не паўтараецца"

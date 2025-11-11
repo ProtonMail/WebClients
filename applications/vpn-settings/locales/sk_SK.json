@@ -245,6 +245,9 @@
       "Create new policy": [
         "Vytvoriť novú politiku"
       ],
+      "Create organization": [
+        "Vytvoriť organizáciu"
+      ],
       "Create users": [
         "Vytvoriť používateľov"
       ],
@@ -916,6 +919,9 @@
       ],
       "Submit": [
         "Potvrdiť"
+      ],
+      "Subscribe": [
+        "Predplatiť"
       ],
       "Subscribe now": [
         "Predplaťte si teraz"
@@ -1942,8 +1948,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Pridať používateľov manuálne"
+      ],
       "Close": [
         "Zavrieť"
+      ],
+      "Configure your network": [
+        "Nakonfigurujte svoju sieť"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
@@ -1963,17 +1975,29 @@
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
       ],
+      "Invite your team": [
+        "Pozvite váš tím"
+      ],
+      "Manage global VPN permissions": [
+        "Správa globálnych oprávnení VPN"
+      ],
       "Maybe later": [
         "Možno neskôr"
       ],
       "Remind me later": [
         "Pripomenúť neskôr"
       ],
+      "Secure your organization": [
+        "Zabezpečte svoju organizáciu"
+      ],
       "Send": [
         "Odoslať"
       ],
       "Set up other features": [
         "Nastaviť ďalšie funkcie"
+      ],
+      "Set up SSO": [
+        "Nastaviť SSO"
       ],
       "Take a tour": [
         "Absolvovať prehliadku"
@@ -3241,11 +3265,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Pripojte svoj CRM, webovú stránku, tlačiarne a ďalšie."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Vytvorte bránu, aby vaši používatelia mali prístup k vašim IT zdrojom prostredníctvom vyhradených serverov."
+      ],
       "Create groups you can email with a single address.": [
         "Vytvorte skupiny, ktorým môžete posielať emaily pomocou jednej adresy."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Vytvorte nové používateľské účty alebo importujte používateľov pomocou SSO (jednotného prihlásenia) SCIM provisioningu."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvorte pravidlá na určenie toho, kto sa môže pripojiť k zdieľaným serverom v jednotlivých krajinách."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Rozhodnite, ktorí používatelia sa môžu pripojiť ku každej z našich viac ako 120 zdieľaných serverových lokalít."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Získajte jednoduchý prístup k svojmu emailu a kalendáru v počítači aj v mobile."
@@ -3279,6 +3312,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomôžte svojmu tímu bezpečne ukladať heslá k citlivým obchodným a klientskym informáciám."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Ak ste tak ešte neurobili, povoľte niektoré metódy obnovy, aby ste sa uistili, že nikdy nestratíte prístup k ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
@@ -6568,6 +6604,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Získajte **${ referrerRewardAmount } kreditov** za každého priateľa, ktorý sa prihlási."
       ],
+      "Get started": [
+        "Začíname"
+      ],
       "Get started with the referral link above.": [
         "Začnite s odporúčacím odkazom vyššie."
       ],
@@ -7258,6 +7297,9 @@
       "Set up your organization": [
         "Nastavte svoju organizáciu"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Nastavte svoju organizáciu a začnite chrániť svoje údaje v niekoľkých jednoduchých krokoch."
+      ],
       "Setting up ${ feature }…": [
         "Nastavovanie ${ feature }…"
       ],
@@ -7864,6 +7906,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Importované kalendáre môžete tiež zlúčiť s existujúcimi ${ BRAND_NAME } kalendármi."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Pridelenie úložného priestoru môžete zmeniť v časti **Používatelia a adresy**."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Toto môžete neskôr zmeniť v ${ settingsLink }."
       ],
@@ -8077,6 +8122,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý mesiac."
       ],
+      "Your storage": [
+        "Vaše úložisko"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše predplatné sa automaticky obnoví dňa ${ renewalTime }."
       ],
@@ -8170,9 +8218,19 @@
         "Iba zobrazenie"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Takto sa vaša organizácia zobrazí používateľom. Môžete to kedykoľvek zmeniť."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Neplatná emailová adresa"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Ako sa nazýva vaša organizácia?"
       ]
     },
     "invitation status": {
@@ -9245,6 +9303,9 @@
       ],
       "Reactivate now": [
         "Znovu aktivovať"
+      ],
+      "Reactivate subscription": [
+        "Obnoviť predplatné"
       ],
       "Request an invite": [
         "Požiadať o pozvánku"
@@ -11746,6 +11807,9 @@
       "End date": [
         "Dátum ukončenia"
       ],
+      "Enter name": [
+        "Zadajte názov"
+      ],
       "example@domain.com": [
         "priklad@domena.sk"
       ],
@@ -12041,6 +12105,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Ak si predplatíte pred týmto dátumom,** získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tomto dátume bude váš účet znížený na **${ BRAND_NAME } Free**. Ak si to rozmyslíte, môžete **opätovne obnoviť svoje predplatné** a zachovať si prístup k prémiovým funkciám."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užite si **${ planTitle }** zadarmo až do **${ textDate }**."
@@ -14112,6 +14179,9 @@
       "Organization logo updated": [
         "Logo organizácie aktualizované"
       ],
+      "Organization name set": [
+        "Názov organizácie nastavený"
+      ],
       "Organization name updated": [
         "Názov organizácie aktualizovaný"
       ],
@@ -14773,6 +14843,9 @@
       "Discard changes?": [
         "Zrušiť zmeny?"
       ],
+      "Dismiss setup checklist": [
+        "Zrušiť kontrolný zoznam nastavení"
+      ],
       "Domain names": [
         "Názvy domén"
       ],
@@ -14910,6 +14983,9 @@
       ],
       "Get more from your VPN": [
         "Získajte zo svojej VPN viac"
+      ],
+      "Get started": [
+        "Začíname"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Nainštalujte si aplikáciu do všetkých svojich zariadení a chráňte naraz až ${ VPN_CONNECTIONS }."
@@ -15345,6 +15421,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Vitajte v ${ planName }"
       ],
       "What would you like to import?": [
         "Čo by ste chceli importovať?"

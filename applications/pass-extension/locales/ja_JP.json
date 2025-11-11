@@ -308,9 +308,6 @@
       "Generating secure link...": [
         "セキュアリンクを生成中..."
       ],
-      "Get mobile apps": [
-        "モバイルアプリを入手する"
-      ],
       "Get Pass Business": [
         "Business Passを入手する"
       ],
@@ -434,23 +431,11 @@
       "OK": [
         "OK"
       ],
-      "Open in a window": [
-        "ウィンドウで開く"
-      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
-      "Open web app": [
-        "ウェブアプリを開く"
-      ],
       "Organize vaults": [
         "保管庫を整理"
-      ],
-      "Pass for Android": [
-        "Android 版 Pass"
-      ],
-      "Pass for iOS": [
-        "iOS 版 Pass"
       ],
       "Pin item": [
         "アイテムをピン留め"
@@ -1817,6 +1802,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"

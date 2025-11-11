@@ -663,6 +663,12 @@
       "Search recent documents": [
         "უახლესი დოკუმენტების ძებნა"
       ],
+      "Search recent spreadsheets": [
+        "უახლესი ელცხრილების ძებნა"
+      ],
+      "Search recents": [
+        "უახლესების ძებნა"
+      ],
       "See how": [
         "იხილეთ, როგორ"
       ],
@@ -1060,6 +1066,12 @@
       ],
       "Unsupported event": [
         "გაუთვალისწინებელი შემთხვევა"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი",
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი"
       ]
     },
     "b2b_trials_Action": {
@@ -5879,6 +5891,9 @@
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
       ],
+      "Reactivate subscription": [
+        "გამოწერის ხელახლა გააქტიურება"
+      ],
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
       ],
@@ -7940,6 +7955,9 @@
       "Invited friends": [
         "მოწვეული მეგობრები"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "ბოლო შანსი, დაათვალიეროთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
+      ],
       "More sharing options": [
         "მეტი გაზიარების პარამეტრი"
       ],
@@ -8608,6 +8626,9 @@
       "${ app } storage": [
         "${ app } საცავი"
       ],
+      "${ app } storage used": [
+        "${ app } გამოყენებული საცავი"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } სავსეა ${ percentage }%"
       ],
@@ -8619,6 +8640,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ],
+      "Storage used": [
+        "გამოყენებული საცავი"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძენებლად გაათავისუფლეთ ადგილი, ან ${ upgrade }"

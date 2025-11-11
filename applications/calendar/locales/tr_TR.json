@@ -50,6 +50,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add a date": [
+        "Bir tarih ekleyin"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -230,6 +233,9 @@
       ],
       "Copy link": [
         "Bağlantıyı kopyala"
+      ],
+      "Copy link and close": [
+        "Bağlantıyı kopyala ve kapat"
       ],
       "Copy password": [
         "Parolayı kopyala"
@@ -686,6 +692,9 @@
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
+      "Remove the booking range": [
+        "Rezervasyon aralığını kaldır"
+      ],
       "Remove this notification": [
         "Bu bildirimi kaldır"
       ],
@@ -820,6 +829,9 @@
       ],
       "Skip verification": [
         "Doğrulamayı atla"
+      ],
+      "Split current booking range": [
+        "Geçerli rezervasyon aralığını böl"
       ],
       "Start import": [
         "İçe aktarmayı başlat"
@@ -1256,6 +1268,12 @@
     "Attendee role": {
       "Optional": [
         "İsteğe bağlı"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var",
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3201,6 +3219,9 @@
       "Your account and data recovery methods are set.": [
         "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "Kısa bir süre sonra ayrıntıların bulunduğu bir güvenli e-posta alacaksınız."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
       ]
@@ -3599,6 +3620,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
       ],
+      "Content verification failed": [
+        "İçerik doğrulanamadı"
+      ],
       "Could not open created vault": [
         "Oluşturulan kasa açılamadı"
       ],
@@ -3769,6 +3793,9 @@
       ],
       "Name required": [
         "Ad zorunludur"
+      ],
+      "No booking page data received": [
+        "Herhangi bir rezervasyon sayfası verisi alınamadı."
       ],
       "No calendars found to import": [
         "İçe aktarılabilecek bir takvim bulunamadı"
@@ -4584,6 +4611,11 @@
         "Çok küçük"
       ]
     },
+    "Form": {
+      "Your contact info": [
+        "İletişim bilgileriniz"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Google Meet görüşmesine katıl"
@@ -5054,6 +5086,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } görüntülü araması"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
@@ -5267,6 +5302,12 @@
       ],
       "Booking already exists.": [
         "Rezervasyon zaten var"
+      ],
+      "Booking cannot be added in the past.": [
+        "Rezervasyon geçmiş bir tarihe eklenemez."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Rezervasyon var olan bir rezervasyonla çakışıyor."
       ],
       "Booking page example": [
         "Rezervasyon sayfası örneği"
@@ -5708,6 +5749,9 @@
       "New": [
         "Yeni"
       ],
+      "No available slots for this day": [
+        "Bu gün içinde uygun bir aralık bulunmuyor"
+      ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
       ],
@@ -5874,6 +5918,10 @@
       "Removed participants will be notified.": [
         "Kaldırılan katılımcılara bildirim gönderilecek."
       ],
+      "Saving event": [
+        "Etkinlik kaydediliyor",
+        "Etkinlikler kaydediliyor"
+      ],
       "Scan the QR code with your mobile device": [
         "Mobil aygıtınızla kare kodu tarayın"
       ],
@@ -5906,6 +5954,9 @@
       ],
       "Setting up your new address…": [
         "Yeni adresiniz ayarlanıyor…"
+      ],
+      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
+        "Başkalarının takviminizden zaman ayırmasına izin vermek için bu sayfayı paylaşın. İstediğiniz zaman kenar çubuğundaki Rezervasyon sayfaları altından yönetebilirsiniz."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
@@ -6139,6 +6190,9 @@
       "What should people know before booking?": [
         "İnsanlar rezervasyon yapmadan önce nelere dikkat etmeliler?"
       ],
+      "When are you free?": [
+        "Ne zaman uygunsunuz?"
+      ],
       "When working remotely": [
         "Uzaktan çalışırken"
       ],
@@ -6239,6 +6293,9 @@
       ],
       "You cannot undo this action.": [
         "Bu işlemi geri alamazsınız."
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "Bir sayfada ${ MAX_BOOKING_SLOTS } taneden fazla rezervasyon alanı bulunamaz."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
@@ -7087,6 +7144,17 @@
         "Zoom görüşmesi"
       ]
     },
+    "label": {
+      "Date of the booking range": [
+        "Rezervasyon aralığının tarihi"
+      ],
+      "End time of the booking range": [
+        "Rezervasyon aralığının bitiş saati"
+      ],
+      "Start time of the booking range": [
+        "Rezervasyon aralığının başlangıç saati"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Renk"
@@ -7226,6 +7294,9 @@
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
+      ],
+      "Reactivate subscription": [
+        "Aboneliği yeniden etkinleştir"
       ],
       "Request an invite": [
         "Davet iste"
@@ -9629,6 +9700,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "${ maxRewardAmount } tutarına kadar kredi kazanın. Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda ${ referrerRewardAmount } alacaksınız."
       ],
@@ -10343,6 +10417,9 @@
       "${ app } storage": [
         "${ app } depolama alanı"
       ],
+      "${ app } storage used": [
+        "${ app } depolama alanı kullanıldı"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } %${ percentage } dolu"
       ],
@@ -10354,6 +10431,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "Storage used": [
+        "Kullanılan depolama alanı"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
@@ -11380,6 +11460,9 @@
       "Desktop": [
         "Bilgisayar"
       ],
+      "Discard changes?": [
+        "Değişiklikler silinsin mi?"
+      ],
       "Does not repeat": [
         "Yinelenmiyor"
       ],
@@ -11493,6 +11576,9 @@
       ],
       "High security for your account": [
         "Hesabınız için yüksek güvenlik"
+      ],
+      "Host": [
+        "Sunucu"
       ],
       "How does it all work?": [
         "Tüm bunlar nasıl işliyor?"
@@ -11866,6 +11952,9 @@
       ],
       "Your account is protected": [
         "Hesabınız korunuyor"
+      ],
+      "Your booking is confirmed": [
+        "Rezervasyonunuz onaylandı"
       ],
       "Your booking page is ready": [
         "Rezervasyon sayfanız hazır"

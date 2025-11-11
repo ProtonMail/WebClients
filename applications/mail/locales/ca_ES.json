@@ -91,7 +91,7 @@
         "Afegeix una nota"
       ],
       "Add participant": [
-        "Afegiu-hi participants"
+        "Afegeix un participant"
       ],
       "Add phone number": [
         "Afegeix número de telèfon"
@@ -380,7 +380,7 @@
         "Pla actual"
       ],
       "Custom": [
-        "Personalitzeu-ho"
+        "Personalitza"
       ],
       "Customize": [
         "Personalitza"
@@ -1208,7 +1208,7 @@
         "Continuar"
       ],
       "Resume downloading": [
-        "Repreneu la descàrrega"
+        "Reprèn la descàrrega"
       ],
       "Retry": [
         "Reintenta"
@@ -1274,7 +1274,7 @@
         "Selecciona la data i l'hora"
       ],
       "Self-destruct in 7 days": [
-        "S'eliminarà automàticament en 7 dies"
+        "Destrueix automàticament en 7 dies"
       ],
       "Self-destruct message": [
         "Destrueix el missatge automàticament"
@@ -1496,8 +1496,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4809,7 +4808,7 @@
         "S'ha assolit el temps màxim de caducitat."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
-        "S\"ha excedit el nombre màxim d\"adjunts (${ attachmentsCountLimit })"
+        "S'ha excedit el nombre màxim d'adjunts (${ attachmentsCountLimit })"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
@@ -6799,6 +6798,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
+      "Addresses settings": [
+        "Preferències d'adreces"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, cosa que fa la connexió més ràpida i millora l'experiència en línia."
       ],
@@ -7519,7 +7521,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7735,7 +7738,7 @@
         "No s'ha seleccionat cap etiqueta"
       ],
       "No links cleaned": [
-        "No s'ha esborrat cap enllaç"
+        "No s'ha netejat cap enllaç"
       ],
       "No messages to show": [
         "No hi ha cap missatge per a mostrar"
@@ -9657,7 +9660,7 @@
         "Gestiona les categories"
       ],
       "Manage my addresses": [
-        "Gestionar les meves adreces"
+        "Gestiona les meves adreces"
       ],
       "Mark as": [
         "Marca com a"
@@ -10260,6 +10263,9 @@
       ],
       "Reactivate now": [
         "Reactiva ara"
+      ],
+      "Reactivate subscription": [
+        "Reactiveu la subscripció"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -12772,6 +12778,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Gratuït**. Si canvieu d'opinió, podreu **reactivar la vostra subscripció** per mantenir l'accés a les funcions prèmium."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
       ],
@@ -14664,7 +14673,7 @@
         "Descarregueu ${ VPN_APP_NAME }"
       ],
       "Download Desktop app": [
-        "Descarregueu l'aplicació d'escriptori"
+        "Descarrega l'aplicació d'escriptori"
       ],
       "Enable ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
@@ -14802,7 +14811,7 @@
         "Bloqueja el remitent"
       ],
       "Built for privacy": [
-        "Dissenyat per privacitat"
+        "Dissenyat per a la privacitat"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció de ${ MAIL_SHORT_APP_NAME }"
@@ -15044,7 +15053,7 @@
         "Exportant contactes"
       ],
       "External encryption": [
-        "Xifrat extern"
+        "Xifratge extern"
       ],
       "Fewer distractions, more focus": [
         "Menys distraccions, més concentració"
@@ -15429,7 +15438,7 @@
         "La mateixa safata d'entrada amb una adreça de correu electrònic més curta"
       ],
       "Schedule now, send later": [
-        "Programeu-lo ara i envieu-lo més tard"
+        "Programeu ara i envieu més tard"
       ],
       "Schedule send": [
         "Programa l'enviament"

@@ -1496,8 +1496,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -6784,6 +6783,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
       ],
+      "Addresses settings": [
+        "Adressinställningar"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Annonsörer spårar din surfning för att visa riktade annonser. ${ VPN_APP_NAME } blockerar spårare och annonser, vilket gör din anslutning snabbare och förbättrar din upplevelse online."
       ],
@@ -7498,7 +7500,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -10224,6 +10227,9 @@
       ],
       "Reactivate now": [
         "Återaktivera nu"
+      ],
+      "Reactivate subscription": [
+        "Återaktivera prenumeration"
       ],
       "Request an invite": [
         "Begär en inbjudan"
@@ -13616,6 +13622,9 @@
       "${ app } storage": [
         "${ app } lagringsutrymme"
       ],
+      "${ app } storage used": [
+        "${ app } lagringsutrymme använt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fullt"
       ],
@@ -13627,6 +13636,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
+      ],
+      "Storage used": [
+        "Lagringsutrymme använt"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Om du vill fortsätta ladda upp och synkronisera filer, frigör utrymme eller uppgradera för mer lagringsutrymme."

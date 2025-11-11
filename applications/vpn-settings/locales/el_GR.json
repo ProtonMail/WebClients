@@ -245,6 +245,9 @@
       "Create new policy": [
         "Δημιουργία νέας πολιτικής"
       ],
+      "Create organization": [
+        "Δημιουργία οργανισμού"
+      ],
       "Create users": [
         "Δημιουργία χρηστών"
       ],
@@ -916,6 +919,9 @@
       ],
       "Submit": [
         "Υποβολή"
+      ],
+      "Subscribe": [
+        "Εγγραφή"
       ],
       "Subscribe now": [
         "Εγγραφείτε τώρα"
@@ -1914,8 +1920,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Προσθήκη χρηστών χειροκίνητα"
+      ],
       "Close": [
         "Κλείσιμο"
+      ],
+      "Configure your network": [
+        "Διαμορφώστε το δίκτυό σας"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
@@ -1935,17 +1947,29 @@
       "Discover and set up features": [
         "Ανακαλύψτε και ρυθμίστε δυνατότητες"
       ],
+      "Invite your team": [
+        "Προσκαλέστε την ομάδα σας"
+      ],
+      "Manage global VPN permissions": [
+        "Διαχείριση παγκόσμιων δικαιωμάτων VPN"
+      ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
       "Remind me later": [
         "Υπενθύμιση αργότερα"
       ],
+      "Secure your organization": [
+        "Ασφαλίστε τον οργανισμό σας"
+      ],
       "Send": [
         "Αποστολή"
       ],
       "Set up other features": [
         "Ρύθμιση άλλων δυνατοτήτων"
+      ],
+      "Set up SSO": [
+        "Ρύθμιση SSO"
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
@@ -3205,11 +3229,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Συνδέστε το CRM, την ιστοσελίδα, τους εκτυπωτές σας και άλλα."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Δημιουργήστε μια πύλη για να παρέχετε στους χρήστες σας πρόσβαση στους πόρους τεχνολογίας πληροφοριών μέσω αποκλειστικών διακομιστών."
+      ],
       "Create groups you can email with a single address.": [
         "Δημιουργήστε ομάδες στις οποίες μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου με μία μόνο ηλεκτρονική διεύθυνση."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Δημιουργήστε νέους λογαριασμούς χρηστών ή εισαγάγετε χρήστες με SSO (ενιαία σύνδεση) προμήθεια SCIM."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Δημιουργήστε πολιτικές ώστε να ορίσετε ποιος μπορεί να συνδεθεί στους κοινόχρηστους διακομιστές κάθε χώρας."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Αποφασίστε ποιοι χρήστες μπορούν να συνδεθούν σε καθεμία από τις 120+ τοποθεσίες των κοινόχρηστων διακομιστών μας."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Αποκτήστε εύκολα πρόσβαση στην ηλεκτρονική σας διεύθυνση και το ημερολόγιό σας σε υπολογιστή και κινητό."
@@ -3243,6 +3276,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Βοηθήστε την ομάδα σας να αποθηκεύει με ασφάλεια κωδικούς πρόσβασης σε ευαίσθητες επιχειρηματικές και πελατειακές πληροφορίες."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Εάν δεν το έχετε κάνει ήδη, ενεργοποιήστε μερικές μεθόδους ανάκτησης για να βεβαιωθείτε ότι δε θα χάσετε ποτέ την πρόσβαση στο ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
@@ -6398,6 +6434,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Κερδίστε **${ referrerRewardAmount } πιστώσεις** για κάθε φίλο που κάνει εγγραφή."
       ],
+      "Get started": [
+        "Ας ξεκινήσουμε"
+      ],
       "Get started with the referral link above.": [
         "Ξεκινήστε με τον σύνδεσμο παραπομπής παραπάνω."
       ],
@@ -7076,6 +7115,9 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Ρυθμίστε την οργάνωσή σας και ξεκινήστε να προστατεύετε τα δεδομένα σας με μερικά απλά βήματα."
+      ],
       "Setting up ${ feature }…": [
         "Ρύθμιση ${ feature }…"
       ],
@@ -7662,6 +7704,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Μπορείτε να αλλάξετε την κατανομή αποθηκευτικού χώρου στην ενότητα **Χρήστες και διευθύνσεις**."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ${ settingsLink }."
       ],
@@ -7859,6 +7904,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
       ],
+      "Your storage": [
+        "Ο αποθηκευτικός σας χώρος"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ],
@@ -7948,9 +7996,19 @@
         "Μόνο για ανάγνωση"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Έτσι θα εμφανίζεται ο οργανισμός σας στους χρήστες. Μπορείτε να το αλλάξετε ανά πάσα στιγμή."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Μη έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Ποιο είναι το όνομα του οργανισμού σας;"
       ]
     },
     "invitation status": {
@@ -9011,6 +9069,9 @@
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
+      ],
+      "Reactivate subscription": [
+        "Επανενεργοποίηση συνδρομής"
       ],
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
@@ -11446,6 +11507,9 @@
       "End date": [
         "Ημερομηνία Λήξης"
       ],
+      "Enter name": [
+        "Εισάγετε όνομα"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -11737,6 +11801,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Εάν εγγραφείτε πριν από αυτή την ημερομηνία,** θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Μετά από αυτή την ημερομηνία, ο λογαριασμός σας θα υποβαθμιστεί στο **${ BRAND_NAME } Free**. Αν αλλάξετε γνώμη, μπορείτε να **επανενεργοποιήσετε τη συνδρομή σας** για να διατηρήσετε την πρόσβασή σας στις premium λειτουργίες."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Απολαύστε το **${ planTitle }** δωρεάν μέχρι τις **${ textDate }**."
@@ -13698,6 +13765,9 @@
       "Organization logo updated": [
         "Το λογότυπο του οργανισμού ενημερώθηκε"
       ],
+      "Organization name set": [
+        "Τέθηκε το όνομα το οργανισμού"
+      ],
       "Organization name updated": [
         "Το όνομα του οργανισμού ενημερώθηκε"
       ],
@@ -14341,6 +14411,9 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
+      "Dismiss setup checklist": [
+        "Απόρριψη λίστας ελέγχου εγκατάστασης"
+      ],
       "Domain names": [
         "Ονόματα τομέων"
       ],
@@ -14476,6 +14549,9 @@
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
+      ],
+      "Get started": [
+        "Ας ξεκινήσουμε"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Λάβετε την εφαρμογή σε όλες τις συσκευές σας και προστατεύστε μέχρι ${ VPN_CONNECTIONS } ταυτόχρονα."
@@ -14907,6 +14983,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Καλώς ήρθατε στο ${ planName }"
       ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"

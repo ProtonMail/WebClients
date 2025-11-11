@@ -299,9 +299,6 @@
       "Generating secure link...": [
         "Generowanie linku..."
       ],
-      "Get mobile apps": [
-        "Pobierz aplikację mobilną"
-      ],
       "Get Pass Business": [
         "Wybierz plan Pass Business"
       ],
@@ -425,20 +422,8 @@
       "OK": [
         "OK"
       ],
-      "Open in a window": [
-        "Otwórz w oknie"
-      ],
       "Open navigation": [
         "Otwórz nawigację"
-      ],
-      "Open web app": [
-        "Otwórz aplikację internetową"
-      ],
-      "Pass for Android": [
-        "Proton Pass na Androida"
-      ],
-      "Pass for iOS": [
-        "Proton Pass na iOS"
       ],
       "Pin item": [
         "Przypnij element"
@@ -1856,7 +1841,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"

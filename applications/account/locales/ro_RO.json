@@ -420,6 +420,9 @@
       "Create new policy": [
         "Creare regulă"
       ],
+      "Create organization": [
+        "Creare organizație"
+      ],
       "Create users": [
         "Creare utilizatori"
       ],
@@ -782,6 +785,9 @@
       ],
       "Get more servers": [
         "Obțineți mai multe servere"
+      ],
+      "Get more storage": [
+        "Obțineți mai mult spațiu de stocare"
       ],
       "Get Pass Family": [
         "Luați Pass Family"
@@ -1476,6 +1482,9 @@
       "Submit": [
         "Trimitere"
       ],
+      "Subscribe": [
+        "Abonare"
+      ],
       "Subscribe now": [
         "Abonați-vă acum"
       ],
@@ -1712,6 +1721,14 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizator)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } utilizatori)",
+        "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } de utilizatori)"
+      ],
       "${ domains } additional custom domain": [
         "Domenii personale adiționale: ${ domains }",
         "Domenii personale adiționale: ${ domains }",
@@ -1721,6 +1738,14 @@
         "Servere: ${ ips }",
         "Servere: ${ ips }",
         "Servere: ${ ips }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asistent de IA ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
@@ -1733,6 +1758,11 @@
       ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domeniu personal",
+        "${ quantity } domenii personale",
+        "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -2119,6 +2149,13 @@
         "Adăugare în calendar și marcare ca fiind în așteptare"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }",
+        "Rezultate neafișate: ${ hiddenResultsCount }"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Nu sunt la birou și am acces limitat la e-mail."
@@ -2497,14 +2534,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Politica fără jurnalizare a ${ VPN_APP_NAME } este confirmată de un audit extern"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Ștergerea automată**, **amânarea** și **programarea mesajelor** sunt incluse în abonamentul actual."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Redarea în flux** este inclusă în abonamentul actual."
+      ],
+      "11 tips to stop spam emails": [
+        "11 sfaturi pentru a opri mesajele nedorite"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Automatizați acțiunile recurente pentru a sorta și organiza mesajele primite."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Îmi poate vedea cineva istoricul de navigare pe internet dacă folosim același Wi-Fi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Descoperiți sfaturile noastre pentru a vă gestiona eficient mesajele primite, astfel încât să vă păstrați productivitatea și concentrarea."
+      ],
+      "Easily manage your inbox": [
+        "Gestionați cu ușurință mesajele primite"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Gestionați cu ușurință mesajele primite cu Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Activați întrerupătorul de conexiune și conectarea automată în setările pentru VPN."
+      ],
+      "Get a clean inbox with filters": [
+        "Organizați-vă mesajele cu filtrele"
       ],
       "Get round-the-clock protection": [
         "Obțineți protecție permanentă"
@@ -2514,6 +2572,15 @@
       ],
       "How to change your IP address on Windows": [
         "Cum să vă schimbați adresa IP pe Windows"
+      ],
+      "How to get a custom email domain": [
+        "Cum să obțineți un domeniu de e-mail personal"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Cum să ajungeți la zero în mesajele primite: sfaturi pentru organizarea mesajelor, axată pe confidențialitate"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Dacă doriți să vă îmbunătățiți identitatea profesională, este important să învățați de ce și cum să creați un domeniu de e-mail personal. Majoritatea oamenilor utilizează adrese de e-mail gratuite cu domenii implicite oferite de serviciul lor de e-mail."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "În acest articol, analizăm cine vă poate vedea istoricul navigării pe internet atunci când utilizați o rețea Wi-Fi, ce poate vedea și de ce ar putea face acest lucru."
@@ -2527,8 +2594,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Telegram este sigur de utilizat? După cum vom discuta în acest articol, asta depinde foarte mult de modul în care îl utilizați."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Învățași cum să scăpași de mesajele de pe e-mail nedorite, enervante și potențial dăunătoare. Mesajele abuzive, cunoscute și sub denumirea de corespondență nedorită, pot fi mai mult decât o simplă aglomerație iritantă în căsuța poștală. Infractorii cibernetici pot folosi aceste mesaje nesolicitate și nedorite pentru a lansa atacuri de tip înșelătorie și a răspândi programe malițioase."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Aflați cum să activați ${ VPN_APP_NAME } pe ruterul personal."
+      ],
+      "Protect your business communications": [
+        "Protejați-vă comunicațiile de afaceri"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Protejați-vă compania împotriva breșelor de date și lucrați de la distanță mai sigur cu un VPN corporativ."
@@ -2536,11 +2609,26 @@
       "Protect your whole household with 1 device": [
         "Protejați-vă întreaga casă cu un singur dispozitiv"
       ],
+      "See and manage all your email subscriptions": [
+        "Vizualizați și gestionați toate abonamentele de e-mail"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Vizionați de pe toate platformele cu redare în flux cu ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "Un profesionist obișnuit primește aproximativ 120 de mesaje pe zi, ceea ce înseamnă aproximativ 43.800 pe an. Indiferent în ce industrie lucrați, aceasta este o cantitate copleșitoare de mesaje de afaceri de gestionat."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "Impactul pe care o divulgare de date îl poate avea asupra vieții personale depinde în mare măsură de tipul de informații care au fost expuse și cui. O reacție rapidă la o divulgare de date vă poate adesea proteja identitatea digitală și preveni orice pierderi."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Cel mai privat și sigur mod de a comunica online este prin utilizarea criptării bilaterale. Dacă trimiteți un e-mail criptat bilateral, acesta este criptat pe dispozitivul personal (iPhone, Android sau laptop) și nu este decriptat până când ajunge la dispozitivul persoanei căreia i-ați trimis mesajul."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Acest articol a fost actualizat pentru a include protocoalele WireGuard și Stealth VPN."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Încercați **Vizualizare buletine informative** pentru a vă organiza mesajele."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator folosește o combinație de tehnologii VPN avansate pentru a îmbunătăți stabilitatea și a crește viteza conexiunii"
@@ -2551,11 +2639,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Discutăm cum să schimbați adresele IP externe și locale ale dispozitivului Windows."
       ],
+      "What is an email alias?": [
+        "Ce este un alias de e-mail?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Ce este criptarea bilaterală și cum funcționează?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Ce să faceți dacă s-au divulgat date într-o compromitere a datelor"
+      ],
       "Which VPN protocol is the best?": [
         "Care protocol VPN este cel mai bun?"
       ],
       "Working with sensitive data?": [
         "Lucrați cu date confidențiale?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Lucrați cu date confidențiale? Utilizați ${ MAIL_APP_NAME } pentru a vă proteja comunicațiile și a câștiga încrederea clienților."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Adresa personală de e-mail este o parte esențială a identității dvs. digitale. Asemănător cu numărul de telefon, nu-l oferiți oricui vă întâlniți. De aceea, este util să aveți alte adrese de e-mail pe care le puteți utiliza în diverse scopuri."
       ]
     },
     "breadcrumb": {
@@ -4348,6 +4451,26 @@
         "La fiecare ${ interval } de zile, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Experimentați adevărata libertate online și protejați-vă confidențialitatea."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Obțineți mai mult din abonamentul ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Păstrați-vă fișierele, fotografiile și documentele în siguranță cu ${ maxDriveSpace } spațiu de stocare gratuit în cloud."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Setați parole sigure fără efort."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Cu ${ planTitlePlusMaybeBrand }, obțineți acces gratuit la ${ VPN_APP_NAME } și alte servicii de confidențialitate."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Cu ${ planTitlePlusMaybeBrand }, obțineți acces gratuit la toate serviciile de confidențialitate ale ${ BRAND_NAME }."
+      ]
+    },
     "Day": {
       "Friday": [
         "Vineri"
@@ -4766,6 +4889,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4777,6 +4906,9 @@
       ],
       "Browser": [
         "Navigator web"
+      ],
+      "Calendar": [
+        "Calendar"
       ],
       "Chrome": [
         "Chrome"
@@ -4793,6 +4925,9 @@
       "Download for Windows": [
         "Descărcare pentru Windows"
       ],
+      "Download on Snap store": [
+        "Descărcare din magazinul Snap"
+      ],
       "Download on the Apple App Store": [
         "Descărcare din App Store Apple"
       ],
@@ -4804,6 +4939,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Luați-l din Magazin Play"
       ],
       "Get the app": [
         "Luați aplicația"
@@ -4837,6 +4975,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura sau ulterioară"
+      ],
+      "Mail": [
+        "Mail"
       ],
       "Mobile": [
         "Dispozitive mobile"
@@ -7178,6 +7319,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "Dispozitive: ${ VPN_CONNECTIONS }"
       ],
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
+      ],
+      "@pm.me address": [
+        "Adresa @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Protecție programe malițioase și blocare reclame"
       ],
@@ -7186,6 +7333,12 @@
       ],
       "and more premium features...": [
         "și alte funcții premium..."
+      ],
+      "Connect custom domain": [
+        "Conectare domeniu personal"
+      ],
+      "Desktop app": [
+        "Aplicația pentru desktop"
       ],
       "Double VPN": [
         "VPN dublu"
@@ -7198,6 +7351,9 @@
       ],
       "NetShield Ad-blocker": [
         "Blocare reclame cu NetShield"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
       ],
       "Secure streaming": [
         "Transmisii în flux securizate"
@@ -7775,6 +7931,9 @@
       ],
       "Domain": [
         "Domeniu"
+      ],
+      "Drag to reorder": [
+        "Trageți pentru rearanjare"
       ],
       "Status": [
         "Stare"
@@ -9681,7 +9840,7 @@
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
+        "Dacă veți continua cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME }, inclusiv spațiul și filtrele suplimentare."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
@@ -11433,6 +11592,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele ${ BRAND_NAME } existente."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Puteți schimba alocarea de spațiu în **Utilizatori și adrese**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Puteți modifica asta oricând în ${ settingsLink }."
       ],
@@ -11721,6 +11883,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
+      "Your storage": [
+        "Spațiu de stocare"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
       ],
@@ -11832,6 +11997,11 @@
         "Numai vizualizare"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Acesta este numele pe care îl vor vedea utilizatorii organizație. Îl puteți modifica oricând."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Nu este o adresă de e-mail validă."
@@ -11845,6 +12015,11 @@
     "Input placeholder": {
       "Add label": [
         "Adăugare etichetă"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Care este numele organizației?"
       ]
     },
     "invitation status": {
@@ -12892,6 +13067,12 @@
       "Font size": [
         "Mărime font"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Pentru ${ DRIVE_SHORT_APP_NAME } și ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Pentru ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } și ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "pentru prima lună"
       ],
@@ -13350,6 +13531,9 @@
       ],
       "Share your referral link": [
         "Partajați-vă legătura web de recomandare"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Partajat între ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Afișare ${ n } administrator",
@@ -13926,6 +14110,9 @@
       ],
       "Reactivate now": [
         "Reactivare acum"
+      ],
+      "Reactivate subscription": [
+        "Reactivare abonament"
       ],
       "Request an invite": [
         "Solicitați o invitație"
@@ -16736,11 +16923,23 @@
       "Based in Switzerland, GDPR compliant": [
         "Situată în Elveția, în conformitate cu RGPD"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Dar puteți obține o reducere de ${ discountPercentString } trecând la **${ upsellPlanTitle }** — este doar ${ relativePrice } în plus pe lună."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Dar puteți obține o reducere de ${ discountPercentString } trecând la **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Dar puteți debloca **${ unlockPlanTitle }** și mai multe servicii ${ BRAND_NAME } prin trecerea la **${ upsellPlanTitle }** — este doar ${ relativePrice } în plus pe lună."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Dar puteți debloca **${ unlockPlanTitle }** și mai multe servicii ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Dar puteți trece la **${ upsellPlanTitle }** — este doar ${ relativePrice } în plus pe lună."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Dar puteți trece la **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Continuând, sunteți de acord cu ${ termsAndConditionsLink } și cu ${ privacyPolicyLink }."
@@ -17456,6 +17655,9 @@
       "End date": [
         "Data de sfârșit"
       ],
+      "Enter name": [
+        "Introduceți numele"
+      ],
       "example@domain.com": [
         "exemplu@domeniu.com"
       ],
@@ -17920,6 +18122,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Dacă vă abonați înainte de această dată**, veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "După acea dată, contul va fi retrogradat la **${ BRAND_NAME } Free**. Dacă vă răzgândiți, vă puteți **reactiva abonamentul** pentru a vă păstra accesul la funcțiile speciale."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
@@ -20317,6 +20522,9 @@
       "${ app } storage": [
         "Spațiul de stocare din ${ app }"
       ],
+      "${ app } storage used": [
+        "Spațiu utilizat de ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } - ${ percentage }% ocupat"
       ],
@@ -20337,6 +20545,9 @@
       ],
       "Get more storage": [
         "Obțineți mai mult spațiu de stocare"
+      ],
+      "Storage used": [
+        "Spațiu utilizat"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Pentru a continua să utilizați produsele ${ BRAND_NAME }, eliberați spațiu sau ${ upgrade }"
@@ -21091,6 +21302,9 @@
       "Organization logo updated": [
         "S-a actualizat sigla organizației"
       ],
+      "Organization name set": [
+        "Nume organizație setat"
+      ],
       "Organization name updated": [
         "S-a actualizat numele organizației"
       ],
@@ -21759,6 +21973,9 @@
       "Collaborate on documents": [
         "Colaborați la documente"
       ],
+      "Compare plans": [
+        "Comparare planuri"
+      ],
       "Composing": [
         "Compunere"
       ],
@@ -21911,6 +22128,9 @@
       "Decrypt key": [
         "Cheie decriptare"
       ],
+      "Deep dive into email blog posts": [
+        "Aprofundați publicările despre e-mail"
+      ],
       "Deep dive into VPN blog posts": [
         "Aprofundați publicările despre VPN"
       ],
@@ -22012,6 +22232,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Descărcați ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Descărcați ${ PASS_APP_NAME } pentru dispozitive"
       ],
@@ -22110,6 +22333,9 @@
       ],
       "Enhance security with 2FA": [
         "Îmbunătățiți securitatea cu A2F"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Beneficiați de acces rapid și fluid la e-mailuri cu aplicațiile noastre dedicate."
       ],
       "Enter endpoints into your identity provider": [
         "Introduceți puncte finale în furnizorul de identitate"
@@ -22230,8 +22456,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Obțineți **${ referralInfo.uiData.refereeRewardAmount }** în credite cu ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Obțineți acces la aplicația de desktop cu ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Obțineți o acoperire completă a intimității"
+      ],
+      "Get more from your email": [
+        "Obțineți mai mult de la contul de e-mail"
       ],
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
@@ -22978,6 +23210,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bun venit la ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Bun venit la ${ planName }"
+      ],
       "What is an alias?": [
         "Ce este un alias?"
       ],
@@ -23166,6 +23401,9 @@
       ],
       "Account is disconnected": [
         "Contul este deconectat"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Adăugat la planul actual: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
@@ -23703,6 +23941,9 @@
       ],
       "Did you know?": [
         "Știați că?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Protejați-vă organizația împotriva compromiterii datelor cu ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protejați-vă organizația împotriva divulgărilor de date cu ${ VPN_APP_NAME } for Business."

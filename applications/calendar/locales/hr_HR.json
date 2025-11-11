@@ -826,6 +826,13 @@
         "Neobavezno"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "još ${ hiddenResultsCount } rezultat nije prikazan",
+        "Još ${ hiddenResultsCount } rezultata nije prikazano",
+        "Još ${ hiddenResultsCount } rezultata nije prikazano"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Otkaži pretplatu"
@@ -3826,6 +3833,11 @@
       ],
       "Removed participants will be notified.": [
         "Uklonjeni sudionici bit će obaviješteni."
+      ],
+      "Saving event": [
+        "Spremanje događaja",
+        "Spremanje događaja",
+        "Spremanje događaja"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
@@ -6942,6 +6954,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Discard changes?": [
+        "Odbaci promjene?"
       ],
       "Does not repeat": [
         "Ne ponavlja se"
