@@ -8045,7 +8045,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.7"
     "@types/tinycolor2": "npm:^1.4.6"
     babel-loader: "npm:^10.0.0"
-    commander: "npm:^12.1.0"
+    commander: "npm:^14.0.2"
     eslint: "npm:^9.39.1"
     eslint-plugin-storybook: "npm:^0.12.0"
     http-server: "npm:^14.1.1"
@@ -8120,7 +8120,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@vercel/ncc": "npm:^0.38.4"
     async-retry: "npm:^1.3.3"
-    commander: "npm:^12.1.0"
+    commander: "npm:^14.0.2"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     ts-jest: "npm:^29.4.5"
@@ -8806,7 +8806,7 @@ __metadata:
     autoprefixer: "npm:^10.4.21"
     babel-loader: "npm:^10.0.0"
     babel-plugin-transform-react-remove-prop-types: "npm:^0.4.24"
-    commander: "npm:^12.1.0"
+    commander: "npm:^14.0.2"
     copy-webpack-plugin: "npm:^13.0.1"
     core-js: "npm:^3.46.0"
     cross-env: "npm:^10.1.0"
@@ -9266,7 +9266,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@types/jest": "npm:^30.0.0"
     "@types/prompts": "npm:^2.4.9"
-    commander: "npm:^12.1.0"
+    commander: "npm:^14.0.2"
     execa: "npm:^5.1.1"
     jest: "npm:^30.2.0"
     prompts: "npm:^2.4.2"
@@ -20474,10 +20474,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "commander@npm:14.0.1"
-  checksum: 10c0/64439c0651ddd01c1d0f48c8f08e97c18a0a1fa693879451f1203ad01132af2c2aa85da24cf0d8e098ab9e6dc385a756be670d2999a3c628ec745c3ec124587b
+"commander@npm:^14.0.1, commander@npm:^14.0.2":
+  version: 14.0.2
+  resolution: "commander@npm:14.0.2"
+  checksum: 10c0/245abd1349dbad5414cb6517b7b5c584895c02c4f7836ff5395f301192b8566f9796c82d7bd6c92d07eba8775fe4df86602fca5d86d8d10bcc2aded1e21c2aeb
   languageName: node
   linkType: hard
 
