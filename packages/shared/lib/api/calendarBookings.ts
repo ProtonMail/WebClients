@@ -1,5 +1,10 @@
 import type { BookingPageCreationPayload, BookingSlotConfirmationPayload } from '../interfaces/calendar/Bookings';
 
+export const getUserBookingPage = () => ({
+    url: `calendar/v1/booking`,
+    method: 'GET',
+});
+
 export const createBookingPage = (data: BookingPageCreationPayload) => ({
     url: 'calendar/v1/booking',
     method: 'POST',
