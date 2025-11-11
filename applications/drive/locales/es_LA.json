@@ -7721,6 +7721,9 @@
       "Reactivate now": [
         "Reactivar"
       ],
+      "Reactivate subscription": [
+        "Reactivar la suscripción"
+      ],
       "Request an invite": [
         "Solicitar una invitación"
       ],
@@ -9116,6 +9119,10 @@
         "Error al copiar ${ errors.length } elemento",
         "Error al copiar ${ errors.length } elementos"
       ],
+      "${ errors.length } item failed to be trashed": [
+        "Error al mover ${ errors.length } elemento a la papelera",
+        "Error al mover ${ errors.length } elementos a la papelera"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "No se pudo borrar ${ nbFailures } foto de «${ albumLink.name }»",
         "No se pudieron borrar ${ nbFailures } fotos de «${ albumLink.name }»"
@@ -9131,6 +9138,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } foto fue eliminada de «${ albumLink.name }»",
         "${ nbSuccesses } fotos fueron eliminadas de «${ albumLink.name }»"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } elemento copiado movido a la papelera",
+        "${ numberOfItems } elementos copiados movidos a la papelera"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminado",
@@ -9214,6 +9225,9 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Copia de «${ name }» movido a la papelera"
       ],
       "Device failed to be removed": [
         "Error al eliminar el dispositivo"
@@ -10390,6 +10404,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si se suscribe antes de esta fecha,** recibirá **${ referrerRewardAmount }** en créditos."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Después de esa fecha, su cuenta pasará a **${ BRAND_NAME } Free**. Si cambia de opinión, puede **reactivar su suscripción** para mantener el acceso a las funciones premium."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Gane hasta ${ maxRewardAmount } en créditos. Obtendrá ${ referrerRewardAmount } cuando la persona a quien invite se suscriba a un plan de ${ BRAND_NAME }."
       ],
@@ -11041,6 +11058,9 @@
       "${ app } storage": [
         "almacenamiento de ${ app }"
       ],
+      "${ app } storage used": [
+        "almacenamiento de ${ app } usado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } lleno al ${ percentage }%"
       ],
@@ -11052,6 +11072,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Almacenamiento usado"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar cargando y sincronizando archivos, libere espacio o mejore para obtener más almacenamiento."
@@ -12920,6 +12943,11 @@
       ],
       "Only": [
         "Solo"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Los cambios que ha realizado podrían no guardarse."
       ]
     },
     "unprivatization": {

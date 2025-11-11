@@ -7700,6 +7700,9 @@
       "Reactivate now": [
         "Reactivar"
       ],
+      "Reactivate subscription": [
+        "Reactivar la suscripción"
+      ],
       "Request an invite": [
         "Solicitar una invitación"
       ],
@@ -10356,6 +10359,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si te suscribes antes de esta fecha,** recibirás **${ referrerRewardAmount }** en créditos."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Después de esa fecha, tu cuenta pasará al plan inferior **${ BRAND_NAME } Gratuito**. Si cambias de opinión, puedes **reactivar tu suscripción** para mantener el acceso a las funciones prémium."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Gana hasta ${ maxRewardAmount } en crédito. Recibirás ${ referrerRewardAmount } cuando la persona que invites se suscriba a un plan de ${ BRAND_NAME }."
       ],
@@ -11007,6 +11013,9 @@
       "${ app } storage": [
         "almacenamiento de ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } de almacenamiento utilizado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } lleno al ${ percentage }%"
       ],
@@ -11018,6 +11027,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Almacenamiento utilizado"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar cargando y sincronizando archivos, libera espacio o mejora para obtener más almacenamiento."
@@ -12871,6 +12883,11 @@
       ],
       "Only": [
         "Solo"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Los cambios que has realizado podrían no guardarse."
       ]
     },
     "unprivatization": {

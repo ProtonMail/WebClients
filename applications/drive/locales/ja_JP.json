@@ -249,6 +249,9 @@
       "Continue with Outlook": [
         "Outlookで続ける"
       ],
+      "Copy": [
+        "コピー"
+      ],
       "Copy address": [
         "アドレスをコピー"
       ],
@@ -3366,6 +3369,9 @@
       "Cannot export this contact": [
         "この連絡先はエクスポートできません"
       ],
+      "Cannot load \"My files\" root folder": [
+        "「マイファイル」ルートフォルダを読み込めません"
+      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -3431,6 +3437,12 @@
       ],
       "Error reading file": [
         "ファイルの読み込み中にエラーが発生しました"
+      ],
+      "Expanding non-existent directory tree item": [
+        "存在しないディレクトリツリーのアイテムを展開中"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "展開できないディレクトリツリーのアイテムを展開しようとしています"
       ],
       "Expected structure attached": [
         "期待される構造が添付されています"
@@ -5583,6 +5595,9 @@
       "It's better to have:": [
         "以下の方が良いでしょう:"
       ],
+      "It's not possible to copy the folder to itself": [
+        "フォルダを自分自身にコピーすることはできません"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "完全に削除しない限り、アイテムはごみ箱に残ります"
       ],
@@ -6008,6 +6023,9 @@
       ],
       "Search Enabled": [
         "検索機能が有効です"
+      ],
+      "Select a folder to copy to.": [
+        "コピー先のフォルダを選択します。"
       ],
       "Select a folder to move to.": [
         "移動先のフォルダーを選択します。"
@@ -8886,6 +8904,9 @@
       "\"${ name }\" saved successfully": [
         "「${ name }」を正常にを保存しました"
       ],
+      "\"${ name }\" successfully copied": [
+        "「${ name }」が正常にコピーされました"
+      ],
       "\"${ name }\" successfully moved": [
         "「${ name }」が正常に移動されました"
       ],
@@ -8898,6 +8919,12 @@
       "${ count } item failed to be decrypted": [
         "${ count }件のアイテムの復号に失敗しました"
       ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length }個のアイテムのコピーに失敗しました"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length }個のアイテムのごみ箱への移動に失敗しました"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } 枚の写真を「${ albumLink.name }」から削除できませんでした"
       ],
@@ -8909,6 +8936,9 @@
       ],
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } 枚の写真が「${ albumLink.name }」から削除されました"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } 個のコピーされたアイテムがごみ箱に移動されました"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }個のアイテムが削除されました"
@@ -8936,6 +8966,9 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems }件のアイテムをごみ箱から復元しました"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } 個のアイテムが正常にコピーされました"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 件のアイテムが正常に移動されました"
@@ -8978,6 +9011,9 @@
       ],
       "Contact group updated": [
         "連絡先グループが更新されました"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "「${ name }」のコピーがごみ箱に移動されました"
       ],
       "Device failed to be removed": [
         "デバイスの削除に失敗しました"
@@ -10769,6 +10805,9 @@
       "${ app } storage": [
         "${ app } ストレージ"
       ],
+      "${ app } storage used": [
+        "${ app } のストレージ使用量"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage }は${ percentage }%使用中です"
       ],
@@ -10780,6 +10819,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービス向け"
+      ],
+      "Storage used": [
+        "使用中のストレージ"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "アップロードや同期を続けるには、容量を空けるかより大きな容量のプランにアップグレードしてください。"
@@ -11990,6 +12032,9 @@
       "Logs": [
         "ログ"
       ],
+      "Make a copy": [
+        "複製"
+      ],
       "Make a secure connection your default": [
         "安全な接続を標準設定にする"
       ],
@@ -12612,6 +12657,11 @@
       ],
       "Only": [
         "のみ"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "変更が保存されない場合があります。"
       ]
     },
     "unprivatization": {

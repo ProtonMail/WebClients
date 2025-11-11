@@ -252,6 +252,9 @@
       "Continue with Outlook": [
         "Outlook-ით გაგრძელება"
       ],
+      "Copy": [
+        "კოპირება"
+      ],
       "Copy address": [
         "მისამართის კოპირება"
       ],
@@ -1416,6 +1419,12 @@
       ],
       "Unsupported event": [
         "გაუთვალისწინებელი შემთხვევა"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი",
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -3333,6 +3342,9 @@
       "Cannot export this contact": [
         "ამ კონტაქტის გატანა შეუძლებელია"
       ],
+      "Cannot load \"My files\" root folder": [
+        "\"ჩემი ფაილების\" ძირითადი საქაღალდის ჩატვირთვა შეუძლებელია"
+      ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
       ],
@@ -3400,6 +3412,12 @@
       ],
       "Error reading file": [
         "ფაილის წაკითხვის შეცდომა"
+      ],
+      "Expanding non-existent directory tree item": [
+        "არარსებული საქაღალდის ხის ელემენტის გაფართოება"
+      ],
+      "Expanding non-expandable directory tree item": [
+        "არაგაფართოებადი საქაღალდის ხის ელემენტის გაფართოება"
       ],
       "Expected structure attached": [
         "მოსალოდნელი სტრუქტურა მიმაგრებულია"
@@ -4812,6 +4830,9 @@
         "${ canceledCount } გაუქმებულია",
         "${ canceledCount } გაუქმებულია"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length }/${ items.length } გადაცემა დასრულდა"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } კონტაქტი ელფოსტის მრავალ მისამართს შეიცავს.",
         "${ contactCount } კონტაქტი ელფოსტის მრავალ მისამართს შეიცავს."
@@ -5565,6 +5586,9 @@
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
       ],
+      "It's not possible to copy the folder to itself": [
+        "საქაღალდის თავის თავში კოპირება შეუძლებელია"
+      ],
       "Items in the trash will stay here until you delete them permanently": [
         "ჩანაწერები სანაგვე ყუთში მანამდე დარჩება, სანამ ხელით არ წაშლით"
       ],
@@ -5986,6 +6010,9 @@
       ],
       "Search Enabled": [
         "ძებნა ჩართულია"
+      ],
+      "Select a folder to copy to.": [
+        "აირჩიეთ საქარალდე დასაკოპირებლად."
       ],
       "Select a folder to move to.": [
         "აირჩიეთ საქაღალდე, სადაც გადაიტანთ."
@@ -7529,6 +7556,9 @@
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
       ],
+      "Reactivate subscription": [
+        "გამოწერის ხელახლა გააქტიურება"
+      ],
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
       ],
@@ -8835,6 +8865,9 @@
       "\"${ name }\" saved successfully": [
         "${ name } წარმატებით იქნა შენახული"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" წარმატებით დაკოპირდა"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" გადატანა წარმატებულია"
       ],
@@ -8847,6 +8880,14 @@
       "${ count } item failed to be decrypted": [
         "${ count } ელემენტის გაშიფვრის შეცდომა",
         "${ count } ელემენტის გაშიფვრის შეცდომა"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } ელემენტის კოპირება ჩავარდა",
+        "${ errors.length } ელემენტის კოპირება ჩავარდა"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } ელემენტის ნაგვის ყუთში გადატანა ჩავარდა",
+        "${ errors.length } ელემენტის ნაგვის ყუთში გადატანა ჩავარდა"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } სურათი ვერ წაიშალა ალბომიდან \"${ albumLink.name }\"",
@@ -8863,6 +8904,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } სურათი წაიშალა ალბომიდან \"${ albumLink.name }\"",
         "${ nbSuccesses } სურათი წაიშალა ალბომიდან \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } დაკოპირებული ელემენტი გადატანილია ნაგვის ყუთში",
+        "${ numberOfItems } დაკოპირებული ელემენტი გადატანილია ნაგვის ყუთში"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } ელემენტის წაიშალა",
@@ -8899,6 +8944,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან",
         "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } ელემენტი წარმატებით დაკოპირდა",
+        "${ numberOfItems } ელემენტი წარმატებით დაკოპირდა"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია",
@@ -8942,6 +8991,9 @@
       ],
       "Contact group updated": [
         "კონტაქტების ჯგუფი განახლდა"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "\"${ name }\"-ის ასლი გადატანილია ნაგვის ყუთში"
       ],
       "Device failed to be removed": [
         "მოწყობილობის წაშლის შეცდომა"
@@ -10077,6 +10129,9 @@
       "Invited friends": [
         "მოწვეული მეგობრები"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "ბოლო შანსი, დაათვალიეროთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
+      ],
       "More sharing options": [
         "მეტი გაზიარების პარამეტრი"
       ],
@@ -10698,6 +10753,9 @@
       "${ app } storage": [
         "${ app } საცავი"
       ],
+      "${ app } storage used": [
+        "${ app } გამოყენებული საცავი"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } სავსეა ${ percentage }%"
       ],
@@ -10709,6 +10767,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ],
+      "Storage used": [
+        "გამოყენებული საცავი"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "ფაილების ატვირთვის და სინქრონიზაციის გასაგრძელებლად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა, მეტი საცავის მისაღებად."
@@ -11933,6 +11994,9 @@
       "Logs": [
         "ჟურნალი"
       ],
+      "Make a copy": [
+        "ასლის შექმნა"
+      ],
       "Make a secure connection your default": [
         "დაცული კავშირის გამოყენება ნაგულისხმევად"
       ],
@@ -12547,6 +12611,11 @@
       ],
       "Only": [
         "მხოლოდ"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "ცვლილებები, რომლებიც შეიტანეთ, შეიძლება, არ იყოს შენახული."
       ]
     },
     "unprivatization": {
