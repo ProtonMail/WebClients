@@ -245,6 +245,9 @@
       "Create new policy": [
         "Créer une politique"
       ],
+      "Create organization": [
+        "Créer une organisation"
+      ],
       "Create users": [
         "Créer des utilisateurs"
       ],
@@ -913,6 +916,9 @@
       ],
       "Submit": [
         "Envoyer"
+      ],
+      "Subscribe": [
+        "S'abonner"
       ],
       "Subscribe now": [
         "S'abonner maintenant"
@@ -1908,8 +1914,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Ajouter des utilisateurs manuellement"
+      ],
       "Close": [
         "Fermer"
+      ],
+      "Configure your network": [
+        "Configurez votre réseau"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
@@ -1929,17 +1941,29 @@
       "Discover and set up features": [
         "Découvrez et configurez les fonctionnalités"
       ],
+      "Invite your team": [
+        "Inviter votre équipe"
+      ],
+      "Manage global VPN permissions": [
+        "Gérer les autorisations VPN globales"
+      ],
       "Maybe later": [
         "Peut-être plus tard"
       ],
       "Remind me later": [
         "Me le rappeler plus tard"
       ],
+      "Secure your organization": [
+        "Sécurisez votre organisation"
+      ],
       "Send": [
         "Envoyer"
       ],
       "Set up other features": [
         "Configurez d'autres fonctionnalités"
+      ],
+      "Set up SSO": [
+        "Configurer le SSO"
       ],
       "Take a tour": [
         "Laissez-vous guider"
@@ -3199,11 +3223,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Connectez votre CRM, votre site internet, vos imprimantes et bien plus encore."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Créez une passerelle pour permettre à vos utilisateurs d'accéder à vos ressources informatiques via des serveurs dédiés."
+      ],
       "Create groups you can email with a single address.": [
         "Créez des groupes auxquels vous pouvez envoyer des messages avec une seule adresse."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Créez de nouveaux comptes utilisateur ou importez des utilisateurs avec l'approvisionnement SCIM SSO (authentification unique)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Créez des politiques pour déterminer qui peut se connecter aux serveurs partagés dans chaque pays."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Décidez quels utilisateurs peuvent se connecter à chacun de nos plus de 120 emplacements de serveurs partagés."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accédez facilement à votre adresse e-mail et à votre calendrier sur ordinateur et appareil mobile."
@@ -3237,6 +3270,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Aidez votre équipe à stocker en toute sécurité les mots de passe relatifs aux informations sensibles de l’entreprise et des clients."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Si vous ne l'avez pas déjà fait, activez des méthodes de récupération pour vous assurer de ne jamais perdre l'accès à ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
@@ -6380,6 +6416,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Obtenez **${ referrerRewardAmount } de crédits** pour chacun de vos amis qui s'abonne."
       ],
+      "Get started": [
+        "Commencez"
+      ],
       "Get started with the referral link above.": [
         "Commencez par le lien de parrainage ci-dessus."
       ],
@@ -7058,6 +7097,9 @@
       "Set up your organization": [
         "Configurez votre organisation"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Configurez votre organisation et commencez à protéger vos données en quelques étapes faciles."
+      ],
       "Setting up ${ feature }…": [
         "Configuration de ${ feature }…"
       ],
@@ -7644,6 +7686,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Vous pouvez aussi fusionner des calendriers importés avec des calendriers ${ BRAND_NAME } existants."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Vous pouvez modifier l'allocation de l'espace de stockage dans **Utilisateurs et adresses**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Vous pouvez modifier cela à tout moment dans ${ settingsLink }."
       ],
@@ -7841,6 +7886,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
       ],
+      "Your storage": [
+        "Votre espace de stockage"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
       ],
@@ -7930,9 +7978,19 @@
         "Lecture seule"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Voici comment votre organisation apparaîtra aux utilisateurs. Vous pouvez la modifier à tout moment."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "L'adresse e-mail n'est pas valide."
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Quel est le nom de votre organisation ?"
       ]
     },
     "invitation status": {
@@ -8987,6 +9045,9 @@
       ],
       "Reactivate now": [
         "Réactiver maintenant"
+      ],
+      "Reactivate subscription": [
+        "Réactiver l'abonnement"
       ],
       "Request an invite": [
         "Demander une invitation"
@@ -11432,6 +11493,9 @@
       "End date": [
         "Date de fin"
       ],
+      "Enter name": [
+        "Saisir un nom"
+      ],
       "example@domain.com": [
         "exemple@domaine.fr"
       ],
@@ -11723,6 +11787,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si vous vous abonnez avant cette date,** vous recevrez **${ referrerRewardAmount }** en crédits."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Après cette date, votre compte passera à un abonnement inférieur à **${ BRAND_NAME } Gratuit**. Si vous changez d'avis, vous pouvez **réactiver votre abonnement** pour conserver l'accès aux fonctionnalités premium."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Profitez de **${ planTitle }** gratuitement jusqu'au **${ textDate }**."
@@ -13684,6 +13751,9 @@
       "Organization logo updated": [
         "Le logo de l'organisation a été mis à jour."
       ],
+      "Organization name set": [
+        "Nom de l'organisation"
+      ],
       "Organization name updated": [
         "Le nom de l'organisation a été mis à jour."
       ],
@@ -14327,6 +14397,9 @@
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
+      "Dismiss setup checklist": [
+        "Ignorer la liste de vérification de configuration"
+      ],
       "Domain names": [
         "Noms de domaine"
       ],
@@ -14462,6 +14535,9 @@
       ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
+      ],
+      "Get started": [
+        "Commencez"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Obtenez l'application sur tous vos appareils et protégez jusqu'à ${ VPN_CONNECTIONS } à la fois."
@@ -14893,6 +14969,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bienvenue dans ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Bienvenue dans ${ planName }"
       ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"

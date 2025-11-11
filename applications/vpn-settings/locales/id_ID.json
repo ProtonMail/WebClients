@@ -245,6 +245,9 @@
       "Create new policy": [
         "Buat kebijakan baru"
       ],
+      "Create organization": [
+        "Buat organisasi"
+      ],
       "Create users": [
         "Buat pengguna"
       ],
@@ -446,6 +449,9 @@
       "Get a new encrypted email address": [
         "Dapatkan alamat email terenkripsi baru"
       ],
+      "Get Deal": [
+        "Dapatkan Penawaran Ini"
+      ],
       "Get in touch": [
         "Hubungi kami"
       ],
@@ -460,6 +466,9 @@
       ],
       "Get more servers": [
         "Dapatkan lebih banyak server"
+      ],
+      "Get more storage": [
+        "Dapatkan lebih banyak ruang penyimpanan"
       ],
       "Get the apps": [
         "Dapatkan aplikasinya"
@@ -911,6 +920,9 @@
       "Submit": [
         "Kirim"
       ],
+      "Subscribe": [
+        "Langgan"
+      ],
       "Subscribe now": [
         "Langgan sekarang"
       ],
@@ -1067,11 +1079,23 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe (untuk ${ quantity } pengguna)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } domain khusus tambahan"
       ],
       "${ ips } server": [
         "${ ips } server"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Asisten AI ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "Asisten AI ${ LUMO_APP_NAME } (untuk ${ quantity } pengguna)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server khusus"
@@ -1084,6 +1108,9 @@
       ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } domain khusus"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } kuota ${ LUMO_APP_NAME }"
@@ -1862,8 +1889,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Tambah pengguna secara manual"
+      ],
       "Close": [
         "Tutup"
+      ],
+      "Configure your network": [
+        "Atur jaringan Anda"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
@@ -1883,17 +1916,29 @@
       "Discover and set up features": [
         "Telusuri dan siapkan berbagai fitur"
       ],
+      "Invite your team": [
+        "Undang tim Anda"
+      ],
+      "Manage global VPN permissions": [
+        "Kelola perizinan VPN global"
+      ],
       "Maybe later": [
         "Mungkin nanti"
       ],
       "Remind me later": [
         "Ingatkan saya nanti"
       ],
+      "Secure your organization": [
+        "Amankan organisasi Anda"
+      ],
       "Send": [
         "Kirim"
       ],
       "Set up other features": [
         "Siapkan fitur lainnya"
+      ],
+      "Set up SSO": [
+        "Atur SSO"
       ],
       "Take a tour": [
         "Ikuti tur kami"
@@ -3149,11 +3194,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Hubungkan CRM, situs web, printer, dan berbagai hal lainnya yang Anda miliki dengan mudah."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Buat Gateway untuk memberikan pengguna Anda akses ke sumber daya IT Anda melalui server khusus."
+      ],
       "Create groups you can email with a single address.": [
         "Buat grup yang dapat Anda kirimi email dengan satu alamat."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Buat akun pengguna baru atau impor pengguna dengan penyedian SCIM SSO (single sign-on)."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Buat kebijakan untuk menentukan siapa yang dapat menghubungkan ke server terbagi dalam setiap negara."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Tentukan pengguna mana saja yang dapat terhubung ke masing-masing dari 120+ lokasi server bersama kami."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Akses email dan kalender Anda pada desktop dan perangkat seluler dengan mudah."
@@ -3187,6 +3241,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Bantu tim Anda menyimpan kata sandi bisnis dan informasi klien yang sensitif secara aman."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Apabila Anda belum memiliki metode yang terpasang, aktifkan sebagian metode pemulihan yang ada untuk memastikan Anda tidak akan pernah kehilangan akses ke ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
@@ -3749,8 +3806,14 @@
       "Error publishing changes": [
         "Terdapat kesalahan dalam menerbitkan perubahan"
       ],
+      "Failed to add group member": [
+        "Anggota grup gagal ditambahkan"
+      ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
+      ],
+      "Failed to lookup server. Please try again": [
+        "Server gagal dijangkau. Silakan coba lagi."
       ],
       "Failed to process the logo": [
         "Logo gagal diproses"
@@ -3989,6 +4052,9 @@
       "Request timed out": [
         "Waktu permintaan habis"
       ],
+      "Server not found": [
+        "Server tidak ditemukan"
+      ],
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
       ],
@@ -4069,6 +4135,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Untuk membuat akun pengguna non-privat dan mengakses akun ini, Anda perlu untuk memulihkan hak administratif Anda."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Terlalu banyak permintaan. Silakan coba lagi setelah ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Terlalu banyak permintaan. Silakan coba lagi nanti."
       ],
       "Try again later": [
         "Coba lagi nanti"
@@ -4690,6 +4762,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } perangkat"
       ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
+      ],
+      "@pm.me address": [
+        "Alamat @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Pemblokir iklan dan perlindungan perangkat lunak jahat"
       ],
@@ -4698,6 +4776,12 @@
       ],
       "and more premium features...": [
         "dan berbagai fitur premium lainnya..."
+      ],
+      "Connect custom domain": [
+        "Hubungkan domain khusus"
+      ],
+      "Desktop app": [
+        "Aplikasi desktop"
       ],
       "Double VPN": [
         "VPN berganda"
@@ -4710,6 +4794,9 @@
       ],
       "NetShield Ad-blocker": [
         "Pemblokir iklan NetShield"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
       ],
       "Secure streaming": [
         "Streaming aman"
@@ -5049,6 +5136,9 @@
       ],
       "Domain": [
         "Domain"
+      ],
+      "Drag to reorder": [
+        "Seret untuk mengubah urutan"
       ],
       "Status": [
         "Status"
@@ -6233,6 +6323,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Dapatkan **saldo senilai ${ referrerRewardAmount }** untuk setiap teman yang mendaftar."
       ],
+      "Get started": [
+        "Mulai"
+      ],
       "Get started with the referral link above.": [
         "Mulai peroleh imbalan Anda dengan tautan rujukan di atas."
       ],
@@ -6902,6 +6995,9 @@
       "Set up your organization": [
         "Atur organisasi Anda"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Atur organisasi Anda dan mulai lindungi data Anda hanya dalam beberapa langkah mudah."
+      ],
       "Setting up ${ feature }…": [
         "Mempersiapkan ${ feature }…"
       ],
@@ -6937,6 +7033,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
+      ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Sebagian server dapat tidak muncul pada daftar di atas. Carilah berdasarkan nama (mis. AT#62) untuk mencari server ini."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML."
@@ -7475,6 +7574,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Anda juga dapat menggabungkan kalender yang diimpor dengan kalender ${ BRAND_NAME } yang telah ada."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Anda dapat mengubah alokasi ruang penyimpanan di **Pengguna dan alamat**."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Anda dapat mengubah hal ini kapan saja di ${ settingsLink }."
       ],
@@ -7664,6 +7766,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap bulannya."
       ],
+      "Your storage": [
+        "Ruang penyimpanan Anda"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
       ],
@@ -7751,9 +7856,19 @@
         "Hanya melihat"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Nama ini adalah bagaimana organisasi Anda akan terlihat oleh pengguna. Anda dapat mengubah nama ini kapan saja."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Bukan alamat email yang valid"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Apa nama organisasi Anda?"
       ]
     },
     "invitation status": {
@@ -8150,6 +8265,12 @@
       "Folder location": [
         "Lokasi folder"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Untuk ${ DRIVE_SHORT_APP_NAME } dan ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Untuk ${ DRIVE_SHORT_APP_NAME }. ${ DOCS_SHORT_APP_NAME }. dan ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
@@ -8447,8 +8568,14 @@
       "Sequences": [
         "Urutan"
       ],
+      "Server name": [
+        "Nama server"
+      ],
       "Share your referral link": [
         "Bagikan tautan rujukan Anda"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Terbagi antara ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Tampilkan ${ n } administrator"
@@ -8971,6 +9098,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktifkan ${ reason }"
+      ]
+    },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Lindungi seluruh lapisan bisnis Anda. Dapatkan ${ LUMO_SHORT_APP_NAME } Professional dengan seluruh aplikasi dan fitur premium ${ BRAND_NAME } for Business."
       ]
     },
     "Mail import summary": {
@@ -11146,8 +11278,14 @@
       "E.g., ": [
         "Misalnya "
       ],
+      "e.g., AT#62": [
+        "mis. AT#62"
+      ],
       "End date": [
         "Tanggal berakhir"
+      ],
+      "Enter name": [
+        "Masukkan nama"
       ],
       "example@domain.com": [
         "contoh@domain.com"
@@ -11550,6 +11688,11 @@
       ],
       "Scopes cannot have the same value": [
         "Cakupan tidak dapat memiliki nilai yang sama"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } karakter"
       ]
     },
     "retention_policy_2025_Info": {
@@ -13333,6 +13476,9 @@
       "Organization logo updated": [
         "Logo organisasi diperbarui"
       ],
+      "Organization name set": [
+        "Nama organisasi diatur"
+      ],
       "Organization name updated": [
         "Nama organisasi diperbarui"
       ],
@@ -13967,6 +14113,9 @@
       "Discard changes?": [
         "Batalkan perubahan?"
       ],
+      "Dismiss setup checklist": [
+        "Tutup daftar persiapan"
+      ],
       "Domain names": [
         "Nama domain"
       ],
@@ -14101,6 +14250,9 @@
       ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
+      ],
+      "Get started": [
+        "Mulai"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Dapatkan aplikasinya pada seluruh perangkat Anda dan lindungi hingga ${ VPN_CONNECTIONS } secara bersamaan."
@@ -14318,6 +14470,9 @@
       "SAML authentication": [
         "Autentikasi SAML"
       ],
+      "Search for additional servers": [
+        "Cari server tambahan"
+      ],
       "Security": [
         "Keamanan"
       ],
@@ -14528,6 +14683,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Selamat datang di ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Selamat datang di ${ planName }"
+      ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
       ],
@@ -14628,6 +14786,9 @@
     "Tooltip": {
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Terdapat perubahan dari Gmail yang menghalangi ${ BRAND_NAME } untuk dapat terhubung. Berikan izin untuk mengukuhkan ulang fungsionalitas email"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Add-on ditambahkan ke paket Anda: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
@@ -14951,6 +15112,9 @@
       ],
       "Did you know?": [
         "Tahukah Anda?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Lindungi organisasi Anda dari kebocoran data dengan ${ PLAN_NAMES[plan] }"
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Lindungi organisasi Anda dari pembobolan data dengan ${ VPN_APP_NAME } for Business."

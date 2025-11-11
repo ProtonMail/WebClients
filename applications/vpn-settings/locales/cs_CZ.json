@@ -245,6 +245,9 @@
       "Create new policy": [
         "Vytvořit novou zásadu"
       ],
+      "Create organization": [
+        "Vytvořit organizaci"
+      ],
       "Create users": [
         "Vytvořit uživatele"
       ],
@@ -916,6 +919,9 @@
       ],
       "Submit": [
         "Odeslat"
+      ],
+      "Subscribe": [
+        "Předplatit"
       ],
       "Subscribe now": [
         "Předplatit si nyní"
@@ -1942,8 +1948,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Přidejte uživatele ručně"
+      ],
       "Close": [
         "Zavřít"
+      ],
+      "Configure your network": [
+        "Nastavte svou síť"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
@@ -1963,17 +1975,29 @@
       "Discover and set up features": [
         "Objevit a nastavit funkce"
       ],
+      "Invite your team": [
+        "Pozvěte svůj tým"
+      ],
+      "Manage global VPN permissions": [
+        "Správa globálních oprávnění VPN"
+      ],
       "Maybe later": [
         "Možná později"
       ],
       "Remind me later": [
         "Připomenout později"
       ],
+      "Secure your organization": [
+        "Zabezpečte svou organizaci"
+      ],
       "Send": [
         "Odeslat"
       ],
       "Set up other features": [
         "Nastavit další funkce"
+      ],
+      "Set up SSO": [
+        "Nastavit SSO"
       ],
       "Take a tour": [
         "Absolvovat prohlídku"
@@ -3241,11 +3265,20 @@
       "Connect your CRM, website, printers, and more.": [
         "Propojte svůj CRM, webové stránky, tiskárny a další."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Vytvořte bránu, která vašim uživatelům umožní přístup k vašim IT zdrojům prostřednictvím dedikovaných serverů."
+      ],
       "Create groups you can email with a single address.": [
         "Vytvářejte skupiny, kterým můžete posílat e-maily pomocí jediné adresy."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Vytvářejte nové uživatelské účty nebo importujte uživatele pomocí SSO (jednotného přihlášení) a zajištění SCIM."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Vytvořte zásady, které určují, kdo se může připojit ke sdíleným serverům v jednotlivých zemích."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Rozhodněte, kteří uživatelé se mohou připojit ke každému z našich více než 120 umístění sdílených serverů."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Snadný přístup k e-mailu a kalendáři na počítači i v mobilu."
@@ -3279,6 +3312,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomozte svému týmu bezpečně ukládat hesla k citlivým obchodním informacím a informacím o klientech."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Pokud jste tak ještě neučinili, povolte některé metody obnovení, abyste se ujistili, že nikdy neztratíte přístup k ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
@@ -6568,6 +6604,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Získejte **${ referrerRewardAmount } kreditů** za každého přítele, který se přihlásí k odběru."
       ],
+      "Get started": [
+        "Začněme"
+      ],
       "Get started with the referral link above.": [
         "Začněte s doporučujícím odkazem výše."
       ],
@@ -7261,6 +7300,9 @@
       "Set up your organization": [
         "Nastavte svou organizaci"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Nastavte svou organizaci a začněte chránit svá data v několika snadných krocích."
+      ],
       "Setting up ${ feature }…": [
         "Nastavování ${ feature }…"
       ],
@@ -7867,6 +7909,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Importované kalendáře můžete také sloučit s existujícími ${ BRAND_NAME } kalendáři."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Přidělení úložiště můžete změnit v části **Uživatelé a adresy**."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Toto můžete později změnit v ${ settingsLink }."
       ],
@@ -8080,6 +8125,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Váš naplánovaný tarif začíná ${ renewalTime } a bude každý měsíc automaticky obnoven."
       ],
+      "Your storage": [
+        "Vaše úložiště"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše předplatné se automaticky obnoví ${ renewalTime }."
       ],
@@ -8173,9 +8221,19 @@
         "Pouze zobrazení"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Takto se vaše organizace bude zobrazovat uživatelům. Můžete to kdykoli změnit."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Nejde o platnou e-mailovou adresu"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Jaký je název vaší organizace?"
       ]
     },
     "invitation status": {
@@ -8589,6 +8647,9 @@
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "Pro ${ DRIVE_SHORT_APP_NAME } a ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Pro ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } a ${ SHEETS_SHORT_APP_NAME }."
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -9248,6 +9309,9 @@
       ],
       "Reactivate now": [
         "Znovu aktivovat"
+      ],
+      "Reactivate subscription": [
+        "Znovu aktivovat předplatné"
       ],
       "Request an invite": [
         "Požádat o pozvánku"
@@ -11767,6 +11831,9 @@
       "End date": [
         "Datum ukončení"
       ],
+      "Enter name": [
+        "Zadejte název"
+      ],
       "example@domain.com": [
         "priklad@domena.cz"
       ],
@@ -12062,6 +12129,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Pokud si předplatíte službu před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tomto datu bude váš účet převeden na **${ BRAND_NAME } Free**. Pokud si to rozmyslíte, můžete **znovu aktivovat předplatné** a zachovat si přístup k prémiovým funkcím."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užívejte si **${ planTitle }** zdarma až do **${ textDate }**."
@@ -13414,6 +13484,9 @@
       "${ app } storage": [
         "úložiště ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } úložiště využito"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } je zaplněno z ${ percentage } %"
       ],
@@ -14124,6 +14197,9 @@
       "Organization logo updated": [
         "Logo organizace aktualizováno"
       ],
+      "Organization name set": [
+        "Název organizace nastaven"
+      ],
       "Organization name updated": [
         "Název organizace aktualizován"
       ],
@@ -14785,6 +14861,9 @@
       "Discard changes?": [
         "Zahodit změny?"
       ],
+      "Dismiss setup checklist": [
+        "Odmítnout kontrolní seznam nastavení"
+      ],
       "Domain names": [
         "Názvy domén"
       ],
@@ -14922,6 +15001,9 @@
       ],
       "Get more from your VPN": [
         "Získejte více ze své VPN"
+      ],
+      "Get started": [
+        "Začněme"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Získejte aplikaci do všech svých zařízení a chraňte až ${ VPN_CONNECTIONS } současně."
@@ -15357,6 +15439,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vítejte v ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Vítejte v ${ planName }"
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"

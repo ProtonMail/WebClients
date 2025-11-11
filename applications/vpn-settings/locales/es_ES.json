@@ -464,6 +464,9 @@
       "Get more servers": [
         "Obtener más servidores"
       ],
+      "Get more storage": [
+        "Obtener más almacenamiento"
+      ],
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
@@ -914,6 +917,9 @@
       "Submit": [
         "Enviar"
       ],
+      "Subscribe": [
+        "Suscribirse"
+      ],
       "Subscribe now": [
         "Suscríbete ahora"
       ],
@@ -1070,6 +1076,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuario)",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe (para ${ quantity } usuarios)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dominio personalizado adicional",
         "${ domains } dominios personalizados adicionales"
@@ -1089,6 +1102,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizado",
+        "${ quantity } dominios personalizados"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
@@ -4762,6 +4779,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } dispositivos"
       ],
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "@pm.me address": [
+        "Dirección @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -4770,6 +4793,12 @@
       ],
       "and more premium features...": [
         "y más funciones premium..."
+      ],
+      "Connect custom domain": [
+        "Conectar dominio personalizado"
+      ],
+      "Desktop app": [
+        "Aplicación de escritorio"
       ],
       "Double VPN": [
         "Doble VPN"
@@ -4782,6 +4811,9 @@
       ],
       "NetShield Ad-blocker": [
         "Bloqueador de anuncios NetShield"
+      ],
+      "Priority support": [
+        "Soporte prioritario"
       ],
       "Secure streaming": [
         "Streaming seguro"
@@ -8624,6 +8656,9 @@
       "Share your referral link": [
         "Comparte tu enlace de referidos"
       ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Compartido entre ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ WALLET_SHORT_APP_NAME }."
+      ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
         "Mostrar ${ n } administradores"
@@ -8966,6 +9001,9 @@
       ],
       "Reactivate now": [
         "Reactivar"
+      ],
+      "Reactivate subscription": [
+        "Reactivar la suscripción"
       ],
       "Request an invite": [
         "Solicitar una invitación"
@@ -11703,6 +11741,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si te suscribes antes de esta fecha,** recibirás **${ referrerRewardAmount }** en créditos."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Después de esa fecha, tu cuenta pasará al plan inferior **${ BRAND_NAME } Gratuito**. Si cambias de opinión, puedes **reactivar tu suscripción** para mantener el acceso a las funciones prémium."
+      ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Disfruta de **${ planTitle }** gratis hasta el **${ textDate }**."
       ],
@@ -12990,6 +13031,9 @@
       "${ app } storage": [
         "almacenamiento de ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } de almacenamiento utilizado"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } lleno al ${ percentage }%"
       ],
@@ -13001,6 +13045,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Almacenamiento utilizado"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Para seguir usando los productos de ${ BRAND_NAME }, libera espacio o ${ upgrade }"
@@ -14967,6 +15014,9 @@
     "Tooltip": {
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Un cambio en el lado de Gmail está impidiendo que ${ BRAND_NAME } se conecte. Concede permiso para restablecer la funcionalidad del correo electrónico."
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Añadido a tu plan: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
