@@ -85,9 +85,19 @@ export const useTransferManagerState = () => {
 
         // XXX: This is 4 loops on the same list but it's the most elegant way i can think of
         // there's a test to make sure it stays under 20ms with 10k elements
-        const sumOfTransferredBytes = allTransfers.reduce((acc, transfer) => acc + transfer.transferredBytes, 0);
+        const sumOfTransferredBytes = allTransfers.reduce((acc, transfer) => {
+            let size = 0;
+            if (transfer.status !== UploadStatus.Skipped) {
+                size = transfer.transferredBytes;
+            }
+            return acc + size;
+        }, 0);
         const sumOfBytes = allTransfers.reduce((acc, transfer) => {
-            return acc + (transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize);
+            let size = 0;
+            if (transfer.status !== UploadStatus.Skipped) {
+                size = transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize;
+            }
+            return acc + size;
         }, 0);
 
         if (allTransfers.length === 0) {
