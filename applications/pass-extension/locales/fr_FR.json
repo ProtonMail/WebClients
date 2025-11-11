@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } pour Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } pour iOS"
+      ],
       "Accept": [
         "Accepter"
       ],
@@ -308,8 +314,8 @@
       "Generating secure link...": [
         "Génération du lien sécurisé..."
       ],
-      "Get mobile apps": [
-        "Télécharger les applications mobiles"
+      "Get mobile and desktop apps": [
+        "Obtenir l'application mobile et l'application de bureau"
       ],
       "Get Pass Business": [
         "Je choisis Pass Business"
@@ -434,23 +440,11 @@
       "OK": [
         "OK"
       ],
-      "Open in a window": [
-        "Ouvrir dans une nouvelle fenêtre"
-      ],
       "Open navigation": [
         "Ouvrir la navigation"
       ],
-      "Open web app": [
-        "Ouvrir l’application web"
-      ],
       "Organize vaults": [
         "Organiser les coffres-forts"
-      ],
-      "Pass for Android": [
-        "Pass pour Android"
-      ],
-      "Pass for iOS": [
-        "Pass pour iOS"
       ],
       "Pin item": [
         "Épingler l'élément"
@@ -1844,7 +1838,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -3002,6 +2997,9 @@
       ],
       "Language": [
         "Langue"
+      ],
+      "Larger window": [
+        "Fenêtre plus grande"
       ],
       "Last 2 weeks": [
         "Les 2 dernières semaines"

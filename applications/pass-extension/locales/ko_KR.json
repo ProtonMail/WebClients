@@ -308,9 +308,6 @@
       "Generating secure link...": [
         "안전한 링크 생성 중..."
       ],
-      "Get mobile apps": [
-        "모바일 앱 다운로드"
-      ],
       "Get Pass Business": [
         "Pass Business 구매"
       ],
@@ -434,23 +431,11 @@
       "OK": [
         "확인"
       ],
-      "Open in a window": [
-        "새 창에서 열기"
-      ],
       "Open navigation": [
         "탐색 열기"
       ],
-      "Open web app": [
-        "웹 앱 열기"
-      ],
       "Organize vaults": [
         "조직 보관함"
-      ],
-      "Pass for Android": [
-        "Android용 Pass"
-      ],
-      "Pass for iOS": [
-        "iOS용 Pass"
       ],
       "Pin item": [
         "항목 고정"
@@ -1819,7 +1804,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
