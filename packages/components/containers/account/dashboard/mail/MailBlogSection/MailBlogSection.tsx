@@ -1,20 +1,14 @@
 import { c } from 'ttag';
 
-import {
-    DashboardGrid,
-    DashboardGridSection,
-    DashboardGridSectionHeader,
-} from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
+import DashboardBlogSection from '../../shared/DashboardBlogSection/DashboardBlogSection';
 import breachRecommendations from './illustrations/breach-recommendations.jpg';
 import customEmailDomain from './illustrations/custom-email-domain.jpg';
 import emailAlias from './illustrations/email-alias.jpg';
 import endToEndEncryption from './illustrations/end-to-end-encryption.jpg';
 import inboxZero from './illustrations/inbox-zero.jpg';
 import stopSpamEmails from './illustrations/stop-spam-emails.jpg';
-
-import './MailBlogSection.scss';
 
 interface BlogPost {
     title: () => string;
@@ -74,41 +68,8 @@ const blogPosts: BlogPost[] = [
     },
 ];
 
-export const MailBlogSection = () => {
-    const linkRef = '?ref=web-setting-dashboard-a';
-
-    return (
-        <DashboardGrid>
-            <DashboardGridSection>
-                <DashboardGridSectionHeader title={c('Title').t`Deep dive into email blog posts`} />
-            </DashboardGridSection>
-            <DashboardGridSection>
-                <div className="grid grid-cols-none lg:grid-cols-2 gap-6 lg:gap-x-8">
-                    {blogPosts.map((post) => (
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href={post.link + linkRef}
-                            key={post.link}
-                            className="flex flex-column lg:flex-row flex-nowrap items-start gap-4 lg:gap-6 relative hover:color-norm color-norm rounded-lg text-no-decoration group interactive-pseudo-protrude interactive--no-background"
-                            aria-label={post.title()}
-                            style={{ '--interactive-inset': '-0.25rem' }}
-                        >
-                            <figure className="w-full lg:w-2/5 rounded overflow-hidden ratio-2/1">
-                                <img src={post.image} alt="" className="w-full" />
-                            </figure>
-                            <div className="w-full">
-                                <h3 className="text-lg text-semibold mt-0 mb-2 group-hover:text-underline group-hover:color-link">
-                                    {post.title()}
-                                </h3>
-                                <p className="m-0 text-ellipsis-two-lines color-weak">{post.description()}</p>
-                            </div>
-                        </a>
-                    ))}
-                </div>
-            </DashboardGridSection>
-        </DashboardGrid>
-    );
+const MailBlogSection = () => {
+    return <DashboardBlogSection posts={blogPosts} title={c('Title').t`Deep dive into email blog posts`} />;
 };
 
 export default MailBlogSection;

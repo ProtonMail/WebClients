@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { CYCLE, type FreeSubscription, type Subscription } from '@proton/payments';
-import { isManagedExternally } from '@proton/payments';
+import { CYCLE, type FreeSubscription, type Subscription, isManagedExternally } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -14,7 +13,7 @@ const PlanPriceElement = ({ subscription, user }: Props) => {
     const amount = (subscription?.Amount ?? 0) / cycle;
 
     return (
-        (user.hasPaidMail || user.hasPaidVpn) &&
+        (user.hasPaidMail || user.hasPaidVpn || user.hasPaidPass) &&
         !isManagedExternally(subscription) && (
             <Price
                 currency={subscription?.Currency}

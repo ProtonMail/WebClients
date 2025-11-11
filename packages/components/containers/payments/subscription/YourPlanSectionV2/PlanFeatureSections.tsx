@@ -4,16 +4,28 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Time from '@proton/components/components/time/Time';
+import {
+    FREE_PASS_ALIASES,
+    FREE_VAULTS,
+    FREE_VAULT_SHARING,
+    getNHideMyEmailAliasesText,
+    getNVaultsText,
+    getVaultSharingWithNPeopleText,
+} from '@proton/components/containers/payments/features/pass';
+import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcClockCircleFilled } from '@proton/icons/icons/IcClockCircleFilled';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcVault } from '@proton/icons/icons/IcVault';
 import type { Subscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import type { Organization, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import { getAutoSelectFromCountries, getCountriesWithoutPlus, getVpnDevices } from '@proton/shared/lib/vpn/features';
 
 import { subscriptionExpires } from '../helpers';
@@ -129,6 +141,41 @@ export const FreeVPNFeaturesB = ({ serversCount }: { serversCount: VPNServersCou
             <li className="flex flex-nowrap gap-1 items-center">
                 <IcCheckmark size={6} className="color-success shrink-0" />
                 {getVpnDevices(FREE_VPN_CONNECTIONS)}
+            </li>
+        </ul>
+    );
+};
+
+export const FreeVaultFeatures = ({
+    app,
+    isFreeUser,
+    user,
+}: {
+    app: APP_NAMES;
+    isFreeUser: boolean;
+    user: UserModel;
+}) => {
+    if (app !== APPS.PROTONPASS || !isFreeUser || hasPassLifetime(user)) {
+        return null;
+    }
+
+    const vaultText = getNVaultsText(FREE_VAULTS);
+    const vaultSharingText = getVaultSharingWithNPeopleText(FREE_VAULT_SHARING);
+    const emailAliasText = getNHideMyEmailAliasesText(FREE_PASS_ALIASES);
+
+    return (
+        <ul className="m-0 unstyled flex flex-nowrap gap-4">
+            <li className="flex flex-nowrap gap-1 items-center">
+                <IcVault size={5} className="shrink-0 color-primary" />
+                {vaultText}
+            </li>
+            <li className="flex flex-nowrap gap-1 items-center">
+                <IcUsers size={5} className="shrink-0 color-primary" />
+                {vaultSharingText}
+            </li>
+            <li className="flex flex-nowrap gap-1 items-center">
+                <IcAlias size={5} className="shrink-0 color-primary" />
+                {emailAliasText}
             </li>
         </ul>
     );

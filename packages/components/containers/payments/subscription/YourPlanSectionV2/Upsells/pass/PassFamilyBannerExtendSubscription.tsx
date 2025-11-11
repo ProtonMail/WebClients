@@ -5,53 +5,25 @@ import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/Dashboa
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
+import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../constants';
-import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers';
-import { defaultUpsellCycleB2C, getUpsell } from '../../helpers';
-import UpsellPanelV2 from '../../panels/UpsellPanelV2';
-import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
-import { PlanIcon } from '../PlanIcon';
-import PlanIconName from '../PlanIconName';
-import PlanPriceElement from '../PlanPriceElement';
-import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
-import { getDashboardUpsellTitle } from '../helpers';
-import UpsellMultiBox from './UpsellMultiBox';
-import { useSubscriptionPriceComparison } from './helper';
+import type { GetPlanUpsellArgs } from '../../../helpers';
+import UpsellPanelV2 from '../../../panels/UpsellPanelV2';
+import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
+import { PlanIcon } from '../../PlanIcon';
+import PlanIconName from '../../PlanIconName';
+import PlanPriceElement from '../../PlanPriceElement';
+import type { UpsellSectionProps, UpsellsHook } from '../../YourPlanUpsellsSectionV2';
+import { getDashboardUpsellTitle } from '../../helpers';
+import { getDashboardUpsellV2, useSubscriptionPriceComparison } from '../helper';
+import UpsellMultiBox from './../UpsellMultiBox';
 
-const getMailUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
-    const plan = PLANS.MAIL;
-
-    return getUpsell({
-        plan,
-        plansMap,
-        features: [],
-        app,
-        upsellPath: DASHBOARD_UPSELL_PATHS.MAILPLUS,
-        title: rest.title,
-        customCycle: rest.customCycle || defaultUpsellCycleB2C,
-        description: '',
-        onUpgrade: () =>
-            openSubscriptionModal({
-                cycle: rest.customCycle || defaultUpsellCycleB2C,
-                plan,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
-                telemetryFlow: rest.telemetryFlow,
-            }),
-        ...rest,
-    });
-};
-
-export const useMailPlusExtendSubscription = ({
+export const usePassFamilyBannerExtendSubscription = ({
     subscription,
     app,
     plansMap,
@@ -65,7 +37,8 @@ export const useMailPlusExtendSubscription = ({
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics: { source: 'upsells' },
+            metrics: { source: 'plans' },
+            defaultAudience: Audience.FAMILY,
             telemetryFlow,
         });
     };
@@ -81,8 +54,10 @@ export const useMailPlusExtendSubscription = ({
     };
 
     const upsells = [
-        getMailUpsell({
+        getDashboardUpsellV2({
             ...upsellsPayload,
+            upsellPath: DASHBOARD_UPSELL_PATHS.PASS,
+            plan: PLANS.PASS_FAMILY,
             customCycle: CYCLE.YEARLY,
             highlightPrice: true,
             title: getDashboardUpsellTitle(CYCLE.YEARLY),
@@ -95,13 +70,20 @@ export const useMailPlusExtendSubscription = ({
 };
 
 interface Props extends UpsellsHook {
+    showUpsellPanels: boolean;
     subscription: Subscription;
 }
 
-const MailPlusExtendSubscription = ({ subscription, user, handleExplorePlans, upsells }: Props) => {
+const PassFamilyBannerExtendSubscription = ({
+    showUpsellPanels = true,
+    subscription,
+    user,
+    handleExplorePlans,
+    upsells,
+}: Props) => {
     const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
 
-    const plan = PLANS.MAIL;
+    const plan = PLANS.PASS_FAMILY;
     const planName = PLAN_NAMES[plan];
 
     const priceString = getSimplePriceString(subscription.Currency, totalSavings);
@@ -119,11 +101,10 @@ const MailPlusExtendSubscription = ({ subscription, user, handleExplorePlans, up
             />
 
             <UpsellMultiBox
-                style="card"
                 header={
                     <PlanIconName
                         logo={<PlanIcon planName={plan} />}
-                        topLine={c('Headline').t`Enjoying ${planName}?`}
+                        topLine={c('Plans').t`Enjoying ${planName}?`}
                         bottomLine={
                             showSavings
                                 ? getBoldFormattedText(
@@ -136,9 +117,10 @@ const MailPlusExtendSubscription = ({ subscription, user, handleExplorePlans, up
                     />
                 }
                 upsellPanels={
-                    subscription && (
+                    subscription &&
+                    showUpsellPanels && (
                         <>
-                            <div className="flex flex-column lg:flex-row gap-4 flex-nowrap mb-4">
+                            <div className="flex flex-column lg:flex-row gap-4 flex-nowrap">
                                 <UpsellPanelV2 title={c('Headline').t`You currently pay`} features={[]}>
                                     <PlanPriceElement user={user} subscription={subscription} />
                                 </UpsellPanelV2>
@@ -148,9 +130,10 @@ const MailPlusExtendSubscription = ({ subscription, user, handleExplorePlans, up
                     )
                 }
                 upsellGradient="unlimited"
-            ></UpsellMultiBox>
+                style="card"
+            />
         </DashboardGrid>
     );
 };
 
-export default MailPlusExtendSubscription;
+export default PassFamilyBannerExtendSubscription;

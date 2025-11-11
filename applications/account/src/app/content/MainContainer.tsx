@@ -123,8 +123,8 @@ const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account
     if (getIsSectionAvailable(accountRoutes.routes.vpnDashboardV2)) {
         return `${accountRoutes.routes.vpnDashboardV2.to}${location.search}${location.hash}`;
     }
-    if (getIsSectionAvailable(accountRoutes.routes.mailDashboardV2)) {
-        return `${accountRoutes.routes.mailDashboardV2.to}${location.search}${location.hash}`;
+    if (getIsSectionAvailable(accountRoutes.routes.dashboardV2)) {
+        return `${accountRoutes.routes.dashboardV2.to}${location.search}${location.hash}`;
     }
     if (getIsSectionAvailable(accountRoutes.routes.dashboard)) {
         return `${accountRoutes.routes.dashboard.to}${location.search}${location.hash}`;
@@ -206,6 +206,10 @@ const MainContainer = () => {
         app,
         'MailDashboard'
     );
+    const { showDashboard: showPassDashboard, variant: showPassDashboardVariant } = useShowDashboard(
+        app,
+        'PassDashboard'
+    );
 
     const { isB2B: isB2BDrive } = useDrivePlan();
 
@@ -253,6 +257,8 @@ const MainContainer = () => {
         canDisplayNonPrivateEmailPhone,
         showMailDashboard,
         showMailDashboardVariant: showMailDashboardVariant.name,
+        showPassDashboard,
+        showPassDashboardVariant: showPassDashboardVariant.name,
     });
 
     useEffect(() => {
