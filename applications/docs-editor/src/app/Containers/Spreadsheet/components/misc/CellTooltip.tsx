@@ -4,8 +4,8 @@ import type { IconName } from '@proton/icons/types'
 import clsx from '@proton/utils/clsx'
 import type { CellInterface } from '@rowsncolumns/grid'
 import type { CellTooltipProps } from '@rowsncolumns/spreadsheet'
-import { CellTooltip as DefaultCellTooltip } from '@rowsncolumns/spreadsheet'
-import { type Ref, useCallback } from 'react'
+import type { ComponentPropsWithoutRef } from 'react'
+import { type Ref, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 import { copyTextToClipboard } from '../../../../Utils/copy-to-clipboard'
 import { useApplication } from '../../../ApplicationProvider'
@@ -15,85 +15,7 @@ import { useUI } from '../../ui-store'
 import * as UI from '../ui'
 import { Icon } from '../ui'
 import { createComponent } from '../utils'
-
 const { s } = createStringifier(strings)
-
-export function CellTooltip({
-  x = 0,
-  y = 0,
-  width = 0,
-  height = 0,
-  scrollLeft = 0,
-  scrollTop = 0,
-  hyperlink,
-  position = hyperlink ? 'bottom' : 'right',
-  variant,
-  content,
-  title,
-  note,
-  noteEditorCell,
-  cell,
-  onRequestPersistence,
-  onRequestShowNote,
-  onRequestUpdateNote,
-  onRequestCloseNote,
-  onRequestPinTooltip,
-  onRequestUnpinTooltip,
-}: CellTooltipProps) {
-  const sheetId = useUI((state) => state.legacy.activeSheetId)
-  const onRemoveLink = useUI.$.legacy.onRemoveLink
-  if (!hyperlink) {
-    if (!title && !content && !note && !noteEditorCell) {
-      // no tooltip to show
-      return null
-    }
-
-    // default tooltip for notes and errors
-    return (
-      <DefaultCellTooltip
-        x={x}
-        y={y}
-        width={width}
-        height={height}
-        scrollLeft={scrollLeft}
-        scrollTop={scrollTop}
-        position={position}
-        variant={variant}
-        content={content}
-        title={title}
-        note={note}
-        noteEditorCell={noteEditorCell}
-        hyperlink={hyperlink}
-        cell={cell}
-        onRequestPersistence={onRequestPersistence}
-        onRequestShowNote={onRequestShowNote}
-        onRequestUpdateNote={onRequestUpdateNote}
-        onRequestCloseNote={onRequestCloseNote}
-        sheetId={sheetId}
-        onRemoveLink={onRemoveLink}
-        onRequestPinTooltip={onRequestPinTooltip}
-        onRequestUnpinTooltip={onRequestUnpinTooltip}
-      />
-    )
-  }
-
-  return (
-    <LinkInfoTooltip
-      hyperlink={hyperlink}
-      position={position}
-      x={x}
-      y={y}
-      width={width}
-      height={height}
-      scrollLeft={scrollLeft}
-      scrollTop={scrollTop}
-      onRequestCloseNote={onRequestCloseNote}
-      cell={cell}
-      sheetId={sheetId}
-      onRemoveLink={onRemoveLink}
-    />
-  )
-}
 
 export interface ItemProps extends Ariakit.ButtonProps {
   ref?: Ref<HTMLButtonElement>
@@ -106,7 +28,7 @@ const Button = createComponent<ItemProps>(function Item({ legacyIconName, childr
     className: clsx(
       'flex shrink-0 items-center justify-center gap-[.375rem] rounded-[.5rem] text-[#0C0C14] focus:outline-none aria-disabled:text-[#8F8D8A]',
       'aria-expanded:bg-[#C2C1C0]/20',
-      'p-[.625rem]',
+      'p-1',
       'bg-[white]',
       // TODO: "hocus" type tw variant
       'hover:bg-[#C2C1C0]/20 focus-visible:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20',
@@ -133,41 +55,165 @@ const Button = createComponent<ItemProps>(function Item({ legacyIconName, childr
   )
 })
 
-function LinkInfoTooltip({
+export function CellTooltip({
+  x = 0,
+  y = 0,
+  width = 0,
+  height = 0,
+  scrollLeft = 0,
+  scrollTop = 0,
   hyperlink,
-  position,
-  x,
-  y,
-  width,
-  height,
-  scrollLeft,
-  scrollTop,
+  position = 'right',
+  variant,
+  content,
+  customContent,
+  title,
+  note,
+  noteEditorCell,
+  cell,
+  onRequestShowNote,
+  onRequestUpdateNote,
+  onRequestCloseNote,
+  onRequestPinTooltip,
+  onRequestUnpinTooltip,
+}: CellTooltipProps) {
+  const popover = Ariakit.usePopoverStore({ open: true })
+  const sheetId = useUI((state) => state.legacy.activeSheetId)
+  const onRemoveLink = useUI.$.legacy.onRemoveLink
+
+  const isError = variant === 'error'
+  const isInvalid = variant === 'invalid'
+  const isHyperlink = !!hyperlink
+  if (!isError && !isInvalid && !isHyperlink && !note && !noteEditorCell && !customContent) {
+    return null
+  }
+
+  const posX = x + width - scrollLeft + 2
+  const posY = y - scrollTop
+
+  let contentTitle = title
+  if (variant === 'error') {
+    contentTitle = s('Error')
+  } else if (variant === 'invalid') {
+    contentTitle = s('Invalid')
+  } else if (isHyperlink) {
+    contentTitle = ''
+  }
+
+  return (
+    <Ariakit.PopoverProvider store={popover}>
+      <Ariakit.Popover
+        className="z-10 overflow-clip rounded-[0.5rem] shadow-[0_8px_24px_0px_rgba(0,0,0,0.16)]"
+        onMouseMove={(e) => e.stopPropagation()}
+        updatePosition={() => {
+          const { popoverElement } = popover.getState()
+          popoverElement?.style.setProperty('transform', `translate3d(${posX}px, ${posY}px, 0)`)
+        }}
+        autoFocusOnShow={false}
+      >
+        {isHyperlink && (
+          <LinkInfo
+            hyperlink={hyperlink}
+            onRequestCloseNote={onRequestCloseNote}
+            cell={cell}
+            sheetId={sheetId}
+            onRemoveLink={onRemoveLink}
+          />
+        )}
+        {(content || contentTitle) && (
+          <div
+            className={clsx(
+              'bg-norm grid grid-cols-[1rem_1fr] gap-x-1.5 gap-y-2.5 border-l-2 border-[#DC3251] p-2 pr-2.5',
+              content ? 'grid-rows-[auto_1fr]' : 'grid-rows-[auto]',
+            )}
+          >
+            <Icon legacyName="info-circle" className="self-center text-[#DC3251]" />
+            <div className="text-xs font-semibold text-[#DC3251]">{contentTitle}</div>
+            {content && <div className="text-xs [grid-column:2]">{content}</div>}
+          </div>
+        )}
+        {customContent && (
+          <div className="bg-norm flex items-center gap-4 border border-[#239ECE] p-2 pr-2.5">{customContent}</div>
+        )}
+        {(note || noteEditorCell) && (
+          <div className="bg-norm grid grid-cols-[1rem_1fr] grid-rows-[auto_1fr] gap-x-1.5 gap-y-2.5 border-l-2 border-[#F27D00] p-2 pb-1 pr-1">
+            <Icon legacyName="note" className="self-center text-[#F27D00]" />
+            <div className="text-xs font-semibold text-[#F27D00]">{s('Note')}</div>
+            <NoteEditor
+              initialValue={note}
+              noteEditorCell={noteEditorCell}
+              cell={cell}
+              onRequestShowNote={onRequestShowNote}
+              onRequestUpdateNote={onRequestUpdateNote}
+              onRequestCloseNote={onRequestCloseNote}
+              className="text-xs [grid-column:2]"
+            />
+          </div>
+        )}
+      </Ariakit.Popover>
+    </Ariakit.PopoverProvider>
+  )
+}
+
+interface NoteEditorProps extends ComponentPropsWithoutRef<'textarea'> {
+  initialValue: string | undefined
+  noteEditorCell: CellInterface | undefined
+  cell: CellInterface
+  onRequestShowNote: CellTooltipProps['onRequestShowNote'] | undefined
+  onRequestUpdateNote: ((value: string | undefined, previousValue: string | undefined) => void) | undefined
+  onRequestCloseNote: CellTooltipProps['onRequestCloseNote'] | undefined
+}
+function NoteEditor({
+  initialValue,
+  noteEditorCell,
+  cell,
+  onRequestShowNote,
+  onRequestUpdateNote,
+  onRequestCloseNote,
+  className,
+  ...props
+}: NoteEditorProps) {
+  const [value, setValue] = useState(initialValue ?? '')
+  const inputRef = useRef<HTMLTextAreaElement>(null)
+  useLayoutEffect(() => {
+    if (noteEditorCell) {
+      inputRef.current?.focus()
+    }
+  }, [noteEditorCell])
+  return (
+    <textarea
+      ref={inputRef}
+      className={clsx('min-w-72 resize focus:shadow-none focus:outline-none', className)}
+      value={value}
+      onFocus={() => onRequestShowNote?.(cell)}
+      onBlur={() => onRequestUpdateNote?.(value, initialValue)}
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') {
+          onRequestCloseNote?.()
+        }
+      }}
+      onChange={(e) => setValue(e.target.value)}
+      {...props}
+    />
+  )
+}
+
+function LinkInfo({
+  hyperlink,
   onRequestCloseNote,
   cell,
   sheetId,
   onRemoveLink,
 }: {
   hyperlink: string
-  position: CellTooltipProps['position']
-  x: number
-  y: number
-  width: number
-  height: number
-  scrollLeft: number
-  scrollTop: number
   onRequestCloseNote?: () => void
   cell: CellInterface
   sheetId: number
   onRemoveLink: NonNullable<CellTooltipProps['onRemoveLink']>
 }) {
   const { application } = useApplication()
-  const popover = Ariakit.usePopoverStore({ open: true })
-  const isReadonly = useUI((state) => state.info.isReadonly)
-
-  const posX = position === 'right' ? x + width - scrollLeft : x - scrollLeft
-  const posY = position === 'bottom' ? y + height - scrollTop : y - scrollTop
-
   const url = hyperlink.startsWith('http') ? hyperlink : 'https://' + hyperlink
+  const isReadonly = useUI((state) => state.info.isReadonly)
 
   const { createNotification } = useNotifications()
   const copyLink = useCallback(() => {
@@ -188,34 +234,24 @@ function LinkInfoTooltip({
   }, [cell, onRequestCloseNote, openInsertLinkDialog])
 
   return (
-    <Ariakit.PopoverProvider store={popover}>
-      <Ariakit.Popover
-        className="z-10 flex items-center gap-6 rounded-[4px] border border-[#D1CFCD] bg-[white] px-3 py-1.5 shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] outline-none"
-        updatePosition={() => {
-          const { popoverElement } = popover.getState()
-          popoverElement?.style.setProperty('transform', `translate3d(${posX}px, ${posY}px, 0)`)
-        }}
-        onMouseMove={(e) => e.stopPropagation()}
-        autoFocusOnShow={false}
-      >
-        <div className="flex items-center gap-3">
-          <Icon legacyName="globe" />
-          <a
-            href={url}
-            className="max-w-[20ch] text-ellipsis text-xs font-semibold leading-5 focus-visible:shadow-none focus-visible:outline-none"
-            onClick={(e) => {
-              e.preventDefault()
-              application.eventBus.publish({
-                type: OPEN_LINK_EVENT,
-                payload: {
-                  link: url,
-                },
-              })
-            }}
-          >
-            {hyperlink}
-          </a>
-        </div>
+    <div className="bg-norm grid grid-cols-[1rem_1fr] gap-1.5 border-l-2 border-[#239ECE] p-2.5 pl-2">
+      <Icon legacyName="globe" className="place-self-center text-[#239ECE]" />
+      <div className="flex items-center justify-between gap-4 text-[#239ECE]">
+        <a
+          href={url}
+          className="max-w-[20ch] text-ellipsis text-xs font-semibold leading-5 underline focus-visible:shadow-none focus-visible:outline-none"
+          onClick={(e) => {
+            e.preventDefault()
+            application.eventBus.publish({
+              type: OPEN_LINK_EVENT,
+              payload: {
+                link: url,
+              },
+            })
+          }}
+        >
+          {hyperlink}
+        </a>
         <div className="flex items-center gap-1">
           <Button legacyIconName="squares" onClick={copyLink} disabled={isReadonly}>
             {s('Copy link')}
@@ -227,8 +263,8 @@ function LinkInfoTooltip({
             {s('Remove link')}
           </Button>
         </div>
-      </Ariakit.Popover>
-    </Ariakit.PopoverProvider>
+      </div>
+    </div>
   )
 }
 
@@ -239,5 +275,8 @@ function strings() {
     'Edit link': c('sheets_2025:Spreadsheet link tooltip').t`Edit link`,
     'Remove link': c('sheets_2025:Spreadsheet link tooltip').t`Remove link`,
     Removed: c('sheets_2025:Spreadsheet link tooltip').t`Link removed`,
+    Note: c('sheets_2025:Spreadsheet cell tooltip').t`Note`,
+    Error: c('sheets_2025:Spreadsheet cell tooltip').t`Error`,
+    Invalid: c('sheets_2025:Spreadsheet cell tooltip').t`Invalid`,
   }
 }
