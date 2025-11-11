@@ -82,6 +82,7 @@ const b2bPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.PASS_PRO,
     PLANS.PASS_BUSINESS,
     PLANS.LUMO_BUSINESS,
+    PLANS.VPN_PASS_BUNDLE_BUSINESS,
 ]);
 export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {
@@ -91,7 +92,11 @@ export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefin
     return b2bPlans.has(planName);
 };
 
-const getIsVpnB2BPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PLANS.VPN_PRO, PLANS.VPN_BUSINESS]);
+const getIsVpnB2BPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
+    PLANS.VPN_PRO,
+    PLANS.VPN_BUSINESS,
+    PLANS.VPN_PASS_BUNDLE_BUSINESS,
+]);
 export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => getIsVpnB2BPlanCondition.has(planName);
 
 const getIsVpnPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
@@ -100,6 +105,7 @@ const getIsVpnPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN_PASS_BUNDLE,
     PLANS.VPN_PRO,
     PLANS.VPN_BUSINESS,
+    PLANS.VPN_PASS_BUNDLE_BUSINESS,
 ]);
 export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
     if (!planName) {
@@ -174,7 +180,7 @@ export const planSupportsSSO = (planName: PLANS | undefined, isSsoForPbsEnabled:
     if (!planName) {
         return;
     }
-    const plans = [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS];
+    const plans = [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_PASS_BUNDLE_BUSINESS];
     if (isSsoForPbsEnabled) {
         plans.push(PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO);
     }

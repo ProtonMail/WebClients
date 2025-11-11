@@ -29,7 +29,7 @@ import {
     getVersionHistory,
 } from './drive';
 import { get24x7Support, getAdminPanel, getPassMonitor, getSentinel, getSupport, getUsersFeature } from './highlights';
-import type { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
+import type { PlanCardFeatureDefinition, ShortPlan } from './interface';
 import { getLumoPlusFeatures } from './lumo';
 import {
     getContactGroupsManagement,
@@ -69,12 +69,13 @@ import {
     getPassAdminPanel,
     getPassAppFeature,
     getPassUsers,
+    getPasswordManager,
     getProtonPassFeature,
     getVaultSharing,
+    getVaultSharingB2B,
     getVaults,
 } from './pass';
 import {
-    get24x7SupportVPNFeature,
     getAESEncryptionVPNFeature,
     getAutoConnectVPNFeature,
     getB2BHighSpeedVPNConnections,
@@ -85,6 +86,7 @@ import {
     getCountries,
     getDedicatedServersVPNFeature,
     getDoubleHop,
+    getExistingVpnProfessionalBenefitsFeature,
     getKillSwitch,
     getMultiPlatformSupportVPNFeature,
     getNetShield,
@@ -93,7 +95,6 @@ import {
     getPrioritySupport,
     getPrivateGatewaysVPNFeature,
     getProtectDevices,
-    getRequire2FAVPNFeature,
     getSecureCore,
     getStreaming,
     getTor,
@@ -690,13 +691,33 @@ export const getVPNProPlan = (plan: Plan, serversCount: VPNServersCountData | un
             getKillSwitch(),
             getAutoConnectVPNFeature(),
             getMultiPlatformSupportVPNFeature(),
-            get24x7SupportVPNFeature(),
+            get24x7Support(),
         ],
     };
 };
 
-export const getVPNBusinessPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
+const getVpnBusinessFeatures = (serversCount: VPNServersCountData | undefined) => {
     const plusServers = getPlusServers(serversCount?.paid.servers, serversCount?.paid.countries);
+
+    return [
+        getCountries(plusServers),
+        getAESEncryptionVPNFeature(),
+        getBandwidth(),
+        getCensorshipCircumventionVPNFeature(),
+        getCentralControlPanelVPNFeature(),
+        getKillSwitch(),
+        getAutoConnectVPNFeature(),
+        getMultiPlatformSupportVPNFeature(),
+        get24x7Support(),
+        getPrivateGatewaysVPNFeature(),
+        getDedicatedServersVPNFeature(),
+        getRequire2FA(true),
+        getNetShield(true),
+        getBrowserExtensionVPNFeature(),
+    ];
+};
+
+export const getVPNBusinessPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
     return {
         plan: PLANS.VPN_BUSINESS,
         title: plan.Title,
@@ -704,50 +725,7 @@ export const getVPNBusinessPlan = (plan: Plan, serversCount: VPNServersCountData
         description: c('new_plans: info')
             .t`Advanced network security and access management with dedicated secure Gateways`,
         cta: getCTA(plan.Title),
-        features: [
-            getCountries(plusServers),
-            getAESEncryptionVPNFeature(),
-            getBandwidth(),
-            getCensorshipCircumventionVPNFeature(),
-            getCentralControlPanelVPNFeature(),
-            getKillSwitch(),
-            getAutoConnectVPNFeature(),
-            getMultiPlatformSupportVPNFeature(),
-            get24x7SupportVPNFeature(),
-            getPrivateGatewaysVPNFeature(),
-            getDedicatedServersVPNFeature(),
-            getRequire2FAVPNFeature(),
-            getNetShield(true),
-            getBrowserExtensionVPNFeature(),
-        ],
-    };
-};
-
-export const getVPNEnterprisePlan = (serversCount: VPNServersCountData | undefined): ShortPlanLike => {
-    const plusServers = getPlusServers(serversCount?.paid.servers, serversCount?.paid.countries);
-    return {
-        isPlanLike: true,
-        plan: 'PLANS.VPN_ENTERPRISE',
-        title: c('new_plans: Title').t`VPN Enterprise`,
-        label: '',
-        description: c('new_plans: info')
-            .t`Tailor-made solutions for larger organizations with specific security needs`,
-        features: [
-            getCountries(plusServers),
-            getAESEncryptionVPNFeature(),
-            getBandwidth(),
-            getCensorshipCircumventionVPNFeature(),
-            getCentralControlPanelVPNFeature(),
-            getKillSwitch(),
-            getAutoConnectVPNFeature(),
-            getMultiPlatformSupportVPNFeature(),
-            get24x7SupportVPNFeature(),
-            getPrivateGatewaysVPNFeature(),
-            getDedicatedServersVPNFeature(),
-            getRequire2FAVPNFeature(),
-            getNetShield(true),
-            getBrowserExtensionVPNFeature(),
-        ],
+        features: getVpnBusinessFeatures(serversCount),
     };
 };
 
@@ -770,6 +748,22 @@ export const getLumoBusinessPlan = (plan: Plan): ShortPlan => {
         description: c('collider_2025: Info').t`High-speed chats and advanced AI features.`,
         cta: getCTA(plan.Title),
         features: [],
+    };
+};
+
+export const getVPNPassProPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
+    return {
+        plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+        title: plan.Title,
+        label: '',
+        description: c('collider_2025: Info').t`Advanced account and network security in one plan`,
+        cta: getCTA(plan.Title),
+        features: [
+            ...getVpnBusinessFeatures(serversCount),
+            getExistingVpnProfessionalBenefitsFeature(),
+            getPasswordManager(),
+            getVaultSharingB2B('unlimited'),
+        ],
     };
 };
 
@@ -846,6 +840,8 @@ export const getShortPlan = (
             return getLumoPlan(planData);
         case PLANS.LUMO_BUSINESS:
             return getLumoBusinessPlan(planData);
+        case PLANS.VPN_PASS_BUNDLE_BUSINESS:
+            return getVPNPassProPlan(planData, vpnServers);
         default:
             return null;
     }

@@ -36,6 +36,7 @@ import {
     hasPassFamily,
     hasVPN2024,
     hasVPNPassBundle,
+    hasVPNPassProfessional,
     hasVpnBusiness,
     hasVpnPro,
     isForbiddenModification,
@@ -102,10 +103,9 @@ import {
     getVaultSharingB2B,
     getVaults,
 } from '../../features/pass';
-import { getShortPlan, getVPNEnterprisePlan } from '../../features/plan';
+import { getShortPlan } from '../../features/plan';
 import {
     getB2BHighSpeedVPNConnectionsFeature,
-    getDedicatedAccountManagerVPNFeature,
     getDedicatedServersVPNFeature,
     getHighSpeedVPNConnectionsFeature,
     getVPNConnections,
@@ -113,7 +113,6 @@ import {
 } from '../../features/vpn';
 import type { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
-import VpnEnterpriseAction from './VpnEnterpriseAction';
 import { getAllowedCycles } from './getAllowedCycles';
 
 export const defaultUpsellCycleB2C = CYCLE.YEARLY;
@@ -173,6 +172,29 @@ export interface UpsellWithPlan {
     initializeOfferPrice?: (paymentsContext: PreloadedPaymentsContextType) => Promise<unknown>;
 }
 
+/**
+ * If you ever need to display an upsell for non-existing plan then this type is for you. We used to have an upsell for
+ * "VPN Enterprise" plan that doesn't actually exist. Essentially, it was just an upsell card with CTA - an invitation
+ * to talk to out sales team. There is also a sister type ShortPlanLike for rendering fake plans in <PlanSelection />
+ *
+ *
+ * Here is how it was done:
+ *
+ * const getVpnEnterpriseUpsell = (serversCount: VPNServersCountData): UpsellWithoutPlan => {
+ *   const vpnEnteriprisePlan = getVPNEnterprisePlan(serversCount);
+ *
+ *   return {
+ *       planKey: 'VPN_ENTERPRISE',
+ *       title: vpnEnteriprisePlan.title,
+ *       description: vpnEnteriprisePlan.description,
+ *       features: [getDedicatedServersVPNFeature(serversCount), getDedicatedAccountManagerVPNFeature()],
+ *       otherCtas: [<VpnEnterpriseAction shape="outline" size="large" />],
+ *       // because we have a custom CTA (<VpnEnterpriseAction />), the onUpgrade callback will never be used
+ *       onUpgrade: noop,
+ *   };
+ * };
+ *
+ */
 type UpsellWithoutPlan = Pick<
     UpsellWithPlan,
     'planKey' | 'title' | 'description' | 'features' | 'otherCtas' | 'onUpgrade' | 'isRecommended'
@@ -744,26 +766,29 @@ const getVpnBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetP
                     source: 'upsells',
                 },
             }),
-        defaultCtaOverrides: {
-            shape: 'solid',
-            color: 'norm',
-        },
         ...rest,
     });
 };
 
-const getVpnEnterpriseUpsell = (serversCount: VPNServersCountData): UpsellWithoutPlan => {
-    const vpnEnteriprisePlan = getVPNEnterprisePlan(serversCount);
-
-    return {
-        planKey: 'VPN_ENTERPRISE',
-        title: vpnEnteriprisePlan.title,
-        description: vpnEnteriprisePlan.description,
-        features: [getDedicatedServersVPNFeature(serversCount), getDedicatedAccountManagerVPNFeature()],
-        otherCtas: [<VpnEnterpriseAction shape="outline" size="large" />],
-        // because we have a custom CTA (<VpnEnterpriseAction />), the onUpgrade callback will never be used
-        onUpgrade: noop,
-    };
+const getVPNPassProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    return getUpsell({
+        plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+        plansMap,
+        features: [getDedicatedServersVPNFeature(), getPasswordManager(), getVaultSharingB2B('unlimited')],
+        upsellPath: DASHBOARD_UPSELL_PATHS.BUSINESS,
+        onUpgrade: () =>
+            openSubscriptionModal({
+                cycle: defaultUpsellCycleB2B,
+                plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+                telemetryFlow: rest.telemetryFlow,
+            }),
+        ...rest,
+    });
 };
 
 const hasOnePlusSubscription = (subscription: Subscription) => {
@@ -910,9 +935,9 @@ export const resolveUpsellsToDisplay = ({
                     }),
                 ];
             case hasVpnPro(subscription):
-                return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell(serversCount)];
+                return [getVpnBusinessUpsell(upsellsPayload), getVPNPassProUpsell(upsellsPayload)];
             case hasVpnBusiness(subscription):
-                return [getVpnEnterpriseUpsell(serversCount), getBundleProUpsell({ ...upsellsPayload })].filter(
+                return [getVPNPassProUpsell(upsellsPayload), getBundleProUpsell({ ...upsellsPayload })].filter(
                     isTruthy
                 );
 
@@ -925,6 +950,9 @@ export const resolveUpsellsToDisplay = ({
                             .t`Protect your entire business. Get ${LUMO_SHORT_APP_NAME} Professional with all ${BRAND_NAME} for Business apps and premium features.`,
                     }),
                 ];
+
+            case hasVPNPassProfessional(subscription):
+                return [getBundleProUpsell(upsellsPayload)];
             default:
                 return [];
         }

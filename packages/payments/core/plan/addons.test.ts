@@ -196,6 +196,26 @@ describe('getSupportedAddons', () => {
             };
             expect(result).toEqual(expected);
         });
+
+        it('should return correct addons for PLANS.VPN_PASS_BUNDLE_BUSINESS', () => {
+            const planIDs: PlanIDs = { [PLANS.VPN_PASS_BUNDLE_BUSINESS]: 1 };
+            const result = getSupportedAddons(planIDs);
+            const expected: SupportedAddons = {
+                [ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS]: true,
+                [ADDON_NAMES.LUMO_VPN_PASS_BUNDLE_BUSINESS]: true,
+                [ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS]: true,
+            };
+            expect(result).toEqual(expected);
+        });
+
+        it('should return correct addons for PLANS.LUMO_BUSINESS', () => {
+            const planIDs: PlanIDs = { [PLANS.LUMO_BUSINESS]: 1 };
+            const result = getSupportedAddons(planIDs);
+            const expected: SupportedAddons = {
+                [ADDON_NAMES.MEMBER_LUMO_BUSINESS]: true,
+            };
+            expect(result).toEqual(expected);
+        });
     });
 
     describe('Plans without supported addons', () => {
@@ -289,6 +309,7 @@ describe('getSupportedAddons', () => {
                 PLANS.PASS_PRO,
                 PLANS.PASS_BUSINESS,
                 PLANS.LUMO_BUSINESS,
+                PLANS.VPN_PASS_BUNDLE_BUSINESS,
             ];
 
             expect(plansWithAddons.sort()).toEqual(expectedPlansWithAddons.sort());

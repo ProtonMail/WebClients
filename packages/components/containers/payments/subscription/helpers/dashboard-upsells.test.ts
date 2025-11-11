@@ -24,10 +24,21 @@ import {
     trialMailPlusUpsell,
     unlimitedUpsell,
     vpnBusinessUpsell,
-    vpnEnterpriseUpsell,
 } from '../__mocks__/data';
 import { SUBSCRIPTION_STEPS } from '../constants';
 import { resolveUpsellsToDisplay } from './dashboard-upsells';
+
+const vpnPassProUpsell = {
+    plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+    planKey: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+    title: 'VPN and Pass Professional',
+    description: 'Advanced account and network security in one plan',
+    otherCtas: [],
+    price: {
+        value: 1099,
+        currency: 'EUR',
+    },
+};
 
 describe('resolveUpsellsToDisplay', () => {
     let mockedOpenSubscriptionModal: jest.Mock;
@@ -575,7 +586,7 @@ describe('resolveUpsellsToDisplay', () => {
     });
 
     describe('VPN Essentials', () => {
-        it('should return VPN Business and VPN Enterprise upselss', () => {
+        it('should return VPN Business and VPN and Pass Professional upsells', () => {
             const upsells = resolveUpsellsToDisplay({
                 ...base,
                 subscription: {
@@ -589,7 +600,6 @@ describe('resolveUpsellsToDisplay', () => {
                 app: APPS.PROTONACCOUNT,
                 isFree: false,
             });
-
             const upsell1 = upsells[0];
             const upsell2 = upsells[1];
 
@@ -607,18 +617,25 @@ describe('resolveUpsellsToDisplay', () => {
                 },
             });
 
-            expect(upsell2).toMatchObject(vpnEnterpriseUpsell);
-            expect(upsell2.otherCtas).toHaveLength(1);
+            expect(upsell2).toMatchObject(vpnPassProUpsell);
 
             upsell2.onUpgrade();
-            // that's right, the VPN Enterprise upsell should not call the modal. It must have noop because it has
-            // custom CTA. The 1 comes from the previous call
-            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
+            expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
+                cycle: CYCLE.YEARLY,
+                plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+                telemetryFlow: 'subscription',
+            });
         });
     });
 
     describe('VPN Business', () => {
-        it('should return VPN Enterprise and bundle pro upsells', () => {
+        it('should return VPN and Pass Professional and bundle pro upsells', () => {
             const upsells = resolveUpsellsToDisplay({
                 ...base,
                 subscription: {
@@ -634,18 +651,36 @@ describe('resolveUpsellsToDisplay', () => {
             });
 
             const upsell1 = upsells[0];
-            expect(upsell1).toMatchObject(vpnEnterpriseUpsell);
-            expect(upsell1.otherCtas).toHaveLength(1);
+            expect(upsell1).toMatchObject(vpnPassProUpsell);
 
             upsell1.onUpgrade();
-            expect(mockedOpenSubscriptionModal).not.toHaveBeenCalled();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.YEARLY,
+                plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+                telemetryFlow: 'subscription',
+            });
 
             const upsell2 = upsells[1];
             expect(upsell2).toMatchObject(bundle2024Upsell);
             expect(upsell2.otherCtas).toHaveLength(0);
 
             upsell2.onUpgrade();
-            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
+            expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
+                cycle: CYCLE.YEARLY,
+                plan: PLANS.BUNDLE_PRO_2024,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
         });
     });
 });

@@ -223,6 +223,8 @@ export const hasFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(su
 export const hasDuo = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DUO);
 export const hasVpnPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.VPN_PRO);
 export const hasVpnBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.VPN_BUSINESS);
+export const hasVPNPassProfessional = (subscription: MaybeFreeSubscription) =>
+    hasSomePlan(subscription, PLANS.VPN_PASS_BUNDLE_BUSINESS);
 export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_PRO);
 export const hasPassFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_FAMILY);
 export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_BUSINESS);
@@ -371,7 +373,7 @@ export const getAudienceFromSubscription = (subscription: Subscription | FreeSub
 };
 
 export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
-    return hasVpnPro(subscription) || hasVpnBusiness(subscription);
+    return hasVpnPro(subscription) || hasVpnBusiness(subscription) || hasVPNPassProfessional(subscription);
 };
 
 export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
@@ -389,7 +391,7 @@ export const getHasConsumerVpnPlan = (subscription: MaybeFreeSubscription) => {
 };
 
 export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {
-    return hasPassPro(subscription) || hasPassBusiness(subscription);
+    return hasPassPro(subscription) || hasPassBusiness(subscription) || hasVPNPassProfessional(subscription);
 };
 
 export const getHasDriveB2BPlan = (subscription: MaybeFreeSubscription) => {
@@ -404,6 +406,7 @@ const externalMemberB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.PASS_PRO,
     PLANS.PASS_BUSINESS,
     PLANS.LUMO_BUSINESS,
+    PLANS.VPN_PASS_BUNDLE_BUSINESS,
 ]);
 export const getHasExternalMemberCapableB2BPlan = (subscription: MaybeFreeSubscription) => {
     return subscription?.Plans?.some((plan) => externalMemberB2BPlans.has(plan.Name)) || false;
@@ -569,9 +572,7 @@ export function isCancellableOnlyViaSupport(subscription: Subscription | undefin
         return false;
     }
 
-    const vpnB2BPlans = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO];
-    const isVpnB2BPlan = vpnB2BPlans.includes(getPlanName(subscription) as PLANS);
-    if (isVpnB2BPlan) {
+    if (getHasVpnB2BPlan(subscription)) {
         return true;
     }
 

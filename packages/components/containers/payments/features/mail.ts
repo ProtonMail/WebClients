@@ -456,6 +456,9 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getNAddressesFeature({ n: 1 }),
                 [PLANS.LUMO_BUSINESS]: getNAddressesFeature({ n: 1 }),
                 [PLANS.VISIONARY]: getNAddressesFeature({ n: plansMap[PLANS.VISIONARY]?.MaxAddresses || 100 }),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getNAddressesFeature({
+                    n: plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS]?.MaxAddresses || 1,
+                }),
             },
         },
         {
@@ -484,6 +487,9 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getNDomainsFeature({ n: 0 }),
                 [PLANS.LUMO_BUSINESS]: getNDomainsFeature({ n: 0 }),
                 [PLANS.VISIONARY]: getNDomainsFeature({ n: plansMap[PLANS.VISIONARY]?.MaxDomains || 10 }),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getNDomainsFeature({
+                    n: plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS]?.MaxDomains || 0,
+                }),
             },
         },
         {
@@ -512,6 +518,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getNMessagesFeature(150),
                 [PLANS.LUMO_BUSINESS]: getNMessagesFeature(150),
                 [PLANS.VISIONARY]: getNMessagesFeature('unlimited'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getNMessagesFeature(150),
             },
         },
         {
@@ -540,6 +547,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getFolders(3),
                 [PLANS.LUMO_BUSINESS]: getFolders(3),
                 [PLANS.VISIONARY]: getFolders('unlimited'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getFolders(3),
             },
         },
         {
@@ -568,6 +576,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getLabels(3),
                 [PLANS.LUMO_BUSINESS]: getLabels(3),
                 [PLANS.VISIONARY]: getLabels('unlimited'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getLabels(3),
             },
         },
         {
@@ -596,6 +605,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getFilters(1),
                 [PLANS.LUMO_BUSINESS]: getFilters(1),
                 [PLANS.VISIONARY]: getFilters('unlimited'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getFilters(1),
             },
         },
         {
@@ -624,6 +634,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getAttachments(),
                 [PLANS.LUMO_BUSINESS]: getAttachments(),
                 [PLANS.VISIONARY]: getAttachments(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getAttachments(),
             },
         },
         {
@@ -652,6 +663,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getSignature(),
                 [PLANS.LUMO_BUSINESS]: getSignature(),
                 [PLANS.VISIONARY]: getSignature(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSignature(),
             },
         },
         {
@@ -680,6 +692,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getEndToEndEncryption(),
                 [PLANS.LUMO_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VISIONARY]: getEndToEndEncryption(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getEndToEndEncryption(),
             },
         },
         {
@@ -708,6 +721,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getEncryptionOutside(),
                 [PLANS.LUMO_BUSINESS]: getEncryptionOutside(),
                 [PLANS.VISIONARY]: getEncryptionOutside(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getEncryptionOutside(),
             },
         },
         {
@@ -736,6 +750,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getEncryptedContacts(),
                 [PLANS.LUMO_BUSINESS]: getEncryptedContacts(),
                 [PLANS.VISIONARY]: getEncryptedContacts(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getEncryptedContacts(),
             },
         },
         {
@@ -764,6 +779,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getContactGroups(false),
                 [PLANS.LUMO_BUSINESS]: getContactGroups(false),
                 [PLANS.VISIONARY]: getContactGroups(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getContactGroups(false),
             },
         },
         {
@@ -792,6 +808,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getSMTP(false),
                 [PLANS.LUMO_BUSINESS]: getSMTP(false),
                 [PLANS.VISIONARY]: getSMTP(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSMTP(false),
             },
         },
         {
@@ -820,6 +837,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getSMTPToken(false),
                 [PLANS.LUMO_BUSINESS]: getSMTPToken(false),
                 [PLANS.VISIONARY]: getSMTPToken(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getSMTPToken(false),
             },
         },
         {
@@ -848,6 +866,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getAutoReply(false),
                 [PLANS.LUMO_BUSINESS]: getAutoReply(false),
                 [PLANS.VISIONARY]: getAutoReply(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getAutoReply(false),
             },
         },
         {
@@ -876,6 +895,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getAutoForwarding(false),
                 [PLANS.LUMO_BUSINESS]: getAutoForwarding(false),
                 [PLANS.VISIONARY]: getAutoForwarding(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getAutoForwarding(false),
             },
         },
         {
@@ -904,6 +924,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getCatchAll(false),
                 [PLANS.LUMO_BUSINESS]: getCatchAll(false),
                 [PLANS.VISIONARY]: getCatchAll(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getCatchAll(false),
             },
         },
         {
@@ -932,6 +953,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getAutoDeleteSpamAndTrash(false),
                 [PLANS.LUMO_BUSINESS]: getAutoDeleteSpamAndTrash(false),
                 [PLANS.VISIONARY]: getAutoDeleteSpamAndTrash(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getAutoDeleteSpamAndTrash(false),
             },
         },
         {
@@ -960,6 +982,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getScheduleAndSnooze(false),
                 [PLANS.LUMO_BUSINESS]: getScheduleAndSnooze(false),
                 [PLANS.VISIONARY]: getScheduleAndSnooze(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getScheduleAndSnooze(false),
             },
         },
         {
@@ -988,6 +1011,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getDesktopApp(false),
                 [PLANS.LUMO_BUSINESS]: getDesktopApp(false),
                 [PLANS.VISIONARY]: getDesktopApp(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getDesktopApp(false),
             },
         },
         {
@@ -1016,6 +1040,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: null,
                 [PLANS.LUMO_BUSINESS]: null,
                 [PLANS.VISIONARY]: null,
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
             },
         },
         {
@@ -1044,6 +1069,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: null,
                 [PLANS.LUMO_BUSINESS]: null,
                 [PLANS.VISIONARY]: getProtonScribe(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
             },
         },
         {
@@ -1072,6 +1098,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: getEasySwitch(),
                 [PLANS.LUMO_BUSINESS]: getEasySwitch(),
                 [PLANS.VISIONARY]: getEasySwitch(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getEasySwitch(),
             },
         },
         {
@@ -1100,6 +1127,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: null,
                 [PLANS.LUMO_BUSINESS]: null,
                 [PLANS.VISIONARY]: getShortDomain(true),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
             },
         },
         {
@@ -1128,6 +1156,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.LUMO]: null,
                 [PLANS.LUMO_BUSINESS]: null,
                 [PLANS.VISIONARY]: getFoldersAndLabelsFeature('unlimited'),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
             },
         },
     ];

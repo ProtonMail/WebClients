@@ -108,6 +108,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getWallets(FREE_WALLETS),
                 [PLANS.LUMO_BUSINESS]: getWallets(FREE_WALLETS),
                 [PLANS.VISIONARY]: getWallets(VISIONARY_WALLETS),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getWallets(FREE_WALLETS),
             },
         },
         {
@@ -136,6 +137,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.LUMO_BUSINESS]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.VISIONARY]: getWalletAccounts(VISIONARY_WALLET_ACCOUNTS),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
             },
         },
         {
@@ -164,6 +166,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.LUMO_BUSINESS]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.VISIONARY]: getWalletEmailAddresses(VISIONARY_WALLET_EMAIL),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
             },
         },
         {
@@ -192,6 +195,7 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
                 [PLANS.LUMO]: getBitcoinViaEmail(),
                 [PLANS.LUMO_BUSINESS]: getBitcoinViaEmail(),
                 [PLANS.VISIONARY]: getBitcoinViaEmail(),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getBitcoinViaEmail(),
             },
         },
     ];
