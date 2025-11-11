@@ -157,6 +157,27 @@ export function useProtonSheetsUIState(
     },
   }
 
+  // sheets
+  const sheetList = useMemo(
+    () =>
+      state.sheets.map((sheet) => ({
+        id: sheet.sheetId,
+        name: sheet.title,
+        hidden: sheet.hidden ?? false,
+        tabColor: sheet.tabColor ?? undefined,
+      })),
+    [state.sheets],
+  )
+  const sheets = {
+    list: sheetList,
+    activeId: state.activeSheetId,
+    setActiveId: useEvent((sheetId: number) => state.onChangeActiveSheet(sheetId)),
+    delete: useEvent((sheetId: number) => state.onDeleteSheet(sheetId)),
+    rename: useEvent((sheetId: number, newName: string) =>
+      state.onRenameSheet(sheetId, newName, sheetList.find((sheet) => sheet.id === sheetId)?.name || ''),
+    ),
+  }
+
   // history
   const history = {
     undo: useEvent(state.onUndo),
@@ -401,6 +422,12 @@ export function useProtonSheetsUIState(
     note: useEvent(() => state.onInsertNote(state.activeSheetId, state.activeCell, state.selections)),
   }
 
+  // charts
+  const charts = {
+    selected: state.chartsState.selectedChart,
+    update: useEvent((chart) => state.chartsState.onUpdateChart(chart)),
+  }
+
   // data
   const activeBasicFilter = useMemo(
     () =>
@@ -432,38 +459,6 @@ export function useProtonSheetsUIState(
     },
   }
 
-  // legacy (temporary, to be removed eventually)
-  const legacy = {
-    activeSheetId: state.activeSheetId,
-    onChangeActiveSheet: state.onChangeActiveSheet,
-    activeCell: state.activeCell,
-    onChangeActiveCell: state.onChangeActiveCell,
-    selections: state.selections,
-    onChangeSelections: state.onChangeSelections,
-    namedRanges: state.namedRanges,
-    rowCount: state.rowCount,
-    columnCount: state.columnCount,
-    merges: state.merges,
-    onMergeCells: state.onMergeCells,
-    onUnMergeCells: state.onUnMergeCells,
-    onRequestDefineNamedRange: state.onRequestDefineNamedRange,
-    sheets: state.sheets,
-    onSelectRange: state.onSelectRange,
-    onSelectNamedRange: state.onSelectNamedRange,
-    onRequestUpdateNamedRange: state.onRequestUpdateNamedRange,
-    onDeleteNamedRange: state.onDeleteNamedRange,
-    tables: state.tables,
-    onSelectTable: state.onSelectTable,
-    theme: state.theme,
-    onInsertLink: state.onInsertLink,
-    onRemoveLink: state.onRemoveLink,
-    getCellOffsetFromCoords: state.getCellOffsetFromCoords,
-    getGridContainerElement: state.getGridContainerElement,
-    getGridScrollPosition: state.getGridScrollPosition,
-    getHyperlink: state.getHyperlink,
-    getEffectiveValue: state.getEffectiveValue,
-  }
-
   return {
     focusGrid,
     withFocusGrid,
@@ -471,13 +466,16 @@ export function useProtonSheetsUIState(
     info,
     operation,
     view,
+    sheets,
     history,
     zoom,
     search,
     format,
     insert,
+    charts,
     data,
-    legacy,
+    /** @deprecated temporary, to be removed eventually */
+    legacy: state,
   }
 }
 

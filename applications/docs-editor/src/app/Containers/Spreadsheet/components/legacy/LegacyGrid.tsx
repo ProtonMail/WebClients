@@ -1,24 +1,19 @@
 import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
 import { CanvasGrid } from '@rowsncolumns/spreadsheet'
-import type { ProtonSheetsState } from '../../state'
 import { GRID_THEME_PROPS, FUNCTION_DESCRIPTIONS } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
 import { useEffect, useRef } from 'react'
-import { useUI } from '../../ui-store'
+import { type ProtonSheetsUIStoreSetters, useUI } from '../../ui-store'
 import { CellTooltip } from '../misc/CellTooltip'
 import { LegacyContextMenu } from './LegacyContextMenu'
 import { GridFooter } from '../GridFooter/GridFooter'
 
-export type LegacyGridProps = {
-  state: ProtonSheetsState
-  isReadonly: boolean
-  // TODO: move this into state object
-  users: any
-  userName: string
-}
-
-const exposeCanvasGrid = (instance: CanvasGridMethods | null, state: ProtonSheetsState) => {
+const exposeCanvasGrid = (
+  instance: CanvasGridMethods | null,
+  setters: ProtonSheetsUIStoreSetters['legacy'],
+  activeSheetId: number,
+) => {
   // Force exposure for e2e testing - always expose in any development-like environment
   const shouldExpose = typeof window !== 'undefined' && instance && isDevOrBlack()
 
@@ -30,9 +25,9 @@ const exposeCanvasGrid = (instance: CanvasGridMethods | null, state: ProtonSheet
         const { rowIndex, columnIndex } = coords
 
         try {
-          const userEnteredValue = state.getUserEnteredValue(state.activeSheetId, rowIndex, columnIndex)
-          const effectiveValue = state.getEffectiveValue(state.activeSheetId, rowIndex, columnIndex)
-          const formattedValue = state.getFormattedValue(state.activeSheetId, rowIndex, columnIndex)
+          const userEnteredValue = setters.getUserEnteredValue(activeSheetId, rowIndex, columnIndex)
+          const effectiveValue = setters.getEffectiveValue(activeSheetId, rowIndex, columnIndex)
+          const formattedValue = setters.getFormattedValue(activeSheetId, rowIndex, columnIndex)
 
           // Return a proper CellData object structure
           const result = {
@@ -45,13 +40,13 @@ const exposeCanvasGrid = (instance: CanvasGridMethods | null, state: ProtonSheet
           // Store debug info even on error
           ;(window as any).lastCellQuery = {
             coords,
-            activeSheetId: state.activeSheetId,
+            activeSheetId: activeSheetId,
             error: e instanceof Error ? e.message : 'Unknown error',
-            stateExists: !!state,
+            stateExists: !!setters,
             availableMethods: {
-              getUserEnteredValue: typeof state.getUserEnteredValue === 'function',
-              getEffectiveValue: typeof state.getEffectiveValue === 'function',
-              getFormattedValue: typeof state.getFormattedValue === 'function',
+              getUserEnteredValue: typeof setters.getUserEnteredValue === 'function',
+              getEffectiveValue: typeof setters.getEffectiveValue === 'function',
+              getFormattedValue: typeof setters.getFormattedValue === 'function',
             },
           }
           return null
@@ -61,130 +56,141 @@ const exposeCanvasGrid = (instance: CanvasGridMethods | null, state: ProtonSheet
   }
 }
 
-export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridProps) {
+export function LegacyGrid() {
   const canvasGridRef = useRef<CanvasGridMethods | null>(null)
+  const activeSheetId = useUI((ui) => ui.legacy.activeSheetId)
+  const isReadonly = useUI((ui) => ui.info.isReadonly)
 
+  const setters = useUI.$.legacy
+  const ref = (instance: CanvasGridMethods | null) => {
+    canvasGridRef.current = instance
+    exposeCanvasGrid(instance, setters, activeSheetId)
+  }
   useEffect(() => {
-    exposeCanvasGrid(canvasGridRef.current, state)
-  }, [state])
+    exposeCanvasGrid(canvasGridRef.current, setters, activeSheetId)
+  }, [setters, activeSheetId])
+
+  const getSeriesValuesFromRange = useUI((ui) => ui.legacy.getSeriesValuesFromRange)
+  const getDomainValuesFromRange = useUI((ui) => ui.legacy.getDomainValuesFromRange)
+  const onRequestEditChart = useUI((ui) => ui.legacy.chartsState.onRequestEditChart)
+  const onRequestCalculate = useUI((ui) => ui.legacy.onRequestCalculate)
+  const onRequestAddRows = useUI((ui) => ui.legacy.onRequestAddRows)
 
   return (
     <CanvasGrid
       {...GRID_THEME_PROPS}
-      ref={(instance) => {
-        canvasGridRef.current = instance
-        exposeCanvasGrid(instance, state)
-      }}
+      ref={ref}
+      className="relative grow after:absolute after:top-0 after:z-10 after:h-[.0625rem] after:w-full after:bg-[#f8f9fa]"
       autoFocus={true}
       showGridLines={useUI((ui) => ui.view.gridLines.enabled)}
-      borderStyles={state.searchState.borderStyles}
-      scale={state.scale}
-      conditionalFormats={state.conditionalFormats}
-      sheetId={state.activeSheetId}
-      rowCount={state.rowCount}
-      getDataRowCount={state.getDataRowCount}
-      columnCount={state.columnCount}
-      frozenColumnCount={state.frozenColumnCount}
-      frozenRowCount={state.frozenRowCount}
-      rowMetadata={state.rowMetadata}
-      columnMetadata={state.columnMetadata}
-      activeCell={state.activeCell}
-      selections={state.selections}
-      theme={state.theme}
-      merges={state.merges}
-      charts={state.charts}
-      embeds={state.embeds}
-      tables={state.tables}
-      protectedRanges={state.protectedRanges}
-      bandedRanges={state.bandedRanges}
+      borderStyles={useUI((ui) => ui.legacy.searchState.borderStyles)}
+      scale={useUI((ui) => ui.legacy.scale)}
+      conditionalFormats={useUI((ui) => ui.legacy.conditionalFormats)}
+      sheetId={useUI((ui) => ui.legacy.activeSheetId)}
+      rowCount={useUI((ui) => ui.legacy.rowCount)}
+      getDataRowCount={useUI((ui) => ui.legacy.getDataRowCount)}
+      columnCount={useUI((ui) => ui.legacy.columnCount)}
+      frozenColumnCount={useUI((ui) => ui.legacy.frozenColumnCount)}
+      frozenRowCount={useUI((ui) => ui.legacy.frozenRowCount)}
+      rowMetadata={useUI((ui) => ui.legacy.rowMetadata)}
+      columnMetadata={useUI((ui) => ui.legacy.columnMetadata)}
+      activeCell={useUI((ui) => ui.legacy.activeCell)}
+      selections={useUI((ui) => ui.legacy.selections)}
+      theme={useUI((ui) => ui.legacy.theme)}
+      merges={useUI((ui) => ui.legacy.merges)}
+      charts={useUI((ui) => ui.legacy.charts)}
+      embeds={useUI((ui) => ui.legacy.embeds)}
+      tables={useUI((ui) => ui.legacy.tables)}
+      protectedRanges={useUI((ui) => ui.legacy.protectedRanges)}
+      bandedRanges={useUI((ui) => ui.legacy.bandedRanges)}
       functionDescriptions={FUNCTION_DESCRIPTIONS}
-      getSheetName={state.getSheetName}
-      getSheetId={state.getSheetId}
-      getCellData={state.getCellData}
-      onChangeActiveCell={state.onChangeActiveCell}
-      onChangeSelections={state.onChangeSelections}
-      onChangeActiveSheet={state.onChangeActiveSheet}
-      onRequestCalculate={state.onRequestCalculate}
-      onSelectNextSheet={state.onSelectNextSheet}
-      onSelectPreviousSheet={state.onSelectPreviousSheet}
-      onChangeFormatting={state.onChangeFormatting}
-      onRepeatFormatting={state.onRepeatFormatting}
-      onHideColumn={state.onHideColumn}
-      onShowColumn={state.onShowColumn}
-      onHideRow={state.onHideRow}
-      onShowRow={state.onShowRow}
-      onDelete={state.onDelete}
-      onClearContents={state.onDelete}
-      onFill={state.onFill}
-      onFillRange={state.onFillRange}
-      onResize={state.onResize}
-      onMoveChart={state.chartsState.onMoveChart}
-      onMoveEmbed={state.onMoveEmbed}
-      onResizeChart={state.chartsState.onResizeChart}
-      onDeleteChart={state.chartsState.onDeleteChart}
-      onResizeEmbed={state.onResizeEmbed}
-      onDeleteEmbed={state.onDeleteEmbed}
-      onDeleteRow={state.onDeleteRow}
-      onDeleteColumn={state.onDeleteColumn}
-      onDeleteCellsShiftUp={state.onDeleteCellsShiftUp}
-      onDeleteCellsShiftLeft={state.onDeleteCellsShiftLeft}
-      onInsertCellsShiftRight={state.onInsertCellsShiftRight}
-      onInsertCellsShiftDown={state.onInsertCellsShiftDown}
-      onInsertRow={state.onInsertRow}
-      onInsertColumn={state.onInsertColumn}
-      onMoveColumns={state.onMoveColumns}
-      onMoveRows={state.onMoveRows}
-      onMoveSelection={state.onMoveSelection}
-      onCreateNewSheet={state.onCreateNewSheet}
-      onChange={state.onChange}
-      onChangeBatch={state.onChangeBatch}
-      onUndo={state.onUndo}
-      onRedo={state.onRedo}
-      onSortColumn={state.onSortColumn}
-      onSortTable={state.onSortTable}
-      onFilterTable={state.onFilterTable}
-      onResizeTable={state.onResizeTable}
-      onClearFormatting={state.onClearFormatting}
-      onCopy={state.onCopy}
-      onPaste={state.onPaste}
-      onDragOver={state.onDragOver}
-      onDrop={state.onDrop}
-      onCreateTable={state.onCreateTable}
-      basicFilter={state.basicFilter}
-      onCreateBasicFilter={state.onCreateBasicFilter}
-      onRequestEditTable={state.onRequestEditTable}
-      onRequestDefineNamedRange={state.onRequestDefineNamedRange}
-      onFreezeColumn={state.onFreezeColumn}
-      onFreezeRow={state.onFreezeRow}
-      onUpdateNote={state.onUpdateNote}
-      onSortRange={state.onSortRange}
-      onProtectRange={state.onProtectRange}
-      onUnProtectRange={state.onUnProtectRange}
-      onRequestConditionalFormat={state.onRequestConditionalFormat}
-      namedRanges={state.namedRanges}
+      getSheetName={useUI((ui) => ui.legacy.getSheetName)}
+      getSheetId={useUI((ui) => ui.legacy.getSheetId)}
+      getCellData={useUI((ui) => ui.legacy.getCellData)}
+      onChangeActiveCell={useUI((ui) => ui.legacy.onChangeActiveCell)}
+      onChangeSelections={useUI((ui) => ui.legacy.onChangeSelections)}
+      onChangeActiveSheet={useUI((ui) => ui.legacy.onChangeActiveSheet)}
+      onRequestCalculate={useUI((ui) => ui.legacy.onRequestCalculate)}
+      onSelectNextSheet={useUI((ui) => ui.legacy.onSelectNextSheet)}
+      onSelectPreviousSheet={useUI((ui) => ui.legacy.onSelectPreviousSheet)}
+      onChangeFormatting={useUI((ui) => ui.legacy.onChangeFormatting)}
+      onRepeatFormatting={useUI((ui) => ui.legacy.onRepeatFormatting)}
+      onHideColumn={useUI((ui) => ui.legacy.onHideColumn)}
+      onShowColumn={useUI((ui) => ui.legacy.onShowColumn)}
+      onHideRow={useUI((ui) => ui.legacy.onHideRow)}
+      onShowRow={useUI((ui) => ui.legacy.onShowRow)}
+      onDelete={useUI((ui) => ui.legacy.onDelete)}
+      onClearContents={useUI((ui) => ui.legacy.onDelete)}
+      onFill={useUI((ui) => ui.legacy.onFill)}
+      onFillRange={useUI((ui) => ui.legacy.onFillRange)}
+      onResize={useUI((ui) => ui.legacy.onResize)}
+      onMoveChart={useUI((ui) => ui.legacy.chartsState.onMoveChart)}
+      onMoveEmbed={useUI((ui) => ui.legacy.onMoveEmbed)}
+      onResizeChart={useUI((ui) => ui.legacy.chartsState.onResizeChart)}
+      onDeleteChart={useUI((ui) => ui.legacy.chartsState.onDeleteChart)}
+      onResizeEmbed={useUI((ui) => ui.legacy.onResizeEmbed)}
+      onDeleteEmbed={useUI((ui) => ui.legacy.onDeleteEmbed)}
+      onDeleteRow={useUI((ui) => ui.legacy.onDeleteRow)}
+      onDeleteColumn={useUI((ui) => ui.legacy.onDeleteColumn)}
+      onDeleteCellsShiftUp={useUI((ui) => ui.legacy.onDeleteCellsShiftUp)}
+      onDeleteCellsShiftLeft={useUI((ui) => ui.legacy.onDeleteCellsShiftLeft)}
+      onInsertCellsShiftRight={useUI((ui) => ui.legacy.onInsertCellsShiftRight)}
+      onInsertCellsShiftDown={useUI((ui) => ui.legacy.onInsertCellsShiftDown)}
+      onInsertRow={useUI((ui) => ui.legacy.onInsertRow)}
+      onInsertColumn={useUI((ui) => ui.legacy.onInsertColumn)}
+      onMoveColumns={useUI((ui) => ui.legacy.onMoveColumns)}
+      onMoveRows={useUI((ui) => ui.legacy.onMoveRows)}
+      onMoveSelection={useUI((ui) => ui.legacy.onMoveSelection)}
+      onCreateNewSheet={useUI((ui) => ui.legacy.onCreateNewSheet)}
+      onChange={useUI((ui) => ui.legacy.onChange)}
+      onChangeBatch={useUI((ui) => ui.legacy.onChangeBatch)}
+      onUndo={useUI((ui) => ui.legacy.onUndo)}
+      onRedo={useUI((ui) => ui.legacy.onRedo)}
+      onSortColumn={useUI((ui) => ui.legacy.onSortColumn)}
+      onSortTable={useUI((ui) => ui.legacy.onSortTable)}
+      onFilterTable={useUI((ui) => ui.legacy.onFilterTable)}
+      onResizeTable={useUI((ui) => ui.legacy.onResizeTable)}
+      onClearFormatting={useUI((ui) => ui.legacy.onClearFormatting)}
+      onCopy={useUI((ui) => ui.legacy.onCopy)}
+      onPaste={useUI((ui) => ui.legacy.onPaste)}
+      onDragOver={useUI((ui) => ui.legacy.onDragOver)}
+      onDrop={useUI((ui) => ui.legacy.onDrop)}
+      onCreateTable={useUI((ui) => ui.legacy.onCreateTable)}
+      basicFilter={useUI((ui) => ui.legacy.basicFilter)}
+      onCreateBasicFilter={useUI((ui) => ui.legacy.onCreateBasicFilter)}
+      onRequestEditTable={useUI((ui) => ui.legacy.onRequestEditTable)}
+      onRequestDefineNamedRange={useUI((ui) => ui.legacy.onRequestDefineNamedRange)}
+      onFreezeColumn={useUI((ui) => ui.legacy.onFreezeColumn)}
+      onFreezeRow={useUI((ui) => ui.legacy.onFreezeRow)}
+      onUpdateNote={useUI((ui) => ui.legacy.onUpdateNote)}
+      onSortRange={useUI((ui) => ui.legacy.onSortRange)}
+      onProtectRange={useUI((ui) => ui.legacy.onProtectRange)}
+      onUnProtectRange={useUI((ui) => ui.legacy.onUnProtectRange)}
+      onRequestConditionalFormat={useUI((ui) => ui.legacy.onRequestConditionalFormat)}
+      namedRanges={useUI((ui) => ui.legacy.namedRanges)}
       licenseKey={process.env.DOCS_SHEETS_KEY}
-      onRequestSearch={state.searchState.onRequestSearch}
-      onRequestDataValidation={state.onRequestDataValidation}
-      onRequestFormatCells={state.onRequestFormatCells}
-      users={users}
-      userId={userName}
+      onRequestSearch={useUI((ui) => ui.legacy.searchState.onRequestSearch)}
+      onRequestDataValidation={useUI((ui) => ui.legacy.onRequestDataValidation)}
+      onRequestFormatCells={useUI((ui) => ui.legacy.onRequestFormatCells)}
+      users={useUI((ui) => ui.legacy.yjsState.users)}
+      userId={useUI((ui) => ui.legacy.yjsState.userName)}
       getChartComponent={(props) => (
         <ChartComponent
           {...props}
-          getSeriesValuesFromRange={state.getSeriesValuesFromRange}
-          getDomainValuesFromRange={state.getDomainValuesFromRange}
-          onRequestEdit={!isReadonly ? state.chartsState.onRequestEditChart : undefined}
-          onRequestCalculate={state.onRequestCalculate}
+          getSeriesValuesFromRange={getSeriesValuesFromRange}
+          getDomainValuesFromRange={getDomainValuesFromRange}
+          onRequestEdit={!isReadonly ? onRequestEditChart : undefined}
+          onRequestCalculate={onRequestCalculate}
           readonly={isReadonly}
         />
       )}
       readonly={isReadonly}
-      getEffectiveFormat={state.getEffectiveFormat}
+      getEffectiveFormat={useUI((ui) => ui.legacy.getEffectiveFormat)}
       CellTooltip={CellTooltip}
       ContextMenu={LegacyContextMenu}
       footerHeight={isReadonly ? undefined : 68}
       footerComponent={
-        isReadonly ? undefined : <GridFooter sheetId={state.activeSheetId} onRequestAddRows={state.onRequestAddRows} />
+        isReadonly ? undefined : <GridFooter sheetId={activeSheetId} onRequestAddRows={onRequestAddRows} />
       }
     />
   )

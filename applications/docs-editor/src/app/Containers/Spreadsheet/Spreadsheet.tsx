@@ -25,7 +25,7 @@ import { type ProtonSheetsState, useLocalState, useProtonSheetsState } from './s
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
 import { Toolbar } from './components/Toolbar/Toolbar'
-import { BottomBar } from './components/BottomBar'
+import { OldBottomBar } from './components/BottomBar'
 import { LegacyBottomBar } from './components/legacy/LegacyBottomBar'
 import { LegacyDialogs } from './components/legacy/LegacyDialogs'
 import { LegacyGrid } from './components/legacy/LegacyGrid'
@@ -184,26 +184,28 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   if (useNewUIEnabled()) {
     return (
-      <UI
+      <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly} isViewOnlyMode={isViewOnlyMode}>
+        <UI
+          hidden={hidden}
+          state={state}
+          isReadonly={isReadonly}
+          isRevisionMode={isRevisionMode}
+          clientInvoker={clientInvoker}
+          isPublicMode={isPublicMode}
+        />
+      </ProtonSheetsUIStoreProvider>
+    )
+  }
+  return (
+    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly} isViewOnlyMode={isViewOnlyMode}>
+      <LegacyUI
         hidden={hidden}
         state={state}
         isReadonly={isReadonly}
         isRevisionMode={isRevisionMode}
-        isViewOnlyMode={isViewOnlyMode}
-        clientInvoker={clientInvoker}
-        isPublicMode={isPublicMode}
+        downloadLogs={downloadLogs}
       />
-    )
-  }
-  return (
-    <LegacyUI
-      hidden={hidden}
-      state={state}
-      isReadonly={isReadonly}
-      isRevisionMode={isRevisionMode}
-      isViewOnlyMode={isViewOnlyMode}
-      downloadLogs={downloadLogs}
-    />
+    </ProtonSheetsUIStoreProvider>
   )
 })
 
@@ -211,46 +213,39 @@ type UIProps = {
   hidden: boolean
   state: ProtonSheetsState
   isReadonly: boolean
-  isViewOnlyMode: boolean
   isRevisionMode: boolean
   clientInvoker: EditorRequiresClientMethods
   isPublicMode: boolean
 }
 
-function UI({ hidden, state, isReadonly, isRevisionMode, isViewOnlyMode, clientInvoker, isPublicMode }: UIProps) {
+function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
   return (
-    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly} isViewOnlyMode={isViewOnlyMode}>
+    <>
       {hidden && (
         <div
           className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"
           data-testid="editor-curtain"
         />
       )}
-
       <div className="flex h-full min-h-0 w-full min-w-0 bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
         <div className="flex h-full grow flex-col">
           {!isRevisionMode && (
             <>
-              <Menubar className="mb-2 max-sm:hidden" clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
-              <Toolbar className="max-sm:hidden" />
-              {/* TODO: formula bar */}
+              <Menubar
+                className="mx-[1.125rem] max-sm:hidden"
+                clientInvoker={clientInvoker}
+                isPublicMode={isPublicMode}
+              />
+              <Toolbar className="m-2" />
             </>
           )}
-          {/* TODO: replace with new UI */}
-          <LegacyGrid
-            state={state}
-            isReadonly={isReadonly}
-            users={state.yjsState.users}
-            userName={state.yjsState.userName}
-          />
-
-          <BottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
-          <Dialogs state={state} />
+          <LegacyGrid />
+          <OldBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+          <Dialogs />
         </div>
-
-        <Sidebar state={state} />
+        <Sidebar />
       </div>
-    </ProtonSheetsUIStoreProvider>
+    </>
   )
 }
 
@@ -259,13 +254,12 @@ type LegacyUIProps = {
   state: ProtonSheetsState
   isReadonly: boolean
   isRevisionMode: boolean
-  isViewOnlyMode: boolean
   downloadLogs: () => void
 }
 
-function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs, isViewOnlyMode }: LegacyUIProps) {
+function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs }: LegacyUIProps) {
   return (
-    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly} isViewOnlyMode={isViewOnlyMode}>
+    <>
       {hidden && (
         <div
           className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"
@@ -274,15 +268,10 @@ function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs, isV
       )}
       <div className="flex h-full w-full flex-1 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
         {!isRevisionMode && <LegacyToolbar state={state} downloadLogs={downloadLogs} isReadonly={isReadonly} />}
-        <LegacyGrid
-          state={state}
-          isReadonly={isReadonly}
-          users={state.yjsState.users}
-          userName={state.yjsState.userName}
-        />
+        <LegacyGrid />
         <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
         <LegacyDialogs state={state} />
       </div>
-    </ProtonSheetsUIStoreProvider>
+    </>
   )
 }

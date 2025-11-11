@@ -147,13 +147,16 @@ function DocsHeaderForDocument({
     <MimeIcon
       name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'}
       size={5}
-      className="ml-[.4375rem] mr-[.0625rem] shrink-0"
+      className="ml-[.75rem] mr-[.0625rem] shrink-0"
     />
   )
 
   return (
     <div
-      className={clsx('flex flex-nowrap items-center gap-2 px-3 py-2', documentType === 'sheet' && 'bg-[#F9FBFC]')}
+      className={clsx(
+        'flex select-none flex-nowrap items-center gap-2 px-3 py-2',
+        documentType === 'sheet' && 'bg-[#F9FBFC]',
+      )}
       data-testid="docs-header"
     >
       <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
