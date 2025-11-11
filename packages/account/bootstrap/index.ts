@@ -336,17 +336,18 @@ export const onAbort = (signal: AbortSignal | undefined, cb: () => void) => {
     }
 };
 
-export const unleashReady = async ({ unleashClient }: { unleashClient: UnleashClient }) => {
+export const unleashReady = async ({ unleashClient }: { unleashClient: UnleashClient }): Promise<void> => {
+    // In case toggles exist (bootstrapped from storage), ignore waiting for them to get fetched
+    if (unleashClient.getAllToggles().length > 0) {
+        unleashClient.start().catch(noop);
+        return;
+    }
     const initPromise = new Promise<void>((resolve) => {
         unleashClient.once(EVENTS.INIT, () => resolve());
     });
     const startPromise = unleashClient.start();
     // Race between init and start in case it has missed the INIT event.
     await Promise.race([initPromise, startPromise]).catch(noop);
-    // In case toggles exist (bootstrapped from storage), ignore waiting for them to get fetched
-    if (unleashClient.getAllToggles().length > 0) {
-        return;
-    }
     return startPromise;
 };
 
