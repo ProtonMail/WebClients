@@ -5092,6 +5092,9 @@
       "${ app } storage": [
         "сховішча ${ app }"
       ],
+      "${ app } storage used": [
+        "Выкарыстана сховішча ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } запоўнена на ${ percentage }%"
       ],
@@ -5100,6 +5103,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Для ўсіх сэрвісаў ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Выкарыстана сховішча"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Мы дададзім крэдыты за той час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }."
