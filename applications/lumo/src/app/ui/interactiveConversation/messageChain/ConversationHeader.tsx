@@ -122,6 +122,12 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         handleStarToggle();
     };
 
+    const handleNavigateToProject = useCallback(() => {
+        if (spaceId) {
+            history.push(`/projects/${spaceId}`);
+        }
+    }, [spaceId, history]);
+
     if (isSmallScreen) {
         return (
             <>
@@ -169,12 +175,6 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
             </>
         );
     }
-
-    const handleNavigateToProject = useCallback(() => {
-        if (spaceId) {
-            history.push(`/projects/${spaceId}`);
-        }
-    }, [spaceId, history]);
 
     const RenderTitle = ({ isEditing }: { isEditing: boolean }) => {
         if (isEditing) {
