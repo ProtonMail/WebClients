@@ -90,6 +90,9 @@
       "Apply": [
         "Použít"
       ],
+      "Ask me next time": [
+        "Zeptat se příště"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
@@ -659,6 +662,9 @@
       ],
       "Save changes": [
         "Uložit změny"
+      ],
+      "Save preferences": [
+        "Uložit předvolby"
       ],
       "Search": [
         "Vyhledat"
@@ -4513,6 +4519,9 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Converting document...": [
+        "Převádění dokumentu..."
+      ],
       "Copy the link to clipboard": [
         "Kopírovat odkaz do schránky"
       ],
@@ -4557,6 +4566,9 @@
       ],
       "Creating link to folder": [
         "Vytváření odkazu na složku"
+      ],
+      "Creating new document...": [
+        "Vytváření nového dokumentu..."
       ],
       "Current plan": [
         "Aktuální tarif"
@@ -4651,6 +4663,12 @@
       "Enter your own password (as trusted contact).": [
         "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Chyba při převodu dokumentu: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Chyba při načítání dokumentu: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Chyba při synchronizaci"
       ],
@@ -4710,6 +4728,12 @@
       ],
       "Geoblocking": [
         "Zeměpisné blokování"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
+      ],
+      "Get Notified About Comments": [
+        "Buďte upozorněni na komentáře"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
@@ -4849,6 +4873,9 @@
       "Low Priority": [
         "Nízká priorita"
       ],
+      "Making a copy...": [
+        "Vytváření kopie..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmeno",
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmena",
@@ -4881,6 +4908,9 @@
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Adresa URL nevede k žádnému dokumentu. Vraťte se na ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žádná e-mailová adresa"
@@ -5163,6 +5193,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Zadaná URL adresa byla zřejmě nesprávně zkopírována ze služby Slack. Při kopírování dlouhých odkazů ze služby Slack klikněte na odkaz pravým tlačítkem myši a vyberte možnost \"Kopírovat odkaz\", místo přímého kopírování zkráceného textu URL adresy."
       ],
       "There are no documents in the trash.": [
         "V koši nejsou žádné dokumenty."
@@ -5781,6 +5814,9 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
+      "Enable email notifications": [
+        "Povolení e-mailových upozornění"
+      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -5828,6 +5864,9 @@
       ],
       "Include application logs in bug report": [
         "Zahrnout logy aplikace do chybového hlášení"
+      ],
+      "Include document name in notification": [
+        "Zahrnout název dokumentu do upozornění"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
@@ -6154,6 +6193,9 @@
       ],
       "Reactivate now": [
         "Znovu aktivovat"
+      ],
+      "Reactivate subscription": [
+        "Znovu aktivovat předplatné"
       ],
       "Request an invite": [
         "Požádat o pozvánku"
@@ -8358,6 +8400,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Pokud si předplatíte službu před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Po tomto datu bude váš účet převeden na **${ BRAND_NAME } Free**. Pokud si to rozmyslíte, můžete **znovu aktivovat předplatné** a zachovat si přístup k prémiovým funkcím."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Získejte až ${ maxRewardAmount } v kreditech. Získáte ${ referrerRewardAmount }, když se osoba, kterou pozvete, přihlásí k odběru tarifu ${ BRAND_NAME }."
       ],
@@ -9093,6 +9138,9 @@
     "storage_split: info": {
       "${ app } storage": [
         "úložiště ${ app }"
+      ],
+      "${ app } storage used": [
+        "${ app } úložiště využito"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage } je zaplněno z ${ percentage } %"
