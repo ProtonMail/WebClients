@@ -14,29 +14,22 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     useFormErrors,
-    useModalTwoStatic,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
 import { emailValidator, maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import type { BookingDetails, BookingTimeslot } from '../booking.store';
+import type { BookingTimeslot } from '../booking.store';
+import { useExternalBookingActions } from '../useExternalBookingActions';
 
-interface BookingSlotModalProps {
-    bookingDetails: BookingDetails;
+interface BookingSlotModalProps extends ModalProps {
     timeslot: BookingTimeslot;
-    onConfirm: (name: string, email: string) => Promise<void>;
 }
 
-const BookingSlotModal = ({
-    bookingDetails,
-    timeslot,
-    onConfirm,
-    onClose,
-    open,
-    onExit,
-}: BookingSlotModalProps & ModalProps) => {
+export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
+    const { bookingDetails, submitBooking } = useExternalBookingActions();
+
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [isLoading, withLoading] = useLoading();
@@ -48,17 +41,12 @@ const BookingSlotModal = ({
         if (!onFormSubmit()) {
             return;
         }
-        await onConfirm(name, email);
-        onClose?.();
+        await submitBooking(timeslot, { name, email });
+        rest.onClose?.();
     };
+
     return (
-        <ModalTwo
-            as={Form}
-            open={open}
-            onExit={onExit}
-            onClose={onClose}
-            onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e))}
-        >
+        <ModalTwo as={Form} onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e))} {...rest}>
             <ModalTwoHeader
                 hasClose
                 closeButtonProps={{
@@ -74,7 +62,7 @@ const BookingSlotModal = ({
                         </span>
                     </div>
                     <div className="flex flex-column">
-                        <h1 className="text-xl text-semibold">{bookingDetails.summary}</h1>
+                        <h1 className="text-xl text-semibold">{bookingDetails?.summary}</h1>
                         <span className="color-weak mb-2">
                             {format(fromUnixTime(timeslot.startTime), 'EEEE HH:mm', { locale: dateLocale })}
                             {' - '}
@@ -102,15 +90,11 @@ const BookingSlotModal = ({
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                 <Button loading={isLoading} color="norm" type="submit">
                     {c('Action').t`Confirm booking`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
-};
-
-export const useBookingSlotModal = () => {
-    return useModalTwoStatic<BookingSlotModalProps & ModalProps>(BookingSlotModal);
 };
