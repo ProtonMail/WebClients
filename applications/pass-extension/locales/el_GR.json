@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } για Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } για iOS"
+      ],
       "Accept": [
         "Αποδοχή"
       ],
@@ -308,8 +314,8 @@
       "Generating secure link...": [
         "Δημιουργία ασφαλούς συνδέσμου..."
       ],
-      "Get mobile apps": [
-        "Αποκτήστε εφαρμογές κινητών"
+      "Get mobile and desktop apps": [
+        "Αποκτήστε τις εφαρμογές για κινητά και υπολογιστές"
       ],
       "Get Pass Business": [
         "Αποκτήστε το Pass Business"
@@ -434,23 +440,11 @@
       "OK": [
         "ΟΚ"
       ],
-      "Open in a window": [
-        "Άνοιγμα σε παράθυρο"
-      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
-      "Open web app": [
-        "Ανοίξτε την εφαρμογή ιστού"
-      ],
       "Organize vaults": [
         "Οργάνωση κρυπτών"
-      ],
-      "Pass for Android": [
-        "Έγκριση για το Android"
-      ],
-      "Pass for iOS": [
-        "Έγκριση για το iOS"
       ],
       "Pin item": [
         "Καρφίτσωμα στοιχείου"
@@ -1843,6 +1837,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2999,6 +2997,9 @@
       ],
       "Language": [
         "Γλώσσα"
+      ],
+      "Larger window": [
+        "Μεγαλύτερο παράθυρο"
       ],
       "Last 2 weeks": [
         "Τελευταίες 2 εβδομάδες"

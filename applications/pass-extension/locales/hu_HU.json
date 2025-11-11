@@ -299,9 +299,6 @@
       "Generating secure link...": [
         "Biztonságos hivatkozás létrehozása..."
       ],
-      "Get mobile apps": [
-        "Mobilalkalmazások beszerzése"
-      ],
       "Get Pass Business": [
         "Pass Business választása"
       ],
@@ -425,20 +422,8 @@
       "OK": [
         "OK"
       ],
-      "Open in a window": [
-        "Megnyitás egy ablakban"
-      ],
       "Open navigation": [
         "Navigáció megnyitása"
-      ],
-      "Open web app": [
-        "Webalkalmazás megnyitása"
-      ],
-      "Pass for Android": [
-        "Pass Androidra"
-      ],
-      "Pass for iOS": [
-        "Pass iOS-re"
       ],
       "Pin item": [
         "Elem rögzítése"
@@ -1804,6 +1789,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
+        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"

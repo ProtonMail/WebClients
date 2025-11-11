@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } per Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } per iOS"
+      ],
       "Accept": [
         "Accepta"
       ],
@@ -308,8 +314,8 @@
       "Generating secure link...": [
         "S'està generant un enllaç segur..."
       ],
-      "Get mobile apps": [
-        "Baixeu l'aplicació mòbil"
+      "Get mobile and desktop apps": [
+        "Obtingueu les aplicacions mòbils i d'escriptori"
       ],
       "Get Pass Business": [
         "Aconsegueixi Pass Business"
@@ -434,23 +440,11 @@
       "OK": [
         "D'acord"
       ],
-      "Open in a window": [
-        "Obre en una finestra nova"
-      ],
       "Open navigation": [
         "Obre la navegació"
       ],
-      "Open web app": [
-        "Obre l'aplicació web"
-      ],
       "Organize vaults": [
         "Organitza les caixes fortes"
-      ],
-      "Pass for Android": [
-        "Pass per a Android"
-      ],
-      "Pass for iOS": [
-        "Pass per a iOS"
       ],
       "Pin item": [
         "Ancora l'element"
@@ -1844,7 +1838,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -3002,6 +2997,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Larger window": [
+        "Finestra més gran"
       ],
       "Last 2 weeks": [
         "Les últimes 2 setmanes"

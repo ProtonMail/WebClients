@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } pentru Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } pentru iOS"
+      ],
       "Accept": [
         "Acceptare"
       ],
@@ -308,8 +314,8 @@
       "Generating secure link...": [
         "Se generare legătura web sigură..."
       ],
-      "Get mobile apps": [
-        "Luați aplicația pentru dispozitive mobile"
+      "Get mobile and desktop apps": [
+        "Obțineți aplicațiile mobile și pentru desktop"
       ],
       "Get Pass Business": [
         "Luați Pass Business"
@@ -434,23 +440,11 @@
       "OK": [
         "OK"
       ],
-      "Open in a window": [
-        "Deschidere într-o fereastră"
-      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
-      "Open web app": [
-        "Deschidere aplicație web"
-      ],
       "Organize vaults": [
         "Organizare seifuri"
-      ],
-      "Pass for Android": [
-        "Proton Pass pentru Android"
-      ],
-      "Pass for iOS": [
-        "Proton Pass pentru iOS"
       ],
       "Pin item": [
         "Fixare"
@@ -1868,6 +1862,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -3043,6 +3042,9 @@
       ],
       "Language": [
         "Limba"
+      ],
+      "Larger window": [
+        "Fereastră mai mare"
       ],
       "Last 2 weeks": [
         "Ultimele două săptămâni"
