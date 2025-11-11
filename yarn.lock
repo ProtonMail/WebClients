@@ -38813,7 +38813,7 @@ __metadata:
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.3"
     webpack: "npm:^5.102.1"
-    webpack-manifest-plugin: "npm:^5.0.1"
+    webpack-manifest-plugin: "npm:^6.0.1"
   languageName: unknown
   linkType: soft
 
@@ -43112,7 +43112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-list-map@npm:^2.0.0, source-list-map@npm:^2.0.1":
+"source-list-map@npm:^2.0.0":
   version: 2.0.1
   resolution: "source-list-map@npm:2.0.1"
   checksum: 10c0/2e5e421b185dcd857f46c3c70e2e711a65d717b78c5f795e2e248c9d67757882ea989b80ebc08cf164eeeda5f4be8aa95d3b990225070b2daaaf3257c5958149
@@ -47642,15 +47642,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-manifest-plugin@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "webpack-manifest-plugin@npm:5.0.1"
+"webpack-manifest-plugin@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "webpack-manifest-plugin@npm:6.0.1"
   dependencies:
     tapable: "npm:^2.0.0"
-    webpack-sources: "npm:^2.2.0"
+    webpack-sources: "npm:^3.3.3"
   peerDependencies:
     webpack: ^5.75.0
-  checksum: 10c0/7a97685a89a75f9adb1b7887fcf5a67e8e8d8f9016025eaa57b5b6dc70ec590a9b92ac2dc4a9dce83dac895af997ee0c88ae80b70c18152c9d4bf6b832bbd4fe
+  checksum: 10c0/878e580a47c764596acab7c94f72d173a10cd3cf5547393a5e921aea020cbf89a5c1dd6724b0931c3a9008eaba1e0a44036ea895d841e2345a9490eb24372caa
   languageName: node
   linkType: hard
 
@@ -47710,16 +47710,6 @@ __metadata:
   version: 3.3.3
   resolution: "webpack-sources@npm:3.3.3"
   checksum: 10c0/ab732f6933b513ba4d505130418995ddef6df988421fccf3289e53583c6a39e205c4a0739cee98950964552d3006604912679c736031337fb4a9d78d8576ed40
-  languageName: node
-  linkType: hard
-
-"webpack-sources@npm:^2.2.0":
-  version: 2.3.1
-  resolution: "webpack-sources@npm:2.3.1"
-  dependencies:
-    source-list-map: "npm:^2.0.1"
-    source-map: "npm:^0.6.1"
-  checksum: 10c0/caf56a9a478eca7e77feca2b6ddc7673f1384eb870280014b300c40cf42abca656f639ff58a8d55a889a92a810ae3c22e71e578aa38fde416e8c2e6827a6ddfd
   languageName: node
   linkType: hard
 
