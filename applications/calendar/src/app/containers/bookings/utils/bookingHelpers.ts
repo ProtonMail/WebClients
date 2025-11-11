@@ -117,7 +117,7 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
         };
     }
 
-    if (data.title.trim().length === 0) {
+    if (data.summary.trim().length === 0) {
         return {
             type: 'warning',
             reason: BookingFormValidationReasons.TITLE_REQUIRED,
