@@ -41,6 +41,8 @@ export type ComposerComponentProps = {
     canShowLegalDisclaimer?: boolean;
     canShowLumoUpsellToggle?: boolean;
     initialQuery?: string; // Initial query to populate and auto-execute
+    prefillQuery?: string; // Query to prefill without auto-executing
+    spaceId?: string; // Optional space ID to include space-level attachments
 };
 
 export const ComposerComponent = ({
@@ -59,6 +61,8 @@ export const ComposerComponent = ({
     canShowLegalDisclaimer,
     canShowLumoUpsellToggle,
     initialQuery,
+    prefillQuery,
+    spaceId,
 }: ComposerComponentProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -70,8 +74,8 @@ export const ComposerComponent = ({
     const [showUploadMenu, setShowUploadMenu] = useState(false);
     const { isGhostChatMode } = useGhostChat();
 
-    // Get all relevant attachments for context calculations
-    const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments);
+    // Get all relevant attachments for context calculations (includes space-level attachments if spaceId is provided)
+    const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
 
     // File handling hook
     const {
@@ -143,7 +147,7 @@ export const ComposerComponent = ({
         setIsEditorEmpty?.(isEditorEmpty ?? true);
     }, [isEditorEmpty, setIsEditorEmpty]);
 
-    // Handle initial query from URL parameter
+    // Handle initial query from URL parameter (auto-execute)
     const hasExecutedInitialQuery = useRef(false);
     const lastExecutedQuery = useRef<string | null>(null);
 
@@ -167,6 +171,27 @@ export const ComposerComponent = ({
             }, 100);
         }
     }, [initialQuery, editor, isProcessingAttachment, sendGenerateMessage]);
+
+    // Handle prefill query (just populate, don't auto-execute)
+    const hasExecutedPrefillQuery = useRef(false);
+    const lastPrefillQuery = useRef<string | null>(null);
+
+    useEffect(() => {
+        // Reset execution flag if prefillQuery changes to a new value
+        if (prefillQuery !== lastPrefillQuery.current) {
+            hasExecutedPrefillQuery.current = false;
+            lastPrefillQuery.current = prefillQuery || null;
+        }
+
+        if (prefillQuery && editor && !hasExecutedPrefillQuery.current && !isProcessingAttachment) {
+            // Set the content in the editor without submitting
+            editor.commands.setContent(prefillQuery);
+            editor.commands.focus('end');
+
+            // Mark as executed to prevent re-execution
+            hasExecutedPrefillQuery.current = true;
+        }
+    }, [prefillQuery, editor, isProcessingAttachment]);
 
     const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEditorEmpty;
 
