@@ -16,6 +16,8 @@ import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/date/timezone';
 
+import { useCalendarDispatch } from '../../../store/hooks';
+import { interalBookingActions } from '../../../store/internalBooking/interalBookingSlice';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { encryptBookingPage } from '../utils/bookingCryptoUtils';
@@ -42,7 +44,7 @@ const getInitialBookingFormState = (): BookingFormData => {
     const localTimeZone = getTimezone();
 
     return {
-        title: '',
+        summary: '',
         selectedCalendar: null,
         locationType: BookingLocation.MEET,
         duration: DEFAULT_EVENT_DURATION,
@@ -79,6 +81,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [formData, setFormData] = useState<BookingFormData>(getInitialBookingFormState());
 
     const { createNotification } = useNotifications();
+
+    const dispatch = useCalendarDispatch();
 
     const initializeFormData = (currentUTCDate: Date) => {
         // Get the initial form data
@@ -236,7 +240,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const closeBookingSidebar = () => {
         const formWasTouched =
-            formData.title !== initialFormData.current?.title ||
+            formData.summary !== initialFormData.current?.summary ||
             formData.description !== initialFormData.current?.description ||
             formData.duration !== initialFormData.current?.duration ||
             formData.selectedCalendar !== initialFormData.current?.selectedCalendar ||
@@ -290,7 +294,22 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
             const { BookingLink: bookingLink, ...apiPayload } = data;
 
-            await api(createBookingPage({ ...apiPayload, CalendarID: selectedCalendar.ID }));
+            const response = await api<{ BookingPage: { ID: string }; Code: number }>(
+                createBookingPage({ ...apiPayload, CalendarID: selectedCalendar.ID })
+            );
+
+            dispatch(
+                interalBookingActions.addBookingPage({
+                    id: response.BookingPage.ID,
+                    bookingUID: data.BookingUID,
+                    calendarID: selectedCalendar.ID,
+                    summary: formData.summary,
+                    description: formData?.description,
+                    location: formData?.location,
+                    withProtonMeetLink: formData.location === BookingLocation.MEET,
+                    link: bookingLink,
+                })
+            );
 
             notify({
                 type: ModalType.BookingPageCreation,

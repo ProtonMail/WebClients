@@ -27,7 +27,7 @@ export interface Slot extends BookingRange {
 }
 
 export interface BookingFormData {
-    title: string;
+    summary: string;
     description?: string;
     selectedCalendar: string | null;
     duration: number;

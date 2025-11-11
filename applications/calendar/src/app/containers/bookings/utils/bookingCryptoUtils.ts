@@ -33,7 +33,7 @@ const encryptBookingData = async (
         textData: JSONFormatData({
             description: formData.description || '',
             location: formData.location || '',
-            summary: formData.title,
+            summary: formData.summary,
             withProtonMeetLink: formData.locationType === BookingLocation.MEET,
         }),
         passwords: bookingKeyPassword,
