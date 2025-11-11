@@ -1495,10 +1495,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -6799,6 +6795,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
       ],
+      "Addresses settings": [
+        "Adresseneinstellungen"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Werbetreibende verfolgen dein Surfverhalten, um gezielte Werbung anzuzeigen. ${ VPN_APP_NAME } blockiert Tracker und Werbung, macht deine Verbindung schneller und verbessert dein Online-Erlebnis."
       ],
@@ -7519,7 +7518,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -10261,6 +10261,9 @@
       "Reactivate now": [
         "Jetzt reaktivieren"
       ],
+      "Reactivate subscription": [
+        "Abonnement reaktivieren"
+      ],
       "Request an invite": [
         "Einladung anfordern"
       ],
@@ -12771,6 +12774,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Wenn du vor diesem Datum abonnierst,** erhältst du **${ referrerRewardAmount }** an Guthaben."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Nach diesem Datum wird dein Konto auf **${ BRAND_NAME } Free** zurückgestuft. Wenn du es dir anders überlegst, kannst du dein **Abonnement reaktivieren**, um den Zugriff auf Premium-Funktionen zu behalten."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Verdiene bis zu ${ maxRewardAmount } Guthaben. Du erhältst ${ referrerRewardAmount }, wenn die von dir eingeladene Person ein ${ BRAND_NAME }-Abonnement abschließt."

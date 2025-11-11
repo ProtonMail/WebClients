@@ -1495,10 +1495,6 @@
       "Trust": [
         "ნდობა"
       ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
-      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -2017,6 +2013,12 @@
       ],
       "Sender verification passed": [
         "გამომგზავნის შემოწმება წარმატებულია"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი",
+        "ნაჩვენები არაა კიდევ ${ hiddenResultsCount } შედეგი"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -6713,6 +6715,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
       ],
+      "Addresses settings": [
+        "მისამართის მორგება"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
       ],
@@ -7409,7 +7414,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -7889,11 +7895,17 @@
       "Saved: ${ dateString }": [
         "დაზოგეთ: ${ dateString }"
       ],
+      "Saving draft": [
+        "მონახაზის შენახვა"
+      ],
       "Scan the QR code with your mobile device": [
         "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
       ],
       "Scheduled send of this message will be canceled.": [
         "ამ შეტყობინების დაგეგმილი გაგზავნა გაუქმდება."
+      ],
+      "Scheduling message": [
+        "დაგეგმვის შეტყობინება"
       ],
       "Scribe panel": [
         "Scribe-ის პანელი"
@@ -7937,6 +7949,9 @@
       ],
       "Sending": [
         "იგზავნება"
+      ],
+      "Sending message": [
+        "შეტყობინების გაგზავნა"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.ge მისამართიდან შეტყობინებების გაგზავნა ფასიანი ფუნქციაა. შეტყობინება თქვენი ნაგულისხმები მისამართიდან (${ email }) გაიგზავნება"
@@ -8116,6 +8131,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "კონტაქტის დეტალების შემოწმებისას ხელმოწერის შეცდომა. ეს, როგორც წესი, პაროლის შეცვლის ბრალია."
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "ეს საუბრები აქაა შენარჩუნებული, თქვენი ორგანიზაციის მონაცემების შენარჩუნების პოლიტიკის მიხედვით."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "მათ არ შეუძლიათ დაგსპამონ, თუ თქვენი მისამართი არ ეცოდინებათ. დაიცავით თავი hide-my-email-ის ფსევდონიმებით."
@@ -10069,6 +10087,9 @@
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
+      ],
+      "Reactivate subscription": [
+        "გამოწერის ხელახლა გააქტიურება"
       ],
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
@@ -12531,6 +12552,9 @@
       "Invited friends": [
         "მოწვეული მეგობრები"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "ბოლო შანსი, დაათვალიეროთ ყველა მძლავრი ფუნქცია, რომელსაც **${ planTitle }** გთავაზობთ."
+      ],
       "More sharing options": [
         "მეტი გაზიარების პარამეტრი"
       ],
@@ -13387,6 +13411,9 @@
       "${ app } storage": [
         "${ app } საცავი"
       ],
+      "${ app } storage used": [
+        "${ app } გამოყენებული საცავი"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } სავსეა ${ percentage }%"
       ],
@@ -13398,6 +13425,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ],
+      "Storage used": [
+        "გამოყენებული საცავი"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "ფაილების ატვირთვის და სინქრონიზაციის გასაგრძელებლად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა, მეტი საცავის მისაღებად."

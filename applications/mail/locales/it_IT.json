@@ -1495,10 +1495,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -6799,6 +6795,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
+      "Addresses settings": [
+        "Impostazioni indirizzi"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Gli inserzionisti monitorano la tua navigazione per mostrarti annunci pubblicitari mirati. ${ VPN_APP_NAME } blocca tracker e annunci pubblicitari, rendendo la tua connessione più veloce e migliorando la tua esperienza online."
       ],
@@ -7519,7 +7518,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -10261,6 +10261,9 @@
       "Reactivate now": [
         "Riattiva"
       ],
+      "Reactivate subscription": [
+        "Riattiva l'abbonamento"
+      ],
       "Request an invite": [
         "Richiedi un invito"
       ],
@@ -12777,6 +12780,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Se ti abboni prima di questa data,** riceverai **${ referrerRewardAmount }** in crediti."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Dopo quella data, per il tuo account sarà eseguito il downgrade a **${ BRAND_NAME } Free**. Se cambi idea, puoi **riattivare il tuo abbonamento** per mantenere l'accesso a funzionalità premium."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guadagna fino a ${ maxRewardAmount } in credito. Riceverai ${ referrerRewardAmount } quando la persona che inviti si abbona a un piano ${ BRAND_NAME }."
       ],
@@ -13663,6 +13669,9 @@
       "${ app } storage": [
         "Spazio di archiviazione di ${ app }"
       ],
+      "${ app } storage used": [
+        "${ app } archiviazione utilizzata"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } pieno al ${ percentage }%"
       ],
@@ -13674,6 +13683,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Per tutti i servizi ${ BRAND_NAME }"
+      ],
+      "Storage used": [
+        "Memoria utilizzata"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Per continuare a caricare e sincronizzare i file, libera spazio o effettua l'upgrade per ottenere più spazio di archiviazione."

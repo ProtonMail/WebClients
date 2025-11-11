@@ -1496,8 +1496,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -2020,6 +2019,12 @@
       ],
       "Sender verification passed": [
         "Gönderici doğrulandı"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var",
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var"
       ]
     },
     "b2b_trials_2025_Info": {
@@ -6793,6 +6798,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
       ],
+      "Addresses settings": [
+        "Adres ayarları"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Reklam verenler, hedeflenmiş reklamlar göstermek için gezinme etkinliğinizi izler. ${ VPN_APP_NAME } izleyicileri ve reklamları engelleyerek bağlantınızı hızlandırır ve çevrim içi deneyiminizi iyileştirir."
       ],
@@ -7513,7 +7521,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7999,11 +8008,17 @@
       "Saved: ${ dateString }": [
         "Kaydedilme: ${ dateString }"
       ],
+      "Saving draft": [
+        "Taslak kaydediliyor"
+      ],
       "Scan the QR code with your mobile device": [
         "Mobil aygıtınızla kare kodu tarayın"
       ],
       "Scheduled send of this message will be canceled.": [
         "Bu iletinin zamanlanmış gönderimi iptal edilecek."
+      ],
+      "Scheduling message": [
+        "İleti zamanlanıyor"
       ],
       "Scribe panel": [
         "Scribe panosu"
@@ -8047,6 +8062,9 @@
       ],
       "Sending": [
         "Gönderiliyor"
+      ],
+      "Sending message": [
+        "İleti gönderiliyor"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me adresinden ileti göndermek ücretli bir özelliktir. İletiniz varsayılan ${ email } adresinizden gönderilecek"
@@ -8612,6 +8630,9 @@
       ],
       "Week": [
         "Hafta"
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "${ DRIVE_APP_NAME } depolama alanınızı 5 GB boyutuna yükselttik. Önemli dosyalarınızı ve fotoğraflarınızı şifrelenmiş olarak saklayın."
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "İletiniz alıcının gelen kutusundan ve gönderilmiş kutunuzdan ne zaman otomatik olarak silinsin?"
@@ -10242,6 +10263,9 @@
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
+      ],
+      "Reactivate subscription": [
+        "Aboneliği yeniden etkinleştir"
       ],
       "Request an invite": [
         "Davet iste"
@@ -12754,6 +12778,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "${ maxRewardAmount } tutarına kadar kredi kazanın. Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda ${ referrerRewardAmount } alacaksınız."
       ],
@@ -13640,6 +13667,9 @@
       "${ app } storage": [
         "${ app } depolama alanı"
       ],
+      "${ app } storage used": [
+        "${ app } depolama alanı kullanıldı"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } %${ percentage } dolu"
       ],
@@ -13651,6 +13681,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "Storage used": [
+        "Kullanılan depolama alanı"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Dosyaları yüklemeyi ve eşitlemeyi sürdürebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
