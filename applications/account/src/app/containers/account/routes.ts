@@ -39,7 +39,11 @@ import {
 } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
-import type { MailDashboardVariant, VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
+import type {
+    MailDashboardVariant,
+    PassDashboardVariant,
+    VPNDashboardVariant,
+} from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 import { recoveryIds } from './recoveryIds';
 
@@ -66,6 +70,7 @@ export const getAccountAppRoutes = ({
     referralInfo,
     canDisplayNonPrivateEmailPhone,
     showMailDashboard,
+    showPassDashboard,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -94,6 +99,8 @@ export const getAccountAppRoutes = ({
     canDisplayNonPrivateEmailPhone: boolean;
     showMailDashboard: boolean;
     showMailDashboardVariant: MailDashboardVariant | 'disabled' | undefined;
+    showPassDashboard: boolean;
+    showPassDashboardVariant: PassDashboardVariant | 'disabled' | undefined;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -146,7 +153,8 @@ export const getAccountAppRoutes = ({
         (isVisionaryPlan && isMemberProton && isMember);
 
     const shouldShowDashboard = isFree || canPay || !isMember || (isPaid && canPay);
-    const shouldShowNewDashboard = showVPNDashboard || showMailDashboard;
+    // We do not have to check app names here as the hook responsible to populate these values will do it for us.
+    const shouldShowV2Dashboard = showVPNDashboard || showMailDashboard || showPassDashboard;
 
     return <const>{
         available: true,
@@ -157,7 +165,7 @@ export const getAccountAppRoutes = ({
                 noTitle: true,
                 to: '/dashboardV2',
                 icon: 'house',
-                available: showVPNDashboard && shouldShowDashboard,
+                available: app === APPS.PROTONVPN_SETTINGS && showVPNDashboard && shouldShowDashboard,
                 subsections: [
                     {
                         text: c('Title').t`Your plan`,
@@ -188,12 +196,12 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            mailDashboardV2: <SectionConfig>{
+            dashboardV2: <SectionConfig>{
                 text: c('Title').t`Home`,
                 noTitle: true,
                 to: '/dashboardV2',
                 icon: 'house',
-                available: showMailDashboard && shouldShowDashboard,
+                available: app !== APPS.PROTONVPN_SETTINGS && shouldShowV2Dashboard && shouldShowDashboard,
                 subsections: [
                     {
                         text: c('Title').t`Your plan`,
@@ -228,7 +236,7 @@ export const getAccountAppRoutes = ({
                 noTitle: true,
                 to: '/subscription',
                 icon: 'credit-card',
-                available: shouldShowNewDashboard && shouldShowDashboard,
+                available: shouldShowV2Dashboard && shouldShowDashboard,
                 subsections: [
                     {
                         text: c('Title').t`Your plan`,
@@ -310,7 +318,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Dashboard`,
                 to: '/dashboard',
                 icon: 'squares-in-square',
-                available: !shouldShowNewDashboard && shouldShowDashboard,
+                available: !shouldShowV2Dashboard && shouldShowDashboard,
                 subsections: [
                     // do not show Your Plan section for Pass users
                     {

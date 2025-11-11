@@ -845,10 +845,4 @@ export { default as useToggle } from './hooks/useToggle';
 export { default as useVPNServersCount } from './hooks/useVPNServersCount';
 export { default as useWindowSize } from './hooks/useWindowSize';
 
-export { default as MailBlogSection } from './containers/account/dashboard/mail/MailBlogSection/MailBlogSection';
-export { default as MailDownloadAndInfoSection } from './containers/account/dashboard/mail/MailDownloadAndInfoSection/MailDownloadAndInfoSection';
-export { default as AlsoInYourPlanSection } from './containers/account/dashboard/shared/AlsoInYourPlanSection/AlsoInYourPlanSection';
-export { default as AlsoInYourPlanProtonDrive } from './containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonDrive';
-export { default as AlsoInYourPlanProtonMail } from './containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonMail';
-export { default as AlsoInYourPlanProtonPass } from './containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonPass';
-export { default as AlsoInYourPlanProtonVPN } from './containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonVPN';
+export { default as AccountDashboard } from './containers/account/dashboard/dashboard';

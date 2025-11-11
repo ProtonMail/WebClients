@@ -7,12 +7,14 @@ import type { TelemetryPaymentFlow } from '../payments/client-extensions/usePaym
 import useShowDashboard, { getDashboardFeatureFlag } from './accounts/useShowDashboard';
 import useShowVPNDashboard from './useShowVPNDashboard';
 
-const getPrefix = (appName: APP_NAMES): 'mail-' | 'calendar-' | undefined => {
+const getPrefix = (appName: APP_NAMES): 'mail-' | 'calendar-' | 'pass-' | undefined => {
     switch (appName) {
         case APPS.PROTONMAIL:
             return 'mail-';
         case APPS.PROTONCALENDAR:
             return 'calendar-';
+        case APPS.PROTONPASS:
+            return 'pass-';
     }
 };
 

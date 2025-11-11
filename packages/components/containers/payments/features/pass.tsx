@@ -197,12 +197,15 @@ export const getPasswordManagerToSecureCredentialsFeature = (included: boolean =
     };
 };
 
+export const getNVaultsText = (n: number | 'unlimited') => {
+    return n === 'unlimited'
+        ? c('new_plans: feature').t`Unlimited vaults`
+        : c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n);
+};
+
 export const getVaults = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
-        text:
-            n === 'unlimited'
-                ? c('new_plans: feature').t`Unlimited vaults`
-                : c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
+        text: getNVaultsText(n),
         tooltip: c('new_plans: tooltip').t`Like a folder, a vault is a convenient way to organize your items`,
         included: true,
         icon: 'vault',
@@ -240,6 +243,14 @@ export const getPasswordHealth = (): PlanCardFeatureDefinition => {
 
 export const getUnlimitedVaultSharingText = () => {
     return c('new_plans: feature').t`Unlimited shared vaults with access permissions`;
+};
+
+export const getVaultSharingWithNPeopleText = (n: number) => {
+    return c('new_plans: feature').ngettext(
+        msgid`Vault sharing with up to ${n} person`,
+        `Vault sharing with up to ${n} people`,
+        n
+    );
 };
 
 export const getVaultSharingText = (n: number | 'unlimited') => {

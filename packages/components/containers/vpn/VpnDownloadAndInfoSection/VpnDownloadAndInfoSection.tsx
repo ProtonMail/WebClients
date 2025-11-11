@@ -3,15 +3,18 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import {
+    DashboardGrid,
+    DashboardGridSection,
+    DashboardGridSectionHeader,
+} from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 
+import { getDownloadAppText } from '../../account/dashboard/shared/DashboardMoreInfoSection/helpers';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import VpnDownloadSection from '../VpnDownloadSection/VpnDownloadSection';
@@ -60,10 +63,7 @@ export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     return (
         <DashboardGrid columns={2}>
             <DashboardGridSection position="header-left">
-                <DashboardGridSectionHeader
-                    title={c('Title').t`Download ${VPN_APP_NAME}`}
-                    subtitle={downloadsSubtitle}
-                />
+                <DashboardGridSectionHeader title={getDownloadAppText(VPN_APP_NAME)} subtitle={downloadsSubtitle} />
             </DashboardGridSection>
             <DashboardGridSection position="content-left">
                 <VpnDownloadSection />

@@ -20,6 +20,7 @@ import { VPN_MOBILE_APP_LINKS } from '@proton/shared/lib/vpn/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
 import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
+import { getDownloadAppText } from '../../account/dashboard/shared/DashboardMoreInfoSection/helpers';
 import OnboardingContent from '../../onboarding/OnboardingContent';
 
 interface DownloadModalProps extends ModalProps {
@@ -32,7 +33,7 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
             <ModalTwoContent className="m-8 text-center">
                 <OnboardingContent
                     img={<img src={onboardingVPNWelcome} alt={getWelcomeToText(VPN_APP_NAME)} />}
-                    title={c('Title').t`Download ${VPN_APP_NAME}`}
+                    title={getDownloadAppText(VPN_APP_NAME)}
                     description={c('Info').t`The securest way to browse, stream, and be online.`}
                 />
                 <ButtonLike
