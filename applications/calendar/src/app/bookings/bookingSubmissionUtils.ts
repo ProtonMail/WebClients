@@ -4,6 +4,7 @@ import { CryptoProxy } from '@proton/crypto';
 import type { SessionKey } from '@proton/crypto';
 import { getMeetingLink } from '@proton/meet';
 import type { SaveMeetingParams } from '@proton/meet/hooks/useSaveMeeting';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {
     ICAL_ATTENDEE_ROLE,
@@ -17,6 +18,7 @@ import { serialize } from '@proton/shared/lib/calendar/vcal';
 import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import { getDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import { convertTimestampToTimezone } from '@proton/shared/lib/date/timezone';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { type CreateMeetingResponse, MeetingType } from '@proton/shared/lib/interfaces/Meet';
@@ -88,7 +90,7 @@ const getBookingConferenceDescription = async (
     return modelToDescriptionProperties({
         description: bookingDetails.description,
         conferenceId: meetingId,
-        conferenceUrl: meetingLink,
+        conferenceUrl: getAppHref(meetingLink, APPS.PROTONMEET),
         conferenceHost: bookingDetails.inviterEmail,
         conferenceProvider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
     });
