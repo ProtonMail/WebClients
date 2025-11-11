@@ -66,7 +66,7 @@ export const TransferManager = () => {
     return (
         <div
             id="transfer-manager"
-            className="transfer-manager-fixed-position right-custom"
+            className="transfer-manager-fixed-position right-custom border border-weak"
             style={{
                 '--right-custom': `${drawerWidth + 32}px`, // 32 == 2rem
             }}
