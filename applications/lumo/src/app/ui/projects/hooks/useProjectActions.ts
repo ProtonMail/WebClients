@@ -1,0 +1,99 @@
+import { useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import { generateSpaceKeyBase64 } from '../../../crypto';
+import { useLumoDispatch } from '../../../redux/hooks';
+import { addSpace, newSpaceId, pushSpaceRequest, locallyDeleteSpaceFromLocalRequest } from '../../../redux/slices/core/spaces';
+import { addConversation, newConversationId, pushConversationRequest } from '../../../redux/slices/core/conversations';
+import type { SpaceId } from '../../../types';
+import { ConversationStatus } from '../../../types';
+
+export const useProjectActions = () => {
+    const dispatch = useLumoDispatch();
+    const history = useHistory();
+
+    const createProject = useCallback(
+        async (projectName: string, projectInstructions?: string, files?: File[], projectIcon?: string) => {
+            const createdAt = new Date().toISOString();
+            const spaceId = newSpaceId();
+
+            // Create a space marked as a project
+            dispatch(
+                addSpace({
+                    id: spaceId,
+                    createdAt,
+                    spaceKey: generateSpaceKeyBase64(),
+                    isProject: true,
+                    projectName,
+                    projectInstructions: projectInstructions || undefined,
+                    projectIcon: projectIcon || undefined,
+                })
+            );
+            dispatch(pushSpaceRequest({ id: spaceId }));
+
+            // TODO: Handle file attachments
+            // Files should be attached to the space/project so they're available
+            // to all conversations within this project
+            if (files && files.length > 0) {
+                console.log('TODO: Attach files to project space:', files);
+            }
+
+            // Navigate to the new project detail view (not a conversation)
+            history.push(`/projects/${spaceId}`);
+
+            return { spaceId };
+        },
+        [dispatch, history]
+    );
+
+    const createConversationInProject = useCallback(
+        (spaceId: SpaceId) => {
+            const createdAt = new Date().toISOString();
+            const conversationId = newConversationId();
+
+            dispatch(
+                addConversation({
+                    id: conversationId,
+                    spaceId,
+                    title: 'New chat',
+                    createdAt,
+                    status: ConversationStatus.READY,
+                })
+            );
+            dispatch(pushConversationRequest({ id: conversationId }));
+
+            return conversationId;
+        },
+        [dispatch]
+    );
+
+    const updateProjectInstructions = useCallback(
+        (spaceId: SpaceId, instructions: string) => {
+            // TODO: Implement updating space instructions
+            // Need to update the Space in Redux and trigger a push
+            console.log('TODO: Update project instructions:', spaceId, instructions);
+        },
+        [dispatch]
+    );
+
+    const deleteProject = useCallback(
+        async (spaceId: SpaceId) => {
+            // Delete the space and all its conversations, messages, and attachments
+            // This uses the cascade delete saga which handles all related data
+            dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
+            dispatch(pushSpaceRequest({ id: spaceId }));
+            
+            // Navigate to projects list after deletion
+            history.push('/projects');
+        },
+        [dispatch, history]
+    );
+
+    return {
+        createProject,
+        createConversationInProject,
+        updateProjectInstructions,
+        deleteProject,
+    };
+};
+
