@@ -2011,6 +2011,12 @@
         "Føj til kalender og markér som afventende"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultat mere ikke vist",
+        "${ hiddenResultsCount } resultater mere ikke vist"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
@@ -12731,6 +12737,9 @@
       "Reactivate now": [
         "Genaktiver nu"
       ],
+      "Reactivate subscription": [
+        "Genaktiver abonnement"
+      ],
       "Request an invite": [
         "Anmod om invitation"
       ],
@@ -16444,6 +16453,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } pr. henvisning"
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Efter den dato vil din konto blive nedgraderet til **${ BRAND_NAME } Free**. Hvis du ombestemmer dig, kan du **genaktivere dit abonnement** for at bevare adgangen til premium-funktioner."
+      ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Nyd **${ planTitle }** gratis indtil **${ textDate }**."
       ],
@@ -18402,6 +18414,9 @@
       "${ app } storage": [
         "${ app } lagerplads"
       ],
+      "${ app } storage used": [
+        "${ app } lagerplads brugt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fuldt"
       ],
@@ -18422,6 +18437,9 @@
       ],
       "Get more storage": [
         "Få mere lagerplads"
+      ],
+      "Storage used": [
+        "Anvendt lagerplads"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "For at fortsætte med at bruge ${ BRAND_NAME }-produkter, frigør plads eller ${ upgrade }"

@@ -420,6 +420,9 @@
       "Create new policy": [
         "Стварыць новую палітыку"
       ],
+      "Create organization": [
+        "Стварыць арганізацыю"
+      ],
       "Create users": [
         "Стварыць карыстальнікаў"
       ],
@@ -782,6 +785,9 @@
       ],
       "Get more servers": [
         "Атрымаць больш сервераў"
+      ],
+      "Get more storage": [
+        "Атрымайце больш месца ў сховішчы"
       ],
       "Get Pass Family": [
         "Атрымаць Pass Family"
@@ -1476,6 +1482,9 @@
       "Submit": [
         "Адправіць"
       ],
+      "Subscribe": [
+        "Падпісацца"
+      ],
       "Subscribe now": [
         "Падпісацца"
       ],
@@ -1712,6 +1721,15 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальніка)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)",
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe (для ${ quantity } карыстальнікаў)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } дадатковы карыстальніцкі дамен",
         "${ domains } дадатковыя карыстальніцкія дамены",
@@ -1724,6 +1742,15 @@
         "${ ips } сервераў",
         "${ ips } сервераў"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "Памочнік ШІ ${ LUMO_APP_NAME }"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } асістэнт ШІ (для ${ quantity } карыстальніка)",
+        "${ LUMO_APP_NAME } асістэнт ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } асістэнт ШІ (для ${ quantity } карыстальнікаў)",
+        "${ LUMO_APP_NAME } асістэнт ШІ (для ${ quantity } карыстальнікаў)"
+      ],
       "${ price } per dedicated server": [
         "${ price } за вылучаны сервер"
       ],
@@ -1735,6 +1762,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } карыстальніцкі дамен",
+        "${ quantity } карыстальніцкія дамены",
+        "${ quantity } карыстальніцкіх даменаў",
+        "${ quantity } карыстальніцкіх даменаў"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
@@ -2515,14 +2548,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Палітыка адсутнасці журналаў актыўнасці ў ${ VPN_APP_NAME } пацверджана знешнім аўдытам"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Аўтаматычнае выдаленне**, **адкладанне** і **планаванне электроннай пошты** ўключаны ў вашу падпіску."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Трансляцыі** ўключаны ў вашу падпіску."
+      ],
+      "11 tips to stop spam emails": [
+        "11 парад, як спыніць лісты са спамам"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Аўтаматызаваць перыядычныя дзеянні для сартавання і арганізацыі ўваходных лістоў."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Ці можа нехта іншы ўбачыць маю гісторыю прагляду вэб-старонак, калі мы выкарыстоўваем аднолькавае падключэнне па Wi-Fi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Адкрыйце для сябе нашы парады па эфектыўнаму кіраванню вашай паштовай скрыняй. Такім чынам вы зможаце застацца прадуктыўнымі і сфакусіраванымі."
+      ],
+      "Easily manage your inbox": [
+        "Лёгка кіруйце сваёй паштовай скрыняй"
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Лёгка кіруйце сваёй паштовай скрыняй з Mail Plus"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Уключыце Kill Switch і аўтаматычна падключайцеся ў наладах VPN"
+      ],
+      "Get a clean inbox with filters": [
+        "Атрымайце чыстую паштовую скрыню з фільтрамі"
       ],
       "Get round-the-clock protection": [
         "Атрымайце кругласутачную абарону"
@@ -2532,6 +2586,15 @@
       ],
       "How to change your IP address on Windows": [
         "Як змяніць ваш IP-адрас на Windows"
+      ],
+      "How to get a custom email domain": [
+        "Як атрымаць карыстальніцкі дамен электроннай пошты"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Як дасягнуць стану пустой паштовай скрыні: парады па арганізацыі паштовай скрыні з прыярытэтам прыватнасці"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Важна даведацца, навошта і як стварыць карыстальніцкі дамен электроннай пошты, калі вы хочаце павысіць сваю прафесійную ідэнтычнасць. Большасць людзей выкарыстоўваюць бясплатныя адрасы электроннай пошты з прадвызначанымі даменамі, якія прадастаўляюцца іх паштовым сэрвісам."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "З гэтага артыкула вы даведаецеся, хто можа бачыць вашу гісторыю прагляду вэб-старонак пры выкарыстанні Wi-Fi, а таксама, што будуць бачыць пры гэтым іншыя і чаму так адбываецца."
@@ -2545,8 +2608,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Ці з'яўляецца Telegram бяспечным для выкарыстання? З гэтага артыкула вы даведаецеся, што ўсё вельмі залежыць ад спосабаў яго выкарыстання."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Даведайцеся, як перамагчы надакучлівую і патэнцыйна непажаданую пошту. Спам, таксама вядомы як непажаданая пошта, якая можа стаць не проста раздражняючым беспарадкам у вашай паштовай скрыні. Кіберзлачынцы могуць выкарыстоўваць гэтыя непажаданыя паведамленні для запуску фішынгавых атак і распаўсюджвання шкодных праграм."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Даведайцеся, як уключыць ${ VPN_APP_NAME } на вашым маршрутызатары."
+      ],
+      "Protect your business communications": [
+        "Абараніце свае дзелавыя зносіны"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Абараніце сваю кампанію ад уцечак даных і зрабіце аддаленую працу больш бяспечнай з карпаратыўным VPN."
@@ -2554,11 +2623,26 @@
       "Protect your whole household with 1 device": [
         "Абараніце ўсё сваё домаўладанне з дапамогай 1 прылады"
       ],
+      "See and manage all your email subscriptions": [
+        "Паглядзець і кіраваць усімі сваімі падпіскамі электроннай пошты"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Плыні з усіх асноўных платформ на тарыфным плане ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "Сярэдні спецыяліст атрымлівае каля 120 лістоў у дзень, што складае прыблізна 43 800 лістоў у год. Няважна ў якой галіне вы працуеце, гэта велізарная колькасць працоўных лістоў, з якой трэба мець справу."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "Уплыў парушэння даных на ваша жыццё ў значнай ступені залежыць ад тыпу інфармацыі, якая была скампраметавана, і каму яна трапіла. Хуткая рэакцыя на парушэнне даных часта можа абараніць вашу лічбавую ідэнтычнасць і прадухіліць любыя страты."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Самы прыватны і бяспечны спосаб зносін у сетцы — гэта выкарыстанне скразнога шыфравання. Калі вы адпраўляеце ліст зашыфраваны скразным метадам, ён шыфруецца на вашай прыладзе (вашым iPhone, Android або ноўтбукам) і не будзе расшыфраваны да таго моманту, пакуль не дасягне прылады чалавека, якому вы адправілі паведамленне."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Гэты артыкул быў абноўлены і ў яго ўвайшлі пратаколы VPN з тэхналогіямі WireGuard і Stealth."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Паспрабуйце **Прагляд рассылак**, каб навесці парадак у сваёй паштовай скрыні."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator выкарыстоўвае камбінацыю дадатковых тэхналогій VPN для паляпшэння стабільнасці падключэння і павелічэння хуткасці падключэння."
@@ -2569,11 +2653,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Абмеркаванне таго, як змяніць знешні і лакальны IP-адрас вашай прылады з Windows."
       ],
+      "What is an email alias?": [
+        "Што такое псеўданім электроннай пошты?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Што такое скразное шыфраванне і як яно працуе?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Што рабіць у выпадку, калі адбылася ўцечка ў выніку парушэння даных"
+      ],
       "Which VPN protocol is the best?": [
         "Які пратакол VPN самы лепшы?"
       ],
       "Working with sensitive data?": [
         "Працуеце з канфідэнцыяльнымі данымі?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Працуеце з канфідэнцыяльнымі данымі? Выкарыстоўвайце ${ MAIL_APP_NAME }, каб абараніць свае зносіны і ўмацаваць давер да кліентаў."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Ваш асабісты адрас электроннай пошты - гэта важная частка вашай лічбавай ідэнтычнасці. Як і ваш нумар тэлефона, які вы не распаўсюджваеце сярод незнаёмых людзей. Вось чаму карысна мець іншыя адрасы электроннай пошты, якія можна выкарыстоўваць для розных мэт."
       ]
     },
     "breadcrumb": {
@@ -4375,6 +4474,26 @@
         "Кожных ${ interval } дзён, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Адчуйце сапраўдную свабоду ў сетцы і абараніце сваю прыватнасць."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "Атрымайце больш ад падпіскі ${ planTitle }."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Захоўвайце свае файлы, фатаграфіі і дакументы ў бяспецы з ${ maxDriveSpace } бясплатнага воблачнага сховішча."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Без цяжкасцей задавайце бяспечныя паролі"
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "Вы атрымаеце бясплатны доступ да ${ VPN_APP_NAME } і іншых прыватных сэрвісаў з ${ planTitlePlusMaybeBrand }."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "Вы атрымаеце бясплатны доступ да ўсіх прыватных сэрвісаў ${ BRAND_NAME } з ${ planTitlePlusMaybeBrand }."
+      ]
+    },
     "Day": {
       "Friday": [
         "Пятніца"
@@ -4794,6 +4913,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4805,6 +4930,9 @@
       ],
       "Browser": [
         "Браўзер"
+      ],
+      "Calendar": [
+        "Каляндар"
       ],
       "Chrome": [
         "Chrome"
@@ -4821,6 +4949,9 @@
       "Download for Windows": [
         "Спампаваць для Windows"
       ],
+      "Download on Snap store": [
+        "Спампаваць у Snap Store"
+      ],
       "Download on the Apple App Store": [
         "Спампававаць у App Store"
       ],
@@ -4832,6 +4963,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Спампаваць у Google Play"
       ],
       "Get the app": [
         "Атрымаць праграму"
@@ -4865,6 +4999,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura або больш новая версія"
+      ],
+      "Mail": [
+        "Mail"
       ],
       "Mobile": [
         "Для смартфона"
@@ -7228,6 +7365,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } прылад"
       ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "@pm.me address": [
+        "адрас @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
       ],
@@ -7236,6 +7379,12 @@
       ],
       "and more premium features...": [
         "і іншыя прэміяльныя функцыі..."
+      ],
+      "Connect custom domain": [
+        "Падключэнне карыстальніцкага дамена"
+      ],
+      "Desktop app": [
+        "Праграма для камп'ютара"
       ],
       "Double VPN": [
         "Double VPN"
@@ -7248,6 +7397,9 @@
       ],
       "NetShield Ad-blocker": [
         "Блакіроўшчык рэкламы NetShield"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
       ],
       "Secure streaming": [
         "Бяспечная трансляцыя"
@@ -11555,6 +11707,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы таксама можаце аб'яднаць імпартаваныя календары з існуючымі календарамі ${ BRAND_NAME }."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Вы можаце змяніць вылучэнне сховішча ў **Карыстальнікі і адрасы**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Вы можаце змяніць свой выбар у любы час у ${ settingsLink }."
       ],
@@ -11852,6 +12007,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны месяц."
       ],
+      "Your storage": [
+        "Ваша сховішча"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
       ],
@@ -11965,6 +12123,11 @@
         "Толькі прагляд"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Так будзе выглядаць ваша арганізацыя для карыстальнікаў. Выгляд можна змяніць у любы час."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Памылковы адрас электроннай пошты"
@@ -11978,6 +12141,11 @@
     "Input placeholder": {
       "Add label": [
         "Дадаць метку"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Як называецца ваша арганізацыя?"
       ]
     },
     "invitation status": {
@@ -13030,6 +13198,12 @@
       "Font size": [
         "Памер шрыфту"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Для ${ DRIVE_SHORT_APP_NAME } і ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Для ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } і ${ SHEETS_SHORT_APP_NAME }."
+      ],
       "for your first month": [
         "за ваш першы месяц"
       ],
@@ -13488,6 +13662,9 @@
       ],
       "Share your referral link": [
         "Абагуліць сваю рэферальную спасылку"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Абагулена паміж ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ WALLET_SHORT_APP_NAME }."
       ],
       "Show ${ n } administrator": [
         "Паказаць ${ n } адміністратара",
@@ -14063,6 +14240,9 @@
       ],
       "Reactivate now": [
         "Актываваць паўторна"
+      ],
+      "Reactivate subscription": [
+        "Паўторная актывацыя падпіскі"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
@@ -17638,6 +17818,9 @@
       "End date": [
         "Дата завяршэння"
       ],
+      "Enter name": [
+        "Увядзіце назву"
+      ],
       "example@domain.com": [
         "pryklad@domain.com"
       ],
@@ -18104,6 +18287,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "Вы атрымаеце **${ referrerRewardAmount }** у крэдытах **пры падпісцы да гэтай даты**."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Пасля гэтай даты ваш уліковы запіс будзе паніжаны да ўзроўню **${ BRAND_NAME } Free**. Калі вы перадумаеце, вы можаце **паўторна актываваць сваю падпіску**, каб захаваць доступ да прэміяльных функцый."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Атрымлівайце асалоду ад **${ planTitle }** бясплатна да **${ textDate }**."
@@ -20547,6 +20733,9 @@
       "${ app } storage": [
         "сховішча ${ app }"
       ],
+      "${ app } storage used": [
+        "Выкарыстана сховішча ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } запоўнена на ${ percentage }%"
       ],
@@ -20567,6 +20756,9 @@
       ],
       "Get more storage": [
         "Атрымаць больш месца ў сховішчы"
+      ],
+      "Storage used": [
+        "Выкарыстана сховішча"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб працягнуць карыстацца прадуктамі ${ BRAND_NAME }"
@@ -21344,6 +21536,9 @@
       "Organization logo updated": [
         "Лагатып арганізацыі абноўлены"
       ],
+      "Organization name set": [
+        "Назва арганізацыі зададзена"
+      ],
       "Organization name updated": [
         "Назва арганізацыі абноўлена"
       ],
@@ -22025,6 +22220,9 @@
       "Collaborate on documents": [
         "Сумесная праца над дакументамі"
       ],
+      "Compare plans": [
+        "Параўнанне тарыфных планаў"
+      ],
       "Composing": [
         "Напісанне"
       ],
@@ -22178,6 +22376,9 @@
       "Decrypt key": [
         "Расшыфраваць ключ"
       ],
+      "Deep dive into email blog posts": [
+        "Пагрузіцеся ў допісы блога аб электроннай пошце"
+      ],
       "Deep dive into VPN blog posts": [
         "Пагрузіцеся ў допісы блога аб VPN"
       ],
@@ -22280,6 +22481,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Спампуйце ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Спампаваць ${ PASS_APP_NAME } для вашых прылад"
       ],
@@ -22378,6 +22582,9 @@
       ],
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Атрымлівайце хуткі і бесперашкодны доступ да сваіх лістоў з дапамогай нашых спецыялізаваных праграм."
       ],
       "Enter endpoints into your identity provider": [
         "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
@@ -22499,8 +22706,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Атрымайце **${ referralInfo.uiData.refereeRewardAmount }** у крэдытах з ${ planTitle }"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Атрымаць доступ да праграм для камп'ютараў з ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Атрымайце поўную абарону прыватнасці"
+      ],
+      "Get more from your email": [
+        "Атрымайце больш ад сваёй электроннай пошты"
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
@@ -23249,6 +23462,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "Вітаем у ${ planName }"
+      ],
       "What is an alias?": [
         "Што такое псеўданім?"
       ],
@@ -23437,6 +23653,9 @@
       ],
       "Account is disconnected": [
         "Уліковы запіс адключаны"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Дададзена ў ваш тарыфны план: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
@@ -23976,6 +24195,9 @@
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ VPN_APP_NAME } for Business."

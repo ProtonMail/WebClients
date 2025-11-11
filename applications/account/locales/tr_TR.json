@@ -420,6 +420,9 @@
       "Create new policy": [
         "Yeni ilke oluştur"
       ],
+      "Create organization": [
+        "Kuruluş oluştur"
+      ],
       "Create users": [
         "Kullanıcılar ekle"
       ],
@@ -782,6 +785,9 @@
       ],
       "Get more servers": [
         "Daha fazla sunucu edinin"
+      ],
+      "Get more storage": [
+        "Daha fazla depolama alanı edinin"
       ],
       "Get Pass Family": [
         "Pass Family edinin"
@@ -1476,6 +1482,9 @@
       "Submit": [
         "Gönder"
       ],
+      "Subscribe": [
+        "Abone ol"
+      ],
       "Subscribe now": [
         "Şimdi abone olun"
       ],
@@ -1712,6 +1721,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)",
+        "${ BRAND_NAME } Scribe yazma yardımcısı (${ quantity } kullanıcı için)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } ek özel etki alanı",
         "${ domains } ek özel etki alanı"
@@ -1719,6 +1735,13 @@
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
+      ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } yapay zeka yardımcısı"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)",
+        "${ LUMO_APP_NAME } Yapay zeka yardımcısı (${ quantity } kullanıcı için)"
       ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
@@ -1731,6 +1754,10 @@
       ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } özel etki alanı",
+        "${ quantity } özel etki alanı"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
@@ -2113,6 +2140,12 @@
         "Takvime eklensin ve bekliyor olarak işaretlensin"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var",
+        "Görüntülenmeyen ${ hiddenResultsCount } sonuç daha var"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ofis dışındayım ve e-postama erişimim kısıtlı."
@@ -2487,14 +2520,35 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "${ VPN_APP_NAME } hizmetinin kayıt tutmama ilkesi bağımsız bir dış denetimle onaylandı"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Otomatik silme**, **erteleme** ve **e-posta zamanlama** özellikleri aboneliğinizde bulunuyor."
+      ],
       "**Streaming** is included in your subscription.": [
         "Abone olarak **yayın akışı** izleyebilirsiniz."
+      ],
+      "11 tips to stop spam emails": [
+        "İstenmeyen e-postaları engellemek için 11 ipucu"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Gelen e-postaları sıralamak ve düzenlemek için yinelenen işlemleri otomatikleştirin."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Aynı Wi-Fi ağındaki biri internet geçmişimi görebilir mi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Üretken ve odaklanmış kalabilmek için gelen kutunuzu verimli yönetme ipuçlarımızı keşfedin."
+      ],
+      "Easily manage your inbox": [
+        "Gelen kutunuzu kolayca yönetin."
+      ],
+      "Easily manage your inbox with Mail Plus": [
+        "Mail Plus ile gelen kutunuzu kolayca yönetin."
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "VPN ayarlarınızdan bağlantı kesiciyi açın ve otomatik bağlanın."
+      ],
+      "Get a clean inbox with filters": [
+        "Süzgeçler ile gelen kutunuzu temizleyin."
       ],
       "Get round-the-clock protection": [
         "Günün her saati korunun"
@@ -2504,6 +2558,15 @@
       ],
       "How to change your IP address on Windows": [
         "Windows üzerinde IP adresinizi nasıl değiştirirsiniz?"
+      ],
+      "How to get a custom email domain": [
+        "Bir özel e-posta etki alanı nasıl alınır"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Boş gelen kutusuna ulaşmak: Gizlilik odaklı gelen kutusu düzenleme ipuçları"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Profesyonel kimliğinizi güçlendirmek istiyorsanız, neden ve nasıl bir özel e-posta etki alanı oluşturacağınızı öğrenmeniz önemlidir. Çoğu kişi, e-posta hizmeti sağlayıcılarının varsayılan etki alanlarıyla ücretsiz e-posta adresleri kullanıyor."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Bu yazıda, W-Fi kullandığınızda internet geçmişinizi kimlerin görebileceğine, ne görebileceklerine ve bunu neden yapabileceklerine bakıyoruz."
@@ -2517,8 +2580,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Telegram kullanmak güvenli mi? Bu yazıda tartışacağımız gibi, bu büyük ölçüde onu nasıl kullandığınızla ilişkili."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Rahatsız edici ve potansiyel olarak zararlı istenmeyen e-postalardan nasıl kurtulacağınızı öğrenin. İstenmeyen e-postalar, diğer adıyla çöp e-postalar, gelen kutunuzda yalnızca rahatsız edici bir dağınıklıktan daha fazlası olabilir. Siber suçlular, bu istemediğiniz iletileri kimlik avı girişimleri başlatmak ve kötü amaçlı yazılımları yaymak için kullanabilir."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Yönlendiricinizde nasıl ${ VPN_APP_NAME } kullanacağınızı öğrenin."
+      ],
+      "Protect your business communications": [
+        "İş iletişimlerinizi koruyun."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Kuruluşunuzu veri sızıntılarından koruyun ve kurumsal bir VPN ile daha güvenle uzaktan çalışın."
@@ -2526,11 +2595,26 @@
       "Protect your whole household with 1 device": [
         "1 aygıtla tüm evinizi koruyun"
       ],
+      "See and manage all your email subscriptions": [
+        "Tüm e-posta aboneliklerinizi görüntüleyin ve yönetin"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "${ PLAN_NAMES[PLANS.VPN2024] } tarifesi ile tüm büyük platformlardaki yayın akışlarını izleyin."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "Ortalama bir profesyonel günde yaklaşık 120 e-posta alır. Bu da yılda yaklaşık 43.800 e-posta eder. Hangi sektörde çalıştığınız fark etmez. Bu kadar iş e-postası oldukça fazla bir yük oluşturur."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "Bir verilerin ele geçirilmesi olayının yaşamınız üzerindeki etkisi, açığa çıkan bilgilerin türüne ve kime açıldığına bağlıdır. Böyle bir duruma hızlı bir tepki vermek, genellikle dijital kimliğinizi koruyabilir ve herhangi bir kaybı önleyebilir."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Çevrim içi iletişim kurmanın en güvenli yolu, uçtan uca şifreleme kullanmaktır. Uçtan uca şifrelenmiş bir e-posta gönderirseniz, şifreleme aygıtınızda (kullandığınız iPhone, Android veya bilgisayar) yapılır ve iletiyi gönderdiğiniz kişinin aygıtına ulaşana kadar çözülmez."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Bu yazı, WireGuard ve Stealth VPN iletişim kurallarını kapsayacak şekilde güncellendi."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Gelen kutunuzu düzenlemek için **Duyurular görünümünü** deneyin."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator, bağlantı kararlılığını ve bağlantı hızını artırmak için gelişmiş VPN teknolojilerini bir arada kullanır"
@@ -2541,11 +2625,26 @@
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Windows aygıtınızın dış ve yerel IP adreslerini nasıl değiştireceğinizi anlatıyoruz."
       ],
+      "What is an email alias?": [
+        "Bir e-posta takma adı nedir?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Uçtan uca şifreleme nedir ve nasıl çalışır?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Bir verilerin ele geçirilmesi olayında verileriniz açığa çıkarsa ne yapmalısınız"
+      ],
       "Which VPN protocol is the best?": [
         "En iyi VPN iletişim kuralı hangisidir?"
       ],
       "Working with sensitive data?": [
         "Önemli bilgilerle mi çalışıyorsunuz?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Önemli verilerle mi çalışıyorsunuz? İletişimlerinizi korumak ve müşterilerinizde güven oluşturmak için ${ MAIL_APP_NAME } kullanın."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Kişisel e-posta adresiniz, dijital kimliğinizin önemli bir parçasıdır. Onu da, telefon numaranız gibi, tanıştığınız herkese vermezsiniz. Bu nedenle, farklı amaçlar için kullanabileceğiniz başka e-posta adreslerinizin olması yararlıdır."
       ]
     },
     "breadcrumb": {
@@ -4329,6 +4428,26 @@
         "Her ${ interval } günde bir, ${ untilString }"
       ]
     },
+    "Dashboard": {
+      "Experience true freedom online and safeguard your privacy.": [
+        "Çevrim içi gerçek özgürlüğü deneyimleyin ve gizliliğinizi koruyun."
+      ],
+      "Get more from your ${ planTitle } subscription.": [
+        "${ planTitle } aboneliğinizle daha fazlasını elde edin."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "${ maxDriveSpace } ücretsiz bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi koruyun."
+      ],
+      "Set secure passwords without the hassle.": [
+        "Uğraşmadan güvenli parolalar oluşturun."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
+        "${ planTitlePlusMaybeBrand } tarifesi ile ${ VPN_APP_NAME } ve diğer gizlilik hizmetlerine ücretsiz erişim elde edersiniz."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "${ planTitlePlusMaybeBrand } tarifesi ile tüm ${ BRAND_NAME } gizlilik hizmetlerine ücretsiz erişebilirsiniz."
+      ]
+    },
     "Day": {
       "Friday": [
         "Cuma"
@@ -4746,6 +4865,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4757,6 +4882,9 @@
       ],
       "Browser": [
         "Tarayıcı"
+      ],
+      "Calendar": [
+        "Calendar"
       ],
       "Chrome": [
         "Chrome"
@@ -4773,6 +4901,9 @@
       "Download for Windows": [
         "Windows için indirin"
       ],
+      "Download on Snap store": [
+        "Snap Store üzerinden indirin"
+      ],
       "Download on the Apple App Store": [
         "Apple App Store üzerinden indirin"
       ],
@@ -4784,6 +4915,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Google Play üzerinden edinin"
       ],
       "Get the app": [
         "Uygulamayı edinin"
@@ -4817,6 +4951,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura ve sonrası"
+      ],
+      "Mail": [
+        "Mail"
       ],
       "Mobile": [
         "Mobil"
@@ -7136,6 +7273,12 @@
       "${ VPN_CONNECTIONS } devices": [
         "${ VPN_CONNECTIONS } aygıt"
       ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "@pm.me address": [
+        "@pm.me adresi"
+      ],
       "Ad-blocker and malware protection": [
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
@@ -7144,6 +7287,12 @@
       ],
       "and more premium features...": [
         "ve diğer ücretli özellikler..."
+      ],
+      "Connect custom domain": [
+        "Özel etki alanınızı bağlayın"
+      ],
+      "Desktop app": [
+        "Bilgisayar uygulaması"
       ],
       "Double VPN": [
         "Çift VPN"
@@ -7156,6 +7305,9 @@
       ],
       "NetShield Ad-blocker": [
         "NetShield reklam engelleyici"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
       ],
       "Secure streaming": [
         "Güvenli yayın akışı"
@@ -7725,6 +7877,9 @@
       ],
       "Domain": [
         "Etki alanı"
+      ],
+      "Drag to reorder": [
+        "Sıralamak için sürükleyin"
       ],
       "Status": [
         "Durum"
@@ -11316,6 +11471,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Ayrıca içe aktarılan takvimleri var olan ${ BRAND_NAME } takvimleriyle birleştirebilirsiniz."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Ayrılan depolama alanını **Kullanıcılar ve adresler** bölümünden değiştirebilirsiniz"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Bu ayarı istediğiniz zaman ${ settingsLink } bölümünden değiştirebilirsiniz."
       ],
@@ -11595,6 +11753,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
       ],
+      "Your storage": [
+        "Depolama alanınız"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
       ],
@@ -11704,6 +11865,11 @@
         "Yalnızca görüntüleme"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Kuruluşunuz kullanıcılara bu şekilde görünecek. Bunu dilediğiniz zaman değiştirebilirsiniz."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Geçerli bir e-posta adresi değil"
@@ -11717,6 +11883,11 @@
     "Input placeholder": {
       "Add label": [
         "Etiket ekle"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Kuruluşunuzun adı nedir?"
       ]
     },
     "invitation status": {
@@ -12759,6 +12930,12 @@
       "Font size": [
         "Yazı boyutu"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME } ve ${ DOCS_SHORT_APP_NAME } için."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } ve ${ SHEETS_SHORT_APP_NAME } için."
+      ],
       "for your first month": [
         "ilk ayınız için"
       ],
@@ -13217,6 +13394,9 @@
       ],
       "Share your referral link": [
         "Öneri bağlantınızı paylaşın"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ WALLET_SHORT_APP_NAME } arasında paylaşılır."
       ],
       "Show ${ n } administrator": [
         "${ n } yöneticiyi görüntüle",
@@ -13788,6 +13968,9 @@
       ],
       "Reactivate now": [
         "Yeniden etkinleştir"
+      ],
+      "Reactivate subscription": [
+        "Aboneliği yeniden etkinleştir"
       ],
       "Request an invite": [
         "Davet iste"
@@ -16530,11 +16713,23 @@
       "Based in Switzerland, GDPR compliant": [
         "İsviçre merkezli, GDPR uyumlu"
       ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ancak **${ upsellPlanTitle }** tarifesine yükselterek, aylık yalnızca ${ relativePrice } ek ödeme ile ${ discountPercentString } indirimden yararlanabilirsiniz."
+      ],
+      "But you can get ${ discountPercentString } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Ancak **${ upsellPlanTitle }** tarifesine yükselterek ${ discountPercentString } indirim alabilirsiniz."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ancak ayda yalnızca ${ relativePrice } ek ödeme ile **${ unlockPlanTitle }** ve diğer ${ BRAND_NAME } hizmetlerine erişmek için **${ upsellPlanTitle }** tarifesine yükseltebilirsiniz."
       ],
       "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Ancak **${ upsellPlanTitle }** tarifesine yükselterek **${ unlockPlanTitle }** tarifesine geçebilir ve diğer ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ancak **${ upsellPlanTitle }** tarifesine yükseltebilirsiniz. Ayda yalnızca ${ relativePrice } ek ücret ile."
+      ],
+      "But you can upgrade to **${ upsellPlanTitle }**.": [
+        "Ancak **${ upsellPlanTitle }** tarifesine yükseltebilirsiniz."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "İlerleyerek ${ termsAndConditionsLink } ve ${ privacyPolicyLink } metinlerini kabul etmiş olursunuz."
@@ -17243,6 +17438,9 @@
       "End date": [
         "Bitiş tarihi"
       ],
+      "Enter name": [
+        "Adı yazın"
+      ],
       "example@domain.com": [
         "ornek@etkialani.com"
       ],
@@ -17705,6 +17903,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden etkinleştirebilirsiniz**."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ planTitle }** tarifesini **${ textDate }** tarihine kadar ücretsiz kullanın."
@@ -20056,6 +20257,9 @@
       "${ app } storage": [
         "${ app } depolama alanı"
       ],
+      "${ app } storage used": [
+        "${ app } depolama alanı kullanıldı"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } %${ percentage } dolu"
       ],
@@ -20076,6 +20280,9 @@
       ],
       "Get more storage": [
         "Daha fazla depolama alanı edinin"
+      ],
+      "Storage used": [
+        "Kullanılan depolama alanı"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } ürünlerini kullanmayı sürdürmek için yer açın ya da ${ upgrade }"
@@ -20807,6 +21014,9 @@
       "Organization logo updated": [
         "Kuruluş logosu güncellendi"
       ],
+      "Organization name set": [
+        "Kuruluş adı ayarlandı"
+      ],
       "Organization name updated": [
         "Kuruluş adı güncellendi"
       ],
@@ -21462,6 +21672,9 @@
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
       ],
+      "Compare plans": [
+        "Tarifeleri karşılaştır"
+      ],
       "Composing": [
         "İleti oluşturma"
       ],
@@ -21613,6 +21826,9 @@
       "Decrypt key": [
         "Anahtarın şifresini çöz"
       ],
+      "Deep dive into email blog posts": [
+        "E-posta günlük yazılarına derinlemesine dalın"
+      ],
       "Deep dive into VPN blog posts": [
         "VPN yazılarına derinlemesine dalın"
       ],
@@ -21713,6 +21929,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } indirin"
+      ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Aygıtlarınız için ${ PASS_APP_NAME } indirin"
       ],
@@ -21811,6 +22030,9 @@
       ],
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Özel uygulamalarımızla e-postalarınıza hızlı ve sorunsuz erişmenin tadını çıkarın."
       ],
       "Enter endpoints into your identity provider": [
         "Kimlik hizmeti sağlayıcınızın uç noktalarını ekleyin"
@@ -21930,8 +22152,14 @@
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "${ planTitle } ile **${ referralInfo.uiData.refereeRewardAmount }** kredi kazanın."
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "${ mailPlusPlanName } ile bilgisayar uygulamasına erişin. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Tam bir gizlilik paketi alın"
+      ],
+      "Get more from your email": [
+        "E-postanızdan daha fazla yararlanın"
       ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
@@ -22676,6 +22904,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
       ],
+      "Welcome to ${ planName }": [
+        "${ planName } hizmetine hoş geldiniz"
+      ],
       "What is an alias?": [
         "Takma ad nedir?"
       ],
@@ -22864,6 +23095,9 @@
       ],
       "Account is disconnected": [
         "Hesap bağlantısı kesildi"
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Tarifenize eklendi: ${ mergedAddonTitles }"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
@@ -23399,6 +23633,9 @@
       ],
       "Did you know?": [
         "Biliyor muydunuz?"
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "${ PLAN_NAMES[plan] } ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "${ VPN_APP_NAME } for Business ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."

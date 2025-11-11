@@ -1443,6 +1443,13 @@
         "Događaj nije podržan"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "još ${ hiddenResultsCount } rezultat nije prikazan",
+        "Još ${ hiddenResultsCount } rezultata nije prikazano",
+        "Još ${ hiddenResultsCount } rezultata nije prikazano"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ja sam izvan ureda s ograničenim pristupom mojoj e-pošti."
@@ -5149,6 +5156,9 @@
       ],
       "Domain": [
         "Domena"
+      ],
+      "Drag to reorder": [
+        "Povuci za premještanje"
       ],
       "Status": [
         "Status"

@@ -420,6 +420,9 @@
       "Create new policy": [
         "Neue Richtlinie erstellen"
       ],
+      "Create organization": [
+        "Organisation erstellen"
+      ],
       "Create users": [
         "Benutzer erstellen"
       ],
@@ -1478,6 +1481,9 @@
       ],
       "Submit": [
         "Senden"
+      ],
+      "Subscribe": [
+        "Abonnieren"
       ],
       "Subscribe now": [
         "Jetzt abonnieren"
@@ -9309,8 +9315,8 @@
         "Inhaberschaft der Domain bestätigt."
       ],
       "domain used": [
-        "Domain verwendet",
-        "Domains verwendet"
+        "Domain belegt",
+        "Domänen belegt"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "Verliere nicht den Zugang auf premium ${ appName } Funktionen. Aktiviere automatische Verlängerung heute."
@@ -11465,6 +11471,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kannst importierte Kalender auch mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Du kannst die Speicherzuteilung unter **Benutzer und Adressen** ändern."
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Dies kann jederzeit in den ${ settingsLink } geändert werden."
       ],
@@ -11744,6 +11753,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
       ],
+      "Your storage": [
+        "Dein Speicherplatz"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dein Abonnement wird am ${ renewalTime } automatisch verlängert."
       ],
@@ -11853,6 +11865,11 @@
         "Nur anzeigen"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "So wird deine Organisation den Benutzern erscheinen. Du kannst es jederzeit ändern."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Keine gültige E-Mail-Adresse"
@@ -11866,6 +11883,11 @@
     "Input placeholder": {
       "Add label": [
         "Kategorie hinzuf."
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Wie heißt deine Organisation?"
       ]
     },
     "invitation status": {
@@ -13946,6 +13968,9 @@
       ],
       "Reactivate now": [
         "Jetzt reaktivieren"
+      ],
+      "Reactivate subscription": [
+        "Abonnement reaktivieren"
       ],
       "Request an invite": [
         "Einladung anfordern"
@@ -17413,6 +17438,9 @@
       "End date": [
         "Enddatum"
       ],
+      "Enter name": [
+        "Name eingeben"
+      ],
       "example@domain.com": [
         "name@beispiel.de"
       ],
@@ -17875,6 +17903,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Wenn du vor diesem Datum abonnierst,** erhältst du **${ referrerRewardAmount }** an Guthaben."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Nach diesem Datum wird dein Konto auf **${ BRAND_NAME } Free** zurückgestuft. Wenn du es dir anders überlegst, kannst du dein **Abonnement reaktivieren**, um den Zugriff auf Premium-Funktionen zu behalten."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Genieße **${ planTitle }** kostenlos bis zum **${ textDate }**."
@@ -20983,6 +21014,9 @@
       "Organization logo updated": [
         "Organisationslogo aktualisiert"
       ],
+      "Organization name set": [
+        "Name der Organisation festgelegt"
+      ],
       "Organization name updated": [
         "Organisationsname aktualisiert"
       ],
@@ -21395,7 +21429,7 @@
         "Ein Filter mit diesem Namen existiert bereits."
       ],
       "Access control": [
-        "Zutrittskontrolle"
+        "Zugriffsrechte"
       ],
       "Accessibility": [
         "Barrierefreiheit"
@@ -21564,7 +21598,7 @@
         "Ausgehende Nachrichten automatisch signieren?"
       ],
       "Backup and export": [
-        "Sichern und Exportieren"
+        "Sichern und exportieren"
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
@@ -22869,6 +22903,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Willkommen bei ${ planName }"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"

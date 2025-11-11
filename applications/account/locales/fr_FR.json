@@ -420,6 +420,9 @@
       "Create new policy": [
         "Créer une politique"
       ],
+      "Create organization": [
+        "Créer une organisation"
+      ],
       "Create users": [
         "Créer des utilisateurs"
       ],
@@ -1475,6 +1478,9 @@
       ],
       "Submit": [
         "Envoyer"
+      ],
+      "Subscribe": [
+        "S'abonner"
       ],
       "Subscribe now": [
         "S'abonner maintenant"
@@ -11369,6 +11375,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Vous pouvez aussi fusionner des calendriers importés avec des calendriers ${ BRAND_NAME } existants."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Vous pouvez modifier l'allocation de l'espace de stockage dans **Utilisateurs et adresses**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Vous pouvez modifier cela à tout moment dans ${ settingsLink }."
       ],
@@ -11648,6 +11657,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
       ],
+      "Your storage": [
+        "Votre espace de stockage"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
       ],
@@ -11757,6 +11769,11 @@
         "Lecture seule"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Voici comment votre organisation apparaîtra aux utilisateurs. Vous pouvez la modifier à tout moment."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "L'adresse e-mail n'est pas valide."
@@ -11770,6 +11787,11 @@
     "Input placeholder": {
       "Add label": [
         "Ajoutez un label."
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Quel est le nom de votre organisation ?"
       ]
     },
     "invitation status": {
@@ -13844,6 +13866,9 @@
       ],
       "Reactivate now": [
         "Réactiver maintenant"
+      ],
+      "Reactivate subscription": [
+        "Réactiver l'abonnement"
       ],
       "Request an invite": [
         "Demander une invitation"
@@ -17299,6 +17324,9 @@
       "End date": [
         "Date de fin"
       ],
+      "Enter name": [
+        "Saisir un nom"
+      ],
       "example@domain.com": [
         "exemple@domaine.fr"
       ],
@@ -17761,6 +17789,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Si vous vous abonnez avant cette date,** vous recevrez **${ referrerRewardAmount }** en crédits."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Après cette date, votre compte passera à un abonnement inférieur à **${ BRAND_NAME } Gratuit**. Si vous changez d'avis, vous pouvez **réactiver votre abonnement** pour conserver l'accès aux fonctionnalités premium."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Profitez de **${ planTitle }** gratuitement jusqu'au **${ textDate }**."
@@ -20872,6 +20903,9 @@
       "Organization logo updated": [
         "Le logo de l'organisation a été mis à jour."
       ],
+      "Organization name set": [
+        "Nom de l'organisation"
+      ],
       "Organization name updated": [
         "Le nom de l'organisation a été mis à jour."
       ],
@@ -22740,6 +22774,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bienvenue dans ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Bienvenue dans ${ planName }"
       ],
       "What is an alias?": [
         "Qu'est-ce qu'un alias ?"
