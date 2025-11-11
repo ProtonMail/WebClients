@@ -31,9 +31,21 @@ export interface DonutProps {
      * color code of background segment
      */
     backgroundSegmentColor?: string;
+
+    /**
+     * Makes the segment ends round
+     *
+     * Note: Round corners are not compatible with `gap` please pass `0` to ensure there are no gaps between segments
+     */
+    rounded?: boolean;
 }
 
-export const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--background-strong)' }: DonutProps) => {
+export const Donut = ({
+    segments,
+    gap = 4,
+    backgroundSegmentColor = 'var(--background-strong)',
+    rounded = false,
+}: DonutProps) => {
     const uid = useUid('straight-gaps');
 
     const box = 200;
@@ -73,6 +85,36 @@ export const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--backg
      */
     const scale = sumOfAllChunks > 100 ? 100 / sumOfAllChunks : 1;
 
+    let svgCircles = allChunks.map(([percentage, color], i) => {
+        const arcLength = scale * Math.max(0, percentOf(percentage, circumference));
+
+        const strokeDashOffset = offset - scale * percentOf(runningSumOfAllChunks[i - 1] || 0, circumference);
+
+        const strokeDashArray = `${arcLength.toFixed(2)} ${(circumference - arcLength).toFixed(2)}`;
+
+        if (arcLength === 0) {
+            return null;
+        } else {
+            return (
+                <circle
+                    key={color}
+                    fill="none"
+                    cx={box / 2}
+                    cy={box / 2}
+                    r={radius}
+                    stroke={color}
+                    strokeWidth={width}
+                    strokeDasharray={strokeDashArray}
+                    strokeDashoffset={strokeDashOffset}
+                    strokeLinecap={rounded ? 'round' : undefined}
+                />
+            );
+        }
+    });
+    // Reverse the `circles` so that first element stays on top
+    if (rounded) {
+        svgCircles = svgCircles.reverse();
+    }
     return (
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox={`0 0 ${box} ${box}`}>
             {gap > 0 && (
@@ -99,30 +141,7 @@ export const Donut = ({ segments, gap = 4, backgroundSegmentColor = 'var(--backg
                 </defs>
             )}
 
-            <g mask={gap > 0 ? `url(#${uid})` : undefined}>
-                {allChunks.map(([percentage, color], i) => {
-                    const arcLength = scale * Math.max(0, percentOf(percentage, circumference));
-
-                    const strokeDashOffset =
-                        offset - scale * percentOf(runningSumOfAllChunks[i - 1] || 0, circumference);
-
-                    const strokeDashArray = `${arcLength.toFixed(2)} ${(circumference - arcLength).toFixed(2)}`;
-
-                    return (
-                        <circle
-                            key={color}
-                            fill="none"
-                            cx={box / 2}
-                            cy={box / 2}
-                            r={radius}
-                            stroke={color}
-                            strokeWidth={width}
-                            strokeDasharray={strokeDashArray}
-                            strokeDashoffset={strokeDashOffset}
-                        />
-                    );
-                })}
-            </g>
+            <g mask={gap > 0 ? `url(#${uid})` : undefined}>{svgCircles}</g>
         </svg>
     );
 };
