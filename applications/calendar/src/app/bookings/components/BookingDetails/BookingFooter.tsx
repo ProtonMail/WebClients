@@ -13,11 +13,14 @@ export const BookingFooter = () => {
     );
 
     return (
-        <div className="mt-6 text-center">
+        <footer className="my-6 text-center">
             <p className="color-weak m-0">
-                <span className="mr-2">{c('Info').jt`Powered by ${protonButton}`}</span>•
+                <span className="mr-2">{c('Info').jt`Powered by ${protonButton}`}</span>
+                <span aria-hidden="true" className="pointer-events-none">
+                    •
+                </span>
                 <span className="ml-2">{c('Info').t`Privacy by default`}</span>
             </p>
-        </div>
+        </footer>
     );
 };
