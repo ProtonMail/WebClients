@@ -68,7 +68,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                 <SimpleSidebarListItemHeader
                     toggle={displayBookings}
                     onToggle={() => setDisplayBookings((prevState) => !prevState)}
-                    text={c('Link').t`Bookings pages`}
+                    text={c('Link').t`Booking pages`}
                     testId="calendar-sidebar:bookings-pages-button"
                     headerRef={headerRef}
                     right={
@@ -86,62 +86,63 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                     }
                     spaceAbove
                 />
-                {bookingPages.map((page) => (
-                    <SidebarListItem key={page.id}>
-                        <SidebarListItemLabel
-                            htmlFor={`booking-page-${page.id}`}
-                            className="group-hover-opacity-container"
-                        >
-                            <SidebarListItemContent left={<IcCalendarRow />}>
-                                <div className="flex flex-nowrap justify-space-between items-center w-full">
-                                    <p className="text-ellipsis m-0" title={page.summary}>
-                                        {page.summary}
-                                    </p>
-                                </div>
-                                <Tooltip title={c('Info').t`Manange booking page`}>
-                                    <SimpleDropdown
-                                        as={Button}
-                                        icon
-                                        hasCaret={false}
-                                        shape="ghost"
-                                        size="small"
-                                        className="group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm shrink-0 hidden md:inline-flex"
-                                        content={
-                                            <IcThreeDotsHorizontal
-                                                alt={c('Sidebar calendar edit tooltip').t`Manage calendar`}
-                                            />
-                                        }
-                                    >
-                                        <DropdownMenu>
-                                            <DropdownMenuButton disabled className="text-left">{c('Action')
-                                                .t`Edit booking page`}</DropdownMenuButton>
-                                            <DropdownMenuButton disabled className="text-left">
-                                                {c('Action').t`Delete booking page`}
-                                            </DropdownMenuButton>
-                                            <hr className="m-0" />
-                                            <DropdownMenuLink
-                                                href={page.link}
-                                                className="flex flex-nowrap gap-2 justify-space-between items-center"
-                                            >
-                                                <span className="text-ellipsis color-primary text-underline">
-                                                    {page.link}
-                                                </span>
-                                                <Button
-                                                    className="shrink-0"
-                                                    shape="ghost"
-                                                    size="small"
-                                                    onClick={(e) => handleCopy(e, page.link)}
+                {displayBookings &&
+                    bookingPages.map((page) => (
+                        <SidebarListItem key={page.id}>
+                            <SidebarListItemLabel
+                                htmlFor={`booking-page-${page.id}`}
+                                className="group-hover-opacity-container"
+                            >
+                                <SidebarListItemContent left={<IcCalendarRow />}>
+                                    <div className="flex flex-nowrap justify-space-between items-center w-full">
+                                        <p className="text-ellipsis m-0" title={page.summary}>
+                                            {page.summary}
+                                        </p>
+                                    </div>
+                                    <Tooltip title={c('Info').t`Manange booking page`}>
+                                        <SimpleDropdown
+                                            as={Button}
+                                            icon
+                                            hasCaret={false}
+                                            shape="ghost"
+                                            size="small"
+                                            className="group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm shrink-0 hidden md:inline-flex"
+                                            content={
+                                                <IcThreeDotsHorizontal
+                                                    alt={c('Sidebar calendar edit tooltip').t`Manage calendar`}
+                                                />
+                                            }
+                                        >
+                                            <DropdownMenu>
+                                                <DropdownMenuButton disabled className="text-left">{c('Action')
+                                                    .t`Edit booking page`}</DropdownMenuButton>
+                                                <DropdownMenuButton disabled className="text-left">
+                                                    {c('Action').t`Delete booking page`}
+                                                </DropdownMenuButton>
+                                                <hr className="m-0" />
+                                                <DropdownMenuLink
+                                                    href={page.link}
+                                                    className="flex flex-nowrap gap-2 justify-space-between items-center"
                                                 >
-                                                    <IcSquares alt={c('Action').t`Copy booking page link`} />
-                                                </Button>
-                                            </DropdownMenuLink>
-                                        </DropdownMenu>
-                                    </SimpleDropdown>
-                                </Tooltip>
-                            </SidebarListItemContent>
-                        </SidebarListItemLabel>
-                    </SidebarListItem>
-                ))}
+                                                    <span className="text-ellipsis color-primary text-underline">
+                                                        {page.link}
+                                                    </span>
+                                                    <Button
+                                                        className="shrink-0"
+                                                        shape="ghost"
+                                                        size="small"
+                                                        onClick={(e) => handleCopy(e, page.link)}
+                                                    >
+                                                        <IcSquares alt={c('Action').t`Copy booking page link`} />
+                                                    </Button>
+                                                </DropdownMenuLink>
+                                            </DropdownMenu>
+                                        </SimpleDropdown>
+                                    </Tooltip>
+                                </SidebarListItemContent>
+                            </SidebarListItemLabel>
+                        </SidebarListItem>
+                    ))}
             </SidebarList>
 
             {renderModal && <UpsellBookings {...modalProps} />}

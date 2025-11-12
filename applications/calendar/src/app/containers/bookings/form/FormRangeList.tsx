@@ -1,6 +1,9 @@
-import { addHours, addMinutes, isSameDay, set } from 'date-fns';
+import { useLocation } from 'react-router';
+
+import { addHours, addMinutes, isSameDay, set, startOfDay, subMinutes } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import { DateInputTwo, useNotifications } from '@proton/components/index';
@@ -9,11 +12,15 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 import { fromLocalDate, fromUTCDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
+import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
 import { createBookingRangeNextAvailableTime, validateFormData } from '../utils/bookingHelpers';
 
 export const FormRangeList = () => {
+    const location = useLocation();
+    const [userSettings] = useUserSettings();
+
     const { bookingRange, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
     const validation = validateFormData(formData);
 
@@ -52,7 +59,15 @@ export const FormRangeList = () => {
             return;
         }
 
-        addBookingRange(createBookingRangeNextAvailableTime(bookingRange, formData.timezone));
+        const { date } = fromUrlParams(location.pathname);
+        addBookingRange(
+            createBookingRangeNextAvailableTime({
+                bookingRange,
+                userSettings,
+                timezone: formData.timezone,
+                startDate: date,
+            })
+        );
     };
 
     const handlePlusClick = (range: BookingRange) => {
@@ -66,7 +81,7 @@ export const FormRangeList = () => {
         }
 
         const newStart = addHours(lastBookingOfDay.end, 1);
-        const newEnd = addHours(lastBookingOfDay.end, 2);
+        const newEnd = addMinutes(newStart, formData.duration);
 
         if (isNextDay(lastBookingOfDay.start, newStart)) {
             createNotification({ text: c('Info').t`Cannot create booking range across days` });
@@ -106,6 +121,9 @@ export const FormRangeList = () => {
                             id={`range-start-time-${range.id}`}
                             value={toLocalDateTime(range.start)}
                             onChange={(value) => handleStartChange(range, value)}
+                            min={startOfDay(toLocalDateTime(range.start))}
+                            max={subMinutes(toLocalDateTime(range.end), formData.duration)}
+                            preventNextDayOverflow
                         />
                         -
                         <label htmlFor={`range-end-time-${range.id}`} className="sr-only">{c('label')
