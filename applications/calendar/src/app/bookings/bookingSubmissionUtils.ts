@@ -23,7 +23,6 @@ import { convertTimestampToTimezone } from '@proton/shared/lib/date/timezone';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { type CreateMeetingResponse, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 import type { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 
 import {
@@ -54,16 +53,26 @@ interface PrepareBookingSubmissionParams {
 
 const prodId = getProdId(config);
 
-const getBookingConferenceDescription = async (
-    bookingDetails: BookingDetails,
-    timeslot: BookingTimeslot,
+const getBookingGeneralProperties = async ({
+    bookingDetails,
+    timeslot,
+    saveMeeting,
+    uid,
+}: {
+    bookingDetails: BookingDetails;
+    timeslot: BookingTimeslot;
     saveMeeting: (params: SaveMeetingParams) => Promise<{
         response: CreateMeetingResponse;
         passwordBase: string;
-    }>
-) => {
+    }>;
+    uid: string;
+}) => {
     if (!bookingDetails.withProtonMeetLink) {
-        return { description: { value: bookingDetails.description } };
+        return modelToGeneralProperties({
+            uid,
+            title: bookingDetails.summary,
+            location: bookingDetails.location,
+        });
     }
 
     const startDate = fromUnixTime(timeslot.startTime);
@@ -84,15 +93,13 @@ const getBookingConferenceDescription = async (
         noPasswordSave: true,
     });
 
-    const meetingId = response.Meeting.MeetingLinkName;
     const meetingLink = getMeetingLink(response.Meeting.MeetingLinkName, passwordBase);
+    const fullLink = getAppHref(meetingLink, APPS.PROTONMEET);
 
-    return modelToDescriptionProperties({
-        description: bookingDetails.description,
-        conferenceId: meetingId,
-        conferenceUrl: getAppHref(meetingLink, APPS.PROTONMEET),
-        conferenceHost: bookingDetails.inviterEmail,
-        conferenceProvider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
+    return modelToGeneralProperties({
+        uid,
+        title: bookingDetails.summary,
+        location: fullLink,
     });
 };
 
@@ -217,12 +224,7 @@ export const prepareBookingSubmission = async ({
 
     const attendeeToken = await generateAttendeeToken(attendeeEmail, uid);
 
-    // Todo check if we need to update the location with meet link
-    const generalProperties = modelToGeneralProperties({
-        uid,
-        title: bookingDetails.summary,
-        location: bookingDetails.location,
-    });
+    const generalProperties = await getBookingGeneralProperties({ timeslot, bookingDetails, saveMeeting, uid });
     const organizerProperties = modelToOrganizerProperties({ organizer: { email: organizerEmail, cn: organizerName } });
     const attendeeProperties = modelToAttendeeProperties({
         attendees: [
@@ -236,7 +238,7 @@ export const prepareBookingSubmission = async ({
             },
         ],
     });
-    const descriptionProperties = await getBookingConferenceDescription(bookingDetails, timeslot, saveMeeting);
+    const descriptionProperties = modelToDescriptionProperties({ description: bookingDetails.description });
 
     const vevent: VcalVeventComponent = withDtstamp({
         ...generalProperties,
