@@ -4,15 +4,18 @@ import { computeSha256AsBase64 } from '../crypto';
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../remote/types';
 import type { SerializedConversationMap, SerializedMessageMap, SerializedSpaceMap } from '../types';
 import {
+    type AssetId,
     type AttachmentId,
     type ConversationId,
     type MessageId,
+    type SerializedAsset,
     type SerializedAttachment,
     type SerializedAttachmentMap,
     type SerializedConversation,
     type SerializedMessage,
     type SerializedSpace,
     type SpaceId,
+    cleanSerializedAsset,
     cleanSerializedAttachment,
     cleanSerializedConversation,
     cleanSerializedMessage,
@@ -26,6 +29,7 @@ export const SPACE_STORE = 'spaces_v4';
 export const CONVERSATION_STORE = 'conversations_v4';
 export const MESSAGE_STORE = 'messages_v4';
 export const ATTACHMENT_STORE = 'attachments_v4';
+export const ASSET_STORE = 'assets_v1';
 export const REMOTE_ID_STORE = 'remote_ids_v4';
 
 export const DB_BASE_NAME = 'LumoDB';
@@ -65,6 +69,10 @@ export enum MessageStoreIndexes {
 }
 
 export enum AttachmentStoreIndexes {
+    SpaceId = 'idx_spaceId',
+}
+
+export enum AssetStoreIndexes {
     SpaceId = 'idx_spaceId',
 }
 
@@ -380,6 +388,19 @@ const storeConfigs = {
         ],
         cleanFunction: cleanSerializedAttachment,
     } satisfies StoreConfig<SerializedAttachment>,
+
+    asset: {
+        storeName: ASSET_STORE,
+        keyPath: AttachmentStoreFields.Id, // Assets use same ID structure
+        type: 'asset' satisfies ResourceType,
+        indexes: [
+            {
+                name: AssetStoreIndexes.SpaceId,
+                keyPath: AttachmentStoreFields.SpaceId,
+            },
+        ],
+        cleanFunction: cleanSerializedAsset,
+    } satisfies StoreConfig<SerializedAsset>,
 };
 
 export type UnsyncedMaps = {
@@ -395,6 +416,7 @@ export class DbApi {
     private readonly conversationStore: StoreOperations<SerializedConversation>;
     private readonly messageStore: StoreOperations<SerializedMessage>;
     private readonly attachmentStore: StoreOperations<SerializedAttachment>;
+    private readonly assetStore: StoreOperations<SerializedAsset>;
 
     constructor(userId: string | undefined) {
         this.db = this.openDb(userId);
@@ -404,6 +426,7 @@ export class DbApi {
         this.conversationStore = new StoreOperations(this.db, storeConfigs.conversation);
         this.messageStore = new StoreOperations(this.db, storeConfigs.message);
         this.attachmentStore = new StoreOperations(this.db, storeConfigs.attachment);
+        this.assetStore = new StoreOperations(this.db, storeConfigs.asset);
     }
 
     public newTransaction = async (storeName: string | string[], mode?: IDBTransactionMode) => {
@@ -484,6 +507,23 @@ export class DbApi {
 
     public deleteAttachment = async (id: AttachmentId, tx?: IDBTransaction) => {
         return this.attachmentStore.delete(id, tx);
+    };
+
+    // Asset operations
+    public addAsset = async (asset: SerializedAsset, { dirty, skipIfNotExists }: { dirty: boolean; skipIfNotExists?: boolean }, tx?: IDBTransaction) => {
+        return this.assetStore.add(asset, { dirty, skipIfNotExists }, tx);
+    };
+
+    public updateAsset = async (asset: SerializedAsset, { dirty, skipIfNotExists }: { dirty: boolean; skipIfNotExists?: boolean }, tx?: IDBTransaction) => {
+        return this.assetStore.update(asset, { dirty, skipIfNotExists }, tx);
+    };
+
+    public getAssetById = async (id: AssetId, tx?: IDBTransaction) => {
+        return this.assetStore.getById(id, tx);
+    };
+
+    public deleteAsset = async (id: AssetId, tx?: IDBTransaction) => {
+        return this.assetStore.delete(id, tx);
     };
 
     // Bulk operations
@@ -899,7 +939,7 @@ export class DbApi {
             const userAndSalt = `${userId}:${DB_NAME_SALT}`;
             const userHash = userId ? await computeSha256AsBase64(userAndSalt) : undefined;
             const dbName = userHash ? `${DB_BASE_NAME}_${userHash}` : DB_BASE_NAME;
-            const request = indexedDB.open(dbName, 8);
+            const request = indexedDB.open(dbName, 9);
             request.onupgradeneeded = async (event) => {
                 const db = (event.target as IDBOpenDBRequest).result;
                 const tx = (event.target as IDBOpenDBRequest).transaction;
@@ -966,14 +1006,34 @@ export class DbApi {
                         });
                     }
                 }
+                
+                // Migration 8 -> 9: Add assets store
+                if (event.oldVersion < 9) {
+                    console.log('Upgrading IndexedDB from version', event.oldVersion, 'to 9 (adding assets store)');
+                    if (!db.objectStoreNames.contains(ASSET_STORE)) {
+                        const F = AttachmentStoreFields; // Assets use same fields structure
+                        const I = AssetStoreIndexes;
+                        const assetStore = db.createObjectStore(ASSET_STORE, { keyPath: F.Id });
+                        assetStore.createIndex(I.SpaceId, F.SpaceId, {
+                            unique: false,
+                        });
+                        console.log('Successfully created ASSET_STORE');
+                    }
+                }
             };
 
             request.onsuccess = () => {
+                console.log('IndexedDB opened successfully, version:', request.result.version);
                 resolve(request.result);
             };
 
             request.onerror = () => {
+                console.error('IndexedDB open error:', request.error);
                 reject(request.error);
+            };
+            
+            request.onblocked = () => {
+                console.warn('IndexedDB upgrade blocked. Please close other tabs with this app open.');
             };
         });
     };
