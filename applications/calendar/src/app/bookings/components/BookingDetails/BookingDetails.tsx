@@ -21,7 +21,7 @@ export const BookingDetails = () => {
 
     return (
         <div className="mt-12 mx-auto">
-            <div className="flex gap-6">
+            <div className="flex *:min-size-auto flex-column flex-nowrap gap-6 booking-wrapper items-start">
                 <DetailsHeader />
                 <BookingsView />
             </div>

@@ -29,22 +29,24 @@ export const BookingDetailsHeader = ({ gridSize }: Props) => {
 
     return (
         <>
-            <div className="flex justify-space-between w-full mb-4 items-center">
-                <h1>{c('Title').t`Choose a time`}</h1>
+            <div className="flex flex-row justify-space-between w-full mb-4 items-center">
+                <h2 className="text-4xl mt-0 mb-2 mr-4 booking-color-title" id="booking-main-header-title">{c('Title')
+                    .t`Choose a time`}</h2>
 
                 <TimeZoneSelector
                     data-testid="calendar-view:time-zone-dropdown"
-                    className="w-auto"
+                    className="w-auto mb-2"
                     date={selectedDate}
                     timezone={selectedTimezone || bookingDetails?.timezone || getTimezone()}
                     onChange={setSelectedTimezone}
+                    unstyledSelect
                     // telemetrySource="temporary_timezone"
                     // abbreviatedTimezone={breakpoint === 'small' ? 'offset' : undefined}
                 />
             </div>
-            <div className="flex justify-space-between w-full mb-4">
-                <div>
-                    <Button pill onClick={toggle} ref={anchorRef} className="flex items-center">
+            <div className="flex justify-between w-full mb-4">
+                <div className="flex-1 flex space-between">
+                    <Button pill onClick={toggle} ref={anchorRef} className="flex items-center" aria-expanded={isOpen}>
                         {/*TODO replace icon*/}
                         <IcCalendarGrid className="mr-2" />
                         {format(selectedDate, 'MMMM Y', { locale: dateLocale })}
