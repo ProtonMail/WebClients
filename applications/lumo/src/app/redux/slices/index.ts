@@ -1,4 +1,5 @@
 import contextFiltersReducer from './contextFilters';
+import assetsReducer from './core/assets';
 import attachmentsReducer from './core/attachments';
 import conversationsReducer from './core/conversations';
 import credentialsReducer from './core/credentials';
@@ -19,6 +20,7 @@ export const lumoReducers = {
     conversations: conversationsReducer,
     messages: messagesReducer,
     attachments: attachmentsReducer,
+    assets: assetsReducer,
     credentials: credentialsReducer,
     idmap: idMapReducer,
     eligibilityStatus: eligibilityStatusReducer,
