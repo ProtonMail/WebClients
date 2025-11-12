@@ -5,6 +5,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import clsx from '@proton/utils/clsx';
 
 import UpsellModalDescription from './components/UpsellModalDescription';
 import UpsellModalUpgradeButton from './components/UpsellModalUpgradeButton';
@@ -20,6 +21,7 @@ export interface UpsellModalProps {
     description?: ReactNode;
     /** Text displayed below the description */
     customDescription?: ReactNode;
+    customDescriptionClassname?: string;
     /** On CTA click, redirect to account page instead of opening payment modal */
     preventInAppPayment?: boolean;
     onClose?: () => void;
@@ -34,6 +36,7 @@ const UpsellModal = ({
     title,
     description,
     customDescription,
+    customDescriptionClassname,
     illustration,
     onClose,
     upsellRef,
@@ -79,7 +82,9 @@ const UpsellModal = ({
                     ) : (
                         <Loader size="medium" className="color-primary" />
                     )}
-                    {!!customDescription && <div className="my-6">{customDescription}</div>}
+                    {!!customDescription && (
+                        <div className={clsx(customDescriptionClassname || 'my-6')}>{customDescription}</div>
+                    )}
                     {!!config?.footerText && <p className="mt-2 m-0 text-sm color-weak">{config.footerText}</p>}
                 </div>
             </ModalTwoContent>

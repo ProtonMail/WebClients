@@ -165,7 +165,7 @@ const AddressesUser = ({
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
     const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
         useModalState();
-    const { usedBYOEAddresses, maxBYOEAddresses } = useBYOEAddressesCounts();
+    const { byoeAddressesAvailableCount, maxBYOEAddresses } = useBYOEAddressesCounts();
 
     const isBYOEOnlyAccount = getIsBYOEOnlyAccount(addresses);
 
@@ -284,9 +284,9 @@ const AddressesUser = ({
                             <ConnectGmailButton buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`} />
                             <p className="color-weak text-sm my-2">
                                 {c('Label BYOE').ngettext(
-                                    msgid`${usedBYOEAddresses} of ${maxBYOEAddresses} email address`,
-                                    `${usedBYOEAddresses} of ${maxBYOEAddresses} email addresses`,
-                                    maxBYOEAddresses
+                                    msgid`${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email address available`,
+                                    `${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email addresses available`,
+                                    byoeAddressesAvailableCount
                                 )}
                             </p>
                         </div>
