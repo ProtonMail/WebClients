@@ -47,6 +47,7 @@ import FamilyBanner from './Upsells/FamilyBanner';
 import FamilyBannerExtendSubscription, {
     useFamilyBannerExtendSubscription,
 } from './Upsells/FamilyBannerExtendSubscription';
+import FamilyUpgradeBanner from './Upsells/FamilyUpgradeBanner';
 import PBSB2BBanner from './Upsells/PBSB2BBanner';
 import UnlimitedBannerExtendSubscription, {
     useUnlimitedBannerExtendSubscription,
@@ -366,7 +367,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: (hasPass(subscription) && subscription?.Cycle === CYCLE.YEARLY) || hasPassLifetime(user),
+            enabled: hasPass(subscription) && subscription?.Cycle === CYCLE.YEARLY,
             upsells: passPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
@@ -397,13 +398,21 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled: hasPassFamily(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
             upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
             element: (
-                <PassFamilyBannerExtendSubscription
-                    app={app}
-                    subscription={subscription as Subscription}
-                    showUpsellPanels={true}
-                    {...passFamilyBannerExtendSubscriptionUpsells}
-                />
+                <>
+                    <PassFamilyBannerExtendSubscription
+                        app={app}
+                        subscription={subscription as Subscription}
+                        showUpsellPanels={true}
+                        {...passFamilyBannerExtendSubscriptionUpsells}
+                    />
+                    <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />,
+                </>
             ),
+        },
+        {
+            enabled: hasPassFamily(subscription),
+            upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
+            element: <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />,
         },
         {
             enabled: hasBundle(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
@@ -468,6 +477,22 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
         {
             enabled: hasVPNPassBundle(subscription),
             upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    app={app}
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
+            ),
+        },
+        // This has to remain the last option as users with plan could also have pass lifetime
+        // Moving it above will result in incorrect upsell shown to the user.
+        {
+            enabled: hasPassLifetime(user),
+            upsells: passPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
                     app={app}
