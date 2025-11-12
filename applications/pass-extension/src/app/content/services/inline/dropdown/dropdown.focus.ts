@@ -76,9 +76,13 @@ export const createDropdownFocusController = ({
     const releaseFocus = (field?: FieldHandle): boolean => {
         if (!iframe.state.visible) return true;
 
-        if (isActiveElement(field?.element)) {
-            field?.interactivity.lock(DROPDOWN_FOCUS_TIMEOUT);
+        if (field && isActiveElement(field?.element)) {
+            /** Lock all fields temporarily - prevents websites from focus
+             * trapping or auto-focusing the next field during blur */
+            const fields = field.getFormHandle().getFields();
+            fields.forEach((formField) => formField.interactivity.lock(DROPDOWN_FOCUS_TIMEOUT));
             field?.element.blur();
+
             return false;
         }
 
