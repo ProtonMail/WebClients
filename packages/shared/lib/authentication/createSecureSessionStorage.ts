@@ -1,3 +1,5 @@
+import debounce from 'lodash/debounce';
+
 import { load, save } from '../helpers/secureSessionStorage';
 import createStore from '../helpers/store';
 
@@ -5,17 +7,18 @@ const createSecureSessionStorage = () => {
     const store = createStore(load());
 
     if ('onpagehide' in window) {
-        const handlePageShow = () => {
-            // This does not need to do anything. The main purpose is just to reset window.name and sessionStorage to fix the Safari 13.1 described below
-            load();
+        let finalize: (() => void) | undefined;
+        const handleSave = () => {
+            finalize = save(store.getState());
         };
-
+        // Save once on initial load.
+        handleSave();
+        // Save on every change. Debounce due to rapid setting of values.
+        store.onChange(debounce(handleSave, 50));
+        // Finalize to synchronous storage on pagehide.
         const handlePageHide = () => {
-            // Cannot use !event.persisted because Safari 13.1 does not send that when you are navigating on the same domain
-            save(store.getState());
+            finalize?.();
         };
-
-        window.addEventListener('pageshow', handlePageShow, true);
         window.addEventListener('pagehide', handlePageHide, true);
     } else {
         const handleUnload = () => {
