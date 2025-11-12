@@ -160,7 +160,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     getTimeslotsByDate: (date: Date) => {
         const dateKey = getLocalDateKey(date);
         const daySlots = get().timeslots.get(dateKey);
-        return daySlots?.timeslots || [];
+        return daySlots?.timeslots.toSorted((a, b) => a.startTime - b.startTime) || [];
     },
 
     getAllTimeslots: () => {

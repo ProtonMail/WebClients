@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import debounce from '@proton/utils/debounce';
 
-type ActiveBreakpoint = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | '2xlarge';
+export type ActiveBreakpoint = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | '2xlarge';
 
 const getActiveBreakpoint = (): ActiveBreakpoint | '' => {
     const bodyEl = document.querySelector('body');
