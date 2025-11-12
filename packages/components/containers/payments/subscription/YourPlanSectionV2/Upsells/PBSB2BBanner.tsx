@@ -31,7 +31,7 @@ const PBSB2BBanner = ({ app }: UpsellSectionBaseProps) => {
             header={
                 <PlanIconName
                     logo={<PlanIcon planName={plan} />}
-                    topLine={c('Upsell').t`Advanced security for your company?`}
+                    topLine={c('Upsell').t`Advanced security for your company`}
                     bottomLine={c('Upsell').t`Protect your organization from data breaches with ${PLAN_NAMES[plan]}.`}
                 />
             }
