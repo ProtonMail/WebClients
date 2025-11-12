@@ -43,13 +43,14 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 const form = field?.getFormHandle();
                 const layer = form?.element;
 
-                const close = () => dropdown.close();
-                const onFocusChange = onFocusChangeFactory(dropdown, request);
-
                 const app = registry.attachDropdown(layer);
                 if (!app) return;
 
                 app.open(request, ctrl);
+
+                const close = () => dropdown.close(request);
+                const onFocusChange = onFocusChangeFactory(dropdown, request);
+                const onKeyDown = (evt: KeyboardEvent) => evt.key === 'Escape' && close();
 
                 const scrollParent = form?.scrollParent;
                 const scrollOptions = { capture: true, once: true, passive: true } as const;
@@ -67,6 +68,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                 listeners.addListener(window, 'blur', onFocusChange);
                 listeners.addListener(window, 'mousedown', onBackdropClick(getAnchorField, close));
                 listeners.addListener(scrollParent, 'scroll', close, scrollOptions);
+                listeners.addListener(document, 'keydown', onKeyDown);
 
                 /** Dropdown app may be closed from within its internal
                  * lifecycle. In such cases clean-up listeners. */
