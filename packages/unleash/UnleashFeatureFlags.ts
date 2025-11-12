@@ -94,6 +94,7 @@ enum AccountFlag {
     UserGroupsNoCustomDomain = 'UserGroupsNoCustomDomain',
     MailDashboard = 'MailDashboard',
     PassDashboard = 'PassDashboard',
+    DriveDashboard = 'DriveDashboard',
 }
 
 enum PaymentsFlag {
