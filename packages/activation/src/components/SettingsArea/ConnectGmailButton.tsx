@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -11,8 +13,11 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
+import BYOEConversionModal from '../Modals/BYOEConversionModal/BYOEConversionModal';
 import GmailSyncModal from '../Modals/GmailSyncModal/GmailSyncModal';
 import ReachedLimitForwardingModal from '../Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
+import RemoveForwardingModal from '../Modals/RemoveForwardingModal/RemoveForwardingModal';
+import UpsellConversionModal from '../Modals/UpsellConversionModal/UpsellConversionModal';
 import UpsellForwardingModal from '../Modals/UpsellForwardingModal/UpsellForwardingModal';
 
 interface Props {
@@ -30,14 +35,20 @@ const ConnectGmailButton = ({
     const [addresses, loadingAddresses] = useAddresses();
 
     const { hasAccessToBYOE, isInMaintenance, handleSyncCallback } = useSetupGmailBYOEAddress();
-    const { addressesOrSyncs } = useBYOEAddressesCounts();
+    const { activeBYOEAddresses, forwardingList, isLoadingAddressesCount } = useBYOEAddressesCounts();
 
     const [syncModalProps, setSyncModalOpen, renderSyncModal] = useModalState();
     const [reachedLimitForwardingModalProps, setReachedLimitForwardingModalOpen, renderReachedLimitForwardingModal] =
         useModalState();
     const [upsellForwardingModalProps, setUpsellForwardingModalOpen, renderUpsellForwardingModal] = useModalState();
+    const [upsellConversionModalProps, setUpsellConversionModalOpen, renderUpsellConversionModal] = useModalState();
+    const [conversionModalProps, setConversionModalOpen, renderConversionModal] = useModalState();
+    const [removeForwardingModalProps, setRemoveForwardingModalOpen, renderRemoveForwardingModal] = useModalState();
 
-    const disabled = loadingUser || loadingAddresses || isInMaintenance;
+    const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
+
+    const disabled =
+        loadingUser || loadingAddresses || isInMaintenance || isLoadingAddressesCount;
 
     const handleCloseForwardingModal = (hasError?: boolean) => {
         if (!hasError) {
@@ -49,14 +60,23 @@ const ConnectGmailButton = ({
         if (!addresses) {
             return;
         }
-        // Users should see a limit modal if reaching the maximum of BYOE addresses or syncs included in their plan.
-        if (!hasPaidMail(user) && addressesOrSyncs.length >= MAX_SYNC_FREE_USER) {
+        // Users should see a limit or upsell modal if reaching the maximum of BYOE addresses included in their plan.
+        if (!hasPaidMail(user) && activeBYOEAddresses.length >= MAX_SYNC_FREE_USER) {
             setUpsellForwardingModalOpen(true);
-        } else if (addressesOrSyncs.length >= MAX_SYNC_PAID_USER) {
+        } else if (activeBYOEAddresses.length >= MAX_SYNC_PAID_USER) {
             setReachedLimitForwardingModalOpen(true);
         } else {
-            setSyncModalOpen(true);
+            if (forwardingList.length > 0 && hasAccessToBYOE) {
+                setConversionModalOpen(true);
+            } else {
+                setSyncModalOpen(true);
+            }
         }
+    };
+
+    const handleOpenSyncModal = async (expectedEmailAddress: string | undefined) => {
+        setExpectedEmailAddress(expectedEmailAddress);
+        setSyncModalOpen(true);
     };
 
     return (
@@ -81,14 +101,27 @@ const ConnectGmailButton = ({
                             : EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS
                     }
                     hasAccessToBYOE={hasAccessToBYOE}
+                    expectedEmailAddress={expectedEmailAddress}
+                    onCloseCallback={() => setExpectedEmailAddress(undefined)}
                     {...syncModalProps}
                 />
             )}
 
+            {renderConversionModal && (
+                <BYOEConversionModal
+                    openUpsellModal={() => setUpsellConversionModalOpen(true)}
+                    openSyncModal={handleOpenSyncModal}
+                    openRemoveForwardingModal={() => setRemoveForwardingModalOpen(true)}
+                    {...conversionModalProps}
+                />
+            )}
+
             {renderReachedLimitForwardingModal && <ReachedLimitForwardingModal {...reachedLimitForwardingModalProps} />}
+            {renderUpsellConversionModal && <UpsellConversionModal modalProps={upsellConversionModalProps} />}
             {renderUpsellForwardingModal && (
                 <UpsellForwardingModal hasAccessToBYOE={hasAccessToBYOE} modalProps={upsellForwardingModalProps} />
             )}
+            {renderRemoveForwardingModal && <RemoveForwardingModal {...removeForwardingModalProps} />}
         </>
     );
 };
