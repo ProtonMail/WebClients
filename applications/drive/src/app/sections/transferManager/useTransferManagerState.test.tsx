@@ -41,6 +41,7 @@ const createDownloadItem = (overrides: Partial<DownloadItem> = {}): DownloadItem
     speedBytesPerSecond: 0,
     nodeUids: [],
     malawareDetected: undefined,
+    lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? new Date('2024-01-01T00:00:00Z'),
     ...overrides,
 });
 
@@ -52,6 +53,7 @@ const createUploadItem = (overrides: Partial<UploadItem> = {}): UploadItem => {
         status: UploadStatus.Pending,
         speedBytesPerSecond: undefined,
         batchId: 'batch-1',
+        lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? new Date('2024-01-01T00:00:00Z'),
         ...overrides,
     } as UploadItem;
 };
@@ -198,6 +200,63 @@ describe('useTransferManagerState', () => {
         expect(result.current.uploads[0].clearTextSize).toBe(0);
     });
 
+    it('should prioritize in-progress transfers and order by last status update', () => {
+        const mostRecent = new Date('2024-03-01T00:00:00Z');
+        const recent = new Date('2024-02-15T00:00:00Z');
+        const older = new Date('2024-02-01T00:00:00Z');
+        const oldest = new Date('2024-01-01T00:00:00Z');
+
+        addDownloadItems(
+            createDownloadItem({
+                downloadId: 'download-finished',
+                name: 'Finished download',
+                status: DownloadStatus.Finished,
+                downloadedBytes: 100,
+                lastStatusUpdateTime: recent,
+            }),
+            createDownloadItem({
+                downloadId: 'download-in-progress',
+                name: 'Active download',
+                status: DownloadStatus.InProgress,
+                downloadedBytes: 25,
+                lastStatusUpdateTime: mostRecent,
+            })
+        );
+
+        addUploadItems(
+            {
+                uploadId: 'upload-in-progress',
+                item: createUploadItem({
+                    name: 'Active upload',
+                    uploadedBytes: 40,
+                    status: UploadStatus.InProgress,
+                    type: NodeType.File,
+                    lastStatusUpdateTime: older,
+                }),
+            },
+            {
+                uploadId: 'upload-finished',
+                item: createUploadItem({
+                    name: 'Finished upload',
+                    uploadedBytes: 80,
+                    status: UploadStatus.Finished,
+                    type: NodeType.File,
+                    lastStatusUpdateTime: oldest,
+                }),
+            }
+        );
+
+        const { result } = renderHook(() => useTransferManagerState());
+        const idsInOrder = result.current.items.map(({ id }) => id);
+
+        expect(idsInOrder).toEqual([
+            'download-in-progress',
+            'upload-in-progress',
+            'download-finished',
+            'upload-finished',
+        ]);
+    });
+
     it('should handle large queues without significant slowdown', () => {
         const downloadItems = new Map<string, DownloadItem>();
         const queueIds = new Set<string>();
@@ -215,6 +274,7 @@ describe('useTransferManagerState', () => {
                 speedBytesPerSecond: 0,
                 nodeUids: [],
                 malawareDetected: undefined,
+                lastStatusUpdateTime: new Date('2024-01-01T00:00:00Z'),
             });
             queueIds.add(id);
         }

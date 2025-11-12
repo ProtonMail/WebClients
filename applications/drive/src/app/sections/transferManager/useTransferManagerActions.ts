@@ -73,6 +73,7 @@ export const useTransferManagerActions = () => {
             submitText,
             cancelText,
             message,
+            canUndo: true,
             // needs to be async because that's required by ConfirmModal.onSubmit
             onSubmit: async () => {
                 for (const entry of entries) {
