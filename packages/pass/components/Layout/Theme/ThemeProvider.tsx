@@ -23,7 +23,7 @@ const getThemeConfig = (theme: PassThemeOption): ThemeConfig => {
         case PassThemeOption.PassLight:
             return { className: 'pass-light', styles: passLightTheme.toString() };
         case PassThemeOption.OS:
-            return getThemeConfig(matchDarkTheme().matches ? PassThemeOption.PassDark : PassThemeOption.PassLight);
+            return getThemeConfig(matchDarkTheme()?.matches ? PassThemeOption.PassDark : PassThemeOption.PassLight);
     }
 };
 
