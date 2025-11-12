@@ -22,6 +22,8 @@ import type { LumoUserSettings } from './redux/slices/lumoUserSettings';
 import type { SerializedUserSettings, UserSettingsToApi } from './remote/types';
 import {
     type AdString,
+    type Asset,
+    type AssetPub,
     type Attachment,
     type AttachmentPub,
     type Conversation,
@@ -30,6 +32,7 @@ import {
     type Message,
     type MessagePriv,
     type MessagePub,
+    type SerializedAsset,
     type SerializedAttachment,
     type SerializedConversation,
     type SerializedMessage,
@@ -38,15 +41,18 @@ import {
     type SpaceKeyClear,
     type SpaceKeyEnc,
     type SpacePub,
+    getAssetPub,
     getAttachmentPub,
     getConversationPub,
     getMessagePriv,
     getMessagePub,
     getSpaceDek,
     getSpacePub,
+    isAssetPriv,
     isAttachmentPriv,
     isConversationPriv,
     isEmptyMessagePriv,
+    splitAsset,
     isMessagePriv,
     isSpacePriv,
     splitAttachment,
@@ -113,6 +119,16 @@ function getMessageAd(message: MessagePub): AdString {
 // This has consequences in terms of backward compatibility: if you
 // change this logic, this might make older messages unreadable,
 // because the AD won't match anymore during decryption.
+function getAssetAd(asset: AssetPub): AdString {
+    const { id } = asset;
+    const _adString = stableStringify({
+        app: APP_NAME,
+        type: 'asset',
+        assetId: id,
+    });
+    return _adString;
+}
+
 function getAttachmentAd(attachment: AttachmentPub): AdString {
     const { id } = attachment;
     
@@ -344,6 +360,69 @@ export async function deserializeAttachment(
     }
 }
 
+// Asset serialization functions
+export async function serializeAsset(asset: Asset, spaceDek: AesGcmCryptoKey): Promise<SerializedAsset | null> {
+    try {
+        const ad = getAssetAd(asset);
+        const { assetPriv, assetPub } = splitAsset(asset);
+        const { processing, ...assetPubRest } = assetPub;
+
+        // Copy metadata from Pub to Priv (same pattern as attachments)
+        const { mimeType, rawBytes } = assetPub;
+        const privPlus = {
+            ...assetPriv,
+            mimeType,
+            rawBytes,
+        };
+
+        const packed = msgpackEncode(privPlus) as Uint8Array<ArrayBuffer>;
+        const encrypted: EncryptedData = await encryptUint8Array(packed, spaceDek, ad);
+        return {
+            ...assetPubRest,
+            encrypted,
+        };
+    } catch (e) {
+        safeLogger.warn(`Cannot serialize asset ${asset.id}:`, e);
+        return null;
+    }
+}
+
+export async function deserializeAsset(
+    serializedAsset: SerializedAsset,
+    spaceDek: AesGcmCryptoKey
+): Promise<Asset | null> {
+    try {
+        const assetPub = getAssetPub(serializedAsset);
+        const ad = getAssetAd(serializedAsset);
+        const { encrypted } = serializedAsset;
+        if (encrypted === undefined) {
+            console.log(`not deserializing ${serializedAsset.id}: asset has no encrypted data`);
+            return null;
+        }
+        const packed = await decryptUint8Array(encrypted, spaceDek, ad);
+        const decodedWithNulls = msgpackDecode(packed);
+        if (!isObject(decodedWithNulls)) {
+            throw new Error('Deserialized data is not an object');
+        }
+        // msgpack can turn undefined into nulls, we revert that
+        const decoded = objectMapV(decodedWithNulls, (v) => (v === null ? undefined : v));
+        if (!isAssetPriv(decoded)) {
+            throw new Error('Deserialized object is not an AssetPriv');
+        }
+        // Copy metadata from priv to pub
+        const mimeType = (decoded as { mimeType?: unknown }).mimeType;
+        const rawBytes = (decoded as { rawBytes?: unknown }).rawBytes;
+        return {
+            ...assetPub,
+            ...decoded,
+            ...(mimeType && typeof mimeType === 'string' ? { mimeType } : {}),
+            ...(!isNil(rawBytes) && typeof rawBytes === 'number' && Number.isInteger(rawBytes) ? { rawBytes } : {}),
+        };
+    } catch (e) {
+        safeLogger.warn(`Cannot deserialize asset ${serializedAsset.id}:`, e);
+        return null;
+    }
+}
 
 // User settings serialization functions
 // Warning: It is critical to always get the same AD for the same user settings.

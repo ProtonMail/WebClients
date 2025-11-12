@@ -3,8 +3,8 @@ import type { Selector } from 'react-redux';
 import type { UserState } from '@proton/account';
 
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
-import type { Attachment, Conversation, Message, Space } from '../types';
-import { type ConversationId, type MessageId, Role, type SpaceId } from '../types';
+import type { Asset, Attachment, Conversation, Message, Space } from '../types';
+import { type AssetId, type ConversationId, type MessageId, Role, type SpaceId } from '../types';
 import { listify, mapIds, setify } from '../util/collections';
 import { sortByDate } from '../util/date';
 import { objectFilterV } from '../util/objects';
@@ -22,6 +22,7 @@ export const selectMessages = (state: RootState) => state.messages;
 export const selectMasterKey = (state: RootState) => state.credentials.masterKey;
 export const selectConversations = (state: RootState) => state.conversations;
 export const selectAttachments = (state: RootState) => state.attachments;
+export const selectAssets = (state: RootState) => state.assets;
 
 export const selectMessageById =
     (id: MessageId): LumoSelector<Message | undefined> =>
@@ -57,6 +58,14 @@ export const selectMessagesBySpaceId = (spaceId: SpaceId | null | undefined) => 
 
 export const selectAttachmentsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
     objectFilterV(state.attachments, (c: Attachment) => c.spaceId === spaceId);
+
+export const selectAssetById =
+    (id: AssetId): LumoSelector<Asset | undefined> =>
+    (state: RootState): Asset | undefined =>
+        state.assets[id];
+
+export const selectAssetsBySpaceId = (spaceId: SpaceId | null | undefined) => (state: LumoState) =>
+    objectFilterV(state.assets, (asset: Asset) => asset.spaceId === spaceId);
 
 export const selectAllUserMessages = (state: LumoState) =>
     objectFilterV(state.messages, (m: Message) => m.role === Role.User);

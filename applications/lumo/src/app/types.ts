@@ -16,6 +16,7 @@ export type SpaceId = Uuid;
 export type ConversationId = Uuid;
 export type MessageId = Uuid;
 export type AttachmentId = Uuid;
+export type AssetId = Uuid;
 export type RequestId = Uuid;
 
 const UUID_RE = /^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$/;
@@ -523,6 +524,116 @@ export function isAttachment(value: any): value is Attachment {
 
 export function isShallowAttachment(value: any): value is ShallowAttachment {
     return isAttachment(value) && value.data === undefined && value.markdown === undefined;
+}
+
+// *** Asset (Space-level file) ***
+
+export type AssetPub = {
+    id: AssetId;
+    spaceId: SpaceId; // Assets always belong to a space (unlike provisional attachments)
+    uploadedAt: string;
+    mimeType?: string;
+    rawBytes?: number;
+    processing?: boolean; // not meant to be persisted
+    error?: boolean; // not meant to be persisted
+};
+
+export type AssetPriv = {
+    filename: string;
+    data?: Uint8Array<ArrayBuffer>;
+    markdown?: string;
+    errorMessage?: string;
+    truncated?: boolean;
+    originalRowCount?: number;
+    processedRowCount?: number;
+    tokenCount?: number;
+};
+
+export type Asset = AssetPub & AssetPriv;
+export type SerializedAsset = AssetPub & Partial<Encrypted> & LocalFlags;
+export type DeletedAsset = Omit<SerializedAsset, 'encrypted'> & Deleted;
+export type SerializedAssetMap = Record<AssetId, SerializedAsset>;
+
+export function cleanSerializedAsset(asset: SerializedAsset): SerializedAsset {
+    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error, encrypted, dirty, deleted } = asset;
+    return {
+        id,
+        spaceId,
+        ...(mimeType !== undefined && { mimeType }),
+        uploadedAt,
+        ...(rawBytes !== undefined && { rawBytes }),
+        ...(processing && { processing: true }),
+        ...(error && { error: true }),
+        ...(encrypted ? { encrypted } : {}),
+        ...(dirty && { dirty: true }),
+        ...(deleted && { deleted: true }),
+    };
+}
+
+export function getAssetPub(asset: AssetPub): AssetPub {
+    const { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error } = asset;
+    return { id, spaceId, mimeType, uploadedAt, rawBytes, processing, error };
+}
+
+export function getAssetPriv(asset: AssetPriv): AssetPriv {
+    const { filename, data, markdown, errorMessage, truncated, originalRowCount, processedRowCount, tokenCount } =
+        asset;
+    return { filename, data, markdown, errorMessage, truncated, originalRowCount, processedRowCount, tokenCount };
+}
+
+export function splitAsset(asset: Asset): { assetPriv: AssetPriv; assetPub: AssetPub } {
+    return {
+        assetPriv: getAssetPriv(asset),
+        assetPub: getAssetPub(asset),
+    };
+}
+
+export function isAssetPriv(value: any): value is AssetPriv {
+    return (
+        typeof value === 'object' &&
+        value !== null &&
+        typeof value.filename === 'string' &&
+        (value.data === undefined || value.data instanceof Uint8Array) &&
+        (value.markdown === undefined || typeof value.markdown === 'string') &&
+        (value.errorMessage === undefined || typeof value.errorMessage === 'string') &&
+        (value.truncated === undefined || typeof value.truncated === 'boolean') &&
+        (value.originalRowCount === undefined || typeof value.originalRowCount === 'number') &&
+        (value.processedRowCount === undefined || typeof value.processedRowCount === 'number') &&
+        (value.tokenCount === undefined || typeof value.tokenCount === 'number')
+    );
+}
+
+export function cleanAsset(asset: Asset): Asset {
+    const {
+        id,
+        spaceId,
+        mimeType,
+        uploadedAt,
+        rawBytes,
+        filename,
+        data,
+        markdown,
+        errorMessage,
+        truncated,
+        originalRowCount,
+        processedRowCount,
+        tokenCount,
+    } = asset;
+    return {
+        id,
+        spaceId,
+        ...(mimeType !== undefined && { mimeType }),
+        uploadedAt,
+        ...(rawBytes !== undefined && { rawBytes }),
+        filename,
+        ...(data && { data }),
+        ...(markdown && { markdown }),
+        ...(errorMessage && { errorMessage }),
+        ...(truncated && { truncated }),
+        ...(originalRowCount !== undefined && { originalRowCount }),
+        ...(processedRowCount !== undefined && { processedRowCount }),
+        ...(tokenCount !== undefined && { tokenCount }),
+    };
 }
 
 export function getAttachmentPub(attachment: AttachmentPub): AttachmentPub {
