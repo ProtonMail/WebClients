@@ -1,6 +1,8 @@
 import { addDays, isBefore, startOfDay } from 'date-fns';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
@@ -18,17 +20,21 @@ export const BookingNavigationButtons = ({ gridSize }: Props) => {
 
     return (
         <div className="flex gap-2">
-            <Button
-                icon
-                pill
-                onClick={() => setSelectedDate(addDays(selectedDate, -gridSize))}
-                disabled={isInEarliestRange}
-            >
-                <IcChevronLeft />
-            </Button>
-            <Button icon pill onClick={() => setSelectedDate(addDays(selectedDate, gridSize))}>
-                <IcChevronRight />
-            </Button>
+            <Tooltip title={c('Action').t`See previous availability`}>
+                <Button
+                    icon
+                    pill
+                    onClick={() => setSelectedDate(addDays(selectedDate, -gridSize))}
+                    disabled={isInEarliestRange}
+                >
+                    <IcChevronLeft alt={c('Action').t`See previous availability`} />
+                </Button>
+            </Tooltip>
+            <Tooltip title={c('Action').t`See upcoming availability`}>
+                <Button icon pill onClick={() => setSelectedDate(addDays(selectedDate, gridSize))}>
+                    <IcChevronRight alt={c('Action').t`See upcoming availability`} />
+                </Button>
+            </Tooltip>
         </div>
     );
 };

@@ -53,54 +53,76 @@ export const BookingsView = () => {
     }, [gridSize, getTimeslotsByDate, bookingDetails, selectedDate]);
 
     return (
-        <div>
+        <main className="flex-1 w-full" aria-labelledby="booking-main-header-title">
             <BookingDetailsHeader gridSize={gridSize} />
 
-            <div className="flex gap-2">
-                {range.map((date, i) => (
-                    <div key={date.getTime()}>
-                        <div className="flex flex-column items-center">
-                            <p className="m-0">{format(date, 'EEE', { locale: dateLocale })}</p>
-                            <p
-                                className={clsx(
-                                    'm-0 h-8 w-8 text-lg text-semibold',
-                                    isToday(date) && 'rounded-full bg-primary'
-                                )}
-                            >
-                                {format(date, 'd', { locale: dateLocale })}
-                            </p>
+            <div className="flex flex-row flex-nowrap gap-2 w-full">
+                {range.map((date, i) => {
+                    const dateHeaderShortString = format(date, 'EEE', { locale: dateLocale });
+                    const dateHeaderLongString = format(date, 'EEEE d MMMM yyyy', { locale: dateLocale });
+                    const dateNumberString = format(date, 'd', { locale: dateLocale });
+
+                    return (
+                        <div className="flex-1" key={date.getTime()}>
+                            <h3 className="flex flex-column flex-nowrap items-center text-rg mb-2">
+                                <div className="sr-only">{dateHeaderLongString}</div>
+                                <div className="text-sm" aria-hidden="true">
+                                    {dateHeaderShortString}
+                                </div>
+                                <div
+                                    className={clsx(
+                                        'flex items-center justify-center m-0 text-lg text-semibold ratio-square rounded-full booking-heading-number',
+                                        isToday(date) && 'bg-primary'
+                                    )}
+                                    aria-hidden="true"
+                                >
+                                    <span className="lh100">{dateNumberString}</span>
+                                </div>
+                            </h3>
+                            <ul className="unstyled m-0 p-0 flex flex-column gap-2">
+                                {canShowSlots &&
+                                    slotsArray[i].map((timeslot, j) => {
+                                        const timeString = timeslot
+                                            ? format(timeslot.date, 'HH:mm', { locale: dateLocale })
+                                            : undefined;
+                                        return timeslot ? (
+                                            <li>
+                                                <Button
+                                                    key={timeslot.id}
+                                                    shape="outline"
+                                                    color="weak"
+                                                    className="w-full booking-button-slot-outline"
+                                                    onClick={() => {
+                                                        setTimeslot(timeslot);
+                                                        setBookSlotModalOpen(true);
+                                                    }}
+                                                    title={
+                                                        // if we don't want this title, we can use aria-label instead, it will be more explicit for blind users
+                                                        // translator: Full sentence would be: "Select <Tuesday, 12th November 2025> at <10:00>"
+                                                        c('Action').t`Select ${dateHeaderLongString} at ${timeString}`
+                                                    }
+                                                >
+                                                    {format(timeslot.date, 'HH:mm', { locale: dateLocale })}
+                                                </Button>
+                                            </li>
+                                        ) : (
+                                            <li aria-hidden="true">
+                                                <Button
+                                                    key={`${i}-${j}`}
+                                                    disabled
+                                                    shape="outline"
+                                                    color="norm"
+                                                    className="w-full"
+                                                >
+                                                    -
+                                                </Button>
+                                            </li>
+                                        );
+                                    })}
+                            </ul>
                         </div>
-                        <div className="flex flex-column gap-2">
-                            {canShowSlots &&
-                                slotsArray[i].map((timeslot, j) => {
-                                    return timeslot ? (
-                                        <Button
-                                            key={timeslot.id}
-                                            shape="outline"
-                                            color="norm"
-                                            className="w-full"
-                                            onClick={() => {
-                                                setTimeslot(timeslot);
-                                                setBookSlotModalOpen(true);
-                                            }}
-                                        >
-                                            {format(timeslot.date, 'HH:mm', { locale: dateLocale })}
-                                        </Button>
-                                    ) : (
-                                        <Button
-                                            key={`${i}-${j}`}
-                                            disabled
-                                            shape="outline"
-                                            color="norm"
-                                            className="w-full"
-                                        >
-                                            -
-                                        </Button>
-                                    );
-                                })}
-                        </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
             {!canShowSlots && (
                 <div className="border rounded flex flex-column items-center justify-center p-8 mt-2 text-center">
@@ -110,6 +132,6 @@ export const BookingsView = () => {
                 </div>
             )}
             {renderBookModal && timeslot && <BookSlotModal timeslot={timeslot} {...bookSlotModalProps} />}
-        </div>
+        </main>
     );
 };
