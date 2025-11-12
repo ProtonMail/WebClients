@@ -1,25 +1,27 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import type { EasySwitchFeatureFlag, OAuthProps } from '@proton/activation/src/interface';
+import type { EasySwitchFeatureFlag, ImportToken, OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
+import { SyncTokenStrategy, deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';
+import { Alert, DropdownActions, Prompt, useApi, useModalState } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
-import { getIsBYOEAccount } from '@proton/shared/lib/keys';
+
+import { getTokensByFeature } from '../../../api';
 
 interface Props {
     syncId: string;
 }
 
 const SyncRowActions = ({ syncId }: Props) => {
-    const [user] = useUser();
+    const api = useApi();
+    const [addresses = [], loadingAddresses] = useAddresses();
     const dispatch = useEasySwitchDispatch();
 
     const syncItem = useEasySwitchSelector((state) => selectSyncById(state, syncId));
@@ -34,29 +36,53 @@ const SyncRowActions = ({ syncId }: Props) => {
 
     const { feature } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
 
-    const handleReconnectClick = () => {
-        void triggerOAuthPopup({
-            provider: OAUTH_PROVIDER.GOOGLE,
-            // We don't know if the sync is a forwarding or a BYOE, so we want to reconnect the user using the full scope for now
-            features: [getIsBYOEAccount(user) ? EASY_SWITCH_FEATURES.BYOE : EASY_SWITCH_FEATURES.IMPORT_MAIL],
-            callback: async (oAuthProps: OAuthProps) => {
-                const { Code, Provider, RedirectUri } = oAuthProps;
+    const handleReconnectClick = async () => {
+        const emailAddresses = addresses.map((address) => address.Email);
+        const isBYOE = emailAddresses.includes(syncItem.account);
+        const features = [isBYOE ? EASY_SWITCH_FEATURES.BYOE : EASY_SWITCH_FEATURES.IMPORT_MAIL];
 
-                void withLoadingApiChange(
-                    dispatch(
-                        resumeSyncItem({
-                            Code,
-                            Provider,
-                            RedirectUri,
-                            Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_SYNC,
-                            successNotification: { text: c('action').t`Resuming forward` },
-                            syncId,
-                            importerId: syncItem.importerID,
-                        })
-                    )
-                );
-            },
-        });
+        const { Tokens } = await api<{ Tokens: ImportToken[] }>(
+            getTokensByFeature({
+                Account: syncItem.account,
+                Features: features,
+                Provider: OAUTH_PROVIDER.GOOGLE,
+            })
+        );
+
+        if (Tokens.length > 0) {
+            void dispatch(
+                resumeSyncItem({
+                    type: SyncTokenStrategy.useExisting,
+                    token: Tokens[0],
+                    successNotification: { text: c('action').t`Resuming forward` },
+                    syncId,
+                    importerId: syncItem.importerID,
+                })
+            );
+        } else {
+            void triggerOAuthPopup({
+                provider: OAUTH_PROVIDER.GOOGLE,
+                features,
+                callback: async (oAuthProps: OAuthProps) => {
+                    const { Code, Provider, RedirectUri } = oAuthProps;
+
+                    void withLoadingApiChange(
+                        dispatch(
+                            resumeSyncItem({
+                                type: SyncTokenStrategy.create,
+                                Code,
+                                Provider,
+                                RedirectUri,
+                                Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_SYNC,
+                                successNotification: { text: c('action').t`Resuming forward` },
+                                syncId,
+                                importerId: syncItem.importerID,
+                            })
+                        )
+                    );
+                },
+            });
+        }
     };
 
     const getStoppedAction = () => {
@@ -97,7 +123,7 @@ const SyncRowActions = ({ syncId }: Props) => {
     return (
         <>
             <DropdownActions
-                loading={loadingApiChange}
+                loading={loadingApiChange || loadingAddresses}
                 size="small"
                 list={syncItem.state === ApiSyncState.ACTIVE ? activeAction : getStoppedAction()}
             />

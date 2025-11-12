@@ -15,6 +15,16 @@ export const getTokens = () => ({
     method: 'GET',
 });
 
+export const getTokensByFeature = (params: {
+    Account: string;
+    Features: EASY_SWITCH_FEATURES[];
+    Provider: OAUTH_PROVIDER;
+}) => ({
+    url: 'oauth-token/v1/tokens/features',
+    method: 'GET',
+    params,
+});
+
 export const createToken = (
     data: OAuthProps & {
         Features: EASY_SWITCH_FEATURES[];
@@ -180,8 +190,8 @@ export const createSignupOAuthToken = (
     data,
 });
 
-export const createBYOEAddress = ({Email, OrganizationId}: {Email: string, OrganizationId?: string}) => ({
+export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; OrganizationId?: string }) => ({
     url: 'mail/v4/byoe-address',
     method: 'POST',
-    data: {Email, OrganizationId},
-})
+    data: { Email, OrganizationId },
+});

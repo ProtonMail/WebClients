@@ -59,7 +59,7 @@ const BYOEConversionModal = ({ openSyncModal, openUpsellModal, openRemoveForward
     };
 
     return (
-        <ModalTwo {...rest}>
+        <ModalTwo {...rest} data-testid="converstionModal">
             <ModalTwoHeader title={c('loc_nightly: BYOE').t`Send and receive Gmail using ${MAIL_APP_NAME}`} />
             <ModalTwoContent>
                 <p className="color-weak">
