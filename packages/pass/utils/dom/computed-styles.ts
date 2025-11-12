@@ -22,7 +22,7 @@ export const createStyleParser = (node: HTMLElement): StyleParser => {
 };
 
 export const pixelParser = (value: string) => parseInt(value.replace('px', ''), 10);
-export const pixelEncoder = (value: number): string => `${value}px`;
+export const pixelEncoder = (value: number): string => `${Math.round(value)}px`;
 export const pixelTransformer = (value: string, transformer: (value: number) => number): string =>
     pipe(pixelParser, transformer, pixelEncoder)(value);
 
