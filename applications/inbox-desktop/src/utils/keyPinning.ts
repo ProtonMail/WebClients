@@ -3,6 +3,7 @@ import { Request } from "electron";
 import { CERT_PROTON_ME } from "../constants";
 import { isProdEnv } from "./isProdEnv";
 import { isHostAllowed } from "./urls/urlTests";
+import { networkLogger } from "./log";
 
 export const checkKeys = (request: Request) => {
     if (isHostAllowed(request.hostname)) {
@@ -13,6 +14,7 @@ export const checkKeys = (request: Request) => {
 
         if (hasProtonMeCert(request)) return 0;
 
+        networkLogger.error("Certificate Pinning failed for host", request.hostname);
         return -2;
     }
 
