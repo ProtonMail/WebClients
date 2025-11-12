@@ -113,14 +113,21 @@ export function sendMessage({
             dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         }
 
-        // Get space-level attachments (project files) and include them with the message
+        // Get space-level attachments and assets (project files) and include them with the message
         const allAttachmentsState = state.attachments;
+        const allAssetsState = state.assets;
+        
         const spaceAttachments = Object.values(allAttachmentsState).filter(
             (att: any) => att.spaceId === spaceId && !att.processing && !att.error
         );
         
-        // Combine space attachments with provisional attachments (remove duplicates)
-        const allMessageAttachments = [...spaceAttachments];
+        // Get space assets (project-level files) - they have same shape as attachments
+        const spaceAssets = Object.values(allAssetsState).filter(
+            (asset: any) => asset.spaceId === spaceId && !asset.processing && !asset.error && !asset.deleted
+        );
+        
+        // Combine space attachments, space assets, and provisional attachments (remove duplicates)
+        const allMessageAttachments = [...spaceAttachments, ...spaceAssets];
         attachments.forEach((att) => {
             if (!allMessageAttachments.some((a) => a.id === att.id)) {
                 allMessageAttachments.push(att);
