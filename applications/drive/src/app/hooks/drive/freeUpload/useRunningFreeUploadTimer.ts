@@ -20,9 +20,8 @@ type Timeout = ReturnType<typeof setTimeout>;
 export function useRunningFreeUploadTimer(createTime?: number) {
     const canUseFreeUpload = useFreeUploadFeature();
 
-    const { secondsLeft, refreshSecondsLeft, beginCountdown, abortCountdown } = useFreeUploadStore(
+    const { refreshSecondsLeft, beginCountdown, abortCountdown } = useFreeUploadStore(
         useShallow((state) => ({
-            secondsLeft: state.secondsLeft,
             refreshSecondsLeft: state.refreshSecondsLeft,
             beginCountdown: state.beginCountdown,
             abortCountdown: state.abortCountdown,
@@ -57,7 +56,9 @@ export function useRunningFreeUploadTimer(createTime?: number) {
                 }
             })
             .catch(sendErrorReport);
-    }, [beginCountdown, checkFreeUploadTimer, createTime]);
+    }, [beginCountdown, canUseFreeUpload, checkFreeUploadTimer, createTime]);
+
+    const [freeUploadOverModal, showFreeUploadOverModal] = useFreeUploadOverModal();
 
     // Manage internal timer
     const interval = useRef<Timeout>();
@@ -67,7 +68,8 @@ export function useRunningFreeUploadTimer(createTime?: number) {
                 // In case the kill switch is on while the timer has already started
                 clearInterval(interval.current);
                 interval.current = undefined;
-                abortCountdown(); // secondsLeft becomes 0 and onTimerEnd is called
+                abortCountdown(); // secondsLeft becomes 0
+                showFreeUploadOverModal({});
             }
             return;
         }
@@ -75,16 +77,7 @@ export function useRunningFreeUploadTimer(createTime?: number) {
         refreshSecondsLeft();
         interval.current = setInterval(() => refreshSecondsLeft(), 1000);
         return () => clearInterval(interval.current);
-    }, [abortCountdown, isFreeUploadInProgress, refreshSecondsLeft]);
-
-    // Manage "free upload over" modal
-    const [freeUploadOverModal, showFreeUploadOverModal] = useFreeUploadOverModal();
-    // Make modal visible when time is up
-    useEffect(() => {
-        if (secondsLeft === 0) {
-            showFreeUploadOverModal({});
-        }
-    }, [secondsLeft, showFreeUploadOverModal]);
+    }, [abortCountdown, isFreeUploadInProgress, refreshSecondsLeft, showFreeUploadOverModal]);
 
     return freeUploadOverModal;
 }
