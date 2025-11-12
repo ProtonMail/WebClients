@@ -66,7 +66,7 @@ export const FormRangeList = () => {
         }
 
         const newStart = addHours(lastBookingOfDay.end, 1);
-        const newEnd = addHours(lastBookingOfDay.end, 2);
+        const newEnd = addMinutes(newStart, formData.duration);
 
         if (isNextDay(lastBookingOfDay.start, newStart)) {
             createNotification({ text: c('Info').t`Cannot create booking range across days` });
