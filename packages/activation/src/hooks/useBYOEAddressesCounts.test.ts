@@ -1,6 +1,12 @@
 import { renderHook } from '@testing-library/react';
 
-import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_FLAGS,
+    ADDRESS_RECEIVE,
+    ADDRESS_SEND,
+    ADDRESS_STATUS,
+    PRODUCT_BIT,
+} from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { ApiSyncState } from '../api/api.interface';
@@ -57,7 +63,7 @@ const sync1 = {
 
 const sync2 = {
     id: 'sync2',
-    account: 'test3@proton.me',
+    account: 'test3@gmail.com',
     importerID: 'importer2',
     product: ImportType.MAIL,
     state: ApiSyncState.ACTIVE,
@@ -76,7 +82,7 @@ describe('useBYOEAddressesCounts', () => {
     it('should return expected data for free user', () => {
         const addresses: Address[] = [enabledBYOEAddress, disconnectedBYOEAddress, internalAddress];
         const syncs: Sync[] = [sync1, sync2];
-        const user = { hasPaidMail: false };
+        const user = { Subscribed: 0 };
 
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
@@ -87,14 +93,15 @@ describe('useBYOEAddressesCounts', () => {
         expect(result.current.byoeAddresses).toEqual([enabledBYOEAddress, disconnectedBYOEAddress]);
         expect(result.current.activeBYOEAddresses).toEqual([enabledBYOEAddress]);
         expect(result.current.addressesOrSyncs).toEqual(syncs);
-        expect(result.current.usedBYOEAddresses).toBe(2);
+        expect(result.current.forwardingList).toEqual([sync2]);
+        expect(result.current.byoeAddressesAvailableCount).toBe(0);
         expect(result.current.maxBYOEAddresses).toBe(MAX_SYNC_FREE_USER);
     });
 
     it('should return expected data for paid user', () => {
         const addresses: Address[] = [enabledBYOEAddress, disconnectedBYOEAddress, internalAddress];
         const syncs: Sync[] = [sync1, sync2];
-        const user = { hasPaidMail: true };
+        const user = { Subscribed: PRODUCT_BIT.MAIL };
 
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
@@ -105,14 +112,15 @@ describe('useBYOEAddressesCounts', () => {
         expect(result.current.byoeAddresses).toEqual([enabledBYOEAddress, disconnectedBYOEAddress]);
         expect(result.current.activeBYOEAddresses).toEqual([enabledBYOEAddress]);
         expect(result.current.addressesOrSyncs).toEqual(syncs);
-        expect(result.current.usedBYOEAddresses).toBe(2);
+        expect(result.current.forwardingList).toEqual([sync2]);
+        expect(result.current.byoeAddressesAvailableCount).toBe(2);
         expect(result.current.maxBYOEAddresses).toBe(MAX_SYNC_PAID_USER);
     });
 
     it('should handle empty addresses and syncs', () => {
         const addresses: Address[] = [];
         const syncs: Sync[] = [];
-        const user = { hasPaidMail: false };
+        const user = { Subscribed: 0 };
 
         mockUseAddresses.mockReturnValue([addresses]);
         mockUseUser.mockReturnValue([user]);
@@ -123,7 +131,8 @@ describe('useBYOEAddressesCounts', () => {
         expect(result.current.byoeAddresses).toEqual([]);
         expect(result.current.activeBYOEAddresses).toEqual([]);
         expect(result.current.addressesOrSyncs).toEqual([]);
-        expect(result.current.usedBYOEAddresses).toBe(0);
+        expect(result.current.forwardingList).toEqual([]);
+        expect(result.current.byoeAddressesAvailableCount).toBe(1);
         expect(result.current.maxBYOEAddresses).toBe(MAX_SYNC_FREE_USER);
     });
 });

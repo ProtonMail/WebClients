@@ -94,7 +94,7 @@ describe('useShowBYOESpotlightModal', () => {
 
     it('should open the BYOE spotlight modal', () => {
         const addresses = [internalAddress];
-        const user = { hasPaidMail: false, CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
+        const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
         mockUseBYOEFeatureStatus.mockReturnValue(true);
@@ -112,7 +112,7 @@ describe('useShowBYOESpotlightModal', () => {
     it('should not open the BYOE spotlight modal when user is new', () => {
         const addresses = [internalAddress];
         // user created the account 3 days ago
-        const user = { hasPaidMail: false, CreateTime: Math.floor(sub(new Date(), { days: 3 }).getTime() / 1000) };
+        const user = { CreateTime: Math.floor(sub(new Date(), { days: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
         mockUseBYOEFeatureStatus.mockReturnValue(true);
@@ -129,7 +129,7 @@ describe('useShowBYOESpotlightModal', () => {
 
     it('should not open the BYOE spotlight modal when user is BYOE only account', () => {
         const addresses = [enabledBYOEAddress];
-        const user = { hasPaidMail: false, CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
+        const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
         mockUseBYOEFeatureStatus.mockReturnValue(true);
@@ -146,7 +146,7 @@ describe('useShowBYOESpotlightModal', () => {
 
     it('should not open the BYOE spotlight modal when user has some BYOE addresses', () => {
         const addresses = [internalAddress, enabledBYOEAddress];
-        const user = { hasPaidMail: false, CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
+        const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
         mockUseBYOEFeatureStatus.mockReturnValue(true);
@@ -163,7 +163,7 @@ describe('useShowBYOESpotlightModal', () => {
 
     it('should not open the BYOE spotlight modal when user has no access to BYOE', () => {
         const addresses = [internalAddress];
-        const user = { hasPaidMail: false, CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
+        const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
         mockUseBYOEFeatureStatus.mockReturnValue(false);
@@ -180,7 +180,7 @@ describe('useShowBYOESpotlightModal', () => {
 
     it('should not open the BYOE spotlight modal when modal has been seen already', () => {
         const addresses = [internalAddress];
-        const user = { hasPaidMail: false, CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
+        const user = { CreateTime: Math.floor(sub(new Date(), { months: 3 }).getTime() / 1000) };
         const syncs = [sync1];
 
         mockUseBYOEFeatureStatus.mockReturnValue(true);

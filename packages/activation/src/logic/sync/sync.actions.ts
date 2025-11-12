@@ -20,6 +20,7 @@ import type {
 import { AuthenticationMethod, EASY_SWITCH_FEATURES, ImportType } from '@proton/activation/src/interface';
 import { formatApiSync } from '@proton/activation/src/logic/sync/sync.helpers';
 import type { CreateNotificationOptions } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getEasySwitchFeaturesFromProducts } from '../../hooks/useOAuthPopup.helpers';
 import type { EasySwitchThunkExtra } from '../store';
@@ -70,7 +71,7 @@ interface CreateSyncProps {
     Source: EASY_SWITCH_SOURCES;
     successNotification?: CreateNotificationOptions;
     errorNotification?: CreateNotificationOptions;
-    reconnectEmailAddress?: string;
+    expectedEmailAddress?: { address: string; type: 'reconnect' | 'convertToBYOE' };
 }
 
 export const createSyncItem = createAsyncThunk<
@@ -81,8 +82,7 @@ export const createSyncItem = createAsyncThunk<
         fulfillValue: Sync;
     }
 >('sync/create', async (props, thunkApi) => {
-    const { Code, Provider, RedirectUri, Source, successNotification, errorNotification, reconnectEmailAddress } =
-        props;
+    const { Code, Provider, RedirectUri, Source, successNotification, errorNotification, expectedEmailAddress } = props;
 
     try {
         const { Token, DisplayName }: { Token: ImportToken; DisplayName: string } = await thunkApi.extra.api(
@@ -92,16 +92,22 @@ export const createSyncItem = createAsyncThunk<
                 RedirectUri,
                 Source,
                 Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
-                Account: reconnectEmailAddress,
+                Account: expectedEmailAddress?.address,
             })
         );
 
         const { Features, ID, Account } = Token;
 
-        // When reconnecting the BYOE address, the user can chose a different gmail account that the BYOE he's trying to reconnect.
+        // When reconnecting the BYOE address, the user can choose a different gmail account that the BYOE he's trying to reconnect.
         // We need to make sure they are matching to continue
-        if (reconnectEmailAddress && Account !== reconnectEmailAddress) {
-            throw new Error(c('error').t`Please sign in with the same Gmail address you originally connected`);
+        if (expectedEmailAddress && Account !== expectedEmailAddress.address) {
+            if (expectedEmailAddress.type === 'reconnect') {
+                throw new Error(c('error').t`Please sign in with the same Gmail address you originally connected`);
+            } else {
+                throw new Error(
+                    c('error').t`Please sign in with a Gmail address that already forwards to ${MAIL_APP_NAME}`
+                );
+            }
         }
 
         const createImportPayload: CreateImportPayload = {

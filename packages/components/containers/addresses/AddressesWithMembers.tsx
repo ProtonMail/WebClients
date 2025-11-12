@@ -79,8 +79,9 @@ const AddressesWithMembers = ({
     const { UsedAddresses: OrganizationUsedAddresses, MaxAddresses: OrganizationMaxAddresses } = organization || {};
     const usedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
     const maxAddresses = OrganizationMaxAddresses || 1;
+    const addressesAvailable = maxAddresses - usedAddresses;
 
-    const { usedBYOEAddresses, maxBYOEAddresses } = useBYOEAddressesCounts();
+    const { byoeAddressesAvailableCount, maxBYOEAddresses } = useBYOEAddressesCounts();
 
     const memberIndex = useMemo(() => {
         if (Array.isArray(members)) {
@@ -190,9 +191,9 @@ const AddressesWithMembers = ({
                                         </Button>
                                         <p className="color-weak text-sm my-2">
                                             {c('Label').ngettext(
-                                                msgid`${usedAddresses} of ${maxAddresses} email address`,
-                                                `${usedAddresses} of ${maxAddresses} email addresses`,
-                                                maxAddresses
+                                                msgid`${addressesAvailable} of ${maxAddresses} email address available`,
+                                                `${addressesAvailable} of ${maxAddresses} email addresses available`,
+                                                addressesAvailable
                                             )}
                                         </p>
                                     </div>
@@ -204,9 +205,9 @@ const AddressesWithMembers = ({
                                                 />
                                                 <p className="color-weak text-sm my-2">
                                                     {c('Label BYOE').ngettext(
-                                                        msgid`${usedBYOEAddresses} of ${maxBYOEAddresses} email address`,
-                                                        `${usedBYOEAddresses} of ${maxBYOEAddresses} email addresses`,
-                                                        usedBYOEAddresses
+                                                        msgid`${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email address available`,
+                                                        `${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email addresses available`,
+                                                        byoeAddressesAvailableCount
                                                     )}
                                                 </p>
                                             </>

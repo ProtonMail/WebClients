@@ -22,6 +22,8 @@ interface Props extends ModalProps {
     onSyncSkipCallback?: () => void;
     noSkip?: boolean;
     hasAccessToBYOE?: boolean;
+    expectedEmailAddress?: string;
+    onCloseCallback?: () => void;
 }
 
 const GmailSyncModal = ({
@@ -31,6 +33,8 @@ const GmailSyncModal = ({
     reduceHeight,
     noSkip,
     hasAccessToBYOE,
+    expectedEmailAddress,
+    onCloseCallback,
     ...rest
 }: Props) => {
     const dispatch = useEasySwitchDispatch();
@@ -57,6 +61,9 @@ const GmailSyncModal = ({
                         Source: source,
                         successNotification: hasAccessToBYOE ? undefined : SYNC_SUCCESS_NOTIFICATION,
                         errorNotification: hasAccessToBYOE ? BYOE_FAIL_NOTIFICATION : undefined,
+                        expectedEmailAddress: expectedEmailAddress
+                            ? { address: expectedEmailAddress, type: 'convertToBYOE' }
+                            : undefined,
                     })
                 );
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
@@ -66,6 +73,7 @@ const GmailSyncModal = ({
                 const hasError = res.type.endsWith('rejected');
                 if (!hasError) {
                     rest?.onClose?.();
+                    onCloseCallback?.();
                 }
                 onSyncCallback?.(hasError, sync);
             },
@@ -75,11 +83,13 @@ const GmailSyncModal = ({
     const handleSyncSkip = () => {
         onSyncSkipCallback?.();
         rest?.onClose?.();
+        onCloseCallback?.();
     };
 
     const handleClose = () => {
         onSyncSkipCallback?.();
         rest?.onClose?.();
+        onCloseCallback?.();
     };
 
     if (hasAccessToBYOE) {
