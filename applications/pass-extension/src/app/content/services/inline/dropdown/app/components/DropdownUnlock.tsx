@@ -28,7 +28,6 @@ export const DropdownUnlock: FC = () => {
     return (
         <PinUnlock
             ref={focusCtrl.focusRef}
-            autoFocus={false}
             header={
                 <div className="flex items-center gap-3 mb-3">
                     <ListItemIcon type="status" icon={PassIconStatus.LOCKED_DROPDOWN} />
