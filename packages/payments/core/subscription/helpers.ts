@@ -6,7 +6,16 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Audience, type Organization, type UserModel } from '@proton/shared/lib/interfaces';
 
-import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, type PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import {
+    ADDON_NAMES,
+    COUPON_CODES,
+    CYCLE,
+    LIFETIME_PLAN_TITLE,
+    PLANS,
+    PLAN_NAMES,
+    type PLAN_SERVICES,
+    PLAN_TYPES,
+} from '../constants';
 import { isRegionalCurrency } from '../helpers';
 import type { Currency, FreeSubscription, PlanIDs } from '../interface';
 import { getSupportedAddons, hasLumoAddonFromPlanIDs, isIpAddon, isMemberAddon } from '../plan/addons';
@@ -57,7 +66,7 @@ export function getSubscriptionPlanTitle(
         }
     })();
 
-    const planTitle = hasLifetimeCoupon(subscription) ? 'Lifetime' : primaryPlan?.Title;
+    const planTitle = hasLifetimeCoupon(subscription) ? LIFETIME_PLAN_TITLE : primaryPlan?.Title;
 
     return {
         planTitle,
@@ -117,7 +126,7 @@ export const getPlanName = (subscription: Subscription | FreeSubscription | unde
 
 export const getPlanTitle = (subscription: Subscription | FreeSubscription | undefined) => {
     const plan = getPlan(subscription);
-    return plan?.Title;
+    return hasLifetimeCoupon(subscription) ? LIFETIME_PLAN_TITLE : plan?.Title;
 };
 
 export const hasSomePlan = (subscription: MaybeFreeSubscription, planName: PLANS) => {
