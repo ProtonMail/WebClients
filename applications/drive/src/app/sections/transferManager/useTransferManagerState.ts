@@ -25,6 +25,7 @@ type TransferManagerBaseEntry = {
     id: string;
     name: string;
     transferredBytes: number;
+    lastStatusUpdateTime: Date;
 };
 
 type TransferManagerDownloadEntry = TransferManagerBaseEntry & {
@@ -48,6 +49,7 @@ const mapDownload = ({
     status,
     downloadedBytes,
     storageSize,
+    lastStatusUpdateTime,
 }: DownloadItem): TransferManagerDownloadEntry => ({
     type: 'download',
     id: downloadId,
@@ -55,6 +57,7 @@ const mapDownload = ({
     status,
     transferredBytes: downloadedBytes,
     storageSize: storageSize ?? 0,
+    lastStatusUpdateTime,
 });
 
 const getUploadTransferredBytes = (item: UploadItem): number => {
@@ -71,6 +74,7 @@ const mapUpload = ({ uploadId, item }: { uploadId: string; item: UploadItem }): 
     status: item.status,
     transferredBytes: getUploadTransferredBytes(item),
     clearTextSize: item.type === NodeType.File ? item.clearTextExpectedSize : 0,
+    lastStatusUpdateTime: item.lastStatusUpdateTime,
 });
 
 export const useTransferManagerState = () => {
@@ -123,10 +127,23 @@ export const useTransferManagerState = () => {
             transferType = 'uploading';
         }
 
+        const getPriority = (status: BaseTransferStatus | UploadStatus | DownloadItem['status']) =>
+            status === BaseTransferStatus.InProgress ? 1 : 0;
+
+        const sortedTransfers = [...allTransfers].sort((a, b) => {
+            const priorityDiff = getPriority(b.status) - getPriority(a.status);
+            if (priorityDiff !== 0) {
+                return priorityDiff;
+            }
+            const aTime = a.lastStatusUpdateTime.getTime();
+            const bTime = b.lastStatusUpdateTime.getTime();
+            return bTime - aTime;
+        });
+
         return {
             downloads,
             uploads,
-            items: allTransfers,
+            items: sortedTransfers,
             transferType,
             progressPercentage,
             status,

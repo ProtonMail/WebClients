@@ -21,8 +21,7 @@ type RowData = {
 
 const TransferListRow = memo(({ index, style, data }: ListChildComponentProps<RowData>) => {
     const { items, share } = data;
-    const reversedIndex = items.length - 1 - index;
-    const entry = items[reversedIndex];
+    const entry = items[index];
     // TODO: add conditional styling depending on some special cases like malaware detection
 
     return (
@@ -52,6 +51,7 @@ export const TransferManagerList = ({ items }: TransferManagerListProps) => {
     const visibleRowCount = Math.min(items.length || 1, maxVisibleRows);
     const listHeight = Math.max(rowHeightPx, rowHeightPx * visibleRowCount);
     const listWidth = rect?.width ?? TRANSFER_MANAGER_WIDTH_PX;
+    const hasOverflow = items.length > visibleRowCount;
 
     if (!items.length) {
         return null;
@@ -67,7 +67,8 @@ export const TransferManagerList = ({ items }: TransferManagerListProps) => {
                         itemData={{ items, share }}
                         itemSize={itemSize}
                         width={listWidth}
-                        itemKey={(index, { items }) => items[items.length - 1 - index]?.id ?? index}
+                        itemKey={(index, { items }) => items[index].id}
+                        className={hasOverflow ? 'scrollbar-always-visible' : undefined}
                     >
                         {TransferListRow}
                     </FixedSizeList>
