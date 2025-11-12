@@ -41,7 +41,7 @@ export const BookingsView = () => {
 
     return (
         <div>
-            <BookingDetailsHeader />
+            <BookingDetailsHeader gridSize={gridSize} />
 
             <div className="flex gap-2">
                 {range.map((date, i) => (

@@ -15,7 +15,11 @@ import { useBookingStore } from '../../booking.store';
 import { BookingMiniCalendar } from './BookingMiniCalendar';
 import { BookingNavigationButtons } from './BookingNavigationButtons';
 
-export const BookingDetailsHeader = () => {
+interface Props {
+    gridSize: number;
+}
+
+export const BookingDetailsHeader = ({ gridSize }: Props) => {
     const setSelectedDate = useBookingStore((state) => state.setSelectedDate);
     const setSelectedTimezone = useBookingStore((state) => state.setSelectedTimezone);
     const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
@@ -54,7 +58,7 @@ export const BookingDetailsHeader = () => {
                     </Dropdown>
                 </div>
 
-                <BookingNavigationButtons />
+                <BookingNavigationButtons gridSize={gridSize} />
             </div>
         </>
     );
