@@ -24,7 +24,7 @@ import { Fragment, useMemo, useRef, useState } from 'react'
 import { Icon } from '../ui'
 import { createStringifier } from '../../stringifier'
 import { c } from 'ttag'
-import { FormCheckbox, FormGroup, FormLabel, NativeSelect } from './shared'
+import { Button, FormCheckbox, FormGroup, FormLabel, Input, Select, SelectItem, SelectPopover } from './shared'
 import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import { useUI } from '../../ui-store'
 
@@ -46,7 +46,7 @@ function DataValidationRule({ sheetId, rule, onDelete, onSelect }: DataValidatio
   const values = rule.condition?.values?.map((value) => value.userEnteredValue).join(',')
 
   return (
-    <Ariakit.Button
+    <Button
       render={<div />}
       onClick={() => {
         api?.unmark()
@@ -83,9 +83,9 @@ function DataValidationRule({ sheetId, rule, onDelete, onSelect }: DataValidatio
           </div>
         </div>
 
-        <button
+        <Button
           type="button"
-          className="flex size-[36px] shrink-0 items-center justify-center"
+          className="flex size-[36px] shrink-0 items-center justify-center rounded-lg"
           aria-label={s('Delete data validation rule')}
           onClick={(event) => {
             event.stopPropagation()
@@ -94,9 +94,9 @@ function DataValidationRule({ sheetId, rule, onDelete, onSelect }: DataValidatio
           }}
         >
           <Icon legacyName="trash" />
-        </button>
+        </Button>
       </div>
-    </Ariakit.Button>
+    </Button>
   )
 }
 
@@ -124,14 +124,14 @@ function DataValidationList({ rules, sheetId, onDeleteRule, onSelectRule, onNewR
       </div>
 
       <div className="px-4 py-2">
-        <button
+        <Button
           type="button"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onNewRule}
         >
           <Icon legacyName="plus" />
           {rules.length > 0 ? s('Add another named range') : s('Add named range')}
-        </button>
+        </Button>
       </div>
     </div>
   )
@@ -208,7 +208,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                         </div>
 
                         {canDelete ? (
-                          <button
+                          <Button
                             type="button"
                             className="flex size-[36px] shrink-0 items-center justify-center"
                             onClick={() => {
@@ -219,7 +219,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                             }}
                           >
                             <Icon legacyName="trash" />
-                          </button>
+                          </Button>
                         ) : null}
                       </div>
                     )
@@ -227,7 +227,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                 </div>
 
                 <div>
-                  <button
+                  <Button
                     type="button"
                     className="py-1 text-sm text-[#6243E6]"
                     onClick={() => {
@@ -246,7 +246,7 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                     }}
                   >
                     {s('Add another range')}
-                  </button>
+                  </Button>
                 </div>
               </div>
             </FormGroup>
@@ -254,10 +254,9 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
             <FormGroup>
               <FormLabel>{s('Validation rules')}</FormLabel>
               <div className="flex flex-col gap-2">
-                <NativeSelect
+                <Ariakit.SelectProvider
                   value={formValue?.condition?.type ?? CONDITION_NONE}
-                  onChange={(event) => {
-                    const value = event.target.value as ConditionType
+                  setValue={(value: ConditionType) => {
                     form.setValue('condition.type', value)
                     form.setValue(
                       'condition.values',
@@ -265,12 +264,17 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                     )
                   }}
                 >
-                  {VALIDATION_CONDITION_LABELS.map(({ condition, label }) => (
-                    <option key={condition} value={condition}>
-                      {label}
-                    </option>
-                  ))}
-                </NativeSelect>
+                  <Select />
+                  <SelectPopover sameWidth>
+                    <Ariakit.SelectGroup className="py-2">
+                      {VALIDATION_CONDITION_LABELS.map(({ condition, label }) => (
+                        <SelectItem key={condition} value={condition}>
+                          {label}
+                        </SelectItem>
+                      ))}
+                    </Ariakit.SelectGroup>
+                  </SelectPopover>
+                </Ariakit.SelectProvider>
 
                 {showFromValue ? (
                   formValue.condition?.type === 'CUSTOM_FORMULA' || formValue.condition?.type === 'ONE_OF_RANGE' ? (
@@ -288,32 +292,20 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
                       />
                     </div>
                   ) : (
-                    <label
-                      aria-label={s('Formula')}
-                      className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3"
-                    >
-                      <input
-                        placeholder={s('Enter value')}
-                        value={fromValue}
-                        onChange={(e) => form.setValue(`condition.values.${0}.userEnteredValue`, e.target.value)}
-                        className="h-full grow truncate text-sm !outline-none"
-                      />
-                    </label>
+                    <Input
+                      placeholder={s('Enter value')}
+                      value={fromValue}
+                      onChange={(e) => form.setValue(`condition.values.${0}.userEnteredValue`, e.target.value)}
+                    />
                   )
                 ) : null}
 
                 {showToValue ? (
-                  <label
-                    aria-label={s('Formula')}
-                    className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3"
-                  >
-                    <input
-                      placeholder={s('Enter value')}
-                      value={toValue}
-                      onChange={(event) => form.setValue(`condition.values.${1}.userEnteredValue`, event.target.value)}
-                      className="h-full grow truncate text-sm !outline-none"
-                    />
-                  </label>
+                  <Input
+                    placeholder={s('Enter value')}
+                    value={toValue}
+                    onChange={(event) => form.setValue(`condition.values.${1}.userEnteredValue`, event.target.value)}
+                  />
                 ) : null}
               </div>
             </FormGroup>
@@ -330,33 +322,33 @@ function DataValidationRuleEditor({ rule, sheetId, onDone, onSave, onNewRule }: 
             </FormGroup>
 
             <div className="mt-2 border-t-[0.5px] border-[#EAE7E4] py-2">
-              <button
+              <Button
                 ref={addAnotherButtonRef}
                 type="submit"
                 className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
               >
                 <Icon legacyName="plus" />
                 {s('Add another named range')}
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
       <div className="mt-auto flex shrink-0 items-center justify-end gap-2 border-t-[0.5px] border-[#EAE7E4] px-4 py-2">
-        <button
+        <Button
           type="button"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onDone}
         >
           {s('Cancel')}
-        </button>
-        <button
+        </Button>
+        <Button
           type="submit"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
         >
           {s('Save')}
-        </button>
+        </Button>
       </div>
     </form>
   )

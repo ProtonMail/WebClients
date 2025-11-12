@@ -14,7 +14,7 @@ import {
 import { uuid } from '@rowsncolumns/utils'
 import * as Ariakit from '@ariakit/react'
 import { SidebarDialog, SidebarDialogHeader } from './SidebarDialog'
-import { FormGroup, FormLabel, FormRadio } from './shared'
+import { Button, FormGroup, FormLabel, FormRadio, Input } from './shared'
 import { Icon } from '../ui'
 import { Fragment, useMemo, useRef, useState } from 'react'
 import { c } from 'ttag'
@@ -37,16 +37,16 @@ function NamedRangeListItem({ namedRange, sheetId, onDeleteNamedRange, onSelect 
   const { rangeToAddress } = useFormulaRangeHelpers({ sheetId })
 
   return (
-    <Ariakit.Button render={<div />} onClick={onSelect} className="px-4 hover:bg-[#C2C1C033]/20">
+    <Button render={<div />} onClick={onSelect} className="px-4 hover:bg-[#C2C1C033]/20">
       <div className="flex items-center border-b-[0.5px] border-[#EAE7E4] py-3">
         <div className="flex min-w-0 grow flex-col">
           <p className="text-sm font-semibold">{namedRange.name}</p>
           {namedRange.range ? <span className="text-sm">{rangeToAddress(namedRange.range)}</span> : null}
         </div>
 
-        <button
+        <Button
           type="button"
-          className="flex size-[36px] shrink-0 items-center justify-center"
+          className="flex size-[36px] shrink-0 items-center justify-center rounded-lg"
           aria-label={s('Delete named range')}
           onClick={(event) => {
             event.stopPropagation()
@@ -54,9 +54,9 @@ function NamedRangeListItem({ namedRange, sheetId, onDeleteNamedRange, onSelect 
           }}
         >
           <Icon legacyName="trash" />
-        </button>
+        </Button>
       </div>
-    </Ariakit.Button>
+    </Button>
   )
 }
 
@@ -90,14 +90,14 @@ function NamedRangesList({
       </div>
 
       <div className="px-4 py-2">
-        <button
+        <Button
           type="button"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onNewNamedRange}
         >
           <Icon legacyName="plus" />
           {namedRanges.length > 0 ? s('Add another named range') : s('Add named range')}
-        </button>
+        </Button>
       </div>
     </div>
   )
@@ -163,17 +163,14 @@ function NamedRangeEditor({
           <div className="flex flex-col gap-4">
             <FormGroup>
               <FormLabel htmlFor="name">{s('Name')}</FormLabel>
-              <label className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3">
-                <input
-                  id="name"
-                  required
-                  pattern="[^\s]+"
-                  title={s('Name should not contain spaces')}
-                  autoFocus
-                  className="h-full grow truncate text-sm !outline-none"
-                  {...form.register('name')}
-                />
-              </label>
+              <Input
+                id="name"
+                required
+                pattern="[^\s]+"
+                title={s('Name should not contain spaces')}
+                autoFocus
+                {...form.register('name')}
+              />
             </FormGroup>
 
             <FormGroup>
@@ -237,33 +234,33 @@ function NamedRangeEditor({
             ) : null}
 
             <div className="mt-2 border-t-[0.5px] border-[#EAE7E4] py-2">
-              <button
+              <Button
                 ref={addAnotherButtonRef}
                 type="submit"
                 className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
               >
                 <Icon legacyName="plus" />
                 {s('Add another named range')}
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
       <div className="mt-auto flex shrink-0 items-center justify-end gap-2 border-t-[0.5px] border-[#EAE7E4] px-4 py-2">
-        <button
+        <Button
           type="button"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onDone}
         >
           {s('Cancel')}
-        </button>
-        <button
+        </Button>
+        <Button
           type="submit"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
         >
           {s('Save')}
-        </button>
+        </Button>
       </div>
     </form>
   )
@@ -299,7 +296,7 @@ function NamedRanges() {
       onRequestDefineNamedRange(sheetId, activeCell, selections)
     }
   })
-  const setTypeToList = useEvent(() => () => setState({ type: 'list' }))
+  const setTypeToList = useEvent(() => setState({ type: 'list' }))
   const onSelectNamedRange = useEvent((namedRange: NamedRange) =>
     setState({ type: 'editNamedRange', namedRange, key: GenerateUUID() }),
   )
