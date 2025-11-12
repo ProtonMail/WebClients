@@ -18,7 +18,7 @@ import { first } from '@proton/pass/utils/array/first';
 import { asyncLock, seq } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { nextTick } from '@proton/pass/utils/time/next-tick';
+import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
 
@@ -111,7 +111,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
     /** Locks field interactivity during autofill to prevent "focus-to-next"
      * interference. Fields unlock themselves before filling (see field.ts). */
     const autofillSequence = <T extends AsyncCallback>(fn: T) =>
-        withContext<(...args: Parameters<T>) => Promise<Awaited<ReturnType<T>>>>(async (ctx, ...args) => {
+        withContext<(...args: Parameters<T>) => Promise<ReturnType<T>>>(async (ctx, ...args) => {
             const formManager = ctx?.service.formManager;
             const fields = formManager?.getTrackedFields();
 
@@ -119,12 +119,13 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
             state.processing = true;
             const res = await fn(...args);
 
-            nextTick(() => {
-                state.processing = false;
-                fields?.forEach((field) => field.interactivity.unlock());
-            });
-
-            return res;
+            return new Promise(
+                onNextTick((resolve) => {
+                    state.processing = false;
+                    fields?.forEach((field) => field.interactivity.unlock());
+                    resolve(res);
+                })
+            );
         }) as T;
 
     const autofillLogin = autofillSequence(async (form: FormHandle, data: FormCredentials) => {
