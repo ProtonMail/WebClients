@@ -5,11 +5,12 @@ import {
     type FreeSubscription,
     type PLANS,
     type Subscription,
+    getMaximumCycleForApp,
     getPlan,
     getPlanName,
     isFreeSubscription,
 } from '@proton/payments';
-import type { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import type { APP_NAMES, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';
 import {
@@ -21,7 +22,8 @@ import {
 } from '../../helpers';
 
 export const useSubscriptionPriceComparison = (
-    subscription?: Subscription | FreeSubscription,
+    app: APP_NAMES,
+    subscription: Subscription | FreeSubscription,
     compareWithPlan?: PLANS
 ) => {
     // We forbid currencyFallback because we want to compare against the same currency
@@ -56,6 +58,7 @@ export const useSubscriptionPriceComparison = (
             subscription: subscription,
             currency: subscription.Currency,
             planIDs: { [compareWithPlan]: 1 },
+            maximumCycle: getMaximumCycleForApp(app),
         });
 
         let pricingOptions = plansMap[compareWithPlan]?.Pricing;

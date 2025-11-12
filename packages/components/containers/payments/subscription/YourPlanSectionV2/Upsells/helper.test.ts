@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import type { Plan } from '@proton/payments';
-import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments';
-import { SelectedPlan } from '@proton/payments';
+import { CYCLE, FREE_SUBSCRIPTION, PLANS, SelectedPlan } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { hookWrapper } from '@proton/testing';
 import { buildSubscription } from '@proton/testing/builders';
 import { getTestPlans } from '@proton/testing/data';
@@ -20,32 +20,8 @@ const getWrapper = (plans?: Plan[]) =>
     );
 
 describe('useSubscriptionPriceComparison', () => {
-    it('should render', () => {
-        const { result } = renderHook(() => useSubscriptionPriceComparison(), {
-            wrapper: getWrapper(),
-        });
-        expect(result.current).toBeDefined();
-    });
-
-    it('should return default values when no subscription is provided', () => {
-        const { result } = renderHook(() => useSubscriptionPriceComparison(), {
-            wrapper: getWrapper(getTestPlans()),
-        });
-
-        expect(result.current).toEqual({
-            priceDifference: 0,
-            priceDifferenceCheapestCycle: 0,
-            cheapestMonthlyPrice: 0,
-            priceFallbackPerMonth: 0,
-            totalSavings: 0,
-            showPriceDifference: false,
-            showPriceDifferenceCheapest: false,
-            showSavings: false,
-        });
-    });
-
     it('should return default values when provided a free subscription', () => {
-        const { result } = renderHook(() => useSubscriptionPriceComparison(FREE_SUBSCRIPTION), {
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, FREE_SUBSCRIPTION), {
             wrapper: getWrapper(getTestPlans()),
         });
 
@@ -73,7 +49,7 @@ describe('useSubscriptionPriceComparison', () => {
             )
         );
 
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription), {
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription), {
             wrapper: getWrapper(),
         });
 
@@ -101,15 +77,49 @@ describe('useSubscriptionPriceComparison', () => {
             )
         );
 
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription, PLANS.BUNDLE), {
-            wrapper: getWrapper(getTestPlans()),
-        });
+        const { result } = renderHook(
+            () => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription, PLANS.BUNDLE),
+            {
+                wrapper: getWrapper(getTestPlans()),
+            }
+        );
 
         expect(result.current).toEqual({
             priceDifference: 800,
             priceDifferenceCheapestCycle: 0,
             priceFallbackPerMonth: 799,
             cheapestMonthlyPrice: 799,
+            totalSavings: 0,
+            showPriceDifference: true,
+            showPriceDifferenceCheapest: false,
+            showSavings: false,
+        });
+    });
+
+    it('should calculate price difference when app is Pass subscription and compareWithPlan are provided', () => {
+        const subscription = buildSubscription(
+            new SelectedPlan(
+                {
+                    [PLANS.MAIL]: 1,
+                },
+                getTestPlans('USD'),
+                CYCLE.MONTHLY,
+                'USD'
+            )
+        );
+
+        const { result } = renderHook(
+            () => useSubscriptionPriceComparison(APPS.PROTONPASS, subscription, PLANS.BUNDLE),
+            {
+                wrapper: getWrapper(getTestPlans()),
+            }
+        );
+
+        expect(result.current).toEqual({
+            priceDifference: 800,
+            priceDifferenceCheapestCycle: 0,
+            priceFallbackPerMonth: 999,
+            cheapestMonthlyPrice: 999,
             totalSavings: 0,
             showPriceDifference: true,
             showPriceDifferenceCheapest: false,
@@ -133,7 +143,7 @@ describe('useSubscriptionPriceComparison', () => {
             }
         );
 
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription), {
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription), {
             wrapper: getWrapper(getTestPlans()),
         });
 
@@ -144,6 +154,39 @@ describe('useSubscriptionPriceComparison', () => {
             priceFallbackPerMonth: 349,
             cheapestMonthlyPrice: 349,
             totalSavings: 18000,
+            showPriceDifference: false,
+            showPriceDifferenceCheapest: true,
+            showSavings: true,
+        });
+    });
+
+    it('should calculate cheapest cycle pricing and potential savings for Pass', () => {
+        // Create a subscription with a higher monthly price than standard pricing
+        const subscription = buildSubscription(
+            new SelectedPlan(
+                {
+                    [PLANS.MAIL]: 1,
+                },
+                getTestPlans('USD'),
+                CYCLE.MONTHLY,
+                'USD'
+            ),
+            {
+                Amount: 1099, // Higher than standard pricing to show savings
+            }
+        );
+
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONPASS, subscription), {
+            wrapper: getWrapper(getTestPlans()),
+        });
+
+        // We expect to show savings because yearly/biyearly cycle is typically cheaper per month
+        expect(result.current).toEqual({
+            priceDifference: 0,
+            priceDifferenceCheapestCycle: 700,
+            priceFallbackPerMonth: 399,
+            cheapestMonthlyPrice: 399,
+            totalSavings: 8400,
             showPriceDifference: false,
             showPriceDifferenceCheapest: true,
             showSavings: true,
@@ -176,9 +219,12 @@ describe('useSubscriptionPriceComparison', () => {
             }
         );
 
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription, PLANS.VPN2024), {
-            wrapper: getWrapper(getTestPlans()),
-        });
+        const { result } = renderHook(
+            () => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription, PLANS.VPN2024),
+            {
+                wrapper: getWrapper(getTestPlans()),
+            }
+        );
 
         // The hook should use the upcoming subscription (MAIL two years)
         // rather than the current subscription (MAIL yearly)
@@ -206,7 +252,7 @@ describe('useSubscriptionPriceComparison', () => {
             )
         );
 
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription), {
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription), {
             wrapper: getWrapper(getTestPlans()),
         });
 
@@ -236,9 +282,12 @@ describe('useSubscriptionPriceComparison', () => {
         );
 
         // Pass a non-existent plan name
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription, 'NON_EXISTENT_PLAN' as any), {
-            wrapper: getWrapper(getTestPlans()),
-        });
+        const { result } = renderHook(
+            () => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription, 'NON_EXISTENT_PLAN' as any),
+            {
+                wrapper: getWrapper(getTestPlans()),
+            }
+        );
 
         expect(result.current).toEqual({
             priceDifference: 0,
@@ -264,7 +313,7 @@ describe('useSubscriptionPriceComparison', () => {
             )
         );
 
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription), {
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription), {
             wrapper: getWrapper(getTestPlans('EUR')),
         });
 
@@ -292,7 +341,7 @@ describe('useSubscriptionPriceComparison', () => {
             )
         );
 
-        const { result } = renderHook(() => useSubscriptionPriceComparison(yearlySubscription), {
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, yearlySubscription), {
             wrapper: getWrapper(getTestPlans()),
         });
 
@@ -321,7 +370,7 @@ describe('useSubscriptionPriceComparison', () => {
             )
         );
 
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription), {
+        const { result } = renderHook(() => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription), {
             wrapper: getWrapper(getTestPlans()),
         });
 
@@ -351,9 +400,12 @@ describe('useSubscriptionPriceComparison', () => {
         );
 
         // Compare with a different plan type (VPN)
-        const { result } = renderHook(() => useSubscriptionPriceComparison(subscription, PLANS.VPN2024), {
-            wrapper: getWrapper(getTestPlans()),
-        });
+        const { result } = renderHook(
+            () => useSubscriptionPriceComparison(APPS.PROTONMAIL, subscription, PLANS.VPN2024),
+            {
+                wrapper: getWrapper(getTestPlans()),
+            }
+        );
 
         expect(result.current).toEqual({
             priceDifference: 500,

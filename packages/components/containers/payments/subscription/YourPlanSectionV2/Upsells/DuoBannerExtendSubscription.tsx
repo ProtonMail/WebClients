@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { CYCLE, PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
-import { getHasConsumerVpnPlan } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -109,18 +108,20 @@ export const useDuoBannerExtendSubscription = ({
 };
 
 interface Props extends UpsellsHook {
+    app: APP_NAMES;
     showUpsellPanels: boolean;
     subscription: Subscription;
 }
 
 const DuoBannerExtendSubscription = ({
+    app,
     showUpsellPanels = true,
     handleExplorePlans,
     upsells,
     subscription,
     user,
 }: Props) => {
-    const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
+    const { totalSavings, showSavings } = useSubscriptionPriceComparison(app, subscription);
 
     const plan = PLANS.DUO;
     const planName = PLAN_NAMES[plan];
