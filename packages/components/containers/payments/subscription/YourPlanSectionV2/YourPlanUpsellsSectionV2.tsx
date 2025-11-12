@@ -16,10 +16,13 @@ import {
     CYCLE,
     FREE_PLAN,
     type FreePlanDefault,
+    PLANS,
     type Subscription,
     getCanAccessFamilyPlans,
     hasBundle,
     hasDeprecatedVPN,
+    hasDrive,
+    hasDrive1TB,
     hasDuo,
     hasFamily,
     hasLumo,
@@ -31,6 +34,7 @@ import {
 } from '@proton/payments';
 import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
@@ -57,6 +61,10 @@ import UnlimitedBannerPlain from './Upsells/UnlimitedBannerPlain';
 import VPNB2BBanner from './Upsells/VPNB2BBanner';
 import VpnPlusExtendSubscription, { useVpnPlusExtendSubscription } from './Upsells/VpnPlusExtendSubscription';
 import VpnPlusFromFree, { useVpnPlusFromFreeUpsells } from './Upsells/VpnPlusFromFree';
+import DrivePlusExtendSubscription, {
+    useDrivePlusExtendSubscription,
+} from './Upsells/drive/DrivePlusExtendSubscription';
+import DrivePlusFromFreeBanner from './Upsells/drive/DrivePlusFromFreeBanner';
 import MailPlusExtendSubscription, { useMailPlusExtendSubscription } from './Upsells/mail/MailPlusExtendSubscription';
 import MailPlusFromFree, { useMailPlusFromFreeUpsells } from './Upsells/mail/MailPlusFromFree';
 import PassFamilyBannerExtendSubscription, {
@@ -105,11 +113,15 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const showAVariant = variant.name === 'A';
     const showBVariant = variant.name === 'B';
 
+    // TODO: Review if these checks are required as upsell config will do the app check
     const hasMailFree = isFree && (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR);
     const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
     const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
     const hasLumoPlus = hasLumo(subscription);
+
+    // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
+    const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasLumoPlus;
 
     // Allow 24-month plan for VPN. Update the condition based on requirements
     const userCanHave24MonthPlan = app === APPS.PROTONVPN_SETTINGS;
@@ -129,6 +141,14 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const unlimitedBannerGradientUpsells = useUnlimitedBannerGradientUpsells(upsellParams);
     const vpnPlusExtendSubscriptionUpsells = useVpnPlusExtendSubscription(upsellParams);
     const mailPlusExtendSubscriptionUpsells = useMailPlusExtendSubscription(upsellParams);
+    const drivePlusExtendSubscriptionUpsells = useDrivePlusExtendSubscription({
+        ...upsellParams,
+        planToUpsell: PLANS.DRIVE,
+    });
+    const drivePlusOneTBExtendSubscriptionUpsells = useDrivePlusExtendSubscription({
+        ...upsellParams,
+        planToUpsell: PLANS.DRIVE_1TB,
+    });
     const unlimitedBannerExtendSubscriptionUpsells = useUnlimitedBannerExtendSubscription(upsellParams);
     const duoBannerExtendSubscriptionUpsells = useDuoBannerExtendSubscription(upsellParams);
     const familyBannerExtendSubscriptionUpsells = useFamilyBannerExtendSubscription(upsellParams);
@@ -136,17 +156,15 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const passPlusExtendSubscriptionUpsells = usePassPlusExtendSubscription(upsellParams);
     const passFamilyBannerExtendSubscriptionUpsells = usePassFamilyBannerExtendSubscription(upsellParams);
 
+    const unlimitedPlanMaxSpace = humanSize({
+        bytes: plansMap[PLANS.BUNDLE]?.MaxSpace ?? 536870912000,
+        unit: 'GB',
+        fraction: 0,
+    });
+
     const upsellSections = [
         {
-            enabled:
-                (hasMailFree ||
-                    hasPassFree ||
-                    hasVPNFree ||
-                    hasDriveFree ||
-                    // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
-                    hasLumoPlus) &&
-                app === APPS.PROTONVPN_SETTINGS &&
-                showAVariant,
+            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showAVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <>
@@ -162,15 +180,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled:
-                (hasMailFree ||
-                    hasPassFree ||
-                    hasVPNFree ||
-                    hasDriveFree ||
-                    // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
-                    hasLumoPlus) &&
-                app === APPS.PROTONVPN_SETTINGS &&
-                showBVariant,
+            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showBVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <CurrentPlanInfoWithUpsellSection
@@ -304,9 +314,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled:
-                (hasMailFree || hasPassFree || hasVPNFree || hasDriveFree || hasLumoPlus) &&
-                (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR),
+            enabled: isFreeUser && (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR),
             upsells: [...mailPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <>
@@ -350,8 +358,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled:
-                (hasMailFree || hasPassFree || hasVPNFree || hasDriveFree || hasLumoPlus) && app === APPS.PROTONPASS,
+            enabled: isFreeUser && app === APPS.PROTONPASS,
             upsells: [...passPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <>
@@ -413,6 +420,83 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled: hasPassFamily(subscription),
             upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
             element: <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />,
+        },
+        {
+            enabled: isFreeUser && app === APPS.PROTONDRIVE,
+            upsells: [...unlimitedBannerGradientUpsells.upsells],
+            element: (
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={true}
+                        gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                        gridSectionSubTitleCopy={c('Plan description')
+                            .t`Privacy suite with premium services and ${unlimitedPlanMaxSpace} of encrypted cloud storage, all in one bundle.`}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <DrivePlusFromFreeBanner app={app} />
+                </>
+            ),
+        },
+        {
+            enabled: hasDrive(subscription) && subscription?.Cycle === CYCLE.YEARLY,
+            upsells: drivePlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    app={app}
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
+            ),
+        },
+        {
+            enabled: hasDrive(subscription),
+            upsells: drivePlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <DrivePlusExtendSubscription
+                        app={app}
+                        planToUpsell={PLANS.DRIVE}
+                        subscription={subscription as Subscription}
+                        {...drivePlusExtendSubscriptionUpsells}
+                    />
+                    <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
+                </>
+            ),
+        },
+        {
+            enabled: hasDrive1TB(subscription) && subscription?.Cycle === CYCLE.YEARLY,
+            upsells: drivePlusOneTBExtendSubscriptionUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    app={app}
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
+            ),
+        },
+        {
+            enabled: hasDrive1TB(subscription),
+            upsells: drivePlusOneTBExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <DrivePlusExtendSubscription
+                        app={app}
+                        planToUpsell={PLANS.DRIVE_1TB}
+                        subscription={subscription as Subscription}
+                        {...drivePlusOneTBExtendSubscriptionUpsells}
+                    />
+                    <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
+                </>
+            ),
         },
         {
             enabled: hasBundle(subscription) && subscription?.Cycle === CYCLE.MONTHLY,

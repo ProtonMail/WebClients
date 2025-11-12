@@ -283,6 +283,7 @@ interface Props extends UpsellsHook {
     showDiscoverButton?: boolean;
     showUpsellHeader?: boolean;
     gridSectionHeaderCopy?: string;
+    gridSectionSubTitleCopy?: string;
     subscription: Subscription;
     app: APP_NAMES;
 }
@@ -293,6 +294,7 @@ const UnlimitedBannerGradient = ({
     showDiscoverButton = true,
     showUpsellHeader = false,
     gridSectionHeaderCopy,
+    gridSectionSubTitleCopy,
     subscription,
     telemetryFlow,
     upsells,
@@ -323,12 +325,15 @@ const UnlimitedBannerGradient = ({
 
     const headerUpsellCycle = getNormalCycleFromCustomCycle(subscription?.Cycle || CYCLE.MONTHLY);
 
+    const headerSubTitle =
+        gridSectionSubTitleCopy ??
+        c('Plan description')
+            .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`;
     const headerBottomLineCopy =
         showUpsellHeader && headerUpsellCycle ? (
             <span className="color-weak">{getBillingCycleText(headerUpsellCycle)}</span>
         ) : (
-            c('Plan description')
-                .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`
+            headerSubTitle
         );
 
     const upsellHeader = () => {

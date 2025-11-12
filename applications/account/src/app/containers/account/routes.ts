@@ -40,6 +40,7 @@ import {
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 import type {
+    DriveDashboardVariant,
     MailDashboardVariant,
     PassDashboardVariant,
     VPNDashboardVariant,
@@ -71,6 +72,7 @@ export const getAccountAppRoutes = ({
     canDisplayNonPrivateEmailPhone,
     showMailDashboard,
     showPassDashboard,
+    showDriveDashboard,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -101,6 +103,8 @@ export const getAccountAppRoutes = ({
     showMailDashboardVariant: MailDashboardVariant | 'disabled' | undefined;
     showPassDashboard: boolean;
     showPassDashboardVariant: PassDashboardVariant | 'disabled' | undefined;
+    showDriveDashboard: boolean;
+    showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -154,7 +158,7 @@ export const getAccountAppRoutes = ({
 
     const shouldShowDashboard = isFree || canPay || !isMember || (isPaid && canPay);
     // We do not have to check app names here as the hook responsible to populate these values will do it for us.
-    const shouldShowV2Dashboard = showVPNDashboard || showMailDashboard || showPassDashboard;
+    const shouldShowV2Dashboard = showVPNDashboard || showMailDashboard || showPassDashboard || showDriveDashboard;
 
     return <const>{
         available: true,
