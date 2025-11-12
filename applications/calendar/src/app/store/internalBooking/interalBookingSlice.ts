@@ -1,5 +1,5 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import type { AddressKeysState } from '@proton/account/addressKeys';
 import { addressKeysThunk } from '@proton/account/addressKeys';
@@ -9,7 +9,7 @@ import { calendarsThunk } from '@proton/calendar/calendars';
 import { CryptoProxy } from '@proton/crypto/lib';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
+import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { base64StringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 import { getActiveAddressKeys, getPrimaryAddressKeysForSigning, splitKeys } from '@proton/shared/lib/keys';
@@ -85,6 +85,15 @@ const modelThunk = createAsyncModelThunk<InternalBookingPageSliceInterface, Inte
     }
 );
 
+export const deleteBookingPageThunk = createAsyncThunk<
+    string,
+    string,
+    { extra: ProtonThunkArguments; state: InternalBookingState }
+>(`${internalBookingSliceName}/delete`, async (bookingId, { extra }) => {
+    await extra.api(deleteBookingPage(bookingId));
+    return bookingId;
+});
+
 const slice = createSlice({
     name: internalBookingSliceName,
     initialState,
@@ -95,6 +104,11 @@ const slice = createSlice({
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
+        builder.addCase(deleteBookingPageThunk.fulfilled, (state, action) => {
+            if (state.value?.bookingPages) {
+                state.value.bookingPages = state.value.bookingPages.filter((page) => page.id !== action.payload);
+            }
+        });
     },
 });
 
