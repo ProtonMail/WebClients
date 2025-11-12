@@ -1,6 +1,7 @@
 import {
     addDays,
     addMinutes,
+    areIntervalsOverlapping,
     eachDayOfInterval,
     endOfWeek,
     isBefore,
@@ -229,4 +230,34 @@ export const createBookingRangeNextAvailableTime = (bookingRange: BookingRange[]
     });
 
     return createBookingRange(nextAvailableTime, timezone);
+};
+
+export const validateBookingRange = ({
+    newRangeId,
+    start,
+    end,
+    existingRanges,
+    excludeRangeId,
+}: {
+    newRangeId: string;
+    start: Date;
+    end: Date;
+    existingRanges: BookingRange[];
+    excludeRangeId?: string;
+}): string | null => {
+    for (const range of existingRanges) {
+        if (excludeRangeId && range.id === excludeRangeId) {
+            continue;
+        }
+
+        if (range.id === newRangeId) {
+            return c('Info').t`Booking already exists.`;
+        }
+
+        if (areIntervalsOverlapping({ start, end }, { start: range.start, end: range.end })) {
+            return c('Info').t`Booking overlaps with an existing booking.`;
+        }
+    }
+
+    return null;
 };
