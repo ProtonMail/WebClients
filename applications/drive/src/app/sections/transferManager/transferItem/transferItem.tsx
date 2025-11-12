@@ -59,8 +59,12 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
 export const TransferItem = ({ entry, onShare }: Props) => {
     const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
-    const transferredTotal = `${shortHumanSize(entry.transferredBytes)} / ${shortHumanSize(totalSize)}`;
     const { cancelTransfer, retryTransfer, goToLocation } = useTransferManagerActions();
+    const onlyShowTransferredBytes = !totalSize;
+    const transferredTotal = onlyShowTransferredBytes
+        ? `${shortHumanSize(entry.transferredBytes)}`
+        : `${shortHumanSize(entry.transferredBytes)} / ${shortHumanSize(totalSize)}`;
+
     const shouldHideSizeInfo = [
         BaseTransferStatus.Finished,
         BaseTransferStatus.Cancelled,
