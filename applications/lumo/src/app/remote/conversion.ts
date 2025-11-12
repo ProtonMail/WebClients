@@ -1,6 +1,6 @@
 import isNil from 'lodash/isNil';
 
-import type { SerializedAttachment } from '../types';
+import type { SerializedAsset, SerializedAttachment } from '../types';
 import {
     type Base64,
     type EncryptedData,
@@ -410,6 +410,16 @@ export function convertSpaceToApi(space: SerializedSpace): SpaceToApi {
 
 export function convertNewAttachmentToApi(attachment: SerializedAttachment, remoteSpaceId: RemoteId): NewAssetToApi {
     const { id, encrypted } = attachment;
+    const encryptedConcat = ensureConcat(encrypted);
+    return {
+        SpaceID: remoteSpaceId,
+        Encrypted: encryptedConcat,
+        AssetTag: id,
+    };
+}
+
+export function convertNewAssetToApi(asset: SerializedAsset, remoteSpaceId: RemoteId): NewAssetToApi {
+    const { id, encrypted } = asset;
     const encryptedConcat = ensureConcat(encrypted);
     return {
         SpaceID: remoteSpaceId,

@@ -13,25 +13,46 @@ import {
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
+import { useIsGuest } from '../../providers/IsGuestProvider';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { getProjectCategory } from './constants';
 import { useProjectActions } from './hooks/useProjectActions';
+import { useProjects } from './hooks/useProjects';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
+import { ProjectLimitModal } from './modals/ProjectLimitModal';
 import type { Project } from './types';
 
 import './ProjectCard.scss';
 
 interface ProjectCardProps {
     project: Project;
+    onSignInRequired?: () => void;
 }
 
-export const ProjectCard = ({ project }: ProjectCardProps) => {
+export const ProjectCard = ({ project, onSignInRequired }: ProjectCardProps) => {
     const history = useHistory();
+    const isGuest = useIsGuest();
+    const { hasLumoPlus } = useLumoPlan();
+    const myProjects = useProjects();
     const { createProject, deleteProject } = useProjectActions();
     const deleteModal = useModalStateObject();
+    const projectLimitModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = async () => {
         if (project.isExample) {
+            // Check if user is signed in
+            if (isGuest) {
+                onSignInRequired?.();
+                return;
+            }
+
+            // Check project limit for free users
+            if (!hasLumoPlus && myProjects.length >= 1) {
+                projectLimitModal.openModal(true);
+                return;
+            }
+
             // Create a new project from example template
             const { spaceId } = await createProject(
                 project.name,
@@ -107,7 +128,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                     <div className="project-card-stats">
                         {project.fileCount !== undefined && (
                             <span className="project-card-stat">
-                                <Icon name="paperclip" size={3.5} className="mr-1" />
+                                <Icon name="paper-clip" size={3.5} className="mr-1" />
                                 {project.fileCount} {project.fileCount === 1 ? c('collider_2025:Label').t`file` : c('collider_2025:Label').t`files`}
                             </span>
                         )}
@@ -140,6 +161,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                     onConfirmDelete={handleDelete}
                 />
             )}
+            {projectLimitModal.render && <ProjectLimitModal {...projectLimitModal.modalProps} />}
         </div>
     );
 };
