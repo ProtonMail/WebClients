@@ -1,6 +1,5 @@
-import { addDays, addHours, isFriday, isMonday, isSaturday, isWeekend, set } from 'date-fns';
+import { addDays, addHours, isFriday, isMonday, isSameDay, isSaturday, isTuesday, isWeekend, set } from 'date-fns';
 
-import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 
@@ -10,7 +9,6 @@ import {
     JSONFormatData,
     JSONFormatTextData,
     createBookingRangeNextAvailableTime,
-    generateBookingRangeID,
     generateDefaultBookingRange,
     generateSlotsFromRange,
     validateFormData,
@@ -231,7 +229,7 @@ describe('booking helpers', () => {
         });
     });
 
-    describe('createBookingRangeNextAvailableTime', () => {
+    describe('generateDefaultBookingRange', () => {
         const today = new Date('2026-01-15T10:30:00Z');
         beforeEach(() => {
             jest.useFakeTimers();
@@ -245,45 +243,71 @@ describe('booking helpers', () => {
 
         const tomorrow = addDays(today, 1);
         const tomorrowStart = set(tomorrow, { hours: 9 });
-        const tomorrowEnd = set(tomorrow, { hours: 17 });
 
-        const tomorrowRange = {
-            id: generateBookingRangeID(tomorrowStart, tomorrowEnd),
-            start: tomorrowStart,
-            end: tomorrowEnd,
-            timezone: 'Europe/Zurich',
-        };
+        const futureMonday = set(today, { month: 1, date: 9 });
 
-        const twoDaysAfterTomorrow = addDays(tomorrow, 2);
-        const twoDaysAfterTomorrowStart = set(twoDaysAfterTomorrow, { hours: 9 });
-        const twoDaysAfterTomorrowEnd = set(twoDaysAfterTomorrow, { hours: 17 });
+        it('should create a range for tomorrow if no start date given', () => {
+            const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
+            const res = createBookingRangeNextAvailableTime({
+                userSettings,
+                bookingRange: [],
+                timezone: 'Europe/Zurich',
+                startDate: undefined,
+            });
 
-        const dayAfterTomorrowRange = {
-            id: generateBookingRangeID(twoDaysAfterTomorrowStart, twoDaysAfterTomorrowEnd),
-            start: twoDaysAfterTomorrowStart,
-            end: twoDaysAfterTomorrowEnd,
-            timezone: 'Europe/Zurich',
-        };
-
-        it('should return tomorrow if tomorrow is available', () => {
-            const res = createBookingRangeNextAvailableTime([], 'Europe/Zurich');
-            expect(isSameDay(res.start, tomorrow)).toBe(true);
-            expect(isSameDay(res.end, tomorrow)).toBe(true);
             expect(isFriday(res.start)).toBe(true);
+            expect(isSameDay(res.start, tomorrowStart)).toBe(true);
         });
 
-        it('should return the day after tomorrow if tomorrow is not available', () => {
-            const res = createBookingRangeNextAvailableTime([tomorrowRange], 'Europe/Zurich');
-            expect(isSameDay(res.start, new Date('2026-01-17T08:00:00Z'))).toBe(true);
-            expect(isSameDay(res.end, new Date('2026-01-17T08:00:00Z'))).toBe(true);
+        it('should skip one day if tomorrow is already booked', () => {
+            const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
+            const res = createBookingRangeNextAvailableTime({
+                userSettings,
+                bookingRange: [{ start: tomorrowStart } as BookingRange],
+                timezone: 'Europe/Zurich',
+                startDate: undefined,
+            });
+
             expect(isSaturday(res.start)).toBe(true);
+            expect(isSameDay(res.start, addDays(tomorrow, 1))).toBe(true);
         });
 
-        it('should return the date in-between tomorrow and the day after if both are taken', () => {
-            const res = createBookingRangeNextAvailableTime([tomorrowRange, dayAfterTomorrowRange], 'Europe/Zurich');
-            expect(isSameDay(res.start, new Date('2026-01-17T14:00:00Z'))).toBe(true);
-            expect(isSameDay(res.end, new Date('2026-01-17T14:00:00Z'))).toBe(true);
-            expect(isSaturday(res.start)).toBe(true);
+        it('should create range on start date if same as week start', () => {
+            const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
+            const res = createBookingRangeNextAvailableTime({
+                userSettings,
+                bookingRange: [],
+                timezone: 'Europe/Zurich',
+                startDate: futureMonday,
+            });
+
+            expect(isMonday(res.start)).toBe(true);
+            expect(isSameDay(res.start, futureMonday)).toBe(true);
+        });
+
+        it('should create range on week start if start date is after week start', () => {
+            const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
+            const res = createBookingRangeNextAvailableTime({
+                userSettings,
+                bookingRange: [],
+                timezone: 'Europe/Zurich',
+                startDate: addDays(futureMonday, 2),
+            });
+
+            expect(isMonday(res.start)).toBe(true);
+            expect(isSameDay(res.start, futureMonday)).toBe(true);
+        });
+
+        it('should create range first available day if week start is not availalbe', () => {
+            const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
+            const res = createBookingRangeNextAvailableTime({
+                userSettings,
+                bookingRange: [{ start: futureMonday } as BookingRange],
+                timezone: 'Europe/Zurich',
+                startDate: futureMonday,
+            });
+
+            expect(isTuesday(res.start)).toBe(true);
         });
     });
 });
