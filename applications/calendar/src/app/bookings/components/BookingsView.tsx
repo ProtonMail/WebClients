@@ -85,6 +85,7 @@ export const BookingsView = () => {
                                         const timeString = timeslot
                                             ? format(timeslot.date, 'HH:mm', { locale: dateLocale })
                                             : undefined;
+
                                         return timeslot ? (
                                             <li>
                                                 <Button
@@ -102,7 +103,7 @@ export const BookingsView = () => {
                                                         c('Action').t`Select ${dateHeaderLongString} at ${timeString}`
                                                     }
                                                 >
-                                                    {format(timeslot.date, 'HH:mm', { locale: dateLocale })}
+                                                    {timeString}
                                                 </Button>
                                             </li>
                                         ) : (
