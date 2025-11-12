@@ -68,7 +68,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                 <SimpleSidebarListItemHeader
                     toggle={displayBookings}
                     onToggle={() => setDisplayBookings((prevState) => !prevState)}
-                    text={c('Link').t`Bookings pages`}
+                    text={c('Link').t`Booking pages`}
                     testId="calendar-sidebar:bookings-pages-button"
                     headerRef={headerRef}
                     right={
