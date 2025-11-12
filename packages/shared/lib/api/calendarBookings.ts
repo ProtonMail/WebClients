@@ -27,3 +27,8 @@ export const confirmBookingSlot = (bookingUid: string, slotId: string, data: Boo
     method: 'POST',
     data,
 });
+
+export const deleteBookingPage = (bookingId: string) => ({
+    url: `calendar/v1/booking/${bookingId}`,
+    method: 'DELETE',
+});
