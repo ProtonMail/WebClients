@@ -123,6 +123,7 @@ export type IconName =
     | 'buildings'
     | 'calendar-cells'
     | 'calendar-day'
+    | 'calendar-three-day'
     | 'calendar-checkmark'
     | 'calendar-grid'
     | 'calendar-list'
