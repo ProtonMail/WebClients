@@ -97,7 +97,7 @@ const useReconnectSync = (address: Address) => {
                             Provider,
                             RedirectUri,
                             Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_BYOE,
-                            reconnectEmailAddress: address.Email,
+                            expectedEmailAddress: { address: address.Email, type: 'reconnect' },
                         })
                     );
 

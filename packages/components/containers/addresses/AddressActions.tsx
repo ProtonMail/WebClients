@@ -224,23 +224,24 @@ const AddressActions = ({
                 disabled: !allowAddressDeletion,
             } as const),
         permissions.canGrantBYOEPermissions &&
-        sync &&
-        sync.state !== ApiSyncState.ACTIVE && {
-            text: c('Address action').t`Grant permission`,
-            key: 'address-action-grant-byoe-permission',
-            onClick: () => handleGrantPermission(withLoading),
-            disabled: loadingConfig,
-            'aria-label': c('Address action').t`Grant permission to “${emailAddress}”`,
-        },
+            sync &&
+            sync.state !== ApiSyncState.ACTIVE && {
+                text: c('Address action').t`Grant permission`,
+                key: 'address-action-grant-byoe-permission',
+                onClick: () => handleGrantPermission(withLoading),
+                disabled: loadingConfig,
+                'aria-label': c('Address action').t`Grant permission to “${emailAddress}”`,
+            },
         permissions.canReconnectBYOE && {
             text: c('Address action').t`Reconnect`,
             key: 'address-action-reconnect-byoe',
-            onClick: () => handleReconnect({
-                withLoading,
-                address,
-                setLimitModalOpen: setReachedLimitForwardingModalOpen,
-                setUpsellModalOpen: setUpsellForwardingModalOpen,
-            }),
+            onClick: () =>
+                handleReconnect({
+                    withLoading,
+                    address,
+                    setLimitModalOpen: setReachedLimitForwardingModalOpen,
+                    setUpsellModalOpen: setUpsellForwardingModalOpen,
+                }),
             disabled: loadingConfig,
             'aria-label': c('Address action').t`Reconnect address “${emailAddress}”`,
         },
