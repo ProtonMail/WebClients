@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { ADDRESS_FLAGS, PRODUCT_BIT } from '@proton/shared/lib/constants';
+import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';
@@ -57,10 +57,12 @@ describe('ConnectGmailButton', () => {
             allSyncs: [],
         });
         mockUseBYOEAddressesCount.mockReturnValue({
+            isLoadingAddressesCount: false,
             byoeAddresses: [],
             activeBYOEAddresses: [],
             addressesOrSyncs: [],
-            usedBYOEAddresses: 0,
+            forwardingList: [],
+            byoeAddressesAvailableCount: 1,
             maxBYOEAddresses: 0,
         });
     });
@@ -70,6 +72,12 @@ describe('ConnectGmailButton', () => {
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toHaveTextContent(
             'Set up auto-forwarding from Gmail'
         );
+    });
+
+    it('should render a disabled button if user is loading', () => {
+        mockUseUser.mockReturnValue([{}, true]);
+        render(<ConnectGmailButton showIcon />);
+        expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
     });
 
     it('should render a disabled button if feature is in maintenance', () => {
@@ -95,13 +103,15 @@ describe('ConnectGmailButton', () => {
         expect(screen.getByTestId('GmailSyncModal')).toBeInTheDocument();
     });
 
-    it('should open upsell modal when user is free and has a sync', () => {
+    it('should open upsell modal when user is free and has a byoe', () => {
         mockUseUser.mockReturnValue([{}, false]);
         mockUseBYOEAddressesCount.mockReturnValue({
+            isLoadingAddressesCount: false,
             byoeAddresses: [],
-            activeBYOEAddresses: [],
+            activeBYOEAddresses: [{ Email: 'test@gmail.com' } as Address],
             addressesOrSyncs: [{ id: 'syncID' } as Sync],
-            usedBYOEAddresses: 0,
+            forwardingList: [],
+            byoeAddressesAvailableCount: 0,
             maxBYOEAddresses: MAX_SYNC_FREE_USER,
         });
         render(
@@ -113,13 +123,65 @@ describe('ConnectGmailButton', () => {
         expect(screen.getByTestId('UpsellModal')).toBeInTheDocument();
     });
 
-    it('should open limit modal when user has reached sync limit', () => {
+    it('should open conversion modal when user is free and has a sync', () => {
+        mockUseSetupGmailBYOEAddress.mockReturnValue({
+            hasAccessToBYOE: true,
+        });
+        mockUseUser.mockReturnValue([{}, false]);
+        mockUseBYOEAddressesCount.mockReturnValue({
+            isLoadingAddressesCount: false,
+            byoeAddresses: [],
+            activeBYOEAddresses: [],
+            addressesOrSyncs: [{ id: 'syncID' } as Sync],
+            forwardingList: [{ id: 'syncID' } as Sync],
+            byoeAddressesAvailableCount: 1,
+            maxBYOEAddresses: MAX_SYNC_FREE_USER,
+        });
+        render(
+            <ModalsProvider>
+                <ConnectGmailButton showIcon />
+            </ModalsProvider>
+        );
+        fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
+        expect(screen.getByTestId('converstionModal')).toBeInTheDocument();
+    });
+
+    it('should open limit modal when paid user has reached byoe limit', () => {
         mockUseUser.mockReturnValue([{ Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } }, false]);
         mockUseBYOEAddressesCount.mockReturnValue({
+            isLoadingAddressesCount: false,
+            byoeAddresses: [],
+            activeBYOEAddresses: [
+                { Email: 'test@gmail.com' } as Address,
+                { Email: 'test2@gmail.com' } as Address,
+                { Email: 'test3@gmail.com' } as Address,
+            ],
+            addressesOrSyncs: [{ id: 'syncID1' } as Sync, { id: 'syncID2' } as Sync, { id: 'syncID3' } as Sync],
+            forwardingList: [],
+            byoeAddressesAvailableCount: 0,
+            maxBYOEAddresses: MAX_SYNC_PAID_USER,
+        });
+        render(
+            <ModalsProvider>
+                <ConnectGmailButton showIcon />
+            </ModalsProvider>
+        );
+        fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
+        screen.getByText('Limit reached');
+    });
+
+    it('should open conversion modal when paid user has reached sync limit', () => {
+        mockUseSetupGmailBYOEAddress.mockReturnValue({
+            hasAccessToBYOE: true,
+        });
+        mockUseUser.mockReturnValue([{ Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } }, false]);
+        mockUseBYOEAddressesCount.mockReturnValue({
+            isLoadingAddressesCount: false,
             byoeAddresses: [],
             activeBYOEAddresses: [],
             addressesOrSyncs: [{ id: 'syncID1' } as Sync, { id: 'syncID2' } as Sync, { id: 'syncID3' } as Sync],
-            usedBYOEAddresses: 0,
+            forwardingList: [{ id: 'syncID1' } as Sync, { id: 'syncID2' } as Sync, { id: 'syncID3' } as Sync],
+            byoeAddressesAvailableCount: 0,
             maxBYOEAddresses: MAX_SYNC_PAID_USER,
         });
         render(
@@ -128,69 +190,6 @@ describe('ConnectGmailButton', () => {
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
-        screen.getByText('Limit reached');
-    });
-
-    it('should open limit modal when user has reached BYOE limit', () => {
-        mockUseUser.mockReturnValue([{ Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } }, false]);
-        mockUseBYOEAddressesCount.mockReturnValue({
-            byoeAddresses: [
-                { ID: 'address1', Flags: ADDRESS_FLAGS.BYOE } as Address,
-                { ID: 'address2', Flags: ADDRESS_FLAGS.BYOE } as Address,
-                { ID: 'address3', Flags: ADDRESS_FLAGS.BYOE } as Address,
-            ],
-            activeBYOEAddresses: [],
-            addressesOrSyncs: [{ id: 'syncID1' } as Sync, { id: 'syncID2' } as Sync, { id: 'syncID3' } as Sync],
-            usedBYOEAddresses: 3,
-            maxBYOEAddresses: MAX_SYNC_PAID_USER,
-        });
-        mockUseAddresses.mockReturnValue([
-            [
-                { ID: 'address1', Flags: ADDRESS_FLAGS.BYOE } as Address,
-                { ID: 'address2', Flags: ADDRESS_FLAGS.BYOE } as Address,
-                { ID: 'address3', Flags: ADDRESS_FLAGS.BYOE } as Address,
-            ],
-            false,
-        ]);
-        render(
-            <ModalsProvider>
-                <ConnectGmailButton showIcon />
-            </ModalsProvider>
-        );
-        fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
-        screen.getByText('Limit reached');
-    });
-
-    it('should open limit modal when user has reached BYOE limit and deleted syncs', () => {
-        mockUseUser.mockReturnValue([
-            {
-                Subscribed: PRODUCT_BIT.MAIL,
-                Flags: { 'has-a-byoe-address': true },
-                isPaid: true,
-            },
-            false,
-        ]);
-        mockUseBYOEAddressesCount.mockReturnValue({
-            byoeAddresses: [
-                { ID: 'address1', Flags: ADDRESS_FLAGS.BYOE } as Address,
-                { ID: 'address2', Flags: ADDRESS_FLAGS.BYOE } as Address,
-                { ID: 'address3', Flags: ADDRESS_FLAGS.BYOE } as Address,
-            ],
-            activeBYOEAddresses: [],
-            addressesOrSyncs: [
-                { ID: 'address1', Flags: ADDRESS_FLAGS.BYOE } as Address,
-                { ID: 'address2', Flags: ADDRESS_FLAGS.BYOE } as Address,
-                { ID: 'address3', Flags: ADDRESS_FLAGS.BYOE } as Address,
-            ],
-            usedBYOEAddresses: 3,
-            maxBYOEAddresses: MAX_SYNC_PAID_USER,
-        });
-        render(
-            <ModalsProvider>
-                <ConnectGmailButton showIcon />
-            </ModalsProvider>
-        );
-        fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
-        screen.getByText('Limit reached');
+        expect(screen.getByTestId('converstionModal')).toBeInTheDocument();
     });
 });
