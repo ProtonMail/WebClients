@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Icon, useNotifications } from '@proton/components';
 
-import type { Attachment } from '../../types';
+import type { Asset } from '../../types';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
-import { selectAttachmentsBySpaceId, selectProvisionalAttachments } from '../../redux/selectors';
-import { handleFileAsync } from '../../services/files/fileAsync';
-import { pushAttachmentRequest, upsertAttachment, deleteAttachment } from '../../redux/slices/core/attachments';
+import { selectAssetsBySpaceId } from '../../redux/selectors';
+import { handleSpaceAssetFileAsync } from '../../services/files';
+import { locallyDeleteAssetFromLocalRequest } from '../../redux/slices/core/assets';
 import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFileItem';
 import { FileContentModal } from '../components/Files/KnowledgeBase/FileContentModal';
 
@@ -25,35 +25,11 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const fileInputRef = useRef<HTMLInputElement>(null);
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
-    const [fileToView, setFileToView] = useState<Attachment | null>(null);
-    const [pendingFileNames, setPendingFileNames] = useState<Set<string>>(new Set());
+    const [fileToView, setFileToView] = useState<Asset | null>(null);
 
-    // Get actual files from Space attachments
-    const spaceAttachments = useLumoSelector((state) => selectAttachmentsBySpaceId(projectId)(state));
-    const files = Object.values(spaceAttachments);
-    
-    // Get provisional attachments to find newly uploaded files
-    const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
-
-    // Watch for new provisional attachments and assign them to the space
-    useEffect(() => {
-        if (pendingFileNames.size === 0) return;
-
-        provisionalAttachments.forEach((attachment) => {
-            if (pendingFileNames.has(attachment.filename) && !attachment.spaceId) {
-                console.log('Auto-assigning provisional attachment to space:', attachment.id, attachment.filename);
-                dispatch(upsertAttachment({ ...attachment, spaceId: projectId }));
-                dispatch(pushAttachmentRequest({ id: attachment.id }));
-                
-                // Remove from pending
-                setPendingFileNames((prev) => {
-                    const next = new Set(prev);
-                    next.delete(attachment.filename);
-                    return next;
-                });
-            }
-        });
-    }, [provisionalAttachments, pendingFileNames, projectId, dispatch]);
+    // Get space assets (persistent files)
+    const spaceAssets = useLumoSelector((state) => selectAssetsBySpaceId(projectId)(state));
+    const files = Object.values(spaceAssets).filter((asset) => !asset.deleted && !asset.error);
 
     const handleAddFiles = () => {
         fileInputRef.current?.click();
@@ -63,15 +39,12 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
         const selectedFiles = Array.from(event.target.files || []);
         if (selectedFiles.length === 0) return;
 
-        // Process each file
+        // Process each file as a space asset
         for (const file of selectedFiles) {
             try {
-                console.log('Processing file for project:', file.name);
-                
-                // Add to pending files - the useEffect will watch for it
-                setPendingFileNames((prev) => new Set(prev).add(file.name));
-                
-                const result = await dispatch(handleFileAsync(file, []));
+                console.log('Processing file as space asset:', file.name, projectId);
+
+                const result = await dispatch(handleSpaceAssetFileAsync(file, projectId));
 
                 if (result.success) {
                     createNotification({
@@ -79,49 +52,25 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                         type: 'success',
                     });
                 } else if (result.isDuplicate) {
-                    // Remove from pending if duplicate
-                    setPendingFileNames((prev) => {
-                        const next = new Set(prev);
-                        next.delete(file.name);
-                        return next;
-                    });
                     createNotification({
-                        text: c('collider_2025:Info').t`File "${file.name}" is already attached`,
+                        text: c('collider_2025:Info').t`File "${file.name}" is already in this project`,
                         type: 'info',
                     });
                 } else if (result.isUnsupported) {
-                    // Remove from pending if unsupported
-                    setPendingFileNames((prev) => {
-                        const next = new Set(prev);
-                        next.delete(file.name);
-                        return next;
-                    });
                     createNotification({
                         text: c('collider_2025:Error').t`File type not supported: ${file.name}`,
                         type: 'error',
                     });
                 } else {
-                    // Remove from pending on failure
-                    setPendingFileNames((prev) => {
-                        const next = new Set(prev);
-                        next.delete(file.name);
-                        return next;
-                    });
                     createNotification({
                         text: c('collider_2025:Error').t`Failed to process file: ${file.name}`,
                         type: 'error',
                     });
                 }
             } catch (error) {
-                console.error('Error processing file:', error);
-                // Remove from pending on error
-                setPendingFileNames((prev) => {
-                    const next = new Set(prev);
-                    next.delete(file.name);
-                    return next;
-                });
+                console.error('Error uploading file:', error);
                 createNotification({
-                    text: c('collider_2025:Error').t`Error processing file: ${file.name}`,
+                    text: c('collider_2025:Error').t`Error uploading file: ${file.name}`,
                     type: 'error',
                 });
             }
@@ -133,8 +82,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
         }
     };
 
-    const handleViewFile = (attachment: Attachment) => {
-        setFileToView(attachment);
+    const handleViewFile = (asset: Asset) => {
+        setFileToView(asset);
     };
 
     const handleCloseFileView = () => {
@@ -142,7 +91,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     };
 
     const handleRemoveFile = (id: string) => {
-        dispatch(deleteAttachment(id));
+        dispatch(locallyDeleteAssetFromLocalRequest(id));
         createNotification({
             text: c('collider_2025:Success').t`File removed from project`,
             type: 'success',

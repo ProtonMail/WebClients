@@ -25,6 +25,15 @@ import { mapEmpty, mapIds, mapLength } from '../../util/collections';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../slices/core';
 import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
 import {
+    locallyDeleteAssetFromLocalRequest,
+    pullAssetFailure,
+    pullAssetRequest,
+    pushAssetFailure,
+    pushAssetNeedsRetry,
+    pushAssetRequest,
+    pushAssetSuccess,
+} from '../slices/core/assets';
+import {
     addAttachment,
     deleteAllAttachments,
     locallyDeleteAttachmentFromLocalRequest,
@@ -87,6 +96,15 @@ import {
     pushSpaceRequest,
     pushSpaceSuccess,
 } from '../slices/core/spaces';
+import {
+    handleLocallyDeleteAssetFromLocalRequest,
+    handlePullAssetRequest,
+    handlePushAssetFailure,
+    handlePushAssetNeedsRetry,
+    handlePushAssetRequest,
+    handlePushAssetSuccess,
+    logPullAssetFailure,
+} from './assets';
 import {
     deserializeAttachmentSaga,
     logPullAttachmentFailure,
@@ -494,6 +512,15 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(locallyDeleteAttachmentFromLocalRequest, softDeleteAttachmentFromLocal)},
         function*() { yield takeEvery(locallyDeleteAttachmentFromRemoteRequest, softDeleteAttachmentFromRemote)},
         function*() { yield takeEvery(locallyRefreshAttachmentFromRemoteRequest, refreshAttachmentFromRemote)},
+
+        // Assets (space-level files)
+        function*() { yield takeEvery(pushAssetRequest, handlePushAssetRequest)},
+        function*() { yield takeEvery(pushAssetSuccess, handlePushAssetSuccess)},
+        function*() { yield takeEvery(pushAssetFailure, handlePushAssetFailure)},
+        function*() { yield takeEvery(pushAssetNeedsRetry, handlePushAssetNeedsRetry)},
+        function*() { yield takeEvery(pullAssetRequest, handlePullAssetRequest)},
+        function*() { yield takeEvery(pullAssetFailure, logPullAssetFailure)},
+        function*() { yield takeEvery(locallyDeleteAssetFromLocalRequest, handleLocallyDeleteAssetFromLocalRequest)},
         // function*() { yield takeEvery(locallyRefreshAttachmentFromRemoteMessageRequest, refreshAttachmentFromRemoteMessage)},
 
         function*() { yield takeEvery(addMasterKey, initAppSaga)},
