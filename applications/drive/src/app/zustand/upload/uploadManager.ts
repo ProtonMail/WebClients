@@ -11,6 +11,7 @@ import { MAX_UPLOAD_FOLDER_LOAD, MAX_UPLOAD_JOBS } from './constants';
 import { UploadConflictStrategy, UploadConflictType } from './types';
 import { useUploadControllerStore } from './uploadController.store';
 import { type UploadEvent, UploadEventType, startUpload } from './uploadHandler';
+import type { UploadItemInput } from './uploadQueue.store';
 import { type FileUploadItem, type FolderCreationItem, UploadStatus, useUploadQueueStore } from './uploadQueue.store';
 import { type FolderNode, buildFolderStructure } from './utils/buildFolderStructure';
 import { hasFolderStructure } from './utils/hasFolderStructure';
@@ -608,7 +609,7 @@ class UploadManager {
 
         if (!hasStructure) {
             for (const file of filesArray) {
-                uploadQueueStore.addItem({
+                const fileQueueItem = {
                     type: NodeType.File,
                     file,
                     parentUid,
@@ -617,7 +618,9 @@ class UploadManager {
                     clearTextExpectedSize: file.size,
                     status: UploadStatus.Pending,
                     batchId,
-                });
+                } as UploadItemInput;
+
+                uploadQueueStore.addItem(fileQueueItem);
             }
             void this.schedule();
             return;
@@ -627,13 +630,15 @@ class UploadManager {
 
         const folderMap = new Map<string, string>();
 
-        const rootFolderId = uploadQueueStore.addItem({
+        const rootFolderItem = {
             type: NodeType.Folder,
             name: structure.name,
             parentUid,
             status: UploadStatus.Pending,
             batchId,
-        });
+        } as UploadItemInput;
+
+        const rootFolderId = uploadQueueStore.addItem(rootFolderItem);
 
         folderMap.set('', rootFolderId);
 
@@ -663,13 +668,14 @@ class UploadManager {
 
         for (const [folderName, subfolder] of node.subfolders) {
             const folderPath = currentPath ? `${currentPath}/${folderName}` : folderName;
-            const folderId = uploadQueueStore.addItem({
+            const folderItem = {
                 type: NodeType.Folder,
                 name: folderName,
                 parentUid,
                 status: UploadStatus.Pending,
                 batchId,
-            });
+            } as UploadItemInput;
+            const folderId = uploadQueueStore.addItem(folderItem);
 
             folderMap.set(folderPath, folderId);
 
@@ -679,7 +685,7 @@ class UploadManager {
         for (const file of node.files) {
             const fileParentUid = currentPath ? folderMap.get(currentPath) || parentUid : parentUid;
 
-            uploadQueueStore.addItem({
+            const fileQueueItem = {
                 type: NodeType.File,
                 file,
                 parentUid: fileParentUid,
@@ -688,7 +694,8 @@ class UploadManager {
                 clearTextExpectedSize: file.size,
                 status: UploadStatus.Pending,
                 batchId,
-            });
+            } as UploadItemInput;
+            uploadQueueStore.addItem(fileQueueItem);
         }
     }
 

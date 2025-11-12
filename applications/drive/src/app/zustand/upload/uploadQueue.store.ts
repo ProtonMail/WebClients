@@ -25,6 +25,7 @@ export type BaseUploadItem = {
     batchId: string;
     error?: Error;
     nodeUid?: string;
+    lastStatusUpdateTime: Date;
 };
 
 export type FileUploadItem = BaseUploadItem & {
@@ -63,6 +64,8 @@ export type UploadItemConflict = FileConflictItem | FolderConflictItem;
 
 export type QueueEntry = UploadItem | UploadItemConflict;
 
+export type UploadItemInput = Omit<UploadItem, 'lastStatusUpdateTime'>;
+
 function isConflictItem(item: QueueEntry): item is UploadItemConflict {
     return item.status === UploadStatus.ConflictFound;
 }
@@ -92,7 +95,7 @@ type UploadQueueStore = {
      * @param item - The upload item to add (file or folder)
      * @returns The generated unique upload ID for this item
      */
-    addItem: (item: UploadItem) => string;
+    addItem: (item: UploadItemInput) => string;
 
     /**
      * Updates specific properties of a queue item.
@@ -178,8 +181,9 @@ export const useUploadQueueStore = create<UploadQueueStore>()(
 
             addItem: (item) => {
                 const uploadId = generateUID();
+                const uploadItem = { ...item, lastStatusUpdateTime: new Date() } as UploadItem;
                 set((state) => ({
-                    queue: new Map(state.queue).set(uploadId, item),
+                    queue: new Map(state.queue).set(uploadId, uploadItem),
                 }));
                 return uploadId;
             },
@@ -190,8 +194,13 @@ export const useUploadQueueStore = create<UploadQueueStore>()(
                     if (!existing) {
                         return {};
                     }
+                    const shouldUpdateTimestamp = update.status !== undefined && update.status !== existing.status;
                     const queue = new Map(state.queue);
-                    queue.set(uploadId, { ...existing, ...update });
+                    queue.set(uploadId, {
+                        ...existing,
+                        ...update,
+                        lastStatusUpdateTime: shouldUpdateTimestamp ? new Date() : existing.lastStatusUpdateTime,
+                    });
                     return { queue };
                 });
             },
