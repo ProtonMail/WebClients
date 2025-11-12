@@ -4,14 +4,25 @@ import { Checkbox, Icon, ModalTwo, ModalTwoContent, SelectTwo, Option, useModalT
 import { SheetImportDestination, SheetImportSeparatorType, type SheetImportData } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import clsx from '@proton/utils/clsx'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 
 export interface SheetImportModalProps extends ModalStateProps {
   handleImport: (data: SheetImportData) => void
 }
 
-const MIMETYPES_TO_ACCEPT = [SupportedProtonDocsMimeTypes.csv, SupportedProtonDocsMimeTypes.tsv].join(', ')
+const MIMETYPES_TO_ACCEPT = [
+  SupportedProtonDocsMimeTypes.csv,
+  SupportedProtonDocsMimeTypes.tsv,
+  SupportedProtonDocsMimeTypes.xlsx,
+].join(', ')
+
+const XLSX_ONLY_DESTINATIONS = [SheetImportDestination.ReplaceSpreadsheet]
+const CSV_ONLY_DESTINATIONS = [
+  SheetImportDestination.InsertAsNewSheet,
+  SheetImportDestination.ReplaceAtSelectedCell,
+  SheetImportDestination.ReplaceCurrentSheet,
+]
 
 function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetImportModalProps) {
   const [isOpen, setIsOpen] = useState(open)
@@ -20,6 +31,15 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
   const [shouldConvertCells, setShouldConvertCells] = useState(true)
   const [destination, setDestination] = useState<SheetImportDestination>(SheetImportDestination.InsertAsNewSheet)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (file?.type === SupportedProtonDocsMimeTypes.xlsx && !XLSX_ONLY_DESTINATIONS.includes(destination)) {
+      setDestination(SheetImportDestination.ReplaceSpreadsheet)
+    }
+    if (file?.type !== SupportedProtonDocsMimeTypes.xlsx && !CSV_ONLY_DESTINATIONS.includes(destination)) {
+      setDestination(SheetImportDestination.InsertAsNewSheet)
+    }
+  }, [destination, file?.type])
 
   const closeModal = () => {
     setIsOpen(false)
@@ -40,7 +60,7 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
       <ModalTwoContent className="mx-0 py-4">
         <div className="px-8">
           <h1 className="mb-1.5 text-2xl font-bold">{c('sheets_2025:Title').t`Import data`}</h1>
-          <div className="mb-2 text-[--text-hint]">{c('sheets_2025:Info').t`Select a CSV or TSV file to import`}</div>
+          <div className="mb-2 text-[--text-hint]">{c('sheets_2025:Info').t`Select a file to import`}</div>
           <div className={clsx('flex items-center', file ? 'mb-2' : 'mb-4')}>
             <span className="mr-2 text-[--text-hint]">{c('Label').t`File`}</span>
             {file ? (
@@ -84,14 +104,22 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
               <Option
                 title={c('sheets_2025:Info').t`Insert as new sheet`}
                 value={SheetImportDestination.InsertAsNewSheet}
+                disabled={file?.type === SupportedProtonDocsMimeTypes.xlsx}
+              />
+              <Option
+                title={c('sheets_2025:Info').t`Replace spreadsheet`}
+                value={SheetImportDestination.ReplaceSpreadsheet}
+                disabled={file?.type !== SupportedProtonDocsMimeTypes.xlsx}
               />
               <Option
                 title={c('sheets_2025:Info').t`Replace data at selected cell`}
                 value={SheetImportDestination.ReplaceAtSelectedCell}
+                disabled={file?.type === SupportedProtonDocsMimeTypes.xlsx}
               />
               <Option
                 title={c('sheets_2025:Info').t`Replace current sheet`}
                 value={SheetImportDestination.ReplaceCurrentSheet}
+                disabled={file?.type === SupportedProtonDocsMimeTypes.xlsx}
               />
             </SelectTwo>
             <div className="text-[--text-hint] [grid-column:2] [grid-row:1]">{c('sheets_2025:Label')
@@ -107,6 +135,7 @@ function SheetImportModal({ handleImport, onClose, open, ...modalProps }: SheetI
                 const checked = event.target.checked
                 setShouldConvertCells(checked)
               }}
+              disabled={file?.type === SupportedProtonDocsMimeTypes.xlsx}
             >{c('sheets_2025:Label').t`Convert text to numbers, dates, and formulas`}</Checkbox>
           </div>
         </div>
