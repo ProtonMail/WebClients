@@ -414,6 +414,7 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
 };
 
 export const ENTERPRISE_PLAN_TITLE = 'Enterprise';
+export const LIFETIME_PLAN_TITLE = 'Lifetime';
 
 export enum PLAN_TYPES {
     ADDON = 0,

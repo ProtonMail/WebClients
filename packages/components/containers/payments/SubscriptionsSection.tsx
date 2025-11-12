@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -26,8 +27,9 @@ import {
     Renew,
     type Subscription,
     changeRenewState,
-    getPlanTitle,
     getRenewalTime,
+    getSubscriptionPlanTitle,
+    hasLifetimeCoupon,
     isFreeSubscription,
     isManagedExternally,
     isUpcomingSubscriptionUnpaid,
@@ -53,8 +55,9 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const upcoming = subscription?.UpcomingSubscription ?? undefined;
     const [organization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
+    const [user] = useUser();
 
-    const planTitle = getPlanTitle(subscription);
+    const { planTitle } = getSubscriptionPlanTitle(user, subscription);
 
     const { renewDisabled, subscriptionExpiresSoon } = subscriptionExpires(subscription);
 
@@ -126,6 +129,10 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const renewLength = latestSubscription.Cycle;
 
     const renewalText = (() => {
+        if (hasLifetimeCoupon(subscription)) {
+            return c('Payments.Lifetime Subscription').t`Lifetime accounts can be transferred or sold`;
+        }
+
         if (isManagedExternally(subscription)) {
             const subscriptionManagerName = getSubscriptionManagerName(subscription.External);
             // translator: possible values are "Google Play" or "Apple App Store". This sentence means "Subscription renews automatically on Google Play (or Apple App Store)"
@@ -142,6 +149,24 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
 
     const renewalTextElement = <span data-testid="renewalNotice">{renewalText}</span>;
 
+    const renewalTooltip = (() => {
+        if (hasLifetimeCoupon(subscription)) {
+            return (
+                <Info
+                    className="ml-2"
+                    title={c('Payments.Lifetime Subscription')
+                        .t`Reach out to Customer Support to confirm ownership change`}
+                />
+            );
+        }
+
+        if (!isManagedExternally(subscription)) {
+            <Info className="ml-2" title={c('Payments').t`Credits and discounts are reflected in your invoice`} />;
+        }
+
+        return null;
+    })();
+
     return (
         <TableRow>
             <TableCell label={c('Title subscription').t`Plan`}>
@@ -154,9 +179,13 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             </TableCell>
             <TableCell label={c('Title subscription').t`End date`}>
                 <div className="flex items-center">
-                    <Time format="PPP" sameDayFormat={false} data-testid="planEndTimeId">
-                        {getRenewalTime(subscription)}
-                    </Time>
+                    {hasLifetimeCoupon(subscription) ? (
+                        c('Payments.Lifetime Subscription.Renewal time').t`Never`
+                    ) : (
+                        <Time format="PPP" sameDayFormat={false} data-testid="planEndTimeId">
+                            {getRenewalTime(subscription)}
+                        </Time>
+                    )}
                     {subscriptionExpiresSoon && (
                         <Tooltip
                             title={c('Info subscription').t`You can prevent expiry by reactivating the subscription`}
@@ -173,12 +202,7 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                 ) : (
                     <div className="flex items-center">
                         {renewalTextElement}
-                        {!isManagedExternally(subscription) && (
-                            <Info
-                                className="ml-2"
-                                title={c('Payments').t`Credits and discounts are reflected in your invoice`}
-                            />
-                        )}
+                        {renewalTooltip}
                     </div>
                 )}
             </TableCell>

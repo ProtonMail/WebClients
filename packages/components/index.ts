@@ -667,8 +667,6 @@ export { default as PassPolicies } from './containers/organization/PassPolicies'
 export { default as OrganizationRetentionPoliciesSection } from './containers/organization/retentionPolicy/OrganizationRetentionPoliciesSection';
 export { default as SsoPage } from './containers/organization/sso/SsoPage';
 export { OtherMailPreferencesSection } from './containers/otherMailPreferences/OtherMailPreferencesSection';
-export { default as IndexSection } from './containers/overview/IndexSection';
-export { default as SummarySection } from './containers/overview/SummarySection';
 export { default as AuthModal } from './containers/password/AuthModal';
 export type { AuthModalResult } from './containers/password/AuthModal';
 export { default as Alert3ds } from './containers/payments/Alert3ds';
