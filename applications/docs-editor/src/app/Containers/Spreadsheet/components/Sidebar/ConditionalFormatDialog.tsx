@@ -38,7 +38,7 @@ import { produce } from 'immer'
 import { useForm } from 'react-hook-form'
 import { FUNCTION_DESCRIPTIONS } from '../../constants'
 import { useEvent } from '../utils'
-import { FormGroup, FormLabel, NativeSelect } from './shared'
+import { Button, FormGroup, FormLabel, Input, Select, SelectItem, SelectPopover } from './shared'
 import { useUI } from '../../ui-store'
 
 const { s } = createStringifier(strings)
@@ -68,7 +68,7 @@ const FormatButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(function
   ref,
 ) {
   return (
-    <Ariakit.Button
+    <Button
       type="button"
       className={clsx('flex size-[36px] items-center justify-center rounded-lg', className)}
       {...props}
@@ -83,8 +83,7 @@ const FormatToggleButton = forwardRef<HTMLInputElement, Ariakit.CheckboxProps>(f
 ) {
   return (
     <Ariakit.Checkbox
-      // eslint-disable-next-line jsx-a11y/control-has-associated-label
-      render={<button type="button" />}
+      render={<Button type="button" />}
       className={clsx(
         'flex size-[36px] items-center justify-center rounded-lg aria-checked:bg-[#C2C0BE59]/35',
         className,
@@ -205,7 +204,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                   </div>
 
                   <div>
-                    <button
+                    <Button
                       type="button"
                       className="py-1 text-sm text-[#6243E6]"
                       onClick={() => {
@@ -224,7 +223,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                       }}
                     >
                       {s('Add another range')}
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </FormGroup>
@@ -233,22 +232,27 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                 <FormGroup>
                   <FormLabel>{s('Format rules')}</FormLabel>
                   <div className="flex flex-col gap-2">
-                    <NativeSelect
+                    <Ariakit.SelectProvider
                       value={booleanRule?.condition?.type ?? CONDITION_NONE}
-                      onChange={(event) => {
-                        form.setValue('booleanRule.condition.type', event.target.value as ConditionType)
+                      setValue={(value: ConditionType) => {
+                        form.setValue('booleanRule.condition.type', value)
                         form.setValue('booleanRule.condition.values', booleanRule?.condition?.values ?? [])
                       }}
                     >
-                      <option value={CONDITION_NONE}>{s('None')}</option>
-                      {CONDITION_LABELS.map(({ condition, label }) => {
-                        return (
-                          <option key={condition} value={condition}>
-                            {label}
-                          </option>
-                        )
-                      })}
-                    </NativeSelect>
+                      <Select />
+                      <SelectPopover sameWidth>
+                        <Ariakit.SelectGroup className="py-2">
+                          <SelectItem value={CONDITION_NONE}>{s('None')}</SelectItem>
+                          {CONDITION_LABELS.map(({ condition, label }) => {
+                            return (
+                              <SelectItem key={condition} value={condition}>
+                                {label}
+                              </SelectItem>
+                            )
+                          })}
+                        </Ariakit.SelectGroup>
+                      </SelectPopover>
+                    </Ariakit.SelectProvider>
 
                     {showFromValue ? (
                       booleanRule?.condition?.type === 'CUSTOM_FORMULA' ? (
@@ -266,36 +270,24 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                           />
                         </div>
                       ) : (
-                        <label
-                          aria-label="formula"
-                          className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3"
-                        >
-                          <input
-                            placeholder={s('Enter value')}
-                            value={fromValue}
-                            onChange={(e) =>
-                              form.setValue(`booleanRule.condition.values.${0}.userEnteredValue`, e.target.value)
-                            }
-                            className="h-full grow truncate text-sm !outline-none"
-                          />
-                        </label>
+                        <Input
+                          placeholder={s('Enter value')}
+                          value={fromValue}
+                          onChange={(e) =>
+                            form.setValue(`booleanRule.condition.values.${0}.userEnteredValue`, e.target.value)
+                          }
+                        />
                       )
                     ) : null}
 
                     {showToValue ? (
-                      <label
-                        aria-label="formula"
-                        className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3"
-                      >
-                        <input
-                          placeholder={s('Enter value')}
-                          value={toValue}
-                          onChange={(e) =>
-                            form.setValue(`booleanRule.condition.values.${1}.userEnteredValue`, e.target.value)
-                          }
-                          className="h-full grow truncate text-sm !outline-none"
-                        />
-                      </label>
+                      <Input
+                        placeholder={s('Enter value')}
+                        value={toValue}
+                        onChange={(e) =>
+                          form.setValue(`booleanRule.condition.values.${1}.userEnteredValue`, e.target.value)
+                        }
+                      />
                     ) : null}
                   </div>
                 </FormGroup>
@@ -393,12 +385,11 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
               <Ariakit.TabPanel tabId={TABS.COLOR_SCALE} className="flex flex-col gap-4">
                 <FormGroup>
                   <FormLabel>{s('Min point')}</FormLabel>
-                  <div className="flex items-center gap-3">
-                    <div className="grow basis-0">
-                      <NativeSelect
+                  <div className="flex min-w-0 items-center gap-3">
+                    <div className="flex grow basis-0 flex-col">
+                      <Ariakit.SelectProvider
                         value={gradientRule?.minpoint?.type ?? 'MIN'}
-                        onChange={(event) => {
-                          const value = event.target.value
+                        setValue={(value) => {
                           form.setValue('gradientRule.minpoint', {
                             ...gradientRule?.minpoint,
                             type: value,
@@ -406,31 +397,28 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
                           } as InterpolationPoint)
                         }}
                       >
-                        <option value="MIN">{s('Min value')}</option>
-                        <option value="NUMBER">{s('Number')}</option>
-                      </NativeSelect>
+                        <Select />
+                        <SelectPopover sameWidth>
+                          <Ariakit.SelectGroup className="py-2">
+                            <SelectItem value="MIN">{s('Min value')}</SelectItem>
+                            <SelectItem value="NUMBER">{s('Number')}</SelectItem>
+                          </Ariakit.SelectGroup>
+                        </SelectPopover>
+                      </Ariakit.SelectProvider>
                     </div>
 
                     {gradientRule?.minpoint?.type === 'NUMBER' ? (
                       <div className="grow basis-0">
-                        <label
-                          aria-label="formula"
-                          className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
-                        >
-                          <input
-                            value={gradientRule?.minpoint?.value ?? ''}
-                            onChange={(event) => form.setValue('gradientRule.minpoint.value', event.target.value)}
-                            className="h-full grow truncate text-sm !outline-none"
-                          />
-                        </label>
+                        <Input
+                          value={gradientRule?.minpoint?.value ?? ''}
+                          onChange={(event) => form.setValue('gradientRule.minpoint.value', event.target.value)}
+                        />
                       </div>
                     ) : null}
 
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
-                        <Ariakit.PopoverDisclosure
-                          render={<FormatButton className="ring-[1px] ring-inset ring-[#EAE7E4]" />}
-                        >
+                        <Ariakit.PopoverDisclosure render={<FormatButton className="border-[#EAE7E4]" />}>
                           <Icon data={Icons.bucketColor} />
                         </Ariakit.PopoverDisclosure>
 
@@ -450,43 +438,39 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
                 <FormGroup>
                   <FormLabel>{s('Mid point')}</FormLabel>
-                  <div className="flex items-center gap-3">
-                    <div className="grow basis-0">
-                      <NativeSelect
+                  <div className="flex min-w-0 items-center gap-3">
+                    <div className="flex grow basis-0 flex-col">
+                      <Ariakit.SelectProvider
                         value={gradientRule?.midpoint?.type ?? CONDITION_NONE}
-                        onChange={(event) => {
-                          const value = event.target.value
+                        setValue={(value) => {
                           form.setValue('gradientRule.midpoint.type', value as InterpolationPoint['type'])
                           if (value === CONDITION_NONE) {
                             form.setValue('gradientRule.midpoint.value', '')
                           }
                         }}
                       >
-                        <option value={CONDITION_NONE}>None</option>
-                        <option value="NUMBER">{s('Number')}</option>
-                      </NativeSelect>
+                        <Select />
+                        <SelectPopover sameWidth>
+                          <Ariakit.SelectGroup className="py-2">
+                            <SelectItem value={CONDITION_NONE}>None</SelectItem>
+                            <SelectItem value="NUMBER">{s('Number')}</SelectItem>
+                          </Ariakit.SelectGroup>
+                        </SelectPopover>
+                      </Ariakit.SelectProvider>
                     </div>
 
                     {gradientRule?.midpoint?.type === 'NUMBER' ? (
                       <div className="grow basis-0">
-                        <label
-                          aria-label="formula"
-                          className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
-                        >
-                          <input
-                            value={gradientRule?.midpoint?.value ?? ''}
-                            onChange={(event) => form.setValue('gradientRule.midpoint.value', event.target.value)}
-                            className="h-full grow truncate text-sm !outline-none"
-                          />
-                        </label>
+                        <Input
+                          value={gradientRule?.midpoint?.value ?? ''}
+                          onChange={(event) => form.setValue('gradientRule.midpoint.value', event.target.value)}
+                        />
                       </div>
                     ) : null}
 
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
-                        <Ariakit.PopoverDisclosure
-                          render={<FormatButton className="ring-[1px] ring-inset ring-[#EAE7E4]" />}
-                        >
+                        <Ariakit.PopoverDisclosure render={<FormatButton className="border-[#EAE7E4]" />}>
                           <Icon data={Icons.bucketColor} />
                         </Ariakit.PopoverDisclosure>
 
@@ -506,43 +490,39 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
 
                 <FormGroup>
                   <FormLabel>{s('Max point')}</FormLabel>
-                  <div className="flex items-center gap-3">
-                    <div className="grow basis-0">
-                      <NativeSelect
+                  <div className="flex min-w-0 items-center gap-3">
+                    <div className="flex grow basis-0 flex-col">
+                      <Ariakit.SelectProvider
                         value={gradientRule?.maxpoint?.type ?? 'MAX'}
-                        onChange={(event) => {
-                          const value = event.target.value
+                        setValue={(value) => {
                           form.setValue('gradientRule.maxpoint.type', value as InterpolationPoint['type'])
                           if (value === 'MAX') {
                             form.setValue('gradientRule.maxpoint.value', '')
                           }
                         }}
                       >
-                        <option value="MAX">{s('Max value')}</option>
-                        <option value="NUMBER">{s('Number')}</option>
-                      </NativeSelect>
+                        <Select />
+                        <SelectPopover sameWidth>
+                          <Ariakit.SelectGroup className="py-2">
+                            <SelectItem value="MAX">{s('Max value')}</SelectItem>
+                            <SelectItem value="NUMBER">{s('Number')}</SelectItem>
+                          </Ariakit.SelectGroup>
+                        </SelectPopover>
+                      </Ariakit.SelectProvider>
                     </div>
 
                     {gradientRule?.maxpoint?.type === 'NUMBER' ? (
                       <div className="grow basis-0">
-                        <label
-                          aria-label="formula"
-                          className="flex h-[36px] grow items-center gap-0.5 rounded-lg border border-[#ADABA8] px-3 has-[:disabled]:border-none has-[:disabled]:bg-[#F5F4F2]"
-                        >
-                          <input
-                            value={gradientRule?.maxpoint?.value ?? ''}
-                            onChange={(event) => form.setValue('gradientRule.maxpoint.value', event.target.value)}
-                            className="h-full grow truncate text-sm !outline-none"
-                          />
-                        </label>
+                        <Input
+                          value={gradientRule?.maxpoint?.value ?? ''}
+                          onChange={(event) => form.setValue('gradientRule.maxpoint.value', event.target.value)}
+                        />
                       </div>
                     ) : null}
 
                     <div className="shrink-0">
                       <Ariakit.PopoverProvider>
-                        <Ariakit.PopoverDisclosure
-                          render={<FormatButton className="ring-[1px] ring-inset ring-[#EAE7E4]" />}
-                        >
+                        <Ariakit.PopoverDisclosure render={<FormatButton className="border-[#EAE7E4]" />}>
                           <Icon data={Icons.bucketColor} />
                         </Ariakit.PopoverDisclosure>
 
@@ -564,32 +544,32 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
           </div>
 
           <div className="mt-2 border-t-[0.5px] border-[#EAE7E4] py-2">
-            <button
+            <Button
               type="button"
               className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
               onClick={onAddRule}
             >
               <Icon legacyName="plus" />
               {s('Add another rule')}
-            </button>
+            </Button>
           </div>
         </div>
 
         <div className="mt-auto flex shrink-0 items-center justify-end gap-2 border-t-[0.5px] border-[#EAE7E4] px-4 py-2">
-          <button
+          <Button
             type="button"
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
             onClick={onCancel}
           >
             {s('Cancel')}
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
             onClick={handleSubmit}
           >
             {s('Save')}
-          </button>
+          </Button>
         </div>
       </div>
     </Ariakit.TabProvider>
@@ -635,10 +615,13 @@ function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
   })
 
   return (
-    <Ariakit.Button
+    <Button
       render={<div />}
       className="flex min-w-0 items-center gap-2"
-      onClick={onSelect}
+      onClick={() => {
+        api?.unmark()
+        onSelect()
+      }}
       onMouseEnter={() => {
         api?.mark?.(rule.ranges)
       }}
@@ -680,9 +663,9 @@ function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
         </div>
       </div>
 
-      <button
+      <Button
         type="button"
-        className="flex size-[36px] shrink-0 items-center justify-center"
+        className="flex size-[36px] shrink-0 items-center justify-center rounded-lg"
         aria-label={s('Delete rule')}
         onClick={(event) => {
           event.stopPropagation()
@@ -691,8 +674,8 @@ function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
         }}
       >
         <Icon legacyName="trash" />
-      </button>
-    </Ariakit.Button>
+      </Button>
+    </Button>
   )
 }
 
@@ -719,14 +702,14 @@ function Rules({ conditionalFormats, sheetId, onDeleteRule, theme, onNewRule, on
       </div>
 
       <div className="py-2">
-        <button
+        <Button
           type="button"
           className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
           onClick={onNewRule}
         >
           <Icon legacyName="plus" />
           {conditionalFormats.length > 0 ? s('Add another rule') : s('Add rule')}
-        </button>
+        </Button>
       </div>
     </div>
   )
