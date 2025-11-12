@@ -140,6 +140,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   useEffect(
     () =>
       application.eventBus.addEventCallback((data: SheetImportData) => {
+        if (data.file.type === SupportedProtonDocsMimeTypes.xlsx) {
+          void handleExcelFileImport(data.file)
+          return
+        }
         let sheetId = undefined
         let cellCoords = undefined
         if (data.destination === SheetImportDestination.InsertAsNewSheet) {
@@ -166,7 +170,15 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           })
           .catch(console.error)
       }, SheetImportEvent),
-    [application.eventBus, calculateNow, onCreateNewSheet, onInsertFile, onRenameSheet],
+    [
+      application.eventBus,
+      calculateNow,
+      handleExcelFileImport,
+      importExcelFile,
+      onCreateNewSheet,
+      onInsertFile,
+      onRenameSheet,
+    ],
   )
 
   const downloadLogs = () => {

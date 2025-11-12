@@ -2,6 +2,7 @@ export enum SheetImportDestination {
   InsertAsNewSheet,
   ReplaceAtSelectedCell,
   ReplaceCurrentSheet,
+  ReplaceSpreadsheet,
 }
 
 export enum SheetImportSeparatorType {
