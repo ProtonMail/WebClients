@@ -25,7 +25,7 @@ function renderBasicVerticalSteps() {
                 description="We’ll send you a notice. Cancel anytime."
             />
             <VerticalStep
-                icon="calendar-row"
+                icon="calendar-week"
                 title="Day 30: Trial ends"
                 description="Your subscription will start Jan 16th. Cancel anytime before."
             />

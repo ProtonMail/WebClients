@@ -131,7 +131,6 @@ export type IconName =
     | 'calendar-list-check'
     | 'calendar-month'
     | 'calendar-today'
-    | 'calendar-row'
     | 'calendar-week'
     | 'camera'
     | 'candles-cake'
