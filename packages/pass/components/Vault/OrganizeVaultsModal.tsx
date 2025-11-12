@@ -111,29 +111,38 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
             <ModalTwoHeader title={c('Title').t`Organize vaults`} closeButtonProps={{ pill: true }} />
             <ModalTwoContent>
                 <form id={FORM_ID} onSubmit={handleSubmit} className="py-4">
-                    <p className="my-2">{c('Title').t`Visible vaults`}</p>
+                    {visibleVaults.length > 0 && (
+                        <>
+                            <p className="my-2">{c('Title').t`Visible vaults`}</p>
+                            {visibleVaults.map((vault, index) => (
+                                <VaultItem
+                                    key={vault.vaultId}
+                                    vault={vault}
+                                    checked={visibilityMap[vault.shareId] ?? true}
+                                    onChange={handleChange(vault.shareId)}
+                                    isLast={index !== visibleVaults.length - 1}
+                                />
+                            ))}
+                        </>
+                    )}
 
-                    {visibleVaults.map((vault, index) => (
-                        <VaultItem
-                            vault={vault}
-                            checked={visibilityMap[vault.shareId] ?? true}
-                            onChange={handleChange(vault.shareId)}
-                            isLast={index !== visibleVaults.length - 1}
-                        />
-                    ))}
+                    {hiddenVaults.length > 0 && (
+                        <>
+                            <p className="my-2">{c('Title').t`Hidden vaults`}</p>
+                            <p className="my-2 color-weak">{c('Description')
+                                .t`These vaults will not be accessible and their content won’t be available to Search or Autofill.`}</p>
 
-                    <p className="my-2">{c('Title').t`Hidden vaults`}</p>
-                    <p className="my-2 color-weak">{c('Description')
-                        .t`These vaults will not be accessible and their content won’t be available to Search or Autofill.`}</p>
-
-                    {hiddenVaults.map((vault, index) => (
-                        <VaultItem
-                            vault={vault}
-                            checked={visibilityMap[vault.shareId] ?? true}
-                            onChange={handleChange(vault.shareId)}
-                            isLast={index !== hiddenVaults.length - 1}
-                        />
-                    ))}
+                            {hiddenVaults.map((vault, index) => (
+                                <VaultItem
+                                    key={vault.vaultId}
+                                    vault={vault}
+                                    checked={visibilityMap[vault.shareId] ?? true}
+                                    onChange={handleChange(vault.shareId)}
+                                    isLast={index !== hiddenVaults.length - 1}
+                                />
+                            ))}
+                        </>
+                    )}
                 </form>
             </ModalTwoContent>
 
