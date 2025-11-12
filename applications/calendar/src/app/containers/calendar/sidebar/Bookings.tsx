@@ -19,7 +19,9 @@ import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
+import { useCalendarDispatch } from '../../../store/hooks';
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
+import { deleteBookingPageThunk } from '../../../store/internalBooking/interalBookingSlice';
 import { UpsellBookings } from '../../bookings/UpsellBookings';
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
 import { useBookingsAvailability } from '../../bookings/useBookingsAvailability';
@@ -34,6 +36,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
     const [displayBookings, setDisplayBookings] = useState(true);
     const [user] = useUser();
     const [modalProps, setModalOpen, renderModal] = useModalState();
+    const dispatch = useCalendarDispatch();
 
     const { createNotification } = useNotifications();
 
@@ -116,7 +119,9 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                                             <DropdownMenu>
                                                 <DropdownMenuButton disabled className="text-left">{c('Action')
                                                     .t`Edit booking page`}</DropdownMenuButton>
-                                                <DropdownMenuButton disabled className="text-left">
+                                                <DropdownMenuButton
+                                                    onClick={() => dispatch(deleteBookingPageThunk(page.id))}
+                                                    className="text-left">
                                                     {c('Action').t`Delete booking page`}
                                                 </DropdownMenuButton>
                                                 <hr className="m-0" />
