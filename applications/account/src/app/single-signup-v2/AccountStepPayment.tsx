@@ -1,4 +1,4 @@
-import type { MutableRefObject, ReactNode } from 'react';
+import type { MutableRefObject, ReactElement, ReactNode } from 'react';
 import { useEffect, useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
@@ -75,6 +75,7 @@ interface Props {
     setCurrencySelectorDisabled: (disabled: boolean) => void;
     paymentsApi: PaymentsApi;
     onVatNumberChange: (vatNumber: string) => void;
+    offerBanner: ReactElement | undefined | false;
 }
 
 const AccountStepPayment = ({
@@ -102,6 +103,7 @@ const AccountStepPayment = ({
     setCurrencySelectorDisabled,
     paymentsApi,
     onVatNumberChange,
+    offerBanner, // temporary for A/B test
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -449,37 +451,40 @@ const AccountStepPayment = ({
                     );
 
                     return (
-                        <PayButton
-                            size="large"
-                            color="norm"
-                            fullWidth
-                            taxCountry={taxCountry}
-                            paymentFacade={paymentFacade}
-                            loading={loadingSignup || loadingPaymentDetails}
-                            pill
-                            data-testid="pay"
-                            className="lumo-payment-trigger" //do not remove `lumo-payment-trigger` it's being used by lumo mobile
-                            suffix={(type) => {
-                                if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-                                    return (
-                                        <>
-                                            {guaranteeElement}
-                                            {showAlert3ds && <Alert3ds />}
-                                        </>
-                                    );
-                                }
+                        <div>
+                            {offerBanner && <div className="mt-4 mb-4">{offerBanner}</div>}
+                            <PayButton
+                                size="large"
+                                color="norm"
+                                fullWidth
+                                taxCountry={taxCountry}
+                                paymentFacade={paymentFacade}
+                                loading={loadingSignup || loadingPaymentDetails}
+                                pill
+                                data-testid="pay"
+                                className="lumo-payment-trigger" //do not remove `lumo-payment-trigger` it's being used by lumo mobile
+                                suffix={(type) => {
+                                    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+                                        return (
+                                            <>
+                                                {guaranteeElement}
+                                                {showAlert3ds && <Alert3ds />}
+                                            </>
+                                        );
+                                    }
 
-                                return guaranteeElement;
-                            }}
-                            formInvalid={!isFormValid}
-                            // optimistic check result means that we didn't perform the actual check call because it was
-                            // forbidden due to combination of current subscription and the new plan/cycle/currency.
-                            // We aren't allowed to re-subscribe the same plan.
-                            disabled={model.subscriptionData.checkResult.optimistic}
-                            {...buttonProps}
-                        >
-                            {isBitcoin ? c('pass_signup_2023: Action').t`Continue with Bitcoin` : cta}
-                        </PayButton>
+                                    return guaranteeElement;
+                                }}
+                                formInvalid={!isFormValid}
+                                // optimistic check result means that we didn't perform the actual check call because it was
+                                // forbidden due to combination of current subscription and the new plan/cycle/currency.
+                                // We aren't allowed to re-subscribe the same plan.
+                                disabled={model.subscriptionData.checkResult.optimistic}
+                                {...buttonProps}
+                            >
+                                {isBitcoin ? c('pass_signup_2023: Action').t`Continue with Bitcoin` : cta}
+                            </PayButton>
+                        </div>
                     );
                 })()}
                 {!loadingPaymentsForm && !isAuthenticated && terms}
@@ -490,6 +495,7 @@ const AccountStepPayment = ({
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-10 lg:gap-20">
             <div className="shrink-0 md:flex-1 order-1 md:order-0">{paymentsForm}</div>
+
             <AccountStepPaymentSummary
                 model={model}
                 options={options}
