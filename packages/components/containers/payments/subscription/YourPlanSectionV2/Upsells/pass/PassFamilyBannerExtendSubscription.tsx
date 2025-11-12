@@ -8,6 +8,7 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/index';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getHasConsumerVpnPlan } from '@proton/payments';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -72,16 +73,18 @@ export const usePassFamilyBannerExtendSubscription = ({
 interface Props extends UpsellsHook {
     showUpsellPanels: boolean;
     subscription: Subscription;
+    app: APP_NAMES;
 }
 
 const PassFamilyBannerExtendSubscription = ({
+    app,
     showUpsellPanels = true,
     subscription,
     user,
     handleExplorePlans,
     upsells,
 }: Props) => {
-    const { totalSavings, showSavings } = useSubscriptionPriceComparison(subscription);
+    const { totalSavings, showSavings } = useSubscriptionPriceComparison(app, subscription);
 
     const plan = PLANS.PASS_FAMILY;
     const planName = PLAN_NAMES[plan];

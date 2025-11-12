@@ -20,7 +20,7 @@ interface Props extends UpsellSectionBaseProps {
 const DuoBanner = ({ app, subscription }: Props) => {
     const plan = PLANS.DUO;
     const [openSubscriptionModal] = useSubscriptionModal();
-    const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(subscription, plan);
+    const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, plan);
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleGetPlan = () => {
