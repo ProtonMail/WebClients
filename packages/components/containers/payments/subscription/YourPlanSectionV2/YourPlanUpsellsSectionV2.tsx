@@ -31,6 +31,7 @@ import {
     hasPassFamily,
     hasVPN2024,
     hasVPNPassBundle,
+    hasVisionary,
 } from '@proton/payments';
 import { PaymentsContextProvider, isPaymentsPreloaded, usePayments } from '@proton/payments/ui';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -59,6 +60,7 @@ import UnlimitedBannerExtendSubscription, {
 import UnlimitedBannerGradient, { useUnlimitedBannerGradientUpsells } from './Upsells/UnlimitedBannerGradient';
 import UnlimitedBannerPlain from './Upsells/UnlimitedBannerPlain';
 import VPNB2BBanner from './Upsells/VPNB2BBanner';
+import VisionaryExtendSubscription, { useVisionaryExtendSubscription } from './Upsells/VisionaryExtendSubscription';
 import VpnPlusExtendSubscription, { useVpnPlusExtendSubscription } from './Upsells/VpnPlusExtendSubscription';
 import VpnPlusFromFree, { useVpnPlusFromFreeUpsells } from './Upsells/VpnPlusFromFree';
 import DrivePlusExtendSubscription, {
@@ -155,6 +157,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     const passPlusFromFreeUpsells = usePassPlusFromFreeUpsells(upsellParams);
     const passPlusExtendSubscriptionUpsells = usePassPlusExtendSubscription(upsellParams);
     const passFamilyBannerExtendSubscriptionUpsells = usePassFamilyBannerExtendSubscription(upsellParams);
+    const visionaryExtendSubscriptionUpsells = useVisionaryExtendSubscription(upsellParams);
 
     const unlimitedPlanMaxSpace = humanSize({
         bytes: plansMap[PLANS.BUNDLE]?.MaxSpace ?? 536870912000,
@@ -555,7 +558,19 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             element: <VPNB2BBanner app={app} />,
         },
         {
-            enabled: app !== APPS.PROTONVPN_SETTINGS && hasFamily(subscription),
+            enabled: hasVisionary(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            upsells: visionaryExtendSubscriptionUpsells.upsells,
+            element: (
+                <VisionaryExtendSubscription
+                    app={app}
+                    subscription={subscription as Subscription}
+                    showUpsellPanels={true}
+                    {...visionaryExtendSubscriptionUpsells}
+                />
+            ),
+        },
+        {
+            enabled: app !== APPS.PROTONVPN_SETTINGS && (hasFamily(subscription) || hasVisionary(subscription)),
             element: <PBSB2BBanner app={app} />,
         },
         {

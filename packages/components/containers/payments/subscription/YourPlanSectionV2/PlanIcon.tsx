@@ -116,7 +116,12 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (hasBundle(subscription) || hasVisionary(subscription) || planName === PLANS.BUNDLE) {
+    if (
+        hasBundle(subscription) ||
+        hasVisionary(subscription) ||
+        planName === PLANS.BUNDLE ||
+        planName === PLANS.VISIONARY
+    ) {
         return (
             <LogoIconShape border={false} size={size}>
                 <CustomLogo planName={PLANS.BUNDLE} app={app} />
