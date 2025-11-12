@@ -495,8 +495,7 @@ const IDENTITY_COUNTRY_ATTR_RE = /addresscountry(?:name)?|countryname|\b(country
 
 const IDENTITY_COUNTRY_CODE_ATTR_RE = /countrycode/i;
 
-const CC_PREFIX_ATTR_START_RE =
-    /\b(?:(?:payments|new)card|paymentcard|c(?:red(?:it)?card|heckout|ard|[bc])|billing|stripe|vads).*/i;
+const CC_PREFIX_ATTR_START_RE = /\b(?:(?:payments|new)card|paymentcard|c(?:red(?:it)?card|ard|[bc])|stripe|vads).*/i;
 
 const CC_NUMBER_ATTR_RE = /num(?:ero)?carte|c(?:ar(?:tecredit|dn(?:um|o))|reditcard|bnum|cno)|\b(c(?:ard |c)number)\b/i;
 
@@ -2905,10 +2904,17 @@ const getSelectExpirationMonthFormat = (select) => {
 
 const notCCExpOutlier = (field) => !getExpirationFormat(field, false);
 
+const notCCIdentityOutlier = (field) => {
+    const autocomplete = field?.autocomplete ?? '';
+    if (autocomplete.includes('billing')) return false;
+    if (autocomplete.includes('shipping')) return false;
+    return true;
+};
+
 const CC_RE_MAP = [
-    [CCFieldType.FIRSTNAME, matchCCFirstName],
-    [CCFieldType.LASTNAME, matchCCLastName],
-    [CCFieldType.NAME, matchCCName],
+    [CCFieldType.FIRSTNAME, matchCCFirstName, notCCIdentityOutlier],
+    [CCFieldType.LASTNAME, matchCCLastName, notCCIdentityOutlier],
+    [CCFieldType.NAME, matchCCName, notCCIdentityOutlier],
     [CCFieldType.EXP_YEAR, matchCCExpYear, notCCExpOutlier],
     [CCFieldType.EXP_MONTH, matchCCExpMonth, notCCExpOutlier],
     [CCFieldType.EXP, matchCCExp],
