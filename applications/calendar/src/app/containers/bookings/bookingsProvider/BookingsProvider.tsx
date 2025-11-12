@@ -149,6 +149,26 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         }
 
         const newRangeId = generateBookingRangeID(start, end);
+        for (const range of bookingRange) {
+            if (range.id === oldRangeId) {
+                continue;
+            }
+
+            if (range.id === newRangeId) {
+                createNotification({
+                    text: c('Info').t`Booking already exists.`,
+                });
+                return;
+            }
+
+            if (areIntervalsOverlapping({ start, end }, { start: range.start, end: range.end })) {
+                createNotification({
+                    text: c('Info').t`Booking overlaps with an existing booking.`,
+                });
+                return;
+            }
+        }
+
         const newRange = {
             id: newRangeId,
             start,
