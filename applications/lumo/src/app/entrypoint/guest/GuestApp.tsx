@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import { type SessionPayloadData, createAuthentication, createUnleash, init } from '@proton/account/bootstrap';
+import { createAuthentication, createUnleash, init } from '@proton/account/bootstrap';
 import {
     ApiProvider,
     AuthenticationProvider,
@@ -73,7 +73,7 @@ const bootstrapApp = async () => {
     const basename = authentication.basename;
     // const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
     const url = undefined;
-    const sessionResult = { basename, url } as SessionPayloadData;
+    const sessionResult = { basename, url };
     const history = bootstrap.createHistory({ sessionResult, pathname });
 
     const unauthenticatedApi = createUnauthenticatedApi(api);

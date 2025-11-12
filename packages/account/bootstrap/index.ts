@@ -63,7 +63,7 @@ import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Api, Environment, ProtonConfig, Unwrap, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { EVENTS, UnleashClient, createCustomFetch, getUnleashConfig } from '@proton/unleash';
@@ -144,8 +144,8 @@ export const init = ({
     setSentryTags({ appTag });
 };
 
-export interface SessionPayloadData {
-    session: ResumedSessionResult | undefined;
+export interface SessionPayloadData<IncludeUser extends boolean> {
+    session: Unwrap<ReturnType<typeof resumeSession<IncludeUser>>> | ResumedSessionResult | undefined;
     basename: string | undefined;
     url?: string;
     reloadDocument?: boolean;
@@ -157,7 +157,7 @@ interface PerformanceMeasure {
     clear: () => void;
 }
 
-export const loadSession = async ({
+export const loadSession = async <IncludeUser extends boolean = false>({
     authentication,
     api,
     pathname,
@@ -165,6 +165,7 @@ export const loadSession = async ({
     unauthenticatedReturnUrl,
     localID: localIDParam,
     performanceMeasure,
+    resumeOptions = { user: false as IncludeUser },
 }: {
     pathname: string;
     authentication: AuthenticationStore;
@@ -176,7 +177,8 @@ export const loadSession = async ({
         consumeFork: PerformanceMeasure;
         resumeSession: PerformanceMeasure;
     };
-}): Promise<SessionPayloadData> => {
+    resumeOptions?: Parameters<typeof resumeSession<IncludeUser>>[0]['options'];
+}): Promise<SessionPayloadData<IncludeUser>> => {
     if (authentication.ready) {
         api.UID = authentication.UID;
         setLastUsedLocalID(authentication.localID);
@@ -232,7 +234,7 @@ export const loadSession = async ({
         }
 
         performanceMeasure?.resumeSession.start();
-        const result = await resumeSession({ api, localID });
+        const result = await resumeSession({ api, localID, options: resumeOptions });
         performanceMeasure?.resumeSession.end();
 
         authentication.login(result);
@@ -263,7 +265,7 @@ export const loadDrawerSession = async ({
     parentApp: APP_NAMES;
     authentication: AuthenticationStore;
     api: ApiWithListener;
-}): Promise<SessionPayloadData | undefined> => {
+}): Promise<SessionPayloadData<true> | undefined> => {
     if (authentication.ready) {
         return {
             session: undefined,
@@ -302,7 +304,7 @@ export const createHistory = ({
     sessionResult: { basename, url, reloadDocument },
     pathname,
 }: {
-    sessionResult: SessionPayloadData;
+    sessionResult: Omit<SessionPayloadData<boolean>, 'session'>;
     pathname: string;
 }) => {
     const history = createBrowserHistory({ basename });
