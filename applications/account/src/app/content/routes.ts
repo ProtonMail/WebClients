@@ -59,6 +59,8 @@ export const getRoutes = ({
     showMailDashboardVariant,
     showPassDashboard,
     showPassDashboardVariant,
+    showDriveDashboard,
+    showDriveDashboardVariant,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -88,6 +90,8 @@ export const getRoutes = ({
             showMailDashboardVariant,
             showPassDashboard,
             showPassDashboardVariant,
+            showDriveDashboard,
+            showDriveDashboardVariant,
         }),
         mail: getMailAppRoutes({
             app,

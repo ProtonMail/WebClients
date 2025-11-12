@@ -16,6 +16,8 @@ export const getDashboardFeatureFlag = (appName: APP_NAMES): FeatureFlagsWithVar
             return 'MailDashboard';
         case APPS.PROTONPASS:
             return 'PassDashboard';
+        case APPS.PROTONDRIVE:
+            return 'DriveDashboard';
         case APPS.PROTONVPN_SETTINGS:
             return 'VPNDashboard';
         default:
@@ -27,6 +29,7 @@ const DASHBOARD_NAMES = {
     MAIL: 'MailDashboard',
     VPN: 'VPNDashboard',
     PASS: 'PassDashboard',
+    DRIVE: 'DriveDashboard',
 } as const;
 
 const shouldDisplayDashboard = (appName: APP_NAMES, dashboardName: FeatureFlagsWithVariant) => {
@@ -38,6 +41,8 @@ const shouldDisplayDashboard = (appName: APP_NAMES, dashboardName: FeatureFlagsW
             return dashboardName === DASHBOARD_NAMES.VPN;
         case APPS.PROTONPASS:
             return dashboardName === DASHBOARD_NAMES.PASS;
+        case APPS.PROTONDRIVE:
+            return dashboardName === DASHBOARD_NAMES.DRIVE;
         default:
             return false;
     }
