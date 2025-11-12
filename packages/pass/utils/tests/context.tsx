@@ -4,9 +4,11 @@ import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
+import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { TestCoreProvider } from '@proton/pass/utils/tests/TestCoreProvider';
 import { TestStoreProvider } from '@proton/pass/utils/tests/TestStoreProvider';
 
@@ -25,9 +27,13 @@ export const TestContext: FC<PropsWithChildren> = ({ children }) => {
                 <Router history={history}>
                     <NavigationProvider>
                         <TestStoreProvider>
-                            <UpsellingProvider>
-                                <ClipboardProvider>{children}</ClipboardProvider>
-                            </UpsellingProvider>
+                            <VaultActionsProvider>
+                                <InviteProvider>
+                                    <UpsellingProvider>
+                                        <ClipboardProvider>{children}</ClipboardProvider>
+                                    </UpsellingProvider>
+                                </InviteProvider>
+                            </VaultActionsProvider>
                         </TestStoreProvider>
                     </NavigationProvider>
                 </Router>
