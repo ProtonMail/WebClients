@@ -76,7 +76,7 @@ export const useExternalBookingActions = () => {
                 startTime: startTimeDate,
                 endTime: endTimeDate,
             });
-            history.push('/success');
+            history.push('/bookings/success');
         } catch (error: unknown) {
             traceError(error);
             throw error;

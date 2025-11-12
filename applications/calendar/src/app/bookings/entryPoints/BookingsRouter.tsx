@@ -23,7 +23,7 @@ export const BookingsRouter = ({}: Props) => {
             <Switch>
                 {/* TODO how could we have a shared basename instead of the array */}
                 <Route path={['/bookings', '/bookings/guest']} exact component={BookingDetails} />
-                <Route path={['/bookings/success', '/bookings/success/guest']} exact component={BookingSuccess} />
+                <Route path="/bookings/success" exact component={BookingSuccess} />
                 <Route>
                     <NoMatch reason={Reason.notFound} />
                 </Route>
