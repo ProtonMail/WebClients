@@ -27,6 +27,11 @@ export const BookingDetailsHeader = ({ gridSize }: Props) => {
     const selectedDate = useBookingStore((state) => state.selectedDate);
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
+    const handleSelectDate = (date: Date) => {
+        setSelectedDate(date);
+        close();
+    };
+
     return (
         <>
             <div className="flex flex-row justify-space-between w-full mb-4 items-center">
@@ -52,11 +57,8 @@ export const BookingDetailsHeader = ({ gridSize }: Props) => {
                         {format(selectedDate, 'MMMM Y', { locale: dateLocale })}
                         {isOpen ? <IcChevronUp /> : <IcChevronDown />}
                     </Button>
-                    <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close}>
-                        <BookingMiniCalendar
-                            selectedDate={selectedDate}
-                            onSelectDate={(date) => setSelectedDate(date)}
-                        />
+                    <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} autoClose={false} autoCloseOutside>
+                        <BookingMiniCalendar selectedDate={selectedDate} onSelectDate={handleSelectDate} />
                     </Dropdown>
                 </div>
 

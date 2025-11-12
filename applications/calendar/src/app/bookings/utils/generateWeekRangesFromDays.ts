@@ -1,4 +1,12 @@
-import { addWeeks, endOfDay, endOfWeek, getUnixTime, startOfDay } from 'date-fns';
+import {
+    addWeeks,
+    differenceInCalendarWeeks,
+    endOfDay,
+    endOfWeek,
+    getUnixTime,
+    startOfDay,
+    startOfWeek,
+} from 'date-fns';
 
 import { WEEKS_IN_MINI_CALENDAR } from '../constants';
 
@@ -7,11 +15,16 @@ export interface WeekRange {
     end: number;
 }
 
-export const generateWeeklyRangeSimple = (startDate: Date) => {
+export const generateWeeklyRangeSimple = (startDate: Date, endDate?: Date) => {
     const weekRangeSimple = [];
-    for (let i = 0; i < WEEKS_IN_MINI_CALENDAR; i++) {
+
+    const numberOfWeeks = endDate
+        ? Math.max(1, differenceInCalendarWeeks(endDate, startDate) + 1)
+        : WEEKS_IN_MINI_CALENDAR;
+
+    for (let i = 0; i < numberOfWeeks; i++) {
         weekRangeSimple.push({
-            start: getUnixTime(startOfDay(addWeeks(startDate, i))),
+            start: getUnixTime(startOfDay(startOfWeek(addWeeks(startDate, i)))),
             end: getUnixTime(endOfDay(endOfWeek(addWeeks(startDate, i)))),
         });
     }
