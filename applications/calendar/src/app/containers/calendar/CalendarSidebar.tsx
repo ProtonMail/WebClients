@@ -127,6 +127,7 @@ const CalendarSidebar = ({
                     <>
                         <div className="shrink-0 w-full">{miniCalendar}</div>
                         <div>
+                            <Bookings headerRef={headerRef} utcDate={utcDate} disabled={!onCreateEvent} />
                             <MyCalendars
                                 myCalendars={myCalendars}
                                 calendars={calendars}
@@ -140,7 +141,6 @@ const CalendarSidebar = ({
                                 headerRef={headerRef}
                                 loadingSubscribedCalendars={loadingSubscribedCalendars}
                             />
-                            <Bookings headerRef={headerRef} utcDate={utcDate} disabled={!onCreateEvent} />
                         </div>
                         {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
                     </>
