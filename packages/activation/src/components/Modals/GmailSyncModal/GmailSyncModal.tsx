@@ -6,7 +6,11 @@ import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { EASY_SWITCH_SOURCES, OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
+import {
+    changeCreateLoadingState,
+    createSyncItem,
+    SyncTokenStrategy,
+} from '@proton/activation/src/logic/sync/sync.actions';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button/Button';
@@ -55,6 +59,7 @@ const GmailSyncModal = ({
                 dispatch(changeCreateLoadingState('pending'));
                 const res = await dispatch(
                     createSyncItem({
+                        type: SyncTokenStrategy.create,
                         Code,
                         Provider,
                         RedirectUri,
