@@ -1,7 +1,7 @@
 import { createContext, useContext, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import { areIntervalsOverlapping, isBefore } from 'date-fns';
+import { isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
@@ -21,7 +21,12 @@ import { interalBookingActions } from '../../../store/internalBooking/interalBoo
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { encryptBookingPage } from '../utils/bookingCryptoUtils';
-import { generateBookingRangeID, generateDefaultBookingRange, generateSlotsFromRange } from '../utils/bookingHelpers';
+import {
+    generateBookingRangeID,
+    generateDefaultBookingRange,
+    generateSlotsFromRange,
+    validateBookingRange,
+} from '../utils/bookingHelpers';
 import type { BookingRange, Slot } from './interface';
 import { type BookingFormData, BookingLocation, BookingState, DEFAULT_EVENT_DURATION } from './interface';
 
@@ -149,6 +154,18 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         }
 
         const newRangeId = generateBookingRangeID(start, end);
+        const validateNewRange = validateBookingRange({
+            newRangeId,
+            start,
+            end,
+            existingRanges: bookingRange,
+            excludeRangeId: oldRangeId,
+        });
+        if (validateNewRange) {
+            createNotification({ text: validateNewRange });
+            return;
+        }
+
         const newRange = {
             id: newRangeId,
             start,
@@ -197,21 +214,15 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
         // We store the start and end time of the range for quick comparsion
         const dataId = generateBookingRangeID(data.start, data.end);
-
-        for (const range of bookingRange || []) {
-            if (range.id === dataId) {
-                createNotification({
-                    text: c('Info').t`Booking already exists.`,
-                });
-                return;
-            }
-
-            if (areIntervalsOverlapping({ start: data.start, end: data.end }, { start: range.start, end: range.end })) {
-                createNotification({
-                    text: c('Info').t`Booking overlaps with an existing booking.`,
-                });
-                return;
-            }
+        const validateNewRange = validateBookingRange({
+            newRangeId: dataId,
+            start: data.start,
+            end: data.end,
+            existingRanges: bookingRange || [],
+        });
+        if (validateNewRange) {
+            createNotification({ text: validateNewRange });
+            return;
         }
 
         const newBookingRange = [...(bookingRange || []), { ...data, id: dataId }].sort(
