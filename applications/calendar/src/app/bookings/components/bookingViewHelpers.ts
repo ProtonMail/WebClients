@@ -3,9 +3,7 @@ import { addDays, differenceInMinutes, endOfDay, isAfter, isBefore, startOfDay }
 import type { ActiveBreakpoint } from '@proton/components/hooks/useActiveBreakpoint';
 
 import { DEFAULT_EVENT_DURATION } from '../../containers/bookings/bookingsProvider/interface';
-import type { BookingDetails, BookingTimeslotWithDate } from '../booking.store';
-
-const today = new Date();
+import type { BookingDaySlots, BookingDetails, BookingTimeslotWithDate } from '../booking.store';
 
 const getTime = (date: Date) => {
     return new Date(2000, 0, 1, date.getHours(), date.getMinutes());
@@ -91,18 +89,24 @@ export const getDaysRange = (gridSize: number, startDate: Date) => {
     return tmpRange;
 };
 
+export const getFirstAvailableSlotDate = (allDaySlots: BookingDaySlots[]): Date | null => {
+    const firstDayWithSlots = allDaySlots.find((daySlot) => daySlot.timeslots.length > 0);
+    return firstDayWithSlots ? startOfDay(firstDayWithSlots.date) : null;
+};
+
 export const getDaysSlotRange = (
     gridSize: number,
     bookingDetails: BookingDetails,
-    getTimeslotsByDate: (date: Date) => BookingTimeslotWithDate[]
+    getTimeslotsByDate: (date: Date) => BookingTimeslotWithDate[],
+    selectedDate: Date
 ) => {
     // We want to take extreme here
-    let earliestSlot: Date = getTime(endOfDay(today));
-    let latestSlot: Date = getTime(startOfDay(today));
+    let earliestSlot: Date = getTime(endOfDay(selectedDate));
+    let latestSlot: Date = getTime(startOfDay(selectedDate));
 
     const slotRange: BookingTimeslotWithDate[][] = [];
     for (let i = 0; i < gridSize; i++) {
-        const date = addDays(startOfDay(today), i);
+        const date = addDays(startOfDay(selectedDate), i);
 
         const timeslots = getTimeslotsByDate(date);
         slotRange.push(timeslots);
@@ -115,6 +119,12 @@ export const getDaysSlotRange = (
     }
 
     const bookingDuration = bookingDetails.duration || DEFAULT_EVENT_DURATION;
+
+    // Return if no slots to show in the current range
+    const hasAnyEvents = slotRange.some((day) => day.length > 0);
+    if (!hasAnyEvents) {
+        return [];
+    }
 
     const { array, slotsPerDay } = generateRangeBookingArray({ gridSize, latestSlot, earliestSlot, bookingDuration });
 
