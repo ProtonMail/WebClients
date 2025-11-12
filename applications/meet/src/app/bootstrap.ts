@@ -5,7 +5,6 @@ import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
-import type { SessionPayloadData } from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account/index';
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
@@ -23,7 +22,7 @@ import {
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, Unwrap } from '@proton/shared/lib/interfaces';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
@@ -75,7 +74,7 @@ const getSession = async ({ authentication, api }: Pick<ProtonThunkArguments, 'a
                 : undefined,
     });
 
-    return sessionResult as SessionPayloadData;
+    return sessionResult;
 };
 
 const loadUserData = async (dispatch: MeetDispatch, appName: APP_NAMES) => {
@@ -124,7 +123,10 @@ export const initAppDependencies = async (
     config: ProtonConfig,
     authentication: ProtonThunkArguments['authentication']
 ): Promise<
-    Omit<ProtonThunkArguments, 'config'> & { sessionResult: bootstrap.SessionPayloadData; appVersion: string }
+    Omit<ProtonThunkArguments, 'config'> & {
+        sessionResult: Unwrap<ReturnType<typeof bootstrap.loadSession<false>>>;
+        appVersion: string;
+    }
 > => {
     const { api, silentApi } = getApis(config);
 
@@ -153,7 +155,7 @@ const completeAppBootstrap = async ({
 }: ProtonThunkArguments & {
     signal?: AbortSignal;
     store: MeetStore;
-    sessionResult: bootstrap.SessionPayloadData;
+    sessionResult: Unwrap<ReturnType<typeof bootstrap.loadSession<false>>>;
     notificationsManager: NotificationsManager;
     appVersion: string;
 }) => {
