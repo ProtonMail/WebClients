@@ -5,7 +5,7 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { itemBuilder } from './item.builder';
 
-export const createTestItem = (type: ItemType, init: Partial<ItemRevision> = {}): ItemRevision => ({
+export const createTestItem = <T extends ItemType>(type: T, init: Partial<ItemRevision<T>> = {}): ItemRevision<T> => ({
     aliasEmail: null,
     contentFormatVersion: ContentFormatVersion.Item,
     createTime: getEpoch(),
