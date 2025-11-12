@@ -221,6 +221,8 @@ const Step1 = ({
         metrics.core_single_signup_pageLoad_total.increment({});
     }, []);
 
+    const isMailVariantB = signupParameters.isMailVariantB;
+
     const history = useHistory();
 
     const subscriptionCheckOptions = {
@@ -511,6 +513,15 @@ const Step1 = ({
             return c('Action').t`Try for free`;
         }
 
+        if (
+            appName === `${BRAND_NAME} Mail` &&
+            selectedPlan.Name !== PLANS.FREE &&
+            options.cycle === CYCLE.YEARLY &&
+            isMailVariantB
+        ) {
+            return c('mail_cro_experiment').t`Get Deal`;
+        }
+
         return c('pass_signup_2023: Action').t`Start using ${appName} now`;
     })();
 
@@ -750,7 +761,7 @@ const Step1 = ({
     const offerBanner = (() => {
         const skeletonLoader = <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4 max-w-full" />;
 
-        if (model.loadingDependencies) {
+        if (model.loadingDependencies && !isMailVariantB) {
             return skeletonLoader;
         }
 
@@ -924,7 +935,7 @@ const Step1 = ({
                     </div>
                 )}
 
-                {offerBanner}
+                {!isMailVariantB && offerBanner}
 
                 {hasPlanSelector && (
                     <>
@@ -1414,6 +1425,7 @@ const Step1 = ({
                                     {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
                                 </div>
                             )}
+
                             <AccountStepPayment
                                 selectedPlan={selectedPlan}
                                 measure={measure}
@@ -1462,6 +1474,7 @@ const Step1 = ({
                                     }));
                                 }}
                                 paymentsApi={getPaymentsApi(silentApi)}
+                                offerBanner={isMailVariantB && offerBanner}
                             />
                         </BoxContent>
                     </Box>

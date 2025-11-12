@@ -204,4 +204,5 @@ export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearc
     invite?: SignupInviteParameters;
     signIn?: 'standard' | 'redirect';
     trial?: boolean;
+    isMailVariantB: boolean;
 }
