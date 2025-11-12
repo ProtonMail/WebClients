@@ -105,6 +105,10 @@ export interface LumoApi {
     deleteAttachment(attachmentId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     getAttachment(attachmentId: RemoteId, spaceId: LocalId): Promise<RemoteAttachment | null>;
 
+    postAsset(assetArgs: NewAssetToApi, priority: Priority): Promise<RemoteId | null>;
+    putAsset(assetArgs: NewAssetToApi, remoteId: RemoteId, priority: Priority): Promise<RemoteStatus>;
+    deleteAsset(assetId: RemoteId, priority: Priority): Promise<RemoteStatus>;
+    getAsset(assetId: RemoteId, spaceId: LocalId): Promise<RemoteAsset | null>;
 
     // User settings methods
     getUserSettings(): Promise<SerializedUserSettings | null>;

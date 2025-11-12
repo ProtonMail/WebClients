@@ -66,7 +66,7 @@ export type MasterKeyFromApi = {
 
 export type UserId = string;
 
-export const ResourceTypes = ['space', 'conversation', 'message', 'attachment'] as const;
+export const ResourceTypes = ['space', 'conversation', 'message', 'attachment', 'asset'] as const;
 export type ResourceType = (typeof ResourceTypes)[number];
 
 export type LocalId = string;
