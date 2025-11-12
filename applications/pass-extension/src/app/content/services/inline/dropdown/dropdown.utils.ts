@@ -29,7 +29,7 @@ export const onCloseEffects = onNextTick((field: FieldHandle, { refocus }: Inlin
 });
 
 export const onFocusChangeFactory = (dropdown: DropdownHandler, anchor: DropdownAnchor) =>
-    onNextTick(async (_: Event) => {
+    onNextTick(async (_: FocusEvent) => {
         const field = anchor.type === 'field' ? anchor.field : undefined;
         if (field && isActiveElement(field.element)) return;
         else {
