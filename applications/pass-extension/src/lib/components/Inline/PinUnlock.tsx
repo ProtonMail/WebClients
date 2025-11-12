@@ -10,20 +10,27 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
 
-export type Props = { header?: ReactNode; onUnlock?: () => void; autoFocus?: boolean };
+export type Props = {
+    header?: ReactNode;
+    onUnlock?: () => void;
+};
 
-const PinUnlockRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
-    { autoFocus, header, onUnlock },
-    focusRef
-) => {
+/** Focus control is delegated to resolve focus-traps. */
+const PinUnlockRender: ForwardRefRenderFunction<HTMLInputElement, Props> = ({ header, onUnlock }, focusRef) => {
     const [value, setValue] = useMountedState<string>('');
     const [loading, setLoading] = useMountedState<boolean>(false);
     const [error, setError] = useMountedState<MaybeNull<string>>(null);
+    const [autofocus, setAutofocus] = useMountedState(false);
+
     const [key, rerender] = useRerender('pin-input');
 
-    const unlock = useUnlock((err) => {
+    /** On unlock failure, we can take back control of
+     * the autofocus mechanism as the inlined app has
+     * already gained focus */
+    const unlock = useUnlock((error) => {
         setValue('');
-        setError(err.message);
+        setError(error.message);
+        setAutofocus(true);
         rerender();
     });
 
@@ -45,12 +52,12 @@ const PinUnlockRender: ForwardRefRenderFunction<HTMLInputElement, Props> = (
         <div className="flex-auto px-4 py-3">
             {header}
             <PinCodeInput
+                autoFocus={autofocus}
                 key={key}
                 loading={loading}
-                value={value}
                 onValue={setValue}
-                autoFocus={autoFocus}
                 ref={focusRef}
+                value={value}
             />
             {error && <div className="text-center text-sm color-danger mt-3">{error}</div>}
         </div>
