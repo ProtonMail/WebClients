@@ -8,6 +8,7 @@ import {
     splitNodeRevisionUid,
     splitNodeUid,
 } from '@proton/drive';
+import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { FileBrowserBaseItem } from '../../components/FileBrowser';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../store';
@@ -72,8 +73,13 @@ const getLegacyIsAnonymous = (node: NodeEntity) => {
 // totalStorageSize is the sum of the sizes of all revisions, so it's not the size of the single file
 // Because of this we want to get the file size from the active revision and we use totalStorageSize only as a fallback
 // For proton docs or spreadsheets we get the revision size empty and we will instead read totalStorageSize
-export const getNodeDisplaySize = (node: NodeEntity) =>
-    node.activeRevision?.claimedSize ?? node.activeRevision?.storageSize ?? node.totalStorageSize ?? 0;
+export const getNodeDisplaySize = (node: NodeEntity) => {
+    // Proton Docs and Sheets don't have an active revision, thus its always zero.
+    if (node.mediaType && (isProtonDocsDocument(node.mediaType) || isProtonDocsSpreadsheet(node.mediaType))) {
+        return node.totalStorageSize ?? 0;
+    }
+    return node.activeRevision?.claimedSize ?? node.activeRevision?.storageSize ?? node.totalStorageSize ?? 0;
+};
 
 export const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<NodeEntity> => {
     if (node.parentUid) {
