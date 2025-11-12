@@ -1,4 +1,4 @@
-import { addHours, addMinutes, isSameDay, set } from 'date-fns';
+import { addHours, addMinutes, isSameDay, set, startOfDay, subMinutes } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -106,6 +106,9 @@ export const FormRangeList = () => {
                             id={`range-start-time-${range.id}`}
                             value={toLocalDateTime(range.start)}
                             onChange={(value) => handleStartChange(range, value)}
+                            min={startOfDay(toLocalDateTime(range.start))}
+                            max={subMinutes(toLocalDateTime(range.end), formData.duration)}
+                            preventNextDayOverflow
                         />
                         -
                         <label htmlFor={`range-end-time-${range.id}`} className="sr-only">{c('label')

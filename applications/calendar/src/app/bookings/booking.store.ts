@@ -88,7 +88,7 @@ const groupTimeslotsByDate = (timeslots: BookingTimeslot[]): Map<string, Booking
     const grouped = new Map<string, BookingDaySlots>();
 
     timeslots.forEach((timeslot) => {
-        const date = new Date(timeslot.startTime * 1000);
+        const date = fromUnixTime(timeslot.startTime);
         const dateKey = getDateKey(timeslot.startTime);
         const timeslotWithDate: BookingTimeslotWithDate = { ...timeslot, date };
 
