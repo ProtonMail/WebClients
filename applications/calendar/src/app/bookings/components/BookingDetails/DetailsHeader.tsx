@@ -31,8 +31,12 @@ export const DetailsHeader = () => {
     }
 
     return (
-        <div className="rounded-lg max-w-custom p-12 flex flex-column flex-nowrap mb-8 bg-norm booking-details-header">
-            <h1 className="text-rg mb-2 color-primary text-bold">{c('Title').t`Appointment details`}</h1>
+        <header
+            className="rounded-lg p-8 md:p-12 flex flex-column flex-nowrap mb-8 bg-norm booking-details-header"
+            aria-labelledby="booking-details-header-title"
+        >
+            <h1 className="text-rg mb-2 color-primary text-bold" id="booking-details-header-title">{c('Title')
+                .t`Appointment details`}</h1>
             <h2 className="booking-color-title text-4xl m-0">{bookingDetails?.summary}</h2>
             <p className="my-6 text-pre-wrap">{bookingDetails.description}</p>
             <div className="flex flex-column flex-nowrap gap-4">
@@ -42,8 +46,12 @@ export const DetailsHeader = () => {
                     </div>
                     <div className="flex-1">
                         <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
-                        <div>{bookingDetails.inviterDisplayName}</div>
-                        <div>{bookingDetails.inviterEmail}</div>
+                        <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
+                            {bookingDetails.inviterDisplayName}
+                        </div>
+                        <div className="text-ellipsis" title={bookingDetails.inviterEmail}>
+                            {bookingDetails.inviterEmail}
+                        </div>
                     </div>
                 </div>
                 <div className="flex flex-nowrap flex-row gap-3 items-start">
@@ -70,6 +78,6 @@ export const DetailsHeader = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
