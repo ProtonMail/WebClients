@@ -19,11 +19,21 @@ export const useFreeUploadStore = create<FreeUploadStore>((set) => ({
     targetTime: 0,
 
     beginCountdown: (targetTime) => set(() => ({ isFreeUploadInProgress: true, targetTime })),
+
     abortCountdown: () => set(() => ({ isFreeUploadInProgress: false, secondsLeft: 0 })),
+
     refreshSecondsLeft: () =>
         set((state) => {
             const secondsLeft = Math.max(Math.round((state.targetTime - Date.now()) / 1000), 0);
-            return { secondsLeft, isFreeUploadInProgress: secondsLeft > 0 };
+            const isFreeUploadInProgress = secondsLeft > 0;
+
+            // Only update isFreeUploadInProgress if it changed
+            if (isFreeUploadInProgress === state.isFreeUploadInProgress) {
+                return { secondsLeft };
+            }
+
+            return { secondsLeft, isFreeUploadInProgress };
         }),
+
     setBigCounterVisible: (bigCounterVisible: boolean) => set(() => ({ bigCounterVisible })),
 }));
