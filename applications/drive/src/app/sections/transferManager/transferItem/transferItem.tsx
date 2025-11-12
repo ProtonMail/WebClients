@@ -23,13 +23,13 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [BaseTransferStatus.Failed]:
             entry.type === 'download' ? c('Info').t`Download Failed` : c('Info').t`Upload Failed`,
         [BaseTransferStatus.Finished]: entry.type === 'download' ? c('Info').t`Downloaded` : c('Info').t`Uploaded`,
-        [BaseTransferStatus.Paused]: undefined,
-        [BaseTransferStatus.PausedServer]: undefined,
-        [UploadStatus.ConflictFound]: undefined,
-        [UploadStatus.ParentCancelled]: undefined,
+        [BaseTransferStatus.Paused]: c('Info').t`Paused`,
+        [BaseTransferStatus.PausedServer]: c('Info').t`Paused`,
+        [UploadStatus.ConflictFound]: c('Info').t`Waiting`,
+        [UploadStatus.ParentCancelled]: c('Info').t`Canceled`,
         // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
         [UploadStatus.Skipped]: c('Info').t`Skipped`,
-        [DownloadStatus.Finalizing]: undefined,
+        [DownloadStatus.Finalizing]: c('Info').t`Finalizing`,
     };
     return labels[entry.status];
 };
@@ -52,6 +52,9 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     }
     if (entry.status === BaseTransferStatus.Failed) {
         return <Icon size={5} className="color-danger" name="cross-circle-filled" />;
+    }
+    if (entry.status === UploadStatus.ConflictFound) {
+        return <Icon size={5} className="color-weak" name="clock" />;
     }
     return null;
 };

@@ -48,9 +48,10 @@ export type DownloadItem = {
     nodeUids: string[];
     downloadedBytes: number;
     malawareDetected?: Record<string, MalawareStatus>;
+    lastStatusUpdateTime: Date;
 };
 
-export type DownloadItemInput = Omit<DownloadItem, 'downloadId' | 'malwareState'>;
+export type DownloadItemInput = Omit<DownloadItem, 'downloadId' | 'lastStatusUpdateTime'>;
 
 type DownloadManagerStore = {
     queue: Map<string, DownloadItem>;
@@ -78,6 +79,7 @@ export const useDownloadManagerStore = create<DownloadManagerStore>()(
                     ...item,
                     malawareDetected: undefined,
                     downloadId,
+                    lastStatusUpdateTime: new Date(),
                 };
 
                 set((state) => {
@@ -97,8 +99,13 @@ export const useDownloadManagerStore = create<DownloadManagerStore>()(
                     if (!existing) {
                         return {};
                     }
+                    const shouldUpdateTimestamp = update.status !== existing.status;
                     const queue = new Map(state.queue);
-                    queue.set(downloadId, { ...existing, ...update });
+                    queue.set(downloadId, {
+                        ...existing,
+                        ...update,
+                        lastStatusUpdateTime: shouldUpdateTimestamp ? new Date() : existing.lastStatusUpdateTime,
+                    });
                     return { queue };
                 }),
             removeDownloadItems: (downloadIds) =>
