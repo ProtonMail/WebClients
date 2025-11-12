@@ -9,24 +9,29 @@ import clsx from '@proton/utils/clsx';
 
 import { type BookingTimeslotWithDate, useBookingStore } from '../booking.store';
 import { BookSlotModal } from './BookSlotModal';
+import { BookingDetailsHeader } from './BookingDetails/BookingDetailsHeader';
 
 export const BookingsView = () => {
     const [range, setRange] = useState<Date[]>([]);
     const [timeslot, setTimeslot] = useState<BookingTimeslotWithDate>();
+    const selectedDate = useBookingStore((state) => state.selectedDate);
     const getTimeslotsByDate = useBookingStore((state) => state.getTimeslotsByDate);
 
     const [bookSlotModalProps, setBookSlotModalOpen, renderLinkConfirmationModal] = useModalState();
 
     useEffect(() => {
         const tmpRange: Date[] = [];
+        // TODO use range size based on window size
         for (let i = 0; i < 7; i++) {
-            tmpRange.push(addDays(startOfDay(new Date()), i));
+            tmpRange.push(addDays(startOfDay(selectedDate), i));
         }
         setRange(tmpRange);
-    }, []);
+    }, [selectedDate]);
 
     return (
-        <>
+        <div>
+            <BookingDetailsHeader />
+
             <div className="flex gap-2">
                 {range.map((date) => {
                     return (
@@ -65,6 +70,6 @@ export const BookingsView = () => {
                 })}
             </div>
             {renderLinkConfirmationModal && timeslot && <BookSlotModal timeslot={timeslot} {...bookSlotModalProps} />}
-        </>
+        </div>
     );
 };
