@@ -116,6 +116,11 @@ export const createContentScriptClient = ({
 
             if (res.type === 'error') throw new Error('Client initialization failure');
 
+            /** NOTE: set settings BEFORE calling `getFeatures` in order */
+            context.setSettings(res.settings);
+            context.setFeatureFlags(res.features);
+            context.service.inline.setTheme(res.settings.theme);
+
             /* if the user has disabled every injection setting or added the current
              * domain to the pause list we can safely destroy the content-script context */
             const features = context.getFeatures();
@@ -124,10 +129,6 @@ export const createContentScriptClient = ({
             if (killswitch) return context.destroy({ reason: 'injection settings' });
 
             context.setState({ ...res.state, ready: true, stale: false });
-            context.setSettings(res.settings);
-            context.setFeatureFlags(res.features);
-            context.service.inline.setTheme(res.settings.theme);
-
             reconciliate();
 
             /** Notify the message bridge that the content-script is now ready. This
