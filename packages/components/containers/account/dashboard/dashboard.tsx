@@ -1,9 +1,13 @@
+import type { PropsWithChildren } from 'react';
+
 import { PrivateMainSettingsArea, type SettingsAreaConfig } from '@proton/components/index';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 import YourPlanSectionV2 from '../../payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
 import { YourPlanUpsellsSectionV2 } from '../../payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
+import DriveBlogSection from './drive/DriveBlogSection/DriveBlogSection';
+import DriveDownloadAndInfoSection from './drive/DriveDownloadAndInfoSection/DriveDownloadAndInfoSection';
 import MailBlogSection from './mail/MailBlogSection/MailBlogSection';
 import { MailDownloadAndInfoSection } from './mail/MailDownloadAndInfoSection/MailDownloadAndInfoSection';
 import PassBlogSection from './pass/PassBlogSection/PassBlogSection';
@@ -19,7 +23,7 @@ interface Props {
     config: SettingsAreaConfig;
 }
 
-const AccountMailDashboard = ({ app, config }: Props) => {
+const DashboardWrapper = ({ children, config }: PropsWithChildren<Props>) => {
     return (
         <PrivateMainSettingsArea
             config={config}
@@ -27,6 +31,14 @@ const AccountMailDashboard = ({ app, config }: Props) => {
             wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
             style={{ '--max-w-custom': '93.75rem' }}
         >
+            {children}
+        </PrivateMainSettingsArea>
+    );
+};
+
+const AccountMailDashboard = ({ app, config }: Props) => {
+    return (
+        <DashboardWrapper config={config} app={app}>
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
             <MailDownloadAndInfoSection app={app} />
@@ -36,18 +48,13 @@ const AccountMailDashboard = ({ app, config }: Props) => {
                 <AlsoInYourPlanProtonVPN />
             </AlsoInYourPlanSection>
             <MailBlogSection />
-        </PrivateMainSettingsArea>
+        </DashboardWrapper>
     );
 };
 
 const AccountPassDashboard = ({ app, config }: Props) => {
     return (
-        <PrivateMainSettingsArea
-            config={config}
-            mainAreaClass="bg-lowered settings-cards"
-            wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
-            style={{ '--max-w-custom': '93.75rem' }}
-        >
+        <DashboardWrapper config={config} app={app}>
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
             <PassDownloadAndInfoSection app={app} />
@@ -57,7 +64,23 @@ const AccountPassDashboard = ({ app, config }: Props) => {
                 <AlsoInYourPlanProtonDrive />
             </AlsoInYourPlanSection>
             <PassBlogSection />
-        </PrivateMainSettingsArea>
+        </DashboardWrapper>
+    );
+};
+
+const AccountDriveDashboard = ({ app, config }: Props) => {
+    return (
+        <DashboardWrapper config={config} app={app}>
+            <YourPlanSectionV2 app={app} />
+            <YourPlanUpsellsSectionV2 app={app} />
+            <DriveDownloadAndInfoSection app={app} />
+            <AlsoInYourPlanSection app={app}>
+                <AlsoInYourPlanProtonPass />
+                <AlsoInYourPlanProtonMail />
+                <AlsoInYourPlanProtonVPN />
+            </AlsoInYourPlanSection>
+            <DriveBlogSection />
+        </DashboardWrapper>
     );
 };
 
@@ -68,6 +91,8 @@ const AccountDashboard = ({ app, config }: Props) => {
             return <AccountMailDashboard app={app} config={config} />;
         case APPS.PROTONPASS:
             return <AccountPassDashboard app={app} config={config} />;
+        case APPS.PROTONDRIVE:
+            return <AccountDriveDashboard app={app} config={config} />;
     }
 };
 

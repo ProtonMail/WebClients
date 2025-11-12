@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -33,7 +34,7 @@ interface DownloadButton {
 
 interface TabContent {
     image?: string;
-    hint?: string;
+    hint?: () => ReactNode;
     downloadButtons?: DownloadButton[];
     footnote?: {
         title: () => string;
@@ -74,6 +75,7 @@ const CategoryTabs = ({ category }: { category: Category }) => {
                         <img src={tab.content.image} alt={tab.title()} className="w-full h-auto" />
                     </figure>
                 ) : undefined}
+                {tab.content.hint && <p className="my-0 color-weak text-center text-sm">{tab.content.hint()}</p>}
                 <div>
                     <div className="flex gap-4 w-full">
                         {tab.content.downloadButtons?.map((downloadButton) => {

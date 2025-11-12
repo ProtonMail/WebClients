@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
@@ -11,6 +12,8 @@ import {
     getHasConsumerVpnPlan,
     hasBundle,
     hasBundlePro2024,
+    hasDrive,
+    hasDrive1TB,
     hasDuo,
     hasFamily,
     hasFree,
@@ -98,6 +101,18 @@ export const PlanIcon = ({
         return (
             <LogoIconShape size={size}>
                 <PassLogo variant="glyph-only" scale={size / 44} />
+            </LogoIconShape>
+        );
+    }
+    if (
+        hasDrive(subscription) ||
+        hasDrive1TB(subscription) ||
+        planName === PLANS.DRIVE ||
+        planName === PLANS.DRIVE_1TB
+    ) {
+        return (
+            <LogoIconShape size={size}>
+                <DriveLogo variant="glyph-only" scale={size / 44} />
             </LogoIconShape>
         );
     }

@@ -10,6 +10,7 @@ export interface DashboardMoreInfoSection {
     description: () => string | ReactElement;
     image: string;
     link?: string;
+    onClick?: () => void;
 }
 
 export const DashboardMoreInfoSectionTag = ({ prefix, text }: { prefix?: ReactNode; text: string }) => {
@@ -23,13 +24,17 @@ export const DashboardMoreInfoSectionTag = ({ prefix, text }: { prefix?: ReactNo
     );
 };
 
+function isClickableSection(section: DashboardMoreInfoSection) {
+    return section.link || section.onClick;
+}
+
 export const DashboardMoreInfoSections = ({ sections }: { sections: DashboardMoreInfoSection[] }) => {
     return (
         <DashboardCard>
             <DashboardCardContent className="lg:h-full" paddingClass="p-3">
                 <div className="flex flex-column items-center lg:justify-space-between lg:h-full gap-2">
                     {sections.map((section) => {
-                        const Element = section.link ? 'a' : 'div';
+                        const Element = isClickableSection(section) ? 'a' : 'div';
 
                         const key = section.title();
 
@@ -43,9 +48,10 @@ export const DashboardMoreInfoSections = ({ sections }: { sections: DashboardMor
                                 key={key}
                                 className={clsx(
                                     'flex flex-nowrap items-center p-2 gap-4 w-full relative rounded-lg text-no-decoration',
-                                    section.link && 'interactive-pseudo-protrude'
+                                    isClickableSection(section) && 'interactive-pseudo-protrude'
                                 )}
                                 aria-label={section.title()}
+                                onClick={section.onClick}
                             >
                                 <figure
                                     className="w-custom rounded overflow-hidden ratio-square"
@@ -59,7 +65,7 @@ export const DashboardMoreInfoSections = ({ sections }: { sections: DashboardMor
                                     <h3 className="text-lg text-semibold m-0">{section.title()}</h3>
                                     <p className="m-0 text-ellipsis-two-lines color-weak">{section.description()}</p>
                                 </div>
-                                {section.link && (
+                                {isClickableSection(section) && (
                                     <IcChevronRight key={`icon-${key}`} className="shrink-0 color-hint" size={6} />
                                 )}
                             </Element>

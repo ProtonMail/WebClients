@@ -8,12 +8,11 @@ interface Props {
     subscription?: Subscription | FreeSubscription;
     user: UserModel;
 }
-const PlanPriceElement = ({ subscription, user }: Props) => {
+const PlanPriceElement = ({ subscription }: Props) => {
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;
 
     return (
-        (user.hasPaidMail || user.hasPaidVpn || user.hasPaidPass) &&
         !isManagedExternally(subscription) && (
             <Price
                 currency={subscription?.Currency}

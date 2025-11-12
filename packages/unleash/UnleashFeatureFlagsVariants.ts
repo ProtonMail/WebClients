@@ -10,6 +10,7 @@ export const FLAGS_WITH_VARIANT = [
     'VPNDashboard',
     'MailDashboard',
     'PassDashboard',
+    'DriveDashboard',
     'InboxBringYourOwnEmailSignup',
 ] satisfies FeatureFlag[];
 
@@ -23,6 +24,7 @@ export type DriveWebDownloadMechanismParametersVariant = 'low-memory' | 'base-me
 export type VPNDashboardVariant = 'Control' | 'A' | 'B';
 export type MailDashboardVariant = 'A' | 'B';
 export type PassDashboardVariant = 'A' | 'B';
+export type DriveDashboardVariant = 'A' | 'B';
 export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 
 /**
@@ -46,6 +48,7 @@ type FeatureFlagVariantMap = {
     VPNDashboard: VariantReturnType<VPNDashboardVariant>;
     MailDashboard: VariantReturnType<MailDashboardVariant>;
     PassDashboard: VariantReturnType<PassDashboardVariant>;
+    DriveDashboard: VariantReturnType<DriveDashboardVariant>;
     InboxBringYourOwnEmailSignup: VariantReturnType<InboxBringYourOwnEmailSignupVariant>;
 };
 

@@ -211,6 +211,11 @@ const MainContainer = () => {
         'PassDashboard'
     );
 
+    const { showDashboard: showDriveDashboard, variant: showDriveDashboardVariant } = useShowDashboard(
+        app,
+        'DriveDashboard'
+    );
+
     const { isB2B: isB2BDrive } = useDrivePlan();
 
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -259,6 +264,8 @@ const MainContainer = () => {
         showMailDashboardVariant: showMailDashboardVariant.name,
         showPassDashboard,
         showPassDashboardVariant: showPassDashboardVariant.name,
+        showDriveDashboard,
+        showDriveDashboardVariant: showDriveDashboardVariant.name,
     });
 
     useEffect(() => {
