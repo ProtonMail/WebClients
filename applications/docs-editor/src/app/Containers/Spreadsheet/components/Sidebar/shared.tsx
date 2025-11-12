@@ -1,8 +1,9 @@
-import { type ComponentPropsWithRef, createContext, forwardRef, useContext } from 'react'
+import { type ComponentPropsWithRef, createContext, forwardRef, useContext, useMemo } from 'react'
 import * as Ariakit from '@ariakit/react'
 import { Icon } from '../ui'
 import clsx from '@proton/utils/clsx'
 import { createComponent } from '../utils'
+import { twMerge } from 'tailwind-merge'
 
 export interface SidebarDialogStore {
   id: string
@@ -103,9 +104,15 @@ export const FormCheckbox = createComponent(function FormRadio({
   ...props
 }: Ariakit.CheckboxProps) {
   return (
-    <label className={clsx('group inline-flex select-none items-center gap-2 text-sm', className)}>
+    <label
+      className={clsx(
+        'group inline-flex select-none items-center gap-2 rounded border border-[transparent] text-sm',
+        '!outline-none transition focus-within:border-[#6D4AFF] focus-within:ring-[3px] focus-within:ring-[#6D4AFF33]',
+        className,
+      )}
+    >
       <Ariakit.VisuallyHidden>
-        <Ariakit.Checkbox {...props} />
+        <Ariakit.Checkbox clickOnEnter {...props} />
       </Ariakit.VisuallyHidden>
       <FormCheckmarkIcon />
       {children}
@@ -118,13 +125,31 @@ export const Input = createComponent(function Input(props: ComponentPropsWithRef
     <input
       {...props}
       className={clsx(
-        'h-[36px] text-ellipsis rounded-lg border border-[#ADABA8] px-3 !outline-none',
+        'h-[36px] text-ellipsis rounded-lg border border-[#ADABA8] px-3 text-sm !outline-none',
         'transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}
     />
   )
 })
+
+function SelectFallbackLabel() {
+  const store = Ariakit.useSelectContext()
+  const items = Ariakit.useStoreState(store, (s) => s?.items)
+  const value = Ariakit.useStoreState(store, (s) => s?.value)
+  const label = useMemo(() => {
+    if (items) {
+      const selectedItem = items.find((item) => item.value === value)
+      if (selectedItem?.element?.textContent) {
+        return selectedItem.element.textContent
+      }
+    }
+
+    return ''
+  }, [items, value])
+
+  return label
+}
 
 export const Select = createComponent(function Select({ children, ...props }: Ariakit.SelectProps) {
   return (
@@ -136,7 +161,7 @@ export const Select = createComponent(function Select({ children, ...props }: Ar
         props.className,
       )}
     >
-      {children}
+      {children ?? <SelectFallbackLabel />}
       <span className="pointer-events-none ml-auto flex shrink-0 items-center pr-2">
         <Icon className="shrink-0" legacyName="chevron-down-filled" />
       </span>
@@ -203,6 +228,19 @@ export const ToggleButton = createComponent(function ToggleButton(props: Ariakit
       {...props}
       className={clsx(
         'inline-flex h-[36px] items-center gap-2 rounded-lg border border-[#ADABA8] px-3 text-sm text-[#0C0C14] hover:bg-[black]/[0.03] aria-checked:bg-[#C2C0BE59] aria-disabled:opacity-50',
+        '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
+        props.className,
+      )}
+    />
+  )
+})
+
+export const Button = createComponent(function Button(props: Ariakit.ButtonProps) {
+  return (
+    <Ariakit.Button
+      {...props}
+      className={twMerge(
+        'border border-[#ADABA8] border-[transparent]',
         '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}

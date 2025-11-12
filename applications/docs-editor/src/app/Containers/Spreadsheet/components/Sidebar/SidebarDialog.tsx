@@ -5,6 +5,7 @@ import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
 import { useEvent } from '../utils'
 import {
+  Button,
   SidebarDialogContext,
   type SidebarDialogContextValue,
   useSidebarContext,
@@ -26,14 +27,14 @@ export function SidebarDialogHeader({ title }: SidebarDialogHeaderProps) {
     <div className="flex shrink-0 items-center justify-between gap-2 border-b-[0.5px] border-[#EAE7E4] px-4 pb-2 pt-6">
       <h1 className="text-lg font-bold">{title}</h1>
 
-      <button
+      <Button
         type="button"
-        className="flex size-[36px] items-center justify-center"
+        className="flex size-[36px] items-center justify-center rounded-lg"
         aria-label={s('Close')}
         onClick={() => sidebarDialog.setOpen(false)}
       >
-        <Icon legacyName="cross" />
-      </button>
+        <Icon legacyName="cross-big" />
+      </Button>
     </div>
   )
 }
