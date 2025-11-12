@@ -25,6 +25,7 @@ export const viewLogger = (viewID: CHANGE_VIEW_TARGET | null) => (viewID ? Logge
 export const sentryLogger = Logger.scope("sentry");
 export const notificationLogger = Logger.scope("notification");
 export const flagManagerLogger = Logger.scope("flag-manager");
+export const networkLogger = Logger.scope("network");
 
 const filterSensitiveLogMessage: Hook = (msg: LogMessage, _transport?: Transport): LogMessage => {
     return {
