@@ -116,7 +116,7 @@ const getBookingContentPartVevent = (vevent: VcalVeventComponent) => {
         uid: vevent.uid,
         'x-pm-BookingUID': vevent['x-pm-BookingUID'],
         summary: vevent.summary,
-        ...(vevent.location ? vevent.location : {}),
+        ...(vevent.location ? { location: vevent.location } : {}),
         dtstamp: vevent.dtstamp,
         ...(vevent.description ? { description: vevent.description } : {}),
         // TODO this depends if we want to/can add video conference properties to the event
