@@ -21,9 +21,7 @@ interface BookingMiniCalendarProps {
 export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniCalendarProps) => {
     const isLoading = useBookingStore((state) => state.isLoading);
     const getDaysWithSlots = useBookingStore((state) => state.getDaysWithSlots);
-    const getAllDaySlots = useBookingStore((state) => state.getAllDaySlots);
     const [, setDisplayedMonth] = useState(selectedDate);
-    const [hasInitialized, setHasInitialized] = useState(false);
 
     const daysWithSlots = getDaysWithSlots();
 
@@ -32,17 +30,6 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
     useEffect(() => {
         setDisplayedMonth(startOfMonth(selectedDate));
     }, [selectedDate]);
-
-    useEffect(() => {
-        if (!hasInitialized && !isLoading) {
-            const allDaySlots = getAllDaySlots();
-            const earliestAvailableDate = allDaySlots[0]?.date;
-            if (earliestAvailableDate) {
-                setHasInitialized(true);
-                onSelectDate(earliestAvailableDate);
-            }
-        }
-    }, [hasInitialized, isLoading, getAllDaySlots, onSelectDate]);
 
     const getDayClassName = (date: Date) => {
         const dateKey = format(date, 'yyyy-MM-dd', { locale: dateLocale });
