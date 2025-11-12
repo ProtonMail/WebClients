@@ -7,7 +7,6 @@ import {
     isBefore,
     isSameDay,
     isWeekend,
-    startOfDay,
     startOfWeek,
 } from 'date-fns';
 import { c } from 'ttag';
@@ -210,10 +209,19 @@ export const generateDefaultBookingRange = (
         });
 };
 
-export const createBookingRangeNextAvailableTime = (bookingRange: BookingRange[], timezone: string): BookingRange => {
-    const now = new Date();
-    const today = startOfDay(now);
-    const tomorrow = addDays(today, 1);
+export const createBookingRangeNextAvailableTime = ({
+    bookingRange,
+    userSettings,
+    timezone,
+    startDate,
+}: {
+    bookingRange: BookingRange[];
+    userSettings: UserSettings;
+    timezone: string;
+    startDate?: Date;
+}): BookingRange => {
+    const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
+    const tomorrow = startDate ? startOfWeek(startDate, { weekStartsOn }) : addDays(new Date(), 1);
 
     // We return tomorrow if it's free
     if (!bookingRange.some((range) => isSameDay(range.start, tomorrow))) {
