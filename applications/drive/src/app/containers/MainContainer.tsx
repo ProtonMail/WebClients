@@ -9,6 +9,7 @@ import {
     LoaderPage,
     ModalsChildren,
     SubscriptionModalProvider,
+    useApi,
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useDrive } from '@proton/drive';
@@ -44,6 +45,7 @@ import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
 import { VolumeTypeForEvents } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
+import { Features, measureFeaturePerformance } from '../utils/telemetry';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
 import { FolderContainerWrapper } from './FolderContainerWrapper';
@@ -70,6 +72,7 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
 
 function InitContainer() {
     const [user] = useUser();
+    const api = useApi();
     const { init: initDrive, drive } = useDrive();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
@@ -140,7 +143,14 @@ function InitContainer() {
                 cleanupUrl();
             }
         };
-        void withLoading(initPromise);
+
+        const feature = measureFeaturePerformance(api, Features.driveBootstrap);
+        feature.start();
+        void withLoading(
+            initPromise().finally(() => {
+                feature.end();
+            })
+        );
 
         return () => {
             abortController.abort();
