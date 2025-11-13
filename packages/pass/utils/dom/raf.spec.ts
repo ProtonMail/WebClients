@@ -1,3 +1,4 @@
+import type { RafHandle } from './raf';
 import { createRAFController } from './raf';
 
 describe('createRAFController', () => {
@@ -17,7 +18,7 @@ describe('createRAFController', () => {
 
         jest.runAllTimers();
         expect(fn).toHaveBeenCalledTimes(1);
-        expect(fn).toHaveBeenCalledWith(expect.any(Number));
+        expect(fn).toHaveBeenCalledWith({ cancelled: false });
     });
 
     test('should cancel pending requests', () => {
@@ -61,11 +62,11 @@ describe('createRAFController', () => {
         const controller = createRAFController();
         const results: string[] = [];
 
-        const asyncFactory = (id: string) => async (handle: number) => {
+        const asyncFactory = (id: string) => async (handle: RafHandle) => {
             results.push(`${id}::started`);
             await Promise.resolve();
 
-            if (controller.handle == handle) results.push(`${id}::completed`);
+            if (!handle.cancelled) results.push(`${id}::completed`);
             else results.push(`${id}::cancelled`);
         };
 

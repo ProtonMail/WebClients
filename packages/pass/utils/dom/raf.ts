@@ -1,5 +1,12 @@
 import type { MaybeNull } from '@proton/pass/types';
 
+export type RafHandle = {
+    /** Flag indicating wether the current RAF
+     * has been cancelled. NOTE: Do not destructure
+     * as this property is a dynamic getter */
+    cancelled: boolean;
+};
+
 export const createRAFController = () => {
     let raf: MaybeNull<number> = null;
 
@@ -13,10 +20,16 @@ export const createRAFController = () => {
      * @param fn - Callback receiving the RAF handle as a parameter.
      * For async callbacks, compare `handle` against `controller.handle`
      * to determine if this request is still active after awaiting. */
-    const request = (fn: (handle: number) => void) => {
+    const request = (fn: (handle: RafHandle) => void) => {
         cancel();
-        const handle = requestAnimationFrame(() => fn(handle));
-        raf = handle;
+        const next = requestAnimationFrame(() =>
+            fn({
+                get cancelled() {
+                    return next !== raf;
+                },
+            })
+        );
+        raf = next;
     };
 
     return {

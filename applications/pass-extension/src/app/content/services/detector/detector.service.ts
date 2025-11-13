@@ -24,6 +24,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { liftSort } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
+import { DOM_SETTLE_MS } from '@proton/pass/utils/time/next-tick';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
@@ -236,7 +237,7 @@ export const createDetectorService = (config: DetectorConfig) => {
          * trigger DOM repaints, with a small delay to ensure DOM stability. */
         shouldPredict: (): Promise<boolean> =>
             new Promise(async (resolve) => {
-                await wait(50);
+                await wait(DOM_SETTLE_MS);
                 requestIdleCallback(() => {
                     detector.applyRules();
                     prepass();

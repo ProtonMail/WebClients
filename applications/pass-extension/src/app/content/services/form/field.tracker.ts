@@ -7,7 +7,7 @@ import { createRAFController } from '@proton/pass/utils/dom/raf';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
-import { DOM_SETTLE_MS, onNextTick } from '@proton/pass/utils/time/next-tick';
+import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import throttle from '@proton/utils/throttle';
 
 import type { FieldHandle } from './field';
@@ -22,6 +22,8 @@ export type FieldTrackerState = {
     focusTimeout: MaybeNull<NodeJS.Timeout>;
 };
 
+const FIELD_TIMEOUT = 250;
+
 /** Sends `AUTOFILL_FILTER` message to dropdown for real-time item filtering.
  * 250ms throttle with trailing edge prevents excessive messaging during typing. */
 const syncAutofillFilter = throttle(
@@ -31,7 +33,7 @@ const syncAutofillFilter = throttle(
             payload: { startsWith },
         });
     }),
-    250,
+    FIELD_TIMEOUT,
     { trailing: true }
 );
 
@@ -46,43 +48,42 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     const raf = createRAFController();
     const state: FieldTrackerState = { focused: false, focusTimeout: null };
 
-    const onBlur = withContext<(evt: FocusEvent) => void>((ctx) => {
+    const onBlur = withContext<(evt: Event) => void>((ctx) => {
         if (!state.focused) return;
+        else if (state.focusTimeout) clearTimeout(state.focusTimeout);
 
         raf.cancel();
-        if (state.focusTimeout) clearTimeout(state.focusTimeout);
         state.focused = false;
 
-        if (!ctx || field.actionPrevented) return;
-
         raf.request(
-            onNextTick(async (handle: number) => {
-                if (field.actionPrevented || handle !== raf.handle) return;
-                const active = await field.isActive();
+            onNextTick(async (req) => {
+                field.element.blur();
+                if (field.actionPrevented || req.cancelled) return;
 
-                if (handle === raf.handle && !active) {
-                    field.icon?.detach();
-                    ctx.service.inline.dropdown.close({ type: 'field', field });
-                }
+                const active = await field.isActive();
+                if (req.cancelled || active) return;
+
+                field.icon?.detach();
+                ctx?.service.inline.dropdown.close({ type: 'field', field });
             })
         );
     });
 
-    const onFocus = withContext<(evt: FocusEvent) => void>((ctx, evt) => {
+    const onFocus = withContext<(evt: Event) => void>((ctx, evt) => {
         if (state.focused) return;
 
         raf.cancel();
         state.focused = true;
 
         const { action } = field;
-        if (!ctx || !action || field.actionPrevented) return;
+        if (!action) return;
 
         raf.request(() => {
             if (field.actionPrevented) return;
             if (state.focusTimeout) clearTimeout(state.focusTimeout);
 
-            ctx.service.inline.icon.attach(field);
-            ctx.service.inline.dropdown.toggle({
+            ctx?.service.inline.icon.attach(field);
+            ctx?.service.inline.dropdown.toggle({
                 type: 'field',
                 action: action.type,
                 autofocused: true,
@@ -98,7 +99,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
                     logger.debug(`[FieldTracker] Browser "blur" dequeue detected`);
                     onBlur(evt);
                 }
-            }, DOM_SETTLE_MS);
+            }, FIELD_TIMEOUT);
         });
     });
 
@@ -109,12 +110,11 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         const { action } = field;
         const { value } = field.element;
 
-        if (!field.actionPrevented) {
-            if (!action?.filterable) ctx?.service.inline.dropdown.close({ type: 'field', field });
-            else syncAutofillFilter(value);
-        }
-
         field.setValue(value);
+
+        if (field.actionPrevented) return;
+        else if (!action?.filterable) ctx?.service.inline.dropdown.close({ type: 'field', field });
+        else syncAutofillFilter(value);
     });
 
     /* When the type attribute of a field changes : detach it from
@@ -136,6 +136,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     listeners.addListener(field.element, 'blur', onBlur);
     listeners.addListener(field.element, 'focusout', onBlur);
     listeners.addListener(field.element, 'input', onInput);
+    listeners.addListener(field.element, 'mousedown', onFocus);
     listeners.addObserver(field.element, onAttributeChange, { attributeFilter: ['type'], attributeOldValue: true });
 
     if (formTracker) {
