@@ -3688,6 +3688,9 @@
       "End-to-end encryption": [
         "Criptografia de ponta a ponta"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Benefícios atuais do plano ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Downloads rápidos de P2P/BitTorrent"
       ],
@@ -3885,6 +3888,10 @@
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartilhar cofres com até ${ n } pessoa",
+        "Compartilhar cofres com até ${ n } pessoas"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
       ]
@@ -3977,9 +3984,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com recursos avançados para suas comunicações do dia a dia."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluções sob medida para organizações maiores com necessidades específicas de segurança"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A solução de VPN dedicada que oferece acesso seguro, irrestrito e de alta velocidade à internet."
       ],
@@ -4011,11 +4015,6 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -4238,9 +4237,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Suporte 24/7"
-      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
@@ -4286,9 +4282,6 @@
       ],
       "Private gateways": [
         "Gateways privados"
-      ],
-      "Require 2FA": [
-        "Requer A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Suporte para ${ n } domínio de e-mail personalizado",
@@ -4602,6 +4595,23 @@
       ],
       "Credits will be added to your balance": [
         "Créditos serão adicionados ao seu saldo."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Tem certeza de que deseja continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Se você optar por modificar seu ${ planTitle } plano, você pode perder o acesso a alguns recursos."
+      ],
+      "Keep ${ planTitle }": [
+        "Manter o ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sim, tenho certeza"
+      ],
+      "Your plan includes this feature already.": [
+        "Seu plano já inclui esse recurso."
       ]
     },
     "Payments.plan_name": {
