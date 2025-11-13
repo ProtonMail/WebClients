@@ -1,3 +1,5 @@
+import { getUnixTime } from 'date-fns';
+
 import { CryptoProxy, type PublicKeyReference, type SessionKey } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
 import {
@@ -71,9 +73,9 @@ const encryptBookingSlots = async (
             format: 'binary',
         });
 
-        const StartTime = Math.floor(slot.start.getTime() / 1000);
-        const EndTime = Math.floor(slot.end.getTime() / 1000);
-        const Timezone = formData.timezone || 'Europe/Zurich';
+        const StartTime = getUnixTime(slot.start);
+        const EndTime = getUnixTime(slot.end);
+        const Timezone = formData.timezone;
         const RRule = null;
 
         const slotSignature = await CryptoProxy.signMessage({

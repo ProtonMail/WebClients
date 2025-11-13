@@ -1,9 +1,20 @@
 import { addDays, differenceInMinutes, endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 
 import type { ActiveBreakpoint } from '@proton/components/hooks/useActiveBreakpoint';
+import { convertTimestampToTimezone, toLocalDate } from '@proton/shared/lib/date/timezone';
 
 import { DEFAULT_EVENT_DURATION } from '../../containers/bookings/bookingsProvider/interface';
-import type { BookingDaySlots, BookingDetails, BookingTimeslotWithDate } from '../booking.store';
+import type { BookingDetails, BookingTimeslot } from '../booking.store';
+
+/**
+ * Convert a time slot start time to a local date.
+ * @param slot the slot to convert
+ * @param timezone timezone from the state, not the one from the slot
+ * @returns date that can be used in display
+ */
+export const fromTimeSlotToUTCDate = (slot: BookingTimeslot, timezone: string) => {
+    return toLocalDate(convertTimestampToTimezone(slot.startTime, timezone));
+};
 
 const getTime = (date: Date) => {
     return new Date(2000, 0, 1, date.getHours(), date.getMinutes());
@@ -89,33 +100,29 @@ export const getDaysRange = (gridSize: number, startDate: Date) => {
     return tmpRange;
 };
 
-export const getFirstAvailableSlotDate = (allDaySlots: BookingDaySlots[]): Date | null => {
-    const firstDayWithSlots = allDaySlots.find((daySlot) => daySlot.timeslots.length > 0);
-    return firstDayWithSlots ? startOfDay(firstDayWithSlots.date) : null;
-};
-
 export const getDaysSlotRange = (
     gridSize: number,
     bookingDetails: BookingDetails,
-    getTimeslotsByDate: (date: Date) => BookingTimeslotWithDate[],
+    filterBookingSlotPerDay: (date: Date) => BookingTimeslot[],
     selectedDate: Date
 ) => {
     // We want to take extreme here
     let earliestSlot: Date = getTime(endOfDay(selectedDate));
     let latestSlot: Date = getTime(startOfDay(selectedDate));
 
-    const slotRange: BookingTimeslotWithDate[][] = [];
+    const slotRange: BookingTimeslot[][] = [];
     for (let i = 0; i < gridSize; i++) {
         const date = addDays(startOfDay(selectedDate), i);
 
-        const timeslots = getTimeslotsByDate(date);
-        slotRange.push(timeslots);
+        const newTimeslot = filterBookingSlotPerDay(date);
+        slotRange.push(newTimeslot);
 
-        const earliest = timeslots.length > 0 ? timeslots.at(0)?.date : undefined;
-        earliestSlot = getEarliestTime(earliestSlot, earliest);
+        if (!newTimeslot.length) {
+            continue;
+        }
 
-        const latest = timeslots.length > 0 ? timeslots[timeslots.length - 1].date : undefined;
-        latestSlot = getLatestTime(latestSlot, latest);
+        earliestSlot = getEarliestTime(earliestSlot, newTimeslot[0].tzDate);
+        latestSlot = getLatestTime(latestSlot, newTimeslot[newTimeslot.length - 1].tzDate);
     }
 
     const bookingDuration = bookingDetails.duration || DEFAULT_EVENT_DURATION;
@@ -135,7 +142,7 @@ export const getDaysSlotRange = (
         }
 
         day.forEach((slot) => {
-            const difference = differenceInMinutes(getTime(slot.date), earliestSlot);
+            const difference = differenceInMinutes(getTime(slot.tzDate), earliestSlot);
             const index = Math.floor(difference / bookingDuration);
             array[dayIndex][index] = slot;
         });
