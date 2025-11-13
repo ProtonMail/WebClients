@@ -13,7 +13,7 @@ describe('DropdownFocusController', () => {
     const field = {
         element: fieldElement,
         preventAction: jest.fn(),
-        interactivity: { unlock: jest.fn(), lock: jest.fn() },
+        getFormHandle: () => ({ getFields: () => [] }),
     };
 
     const popoverEl = document.createElement('div');
