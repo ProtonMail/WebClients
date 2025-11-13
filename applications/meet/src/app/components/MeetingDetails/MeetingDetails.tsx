@@ -96,14 +96,14 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                             <TableCell className="align-top color-weak" colSpan={1}>{c('Title')
                                 .t`Invite link`}</TableCell>
                             <TableCell colSpan={2} className="text-break-all overflow-hidden">
-                                <div
-                                    className="w-full color-primary cursor-pointer"
+                                <button
+                                    className="w-full color-primary cursor-pointer text-left unstyled p-0 m-0"
                                     onClick={() => {
-                                        copyTextToClipboard(meetingLink);
+                                        void copyTextToClipboard(meetingLink);
                                     }}
                                 >
                                     {meetingLink}
-                                </div>
+                                </button>
                             </TableCell>
                         </TableRow>
                         {passphrase && (
@@ -112,14 +112,14 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                     {c('Title').t`Passphrase`}
                                 </TableCell>
                                 <TableCell colSpan={2}>
-                                    <div
-                                        className="w-full color-primary cursor-pointer"
+                                    <button
+                                        className="w-full color-primary cursor-pointer text-left unstyled p-0 m-0"
                                         onClick={() => {
-                                            copyTextToClipboard(passphrase);
+                                            void copyTextToClipboard(passphrase);
                                         }}
                                     >
                                         {passphrase}
-                                    </div>
+                                    </button>
                                 </TableCell>
                             </TableRow>
                         )}
@@ -129,49 +129,57 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
 
             <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
                 <div className="text-semibold pl-2 mb-4">{c('Title').t`MLS state`}</div>
-                <Table>
-                    <TableBody>
-                        <TableRow>
-                            <TableCell colSpan={3} className="color-weak text-left">
-                                {c('Info')
-                                    .t`This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).`}
-                            </TableCell>
-                        </TableRow>
-                        {mlsGroupState && (
-                            <TableRow>
-                                <TableCell className="color-weak" colSpan={1}>{c('Title').t`Epoch`}</TableCell>
-                                <TableCell colSpan={2} className="text-break-all overflow-hidden">
-                                    <div>{mlsGroupState.epoch.toString()}</div>
-                                </TableCell>
-                            </TableRow>
-                        )}
-                        {mlsGroupState && mlsGroupState.displayCode !== null && (
-                            <TableRow>
-                                <TableCell className="color-weak" colSpan={1}>{c('Title').t`Authenticator`}</TableCell>
-                                <TableCell colSpan={2} className="text-break-all overflow-hidden">
+                <div className="px-2">
+                    <div className="color-weak mb-2 pb-3 border-bottom">
+                        {c('Info')
+                            .t`This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).`}
+                    </div>
+                    {mlsGroupState && (
+                        <div className="flex gap-4 min-h-0">
+                            <div className="shrink-0 flex flex-column">
+                                <div className="pt-2 pb-3 color-weak text-semibold border-bottom">{c('Title')
+                                    .t`Epoch`}</div>
+                                {mlsGroupState.displayCode !== null && (
                                     <div
-                                        className="w-full color-primary cursor-pointer"
-                                        onClick={() => {
-                                            copyTextToClipboard(mlsGroupState.displayCode!);
-                                        }}
+                                        className="py-3 color-weak text-semibold flex-1"
+                                        style={{ display: 'flex', alignItems: 'center' }}
                                     >
-                                        {mlsGroupState
-                                            .displayCode!.match(/.{1,4}/g) // seperate every 4 characters
-                                            ?.map((group, i) => (
-                                                <span
-                                                    key={i}
-                                                    className={i % 2 === 0 ? 'color-norm' : 'color-hint'}
-                                                    style={{ display: 'inline-block', marginRight: '0.25em' }}
-                                                >
-                                                    {group}
-                                                </span>
-                                            ))}
+                                        <span>{c('Title').t`Authenticator`}</span>
                                     </div>
-                                </TableCell>
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
+                                )}
+                            </div>
+                            <div className="flex-1 flex flex-column text-break">
+                                <div className="pt-2 pb-3 border-bottom">
+                                    <div>{mlsGroupState.epoch.toString()}</div>
+                                </div>
+                                {mlsGroupState.displayCode !== null && (
+                                    <div className="py-3">
+                                        <div className="overflow-y-auto" style={{ maxHeight: '8rem' }}>
+                                            <button
+                                                className="color-primary cursor-pointer unstyled p-0 m-0"
+                                                style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25em' }}
+                                                onClick={() => {
+                                                    void copyTextToClipboard(mlsGroupState.displayCode!);
+                                                }}
+                                            >
+                                                {mlsGroupState
+                                                    .displayCode!.match(/.{1,4}/g) // seperate every 4 characters
+                                                    ?.map((group, i) => (
+                                                        <span
+                                                            key={i}
+                                                            className={i % 2 === 0 ? 'color-norm' : 'color-hint'}
+                                                        >
+                                                            {group}
+                                                        </span>
+                                                    ))}
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
         </SideBar>
     );
