@@ -20,6 +20,7 @@ import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     type ResumedSessionResult,
     extendPersistedSessionOfflineBypass,
@@ -129,6 +130,7 @@ const SignupContext = createContext<SignupContextType | null>(null);
 export interface BaseSignupContextProps {
     onPreSubmit?: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    onGetActiveSessions?: () => Promise<GetActiveSessionsResult>;
     handleLogin: OnLoginCallback;
     loginUrl: string;
     productParam: ProductParam;
