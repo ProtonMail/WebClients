@@ -246,8 +246,11 @@ export const getLumoConfiguration = ({
     const appName = LUMO_APP_NAME;
 
     const title = (
-        <SignupHeaderV2>{c('collider_2025: Info')
-            .t`AI assistant that respects business confidentiality`}</SignupHeaderV2>
+        <SignupHeaderV2>
+            {audience === Audience.B2B
+                ? c('collider_2025: Info').t`AI assistant that respects business confidentiality`
+                : c('collider_2025: Info').t`AI assistant that respects your privacy`}
+        </SignupHeaderV2>
     );
 
     const features = [getNoLogsFeature(), getEncryptedFeature({ e2ee: false }), getBuiltInEuropeFeature()];
