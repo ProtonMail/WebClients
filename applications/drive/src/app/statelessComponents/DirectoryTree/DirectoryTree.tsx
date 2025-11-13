@@ -8,83 +8,69 @@ import orderBy from '@proton/utils/orderBy';
 import './DirectoryTree.scss';
 
 export interface DirectoryTreeItem {
-    uid: string;
+    nodeUid: string;
+    treeItemId: string;
     name: string;
-    expanded: boolean;
     expandable: boolean;
     type: 'folder' | string;
+    children: Record<string, DirectoryTreeItem> | null;
 }
 
-type ExpandFunction = (uid: string) => Promise<void>;
-type GetChildrenOfFunction = (uid: string) => DirectoryTreeItem[];
-type SelectItemFunction = (selected: DirectoryTreeItem) => void;
+type SelectItemFunction = (selected: string, item: any) => void;
+type ToggleExpandFunction = (treeItemId: string) => Promise<void>;
 
-export function DirectoryTree({
-    items,
+export function DirectoryTreeRoot({
+    roots,
     toggleExpand,
-    getChildrenOf,
+    selectedTreeId,
     onSelect,
-    selectedItemUid,
 }: {
-    items: DirectoryTreeItem[];
-    toggleExpand: ExpandFunction;
-    getChildrenOf: GetChildrenOfFunction;
+    roots: DirectoryTreeItem[];
+    toggleExpand: ToggleExpandFunction;
+    selectedTreeId?: string;
     onSelect: SelectItemFunction;
-    selectedItemUid: string;
 }) {
-    return (
-        <div className="border rounded" style={{ position: 'relative' }}>
-            <DirectoryTreeTrunk
-                items={items}
-                toggleExpand={toggleExpand}
-                getChildrenOf={getChildrenOf}
-                onSelect={onSelect}
-                selectedItemUid={selectedItemUid}
-                isExpanded={true}
-            />
-        </div>
-    );
-}
-
-function DirectoryTreeTrunk({
-    items,
-    toggleExpand,
-    isExpanded,
-    getChildrenOf,
-    onSelect,
-    selectedItemUid,
-    isLoading,
-}: {
-    items: DirectoryTreeItem[];
-    toggleExpand: ExpandFunction;
-    isExpanded: boolean;
-    getChildrenOf: GetChildrenOfFunction;
-    onSelect: SelectItemFunction;
-    selectedItemUid: string;
-    isLoading?: boolean;
-}) {
-    if (isLoading) {
-        return (
-            <div className="p-2 w-full text-center">
-                <CircleLoader />
-            </div>
-        );
-    }
-
-    if (!isExpanded) {
+    if (!roots) {
         return null;
     }
 
     return (
+        <div className="border rounded" style={{ position: 'relative' }}>
+            <ul className="unstyled mt-0">
+                {roots.map((root) => (
+                    <DirectoryTreeBranch
+                        key={root.treeItemId}
+                        item={root}
+                        toggleExpand={toggleExpand}
+                        selectedTreeId={selectedTreeId}
+                        onSelect={onSelect}
+                    />
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+function DirectoryTree({
+    tree,
+    toggleExpand,
+    selectedTreeId,
+    onSelect,
+}: {
+    tree: Record<string, DirectoryTreeItem>;
+    toggleExpand: ToggleExpandFunction;
+    selectedTreeId?: string;
+    onSelect: SelectItemFunction;
+}) {
+    return (
         <ul className="unstyled mt-0">
-            {items.map((item) => (
+            {orderBy(Object.values(tree), 'name').map((item) => (
                 <DirectoryTreeBranch
-                    key={item.uid}
+                    key={item.treeItemId}
                     item={item}
                     toggleExpand={toggleExpand}
-                    getChildrenOf={getChildrenOf}
+                    selectedTreeId={selectedTreeId}
                     onSelect={onSelect}
-                    selectedItemUid={selectedItemUid}
                 />
             ))}
         </ul>
@@ -94,38 +80,35 @@ function DirectoryTreeTrunk({
 function DirectoryTreeBranch({
     item,
     toggleExpand,
-    getChildrenOf,
+    selectedTreeId,
     onSelect,
-    selectedItemUid,
 }: {
     item: DirectoryTreeItem;
-    toggleExpand: ExpandFunction;
-    getChildrenOf: GetChildrenOfFunction;
-    onSelect: (selected: DirectoryTreeItem) => void;
-    selectedItemUid: string;
+    toggleExpand: ToggleExpandFunction;
+    selectedTreeId?: string;
+    onSelect: SelectItemFunction;
 }) {
     const handleError = useErrorHandler();
-
-    const isSelected = selectedItemUid === item.uid;
 
     const [isLoading, setIsLoading] = useState(false);
     const handleExpand = () => {
         setIsLoading(true);
-        toggleExpand(item.uid)
-            .then(() => setIsLoading(false))
-            .catch(handleError);
+        toggleExpand(item.treeItemId)
+            .catch(handleError)
+            .finally(() => setIsLoading(false));
     };
 
-    const handleSelect = () => onSelect(item);
+    const isSelected = selectedTreeId === item.treeItemId;
+    const handleSelect = () => onSelect(item.treeItemId, item);
 
     return (
-        <li key={item.uid} className="pl-4">
+        <li className="pl-4">
             {/* Keyboard accessibility is provided by the Radio component inside, so no need for onKeyDown here */}
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div className="directory-tree-node flex items-center p-2 cursor-pointer" onClick={handleSelect}>
                 <Radio
-                    id={item.uid}
-                    name={item.uid}
+                    id={item.treeItemId}
+                    name={item.treeItemId}
                     onChange={handleSelect}
                     aria-selected={isSelected}
                     checked={isSelected}
@@ -136,7 +119,12 @@ function DirectoryTreeBranch({
                     <FileIcon mimeType={item.type === 'folder' ? 'Folder' : ''} />
 
                     {item.expandable && (
-                        <button className={item.expanded ? 'rotateX-180' : ''} onClick={handleExpand}>
+                        <button
+                            // Null children means collapsed
+                            className={item.children === null ? 'rotateX-180' : ''}
+                            onClick={handleExpand}
+                            disabled={isLoading}
+                        >
                             <Icon name="chevron-down" className="border border-norm rounded-50" />
                         </button>
                     )}
@@ -148,15 +136,20 @@ function DirectoryTreeBranch({
             {/* Border: can't be done with normal CSS because parent element visually indent the component */}
             <div className="absolute left-0 w-full h-px bg-strong"></div>
 
-            <DirectoryTreeTrunk
-                items={orderBy(getChildrenOf(item.uid), 'name')}
-                toggleExpand={toggleExpand}
-                isExpanded={item.expanded}
-                getChildrenOf={getChildrenOf}
-                onSelect={onSelect}
-                selectedItemUid={selectedItemUid}
-                isLoading={isLoading}
-            />
+            {isLoading && (
+                <div className="p-2 w-full text-center">
+                    <CircleLoader />
+                </div>
+            )}
+
+            {item.children !== null && (
+                <DirectoryTree
+                    tree={item.children}
+                    toggleExpand={toggleExpand}
+                    selectedTreeId={selectedTreeId}
+                    onSelect={onSelect}
+                />
+            )}
         </li>
     );
 }
