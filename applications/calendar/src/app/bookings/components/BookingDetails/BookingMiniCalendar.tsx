@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import { format, startOfMonth, startOfToday } from 'date-fns';
+import { startOfMonth, startOfToday } from 'date-fns';
 
 import { Loader, LocalizedMiniCalendar } from '@proton/components';
 import { getDaysInMonth } from '@proton/components/components/miniCalendar/helper';
 import { getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { useBookingStore } from '../../booking.store';
+import { getDateKey, useBookingStore } from '../../booking.store';
 import { WEEKS_IN_MINI_CALENDAR } from '../../constants';
 import { useExternalBookingLoader } from '../../useExternalBookingLoader';
 
@@ -20,10 +20,8 @@ interface BookingMiniCalendarProps {
 
 export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniCalendarProps) => {
     const isLoading = useBookingStore((state) => state.isLoading);
-    const getDaysWithSlots = useBookingStore((state) => state.getDaysWithSlots);
+    const getDateKeySet = useBookingStore((state) => state.getDateKeySet);
     const [, setDisplayedMonth] = useState(selectedDate);
-
-    const daysWithSlots = getDaysWithSlots();
 
     const { loadPublicBooking } = useExternalBookingLoader();
 
@@ -32,9 +30,9 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
     }, [selectedDate]);
 
     const getDayClassName = (date: Date) => {
-        const dateKey = format(date, 'yyyy-MM-dd', { locale: dateLocale });
-        const hasSlots = daysWithSlots.has(dateKey);
-        return hasSlots ? 'booking-day-with-slots' : '';
+        const dateKey = getDateKey(date.getTime());
+        const hasSlots = getDateKeySet().has(dateKey);
+        return hasSlots ? 'booking-day-with-slots' : undefined;
     };
 
     const handleSelectDate = (date: Date) => {
