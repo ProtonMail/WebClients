@@ -1,17 +1,15 @@
 import { isSameDay } from 'date-fns';
 import { create } from 'zustand';
 
-import {
-    convertTimestampToTimezone,
-    fromUTCDateToLocalFakeUTCDate,
-    getTimezone,
-    toLocalDate,
-} from '@proton/shared/lib/date/timezone';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
 
+import { fromTimeSlotToUTCDate } from './components/bookingViewHelpers';
 import { getDateKey } from './utils/bookingsHelpers';
 
 export type BookingTimeslot = {
     id: string;
+    // This date is adjusted to the selecetd timezone of the page. Use this to avoid problems.
+    tzDate: Date;
     startTime: number;
     endTime: number;
     timezone: string;
@@ -77,16 +75,17 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
 
     filterBookingSlotPerDay: (date: Date) => {
         return get().bookingSlots.filter((slot) => {
-            const timeslotDate = convertTimestampToTimezone(slot.startTime, slot.timezone);
-            const utc = toLocalDate({ ...timeslotDate });
-            const localDate = fromUTCDateToLocalFakeUTCDate(utc, false, get().selectedTimezone);
-
-            return isSameDay(date, localDate);
+            return isSameDay(date, slot.tzDate);
         });
     },
 
     setBookingSlots: (bookingSlots: BookingTimeslot[]) => {
-        const newTimeSlots = [...get().bookingSlots, ...bookingSlots].sort((a, b) => a.startTime - b.startTime);
+        const newSlots = bookingSlots.map((slot) => ({
+            ...slot,
+            tzDate: fromTimeSlotToUTCDate(slot, get().selectedTimezone),
+        }));
+
+        const newTimeSlots = [...get().bookingSlots, ...newSlots].sort((a, b) => a.startTime - b.startTime);
 
         set({
             bookingSlots: newTimeSlots,
@@ -107,6 +106,11 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     },
 
     setSelectedTimezone: (timezone: string) => {
-        set({ selectedTimezone: timezone });
+        const newSlots = get().bookingSlots.map((slot) => ({
+            ...slot,
+            tzDate: fromTimeSlotToUTCDate(slot, timezone),
+        }));
+
+        set({ selectedTimezone: timezone, bookingSlots: newSlots });
     },
 }));
