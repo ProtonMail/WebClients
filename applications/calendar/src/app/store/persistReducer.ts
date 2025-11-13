@@ -10,6 +10,7 @@ const persistReducer: Partial<{ [key in keyof CalendarState]: any }> = {
     calendars: selectPersistModel,
     holidaysDirectory: selectPersistModel,
     sessions: selectPersistModel,
+    internalBookings: selectPersistModel,
 };
 
 export const getCalendarPersistedState = (state: CalendarState) => getPersistedState(state, persistReducer);

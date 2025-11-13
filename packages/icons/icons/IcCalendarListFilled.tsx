@@ -18,7 +18,14 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     size?: IconSize;
 }
 
-export const IcCalendarRow = ({ alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest }: IconProps) => {
+export const IcCalendarListFilled = ({
+    alt,
+    title,
+    size = 4,
+    className = '',
+    viewBox = '0 0 16 16',
+    ...rest
+}: IconProps) => {
     return (
         <>
             <svg
@@ -31,13 +38,13 @@ export const IcCalendarRow = ({ alt, title, size = 4, className = '', viewBox = 
             >
                 {title ? <title>{title}</title> : null}
 
-                <path d="M11.5 11a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h7Zm0-2a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h7Z"></path>
                 <path
                     fillRule="evenodd"
-                    d="M13 2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2 .5.5 0 0 1 0 1 1 1 0 0 0-1 1v2h12V4a1 1 0 0 0-1-1 .5.5 0 0 1 0-1ZM2 13a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7H2v6Z"
+                    d="M15 13a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7h14v6ZM4.5 11a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5Zm0-2a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7Z"
                     clipRule="evenodd"
                 ></path>
-                <path d="M4.5 1a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5Zm7 0a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5ZM10 2a.5.5 0 0 1 0 1H6a.5.5 0 0 1 0-1h4Z"></path>
+                <path d="M3.5 3a1 1 0 0 0 2 0V2h5v1a1 1 0 1 0 2 0V2h.5a2 2 0 0 1 2 2v2H1V4a2 2 0 0 1 2-2h.5v1Z"></path>
+                <path d="M4.5 1a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5Zm7 0a.5.5 0 0 1 .5.5V3a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 .5-.5Z"></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
