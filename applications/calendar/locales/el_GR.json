@@ -228,6 +228,9 @@
       "Copy alias “${ name }”": [
         "Αντιγραφή ψευδώνυμου “${ name }”"
       ],
+      "Copy booking page link": [
+        "Αντιγραφή συνδέσμου σελίδας κράτησης"
+      ],
       "Copy email address": [
         "Αντιγραφή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
@@ -308,6 +311,9 @@
         "Διαγραφή ${ selectedCount } ομάδα επαφών",
         "Διαγραφή ${ selectedCount } ομάδες επαφών"
       ],
+      "Delete booking page": [
+        "Διαγραφή σελίδας κρατήσεων"
+      ],
       "Delete contact": [
         "Διαγραφή επαφής"
       ],
@@ -346,6 +352,9 @@
       ],
       "Edit": [
         "Επεξεργασία"
+      ],
+      "Edit booking page": [
+        "Επεξεργασία σελίδας κρατήσεων"
       ],
       "Edit email address": [
         "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
@@ -427,6 +436,9 @@
       ],
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
+      ],
+      "Go to the next available appointment": [
+        "Μετάβαση στο επόμενο διαθέσιμο ραντεβού"
       ],
       "Got it": [
         "Το κατάλαβα"
@@ -748,6 +760,15 @@
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
+      ],
+      "See previous availability": [
+        "Δείτε την προηγούμενη διαθεσιμότητα"
+      ],
+      "See upcoming availability": [
+        "Δείτε την επερχόμενη διαθεσιμότητα"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Επιλέξτε ${ dateHeaderLongString } στις ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Επιλογή ${ planOrAppName }"
@@ -1949,6 +1970,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Προσθήκη ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Προηγμένη ασφάλεια λογαριασμού και δικτύου σε ένα πλάνο"
       ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
@@ -3391,12 +3415,6 @@
       "120 minutes": [
         "120 λεπτά"
       ],
-      "15 minutes": [
-        "15 λεπτά"
-      ],
-      "15m": [
-        "15λ"
-      ],
       "1h": [
         "1ώρα"
       ],
@@ -4071,6 +4089,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
       ]
@@ -5276,6 +5297,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει αν είστε ελεύθεροι ή απασχολημένοι στο ημερολόγιο σας. Όμως δεν μπορούν να δουν τις λεπτομέρειες των εκδηλώσεων, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
       ],
+      "Appointment duration": [
+        "Διάρκεια ραντεβού"
+      ],
       "Are you sure you want to discard your import?": [
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
@@ -5586,6 +5610,9 @@
       "High Priority": [
         "Υψηλή προτεραιότητα"
       ],
+      "Host": [
+        "Διακομιστής"
+      ],
       "How long should an appointment last?": [
         "Πόσο πρέπει να διαρκεί ένα ραντεβού;"
       ],
@@ -5716,11 +5743,17 @@
       "Loading events": [
         "Γίνεται φόρτωση εκδηλώσεων"
       ],
+      "Location": [
+        "Τοποθεσία"
+      ],
       "Low Priority": [
         "Χαμηλή προτεραιότητα"
       ],
       "Manage your calendars": [
         "Διαχειριστείτε τα ημερολόγιά σας"
+      ],
+      "Manange booking page": [
+        "Διαχείριση σελίδας κρατήσεων"
       ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
@@ -5755,8 +5788,8 @@
       "New": [
         "Νέο"
       ],
-      "No available slots for this day": [
-        "Δεν υπάρχουν διαθέσιμες χρονοθυρίδες για αυτή την ημέρα"
+      "No appointments available this week": [
+        "Δεν υπάρχουν διαθέσιμα ραντεβού αυτή την εβδομάδα"
       ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
@@ -5897,6 +5930,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
       ],
+      "Powered by ${ protonButton }": [
+        "Με την υποστήριξη της ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Οι προηγούμενες τροποποιήσεις αυτής της σειράς θα χαθούν."
       ],
@@ -5905,6 +5941,9 @@
       ],
       "Primary": [
         "Κύριο"
+      ],
+      "Privacy by default": [
+        "Ιδιωτικότητα από προεπιλογή"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Η ιδιωτική περιήγηση (ή η κατάσταση ανώνυμης περιήγησης) είναι χρήσιμη μόνο για να διατηρείτε τη δραστηριότητά σας κρυφή στη συσκευή σας. Εμποδίζει το πρόγραμμα περιήγησής σας να αποθηκεύει ιστορικό και cookies, αλλά δεν σας κάνει αόρατους. Η υπηρεσία παροχής Internet, ο διαχειριστής δικτύου και οι τοποθεσίες Web που επισκέπτεστε εξακολουθούν να μπορούν να δουν τι κάνετε στο Internet."
@@ -7229,7 +7268,7 @@
       "Add a gift code": [
         "Προσθήκη κωδικού δώρου"
       ],
-      "Bookings pages": [
+      "Booking pages": [
         "Σελίδες κρατήσεων"
       ],
       "Calendars": [
@@ -7942,6 +7981,9 @@
       "End-to-end encryption": [
         "Διατερματική κρυπτογράφηση"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Υφιστάμενα οφέλη ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Γρήγορες λήψεις P2P/BitTorrent"
       ],
@@ -8160,6 +8202,10 @@
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Κοινή χρήση κρύπτης έως ${ n } άτομο",
+        "Κοινή χρήση κρύπτης έως ${ n } άτομα"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
       ]
@@ -8262,9 +8308,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Η αποκλειστική λύση VPN που παρέχει ασφαλή, απεριόριστη, υψηλής ταχύτητας πρόσβαση στο διαδίκτυο."
@@ -8530,9 +8573,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Υποστήριξη 24/7"
-      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
@@ -8578,9 +8618,6 @@
       ],
       "Private gateways": [
         "Ιδιωτικές πύλες"
-      ],
-      "Require 2FA": [
-        "Απαιτείται 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
@@ -9357,6 +9394,23 @@
       ],
       "Credits will be added to your balance": [
         "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Εάν επιλέξετε να τροποποιήσετε το πλάνο ${ planTitle } σας, ενδέχεται να χάσετε την πρόσβαση σε ορισμένες λειτουργίες."
+      ],
+      "Keep ${ planTitle }": [
+        "Διατήρηση ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ναι, Είμαι σίγουρος"
+      ],
+      "Your plan includes this feature already.": [
+        "Το πλάνο σας περιλαμβάνει ήδη αυτή τη λειτουργία."
       ]
     },
     "Payments.plan_name": {
@@ -11335,6 +11389,9 @@
       "Apply gift code": [
         "Εφαρμογή κωδικού δώρου"
       ],
+      "Appointment details": [
+        "Στοιχεία ραντεβού"
+      ],
       "Are you sure?": [
         "Είστε σίγουρος/η;"
       ],
@@ -11370,6 +11427,9 @@
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
+      ],
+      "Choose a time": [
+        "Επιλογή ώρας"
       ],
       "Choose how many times this event will repeat": [
         "Επιλέξτε πόσες φορές θα επαναληφθεί αυτή η εκδήλωση"
