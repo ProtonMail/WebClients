@@ -39,7 +39,6 @@ export const OtherCalendars = ({ calendars, otherCalendars, headerRef, loadingSu
                 text={c('Link').t`Other calendars`}
                 testId="calendar-sidebar:other-calendars-button"
                 headerRef={headerRef}
-                spaceAbove
             />
             {displayOtherCalendars && (
                 <CalendarSidebarListItems
