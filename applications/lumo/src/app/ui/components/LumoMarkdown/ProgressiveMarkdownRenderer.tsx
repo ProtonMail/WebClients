@@ -13,8 +13,6 @@ import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import { useCopyNotification } from '../../../hooks/useCopyNotification';
 import type { SearchItem } from '../../../lib/toolCall/types';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
-import { useLumoSelector } from '../../../redux/hooks';
-import { selectAttachments } from '../../../redux/selectors';
 import { parseInteger } from '../../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../../util/tokens';
 import LumoCopyButton from '../../interactiveConversation/messageChain/message/actionToolbar/LumoCopyButton';
@@ -160,9 +158,6 @@ const MarkdownBlock: React.FC<{
     message: any;
 }> = React.memo(
     ({ content, theme, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
-        // Get full attachments from Redux store (message.attachments only has shallow data)
-        const allAttachments = useLumoSelector(selectAttachments);
-
         // RefLink component for source references
         const RefLink = useMemo(
             () =>
@@ -279,8 +274,7 @@ const MarkdownBlock: React.FC<{
                     if (src?.startsWith('attachment:')) {
                         const attachmentId = src.substring('attachment:'.length);
                         // Look up full attachment from Redux (not from message.attachments which is shallow)
-                        const attachment = allAttachments[attachmentId];
-                        return <InlineImageComponent attachment={attachment} alt={alt} />;
+                        return <InlineImageComponent attachmentId={attachmentId} alt={alt} />;
                     }
 
                     // For security, don't render other images
@@ -294,7 +288,7 @@ const MarkdownBlock: React.FC<{
                     );
                 },
             }),
-            [CodeBlock, RefLink, handleLinkClick, allAttachments]
+            [CodeBlock, RefLink, handleLinkClick]
         );
 
         return (

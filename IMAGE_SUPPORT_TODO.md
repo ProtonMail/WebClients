@@ -115,10 +115,24 @@ markdown syntax and rendered inline with preview/modal UI.
 - [x] Fix attachment persistence - dispatch pushAttachmentRequest after creating image attachment
     - Added in redux.ts and llm/index.ts after addImageAttachment
     - Attachments now automatically sync to server and persist across sessions
-- [ ] Create test message with assistant-role attachment
-- [ ] Verify attachment syncs to server via saga
-- [ ] Confirm role='assistant' attachments filtered from user attachment UI
-- [ ] Test message encryption/decryption with inline images
+- [x] Implement lazy loading for attachment data across sessions
+    - Created Redux slice `attachmentLoadingState` for tracking load/error state
+    - Created `useLazyAttachment` hook with SWR-style API `{data, isLoading, error}`
+    - Added pullSpace infrastructure to fetch space assets (includes attachment remoteId mappings)
+    - Fixed refreshAttachmentFromRemote to handle shallow attachments and trigger pulls
+    - Added guards to prevent duplicate pulls (check for existing data and loading state)
+    - InlineImageComponent shows loading spinner and error UI with retry button
+- [x] Fix attachment remote ID mapping for cross-browser sync
+    - Added pullSpace/processPullSpaceResult sagas to fetch asset listings from server
+    - Space assets include remoteId mappings needed for GET requests
+    - Message saga looks up actual remoteId from idmap when processing attachments
+- [x] Confirm role='assistant' attachments filtered from user attachment UI
+    - ConversationHeader filters assistant attachments from file count
+    - useFilteredFiles hook filters in all code paths
+    - File button and knowledge base correctly hide generated images
+- [x] Test message encryption/decryption with inline images
+    - U2L encryption support for image_data packets working
+    - role='assistant' field preserved through serialization/deserialization
 
 ### Phase 7: Edge Cases
 
