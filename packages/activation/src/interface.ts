@@ -13,6 +13,7 @@ export enum OAUTH_PROVIDER {
     GOOGLE = 1,
     OUTLOOK = 2,
     ZOOM = 3,
+    GSUITE = 4,
 }
 
 export interface OAuthProps {
@@ -271,4 +272,5 @@ export enum EASY_SWITCH_FEATURES {
     IMPORT_CONTACTS = 'import_contacts',
     MANAGE_MEETINGS = 'manage_meetings',
     BYOE = 'byoe',
+    OLES = 'oles',
 }
