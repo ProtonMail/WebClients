@@ -1,3 +1,4 @@
+import type { MaybeNull } from '@proton/pass/types';
 import type { RectOffset } from '@proton/pass/types/utils/dom';
 
 import { createStyleParser, getComputedHeight, pixelParser } from './computed-styles';
@@ -76,10 +77,22 @@ export const findInputBoundingElement = (
     const isInput = curr === input;
 
     if (isInput) {
-        /** Case 1: Input has a bottom border. Likely the best
-         * bounding candidate as it's visually "boxed"  */
-        const inputHasBorder = pixelParser(getComputedStyle(input).borderBottomWidth) !== 0;
-        if (inputHasBorder) return input;
+        /** Case 1: Input and/or parent has a bottom border. Likely the
+         * best bounding candidate as it's visually "boxed"  */
+        const bordered = (() => {
+            const MAX_DEPTH = 3;
+            let candidate: MaybeNull<HTMLElement> = input;
+
+            for (let i = 0; i < MAX_DEPTH && candidate; i++) {
+                const borderWidth = pixelParser(getComputedStyle(candidate).borderBottomWidth);
+                if (borderWidth > 0) return candidate;
+                candidate = candidate.parentElement;
+            }
+
+            return null;
+        })();
+
+        if (bordered) return bordered;
 
         /** Case 2: Input wrapped in a label. If it's the only input
          * and fits size criteria, use label as bounding element */
