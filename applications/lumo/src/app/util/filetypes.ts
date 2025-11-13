@@ -187,7 +187,7 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     },
     java: {
         extensions: ['java'],
-        mimeTypes: ['text/plain', 'text/x-java-source'],
+        mimeTypes: ['text/plain', 'text/x-java-source', 'text/x-java'],
         description: 'Java File',
         category: 'code',
         // No pandocFormat - processed as plain text
