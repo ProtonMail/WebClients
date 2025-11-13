@@ -61,6 +61,7 @@ const allApps = new Set([
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
     APPS.PROTONMEET,
+    APPS.PROTONAUTHENTICATOR,
 ]);
 
 const sort = (a: APP_NAMES[], b: APP_NAMES[] | Set<APP_NAMES>) => {
@@ -85,6 +86,7 @@ const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     isDocsHomepageAvailable: true,
     isSheetsAvailable: true,
     isMeetAvailable: true,
+    isAuthenticatorAvailable: true,
     context: 'app',
 };
 
@@ -264,6 +266,7 @@ describe('available apps', () => {
                     user: getNonPrivateExternalUser(),
                 }),
                 [
+                    APPS.PROTONAUTHENTICATOR,
                     APPS.PROTONMEET,
                     APPS.PROTONPASS,
                     APPS.PROTONDRIVE,
@@ -409,6 +412,7 @@ describe('available apps', () => {
                     organization: getAllowedProducts([]),
                 }),
                 [
+                    APPS.PROTONAUTHENTICATOR,
                     APPS.PROTONMEET,
                     APPS.PROTONPASS,
                     APPS.PROTONDRIVE,

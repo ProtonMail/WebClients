@@ -18,6 +18,7 @@ import { updateOrganizationSettings } from '@proton/shared/lib/api/organization'
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
+    AUTHENTICATOR_APP_NAME,
     BRAND_NAME,
     CALENDAR_APP_NAME,
     CONTACTS_APP_NAME,
@@ -32,6 +33,7 @@ import {
 import { hasMailProduct } from '@proton/shared/lib/helpers/organization';
 import type { OrganizationSettingsAllowedProduct } from '@proton/shared/lib/interfaces';
 import { serializeAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
+import useFlag from '@proton/unleash/useFlag';
 
 import SettingsSection from '../../account/SettingsSection';
 import MailCalendarIcon from './MailCalendarIcon';
@@ -153,6 +155,8 @@ const AccessControlSettingsSection = () => {
     const hasSsoConfig = samlSSO && samlSSO.configs.length > 0;
     const [organization] = useOrganization();
 
+    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+
     return (
         <SettingsSectionWide>
             <SettingsParagraph className="mb-4">
@@ -205,13 +209,15 @@ const AccessControlSettingsSection = () => {
                     showSSOBadge={!appSupportsSSO(APPS.PROTONPASS) && hasSsoConfig}
                 />
 
-                <AccessControlItem
-                    title={WALLET_APP_NAME}
-                    description={c('Info').t`Self-custodial crypto wallet`}
-                    logo={<Logo appName={APPS.PROTONWALLET} variant="glyph-only" size={8} />}
-                    targetProducts={[Product.Wallet]}
-                    showSSOBadge={!appSupportsSSO(APPS.PROTONWALLET) && hasSsoConfig}
-                />
+                {isAuthenticatorAvailable && (
+                    <AccessControlItem
+                        title={AUTHENTICATOR_APP_NAME}
+                        description={c('Info').t`Two-factor authentication`}
+                        logo={<Logo appName={APPS.PROTONAUTHENTICATOR} variant="glyph-only" size={8} />}
+                        targetProducts={[Product.Authenticator]}
+                        showSSOBadge={!appSupportsSSO(APPS.PROTONAUTHENTICATOR) && hasSsoConfig}
+                    />
+                )}
 
                 <AccessControlItem
                     title={LUMO_APP_NAME}
@@ -219,6 +225,14 @@ const AccessControlSettingsSection = () => {
                     logo={<Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={8} />}
                     targetProducts={[Product.Lumo]}
                     showSSOBadge={!appSupportsSSO(APPS.PROTONLUMO) && hasSsoConfig}
+                />
+
+                <AccessControlItem
+                    title={WALLET_APP_NAME}
+                    description={c('Info').t`Self-custodial crypto wallet`}
+                    logo={<Logo appName={APPS.PROTONWALLET} variant="glyph-only" size={8} />}
+                    targetProducts={[Product.Wallet]}
+                    showSSOBadge={!appSupportsSSO(APPS.PROTONWALLET) && hasSsoConfig}
                 />
             </SettingsSection>
         </SettingsSectionWide>

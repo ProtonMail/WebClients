@@ -48,6 +48,7 @@ const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
             isDocsHomepageAvailable: true,
             isSheetsAvailable: true,
             isMeetAvailable: true,
+            isAuthenticatorAvailable: true,
         }).some((availableApp) => product === getProduct(availableApp))
     );
 };

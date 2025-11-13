@@ -19,6 +19,7 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
+    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
 
     if (viewportWidth['<=small']) {
         const availableApps = getAvailableApps({
@@ -28,6 +29,7 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
             isDocsHomepageAvailable,
             isSheetsAvailable,
             isMeetAvailable,
+            isAuthenticatorAvailable,
         });
         if (availableApps.length <= 1) {
             return null;

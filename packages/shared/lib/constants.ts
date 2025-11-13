@@ -310,7 +310,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         macosClientID: 'macos-authenticator',
         linuxClientID: 'linux-authenticator',
         icon: '', // TODO: brand icon for Authenticator
-        settingsSlug: '',
+        settingsSlug: 'authenticator',
         product: Product.Authenticator,
     },
     [APPS.PROTONMEET]: {
