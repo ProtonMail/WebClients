@@ -9,7 +9,7 @@ import type { ThemeColor } from '@proton/colors/types';
 import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
 import Info from '@proton/components/components/link/Info';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { type Subscription, hasAllProductsB2CPlan, hasDrive, hasFree, hasMail } from '@proton/payments';
+import { type Subscription, hasAllProductsB2CPlan, hasDrive, hasDrive1TB, hasFree, hasMail } from '@proton/payments';
 import {
     APPS,
     type APP_NAMES,
@@ -263,7 +263,10 @@ export function getDashboardStorageSections(
                 label: getStorageUsed(),
                 graphColor: SpaceStateThemeColorMap[spaceDetails.pooled.type],
                 shouldRender: (app, subscription) =>
-                    hasMail(subscription) || hasDrive(subscription) || hasAllProductsB2CPlan(subscription),
+                    hasMail(subscription) ||
+                    hasDrive(subscription) ||
+                    hasDrive1TB(subscription) ||
+                    hasAllProductsB2CPlan(subscription),
             },
         ];
     }
