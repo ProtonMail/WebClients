@@ -7,9 +7,10 @@ import { getDaysInMonth } from '@proton/components/components/miniCalendar/helpe
 import { getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { getDateKey, useBookingStore } from '../../booking.store';
+import { useBookingStore } from '../../booking.store';
 import { WEEKS_IN_MINI_CALENDAR } from '../../constants';
 import { useExternalBookingLoader } from '../../useExternalBookingLoader';
+import { getDateKey } from '../../utils/bookingsHelpers';
 
 import './BookingMiniCalendar.scss';
 
