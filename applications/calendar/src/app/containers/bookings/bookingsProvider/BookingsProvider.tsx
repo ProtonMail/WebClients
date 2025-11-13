@@ -97,7 +97,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone();
 
         // Generate the initial form data
-        const bookingRange = generateDefaultBookingRange(userSettings, currentUTCDate, timezone);
+        const bookingRange = generateDefaultBookingRange(userSettings, currentUTCDate, timezone, false);
         const bookingSlots = bookingRange
             .map((range) =>
                 generateSlotsFromRange({
