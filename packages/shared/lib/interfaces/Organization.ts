@@ -74,7 +74,7 @@ export interface OrganizationIdentityOutput {
 
 export type OrganizationSettingsAllowedProduct = Extract<
     Product,
-    'Mail' | 'Calendar' | 'VPN' | 'Pass' | 'Drive' | 'Wallet' | 'Lumo'
+    'Mail' | 'Calendar' | 'VPN' | 'Pass' | 'Drive' | 'Wallet' | 'Lumo' | 'Meet' | 'Authenticator'
 >;
 
 export type SerializedOrganizationSettingsAllowedProduct = OrganizationSettingsAllowedProduct | 'All';

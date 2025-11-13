@@ -225,7 +225,7 @@ export function useAccessiblePlans({
     const isLumoB2BEnabled = useFlag('LumoB2B');
 
     const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
-    const isPassSettingsApp = app === APPS.PROTONPASS;
+    const isPassSettingsApp = app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR;
     const isDriveSettingsApp = app === APPS.PROTONDRIVE || app === APPS.PROTONDOCS;
     const isWalletSettingsApp = app === APPS.PROTONWALLET;
     const isLumoSettingsApp = app === APPS.PROTONLUMO;
@@ -298,7 +298,9 @@ export function useAccessiblePlans({
     }
 
     const canAccessPassFamilyPlan =
-        (isFree(user) && app === APPS.PROTONPASS) || hasPass(subscription) || hasPassFamily(subscription);
+        (isFree(user) && (app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR)) ||
+        hasPass(subscription) ||
+        hasPassFamily(subscription);
 
     let FamilyPlans: Plan[] = [];
     if (getCanAccessFamilyPlans(subscription)) {
@@ -411,6 +413,7 @@ export function useAccessiblePlans({
         currentPlan,
         alreadyHasMaxCycle,
         isVpnSettingsApp,
+        isPassSettingsApp,
         isVpnB2bPlans,
         availableCurrencies,
         isPassLifetimeEligible,
@@ -473,6 +476,7 @@ const PlanSelection = (props: Props) => {
         currentPlan,
         alreadyHasMaxCycle,
         isVpnSettingsApp,
+        isPassSettingsApp,
         isVpnB2bPlans,
         availableCurrencies,
         isPassLifetimeEligible,
@@ -489,7 +493,7 @@ const PlanSelection = (props: Props) => {
     // After some changes the subscription/check is no longer triggered at the stage of plan selection, but I want to be
     // extra carefull and keep it limited to the pass app only for now. If that's ok then renderCycleSelector can be set
     // to always true.
-    const renderCycleSelector = isFreeSubscription || trial || app === APPS.PROTONPASS;
+    const renderCycleSelector = isFreeSubscription || trial || isPassSettingsApp;
 
     const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
     const { sendStartCancellationPricingReport } = useCancellationTelemetry();

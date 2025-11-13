@@ -42,7 +42,7 @@ export const getDefaultSelectedProductPlans = ({ appName, plan }: { appName: Pro
         defaultB2CPlan = PLANS.VPN2024;
     } else if (appName === APPS.PROTONDRIVE || appName === APPS.PROTONDOCS) {
         defaultB2CPlan = PLANS.DRIVE;
-    } else if (appName === APPS.PROTONPASS) {
+    } else if (appName === APPS.PROTONPASS || appName === APPS.PROTONAUTHENTICATOR) {
         defaultB2CPlan = PLANS.PASS;
     } else if (appName === APPS.PROTONLUMO) {
         defaultB2CPlan = PLANS.LUMO;

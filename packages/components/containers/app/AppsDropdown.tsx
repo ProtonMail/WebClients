@@ -38,6 +38,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
         const isSheetsAvailable = useFlag('DocsSheetsEnabled');
         const isMeetAvailable = useFlag('PMVC2025');
+        const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
 
         const availableApps = getAvailableApps({
             context: 'dropdown',
@@ -46,6 +47,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
             isDocsHomepageAvailable,
             isSheetsAvailable,
             isMeetAvailable,
+            isAuthenticatorAvailable,
         });
 
         if (availableApps.length <= 1) {

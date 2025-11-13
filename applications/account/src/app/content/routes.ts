@@ -1,4 +1,5 @@
 import { getAccountAppRoutes } from '../containers/account/routes';
+import { getAuthenticatorAppRoutes } from '../containers/authenticator/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
 import { getDocsAppRoutes } from '../containers/docs/routes';
 import { getDriveAppRoutes } from '../containers/drive/routes';
@@ -15,6 +16,7 @@ type Arguments = Parameters<typeof getAccountAppRoutes>[0] &
     Parameters<typeof getDriveAppRoutes>[0] &
     Parameters<typeof getPassAppRoutes>[0] &
     Parameters<typeof getVpnAppRoutes>[0] &
+    Parameters<typeof getAuthenticatorAppRoutes>[0] &
     Parameters<typeof getOrganizationAppRoutes>[0];
 
 export const getRoutes = ({
@@ -61,6 +63,7 @@ export const getRoutes = ({
     showPassDashboardVariant,
     showDriveDashboard,
     showDriveDashboardVariant,
+    isAuthenticatorAvailable,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -131,6 +134,7 @@ export const getRoutes = ({
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
         meet: getMeetAppRoutes(),
+        authenticator: getAuthenticatorAppRoutes({ isAuthenticatorAvailable }),
     };
 };
 
