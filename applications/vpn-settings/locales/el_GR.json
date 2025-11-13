@@ -632,6 +632,9 @@
       "Or": [
         "Ή"
       ],
+      "Or use a different Gmail address": [
+        "Ή χρησιμοποιήστε μια διαφορετική διεύθυνση Gmail"
+      ],
       "Organization": [
         "Οργανισμός"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
+      ],
+      "Use this Gmail address": [
+        "Χρησιμοποιήστε αυτήν τη διεύθυνση Gmail"
       ],
       "Use your current email instead": [
         "Χρησιμοποιήστε την τρέχουσα διεύθυνση email σας"
@@ -2095,6 +2101,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Προσθήκη ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Προηγμένη ασφάλεια λογαριασμού και δικτύου σε ένα πλάνο"
       ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
@@ -4257,6 +4266,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
       ]
@@ -4843,6 +4855,9 @@
       "Double VPN": [
         "Διπλό VPN"
       ],
+      "File attachment ": [
+        "Συνημμένο αρχείο "
+      ],
       "Lightning-fast speeds": [
         "Αστραπιαίες ταχύτητες"
       ],
@@ -4857,6 +4872,9 @@
       ],
       "Secure streaming": [
         "Ασφαλές streaming"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Ασφαλής κρύπτη, στοιχεία και κοινοποίηση συνδέσμων"
       ],
       "Stream from Netflix, HBO, and more": [
         "Ροή από Netflix, HBO και άλλα"
@@ -8087,6 +8105,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } από ${ maxAddresses } διαθέσιμη διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ addressesAvailable } από ${ maxAddresses } διαθέσιμες διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
@@ -8107,10 +8129,6 @@
       "${ nbDay } day": [
         "${ nbDay } ημέρα",
         "${ nbDay } ημέρες"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } από ${ maxAddresses } διεύθυνση email",
-        "${ usedAddresses } από ${ maxAddresses } διευθύνσεων email"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
@@ -8862,9 +8880,9 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } από ${ maxBYOEAddresses } διεύθυνση email",
-        "${ usedBYOEAddresses } από ${ maxBYOEAddresses } διευθύνσεων email"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } από ${ maxBYOEAddresses } διαθέσιμη διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ byoeAddressesAvailableCount } από ${ maxBYOEAddresses } διαθέσιμες διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9732,6 +9750,9 @@
       "End-to-end encryption": [
         "Διατερματική Κρυπτογράφηση"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Υφιστάμενα οφέλη ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Γρήγορες λήψεις P2P/BitTorrent"
       ],
@@ -9944,6 +9965,10 @@
       "User storage management": [
         "Διαχείριση χώρου αποθήκευσης χρηστών"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Κοινή χρήση κρύπτης έως ${ n } άτομο",
+        "Κοινή χρήση κρύπτης έως ${ n } άτομα"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
       ]
@@ -10038,9 +10063,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Η αποκλειστική λύση VPN που παρέχει ασφαλή, απεριόριστη, υψηλής ταχύτητας πρόσβαση στο διαδίκτυο."
@@ -10351,9 +10373,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Υποστήριξη 24/7"
-      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
@@ -10399,9 +10418,6 @@
       ],
       "Private gateways": [
         "Ιδιωτικές πύλες"
-      ],
-      "Require 2FA": [
-        "Απαιτείται 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
@@ -10491,6 +10507,9 @@
       ],
       "A disabled address cannot be default": [
         "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
+      ],
+      "Address reconnected.": [
+        "Η διεύθυνση επανασυνδέθηκε."
       ],
       "An external address cannot be default": [
         "Μια εξωτερική διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
@@ -11379,6 +11398,36 @@
         "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Οι λογαριασμοί εφ' όρου ζωής μπορούν να μεταφερθούν ή να πωληθούν"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Επικοινωνήστε με την Υποστήριξη Πελατών για να επιβεβαιώσετε την αλλαγή ιδιοκτησίας"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Ποτέ"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Εάν επιλέξετε να τροποποιήσετε το πλάνο ${ planTitle } σας, ενδέχεται να χάσετε την πρόσβαση σε ορισμένες λειτουργίες."
+      ],
+      "Keep ${ planTitle }": [
+        "Διατήρηση ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ναι, Είμαι σίγουρος"
+      ],
+      "Your plan includes this feature already.": [
+        "Το πλάνο σας περιλαμβάνει ήδη αυτή τη λειτουργία."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Δωρεάν"
@@ -11637,6 +11686,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Σουίτα προστασίας προσωπικών δεδομένων με premium υπηρεσίες και ${ unlimitedPlanMaxSpace } κρυπτογραφημένου αποθηκευτικού χώρου cloud, όλα σε ένα πακέτο."
       ]
     },
     "Plans": {
@@ -14259,6 +14311,9 @@
       "Confirm phone number": [
         "Επιβεβαίωση αριθμού τηλεφώνου"
       ],
+      "Connect a Gmail address": [
+        "Συνδέστε μια διεύθυνση Gmail"
+      ],
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
       ],
@@ -14423,11 +14478,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
+      "Download ${ app }": [
+        "Λήψη ${ app }"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "Λήψη ${ VPN_APP_NAME }"
       ],
       "Downloads": [
         "Λήψεις"
@@ -14733,6 +14788,9 @@
       ],
       "Remove domain": [
         "Αφαίρεση τομέα"
+      ],
+      "Remove forwarding address": [
+        "Κατάργηση διεύθυνσης προώθησης"
       ],
       "Remove server?": [
         "Αφαίρεση διακομιστή;"
@@ -15406,6 +15464,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Εξοικονομήστε έως ${ priceString }** με μια μεγαλύτερη συνδρομή. ΄Ιδιες προηγμένες δυνατότητες, χαμηλότερη τιμή."
       ],
+      "Advanced security for your company": [
+        "Προηγμένη ασφάλεια για την εταιρεία σας"
+      ],
       "Advanced security for your company?": [
         "Προηγμένη ασφάλεια για την εταιρεία σας;"
       ],
@@ -15418,20 +15479,26 @@
       "Did you know?": [
         "Το γνωρίζατε;"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Αποκτήστε ${ drivePlusPlanMaxSpace } χώρο αποθήκευσης για τα αρχεία, τις φωτογραφίες και τα έγγραφά σας και ανακτήστε εκδόσεις αρχείων με ιστορικό 10 ετών."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Προστατέψτε τον οργανισμό σας από παραβιάσεις δεδομένων με το ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Προστατέψτε τον οργανισμό σας από παραβιάσεις δεδομένων με το ${ VPN_APP_NAME } για Business."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Απεριόριστη ιδιωτικότητα για έως και ${ FAMILY_MAX_USERS } άτομα. Από μόνο ${ priceString }/μήνα."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Απεριόριστη ιδιωτικότητα για εσάς και ένα αγαπημένο σας πρόσωπο. Από μόνο ${ priceString }/μήνα."
       ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Μπορείτε να προστατεύσετε έως και ${ DUO_MAX_USERS } άτομα με το ${ PLAN_NAMES[PLANS.DUO] } και έως και ${ FAMILY_MAX_USERS } με το ${ PLAN_NAMES[PLANS.FAMILY] }. Από μόνο ${ priceString }/μήνα ανά λογαριασμό."
+      ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Μπορείτε να προστατεύσετε έως ${ FAMILY_MAX_USERS } χρήστες με το ${ PLAN_NAMES[plan] }. Ξεκινά από μόλις ${ priceString }/μήνα ανά λογαριασμό."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Μπορείτε να προστατεύσετε έως ${ FAMILY_MAX_USERS } χρήστες με το ${ PLAN_NAMES[PLANS.DUO] } ή το ${ PLAN_NAMES[PLANS.FAMILY] }. Ξεκινά από μόλις ${ priceString }/μήνα ανά λογαριασμό."
       ]
     },
     "upsell panel": {

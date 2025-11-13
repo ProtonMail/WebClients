@@ -4843,6 +4843,9 @@
       "Double VPN": [
         "VPN dupla"
       ],
+      "File attachment ": [
+        "Anexo de arquivo "
+      ],
       "Lightning-fast speeds": [
         "Velocidade ultrarrápida"
       ],
@@ -4857,6 +4860,9 @@
       ],
       "Secure streaming": [
         "Streaming seguro"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Compartilhamento seguro de item, cofre e link"
       ],
       "Stream from Netflix, HBO, and more": [
         "Assista Netflix, HBO e muito mais"
@@ -8090,6 +8096,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } de ${ maxAddresses } endereço de e-mail disponível",
+        "${ addressesAvailable } de ${ maxAddresses } endereços de e-mail disponíveis"
+      ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
       ],
@@ -8110,10 +8120,6 @@
       "${ nbDay } day": [
         "${ nbDay } dia",
         "${ nbDay } dias"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } de ${ maxAddresses } endereço de e-mail",
-        "${ usedAddresses } de ${ maxAddresses } endereços de e-mail"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -8868,9 +8874,9 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } endereço de e-mail",
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } endereços de e-mail"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } de ${ maxBYOEAddresses } endereço de e-mail disponível",
+        "${ byoeAddressesAvailableCount } de ${ maxBYOEAddresses } endereços de e-mail disponíveis"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9738,6 +9744,9 @@
       "End-to-end encryption": [
         "Criptografia de ponta a ponta"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Benefícios atuais do plano ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Downloads rápidos de P2P/BitTorrent"
       ],
@@ -9954,6 +9963,10 @@
         "Compartilhar cofres (até ${ n } pessoa)",
         "Compartilhar cofres (até ${ n } pessoas)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartilhar cofres com até ${ n } pessoa",
+        "Compartilhar cofres com até ${ n } pessoas"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
       ]
@@ -10049,9 +10062,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com recursos avançados para suas comunicações do dia a dia."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluções sob medida para organizações maiores com necessidades específicas de segurança"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A solução de VPN dedicada que oferece acesso seguro, irrestrito e de alta velocidade à internet."
       ],
@@ -10128,9 +10138,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ],
       "Your account's usage": [
         "Uso da sua conta"
@@ -10364,9 +10371,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Suporte 24/7"
-      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
@@ -10412,9 +10416,6 @@
       ],
       "Private gateways": [
         "Gateways privados"
-      ],
-      "Require 2FA": [
-        "Requer A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Suporte para ${ n } domínio de e-mail personalizado",
@@ -11402,6 +11403,28 @@
       ],
       "Credits will be added to your balance": [
         "Créditos serão adicionados ao seu saldo."
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Nunca"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Tem certeza de que deseja continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Se você optar por modificar seu ${ planTitle } plano, você pode perder o acesso a alguns recursos."
+      ],
+      "Keep ${ planTitle }": [
+        "Manter o ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sim, tenho certeza"
+      ],
+      "Your plan includes this feature already.": [
+        "Seu plano já inclui esse recurso."
       ]
     },
     "Payments.plan_name": {
@@ -14448,11 +14471,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Fazer o downgrade para o ${ downgradedPlanName }?"
       ],
+      "Download ${ app }": [
+        "Baixar ${ app }"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "Baixar ${ VPN_APP_NAME }"
       ],
       "Downloads": [
         "Baixar"
@@ -15454,9 +15477,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Você pode proteger até ${ FAMILY_MAX_USERS } pessoas com ${ PLAN_NAMES[plan] }. A partir de apenas ${ priceString }/mês por conta."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Você pode proteger até ${ FAMILY_MAX_USERS } pessoas com ${ PLAN_NAMES[PLANS.DUO] } ou ${ PLAN_NAMES[PLANS.FAMILY] }. A partir de apenas ${ priceString }/mês por conta."
       ]
     },
     "upsell panel": {
