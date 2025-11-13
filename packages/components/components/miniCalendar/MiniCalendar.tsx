@@ -38,7 +38,7 @@ export interface Props {
     onSelectDateRange?: (a1: DateTuple, resetRange?: boolean) => void;
     onMonthChange?: (a1: Date) => void;
     formatDay?: (a1: Date) => string;
-    getDayClassName?: (a1: Date) => string;
+    getDayClassName?: (a1: Date) => string | undefined;
     weekStartsOn?: WeekStartsOn;
     numberOfDays?: number;
     fixedSize?: boolean;

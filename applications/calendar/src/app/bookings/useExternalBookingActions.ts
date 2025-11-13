@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { fromUnixTime } from 'date-fns';
-
 import { useApi } from '@proton/components';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useSaveMeeting } from '@proton/meet';
@@ -23,7 +21,7 @@ export const useExternalBookingActions = () => {
     const api = useApi();
     const location = useLocation();
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
-    const setBookingSlotDetails = useBookingStore((state) => state.setBookingSlotDetails);
+    const setSelectedBookingSlot = useBookingStore((state) => state.setSelectedBookingSlot);
     const saveMeeting = useSaveMeeting();
     const getVTimezonesMap = useGetVtimezonesMap();
 
@@ -69,13 +67,7 @@ export const useExternalBookingActions = () => {
                 })
             );
 
-            const startTimeDate = fromUnixTime(timeslot.startTime);
-            const endTimeDate = fromUnixTime(timeslot.endTime);
-
-            setBookingSlotDetails({
-                startTime: startTimeDate,
-                endTime: endTimeDate,
-            });
+            setSelectedBookingSlot(timeslot);
             history.push('/bookings/success');
         } catch (error: unknown) {
             traceError(error);

@@ -10,7 +10,6 @@ import { DateInputTwo, useNotifications } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
-import { fromLocalDate, fromUTCDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
@@ -30,16 +29,12 @@ export const FormRangeList = () => {
         return null;
     }
 
-    // We need to convert the local time back to UTC before storing them
     const handleStartChange = (range: BookingRange, start: Date) => {
-        const utcStart = toUTCDate(fromLocalDate(start));
-        updateBookingRange(range.id, utcStart, range.end);
+        updateBookingRange(range.id, start, range.end);
     };
 
-    // We need to convert the local time back to UTC before storing them
     const handleEndChange = (range: BookingRange, end: Date) => {
-        const utcEnd = toUTCDate(fromLocalDate(end));
-        updateBookingRange(range.id, range.start, utcEnd);
+        updateBookingRange(range.id, range.start, end);
     };
 
     // No need to convert the start and end time here as they are already in UTC
@@ -97,11 +92,6 @@ export const FormRangeList = () => {
         addBookingRange(newBookingRange);
     };
 
-    // We need to convert the UTC time of the range to local time for select
-    const toLocalDateTime = (date: Date) => {
-        return toLocalDate(fromUTCDate(date));
-    };
-
     // TODO handle the cases where the recurring is enabled and adapt the UI
     return (
         <div>
@@ -119,10 +109,10 @@ export const FormRangeList = () => {
                             .t`Start time of the booking range`}</label>
                         <TimeInput
                             id={`range-start-time-${range.id}`}
-                            value={toLocalDateTime(range.start)}
+                            value={range.start}
                             onChange={(value) => handleStartChange(range, value)}
-                            min={startOfDay(toLocalDateTime(range.start))}
-                            max={subMinutes(toLocalDateTime(range.end), formData.duration)}
+                            min={startOfDay(range.start)}
+                            max={subMinutes(range.end, formData.duration)}
                             preventNextDayOverflow
                         />
                         -
@@ -130,8 +120,8 @@ export const FormRangeList = () => {
                             .t`End time of the booking range`}</label>
                         <TimeInput
                             id={`range-end-time-${range.id}`}
-                            value={toLocalDateTime(range.end)}
-                            min={addMinutes(toLocalDateTime(range.start), formData.duration)}
+                            value={range.end}
+                            min={addMinutes(range.start, formData.duration)}
                             onChange={(value) => handleEndChange(range, value)}
                         />
                     </div>
