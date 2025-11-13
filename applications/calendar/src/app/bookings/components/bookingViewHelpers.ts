@@ -1,26 +1,19 @@
 import { addDays, differenceInMinutes, endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 
 import type { ActiveBreakpoint } from '@proton/components/hooks/useActiveBreakpoint';
-import {
-    convertTimestampToTimezone,
-    fromUTCDateToLocalFakeUTCDate,
-    toLocalDate,
-} from '@proton/shared/lib/date/timezone';
+import { convertTimestampToTimezone, toLocalDate } from '@proton/shared/lib/date/timezone';
 
 import { DEFAULT_EVENT_DURATION } from '../../containers/bookings/bookingsProvider/interface';
 import type { BookingDetails, BookingTimeslot } from '../booking.store';
 
 /**
  * Convert a time slot start time to a local date.
- * First convert the start time using the slot timezeone, then to local date and finish with timezone from store
  * @param slot the slot to convert
  * @param timezone timezone from the state, not the one from the slot
  * @returns date that can be used in display
  */
 export const fromTimeSlotToUTCDate = (slot: BookingTimeslot, timezone: string) => {
-    const timeslotDate = convertTimestampToTimezone(slot.startTime, slot.timezone);
-    const utc = toLocalDate({ ...timeslotDate });
-    return fromUTCDateToLocalFakeUTCDate(utc, false, timezone);
+    return toLocalDate(convertTimestampToTimezone(slot.startTime, timezone));
 };
 
 const getTime = (date: Date) => {
