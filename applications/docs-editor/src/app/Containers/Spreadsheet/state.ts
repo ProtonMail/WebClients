@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react'
 
 import type { CellXfs, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
-import type { CellInterface } from '@rowsncolumns/grid'
+import { Align, type CellInterface } from '@rowsncolumns/grid'
 import { useSearch, useSpreadsheetState as useSpreadsheetStateOriginal } from '@rowsncolumns/spreadsheet-state'
 import type {
   CellData,
@@ -480,6 +480,18 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     baseState.onDeleteColumn(sheetId, columnIndexes)
   })
 
+  const goToCell = useEvent((sheetId: number, rowIndex: number, columnIndex: number) => {
+    spreadsheetState.onChangeActiveSheet(sheetId)
+    canvasGridMethods.scrollToCell?.({ rowIndex, columnIndex }, Align.center)
+    canvasGridMethods.flash?.({
+      startRowIndex: rowIndex,
+      startColumnIndex: columnIndex,
+      endRowIndex: rowIndex,
+      endColumnIndex: columnIndex,
+      sheetId,
+    })
+  })
+
   return {
     ...baseState,
     chartsState,
@@ -498,6 +510,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     getGridScrollPosition,
     getHyperlink,
     onRequestFonts,
+    goToCell,
   }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>

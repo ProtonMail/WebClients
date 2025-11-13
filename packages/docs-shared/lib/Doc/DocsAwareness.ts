@@ -7,7 +7,6 @@ import type { RelativePosition } from 'yjs'
  * Yet in production we do find some cases where it is undefined.
  */
 export type UnsafeDocsUserState = UserState & {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   awarenessData: Record<string, any> & {
     anonymousUserLetter?: string
     userId: string
@@ -16,7 +15,6 @@ export type UnsafeDocsUserState = UserState & {
 
 /** Like UnsafeDocsUserState but with awarenessData able to be undefined. */
 export type SafeDocsUserState = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   awarenessData:
     | (Record<string, any> & {
         anonymousUserLetter?: string
@@ -30,6 +28,17 @@ export type SafeDocsUserState = {
   name: string
   /** rowsandcolumns uses title instead of name, whole type should ideally be refactored to reflect the different shapes of the awareness objects that lexical has vs rowsncolumns */
   title?: string
+}
+
+export type SheetsUserState = {
+  activeCell: {
+    rowIndex: number
+    columnIndex: number
+  }
+  name: string
+  sheetId: number
+  userId: string
+  title: string
 }
 
 export class DocsAwareness<T extends UnsafeDocsUserState | SafeDocsUserState = SafeDocsUserState> extends Awareness {
