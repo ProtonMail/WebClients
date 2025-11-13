@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router';
 
-import { addHours, addMinutes, isSameDay, set, startOfDay, subMinutes } from 'date-fns';
+import { addHours, addMinutes, isBefore, isSameDay, set, startOfDay, startOfToday, subMinutes } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -52,6 +52,12 @@ export const FormRangeList = () => {
 
         const newStart = set(date, { hours: range.start.getHours(), minutes: range.start.getMinutes() });
         const newEnd = set(date, { hours: range.end.getHours(), minutes: range.end.getMinutes() });
+
+        const now = new Date();
+        if (isBefore(newStart, now) || isBefore(newEnd, now)) {
+            createNotification({ text: c('Info').t`Cannot create booking range in the past` });
+            return;
+        }
 
         updateBookingRange(id, newStart, newEnd);
     };
@@ -110,6 +116,7 @@ export const FormRangeList = () => {
                         <DateInputTwo
                             id={`range-date-input-${range.id}`}
                             value={range.start}
+                            min={startOfToday()}
                             onChange={(value) => handleDateChange(range.id, range, value)}
                         />
                         <label htmlFor={`range-start-input-${range.id}`} className="sr-only">{c('label')
