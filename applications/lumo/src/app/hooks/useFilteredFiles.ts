@@ -65,7 +65,7 @@ export const useFilteredFiles = (
         return fullAtt;
     };
 
-    // Get files to display based on filtering
+    // Get files to display based on filtering (excluding assistant-generated images)
     const allFiles = useMemo(() => {
         if (!filterMessage) {
             // Show all files from messages in the conversation
@@ -75,10 +75,12 @@ export const useFilteredFiles = (
                         ?.map((shallowAttachment) => {
                             const fullAttachment = getFullAttachmentFromShallow(shallowAttachment);
                             if (!fullAttachment) return null;
-                            // Merge autoRetrieved flag from shallow attachment (for project files)
-                            // since we skip upserting modified attachments to Redux
+                            // Filter out assistant-generated attachments (e.g., inline images)
+                            if (fullAttachment.role === 'assistant') return null;
                             return {
                                 ...fullAttachment,
+                                // Merge autoRetrieved flag from shallow attachment (for project files)
+                                // since we skip upserting modified attachments to Redux
                                 autoRetrieved: shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved,
                                 isUploadedProjectFile:
                                     shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,
@@ -106,6 +108,8 @@ export const useFilteredFiles = (
                     // (auto-retrieved Drive attachments are only in message chain on synced browsers)
                     const fullAttachment = combinedAttachments[attachmentId];
                     if (!fullAttachment) return null;
+                    // Filter out assistant-generated attachments
+                    if (fullAttachment.role === 'assistant') return null;
 
                     // Find which message this attachment belongs to for display purposes
                     let messageId = '';
@@ -136,9 +140,11 @@ export const useFilteredFiles = (
                 message.attachments?.map((shallowAttachment) => {
                     const fullAttachment = getFullAttachmentFromShallow(shallowAttachment);
                     if (!fullAttachment) return null;
-                    // Merge autoRetrieved flag from shallow attachment
+                    // Filter out assistant-generated attachments
+                    if (fullAttachment.role === 'assistant') return null;
                     return {
                         ...fullAttachment,
+                        // Merge autoRetrieved flag from shallow attachment
                         autoRetrieved: shallowAttachment.autoRetrieved || fullAttachment.autoRetrieved,
                         isUploadedProjectFile:
                             shallowAttachment.isUploadedProjectFile || fullAttachment.isUploadedProjectFile,

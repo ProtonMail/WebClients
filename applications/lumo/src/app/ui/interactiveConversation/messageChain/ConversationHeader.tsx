@@ -42,6 +42,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         location: 'header',
     });
     const { isSmallScreen } = useSidebar();
+    const allAttachments = useLumoSelector(selectAttachments);
 
     // Get space/project info if this conversation is part of a project
     const space = useLumoSelector(selectSpaceById(spaceId));
@@ -53,8 +54,6 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     // Get space-level assets (persistent project files) and attachments
     const spaceAssets = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
-
-    const allAttachments = useLumoSelector(selectAttachments);
 
     // Exclude auto-retrieved files as they're from Drive indexing, not user uploads
     const validSpaceAssets = Object.values(spaceAssets).filter(
@@ -82,7 +81,8 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
         (message.attachments || []).forEach((att) => {
             const fullAtt = allAttachments[att.id];
             // Skip auto-retrieved files - they're shown in Linked Drive Folder section
-            if (fullAtt && fullAtt.filename) {
+            // Skip assistant-generated attachments (e.g., images)
+            if (fullAtt && fullAtt.filename && fullAtt.role !== 'assistant') {
                 uniqueFilenames.add(fullAtt.filename);
             }
         });
@@ -338,13 +338,11 @@ export const ConversationHeader = React.memo(ConversationHeaderComponent, (prevP
         prevProps.conversation.spaceId !== nextProps.conversation.spaceId ||
         prevProps.conversation.starred !== nextProps.conversation.starred;
 
-    const prevTotalFiles = prevProps.messageChain.reduce((count, message) => {
-        return count + (message.attachments?.length || 0);
-    }, 0);
-    const nextTotalFiles = nextProps.messageChain.reduce((count, message) => {
-        return count + (message.attachments?.length || 0);
-    }, 0);
+    // Check if attachment references have changed (we can't filter by role here without Redux access)
+    // So we compare the full attachment arrays and let the component re-render to recalculate
+    const prevAttachmentIds = prevProps.messageChain.flatMap((m) => m.attachments?.map((a) => a.id) || []).join(',');
+    const nextAttachmentIds = nextProps.messageChain.flatMap((m) => m.attachments?.map((a) => a.id) || []).join(',');
 
-    const totalFilesChanged = prevTotalFiles !== nextTotalFiles;
-    return !conversationChanged && !totalFilesChanged && prevProps.onOpenFiles === nextProps.onOpenFiles;
+    const attachmentsChanged = prevAttachmentIds !== nextAttachmentIds;
+    return !conversationChanged && !attachmentsChanged && prevProps.onOpenFiles === nextProps.onOpenFiles;
 });

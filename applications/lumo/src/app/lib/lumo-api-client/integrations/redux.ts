@@ -15,7 +15,7 @@ import {
     setToolCall,
     setToolResult,
 } from '../../../redux/slices/core/messages';
-import { addAttachment } from '../../../redux/slices/core/attachments';
+import { addAttachment, pushAttachmentRequest } from '../../../redux/slices/core/attachments';
 import type { LumoDispatch } from '../../../redux/store';
 import { ConversationStatus, Role } from '../../../types';
 import { createImageAttachment, generateImageMarkdown } from '../../imageAttachment';
@@ -167,6 +167,8 @@ export function sendMessageWithRedux(
                             dispatch(addAttachment({ ...attachment, data: imageData }));
                             dispatch(addImageAttachment({ messageId, attachment }));
                             dispatch(appendChunk({ messageId, content: generateImageMarkdown(message.image_id) }));
+                            // Push attachment to server now that it has spaceId
+                            dispatch(pushAttachmentRequest({ id: message.image_id }));
                         }
                         break;
                 }
