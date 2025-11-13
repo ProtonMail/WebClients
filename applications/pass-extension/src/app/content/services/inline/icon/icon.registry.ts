@@ -6,6 +6,7 @@ import type { FieldHandle } from 'proton-pass-extension/app/content/services/for
 import type { DropdownHandler } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.abstract';
 import { computeIconShift } from 'proton-pass-extension/app/content/services/inline/icon/icon.utils';
 import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { MaybeNull } from '@proton/pass/types';
@@ -58,7 +59,10 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
         }
     };
 
+    const onIconAttached = () => icon.current?.detach();
+
     channel.register(WorkerMessageType.INLINE_ICON_SHIFT, onIconShift);
+    channel.register(WorkerMessageType.INLINE_ICON_ATTACHED, onIconAttached);
 
     const registry: IconRegistry = {
         attach: (field) => {
@@ -81,7 +85,16 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
                 const onDetach = () => (icon.current = null);
 
                 icon.current = createIconController({ field, mainFrame, tag, onClick, onDetach });
-                if (icon.current) field.setIcon(icon.current);
+
+                if (icon.current) {
+                    void sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.INLINE_ICON_ATTACHED,
+                            payload: { fieldId: field.fieldId, formId: field.formId, frameId: field.frameId },
+                        })
+                    );
+                    field.setIcon(icon.current);
+                }
             }
         },
 

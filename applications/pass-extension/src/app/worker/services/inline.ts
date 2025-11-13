@@ -233,6 +233,27 @@ export const createInlineService = () => {
     );
 
     WorkerMessageBroker.registerMessage(
+        WorkerMessageType.INLINE_ICON_ATTACHED,
+        withSender(async ({ payload }, tabId, frameId) => {
+            const frames = await browser.webNavigation.getAllFrames({ tabId });
+            if (!frames) return true;
+
+            for (const frame of frames) {
+                if (frame.frameId === frameId) continue;
+                void sendTabMessage(
+                    backgroundMessage({
+                        type: WorkerMessageType.INLINE_ICON_ATTACHED,
+                        payload,
+                    }),
+                    { tabId, frameId: frame.frameId }
+                ).catch(noop);
+            }
+
+            return true;
+        })
+    );
+
+    WorkerMessageBroker.registerMessage(
         WorkerMessageType.INLINE_ICON_SHIFT,
         withSender(async ({ payload }, tabId, frameId) => {
             if (frameId === 0) return { dx: 0 };
