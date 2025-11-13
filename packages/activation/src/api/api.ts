@@ -9,6 +9,11 @@ import type {
     OAuthProps,
 } from '../interface';
 import { ImportType } from '../interface';
+import type {
+    ApiCreateImporterOrganization,
+    ApiCreateImporterOrganizationMigration,
+    ApiImportProvider,
+} from './api.interface';
 
 export const getTokens = () => ({
     url: 'oauth-token/v1/tokens',
@@ -194,4 +199,26 @@ export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; Or
     url: 'mail/v4/byoe-address',
     method: 'POST',
     data: { Email, OrganizationId },
+});
+
+export const getOrganizationUsers = () => ({
+    url: 'importer/v1/organizations/users',
+    method: 'GET',
+});
+
+export const getOrganizationImporter = (provider: ApiImportProvider) => ({
+    url: `importer/v1/organizations/${provider}`,
+    method: 'GET',
+});
+
+export const createOrganizationImporter = (data: ApiCreateImporterOrganization) => ({
+    url: 'importer/v1/organizations',
+    method: 'POST',
+    data,
+});
+
+export const createOrganizationImporterMigration = (data: ApiCreateImporterOrganizationMigration) => ({
+    url: 'importer/v1/organizations/migrations',
+    method: 'POST',
+    data,
 });
