@@ -4,9 +4,9 @@ import clsx from '@proton/utils/clsx'
 import { useApplication } from '~/utils/application-context'
 import type { DocsAwarenessStateChangeData, SafeDocsUserState } from '@proton/docs-shared'
 import { DocAwarenessEvent } from '@proton/docs-shared'
-import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar';
+import { Button } from '@proton/atoms/Button/Button'
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
+import { UserAvatar, UserAvatarSizeEnum } from '@proton/atoms/UserAvatar/UserAvatar'
 
 export type DocumentActiveUsersProps = { className?: string }
 
@@ -23,7 +23,7 @@ export function DocumentActiveUsers({ className }: DocumentActiveUsersProps) {
           if (state.title) {
             state.name = state.title
           } else {
-            console.error('User state missing name', state)
+            console.warn('User state missing name', state)
             state.name = '?'
           }
         }
