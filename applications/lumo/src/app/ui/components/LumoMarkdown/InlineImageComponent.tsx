@@ -2,16 +2,22 @@ import React, { useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Icon } from '@proton/components';
-import { Button } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 
-import type { Attachment } from '../../../types';
+import { useLazyAttachment } from '../../../hooks';
+import { useLumoDispatch } from '../../../redux/hooks';
+import { clearAttachmentLoading } from '../../../redux/slices/attachmentLoadingState';
+import { pullAttachmentRequest } from '../../../redux/slices/core/attachments';
+import type { AttachmentId } from '../../../types';
 
 interface InlineImageComponentProps {
-    attachment: Attachment | undefined;
+    attachmentId: AttachmentId;
     alt?: string;
 }
 
-export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ attachment, alt }) => {
+export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ attachmentId, alt }) => {
+    const dispatch = useLumoDispatch();
+    const { data: attachment, isLoading, error } = useLazyAttachment(attachmentId);
     const [showModal, setShowModal] = useState(false);
     const [showDownload, setShowDownload] = useState(false);
     const [showModalButtons, setShowModalButtons] = useState(false);
@@ -26,12 +32,56 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
         return URL.createObjectURL(blob);
     }, [attachment?.data, attachment?.mimeType]);
 
-    if (!attachment) {
-        return null;
+    // Handle retry on error
+    const handleRetry = () => {
+        dispatch(clearAttachmentLoading(attachmentId));
+        dispatch(pullAttachmentRequest({ id: attachmentId }));
+    };
+
+    // Show error UI with retry button
+    if (error) {
+        return (
+            <div
+                style={{
+                    display: 'inline-block',
+                    padding: '1rem',
+                    backgroundColor: '#f8d7da',
+                    border: '1px solid #f5c6cb',
+                    borderRadius: '8px',
+                    color: '#721c24',
+                    maxWidth: '300px',
+                }}
+            >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <Icon name="exclamation-circle" size={4} />
+                    <span style={{ fontSize: '14px', fontWeight: 'bold' }}>Failed to load image</span>
+                </div>
+                <p style={{ margin: '0 0 0.5rem 0', fontSize: '12px' }}>{error}</p>
+                <Button size="small" shape="solid" onClick={handleRetry}>
+                    Retry
+                </Button>
+            </div>
+        );
     }
 
-    if (!imageDataUrl) {
-        return null;
+    // Show loading UI
+    if (isLoading || !imageDataUrl) {
+        return (
+            <div
+                style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '2rem',
+                    backgroundColor: '#f5f5f5',
+                    borderRadius: '8px',
+                    minWidth: '200px',
+                    minHeight: '150px',
+                }}
+            >
+                <CircleLoader size="medium" />
+            </div>
+        );
     }
 
     const handleDownload = () => {
