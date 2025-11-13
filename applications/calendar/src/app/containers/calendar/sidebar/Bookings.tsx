@@ -99,7 +99,8 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                     spaceAbove
                 />
                 {displayBookings &&
-                    bookings?.bookingPages.map((page) => (
+                    bookings &&
+                    bookings.bookingPages.map((page) => (
                         <SidebarListItem key={page.id}>
                             <SidebarListItemLabel
                                 htmlFor={`booking-page-${page.id}`}
@@ -130,7 +131,8 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                                                     .t`Edit booking page`}</DropdownMenuButton>
                                                 <DropdownMenuButton
                                                     onClick={() => dispatch(deleteBookingPageThunk(page.id))}
-                                                    className="text-left">
+                                                    className="text-left"
+                                                >
                                                     {c('Action').t`Delete booking page`}
                                                 </DropdownMenuButton>
                                                 <hr className="m-0" />
