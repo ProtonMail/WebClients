@@ -5177,6 +5177,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Por favor, inicia sesión con una dirección de Gmail que ya reenvía a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Por favor, inicia sesión con la misma dirección de Gmail que conectaste originalmente"
       ]
@@ -11265,9 +11268,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solución específica de VPN con conexión a internet segura, de alta velocidad y sin restricciones."
       ],
@@ -11532,9 +11532,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Soporte 24/7"
-      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -11580,9 +11577,6 @@
       ],
       "Private gateways": [
         "Puertas de enlace privadas"
-      ],
-      "Require 2FA": [
-        "Requiere 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Soporte para ${ n } dominio de correo electrónico personalizado",
