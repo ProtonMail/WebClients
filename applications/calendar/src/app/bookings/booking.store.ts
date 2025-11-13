@@ -1,6 +1,7 @@
 import { format, fromUnixTime } from 'date-fns';
 import { create } from 'zustand';
 
+import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 export type BookingTimeslot = {
@@ -120,7 +121,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     isLoading: false,
     hasLoaded: false,
     selectedDate: new Date(),
-    selectedTimezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    selectedTimezone: getTimezone(),
 
     setLoading: (loading: boolean) => {
         set({ isLoading: loading });
