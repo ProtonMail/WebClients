@@ -21,6 +21,7 @@ import { interalBookingActions } from '../../../store/internalBooking/interalBoo
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { encryptBookingPage } from '../utils/bookingCryptoUtils';
+import { hasBookingFormChanged } from '../utils/bookingFormStateHelpers';
 import {
     generateBookingRangeID,
     generateDefaultBookingRange,
@@ -255,17 +256,12 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const closeBookingSidebar = () => {
-        const intialForm = initialFormData.current?.formData;
-        const initialRange = initialFormData.current?.bookingRanges;
-
-        const formWasTouched =
-            formData.summary !== intialForm?.summary ||
-            formData.description !== intialForm?.description ||
-            formData.duration !== intialForm?.duration ||
-            formData.selectedCalendar !== intialForm?.selectedCalendar ||
-            formData.location !== intialForm?.location ||
-            formData.bookingSlots.length !== intialForm?.bookingSlots.length ||
-            bookingRanges?.length !== initialRange?.length;
+        const formWasTouched = hasBookingFormChanged({
+            currentFormData: formData,
+            currentBookingRanges: bookingRanges,
+            initialFormData: initialFormData.current?.formData,
+            initialBookingRanges: initialFormData.current?.bookingRanges,
+        });
 
         if (formWasTouched) {
             notify({
