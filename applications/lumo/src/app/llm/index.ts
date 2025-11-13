@@ -13,7 +13,7 @@ import {
     setToolCall,
     setToolResult,
 } from '../redux/slices/core/messages';
-import { addAttachment } from '../redux/slices/core/attachments';
+import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import type { LumoDispatch } from '../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../services/errors/errorHandling';
 import type { Base64, ConversationId, Message, RequestId, SpaceId, Status, Turn } from '../types';
@@ -299,6 +299,8 @@ export function getCallbacks(
                     dispatch(addAttachment({ ...attachment, data: imageData }));
                     dispatch(addImageAttachment({ messageId: assistantMessageId, attachment }));
                     dispatch(appendChunk({ messageId: assistantMessageId, content: generateImageMarkdown(m.image_id) }));
+                    // Push attachment to server now that it has spaceId
+                    dispatch(pushAttachmentRequest({ id: m.image_id }));
                 }
                 break;
         }

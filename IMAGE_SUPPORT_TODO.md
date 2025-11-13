@@ -112,6 +112,9 @@ markdown syntax and rendered inline with preview/modal UI.
 
 ### Phase 6: Integration Testing
 
+- [x] Fix attachment persistence - dispatch pushAttachmentRequest after creating image attachment
+    - Added in redux.ts and llm/index.ts after addImageAttachment
+    - Attachments now automatically sync to server and persist across sessions
 - [ ] Create test message with assistant-role attachment
 - [ ] Verify attachment syncs to server via saga
 - [ ] Confirm role='assistant' attachments filtered from user attachment UI
