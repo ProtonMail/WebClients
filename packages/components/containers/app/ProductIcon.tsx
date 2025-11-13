@@ -4,7 +4,7 @@ import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-const NEW_BADGE_APPS: APP_NAMES[] = [APPS.PROTONLUMO, APPS.PROTONMEET, APPS.PROTONSHEETS];
+const NEW_BADGE_APPS: APP_NAMES[] = [APPS.PROTONLUMO, APPS.PROTONMEET, APPS.PROTONSHEETS, APPS.PROTONAUTHENTICATOR];
 
 interface ProductIconProps {
     appToLinkTo: APP_NAMES;
@@ -13,8 +13,15 @@ interface ProductIconProps {
 }
 
 const ProductIcon = ({ appToLinkTo, current, hideName }: ProductIconProps) => {
-    const appToLinkToName =
-        appToLinkTo === APPS.PROTONLUMO ? `${getAppShortName(appToLinkTo)} AI` : getAppShortName(appToLinkTo);
+    let appToLinkToName = getAppShortName(appToLinkTo);
+
+    if (appToLinkTo === APPS.PROTONLUMO) {
+        appToLinkToName = `${appToLinkToName} AI`;
+    }
+
+    if (appToLinkTo === APPS.PROTONAUTHENTICATOR) {
+        appToLinkToName = 'Auth';
+    }
 
     return (
         <>

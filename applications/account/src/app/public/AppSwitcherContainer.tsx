@@ -102,6 +102,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
+    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const subscribed = User.Subscribed;
 
     return (
@@ -148,6 +149,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                             isSheetsAvailable,
                             oauth: persistedSession.source === SessionSource.Oauth,
                             isMeetAvailable,
+                            isAuthenticatorAvailable,
                         })}
                         onExplore={async (app) => {
                             await onLogin({

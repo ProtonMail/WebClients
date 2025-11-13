@@ -17,6 +17,8 @@ const productsToApps: Record<OrganizationSettingsAllowedProduct, APP_NAMES[]> = 
     [Product.Wallet]: [APPS.PROTONWALLET],
     [Product.VPN]: [APPS.PROTONVPN_SETTINGS],
     [Product.Lumo]: [APPS.PROTONLUMO],
+    [Product.Meet]: [APPS.PROTONMEET],
+    [Product.Authenticator]: [APPS.PROTONAUTHENTICATOR],
 } as const;
 
 // This constant contains a set of all the products that are supported in the access control feature

@@ -521,7 +521,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     if (hasPass(subscription) || (user.isFree && user.hasPassLifetime)) {
                         return getPassAppPassPlus();
                     }
-                    if (user.isFree && app === APPS.PROTONPASS) {
+                    if (user.isFree && (app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR)) {
                         return getPassAppFree();
                     }
                     if (hasPassFamily(subscription)) {

@@ -55,6 +55,7 @@ enum CommonFeatureFlag {
     SentinelSafetyReview = 'SentinelSafetyReview',
     AutoAddMeetingLink = 'AutoAddMeetingLink',
     AvatarColorWeb = 'AvatarColorWeb',
+    AuthenticatorSettingsEnabled = 'AuthenticatorSettingsEnabled',
 }
 
 enum AccountFlag {

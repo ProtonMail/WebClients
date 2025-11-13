@@ -29,6 +29,7 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
+    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
             step: 'recovery',
@@ -51,6 +52,7 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
                         isDocsHomepageAvailable,
                         isSheetsAvailable,
                         isMeetAvailable,
+                        isAuthenticatorAvailable,
                     })}
                     onExplore={onExplore}
                 />
