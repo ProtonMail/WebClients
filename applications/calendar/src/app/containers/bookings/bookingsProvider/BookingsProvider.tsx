@@ -39,7 +39,7 @@ interface BookingsContextValue {
     formData: BookingFormData;
     updateFormData: (field: keyof BookingFormData, value: any) => void;
     loading: boolean;
-    bookingRange: BookingRange[] | null;
+    bookingRanges: BookingRange[] | null;
     addBookingRange: (data: Omit<BookingRange, 'id'>) => void;
     updateBookingRange: (id: string, start: Date, end: Date) => void;
     removeBookingRange: (id: string) => void;
@@ -60,7 +60,7 @@ const getInitialBookingFormState = (): BookingFormData => {
 
 interface InitialData {
     formData: BookingFormData;
-    bookingRange: BookingRange[];
+    bookingRanges: BookingRange[];
 }
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
@@ -70,7 +70,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(false);
 
     const [userSettings] = useUserSettings();
-    const [bookingRange, setBookingRange] = useState<BookingRange[] | null>(null);
+    const [bookingRanges, setBookingRanges] = useState<BookingRange[] | null>(null);
 
     const api = useApi();
     const { notify } = useCalendarGlobalModals();
@@ -102,8 +102,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone();
 
         // Generate the initial form data
-        const bookingRange = generateDefaultBookingRange(userSettings, currentUTCDate, timezone, false);
-        const bookingSlots = bookingRange
+        const bookingRanges = generateDefaultBookingRange(userSettings, currentUTCDate, timezone, false);
+        const bookingSlots = bookingRanges
             .map((range) =>
                 generateSlotsFromRange({
                     rangeID: range.id,
@@ -121,14 +121,14 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         newFormData.duration = CalendarSettings?.DefaultEventDuration || DEFAULT_EVENT_DURATION;
         newFormData.selectedCalendar = preferredWritableCal?.ID || writeableCalendars[0].ID;
 
-        setBookingRange(bookingRange);
+        setBookingRanges(bookingRanges);
         setFormData(newFormData);
-        initialFormData.current = { formData: newFormData, bookingRange };
+        initialFormData.current = { formData: newFormData, bookingRanges };
     };
 
     const recomputeBookingSlots = (newDuration: number) => {
         const newSlots: Slot[] = [];
-        bookingRange?.forEach((range) => {
+        bookingRanges?.forEach((range) => {
             const slots = generateSlotsFromRange({
                 rangeID: range.id,
                 start: range.start,
@@ -153,8 +153,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const updateBookingRange = (oldRangeId: string, start: Date, end: Date) => {
-        const range = bookingRange?.find((range) => range.id === oldRangeId);
-        if (!range || !bookingRange) {
+        const range = bookingRanges?.find((range) => range.id === oldRangeId);
+        if (!range || !bookingRanges) {
             throw new Error(`Booking range with id ${oldRangeId} not found or no bookingRange`);
         }
 
@@ -163,7 +163,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             newRangeId,
             start,
             end,
-            existingRanges: bookingRange,
+            existingRanges: bookingRanges,
             excludeRangeId: oldRangeId,
         });
         if (validateNewRange) {
@@ -178,7 +178,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             timezone: range.timezone,
         };
 
-        const newBookingRange = bookingRange
+        const newBookingRange = bookingRanges
             .map((range) => (range.id === oldRangeId ? newRange : range))
             .sort((a, b) => a.start.getTime() - b.start.getTime());
 
@@ -196,12 +196,12 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             ...newSlots,
         ];
 
-        setBookingRange(newBookingRange);
+        setBookingRanges(newBookingRange);
         setFormData(newFormData);
     };
 
     const removeBookingRange = (id: string) => {
-        setBookingRange((prev) => prev?.filter((range) => range.id !== id) || null);
+        setBookingRanges((prev) => prev?.filter((range) => range.id !== id) || null);
         setFormData((prev) => ({
             ...prev,
             // Remove all the slots associated with the removed range
@@ -223,14 +223,14 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             newRangeId: dataId,
             start: data.start,
             end: data.end,
-            existingRanges: bookingRange || [],
+            existingRanges: bookingRanges || [],
         });
         if (validateNewRange) {
             createNotification({ text: validateNewRange });
             return;
         }
 
-        const newBookingRange = [...(bookingRange || []), { ...data, id: dataId }].sort(
+        const newBookingRange = [...(bookingRanges || []), { ...data, id: dataId }].sort(
             (a, b) => a.start.getTime() - b.start.getTime()
         );
 
@@ -245,7 +245,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         const newFormData = formData;
         formData.bookingSlots = [...formData.bookingSlots, ...newSlots];
 
-        setBookingRange(newBookingRange);
+        setBookingRanges(newBookingRange);
         setFormData(newFormData);
     };
 
@@ -256,7 +256,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const closeBookingSidebar = () => {
         const intialForm = initialFormData.current?.formData;
-        const initialRange = initialFormData.current?.bookingRange;
+        const initialRange = initialFormData.current?.bookingRanges;
 
         const formWasTouched =
             formData.summary !== intialForm?.summary ||
@@ -265,7 +265,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             formData.selectedCalendar !== intialForm?.selectedCalendar ||
             formData.location !== intialForm?.location ||
             formData.bookingSlots.length !== intialForm?.bookingSlots.length ||
-            bookingRange?.length !== initialRange?.length;
+            bookingRanges?.length !== initialRange?.length;
 
         if (formWasTouched) {
             notify({
@@ -357,7 +357,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         submitForm,
         loading,
         // Range management
-        bookingRange,
+        bookingRanges,
         addBookingRange,
         updateBookingRange,
         removeBookingRange,
