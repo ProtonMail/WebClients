@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
@@ -24,6 +25,7 @@ export const BookingsView = () => {
     const setSelectedDate = useBookingStore((state) => state.setSelectedDate);
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedDate = useBookingStore((state) => state.selectedDate);
+    const selectedTimeZone = useBookingStore((state) => state.selectedTimezone);
 
     const { activeBreakpoint } = useActiveBreakpoint();
     const gridSize = getGridCount(activeBreakpoint);
@@ -82,31 +84,40 @@ export const BookingsView = () => {
                             <ul className="unstyled m-0 p-0 flex flex-column gap-2">
                                 {canShowSlots &&
                                     slotsArray[i].map((timeslot, j) => {
-                                        const timeString = timeslot
-                                            ? format(timeslot.date, 'HH:mm', { locale: dateLocale })
-                                            : undefined;
+                                        if (timeslot) {
+                                            const localDate = fromUTCDateToLocalFakeUTCDate(
+                                                timeslot.date,
+                                                false,
+                                                selectedTimeZone
+                                            );
 
-                                        return timeslot ? (
-                                            <li>
-                                                <Button
-                                                    key={timeslot.id}
-                                                    shape="outline"
-                                                    color="weak"
-                                                    className="w-full booking-button-slot-outline"
-                                                    onClick={() => {
-                                                        setTimeslot(timeslot);
-                                                        setBookSlotModalOpen(true);
-                                                    }}
-                                                    title={
-                                                        // if we don't want this title, we can use aria-label instead, it will be more explicit for blind users
-                                                        // translator: Full sentence would be: "Select <Tuesday, 12th November 2025> at <10:00>"
-                                                        c('Action').t`Select ${dateHeaderLongString} at ${timeString}`
-                                                    }
-                                                >
-                                                    {timeString}
-                                                </Button>
-                                            </li>
-                                        ) : (
+                                            const timeString = format(localDate, 'HH:mm', { locale: dateLocale });
+
+                                            return (
+                                                <li>
+                                                    <Button
+                                                        key={timeslot.id}
+                                                        shape="outline"
+                                                        color="weak"
+                                                        className="w-full booking-button-slot-outline"
+                                                        onClick={() => {
+                                                            setTimeslot(timeslot);
+                                                            setBookSlotModalOpen(true);
+                                                        }}
+                                                        title={
+                                                            // if we don't want this title, we can use aria-label instead, it will be more explicit for blind users
+                                                            // translator: Full sentence would be: "Select <Tuesday, 12th November 2025> at <10:00>"
+                                                            c('Action')
+                                                                .t`Select ${dateHeaderLongString} at ${timeString}`
+                                                        }
+                                                    >
+                                                        {timeString}
+                                                    </Button>
+                                                </li>
+                                            );
+                                        }
+
+                                        return (
                                             <li aria-hidden="true">
                                                 <Button
                                                     key={`${i}-${j}`}
