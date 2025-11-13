@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -8,6 +6,7 @@ import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
+import { useLocalState } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
@@ -23,8 +22,8 @@ interface Props {
 }
 
 export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
-    const [displayBookings, setDisplayBookings] = useState(true);
     const [user] = useUser();
+    const [displayView, toggleView] = useLocalState(true, `${user.ID || 'item'}-display-views`);
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
     const [writeableCalendars] = useWriteableCalendars();
@@ -50,8 +49,8 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
         <>
             <SidebarList>
                 <SimpleSidebarListItemHeader
-                    toggle={displayBookings}
-                    onToggle={() => setDisplayBookings((prevState) => !prevState)}
+                    toggle={displayView}
+                    onToggle={(value) => toggleView(value)}
                     text={c('Link').t`Booking pages`}
                     testId="calendar-sidebar:bookings-pages-button"
                     headerRef={headerRef}
@@ -69,7 +68,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                         </Tooltip>
                     }
                 />
-                {displayBookings &&
+                {displayView &&
                     bookings?.bookingPages.map((page) => (
                         <BookingItem key={page.id} page={page} writeableCalendars={writeableCalendars} />
                     ))}

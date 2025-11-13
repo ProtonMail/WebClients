@@ -454,7 +454,7 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingRange, bookingRange } = useBookings();
+    const { isBookingActive, addBookingRange, bookingRange, formData } = useBookings();
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -503,13 +503,15 @@ const InteractiveCalendarView = ({
 
     const sortedEvents = useMemo(() => {
         if (isBookingActive && createEventCalendar) {
-            const calendarData = getVisualCalendar(createEventCalendar);
+            // We want to use the color of the selected calendar in the form, we fallback to default calendar in case of an issue
+            const selectedCalendar = calendars.find((calendar) => calendar.ID === formData.selectedCalendar);
+            const calendarData = getVisualCalendar(selectedCalendar || createEventCalendar);
             const booklyCalendarEvents = convertSlotToCalendarViewEvents(calendarData, bookingRange);
-            return sortEvents(booklyCalendarEvents);
+            return sortEvents(booklyCalendarEvents.concat(events));
         }
 
         return sortEvents(events.concat());
-    }, [events, isBookingActive, bookingRange, createEventCalendar]);
+    }, [events, isBookingActive, bookingRange, createEventCalendar, formData.selectedCalendar, calendars]);
 
     const isProcessing = useCallback(
         (uniqueId: string) => {
