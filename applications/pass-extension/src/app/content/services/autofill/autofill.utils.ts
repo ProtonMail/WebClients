@@ -74,7 +74,7 @@ const autofillSelectElement = async (select: HTMLSelectElement, data: string) =>
         const dispatch = dispatchEvents(select);
 
         if (isActiveElement(select)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
-        else select.focus();
+        else select.focus({ preventScroll: true });
 
         Array.from(select.options).forEach((option) => (option.selected = false));
 
