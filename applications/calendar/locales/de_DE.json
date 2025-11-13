@@ -228,6 +228,9 @@
       "Copy alias “${ name }”": [
         "Alias “${ name }” kopieren"
       ],
+      "Copy booking page link": [
+        "Link zur Buchungsseite kopieren"
+      ],
       "Copy email address": [
         "E-Mail-Adresse kopieren"
       ],
@@ -308,6 +311,9 @@
         "${ selectedCount } Kontaktgruppe löschen",
         "${ selectedCount } Kontaktgruppen löschen"
       ],
+      "Delete booking page": [
+        "Buchungsseite löschen"
+      ],
       "Delete contact": [
         "Kontakt löschen"
       ],
@@ -346,6 +352,9 @@
       ],
       "Edit": [
         "Bearbeiten"
+      ],
+      "Edit booking page": [
+        "Buchungsseite bearbeiten"
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
@@ -427,6 +436,9 @@
       ],
       "Go to settings": [
         "Einstellungen öffnen"
+      ],
+      "Go to the next available appointment": [
+        "Gehe zum nächsten verfügbaren Termin"
       ],
       "Got it": [
         "Verstanden"
@@ -748,6 +760,15 @@
       ],
       "See plan features": [
         "Funktionen des Abonnements anzeigen"
+      ],
+      "See previous availability": [
+        "Vorherige Verfügbarkeit anzeigen"
+      ],
+      "See upcoming availability": [
+        "Kommende Verfügbarkeit anzeigen"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Wähle ${ dateHeaderLongString } um ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "${ planOrAppName } auswählen"
@@ -1949,6 +1970,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
+      ],
+      "Advanced account and network security in one plan": [
+        "Erweiterte Konto- und Netzwerksicherheit in einem Abonnement"
       ],
       "High-speed chats and advanced AI features.": [
         "Schnelle Chats und erweiterte KI-Funktionen."
@@ -3391,12 +3415,6 @@
       "120 minutes": [
         "120 Minuten"
       ],
-      "15 minutes": [
-        "15 Minuten"
-      ],
-      "15m": [
-        "15 Min."
-      ],
       "1h": [
         "1 Std."
       ],
@@ -4071,6 +4089,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Bitte melde dich mit einer Gmail-Adresse an, die bereits an ${ MAIL_APP_NAME } weiterleitet."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Bitte melde dich mit derselben Gmail-Adresse an, die du ursprünglich verbunden hast."
       ]
@@ -5276,6 +5297,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Jeder mit diesem Link kann in deinem Kalender sehen, ob du „Verfügbar“ oder „Beschäftigt“ bist. Es können jedoch keine Details zum Termin wie z. B. Titel, Ort oder Teilnehmer eingesehen werden."
       ],
+      "Appointment duration": [
+        "Termindauer"
+      ],
       "Are you sure you want to discard your import?": [
         "Möchtest du deinen Import wirklich verwerfen?"
       ],
@@ -5586,6 +5610,9 @@
       "High Priority": [
         "Hohe Priorität"
       ],
+      "Host": [
+        "Organisator"
+      ],
       "How long should an appointment last?": [
         "Wie lange sollte ein Termin dauern?"
       ],
@@ -5716,11 +5743,17 @@
       "Loading events": [
         "Termine werden geladen"
       ],
+      "Location": [
+        "Standort"
+      ],
       "Low Priority": [
         "Niedrige Priorität"
       ],
       "Manage your calendars": [
         "Kalender verwalten"
+      ],
+      "Manange booking page": [
+        "Buchungsseite organisieren"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
@@ -5755,8 +5788,8 @@
       "New": [
         "Neu"
       ],
-      "No available slots for this day": [
-        "Keine verfügbaren Zeiträume für diesen Tag"
+      "No appointments available this week": [
+        "Diese Woche sind keine Termine verfügbar"
       ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
@@ -5897,6 +5930,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die Daten enthalten, die mit dem inaktiven Schlüssel verschlüsselt sind."
       ],
+      "Powered by ${ protonButton }": [
+        "Unterstützt durch ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Frühere Änderungen dieser Terminserie gehen verloren."
       ],
@@ -5905,6 +5941,9 @@
       ],
       "Primary": [
         "Primär"
+      ],
+      "Privacy by default": [
+        "Privatsphäre als Standard"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Der Modus „Privates Surfen“ (oder „Inkognito“-Modus) ist nur nützlich, um deine Aktivitäten auf deinem Gerät verborgen zu halten. Er verhindert, dass dein Browser den Verlauf und die Cookies speichert, aber er macht dich nicht unsichtbar. Dein Internetdienstanbieter, dein Netzwerkadministrator und die von dir besuchten Websites können immer noch sehen, was du online tust."
@@ -7229,7 +7268,7 @@
       "Add a gift code": [
         "Gutscheincode hinzufügen"
       ],
-      "Bookings pages": [
+      "Booking pages": [
         "Buchungsseiten"
       ],
       "Calendars": [
@@ -7942,6 +7981,9 @@
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Bestehende ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-Vorteile"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Schnelle P2P/BitTorrent-Downloads"
       ],
@@ -8160,6 +8202,10 @@
         "Tresor teilen (bis zu ${ n } Person)",
         "Tresor teilen (bis zu ${ n } Personen)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Tresor mit bis zu ${ n } Person teilen",
+        "Tresor mit bis zu ${ n } Personen teilen"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
       ]
@@ -8262,9 +8308,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Maßgeschneiderte Lösungen für größere Organisationen mit spezifischen Sicherheitsanforderungen"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Die dedizierte VPN-Lösung, die einen sicheren und uneingeschränkten Zugriff auf ein Hochgeschwindigkeitsinternet bietet."
@@ -8530,9 +8573,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24/7 Support"
-      ],
       "Access advanced VPN features": [
         "Profitiere von erweiterten VPN-Funktionen"
       ],
@@ -8578,9 +8618,6 @@
       ],
       "Private gateways": [
         "Private Gateways"
-      ],
-      "Require 2FA": [
-        "2FA erzwingen"
       ],
       "Support for ${ n } custom email domain": [
         "Support für ${ n } benutzerdefinierte E-Mail-Domain",
@@ -9357,6 +9394,23 @@
       ],
       "Credits will be added to your balance": [
         "Das Guthaben wird dir gutgeschrieben."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Möchtest du wirklich fortfahren?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Wenn du dein ${ planTitle }-Abonnement änderst, kannst du den Zugriff auf einige Funktionen verlieren."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } behalten"
+      ],
+      "Yes, I'm sure": [
+        "Ja, ich bin sicher"
+      ],
+      "Your plan includes this feature already.": [
+        "Dein Abonnement beinhaltet diese Funktion bereits."
       ]
     },
     "Payments.plan_name": {
@@ -11335,6 +11389,9 @@
       "Apply gift code": [
         "Geschenkcode anwenden"
       ],
+      "Appointment details": [
+        "Termindetails"
+      ],
       "Are you sure?": [
         "Bist du sicher?"
       ],
@@ -11370,6 +11427,9 @@
       ],
       "Change password": [
         "Passwort ändern"
+      ],
+      "Choose a time": [
+        "Uhrzeit wählen"
       ],
       "Choose how many times this event will repeat": [
         "Auswählen, wie häufig dieser Termin wiederholt werden soll"

@@ -174,6 +174,9 @@
       "Close navigation": [
         "Chiudi navigazione"
       ],
+      "Close sidebar": [
+        "Chiudi la barra laterale"
+      ],
       "Close this banner": [
         "Chiudi questo banner"
       ],
@@ -224,6 +227,9 @@
       ],
       "Copy alias “${ name }”": [
         "Copia l'alias “${ name }”"
+      ],
+      "Copy booking page link": [
+        "Copia il link della pagina di prenotazione"
       ],
       "Copy email address": [
         "Copia indirizzo email"
@@ -305,6 +311,9 @@
         "Elimina ${ selectedCount } gruppo di contatti",
         "Elimina ${ selectedCount } gruppi di contatti"
       ],
+      "Delete booking page": [
+        "Elimina pagina di prenotazione"
+      ],
       "Delete contact": [
         "Elimina contatto"
       ],
@@ -343,6 +352,9 @@
       ],
       "Edit": [
         "Modifica"
+      ],
+      "Edit booking page": [
+        "Modifica pagina di prenotazione"
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -1947,6 +1959,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Aggiungi ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Sicurezza avanzata dell'account e della rete in un unico piano"
+      ],
       "High-speed chats and advanced AI features.": [
         "Chat veloci e funzioni AI avanzate."
       ]
@@ -3387,12 +3402,6 @@
       ],
       "120 minutes": [
         "120 minuti"
-      ],
-      "15 minutes": [
-        "15 minuti"
-      ],
-      "15m": [
-        "15min"
       ],
       "1h": [
         "1h"
@@ -5273,6 +5282,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Chiunque abbia questo link può vedere se sei libero o occupato sul tuo calendario. Non può vedere i dettagli dell'evento, come titolo, posizione o partecipanti."
       ],
+      "Appointment duration": [
+        "Durata dell'appuntamento"
+      ],
       "Are you sure you want to discard your import?": [
         "Sei sicuro di voler annullare la tua importazione?"
       ],
@@ -5332,6 +5344,9 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Non trovi gli eventi che cerchi? Alcuni eventi nei calendari nascosti corrispondono alla tua ricerca. Per vedere questi risultati, attiva la visibilità per ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create booking range across days": [
+        "Non puoi creare un intervallo di prenotazione su più giorni."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
@@ -5580,6 +5595,9 @@
       "High Priority": [
         "Priorità alta"
       ],
+      "Host": [
+        "Host"
+      ],
       "How long should an appointment last?": [
         "Quanto dovrebbe durare un appuntamento?"
       ],
@@ -5710,11 +5728,17 @@
       "Loading events": [
         "Caricamento eventi"
       ],
+      "Location": [
+        "Luogo"
+      ],
       "Low Priority": [
         "Priorità bassa"
       ],
       "Manage your calendars": [
         "Gestisci i tuoi calendari"
+      ],
+      "Manange booking page": [
+        "Gestisci pagina di prenotazione"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -5748,9 +5772,6 @@
       ],
       "New": [
         "Nuovo"
-      ],
-      "No available slots for this day": [
-        "Nessuno slot disponibile per questo giorno"
       ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
@@ -5891,6 +5912,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Attendi mentre cerchiamo contatti che contengono dati crittografati con la chiave inattiva."
       ],
+      "Powered by ${ protonButton }": [
+        "Alimentato da ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Le modifiche precedenti di questa serie andranno perse."
       ],
@@ -5899,6 +5923,9 @@
       ],
       "Primary": [
         "Principale"
+      ],
+      "Privacy by default": [
+        "Privacy predefinita"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navigazione privata (o modalità \"incognito\") è utile solo per tenere nascosta la tua attività sul tuo dispositivo. Impedisce al tuo browser di salvare cronologia e cookie, ma non ti rende invisibile. Il tuo ISP, l'amministratore di rete e i siti Web che visiti possono comunque vedere cosa fai online."
@@ -6317,6 +6344,9 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Hai precedentemente rifiutato quest'invito. Chiedi al proprietario un nuovo invito"
+      ],
+      "You will loose all unsaved changes.": [
+        "Perderai tutte le modifiche non salvate."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderai l'accesso alle funzionalità del piano ${ planTitle } a partire da questa data."
@@ -7220,9 +7250,6 @@
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
-      "Bookings pages": [
-        "Pagine di prenotazione"
-      ],
       "Calendars": [
         "Calendari"
       ],
@@ -7933,6 +7960,9 @@
       "End-to-end encryption": [
         "Crittografia end-to-end"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Vantaggi esistenti del piano ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Scaricamenti P2P/BitTorrent veloci"
       ],
@@ -8151,6 +8181,10 @@
         "Condivisione delle casseforti (fino a ${ n } persona)",
         "Condivisione delle casseforti (fino a ${ n } persone)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Condivisione delle casseforti (fino a ${ n } persona",
+        "Condivisione delle casseforti fino a ${ n } persone"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
       ]
@@ -8254,9 +8288,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Email sicura con funzioni avanzate per le tue comunicazioni quotidiane."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluzioni su misura per organizzazioni più grandi con esigenze di sicurezza specifiche"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La soluzione VPN dedicata che fornisce un accesso sicuro, senza restrizioni e ad alta velocità a Internet."
       ],
@@ -8299,11 +8330,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8526,9 +8552,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Supporto 24/7"
-      ],
       "Access advanced VPN features": [
         "Accedi a funzionalità VPN avanzate"
       ],
@@ -8574,9 +8597,6 @@
       ],
       "Private gateways": [
         "Gateway privati"
-      ],
-      "Require 2FA": [
-        "Richiedi 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Supporto per ${ n } dominio email personalizzato",
@@ -9353,6 +9373,23 @@
       ],
       "Credits will be added to your balance": [
         "I crediti verranno aggiunti al tuo saldo."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Sei sicuro di voler procedere?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Se scegli di modificare il tuo ${ planTitle } piano, potresti perdere l'accesso ad alcune funzionalità."
+      ],
+      "Keep ${ planTitle }": [
+        "Rimani con ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sì, ne sono sicuro"
+      ],
+      "Your plan includes this feature already.": [
+        "Il tuo piano include già questa funzionalità."
       ]
     },
     "Payments.plan_name": {
@@ -11330,6 +11367,9 @@
       ],
       "Apply gift code": [
         "Applica codice regalo"
+      ],
+      "Appointment details": [
+        "Dettagli dell'appuntamento"
       ],
       "Are you sure?": [
         "Sei sicuro?"

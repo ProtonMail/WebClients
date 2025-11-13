@@ -228,6 +228,9 @@
       "Copy alias “${ name }”": [
         "Copiar o alias \"${ name }\""
       ],
+      "Copy booking page link": [
+        "Copiar link da página de agendamento"
+      ],
       "Copy email address": [
         "Copiar endereço de email"
       ],
@@ -308,6 +311,9 @@
         "Excluir ${ selectedCount } grupo de contatos",
         "Excluir ${ selectedCount } grupos de contatos"
       ],
+      "Delete booking page": [
+        "Excluir página de agendamentos"
+      ],
       "Delete contact": [
         "Excluir contato"
       ],
@@ -346,6 +352,9 @@
       ],
       "Edit": [
         "Editar"
+      ],
+      "Edit booking page": [
+        "Editar página de agendamentos"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -748,6 +757,9 @@
       ],
       "See plan features": [
         "Veja recursos do plano"
+      ],
+      "See previous availability": [
+        "Veja a disponibilidade anterior"
       ],
       "Select ${ planOrAppName }": [
         "Selecionar ${ planOrAppName }"
@@ -3391,12 +3403,6 @@
       "120 minutes": [
         "120 minutos"
       ],
-      "15 minutes": [
-        "15 minutos"
-      ],
-      "15m": [
-        "15 min"
-      ],
       "1h": [
         "1h"
       ],
@@ -5276,6 +5282,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Qualquer um com este link pode ver se você está livre ou ocupado no seu calendário. Eles não podem ver os detalhes do evento, como título, localização ou participantes."
       ],
+      "Appointment duration": [
+        "Duração do compromisso"
+      ],
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
       ],
@@ -5583,6 +5592,9 @@
       "High Priority": [
         "Alta prioridade"
       ],
+      "Host": [
+        "Anfitrião"
+      ],
       "How long should an appointment last?": [
         "Quanto tempo deve durar um compromisso?"
       ],
@@ -5713,11 +5725,17 @@
       "Loading events": [
         "Carregando eventos"
       ],
+      "Location": [
+        "Localização"
+      ],
       "Low Priority": [
         "Baixa prioridade"
       ],
       "Manage your calendars": [
         "Gerenciar seus calendários"
+      ],
+      "Manange booking page": [
+        "Gerenciar página de agendamentos"
       ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
@@ -5751,9 +5769,6 @@
       ],
       "New": [
         "Novo"
-      ],
-      "No available slots for this day": [
-        "Nenhum horário disponível para este dia"
       ],
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
@@ -5894,6 +5909,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
+      "Powered by ${ protonButton }": [
+        "Com tecnologia da ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "As modificações anteriores nesta série serão perdidas."
       ],
@@ -5902,6 +5920,9 @@
       ],
       "Primary": [
         "Principal"
+      ],
+      "Privacy by default": [
+        "Privacidade por padrão"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "A navegação privada (ou modo “incógnito”) é útil apenas para manter sua atividade oculta no seu dispositivo. Ela impede que seu navegador salve o histórico e os cookies, mas não o torna invisível. Seu ISP, administrador de rede e os sites que você visita ainda podem ver o que você faz on-line."
@@ -6320,6 +6341,9 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Você anteriormente rejeitou esse convite. Pergunte ao proprietário para reenviar o convite"
+      ],
+      "You will loose all unsaved changes.": [
+        "Você perderá todas as alterações não salvas."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
@@ -7223,7 +7247,7 @@
       "Add a gift code": [
         "Adicionar código de vale-presente"
       ],
-      "Bookings pages": [
+      "Booking pages": [
         "Páginas de agendamentos"
       ],
       "Calendars": [
@@ -7936,6 +7960,9 @@
       "End-to-end encryption": [
         "Criptografia de ponta a ponta"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Benefícios atuais do plano ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Downloads rápidos de P2P/BitTorrent"
       ],
@@ -8154,6 +8181,10 @@
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartilhar cofres com até ${ n } pessoa",
+        "Compartilhar cofres com até ${ n } pessoas"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
       ]
@@ -8257,9 +8288,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com recursos avançados para suas comunicações do dia a dia."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluções sob medida para organizações maiores com necessidades específicas de segurança"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A solução de VPN dedicada que oferece acesso seguro, irrestrito e de alta velocidade à internet."
       ],
@@ -8302,11 +8330,6 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8529,9 +8552,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Suporte 24/7"
-      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
@@ -8577,9 +8597,6 @@
       ],
       "Private gateways": [
         "Gateways privados"
-      ],
-      "Require 2FA": [
-        "Requer A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Suporte para ${ n } domínio de e-mail personalizado",
@@ -9362,6 +9379,23 @@
       ],
       "Credits will be added to your balance": [
         "Créditos serão adicionados ao seu saldo."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Tem certeza de que deseja continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Se você optar por modificar seu ${ planTitle } plano, você pode perder o acesso a alguns recursos."
+      ],
+      "Keep ${ planTitle }": [
+        "Manter o ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sim, tenho certeza"
+      ],
+      "Your plan includes this feature already.": [
+        "Seu plano já inclui esse recurso."
       ]
     },
     "Payments.plan_name": {
@@ -11340,6 +11374,9 @@
       "Apply gift code": [
         "Adicionar código de vale-presente"
       ],
+      "Appointment details": [
+        "Detalhes do compromisso"
+      ],
       "Are you sure?": [
         "Você tem certeza?"
       ],
@@ -11375,6 +11412,9 @@
       ],
       "Change password": [
         "Alterar senha"
+      ],
+      "Choose a time": [
+        "Escolha um horário"
       ],
       "Choose how many times this event will repeat": [
         "Escolha quantas vezes este evento irá repetir"

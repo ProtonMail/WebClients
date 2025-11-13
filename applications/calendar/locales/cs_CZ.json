@@ -176,6 +176,9 @@
       "Close navigation": [
         "Zavřít menu"
       ],
+      "Close sidebar": [
+        "Zavřít postranní panel"
+      ],
       "Close this banner": [
         "Zavřít tento banner"
       ],
@@ -226,6 +229,9 @@
       ],
       "Copy alias “${ name }”": [
         "Kopírovat alias \"${ name }\""
+      ],
+      "Copy booking page link": [
+        "Kopírovat odkaz na rezervační stránku"
       ],
       "Copy email address": [
         "Kopírovat e-mailovou adresu"
@@ -311,6 +317,9 @@
         "Smazat ${ selectedCount } skupin kontaktů",
         "Smazat ${ selectedCount } skupin kontaktů"
       ],
+      "Delete booking page": [
+        "Smazat rezervační stránku"
+      ],
       "Delete contact": [
         "Smazat kontakt"
       ],
@@ -349,6 +358,9 @@
       ],
       "Edit": [
         "Upravit"
+      ],
+      "Edit booking page": [
+        "Upravit rezervační stránku"
       ],
       "Edit email address": [
         "Upravit e-mailovou adresu"
@@ -1983,6 +1995,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Přidat ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Pokročilé zabezpečení účtu a sítě v jednom tarifu"
+      ],
       "High-speed chats and advanced AI features.": [
         "Velmi rychlé konverzace a pokročilé funkce AI."
       ]
@@ -3433,12 +3448,6 @@
       ],
       "120 minutes": [
         "120 minut"
-      ],
-      "15 minutes": [
-        "15 minut"
-      ],
-      "15m": [
-        "15m"
       ],
       "1h": [
         "1h"
@@ -5419,6 +5428,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Kdokoli s tímto odkazem uvidí, zda jste volní nebo zaneprázdněni ve Vašem kalendáři. Nemohou vidět podrobnosti o události, jako je název, umístění nebo účastníci."
       ],
+      "Appointment duration": [
+        "Doba trvání schůzky"
+      ],
       "Are you sure you want to discard your import?": [
         "Jste si jistí, že chcete zahodit váš import?"
       ],
@@ -5478,6 +5490,9 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Nemůžete najít události, které hledáte? Některé události ve skrytých kalendářích odpovídají vašemu dotazu. Chcete-li tyto výsledky zobrazit, zapněte viditelnost pro ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create booking range across days": [
+        "Nelze vytvořit rozsah rezervace přesahující několik dní"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
@@ -5734,6 +5749,9 @@
       "High Priority": [
         "Vysoká priorita"
       ],
+      "Host": [
+        "Hostitel"
+      ],
       "How long should an appointment last?": [
         "Jak dlouho by měla trvat schůzka?"
       ],
@@ -5866,11 +5884,17 @@
       "Loading events": [
         "Načítání událostí"
       ],
+      "Location": [
+        "Umístění"
+      ],
       "Low Priority": [
         "Nízká priorita"
       ],
       "Manage your calendars": [
         "Spravovat vaše kalendáře"
+      ],
+      "Manange booking page": [
+        "Spravovat rezervační stránku"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -5904,9 +5928,6 @@
       ],
       "New": [
         "Nově"
-      ],
-      "No available slots for this day": [
-        "V tomto dni nejsou k dispozici žádné volné termíny"
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
@@ -6049,6 +6070,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, vyčkejte dokud nenajdeme kontakty, které jsou šifrované neaktivním klíčem."
       ],
+      "Powered by ${ protonButton }": [
+        "Poháněno ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Předchozí úpravy této série budou ztraceny."
       ],
@@ -6057,6 +6081,9 @@
       ],
       "Primary": [
         "Hlavní"
+      ],
+      "Privacy by default": [
+        "Soukromí ve výchozím stavu"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Soukromé prohlížení (nebo režim \"inkognito\") je užitečné pouze pro skrytí vaší aktivity v zařízení. Zabrání prohlížeči ukládat historii a soubory cookies, ale nezpůsobí, že budete neviditelní. Váš ISP, správce sítě a webové stránky, které navštěvujete, mohou stále vidět, co děláte online."
@@ -6483,6 +6510,9 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Tuto pozvánku jste již dříve odmítli. Požádejte vlastníka o opětovné zaslání pozvánky"
+      ],
+      "You will loose all unsaved changes.": [
+        "Ztratíte všechny neuložené změny."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "K tomuto datu ztratíte přístup k funkcím ${ planTitle }."
@@ -7402,9 +7432,6 @@
       "Add a gift code": [
         "Přidat dárkový kód"
       ],
-      "Bookings pages": [
-        "Rezervační stránky"
-      ],
       "Calendars": [
         "Kalendáře"
       ],
@@ -8165,6 +8192,9 @@
       "End-to-end encryption": [
         "Koncové šifrování"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Stávající výhody tarifu ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Rychlé P2P/BitTorrent stahování"
       ],
@@ -8393,6 +8423,12 @@
         "Sdílení trezoru (až ${ n } osob)",
         "Sdílení trezoru (až ${ n } osob)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Sdílení trezoru s ${ n } osobou",
+        "Sdílení trezoru až se ${ n } osobami",
+        "Sdílení trezoru až s ${ n } osobami",
+        "Sdílení trezoru až s ${ n } osobami"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
       ]
@@ -8499,9 +8535,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Dedikované VPN řešení, které nabízí bezpečný, neomezený, vysokorychlostní přístup k internetu."
@@ -8769,9 +8802,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Podpora 24/7"
-      ],
       "Access advanced VPN features": [
         "Odemkněte pokročilé VPN funkce"
       ],
@@ -8819,9 +8849,6 @@
       ],
       "Private gateways": [
         "Soukromé brány"
-      ],
-      "Require 2FA": [
-        "Požadování 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Podpora ${ n } vlastní e-mailové domény",
@@ -9664,6 +9691,23 @@
       ],
       "Credits will be added to your balance": [
         "Kredity budou přidány k vašemu zůstatku"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Určitě chcete pokračovat?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Pokud se rozhodnete upravit váš ${ planTitle } tarif, můžete ztratit přístup k některým funkcím."
+      ],
+      "Keep ${ planTitle }": [
+        "Ponechat ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ano, potvrzuji"
+      ],
+      "Your plan includes this feature already.": [
+        "Váš tarif již zahrnuje tuto funkci."
       ]
     },
     "Payments.plan_name": {
@@ -11743,6 +11787,9 @@
       ],
       "Apply gift code": [
         "Použít dárkový kód"
+      ],
+      "Appointment details": [
+        "Detaily schůzky"
       ],
       "Are you sure?": [
         "Jste si jisti?"
