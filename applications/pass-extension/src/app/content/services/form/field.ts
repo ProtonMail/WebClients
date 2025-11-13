@@ -15,7 +15,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { onNextTick } from '@proton/pass/utils/time/next-tick';
+import { DOM_SETTLE_MS, onNextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
 
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
@@ -153,7 +153,7 @@ export const createFieldHandles = ({
          * attached action effect : as there is no way to attach extra data to a focus event,
          * so we rely on adding custom properties on the field element itself */
         focus(options) {
-            if (options?.preventAction) field.preventAction(1);
+            if (options?.preventAction) field.preventAction(DOM_SETTLE_MS);
             else actionTrap.release();
 
             const isFocusedField = isActiveElement(field.element);
