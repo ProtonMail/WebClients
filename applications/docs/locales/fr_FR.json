@@ -1491,6 +1491,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Sécurité avancée des comptes et du réseau dans un seul abonnement"
+      ],
       "High-speed chats and advanced AI features.": [
         "Discussions rapides et fonctionnalités d'IA avancées."
       ]
@@ -3282,6 +3285,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Veuillez vous connecter avec une adresse Gmail qui transfère déjà vers ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Veuillez vous connecter avec la même adresse Gmail que celle que vous avez connectée à l'origine"
       ]
@@ -4921,6 +4927,12 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Les documents publics ne sont pas encore activés pour votre organisation."
+      ],
+      "Recent documents": [
+        "Documents récents"
+      ],
+      "Recent spreadsheets": [
+        "Feuilles de calcul récentes"
       ],
       "Recents": [
         "Récents"
@@ -6730,6 +6742,9 @@
       "End-to-end encryption": [
         "Chiffrement de bout en bout"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Avantages existants de l'abonnement ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Téléchargements P2P/BitTorrent rapides"
       ],
@@ -6948,6 +6963,10 @@
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Partage du coffre-fort jusqu'à ${ n } personne",
+        "Partage du coffre-fort avec jusqu'à ${ n } personnes"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
       ]
@@ -7047,9 +7066,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solution VPN dédiée qui offre un accès sécurisé, sans limitation et ultra-rapide à internet."
@@ -7309,9 +7325,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Support 24h/24 et 7j/7"
-      ],
       "Access advanced VPN features": [
         "Accédez à des fonctionnalités VPN avancées."
       ],
@@ -7357,9 +7370,6 @@
       ],
       "Private gateways": [
         "Passerelles privées"
-      ],
-      "Require 2FA": [
-        "Demande d'authentification A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Prise en charge pour ${ n } domaine de messagerie personnalisé",
