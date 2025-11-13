@@ -12,7 +12,8 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { IconName } from '@proton/icons/types';
-import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
+import { getApplicationNameWithPlatform } from '@proton/shared/lib/apps/getApplicationNameWithPlatform';
+import { DESKTOP_PLATFORMS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -84,31 +85,44 @@ const DownloadButton = ({ link, ariaLabel }: { link?: string; ariaLabel?: string
     );
 };
 
-const getPlatformCopy = (platform: DESKTOP_PLATFORMS) => {
-    switch (platform) {
-        case DESKTOP_PLATFORMS.WINDOWS:
-            return c('Title').t`For Windows`;
-        case DESKTOP_PLATFORMS.MACOS:
-            return c('Title').t`For macOS`;
-        case DESKTOP_PLATFORMS.LINUX:
-            return c('Title').t`For Linux`;
-    }
-};
-
 const DownloadCard = ({ version, icon, platform, isBeta, children }: DownloadSectionProps) => {
+    const linkSnapStore = (
+        <a key="snap-store-link" href="https://snapcraft.io/proton-mail" target="_blank" rel="noopener noreferrer">
+            {
+                // translator: "Snap store" is a proper noun (Ubuntu's app store). Full sentence: "On Ubuntu? You can also download the app through the Snap store"
+                c('Link').t`Snap store`
+            }
+        </a>
+    );
+
     return (
         <div className="flex">
             <div className="border p-7 flex-1 rounded flex flex-column items-center">
                 <Icon size={12} name={icon} className="mb-4" />
-                <h3 className="text-bold text-xl m-0 text-center">{getPlatformCopy(platform)}</h3>
+                <h3 className="text-bold text-xl m-0 text-center">
+                    {getApplicationNameWithPlatform(MAIL_APP_NAME, platform)}
+                </h3>
                 {version.length ? (
                     <div className="flex gap-2 items-baseline">
+                        <span className="text-center">{c('Info').jt`Version ${version}`}</span>
                         {isBeta && <Pill className="mt-2">{c('Label').t`Beta`}</Pill>}
-                        <span className="text-center">{version}</span>
                     </div>
                 ) : null}
 
                 <div className="mt-4 w-full">{children}</div>
+
+                {platform === DESKTOP_PLATFORMS.LINUX && (
+                    <div className="mt-4 pt-4 border-t text-sm text-center color-weak">
+                        <b className="color-norm">{
+                            // translator: "Ubuntu" is a proper noun (Linux distribution name) that should remain unchanged.  Complete sentence: "On Ubuntu? You can also download the app through the Snap store."
+                            c('Info').t`On Ubuntu?`
+                        }</b>{' '}
+                        {
+                            // translator: ${linkSnapStore} will be replaced with the "Snap store" link.  Complete sentence: "On Ubuntu? You can also download the app through the Snap store."
+                            c('Download link').jt`You can also download the app through the ${linkSnapStore}.`
+                        }
+                    </div>
+                )}
             </div>
         </div>
     );
