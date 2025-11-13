@@ -1,4 +1,4 @@
-import type { NodeType } from '@proton/drive';
+import type { MemberRole, NodeType } from '@proton/drive';
 
 import type { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 
@@ -8,19 +8,17 @@ export enum DirectoryTreeRootType {
 }
 
 export interface TreeStoreItem {
-    uid: string;
+    // Unique within the filesystem
+    nodeUid: string;
+    // Unique within the directory tree
+    // Format: $PARENT_UID___$NODE_UID
+    treeItemId: string;
     parentUid: string | null;
     name: string;
     type: NodeType | DirectoryTreeRootType;
-    expanded: boolean;
     expandable: boolean;
-}
-
-export interface DirectoryTreeState {
-    items: Map<string, TreeStoreItem>;
-    addItem: (newItem: TreeStoreItem) => void;
-    getChildrenOf: (uid: string) => TreeStoreItem[];
-    setExpanded: (uid: string, expanded: boolean) => void;
+    isSharedWithMe: boolean;
+    highestEffectiveRole?: MemberRole;
 }
 
 export type DirectoryTreeStore = ReturnType<typeof directoryTreeStoreFactory>;

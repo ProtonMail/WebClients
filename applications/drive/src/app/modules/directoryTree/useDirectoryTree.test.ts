@@ -1,9 +1,10 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { NodeType, useDrive } from '@proton/drive';
+import { MemberRole, NodeType, useDrive } from '@proton/drive';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
+import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import { DirectoryTreeRootType } from './types';
 
 jest.mock('@proton/drive');
@@ -24,7 +25,7 @@ const createMockDevice = (rootFolderUid: string, name: string) => ({
 
 const createMockNode = (uid: string, name: string, type: NodeType) => ({
     ok: true,
-    value: { uid, name, type },
+    value: { uid, name, type, directRole: MemberRole.Viewer, isShared: false },
 });
 
 const createMockIterator = async function* <T>(items: T[]) {
@@ -35,17 +36,24 @@ const createMockIterator = async function* <T>(items: T[]) {
 
 const MY_FILES_ROOT_UID = 'my-files-root-uid';
 
+// Helper function to find a tree item in the array structure
+const findTreeItem = (treeRoots: any[], nodeUid: string): any => {
+    return treeRoots.find((item) => item.nodeUid === nodeUid);
+};
+
 describe('useDirectoryTree', () => {
     const mockGetMyFilesRootFolder = jest.fn();
     const mockIterateDevices = jest.fn();
     const mockIterateSharedNodesWithMe = jest.fn();
     const mockIterateFolderChildren = jest.fn();
+    const mockGetNode = jest.fn();
 
     const mockDrive = {
         getMyFilesRootFolder: mockGetMyFilesRootFolder,
         iterateDevices: mockIterateDevices,
         iterateSharedNodesWithMe: mockIterateSharedNodesWithMe,
         iterateFolderChildren: mockIterateFolderChildren,
+        getNode: mockGetNode,
     };
 
     const createMyFilesRoot = (uid = MY_FILES_ROOT_UID) => {
@@ -74,53 +82,59 @@ describe('useDirectoryTree', () => {
                 await result.current.initializeTree();
             });
 
-            const rootItems = result.current.rootItems;
-            expect(rootItems).toHaveLength(3);
+            expect(result.current.treeRoots).toHaveLength(3);
 
-            // My files
-            expect(rootItems[0]).toMatchObject({
-                uid: MY_FILES_ROOT_UID,
+            const myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFilesRoot).toMatchObject({
                 parentUid: null,
                 name: 'My files',
                 type: NodeType.Folder,
-                expanded: false,
                 expandable: true,
+                children: null,
             });
 
-            // Devices
-            expect(rootItems[1]).toMatchObject({
-                uid: 'devices-root',
+            const devicesRoot = findTreeItem(result.current.treeRoots, DEVICES_ROOT_ID);
+            expect(devicesRoot).toMatchObject({
                 parentUid: null,
                 name: 'Computers',
                 type: DirectoryTreeRootType.PlaceholderRoot,
-                expanded: false,
                 expandable: true,
+                children: null,
             });
 
-            // Shared with me
-            expect(rootItems[2]).toMatchObject({
-                uid: 'shared-with-me-root',
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(sharedRoot).toMatchObject({
                 parentUid: null,
                 name: 'Shared with me',
                 type: DirectoryTreeRootType.PlaceholderRoot,
-                expanded: false,
                 expandable: true,
+                children: null,
             });
         });
 
-        it('should handle error when My files root cannot be loaded', async () => {
+        it('should handle degraded My files root node', async () => {
             mockGetMyFilesRootFolder.mockResolvedValue({
                 ok: false,
+                error: {
+                    uid: 'degraded-root-uid',
+                    type: NodeType.Folder,
+                },
             });
 
             const useDirectoryTreeWithStore = directoryTreeFactory();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
-                await expect(result.current.initializeTree()).rejects.toThrow('Cannot load "My files" root folder');
+                await result.current.initializeTree();
             });
 
-            expect(mockedHandleSdkError).toHaveBeenCalledWith(expect.any(Error));
+            expect(result.current.treeRoots).toHaveLength(3);
+            const degradedRoot = findTreeItem(result.current.treeRoots, 'degraded-root-uid');
+            expect(degradedRoot).toMatchObject({
+                parentUid: null,
+                name: 'My files',
+                type: NodeType.Folder,
+            });
         });
     });
 
@@ -136,20 +150,23 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand('devices-root');
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
             });
 
-            const children = result.current.getChildrenOf('devices-root');
-            expect(children).toHaveLength(2);
-            expect(children[0].uid).toBe('device-1');
-            expect(children[0].name).toBe('Device 1');
-            expect(children[1].uid).toBe('device-2');
-            expect(children[1].name).toBe('Device 2');
+            const devicesRoot = findTreeItem(result.current.treeRoots, DEVICES_ROOT_ID);
+            expect(devicesRoot.children).not.toBeNull();
+            expect(Object.keys(devicesRoot.children)).toHaveLength(2);
+            expect(devicesRoot.children['device-1'].name).toBe('Device 1');
+            expect(devicesRoot.children['device-2'].name).toBe('Device 2');
         });
 
-        it('should skip devices without valid names', async () => {
+        it('should handle devices without valid names gracefully', async () => {
             createMyFilesRoot();
-            const devices = [createMockDevice('device-1', 'Device 1'), { uid: 'device-2', name: { ok: false } }];
+            const mockError = new Error('Device name unavailable');
+            const devices = [
+                createMockDevice('device-1', 'Device 1'),
+                { rootFolderUid: 'device-2', name: { ok: false, error: mockError } },
+            ];
 
             mockIterateDevices.mockReturnValue(createMockIterator(devices));
 
@@ -158,12 +175,13 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand('devices-root');
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
             });
 
-            const children = result.current.getChildrenOf('devices-root');
-            expect(children).toHaveLength(1);
-            expect(children[0].uid).toBe('device-1');
+            const devicesRoot = findTreeItem(result.current.treeRoots, DEVICES_ROOT_ID);
+            expect(devicesRoot.children).not.toBeNull();
+            expect(devicesRoot.children['device-1'].name).toBe('Device 1');
+            expect(devicesRoot.children['device-2'].name).toBe('⚠️ Undecryptable device');
         });
 
         it('should handle errors when loading devices', async () => {
@@ -177,7 +195,7 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await expect(result.current.toggleExpand('devices-root')).rejects.toThrow();
+                await expect(result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID))).rejects.toThrow();
             });
 
             expect(mockedHandleSdkError).toHaveBeenCalledWith(expect.any(Error), {
@@ -201,15 +219,14 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand('shared-with-me-root');
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
             });
 
-            const children = result.current.getChildrenOf('shared-with-me-root');
-            expect(children).toHaveLength(2);
-            expect(children[0].uid).toBe('shared-1');
-            expect(children[0].name).toBe('Shared Folder 1');
-            expect(children[1].uid).toBe('shared-2');
-            expect(children[1].name).toBe('Shared Folder 2');
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(sharedRoot.children).not.toBeNull();
+            expect(Object.keys(sharedRoot.children)).toHaveLength(2);
+            expect(sharedRoot.children['shared-1'].name).toBe('Shared Folder 1');
+            expect(sharedRoot.children['shared-2'].name).toBe('Shared Folder 2');
         });
 
         it('should filter out non-folder items when onlyFolders option is true', async () => {
@@ -226,18 +243,28 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand('shared-with-me-root');
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
             });
 
-            const children = result.current.getChildrenOf('shared-with-me-root');
-            expect(children).toHaveLength(1);
-            expect(children[0].uid).toBe('shared-1');
-            expect(children[0].type).toBe(NodeType.Folder);
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(sharedRoot.children).not.toBeNull();
+            expect(Object.keys(sharedRoot.children)).toHaveLength(1);
+            expect(sharedRoot.children['shared-1'].type).toBe(NodeType.Folder);
         });
 
-        it('should skip failed shared nodes', async () => {
+        it('should handle degraded shared nodes gracefully', async () => {
             createMyFilesRoot();
-            const sharedNodes = [createMockNode('shared-1', 'Shared Folder 1', NodeType.Folder), { ok: false }];
+            const sharedNodes = [
+                createMockNode('shared-1', 'Shared Folder 1', NodeType.Folder),
+                {
+                    ok: false,
+                    error: {
+                        uid: 'degraded-shared',
+                        type: NodeType.Folder,
+                        name: 'Degraded Name',
+                    },
+                },
+            ];
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
 
@@ -246,12 +273,14 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand('shared-with-me-root');
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
             });
 
-            const children = result.current.getChildrenOf('shared-with-me-root');
-            expect(children).toHaveLength(1);
-            expect(children[0].uid).toBe('shared-1');
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(sharedRoot.children).not.toBeNull();
+            expect(Object.keys(sharedRoot.children)).toHaveLength(2);
+            expect(sharedRoot.children['shared-1']).toBeDefined();
+            expect(sharedRoot.children['degraded-shared'].name).toBe('Degraded Name');
         });
 
         it('should set expandable property correctly for folders and files', async () => {
@@ -268,15 +297,13 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand('shared-with-me-root');
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
             });
 
-            const children = result.current.getChildrenOf('shared-with-me-root');
-            expect(children).toHaveLength(2);
-
-            // Folder should be expandable, file should not
-            expect(children[0].expandable).toBe(true);
-            expect(children[1].expandable).toBe(false);
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(sharedRoot.children).not.toBeNull();
+            expect(sharedRoot.children['shared-folder'].expandable).toBe(true);
+            expect(sharedRoot.children['shared-file'].expandable).toBe(false);
         });
 
         it('should handle errors when loading shared items', async () => {
@@ -290,7 +317,9 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await expect(result.current.toggleExpand('shared-with-me-root')).rejects.toThrow();
+                await expect(
+                    result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID))
+                ).rejects.toThrow();
             });
 
             expect(mockedHandleSdkError).toHaveBeenCalledWith(expect.any(Error), {
@@ -312,23 +341,23 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand(MY_FILES_ROOT_UID);
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
             // Check if the item is expanded
-            const itemBeforeCollapse = result.current.rootItems.find((item: any) => item.uid === MY_FILES_ROOT_UID);
-            expect(itemBeforeCollapse?.expanded).toBe(true);
+            let myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFilesRoot.children).not.toBeNull();
 
             await act(async () => {
-                await result.current.toggleExpand(MY_FILES_ROOT_UID);
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
             // Check if the item is collapsed
-            const itemAfterCollapse = result.current.rootItems.find((item: any) => item.uid === MY_FILES_ROOT_UID);
-            expect(itemAfterCollapse?.expanded).toBe(false);
+            myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFilesRoot.children).toBeNull();
         });
 
-        it('should throw error when toggling non-existent uid', async () => {
+        it('should throw error when toggling with invalid treeItemId', async () => {
             createMyFilesRoot();
 
             const useDirectoryTreeWithStore = directoryTreeFactory();
@@ -339,8 +368,9 @@ describe('useDirectoryTree', () => {
             });
 
             await act(async () => {
-                await expect(result.current.toggleExpand('non-existent-uid')).rejects.toThrow(
-                    'Expanding non-existent directory tree item'
+                // Invalid treeItemId will extract uid and throw error if item doesn't exist
+                await expect(result.current.toggleExpand('some-parent___non-existent-uid')).rejects.toThrow(
+                    'Failed to expand folder'
                 );
             });
 
@@ -362,25 +392,31 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand(MY_FILES_ROOT_UID);
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
             expect(mockIterateFolderChildren).toHaveBeenCalledWith(MY_FILES_ROOT_UID, undefined);
 
-            // Verify the item is now marked as expanded
-            const expandedItem = result.current.rootItems.find((item: any) => item.uid === MY_FILES_ROOT_UID);
-            expect(expandedItem?.expanded).toBe(true);
-
-            const childrenResult = result.current.getChildrenOf(MY_FILES_ROOT_UID);
-            expect(childrenResult).toHaveLength(2);
-            expect(childrenResult[0].uid).toBe('child-1');
-            expect(childrenResult[1].uid).toBe('child-2');
+            const myFiles = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFiles.children).not.toBeNull();
+            expect(myFiles.children['child-1']).toBeDefined();
+            expect(myFiles.children['child-2']).toBeDefined();
         });
 
-        it('should skip failed child nodes', async () => {
+        it('should handle degraded child nodes gracefully', async () => {
             createMyFilesRoot();
 
-            const children = [createMockNode('child-1', 'Child 1', NodeType.Folder), { ok: false }];
+            const children = [
+                createMockNode('child-1', 'Child 1', NodeType.Folder),
+                {
+                    ok: false,
+                    error: {
+                        uid: 'degraded-child',
+                        type: NodeType.File,
+                        name: 'Degraded File',
+                    },
+                },
+            ];
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
 
@@ -389,12 +425,13 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand(MY_FILES_ROOT_UID);
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
-            const childrenResult = result.current.getChildrenOf(MY_FILES_ROOT_UID);
-            expect(childrenResult).toHaveLength(1);
-            expect(childrenResult[0].uid).toBe('child-1');
+            const myFiles = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFiles.children).not.toBeNull();
+            expect(myFiles.children['child-1']).toBeDefined();
+            expect(myFiles.children['degraded-child'].name).toBe('Degraded File');
         });
 
         it('should set expandable correctly for child folders and files', async () => {
@@ -412,15 +449,13 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand(MY_FILES_ROOT_UID);
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
-            const childrenResult = result.current.getChildrenOf(MY_FILES_ROOT_UID);
-            expect(childrenResult).toHaveLength(2);
-
-            // Folder should be expandable, file should not
-            expect(childrenResult[0].expandable).toBe(true);
-            expect(childrenResult[1].expandable).toBe(false);
+            const myFiles = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFiles.children).not.toBeNull();
+            expect(myFiles.children['child-folder'].expandable).toBe(true);
+            expect(myFiles.children['child-file'].expandable).toBe(false);
         });
 
         it('should handle errors when loading folder children', async () => {
@@ -438,17 +473,19 @@ describe('useDirectoryTree', () => {
             });
 
             await act(async () => {
-                await expect(result.current.toggleExpand(MY_FILES_ROOT_UID)).rejects.toThrow('Failed to load children');
+                await expect(result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID))).rejects.toThrow(
+                    'Failed to load children'
+                );
             });
 
             expect(mockedHandleSdkError).toHaveBeenCalledWith(expect.any(Error), {
-                fallbackMessage: 'Failed to load folder children',
+                fallbackMessage: 'Failed to expand folder',
                 extra: { uid: MY_FILES_ROOT_UID },
             });
 
             // Item should remain collapsed
-            const item = result.current.rootItems.find((i: any) => i.uid === MY_FILES_ROOT_UID);
-            expect(item?.expanded).toBe(false);
+            const myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFilesRoot.children).toBeNull();
         });
 
         it('should throw error when expanding non-expandable item', async () => {
@@ -463,23 +500,19 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand(MY_FILES_ROOT_UID);
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
             await act(async () => {
-                await expect(result.current.toggleExpand('child-file')).rejects.toThrow(
-                    'Expanding non-expandable directory tree item'
-                );
+                await expect(
+                    result.current.toggleExpand(makeTreeItemId(MY_FILES_ROOT_UID, 'child-file'))
+                ).rejects.toThrow('Failed to expand folder');
             });
-
-            // Verify the file remains unexpanded
-            const file = result.current.getChildrenOf(MY_FILES_ROOT_UID)[0];
-            expect(file.expanded).toBe(false);
         });
     });
 
-    describe('getChildrenOf', () => {
-        it('should return children of a given item', async () => {
+    describe('get', () => {
+        it('should return item by uid', async () => {
             createMyFilesRoot();
 
             const children = [createMockNode('child-1', 'Child 1', NodeType.Folder)];
@@ -491,16 +524,16 @@ describe('useDirectoryTree', () => {
 
             await act(async () => {
                 await result.current.initializeTree();
-                await result.current.toggleExpand(MY_FILES_ROOT_UID);
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
-            const childrenResult = result.current.getChildrenOf(MY_FILES_ROOT_UID);
+            const item = result.current.get('child-1');
 
-            expect(childrenResult).toHaveLength(1);
-            expect(childrenResult[0].uid).toBe('child-1');
+            expect(item?.nodeUid).toBe('child-1');
+            expect(item?.name).toBe('Child 1');
         });
 
-        it('should return empty array for non-existent uid', async () => {
+        it('should return undefined for non-existent uid', async () => {
             createMyFilesRoot();
 
             const useDirectoryTreeWithStore = directoryTreeFactory();
@@ -510,9 +543,419 @@ describe('useDirectoryTree', () => {
                 await result.current.initializeTree();
             });
 
-            const children = result.current.getChildrenOf('non-existent-uid');
+            const item = result.current.get('non-existent-uid');
 
-            expect(children).toHaveLength(0);
+            expect(item).toBeUndefined();
+        });
+    });
+
+    describe('tree structure', () => {
+        it('should have correct tree structure with nested children', async () => {
+            createMyFilesRoot();
+
+            const children = [
+                createMockNode('child-1', 'Child 1', NodeType.Folder),
+                createMockNode('child-2', 'Child 2', NodeType.File),
+            ];
+
+            mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+            });
+
+            // Tree should have 3 root items
+            expect(result.current.treeRoots).toHaveLength(3);
+            let myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFilesRoot).toBeDefined();
+            expect(myFilesRoot.children).toBeNull(); // Not expanded
+
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+
+            // After expanding, children should be an object
+            myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFilesRoot.children).not.toBeNull();
+            expect(Object.keys(myFilesRoot.children)).toHaveLength(2);
+            expect(myFilesRoot.children['child-1']).toMatchObject({
+                nodeUid: 'child-1',
+                name: 'Child 1',
+                type: NodeType.Folder,
+                children: null, // Not expanded
+            });
+            expect(myFilesRoot.children['child-2']).toMatchObject({
+                nodeUid: 'child-2',
+                name: 'Child 2',
+                type: NodeType.File,
+                children: null, // Files are not expandable
+            });
+        });
+
+        it('should return empty children object for expanded folder with no children', async () => {
+            createMyFilesRoot();
+
+            mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+
+            // Expanded with no children should be {}
+            const myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(myFilesRoot.children).toEqual({});
+        });
+    });
+
+    describe('permission handling', () => {
+        it('should determine Admin role immediately when node has Admin role', async () => {
+            createMyFilesRoot();
+
+            const sharedNodes = [
+                {
+                    ok: true,
+                    value: {
+                        uid: 'admin-node',
+                        name: 'Admin Folder',
+                        type: NodeType.Folder,
+                        directRole: MemberRole.Admin,
+                        parentUid: null,
+                    },
+                },
+            ];
+
+            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(Object.keys(sharedRoot.children)).toHaveLength(1);
+            expect(sharedRoot.children['admin-node'].highestEffectiveRole).toBe(MemberRole.Admin);
+        });
+
+        it('should traverse parent chain to find highest effective role', async () => {
+            createMyFilesRoot();
+
+            // Child with Viewer role, parent with Editor role
+            const sharedNodes = [
+                {
+                    ok: true,
+                    value: {
+                        uid: 'child-viewer',
+                        name: 'Child Viewer',
+                        type: NodeType.Folder,
+                        directRole: MemberRole.Viewer,
+                        parentUid: 'parent-editor',
+                    },
+                },
+            ];
+
+            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockGetNode.mockResolvedValue({
+                ok: true,
+                value: {
+                    uid: 'parent-editor',
+                    name: 'Parent Editor',
+                    type: NodeType.Folder,
+                    directRole: MemberRole.Editor,
+                    parentUid: null,
+                },
+            });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(Object.keys(sharedRoot.children)).toHaveLength(1);
+            expect(sharedRoot.children['child-viewer'].highestEffectiveRole).toBe(MemberRole.Editor);
+        });
+
+        it('should traverse multiple parent levels to find highest role', async () => {
+            createMyFilesRoot();
+
+            const sharedNodes = [
+                {
+                    ok: true,
+                    value: {
+                        uid: 'child',
+                        name: 'Child',
+                        type: NodeType.Folder,
+                        directRole: MemberRole.Viewer,
+                        parentUid: 'parent',
+                    },
+                },
+            ];
+
+            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockGetNode
+                .mockResolvedValueOnce({
+                    ok: true,
+                    value: {
+                        uid: 'parent',
+                        name: 'Parent',
+                        type: NodeType.Folder,
+                        directRole: MemberRole.Viewer,
+                        parentUid: 'grandparent',
+                    },
+                })
+                .mockResolvedValueOnce({
+                    ok: true,
+                    value: {
+                        uid: 'grandparent',
+                        name: 'Grandparent',
+                        type: NodeType.Folder,
+                        directRole: MemberRole.Editor,
+                        parentUid: null,
+                    },
+                });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(sharedRoot.children).not.toBeNull();
+            expect(Object.keys(sharedRoot.children)).toHaveLength(1);
+            expect(sharedRoot.children.child.highestEffectiveRole).toBe(MemberRole.Editor);
+        });
+
+        it('should return more permissive role when comparing Editor and Viewer', async () => {
+            createMyFilesRoot();
+
+            const sharedNodes = [
+                {
+                    ok: true,
+                    value: {
+                        uid: 'editor-child',
+                        name: 'Editor Child',
+                        type: NodeType.Folder,
+                        directRole: MemberRole.Editor,
+                        parentUid: 'viewer-parent',
+                    },
+                },
+            ];
+
+            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockGetNode.mockResolvedValue({
+                ok: true,
+                value: {
+                    uid: 'viewer-parent',
+                    name: 'Viewer Parent',
+                    type: NodeType.Folder,
+                    directRole: MemberRole.Viewer,
+                    parentUid: null,
+                },
+            });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(sharedRoot.children['editor-child'].highestEffectiveRole).toBe(MemberRole.Editor);
+        });
+
+        it('should handle degraded parent node during permission check', async () => {
+            createMyFilesRoot();
+
+            const sharedNodes = [
+                {
+                    ok: true,
+                    value: {
+                        uid: 'child-viewer',
+                        name: 'Child Viewer',
+                        type: NodeType.Folder,
+                        directRole: MemberRole.Viewer,
+                        parentUid: 'degraded-parent',
+                    },
+                },
+            ];
+
+            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockGetNode.mockResolvedValue({
+                ok: false,
+                error: {
+                    uid: 'degraded-parent',
+                    name: 'Degraded Parent',
+                    type: NodeType.Folder,
+                    directRole: MemberRole.Editor,
+                    parentUid: null,
+                },
+            });
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(Object.keys(sharedRoot.children)).toHaveLength(1);
+            expect(sharedRoot.children['child-viewer'].highestEffectiveRole).toBe(MemberRole.Editor);
+        });
+    });
+
+    describe('tree with shares', () => {
+        it('should show deeply nested shared folder twice with non-shared folder in between', async () => {
+            createMyFilesRoot();
+
+            // Structure: shared-parent/middle-non-shared/leaf-shared
+            const localMockGetNode = jest.fn().mockImplementation((uid) => {
+                if (uid === 'middle-non-shared') {
+                    return Promise.resolve({
+                        ok: true,
+                        value: { uid: 'middle-non-shared', directRole: MemberRole.Editor, parentUid: 'shared-parent' },
+                    });
+                }
+                if (uid === 'shared-parent') {
+                    return Promise.resolve({
+                        ok: true,
+                        value: { uid: 'shared-parent', directRole: MemberRole.Editor, parentUid: null },
+                    });
+                }
+            });
+            mockDrive.getNode = localMockGetNode;
+
+            mockIterateSharedNodesWithMe.mockReturnValue(
+                createMockIterator([
+                    createMockNode('shared-parent', 'Shared Parent', NodeType.Folder),
+                    {
+                        ok: true,
+                        value: {
+                            uid: 'leaf-shared',
+                            name: 'Leaf Shared',
+                            type: NodeType.Folder,
+                            directRole: MemberRole.Viewer,
+                            isShared: false,
+                            parentUid: 'middle-non-shared',
+                        },
+                    },
+                ])
+            );
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            // Leaf appears at root level
+            let sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(sharedRoot.children['leaf-shared']).toBeDefined();
+            expect(sharedRoot.children['leaf-shared'].highestEffectiveRole).toBe(MemberRole.Editor);
+
+            // Expand parent shows middle folder (not shared)
+            mockIterateFolderChildren.mockReturnValue(
+                createMockIterator([
+                    {
+                        ok: true,
+                        value: {
+                            uid: 'middle-non-shared',
+                            name: 'Middle Non-Shared',
+                            type: NodeType.Folder,
+                            directRole: MemberRole.Editor,
+                            isShared: false,
+                        },
+                    },
+                ])
+            );
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(SHARED_WITH_ME_ROOT_ID, 'shared-parent'));
+            });
+
+            sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            let sharedParent = sharedRoot.children['shared-parent'];
+            expect(sharedParent.children['middle-non-shared']).toMatchObject({
+                nodeUid: 'middle-non-shared',
+                isSharedWithMe: false,
+            });
+
+            // Expand middle shows leaf again
+            mockIterateFolderChildren.mockReturnValue(
+                createMockIterator([
+                    {
+                        ok: true,
+                        value: {
+                            uid: 'leaf-shared',
+                            name: 'Leaf Shared',
+                            type: NodeType.Folder,
+                            directRole: MemberRole.Viewer,
+                            isShared: true,
+                        },
+                    },
+                ])
+            );
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId('shared-parent', 'middle-non-shared'));
+            });
+
+            // Get fresh reference after expansion
+            sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            sharedParent = sharedRoot.children['shared-parent'];
+            const middleNonShared = sharedParent.children['middle-non-shared'];
+            expect(middleNonShared.children['leaf-shared']).toMatchObject({
+                nodeUid: 'leaf-shared',
+                isSharedWithMe: true,
+            });
+        });
+
+        it('should not include non-shared items in shared-with-me-root children', async () => {
+            createMyFilesRoot();
+
+            const sharedNodes = [createMockNode('shared-1', 'Shared Folder 1', NodeType.Folder)];
+            const myFilesChildren = [createMockNode('my-file', 'My File', NodeType.File)];
+
+            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockIterateFolderChildren.mockReturnValue(createMockIterator(myFilesChildren));
+
+            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+
+            // Shared with me should only return shared items
+            const sharedRoot = findTreeItem(result.current.treeRoots, SHARED_WITH_ME_ROOT_ID);
+            expect(Object.keys(sharedRoot.children)).toHaveLength(1);
+            expect(sharedRoot.children['shared-1'].isSharedWithMe).toBe(true);
+
+            // My files should return non-shared items
+            const myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
+            expect(Object.keys(myFilesRoot.children)).toHaveLength(1);
+            expect(myFilesRoot.children['my-file'].isSharedWithMe).toBe(false);
         });
     });
 
@@ -537,9 +980,8 @@ describe('useDirectoryTree', () => {
                 await result1.current.initializeTree();
             });
 
-            // result1 should have items, result2 should not
-            expect(result1.current.rootItems).toHaveLength(3);
-            expect(result2.current.rootItems).toHaveLength(0);
+            expect(result1.current.treeRoots).toHaveLength(3);
+            expect(result2.current.treeRoots).toHaveLength(0);
         });
     });
 });

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { MaybeBookmark, MaybeNode } from '@proton/drive';
+import type { Device, MaybeBookmark, MaybeNode } from '@proton/drive';
 
 export function getNodeName(node: MaybeNode): string {
     if (node.ok) {
@@ -30,4 +30,14 @@ export function getBookmarkNodeName(bookmark: MaybeBookmark): string {
     }
     // Invalid name can still be used to display the node.
     return maybeName.error.name;
+}
+
+export function getDeviceName(device: Device) {
+    if (device.name.ok) {
+        return device.name.value;
+    }
+    if (device.name.error instanceof Error) {
+        return c('Error').t`⚠️ Undecryptable device`;
+    }
+    return device.name.error.name;
 }
