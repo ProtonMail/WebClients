@@ -46,7 +46,7 @@ export const useExternalBookingActions = () => {
                 bookingKeySalt: bookingDetails.bookingKeySalt,
                 attendeeName: attendeeInfo.name,
                 attendeeEmail: attendeeInfo.email,
-                organizerName: bookingDetails.inviterDisplayName,
+                organizerName: bookingDetails.inviterDisplayName || '',
                 organizerEmail: bookingDetails.inviterEmail,
                 saveMeeting,
                 getVTimezonesMap,

@@ -20,7 +20,10 @@ export const BookingNavigationButtons = ({ gridSize }: Props) => {
 
     const isInEarliestRange = isBefore(addDays(startOfDay(selectedDate), -gridSize), startOfDay(new Date()));
 
+    // TODO improve with loaded slots caching
     const handleLoadPreviousPage = async () => {
+        const newRangeStart = addDays(selectedDate, -gridSize);
+        await loadPublicBooking(newRangeStart, selectedDate);
         setSelectedDate(addDays(selectedDate, -gridSize));
     };
 
@@ -35,12 +38,7 @@ export const BookingNavigationButtons = ({ gridSize }: Props) => {
     return (
         <div className="flex gap-2">
             <Tooltip title={c('Action').t`See previous availability`}>
-                <Button
-                    icon
-                    pill
-                    onClick={handleLoadPreviousPage}
-                    disabled={isInEarliestRange}
-                >
+                <Button icon pill onClick={handleLoadPreviousPage} disabled={isInEarliestRange}>
                     <IcChevronLeft alt={c('Action').t`See previous availability`} />
                 </Button>
             </Tooltip>
