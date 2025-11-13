@@ -8312,6 +8312,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/ci-scripts@workspace:utilities/ci-scripts":
+  version: 0.0.0-use.local
+  resolution: "@proton/ci-scripts@workspace:utilities/ci-scripts"
+  dependencies:
+    "@proton/ci-tools": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/gitlab": "workspace:^"
+    "@types/jest": "npm:^30.0.0"
+    "@vercel/ncc": "npm:^0.38.4"
+    eslint: "npm:^9.39.1"
+    jest: "npm:^30.2.0"
+    ts-jest: "npm:^29.4.5"
+    ts-node: "npm:^10.9.2"
+    tsx: "npm:^4.20.6"
+  languageName: unknown
+  linkType: soft
+
 "@proton/ci-tools@workspace:^, @proton/ci-tools@workspace:utilities/ci-tools":
   version: 0.0.0-use.local
   resolution: "@proton/ci-tools@workspace:utilities/ci-tools"
