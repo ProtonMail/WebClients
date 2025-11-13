@@ -1,7 +1,12 @@
-import { fromUnixTime, isSameDay } from 'date-fns';
+import { isSameDay } from 'date-fns';
 import { create } from 'zustand';
 
-import { getTimezone } from '@proton/shared/lib/date/timezone';
+import {
+    convertTimestampToTimezone,
+    fromUTCDateToLocalFakeUTCDate,
+    getTimezone,
+    toLocalDate,
+} from '@proton/shared/lib/date/timezone';
 
 import { getDateKey } from './utils/bookingsHelpers';
 
@@ -72,8 +77,11 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
 
     filterBookingSlotPerDay: (date: Date) => {
         return get().bookingSlots.filter((slot) => {
-            const slotDate = fromUnixTime(slot.startTime);
-            return isSameDay(date, slotDate);
+            const timeslotDate = convertTimestampToTimezone(slot.startTime, slot.timezone);
+            const utc = toLocalDate({ ...timeslotDate });
+            const localDate = fromUTCDateToLocalFakeUTCDate(utc, false, get().selectedTimezone);
+
+            return isSameDay(date, localDate);
         });
     },
 
