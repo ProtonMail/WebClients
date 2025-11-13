@@ -7,6 +7,7 @@ import type {
   EditorInitializationConfig,
   EditorRequiresClientMethods,
   SheetImportData,
+  SheetsUserState,
 } from '@proton/docs-shared'
 import { EditorSystemMode, SheetImportDestination, SheetImportEvent, TranslatedResult } from '@proton/docs-shared'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
@@ -180,6 +181,13 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       onRenameSheet,
     ],
   )
+
+  useEffect(() => {
+    return application.syncedState.subscribeToEvent('ScrollToUserCursorData', (data) => {
+      const userState = data.state as unknown as SheetsUserState
+      state.goToCell(userState.sheetId, userState.activeCell.rowIndex, userState.activeCell.columnIndex)
+    })
+  }, [application.syncedState, state])
 
   const downloadLogs = () => {
     const editorAdapter = {
