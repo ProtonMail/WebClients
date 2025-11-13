@@ -15,9 +15,12 @@ import type {
   NamedRange,
   DataValidationRuleRecord,
   SheetRange,
+  CellFormat,
 } from '@rowsncolumns/spreadsheet'
 import { defaultSpreadsheetTheme, useSpreadsheet } from '@rowsncolumns/spreadsheet'
 import { useCharts } from '@rowsncolumns/charts'
+import type { YSheetData } from '@rowsncolumns/y-spreadsheet'
+import type * as Y from 'yjs'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import type { DocStateInterface } from '@proton/docs-shared'
 import { DocProvider } from '@proton/docs-shared'
@@ -28,6 +31,7 @@ import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
 import debounce from '@proton/utils/debounce'
+import { useApplication } from '../ApplicationProvider'
 
 // local state
 // -----------
@@ -196,6 +200,66 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
     userId: userName,
     title: userName,
   })
+
+  const { application } = useApplication()
+  useEffect(() => {
+    const logger = application.logger
+    const yRecalcCells = yDoc.getArray('recalcCells')
+    const documentMap = {
+      sheetData: yDoc.getMap<YSheetData>('sheetDataV2'),
+      sheets: yDoc.getArray<Sheet>('sheets'),
+      tables: yDoc.getArray<TableView>('tables'),
+      embeds: yDoc.getArray<EmbeddedObject>('embeds'),
+      charts: yDoc.getArray<EmbeddedChart>('charts'),
+      conditionalFormats: yDoc.getArray<ConditionalFormatRule>('conditionalFormats'),
+      dataValidations: yDoc.getArray<DataValidationRuleRecord>('dataValidations'),
+      namedRanges: yDoc.getArray<NamedRange>('namedRanges'),
+      protectedRanges: yDoc.getArray<ProtectedRange>('protectedRanges'),
+      cellXfs: yDoc.getMap<CellFormat>('cellXfs'),
+      disableRecalc: yDoc.getMap<boolean>('disableRecalc'),
+    }
+
+    function logEvents(key: string, events: Y.YEvent<any>[], transaction: Y.Transaction) {
+      for (const event of events) {
+        const addedSize = event.changes.added.size
+        const deletedSize = event.changes.deleted.size
+        if (addedSize === 0 && deletedSize === 0) {
+          continue
+        }
+        logger.info(
+          `yjs: ${key} changed:`,
+          `${addedSize} added, ${deletedSize} deleted, local: ${transaction.origin === 'local'}`,
+        )
+        for (const delta of event.changes.delta) {
+          logger.info(
+            `yjs: ${key} delta: insert: ${delta.insert?.length}, delete: ${delta.delete}, retain: ${delta.retain}`,
+          )
+        }
+      }
+    }
+
+    const callbacks: (() => void)[] = []
+    for (const [key, yarray] of Object.entries(documentMap)) {
+      const callback = (events: Y.YEvent<any>[], transaction: Y.Transaction) => {
+        logEvents(key, events, transaction)
+      }
+      yarray.observeDeep(callback)
+      callbacks.push(() => yarray.unobserveDeep(callback))
+    }
+
+    const onRecalcCellsChange = (event: Y.YEvent<any>, transaction: Y.Transaction) => {
+      logEvents('yRecalcCells', [event], transaction)
+    }
+    yRecalcCells.observe(onRecalcCellsChange)
+    callbacks.push(() => yRecalcCells.unobserve(onRecalcCellsChange))
+
+    return () => {
+      for (const callback of callbacks) {
+        callback()
+      }
+    }
+  }, [application.logger, yDoc])
+
   return { ...yjsState, userName }
 }
 
