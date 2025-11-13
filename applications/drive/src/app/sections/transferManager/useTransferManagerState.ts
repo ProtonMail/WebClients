@@ -77,6 +77,16 @@ const mapUpload = ({ uploadId, item }: { uploadId: string; item: UploadItem }): 
     lastStatusUpdateTime: item.lastStatusUpdateTime,
 });
 
+const getShouldIgnoreTransferProgress = (
+    status: TransferManagerDownloadEntry['status'] | TransferManagerUploadEntry['status']
+) => {
+    return (
+        status === BaseTransferStatus.Cancelled ||
+        status === BaseTransferStatus.Failed ||
+        status === UploadStatus.Skipped
+    );
+};
+
 export const useTransferManagerState = () => {
     const downloadQueue = useDownloadManagerStore(useShallow((state) => state.getQueue()));
     const uploadQueue = useUploadQueueStore(useShallow((state) => state.getQueue()));
@@ -91,14 +101,14 @@ export const useTransferManagerState = () => {
         // there's a test to make sure it stays under 20ms with 10k elements
         const sumOfTransferredBytes = allTransfers.reduce((acc, transfer) => {
             let size = 0;
-            if (transfer.status !== UploadStatus.Skipped) {
+            if (!getShouldIgnoreTransferProgress(transfer.status)) {
                 size = transfer.transferredBytes;
             }
             return acc + size;
         }, 0);
         const sumOfBytes = allTransfers.reduce((acc, transfer) => {
             let size = 0;
-            if (transfer.status !== UploadStatus.Skipped) {
+            if (!getShouldIgnoreTransferProgress(transfer.status)) {
                 size = transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize;
             }
             return acc + size;
