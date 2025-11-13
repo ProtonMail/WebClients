@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { fromUnixTime } from 'date-fns';
+import { addMinutes } from 'date-fns';
 import format from 'date-fns/format';
 import { c } from 'ttag';
 
@@ -30,7 +30,7 @@ interface BookingSlotModalProps extends ModalProps {
 const NAME_MAX_LENGTH = 100;
 
 export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
-    const { submitBooking } = useExternalBookingActions();
+    const { submitBooking, bookingDetails } = useExternalBookingActions();
 
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -51,12 +51,13 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     const subtitle = (
         <>
             <div className="booking-color-title text-xl booking-color-title ">
-                {format(fromUnixTime(timeslot.startTime), 'EEEE d MMMM yyyy', { locale: dateLocale })}
+                {format(timeslot.tzDate, 'EEEE d MMMM yyyy', { locale: dateLocale })}
                 <span aria-hidden="true" className="pointer-events-none mx-2">
                     •
                 </span>
-                {format(fromUnixTime(timeslot.startTime), 'HH:mm', { locale: dateLocale })}
-                {' - '} {format(fromUnixTime(timeslot.endTime), 'HH:mm', { locale: dateLocale })}
+                {format(timeslot.tzDate, 'HH:mm', { locale: dateLocale })}
+                {' - '}
+                {format(addMinutes(timeslot.tzDate, bookingDetails?.duration || 0), 'HH:mm', { locale: dateLocale })}
             </div>
             <div className="color-weak">{getTimezoneAndOffset(timeslot.timezone)}</div>
         </>
