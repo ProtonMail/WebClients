@@ -30,6 +30,8 @@ import { useEvent } from './components/utils'
 import { useMemo, useState } from 'react'
 import type { CellInterface } from '@rowsncolumns/grid'
 import { Direction, isCellWithinBounds, isEqualCells, selectionFromActiveCell } from '@rowsncolumns/grid'
+import { useApplication } from '../ApplicationProvider'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 type PatternSpec = {
   type: NonNullable<CellFormat['numberFormat']>['type']
@@ -111,18 +113,64 @@ export function useProtonSheetsUIState(
     isViewOnlyMode,
   }
 
+  const { application } = useApplication()
+  const logger = application.logger
+
   // operation
   const operation = {
-    delete: useEvent(() => state.onDelete(state.activeSheetId, state.activeCell, state.selections)),
-    cut: useEvent(withFocusGridBefore(() => state.grid.cut?.())),
-    copy: useEvent(withFocusGridBefore(() => state.grid.copy?.())),
+    delete: useEvent(() => {
+      logger.info('action: delete', state.activeSheetId, state.activeCell)
+      state.onDelete(state.activeSheetId, state.activeCell, state.selections)
+    }),
+    cut: useEvent(
+      withFocusGridBefore(() => {
+        logger.info('action: cut')
+        state.grid.cut?.()
+      }),
+    ),
+    copy: useEvent(
+      withFocusGridBefore(() => {
+        logger.info('action: copy')
+        state.grid.copy?.()
+      }),
+    ),
     paste: {
-      default: useEvent(withFocusGrid(() => state.grid.paste?.())),
-      value: useEvent(withFocusGrid(() => state.grid.paste?.('Value'))),
-      formatting: useEvent(withFocusGrid(() => state.grid.paste?.('Formatting'))),
-      transposed: useEvent(withFocusGrid(() => state.grid.paste?.('Transposed'))),
-      formula: useEvent(withFocusGrid(() => state.grid.paste?.('Formula'))),
-      link: useEvent(withFocusGrid(() => state.grid.paste?.('Link'))),
+      default: useEvent(
+        withFocusGrid(() => {
+          logger.info('action: paste')
+          state.grid.paste?.()
+        }),
+      ),
+      value: useEvent(
+        withFocusGrid(() => {
+          logger.info('action: paste value')
+          state.grid.paste?.('Value')
+        }),
+      ),
+      formatting: useEvent(
+        withFocusGrid(() => {
+          logger.info('action: paste formatting')
+          state.grid.paste?.('Formatting')
+        }),
+      ),
+      transposed: useEvent(
+        withFocusGrid(() => {
+          logger.info('action: paste transposed')
+          state.grid.paste?.('Transposed')
+        }),
+      ),
+      formula: useEvent(
+        withFocusGrid(() => {
+          logger.info('action: paste formula')
+          state.grid.paste?.('Formula')
+        }),
+      ),
+      link: useEvent(
+        withFocusGrid(() => {
+          logger.info('action: paste link')
+          state.grid.paste?.('Link')
+        }),
+      ),
     },
   }
 
@@ -140,12 +188,22 @@ export function useProtonSheetsUIState(
       enabled: showGridlines,
       toggle: useEvent(() => setShowGridlines((value) => !value)),
     },
-    freezeRows: useEvent((beforeRowIndex: number) => state.onFreezeRow(state.activeSheetId, beforeRowIndex)),
-    unfreezeRows: useEvent(() => state.onFreezeRow(state.activeSheetId, 0)),
-    freezeColumns: useEvent((beforeColumnIndex: number) =>
-      state.onFreezeColumn(state.activeSheetId, beforeColumnIndex),
-    ),
-    unfreezeColumns: useEvent(() => state.onFreezeColumn(state.activeSheetId, 0)),
+    freezeRows: useEvent((beforeRowIndex: number) => {
+      logger.info('action: freeze rows', state.activeSheetId, beforeRowIndex)
+      state.onFreezeRow(state.activeSheetId, beforeRowIndex)
+    }),
+    unfreezeRows: useEvent(() => {
+      logger.info('action: unfreeze rows', state.activeSheetId)
+      state.onFreezeRow(state.activeSheetId, 0)
+    }),
+    freezeColumns: useEvent((beforeColumnIndex: number) => {
+      logger.info('action: freeze columns', state.activeSheetId, beforeColumnIndex)
+      state.onFreezeColumn(state.activeSheetId, beforeColumnIndex)
+    }),
+    unfreezeColumns: useEvent(() => {
+      logger.info('action: unfreeze columns', state.activeSheetId)
+      state.onFreezeColumn(state.activeSheetId, 0)
+    }),
     insertLinkDialog: {
       isOpen: showInsertLinkDialog,
       cell: insertLinkCell,
@@ -180,9 +238,15 @@ export function useProtonSheetsUIState(
 
   // history
   const history = {
-    undo: useEvent(state.onUndo),
+    undo: useEvent(() => {
+      logger.info('action: undo')
+      state.onUndo()
+    }),
     undoDisabled: !state.canUndo,
-    redo: useEvent(state.onRedo),
+    redo: useEvent(() => {
+      logger.info('action: redo')
+      state.onRedo()
+    }),
     redoDisabled: !state.canRedo,
   }
 
@@ -197,7 +261,7 @@ export function useProtonSheetsUIState(
 
   // format
   const patternSpecs = PATTERN_SPECS({ locale: LOCALE, currency: CURRENCY })
-  const formatUtils = useFormatUtils(state, patternSpecs)
+  const formatUtils = useFormatUtils(state, patternSpecs, logger)
   const canUnmerge = useMemo(
     () =>
       !selection.isMultiple &&
@@ -216,7 +280,10 @@ export function useProtonSheetsUIState(
   )
   const canMerge = useMemo(() => canMergeHorizontally || canMergeVertically, [canMergeHorizontally, canMergeVertically])
   const format = {
-    clear: useEvent(() => state.onClearFormatting(state.activeSheetId, state.activeCell, state.selections)),
+    clear: useEvent(() => {
+      logger.info('action: clear formatting', state.activeSheetId, state.activeCell)
+      state.onClearFormatting(state.activeSheetId, state.activeCell, state.selections)
+    }),
     text: {
       bold: formatUtils.useTextFormatEntry('bold'),
       italic: formatUtils.useTextFormatEntry('italic'),
@@ -276,9 +343,10 @@ export function useProtonSheetsUIState(
        * The default value is represented by `undefined`.
        */
       value: state.currentCellFormat?.borders ?? undefined,
-      set: useEvent((location: BorderLocation, color: Color | undefined, style: BorderStyle | undefined) =>
-        state.onChangeBorder(state.activeSheetId, state.activeCell, state.selections, location, color, style),
-      ),
+      set: useEvent((location: BorderLocation, color: Color | undefined, style: BorderStyle | undefined) => {
+        logger.info('action: set border', state.activeSheetId, state.activeCell, location, color, style)
+        state.onChangeBorder(state.activeSheetId, state.activeCell, state.selections, location, color, style)
+      }),
     },
     alignment: {
       horizontal: {
@@ -338,12 +406,14 @@ export function useProtonSheetsUIState(
       dateTime: formatUtils.useNumberPatternEntry(patternSpecs.DATE_TIME, DATE_PATTERN_EXAMPLE_VALUE),
       duration: formatUtils.useNumberPatternEntry(patternSpecs.DURATION, DATE_PATTERN_EXAMPLE_VALUE),
     },
-    decreaseDecimalPlaces: useEvent(() =>
-      state.onChangeDecimals(state.activeSheetId, state.activeCell, state.selections, 'decrement'),
-    ),
-    increaseDecimalPlaces: useEvent(() =>
-      state.onChangeDecimals(state.activeSheetId, state.activeCell, state.selections, 'increment'),
-    ),
+    decreaseDecimalPlaces: useEvent(() => {
+      logger.info('action: decrease decimal places', state.activeSheetId, state.activeCell)
+      state.onChangeDecimals(state.activeSheetId, state.activeCell, state.selections, 'decrement')
+    }),
+    increaseDecimalPlaces: useEvent(() => {
+      logger.info('action: increase decimal places', state.activeSheetId, state.activeCell)
+      state.onChangeDecimals(state.activeSheetId, state.activeCell, state.selections, 'increment')
+    }),
     merge: {
       can: {
         all: canMerge,
@@ -351,14 +421,22 @@ export function useProtonSheetsUIState(
         vertically: canMergeVertically,
         unmerge: canUnmerge,
       },
-      all: useEvent(() => state.onMergeCells(state.activeSheetId, state.activeCell, state.selections)),
-      horizontally: useEvent(() =>
-        state.onMergeCells(state.activeSheetId, state.activeCell, state.selections, Direction.Right),
-      ),
-      vertically: useEvent(() =>
-        state.onMergeCells(state.activeSheetId, state.activeCell, state.selections, Direction.Down),
-      ),
-      unmerge: useEvent(() => state.onUnMergeCells(state.activeSheetId, state.activeCell, state.selections)),
+      all: useEvent(() => {
+        logger.info('action: merge all', state.activeSheetId, state.activeCell)
+        state.onMergeCells(state.activeSheetId, state.activeCell, state.selections)
+      }),
+      horizontally: useEvent(() => {
+        logger.info('action: merge horizontally', state.activeSheetId, state.activeCell)
+        state.onMergeCells(state.activeSheetId, state.activeCell, state.selections, Direction.Right)
+      }),
+      vertically: useEvent(() => {
+        logger.info('action: merge vertically', state.activeSheetId, state.activeCell)
+        state.onMergeCells(state.activeSheetId, state.activeCell, state.selections, Direction.Down)
+      }),
+      unmerge: useEvent(() => {
+        logger.info('action: unmerge', state.activeSheetId, state.activeCell)
+        state.onUnMergeCells(state.activeSheetId, state.activeCell, state.selections)
+      }),
       menu: {
         enabled: useMemo(() => canMerge || canUnmerge, [canMerge, canUnmerge]),
         defaultAction: useMemo(() => (!canMerge && canUnmerge ? 'unmerge' : 'merge'), [canMerge, canUnmerge]),
@@ -366,30 +444,47 @@ export function useProtonSheetsUIState(
     },
     paintFormat: {
       active: state.isPaintFormatActive,
-      save: useEvent(() => state.onSavePaintFormat(state.activeSheetId, state.activeCell, state.selections)),
+      save: useEvent(() => {
+        logger.info('action: save paint format', state.activeSheetId, state.activeCell)
+        state.onSavePaintFormat(state.activeSheetId, state.activeCell, state.selections)
+      }),
     },
   }
 
   // insert
   const insert = {
-    cellsShiftRight: useEvent(() =>
-      state.onInsertCellsShiftRight(state.activeSheetId, state.activeCell, state.selections),
-    ),
-    cellsShiftDown: useEvent(() =>
-      state.onInsertCellsShiftDown(state.activeSheetId, state.activeCell, state.selections),
-    ),
-    rowsAbove: useEvent((amount: number) => state.onInsertRow(state.activeSheetId, state.activeCell.rowIndex, amount)),
-    rowsBelow: useEvent((amount: number) =>
-      state.onInsertRow(state.activeSheetId, state.activeCell.rowIndex + 1, amount),
-    ),
-    columnsLeft: useEvent((amount: number) =>
-      state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex, amount),
-    ),
-    columnsRight: useEvent((amount: number) =>
-      state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex + 1, amount),
-    ),
-    sheet: useEvent(() => state.onCreateNewSheet()),
-    chart: useEvent(() => state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)),
+    cellsShiftRight: useEvent(() => {
+      logger.info('action: insert cells shift right', state.activeSheetId, state.activeCell)
+      state.onInsertCellsShiftRight(state.activeSheetId, state.activeCell, state.selections)
+    }),
+    cellsShiftDown: useEvent(() => {
+      logger.info('action: insert cells shift down', state.activeSheetId, state.activeCell)
+      state.onInsertCellsShiftDown(state.activeSheetId, state.activeCell, state.selections)
+    }),
+    rowsAbove: useEvent((amount: number) => {
+      logger.info('action: insert rows above', state.activeSheetId, state.activeCell.rowIndex, amount)
+      state.onInsertRow(state.activeSheetId, state.activeCell.rowIndex, amount)
+    }),
+    rowsBelow: useEvent((amount: number) => {
+      logger.info('action: insert rows below', state.activeSheetId, state.activeCell.rowIndex + 1, amount)
+      state.onInsertRow(state.activeSheetId, state.activeCell.rowIndex + 1, amount)
+    }),
+    columnsLeft: useEvent((amount: number) => {
+      logger.info('action: insert columns left', state.activeSheetId, state.activeCell.columnIndex, amount)
+      state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex, amount)
+    }),
+    columnsRight: useEvent((amount: number) => {
+      logger.info('action: insert columns right', state.activeSheetId, state.activeCell.columnIndex + 1, amount)
+      state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex + 1, amount)
+    }),
+    sheet: useEvent(() => {
+      logger.info('action: create new sheet')
+      state.onCreateNewSheet()
+    }),
+    chart: useEvent(() => {
+      logger.info('action: create chart', state.activeSheetId, state.activeCell)
+      state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)
+    }),
     formula: useEvent((formula: string) =>
       state.grid.makeEditable?.(state.activeSheetId, state.activeCell, `=${formula}(`, true),
     ),
@@ -425,7 +520,10 @@ export function useProtonSheetsUIState(
   // charts
   const charts = {
     selected: state.chartsState.selectedChart,
-    update: useEvent((chart) => state.chartsState.onUpdateChart(chart)),
+    update: useEvent((chart) => {
+      logger.info('action: update chart', chart.chartId)
+      state.chartsState.onUpdateChart(chart)
+    }),
   }
 
   // data
@@ -441,21 +539,35 @@ export function useProtonSheetsUIState(
     [defaultSelection.range, state.activeSheetId, state.protectedRanges],
   )
   const data = {
-    sortAscending: useEvent(() => state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'ASCENDING')),
-    sortDescending: useEvent(() => state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'DESCENDING')),
-    toggleFilter: useEvent(() => state.onCreateBasicFilter?.(state.activeSheetId, state.activeCell, state.selections)),
+    sortAscending: useEvent(() => {
+      logger.info('action: sort column ascending', state.activeSheetId, state.activeCell.columnIndex)
+      state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'ASCENDING')
+    }),
+    sortDescending: useEvent(() => {
+      logger.info('action: sort column descending', state.activeSheetId, state.activeCell.columnIndex)
+      state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'DESCENDING')
+    }),
+    toggleFilter: useEvent(() => {
+      logger.info('action: toggle filter', state.activeSheetId, state.activeCell)
+      state.onCreateBasicFilter?.(state.activeSheetId, state.activeCell, state.selections)
+    }),
     hasFilter: Boolean(activeBasicFilter),
     toggleProtectRange: useEvent(() => {
       const protectedRange = getProtectedRange(state.activeSheetId, defaultSelection.range, state.protectedRanges)
       if (protectedRange?.protectedRangeId) {
+        logger.info('action: unprotect range', state.activeSheetId, protectedRange.protectedRangeId)
         state.onUnProtectRange?.(state.activeSheetId, protectedRange.protectedRangeId)
       } else {
+        logger.info('action: protect range', state.activeSheetId, state.activeCell)
         state.onProtectRange?.(state.activeSheetId, state.activeCell, state.selections)
       }
     }),
     isProtectedRange,
     validation: {
-      open: useEvent(() => state.onRequestDataValidation(state.activeSheetId, state.activeCell, state.selections)),
+      open: useEvent(() => {
+        logger.info('action: request data validation', state.activeSheetId, state.activeCell)
+        state.onRequestDataValidation(state.activeSheetId, state.activeCell, state.selections)
+      }),
     },
   }
 
@@ -481,8 +593,9 @@ export function useProtonSheetsUIState(
 
 export type ProtonSheetsUIState = ReturnType<typeof useProtonSheetsUIState>
 
-function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, PatternSpec>) {
+function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, PatternSpec>, logger: LoggerInterface) {
   function setFormat<K extends keyof CellFormat>(key: K, value: CellFormat[K]) {
+    logger.info('action: set format', state.activeSheetId, state.activeCell, key)
     state.onChangeFormatting(state.activeSheetId, state.activeCell, state.selections, key, value)
   }
 
