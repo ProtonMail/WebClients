@@ -27,28 +27,28 @@ export const getAddonDashboardTitle = (addonName: ADDON_NAMES, quantity: number,
     }
 
     if (isScribeAddon(addonName)) {
-        if (maxMembers === 1) {
-            return c('Addon').t`${BRAND_NAME} Scribe writing assistant`;
-        } else {
+        if (maxMembers > 1) {
             // translator: sentence is "Proton Scribe writing assistant (for 1 user)" or "Proton Scribe writing assistant (for 6 users)"
             return c('Addon').ngettext(
                 msgid`${BRAND_NAME} Scribe writing assistant (for ${quantity} user)`,
                 `${BRAND_NAME} Scribe writing assistant (for ${quantity} users)`,
                 quantity
             );
+        } else {
+            return c('Addon').t`${BRAND_NAME} Scribe writing assistant`;
         }
     }
 
     if (isLumoAddon(addonName)) {
-        if (maxMembers === 1) {
-            return c('Addon').t`${LUMO_APP_NAME} AI assistant`;
-        } else {
+        if (maxMembers > 1) {
             // translator: sentence is "Lumo AI assistant (for 1 user)" or "Lumo AI assistant (for 6 user)"
             return c('Addon').ngettext(
                 msgid`${LUMO_APP_NAME} AI assistant (for ${quantity} user)`,
                 `${LUMO_APP_NAME} AI assistant (for ${quantity} users)`,
                 quantity
             );
+        } else {
+            return c('Addon').t`${LUMO_APP_NAME} AI assistant`;
         }
     }
     return '';
