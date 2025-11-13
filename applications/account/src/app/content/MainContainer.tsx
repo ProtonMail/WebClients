@@ -99,6 +99,13 @@ const MeetSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/MeetSettingsRouter" */ '../containers/meet/MeetSettingsRouter')
 );
 
+const AuthenticatorSettingsRouter = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "routers/AuthenticatorSettingsRouter" */ '../containers/authenticator/AuthenticatorSettingsRouter'
+        )
+);
+
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
@@ -107,6 +114,7 @@ const docsSlug = getSlugFromApp(APPS.PROTONDOCS);
 const walletSlug = getSlugFromApp(APPS.PROTONWALLET);
 const passSlug = getSlugFromApp(APPS.PROTONPASS);
 const meetSlug = getSlugFromApp(APPS.PROTONMEET);
+const authenticatorSlug = getSlugFromApp(APPS.PROTONAUTHENTICATOR);
 
 const getDefaultPassRedirect = (
     user: UserModel,
@@ -117,6 +125,10 @@ const getDefaultPassRedirect = (
         return passRoutes.routes.downloads.to;
     }
     return accountRoutes.routes.dashboard.to;
+};
+
+const getDefaultAuthenticatorRedirect = (authenticatorRoutes: ReturnType<typeof getRoutes>['authenticator']) => {
+    return authenticatorRoutes.routes.downloads.to;
 };
 
 const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account']) => {
@@ -179,6 +191,7 @@ const MainContainer = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isMeetAvailable = useFlag('PMVC2025');
+    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
 
     const [referralInfo] = useReferralInfo();
 
@@ -266,6 +279,7 @@ const MainContainer = () => {
         showPassDashboardVariant: showPassDashboardVariant.name,
         showDriveDashboard,
         showDriveDashboardVariant: showDriveDashboardVariant.name,
+        isAuthenticatorAvailable,
     });
 
     useEffect(() => {
@@ -405,6 +419,9 @@ const MainContainer = () => {
             if (app === APPS.PROTONPASS) {
                 return getDefaultPassRedirect(user, routes.account, routes.pass);
             }
+            if (app === APPS.PROTONAUTHENTICATOR) {
+                return getDefaultAuthenticatorRedirect(routes.authenticator);
+            }
             return getDefaultRedirect(routes.account);
         })();
 
@@ -431,6 +448,7 @@ const MainContainer = () => {
         isDocsHomepageAvailable,
         isMeetAvailable,
         isSheetsAvailable,
+        isAuthenticatorAvailable,
     });
 
     // Should never happen that available apps is empty, but just as a safety mechanism anyway
@@ -525,6 +543,14 @@ const MainContainer = () => {
                     <Route path={`/${meetSlug}`}>
                         <Suspense fallback={<PrivateMainAreaLoading />}>
                             <MeetSettingsRouter meetAppRoutes={routes.meet} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                    <Route path={`/${authenticatorSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <AuthenticatorSettingsRouter
+                                authenticatorAppRoutes={routes.authenticator}
+                                redirect={redirect}
+                            />
                         </Suspense>
                     </Route>
                     {redirect}

@@ -13,7 +13,7 @@ import {
     useAccountSpotlights,
 } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { MEET_SHORT_APP_NAME , APPS } from '@proton/shared/lib/constants';
+import { APPS, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
@@ -103,6 +103,9 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                     {app === APPS.PROTONDOCS && <SidebarListWrapper prefix={prefix} {...routes.docs} />}
                     {app === APPS.PROTONWALLET && <SidebarListWrapper prefix={prefix} {...routes.wallet} />}
                     {app === APPS.PROTONMEET && <SidebarListWrapper prefix={prefix} {...routes.meet} />}
+                    {app === APPS.PROTONAUTHENTICATOR && (
+                        <SidebarListWrapper prefix={prefix} {...routes.authenticator} />
+                    )}
                     {routes.organization.available && <SidebarListWrapper prefix={prefix} {...routes.organization} />}
                 </SidebarList>
             </SidebarNav>

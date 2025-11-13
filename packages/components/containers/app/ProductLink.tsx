@@ -74,7 +74,7 @@ const ProductLink = ({
         );
     }
 
-    if (appToLinkTo === APPS.PROTONVPN_SETTINGS) {
+    if (appToLinkTo === APPS.PROTONVPN_SETTINGS || appToLinkTo === APPS.PROTONAUTHENTICATOR) {
         return (
             <SettingsLink
                 path="/"

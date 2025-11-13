@@ -71,7 +71,7 @@ export interface Props {
     app?: APP_NAMES;
 }
 
-const getMailOptions = (): OptionItem[] => {
+const getMailOptions = ({ isAuthenticatorAvailable }: { isAuthenticatorAvailable: boolean }): OptionItem[] => {
     const optionType = 'option' as const;
     const labelType = 'label' as const;
 
@@ -162,6 +162,13 @@ const getMailOptions = (): OptionItem[] => {
             clientType: CLIENT_TYPES.MEET,
             app: APPS.PROTONMEET,
         },
+        isAuthenticatorAvailable && {
+            type: optionType,
+            value: 'Authenticator problem',
+            title: c('Bug category').t`Authenticator problem`,
+            clientType: CLIENT_TYPES.AUTHENTICATOR,
+            app: APPS.PROTONAUTHENTICATOR,
+        },
         { type: labelType, value: c('Group').t`Other category` },
         { type: optionType, value: 'Feature request', title: c('Bug category').t`Feature request` },
         isBlackFridayPeriod
@@ -214,9 +221,10 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
     const Client = getClientName(APP_NAME);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
+    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
 
     const options = useMemo(() => {
-        return isVpn ? getVPNOptions() : getMailOptions();
+        return isVpn ? getVPNOptions() : getMailOptions({ isAuthenticatorAvailable });
     }, []);
 
     const categoryOptions = options.map((option) => {

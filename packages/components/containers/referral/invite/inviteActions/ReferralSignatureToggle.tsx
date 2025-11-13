@@ -28,6 +28,7 @@ const useAvailableApps = () => {
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isSheetsAvailable = useFlag('DocsSheetsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
+    const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
 
     const availableApps = getAvailableApps({
         user,
@@ -36,6 +37,7 @@ const useAvailableApps = () => {
         isDocsHomepageAvailable,
         isSheetsAvailable,
         isMeetAvailable,
+        isAuthenticatorAvailable,
     });
 
     return availableApps;
