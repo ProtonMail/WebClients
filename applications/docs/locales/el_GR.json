@@ -1488,6 +1488,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Προηγμένη ασφάλεια λογαριασμού και δικτύου σε ένα πλάνο"
+      ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
       ]
@@ -3279,6 +3282,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
       ]
@@ -4918,6 +4924,12 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Τα δημόσια έγγραφα δεν έχουν ενεργοποιηθεί ακόμα για τον οργανισμό σας."
+      ],
+      "Recent documents": [
+        "Πρόσφατα έγγραφα"
+      ],
+      "Recent spreadsheets": [
+        "Πρόσφατα υπολογιστικά φύλλα"
       ],
       "Recents": [
         "Πρόσφατα"
@@ -6670,6 +6682,9 @@
       "End-to-end encryption": [
         "Διατερματική κρυπτογράφηση"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Υφιστάμενα οφέλη ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Γρήγορες λήψεις P2P/BitTorrent"
       ],
@@ -6888,6 +6903,10 @@
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Κοινή χρήση κρύπτης έως ${ n } άτομο",
+        "Κοινή χρήση κρύπτης έως ${ n } άτομα"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
       ]
@@ -6987,9 +7006,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Η αποκλειστική λύση VPN που παρέχει ασφαλή, απεριόριστη, υψηλής ταχύτητας πρόσβαση στο διαδίκτυο."
@@ -7249,9 +7265,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Υποστήριξη 24/7"
-      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
@@ -7297,9 +7310,6 @@
       ],
       "Private gateways": [
         "Ιδιωτικές πύλες"
-      ],
-      "Require 2FA": [
-        "Απαιτείται 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
