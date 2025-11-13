@@ -40,8 +40,10 @@ export const IcCalendarMonth = ({
 
                 <path
                     fillRule="evenodd"
-                    d="M11 3H5V1.5a.5.5 0 0 0-1 0V3a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3V1.5a.5.5 0 0 0-1 0V3ZM4 4h1v2H2a2 2 0 0 1 2-2Zm1 3H2v4h3V7Zm1 4V7h4v4H6Zm-1 1H2a2 2 0 0 0 2 2h1v-2Zm1 2h4v-2H6v2Zm0-8V4h4v2H6Zm5 0V4h1a2 2 0 0 1 2 2h-3Zm0 1v4h3V7h-3Zm3 5a2 2 0 0 1-2 2h-1v-2h3Z"
+                    d="M10.5 1a.5.5 0 0 1 .5.5V6h3V4a1 1 0 0 0-1-1h-1a.5.5 0 0 1 0-1h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h1a.5.5 0 0 1 0 1H3a1 1 0 0 0-1 1v2h3V1.5a.5.5 0 0 1 1 0V6h4V1.5a.5.5 0 0 1 .5-.5ZM2 13a1 1 0 0 0 1 1h2v-3H2v2Zm4 1h4v-3H6v3Zm5 0h2a1 1 0 0 0 1-1v-2h-3v3Zm-9-4h3V7H2v3Zm4 0h4V7H6v3Zm5 0h3V7h-3v3Z"
+                    clipRule="evenodd"
                 ></path>
+                <path d="M9 2a.5.5 0 0 1 0 1H7a.5.5 0 0 1 0-1h2Z"></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
