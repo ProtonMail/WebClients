@@ -2483,6 +2483,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "같은 WiFi를 사용한다면 누군가 내 인터넷 기록을 볼 수 있을까요?"
       ],
+      "Data breaches are on the rise. For businesses, a single breach can result in stolen customer data, regulatory penalties, lost revenue, and lasting reputational damage. Luckily, your team can prevent most breaches with the right mix of security practices, technology, and awareness.": [
+        "데이터 보안 사고가 증가하고 있습니다. 기업의 경우, 단 한 번의 보안 사고로 고객 데이터 유출, 규제 벌금, 수익 손실, 그리고 지속적인 명예 훼손이 발생할 수 있습니다. 다행히도, 회원님의 팀이 올바른 보안 관행, 기술, 그리고 인식의 조화를 유도하여 대부분의 보안 사고를 예방할 수 있도록 조치할 수 있습니다."
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "VPN 설정에서 킬 스위치와 자동 연결을 활성화하세요."
       ],
@@ -4915,12 +4918,6 @@
       ],
       "120 minutes": [
         "120분"
-      ],
-      "15 minutes": [
-        "15분"
-      ],
-      "15m": [
-        "15분"
       ],
       "1h": [
         "1시간"
@@ -12050,9 +12047,6 @@
       "${ nbYear } year": [
         "${ nbYear } 년"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "이메일 주소 ${ maxAddresses }개 중 ${ usedAddresses }개 사용 중"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
@@ -13360,11 +13354,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "수신"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "이메일 주소 ${ maxBYOEAddresses }개 중 ${ usedBYOEAddresses }개 사용 중"
       ]
     },
     "Label for adding a new custom domain": {
@@ -14976,9 +14965,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "자동 회신을 설정하여 부재중이거나 응답할 수 없는 전송자에 알릴 수 있습니다."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "특정 보안 요구 사항을 갖춘 대규모 조직을 위한 맞춤형 솔루션"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "인터넷에 안전하고 제한 없이 고속으로 접속할 수 있는 전용 VPN 솔루션."
       ],
@@ -15317,9 +15303,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "연중무휴 고객지원"
-      ],
       "Access advanced VPN features": [
         "향상된 VPN 기능 접근"
       ],
@@ -15364,9 +15347,6 @@
       ],
       "Private gateways": [
         "비공개 게이트웨이"
-      ],
-      "Require 2FA": [
-        "2단계 인증 필요"
       ],
       "Support for ${ n } custom email domain": [
         "${ n }개 커스텀 이메일 도메인 지원"
@@ -21468,9 +21448,6 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "${ PASS_APP_NAME }를 가지고 계신 모든 기기에 다운로드하세요"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } 다운로드"
-      ],
       "Download the desktop app": [
         "데스크톱 앱 다운로드"
       ],
@@ -23155,9 +23132,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "매월 계정 당 ${ priceString }에 불과한 ${ PLAN_NAMES[plan] }(으)로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 동시에 보호할 수 있어요."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "매월 사용자 당 ${ priceString }부터 시작하는 ${ PLAN_NAMES[PLANS.DUO] } 또는 ${ PLAN_NAMES[PLANS.FAMILY] } 플랜으로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 보호하세요."
       ]
     },
     "upsell panel": {

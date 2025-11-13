@@ -12153,9 +12153,6 @@
       "${ nbYear } year": [
         "${ nbYear } tahun"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } dari ${ maxAddresses } alamat email"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
@@ -13463,11 +13460,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "Hingga"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } dari ${ maxBYOEAddresses } alamat email"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15079,9 +15071,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Siapkan pesan balasan otomatis untuk menginformasikan pengirim pesan bahwa Anda sedang tidak berada di kantor atau tidak dapat membalas."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Solusi yang didesain untuk organisasi yang lebih besar dengan kebutuhan keamanan spesifik"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Solusi VPN khusus yang memberikan akses internet yang aman, tanpa batas, dan berkecepatan tinggi."
       ],
@@ -15420,9 +15409,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Dukungan 24/7"
-      ],
       "Access advanced VPN features": [
         "Akses berbagai fitur VPN lanjutan"
       ],
@@ -15467,9 +15453,6 @@
       ],
       "Private gateways": [
         "Gateway pribadi"
-      ],
-      "Require 2FA": [
-        "Membutuhkan 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Dukungan untuk ${ n } domain email khusus"
@@ -21548,9 +21531,6 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Unduh ${ PASS_APP_NAME } untuk perangkat Anda"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "Unduh ${ VPN_APP_NAME }"
-      ],
       "Download the desktop app": [
         "Unduh aplikasi desktop"
       ],
@@ -23250,9 +23230,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Anda dapat melindungi hingga ${ FAMILY_MAX_USERS } pengguna dengan ${ PLAN_NAMES[plan] }. Dimulai dari hanya ${ priceString }/bulan per akun."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Anda dapat melindungi hingga ${ FAMILY_MAX_USERS } pengguna dengan ${ PLAN_NAMES[PLANS.DUO] } atau ${ PLAN_NAMES[PLANS.FAMILY] }. Dimulai dari hanya ${ priceString }/bulan per akun."
       ]
     },
     "upsell panel": {
