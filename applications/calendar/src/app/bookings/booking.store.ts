@@ -47,7 +47,7 @@ interface BookingStore {
     setSelectedBookingSlot: (slot: BookingTimeslot) => void;
 
     bookingSlots: BookingTimeslot[];
-    setBookingSlots: (bookingSlots: BookingTimeslot[]) => void;
+    setBookingSlots: (bookingSlots: Omit<BookingTimeslot, 'tzDate'>[]) => void;
     filterBookingSlotPerDay: (date: Date) => BookingTimeslot[];
     getDateKeySet: () => Set<string>;
 }
@@ -79,10 +79,10 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         });
     },
 
-    setBookingSlots: (bookingSlots: BookingTimeslot[]) => {
+    setBookingSlots: (bookingSlots: Omit<BookingTimeslot, 'tzDate'>[]) => {
         const newSlots = bookingSlots.map((slot) => ({
             ...slot,
-            tzDate: fromTimeSlotToUTCDate(slot, get().selectedTimezone),
+            tzDate: fromTimeSlotToUTCDate(slot as BookingTimeslot, get().selectedTimezone),
         }));
 
         const newTimeSlots = [...get().bookingSlots, ...newSlots].sort((a, b) => a.startTime - b.startTime);
