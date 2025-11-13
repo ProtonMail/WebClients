@@ -5,11 +5,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { useFlag } from '@proton/unleash';
 
+import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { getRotatePersonalMeetingDisabledUntil } from '../../utils/disableRotatePersonalMeeting';
 
 import './PersonalMeetingModal.scss';
@@ -69,9 +68,15 @@ export const PersonalMeetingModal = ({
             className="meet-radius border border-norm"
             onClose={onClose}
         >
-            <ModalTwoHeader />
-
-            <ModalTwoContent className="flex flex-column justify-space-between mx-4 gap-6">
+            <div
+                className="flex flex-column justify-end mx-4 pb-4 gap-6 h-full pt-custom"
+                style={{ '--pt-custom': '3rem' }}
+            >
+                <CloseButton
+                    onClose={onClose}
+                    className="absolute top-custom right-custom"
+                    style={{ '--top-custom': '0.75rem', '--right-custom': '0.75rem' }}
+                />
                 <div className="text-center text-3xl text-semibold">{c('Title').t`Personal meeting`}</div>
                 <div className="color-weak text-center">{c('Info')
                     .t`Your always available meeting room, share it only with people you trust.`}</div>
@@ -116,7 +121,7 @@ export const PersonalMeetingModal = ({
                         {c('Action').t`Copy link`}
                     </Button>
                 </div>
-            </ModalTwoContent>
+            </div>
         </ModalTwo>
     );
 };
