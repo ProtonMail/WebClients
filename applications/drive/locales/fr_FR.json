@@ -1923,6 +1923,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Sécurité avancée des comptes et du réseau dans un seul abonnement"
+      ],
       "High-speed chats and advanced AI features.": [
         "Discussions rapides et fonctionnalités d'IA avancées."
       ]
@@ -3930,6 +3933,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Veuillez vous connecter avec une adresse Gmail qui transfère déjà vers ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Veuillez vous connecter avec la même adresse Gmail que celle que vous avez connectée à l'origine"
       ]
@@ -5367,6 +5373,9 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "Done": [
+        "Terminé"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Rien ne s'affiche ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
       ],
@@ -6192,6 +6201,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Certains gouvernements bloquent ou restreignent l'accès à certains sites internet. Un VPN permet de contourner la censure tout en préservant la confidentialité de vos activités et de votre identité."
+      ],
+      "Some items failed": [
+        "Certains éléments n'ont pas abouti"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Certains de vos fichiers ne sont plus accessibles. Restaurez l'accès à vos fichiers. ${ StartRecoveryButton }"
@@ -8399,6 +8411,9 @@
       "End-to-end encryption": [
         "Chiffrement de bout en bout"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Avantages existants de l'abonnement ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Téléchargements P2P/BitTorrent rapides"
       ],
@@ -8617,6 +8632,10 @@
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Partage du coffre-fort jusqu'à ${ n } personne",
+        "Partage du coffre-fort avec jusqu'à ${ n } personnes"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
       ]
@@ -8719,9 +8738,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solution VPN dédiée qui offre un accès sécurisé, sans limitation et ultra-rapide à internet."
@@ -8987,9 +9003,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Support 24h/24 et 7j/7"
-      ],
       "Access advanced VPN features": [
         "Accédez à des fonctionnalités VPN avancées."
       ],
@@ -9035,9 +9048,6 @@
       ],
       "Private gateways": [
         "Passerelles privées"
-      ],
-      "Require 2FA": [
-        "Demande d'authentification A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Prise en charge pour ${ n } domaine de messagerie personnalisé",
@@ -10038,6 +10048,23 @@
       ],
       "Credits will be added to your balance": [
         "Les crédits seront ajoutés à votre solde."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Êtes-vous sûr de vouloir continuer ?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si vous choisissez de modifier votre abonnement ${ planTitle }, vous pourriez perdre l'accès à certaines fonctionnalités."
+      ],
+      "Keep ${ planTitle }": [
+        "Conserver ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Oui, j'en suis sûr"
+      ],
+      "Your plan includes this feature already.": [
+        "Votre abonnement inclut déjà cette fonctionnalité."
       ]
     },
     "Payments.plan_name": {

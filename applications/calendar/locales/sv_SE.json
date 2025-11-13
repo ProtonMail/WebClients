@@ -228,6 +228,9 @@
       "Copy alias “${ name }”": [
         "Kopiera alias “${ name }“"
       ],
+      "Copy booking page link": [
+        "Kopiera länk till bokningssida"
+      ],
       "Copy email address": [
         "Kopiera e-postadress"
       ],
@@ -308,6 +311,9 @@
         "Ta bort ${ selectedCount } kontaktgrupp",
         "Ta bort ${ selectedCount } kontaktgrupper"
       ],
+      "Delete booking page": [
+        "Ta bort bokningssida"
+      ],
       "Delete contact": [
         "Ta bort kontakt"
       ],
@@ -346,6 +352,9 @@
       ],
       "Edit": [
         "Redigera"
+      ],
+      "Edit booking page": [
+        "Redigera bokningssida"
       ],
       "Edit email address": [
         "Redigera e-postadress"
@@ -1935,6 +1944,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Avancerad konto- och nätverkssäkerhet i ett paket"
+      ],
       "High-speed chats and advanced AI features.": [
         "Chattar med hög hastighet och avancerade AI-funktioner."
       ]
@@ -3373,12 +3385,6 @@
       "120 minutes": [
         "120 minuter"
       ],
-      "15 minutes": [
-        "15 minuter"
-      ],
-      "15m": [
-        "15 min."
-      ],
       "1h": [
         "1 tim."
       ],
@@ -4050,6 +4056,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Logga in med en Gmail-adress som redan vidarebefordrar till ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Logga in med samma Gmail-adress som du ursprungligen anslöt"
       ]
@@ -5255,6 +5264,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Vem som helst med denna länk kan se ifall du är ledig eller upptagen i din kalender. De kan inte se händelsedetaljer såsom rubrik, plats eller deltagare."
       ],
+      "Appointment duration": [
+        "Mötets varaktighet"
+      ],
       "Are you sure you want to discard your import?": [
         "Är du säker på att du vill kasta din import?"
       ],
@@ -5314,6 +5326,9 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Hittar du inte händelsen du letar efter? Några händelser i dolda kalendrar matchar din fråga. För att se dessa resultat, aktivera synlighet för ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create booking range across days": [
+        "Kan inte skapa bokningsintervall över dagar"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kommer du inte ihåg ditt lösenord? Vi kan hjälpa dig att rensa krypterad data från alla kontakter krypterade med denna nyckel och samtidigt avfärda varningen."
@@ -5559,6 +5574,9 @@
       "High Priority": [
         "Hög prioritet"
       ],
+      "Host": [
+        "Värd"
+      ],
       "How long should an appointment last?": [
         "Hur långt ska ett möte vara?"
       ],
@@ -5689,11 +5707,17 @@
       "Loading events": [
         "Laddar händelser"
       ],
+      "Location": [
+        "Plats"
+      ],
       "Low Priority": [
         "Låg prioritet"
       ],
       "Manage your calendars": [
         "Hantera dina kalendrar"
+      ],
+      "Manange booking page": [
+        "Hantera bokningssida"
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -5727,9 +5751,6 @@
       ],
       "New": [
         "Ny"
-      ],
-      "No available slots for this day": [
-        "Inga tillgängliga luckor för denna dag"
       ],
       "No contacts added yet": [
         "Inga kontakter tillagda ännu"
@@ -5870,6 +5891,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vänta medan vi letar efter kontakter som innehåller data krypterad med den inaktiva nyckeln."
       ],
+      "Powered by ${ protonButton }": [
+        "Drivs av ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Tidigare ändringar av denna serie kommer att gå förlorade."
       ],
@@ -5878,6 +5902,9 @@
       ],
       "Primary": [
         "Primär"
+      ],
+      "Privacy by default": [
+        "Integritet som standard"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
@@ -7196,9 +7223,6 @@
       "Add a gift code": [
         "Lägg till en presentkod"
       ],
-      "Bookings pages": [
-        "Bokningssidor"
-      ],
       "Calendars": [
         "Kalendrar"
       ],
@@ -7909,6 +7933,9 @@
       "End-to-end encryption": [
         "End-to-end-kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Befintliga ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-förmåner"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Snabba P2P-/BitTorrent-nedladdningar"
       ],
@@ -8127,6 +8154,10 @@
         "Valvdelning (upp till ${ n } person)",
         "Valvdelning (upp till ${ n } personer)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Valvdelning med upp till ${ n } person",
+        "Valvdelning med upp till ${ n } personer"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
       ]
@@ -8230,9 +8261,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Den dedikerade VPN-lösningen som ger säker, obegränsad höghastighetsåtkomst till Internet."
       ],
@@ -8275,11 +8303,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8502,9 +8525,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Support dygnet runt"
-      ],
       "Access advanced VPN features": [
         "Få tillgång till avancerade VPN-funktioner"
       ],
@@ -8550,9 +8570,6 @@
       ],
       "Private gateways": [
         "Privata gateways"
-      ],
-      "Require 2FA": [
-        "Kräver 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Stöd för ${ n } anpassad e-postdomän",
@@ -9318,6 +9335,23 @@
       ],
       "Credits will be added to your balance": [
         "Krediter kommer att läggas till ditt saldo"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Är du säker på att du vill fortsätta?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Om du väljer att ändra ditt ${ planTitle }-paket kan du förlora åtkomst till några funktioner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behåll ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jag är säker"
+      ],
+      "Your plan includes this feature already.": [
+        "Ditt paket inkluderar redan denna funktion."
       ]
     },
     "Payments.plan_name": {
@@ -11293,6 +11327,9 @@
       "Apply gift code": [
         "Tillämpa presentkod"
       ],
+      "Appointment details": [
+        "Mötesdetaljer"
+      ],
       "Are you sure?": [
         "Är du säker?"
       ],
@@ -11328,6 +11365,9 @@
       ],
       "Change password": [
         "Ändra lösenord"
+      ],
+      "Choose a time": [
+        "Välj en tid"
       ],
       "Choose how many times this event will repeat": [
         "Välj hur många gånger denna händelse ska upprepas"
@@ -11543,6 +11583,9 @@
       ],
       "High security for your account": [
         "Hög säkerhet för ditt konto"
+      ],
+      "Host": [
+        "Värd"
       ],
       "How does it all work?": [
         "Hur fungerar det?"

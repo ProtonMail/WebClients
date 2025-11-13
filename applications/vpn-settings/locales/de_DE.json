@@ -632,6 +632,9 @@
       "Or": [
         "Oder"
       ],
+      "Or use a different Gmail address": [
+        "Oder benutze eine andere Gmail-Adresse"
+      ],
       "Organization": [
         "Organisation"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
+      ],
+      "Use this Gmail address": [
+        "Diese E-Mail Adresse verwenden"
       ],
       "Use your current email instead": [
         "Verwende stattdessen deine aktuelle E-Mail-Adresse"
@@ -2095,6 +2101,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
+      ],
+      "Advanced account and network security in one plan": [
+        "Erweiterte Konto- und Netzwerksicherheit in einem Abonnement"
       ],
       "High-speed chats and advanced AI features.": [
         "Schnelle Chats und erweiterte KI-Funktionen."
@@ -4257,6 +4266,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Bitte melde dich mit einer Gmail-Adresse an, die bereits an ${ MAIL_APP_NAME } weiterleitet."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Bitte melde dich mit derselben Gmail-Adresse an, die du ursprünglich verbunden hast."
       ]
@@ -4843,6 +4855,9 @@
       "Double VPN": [
         "Doppeltes VPN"
       ],
+      "File attachment ": [
+        "Dateianhang "
+      ],
       "Lightning-fast speeds": [
         "Blitzschnelle Geschwindigkeiten"
       ],
@@ -4857,6 +4872,9 @@
       ],
       "Secure streaming": [
         "Sicheres Streaming"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Sicherer Tresor, gemeinsame Nutzung von Einträgen und Links"
       ],
       "Stream from Netflix, HBO, and more": [
         "Streame von Netflix, HBO und mehr"
@@ -8087,6 +8105,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } von ${ maxAddresses } E-Mail-Adresse verfügbar",
+        "${ addressesAvailable } von ${ maxAddresses } E-Mail-Adressen verfügbar"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
@@ -8107,10 +8129,6 @@
       "${ nbDay } day": [
         "${ nbDay } Tag",
         "${ nbDay } Tage"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses }/${ maxAddresses } E-Mail-Adresse",
-        "${ usedAddresses }/${ maxAddresses } E-Mail-Adressen"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
@@ -8862,9 +8880,9 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } von ${ maxBYOEAddresses } E-Mail-Adresse",
-        "${ usedBYOEAddresses } von ${ maxBYOEAddresses } E-Mail-Adressen"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } von ${ maxBYOEAddresses } E-Mail-Adresse verfügbar",
+        "${ byoeAddressesAvailableCount } von ${ maxBYOEAddresses } E-Mail-Adressen verfügbar"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9724,6 +9742,9 @@
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Bestehende ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-Vorteile"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Schnelle P2P/BitTorrent-Downloads"
       ],
@@ -9936,6 +9957,10 @@
       "User storage management": [
         "Benutzer-Speicherverwaltung"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Tresor mit bis zu ${ n } Person teilen",
+        "Tresor mit bis zu ${ n } Personen teilen"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
       ]
@@ -10030,9 +10055,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Maßgeschneiderte Lösungen für größere Organisationen mit spezifischen Sicherheitsanforderungen"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Die dedizierte VPN-Lösung, die einen sicheren und uneingeschränkten Zugriff auf ein Hochgeschwindigkeitsinternet bietet."
@@ -10343,9 +10365,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24/7 Support"
-      ],
       "Access advanced VPN features": [
         "Profitiere von erweiterten VPN-Funktionen"
       ],
@@ -10391,9 +10410,6 @@
       ],
       "Private gateways": [
         "Private Gateways"
-      ],
-      "Require 2FA": [
-        "2FA erzwingen"
       ],
       "Support for ${ n } custom email domain": [
         "Support für ${ n } benutzerdefinierte E-Mail-Domain",
@@ -10483,6 +10499,9 @@
       ],
       "A disabled address cannot be default": [
         "Eine deaktivierte Adresse kann nicht als Standardadresse verwendet werden."
+      ],
+      "Address reconnected.": [
+        "Adresse wieder verbunden."
       ],
       "An external address cannot be default": [
         "Eine externe Adresse kann nicht als Standardadresse verwendet werden."
@@ -11371,6 +11390,36 @@
         "Das Guthaben wird dir gutgeschrieben."
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Lifetime-Konten können übertragen oder verkauft werden"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Wende dich an den Kundensupport, um den Eigentümerwechsel zu bestätigen."
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Niemals"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Möchtest du wirklich fortfahren?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Wenn du dein ${ planTitle }-Abonnement änderst, kannst du den Zugriff auf einige Funktionen verlieren."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } behalten"
+      ],
+      "Yes, I'm sure": [
+        "Ja, ich bin sicher"
+      ],
+      "Your plan includes this feature already.": [
+        "Dein Abonnement beinhaltet diese Funktion bereits."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -11629,6 +11678,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle Premium-Funktionen von ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Privatsphäre-Suite mit Premium-Diensten und ${ unlimitedPlanMaxSpace } verschlüsseltem Cloud-Speicher, alles in einem Paket."
       ]
     },
     "Plans": {
@@ -14247,6 +14299,9 @@
       "Confirm phone number": [
         "Telefonnummer bestätigen"
       ],
+      "Connect a Gmail address": [
+        "Eine Gmail-Adresse verbinden"
+      ],
       "Connect apps and devices": [
         "Apps und Geräte verbinden"
       ],
@@ -14411,11 +14466,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Auf ${ downgradedPlanName } downgraden?"
       ],
+      "Download ${ app }": [
+        "${ app } herunterladen"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } herunterladen"
       ],
       "Downloads": [
         "Downloads"
@@ -14721,6 +14776,9 @@
       ],
       "Remove domain": [
         "Domain entfernen"
+      ],
+      "Remove forwarding address": [
+        "Weiterleitungsadresse entfernen"
       ],
       "Remove server?": [
         "Server entfernen?"
@@ -15394,6 +15452,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spare bis zu ${ priceString }** mit einem längeren Abonnement. Gleiche Premium-Funktionen, niedrigerer Preis."
       ],
+      "Advanced security for your company": [
+        "Erweiterte Sicherheit für dein Unternehmen"
+      ],
       "Advanced security for your company?": [
         "Erweiterte Sicherheit für dein Unternehmen?"
       ],
@@ -15406,20 +15467,26 @@
       "Did you know?": [
         "Wusstest du das?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "${ drivePlusPlanMaxSpace } Speicherplatz für deine Dateien, Fotos und Dokumente erhalten und Dateiversionen mit 10-jähriger Dateiwiederherstellung wiederherstellen."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Deine Organisation vor Datenlecks mit ${ PLAN_NAMES[plan] } schützen."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Schütze deine Organisation vor Datenlecks mit ${ VPN_APP_NAME } für Unternehmen."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Unbegrenzte Privatsphäre für bis zu ${ FAMILY_MAX_USERS } Personen. Schon ab ${ priceString }/Monat."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Unbegrenzte Privatsphäre für dich und eine geliebte Person. Schon ab ${ priceString }/Monat."
       ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Du kannst bis zu ${ DUO_MAX_USERS } Personen mit ${ PLAN_NAMES[PLANS.DUO] } und bis zu ${ FAMILY_MAX_USERS } mit ${ PLAN_NAMES[PLANS.FAMILY] } schützen. Ab nur ${ priceString }/Monat pro Konto."
+      ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kannst bis zu ${ FAMILY_MAX_USERS } Menschen mit ${ PLAN_NAMES[plan] } schützen. Ab nur ${ priceString } pro Monat pro Konto."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Du kannst bis zu ${ FAMILY_MAX_USERS } Menschen mit ${ PLAN_NAMES[PLANS.DUO] } oder${ PLAN_NAMES[PLANS.FAMILY] } schützen. Ab nur ${ priceString } pro Monat pro Konto."
       ]
     },
     "upsell panel": {

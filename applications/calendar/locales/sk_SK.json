@@ -176,6 +176,9 @@
       "Close navigation": [
         "Zavrieť menu"
       ],
+      "Close sidebar": [
+        "Zavrieť bočný panel"
+      ],
       "Close this banner": [
         "Zatvoriť tento banner"
       ],
@@ -3434,12 +3437,6 @@
       "120 minutes": [
         "120 minút"
       ],
-      "15 minutes": [
-        "15 minút"
-      ],
-      "15m": [
-        "15m"
-      ],
       "1h": [
         "1h"
       ],
@@ -5479,6 +5476,9 @@
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Nemôžete nájsť udalosti, ktoré hľadáte? Niektoré udalosti v skrytých kalendároch sa zhodujú s vaším vyhľadávaním. Na zobrazenie týchto výsledkov zapnite viditeľnosť pre ${ hiddenWithItemsCalendarList }."
       ],
+      "Cannot create booking range across days": [
+        "Nie je možné vytvoriť rezerváciu v rozsahu viacerých dní"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
       ],
@@ -5904,9 +5904,6 @@
       ],
       "New": [
         "Nový"
-      ],
-      "No available slots for this day": [
-        "Pre tento deň nie sú k dispozícii žiadne voľné termíny."
       ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
@@ -6483,6 +6480,9 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Túto pozvánku ste už predtým odmietli. Požiadajte majiteľa o opätovné zaslanie pozvánky"
+      ],
+      "You will loose all unsaved changes.": [
+        "Všetky neuložené zmeny stratíte."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "V tento deň stratíte prístup k funkciám ${ planTitle }."
@@ -7401,9 +7401,6 @@
     "Link": {
       "Add a gift code": [
         "Vložiť darčekový kód"
-      ],
-      "Bookings pages": [
-        "Stránky rezervácií"
       ],
       "Calendars": [
         "Kalendáre"
@@ -8500,9 +8497,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Riešenia na mieru pre väčšie organizácie so špecifickými bezpečnostnými potrebami"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Špecializované riešenie VPN, ktoré poskytuje bezpečný, neobmedzený a vysokorýchlostný prístup k internetu."
       ],
@@ -8769,9 +8763,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Podpora 24/7"
-      ],
       "Access advanced VPN features": [
         "Získajte prístup k pokročilým VPN funkciám"
       ],
@@ -8819,9 +8810,6 @@
       ],
       "Private gateways": [
         "Súkromné brány"
-      ],
-      "Require 2FA": [
-        "Vyžadovať 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Podpora pre ${ n } vlastnú emailovú doménu",

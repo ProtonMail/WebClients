@@ -7936,9 +7936,6 @@
       "${ nbDay } day": [
         "${ nbDay } 日"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ maxAddresses } 件のうち ${ usedAddresses } 件のメールアドレス"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
@@ -8685,11 +8682,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "終了日"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ maxBYOEAddresses } 件のうち ${ usedBYOEAddresses } 件のメールアドレス"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9835,9 +9827,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全なメール"
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "特定のセキュリティ ニーズを持つ大規模組織向けにカスタマイズされたソリューション"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "インターネットへの安全かつ無制限の高速アクセスを提供する VPN のプランです。"
       ],
@@ -10146,9 +10135,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24時間365日のサポート"
-      ],
       "Access advanced VPN features": [
         "高度な VPN 機能にアクセス"
       ],
@@ -10193,9 +10179,6 @@
       ],
       "Private gateways": [
         "プライベート ゲートウェイ"
-      ],
-      "Require 2FA": [
-        "2段階認証が必要"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } 個のカスタムドメインメールアドレスのサポート"
@@ -14131,9 +14114,6 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } アプリをダウンロード"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } をダウンロード"
-      ],
       "Downloads": [
         "ダウンロード"
       ],
@@ -15124,9 +15104,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ FAMILY_MAX_USERS } を持つ最大 ${ PLAN_NAMES[plan] }人を保護することができます。アカウントごとに ${ priceString }/月から開始します。"
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "${ FAMILY_MAX_USERS } または ${ PLAN_NAMES[PLANS.DUO] } を持つ最大で ${ PLAN_NAMES[PLANS.FAMILY] }人を保護することができます。アカウントごとに ${ priceString }から開始します。"
       ]
     },
     "upsell panel": {

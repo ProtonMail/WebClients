@@ -228,6 +228,9 @@
       "Copy alias “${ name }”": [
         "Copia l'àlies «${ name }»"
       ],
+      "Copy booking page link": [
+        "Copieu l'enllaç de la pàgina de reserves"
+      ],
       "Copy email address": [
         "Copia l'adreça de correu electrònic"
       ],
@@ -308,6 +311,9 @@
         "Eliminar ${ selectedCount } grup de contactes",
         "Eliminar ${ selectedCount } grups de contactes"
       ],
+      "Delete booking page": [
+        "Elimineu la pàgina de reserves"
+      ],
       "Delete contact": [
         "Elimina el contacte"
       ],
@@ -346,6 +352,9 @@
       ],
       "Edit": [
         "Edita"
+      ],
+      "Edit booking page": [
+        "Editeu la pàgina de reserves"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -427,6 +436,9 @@
       ],
       "Go to settings": [
         "Ves a les preferències"
+      ],
+      "Go to the next available appointment": [
+        "Anar a la següent cita disponible"
       ],
       "Got it": [
         "D'acord"
@@ -748,6 +760,15 @@
       ],
       "See plan features": [
         "Mostra les característiques del pla"
+      ],
+      "See previous availability": [
+        "Consulteu la disponibilitat anterior"
+      ],
+      "See upcoming availability": [
+        "Consulteu la disponibilitat propera"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Seleccioneu ${ dateHeaderLongString } a les ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Selecciona ${ planOrAppName }"
@@ -1949,6 +1970,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Afegiu ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguretat avançada del compte i de la xarxa amb un sol pla"
       ],
       "High-speed chats and advanced AI features.": [
         "Xats d'alta velocitat i característiques d'IA avançades."
@@ -3391,12 +3415,6 @@
       "120 minutes": [
         "120 minuts"
       ],
-      "15 minutes": [
-        "15 minuts"
-      ],
-      "15m": [
-        "15 min"
-      ],
       "1h": [
         "1 h"
       ],
@@ -4071,6 +4089,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Si us plau, inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
       ]
@@ -5276,6 +5297,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Qualsevol amb aquest enllaç pot veure al vostre calendari si esteu lliure o ocupat. No podran veure detalls dels esdeveniments com ara títol, localització o participants."
       ],
+      "Appointment duration": [
+        "Durada de la cita"
+      ],
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la vostra importació?"
       ],
@@ -5586,6 +5610,9 @@
       "High Priority": [
         "Alta prioritat"
       ],
+      "Host": [
+        "Amfitrió"
+      ],
       "How long should an appointment last?": [
         "Quant ha de durar una cita?"
       ],
@@ -5716,11 +5743,17 @@
       "Loading events": [
         "Carregant esdeveniments"
       ],
+      "Location": [
+        "Ubicació"
+      ],
       "Low Priority": [
         "Prioritat baixa"
       ],
       "Manage your calendars": [
         "Gestió dels teus calendaris"
+      ],
+      "Manange booking page": [
+        "Gestioneu la pàgina de reserves"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -5755,8 +5788,8 @@
       "New": [
         "Nova"
       ],
-      "No available slots for this day": [
-        "No hi ha franges horàries disponibles per a aquest dia"
+      "No appointments available this week": [
+        "No hi ha cites disponibles aquesta setmana"
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
@@ -5897,6 +5930,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
+      "Powered by ${ protonButton }": [
+        "Impulsat per ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Es perdran les modificacions prèvies d'aquesta sèrie."
       ],
@@ -5905,6 +5941,9 @@
       ],
       "Primary": [
         "Principal"
+      ],
+      "Privacy by default": [
+        "Privacitat per defecte"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegació privada (o mode «incògnit») només és útil per mantenir la vostra activitat amagada al dispositiu. Impedeix que el vostre navegador desi l'historial i les galetes, però no us fa invisible. El vostre ISP, l'administrador de xarxa i els llocs web que visiteu encara poden veure el que feu en línia."
@@ -7229,7 +7268,7 @@
       "Add a gift code": [
         "Afegeix un codi de regal"
       ],
-      "Bookings pages": [
+      "Booking pages": [
         "Pàgines de reserves"
       ],
       "Calendars": [
@@ -7305,7 +7344,7 @@
         "Reactiva ara"
       ],
       "Reactivate subscription": [
-        "Reactiveu la subscripció"
+        "Reactiva la subscripció"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -7942,6 +7981,9 @@
       "End-to-end encryption": [
         "Xifratge d'extrem a extrem"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Avantatges del ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } actual"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descàrregues ràpides de P2P/BitTorrent"
       ],
@@ -8160,6 +8202,10 @@
         "Compartició de la caixa forta (fins a ${ n } persona)",
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Ús compartit de la caixa forta amb fins a ${ n } persona",
+        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
@@ -8262,9 +8308,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Solucions a mida per a organitzacions més grans amb necessitats específiques de seguretat"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solució VPN dedicada que proporciona accés segur, il·limitat i d'alta velocitat a internet."
@@ -8530,9 +8573,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Suport 24/7"
-      ],
       "Access advanced VPN features": [
         "Accediu a característiques de VPN avançades"
       ],
@@ -8579,9 +8619,6 @@
       "Private gateways": [
         "Passarel·les privades"
       ],
-      "Require 2FA": [
-        "Requereix 2FA"
-      ],
       "Support for ${ n } custom email domain": [
         "Suport per a ${ n } domini de correu electrònic personalitzat",
         "Suport per a ${ n } dominis de correu electrònic personalitzats"
@@ -8618,7 +8655,7 @@
         "El codi d'accés s'ha copiat al porta-retalls."
       ],
       "Passphrase copied to clipboard": [
-        "La frase de contrasenya s'ha copiat al porta-retalls"
+        "S'ha copiat la frase de contrasenya al porta-retalls"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9357,6 +9394,23 @@
       ],
       "Credits will be added to your balance": [
         "Els crèdits s'afegiran al vostre saldo"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Esteu segur que voleu procedir?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si decidiu modificar el vostre pla ${ planTitle }, potser perdreu l'accés a algunes característiques."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguiu amb ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sí, n'estic segur"
+      ],
+      "Your plan includes this feature already.": [
+        "El vostre pla ja inclou aquesta característica."
       ]
     },
     "Payments.plan_name": {
@@ -11335,6 +11389,9 @@
       "Apply gift code": [
         "Aplicar el codi regal"
       ],
+      "Appointment details": [
+        "Detalls de la cita"
+      ],
       "Are you sure?": [
         "N'esteu segur?"
       ],
@@ -11370,6 +11427,9 @@
       ],
       "Change password": [
         "Canvia la contrasenya"
+      ],
+      "Choose a time": [
+        "Trieu una hora"
       ],
       "Choose how many times this event will repeat": [
         "Trieu quantes vegades es repetirà aquest esdeveniment."
@@ -12083,7 +12143,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: l'assistent d'IA que respecta la vostra privacitat"
+        "${ LUMO_APP_NAME }: L'assistent d'IA que respecta la vostra privacitat"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."

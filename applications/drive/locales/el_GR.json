@@ -1923,6 +1923,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Προσθήκη ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Προηγμένη ασφάλεια λογαριασμού και δικτύου σε ένα πλάνο"
+      ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
       ]
@@ -3939,6 +3942,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
       ]
@@ -5376,6 +5382,9 @@
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
+      "Done": [
+        "Έτοιμο"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Δε βλέπετε τίποτα; Θυμηθείτε να απενεργοποιήσετε τα προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
@@ -6207,6 +6216,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Ορισμένες κυβερνήσεις αποκλείουν ή περιορίζουν την πρόσβαση σε ορισμένους ιστότοπους. Ένα VPN βοηθά στην παράκαμψη της λογοκρισίας, διατηρώντας παράλληλα τη δραστηριότητα και την ταυτότητά σας ιδιωτικές."
+      ],
+      "Some items failed": [
+        "Ορισμένα στοιχεία απέτυχαν"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Κάποια από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ StartRecoveryButton }"
@@ -8354,6 +8366,9 @@
       "End-to-end encryption": [
         "Διατερματική κρυπτογράφηση"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Υφιστάμενα οφέλη ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Γρήγορες λήψεις P2P/BitTorrent"
       ],
@@ -8572,6 +8587,10 @@
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Κοινή χρήση κρύπτης έως ${ n } άτομο",
+        "Κοινή χρήση κρύπτης έως ${ n } άτομα"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
       ]
@@ -8674,9 +8693,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Εξατομικευμένες λύσεις για μεγαλύτερους οργανισμούς με συγκεκριμένες ανάγκες ασφάλειας"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Η αποκλειστική λύση VPN που παρέχει ασφαλή, απεριόριστη, υψηλής ταχύτητας πρόσβαση στο διαδίκτυο."
@@ -8942,9 +8958,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Υποστήριξη 24/7"
-      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
@@ -8990,9 +9003,6 @@
       ],
       "Private gateways": [
         "Ιδιωτικές πύλες"
-      ],
-      "Require 2FA": [
-        "Απαιτείται 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
@@ -10015,6 +10025,23 @@
       ],
       "Credits will be added to your balance": [
         "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Εάν επιλέξετε να τροποποιήσετε το πλάνο ${ planTitle } σας, ενδέχεται να χάσετε την πρόσβαση σε ορισμένες λειτουργίες."
+      ],
+      "Keep ${ planTitle }": [
+        "Διατήρηση ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ναι, Είμαι σίγουρος"
+      ],
+      "Your plan includes this feature already.": [
+        "Το πλάνο σας περιλαμβάνει ήδη αυτή τη λειτουργία."
       ]
     },
     "Payments.plan_name": {

@@ -632,6 +632,9 @@
       "Or": [
         "O"
       ],
+      "Or use a different Gmail address": [
+        "O utilitzeu una altra adreça de Gmail"
+      ],
       "Organization": [
         "Organització"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Utilitza un codi de recuperació"
+      ],
+      "Use this Gmail address": [
+        "Utilitzeu aquesta adreça de Gmail"
       ],
       "Use your current email instead": [
         "Utilitzeu el vostre correu electrònic actual."
@@ -2095,6 +2101,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Afegiu ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguretat avançada del compte i de la xarxa amb un sol pla"
       ],
       "High-speed chats and advanced AI features.": [
         "Xats d'alta velocitat i característiques d'IA avançades."
@@ -4257,6 +4266,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Si us plau, inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
       ]
@@ -4843,6 +4855,9 @@
       "Double VPN": [
         "VPN doble"
       ],
+      "File attachment ": [
+        "Fitxer adjunt "
+      ],
       "Lightning-fast speeds": [
         "Velocitats ultraràpides"
       ],
@@ -4857,6 +4872,9 @@
       ],
       "Secure streaming": [
         "Estríming segur"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Ús compartit segur de caixes fortes, elements i enllaços"
       ],
       "Stream from Netflix, HBO, and more": [
         "Reproduïu en estríming des de Netflix, HBO, etc."
@@ -8087,6 +8105,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } de ${ maxAddresses } adreça de correu electrònic disponible",
+        "${ addressesAvailable } adreces de correu electrònic de ${ maxAddresses } disponibles"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
@@ -8107,10 +8129,6 @@
       "${ nbDay } day": [
         "${ nbDay } dia",
         "${ nbDay } dies"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } adreça de correu electrònic de ${ maxAddresses }",
-        "${ usedAddresses } adreces de correu electrònic de ${ maxAddresses }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
@@ -8862,9 +8880,9 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } adreça de correu electrònic de ${ maxBYOEAddresses }",
-        "${ usedBYOEAddresses } adreces de correu electrònic de ${ maxBYOEAddresses }"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } adreça de correu electrònic disponible de ${ maxBYOEAddresses }",
+        "${ byoeAddressesAvailableCount } adreces de correu electrònic de ${ maxBYOEAddresses } disponibles"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9071,7 +9089,7 @@
         "Reactiva ara"
       ],
       "Reactivate subscription": [
-        "Reactiveu la subscripció"
+        "Reactiva la subscripció"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -9732,6 +9750,9 @@
       "End-to-end encryption": [
         "Xifratge d'extrem a extrem"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Avantatges del ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } actual"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descàrregues ràpides de P2P/BitTorrent"
       ],
@@ -9948,6 +9969,10 @@
         "Compartició de la caixa forta (fins a ${ n } persona)",
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Ús compartit de la caixa forta amb fins a ${ n } persona",
+        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
@@ -10043,9 +10068,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb característiques avançades per a les vostres comunicacions diàries."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Solucions a mida per a organitzacions més grans amb necessitats específiques de seguretat"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solució VPN dedicada que proporciona accés segur, il·limitat i d'alta velocitat a internet."
       ],
@@ -10122,9 +10144,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Prova de ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ],
       "Your account's usage": [
         "Ús del vostre compte"
@@ -10358,9 +10377,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Suport 24/7"
-      ],
       "Access advanced VPN features": [
         "Accediu a característiques de VPN avançades"
       ],
@@ -10406,9 +10422,6 @@
       ],
       "Private gateways": [
         "Passarel·les privades"
-      ],
-      "Require 2FA": [
-        "Requereix 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Suport per a ${ n } domini de correu electrònic personalitzat",
@@ -10498,6 +10511,9 @@
       ],
       "A disabled address cannot be default": [
         "Una adreça desactivada no pot ser una adreça per defecte."
+      ],
+      "Address reconnected.": [
+        "Adreça reconectada."
       ],
       "An external address cannot be default": [
         "Una adreça externa no pot ser una adreça per defecte."
@@ -11389,6 +11405,36 @@
         "Els crèdits s'afegiran al vostre saldo"
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Els comptes de per vida es poden transferir o vendre."
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Poseu-vos en contacte amb l'atenció al client per confirmar el canvi de titularitat"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Mai"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Esteu segur que voleu procedir?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si decidiu modificar el vostre pla ${ planTitle }, potser perdreu l'accés a algunes característiques."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguiu amb ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sí, n'estic segur"
+      ],
+      "Your plan includes this feature already.": [
+        "El vostre pla ja inclou aquesta característica."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Gratuït"
@@ -11647,6 +11693,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Suite de Privacitat amb serveis prèmium i ${ unlimitedPlanMaxSpace } d'emmagatzematge al núvol xifrat, tot en un sol paquet."
       ]
     },
     "Plans": {
@@ -14269,6 +14318,9 @@
       "Confirm phone number": [
         "Confirmeu el número de telèfon"
       ],
+      "Connect a Gmail address": [
+        "Connecteu una adreça de Gmail"
+      ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
       ],
@@ -14433,11 +14485,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Pasar a ${ downgradedPlanName }?"
       ],
+      "Download ${ app }": [
+        "Baixeu ${ app }"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "Baixa ${ VPN_APP_NAME }"
       ],
       "Downloads": [
         "Descàrregues"
@@ -14743,6 +14795,9 @@
       ],
       "Remove domain": [
         "Esborra el domini"
+      ],
+      "Remove forwarding address": [
+        "Esborreu l'adreça de reenviament"
       ],
       "Remove server?": [
         "Voleu esborrar el servidor?"
@@ -15230,7 +15285,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: l'assistent d'IA que respecta la vostra privacitat"
+        "${ LUMO_APP_NAME }: L'assistent d'IA que respecta la vostra privacitat"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
@@ -15416,6 +15471,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Estalvieu fins a ${ priceString }** amb una subscripció més llarga. Mateixes funcionalitats prèmium per un preu més baix."
       ],
+      "Advanced security for your company": [
+        "Seguretat avançada per a la vostra empresa"
+      ],
       "Advanced security for your company?": [
         "Voleu seguretat avançada per a la vostra empresa?"
       ],
@@ -15428,20 +15486,26 @@
       "Did you know?": [
         "Ho sabíeu?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Aconseguiu ${ drivePlusPlanMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents, i recupereu versions de fitxers amb una recuperació de fitxers de 10 anys."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Protegiu la vostra organització d'infraccions de dades amb ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protegiu la vostra organització d'infraccions de dades amb ${ VPN_APP_NAME } per a Empreses."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Privacitat il·limitada per a fins a ${ FAMILY_MAX_USERS } persones. Des de només ${ priceString }/mes."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Privacitat il·limitada per a vós i una persona estimada. Des de només ${ priceString }/mes."
       ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Podeu protegir fins a ${ DUO_MAX_USERS } persones amb ${ PLAN_NAMES[PLANS.DUO] }, i fins a ${ FAMILY_MAX_USERS } amb ${ PLAN_NAMES[PLANS.FAMILY] }. A partir de només ${ priceString }/mes per compte."
+      ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Podeu protegir fins a ${ FAMILY_MAX_USERS } persones amb ${ PLAN_NAMES[plan] }. A partir de només ${ priceString }/mes per compte."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Podeu protegir fins a ${ FAMILY_MAX_USERS } persones amb ${ PLAN_NAMES[PLANS.DUO] } o ${ PLAN_NAMES[PLANS.FAMILY] }. A partir de només ${ priceString }/mes per compte."
       ]
     },
     "upsell panel": {

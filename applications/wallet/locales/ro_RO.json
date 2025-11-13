@@ -1072,6 +1072,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Adăugare ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Securitate avansată a contului și a rețelei într-un singur plan"
+      ],
       "High-speed chats and advanced AI features.": [
         "Conversații rapide și funcții avansate de inteligență artificială."
       ]
@@ -3727,6 +3730,9 @@
       "End-to-end encryption": [
         "Criptare bilaterală"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficiile existente ale planului ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descărcări rapide P2P/BitTorrent"
       ],
@@ -3929,6 +3935,11 @@
         "Partajare seif (maxim ${ n } persoane)",
         "Partajare seif (maxim ${ n } de persoane)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Partajare seifuri cu ${ n } persoană",
+        "Partajare seifuri cu ${ n } persoane",
+        "Partajare seifuri cu ${ n } de persoane"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
       ]
@@ -4022,9 +4033,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluții personalizate pentru organizații mai mari cu nevoi specifice de securitate"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Soluția VPN dedicată care oferă acces sigur, fără restricții, de mare viteză la Internet."
@@ -4280,9 +4288,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Asistență 24/7"
-      ],
       "Access advanced VPN features": [
         "Accesați caracteristici VPN avansate"
       ],
@@ -4329,9 +4334,6 @@
       ],
       "Private gateways": [
         "Porți de acces private"
-      ],
-      "Require 2FA": [
-        "Necesită A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Domenii de e-mail personal acceptate: ${ n }",
@@ -4647,6 +4649,23 @@
       ],
       "Credits will be added to your balance": [
         "Creditele vă vor fi adăugate în soldul personal."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Sigur doriți să continuați?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Dacă alegeți să vă modificați planul ${ planTitle }, este posibil să pierdeți accesul la unele funcții."
+      ],
+      "Keep ${ planTitle }": [
+        "Păstrez ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Da, sigur"
+      ],
+      "Your plan includes this feature already.": [
+        "Planul actual include deja această funcție."
       ]
     },
     "Payments.plan_name": {

@@ -229,6 +229,9 @@
       "Copy alias “${ name }”": [
         "Copiază aliasul „${ name }”"
       ],
+      "Copy booking page link": [
+        "Copiere legătură web pagină de rezervare"
+      ],
       "Copy email address": [
         "Copiere adresă e-mail"
       ],
@@ -311,6 +314,9 @@
         "Ștergere grup de contacte: ${ selectedCount }",
         "Ștergere grup de contacte: ${ selectedCount }"
       ],
+      "Delete booking page": [
+        "Ștergere pagină de rezervări"
+      ],
       "Delete contact": [
         "Ștergere contact"
       ],
@@ -349,6 +355,9 @@
       ],
       "Edit": [
         "Editare"
+      ],
+      "Edit booking page": [
+        "Editare pagină de rezervări"
       ],
       "Edit email address": [
         "Editare adresa de e-mail"
@@ -430,6 +439,9 @@
       ],
       "Go to settings": [
         "Accesare setări"
+      ],
+      "Go to the next available appointment": [
+        "Salt la următoarea programare disponibilă"
       ],
       "Got it": [
         "Am înțeles"
@@ -751,6 +763,15 @@
       ],
       "See plan features": [
         "Afișare caracteristici plan"
+      ],
+      "See previous availability": [
+        "Afișare disponibilitate anterioară"
+      ],
+      "See upcoming availability": [
+        "Afișare disponibilitate viitoare"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Selectare ${ dateHeaderLongString } la ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Selectare ${ planOrAppName }"
@@ -1967,6 +1988,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Securitate avansată a contului și a rețelei într-un singur plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Conversații rapide și funcții avansate de inteligență artificială."
@@ -3414,12 +3438,6 @@
       "120 minutes": [
         "120 de minute"
       ],
-      "15 minutes": [
-        "15 minute"
-      ],
-      "15m": [
-        "15 m"
-      ],
       "1h": [
         "1 h"
       ],
@@ -4106,6 +4124,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Conectați-vă cu o adresă Gmail care deja se redirecționează către ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
       ]
@@ -5349,6 +5370,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Oricine are această legătură web poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
       ],
+      "Appointment duration": [
+        "Durată programare"
+      ],
       "Are you sure you want to discard your import?": [
         "Anulați importarea?"
       ],
@@ -5663,6 +5687,9 @@
       "High Priority": [
         "Prioritate înaltă"
       ],
+      "Host": [
+        "Gazdă"
+      ],
       "How long should an appointment last?": [
         "Cât ar trebui să dureze o întâlnire?"
       ],
@@ -5794,11 +5821,17 @@
       "Loading events": [
         "Se încarcă evenimentele"
       ],
+      "Location": [
+        "Loc"
+      ],
       "Low Priority": [
         "Prioritate scăzută"
       ],
       "Manage your calendars": [
         "Gestionare calendare"
+      ],
+      "Manange booking page": [
+        "Gestionare pagină de rezervări"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -5833,8 +5866,8 @@
       "New": [
         "Nou"
       ],
-      "No available slots for this day": [
-        "Nu există sloturi disponibile pentru această zi."
+      "No appointments available this week": [
+        "Nu sunt programări disponibile săptămâna asta"
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
@@ -5976,6 +6009,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
       ],
+      "Powered by ${ protonButton }": [
+        "Oferit de ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Modificările anterioare ale acestei serii vor fi pierdute."
       ],
@@ -5984,6 +6020,9 @@
       ],
       "Primary": [
         "Primară"
+      ],
+      "Privacy by default": [
+        "Confidențialitate implicită"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Navigarea privată (sau modul „incognito”) este utilă doar pentru a vă păstra activitatea ascunsă pe dispozitiv. Îți oprește browserul să salveze istoricul și cookie-urile, dar nu te face invizibil. ISP-ul dvs., administratorul de rețea și site-urile web pe care le vizitați pot vedea în continuare ceea ce faceți online."
@@ -7320,7 +7359,7 @@
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
-      "Bookings pages": [
+      "Booking pages": [
         "Pagini de rezervare"
       ],
       "Calendars": [
@@ -8058,6 +8097,9 @@
       "End-to-end encryption": [
         "Criptare bilaterală"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficiile existente ale planului ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descărcări rapide P2P/BitTorrent"
       ],
@@ -8281,6 +8323,11 @@
         "Partajare seif (maxim ${ n } persoane)",
         "Partajare seif (maxim ${ n } de persoane)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Partajare seifuri cu ${ n } persoană",
+        "Partajare seifuri cu ${ n } persoane",
+        "Partajare seifuri cu ${ n } de persoane"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
       ]
@@ -8385,9 +8432,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluții personalizate pentru organizații mai mari cu nevoi specifice de securitate"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Soluția VPN dedicată care oferă acces sigur, fără restricții, de mare viteză la Internet."
@@ -8654,9 +8698,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Asistență 24/7"
-      ],
       "Access advanced VPN features": [
         "Accesați caracteristici VPN avansate"
       ],
@@ -8703,9 +8744,6 @@
       ],
       "Private gateways": [
         "Porți de acces private"
-      ],
-      "Require 2FA": [
-        "Necesită A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Domenii de e-mail personal acceptate: ${ n }",
@@ -9515,6 +9553,23 @@
       ],
       "Credits will be added to your balance": [
         "Creditele vă vor fi adăugate în soldul personal."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Sigur doriți să continuați?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Dacă alegeți să vă modificați planul ${ planTitle }, este posibil să pierdeți accesul la unele funcții."
+      ],
+      "Keep ${ planTitle }": [
+        "Păstrez ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Da, sigur"
+      ],
+      "Your plan includes this feature already.": [
+        "Planul actual include deja această funcție."
       ]
     },
     "Payments.plan_name": {
@@ -11544,6 +11599,9 @@
       "Apply gift code": [
         "Aplicare cod cadou"
       ],
+      "Appointment details": [
+        "Detalii programare"
+      ],
       "Are you sure?": [
         "Confirmați?"
       ],
@@ -11579,6 +11637,9 @@
       ],
       "Change password": [
         "Schimbare parolă"
+      ],
+      "Choose a time": [
+        "Alegeți o oră"
       ],
       "Choose how many times this event will repeat": [
         "Alegeți de câte ori se va repeta acest eveniment"

@@ -1908,6 +1908,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Avancerad konto- och nätverkssäkerhet i ett paket"
+      ],
       "High-speed chats and advanced AI features.": [
         "Chattar med hög hastighet och avancerade AI-funktioner."
       ]
@@ -3371,6 +3374,9 @@
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
       ],
+      "Cannot load \"My files\" root folder": [
+        "Kan inte ladda rotmapp “Mina filer“"
+      ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
       ],
@@ -3906,6 +3912,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Logga in med en Gmail-adress som redan vidarebefordrar till ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Logga in med samma Gmail-adress som du ursprungligen anslöt"
       ]
@@ -5343,6 +5352,9 @@
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
+      "Done": [
+        "Klar"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du inget? Kom ihåg att stänga av popup-blockerare."
       ],
@@ -6171,6 +6183,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Vissa regeringar blockerar eller begränsar åtkomsten till vissa webbplatser. Ett VPN hjälper dig att kringgå censur samtidigt som din aktivitet och identitet förblir privat."
+      ],
+      "Some items failed": [
+        "Några objekt misslyckades"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Vissa av dina filer är inte längre åtkomliga. Återställ åtkomsten till dina filer. ${ StartRecoveryButton }"
@@ -8360,6 +8375,9 @@
       "End-to-end encryption": [
         "End-to-end-kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Befintliga ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-förmåner"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Snabba P2P-/BitTorrent-nedladdningar"
       ],
@@ -8578,6 +8596,10 @@
         "Valvdelning (upp till ${ n } person)",
         "Valvdelning (upp till ${ n } personer)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Valvdelning med upp till ${ n } person",
+        "Valvdelning med upp till ${ n } personer"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
       ]
@@ -8681,9 +8703,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Den dedikerade VPN-lösningen som ger säker, obegränsad höghastighetsåtkomst till Internet."
       ],
@@ -8726,11 +8745,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -8953,9 +8967,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Support dygnet runt"
-      ],
       "Access advanced VPN features": [
         "Få tillgång till avancerade VPN-funktioner"
       ],
@@ -9001,9 +9012,6 @@
       ],
       "Private gateways": [
         "Privata gateways"
-      ],
-      "Require 2FA": [
-        "Kräver 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Stöd för ${ n } anpassad e-postdomän",
@@ -10009,6 +10017,23 @@
       ],
       "Credits will be added to your balance": [
         "Krediter kommer att läggas till ditt saldo"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Är du säker på att du vill fortsätta?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Om du väljer att ändra ditt ${ planTitle }-paket kan du förlora åtkomst till några funktioner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behåll ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jag är säker"
+      ],
+      "Your plan includes this feature already.": [
+        "Ditt paket inkluderar redan denna funktion."
       ]
     },
     "Payments.plan_name": {
