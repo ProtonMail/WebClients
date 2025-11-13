@@ -13,11 +13,9 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useFormErrors,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
-import { emailValidator, maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import type { BookingTimeslot } from '../booking.store';
@@ -27,6 +25,8 @@ interface BookingSlotModalProps extends ModalProps {
     timeslot: BookingTimeslot;
 }
 
+const NAME_MAX_LENGTH = 100;
+
 export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     const { bookingDetails, submitBooking } = useExternalBookingActions();
 
@@ -34,13 +34,13 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     const [email, setEmail] = useState<string>('');
     const [isLoading, withLoading] = useLoading();
     const startDate = fromUnixTime(timeslot.startTime);
-    const { validator, onFormSubmit } = useFormErrors();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!onFormSubmit()) {
+        if (name.length > NAME_MAX_LENGTH) {
             return;
         }
+
         await submitBooking(timeslot, { name, email });
         rest.onClose?.();
     };
@@ -77,16 +77,14 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                     label={c('Label').t`Name`}
                     type="text"
                     value={name}
+                    maxLength={NAME_MAX_LENGTH}
                     onChange={(e) => setName(e.target.value)}
-                    // TODO: Check if we want specific name max length
-                    error={validator([requiredValidator(name), maxLengthValidator(name, 100)])}
                 />
                 <InputFieldTwo
                     label={c('Label').t`Email`}
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    error={validator([requiredValidator(email), emailValidator(email)])}
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
