@@ -13,7 +13,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
-import type { AppStatus, MaybeNull } from '@proton/pass/types';
+import type { AppStatus, Callback, MaybeNull } from '@proton/pass/types';
 import { animatePositionChange, freezeAnimations, waitForTransitions } from '@proton/pass/utils/dom/animation';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { safeAsyncCall, safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -51,6 +51,7 @@ export type IconState = {
     containerObserver: MaybeNull<ResizeObserver>;
     inputObserver: MaybeNull<ResizeObserver>;
     repositionRaf: number;
+    reflow: boolean;
     styles: MaybeNull<IconStyles>;
     releaseTransitions: MaybeNull<() => void>;
 };
@@ -77,9 +78,17 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         containerObserver: null,
         inputObserver: null,
         repositionRaf: -1,
+        reflow: false,
         styles: null,
         releaseTransitions: null,
     };
+
+    const reflow =
+        <T extends Callback>(fn: T) =>
+        (...args: Parameters<T>) => {
+            state.reflow = true;
+            fn(...args);
+        };
 
     const setStatus = (status: AppStatus) => {
         let iconUrl = (() => {
@@ -164,7 +173,8 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         state.abortCtrl = ctrl;
 
         state.repositionRaf = requestAnimationFrame(async () => {
-            const anchor = field.getAnchor();
+            const anchor = field.getAnchor({ reflow: state.reflow });
+            state.reflow = false;
 
             /** Wait for anchor animations to stabilize before repositioning.
              * Computing the icon injection styles will mutate the input's
@@ -262,26 +272,26 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         cleanupInputStyles(input);
     });
 
+    const debouncedReposition = debounce(reposition, 150, { leading: true, trailing: true });
+
     /** Uses pointer capture to prevent unintended clicks during icon repositioning.
      * Captures on pointerdown, releases on pointerup to handle repositioning mid-interaction. */
     listeners.addListener(icon, 'pointerdown', onPointerDown);
     listeners.addListener(icon, 'pointerup', onPointerUp);
-    listeners.addListener(window, 'resize', () => reposition());
-
-    const debouncedReposition = debounce(reposition, 150, { leading: true, trailing: true });
+    listeners.addListener(window, 'resize', debouncedReposition);
 
     /** DOM mutations may affect field layout (error messages, tooltips, icons).
      * Revalidate anchor element positioning with reflow=true to ensure
      * icon remains correctly positioned relative to potentially changed boundaries. */
-    listeners.addObserver(container, debouncedReposition, { childList: true, subtree: true });
+    listeners.addObserver(container, reflow(debouncedReposition), { childList: true, subtree: true });
     listeners.addObserver(input, debouncedReposition, FIELD_ATTRS_FILTER);
-    listeners.addResizeObserver(field.getFormHandle().element, debouncedReposition);
+    listeners.addResizeObserver(field.getFormHandle().element, debouncedReposition, { passive: true });
 
     /** `passive` flag allows not firing resize observer callbacks
      * when observation starts (avoids repositioning cascade). We
      * observe both the input and the container for repositioning. */
-    state.inputObserver = listeners.addResizeObserver(input, reposition, { passive: true });
-    state.containerObserver = listeners.addResizeObserver(container, reposition, { passive: true });
+    state.inputObserver = listeners.addResizeObserver(input, debouncedReposition, { passive: true });
+    state.containerObserver = listeners.addResizeObserver(container, reflow(debouncedReposition), { passive: true });
 
     sync();
     reposition();
