@@ -78,12 +78,12 @@
         "cross-env": "^10.1.0",
         "eslint": "^9.39.1",
         "eslint-config-prettier": "^10.1.8",
-        "fake-indexeddb": "^6.2.4",
-        "msw": "^2.11.6",
+        "fake-indexeddb": "^6.2.5",
+        "msw": "^2.12.1",
         "postcss": "^8.5.6",
         "sass": "1.79.5",
         "typescript": "^5.9.3",
-        "vite": "^7.1.12"
+        "vite": "^7.2.2"
     },
     "msw": {
         "workerDirectory": [
