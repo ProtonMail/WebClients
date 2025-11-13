@@ -1,4 +1,4 @@
-import { WebContents, shell } from "electron";
+import { WebContents, shell, BrowserWindow } from "electron";
 import {
     getLocalID,
     isAccount,
@@ -153,7 +153,18 @@ export function handleWebContents(contents: WebContents) {
         if (isCalendar(details.url)) {
             logger().info("opening calendar URL in external browser", details.url);
             shell.openExternal(details.url);
-            return details.preventDefault();
+            details.preventDefault();
+
+            // Close the window if it's a popup (not one of our managed views)
+            const viewName = getWebContentsViewName(contents);
+            if (!viewName) {
+                const browserWindow = BrowserWindow.fromWebContents(contents);
+                if (browserWindow && !browserWindow.isDestroyed()) {
+                    logger().info("closing popup window after opening calendar URL externally");
+                    browserWindow.close();
+                }
+            }
+            return;
         }
 
         // Only redirect to a different browser view if the navigation is happening in

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { screenShareQuality } from '../qualityConstants';
 
@@ -74,7 +75,11 @@ export function useCurrentScreenShare({
             }
         } catch (err: any) {
             stopPiP();
-            if (err.message === 'Permission denied by user') {
+
+            if (
+                err.message === 'Permission denied by user' ||
+                (err.message === 'Could not start video source' && isElectronApp)
+            ) {
                 return;
             }
 
