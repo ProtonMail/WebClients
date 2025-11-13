@@ -35,12 +35,14 @@ import { getTermsURL } from '@proton/shared/lib/helpers/url';
 
 export const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | string[] | null => {
     const termsAndConditionsUrl = getTermsURL(app);
+    // translator: Full sentence is: Renewal pricing subject to change according to <terms and conditions>.
     const termsAndConditionsLink = (
         <Href className="color-inherit" href={termsAndConditionsUrl} key="terms-and-conditions">
             {c('Payments').t`terms and conditions`}
         </Href>
     );
 
+    // translator: Full sentence is: Renewal pricing subject to change according to <terms and conditions>.
     return c('Payments').jt`Renewal pricing subject to change according to ${termsAndConditionsLink}.`;
 };
 
