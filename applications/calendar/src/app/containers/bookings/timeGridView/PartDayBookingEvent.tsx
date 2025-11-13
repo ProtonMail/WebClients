@@ -66,9 +66,7 @@ export const PartDayBookingEvent = ({ size, style, event, eventRef, eventPartDur
     return (
         <PartDayEventView
             size={size}
-            style={{
-                ...eventStyle,
-            }}
+            style={eventStyle}
             isSelected={false}
             ref={eventRef}
             isLoaded

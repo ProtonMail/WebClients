@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 
+import { useBookings } from '../../../containers/bookings/bookingsProvider/BookingsProvider';
 import type { CalendarViewBusyEvent, CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
 import { isBusySlotEvent } from '../../../helpers/busySlots';
 import PartDayBusyEvent from '../../events/PartDayBusyEvent';
@@ -77,6 +78,8 @@ const DayEvents = ({
     colHeight,
     partDayEventViewStyleValues,
 }: Props) => {
+    const { isBookingActive } = useBookings();
+
     const eventsLaidOut = useMemo(() => {
         return layout(eventsInDay).map(({ column, columns }, i) => {
             const { start, end } = eventsInDay[i];
@@ -85,8 +88,9 @@ const DayEvents = ({
             const duration = end - start;
             const height = duration / totalMinutes;
 
-            const width = 1 / columns;
-            const left = column * width;
+            // We want to display events on top of eachother when the booking page is active.
+            const width = isBookingActive ? 1 : 1 / columns;
+            const left = isBookingActive ? 0 : column * width;
 
             return {
                 height,
@@ -99,7 +103,7 @@ const DayEvents = ({
                 },
             };
         });
-    }, [eventsInDay, totalMinutes]);
+    }, [eventsInDay, totalMinutes, isBookingActive]);
 
     if (!Array.isArray(eventsInDay)) {
         return null;
