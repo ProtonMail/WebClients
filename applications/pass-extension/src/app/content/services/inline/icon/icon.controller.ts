@@ -56,6 +56,8 @@ export type IconState = {
     releaseTransitions: MaybeNull<() => void>;
 };
 
+const MIN_FIELD_WIDTH = 100;
+
 export const createIconController = (options: IconControllerOptions): MaybeNull<IconController> => {
     const { field, tag } = options;
     const input = field.element;
@@ -175,6 +177,11 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         state.repositionRaf = requestAnimationFrame(async () => {
             const anchor = field.getAnchor({ reflow: state.reflow });
             state.reflow = false;
+
+            if (anchor.element.offsetWidth < MIN_FIELD_WIDTH) {
+                icon.classList.remove('visible');
+                return;
+            }
 
             /** Wait for anchor animations to stabilize before repositioning.
              * Computing the icon injection styles will mutate the input's
