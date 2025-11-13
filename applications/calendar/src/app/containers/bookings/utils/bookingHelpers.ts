@@ -58,13 +58,13 @@ export const isTemporaryBookingSlotEvent = (
 
 export const convertSlotToCalendarViewEvents = (
     calendarData: VisualCalendar,
-    bookingRange: BookingRange[] | null
+    bookingRanges: BookingRange[] | null
 ): CalendarViewEvent[] => {
-    if (!bookingRange) {
+    if (!bookingRanges) {
         return [];
     }
 
-    return bookingRange.map((range) => {
+    return bookingRanges.map((range) => {
         const localStart = fromLocalDate(range.start);
         const utcStart = toUTCDate(localStart);
 
@@ -256,12 +256,12 @@ export const generateDefaultBookingRange = (
 };
 
 export const createBookingRangeNextAvailableTime = ({
-    bookingRange,
+    bookingRanges,
     userSettings,
     timezone,
     startDate,
 }: {
-    bookingRange: BookingRange[];
+    bookingRanges: BookingRange[];
     userSettings: UserSettings;
     timezone: string;
     startDate?: Date;
@@ -270,12 +270,12 @@ export const createBookingRangeNextAvailableTime = ({
     const tomorrow = startDate ? startOfWeek(startDate, { weekStartsOn }) : addDays(new Date(), 1);
 
     // We return tomorrow if it's free
-    if (!bookingRange.some((range) => isSameDay(range.start, tomorrow))) {
+    if (!bookingRanges.some((range) => isSameDay(range.start, tomorrow))) {
         return createBookingRange(tomorrow, timezone);
     }
 
     let nextAvailableTime = tomorrow;
-    bookingRange.forEach((range) => {
+    bookingRanges.forEach((range) => {
         if (isSameDay(range.start, nextAvailableTime)) {
             nextAvailableTime = addDays(nextAvailableTime, 1);
         } else {

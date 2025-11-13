@@ -20,12 +20,12 @@ export const FormRangeList = () => {
     const location = useLocation();
     const [userSettings] = useUserSettings();
 
-    const { bookingRange, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
+    const { bookingRanges, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
     const validation = validateFormData(formData);
 
     const { createNotification } = useNotifications();
 
-    if (!bookingRange) {
+    if (!bookingRanges) {
         return null;
     }
 
@@ -70,7 +70,7 @@ export const FormRangeList = () => {
         const { date } = fromUrlParams(location.pathname);
         addBookingRange(
             createBookingRangeNextAvailableTime({
-                bookingRange,
+                bookingRanges,
                 userSettings,
                 timezone: formData.timezone,
                 startDate: date,
@@ -79,7 +79,7 @@ export const FormRangeList = () => {
     };
 
     const handlePlusClick = (range: BookingRange) => {
-        const lastBookingOfDay = bookingRange
+        const lastBookingOfDay = bookingRanges
             .filter((r) => isSameDay(r.start, range.start))
             .sort((a, b) => a.start.getTime() - b.start.getTime())
             .at(-1);
@@ -108,7 +108,7 @@ export const FormRangeList = () => {
     // TODO handle the cases where the recurring is enabled and adapt the UI
     return (
         <div>
-            {bookingRange.map((range) => (
+            {bookingRanges.map((range) => (
                 <div key={range.id} className="flex flex-nowrap gap-6 justify-space-between mb-0.5">
                     <div className="flex items-center gap-0.5">
                         <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
