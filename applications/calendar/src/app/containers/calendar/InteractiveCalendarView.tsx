@@ -84,7 +84,7 @@ import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
-import { toUTCDate } from '@proton/shared/lib/date/timezone';
+import { fromUTCDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
@@ -976,7 +976,11 @@ const InteractiveCalendarView = ({
                 }
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
                     if (isBookingActive) {
-                        addBookingRange({ start: normalizedStart, end: normalizedEnd, timezone: tzid });
+                        addBookingRange({
+                            start: toLocalDate(fromUTCDate(start)),
+                            end: toLocalDate(fromUTCDate(end)),
+                            timezone: tzid,
+                        });
                         setInteractiveData(undefined);
                         return;
                     }

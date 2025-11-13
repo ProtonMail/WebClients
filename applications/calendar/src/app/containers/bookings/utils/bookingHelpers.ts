@@ -7,6 +7,7 @@ import {
     isBefore,
     isSameDay,
     isWeekend,
+    set,
     startOfWeek,
 } from 'date-fns';
 import { c } from 'ttag';
@@ -59,16 +60,24 @@ export const convertSlotToCalendarViewEvents = (
         return [];
     }
 
-    return bookingRange.map((range) => ({
-        uniqueId: range.id,
-        isAllDay: false,
-        isAllPartDay: false,
-        start: range.start,
-        end: range.end,
-        data: {
-            calendarData,
-        },
-    }));
+    return bookingRange.map((range) => {
+        const localStart = fromLocalDate(range.start);
+        const utcStart = toUTCDate(localStart);
+
+        const localEnd = fromLocalDate(range.end);
+        const utcEnd = toUTCDate(localEnd);
+
+        return {
+            uniqueId: range.id,
+            isAllDay: false,
+            isAllPartDay: false,
+            start: utcStart,
+            end: utcEnd,
+            data: {
+                calendarData,
+            },
+        };
+    });
 };
 
 export const generateSlotsFromRange = ({
@@ -171,11 +180,8 @@ export const generateBookingRangeID = (start: Date, end: Date) => {
 };
 
 const createBookingRange = (date: Date, timezone: string) => {
-    const { year, month, day } = fromLocalDate(date);
-
-    // Now safely create UTC dates for 9AM–5PM *on the same local day*
-    const start = toUTCDate({ year, month, day, hours: 9 });
-    const end = toUTCDate({ year, month, day, hours: 17 });
+    const start = set(date, { hours: 9 });
+    const end = set(date, { hours: 17 });
 
     return {
         id: generateBookingRangeID(start, end),
