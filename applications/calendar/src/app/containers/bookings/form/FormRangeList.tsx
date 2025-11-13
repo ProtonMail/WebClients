@@ -9,7 +9,7 @@ import TimeInput from '@proton/components/components/input/TimeInput';
 import { DateInputTwo, useNotifications } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { isNextDay } from '@proton/shared/lib/date-fns-utc';
+import { addDays, isNextDay } from '@proton/shared/lib/date-fns-utc';
 
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
@@ -34,7 +34,14 @@ export const FormRangeList = () => {
     };
 
     const handleEndChange = (range: BookingRange, end: Date) => {
-        updateBookingRange(range.id, range.start, end);
+        let tmpEnd = end;
+
+        // If the end date is midnight, we add one day
+        if (end.getHours() === 0) {
+            tmpEnd = addDays(end, 1);
+        }
+
+        updateBookingRange(range.id, range.start, tmpEnd);
     };
 
     // No need to convert the start and end time here as they are already in UTC
@@ -113,7 +120,6 @@ export const FormRangeList = () => {
                             onChange={(value) => handleStartChange(range, value)}
                             min={startOfDay(range.start)}
                             max={subMinutes(range.end, formData.duration)}
-                            preventNextDayOverflow
                         />
                         -
                         <label htmlFor={`range-end-time-${range.id}`} className="sr-only">{c('label')
@@ -123,6 +129,7 @@ export const FormRangeList = () => {
                             value={range.end}
                             min={addMinutes(range.start, formData.duration)}
                             onChange={(value) => handleEndChange(range, value)}
+                            preventNextDayOverflow
                         />
                     </div>
                     <div className="flex flex-nowrap shrink-0">
