@@ -5073,12 +5073,6 @@
       "120 minutes": [
         "120 minutter"
       ],
-      "15 minutes": [
-        "15 minutter"
-      ],
-      "15m": [
-        "15 minutter"
-      ],
       "1h": [
         "1 time"
       ],
@@ -12350,10 +12344,6 @@
         "${ nbYear } år",
         "${ nbYear } år"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } av ${ maxAddresses } e-postadresse",
-        "${ usedAddresses } av ${ maxAddresses } e-postadresser"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
@@ -13671,12 +13661,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "Til"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadresse",
-        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadresser"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15326,9 +15310,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Angi automatiske svar for å informere avsendere du ikke er på kontoret eller ikke i stand til å respondere."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Skreddersydde løsninger for større organisasjoner med spesifikke sikkerhetsbehov"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Den dedikerte VPN-løsningen som sørger for sikker, uinnskrenket, høyhastighets tilgang til internett."
       ],
@@ -15668,9 +15649,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24/7 kundestøtte"
-      ],
       "Access advanced VPN features": [
         "Få tilgang til avanserte VPN-funksjoner"
       ],
@@ -15716,9 +15694,6 @@
       ],
       "Private gateways": [
         "Private porttjenere"
-      ],
-      "Require 2FA": [
-        "Krever 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
@@ -21962,9 +21937,6 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Last ned ${ PASS_APP_NAME } for enhetene dine"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "Last ned ${ VPN_APP_NAME }"
-      ],
       "Download the desktop app": [
         "Last ned skrivebordsappen"
       ],
@@ -23672,9 +23644,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan beskytte opptil ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] } . Fra bare ${ priceString }/måned per konto."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Du kan beskytte opptil ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[PLANS.DUO] } eller ${ PLAN_NAMES[PLANS.FAMILY] }. Fra bare ${ priceString }/måned per konto."
       ]
     },
     "upsell panel": {

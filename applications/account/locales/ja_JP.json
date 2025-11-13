@@ -5043,12 +5043,6 @@
       "120 minutes": [
         "120分"
       ],
-      "15 minutes": [
-        "15 分"
-      ],
-      "15m": [
-        "15分"
-      ],
       "1h": [
         "1時間"
       ],
@@ -12192,9 +12186,6 @@
       "${ nbYear } year": [
         "${ nbYear } 年"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ maxAddresses } 件のうち ${ usedAddresses } 件のメールアドレス"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
@@ -13508,11 +13499,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "終了日"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ maxBYOEAddresses } 件のうち ${ usedBYOEAddresses } 件のメールアドレス"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15124,9 +15110,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "自動返信を設定し、外出中であることや返信できないことを差出人に伝えます。"
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "特定のセキュリティ ニーズを持つ大規模組織向けにカスタマイズされたソリューション"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "インターネットへの安全かつ無制限の高速アクセスを提供する VPN のプランです。"
       ],
@@ -15465,9 +15448,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24時間365日のサポート"
-      ],
       "Access advanced VPN features": [
         "高度な VPN 機能にアクセス"
       ],
@@ -15512,9 +15492,6 @@
       ],
       "Private gateways": [
         "プライベート ゲートウェイ"
-      ],
-      "Require 2FA": [
-        "2段階認証が必要"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } 個のカスタムドメインメールアドレスのサポート"
@@ -21625,9 +21602,6 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "デバイスに${ PASS_APP_NAME }をダウンロード"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } をダウンロード"
-      ],
       "Download the desktop app": [
         "デスクトップアプリをダウンロード"
       ],
@@ -23327,9 +23301,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ FAMILY_MAX_USERS } を持つ最大 ${ PLAN_NAMES[plan] }人を保護することができます。アカウントごとに ${ priceString }/月から開始します。"
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "${ FAMILY_MAX_USERS } または ${ PLAN_NAMES[PLANS.DUO] } を持つ最大で ${ PLAN_NAMES[PLANS.FAMILY] }人を保護することができます。アカウントごとに ${ priceString }から開始します。"
       ]
     },
     "upsell panel": {

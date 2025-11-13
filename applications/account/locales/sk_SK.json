@@ -5121,12 +5121,6 @@
       "120 minutes": [
         "120 minút"
       ],
-      "15 minutes": [
-        "15 minút"
-      ],
-      "15m": [
-        "15m"
-      ],
       "1h": [
         "1h"
       ],
@@ -12613,12 +12607,6 @@
         "${ nbYear } rokov",
         "${ nbYear } rokov"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } z ${ maxAddresses } emailovej adresy",
-        "${ usedAddresses } z ${ maxAddresses } emailových adries",
-        "${ usedAddresses } z ${ maxAddresses } emailových adries",
-        "${ usedAddresses } z ${ maxAddresses } emailových adries"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
@@ -13935,14 +13923,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "Pre"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } emailovej adresy",
-        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } emailových adries",
-        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } emailových adries",
-        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } emailových adries"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15662,9 +15642,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Nastavte automatické odpovede na informovanie odosielateľov, že ste mimo kancelárie, alebo že nemôžete odpovedať."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Riešenia na mieru pre väčšie organizácie so špecifickými bezpečnostnými potrebami"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Špecializované riešenie VPN, ktoré poskytuje bezpečný, neobmedzený a vysokorýchlostný prístup k internetu."
       ],
@@ -16006,9 +15983,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Podpora 24/7"
-      ],
       "Access advanced VPN features": [
         "Získajte prístup k pokročilým VPN funkciám"
       ],
@@ -16056,9 +16030,6 @@
       ],
       "Private gateways": [
         "Súkromné brány"
-      ],
-      "Require 2FA": [
-        "Vyžadovať 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Podpora pre ${ n } vlastnú emailovú doménu",
@@ -22487,9 +22458,6 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Stiahnuť ${ PASS_APP_NAME } pre vaše zariadenia"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "Stiahnuť ${ VPN_APP_NAME }"
-      ],
       "Download the desktop app": [
         "Stiahnuť desktopové aplikácie"
       ],
@@ -24207,9 +24175,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Môžete chrániť až ${ FAMILY_MAX_USERS } osôb s ${ PLAN_NAMES[plan] }. Už od ${ priceString }/mesiac za účet."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Môžete chrániť až ${ FAMILY_MAX_USERS } osôb s ${ PLAN_NAMES[PLANS.DUO] } alebo ${ PLAN_NAMES[PLANS.FAMILY] }. Už od ${ priceString }/mesiac za účet."
       ]
     },
     "upsell panel": {
