@@ -34,6 +34,7 @@ export enum Features {
     globalBootstrapAppPostLoad = 'globalBootstrapAppPostLoad',
     globalBootstrapAppDriveUserSettings = 'globalBootstrapAppDriveUserSettings',
     globalBootstrapAppLoadSession = 'globalBootstrapAppLoadSession',
+    driveBootstrap = 'driveBootstrap',
 
     // session specific features
     sessionBootstrapConsumeFork = 'sessionBootstrapConsumeFork',
