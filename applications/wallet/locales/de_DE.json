@@ -1065,6 +1065,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
       ],
+      "Advanced account and network security in one plan": [
+        "Erweiterte Konto- und Netzwerksicherheit in einem Abonnement"
+      ],
       "High-speed chats and advanced AI features.": [
         "Schnelle Chats und erweiterte KI-Funktionen."
       ]
@@ -3688,6 +3691,9 @@
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Bestehende ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-Vorteile"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Schnelle P2P/BitTorrent-Downloads"
       ],
@@ -3885,6 +3891,10 @@
         "Tresor teilen (bis zu ${ n } Person)",
         "Tresor teilen (bis zu ${ n } Personen)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Tresor mit bis zu ${ n } Person teilen",
+        "Tresor mit bis zu ${ n } Personen teilen"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
       ]
@@ -3976,9 +3986,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Maßgeschneiderte Lösungen für größere Organisationen mit spezifischen Sicherheitsanforderungen"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Die dedizierte VPN-Lösung, die einen sicheren und uneingeschränkten Zugriff auf ein Hochgeschwindigkeitsinternet bietet."
@@ -4233,9 +4240,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24/7 Support"
-      ],
       "Access advanced VPN features": [
         "Profitiere von erweiterten VPN-Funktionen"
       ],
@@ -4281,9 +4285,6 @@
       ],
       "Private gateways": [
         "Private Gateways"
-      ],
-      "Require 2FA": [
-        "2FA erzwingen"
       ],
       "Support for ${ n } custom email domain": [
         "Support für ${ n } benutzerdefinierte E-Mail-Domain",
@@ -4591,6 +4592,23 @@
       ],
       "Credits will be added to your balance": [
         "Das Guthaben wird dir gutgeschrieben."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Möchtest du wirklich fortfahren?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Wenn du dein ${ planTitle }-Abonnement änderst, kannst du den Zugriff auf einige Funktionen verlieren."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } behalten"
+      ],
+      "Yes, I'm sure": [
+        "Ja, ich bin sicher"
+      ],
+      "Your plan includes this feature already.": [
+        "Dein Abonnement beinhaltet diese Funktion bereits."
       ]
     },
     "Payments.plan_name": {

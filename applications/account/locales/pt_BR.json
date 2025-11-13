@@ -4429,6 +4429,9 @@
       ]
     },
     "Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Comunique-se e agende com criptografia de ponta a ponta."
+      ],
       "Experience true freedom online and safeguard your privacy.": [
         "Experimente a verdadeira liberdade on-line e proteja sua privacidade."
       ],
@@ -4880,6 +4883,9 @@
       "Apple TV": [
         "Apple TV"
       ],
+      "Brave": [
+        "Brave"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -4892,11 +4898,26 @@
       "Desktop": [
         "Área de trabalho"
       ],
+      "Download for Brave": [
+        "Baixar para Brave"
+      ],
+      "Download for Chrome": [
+        "Baixar para Chrome"
+      ],
+      "Download for Edge": [
+        "Baixar para Edge"
+      ],
+      "Download for Firefox": [
+        "Baixar para Firefox"
+      ],
       "Download for Linux": [
         "Baixar para Linux"
       ],
       "Download for macOS": [
         "Baixar para macOS"
+      ],
+      "Download for Safari": [
+        "Baixar para Safari"
       ],
       "Download for Windows": [
         "Baixar para Windows"
@@ -4909,6 +4930,12 @@
       ],
       "Download on the Google Play Store": [
         "Baixe na Google Play Store"
+      ],
+      "download the app (APK)": [
+        "baixar aplicativo (APK)"
+      ],
+      "Edge": [
+        "Edge"
       ],
       "Fire TV": [
         "Fire TV"
@@ -4957,6 +4984,12 @@
       ],
       "Mobile": [
         "Celular"
+      ],
+      "Safari": [
+        "Safari"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Escaneie o código QR com seu dispositivo móvel"
       ],
       "TV": [
         "TV"
@@ -5072,12 +5105,6 @@
       ],
       "120 minutes": [
         "120 minutos"
-      ],
-      "15 minutes": [
-        "15 minutos"
-      ],
-      "15m": [
-        "15 min"
       ],
       "1h": [
         "1h"
@@ -7300,6 +7327,9 @@
       "Double VPN": [
         "VPN dupla"
       ],
+      "File attachment ": [
+        "Anexo de arquivo "
+      ],
       "Lightning-fast speeds": [
         "Velocidade ultrarrápida"
       ],
@@ -7314,6 +7344,9 @@
       ],
       "Secure streaming": [
         "Streaming seguro"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Compartilhamento seguro de item, cofre e link"
       ],
       "Stream from Netflix, HBO, and more": [
         "Assista Netflix, HBO e muito mais"
@@ -12325,6 +12358,10 @@
       " and ${ l }": [
         " e ${ l }"
       ],
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } de ${ maxAddresses } endereço de e-mail disponível",
+        "${ addressesAvailable } de ${ maxAddresses } endereços de e-mail disponíveis"
+      ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
       ],
@@ -12352,10 +12389,6 @@
       "${ nbYear } year": [
         "${ nbYear } ano",
         "${ nbYear } anos"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } de ${ maxAddresses } endereço de e-mail",
-        "${ usedAddresses } de ${ maxAddresses } endereços de e-mail"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -13677,9 +13710,9 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } endereço de e-mail",
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } endereços de e-mail"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } de ${ maxBYOEAddresses } endereço de e-mail disponível",
+        "${ byoeAddressesAvailableCount } de ${ maxBYOEAddresses } endereços de e-mail disponíveis"
       ]
     },
     "Label for adding a new custom domain": {
@@ -14202,6 +14235,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador e marcá-las como",
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
+      ]
+    },
+    "mail_cro_experiment": {
+      "Get Deal": [
+        "Obter desconto"
       ]
     },
     "mail_signup_2023: Info": {
@@ -14965,6 +15003,9 @@
       "End-to-end encryption": [
         "Criptografia de ponta a ponta"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Benefícios atuais do plano ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Downloads rápidos de P2P/BitTorrent"
       ],
@@ -15205,6 +15246,10 @@
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartilhar cofres com até ${ n } pessoa",
+        "Compartilhar cofres com até ${ n } pessoas"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
       ]
@@ -15332,9 +15377,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Defina respostas automáticas para informar aos remetentes que você não está no escritório ou não pode responder."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluções sob medida para organizações maiores com necessidades específicas de segurança"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A solução de VPN dedicada que oferece acesso seguro, irrestrito e de alta velocidade à internet."
       ],
@@ -15441,9 +15483,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ],
       "Your account's usage": [
         "Uso da sua conta"
@@ -15677,9 +15716,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Suporte 24/7"
-      ],
       "Access advanced VPN features": [
         "Acesse recursos avançados de VPN"
       ],
@@ -15725,9 +15761,6 @@
       ],
       "Private gateways": [
         "Gateways privados"
-      ],
-      "Require 2FA": [
-        "Requer A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Suporte para ${ n } domínio de e-mail personalizado",
@@ -17319,6 +17352,28 @@
       ],
       "Credits will be added to your balance": [
         "Créditos serão adicionados ao seu saldo."
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Nunca"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Tem certeza de que deseja continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Se você optar por modificar seu ${ planTitle } plano, você pode perder o acesso a alguns recursos."
+      ],
+      "Keep ${ planTitle }": [
+        "Manter o ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sim, tenho certeza"
+      ],
+      "Your plan includes this feature already.": [
+        "Seu plano já inclui esse recurso."
       ]
     },
     "Payments.plan_name": {
@@ -21959,6 +22014,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Fazer o downgrade para o ${ downgradedPlanName }?"
       ],
+      "Download ${ app }": [
+        "Baixar ${ app }"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
       ],
@@ -21967,9 +22025,6 @@
       ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "Baixe ${ PASS_APP_NAME } para seu dispositivo"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "Baixar ${ VPN_APP_NAME }"
       ],
       "Download the desktop app": [
         "Baixe o aplicativo para computador"
@@ -23687,9 +23742,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Você pode proteger até ${ FAMILY_MAX_USERS } pessoas com ${ PLAN_NAMES[plan] }. A partir de apenas ${ priceString }/mês por conta."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Você pode proteger até ${ FAMILY_MAX_USERS } pessoas com ${ PLAN_NAMES[PLANS.DUO] } ou ${ PLAN_NAMES[PLANS.FAMILY] }. A partir de apenas ${ priceString }/mês por conta."
       ]
     },
     "upsell panel": {

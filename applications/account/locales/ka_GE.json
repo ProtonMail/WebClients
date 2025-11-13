@@ -4986,12 +4986,6 @@
       "120 minutes": [
         "120 წუთი"
       ],
-      "15 minutes": [
-        "15 წუთი"
-      ],
-      "15m": [
-        "15წთ"
-      ],
       "1h": [
         "1სთ"
       ],
@@ -12042,10 +12036,6 @@
         "${ nbYear } წელი",
         "${ nbYear } წელი"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses }/${ maxAddresses } ელფოსტის მისამართი",
-        "${ usedAddresses }/${ maxAddresses } ელფოსტის მისამართი"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
@@ -13351,12 +13341,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "ვის"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses }/${ maxBYOEAddresses } ელფოსტის მისამართი",
-        "${ usedBYOEAddresses }/${ maxBYOEAddresses } ელფოსტის მისამართი"
       ]
     },
     "Label for adding a new custom domain": {
@@ -14989,9 +14973,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "დააყენეთ ავტომოპასუხე, თუ გნებავთ, შეატყობინოთ გამომგზავნებს, როცა ოფისიდან გასული ბრძანდებით, ან არ გცალიათ."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "შეკვეთილი გადაწყვეტილებები დიდი ორგანიზაციებისთვის, რომლებსაც სპეციფიკური უსაფრთხოების საჭიროება გააჩნიათ"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "გამოყოფილი VPN გადაწყვეტილება, რომელიც ინტერნეტთან დაცულ, შეუზღუდავ და ჩქაროსნულ წვდომას მოგცემთ."
       ],
@@ -15331,9 +15312,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24/7 მხარდაჭერა"
-      ],
       "Access advanced VPN features": [
         "VPN-ის დამატებითი თვისებების განბლოკვა"
       ],
@@ -15379,9 +15357,6 @@
       ],
       "Private gateways": [
         "პირადი რაუტერები"
-      ],
-      "Require 2FA": [
-        "2FA-ის მოთხოვნა"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } მომხმარებლის დომენის მხარდაჭერა",
@@ -21465,9 +21440,6 @@
       ],
       "Download ${ PASS_APP_NAME } for your devices": [
         "გადმოწერეთ ${ PASS_APP_NAME } თქვენი მოწყობილობებისთვის"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }-ის გადმოწერა"
       ],
       "Download the desktop app": [
         "გადმოწერეთ კომპიუტერის აპები"

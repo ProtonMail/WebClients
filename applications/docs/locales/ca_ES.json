@@ -1491,6 +1491,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Seguretat avançada del compte i de la xarxa amb un sol pla"
+      ],
       "High-speed chats and advanced AI features.": [
         "Xats d'alta velocitat i característiques d'IA avançades."
       ]
@@ -3282,6 +3285,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Si us plau, inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
       ]
@@ -4922,6 +4928,12 @@
       "Public documents are not yet enabled for your organization.": [
         "Els documents públics encara no estan activats per a la vostra organització."
       ],
+      "Recent documents": [
+        "Documents recents"
+      ],
+      "Recent spreadsheets": [
+        "Fulls de càlcul recents"
+      ],
       "Recents": [
         "Recents"
       ],
@@ -6056,7 +6068,7 @@
         "Reactiva ara"
       ],
       "Reactivate subscription": [
-        "Reactiveu la subscripció"
+        "Reactiva la subscripció"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -6730,6 +6742,9 @@
       "End-to-end encryption": [
         "Xifratge d'extrem a extrem"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Avantatges del ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } actual"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descàrregues ràpides de P2P/BitTorrent"
       ],
@@ -6948,6 +6963,10 @@
         "Compartició de la caixa forta (fins a ${ n } persona)",
         "Compartició de la caixa forta (fins a ${ n } persones)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Ús compartit de la caixa forta amb fins a ${ n } persona",
+        "Ús compartit de la caixa forta amb fins a ${ n } persones"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
       ]
@@ -7047,9 +7066,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Solucions a mida per a organitzacions més grans amb necessitats específiques de seguretat"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solució VPN dedicada que proporciona accés segur, il·limitat i d'alta velocitat a internet."
@@ -7309,9 +7325,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Suport 24/7"
-      ],
       "Access advanced VPN features": [
         "Accediu a característiques de VPN avançades"
       ],
@@ -7357,9 +7370,6 @@
       ],
       "Private gateways": [
         "Passarel·les privades"
-      ],
-      "Require 2FA": [
-        "Requereix 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Suport per a ${ n } domini de correu electrònic personalitzat",
@@ -9940,7 +9950,7 @@
     },
     "tooltip": {
       "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: l'assistent d'IA que respecta la vostra privacitat"
+        "${ LUMO_APP_NAME }: L'assistent d'IA que respecta la vostra privacitat"
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."

@@ -632,6 +632,9 @@
       "Or": [
         "Або"
       ],
+      "Or use a different Gmail address": [
+        "Ці скарыстайцеся іншым адрасам Gmail"
+      ],
       "Organization": [
         "Арганізацыя"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
+      ],
+      "Use this Gmail address": [
+        "Выкарыстоўваць гэты адрас Gmail"
       ],
       "Use your current email instead": [
         "Выкарыстоўваць бягучы адрас электроннай пошты"
@@ -2127,6 +2133,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Дадайце праграму ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Пашыраная бяспека ўліковага запісу і сеткі ў адным тарыфным плане"
       ],
       "High-speed chats and advanced AI features.": [
         "Высакахуткасныя чаты і перадавыя функцыі ШІ."
@@ -4305,6 +4314,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Увайдзіце з адрасам Gmail, які ўжо перасылае лісты ў ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Увайдзіце з тым жа адрасам Gmail, які вы першапачаткова падключылі"
       ]
@@ -4905,6 +4917,9 @@
       "Double VPN": [
         "Double VPN"
       ],
+      "File attachment ": [
+        "Далучаныя файлы "
+      ],
       "Lightning-fast speeds": [
         "Звышвысокія хуткасці"
       ],
@@ -4919,6 +4934,9 @@
       ],
       "Secure streaming": [
         "Бяспечная трансляцыя"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Бяспечнае сховішча, элементы і абагульванне спасылак"
       ],
       "Stream from Netflix, HBO, and more": [
         "Трансляцыі з Netflix, HBO і іншае"
@@ -8303,6 +8321,12 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "Даступна адрасоў электроннай пошты ${ addressesAvailable } з ${ maxAddresses }",
+        "Даступна адрасоў электроннай пошты ${ addressesAvailable } з ${ maxAddresses }",
+        "Даступна адрасоў электроннай пошты ${ addressesAvailable } з ${ maxAddresses }",
+        "Даступна адрасоў электроннай пошты ${ addressesAvailable } з ${ maxAddresses }"
+      ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
@@ -8329,12 +8353,6 @@
         "${ nbDay } дні",
         "${ nbDay } дзён",
         "${ nbDay } дні"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } адрас электроннай пошты з ${ maxAddresses }",
-        "${ usedAddresses } адрасы электроннай пошты з ${ maxAddresses }",
-        "${ usedAddresses } адрасоў электроннай пошты з ${ maxAddresses }",
-        "${ usedAddresses } адрасоў электроннай пошты з ${ maxAddresses }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
@@ -9088,11 +9106,11 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } адрас электроннай пошты з ${ maxBYOEAddresses }",
-        "${ usedBYOEAddresses } адрасы электроннай пошты з ${ maxBYOEAddresses }",
-        "${ usedBYOEAddresses } адрасоў электроннай пошты з ${ maxBYOEAddresses }",
-        "${ usedBYOEAddresses } адрасоў электроннай пошты з ${ maxBYOEAddresses }"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "Даступна адрасоў электроннай пошты ${ byoeAddressesAvailableCount } з ${ maxBYOEAddresses }",
+        "Даступна адрасоў электроннай пошты ${ byoeAddressesAvailableCount } з ${ maxBYOEAddresses }",
+        "Даступна адрасоў электроннай пошты ${ byoeAddressesAvailableCount } з ${ maxBYOEAddresses }",
+        "Даступна адрасоў электроннай пошты ${ byoeAddressesAvailableCount } з ${ maxBYOEAddresses }"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9992,6 +10010,9 @@
       "End-to-end encryption": [
         "Скразное шыфраванне"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Існуючыя перавагі ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Хуткія спампоўкі ў P2P/BitTorrent"
       ],
@@ -10220,6 +10241,12 @@
         "Абагуленае сховішча (да ${ n } асоб)",
         "Абагуленае сховішча (да ${ n } асоб)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Абагуленае сховішча (да ${ n } асобы)",
+        "Абагуленае сховішча (да ${ n } асоб)",
+        "Абагуленае сховішча (да ${ n } асоб)",
+        "Абагуленае сховішча (да ${ n } асоб)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
       ]
@@ -10318,9 +10345,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з дадатковымі функцыямі для штодзённых камунікацый."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Спецыялізаванае рашэнне VPN, якое дае магчымасць атрымаць бяспечны доступ у інтэрнэт, без абмежаванняў і на высокай хуткасці."
@@ -10633,9 +10657,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Падтрымка 24/7"
-      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],
@@ -10683,9 +10704,6 @@
       ],
       "Private gateways": [
         "Прыватныя шлюзы"
-      ],
-      "Require 2FA": [
-        "Абавязковае 2ФА"
       ],
       "Support for ${ n } custom email domain": [
         "Падтрымка для ${ n } карыстальніцкага дамена электроннай пошты",
@@ -11686,6 +11704,23 @@
       ],
       "Credits will be added to your balance": [
         "Крэдыты будуць дададзены на ваш баланс"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Вы сапраўды хочаце працягнуць?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Вы можаце згубіць доступ да некаторый функцый, калі выберыце змену тарыфнага плана ${ planTitle }."
+      ],
+      "Keep ${ planTitle }": [
+        "Выйсці з ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Так, я ўпэўнены"
+      ],
+      "Your plan includes this feature already.": [
+        "Ваш тарыфны план ужо ўключае гэту функцыю."
       ]
     },
     "Payments.plan_name": {
@@ -14690,6 +14725,9 @@
       "Confirm phone number": [
         "Пацвердзіць нумар тэлефона"
       ],
+      "Connect a Gmail address": [
+        "Падключэнне адраса Gmail"
+      ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
       ],
@@ -14858,11 +14896,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Панізіць да ${ downgradedPlanName }?"
       ],
+      "Download ${ app }": [
+        "Спампоўванне ${ app }"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "Спампаваць ${ VPN_APP_NAME }"
       ],
       "Downloads": [
         "Спампоўкі"
@@ -15172,6 +15210,9 @@
       ],
       "Remove domain": [
         "Выдаліць дамен"
+      ],
+      "Remove forwarding address": [
+        "Выдаліць адрас перасылкі"
       ],
       "Remove server?": [
         "Выдаліць сервер?"
@@ -15861,20 +15902,23 @@
       "Did you know?": [
         "Ці ведалі вы што?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ VPN_APP_NAME } for Business."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Неабмежаваная прыватнасць (да ${ FAMILY_MAX_USERS } асоб). Усяго за ${ priceString }/месяц."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Неабмежаваная прыватнасць для вас і каханага чалавека. Усяго ад ${ priceString }/месяц."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Вы можаце абараніць да ${ FAMILY_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[plan] }. Пачынаючы ўсяго ад ${ priceString } у месяц за ўліковы запіс."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Вы можаце абараніць да ${ FAMILY_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[PLANS.DUO] } або ${ PLAN_NAMES[PLANS.FAMILY] }. Пачынаючы ўсяго ад ${ priceString } у месяц за ўліковы запіс."
       ]
     },
     "upsell panel": {

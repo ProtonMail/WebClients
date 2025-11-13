@@ -5073,12 +5073,6 @@
       "120 minutes": [
         "120 dakika"
       ],
-      "15 minutes": [
-        "15 dakika"
-      ],
-      "15m": [
-        "15dk"
-      ],
       "1h": [
         "1s"
       ],
@@ -12347,10 +12341,6 @@
         "${ nbYear } yıl",
         "${ nbYear } yıl"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ maxAddresses } / ${ usedAddresses } e-posta adresi",
-        "${ maxAddresses } / ${ usedAddresses } e-posta adresi"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
@@ -13665,12 +13655,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "Bitiş"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } / ${ maxBYOEAddresses } e-posta adresi",
-        "${ usedBYOEAddresses } / ${ maxBYOEAddresses } e-posta adresi"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15320,9 +15304,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Otomatik yanıtlar ayarlayarak, göndericilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirin."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size ayrılmış VPN çözümü."
       ],
@@ -15662,9 +15643,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "7/24 Destek"
-      ],
       "Access advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
       ],
@@ -15710,9 +15688,6 @@
       ],
       "Private gateways": [
         "Özel ağ geçitleri"
-      ],
-      "Require 2FA": [
-        "İki adımlı doğrulama gereksin"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
@@ -21935,9 +21910,6 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Aygıtlarınız için ${ PASS_APP_NAME } indirin"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } indir"
-      ],
       "Download the desktop app": [
         "Bilgisayar uygulamasını indirin"
       ],
@@ -23645,9 +23617,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ PLAN_NAMES[plan] } ile ${ FAMILY_MAX_USERS } kişiye kadar koruyabilirsiniz. Her hesap için yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "${ PLAN_NAMES[PLANS.DUO] } ya da ${ PLAN_NAMES[PLANS.FAMILY] } ile ${ FAMILY_MAX_USERS } kişiye kadar koruyabilirsiniz. Her hesap için yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
       ]
     },
     "upsell panel": {

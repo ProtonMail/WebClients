@@ -632,6 +632,9 @@
       "Or": [
         "Sau"
       ],
+      "Or use a different Gmail address": [
+        "Sau utilizați o altă adresă Gmail"
+      ],
       "Organization": [
         "Organizația"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Folosire cod de recuperare"
+      ],
+      "Use this Gmail address": [
+        "Utilizare această adresă de Gmail"
       ],
       "Use your current email instead": [
         "Folosire adresă de e-mail actuală"
@@ -2111,6 +2117,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Securitate avansată a contului și a rețelei într-un singur plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Conversații rapide și funcții avansate de inteligență artificială."
@@ -4281,6 +4290,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Conectați-vă cu o adresă Gmail care deja se redirecționează către ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
       ]
@@ -4874,6 +4886,9 @@
       "Double VPN": [
         "VPN dublu"
       ],
+      "File attachment ": [
+        "Fișiere atașate"
+      ],
       "Lightning-fast speeds": [
         "Viteză foarte mare"
       ],
@@ -4888,6 +4903,9 @@
       ],
       "Secure streaming": [
         "Transmisii în flux securizate"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Partajare sigură seifuri, articole și legături web"
       ],
       "Stream from Netflix, HBO, and more": [
         "Vizionare transmisie în flux de la Netflix, HBO și altele"
@@ -8201,6 +8219,11 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "Adrese de e-mail disponibile: ${ addressesAvailable } din ${ maxAddresses }",
+        "Adrese de e-mail disponibile: ${ addressesAvailable } din ${ maxAddresses }",
+        "Adrese de e-mail disponibile: ${ addressesAvailable } din ${ maxAddresses }"
+      ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
@@ -8224,11 +8247,6 @@
         "${ nbDay } zi",
         "${ nbDay } zile",
         "${ nbDay } de zile"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } din ${ maxAddresses } adresă de e-mail",
-        "${ usedAddresses } din ${ maxAddresses } adrese de e-mail",
-        "${ usedAddresses } din ${ maxAddresses } de adrese de e-mail"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
@@ -8984,10 +9002,10 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } din ${ maxBYOEAddresses } adresă de e-mail",
-        "${ usedBYOEAddresses } din ${ maxBYOEAddresses } adrese de e-mail",
-        "${ usedBYOEAddresses } din ${ maxBYOEAddresses } de adrese de e-mail"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "Adrese de e-mail disponibile: ${ byoeAddressesAvailableCount } din ${ maxBYOEAddresses }",
+        "Adrese de e-mail disponibile: ${ byoeAddressesAvailableCount } din ${ maxBYOEAddresses }",
+        "Adrese de e-mail disponibile: ${ byoeAddressesAvailableCount } din ${ maxBYOEAddresses }"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9862,6 +9880,9 @@
       "End-to-end encryption": [
         "Criptare bilaterală"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficiile existente ale planului ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descărcări rapide P2P/BitTorrent"
       ],
@@ -10074,6 +10095,11 @@
       "User storage management": [
         "Gestionare spațiu de stocare utilizatori"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Partajare seifuri cu ${ n } persoană",
+        "Partajare seifuri cu ${ n } persoane",
+        "Partajare seifuri cu ${ n } de persoane"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
       ]
@@ -10170,9 +10196,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluții personalizate pentru organizații mai mari cu nevoi specifice de securitate"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Soluția VPN dedicată care oferă acces sigur, fără restricții, de mare viteză la Internet."
@@ -10484,9 +10507,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Asistență 24/7"
-      ],
       "Access advanced VPN features": [
         "Accesați caracteristici VPN avansate"
       ],
@@ -10533,9 +10553,6 @@
       ],
       "Private gateways": [
         "Porți de acces private"
-      ],
-      "Require 2FA": [
-        "Necesită A2F"
       ],
       "Support for ${ n } custom email domain": [
         "Domenii de e-mail personal acceptate: ${ n }",
@@ -10626,6 +10643,9 @@
       ],
       "A disabled address cannot be default": [
         "O adresă dezactivată nu poate fi implicită."
+      ],
+      "Address reconnected.": [
+        "Adresă reconectată."
       ],
       "An external address cannot be default": [
         "O adresă externă nu poate fi implicită."
@@ -11545,6 +11565,36 @@
         "Creditele vă vor fi adăugate în soldul personal."
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Conturile pe viață pot fi transferate sau vândute"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Contactați asistența pentru clienți pentru a confirma schimbarea proprietarului"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Niciodată"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Sigur doriți să continuați?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Dacă alegeți să vă modificați planul ${ planTitle }, este posibil să pierdeți accesul la unele funcții."
+      ],
+      "Keep ${ planTitle }": [
+        "Păstrez ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Da, sigur"
+      ],
+      "Your plan includes this feature already.": [
+        "Planul actual include deja această funcție."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -11803,6 +11853,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Suită de confidențialitate cu servicii speciale și ${ unlimitedPlanMaxSpace } de stocare în cloud criptată, totul într-un singur pachet."
       ]
     },
     "Plans": {
@@ -14479,6 +14532,9 @@
       "Confirm phone number": [
         "Confirmați numărul de telefon"
       ],
+      "Connect a Gmail address": [
+        "Conectați adresa de Gmail"
+      ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
       ],
@@ -14645,11 +14701,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Retrogradare la ${ downgradedPlanName }?"
       ],
+      "Download ${ app }": [
+        "Descărcare ${ app }"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "Descărcare ${ VPN_APP_NAME }"
       ],
       "Downloads": [
         "Descărcări"
@@ -14957,6 +15013,9 @@
       ],
       "Remove domain": [
         "Eliminare domeniu"
+      ],
+      "Remove forwarding address": [
+        "Eliminare adresă de redirecționare"
       ],
       "Remove server?": [
         "Eliminați serverul?"
@@ -15632,6 +15691,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Economisiți până la ${ priceString }** cu un abonament de durată mai mare. Aceleași funcții premium, preț mai mic."
       ],
+      "Advanced security for your company": [
+        "Securitate avansată pentru compania personală"
+      ],
       "Advanced security for your company?": [
         "Securitate avansată pentru compania dvs.?"
       ],
@@ -15644,20 +15706,26 @@
       "Did you know?": [
         "Știați că?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obțineți ${ drivePlusPlanMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale și recuperați fișierele cu versiuni de fișiere de până la 10 ani."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Protejați-vă organizația împotriva compromiterii datelor cu ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protejați-vă organizația împotriva divulgărilor de date cu ${ VPN_APP_NAME } for Business."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Confidențialitate nelimitată pentru până la ${ FAMILY_MAX_USERS } persoane. De la doar ${ priceString }/lună."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Confidențialitate nelimitată pentru dvs. și o persoană apropiată. De la doar ${ priceString }/lună."
       ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Puteți proteja până la ${ DUO_MAX_USERS } persoane cu ${ PLAN_NAMES[PLANS.DUO] } și până la ${ FAMILY_MAX_USERS } cu ${ PLAN_NAMES[PLANS.FAMILY] }. Începând de la doar ${ priceString }/lună per cont."
+      ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puteți proteja până la ${ FAMILY_MAX_USERS } persoane cu ${ PLAN_NAMES[plan] }. Începând de la doar ${ priceString }/lună per cont."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Puteți proteja până la ${ FAMILY_MAX_USERS } persoane cu ${ PLAN_NAMES[PLANS.DUO] } sau ${ PLAN_NAMES[PLANS.FAMILY] }. Începând de la doar ${ priceString }/lună per cont."
       ]
     },
     "upsell panel": {

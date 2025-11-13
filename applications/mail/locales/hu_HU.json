@@ -382,6 +382,9 @@
       "Customize": [
         "Testreszabás"
       ],
+      "Customize categories": [
+        "Kategóriák testreszabása"
+      ],
       "Customize import": [
         "Importálás beállításai"
       ],
@@ -464,6 +467,9 @@
       ],
       "Download all attachments": [
         "Összes melléklet letöltése"
+      ],
+      "Download application logs": [
+        "Alkalmazásnaplók letöltése"
       ],
       "Download logs": [
         "Naplók letöltése"
@@ -602,6 +608,9 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } beszerzése"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Ingyenes ${ BRAND_NAME } cím beszerzése"
       ],
       "Get in touch": [
         "Lépjen velünk kapcsolatba"
@@ -765,6 +774,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Csatlakozás ${ MEET_APP_NAME }-tel"
+      ],
+      "Keep categories": [
+        "Kategóriák megtartása"
       ],
       "Keep inbox as before": [
         "Hagyja változatlanul a beérkezett üzeneteket"
@@ -1444,6 +1456,9 @@
       "Toggle Contacts app": [
         "Névjegyek alkalmazás be-/kikapcsolása"
       ],
+      "Toggle notifications": [
+        "Értesítések kapcsolása"
+      ],
       "Toggle referral": [
         "Ajánlás kapcsolása"
       ],
@@ -1997,11 +2012,17 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Akár ${ TRIAL_MAX_DEDICATED_IPS } dedikált szerverrel is rendelkezhet a próbaidőszakban."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Maximum ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licence lehet a próbaidőszakban."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Maximum ${ TRIAL_MAX_SCRIBE_SEATS } Scribe licence lehet a próbaidőszakban."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Maximum ${ TRIAL_MAX_USERS } felhasználó lehet a próbaidőszakban."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nem adhat hozzá saját domain neveket a próbaidőszak alatt."
       ],
       "You have reached the trial limit.": [
         "Elérte a próbaverzió korlátját."
@@ -2037,8 +2058,14 @@
       "${ storageSize } storage": [
         "${ storageSize } tárhely"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB tárhely: a jelenlegi csomag negyvenszerese"
+      ],
       "Advanced account protection": [
         "Fejlett fiókvédelem"
+      ],
+      "Easily add or remove users": [
+        "Egyszerűen hozzáadhat vagy eltávolíthat felhasználókat"
       ],
       "One-time payment, lifetime deal": [
         "Egyszeri fizetés, örök életre szóló ajánlat"
@@ -2062,6 +2089,12 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } egyszeri számlázás"
+      ],
+      "forever": [
+        "örökre"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "1 hónap után megújul, ${ regularAmount } áron."
       ]
     },
     "BF2024: Tooltip": {
@@ -2666,6 +2699,15 @@
       "Full chat history with search": [
         "Teljes csevegési előzmények, kereséssel"
       ],
+      "Large file upload support": [
+        "Nagy fájlok feltöltésének támogatása"
+      ],
+      "Limited daily chats": [
+        "Korlátozott napi csevegés"
+      ],
+      "Limited favorites": [
+        "Korlátozott kedvencek"
+      ],
       "Unlimited daily chats": [
         "Korlátlan napi csevegés"
       ],
@@ -2674,6 +2716,9 @@
       ],
       "Upload and query multiple large files": [
         "Több nagy méretű fájl feltöltése és lekérdezése"
+      ],
+      "Upload and query small files": [
+        "Kis fájlok feltöltése és lekérdezése"
       ],
       "Web search access": [
         "Webes keresési hozzáférés"
@@ -4292,6 +4337,9 @@
       ],
       "All premium features from your current plan": [
         "Az összes prémium funkció a jelenlegi csomagjából"
+      ],
+      "Only": [
+        "Csak"
       ]
     },
     "Duo offer: Link": {
@@ -4331,6 +4379,9 @@
       "Here's what changed:": [
         "Íme, ami változott:"
       ],
+      "LOCATION:": [
+        "HELY:"
+      ],
       "NOTE:": [
         "MEGJEGYZÉS:"
       ],
@@ -4342,6 +4393,15 @@
       ],
       "This event was updated.": [
         "Ezt az eseményt frissítették."
+      ],
+      "TIME:": [
+        "IDŐ:"
+      ],
+      "TITLE:": [
+        "CÍM:"
+      ],
+      "You are invited to": [
+        "Meghívást kapott: "
       ]
     },
     "Email body for invitation (date part)": {
@@ -4711,6 +4771,9 @@
       "No address with keys available to compose a message": [
         "Nincs elérhető kulcsokkal rendelkező cím az üzenet íráshoz"
       ],
+      "No address with sending permissions": [
+        "Nincs cím küldési jogosultságokkal"
+      ],
       "No calendars found to import": [
         "Nincs importálandó naptár"
       ],
@@ -5035,6 +5098,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Jelentkezzen be egy Gmail címmel, amely már továbbít a ${ MAIL_APP_NAME }-be."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Jelentkezzen be ugyanazzal a Gmail e-mail címmel, amit eredetileg csatlakoztatott"
       ]
@@ -5939,6 +6005,9 @@
       ],
       "Tell us more": [
         "Mondjon többet"
+      ],
+      "Username": [
+        "Felhasználónév"
       ]
     },
     "Hint": {
@@ -6333,6 +6402,9 @@
       ],
       "${ BRAND_NAME }'s password manager lets you create, store, and autofill passwords, so you never have to reset them.": [
         "A ${ BRAND_NAME } jelszókezelő lehetővé teszi jelszavak létrehozását, tárolását és automatikus kitöltését, így soha nem kell visszaállítania azokat."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "A ${ CALENDAR_APP_NAME } használatához egy ${ BRAND_NAME } cím szükséges, az események biztonságos szinkronizáláshoz és titkosításhoz. ${ claimAddressButton }."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "A ${ CALENDAR_APP_NAME } használatához egy ${ BRAND_NAME } cím szükséges, az események biztonságos szinkronizáláshoz és titkosításhoz. Igényeljen egy ingyenes ${ MAIL_APP_NAME } címet."
@@ -7235,6 +7307,9 @@
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
         "Adjon egy színes címkét a számláknak például \"${ suggestedLabelName }\". Miután be lettek fizetve változtassa meg a címkét \"${ suggestedPaidLabelName }-re\""
       ],
+      "Google Pay mark": [
+        "Google Pay jel"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "A kormányok és az internetszolgáltatók megfigyelhetik az online tevékenységeket. A valós IP-cím elrejtésével és a tevékenysége titkosításával az Ön böngészése privát lesz."
       ],
@@ -7335,6 +7410,9 @@
       ],
       "Includes invoices, purchase orders, and payment confirmations.": [
         "A számlákat, megrendeléseket és fizetési visszaigazolásokat tartalmazza."
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "A marketing e-maileket és a nem sürgős alkalmazás-értesítéseket tartalmazza."
       ],
       "Includes marketing emails like offers and product announcements.": [
         "Marketing e-maileket tartalmaz, mint például ajánlatokat és termékbejelentéseket."
@@ -7543,6 +7621,9 @@
       ],
       "No action selected": [
         "Nincs kiválasztva művelet"
+      ],
+      "No change will be made to the selected emails": [
+        "Nem történik változtatás a kiválasztott e-maileken"
       ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
@@ -7832,6 +7913,9 @@
       ],
       "Saved: ${ dateString }": [
         "Mentve: ${ dateString }"
+      ],
+      "Saving draft": [
+        "Piszkozat mentése"
       ],
       "Scan the QR code with your mobile device": [
         "Olvassa be a QR-kódot a mobilkészülékével"
@@ -8752,6 +8836,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Próbaideje ${ timeRemaining } múlva véget ér."
       ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Elveszíti a hozzáférést a(z) ${ boldPlanTitle } funkciókhoz:"
+      ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Hozzáférése a következőhöz: ${ boldPlanTitle } megszűnik ekkor: ${ boldEndDate }."
       ],
@@ -9100,6 +9187,9 @@
       "Also archive": [
         "Archiválás is"
       ],
+      "Always label sender's emails": [
+        "A feladó leveleit mindig jelölje címkékkel"
+      ],
       "Always move sender's emails": [
         "A feladó leveleit mindig helyezze át"
       ],
@@ -9150,6 +9240,9 @@
       ],
       "Blind Carbon Copy": [
         "Titkos másolat"
+      ],
+      "Bookings, billings, and orders": [
+        "Foglalások, számlázások és megrendelések"
       ],
       "Browser": [
         "Böngésző"
@@ -9265,6 +9358,9 @@
       "Did not follow instructions": [
         "Nem követte az utasításokat"
       ],
+      "Discussion board posts and threads": [
+        "Fórumbejegyzések és fórumtémák"
+      ],
       "Do you have any suggestions for our team?": [
         "Lenne valamilyen javaslata a csapatunk számára?"
       ],
@@ -9355,11 +9451,17 @@
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
       ],
+      "Get the deal": [
+        "Ajánlat elfogadása"
+      ],
       "Go to Forums": [
         "Fórumok megnyitása"
       ],
       "Go to Newsletters": [
         "Hírlevelek megnyitása"
+      ],
+      "Go to Primary": [
+        "Elsődleges megnyitása"
       ],
       "Go to Promotions": [
         "Ugrás a promóciókhoz"
@@ -9367,8 +9469,14 @@
       "Go to Social": [
         "Közösségi megnyitása"
       ],
+      "Go to Transactions": [
+        "Tranzakciók megnyitása"
+      ],
       "Go to Updates": [
         "Ugrás a frissítésekhez"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Segítsen javítani a kategóriákon azzal, hogy kiválasztja melyikbe illik legjobban ez az e-mail. Köszönjük a segítséget!"
       ],
       "Help us improve the upcoming mail categorization": [
         "Segítsen fejleszteni a közelgő levélkategorizálást"
@@ -9399,6 +9507,9 @@
       ],
       "Import to:": [
         "Importálás ide:"
+      ],
+      "Include application logs in bug report": [
+        "Alkalmazásnaplók mellékelése a hibajelentéshez"
       ],
       "Integrated 2FA authenticator": [
         "Beépített kétfaktoros (2FA) hitelesítés"
@@ -9613,6 +9724,9 @@
       "Remove metadata": [
         "Metadata eltávolítása"
       ],
+      "Remove Zoom video conference": [
+        "Zoom videókonferencia eltávolítása"
+      ],
       "Reveal password": [
         "Jelszó felfedése"
       ],
@@ -9636,6 +9750,9 @@
       ],
       "Size:": [
         "Méret:"
+      ],
+      "Social": [
+        "Közösségi"
       ],
       "Social media updates and activity": [
         "Közösségi média hírek és tevékenység"
@@ -9744,6 +9861,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Mi a lemondás vagy a visszaminősítés fő oka?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Melyik kategóriába kellene átsorolni?"
       ],
       "Why am I seeing this?": [
         "Miért látom ezt?"
@@ -9911,6 +10031,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Hozzon létre egy új naptárat a meghívói kezeléséhez"
+      ],
+      "Deleted": [
+        "Törölve"
       ],
       "Drafts": [
         "Piszkozatok"
@@ -10715,6 +10838,9 @@
       "End-to-end encryption": [
         "Végpontok közti titkosítás"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Meglévő ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } előnyök"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Gyors P2P/BitTorrent letöltések"
       ],
@@ -10833,6 +10959,9 @@
       "Share files with no size limit": [
         "Fájlok megosztása méretkorlátozás nélkül"
       ],
+      "Short domain (@pm.me)": [
+        "Rövid domain (@pm.me)"
+      ],
       "Sign in as user": [
         "Bejelentkezés felhasználóként"
       ],
@@ -10929,6 +11058,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Tároló megosztás (${ n } személyig)",
         "Tároló megosztás (${ n } személyig)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Tároló megosztás ${ n } személlyel",
+        "Tároló megosztás akár ${ n } személlyel"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
@@ -11029,9 +11162,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Biztonságos e-mail, fejlett lehetőségekkel a mindennapi kommunikációjához."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Testre szabott megoldások nagyobb szervezetek számára, egyedi biztonsági igényekkel"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A külön VPN megoldás, amely biztonságos, korlátlan és nagysebességű internet elérést biztosít."
@@ -11294,9 +11424,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24/7 támogatás"
-      ],
       "Access advanced VPN features": [
         "További VPN lehetőségek elérése"
       ],
@@ -11342,9 +11469,6 @@
       ],
       "Private gateways": [
         "Privát átjárók"
-      ],
-      "Require 2FA": [
-        "Kétlépcsős hitelesítés megkövetelése"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } saját e-mail domain név használata",
@@ -11507,6 +11631,9 @@
       "Email addresses": [
         "E-mail címek"
       ],
+      "File version history (over 1 week)": [
+        "Fájl verzióelőzmények (több mint 1 hét)"
+      ],
       "Free": [
         "Ingyenes"
       ],
@@ -11544,6 +11671,9 @@
       ]
     },
     "Onboarding modal": {
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } azt jelenti, hogy soha nem fog szponzorált hirdetéseket látni az alkalmazásainkban."
+      ],
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "A(z) ${ advancedEncryptionTitle } biztosítja, hogy csak Ön és a címzettek férhessenek hozzá az e-mailjeihez."
       ],
@@ -11607,6 +11737,9 @@
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
         "Hogy bármikor hozzáférjen az e-mailhez és optimalizált mobil élményt kapjon, töltse le a ${ mobileAppAppStoreLink } vagy ${ mobileAppGooglePlayLink } alkalmazásunkat."
       ],
+      "Get notified if your password is compromised.": [
+        "Értesítést kap, ha a jelszava kiszivárog."
+      ],
       "Industry-leading spam protection": [
         "Levélszemét elleni, iparágvezető védelem"
       ],
@@ -11633,6 +11766,9 @@
       ],
       "Set a display name": [
         "Megjelenített név megadása"
+      ],
+      "Start using ${ BRAND_NAME }": [
+        "${ BRAND_NAME } használatának megkezdése"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Kezdje el használni az e-mail címe rövidebb, frappánsabb változatát."
@@ -11840,6 +11976,9 @@
       "Advanced account protection": [
         "Fejlett fiókvédelem"
       ],
+      "File attachments (up to 10GB)": [
+        "Fájlmellékletek (legfeljebb 10 GB)"
+      ],
       "Team policies": [
         "Csapat irányelvek"
       ]
@@ -11970,6 +12109,9 @@
       "Taxes": [
         "Adók"
       ],
+      "terms and conditions": [
+        "felhasználási feltételek"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "A kupon ${ couponRedemptions } megújításra érvényes.",
         "A kupon ${ couponRedemptions } megújításra érvényes."
@@ -12000,6 +12142,9 @@
         "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja.",
         "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Ez a művelet bővíti a meglévő előfizetést. Csak az új kiegészítőkért és az aktuális számlázási ciklus fennmaradó idejéért kell fizetnie. Az előfizetésének megújítási dátuma nem változik."
+      ],
       "This offer is not available with your current plan.": [
         "Ez az ajánlat nem érhető el a jelenlegi csomagjával."
       ],
@@ -12012,11 +12157,20 @@
       "VAT": [
         "ÁFA"
       ],
+      "VAT number": [
+        "Áfa-szám"
+      ],
       "You already have a subscription to this plan.": [
         "Már rendelkezik előfizetéssel ehhez a csomaghoz."
       ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Már van előfizetése erre a csomagra. Előfizetését a ${ subscriptionPlatform } felületén módosíthatja."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítjuk a PayPal oldalára."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "A kifizetés ellenőrzéséhez hamarosan átirányítjuk."
       ],
       "Your payment is still being processed": [
         "A kifizetés még feldolgozás alatt van"
@@ -12058,9 +12212,31 @@
         "Kreditek az egyenlegéhez kerülnek hozzáadásra"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Biztosan folytatja?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Ha módosítja a(z) ${ planTitle } csomagját, elveszítheti a hozzáférést bizonyos funkciókhoz."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } megtartása"
+      ],
+      "Yes, I'm sure": [
+        "Igen, biztos vagyok benne"
+      ],
+      "Your plan includes this feature already.": [
+        "A csomagja már tartalmazza ezt a lehetőséget."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Ingyenes"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kártya, a következő végződéssel: ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -12072,11 +12248,29 @@
       ]
     },
     "Payments.VAT number name": {
+      "Add ABN": [
+        "ABN hozzáadása"
+      ],
+      "Add Business Number": [
+        "Üzleti szám hozzáadása"
+      ],
+      "Add EIN": [
+        "EIN hozzáadása"
+      ],
+      "Add VAT number": [
+        "Áfa-szám hozzáadása"
+      ],
       "Edit ABN": [
         "ABN szerkesztése"
       ],
+      "Edit Business Number": [
+        "Üzleti szám szerkesztése"
+      ],
       "Edit EIN": [
         "EIN szerkesztése"
+      ],
+      "Edit VAT number": [
+        "Áfa-szám szerkesztése"
       ],
       "VAT number": [
         "Áfa-szám"
@@ -12136,6 +12330,9 @@
       ],
       "End date": [
         "Befejező dátum"
+      ],
+      "Enter passphrase": [
+        "Írja be a jelszót"
       ],
       "Filter folders": [
         "Mappák szűrése"
@@ -12410,6 +12607,9 @@
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Ezen dátum után a fiókja a **${ BRAND_NAME } Ingyenes** csomagra vált. Ha meggondolja magát, akkor **újraaktiválhatja előfizetését**, hogy továbbra is hozzáférjen a prémium funkciókhoz."
       ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Szerezzen akár ${ maxRewardAmount } kreditet. ${ referrerRewardAmount } kreditet kap, amikor az Ön által meghívott személy előfizet egy ${ BRAND_NAME } csomagra."
+      ],
       "Friend joined": [
         "Ismerős csatlakozott",
         "Ismerősök csatlakoztak"
@@ -12421,6 +12621,9 @@
       "Invite friends. Get credits.": [
         "Hívja meg ismerőseit. Szerezzen krediteket."
       ],
+      "Invited friends": [
+        "Meghívott ismerősök"
+      ],
       "More sharing options": [
         "További megosztási beállítások"
       ],
@@ -12429,6 +12632,12 @@
       ],
       "Refer friends": [
         "Ismerősök meghívása"
+      ],
+      "Start earning credits": [
+        "Szerezzen krediteket"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Szerezzen akár **${ maxRewardAmount }** kreditet."
       ]
     },
     "Remaining days before the message expire": {
@@ -14320,6 +14529,9 @@
       "Account security": [
         "Fiókbiztonság"
       ],
+      "Account temporarily locked": [
+        "Fiók ideiglenesen zárolva"
+      ],
       "Action all conversations": [
         "Művelet az összes beszélgetésen"
       ],
@@ -14501,6 +14713,12 @@
       "Customize calendar import": [
         "A naptár importálás testreszabása"
       ],
+      "Customize categories": [
+        "Kategóriák testreszabása"
+      ],
+      "Customize categories to fit your needs": [
+        "Szabja testre a kategóriákat igényei szerint"
+      ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
       ],
@@ -14641,6 +14859,9 @@
       "External encryption": [
         "Külső titkosítás"
       ],
+      "Fewer distractions, more focus": [
+        "Kevesebb zavaró tényező, nagyobb összpontosítás"
+      ],
       "Filter for more focus": [
         "Szűrés a nagyobb összpontosításért"
       ],
@@ -14655,6 +14876,9 @@
       ],
       "Forward": [
         "Továbbítás"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Szerezzen **${ referralInfo.uiData.refereeRewardAmount }** kreditet a(z) ${ planTitle } csomaggal"
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } teljes elérés megszerzése"
@@ -14731,6 +14955,9 @@
       ],
       "Insert contacts": [
         "Névjegy beszúrása"
+      ],
+      "Introducing email categories": [
+        "Ez e-mail kategóriák bemutatása"
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
@@ -14990,6 +15217,9 @@
       "Recover data": [
         "Adatok helyreállítása"
       ],
+      "Referral": [
+        "Ajánló"
+      ],
       "Remove from list?": [
         "Eltávolítás a listából?"
       ],
@@ -15186,6 +15416,9 @@
       "Upgrade to keep your premium benefits.": [
         "Váltson nagyobb csomagra, hogy megőrizze prémium előnyeit."
       ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Növelje a hatékonyságát ${ formattedPrice } áron a(z) ${ planName } csomaggal"
+      ],
       "Upload and share files": [
         "Fájlok feltöltése és megosztása"
       ],
@@ -15267,6 +15500,9 @@
       ],
       "Your subscriptions in one place": [
         "Az előfizetései egy helyen"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Érkeznek a kategóriák!"
       ]
     },
     "Today icon tooltip in mini calendar": {

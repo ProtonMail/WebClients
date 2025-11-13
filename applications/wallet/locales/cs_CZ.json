@@ -1079,6 +1079,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Přidat ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Pokročilé zabezpečení účtu a sítě v jednom tarifu"
+      ],
       "High-speed chats and advanced AI features.": [
         "Velmi rychlé konverzace a pokročilé funkce AI."
       ]
@@ -3766,6 +3769,9 @@
       "End-to-end encryption": [
         "Koncové šifrování"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Stávající výhody tarifu ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Rychlé P2P/BitTorrent stahování"
       ],
@@ -3973,6 +3979,12 @@
         "Sdílení trezoru (až ${ n } osob)",
         "Sdílení trezoru (až ${ n } osob)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Sdílení trezoru s ${ n } osobou",
+        "Sdílení trezoru až se ${ n } osobami",
+        "Sdílení trezoru až s ${ n } osobami",
+        "Sdílení trezoru až s ${ n } osobami"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
       ]
@@ -4068,9 +4080,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Dedikované VPN řešení, které nabízí bezpečný, neomezený, vysokorychlostní přístup k internetu."
@@ -4327,9 +4336,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Podpora 24/7"
-      ],
       "Access advanced VPN features": [
         "Odemkněte pokročilé VPN funkce"
       ],
@@ -4377,9 +4383,6 @@
       ],
       "Private gateways": [
         "Soukromé brány"
-      ],
-      "Require 2FA": [
-        "Požadování 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Podpora ${ n } vlastní e-mailové domény",
@@ -4703,6 +4706,23 @@
       ],
       "Credits will be added to your balance": [
         "Kredity budou přidány k vašemu zůstatku"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Určitě chcete pokračovat?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Pokud se rozhodnete upravit váš ${ planTitle } tarif, můžete ztratit přístup k některým funkcím."
+      ],
+      "Keep ${ planTitle }": [
+        "Ponechat ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ano, potvrzuji"
+      ],
+      "Your plan includes this feature already.": [
+        "Váš tarif již zahrnuje tuto funkci."
       ]
     },
     "Payments.plan_name": {

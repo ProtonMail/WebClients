@@ -5073,12 +5073,6 @@
       "120 minutes": [
         "120 minutos"
       ],
-      "15 minutes": [
-        "15 minutos"
-      ],
-      "15m": [
-        "15 min"
-      ],
       "1h": [
         "1 h"
       ],
@@ -12350,10 +12344,6 @@
         "${ nbYear } año",
         "${ nbYear } años"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } de ${ maxAddresses } dirección de correo",
-        "${ usedAddresses } de ${ maxAddresses } direcciones de correo"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
       ],
@@ -13668,12 +13658,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "Para"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } dirección de correo",
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } direcciones de correo"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15323,9 +15307,6 @@
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Cree respuestas automáticas para que los remitentes sepan que está fuera de la oficina o que no puede responder."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solución VPN dedicada que ofrece acceso seguro, sin restricciones y de alta velocidad a Internet."
       ],
@@ -15665,9 +15646,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Soporte 24/7"
-      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -15713,9 +15691,6 @@
       ],
       "Private gateways": [
         "Puertas de enlace privadas"
-      ],
-      "Require 2FA": [
-        "Requiere 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Soporte para ${ n } dominio de correo electrónico personalizado",
@@ -21938,9 +21913,6 @@
       "Download ${ PASS_APP_NAME } for your devices": [
         "Descargue ${ PASS_APP_NAME } en todos sus dispositivos"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "Descargar ${ VPN_APP_NAME }"
-      ],
       "Download the desktop app": [
         "Descargue la aplicación de escritorio"
       ],
@@ -23648,9 +23620,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puede proteger hasta ${ FAMILY_MAX_USERS } personas con ${ PLAN_NAMES[plan] }. Desde ${ priceString }/mes por cuenta."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Puede proteger hasta ${ FAMILY_MAX_USERS } personas con ${ PLAN_NAMES[PLANS.DUO] } o ${ PLAN_NAMES[PLANS.FAMILY] }. Desde ${ priceString }/mes por cuenta."
       ]
     },
     "upsell panel": {
