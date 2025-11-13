@@ -17,7 +17,7 @@ export const useFocusController = createUseContext(IFrameFocusControllerContext)
 /** Maximum number of focus recovery attempts before giving up.
  * Prevents infinite loops when aggressive focus-lock libraries
  * repeatedly steal focus back to trapped fields */
-const MAX_FOCUS_RECOVERY_RETRIES = 3;
+const MAX_FOCUS_RECOVERY_RETRIES = 5;
 
 /** Manages focus and blur events for the dropdown iframe to handle both
  * user dismissals and focus-lock interference from the host page */
@@ -57,6 +57,7 @@ export const DropdownFocusController: FC<PropsWithChildren> = ({ children }) => 
                 if (document.hasFocus()) retryCount.current = 0;
                 else if (retryCount.current < MAX_FOCUS_RECOVERY_RETRIES) {
                     /** Focus was stolen: request recovery */
+                    clearTimeout(blurTimeout);
                     retryCount.current += 1;
                     controller.forwardMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS_REQUEST });
                 }

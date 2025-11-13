@@ -3,11 +3,13 @@ import type { InlineApp } from 'proton-pass-extension/app/content/services/inlin
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
 
+import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { DropdownAnchorRef, DropdownRequest } from './dropdown.app';
 
@@ -34,6 +36,26 @@ type DropdownFocusManagerOptions = {
 
 type DropdownFocusManagerState = { willFocus: boolean; willFocusTimer?: NodeJS.Timeout };
 
+/** Checks if an element can receive keyboard focus and potentially trap it.
+ * Interactive elements include form controls, links, and any element with
+ * tabindex or contentEditable attributes. */
+const isFocusableElement = (el: MaybeNull<Element>): boolean => {
+    if (!el || !isHTMLElement(el)) return false;
+
+    const tag = el.tagName.toLowerCase();
+    const focusableTags = ['input', 'textarea', 'select', 'button', 'a'];
+    return focusableTags.includes(tag) || el.hasAttribute('tabindex') || el.isContentEditable;
+};
+
+/** Determines if focus has been successfully released from interactive elements.
+ * Returns true when `activeElement` is the document body, root element, or a
+ * non-focusable element that cannot trap focus. This handles cross-browser
+ * differences where Safari may not reset to body after blur(). */
+const isFocusReleased = (): boolean => {
+    const active = document.activeElement;
+    return active === document.body || active === document.documentElement || !isFocusableElement(active);
+};
+
 /** Creates a focus controller to manage dropdown focus and bypass page-level focus
  * traps. Some websites use focus-lock libraries that aggressively redirect focus back
  * to form fields, preventing our dropdown from receiving keyboard input. This controller
@@ -45,12 +67,17 @@ export const createDropdownFocusController = ({
 }: DropdownFocusManagerOptions): DropdownFocusController => {
     const state: DropdownFocusManagerState = { willFocus: false };
 
+    const hasFocus = () => document.activeElement === popover.root.customElement;
+
     const disconnect = () => {
         clearTimeout(state.willFocusTimer);
         delete state.willFocusTimer;
         state.willFocus = false;
 
-        if (anchor.current?.type === 'field') anchor.current.field.interactivity.unlock();
+        if (anchor.current?.type === 'field') {
+            const fields = anchor.current.field.getFormHandle().getFields();
+            fields.forEach((formField) => formField.interactivity.unlock());
+        }
     };
 
     const onWillFocus = () => {
@@ -64,19 +91,18 @@ export const createDropdownFocusController = ({
      * loses focus, then we should detach (field::blur event is insufficient
      * because it relies on the dropdown state) */
     const onWillBlur = onNextTick(() => {
-        if (iframe.state.visible && !document.hasFocus()) {
-            iframe.close();
-        }
+        if (iframe.state.visible) iframe.close();
     });
 
     /** Releases focus from the currently focused element to bypass focus-lock traps.
      * Focus-lock libraries monitor focus changes and redirect focus back to trapped
      * elements. By blurring first, we leave no element for the trap to redirect to,
      * allowing our dropdown to successfully acquire focus. */
-    const releaseFocus = (field?: FieldHandle): boolean => {
+    const releaseFocus = async (field?: FieldHandle): Promise<boolean> => {
         if (!iframe.state.visible) return true;
+        if (hasFocus()) return true;
 
-        if (field && isActiveElement(field?.element)) {
+        if (field && isActiveElement(field.element)) {
             /** Lock all fields temporarily - prevents websites from focus
              * trapping or auto-focusing the next field during blur */
             const fields = field.getFormHandle().getFields();
@@ -86,11 +112,10 @@ export const createDropdownFocusController = ({
             return false;
         }
 
-        if (document.activeElement && isHTMLElement(document.activeElement)) {
-            document.activeElement.blur();
-        }
+        if (document.activeElement && isHTMLElement(document.activeElement)) document.activeElement.blur();
 
-        return true;
+        await wait(1); // wait for `activeElement` to settle
+        return isFocusReleased();
     };
 
     /** Handles focus recovery when page focus-lock implementations interfere with dropdown focus.
@@ -100,7 +125,7 @@ export const createDropdownFocusController = ({
     const onFocusRequest = asyncLock(async () => {
         onWillFocus();
 
-        if (document.activeElement !== popover.root.customElement) {
+        if (!hasFocus()) {
             switch (anchor.current?.type) {
                 case 'field':
                     const field = anchor.current.field;
@@ -109,8 +134,8 @@ export const createDropdownFocusController = ({
                         .catch(disconnect);
 
                 case 'frame':
-                    return nextTick(() => {
-                        releaseFocus();
+                    return nextTick(async () => {
+                        await releaseFocus();
                         return iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS });
                     });
             }
