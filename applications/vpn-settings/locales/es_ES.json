@@ -629,6 +629,9 @@
       "Or": [
         "O"
       ],
+      "Or use a different Gmail address": [
+        "O usa otra dirección de Gmail"
+      ],
       "Organization": [
         "Organización"
       ],
@@ -1015,6 +1018,9 @@
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
+      ],
+      "Use this Gmail address": [
+        "Usar esta dirección de Gmail"
       ],
       "Use your current email instead": [
         "Utiliza tu correo electrónico actual en su lugar"
@@ -4217,6 +4223,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Por favor, inicia sesión con una dirección de Gmail que ya reenvía a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Por favor, inicia sesión con la misma dirección de Gmail que conectaste originalmente"
       ]
@@ -8025,6 +8034,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } de ${ maxAddresses } direcciones de correo electrónico disponible",
+        "${ addressesAvailable } de ${ maxAddresses } direcciones de correo disponibles"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
@@ -8045,10 +8058,6 @@
       "${ nbDay } day": [
         "${ nbDay } día",
         "${ nbDay } días"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } de ${ maxAddresses } dirección de correo electrónico",
-        "${ usedAddresses } de ${ maxAddresses } direcciones de correo"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
@@ -8794,9 +8803,9 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } dirección de correo electrónico",
-        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } direcciones de correo"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } de ${ maxBYOEAddresses } direcciones de correo electrónico disponible",
+        "${ byoeAddressesAvailableCount } de ${ maxBYOEAddresses } direcciones de correo disponibles"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9975,9 +9984,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solución específica de VPN con conexión a internet segura, de alta velocidad y sin restricciones."
       ],
@@ -10054,9 +10060,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Prueba de ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -10290,9 +10293,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Soporte 24/7"
-      ],
       "Access advanced VPN features": [
         "Acceso a funciones VPN avanzadas"
       ],
@@ -10338,9 +10338,6 @@
       ],
       "Private gateways": [
         "Puertas de enlace privadas"
-      ],
-      "Require 2FA": [
-        "Requiere 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Soporte para ${ n } dominio de correo electrónico personalizado",
@@ -10430,6 +10427,9 @@
       ],
       "A disabled address cannot be default": [
         "Una dirección desactivada no puede ser la dirección por defecto."
+      ],
+      "Address reconnected.": [
+        "Dirección reconectada."
       ],
       "An external address cannot be default": [
         "Una dirección externa no puede ser la dirección por defecto.."
@@ -11321,6 +11321,19 @@
         "Se añadirán créditos a tu saldo."
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Las cuentas vitalicias pueden transferirse o venderse"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Ponte en contacto con atención al cliente para confirmar el cambio de titularidad."
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Nunca"
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Gratuito"
@@ -11576,6 +11589,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Suite de privacidad con servicios prémium y ${ unlimitedPlanMaxSpace } de almacenamiento encriptado en la nube, todo en un paquete."
       ]
     },
     "Plans": {
@@ -14195,6 +14211,9 @@
       "Confirm phone number": [
         "Confirmar el número de teléfono"
       ],
+      "Connect a Gmail address": [
+        "Conectar una dirección de Gmail"
+      ],
       "Connect apps and devices": [
         "Conectar aplicaciones y dispositivos"
       ],
@@ -14358,9 +14377,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarga las aplicaciones de ${ DRIVE_APP_NAME }"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "Descargar ${ VPN_APP_NAME }"
       ],
       "Downloads": [
         "Descargas"
@@ -14663,6 +14679,9 @@
       ],
       "Remove domain": [
         "Eliminar el dominio"
+      ],
+      "Remove forwarding address": [
+        "Eliminar dirección de reenvío"
       ],
       "Remove server?": [
         "¿Eliminar el servidor?"
@@ -15333,6 +15352,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Ahorra hasta ${ priceString }** con una suscripción más larga. Mismas funciones premium, menor precio."
       ],
+      "Advanced security for your company": [
+        "Seguridad avanzada para tu empresa"
+      ],
       "Advanced security for your company?": [
         "¿Seguridad avanzada para tu empresa?"
       ],
@@ -15345,17 +15367,23 @@
       "Did you know?": [
         "¿Lo sabías?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obtén ${ drivePlusPlanMaxSpace } de almacenamiento para tus archivos, fotos y documentos, y recupera versiones con una recuperación de archivos de 10 años."
+      ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protege tu organización de las vulneraciones de datos con ${ VPN_APP_NAME } for Business."
+      ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Privacidad ilimitada para hasta ${ FAMILY_MAX_USERS } personas. Desde solo ${ priceString } al mes."
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Privacidad ilimitada para ti y un ser querido. Desde solo ${ priceString } al mes."
       ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Puedes proteger hasta ${ DUO_MAX_USERS } personas con ${ PLAN_NAMES[PLANS.DUO] }, y hasta ${ FAMILY_MAX_USERS } con ${ PLAN_NAMES[PLANS.FAMILY] }. Desde solo ${ priceString }/mes por cuenta."
+      ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puedes proteger hasta ${ FAMILY_MAX_USERS } personas con ${ PLAN_NAMES[plan] }. Desde ${ priceString }/mes por cuenta."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Puedes proteger hasta ${ FAMILY_MAX_USERS } personas con ${ PLAN_NAMES[PLANS.DUO] } o ${ PLAN_NAMES[PLANS.FAMILY] }. Desde ${ priceString }/mes por cuenta."
       ]
     },
     "upsell panel": {

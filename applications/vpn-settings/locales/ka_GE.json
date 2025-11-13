@@ -7891,10 +7891,6 @@
         "${ nbDay } დღე",
         "${ nbDay } დღე"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses }/${ maxAddresses } ელფოსტის მისამართი",
-        "${ usedAddresses }/${ maxAddresses } ელფოსტის მისამართი"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
@@ -8633,12 +8629,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "ვის"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses }/${ maxBYOEAddresses } ელფოსტის მისამართი",
-        "${ usedBYOEAddresses }/${ maxBYOEAddresses } ელფოსტის მისამართი"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9788,9 +9778,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "დაცული ელფოსტა დამატებითი ფუნქციებით, თქვენი ყოველდღიური მიმოწერისთვის."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "შეკვეთილი გადაწყვეტილებები დიდი ორგანიზაციებისთვის, რომლებსაც სპეციფიკური უსაფრთხოების საჭიროება გააჩნიათ"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "გამოყოფილი VPN გადაწყვეტილება, რომელიც ინტერნეტთან დაცულ, შეუზღუდავ და ჩქაროსნულ წვდომას მოგცემთ."
       ],
@@ -9867,9 +9854,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } საცდელი"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ],
       "Your account's usage": [
         "თქვენი ანგარიშის გამოყენება"
@@ -10103,9 +10087,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "24/7 მხარდაჭერა"
-      ],
       "Access advanced VPN features": [
         "VPN-ის დამატებითი თვისებების განბლოკვა"
       ],
@@ -10151,9 +10132,6 @@
       ],
       "Private gateways": [
         "პირადი რაუტერები"
-      ],
-      "Require 2FA": [
-        "2FA-ის მოთხოვნა"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } მომხმარებლის დომენის მხარდაჭერა",
@@ -14088,9 +14066,6 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }-ის გადმოწერა"
       ],
       "Downloads": [
         "გადმოწერები"

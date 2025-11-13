@@ -8104,10 +8104,6 @@
         "${ nbDay } gün",
         "${ nbDay } gün"
       ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ maxAddresses } / ${ usedAddresses } e-posta adresi",
-        "${ maxAddresses } / ${ usedAddresses } e-posta adresi"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
@@ -8855,12 +8851,6 @@
     "Label (end date/advanced search)": {
       "To": [
         "Bitiş"
-      ]
-    },
-    "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } / ${ maxBYOEAddresses } e-posta adresi",
-        "${ usedBYOEAddresses } / ${ maxBYOEAddresses } e-posta adresi"
       ]
     },
     "Label for adding a new custom domain": {
@@ -10023,9 +10013,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size ayrılmış VPN çözümü."
       ],
@@ -10335,9 +10322,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "7/24 destek"
-      ],
       "Access advanced VPN features": [
         "Gelişmiş VPN özelliklerine erişin"
       ],
@@ -10383,9 +10367,6 @@
       ],
       "Private gateways": [
         "Özel ağ geçitleri"
-      ],
-      "Require 2FA": [
-        "İki adımlı doğrulama gereksin"
       ],
       "Support for ${ n } custom email domain": [
         "${ n } özel e-posta etki alanı desteği",
@@ -14398,9 +14379,6 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
-      "Download ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } indir"
-      ],
       "Downloads": [
         "İndirmeler"
       ],
@@ -15401,9 +15379,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ PLAN_NAMES[plan] } ile ${ FAMILY_MAX_USERS } kişiye kadar koruyabilirsiniz. Her hesap için yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "${ PLAN_NAMES[PLANS.DUO] } ya da ${ PLAN_NAMES[PLANS.FAMILY] } ile ${ FAMILY_MAX_USERS } kişiye kadar koruyabilirsiniz. Her hesap için yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
       ]
     },
     "upsell panel": {

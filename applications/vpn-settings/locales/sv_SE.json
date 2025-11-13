@@ -632,6 +632,9 @@
       "Or": [
         "Eller"
       ],
+      "Or use a different Gmail address": [
+        "Eller använd en annan Gmail-adress"
+      ],
       "Organization": [
         "Organisation"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Använd återställningskod"
+      ],
+      "Use this Gmail address": [
+        "Använd denna Gmail-adress"
       ],
       "Use your current email instead": [
         "Använd din nuvarande e-post istället"
@@ -2077,6 +2083,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lägg till ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avancerad konto- och nätverkssäkerhet i ett paket"
       ],
       "High-speed chats and advanced AI features.": [
         "Chattar med hög hastighet och avancerade AI-funktioner."
@@ -3211,6 +3220,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Anslut din CRM, webbplats, skrivare och mer."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Skapa en gateway för att ge dina användare åtkomst till dina IT-resurser genom dedikerade servrar."
+      ],
       "Create groups you can email with a single address.": [
         "Skapa grupper du kan skicka e-post till med en enda adress."
       ],
@@ -4230,6 +4242,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Logga in med en Gmail-adress som redan vidarebefordrar till ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Logga in med samma Gmail-adress som du ursprungligen anslöt"
       ]
@@ -4830,6 +4845,9 @@
       ],
       "Secure streaming": [
         "Säker streaming"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Säker delning av valv, objekt och länk"
       ],
       "Stream from Netflix, HBO, and more": [
         "Streama från Netflix, HBO och mer"
@@ -7953,6 +7971,11 @@
         "Endast visa"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Så här kommer din organisation att visas för användarna. Du kan ändra det när som helst."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "Inte en giltig e-postadress"
@@ -8034,6 +8057,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } av ${ maxAddresses } e-postadress tillgänglig",
+        "${ addressesAvailable } av ${ maxAddresses } e-postadresser tillgängliga"
+      ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
@@ -8054,10 +8081,6 @@
       "${ nbDay } day": [
         "${ nbDay } dag",
         "${ nbDay } dagar"
-      ],
-      "${ usedAddresses } of ${ maxAddresses } email address": [
-        "${ usedAddresses } av ${ maxAddresses } e-postadress",
-        "${ usedAddresses } av ${ maxAddresses } e-postadresser"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
@@ -8812,9 +8835,9 @@
       ]
     },
     "Label BYOE": {
-      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
-        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadress",
-        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadresser"
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } av ${ maxBYOEAddresses } e-postadress tillgänglig",
+        "${ byoeAddressesAvailableCount } av ${ maxBYOEAddresses } e-postadresser tillgängliga"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9673,6 +9696,9 @@
       "End-to-end encryption": [
         "End-to-end-kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Befintliga ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-förmåner"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Snabba P2P-/BitTorrent-nedladdningar"
       ],
@@ -9889,6 +9915,10 @@
         "Valvdelning (upp till ${ n } person)",
         "Valvdelning (upp till ${ n } personer)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Valvdelning med upp till ${ n } person",
+        "Valvdelning med upp till ${ n } personer"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
       ]
@@ -9984,9 +10014,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Den dedikerade VPN-lösningen som ger säker, obegränsad höghastighetsåtkomst till Internet."
       ],
@@ -10063,9 +10090,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ],
       "Your account's usage": [
         "Ditt kontos användning"
@@ -10299,9 +10323,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Support dygnet runt"
-      ],
       "Access advanced VPN features": [
         "Få tillgång till avancerade VPN-funktioner"
       ],
@@ -10347,9 +10368,6 @@
       ],
       "Private gateways": [
         "Privata gateways"
-      ],
-      "Require 2FA": [
-        "Kräver 2FA"
       ],
       "Support for ${ n } custom email domain": [
         "Stöd för ${ n } anpassad e-postdomän",
@@ -11332,6 +11350,23 @@
       ],
       "Credits will be added to your balance": [
         "Krediter kommer att läggas till ditt saldo"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Är du säker på att du vill fortsätta?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Om du väljer att ändra ditt ${ planTitle }-paket kan du förlora åtkomst till några funktioner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behåll ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jag är säker"
+      ],
+      "Your plan includes this feature already.": [
+        "Ditt paket inkluderar redan denna funktion."
       ]
     },
     "Payments.plan_name": {
@@ -14205,6 +14240,9 @@
       "Confirm phone number": [
         "Bekräfta telefonnummer"
       ],
+      "Connect a Gmail address": [
+        "Anslut en Gmail-adress"
+      ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
@@ -14366,11 +14404,11 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradera till ${ downgradedPlanName }?"
       ],
+      "Download ${ app }": [
+        "Ladda ner ${ app }"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        "Ladda ner ${ VPN_APP_NAME }"
       ],
       "Downloads": [
         "Nedladdningar"
@@ -14676,6 +14714,9 @@
       ],
       "Remove domain": [
         "Ta bort domän"
+      ],
+      "Remove forwarding address": [
+        "Ta bort vidarebefordringsadress"
       ],
       "Remove server?": [
         "Ta bort server?"
@@ -15361,14 +15402,14 @@
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Skydda din organisation från dataintrång med ${ VPN_APP_NAME } för företag."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Obegränsad integritet för upp till ${ FAMILY_MAX_USERS } personer. Från endast ${ priceString }/månad."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Obegränsad integritet för dig och en närstående. Från endast ${ priceString }/månad."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] }. Från bara ${ priceString }/månad per konto."
-      ],
-      "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] } or ${ PLAN_NAMES[PLANS.FAMILY] }. Starting from just ${ priceString }/month per account.": [
-        "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[PLANS.DUO] } eller ${ PLAN_NAMES[PLANS.FAMILY] }. Från bara ${ priceString }/månad per konto."
       ]
     },
     "upsell panel": {
