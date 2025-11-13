@@ -35,7 +35,7 @@ import { WEEKS_IN_MINI_CALENDAR } from '../constants';
  */
 export const transformAvailableSlotToTimeslot = (
     availableSlot: ExternalBookingPagePayload['AvailableSlots'][number]
-): BookingTimeslot => ({
+): Omit<BookingTimeslot, 'tzDate'> => ({
     id: availableSlot.ID,
     startTime: availableSlot.StartTime,
     endTime: availableSlot.EndTime,

@@ -6,11 +6,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import {
-    convertTimestampToTimezone,
-    fromUTCDateToLocalFakeUTCDate,
-    toLocalDate,
-} from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
@@ -51,13 +46,7 @@ export const BookingsView = () => {
         }
 
         const tmpRange = getDaysRange(gridSize, selectedDate);
-        const rangeBooking = getDaysSlotRange(
-            gridSize,
-            bookingDetails,
-            filterBookingSlotPerDay,
-            selectedDate,
-            selectedTimeZone
-        );
+        const rangeBooking = getDaysSlotRange(gridSize, bookingDetails, filterBookingSlotPerDay, selectedDate);
 
         setRange(tmpRange);
         setSlotsArray(rangeBooking);
@@ -94,18 +83,7 @@ export const BookingsView = () => {
                                 {canShowSlots &&
                                     slotsArray[i].map((timeslot, j) => {
                                         if (timeslot) {
-                                            const timeslotDate = convertTimestampToTimezone(
-                                                timeslot.startTime,
-                                                timeslot.timezone
-                                            );
-                                            const utc = toLocalDate({ ...timeslotDate });
-                                            const localDate = fromUTCDateToLocalFakeUTCDate(
-                                                utc,
-                                                false,
-                                                selectedTimeZone
-                                            );
-
-                                            const timeString = format(localDate, 'HH:mm', {
+                                            const timeString = format(timeslot.tzDate, 'HH:mm', {
                                                 locale: dateLocale,
                                             });
 

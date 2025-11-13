@@ -10,14 +10,21 @@ import {
 import { DEFAULT_EVENT_DURATION } from '../../containers/bookings/bookingsProvider/interface';
 import type { BookingDetails, BookingTimeslot } from '../booking.store';
 
-const getTime = (date: Date) => {
-    return new Date(2000, 0, 1, date.getHours(), date.getMinutes());
-};
-
+/**
+ * Convert a time slot start time to a local date.
+ * First convert the start time using the slot timezeone, then to local date and finish with timezone from store
+ * @param slot the slot to convert
+ * @param timezone timezone from the state, not the one from the slot
+ * @returns date that can be used in display
+ */
 export const fromTimeSlotToUTCDate = (slot: BookingTimeslot, timezone: string) => {
     const timeslotDate = convertTimestampToTimezone(slot.startTime, slot.timezone);
     const utc = toLocalDate({ ...timeslotDate });
     return fromUTCDateToLocalFakeUTCDate(utc, false, timezone);
+};
+
+const getTime = (date: Date) => {
+    return new Date(2000, 0, 1, date.getHours(), date.getMinutes());
 };
 
 /**
@@ -104,8 +111,7 @@ export const getDaysSlotRange = (
     gridSize: number,
     bookingDetails: BookingDetails,
     filterBookingSlotPerDay: (date: Date) => BookingTimeslot[],
-    selectedDate: Date,
-    timezone: string
+    selectedDate: Date
 ) => {
     // We want to take extreme here
     let earliestSlot: Date = getTime(endOfDay(selectedDate));
@@ -122,11 +128,8 @@ export const getDaysSlotRange = (
             continue;
         }
 
-        const earliest = fromTimeSlotToUTCDate(newTimeslot[0], timezone);
-        earliestSlot = getEarliestTime(earliestSlot, earliest);
-
-        const latest = fromTimeSlotToUTCDate(newTimeslot[newTimeslot.length - 1], timezone);
-        latestSlot = getLatestTime(latestSlot, latest);
+        earliestSlot = getEarliestTime(earliestSlot, newTimeslot[0].tzDate);
+        latestSlot = getLatestTime(latestSlot, newTimeslot[newTimeslot.length - 1].tzDate);
     }
 
     const bookingDuration = bookingDetails.duration || DEFAULT_EVENT_DURATION;
@@ -146,8 +149,7 @@ export const getDaysSlotRange = (
         }
 
         day.forEach((slot) => {
-            const date = fromTimeSlotToUTCDate(slot, timezone);
-            const difference = differenceInMinutes(getTime(date), earliestSlot);
+            const difference = differenceInMinutes(getTime(slot.tzDate), earliestSlot);
             const index = Math.floor(difference / bookingDuration);
             array[dayIndex][index] = slot;
         });
