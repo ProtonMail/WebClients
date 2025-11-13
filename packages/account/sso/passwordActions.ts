@@ -8,6 +8,7 @@ import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import { getDeviceSecretDataByUser } from '@proton/shared/lib/keys/device';
 import { changeSSOUserKeysPasswordHelper } from '@proton/shared/lib/keys/password';
 
+import { removePersistedStateEvent } from '../persist/event';
 import { userThunk } from '../user';
 import type { UserKeysState } from '../userKeys';
 import { userKeysThunk } from '../userKeys';
@@ -31,6 +32,8 @@ export const changeSSOUserBackupPassword = ({
             userKeys,
             deviceSecretData,
         });
+
+        dispatch(removePersistedStateEvent()); // Avoid resuming a critically out-of-date user
 
         await innerMutatePassword({
             api,
