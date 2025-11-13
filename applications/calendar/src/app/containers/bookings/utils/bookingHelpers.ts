@@ -8,22 +8,26 @@ import {
     isSameDay,
     isWeekend,
     set,
+    startOfDay,
     startOfWeek,
 } from 'date-fns';
 import { c } from 'ttag';
 
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { convertTimestampToTimezone, fromLocalDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
+import isTruthy from '@proton/utils/isTruthy';
 
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../calendar/interface';
 import {
     BOOKING_SLOT_ID,
     BookingFormValidationReasons,
     BookingLocation,
+    DEFAULT_RANGE_END_HOUR,
+    DEFAULT_RANGE_START_HOUR,
     MAX_BOOKING_SLOTS,
     TEMPORARY_BOOKING_SLOT,
 } from '../bookingsProvider/interface';
@@ -179,9 +183,30 @@ export const generateBookingRangeID = (start: Date, end: Date) => {
     return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
 };
 
+const createTodayBookingRange = (date: Date, timezone: string, today: Date) => {
+    const nextHour = today.getHours() + 1;
+
+    if (nextHour >= DEFAULT_RANGE_END_HOUR) {
+        return undefined;
+    }
+
+    const start =
+        nextHour < DEFAULT_RANGE_START_HOUR
+            ? set(date, { hours: DEFAULT_RANGE_START_HOUR })
+            : set(date, { hours: nextHour });
+    const end = set(date, { hours: DEFAULT_RANGE_END_HOUR });
+
+    return {
+        id: generateBookingRangeID(start, end),
+        start,
+        end,
+        timezone,
+    };
+};
+
 const createBookingRange = (date: Date, timezone: string) => {
-    const start = set(date, { hours: 9 });
-    const end = set(date, { hours: 17 });
+    const start = set(date, { hours: DEFAULT_RANGE_START_HOUR });
+    const end = set(date, { hours: DEFAULT_RANGE_END_HOUR });
 
     return {
         id: generateBookingRangeID(start, end),
@@ -197,22 +222,37 @@ const createBookingRange = (date: Date, timezone: string) => {
 export const generateDefaultBookingRange = (
     userSettings: UserSettings,
     startDate: Date,
-    timezone: string
+    timezone: string,
+    isRecurringRange: boolean = true
 ): BookingRange[] => {
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
 
     // We want to make sure the stored dates for the range is in UTC
     const date = fromLocalDate(startDate);
     const utc = toUTCDate({ ...date });
+    const todayUTC = toLocalDate(convertTimestampToTimezone(Date.now() / 1000, timezone));
 
-    return eachDayOfInterval({
-        start: startOfWeek(utc, { weekStartsOn }),
-        end: endOfWeek(utc, { weekStartsOn }),
-    })
-        .filter((day) => !isWeekend(day))
-        .map((day) => {
-            return createBookingRange(day, timezone);
-        });
+    return (
+        eachDayOfInterval({
+            start: startOfWeek(utc, { weekStartsOn }),
+            end: endOfWeek(utc, { weekStartsOn }),
+        })
+            // TODO remove this once we handle recurring slots
+            // remove all days in the past
+            .filter((day) => {
+                return isRecurringRange ? true : !isBefore(day, startOfDay(todayUTC));
+            })
+            .filter((day) => !isWeekend(day))
+            .map((day) => {
+                // TODO remove this once we handle recurring slots
+                // If today, we want to remove slots before the current hour
+                if (!isRecurringRange && isSameDay(day, startOfDay(todayUTC))) {
+                    return createTodayBookingRange(day, timezone, todayUTC);
+                }
+                return createBookingRange(day, timezone);
+            })
+            .filter(isTruthy)
+    );
 };
 
 export const createBookingRangeNextAvailableTime = ({
