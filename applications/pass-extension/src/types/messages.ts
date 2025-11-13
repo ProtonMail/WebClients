@@ -2,6 +2,7 @@ import type { AutofillItem, AutofillRequest, AutofillResult } from 'proton-pass-
 import type {
     FrameAttributes,
     FrameCheckResult,
+    FrameField,
     FrameQueryDTO,
     FrameQueryResult,
 } from 'proton-pass-extension/types/frames';
@@ -137,6 +138,7 @@ export enum WorkerMessageType {
     INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
     INLINE_DROPDOWN_TOGGLE = 'INLINE_DROPDOWN_TOGGLE',
     INLINE_ICON_SHIFT = 'INLINE_ICON_SHIFT',
+    INLINE_ICON_ATTACHED = 'INLINE_ICON_ATTACHED',
 
     FRAME_QUERY = 'FRAME_QUERY',
     FRAME_VISIBILITY = 'FRAME_VISIBILITY',
@@ -236,6 +238,7 @@ export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DR
 export type InlineDropdownOpenedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPENED, DropdownOpenedDTO>;
 export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDOWN_STATE };
 export type InlineDropdownToggleMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_TOGGLE, DropdownOpenDTO>;
+export type InlineIconAttachedMessage = WithPayload<WorkerMessageType.INLINE_ICON_ATTACHED, FrameField>;
 export type InlineIconShiftMessage = WithPayload<WorkerMessageType.INLINE_ICON_SHIFT, IconShiftRequest>;
 
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
@@ -323,6 +326,7 @@ export type WorkerMessage =
     | InlineDropdownOpenedMessage
     | InlineDropdownStateMessage
     | InlineDropdownToggleMessage
+    | InlineIconAttachedMessage
     | InlineIconShiftMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
