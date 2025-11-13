@@ -31,12 +31,8 @@ export const onCloseEffects = onNextTick((field: FieldHandle, { refocus }: Inlin
 export const onFocusChangeFactory = (dropdown: DropdownHandler, anchor: DropdownAnchor) =>
     onNextTick(async (_: FocusEvent) => {
         const field = anchor.type === 'field' ? anchor.field : undefined;
-        if (field && isActiveElement(field.element)) return;
-        else {
-            if ((await dropdown.getState()).focused) return;
-            if (!document.hasFocus()) field?.icon?.detach();
-            dropdown.close(anchor);
-        }
+        if ((field && isActiveElement(field.element)) || (await dropdown.getState()).focused) return;
+        dropdown.close(anchor);
     });
 
 export const onBackdropClick = (getField: () => Maybe<FieldHandle>, effect: () => void) => (evt: Event) => {
