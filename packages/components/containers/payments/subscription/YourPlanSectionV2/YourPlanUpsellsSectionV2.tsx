@@ -19,6 +19,7 @@ import {
     PLANS,
     type Subscription,
     getCanAccessFamilyPlans,
+    getHasConsumerVpnPlan,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
@@ -110,10 +111,10 @@ export type UpsellsHook = {
 const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, freePlan }: GetUpsellSectionProps) => {
     const isFree = user.isFree;
 
-    const variant = useVariant('VPNDashboard');
+    const vpnVariant = useVariant('VPNDashboard');
 
-    const showAVariant = variant.name === 'A';
-    const showBVariant = variant.name === 'B';
+    const showVPNAVariant = vpnVariant.name === 'A';
+    const showVPNBVariant = vpnVariant.name === 'B';
 
     // TODO: Review if these checks are required as upsell config will do the app check
     const hasMailFree = isFree && (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR);
@@ -125,8 +126,8 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
     // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
     const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasLumoPlus;
 
-    // Allow 24-month plan for VPN. Update the condition based on requirements
-    const userCanHave24MonthPlan = app === APPS.PROTONVPN_SETTINGS;
+    // Allow 24-month plan for VPN app and VPN plans. Update the condition based on requirements
+    const userCanHave24MonthPlan = app === APPS.PROTONVPN_SETTINGS || getHasConsumerVpnPlan(subscription);
 
     const upsellParams = {
         subscription,
@@ -167,7 +168,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
 
     const upsellSections = [
         {
-            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showAVariant,
+            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showVPNAVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <>
@@ -183,7 +184,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showBVariant,
+            enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showVPNBVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <CurrentPlanInfoWithUpsellSection
@@ -205,8 +206,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled:
                 (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
                 subscription?.Cycle === CYCLE.YEARLY &&
-                app === APPS.PROTONVPN_SETTINGS &&
-                showAVariant,
+                showVPNAVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
@@ -223,8 +223,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled:
                 (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
                 subscription?.Cycle === CYCLE.YEARLY &&
-                app === APPS.PROTONVPN_SETTINGS &&
-                showBVariant,
+                showVPNBVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
@@ -242,8 +241,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled:
                 (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
                 subscription?.Cycle === CYCLE.TWO_YEARS &&
-                app === APPS.PROTONVPN_SETTINGS &&
-                showAVariant,
+                showVPNAVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
@@ -261,8 +259,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled:
                 (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
                 subscription?.Cycle === CYCLE.TWO_YEARS &&
-                app === APPS.PROTONVPN_SETTINGS &&
-                showBVariant,
+                showVPNBVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <>
@@ -280,10 +277,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled:
-                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
-                showAVariant &&
-                app === APPS.PROTONVPN_SETTINGS,
+            enabled: (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && showVPNAVariant,
             upsells: vpnPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -297,10 +291,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled:
-                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
-                showBVariant &&
-                app === APPS.PROTONVPN_SETTINGS,
+            enabled: (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && showVPNBVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <>
@@ -551,7 +542,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
         },
         {
             enabled:
-                showBVariant &&
+                showVPNBVariant &&
                 hasFamily(subscription) &&
                 subscription?.Cycle !== CYCLE.MONTHLY &&
                 app === APPS.PROTONVPN_SETTINGS,
