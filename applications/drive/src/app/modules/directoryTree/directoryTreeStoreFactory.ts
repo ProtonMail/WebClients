@@ -1,33 +1,27 @@
 import { create } from 'zustand';
 
-import type { DirectoryTreeState } from './types';
+import type { TreeStoreItem } from './types';
+
+interface DirectoryTreeState {
+    items: Map<string, TreeStoreItem>;
+    expandedTreeIds: Map<string, boolean>;
+    addItem: (newItem: TreeStoreItem) => void;
+    setExpanded: (treeItemId: string, newValue: boolean) => void;
+}
 
 export const directoryTreeStoreFactory = () => {
-    return create<DirectoryTreeState>()((set, get) => ({
+    return create<DirectoryTreeState>()((set) => ({
         items: new Map(),
+        expandedTreeIds: new Map(),
 
         addItem: (newItem) =>
             set((state) => ({
-                items: new Map(state.items).set(newItem.uid, newItem),
+                items: new Map(state.items).set(newItem.nodeUid, newItem),
             })),
 
-        getChildrenOf: (uid) =>
-            Array.from(
-                get()
-                    .items.values()
-                    .filter((item) => item.parentUid === uid)
-            ),
-
-        setExpanded: (uid, expanded) =>
-            set((state) => {
-                const maybeItem = state.items.get(uid);
-                if (!maybeItem) {
-                    return state;
-                }
-
-                return {
-                    items: new Map(state.items).set(uid, { ...maybeItem, expanded: expanded }),
-                };
-            }),
+        setExpanded: (treeItemId, newValue) =>
+            set((state) => ({
+                expandedTreeIds: new Map(state.expandedTreeIds).set(treeItemId, newValue),
+            })),
     }));
 };
