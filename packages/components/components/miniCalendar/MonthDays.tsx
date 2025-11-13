@@ -25,7 +25,7 @@ export interface Props {
     min?: Date;
     max?: Date;
     formatDay: (a1: Date) => string;
-    getDayClassName?: (a1: Date) => string;
+    getDayClassName?: (a1: Date) => string | undefined;
     numberOfDays: number;
     numberOfWeeks: number;
     cellRef?: Ref<HTMLLIElement>;
