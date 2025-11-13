@@ -371,7 +371,7 @@ const MIN_FIELD_WIDTH = 30;
 
 const MAX_INPUTS_PER_FORM = 40;
 
-const MAX_FIELDS_PER_FORM = 60;
+const MAX_FIELDS_PER_FORM = 65;
 
 const MAX_HIDDEN_FIELD_VALUE_LENGTH = 320;
 
@@ -2924,7 +2924,8 @@ const CC_RE_MAP = [
 
 const getCCHaystack = (field) => {
     const attrs = CC_ATTRIBUTES.map((attr) => field?.getAttribute(attr) ?? '');
-    return sanitizeStringWithSpaces(attrs.join(' '));
+    const label = sanitizeString(getLabelFor(field)?.innerText ?? '');
+    return sanitizeStringWithSpaces(attrs.join(' ')) + ' ' + label;
 };
 
 const getCCFieldType = (field) => {
