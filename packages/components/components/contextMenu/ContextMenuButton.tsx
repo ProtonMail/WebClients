@@ -20,7 +20,6 @@ const ContextMenuButton = ({ id, name, icon, testId, action, disabled }: Props) 
 
     return (
         <DropdownMenuButton
-            key={id ?? name?.toString()}
             onContextMenu={(e) => e.stopPropagation()}
             className="flex items-center flex-nowrap text-left"
             onClick={(e) => {

@@ -2,16 +2,14 @@ import { useMemo } from 'react';
 
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
-
-// When only ids are required, requiring the least to match even custom types
-type SimpleItemRevision = { shareId: string; itemId: string };
+import type { UniqueItem } from '@proton/pass/types';
 
 export type ItemNavigationActions = {
     onEdit: () => void;
     onHistory: () => void;
 };
 
-type UseItemNavigation = (item: SimpleItemRevision) => ItemNavigationActions;
+type UseItemNavigation = (item: UniqueItem) => ItemNavigationActions;
 
 export const useItemNavigation: UseItemNavigation = ({ shareId, itemId }) => {
     const scope = useItemScope();
