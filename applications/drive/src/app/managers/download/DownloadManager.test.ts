@@ -315,7 +315,8 @@ describe('DownloadManager', () => {
         await manager.download([node]);
         const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
 
-        await expect(scheduledTask.start()).rejects.toBe(failure);
+        const handle = await scheduledTask.start();
+        await expect(handle.completion).rejects.toBe(failure);
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
             status: DownloadStatus.Failed,
             error: failure,

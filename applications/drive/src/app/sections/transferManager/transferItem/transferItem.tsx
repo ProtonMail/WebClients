@@ -71,6 +71,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
     const shouldHideSizeInfo = [
         BaseTransferStatus.Finished,
         BaseTransferStatus.Cancelled,
+        BaseTransferStatus.Failed,
         UploadStatus.Skipped,
     ].includes(entry.status as BaseTransferStatus);
 

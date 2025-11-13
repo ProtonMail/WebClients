@@ -1,7 +1,10 @@
-import type { ProtonDriveClient } from '@proton/drive/index';
-import { AbortError, SDKEvent, getDrive } from '@proton/drive/index';
+import type { ProtonDriveClient } from '@proton/drive';
+import { AbortError, SDKEvent, getDrive } from '@proton/drive';
+import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
 import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
+import { sendErrorReport } from '../../utils/errorHandling';
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
 import type { DownloadItem } from '../../zustand/download/downloadManager.store';
 import {
@@ -130,77 +133,79 @@ export class DownloadManager {
 
         const abortController = new AbortController();
         let fileDownloader: FileDownloader;
+        let completionPromise: Promise<void>;
 
         try {
             fileDownloader = await drive.getFileDownloader(node.uid, abortController.signal);
             const claimedSize = fileDownloader.getClaimedSizeInBytes();
             updateDownloadItem(downloadId, { storageSize: claimedSize });
-        } catch (error) {
             updateDownloadItem(downloadId, {
-                status: DownloadStatus.Failed,
-                error: error,
+                status: DownloadStatus.InProgress,
             });
-            throw error;
-        }
 
-        updateDownloadItem(downloadId, {
-            status: DownloadStatus.InProgress,
-        });
+            const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
+            const streamWrapperPromise = loadCreateReadableStreamWrapper(readable);
 
-        const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
-        const streamWrapperPromise = loadCreateReadableStreamWrapper(readable);
+            const controller = fileDownloader.downloadToStream(writable, (downloadedBytes) => {
+                updateDownloadItem(downloadId, { downloadedBytes });
+                this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
+            });
 
-        const controller = fileDownloader.downloadToStream(writable, (downloadedBytes) => {
-            updateDownloadItem(downloadId, { downloadedBytes });
-            this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
-        });
+            const streamForSaver: ReadableStream<Uint8Array<ArrayBuffer>> = await streamWrapperPromise;
 
-        let streamForSaver: ReadableStream<Uint8Array<ArrayBuffer>>;
-        try {
-            streamForSaver = await streamWrapperPromise;
+            // eslint-disable-next-line no-console
+            const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
+            const savePromise = fileSaver.instance.saveAsFile(
+                streamForSaver,
+                { filename: node.name, mimeType: DEFAULT_MIME_TYPE, size: node.storageSize },
+                log
+            );
+
+            const controllerCompletion = controller.completion();
+
+            void controllerCompletion.then(() => {
+                this.updateStatus([downloadId], DownloadStatus.Finalizing);
+            });
+
+            this.activeDownloads.set(downloadId, {
+                controller,
+                abortController,
+            });
+
+            completionPromise = Promise.all([controllerCompletion, savePromise])
+                .then(() => {
+                    updateDownloadItem(downloadId, { status: DownloadStatus.Finished });
+                })
+                .catch((error) => {
+                    const existing = getQueueItem(downloadId);
+                    if (!existing) {
+                        return;
+                    }
+                    if (existing.status === DownloadStatus.Cancelled || error instanceof AbortError) {
+                        updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
+                    } else {
+                        updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: error });
+                    }
+                })
+                .finally(() => {
+                    this.activeDownloads.delete(downloadId);
+                });
         } catch (error) {
-            abortController.abort();
+            const errorToHandle = error instanceof Error ? error : new Error('Unexpected Download Error');
             updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: error });
-            throw error;
+            sendErrorReport(
+                new EnrichedError(errorToHandle.message, {
+                    tags: {
+                        component: 'download-manager',
+                    },
+                    extra: {
+                        filesTypes: getFileExtension(node.name),
+                        storageSize: node.storageSize,
+                    },
+                })
+            );
+            completionPromise = Promise.reject(errorToHandle);
         }
-
-        // eslint-disable-next-line no-console
-        const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
-        const savePromise = fileSaver.instance.saveAsFile(
-            streamForSaver,
-            { filename: node.name, mimeType: DEFAULT_MIME_TYPE, size: node.storageSize },
-            log
-        );
-
-        const controllerCompletion = controller.completion();
-
-        void controllerCompletion.then(() => {
-            this.updateStatus([downloadId], DownloadStatus.Finalizing);
-        });
-
-        this.activeDownloads.set(downloadId, {
-            controller,
-            abortController,
-        });
-
-        const completionPromise = Promise.all([controllerCompletion, savePromise])
-            .then(() => {
-                updateDownloadItem(downloadId, { status: DownloadStatus.Finished });
-            })
-            .catch((error) => {
-                const existing = getQueueItem(downloadId);
-                if (!existing) {
-                    return;
-                }
-                if (existing.status === DownloadStatus.Cancelled || error instanceof AbortError) {
-                    updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
-                } else {
-                    updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: error });
-                }
-            })
-            .finally(() => {
-                this.activeDownloads.delete(downloadId);
-            });
 
         return { completion: completionPromise };
     }
@@ -213,88 +218,104 @@ export class DownloadManager {
 
         const abortController = new AbortController();
 
-        // Traversing all folders to get the node entities + parentPath
-        const { nodesQueue, totalEncryptedSizePromise } = nodesStructureTraversal(nodes, abortController.signal);
+        try {
+            // Traversing all folders to get the node entities + parentPath
+            const { nodesQueue, totalEncryptedSizePromise } = nodesStructureTraversal(nodes, abortController.signal);
 
-        // We can only know the full size of the archive after traversing all nodes
-        void totalEncryptedSizePromise.then((totalSize) => {
-            updateDownloadItem(downloadId, { storageSize: totalSize });
-            archiveSizeInBytes = totalSize;
-        });
-        updateDownloadItem(downloadId, { status: DownloadStatus.InProgress });
-
-        const updateProgress = (downloadedBytes: number) => {
-            updateDownloadItem(downloadId, { downloadedBytes });
-        };
-
-        // While the traversal is happening the nodesQueue is populated with entities to archive
-        // and passed to the ArchiveStreamGenerator that will create archive and update download progress
-        const archiveStreamGenerator = new ArchiveStreamGenerator(
-            nodesQueue.iterator(),
-            updateProgress,
-            this.scheduler,
-            abortController.signal
-        );
-        const generator = archiveStreamGenerator.generator;
-        const trackerController = archiveStreamGenerator.controller;
-
-        // eslint-disable-next-line no-console
-        const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
-        const archiveGenerator = new ArchiveGenerator();
-        abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
-
-        // Archive creation
-        const archivePromise = archiveGenerator.writeLinks(generator);
-        void archivePromise.then(() => {
-            this.updateStatus([downloadId], DownloadStatus.Finalizing);
-        });
-
-        // Saving file
-        const savePromise = fileSaver.instance.saveAsFile(
-            archiveGenerator.stream,
-            {
-                filename: archiveName,
-                mimeType: 'application/zip',
-                size: archiveSizeInBytes > 0 ? archiveSizeInBytes : undefined,
-            },
-            log
-        );
-
-        const combinedCompletion = Promise.all([totalEncryptedSizePromise, archivePromise, savePromise]);
-
-        const controllerProxy: DownloadController = {
-            pause: () => trackerController.pause(),
-            resume: () => trackerController.resume(),
-            completion: () => combinedCompletion.then(() => {}),
-        };
-
-        this.activeDownloads.set(downloadId, {
-            controller: controllerProxy,
-            abortController,
-        });
-
-        combinedCompletion
-            .then(() => {
-                updateDownloadItem(downloadId, { status: DownloadStatus.Finished });
-            })
-            .catch((error) => {
-                const existing = getQueueItem(downloadId);
-                if (!existing) {
-                    return;
-                }
-                if (
-                    existing.status === DownloadStatus.Cancelled ||
-                    abortController.signal.aborted ||
-                    error instanceof AbortError
-                ) {
-                    updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
-                } else {
-                    updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error });
-                }
-            })
-            .finally(() => {
-                this.activeDownloads.delete(downloadId);
+            // We can only know the full size of the archive after traversing all nodes
+            void totalEncryptedSizePromise.then((totalSize) => {
+                updateDownloadItem(downloadId, { storageSize: totalSize });
+                archiveSizeInBytes = totalSize;
             });
+            updateDownloadItem(downloadId, { status: DownloadStatus.InProgress });
+
+            const updateProgress = (downloadedBytes: number) => {
+                updateDownloadItem(downloadId, { downloadedBytes });
+            };
+
+            // While the traversal is happening the nodesQueue is populated with entities to archive
+            // and passed to the ArchiveStreamGenerator that will create archive and update download progress
+            const archiveStreamGenerator = new ArchiveStreamGenerator(
+                nodesQueue.iterator(),
+                updateProgress,
+                this.scheduler,
+                abortController.signal
+            );
+            const generator = archiveStreamGenerator.generator;
+            const trackerController = archiveStreamGenerator.controller;
+
+            // eslint-disable-next-line no-console
+            const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
+            const archiveGenerator = new ArchiveGenerator();
+            abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
+
+            // Archive creation
+            const archivePromise = archiveGenerator.writeLinks(generator);
+            void archivePromise.then(() => {
+                this.updateStatus([downloadId], DownloadStatus.Finalizing);
+            });
+
+            // Saving file
+            const savePromise = fileSaver.instance.saveAsFile(
+                archiveGenerator.stream,
+                {
+                    filename: archiveName,
+                    mimeType: 'application/zip',
+                    size: archiveSizeInBytes > 0 ? archiveSizeInBytes : undefined,
+                },
+                log
+            );
+
+            const combinedCompletion = Promise.all([totalEncryptedSizePromise, archivePromise, savePromise]);
+
+            const controllerProxy: DownloadController = {
+                pause: () => trackerController.pause(),
+                resume: () => trackerController.resume(),
+                completion: () => combinedCompletion.then(() => {}),
+            };
+
+            this.activeDownloads.set(downloadId, {
+                controller: controllerProxy,
+                abortController,
+            });
+
+            combinedCompletion
+                .then(() => {
+                    updateDownloadItem(downloadId, { status: DownloadStatus.Finished });
+                })
+                .catch((error) => {
+                    const existing = getQueueItem(downloadId);
+                    if (!existing) {
+                        return;
+                    }
+                    if (
+                        existing.status === DownloadStatus.Cancelled ||
+                        abortController.signal.aborted ||
+                        error instanceof AbortError
+                    ) {
+                        updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
+                    } else {
+                        updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error });
+                    }
+                })
+                .finally(() => {
+                    this.activeDownloads.delete(downloadId);
+                });
+        } catch (error) {
+            const errorToHandle = error instanceof Error ? error : new Error('Unexpected Download Error');
+            updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: error });
+            sendErrorReport(
+                new EnrichedError(errorToHandle.message, {
+                    tags: {
+                        component: 'download-manager',
+                    },
+                    extra: {
+                        filesTypes: nodes.map((f) => getFileExtension(f.name)),
+                        archiveSizeInBytes,
+                    },
+                })
+            );
+        }
     }
 
     private getArchiveName(nodes: DownloadableItem[]): string {
