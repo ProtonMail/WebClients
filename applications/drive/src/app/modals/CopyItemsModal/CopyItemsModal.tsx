@@ -12,12 +12,13 @@ import {
     ModalTwoHeader,
     useModalTwoStatic,
 } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import { directoryTreeFactory } from '../../modules/directoryTree';
+import { getNodeUidFromTreeItemId } from '../../modules/directoryTree/helpers';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
-import { DirectoryTree } from '../../statelessComponents/DirectoryTree/DirectoryTree';
+import { DirectoryTreeRoot } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { useCopyItems } from './useCopyItems';
 
@@ -29,11 +30,15 @@ const useCopyModalDirectoryTree = directoryTreeFactory();
 
 type CopyModalItem = {
     uid: string;
+    parentUid?: string;
     name: string;
 };
 
 const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: CopyModalItem[] } & ModalStateProps) => {
-    const { rootItems, initializeTree, toggleExpand, getChildrenOf } = useCopyModalDirectoryTree({ onlyFolders: true });
+    const { initializeTree, get, toggleExpand, treeRoots } = useCopyModalDirectoryTree({
+        onlyFolders: true,
+        loadPermissions: true,
+    });
     const [isLoading, setIsLoading] = useState(true);
     const [isCopying, setIsCopying] = useState(false);
     const copyItems = useCopyItems();
@@ -47,19 +52,28 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
             .catch(handleError);
     }, [initializeTree, handleError]);
 
-    const [selectedItemUid, setSelectedItemUid] = useState<string>('');
-    const hasSelectedItself = !!itemsToCopy.find((sourceItem) => selectedItemUid === sourceItem.uid);
-    const handleSelect = useCallback((targetItem: DirectoryTreeItem) => {
+    const [copyTargetTreeId, setCopyTargetTreeId] = useState<string>();
+    const copyTargetUid = copyTargetTreeId ? getNodeUidFromTreeItemId(copyTargetTreeId) : undefined;
+    const isCopyAllowed = checkIsCopyAllowed(itemsToCopy, copyTargetUid);
+    const targetIsWritable = copyTargetUid
+        ? [MemberRole.Admin, MemberRole.Editor].includes(get(copyTargetUid)?.highestEffectiveRole ?? MemberRole.Viewer)
+        : false;
+
+    const handleSelect = useCallback((treeItemId: string, targetItem: DirectoryTreeItem) => {
         if (targetItem.type === NodeType.Folder) {
-            setSelectedItemUid(targetItem.uid);
+            setCopyTargetTreeId(treeItemId);
         }
     }, []);
 
     const copyItemsToTarget = () => {
+        if (!copyTargetUid) {
+            return;
+        }
+
         setIsCopying(true);
-        copyItems(itemsToCopy, selectedItemUid)
+        copyItems(itemsToCopy, copyTargetUid)
             .then(onClose)
-            .catch((e) => handleError(e, { extra: { itemsToCopy, target: selectedItemUid } }))
+            .catch((e) => handleError(e, { extra: { itemsToCopy, target: copyTargetTreeId } }))
             .finally(() => setIsCopying(false));
     };
 
@@ -71,24 +85,32 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
                 {isLoading ? (
                     <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
                 ) : (
-                    <DirectoryTree
-                        items={rootItems}
+                    <DirectoryTreeRoot
+                        roots={treeRoots}
                         toggleExpand={toggleExpand}
-                        getChildrenOf={getChildrenOf}
+                        selectedTreeId={copyTargetTreeId}
                         onSelect={handleSelect}
-                        selectedItemUid={selectedItemUid}
                     />
                 )}
             </ModalTwoContent>
             <ModalTwoFooter className="flex justify-end gap-4">
                 <Button onClick={onClose}>{c('Action').t`Close`}</Button>
-                <Tooltip title={c('Info').t`It's not possible to copy the folder to itself`}>
+                <Tooltip
+                    title={
+                        <>
+                            {isCopyAllowed &&
+                                c('Info')
+                                    .t`One of the files or folders you want to copy already exist in selected folder.`}
+                            {!targetIsWritable && c('Info').t`You don’t have permission to copy files to this folder.`}
+                        </>
+                    }
+                >
                     {/* Disabled elements block pointer events, you need a wrapper for the tooltip to work properly */}
                     <span>
                         <Button
                             color="norm"
                             onClick={copyItemsToTarget}
-                            disabled={selectedItemUid === '' || isCopying || hasSelectedItself}
+                            disabled={isCopying || !copyTargetUid || isCopyAllowed || !targetIsWritable}
                         >{c('Action').t`Copy`}</Button>
                     </span>
                 </Tooltip>
@@ -109,3 +131,9 @@ export const useCopyItemsModal = () => {
 
     return { copyModal, showCopyItemsModal };
 };
+
+function checkIsCopyAllowed(itemsToCopy: CopyModalItem[], copyTargetUid: string | undefined) {
+    return !!itemsToCopy.find(
+        (sourceItem) => copyTargetUid === sourceItem.uid || copyTargetUid === sourceItem.parentUid
+    );
+}
