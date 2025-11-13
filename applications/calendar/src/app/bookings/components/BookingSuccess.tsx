@@ -61,7 +61,7 @@ export const BookingSuccess = () => {
                         <BookingSuccessItem
                             title={c('Title').t`Host`}
                             icon={<IcUserCircle />}
-                            data={bookingDetails.inviterDisplayName}
+                            data={bookingDetails.inviterDisplayName || bookingDetails.inviterEmail}
                         />
                         <BookingSuccessItem
                             title={c('Title').t`Location`}

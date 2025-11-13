@@ -46,9 +46,11 @@ export const DetailsHeader = () => {
                     </div>
                     <div className="flex-1">
                         <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
-                        <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
-                            {bookingDetails.inviterDisplayName}
-                        </div>
+                        {bookingDetails.inviterDisplayName && (
+                            <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
+                                {bookingDetails.inviterDisplayName}
+                            </div>
+                        )}
                         <div className="text-ellipsis" title={bookingDetails.inviterEmail}>
                             {bookingDetails.inviterEmail}
                         </div>

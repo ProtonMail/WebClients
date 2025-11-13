@@ -27,7 +27,7 @@ export type BookingDetails = {
     duration: number | undefined;
     timezone: string | undefined;
     bookingKeySalt: string;
-    inviterDisplayName: string;
+    inviterDisplayName?: string;
     inviterEmail: string;
     withProtonMeetLink: boolean;
 };
