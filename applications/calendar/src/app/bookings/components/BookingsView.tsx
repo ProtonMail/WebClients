@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { format, fromUnixTime, isToday, startOfDay } from 'date-fns';
+import { format, isToday, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
+import {
+    convertTimestampToTimezone,
+    fromUTCDateToLocalFakeUTCDate,
+    toLocalDate,
+} from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
@@ -47,11 +51,17 @@ export const BookingsView = () => {
         }
 
         const tmpRange = getDaysRange(gridSize, selectedDate);
-        const rangeBooking = getDaysSlotRange(gridSize, bookingDetails, filterBookingSlotPerDay, selectedDate);
+        const rangeBooking = getDaysSlotRange(
+            gridSize,
+            bookingDetails,
+            filterBookingSlotPerDay,
+            selectedDate,
+            selectedTimeZone
+        );
 
         setRange(tmpRange);
         setSlotsArray(rangeBooking);
-    }, [gridSize, bookingDetails, selectedDate, filterBookingSlotPerDay]);
+    }, [gridSize, bookingDetails, selectedDate, filterBookingSlotPerDay, selectedTimeZone]);
 
     return (
         <main className="flex-1 w-full" aria-labelledby="booking-main-header-title">
@@ -84,13 +94,20 @@ export const BookingsView = () => {
                                 {canShowSlots &&
                                     slotsArray[i].map((timeslot, j) => {
                                         if (timeslot) {
+                                            const timeslotDate = convertTimestampToTimezone(
+                                                timeslot.startTime,
+                                                timeslot.timezone
+                                            );
+                                            const utc = toLocalDate({ ...timeslotDate });
                                             const localDate = fromUTCDateToLocalFakeUTCDate(
-                                                fromUnixTime(timeslot.startTime),
+                                                utc,
                                                 false,
                                                 selectedTimeZone
                                             );
 
-                                            const timeString = format(localDate, 'HH:mm', { locale: dateLocale });
+                                            const timeString = format(localDate, 'HH:mm', {
+                                                locale: dateLocale,
+                                            });
 
                                             return (
                                                 <li key={timeslot.id}>

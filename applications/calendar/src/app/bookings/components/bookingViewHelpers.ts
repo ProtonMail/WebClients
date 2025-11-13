@@ -1,6 +1,11 @@
-import { addDays, differenceInMinutes, endOfDay, fromUnixTime, isAfter, isBefore, startOfDay } from 'date-fns';
+import { addDays, differenceInMinutes, endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 
 import type { ActiveBreakpoint } from '@proton/components/hooks/useActiveBreakpoint';
+import {
+    convertTimestampToTimezone,
+    fromUTCDateToLocalFakeUTCDate,
+    toLocalDate,
+} from '@proton/shared/lib/date/timezone';
 
 import { DEFAULT_EVENT_DURATION } from '../../containers/bookings/bookingsProvider/interface';
 import type { BookingDetails, BookingTimeslot } from '../booking.store';
@@ -9,16 +14,22 @@ const getTime = (date: Date) => {
     return new Date(2000, 0, 1, date.getHours(), date.getMinutes());
 };
 
+export const fromTimeSlotToUTCDate = (slot: BookingTimeslot, timezone: string) => {
+    const timeslotDate = convertTimestampToTimezone(slot.startTime, slot.timezone);
+    const utc = toLocalDate({ ...timeslotDate });
+    return fromUTCDateToLocalFakeUTCDate(utc, false, timezone);
+};
+
 /**
  * Returns the earliest time between to dates, the dates are adjusted to the same day
  */
-const getEarliestTime = (leftDate: Date, rightDate?: number) => {
+const getEarliestTime = (leftDate: Date, rightDate?: Date) => {
     if (!rightDate) {
         return getTime(leftDate);
     }
 
     const adjustedLeft = getTime(leftDate);
-    const adjustedRight = getTime(fromUnixTime(rightDate));
+    const adjustedRight = getTime(rightDate);
 
     return isBefore(adjustedLeft, adjustedRight) ? adjustedLeft : adjustedRight;
 };
@@ -26,13 +37,13 @@ const getEarliestTime = (leftDate: Date, rightDate?: number) => {
 /**
  * Returns the latest time between to dates, the dates are adjusted to the same day
  */
-const getLatestTime = (leftDate: Date, rightDate?: number) => {
+const getLatestTime = (leftDate: Date, rightDate?: Date) => {
     if (!rightDate) {
         return getTime(leftDate);
     }
 
     const adjustedLeft = getTime(leftDate);
-    const adjustedRight = getTime(fromUnixTime(rightDate));
+    const adjustedRight = getTime(rightDate);
 
     return isAfter(adjustedLeft, adjustedRight) ? adjustedLeft : adjustedRight;
 };
@@ -93,7 +104,8 @@ export const getDaysSlotRange = (
     gridSize: number,
     bookingDetails: BookingDetails,
     filterBookingSlotPerDay: (date: Date) => BookingTimeslot[],
-    selectedDate: Date
+    selectedDate: Date,
+    timezone: string
 ) => {
     // We want to take extreme here
     let earliestSlot: Date = getTime(endOfDay(selectedDate));
@@ -106,10 +118,14 @@ export const getDaysSlotRange = (
         const newTimeslot = filterBookingSlotPerDay(date);
         slotRange.push(newTimeslot);
 
-        const earliest = newTimeslot.length > 0 ? newTimeslot.at(0)?.startTime : undefined;
+        if (!newTimeslot.length) {
+            continue;
+        }
+
+        const earliest = fromTimeSlotToUTCDate(newTimeslot[0], timezone);
         earliestSlot = getEarliestTime(earliestSlot, earliest);
 
-        const latest = newTimeslot.length > 0 ? newTimeslot[newTimeslot.length - 1].startTime : undefined;
+        const latest = fromTimeSlotToUTCDate(newTimeslot[newTimeslot.length - 1], timezone);
         latestSlot = getLatestTime(latestSlot, latest);
     }
 
@@ -130,7 +146,8 @@ export const getDaysSlotRange = (
         }
 
         day.forEach((slot) => {
-            const difference = differenceInMinutes(getTime(fromUnixTime(slot.startTime)), earliestSlot);
+            const date = fromTimeSlotToUTCDate(slot, timezone);
+            const difference = differenceInMinutes(getTime(date), earliestSlot);
             const index = Math.floor(difference / bookingDuration);
             array[dayIndex][index] = slot;
         });
