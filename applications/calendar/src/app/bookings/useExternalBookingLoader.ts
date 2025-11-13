@@ -10,9 +10,8 @@ import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/c
 
 import { deriveBookingUid } from '../containers/bookings/utils/bookingCryptoUtils';
 import { useBookingStore } from './booking.store';
+import { generateWeeklyRangeSimple, transformAvailableSlotToTimeslot } from './utils/bookingsHelpers';
 import { decryptBookingContent } from './utils/decryptBookingContent';
-import { generateWeeklyRangeSimple } from './utils/generateWeekRangesFromDays';
-import { transformAvailableSlotToTimeslot } from './utils/transformAvailableSlot';
 
 export const useExternalBookingLoader = () => {
     const api = useApi();

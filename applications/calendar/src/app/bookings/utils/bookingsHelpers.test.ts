@@ -1,4 +1,4 @@
-import { transformAvailableSlotToTimeslot } from './transformAvailableSlot';
+import { transformAvailableSlotToTimeslot } from './bookingsHelpers';
 
 describe('transformAvailableSlotToTimeslot', () => {
     it('should transform available slot with all fields', () => {

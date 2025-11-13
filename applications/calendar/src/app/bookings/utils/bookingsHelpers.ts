@@ -1,6 +1,20 @@
+import {
+    addWeeks,
+    differenceInCalendarWeeks,
+    endOfDay,
+    endOfWeek,
+    format,
+    fromUnixTime,
+    getUnixTime,
+    startOfDay,
+    startOfWeek,
+} from 'date-fns';
+
+import { dateLocale } from '@proton/shared/lib/i18n';
 import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import type { BookingTimeslot } from '../booking.store';
+import { WEEKS_IN_MINI_CALENDAR } from '../constants';
 
 /**
  * Transforms an available slot from the external booking page API payload
@@ -30,3 +44,32 @@ export const transformAvailableSlotToTimeslot = (
     bookingKeyPacket: availableSlot.BookingKeyPacket,
     detachedSignature: availableSlot.DetachedSignature,
 });
+
+export interface WeekRange {
+    start: number;
+    end: number;
+}
+
+export const generateWeeklyRangeSimple = (startDate: Date, endDate?: Date) => {
+    const weekRangeSimple = [];
+
+    const numberOfWeeks = endDate
+        ? Math.max(1, differenceInCalendarWeeks(endDate, startDate) + 1)
+        : WEEKS_IN_MINI_CALENDAR;
+
+    for (let i = 0; i < numberOfWeeks; i++) {
+        weekRangeSimple.push({
+            start: getUnixTime(startOfDay(startOfWeek(addWeeks(startDate, i)))),
+            end: getUnixTime(endOfDay(endOfWeek(addWeeks(startDate, i)))),
+        });
+    }
+
+    return weekRangeSimple;
+};
+
+/**
+ * Converts a timestamp to YYYY-MM-DD string in local timezone
+ */
+export const getDateKey = (timestamp: number): string => {
+    return format(fromUnixTime(timestamp), 'yyyy-MM-dd', { locale: dateLocale });
+};
