@@ -29,7 +29,7 @@ export const useExternalBookingLoader = () => {
      * We also depend on the mini calendar view that is showing 6 week rows.
      * So we are requesting those 6 weeks. The minimum is the current date (today)
      */
-    const loadPublicBooking = async (rangeStartDate: Date) => {
+    const loadPublicBooking = async (rangeStartDate: Date, rangeEndDate?: Date) => {
         if (!bookingSecretBase64Url) {
             setLoading(false);
             return;
@@ -39,7 +39,9 @@ export const useExternalBookingLoader = () => {
         const bookingUidBase64Url = uint8ArrayToPaddedBase64URLString(await deriveBookingUid(bookingSecretBytes));
 
         const rangeStart = isAfter(rangeStartDate, new Date()) ? rangeStartDate : new Date();
-        const weekRangeSimple = generateWeeklyRangeSimple(rangeStart);
+        const weekRangeSimple = rangeEndDate
+            ? generateWeeklyRangeSimple(rangeStart, rangeEndDate)
+            : generateWeeklyRangeSimple(rangeStart);
 
         try {
             setLoading(true);
