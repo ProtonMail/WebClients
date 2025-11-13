@@ -14,6 +14,7 @@ interface InlineImageComponentProps {
 export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ attachment, alt }) => {
     const [showModal, setShowModal] = useState(false);
     const [showDownload, setShowDownload] = useState(false);
+    const [showModalButtons, setShowModalButtons] = useState(false);
 
     const imageDataUrl = useMemo(() => {
         if (!attachment?.data) {
@@ -62,20 +63,29 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                 />
                 {showDownload && (
                     <div
-                        className="absolute top-2 right-2"
+                        style={{
+                            position: 'absolute',
+                            bottom: '0.5rem',
+                            right: '0.5rem',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            borderRadius: '8px',
+                            padding: '2px',
+                        }}
                         onClick={(e) => {
                             e.stopPropagation();
                             handleDownload();
                         }}
                     >
                         <Button
-                            shape="solid"
-                            color="weak"
+                            shape="ghost"
                             size="small"
                             icon
-                            className="rounded bg-norm shadow-norm"
+                            style={{
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                            }}
                         >
-                            <Icon name="arrow-down-line" size={4} />
+                            <Icon name="arrow-down-line" size={4} style={{ color: 'white' }} />
                         </Button>
                     </div>
                 )}
@@ -88,7 +98,12 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                         style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', zIndex: 9999 }}
                         onClick={() => setShowModal(false)}
                     >
-                        <div className="relative max-w-[90vw] max-h-[90vh]">
+                        <div
+                            className="relative"
+                            style={{ maxWidth: '90vw', maxHeight: '90vh' }}
+                            onMouseEnter={() => setShowModalButtons(true)}
+                            onMouseLeave={() => setShowModalButtons(false)}
+                        >
                             <img
                                 src={imageDataUrl}
                                 alt={alt || attachment.filename}
@@ -96,24 +111,66 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                                     maxWidth: '90vw',
                                     maxHeight: '90vh',
                                     objectFit: 'contain',
+                                    display: 'block',
                                 }}
                                 onClick={(e) => e.stopPropagation()}
                             />
-                            <div className="absolute top-4 right-4">
-                                <Button
-                                    shape="solid"
-                                    color="weak"
-                                    size="small"
-                                    icon
-                                    className="rounded bg-norm shadow-norm"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setShowModal(false);
-                                    }}
-                                >
-                                    <Icon name="cross" size={4} />
-                                </Button>
-                            </div>
+                            {showModalButtons && (
+                                <>
+                                    <div
+                                        style={{
+                                            position: 'absolute',
+                                            top: '1rem',
+                                            right: '1rem',
+                                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                            borderRadius: '8px',
+                                            padding: '2px',
+                                        }}
+                                    >
+                                        <Button
+                                            shape="ghost"
+                                            size="small"
+                                            icon
+                                            style={{
+                                                backgroundColor: 'transparent',
+                                                color: 'white',
+                                            }}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setShowModal(false);
+                                            }}
+                                        >
+                                            <Icon name="cross" size={4} style={{ color: 'white' }} />
+                                        </Button>
+                                    </div>
+                                    <div
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: '1rem',
+                                            right: '1rem',
+                                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                            borderRadius: '8px',
+                                            padding: '2px',
+                                        }}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleDownload();
+                                        }}
+                                    >
+                                        <Button
+                                            shape="ghost"
+                                            size="small"
+                                            icon
+                                            style={{
+                                                backgroundColor: 'transparent',
+                                                color: 'white',
+                                            }}
+                                        >
+                                            <Icon name="arrow-down-line" size={4} style={{ color: 'white' }} />
+                                        </Button>
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>,
                     document.body
