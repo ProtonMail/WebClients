@@ -85,6 +85,10 @@ markdown syntax and rendered inline with preview/modal UI.
 - [x] Remove img renderer from LumoMarkdown (only used for user messages, no inline images)
 - [x] Review code for refactoring opportunities (common code, cleanup)
     - Factored out createImageAttachment and generateImageMarkdown helpers
+- [x] Add encrypted image support (U2L encryption for image_data packets)
+    - Added encrypted?: boolean field to image_data type definitions
+    - Added decryption logic in client.ts using decryptUint8Array (binary, not text)
+    - Uses same AEAD with ad = `lumo.response.{request_id}.chunk`
 - [ ] Configure Redux middleware to ignore Uint8Array warnings
 
 ### Phase 4: UI Enhancement
