@@ -13,11 +13,13 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    useFormErrors,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import { emailValidator, maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { BookingTimeslot } from '../booking.store';
 import { useExternalBookingActions } from '../useExternalBookingActions';
 
@@ -28,12 +30,12 @@ interface BookingSlotModalProps extends ModalProps {
 const NAME_MAX_LENGTH = 100;
 
 export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
-    const { bookingDetails, submitBooking } = useExternalBookingActions();
+    const { submitBooking } = useExternalBookingActions();
 
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [isLoading, withLoading] = useLoading();
-    const startDate = fromUnixTime(timeslot.startTime);
+    const { validator } = useFormErrors();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -45,51 +47,58 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
         rest.onClose?.();
     };
 
+    // To check later: if case where start/end time is not on the same day
+    const subtitle = (
+        <>
+            <div className="booking-color-title text-xl booking-color-title ">
+                {format(fromUnixTime(timeslot.startTime), 'EEEE d MMMM yyyy', { locale: dateLocale })}
+                <span aria-hidden="true" className="pointer-events-none mx-2">
+                    •
+                </span>
+                {format(fromUnixTime(timeslot.startTime), 'HH:mm', { locale: dateLocale })}
+                {' - '} {format(fromUnixTime(timeslot.endTime), 'HH:mm', { locale: dateLocale })}
+            </div>
+            <div className="color-weak">{getTimezoneAndOffset(timeslot.timezone)}</div>
+        </>
+    );
+
     return (
         <ModalTwo as={Form} onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e))} {...rest}>
             <ModalTwoHeader
+                title={c('Form').t`Confirm your booking`}
+                titleClassName="text-4xl text-normal booking-color-title"
+                subline={subtitle}
+                sublineClassName="mt-2"
                 hasClose
                 closeButtonProps={{
                     className: 'm-1',
                 }}
             />
             <ModalTwoContent>
-                <div className="flex mb-6">
-                    <div className="flex flex-column items-center mr-3">
-                        <span className="h1 lh100">{startDate.getDate()}</span>
-                        <span className="color-weak text-uppercase">
-                            {format(startDate, 'MMM', { locale: dateLocale })}
-                        </span>
-                    </div>
-                    <div className="flex flex-column">
-                        <h1 className="text-xl text-semibold">{bookingDetails?.summary}</h1>
-                        <span className="color-weak mb-2">
-                            {format(fromUnixTime(timeslot.startTime), 'EEEE HH:mm', { locale: dateLocale })}
-                            {' - '}
-                            {format(fromUnixTime(timeslot.endTime), 'HH:mm', { locale: dateLocale })}
-                        </span>
-                        <span className="color-weak">{getTimezoneAndOffset(timeslot.timezone)}</span>
-                    </div>
+                <div className="mt-6">
+                    <InputFieldTwo
+                        autoFocus
+                        label={c('Label').t`Full name`}
+                        placeholder={c('Placeholder').t`Name of attendee`}
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        maxLength={NAME_MAX_LENGTH}
+                        error={validator([requiredValidator(name), maxLengthValidator(name, 100)])}
+                    />
+                    <InputFieldTwo
+                        label={c('Label').t`Email address`}
+                        placeholder={c('Placeholder').t`Email for booking confirmation`}
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        error={validator([requiredValidator(email), emailValidator(email)])}
+                    />
                 </div>
-                <h3 className="text-rg text-semibold mb-2">{c('Form').t`Your contact info`}</h3>
-                <InputFieldTwo
-                    autoFocus
-                    label={c('Label').t`Name`}
-                    type="text"
-                    value={name}
-                    maxLength={NAME_MAX_LENGTH}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <InputFieldTwo
-                    label={c('Label').t`Email`}
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button loading={isLoading} color="norm" type="submit">
+                <Button onClick={rest.onClose} pill>{c('Action').t`Cancel`}</Button>
+                <Button loading={isLoading} pill color="norm" type="submit">
                     {c('Action').t`Confirm booking`}
                 </Button>
             </ModalTwoFooter>

@@ -37,8 +37,8 @@ export const DetailsHeader = () => {
         >
             <h1 className="text-rg mb-2 color-primary text-bold" id="booking-details-header-title">{c('Title')
                 .t`Appointment details`}</h1>
-            <h2 className="booking-color-title text-4xl m-0">{bookingDetails?.summary}</h2>
-            <p className="my-6 text-pre-wrap">{bookingDetails.description}</p>
+            <h2 className="booking-color-title text-4xl m-0 text-break-all">{bookingDetails?.summary}</h2>
+            <p className="my-6 text-pre-wrap text-break-all">{bookingDetails.description}</p>
             <div className="flex flex-column flex-nowrap gap-4">
                 <div className="flex flex-nowrap flex-row gap-3 items-start">
                     <div className="bg-weak shrink-0 rounded-full p-2">
@@ -72,7 +72,7 @@ export const DetailsHeader = () => {
                     </div>
                     <div className="flex-1">
                         <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Location`}</h3>
-                        <div>
+                        <div className="text-break-all">
                             {bookingDetails.withProtonMeetLink
                                 ? c('Info').t`${MEET_APP_NAME} video call`
                                 : bookingDetails.location}
