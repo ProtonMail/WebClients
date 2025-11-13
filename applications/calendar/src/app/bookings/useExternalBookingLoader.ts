@@ -21,7 +21,7 @@ export const useExternalBookingLoader = () => {
 
     const setLoading = useBookingStore((state) => state.setLoading);
     const setBookingDetails = useBookingStore((state) => state.setBookingDetails);
-    const setTimeslots = useBookingStore((state) => state.setTimeslots);
+    const setBookingSlots = useBookingStore((state) => state.setBookingSlots);
 
     /**
      * The logic here is to load public booking
@@ -46,7 +46,7 @@ export const useExternalBookingLoader = () => {
         try {
             setLoading(true);
 
-            const allTimeslots: ReturnType<typeof transformAvailableSlotToTimeslot>[] = [];
+            const allBookingSlot: ReturnType<typeof transformAvailableSlotToTimeslot>[] = [];
 
             let bookingPageData: ExternalBookingPagePayload | null = null;
 
@@ -71,7 +71,7 @@ export const useExternalBookingLoader = () => {
                 }
 
                 const slots = result.BookingPage.AvailableSlots;
-                allTimeslots.push(...slots.map(transformAvailableSlotToTimeslot));
+                allBookingSlot.push(...slots.map(transformAvailableSlotToTimeslot));
             }
 
             if (!bookingPageData) {
@@ -100,7 +100,7 @@ export const useExternalBookingLoader = () => {
                 inviterEmail: bookingPageData.Email,
             });
 
-            setTimeslots(allTimeslots);
+            setBookingSlots(allBookingSlot);
         } catch (error) {
             throw error;
         } finally {

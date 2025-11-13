@@ -39,13 +39,13 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
 
 export const BookingSuccess = () => {
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
-    const bookingSlotDetails = useBookingStore((state) => state.bookingSlotDetails);
+    const selectedBookingSlot = useBookingStore((state) => state.selectedBookingSlot);
 
-    if (!bookingDetails || !bookingSlotDetails) {
+    if (!bookingDetails || !selectedBookingSlot) {
         return <NoMatch reason={Reason.notFound} />;
     }
 
-    const timeData = `${format(bookingSlotDetails.startTime, 'HH:mm', { locale: dateLocale })} - ${format(bookingSlotDetails.endTime, 'HH:mm', { locale: dateLocale })}`;
+    const timeData = `${format(selectedBookingSlot.startTime, 'HH:mm', { locale: dateLocale })} - ${format(selectedBookingSlot.endTime, 'HH:mm', { locale: dateLocale })}`;
 
     return (
         <div className="container">
@@ -79,7 +79,7 @@ export const BookingSuccess = () => {
                         <BookingSuccessItem
                             title={c('Title').t`Date`}
                             icon={<IcCalendarGrid />}
-                            data={format(bookingSlotDetails.startTime, 'MMMM d, yyyy', { locale: dateLocale })}
+                            data={format(selectedBookingSlot.startTime, 'MMMM d, yyyy', { locale: dateLocale })}
                         />
                         <BookingSuccessItem title={c('Title').t`Time`} icon={<IcClock />} data={timeData} />
                     </div>

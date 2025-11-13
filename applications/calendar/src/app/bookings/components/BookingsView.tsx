@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { format, isToday } from 'date-fns';
+import { format, fromUnixTime, isToday, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -10,18 +10,18 @@ import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone'
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { type BookingTimeslotWithDate, useBookingStore } from '../booking.store';
+import { type BookingTimeslot, useBookingStore } from '../booking.store';
 import { BookSlotModal } from './BookSlotModal';
 import { BookingDetailsHeader } from './BookingDetails/BookingDetailsHeader';
-import { getDaysRange, getDaysSlotRange, getFirstAvailableSlotDate, getGridCount } from './bookingViewHelpers';
+import { getDaysRange, getDaysSlotRange, getGridCount } from './bookingViewHelpers';
 
 export const BookingsView = () => {
     const [range, setRange] = useState<Date[]>([]);
-    const [timeslot, setTimeslot] = useState<BookingTimeslotWithDate>();
-    const [slotsArray, setSlotsArray] = useState<BookingTimeslotWithDate[][] | undefined[][]>([]);
+    const [timeslot, setTimeslot] = useState<BookingTimeslot>();
+    const [slotsArray, setSlotsArray] = useState<BookingTimeslot[][] | undefined[][]>([]);
 
-    const getTimeslotsByDate = useBookingStore((state) => state.getTimeslotsByDate);
-    const getAllDaySlots = useBookingStore((state) => state.getAllDaySlots);
+    const bookingSlots = useBookingStore((state) => state.bookingSlots);
+    const filterBookingSlotPerDay = useBookingStore((state) => state.filterBookingSlotPerDay);
     const setSelectedDate = useBookingStore((state) => state.setSelectedDate);
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedDate = useBookingStore((state) => state.selectedDate);
@@ -34,8 +34,7 @@ export const BookingsView = () => {
     const [bookSlotModalProps, setBookSlotModalOpen, renderBookModal] = useModalState();
 
     const handleGoToNextAvailableAppointment = () => {
-        const allDaySlots = getAllDaySlots();
-        const firstAvailableDate = getFirstAvailableSlotDate(allDaySlots);
+        const firstAvailableDate = startOfDay(bookingSlots[0].startTime) || null;
 
         if (firstAvailableDate) {
             setSelectedDate(firstAvailableDate);
@@ -48,11 +47,11 @@ export const BookingsView = () => {
         }
 
         const tmpRange = getDaysRange(gridSize, selectedDate);
-        const rangeBooking = getDaysSlotRange(gridSize, bookingDetails, getTimeslotsByDate, selectedDate);
+        const rangeBooking = getDaysSlotRange(gridSize, bookingDetails, filterBookingSlotPerDay, selectedDate);
 
         setRange(tmpRange);
         setSlotsArray(rangeBooking);
-    }, [gridSize, getTimeslotsByDate, bookingDetails, selectedDate]);
+    }, [gridSize, bookingDetails, selectedDate, filterBookingSlotPerDay]);
 
     return (
         <main className="flex-1 w-full" aria-labelledby="booking-main-header-title">
@@ -86,7 +85,7 @@ export const BookingsView = () => {
                                     slotsArray[i].map((timeslot, j) => {
                                         if (timeslot) {
                                             const localDate = fromUTCDateToLocalFakeUTCDate(
-                                                timeslot.date,
+                                                fromUnixTime(timeslot.startTime),
                                                 false,
                                                 selectedTimeZone
                                             );
@@ -94,9 +93,8 @@ export const BookingsView = () => {
                                             const timeString = format(localDate, 'HH:mm', { locale: dateLocale });
 
                                             return (
-                                                <li>
+                                                <li key={timeslot.id}>
                                                     <Button
-                                                        key={timeslot.id}
                                                         shape="outline"
                                                         color="weak"
                                                         className="w-full booking-button-slot-outline"
@@ -118,14 +116,8 @@ export const BookingsView = () => {
                                         }
 
                                         return (
-                                            <li aria-hidden="true">
-                                                <Button
-                                                    key={`${i}-${j}`}
-                                                    disabled
-                                                    shape="outline"
-                                                    color="norm"
-                                                    className="w-full"
-                                                >
+                                            <li aria-hidden="true" key={`${i}-${j}`}>
+                                                <Button disabled shape="outline" color="norm" className="w-full">
                                                     -
                                                 </Button>
                                             </li>
