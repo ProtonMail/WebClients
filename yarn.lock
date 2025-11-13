@@ -11029,15 +11029,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rowsncolumns/calculator-worker@workspace:vendor/rowsncolumns/calculator-worker":
+"@rowsncolumns/calculation-worker@workspace:vendor/rowsncolumns/calculation-worker":
   version: 0.0.0-use.local
-  resolution: "@rowsncolumns/calculator-worker@workspace:vendor/rowsncolumns/calculator-worker"
+  resolution: "@rowsncolumns/calculation-worker@workspace:vendor/rowsncolumns/calculation-worker"
   dependencies:
     "@rowsncolumns/dag": "workspace:^"
     "@rowsncolumns/fast-formula-parser": "workspace:^"
     "@rowsncolumns/functions": "workspace:^"
+    "@rowsncolumns/spreadsheet": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
-    babel-plugin-transform-import-meta: "npm:^2.3.2"
+    rxjs: "npm:^7.8.2"
+  peerDependencies:
+    "@rowsncolumns/spreadsheet": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -18221,7 +18224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-transform-import-meta@npm:^2.3.2, babel-plugin-transform-import-meta@npm:^2.3.3":
+"babel-plugin-transform-import-meta@npm:^2.3.3":
   version: 2.3.3
   resolution: "babel-plugin-transform-import-meta@npm:2.3.3"
   dependencies:
