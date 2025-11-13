@@ -10848,9 +10848,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
       ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Используйте индивидуальные решения для более крупных организаций с особыми требованиями к безопасности"
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Специальное решение VPN, которое обеспечивает защищенный высокоскоростной доступ в Интернет без ограничений."
       ],
@@ -11114,9 +11111,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "В любое время"
-      ],
       "Access advanced VPN features": [
         "Получите доступ к расширенным функциям VPN"
       ],
@@ -11164,9 +11158,6 @@
       ],
       "Private gateways": [
         "Частные шлюзы"
-      ],
-      "Require 2FA": [
-        "Требуется двухфакторная аутентификация"
       ],
       "Support for ${ n } custom email domain": [
         "Поддержка ${ n } пользовательского домена электронной почты",
@@ -13583,6 +13574,12 @@
         "С ${ elementsCount } сообщений снят ярлык ${ labelName }.",
         "${ elementsCount } сообщений удалено из ${ labelName }.",
         "С ${ elementsCount } сообщений снят ярлык ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "С ${ elementsCount } сообщения снята звёздочка.",
+        "С ${ elementsCount } сообщений сняты звёздочки.",
+        "С ${ elementsCount } сообщений сняты звёздочки.",
+        "С ${ elementsCount } сообщений сняты звёздочки."
       ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"

@@ -2824,6 +2824,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "Дадайце праграму ${ LUMO_APP_NAME }"
       ],
+      "Advanced account and network security in one plan": [
+        "Пашыраная бяспека ўліковага запісу і сеткі ў адным тарыфным плане"
+      ],
       "High-speed chats and advanced AI features.": [
         "Высакахуткасныя чаты і перадавыя функцыі ШІ."
       ]
@@ -5248,6 +5251,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Увайдзіце з адрасам Gmail, які ўжо перасылае лісты ў ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Увайдзіце з тым жа адрасам Gmail, які вы першапачаткова падключылі"
       ]
@@ -11295,6 +11301,9 @@
       "End-to-end encryption": [
         "Скразное шыфраванне"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Існуючыя перавагі ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Хуткія спампоўкі ў P2P/BitTorrent"
       ],
@@ -11523,6 +11532,12 @@
         "Абагуленае сховішча (да ${ n } асоб)",
         "Абагуленае сховішча (да ${ n } асоб)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Абагуленае сховішча (да ${ n } асобы)",
+        "Абагуленае сховішча (да ${ n } асоб)",
+        "Абагуленае сховішча (да ${ n } асоб)",
+        "Абагуленае сховішча (да ${ n } асоб)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
       ]
@@ -11629,9 +11644,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Бяспечная электронная пошта з пашыранымі функцыямі для штодзённых зносін."
-      ],
-      "Tailor-made solutions for larger organizations with specific security needs": [
-        "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі патрабаваннямі ў вобласці бяспекі"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Спецыялізаванае рашэнне VPN, якое дае магчымасць атрымаць бяспечны доступ у інтэрнэт, без абмежаванняў і на высокай хуткасці."
@@ -11899,9 +11911,6 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "24/7 support": [
-        "Падтрымка 24/7"
-      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],
@@ -11949,9 +11958,6 @@
       ],
       "Private gateways": [
         "Прыватныя шлюзы"
-      ],
-      "Require 2FA": [
-        "Абавязковае 2ФА"
       ],
       "Support for ${ n } custom email domain": [
         "Падтрымка для ${ n } карыстальніцкага дамена электроннай пошты",
@@ -12739,6 +12745,23 @@
       ],
       "Credits will be added to your balance": [
         "Крэдыты будуць дададзены на ваш баланс"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Вы сапраўды хочаце працягнуць?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Вы можаце згубіць доступ да некаторый функцый, калі выберыце змену тарыфнага плана ${ planTitle }."
+      ],
+      "Keep ${ planTitle }": [
+        "Выйсці з ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Так, я ўпэўнены"
+      ],
+      "Your plan includes this feature already.": [
+        "Ваш тарыфны план ужо ўключае гэту функцыю."
       ]
     },
     "Payments.plan_name": {
