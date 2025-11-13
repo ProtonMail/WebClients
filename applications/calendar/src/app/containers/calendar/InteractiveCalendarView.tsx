@@ -507,7 +507,7 @@ const InteractiveCalendarView = ({
             const selectedCalendar = calendars.find((calendar) => calendar.ID === formData.selectedCalendar);
             const calendarData = getVisualCalendar(selectedCalendar || createEventCalendar);
             const booklyCalendarEvents = convertSlotToCalendarViewEvents(calendarData, bookingRange);
-            return sortEvents(booklyCalendarEvents);
+            return sortEvents(booklyCalendarEvents.concat(events));
         }
 
         return sortEvents(events.concat());
