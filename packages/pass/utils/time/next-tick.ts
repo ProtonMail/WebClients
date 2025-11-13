@@ -7,6 +7,6 @@ export const nextTick = (fn: Callback) => {
 };
 
 export const onNextTick =
-    <F extends Callback>(fn: F) =>
-    (...args: Parameters<F>) =>
+    <T extends any[], R extends any>(fn: (...args: T) => R) =>
+    (...args: T) =>
         nextTick(() => fn(...args));

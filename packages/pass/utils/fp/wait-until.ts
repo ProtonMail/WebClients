@@ -1,4 +1,6 @@
-type WaitUntilCallback = (() => boolean) | { check: () => boolean; cancel: () => boolean };
+import type { MaybePromise } from '@proton/pass/types';
+
+type WaitUntilCallback = (() => MaybePromise<boolean>) | { check: () => MaybePromise<boolean>; cancel: () => boolean };
 
 export const waitUntil = (cb: WaitUntilCallback, refresh: number, timeout: number = 5_000): Promise<void> => {
     const check = typeof cb === 'function' ? cb : cb.check;
@@ -6,21 +8,36 @@ export const waitUntil = (cb: WaitUntilCallback, refresh: number, timeout: numbe
 
     let timer: NodeJS.Timeout;
     let interval: NodeJS.Timeout;
+    let fulfilled = false;
 
     const clear = () => {
         clearTimeout(timer);
         clearInterval(interval);
     };
 
-    return new Promise<void>((resolve, reject) => {
-        if (cancel?.()) return reject();
-        if (check()) return resolve();
+    return new Promise<void>(async (res, rej) => {
+        const resolve = () => {
+            if (fulfilled) return;
+            fulfilled = true;
+            clear();
+            res();
+        };
 
-        timer = setTimeout(() => reject(clear()), timeout);
-        interval = setInterval(() => {
-            if (cancel?.()) return reject(clear());
-            if (!check()) return;
-            resolve(clear());
+        const reject = () => {
+            if (fulfilled) return;
+            fulfilled = true;
+            clear();
+            rej();
+        };
+
+        if (cancel?.()) return reject();
+        if (await check()) return resolve();
+
+        timer = setTimeout(reject, timeout);
+
+        interval = setInterval(async () => {
+            if (cancel?.()) reject();
+            else if (await check()) resolve();
         }, refresh);
     });
 };
