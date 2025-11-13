@@ -58,6 +58,11 @@ const getInitialBookingFormState = (): BookingFormData => {
     };
 };
 
+interface InitialData {
+    formData: BookingFormData;
+    bookingRange: BookingRange[];
+}
+
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
@@ -82,7 +87,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const getCalendarKeys = useGetCalendarKeys();
 
-    const initialFormData = useRef<BookingFormData | undefined>(undefined);
+    const initialFormData = useRef<InitialData | undefined>(undefined);
     const [formData, setFormData] = useState<BookingFormData>(getInitialBookingFormState());
 
     const { createNotification } = useNotifications();
@@ -118,7 +123,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
         setBookingRange(bookingRange);
         setFormData(newFormData);
-        initialFormData.current = newFormData;
+        initialFormData.current = { formData: newFormData, bookingRange };
     };
 
     const recomputeBookingSlots = (newDuration: number) => {
@@ -250,13 +255,17 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const closeBookingSidebar = () => {
+        const intialForm = initialFormData.current?.formData;
+        const initialRange = initialFormData.current?.bookingRange;
+
         const formWasTouched =
-            formData.summary !== initialFormData.current?.summary ||
-            formData.description !== initialFormData.current?.description ||
-            formData.duration !== initialFormData.current?.duration ||
-            formData.selectedCalendar !== initialFormData.current?.selectedCalendar ||
-            formData.location !== initialFormData.current?.location ||
-            formData.bookingSlots.length !== initialFormData.current?.bookingSlots.length;
+            formData.summary !== intialForm?.summary ||
+            formData.description !== intialForm?.description ||
+            formData.duration !== intialForm?.duration ||
+            formData.selectedCalendar !== intialForm?.selectedCalendar ||
+            formData.location !== intialForm?.location ||
+            formData.bookingSlots.length !== intialForm?.bookingSlots.length ||
+            bookingRange?.length !== initialRange?.length;
 
         if (formWasTouched) {
             notify({
