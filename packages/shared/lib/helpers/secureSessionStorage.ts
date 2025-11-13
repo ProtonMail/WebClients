@@ -126,7 +126,14 @@ export const save = (data: any) => {
     }
     const [share1, share2] = separatePart(JSON.stringify(data));
     window.name = serialize(share1);
-    window.sessionStorage.setItem(SESSION_STORAGE_KEY, share2);
+    /**
+     * Initially intended to persist to `name` and sessionStorage at `beforeunload` event. When the `beforeunload`
+     * event was deprecated, this was changed to the `pagehide` event. However, in chrome and safari, writing to `name`
+     * at `pagehide` event is now too late in terms of timing. The document's browsing context may be frozen or
+     * discarded and modifications to global state like `name` aren't committed. To resolve that, it writes one part to
+     * `name` on each change, and then finally commits to sessionStorage on `pagehide` since this is properly supported.
+     */
+    return () => window.sessionStorage.setItem(SESSION_STORAGE_KEY, share2);
 };
 
 export const load = () => {
@@ -134,7 +141,11 @@ export const load = () => {
         return {};
     }
     try {
-        const share1 = deserialize(window.name);
+        const serializedShare1 = window.name;
+        if (!serializedShare1) {
+            return {};
+        }
+        const share1 = deserialize(serializedShare1);
         const share2 = window.sessionStorage.getItem(SESSION_STORAGE_KEY) || '';
         window.name = '';
         window.sessionStorage.removeItem(SESSION_STORAGE_KEY);

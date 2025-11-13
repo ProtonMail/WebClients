@@ -1,8 +1,10 @@
 export default (initialState: { [key: string]: any } = {}) => {
     let state = initialState;
+    let onChange: (() => void) | undefined;
 
     const set = (key: string, data: any) => {
         state[key] = data;
+        onChange?.();
     };
 
     const get = (key: string) => state[key];
@@ -14,6 +16,9 @@ export default (initialState: { [key: string]: any } = {}) => {
     };
 
     return {
+        onChange: (_onChange: typeof onChange) => {
+            onChange = _onChange;
+        },
         set,
         get,
         remove,
