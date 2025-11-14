@@ -1,6 +1,16 @@
 import { useLocation } from 'react-router';
 
-import { addHours, addMinutes, isBefore, isSameDay, set, startOfDay, startOfToday, subMinutes } from 'date-fns';
+import {
+    addHours,
+    addMinutes,
+    isBefore,
+    isSameDay,
+    isToday,
+    set,
+    startOfDay,
+    startOfToday,
+    subMinutes,
+} from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -14,9 +24,11 @@ import { addDays, isNextDay } from '@proton/shared/lib/date-fns-utc';
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
-import { createBookingRangeNextAvailableTime, validateFormData } from '../utils/bookingHelpers';
+import { createBookingRangeNextAvailableTime, roundToNextHalfHour, validateFormData } from '../utils/bookingHelpers';
 
 export const FormRangeList = () => {
+    const now = new Date();
+
     const location = useLocation();
     const [userSettings] = useUserSettings();
 
@@ -125,7 +137,7 @@ export const FormRangeList = () => {
                             id={`range-start-time-${range.id}`}
                             value={range.start}
                             onChange={(value) => handleStartChange(range, value)}
-                            min={startOfDay(range.start)}
+                            min={isToday(range.start) ? roundToNextHalfHour(now) : startOfDay(range.start)}
                             max={subMinutes(range.end, formData.duration)}
                         />
                         -
