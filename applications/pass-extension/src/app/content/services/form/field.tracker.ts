@@ -55,9 +55,10 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         raf.cancel();
         state.focused = false;
 
+        if (field.actionPrevented) return;
+
         raf.request(
             onNextTick(async (req) => {
-                field.element.blur();
                 if (field.actionPrevented || req.cancelled) return;
 
                 const active = await field.isActive();
@@ -76,7 +77,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         state.focused = true;
 
         const { action } = field;
-        if (!action) return;
+        if (!action || field.actionPrevented) return;
 
         raf.request(() => {
             if (field.actionPrevented) return;
@@ -138,6 +139,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
     listeners.addListener(field.element, 'input', onInput);
     listeners.addListener(field.element, 'mousedown', onFocus);
     listeners.addObserver(field.element, onAttributeChange, { attributeFilter: ['type'], attributeOldValue: true });
+    listeners.addListener(window, 'blur', onBlur);
 
     if (formTracker) {
         const { onFieldChange, onFormSubmit } = formTracker;
