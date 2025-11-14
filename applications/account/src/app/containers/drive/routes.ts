@@ -17,7 +17,8 @@ export const getDriveAppRoutes = ({
         available: app === APPS.PROTONDRIVE,
         header: DRIVE_APP_NAME,
         routes: {
-            revisions: <SectionConfig>{
+            revisions: {
+                id: 'revisions',
                 text: c('Title').t`Version history`,
                 to: '/version-history',
                 icon: 'clock-rotate-left',
@@ -29,7 +30,8 @@ export const getDriveAppRoutes = ({
                     },
                 ],
             },
-            photos: <SectionConfig>{
+            photos: {
+                id: 'photos',
                 available: isB2BDrive && canB2BHidePhotos,
                 text: c('Title').t`Photos`,
                 to: '/photos',
@@ -41,6 +43,6 @@ export const getDriveAppRoutes = ({
                     },
                 ],
             },
-        },
+        } satisfies Record<string, SectionConfig>,
     };
 };

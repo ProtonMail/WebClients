@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
+import type { SubSectionConfig } from '@proton/components';
 import { AutocompleteList, Icon, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from '@proton/components/containers/layout/helper';
 import type { IconName } from '@proton/icons/types';
@@ -79,7 +80,7 @@ const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): Searc
             };
 
             const subsectionItems: SearchOption[] = (sectionRoute.subsections || [])
-                .map((subsection): SearchOption | null => {
+                .map((subsection: SubSectionConfig): SearchOption | null => {
                     if (!subsection.text || !getIsSubsectionAvailable(subsection)) {
                         return null;
                     }

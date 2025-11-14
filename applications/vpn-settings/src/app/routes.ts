@@ -46,7 +46,8 @@ export const getRoutes = ({
     const planIsManagedExternally = isManagedExternally(subscription);
 
     return {
-        dashboardV2: <SectionConfig>{
+        dashboardV2: {
+            id: 'dashboardV2',
             text: c('Title').t`Home`,
             noTitle: true,
             to: '/dashboardV2',
@@ -83,7 +84,8 @@ export const getRoutes = ({
                 },
             ],
         },
-        subscription: <SectionConfig>{
+        subscription: {
+            id: 'subscription',
             text: c('Title').t`Subscription`,
             noTitle: true,
             to: '/subscription',
@@ -157,7 +159,8 @@ export const getRoutes = ({
                 },
             ],
         },
-        dashboard: <SectionConfig>{
+        dashboard: {
+            id: 'dashboard',
             text: c('Title').t`Subscription`,
             to: '/dashboard',
             icon: 'squares-in-square',
@@ -230,7 +233,8 @@ export const getRoutes = ({
                 },
             ],
         },
-        account: <SectionConfig>{
+        account: {
+            id: 'account',
             text: c('Title').t`Account`,
             to: '/account-password',
             icon: 'user-circle',
@@ -268,7 +272,8 @@ export const getRoutes = ({
                 },
             ],
         },
-        appearance: <SectionConfig>{
+        appearance: {
+            id: 'appearance',
             text: c('Title').t`Appearance`,
             to: '/appearance',
             icon: 'paint-roller',
@@ -279,7 +284,8 @@ export const getRoutes = ({
                 },
             ],
         },
-        downloads: <SectionConfig>{
+        downloads: {
+            id: 'downloads',
             text: c('Title').t`Downloads`,
             to: '/downloads',
             icon: 'arrow-down-line',
@@ -298,7 +304,8 @@ export const getRoutes = ({
                 },
             ],
         },
-        referral: <SectionConfig>{
+        referral: {
+            id: 'referral',
             text: c('Title').t`Refer a friend`,
             title: c('Title').t`Invite friends. Get credits.`,
             description:
@@ -318,5 +325,5 @@ export const getRoutes = ({
                 },
             ],
         },
-    };
+    } satisfies Record<string, SectionConfig>;
 };

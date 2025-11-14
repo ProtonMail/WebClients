@@ -4,7 +4,7 @@ import type { SectionConfig, SubSectionConfig } from './interface';
 describe('getIsSubsectionAvailable', () => {
     it('returns true when `available` is undefined', () => {
         const config: SubSectionConfig = {
-            id: '',
+            id: 'test-id',
         };
 
         const result = getIsSubsectionAvailable(config);
@@ -14,7 +14,7 @@ describe('getIsSubsectionAvailable', () => {
 
     it('returns true when `available` is true', () => {
         const config: SubSectionConfig = {
-            id: '',
+            id: 'test-id',
             available: true,
         };
 
@@ -25,7 +25,7 @@ describe('getIsSubsectionAvailable', () => {
 
     it('returns false when `available` is false', () => {
         const config: SubSectionConfig = {
-            id: '',
+            id: 'test-id',
             available: false,
         };
 
@@ -39,6 +39,7 @@ describe('getIsSectionAvailable', () => {
     describe('available property', () => {
         it('returns true when `available` is undefined', () => {
             const config: SectionConfig = {
+                id: 'test-id',
                 to: '',
                 icon: 'alias',
                 text: '',
@@ -52,6 +53,7 @@ describe('getIsSectionAvailable', () => {
 
         it('returns true when `available` is true', () => {
             const config: SectionConfig = {
+                id: 'test-id',
                 to: '',
                 icon: 'alias',
                 text: '',
@@ -66,6 +68,7 @@ describe('getIsSectionAvailable', () => {
 
         it('returns false when `available` is false', () => {
             const config: SectionConfig = {
+                id: 'test-id',
                 to: '',
                 icon: 'alias',
                 text: '',
@@ -82,6 +85,7 @@ describe('getIsSectionAvailable', () => {
     describe('subsections prop', () => {
         it('returns true when `subsections` is undefined', () => {
             const config: SectionConfig = {
+                id: 'test-id',
                 to: '',
                 icon: 'alias',
                 text: '',
@@ -95,6 +99,7 @@ describe('getIsSectionAvailable', () => {
 
         it('returns true when all `subsections` are available', () => {
             const config: SectionConfig = {
+                id: 'test-id',
                 to: '',
                 icon: 'alias',
                 text: '',
@@ -112,6 +117,7 @@ describe('getIsSectionAvailable', () => {
 
         it('returns true when some `subsections` are available', () => {
             const config: SectionConfig = {
+                id: 'test-id',
                 to: '',
                 icon: 'alias',
                 text: '',
@@ -129,6 +135,7 @@ describe('getIsSectionAvailable', () => {
 
         it('returns false when no `subsections` are available', () => {
             const config: SectionConfig = {
+                id: 'test-id',
                 to: '',
                 icon: 'alias',
                 text: '',
