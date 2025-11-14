@@ -14,7 +14,7 @@ import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddress
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
-import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/date/timezone';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
 
 import { useCalendarDispatch } from '../../../store/hooks';
 import { interalBookingActions } from '../../../store/internalBooking/interalBookingSlice';
@@ -26,6 +26,7 @@ import {
     generateBookingRangeID,
     generateDefaultBookingRange,
     generateSlotsFromRange,
+    roundToNextHalfHour,
     validateBookingRange,
 } from '../utils/bookingHelpers';
 import type { BookingRange, BookingsContextValue, Intersection, Slot } from './interface';
@@ -211,12 +212,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const addBookingRange = (data: Omit<BookingRange, 'id'>) => {
         const now = new Date();
-        const nowWithTz = fromUTCDateToLocalFakeUTCDate(now, false, data.timezone);
 
-        const start = intersectionRef.current?.start || data.start;
+        // If we drag past the current time, we round to the next half hour
+        const dateStart = isBefore(data.start, now) ? roundToNextHalfHour(now) : data.start;
+        const start = intersectionRef.current?.start || dateStart;
         const end = intersectionRef.current?.end || data.end;
 
-        if (isBefore(start, nowWithTz)) {
+        if (isBefore(start, now)) {
             createNotification({ text: c('Info').t`Booking cannot be added in the past.` });
             return;
         }
