@@ -1,6 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
+import { removeEmailsFromEncryptionPreferencesCache } from '@proton/mail/store/messages/encryptionPreferences';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
@@ -30,6 +31,7 @@ describe('Contact resign modal', () => {
 
     const setup = async (hasFingerprint: boolean) => {
         const { receiverKeys, senderKeys, updateSpy } = await setupContactsForPinKeys(hasFingerprint);
+        removeEmailsFromEncryptionPreferencesCache([sender.Address]);
 
         addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [{ PublicKey: senderKeys.publicKeyArmored }] } }));
         addApiMock(
