@@ -90,7 +90,7 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
                             });
 
                             onTelemetry(TelemetryEventName.AutosuggestAliasCreated, {}, {});
-                            controller.close();
+                            controller.close({ userAction: true });
                         } else setError(response.error ?? null);
                     }
                 );
@@ -150,7 +150,7 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
                             type: InlinePortMessageType.AUTOFILL_EMAIL,
                             payload: { email: userEmail },
                         });
-                        controller.close();
+                        controller.close({ userAction: true });
                     }}
                 />
             )}

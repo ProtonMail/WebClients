@@ -23,9 +23,9 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import type { DropdownHandler } from './dropdown.abstract';
 import type { DropdownActions, DropdownAnchor, DropdownRequest } from './dropdown.app';
 
-export const onCloseEffects = onNextTick((field: FieldHandle, { refocus }: InlineCloseOptions) => {
+export const onCloseEffects = onNextTick((field: FieldHandle, { refocus, userAction }: InlineCloseOptions) => {
     if (refocus) field.focus({ preventAction: false });
-    else if (!field.actionPrevented && !isActiveElement(field.element)) field.icon?.detach();
+    else if (!userAction && !isActiveElement(field.element)) field.icon?.detach();
 });
 
 export const onFocusChangeFactory = (dropdown: DropdownHandler, anchor: DropdownAnchor) =>

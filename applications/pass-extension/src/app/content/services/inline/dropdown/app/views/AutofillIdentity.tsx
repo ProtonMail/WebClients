@@ -91,7 +91,7 @@ export const AutofillIdentity: FC<Props> = ({ origin }) => {
                                               type: InlinePortMessageType.AUTOFILL_IDENTITY,
                                               payload: fields,
                                           });
-                                          controller.close();
+                                          controller.close({ userAction: true });
                                       }
                                   )
                               }
