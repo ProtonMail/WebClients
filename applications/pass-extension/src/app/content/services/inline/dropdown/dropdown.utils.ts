@@ -158,23 +158,28 @@ export const intoDropdownAction = withContext<(request: DropdownRequest) => Prom
 export const getDropdownPosition =
     (request: DropdownRequest) =>
     (root: HTMLElement): Partial<Rect> => {
-        switch (request.type) {
-            case 'field':
-                const { element } = request.field;
-                const boxElement = request.field.getAnchor().element;
-                const boxed = boxElement !== element;
-                const bodyTop = root.getBoundingClientRect().top;
+        const position = (() => {
+            switch (request.type) {
+                case 'field':
+                    const { element } = request.field;
+                    const boxElement = request.field.getAnchor().element;
+                    const boxed = boxElement !== element;
+                    const bodyTop = root.getBoundingClientRect().top;
 
-                const styles = createStyleParser(boxElement);
-                const computedHeight = getComputedHeight(styles, boxed ? 'inner' : 'outer');
-                const { value: height, offset: offsetBox } = computedHeight;
-                const { left: boxLeft, top, width } = boxElement.getBoundingClientRect();
+                    const styles = createStyleParser(boxElement);
+                    const computedHeight = getComputedHeight(styles, boxed ? 'inner' : 'outer');
+                    const { value: height, offset: offsetBox } = computedHeight;
+                    const { left: boxLeft, top, width } = boxElement.getBoundingClientRect();
 
-                return {
-                    top: top - bodyTop + offsetBox.bottom + offsetBox.top + height,
-                    left: boxLeft + width - DROPDOWN_WIDTH,
-                };
-            case 'frame':
-                return request.coords;
-        }
+                    return {
+                        top: top - bodyTop + offsetBox.bottom + offsetBox.top + height,
+                        left: boxLeft + width - DROPDOWN_WIDTH,
+                    };
+                case 'frame':
+                    return request.coords;
+            }
+        })();
+
+        if (position.left < 0) position.left = 0;
+        return position;
     };
