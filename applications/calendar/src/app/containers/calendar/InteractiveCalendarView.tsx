@@ -2,6 +2,7 @@ import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'reac
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Prompt } from 'react-router';
 
+import { isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
@@ -963,16 +964,25 @@ const InteractiveCalendarView = ({
                 });
                 newTemporaryEvent = getTemporaryEvent(newTemporaryEvent, newTemporaryModel, tzid);
 
+                const now = new Date();
                 const bookingStart = toLocalDate(fromUTCDate(start));
                 const bookingEnd = toLocalDate(fromUTCDate(end));
 
+                // TODO this will change when adding recurring ranges
+                const isStrictlyInPast = isBefore(bookingStart, now) && isBefore(bookingEnd, now);
+
                 if (action === ACTIONS.CREATE_MOVE) {
-                    // Change the ID to have a specific style when dragging and creating a booking page
                     if (isBookingActive) {
+                        // We prevent drag and drop if the booking is strictly in the past
+                        if (isStrictlyInPast) {
+                            return;
+                        }
+
                         if (isIntersectingBookingRange(bookingStart, bookingEnd)) {
                             return;
                         }
 
+                        // Change the ID to have a specific style when dragging and creating a booking page
                         setInteractiveData({
                             temporaryEvent: {
                                 ...newTemporaryEvent,
@@ -985,6 +995,11 @@ const InteractiveCalendarView = ({
                 }
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
                     if (isBookingActive) {
+                        // We prevent drag and drop if the booking is strictly in the past
+                        if (isStrictlyInPast) {
+                            return;
+                        }
+
                         addBookingRange({
                             start: bookingStart,
                             end: bookingEnd,

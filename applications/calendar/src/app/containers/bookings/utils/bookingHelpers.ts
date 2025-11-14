@@ -1,5 +1,6 @@
 import {
     addDays,
+    addHours,
     addMinutes,
     areIntervalsOverlapping,
     eachDayOfInterval,
@@ -8,6 +9,7 @@ import {
     isSameDay,
     isWeekend,
     set,
+    setMinutes,
     startOfDay,
     startOfWeek,
 } from 'date-fns';
@@ -192,9 +194,9 @@ const createTodayBookingRange = (date: Date, timezone: string, today: Date) => {
 
     const start =
         nextHour < DEFAULT_RANGE_START_HOUR
-            ? set(date, { hours: DEFAULT_RANGE_START_HOUR })
-            : set(date, { hours: nextHour });
-    const end = set(date, { hours: DEFAULT_RANGE_END_HOUR });
+            ? set(date, { hours: DEFAULT_RANGE_START_HOUR, minutes: 0, seconds: 0, milliseconds: 0 })
+            : set(date, { hours: nextHour, minutes: 0, seconds: 0, milliseconds: 0 });
+    const end = set(date, { hours: DEFAULT_RANGE_END_HOUR, minutes: 0, seconds: 0, milliseconds: 0 });
 
     return {
         id: generateBookingRangeID(start, end),
@@ -205,8 +207,8 @@ const createTodayBookingRange = (date: Date, timezone: string, today: Date) => {
 };
 
 const createBookingRange = (date: Date, timezone: string) => {
-    const start = set(date, { hours: DEFAULT_RANGE_START_HOUR });
-    const end = set(date, { hours: DEFAULT_RANGE_END_HOUR });
+    const start = set(date, { hours: DEFAULT_RANGE_START_HOUR, minutes: 0, seconds: 0, milliseconds: 0 });
+    const end = set(date, { hours: DEFAULT_RANGE_END_HOUR, minutes: 0, seconds: 0, milliseconds: 0 });
 
     return {
         id: generateBookingRangeID(start, end),
@@ -314,4 +316,15 @@ export const validateBookingRange = ({
     }
 
     return null;
+};
+
+export const roundToNextHalfHour = (date: Date): Date => {
+    const minutes = date.getMinutes();
+
+    const normalized = set(date, {
+        seconds: 0,
+        milliseconds: 0,
+    });
+
+    return minutes < 30 ? setMinutes(normalized, 30) : addHours(setMinutes(normalized, 0), 1);
 };
