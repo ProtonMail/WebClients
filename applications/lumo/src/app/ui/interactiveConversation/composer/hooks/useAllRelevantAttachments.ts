@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useLumoSelector } from '../../../../redux/hooks';
-import { selectAttachmentsBySpaceId } from '../../../../redux/selectors';
+import { selectAttachmentsBySpaceId, selectAssetsBySpaceId } from '../../../../redux/selectors';
 import type { Attachment, Message, SpaceId } from '../../../../types';
 
 // Custom hook to get all attachments relevant for context calculations
@@ -19,6 +19,14 @@ export const useAllRelevantAttachments = (
     );
     const spaceAttachmentsList = useMemo(() => Object.values(spaceAttachments), [spaceAttachments]);
 
+    // Get space-level assets (project files stored as assets)
+    const spaceAssets = useLumoSelector((state) =>
+        spaceId ? selectAssetsBySpaceId(spaceId)(state) : {}
+    );
+    const spaceAssetsList = useMemo(() => 
+        Object.values(spaceAssets).filter((asset) => !asset.deleted && !asset.error && !asset.processing)
+    , [spaceAssets]);
+
     // Get all attachment IDs from the message chain
     const messageAttachmentIds = useMemo(() => {
         if (!messageChain || messageChain.length === 0) return [];
@@ -31,10 +39,11 @@ export const useAllRelevantAttachments = (
         return messageAttachmentIds.map((id) => allAttachments[id]).filter(Boolean) as Attachment[];
     }, [messageAttachmentIds, allAttachments]);
 
-    // Combine all attachments: space attachments + provisional + message attachments
+    // Combine all attachments: space assets + space attachments + provisional + message attachments
     // Filter out duplicates (space attachments and provisional attachments take precedence)
     const combinedAttachments = useMemo(() => {
         const allSources = [
+            ...spaceAssetsList,
             ...spaceAttachmentsList,
             ...(provisionalAttachments || []),
             ...(messageAttachments || []),
@@ -52,7 +61,7 @@ export const useAllRelevantAttachments = (
         }
 
         return unique;
-    }, [spaceAttachmentsList, provisionalAttachments, messageAttachments]);
+    }, [spaceAssetsList, spaceAttachmentsList, provisionalAttachments, messageAttachments]);
 
     return combinedAttachments;
 };
