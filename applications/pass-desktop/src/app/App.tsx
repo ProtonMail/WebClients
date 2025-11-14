@@ -134,19 +134,19 @@ export const App = () => {
             <InlineIcons /> {/* Remove when enabling SRI in desktop */}
             <ErrorBoundary component={<StandardErrorPage big />}>
                 <NotificationsProvider>
-                    <ContextMenuProvider>
-                        <ModalsProvider>
-                            <PassExtensionLink>
-                                <ConnectivityProvider
-                                    subscribe={api.subscribe}
-                                    onPing={() => api({ ...ping(), unauthenticated: true })}
-                                >
-                                    <Router history={history}>
-                                        <NavigationProvider>
-                                            <AuthStoreProvider store={authStore}>
-                                                <AuthSwitchProvider>
-                                                    <AuthServiceProvider>
-                                                        <StoreProvider>
+                    <ModalsProvider>
+                        <PassExtensionLink>
+                            <ConnectivityProvider
+                                subscribe={api.subscribe}
+                                onPing={() => api({ ...ping(), unauthenticated: true })}
+                            >
+                                <Router history={history}>
+                                    <NavigationProvider>
+                                        <AuthStoreProvider store={authStore}>
+                                            <AuthSwitchProvider>
+                                                <AuthServiceProvider>
+                                                    <StoreProvider>
+                                                        <ContextMenuProvider>
                                                             <Localized>
                                                                 <ClipboardProvider>
                                                                     {showWelcome ? <WelcomeScreen /> : <AppGuard />}
@@ -156,16 +156,16 @@ export const App = () => {
                                                                 <ModalsChildren />
                                                                 <NotificationsChildren />
                                                             </Portal>
-                                                        </StoreProvider>
-                                                    </AuthServiceProvider>
-                                                </AuthSwitchProvider>
-                                            </AuthStoreProvider>
-                                        </NavigationProvider>
-                                    </Router>
-                                </ConnectivityProvider>
-                            </PassExtensionLink>
-                        </ModalsProvider>
-                    </ContextMenuProvider>
+                                                        </ContextMenuProvider>
+                                                    </StoreProvider>
+                                                </AuthServiceProvider>
+                                            </AuthSwitchProvider>
+                                        </AuthStoreProvider>
+                                    </NavigationProvider>
+                                </Router>
+                            </ConnectivityProvider>
+                        </PassExtensionLink>
+                    </ModalsProvider>
                 </NotificationsProvider>
             </ErrorBoundary>
         </PassCoreProvider>
