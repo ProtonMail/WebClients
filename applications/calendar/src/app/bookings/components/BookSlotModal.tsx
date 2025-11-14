@@ -17,9 +17,9 @@ import {
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
+import { emailValidator, maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { emailValidator, maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { BookingTimeslot } from '../booking.store';
 import { useExternalBookingActions } from '../useExternalBookingActions';
 
@@ -67,7 +67,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
         <ModalTwo as={Form} onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e))} {...rest}>
             <ModalTwoHeader
                 title={c('Form').t`Confirm your booking`}
-                titleClassName="text-4xl text-normal booking-color-title"
+                titleClassName="text-4xl text-normal booking-color-title font-arizona"
                 subline={subtitle}
                 sublineClassName="mt-2"
                 hasClose
