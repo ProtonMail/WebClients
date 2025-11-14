@@ -1,6 +1,5 @@
 import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import {
-    type SessionPayloadData,
     createAuthentication,
     createHistory,
     createUnleash,
@@ -37,7 +36,7 @@ export const bookingGuestBootstrap = async (): Promise<BookingGuestBootstrapResu
     initSafariFontFixClassnames();
 
     const pathname = window.location.pathname;
-    const sessionResult = { basename: undefined, url: undefined } as SessionPayloadData;
+    const sessionResult = { basename: undefined, url: undefined };
     const history = createHistory({ sessionResult, pathname });
 
     const unauthenticatedApi = createUnauthenticatedApi(api);
