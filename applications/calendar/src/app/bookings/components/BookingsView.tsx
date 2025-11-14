@@ -33,7 +33,7 @@ export const BookingsView = () => {
     const [bookSlotModalProps, setBookSlotModalOpen, renderBookModal] = useModalState();
 
     const handleGoToNextAvailableAppointment = () => {
-        const firstAvailableDate = startOfDay(bookingSlots[0].startTime) || null;
+        const firstAvailableDate = startOfDay(bookingSlots[0].tzDate) || null;
 
         if (firstAvailableDate) {
             setSelectedDate(firstAvailableDate);
