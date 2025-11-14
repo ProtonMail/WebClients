@@ -16,6 +16,7 @@ import type {
   DataValidationRuleRecord,
   SheetRange,
   CellFormat,
+  Collaborator,
 } from '@rowsncolumns/spreadsheet'
 import { defaultSpreadsheetTheme, useSpreadsheet } from '@rowsncolumns/spreadsheet'
 import { useCharts } from '@rowsncolumns/charts'
@@ -32,6 +33,7 @@ import { c } from 'ttag'
 import { LoadedFontFamilies, loadFont } from './font-state'
 import debounce from '@proton/utils/debounce'
 import { useApplication } from '../ApplicationProvider'
+import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentColorForUsername'
 
 // local state
 // -----------
@@ -260,7 +262,19 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
     }
   }, [application.logger, yDoc])
 
-  return { ...yjsState, userName }
+  const usersWithCorrectColor = useMemo(() => {
+    return yjsState.users.map(
+      (user): Collaborator => ({
+        ...user,
+        style: {
+          strokeWidth: 2,
+          stroke: getAccentColorForUsername(user.title),
+        },
+      }),
+    )
+  }, [yjsState.users])
+
+  return { ...yjsState, userName, users: usersWithCorrectColor }
 }
 
 // proton sheets state
