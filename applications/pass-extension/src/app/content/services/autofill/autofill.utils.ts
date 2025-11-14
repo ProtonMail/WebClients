@@ -5,6 +5,7 @@ import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 export type AutofillOptions = {
@@ -21,6 +22,19 @@ const dispatchEvents =
     async (events: Event[]): Promise<void> => {
         await seq(events, async (event) => el.dispatchEvent(event)).catch(noop);
     };
+
+/** Waits for blur completion to ensure predictable event ordering across
+ * multi-field autofill sequences and prevent browser event throttling.
+ * Helps with refocusing behaviour on autofill sequence completion. */
+const ensureBlurred = async (el: HTMLElement): Promise<void> => {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    return Promise.race([
+        new Promise<void>((res) => el.addEventListener('blur', () => res(), { once: true, signal })),
+        wait(250),
+    ]).finally(() => controller.abort());
+};
 
 /* Autofilling is based on chromium's autofill service
  * strategy - references can be found here :
@@ -62,8 +76,12 @@ const autofillInputElement = async (input: HTMLInputElement, data: string, optio
         await dispatch([new Event('input', { bubbles: true }), new Event('change', { bubbles: true })]);
     }
 
+    const release = ensureBlurred(input);
+
     if (isActiveElement(input)) input.blur();
     else await dispatch([new FocusEvent('focusout'), new FocusEvent('blur')]);
+
+    await release;
 };
 
 const autofillSelectElement = async (select: HTMLSelectElement, data: string) => {
@@ -82,8 +100,12 @@ const autofillSelectElement = async (select: HTMLSelectElement, data: string) =>
         select.value = match.value;
         await dispatch([new Event('change', { bubbles: true })]);
 
+        const release = ensureBlurred(select);
+
         if (isActiveElement(select)) select.blur();
         else await dispatch([new FocusEvent('focusout'), new FocusEvent('blur')]);
+
+        await release;
     }
 };
 
