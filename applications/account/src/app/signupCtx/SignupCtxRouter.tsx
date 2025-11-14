@@ -2,11 +2,13 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { PaymentsContextOptimisticProvider } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash';
 
 import { cachedPlans } from '../defaultPlans';
 import type { BaseSignupContextProps } from './context/SignupContext';
 import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
+import FirstEmailReservationFlowSignup from './flows/firstEmailReservation/FirstEmailReservationFlow';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';
 import PassSignup from './flows/pass/PassSignup';
 import ReferralSignup from './flows/referral/ReferralSignup';
@@ -26,6 +28,14 @@ const PassSignupController = (props: BaseSignupContextProps) => (
     <Switch>
         <Route>
             <PassSignup {...props} />
+        </Route>
+    </Switch>
+);
+
+const FirstEmailReservationController = (props: BaseSignupContextProps) => (
+    <Switch>
+        <Route>
+            <FirstEmailReservationFlowSignup {...props} />
         </Route>
     </Switch>
 );
@@ -54,6 +64,8 @@ const GenericSignupController = (props: BaseSignupContextProps) => {
 };
 
 const SignupCtxRouter = (props: BaseSignupContextProps) => {
+    const firstEmailEnabled = useFlag('FirstEmail');
+
     return (
         <PaymentsContextOptimisticProvider preload={false} authenticated={false} cachedPlans={cachedPlans}>
             <Switch>
@@ -66,6 +78,11 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 <Route path={SSO_PATHS.PASS_SIGNUP}>
                     <PassSignupController {...props} />
                 </Route>
+                {firstEmailEnabled && (
+                    <Route path={SSO_PATHS.FIRST_EMAIL}>
+                        <FirstEmailReservationController {...props} />
+                    </Route>
+                )}
                 <Route>
                     <GenericSignupController {...props} />
                 </Route>

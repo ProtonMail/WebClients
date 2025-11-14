@@ -96,6 +96,7 @@ enum AccountFlag {
     MailDashboard = 'MailDashboard',
     PassDashboard = 'PassDashboard',
     DriveDashboard = 'DriveDashboard',
+    FirstEmail = 'FirstEmail',
 }
 
 enum PaymentsFlag {
