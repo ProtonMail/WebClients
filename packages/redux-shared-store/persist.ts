@@ -17,6 +17,9 @@ export const getPersistedState = <T extends object, K extends keyof T>(
             if (key === 'fetchedEphemeral') {
                 return undefined;
             }
+            if (key === 'error') {
+                return undefined;
+            }
             return value;
         }
     );
