@@ -304,7 +304,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         }
     };
 
-    const handleHandsakeInfoFetch = async (token: string) => {
+    const handleHandshakeInfoFetch = async (token: string) => {
         try {
             const handshakeInfo = await initHandshake(token);
 
@@ -353,14 +353,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         setDisplayName(displayName);
 
         try {
-            try {
-                await getParticipants(meetingToken);
-            } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error(error);
-            } finally {
-                setInitialisedParticipantNameMap(true);
-            }
+            await getParticipants(meetingToken);
+            setInitialisedParticipantNameMap(true);
 
             const sanitizedParticipantName = sanitizeMessage(displayName);
 
@@ -424,11 +418,6 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 await handleMeetingIsLockedError();
                 return;
             }
-
-            createNotification({
-                type: 'error',
-                text: error.message ?? c('Error').t`Failed to join meeting. Please try again later`,
-            });
         }
     };
 
@@ -450,7 +439,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 isGuest: guestMode,
             });
 
-            const handshakeResult = await handleHandsakeInfoFetch(id);
+            const handshakeResult = await handleHandshakeInfoFetch(id);
 
             if (!handshakeResult) {
                 setJoiningInProgress(false);
@@ -546,7 +535,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             return;
         }
 
-        await handleHandsakeInfoFetch(token);
+        await handleHandshakeInfoFetch(token);
     };
 
     useEffect(() => {
