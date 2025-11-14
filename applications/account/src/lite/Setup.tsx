@@ -22,7 +22,6 @@ import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
@@ -42,19 +41,6 @@ import { extendStore } from '../app/store/store';
 import { extraThunkArguments } from '../app/store/thunk';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
-
-const checkDomain = (hostname: string, domain: string) => {
-    return hostname === domain || hostname.endsWith(`.${domain}`);
-};
-
-const getFallbackUrl = (maybeUrl?: string) => {
-    try {
-        const url = new URL(maybeUrl || '');
-        if (checkDomain(url.hostname, 'protonvpn.com') || checkDomain(url.hostname, 'proton.me')) {
-            return url.toString();
-        }
-    } catch (e) {}
-};
 
 interface Props {
     onLogin: (UID: string) => void;
@@ -169,14 +155,7 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
             });
         };
 
-        const fallbackUrl = getFallbackUrl(searchParams.get('fallback_url') || '');
-
         const handleSetupError = (error: any) => {
-            if (fallbackUrl) {
-                replaceUrl(fallbackUrl);
-                return;
-            }
-
             broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
 
             const { code } = getApiError(error);
@@ -226,12 +205,6 @@ const Setup = ({ api, onLogin, UID, children, loader }: Props) => {
                 setupApp(persistedSession.UID).catch(handleSetupError);
                 return;
             }
-        }
-
-        // Old clients not supporting auto-sign in receive upgrade notifications to the lite app.
-        if (fallbackUrl) {
-            replaceUrl(fallbackUrl);
-            return;
         }
 
         setError({
