@@ -207,8 +207,8 @@ const createTodayBookingRange = (date: Date, timezone: string, today: Date) => {
 };
 
 const createBookingRange = (date: Date, timezone: string) => {
-    const start = set(date, { hours: DEFAULT_RANGE_START_HOUR });
-    const end = set(date, { hours: DEFAULT_RANGE_END_HOUR });
+    const start = set(date, { hours: DEFAULT_RANGE_START_HOUR, minutes: 0, seconds: 0, milliseconds: 0 });
+    const end = set(date, { hours: DEFAULT_RANGE_END_HOUR, minutes: 0, seconds: 0, milliseconds: 0 });
 
     return {
         id: generateBookingRangeID(start, end),
