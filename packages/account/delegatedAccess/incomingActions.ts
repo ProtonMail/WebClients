@@ -13,15 +13,15 @@ import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
-import { isSelf } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
 import { getKTUserContext } from '../kt/actions';
 import { userThunk } from '../user';
+import { getIsIncomingDelegatedAccessAvailable } from './available';
 import { getDecryptedDelegatedAccessToken } from './crypto';
 import { type DelegatedAccessState, delegatedAccessActions, selectIncomingDelegatedAccess } from './index';
 import type { IncomingDelegatedAccessOutput } from './interface';
@@ -30,8 +30,6 @@ const queryListIncomingDelegatedAccess = () => ({
     url: `account/v1/access/incoming`,
     method: 'get',
 });
-
-const canFetch = (user: User) => isSelf(user);
 
 const promiseStore = createPromiseStore<IncomingDelegatedAccessOutput[]>();
 
@@ -51,7 +49,7 @@ export const listIncomingDelegatedAccess = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!canFetch(user)) {
+            if (!getIsIncomingDelegatedAccessAvailable(user)) {
                 return [];
             }
             const result = await extraArgument.api<{
@@ -91,7 +89,7 @@ export const incomingEventLoopV6Thunk = ({
 }): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const user = await dispatch(userThunk());
-        if (!canFetch(user)) {
+        if (!getIsIncomingDelegatedAccessAvailable(user)) {
             return;
         }
         await updateCollectionAsyncV6({
