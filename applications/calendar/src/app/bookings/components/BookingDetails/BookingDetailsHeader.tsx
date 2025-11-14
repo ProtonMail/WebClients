@@ -35,8 +35,10 @@ export const BookingDetailsHeader = ({ gridSize }: Props) => {
     return (
         <>
             <div className="flex flex-row justify-space-between w-full mb-4 items-center">
-                <h2 className="text-4xl mt-0 mb-2 mr-4 booking-color-title" id="booking-main-header-title">{c('Title')
-                    .t`Choose a time`}</h2>
+                <h2
+                    className="text-4xl mt-0 mb-2 mr-4 booking-color-title font-arizona"
+                    id="booking-main-header-title"
+                >{c('Title').t`Choose a time`}</h2>
 
                 <TimeZoneSelector
                     data-testid="calendar-view:time-zone-dropdown"
