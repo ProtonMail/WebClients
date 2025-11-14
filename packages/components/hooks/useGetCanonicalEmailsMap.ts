@@ -5,11 +5,11 @@ import { API_CODES, GET_CANONICAL_EMAILS_API_LIMIT } from '@proton/shared/lib/co
 import type { GetCanonicalAddressesApiResponse } from '@proton/shared/lib/interfaces/calendar';
 import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { getIsRecordInvalid, getPromiseValue } from '@proton/shared/lib/models/cache';
 import chunk from '@proton/utils/chunk';
 
 import useApi from './useApi';
 import useCache from './useCache';
-import { getIsRecordInvalid, getPromiseValue } from './useCachedModelResult';
 
 const CACHE_KEY = 'CANONICAL_EMAILS';
 

@@ -1,4 +1,4 @@
-import type { AddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
+import type { AddressKeysByUsage } from '@proton/account/addressKeys/getAddressKeysByUsage';
 
 import type { Attachment, Message } from '../../interfaces/mail/Message';
 import type { AttachmentDirect, PackageDirect, SendPreferences } from '../../interfaces/mail/crypto';

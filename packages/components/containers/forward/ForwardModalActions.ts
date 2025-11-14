@@ -5,8 +5,9 @@ import { type AddressKeysState, addressKeysThunk } from '@proton/account/address
 import { addressesThunk } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
 import { getKTActivation } from '@proton/account/kt/actions';
+import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
 import { userThunk } from '@proton/account/user';
-import { userKeysThunk } from '@proton/account/userKeys';
+import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
 import { CryptoProxy, type PublicKeyReference } from '@proton/crypto';
 import { createKTVerifier } from '@proton/key-transparency/lib';
 import type { ForwardModalKeyState } from '@proton/mail/store/forwarding/outgoingForwardingActions';
@@ -14,7 +15,6 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
-import type { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
 import {
     getActiveAddressKeys,
     getEmailFromKey,
@@ -32,24 +32,22 @@ export const initForwardingSetup = ({
     // stale since it's getting modified by these actions and is called in succession
     forwarderAddressID,
     email,
-    getPublicKeysForInbox,
 }: {
     forwarderAddressID: string;
     email: string;
-    getPublicKeysForInbox: GetPublicKeysForInbox;
 }): ThunkAction<
     Promise<{
         keyState: ForwardModalKeyState;
         modelState: Pick<ForwardModalState, 'isExternal' | 'isInternal' | 'forwardeeEmail'>;
     }>,
-    AddressKeysState,
+    KtState & AddressKeysState & UserKeysState,
     ProtonThunkArguments,
     UnknownAction
 > => {
     return async (dispatch) => {
         const [forwarderAddressKeys, forwardeeKeysConfig] = await Promise.all([
             dispatch(addressKeysThunk({ addressID: forwarderAddressID })),
-            getPublicKeysForInbox({ email, lifetime: 0 }),
+            dispatch(getPublicKeysForInboxThunk({ email, lifetime: 0 })),
         ]);
 
         // Abort the setup if e.g. the given address is internal but does not exist

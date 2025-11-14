@@ -6,12 +6,12 @@ import { GET_VTIMEZONES_API_LIMIT } from '@proton/shared/lib/constants';
 import type { VcalVtimezoneComponent } from '@proton/shared/lib/interfaces/calendar';
 import type { GetVTimezonesMap, VTimezoneObject } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { getIsRecordInvalid, getPromiseValue } from '@proton/shared/lib/models/cache';
 import chunk from '@proton/utils/chunk';
 import unique from '@proton/utils/unique';
 
 import useApi from './useApi';
 import useCache from './useCache';
-import { getIsRecordInvalid, getPromiseValue } from './useCachedModelResult';
 
 const CACHE_KEY = 'VTIMEZONES';
 

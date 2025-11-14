@@ -5,8 +5,6 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
-import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     deleteForwarding,
@@ -49,8 +47,6 @@ const OutgoingForwardActions = ({
     const reActivateE2EE = pointToProton && isLastOutgoingNonE2EEForwarding;
 
     const dispatch = useDispatch();
-    const getPublicKeysForInbox = useGetPublicKeysForInbox();
-    const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
     const [forwardModal, showForwardModal] = useModalTwoStatic(ForwardModal);
@@ -89,26 +85,7 @@ const OutgoingForwardActions = ({
                 text: c('email_forwarding_2023: Action').t`Request confirmation`,
                 onClick: async () => {
                     try {
-                        const [forwarderAddressKeysByUsage, forwardeePublicKeys] = await Promise.all([
-                            getAddressKeysByUsage({
-                                AddressID: existingForwardingConfig.ForwarderAddressID,
-                                // a primary v4 is expected here, but as sanity check
-                                // we want the v6 key to be returned is present, so that
-                                // the forwarding key generation will fail already client-side,
-                                // instead of on the BE
-                                withV6SupportForEncryption: true,
-                                withV6SupportForSigning: false, // irrelevant: signing keys are not used
-                            }),
-                            getPublicKeysForInbox({ email: existingForwardingConfig.ForwardeeEmail, lifetime: 0 }),
-                        ]);
-                        const forwardeePrimaryPublicKey = forwardeePublicKeys.publicKeys[0].publicKey;
-                        await dispatch(
-                            requestConfirmation({
-                                forward: existingForwardingConfig,
-                                encryptionKey: forwarderAddressKeysByUsage.encryptionKey,
-                                forwardeePrimaryPublicKey,
-                            })
-                        );
+                        await dispatch(requestConfirmation({ forward: existingForwardingConfig }));
                         createNotification({ text: sentSuccessMessage });
                     } catch (e) {
                         handleError(e);
