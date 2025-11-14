@@ -81,8 +81,8 @@ export const BookingSuccess = () => {
                         .t`You’ll get a secure email with the details shortly.`}</p>
                 </div>
                 <hr className="bg-weak mb-6" />
-                <div className="flex *:min-size-auto flex-column flex-nowrap sm:flex-row gap-4 items-start">
-                    <div className="flex-1 flex flex-column flex-nowrap gap-4">
+                <div className="sm:flex flex-nowrap sm:flex-row gap-4 items-start">
+                    <div className="flex-1 flex flex-column flex-nowrap gap-4 max-w-full">
                         <BookingSuccessItem
                             title={c('Title').t`Host`}
                             icon={<IcUserCircle size={6} />}
