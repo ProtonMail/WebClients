@@ -76,17 +76,16 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
                 channel: options.controller.channel,
                 onDetection: async (forms) => {
                     /* attach or detach dropdown based on the detection results */
-                    const didDetect = forms.length > 0;
-                    if (!didDetect) context.service.inline.dropdown.destroy();
+                    if (forms.length === 0) context.service.inline.dropdown.destroy();
                     else {
                         context.service.inline.dropdown.attach();
                         await context.service.autofill.sync().catch(noop);
-
-                        /** Always prompt for OTP autofill before autosave to support
-                         * OTP -> autosave sequence on SPA websites */
-                        const promptedOTP = await context.service.autofill.evaluateOTP(forms);
-                        await (!promptedOTP && context.service.autosave.reconciliate());
                     }
+
+                    /** Always prompt for OTP autofill before autosave to support
+                     * OTP -> autosave sequence on SPA websites */
+                    const promptedOTP = await context.service.autofill.evaluateOTP(forms);
+                    await (!promptedOTP && context.service.autosave.reconciliate());
                 },
             }),
 
