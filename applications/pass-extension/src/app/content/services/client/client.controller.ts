@@ -156,9 +156,9 @@ export const createClientController = ({
                 logger.debug(`[ClientController::${scriptId}] Deferring sub-frame initialization`);
 
                 observer.subscribe(
-                    (reason) => {
-                        if (!controller.instance) {
-                            logger.debug(`[ClientController::${scriptId}] Starting sub-frame client (${reason})`);
+                    (evt) => {
+                        if (!controller.instance && evt.type === 'mutation') {
+                            logger.debug(`[ClientController::${scriptId}] Starting sub-frame client (${evt.reason})`);
                             startImmediate();
                         }
                     },

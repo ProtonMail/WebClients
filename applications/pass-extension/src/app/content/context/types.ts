@@ -1,6 +1,7 @@
 import type { AutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill.service';
 import type { AutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.abstract';
 import type { FrameMessageBroker } from 'proton-pass-extension/app/content/services/client/client.channel';
+import type { ClientObserver } from 'proton-pass-extension/app/content/services/client/client.observer';
 import type { DetectorService } from 'proton-pass-extension/app/content/services/detector/detector.service';
 import type { FormManager } from 'proton-pass-extension/app/content/services/form/form.manager';
 import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
@@ -31,6 +32,7 @@ export interface ContentScriptContext {
     /** Custom elements configuration */
     elements: PassElementsConfig;
     channel: FrameMessageBroker;
+    observer: ClientObserver;
 
     service: {
         autofill: AutofillService;

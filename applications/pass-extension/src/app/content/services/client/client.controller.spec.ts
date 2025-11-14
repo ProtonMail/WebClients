@@ -195,7 +195,7 @@ describe('Client controller', () => {
             expect(mockObserver.subscribe).toHaveBeenCalled();
 
             const subscribeCallback = mockObserver.subscribe.mock.calls[0][0];
-            subscribeCallback('test-trigger');
+            subscribeCallback({ type: 'mutation', reason: 'test-trigger' });
 
             expect(mockClientFactory).toHaveBeenCalled();
             expect(mockClient.start).toHaveBeenCalled();

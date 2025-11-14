@@ -144,7 +144,9 @@ export const createContentScriptClient = ({
 
                 /** Start the page observer and hook up any effects
                  * to the formManager detection triggers */
-                controller.observer.subscribe((reason) => context.service.formManager.detect({ reason }));
+                controller.observer.subscribe(
+                    (evt) => evt.type === 'mutation' && context.service.formManager.detect({ reason: evt.reason })
+                );
             }
         } catch (err) {
             context.destroy({ reason: 'startup failure' });

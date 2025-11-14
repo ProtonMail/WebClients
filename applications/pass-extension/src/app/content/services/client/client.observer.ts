@@ -48,11 +48,13 @@ const getObserverConfig = (attributeFilter: string[]): MutationObserverInit => (
 export type ClientObserver = {
     observe: () => void;
     destroy: () => void;
-    subscribe: (fn: Subscriber<string>, options?: { once?: true }) => () => void;
+    subscribe: (fn: Subscriber<ClientObserverEvent>, options?: { once?: true }) => () => void;
 };
 
+export type ClientObserverEvent = { type: 'mutation'; reason: string } | { type: 'event'; event: Event };
+
 export const createClientObserver = (): ClientObserver => {
-    const pubsub = createPubSub<string>();
+    const pubsub = createPubSub<ClientObserverEvent>();
     const listeners = createListenerStore();
     const state: PageObserverState = {
         idle: true,
@@ -137,7 +139,7 @@ export const createClientObserver = (): ClientObserver => {
             return false;
         });
 
-        if (triggerFormChange) void pubsub.publish('DomMutation');
+        if (triggerFormChange) void pubsub.publish({ type: 'mutation', reason: 'DomMutation' });
     };
 
     /** Detect forms after DOM transitions:
@@ -167,7 +169,7 @@ export const createClientObserver = (): ClientObserver => {
                     return false;
                 })();
 
-                if (trigger) pubsub.publish('TransitionEnd');
+                if (trigger) pubsub.publish({ type: 'mutation', reason: 'TransitionEnd' });
             });
         },
         /** Filter targets to relevant elements before subtree check */
@@ -196,7 +198,7 @@ export const createClientObserver = (): ClientObserver => {
 
             if (trigger) {
                 onNewField(target); /** Form may have been flagged as hidden */
-                void pubsub.publish('FocusIn');
+                void pubsub.publish({ type: 'mutation', reason: 'FocusIn' });
             }
         }
     };
@@ -209,6 +211,11 @@ export const createClientObserver = (): ClientObserver => {
             listeners.addListener(document.body, 'transitionend', onTransitionEnd);
             listeners.addListener(document.body, 'animationend', onTransitionEnd);
             listeners.addListener(document.body, 'focusin', onFocusIn);
+
+            /** Setup global listeners that may be re-used */
+            listeners.addListener(window, 'focus', (event) => pubsub.publish({ type: 'event', event }));
+            listeners.addListener(window, 'blur', (event) => pubsub.publish({ type: 'event', event }));
+
             TopLayerManager.connect();
         }
     };
