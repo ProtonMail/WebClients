@@ -26,6 +26,7 @@ import {
     DRIVE_APP_NAME,
     LUMO_APP_NAME,
     MAIL_APP_NAME,
+    MEET_APP_NAME,
     PASS_APP_NAME,
     VPN_APP_NAME,
     WALLET_APP_NAME,
@@ -156,6 +157,7 @@ const AccessControlSettingsSection = () => {
     const [organization] = useOrganization();
 
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
+    const isMeetAvailable = useFlag('PMVC2025');
 
     return (
         <SettingsSectionWide>
@@ -234,6 +236,16 @@ const AccessControlSettingsSection = () => {
                     targetProducts={[Product.Wallet]}
                     showSSOBadge={!appSupportsSSO(APPS.PROTONWALLET) && hasSsoConfig}
                 />
+
+                {isMeetAvailable && (
+                    <AccessControlItem
+                        title={MEET_APP_NAME}
+                        description={c('Info').t`Secure, end-to-end encrypted video conferencing`}
+                        logo={<Logo appName={APPS.PROTONMEET} variant="glyph-only" size={8} />}
+                        targetProducts={[Product.Meet]}
+                        showSSOBadge={!appSupportsSSO(APPS.PROTONMEET) && hasSsoConfig}
+                    />
+                )}
             </SettingsSection>
         </SettingsSectionWide>
     );
