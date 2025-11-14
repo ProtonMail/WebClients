@@ -655,6 +655,7 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                                                     SSO_PATHS.LUMO_SIGNUP_B2B,
                                                     SSO_PATHS.PORKBUN_SIGNUP,
                                                     SSO_PATHS.PORKBUN_SIGN_IN,
+                                                    SSO_PATHS.FIRST_EMAIL,
                                                 ]}
                                             >
                                                 <SingleSignupSwitchContainer
