@@ -194,6 +194,15 @@ export function sendMessage({
                 personalizationPrompt = getPersonalizationPromptFromState(personalization);
             }
 
+            // Get project instructions from space if this is a project conversation
+            let projectInstructions: string | undefined;
+            if (spaceId) {
+                const space = state.spaces[spaceId];
+                if (space?.isProject && space?.projectInstructions) {
+                    projectInstructions = space.projectInstructions;
+                }
+            }
+
             await fetchAssistantResponse({
                 api,
                 dispatch,
@@ -206,6 +215,7 @@ export function sendMessage({
                 requestTitle: shouldRequestTitle,
                 contextFilters,
                 personalizationPrompt,
+                projectInstructions,
             });
         } catch (error) {
             console.warn('error: ', error);
@@ -253,7 +263,14 @@ export function regenerateMessage(
                 personalizationPrompt = getPersonalizationPromptFromState(personalization);
             }
             
-            const turns = getFilteredTurns(messagesWithContext, contextFilters, personalizationPrompt);
+            // Get project instructions from space if this is a project conversation
+            let projectInstructions: string | undefined;
+            const space = state.spaces[spaceId];
+            if (space?.isProject && space?.projectInstructions) {
+                projectInstructions = space.projectInstructions;
+            }
+            
+            const turns = getFilteredTurns(messagesWithContext, contextFilters, personalizationPrompt, projectInstructions);
 
             // Add retry instructions if provided
             if (retryInstructions) {
@@ -297,6 +314,7 @@ export async function retrySendMessage({
     enableExternalTools,
     contextFilters = [],
     personalizationPrompt,
+    projectInstructions,
 }: {
     api: Api;
     dispatch: AppDispatch;
@@ -308,6 +326,7 @@ export async function retrySendMessage({
     enableExternalTools: boolean;
     contextFilters?: any[];
     personalizationPrompt?: string;
+    projectInstructions?: string;
 }) {
     const [, date2] = createDatePair();
 
@@ -350,6 +369,7 @@ export async function retrySendMessage({
             requestTitle: messageChain.length === 1, // only request title if retrying first message
             contextFilters,
             personalizationPrompt,
+            projectInstructions,
         });
     } catch (error) {
         console.warn('retry error: ', error);
@@ -459,6 +479,7 @@ export async function fetchAssistantResponse({
     requestTitle = false,
     contextFilters = [],
     personalizationPrompt,
+    projectInstructions,
 }: {
     api: Api;
     dispatch: AppDispatch;
@@ -471,9 +492,10 @@ export async function fetchAssistantResponse({
     requestTitle?: boolean;
     contextFilters?: any[];
     personalizationPrompt?: string;
+    projectInstructions?: string;
 }) {
 
-    const turns = getFilteredTurns(linearChain, contextFilters, personalizationPrompt);
+    const turns = getFilteredTurns(linearChain, contextFilters, personalizationPrompt, projectInstructions);
     await dispatch(
         sendMessageWithRedux(api, turns, {
             messageId: assistantMessageId,
