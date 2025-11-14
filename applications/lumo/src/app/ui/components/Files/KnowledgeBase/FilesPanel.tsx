@@ -385,7 +385,7 @@ export const FilesPanel = ({
                                 </div>
                             )}
 
-                            {/* Next Question Knowledge - only show if there are non-project files */}
+                            {/* Conversation Attachments - only show if there are non-project files */}
                             {(currentAttachments.length > 0 || activeHistoricalFiles.length > 0) && (
                                 <div className="mb-3 w-full p-4 active-files-area">
                                     <h3 className="text-sm text-bold mb-3 flex items-center gap-2">

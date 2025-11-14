@@ -182,6 +182,8 @@ export type ListSpacesRemote = {
     conversations: Record<ConversationId, RemoteConversation>;
     deletedSpaces: Record<SpaceId, RemoteDeletedSpace>;
     deletedConversations: Record<ConversationId, RemoteDeletedConversation>;
+    assets: Record<AssetId, RemoteAsset>;
+    deletedAssets: Record<AssetId, RemoteDeletedAsset>;
 };
 
 export type GetConversationRemote = {

@@ -12,12 +12,14 @@ export const EMPTY_ID_MAP = {
         conversation: {},
         message: {},
         attachment: {},
-    } satisfies Record<ResourceType, Record<RemoteId, LocalId>>,
+        asset: {},
+    } satisfies Record<ResourceType, Record<LocalId, RemoteId>>,
     remote2local: {
         space: {},
         conversation: {},
         message: {},
         attachment: {},
+        asset: {},
     } satisfies Record<ResourceType, Record<RemoteId, LocalId>>,
 };
 
