@@ -59,6 +59,11 @@
             "groupName": "quark packages",
             "enabled": false,
             "matchPackageNames": ["@tpe/quark-client", "@tpe/quark-types", "@tpe/user-builder"]
+        },
+        {
+            "groupName": "ignore inbox-desktop snapcraft image",
+            "matchPackageNames": ["harbor.protontech.ch/ghcr.io/canonical/snapcraft"],
+            "enabled": false
         }
     ]
 }
