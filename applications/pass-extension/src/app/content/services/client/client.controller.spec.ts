@@ -3,10 +3,12 @@ import type {
     ContentScriptClient,
     ContentScriptClientFactoryOptions,
 } from 'proton-pass-extension/app/content/services/client/client';
+import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
 import { createClientObserver } from 'proton-pass-extension/app/content/services/client/client.observer';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { type ClientController, createClientController } from './client.controller';
@@ -16,7 +18,11 @@ const TEST_SCRIPT_ID = 'test-script-id';
 jest.mock('proton-pass-extension/app/content/services/client/client.observer');
 
 const mockCreatePageObserver = createClientObserver as jest.MockedFunction<typeof createClientObserver>;
-const mockObserver = { observe: jest.fn(), destroy: jest.fn(), subscribe: jest.fn() };
+const mockObserver = {
+    observe: jest.fn(),
+    destroy: jest.fn(),
+    subscribe: jest.fn((_: Subscriber<ClientObserverEvent>) => () => {}),
+};
 const mockClient = { context: {} as any, start: jest.fn(() => Promise.resolve()), destroy: jest.fn() };
 const mockClientFactory = jest.fn((_: ContentScriptClientFactoryOptions) => mockClient as ContentScriptClient);
 const elements = { root: 'pass-root-test', control: 'pass-control-test' };
@@ -183,7 +189,7 @@ describe('Client controller', () => {
             expect(mockClient.start).not.toHaveBeenCalled();
             expect(ctrl.deferred).toBe(true);
             expect(mockObserver.observe).toHaveBeenCalled();
-            expect(mockObserver.subscribe).toHaveBeenCalledWith(expect.any(Function), { once: true });
+            expect(mockObserver.subscribe).toHaveBeenCalledWith(expect.any(Function));
             ctrl.destroy();
         });
 
@@ -195,7 +201,7 @@ describe('Client controller', () => {
             expect(mockObserver.subscribe).toHaveBeenCalled();
 
             const subscribeCallback = mockObserver.subscribe.mock.calls[0][0];
-            subscribeCallback({ type: 'mutation', reason: 'test-trigger' });
+            await subscribeCallback({ type: 'mutation', reason: 'test-trigger' });
 
             expect(mockClientFactory).toHaveBeenCalled();
             expect(mockClient.start).toHaveBeenCalled();

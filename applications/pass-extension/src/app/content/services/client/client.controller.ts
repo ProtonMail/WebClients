@@ -102,7 +102,7 @@ export const createClientController = ({
 }: ClientControllerOptions): ClientController => {
     const probe = createActivityProbe();
     const listeners = createListenerStore();
-    const observer = createClientObserver();
+    const observer = createClientObserver(mainFrame);
     const transport = createFrameMessageBroker();
 
     const controller: ClientController = {
@@ -155,15 +155,20 @@ export const createClientController = ({
 
                 logger.debug(`[ClientController::${scriptId}] Deferring sub-frame initialization`);
 
-                observer.subscribe(
-                    (evt) => {
-                        if (!controller.instance && evt.type === 'mutation') {
-                            logger.debug(`[ClientController::${scriptId}] Starting sub-frame client (${evt.reason})`);
-                            startImmediate();
-                        }
-                    },
-                    { once: true }
-                );
+                const unsub = observer.subscribe(async (evt) => {
+                    if (controller.instance) return unsub();
+
+                    const shouldStart = await (async () => {
+                        if (evt.type === 'mutation') return true;
+                        if (evt.type === 'event' && evt.event.type === 'resize') return assertFrameVisible(mainFrame);
+                    })();
+
+                    if (shouldStart && !controller.instance) {
+                        logger.debug(`[ClientController::${scriptId}] Starting sub-frame client`);
+                        startImmediate();
+                        unsub();
+                    }
+                });
             }
         },
 
