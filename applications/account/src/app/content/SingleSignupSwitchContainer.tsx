@@ -56,7 +56,10 @@ const SingleSignupSwitchContainer = ({
 
     const isReferral = isReferralSignup(location);
 
-    const renderContextSignup = searchParams.get('mode') === 'ctx' || location.pathname === SSO_PATHS.START;
+    const renderContextSignup =
+        searchParams.get('mode') === 'ctx' ||
+        location.pathname === SSO_PATHS.START ||
+        location.pathname === SSO_PATHS.FIRST_EMAIL;
 
     if (renderContextSignup) {
         return (
