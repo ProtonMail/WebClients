@@ -327,6 +327,7 @@ const JoinMagicLinkContainer = ({
                 <SetPasswordWithPolicyForm
                     passwordPolicies={data?.organizationData.passwordPolicies ?? []}
                     onSubmit={handleSubmitPassword}
+                    type="create"
                 >
                     <InputFieldTwo
                         id="username"
