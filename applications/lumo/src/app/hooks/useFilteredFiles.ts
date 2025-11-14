@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import type { ContextFilter } from '../llm';
 import { useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
+import { selectAttachments, selectAttachmentsBySpaceId, selectAssetsBySpaceId, selectContextFilters } from '../redux/selectors';
 import type { Attachment, Message, SpaceId } from '../types';
 
 export const useFilteredFiles = (
@@ -15,16 +15,40 @@ export const useFilteredFiles = (
     const contextFilters = useLumoSelector(selectContextFilters);
     
     // Get space-level attachments (project files)
+    // These are attachments with spaceId that are NOT attached to any message in the conversation
     const spaceAttachments = useLumoSelector((state) =>
         spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}
     );
+    
+    // Get all attachment IDs that are referenced in messages (these are conversation attachments, not project files)
+    const messageAttachmentIds = useMemo(() => {
+        return new Set(messageChain.flatMap((message) => message.attachments?.map((att) => att.id) || []));
+    }, [messageChain]);
+    
     const spaceAttachmentsList = useMemo(() => {
-        return Object.values(spaceAttachments).map((attachment, index) => ({
-            ...attachment,
-            messageId: '', // Space attachments don't belong to a specific message
-            messageIndex: -1 - index, // Negative index to sort them before message files
-        }));
-    }, [spaceAttachments]);
+        // Filter out attachments that are attached to messages - those are conversation attachments, not project files
+        return Object.values(spaceAttachments)
+            .filter((attachment) => !messageAttachmentIds.has(attachment.id))
+            .map((attachment, index) => ({
+                ...attachment,
+                messageId: '', // Space attachments don't belong to a specific message
+                messageIndex: -1 - index, // Negative index to sort them before message files
+            }));
+    }, [spaceAttachments, messageAttachmentIds]);
+
+    // Get space-level assets (project files stored as assets)
+    const spaceAssets = useLumoSelector((state) =>
+        spaceId ? selectAssetsBySpaceId(spaceId)(state) : {}
+    );
+    const spaceAssetsList = useMemo(() => 
+        Object.values(spaceAssets)
+            .filter((asset) => !asset.deleted && !asset.error && !asset.processing)
+            .map((asset, index) => ({
+                ...asset,
+                messageId: '', // Space assets don't belong to a specific message
+                messageIndex: -2 - index, // Even more negative to sort assets before attachments
+            }))
+    , [spaceAssets]);
 
     // Helper to get full attachment from shallow attachment reference
     const getFullAttachmentFromShallow = (shallowAttachment: any) => {
@@ -51,12 +75,12 @@ export const useFilteredFiles = (
                         ) || []
             );
             
-            // Remove duplicates: if a space attachment is already in a message, don't show it twice
-            const spaceAttachmentIds = new Set(spaceAttachmentsList.map(a => a.id));
-            const uniqueMessageFiles = messageFiles.filter(file => !spaceAttachmentIds.has(file.id));
+            // Remove duplicates: if a space asset/attachment is already in a message, don't show it twice
+            const spaceFileIds = new Set([...spaceAssetsList.map(a => a.id), ...spaceAttachmentsList.map(a => a.id)]);
+            const uniqueMessageFiles = messageFiles.filter(file => !spaceFileIds.has(file.id));
             
-            // Include space-level attachments at the beginning, then unique message files
-            return [...spaceAttachmentsList, ...uniqueMessageFiles];
+            // Include space-level files (assets first, then attachments) at the beginning, then unique message files
+            return [...spaceAssetsList, ...spaceAttachmentsList, ...uniqueMessageFiles];
         }
 
         // For assistant messages with contextFiles, show exactly the files that were used for that response
@@ -138,10 +162,11 @@ export const useFilteredFiles = (
         return filterMessage ? allFiles : [...currentAttachments, ...activeHistoricalFiles];
     }, [filterMessage, allFiles, currentAttachments, activeHistoricalFiles]);
 
-    // Separate project files (space-level) from message files
+    // Separate project files (space-level assets and attachments) from message files
     const projectFiles = useMemo(() => {
-        return spaceAttachmentsList;
-    }, [spaceAttachmentsList]);
+        // Include both space assets and space attachments as project files
+        return [...spaceAssetsList, ...spaceAttachmentsList];
+    }, [spaceAssetsList, spaceAttachmentsList]);
 
     // Filter activeHistoricalFiles to exclude project files (they're shown separately)
     const messageOnlyActiveFiles = useMemo(() => {
