@@ -3,13 +3,24 @@ import type { ReactElement, ReactNode } from 'react';
 import { addMinutes, format } from 'date-fns';
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { DriveLogo, LumoLogo, MailLogo, PassLogo, ProtonLogo, VpnLogo } from '@proton/components';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
-import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    CALENDAR_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    LUMO_SHORT_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    MEET_APP_NAME,
+    PASS_SHORT_APP_NAME,
+    VPN_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -115,6 +126,55 @@ export const BookingSuccess = () => {
                         <BookingSuccessItem title={c('Title').t`Time`} icon={<IcClock />} data={timeData} />
                     </div>
                 </div>
+            </div>
+
+            <div className="mx-auto text-center max-w-custom p-8" style={{ '--max-w-custom': '32rem' }}>
+                <p className="color-weak inline-flex flex-nowrap items-center gap-2 mt-0 mb-6">
+                    <span className="text-sm mt-3">{c('Info').t`Powered by`}</span>
+                    <ProtonLogo />
+                </p>
+
+                <h2 className="text-3xl booking-color-title font-arizona">{c('Info')
+                    .t`Take control of your digital life`}</h2>
+                <p className="text-wrap-balance mb-6 booking-color-title">{c('Info')
+                    .t`This booking was made via ${CALENDAR_APP_NAME}, part of ${BRAND_NAME}'s suite of privacy-first products.`}</p>
+
+                <p className="my-6">
+                    <ButtonLike
+                        as="a"
+                        href="https://account.proton.me/"
+                        pill
+                        shape="solid"
+                        color="norm"
+                        size="large"
+                        target="_blank"
+                    >
+                        {c('Action').t`Create a free account`}
+                    </ButtonLike>
+                </p>
+
+                <p className="text-center inline-flex flex-row flex-wrap items-center gap-5 my-0">
+                    <span className="">
+                        <MailLogo variant="glyph-only" />
+                        <span className="block">{MAIL_SHORT_APP_NAME}</span>
+                    </span>
+                    <span className="">
+                        <VpnLogo variant="glyph-only" />
+                        <span className="block">{VPN_SHORT_APP_NAME}</span>
+                    </span>
+                    <span className="">
+                        <PassLogo variant="glyph-only" />
+                        <span className="block">{PASS_SHORT_APP_NAME}</span>
+                    </span>
+                    <span className="">
+                        <LumoLogo variant="glyph-only" />
+                        <span className="block">{LUMO_SHORT_APP_NAME}</span>
+                    </span>
+                    <span className="">
+                        <DriveLogo variant="glyph-only" />
+                        <span className="block">{DRIVE_SHORT_APP_NAME}</span>
+                    </span>
+                </p>
             </div>
         </div>
     );
