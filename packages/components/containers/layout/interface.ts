@@ -22,6 +22,7 @@ export interface SettingsAreaConfig {
 }
 
 export interface SectionConfig extends SettingsAreaConfig {
+    id: string;
     to: string;
     icon: IconName;
     available?: boolean;

@@ -50,6 +50,7 @@ export const getMailAppRoutes = ({
         header: MAIL_APP_NAME,
         routes: {
             desktop: {
+                id: 'desktop',
                 available: !isElectronMail,
                 text: mailRouteTitles.desktop,
                 to: '/get-the-apps',
@@ -60,6 +61,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             general: {
+                id: 'general',
                 text: mailRouteTitles.general,
                 to: '/general',
                 icon: 'envelope',
@@ -87,12 +89,14 @@ export const getMailAppRoutes = ({
                 ],
             },
             privacy: {
+                id: 'privacy',
                 text: mailRouteTitles.privacy,
                 to: '/email-privacy',
                 icon: 'shield',
                 subsections: [{ id: 'email-privacy' }],
             },
             identity: {
+                id: 'identity',
                 text: mailRouteTitles.identity,
                 to: '/identity-addresses',
                 icon: 'card-identity',
@@ -116,6 +120,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             folder: {
+                id: 'folder',
                 text: mailRouteTitles.folder,
                 to: '/folders-labels',
                 icon: 'tags',
@@ -133,6 +138,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             filter: {
+                id: 'filter',
                 text: mailRouteTitles.filter,
                 to: '/filters',
                 icon: 'filter',
@@ -148,6 +154,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             autoReply: {
+                id: 'autoReply',
                 text: mailRouteTitles.autoReply,
                 to: '/auto-reply',
                 icon: 'envelope-arrow-up-and-right',
@@ -157,6 +164,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             domainNames: {
+                id: 'domainNames',
                 text: mailRouteTitles.domainNames,
                 to: '/domain-names',
                 icon: 'globe',
@@ -171,6 +179,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             keys: {
+                id: 'keys',
                 text: mailRouteTitles.keys,
                 to: '/encryption-keys',
                 icon: 'lock',
@@ -199,6 +208,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             imap: {
+                id: 'imap',
                 text: mailRouteTitles.imap,
                 to: '/imap-smtp',
                 icon: 'servers',
@@ -214,6 +224,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             backup: {
+                id: 'backup',
                 text: mailRouteTitles.backup,
                 to: '/backup-export',
                 icon: 'arrow-up-from-square',

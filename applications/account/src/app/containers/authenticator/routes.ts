@@ -8,7 +8,8 @@ export const getAuthenticatorAppRoutes = ({ isAuthenticatorAvailable }: { isAuth
         header: AUTHENTICATOR_APP_NAME,
         available: isAuthenticatorAvailable,
         routes: {
-            downloads: <SectionConfig>{
+            downloads: {
+                id: 'downloads',
                 text: c('Link').t`Downloads`,
                 noTitle: true,
                 to: '/download',
@@ -19,6 +20,6 @@ export const getAuthenticatorAppRoutes = ({ isAuthenticatorAvailable }: { isAuth
                     },
                 ],
             },
-        },
+        } satisfies Record<string, SectionConfig>,
     };
 };

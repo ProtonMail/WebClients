@@ -9,7 +9,8 @@ export const getDocsAppRoutes = ({ app }: { app: APP_NAMES }) => {
         available: app === APPS.PROTONDOCS,
         header: DOCS_APP_NAME,
         routes: {
-            comments: <SectionConfig>{
+            comments: {
+                id: 'comments',
                 text: c('Title').t`Email notifications`,
                 to: '/email-notifications',
                 icon: 'envelope',
@@ -20,6 +21,6 @@ export const getDocsAppRoutes = ({ app }: { app: APP_NAMES }) => {
                     },
                 ],
             },
-        },
+        } satisfies Record<string, SectionConfig>,
     };
 };
