@@ -8,6 +8,7 @@ body:has(.booking-main-container) {
 	background: radial-gradient(199.62% 141.42% at 0% 100%, #efebff 0%, #eff6ff 20%, #f9fafb 50%);
 
 	--booking-color-title: #372580;
+	--booking-no-booking-container-border-color: #e2dbff;
 	--text-norm: #4b5563;
 }
 
@@ -48,5 +49,11 @@ body:has(.booking-main-container) {
 		--button-default-border-color: #e2dbff;
 
 		border-radius: var(--border-radius-lg);
+	}
+
+	&-no-booking-container {
+		&#{&} {
+			border-color: var(--booking-no-booking-container-border-color);
+		}
 	}
 }
