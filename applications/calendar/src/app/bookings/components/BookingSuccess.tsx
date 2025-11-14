@@ -22,16 +22,18 @@ interface BookingSuccessItemProps {
 
 const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
     return (
-        <div className="flex gap-3">
+        <div className="flex gap-3 mb-4">
             <div
-                className="rounded-full bg-weak flex items-center justify-center w-custom h-custom"
+                className="shrink-0 rounded-full bg-weak flex items-center justify-center w-custom h-custom booking-color-title"
                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
             >
                 {icon}
             </div>
-            <div>
+            <div className="flex-1">
                 <h2 className="m-0 text-semibold text-rg">{title}</h2>
-                <p className="m-0">{data}</p>
+                <p className="m-0 text-ellipsis" title={data as string}>
+                    {data}
+                </p>
             </div>
         </div>
     );
@@ -49,33 +51,37 @@ export const BookingSuccess = () => {
 
     return (
         <div className="container">
-            <div className="mt-8 bg-hint p-12 rounded-xl">
+            <div
+                className="mx-auto mt-8 bg-norm p-8 md:p-12 rounded-xl max-w-custom"
+                style={{ '--max-w-custom': '32rem' }}
+            >
                 <div className="text-center mb-6">
                     <IcCheckmarkCircle size={10} className="color-success mb-2" />
-                    <h1 className="text-bold text-4xl mb-2">{c('Title').t`Your booking is confirmed`}</h1>
-                    <p className="m-0">{c('Description').t`You’ll get a secure email with the details shortly.`}</p>
+                    <h1 className="text-5xl mb-2 booking-color-title">{c('Title').t`Your booking is confirmed`}</h1>
+                    <p className="m-0 booking-color-title text-lg">{c('Description')
+                        .t`You’ll get a secure email with the details shortly.`}</p>
                 </div>
-                <hr />
-                <div className="flex gap-4 justify-center">
-                    <div className="flex flex-column gap-4">
+                <hr className="bg-weak mb-6" />
+                <div className="flex *:min-size-auto flex-column flex-nowrap sm:flex-row gap-4 items-start">
+                    <div className="flex-1 flex flex-column flex-nowrap gap-4">
                         <BookingSuccessItem
                             title={c('Title').t`Host`}
-                            icon={<IcUserCircle />}
+                            icon={<IcUserCircle size={6} />}
                             data={bookingDetails.inviterDisplayName || bookingDetails.inviterEmail}
                         />
                         <BookingSuccessItem
                             title={c('Title').t`Location`}
-                            icon={<IcMapPin />}
+                            icon={<IcMapPin size={6} />}
                             data={bookingDetails.location}
                         />
                         <BookingSuccessItem
                             title={c('Title').t`Time zone`}
-                            icon={<IcGlobe />}
+                            icon={<IcGlobe size={6} />}
                             data={bookingDetails.timezone}
                         />
                     </div>
 
-                    <div className="flex flex-column gap-4">
+                    <div className="flex-1 flex flex-column flex-nowrap gap-4">
                         <BookingSuccessItem
                             title={c('Title').t`Date`}
                             icon={<IcCalendarGrid />}
