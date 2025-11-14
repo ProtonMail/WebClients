@@ -33,7 +33,7 @@ export const LumoThemeProvider: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <LumoThemeContext.Provider value={{ theme, setTheme, setAutoTheme, isDarkLumoTheme, isAutoMode }}>
-            <style id={LUMO_THEME_ID}>{config.styles}</style>
+            <style id={isDarkLumoTheme ? 'lumo-dark-theme' : 'lumo-light-theme'}>{config.styles}</style>
             {children}
         </LumoThemeContext.Provider>
     );
