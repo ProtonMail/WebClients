@@ -1,14 +1,14 @@
 import createCache from '@proton/shared/lib/helpers/cache';
-import { STATUS } from '@proton/shared/lib/models/cache';
+import { Status } from '@proton/shared/lib/models/cache';
 
 type CacheKeys = 'Labels';
 
 const resolvedRequest = <T>(
     value: T
 ): {
-    status: STATUS;
+    status: Status;
     value: T;
-} => ({ status: STATUS.RESOLVED, value });
+} => ({ status: Status.Resolved, value });
 
 const cache = createCache();
 

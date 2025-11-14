@@ -19,7 +19,6 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { FilterStatement } from '@proton/components/containers/filters/interfaces';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
@@ -165,7 +164,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         const sortedEmails = [...uniqueEmails].sort(compareContactEmailByEmail);
         return sortedEmails;
     }, [contactEmails]);
-    const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
@@ -209,7 +207,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             initForwardingSetup({
                 forwarderAddressID: model.addressID,
                 email: model.forwardeeEmail,
-                getPublicKeysForInbox,
             })
         );
 
@@ -326,7 +323,6 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             onSubmit={() =>
                 withLoading(
                     handleSubmit().catch((e) => {
-                        console.trace(e);
                         handleError(e);
                     })
                 )

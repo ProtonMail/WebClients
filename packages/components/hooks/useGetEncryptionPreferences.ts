@@ -16,11 +16,11 @@ import { getActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContactPublicKeyModel, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import extractEncryptionPreferences from '@proton/shared/lib/mail/encryptionPreferences';
+import { getPromiseValue } from '@proton/shared/lib/models/cache';
 
 import useApi from './useApi';
 import useCache from './useCache';
-import { getPromiseValue } from './useCachedModelResult';
-import useGetPublicKeysForInbox from './useGetPublicKeysForInbox';
+import { useGetPublicKeysForInbox } from './useGetPublicKeysForInbox';
 
 export const CACHE_KEY = 'ENCRYPTION_PREFERENCES';
 
