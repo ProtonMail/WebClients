@@ -52,6 +52,10 @@ button {
 	/* Only animate icon after positioning to prevent flicker */
 	&.visible {
 		animation: icon-fade-in 0.125s ease-in-out both !important;
+
+		&::after {
+			animation: counter-fade-in 0.125s 0.05s ease-in-out both !important;
+		}
 	}
 
 	&:hover,
@@ -79,7 +83,6 @@ button {
 		font-weight: bold !important;
 		text-shadow: 0 0.5px 3px #320dc5 !important;
 		opacity: 0;
-		animation: counter-fade-in 0.125s ease-in-out both !important;
 	}
 
 	&:hover {
