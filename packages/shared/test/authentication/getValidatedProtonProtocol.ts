@@ -1,7 +1,7 @@
-import { getWhitelistedProtocol } from '../../lib/authentication/fork';
+import { getValidatedProtonProtocol } from '../../lib/authentication/fork/getValidatedProtonProtocol';
 import { APPS, type APP_NAMES } from '../../lib/constants';
 
-describe('getWhitelistedProtocol', () => {
+describe('getValidatedProtonProtocol', () => {
     [
         {
             name: 'should return undefined for invalid protocol',
@@ -45,7 +45,7 @@ describe('getWhitelistedProtocol', () => {
         },
     ].forEach(({ name, input, output }) => {
         it(name, () => {
-            expect(getWhitelistedProtocol(input.app, input.protocol)).toBe(output);
+            expect(getValidatedProtonProtocol(input.app, input.protocol)).toBe(output);
         });
     });
 });

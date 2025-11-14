@@ -22,12 +22,12 @@ import Icons from '@proton/icons/Icons';
 import metrics from '@proton/metrics';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
+import { getValidatedProtonProtocolRedirect } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppVersionHeader } from '@proton/shared/lib/fetch/headers';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
-import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import noop from '@proton/utils/noop';
 
 import defaultConfig from '../app/config';
@@ -91,7 +91,9 @@ const App = () => {
             },
         }[client || ''] || {};
 
-    const redirect = getRedirect(initialSearchParams.get('redirect') || defaultValues.redirect || undefined);
+    const redirect = getValidatedProtonProtocolRedirect(
+        initialSearchParams.get('redirect') || defaultValues.redirect || undefined
+    );
     const app = getApp({ app: initialSearchParams.get('app'), plan: initialSearchParams.get('plan'), redirect });
 
     const handleLogin = (UID: string) => {

@@ -3,8 +3,8 @@ import {
     type ProduceForkParametersFull,
     getProduceForkParameters,
     getValidatedApp,
-    getWhitelistedProtocol,
 } from '@proton/shared/lib/authentication/fork';
+import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
 import {
     GetActiveSessionType,
     type GetActiveSessionsResult,
@@ -36,7 +36,7 @@ const getProduceDesktopForkParameters = (
         throw new Error('Invalid app specified');
     }
     const maybeRedirectUrl = searchParams.get('redirectUrl') || '';
-    const redirectUrl = getWhitelistedProtocol(app, maybeRedirectUrl) ? maybeRedirectUrl : undefined;
+    const redirectUrl = getValidatedProtonProtocol(app, maybeRedirectUrl) ? maybeRedirectUrl : undefined;
     if (maybeRedirectUrl && !redirectUrl) {
         throw new Error('Invalid redirectUrl specified');
     }
