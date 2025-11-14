@@ -9,8 +9,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
-import type { Address, Api, DecryptedKey, User } from '@proton/shared/lib/interfaces';
-import { isPrivate, isSelf } from '@proton/shared/lib/user/helpers';
+import type { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
@@ -19,6 +18,7 @@ import { getKTUserContext } from '../kt/actions';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import ValidationError from './ValidationError';
+import { getIsOutgoingDelegatedAccessAvailable } from './available';
 import { generateDelegatedAccessToken, getEncryptedDelegatedAccessToken } from './crypto';
 import { type DelegatedAccessState, delegatedAccessActions, selectOutgoingDelegatedAccess } from './index';
 import type { DelegatedAccessTypeEnum, OutgoingDelegatedAccessOutput } from './interface';
@@ -27,8 +27,6 @@ const queryListOutgoingDelegatedAccess = () => ({
     url: `account/v1/access/outgoing`,
     method: 'get',
 });
-
-const canFetch = (user: User) => isPrivate(user) && isSelf(user);
 
 const promiseStore = createPromiseStore<OutgoingDelegatedAccessOutput[]>();
 
@@ -48,7 +46,7 @@ export const listOutgoingDelegatedAccess = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!canFetch(user)) {
+            if (!getIsOutgoingDelegatedAccessAvailable(user)) {
                 return [];
             }
             const result = await extraArgument.api<{
@@ -88,7 +86,7 @@ export const outgoingEventLoopV6Thunk = ({
 }): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const user = await dispatch(userThunk());
-        if (!canFetch(user)) {
+        if (!getIsOutgoingDelegatedAccessAvailable(user)) {
             return;
         }
         await updateCollectionAsyncV6({
