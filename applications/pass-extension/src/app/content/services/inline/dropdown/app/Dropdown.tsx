@@ -110,7 +110,7 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                                 <ListItem
                                     onClick={() => {
                                         if (!lockSetup) return accountFork({ forkType: ForkType.SWITCH });
-                                        controller.close();
+                                        controller.close({ userAction: true });
                                     }}
                                     subTitle={
                                         lockSetup

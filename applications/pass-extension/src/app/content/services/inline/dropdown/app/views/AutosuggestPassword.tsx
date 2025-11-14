@@ -59,7 +59,7 @@ export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy })
 
         if (copy) copyToClipboard();
         if (feedback) timer.current = setTimeout(controller.close, 1_000);
-        else controller.close();
+        else controller.close({ userAction: true });
     };
 
     const label = copy ? c('Title').t`Fill & copy password` : c('Title').t`Fill password`;

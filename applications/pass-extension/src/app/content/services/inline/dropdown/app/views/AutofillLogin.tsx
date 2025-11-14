@@ -119,7 +119,7 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
                                                   type: InlinePortMessageType.AUTOFILL_LOGIN,
                                                   payload: { userIdentifier, password },
                                               });
-                                              controller.close();
+                                              controller.close({ userAction: true });
                                           }
                                       )
                                   }
