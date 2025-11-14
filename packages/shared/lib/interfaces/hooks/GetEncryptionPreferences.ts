@@ -1,12 +1,7 @@
 import type { EncryptionPreferences } from '../../mail/encryptionPreferences';
 import type { ContactEmail } from '../contacts';
 
-export type GetEncryptionPreferences = ({
-    email,
-    intendedForEmail,
-    lifetime,
-    contactEmailsMap,
-}: {
+export interface GetEncryptionPreferencesArguments {
     email: string;
     /**
      * Whether the preferences are used in the context of email encryption.
@@ -15,4 +10,7 @@ export type GetEncryptionPreferences = ({
     intendedForEmail?: boolean;
     lifetime?: number;
     contactEmailsMap?: { [email: string]: ContactEmail | undefined };
-}) => Promise<EncryptionPreferences>;
+}
+
+export type GetEncryptionPreferencesResult = Promise<EncryptionPreferences>;
+export type GetEncryptionPreferences = (args: GetEncryptionPreferencesArguments) => GetEncryptionPreferencesResult;
