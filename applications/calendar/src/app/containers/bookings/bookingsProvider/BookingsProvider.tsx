@@ -1,7 +1,7 @@
 import { createContext, useContext, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import { isBefore } from 'date-fns';
+import { areIntervalsOverlapping, isBefore, isWithinInterval } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
@@ -28,23 +28,8 @@ import {
     generateSlotsFromRange,
     validateBookingRange,
 } from '../utils/bookingHelpers';
-import type { BookingRange, Slot } from './interface';
+import type { BookingRange, BookingsContextValue, Intersection, Slot } from './interface';
 import { type BookingFormData, BookingLocation, BookingState, DEFAULT_EVENT_DURATION } from './interface';
-
-interface BookingsContextValue {
-    submitForm: () => Promise<void>;
-    isBookingActive: boolean;
-    canCreateBooking: boolean;
-    openBookingSidebar: (date: Date) => void;
-    closeBookingSidebar: () => void;
-    formData: BookingFormData;
-    updateFormData: (field: keyof BookingFormData, value: any) => void;
-    loading: boolean;
-    bookingRanges: BookingRange[] | null;
-    addBookingRange: (data: Omit<BookingRange, 'id'>) => void;
-    updateBookingRange: (id: string, start: Date, end: Date) => void;
-    removeBookingRange: (id: string) => void;
-}
 
 const getInitialBookingFormState = (): BookingFormData => {
     const localTimeZone = getTimezone();
@@ -72,6 +57,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const [userSettings] = useUserSettings();
     const [bookingRanges, setBookingRanges] = useState<BookingRange[] | null>(null);
+    const intersectionRef = useRef<Intersection | null>(null);
 
     const api = useApi();
     const { notify } = useCalendarGlobalModals();
@@ -213,17 +199,21 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const addBookingRange = (data: Omit<BookingRange, 'id'>) => {
         const now = new Date();
         const nowWithTz = fromUTCDateToLocalFakeUTCDate(now, false, data.timezone);
-        if (isBefore(data.start, nowWithTz)) {
+
+        const start = intersectionRef.current?.start || data.start;
+        const end = intersectionRef.current?.end || data.end;
+
+        if (isBefore(start, nowWithTz)) {
             createNotification({ text: c('Info').t`Booking cannot be added in the past.` });
             return;
         }
 
         // We store the start and end time of the range for quick comparsion
-        const dataId = generateBookingRangeID(data.start, data.end);
+        const dataId = generateBookingRangeID(start, end);
         const validateNewRange = validateBookingRange({
             newRangeId: dataId,
-            start: data.start,
-            end: data.end,
+            start: start,
+            end: end,
             existingRanges: bookingRanges || [],
         });
         if (validateNewRange) {
@@ -231,14 +221,20 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             return;
         }
 
-        const newBookingRange = [...(bookingRanges || []), { ...data, id: dataId }].sort(
-            (a, b) => a.start.getTime() - b.start.getTime()
-        );
+        const newBookingRange = [
+            ...(bookingRanges || []),
+            {
+                id: dataId,
+                start,
+                end,
+                timezone: data.timezone,
+            },
+        ].sort((a, b) => a.start.getTime() - b.start.getTime());
 
         const newSlots = generateSlotsFromRange({
             rangeID: dataId,
-            start: data.start,
-            end: data.end,
+            start: start,
+            end: end,
             duration: formData.duration,
             timezone: data.timezone,
         });
@@ -248,6 +244,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
         setBookingRanges(newBookingRange);
         setFormData(newFormData);
+        intersectionRef.current = null;
     };
 
     const openBookingSidebar = (currentDate: Date) => {
@@ -275,6 +272,30 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         } else {
             setBookingsState(BookingState.OFF);
         }
+    };
+
+    const isIntersectingBookingRange = (start: Date, end: Date) => {
+        const intersection = bookingRanges?.find((range) => {
+            return areIntervalsOverlapping({ start, end }, { start: range.start, end: range.end });
+        });
+
+        if (!intersection) {
+            return false;
+        }
+
+        if (!intersectionRef.current) {
+            // The intersection is happening at the end of a range
+            if (isWithinInterval(start, intersection)) {
+                intersectionRef.current = { start: intersection.end, end };
+            }
+
+            // The intersection is happening at the start of a range
+            if (isWithinInterval(end, intersection)) {
+                intersectionRef.current = { start, end: intersection.start };
+            }
+        }
+
+        return !!intersection;
     };
 
     const submitForm = async () => {
@@ -357,6 +378,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         addBookingRange,
         updateBookingRange,
         removeBookingRange,
+        isIntersectingBookingRange,
     };
 
     return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;
