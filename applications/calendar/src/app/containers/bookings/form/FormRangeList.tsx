@@ -109,7 +109,7 @@ export const FormRangeList = () => {
     return (
         <div>
             {bookingRanges.map((range) => (
-                <div key={range.id} className="flex flex-nowrap gap-6 justify-space-between mb-0.5">
+                <div key={range.id} className="flex flex-nowrap gap-2 justify-space-between mb-0.5">
                     <div className="flex items-center gap-0.5">
                         <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
                             .t`Date of the booking range`}</label>
