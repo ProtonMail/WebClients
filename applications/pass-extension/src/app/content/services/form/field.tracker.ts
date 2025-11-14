@@ -1,13 +1,15 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 
 import { FieldType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { createRAFController } from '@proton/pass/utils/dom/raf';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
-import { onNextTick } from '@proton/pass/utils/time/next-tick';
+import { DOM_SETTLE_MS, onNextTick } from '@proton/pass/utils/time/next-tick';
 import throttle from '@proton/utils/throttle';
 
 import type { FieldHandle } from './field';
@@ -101,7 +103,7 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
                         logger.debug(`[FieldTracker] Browser "blur" dequeue detected`);
                         onBlur(evt);
                     }
-                }, FIELD_TIMEOUT);
+                }, DOM_SETTLE_MS);
             });
         };
 
@@ -133,6 +135,27 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
             });
         });
 
+        const onClientEvent = (data: ClientObserverEvent) => {
+            if (data.type === 'event') {
+                switch (data.event.type) {
+                    case 'focus':
+                        /** NOTE: on rapid switching between top/sub frames,
+                         * browsers may dequeue events: when refocusing the
+                         * current window: check if we should re-attach */
+                        if (state.focusTimeout) clearTimeout(state.focusTimeout);
+                        state.focusTimeout = setTimeout(
+                            () => isActiveElement(field.element) && onFocus(data.event),
+                            DOM_SETTLE_MS
+                        );
+                        break;
+                    case 'blur':
+                        /** NOTE: in case a blur event on the field is missed */
+                        if (state.focused) onBlur(data.event);
+                        break;
+                }
+            }
+        };
+
         listeners.addListener(field.element, 'focus', onFocus);
         listeners.addListener(field.element, 'focusin', onFocus);
         listeners.addListener(field.element, 'blur', onBlur);
@@ -140,7 +163,8 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
         listeners.addListener(field.element, 'input', onInput);
         listeners.addListener(field.element, 'mousedown', onFocus);
         listeners.addObserver(field.element, onAttributeChange, { attributeFilter: ['type'], attributeOldValue: true });
-        listeners.addListener(window, 'blur', onBlur);
+
+        if (ctx) listeners.addSubscriber(ctx.observer.subscribe(onClientEvent));
 
         if (formTracker) {
             const { onFieldChange, onFormSubmit } = formTracker;
