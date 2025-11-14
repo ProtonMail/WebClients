@@ -25,6 +25,7 @@ import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
+import debounce from '@proton/utils/debounce';
 
 type PageObserverState = {
     idle: boolean;
@@ -53,7 +54,7 @@ export type ClientObserver = {
 
 export type ClientObserverEvent = { type: 'mutation'; reason: string } | { type: 'event'; event: Event };
 
-export const createClientObserver = (): ClientObserver => {
+export const createClientObserver = (mainFrame: boolean): ClientObserver => {
     const pubsub = createPubSub<ClientObserverEvent>();
     const listeners = createListenerStore();
     const state: PageObserverState = {
@@ -203,6 +204,9 @@ export const createClientObserver = (): ClientObserver => {
         }
     };
 
+    const onResize = debounce((event: Event) => pubsub.publish({ type: 'event', event }), 150);
+    const onEvent = (event: Event) => pubsub.publish({ type: 'event', event });
+
     const observe = () => {
         if (state.idle) {
             logger.debug('[PageObserver] watching for changes..');
@@ -213,8 +217,11 @@ export const createClientObserver = (): ClientObserver => {
             listeners.addListener(document.body, 'focusin', onFocusIn);
 
             /** Setup global listeners that may be re-used */
-            listeners.addListener(window, 'focus', (event) => pubsub.publish({ type: 'event', event }));
-            listeners.addListener(window, 'blur', (event) => pubsub.publish({ type: 'event', event }));
+            listeners.addListener(window, 'focus', onEvent);
+            listeners.addListener(window, 'blur', onEvent);
+
+            /** Sub-frames may have deferred initialization */
+            if (!mainFrame) listeners.addListener(window, 'resize', onResize);
 
             TopLayerManager.connect();
         }

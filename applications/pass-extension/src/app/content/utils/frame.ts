@@ -92,13 +92,16 @@ export const isNegligableFrameRect = (width: number, height: number) => width < 
  * worker. Uses async locking to prevent concurrent requests and brief memoization (1s)
  * to dedupe rapid successive calls (eg: during autofill sequence). */
 export const getFrameParentVisibility = maxAgeMemoize(
-    asyncLock(
-        (): Promise<boolean> =>
-            sendMessage.on(
+    asyncLock(async (): Promise<boolean> => {
+        try {
+            return await sendMessage.on(
                 contentScriptMessage({ type: WorkerMessageType.FRAME_VISIBILITY, payload: getFrameAttributes() }),
                 (res) => res.type === 'success' && res.visible
-            )
-    ),
+            );
+        } catch {
+            return false;
+        }
+    }),
     { maxAge: 1_000 }
 );
 
