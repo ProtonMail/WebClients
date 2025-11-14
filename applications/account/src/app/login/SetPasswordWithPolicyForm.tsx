@@ -9,14 +9,30 @@ import useLoading from '@proton/hooks/useLoading';
 import type { PasswordPolicies } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { getBackupPasswordFormLabels, getPasswordFormLabels } from './passwordFormHelper';
+import {
+    getBackupPasswordFormLabels,
+    getChangePasswordFormLabels,
+    getCreatePasswordFormLabels,
+} from './passwordFormHelper';
+
+type PasswordPolicyFormType = 'backup' | 'create';
 
 interface Props {
     children?: ReactNode;
-    type?: 'backup';
+    type?: PasswordPolicyFormType;
     onSubmit: (data: { password: string }) => Promise<void>;
     passwordPolicies: PasswordPolicies;
 }
+
+const getPasswordFormLabels = (type?: PasswordPolicyFormType) => {
+    if (type === 'backup') {
+        return getBackupPasswordFormLabels();
+    } else if (type === 'create') {
+        return getCreatePasswordFormLabels();
+    } else {
+        return getChangePasswordFormLabels();
+    }
+};
 
 const SetPasswordWithPolicyForm = ({ type, onSubmit, children, passwordPolicies }: Props) => {
     const [loading, withLoading] = useLoading();
@@ -29,7 +45,7 @@ const SetPasswordWithPolicyForm = ({ type, onSubmit, children, passwordPolicies 
 
     const passwordPolicyError = !passwordPolicyValidation.valid;
 
-    const formLabels = type === 'backup' ? getBackupPasswordFormLabels() : getPasswordFormLabels();
+    const formLabels = getPasswordFormLabels(type);
 
     return (
         <form
