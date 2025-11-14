@@ -3,9 +3,8 @@
         "relation": ["delegate_permission/common.handle_all_urls"],
         "target": {
             "namespace": "android_app",
-            "package_name": "me.proton.meet.android",
+            "package_name": "proton.android.meet",
             "sha256_cert_fingerprints": [
-                "F1:A8:0A:BE:C3:6D:2B:47:79:F7:B6:4B:7B:BE:4A:0C:8C:D6:C3:AC:37:EF:B6:DE:50:C9:4E:36:30:03:82:CF",
                 "DC:C9:43:9E:C1:A6:C6:A8:D0:20:3F:34:23:EE:42:BC:C8:B9:70:62:8E:53:CB:73:A0:39:3F:39:8D:D5:B8:53"
             ]
         }
