@@ -33,10 +33,13 @@ export const Form = () => {
     const selectedCalendar = writeableCalendars.find((calendar) => calendar.ID === formData.selectedCalendar);
 
     return (
-        <form className="flex flex-column">
-            <FormIconRow icon={<IcTextTitle />} title={c('Info').t`Name your booking page`}>
+        <form className="flex flex-column flex-nowrap">
+            <FormIconRow icon={<IcTextTitle />} title={c('Info').t`What do you want to call this booking page?`}>
+                <label htmlFor="booking-title" className="sr-only">{c('Info')
+                    .t`What do you want to call this booking page?`}</label>
                 <InputField
                     id="booking-title"
+                    aria-describedby="booking-title"
                     as={TextArea}
                     placeholder={c('Placeholder').t`Add title`}
                     value={formData.summary}
@@ -53,6 +56,8 @@ export const Form = () => {
             </FormIconRow>
 
             <FormIconRow icon={<IcClock />} title={c('Info').t`How long should an appointment last?`}>
+                <label htmlFor="duration-select" className="sr-only">{c('label')
+                    .t`How long should an appointment last?`}</label>
                 <div className="flex gap-1">
                     {scheduleOptions.map((option) => (
                         <Button
@@ -60,6 +65,8 @@ export const Form = () => {
                             onClick={() => updateFormData('duration', option.value)}
                             shape={formData.duration === option.value ? 'solid' : 'outline'}
                             color="weak"
+                            aria-pressed={formData.duration === option.value}
+                            aria-describedby="duration-select"
                             pill
                         >
                             {option.text}
@@ -77,6 +84,8 @@ export const Form = () => {
                     as={SelectTwo}
                     id="location-select"
                     value={formData.locationType}
+                    label={c('Info').t`Where will the appointment take place?`}
+                    labelContainerClassName="sr-only"
                     onChange={({ value }: { value: any }) => {
                         updateFormData('locationType', value);
                     }}
@@ -94,6 +103,8 @@ export const Form = () => {
                     <InputField
                         id="booking-location"
                         className="mt-2"
+                        label={c('Label').t`Location`}
+                        labelContainerClassName="sr-only"
                         placeholder={c('Placeholder').t`Add location`}
                         value={formData.location}
                         onChange={(e) => updateFormData('location', e.target.value)}
@@ -109,6 +120,8 @@ export const Form = () => {
                     as={SelectTwo}
                     id="calendar-select"
                     value={formData.selectedCalendar}
+                    label={c('Info').t`In which calendar should bookings appear?`}
+                    labelContainerClassName="sr-only"
                     onChange={({ value }: { value: any }) => {
                         updateFormData('selectedCalendar', value);
                     }}
@@ -138,6 +151,8 @@ export const Form = () => {
             </FormIconRow>
 
             <FormIconRow icon={<IcFileLines />} title={c('Info').t`What should people know before booking?`}>
+                <label htmlFor="booking-description" className="sr-only">{c('label')
+                    .t`What should people know before booking?`}</label>
                 <TextArea
                     id="booking-description"
                     placeholder={c('Placeholder').t`Add a booking page description`}
