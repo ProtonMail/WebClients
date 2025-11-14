@@ -2,7 +2,6 @@ import { serverTime } from '@proton/crypto';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { type ReturnUrlResult, getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
-import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 
 import { pushForkSession } from '../../api/auth';
@@ -16,6 +15,7 @@ import type { ResumedSessionResult } from '../persistedSessionHelper';
 import { getForkEncryptedBlob } from './blob';
 import type { ForkType } from './constants';
 import { ForkSearchParameters } from './constants';
+import { getValidatedProtonProtocol } from './getValidatedProtonProtocol';
 import {
     getEmailSessionForkSearchParameter,
     getLocalIDForkSearchParameter,
@@ -137,20 +137,6 @@ export const produceForkConsumption = (
     return getAppHref(`${SSO_PATHS.FORK}${search}${fragment}`, app);
 };
 
-export const getWhitelistedProtocol = (app: APP_NAMES, redirectUrl: string) => {
-    const protocol = redirectUrl.match(/^([^:]+:)\/\//)?.[1];
-    if (!protocol) {
-        return;
-    }
-    if (getRedirect(`${protocol}//`)) {
-        return protocol;
-    }
-    // Special case for internal apps
-    if (`${app}:` === protocol) {
-        return protocol;
-    }
-};
-
 export const getProduceForkUrl = (
     payload: ProduceForkPayload,
     produceForkParameters: ProduceForkParametersFull,
@@ -160,7 +146,7 @@ export const getProduceForkUrl = (
 
     const redirectUrl = produceForkParameters.redirectUrl;
     if (redirectUrl) {
-        const protocol = getWhitelistedProtocol(produceForkParameters.app, redirectUrl);
+        const protocol = getValidatedProtonProtocol(produceForkParameters.app, redirectUrl);
         if (protocol) {
             return new URL(`${protocol}//${url.pathname.slice(1)}${url.search}${url.hash}`);
         }
