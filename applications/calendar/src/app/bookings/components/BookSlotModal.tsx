@@ -17,7 +17,8 @@ import {
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
-import { emailValidator, maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import type { BookingTimeslot } from '../booking.store';
@@ -35,11 +36,18 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [isLoading, withLoading] = useLoading();
-    const { validator } = useFormErrors();
+    const { validator, onFormSubmit } = useFormErrors();
+
+    const organizerEmailValidator = (email: string) => {
+        const isOrganizerEmail =
+            canonicalizeInternalEmail(email) === canonicalizeInternalEmail(bookingDetails?.inviterEmail || '');
+
+        return isOrganizerEmail ? c('Error').t`You cannot enter the organizer email` : '';
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (name.length > NAME_MAX_LENGTH) {
+        if (!onFormSubmit()) {
             return;
         }
 
@@ -85,7 +93,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         maxLength={NAME_MAX_LENGTH}
-                        error={validator([requiredValidator(name), maxLengthValidator(name, 100)])}
+                        error={validator([requiredValidator(name)])}
                     />
                     <InputFieldTwo
                         label={c('Label').t`Email address`}
@@ -93,7 +101,11 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        error={validator([requiredValidator(email), emailValidator(email)])}
+                        error={validator([
+                            requiredValidator(email),
+                            emailValidator(email),
+                            organizerEmailValidator(email),
+                        ])}
                     />
                 </div>
             </ModalTwoContent>
