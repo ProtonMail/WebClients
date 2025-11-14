@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Icon } from '@proton/components';
-import { Button, CircleLoader } from '@proton/atoms';
 
 import { useLazyAttachment } from '../../../hooks';
 import { useLumoDispatch } from '../../../redux/hooks';
@@ -39,7 +40,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     };
 
     // Show error UI with retry button
-    if (error) {
+    if (error || !attachment) {
         return (
             <div
                 style={{
@@ -56,7 +57,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                     <Icon name="exclamation-circle" size={4} />
                     <span style={{ fontSize: '14px', fontWeight: 'bold' }}>Failed to load image</span>
                 </div>
-                <p style={{ margin: '0 0 0.5rem 0', fontSize: '12px' }}>{error}</p>
+                {error && <p style={{ margin: '0 0 0.5rem 0', fontSize: '12px' }}>{error}</p>}
                 <Button size="small" shape="solid" onClick={handleRetry}>
                     Retry
                 </Button>
@@ -85,6 +86,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     }
 
     const handleDownload = () => {
+        if (!attachment) return;
         const link = document.createElement('a');
         link.href = imageDataUrl;
         link.download = attachment.filename;
