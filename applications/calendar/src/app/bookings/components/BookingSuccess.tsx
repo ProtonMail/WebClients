@@ -76,7 +76,8 @@ export const BookingSuccess = () => {
             >
                 <div className="text-center mb-6">
                     <IcCheckmarkCircle size={10} className="color-success mb-2" />
-                    <h1 className="text-5xl mb-2 booking-color-title">{c('Title').t`Your booking is confirmed`}</h1>
+                    <h1 className="text-5xl mb-2 booking-color-title font-arizona">{c('Title')
+                        .t`Your booking is confirmed`}</h1>
                     <p className="m-0 booking-color-title text-lg">{c('Description')
                         .t`You’ll get a secure email with the details shortly.`}</p>
                 </div>
