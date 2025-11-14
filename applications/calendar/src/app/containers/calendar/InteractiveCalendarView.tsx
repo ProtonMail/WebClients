@@ -454,7 +454,7 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingRange, bookingRanges, formData } = useBookings();
+    const { isBookingActive, addBookingRange, bookingRanges, formData, isIntersectingBookingRange } = useBookings();
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -963,9 +963,16 @@ const InteractiveCalendarView = ({
                 });
                 newTemporaryEvent = getTemporaryEvent(newTemporaryEvent, newTemporaryModel, tzid);
 
+                const bookingStart = toLocalDate(fromUTCDate(start));
+                const bookingEnd = toLocalDate(fromUTCDate(end));
+
                 if (action === ACTIONS.CREATE_MOVE) {
                     // Change the ID to have a specific style when dragging and creating a booking page
                     if (isBookingActive) {
+                        if (isIntersectingBookingRange(bookingStart, bookingEnd)) {
+                            return;
+                        }
+
                         setInteractiveData({
                             temporaryEvent: {
                                 ...newTemporaryEvent,
@@ -979,8 +986,8 @@ const InteractiveCalendarView = ({
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
                     if (isBookingActive) {
                         addBookingRange({
-                            start: toLocalDate(fromUTCDate(start)),
-                            end: toLocalDate(fromUTCDate(end)),
+                            start: bookingStart,
+                            end: bookingEnd,
                             timezone: tzid,
                         });
                         setInteractiveData(undefined);
