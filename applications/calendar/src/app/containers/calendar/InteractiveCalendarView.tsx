@@ -2,7 +2,7 @@ import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'reac
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Prompt } from 'react-router';
 
-import { isBefore } from 'date-fns';
+import { addMinutes, differenceInMinutes, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
@@ -1000,9 +1000,18 @@ const InteractiveCalendarView = ({
                             return;
                         }
 
+                        // We want to make sure that events last for the event duration when clicking on the calendar grid.
+                        let safeEnd = bookingEnd;
+                        if (
+                            action === ACTIONS.CREATE_UP &&
+                            differenceInMinutes(safeEnd, bookingStart) < formData.duration
+                        ) {
+                            safeEnd = addMinutes(bookingStart, formData.duration);
+                        }
+
                         addBookingRange({
                             start: bookingStart,
-                            end: bookingEnd,
+                            end: safeEnd,
                             timezone: tzid,
                         });
                         setInteractiveData(undefined);
