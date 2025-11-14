@@ -339,6 +339,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                         style={{
                             contentVisibility: 'auto',
                             containIntrinsicSize: 'auto 100px',
+                            overflowX: 'auto' // For tables.
                         }}
                     >
                         <MarkdownBlock
