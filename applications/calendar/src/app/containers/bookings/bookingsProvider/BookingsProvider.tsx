@@ -5,7 +5,7 @@ import { areIntervalsOverlapping, isBefore, isWithinInterval } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
-import { useCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
+import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
@@ -69,7 +69,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         writeableCalendars,
         calendarUserSettings?.DefaultCalendarID
     );
-    const [{ CalendarSettings } = {}] = useCalendarBootstrap(preferredWritableCal?.ID || undefined);
+    const readCalendarBootstrap = useReadCalendarBootstrap();
 
     const getAddressKeysByUsage = useGetAddressKeysByUsage();
     const getCalendarKeys = useGetCalendarKeys();
@@ -102,11 +102,14 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             )
             .flat();
 
+        const defaultCalendarID = preferredWritableCal?.ID || writeableCalendars[0].ID;
+        const calendarBootstrap = readCalendarBootstrap(defaultCalendarID);
+
         // Set the initial form data
         newFormData.bookingSlots = bookingSlots;
         newFormData.timezone = timezone;
-        newFormData.duration = CalendarSettings?.DefaultEventDuration || DEFAULT_EVENT_DURATION;
-        newFormData.selectedCalendar = preferredWritableCal?.ID || writeableCalendars[0].ID;
+        newFormData.duration = calendarBootstrap?.CalendarSettings.DefaultEventDuration || DEFAULT_EVENT_DURATION;
+        newFormData.selectedCalendar = defaultCalendarID;
 
         setBookingRanges(bookingRanges);
         setFormData(newFormData);
@@ -134,6 +137,16 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         // We need to recompute the bookings when the duration change
         if (field === 'duration' && typeof value === 'number' && value > 0) {
             recomputeBookingSlots(value);
+        }
+
+        // We update the duration of the form when the user changes the calendar and the duration was not changed before
+        if (field === 'selectedCalendar' && formData.duration === initialFormData.current?.formData.duration) {
+            const calBootstrap = readCalendarBootstrap(value);
+            if (!calBootstrap || calBootstrap.CalendarSettings.DefaultEventDuration === formData.duration) {
+                return;
+            }
+
+            updateFormData('duration', calBootstrap?.CalendarSettings.DefaultEventDuration);
         }
 
         setFormData((prev) => ({ ...prev, [field]: value }));
