@@ -2,6 +2,7 @@ import { getUnixTime } from 'date-fns';
 
 import { CryptoProxy, type PublicKeyReference, type SessionKey } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import {
     base64StringToUint8Array,
     base64URLStringToUint8Array,
@@ -73,8 +74,16 @@ const encryptBookingSlots = async (
             format: 'binary',
         });
 
-        const StartTime = getUnixTime(slot.start);
-        const EndTime = getUnixTime(slot.end);
+        // We need to get the locale date first, that we then convert to UTC timestamp
+        // We should end up with the UTC timestamp corresponding to the user locale
+        const startComponents = fromLocalDate(slot.start);
+        const endComponents = fromLocalDate(slot.end);
+
+        const startUTC = toUTCDate(convertZonedDateTimeToUTC(startComponents, formData.timezone));
+        const endUTC = toUTCDate(convertZonedDateTimeToUTC(endComponents, formData.timezone));
+
+        const StartTime = getUnixTime(startUTC);
+        const EndTime = getUnixTime(endUTC);
         const Timezone = formData.timezone;
         const RRule = null;
 

@@ -21,7 +21,7 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import type { BookingTimeslot } from '../booking.store';
+import { type BookingTimeslot, useBookingStore } from '../booking.store';
 import { useExternalBookingActions } from '../useExternalBookingActions';
 
 interface BookingSlotModalProps extends ModalProps {
@@ -32,6 +32,7 @@ const NAME_MAX_LENGTH = 100;
 
 export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
     const { submitBooking, bookingDetails } = useExternalBookingActions();
+    const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
 
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -67,7 +68,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                 {' - '}
                 {format(addMinutes(timeslot.tzDate, bookingDetails?.duration || 0), 'HH:mm', { locale: dateLocale })}
             </div>
-            <div className="color-weak">{getTimezoneAndOffset(timeslot.timezone)}</div>
+            <div className="color-weak">{getTimezoneAndOffset(selectedTimezone)}</div>
         </>
     );
 
