@@ -174,20 +174,20 @@ export const App = () => (
                         <ErrorBoundary
                             component={<StandardErrorPageDisplay big errorComponent={GenericErrorDisplay} />}
                         >
-                            <ContextMenuProvider>
-                                <NotificationsProvider>
-                                    <ModalsProvider>
-                                        <PassExtensionLink>
-                                            <ConnectivityProvider
-                                                subscribe={api.subscribe}
-                                                onPing={() => api({ ...ping(), unauthenticated: true })}
-                                            >
-                                                <Router history={history}>
-                                                    <NavigationProvider>
-                                                        <AuthStoreProvider store={authStore}>
-                                                            <AuthSwitchProvider>
-                                                                <AuthServiceProvider>
-                                                                    <StoreProvider>
+                            <NotificationsProvider>
+                                <ModalsProvider>
+                                    <PassExtensionLink>
+                                        <ConnectivityProvider
+                                            subscribe={api.subscribe}
+                                            onPing={() => api({ ...ping(), unauthenticated: true })}
+                                        >
+                                            <Router history={history}>
+                                                <NavigationProvider>
+                                                    <AuthStoreProvider store={authStore}>
+                                                        <AuthSwitchProvider>
+                                                            <AuthServiceProvider>
+                                                                <StoreProvider>
+                                                                    <ContextMenuProvider>
                                                                         <ThemeConnect />
                                                                         <Localized>
                                                                             <ClipboardProvider>
@@ -198,17 +198,17 @@ export const App = () => (
                                                                             <ModalsChildren />
                                                                             <NotificationsChildren />
                                                                         </Portal>
-                                                                    </StoreProvider>
-                                                                </AuthServiceProvider>
-                                                            </AuthSwitchProvider>
-                                                        </AuthStoreProvider>
-                                                    </NavigationProvider>
-                                                </Router>
-                                            </ConnectivityProvider>
-                                        </PassExtensionLink>
-                                    </ModalsProvider>
-                                </NotificationsProvider>
-                            </ContextMenuProvider>
+                                                                    </ContextMenuProvider>
+                                                                </StoreProvider>
+                                                            </AuthServiceProvider>
+                                                        </AuthSwitchProvider>
+                                                    </AuthStoreProvider>
+                                                </NavigationProvider>
+                                            </Router>
+                                        </ConnectivityProvider>
+                                    </PassExtensionLink>
+                                </ModalsProvider>
+                            </NotificationsProvider>
                         </ErrorBoundary>
                     </CompatibilityCheck>
                 </PassCoreProvider>

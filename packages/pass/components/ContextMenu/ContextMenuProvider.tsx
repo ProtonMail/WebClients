@@ -35,15 +35,18 @@ export const ContextMenuProvider: FC<PropsWithChildren> = ({ children }) => {
             if (id) return state?.id === id;
             return state !== null;
         },
-        [state?.id]
+        [state?.id, enabled]
     );
 
-    const open = useCallback((event: MouseEvent, id: string) => {
-        event.stopPropagation();
-        event.preventDefault();
-        if (!enabled) return;
-        setState({ id, position: { top: event.clientY, left: event.clientX } });
-    }, []);
+    const open = useCallback(
+        (event: MouseEvent, id: string) => {
+            event.stopPropagation();
+            event.preventDefault();
+            if (!enabled) return;
+            setState({ id, position: { top: event.clientY, left: event.clientX } });
+        },
+        [enabled]
+    );
 
     const close = useCallback(() => setState(null), []);
 
