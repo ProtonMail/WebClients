@@ -124,6 +124,7 @@ export function LegacyGrid() {
       onFill={useUI((ui) => ui.legacy.onFill)}
       onFillRange={useUI((ui) => ui.legacy.onFillRange)}
       onResize={useUI((ui) => ui.legacy.onResize)}
+      onAutoResize={useUI((ui) => ui.legacy.onAutoResize)}
       onMoveChart={useUI((ui) => ui.legacy.chartsState.onMoveChart)}
       onMoveEmbed={useUI((ui) => ui.legacy.onMoveEmbed)}
       onResizeChart={useUI((ui) => ui.legacy.chartsState.onResizeChart)}
