@@ -28,7 +28,7 @@ const DashboardComparePlansCTA = ({ app }: Props) => {
     };
 
     return (
-        <Button color="norm" shape="ghost" onClick={handleExplorePlans}>
+        <Button color="norm" size="small" shape="ghost" onClick={handleExplorePlans}>
             {c('Action').t`Compare all plans`}
             <IcChevronRight className="shrink-0 ml-1" />
         </Button>
