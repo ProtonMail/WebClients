@@ -65,12 +65,12 @@ export const ChatItem = ({
             </div>
 
             <div className="flex flex-column flex-nowrap justify-start">
-                <div className="flex items-start text-semibold">
-                    <span className="max-w-custom text-ellipsis" style={{ '--max-w-custom': '14rem' }} title={name}>
+                <div className="flex items-start text-semibold flex-nowrap">
+                    <span className="text-ellipsis" title={name}>
                         {name}
                     </span>
                     {displayDate && (
-                        <div className="ml-2 color-weak">
+                        <div className="ml-2 color-weak text-nowrap shrink-0">
                             {new Date(timestamp).toLocaleTimeString([], {
                                 hour: 'numeric',
                                 minute: '2-digit',
