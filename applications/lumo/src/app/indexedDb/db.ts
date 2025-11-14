@@ -510,16 +510,48 @@ export class DbApi {
     };
 
     // Asset operations
-    public addAsset = async (asset: SerializedAsset, { dirty, skipIfNotExists }: { dirty: boolean; skipIfNotExists?: boolean }, tx?: IDBTransaction) => {
-        return this.assetStore.add(asset, { dirty, skipIfNotExists }, tx);
+    public addAsset = async (asset: SerializedAsset, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
+        return this.assetStore.add(asset, { dirty }, tx);
     };
 
-    public updateAsset = async (asset: SerializedAsset, { dirty, skipIfNotExists }: { dirty: boolean; skipIfNotExists?: boolean }, tx?: IDBTransaction) => {
-        return this.assetStore.update(asset, { dirty, skipIfNotExists }, tx);
+    public updateAsset = async (asset: SerializedAsset, { dirty }: { dirty: boolean }, tx?: IDBTransaction) => {
+        return this.assetStore.update(asset, { dirty }, tx);
     };
 
     public getAssetById = async (id: AssetId, tx?: IDBTransaction) => {
         return this.assetStore.getById(id, tx);
+    };
+
+    public softDeleteAsset = async (
+        id: AssetId,
+        { dirty }: { dirty: boolean },
+        tx?: IDBTransaction
+    ): Promise<void> => {
+        tx ??= (await this.db).transaction(ASSET_STORE, 'readwrite');
+        const asset = await this.getAssetById(id, tx);
+        // If asset doesn't exist in IDB, it's already deleted or was never persisted - noop
+        if (!asset) {
+            console.log(`Asset ${id} not found in IDB, skipping soft delete`);
+            return;
+        }
+
+        // If already deleted, noop
+        if (asset.deleted === true) {
+            console.log(`Asset ${id} already marked as deleted, skipping soft delete`);
+            return;
+        }
+
+        // Keep only essential metadata from AssetPub and remove heavy fields
+        const { id: assetId, spaceId, uploadedAt, mimeType, rawBytes } = asset;
+        const updatedAsset = {
+            id: assetId,
+            spaceId,
+            uploadedAt,
+            mimeType,
+            rawBytes,
+            deleted: true,
+        } as SerializedAsset;
+        await this.updateAsset(updatedAsset, { dirty }, tx);
     };
 
     public deleteAsset = async (id: AssetId, tx?: IDBTransaction) => {
@@ -541,6 +573,10 @@ export class DbApi {
 
     public getAllAttachments = async (tx?: IDBTransaction): Promise<SerializedAttachment[]> => {
         return this.attachmentStore.getAll(tx);
+    };
+
+    public getAllAssets = async (tx?: IDBTransaction): Promise<SerializedAsset[]> => {
+        return this.assetStore.getAll(tx);
     };
 
     public getAllIdMaps = async (tx?: IDBTransaction): Promise<IdMapEntry[]> => {

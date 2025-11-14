@@ -39,7 +39,8 @@ export function prepareTurns(
     linearChain: Message[],
     finalTurn = ASSISTANT_TURN,
     contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string
+    personalizationPrompt?: string,
+    projectInstructions?: string
 ): Turn[] {
     // Apply context filters to the original message chain before processing
     const filteredMessageChain = linearChain.map((message) => {
@@ -68,31 +69,37 @@ export function prepareTurns(
     // Insert the final turn, which should be assistant normally
     let turns: ExtraTurn[] = [...filteredMessageChain, finalTurn];
 
-    // Add personalization to the user message content if provided
+    // Add personalization and project instructions to the user message content if provided
     // This way it doesn't affect title generation or system-level behavior
-    if (personalizationPrompt && turns.length > 0) {
-        console.log('Adding personalization to user message:', personalizationPrompt);
-
+    if ((personalizationPrompt || projectInstructions) && turns.length > 0) {
         // Find the last user message (should be the first user message for new conversations)
-        const lastUserIndex = turns.findIndex((turn) => turn.role === Role.User);
+        const lastUserIndex = turns.findIndex(turn => turn.role === Role.User);
         if (lastUserIndex !== -1) {
             const userTurn = turns[lastUserIndex];
             const originalContent = userTurn.content || '';
 
-            // Append personalization context to the user's message
+            // Build context parts
+            const contextParts: string[] = [];
+            if (personalizationPrompt) {
+                contextParts.push(`[Personal context: ${personalizationPrompt}]`);
+            }
+            if (projectInstructions) {
+                contextParts.push(`[Project instructions: ${projectInstructions}]`);
+            }
+
+            // Append context to the user's message
+            const contextText = contextParts.join('\n\n');
             const updatedContent = originalContent
-                ? `${originalContent}\n\n[Personal context: ${personalizationPrompt}]`
-                : `[Personal context: ${personalizationPrompt}]`;
+                ? `${originalContent}\n\n${contextText}`
+                : contextText;
 
             turns[lastUserIndex] = {
                 ...userTurn,
                 content: updatedContent,
             };
 
-            console.log('Updated user message with personalization:', turns[lastUserIndex]);
+            console.log('Updated user message with context:', { personalizationPrompt, projectInstructions });
         }
-    } else {
-        console.log('Not adding personalization - no prompt provided or no user message found');
     }
 
     // Remove context and prepend it to the message content
@@ -123,12 +130,8 @@ export function appendFinalTurn(turns: Turn[], finalTurn = ASSISTANT_TURN): Turn
 }
 
 // return turns that are either user or assistant where assistant turns are not empty
-export const getFilteredTurns = (
-    linearChain: Message[],
-    contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string
-) => {
-    return prepareTurns(linearChain, ASSISTANT_TURN, contextFilters, personalizationPrompt)
+export const getFilteredTurns = (linearChain: Message[], contextFilters: ContextFilter[] = [], personalizationPrompt?: string, projectInstructions?: string) => {
+    return prepareTurns(linearChain, ASSISTANT_TURN, contextFilters, personalizationPrompt, projectInstructions)
         .filter((turn) => {
             // Keep system messages that contain personalization, filter out other system messages
             if (turn.role === Role.System) {
