@@ -61,6 +61,7 @@ export async function bootstrapPublicApp({ config }: { config: ProtonConfig }) {
         pathname: location.pathname,
         searchParams,
         localID: localId,
+        resumeOptions: { user: true },
       })
 
       const user = sessionResult.session?.User

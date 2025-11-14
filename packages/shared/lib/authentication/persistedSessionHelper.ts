@@ -75,15 +75,18 @@ export const logRemoval = (e: any = {}, UID: string, context: string) => {
     });
 };
 
-export const resumeSession = async ({
+type ResumedSessionResultWithOptionalUser<IncludeUser extends boolean = true> = IncludeUser extends true
+    ? ResumedSessionResult
+    : Omit<ResumedSessionResult, 'User'> & { User: undefined };
+export const resumeSession = async <IncludeUser extends boolean = true>({
     api,
     localID,
     options,
 }: {
     api: Api;
     localID: number;
-    options?: SessionOptions;
-}): Promise<ResumedSessionResult> => {
+    options?: SessionOptions & { user?: IncludeUser };
+}): Promise<ResumedSessionResultWithOptionalUser<IncludeUser>> => {
     const persistedSession = getPersistedSession(localID);
     if (!persistedSession) {
         throw new InvalidPersistentSessionError('Missing persisted session or UID');
@@ -98,9 +101,11 @@ export const resumeSession = async ({
     try {
         const [ClientKey, latestUser] = await Promise.all([
             api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())).then(({ ClientKey }) => ClientKey),
-            api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
+            options?.user === false
+                ? undefined
+                : api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
         ]);
-        if (persistedUserID !== latestUser.ID) {
+        if (latestUser && persistedUserID !== latestUser.ID) {
             throw InactiveSessionError();
         }
         let keyPassword = '';
@@ -125,7 +130,7 @@ export const resumeSession = async ({
             }
         }
         return {
-            User: latestUser,
+            User: latestUser as any /* Intentionally forced to satisfy the optional user */,
             UID: persistedUID,
             localID,
             keyPassword,

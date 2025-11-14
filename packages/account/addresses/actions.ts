@@ -47,6 +47,7 @@ import { getMemberAddresses, upsertMember } from '../members';
 import { getMember } from '../members/getMember';
 import { organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
+import { removePersistedStateEvent } from '../persist/event';
 import { type ProtonDomainsState, protonDomainsThunk } from '../protonDomains';
 import type { UserState } from '../user';
 import { userThunk } from '../user';
@@ -205,7 +206,7 @@ export const createAddress = ({
         );
 
         // Creating an address affects the `UsedAddresses` in organization
-        dispatch(organizationThunk({ cache: CacheType.None }));
+        dispatch(organizationThunk({ cache: CacheType.None })).catch(noop);
 
         return result.find(({ ID }) => ID === Address.ID) || Address;
     };
@@ -423,6 +424,7 @@ export const setupUser = ({
             preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
             productParam: app,
         });
+        dispatch(removePersistedStateEvent()); // Avoid resuming a critically out-of-date user
         await mutatePassword({
             api,
             authentication,
@@ -465,6 +467,8 @@ export const setupExternalUserForProton = ({
                 addresses,
             });
 
+            dispatch(removePersistedStateEvent()); // Avoid resuming a critically out-of-date user
+
             await mutatePassword({
                 authentication,
                 keyPassword,
@@ -477,6 +481,8 @@ export const setupExternalUserForProton = ({
 
         if (payload.setup.mode === 'create') {
             const { preAuthKTCommit, preAuthKTVerify } = createPreAuthKTVerifier(dispatch(getKTActivation()));
+
+            dispatch(removePersistedStateEvent()); // Avoid resuming a critically out-of-date user
 
             await handleCreateAddressAndKey({
                 username: payload.username,

@@ -119,7 +119,7 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
         persistedSession: { persistent, trusted },
         clientKey,
         offlineKey,
-    }: ResumedSessionResult) => {
+    }: Omit<ResumedSessionResult, 'User'>) => {
         setUID(newUID);
         setPassword(keyPassword);
         setPersistent(persistent);
