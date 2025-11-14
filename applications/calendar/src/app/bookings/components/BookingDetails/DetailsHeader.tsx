@@ -30,6 +30,8 @@ export const DetailsHeader = () => {
         return null;
     }
 
+    const hasLocation = bookingDetails.location || bookingDetails.withProtonMeetLink;
+
     return (
         <header
             className="rounded-lg p-8 md:p-12 flex flex-column flex-nowrap mb-8 bg-norm booking-details-header"
@@ -66,19 +68,21 @@ export const DetailsHeader = () => {
                         <div>{c('Info').t`${bookingDetails.duration} min duration`}</div>
                     </div>
                 </div>
-                <div className="flex flex-nowrap flex-row gap-3 items-start">
-                    <div className="bg-weak shrink-0 rounded-full p-2">
-                        <IcMapPin className="booking-color-title" size={6} />
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Location`}</h3>
-                        <div className="text-break-all">
-                            {bookingDetails.withProtonMeetLink
-                                ? c('Info').t`${MEET_APP_NAME} video call`
-                                : bookingDetails.location}
+                {hasLocation && (
+                    <div className="flex flex-nowrap flex-row gap-3 items-start">
+                        <div className="bg-weak shrink-0 rounded-full p-2">
+                            <IcMapPin className="booking-color-title" size={6} />
+                        </div>
+                        <div className="flex-1">
+                            <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Location`}</h3>
+                            <div className="text-break-all">
+                                {bookingDetails.withProtonMeetLink
+                                    ? c('Info').t`${MEET_APP_NAME} video call`
+                                    : bookingDetails.location}
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         </header>
     );

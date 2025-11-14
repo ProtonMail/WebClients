@@ -10,7 +10,7 @@ import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import { formatGMTOffsetAbbreviation, getTimezone, getTimezoneOffset } from '@proton/shared/lib/date/timezone';
+import { getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../booking.store';
@@ -44,16 +44,15 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
 export const BookingSuccess = () => {
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedBookingSlot = useBookingStore((state) => state.selectedBookingSlot);
+    const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
 
     if (!bookingDetails || !selectedBookingSlot) {
         return <NoMatch reason={Reason.notFound} />;
     }
 
-    const timezoneOffset = getTimezoneOffset(selectedBookingSlot.tzDate, bookingDetails.timezone || getTimezone());
-    const formattedTimezoneOffset = formatGMTOffsetAbbreviation(timezoneOffset.offset);
-    const timezoneString = `${formattedTimezoneOffset} • ${bookingDetails.timezone || getTimezone()}`;
-
     const timeData = `${format(selectedBookingSlot.tzDate, 'HH:mm', { locale: dateLocale })} - ${format(addMinutes(selectedBookingSlot.tzDate, bookingDetails.duration || 0), 'HH:mm', { locale: dateLocale })}`;
+
+    const hasLocation = bookingDetails.location || bookingDetails.withProtonMeetLink;
 
     const hostInformation = (
         <>
@@ -89,19 +88,21 @@ export const BookingSuccess = () => {
                             icon={<IcUserCircle size={6} />}
                             data={hostInformation}
                         />
-                        <BookingSuccessItem
-                            title={c('Title').t`Location`}
-                            icon={<IcMapPin size={6} />}
-                            data={
-                                bookingDetails.withProtonMeetLink
-                                    ? c('Info').t`${MEET_APP_NAME} video call`
-                                    : bookingDetails.location
-                            }
-                        />
+                        {hasLocation && (
+                            <BookingSuccessItem
+                                title={c('Title').t`Location`}
+                                icon={<IcMapPin size={6} />}
+                                data={
+                                    bookingDetails.withProtonMeetLink
+                                        ? c('Info').t`${MEET_APP_NAME} video call`
+                                        : bookingDetails.location
+                                }
+                            />
+                        )}
                         <BookingSuccessItem
                             title={c('Title').t`Time zone`}
                             icon={<IcGlobe size={6} />}
-                            data={timezoneString}
+                            data={getTimezoneAndOffset(selectedTimezone || bookingDetails.timezone)}
                         />
                     </div>
 
