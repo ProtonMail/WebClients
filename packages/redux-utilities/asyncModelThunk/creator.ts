@@ -117,7 +117,7 @@ export const previousSelector =
     };
 
 export const selectPersistModel = <T>(state: ReducerValue<T>) => {
-    if (state.error || state.value === undefined) {
+    if (state.value === undefined) {
         return undefined;
     }
     return state;
