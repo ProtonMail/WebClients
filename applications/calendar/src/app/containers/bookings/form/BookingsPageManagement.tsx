@@ -27,9 +27,10 @@ export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
     const locationOptions = getBookingLocationOption();
 
-    const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
-
     const { formData, updateFormData } = useBookings();
+
+    const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
+    const selectedCalendar = writeableCalendars.find((calendar) => calendar.ID === formData.selectedCalendar);
 
     return (
         <form className="flex flex-column">
@@ -37,15 +38,16 @@ export const Form = () => {
                 <InputField
                     id="booking-title"
                     as={TextArea}
-                    placeholder={c('Placeholder').t`Booking page title`}
+                    placeholder={c('Placeholder').t`Add title`}
                     value={formData.summary}
                     onChange={(e) => updateFormData('summary', e.target.value)}
                     maxLength={MAX_CHARS_API.TITLE}
                     assistContainerClassName="hidden"
                     inputContainerClassName="text-xl text-semibold"
                     minRows={1}
-                    rows={2}
+                    rows={3}
                     unstyled
+                    autoGrow
                     autoFocus
                 />
             </FormIconRow>
@@ -127,6 +129,12 @@ export const Form = () => {
                         </Option>
                     ))}
                 </InputField>
+                {selectedCalendar && (
+                    <p className="m-0 mt-1 text-sm color-weak">
+                        {c('Info')
+                            .t`People booking time with you will see ${selectedCalendar.Email} as your contact address.`}
+                    </p>
+                )}
             </FormIconRow>
 
             <FormIconRow icon={<IcFileLines />} title={c('Info').t`What should people know before booking?`}>
