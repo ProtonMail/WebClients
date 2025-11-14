@@ -125,7 +125,8 @@ export const findInputBoundingElement = (
     if (mb > 1 || mt > 1) return curr;
 
     /* Analyze the parent element next */
-    const parent = curr.parentElement!;
+    const parent = curr.parentElement;
+    if (!parent) return curr;
 
     /* Exclude unsuitable elements (e.g., table-related, forms) */
     if (INVALID_BOUNDING_TAGS.includes(parent.tagName)) return curr;
