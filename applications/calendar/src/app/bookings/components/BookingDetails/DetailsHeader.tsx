@@ -37,7 +37,7 @@ export const DetailsHeader = () => {
         >
             <h1 className="text-rg mb-2 color-primary text-bold" id="booking-details-header-title">{c('Title')
                 .t`Appointment details`}</h1>
-            <h2 className="booking-color-title text-4xl m-0 text-break-all">{bookingDetails?.summary}</h2>
+            <h2 className="booking-color-title text-4xl m-0 text-break-all font-arizona">{bookingDetails?.summary}</h2>
             <p className="my-6 text-pre-wrap text-break-all">{bookingDetails.description}</p>
             <div className="flex flex-column flex-nowrap gap-4">
                 <div className="flex flex-nowrap flex-row gap-3 items-start">
