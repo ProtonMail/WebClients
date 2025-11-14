@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import {
@@ -17,8 +17,14 @@ import {
     upsellPlanSSO,
 } from '@proton/payments';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
-import { type APP_NAMES, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    type APP_NAMES,
+    BRAND_NAME,
+    ORGANIZATION_STATE,
+    ORGANIZATION_TWOFA_SETTING,
+    PROTON_SENTINEL_NAME,
+} from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import type { Group, OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
@@ -63,7 +69,7 @@ export const getOrganizationAppRoutes = ({
     isPasswordPolicyEnabled,
     isSsoForPbsEnabled,
     isRetentionPoliciesEnabled,
-}: Props) => {
+}: Props): SidebarConfig => {
     const isAdmin = user.isAdmin && user.isSelf;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -161,7 +167,8 @@ export const getOrganizationAppRoutes = ({
         available: canHaveOrganization && app !== APPS.PROTONWALLET,
         header: sectionTitle,
         routes: {
-            users: <SectionConfig>{
+            users: {
+                id: 'users',
                 text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
                 icon: 'users',
@@ -181,7 +188,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            groups: <SectionConfig>{
+            groups: {
+                id: 'groups',
                 text: c('Title').t`Groups`,
                 to: '/user-groups',
                 icon: 'pass-group',
@@ -192,7 +200,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            domains: <SectionConfig>{
+            domains: {
+                id: 'domains',
                 text: c('Title').t`Domain names`,
                 to: '/domain-names',
                 icon: 'globe',
@@ -205,7 +214,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            orgKeys: <SectionConfig>{
+            orgKeys: {
+                id: 'orgKeys',
                 text: subMenuTitle,
                 to: '/organization-keys',
                 icon: 'buildings',
@@ -228,7 +238,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            gateways: <SectionConfig>{
+            gateways: {
+                id: 'gateways',
                 text: c('Title').t`Gateways`,
                 to: '/gateways',
                 icon: 'servers',
@@ -239,7 +250,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            sharedServers: <SectionConfig>{
+            sharedServers: {
+                id: 'sharedServers',
                 text: c('Title').t`Shared servers`,
                 to: '/shared-servers',
                 icon: 'earth',
@@ -252,7 +264,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            connectionEvents: <SectionConfig>{
+            connectionEvents: {
+                id: 'connectionEvents',
                 text: c('Title').t`Gateway monitor`,
                 description: c('Subtitle').t`View VPN session details for your organization.`,
                 to: '/gateway-monitor',
@@ -264,7 +277,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            activityMonitor: <SectionConfig>{
+            activityMonitor: {
+                id: 'activityMonitor',
                 text: c('Title').t`Activity monitor`,
                 to: '/activity-monitor',
                 icon: 'card-identity',
@@ -275,7 +289,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            setup: <SectionConfig>{
+            setup: {
+                id: 'setup',
                 text: subMenuTitle,
                 to: '/multi-user-support',
                 icon: 'users',
@@ -291,7 +306,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            filter: <SectionConfig>{
+            filter: {
+                id: 'filter',
                 text: c('Title').t`Organization filters`,
                 to: '/organization-filters',
                 icon: 'filter',
@@ -307,14 +323,16 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            retentionPolicies: <SectionConfig>{
+            retentionPolicies: {
+                id: 'retentionPolicies',
                 text: c('Title').t`Data retention`,
                 to: '/retention-policies',
                 icon: 'archive-box',
                 available: canShowRetentionPolicies,
                 subsections: [{ id: 'retention-policies' }],
             },
-            security: <SectionConfig>{
+            security: {
+                id: 'security',
                 text: c('Title').t`Security`,
                 to: '/authentication-security',
                 icon: 'shield',
@@ -349,7 +367,8 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            sso: <SectionConfig>{
+            sso: {
+                id: 'sso',
                 text: c('Title').t`Single sign-on`,
                 to: '/single-sign-on',
                 icon: 'key',
@@ -360,7 +379,8 @@ export const getOrganizationAppRoutes = ({
                     canHaveOrganization &&
                     isOrgConfigured,
             },
-            accessControl: <SectionConfig>{
+            accessControl: {
+                id: 'accessControl',
                 text: c('Title').t`Access control`,
                 to: '/access-control',
                 icon: 'sliders',
@@ -377,6 +397,6 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-        },
+        } satisfies Record<string, SectionConfig>,
     };
 };

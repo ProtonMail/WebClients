@@ -36,7 +36,8 @@ export const getPassAppRoutes = ({
         available: app === APPS.PROTONPASS,
         header: PASS_APP_NAME,
         routes: {
-            downloads: <SectionConfig>{
+            downloads: {
+                id: 'downloads',
                 text: c('Link').t`Apps and extensions`,
                 to: '/download',
                 icon: 'arrow-down-line',
@@ -46,7 +47,8 @@ export const getPassAppRoutes = ({
                     },
                 ],
             },
-            activityLogs: <SectionConfig>{
+            activityLogs: {
+                id: 'activityLogs',
                 text: c('Link').t`Activity log`,
                 to: '/activity-log',
                 icon: 'text-title',
@@ -61,7 +63,8 @@ export const getPassAppRoutes = ({
                     },
                 ],
             },
-            policies: <SectionConfig>{
+            policies: {
+                id: 'policies',
                 text: c('Title').t`Policies`,
                 to: '/policies',
                 icon: 'checkmark-triple',
@@ -72,7 +75,8 @@ export const getPassAppRoutes = ({
                     },
                 ],
             },
-            reports: <SectionConfig>{
+            reports: {
+                id: 'reports',
                 text: c('Title').t`Reports`,
                 to: '/reports',
                 icon: 'chart-line',
@@ -84,6 +88,6 @@ export const getPassAppRoutes = ({
                     },
                 ],
             },
-        },
+        } satisfies Record<string, SectionConfig>,
     };
 };

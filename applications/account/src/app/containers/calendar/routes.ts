@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -27,7 +27,7 @@ export const getCalendarAppRoutes = ({
     organization,
     isZoomIntegrationEnabled,
     isProtonMeetIntegrationEnabled,
-}: Props) => {
+}: Props): SidebarConfig => {
     const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
     const isVisionary = isOrganizationVisionary(organization);
@@ -41,11 +41,12 @@ export const getCalendarAppRoutes = ({
           baseAccess && !organization?.Name
         : baseAccess;
 
-    return <const>{
+    return {
         available: app === APPS.PROTONCALENDAR,
         header: CALENDAR_APP_NAME,
         routes: {
-            desktop: <SectionConfig>{
+            desktop: {
+                id: 'desktop',
                 available: !isElectronMail,
                 text: c('Title').t`Get the apps`,
                 to: CALENDAR_SETTINGS_ROUTE.GET_APPS,
@@ -55,7 +56,8 @@ export const getCalendarAppRoutes = ({
                     { id: CALENDAR_SETTINGS_SECTION_ID.DESKTOP_APP, text: c('Title').t`Download the desktop app` },
                 ],
             },
-            general: <SectionConfig>{
+            general: {
+                id: 'general',
                 text: c('Link').t`General`,
                 to: CALENDAR_SETTINGS_ROUTE.GENERAL,
                 icon: 'grid-2',
@@ -84,7 +86,8 @@ export const getCalendarAppRoutes = ({
                     },
                 ],
             },
-            calendars: <SectionConfig>{
+            calendars: {
+                id: 'calendars',
                 text: c('Link').t`Calendars`,
                 to: CALENDAR_SETTINGS_ROUTE.CALENDARS,
                 icon: 'calendar-grid',
@@ -99,7 +102,8 @@ export const getCalendarAppRoutes = ({
                     },
                 ],
             },
-            interops: <SectionConfig>{
+            interops: {
+                id: 'interops',
                 text: c('Link').t`Import/export`,
                 title: c('Title').t`Import and export`,
                 to: CALENDAR_SETTINGS_ROUTE.INTEROPS,
@@ -115,6 +119,6 @@ export const getCalendarAppRoutes = ({
                     },
                 ],
             },
-        },
+        } satisfies Record<string, SectionConfig>,
     };
 };

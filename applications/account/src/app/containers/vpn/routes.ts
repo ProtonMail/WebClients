@@ -9,7 +9,8 @@ export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
         available: app === APPS.PROTONVPN_SETTINGS,
         header: VPN_APP_NAME,
         routes: {
-            downloads: <SectionConfig>{
+            downloads: {
+                id: 'downloads',
                 text: c('Title').t`VPN apps`,
                 to: '/vpn-apps',
                 icon: 'arrow-down-line',
@@ -24,7 +25,8 @@ export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
                     },
                 ],
             },
-            wireguard: <SectionConfig>{
+            wireguard: {
+                id: 'wireguard',
                 text: c('Title').t`WireGuard`,
                 to: '/WireGuard',
                 icon: 'brand-wireguard',
@@ -35,7 +37,8 @@ export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
                     },
                 ],
             },
-            openvpn: <SectionConfig>{
+            openvpn: {
+                id: 'openvpn',
                 text: c('Title').t`OpenVPN / IKEv2`,
                 to: '/OpenVpnIKEv2',
                 icon: 'key',
@@ -50,6 +53,6 @@ export const getVpnAppRoutes = ({ app }: { app: APP_NAMES }) => {
                     },
                 ],
             },
-        },
+        } satisfies Record<string, SectionConfig>,
     };
 };

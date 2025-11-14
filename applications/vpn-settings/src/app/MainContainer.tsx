@@ -14,6 +14,7 @@ import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesT
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import type { SectionConfig } from '@proton/components';
 import {
     AccountRecoverySection,
     AuthenticatedBugModal,
@@ -234,7 +235,7 @@ const MainContainer: FunctionComponent = () => {
                         ...vpnRoutes,
                         ...(organizationAppRoutes.available ? organizationAppRoutes.routes : {}),
                     }).map(
-                        (section) =>
+                        (section: SectionConfig) =>
                             getIsSectionAvailable(section) && (
                                 <SettingsListItem
                                     to={getSectionPath('', section)}
