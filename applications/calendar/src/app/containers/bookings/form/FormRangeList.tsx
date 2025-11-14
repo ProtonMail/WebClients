@@ -15,6 +15,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import { DateInputTwo, useNotifications } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -122,15 +123,17 @@ export const FormRangeList = () => {
         <div>
             {bookingRanges.map((range) => (
                 <div key={range.id} className="flex flex-nowrap gap-2 justify-space-between mb-0.5">
-                    <div className="flex items-center gap-0.5">
+                    <div className="flex flex-1 items-center gap-0.5">
                         <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
                             .t`Date of the booking range`}</label>
-                        <DateInputTwo
-                            id={`range-date-input-${range.id}`}
-                            value={range.start}
-                            min={startOfToday()}
-                            onChange={(value) => handleDateChange(range.id, range, value)}
-                        />
+                        <div className="grow-custom flex-1 flex" style={{ '--grow-custom': '1.5' }}>
+                            <DateInputTwo
+                                id={`range-date-input-${range.id}`}
+                                value={range.start}
+                                min={startOfToday()}
+                                onChange={(value) => handleDateChange(range.id, range, value)}
+                            />
+                        </div>
                         <label htmlFor={`range-start-input-${range.id}`} className="sr-only">{c('label')
                             .t`Start time of the booking range`}</label>
                         <TimeInput
@@ -152,16 +155,20 @@ export const FormRangeList = () => {
                         />
                     </div>
                     <div className="flex flex-nowrap shrink-0">
-                        <Button icon shape="ghost" onClick={() => handlePlusClick(range)}>
-                            <IcPlus
-                                name="plus"
-                                className="color-primary"
-                                alt={c('Action').t`Split current booking range`}
-                            />
-                        </Button>
-                        <Button icon shape="ghost" onClick={() => removeBookingRange(range.id)}>
-                            <IcTrash className="color-weak" alt={c('Action').t`Remove the booking range`} />
-                        </Button>
+                        <Tooltip title={c('Action').t`Split current booking range`}>
+                            <Button icon shape="ghost" onClick={() => handlePlusClick(range)}>
+                                <IcPlus
+                                    name="plus"
+                                    className="color-primary"
+                                    alt={c('Action').t`Split current booking range`}
+                                />
+                            </Button>
+                        </Tooltip>
+                        <Tooltip title={c('Action').t`Remove the booking range`}>
+                            <Button icon shape="ghost" onClick={() => removeBookingRange(range.id)}>
+                                <IcTrash className="color-weak" alt={c('Action').t`Remove the booking range`} />
+                            </Button>
+                        </Tooltip>
                     </div>
                 </div>
             ))}
