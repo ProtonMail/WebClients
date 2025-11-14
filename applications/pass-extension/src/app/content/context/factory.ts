@@ -56,6 +56,7 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
         mainFrame: options.mainFrame,
         scriptId: options.scriptId,
         channel: options.controller.channel,
+        observer: options.controller.observer,
 
         service: {
             autofill: createAutofillService(options),
