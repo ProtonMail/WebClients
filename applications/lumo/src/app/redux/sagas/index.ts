@@ -4,6 +4,7 @@ import { all, call, cancel, delay, getContext, put, spawn, take, takeEvery, take
 
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import {
+    ASSET_STORE,
     ATTACHMENT_STORE,
     CONVERSATION_STORE,
     type DbApi,
@@ -25,7 +26,10 @@ import { mapEmpty, mapIds, mapLength } from '../../util/collections';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../slices/core';
 import { setReduxLoadedFromIdb } from '../slices/meta/initialization';
 import {
+    addAsset,
+    deleteAllAssets,
     locallyDeleteAssetFromLocalRequest,
+    locallyDeleteAssetFromRemoteRequest,
     pullAssetFailure,
     pullAssetRequest,
     pushAssetFailure,
@@ -33,6 +37,7 @@ import {
     pushAssetRequest,
     pushAssetSuccess,
 } from '../slices/core/assets';
+import { deserializeAssetSaga, softDeleteAssetFromRemote } from './assets';
 import {
     addAttachment,
     deleteAllAttachments,
@@ -289,7 +294,7 @@ export function* loadReduxFromIdb(): SagaIterator {
     const dbApi: DbApi = yield getContext('dbApi');
 
     const getAllIdbData = () => {
-        const stores = [SPACE_STORE, CONVERSATION_STORE, MESSAGE_STORE, ATTACHMENT_STORE, REMOTE_ID_STORE];
+        const stores = [SPACE_STORE, CONVERSATION_STORE, MESSAGE_STORE, ATTACHMENT_STORE, ASSET_STORE, REMOTE_ID_STORE];
         // prettier-ignore
         return dbApi.newTransaction(stores, 'readonly')
             .then(tx => ({ tx }))
@@ -298,11 +303,12 @@ export function* loadReduxFromIdb(): SagaIterator {
             .then(({ tx, ...rest }) => dbApi.getAllConversations(tx).then((conversations) => ({ tx, ...rest, conversations })))
             .then(({ tx, ...rest }) => dbApi.getAllMessages(tx)     .then((messages) =>      ({ tx, ...rest, messages })))
             .then(({ tx, ...rest }) => dbApi.getAllAttachments(tx)  .then((attachments) =>   ({ tx, ...rest, attachments })))
+            .then(({ tx, ...rest }) => dbApi.getAllAssets(tx)       .then((assets) =>        ({ tx, ...rest, assets })))
             .then(({ tx, ...rest }) => rest)
     };
 
     const allIdbData = yield call(getAllIdbData);
-    const { idMapEntries, spaces, conversations, messages } = allIdbData;
+    const { idMapEntries, spaces, conversations, messages, assets } = allIdbData;
 
     for (const entry of idMapEntries) {
         try {
@@ -383,6 +389,37 @@ export function* loadReduxFromIdb(): SagaIterator {
         }
     }
 
+    // Load assets from IDB
+    console.log(`Loading ${assets?.length || 0} assets from IndexedDB`);
+    for (let i = 0; i < (assets?.length || 0); i++) {
+        const serializedAsset = assets![i];
+        try {
+            const { id, spaceId, deleted } = serializedAsset;
+            console.log(`Loading asset ${id} for space ${spaceId}, deleted: ${deleted}`);
+            // Skip deleted assets explicitly
+            if (deleted === true) continue;
+            const spaceDek = spaceDekMap[spaceId];
+            if (!spaceDek) {
+                console.warn(`deserializing asset ${id} failed: cannot get space dek for space ${spaceId}`);
+                continue;
+            }
+            const asset = yield call(deserializeAssetSaga, serializedAsset, spaceDek);
+            console.log(`Successfully deserialized asset ${id}, has markdown: ${!!asset.markdown}`);
+            
+            // Remove binary data before storing in Redux (but keep markdown for LLM context)
+            // This avoids non-serializable Uint8Array in Redux state
+            const { data, ...assetForRedux } = asset;
+            yield put(addAsset(assetForRedux));
+            
+            // Yield control every 5 assets to prevent blocking the main thread and allow webpack HMR to process
+            if ((i + 1) % 5 === 0) {
+                yield delay(0);
+            }
+        } catch (e) {
+            console.warn('Error while loading asset from IndexedDB:', e);
+        }
+    }
+
     yield put(setReduxLoadedFromIdb());
 }
 
@@ -391,6 +428,7 @@ export function* unloadRedux(): SagaIterator {
     yield put(deleteAllConversations());
     yield put(deleteAllMessages());
     yield put(deleteAllAttachments());
+    yield put(deleteAllAssets());
     yield put(deleteAllIdMaps());
 }
 
@@ -521,6 +559,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pullAssetRequest, handlePullAssetRequest)},
         function*() { yield takeEvery(pullAssetFailure, logPullAssetFailure)},
         function*() { yield takeEvery(locallyDeleteAssetFromLocalRequest, handleLocallyDeleteAssetFromLocalRequest)},
+        function*() { yield takeEvery(locallyDeleteAssetFromRemoteRequest, softDeleteAssetFromRemote)},
         // function*() { yield takeEvery(locallyRefreshAttachmentFromRemoteMessageRequest, refreshAttachmentFromRemoteMessage)},
 
         function*() { yield takeEvery(addMasterKey, initAppSaga)},

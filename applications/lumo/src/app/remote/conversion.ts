@@ -128,11 +128,15 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
         conversations: {},
         deletedSpaces: {},
         deletedConversations: {},
+        assets: {},
+        deletedAssets: {},
     };
     return input.reduce((acc: ListSpacesRemote, item: unknown): ListSpacesRemote => {
-        const { space, conversations, deletedConversations } = convertSpaceFromApi(item);
+        const { space, conversations, deletedConversations, assets, deletedAssets } = convertSpaceFromApi(item);
         const conversationMap = mapify(conversations);
         const deletedConversationMap = mapify(deletedConversations);
+        const assetMap = mapify(assets);
+        const deletedAssetMap = mapify(deletedAssets);
         const base = {
             conversations: {
                 ...acc.conversations,
@@ -141,6 +145,14 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
             deletedConversations: {
                 ...acc.deletedConversations,
                 ...deletedConversationMap,
+            },
+            assets: {
+                ...acc.assets,
+                ...assetMap,
+            },
+            deletedAssets: {
+                ...acc.deletedAssets,
+                ...deletedAssetMap,
             },
             spaces: acc.spaces,
             deletedSpaces: acc.deletedSpaces,

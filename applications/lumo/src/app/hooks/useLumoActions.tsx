@@ -165,6 +165,12 @@ export const useLumoActions = ({
             console.log('Retry: Personalization not enabled or no saved personalization data');
         }
 
+        // Get project instructions from space if this is a project conversation
+        let projectInstructions: string | undefined;
+        if (space?.isProject && space?.projectInstructions) {
+            projectInstructions = space.projectInstructions;
+        }
+
         await retrySendMessage({
             api,
             dispatch,
@@ -176,6 +182,7 @@ export const useLumoActions = ({
             enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
             contextFilters,
             personalizationPrompt,
+            projectInstructions,
         });
     };
 
