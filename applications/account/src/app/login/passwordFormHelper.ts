@@ -7,10 +7,19 @@ export interface PasswordFormLabels {
     cta: string;
 }
 
-export const getPasswordFormLabels = (): PasswordFormLabels => {
+export const getChangePasswordFormLabels = (): PasswordFormLabels => {
     return {
         formName: 'setPasswordForm',
         passwordLabel: c('Label').t`New password`,
+        confirmPasswordLabel: c('Label').t`Confirm password`,
+        cta: c('Action').t`Continue`,
+    };
+};
+
+export const getCreatePasswordFormLabels = (): PasswordFormLabels => {
+    return {
+        formName: 'setPasswordForm',
+        passwordLabel: c('Label').t`Password`,
         confirmPasswordLabel: c('Label').t`Confirm password`,
         cta: c('Action').t`Continue`,
     };
