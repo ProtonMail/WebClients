@@ -1,4 +1,6 @@
-import { BaseKeyProvider, createKeyMaterialFromString } from 'livekit-client';
+import { BaseKeyProvider, importKey } from 'livekit-client';
+
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 function getKeyIndex(epoch: bigint, keyringSize: number) {
     if (keyringSize <= 0) {
@@ -19,8 +21,12 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
         });
     }
 
-    async setKeyWithEpoch(key: string, epoch: bigint) {
-        const material = await createKeyMaterialFromString(key as string);
+    async setKeyWithEpoch(base64Key: string, epoch: bigint) {
+        const bytes = base64StringToUint8Array(base64Key);
+        // We must use PBKDF2 even though we already have strong cryptographic material,
+        // because the WebRTC C library only supports PBKDF2. Without it, mobile clients
+        // would not be able to decrypt frames sent from the web.
+        const material = await importKey(bytes.buffer, 'PBKDF2', 'derive');
         const index = getKeyIndex(epoch, this.getOptions().keyringSize);
         this.onSetEncryptionKey(material, undefined, index);
     }
