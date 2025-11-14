@@ -12,6 +12,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { MaybeNull } from '@proton/pass/types';
 import { createStyleParser, pixelParser } from '@proton/pass/utils/dom/computed-styles';
 import { getNthParent } from '@proton/pass/utils/dom/tree';
+import noop from '@proton/utils/noop';
 
 import { type IconController, createIconController } from './icon.controller';
 
@@ -59,7 +60,19 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
         }
     };
 
+    /** If an icon is attached in a different frame - force detach.
+     * There are some cases - notably in safari - where we might miss
+     * focus/blur events in sub-frames leading to missed icon detachments */
     const onIconAttached = () => icon.current?.detach();
+
+    const broadcastIconAttached = ({ fieldId, formId, frameId }: FieldHandle) => {
+        sendMessage(
+            contentScriptMessage({
+                type: WorkerMessageType.INLINE_ICON_ATTACHED,
+                payload: { fieldId, formId, frameId },
+            })
+        ).catch(noop);
+    };
 
     channel.register(WorkerMessageType.INLINE_ICON_SHIFT, onIconShift);
     channel.register(WorkerMessageType.INLINE_ICON_ATTACHED, onIconAttached);
@@ -87,12 +100,7 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
                 icon.current = createIconController({ field, mainFrame, tag, onClick, onDetach });
 
                 if (icon.current) {
-                    void sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.INLINE_ICON_ATTACHED,
-                            payload: { fieldId: field.fieldId, formId: field.formId, frameId: field.frameId },
-                        })
-                    );
+                    broadcastIconAttached(field);
                     field.setIcon(icon.current);
                 }
             }
