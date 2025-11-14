@@ -56,7 +56,7 @@ export const GlobalBookingConfirmClose = () => {
                     ]}
                     {...modalProps}
                 >
-                    <p className="m-0">{c('Info').t`You will loose all unsaved changes.`}</p>
+                    <p className="m-0">{c('Info').t`You will lose all unsaved changes.`}</p>
                 </Prompt>
             )}
         </>
