@@ -9,11 +9,12 @@ import { convertNewSpaceToApi } from '../../remote/conversion';
 import type { Priority } from '../../remote/scheduler';
 import type { IdMapEntry, ListSpacesRemote, LocalId, RemoteId, RemoteSpace, ResourceType } from '../../remote/types';
 import { deserializeSpace, serializeSpace } from '../../serialization';
-import { type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
+import { type Asset, type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
 import { listify, mapIds } from '../../util/collections';
 import { isoToUnixTimestamp } from '../../util/date';
 import {
     selectAttachmentsBySpaceId,
+    selectAssetsBySpaceId,
     selectConversationsBySpaceId,
     selectMasterKey,
     selectMessagesBySpaceId,
@@ -21,6 +22,7 @@ import {
     selectSpaceById,
 } from '../selectors';
 import { type AttachmentMap, deleteAllAttachments, deleteAttachment } from '../slices/core/attachments';
+import { deleteAsset, locallyDeleteAssetFromRemoteRequest, pullAssetRequest } from '../slices/core/assets';
 import type { ConversationMap } from '../slices/core/conversations';
 import {
     deleteAllConversations,
@@ -381,7 +383,7 @@ export function* pullSpaces(): SagaIterator<void> {
 export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote }): SagaIterator<any> {
     console.log('Saga triggered: processListSpaces', payload);
     console.log('list space success' /* , payload */);
-    const { conversations, deletedConversations, deletedSpaces, spaces } = payload;
+    const { conversations, deletedConversations, deletedSpaces, spaces, assets, deletedAssets } = payload;
     for (const space of listify(deletedSpaces)) {
         const { wrappedSpaceKey, ...deletedSpace } = space;
         yield put(locallyDeleteSpaceFromRemoteRequest(deletedSpace.id));
@@ -394,6 +396,48 @@ export function* processPullSpacesPage({ payload }: { payload: ListSpacesRemote 
     }
     for (const conversation of listify(conversations)) {
         yield put(locallyRefreshConversationFromRemoteRequest(conversation));
+    }
+    
+    // Process deleted assets FIRST to ensure they're removed before processing active assets
+    const deletedAssetIds = new Set(listify(deletedAssets).map(asset => asset.id));
+    for (const asset of listify(deletedAssets)) {
+        if (!asset.spaceId) {
+            console.warn(`Deleted asset ${asset.id} has no spaceId, skipping`);
+            continue;
+        }
+        yield put(locallyDeleteAssetFromRemoteRequest({ id: asset.id, spaceId: asset.spaceId }));
+    }
+    
+    // Process active assets, but skip any that are in the deletedAssets list
+    const validAssetIds = new Set<string>();
+    for (const asset of listify(assets)) {
+        if (!asset.spaceId) {
+            console.warn(`Asset ${asset.id} has no spaceId, skipping`);
+            continue;
+        }
+        // Skip assets that are marked as deleted
+        if (deletedAssetIds.has(asset.id)) {
+            console.log(`Skipping asset ${asset.id} - it's in the deletedAssets list`);
+            continue;
+        }
+        validAssetIds.add(asset.id);
+        // Add idmap entry for the asset (local -> remote mapping)
+        yield put(addIdMapEntry({ type: 'asset', localId: asset.id, remoteId: asset.remoteId, saveToIdb: true }));
+        // Assets in /spaces response have Encrypted: null, need to fetch individually via /assets/:id
+        yield put(pullAssetRequest({ id: asset.id, spaceId: asset.spaceId }));
+    }
+    
+    // Clean up: Remove any assets from Redux that belong to synced spaces but aren't in the valid remote assets list
+    const syncedSpaceIds = new Set([...listify(spaces).map(s => s.id), ...listify(deletedSpaces).map(s => s.id)]);
+    for (const spaceId of syncedSpaceIds) {
+        const localAssets: Record<string, Asset> = yield select(selectAssetsBySpaceId(spaceId));
+        for (const asset of Object.values(localAssets)) {
+            // If asset is not in valid remote assets list and not in deleted assets list, remove it from Redux
+            if (!validAssetIds.has(asset.id) && !deletedAssetIds.has(asset.id)) {
+                console.log(`Removing asset ${asset.id} from Redux - not in remote assets list`);
+                yield put(deleteAsset(asset.id));
+            }
+        }
     }
 }
 
