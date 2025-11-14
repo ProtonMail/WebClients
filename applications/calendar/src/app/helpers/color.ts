@@ -21,6 +21,7 @@ export const getEventStyle = (backgroundColor = '', style: CSSProperties = {}) =
 export const getBookingSlotStyle = (backgroundColor = '', style: CSSProperties = {}): CSSProperties => {
     return {
         ...style,
+        width: '102%',
         '--color-alt': backgroundColor,
         '--alt-inline-start-width': '1px',
         '--color-main': 'var(--background-norm)',
