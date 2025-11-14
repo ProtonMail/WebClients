@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router';
 
-import { addHours, addMinutes, isSameDay, set, startOfDay, subMinutes } from 'date-fns';
+import { addHours, addMinutes, isBefore, isSameDay, set, startOfDay, startOfToday, subMinutes } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -20,12 +20,12 @@ export const FormRangeList = () => {
     const location = useLocation();
     const [userSettings] = useUserSettings();
 
-    const { bookingRange, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
+    const { bookingRanges, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
     const validation = validateFormData(formData);
 
     const { createNotification } = useNotifications();
 
-    if (!bookingRange) {
+    if (!bookingRanges) {
         return null;
     }
 
@@ -53,6 +53,12 @@ export const FormRangeList = () => {
         const newStart = set(date, { hours: range.start.getHours(), minutes: range.start.getMinutes() });
         const newEnd = set(date, { hours: range.end.getHours(), minutes: range.end.getMinutes() });
 
+        const now = new Date();
+        if (isBefore(newStart, now) || isBefore(newEnd, now)) {
+            createNotification({ text: c('Info').t`Cannot create booking range in the past` });
+            return;
+        }
+
         updateBookingRange(id, newStart, newEnd);
     };
 
@@ -64,7 +70,7 @@ export const FormRangeList = () => {
         const { date } = fromUrlParams(location.pathname);
         addBookingRange(
             createBookingRangeNextAvailableTime({
-                bookingRange,
+                bookingRanges,
                 userSettings,
                 timezone: formData.timezone,
                 startDate: date,
@@ -73,7 +79,7 @@ export const FormRangeList = () => {
     };
 
     const handlePlusClick = (range: BookingRange) => {
-        const lastBookingOfDay = bookingRange
+        const lastBookingOfDay = bookingRanges
             .filter((r) => isSameDay(r.start, range.start))
             .sort((a, b) => a.start.getTime() - b.start.getTime())
             .at(-1);
@@ -102,7 +108,7 @@ export const FormRangeList = () => {
     // TODO handle the cases where the recurring is enabled and adapt the UI
     return (
         <div>
-            {bookingRange.map((range) => (
+            {bookingRanges.map((range) => (
                 <div key={range.id} className="flex flex-nowrap gap-6 justify-space-between mb-0.5">
                     <div className="flex items-center gap-0.5">
                         <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
@@ -110,6 +116,7 @@ export const FormRangeList = () => {
                         <DateInputTwo
                             id={`range-date-input-${range.id}`}
                             value={range.start}
+                            min={startOfToday()}
                             onChange={(value) => handleDateChange(range.id, range, value)}
                         />
                         <label htmlFor={`range-start-input-${range.id}`} className="sr-only">{c('label')
