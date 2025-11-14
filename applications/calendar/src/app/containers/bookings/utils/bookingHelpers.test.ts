@@ -250,7 +250,7 @@ describe('booking helpers', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
             const res = createBookingRangeNextAvailableTime({
                 userSettings,
-                bookingRange: [],
+                bookingRanges: [],
                 timezone: 'Europe/Zurich',
                 startDate: undefined,
             });
@@ -263,7 +263,7 @@ describe('booking helpers', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
             const res = createBookingRangeNextAvailableTime({
                 userSettings,
-                bookingRange: [{ start: tomorrowStart } as BookingRange],
+                bookingRanges: [{ start: tomorrowStart } as BookingRange],
                 timezone: 'Europe/Zurich',
                 startDate: undefined,
             });
@@ -276,7 +276,7 @@ describe('booking helpers', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
             const res = createBookingRangeNextAvailableTime({
                 userSettings,
-                bookingRange: [],
+                bookingRanges: [],
                 timezone: 'Europe/Zurich',
                 startDate: futureMonday,
             });
@@ -289,7 +289,7 @@ describe('booking helpers', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
             const res = createBookingRangeNextAvailableTime({
                 userSettings,
-                bookingRange: [],
+                bookingRanges: [],
                 timezone: 'Europe/Zurich',
                 startDate: addDays(futureMonday, 2),
             });
@@ -302,7 +302,7 @@ describe('booking helpers', () => {
             const userSettings = { WeekStart: SETTINGS_WEEK_START.MONDAY } as UserSettings;
             const res = createBookingRangeNextAvailableTime({
                 userSettings,
-                bookingRange: [{ start: futureMonday } as BookingRange],
+                bookingRanges: [{ start: futureMonday } as BookingRange],
                 timezone: 'Europe/Zurich',
                 startDate: futureMonday,
             });

@@ -5,6 +5,27 @@ export const DEFAULT_EVENT_DURATION = 30;
 export const DEFAULT_RANGE_START_HOUR = 9;
 export const DEFAULT_RANGE_END_HOUR = 17;
 
+export interface BookingsContextValue {
+    submitForm: () => Promise<void>;
+    isBookingActive: boolean;
+    canCreateBooking: boolean;
+    openBookingSidebar: (date: Date) => void;
+    closeBookingSidebar: () => void;
+    formData: BookingFormData;
+    updateFormData: (field: keyof BookingFormData, value: any) => void;
+    loading: boolean;
+    bookingRanges: BookingRange[] | null;
+    addBookingRange: (data: Omit<BookingRange, 'id'>) => void;
+    updateBookingRange: (id: string, start: Date, end: Date) => void;
+    removeBookingRange: (id: string) => void;
+    isIntersectingBookingRange: (start: Date, end: Date) => boolean;
+}
+
+export interface Intersection {
+    start: Date;
+    end: Date;
+}
+
 export enum BookingLocation {
     MEET = 'Meet',
     IN_PERSON = 'in-person',
