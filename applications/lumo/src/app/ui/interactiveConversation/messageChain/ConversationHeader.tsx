@@ -11,7 +11,7 @@ import { useConversationStar } from '../../../hooks/useConversationStar';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectSpaceById } from '../../../redux/selectors';
+import { selectAssetsBySpaceId, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import type { Conversation, Message } from '../../../types';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
@@ -48,10 +48,37 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     const isProjectConversation = space?.isProject;
     const projectName = space?.projectName;
 
-    // Count total files in conversation
-    const totalFiles = messageChain.reduce((count, message) => {
-        return count + (message.attachments?.length || 0);
-    }, 0);
+    // Count total files in conversation: message attachments + space-level files (deduplicated)
+    // Get space-level assets (persistent project files) and attachments
+    const spaceAssets = useLumoSelector(selectAssetsBySpaceId(spaceId));
+    const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
+    
+    const validSpaceAssets = Object.values(spaceAssets).filter(
+        (asset) => !asset.deleted && !asset.error && !asset.processing
+    );
+    const validSpaceAttachments = Object.values(spaceAttachments).filter(
+        (att) => !att.deleted && !att.error
+    );
+    
+    // Create a set of all space-level file IDs (both assets and attachments) for deduplication
+    const spaceFileIds = new Set([
+        ...validSpaceAssets.map(a => a.id),
+        ...validSpaceAttachments.map(a => a.id)
+    ]);
+    
+    // Collect all unique message attachment IDs (deduplicate across messages AND against space files)
+    const seenMessageAttachmentIds = new Set<string>();
+    messageChain.forEach((message) => {
+        (message.attachments || []).forEach((att) => {
+            // Only count if not already seen and not in space files
+            if (!seenMessageAttachmentIds.has(att.id) && !spaceFileIds.has(att.id)) {
+                seenMessageAttachmentIds.add(att.id);
+            }
+        });
+    });
+    
+    // Total = space files (assets + attachments) + unique message attachments
+    const totalFiles = validSpaceAssets.length + validSpaceAttachments.length + seenMessageAttachmentIds.size;
 
     // Handler for opening the full knowledge base (no filter)
     const handleOpenFilesClick = useCallback(() => {
