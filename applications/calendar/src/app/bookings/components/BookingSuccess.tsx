@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from 'react';
 
-import { format } from 'date-fns';
+import { addMinutes, format } from 'date-fns';
 import { c } from 'ttag';
 
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
@@ -9,6 +9,8 @@ import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { formatGMTOffsetAbbreviation, getTimezone, getTimezoneOffset } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../booking.store';
@@ -47,7 +49,24 @@ export const BookingSuccess = () => {
         return <NoMatch reason={Reason.notFound} />;
     }
 
-    const timeData = `${format(selectedBookingSlot.startTime, 'HH:mm', { locale: dateLocale })} - ${format(selectedBookingSlot.endTime, 'HH:mm', { locale: dateLocale })}`;
+    const timezoneOffset = getTimezoneOffset(selectedBookingSlot.tzDate, bookingDetails.timezone || getTimezone());
+    const formattedTimezoneOffset = formatGMTOffsetAbbreviation(timezoneOffset.offset);
+    const timezoneString = `${formattedTimezoneOffset} • ${bookingDetails.timezone || getTimezone()}`;
+
+    const timeData = `${format(selectedBookingSlot.tzDate, 'HH:mm', { locale: dateLocale })} - ${format(addMinutes(selectedBookingSlot.tzDate, bookingDetails.duration || 0), 'HH:mm', { locale: dateLocale })}`;
+
+    const hostInformation = (
+        <>
+            {bookingDetails.inviterDisplayName && (
+                <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>
+                    {bookingDetails.inviterDisplayName}
+                </div>
+            )}
+            <div className="text-ellipsis" title={bookingDetails.inviterEmail}>
+                {bookingDetails.inviterEmail}
+            </div>
+        </>
+    );
 
     return (
         <div className="container">
@@ -67,17 +86,21 @@ export const BookingSuccess = () => {
                         <BookingSuccessItem
                             title={c('Title').t`Host`}
                             icon={<IcUserCircle size={6} />}
-                            data={bookingDetails.inviterDisplayName || bookingDetails.inviterEmail}
+                            data={hostInformation}
                         />
                         <BookingSuccessItem
                             title={c('Title').t`Location`}
                             icon={<IcMapPin size={6} />}
-                            data={bookingDetails.location}
+                            data={
+                                bookingDetails.withProtonMeetLink
+                                    ? c('Info').t`${MEET_APP_NAME} video call`
+                                    : bookingDetails.location
+                            }
                         />
                         <BookingSuccessItem
                             title={c('Title').t`Time zone`}
                             icon={<IcGlobe size={6} />}
-                            data={bookingDetails.timezone}
+                            data={timezoneString}
                         />
                     </div>
 
@@ -85,7 +108,7 @@ export const BookingSuccess = () => {
                         <BookingSuccessItem
                             title={c('Title').t`Date`}
                             icon={<IcCalendarGrid />}
-                            data={format(selectedBookingSlot.startTime, 'MMMM d, yyyy', { locale: dateLocale })}
+                            data={format(selectedBookingSlot.tzDate, 'MMMM d, yyyy', { locale: dateLocale })}
                         />
                         <BookingSuccessItem title={c('Title').t`Time`} icon={<IcClock />} data={timeData} />
                     </div>
