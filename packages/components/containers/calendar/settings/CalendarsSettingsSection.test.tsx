@@ -85,6 +85,7 @@ const renderComponent = ({
     'user' | 'calendars' | 'myCalendars' | 'sharedCalendars' | 'subscribedCalendars'
 >) => {
     const config = {
+        id: 'calendar',
         icon: 'calendar' as IconName,
         to: '/calendars',
         text: 'Calendars',

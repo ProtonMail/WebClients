@@ -166,7 +166,8 @@ export const getAccountAppRoutes = ({
         available: true,
         header: c('Settings section title').t`Account`,
         routes: {
-            vpnDashboardV2: <SectionConfig>{
+            vpnDashboardV2: {
+                id: 'vpnDashboardV2',
                 text: c('Title').t`Home`,
                 noTitle: true,
                 to: '/dashboardV2',
@@ -202,7 +203,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            dashboardV2: <SectionConfig>{
+            dashboardV2: {
+                id: 'dashboardV2',
                 text: c('Title').t`Home`,
                 noTitle: true,
                 to: '/dashboardV2',
@@ -237,7 +239,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            subscription: <SectionConfig>{
+            subscription: {
+                id: 'subscription',
                 text: c('Title').t`Subscription`,
                 noTitle: true,
                 to: '/subscription',
@@ -320,7 +323,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            dashboard: <SectionConfig>{
+            dashboard: {
+                id: 'dashboard',
                 text: c('Title').t`Dashboard`,
                 to: '/dashboard',
                 icon: 'squares-in-square',
@@ -398,7 +402,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            upgrade: <SectionConfig>{
+            upgrade: {
+                id: 'upgrade',
                 text: c('Title').t`Upgrade plan`,
                 to: '/upgrade',
                 icon: 'arrow-up-big-line',
@@ -410,7 +415,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            recovery: <SectionConfig>{
+            recovery: {
+                id: 'recovery',
                 text: c('Title').t`Recovery`,
                 to: '/recovery',
                 icon: 'key',
@@ -442,7 +448,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            password: <SectionConfig>{
+            password: {
+                id: 'password',
                 text: c('Title').t`Account and password`,
                 to: '/account-password',
                 icon: 'user',
@@ -507,7 +514,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            language: <SectionConfig>{
+            language: {
+                id: 'language',
                 text: c('Title').t`Language and time`,
                 to: '/language-time',
                 icon: 'language',
@@ -517,7 +525,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            appearance: <SectionConfig>{
+            appearance: {
+                id: 'appearance',
                 text: c('Title').t`Appearance`,
                 to: '/appearance',
                 icon: 'paint-roller',
@@ -534,7 +543,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            security: <SectionConfig>{
+            security: {
+                id: 'security',
                 text: c('Title').t`Security and privacy`,
                 to: '/security',
                 icon: 'shield',
@@ -575,7 +585,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            referral: <SectionConfig>{
+            referral: {
+                id: 'referral',
                 text: c('Title').t`Refer a friend`,
                 title: isReferralExpansionEnabled ? c('Title').t`Invite friends. Get credits.` : undefined,
                 description: isReferralExpansionEnabled
@@ -596,7 +607,8 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            easySwitch: <SectionConfig>{
+            easySwitch: {
+                id: 'easySwitch',
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
@@ -611,13 +623,14 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            groupMembership: <SectionConfig>{
+            groupMembership: {
+                id: 'groupMembership',
                 text: c('Title').t`Group membership`,
                 to: '/group-membership',
                 icon: 'pass-group',
                 available: isUserGroupsMembershipFeatureEnabled && (memberships?.length ?? 0) > 0,
                 subsections: [{ id: 'group-membership' }],
             },
-        },
+        } satisfies Record<string, SectionConfig>,
     };
 };
