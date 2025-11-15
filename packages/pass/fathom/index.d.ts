@@ -83,6 +83,7 @@ declare const formatExpirationDate: (
     year: string,
     { fullYear, separator, monthFirst }: CCExpirationFormat
 ) => string;
+declare const getInputExpirationMonthFormat: (input: HTMLInputElement) => CCExpirationMonthFormat;
 declare const getInputExpirationYearFormat: (input: HTMLInputElement) => CCExpirationYearFormat;
 declare const getSelectExpirationYearFormat: (select: HTMLSelectElement) => CCExpirationYearFormat | undefined;
 declare const getSelectExpirationMonthFormat: (select: HTMLSelectElement) => CCExpirationMonthFormat | undefined;
@@ -252,6 +253,7 @@ export {
     getIdentityFieldType,
     getIdentityHaystack,
     getIgnoredParent,
+    getInputExpirationMonthFormat,
     getInputExpirationYearFormat,
     getOverridableFields,
     getOverridableForms,

@@ -369,9 +369,9 @@ const MIN_FIELD_HEIGHT = 15;
 
 const MIN_FIELD_WIDTH = 30;
 
-const MAX_INPUTS_PER_FORM = 40;
+const MAX_INPUTS_PER_FORM = 50;
 
-const MAX_FIELDS_PER_FORM = 65;
+const MAX_FIELDS_PER_FORM = 100;
 
 const MAX_HIDDEN_FIELD_VALUE_LENGTH = 320;
 
@@ -512,6 +512,8 @@ const CC_EXP_MONTH_ATTR_RE =
 const CC_EXP_YEAR_ATTR_RE =
     /exp(?:ir(?:y(?:date(?:field)?year|y(?:yyy|ear|y)?)|ationdatey(?:y(?:yy)?|ear)|(?:ation|e)y(?:yyy|ear|y)?)|y(?:yyy|ear|y)?)|yexpiration|cbdateann|anne(?:ee)?xp|cardy(?:yyy|ear|y)?|\b(cc(?:expyear|y(?:ear|[ry])))\b/i;
 
+const IFRAME_FIELD_ATTR_RE = /security|checkout|c(?:ontrol|v[cv])|payment|input|f(?:ield|orm)|card|pci/i;
+
 const EMAIL_VALUE_RE = /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,5}$/;
 
 const TEL_VALUE_RE = /^[\d()+-]{6,25}$/;
@@ -650,6 +652,8 @@ const matchCCExp = test(CC_EXP_ATTR_RE);
 const matchCCExpMonth = test(CC_EXP_MONTH_ATTR_RE);
 
 const matchCCExpYear = test(CC_EXP_YEAR_ATTR_RE);
+
+const matchIFrameField = test(IFRAME_FIELD_ATTR_RE);
 
 const normalizeString = (str, allowedChars = '') =>
     str
@@ -2865,7 +2869,15 @@ const getSelectOptions = (el) =>
         .map((opt) => opt.value)
         .filter(Boolean);
 
+const getInputExpirationMonthFormat = (input) => ({
+    padding: input.minLength === 2,
+});
+
 const getInputExpirationYearFormat = (input) => {
+    if (input.minLength === 4)
+        return {
+            fullYear: true,
+        };
     const haystack = getCCFormatHaystack(input);
     for (const year of CC_EXP_YEAR_FORMAT) {
         if (haystack.includes(year))
@@ -2930,11 +2942,12 @@ const getCCHaystack = (field) => {
 
 const getCCFieldType = (field) => {
     const haystack = getCCHaystack(field);
-    if (haystack)
+    if (haystack) {
         return CC_RE_MAP.find(([, test, predicate]) => {
             const match = test(haystack);
             return match && predicate ? predicate(field) : match;
         })?.[0];
+    }
 };
 
 const maybeCCField = (fnode) => {
@@ -2960,6 +2973,8 @@ const TABLE_MAX_COLS = 3;
 
 const TABLE_MAX_AREA = 15e4;
 
+const PAGE_FORM_RATIO = 0.7;
+
 const isTopFrame = () => {
     try {
         return window.self === window.top;
@@ -2979,12 +2994,14 @@ const excludeForms = (doc = document) => {
             const iframeCount = form.querySelectorAll('iframe').length;
             const invalidFieldCount =
                 inputCount + iframeCount === 0 || inputCount > MAX_INPUTS_PER_FORM || fieldCount > MAX_FIELDS_PER_FORM;
-            const pageForm = form.matches('body > form');
+            const topFrame = isTopFrame();
             const formElCount = form.querySelectorAll('*').length;
-            const invalidPageForm = isTopFrame() && pageForm && formElCount >= bodyElCount * 0.8;
-            const invalidCount = invalidFieldCount || invalidPageForm;
-            if (invalidCount && !pageForm) return flagSubtreeAsIgnored(form);
-            if (invalidCount && pageForm) return flagAsIgnored(form);
+            const pageFormMatch = topFrame && form.matches('body > form');
+            const pageFormSignal = topFrame && invalidFieldCount;
+            const pageForm = (pageFormMatch || pageFormSignal) && formElCount / bodyElCount >= PAGE_FORM_RATIO;
+            const invalidSignal = invalidFieldCount || pageForm;
+            if (invalidSignal && !pageForm) return flagSubtreeAsIgnored(form);
+            if (invalidSignal && pageForm) return flagAsIgnored(form);
             if (form.matches('table form') && form.closest('table').querySelectorAll('form').length > 2)
                 return flagAsIgnored(form);
         }
@@ -3077,6 +3094,15 @@ const handleSingletonCluster = (cluster) => {
     });
 };
 
+const isIFrameOfInterest = (iframe) => {
+    const title = iframe.getAttribute('title') || '';
+    const name = iframe.getAttribute('name') || '';
+    const ariaLabel = iframe.getAttribute('aria-label') || '';
+    const { id, src, className } = iframe;
+    const haystack = sanitizeStringWithSpaces(`${title} ${name} ${ariaLabel} ${id} ${src} ${className}`);
+    return matchIFrameField(haystack);
+};
+
 const resolveFormClusters = (doc) => {
     const forms = selectFormCandidates(doc);
     const clusterable = (els) => els.filter((el) => !forms.some((ex) => ex.contains(el)) && isVisibleField(el));
@@ -3092,7 +3118,8 @@ const resolveFormClusters = (doc) => {
         domGroups.filter((el) => !positionedEls.some((stack) => el.contains(stack))).concat(positionedEls)
     );
     const buttons = clusterable(Array.from(document.querySelectorAll(kButtonSubmitSelector)).filter(isBtnCandidate));
-    const candidates = uniqueNodes(fieldsOfInterest, buttons);
+    const iframes = clusterable(Array.from(doc.querySelectorAll('iframe')).filter(isIFrameOfInterest));
+    const candidates = uniqueNodes(fieldsOfInterest, buttons, iframes);
     if (candidates.length > CLUSTER_MAX_ELEMENTS) return [];
     const groupByInput = new WeakMap(candidates.map((el) => [el, groups.find((group) => group.contains(el))]));
     const theClusters = clusters(candidates, 1, (a, b) => {
@@ -3264,6 +3291,7 @@ export {
     getIdentityFieldType,
     getIdentityHaystack,
     getIgnoredParent,
+    getInputExpirationMonthFormat,
     getInputExpirationYearFormat,
     getOverridableFields,
     getOverridableForms,
