@@ -5,13 +5,14 @@ import {
     formatExpirationDate,
     getCCFieldType,
     getExpirationFormat,
+    getInputExpirationMonthFormat,
     getInputExpirationYearFormat,
     getSelectExpirationMonthFormat,
     getSelectExpirationYearFormat,
 } from '@proton/pass/fathom';
 import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
 import type { CCItemData, Maybe } from '@proton/pass/types';
-import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
+import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { head, last, prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -42,16 +43,12 @@ const getExpirationYear: CCFieldValueExtract = ({ expirationDate }, el) => {
 const getExpirationMonth: CCFieldValueExtract = ({ expirationDate }, el) => {
     if (expirationDate) {
         const [, month] = expirationDate.split('-');
-        /** Most exp-month fields will accept non-padded month */
-        if (isInputElement(el)) return parseInt(month, 10).toString();
+        const format = isInputElement(el) ? getInputExpirationMonthFormat(el) : getSelectExpirationMonthFormat(el);
 
-        if (isSelectElement(el)) {
-            const format = getSelectExpirationMonthFormat(el);
-            if (format) {
-                return parseInt(month, 10)
-                    .toString()
-                    .padStart(format.padding ? 2 : 1, '0');
-            }
+        if (format) {
+            return parseInt(month, 10)
+                .toString()
+                .padStart(format.padding ? 2 : 1, '0');
         }
     }
 };
