@@ -420,7 +420,7 @@ const EMAIL_ATTR_RE = /usermail/i;
 
 const CREATE_ACTION_RE = /erstellen|n(?:o(?:uveau|vo)|uevo|e[uw])|cr(?:e(?:a(?:te|r)|er)|iar)|set/i;
 
-const CREATE_ACTION_ATTR_END_RE = /\b.*(?:fst|1)$/i;
+const CREATE_ACTION_ATTR_END_RE = /\b\S*(?:fst|1)$/i;
 
 const RESET_ACTION_RE =
     /(?:a(?:ktualisiere|nder)|zurucksetze)n|(?:re(?:initialise|stablece|defini)|mettreajou)r|a(?:ctualiz|tualiz|lter)ar|c(?:ambiar|hange)|update|reset/i;
@@ -428,7 +428,7 @@ const RESET_ACTION_RE =
 const CONFIRM_ACTION_RE =
     /digitarnovamente|v(?:olveraescribi|erifi(?:ca|e))r|saisiranouveau|(?:erneuteingeb|wiederhol|bestatig)en|verif(?:izieren|y)|re(?:pe(?:t[ei]r|at)|type)|confirm|again/i;
 
-const CONFIRM_ACTION_ATTR_END_RE = /\b.*(?:snd|bis|2)$/i;
+const CONFIRM_ACTION_ATTR_END_RE = /\b\S*(?:snd|bis|2)$/i;
 
 const STEP_ACTION_RE =
     /(?:f(?:ertigstell|ortfahr)|abschlie)en|getstarted|siguiente|(?:preceden|suivan|accep)t|(?:finaliza|termin[ae]|anterio|weite)r|co(?:mplet(?:ar|e)|ntinu(?:ar|e))|pro(?:c(?:hain|eed)|ximo)|finish|zuruck|back|next/i;
@@ -480,7 +480,7 @@ const IDENTITY_TELEPHONE_PREFIX_ATTR_RE = /co(?:untry|de)|prefix/i;
 const IDENTITY_ADDRESS_ATTR_RE =
     /(?:preferred|street)address|address(?:line(?:one|[1s])|1)|mailingaddr|bill(?:ing)?addr|\b(mailaddr|addr(?:ess)?|street|line1)\b/i;
 
-const IDENTITY_ADDRESS_LINES_ATTR_END_RE = /\b.*(?:line(?:t(?:hree|wo)|[23]))$/i;
+const IDENTITY_ADDRESS_LINES_ATTR_END_RE = /\b\S*(?:line(?:t(?:hree|wo)|[23]))$/i;
 
 const IDENTITY_STATE_ATTR_RE = /address(?:(?:provinc|stat)e|level1)|stateprovince|\b(province|county|region|state)\b/i;
 
@@ -495,13 +495,13 @@ const IDENTITY_COUNTRY_ATTR_RE = /addresscountry(?:name)?|countryname|\b(country
 
 const IDENTITY_COUNTRY_CODE_ATTR_RE = /countrycode/i;
 
-const CC_PREFIX_ATTR_START_RE = /\b(?:(?:payments|new)card|paymentcard|c(?:red(?:it)?card|ard|[bc])|stripe|vads).*/i;
+const CC_PREFIX_ATTR_START_RE = /\b(?:(?:payments|new)card|paymentcard|c(?:red(?:it)?card|ard|[bc])|stripe|vads)\S+/i;
 
 const CC_NUMBER_ATTR_RE = /num(?:ero)?carte|c(?:ar(?:tecredit|dn(?:um|o))|reditcard|bnum|cno)|\b(c(?:ard |c)number)\b/i;
 
 const CC_CVC_ATTR_RE = /c(?:ard(?:verification|code)|sc|v[cv])|payments?code|\b(security code|ccc(?:ode|vv|sc))\b/i;
 
-const CC_NAME_ATTR_RE = /accountholdername|card(?:(?:holder)?name|holder)|holdername|\b(ccname)\b/i;
+const CC_NAME_ATTR_RE = /accountholdername|card(?:holder)?name|cardholder|nameoncard|holdername|\b(ccname)\b/i;
 
 const CC_EXP_ATTR_RE =
     /expir(?:ation(?:monthyear|date)|ation|ydate|y)|cardexp(?:iration)?|\b(ccexp(?:iration)?|expiry date)\b/i;
@@ -2788,6 +2788,8 @@ const MAX_LENGTH_FORMAT_MAP = {
     },
 };
 
+const YEAR_OPTION = (new Date().getFullYear() + 1).toString();
+
 const generateExpirationString = ({ fullYear, separator, monthFirst }) => {
     const month = '01';
     const year = fullYear ? '2025' : '25';
@@ -2923,15 +2925,46 @@ const notCCIdentityOutlier = (field) => {
     return true;
 };
 
+const isCCFirstName = (field, haystack) => matchCCFirstName(haystack) && notCCIdentityOutlier(field);
+
+const isCCLastName = (field, haystack) => matchCCLastName(haystack) && notCCIdentityOutlier(field);
+
+const isCCName = (field, haystack) => matchCCName(haystack) && notCCIdentityOutlier(field);
+
+const isCCSecurityCode = (_, haystack) => matchCCSecurityCode(haystack);
+
+const isCCNumber = (_, haystack) => matchCCNumber(haystack);
+
+const isCCExp = (field, haystack) => field instanceof HTMLInputElement && matchCCExp(haystack);
+
+const isCCExpMonth = (field, haystack) => {
+    if (matchCCExpMonth(haystack) && notCCExpOutlier(field)) return true;
+    if (field instanceof HTMLSelectElement && matchCCExp(haystack)) {
+        return field.options.length >= 12 && field.options.length <= 14;
+    }
+    return false;
+};
+
+const isCCExpYear = (field, haystack) => {
+    if (matchCCExpYear(haystack) && notCCExpOutlier(field)) return true;
+    if (field instanceof HTMLSelectElement && matchCCExp(haystack)) {
+        for (const option of field.options) {
+            if (option.innerText === YEAR_OPTION) return true;
+            if (option.value === YEAR_OPTION) return true;
+        }
+    }
+    return false;
+};
+
 const CC_RE_MAP = [
-    [CCFieldType.FIRSTNAME, matchCCFirstName, notCCIdentityOutlier],
-    [CCFieldType.LASTNAME, matchCCLastName, notCCIdentityOutlier],
-    [CCFieldType.NAME, matchCCName, notCCIdentityOutlier],
-    [CCFieldType.EXP_YEAR, matchCCExpYear, notCCExpOutlier],
-    [CCFieldType.EXP_MONTH, matchCCExpMonth, notCCExpOutlier],
-    [CCFieldType.EXP, matchCCExp],
-    [CCFieldType.CSC, matchCCSecurityCode],
-    [CCFieldType.NUMBER, matchCCNumber],
+    [CCFieldType.FIRSTNAME, isCCFirstName],
+    [CCFieldType.LASTNAME, isCCLastName],
+    [CCFieldType.NAME, isCCName],
+    [CCFieldType.EXP_YEAR, isCCExpYear],
+    [CCFieldType.EXP_MONTH, isCCExpMonth],
+    [CCFieldType.EXP, isCCExp],
+    [CCFieldType.CSC, isCCSecurityCode],
+    [CCFieldType.NUMBER, isCCNumber],
 ];
 
 const getCCHaystack = (field) => {
@@ -2942,12 +2975,7 @@ const getCCHaystack = (field) => {
 
 const getCCFieldType = (field) => {
     const haystack = getCCHaystack(field);
-    if (haystack) {
-        return CC_RE_MAP.find(([, test, predicate]) => {
-            const match = test(haystack);
-            return match && predicate ? predicate(field) : match;
-        })?.[0];
-    }
+    if (haystack) return CC_RE_MAP.find(([, test]) => test(field, haystack))?.[0];
 };
 
 const maybeCCField = (fnode) => {
