@@ -178,7 +178,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
             const anchor = field.getAnchor({ reflow: state.reflow });
             state.reflow = false;
 
-            if (anchor.element.offsetWidth < MIN_FIELD_WIDTH) {
+            if (input.offsetWidth < MIN_FIELD_WIDTH) {
                 icon.classList.remove('visible');
                 return;
             }
