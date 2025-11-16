@@ -58,10 +58,6 @@
 	}
 }
 
-.search-section {
-	margin-block-end: 8px;
-}
-
 .search-container {
 	display: flex;
 	align-items: center;
@@ -186,7 +182,7 @@
 .chat-history-section {
 	flex: 1;
 	min-block-size: 0;
-	margin-block: 8px;
+	margin-block: 0;
 	margin-inline: 0;
 	opacity: 0;
 	transition: opacity 0.3s ease-in-out;
@@ -265,7 +261,7 @@
 	inline-size: 24px;
 	block-size: 24px;
 	flex-shrink: 0;
-	margin-inline-end: 12px;
+	margin-inline-end: 6px;
 }
 
 .sidebar-item-text {
@@ -291,11 +287,6 @@
 	padding-inline: 8px;
 	margin-block: 8px 4px;
 	margin-inline: 0;
-	font-size: 12px;
-	color: var(--text-weak);
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
 
 	svg,
 	.icon {
@@ -314,14 +305,112 @@
 	}
 }
 
+.sidebar-section-header-collapsed {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	block-size: 40px;
+	padding: 8px;
+	margin-block: 4px;
+	margin-inline: 0;
+	cursor: pointer;
+	border-radius: 8px;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: var(--background-weak);
+	}
+
+	svg,
+	.icon {
+		inline-size: 20px;
+		block-size: 20px;
+		opacity: 0.7;
+	}
+}
+
+
 // Desktop sidebar z-index to ensure it's above disclaimers and other content
 .sidebar {
 	z-index: 10; // Higher than disclaimer (z-1) but lower than mobile overlay (z-100)
 	position: relative;
 }
 
+.sidebar button:hover,
+.sidebar .navigation-link:hover {
+	border-radius: 8px;
+}
+
+.sidebar-list-item-content {
+	.shrink-0 {
+		min-inline-size: 1rem;
+		inline-size: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		will-change: transform;
+		backface-visibility: hidden;
+		transform: translateZ(0);
+	}
+
+	.text-ellipsis {
+		transition: opacity 0.15s ease-in-out;
+		will-change: opacity;
+	}
+}
+
+.projects-list {
+	display: flex;
+	flex-direction: column;
+	margin-inline-start: 23px;
+}
+
+.projects-text-button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+	display: flex;
+	align-items: center;
+	flex: 1;
+	text-align: start;
+
+	&:focus {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: -2px;
+	}
+
+	&:hover {
+		background-color: transparent !important;
+	}
+}
+
+.projects-create-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	border-radius: 4px;
+	opacity: 0.6;
+	transition: opacity 0.15s ease, background-color 0.15s ease;
+	height: 22px;
+	width: 21px;
+	padding-bottom: 2px;
+	background-color: transparent;
+
+	&:hover {
+		opacity: 0.6;
+		background-color: #e7e7e7;
+		border-radius: 5px;
+		
+	}
+}
+
 // Mobile-specific sidebar enhancements (core positioning handled in index.scss)
 @include media('<=small') {
+
 	// Reset sidebar bottom padding on mobile
 	.sidebar-section.sidebar-bottom {
 		padding-block-start: 0;
@@ -381,6 +470,91 @@
 		pointer-events: auto;
 
 		// New chat and search sections are now conditionally rendered for mobile guests
+	}
+
+	// Projects sidebar section
+	.projects-sidebar-section {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.projects-header-container {
+		position: relative;
+		border-radius: 8px;
+
+		&:hover {
+			background-color: var(--background-weak);
+			transition: 0.3s all;
+		}
+	}
+
+	.projects-header-button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 0;
+		flex: 1;
+	}
+
+	.projects-icon-button {
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		padding: 4px;
+		padding-inline: 6px;
+		border-radius: 6px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		min-width: 24px;
+		height: 24px;
+
+	}
+
+	.projects-folder-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	
+
+	.project-sidebar-item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 6px 12px;
+		border-radius: 6px;
+		text-decoration: none;
+		color: var(--text-norm);
+		font-size: 14px;
+		transition: background-color 0.15s ease;
+		min-height: 32px;
+
+		&.is-active {
+			background-color: var(--interaction-default-hover);
+			font-weight: 500;
+		}
+	}
+
+	.project-icon-small {
+		flex-shrink: 0;
+	}
+
+	.project-sidebar-item-see-all {
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		margin-inline-start: 0;
+		padding: 4px 12px;
+		border-radius: 4px;
+	}
+
+	.projects-empty {
+		color: var(--text-weak);
+		margin-inline-start: 36px;
 	}
 
 	// ChatGPT-style mobile header with logo and close button

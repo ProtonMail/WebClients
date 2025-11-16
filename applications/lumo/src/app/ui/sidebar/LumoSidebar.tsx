@@ -19,6 +19,7 @@ import SettingsModal from '../components/SettingsModal/SettingsModal';
 import { ChatHistory } from '../sidepanel/ChatHistory';
 import { LumoSidebarUpsell } from '../upsells/composed/LumoSidebarUpsell';
 import ForBusinessSidebarButton from './ForBusinessSidebarButton';
+import { ProjectsSidebarSection } from './ProjectsSidebarSection';
 
 import './LumoSidebar.scss';
 
@@ -96,17 +97,35 @@ const NewChatButton = ({ showText }: { showText: boolean }) => {
 
 // Chat History Section
 const ChatHistorySection = ({ searchValue, showText }: { searchValue: string; showText: boolean }) => {
-    const { shouldShowContent, closeOnItemClick } = useSidebar();
+    const { shouldShowContent, closeOnItemClick, isCollapsed, toggle } = useSidebar();
 
     return (
-        <div
-            className={clsx('chat-history-section', {
-                'content-visible': shouldShowContent,
-                'text-visible': showText,
-            })}
-        >
-            <ChatHistory refInputSearch={{ current: null }} onItemClick={closeOnItemClick} searchInput={searchValue} />
-        </div>
+        <>
+            {isCollapsed ? (
+                <div className="sidebar-section">
+                    <Tooltip title={c('collider_2025:Title').t`History`} originalPlacement="right">
+                        <button
+                            className="sidebar-item"
+                            onClick={toggle}
+                            aria-label={c('collider_2025:Title').t`History`}
+                        >
+                            <div className="sidebar-item-icon">
+                                <Icon name="clock-rotate-left" size={4} />
+                            </div>
+                        </button>
+                    </Tooltip>
+                </div>
+            ) : (
+                <div
+                    className={clsx('chat-history-section', {
+                        'content-visible': shouldShowContent,
+                        'text-visible': showText,
+                    })}
+                >
+                    <ChatHistory refInputSearch={{ current: null }} onItemClick={closeOnItemClick} searchInput={searchValue} />
+                </div>
+            )}
+        </>
     );
 };
 
@@ -175,7 +194,7 @@ const SearchSection = ({
 };
 
 const LumoSidebarContent = () => {
-    const { isVisible, isSmallScreen, isCollapsed, toggle } = useSidebar();
+    const { isVisible, isSmallScreen, isCollapsed, toggle, closeOnItemClick } = useSidebar();
     const isGuest = useIsGuest();
     const showText = useTextVisibility(isCollapsed);
     const settingsModal = useModalStateObject();
@@ -209,31 +228,28 @@ const LumoSidebarContent = () => {
                     </div>
                 )}
 
-                {/* {isSmallScreen && !isGuest && (
-                    <div className="mobile-user-dropdown shrink-0 md:hidden">
-                        <UserDropdown app={APP_NAME} />
-                    </div>
-                )} */}
-
-                {/* Top Section - hide on mobile for guests */}
-                {!(isSmallScreen && isGuest) && (
-                    <div className="sidebar-section">
-                        <NewChatButton showText={showText} />
-                        <SidebarItem
-                            icon="folder"
-                            label={c('collider_2025:Button').t`Projects`}
-                            onClick={() => history.push('/projects')}
-                            showText={showText}
-                        />
-                    </div>
-                )}
-
                 {/* Search Section - hide on mobile for guests */}
                 {!(isSmallScreen && isGuest) && (
                     <div className="sidebar-section">
                         <SearchSection showText={showText} onSearchChange={setSearchValue} />
                     </div>
                 )}
+
+                {/* Top Section - hide on mobile for guests */}
+                {!(isSmallScreen && isGuest) && (
+                    <div className="sidebar-section">
+                        <NewChatButton showText={showText} />
+                    </div>
+                )}
+
+                {/* Projects Section - hide on mobile for guests */}
+                {!(isSmallScreen && isGuest) && (
+                    <div className="sidebar-section">
+                        <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
+                    </div>
+                )}
+
+
 
                 {/* Chat History Section */}
                 <ChatHistorySection searchValue={searchValue} showText={showText} />
