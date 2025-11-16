@@ -1,4 +1,4 @@
-import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
+import { DropdownAction, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
 import { autofillCCFields } from 'proton-pass-extension/app/content/services/autofill/autofill.cc';
@@ -10,7 +10,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import type { AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FieldType, FormType } from '@proton/pass/fathom/labels';
+import { FieldType } from '@proton/pass/fathom/labels';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { AsyncCallback, FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
@@ -96,16 +96,25 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
             counters.creditCards = null;
         }
 
-        const trackedForms = ctx.service.formManager.getTrackedForms();
-        const loginForms = trackedForms?.filter((form) => form.formType === FormType.LOGIN) ?? [];
-        const identityFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.IDENTITY).length > 0);
-        const ccFields = trackedForms?.some((form) => form.getFieldsFor(FieldType.CREDIT_CARD).length > 0);
+        let logins = false;
+        let identities = false;
+        let ccs = false;
 
-        trackedForms.forEach((form) => form.getFields().forEach((field) => field.icon?.sync()));
+        const fields = ctx.service.formManager.getTrackedFields();
 
-        if (loginForms && authorized) await getCredentialsCount();
-        if (identityFields && authorized) await getIdentitiesCount();
-        if (ccFields && authorized) await getCreditCardsCount();
+        for (const field of fields) {
+            if (field.action?.type === DropdownAction.AUTOFILL_LOGIN) logins = true;
+            if (field.action?.type === DropdownAction.AUTOFILL_IDENTITY) identities = true;
+            if (field.action?.type === DropdownAction.AUTOFILL_CC) ccs = true;
+        }
+
+        if (authorized) {
+            if (logins) await getCredentialsCount();
+            if (identities) await getIdentitiesCount();
+            if (ccs) await getCreditCardsCount();
+        }
+
+        fields.forEach((field) => field.icon?.sync());
     });
 
     /** Locks field interactivity during autofill to prevent "focus-to-next"

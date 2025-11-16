@@ -2,6 +2,7 @@ import {
     ACTIVE_ICON_SRC,
     COUNTER_ICON_SRC,
     DISABLED_ICON_SRC,
+    DropdownAction,
     LOCKED_ICON_SRC,
 } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
@@ -11,7 +12,6 @@ import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/fram
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
 import type { AppStatus, Callback, MaybeNull } from '@proton/pass/types';
 import { animatePositionChange, freezeAnimations, waitForTransitions } from '@proton/pass/utils/dom/animation';
@@ -121,21 +121,12 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         if (!ctx) return;
 
         const { authorized, status } = ctx.getState();
-        const { formType } = field.getFormHandle();
-        const { fieldType } = field;
-
         setStatus(status);
 
-        const showCounter =
-            formType === FormType.LOGIN ||
-            (formType === FormType.RECOVERY && [FieldType.USERNAME, FieldType.EMAIL].includes(fieldType));
+        const showCounter = field.action?.type === DropdownAction.AUTOFILL_LOGIN && authorized;
 
         if (!showCounter) setCount(0);
-        else {
-            void Promise.resolve(authorized ? (ctx.service.autofill.getCredentialsCount() ?? 0) : 0)
-                .then(setCount)
-                .catch(noop);
-        }
+        else ctx.service.autofill.getCredentialsCount().then(setCount).catch(noop);
     });
 
     const checkParentCollision = safeAsyncCall(
