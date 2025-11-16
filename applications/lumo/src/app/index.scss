@@ -195,30 +195,6 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.sidebar button:hover,
-.sidebar .navigation-link:hover {
-	background-color: var(--interaction-default-hover) !important;
-	border-radius: 8px;
-}
-
-.sidebar-list-item-content {
-	.shrink-0 {
-		min-inline-size: 1rem;
-		inline-size: 1rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		will-change: transform;
-		backface-visibility: hidden;
-		transform: translateZ(0);
-	}
-
-	.text-ellipsis {
-		transition: opacity 0.15s ease-in-out;
-		will-change: opacity;
-	}
-}
-
 .navigation > .navigation-list:last-child,
 .navigation > div > .navigation-list:last-child {
 	padding-block-end: 0;
