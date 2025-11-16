@@ -61,6 +61,7 @@ const MIN_FIELD_WIDTH = 100;
 export const createIconController = (options: IconControllerOptions): MaybeNull<IconController> => {
     const { field, tag } = options;
     const input = field.element;
+    const form = field.getFormHandle().element;
     const anchor = field.getAnchor({ reflow: true });
     const zIndex = field.getFormHandle().zIndex;
 
@@ -180,7 +181,7 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
             await waitForTransitions(container);
 
             if (!ctrl.signal.aborted) {
-                const refs = { icon, control, input, anchor: anchor.element, parent: container };
+                const refs = { icon, control, input, anchor: anchor.element, form };
 
                 animatePositionChange({
                     onAnimate: (raf) => (state.repositionRaf = raf),
