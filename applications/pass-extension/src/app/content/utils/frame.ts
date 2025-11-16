@@ -7,19 +7,20 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { isVisible } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array/first';
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
 import { createWeakRefCache, maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import identity from '@proton/utils/identity';
-
-type FrameScore = [frame: HTMLIFrameElement, score: number];
 
 export const getFrameID = withContext<() => FrameID>((ctx) => {
     const frameId = ctx?.getExtensionContext()?.frameId;
     if (frameId === undefined) throw new Error('Unknown frameID');
     return frameId;
 });
+
+/** Iframes may get resized on focus if constrained
+ * by a wrapper's element content-box with borders */
+const IFRAME_SIZE_THRESHOLD = 4; /* px */
 
 export const getFrameElement = (frameId: number, frameAttributes: FrameAttributes): Maybe<HTMLIFrameElement> => {
     const iframes = document.getElementsByTagName('iframe');
@@ -39,28 +40,48 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
      * how well its properties match our signature. The iframe with the highest
      * matching score is selected. This approach handles cases where some
      * properties are missing or multiple iframes have similar attributes. */
-    const candidates = Array.from(iframes).reduce<FrameScore[]>((acc, iframe) => {
+    let bestCandidate: Maybe<HTMLIFrameElement>;
+    let bestScore = -1;
+
+    for (const iframe of iframes) {
         let score = 0;
         const { width, height, src, name, title, ariaLabel } = frameAttributes;
 
         /** FIXME: this should support relative src's as well */
         const frameSrc = iframe.getAttribute('src');
+        const frameName = iframe.getAttribute('name');
+        const frameTitle = iframe.getAttribute('title');
+        const frameAriaLabel = iframe.getAttribute('aria-label');
+
+        /** Skip iframes without src or with blank src */
+        if (!frameSrc || frameSrc === 'about:blank') continue;
 
         const parser = createStyleParser(iframe);
         const frameWidth = getComputedWidth(parser, 'inner').value;
         const frameHeight = getComputedHeight(parser, 'inner').value;
-        if (src !== undefined && frameSrc === src) score++;
-        if (name !== undefined && iframe.name === name) score++;
-        if (title !== undefined && iframe.title === title) score++;
-        if (ariaLabel !== undefined && iframe.ariaLabel === ariaLabel) score++;
-        if (width !== undefined && Math.abs(frameWidth - width) <= 1) score++;
-        if (height !== undefined && Math.abs(frameHeight - height) <= 1) score++;
 
-        acc.push([iframe, score]);
-        return acc;
-    }, []);
+        /** direct attribute matches */
+        if (src && frameSrc === src) score++;
+        if (name && frameName === name) score++;
+        if (title && frameTitle === title) score++;
+        if (ariaLabel && frameAriaLabel === ariaLabel) score++;
 
-    return first(candidates.sort((a, b) => b[1] - a[1]))?.[0];
+        /** size match with threshold */
+        if (width && Math.abs(frameWidth - width) < IFRAME_SIZE_THRESHOLD) score++;
+        if (height && Math.abs(frameHeight - height) < IFRAME_SIZE_THRESHOLD) score++;
+
+        /** cross-attribute scoring */
+        if (name && (name === frameTitle || name === frameAriaLabel)) score += 0.5;
+        if (title && (title === frameName || title === frameAriaLabel)) score += 0.5;
+        if (ariaLabel && (ariaLabel === frameTitle || ariaLabel === frameName)) score += 0.5;
+
+        if (score > bestScore) {
+            bestScore = score;
+            bestCandidate = iframe;
+        }
+    }
+
+    return bestCandidate;
 };
 
 export const getFrameAttributes = (): FrameAttributes => {
