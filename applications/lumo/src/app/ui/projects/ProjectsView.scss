@@ -12,9 +12,15 @@
     align-items: center;
     padding: 24px 32px;
     border-bottom: 1px solid var(--border-weak);
+    gap: 12px;
 
     @media (max-width: 768px) {
         padding: 16px 20px;
+    }
+
+    // Hamburger button on mobile
+    .hamburger-button {
+        flex-shrink: 0;
     }
 }
 
