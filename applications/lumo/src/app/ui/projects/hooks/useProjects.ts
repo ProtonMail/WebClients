@@ -22,12 +22,12 @@ export const useProjects = () => {
             if (space.isProject) {
                 // Count conversations belonging to this space
                 const conversationCount = Object.values(conversations).filter(
-                    (conv) => conv.spaceId === space.id && !conv.deleted
+                    (conv) => conv.spaceId === space.id
                 ).length;
 
                 // Count assets (persistent project files) belonging to this space
                 const fileCount = Object.values(assets).filter(
-                    (asset) => asset.spaceId === space.id && !asset.deleted && !asset.error && !asset.processing
+                    (asset) => asset.spaceId === space.id && !asset.error && !asset.processing
                 ).length;
 
                 projectList.push({

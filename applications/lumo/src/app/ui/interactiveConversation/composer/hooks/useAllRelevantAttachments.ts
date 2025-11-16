@@ -24,7 +24,7 @@ export const useAllRelevantAttachments = (
         spaceId ? selectAssetsBySpaceId(spaceId)(state) : {}
     );
     const spaceAssetsList = useMemo(() => 
-        Object.values(spaceAssets).filter((asset) => !asset.deleted && !asset.error && !asset.processing)
+        Object.values(spaceAssets).filter((asset) => !asset.error && !asset.processing)
     , [spaceAssets]);
 
     // Get all attachment IDs from the message chain

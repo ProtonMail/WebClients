@@ -15,7 +15,6 @@ import {
 } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { PandocProvider } from '../../providers/PandocProvider';
@@ -120,7 +119,7 @@ const ProjectDetailViewInner = () => {
     if (!space || !space.isProject) {
         return (
             <div className="project-detail-not-found">
-                <Icon name="exclamation-circle" size={16} />
+                <Icon name="exclamation-circle" size={4} />
                 <h2>{c('collider_2025:Error').t`Project not found`}</h2>
                 <Button onClick={() => history.push('/projects')}>
                     {c('collider_2025:Button').t`Back to projects`}
@@ -135,7 +134,7 @@ const ProjectDetailViewInner = () => {
     
     // Count files for this space
     const fileCount = Object.values(spaceAttachments).filter(
-        (att) => !att.deleted && !att.error
+        (att) => !att.error
     ).length;
 
     // Get prompt suggestions based on project name (for newly created example projects)
@@ -227,7 +226,7 @@ const ProjectDetailViewInner = () => {
                         onClick={() => setShowSidebar(!showSidebar)}
                         title={showSidebar ? c('collider_2025:Action').t`Hide sidebar` : c('collider_2025:Action').t`Show sidebar`}
                     >
-                        <Icon name={showSidebar ? 'sidebar-left' : 'sidebar-right'} />
+                        <Icon name={showSidebar ? 'chevron-left' : 'chevron-right'} />
                     </Button>
                     <Button
                         ref={anchorRef}
