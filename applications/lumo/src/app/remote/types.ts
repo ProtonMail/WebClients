@@ -1,4 +1,5 @@
 import type {
+    AssetId,
     Base64,
     ConversationId,
     MessageId,

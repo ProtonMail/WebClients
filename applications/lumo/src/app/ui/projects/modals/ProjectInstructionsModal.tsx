@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, TextAreaTwo } from '@proton/components';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/interface';
+import type { ModalStateProps } from '@proton/components';
 
 import { useProjectActions } from '../hooks/useProjectActions';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -36,9 +36,11 @@ export const ProjectInstructionsModal = ({
         <ModalTwo {...modalProps} onClose={handleCancel} size="large">
             <ModalTwoHeader title={c('collider_2025:Title').t`Edit Instructions`} />
             <ModalTwoContent>
+                <label htmlFor="project-instructions" className="block mb-2">
+                    {c('collider_2025:Label').t`Project Instructions`}
+                </label>
                 <TextAreaTwo
                     id="project-instructions"
-                    label={c('collider_2025:Label').t`Project Instructions`}
                     placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt. These instructions will apply to all chats in this project.`}
                     value={instructions}
                     onValue={setInstructions}

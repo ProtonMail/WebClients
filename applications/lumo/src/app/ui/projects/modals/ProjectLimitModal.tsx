@@ -23,7 +23,7 @@ export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
     const { plansMapLoading } = usePreferredPlansMap();
 
     const handleSubscriptionModalSubscribed = () => {
-        modalProps.onClose();
+        modalProps.onClose?.();
         sendSubscriptionModalSubscribedEvent();
     };
 

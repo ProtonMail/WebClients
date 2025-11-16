@@ -529,6 +529,8 @@ export class LumoApi {
             conversations: {},
             deletedSpaces: {},
             deletedConversations: {},
+            assets: {},
+            deletedAssets: {},
         };
         let lastTimestamp: Date | undefined;
         while (true) {
@@ -544,6 +546,8 @@ export class LumoApi {
                 conversations: { ...result.conversations, ...next.conversations },
                 deletedSpaces: { ...result.deletedSpaces, ...next.deletedSpaces },
                 deletedConversations: { ...result.deletedConversations, ...next.deletedConversations },
+                assets: { ...result.assets, ...(next.assets || {}) },
+                deletedAssets: { ...result.deletedAssets, ...(next.deletedAssets || {}) },
             };
         }
         return result;
