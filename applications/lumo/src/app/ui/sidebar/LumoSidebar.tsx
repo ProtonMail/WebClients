@@ -200,7 +200,6 @@ const LumoSidebarContent = () => {
     const settingsModal = useModalStateObject();
     const [searchValue, setSearchValue] = useState('');
     const { APP_NAME } = useConfig();
-    const history = useHistory();
 
     // Don't render if sidebar is hidden
     if (!isVisible) {
