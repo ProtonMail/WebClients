@@ -78,9 +78,15 @@ export function FormRadioIcon() {
 
 export function FormCheckmarkIcon() {
   return (
-    <span className="flex size-5 items-center justify-center rounded border-[1px] border-[#ADABA8]">
+    <span
+      className={clsx(
+        'flex size-5 items-center justify-center rounded border-[1px] border-[#ADABA8] transition',
+        "group-has-[[aria-checked='true']]:border-0 aria-checked:border-0 group-aria-checked:border-0",
+        "group-has-[[aria-checked='true']]:bg-[#6D4AFF] aria-checked:bg-[#6D4AFF] group-aria-checked:bg-[#6D4AFF]",
+      )}
+    >
       <span className="mt-[-2px] hidden group-has-[[aria-checked='true']]:block aria-checked:block group-aria-checked:block">
-        <Icon legacyName="checkmark" />
+        <Icon legacyName="checkmark" stroke="white" />
       </span>
     </span>
   )
@@ -106,8 +112,8 @@ export const FormCheckbox = createComponent(function FormRadio({
   return (
     <label
       className={clsx(
-        'group inline-flex select-none items-center gap-2 rounded border border-[transparent] text-sm',
-        '!outline-none transition focus-within:border-[#6D4AFF] focus-within:ring-[3px] focus-within:ring-[#6D4AFF33]',
+        'group relative inline-flex select-none gap-2 rounded border border-[transparent] text-sm',
+        '!outline-none transition has-[[data-focus-visible]]:border-[#6D4AFF] has-[[data-focus-visible]]:ring-[3px] has-[[data-focus-visible]]:ring-[#6D4AFF33]',
         className,
       )}
     >
