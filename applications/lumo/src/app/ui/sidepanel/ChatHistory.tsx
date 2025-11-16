@@ -3,7 +3,6 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 
 import { useLumoPlan } from '../../hooks/useLumoPlan';

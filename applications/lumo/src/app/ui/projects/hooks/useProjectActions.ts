@@ -50,7 +50,7 @@ export const useProjectActions = () => {
                     spaceId,
                     title: 'New chat',
                     createdAt,
-                    status: ConversationStatus.READY,
+                    status: ConversationStatus.COMPLETED,
                 })
             );
             dispatch(pushConversationRequest({ id: conversationId }));

@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -30,7 +30,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
 
     // Get space assets (persistent files)
     const spaceAssets = useLumoSelector((state) => selectAssetsBySpaceId(projectId)(state));
-    const files = Object.values(spaceAssets).filter((asset) => !asset.deleted && !asset.error);
+    const files = Object.values(spaceAssets).filter((asset) => !asset.error);
 
     const handleAddFiles = () => {
         fileInputRef.current?.click();
