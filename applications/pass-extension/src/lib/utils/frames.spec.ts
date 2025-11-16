@@ -118,22 +118,22 @@ describe('inline service', () => {
         ]);
 
         test('should allow frame with trusted path', () => {
-            const allowedOrigins = ['payment.com', 'merchant.com'];
+            const allowedOrigins = new Set(['payment.com', 'merchant.com']);
             expect(validateFramePath(frames, 3, allowedOrigins)).toBe(true);
         });
 
         test('should reject frame with malicious intermediate origin', () => {
-            const allowedOrigins = ['payment.com', 'merchant.com'];
+            const allowedOrigins = new Set(['payment.com', 'merchant.com']);
             expect(validateFramePath(frames, 2, allowedOrigins)).toBe(false);
         });
 
         test('should handle root frame validation', () => {
-            const allowedOrigins = ['merchant.com'];
+            const allowedOrigins = new Set(['merchant.com']);
             expect(validateFramePath(frames, 0, allowedOrigins)).toBe(true);
         });
 
         test('should reject frame with unknown origin in path', () => {
-            const allowedOrigins = ['payment.com'];
+            const allowedOrigins = new Set(['payment.com']);
             expect(validateFramePath(frames, 3, allowedOrigins)).toBe(false);
         });
     });
@@ -288,9 +288,9 @@ describe('inline service', () => {
             /*
             <frame origin="merchant.com">            <!-- frame0 -->
                 <frame origin="malicious.com">       <!-- frame1 -->
-                    <frame origin="payment.com" />   <!-- frame2 -->
+                    <frame origin="payment.com" />   <!-- frame2 BAD PATH -->
                 </frame>
-                <frame origin="payment.com" />       <!-- frame3 -->
+                <frame origin="payment.com" />       <!-- frame3 GOOD PATH -->
             </frame>
             */
             getAllFrames.mockResolvedValue([
@@ -300,8 +300,8 @@ describe('inline service', () => {
                 { frameId: 3, parentFrameId: 0, url: 'https://payment.com/widget' },
             ]);
 
-            /**  Autofill triggered from frame2 (payment.com via malicious chain) */
-            const result = await getAutofillableFrameIDs(tabId, 'payment.com', 2);
+            /** Autofill triggered from frame3 : should exclude frame2 in malicious chain */
+            const result = await getAutofillableFrameIDs(tabId, 'payment.com', 3);
 
             expect(result).toEqual([
                 { frameId: 3, crossOrigin: false },

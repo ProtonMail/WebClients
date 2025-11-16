@@ -2,7 +2,6 @@ import type { WebNavigation } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull, TabId } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 
@@ -54,44 +53,67 @@ export const getFramePath = (frames: Frames, frameId: FrameID): FrameID[] => {
 /** Validates that all frames in the path from target frame to root contain
  * only allowed origins. Prevents cross-origin injection attacks by ensuring
  * no malicious intermediate frames in the ancestry chain. */
-export const validateFramePath = (frames: Frames, frameID: FrameID, allowedOrigins: string[]): boolean => {
+export const validateFramePath = (frames: Frames, frameID: FrameID, trustedOrigins: Set<string>): boolean => {
     const path = getFramePath(frames, frameID);
     return path.every((pathFrameID) => {
         const frameOrigin = frames.get(pathFrameID)?.origin;
         if (!frameOrigin) return false;
-        return allowedOrigins.includes(frameOrigin);
+        return trustedOrigins.has(frameOrigin);
     });
 };
 
 export type AutofillableFrame = { frameId: FrameID; crossOrigin: boolean };
 
 /** Determines which frames are safe to autofill based on origin validation.
- * For same-origin requests (`frameID === 0`), only allows frames matching the
- * trigger origin. For cross-frame requests, additionally allows the top-level
- * origin to support legitimate embedded payment forms where the parent domain
- * needs autofill alongside the iframe. Validates complete frame ancestry to
- * prevent malicious intermediate frames from intercepting autofill data. */
+ * - Validates complete frame ancestry to prevent malicious intermediate frames
+ * - Only autofills frames matching the trigger origin or top-level origin
+ * - Rejects any frame with untrusted origins in its ancestry chain */
 export const getAutofillableFrameIDs = async (
     tabId: TabId,
     frameOrigin: string,
     originFrameID: FrameID
 ): Promise<AutofillableFrame[]> => {
     const frames = await getTabFrames(tabId, { parseOrigin: true });
-    /** For non-main frames, determine top-level origin to allow parent domain
-     * autofill for UX - handles cases where legitimate subframes need to autofill
-     * on their parent domain (eg: payment forms with non-psp fields in the top-frame) */
-    const crossOrigin = originFrameID !== 0 ? frames.get(0)?.origin : null;
-    const allowedOrigins = [frameOrigin, crossOrigin].filter(truthy);
+    const trustedOrigins = new Set<string>();
+    const autofillableOrigins = new Set<string>();
+
+    /** Always trust and autofill the origin that triggered autofill */
+    trustedOrigins.add(frameOrigin);
+    autofillableOrigins.add(frameOrigin);
+
+    /** Autofill policy: only trigger origin + top-level domain */
+    if (originFrameID !== 0) {
+        const topFrame = frames.get(0);
+        if (topFrame?.origin) autofillableOrigins.add(topFrame.origin);
+    }
+
+    /** Build trusted ancestry chain by walking up to root frame */
+    const originFrame = frames.get(originFrameID);
+    let current = originFrame;
+
+    while (current && current.parent !== null) {
+        const parent = frames.get(current.parent);
+        if (!parent?.origin) break;
+        trustedOrigins.add(parent.origin);
+        current = parent;
+    }
+
     const autofillableFrameIDs: AutofillableFrame[] = [];
 
     for (const [frameId, frame] of frames) {
-        if (frame.origin && validateFramePath(frames, frameId, allowedOrigins)) {
-            autofillableFrameIDs.push({
-                frameId,
-                crossOrigin: frame.origin !== frameOrigin,
-            });
+        if (!frame.origin) continue;
+
+        /** 1. Frame origin must be autofillable (policy)
+         *  2. Frame path must be valid (security) */
+        const isAutofillableOrigin = autofillableOrigins.has(frame.origin);
+
+        if (isAutofillableOrigin && validateFramePath(frames, frameId, trustedOrigins)) {
+            const crossOrigin = frame.origin !== frameOrigin;
+            autofillableFrameIDs.push({ frameId, crossOrigin });
         }
     }
+
+    autofillableOrigins.clear();
 
     return autofillableFrameIDs.sort((a, b) => {
         /** 1. Direct originFrameID match takes highest priority */
