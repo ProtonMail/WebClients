@@ -27,7 +27,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     const history = useHistory();
     const location = useLocation();
     const isGuest = useIsGuest();
-    const { isCollapsed } = useSidebar();
+    const { isCollapsed, toggle } = useSidebar();
     const newProjectModal = useModalStateObject();
 
     // Collapse Projects section when sidebar starts collapsing, expand when sidebar expands
@@ -63,10 +63,16 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     };
 
     const handleProjectsHeaderClick = () => {
-        if (onItemClick) {
-            onItemClick();
+        if (isCollapsed) {
+            // When collapsed, expand the sidebar
+            toggle();
+        } else {
+            // When expanded, navigate to projects page
+            if (onItemClick) {
+                onItemClick();
+            }
+            history.push('/projects');
         }
-        history.push('/projects');
     };
 
     const handleProjectsClick = () => {
@@ -191,7 +197,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                                         flexShrink: 0,
                                     }}
                                 >
-                                    <Icon name={category.icon} size={3} className="color-white" />
+                                    <Icon name={category.icon as any} size={3} className="color-white" />
                                 </div>
                                 <span className="flex-1 text-ellipsis text-sm" title={project.name}>
                                     {project.name}

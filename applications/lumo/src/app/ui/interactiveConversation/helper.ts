@@ -123,11 +123,12 @@ export function sendMessage({
         
         // Get space assets (project-level files) - they have same shape as attachments
         const spaceAssets = Object.values(allAssetsState).filter(
-            (asset: any) => asset.spaceId === spaceId && !asset.processing && !asset.error && !asset.deleted
+            (asset): asset is Attachment => 
+                asset.spaceId === spaceId && !asset.processing && !asset.error
         );
         
         // Combine space attachments, space assets, and provisional attachments (remove duplicates)
-        const allMessageAttachments = [...spaceAttachments, ...spaceAssets];
+        const allMessageAttachments: Attachment[] = [...spaceAttachments, ...spaceAssets];
         attachments.forEach((att) => {
             if (!allMessageAttachments.some((a) => a.id === att.id)) {
                 allMessageAttachments.push(att);

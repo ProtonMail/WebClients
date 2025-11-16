@@ -113,14 +113,14 @@ export const handleSpaceAssetFileAsync = (file: File, spaceId: SpaceId) => async
 
     // Send telemetry event (optional parameters)
     try {
-        sendFileUploadFinishEvent({
-            success: !hasError,
-            fileName: file.name,
-            fileSize: file.size,
-            mimeType: file.type,
-            processingTimeMs,
+        sendFileUploadFinishEvent(
+            file.size,
+            file.type,
+            !hasError,
             isUnsupported,
-        });
+            hasError,
+            processingTimeMs
+        );
     } catch (telemetryError) {
         console.warn('Failed to send telemetry event:', telemetryError);
     }
