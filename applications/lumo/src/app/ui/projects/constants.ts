@@ -1,9 +1,7 @@
-import type { IconName } from '@proton/components';
-
 export interface ProjectCategory {
     id: string;
     name: string;
-    icon: IconName;
+    icon: string;
     color: string;
 }
 
