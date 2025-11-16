@@ -14,7 +14,7 @@ interface ChatsListProps {
 
 const RecentChatsList = ({ conversations, selectedConversationId, disabled = false, onItemClick }: ChatsListProps) => {
     return (
-        <ul className="flex flex-column flex-nowrap gap-0.5 shrink-0 px-3 my-0">
+        <ul className="flex flex-column flex-nowrap gap-0.5 shrink-0 pl-1 my-0">
             {conversations.map((conversation) => {
                 const isSelected = selectedConversationId === conversation.id;
                 const title = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
@@ -24,14 +24,14 @@ const RecentChatsList = ({ conversations, selectedConversationId, disabled = fal
                         className={clsx(
                             'relative group-hover-hide-container group-hover-opacity-container flex items-center shrink-0',
                             'flex navigation-link w-full items-center flex-nowrap justify-space-between',
-                            'py-2 w-full px-2',
+                            'py-0 w-full pl-2 text-sm',
                             isSelected && 'is-active'
                         )}
                     >
                         <LumoLink
                             to={`/c/${conversation.id}`}
                             className={clsx(
-                                'flex flex-1 items-center ml-2',
+                                'flex flex-1 items-center pl-2',
                                 'text-ellipsis hover:text-primary',
                                 isSelected && 'text-semibold'
                             )}
