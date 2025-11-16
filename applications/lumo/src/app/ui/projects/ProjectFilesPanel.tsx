@@ -144,7 +144,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                     {files.length === 0 ? (
                         <div className="project-files-empty">
                             <button className="project-files-add" onClick={handleAddFiles}>
-                                <Icon name="paperclip" size={6} />
+                                <Icon name="paper-clip" size={6} />
                                 <span className="project-files-add-text">
                                     {c('collider_2025:Button').t`Add files`}
                                 </span>

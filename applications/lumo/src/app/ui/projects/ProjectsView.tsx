@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Icon, SettingsLink, useModalStateObject } from '@proton/components';
+import { Hamburger, Icon, SettingsLink, useModalStateObject } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { EXAMPLE_PROJECTS } from './exampleProjects';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
+import { useSidebar } from '../../providers/SidebarProvider';
 import { useProjects } from './hooks/useProjects';
 import { NewProjectModal } from './modals/NewProjectModal';
 import { ProjectCard } from './ProjectCard';
@@ -27,6 +28,7 @@ export const ProjectsView = () => {
     const newProjectModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
     const myProjects = useProjects();
+    const { isVisible: isSideMenuOpen, toggle: toggleSideMenu, isSmallScreen } = useSidebar();
     // TODO: Implement shared projects when collaboration features are added
     const sharedProjects: Project[] = [];
 
@@ -87,7 +89,7 @@ export const ProjectsView = () => {
                 return (
                     <div className="projects-empty-state">
                         <div className="projects-empty-icon">
-                            <Icon name="folder" />
+                            <Icon name="folder" size={6}/>
                         </div>
                         <h2 className="projects-empty-title">
                             {c('collider_2025:Title').t`Get started by creating a new project`}
@@ -150,6 +152,9 @@ export const ProjectsView = () => {
         <>
             <div className="projects-view">
                 <div className="projects-header">
+                    {isSmallScreen && (
+                        <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5} />
+                    )}
                     <h1 className="projects-title">{c('collider_2025:Title').t`Projects`}</h1>
                     <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
                         <Icon name="plus" className="mr-2" />

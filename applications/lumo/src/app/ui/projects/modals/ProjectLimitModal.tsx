@@ -7,29 +7,38 @@ import {
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
-    ModalTwoHeader,
+    ModalTwoHeader, SUBSCRIPTION_STEPS,
     useSubscriptionModal,
 } from '@proton/components';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/payments';
+import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import './ProjectLimitModal.scss';
+import {sendSubscriptionModalSubscribedEvent} from "../../../util/telemetry";
 
 export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
     const [openSubscriptionModal] = useSubscriptionModal();
     const { plansMapLoading } = usePreferredPlansMap();
 
-    const handleUpgrade = () => {
+    const handleSubscriptionModalSubscribed = () => {
         modalProps.onClose();
+        sendSubscriptionModalSubscribedEvent();
+    };
 
+    const handleUpgrade = () => {
         openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             maximumCycle: CYCLE.YEARLY,
             plan: PLANS.LUMO,
+            onSubscribed: () => {
+                handleSubscriptionModalSubscribed();
+            },
             metrics: {
                 source: 'upsells',
-            },
+            }
         });
     };
 
@@ -38,29 +47,20 @@ export const ProjectLimitModal = ({ ...modalProps }: ModalProps) => {
     }
 
     return (
-        <ModalTwo {...modalProps} size="small">
-            <ModalTwoHeader title={c('collider_2025:Title').t`Upgrade to ${LUMO_SHORT_APP_NAME} Plus`} />
+        <ModalTwo {...modalProps} size="small" >
+            <ModalTwoHeader title={''} />
             <ModalTwoContent>
                 <div className="project-limit-modal-content">
-                    <div className="project-limit-modal-icon mb-4">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="20" fill="#6D4AFF" opacity="0.1" />
-                            <path
-                                d="M24 16V26M24 30V32M34 24C34 29.5228 29.5228 34 24 34C18.4772 34 14 29.5228 14 24C14 18.4772 18.4772 14 24 14C29.5228 14 34 18.4772 34 24Z"
-                                stroke="#6D4AFF"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                            />
-                        </svg>
+                    <div className="modal-two-illustration-container mb-2 relative text-center">
+                        <img src={lumoCatLoaf} alt="Get Lumo Plus" width={160} />
                     </div>
-
                     <h3 className="text-bold mb-2">
-                        {c('collider_2025:Title').t`Free users can create 1 project`}
+                        {c('collider_2025:Title').t`More Projects with ${LUMO_SHORT_APP_NAME} Plus`}
                     </h3>
 
                     <p className="color-weak mb-4">
                         {c('collider_2025:Info')
-                            .t`Upgrade to ${LUMO_SHORT_APP_NAME} Plus to create unlimited projects and unlock advanced AI models, faster responses, and priority access.`}
+                            .t`Upgrade to ${LUMO_SHORT_APP_NAME} Plus to create unlimited projects, unlock advanced AI models, and more.`}
                     </p>
 
                     <div className="project-limit-features">
