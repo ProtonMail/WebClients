@@ -135,8 +135,9 @@ const isEnabled = (features: Record<CSFeatures, boolean>): boolean =>
 export const createDetectorService = (config: DetectorConfig) => {
     const state: DetectorState = { rules: null };
 
-    const guard = <F extends Callback>(fn: F) =>
+    const guard = <F extends Callback>(fn: F, id: string) =>
         withMaxExecutionTime(fn, {
+            id,
             maxTime: MIN_MAX_DETECTION_TIME,
             onMaxTime: (detectionTime) => {
                 const { hostname } = window.location;
@@ -149,20 +150,24 @@ export const createDetectorService = (config: DetectorConfig) => {
             },
         });
 
-    const predictForms = guard((subTypes: FormType[], boundRuleset?: BoundRuleset) =>
-        getPredictionsFor<FormType>(boundRuleset ?? ruleset.against(config.root), {
-            type: 'form',
-            subTypes,
-            selectBest: selectBestForm,
-        })
+    const predictForms = guard(
+        (subTypes: FormType[], boundRuleset?: BoundRuleset) =>
+            getPredictionsFor<FormType>(boundRuleset ?? ruleset.against(config.root), {
+                type: 'form',
+                subTypes,
+                selectBest: selectBestForm,
+            }),
+        'detector::forms'
     );
 
-    const predictFields = guard((subTypes: FieldType[], boundRuleset?: BoundRuleset) =>
-        getPredictionsFor<FieldType>(boundRuleset ?? ruleset.against(config.root), {
-            type: 'field',
-            subTypes,
-            selectBest,
-        })
+    const predictFields = guard(
+        (subTypes: FieldType[], boundRuleset?: BoundRuleset) =>
+            getPredictionsFor<FieldType>(boundRuleset ?? ruleset.against(config.root), {
+                type: 'field',
+                subTypes,
+                selectBest,
+            }),
+        'detector::fields'
     );
 
     const predictAll = guard((options?: { excludedFieldTypes?: FieldType[] }) => {
@@ -188,7 +193,7 @@ export const createDetectorService = (config: DetectorConfig) => {
         clearDetectionCache(); /* clear visibility cache on each detection run */
 
         return formsToTrack;
-    });
+    }, 'detector::all');
 
     const detector = {
         init: async () => {
