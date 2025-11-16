@@ -20,6 +20,7 @@ import { PROJECT_CATEGORIES } from '../constants';
 import { useProjectActions } from '../hooks/useProjectActions';
 
 import './NewProjectModal.scss';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 interface NewProjectModalProps extends ModalStateProps {
     onProjectCreated?: (projectId: string) => void;
@@ -103,7 +104,7 @@ export const NewProjectModal = ({ onProjectCreated, ...modalProps }: NewProjectM
                             </label>
                             <TextAreaTwo
                                 id="project-instructions"
-                                placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want Lumo to adopt.`}
+                                placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt.`}
                                 value={projectInstructions}
                                 onValue={setProjectInstructions}
                                 rows={5}
