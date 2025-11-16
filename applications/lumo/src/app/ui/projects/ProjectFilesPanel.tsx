@@ -14,6 +14,7 @@ import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFi
 import { FileContentModal } from '../components/Files/KnowledgeBase/FileContentModal';
 
 import './ProjectFilesPanel.scss';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 interface ProjectFilesPanelProps {
     projectId: string;
@@ -120,7 +121,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                     ) : (
                         <button className="project-instructions-add" onClick={onEditInstructions}>
                             <Icon name="plus" size={4} />
-                            <span>{c('collider_2025:Button').t`Add instructions to tailor Lumo's responses`}</span>
+                            <span>{c('collider_2025:Button').t`Add instructions to tailor ${LUMO_SHORT_APP_NAME}'s responses`}</span>
                         </button>
                     )}
                 </div>
