@@ -4,8 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/interface';
-import clsx from '@proton/utils/clsx';
+import type { ModalStateProps } from '@proton/components';
 
 import './ProjectFilesModal.scss';
 
@@ -70,7 +69,7 @@ export const ProjectFilesModal = ({ projectName, onCreateProject, onBack, ...mod
                                 onClick={handleAttachClick}
                                 className="mt-4"
                             >
-                                <Icon name="paperclip" className="mr-2" />
+                                <Icon name="paper-clip" className="mr-2" />
                                 {c('collider_2025:Button').t`Attach`}
                             </Button>
                         </div>
@@ -102,7 +101,7 @@ export const ProjectFilesModal = ({ projectName, onCreateProject, onBack, ...mod
                                 onClick={handleAttachClick}
                                 className="w-full mt-2"
                             >
-                                <Icon name="paperclip" className="mr-2" />
+                                <Icon name="paper-clip" className="mr-2" />
                                 {c('collider_2025:Button').t`Add more files`}
                             </Button>
                         </>

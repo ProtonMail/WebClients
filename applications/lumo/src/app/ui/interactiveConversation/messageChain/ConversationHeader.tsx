@@ -54,10 +54,10 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
     
     const validSpaceAssets = Object.values(spaceAssets).filter(
-        (asset) => !asset.deleted && !asset.error && !asset.processing
+        (asset) => !asset.error && !asset.processing
     );
     const validSpaceAttachments = Object.values(spaceAttachments).filter(
-        (att) => !att.deleted && !att.error
+        (att) => !att.error
     );
     
     // Create a set of all space-level file IDs (both assets and attachments) for deduplication
