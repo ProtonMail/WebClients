@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -126,6 +127,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                             .t`No result.`}</p>
                     </>
                 )}
+                <div className="chat-history-list ml-5">
                 {today.length > 0 && (
                     <>
                         <h4 className="block color-weak text-sm my-2 ml-3">{c('collider_2025:Title').t`Today`}</h4>
@@ -166,6 +168,7 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
                         )}
                     </>
                 )}
+                </div>
                 {/* Only show earlier chats for paid users */}
                 {hasLumoPlus && earlier.length > 0 && (
                     <>
