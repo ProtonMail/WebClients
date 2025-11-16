@@ -7,6 +7,7 @@ import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, TextAreaTwo 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/interface';
 
 import { useProjectActions } from '../hooks/useProjectActions';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 interface ProjectInstructionsModalProps extends ModalStateProps {
     projectId: string;
@@ -38,7 +39,7 @@ export const ProjectInstructionsModal = ({
                 <TextAreaTwo
                     id="project-instructions"
                     label={c('collider_2025:Label').t`Project Instructions`}
-                    placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want Lumo to adopt. These instructions will apply to all chats in this project.`}
+                    placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt. These instructions will apply to all chats in this project.`}
                     value={instructions}
                     onValue={setInstructions}
                     rows={10}
