@@ -132,8 +132,8 @@ export function isDeletedSpace(value: any): value is DeletedSpace {
 
 export function getSpacePriv(s: SpacePriv): SpacePriv {
     // Do not remove
-    const { projectName, projectInstructions, isProject } = s;
-    return { projectName, projectInstructions, isProject };
+    const { projectName, projectInstructions, isProject, projectIcon } = s;
+    return { projectName, projectInstructions, isProject, projectIcon };
 }
 
 export function getSpacePub(s: SpacePub): SpacePub {
