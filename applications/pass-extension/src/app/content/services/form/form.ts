@@ -217,7 +217,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
              * If no config is found for the detected field: detach as we're most
              * likely not interested in this specific detected field. */
             nextFields.forEach((field) => {
-                const config = FORM_TRACKER_CONFIG[formType].find(({ type }) => type === field.fieldType);
+                const config = FORM_TRACKER_CONFIG[formType][field.fieldType];
                 if (!config) return field.detach();
 
                 const { action, filterable } = config;
