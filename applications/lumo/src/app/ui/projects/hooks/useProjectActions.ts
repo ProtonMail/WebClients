@@ -31,13 +31,6 @@ export const useProjectActions = () => {
             );
             dispatch(pushSpaceRequest({ id: spaceId }));
 
-            // TODO: Handle file attachments
-            // Files should be attached to the space/project so they're available
-            // to all conversations within this project
-            if (files && files.length > 0) {
-                console.log('TODO: Attach files to project space:', files);
-            }
-
             // Navigate to the new project detail view (not a conversation)
             history.push(`/projects/${spaceId}`);
 
@@ -82,7 +75,7 @@ export const useProjectActions = () => {
             // This uses the cascade delete saga which handles all related data
             dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
             dispatch(pushSpaceRequest({ id: spaceId }));
-            
+
             // Navigate to projects list after deletion
             history.push('/projects');
         },

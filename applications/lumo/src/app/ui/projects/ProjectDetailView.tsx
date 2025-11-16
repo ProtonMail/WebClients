@@ -8,6 +8,7 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
+    Hamburger,
     Icon,
     useModalStateObject,
     usePopperAnchor,
@@ -18,6 +19,7 @@ import clsx from '@proton/utils/clsx';
 
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
 import { PandocProvider } from '../../providers/PandocProvider';
+import { useSidebar } from '../../providers/SidebarProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectAttachmentsBySpaceId, selectConversationsBySpaceId, selectProvisionalAttachments, selectSpaceById } from '../../redux/selectors';
@@ -56,6 +58,7 @@ const ProjectDetailViewInner = () => {
     const conversationList = Object.values(conversations);
     const spaceAttachments = useLumoSelector((state) => selectAttachmentsBySpaceId(projectId)(state));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
+    const { isVisible: isSideMenuOpen, toggle: toggleSideMenu, isSmallScreen } = useSidebar();
 
     const { createConversationInProject, deleteProject } = useProjectActions();
 
@@ -200,6 +203,9 @@ const ProjectDetailViewInner = () => {
         <div className="project-detail-view">
             {/* Header */}
             <div className="project-detail-header">
+                {isSmallScreen && (
+                    <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5} />
+                )}
                 <Button
                     icon
                     shape="ghost"
