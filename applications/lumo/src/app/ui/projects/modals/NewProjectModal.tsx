@@ -79,7 +79,7 @@ export const NewProjectModal = ({ onProjectCreated, ...modalProps }: NewProjectM
                                                 className="new-project-modal-category-icon"
                                                 style={{ backgroundColor: category.color }}
                                             >
-                                                <Icon name={category.icon} size={4} className="color-white" />
+                                                <Icon name={category.icon as any} size={4} className="color-white" />
                                             </div>
                                             <span>{category.name}</span>
                                         </div>
