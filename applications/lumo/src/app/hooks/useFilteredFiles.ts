@@ -42,7 +42,7 @@ export const useFilteredFiles = (
     );
     const spaceAssetsList = useMemo(() => 
         Object.values(spaceAssets)
-            .filter((asset) => !asset.deleted && !asset.error && !asset.processing)
+            .filter((asset) => !asset.error && !asset.processing)
             .map((asset, index) => ({
                 ...asset,
                 messageId: '', // Space assets don't belong to a specific message

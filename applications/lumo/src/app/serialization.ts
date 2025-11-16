@@ -126,6 +126,7 @@ function getAssetAd(asset: AssetPub): AdString {
         type: 'asset',
         assetId: id,
     });
+    if (!_adString) throw new Error('Could not get AD for asset');
     return _adString;
 }
 

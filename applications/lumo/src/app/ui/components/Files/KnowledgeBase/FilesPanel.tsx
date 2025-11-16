@@ -66,7 +66,7 @@ export const FilesPanel = ({
     // Knowledge explanation state
     const [showKnowledgeExplanation, setShowKnowledgeExplanation] = useState(false);
 
-    const { allFiles, activeHistoricalFiles, unusedHistoricalFiles, nextQuestionFiles, projectFiles } = useFilteredFiles(
+    const { allFiles, activeHistoricalFiles, unusedHistoricalFiles, projectFiles } = useFilteredFiles(
         messageChain,
         currentAttachments,
         filterMessage,
