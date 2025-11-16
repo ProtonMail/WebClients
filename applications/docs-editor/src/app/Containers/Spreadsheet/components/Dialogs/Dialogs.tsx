@@ -1,5 +1,4 @@
 import { DeleteSheetConfirmation, TableEditor } from '@rowsncolumns/spreadsheet-state'
-import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
 import { SheetSearch } from './SheetSearch'
 import { InsertLinkDialog } from './InsertLink'
 import { useUI } from '../../ui-store'
@@ -21,13 +20,7 @@ export function Dialogs() {
         searchQuery={useUI((ui) => ui.legacy.searchState.searchQuery)}
       />
       {/* All dialogs below are legacy and will be incrementally replaced */}
-      <ChartEditorDialog>
-        <ChartEditor
-          sheetId={useUI((ui) => ui.sheets.activeId)}
-          chart={useUI((ui) => ui.charts.selected)}
-          onSubmit={useUI.$.charts.update}
-        />
-      </ChartEditorDialog>
+
       <TableEditor
         sheetId={useUI((ui) => ui.legacy.activeSheetId)}
         onSubmit={useUI((ui) => ui.legacy.onUpdateTable)}

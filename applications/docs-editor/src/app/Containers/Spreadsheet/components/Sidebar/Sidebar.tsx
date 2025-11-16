@@ -4,6 +4,7 @@ import { DataValidationDialog } from './DataValidationDialog'
 import { NamedRangeEditorDialog } from './NamedRangeEditorDialog'
 import { CellFormatDialog } from './CellFormatDialog'
 import { SidebarContainer } from './SidebarContainer'
+import { ChartEditorDialog } from './ChartEditorDialog'
 
 export function Sidebar() {
   return (
@@ -12,6 +13,7 @@ export function Sidebar() {
       <DataValidationDialog />
       <NamedRangeEditorDialog />
       <CellFormatDialog />
+      <ChartEditorDialog />
     </SidebarContainer>
   )
 }
