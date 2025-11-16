@@ -28,7 +28,7 @@ type IconElement = {
 };
 
 export type IconElementRefs = IconElement & {
-    parent: HTMLElement | ShadowRoot;
+    form: HTMLElement;
     input: HTMLInputElement;
     anchor: HTMLElement;
 };
@@ -70,14 +70,14 @@ export const computeIconShift = (
         /** The input element we're positioning relative to */
         target: HTMLElement;
         /** Container for filtering (optional) */
-        parent?: HTMLElement | ShadowRoot;
+        container?: HTMLElement;
     },
     iteration: number = 1
 ): number => {
     const restore: { el: HTMLElement; pointerEvents: string }[] = [];
 
     try {
-        const { x, y, maxWidth, target, anchor, parent } = options;
+        const { x, y, maxWidth, target, anchor, container } = options;
         const maxShift = options.maxWidth * 0.5; /* Maximum allowed shift */
 
         if (Number.isNaN(x) || Number.isNaN(y)) return 0;
@@ -113,7 +113,7 @@ export const computeIconShift = (
             if (el === target || el === anchor) break; /* Stop at target elements */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
-            if (parent && !parent.contains(el)) continue; /* Skip elements outside parent element (form) */
+            if (container && !container.contains(el)) continue; /* Skip elements outside parent element (form) */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
 
             /** Skip large text elements. NOTE: The `isHTMLElement` check is loose in order to
@@ -183,7 +183,7 @@ export const cleanupInputStyles = (input: HTMLInputElement) => {
  * ie: check amazon sign-in page without repaint to
  * reproduce issue */
 export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'>): IconStyles => {
-    const { anchor, input, control, parent } = options;
+    const { anchor, input, control, form } = options;
     const boxed = anchor !== input;
 
     cleanupInputStyles(input);
@@ -232,7 +232,15 @@ export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'
 
     /* Look for any overlayed elements if we were to inject
      * the icon on the right hand-side of the input element */
-    const overlayDx = computeIconShift({ x: overlayX, y: overlayY, maxWidth, radius, anchor, target: input, parent });
+    const overlayDx = computeIconShift({
+        x: overlayX,
+        y: overlayY,
+        maxWidth,
+        radius,
+        anchor,
+        target: input,
+        container: form,
+    });
 
     /** Calculate icon position relative to control element.
      * Top: vertically center within the anchor box accounting for offsets
