@@ -23,47 +23,46 @@ export enum DropdownAction {
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
 }
 
-type FormTrackerFieldConfig = {
-    type: FieldType;
+type FieldConfig = {
     filterable?: boolean;
     action?: DropdownAction;
 };
 
-export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
-    [FormType.LOGIN]: [
-        { type: FieldType.USERNAME, action: DropdownAction.AUTOFILL_LOGIN, filterable: true },
-        { type: FieldType.USERNAME_HIDDEN },
-        { type: FieldType.EMAIL, action: DropdownAction.AUTOFILL_LOGIN, filterable: true },
-        { type: FieldType.PASSWORD_CURRENT, action: DropdownAction.AUTOFILL_LOGIN },
-        { type: FieldType.CREDIT_CARD, action: DropdownAction.AUTOFILL_CC },
-    ],
-    [FormType.REGISTER]: [
-        { type: FieldType.USERNAME },
-        { type: FieldType.USERNAME_HIDDEN },
-        { type: FieldType.EMAIL, action: DropdownAction.AUTOSUGGEST_ALIAS },
-        { type: FieldType.PASSWORD_NEW, action: DropdownAction.AUTOSUGGEST_PASSWORD },
-        { type: FieldType.IDENTITY, action: DropdownAction.AUTOFILL_IDENTITY },
-        { type: FieldType.CREDIT_CARD, action: DropdownAction.AUTOFILL_CC },
-    ],
-    [FormType.RECOVERY]: [
-        { type: FieldType.EMAIL, action: DropdownAction.AUTOFILL_LOGIN },
-        { type: FieldType.IDENTITY, action: DropdownAction.AUTOFILL_IDENTITY },
-        { type: FieldType.CREDIT_CARD, action: DropdownAction.AUTOFILL_CC },
-    ],
-    [FormType.PASSWORD_CHANGE]: [
-        { type: FieldType.PASSWORD_CURRENT, action: DropdownAction.AUTOFILL_LOGIN },
-        { type: FieldType.PASSWORD_NEW, action: DropdownAction.AUTOSUGGEST_PASSWORD },
-    ],
+export const FORM_TRACKER_CONFIG: Record<FormType, Partial<Record<FieldType, FieldConfig>>> = {
+    [FormType.LOGIN]: {
+        [FieldType.USERNAME]: { action: DropdownAction.AUTOFILL_LOGIN, filterable: true },
+        [FieldType.USERNAME_HIDDEN]: {},
+        [FieldType.EMAIL]: { action: DropdownAction.AUTOFILL_LOGIN, filterable: true },
+        [FieldType.PASSWORD_CURRENT]: { action: DropdownAction.AUTOFILL_LOGIN },
+        [FieldType.CREDIT_CARD]: { action: DropdownAction.AUTOFILL_CC },
+    },
+    [FormType.REGISTER]: {
+        [FieldType.USERNAME]: {},
+        [FieldType.USERNAME_HIDDEN]: {},
+        [FieldType.EMAIL]: { action: DropdownAction.AUTOSUGGEST_ALIAS },
+        [FieldType.PASSWORD_NEW]: { action: DropdownAction.AUTOSUGGEST_PASSWORD },
+        [FieldType.IDENTITY]: { action: DropdownAction.AUTOFILL_IDENTITY },
+        [FieldType.CREDIT_CARD]: { action: DropdownAction.AUTOFILL_CC },
+    },
+    [FormType.RECOVERY]: {
+        [FieldType.EMAIL]: { action: DropdownAction.AUTOFILL_LOGIN, filterable: true },
+        [FieldType.IDENTITY]: { action: DropdownAction.AUTOFILL_IDENTITY },
+        [FieldType.CREDIT_CARD]: { action: DropdownAction.AUTOFILL_CC },
+    },
+    [FormType.PASSWORD_CHANGE]: {
+        [FieldType.PASSWORD_CURRENT]: { action: DropdownAction.AUTOFILL_LOGIN },
+        [FieldType.PASSWORD_NEW]: { action: DropdownAction.AUTOSUGGEST_PASSWORD },
+    },
     /* NOOP forms are forms that were not classified into
      * one of our form types. This can either be a detection
      * error - in that case, if we match any fields of interest
      * we should still add some actions - OR due to exotic
      * forms (newsletters etc..) */
-    [FormType.NOOP]: [
-        { type: FieldType.EMAIL, action: DropdownAction.AUTOSUGGEST_ALIAS },
-        { type: FieldType.PASSWORD_CURRENT, action: DropdownAction.AUTOFILL_LOGIN },
-        { type: FieldType.PASSWORD_NEW, action: DropdownAction.AUTOSUGGEST_PASSWORD },
-        { type: FieldType.IDENTITY, action: DropdownAction.AUTOFILL_IDENTITY },
-        { type: FieldType.CREDIT_CARD, action: DropdownAction.AUTOFILL_CC },
-    ],
+    [FormType.NOOP]: {
+        [FieldType.EMAIL]: { action: DropdownAction.AUTOSUGGEST_ALIAS },
+        [FieldType.PASSWORD_CURRENT]: { action: DropdownAction.AUTOFILL_LOGIN },
+        [FieldType.PASSWORD_NEW]: { action: DropdownAction.AUTOSUGGEST_PASSWORD },
+        [FieldType.IDENTITY]: { action: DropdownAction.AUTOFILL_IDENTITY },
+        [FieldType.CREDIT_CARD]: { action: DropdownAction.AUTOFILL_CC },
+    },
 };
