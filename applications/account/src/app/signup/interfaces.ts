@@ -7,6 +7,7 @@ import type {
     Cycle,
     ExtendedTokenPayment,
     FreePlanDefault,
+    FreeSubscription,
     PAYMENT_METHOD_TYPES,
     PaymentStatus,
     Plan,
@@ -63,7 +64,7 @@ export interface SessionData {
     resumedSessionResult: ResumedSessionResult;
     paymentMethods: SavedPaymentMethod[] | undefined;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
-    subscription: Subscription | undefined;
+    subscription: Subscription | FreeSubscription | undefined;
     organization: Organization | undefined;
     state: {
         payable: boolean;
