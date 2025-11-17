@@ -71,15 +71,22 @@ export const GlobalBookingSuccess = () => {
                         handleClose();
                     }}
                     size="xsmall"
+                    className="px-6 pb-8 pt-4"
                 >
                     <ModalHeader />
-                    <ModalContent>
+                    <ModalContent className="m-0">
                         <h2 className="mb-2 text-bold text-center text-lg">{c('Title')
                             .t`Your booking page is ready`}</h2>
-                        <p className="color-weak m-0 mb-6 text-center">{c('Info')
-                            .t`Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.`}</p>
-                        <img className="mb-6" src={bookingImage} alt={c('Info').t`Booking page example`} />
-                        <div className="mb-6 text-center text-ellipsis">
+                        <p className="color-weak m-0 mb-6 text-wrap-balance text-center">{c('Info')
+                            .t`Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.`}</p>
+                        <img
+                            className="mb-6 rounded-xl"
+                            height={195}
+                            width={310}
+                            src={bookingImage}
+                            alt={c('Info').t`Booking page example`}
+                        />
+                        <div className="mb-6 w-9/10 mx-auto justify-center text-ellipsis">
                             <Href
                                 href={bookingPageCreationProps.bookingLink}
                                 onClick={handleLinkClick}
