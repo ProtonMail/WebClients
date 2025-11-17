@@ -1,11 +1,13 @@
-import { memo, useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Icon, UserDropdown, useConfig, useModalStateObject } from '@proton/components';
+import { metaKey } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
@@ -13,9 +15,11 @@ import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
+import { useSearchModal } from '../../providers/SearchModalProvider';
 import { GuestChatDisclaimerModal } from '../components/GuestChatDisclaimerModal';
 import GuestDisclaimer from '../components/GuestDisclaimer';
 import SettingsModal from '../components/SettingsModal/SettingsModal';
+import { SearchModal } from '../components/SearchModal/SearchModal';
 import { ChatHistory } from '../sidepanel/ChatHistory';
 import { LumoSidebarUpsell } from '../upsells/composed/LumoSidebarUpsell';
 import ForBusinessSidebarButton from './ForBusinessSidebarButton';
@@ -48,21 +52,30 @@ interface SidebarItemProps {
     onClick: () => void;
     showText: boolean;
     className?: string;
+    shortcut?: string;
+    showShortcutOnHover?: boolean;
 }
 
-const SidebarItem = ({ icon, label, onClick, showText, className }: SidebarItemProps) => (
+const SidebarItem = ({ icon, label, onClick, showText, className, shortcut, showShortcutOnHover }: SidebarItemProps) => (
     <Tooltip title={label} originalPlacement="right">
-        <button className={clsx('sidebar-item', className)} onClick={onClick} aria-label={label}>
+        <button className={clsx('sidebar-item', className, showShortcutOnHover && 'show-shortcut-on-hover')} onClick={onClick} aria-label={label}>
             <div className="sidebar-item-icon">
                 <Icon name={icon as any} size={4} className="rtl:mirror" />
             </div>
-            <span className={clsx('sidebar-item-text', !showText && 'hidden')}>{label}</span>
+            <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
+                <span className="sidebar-item-label">{label}</span>
+                {shortcut && showText && (
+                    <span className="sidebar-item-shortcut">
+                        <Kbd shortcut={shortcut} />
+                    </span>
+                )}
+            </span>
         </button>
     </Tooltip>
 );
 
 // New Chat Button - same styling as other items
-const NewChatButton = ({ showText }: { showText: boolean }) => {
+const NewChatButton = ({ showText, isSmallScreen }: { showText: boolean; isSmallScreen: boolean }) => {
     const isGuest = useIsGuest();
     const history = useHistory();
     const { setGhostChatMode } = useGhostChat();
@@ -87,6 +100,8 @@ const NewChatButton = ({ showText }: { showText: boolean }) => {
                 label={c('collider_2025:Button').t`New chat`}
                 onClick={handleClick}
                 showText={showText}
+                shortcut={!isSmallScreen ? `${metaKey}+J` : undefined}
+                showShortcutOnHover={true}
             />
             {isGuest && disclaimerModalProps.render && (
                 <GuestChatDisclaimerModal onClick={handleModalClose} {...disclaimerModalProps.modalProps} />
@@ -133,9 +148,13 @@ const ChatHistorySection = ({ searchValue, showText }: { searchValue: string; sh
 const SearchSection = ({
     showText,
     onSearchChange,
+    onSearchClick,
+    isSmallScreen,
 }: {
     showText: boolean;
     onSearchChange: (value: string) => void;
+    onSearchClick: () => void;
+    isSmallScreen: boolean;
 }) => {
     const { isCollapsed, toggle } = useSidebar();
     const isGuest = useIsGuest();
@@ -154,12 +173,9 @@ const SearchSection = ({
         if (isCollapsed) {
             toggle();
         }
-        // Focus search input after sidebar animation completes
-        setTimeout(() => {
-            const searchInput = document.querySelector('.sidebar-search-input') as HTMLInputElement;
-            if (searchInput) searchInput.focus();
-        }, 350);
-    }, [isCollapsed, toggle]);
+        // Open search modal instead of focusing input
+        onSearchClick();
+    }, [isCollapsed, toggle, onSearchClick]);
 
     // Always render the same structure to prevent layout shifts
     return (
@@ -182,11 +198,12 @@ const SearchSection = ({
                             tabIndex={isCollapsed || isGuest ? -1 : 0}
                             disabled={isGuest}
                         />
+                        {showText && !isGuest && !isSmallScreen && (
+                            <span className="search-shortcut">
+                                <Kbd shortcut={`${metaKey}+K`} />
+                            </span>
+                        )}
                     </div>
-                    {/* Always render label - visibility controlled by delayed showText state */}
-                    <span className={clsx('search-label', showText && 'hidden')}>
-                        {c('collider_2025:Button').t`Search`}
-                    </span>
                 </div>
             </Tooltip>
         </div>
@@ -198,8 +215,15 @@ const LumoSidebarContent = () => {
     const isGuest = useIsGuest();
     const showText = useTextVisibility(isCollapsed);
     const settingsModal = useModalStateObject();
+    const searchModal = useModalStateObject();
+    const { registerOpenFunction } = useSearchModal();
     const [searchValue, setSearchValue] = useState('');
     const { APP_NAME } = useConfig();
+
+    // Register search modal open function with context
+    React.useEffect(() => {
+        registerOpenFunction(() => searchModal.openModal(true));
+    }, [searchModal, registerOpenFunction]);
 
     // Don't render if sidebar is hidden
     if (!isVisible) {
@@ -230,23 +254,26 @@ const LumoSidebarContent = () => {
                 {/* Search Section - hide on mobile for guests */}
                 {!(isSmallScreen && isGuest) && (
                     <div className="sidebar-section">
-                        <SearchSection showText={showText} onSearchChange={setSearchValue} />
+                        <SearchSection 
+                            showText={showText} 
+                            onSearchChange={setSearchValue}
+                            onSearchClick={() => searchModal.openModal(true)}
+                            isSmallScreen={isSmallScreen}
+                        />
                     </div>
                 )}
 
                 {/* Top Section - hide on mobile for guests */}
                 {!(isSmallScreen && isGuest) && (
                     <div className="sidebar-section">
-                        <NewChatButton showText={showText} />
+                        <NewChatButton showText={showText} isSmallScreen={isSmallScreen} />
                     </div>
                 )}
 
-                {/* Projects Section - hide on mobile for guests */}
-                {!(isSmallScreen && isGuest) && (
-                    <div className="sidebar-section">
-                        <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
-                    </div>
-                )}
+                {/* Projects Section */}
+                <div className="sidebar-section">
+                    <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
+                </div>
 
 
 
@@ -293,6 +320,7 @@ const LumoSidebarContent = () => {
                 </div>
             </div>
             {settingsModal.render && <SettingsModal {...settingsModal.modalProps} />}
+            {searchModal.render && <SearchModal {...searchModal.modalProps} />}
             {isGuest && isSmallScreen && <GuestDisclaimer />}
         </>
     );
