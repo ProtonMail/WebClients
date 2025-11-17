@@ -1,26 +1,18 @@
-<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path
-    d="M0 8C0 3.58172 3.58172 0 8 0H40C44.4183 0 48 3.58172 48 8V40C48 44.4183 44.4183 48 40 48H8C3.58172 48 0 44.4183 0 40V8Z"
-    fill="url(#paint0_radial_265_14948)"
-  />
-<path
-    d="M19.5 20.25C20.3284 20.25 21 20.9216 21 21.75V28.5H29.25C30.0784 28.5 30.75 29.1716 30.75 30C30.75 30.8284 30.0784 31.5 29.25 31.5H21V37.5C21 38.3284 20.3284 39 19.5 39C18.6716 39 18 38.3284 18 37.5V31.5H10.5C9.67157 31.5 9 30.8284 9 30C9 29.1716 9.67157 28.5 10.5 28.5H18V21.75C18 20.9216 18.6716 20.25 19.5 20.25Z"
-    fill="white"
-  />
-<path d="M24 0H36V12H24V0Z" fill="white" fill-opacity="0.5" />
-<path d="M36 0H40C44.4183 0 48 3.58172 48 8V12H36V0Z" fill="white" fill-opacity="0.8" />
-<path d="M36 12H48V24H36V12Z" fill="white" fill-opacity="0.5" />
-<defs>
-<radialGradient
-      id="paint0_radial_265_14948"
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none"><path
+    fill="url(#a)"
+    d="M0 42.667C0 19.102 19.102 0 42.667 0h170.666C236.898 0 256 19.102 256 42.667v170.666C256 236.898 236.897 256 213.333 256H42.667C19.102 256 0 236.897 0 213.333V42.667Z"
+  /><path
+    fill="#fff"
+    d="M83.456 100.352c5.938 0 10.752 4.814 10.752 10.752v48.641h54.784c5.938 0 10.752 4.814 10.752 10.752 0 5.938-4.814 10.751-10.752 10.752H94.208v20.991c0 5.938-4.814 10.752-10.752 10.752-5.938 0-10.752-4.814-10.752-10.752v-20.991H47.616c-5.938 0-10.752-4.814-10.752-10.752 0-5.939 4.814-10.752 10.752-10.752h25.088v-48.641c0-5.938 4.814-10.752 10.752-10.752Z"
+  /><path fill="#fff" fill-opacity=".5" d="M128 0h64v64h-64V0Z" /><path
+    fill="#fff"
+    fill-opacity=".8"
+    d="M191.996 0h21.333c23.564 0 42.667 19.102 42.667 42.667V64h-64V0Z"
+  /><path fill="#fff" fill-opacity=".5" d="M191.996 64h64v64h-64V64Z" /><defs><radialGradient
+      id="a"
       cx="0"
       cy="0"
       r="1"
+      gradientTransform="rotate(-53.15 298.139 171.258) scale(302.086)"
       gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(-6 56) rotate(-53.1504) scale(56.64)"
-    >
-<stop stop-color="#1B854C" />
-<stop offset="1" stop-color="#26DA79" />
-</radialGradient>
-</defs>
-</svg>
+    ><stop stop-color="#1B854C" /><stop offset="1" stop-color="#26DA79" /></radialGradient></defs></svg>

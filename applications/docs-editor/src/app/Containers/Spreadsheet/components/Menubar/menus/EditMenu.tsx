@@ -20,10 +20,11 @@ export function EditMenu({ renderMenuButton, ...props }: EditMenuProps) {
         <Undo />
         <Redo />
         <UI.MenuSeparator />
-        <Cut />
+        {/* TODO: re-enable once fixed */}
+        {/* <Cut /> */}
         <Copy />
-        <Paste />
-        <PasteSpecialSubmenu />
+        {/* <Paste /> */}
+        {/* <PasteSpecialSubmenu /> */}
         <UI.MenuSeparator />
         <Find />
       </UI.Menu>
@@ -55,6 +56,7 @@ function Redo() {
   )
 }
 
+// @ts-expect-error Temporarily disabled.
 function Cut() {
   return (
     <UI.MenuItem
@@ -75,6 +77,7 @@ function Copy() {
   )
 }
 
+// @ts-expect-error Temporarily disabled.
 function Paste() {
   return (
     <UI.MenuItem
@@ -87,6 +90,7 @@ function Paste() {
   )
 }
 
+// @ts-expect-error Temporarily disabled.
 function PasteSpecialSubmenu() {
   return (
     <Ariakit.MenuProvider>
