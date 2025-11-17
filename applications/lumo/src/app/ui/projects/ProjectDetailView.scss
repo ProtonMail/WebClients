@@ -216,3 +216,14 @@
     }
 }
 
+// Mobile modal styling for project files panel
+.project-files-modal {
+    .project-files-panel {
+        display: flex !important;
+        width: 100%;
+        border-left: none;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
+
