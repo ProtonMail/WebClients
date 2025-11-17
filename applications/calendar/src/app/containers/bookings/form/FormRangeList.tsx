@@ -29,6 +29,8 @@ import { validateFormData } from '../utils/form/formHelpers';
 import { createBookingRangeNextAvailableTime } from '../utils/range/rangeHelpers';
 import { roundToNextHalfHour } from '../utils/timeHelpers';
 
+import './FormRangeList.scss';
+
 export const FormRangeList = () => {
     const now = new Date();
 
@@ -128,7 +130,7 @@ export const FormRangeList = () => {
                     <div className="flex flex-1 items-center gap-0.5">
                         <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
                             .t`Date of the booking range`}</label>
-                        <div className="grow-custom flex-1 flex" style={{ '--grow-custom': '1.5' }}>
+                        <div className="grow-custom flex-1 flex" style={{ '--grow-custom': '1.9' }}>
                             <DateInputTwo
                                 id={`range-date-input-${range.id}`}
                                 value={range.start}
@@ -144,6 +146,7 @@ export const FormRangeList = () => {
                             onChange={(value) => handleStartChange(range, value)}
                             min={isToday(range.start) ? roundToNextHalfHour(now) : startOfDay(range.start)}
                             max={subMinutes(range.end, formData.duration)}
+                            className="booking-time-input"
                         />
                         -
                         <label htmlFor={`range-end-time-${range.id}`} className="sr-only">{c('label')
@@ -154,6 +157,7 @@ export const FormRangeList = () => {
                             min={addMinutes(range.start, formData.duration)}
                             onChange={(value) => handleEndChange(range, value)}
                             preventNextDayOverflow
+                            className="booking-time-input"
                         />
                     </div>
                     <div className="flex flex-nowrap shrink-0">
