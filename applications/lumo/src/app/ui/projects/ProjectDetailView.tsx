@@ -45,8 +45,8 @@ const ProjectDetailViewInner = () => {
     const api = useApi();
     const [showSidebar, setShowSidebar] = useState(true);
     const [isEditorFocused, setIsEditorFocused] = useState(false);
-    const [isEditorEmpty, setIsEditorEmpty] = useState(true);
-    const [isProcessingAttachment, setIsProcessingAttachment] = useState(false);
+    const [, setIsEditorEmpty] = useState(true);
+    const [isProcessingAttachment] = useState(false);
     const [suggestedPrompt, setSuggestedPrompt] = useState<string | undefined>(undefined);
     const instructionsModal = useModalStateObject();
     const deleteModal = useModalStateObject();
@@ -215,7 +215,7 @@ const ProjectDetailViewInner = () => {
                 </Button>
                 <div className="project-detail-title-section">
                     <div className="project-detail-icon" style={{ backgroundColor: category.color }}>
-                        <Icon name={category.icon} size={6} className="color-white" />
+                        <Icon name={category.icon as any} size={6} className="color-white" />
                     </div>
                     <h1 className="project-detail-title">{projectName}</h1>
                 </div>
