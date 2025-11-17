@@ -1,5 +1,5 @@
-import type { ProtonDriveClient } from '@proton/drive';
-import { AbortError, SDKEvent, getDrive } from '@proton/drive';
+import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
+import { AbortError, NodeType, SDKEvent, getDrive } from '@proton/drive/index';
 import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
 import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
@@ -15,7 +15,9 @@ import {
 import ArchiveGenerator from './ArchiveGenerator';
 import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadScheduler } from './DownloadScheduler';
-import type { DownloadQueueTaskHandle, DownloadableItem } from './downloadTypes';
+import type { DownloadQueueTaskHandle } from './downloadTypes';
+import { getNodeStorageSize } from './utils/getNodeStorageSize';
+import { hydrateAndCheckNodes } from './utils/hydrateAndCheckNodes';
 import { nodesStructureTraversal } from './utils/nodesStructureTraversal';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
@@ -34,7 +36,7 @@ export class DownloadManager {
     private hasListeners;
     private scheduler: DownloadScheduler;
     private readonly activeDownloads = new Map<string, ActiveDownload>();
-    private requestedDownloads = new Map<string, DownloadableItem[]>();
+    private requestedDownloads = new Map<string, NodeEntity[]>();
 
     constructor() {
         this.hasListeners = false;
@@ -78,20 +80,25 @@ export class DownloadManager {
         console.warn('onIntegrityIssue not implemented', downloadId);
     }
 
-    async download(nodes: DownloadableItem[]) {
+    async download(nodeUids: string[]) {
+        if (!nodeUids.length) {
+            return;
+        }
+
+        const nodes = await hydrateAndCheckNodes(nodeUids);
         if (!nodes.length) {
             return;
         }
         this.addListeners();
         const { addDownloadItem } = useDownloadManagerStore.getState();
 
-        const isSingleFileDownload = nodes.length === 1 && nodes[0].isFile;
+        const isSingleFileDownload = nodes.length === 1 && nodes[0].type === NodeType.File;
 
         if (isSingleFileDownload) {
             const node = nodes[0];
             const downloadId = addDownloadItem({
                 name: node.name,
-                storageSize: node.storageSize,
+                storageSize: getNodeStorageSize(node),
                 downloadedBytes: 0,
                 status: DownloadStatus.Pending,
                 nodeUids: [node.uid],
@@ -115,19 +122,16 @@ export class DownloadManager {
         }
     }
 
-    private async scheduleSingleFileDownload(downloadId: string, node: DownloadableItem) {
+    private async scheduleSingleFileDownload(downloadId: string, node: NodeEntity) {
         this.scheduler.scheduleDownload({
             taskId: downloadId,
             node,
-            storageSizeEstimate: node.storageSize,
+            storageSizeEstimate: getNodeStorageSize(node),
             start: () => this.startSingleFileDownload(node, downloadId),
         });
     }
 
-    private async startSingleFileDownload(
-        node: DownloadableItem,
-        downloadId: string
-    ): Promise<DownloadQueueTaskHandle> {
+    private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<DownloadQueueTaskHandle> {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
         const drive = getDrive();
 
@@ -157,7 +161,7 @@ export class DownloadManager {
             const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
             const savePromise = fileSaver.instance.saveAsFile(
                 streamForSaver,
-                { filename: node.name, mimeType: DEFAULT_MIME_TYPE, size: node.storageSize },
+                { filename: node.name, mimeType: DEFAULT_MIME_TYPE, size: getNodeStorageSize(node) },
                 log
             );
 
@@ -200,7 +204,7 @@ export class DownloadManager {
                     },
                     extra: {
                         filesTypes: getFileExtension(node.name),
-                        storageSize: node.storageSize,
+                        storageSize: getNodeStorageSize(node),
                     },
                 })
             );
@@ -210,7 +214,7 @@ export class DownloadManager {
         return { completion: completionPromise };
     }
 
-    private scheduleArchiveDownload(downloadId: string, nodes: DownloadableItem[]): void {
+    private scheduleArchiveDownload(downloadId: string, nodes: NodeEntity[]): void {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
         const queueItem = getQueueItem(downloadId);
         const archiveName = queueItem?.name ?? this.getArchiveName(nodes);
@@ -220,7 +224,10 @@ export class DownloadManager {
 
         try {
             // Traversing all folders to get the node entities + parentPath
-            const { nodesQueue, totalEncryptedSizePromise } = nodesStructureTraversal(nodes, abortController.signal);
+            const { nodesQueue, totalEncryptedSizePromise, parentPathByUid } = nodesStructureTraversal(
+                nodes,
+                abortController.signal
+            );
 
             // We can only know the full size of the archive after traversing all nodes
             void totalEncryptedSizePromise.then((totalSize) => {
@@ -239,7 +246,8 @@ export class DownloadManager {
                 nodesQueue.iterator(),
                 updateProgress,
                 this.scheduler,
-                abortController.signal
+                abortController.signal,
+                parentPathByUid
             );
             const generator = archiveStreamGenerator.generator;
             const trackerController = archiveStreamGenerator.controller;
@@ -318,7 +326,7 @@ export class DownloadManager {
         }
     }
 
-    private getArchiveName(nodes: DownloadableItem[]): string {
+    private getArchiveName(nodes: NodeEntity[]): string {
         if (nodes.length === 1) {
             return `${nodes[0].name}.zip`;
         }

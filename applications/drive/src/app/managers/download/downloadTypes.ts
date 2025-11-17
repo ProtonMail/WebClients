@@ -1,19 +1,6 @@
-import type { DownloadController } from './DownloadManager';
+import type { NodeEntity } from '@proton/drive';
 
-export type DownloadableItem = {
-    uid: string;
-    name: string;
-    isFile: boolean;
-    storageSize?: number;
-    fileModifyTime?: number;
-    parentPath?: string[];
-};
-export type ArchiveDownloadTask = {
-    uid: string;
-    storageSize?: number;
-    isFile: boolean;
-    start: () => Promise<ArchiveItem>;
-};
+import type { DownloadController } from './DownloadManager';
 
 export type ArchiveStreamGeneratorResult = {
     generator: AsyncGenerator<ArchiveItem>;
@@ -40,7 +27,7 @@ export type DownloadQueueTaskHandle = {
 
 export type DownloadQueueTask = {
     taskId: string;
-    node: DownloadableItem;
+    node: NodeEntity;
     storageSizeEstimate?: number;
     start: () => Promise<DownloadQueueTaskHandle>;
 };
