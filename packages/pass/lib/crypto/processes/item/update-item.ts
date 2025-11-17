@@ -4,7 +4,6 @@ import { validateItemContentSize } from '@proton/pass/lib/crypto/utils/validator
 import type { ItemKey, ItemUpdateRequest } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type UpdateItemProcessParams = {
     itemKey: ItemKey;
@@ -26,7 +25,7 @@ export const updateItem = async ({
     return {
         KeyRotation: itemKey.rotation,
         LastRevision: lastRevision,
-        Content: pipe(uint8ArrayToBase64String, validateItemContentSize)(encryptedItemContent),
+        Content: pipe(bytes => bytes.toBase64(), validateItemContentSize)(encryptedItemContent),
         ContentFormatVersion: ContentFormatVersion.Item,
     };
 };

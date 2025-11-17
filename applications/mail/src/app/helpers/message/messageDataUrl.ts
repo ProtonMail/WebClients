@@ -1,5 +1,4 @@
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 
 import { generateCid, setEmbeddedAttr } from './messageEmbeddeds';
@@ -17,7 +16,7 @@ export const dataUrlToFile = (fileName: string, dataUrl: string) => {
 
     try {
         // write the bytes of the string to an ArrayBuffer
-        const data = base64StringToUint8Array(decodeURIComponent(byte));
+        const data = Uint8Array.fromBase64(decodeURIComponent(byte));
         // write the ArrayBuffer to a blob, and you're done
         return new File([data], fileName, { type: mimeString });
     } catch {

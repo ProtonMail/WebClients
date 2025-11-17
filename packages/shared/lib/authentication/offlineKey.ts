@@ -1,5 +1,4 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { captureMessage } from '../helpers/sentry';
 
@@ -21,8 +20,8 @@ export const generateOfflineKey = async (clearKeyPassword: string): Promise<Offl
         const salt = crypto.getRandomValues(new Uint8Array(32));
         const key = await getOfflineKey(clearKeyPassword, salt);
         return {
-            password: uint8ArrayToBase64String(key),
-            salt: uint8ArrayToBase64String(salt),
+            password: key.toBase64(),
+            salt: salt.toBase64(),
         };
     } catch (e: any) {
         captureMessage('Argon2 error', { level: 'info', extra: { message: e.message } });

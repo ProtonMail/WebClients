@@ -3,7 +3,6 @@ import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { VaultShareKey } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { updateVault } from './update-vault';
 
@@ -24,7 +23,7 @@ describe('updateVault crypto process', () => {
 
         const decryptedContent = await decryptData(
             vaultKey.key,
-            base64StringToUint8Array(vaultUpdate.Content),
+            Uint8Array.fromBase64(vaultUpdate.Content),
             PassEncryptionTag.VaultContent
         );
 

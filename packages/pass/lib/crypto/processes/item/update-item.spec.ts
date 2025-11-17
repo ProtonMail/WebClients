@@ -3,7 +3,6 @@ import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { ItemKey } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { updateItem } from './update-item';
 
@@ -26,7 +25,7 @@ describe('updateItem crypto process', () => {
 
         const decryptedContent = await decryptData(
             itemKey.key,
-            base64StringToUint8Array(update.Content!),
+            Uint8Array.fromBase64(update.Content!),
             PassEncryptionTag.ItemContent
         );
 

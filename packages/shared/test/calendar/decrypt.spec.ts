@@ -1,7 +1,6 @@
 import type { PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
 import {
@@ -170,7 +169,7 @@ Os/jRyUaMIniPF2OLQ3H8twvnNLYQiikaPY=
         const encryptedAndSignedCard =
             '0sCOAYco/2YnDOqysm4O2mcSAfTogGJw5YjQEz+pcS7tWUjXiNyVWJfrClgdTdW13kwb/CKrMmj0W2gQp4Sg6AwCTrxpgL1MFPU5yNv1Dy/oRX9wLP62AMCvlLfEvbncEVEiArt13RMtge9TH87t6FAYunCGS/tY8rBZN1rm4jvgn9WPeOzuVDAAtTvo0QG3FO2gtHr5MIdXekc1JzNwVY4YqxYxpHgAjTVa+L2EKSS66a5UcE//DvSAGsGOhJs0oncK1fWKxBbT/a3tbolh6Ay7LwXjJBLU+koJfDUOX1lwOuS+93ES3EiD8uYstFIjutFgOEXO91ZnsxEeswQGZWzhoC0A72mFrC+CSw41Z4hZ5wfEwZEG0SfHVnlVoSB0veKkDBPjFWFLKloX+H4YwM0ueX+hgCCKMihlvsb+wC/gLH00jakaeWkZM4cw9wl1Vw==';
         const sessionKey: SessionKey = {
-            data: base64StringToUint8Array('Rxpha2U2xhoE1iP7W9l/EmfTTYEv8ZLHKDYuzQU86nQ='),
+            data: Uint8Array.fromBase64('Rxpha2U2xhoE1iP7W9l/EmfTTYEv8ZLHKDYuzQU86nQ='),
             algorithm: 'aes256',
         };
         const signatureEncryptedAndSignedCard = `-----BEGIN PGP SIGNATURE-----
@@ -192,7 +191,7 @@ TIurHadAqGSqqTU7bb+jQCWD1RLDbwhIgkg=
 -----END PGP SIGNATURE-----`;
 
         const { data, verificationStatus: verificationStatusEncryptedAndSignedCard } = await decryptCard(
-            base64StringToUint8Array(encryptedAndSignedCard),
+            Uint8Array.fromBase64(encryptedAndSignedCard),
             signatureEncryptedAndSignedCard,
             verifyingKey,
             sessionKey
@@ -255,7 +254,7 @@ Y3X/iRfq/cJoDMJYtiKGdUFF6yH96xE5vSs=
         const encryptedAndSignedCard =
             '0sC0AVhc/TD0qVsq3nUgOiPnU4BGfbSI7U2RzjnxjUhokCEuq+Sn+XQKdR+F71keN6zUvgImIImJK8lngOiTqCW810VmLPwokvH3f7CiPsYT3v99HEgoskhv38nsxDmI1hQFAzEqanGSWkRWotwsW8gPdgK7v5Ps8Eb9qmhjnGoT4WVVahexiA5S3wHvmZczENJA3Mas419P+ff6XVt7Cx4lr24FSphjl/7U90eAePFbTEkjMKtMn2km4a2CP3nI1seaL9pWOPCca4Inn221nxFAugmvILxSn01ZQsM5OX38ZcAyeAsIi+UGDxHKqg9BBMtsLL1PVq79ayf9kQcXuZACrlVHcQ4rkz++1pRx8UbNBdN+B4OJPVNM2hRDSSo/8nkh8ztwcop4BEz+bmeupk6/YJnUbo+cO9Df4fi1DytjSQIaC7bQPuDBSCRtKYCfxlHyrhDoPS+T8dZmYfOUru1X5WCSMScXkreSTviF8VkBePJqRmrE';
         const sessionKey: SessionKey = {
-            data: base64StringToUint8Array('5e08Opb7TvQL5adOSULm0OKlt/bOeCDQSxlw1fWnnxc='),
+            data: Uint8Array.fromBase64('5e08Opb7TvQL5adOSULm0OKlt/bOeCDQSxlw1fWnnxc='),
             algorithm: 'aes256',
         };
         const signatureEncryptedAndSignedCard = `-----BEGIN PGP SIGNATURE-----
@@ -277,7 +276,7 @@ uS98JFYRm7dxVWDkdLoOtCk6IC5vuDvapZ4=
 -----END PGP SIGNATURE-----`;
 
         const { data, verificationStatus: verificationStatusEncryptedAndSignedCard } = await decryptCard(
-            base64StringToUint8Array(encryptedAndSignedCard),
+            Uint8Array.fromBase64(encryptedAndSignedCard),
             signatureEncryptedAndSignedCard,
             verifyingKey,
             sessionKey
@@ -289,7 +288,7 @@ uS98JFYRm7dxVWDkdLoOtCk6IC5vuDvapZ4=
 
         // this legacy signature is verified in binary as expected since legacy Web signed encrypted cards in binary already. No need of fallback
         const { verificationStatus: verificationStatusBinaryEncrypted } = await CryptoProxy.decryptMessage({
-            binaryMessage: base64StringToUint8Array(encryptedAndSignedCard),
+            binaryMessage: Uint8Array.fromBase64(encryptedAndSignedCard),
             verificationKeys: verifyingKey,
             armoredSignature: signatureEncryptedAndSignedCard,
             sessionKeys: sessionKey,
@@ -338,7 +337,7 @@ kUoztkcHA+E9tez5X7KdhUMMHPr7gnAlf10XGVGT/s8DaJ96lg0=
         const encryptedAndSignedCard =
             '0sC2AePHfQWired3Wj7qHXXSU/x4K1Det1Wtd57YiGK+H8Ed6t5NSPvjx9AOGHLRUuv93KPj1e2G/aZyPGzEEmT6HkXxR9q9PxBvwhWwu0mev5buiMpLqWPVC5ryNrnyLjqJjB+NwcUAs43uZsuYvR4xGNEVcu9UvWUKOoiYt5CWnOFnXnOZx//5/ZG+Xd8e2zwJOriJfu5eDkosIwFvr9hmI3mQahNGb64yqd7KQsIHJv29RhG5v7DluOK3rQMxdKZ3RxGpbbjIOjMLdB7Vuiku7snwmCHHVpaXKmNZOMv6VFdsHIKwtBf712++7o6tMzyGgBGc2rNgdGPCXEzSc892ZDxcrhX3JjcZhUOMGsCs7svr7RtETOXZXQFUnFWD58CpiGct5c0LN/5vcNYrMULqjGShtDHYTK3u4mDU6BFMrtT7gTHqYTEW7gpwNeM+d7GDMt2kHfTLgZQxOpRRsdgq3+2Bh4yGd8OskmwP81Y6p9twWDOZkrc=';
         const sessionKey: SessionKey = {
-            data: base64StringToUint8Array('v0tbmWKoALXNhkphFy7lje3amf9WP8vSf8aUsSF9Wvs='),
+            data: Uint8Array.fromBase64('v0tbmWKoALXNhkphFy7lje3amf9WP8vSf8aUsSF9Wvs='),
             algorithm: 'aes256',
         };
         const signatureEncryptedAndSignedCard = `-----BEGIN PGP SIGNATURE-----
@@ -361,7 +360,7 @@ p6UwLlBEdbtqT8YixITK1QU+Owmk/GmWADOyVzN/hXKg0zJVTc0=
 -----END PGP SIGNATURE-----`;
 
         const { data, verificationStatus: verificationStatusEncryptedAndSignedCard } = await decryptCard(
-            base64StringToUint8Array(encryptedAndSignedCard),
+            Uint8Array.fromBase64(encryptedAndSignedCard),
             signatureEncryptedAndSignedCard,
             verifyingKey,
             sessionKey
@@ -373,7 +372,7 @@ p6UwLlBEdbtqT8YixITK1QU+Owmk/GmWADOyVzN/hXKg0zJVTc0=
 
         // this legacy signature is NOT verified in binary. It needs the fallback
         const { data: decryptedData, verificationStatus: verificationStatusBinaryEncrypted } = await CryptoProxy.decryptMessage({
-            binaryMessage: base64StringToUint8Array(encryptedAndSignedCard),
+            binaryMessage: Uint8Array.fromBase64(encryptedAndSignedCard),
             format: 'binary',
             verificationKeys: verifyingKey,
             armoredSignature: signatureEncryptedAndSignedCard,

@@ -7,14 +7,13 @@ import {
     type ShareKey,
     ShareType,
 } from '@proton/pass/types';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 export const hydrateShareKeys = async (
     serializedKeys: SerializedCryptoContext<Map<Rotation, ShareKey>>
 ): Promise<Map<Rotation, ShareKey>> => {
     const keys: [Rotation, ShareKey][] = await Promise.all(
         serializedKeys.map(async ([rotation, { raw, userKeyId }]) => {
-            const rawKey = base64StringToUint8Array(raw);
+            const rawKey = Uint8Array.fromBase64(raw);
             const key = await importSymmetricKey(rawKey);
             return [rotation, { rotation, raw: rawKey, key, userKeyId }];
         })
@@ -28,7 +27,7 @@ export const hydrateShareKeys = async (
 export const hydrateShare = (serializedShare: SerializedCryptoContext<OpenedShare>): OpenedShare => {
     switch (serializedShare.targetType) {
         case ShareType.Vault:
-            return { ...serializedShare, content: base64StringToUint8Array(serializedShare.content) };
+            return { ...serializedShare, content: Uint8Array.fromBase64(serializedShare.content) };
         case ShareType.Item:
             return serializedShare;
     }
@@ -39,7 +38,7 @@ export const serializeShareKeys = (keys: Map<Rotation, ShareKey>): SerializedCry
         rotation,
         {
             rotation: vaultKey.rotation,
-            raw: uint8ArrayToBase64String(vaultKey.raw),
+            raw: vaultKey.raw.toBase64(),
             userKeyId: vaultKey.userKeyId,
         },
     ]);
@@ -47,7 +46,7 @@ export const serializeShareKeys = (keys: Map<Rotation, ShareKey>): SerializedCry
 export const serializeShare = (share: OpenedShare): SerializedCryptoContext<OpenedShare> => {
     switch (share.targetType) {
         case ShareType.Vault:
-            return { ...share, content: uint8ArrayToBase64String(share.content) };
+            return { ...share, content: share.content.toBase64() };
         case ShareType.Item:
             return share;
     }

@@ -1,6 +1,5 @@
 import type { ContextSigningOptions, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 export const decryptKeyPacket = async ({
     armoredMessage,
@@ -51,7 +50,7 @@ export const encryptAndSignKeyPacket = async ({
     });
 
     return {
-        keyPacket: uint8ArrayToBase64String(result),
+        keyPacket: result.toBase64(),
         signature,
     };
 };

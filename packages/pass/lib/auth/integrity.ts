@@ -1,4 +1,4 @@
-import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
 
 import type { AuthSession, EncryptedSessionKeys } from './session';
@@ -59,5 +59,5 @@ export const digestSession = async (
     const sessionBuffer = stringToUint8Array(sessionDigest);
     const digest = await computeSHA256(sessionBuffer);
 
-    return `${version}${VERSION_SEPARATOR}${uint8ArrayToBase64String(digest)}`;
+    return `${version}${VERSION_SEPARATOR}${digest.toBase64()}`;
 };

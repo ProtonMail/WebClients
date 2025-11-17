@@ -17,9 +17,7 @@ import {
     SHARE_GENERATED_PASSWORD_LENGTH,
 } from '@proton/shared/lib/drive/constants';
 import {
-    base64StringToUint8Array,
-    stringToUint8Array,
-    uint8ArrayToBase64String,
+    stringToUint8Array
 } from '@proton/shared/lib/helpers/encoding';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type {
@@ -115,7 +113,7 @@ export default function useLegacyShareUrl() {
 
         const sharedLinkPassword: string = await computeKeyPassword(decryptedPassword, sharePasswordSalt);
         const shareSessionKey = await decryptShareSessionKey(
-            base64StringToUint8Array(sharePassphraseKeyPacket),
+            Uint8Array.fromBase64(sharePassphraseKeyPacket),
             sharedLinkPassword
         ).catch((e) =>
             Promise.reject(
@@ -160,7 +158,7 @@ export default function useLegacyShareUrl() {
             format: 'binary',
         });
 
-        return uint8ArrayToBase64String(symmetric);
+        return symmetric.toBase64();
     };
 
     const encryptShareUrlPassword = async (decryptedPassword: string, addressId: string) => {

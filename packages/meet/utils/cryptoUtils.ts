@@ -4,7 +4,6 @@ import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { decryptData, deriveKey, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@proton/srp';
@@ -42,11 +41,11 @@ export const deriveEncryptionKeyFromSessionKey = async (sessionKey: SessionKey) 
 export const encryptMetadataWithKey = async (key: CryptoKey, data: string) => {
     const encryptedData = await encryptData(key, stringToUtf8Array(data), stringToUtf8Array('metadata.meet.proton'));
 
-    return uint8ArrayToBase64String(encryptedData);
+    return encryptedData.toBase64();
 };
 
 export const decryptMetadataWithKey = async (key: CryptoKey, encryptedData: string) => {
-    const encryptedDataUint8Array = base64StringToUint8Array(encryptedData);
+    const encryptedDataUint8Array = Uint8Array.fromBase64(encryptedData);
 
     const decryptedData = await decryptData(key, encryptedDataUint8Array, stringToUtf8Array('metadata.meet.proton'));
 
@@ -62,7 +61,7 @@ interface DecryptSessionKeyParams {
 export const decryptSessionKey = async ({ encryptedSessionKey, password, salt }: DecryptSessionKeyParams) => {
     const sessionKeyPassphrase = await computeBcryptHash(password, salt);
 
-    const encryptedSessionKeyData = base64StringToUint8Array(encryptedSessionKey);
+    const encryptedSessionKeyData = Uint8Array.fromBase64(encryptedSessionKey);
 
     const result = await CryptoProxy.decryptSessionKey({
         binaryMessage: encryptedSessionKeyData,
@@ -152,7 +151,7 @@ export const encryptSessionKey = async (sessionKey: SessionKey, passwordHash: st
         format: 'binary',
     });
 
-    return uint8ArrayToBase64String(result);
+    return result.toBase64();
 };
 
 export const hashPasswordWithSalt = async (password: string, salt?: string) => {

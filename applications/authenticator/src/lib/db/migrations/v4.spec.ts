@@ -2,7 +2,6 @@ import { Dexie, type Transaction } from 'dexie';
 import type { Item } from 'proton-authenticator/lib/db/entities/items';
 
 import { generateKey as generateAesGcmKey, importKey as importAesGcmKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { V4_MIGRATION_BACK_UP_ID, backupForV4, migrateLegacyKeys, upgradeV4 } from './v4';
 
@@ -43,8 +42,8 @@ describe('v4 migration', () => {
             ]);
 
             expect(result).toHaveLength(2);
-            expect(result[0]).toEqual({ id: 'key1', userKeyId: 'user1', encodedKey: uint8ArrayToBase64String(key1) });
-            expect(result[1]).toEqual({ id: 'key2', userKeyId: 'user2', encodedKey: uint8ArrayToBase64String(key2) });
+            expect(result[0]).toEqual({ id: 'key1', userKeyId: 'user1', encodedKey: key1.toBase64() });
+            expect(result[1]).toEqual({ id: 'key2', userKeyId: 'user2', encodedKey: key2.toBase64() });
         });
 
         test('filters out keys without userKeyId', async () => {
@@ -56,7 +55,7 @@ describe('v4 migration', () => {
             ]);
 
             expect(result).toHaveLength(1);
-            expect(result[0]).toEqual({ id: 'key', userKeyId: 'user', encodedKey: uint8ArrayToBase64String(key) });
+            expect(result[0]).toEqual({ id: 'key', userKeyId: 'user', encodedKey: key.toBase64() });
         });
 
         test('handles export key errors', async () => {
@@ -73,7 +72,7 @@ describe('v4 migration', () => {
             ]);
 
             expect(result).toHaveLength(1);
-            expect(result[0]).toEqual({ id: 'key2', userKeyId: 'user2', encodedKey: uint8ArrayToBase64String(key2) });
+            expect(result[0]).toEqual({ id: 'key2', userKeyId: 'user2', encodedKey: key2.toBase64() });
             mockExportKey.mockRestore();
         });
     });
@@ -99,7 +98,7 @@ describe('v4 migration', () => {
                 id: V4_MIGRATION_BACK_UP_ID,
                 date: 1234567890,
                 items,
-                keys: [{ id: 'key1', userKeyId: 'user1', encodedKey: uint8ArrayToBase64String(key) }],
+                keys: [{ id: 'key1', userKeyId: 'user1', encodedKey: key.toBase64() }],
                 version: 3,
             });
         });
@@ -127,7 +126,7 @@ describe('v4 migration', () => {
                 id: V4_MIGRATION_BACK_UP_ID,
                 date: 1234567890,
                 items,
-                keys: [{ id: 'key1', userKeyId: 'user1', encodedKey: uint8ArrayToBase64String(key) }],
+                keys: [{ id: 'key1', userKeyId: 'user1', encodedKey: key.toBase64() }],
                 version: 3,
             });
 

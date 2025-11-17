@@ -4,9 +4,6 @@ export const uint8ArrayToString = arrayToBinaryString;
 
 export const stringToUint8Array = binaryStringToArray;
 
-export const uint8ArrayToBase64String = (array: Uint8Array<ArrayBuffer>) => encodeBase64(uint8ArrayToString(array));
-
-export const base64StringToUint8Array = (string: string) => stringToUint8Array(decodeBase64(string) || '');
 /**
  * Encode a binary string in the so-called base64 URL (https://tools.ietf.org/html/rfc4648#section-5)
  * @dev Each character in a binary string can only be one of the characters in a reduced 255 ASCII alphabet. I.e. morally each character is one byte

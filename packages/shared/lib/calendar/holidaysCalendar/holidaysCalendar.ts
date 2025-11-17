@@ -5,7 +5,6 @@ import type { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '@p
 import unique from '@proton/utils/unique';
 
 import { getPrimaryAddress } from '../../helpers/address';
-import { base64StringToUint8Array } from '../../helpers/encoding';
 import { getLanguageCode, getNaiveCountryCode } from '../../i18n/helper';
 import type { GetAddressKeys } from '../../interfaces/hooks/GetAddressKeys';
 
@@ -160,7 +159,7 @@ export const getJoinHolidaysCalendarData = async ({
 
     const [{ encryptedSessionKey }, signature] = await Promise.all([
         encryptPassphraseSessionKey({
-            sessionKey: { data: base64StringToUint8Array(Key), algorithm: Algorithm } as SessionKey,
+            sessionKey: { data: Uint8Array.fromBase64(Key), algorithm: Algorithm } as SessionKey,
             publicKey,
             signingKey: privateKey,
         }),

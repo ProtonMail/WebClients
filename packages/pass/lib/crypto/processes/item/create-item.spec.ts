@@ -3,7 +3,6 @@ import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { VaultShareKey } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { createItem } from './create-item';
 
@@ -22,14 +21,14 @@ describe('createItem crypto process', () => {
         const item = await createItem({ content, vaultKey });
         const decryptedItemKey = await decryptData(
             vaultKey.key,
-            base64StringToUint8Array(item.ItemKey),
+            Uint8Array.fromBase64(item.ItemKey),
             PassEncryptionTag.ItemKey
         );
 
         const itemKey = await importSymmetricKey(decryptedItemKey);
         const decryptedContent = await decryptData(
             itemKey,
-            base64StringToUint8Array(item.Content),
+            Uint8Array.fromBase64(item.Content),
             PassEncryptionTag.ItemContent
         );
 

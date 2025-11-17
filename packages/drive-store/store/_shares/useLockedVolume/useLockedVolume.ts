@@ -15,7 +15,6 @@ import {
     queryRestoreDriveVolume,
 } from '@proton/shared/lib/api/drive/volume';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { type GetDriveVolumeResult, VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
@@ -216,7 +215,7 @@ export function useLockedVolumeInner({
             lockedPhotos.map(async (photo) => {
                 const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
                     sign(photo.shareDecryptedPassphrase, addressKey),
-                    getEncryptedSessionKey(photo.shareSessionKey, addressKey).then(uint8ArrayToBase64String),
+                    getEncryptedSessionKey(photo.shareSessionKey, addressKey).then(bytes => bytes.toBase64()),
                 ]);
                 return {
                     sharePassphraseSignature,
@@ -296,7 +295,7 @@ export function useLockedVolumeInner({
                 lockedDevices.map(async (device) => {
                     const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
                         sign(device.shareDecryptedPassphrase, addressKey),
-                        getEncryptedSessionKey(device.shareSessionKey, addressKey).then(uint8ArrayToBase64String),
+                        getEncryptedSessionKey(device.shareSessionKey, addressKey).then(bytes => bytes.toBase64()),
                     ]);
                     return {
                         sharePassphraseSignature,
@@ -308,7 +307,7 @@ export function useLockedVolumeInner({
                 lockedPhotos.map(async (photo) => {
                     const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
                         sign(photo.shareDecryptedPassphrase, addressKey),
-                        getEncryptedSessionKey(photo.shareSessionKey, addressKey).then(uint8ArrayToBase64String),
+                        getEncryptedSessionKey(photo.shareSessionKey, addressKey).then(bytes => bytes.toBase64()),
                     ]);
                     return {
                         sharePassphraseSignature,

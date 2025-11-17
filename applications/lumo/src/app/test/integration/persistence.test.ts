@@ -1,7 +1,5 @@
 import { type SetupServer, setupServer } from 'msw/node';
 
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { CONVERSATION_STORE, DbApi, MESSAGE_STORE, SPACE_STORE } from '../../indexedDb/db';
@@ -875,7 +873,7 @@ describe('Lumo Persistence Integration Tests', () => {
 
         it('should load the state from indexeddb', async () => {
             const masterKeyBytes = fixedMasterKeyBytes();
-            const masterKeyBase64 = uint8ArrayToBase64String(masterKeyBytes);
+            const masterKeyBase64 = masterKeyBytes.toBase64();
             const sharedUserId = generateFakeUserId();
             const sharedDbApi = new DbApi(sharedUserId);
 
@@ -1067,7 +1065,7 @@ describe('Lumo Persistence Integration Tests', () => {
             };
 
             const masterKeyBytes = fixedMasterKeyBytes();
-            const masterKeyBase64 = uint8ArrayToBase64String(masterKeyBytes);
+            const masterKeyBase64 = masterKeyBytes.toBase64();
             const { store, dispatch, dbApi } = await setupTestEnvironment({
                 // withPersistence: false,
                 masterKeyBase64,

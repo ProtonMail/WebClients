@@ -6,7 +6,6 @@ import {
     setupCryptoProxyForTesting,
 } from '@proton/pass/lib/crypto/utils/testing';
 import { PassSignatureContext } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { createInviteKeys } from './create-invite-keys';
 
@@ -30,7 +29,7 @@ describe('create invite keys crypto process', () => {
 
         const decryptedKeys = await Promise.all(
             inviteKeys.map(async (vaultKey) => {
-                const binaryMessage = base64StringToUint8Array(vaultKey.Key);
+                const binaryMessage = Uint8Array.fromBase64(vaultKey.Key);
 
                 return CryptoProxy.decryptMessage({
                     binaryMessage,

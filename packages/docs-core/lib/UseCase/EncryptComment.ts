@@ -5,7 +5,6 @@ import type { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding'
 import metrics from '@proton/metrics'
 import { canKeysSign } from '../Types/DocumentEntitlements'
 import type { PublicDocumentKeys } from '@proton/drive-store'
@@ -41,6 +40,6 @@ export class EncryptComment implements UseCaseInterface<string> {
       return Result.fail(encrypted.getError())
     }
 
-    return Result.ok(uint8ArrayToBase64String(encrypted.getValue()))
+    return Result.ok(encrypted.getValue().toBase64())
   }
 }

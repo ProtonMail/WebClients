@@ -1,7 +1,6 @@
 import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { OpenedShare, ShareGetResponse, ShareRole, VaultShareKey } from '@proton/pass/types';
 import { PassEncryptionTag, ShareType } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 type OpenShareProcessParams = { encryptedShare: ShareGetResponse } & (
     | { type: ShareType.Vault; vaultKey: VaultShareKey }
@@ -32,7 +31,7 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
         case ShareType.Vault: {
             const content = await decryptData(
                 options.vaultKey.key,
-                base64StringToUint8Array(encryptedShare.Content!),
+                Uint8Array.fromBase64(encryptedShare.Content!),
                 PassEncryptionTag.VaultContent
             );
 

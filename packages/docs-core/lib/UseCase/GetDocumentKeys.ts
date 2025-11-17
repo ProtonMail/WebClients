@@ -5,7 +5,6 @@ import { getErrorString } from '../Util/GetErrorString'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { CacheService } from '../Services/CacheService'
 import type { CachableResult } from './CachableResult'
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding'
 import type { DocumentKeys } from '@proton/drive-store/lib/_documents'
 import type { SessionKey } from '@proton/crypto/lib'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -26,7 +25,7 @@ type CachedSessionKey = {
 
 function serializeSessionKey(sessionKey: SessionKey): CachedSessionKey {
   return {
-    data: uint8ArrayToBase64String(sessionKey.data),
+    data: sessionKey.data.toBase64(),
     algorithm: sessionKey.algorithm,
     aeadAlgorithm: sessionKey.aeadAlgorithm,
   }
@@ -34,7 +33,7 @@ function serializeSessionKey(sessionKey: SessionKey): CachedSessionKey {
 
 function deserializeSessionKey(cachedSessionKey: CachedSessionKey): SessionKey {
   return {
-    data: base64StringToUint8Array(cachedSessionKey.data),
+    data: Uint8Array.fromBase64(cachedSessionKey.data),
     algorithm: cachedSessionKey.algorithm,
     aeadAlgorithm: cachedSessionKey.aeadAlgorithm,
   } as SessionKey

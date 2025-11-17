@@ -15,7 +15,6 @@ import { readCalendarEvent, readSessionKeys } from '../../lib/calendar/deseriali
 import { unwrap, wrap } from '../../lib/calendar/helper';
 import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { setVcalProdId } from '../../lib/calendar/vcalConfig';
-import { base64StringToUint8Array } from '../../lib/helpers/encoding';
 import { toCRLF } from '../../lib/helpers/string';
 import type { RequireSome } from '../../lib/interfaces';
 import type {
@@ -179,7 +178,7 @@ describe('calendar encryption', () => {
          */
         const checkEncryptionKeyIDs = async (base64Message: string, expectedEncryptionKeys: PublicKeyReference[]) => {
             const { encryptionKeyIDs } = await CryptoProxy.getMessageInfo({
-                binaryMessage: base64StringToUint8Array(base64Message),
+                binaryMessage: Uint8Array.fromBase64(base64Message),
             });
             expect(encryptionKeyIDs.length).toBe(expectedEncryptionKeys.length);
             const isEncryptedToEachKey = expectedEncryptionKeys.every((encryptionKey) =>

@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, getMatchingSigningKey } from '@proton/crypto';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
@@ -52,7 +51,7 @@ export async function decryptLockedSharePassphrase(
     }
 
     const keyPacketsAsUnit8Array = mergeUint8Arrays(
-        lockedShare.possibleKeyPackets.map((keyPacket) => base64StringToUint8Array(keyPacket))
+        lockedShare.possibleKeyPackets.map((keyPacket) => Uint8Array.fromBase64(keyPacket))
     );
     const shareSessionKey = await getDecryptedSessionKey({
         data: keyPacketsAsUnit8Array,

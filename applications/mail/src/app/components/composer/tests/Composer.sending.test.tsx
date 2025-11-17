@@ -10,7 +10,6 @@ import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import type { MailState } from 'proton-mail/store/store';
 
-import { arrayToBase64 } from '../../../helpers/base64';
 import { addApiContact } from '../../../helpers/test/contact';
 import type { GeneratedKey } from '../../../helpers/test/crypto';
 import {
@@ -437,7 +436,7 @@ describe('Composer sending', () => {
 
             const sessionKey = await decryptSessionKey(AttachmentKeyPackets, toKeys.privateKeys);
 
-            expect(arrayToBase64(sessionKey.data)).toBe(arrayToBase64(generatedSessionKey.data));
+            expect(sessionKey.data.toBase64()).toBe(generatedSessionKey.data.toBase64());
         });
 
         it('multipart/mixed with attachment', async () => {

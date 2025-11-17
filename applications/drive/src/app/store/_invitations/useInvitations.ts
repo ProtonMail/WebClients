@@ -22,7 +22,6 @@ import {
 import { DRIVE_SIGNATURE_CONTEXT, SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type {
     ShareExternalInvitationPayload,
     ShareInvitationDetailsPayload,
@@ -156,8 +155,8 @@ export const useInvitations = () => {
                     InviteeEmail: invitee.inviteeEmail,
                     InviterEmail: inviter.inviterEmail,
                     Permissions: permissions,
-                    KeyPacket: uint8ArrayToBase64String(keyPacket),
-                    KeyPacketSignature: uint8ArrayToBase64String(keyPacketSignature),
+                    KeyPacket: keyPacket.toBase64(),
+                    KeyPacketSignature: keyPacketSignature.toBase64(),
                     ExternalInvitationID: externalInvitationId,
                 },
                 EmailDetails: emailDetails
@@ -207,7 +206,7 @@ export const useInvitations = () => {
         const linkPrivateKey = await getLinkPrivateKey(abortSignal, rootShareId, linkId);
         const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
         const externalInvitationSignature = await CryptoProxy.signMessage({
-            textData: inviteeEmail.concat('|', uint8ArrayToBase64String(sessionKey.data)),
+            textData: inviteeEmail.concat('|', sessionKey.data.toBase64()),
             signingKeys: inviter.addressKey,
             detached: true,
             format: 'binary',
@@ -220,7 +219,7 @@ export const useInvitations = () => {
                     InviterAddressID: inviter.addressId,
                     InviteeEmail: inviteeEmail,
                     Permissions: permissions,
-                    ExternalInvitationSignature: uint8ArrayToBase64String(externalInvitationSignature),
+                    ExternalInvitationSignature: externalInvitationSignature.toBase64(),
                 },
                 EmailDetails: emailDetails
                     ? {
@@ -363,7 +362,7 @@ export const useInvitations = () => {
         }
 
         const sessionKey = await getDecryptedSessionKey({
-            data: base64StringToUint8Array(invitation.keyPacket),
+            data: Uint8Array.fromBase64(invitation.keyPacket),
             privateKeys: keys?.privateKeys,
         });
 
@@ -377,7 +376,7 @@ export const useInvitations = () => {
 
         return debouncedRequest<{ Code: number }>(
             queryAcceptShareInvite(invitation.invitationId, {
-                SessionKeySignature: uint8ArrayToBase64String(sessionKeySignature),
+                SessionKeySignature: sessionKeySignature.toBase64(),
             }),
             abortSignal
         );
@@ -455,9 +454,9 @@ export const useInvitations = () => {
         const linkPrivateKey = await getLinkPrivateKey(abortSignal, contextShareId, linkId);
         const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
         const { verificationStatus, errors } = await CryptoProxy.verifyMessage({
-            textData: currentExternalInvitation.inviteeEmail.concat('|', uint8ArrayToBase64String(sessionKey.data)),
+            textData: currentExternalInvitation.inviteeEmail.concat('|', sessionKey.data.toBase64()),
             verificationKeys: inviterAddressKey.publicKey,
-            binarySignature: base64StringToUint8Array(currentExternalInvitation.externalInvitationSignature),
+            binarySignature: Uint8Array.fromBase64(currentExternalInvitation.externalInvitationSignature),
             signatureContext: { required: true, value: DRIVE_SIGNATURE_CONTEXT.SHARE_MEMBER_EXTERNAL_INVITATION },
         });
 

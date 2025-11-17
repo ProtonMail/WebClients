@@ -3,7 +3,6 @@ import log, { type Logger as LogLevelLogger } from 'loglevel';
 import { type AesGcmCryptoKey, decryptData, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { DAY } from '@proton/shared/lib/constants';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import {
     CLEANUP_INTERVAL_MS,
@@ -351,9 +350,9 @@ export class Logger {
                 id: `${timestamp}-${Math.random().toString(36).substring(2, 11)}`,
                 timestamp,
                 level,
-                encryptedMessage: uint8ArrayToBase64String(
+                encryptedMessage: (
                     await encryptData(this.encryptionKey, stringToUtf8Array(message), this.encryptionContext)
-                ),
+                ).toBase64(),
                 encryptedArgs: await this.processArgs(args),
             };
 
@@ -378,9 +377,9 @@ export class Logger {
 
         return Promise.all(
             processedArgs.map(async (arg) =>
-                uint8ArrayToBase64String(
+                (
                     await encryptData(this.encryptionKey!, stringToUtf8Array(arg), this.encryptionContext!)
-                )
+                ).toBase64()
             )
         );
     }
@@ -508,14 +507,14 @@ export class Logger {
                     const level = log.level.toUpperCase();
                     const message = await decryptData(
                         this.encryptionKey!,
-                        base64StringToUint8Array(log.encryptedMessage),
+                        Uint8Array.fromBase64(log.encryptedMessage),
                         this.encryptionContext!
                     ).then(utf8ArrayToString);
                     const decryptedArgs = await Promise.all(
                         log.encryptedArgs.map(async (encryptedArg) =>
                             decryptData(
                                 this.encryptionKey!,
-                                base64StringToUint8Array(encryptedArg),
+                                Uint8Array.fromBase64(encryptedArg),
                                 this.encryptionContext!
                             ).then(utf8ArrayToString)
                         )

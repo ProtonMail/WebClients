@@ -5,7 +5,6 @@ import type { ImportFileReader } from '@proton/pass/lib/import/types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { DeobfuscatedItemExtraField, IdentityFieldName, ItemContent } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 import type { EnpassField } from './enpass.types';
@@ -137,7 +136,7 @@ export const enpassFileReader = (): EnpassFileReader => {
         getFile: async (filename) => {
             const match = entries.get(filename);
             if (!match) return null;
-            return new Blob([base64StringToUint8Array(match)]);
+            return new Blob([Uint8Array.fromBase64(match)]);
         },
         registerFile: (filename: string, data: string) => entries.set(filename, data),
         close: noop,

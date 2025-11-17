@@ -2,7 +2,7 @@ import { createFileDescriptor } from '@proton/pass/lib/crypto/processes/file/cre
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { createRandomItemKey } from '@proton/pass/lib/crypto/utils/testing';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { encodeBase64URL, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
 import { createSecureLink } from './create-secure-link';
 import { openSecureLinkFileDescriptor } from './open-secure-link-file-descriptor';
@@ -17,9 +17,9 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
         const secureLinkData = await createSecureLink({ itemKey });
 
         const result = await openSecureLinkFileDescriptor({
-            encryptedFileKey: uint8ArrayToBase64String(encryptedFileKey),
-            encryptedItemKey: uint8ArrayToBase64String(secureLinkData.encryptedItemKey),
-            encryptedMetadata: uint8ArrayToBase64String(fileDescriptor.metadata),
+            encryptedFileKey: encryptedFileKey.toBase64(),
+            encryptedItemKey: secureLinkData.encryptedItemKey.toBase64(),
+            encryptedMetadata: fileDescriptor.metadata.toBase64(),
             encryptionVersion: 1,
             linkKey: encodeBase64URL(String.fromCharCode(...secureLinkData.secureLinkKey)),
         });
@@ -35,9 +35,9 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
         const secureLinkData = await createSecureLink({ itemKey });
 
         const result = await openSecureLinkFileDescriptor({
-            encryptedFileKey: uint8ArrayToBase64String(encryptedFileKey),
-            encryptedItemKey: uint8ArrayToBase64String(secureLinkData.encryptedItemKey),
-            encryptedMetadata: uint8ArrayToBase64String(fileDescriptor.metadata),
+            encryptedFileKey: encryptedFileKey.toBase64(),
+            encryptedItemKey: secureLinkData.encryptedItemKey.toBase64(),
+            encryptedMetadata: fileDescriptor.metadata.toBase64(),
             encryptionVersion: 2,
             linkKey: encodeBase64URL(String.fromCharCode(...secureLinkData.secureLinkKey)),
         });
@@ -55,9 +55,9 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
 
         await expect(
             openSecureLinkFileDescriptor({
-                encryptedFileKey: uint8ArrayToBase64String(encryptedFileKey),
-                encryptedItemKey: uint8ArrayToBase64String(secureLinkData.encryptedItemKey),
-                encryptedMetadata: uint8ArrayToBase64String(fileDescriptor.metadata),
+                encryptedFileKey: encryptedFileKey.toBase64(),
+                encryptedItemKey: secureLinkData.encryptedItemKey.toBase64(),
+                encryptedMetadata: fileDescriptor.metadata.toBase64(),
                 encryptionVersion: 1,
                 linkKey: encodeBase64URL(String.fromCharCode(...secureLinkData.secureLinkKey)),
             })

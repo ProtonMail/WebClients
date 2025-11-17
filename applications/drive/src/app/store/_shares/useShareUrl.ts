@@ -18,9 +18,7 @@ import {
 } from '@proton/shared/lib/drive/constants';
 import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import {
-    base64StringToUint8Array,
     stringToUint8Array,
-    uint8ArrayToBase64String,
 } from '@proton/shared/lib/helpers/encoding';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type {
@@ -115,7 +113,7 @@ export default function useShareUrl() {
 
         const sharedLinkPassword: string = await computeKeyPassword(decryptedPassword, sharePasswordSalt);
         const shareSessionKey = await decryptShareSessionKey(
-            base64StringToUint8Array(sharePassphraseKeyPacket),
+            Uint8Array.fromBase64(sharePassphraseKeyPacket),
             sharedLinkPassword
         ).catch((e) =>
             Promise.reject(
@@ -160,7 +158,7 @@ export default function useShareUrl() {
             format: 'binary',
         });
 
-        return uint8ArrayToBase64String(symmetric);
+        return symmetric.toBase64();
     };
 
     const encryptShareUrlPassword = async (decryptedPassword: string, addressId: string) => {

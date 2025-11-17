@@ -8,7 +8,6 @@ import {
     setupCryptoProxyForTesting,
 } from '@proton/pass/lib/crypto/utils/testing';
 import { PassSignatureContext } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { createNewUserSignatureFactory } from './create-new-user-signature';
 
@@ -36,7 +35,7 @@ describe('create new user invite signature', () => {
 
         const { verificationStatus } = await CryptoProxy.verifyMessage({
             binaryData: signatureBody,
-            binarySignature: base64StringToUint8Array(signature),
+            binarySignature: Uint8Array.fromBase64(signature),
             verificationKeys: [addressKey.publicKey],
             signatureContext: {
                 value: PassSignatureContext.VaultInviteNewUser,

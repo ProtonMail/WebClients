@@ -1,4 +1,3 @@
-import { base64StringToUint8Array } from '../../lib/helpers/encoding';
 import {
     generateMnemonicBase64RandomBytes,
     generateMnemonicFromBase64RandomBytes,
@@ -11,14 +10,14 @@ describe('generateMnemonicBase64RandomBytes', () => {
         const base64RandomBytes = generateMnemonicBase64RandomBytes();
 
         expect(() => {
-            base64StringToUint8Array(base64RandomBytes);
+            Uint8Array.fromBase64(base64RandomBytes);
         }).not.toThrow();
     });
 
     it('should return base64 string of length 16', () => {
         const base64RandomBytes = generateMnemonicBase64RandomBytes();
 
-        const randomBytes = base64StringToUint8Array(base64RandomBytes);
+        const randomBytes = Uint8Array.fromBase64(base64RandomBytes);
 
         expect(randomBytes.length).toBe(16);
     });
