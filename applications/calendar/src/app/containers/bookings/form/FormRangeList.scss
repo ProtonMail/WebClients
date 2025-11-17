@@ -1,0 +1,9 @@
+@import '~@proton/styles/scss/lib';
+
+.booking {
+	&-time-input {
+		.input-element {
+			padding-inline: em(10);
+		}
+	}
+}
