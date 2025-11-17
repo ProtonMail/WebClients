@@ -1,5 +1,7 @@
 import { ThemeModeSetting, ThemeTypes } from '@proton/shared/lib/themes/constants';
 
+import { matchDarkTheme } from './lumoThemeUtils';
+
 export interface LumoLocalSettings {
     theme: ThemeTypes;
     mode: ThemeModeSetting;
@@ -47,7 +49,9 @@ export const setLumoSettings = (settings: LumoLocalSettings) => {
     }
 };
 
-export const getDefaultSettings = (): LumoLocalSettings => ({
-    theme: ThemeTypes.LumoLight,
-    mode: ThemeModeSetting.Light,
-});
+export const getDefaultSettings = (): LumoLocalSettings => {
+    return {
+        theme: matchDarkTheme().matches ? ThemeTypes.LumoDark : ThemeTypes.LumoLight,
+        mode: ThemeModeSetting.Auto,
+    };
+};

@@ -12,6 +12,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useLumoUserSettings } from '../../../hooks/useLumoUserSettings';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { initialFeatureFlags } from '../../../redux/slices/featureFlags';
 import type { LumoUserSettings } from '../../../redux/slices/lumoUserSettings';
 import { saveLumoUserSettingsToRemote } from '../../../redux/slices/lumoUserSettingsThunks';
 import {
@@ -262,6 +263,7 @@ const PersonalizationPanel = () => {
             const updatedUserSettings: LumoUserSettings = {
                 theme: (userSettings as any)?.theme || 'auto',
                 personalization,
+                featureFlags: (userSettings as any)?.featureFlags || initialFeatureFlags,
             };
 
             // Directly save to remote API and wait for completion
