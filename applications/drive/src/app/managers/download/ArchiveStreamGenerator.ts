@@ -1,8 +1,10 @@
-import { getDrive } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive/index';
+import { NodeType, getDrive } from '@proton/drive/index';
 
 import type { DownloadController } from './DownloadManager';
-import type { ArchiveItem, DownloadQueueTask, DownloadScheduler, DownloadableItem } from './downloadTypes';
+import type { ArchiveItem, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import { createAsyncQueue } from './utils/asyncQueue';
+import { getNodeModifiedTime } from './utils/nodeHelpers';
 
 export type { ArchiveItem } from './downloadTypes';
 
@@ -73,21 +75,22 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): Ar
  */
 const createArchiveItem = async (
     taskId: string,
-    entry: DownloadableItem,
+    node: NodeEntity,
+    parentPath: string[],
     tracker: ArchiveTracker,
     scheduler: DownloadScheduler,
     abortSignal: AbortSignal
 ): Promise<ArchiveItem> => {
-    if (!entry.isFile) {
+    if (node.type !== NodeType.File) {
         return {
             isFile: false,
-            name: entry.name,
-            parentPath: entry.parentPath ?? [],
+            name: node.name,
+            parentPath,
         };
     }
 
     const drive = getDrive();
-    const downloader = await drive.getFileDownloader(entry.uid, abortSignal);
+    const downloader = await drive.getFileDownloader(node.uid, abortSignal);
 
     const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
     tracker.registerFile(taskId);
@@ -106,10 +109,10 @@ const createArchiveItem = async (
 
     return {
         isFile: true,
-        name: entry.name,
-        parentPath: entry.parentPath ?? [],
+        name: node.name,
+        parentPath,
         stream: readable,
-        fileModifyTime: entry.fileModifyTime,
+        fileModifyTime: getNodeModifiedTime(node),
     };
 };
 
@@ -128,10 +131,11 @@ export class ArchiveStreamGenerator {
     readonly controller: DownloadController;
 
     constructor(
-        private readonly entries: AsyncIterable<DownloadableItem>,
+        private readonly entries: AsyncIterable<NodeEntity>,
         onProgress: (downloadedBytes: number) => void,
         private readonly scheduler: DownloadScheduler,
-        private readonly abortSignal: AbortSignal
+        private readonly abortSignal: AbortSignal,
+        private readonly parentPathByUid: Map<string, string[]>
     ) {
         this.tracker = createArchiveTracker(onProgress);
         this.generator = this.createGenerator();
@@ -162,13 +166,21 @@ export class ArchiveStreamGenerator {
         })();
     }
 
-    private insertArchiveEntryInScheduler(taskId: string, entry: DownloadableItem) {
+    private insertArchiveEntryInScheduler(taskId: string, node: NodeEntity) {
         const downloadTask: DownloadQueueTask = {
             taskId,
-            node: entry,
+            node,
             start: async () => {
                 this.pendingArchiveTasks += 1;
-                const archivePromise = createArchiveItem(taskId, entry, this.tracker, this.scheduler, this.abortSignal);
+                const parentPath = this.parentPathByUid.get(node.uid) ?? [];
+                const archivePromise = createArchiveItem(
+                    taskId,
+                    node,
+                    parentPath,
+                    this.tracker,
+                    this.scheduler,
+                    this.abortSignal
+                );
 
                 archivePromise
                     .then((item) => {
@@ -186,7 +198,7 @@ export class ArchiveStreamGenerator {
                     completion: archivePromise.then(() => {}),
                 };
             },
-            storageSizeEstimate: entry.storageSize,
+            storageSizeEstimate: node.activeRevision?.storageSize ?? 0,
         };
 
         this.scheduler.scheduleDownload(downloadTask);

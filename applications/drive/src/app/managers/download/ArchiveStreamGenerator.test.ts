@@ -1,18 +1,28 @@
 import { jest } from '@jest/globals';
 
+import { NodeType } from '@proton/drive/index';
+
 import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './ArchiveStreamGenerator';
 import type { DownloadQueueTask } from './downloadTypes';
-import { createDeferred, flushAsync, trackInstances } from './testUtils';
+import { createDeferred, createMockNodeEntity, flushAsync, trackInstances } from './testUtils';
 
 const getDriveMock = jest.fn();
 
-jest.mock('@proton/drive', () => ({
-    getDrive: getDriveMock,
-}));
+jest.mock('@proton/drive', () => {
+    const actual = jest.requireActual('@proton/drive');
+    return {
+        ...(actual as {}),
+        getDrive: getDriveMock,
+    };
+});
 
-jest.mock('@proton/drive/index', () => ({
-    getDrive: getDriveMock,
-}));
+jest.mock('@proton/drive/index', () => {
+    const actual = jest.requireActual('@proton/drive/index');
+    return {
+        ...(actual as {}),
+        getDrive: getDriveMock,
+    };
+});
 
 const { ArchiveStreamGenerator } = require('./ArchiveStreamGenerator') as {
     ArchiveStreamGenerator: typeof ArchiveStreamGeneratorClass;
@@ -76,40 +86,38 @@ describe('ArchiveStreamGenerator', () => {
 
         const schedulerInstance = schedulerTracker.Mock();
 
-        const fileEntry = {
+        const node = createMockNodeEntity({
             uid: 'file-1',
             name: 'file.txt',
-            isFile: true,
-            storageSize: 1024,
-            parentPath: ['folder'],
-            fileModifyTime: 123,
-        };
+        });
 
         async function* entries() {
-            yield fileEntry;
+            yield node;
         }
 
+        const parentPaths = new Map<string, string[]>([['file-1', ['folder']]]);
         const generatorInstance = new ArchiveStreamGenerator(
             entries(),
             progressSpy,
             schedulerInstance,
-            abortController.signal
+            abortController.signal,
+            parentPaths
         );
 
         await flushAsync();
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
         const scheduledTask = schedulerInstance._tasks[0];
-        expect(scheduledTask.storageSizeEstimate).toBe(fileEntry.storageSize);
+        expect(scheduledTask.storageSizeEstimate).toBe(node.activeRevision?.storageSize ?? 0);
 
         const { completion } = await scheduledTask.start();
 
         const { value, done } = await generatorInstance.generator.next();
         expect(done).toBe(false);
         expect(value?.isFile).toBe(true);
-        expect(value?.name).toBe(fileEntry.name);
-        expect(value?.parentPath).toEqual(fileEntry.parentPath);
+        expect(value?.name).toBe(node.name);
+        expect(value?.parentPath).toEqual(['folder']);
 
-        expect(getFileDownloader).toHaveBeenCalledWith(fileEntry.uid, abortController.signal);
+        expect(getFileDownloader).toHaveBeenCalledWith(node.uid, abortController.signal);
         expect(downloadToStream).toHaveBeenCalledTimes(1);
         expect(progressSpy).toHaveBeenCalledWith(512);
 
@@ -133,8 +141,15 @@ describe('ArchiveStreamGenerator', () => {
             getFileDownloader: jest.fn(async () => undefined),
         }));
 
+        const folderNode = createMockNodeEntity({
+            uid: 'folder-1',
+            name: 'Folder',
+            type: NodeType.Folder,
+            activeRevision: undefined,
+        });
+
         async function* entries() {
-            yield { uid: 'folder-1', name: 'Folder', isFile: false, parentPath: [] };
+            yield folderNode;
         }
 
         const progressSpy = jest.fn();
@@ -142,7 +157,8 @@ describe('ArchiveStreamGenerator', () => {
             entries(),
             progressSpy,
             schedulerInstance,
-            new AbortController().signal
+            new AbortController().signal,
+            new Map<string, string[]>([['folder-1', []]])
         );
 
         await flushAsync();

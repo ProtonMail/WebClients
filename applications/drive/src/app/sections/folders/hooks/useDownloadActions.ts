@@ -48,6 +48,6 @@ export const useDownloadActions = ({ selectedItems }: Props) => {
     };
 
     return {
-        downloadItems: isSDKTransferEnabled ? () => dm.download(selectedItems) : downloadItems,
+        downloadItems: isSDKTransferEnabled ? () => dm.download(selectedItems.map((item) => item.uid)) : downloadItems,
     };
 };

@@ -1,4 +1,5 @@
 import type { DownloadQueueTask, DownloadQueueTaskHandle } from './downloadTypes';
+import { getNodeStorageSize } from './utils/getNodeStorageSize';
 
 const ALLOWED_BYTES_PER_FILE = 40 * 1024 * 1024; // 40 MiB
 const ALLOWED_BYTES_TOTAL_LOAD = 60 * 1024 * 1024; // 60 MiB
@@ -143,7 +144,7 @@ export class DownloadScheduler {
 
     // Estimate how much load a task will add once it starts.
     private getTaskLoad(task: DownloadQueueTask): number {
-        task.storageSizeEstimate = task.storageSizeEstimate ?? task.node.storageSize ?? 0;
+        task.storageSizeEstimate = task.storageSizeEstimate ?? getNodeStorageSize(task.node);
 
         return task.storageSizeEstimate;
     }

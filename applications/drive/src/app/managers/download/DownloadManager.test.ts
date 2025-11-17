@@ -1,5 +1,14 @@
-import type { DownloadableItem } from './downloadTypes';
-import { createDeferred, createEmptyAsyncGenerator, flushAsync, trackInstances, waitForCondition } from './testUtils';
+import type { NodeEntity } from '@proton/drive/index';
+import { NodeType } from '@proton/drive/index';
+
+import {
+    createDeferred,
+    createEmptyAsyncGenerator,
+    createMockNodeEntity,
+    flushAsync,
+    trackInstances,
+    waitForCondition,
+} from './testUtils';
 
 const schedulerTracker = trackInstances((...args: unknown[]) => {
     let counter = 0;
@@ -32,6 +41,7 @@ const archiveGeneratorTracker = trackInstances(() => ({
 const fileSaverSaveAsFileMock = jest.fn();
 const loadCreateReadableStreamWrapperMock = jest.fn();
 const nodesStructureTraversalMock = jest.fn();
+const hydrateAndCheckNodesMock = jest.fn();
 
 jest.mock('../../store/_downloads/fileSaver/fileSaver', () => ({
     __esModule: true,
@@ -84,6 +94,10 @@ jest.mock('./utils/nodesStructureTraversal', () => ({
     nodesStructureTraversal: nodesStructureTraversalMock,
 }));
 
+jest.mock('./utils/hydrateAndCheckNodes', () => ({
+    hydrateAndCheckNodes: hydrateAndCheckNodesMock,
+}));
+
 jest.mock('@proton/drive/index', () => {
     const listeners: Record<string, ((...args: unknown[]) => void)[]> = {};
     const driveMock = {
@@ -107,7 +121,9 @@ jest.mock('@proton/drive/index', () => {
             listeners[key] = [];
         });
     };
+    const actual = jest.requireActual('@proton/drive/index');
     return {
+        ...actual,
         AbortError,
         SDKEvent: {
             TransfersPaused: 'TransfersPaused',
@@ -186,6 +202,7 @@ beforeEach(() => {
     loadCreateReadableStreamWrapperMock.mockReset();
     fileSaverSaveAsFileMock.mockReset();
     nodesStructureTraversalMock.mockReset();
+    hydrateAndCheckNodesMock.mockReset();
 
     schedulerTracker.reset();
     archiveStreamGeneratorTracker.reset();
@@ -211,6 +228,7 @@ describe('DownloadManager', () => {
         const manager = DownloadManager.getInstance();
         await manager.download([]);
 
+        expect(hydrateAndCheckNodesMock).not.toHaveBeenCalled();
         expect(storeMockState.addDownloadItem).not.toHaveBeenCalled();
         const schedulerInstance = getSchedulerInstance();
         expect(schedulerInstance.scheduleDownload).not.toHaveBeenCalled();
@@ -222,12 +240,12 @@ describe('DownloadManager', () => {
 
         storeMockState.addDownloadItem.mockReturnValue('download-1');
 
-        const node: DownloadableItem = {
+        const node: NodeEntity = createMockNodeEntity({
             uid: 'file-1',
             name: 'file.txt',
-            isFile: true,
-            storageSize: 128,
-        };
+        });
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
+        hydrateAndCheckNodesMock.mockResolvedValue([node]);
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
@@ -236,7 +254,7 @@ describe('DownloadManager', () => {
             completion: jest.fn(() => controllerCompletion.promise),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => node.storageSize),
+            getClaimedSizeInBytes: jest.fn(() => nodeSize),
             downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
                 onProgress(64);
                 return controller;
@@ -251,11 +269,11 @@ describe('DownloadManager', () => {
         const saveDeferred = createDeferred<void>();
         fileSaverSaveAsFileMock.mockReturnValue(saveDeferred.promise);
 
-        await manager.download([node]);
+        await manager.download([node.uid]);
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
             name: node.name,
-            storageSize: node.storageSize,
+            storageSize: nodeSize,
             downloadedBytes: 0,
             status: DownloadStatus.Pending,
             nodeUids: [node.uid],
@@ -270,7 +288,7 @@ describe('DownloadManager', () => {
         const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
         expect(activeDownloads.has('download-1')).toBe(true);
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
-            storageSize: node.storageSize,
+            storageSize: nodeSize,
         });
 
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
@@ -285,7 +303,7 @@ describe('DownloadManager', () => {
 
         expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(
             readableStream,
-            { filename: node.name, mimeType: 'application/octet-stream', size: node.storageSize },
+            { filename: node.name, mimeType: 'application/octet-stream', size: nodeSize },
             expect.any(Function)
         );
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
@@ -303,16 +321,16 @@ describe('DownloadManager', () => {
 
         storeMockState.addDownloadItem.mockReturnValue('download-1');
 
-        const node: DownloadableItem = {
+        const node: NodeEntity = createMockNodeEntity({
             uid: 'file-2',
             name: 'broken.txt',
-            isFile: true,
-        };
+        });
+        hydrateAndCheckNodesMock.mockResolvedValue([node]);
 
         const failure = new Error('sdk failure');
         sdkMock.driveMock.getFileDownloader.mockRejectedValue(failure);
 
-        await manager.download([node]);
+        await manager.download([node.uid]);
         const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
 
         const handle = await scheduledTask.start();
@@ -327,16 +345,15 @@ describe('DownloadManager', () => {
         const manager = DownloadManager.getInstance();
         const schedulerInstance = getSchedulerInstance();
 
-        const node: DownloadableItem = {
+        const node: NodeEntity = createMockNodeEntity({
             uid: 'file-retry',
             name: 'retry-me.txt',
-            isFile: true,
-            storageSize: 256,
-        };
+        });
+        hydrateAndCheckNodesMock.mockResolvedValue([node]);
 
         storeMockState.addDownloadItem.mockReturnValue('download-retry');
 
-        await manager.download([node]);
+        await manager.download([node.uid]);
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledTimes(1);
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
@@ -356,19 +373,21 @@ describe('DownloadManager', () => {
     it('should reuse existing queue items when retrying an archive download', async () => {
         const manager = DownloadManager.getInstance();
 
-        const nodes: DownloadableItem[] = [
-            { uid: 'file-a', name: 'a.txt', isFile: true, storageSize: 100 },
-            { uid: 'file-b', name: 'b.txt', isFile: true, storageSize: 200 },
+        const nodes: NodeEntity[] = [
+            createMockNodeEntity({ uid: 'file-a', name: 'a.txt' }),
+            createMockNodeEntity({ uid: 'file-b', name: 'b.txt' }),
         ];
+        hydrateAndCheckNodesMock.mockResolvedValue(nodes);
 
         storeMockState.addDownloadItem.mockReturnValue('archive-retry');
         storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Failed });
         storeMockState.getQueueItem.mockReturnValueOnce(undefined);
 
-        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<DownloadableItem>());
+        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
         nodesStructureTraversalMock.mockReturnValue({
             nodesQueue: { iterator: iteratorMock },
             totalEncryptedSizePromise: Promise.resolve(0),
+            parentPathByUid: new Map(nodes.map((node) => [node.uid, []])),
         });
 
         fileSaverSaveAsFileMock.mockResolvedValue(undefined);
@@ -378,7 +397,7 @@ describe('DownloadManager', () => {
             cancel: jest.fn(),
         }));
 
-        await manager.download(nodes);
+        await manager.download(nodes.map((node) => node.uid));
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledTimes(1);
         expect(nodesStructureTraversalMock).toHaveBeenCalledTimes(1);
@@ -402,11 +421,19 @@ describe('DownloadManager', () => {
         storeMockState.addDownloadItem.mockReturnValue('archive-id');
         storeMockState.getQueueItem.mockReturnValue(undefined);
 
-        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<DownloadableItem>());
+        const nodes: NodeEntity[] = [
+            createMockNodeEntity({ uid: 'folder-1', name: 'folder', type: NodeType.Folder, activeRevision: undefined }),
+            createMockNodeEntity({ uid: 'file-3', name: 'photo.jpg' }),
+        ];
+        hydrateAndCheckNodesMock.mockResolvedValue(nodes);
+
+        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
         const totalSizeDeferred = createDeferred<number>();
+        const parentPathByUid = new Map(nodes.map((node) => [node.uid, []]));
         nodesStructureTraversalMock.mockReturnValue({
             nodesQueue: { iterator: iteratorMock },
             totalEncryptedSizePromise: totalSizeDeferred.promise,
+            parentPathByUid,
         });
 
         const writeLinksDeferred = createDeferred<void>();
@@ -419,12 +446,7 @@ describe('DownloadManager', () => {
         const saveDeferred = createDeferred<void>();
         fileSaverSaveAsFileMock.mockReturnValue(saveDeferred.promise);
 
-        const nodes: DownloadableItem[] = [
-            { uid: 'folder-1', name: 'folder', isFile: false },
-            { uid: 'file-3', name: 'photo.jpg', isFile: true, storageSize: 2048 },
-        ];
-
-        await manager.download(nodes);
+        await manager.download(nodes.map((node) => node.uid));
 
         expect(nodesStructureTraversalMock).toHaveBeenCalled();
         const traversalArgs = nodesStructureTraversalMock.mock.calls[0];
@@ -434,6 +456,7 @@ describe('DownloadManager', () => {
         const archiveInstance = getArchiveStreamGeneratorInstance();
         expect(archiveInstance.constructorArgs[0]).toBe(iteratorMock.mock.results[0].value);
         expect(archiveInstance.constructorArgs[2]).toBe(getSchedulerInstance());
+        expect(archiveInstance.constructorArgs[4]).toBe(parentPathByUid);
 
         const onProgress = archiveInstance.constructorArgs[1] as (downloadedBytes: number) => void;
         onProgress(512);
