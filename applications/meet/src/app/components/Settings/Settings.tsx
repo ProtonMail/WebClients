@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
@@ -75,39 +76,41 @@ export const Settings = () => {
                 <div className="flex flex-column w-full gap-4">
                     {isLocalParticipantHost && <div className="text-semibold color-weak py-2">Meeting</div>}
                     <div className={clsx('flex flex-column w-full gap-4', isLocalParticipantHost && 'pl-4')}>
-                        <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
-                            <label
-                                className={clsx(
-                                    'setting-label text-ellipsis',
-                                    backgroundBlur ? 'color-norm' : 'color-hint'
-                                )}
-                                htmlFor="blur-background"
-                            >{c('Action').t`Blur background`}</label>
-                            <Tooltip
-                                title={
-                                    !isBackgroundBlurSupported
-                                        ? c('Tooltip').t`Blur background is not supported on your browser`
-                                        : c('Tooltip').t`Blur background`
-                                }
-                            >
-                                <span>
-                                    <Toggle
-                                        id="blur-background"
-                                        checked={backgroundBlur}
-                                        onChange={() => {
-                                            void withLoadingBackgroundBlur(toggleBackgroundBlur());
-                                        }}
-                                        className={clsx(
-                                            'settings-toggle',
-                                            backgroundBlur ? '' : 'settings-toggle-inactive'
-                                        )}
-                                        aria-label={c('Alt').t`Blur background`}
-                                        loading={loadingBackgroundBlur}
-                                        disabled={!isBackgroundBlurSupported || loadingBackgroundBlur}
-                                    />
-                                </span>
-                            </Tooltip>
-                        </div>
+                        {!isMobile() && (
+                            <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
+                                <label
+                                    className={clsx(
+                                        'setting-label text-ellipsis',
+                                        backgroundBlur ? 'color-norm' : 'color-hint'
+                                    )}
+                                    htmlFor="blur-background"
+                                >{c('Action').t`Blur background`}</label>
+                                <Tooltip
+                                    title={
+                                        !isBackgroundBlurSupported
+                                            ? c('Tooltip').t`Blur background is not supported on your browser`
+                                            : c('Tooltip').t`Blur background`
+                                    }
+                                >
+                                    <span>
+                                        <Toggle
+                                            id="blur-background"
+                                            checked={backgroundBlur}
+                                            onChange={() => {
+                                                void withLoadingBackgroundBlur(toggleBackgroundBlur());
+                                            }}
+                                            className={clsx(
+                                                'settings-toggle',
+                                                backgroundBlur ? '' : 'settings-toggle-inactive'
+                                            )}
+                                            aria-label={c('Alt').t`Blur background`}
+                                            loading={loadingBackgroundBlur}
+                                            disabled={!isBackgroundBlurSupported || loadingBackgroundBlur}
+                                        />
+                                    </span>
+                                </Tooltip>
+                            </div>
+                        )}
                         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
                                 className={clsx(

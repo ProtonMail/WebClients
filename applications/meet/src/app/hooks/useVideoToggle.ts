@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import { BackgroundBlur, type BackgroundProcessorOptions } from '@livekit/track-processors';
+import type { BackgroundProcessorOptions } from '@livekit/track-processors';
 import type { LocalParticipant, LocalTrackPublication } from 'livekit-client';
 import { ConnectionState, Track } from 'livekit-client';
 
@@ -9,13 +9,17 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import debounce from '@proton/utils/debounce';
 
 import { DEFAULT_DEVICE_ID } from '../constants';
+import { BackgroundBlur } from '../processors/background-processor/MulticlassBackgroundProcessor';
 import type { SwitchActiveDevice } from '../types';
 import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../utils/backgroundBlurPersistance';
+import { isLowEndDevice } from '../utils/isLowEndDevice';
 
 const backgroundProcessorOptions: BackgroundProcessorOptions = {
     assetPaths: {
         tasksVisionFileSet: '/assets/background-blur',
-        modelAssetPath: 'assets/background-blur/selfie_segmenter.tflite',
+        modelAssetPath: isLowEndDevice()
+            ? 'assets/background-blur/selfie_segmenter.tflite'
+            : 'assets/background-blur/selfie_multiclass_256x256.tflite',
     },
 };
 
@@ -23,6 +27,10 @@ let backgroundBlurProcessorInstance: ReturnType<typeof BackgroundBlur> | null = 
 let backgroundBlurInitializationFailed = false;
 
 const initializeBackgroundBlurProcessor = async (): Promise<boolean> => {
+    if (isMobile()) {
+        return false;
+    }
+
     if (backgroundBlurProcessorInstance) {
         return true;
     }
@@ -31,7 +39,7 @@ const initializeBackgroundBlurProcessor = async (): Promise<boolean> => {
     }
 
     try {
-        backgroundBlurProcessorInstance = BackgroundBlur(40, undefined, undefined, backgroundProcessorOptions);
+        backgroundBlurProcessorInstance = BackgroundBlur(60, undefined, backgroundProcessorOptions);
         return true;
     } catch (error) {
         backgroundBlurInitializationFailed = true;
@@ -67,6 +75,11 @@ export const useVideoToggle = (
         const initialize = async () => {
             const isSupported = await initializeBackgroundBlurProcessor();
             setIsBackgroundBlurSupported(isSupported);
+
+            // Pre-fetch the model asset to avoid blocking the main thread when the model is loaded
+            if (isSupported && backgroundProcessorOptions.assetPaths?.modelAssetPath && !isMobile()) {
+                void fetch(backgroundProcessorOptions.assetPaths.modelAssetPath, { cache: 'force-cache' });
+            }
         };
         void initialize();
     }, []);
