@@ -1,6 +1,6 @@
 import { type ReactNode, useRef, useState } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -21,6 +21,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNameText, selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
 
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
@@ -293,16 +294,12 @@ const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinit
     const numberOfCountries = vpnServers.paid.countries;
     return [
         {
-            text: c('VPN Plan Feature').ngettext(
-                msgid`Select from ${numberOfCountries}+ country`,
-                `Select from ${numberOfCountries}+ countries`,
-                numberOfCountries
-            ),
+            text: getSelectFromNCountries(numberOfCountries),
             included: true,
             highResIcon: countriesIcon,
         },
         {
-            text: c('Features').t`${VPN_CONNECTIONS} devices`,
+            text: getVpnDevices(VPN_CONNECTIONS),
             included: true,
             highResIcon: deviceIcon,
         },
