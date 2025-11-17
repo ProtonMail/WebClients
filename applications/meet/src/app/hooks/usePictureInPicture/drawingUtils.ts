@@ -18,6 +18,7 @@ interface DrawVideoWithAspectRatioParams {
     y: number;
     width: number;
     height: number;
+    mirror?: boolean;
 }
 
 interface DrawMessageOverlayParams {
@@ -53,6 +54,7 @@ export const drawVideoWithAspectRatio = ({
     y,
     width,
     height,
+    mirror = false,
 }: DrawVideoWithAspectRatioParams) => {
     if (videoElement.readyState >= 1 && videoElement.videoWidth > 0 && videoElement.videoHeight > 0) {
         try {
@@ -74,9 +76,17 @@ export const drawVideoWithAspectRatio = ({
                 drawX = x + (width - drawWidth) / 2;
             }
 
-            ctx.drawImage(videoElement, drawX, drawY, drawWidth, drawHeight);
+            // Apply mirroring transformation if needed (for local participant's camera)
+            if (mirror) {
+                ctx.save();
+                ctx.translate(drawX + drawWidth, 0);
+                ctx.scale(-1, 1);
+                ctx.drawImage(videoElement, 0, drawY, drawWidth, drawHeight);
+                ctx.restore();
+            } else {
+                ctx.drawImage(videoElement, drawX, drawY, drawWidth, drawHeight);
+            }
         } catch (error) {
-            console.warn('Failed to draw video:', error);
             // Draw error placeholder
             ctx.fillStyle = '#ff4444';
             ctx.fillRect(x, y, width, height);
