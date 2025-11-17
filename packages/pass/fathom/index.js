@@ -495,9 +495,10 @@ const IDENTITY_COUNTRY_ATTR_RE = /addresscountry(?:name)?|countryname|\b(country
 
 const IDENTITY_COUNTRY_CODE_ATTR_RE = /countrycode/i;
 
-const CC_PREFIX_ATTR_START_RE = /\b(?:(?:payments|new)card|paymentcard|c(?:red(?:it)?card|ard|[bc])|stripe|vads)\S+/i;
+const CC_PREFIX_ATTR_START_RE =
+    /\b(?:(?:payments|new)card|paymentcard|c(?:ar(?:tecredit|d)|red(?:it)?card|[bc])|stripe|vads)\S+/i;
 
-const CC_NUMBER_ATTR_RE = /num(?:ero)?carte|c(?:ar(?:tecredit|dn(?:um|o))|reditcard|bnum|cno)|\b(c(?:ard |c)number)\b/i;
+const CC_NUMBER_ATTR_RE = /num(?:ero)?carte|c(?:ardn(?:um|o)|bnum|cno)|\b(c(?:ard |c)number)\b/i;
 
 const CC_CVC_ATTR_RE = /c(?:ard(?:verification|code)|sc|v[cv])|payments?code|\b(security code|ccc(?:ode|vv|sc))\b/i;
 
@@ -2848,7 +2849,7 @@ const getExpirationFormatFromAttributes = (input) => {
 
 const getExpirationFormat = (field, allowFallback = true) => {
     if (field instanceof HTMLInputElement) {
-        const validMaxLength = field.maxLength > 2;
+        const validMaxLength = field.maxLength >= 4;
         const validPattern = field.pattern && (field.maxLength === -1 || validMaxLength);
         return (
             getExpirationFormatFromAttributes(field) ||
@@ -2916,10 +2917,13 @@ const getSelectExpirationMonthFormat = (select) => {
         };
 };
 
-const notCCExpOutlier = (field) => !getExpirationFormat(field, false);
+const notCCExpOutlier = (field) => !(field instanceof HTMLInputElement && field.maxLength > 4);
 
 const notCCIdentityOutlier = (field) => {
     const autocomplete = field?.autocomplete ?? '';
+    if (autocomplete.includes('cc-given-name')) return true;
+    if (autocomplete.includes('cc-family-name')) return true;
+    if (autocomplete.includes('cc-additional-name')) return true;
     if (autocomplete.includes('billing')) return false;
     if (autocomplete.includes('shipping')) return false;
     return true;
