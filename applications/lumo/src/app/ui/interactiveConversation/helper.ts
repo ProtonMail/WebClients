@@ -117,9 +117,9 @@ export function sendMessage({
         const allAttachmentsState = state.attachments;
         const allAssetsState = state.assets;
         
-        const spaceAttachments = Object.values(allAttachmentsState).filter(
-            (att: any) => att.spaceId === spaceId && !att.processing && !att.error
-        );
+        const spaceAttachments: Attachment[] = Object.values(allAttachmentsState)
+            .filter((att: any) => att.spaceId === spaceId && !att.processing && !att.error)
+            .map((att: any) => att as Attachment);
         
         // Get space assets (project-level files) - they have same shape as attachments
         const spaceAssets: Attachment[] = Object.values(allAssetsState)
