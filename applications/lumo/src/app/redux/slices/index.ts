@@ -5,13 +5,14 @@ import credentialsReducer from './core/credentials';
 import idMapReducer from './core/idmap';
 import messagesReducer from './core/messages';
 import spacesReducer from './core/spaces';
+import featureFlagsReducer from './featureFlags';
 import ghostChatReducer from './ghostChat';
+import lumoUserSettingsReducer from './lumoUserSettings';
 import eligibilityStatusReducer from './meta/eligibilityStatus';
 import errorsReducer from './meta/errors';
 import initializationReducer from './meta/initialization';
 import { remainingInvitesReducer } from './meta/remainingInvites';
 import personalizationReducer from './personalization';
-import lumoUserSettingsReducer from './lumoUserSettings';
 
 export const lumoReducers = {
     spaces: spacesReducer,
@@ -25,6 +26,7 @@ export const lumoReducers = {
     contextFilters: contextFiltersReducer,
     ghostChat: ghostChatReducer,
     personalization: personalizationReducer,
+    featureFlags: featureFlagsReducer,
     lumoUserSettings: lumoUserSettingsReducer,
     initialization: initializationReducer,
     ...remainingInvitesReducer,

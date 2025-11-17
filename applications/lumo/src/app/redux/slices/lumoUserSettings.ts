@@ -2,12 +2,14 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 
 import { getDefaultSettings, getLumoSettings } from '../../providers/lumoThemeStorage';
 import { localSettingsToUserSettings } from '../../providers/lumoThemeUtils';
+import type { FeatureFlag } from './featureFlags';
 import { loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote } from './lumoUserSettingsThunks';
 import type { PersonalizationSettings } from './personalization';
 
 export interface LumoUserSettings {
     theme: 'light' | 'dark' | 'auto';
     personalization: PersonalizationSettings;
+    featureFlags: FeatureFlag[];
 }
 
 const getInitialThemeFromLocalStorage = (): 'light' | 'dark' | 'auto' => {
@@ -34,6 +36,7 @@ export const initialLumoUserSettings: LumoUserSettings = {
         additionalContext: '',
         enableForNewChats: true,
     },
+    featureFlags: [],
 };
 
 // Actions
@@ -72,4 +75,4 @@ const lumoUserSettingsReducer = createReducer(initialLumoUserSettings, (builder)
 export default lumoUserSettingsReducer;
 
 // Export thunks
-export { saveLumoUserSettingsToRemote, loadLumoUserSettingsFromRemote };
+export { loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote };

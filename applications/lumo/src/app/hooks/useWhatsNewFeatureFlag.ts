@@ -1,29 +1,28 @@
-import { useCallback, useMemo, useState } from 'react';
+// import { useCallback, useMemo } from 'react';
 
-import { hasSeenFeatureFlag, markFeatureFlagAsSeen } from '../utils/whatsNewStorage';
+// import { useFeatureFlags } from './useFeatureFlags';
 
-interface UseWhatsNewFeatureFlagReturn {
-    shouldShow: boolean;
-    markAsSeen: () => void;
-}
+// interface UseWhatsNewFeatureFlagReturn {
+//     shouldShow: boolean;
+//     markAsSeen: () => void;
+// }
+// // TODO: delete this
+// export const useWhatsNewFeatureFlag = (
+//     featureFlagName: string,
+//     isOnboardingCompleted: boolean
+// ): UseWhatsNewFeatureFlagReturn => {
+//     const { isDismissed, dismissFlag } = useFeatureFlags();
 
-export const useWhatsNewFeatureFlag = (
-    featureFlagName: string,
-    isOnboardingCompleted: boolean
-): UseWhatsNewFeatureFlagReturn => {
-    const [isDismissed, setIsDismissed] = useState(false);
+//     const shouldShow = useMemo(() => {
+//         if (!isOnboardingCompleted) {
+//             return false;
+//         }
+//         return !isDismissed(featureFlagName);
+//     }, [featureFlagName, isOnboardingCompleted, isDismissed]);
 
-    const shouldShow = useMemo(() => {
-        if (!isOnboardingCompleted || isDismissed) {
-            return false;
-        }
-        return !hasSeenFeatureFlag(featureFlagName);
-    }, [featureFlagName, isOnboardingCompleted, isDismissed]);
+//     const markAsSeen = useCallback(() => {
+//         dismissFlag(featureFlagName);
+//     }, [featureFlagName, dismissFlag]);
 
-    const markAsSeen = useCallback(() => {
-        markFeatureFlagAsSeen(featureFlagName);
-        setIsDismissed(true);
-    }, [featureFlagName]);
-
-    return { shouldShow, markAsSeen };
-};
+//     return { shouldShow, markAsSeen };
+// };
