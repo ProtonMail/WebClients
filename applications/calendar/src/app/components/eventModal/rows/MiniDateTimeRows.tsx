@@ -50,6 +50,7 @@ export const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStar
                             min={MINIMUM_DATE}
                             max={MAXIMUM_DATE}
                             title={c('Title').t`Select event start date`}
+                            tzid={model.start.tzid}
                         />
                     </div>
                     {!model.isAllDay && (
@@ -79,6 +80,7 @@ export const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStar
                             min={minEndDate}
                             max={MAXIMUM_DATE}
                             title={c('Title').t`Select event end date`}
+                            tzid={model.end.tzid}
                         />
                     </div>
                     {!model.isAllDay && (
