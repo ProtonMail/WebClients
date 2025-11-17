@@ -96,8 +96,20 @@ export function usePiPRenderer() {
                 const y = index * sectionHeight;
                 const videoHeight = sectionHeight;
 
+                // Mirror the local participant's camera feed (but not screen share)
+                const isLocalParticipant = trackInfo.participant?.isLocal || false;
+                const shouldMirror = isLocalParticipant && !trackInfo.isScreenShare;
+
                 // Draw each track in its own section
-                drawVideoWithAspectRatio({ ctx, videoElement, x: 0, y, width: canvas.width, height: videoHeight });
+                drawVideoWithAspectRatio({
+                    ctx,
+                    videoElement,
+                    x: 0,
+                    y,
+                    width: canvas.width,
+                    height: videoHeight,
+                    mirror: shouldMirror,
+                });
 
                 // Draw participant name below the video
                 const nameY = y + videoHeight - 25;
