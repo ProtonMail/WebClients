@@ -53,9 +53,6 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
         const frameTitle = iframe.getAttribute('title');
         const frameAriaLabel = iframe.getAttribute('aria-label');
 
-        /** Skip iframes without src or with blank src */
-        if (!frameSrc || frameSrc === 'about:blank') continue;
-
         const parser = createStyleParser(iframe);
         const frameWidth = getComputedWidth(parser, 'inner').value;
         const frameHeight = getComputedHeight(parser, 'inner').value;
@@ -75,7 +72,7 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
         if (title && (title === frameName || title === frameAriaLabel)) score += 0.5;
         if (ariaLabel && (ariaLabel === frameTitle || ariaLabel === frameName)) score += 0.5;
 
-        if (score > bestScore) {
+        if (score > 0 && score > bestScore) {
             bestScore = score;
             bestCandidate = iframe;
         }
