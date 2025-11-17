@@ -38,7 +38,7 @@ export const Toolbar = createComponent(function Toolbar(props: ToolbarProps) {
       {...props}
       mainToolbarSlot={isViewOnlyMode ? <ViewOnlyModeToolbarGroups /> : <ToolbarGroups />}
       overflowToolbarSlot={isViewOnlyMode ? null : <ToolbarGroups />}
-      trailingSlot={isViewOnlyMode ? null : <InsertChart />}
+      // trailingSlot={isViewOnlyMode ? null : <InsertChart />} // TODO: temporarily disabled
       formulaBarSlot={<FormulaBar />}
       renderOverflowDisclosure={<T.Item legacyIconName="three-dots-vertical">{s('More')}</T.Item>}
     />
@@ -103,6 +103,7 @@ function ToolbarGroups() {
         <CreateFilter />
         {/* TODO: insert image */}
         <InsertNote />
+        <InsertChart />
       </T.Group>
     </>
   )
@@ -546,7 +547,7 @@ function CreateFilter() {
   return (
     <T.Item
       // TODO: need a different icon for "remove filter"
-      legacyIconName={useUI((ui) => ui.data.hasFilter) ? 'broom' : 'broom'}
+      icon={useUI((ui) => ui.data.hasFilter) ? Icons.filter : Icons.filter}
       onClick={useUI.$.data.toggleFilter}
       disabled={useUI((ui) => ui.info.isReadonly)}
     >
@@ -566,14 +567,8 @@ function InsertNote() {
 
 function InsertChart() {
   return (
-    <T.Item
-      variant="label"
-      icon={Icons.barChart}
-      accessibilityLabel={s('Insert chart')}
-      onClick={useUI.$.insert.chart}
-      disabled={useUI((ui) => ui.info.isReadonly)}
-    >
-      {s('Chart')}
+    <T.Item icon={Icons.barChart} onClick={useUI.$.insert.chart} disabled={useUI((ui) => ui.info.isReadonly)}>
+      {s('Insert chart')}
     </T.Item>
   )
 }
@@ -609,7 +604,6 @@ function strings() {
     'Create a filter': c('sheets_2025:Spreadsheet editor toolbar').t`Create a filter`,
     'Remove filter': c('sheets_2025:Spreadsheet editor toolbar').t`Remove filter`,
     'Insert note': c('sheets_2025:Spreadsheet editor toolbar').t`Insert note`,
-    Chart: c('sheets_2025:Spreadsheet editor toolbar').t`Chart`,
     'Insert chart': c('sheets_2025:Spreadsheet editor toolbar').t`Insert chart`,
     More: c('sheets_2025:Spreadsheet editor toolbar').t`More`,
   }

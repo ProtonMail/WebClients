@@ -180,7 +180,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(function Tooltip
       ref={ref}
       {...props}
       className={clsx(
-        'leading-0 z-20 flex shrink-0 items-center gap-1 rounded-[.5rem] bg-[#0C0C14] px-2 py-[.375rem] text-[.75rem] text-[white] shadow-[0px_-2px_12px_0px_rgba(0,0,0,0.05)]',
+        'leading-0 z-20 flex max-h-[--popover-available-height] max-w-[--popover-available-width] shrink-0 items-center gap-1 rounded-[.5rem] bg-[#0C0C14] px-2 py-[.375rem] text-[.75rem] text-[white] shadow-[0px_-2px_12px_0px_rgba(0,0,0,0.05)]',
         props.className,
       )}
     >
