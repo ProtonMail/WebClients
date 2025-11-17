@@ -8,7 +8,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { AccessTarget } from '@proton/pass/lib/access/types';
@@ -22,7 +22,7 @@ export const PendingNewUsersApprovalModal: FC = () => {
     const dispatch = useDispatch();
     const didPrompt = useRef(false); /* Modal should prompt only once */
     const [{ open, onClose }, setModal] = useModalState({ onClose: () => (didPrompt.current = true) });
-    const online = useConnectivity();
+    const online = useOnline();
 
     const vaultsWithInvitesReady = useSelector(selectVaultsWithNewUserInvites);
     const accessItems = useMemoSelector(selectAccessForMany, [vaultsWithInvitesReady]);

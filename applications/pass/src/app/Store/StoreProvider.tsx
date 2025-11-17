@@ -15,7 +15,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
@@ -62,7 +62,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const authService = useAuthService();
     const history = useHistory();
     const { installed } = usePassExtensionLink();
-    const online = useConnectivity();
+    const online = useOnline();
     const sw = useServiceWorker();
 
     const { createNotification } = useNotifications();

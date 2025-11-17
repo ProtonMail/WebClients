@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -21,7 +21,7 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const authStore = useAuthStore();
     const plan = useSelector(selectUserPlan);
     const planName = useSelector(selectPlanDisplayName);
-    const online = useConnectivity();
+    const online = useOnline();
 
     if (!(plan && plan.SubscriptionEnd)) return;
 

@@ -18,7 +18,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
@@ -91,7 +91,7 @@ const getProtonProducts = () => [
 
 export const Content: FC = () => {
     const { selected = PLANS.PASS } = useOnboarding<AvailablePlans>();
-    const online = useConnectivity();
+    const online = useOnline();
     const includesFeatures = useMemo(getTableContent, []);
     const protonProducts = useMemo(getProtonProducts, []);
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIFETIME_PLAN_ONBOARDING });
@@ -185,7 +185,7 @@ type PassPlanOption = {
 
 export const Description: FC = () => {
     const { selected = PLANS.PASS, setSelected } = useOnboarding<AvailablePlans>();
-    const online = useConnectivity();
+    const online = useOnline();
     const user = useSelector(selectUser);
 
     const changePlan = (selected: AvailablePlans) => setSelected?.(selected);

@@ -9,7 +9,7 @@ import type { Callback, MaybeNull } from '@proton/pass/types';
 import { epochToMs } from '@proton/pass/utils/time/epoch';
 import type { ActivityProbe } from '@proton/pass/utils/time/probe';
 
-import { useConnectivity } from './ConnectivityProvider';
+import { useOnline } from './ConnectivityProvider';
 
 const LockProbeContext = createContext<MaybeNull<ActivityProbe>>(null);
 export const useLockProbe = () => useContext(LockProbeContext);
@@ -23,7 +23,7 @@ export const LockProbeProvider: FC<PropsWithChildren<Props>> = ({ onProbe, child
     const probe = useActivityProbe();
     const lockTTL = useSelector(selectLockTTL);
     const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
-    const online = useConnectivity();
+    const online = useOnline();
 
     useVisibleEffect(
         (visible) => {

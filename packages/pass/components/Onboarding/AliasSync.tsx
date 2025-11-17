@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { AliasSyncIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
@@ -14,7 +14,7 @@ import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants
 import noop from '@proton/utils/noop';
 
 export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
-    const online = useConnectivity();
+    const online = useOnline();
     const { openSettings } = usePassCore();
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
 

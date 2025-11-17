@@ -3,12 +3,12 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import RadioGroup from '@proton/components/components/input/RadioGroup';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
+import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -17,7 +17,7 @@ import clsx from '@proton/utils/clsx';
 type Props = { noTTL?: boolean };
 
 export const LockSetup: FC<Props> = ({ noTTL = false }) => {
-    const online = useConnectivity();
+    const online = useOnline();
     const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
     const passwordTypeSwitch = usePasswordTypeSwitch();
     const prfFeatureFlag = useFeatureFlag(PassFeature.PassWebPrfUnlock);

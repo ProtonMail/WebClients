@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import type { IconName } from '@proton/icons/types';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
-import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
+import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { isMac } from '@proton/shared/lib/helpers/browser';
@@ -24,7 +24,7 @@ type LockModeOption = {
 };
 
 export const OnboardingLockSetup: FC = () => {
-    const online = useConnectivity();
+    const online = useOnline();
     const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
 
     const lockModes = useMemo<LockModeOption[]>(() => {
