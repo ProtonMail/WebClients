@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -10,6 +10,9 @@ import {
     DropdownMenuButton,
     Hamburger,
     Icon,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoHeader,
     useModalStateObject,
     usePopperAnchor,
 } from '@proton/components';
@@ -50,6 +53,7 @@ const ProjectDetailViewInner = () => {
     const [suggestedPrompt, setSuggestedPrompt] = useState<string | undefined>(undefined);
     const instructionsModal = useModalStateObject();
     const deleteModal = useModalStateObject();
+    const sidebarModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
@@ -58,6 +62,17 @@ const ProjectDetailViewInner = () => {
     const spaceAttachments = useLumoSelector((state) => selectAttachmentsBySpaceId(projectId)(state));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { isVisible: isSideMenuOpen, toggle: toggleSideMenu, isSmallScreen } = useSidebar();
+    const [isMobileViewport, setIsMobileViewport] = useState(false);
+
+    // Check if viewport is <= 768px (matches CSS breakpoint)
+    useEffect(() => {
+        const checkViewport = () => {
+            setIsMobileViewport(window.innerWidth <= 768);
+        };
+        checkViewport();
+        window.addEventListener('resize', checkViewport);
+        return () => window.removeEventListener('resize', checkViewport);
+    }, []);
 
     const { createConversationInProject, deleteProject } = useProjectActions();
 
@@ -223,10 +238,22 @@ const ProjectDetailViewInner = () => {
                     <Button
                         icon
                         shape="ghost"
-                        onClick={() => setShowSidebar(!showSidebar)}
-                        title={showSidebar ? c('collider_2025:Action').t`Hide sidebar` : c('collider_2025:Action').t`Show sidebar`}
+                        onClick={() => {
+                            if (isMobileViewport) {
+                                sidebarModal.openModal(true);
+                            } else {
+                                setShowSidebar(!showSidebar);
+                            }
+                        }}
+                        title={
+                            isMobileViewport
+                                ? c('collider_2025:Action').t`Show instructions and files`
+                                : showSidebar
+                                ? c('collider_2025:Action').t`Hide sidebar`
+                                : c('collider_2025:Action').t`Show sidebar`
+                        }
                     >
-                        <Icon name={showSidebar ? 'chevron-left' : 'chevron-right'} />
+                        <Icon name={isMobileViewport ? 'list-bullets' : showSidebar ? 'chevron-right' : 'chevron-left'} />
                     </Button>
                     <Button
                         ref={anchorRef}
@@ -322,8 +349,8 @@ const ProjectDetailViewInner = () => {
                     </div>
                 </div>
 
-                {/* Sidebar */}
-                {showSidebar && (
+                {/* Sidebar - Desktop only */}
+                {!isMobileViewport && showSidebar && (
                     <ProjectFilesPanel
                         projectId={projectId}
                         instructions={projectInstructions}
@@ -331,6 +358,26 @@ const ProjectDetailViewInner = () => {
                     />
                 )}
             </div>
+
+            {/* Mobile Sidebar Modal */}
+            {isMobileViewport && sidebarModal.render && (
+                <ModalTwo {...sidebarModal.modalProps} size="large" className="project-files-modal">
+                    <ModalTwoHeader
+                        title={c('collider_2025:Title').t`Instructions & Files`}
+                        closeButtonProps={{ onClick: () => sidebarModal.openModal(false) }}
+                    />
+                    <ModalTwoContent>
+                        <ProjectFilesPanel
+                            projectId={projectId}
+                            instructions={projectInstructions}
+                            onEditInstructions={() => {
+                                sidebarModal.openModal(false);
+                                instructionsModal.openModal(true);
+                            }}
+                        />
+                    </ModalTwoContent>
+                </ModalTwo>
+            )}
 
             {instructionsModal.render && (
                 <ProjectInstructionsModal
