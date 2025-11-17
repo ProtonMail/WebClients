@@ -154,7 +154,7 @@
 	}
 }
 
-.item-icon:not([class*='recipient-color-']),
+.item-checkbox:not(:checked) + .item-icon:not([class*='recipient-color-']),
 .item-icon-compact:hover {
 	.unread & {
 		background-color: var(--email-item-unread-icon-background-color);
