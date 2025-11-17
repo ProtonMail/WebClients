@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { BookingDetails } from '../components/BookingDetails/BookingDetails';
+import { BookingPage } from '../components/BookingPage/BookingPage';
 import { BookingPageLayout } from '../components/BookingPageLayout';
 import { BookingSuccess } from '../components/BookingSuccess';
 import { NoMatch, Reason } from '../components/NoMatch';
@@ -22,7 +22,7 @@ export const BookingsRouter = ({}: Props) => {
         <BookingPageLayout>
             <Switch>
                 {/* TODO how could we have a shared basename instead of the array */}
-                <Route path={['/bookings', '/bookings/guest']} exact component={BookingDetails} />
+                <Route path={['/bookings', '/bookings/guest']} exact component={BookingPage} />
                 <Route path="/bookings/success" exact component={BookingSuccess} />
                 <Route>
                     <NoMatch reason={Reason.notFound} />

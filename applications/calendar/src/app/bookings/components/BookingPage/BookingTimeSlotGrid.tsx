@@ -9,12 +9,12 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { type BookingTimeslot, useBookingStore } from '../booking.store';
+import { type BookingTimeslot, useBookingStore } from '../../booking.store';
+import { getDaysRange, getDaysSlotRange, getGridCount } from '../bookingViewHelpers';
 import { BookSlotModal } from './BookSlotModal';
-import { BookingDetailsHeader } from './BookingDetails/BookingDetailsHeader';
-import { getDaysRange, getDaysSlotRange, getGridCount } from './bookingViewHelpers';
+import { BookingHeader } from './BookingHeader';
 
-export const BookingsView = () => {
+export const BookingTimeSlotGrid = () => {
     const [range, setRange] = useState<Date[]>([]);
     const [timeslot, setTimeslot] = useState<BookingTimeslot>();
     const [slotsArray, setSlotsArray] = useState<BookingTimeslot[][] | undefined[][]>([]);
@@ -54,7 +54,7 @@ export const BookingsView = () => {
 
     return (
         <main className="flex-1 w-full" aria-labelledby="booking-main-header-title">
-            <BookingDetailsHeader gridSize={gridSize} />
+            <BookingHeader gridSize={gridSize} />
 
             <div className="flex flex-row flex-nowrap gap-2 w-full">
                 {range.map((date, i) => {
