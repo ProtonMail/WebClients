@@ -2,7 +2,8 @@ import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { MAX_DOWNLOADING_BLOCKS, MAX_DOWNLOADING_FILES_LOAD } from '../../store/_downloads/constants';
 import { DownloadScheduler } from './DownloadScheduler';
-import type { DownloadQueueTask, DownloadQueueTaskHandle, DownloadableItem } from './downloadTypes';
+import type { DownloadQueueTask, DownloadQueueTaskHandle } from './downloadTypes';
+import { createMockNodeEntity } from './testUtils';
 
 type Deferred<T> = {
     promise: Promise<T>;
@@ -26,21 +27,16 @@ function makeTask(
     start: jest.Mock<Promise<DownloadQueueTaskHandle>>,
     overrides: Partial<DownloadQueueTask> = {}
 ): DownloadQueueTask {
-    const {
-        taskId,
-        node,
-        storageSizeEstimate,
-        ...rest
-    } = overrides;
+    const { taskId, node, storageSizeEstimate, ...rest } = overrides;
 
     taskCounter += 1;
     const resolvedTaskId = taskId ?? `task-${taskCounter}`;
-    const resolvedNode: DownloadableItem =
-        node ?? {
+    const resolvedNode =
+        node ??
+        createMockNodeEntity({
             uid: `node-${taskCounter}`,
             name: `file-${taskCounter}`,
-            isFile: true,
-        };
+        });
 
     return {
         taskId: resolvedTaskId,
@@ -121,11 +117,7 @@ describe('DownloadScheduler', () => {
     it('should generate unique task identifiers', () => {
         const scheduler = new DownloadScheduler();
 
-        const ids = new Set([
-            scheduler.generateTaskId(),
-            scheduler.generateTaskId(),
-            scheduler.generateTaskId(),
-        ]);
+        const ids = new Set([scheduler.generateTaskId(), scheduler.generateTaskId(), scheduler.generateTaskId()]);
 
         expect(ids.size).toBe(3);
         [...ids].forEach((id) => expect(id).toMatch(/^download-task-/));
@@ -164,7 +156,12 @@ describe('DownloadScheduler', () => {
 
         scheduler.scheduleDownload(
             makeTask(firstStart, {
-                node: { uid: 'unknown', name: 'mystery.bin', isFile: true },
+                node: createMockNodeEntity({
+                    uid: 'unknown',
+                    name: 'mystery.bin',
+                    activeRevision: undefined,
+                    totalStorageSize: undefined,
+                }),
             })
         );
         scheduler.scheduleDownload(makeTask(secondStart, { storageSizeEstimate: FILE_CHUNK_SIZE }));
@@ -180,5 +177,4 @@ describe('DownloadScheduler', () => {
 
         expect(secondStart).toHaveBeenCalledTimes(1);
     });
-
 });
