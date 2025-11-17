@@ -36,6 +36,7 @@ import {
     type Cycle,
     type EnrichedCheckResponse,
     FREE_PLAN,
+    type FreeSubscription,
     type FullPlansMap,
     PLANS,
     type PlanIDs,
@@ -182,7 +183,7 @@ const Step1 = ({
     // true iff trial detected through signupParameters (thus the signup prefix)
     // We do not use signupParameters.trial because trials only applies to the B2B audience
     signupTrial: boolean;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');

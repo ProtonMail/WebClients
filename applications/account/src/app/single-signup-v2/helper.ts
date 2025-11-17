@@ -11,6 +11,7 @@ import {
     DEFAULT_CURRENCY,
     FREE_PLAN,
     FREE_SUBSCRIPTION,
+    type FreeSubscription,
     type FullPlansMap,
     type PAYMENT_METHOD_TYPES,
     PLANS,
@@ -19,6 +20,7 @@ import {
     type PlanIDs,
     type PlansMap,
     type SavedPaymentMethod,
+    SelectedPlan,
     type StrictPlan,
     type Subscription,
     type SubscriptionCheckResponse,
@@ -40,6 +42,7 @@ import {
     hasPlanIDs,
     isForbiddenLumoPlus,
     isForbiddenModification,
+    isFreeSubscription,
     isLifetimePlanSelected,
     isSubscriptionCheckForbidden,
     isValidPlanName,
@@ -95,7 +98,7 @@ export const getSubscriptionData = async (
     options: Options & {
         info?: boolean;
         trial?: boolean;
-        subscription?: Subscription;
+        subscription?: Subscription | FreeSubscription;
     }
 ): Promise<SubscriptionData> => {
     const checkResultPromise = (async () => {
@@ -235,7 +238,7 @@ const getUpsell = ({
     audience: Audience;
     currentPlan?: SubscriptionPlan | undefined;
     upsellPlanCard?: PlanCard;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
     plansMap: PlansMap;
     options: Options;
     planParameters: PlanParameters;
@@ -378,14 +381,14 @@ export const getRelativeUpsellPrice = (
     upsell: Upsell,
     plansMap: PlansMap,
     checkResult: SubscriptionCheckResponse | undefined,
-    subscription: Subscription | undefined,
+    subscription: Subscription | FreeSubscription | undefined,
     cycle: CYCLE
 ) => {
     if (!upsell.currentPlan || !upsell.plan) {
         return 0;
     }
 
-    if (subscription && checkResult) {
+    if (subscription && checkResult && !isFreeSubscription(subscription)) {
         return (
             (checkResult.Amount + (checkResult?.CouponDiscount || 0)) / cycle - subscription.Amount / subscription.Cycle
         );
@@ -456,7 +459,7 @@ export const getUpdatedPlanIDs = ({
     plansMap: PlansMap;
     plans: Plan[];
     toApp: APP_NAMES;
-    subscription: Subscription | undefined;
+    subscription: Subscription | FreeSubscription;
     currentPlan: SubscriptionPlan | undefined;
     organization: Organization | undefined;
 }) => {
@@ -507,26 +510,52 @@ export const getUpdatedPlanIDs = ({
     // not handling visionary-downgrade because V2 signup page already catches it with the AccessModal
 };
 
-const replaceBf2025LumoAddonCoupon = ({
-    user,
+const handleBf2025LumoAddonEdgeCases = ({
     subscription,
-    planIDs,
+    replacedPlanIDs,
+    planIDsSelectedByUser,
     selectedCoupon,
+    plansMap,
+    currency,
+    cycle,
 }: {
-    user: User | undefined;
-    subscription: Subscription | undefined;
-    planIDs: PlanIDs | undefined;
+    subscription: Subscription | FreeSubscription;
+    replacedPlanIDs: PlanIDs | undefined;
+    planIDsSelectedByUser: PlanIDs | undefined;
     selectedCoupon: string | undefined;
+    plansMap: PlansMap;
+    currency: Currency;
+    cycle: CYCLE;
 }) => {
-    const selectedPlan = getPlanNameFromIDs(planIDs ?? {});
+    const currentPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
 
-    if (
-        user &&
-        getHas2025OfferCoupon(selectedCoupon) &&
-        getHas2025OfferCoupon(subscription?.CouponCode) &&
-        selectedPlan === PLANS.LUMO
-    ) {
-        return COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON;
+    {
+        const selectedPlanByUser = getPlanNameFromIDs(planIDsSelectedByUser ?? {});
+
+        const userWantsToBuyLumo = currentPlan.getPlanName() !== PLANS.LUMO && selectedPlanByUser === PLANS.LUMO;
+
+        if (userWantsToBuyLumo && getHas2025OfferCoupon(selectedCoupon)) {
+            const userStaysOnTheSameCycleAndCurrency = currentPlan.cycle === cycle && currentPlan.currency === currency;
+            const hasYearlySubscription = currentPlan.cycle === CYCLE.YEARLY;
+
+            if (userStaysOnTheSameCycleAndCurrency && hasYearlySubscription) {
+                return COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON;
+            }
+
+            return COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON_OMNI;
+        }
+    }
+
+    {
+        const planAfterItWasSwitched = getPlanNameFromIDs(replacedPlanIDs ?? {});
+
+        const userHasLumo = currentPlan.getPlanName() === PLANS.LUMO;
+        const userSelectedNonLumo = planAfterItWasSwitched !== PLANS.LUMO;
+
+        const userWantsToBuyNonLumoPlan = userHasLumo && userSelectedNonLumo;
+        if (userWantsToBuyNonLumoPlan && getHas2025OfferCoupon(selectedCoupon)) {
+            return COUPON_CODES.BLACK_FRIDAY_2025_LUMOADDON_OMNI;
+        }
     }
 
     return selectedCoupon;
@@ -560,7 +589,7 @@ export const getUserInfo = async ({
     availableCycles: CYCLE[];
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];
-    subscription: Subscription | undefined;
+    subscription: Subscription | FreeSubscription | undefined;
     subscriptionData: SubscriptionData;
     organization: Organization | undefined;
     state: SessionData['state'];
@@ -593,20 +622,13 @@ export const getUserInfo = async ({
         unavailable: false,
     };
 
-    const [paymentMethods, subscription, organization] = await Promise.all([
+    const [paymentMethods, rawSubscription, organization] = await Promise.all([
         state.payable ? getPaymentMethods(api) : [],
-        state.payable && state.admin && state.subscribed
-            ? getSubscription(api, user).then((subscription) => subscription.UpcomingSubscription ?? subscription)
-            : (FREE_SUBSCRIPTION as unknown as Subscription),
+        state.payable && state.admin && state.subscribed ? getSubscription(api, user) : FREE_SUBSCRIPTION,
         state.subscribed ? getOrganization({ api }) : undefined,
     ]);
 
-    options.coupon = replaceBf2025LumoAddonCoupon({
-        user,
-        subscription,
-        planIDs: options.planIDs,
-        selectedCoupon: options.coupon,
-    });
+    const subscription: Subscription | FreeSubscription = rawSubscription.UpcomingSubscription ?? rawSubscription;
 
     const currentPlan = (() => {
         const plan = getPlan(subscription);
@@ -673,7 +695,17 @@ export const getUserInfo = async ({
         };
     }
 
-    const result = getUpdatedPlanIDs({
+    optionsWithSubscriptionDefaults.coupon = handleBf2025LumoAddonEdgeCases({
+        subscription: rawSubscription,
+        replacedPlanIDs: optionsWithSubscriptionDefaults.planIDs ?? {},
+        planIDsSelectedByUser: options.planIDs,
+        selectedCoupon: optionsWithSubscriptionDefaults.coupon,
+        plansMap,
+        currency: optionsWithSubscriptionDefaults.currency,
+        cycle: optionsWithSubscriptionDefaults.cycle,
+    });
+
+    const replacePlanIfChangeIsForbidden = getUpdatedPlanIDs({
         subscription,
         organization,
         plans,
@@ -682,11 +714,11 @@ export const getUserInfo = async ({
         options: optionsWithSubscriptionDefaults,
         plansMap,
     });
-    if (result?.upsell) {
-        upsell = result.upsell;
+    if (replacePlanIfChangeIsForbidden?.upsell) {
+        upsell = replacePlanIfChangeIsForbidden.upsell;
     }
-    if (result?.planIDs) {
-        optionsWithSubscriptionDefaults.planIDs = result.planIDs;
+    if (replacePlanIfChangeIsForbidden?.planIDs) {
+        optionsWithSubscriptionDefaults.planIDs = replacePlanIfChangeIsForbidden.planIDs;
     }
 
     if (state.payable && isForbiddenModification(subscription, optionsWithSubscriptionDefaults.planIDs ?? {})) {
