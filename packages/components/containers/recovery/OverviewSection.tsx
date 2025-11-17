@@ -12,14 +12,7 @@ import RecoverDataCard from './RecoverDataCard';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';
 import RecoveryCard from './RecoveryCard';
 
-interface Props {
-    ids: {
-        account: string;
-        data: string;
-    };
-}
-
-export const OverviewSection = ({ ids }: Props) => {
+export const OverviewSection = () => {
     const handleError = useErrorHandler();
     const [userKeys] = useUserKeys();
     const dispatch = useDispatch();
@@ -67,7 +60,7 @@ export const OverviewSection = ({ ids }: Props) => {
                     onDismiss={() => setDismissConfirmModalOpen(true)}
                 />
             )}
-            <RecoveryCard ids={ids} />
+            <RecoveryCard />
         </>
     );
 };
