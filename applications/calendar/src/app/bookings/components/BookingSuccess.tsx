@@ -44,7 +44,11 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
             </div>
             <div className="flex-1">
                 <h2 className="m-0 text-semibold text-rg">{title}</h2>
-                <p className="m-0 text-ellipsis" title={data as string}>
+                <p
+                    className="m-0 text-ellipsis min-h-custom"
+                    title={data as string}
+                    style={{ '--min-h-custom': '3em' }}
+                >
                     {data}
                 </p>
             </div>
