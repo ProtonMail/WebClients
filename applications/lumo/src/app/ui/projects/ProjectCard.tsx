@@ -87,7 +87,7 @@ export const ProjectCard = ({ project, onSignInRequired }: ProjectCardProps) => 
         <div className={clsx('project-card', project.isExample && 'project-card--example')}>
             <div className="project-card-header">
                 <div className="project-card-icon" style={{ backgroundColor: category.color }}>
-                    <Icon name={category.icon} size={5} className="color-white" />
+                    <Icon name={category.icon as any} size={5} className="color-white" />
                 </div>
                 {!project.isExample && (
                     <>
