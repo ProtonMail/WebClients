@@ -59,8 +59,12 @@ function CreateFilter() {
   return (
     <UI.MenuItem
       leadingIconSlot={
-        // TODO: need a different icon for "remove filter"
-        useUI((ui) => ui.data.hasFilter) ? <UI.Icon legacyName="broom" /> : <UI.Icon legacyName="broom" />
+        <UI.Icon
+          data={
+            // TODO: need a different icon for "remove filter"
+            useUI((ui) => ui.data.hasFilter) ? Icons.filter : Icons.filter
+          }
+        />
       }
       onClick={useUI.$.withFocusGrid(useUI.$.data.toggleFilter)}
       disabled={useUI((ui) => ui.info.isReadonly)}

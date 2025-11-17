@@ -4,18 +4,17 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   ChevronRightIcon,
-  ClipboardIcon,
+  //   ClipboardIcon,
   CopyIcon,
   Cross1Icon,
   DotsVerticalIcon,
   EyeNoneIcon,
   FunnelIcon,
-  MdBrush,
   MdOutlineFactCheck,
   PaintBrush,
   PlusIcon,
   ReaderIcon,
-  ScissorsIcon,
+  //   ScissorsIcon,
   SizeIcon,
   SortDownIcon,
   SortUpIcon,
@@ -317,19 +316,20 @@ export function LegacyContextMenu({
         }}
         onMouseMove={(e) => e.stopPropagation()}
       >
-        <DropdownMenuItem onClick={onCut} disabled={readonly}>
+        {/* TODO: re-enable once fixed */}
+        {/* <DropdownMenuItem onClick={onCut} disabled={readonly}>
           <DropdownLeftSlot>
             <ScissorsIcon />
           </DropdownLeftSlot>
           Cut <DropdownRightSlot>⌘X</DropdownRightSlot>
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
         <DropdownMenuItem onClick={onCopy}>
           <DropdownLeftSlot>
             <CopyIcon />
           </DropdownLeftSlot>
           Copy <DropdownRightSlot>⌘C</DropdownRightSlot>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => onPaste?.()} disabled={readonly}>
+        {/* <DropdownMenuItem onClick={() => onPaste?.()} disabled={readonly}>
           <DropdownLeftSlot>
             <ClipboardIcon />
           </DropdownLeftSlot>
@@ -352,7 +352,7 @@ export function LegacyContextMenu({
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onPaste?.('Transposed')}>Transposed</DropdownMenuItem>
           </DropdownMenuSubContent>
-        </DropdownMenuSub>
+        </DropdownMenuSub> */}
 
         {enableMagicFill ? (
           <>
@@ -545,7 +545,7 @@ export function LegacyContextMenu({
 
         {isHeader ? (
           <>
-            <DropdownMenuItem
+            {/* <DropdownMenuItem
               onClick={() => {
                 // We have to shift the focus to note editor
                 shouldFocusSheetRef.current = false
@@ -556,7 +556,7 @@ export function LegacyContextMenu({
                 <MdBrush />
               </DropdownLeftSlot>
               Format cells
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
 
             <DropdownMenuItem
               onClick={() => {
@@ -914,7 +914,7 @@ export function LegacyContextMenu({
               </>
             )}
 
-            <DropdownMenuItem
+            {/* <DropdownMenuItem
               disabled={readonly}
               onClick={() => {
                 // We have to shift the focus to note editor
@@ -926,7 +926,7 @@ export function LegacyContextMenu({
                 <MdBrush />
               </DropdownLeftSlot>
               Format cells
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
 
             <DropdownMenuItem
               disabled={readonly}

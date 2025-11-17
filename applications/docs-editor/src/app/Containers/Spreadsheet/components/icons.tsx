@@ -84,3 +84,11 @@ export const percentageLight = (
     clipRule="evenodd"
   />
 )
+export const filter = (
+  <path
+    fill="currentColor"
+    fillRule="evenodd"
+    d="M7.003 9.123v3.568l1.994.999V9.123L14.377 3H1.623zm-6.3-5.655 5.3 6.032V13a.5.5 0 0 0 .276.447l2.996 1.5a.5.5 0 0 0 .722-.447v-5l5.3-6.032A.9.9 0 0 0 14.6 2H1.4a.9.9 0 0 0-.697 1.468"
+    clipRule="evenodd"
+  />
+)
