@@ -7,7 +7,7 @@ import { useSaveMeeting } from '@proton/meet';
 import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { extractBookingUidFromSecret } from '../containers/bookings/utils/bookingCryptoUtils';
+import { extractBookingUidFromSecret } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
 import type { BookingTimeslot } from './booking.store';
 import { prepareBookingSubmission } from './bookingSubmissionUtils';

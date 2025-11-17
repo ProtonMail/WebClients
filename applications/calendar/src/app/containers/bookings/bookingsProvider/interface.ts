@@ -12,9 +12,8 @@ export interface BookingsContextValue {
     openBookingSidebar: (date: Date) => void;
     closeBookingSidebar: () => void;
     formData: BookingFormData;
-    updateFormData: (field: keyof BookingFormData, value: any) => void;
+    updateFormData: (field: keyof InternalBookingFrom, value: any) => void;
     loading: boolean;
-    bookingRanges: BookingRange[] | null;
     addBookingRange: (data: Omit<BookingRange, 'id'>) => void;
     updateBookingRange: (id: string, start: Date, end: Date) => void;
     removeBookingRange: (id: string) => void;
@@ -58,7 +57,10 @@ export interface BookingFormData {
     locationType: BookingLocation;
     location?: string;
     bookingSlots: Slot[];
+    bookingRanges: BookingRange[];
 }
+
+export type InternalBookingFrom = Omit<BookingFormData, 'bookingSlots'>;
 
 export enum BookingFormValidationReasons {
     TIME_SLOT_LIMIT = 'TIME_SLOT_LIMIT',

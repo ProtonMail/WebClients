@@ -111,6 +111,6 @@ const slice = createSlice({
     },
 });
 
-export const interalBookingActions = slice.actions;
+export const internalBookingActions = slice.actions;
 export const internalBookingReducer = { [name]: slice.reducer };
 export const internalBookingThunk = modelThunk.thunk;
