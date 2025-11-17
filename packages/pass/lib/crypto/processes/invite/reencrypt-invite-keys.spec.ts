@@ -5,7 +5,6 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '@proton/pass/lib/crypto/utils/testing';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { createInviteKeys } from './create-invite-keys';
 import { reencryptInviteKeys } from './reencrypt-invite-keys';
@@ -38,7 +37,7 @@ describe('acceptVaultInvite crypto process', () => {
 
         const decryptedKeys = await Promise.all(
             reencryptedKeys.map(async (vaultKey) => {
-                const binaryMessage = base64StringToUint8Array(vaultKey.Key);
+                const binaryMessage = Uint8Array.fromBase64(vaultKey.Key);
 
                 return CryptoProxy.decryptMessage({
                     binaryMessage,

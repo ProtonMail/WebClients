@@ -9,7 +9,6 @@ import {
 } from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { generateShareKeys } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import chunk from '@proton/utils/chunk';
@@ -87,7 +86,7 @@ export default function useShareActions() {
 
         const [PassphraseKeyPacket, NameKeyPacket] = await Promise.all([
             getEncryptedSessionKey(passphraseSessionKey, sharePrivateKey)
-                .then(uint8ArrayToBase64String)
+                .then(bytes => bytes.toBase64())
                 .catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to encrypt link passphrase during share creation', {
@@ -101,7 +100,7 @@ export default function useShareActions() {
                     )
                 ),
             getEncryptedSessionKey(nameSessionKey, sharePrivateKey)
-                .then(uint8ArrayToBase64String)
+                .then(bytes => bytes.toBase64())
                 .catch((e) =>
                     Promise.reject(
                         new EnrichedError('Failed to encrypt link name during share creation', {
@@ -193,7 +192,7 @@ export default function useShareActions() {
                         }
 
                         await getEncryptedSessionKey(shareSessionKey, linkPrivateKey)
-                            .then(uint8ArrayToBase64String)
+                            .then(bytes => bytes.toBase64())
                             .then((PassphraseNodeKeyPacket) => {
                                 passPhraseNodeKeyPackets.push({
                                     ShareID: share.shareId,

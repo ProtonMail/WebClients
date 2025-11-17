@@ -31,7 +31,6 @@ import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
@@ -196,11 +195,11 @@ const formatServerName = (bestServerName: string, alt: (code: string) => string 
 };
 
 const getX25519PrivateKey = async (privateKey: string): Promise<string> => {
-    const sha512 = (await utils.sha512(base64StringToUint8Array(privateKey))).slice(0, 32);
+    const sha512 = (await utils.sha512(Uint8Array.fromBase64(privateKey))).slice(0, 32);
     sha512[0] &= 0xf8;
     sha512[31] &= 0x7f;
     sha512[31] |= 0x40;
-    return uint8ArrayToBase64String(sha512);
+    return sha512.toBase64();
 };
 
 const WireGuardConfigurationSection = () => {
@@ -306,8 +305,8 @@ const WireGuardConfigurationSection = () => {
             const privateKey = randomPrivateKey();
 
             return {
-                privateKey: uint8ArrayToBase64String(privateKey),
-                publicKey: uint8ArrayToBase64String(await getPublicKey(privateKey)),
+                privateKey: privateKey.toBase64(),
+                publicKey: (await getPublicKey(privateKey)).toBase64(),
             };
         } catch (e) {
             const { PrivateKey, PublicKey } = await api<KeyPair>(getKey());

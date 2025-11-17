@@ -8,7 +8,6 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type {
     DriveFileRevisionResult,
     DriveFileRevisionThumbnailResult,
@@ -448,7 +447,7 @@ export function useLinkInner(
 
             const privateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
 
-            const blockKeys = base64StringToUint8Array(encryptedLink.contentKeyPacket);
+            const blockKeys = Uint8Array.fromBase64(encryptedLink.contentKeyPacket);
 
             try {
                 sessionKey = await getDecryptedSessionKey({

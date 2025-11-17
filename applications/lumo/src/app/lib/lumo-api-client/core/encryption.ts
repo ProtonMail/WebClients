@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { CryptoProxy } from '@proton/crypto';
 import { exportKey, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptString as decryptContent, encryptString } from '../../../crypto';
 import { LUMO_GPG_PUB_KEY_PROD_2 } from '../../../keys';
@@ -65,5 +64,5 @@ export async function prepareEncryptedRequestKey(requestKey: AesGcmCryptoKey, lu
         encryptionKeys: lumoPublicKey,
         format: 'binary',
     });
-    return uint8ArrayToBase64String(requestKeyEnc.message);
+    return requestKeyEnc.message.toBase64();
 }

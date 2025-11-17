@@ -1,7 +1,6 @@
 import { CryptoProxy, type PrivateKeyReference } from '@proton/crypto';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { PassSignatureContext, type VaultShareKey } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateNewUserSignatureProcessParams = {
     invitedEmail: string;
@@ -28,5 +27,5 @@ export const createNewUserSignatureFactory =
             },
         });
 
-        return uint8ArrayToBase64String(signature);
+        return signature.toBase64();
     };

@@ -1,7 +1,6 @@
 import { CryptoProxy, type PrivateKeyReference, type SessionKey } from '@proton/crypto/lib';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '../../helpers/encoding';
 import type { VerificationPreferences } from '../../interfaces/VerificationPreferences';
 import { ATTENDEE_COMMENT_ENCRYPTION_TYPE } from '../constants';
 
@@ -35,7 +34,7 @@ export const getDecryptedRSVPComment = async ({
     sharedSessionKey: SessionKey;
     attendeeVerificationPreferences: VerificationPreferences;
 }) => {
-    const binaryMessage = base64StringToUint8Array(encryptedMessage);
+    const binaryMessage = Uint8Array.fromBase64(encryptedMessage);
     const decryptedMessageResult = await CryptoProxy.decryptMessage({
         sessionKeys: [sharedSessionKey],
         binaryMessage,
@@ -74,7 +73,7 @@ export const getEncryptedRSVPComment = async ({
             critical: true,
         },
     });
-    const base64EncryptedComment = uint8ArrayToBase64String(encryptResult.message);
+    const base64EncryptedComment = encryptResult.message.toBase64();
 
     return {
         Message: base64EncryptedComment,
@@ -97,7 +96,7 @@ export const getEncryptedRSVPCommentWithSignature = async ({
         sessionKey,
         binarySignature: mergeUint8Arrays(signatures),
     });
-    const base64EncryptedComment = uint8ArrayToBase64String(encryptResult.message);
+    const base64EncryptedComment = encryptResult.message.toBase64();
 
     return {
         Message: base64EncryptedComment,

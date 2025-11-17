@@ -1,13 +1,11 @@
 import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
-
 export const getParsedClientKey = (value: string) => {
-    return base64StringToUint8Array(value);
+    return Uint8Array.fromBase64(value);
 };
 
 const getSerializedClientKey = (value: Uint8Array<ArrayBuffer>) => {
-    return uint8ArrayToBase64String(value);
+    return value.toBase64();
 };
 
 export const getClientKey = (value: string) => {

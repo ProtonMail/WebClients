@@ -26,7 +26,6 @@ import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { convertTimestampToTimezone } from '@proton/shared/lib/date/timezone';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { type CreateMeetingResponse, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
@@ -196,8 +195,8 @@ const encryptBookingParts = async (vevent: VcalVeventComponent, sharedSessionKey
 
     return {
         timePartIcsRaw,
-        encryptedContentPart: uint8ArrayToBase64String(encryptedContentPartBytes),
-        encryptedAttendeePart: uint8ArrayToBase64String(encryptedAttendeeDataBytes),
+        encryptedContentPart: encryptedContentPartBytes.toBase64(),
+        encryptedAttendeePart: encryptedAttendeeDataBytes.toBase64(),
     };
 };
 

@@ -7,7 +7,6 @@ import {
     createMockReadableStream,
 } from '@proton/pass/lib/file-storage/testing';
 import type { FileBuffer } from '@proton/pass/lib/file-storage/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { portTransferWriter } from './fs.utils';
 
@@ -31,7 +30,7 @@ describe('file-storage/utils', () => {
                 type: WorkerMessageType.FS_WRITE,
                 payload: {
                     fileRef,
-                    b64: uint8ArrayToBase64String(chunks[0]),
+                    b64: chunks[0].toBase64(),
                 },
             });
         });

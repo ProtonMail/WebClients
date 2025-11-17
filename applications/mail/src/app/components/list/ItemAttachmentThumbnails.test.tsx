@@ -10,7 +10,6 @@ import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import ItemColumnLayout from 'proton-mail/components/list/ItemColumnLayout';
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
-import { arrayToBase64 } from 'proton-mail/helpers/base64';
 import { addApiMock } from 'proton-mail/helpers/test/api';
 import type { GeneratedKey } from 'proton-mail/helpers/test/helper';
 import {
@@ -282,7 +281,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 const attachmentSpy = jest.fn(() => attachmentPackets.data);
                 const attachmentMetadataSpy = jest.fn(() => ({
                     Attachment: {
-                        KeyPackets: arrayToBase64(attachmentKeyPackets),
+                        KeyPackets: attachmentKeyPackets.toBase64(),
                         Sender: { Address: fromAddress },
                         AddressID,
                     },

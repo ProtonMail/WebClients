@@ -22,7 +22,6 @@ import type {
     SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import chunk from '@proton/utils/chunk';
 
 export const createPendingFile = async (
@@ -93,9 +92,9 @@ export const restoreSingleFile = async (
             url: `pass/v1/share/${shareId}/item/${itemId}/file/${fileId}/restore`,
             method: 'post',
             data: {
-                FileKey: uint8ArrayToBase64String(
+                FileKey: (
                     await PassCrypto.encryptFileKey({ fileID: fileId, itemKey, shareId })
-                ),
+                ).toBase64(),
                 ItemKeyRotation: itemKey.rotation,
             },
         })
@@ -112,7 +111,7 @@ export const restoreRevisionFiles = async (
                 FilesToRestore: await Promise.all(
                     dto.toRestore.map(async (fileID) => ({
                         FileID: fileID,
-                        FileKey: uint8ArrayToBase64String(await PassCrypto.encryptFileKey({ ...dto, fileID })),
+                        FileKey: (await PassCrypto.encryptFileKey({ ...dto, fileID })).toBase64(),
                     }))
                 ),
                 ItemKeyRotation: dto.itemKey.rotation,
@@ -130,13 +129,13 @@ export const linkPendingFiles = async <T extends ItemType>(dto: ItemRevisionLink
                 const FilesToAdd = await Promise.all(
                     files.toAdd.map(async (FileID) => ({
                         FileID,
-                        FileKey: uint8ArrayToBase64String(
+                        FileKey: (
                             await PassCrypto.encryptFileKey({
                                 fileID: FileID,
                                 itemKey,
                                 pending: true,
                             })
-                        ),
+                        ).toBase64(),
                     }))
                 );
 

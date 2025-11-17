@@ -4,7 +4,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { hasBit } from '../../../helpers/bitset';
-import { uint8ArrayToBase64String } from '../../../helpers/encoding';
 import type { Address, DecryptedKey } from '../../../interfaces';
 import type {
     CalendarEvent,
@@ -145,7 +144,7 @@ export const getBase64SharedSessionKey = async ({
 }) => {
     const sessionKey = await getSharedSessionKey({ calendarEvent, calendarKeys, getAddressKeys, getCalendarKeys });
 
-    return sessionKey ? uint8ArrayToBase64String(sessionKey.data) : undefined;
+    return sessionKey ? sessionKey.data.toBase64() : undefined;
 };
 
 export const getAddressesMembersMap = (Members: CalendarMember[], Addresses: Address[]) => {

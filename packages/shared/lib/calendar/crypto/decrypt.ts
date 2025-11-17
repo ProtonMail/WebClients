@@ -4,7 +4,6 @@ import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { isElectronMail } from '../../helpers/desktop';
-import { base64StringToUint8Array } from '../../helpers/encoding';
 import type { CalendarEventData } from '../../interfaces/calendar';
 import type { SimpleMap } from '../../interfaces/utils';
 import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';
@@ -141,7 +140,7 @@ export const decryptAndVerifyCalendarEvent = (
         if (!sessionKey) {
             throw new Error('Cannot decrypt without session key');
         }
-        return decryptCard(base64StringToUint8Array(Data), Signature, [], sessionKey);
+        return decryptCard(Uint8Array.fromBase64(Data), Signature, [], sessionKey);
     }
     if (Type === CALENDAR_CARD_TYPE.SIGNED) {
         if (!Signature) {
@@ -157,7 +156,7 @@ export const decryptAndVerifyCalendarEvent = (
             throw new Error('Cannot decrypt without session key');
         }
 
-        return decryptCard(base64StringToUint8Array(Data), Signature, publicKeys, sessionKey);
+        return decryptCard(Uint8Array.fromBase64(Data), Signature, publicKeys, sessionKey);
     }
     throw new Error('Unknow event card type');
 };

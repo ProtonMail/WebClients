@@ -2,8 +2,6 @@ import logger from 'proton-authenticator/lib/logger';
 import type { KeyringError } from 'proton-authenticator/lib/tauri/commands';
 import { commands } from 'proton-authenticator/lib/tauri/commands';
 
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-
 import type { StorageKeyAdapter } from './types';
 import { StorageKeyError, StorageKeySource } from './types';
 
@@ -66,7 +64,7 @@ export const createKeyringAdapter = (): StorageKeyAdapter => {
                 }
 
                 logger.info('[adapter::keyring] Resolved storage secret');
-                return { ok: true, key: base64StringToUint8Array(result.data) };
+                return { ok: true, key: Uint8Array.fromBase64(result.data) };
             } catch (err) {
                 logger.info(`[adapter::keyring] critical read error ${err}`);
                 return { ok: false, error: StorageKeyError.UNKNOWN };
@@ -86,7 +84,7 @@ export const createKeyringAdapter = (): StorageKeyAdapter => {
                 /** storage key was successfully stored to keyring
                  * store a reference to its source and id in IDB. */
                 logger.info('[adapter::keyring] Storage secret saved');
-                return { ok: true, key: base64StringToUint8Array(result.data) };
+                return { ok: true, key: Uint8Array.fromBase64(result.data) };
             } catch (err) {
                 logger.info(`[adapter::keyring] critical generation error ${err}`);
                 return { ok: false, error: StorageKeyError.UNKNOWN };

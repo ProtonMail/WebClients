@@ -1,7 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { KeyRotationKeyPair } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { openInviteKey } from './open-invite-key';
@@ -31,7 +30,7 @@ export const reencryptInviteKeys = async ({
             });
 
             return {
-                Key: uint8ArrayToBase64String(encryptedVaultKey),
+                Key: encryptedVaultKey.toBase64(),
                 KeyRotation: inviteKey.KeyRotation,
             };
         })

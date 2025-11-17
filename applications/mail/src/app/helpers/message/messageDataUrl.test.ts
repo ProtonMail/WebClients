@@ -1,11 +1,6 @@
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { dataUrlToFile, replaceDataUrl } from 'proton-mail/helpers/message/messageDataUrl';
-
-jest.mock('@proton/shared/lib/helpers/encoding', () => ({
-    base64StringToUint8Array: jest.fn((str) => new Uint8Array(Buffer.from(str, 'base64'))),
-}));
 
 describe('messageDataUrl', () => {
     describe('dataUrlToFile', () => {
@@ -18,7 +13,6 @@ describe('messageDataUrl', () => {
             expect(file).toBeInstanceOf(File);
             expect(file.name).toEqual(fileName);
             expect(file.type).toBe('image/png');
-            expect(base64StringToUint8Array).toHaveBeenCalledWith('aGVsbG8=');
             expect(file.size).toBe(5); // "hello" is 5 bytes
         });
     });

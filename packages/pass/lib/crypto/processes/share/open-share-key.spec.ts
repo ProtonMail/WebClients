@@ -7,7 +7,6 @@ import {
     setupCryptoProxyForTesting,
 } from '@proton/pass/lib/crypto/utils/testing';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import lastItem from '@proton/utils/lastItem';
 
 import { createVault } from '../vault/create-vault';
@@ -39,7 +38,7 @@ describe('openShareKey crypto process', () => {
 
         const decryptedContent = await decryptData(
             vaultKey.key,
-            base64StringToUint8Array(vault.Content),
+            Uint8Array.fromBase64(vault.Content),
             PassEncryptionTag.VaultContent
         );
 

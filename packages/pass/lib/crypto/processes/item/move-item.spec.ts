@@ -2,7 +2,6 @@ import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/c
 import { TEST_USER_KEY_ID } from '@proton/pass/lib/crypto/utils/testing';
 import type { ItemKey, VaultShareKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { moveItem } from './move-item';
 
@@ -29,7 +28,7 @@ describe('moveItem crypto process', () => {
         const movedItem = await moveItem({ targetVaultKey, itemKeys: [itemKey], itemId });
         const decryptedItemKey = await decryptData(
             targetVaultKey.key,
-            base64StringToUint8Array(movedItem.ItemKeys[0].Key),
+            Uint8Array.fromBase64(movedItem.ItemKeys[0].Key),
             PassEncryptionTag.ItemKey
         );
 
