@@ -32,7 +32,7 @@ import {
     modelToOrganizerProperties,
 } from '../components/eventModal/eventForm/modelToProperties';
 import config from '../config';
-import { decryptBookingSessionKey } from '../containers/bookings/utils/bookingCryptoUtils';
+import { decryptBookingSessionKey } from '../containers/bookings/utils/crypto/bookingEncryption';
 import type { BookingDetails, BookingTimeslot } from './booking.store';
 
 interface PrepareBookingSubmissionParams {
