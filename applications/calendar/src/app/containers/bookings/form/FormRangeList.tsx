@@ -25,7 +25,9 @@ import { addDays, isNextDay } from '@proton/shared/lib/date-fns-utc';
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
-import { createBookingRangeNextAvailableTime, roundToNextHalfHour, validateFormData } from '../utils/bookingHelpers';
+import { validateFormData } from '../utils/form/formHelpers';
+import { createBookingRangeNextAvailableTime } from '../utils/range/rangeHelpers';
+import { roundToNextHalfHour } from '../utils/timeHelpers';
 
 export const FormRangeList = () => {
     const now = new Date();
@@ -33,12 +35,12 @@ export const FormRangeList = () => {
     const location = useLocation();
     const [userSettings] = useUserSettings();
 
-    const { bookingRanges, removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
+    const { removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
     const validation = validateFormData(formData);
 
     const { createNotification } = useNotifications();
 
-    if (!bookingRanges) {
+    if (!formData.bookingRanges) {
         return null;
     }
 
@@ -83,7 +85,7 @@ export const FormRangeList = () => {
         const { date } = fromUrlParams(location.pathname);
         addBookingRange(
             createBookingRangeNextAvailableTime({
-                bookingRanges,
+                bookingRanges: formData.bookingRanges,
                 userSettings,
                 timezone: formData.timezone,
                 startDate: date,
@@ -92,7 +94,7 @@ export const FormRangeList = () => {
     };
 
     const handlePlusClick = (range: BookingRange) => {
-        const lastBookingOfDay = bookingRanges
+        const lastBookingOfDay = formData.bookingRanges
             .filter((r) => isSameDay(r.start, range.start))
             .sort((a, b) => a.start.getTime() - b.start.getTime())
             .at(-1);
@@ -121,7 +123,7 @@ export const FormRangeList = () => {
     // TODO handle the cases where the recurring is enabled and adapt the UI
     return (
         <div>
-            {bookingRanges.map((range) => (
+            {formData.bookingRanges.map((range) => (
                 <div key={range.id} className="flex flex-nowrap gap-2 justify-space-between mb-0.5">
                     <div className="flex flex-1 items-center gap-0.5">
                         <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')

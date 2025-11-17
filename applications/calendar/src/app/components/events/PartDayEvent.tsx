@@ -6,7 +6,10 @@ import clsx from '@proton/utils/clsx';
 
 import { PartDayBookingEvent } from '../../containers/bookings/timeGridView/PartDayBookingEvent';
 import { TemporaryPartDayBookingEvent } from '../../containers/bookings/timeGridView/TemporaryPartDayBookingEvent';
-import { isBookingSlotEvent, isTemporaryBookingSlotEvent } from '../../containers/bookings/utils/bookingHelpers';
+import {
+    isBookingSlotEvent,
+    isTemporaryBookingSlotEvent,
+} from '../../containers/bookings/utils/calendar/calendarHelper';
 import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,
