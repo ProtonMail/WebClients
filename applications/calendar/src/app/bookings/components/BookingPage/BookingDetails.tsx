@@ -8,7 +8,7 @@ import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useBookingStore } from '../../booking.store';
 
-export const DetailsHeader = () => {
+export const BookingDetails = () => {
     const bookingDetails = useBookingStore(
         useShallow((state) => {
             if (!state.bookingDetails) {

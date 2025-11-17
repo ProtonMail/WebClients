@@ -19,7 +19,7 @@ interface Props {
     gridSize: number;
 }
 
-export const BookingDetailsHeader = ({ gridSize }: Props) => {
+export const BookingHeader = ({ gridSize }: Props) => {
     const setSelectedDate = useBookingStore((state) => state.setSelectedDate);
     const setSelectedTimezone = useBookingStore((state) => state.setSelectedTimezone);
     const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
