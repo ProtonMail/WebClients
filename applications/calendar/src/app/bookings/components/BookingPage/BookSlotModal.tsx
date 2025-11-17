@@ -21,8 +21,8 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { type BookingTimeslot, useBookingStore } from '../booking.store';
-import { useExternalBookingActions } from '../useExternalBookingActions';
+import { type BookingTimeslot, useBookingStore } from '../../booking.store';
+import { useExternalBookingActions } from '../../useExternalBookingActions';
 
 interface BookingSlotModalProps extends ModalProps {
     timeslot: BookingTimeslot;

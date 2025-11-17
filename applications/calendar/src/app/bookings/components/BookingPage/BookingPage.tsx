@@ -1,12 +1,12 @@
 import Loader from '@proton/components/components/loader/Loader';
 
 import { useBookingStore } from '../../booking.store';
-import { BookingsView } from '../BookingsView';
 import { NoMatch, Reason } from '../NoMatch';
+import { BookingDetails } from './BookingDetails';
 import { BookingFooter } from './BookingFooter';
-import { DetailsHeader } from './DetailsHeader';
+import { BookingTimeSlotGrid } from './BookingTimeSlotGrid';
 
-export const BookingDetails = () => {
+export const BookingPage = () => {
     const isLoading = useBookingStore((state) => state.isLoading);
     const hasLoaded = useBookingStore((state) => state.hasLoaded);
     const isEmpty = useBookingStore((state) => !state.bookingDetails);
@@ -22,8 +22,8 @@ export const BookingDetails = () => {
     return (
         <div className="mt-12 mx-auto">
             <div className="flex *:min-size-auto flex-column flex-nowrap gap-6 booking-wrapper items-start">
-                <DetailsHeader />
-                <BookingsView />
+                <BookingDetails />
+                <BookingTimeSlotGrid />
             </div>
             <BookingFooter />
         </div>
