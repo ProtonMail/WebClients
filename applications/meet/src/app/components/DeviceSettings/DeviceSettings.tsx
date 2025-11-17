@@ -195,6 +195,7 @@ export const DeviceSettings = ({
                         participantName={displayName}
                         backgroundColor={`meet-background-${colorIndex}`}
                         profileColor={`profile-background-${colorIndex}`}
+                        viewSize={isMobile() ? 'medium' : 'large'}
                     />
                 )}
 
