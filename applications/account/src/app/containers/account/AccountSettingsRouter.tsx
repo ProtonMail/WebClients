@@ -84,7 +84,6 @@ const AccountSettingsRouter = ({
     const {
         routes: {
             vpnDashboardV2,
-            dashboardV2,
             subscription,
             dashboard,
             upgrade,
@@ -119,11 +118,11 @@ const AccountSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 </Route>
             )}
-            {getIsSectionAvailable(dashboardV2) && (
-                <Route path={getSectionPath(path, dashboardV2)}>
+            {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboardV2' && (
+                <Route path={getSectionPath(path, dashboard)}>
                     <DashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
-                    <AccountDashboard app={app} config={dashboardV2} />
+                    <AccountDashboard app={app} config={dashboard} />
                 </Route>
             )}
             {getIsSectionAvailable(subscription) && (
@@ -153,7 +152,7 @@ const AccountSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 </Route>
             )}
-            {getIsSectionAvailable(dashboard) && (
+            {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboard' && (
                 <Route path={getSectionPath(path, dashboard)}>
                     <DashboardTelemetry app={app} />
                     <AutomaticSubscriptionModal />
