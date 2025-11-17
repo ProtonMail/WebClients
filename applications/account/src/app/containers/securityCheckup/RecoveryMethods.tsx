@@ -77,7 +77,7 @@ const Email = () => {
                         {
                             // translator: full sentence "You recovery email could be abused by attackers to take over your account. Disable recovery by email to increase your account security."
                             c('Safety review')
-                                .jt`You recovery email could be abused by attackers to take over your account. ${disableEmail} to increase your account security.`
+                                .jt`Your recovery email could be abused by attackers to take over your account. ${disableEmail} to increase your account security.`
                         }
                     </div>
                     <SentinelBadge className="ml-4" />
@@ -143,7 +143,7 @@ const Phone = () => {
                         {
                             // translator: full sentence "You recovery phone could be abused by attackers to take over your account. Disable recovery by phone to increase your account security."
                             c('Safety review')
-                                .jt`You recovery phone could be abused by attackers to take over your account. ${disablePhone} to increase your account security.`
+                                .jt`Your recovery phone could be abused by attackers to take over your account. ${disablePhone} to increase your account security.`
                         }
                     </div>
                     <SentinelBadge className="ml-4" />
