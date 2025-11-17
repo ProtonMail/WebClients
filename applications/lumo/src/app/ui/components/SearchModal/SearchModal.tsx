@@ -334,7 +334,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         
         // Add projects group if there are any
         if (projects.length > 0) {
-            groups['Projects'] = projects.sort((a, b) => b.timestamp - a.timestamp);
+            groups.Projects = projects.sort((a, b) => b.timestamp - a.timestamp);
         }
         
         // Add document group if there are any
