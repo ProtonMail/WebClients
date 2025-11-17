@@ -38,6 +38,7 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
 
     const handleSelectDate = (date: Date) => {
         onSelectDate(date);
+        void loadPublicBooking(date);
     };
 
     const handleMonthChange = (date: Date) => {
