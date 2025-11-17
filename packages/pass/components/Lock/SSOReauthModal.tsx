@@ -8,13 +8,13 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 
 import type { PasswordModalProps } from './PasswordModal';
 
 export const SSOReauthModal: FC<PasswordModalProps> = ({ loading, open, reauth, onClose, onReauth }) => {
-    const online = useConnectivity();
+    const online = useOnline();
 
     if (!reauth) return null;
     const { fork, ...payload } = reauth;

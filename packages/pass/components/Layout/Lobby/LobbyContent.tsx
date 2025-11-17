@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
@@ -61,7 +61,7 @@ export const LobbyContent: FC<Props> = ({
     renderAccountSwitcher,
 }) => {
     const { settings } = usePassCore();
-    const online = useConnectivity();
+    const online = useOnline();
     const authStore = useAuthStore();
     const [criticalError, setCriticalError] = useState<Maybe<string>>(undefined);
     const [unlocking, setUnlocking] = useState(false);

@@ -92,6 +92,16 @@ export const createAuthService = ({
 }: AuthServiceBindings) => {
     const redirect = objectHandler(getBootRedirection(history.location));
 
+    const canUnlockOffline = async (localID?: number): Promise<boolean> =>
+        canLocalUnlock({
+            lockMode: authStore.getLockMode(),
+            offline: !getOnline(),
+            offlineConfig: authStore.getOfflineConfig(),
+            offlineVerifier: authStore.getOfflineVerifier(),
+            offlineEnabled: true || ((await core.settings.resolve(localID))?.offlineEnabled ?? false),
+            encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
+        });
+
     const auth = createCoreAuthService({
         api,
         authStore,
@@ -166,19 +176,10 @@ export const createAuthService = ({
                 authStore.setLockToken(undefined);
                 authStore.setOfflineKD(undefined);
 
-                const localUnlockableOpts = {
-                    lockMode: authStore.getLockMode(),
-                    offline: !getOnline(),
-                    offlineConfig: authStore.getOfflineConfig(),
-                    offlineVerifier: authStore.getOfflineVerifier(),
-                    offlineEnabled: (await core.settings.resolve(localID))?.offlineEnabled ?? false,
-                    encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
-                };
-
-                if (canLocalUnlock(localUnlockableOpts)) {
+                if (await canUnlockOffline(localID)) {
                     authStore.setPassword(undefined);
                     const appStatus =
-                        localUnlockableOpts.lockMode === LockMode.BIOMETRICS
+                        authStore.getLockMode() === LockMode.BIOMETRICS
                             ? AppStatus.BIOMETRICS_LOCKED
                             : AppStatus.PASSWORD_LOCKED;
 
@@ -499,7 +500,8 @@ export const createAuthService = ({
                     /** User may have resumed connection while trying to offline-unlock,
                      * as such force-lock if the lock mode requires it */
                     const forceLock = authStore.getLockMode() === LockMode.SESSION;
-                    await auth.resumeSession(localID, { retryable: false, forceLock });
+                    const resumed = await auth.resumeSession(localID, { retryable: false, forceLock });
+                    if (!resumed && (await canUnlockOffline(localID))) store.dispatch(bootIntent({ offline: true }));
                 }
             }
         },

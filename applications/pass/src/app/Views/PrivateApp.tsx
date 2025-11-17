@@ -31,6 +31,7 @@ import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvi
 import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
+import { ConnectivityStatus } from '@proton/pass/lib/api/connectivity';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { selectIsSSO, selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
@@ -57,9 +58,9 @@ const Main: FC = () => {
     const { state: expanded, set } = useToggle();
     const toggle = useCallback(() => set((prev) => !prev), []);
 
-    const connectivityBar = useConnectivityBar((online) => ({
+    const connectivityBar = useConnectivityBar((connectivity) => ({
         className: offline ? 'bg-weak border-top' : 'bg-danger',
-        hidden: online && !offline,
+        hidden: connectivity === ConnectivityStatus.ONLINE && !offline,
         text: offline ? (
             <div className="flex items-center gap-2">
                 <span>{c('Info').t`Offline mode`}</span>

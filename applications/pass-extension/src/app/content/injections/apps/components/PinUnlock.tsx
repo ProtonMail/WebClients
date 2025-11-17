@@ -10,9 +10,9 @@ import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
+import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useRerender } from '@proton/pass/hooks/useRerender';
-import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
@@ -48,7 +48,7 @@ export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
         }
     };
 
-    useSessionLockPinSubmitEffect(value, { onSubmit });
+    useLockAutoSubmit(value, { onSubmit });
 
     useEffect(() => {
         if (visible) {

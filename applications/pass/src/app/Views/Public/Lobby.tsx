@@ -17,6 +17,7 @@ import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent'
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
+import { ConnectivityStatus } from '@proton/pass/lib/api/connectivity';
 import { clientBusy, clientErrored } from '@proton/pass/lib/client';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -32,10 +33,13 @@ export const Lobby: FC = () => {
 
     const history = useHistory<MaybeNull<AuthRouteState>>();
 
-    const connectivityBar = useConnectivityBar((online) => ({
+    const connectivityBar = useConnectivityBar((connectivity) => ({
         className: clsx('bg-danger fixed bottom-0 left-0'),
-        text: c('Info').t`No network connection`,
-        hidden: online || clientBusy(status),
+        text:
+            connectivity === ConnectivityStatus.DOWNTIME
+                ? c('Info').t`Servers are unreachable`
+                : c('Info').t`No network connection`,
+        hidden: connectivity === ConnectivityStatus.ONLINE || clientBusy(status),
     }));
 
     const warning = useMemo(() => {

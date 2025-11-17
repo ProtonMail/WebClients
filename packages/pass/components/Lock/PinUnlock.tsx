@@ -4,15 +4,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
+import { useLockAutoSubmit } from '@proton/pass/hooks/auth/useLockAutoSubmit';
+import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
-import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { unlock } from '@proton/pass/store/actions';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {
     offlineEnabled?: boolean;
@@ -21,9 +20,7 @@ type Props = {
 };
 
 export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) => {
-    const online = useConnectivity();
-    const { createNotification } = useNotifications();
-
+    const online = useOnline();
     const [value, setValue] = useState('');
     const [key, rerender] = useRerender('pin-input'); /* Re-render the PIN input with correct input focus */
 
@@ -35,25 +32,11 @@ export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) =
         },
     });
 
+    const onSubmit = (secret: string) => sessionUnlock.dispatch({ mode: LockMode.SESSION, secret });
+
+    useUnlockGuard({ offlineEnabled, onOffline: () => setValue('') });
+    useLockAutoSubmit(value, { onSubmit });
     useEffect(() => onLoading?.(sessionUnlock.loading), [sessionUnlock.loading]);
-
-    useEffect(() => {
-        if (!online) {
-            setValue('');
-
-            if (offlineEnabled === false) {
-                createNotification({
-                    type: 'error',
-                    text: c('Error')
-                        .t`You're currently offline. Please resume connectivity in order to unlock ${PASS_SHORT_APP_NAME}.`,
-                });
-            }
-        }
-    }, [online, offlineEnabled]);
-
-    useSessionLockPinSubmitEffect(value, {
-        onSubmit: (secret) => sessionUnlock.dispatch({ mode: LockMode.SESSION, secret }),
-    });
 
     return (
         <div>
