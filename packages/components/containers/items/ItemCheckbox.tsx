@@ -117,7 +117,7 @@ const ItemCheckbox = ({
                     bgColorRecipient
                 )}
                 style={{
-                    backgroundColor: color ?? '',
+                    backgroundColor: checked ? undefined : color,
                 }}
                 data-testid="element-list:message-checkbox"
                 aria-hidden="true"
