@@ -71,7 +71,7 @@
 		background-color 0.3s ease,
 		border 0.3s ease,
 		border-color 0.3s ease;
-	overflow: hidden; // Prevent text from showing when collapsed
+	overflow: visible; // Allow shortcut to be visible
 
 	// Always maintain input field styling initially
 	background-color: var(--background-weak);
@@ -120,8 +120,12 @@
 
 .search-input-wrapper {
 	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 	opacity: 1;
 	transition: opacity 0.3s ease; // Smooth fade transition
+	min-inline-size: 0; // Allow flex item to shrink
 
 	&.hidden {
 		opacity: 0;
@@ -129,9 +133,23 @@
 	}
 }
 
+.search-shortcut {
+	flex-shrink: 0;
+	margin-inline-start: auto;
+	opacity: 0.6;
+
+	.kbd {
+		font-size: 11px;
+		padding-block: 2px;
+		padding-inline: 4px;
+	}
+}
+
 .sidebar-search-input {
-	inline-size: 100%;
+	flex: 1;
+	min-inline-size: 0;
 	border: none;
+	margin-left: -7px;
 	background: transparent;
 	outline: none;
 	font-size: 14px;
@@ -266,16 +284,55 @@
 
 .sidebar-item-text {
 	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	text-align: start;
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
 	opacity: 1;
 	transition: opacity 0.3s ease;
+	gap: 8px;
+	min-inline-size: 0; // Allow flex item to shrink below content size
+
+	// Text content that can truncate
+	> :first-child {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		flex: 1;
+		min-inline-size: 0;
+	}
 
 	&.hidden {
 		opacity: 0;
 		pointer-events: none;
+	}
+}
+
+.sidebar-item-shortcut {
+	flex-shrink: 0;
+	margin-inline-start: auto;
+	opacity: 0.6;
+	transition: opacity 0.15s ease;
+
+	.kbd {
+		font-size: 11px;
+		padding-block: 2px;
+		padding-inline: 4px;
+	}
+}
+
+// Hide shortcut by default, show on hover for items with showShortcutOnHover class
+.sidebar-item.show-shortcut-on-hover {
+	.sidebar-item-shortcut {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&:hover .sidebar-item-shortcut {
+		opacity: 0.6;
+		pointer-events: auto;
 	}
 }
 
@@ -501,8 +558,8 @@
 		border: none;
 		background: transparent;
 		cursor: pointer;
-		padding: 4px;
-		padding-inline: 6px;
+		padding: 0px;
+		padding-inline: 0px;
 		border-radius: 6px;
 		display: flex;
 		align-items: center;
@@ -510,7 +567,6 @@
 		flex-shrink: 0;
 		min-width: 24px;
 		height: 24px;
-
 	}
 
 	.projects-folder-icon {
@@ -529,7 +585,6 @@
 		border-radius: 6px;
 		text-decoration: none;
 		color: var(--text-norm);
-		font-size: 14px;
 		transition: background-color 0.15s ease;
 		min-height: 32px;
 
@@ -650,7 +705,6 @@
 	// Larger touch targets and spacing for mobile sidebar items
 	.sidebar-item {
 		block-size: 44px;
-		font-size: 16px;
 	}
 }
 
