@@ -5,7 +5,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { getIsB2BAudienceFromSubscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { languageCode } from '@proton/shared/lib/i18n';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import { type FeatureFlagVariant, type FeatureFlagsWithVariant, useFlag, useVariant } from '@proton/unleash';
 
@@ -36,7 +35,7 @@ const shouldDisplayDashboard = (appName: APP_NAMES, dashboardName: FeatureFlagsW
     switch (appName) {
         case APPS.PROTONMAIL:
         case APPS.PROTONCALENDAR:
-            return dashboardName === DASHBOARD_NAMES.MAIL && languageCode === 'en';
+            return dashboardName === DASHBOARD_NAMES.MAIL;
         case APPS.PROTONVPN_SETTINGS:
             return dashboardName === DASHBOARD_NAMES.VPN;
         case APPS.PROTONPASS:
