@@ -168,7 +168,7 @@ import { type CalendarViewEventStore, eventsActions } from '../../store/events/e
 import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import { TEMPORARY_BOOKING_SLOT } from '../bookings/bookingsProvider/interface';
-import { convertSlotToCalendarViewEvents } from '../bookings/utils/bookingHelpers';
+import { convertBookingRangesToCalendarViewEvents } from '../bookings/utils/range/rangeHelpers';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -455,7 +455,7 @@ const InteractiveCalendarView = ({
         setEventTargetAction,
     });
 
-    const { isBookingActive, addBookingRange, bookingRanges, formData, isIntersectingBookingRange } = useBookings();
+    const { isBookingActive, addBookingRange, formData, isIntersectingBookingRange } = useBookings();
 
     // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
@@ -507,12 +507,12 @@ const InteractiveCalendarView = ({
             // We want to use the color of the selected calendar in the form, we fallback to default calendar in case of an issue
             const selectedCalendar = calendars.find((calendar) => calendar.ID === formData.selectedCalendar);
             const calendarData = getVisualCalendar(selectedCalendar || createEventCalendar);
-            const booklyCalendarEvents = convertSlotToCalendarViewEvents(calendarData, bookingRanges);
+            const booklyCalendarEvents = convertBookingRangesToCalendarViewEvents(calendarData, formData.bookingRanges);
             return sortEvents(booklyCalendarEvents.concat(events));
         }
 
         return sortEvents(events.concat());
-    }, [events, isBookingActive, bookingRanges, createEventCalendar, formData.selectedCalendar, calendars]);
+    }, [events, isBookingActive, formData.bookingRanges, createEventCalendar, formData.selectedCalendar, calendars]);
 
     const isProcessing = useCallback(
         (uniqueId: string) => {

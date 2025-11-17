@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { CryptoProxy, type PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import { deriveBookingKeyPassword } from '../../containers/bookings/utils/bookingCryptoUtils';
+import { deriveBookingKeyPassword } from '../../containers/bookings/utils/crypto/bookingEncryption';
 
 /**
  * Parameters required to decrypt booking content

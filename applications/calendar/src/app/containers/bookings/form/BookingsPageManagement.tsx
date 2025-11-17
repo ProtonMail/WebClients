@@ -16,12 +16,20 @@ import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingLocation } from '../bookingsProvider/interface';
-import { getBookingLocationOption, validateFormData } from '../utils/bookingHelpers';
+import { validateFormData } from '../utils/form/formHelpers';
 import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { FormRangeList } from './FormRangeList';
+
+export const getBookingLocationOption = () => {
+    return [
+        { text: MEET_APP_NAME, value: BookingLocation.MEET },
+        { text: c('Location').t`In person`, value: BookingLocation.IN_PERSON },
+    ];
+};
 
 export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
