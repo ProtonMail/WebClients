@@ -153,7 +153,14 @@ const AccountStepPaymentSummary = ({
     const asteriskPosition: 'full-price' | 'final-amount' =
         // If it's custom billing then it means that user already has a subscription and buys an addon for it. That's why we
         // want to show asterisk next to the full price instead of the final amount - because that will be the renewal amount.
-        options.checkResult.SubscriptionMode === SubscriptionMode.CustomBillings ? 'full-price' : 'final-amount';
+        options.checkResult.SubscriptionMode === SubscriptionMode.CustomBillings ||
+        // If user has an active subscription an changes the plan then it will be Proration/Regular subscription mode.
+        // As the result, the Amount Due will be full amount minus proration. In this case, it doesn't make sense to
+        // show the asterisk next to the final amount, because the amount due can be significantly lower then the full
+        // amount thanks to proration.
+        (options.checkResult.SubscriptionMode === SubscriptionMode.Regular && options.checkResult.Proration !== 0)
+            ? 'full-price'
+            : 'final-amount';
 
     const priceBreakdown = (() => {
         const getPrice = (price: number) => {
