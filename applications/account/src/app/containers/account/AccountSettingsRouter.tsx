@@ -66,7 +66,6 @@ import SignInWithAnotherDeviceSettings from '@proton/components/containers/recov
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
-import { recoveryIds } from './recoveryIds';
 import type { getAccountAppRoutes } from './routes';
 
 const AccountSettingsRouter = ({
@@ -191,7 +190,7 @@ const AccountSettingsRouter = ({
             {getIsSectionAvailable(recovery) && (
                 <Route path={getSectionPath(path, recovery)}>
                     <PrivateMainSettingsArea config={recovery}>
-                        <OverviewSection ids={recoveryIds} />
+                        <OverviewSection />
                         <AccountRecoverySection />
                         <DataRecoverySection />
                         <EmergencyAccessSection app={app} />
