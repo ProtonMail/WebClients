@@ -27,12 +27,16 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     const history = useHistory();
     const location = useLocation();
     const isGuest = useIsGuest();
-    const { isCollapsed, toggle } = useSidebar();
+    const { isCollapsed, isVisible, isSmallScreen, toggle } = useSidebar();
     const newProjectModal = useModalStateObject();
 
     // Collapse Projects section when sidebar starts collapsing, expand when sidebar expands
+    // On mobile, expand when sidebar is visible (overlay mode)
     useEffect(() => {
-        if (isCollapsed) {
+        if (isSmallScreen) {
+            // On mobile, expand when sidebar is visible
+            setIsExpanded(isVisible);
+        } else if (isCollapsed) {
             // Collapse Projects section immediately when sidebar starts collapsing
             setIsExpanded(false);
         } else {
@@ -42,7 +46,7 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
             }, 200); // Delay to allow sidebar expansion animation to start
             return () => clearTimeout(timer);
         }
-    }, [isCollapsed]);
+    }, [isCollapsed, isVisible, isSmallScreen]);
 
     // Determine if we're currently viewing a project
     const currentProjectId = useMemo(() => {
@@ -53,16 +57,21 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     // Determine if we're on the projects list page
     const isProjectsPage = location.pathname === '/projects';
 
-    if (isGuest) {
-        return null;
-    }
-
     const handleToggle = (e: React.MouseEvent) => {
         e.stopPropagation();
         setIsExpanded(!isExpanded);
     };
 
     const handleProjectsHeaderClick = () => {
+        if (isGuest) {
+            // For guests, always navigate to projects page
+            if (onItemClick) {
+                onItemClick();
+            }
+            history.push('/projects');
+            return;
+        }
+
         if (isCollapsed) {
             // When collapsed, expand the sidebar
             toggle();
@@ -83,6 +92,15 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
     };
 
     const handleCreateProject = () => {
+        if (isGuest) {
+            // For guests, navigate to projects page which will show sign-in prompt
+            if (onItemClick) {
+                onItemClick();
+            }
+            history.push('/projects');
+            return;
+        }
+
         if (onItemClick) {
             onItemClick();
         }
@@ -106,68 +124,91 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
             ) : (
                 <>
                     {/* Projects Header - Grok-style with visible chevron and create button */}
-                    <div
-                        className={clsx(
-                            'projects-header-container flex items-center gap-1',
-                            isProjectsPage && 'is-active'
-                        )}
-                        onMouseEnter={() => setIsHovered(true)}
-                        onMouseLeave={() => setIsHovered(false)}
-                    >
-                        <div
-                            className={clsx(
-                                'sidebar-item projects-header-button flex-1',
-                                !showText && 'collapsed'
-                            )}
-                        >
+                    {isGuest ? (
+                        // Guest mode: simple button that navigates to projects
+                        <Tooltip title={c('collider_2025:Button').t`Projects`} originalPlacement="right">
                             <button
-                                className="projects-icon-button"
-                                onClick={handleToggle}
-                                aria-label={isExpanded ? c('collider_2025:Button').t`Collapse projects` : c('collider_2025:Button').t`Expand projects`}
-                                aria-expanded={isExpanded}
-                            >
-                                <div className="sidebar-item-icon projects-folder-icon">
-                                    {!isHovered && showText && (
-                                        <Icon name="folder" size={4} className="rtl:mirror projects-folder-icon-default" />
-                                    )}
-
-                                    {isHovered && (
-                                        <Icon
-                                            name={isExpanded ? 'chevron-down' : 'chevron-right'}
-                                            size={4}
-                                            className="projects-chevron-hover"
-                                        />
-                                    )}
-                                </div>
-                            </button>
-                            <button
-                                className="projects-text-button"
+                                className={clsx(
+                                    'sidebar-item projects-header-button flex-1',
+                                    isProjectsPage && 'is-active',
+                                    !showText && 'collapsed'
+                                )}
                                 onClick={handleProjectsHeaderClick}
                                 aria-label={c('collider_2025:Button').t`Projects`}
                             >
+                                <div className="sidebar-item-icon">
+                                    <Icon name="folder" size={4} className="rtl:mirror" />
+                                </div>
                                 <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
                                     {c('collider_2025:Button').t`Projects`}
                                 </span>
                             </button>
-
-                            {showText && (
-                                <button
-                                    className="projects-create-button"
-                                    onClick={handleCreateProject}
-                                    aria-label={c('collider_2025:Button').t`Create project`}
-                                    title={c('collider_2025:Button').t`Create project`}
-                                >
-                                    <Icon name="plus" size={3} />
-                                </button>
+                        </Tooltip>
+                    ) : (
+                        // Authenticated mode: expandable with chevron and create button
+                        <div
+                            className={clsx(
+                                'projects-header-container flex items-center gap-1',
+                                isProjectsPage && 'is-active'
                             )}
-                        </div>
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        >
+                            <div
+                                className={clsx(
+                                    'sidebar-item projects-header-button flex-1',
+                                    !showText && 'collapsed'
+                                )}
+                            >
+                                <button
+                                    className="projects-icon-button"
+                                    onClick={handleToggle}
+                                    aria-label={isExpanded ? c('collider_2025:Button').t`Collapse projects` : c('collider_2025:Button').t`Expand projects`}
+                                    aria-expanded={isExpanded}
+                                >
+                                    <div className="sidebar-item-icon projects-folder-icon">
+                                        {!isHovered && showText && (
+                                            <Icon name="folder" size={4} className="rtl:mirror projects-folder-icon-default" />
+                                        )}
 
-                    </div>
+                                        {isHovered && (
+                                            <Icon
+                                                name={isExpanded ? 'chevron-down' : 'chevron-right'}
+                                                size={4}
+                                                className="projects-chevron-hover"
+                                            />
+                                        )}
+                                    </div>
+                                </button>
+                                <button
+                                    className="projects-text-button"
+                                    onClick={handleProjectsHeaderClick}
+                                    aria-label={c('collider_2025:Button').t`Projects`}
+                                >
+                                    <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
+                                        {c('collider_2025:Button').t`Projects`}
+                                    </span>
+                                </button>
+
+                                {showText && (
+                                    <button
+                                        className="projects-create-button"
+                                        onClick={handleCreateProject}
+                                        aria-label={c('collider_2025:Button').t`Create project`}
+                                        title={c('collider_2025:Button').t`Create project`}
+                                    >
+                                        <Icon name="plus" size={3} />
+                                    </button>
+                                )}
+                            </div>
+
+                        </div>
+                    )}
                 </>
             )}
 
-            {/* Projects List - shown when expanded */}
-            {isExpanded && showText && projects.length > 0 && (
+            {/* Projects List - shown when expanded (only for authenticated users) */}
+            {!isGuest && isExpanded && showText && projects.length > 0 && (
                 <div className="projects-list">
                     {projects.slice(0, 5).map((project) => {
                         const category = getProjectCategory(project.icon);
@@ -232,8 +273,8 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
                 </div>
             )}
 
-            {/* Empty state when expanded */}
-            {isExpanded && showText && projects.length === 0 && (
+            {/* Empty state when expanded (only for authenticated users) */}
+            {!isGuest && isExpanded && showText && projects.length === 0 && (
                 <div className="projects-empty px-3 py-2 text-sm color-weak">
                     {c('collider_2025:Info').t`No projects yet`}
                 </div>
