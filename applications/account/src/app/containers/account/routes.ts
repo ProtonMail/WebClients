@@ -48,6 +48,120 @@ import type {
 
 import { recoveryIds } from './recoveryIds';
 
+function getV2DashboardSections(canPay: boolean, planIsManagedExternally: boolean) {
+    return [
+        {
+            text: c('Title').t`Your plan`,
+            invisibleTitle: true,
+            id: 'YourPlan',
+        },
+        {
+            text: c('Title').t`Compare plans`,
+            invisibleTitle: true,
+            id: 'YourPlanUpsell',
+            available: canPay && !planIsManagedExternally,
+        },
+        {
+            text: c('Title').t`Downloads`,
+            invisibleTitle: true,
+            id: 'DownloadAndInfo',
+        },
+        {
+            text: c('Title').t`Also in your plan`,
+            invisibleTitle: true,
+            id: 'AlsoInYourPlan',
+        },
+        {
+            text: c('Title').t`Deep dive into email blog posts`,
+            invisibleTitle: true,
+            id: 'Blog',
+        },
+    ];
+}
+
+function getV1DashboardSections(
+    hasSplitStorage: boolean,
+    showStorageSection: boolean,
+    canPay: boolean,
+    assistantKillSwitch: boolean,
+    isPaid: boolean,
+    isB2BTrial: boolean,
+    isMember: boolean,
+    cancellablePlan: boolean,
+    subscription: Subscription | undefined,
+    cancellableOnlyViaSupport: boolean,
+    hasExternalMemberCapableB2BPlan: boolean
+) {
+    return [
+        // do not show Your Plan section for Pass users
+        {
+            text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
+            id: 'your-storage',
+            available: hasSplitStorage && showStorageSection,
+        },
+        {
+            text: hasSplitStorage && showStorageSection ? c('Title').t`Your plan` : undefined,
+            id: 'your-plan',
+            available: canPay,
+        },
+        {
+            id: 'assistant-toggle',
+            available: !assistantKillSwitch,
+        },
+        {
+            text: c('Title').t`Your subscriptions`,
+            id: 'your-subscriptions',
+            available: isPaid && canPay,
+        },
+        {
+            text: c('Title').t`Payment methods`,
+            id: 'payment-methods',
+            available: canPay,
+        },
+        {
+            text: c('Title').t`Credits`,
+            id: 'credits',
+            available: canPay,
+        },
+        {
+            text: c('Title').t`Gift code`,
+            id: 'gift-code',
+            available: canPay,
+        },
+        {
+            text: c('Title').t`Invoices`,
+            id: 'invoices',
+            available: canPay && !isB2BTrial,
+        },
+        {
+            text: c('Title').t`Notifications`,
+            id: 'email-subscription',
+            available: !isMember,
+        },
+        {
+            text: c('Title').t`Cancel subscription`,
+            id: 'cancel-subscription',
+            available:
+                isPaid &&
+                canPay &&
+                cancellablePlan &&
+                subscription?.Renew === Renew.Enabled &&
+                !cancellableOnlyViaSupport,
+        },
+        {
+            text: c('Title').t`Cancel subscription`,
+            id: 'cancel-via-support',
+            available: isPaid && canPay && cancellableOnlyViaSupport,
+        },
+        {
+            text: c('Title').t`Cancel subscription`,
+            id: 'downgrade-account',
+            available:
+                isPaid && canPay && !cancellablePlan && !hasExternalMemberCapableB2BPlan && !cancellableOnlyViaSupport,
+        },
+    ];
+}
+
 export const getAccountAppRoutes = ({
     app,
     user,
@@ -203,41 +317,28 @@ export const getAccountAppRoutes = ({
                     },
                 ],
             },
-            dashboardV2: {
-                id: 'dashboardV2',
-                text: c('Title').t`Home`,
-                noTitle: true,
-                to: '/dashboardV2',
-                icon: 'house',
-                available: app !== APPS.PROTONVPN_SETTINGS && shouldShowV2Dashboard && shouldShowDashboard,
-                subsections: [
-                    {
-                        text: c('Title').t`Your plan`,
-                        invisibleTitle: true,
-                        id: 'YourPlan',
-                    },
-                    {
-                        text: c('Title').t`Compare plans`,
-                        invisibleTitle: true,
-                        id: 'YourPlanUpsell',
-                        available: canPay && !planIsManagedExternally,
-                    },
-                    {
-                        text: c('Title').t`Downloads`,
-                        invisibleTitle: true,
-                        id: 'DownloadAndInfo',
-                    },
-                    {
-                        text: c('Title').t`Also in your plan`,
-                        invisibleTitle: true,
-                        id: 'AlsoInYourPlan',
-                    },
-                    {
-                        text: c('Title').t`Deep dive into email blog posts`,
-                        invisibleTitle: true,
-                        id: 'Blog',
-                    },
-                ],
+            dashboard: {
+                text: shouldShowV2Dashboard ? c('Title').t`Home` : c('Title').t`Dashboard`,
+                noTitle: shouldShowV2Dashboard,
+                icon: shouldShowV2Dashboard ? 'house' : 'squares-in-square',
+                available: app !== APPS.PROTONVPN_SETTINGS && shouldShowDashboard,
+                id: shouldShowV2Dashboard ? 'dashboardV2' : 'dashboard',
+                to: '/dashboard',
+                subsections: shouldShowV2Dashboard
+                    ? getV2DashboardSections(canPay, planIsManagedExternally)
+                    : getV1DashboardSections(
+                          hasSplitStorage,
+                          showStorageSection,
+                          canPay,
+                          assistantKillSwitch,
+                          isPaid,
+                          isB2BTrial,
+                          isMember,
+                          cancellablePlan,
+                          subscription,
+                          cancellableOnlyViaSupport,
+                          hasExternalMemberCapableB2BPlan
+                      ),
             },
             subscription: {
                 id: 'subscription',
@@ -320,85 +421,6 @@ export const getAccountAppRoutes = ({
                             !hasExternalMemberCapableB2BPlan &&
                             !cancellableOnlyViaSupport,
                         variant: 'card',
-                    },
-                ],
-            },
-            dashboard: {
-                id: 'dashboard',
-                text: c('Title').t`Dashboard`,
-                to: '/dashboard',
-                icon: 'squares-in-square',
-                available: !shouldShowV2Dashboard && shouldShowDashboard,
-                subsections: [
-                    // do not show Your Plan section for Pass users
-                    {
-                        text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
-                        id: 'your-storage',
-                        available: hasSplitStorage && showStorageSection,
-                    },
-                    {
-                        text: hasSplitStorage && showStorageSection ? c('Title').t`Your plan` : undefined,
-                        id: 'your-plan',
-                        available: canPay,
-                    },
-                    {
-                        id: 'assistant-toggle',
-                        available: !assistantKillSwitch,
-                    },
-                    {
-                        text: c('Title').t`Your subscriptions`,
-                        id: 'your-subscriptions',
-                        available: isPaid && canPay,
-                    },
-                    {
-                        text: c('Title').t`Payment methods`,
-                        id: 'payment-methods',
-                        available: canPay,
-                    },
-                    {
-                        text: c('Title').t`Credits`,
-                        id: 'credits',
-                        available: canPay,
-                    },
-                    {
-                        text: c('Title').t`Gift code`,
-                        id: 'gift-code',
-                        available: canPay,
-                    },
-                    {
-                        text: c('Title').t`Invoices`,
-                        id: 'invoices',
-                        available: canPay && !isB2BTrial,
-                    },
-                    {
-                        text: c('Title').t`Notifications`,
-                        id: 'email-subscription',
-                        available: !isMember,
-                    },
-                    {
-                        text: c('Title').t`Cancel subscription`,
-                        id: 'cancel-subscription',
-                        available:
-                            isPaid &&
-                            canPay &&
-                            cancellablePlan &&
-                            subscription?.Renew === Renew.Enabled &&
-                            !cancellableOnlyViaSupport,
-                    },
-                    {
-                        text: c('Title').t`Cancel subscription`,
-                        id: 'cancel-via-support',
-                        available: isPaid && canPay && cancellableOnlyViaSupport,
-                    },
-                    {
-                        text: c('Title').t`Cancel subscription`,
-                        id: 'downgrade-account',
-                        available:
-                            isPaid &&
-                            canPay &&
-                            !cancellablePlan &&
-                            !hasExternalMemberCapableB2BPlan &&
-                            !cancellableOnlyViaSupport,
                     },
                 ],
             },
