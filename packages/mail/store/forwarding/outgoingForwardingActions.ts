@@ -2,9 +2,11 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { addressKeysThunk } from '@proton/account/addressKeys';
 import { setAddressFlags } from '@proton/account/addressKeys/actions';
+import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { type AddressesState, addressesThunk } from '@proton/account/addresses';
 import type { KtState } from '@proton/account/kt';
 import type { OrganizationKeyState } from '@proton/account/organizationKey';
+import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
 import type { UserKeysState } from '@proton/account/userKeys';
 import type { PrivateKeyReferenceV4, PublicKeyReference } from '@proton/crypto';
 import {
@@ -25,11 +27,7 @@ import {
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAddressFlagsData } from '@proton/shared/lib/helpers/address';
 import { type Address, ForwardingType, type OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
-import {
-    type PrimaryAddressKeyForEncryption,
-    getActiveAddressKeys,
-    getPrimaryActiveAddressKeyForEncryption,
-} from '@proton/shared/lib/keys';
+import { getActiveAddressKeys, getPrimaryActiveAddressKeyForEncryption } from '@proton/shared/lib/keys';
 import { getInternalParametersPrivate } from '@proton/shared/lib/keys/forward/forward';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
@@ -76,16 +74,30 @@ export const resendForwardingInvitation = ({
 };
 
 export const requestConfirmation = ({
-    encryptionKey,
     forward,
-    forwardeePrimaryPublicKey,
 }: {
-    encryptionKey: PrimaryAddressKeyForEncryption;
-    forwardeePrimaryPublicKey: PublicKeyReference;
     forward: OutgoingAddressForwarding;
 }): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
+
+        const [forwarderAddressKeysByUsage, forwardeePublicKeys] = await Promise.all([
+            dispatch(
+                getAddressKeysByUsageThunk({
+                    AddressID: forward.ForwarderAddressID,
+                    // a primary v4 is expected here, but as sanity check
+                    // we want the v6 key to be returned is present, so that
+                    // the forwarding key generation will fail already client-side,
+                    // instead of on the BE
+                    withV6SupportForEncryption: true,
+                    withV6SupportForSigning: false, // irrelevant: signing keys are not used
+                })
+            ),
+            dispatch(getPublicKeysForInboxThunk({ email: forward.ForwardeeEmail, lifetime: 0 })),
+        ]);
+        const forwardeePrimaryPublicKey = forwardeePublicKeys.publicKeys[0].publicKey;
+        const encryptionKey = forwarderAddressKeysByUsage.encryptionKey;
+
         const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
             encryptionKey,
             [

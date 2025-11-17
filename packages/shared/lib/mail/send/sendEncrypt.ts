@@ -1,7 +1,7 @@
 /**
  * Currently this is basically a copy of sendEncrypt from the mail repo. TO BE IMPROVED
  */
-import type { AddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
+import type { AddressKeysByUsage } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';

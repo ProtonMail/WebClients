@@ -195,7 +195,6 @@ jest.mock('@proton/account/welcomeFlags/index', () => ({
     __esModule: true,
     useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
 }));
-jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
