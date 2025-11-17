@@ -1,8 +1,10 @@
 import { setLumoSettings } from '../../providers/lumoThemeStorage';
 import { matchDarkTheme, userSettingsToLocalSettings } from '../../providers/lumoThemeUtils';
+import { safeLogger } from '../../util/safeLogger';
 import { loadUserSettingsFromStorage, saveUserSettingsToStorage } from '../../util/userSettingsStorage';
 import { selectMasterKey } from '../selectors';
 import { addMasterKey } from '../slices/core/credentials';
+import { updateFeatureFlags } from '../slices/featureFlags';
 import {
     loadLumoUserSettingsFromRemote,
     resetLumoUserSettings,
@@ -13,7 +15,6 @@ import {
 } from '../slices/lumoUserSettings';
 import { updatePersonalizationSettings } from '../slices/personalization';
 import type { AppStartListening } from '../store';
-import { safeLogger } from '../../util/safeLogger';
 
 /**
  * Start Lumo user settings-related listeners
@@ -175,6 +176,20 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
                     lumoUserSettingsKeys: lumoUserSettings ? Object.keys(lumoUserSettings) : 'no lumoUserSettings',
                 });
             }
+
+            if (lumoUserSettings && lumoUserSettings.featureFlags) {
+                console.log(
+                    'LumoUserSettingsListener: Syncing featureFlags from remote',
+                    lumoUserSettings.featureFlags
+                );
+                listenerApi.dispatch(updateFeatureFlags(lumoUserSettings.featureFlags));
+            } else {
+                console.log('LumoUserSettingsListener: No featureFlags data found in Lumo user settings:', {
+                    hasLumoUserSettings: !!lumoUserSettings,
+                    hasFeatureFlags: !!(lumoUserSettings && lumoUserSettings.featureFlags),
+                    lumoUserSettingsKeys: lumoUserSettings ? Object.keys(lumoUserSettings) : 'no lumoUserSettings',
+                });
+            }
         },
     });
 
@@ -195,6 +210,20 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
                 console.log('LumoUserSettingsListener: No personalization data found in setLumoUserSettings:', {
                     hasLumoUserSettings: !!lumoUserSettings,
                     hasPersonalization: !!(lumoUserSettings && lumoUserSettings.personalization),
+                    lumoUserSettingsKeys: lumoUserSettings ? Object.keys(lumoUserSettings) : 'no lumoUserSettings',
+                });
+            }
+
+            if (lumoUserSettings && lumoUserSettings.featureFlags) {
+                console.log(
+                    'LumoUserSettingsListener: Syncing featureFlags from localStorage',
+                    lumoUserSettings.featureFlags
+                );
+                listenerApi.dispatch(updateFeatureFlags(lumoUserSettings.featureFlags));
+            } else {
+                console.log('LumoUserSettingsListener: No featureFlags data found in setLumoUserSettings:', {
+                    hasLumoUserSettings: !!lumoUserSettings,
+                    hasFeatureFlags: !!(lumoUserSettings && lumoUserSettings.featureFlags),
                     lumoUserSettingsKeys: lumoUserSettings ? Object.keys(lumoUserSettings) : 'no lumoUserSettings',
                 });
             }

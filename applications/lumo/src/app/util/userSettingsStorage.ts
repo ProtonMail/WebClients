@@ -1,7 +1,7 @@
 import { base64ToMasterKey } from '../crypto';
-import { safeLogger } from './safeLogger';
 import type { LumoUserSettings } from '../redux/slices/lumoUserSettings';
 import { deserializeUserSettings, serializeUserSettings } from '../serialization';
+import { safeLogger } from './safeLogger';
 
 const STORAGE_KEY_PREFIX = 'lumo-user-settings-encrypted';
 
@@ -36,14 +36,16 @@ export async function saveUserSettingsToStorage(
     try {
         // Convert master key to crypto key
         const masterKey = await base64ToMasterKey(masterKeyBase64);
-        
+
         // Serialize and encrypt using the existing system
         const userSettingsToApi = await serializeUserSettings(userSettings, masterKey);
-        
+
         // Store the encrypted data in localStorage with user-specific key
+        console.log('debug: saving user settings to storage', userSettingsToApi);
         const storageKey = getUserSettingsStorageKey();
+        console.log('debug: storage key', storageKey);
         localStorage.setItem(storageKey, userSettingsToApi.Encrypted);
-        
+
         console.log('User settings saved to encrypted localStorage');
     } catch (error) {
         safeLogger.error('Failed to save user settings to storage:', error);
@@ -60,10 +62,10 @@ export async function loadUserSettingsFromStorage(masterKeyBase64: string): Prom
         if (!encryptedData) {
             return null;
         }
-        
+
         // Convert master key to crypto key
         const masterKey = await base64ToMasterKey(masterKeyBase64);
-        
+
         // Create a serialized user settings object
         const serializedUserSettings = {
             userSettingsTag: 'user-settings-v1',
@@ -71,14 +73,14 @@ export async function loadUserSettingsFromStorage(masterKeyBase64: string): Prom
             createTime: new Date().toISOString(),
             updateTime: new Date().toISOString(),
         };
-        
+
         // Deserialize using the existing system
         const userSettings = await deserializeUserSettings(serializedUserSettings, masterKey);
-        
+
         if (userSettings) {
             console.log('User settings loaded from encrypted localStorage');
         }
-        
+
         return userSettings;
     } catch (error) {
         safeLogger.warn('Failed to load user settings from storage:', error);
@@ -93,4 +95,3 @@ export function clearUserSettingsFromStorage(): void {
     const storageKey = getUserSettingsStorageKey();
     localStorage.removeItem(storageKey);
 }
-

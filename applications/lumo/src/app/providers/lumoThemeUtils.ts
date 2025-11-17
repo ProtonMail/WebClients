@@ -1,6 +1,7 @@
 import { ThemeModeSetting, ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import type { LumoLocalSettings } from './lumoThemeStorage';
+import { getDefaultSettings } from './lumoThemeStorage';
 
 // @ts-ignore
 import lumoDarkTheme from '@proton/colors/themes/dist/lumo-dark.theme.css';
@@ -42,7 +43,7 @@ export const userSettingsToLocalSettings = (
     systemIsDark: boolean
 ): LumoLocalSettings => {
     if (!userSettings?.theme) {
-        return { theme: ThemeTypes.LumoLight, mode: ThemeModeSetting.Light };
+        return getDefaultSettings();
     }
 
     switch (userSettings.theme) {

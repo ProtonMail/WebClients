@@ -1,49 +1,90 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, useModalStateObject } from '@proton/components';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoWhatsNewMobile from '@proton/styles/assets/img/lumo/lumo-whats-new-mobile.svg';
-import lumoWhatsNew from '@proton/styles/assets/img/lumo/lumo-whats-new.svg';
+import { useModalStateObject } from '@proton/components';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
-import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
-import { useWhatsNewFeatureFlag } from '../../../hooks/useWhatsNewFeatureFlag';
-import { useOnboardingContext } from '../../../providers/OnboardingProvider';
+import whatsNewDarkMode from '../../../components/Animations/whats-new-dark-mode.json';
+import whatsNewPersonalization from '../../../components/Animations/whats-new-personalization.json';
+import { useStaggeredWhatsNewFeatures } from '../../../hooks/useStaggeredWhatsNewFeatures';
+import { useLumoTheme } from '../../../providers/LumoThemeProvider';
+import { useLumoSelector } from '../../../redux/hooks';
+import { selectHasModifiedPersonalization } from '../../../redux/slices/personalization';
 import SettingsModal from '../SettingsModal/SettingsModal';
+import WhatsNewModal from './WhatsNewModal';
 
 import './WhatsNew.scss';
 
 const WHATS_NEW_FEATURE_FLAG = 'WhatsNewV1p2' as const;
-const WHATS_NEW_VERSION = '1.2';
+
+export type WhatsNewFeature = {
+    id: string;
+    versionFlag: string;
+    image: any;
+    getTitle: () => string;
+    getDescription: () => string;
+    settingsPanelToOpen?: string;
+    canShow: boolean;
+};
 
 const WhatsNew = () => {
     const isFeatureEnabled = useFlag(WHATS_NEW_FEATURE_FLAG);
+    const hasModifiedPersonalization = useLumoSelector((state) => selectHasModifiedPersonalization(state));
+    const { isDarkLumoTheme, isAutoMode } = useLumoTheme();
 
-    const { isOnboardingCompleted } = useOnboardingContext();
-    const { isSmallScreen } = useIsLumoSmallScreen();
-    const { shouldShow, markAsSeen } = useWhatsNewFeatureFlag(
-        WHATS_NEW_FEATURE_FLAG,
-        isFeatureEnabled && isOnboardingCompleted === true
+    const features: WhatsNewFeature[] = useMemo(
+        () => [
+            {
+                id: 'darkMode',
+                versionFlag: 'WhatsNewV1p2',
+                image: whatsNewDarkMode,
+                getTitle: () => c('collider_2025:Title').t`Dark mode is here`,
+                getDescription: () =>
+                    c('collider_2025:Title')
+                        .t`Dark mode has been one of our community’s most highly anticipated updates for ${LUMO_SHORT_APP_NAME}. Throughout the ${BRAND_NAME} ecosystem, you can customize the look of all of your apps, and now you can customize ${LUMO_SHORT_APP_NAME}, too, with a light or dark theme.`,
+                settingsPanelToOpen: 'general',
+                canShow: !isDarkLumoTheme && !isAutoMode,
+            },
+            {
+                id: 'personalization',
+                versionFlag: 'WhatsNewV1p2',
+                image: whatsNewPersonalization,
+                getTitle: () => c('collider_2025:Title').t`Personalization: ${LUMO_SHORT_APP_NAME} for you`,
+                getDescription: () =>
+                    c('collider_2025:Title')
+                        .t`Personalization lets you tailor how ${LUMO_SHORT_APP_NAME} interacts with you. Tell ${LUMO_SHORT_APP_NAME} your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.`,
+                settingsPanelToOpen: 'personalization',
+                canShow: !hasModifiedPersonalization,
+            },
+        ],
+        [hasModifiedPersonalization, isDarkLumoTheme, isAutoMode]
     );
+
+    const { currentFeature, dismissFeature } = useStaggeredWhatsNewFeatures(features, isFeatureEnabled);
     const timerRef = useRef<number>();
 
     const handleClose = () => {
-        markAsSeen();
+        if (currentFeature) {
+            dismissFeature(currentFeature.id, currentFeature.versionFlag);
+        }
     };
 
     const handleOpenSettingsModal = () => {
         settingsModalProps.openModal(true);
     };
 
+    const handleCloseSettingsModal = () => {
+        whatsNewModalProps.openModal(false);
+        handleClose();
+    };
+
     const whatsNewModalProps = useModalStateObject({ onClose: handleClose });
-    const settingsModalProps = useModalStateObject({ onClose: handleClose });
+    const settingsModalProps = useModalStateObject({ onClose: handleCloseSettingsModal });
 
     useEffect(() => {
-        if (shouldShow && isSmallScreen) {
+        if (currentFeature) {
             timerRef.current = window.setTimeout(() => {
                 whatsNewModalProps.openModal(true);
             }, 1500);
@@ -54,65 +95,26 @@ const WhatsNew = () => {
                 clearTimeout(timerRef.current);
             }
         };
-    }, [shouldShow, isSmallScreen]);
+    }, [currentFeature]);
 
-    const openSettingsModalButton = (
-        <InlineLinkButton onClick={handleOpenSettingsModal} key="eslint-autofix-AF30E9">{c('collider_2025: Action')
-            .t`settings`}</InlineLinkButton>
-    );
-
-    if (!shouldShow) {
+    if (!currentFeature) {
         return null;
-    }
-
-    if (isSmallScreen) {
-        return (
-            <>
-                <ModalTwo className="whats-new-modal" enableCloseWhenClickOutside {...whatsNewModalProps.modalProps}>
-                    <ModalTwoContent>
-                        <div className="flex flex-column flex-nowrap gap-4">
-                            <h2 className="text-semibold color-primary text-center mt-2">{c('collider_2025:Title')
-                                .t`What's new`}</h2>
-                            <img src={lumoWhatsNewMobile} alt="" className="shrink-0" />
-                            <div className="flex flex-column flex-nowrap gap-2 items-center mt-2">
-                                <p className="m-0 color-weak text-lg text-center px-4">{c('collider_2025:Title')
-                                    .t`Introducing ${LUMO_SHORT_APP_NAME} ${WHATS_NEW_VERSION} with support for dark mode and new options to personalize your conversations.`}</p>
-                            </div>
-                        </div>
-                    </ModalTwoContent>
-                    <ModalTwoFooter>
-                        <Button size="large" color="norm" className="w-full" onClick={handleOpenSettingsModal}>{c(
-                            'collider_2025: Button'
-                        ).t`Try it now`}</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-                {settingsModalProps.render && (
-                    <SettingsModal initialPanel="general" {...settingsModalProps.modalProps} />
-                )}
-            </>
-        );
     }
 
     return (
         <>
-            {settingsModalProps.render && <SettingsModal initialPanel="general" {...settingsModalProps.modalProps} />}
-            <div className="whats-new-section hidden md:flex flex-column flex-nowrap mt-6 bg-norm p-4 pb-6 mx-8">
-                <div className="w-full flex">
-                    <span className="text-semibold">{c('collider_2025:Title').t`What's new`}</span>
-                    <Button size="small" icon shape="ghost" onClick={handleClose} className="ml-auto">
-                        <Icon name="cross" size={5} alt={c('collider_2025: Action').t`Dismiss`} />
-                    </Button>
-                </div>
-                <div className="flex flex-row flex-nowrap gap-6 mx-4 p-2 pt-0">
-                    <img src={lumoWhatsNew} alt="" className="shrink-0" />
-                    <div className="flex flex-column flex-nowrap gap-2">
-                        <h2 className="text-rg text-semibold">{c('collider_2025:Title')
-                            .t`Dark mode and conversation personalization`}</h2>
-                        <p className="m-0 color-weak">{c('collider_2025:Title')
-                            .jt`Introducing ${LUMO_SHORT_APP_NAME} ${WHATS_NEW_VERSION} with support for dark mode and new options to personalize your conversations. Try it out in ${openSettingsModalButton}.`}</p>
-                    </div>
-                </div>
-            </div>
+            {whatsNewModalProps.render && (
+                <WhatsNewModal
+                    key={currentFeature.id}
+                    feature={currentFeature}
+                    onCallToAction={handleOpenSettingsModal}
+                    onCancel={whatsNewModalProps.modalProps.onClose}
+                    {...whatsNewModalProps.modalProps}
+                />
+            )}
+            {settingsModalProps.render && (
+                <SettingsModal initialPanel={currentFeature.settingsPanelToOpen} {...settingsModalProps.modalProps} />
+            )}
         </>
     );
 };

@@ -1,5 +1,7 @@
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 
+import type { FeatureFlag } from '../redux/slices/featureFlags';
+
 const WHATS_NEW_KEY = 'lumo-whats-new';
 
 const getStorageKey = (): string => {
@@ -7,7 +9,7 @@ const getStorageKey = (): string => {
     return localID !== undefined ? `${WHATS_NEW_KEY}:${localID}` : WHATS_NEW_KEY;
 };
 
-export const getSeenFeatureFlags = (): string[] => {
+export const getSeenFeatureFlags = (): FeatureFlag[] => {
     try {
         const stored = localStorage.getItem(getStorageKey());
         if (stored) {
@@ -20,16 +22,22 @@ export const getSeenFeatureFlags = (): string[] => {
     return [];
 };
 
-export const hasSeenFeatureFlag = (flagName: string): boolean => {
+export const hasSeenFeatureFlag = (id: string, versionId: string): boolean => {
     const seenFlags = getSeenFeatureFlags();
-    return seenFlags.includes(flagName);
+    return seenFlags.some((flag) => flag.id === id && flag.versionId === versionId);
 };
 
-export const markFeatureFlagAsSeen = (flagName: string): void => {
+export const markFeatureFlagAsSeen = (id: string, versionId: string): void => {
     try {
         const seenFlags = getSeenFeatureFlags();
-        if (!seenFlags.includes(flagName)) {
-            seenFlags.push(flagName);
+        const existingFlag = seenFlags.find((flag) => flag.id === id && flag.versionId === versionId);
+
+        if (!existingFlag) {
+            seenFlags.push({
+                id,
+                versionId,
+                dismissedAt: Date.now(),
+            });
             localStorage.setItem(getStorageKey(), JSON.stringify(seenFlags));
         }
     } catch {
