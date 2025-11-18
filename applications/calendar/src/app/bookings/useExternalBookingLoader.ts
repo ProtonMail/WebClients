@@ -3,7 +3,8 @@ import { useLocation } from 'react-router';
 import { isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components';
+import { useUser } from '@proton/account/user/hooks';
+import { useApi, useGetVerificationPreferences } from '@proton/components';
 import { queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { base64URLStringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
@@ -17,6 +18,9 @@ export const useExternalBookingLoader = () => {
     const api = useApi();
     const location = useLocation();
     const bookingSecretBase64Url = location.hash.substring(1);
+
+    const [user] = useUser();
+    const getVerificationPreferences = useGetVerificationPreferences();
 
     const setLoading = useBookingStore((state) => state.setLoading);
     const setBookingDetails = useBookingStore((state) => state.setBookingDetails);
@@ -77,12 +81,20 @@ export const useExternalBookingLoader = () => {
                 throw new Error(c('Error').t`No booking page data received`);
             }
 
+            let verifyingKeys = undefined;
+
+            if (user) {
+                const verificationPreferences = await getVerificationPreferences({ email: user.Email, lifetime: 0 });
+                verifyingKeys = verificationPreferences.verifyingKeys;
+            }
+
             const { summary, description, location, withProtonMeetLink } = await decryptBookingContent({
                 encryptedContent: bookingPageData.EncryptedContent,
                 bookingSecretBytes,
                 bookingKeySalt: bookingPageData.BookingKeySalt,
                 calendarId: bookingPageData.CalendarID,
                 bookingUid: bookingPageData.BookingUID,
+                verificationKeys: verifyingKeys,
             });
 
             setBookingDetails({

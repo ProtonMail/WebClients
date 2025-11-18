@@ -15,7 +15,7 @@ import noop from '@proton/utils/noop';
 
 import config from '../../../config';
 import locales from '../../../locales';
-import { setupStore } from '../../../store/bookingsStore';
+import { setupGuestBookingStore } from '../../../store/bookingsStore';
 import { extendStore } from '../../../store/store';
 import type { BookingGuestBootstrapResult } from '../interface';
 
@@ -54,7 +54,7 @@ export const bookingGuestBootstrap = async (): Promise<BookingGuestBootstrapResu
     await loadCrypto({ appName: config.APP_NAME, unleashClient });
 
     return {
-        store: setupStore(),
+        store: setupGuestBookingStore(),
         unauthenticatedApi,
     };
 };
