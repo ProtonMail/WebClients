@@ -2207,20 +2207,47 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "Политика отсутствия журналов активности ${ VPN_APP_NAME } подтверждена внешней проверкой"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Автоудаление**, **откладывание** и **планирование отправки писем** включены в вашу подписку."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Просмотр трансляций** включен в вашу подписку."
+      ],
+      "11 tips to stop spam emails": [
+        "11 советов, как остановить спам"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "Автоматизируйте повторяющиеся действия для сортировки и организации входящих электронных писем."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Может ли кто-то увидеть историю моих действий в Интернете, если мы используем один и тот же WiFi?"
       ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "Ознакомьтесь с нашими советами по эффективному управлению почтовым ящиком, чтобы оставаться продуктивными и сосредоточенными."
+      ],
+      "Easily manage your inbox": [
+        "Управляйте своим почтовым ящиком с лёгкостью"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Включите kill switch и автоматическое подключение в настройках VPN."
+      ],
+      "Get a clean inbox with filters": [
+        "Поддерживайте чистоту в почтовом ящике с помощью фильтров"
       ],
       "Get round-the-clock protection": [
         "Получите круглосуточную защиту"
       ],
       "How safe is Telegram?": [
         "Насколько безопасен Telegram?"
+      ],
+      "How to get a custom email domain": [
+        "Как получить пользовательский домен электронной почты"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "Как достичь «Inbox Zero»: советы по организации почтового ящика с упором на конфиденциальность"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "Если вы хотите повысить свой профессиональный статус, важно узнать, зачем и как создавать пользовательский домен электронной почты. Большинство людей используют бесплатные адреса электронной почты с доменами по умолчанию, предоставляемыми их почтовой службой."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "В этой статье мы рассмотрим, кто может видеть историю ваших действий в Интернете при использовании WiFi, что они могут видеть и почему они могут это делать."
@@ -2234,8 +2261,14 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Безопасен ли Telegram в использовании? Как мы расскажем в этой статье, это во многом зависит от того, как вы его используете."
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "Узнайте, как бороться с назойливой и потенциально вредной нежелательной почтой. Спам-письма, также известные как нежелательная почта, могут быть не просто раздражающим беспорядком в вашем почтовом ящике. Киберпреступники могут использовать эти непрошеные и нежелательные сообщения для проведения фишинговых атак и распространения вредоносных программ."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Узнайте, как включить ${ VPN_APP_NAME } на вашем маршрутизаторе."
+      ],
+      "Protect your business communications": [
+        "Защитите свои деловые коммуникации"
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Защитите свою компанию от утечки данных и сделайте удаленную работу более защищенной с помощью корпоративной VPN."
@@ -2243,11 +2276,26 @@
       "Protect your whole household with 1 device": [
         "Защитите всю семью с помощью 1 устройства"
       ],
+      "See and manage all your email subscriptions": [
+        "Просматривайте все свои подписки на рассылки и управляйте ими"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Просматривайте трансляции со всех основных платформ с ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "В среднем специалист получает около 120 электронных писем в день, что составляет примерно 43 800 электронных писем в год. Вне зависимости от сферы вашей деятельности, это огромное количество деловой переписки, с которым приходится иметь дело."
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "Последствия утечки данных для вашей жизни во многом зависят от типа раскрытой информации и того, кому она стала известна. Быстрая реакция на утечку данных часто помогает защитить ваши цифровые личные данные и предотвратить любые потери."
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "Самый конфиденциальный и безопасный способ общения в сети — это использование сквозного шифрования. Если вы отправляете электронное письмо, зашифрованное сквозным методом, оно шифруется на вашем устройстве (iPhone, Android или ноутбуке) и расшифровывается только на устройстве получателя."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Эта статья была обновлена и дополнена протоколами WireGuard и Stealth VPN."
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "Попробуйте **режим просмотра рассылок**, чтобы навести порядок в почтовом ящике."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator использует комбинацию передовых технологий VPN для повышения стабильности стабильности подключения и увеличения его скорости"
@@ -2255,11 +2303,26 @@
       "Watch your favorite movies and TV shows": [
         "Смотрите свои любимые фильмы и телепрограммы"
       ],
+      "What is an email alias?": [
+        "Что такое псевдоним электронной почты?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Что такое сквозное шифрование и как оно работает?"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "Что делать в случае утечки ваших данных"
+      ],
       "Which VPN protocol is the best?": [
         "Какой протокол VPN лучший?"
       ],
       "Working with sensitive data?": [
         "Работаете с конфиденциальными данными?"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "Работаете с конфиденциальными данными? Используйте ${ MAIL_APP_NAME } для защиты своих коммуникаций и укрепления доверия клиентов."
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "Ваш личный адрес электронной почты — это неотъемлемая часть вашей цифровой личности. Как и номер телефона, вы не даёте его всем подряд. Поэтому полезно иметь другие адреса электронной почты, которые можно использовать для разных целей."
       ]
     },
     "breadcrumb": {
@@ -4349,6 +4412,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4360,6 +4429,9 @@
       ],
       "Browser": [
         "Браузер"
+      ],
+      "Calendar": [
+        "Календарь"
       ],
       "Chrome": [
         "Chrome"
@@ -4376,6 +4448,9 @@
       "Download for Windows": [
         "Скачать для Windows"
       ],
+      "Download on Snap store": [
+        "Скачать в Snap Store"
+      ],
       "Download on the Apple App Store": [
         "Скачать с Apple App Store"
       ],
@@ -4387,6 +4462,9 @@
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "Скачать в Google Play"
       ],
       "Get the app": [
         "Получить приложение"
@@ -4420,6 +4498,9 @@
       ],
       "macOS Ventura or later": [
         "macOS Ventura или более поздняя версия"
+      ],
+      "Mail": [
+        "Почта"
       ],
       "Mobile": [
         "Мобильная"
@@ -6373,6 +6454,12 @@
       ]
     },
     "Features": {
+      "15 GB storage": [
+        "15 ГБ хранилище"
+      ],
+      "@pm.me address": [
+        "Адрес @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Блокировщик рекламы и защита от вредоносных программ"
       ],
@@ -6382,6 +6469,12 @@
       "and more premium features...": [
         "и другие платные функции..."
       ],
+      "Connect custom domain": [
+        "Подключить пользовательский домен"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
       "Double VPN": [
         "Двойная VPN"
       ],
@@ -6390,6 +6483,9 @@
       ],
       "NetShield Ad-blocker": [
         "Блокировщик рекламы NetShield"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
       ],
       "Secure streaming": [
         "Защищенный просмотр трансляций"
@@ -19604,6 +19700,9 @@
       "Decrypt key": [
         "Расшифровать ключ"
       ],
+      "Deep dive into email blog posts": [
+        "Подробное изучение постов блога об электронной почте"
+      ],
       "Deep dive into VPN blog posts": [
         "Подробное изучение постов блога VPN"
       ],
@@ -19697,6 +19796,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Скачайте ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
+      ],
       "Download the desktop app": [
         "Скачать приложение для настольных компьютеров"
       ],
@@ -19783,6 +19885,9 @@
       ],
       "Enhance security with 2FA": [
         "Повысьте безопасность с двухфакторной аутентификацией"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "Получите быстрый и удобный доступ к своей электронной почте с помощью наших специальных приложений."
       ],
       "Enter endpoints into your identity provider": [
         "Введите конечные точки в провайдер личных данных"
@@ -19886,8 +19991,14 @@
       "Get ${ vpnPlus } to access all servers": [
         "Получите ${ vpnPlus } для доступа ко всем серверам"
       ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "Получите доступ к приложению для настольных компьютеров с тарифом ${ mailPlusPlanName }. ${ upgradeButton }"
+      ],
       "Get complete privacy coverage": [
         "Получите полную защиту конфиденциальности"
+      ],
+      "Get more from your email": [
+        "Получите больше от своей электронной почты"
       ],
       "Get more from your VPN": [
         "Получите больше от VPN"
