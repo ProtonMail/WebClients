@@ -25,7 +25,6 @@ import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/li
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
@@ -65,7 +64,8 @@ export type RequestForkData = {
 };
 
 export const getStateKey = (state: string) => `f${state}`;
-export const generateForkState = () => encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
+export const generateForkState = () =>
+    crypto.getRandomValues(new Uint8Array(32)).toBase64({ alphabet: 'base64url', omitPadding: true });
 
 /** Will compute offline params by default. Only allows by-pass for web.
  * Extension does not support password locking yet, as such force re-auth. */

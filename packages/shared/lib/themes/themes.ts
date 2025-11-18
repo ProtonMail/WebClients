@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import {
     ColorScheme,
     MotionModeSetting,
@@ -551,7 +551,7 @@ export const serializeThemeSetting = (themeSetting: ThemeSetting) => {
     if (keys.length === 1 && keys[0] === 'LightTheme') {
         return `${diff.LightTheme}`;
     }
-    return encodeBase64URL(JSON.stringify(diff));
+    return stringToUint8Array(JSON.stringify(diff)).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
 
 export const getThemeType = (theme: ThemeSetting, colorScheme: ColorScheme): ThemeTypes => {

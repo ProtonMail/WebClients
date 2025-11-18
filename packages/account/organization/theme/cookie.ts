@@ -1,6 +1,5 @@
-import { encodeUtf8, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
-import { encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
@@ -33,7 +32,7 @@ export const serializeOrgTheme = (organization: OrganizationExtended | undefined
         Name: (organization?.Name || '').slice(0, 50),
         LocalID: localID,
     };
-    return encodeBase64URL(encodeUtf8(JSON.stringify(value)));
+    return stringToUtf8Array(JSON.stringify(value)).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
 
 export const deserializeOrgTheme = (serializedValue: string): OrgThemeCookie | undefined => {

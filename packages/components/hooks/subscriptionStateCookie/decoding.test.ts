@@ -1,5 +1,5 @@
 import { CYCLE, PLANS } from '@proton/payments';
-import { encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decodeSubscriptionCookieData } from './decoding';
 import { encodeFreeSubscriptionData, encodePaidSubscriptionData } from './encoding';
@@ -34,7 +34,10 @@ describe('decodeSubscriptionCookieData', () => {
                 p: PLANS.MAIL,
                 c: CYCLE.YEARLY,
             };
-            const encoded = encodeBase64URL(JSON.stringify(rawData));
+            const encoded = stringToUint8Array(JSON.stringify(rawData)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             const decoded = decodeSubscriptionCookieData(encoded);
 
             expect(decoded).toEqual({
@@ -83,7 +86,7 @@ describe('decodeSubscriptionCookieData', () => {
         });
 
         it('should return null for non-JSON data', () => {
-            const nonJson = encodeBase64URL('not-valid-json');
+            const nonJson = stringToUint8Array('not-valid-json').toBase64({ alphabet: 'base64url', omitPadding: true });
             const result = decodeSubscriptionCookieData(nonJson);
             expect(result).toBeNull();
         });
@@ -105,14 +108,20 @@ describe('decodeSubscriptionCookieData', () => {
     describe('invalid data structure', () => {
         it('should return null for missing type field', () => {
             const invalidData = { p: PLANS.MAIL, c: CYCLE.MONTHLY };
-            const encoded = encodeBase64URL(JSON.stringify(invalidData));
+            const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             const result = decodeSubscriptionCookieData(encoded);
             expect(result).toBeNull();
         });
 
         it('should return null for unknown type', () => {
             const invalidData = { t: 'unknown', p: PLANS.MAIL, c: CYCLE.MONTHLY };
-            const encoded = encodeBase64URL(JSON.stringify(invalidData));
+            const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             const result = decodeSubscriptionCookieData(encoded);
             expect(result).toBeNull();
         });
@@ -120,25 +129,37 @@ describe('decodeSubscriptionCookieData', () => {
         it('should return null for paid data with missing fields', () => {
             // Missing plan
             const missingPlan = { t: 'p', c: CYCLE.MONTHLY };
-            const encodedMissingPlan = encodeBase64URL(JSON.stringify(missingPlan));
+            const encodedMissingPlan = stringToUint8Array(JSON.stringify(missingPlan)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             expect(decodeSubscriptionCookieData(encodedMissingPlan)).toBeNull();
 
             // Missing cycle
             const missingCycle = { t: 'p', p: PLANS.MAIL };
-            const encodedMissingCycle = encodeBase64URL(JSON.stringify(missingCycle));
+            const encodedMissingCycle = stringToUint8Array(JSON.stringify(missingCycle)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             expect(decodeSubscriptionCookieData(encodedMissingCycle)).toBeNull();
         });
 
         it('should return null for free data with missing fields', () => {
             const missingHistory = { t: 'f' };
-            const encoded = encodeBase64URL(JSON.stringify(missingHistory));
+            const encoded = stringToUint8Array(JSON.stringify(missingHistory)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             const result = decodeSubscriptionCookieData(encoded);
             expect(result).toBeNull();
         });
 
         it('should return null for invalid plan names', () => {
             const invalidPlan = { t: 'p', p: 'invalid-plan', c: CYCLE.MONTHLY };
-            const encoded = encodeBase64URL(JSON.stringify(invalidPlan));
+            const encoded = stringToUint8Array(JSON.stringify(invalidPlan)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             const result = decodeSubscriptionCookieData(encoded);
             expect(result).toBeNull();
         });
@@ -153,7 +174,10 @@ describe('decodeSubscriptionCookieData', () => {
             ];
 
             testCases.forEach((invalidData) => {
-                const encoded = encodeBase64URL(JSON.stringify(invalidData));
+                const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+                    alphabet: 'base64url',
+                    omitPadding: true,
+                });
                 const result = decodeSubscriptionCookieData(encoded);
                 expect(result).toBeNull();
             });
@@ -170,7 +194,10 @@ describe('decodeSubscriptionCookieData', () => {
             ];
 
             testCases.forEach((invalidData) => {
-                const encoded = encodeBase64URL(JSON.stringify(invalidData));
+                const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+                    alphabet: 'base64url',
+                    omitPadding: true,
+                });
                 const result = decodeSubscriptionCookieData(encoded);
                 expect(result).toBeNull();
             });
@@ -180,7 +207,10 @@ describe('decodeSubscriptionCookieData', () => {
             const testCases = ['string', 123, true, [], null];
 
             testCases.forEach((invalidData) => {
-                const encoded = encodeBase64URL(JSON.stringify(invalidData));
+                const encoded = stringToUint8Array(JSON.stringify(invalidData)).toBase64({
+                    alphabet: 'base64url',
+                    omitPadding: true,
+                });
                 const result = decodeSubscriptionCookieData(encoded);
                 expect(result).toBeNull();
             });
@@ -196,7 +226,10 @@ describe('decodeSubscriptionCookieData', () => {
                 c: CYCLE.MONTHLY,
                 extraProp: 'should-be-ignored',
             };
-            const encodedPaid = encodeBase64URL(JSON.stringify(paidWithExtra));
+            const encodedPaid = stringToUint8Array(JSON.stringify(paidWithExtra)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             const decodedPaid = decodeSubscriptionCookieData(encodedPaid);
 
             expect(decodedPaid).toEqual({
@@ -211,7 +244,10 @@ describe('decodeSubscriptionCookieData', () => {
                 h: '1' as const,
                 extraProp: 'should-be-ignored',
             };
-            const encodedFree = encodeBase64URL(JSON.stringify(freeWithExtra));
+            const encodedFree = stringToUint8Array(JSON.stringify(freeWithExtra)).toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             const decodedFree = decodeSubscriptionCookieData(encodedFree);
 
             expect(decodedFree).toEqual({
@@ -225,7 +261,10 @@ describe('decodeSubscriptionCookieData', () => {
 
             validCycles.forEach((cycle) => {
                 const data = { t: 'p' as const, p: PLANS.MAIL, c: cycle };
-                const encoded = encodeBase64URL(JSON.stringify(data));
+                const encoded = stringToUint8Array(JSON.stringify(data)).toBase64({
+                    alphabet: 'base64url',
+                    omitPadding: true,
+                });
                 const decoded = decodeSubscriptionCookieData(encoded);
 
                 expect(decoded).toEqual({
@@ -241,7 +280,10 @@ describe('decodeSubscriptionCookieData', () => {
 
             validPlans.forEach((planName) => {
                 const data = { t: 'p' as const, p: planName, c: CYCLE.MONTHLY };
-                const encoded = encodeBase64URL(JSON.stringify(data));
+                const encoded = stringToUint8Array(JSON.stringify(data)).toBase64({
+                    alphabet: 'base64url',
+                    omitPadding: true,
+                });
                 const decoded = decodeSubscriptionCookieData(encoded);
 
                 expect(decoded).toEqual({

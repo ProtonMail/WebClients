@@ -4,7 +4,6 @@ import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 
 import { API_CODES } from '../constants';
-import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
 import type {
     SyncMultipleApiResponses,
     SyncMultipleApiSuccessResponses,
@@ -34,7 +33,7 @@ export const getIsSuccessSyncApiResponse = (
 export const generateProtonCalendarUID = () => {
     // by convention we generate 21 bytes of random data
     const randomBytes = crypto.getRandomValues(new Uint8Array(21));
-    const base64String = encodeBase64URL(uint8ArrayToString(randomBytes));
+    const base64String = randomBytes.toBase64({ alphabet: 'base64url', omitPadding: true });
     // and we encode them in base 64
     return `${base64String}@proton.me`;
 };

@@ -3,7 +3,7 @@ import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import isEnumValue from '@proton/utils/isEnumValue';
 
 import { ForkSearchParameters } from './fork';
@@ -54,7 +54,7 @@ const parseSessions = (sessions: string | null) => {
 };
 
 const serializeSessions = (sessions: SignoutUserData[]): string => {
-    return encodeBase64URL(
+    return stringToUint8Array(
         JSON.stringify(
             sessions.map(
                 (session): Omit<SerializedSignoutUserData, 's'> => ({
@@ -63,7 +63,7 @@ const serializeSessions = (sessions: SignoutUserData[]): string => {
                 })
             )
         )
-    );
+    ).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
 
 export const parseLogoutURL = (url: URL) => {
