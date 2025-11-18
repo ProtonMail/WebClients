@@ -56,4 +56,12 @@ body:has(.booking-main-container) {
 			border-color: var(--booking-no-booking-container-border-color);
 		}
 	}
+
+	&-success-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		@include media('<=#{$booking-breakpoint}') {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
 }
