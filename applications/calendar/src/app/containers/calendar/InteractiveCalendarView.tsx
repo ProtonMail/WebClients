@@ -2407,7 +2407,12 @@ const InteractiveCalendarView = ({
             )}
             <Dropzone
                 onDrop={onAddFiles}
-                disabled={Object.values(modalsMap).some((modal) => modal.isOpen) || !!targetEvent || isSearchView}
+                disabled={
+                    Object.values(modalsMap).some((modal) => modal.isOpen) ||
+                    !!targetEvent ||
+                    isSearchView ||
+                    isBookingActive
+                }
                 shape="transparent"
                 customContent={
                     <section className="main-dropzone p-14 text-center">
