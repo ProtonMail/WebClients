@@ -2,7 +2,7 @@ import { LogLevel } from '@protontech/drive-sdk/dist/telemetry';
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { SentryLogHandler } from './sentryLogHandler';
+import { NO_SENTRY_COMPONENT_DEFINED, SentryLogHandler } from './sentryLogHandler';
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     traceError: jest.fn(),
@@ -33,7 +33,7 @@ describe('SentryLogHandler', () => {
         expect(mockTraceError).toHaveBeenCalledWith(error, {
             level: 'debug',
             tags: {
-                component: 'drive-sdk-log',
+                component: NO_SENTRY_COMPONENT_DEFINED,
             },
             extra: {
                 logTime: '2023-01-01T10:00:00.000Z',
@@ -71,5 +71,30 @@ describe('SentryLogHandler', () => {
         handler.log(logRecord);
 
         expect(mockTraceError).not.toHaveBeenCalled();
+    });
+
+    it('allows overriding the component tag via constructor', () => {
+        handler = new SentryLogHandler('custom-component');
+        const logRecord = {
+            time: new Date('2023-01-01T11:00:00Z'),
+            level: LogLevel.WARNING,
+            loggerName: 'custom',
+            message: 'warn',
+        };
+
+        handler.log(logRecord);
+
+        expect(mockTraceError).toHaveBeenCalledWith(expect.any(Error), {
+            level: 'debug',
+            tags: {
+                component: 'custom-component',
+            },
+            extra: {
+                logTime: '2023-01-01T11:00:00.000Z',
+                logLevel: 'WARNING',
+                loggerName: 'custom',
+                logMessage: 'warn',
+            },
+        });
     });
 });
