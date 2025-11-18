@@ -1143,6 +1143,9 @@
       "Secure link could not be opened.": [
         "セキュアリンクを開けませんでした。"
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "サーバーに接続できません。数分後にもう一度、${ PASS_SHORT_APP_NAME }のロック解除をお試しください。"
+      ],
       "Settings update failed": [
         "設定の更新に失敗しました"
       ],
@@ -1229,6 +1232,9 @@
       ],
       "Wrong second password": [
         "セカンドパスワードが正しくありません"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "現在オフラインです。 ${ PASS_SHORT_APP_NAME }のロックを解除するためにネットワークに接続してください。"
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNSが正しく設定されていません。取得したMXレコードは以下です："
@@ -1836,9 +1842,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -2129,6 +2132,9 @@
       ],
       "Selected items successfully restored from trash": [
         "選択したアイテムがゴミ箱から正常に復元されました"
+      ],
+      "Servers are unreachable": [
+        "サーバーに接続できません"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
