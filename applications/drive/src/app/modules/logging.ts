@@ -11,4 +11,6 @@ import { Logging } from '@proton/drive/modules/logging';
  * logger.info('Hello, world!');
  * ```
  */
-export const logging = new Logging();
+export const logging = new Logging({
+    sentryComponent: 'drive-web-log',
+});

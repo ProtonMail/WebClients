@@ -38,14 +38,18 @@ import { SentryLogHandler } from './sentryLogHandler';
  * console.log(logs);
  * ```
  */
+type LoggingOptions = {
+    sentryComponent?: string;
+};
+
 export class Logging implements LogHandler {
     private logHandlers: LogHandler[];
 
     private memoryLogHandler: MemoryLogHandler;
 
-    constructor() {
+    constructor(options: LoggingOptions = {}) {
         this.memoryLogHandler = new MemoryLogHandler();
-        const sentryLogHandler = new SentryLogHandler();
+        const sentryLogHandler = new SentryLogHandler(options.sentryComponent);
 
         this.logHandlers = [new ConsoleLogHandler(), this.memoryLogHandler, sentryLogHandler];
     }
