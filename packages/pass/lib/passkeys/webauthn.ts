@@ -50,22 +50,22 @@ export const intoPublicKeyCredential = (
             getClientExtensionResults: (): AuthenticationExtensionsClientOutputs => {
                 const res: AuthenticationExtensionsClientOutputs = {};
                 const credProps = result.client_extension_results.credProps;
-                const prf = result.client_extension_results.prf;
+                // const prf = result.client_extension_results.prf;
 
                 if (credProps) res.credProps = credProps;
 
-                if (prf) {
-                    res.prf = {};
-                    if (prf.enabled) res.prf.enabled = prf.enabled;
+                // if (prf) {
+                //     res.prf = {};
+                //     if (prf.enabled) res.prf.enabled = prf.enabled;
 
-                    if (prf.results) {
-                        const { first } = prf.results;
-                        const results: AuthenticationExtensionsPRFValues = { first: new SafeUint8Array(first) };
-                        if (prf?.results?.second) results.second = new SafeUint8Array(prf.results.second);
+                //     if (prf.results) {
+                //         const { first } = prf.results;
+                //         const results: AuthenticationExtensionsPRFValues = { first: new SafeUint8Array(first) };
+                //         if (prf?.results?.second) results.second = new SafeUint8Array(prf.results.second);
 
-                        res.prf.results = results;
-                    }
-                }
+                //         res.prf.results = results;
+                //     }
+                // }
 
                 return clone(res);
             },
