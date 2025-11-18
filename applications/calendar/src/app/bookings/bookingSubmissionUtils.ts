@@ -13,7 +13,12 @@ import {
     ICAL_METHOD,
 } from '@proton/shared/lib/calendar/constants';
 import { generateProtonCalendarUID } from '@proton/shared/lib/calendar/helper';
-import { createInviteIcs, generateVtimezonesComponents } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import {
+    createInviteIcs,
+    generateEmailBody,
+    generateEmailSubject,
+    generateVtimezonesComponents,
+} from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { serialize } from '@proton/shared/lib/calendar/vcal';
 import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import { getDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
@@ -267,6 +272,16 @@ export const prepareBookingSubmission = async ({
         keepDtstamp: true,
     });
 
+    const invitationInfo = {
+        method: ICAL_METHOD.REQUEST,
+        vevent,
+        isCreateEvent: true,
+    };
+
+    const emailSubject = generateEmailSubject(invitationInfo);
+
+    const emailBody = generateEmailBody(invitationInfo);
+
     return {
         contentPart: encryptedContentPart,
         timePart: timePartIcsRaw,
@@ -275,6 +290,8 @@ export const prepareBookingSubmission = async ({
         emailData: {
             name: attendeeName,
             email: attendeeEmail,
+            subject: emailSubject,
+            body: emailBody,
         },
         ics: fullIcs,
     };
