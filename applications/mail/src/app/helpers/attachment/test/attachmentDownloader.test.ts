@@ -1,4 +1,4 @@
-import { encodeBase64 } from '@proton/crypto/lib/utils';
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -33,7 +33,7 @@ const attachment1 = {
     ID: '1',
     Name: attachmentName,
     Preview: stringToUint8Array('message preview'),
-    KeyPackets: encodeBase64('keypackets'),
+    KeyPackets: stringToUtf8Array('keypackets').toBase64(),
 } as Attachment;
 const verification = {} as MessageVerification;
 const getAttachment = jest.fn();
