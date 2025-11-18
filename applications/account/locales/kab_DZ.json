@@ -5076,12 +5076,6 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Uṭṭun n tiliɣri yezmer ad yettuseqdec i usenqed yiwen kan n umiḍan ${ BRAND_NAME }"
       ],
-      "account recovery and data recovery method": [
-        "tarayt n tririt n umiḍan akked yisefka"
-      ],
-      "account recovery method": [
-        "tarayt n tririt n umiḍan"
-      ],
       "Account successfully updated": [
         "Aleqqem n umiḍan yemmed"
       ],
@@ -5094,14 +5088,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Rnu tansa n yimayl @pm.me ɣer umiḍan-ik·im. Taɣult-a fessusen, meẓẓiyen anamek-is d \"${ MAIL_APP_NAME } me\" neɣ \"Private Message me.\""
       ],
-      "Add a recovery email address": [
-        "Rnu tansa imayl n tririt"
-      ],
       "add a recovery method": [
         "rnu tarrayt n tririt"
-      ],
-      "Add a recovery phone number": [
-        "Leqqem uṭṭun n tilifun n tririt"
       ],
       "Add domain": [
         "Rnu taɣult"
@@ -5141,12 +5129,6 @@
       ],
       "Allocated": [
         "Ittuheṛṛ"
-      ],
-      "Allow recovery by email": [
-        "Sireg tiririt s imayl"
-      ],
-      "Allow recovery by phone": [
-        "Sireg tiririt s usawal"
       ],
       "Already allocated": [
         "Ḥerren-t yakan"
@@ -5369,9 +5351,6 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Asader deg lqem ad iseḥbes akk tuqqniwin ɣer yiqeddacen s lexlaṣ n ${ VPN_APP_NAME }."
       ],
-      "Download recovery file": [
-        "Sader afaylu n tririt"
-      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Sader asnas i tḥemmleḍ ass-a tawiḍ tabaḍnit anda tebɣuḍ tiliḍ."
       ],
@@ -5593,9 +5572,6 @@
         "Tinubga tettwazen akken iwata",
         "Tinubgiwin ttwaznent akken iwata"
       ],
-      "it’s imperative": [
-        "d ayen ilaqen"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
       ],
@@ -5680,17 +5656,11 @@
       "New": [
         "Amaynut"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Ulac tarayt n tririt n umiḍan yettusbadun; tzemreḍ ad tesruḥeḍ adduf ɣer umiḍan-inek•inem"
-      ],
       "No action selected": [
         "Ulac tigawt yettwafernen"
       ],
       "No addresses exist": [
         "Ulac tansa yellan"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Ulac tarayt n tririt n yisefka tettusbadu; tzemreḍ ad tesruḥeḍ adduf ɣer yisefka-inek•inem"
       ],
       "No folder selected": [
         "Ulac akaram yettwafranen"
@@ -5884,9 +5854,6 @@
       "Set password": [
         "Sbadu awal uffir"
       ],
-      "Set recovery phrase": [
-        "Sbadu tafyirt n tririt"
-      ],
       "Set up forwarding": [
         "Sbadu awelleh"
       ],
@@ -6056,12 +6023,6 @@
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
       ],
-      "Update recovery file": [
-        "Leqqem afaylu n tririt"
-      ],
-      "Update recovery phrase": [
-        "Leqqem tafyirt n tririt"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Salu tura aɣawas-ik i wakken ad tesɛuḍ timahilin, ifarisen d uḥraz premium s ssuma igerrzen"
       ],
@@ -6103,9 +6064,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Asenqed ad yeldi iccer amaynut, ttxil-k·m sens isewḥalen n yisfuyla udhimen. Ur tseɛɛuḍ ara tafakturt. Tadrimt akk ara yettusqedcen i usenqed n tkarḍa ad d-tuɣal din din."
-      ],
-      "Verify email address": [
-        "Senqed tansa-inek imayl"
       ],
       "Verifying your payment": [
         "Asefqed n lexlaṣ-ik•im"
@@ -6246,14 +6204,8 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
       ],
-      "Your account recovery method is set": [
-        "Tarayt-inek•inem n tririt n umiḍan tettusbadu"
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Isefka-k wejden i uktar seg ${ importedEmailAddressStrong } ɣer umiḍan-ik ${ BRAND_NAME }."
-      ],
-      "Your data recovery method is set": [
-        "Tarayt-inek•inem n tririt n yisefka"
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -7818,9 +7770,6 @@
       ],
       "What’s this?": [
         "D acu-t wa?"
-      ],
-      "Why set recovery methods?": [
-        "Acimi ara tesbeddeḍ tarayin n tririt ?"
       ]
     },
     "Link label (optional)": {
@@ -11674,9 +11623,6 @@
       "Switch to two-password mode": [
         "Uɣal ar uskar n sin n wawalen uffiren"
       ],
-      "Take precautions to avoid data loss!": [
-        "Ḥader akken ur tessruḥuyeḍ ara isefka!"
-      ],
       "Text": [
         "Aḍris"
       ],
@@ -11763,9 +11709,6 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
-      ],
-      "Your recovery status": [
-        "Addad n tririt-inek•inem"
       ],
       "Your subscriptions": [
         "Imultaɣen-ik"

@@ -6373,9 +6373,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } устройств"
-      ],
       "Ad-blocker and malware protection": [
         "Блокировщик рекламы и защита от вредоносных программ"
       ],
@@ -7789,12 +7786,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Получите доступ к своим паролям и защищайте свои личные данные беспрепятственно на всех устройствах. Скачайте и установите подходящие приложения и расширения ${ PASS_APP_NAME }."
       ],
-      "account recovery and data recovery method": [
-        "метод восстановления аккаунта и метод восстановления данных"
-      ],
-      "account recovery method": [
-        "метод восстановления аккаунта"
-      ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
       ],
@@ -7810,14 +7801,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
       ],
-      "Add a recovery email address": [
-        "Добавить адрес эл. почты для восстановления доступа"
-      ],
       "add a recovery method": [
         "добавить способ восстановления"
-      ],
-      "Add a recovery phone number": [
-        "Добавить номер телефона для восстановления"
       ],
       "Add domain": [
         "Добавить домен"
@@ -7911,12 +7896,6 @@
       ],
       "Allocated": [
         "Выделено"
-      ],
-      "Allow recovery by email": [
-        "Разрешить восстановление по электронной почте"
-      ],
-      "Allow recovery by phone": [
-        "Разрешить восстановление по номеру телефона"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Разрешить пользователям подключаться к защищённым общим серверам **Стран** приложения ${ VPN_APP_NAME }."
@@ -8302,12 +8281,6 @@
       "Did you know?": [
         "Вы знали?"
       ],
-      "Disable recovery by email address": [
-        "Отключить восстановление по адресу электронной почты"
-      ],
-      "Disable recovery by phone number": [
-        "Отключить восстановление по номеру телефона"
-      ],
       "Disabled countries": [
         "Выключенные страны"
       ],
@@ -8379,9 +8352,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Скачайте наш шаблон CSV, заполните информацию о пользователях, а затем загрузите заполненный файл CSV, чтобы создать аккаунты для этих пользователей."
-      ],
-      "Download recovery file": [
-        "Скачать файл восстановления"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
@@ -8710,12 +8680,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Если у вас есть подарочный код, введите его ниже, чтобы применить скидку."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Если вы потеряете пароль и вам необходимо будет восстановить аккаунт, ${ boldImperative } убедитесь, что у вас есть ${ boldAccountRecovery }."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Если вы потеряете данные для входа и вам необходимо будет восстановить аккаунт, ${ boldImperative } что у вас есть ${ boldAccountAndRecovery }, иначе вы не сможете получить доступ к электронной почте, контактам или файлам."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации для входа в аккаунт. Каждый код можно использовать только один раз."
       ],
@@ -8905,9 +8869,6 @@
       "Item updated in vault": [
         "Элемент обновлен в хранилище"
       ],
-      "it’s imperative": [
-        "это обязательно"
-      ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Я пользуюсь @ProtonMail и подумал, что вам он тоже может понравиться. Это сервис защищенной электронной почты, защищающий вашу конфиденциальность. Регистрируйтесь по моей реферальной ссылке и получите 1 месяц платных функций бесплатно: ${ referrerLink }"
       ],
@@ -9085,9 +9046,6 @@
       "No account keys exist": [
         "Нет ключей аккаунта"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Не установлен метод восстановления аккаунта, вы рискуете потерять доступ к своему аккаунту"
-      ],
       "No action selected": [
         "Действие не выбрано"
       ],
@@ -9096,9 +9054,6 @@
       ],
       "No countries enabled": [
         "Не включено ни одного страны"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Не установлен метод восстановления данных, вы рискуете потерять доступ к своим данным"
       ],
       "No folder selected": [
         "Папка не выбрана"
@@ -9213,15 +9168,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Устаревший файл восстановления; обновите его, чтобы обеспечить доступ к данным"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Устаревшие методы восстановления; обновите их, чтобы обеспечить доступ к данным"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Устаревшая фраза восстановления; обновите ее, чтобы обеспечить доступ к данным"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "В сервисах ${ BRAND_NAME } зарегистрировалось более 100 миллионов человек."
@@ -9534,9 +9480,6 @@
       ],
       "Set password": [
         "Установить пароль"
-      ],
-      "Set recovery phrase": [
-        "Установить фразу для восстановления"
       ],
       "Set up forwarding": [
         "Настроить пересылку"
@@ -9943,12 +9886,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Чтобы расшифровать и просмотреть заблокированные данные после сброса пароля, выберите метод восстановления."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Чтобы обеспечить постоянный доступ к своему аккаунту, установите метод восстановления аккаунта"
-      ],
-      "To ensure highest possible security of your account": [
-        "Чтобы обеспечить максимальную безопасность аккаунта"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Чтобы исключить потерю важных данных, ${ DRIVE_APP_NAME } сохраняет старые версии файлов по мере внесения изменений вами и вашими сотрудниками. Выберите, как долго ${ BRAND_NAME } должен сохранять предыдущие версии."
       ],
@@ -10042,12 +9979,6 @@
       "Unverified email address.": [
         "Неподтверждённый адрес эл. почты."
       ],
-      "Update recovery file": [
-        "Обновить файл восстановления"
-      ],
-      "Update recovery phrase": [
-        "Обновить фразу для восстановления"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
       ],
@@ -10131,12 +10062,6 @@
       ],
       "Verify domain": [
         "Проверить домен"
-      ],
-      "Verify email address": [
-        "Подтвердить адрес электронной почты"
-      ],
-      "Verify phone number": [
-        "Подтвердить номер телефона"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Проверьте свою личность с помощью временного одноразового пароля из приложения-аутентификаторв"
@@ -10570,17 +10495,11 @@
       "Your account has been successfully updated": [
         "Ваш аккаунт был успешно обновлен."
       ],
-      "Your account recovery method is set": [
-        "Установлен метод восстановления вашего аккаунта"
-      ],
       "Your account was successfully updated with this promotion": [
         "Ваш аккаунт был успешно обновлен с помощью этой акции"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт ${ BRAND_NAME }."
-      ],
-      "Your data recovery method is set": [
-        "Установлен метод восстановления ваших данных"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
@@ -12701,9 +12620,6 @@
       ],
       "What’s this?": [
         "Что это такое?"
-      ],
-      "Why set recovery methods?": [
-        "Зачем устанавливать методы восстановления?"
       ]
     },
     "Link label (optional)": {
@@ -20528,9 +20444,6 @@
       "Switch to two-password mode": [
         "Переключение в режим с двумя паролями"
       ],
-      "Take precautions to avoid data loss!": [
-        "Соблюдайте меры предосторожности, чтобы избежать потери данных!"
-      ],
       "Text": [
         "Текст"
       ],
@@ -20689,9 +20602,6 @@
       ],
       "Your plan": [
         "Ваш тариф"
-      ],
-      "Your recovery status": [
-        "Ваше состояние восстановления"
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"

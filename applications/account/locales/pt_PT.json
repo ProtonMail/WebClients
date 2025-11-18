@@ -6431,9 +6431,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } dispositivos"
-      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção de malware"
       ],
@@ -7782,12 +7779,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Aceda às suas palavras-passe e proteja as suas identidades online de forma integrada nos seus dispositivos. Transfere e instale as aplicações e extensões ${ PASS_APP_NAME } relevantes."
       ],
-      "account recovery and data recovery method": [
-        "método de recuperação de conta e dados"
-      ],
-      "account recovery method": [
-        "método de recuperação de conta"
-      ],
       "Account successfully updated": [
         "Conta atualizada"
       ],
@@ -7803,14 +7794,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
-      "Add a recovery email address": [
-        "Adicionar um e-mail de recuperação"
-      ],
       "add a recovery method": [
         "adicionar um método de recuperação"
-      ],
-      "Add a recovery phone number": [
-        "Adicionar um número de telefone de recuperação"
       ],
       "Add domain": [
         "Adicionar um domínio"
@@ -7890,12 +7875,6 @@
       ],
       "Allocated": [
         "Alocado"
-      ],
-      "Allow recovery by email": [
-        "Permitir recuperação por e-mail"
-      ],
-      "Allow recovery by phone": [
-        "Permitir recuperação por telefone"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permita que os utilizadores se conectem para proteger os servidores partilhados na secção **Países** da aplicação do ${ VPN_APP_NAME }."
@@ -8279,12 +8258,6 @@
       "Did you know?": [
         "Sabia?"
       ],
-      "Disable recovery by email address": [
-        "Desativar a recuperação por endereço de e-mail"
-      ],
-      "Disable recovery by phone number": [
-        "Desativar a recuperação por número de telefone"
-      ],
       "Disabled countries": [
         "Países desativados"
       ],
@@ -8357,9 +8330,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Transfere o nosso modelo CSV, preencha os detalhes do utilizador e, em seguida, envie o seu ficheiro CSV completo para criar as contas para estes utilizadores."
-      ],
-      "Download recovery file": [
-        "Transferir ficheiro de recuperação"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
@@ -8697,12 +8667,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Se tiver um código de oferta, introduza-o abaixo para aplicar o desconto."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Se perder a sua palavra-passe e precisar de recuperar a sua conta, ${ boldImperative } que tenha um ${ boldAccountRecovery } em vigor."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Se perder a sua palavra-passe e precisar de recuperar a sua conta, ${ boldImperative } que tenha uma ${ boldAccountAndRecovery } implementada, caso contrário poderá não conseguir aceder a nenhum dos seus e-mails, contactos ou ficheiros."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se perder o seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser utilizados no lugar do código de 6 dígitos para iniciar sessão na sua conta. Cada código poderá ser utilizado apenas uma vez."
       ],
@@ -8887,9 +8851,6 @@
       ],
       "Item updated in vault": [
         "Item atualizado no cofre"
-      ],
-      "it’s imperative": [
-        "é obrigatório"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Tenho utilizado o @ProtonMail e pensei que poderia gostar dele. É um serviço de e-mail seguro que protege a sua privacidade. Inscreva-se com a minha ligação de referência para obter 1 mês de funcionalidades premium gratuitamente: ${ referrerLink }"
@@ -9077,9 +9038,6 @@
       "No account keys exist": [
         "Não existem chaves de conta."
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Nenhum método de recuperação de conta definido. Corre o risco de perder o acesso à sua conta."
-      ],
       "No action selected": [
         "Nenhuma acção selecionada"
       ],
@@ -9088,9 +9046,6 @@
       ],
       "No countries enabled": [
         "Nenhum país ativado"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Nenhum método de recuperação de dados definido. Corre o risco de perder o acesso aos seus dados."
       ],
       "No folder selected": [
         "Nenhuma pasta selecionada"
@@ -9204,15 +9159,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Os nossos alertas priorizam a segurança. Se não reconhecer nenhuma das informações violadas, pode ignorar este relatório com segurança."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Ficheiro de recuperação desatualizado; atualize-o para garantir o acesso aos seus dados"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Métodos de recuperação desatualizados; atualize para garantir o acesso aos seus dados"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Frase de recuperação desatualizada; atualize para garantir o acesso aos seus dados"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Mais de 100 milhões de pessoas e empresas criaram uma conta da ${ BRAND_NAME }"
@@ -9528,9 +9474,6 @@
       ],
       "Set password": [
         "Definir a palavra-passe"
-      ],
-      "Set recovery phrase": [
-        "Definir frase de recuperação"
       ],
       "Set up forwarding": [
         "Configurar o encaminhamento"
@@ -9934,12 +9877,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para desencriptar e ver os seus dados bloqueados depois de uma reposição de palavra-passe, selecione um método de recuperação."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Para garantir o acesso contínuo à sua conta, defina um método de recuperação de conta"
-      ],
-      "To ensure highest possible security of your account": [
-        "Para garantir a máxima segurança possível da sua conta"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Para garantir que não perde dados importantes, ${ DRIVE_APP_NAME } guarda versões mais antigas dos seus ficheiros à medida que você e os seus colaboradores efetuam alterações. Selecione durante quanto tempo ${ BRAND_NAME } deve manter as versões anteriores."
       ],
@@ -10033,12 +9970,6 @@
       "Unverified email address.": [
         "Endereço de e-mail não verificado."
       ],
-      "Update recovery file": [
-        "Atualizar o ficheiro de recuperação"
-      ],
-      "Update recovery phrase": [
-        "Atualizar a frase de recuperação"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
@@ -10125,12 +10056,6 @@
       ],
       "Verify domain": [
         "Verificar o domínio"
-      ],
-      "Verify email address": [
-        "Verificar o endereço de e-mail"
-      ],
-      "Verify phone number": [
-        "Verificar o número de telefone"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifique a sua identidade com uma palavra-passe única com duração limitada a partir de uma aplicação autenticadora."
@@ -10551,17 +10476,11 @@
       "Your account has been successfully updated": [
         "A sua conta foi atualizada."
       ],
-      "Your account recovery method is set": [
-        "O método de recuperação da sua conta está definido."
-      ],
       "Your account was successfully updated with this promotion": [
         "A sua conta foi atualizada com esta promoção"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Os seus dados estão prontos para serem importados de ${ importedEmailAddressStrong } para a sua conta ${ BRAND_NAME }."
-      ],
-      "Your data recovery method is set": [
-        "O método de recuperação dos seus dados está definido."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
@@ -12711,9 +12630,6 @@
       ],
       "What’s this?": [
         "O que é isto?"
-      ],
-      "Why set recovery methods?": [
-        "Por que definir métodos de recuperação?"
       ]
     },
     "Link label (optional)": {
@@ -20654,9 +20570,6 @@
       "Switch to two-password mode": [
         "Mudar para modo de palavra-passe dupla"
       ],
-      "Take precautions to avoid data loss!": [
-        "Tome precauções para evitar a perda de dados."
-      ],
       "Text": [
         "Texto"
       ],
@@ -20827,9 +20740,6 @@
       ],
       "Your plan": [
         "O seu plano"
-      ],
-      "Your recovery status": [
-        "O seu estado de recuperação"
       ],
       "Your referrals": [
         "As suas referências"

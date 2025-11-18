@@ -2571,6 +2571,9 @@
       "How to prevent data breaches in your business": [
         "Hur man förhindrar dataintrång i ditt företag"
       ],
+      "iCloud is not private by default. Here's what Apple can see in iCloud.": [
+        "iCloud är inte privat som standard. Här är vad Apple kan se i iCloud."
+      ],
       "If you take your online safety seriously, you know you need to create a strong password to protect your online accounts. However, do you know that using the same username for all your accounts isn’t safe? In this article we go over why you should create varied and strong usernames.": [
         "Om du tar din säkerhet online på allvar vet du att du behöver skapa ett starkt lösenord för att skydda dina konton online. Men visste du att det inte är säkert att använda samma användarnamn för alla dina konton? I denna artikel går vi igenom varför du bör skapa varierade och starka användarnamn."
       ],
@@ -2710,6 +2713,9 @@
       ],
       "Application problem": [
         "Problem med applikation"
+      ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
       ],
       "Black Friday": [
         "Black Friday"
@@ -5040,6 +5046,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm för Fedora/Red Hat"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "Du kan även ladda ner appen via ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -7314,9 +7323,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } enheter"
-      ],
       "15 GB storage": [
         "15 GB lagringsutrymme"
       ],
@@ -7986,6 +7992,9 @@
       ],
       "Contact us": [
         "Kontakta oss"
+      ],
+      "Downloads": [
+        "Nedladdningar"
       ],
       "Enjoying ${ planName }?": [
         "Gillar du ${ planName }?"
@@ -8768,12 +8777,6 @@
       "Account monitor": [
         "Kontoövervakning"
       ],
-      "account recovery and data recovery method": [
-        "kontoåterställning och metod för återställning av data"
-      ],
-      "account recovery method": [
-        "återställningsmetod för konto"
-      ],
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
@@ -8792,14 +8795,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
       ],
-      "Add a recovery email address": [
-        "Lägg till en e-postadress för återställning"
-      ],
       "add a recovery method": [
         "lägg till en återställningsmetod"
-      ],
-      "Add a recovery phone number": [
-        "Lägg till ett telefonnummer för återställning"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Lägg till ytterligare ett lager av säkerhet till ditt konto. Du måste verifiera dig själv med 2FA varje gång du loggar in."
@@ -8888,12 +8885,6 @@
       ],
       "Allow logging of location and connection details": [
         "Tillåt loggning av plats och anslutningsdetaljer"
-      ],
-      "Allow recovery by email": [
-        "Tillåt återställning via e-post"
-      ],
-      "Allow recovery by phone": [
-        "Tillåt återställning via telefon"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillåt användare att ansluta till säkra delade servrar från sektionen **Länder** i appen ${ VPN_APP_NAME }."
@@ -9307,12 +9298,6 @@
       "Did you know?": [
         "Visste du att?"
       ],
-      "Disable recovery by email address": [
-        "Inaktivera e-postadress för återställning"
-      ],
-      "Disable recovery by phone number": [
-        "Inaktivera telefonnummer för återställning"
-      ],
       "Disabled countries": [
         "Inaktiverade länder"
       ],
@@ -9391,9 +9376,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Ladda ner vår CSV-mall, fyll i användaruppgifterna och ladda sedan upp din färdiga CSV-fil för att skapa konton för dessa användare."
-      ],
-      "Download recovery file": [
-        "Ladda ner återställningsfil"
       ],
       "Download the app and import existing codes.": [
         "Ladda ner appen och importera befintliga koder."
@@ -9767,12 +9749,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Om du har en presentkod, ange den nedan för att tillämpa din rabatt."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Om du tappar bort ditt lösenord och behöver återställa ditt konto, ${ boldImperative } att du har en ${ boldAccountRecovery } tillhands."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Om du tappar bort ditt lösenord och behöver återställa ditt konto, ${ boldImperative } att du har både en ${ boldAccountAndRecovery } till hands, annars kanske du inte kommer åt någon av dina e-postmeddelanden, kontakter eller filer."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Om du förlorar din tvåfaktorsaktiverade enhet kan dessa koder användas istället för den 6-siffriga tvåfaktorsautentiseringskoden för att logga in på ditt konto. Varje kod kan bara användas en gång."
       ],
@@ -9966,9 +9942,6 @@
       ],
       "Item updated in vault": [
         "Objekt uppdaterat i valv"
-      ],
-      "it’s imperative": [
-        "det är nödvändigt"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Jag har använt @ProtonMail och tänkte att du kanske skulle gilla det. Det är en säker e-posttjänst som skyddar din integritet. Registrera dig med min hänvisningslänk för att få 1 månad med premiumfunktioner gratis: ${ referrerLink }"
@@ -10165,9 +10138,6 @@
       "No account keys exist": [
         "Det finns inga kontonycklar"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Ingen kontoåterställningsmetod inställd, du riskerar att förlora åtkomst till ditt konto"
-      ],
       "No action selected": [
         "Ingen åtgärd vald"
       ],
@@ -10179,9 +10149,6 @@
       ],
       "No credit card required": [
         "Inget kreditkort krävs"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Ingen dataåterställningsmetod inställd, du riskerar att förlora åtkomst till dina data"
       ],
       "No folder selected": [
         "Ingen mapp vald"
@@ -10236,6 +10203,9 @@
       ],
       "On": [
         "På"
+      ],
+      "On Ubuntu?": [
+        "På Ubuntu?"
       ],
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
@@ -10304,15 +10274,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Föråldrad återställningsfil, uppdatera för att säkerställa åtkomst till dina data"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Föråldrade återställningsmetoder, uppdatera för att säkerställa åtkomst till dina data"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Föråldrad återställningsfras, uppdatera för att säkerställa åtkomst till dina data"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Över 100 miljoner människor och företag har registrerat sig för ${ BRAND_NAME }."
@@ -10637,9 +10598,6 @@
       ],
       "Set password": [
         "Ställ in lösenord"
-      ],
-      "Set recovery phrase": [
-        "Ställ in återställningsfras"
       ],
       "Set up forwarding": [
         "Ställ in vidarebefordran"
@@ -11064,12 +11022,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "För att dekryptera och visa dina låsta data efter en lösenordsåterställning, välj en återställningsmetod."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "För att säkerställa kontinuerlig åtkomst till ditt konto, ställ in en återställningsmetod för ditt konto"
-      ],
-      "To ensure highest possible security of your account": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "För att säkerställa att du inte förlorar viktig data sparar ${ DRIVE_APP_NAME } äldre versioner av dina filer när du och dina medarbetare gör ändringar. Välj hur länge ${ BRAND_NAME } ska behålla tidigare versioner."
       ],
@@ -11124,6 +11076,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
       ],
+      "Two-factor authentication": [
+        "Tvåfaktorsautentisering"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tvålösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera dina data. (Avancerat)"
       ],
@@ -11162,12 +11117,6 @@
       ],
       "Unverified email address.": [
         "Overifierad e-postadress."
-      ],
-      "Update recovery file": [
-        "Uppdatera återställningsfil"
-      ],
-      "Update recovery phrase": [
-        "Uppdatera återställningsfras"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
@@ -11264,12 +11213,6 @@
       ],
       "Verify domain": [
         "Verifiera domän"
-      ],
-      "Verify email address": [
-        "Verifiera e-postadress"
-      ],
-      "Verify phone number": [
-        "Verifiera telefonnummer"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekräfta din identitet med ett tidsbaserat engångslösenord från en autentiseringsapp"
@@ -11704,17 +11647,11 @@
       "Your account has been successfully updated": [
         "Ditt konto har uppdaterats"
       ],
-      "Your account recovery method is set": [
-        "Din kontoåterställningsmetod är inställd"
-      ],
       "Your account was successfully updated with this promotion": [
         "Ditt konto har uppdaterats med denna kampanj"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
-      ],
-      "Your data recovery method is set": [
-        "Din dataåterställningsmetod är inställd"
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
@@ -12368,11 +12305,17 @@
       "/month x ${ months }": [
         "/månad x ${ months }"
       ],
+      "0 of 1 email address available": [
+        "0 av 1 e-postadress tillgänglig"
+      ],
       "1 hour": [
         "1 timme"
       ],
       "1 minute": [
         "1 minut"
+      ],
+      "1 of 1 email address available": [
+        "1 av 1 e-postadress tillgänglig"
       ],
       "10 hide-my-email aliases": [
         "10 hide-my-email-alias"
@@ -13863,6 +13806,9 @@
       "Don't have access to your 2FA?": [
         "Har du inte åtkomst till din 2FA?"
       ],
+      "Downloads": [
+        "Nedladdningar"
+      ],
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
@@ -14033,9 +13979,6 @@
       ],
       "What’s this?": [
         "Vad är detta?"
-      ],
-      "Why set recovery methods?": [
-        "Varför ställa in återställningsmetoder?"
       ]
     },
     "Link label (optional)": {
@@ -14202,6 +14145,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etikett och märk dem som",
         "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etiketter och märk dem som"
+      ]
+    },
+    "mail_cro_experiment": {
+      "Get Deal": [
+        "Ta erbjudandet"
       ]
     },
     "mail_signup_2023: Info": {
@@ -15819,6 +15767,9 @@
       "A disabled address cannot be default": [
         "En inaktiverad adress kan inte vara standard"
       ],
+      "Address reconnected.": [
+        "Adress återansluten."
+      ],
       "An external address cannot be default": [
         "En extern adress kan inte vara standard"
       ],
@@ -16652,6 +16603,9 @@
       "Keep this plan": [
         "Behåll detta paket"
       ],
+      "Open ${ PASS_APP_NAME } vaults": [
+        "Öppna ${ PASS_APP_NAME }-valv"
+      ],
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
       ],
@@ -16920,6 +16874,9 @@
       ],
       "Welcome to ${ plan }": [
         "Välkommen till ${ plan }"
+      ],
+      "You already have a ${ BRAND_NAME } account and can start using ${ PASS_APP_NAME } right away.": [
+        "Du har redan ett ${ BRAND_NAME }-konto och kan börja använda ${ PASS_APP_NAME } direkt."
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Du har redan åtkomst till premiumfunktioner för ${ appName } – du behöver inte köpa igen."
@@ -17309,6 +17266,16 @@
       ],
       "Credits will be added to your balance": [
         "Krediter kommer att läggas till ditt saldo"
+      ]
+    },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Livstidskonton kan överföras eller säljas"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Aldrig"
       ]
     },
     "Payments.ModificationWarning": {
@@ -18485,12 +18452,6 @@
       ],
       "You have recommended actions.": [
         "Du har rekommenderade åtgärder."
-      ],
-      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Din e-post för återställning kan missbrukas av angripare för att ta över ditt konto. ${ disableEmail } för att öka din kontosäkerhet."
-      ],
-      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Din telefon för återställning kan missbrukas av angripare för att ta över ditt konto. ${ disablePhone } för att öka din kontosäkerhet."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Du kommer inte längre att kunna använda denna adress för att återställa ditt konto."
@@ -22123,15 +22084,6 @@
       "Folders and labels": [
         "Mappar och etiketter"
       ],
-      "For Linux": [
-        "För Linux"
-      ],
-      "For macOS": [
-        "För macOS"
-      ],
-      "For Windows": [
-        "För Windows"
-      ],
       "Forgot password": [
         "Glömt lösenord"
       ],
@@ -22806,9 +22758,6 @@
       "Switch to two-password mode": [
         "Växla till två-lösenordsläge"
       ],
-      "Take precautions to avoid data loss!": [
-        "Vidta försiktighetsåtgärder för att undvika dataförlust!"
-      ],
       "Text": [
         "Text"
       ],
@@ -23006,9 +22955,6 @@
       ],
       "Your plan": [
         "Ditt paket"
-      ],
-      "Your recovery status": [
-        "Din återställningsstatus"
       ],
       "Your referrals": [
         "Dina hänvisningar"
@@ -23671,6 +23617,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spara upp till ${ priceString }** med en längre prenumeration. Samma premiumfunktioner, lägre pris."
       ],
+      "Advanced security for your company": [
+        "Avancerad säkerhet för ditt företag"
+      ],
       "Advanced security for your company?": [
         "Avancerad säkerhet för ditt företag?"
       ],
@@ -23694,6 +23643,9 @@
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Obegränsad integritet för dig och en närstående. Från endast ${ priceString }/månad."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Du kan skydda upp till ${ DUO_MAX_USERS } personer med ${ PLAN_NAMES[PLANS.DUO] }, och upp till ${ FAMILY_MAX_USERS } med ${ PLAN_NAMES[PLANS.FAMILY] }. Från bara ${ priceString }/månad per konto."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] }. Från bara ${ priceString }/månad per konto."
@@ -23927,10 +23879,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Väljer automatiskt från ${ numberOfCountries } land",
         "Väljer automatiskt från ${ numberOfCountries } länder"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Välj från ${ numberOfCountries }+ land",
-        "Välj från ${ numberOfCountries }+ länder"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servrar i ${ numberOfCountries }+ land",
