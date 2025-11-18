@@ -4,7 +4,7 @@ import { isAfter } from 'date-fns';
 import { c } from 'ttag';
 
 import { useGetUser } from '@proton/account/user/hooks';
-import { useApi, useGetVerificationPreferences } from '@proton/components';
+import { useApi, useContactEmailsCache, useGetVerificationPreferences } from '@proton/components';
 import { queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { base64URLStringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
@@ -20,6 +20,7 @@ export const useExternalBookingLoader = () => {
     const bookingSecretBase64Url = location.hash.substring(1);
 
     const getUser = useGetUser();
+    const { contactEmailsMap } = useContactEmailsCache();
     const getVerificationPreferences = useGetVerificationPreferences();
 
     const setLoading = useBookingStore((state) => state.setLoading);
@@ -89,6 +90,7 @@ export const useExternalBookingLoader = () => {
                 if (user) {
                     const verificationPreferences = await getVerificationPreferences({
                         email: user.Email,
+                        contactEmailsMap,
                         lifetime: 0,
                     });
                     verifyingKeys = verificationPreferences.verifyingKeys;
