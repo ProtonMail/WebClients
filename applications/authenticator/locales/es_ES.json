@@ -27,6 +27,38 @@
         "Inténtalo de nuevo"
       ]
     },
+    "authenticator-2025:Action": {
+      "Continue anyway": [
+        "Continuar de todas formas"
+      ],
+      "Create a new vault": [
+        "Crear una caja fuerte"
+      ],
+      "Edit": [
+        "Editar"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Need more help?": [
+        "¿Necesitas más ayuda?"
+      ],
+      "Report an issue": [
+        "Notificar un problema"
+      ],
+      "Save code": [
+        "Guardar código"
+      ],
+      "Search": [
+        "Buscar"
+      ],
+      "Sign in": [
+        "Iniciar sesión"
+      ]
+    },
     "authenticator-2025:Import": {
       "${ count } item was skipped. HOTP isn’t currently supported.": [
         "${ count } elemento fue omitido. HOTP no es compatible actualmente.",
@@ -35,6 +67,90 @@
       "Imported ${ totalImports } code": [
         "${ totalImports } código importado",
         "${ totalImports } códigos importados"
+      ]
+    },
+    "authenticator-2025:Info": {
+      "Code added": [
+        "Código añadido"
+      ],
+      "Code deleted": [
+        "Código eliminado"
+      ],
+      "Code edited": [
+        "Código editado"
+      ],
+      "Failed to edit code": [
+        "Error al editar código"
+      ],
+      "New version ${ latestVersion.version } is available": [
+        "Una versión nueva de ${ latestVersion.version } está disponible"
+      ],
+      "One-time code copied": [
+        "Se ha copiado el código de un solo uso"
+      ],
+      "Plain text": [
+        "Texto plano"
+      ]
+    },
+    "authenticator-2025:Label": {
+      "60 seconds": [
+        "60 segundos"
+      ],
+      "Add": [
+        "Añadir"
+      ],
+      "Advanced options": [
+        "Opciones avanzadas"
+      ],
+      "Appearance": [
+        "Apariencia"
+      ],
+      "Automatic": [
+        "Automático"
+      ],
+      "Dark": [
+        "Oscuro"
+      ],
+      "Enabled, temporarily offline": [
+        "Activado, temporalmente sin conexión"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Loading account data...": [
+        "Cargando datos de la cuenta..."
+      ],
+      "Manage your data": [
+        "Gestiona tus datos"
+      ],
+      "Password": [
+        "Contraseña"
+      ],
+      "Secret key": [
+        "Clave secreta"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Time interval": [
+        "Intervalo de tiempo"
+      ],
+      "Title": [
+        "Título"
+      ]
+    },
+    "authenticator-2025:Title": {
+      "Confirm password": [
+        "Confirmar contraseña"
+      ],
+      "Log in": [
+        "Iniciar sesión"
+      ],
+      "Sign up": [
+        "Regístrate"
       ]
     },
     "authenticator-2025:Warning": {
@@ -126,8 +242,16 @@
       ]
     },
     "Placeholder": {
+      "Confirm password": [
+        "Confirmar contraseña"
+      ],
       "Password": [
         "Contraseña"
+      ]
+    },
+    "Title": {
+      "Confirm password": [
+        "Confirmar contraseña"
       ]
     },
     "Warning": {
