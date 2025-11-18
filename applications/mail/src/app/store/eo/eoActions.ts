@@ -1,7 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { CryptoProxy } from '@proton/crypto';
-import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import type { MessageState, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import { getEOMessage, getEOToken } from '@proton/shared/lib/api/eo';
 
@@ -30,8 +30,8 @@ export const init = createAsyncThunk<EOInitResult, EOInitParams>('eo/init', asyn
 
         return {
             token,
-            decryptedToken: decryptedToken ? decodeUtf8Base64(decryptedToken) : undefined,
-            password: password ? decodeUtf8Base64(password) : undefined,
+            decryptedToken: decryptedToken ? utf8ArrayToString(Uint8Array.fromBase64(decryptedToken)) : undefined,
+            password: password ? utf8ArrayToString(Uint8Array.fromBase64(password)) : undefined,
         };
     } catch (error: any | undefined) {
         console.log(error);
@@ -69,8 +69,8 @@ export const loadEOMessage = createAsyncThunk<{ eoMessage: EOMessage; messageSta
 
             const messageState = convertEOtoMessageState(Message, token) as any;
 
-            set(EO_DECRYPTED_TOKEN_KEY, encodeUtf8Base64(token));
-            set(EO_PASSWORD_KEY, encodeUtf8Base64(password));
+            set(EO_DECRYPTED_TOKEN_KEY, stringToUtf8Array(token).toBase64());
+            set(EO_PASSWORD_KEY, stringToUtf8Array(password).toBase64());
 
             return { eoMessage: Message, messageState };
         } catch (error: any | undefined) {
