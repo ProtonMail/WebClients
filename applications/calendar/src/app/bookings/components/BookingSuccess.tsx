@@ -67,7 +67,7 @@ export const BookingSuccess = () => {
 
     const timeData = `${format(selectedBookingSlot.tzDate, 'HH:mm', { locale: dateLocale })} - ${format(addMinutes(selectedBookingSlot.tzDate, bookingDetails.duration || 0), 'HH:mm', { locale: dateLocale })}`;
 
-    const hasLocation = bookingDetails.location || bookingDetails.withProtonMeetLink;
+    const hasLocation = !!bookingDetails.location.trim() || bookingDetails.withProtonMeetLink;
 
     const hostInformation = (
         <>
