@@ -61,6 +61,8 @@ export const useExternalBookingActions = () => {
                     EmailData: {
                         Name: submissionData.emailData.name,
                         Email: submissionData.emailData.email,
+                        Subject: submissionData.emailData.subject,
+                        Body: submissionData.emailData.body,
                         Ics: submissionData.ics,
                         Type: 'external',
                     },
