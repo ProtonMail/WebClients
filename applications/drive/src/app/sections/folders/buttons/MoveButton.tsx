@@ -21,7 +21,7 @@ type Props = FolderButtonProps & {
     selectedItems: Item[];
 };
 
-export const MoveButton = ({ selectedItems, type, onClick }: Props) => {
+export const MoveButton = ({ selectedItems, type, onClick, close }: Props) => {
     if (noSelection(selectedItems)) {
         return null;
     }
