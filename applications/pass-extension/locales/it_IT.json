@@ -1215,9 +1215,6 @@
       "Wrong second password": [
         "Seconda password errata"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Sei offline. Riattiva la connessione per sbloccare ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Il tuo browser ha difficoltà ad attivare ${ PASS_APP_NAME }."
       ],
@@ -1745,9 +1742,6 @@
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Connessione Internet persa. Controlla la connettività del tuo dispositivo."
-      ],
       "Invitation sent": [
         "Invito spedito"
       ],
@@ -1866,6 +1860,9 @@
       ],
       "No login found": [
         "Nessun login trovato"
+      ],
+      "No network connection": [
+        "Nessuna connessione alla rete"
       ],
       "None": [
         "Nessuno"

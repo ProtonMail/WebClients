@@ -1210,9 +1210,6 @@
       "Wrong second password": [
         "Kata sandi kedua salah"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Anda sedang offline. Silakan hubungkan kembali diri Anda ke jaringan internet untuk membuka ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Browser Anda mengalami masalah dalam mengaktifkan ${ PASS_APP_NAME }."
       ],
@@ -1722,9 +1719,6 @@
       "Internet connection lost": [
         "Koneksi internet terputus"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet terputus. Silakan periksa konektivitas perangkat Anda."
-      ],
       "Invitation sent": [
         "Undangan dikirim"
       ],
@@ -1838,6 +1832,9 @@
       ],
       "No login found": [
         "Tidak ada entri masuk yang ditemukan"
+      ],
+      "No network connection": [
+        "Tidak ada koneksi jaringan"
       ],
       "None": [
         "Tidak ada"

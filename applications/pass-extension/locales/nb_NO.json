@@ -1215,9 +1215,6 @@
       "Wrong second password": [
         "Feil andre passord"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Du er frakoblet. Gjenoppta tilkoblingen for å låse opp ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Nettleseren har problemer med å aktivere ${ PASS_APP_NAME }."
       ],
@@ -1745,9 +1742,6 @@
       "Internet connection lost": [
         "Mistet internettilkobling"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internett-tilkoblingen tapt. Sjekk enhetens tilkobling."
-      ],
       "Invitation sent": [
         "Invitasjon sendt"
       ],
@@ -1863,6 +1857,9 @@
       ],
       "No login found": [
         "Ingen pålogging funnet"
+      ],
+      "No network connection": [
+        "Ingen internettforbindelse"
       ],
       "None": [
         "Ingen"
