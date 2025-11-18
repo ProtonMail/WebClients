@@ -32,6 +32,7 @@ if (typeof browser !== 'undefined') {
             'chunk.crypto-worker-api.js',
             'chunk.crypto-argon2.js',
             'chunk.crypto-nacl.js',
+            'chunk.crypto-pqc.js',
             'chunk.pass-core.main.js',
         ];
 
