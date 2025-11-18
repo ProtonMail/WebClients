@@ -8,7 +8,6 @@ import type {
 import { AbortError } from '@protontech/drive-sdk';
 
 import { useApi } from '@proton/components';
-import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
@@ -55,6 +54,10 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
     // need to pass credentials. The credentials to storage are passed via
     // headers for each request from the SDK.
     const fetchBlob = async (options: ProtonDriveHTTPClientBlobRequest) => {
+        // We need to create a new object to avoid mutating the original object.
+        // If the original object is mutated, the retry will use modified options.
+        options = { ...options };
+
         options.url = replaceLocalURL(options.url);
         options.headers = new Headers([...defaultHeaders, ...options.headers.entries()]);
 
@@ -65,8 +68,7 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
         // Fetch API doesn't support providing progress events for uploading,
         // so we need to use XMLHttpRequest for that.
         if (options.method === 'POST') {
-            await callWithTimeout(postXmlHttpRequest(options));
-            return new Response();
+            return callWithTimeout(postXmlHttpRequest(options));
         }
 
         const request = new Request(options.url, {
@@ -94,7 +96,7 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
 async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
     let listener: () => void;
 
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<Response>((resolve, reject) => {
         if (options.signal?.aborted) {
             reject(new AbortError());
             return;
@@ -120,11 +122,12 @@ async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
         options.signal?.addEventListener('abort', listener);
 
         xhr.onload = async () => {
-            if (xhr.status >= HTTP_STATUS_CODE.OK && xhr.status < HTTP_STATUS_CODE.BAD_REQUEST) {
-                resolve();
-            } else {
-                reject(new Error(xhr.response?.Error || xhr.statusText || xhr.response));
-            }
+            resolve(
+                new Response(xhr.response, {
+                    status: xhr.status,
+                    statusText: xhr.response?.Error || xhr.statusText || xhr.response,
+                })
+            );
         };
 
         xhr.onerror = () => {
