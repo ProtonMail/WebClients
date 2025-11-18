@@ -18,7 +18,6 @@ import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/c
 import { decryptBookingContent } from '../../bookings/utils/decryptBookingContent';
 import { bookingSecretSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
-import { uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 
 const name = 'internalBookings' as const;
 interface InternalBookingState extends CalendarsState, AddressKeysState, KtState {
@@ -100,7 +99,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                     id: bookingPage.ID,
                     calendarID: bookingPage.CalendarID,
                     bookingUID: bookingPage.BookingUID,
-                    link: `${window.location.origin}/bookings#${uint8ArrayToPaddedBase64URLString(decrypted.data)}`,
+                    link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
                 });
             }
         } catch (error) {
