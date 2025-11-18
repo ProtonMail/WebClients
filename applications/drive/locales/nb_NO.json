@@ -1691,6 +1691,9 @@
       "Application problem": [
         "Applikasjonsproblem"
       ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1922,6 +1925,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avansert konto- og nettverkssikkerhet i én plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
@@ -3386,9 +3392,6 @@
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
       ],
-      "Cannot load \"My files\" root folder": [
-        "Kan ikke laste inn rotmappen \"Mine filer\""
-      ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
       ],
@@ -3457,12 +3460,6 @@
       "Error reading file": [
         "Feil ved lesing av fil"
       ],
-      "Expanding non-existent directory tree item": [
-        "Utvider ikke-eksisterende katalogtreelement"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "Utvider ikke-utvidbart katalogtreelement"
-      ],
       "Expected structure attached": [
         "Forventet struktur vedlagt"
       ],
@@ -3483,6 +3480,9 @@
       ],
       "Failed to create public share node": [
         "Kunne ikke opprette offentlig delingsnode"
+      ],
+      "Failed to expand folder": [
+        "Kunne ikke utvide mappen"
       ],
       "Failed to fetch node": [
         "Kunne ikke hente node"
@@ -3934,11 +3934,17 @@
       "ZIP code is required": [
         "Postnummer kreves"
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Enhet som ikke kan dekrypteres"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Logg på med en Gmail-adresse som allerede videresender til ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
       ]
@@ -5376,6 +5382,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "Done": [
+        "Fullført"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser ingenting? Husk å slå av blokkering av sprett-opp-vinduer."
       ],
@@ -5678,9 +5687,6 @@
       "It's better to have:": [
         "Det er bedre å ha:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "Det er ikke mulig å kopiere mappen til seg selv"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Elementer i papirkurven vil forbli der inntil du sletter dem permanent."
       ],
@@ -5879,6 +5885,9 @@
       ],
       "On public WiFi networks": [
         "På offentlige Wi-Fi-nettverk"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Én av filene eller mappene du vil kopiere finnes allerede i den valgte mappen."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "En av de krypterte stasjonene dine er låst. Dette skyldes mest sannsynlig en nylig tilbakestilling av passord."
@@ -6207,6 +6216,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
+      ],
+      "Some items failed": [
+        "Noen elementer mislyktes"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Noen av filene dine er ikke lenger tilgjengelige. Gjenopprett tilgangen til filene dine. ${ StartRecoveryButton }"
@@ -6689,6 +6701,9 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke angre denne handlingen."
+      ],
+      "You don’t have permission to copy files to this folder.": [
+        "Du har ikke rettigheter til å kopiere filer til denne mappen."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
@@ -7186,6 +7201,9 @@
       ],
       "Encrypt emails": [
         "Krypter e-poster"
+      ],
+      "Encrypted node": [
+        "Kryptert node"
       ],
       "Enter device name": [
         "Skriv enhetsnavn"
@@ -8411,6 +8429,9 @@
       "End-to-end encryption": [
         "Ende-til-ende-kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende fordeler med ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Raske P2P/BitTorrent-nedlastinger"
       ],
@@ -8628,6 +8649,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling av hvelv med opptil ${ n } person",
+        "Deling av hvelv med opptil ${ n } personer"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -10063,6 +10088,23 @@
       ],
       "Credits will be added to your balance": [
         "Kreditter vil bli lagt til saldoen din"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på at du vil fortsette?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du velger å endre ${ planTitle }-planen din, kan du miste tilgangen til enkelte funksjoner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Planen din inkluderer denne funksjonen allerede."
       ]
     },
     "Payments.plan_name": {

@@ -1676,6 +1676,9 @@
       "Application problem": [
         "アプリケーションに関する問題"
       ],
+      "Authenticator problem": [
+        "認証の問題"
+      ],
       "Black Friday": [
         "ブラックフライデー"
       ],
@@ -1905,6 +1908,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }を追加"
+      ],
+      "Advanced account and network security in one plan": [
+        "1つのプランで高度なアカウントとネットワークセキュリティ"
       ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
@@ -3369,9 +3375,6 @@
       "Cannot export this contact": [
         "この連絡先はエクスポートできません"
       ],
-      "Cannot load \"My files\" root folder": [
-        "「マイファイル」ルートフォルダを読み込めません"
-      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -3438,12 +3441,6 @@
       "Error reading file": [
         "ファイルの読み込み中にエラーが発生しました"
       ],
-      "Expanding non-existent directory tree item": [
-        "存在しないディレクトリツリーのアイテムを展開中"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "展開できないディレクトリツリーのアイテムを展開しようとしています"
-      ],
       "Expected structure attached": [
         "期待される構造が添付されています"
       ],
@@ -3464,6 +3461,9 @@
       ],
       "Failed to create public share node": [
         "公開共有ノードの作成に失敗しました"
+      ],
+      "Failed to expand folder": [
+        "フォルダーの展開に失敗しました"
       ],
       "Failed to fetch node": [
         "ノードの取得に失敗しました"
@@ -3909,11 +3909,17 @@
       "ZIP code is required": [
         "郵便番号は必須です"
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ 復号不可のデバイス"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ 復号できない名前"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "すでに ${ MAIL_APP_NAME } へ転送されている Gmail アドレスでサインインしてください"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "最初に接続した同じGmailアドレスでサインインしてください"
       ]
@@ -5295,6 +5301,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
       ],
+      "Done": [
+        "完了"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "何も表示されませんか？ポップアップブロックをオフにすることを忘れないでください。"
       ],
@@ -5595,9 +5604,6 @@
       "It's better to have:": [
         "以下の方が良いでしょう:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "フォルダを自分自身にコピーすることはできません"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "完全に削除しない限り、アイテムはごみ箱に残ります"
       ],
@@ -5795,6 +5801,9 @@
       ],
       "On public WiFi networks": [
         "公共のWiFiネットワーク上にて"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "コピーしようとしているファイルまたはフォルダの一部が、選択したフォルダ内に既に存在しています。"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "暗号化されたドライブの1つがロックされています。これは最近のパスワードリセットによるものです。"
@@ -6122,6 +6131,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "一部の政府は、特定のウェブサイトへの利用をブロックまたは制限します。VPNは、お客様の活動と個人情報を秘匿し、検閲を回避するのに役立ちます。"
+      ],
+      "Some items failed": [
+        "一部の項目が失敗しました"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "アクセスできなくなったファイルがあります。復元を開始を押すと、復元します。${ StartRecoveryButton }"
@@ -6599,6 +6611,9 @@
       ],
       "You cannot undo this action.": [
         "この操作は取り消すことができません。"
+      ],
+      "You don’t have permission to copy files to this folder.": [
+        "このフォルダにファイルをコピーする権限がありません。"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
@@ -7086,6 +7101,9 @@
       ],
       "Encrypt emails": [
         "メールを暗号化"
+      ],
+      "Encrypted node": [
+        "暗号化ノード"
       ],
       "Enter device name": [
         "デバイス名を入力"
@@ -7617,6 +7635,9 @@
       ],
       "Reactivate now": [
         "今すぐ再アクティブ"
+      ],
+      "Reactivate subscription": [
+        "サブスクリプションを再開"
       ],
       "Request an invite": [
         "招待をリクエスト"
@@ -8229,6 +8250,9 @@
       "End-to-end encryption": [
         "エンドツーエンド暗号化"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "既存の ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 特典"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "高速な P2P/BitTorrent ダウンロード"
       ],
@@ -8441,6 +8465,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "最大${ n }人までと保管庫共有"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
@@ -9840,6 +9867,23 @@
         "クレジットがお客様の残高に追加されます。"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "本当に続行しますか？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } プランを変更された場合、一部の機能にアクセスできなくなる可能性があります。"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } を使い続ける"
+      ],
+      "Yes, I'm sure": [
+        "はい、構いません"
+      ],
+      "Your plan includes this feature already.": [
+        "お客様のプランには、この機能がすでに含まれています。"
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "無料"
@@ -10163,6 +10207,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**この日までに登録**すると、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "その日付以降、アカウントは**${ BRAND_NAME } Free**にダウングレードされます。気が変わった場合は、**サブスクリプションを再有効化する**ことで引き続きプレミアム機能にアクセスできます。"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "最大${ maxRewardAmount }のクレジットを獲得できます。お客様が招待された方が${ BRAND_NAME }のプランに登録されますと、お客様は${ referrerRewardAmount }を受け取ることができます。"
