@@ -43,7 +43,7 @@ export const getPassAppRoutes = ({
                 icon: 'arrow-down-line',
                 subsections: [
                     {
-                        id: 'download`',
+                        id: 'download',
                     },
                 ],
             },

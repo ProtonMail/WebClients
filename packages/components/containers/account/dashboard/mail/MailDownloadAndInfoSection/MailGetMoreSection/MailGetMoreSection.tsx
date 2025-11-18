@@ -23,6 +23,7 @@ interface Props {
 
 export const MailGetMoreSection = ({ subscription }: Props) => {
     const isFreeSubscription = hasFree(subscription);
+    const mailPlusPlanName = PLAN_NAMES[PLANS.MAIL];
     const sections: DashboardMoreInfoSection[] = [
         {
             title: () => c('Blog').t`See and manage all your email subscriptions`,
@@ -33,13 +34,13 @@ export const MailGetMoreSection = ({ subscription }: Props) => {
         {
             title: () =>
                 isFreeSubscription
-                    ? c('Blog').t`Easily manage your inbox with Mail Plus`
+                    ? c('Blog').t`Easily manage your inbox with ${mailPlusPlanName}`
                     : c('Blog').t`Easily manage your inbox`,
             tag: (
                 <DashboardMoreInfoSectionTag
                     key="watch-shows-label"
                     prefix={<MailLogo variant="glyph-only" size={5} />}
-                    text={PLAN_NAMES[PLANS.MAIL]}
+                    text={mailPlusPlanName}
                 />
             ),
             description: () =>
