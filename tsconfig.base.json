@@ -17,7 +17,7 @@
         "target": "esnext",
         "useDefineForClassFields": false,
         "skipLibCheck": true,
-        "types": ["@proton/types", "webpack-env", "jest", "vitest/globals"],
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "jest", "vitest/globals"],
         "baseUrl": ".",
         "paths": {
             "@proton/icons/icons/*": ["./packages/icons/icons/*"],

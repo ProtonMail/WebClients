@@ -13976,6 +13976,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/global-types-monorepo@workspace:^, @types/global-types-monorepo@workspace:packages/global-types":
+  version: 0.0.0-use.local
+  resolution: "@types/global-types-monorepo@workspace:packages/global-types"
+  languageName: unknown
+  linkType: soft
+
 "@types/google-protobuf@npm:^3.15.12":
   version: 3.15.12
   resolution: "@types/google-protobuf@npm:3.15.12"
@@ -42205,6 +42211,7 @@ __metadata:
     "@proton/prettier-config-proton": "workspace:^"
     "@proton/stylelint-config-proton": "workspace:^"
     "@trivago/prettier-plugin-sort-imports": "npm:^6.0.0"
+    "@types/global-types-monorepo": "workspace:^"
     "@types/jest-when": "npm:^3.5.5"
     husky: "npm:^9.1.7"
     is-ci: "npm:^4.1.0"
