@@ -2311,6 +2311,9 @@
       "Application problem": [
         "Problém aplikácie"
       ],
+      "Authenticator problem": [
+        "Problém s overovačom"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -2823,6 +2826,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Pridať ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Pokročilé zabezpečenie účtu a siete v jednom pláne"
       ],
       "High-speed chats and advanced AI features.": [
         "Vysokorýchlostné chaty a pokročilé funkcie AI"
@@ -5248,6 +5254,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Prihláste sa , prosím, pomocou Gmailovej adresy, ktorá je už presmerovaná na ${ MAIL_APP_NAME }."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Prihláste sa pomocou tej istej Gmail adresy, ktorú ste použili pri prvom prihlásení, prosím."
       ]
@@ -6058,7 +6067,7 @@
         "Nastaviť ${ strongText } zo služby Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
-        "Prihláste sa do mobilnej aplikácie, aby ste dokončili tento krok "
+        "Prihláste sa do mobilnej aplikácie, aby ste dokončili tento krok"
       ],
       "Storage unlocked": [
         "Úložisko odomknuté"
@@ -7755,10 +7764,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9694,7 +9700,7 @@
         "Mesto"
       ],
       "Cleaned": [
-        "Vyčistené "
+        "Vyčistené"
       ],
       "Code is 6 digits without spaces": [
         "Kód je 6 čísiel bez medzier"
@@ -11295,6 +11301,9 @@
       "End-to-end encryption": [
         "Šifrovanie End-to-end"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Existujúce výhody ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Rýchle sťahovanie P2P/BitTorrent"
       ],
@@ -11522,6 +11531,12 @@
         "Zdieľanie trezora (s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Zdieľanie trezora s ${ n } osobou",
+        "Zdieľanie trezora až s ${ n } osobami",
+        "Zdieľanie trezora až s ${ n } osobami",
+        "Zdieľanie trezora až s ${ n } osobami"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
@@ -12730,6 +12745,23 @@
       ],
       "Credits will be added to your balance": [
         "Kredity budú pridané k vášmu zostatku"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Naozaj chcete pokračovať?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Ak sa rozhodnete zmeniť svoj plán ${ planTitle }, môžete stratiť prístup k niektorým funkciám."
+      ],
+      "Keep ${ planTitle }": [
+        "Ponechať ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Áno, som si istý/á"
+      ],
+      "Your plan includes this feature already.": [
+        "Váš plán už túto funkciu zahŕňa."
       ]
     },
     "Payments.plan_name": {

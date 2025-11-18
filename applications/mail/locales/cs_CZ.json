@@ -2311,6 +2311,9 @@
       "Application problem": [
         "Problém s aplikací"
       ],
+      "Authenticator problem": [
+        "Problém s ověřovací aplikací"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -5251,6 +5254,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Přihlaste se prosím s adresou Gmail, která již přeposílá na ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Přihlaste se prosím pomocí stejné adresy Gmail, kterou jste původně použili pro připojení"
       ]
@@ -7758,10 +7764,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
