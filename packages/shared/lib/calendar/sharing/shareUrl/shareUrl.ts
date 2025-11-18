@@ -1,10 +1,9 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToBinaryString, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
 
 import { AES256, EVENT_ACTIONS } from '../../../constants';
 import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../../helpers/crypto';
-import { stringToUint8Array, uint8ArrayToPaddedBase64URLString, uint8ArrayToString } from '../../../helpers/encoding';
+import { uint8ArrayToPaddedBase64URLString } from '../../../helpers/encoding';
 import type { Nullable } from '../../../interfaces';
 import type { CalendarLink, CalendarUrl } from '../../../interfaces/calendar';
 import { ACCESS_LEVEL } from '../../../interfaces/calendar';
@@ -62,11 +61,11 @@ export const generateEncryptedPassphrase = ({
 }: {
     passphraseKey: Uint8Array<ArrayBuffer>;
     passphrase: string;
-}) => encodeBase64(xorEncryptDecrypt({ key: uint8ArrayToString(passphraseKey), data: decodeBase64(passphrase) }));
+}) => xorEncryptDecrypt({ key: passphraseKey, data: Uint8Array.fromBase64(passphrase) }).toBase64();
 
 export const generateCacheKey = () => uint8ArrayToPaddedBase64URLString(generateRandomBytes(16));
 
-export const generateCacheKeySalt = () => encodeBase64(arrayToBinaryString(generateRandomBytes(8)));
+export const generateCacheKeySalt = () => generateRandomBytes(8).toBase64();
 
 export const getCacheKeyHash = ({ cacheKey, cacheKeySalt }: { cacheKey: string; cacheKeySalt: string }) =>
     getSHA256Base64String(`${cacheKeySalt}${cacheKey}`);
@@ -110,9 +109,10 @@ export const getPassphraseKey = ({
         return null;
     }
 
-    return stringToUint8Array(
-        xorEncryptDecrypt({ key: decodeBase64(calendarPassphrase), data: decodeBase64(encryptedPassphrase) })
-    );
+    return xorEncryptDecrypt({
+        key: Uint8Array.fromBase64(calendarPassphrase),
+        data: Uint8Array.fromBase64(encryptedPassphrase),
+    });
 };
 
 export const buildLink = ({

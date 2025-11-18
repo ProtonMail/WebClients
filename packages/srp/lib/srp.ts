@@ -5,7 +5,8 @@ import {
     modExp,
     uint8ArrayToBigInt,
 } from '@proton/crypto/lib/bigInteger';
-import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
+import { arrayToBinaryString } from '@proton/crypto/lib/utils';
+import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { AUTH_VERSION, MAX_VALUE_ITERATIONS, SRP_LEN } from './constants';
@@ -194,12 +195,12 @@ export const getSrp = async (
     }
 
     const modulusArray = await verifyAndGetModulus(serverModulus);
-    const serverEphemeralArray = binaryStringToArray(decodeBase64(ServerEphemeral));
+    const serverEphemeralArray = Uint8Array.fromBase64(ServerEphemeral);
 
     const hashedPasswordArray = await hashPassword({
         version: authVersion,
         password,
-        salt: authVersion < 3 ? undefined : decodeBase64(Salt),
+        salt: authVersion < 3 ? undefined : uint8ArrayToString(Uint8Array.fromBase64(Salt)),
         username: authVersion < 3 ? Username : undefined,
         modulus: modulusArray,
     });
@@ -212,14 +213,18 @@ export const getSrp = async (
     });
 
     return {
-        clientEphemeral: encodeBase64(arrayToBinaryString(clientEphemeral)),
-        clientProof: encodeBase64(arrayToBinaryString(clientProof)),
-        expectedServerProof: encodeBase64(arrayToBinaryString(expectedServerProof)),
+        clientEphemeral: clientEphemeral.toBase64(),
+        clientProof: clientProof.toBase64(),
+        expectedServerProof: expectedServerProof.toBase64(),
         sharedSession,
     };
 };
 
-const generateVerifier = async (byteLength: number, hashedPasswordBytes: Uint8Array<ArrayBuffer>, modulusBytes: Uint8Array<ArrayBuffer>) => {
+const generateVerifier = async (
+    byteLength: number,
+    hashedPasswordBytes: Uint8Array<ArrayBuffer>,
+    modulusBytes: Uint8Array<ArrayBuffer>
+) => {
     const generator = BigInt(2);
 
     const modulus = await littleEndianArrayToBigInteger(modulusBytes);
@@ -235,12 +240,12 @@ export const getRandomSrpVerifier = async (
     version = AUTH_VERSION
 ) => {
     const modulus = await verifyAndGetModulus(serverModulus);
-    const salt = arrayToBinaryString(crypto.getRandomValues(new Uint8Array(10)));
+    const saltBytes = crypto.getRandomValues(new Uint8Array(10));
     const hashedPassword = await hashPassword({
         version,
         username,
         password,
-        salt,
+        salt: arrayToBinaryString(saltBytes),
         modulus,
     });
 
@@ -248,7 +253,7 @@ export const getRandomSrpVerifier = async (
 
     return {
         version,
-        salt: encodeBase64(salt),
-        verifier: encodeBase64(arrayToBinaryString(verifier)),
+        salt: saltBytes.toBase64(),
+        verifier: verifier.toBase64(),
     };
 };
