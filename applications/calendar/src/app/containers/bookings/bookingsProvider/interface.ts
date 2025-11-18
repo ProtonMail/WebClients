@@ -4,6 +4,7 @@ export const MAX_BOOKING_SLOTS = 100 as const;
 export const DEFAULT_EVENT_DURATION = 30;
 export const DEFAULT_RANGE_START_HOUR = 9;
 export const DEFAULT_RANGE_END_HOUR = 17;
+export const DEFAULT_RECURRING = true;
 
 export interface BookingsContextValue {
     submitForm: () => Promise<void>;
@@ -12,7 +13,7 @@ export interface BookingsContextValue {
     openBookingSidebar: (date: Date) => void;
     closeBookingSidebar: () => void;
     formData: BookingFormData;
-    updateFormData: (field: keyof InternalBookingFrom, value: any) => void;
+    updateFormData: (field: keyof InternalBookingFrom, value: any, date?: Date) => void;
     loading: boolean;
     addBookingRange: (data: Omit<BookingRange, 'id'>) => void;
     updateBookingRange: (id: string, start: Date, end: Date) => void;
@@ -48,7 +49,14 @@ export interface Slot extends BookingRange {
     rangeID: string;
 }
 
+export interface RecurringRangeDisplay {
+    id: number;
+    date: Date;
+    ranges: BookingRange[];
+}
+
 export interface BookingFormData {
+    recurring: boolean;
     summary: string;
     description?: string;
     selectedCalendar: string | null;
