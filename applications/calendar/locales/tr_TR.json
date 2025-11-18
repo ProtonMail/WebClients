@@ -174,6 +174,9 @@
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
+      "Close sidebar": [
+        "Kenar çubuğunu kapat"
+      ],
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
@@ -225,6 +228,9 @@
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
       ],
+      "Copy booking page link": [
+        "Rezervasyon sayfası bağlantısını kopyala"
+      ],
       "Copy email address": [
         "E-posta adresini kopyala"
       ],
@@ -248,6 +254,9 @@
       ],
       "Create a booking page": [
         "Bir rezervasyon sayfası oluştur"
+      ],
+      "Create a free account": [
+        "Ücretsiz hesap açın"
       ],
       "Create a new bookings page": [
         "Yeni bir rezervasyon sayfası oluşturun"
@@ -305,6 +314,9 @@
         "${ selectedCount } kişi grubunu sil",
         "${ selectedCount } kişi grubunu sil"
       ],
+      "Delete booking page": [
+        "Rezervasyon sayfasını sil"
+      ],
       "Delete contact": [
         "Kişiyi sil"
       ],
@@ -343,6 +355,9 @@
       ],
       "Edit": [
         "Düzenle"
+      ],
+      "Edit booking page": [
+        "Rezervasyon sayfasını düzenle"
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -424,6 +439,9 @@
       ],
       "Go to settings": [
         "Ayarlara git"
+      ],
+      "Go to the next available appointment": [
+        "Sonraki uygun randevuya git"
       ],
       "Got it": [
         "Anladım"
@@ -745,6 +763,15 @@
       ],
       "See plan features": [
         "Tarife özelliklerini görün"
+      ],
+      "See previous availability": [
+        "Önceki uygun zamanlara bakın"
+      ],
+      "See upcoming availability": [
+        "Yaklaşan uygun zamanlara bakın"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "${ dateHeaderLongString } tarihinde ${ timeString } saatini seçin"
       ],
       "Select ${ planOrAppName }": [
         "${ planOrAppName } tarifesini seç"
@@ -1537,6 +1564,9 @@
       "Application problem": [
         "Uygulama sorunu"
       ],
+      "Authenticator problem": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
       "Black Friday": [
         "Muhteşem Cuma"
       ],
@@ -1946,6 +1976,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "Advanced account and network security in one plan": [
+        "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
       ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
@@ -4042,6 +4075,9 @@
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz",
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz"
       ],
+      "You cannot enter the organizer email": [
+        "Düzenleyicinin e-posta adresini yazamazsınız"
+      ],
       "You have reached the maximum number of calendars.": [
         "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
       ],
@@ -4062,6 +4098,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Lütfen zaten ${ MAIL_APP_NAME } uygulamasına yönlendiren bir Gmail adresiyle oturum açın"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Lütfen başlangıçta bağlandığınızla aynı Gmail adresiyle oturum açın"
       ]
@@ -4606,8 +4645,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "İletişim bilgileriniz"
+      "Confirm your booking": [
+        "Rezervasyonunuzu onaylayın"
       ]
     },
     "Google Meet": {
@@ -5267,6 +5306,12 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Bu bağlantıya sahip olan herkes, takviminizde uygun ve meşgul olduğunuz zamanları görebilir. Başlık, konum veya katılımcılar gibi etkinlik bilgilerini göremez."
       ],
+      "Appointment duration": [
+        "Randevu süresi"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Bu rezervasyon sayfasını silmek istediğinize emin misiniz?"
+      ],
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
@@ -5303,6 +5348,9 @@
       "Booking overlaps with an existing booking.": [
         "Rezervasyon var olan bir rezervasyonla çakışıyor."
       ],
+      "Booking page deleted": [
+        "Rezervasyon sayfası silindi"
+      ],
       "Booking page example": [
         "Rezervasyon sayfası örneği"
       ],
@@ -5326,6 +5374,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Aradığınız etkinlikleri bulamıyor musunuz? Gizli takvimlerdeki bazı etkinlikler sorgunuzla eşleşiyor. Bu sonuçları görmek için ${ hiddenWithItemsCalendarList } görünürlüğünü açın."
+      ],
+      "Cannot create booking range across days": [
+        "Birden fazla güne yayılan bir rezervasyon aralığı oluşturulamaz"
+      ],
+      "Cannot create booking range in the past": [
+        "Geçmişte bir rezervasyon aralığı oluşturulamaz"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -5574,6 +5628,9 @@
       "High Priority": [
         "Yüksek öncelik"
       ],
+      "Host": [
+        "Sunucu"
+      ],
       "How long should an appointment last?": [
         "Randevu ne kadar sürmeli?"
       ],
@@ -5704,11 +5761,17 @@
       "Loading events": [
         "Etkinlikler yükleniyor"
       ],
+      "Location": [
+        "Konum"
+      ],
       "Low Priority": [
         "Düşük Öncelik"
       ],
       "Manage your calendars": [
         "Takvimlerinizi yönetin"
+      ],
+      "Manange booking page": [
+        "Rezervasyon sayfası yönetimi"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -5734,14 +5797,14 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Çoğu herkese açık Wi-Fi ağı güvenlidir. Ancak bazılarında güvenlik açıkları vardır ve sizi siber tehditlerle karşı karşıya bırakır. Bir VPN, trafiğinizi şifreleyerek sizi korur."
       ],
-      "Name your booking page": [
-        "Rezervasyon sayfanıza bir ad verin"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
       "New": [
         "Yeni"
+      ],
+      "No appointments available this week": [
+        "Bu hafta alınabilecek bir randevu yok"
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
@@ -5827,6 +5890,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Sizden randevu alan kişiler, iletişim için ${ selectedCalendar.Email } adresinizi görecek."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
       ],
@@ -5882,14 +5948,26 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
+      "Powered by": [
+        "Tarafından sunuluyor"
+      ],
+      "Powered by ${ protonButton }": [
+        "${ protonButton } tarafından sunuluyor"
+      ],
       "Previous modifications on this series will be lost.": [
         "Bu dizide daha önce yapılmış değişiklikler kaybolacak."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Önceden rezerve edilen etkinlikler silinmeyecek."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
       "Primary": [
         "Birincil"
+      ],
+      "Privacy by default": [
+        "Gizlilik odaklı"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Gizli gezinme (veya “gizli” kip) yalnızca aygıtınızda etkinliğinizin gizliliğini korumak için kullanışlıdır. Tarayıcınızın gezinme geçmişinizi ve tanımlama bilgilerini kaydetmesini engeller, ancak sizi görünmez yapmaz. İnternet hizmeti sağlayıcınız, ağ yöneticiniz ve ziyaret ettiğiniz siteler çevrim içi ortamda ne yaptığınızı görmeyi sürdürebilir."
@@ -5946,8 +6024,8 @@
       "Setting up your new address…": [
         "Yeni adresiniz ayarlanıyor…"
       ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Başkalarının takviminizden zaman ayırmasına izin vermek için bu sayfayı paylaşın. İstediğiniz zaman kenar çubuğundaki Rezervasyon sayfaları altından yönetebilirsiniz."
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Bu sayfayı paylaşarak başkalarının takviminizden randevu almasını sağlayın. Bu sayfayı kenar çubuğundaki Rezervasyon sayfaları altında bulabilir ve düzenleyebilirsiniz."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
@@ -5991,6 +6069,9 @@
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Dijital hayatınızın kontrolunu elinize alın"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -6039,6 +6120,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Bu rezervasyon, ${ BRAND_NAME } gizlilik odaklı ürünleri paketinin bir parçası olan ${ CALENDAR_APP_NAME } ile yapılmıştır."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Bu etkinlik düzenleyici tarafından güncellendi. Yanıtınızı yalnızca bu dizideki bu etkinlik için değiştirmek ister misiniz?"
@@ -6177,6 +6261,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Haftalık ve aylık görünümler yalnızca bilgisayar uygulamasında kullanılabilir."
+      ],
+      "What do you want to call this booking page?": [
+        "Bu rezervasyon sayfasına ne ad vermek istersiniz?"
       ],
       "What should people know before booking?": [
         "İnsanlar rezervasyon yapmadan önce nelere dikkat etmeliler?"
@@ -6839,6 +6926,9 @@
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
       ],
+      "Full name": [
+        "Tam ad"
+      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -7142,8 +7232,14 @@
       "End time of the booking range": [
         "Rezervasyon aralığının bitiş saati"
       ],
+      "How long should an appointment last?": [
+        "Bir randevu ne kadar sürmeli?"
+      ],
       "Start time of the booking range": [
         "Rezervasyon aralığının başlangıç saati"
+      ],
+      "What should people know before booking?": [
+        "Rezervasyon almadan önce insanların neyi bilmesi gerekir?"
       ]
     },
     "Label for contact group color": {
@@ -7210,6 +7306,9 @@
     "Link": {
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
+      ],
+      "Booking pages": [
+        "Rezervasyon sayfaları"
       ],
       "Calendars": [
         "Takvimler"
@@ -7921,6 +8020,9 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Var olan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } avantajları"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hızlı P2P/BitTorrent indirmeleri"
       ],
@@ -8138,6 +8240,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "${ n } kişiye kadar kasa paylaşımı",
+        "${ n } kişiye kadar kasa paylaşımı"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -9329,6 +9435,23 @@
         "Kalan kredi bakiyenize eklenecek"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "İlerlemek istediğinize emin misiniz?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } tarifenizi değiştirmeyi seçerseniz bazı özelliklere erişiminizi kaybedebilirsiniz."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } tarifesinde kal"
+      ],
+      "Yes, I'm sure": [
+        "Evet, eminim"
+      ],
+      "Your plan includes this feature already.": [
+        "Tarifenizde bu özellik zaten var."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -9452,14 +9575,14 @@
       "Anytown": [
         "İl"
       ],
-      "Booking page title": [
-        "Rezervasyon sayfası başlığı"
-      ],
       "Company name": [
         "Kuruluş adı"
       ],
       "E.g., ": [
         "Örneğin, "
+      ],
+      "Email for booking confirmation": [
+        "Rezervasyon onayı için e-posta adresi"
       ],
       "Enter passphrase": [
         "Parola ifadesini yazın"
@@ -9496,6 +9619,9 @@
       ],
       "Name": [
         "Ad"
+      ],
+      "Name of attendee": [
+        "Katılımcının adı"
       ],
       "Name or email address": [
         "Ad ya da e-posta adresi"
@@ -11305,6 +11431,9 @@
       "Apply gift code": [
         "Hediye kodunu uygula"
       ],
+      "Appointment details": [
+        "Randevu ayrıntıları"
+      ],
       "Are you sure?": [
         "Emin misiniz?"
       ],
@@ -11340,6 +11469,9 @@
       ],
       "Change password": [
         "Parolayı değiştir"
+      ],
+      "Choose a time": [
+        "Zamanı seçin"
       ],
       "Choose how many times this event will repeat": [
         "Bu etkinliğin sona ermeden önce kaç kez yineleneceğini seçin"
@@ -11426,6 +11558,9 @@
       ],
       "Delete ${ value }": [
         "${ value } sil"
+      ],
+      "Delete booking page?": [
+        "Rezervasyon sayfası silinsin mi?"
       ],
       "Delete event": [
         "Etkinliği sil"

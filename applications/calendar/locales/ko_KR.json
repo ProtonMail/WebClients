@@ -50,6 +50,9 @@
       "Add": [
         "추가"
       ],
+      "Add a date": [
+        "날짜 추가"
+      ],
       "Add account": [
         "계정 추가"
       ],
@@ -170,6 +173,9 @@
       "Close navigation": [
         "탐색 종료"
       ],
+      "Close sidebar": [
+        "사이드바 닫기"
+      ],
       "Close this banner": [
         "이 배너 닫기"
       ],
@@ -184,6 +190,9 @@
       ],
       "Confirm": [
         "확인"
+      ],
+      "Confirm booking": [
+        "예약 확인"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "링크를 열어 확인하시기 바랍니다 ${ linkToShow }"
@@ -218,6 +227,9 @@
       "Copy alias “${ name }”": [
         "별칭 \"${ name }\" 복사"
       ],
+      "Copy booking page link": [
+        "예약 페이지 링크 복사"
+      ],
       "Copy email address": [
         "이메일 주소 복사"
       ],
@@ -226,6 +238,9 @@
       ],
       "Copy link": [
         "링크 복사"
+      ],
+      "Copy link and close": [
+        "링크 복사 및 닫기"
       ],
       "Copy password": [
         "비밀번호 복사"
@@ -293,6 +308,9 @@
       "Delete ${ selectedCount } contact group": [
         "${ selectedCount } 개의 그룹 삭제"
       ],
+      "Delete booking page": [
+        "예약 페이지 삭제"
+      ],
       "Delete contact": [
         "연락처 삭제"
       ],
@@ -331,6 +349,9 @@
       ],
       "Edit": [
         "편집"
+      ],
+      "Edit booking page": [
+        "예약 페이지 편집"
       ],
       "Edit email address": [
         "이메일 주소 추가"
@@ -412,6 +433,9 @@
       ],
       "Go to settings": [
         "설정으로 이동하기"
+      ],
+      "Go to the next available appointment": [
+        "다음 빈 약속으로 이동하기"
       ],
       "Got it": [
         "확인"
@@ -680,6 +704,9 @@
       "Remove gift code": [
         "기프트 코드 삭제"
       ],
+      "Remove the booking range": [
+        "예약 범위 삭제"
+      ],
       "Remove this notification": [
         "이 알림 삭제"
       ],
@@ -730,6 +757,15 @@
       ],
       "See plan features": [
         "플랜 기능 표시"
+      ],
+      "See previous availability": [
+        "기존 가용성 확인"
+      ],
+      "See upcoming availability": [
+        "예약 가능 여부 확인"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "${ timeString }에 ${ dateHeaderLongString } 선택"
       ],
       "Select ${ planOrAppName }": [
         "${ planOrAppName } 선택"
@@ -814,6 +850,9 @@
       ],
       "Skip verification": [
         "인증 건너뛰기"
+      ],
+      "Split current booking range": [
+        "현재 예약 기간 분할"
       ],
       "Start import": [
         "가져오기 시작"
@@ -1245,6 +1284,11 @@
         "선택 사항"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount }개의 추가 항목이 표시되지 않습니다"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
@@ -1503,6 +1547,9 @@
       ],
       "Application problem": [
         "앱 문제"
+      ],
+      "Authenticator problem": [
+        "인증기 문제"
       ],
       "Black Friday": [
         "블랙 프라이데이"
@@ -1908,6 +1955,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } 추가"
+      ],
+      "Advanced account and network security in one plan": [
+        "하나의 플랜에서 누리는 고급 계정 및 네트워크 보안"
       ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
@@ -3176,6 +3226,9 @@
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "곧 세부사항이 담긴 보안 이메일이 발송됩니다."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
       ]
@@ -3564,6 +3617,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "내용 검색을 활성화 할 수 없습니다. 어플리케이션을 재시작하거나 데이터를 제거하십시오."
       ],
+      "Content verification failed": [
+        "콘텐츠 확인 실패"
+      ],
       "Could not open created vault": [
         "생성된 금고를 열 수 없습니다."
       ],
@@ -3731,6 +3787,9 @@
       ],
       "Name required": [
         "이름이 필요합니다"
+      ],
+      "No booking page data received": [
+        "예약 페이지 데이터를 수신할 수 없음"
       ],
       "No calendars found to import": [
         "불러올 캘린더를 찾을 수 없음"
@@ -3998,6 +4057,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 이미 전달되는 Gmail 주소로 로그인해 주세요."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "처음에 연결한 동일한 Gmail 주소로 로그인하세요."
       ]
@@ -4532,6 +4594,11 @@
         "매우 작게"
       ]
     },
+    "Form": {
+      "Confirm your booking": [
+        "내 예약 확인"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Google Meet 참여"
@@ -4986,6 +5053,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
       ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } 화상 통화"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
@@ -5157,6 +5227,12 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "이 링크가 있는 사용자는 캘린더에서 사용자가 여유로운지 바쁜지 확인할 수 있습니다. 제목, 위치 또는 참가자 등 이벤트 세부사항은 볼 수 없습니다."
       ],
+      "Appointment duration": [
+        "일정 기간"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "이 예약 페이지를 정말 삭제하시겠어요?"
+      ],
       "Are you sure you want to discard your import?": [
         "정말로 불러오기를 취소하시겠어요?"
       ],
@@ -5184,6 +5260,18 @@
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
+      "Booking already exists.": [
+        "예약이 이미 존재합니다."
+      ],
+      "Booking cannot be added in the past.": [
+        "과거 시점으로 예약을 추가할 수 없습니다."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "예약이 기존 예약과 중복됩니다."
+      ],
+      "Booking page deleted": [
+        "예약 페이지가 삭제되었습니다"
+      ],
       "Booking page example": [
         "예약 페이지 예시"
       ],
@@ -5207,6 +5295,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "원하는 이벤트를 찾지 못했나요? 숨겨진 캘린더에서 일치하는 일부 이벤트가 일치합니다. 확인하려면 ${ hiddenWithItemsCalendarList }를 표시할 수 있도록 켜 주세요."
+      ],
+      "Cannot create booking range across days": [
+        "여러 날에 걸쳐 예약 범위를 생성할 수 없습니다."
+      ],
+      "Cannot create booking range in the past": [
+        "과거로 예약 범위를 설정할 수 없습니다"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
@@ -5451,6 +5545,9 @@
       "High Priority": [
         "중요도 높음"
       ],
+      "Host": [
+        "호스트"
+      ],
       "How long should an appointment last?": [
         "일정 소요시간이 얼마입니까?"
       ],
@@ -5580,11 +5677,17 @@
       "Loading events": [
         "이벤트를 불러오는 중"
       ],
+      "Location": [
+        "위치"
+      ],
       "Low Priority": [
         "중요도 낮음"
       ],
       "Manage your calendars": [
         "캘린더 관리"
+      ],
+      "Manange booking page": [
+        "예약 페이지 관리"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
@@ -5610,14 +5713,14 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "대다수의 공용 WiFi 네트워크는 안전하지만 일부 네트워크는 보안이 취약하여 사이버 위협에 노출됩니다. VPN이 트래픽을 암호화하여 사용자를 보호합니다."
       ],
-      "Name your booking page": [
-        "예약 페이지 이름을 지정하세요."
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
       ],
       "New": [
         "신규"
+      ],
+      "No appointments available this week": [
+        "이번 주에 예약 가능한 일정 없음"
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
@@ -5757,14 +5860,23 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "비활성 키로 암호화된 데이터가 포함된 연락처를 찾는 동안 기다려 주세요."
       ],
+      "Powered by ${ protonButton }": [
+        "Powered by ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "이 시리즈에 대한 이전 수정 사항은 손실됩니다."
+      ],
+      "Previously booked events won't be deleted.": [
+        "기존에 예약된 이벤트는 삭제되지 않습니다."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
       "Primary": [
         "우선 순위"
+      ],
+      "Privacy by default": [
+        "Privacy by default"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
@@ -5783,6 +5895,9 @@
       ],
       "Removed participants will be notified.": [
         "삭제된 참가자들에게 알림이 전송됩니다."
+      ],
+      "Saving event": [
+        "이벤트를 저장하는 중"
       ],
       "Scan the QR code with your mobile device": [
         "모바일 기기로 QR 코드를 스캔해보세요"
@@ -6048,6 +6163,9 @@
       "What should people know before booking?": [
         "예약 전에 알아두어야 할 사항은 무엇인가요?"
       ],
+      "When are you free?": [
+        "언제 시간이 괜찮으신가요?"
+      ],
       "When working remotely": [
         "재택 근무시"
       ],
@@ -6146,6 +6264,9 @@
       ],
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "한 페이지에 ${ MAX_BOOKING_SLOTS }개 이상의 예약 슬롯이 포함될 수 없습니다."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
@@ -6691,6 +6812,9 @@
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
+      "Full name": [
+        "전체 이름"
+      ],
       "Get the deal": [
         "특가로 구매"
       ],
@@ -6986,6 +7110,17 @@
         "줌 미팅"
       ]
     },
+    "label": {
+      "Date of the booking range": [
+        "예약 기간 날짜"
+      ],
+      "End time of the booking range": [
+        "예약 기간의 종료 시간"
+      ],
+      "Start time of the booking range": [
+        "예약 기간의 시작 시간"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "색상"
@@ -7050,6 +7185,9 @@
     "Link": {
       "Add a gift code": [
         "기프트 코드 추가"
+      ],
+      "Booking pages": [
+        "예약 페이지"
       ],
       "Calendars": [
         "캘린더"
@@ -7122,6 +7260,9 @@
       ],
       "Reactivate now": [
         "지금 재활성화"
+      ],
+      "Reactivate subscription": [
+        "구독 재활성화"
       ],
       "Request an invite": [
         "가입 요청하기"
@@ -7733,6 +7874,9 @@
       "End-to-end encryption": [
         "종단간 암호화"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "기존 ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 혜택"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "빠른 P2P/비트 토렌트 다운로드"
       ],
@@ -7945,6 +8089,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "최대 ${ n }명의 사용자와 금고 공유"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
@@ -9099,6 +9246,23 @@
         "크레딧이 잔액에 추가됩니다."
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "계속 진행하겠습니까?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } 플랜의 수정을 선택시, 일부 기능에 대한 접근을 잃을 수 있습니다."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } 유지"
+      ],
+      "Yes, I'm sure": [
+        "네, 확실합니다."
+      ],
+      "Your plan includes this feature already.": [
+        "회원님의 플랜에 이 기능이 이미 포함되어 있습니다."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -9222,14 +9386,14 @@
       "Anytown": [
         "서울특별시 낙원구"
       ],
-      "Booking page title": [
-        "예약 페이지 제목"
-      ],
       "Company name": [
         "법인 이름"
       ],
       "E.g., ": [
         "예, "
+      ],
+      "Email for booking confirmation": [
+        "예약 확인 이메일"
       ],
       "Enter passphrase": [
         "암호 문구 입력"
@@ -9266,6 +9430,9 @@
       ],
       "Name": [
         "이름"
+      ],
+      "Name of attendee": [
+        "참여자 이름"
       ],
       "Name or email address": [
         "이름 또는 이메일 주소"
@@ -9445,6 +9612,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**해당 날짜 이전에 구독시,** **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "해당 날짜 이후에는 회원님의 계정이 **${ BRAND_NAME } 무료 플랜**으로 다운그레이드됩니다. 마음이 바뀌신다면, 프리미엄 기능을 계속 이용하기 위해 **구독을 재활성화**할 수 있습니다."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "최대 ${ maxRewardAmount } 크레딧을 적립하세요. 초대한 사람이 ${ BRAND_NAME } 플랜을 구독하면 ${ referrerRewardAmount }을 받게 됩니다."
@@ -10140,6 +10310,9 @@
       "${ app } storage": [
         "${ app } 저장공간"
       ],
+      "${ app } storage used": [
+        "${ app } 저장공간 사용됨"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% 사용됨"
       ],
@@ -10151,6 +10324,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스에서 사용"
+      ],
+      "Storage used": [
+        "저장공간 사용됨"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } 제품을 계속 사용하려면 공간을 비우거나 ${ upgrade }하세요."
@@ -11015,6 +11191,9 @@
       "Apply gift code": [
         "기프트 코드 적용"
       ],
+      "Appointment details": [
+        "일정 세부사항"
+      ],
       "Are you sure?": [
         "확실하신가요?"
       ],
@@ -11050,6 +11229,9 @@
       ],
       "Change password": [
         "비밀번호 변경"
+      ],
+      "Choose a time": [
+        "시간을 선택하세요"
       ],
       "Choose how many times this event will repeat": [
         "얼마나 이 이벤트가 반복되는지 선택하세요"
@@ -11134,6 +11316,9 @@
       ],
       "Delete ${ value }": [
         "${ value }을(를) 삭제"
+      ],
+      "Delete booking page?": [
+        "예약 페이지를 삭제합니까?"
       ],
       "Delete event": [
         "이벤트 지우기"
@@ -11263,6 +11448,9 @@
       ],
       "High security for your account": [
         "내 계정을 위한 높은 수준의 보안"
+      ],
+      "Host": [
+        "호스트"
       ],
       "How does it all work?": [
         "어떤 방식으로 작동하나요?"
@@ -11635,6 +11823,9 @@
       ],
       "Your account is protected": [
         "계정이 보호됩니다."
+      ],
+      "Your booking is confirmed": [
+        "회원님의 예약이 확인되었습니다."
       ],
       "Your booking page is ready": [
         "예약 페이지가 준비되었습니다"

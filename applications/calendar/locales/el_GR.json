@@ -255,6 +255,9 @@
       "Create a booking page": [
         "Δημιουργήστε μια σελίδα κρατήσεων"
       ],
+      "Create a free account": [
+        "Δημιουργία δωρεάν λογαριασμού"
+      ],
       "Create a new bookings page": [
         "Δημιουργήστε μια νέα σελίδα κρατήσεων"
       ],
@@ -1560,6 +1563,9 @@
       ],
       "Application problem": [
         "Πρόβλημα εφαρμογής"
+      ],
+      "Authenticator problem": [
+        "Πρόβλημα ταυτοποίησης"
       ],
       "Black Friday": [
         "Black Friday"
@@ -4069,6 +4075,9 @@
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
       ],
+      "You cannot enter the organizer email": [
+        "Δεν μπορείτε να εισάγετε το email του διοργανωτή"
+      ],
       "You have reached the maximum number of calendars.": [
         "Έχετε φτάσει τον μέγιστο αριθμό ημερολογίων."
       ],
@@ -4636,8 +4645,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Τα στοιχεία επικοινωνίας σας"
+      "Confirm your booking": [
+        "Επιβεβαιώστε την κράτησή σας"
       ]
     },
     "Google Meet": {
@@ -5300,6 +5309,9 @@
       "Appointment duration": [
         "Διάρκεια ραντεβού"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Θέλετε σίγουρα να διαγράψετε αυτήν τη σελίδα κράτησης;"
+      ],
       "Are you sure you want to discard your import?": [
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
@@ -5336,6 +5348,9 @@
       "Booking overlaps with an existing booking.": [
         "Η κράτηση επικαλύπτεται με μια υπάρχουσα κράτηση."
       ],
+      "Booking page deleted": [
+        "Η σελίδα κρατήσεων διαγράφηκε"
+      ],
       "Booking page example": [
         "Παράδειγμα σελίδας κρατήσεων"
       ],
@@ -5362,6 +5377,9 @@
       ],
       "Cannot create booking range across days": [
         "Δεν είναι δυνατή η δημιουργία εύρους κράτησης για πολλαπλές ημέρες"
+      ],
+      "Cannot create booking range in the past": [
+        "Δεν είναι δυνατή η δημιουργία εύρους κράτησης στο παρελθόν"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
@@ -5779,9 +5797,6 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
       ],
-      "Name your booking page": [
-        "Ονομάστε τη σελίδα κράτησής σας"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
@@ -5875,6 +5890,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Όσοι κλείσουν ραντεβού μαζί σας θα βλέπουν το ${ selectedCalendar.Email } ως τη διεύθυνση επικοινωνίας σας."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline είναι μόνο συμβατό με μορφοποίηση Απλού Κειμένου."
       ],
@@ -5930,11 +5948,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
       ],
+      "Powered by": [
+        "Παρέχεται από"
+      ],
       "Powered by ${ protonButton }": [
         "Με την υποστήριξη της ${ protonButton }"
       ],
       "Previous modifications on this series will be lost.": [
         "Οι προηγούμενες τροποποιήσεις αυτής της σειράς θα χαθούν."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Οι εκδηλώσεις που έχουν ήδη προγραμματιστεί δε θα διαγραφούν."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
@@ -6000,8 +6024,8 @@
       "Setting up your new address…": [
         "Ρύθμιση της νέας διεύθυνσής σας…"
       ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Μοιραστείτε αυτή τη σελίδα για να επιτρέψετε σε άλλους να κλείσουν ραντεβού στο ημερολόγιό σας. Μπορείτε να το διαχειριστείτε ανά πάσα στιγμή στην πλαϊνή στήλη, στην ενότητα Σελίδες Κρατήσεων."
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Κοινοποιήστε αυτή τη σελίδα για να επιτρέψετε σε άλλους να κλείσουν ραντεβού στο ημερολόγιό σας. Μπορείτε να το βρείτε και να το επεξεργαστείτε στην πλαϊνή στήλη, στην ενότητα Σελίδες Κρατήσεων."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
@@ -6045,6 +6069,9 @@
       ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Πάρτε τον έλεγχο της ψηφιακής σας ζωής"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
@@ -6093,6 +6120,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Αυτή η κράτηση έγινε μέσω ${ CALENDAR_APP_NAME }, μέρος της σουίτας προϊόντων της ${ BRAND_NAME } που δίνουν προτεραιότητα στην ιδιωτικότητα."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Αυτή η εκδήλωση έχει ενημερωθεί από τον διοργανωτή. Θα θέλατε να αλλάξετε την απάντησή σας μόνο για αυτό το γεγονός σε αυτή τη σειρά;"
@@ -6232,6 +6262,9 @@
       "Week and month views only apply to desktop.": [
         "Οι προβολές εβδομάδας και μήνα ισχύουν μόνο για την επιφάνεια εργασίας."
       ],
+      "What do you want to call this booking page?": [
+        "Πώς θέλετε να ονομάσετε αυτήν τη σελίδα κράτησης;"
+      ],
       "What should people know before booking?": [
         "Τι πρέπει να γνωρίζουν οι άνθρωποι πριν κάνουν κράτηση;"
       ],
@@ -6362,9 +6395,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Προηγουμένως απορρίψατε αυτήν την πρόσκληση. Παρακαλούμε ζητήστε μια νέα πρόσκληση από τον κάτοχο"
-      ],
-      "You will loose all unsaved changes.": [
-        "Θα χάσετε όλες τις μη αποθηκευμένες αλλαγές."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Θα χάσετε την πρόσβαση στις δυνατότητες του ${ planTitle } αυτήν την ημέρα."
@@ -6896,6 +6926,9 @@
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
       ],
+      "Full name": [
+        "Ονοματεπώνυμο"
+      ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ],
@@ -7199,8 +7232,14 @@
       "End time of the booking range": [
         "Ώρα λήξης του εύρους κράτησης"
       ],
+      "How long should an appointment last?": [
+        "Πόσο πρέπει να διαρκεί ένα ραντεβού;"
+      ],
       "Start time of the booking range": [
         "Ώρα έναρξης του εύρους κράτησης"
+      ],
+      "What should people know before booking?": [
+        "Τι πρέπει να γνωρίζουν οι άνθρωποι πριν κάνουν κράτηση;"
       ]
     },
     "Label for contact group color": {
@@ -9536,14 +9575,14 @@
       "Anytown": [
         "Αθήνα"
       ],
-      "Booking page title": [
-        "Τίτλος σελίδας κρατήσεων"
-      ],
       "Company name": [
         "Όνομα εταιρείας"
       ],
       "E.g., ": [
         "Για παράδειγμα, "
+      ],
+      "Email for booking confirmation": [
+        "Email για επιβεβαίωση κράτησης"
       ],
       "Enter passphrase": [
         "Εισαγάγετε τη φράση πρόσβασης"
@@ -9580,6 +9619,9 @@
       ],
       "Name": [
         "Όνομα"
+      ],
+      "Name of attendee": [
+        "Όνομα συμμετέχοντος"
       ],
       "Name or email address": [
         "Όνομα ή ηλ. διεύθυνση"
@@ -11516,6 +11558,9 @@
       ],
       "Delete ${ value }": [
         "Διαγραφή ${ value }"
+      ],
+      "Delete booking page?": [
+        "Διαγραφή σελίδας κρατήσεων;"
       ],
       "Delete event": [
         "Διαγραφή εκδήλωσης"
