@@ -144,7 +144,7 @@ export function useDrive() {
                 Object.entries(getAppVersionHeaders(getClientID(options.appName), options.appVersion))
             );
 
-            loggingSingleton = options.logging || new Logging();
+            loggingSingleton = options.logging || new Logging({ sentryComponent: 'drive-sdk-log' });
             const telemetry = initTelemetry(options.userPlan, loggingSingleton, debug);
 
             driveLatestEventIdProvider = new LatestEventIdProvider();

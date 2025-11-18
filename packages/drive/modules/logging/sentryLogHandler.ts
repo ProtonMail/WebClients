@@ -2,11 +2,15 @@ import { type LogHandler, LogLevel, type LogRecord } from '@protontech/drive-sdk
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
+export const NO_SENTRY_COMPONENT_DEFINED = 'no-sentry-component-defined';
+
 /**
- * Log handler that sends error and warning logs to Sentry with drive-sdk-log
+ * Log handler that sends error and warning logs to Sentry with `component` value
  * tag at debug level for further investigation when needed.
  */
 export class SentryLogHandler implements LogHandler {
+    constructor(private readonly component: string = NO_SENTRY_COMPONENT_DEFINED) {}
+
     log(logRecord: LogRecord): void {
         if (logRecord.level !== LogLevel.ERROR && logRecord.level !== LogLevel.WARNING) {
             return;
@@ -17,7 +21,7 @@ export class SentryLogHandler implements LogHandler {
         traceError(error, {
             level: 'debug', // Debug as we need it only when we investigate issues.
             tags: {
-                component: 'drive-sdk-log',
+                component: this.component,
             },
             extra: {
                 loggerName: logRecord.loggerName,
