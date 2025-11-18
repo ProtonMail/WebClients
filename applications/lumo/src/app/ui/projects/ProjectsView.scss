@@ -10,12 +10,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 32px;
-    border-bottom: 1px solid var(--border-weak);
+    padding-top: 32px;
     gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
 
     @media (max-width: 768px) {
         padding: 16px 20px;
+        max-width: none;
     }
 
     // Hamburger button on mobile
@@ -31,71 +34,62 @@
     color: var(--text-norm);
 }
 
-.projects-tabs {
-    display: flex;
-    gap: 8px;
-    padding: 16px 32px 0;
-    border-bottom: 1px solid var(--border-weak);
-
-    @media (max-width: 768px) {
-        padding: 12px 20px 0;
-        gap: 4px;
-    }
-}
-
-.projects-tab {
-    padding: 12px 16px;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: var(--text-weak);
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-
-    &:hover {
-        color: var(--text-norm);
-        background-color: var(--background-weak);
-        border-radius: 8px 8px 0 0;
-    }
-
-    &--active {
-        color: var(--interaction-norm);
-        border-bottom-color: var(--interaction-norm);
-
-        &:hover {
-            background-color: transparent;
-        }
-    }
-
-    @media (max-width: 768px) {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-}
-
 .projects-content {
     flex: 1;
-    overflow-y: auto;
+    overflow: hidden;
     padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    min-height: 0;
 
     @media (max-width: 768px) {
         padding: 20px;
+        gap: 24px;
     }
+}
+
+.projects-grid-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 900px;
+    min-height: 0;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    width: 100%;
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px;
     }
+}
+
+.projects-grid--inspiration {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 900px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.projects-empty-state-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    width: 100%;
+    max-width: 900px;
 }
 
 .projects-empty-state {
@@ -103,9 +97,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
     text-align: center;
     padding: 40px 20px;
+    width: 100%;
 }
 
 .projects-empty-icon {
@@ -139,5 +133,29 @@
     color: var(--text-hint);
     margin: 8px 0 0;
     max-width: 400px;
+}
+
+.projects-inspiration-section {
+    width: 100%;
+    max-width: 900px;
+    padding-top: 32px;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    // Only show border-top when there are projects above
+    &--with-projects {
+        border-top: 1px solid var(--border-weak);
+        margin-top: auto;
+    }
+}
+
+.projects-inspiration-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-norm);
+    margin: 0 0 12px;
 }
 
