@@ -1125,6 +1125,9 @@
       "Secure link could not be opened.": [
         "No se pudo abrir el enlace seguro."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Los servidores no están disponibles. Intente desbloquear ${ PASS_SHORT_APP_NAME } en unos minutos."
+      ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
       ],
@@ -1215,8 +1218,8 @@
       "Wrong second password": [
         "La segunda contraseña no es correcta."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "No hay conexión. Reanude la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Está sin conexión. Vuelva a conectarse a internet para desbloquear ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "El navegador está teniendo problemas para activar ${ PASS_APP_NAME }."
@@ -1745,9 +1748,6 @@
       "Internet connection lost": [
         "Sin conexión a Internet"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "No hay conexión a internet. Compruebe la conectividad del dispositivo."
-      ],
       "Invitation sent": [
         "Invitación enviada"
       ],
@@ -1866,6 +1866,9 @@
       ],
       "No login found": [
         "No se encontró ningún inicio de sesión"
+      ],
+      "No network connection": [
+        "No hay conexión a la red"
       ],
       "None": [
         "Ninguno"
@@ -2131,6 +2134,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Se restauraron los elementos seleccionados de la papelera"
+      ],
+      "Servers are unreachable": [
+        "Los servidores no están disponibles"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."

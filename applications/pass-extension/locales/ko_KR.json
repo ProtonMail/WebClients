@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "Android용 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "iOS용 ${ PASS_SHORT_APP_NAME }"
+      ],
       "Accept": [
         "수락"
       ],
@@ -307,6 +313,9 @@
       ],
       "Generating secure link...": [
         "안전한 링크 생성 중..."
+      ],
+      "Get mobile and desktop apps": [
+        "모바일 및 데스크톱 앱 설치"
       ],
       "Get Pass Business": [
         "Pass Business 구매"
@@ -1201,9 +1210,6 @@
       "Wrong second password": [
         "2차 비밀번호 모드가 알맞지 않습니다"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "현재 오프라인 상태입니다. ${ PASS_SHORT_APP_NAME }를 잠금 해제하려면 인터넷에 연결하세요."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "브라우저가 ${ PASS_APP_NAME }를 활성화하는데 문제를 겪고 있습니다."
       ],
@@ -1713,9 +1719,6 @@
       "Internet connection lost": [
         "인터넷 연결 없음"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "인터넷 연결이 끊겼습니다. 기기의 연결을 확인해주세요."
-      ],
       "Invitation sent": [
         "초대장을 보냈습니다"
       ],
@@ -1832,6 +1835,9 @@
       ],
       "No login found": [
         "발견된 로그인 없음"
+      ],
+      "No network connection": [
+        "네트워크가 연결되어 있지 않습니다."
       ],
       "None": [
         "없음"
@@ -2943,6 +2949,9 @@
       ],
       "Language": [
         "언어"
+      ],
+      "Larger window": [
+        "더 큰 창"
       ],
       "Last 2 weeks": [
         "지난 2주"

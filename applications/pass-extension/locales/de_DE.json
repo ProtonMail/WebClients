@@ -1125,6 +1125,9 @@
       "Secure link could not be opened.": [
         "Fehler beim Öffnen des sicheren Links."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Die Server sind unerreichbar. Bitte versuche, ${ PASS_SHORT_APP_NAME } in ein paar Minuten zu entsperren."
+      ],
       "Settings update failed": [
         "Fehler beim Aktualisieren der Einstellungen."
       ],
@@ -1215,8 +1218,8 @@
       "Wrong second password": [
         "Falsches zusätzliches Passwort"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Du bist offline. Bitte stelle die Verbindung wieder her, um ${ PASS_SHORT_APP_NAME } zu entsperren."
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du bist momentan offline. Bitte stelle die Verbindung wieder her, um ${ PASS_SHORT_APP_NAME } zu entsperren."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Dein Browser hat Schwierigkeiten, ${ PASS_APP_NAME } zu aktivieren."
@@ -1745,9 +1748,6 @@
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung unterbrochen. Bitte überprüfe die Verbindung deines Geräts."
-      ],
       "Invitation sent": [
         "Einladung gesendet"
       ],
@@ -1863,6 +1863,9 @@
       ],
       "No login found": [
         "Keine Zugangsdaten gefunden."
+      ],
+      "No network connection": [
+        "Keine Netzwerkverbindung"
       ],
       "None": [
         "Keine Sperre"
@@ -2128,6 +2131,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Ausgewählte Einträge erfolgreich vom Papierkorb wiederhergestellt"
+      ],
+      "Servers are unreachable": [
+        "Server sind nicht erreichbar"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
