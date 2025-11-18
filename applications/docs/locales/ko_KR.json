@@ -660,6 +660,12 @@
       "Search recent documents": [
         "최근 문서 검색"
       ],
+      "Search recent spreadsheets": [
+        "최근 스프레드시트 검색"
+      ],
+      "Search recents": [
+        "최근 항목 검색"
+      ],
       "See how": [
         "방법 보기"
       ],
@@ -1054,6 +1060,11 @@
         "지원되지 않는 이벤트"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount }개의 추가 항목이 표시되지 않습니다"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
@@ -1270,6 +1281,9 @@
       "Application problem": [
         "앱 문제"
       ],
+      "Authenticator problem": [
+        "인증기 문제"
+      ],
       "Black Friday": [
         "블랙 프라이데이"
       ],
@@ -1456,6 +1470,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "하나의 플랜에서 누리는 고급 계정 및 네트워크 보안"
+      ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
       ]
@@ -3239,6 +3256,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 이미 전달되는 Gmail 주소로 로그인해 주세요."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "처음에 연결한 동일한 Gmail 주소로 로그인하세요."
       ]
@@ -4814,6 +4834,12 @@
       "Public documents are not yet enabled for your organization.": [
         "공개 문서는 사용자의 조직에 활성화되지 않았습니다."
       ],
+      "Recent documents": [
+        "최근 문서"
+      ],
+      "Recent spreadsheets": [
+        "최근 스트레드시트"
+      ],
       "Recents": [
         "최근"
       ],
@@ -5931,6 +5957,9 @@
       "Reactivate now": [
         "지금 재활성화"
       ],
+      "Reactivate subscription": [
+        "구독 재활성화"
+      ],
       "Request an invite": [
         "가입 요청하기"
       ],
@@ -6524,6 +6553,9 @@
       "End-to-end encryption": [
         "종단간 암호화"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "기존 ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 혜택"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "빠른 P2P/비트 토렌트 다운로드"
       ],
@@ -6736,6 +6768,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "최대 ${ n }명의 사용자와 금고 공유"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
@@ -7951,6 +7986,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**해당 날짜 이전에 구독시,** **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "해당 날짜 이후에는 회원님의 계정이 **${ BRAND_NAME } 무료 플랜**으로 다운그레이드됩니다. 마음이 바뀌신다면, 프리미엄 기능을 계속 이용하기 위해 **구독을 재활성화**할 수 있습니다."
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "최대 ${ maxRewardAmount } 크레딧을 적립하세요. 초대한 사람이 ${ BRAND_NAME } 플랜을 구독하면 ${ referrerRewardAmount }을 받게 됩니다."
       ],
@@ -8299,9 +8337,6 @@
       ],
       "Replace data at selected cell": [
         "선택한 셀에서 데이터 바꾸기"
-      ],
-      "Select a CSV or TSV file to import": [
-        "불러올 CSV 또는 TSV 파일을 선택하세요"
       ]
     },
     "sheets_2025:Label": {
@@ -8630,6 +8665,9 @@
       "${ app } storage": [
         "${ app } 저장공간"
       ],
+      "${ app } storage used": [
+        "${ app } 저장공간 사용됨"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% 사용됨"
       ],
@@ -8641,6 +8679,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스에서 사용"
+      ],
+      "Storage used": [
+        "저장공간 사용됨"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "${ BRAND_NAME } 제품을 계속 사용하려면 공간을 비우거나 ${ upgrade }하세요."

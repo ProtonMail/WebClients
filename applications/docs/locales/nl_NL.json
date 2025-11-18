@@ -1059,6 +1059,20 @@
         "Niet-ondersteunde afspraak"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultaat niet getoond",
+        "${ hiddenResultsCount } resultaten worden niet getoond"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefversie eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Abonnement opzeggen"
@@ -1100,6 +1114,9 @@
       "1 user account": [
         "1 gebruikersaccount"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidig abonnement"
+      ],
       "6 user accounts": [
         "6 gebruikersaccounts"
       ],
@@ -1121,6 +1138,9 @@
       "Password health alerts": [
         "Wachtwoordgezondheidswaarschuwingen"
       ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
       ],
@@ -1135,13 +1155,16 @@
       "Billed at ${ amount } once": [
         "U betaalt ${ amount } eenmaal"
       ],
+      "forever": [
+        "voor altijd"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8.500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
+        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8 500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
@@ -1259,6 +1282,12 @@
       ],
       "Application problem": [
         "Applicatieprobleem"
+      ],
+      "Authenticator problem": [
+        "Authenticatieprobleem"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Bridge problem": [
         "Probleem met Bridge"
@@ -1391,7 +1420,7 @@
         "Probeer ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Probeer ${ upsellPlanName } en behoud toegang tot alle premium email- en kalenderfuncties."
+        "Probeer ${ upsellPlanName } en behoud toegang tot alle premium email- en agendafuncties."
       ],
       "Ultra fast and private VPN": [
         "Ultrasnelle en private VPN"
@@ -1438,9 +1467,15 @@
       ],
       "Upload and query small files": [
         "Kleine bestanden uploaden en opvragen"
+      ],
+      "Web search access": [
+        "Toegang tot webzoekopdrachten"
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Geavanceerde account- en netwerkbeveiliging in één abonnement"
+      ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
       ]
@@ -2684,6 +2719,39 @@
         "Prioriteitsondersteuning"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/maand"
+      ],
+      "2 TB of storage to share": [
+        "2 TB opslagruimte om te delen"
+      ],
+      "2 user accounts": [
+        "2 gebruikersaccounts"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium functies van uw huidige abonnement"
+      ],
+      "Only": [
+        "Slechts"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Krijg 4x meer opslagruimte"
+      ],
+      "Share your plan": [
+        "Deel uw abonnement"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Krijg 4x meer Opslag met ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Deel uw abonnementsvoordelen met ${ BRAND_NAME } Duo"
+      ]
+    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } werd geannuleerd."
@@ -2691,8 +2759,14 @@
       "All events in this series were updated.": [
         "Alle gebeurtenissen in deze serie zijn bijgewerkt."
       ],
+      "DESCRIPTION:": [
+        "BESCHRIJVING:"
+      ],
       "Here's what changed:": [
         "Dit is wat er is veranderd:"
+      ],
+      "LOCATION:": [
+        "LOCATIE:"
       ],
       "NOTE:": [
         "LET OP:"
@@ -2705,6 +2779,15 @@
       ],
       "This event was updated.": [
         "Deze afspraak werd bijgewerkt."
+      ],
+      "TIME:": [
+        "TIJD:"
+      ],
+      "TITLE:": [
+        "TITEL:"
+      ],
+      "You are invited to": [
+        "U bent uitgenodigd voor"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3183,6 +3266,14 @@
         "Uw import zal niet worden verwerkt."
       ]
     },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Log in met een Gmail-adres dat al doorstuurt naar ${ MAIL_APP_NAME }"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "Log in met hetzelfde Gmail-adres dat u oorspronkelijk heeft verbonden."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
@@ -3489,7 +3580,7 @@
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
-        "U hebt zich succesvol aangesloten bij de familiegroep"
+        "U heeft zich succesvol aangesloten bij de familiegroep"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
@@ -3540,6 +3631,12 @@
       ]
     },
     "Feature": {
+      "Encrypted cloud storage for files, photos and documents": [
+        "Versleutelde cloudopslag voor bestanden, foto's en documenten"
+      ],
+      "More premium features": [
+        "Meer premium functies"
+      ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
       ]
@@ -4142,6 +4239,12 @@
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
       ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun gekozen ${ BRAND_NAME } abonnement."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun abonnement."
+      ],
       "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
         "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke vriend die zich inschrijft voor een abonnement."
       ],
@@ -4263,6 +4366,9 @@
       "Checking signatures": [
         "Handtekeningen controleren"
       ],
+      "Choose a plan that works best for you.": [
+        "Kies een abonnement dat het beste bij u past."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -4277,6 +4383,9 @@
       ],
       "Contact unassigned from group ${ contactGroupName }": [
         "Contact verwijderd uit groep ${ contactGroupName }"
+      ],
+      "Continue": [
+        "Ga verder"
       ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
@@ -5029,6 +5138,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Upgraden om uw ${ planTitle } voordelen te behouden."
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
@@ -5889,6 +6001,9 @@
       "Reactivate now": [
         "Heractiveren"
       ],
+      "Reactivate subscription": [
+        "Heractiveer abonnement"
+      ],
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
@@ -5992,6 +6107,9 @@
       ]
     },
     "Message": {
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
       ]
@@ -6501,6 +6619,9 @@
       "End-to-end encryption": [
         "End-to-end versleuteling"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Bestaande ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } voordelen"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Snelle P2P/BitTorrent-downloads"
       ],
@@ -6619,6 +6740,9 @@
       "Share files with no size limit": [
         "Deel bestanden zonder maximale grootte"
       ],
+      "Short domain (@pm.me)": [
+        "Kort domein (@pm.me)"
+      ],
       "Sign in as user": [
         "Inloggen als gebruiker"
       ],
@@ -6715,6 +6839,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Kluis delen (tot ${ n } persoon)",
         "Kluis delen (tot ${ n } personen)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Kluis delen met tot ${ n } persoon",
+        "Kluis delen tot ${ n } personen"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
@@ -7395,11 +7523,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
+      "Don't show this again": [
+        "Toon dit niet opnieuw"
+      ],
       "Don’t show this again": [
         "Toon dit niet opnieuw"
       ],
       "Don’t show this offer again": [
         "Toon deze aanbieding niet opnieuw"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Neem ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Krijg ${ BRAND_NAME } Unlimited"
@@ -7618,6 +7752,9 @@
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
       ],
+      "File attachments (up to 10GB)": [
+        "Bestandsbijlagen (tot 10GB)"
+      ],
       "Team policies": [
         "Team beleid"
       ]
@@ -7672,15 +7809,32 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Verschuldigd bedrag na de proefversie op ${ formattedDate }"
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
       ],
+      "terms and conditions": [
+        "algemene voorwaarden"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
         "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maanden."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
@@ -7920,6 +8074,19 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per doorverwijzing"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Verdien tot ${ maxRewardAmount } aan tegoed. U ontvangt ${ referrerRewardAmount } wanneer de persoon die u uitnodigt zich abonneert op een ${ BRAND_NAME } abonnement."
+      ],
+      "Friend joined": [
+        "Vriend lid geworden",
+        "Vrienden lid geworden"
+      ],
       "Friend subscribed": [
         "Vriend geabonneerd",
         "Vrienden geabonneerd"
@@ -7933,8 +8100,17 @@
       "More sharing options": [
         "Meer opties om te delen"
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Zodra uw volledige abonnement ingaat, kunt u binnen 30 dagen nog steeds annuleren en een pro rata teruggave ontvangen."
+      ],
+      "Refer friends": [
+        "Verwijs vrienden door"
+      ],
       "Start earning credits": [
         "Begin met het verdienen van tegoed"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
       ]
     },
     "Safety review": {
@@ -8253,9 +8429,6 @@
       ],
       "Replace data at selected cell": [
         "Gegevens vervangen in de geselecteerde cel"
-      ],
-      "Select a CSV or TSV file to import": [
-        "Selecteer een CSV- of TSV-bestand om te importeren."
       ]
     },
     "sheets_2025:Label": {
@@ -8502,7 +8675,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering en meer."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
@@ -8589,6 +8762,9 @@
       "${ app } storage": [
         "${ app } opslagruimte"
       ],
+      "${ app } storage used": [
+        "${ app } opslagruimte gebruikt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% vol"
       ],
@@ -8600,6 +8776,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Voor alle ${ BRAND_NAME }-diensten"
+      ],
+      "Storage used": [
+        "Opslagruimte gebruikt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Om ${ BRAND_NAME } producten te blijven gebruiken, maak ruimte vrij of voer een ${ upgrade } uit"
@@ -8861,7 +9040,7 @@
         "Maak veilige inloggegevens op al uw apparaten. Inclusief onbeperkte aliassen, 20 kluizen, geïntegreerde 2FA, automatisch invullen van creditcardgegevens en meer."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering en meer."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
@@ -9213,6 +9392,9 @@
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Krijg **${ referralInfo.uiData.refereeRewardAmount }** in tegoed met ${ planTitle }"
+      ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
@@ -9469,6 +9651,9 @@
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "Upgraden om uw premium voordelen te behouden."
+      ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Upgrade uw productiviteit voor ${ formattedPrice } met ${ planName }"
       ],
@@ -9610,6 +9795,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI-assistent die uw privacy respecteert"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
@@ -9801,6 +9989,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
       ]
     }
   }
