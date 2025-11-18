@@ -1691,6 +1691,9 @@
       "Application problem": [
         "Πρόβλημα εφαρμογής"
       ],
+      "Authenticator problem": [
+        "Πρόβλημα ταυτοποίησης"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -3389,9 +3392,6 @@
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
       ],
-      "Cannot load \"My files\" root folder": [
-        "Δεν είναι δυνατή η φόρτωση του ριζικού φακέλου \"Τα αρχεία μου\""
-      ],
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
@@ -3460,12 +3460,6 @@
       "Error reading file": [
         "Σφάλμα κατά την ανάγνωση αρχείου"
       ],
-      "Expanding non-existent directory tree item": [
-        "Επέκταση ανύπαρκτου στοιχείου δέντρου καταλόγων"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "Επέκταση μη επεκτάσιμου στοιχείου δέντρου καταλόγων"
-      ],
       "Expected structure attached": [
         "Επισυνάπτεται η αναμενόμενη δομή"
       ],
@@ -3486,6 +3480,9 @@
       ],
       "Failed to create public share node": [
         "Αποτυχία δημιουργίας δημόσιου κόμβου κοινοποίησης"
+      ],
+      "Failed to expand folder": [
+        "Αποτυχία ανάπτυξης φακέλου"
       ],
       "Failed to fetch node": [
         "Αποτυχία ανάκτησης κόμβου"
@@ -3936,6 +3933,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Μη αποκρυπτογραφήσιμη συσκευή"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
@@ -5687,9 +5687,6 @@
       "It's better to have:": [
         "Είναι καλύτερα να έχετε:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "Δεν είναι δυνατή η αντιγραφή του φακέλου στον εαυτό του."
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Τα στοιχεία στα Διαγραμμένα θα παραμείνουν εδώ μέχρι να τα διαγράψετε οριστικά"
       ],
@@ -5888,6 +5885,9 @@
       ],
       "On public WiFi networks": [
         "Σε δημόσια δίκτυα WiFi"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Ένα από τα αρχεία ή τους φακέλους που θέλετε να αντιγράψετε υπάρχει ήδη στον επιλεγμένο φάκελο."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Ένας από τους κρυπτογραφημένους δίσκους σας είναι κλειδωμένος, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
@@ -6702,6 +6702,9 @@
       "You cannot undo this action.": [
         "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "Δεν έχετε άδεια να αντιγράψετε αρχεία σε αυτόν τον φάκελο."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Λαμβάνετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτων."
       ],
@@ -7198,6 +7201,9 @@
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
+      ],
+      "Encrypted node": [
+        "Κρυπτογραφημένος κόμβος"
       ],
       "Enter device name": [
         "Εισάγετε όνομα συσκευής"

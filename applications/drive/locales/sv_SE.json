@@ -1685,6 +1685,9 @@
       "Application problem": [
         "Problem med applikation"
       ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -3374,9 +3377,6 @@
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
       ],
-      "Cannot load \"My files\" root folder": [
-        "Kan inte ladda rotmapp “Mina filer“"
-      ],
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
       ],
@@ -3465,6 +3465,9 @@
       ],
       "Failed to create public share node": [
         "Misslyckades att skapa offentlig delningsnod"
+      ],
+      "Failed to expand folder": [
+        "Misslyckades att expandera mapp"
       ],
       "Failed to fetch node": [
         "Misslyckades att hämta nod"
@@ -5654,9 +5657,6 @@
       "It's better to have:": [
         "Det är bättre att ha:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "Det är inte möjligt att kopiera mappen till sig själv"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Objekt i papperskorgen blir kvar här tills du tar bort dem permanent"
       ],
@@ -6669,6 +6669,9 @@
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "Du har inte behörighet att kopiera filer till denna mapp."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
@@ -7153,6 +7156,9 @@
       ],
       "Encrypt emails": [
         "Kryptera e-post"
+      ],
+      "Encrypted node": [
+        "Krypterad nod"
       ],
       "Enter device name": [
         "Ange enhetsnamn"

@@ -1721,6 +1721,9 @@
       "Application problem": [
         "Problém s aplikací"
       ],
+      "Authenticator problem": [
+        "Problém s ověřovací aplikací"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -3423,9 +3426,6 @@
       "Cannot export this contact": [
         "Nelze exportovat tento kontakt"
       ],
-      "Cannot load \"My files\" root folder": [
-        "Nelze načíst kořenovou složku \"Moje soubory\""
-      ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
       ],
@@ -3498,12 +3498,6 @@
       "Error reading file": [
         "Chyba při čtení souboru"
       ],
-      "Expanding non-existent directory tree item": [
-        "Rozbalování neexistující položky adresářového stromu"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "Rozbalování nerozbalitelné položky adresářového stromu"
-      ],
       "Expected structure attached": [
         "Očekávaná struktura připojena"
       ],
@@ -3524,6 +3518,9 @@
       ],
       "Failed to create public share node": [
         "Nepodařilo se vytvořit veřejný uzel sdílení"
+      ],
+      "Failed to expand folder": [
+        "Rozbalení složky selhalo"
       ],
       "Failed to fetch node": [
         "Nepodařilo se stáhnout uzel"
@@ -3987,11 +3984,17 @@
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Nerozšifrovatelné zařízení"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovatelný název"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Přihlaste se prosím s adresou Gmail, která již přeposílá na ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Přihlaste se prosím pomocí stejné adresy Gmail, kterou jste původně použili pro připojení"
       ]
@@ -5850,9 +5853,6 @@
       "It's better to have:": [
         "Je lepší mít:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "Není možné zkopírovat složku do sebe samé"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Položky zůstanou v koši, dokud je trvale nesmažete"
       ],
@@ -6053,6 +6053,9 @@
       ],
       "On public WiFi networks": [
         "Ve veřejných sítích Wi-Fi"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Jeden ze souborů nebo složek, které chcete zkopírovat, již ve vybrané složce existuje."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z vašich šifrovaných disků je uzamčen. Je to pravděpodobně způsobeno nedávným resetem hesla."
@@ -6879,6 +6882,9 @@
       "You cannot undo this action.": [
         "Tuto akci nemůžete vzít zpět."
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "Nemáte oprávnění kopírovat soubory do této složky."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
       ],
@@ -7395,6 +7401,9 @@
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
+      ],
+      "Encrypted node": [
+        "Šifrovaný uzel"
       ],
       "Enter device name": [
         "Zadejte název zařízení"

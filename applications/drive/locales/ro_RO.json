@@ -1706,6 +1706,9 @@
       "Application problem": [
         "Problemă aplicație"
       ],
+      "Authenticator problem": [
+        "Problemă autentificator"
+      ],
       "Black Friday": [
         "Vinerea Neagră"
       ],
@@ -3406,9 +3409,6 @@
       "Cannot export this contact": [
         "Acest contact nu se poate exporta."
       ],
-      "Cannot load \"My files\" root folder": [
-        "Nu se poate încărca folderul rădăcină „Fișierele mele”."
-      ],
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat. Reîncercați."
       ],
@@ -3479,12 +3479,6 @@
       "Error reading file": [
         "Eroare la citirea fișierului."
       ],
-      "Expanding non-existent directory tree item": [
-        "Extindere articol inexistent din arborele de foldere."
-      ],
-      "Expanding non-expandable directory tree item": [
-        "Extindere articol din arborele de foldere care nu poate fi extins."
-      ],
       "Expected structure attached": [
         "Structură așteptată atașată."
       ],
@@ -3505,6 +3499,9 @@
       ],
       "Failed to create public share node": [
         "Nu s-a putut crea nodul de partajare publică."
+      ],
+      "Failed to expand folder": [
+        "Extinderea folderului a eșuat"
       ],
       "Failed to fetch node": [
         "Eșuare preluare nod."
@@ -3961,6 +3958,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispozitiv nedecriptabil"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
@@ -5770,9 +5770,6 @@
       "It's better to have:": [
         "Este bine să aveți:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "Nu se poate copia folderul în el însuși."
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Articolele din gunoi vor sta aici până când le veți șterge permanent."
       ],
@@ -5972,6 +5969,9 @@
       ],
       "On public WiFi networks": [
         "Pe rețele Wi-Fi publice"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Unul dintre fișierele sau folderele pe care doriți să le copiați există deja în folderul selectat."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una din unitățile criptate este blocată. Aceasta se datorează probabil unei resetări recente a parolei."
@@ -6792,6 +6792,9 @@
       "You cannot undo this action.": [
         "Nu puteți anula această acțiune."
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "Nu aveți permisiunea de a copia fișiere în acest folder."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
@@ -7298,6 +7301,9 @@
       ],
       "Encrypt emails": [
         "Criptare mesaje"
+      ],
+      "Encrypted node": [
+        "Nod criptat"
       ],
       "Enter device name": [
         "Introduceți numele dispozitivului"

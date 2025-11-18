@@ -249,6 +249,9 @@
       "Continue with Outlook": [
         "Outlook으로 계속하기"
       ],
+      "Copy": [
+        "복사"
+      ],
       "Copy address": [
         "주소 복사하기"
       ],
@@ -1409,6 +1412,11 @@
         "지원되지 않는 이벤트"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount }개의 추가 항목이 표시되지 않습니다"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
@@ -1668,6 +1676,9 @@
       "Application problem": [
         "앱 문제"
       ],
+      "Authenticator problem": [
+        "인증기 문제"
+      ],
       "Black Friday": [
         "블랙 프라이데이"
       ],
@@ -1897,6 +1908,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } 추가"
+      ],
+      "Advanced account and network security in one plan": [
+        "하나의 플랜에서 누리는 고급 계정 및 네트워크 보안"
       ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
@@ -3448,6 +3462,9 @@
       "Failed to create public share node": [
         "공개 공유 노드 생성 실패"
       ],
+      "Failed to expand folder": [
+        "폴더 확장 실패"
+      ],
       "Failed to fetch node": [
         "노드 가져오기 실패"
       ],
@@ -3892,11 +3909,17 @@
       "ZIP code is required": [
         "우편번호가 필요합니다"
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ 복호화할 수 없는 기기"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 이미 전달되는 Gmail 주소로 로그인해 주세요."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "처음에 연결한 동일한 Gmail 주소로 로그인하세요."
       ]
@@ -5278,6 +5301,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
+      "Done": [
+        "완료"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
       ],
@@ -5776,6 +5802,9 @@
       "On public WiFi networks": [
         "공공 WiFi 네트워크에서 사용시"
       ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "복사하려는 파일 또는 폴더 중 하나가 선택한 폴더에 이미 존재합니다."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "암호화된 드라이브 중 하나가 잠겼습니다. 이는 최근의 비밀번호 재설정 때문일 가능성이 높습니다."
       ],
@@ -6004,6 +6033,9 @@
       "Search Enabled": [
         "검색 활성화됨"
       ],
+      "Select a folder to copy to.": [
+        "복사할 폴더를 선택하세요."
+      ],
       "Select a folder to move to.": [
         "이동할 폴더 선택"
       ],
@@ -6099,6 +6131,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "일부 정부는 특정 웹사이트에 대한 접근을 차단하거나 제한합니다. VPN이 사용자의 활동과 신원을 비공개로 유지하면서 검열을 우회하는 데 도움을 드립니다."
+      ],
+      "Some items failed": [
+        "일부 항목의 작업에 실패했습니다"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "일부 파일들에 더 이상 접근할 수 없습니다. 파일 액세스를 복구하세요. ${ StartRecoveryButton }"
@@ -6576,6 +6611,9 @@
       ],
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
+      ],
+      "You don’t have permission to copy files to this folder.": [
+        "이 폴더에 파일을 복사할 권한이 없습니다."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "내 비밀번호나 다른 데이터가 제3자 서비스에서 유출되면 알림받으세요."
@@ -7063,6 +7101,9 @@
       ],
       "Encrypt emails": [
         "이메일 암호화"
+      ],
+      "Encrypted node": [
+        "암호화된 노드"
       ],
       "Enter device name": [
         "기기 이름 입력"
@@ -7594,6 +7635,9 @@
       ],
       "Reactivate now": [
         "지금 재활성화"
+      ],
+      "Reactivate subscription": [
+        "구독 재활성화"
       ],
       "Request an invite": [
         "가입 요청하기"
@@ -8206,6 +8250,9 @@
       "End-to-end encryption": [
         "종단간 암호화"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "기존 ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 혜택"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "빠른 P2P/비트 토렌트 다운로드"
       ],
@@ -8418,6 +8465,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "최대 ${ n }명의 사용자와 금고 공유"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
@@ -8872,6 +8922,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\"이(가) 성공적으로 저장되었습니다"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\"이(가) 성공적으로 복사되었습니다"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\"이(가) 성공적으로 이동되었습니다"
       ],
@@ -8884,6 +8937,12 @@
       "${ count } item failed to be decrypted": [
         "${ count }개 암호화 해독 실패"
       ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length }개 항목을 복사할 수 없습니다"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length }개 항목을 휴지통으로 이동할 수 없습니다"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ albumLink.name }(에)서 ${ nbFailures }개 사진을 제거할 수 없습니다"
       ],
@@ -8895,6 +8954,9 @@
       ],
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses }개 사진이 \"${ albumLink.name }\"(에)서 제거되었습니다."
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems }개의 복사된 항목이 휴지통으로 이동되었습니다"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }개 항목 삭제됨"
@@ -8922,6 +8984,9 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems }개가 휴지통에서 복구되었습니다"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems }개 항목이 성공적으로 복사되었습니다"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems }개가 성공적으로 삭제되었습니다"
@@ -8964,6 +9029,9 @@
       ],
       "Contact group updated": [
         "연락처 그룹 업데이트됨"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "\"${ name }\"의 사본이 휴지통으로 이동됨"
       ],
       "Device failed to be removed": [
         "기기 삭제 실패"
@@ -9799,6 +9867,23 @@
         "크레딧이 잔액에 추가됩니다."
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "계속 진행하겠습니까?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } 플랜의 수정을 선택시, 일부 기능에 대한 접근을 잃을 수 있습니다."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } 유지"
+      ],
+      "Yes, I'm sure": [
+        "네, 확실합니다."
+      ],
+      "Your plan includes this feature already.": [
+        "회원님의 플랜에 이 기능이 이미 포함되어 있습니다."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -10122,6 +10207,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**해당 날짜 이전에 구독시,** **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "해당 날짜 이후에는 회원님의 계정이 **${ BRAND_NAME } 무료 플랜**으로 다운그레이드됩니다. 마음이 바뀌신다면, 프리미엄 기능을 계속 이용하기 위해 **구독을 재활성화**할 수 있습니다."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "최대 ${ maxRewardAmount } 크레딧을 적립하세요. 초대한 사람이 ${ BRAND_NAME } 플랜을 구독하면 ${ referrerRewardAmount }을 받게 됩니다."
@@ -10755,6 +10843,9 @@
       "${ app } storage": [
         "${ app } 저장공간"
       ],
+      "${ app } storage used": [
+        "${ app } 저장공간 사용됨"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% 사용됨"
       ],
@@ -10766,6 +10857,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스에서 사용"
+      ],
+      "Storage used": [
+        "저장공간 사용됨"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "파일을 업로드하고 동기화하려면 저장 공간을 비우거나 저장 공간 확보를 위해 업그레이드 하세요."
@@ -11975,6 +12069,9 @@
       ],
       "Logs": [
         "로그"
+      ],
+      "Make a copy": [
+        "복사본 생성"
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"

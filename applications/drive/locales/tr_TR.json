@@ -1691,6 +1691,9 @@
       "Application problem": [
         "Uygulama sorunu"
       ],
+      "Authenticator problem": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
       "Black Friday": [
         "Muhteşem Cuma"
       ],
@@ -1922,6 +1925,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "Advanced account and network security in one plan": [
+        "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
       ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
@@ -3386,9 +3392,6 @@
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
       ],
-      "Cannot load \"My files\" root folder": [
-        "\"Dosyalarım\" kök klasörü yüklenemedi"
-      ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
@@ -3457,12 +3460,6 @@
       "Error reading file": [
         "Dosya okunurken sorun çıktı"
       ],
-      "Expanding non-existent directory tree item": [
-        "Var olmayan klasör ağacı ögesi genişletiliyor"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "Genişletilemez klasör ağacı ögesi genişletiliyor"
-      ],
       "Expected structure attached": [
         "Beklenen yapı eklendi"
       ],
@@ -3483,6 +3480,9 @@
       ],
       "Failed to create public share node": [
         "Herkese açık paylaşım noktası oluşturulamadı"
+      ],
+      "Failed to expand folder": [
+        "Klasör genişletilemedi"
       ],
       "Failed to fetch node": [
         "Nokta alınamadı"
@@ -3934,11 +3934,17 @@
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Şifresi çözülemeyen aygıt"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Lütfen zaten ${ MAIL_APP_NAME } uygulamasına yönlendiren bir Gmail adresiyle oturum açın"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Lütfen başlangıçta bağlandığınızla aynı Gmail adresiyle oturum açın"
       ]
@@ -5376,6 +5382,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
       ],
+      "Done": [
+        "Tamam"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
       ],
@@ -5678,9 +5687,6 @@
       "It's better to have:": [
         "Şöyle olması daha iyidir:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "Klasör kendi içine kopyalanamaz"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Çöp kutusundaki ögeler siz onları kalıcı olarak silene kadar tutulur"
       ],
@@ -5879,6 +5885,9 @@
       ],
       "On public WiFi networks": [
         "Herkese açık Wi-Fi ağlarında"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Kopyalamak istediğiniz dosyalardan veya klasörlerden biri seçilmiş klasörde zaten var."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum genellikle bir parola sıfırlama işleminde kaynaklanır."
@@ -6207,6 +6216,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Bazı devletler belirli sitelere erişimi engeller veya kısıtlar. VPN, etkinliğinizi ve kimliğinizi güvenli tutarken engellemeyi aşmanıza yardımcı olur."
+      ],
+      "Some items failed": [
+        "Bazı ögeler başarısız oldu"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Bazı dosyalarınıza artık erişilemiyor. Dosyalara yeniden erişim kazanın. ${ StartRecoveryButton }"
@@ -6689,6 +6701,9 @@
       ],
       "You cannot undo this action.": [
         "Bu işlemi geri alamazsınız."
+      ],
+      "You don’t have permission to copy files to this folder.": [
+        "Bu klasöre dosya kopyalama izniniz yok."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
@@ -7186,6 +7201,9 @@
       ],
       "Encrypt emails": [
         "E-postaları şifrele"
+      ],
+      "Encrypted node": [
+        "Şifrelenmiş düğüm"
       ],
       "Enter device name": [
         "Aygıt adını yazın"
@@ -8354,6 +8372,9 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Var olan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } avantajları"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hızlı P2P/BitTorrent indirmeleri"
       ],
@@ -8571,6 +8592,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "${ n } kişiye kadar kasa paylaşımı",
+        "${ n } kişiye kadar kasa paylaşımı"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -10006,6 +10031,23 @@
       ],
       "Credits will be added to your balance": [
         "Kalan kredi bakiyenize eklenecek"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "İlerlemek istediğinize emin misiniz?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } tarifenizi değiştirmeyi seçerseniz bazı özelliklere erişiminizi kaybedebilirsiniz."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } tarifesinde kal"
+      ],
+      "Yes, I'm sure": [
+        "Evet, eminim"
+      ],
+      "Your plan includes this feature already.": [
+        "Tarifenizde bu özellik zaten var."
       ]
     },
     "Payments.plan_name": {

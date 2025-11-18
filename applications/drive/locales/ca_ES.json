@@ -1691,8 +1691,11 @@
       "Application problem": [
         "Problema d’aplicació"
       ],
+      "Authenticator problem": [
+        "Problema amb l'autenticador"
+      ],
       "Black Friday": [
-        "Divendres negre"
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -3389,9 +3392,6 @@
       "Cannot export this contact": [
         "No es pot exportar aquest contacte."
       ],
-      "Cannot load \"My files\" root folder": [
-        "No es pot carregar la carpeta arrel «Els meus fitxers»"
-      ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
       ],
@@ -3460,12 +3460,6 @@
       "Error reading file": [
         "Hi ha hagut un error en llegir el fitxer"
       ],
-      "Expanding non-existent directory tree item": [
-        "S'està expandint un element inexistent de l'arbre de directoris"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "S'està expandint un element de l'arbre de directoris no expansible"
-      ],
       "Expected structure attached": [
         "Estructura esperada adjunta"
       ],
@@ -3486,6 +3480,9 @@
       ],
       "Failed to create public share node": [
         "No s\"ha pogut crear el node de compartició públic"
+      ],
+      "Failed to expand folder": [
+        "No s'ha pogut expandir la carpeta"
       ],
       "Failed to fetch node": [
         "No s'ha pogut obtenir el node"
@@ -3937,13 +3934,16 @@
       "ZIP code is required": [
         "Es requereix el codi postal."
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositiu indesxifrable"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
       ]
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Si us plau, inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -5064,7 +5064,7 @@
         "**Pas 3:** Obtingueu ${ referrerRewardAmount } crèdits per cada amistat que es subscrigui a un pla."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
+        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -5687,9 +5687,6 @@
       "It's better to have:": [
         "És millor tenir:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "No és possible copiar la carpeta sobre si mateixa"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Els elements a la paperera hi restaran fins que els elimineu de manera permanent"
       ],
@@ -5888,6 +5885,9 @@
       ],
       "On public WiFi networks": [
         "A les xarxes wifi públiques"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Un dels fitxers o carpetes que voleu copiar ja existeix a la carpeta seleccionada."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una de les vostres unitats xifrades està bloquejada. El més probable és que sigui a causa d'un restabliment recent de la contrasenya."
@@ -6702,6 +6702,9 @@
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "No teniu permís per a copiar fitxers a aquesta carpeta."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
       ],
@@ -7201,6 +7204,9 @@
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
+      ],
+      "Encrypted node": [
+        "Node xifrat"
       ],
       "Enter device name": [
         "Introduïu el nom del dispositiu"
