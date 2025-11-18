@@ -1273,9 +1273,6 @@
       "Wrong second password": [
         "Seconda password errata"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Sei offline. Riattiva la connessione per sbloccare ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Il tuo DNS non è impostato correttamente. Il record MX che otteniamo è:"
       ],
@@ -1820,9 +1817,6 @@
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Connessione Internet persa. Controlla la connettività del tuo dispositivo."
-      ],
       "Invitation sent": [
         "Invito spedito"
       ],
@@ -1932,10 +1926,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"

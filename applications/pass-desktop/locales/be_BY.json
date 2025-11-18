@@ -1196,6 +1196,9 @@
       "Secure link could not be opened.": [
         "Не ўдалося адкрыць бяспечную спасылку."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Серверы недаступны. Паспрабуйце разблакіраваць ${ PASS_SHORT_APP_NAME } праз некалькі хвілін."
+      ],
       "Settings update failed": [
         "Збой абнаўлення налад"
       ],
@@ -1283,7 +1286,7 @@
       "Wrong second password": [
         "Няправільны другі пароль"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
         "У цяперашні момант вы па-за сеткай. Узнавіце падключэнне, каб разблакіраваць ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
@@ -1866,9 +1869,6 @@
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Падключэнне да інтэрнэту страчана. Праверце падключэнне вашай прылады."
-      ],
       "Invitation sent": [
         "Запрашэнне адпраўлена"
       ],
@@ -1982,12 +1982,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2285,6 +2279,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Выбраныя элементы паспяхова адноўлены са сметніцы"
+      ],
+      "Servers are unreachable": [
+        "Серверы недаступны."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"

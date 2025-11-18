@@ -1283,9 +1283,6 @@
       "Wrong second password": [
         "Nesprávne druhé heslo"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Momentálne ste offline. Obnovte, prosím, pripojenie, aby ste mohli odomknúť ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Váš DNS nie je správne nastavený. MX záznam, ktorý sme získali, je:"
       ],
@@ -1866,9 +1863,6 @@
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Pripojenie k internetu sa prerušilo. Skontrolujte prosím pripojenie vašeho zariadenia."
-      ],
       "Invitation sent": [
         "Pozvánka odoslaná"
       ],
@@ -1982,12 +1976,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
