@@ -88,9 +88,13 @@ const DayEvents = ({
             const duration = end - start;
             const height = duration / totalMinutes;
 
-            // We want to display events on top of eachother when the booking page is active.
-            const width = isBookingActive ? 1 : 1 / columns;
-            const left = isBookingActive ? 0 : column * width;
+            // We want to display events on top of each-other when the booking page is active.
+            // When booking is active we display one additional column, but we want events displayed on top of it
+            // so we can exclude it from computations.
+            const numberOfColumns = isBookingActive ? Math.max(columns - 1, 1) : columns;
+            const width = 1 / numberOfColumns;
+            const columnIndex = isBookingActive ? Math.max(column - 1, 0) : column;
+            const left = columnIndex * width;
 
             return {
                 height,
