@@ -6,14 +6,15 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { CalendarBootstrap, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type { BookingRange, InternalBookingFrom, Slot } from '../../bookingsProvider/interface';
-import { BookingLocation, DEFAULT_EVENT_DURATION } from '../../bookingsProvider/interface';
+import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../bookingsProvider/interface';
 import { generateDefaultBookingRange } from '../range/rangeHelpers';
 import { generateSlotsFromRange } from '../slot/slotHelpers';
 
-export const getInitialBookingFormState = (): InternalBookingFrom => {
+export const getInitialBookingFormState = (isRecurringEnabled: boolean): InternalBookingFrom => {
     const localTimeZone = getTimezone();
 
     return {
+        recurring: isRecurringEnabled ? DEFAULT_RECURRING : false,
         summary: '',
         selectedCalendar: null,
         locationType: BookingLocation.MEET,
@@ -50,19 +51,22 @@ export const computeInitialFormData = ({
     calendarBootstrap,
     currentUTCDate,
     preferredCalendarID,
+    recurring,
 }: {
     userSettings: UserSettings;
     calendarUserSettings?: CalendarUserSettings;
     calendarBootstrap?: CalendarBootstrap;
     currentUTCDate: Date;
     preferredCalendarID: string;
+    recurring: boolean;
 }): InternalBookingFrom => {
     const timezone = calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone();
 
     const duration = calendarBootstrap?.CalendarSettings.DefaultEventDuration || DEFAULT_EVENT_DURATION;
-    const bookingRanges = generateDefaultBookingRange(userSettings, currentUTCDate, timezone, false);
+    const bookingRanges = generateDefaultBookingRange(userSettings, currentUTCDate, timezone, recurring);
 
     return {
+        recurring,
         summary: '',
         selectedCalendar: preferredCalendarID,
         locationType: BookingLocation.MEET,
@@ -80,6 +84,7 @@ export const validateRangeOperation = ({
     rangeId,
     existingRanges,
     excludeRangeId,
+    recurring,
 }: {
     operation: 'add' | 'update';
     start: Date;
@@ -88,9 +93,10 @@ export const validateRangeOperation = ({
     rangeId: string;
     existingRanges: BookingRange[];
     excludeRangeId?: string;
+    recurring: boolean;
 }): string | null => {
-    // Check if trying to add/update in the past
-    if (operation === 'add') {
+    // Check if trying to add/update in the past, not relevant for recurring bookings
+    if (operation === 'add' && !recurring) {
         const now = new Date();
         const nowWithTz = fromUTCDateToLocalFakeUTCDate(now, false, timezone);
 
@@ -156,7 +162,8 @@ export const wasBookingFormTouched = ({
         currentFormData.duration !== initialFormData.duration ||
         currentFormData.selectedCalendar !== initialFormData.selectedCalendar ||
         currentFormData.location !== initialFormData.location ||
-        currentFormData.locationType !== initialFormData.locationType
+        currentFormData.locationType !== initialFormData.locationType ||
+        currentFormData.recurring !== initialFormData.recurring
     ) {
         return true;
     }

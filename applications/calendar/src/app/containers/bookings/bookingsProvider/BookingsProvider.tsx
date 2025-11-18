@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import { areIntervalsOverlapping, isBefore, isWithinInterval } from 'date-fns';
+import { areIntervalsOverlapping, isWithinInterval } from 'date-fns';
 
 import { useUserSettings } from '@proton/account/index';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
@@ -13,6 +13,7 @@ import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddress
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useCalendarDispatch } from '../../../store/hooks';
 import { internalBookingActions } from '../../../store/internalBooking/interalBookingSlice';
@@ -26,10 +27,9 @@ import {
     validateRangeOperation,
     wasBookingFormTouched,
 } from '../utils/provider/providerHelper';
-import { generateBookingRangeID } from '../utils/range/rangeHelpers';
-import { roundToNextHalfHour } from '../utils/timeHelpers';
+import { generateBookingRangeID, generateDefaultBookingRange, getRangeDateStart } from '../utils/range/rangeHelpers';
 import type { BookingRange, BookingsContextValue, InternalBookingFrom, Intersection } from './interface';
-import { type BookingFormData, BookingLocation, BookingState } from './interface';
+import { type BookingFormData, BookingLocation, BookingState, DEFAULT_RECURRING } from './interface';
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
@@ -50,10 +50,14 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(false);
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
 
+    const isRecurringEnabled = useFlag('RecurringCalendarBookings');
+
     const intersectionRef = useRef<Intersection | null>(null);
     const initialFormData = useRef<InternalBookingFrom | undefined>(undefined);
 
-    const [internalForm, setInternalForm] = useState<InternalBookingFrom>(getInitialBookingFormState());
+    const [internalForm, setInternalForm] = useState<InternalBookingFrom>(
+        getInitialBookingFormState(isRecurringEnabled)
+    );
 
     const bookingSlots = useMemo(() => {
         return recomputeSlotsForRanges(internalForm.bookingRanges, internalForm.duration);
@@ -78,19 +82,27 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             calendarBootstrap,
             currentUTCDate,
             preferredCalendarID: defaultCalendarID,
+            recurring: isRecurringEnabled ? DEFAULT_RECURRING : false,
         });
 
         setInternalForm(formData);
         initialFormData.current = formData;
     };
 
-    const updateFormData = (field: keyof InternalBookingFrom, value: any) => {
+    const updateFormData = (field: keyof InternalBookingFrom, value: any, currentDate?: Date) => {
         // Auto-update duration when calendar changes (if user hasn't customized duration)
         if (field === 'selectedCalendar' && internalForm.duration === initialFormData.current?.duration) {
             const calBootstrap = readCalendarBootstrap(value);
             if (calBootstrap && calBootstrap.CalendarSettings.DefaultEventDuration !== internalForm.duration) {
                 updateFormData('duration', calBootstrap.CalendarSettings.DefaultEventDuration);
             }
+        }
+
+        // We generate the booking ranges each time we toggle the recurring option
+        if (field === 'recurring') {
+            const date = currentDate || new Date();
+            const newRanges = generateDefaultBookingRange(userSettings, date, formData.timezone, value);
+            updateFormData('bookingRanges', newRanges);
         }
 
         setInternalForm((prev) => ({ ...prev, [field]: value }));
@@ -111,6 +123,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             rangeId: newRangeId,
             existingRanges: internalForm.bookingRanges,
             excludeRangeId: oldRangeId,
+            recurring: formData.recurring,
         });
 
         if (validationError) {
@@ -140,10 +153,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const addBookingRange = (data: Omit<BookingRange, 'id'>) => {
-        // If we drag past the current time, we round to the next half hour
-        const dateStart = isBefore(data.start, new Date()) ? roundToNextHalfHour(new Date()) : data.start;
-
-        const start = intersectionRef.current?.start || dateStart;
+        const start = intersectionRef.current?.start || getRangeDateStart(formData, data.start);
         const end = intersectionRef.current?.end || data.end;
 
         const dataId = generateBookingRangeID(start, end);
@@ -156,6 +166,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             timezone: data.timezone,
             rangeId: dataId,
             existingRanges: internalForm.bookingRanges,
+            recurring: formData.recurring,
         });
 
         if (validationError) {

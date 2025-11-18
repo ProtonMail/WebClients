@@ -4,6 +4,7 @@ import { validateFormData } from './formHelpers';
 describe('booking helpers', () => {
     describe('validateFormData', () => {
         const validForm: BookingFormData = {
+            recurring: false,
             summary: 'Page title',
             selectedCalendar: null,
             locationType: BookingLocation.MEET,
