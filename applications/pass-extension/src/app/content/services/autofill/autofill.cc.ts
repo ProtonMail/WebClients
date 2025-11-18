@@ -65,9 +65,11 @@ export const CC_FIELDS_CONFIG: Record<CCFieldType, CCFieldValueExtract> = {
 };
 
 export const autofillCCFields = async (fields: FieldHandle[], data: Partial<CCItemData>): Promise<CCFieldType[]> => {
-    const result = await seq(fields, async (field): Promise<Maybe<CCFieldType>> => {
+    const result = await seq(fields, async (field, autofilled): Promise<Maybe<CCFieldType>> => {
         const ccType = getCCFieldType(field.element);
-        if (!ccType) return;
+
+        /** No match or `CCFieldType` has already been autofilled */
+        if (!ccType || autofilled.includes(ccType)) return;
 
         const value = CC_FIELDS_CONFIG[ccType](data, field.element);
         const next = value || (field.autofilled === FieldType.CREDIT_CARD ? '' : undefined);
