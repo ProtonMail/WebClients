@@ -245,6 +245,9 @@
       "Create new policy": [
         "Crear una política"
       ],
+      "Create organization": [
+        "Crear organización"
+      ],
       "Create users": [
         "Crear usuarios"
       ],
@@ -1097,6 +1100,9 @@
         "${ ips } servidor",
         "${ ips } servidores"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } asistente de IA"
+      ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
       ],
@@ -1836,6 +1842,9 @@
       "Application problem": [
         "Problema con la aplicación"
       ],
+      "Authenticator problem": [
+        "Problema con el autenticador"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1916,8 +1925,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Añadir usuarios manualmente"
+      ],
       "Close": [
         "Cerrar"
+      ],
+      "Configure your network": [
+        "Configura tu red"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
@@ -1937,17 +1952,29 @@
       "Discover and set up features": [
         "Descubre y configura las funcionalidades"
       ],
+      "Invite your team": [
+        "Invita a tu equipo"
+      ],
+      "Manage global VPN permissions": [
+        "Administrar permisos globales de VPN"
+      ],
       "Maybe later": [
         "Quizás más tarde"
       ],
       "Remind me later": [
         "Recordarme más tarde"
       ],
+      "Secure your organization": [
+        "Protege tu organización"
+      ],
       "Send": [
         "Enviar"
       ],
       "Set up other features": [
         "Configura otras funciones"
+      ],
+      "Set up SSO": [
+        "Configurar SSO"
       ],
       "Take a tour": [
         "Explora ahora"
@@ -2073,6 +2100,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de cuenta y red en un solo plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de alta velocidad y funciones de IA avanzadas."
@@ -3213,6 +3243,9 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "Crea políticas para decidir quién puede conectarse a servidores compartidos en cada país."
       ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Decide qué usuarios se pueden conectar con cada una de nuestras más de 120 ubicaciones de servidor compartidas."
+      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accede fácilmente a tu correo electrónico y calendario en el escritorio y en el móvil."
       ],
@@ -3245,6 +3278,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ayuda a tu equipo a almacenar de forma segura las contraseñas de información confidencial de la empresa y de los clientes."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Si aún no lo has hecho, activa algunos métodos de recuperación para asegurarte de que nunca pierdas el acceso a ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
@@ -4785,9 +4821,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } dispositivos"
-      ],
       "15 GB storage": [
         "15 GB de espacio de almacenamiento"
       ],
@@ -4811,6 +4844,9 @@
       ],
       "Double VPN": [
         "Doble VPN"
+      ],
+      "File attachment ": [
+        "Archivo adjunto "
       ],
       "Lightning-fast speeds": [
         "Velocidades ultrarrápidas"
@@ -6403,6 +6439,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "Consigue **${ referrerRewardAmount } créditos** por cada amigo que se suscriba."
       ],
+      "Get started": [
+        "Comenzar"
+      ],
       "Get started with the referral link above.": [
         "Empieza con el enlace de referido de arriba."
       ],
@@ -7033,6 +7072,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Asegura tu cuenta de ${ BRAND_NAME }"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Videoconferencia segura y cifrada de extremo a extremo"
+      ],
       "Securing your account": [
         "Protegiendo tu cuenta"
       ],
@@ -7386,6 +7428,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prueba ${ productName } totalmente sin riesgos. Si por cualquier motivo cambias de opinión, recibirás un reembolso completo. Sin preguntas."
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tus datos. (Avanzado)"
@@ -7953,9 +7998,19 @@
         "Solo lectura"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Así es como tu organización aparecerá a los usuarios. Puedes cambiarlo en cualquier momento."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "No es una dirección de correo electrónico válida."
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "¿Cuál es el nombre de tu organización?"
       ]
     },
     "invitation status": {
@@ -8061,6 +8116,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
+      ],
+      "0 of 1 email address available": [
+        "0 de 1 dirección de correo electrónico disponible"
+      ],
+      "1 of 1 email address available": [
+        "1 de 1 dirección de correo electrónico disponible"
       ],
       "Account holder": [
         "Titular de la cuenta"
@@ -8358,6 +8419,12 @@
       ],
       "Folder location": [
         "Ubicación de la carpeta"
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Para ${ DRIVE_SHORT_APP_NAME } y ${ DOCS_SHORT_APP_NAME }."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "Para ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } y ${ SHEETS_SHORT_APP_NAME }."
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
@@ -9673,6 +9740,9 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficios existentes de ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descargas rápidas de P2P/BitTorrent"
       ],
@@ -9888,6 +9958,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartir la caja fuerte con hasta ${ n } persona",
+        "Compartir la caja fuerte con hasta ${ n } personas"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
@@ -11334,6 +11408,23 @@
         "Nunca"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "¿Estás seguro de que quieres proceder?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si eliges modificar tu plan ${ planTitle }, puedes perder el acceso a algunas funcionalidades."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguir con ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Si, estoy seguro"
+      ],
+      "Your plan includes this feature already.": [
+        "Tu plan ya incluye esta funcionalidad."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Gratuito"
@@ -11461,6 +11552,9 @@
       ],
       "End date": [
         "Fecha de fin"
+      ],
+      "Enter name": [
+        "Introduzca un nombre"
       ],
       "example@domain.com": [
         "ejemplo@dominio.com"
@@ -13720,6 +13814,9 @@
       "Organization logo updated": [
         "Se ha actualizado el logo de la organización."
       ],
+      "Organization name set": [
+        "Nombre de la organización establecido"
+      ],
       "Organization name updated": [
         "Se ha actualizado el nombre de la organización."
       ],
@@ -14375,6 +14472,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "¿Pasar a ${ downgradedPlanName }?"
       ],
+      "Download ${ app }": [
+        "Descargar ${ app }"
+      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarga las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
@@ -14498,6 +14598,9 @@
       ],
       "Get more from your VPN": [
         "Obtén más de tu VPN"
+      ],
+      "Get started": [
+        "Comenzar"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Obtén la aplicación en todos tus dispositivos y protege hasta ${ VPN_CONNECTIONS } al mismo tiempo."
@@ -14932,6 +15035,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Te damos la bienvenida a ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ planName }": [
+        "Te damos la bienvenida a $${ planName }"
       ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
@@ -15604,10 +15710,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Selección automática desde ${ numberOfCountries } país",
         "Selección automática desde ${ numberOfCountries } países"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Selección entre más de ${ numberOfCountries } país",
-        "Selección entre más de ${ numberOfCountries } países"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servidores en ${ numberOfCountries } país",

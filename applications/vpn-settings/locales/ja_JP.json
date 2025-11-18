@@ -245,6 +245,9 @@
       "Create new policy": [
         "新しいポリシーを作成"
       ],
+      "Create organization": [
+        "組織を作成する"
+      ],
       "Create users": [
         "ユーザーを作成"
       ],
@@ -629,6 +632,9 @@
       "Or": [
         "または"
       ],
+      "Or use a different Gmail address": [
+        "別のGmailアドレスを使用する"
+      ],
       "Organization": [
         "組織"
       ],
@@ -917,6 +923,9 @@
       "Submit": [
         "送信"
       ],
+      "Subscribe": [
+        "登録"
+      ],
       "Subscribe now": [
         "今すぐ登録"
       ],
@@ -1012,6 +1021,9 @@
       ],
       "Use recovery code": [
         "回復用コードを使用"
+      ],
+      "Use this Gmail address": [
+        "このGmailアドレスを使用してください"
       ],
       "Use your current email instead": [
         "代わりに現在のメールアドレスを使用"
@@ -1820,6 +1832,9 @@
       "Application problem": [
         "アプリケーションに関する問題"
       ],
+      "Authenticator problem": [
+        "認証の問題"
+      ],
       "Black Friday": [
         "ブラックフライデー"
       ],
@@ -1900,8 +1915,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "ユーザーを手動で追加する"
+      ],
       "Close": [
         "閉じる"
+      ],
+      "Configure your network": [
+        "ネットワークを設定する"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }で続ける。"
@@ -1921,17 +1942,29 @@
       "Discover and set up features": [
         "機能の発見と設定"
       ],
+      "Invite your team": [
+        "チームを招待する"
+      ],
+      "Manage global VPN permissions": [
+        "グローバルVPNの権限を管理する"
+      ],
       "Maybe later": [
         "たぶんあとで"
       ],
       "Remind me later": [
         "後で通知する"
       ],
+      "Secure your organization": [
+        "組織の安全を確保する"
+      ],
       "Send": [
         "送信"
       ],
       "Set up other features": [
         "他の機能を設定"
+      ],
+      "Set up SSO": [
+        "SSOを設定する"
       ],
       "Take a tour": [
         "ツアーを開始"
@@ -2055,6 +2088,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }を追加"
+      ],
+      "Advanced account and network security in one plan": [
+        "1つのプランで高度なアカウントとネットワークセキュリティ"
       ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
@@ -3187,11 +3223,20 @@
       "Connect your CRM, website, printers, and more.": [
         "CRM、ウェブサイト、プリンターなどを接続。"
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "専用サーバーを通じてユーザーがITリソースにアクセスできるようにするゲートウェイを作成します。"
+      ],
       "Create groups you can email with a single address.": [
         "単一の アドレス でメールを送信できるグループ を作成します。"
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "新しいユーザーアカウントを作成するか、SSO（シングルサインオン）SCIMプロビジョニングでユーザーをインポートします。"
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "各国の共有サーバーに誰が接続できるかを決定するポリシーを作成します。"
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "120以上の共有サーバーロケーションそれぞれに接続できるユーザーを決定します。"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "デスクトップとモバイルでメールとカレンダーに簡単にアクセスできます。"
@@ -3225,6 +3270,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "チームが機密性の高いビジネスおよびクライアント情報のパスワードを安全に保管できるよう支援します。"
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "まだ設定していない場合は、復旧方法を有効にして、${ VPN_APP_NAME }へのアクセスを絶対に失わないようにしてください。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
@@ -4197,6 +4245,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "すでに ${ MAIL_APP_NAME } へ転送されている Gmail アドレスでサインインしてください"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "最初に接続した同じGmailアドレスでサインインしてください"
       ]
@@ -4749,9 +4800,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } 台のデバイス"
-      ],
       "15 GB storage": [
         "15 GB のストレージ"
       ],
@@ -4776,6 +4824,9 @@
       "Double VPN": [
         "ダブルVPN"
       ],
+      "File attachment ": [
+        "ファイル添付 "
+      ],
       "Lightning-fast speeds": [
         "最高速の速度"
       ],
@@ -4790,6 +4841,9 @@
       ],
       "Secure streaming": [
         "安全なストリーミング"
+      ],
+      "Secure vault, item, and link sharing": [
+        "安全な保管庫、アイテム、リンクの共有"
       ],
       "Stream from Netflix, HBO, and more": [
         "Netflix、HBOなどからのストリーム"
@@ -6313,6 +6367,9 @@
       "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
         "友達が登録するたびに、**${ referrerRewardAmount } クレジット**を獲得できます。"
       ],
+      "Get started": [
+        "始めましょう"
+      ],
       "Get started with the referral link above.": [
         "上記の紹介リンクから始めてください。"
       ],
@@ -6937,6 +6994,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを保護する"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "安全なエンドツーエンド暗号化ビデオ会議"
+      ],
       "Securing your account": [
         "アカウントを安全にしています"
       ],
@@ -6984,6 +7044,9 @@
       ],
       "Set up your organization": [
         "組織を設定"
+      ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "組織を設定し、簡単な手順でデータの保護を開始しましょう。"
       ],
       "Setting up ${ feature }…": [
         "${ feature }を設定しています…"
@@ -7285,6 +7348,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } を完全にリスクなしでお試しください もし何らかの理由で気が変わった場合には、質問なしで全額返金を受け取ることができます。"
       ],
+      "Two-factor authentication": [
+        "2要素認証"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "2つのパスワードモードには 2つのパスワードが必要です: 1つはアカウントにサインインするため、そしてもう1つはデータを複号化するためです。(高度)"
       ],
@@ -7561,6 +7627,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "存在する ${ BRAND_NAME } カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "**ユーザーとアドレス**でストレージ割り当てを変更できます"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "${ settingsLink } でいつでも変更できます。"
       ],
@@ -7750,6 +7819,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "予定されているプランは ${ renewalTime } から始まり、毎月自動更新されます。"
       ],
+      "Your storage": [
+        "お客様のストレージ"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "お客様のサブスクリプションは${ renewalTime }に自動的に更新されます。"
       ],
@@ -7837,9 +7909,19 @@
         "閲覧のみ"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "これがユーザーに表示される組織の情報です。いつでも変更できます。"
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "無効なメールアドレス"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "あなたの組織名は何ですか？"
       ]
     },
     "invitation status": {
@@ -7918,6 +8000,9 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "利用可能なメールアドレスは ${ maxAddresses } 件中 ${ addressesAvailable } 件です"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
       ],
@@ -7938,6 +8023,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
+      ],
+      "0 of 1 email address available": [
+        "1個のメールアドレスのうち0個が利用可能です"
+      ],
+      "1 of 1 email address available": [
+        "1個のメールアドレスのうち1個が利用可能です"
       ],
       "Account holder": [
         "アカウント所有者"
@@ -8684,6 +8775,11 @@
         "終了日"
       ]
     },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "利用可能なメールアドレスは ${ maxBYOEAddresses } 件中 ${ byoeAddressesAvailableCount } 件です"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "あなたが所有しているドメインを ${ MAIL_APP_NAME } アカウントに追加します。"
@@ -8886,6 +8982,9 @@
       ],
       "Reactivate now": [
         "今すぐ再アクティブ"
+      ],
+      "Reactivate subscription": [
+        "サブスクリプションを再開"
       ],
       "Request an invite": [
         "招待をリクエスト"
@@ -9524,6 +9623,9 @@
       "End-to-end encryption": [
         "エンドツーエンド暗号化"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "既存の ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 特典"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "高速な P2P/BitTorrent ダウンロード"
       ],
@@ -9733,6 +9835,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "最大${ n }人までと保管庫共有"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
@@ -10267,6 +10372,9 @@
       ],
       "A disabled address cannot be default": [
         "無効にされたアドレスは既定にすることができません"
+      ],
+      "Address reconnected.": [
+        "アドレスが再接続されました。"
       ],
       "An external address cannot be default": [
         "外部のアドレスは既定にすることができません"
@@ -11145,6 +11253,36 @@
         "クレジットがお客様の残高に追加されます。"
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "生涯アカウントは譲渡または売却が可能です"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "カスタマーサポートに連絡し、所有権の変更を確認してください"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "一度もない"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "本当に続行しますか？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } プランを変更された場合、一部の機能にアクセスできなくなる可能性があります。"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } を使い続ける"
+      ],
+      "Yes, I'm sure": [
+        "はい、構いません"
+      ],
+      "Your plan includes this feature already.": [
+        "お客様のプランには、この機能がすでに含まれています。"
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "無料"
@@ -11273,6 +11411,9 @@
       "End date": [
         "終了日"
       ],
+      "Enter name": [
+        "名前を入力してください"
+      ],
       "example@domain.com": [
         "example@domain.com"
       ],
@@ -11400,6 +11541,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } のすべてのプレミアム機能"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "プレミアムサービスと${ unlimitedPlanMaxSpace }の暗号化クラウドストレージを1つのバンドルにまとめたプライバシースイート。"
       ]
     },
     "Plans": {
@@ -11562,6 +11706,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**この日までに登録**すると、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "その日付以降、アカウントは**${ BRAND_NAME } Free**にダウングレードされます。気が変わった場合は、**サブスクリプションを再有効化する**ことで引き続きプレミアム機能にアクセスできます。"
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ textDate }** まで、**${ planTitle }** を無料でお楽しみいただけます。"
@@ -13468,6 +13615,9 @@
       "Organization logo updated": [
         "組織ロゴの更新"
       ],
+      "Organization name set": [
+        "組織名が設定されました"
+      ],
       "Organization name updated": [
         "組織名が更新されました"
       ],
@@ -13952,6 +14102,9 @@
       "Confirm phone number": [
         "電話番号の確認"
       ],
+      "Connect a Gmail address": [
+        "Gmail アドレスを接続する"
+      ],
       "Connect apps and devices": [
         "アプリとデバイスを接続"
       ],
@@ -14102,6 +14255,9 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
+      "Dismiss setup checklist": [
+        "セットアップチェックリストを閉じる"
+      ],
       "Domain names": [
         "ドメイン名"
       ],
@@ -14110,6 +14266,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } にダウングレードしますか？"
+      ],
+      "Download ${ app }": [
+        "${ app } をダウンロード"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } アプリをダウンロード"
@@ -14233,6 +14392,9 @@
       ],
       "Get more from your VPN": [
         "VPNからさらに入手する"
+      ],
+      "Get started": [
+        "始めましょう"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "すべてのデバイスでアプリを入手し、一度に ${ VPN_CONNECTIONS } まで保護します。"
@@ -14413,6 +14575,9 @@
       ],
       "Remove domain": [
         "ドメインを削除する"
+      ],
+      "Remove forwarding address": [
+        "転送先アドレスを削除する"
       ],
       "Remove server?": [
         "サーバーを削除しますか？"
@@ -14662,6 +14827,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Businessへようこそ"
+      ],
+      "Welcome to ${ planName }": [
+        "ようこそ ${ planName } へ"
       ],
       "What would you like to import?": [
         "何をインポートしたいですか?"
@@ -15081,6 +15249,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "長期契約で**最大${ priceString } 節約できます**。同じプレミアム機能で、より低価格。"
       ],
+      "Advanced security for your company": [
+        "貴社向け高度なセキュリティ対策"
+      ],
       "Advanced security for your company?": [
         "あなたの会社のための高度なセキュリティ？"
       ],
@@ -15093,14 +15264,23 @@
       "Did you know?": [
         "知ってましたか？"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "ファイル、写真、ドキュメント用に最大${ drivePlusPlanMaxSpace }のストレージを利用し、10年間のファイル復元機能で過去のファイルバージョンを復元できます。"
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "${ PLAN_NAMES[plan] } を利用して、お客様の組織をデータ侵害から保護します。"
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "${ VPN_APP_NAME } for Business を利用して、お客様の組織をデータ侵害から保護します。"
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "最大${ FAMILY_MAX_USERS }人まで無制限のプライバシー。月額わずか${ priceString }から。"
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "あなたと大切な人のための無制限のプライバシー。月額${ priceString }から。"
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "${ PLAN_NAMES[PLANS.DUO] }プランでは最大 ${ DUO_MAX_USERS } 人まで、${ PLAN_NAMES[PLANS.FAMILY] } プランでは最大 ${ FAMILY_MAX_USERS } 人まで保護できます。アカウントあたり月額わずか ${ priceString } から。"
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ FAMILY_MAX_USERS } を持つ最大 ${ PLAN_NAMES[plan] }人を保護することができます。アカウントごとに ${ priceString }/月から開始します。"
@@ -15315,9 +15495,6 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries }ヶ国から自動選択"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "${ numberOfCountries }ヶ国以上から選択"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "${ numberOfCountries }ヶ国以上にあるサーバー"

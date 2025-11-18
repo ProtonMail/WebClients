@@ -632,6 +632,9 @@
       "Or": [
         "O"
       ],
+      "Or use a different Gmail address": [
+        "O use otra dirección de Gmail"
+      ],
       "Organization": [
         "Organización"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Usar código de recuperación"
+      ],
+      "Use this Gmail address": [
+        "Usar esta dirección de Gmail"
       ],
       "Use your current email instead": [
         "Use el correo electrónico actual en su lugar"
@@ -1840,6 +1846,9 @@
       "Application problem": [
         "Problema con la aplicación"
       ],
+      "Authenticator problem": [
+        "Problema con el autenticador"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -2095,6 +2104,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Agregar ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de la cuenta y red en un solo plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de gran velocidad y funciones de IA avanzadas."
@@ -4257,6 +4269,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Inicie sesión con una dirección de Gmail que ya reenvía a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
       ]
@@ -4816,9 +4831,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } dispositivos"
-      ],
       "15 GB storage": [
         "15 GB de almacenamiento"
       ],
@@ -4843,6 +4855,9 @@
       "Double VPN": [
         "Doble VPN"
       ],
+      "File attachment ": [
+        "Archivo adjunto "
+      ],
       "Lightning-fast speeds": [
         "Velocidades ultrarrápidas"
       ],
@@ -4857,6 +4872,9 @@
       ],
       "Secure streaming": [
         "Streaming seguro"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Bóveda segura, elementos y compartición de enlaces"
       ],
       "Stream from Netflix, HBO, and more": [
         "Transmita de Netflix, HBO y más"
@@ -7067,6 +7085,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Asegure la cuenta de ${ BRAND_NAME }"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Videoconferencia segura y cifrada de extremo a extremo"
+      ],
       "Securing your account": [
         "Asegurando la cuenta"
       ],
@@ -7423,6 +7444,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Pruebe ${ productName } totalmente sin riesgos. Si por cualquier motivo cambia de opinión, recibirá un reembolso completo. Sin preguntas."
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión en su cuenta y otra para descifrar sus datos. (Avanzado)"
@@ -8087,6 +8111,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } de ${ maxAddresses } dirección de correo disponible",
+        "${ addressesAvailable } de ${ maxAddresses } direcciones de correo disponibles"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
@@ -8110,6 +8138,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
+      ],
+      "0 of 1 email address available": [
+        "0 de 1 dirección de correo disponible"
+      ],
+      "1 of 1 email address available": [
+        "1 de 1 dirección de correo disponible"
       ],
       "Account holder": [
         "Titular de la cuenta"
@@ -8855,6 +8889,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Para"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } de ${ maxBYOEAddresses } dirección de correo disponible",
+        "${ byoeAddressesAvailableCount } de ${ maxBYOEAddresses } direcciones de correo disponibles"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9722,6 +9762,9 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficios existentes de ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descargas rápidas de P2P/BitTorrent"
       ],
@@ -9937,6 +9980,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartir bóveda con hasta ${ n } persona",
+        "Compartir bóveda con hasta ${ n } personas"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
@@ -10476,6 +10523,9 @@
       ],
       "A disabled address cannot be default": [
         "Una dirección desactivada no puede ser principal"
+      ],
+      "Address reconnected.": [
+        "Dirección reconectada."
       ],
       "An external address cannot be default": [
         "Una dirección externa no puede ser principal"
@@ -11367,6 +11417,36 @@
         "Se añadirán los créditos a su balance"
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Las cuentas vitalicias pueden transferirse o venderse"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Póngase en contacto con soporte al cliente para confirmar el cambio de titularidad"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Nunca"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "¿En verdad desea continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si elige modificar su plan ${ planTitle }, puede perder el acceso a algunas funciones."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguir en ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sí, estoy seguro"
+      ],
+      "Your plan includes this feature already.": [
+        "Su plan ya incluye esta función."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -11625,6 +11705,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Suite de privacidad con servicios premium y ${ unlimitedPlanMaxSpace } de almacenamiento cifrado en la nube, todo en un paquete."
       ]
     },
     "Plans": {
@@ -14247,6 +14330,9 @@
       "Confirm phone number": [
         "Confirmar número de teléfono"
       ],
+      "Connect a Gmail address": [
+        "Conectar una dirección de Gmail"
+      ],
       "Connect apps and devices": [
         "Conecte aplicaciones y dispositivos"
       ],
@@ -14410,6 +14496,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "¿Bajar a ${ downgradedPlanName }?"
+      ],
+      "Download ${ app }": [
+        "Descargar ${ app }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descargue las aplicaciones de ${ DRIVE_APP_NAME }"
@@ -14718,6 +14807,9 @@
       ],
       "Remove domain": [
         "Eliminar el dominio"
+      ],
+      "Remove forwarding address": [
+        "Eliminar dirección de reenvío"
       ],
       "Remove server?": [
         "¿Eliminar el servidor?"
@@ -15391,6 +15483,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Ahorre hasta ${ priceString }** con una suscripción más larga. Mismas funciones premium, menor precio."
       ],
+      "Advanced security for your company": [
+        "Seguridad avanzada para su empresa"
+      ],
       "Advanced security for your company?": [
         "¿Seguridad avanzada para su compañía?"
       ],
@@ -15403,14 +15498,23 @@
       "Did you know?": [
         "¿Lo sabía?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Obtenga ${ drivePlusPlanMaxSpace } de almacenamiento para sus archivos, fotos y documentos, y recupere versiones con una recuperación de archivos de 10 años."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Proteja su organización de vulneraciones de datos con ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Proteja su organización de vulneraciones de datos con ${ VPN_APP_NAME } for Business."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Privacidad ilimitada para hasta ${ FAMILY_MAX_USERS } personas. Por solo ${ priceString } al mes."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Privacidad ilimitada para usted y su ser querido. Por solo ${ priceString }/mes."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Puede proteger hasta ${ DUO_MAX_USERS } personas con ${ PLAN_NAMES[PLANS.DUO] } y hasta ${ FAMILY_MAX_USERS } con ${ PLAN_NAMES[PLANS.FAMILY] }. Por solo ${ priceString }/mes por cuenta."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puede proteger hasta ${ FAMILY_MAX_USERS } personas con ${ PLAN_NAMES[plan] }. Desde ${ priceString }/mes por cuenta."
@@ -15634,10 +15738,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Selección automática de ${ numberOfCountries } país",
         "Selección automática de ${ numberOfCountries } países"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Selección entre ${ numberOfCountries } país",
-        "Selección entre ${ numberOfCountries } países"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servidores en ${ numberOfCountries } país",

@@ -1019,6 +1019,9 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
+      "Use this Gmail address": [
+        "Usar este endereço de Gmail"
+      ],
       "Use your current email instead": [
         "Usar seu endereço de e-mail atual"
       ],
@@ -1840,6 +1843,9 @@
       "Application problem": [
         "Problema no aplicativo"
       ],
+      "Authenticator problem": [
+        "Problema de autenticação"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -2095,6 +2101,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Segurança avançada de conta e rede em um único plano"
       ],
       "High-speed chats and advanced AI features.": [
         "Bate-papos de alta velocidade e recursos avançados de IA."
@@ -4257,6 +4266,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Por favor, inicie sessão com um endereço Gmail que já encaminha para ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicie sessão com o mesmo endereço do Gmail que você conectou originalmente"
       ]
@@ -4816,9 +4828,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } dispositivos"
-      ],
       "15 GB storage": [
         "15 GB de armazenamento"
       ],
@@ -7433,6 +7442,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Experimente ${ productName } totalmente sem riscos - se por algum motivo você mudar de ideia, você receberá um reembolso total. Sem perguntas."
       ],
+      "Two-factor authentication": [
+        "Autenticação de dois fatores"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "O modo de duas senhas requer duas senhas: uma para iniciar sessão na sua conta e uma para descriptografar seus dados. (Avançado)"
       ],
@@ -8123,6 +8135,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
+      ],
+      "0 of 1 email address available": [
+        "0 de 1 endereço de e-mail disponível"
+      ],
+      "1 of 1 email address available": [
+        "1 de 1 endereço de e-mail disponível"
       ],
       "Account holder": [
         "Titular da conta"
@@ -10505,6 +10523,9 @@
       ],
       "A disabled address cannot be default": [
         "Um endereço desativado não pode ser padrão"
+      ],
+      "Address reconnected.": [
+        "Endereço reconectado."
       ],
       "An external address cannot be default": [
         "Um endereço externo não pode ser padrão."
@@ -14307,6 +14328,9 @@
       "Confirm phone number": [
         "Confirme o número do telefone"
       ],
+      "Connect a Gmail address": [
+        "Conectar um endereço do Gmail"
+      ],
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
@@ -15697,10 +15721,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Seleciona automaticamente de ${ numberOfCountries } país",
         "Seleciona automaticamente de ${ numberOfCountries } países"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Selecione em ${ numberOfCountries }+ país",
-        "Selecione em ${ numberOfCountries }+ países"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servidores em ${ numberOfCountries }+ país",

@@ -1840,6 +1840,9 @@
       "Application problem": [
         "Problème d'application"
       ],
+      "Authenticator problem": [
+        "Problème d'authentification"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -4822,9 +4825,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } appareils"
-      ],
       "@pm.me address": [
         "Adresse @pm.me"
       ],
@@ -7067,6 +7067,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Sécurisez votre compte ${ BRAND_NAME }"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Visioconférence sécurisée et chiffrée de bout en bout"
+      ],
       "Securing your account": [
         "Sécurisation de votre compte"
       ],
@@ -7423,6 +7426,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Essayez ${ productName } en toute tranquillité. Si pour une raison quelconque vous changez d'avis, vous recevrez un remboursement complet. Aucune question ne vous sera posée."
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Le mode à deux mots de passe nécessite un mot de passe pour se connecter à votre compte et un autre pour déchiffrer vos données (avancé)."
@@ -8114,6 +8120,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
+      ],
+      "0 of 1 email address available": [
+        "0 adresse e-mail disponible sur 1"
+      ],
+      "1 of 1 email address available": [
+        "1 sur 1 adresse e-mail disponible"
       ],
       "Account holder": [
         "Titulaire du compte"
@@ -15696,10 +15708,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Sélection automatique depuis ${ numberOfCountries } pays",
         "Sélection automatique depuis ${ numberOfCountries } pays"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Sélection depuis ${ numberOfCountries } pays",
-        "Sélection depuis ${ numberOfCountries } pays"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Serveurs dans plus de ${ numberOfCountries } pays",

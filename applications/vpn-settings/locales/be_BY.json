@@ -1874,6 +1874,9 @@
       "Application problem": [
         "Праблема з праграмай"
       ],
+      "Authenticator problem": [
+        "Праблема з аўтэнтыфікатарам"
+      ],
       "Black Friday": [
         "Чорная пятніца"
       ],
@@ -4890,9 +4893,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } прылад"
-      ],
       "15 GB storage": [
         "15 ГБ сховішча"
       ],
@@ -7267,6 +7267,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Абараніце свой уліковы запіс ${ BRAND_NAME }"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Бяспечная і зашыфраваная скразным метадам відэаканферэнцыя"
+      ],
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
       ],
@@ -7635,6 +7638,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
+      ],
+      "Two-factor authentication": [
+        "Двухфактарная аўтэнтыфікацыя"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Для рэжыму двух пароляў патрабуюцца два паролі: першы для ўваходу ва ўліковы запіс, а другі для расшыфроўкі вашых даных (дадатковая функцыя бяспекі)"
@@ -8356,6 +8362,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
+      ],
+      "0 of 1 email address available": [
+        "Даступна 0 з 1 адраса электроннай пошты"
+      ],
+      "1 of 1 email address available": [
+        "Даступна 1 з 1 адраса электроннай пошты"
       ],
       "Account holder": [
         "Трымальнік уліковага запісу"
@@ -10796,6 +10808,9 @@
       "A disabled address cannot be default": [
         "Адключаны адрас не можа быць прадвызначаным"
       ],
+      "Address reconnected.": [
+        "Адрас перападключаны"
+      ],
       "An external address cannot be default": [
         "Знешні адрас не можа быць прадвызначаным"
       ],
@@ -11580,7 +11595,7 @@
         "Падаткі"
       ],
       "terms and conditions": [
-        "ўмовы выкарыстання"
+        "ўмовамі выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
@@ -11658,10 +11673,10 @@
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для пацверджання плацяжу."
       ],
       "You will soon be redirected to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны для пацверджання вашага плацяжу."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
@@ -11704,6 +11719,19 @@
       ],
       "Credits will be added to your balance": [
         "Крэдыты будуць дададзены на ваш баланс"
+      ]
+    },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Пажыццёвыя ўліковыя запісы могуць быць перададзены або прададзены"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Звярніцеся ў падтрымку кліентаў, каб пацвердзіць змену ўласнасці."
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Ніколі"
       ]
     },
     "Payments.ModificationWarning": {
@@ -11981,6 +12009,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Усе прэміяльныя функцыі з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Набор прыватнасці з прэміяльнымі сэрвісамі і ${ unlimitedPlanMaxSpace } зашыфраванага воблачнага сховішча. Усё гэта пастаўляецца ў адным камплекце."
       ]
     },
     "Plans": {
@@ -15890,6 +15921,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Зэканомце да ${ priceString }** з працяглай падпіскай. Тыя ж самыя прэміяльныя функцыі за меншую плату."
       ],
+      "Advanced security for your company": [
+        "Пашыраная бяспека для вашай кампаніі"
+      ],
       "Advanced security for your company?": [
         "Пашырыць бяспеку для вашай кампаніі?"
       ],
@@ -15916,6 +15950,9 @@
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Неабмежаваная прыватнасць для вас і каханага чалавека. Усяго ад ${ priceString }/месяц."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Вы можаце абараніць да ${ DUO_MAX_USERS }} асоб з тарыфным планам ${ PLAN_NAMES[PLANS.DUO] } і да ${ FAMILY_MAX_USERS } з тарыфным планам ${ PLAN_NAMES[PLANS.FAMILY] }. Кошт падпіскі ўсяго ${ priceString } у месяц за ўліковы запіс."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Вы можаце абараніць да ${ FAMILY_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[plan] }. Пачынаючы ўсяго ад ${ priceString } у месяц за ўліковы запіс."
@@ -16158,12 +16195,6 @@
         "Аўтавыбар з ${ numberOfCountries } краін",
         "Аўтавыбар з ${ numberOfCountries } краін"
       ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Выбірайце ў больш чым ${ numberOfCountries } краіне",
-        "Выбірайце ў больш чым ${ numberOfCountries } краінах",
-        "Выбірайце ў больш чым ${ numberOfCountries } краінах",
-        "Выбірайце ў больш чым ${ numberOfCountries } краінах"
-      ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",
         "Серверы ў больш, чым ${ numberOfCountries } краінах",
@@ -16284,7 +16315,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
+        "Бяспечны спосаб захоўвання Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

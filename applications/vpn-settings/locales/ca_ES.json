@@ -1846,8 +1846,11 @@
       "Application problem": [
         "Problema d’aplicació"
       ],
+      "Authenticator problem": [
+        "Problema amb l'autenticador"
+      ],
       "Black Friday": [
-        "Divendres negre"
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -4267,7 +4270,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Si us plau, inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -4828,9 +4831,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } dispositius"
-      ],
       "15 GB storage": [
         "15 GB d'emmagatzematge"
       ],
@@ -5815,7 +5815,7 @@
         "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
+        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronitzeu els codis** a tots els dispositius"
@@ -7085,6 +7085,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Protegiu el vostre compte de ${ BRAND_NAME }"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Videoconferència segura i xifrada d’extrem a extrem"
+      ],
       "Securing your account": [
         "S'està protegint el compte"
       ],
@@ -7441,6 +7444,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Proveu ${ productName } totalment sense riscos. Si per qualsevol motiu canvieu d'opinió, rebreu un reemborsament complet. Sense preguntes."
+      ],
+      "Two-factor authentication": [
+        "Autenticació de doble factor"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al compte i una altra per a desxifrar les dades. (Avançat)"
@@ -8132,6 +8138,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
+      ],
+      "0 of 1 email address available": [
+        "0 d'1 adreça de correu electrònic disponible"
+      ],
+      "1 of 1 email address available": [
+        "1 d'1 adreça de correu electrònic disponible"
       ],
       "Account holder": [
         "Titular del compte"
@@ -10513,7 +10525,7 @@
         "Una adreça desactivada no pot ser una adreça per defecte."
       ],
       "Address reconnected.": [
-        "Adreça reconectada."
+        "Adreça reconnectada."
       ],
       "An external address cannot be default": [
         "Una adreça externa no pot ser una adreça per defecte."
@@ -15726,10 +15738,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Selecció automàtica d'entre ${ numberOfCountries } país",
         "Selecció automàtica d'entre ${ numberOfCountries } països"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Seleccioneu d'entre més d'${ numberOfCountries } país",
-        "Seleccioneu d'entre més de ${ numberOfCountries } països"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servidors en més d'${ numberOfCountries } país",
