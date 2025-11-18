@@ -2,7 +2,6 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import {
     Dropdown,
     DropdownMenu,
@@ -27,19 +26,20 @@ import './ProjectCard.scss';
 interface ProjectCardProps {
     project: Project;
     onSignInRequired?: () => void;
+    onOpenNewProjectModal?: (name: string, instructions: string, icon: string) => void;
 }
 
-export const ProjectCard = ({ project, onSignInRequired }: ProjectCardProps) => {
+export const ProjectCard = ({ project, onSignInRequired, onOpenNewProjectModal }: ProjectCardProps) => {
     const history = useHistory();
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
     const myProjects = useProjects();
-    const { createProject, deleteProject } = useProjectActions();
+    const { deleteProject } = useProjectActions();
     const deleteModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const handleClick = async () => {
+    const handleClick = () => {
         if (project.isExample) {
             // Check if user is signed in
             if (isGuest) {
@@ -53,16 +53,13 @@ export const ProjectCard = ({ project, onSignInRequired }: ProjectCardProps) => 
                 return;
             }
 
-            // Create a new project from example template
-            const { spaceId } = await createProject(
-                project.name,
-                project.instructions || '',
-                [],
-                project.icon
-            );
-            // Navigate to the newly created project
-            if (spaceId) {
-                history.push(`/projects/${spaceId}`);
+            // Open new project modal with pre-filled template data
+            if (onOpenNewProjectModal) {
+                onOpenNewProjectModal(
+                    project.name,
+                    project.instructions || '',
+                    project.icon || 'other'
+                );
             }
         } else {
             // Navigate to project detail view
@@ -84,10 +81,21 @@ export const ProjectCard = ({ project, onSignInRequired }: ProjectCardProps) => 
     };
 
     return (
-        <div className={clsx('project-card', project.isExample && 'project-card--example')}>
+        <div 
+            className={clsx('project-card', project.isExample && 'project-card--example')}
+            onClick={handleClick}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleClick();
+                }
+            }}
+        >
             <div className="project-card-header">
                 <div className="project-card-icon" style={{ backgroundColor: category.color }}>
-                    <Icon name={category.icon as any} size={5} className="color-white" />
+                    <Icon name={category.icon as any} size={project.isExample ? 3 : 3.5} className="color-white" />
                 </div>
                 {!project.isExample && (
                     <>
@@ -139,18 +147,6 @@ export const ProjectCard = ({ project, onSignInRequired }: ProjectCardProps) => 
                             </span>
                         )}
                     </div>
-                )}
-            </div>
-
-            <div className="project-card-footer">
-                {project.isExample ? (
-                    <Button color="weak" shape="outline" fullWidth onClick={handleClick}>
-                        {c('collider_2025:Button').t`Use this example`}
-                    </Button>
-                ) : (
-                    <Button color="weak" shape="ghost" fullWidth onClick={handleClick}>
-                        {c('collider_2025:Button').t`Open project`}
-                    </Button>
                 )}
             </div>
 
