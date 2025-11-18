@@ -1,10 +1,7 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo } from 'react';
 
 import type { HandleEditMessage, HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
 import type { SiblingInfo } from 'applications/lumo/src/app/hooks/usePreferredSiblings';
-import { c } from 'ttag';
-
-import { useNotifications } from '@proton/components';
 
 import type { Message } from '../../../../types';
 import { Role } from '../../../../types';
@@ -86,15 +83,6 @@ const MessageComponentPure = ({
     const isRunning = message.placeholder || false;
     const isLoading = message.placeholder && !messageContent;
 
-    const { createNotification } = useNotifications();
-    // useAutoScroll(messageChainRef, isRunning, [message, isRunning]);
-
-    const handleCopy = useCallback(() => {
-        createNotification({
-            text: c('collider_2025:Notification').t`Code copied to clipboard`,
-        });
-    }, [createNotification]);
-
     return (
         <ChatContainerItem
             className={isUser ? 'user-msg mb-6 justify-end' : 'assistant-msg justify-start mb-6'}
@@ -118,7 +106,6 @@ const MessageComponentPure = ({
                     messageChainRef={messageChainRef}
                     sourcesContainerRef={sourcesContainerRef}
                     handleRegenerateMessage={handleRegenerateMessage}
-                    onCopy={handleCopy}
                     siblingInfo={siblingInfo}
                     isLastMessage={isLastMessage}
                     handleOpenSources={handleOpenSources}
