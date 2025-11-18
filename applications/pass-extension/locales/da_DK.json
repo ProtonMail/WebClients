@@ -1125,6 +1125,9 @@
       "Secure link could not be opened.": [
         "Sikkert link kunne ikke åbnes."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Servere er utilgængelige. Prøv at låse op for ${ PASS_SHORT_APP_NAME } om et par minutter."
+      ],
       "Settings update failed": [
         "Opdatering af indstillinger mislykkedes"
       ],
@@ -1214,6 +1217,9 @@
       ],
       "Wrong second password": [
         "Forkert anden adgangskode"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du er i øjeblikket offline. Genopret forbindelsen for at låse op for ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Din browser har problemer med at aktivere ${ PASS_APP_NAME }."
@@ -1831,6 +1837,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2125,6 +2135,9 @@
       ],
       "Selected items successfully restored from trash": [
         "De valgte elementer blev gendannet fra papirkurven"
+      ],
+      "Servers are unreachable": [
+        "Servere kan ikke kontaktes"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
