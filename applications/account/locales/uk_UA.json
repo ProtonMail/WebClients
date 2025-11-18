@@ -5854,9 +5854,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } пристроїв"
-      ],
       "Ad-blocker and malware protection": [
         "Блокування реклами й захист від зловмисних програм"
       ],
@@ -7205,12 +7202,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Отримайте доступ до своїх паролів і захистіть свої облікові дані в інтернеті на всіх пристроях. Завантажте та встановіть відповідні програми та розширення ${ PASS_APP_NAME }."
       ],
-      "account recovery and data recovery method": [
-        "спосіб відновлення облікового запису і даних"
-      ],
-      "account recovery method": [
-        "спосіб відновлення облікового запису"
-      ],
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
@@ -7226,14 +7217,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Додайте адресу @pm.me до свого облікового запису. Цей простий короткий домен означає скорочення від \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
       ],
-      "Add a recovery email address": [
-        "Додати адресу резервної електронної пошти"
-      ],
       "add a recovery method": [
         "додайте спосіб відновлення"
-      ],
-      "Add a recovery phone number": [
-        "Додати номер телефону для відновлення"
       ],
       "Add domain": [
         "Додати домен"
@@ -7327,12 +7312,6 @@
       ],
       "Allocated": [
         "Розподілено"
-      ],
-      "Allow recovery by email": [
-        "Дозволити відновлення за електронною поштою"
-      ],
-      "Allow recovery by phone": [
-        "Дозволити відновлення за телефоном"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Дозволити користувачам під'єднуватися до захищених загальних серверів з розділу **Країни** в застосунку ${ VPN_APP_NAME }."
@@ -7694,12 +7673,6 @@
         "Видалення ${ deletedServerCount } шлюзових серверів",
         "Видалення ${ deletedServerCount } шлюзових серверів"
       ],
-      "Disable recovery by email address": [
-        "Вимкнути відновлення за адресою електронної пошти"
-      ],
-      "Disable recovery by phone number": [
-        "Вимкнути відновлення за номером телефону"
-      ],
       "Discount": [
         "Знижка"
       ],
@@ -7759,9 +7732,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Завантажте наш шаблон CSV, заповніть дані про користувача, а потім завантажте заповнений файл CSV, щоб створити облікові записи для цих користувачів."
-      ],
-      "Download recovery file": [
-        "Завантажити файл відновлення"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
@@ -8036,12 +8006,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Якщо у вас є подарунковий код, введіть його внизу, щоб застосувати свою знижку."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Якщо ви втратили пароль і вам потрібно відновити свій обліковий запис, ${ boldImperative }, щоб у вас був ${ boldAccountRecovery }."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Якщо ви втратили пароль й вам потрібно відновити обліковий запис, ${ boldImperative }, щоб у вас були й ${ boldAccountAndRecovery }, інакше ви не зможете отримати доступ до своїх електронних листів, контактів або файлів."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для входу в обліковий запис. Кожен код можна використати лише один раз."
       ],
@@ -8222,9 +8186,6 @@
       "Item updated in vault": [
         "Елемент оновлено в сховищі"
       ],
-      "it’s imperative": [
-        "це обов'язково"
-      ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Я користуюся службою @ProtonMail і думаю, що вам вона теж може сподобатися. Це безпечна служба електронної пошти, яка захищає вашу приватність. Зареєструйтеся за моїм запрошувальним посиланням, щоб отримати 1 місяць користування преміумфункціями безплатно: ${ referrerLink }"
       ],
@@ -8393,17 +8354,11 @@
       "No account keys exist": [
         "Немає ключів облікового запису"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Немає налаштованого способу відновлення облікового запису. Ви ризикуєте втратити доступ до свого облікового запису"
-      ],
       "No action selected": [
         "Жодної дії не вибрано"
       ],
       "No addresses exist": [
         "Немає адрес"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Немає налаштованого способу відновлення даних. Ви ризикуєте втратити доступ до своїх даних"
       ],
       "No folder selected": [
         "Жодної теки не вибрано"
@@ -8494,15 +8449,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Застарілі способи відновлення; оновіть для гарантії доступу до своїх даних"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Застаріла фраза відновлення; оновіть для гарантії доступу до своїх даних"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Понад 100 мільйонів людей і компаній зареєструвалися в ${ BRAND_NAME }."
@@ -8791,9 +8737,6 @@
       ],
       "Set password": [
         "Встановити пароль"
-      ],
-      "Set recovery phrase": [
-        "Встановити фразу відновлення"
       ],
       "Set up forwarding": [
         "Налаштувати пересилання"
@@ -9149,12 +9092,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Щоб розшифрувати й переглянути свої заблоковані дані після скидання пароля, виберіть спосіб відновлення."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Щоб забезпечити постійний доступ до вашого облікового запису, укажіть спосіб його відновлення"
-      ],
-      "To ensure highest possible security of your account": [
-        "Щоб забезпечити максимально можливу безпеку вашого облікового запису"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Щоб не втратити важливі дані, ${ DRIVE_APP_NAME } зберігає старіші версії ваших файлів, коли ви та інші учасники вносите зміни. Виберіть, як довго ${ BRAND_NAME } має зберігати попередні версії."
       ],
@@ -9242,12 +9179,6 @@
       "Unverified email address.": [
         "Непідтверджена адреса електронної пошти."
       ],
-      "Update recovery file": [
-        "Оновити файл відновлення"
-      ],
-      "Update recovery phrase": [
-        "Оновити фразу відновлення"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
@@ -9328,12 +9259,6 @@
       ],
       "Verify domain": [
         "Засвідчити домен"
-      ],
-      "Verify email address": [
-        "Підтвердити адресу електронної пошти"
-      ],
-      "Verify phone number": [
-        "Підтвердити номер телефону"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Підтверджуйте свій вхід у систему за допомогою тимчасових одноразових кодів, отриманих із програми авторизації"
@@ -9731,17 +9656,11 @@
       "Your account has been successfully updated": [
         "Ваш обліковий запис було успішно оновлено."
       ],
-      "Your account recovery method is set": [
-        "Ваш спосіб відновлення облікового запису налаштовано"
-      ],
       "Your account was successfully updated with this promotion": [
         "Ваш обліковий запис успішно оновлено за цією промоакцією"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
-      ],
-      "Your data recovery method is set": [
-        "Ваш спосіб відновлення даних налаштовано"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
@@ -11691,9 +11610,6 @@
       ],
       "What’s this?": [
         "Що це?"
-      ],
-      "Why set recovery methods?": [
-        "Навіщо додавати спосіб відновлення?"
       ]
     },
     "Link label (optional)": {
@@ -19098,9 +19014,6 @@
       "Switch to two-password mode": [
         "Перемкнутися на двопарольний режим"
       ],
-      "Take precautions to avoid data loss!": [
-        "Дотримуйтесь запобіжних заходів, щоб уникнути втрати даних!"
-      ],
       "Text": [
         "Текст"
       ],
@@ -19238,9 +19151,6 @@
       ],
       "Your plan": [
         "Ваш тарифний план"
-      ],
-      "Your recovery status": [
-        "Ваш стан відновлення"
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"

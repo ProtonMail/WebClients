@@ -174,6 +174,9 @@
       "Close navigation": [
         "Lukk navigasjonsmeny"
       ],
+      "Close sidebar": [
+        "Lukk sidestolpen"
+      ],
       "Close this banner": [
         "Lukk dette banneret"
       ],
@@ -224,6 +227,9 @@
       ],
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
+      ],
+      "Copy booking page link": [
+        "Kopier bestillingssidekobling"
       ],
       "Copy email address": [
         "Kopier e-postadresse"
@@ -305,6 +311,9 @@
         "Slett ${ selectedCount } kontaktgruppe",
         "Slett ${ selectedCount } kontaktgrupper"
       ],
+      "Delete booking page": [
+        "Slett bestillingsside"
+      ],
       "Delete contact": [
         "Slett kontakt"
       ],
@@ -343,6 +352,9 @@
       ],
       "Edit": [
         "Rediger"
+      ],
+      "Edit booking page": [
+        "Rediger bestillingsside"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -424,6 +436,9 @@
       ],
       "Go to settings": [
         "Gå til innstillinger"
+      ],
+      "Go to the next available appointment": [
+        "Gå til neste ledige avtale"
       ],
       "Got it": [
         "Skjønner"
@@ -745,6 +760,15 @@
       ],
       "See plan features": [
         "Se planfunksjoner"
+      ],
+      "See previous availability": [
+        "Se tidligere tilgjengelighet"
+      ],
+      "See upcoming availability": [
+        "Se kommende tilgjengelighet"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Velg ${ dateHeaderLongString } kl. ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Velg ${ planOrAppName }"
@@ -1537,6 +1561,9 @@
       "Application problem": [
         "Applikasjonsproblem"
       ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1946,6 +1973,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avansert konto- og nettverkssikkerhet i én plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
@@ -4042,6 +4072,9 @@
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
       ],
+      "You cannot enter the organizer email": [
+        "Du kan ikke oppgi arrangørens e-postadresse"
+      ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
       ],
@@ -4062,6 +4095,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Logg på med en Gmail-adresse som allerede videresender til ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
       ]
@@ -4606,8 +4642,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Kontaktinformasjonen din"
+      "Confirm your booking": [
+        "Bekreft bestillingen din"
       ]
     },
     "Google Meet": {
@@ -5267,6 +5303,12 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Alle med denne koblingen kan se om du er ledig eller opptatt i kalenderen. De kan ikke se hendelsesdetaljer, for eksempel tittel, sted eller deltakere."
       ],
+      "Appointment duration": [
+        "Avtalevarighet"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Er du sikker på at du vil slette denne bestillingssiden?"
+      ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på at du vil forkaste importen din?"
       ],
@@ -5303,6 +5345,9 @@
       "Booking overlaps with an existing booking.": [
         "Bestillingen overlapper med en eksisterende bestilling."
       ],
+      "Booking page deleted": [
+        "Bestillingsside slettet"
+      ],
       "Booking page example": [
         "Eksempel på bestillingsside"
       ],
@@ -5326,6 +5371,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Finner ikke hendelsene som du ser etter? Noen hendelser i skjulte kalendere samsvarer med søket ditt. For å se disse resultatene, slå på synlighet for ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create booking range across days": [
+        "Kan ikke opprette bestillingsintervall over flere dager."
+      ],
+      "Cannot create booking range in the past": [
+        "Kan ikke opprette bestillingsintervall bakover i tid"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Husker du ikke passordet ditt? Vi kan hjelpe deg slette den krypterte informasjonen til alle kontakter kryptert med denne nøkkelen, og i prosessen avvise advarselen."
@@ -5574,6 +5625,9 @@
       "High Priority": [
         "Høy prioritet"
       ],
+      "Host": [
+        "Vert"
+      ],
       "How long should an appointment last?": [
         "Hvor lenge skal en avtale vare?"
       ],
@@ -5704,11 +5758,17 @@
       "Loading events": [
         "Laster hendelser"
       ],
+      "Location": [
+        "Sted"
+      ],
       "Low Priority": [
         "Lav prioritet"
       ],
       "Manage your calendars": [
         "Administrer dine kalendere"
+      ],
+      "Manange booking page": [
+        "Administrer bestillingsside"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5734,14 +5794,14 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
       ],
-      "Name your booking page": [
-        "Navngi bestillingssiden din"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
       "New": [
         "Ny"
+      ],
+      "No appointments available this week": [
+        "Ingen avtaler tilgjengelige denne uken"
       ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
@@ -5827,6 +5887,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalinger er beskyttet med TLS-kryptering og sveitsiske personvernlover."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Folk som bestiller time hos deg vil se ${ selectedCalendar.Email } som kontaktadressen din."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline er kun kompatibel med klartekst-format."
       ],
@@ -5882,14 +5945,23 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
       ],
+      "Powered by ${ protonButton }": [
+        "Drevet av ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Tidligere endringer i denne serien vil gå tapt."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Tidligere bestilte hendelser vil ikke bli slettet."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gjeldende syklus-baserte rabatter og ikke-utløpte kuponger lagret på kontoen din."
       ],
       "Primary": [
         "Primær"
+      ],
+      "Privacy by default": [
+        "Personvern som standard"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
@@ -5945,9 +6017,6 @@
       ],
       "Setting up your new address…": [
         "Konfigurerer den nye adressen din…"
-      ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Del denne siden for å la andre bestille tid i kalenderen din. Du kan administrere den når som helst i sidefeltet under bestillingssider."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
@@ -6177,6 +6246,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "Uke- og månedsvisninger gjelder bare for skrivebordet."
+      ],
+      "What do you want to call this booking page?": [
+        "Hva vil du kalle denne bestillingssiden?"
       ],
       "What should people know before booking?": [
         "Hva bør folk vite før de bestiller?"
@@ -6839,6 +6911,9 @@
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
+      "Full name": [
+        "Fullt navn"
+      ],
       "Get the deal": [
         "Skaff deg tilbudet"
       ],
@@ -7142,8 +7217,14 @@
       "End time of the booking range": [
         "Sluttidspunkt for bestillingsintervallet"
       ],
+      "How long should an appointment last?": [
+        "Hvor lenge skal en avtale vare?"
+      ],
       "Start time of the booking range": [
         "Starttidspunkt for bestillingsintervallet"
+      ],
+      "What should people know before booking?": [
+        "Hva bør folk vite før de bestiller?"
       ]
     },
     "Label for contact group color": {
@@ -7210,6 +7291,9 @@
     "Link": {
       "Add a gift code": [
         "Legg til gavekode"
+      ],
+      "Booking pages": [
+        "Bestillingssider"
       ],
       "Calendars": [
         "Kalendere"
@@ -7921,6 +8005,9 @@
       "End-to-end encryption": [
         "Ende-til-ende-kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende fordeler med ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Raske P2P/BitTorrent-nedlastinger"
       ],
@@ -8138,6 +8225,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling av hvelv med opptil ${ n } person",
+        "Deling av hvelv med opptil ${ n } personer"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -9329,6 +9420,23 @@
         "Kreditter vil bli lagt til saldoen din"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på at du vil fortsette?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du velger å endre ${ planTitle }-planen din, kan du miste tilgangen til enkelte funksjoner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Planen din inkluderer denne funksjonen allerede."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -9452,14 +9560,14 @@
       "Anytown": [
         "By"
       ],
-      "Booking page title": [
-        "Tittel på bestillingsside"
-      ],
       "Company name": [
         "Foretaksnavn"
       ],
       "E.g., ": [
         "F.eks. "
+      ],
+      "Email for booking confirmation": [
+        "E-post for bestillingsbekreftelse"
       ],
       "Enter passphrase": [
         "Skriv inn passfrase"
@@ -9496,6 +9604,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Name of attendee": [
+        "Navn på deltaker"
       ],
       "Name or email address": [
         "Navn eller e-postadresse"
@@ -11305,6 +11416,9 @@
       "Apply gift code": [
         "Legg til gavekode"
       ],
+      "Appointment details": [
+        "Avtaledetaljer"
+      ],
       "Are you sure?": [
         "Er du sikker?"
       ],
@@ -11340,6 +11454,9 @@
       ],
       "Change password": [
         "Endre passord"
+      ],
+      "Choose a time": [
+        "Velg et tidspunkt"
       ],
       "Choose how many times this event will repeat": [
         "Velg hvor mange ganger hendelsen skal gjentas"
@@ -11426,6 +11543,9 @@
       ],
       "Delete ${ value }": [
         "Slett ${ value }"
+      ],
+      "Delete booking page?": [
+        "Slette bestillingsside?"
       ],
       "Delete event": [
         "Slett hendelse"

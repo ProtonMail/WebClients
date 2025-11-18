@@ -90,9 +90,6 @@
       "Apply": [
         "Použiť"
       ],
-      "Ask me next time": [
-        "Opýtať sa nabudúce"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktov je povolený najviac ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktov sú povolené najviac ${ maxContacts } kontakty",
@@ -662,9 +659,6 @@
       ],
       "Save changes": [
         "Uložiť zmeny"
-      ],
-      "Save preferences": [
-        "Uložiť preferencie"
       ],
       "Search": [
         "Hľadať"
@@ -1329,6 +1323,9 @@
       "Application problem": [
         "Problém aplikácie"
       ],
+      "Authenticator problem": [
+        "Problém s overovačom"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1518,6 +1515,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Pokročilé zabezpečenie účtu a siete v jednom pláne"
+      ],
       "High-speed chats and advanced AI features.": [
         "Vysokorýchlostné chaty a pokročilé funkcie AI"
       ]
@@ -3325,6 +3325,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Prihláste sa , prosím, pomocou Gmailovej adresy, ktorá je už presmerovaná na ${ MAIL_APP_NAME }."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Prihláste sa pomocou tej istej Gmail adresy, ktorú ste použili pri prvom prihlásení, prosím."
       ]
@@ -4519,9 +4522,6 @@
       "Continue": [
         "Pokračovať"
       ],
-      "Converting document...": [
-        "Konverzia dokumentu..."
-      ],
       "Copy the link to clipboard": [
         "Skopírovať odkaz do schránky"
       ],
@@ -4566,9 +4566,6 @@
       ],
       "Creating link to folder": [
         "Vytváranie odkazu na priečinok"
-      ],
-      "Creating new document...": [
-        "Vytváranie nového dokumentu..."
       ],
       "Current plan": [
         "Aktuálny plán"
@@ -4663,12 +4660,6 @@
       "Enter your own password (as trusted contact).": [
         "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Chyba pri konverzii dokumentu: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Chyba pri načítaní dokumentu: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Chyba synchronizácie"
       ],
@@ -4728,12 +4719,6 @@
       ],
       "Geoblocking": [
         "Geoblokácia"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Dostávajte emailové aktualizácie o komentároch a návrhoch pridaných k vašim dokumentom."
-      ],
-      "Get Notified About Comments": [
-        "Dostávajte notifikácie o komentároch"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelia internetových služieb môžu monitorovať vašu online aktivitu. Skrytím vašej skutočnej IP adresy a šifrovaním vašej aktivity sa vaše prehliadanie stane súkromným."
@@ -4873,9 +4858,6 @@
       "Low Priority": [
         "Nízka priorita"
       ],
-      "Making a copy...": [
-        "Vytváranie kópie..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
         "Maximálne ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaky",
@@ -4908,9 +4890,6 @@
       ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "V URL adrese nie je uvedený žiadny dokument. Vráťte sa na ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žiadna emailová adresa"
@@ -5046,6 +5025,12 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Verejné dokumenty zatiaľ nie sú pre vašu organizáciu povolené."
+      ],
+      "Recent documents": [
+        "Nedávne dokumenty"
+      ],
+      "Recent spreadsheets": [
+        "Nedávne tabuľky"
       ],
       "Recents": [
         "Nedávne"
@@ -5193,9 +5178,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Vami zadaná URL adresa bola zrejme nesprávne skopírovaná zo služby Slack. Pri kopírovaní dlhých odkazov zo služby Slack kliknite pravým tlačidlom myši na odkaz a vyberte možnosť „Kopírovať odkaz“, namiesto priameho kopírovania skráteného textu URL adresy."
       ],
       "There are no documents in the trash.": [
         "V koši nie sú žiadne dokumenty."
@@ -5814,9 +5796,6 @@
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
       ],
-      "Enable email notifications": [
-        "Povoliť emailové notifikácie"
-      ],
       "Encrypt emails": [
         "Šifrovať emaily"
       ],
@@ -5864,9 +5843,6 @@
       ],
       "Include application logs in bug report": [
         "Vrátane záznamov aplikácie v chybovom hlásení"
-      ],
-      "Include document name in notification": [
-        "Zahrnúť názov dokumentu do notifikácie"
       ],
       "Include message and file name in invite email": [
         "Zahrnúť správu a názov súboru do emailovej pozvánky"
@@ -6856,6 +6832,9 @@
       "End-to-end encryption": [
         "Šifrovanie End-to-end"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Existujúce výhody ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Rýchle sťahovanie P2P/BitTorrent"
       ],
@@ -7083,6 +7062,12 @@
         "Zdieľanie trezora (s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Zdieľanie trezora s ${ n } osobou",
+        "Zdieľanie trezora až s ${ n } osobami",
+        "Zdieľanie trezora až s ${ n } osobami",
+        "Zdieľanie trezora až s ${ n } osobami"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
@@ -8778,9 +8763,6 @@
       ],
       "Replace data at selected cell": [
         "Nahradiť údaje vo vybratej bunke"
-      ],
-      "Select a CSV or TSV file to import": [
-        "Vyberte CSV alebo TSV súbor na importovanie"
       ]
     },
     "sheets_2025:Label": {

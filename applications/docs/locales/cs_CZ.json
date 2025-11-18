@@ -91,7 +91,7 @@
         "Použít"
       ],
       "Ask me next time": [
-        "Zeptat se příště"
+        "Zeptejte se mě příště"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
@@ -1328,6 +1328,9 @@
       ],
       "Application problem": [
         "Problém s aplikací"
+      ],
+      "Authenticator problem": [
+        "Problém s ověřovací aplikací"
       ],
       "Black Friday": [
         "Black Friday"
@@ -3328,6 +3331,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Přihlaste se prosím s adresou Gmail, která již přeposílá na ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Přihlaste se prosím pomocí stejné adresy Gmail, kterou jste původně použili pro připojení"
       ]
@@ -4736,7 +4742,7 @@
         "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
       ],
       "Get Notified About Comments": [
-        "Buďte upozorněni na komentáře"
+        "Dostávejte upozornění o komentářích"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
@@ -5824,7 +5830,7 @@
         "E-maily (poslední měsíc)"
       ],
       "Enable email notifications": [
-        "Povolení e-mailových upozornění"
+        "Povolit e-mailová upozornění"
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
@@ -8802,9 +8808,6 @@
       ],
       "Replace data at selected cell": [
         "Nahradit data ve vybrané buňce"
-      ],
-      "Select a CSV or TSV file to import": [
-        "Vyberte soubor CSV nebo TSV k importu"
       ]
     },
     "sheets_2025:Label": {

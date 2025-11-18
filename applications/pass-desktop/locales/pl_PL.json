@@ -1251,9 +1251,6 @@
       "Wrong second password": [
         "Drugie hasło jest nieprawidłowe"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Jesteś w trybie offline. Wznów połączenie, aby odblokować ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Rekordy DNS nie są skonfigurowane prawidłowo. Twój rekord MX to:"
       ],
@@ -1817,9 +1814,6 @@
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Połączenie z Internetem zostało utracone. Sprawdź połączenie swojego urządzenia."
-      ],
       "Invitation sent": [
         "Zaproszenie zostało wysłane"
       ],
@@ -1932,10 +1926,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"

@@ -632,6 +632,9 @@
       "Or": [
         "Eller"
       ],
+      "Or use a different Gmail address": [
+        "Eller bruk en annen Gmail-adresse"
+      ],
       "Organization": [
         "Organisasjon"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Bruk gjenopprettingskode"
+      ],
+      "Use this Gmail address": [
+        "Bruk denne Gmail-adressen"
       ],
       "Use your current email instead": [
         "Bruk din nåværende e-postadresse istedenfor"
@@ -1840,6 +1846,9 @@
       "Application problem": [
         "Applikasjonsproblem"
       ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -2095,6 +2104,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avansert konto- og nettverkssikkerhet i én plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
@@ -4257,6 +4269,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Logg på med en Gmail-adresse som allerede videresender til ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
       ]
@@ -4816,9 +4831,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } enheter"
-      ],
       "15 GB storage": [
         "15 GB lagringsplass"
       ],
@@ -4843,6 +4855,9 @@
       "Double VPN": [
         "Dobbel VPN"
       ],
+      "File attachment ": [
+        "Filvedlegg "
+      ],
       "Lightning-fast speeds": [
         "Lynraske hastigheter"
       ],
@@ -4857,6 +4872,9 @@
       ],
       "Secure streaming": [
         "Sikker strømming"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Sikker deling av hvelv, elementer og koblinger"
       ],
       "Stream from Netflix, HBO, and more": [
         "Strømm innhold fra Netflix, HBO og mer"
@@ -7070,6 +7088,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Sikre din ${ BRAND_NAME }-konto"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Sikker, ende-til-ende-kryptert videokonferanse"
+      ],
       "Securing your account": [
         "Sikrer kontoen din"
       ],
@@ -7426,6 +7447,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt risikofritt - hvis du av en eller annen grunn ombestemmer deg, vil du motta full refusjon. Ingen spørsmål."
+      ],
+      "Two-factor authentication": [
+        "Tofaktorautentisering"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "To-passordmodus krever to passord: et for å logge på kontoen din og et for å dekryptere dataene dine (avansert)."
@@ -8090,6 +8114,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } av ${ maxAddresses } e-postadresse tilgjengelig",
+        "${ addressesAvailable } av ${ maxAddresses } e-postadresser tilgjengelige"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
       ],
@@ -8113,6 +8141,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
+      ],
+      "0 of 1 email address available": [
+        "0 av 1 e-postadresse tilgjengelig"
+      ],
+      "1 of 1 email address available": [
+        "1 av 1 e-postadresse tilgjengelig"
       ],
       "Account holder": [
         "Kontoinnehaver"
@@ -8861,6 +8895,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Til"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } av ${ maxBYOEAddresses } e-postadresse tilgjengelig",
+        "${ byoeAddressesAvailableCount } av ${ maxBYOEAddresses } e-postadresser tilgjengelige"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9720,6 +9760,9 @@
       "End-to-end encryption": [
         "Ende-til-ende kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende fordeler med ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Raske P2P/BitTorrent-nedlastinger"
       ],
@@ -9931,6 +9974,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling av hvelv med opptil ${ n } person",
+        "Deling av hvelv med opptil ${ n } personer"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -10470,6 +10517,9 @@
       ],
       "A disabled address cannot be default": [
         "Kan ikke angi en deaktivert adresse som standard"
+      ],
+      "Address reconnected.": [
+        "Adresse gjenoppkoblet."
       ],
       "An external address cannot be default": [
         "Kan ikke angi en ekstern adresse som standard"
@@ -11379,6 +11429,36 @@
         "Kreditter vil bli lagt til saldoen din"
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Livstidskontoer kan overføres eller selges"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Ta kontakt med kundestøtte for å bekrefte eierskifte"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Aldri"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på at du vil fortsette?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du velger å endre ${ planTitle }-planen din, kan du miste tilgangen til enkelte funksjoner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Planen din inkluderer denne funksjonen allerede."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -11637,6 +11717,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Personvernpakke med premiumtjenester og ${ unlimitedPlanMaxSpace } med kryptert skylagring, alt i én pakke."
       ]
     },
     "Plans": {
@@ -14255,6 +14338,9 @@
       "Confirm phone number": [
         "Bekreft telefonnummer"
       ],
+      "Connect a Gmail address": [
+        "Koble til en Gmail-adresse"
+      ],
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
@@ -14418,6 +14504,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Nedgradere til ${ downgradedPlanName }?"
+      ],
+      "Download ${ app }": [
+        "Last ned ${ app }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
@@ -14726,6 +14815,9 @@
       ],
       "Remove domain": [
         "Fjern domene"
+      ],
+      "Remove forwarding address": [
+        "Fjern videresendingsadresse"
       ],
       "Remove server?": [
         "Fjerne tjener?"
@@ -15399,6 +15491,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spar opptil ${ priceString }** med et lengre abonnement. Samme premiumfunksjoner, lavere pris."
       ],
+      "Advanced security for your company": [
+        "Avansert sikkerhet for bedriften din"
+      ],
       "Advanced security for your company?": [
         "Avansert sikkerhet for bedriften din?"
       ],
@@ -15411,14 +15506,23 @@
       "Did you know?": [
         "Visste du at?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Skaff deg ${ drivePlusPlanMaxSpace } lagringsplass for filene, bildene og dokumentene dine og gjenopprett filversjoner med 10-års filgjenoppretting."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Beskytt organisasjonen din mot datainnbrudd med ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Beskytt organisasjonen din mot datainnbrudd med ${ VPN_APP_NAME } for bedrifter."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Ubegrenset personvern for opptil ${ FAMILY_MAX_USERS } personer. Fra kun ${ priceString }/måned."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Ubegrenset personvern for deg og en du er glad i. Fra kun ${ priceString }/måned."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Du kan beskytte opptil ${ DUO_MAX_USERS } personer med ${ PLAN_NAMES[PLANS.DUO] } og opptil ${ FAMILY_MAX_USERS } med ${ PLAN_NAMES[PLANS.FAMILY] }. Fra bare ${ priceString }/måned per konto."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan beskytte opptil ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] } . Fra bare ${ priceString }/måned per konto."
@@ -15634,10 +15738,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Velger automatisk fra ${ numberOfCountries } land",
         "Velger automatisk fra ${ numberOfCountries } land"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Velg fra ${ numberOfCountries }+ land",
-        "Velg fra ${ numberOfCountries }+ land"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Tjenere i ${ numberOfCountries }+ land",

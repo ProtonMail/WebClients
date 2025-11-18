@@ -255,6 +255,9 @@
       "Create a booking page": [
         "Creeu una pàgina de reserves"
       ],
+      "Create a free account": [
+        "Creeu un compte gratuït"
+      ],
       "Create a new bookings page": [
         "Creeu una nova pàgina de reserves"
       ],
@@ -762,10 +765,10 @@
         "Mostra les característiques del pla"
       ],
       "See previous availability": [
-        "Consulteu la disponibilitat anterior"
+        "Consulteu l'anterior disponibilitat"
       ],
       "See upcoming availability": [
-        "Consulteu la disponibilitat propera"
+        "Consulteu la propera disponibilitat"
       ],
       "Select ${ dateHeaderLongString } at ${ timeString }": [
         "Seleccioneu ${ dateHeaderLongString } a les ${ timeString }"
@@ -1561,8 +1564,11 @@
       "Application problem": [
         "Problema d’aplicació"
       ],
+      "Authenticator problem": [
+        "Problema amb l'autenticador"
+      ],
       "Black Friday": [
-        "Divendres negre"
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -4069,6 +4075,9 @@
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
         "No podeu enviar un correu a més de ${ maxContacts } destinataris."
       ],
+      "You cannot enter the organizer email": [
+        "No podeu introduir el correu electrònic de l'organitzador"
+      ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
       ],
@@ -4090,7 +4099,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Si us plau, inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -4636,8 +4645,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Les vostres dades de contacte"
+      "Confirm your booking": [
+        "Confirmeu la vostra reserva"
       ]
     },
     "Google Meet": {
@@ -5192,7 +5201,7 @@
         "**Pas 3:** Obtingueu ${ referrerRewardAmount } crèdits per cada amistat que es subscrigui a un pla."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
+        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -5300,6 +5309,9 @@
       "Appointment duration": [
         "Durada de la cita"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Estàs segur que vols eliminar aquesta pàgina de reserves?"
+      ],
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la vostra importació?"
       ],
@@ -5336,6 +5348,9 @@
       "Booking overlaps with an existing booking.": [
         "La reserva es superposa amb una reserva existent."
       ],
+      "Booking page deleted": [
+        "Pàgina de reserves eliminada."
+      ],
       "Booking page example": [
         "Exemple de pàgina de reserves"
       ],
@@ -5362,6 +5377,9 @@
       ],
       "Cannot create booking range across days": [
         "No es pot crear un interval de reserva que abasti diversos dies"
+      ],
+      "Cannot create booking range in the past": [
+        "No es pot crear un interval de reserva en el passat"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i, en el procés, desactivar l'alerta."
@@ -5779,9 +5797,6 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La majoria de les xarxes wifi públiques són segures, però algunes no tenen seguretat, la qual cosa us exposa a amenaces cibernètiques. Una VPN xifra el vostre trànsit, mantenint-vos protegit."
       ],
-      "Name your booking page": [
-        "Anomeneu la vostra pàgina de reserves"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
@@ -5875,6 +5890,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Les persones que reservin temps amb vosaltres veuran ${ selectedCalendar.Email } com a la vostra adreça de contacte."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline només és compatible amb format de Text Pla."
       ],
@@ -5930,11 +5948,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
+      "Powered by": [
+        "Amb la tecnologia de"
+      ],
       "Powered by ${ protonButton }": [
         "Impulsat per ${ protonButton }"
       ],
       "Previous modifications on this series will be lost.": [
         "Es perdran les modificacions prèvies d'aquesta sèrie."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Els esdeveniments reservats anteriorment no s'eliminaran."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
@@ -6000,8 +6024,8 @@
       "Setting up your new address…": [
         "S'està configurant la vostra nova adreça…"
       ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Compartiu aquesta pàgina perquè altres puguin reservar temps al vostre calendari. La podreu gestionar en qualsevol moment a la barra lateral sota Pàgines de reserves."
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Compartiu aquesta pàgina per permetre que altres persones reservin hora al vostre calendari. La podeu trobar i editar a la barra lateral, a l'apartat Pàgines de reserves."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
@@ -6045,6 +6069,9 @@
       ],
       "Symbols (#$&)": [
         "Símbols (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Preneu el control de la vostra vida digital"
       ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
@@ -6093,6 +6120,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Aquesta reserva s'ha fet mitjançant ${ CALENDAR_APP_NAME }, que forma part del conjunt de productes de ${ BRAND_NAME } que prioritzen la privadesa."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "L'organitzador ha actualitzat aquest esdeveniment. Voleu canviar la vostra resposta només per a aquesta ocurrència de la sèrie?"
@@ -6232,6 +6262,9 @@
       "Week and month views only apply to desktop.": [
         "Les visualitzacions de setmana i mes només s'apliquen a l'escriptori."
       ],
+      "What do you want to call this booking page?": [
+        "Com voleu anomenar aquesta pàgina de reserves?"
+      ],
       "What should people know before booking?": [
         "Què s'hauria de saber abans de reservar?"
       ],
@@ -6362,9 +6395,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Heu rebutjat aquesta invitació prèviament. Demaneu al propietari que us torni a convidar"
-      ],
-      "You will loose all unsaved changes.": [
-        "Perdreu tots els canvis que no hàgiu desat."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perdreu accés a funcions de ${ planTitle } en aquesta data."
@@ -6896,6 +6926,9 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
+      "Full name": [
+        "Nom complet"
+      ],
       "Get the deal": [
         "Aconseguiu l'oferta"
       ],
@@ -7199,8 +7232,14 @@
       "End time of the booking range": [
         "Hora de finalització de l'interval de la reserva"
       ],
+      "How long should an appointment last?": [
+        "Quant ha de durar una cita?"
+      ],
       "Start time of the booking range": [
         "Hora d'inici de l'interval de la reserva"
+      ],
+      "What should people know before booking?": [
+        "Què hauria de saber la gent abans de reservar?"
       ]
     },
     "Label for contact group color": {
@@ -9536,14 +9575,14 @@
       "Anytown": [
         "Castellvent"
       ],
-      "Booking page title": [
-        "Títol de la pàgina de reserves"
-      ],
       "Company name": [
         "Nom de l'empresa"
       ],
       "E.g., ": [
         "Ex., "
+      ],
+      "Email for booking confirmation": [
+        "Correu electrònic per a la confirmació de la reserva"
       ],
       "Enter passphrase": [
         "Introduïu la frase de contrasenya"
@@ -9580,6 +9619,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Name of attendee": [
+        "Nom de l'assistent"
       ],
       "Name or email address": [
         "Nom o adreça de correu electrònic"
@@ -11516,6 +11558,9 @@
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
+      ],
+      "Delete booking page?": [
+        "Eliminar la pàgina de reserves?"
       ],
       "Delete event": [
         "Elimina l'esdeveniment"

@@ -4759,9 +4759,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } perangkat"
-      ],
       "15 GB storage": [
         "Ruang penyimpanan 15 GB"
       ],
@@ -4785,6 +4782,9 @@
       ],
       "Double VPN": [
         "VPN berganda"
+      ],
+      "File attachment ": [
+        "Lampiran berkas "
       ],
       "Lightning-fast speeds": [
         "Kecepatan secepat kilat"
@@ -7947,6 +7947,9 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } dari ${ maxAddresses } alamat email tersedia"
+      ],
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
       ],
@@ -8705,6 +8708,11 @@
     "Label (end date/advanced search)": {
       "To": [
         "Hingga"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } dari ${ maxBYOEAddresses } alamat email tersedia"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15078,6 +15086,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Hemat hingga ${ priceString }** dengan langganan yang berdurasi lebih lama. Fitur premium yang sama, harga yang lebih rendah."
       ],
+      "Advanced security for your company": [
+        "Keamanan mutakhir untuk perusahaan Anda"
+      ],
       "Advanced security for your company?": [
         "Keamanan tingkat lanjut untuk perusahaan Anda?"
       ],
@@ -15096,8 +15107,14 @@
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Lindungi organisasi Anda dari pembobolan data dengan ${ VPN_APP_NAME } for Business."
       ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "Privasi tanpa batas untuk hingga ${ FAMILY_MAX_USERS } pengguna. Mulai dari hanya ${ priceString }/bulan."
+      ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Privasi tanpa batas untuk Anda dan orang terkasih. Mulai dari hanya ${ priceString }/bulan."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Anda dapat melindungi hingga ${ DUO_MAX_USERS } pengguna dengan ${ PLAN_NAMES[PLANS.DUO] }, dan hingga ${ FAMILY_MAX_USERS } pengguna dengan ${ PLAN_NAMES[PLANS.FAMILY] }. Mulai dari hanya ${ priceString }/bulan per akun."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Anda dapat melindungi hingga ${ FAMILY_MAX_USERS } pengguna dengan ${ PLAN_NAMES[plan] }. Dimulai dari hanya ${ priceString }/bulan per akun."
@@ -15312,9 +15329,6 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "Terpilih secara otomatis dari ${ numberOfCountries } negara"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Pilih dari ${ numberOfCountries }+ negara"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Server di ${ numberOfCountries }+ negara"

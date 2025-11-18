@@ -772,6 +772,9 @@
       "Application problem": [
         "Anwendungsproblem"
       ],
+      "Authenticator problem": [
+        "Authenticator-Problem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1002,9 +1005,6 @@
       "Send message": [
         "Nachricht senden"
       ],
-      "settings": [
-        "Einstellungen"
-      ],
       "Show safety information": [
         "Sicherheitsinformationen anzeigen"
       ],
@@ -1053,6 +1053,9 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
       ],
       "Open Link": [
         "Link öffnen"
@@ -2213,8 +2216,11 @@
       "Built by the team that knows privacy": [
         "Entwickelt vom Team, das Datenschutz versteht"
       ],
-      "Dark mode and conversation personalization": [
-        "Dunkler Modus und Personalisierung von Unterhaltungen"
+      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
+        "Der dunkle Modus war eines der am sehnlichsten erwarteten Updates unserer Community für ${ LUMO_SHORT_APP_NAME }. Im gesamten ${ BRAND_NAME }-Ökosystem kannst du das Aussehen all deiner Apps anpassen, und jetzt kannst du auch ${ LUMO_SHORT_APP_NAME } mit einem hellen oder dunklen Farbschema anpassen."
+      ],
+      "Dark mode is here": [
+        "Der dunkle Modus ist da"
       ],
       "Earlier": [
         "Früher"
@@ -2237,12 +2243,6 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Wie hält ${ LUMO_SHORT_APP_NAME } unsere Unterhaltungen vertraulich?"
       ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
-        "Wir stellen ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } vor: Support für den dunklen Modus und neue Optionen, um deine Unterhaltungen zu personalisieren."
-      ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
-        "Wir stellen vor: ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } mit Unterstützung für den Dunkelmodus und neuen Optionen zur Personalisierung Ihrer Unterhaltungen. Probiere es aus unter ${ openSettingsModalButton }."
-      ],
       "Last 30 days": [
         "Letzte 30 Tage"
       ],
@@ -2258,6 +2258,12 @@
       "No result.": [
         "Kein Ergebnis."
       ],
+      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
+        "Die Personalisierung lässt dich anpassen, wie ${ LUMO_SHORT_APP_NAME } mit dir interagiert. Teile ${ LUMO_SHORT_APP_NAME } mit, wie du heisst, welches deine Tätigkeiten sind und wie genau es reagieren soll, ob mit witzigem Geplänkel, technischer Präzision oder direkter Kürze. Denn die beste KI ist nicht für alle gleich. Sie ist eine, die sich anfühlt, als wäre sie nur für dich gemacht."
+      ],
+      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
+        "Personalisierung: ${ LUMO_SHORT_APP_NAME } für dich"
+      ],
       "The AI that respects your privacy": [
         "Die KI, die deine Privatsphäre respektiert"
       ],
@@ -2266,9 +2272,6 @@
       ],
       "Today": [
         "Heute"
-      ],
-      "What's new": [
-        "Neue Funktionen"
       ],
       "Whatever you ask me is:": [
         "Was auch immer du mich fragst:"

@@ -1691,6 +1691,9 @@
       "Application problem": [
         "Problema con la aplicación"
       ],
+      "Authenticator problem": [
+        "Problema con el autenticador"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1922,6 +1925,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Agregar ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de la cuenta y red en un solo plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de gran velocidad y funciones de IA avanzadas."
@@ -3386,9 +3392,6 @@
       "Cannot export this contact": [
         "No se puede exportar este contacto"
       ],
-      "Cannot load \"My files\" root folder": [
-        "No se puede cargar la carpeta raíz «Mis archivos»"
-      ],
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
       ],
@@ -3457,12 +3460,6 @@
       "Error reading file": [
         "Error al leer el archivo"
       ],
-      "Expanding non-existent directory tree item": [
-        "Expandiendo un elemento inexistente del árbol de directorios"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "Expandiendo un elemento no expandible del árbol de directorios"
-      ],
       "Expected structure attached": [
         "Estructura esperada adjuntada"
       ],
@@ -3483,6 +3480,9 @@
       ],
       "Failed to create public share node": [
         "Error al crear el nodo compartido público"
+      ],
+      "Failed to expand folder": [
+        "Error al expandir carpeta"
       ],
       "Failed to fetch node": [
         "Error al obtener nodo"
@@ -3934,11 +3934,17 @@
       "ZIP code is required": [
         "Se requiere el código postal."
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indescifrable"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Inicie sesión con una dirección de Gmail que ya reenvía a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
       ]
@@ -5376,6 +5382,9 @@
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
+      "Done": [
+        "Hecho"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
       ],
@@ -5678,9 +5687,6 @@
       "It's better to have:": [
         "Es mejor tener:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "No es posible copiar la carpeta en sí misma"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borre permanentemente"
       ],
@@ -5879,6 +5885,9 @@
       ],
       "On public WiFi networks": [
         "En redes Wi-Fi públicas"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Uno de los archivos o carpetas que desea copiar ya existe en la carpeta seleccionada."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una de sus unidades cifradas está bloqueada. Lo más probable es que esto se deba a un restablecimiento reciente de la contraseña."
@@ -6207,6 +6216,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Algunos gobiernos bloquean o restringen el acceso a ciertos sitios web. Una VPN ayuda a evitar la censura al mantener su actividad e identidad privadas."
+      ],
+      "Some items failed": [
+        "Error de algunos elementos"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Algunos de los archivos ya no son accesibles. Restaure el acceso a los archivos. ${ StartRecoveryButton }"
@@ -6689,6 +6701,9 @@
       ],
       "You cannot undo this action.": [
         "No puede deshacer esta acción."
+      ],
+      "You don’t have permission to copy files to this folder.": [
+        "No tiene permisos para copiar archivos a esta carpeta."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Reciba notificaciones si su contraseña u otro dato fue filtrado desde un servicio de terceros."
@@ -7189,6 +7204,9 @@
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
+      ],
+      "Encrypted node": [
+        "Nodo cifrado"
       ],
       "Enter device name": [
         "Ingrese el nombre del dispositivo"
@@ -8414,6 +8432,9 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficios existentes de ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descargas rápidas de P2P/BitTorrent"
       ],
@@ -8631,6 +8652,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartir bóveda con hasta ${ n } persona",
+        "Compartir bóveda con hasta ${ n } personas"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
@@ -10066,6 +10091,23 @@
       ],
       "Credits will be added to your balance": [
         "Se añadirán los créditos a su balance"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "¿En verdad desea continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si elige modificar su plan ${ planTitle }, puede perder el acceso a algunas funciones."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguir en ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sí, estoy seguro"
+      ],
+      "Your plan includes this feature already.": [
+        "Su plan ya incluye esta función."
       ]
     },
     "Payments.plan_name": {

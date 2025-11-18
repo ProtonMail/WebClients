@@ -4482,9 +4482,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } 台设备"
-      ],
       "Ad-blocker and malware protection": [
         "广告拦截及恶意软件防护"
       ],
@@ -14452,9 +14449,6 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "从 ${ numberOfCountries } 个地域中自动选择"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "从 ${ numberOfCountries }+ 个国家中选择"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "${ numberOfCountries } 个国家/地区的服务器"

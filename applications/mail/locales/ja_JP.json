@@ -2266,6 +2266,9 @@
       "Application problem": [
         "アプリケーションに関する問題"
       ],
+      "Authenticator problem": [
+        "認証の問題"
+      ],
       "Black Friday": [
         "ブラックフライデー"
       ],
@@ -2772,6 +2775,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }を追加"
+      ],
+      "Advanced account and network security in one plan": [
+        "1つのプランで高度なアカウントとネットワークセキュリティ"
       ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
@@ -5143,6 +5149,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "すでに ${ MAIL_APP_NAME } へ転送されている Gmail アドレスでサインインしてください"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "最初に接続した同じGmailアドレスでサインインしてください"
       ]
@@ -6695,6 +6704,9 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に公開鍵を信頼する必要があります。"
       ],
+      "Addresses settings": [
+        "アドレス設定"
+      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "広告主はあなたのブラウジングを追跡してターゲティング広告を表示します。${ VPN_APP_NAME }はトラッカーと広告をブロックすることで、接続を高速化し、オンライン上の体験を向上させます。"
       ],
@@ -7398,7 +7410,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -10109,6 +10121,9 @@
       "Reactivate now": [
         "今すぐ再アクティブ"
       ],
+      "Reactivate subscription": [
+        "サブスクリプションを再開"
+      ],
       "Request an invite": [
         "招待をリクエスト"
       ],
@@ -10764,6 +10779,9 @@
       "End-to-end encryption": [
         "エンドツーエンド暗号化"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "既存の ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 特典"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "高速な P2P/BitTorrent ダウンロード"
       ],
@@ -10976,6 +10994,9 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "保管庫の共有 (最大 ${ n } 人)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "最大${ n }人までと保管庫共有"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
@@ -12150,6 +12171,23 @@
         "クレジットがお客様の残高に追加されます。"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "本当に続行しますか？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } プランを変更された場合、一部の機能にアクセスできなくなる可能性があります。"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } を使い続ける"
+      ],
+      "Yes, I'm sure": [
+        "はい、構いません"
+      ],
+      "Your plan includes this feature already.": [
+        "お客様のプランには、この機能がすでに含まれています。"
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "無料"
@@ -12565,6 +12603,9 @@
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**この日までに登録**すると、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "その日付以降、アカウントは**${ BRAND_NAME } Free**にダウングレードされます。気が変わった場合は、**サブスクリプションを再有効化する**ことで引き続きプレミアム機能にアクセスできます。"
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "最大${ maxRewardAmount }のクレジットを獲得できます。お客様が招待された方が${ BRAND_NAME }のプランに登録されますと、お客様は${ referrerRewardAmount }を受け取ることができます。"

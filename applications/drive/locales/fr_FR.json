@@ -1691,6 +1691,9 @@
       "Application problem": [
         "Problème d'application"
       ],
+      "Authenticator problem": [
+        "Problème d'authentification"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -3478,6 +3481,9 @@
       "Failed to create public share node": [
         "La création du nœud de partage public n'a pas abouti."
       ],
+      "Failed to expand folder": [
+        "Impossible de développer le dossier"
+      ],
       "Failed to fetch node": [
         "La récupération du nœud n'a pas abouti."
       ],
@@ -3927,6 +3933,9 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Appareil indéchiffrable"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
@@ -5877,6 +5886,9 @@
       "On public WiFi networks": [
         "Sur les réseaux wifi publics"
       ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Un des fichiers ou dossiers que vous souhaitez copier existe déjà dans le dossier sélectionné."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Un de vos lecteurs chiffrés est verrouillé. Ceci est très probablement lié à une récente réinitialisation du mot de passe."
       ],
@@ -6687,6 +6699,9 @@
       "You cannot undo this action.": [
         "Vous ne pouvez pas annuler cette action."
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "Vous n’avez pas l'autorisation de copier des fichiers dans ce dossier."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
@@ -7186,6 +7201,9 @@
       ],
       "Encrypt emails": [
         "Chiffrer les messages"
+      ],
+      "Encrypted node": [
+        "Nœud chiffré"
       ],
       "Enter device name": [
         "Saisir le nom de l'appareil"
@@ -12482,7 +12500,7 @@
         "Nouvelle signature des contacts"
       ],
       "Ready, set, upload.": [
-        "Prêt, configuré et importez."
+        "À vos marques, prêts, importez."
       ],
       "Recommended": [
         "Recommandé"
@@ -12786,7 +12804,7 @@
         "Vous n'avez aucun dossier pour le moment."
       ],
       "Your ${ freeUploadLength } has started.": [
-        "Votre ${ freeUploadLength } a commencé."
+        "Vos ${ freeUploadLength } ont commencé."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."

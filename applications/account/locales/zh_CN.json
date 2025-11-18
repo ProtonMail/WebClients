@@ -6491,9 +6491,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } 台设备"
-      ],
       "Ad-blocker and malware protection": [
         "广告拦截及恶意软件防护"
       ],
@@ -7840,12 +7837,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "跨设备无缝访问您的密码并保护您的在线身份。下载并安装相关的 ${ PASS_APP_NAME } 应用程序和扩展程序。"
       ],
-      "account recovery and data recovery method": [
-        "账户恢复和数据恢复方式"
-      ],
-      "account recovery method": [
-        "账户恢复方式"
-      ],
       "Account successfully updated": [
         "账户已成功更新"
       ],
@@ -7864,14 +7855,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
       ],
-      "Add a recovery email address": [
-        "添加密保邮箱"
-      ],
       "add a recovery method": [
         "添加恢复方法"
-      ],
-      "Add a recovery phone number": [
-        "添加密保手机"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "登录时要求输入双重验证码，为您的账户安全再增设一道防线。"
@@ -7947,12 +7932,6 @@
       ],
       "Allocated": [
         "分配量"
-      ],
-      "Allow recovery by email": [
-        "允许通过密保邮箱恢复"
-      ],
-      "Allow recovery by phone": [
-        "允许通过密保手机恢复"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "允许用户从 ${ VPN_APP_NAME } 应用程序的**国家**部分连接到安全的共享服务器。"
@@ -8344,12 +8323,6 @@
       "Did you know?": [
         "您知道吗？"
       ],
-      "Disable recovery by email address": [
-        "禁用通过密保邮箱恢复"
-      ],
-      "Disable recovery by phone number": [
-        "禁用通过密保手机恢复"
-      ],
       "Disabled countries": [
         "已禁用国家/地区"
       ],
@@ -8421,9 +8394,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "下载我们的 csv 模板，填写用户信息，之后上传填写完成的 csv 文件即可创建对应账户。"
-      ],
-      "Download recovery file": [
-        "下载恢复文件"
       ],
       "Download the app and import existing codes.": [
         "下载应用后您还可以导入先前已有的验证码。"
@@ -8773,12 +8743,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "如果您有礼品码，可以在此处使用。"
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "如果您忘记了密码并需要恢复您的帐户，${ boldImperative } 您有一个 ${ boldAccountRecovery }。"
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "如果您忘记了密码并且需要恢复您的账户，${ boldImperative } 请确保您拥有 ${ boldAccountAndRecovery }，否则您可能无法访问您的任何电子邮件、联系人或文件。"
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "如果您丢失了启用双因素身份验证的设备，可以使用这些代码代替 6 位双因素身份验证代码来登录您的账户。每个代码只能使用一次。"
       ],
@@ -8964,9 +8928,6 @@
       ],
       "Item updated in vault": [
         "密码库中有条目被被更新"
-      ],
-      "it’s imperative": [
-        "唯一途径"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "我一直在使用@ProtonMail，并且认为你可能会喜欢它。这是一项可以保护您隐私的安全电子邮件服务。使用我的推荐链接注册即可免费获得 1 个月的高级功能：${ referrerLink }"
@@ -9157,9 +9118,6 @@
       "No account keys exist": [
         "不存在账户密钥"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "账户恢复方式未设置，若忘记密码您将永远无法登录账户"
-      ],
       "No action selected": [
         "未选择操作"
       ],
@@ -9168,9 +9126,6 @@
       ],
       "No countries enabled": [
         "未启用的国家/地区"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "数据恢复方式未设置，若重置密码您将无法解密账户内的数据"
       ],
       "No folder selected": [
         "未选择文件夹"
@@ -9285,15 +9240,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "恢复文件已过时，请更新以确保能访问您的数据"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "恢复方式已失效，请更新以保障数据安全性"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "恢复密语已过时，请更新以确保能访问您的数据"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "超过 1 亿人和企业已注册 ${ BRAND_NAME } 。"
@@ -9603,9 +9549,6 @@
       ],
       "Set password": [
         "设置密码"
-      ],
-      "Set recovery phrase": [
-        "设置恢复密语"
       ],
       "Set up forwarding": [
         "设置转发"
@@ -10012,12 +9955,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "密码重置后如需解密账户数据，请选择一种恢复方式。"
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "设置账户恢复方式可进一步保障您对账户的控制权"
-      ],
-      "To ensure highest possible security of your account": [
-        "为了确保您的帐户尽可能安全"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "为了确保您不会丢失重要数据，${ DRIVE_APP_NAME } 会在您和您的协作者进行更改时保存文件的旧版本。选择 ${ BRAND_NAME } 应保留先前版本的时间。"
       ],
@@ -10111,12 +10048,6 @@
       "Unverified email address.": [
         "邮箱地址未验证。"
       ],
-      "Update recovery file": [
-        "更新恢复文件"
-      ],
-      "Update recovery phrase": [
-        "更新恢复密语"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
@@ -10209,12 +10140,6 @@
       ],
       "Verify domain": [
         "认证域名"
-      ],
-      "Verify email address": [
-        "验证邮箱地址"
-      ],
-      "Verify phone number": [
-        "验证电话号码"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "通过应用程序根据时间生成的一次性验证码确认身份"
@@ -10633,17 +10558,11 @@
       "Your account has been successfully updated": [
         "您的账户已成功更新"
       ],
-      "Your account recovery method is set": [
-        "账户恢复方式已设置"
-      ],
       "Your account was successfully updated with this promotion": [
         "您的帐户已成功更新此促销活动"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
-      ],
-      "Your data recovery method is set": [
-        "数据恢复方式已设置"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
@@ -12791,9 +12710,6 @@
       ],
       "What’s this?": [
         "这是什么？"
-      ],
-      "Why set recovery methods?": [
-        "为什么要设置恢复方式？"
       ]
     },
     "Link label (optional)": {
@@ -16710,12 +16626,6 @@
       "You have recommended actions.": [
         "建议您采取的行动。"
       ],
-      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "您的密保邮箱有可能被攻击者滥用。${ disableEmail } 以提高您的账户安全。"
-      ],
-      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "您的密保手机有可能被攻击者滥用。${ disablePhone } 以提高您的账户安全。"
-      ],
       "You will no longer be able to use this address to reset your account.": [
         "您将无法继续使用此邮箱地址重置您的账户。"
       ],
@@ -20124,15 +20034,6 @@
       "Folders and labels": [
         "标签与文件夹"
       ],
-      "For Linux": [
-        "Linux 客户端"
-      ],
-      "For macOS": [
-        "macOS 客户端"
-      ],
-      "For Windows": [
-        "Windows 客户端"
-      ],
       "Forgot password": [
         "忘记密码"
       ],
@@ -20742,9 +20643,6 @@
       "Switch to two-password mode": [
         "切换到双密码模式"
       ],
-      "Take precautions to avoid data loss!": [
-        "避免数据丢失需要防患于未然！"
-      ],
       "Text": [
         "文本"
       ],
@@ -20924,9 +20822,6 @@
       ],
       "Your plan": [
         "您的账户等级"
-      ],
-      "Your recovery status": [
-        "您的恢复状态"
       ],
       "Your referrals": [
         "您的推荐"
@@ -21793,9 +21688,6 @@
       ],
       "Auto-selects from ${ numberOfCountries } country": [
         "从 ${ numberOfCountries } 个地域中自动选择"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "从 ${ numberOfCountries }+ 个国家中选择"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "${ numberOfCountries } 个国家/地区的服务器"

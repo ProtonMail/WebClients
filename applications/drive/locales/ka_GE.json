@@ -1676,6 +1676,9 @@
       "Application problem": [
         "აპლიკაციის პრობლემა"
       ],
+      "Authenticator problem": [
+        "ავთენტიკატორის პრობლემა"
+      ],
       "Black Friday": [
         "შავი პარასკევი"
       ],
@@ -1901,6 +1904,9 @@
     "collider_2025: Info": {
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
+      ],
+      "Advanced account and network security in one plan": [
+        "დამატებითი ანგარიშისა და ქსელის უსაფრთხოება ერთ სატარიფო გეგმაში"
       ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
@@ -3342,9 +3348,6 @@
       "Cannot export this contact": [
         "ამ კონტაქტის გატანა შეუძლებელია"
       ],
-      "Cannot load \"My files\" root folder": [
-        "\"ჩემი ფაილების\" ძირითადი საქაღალდის ჩატვირთვა შეუძლებელია"
-      ],
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
       ],
@@ -3413,12 +3416,6 @@
       "Error reading file": [
         "ფაილის წაკითხვის შეცდომა"
       ],
-      "Expanding non-existent directory tree item": [
-        "არარსებული საქაღალდის ხის ელემენტის გაფართოება"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "არაგაფართოებადი საქაღალდის ხის ელემენტის გაფართოება"
-      ],
       "Expected structure attached": [
         "მოსალოდნელი სტრუქტურა მიმაგრებულია"
       ],
@@ -3439,6 +3436,9 @@
       ],
       "Failed to create public share node": [
         "საჯარო ზიარის კვანძის შექმნა ჩავარდა"
+      ],
+      "Failed to expand folder": [
+        "საქაღალდის ჩამოშლა ჩავარდა"
       ],
       "Failed to fetch node": [
         "კვანზის მოთხოვნის შეცდომა"
@@ -3890,11 +3890,17 @@
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ არაგაშიფვრადი მოწყობილობა"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ არგაშიფვრადი სახელი"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "შედით Gmail-ის მისამართით, რომელიც უკვეა გადამისამართებული ${ MAIL_APP_NAME }-ზე"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
       ]
@@ -5293,6 +5299,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy-ის ლოგო"
       ],
+      "Done": [
+        "დასრულებული"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "ვერაფერს ხედავთ? არ დაგავიწყდეთ, მხტუნარა ფანჯრის დამბლოკველები გამორთოთ."
       ],
@@ -5586,9 +5595,6 @@
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "საქაღალდის თავის თავში კოპირება შეუძლებელია"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "ჩანაწერები სანაგვე ყუთში მანამდე დარჩება, სანამ ხელით არ წაშლით"
       ],
@@ -5784,6 +5790,9 @@
       ],
       "On public WiFi networks": [
         "ან საჯარო WiFi ქსელები"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "ერთ-ერთი ფაილი ან საქაღალდე, რომლის დაკოპირებასაც ცდილობთ, სამიზნე საქაღალდეში უკვე არსებობს."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "ერთ-ერთი თქვენი დაშიფრული დისკი დაბლოკილია. ალბათ, ახლახანს პაროლი შეცვალეთ."
@@ -6106,6 +6115,9 @@
       ],
       "Some files failed to upload. Try uploading the files again.": [
         "ზოგიერთი ფაილი ვერ აიტვირთა. სცადეთ თავიდან ატვირთოთ."
+      ],
+      "Some items failed": [
+        "ზოგიერთი ელემენტი ჩავარდა"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "თქვენი ზოგიერთი ფაილი მიუწვდომელია. აღიდგინეთ წვდომა თქვენს ფაილებთან. ${ StartRecoveryButton }"
@@ -6551,6 +6563,9 @@
       ],
       "You cannot undo this action.": [
         "თქვენ არ შეგიძლიათ ამ ქმედების დაბრუნება."
+      ],
+      "You don’t have permission to copy files to this folder.": [
+        "ამ საქაღალდეში ფაილების დასაკოპირებლად უფლებები არ გაქვთ."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -7024,6 +7039,9 @@
       ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
+      ],
+      "Encrypted node": [
+        "დაშიფრული კვანძი"
       ],
       "Enter device name": [
         "შეიყვანეთ მოწყობილობის სახელი"
@@ -8186,6 +8204,9 @@
       "End-to-end encryption": [
         "გამჭოლი შიფრაცია"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "არსებული ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-ის უპირატესობები"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "სწრაფი გადმოწერა P2P/BitTorrent-ით"
       ],
@@ -8403,6 +8424,10 @@
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან",
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -9800,6 +9825,20 @@
       ],
       "Credits will be added to your balance": [
         "თქვენს ბალანსზე კრედიტები დაგემატებათ"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle }-ის შენარჩუნება"
+      ],
+      "Yes, I'm sure": [
+        "დიახ, დარწმუნებული ვარ"
+      ],
+      "Your plan includes this feature already.": [
+        "თქვენი სატარიფო გეგმა ამ ფუნქციას უკვე შეიცავს."
       ]
     },
     "Payments.plan_name": {

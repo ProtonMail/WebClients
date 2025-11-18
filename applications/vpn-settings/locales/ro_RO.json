@@ -93,7 +93,7 @@
         "Adăugare utilizator"
       ],
       "Allow": [
-        "Permitere"
+        "Permise"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Permitere mesaje criptate bilateral pentru acest grup"
@@ -123,7 +123,7 @@
         "Înapoi la autentificare"
       ],
       "Block": [
-        "Blocare"
+        "Blocate"
       ],
       "Cancel": [
         "Anulare"
@@ -1859,6 +1859,9 @@
       ],
       "Application problem": [
         "Problemă aplicație"
+      ],
+      "Authenticator problem": [
+        "Problemă autentificator"
       ],
       "Black Friday": [
         "Vinerea Neagră"
@@ -4859,9 +4862,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "Dispozitive: ${ VPN_CONNECTIONS }"
-      ],
       "15 GB storage": [
         "15 GiB spațiu de stocare"
       ],
@@ -7105,7 +7105,7 @@
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
       "Private AI assistant": [
-        "Asistent AI privat"
+        "Asistent de IA privat"
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
@@ -7178,6 +7178,9 @@
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Asigurați-vă contul ${ BRAND_NAME }"
+      ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Conferințe video securizate, criptate bilateral"
       ],
       "Securing your account": [
         "Securizare cont"
@@ -7541,6 +7544,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Încercați ${ productName } fără riscuri - dacă din orice motiv vă răzgândiți, veți primi o rambursare completă. Fără întrebări."
+      ],
+      "Two-factor authentication": [
+        "Autentificare cu doi factori"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Modul cu două parole necesită două parole: una pentru a vă autentifica în cont și una pentru a decripta datele. (Avansat)"
@@ -8251,6 +8257,12 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
+      "0 of 1 email address available": [
+        "Adrese de e-mail disponibile: 0 din 1"
+      ],
+      "1 of 1 email address available": [
+        "Adrese de e-mail disponibile: 1 din 1"
+      ],
       "Account holder": [
         "Titular cont"
       ],
@@ -8279,7 +8291,7 @@
         "Avansat"
       ],
       "Allow": [
-        "Adrese permise"
+        "Permise"
       ],
       "Allow recovery by email": [
         "Permitere recuperare prin e-mail"
@@ -8333,7 +8345,7 @@
         "Vinerea Neagră"
       ],
       "Block": [
-        "Adrese blocate"
+        "Blocate"
       ],
       "Block malware only": [
         "Blocare doar malware"
@@ -9588,10 +9600,10 @@
         "Toate"
       ],
       "Allow": [
-        "Adrese permise"
+        "Permise"
       ],
       "Block": [
-        "Adrese blocate"
+        "Blocate"
       ],
       "Spam": [
         "Nedorite"
@@ -15945,11 +15957,6 @@
         "Țări disponibile selectare automată: ${ numberOfCountries }",
         "Țări disponibile selectare automată: ${ numberOfCountries }",
         "Țări disponibile selectare automată: ${ numberOfCountries }"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Selectare din peste ${ numberOfCountries } țară",
-        "Selectare din peste ${ numberOfCountries } țări",
-        "Selectare din peste ${ numberOfCountries } de țări"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Nr. minim de țări cu servere: ${ numberOfCountries }",

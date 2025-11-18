@@ -1186,6 +1186,9 @@
       "Secure link could not be opened.": [
         "Δεν ήταν δυνατό το άνοιγμα ασφαλούς σύνδεσης."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε να ξεκλειδώσετε το ${ PASS_SHORT_APP_NAME } σε λίγα λεπτά."
+      ],
       "Settings update failed": [
         "Η ενημέρωση των ρυθμίσεων απέτυχε"
       ],
@@ -1273,7 +1276,7 @@
       "Wrong second password": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Αυτήν τη στιγμή είστε εκτός σύνδεσης. Παρακαλούμε συνεχίστε τη συνδεσιμότητα για να ξεκλειδώσετε ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
@@ -1820,9 +1823,6 @@
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Απώλεια σύνδεσης στο διαδίκτυο. Παρακαλούμε ελέγξτε τη συνδεσιμότητα της συσκευής σας."
-      ],
       "Invitation sent": [
         "Η πρόσκληση στάλθηκε"
       ],
@@ -1932,10 +1932,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2231,6 +2227,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Τα επιλεγμένα στοιχεία αποκαταστάθηκαν με επιτυχία από τα διαγραμμένα"
+      ],
+      "Servers are unreachable": [
+        "Οι διακομιστές δεν είναι προσβάσιμοι"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"

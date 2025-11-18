@@ -2732,6 +2732,9 @@
       "Application problem": [
         "Problème d'application"
       ],
+      "Authenticator problem": [
+        "Problème d'authentification"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -3199,6 +3202,9 @@
       ],
       "AI assistant that respects business confidentiality": [
         "Assistant IA qui respecte la confidentialité des entreprises"
+      ],
+      "AI assistant that respects your privacy": [
+        "Assistant IA qui respecte votre vie privée"
       ],
       "Basic chat history": [
         "Historique de chat basique"
@@ -5058,6 +5064,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm pour Fedora / Red Hat"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "Vous pouvez également télécharger l'application depuis le ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -7348,9 +7357,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } appareils"
-      ],
       "@pm.me address": [
         "Adresse @pm.me"
       ],
@@ -8011,6 +8017,9 @@
       ],
       "Contact us": [
         "Contactez-nous"
+      ],
+      "Downloads": [
+        "Téléchargements"
       ],
       "Enjoying ${ planName }?": [
         "Vous appréciez ${ planName } ?"
@@ -8796,12 +8805,6 @@
       "Account monitor": [
         "Surveillance des comptes"
       ],
-      "account recovery and data recovery method": [
-        "une méthode de récupération de compte et de récupération de données"
-      ],
-      "account recovery method": [
-        "une méthode de récupération de compte"
-      ],
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
@@ -8820,14 +8823,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Ajoutez une adresse e-mail @pm.me à votre compte. Ce domaine simple et court signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
       ],
-      "Add a recovery email address": [
-        "Ajoutez une adresse e-mail de récupération."
-      ],
       "add a recovery method": [
         "ajouter une méthode de récupération"
-      ],
-      "Add a recovery phone number": [
-        "Ajouter un numéro de téléphone de récupération"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Ajoutez une sécurité supplémentaire à votre compte avec une A2F chaque fois que vous vous connecterez."
@@ -8916,12 +8913,6 @@
       ],
       "Allow logging of location and connection details": [
         "Autoriser l'enregistrement des informations d'emplacement et de connexion"
-      ],
-      "Allow recovery by email": [
-        "Autoriser la récupération par e-mail"
-      ],
-      "Allow recovery by phone": [
-        "Autoriser la récupération par téléphone"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Autorisez les utilisateurs à se connecter à des serveurs partagés sécurisés depuis la section **Pays** de l'application ${ VPN_APP_NAME }."
@@ -9335,12 +9326,6 @@
       "Did you know?": [
         "Le saviez-vous ?"
       ],
-      "Disable recovery by email address": [
-        "Désactiver la récupération par adresse e-mail"
-      ],
-      "Disable recovery by phone number": [
-        "Désactiver la récupération par numéro de téléphone"
-      ],
       "Disabled countries": [
         "Pays désactivés"
       ],
@@ -9419,9 +9404,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Téléchargez notre modèle CSV, renseignez les informations sur l'utilisateur, puis téléchargez votre fichier CSV complété pour créer des comptes pour ces utilisateurs."
-      ],
-      "Download recovery file": [
-        "Télécharger le fichier de récupération"
       ],
       "Download the app and import existing codes.": [
         "Téléchargez l'application et importez vos codes existants."
@@ -9798,12 +9780,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Si vous avez un code-cadeau, saisissez-le ci-dessous pour appliquer votre réduction."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Si vous perdez votre mot de passe et que vous devez récupérer votre compte, ${ boldImperative } que vous ayez ${ boldAccountRecovery } en place."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Si vous perdez votre mot de passe et que vous devez récupérer votre compte, ${ boldImperative } que vous ayez ${ boldAccountAndRecovery } en place. Sans quoi vous ne pourrez peut-être pas accéder à vos messages, contacts ou fichiers."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "En cas de perte de l'appareil que vous utilisez pour l'authentification à deux facteurs, ces codes peuvent être utilisés à la place du code d'authentification à 6 chiffres pour vous connecter à votre compte. Chaque code ne peut être utilisé qu'une seule fois."
       ],
@@ -9997,9 +9973,6 @@
       ],
       "Item updated in vault": [
         "L'élément dans le coffre-fort a été mis à jour."
-      ],
-      "it’s imperative": [
-        "il est impératif"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "J'utilise @ProtonMail et je pense que ça pourrait te plaire. C'est un service de messagerie électronique sécurisée qui protège ta vie privée. Tu peux t'inscrire avec mon lien de parrainage pour profiter gratuitement des fonctionnalités premium pendant 1 mois : ${ referrerLink }"
@@ -10199,9 +10172,6 @@
       "No account keys exist": [
         "Il n'existe aucune clé de compte."
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Aucune méthode de récupération du compte n'a été définie : le risque est de perdre l'accès à votre compte."
-      ],
       "No action selected": [
         "Aucune action n'est sélectionnée."
       ],
@@ -10213,9 +10183,6 @@
       ],
       "No credit card required": [
         "Aucune carte de paiement n'est nécessaire."
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Aucune méthode de récupération des données n'est définie : le risque est de perdre l'accès à vos données."
       ],
       "No folder selected": [
         "Aucun dossier n'est sélectionné."
@@ -10270,6 +10237,9 @@
       ],
       "On": [
         "Activé"
+      ],
+      "On Ubuntu?": [
+        "Sous Ubuntu ?"
       ],
       "Once you reset your password:": [
         "Une fois votre mot de passe réinitialisé :"
@@ -10338,15 +10308,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nos alertes privilégient la sécurité. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Le fichier de récupération est périmé : mettez-le à jour pour assurer l'accès à vos données."
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Les méthodes de récupération sont périmées : mettez-les à jour pour assurer l'accès à vos données."
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "La phrase de récupération est périmée : mettez-la à jour pour assurer l'accès à vos données."
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Plus de 100 millions de personnes et d'entreprises ont choisi ${ BRAND_NAME }."
@@ -10612,6 +10573,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Sécurisez votre compte ${ BRAND_NAME }"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Visioconférence sécurisée et chiffrée de bout en bout"
+      ],
       "Securing your account": [
         "Sécurisation de votre compte"
       ],
@@ -10668,9 +10632,6 @@
       ],
       "Set password": [
         "Définir le mot de passe"
-      ],
-      "Set recovery phrase": [
-        "Créer une phrase de récupération"
       ],
       "Set up forwarding": [
         "Configurer le transfert"
@@ -11095,12 +11056,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation du mot de passe, sélectionnez une méthode de récupération."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Pour vous assurer d'avoir toujours accès à votre compte, définissez une méthode de récupération du compte."
-      ],
-      "To ensure highest possible security of your account": [
-        "Pour garantir la sécurité maximale de votre compte"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pour vous éviter de perdre des données importantes, ${ DRIVE_APP_NAME } enregistre les versions précédentes de vos fichiers au fur et à mesure que vous et vos collaborateurs les modifiez. Sélectionnez la durée pendant laquelle ${ BRAND_NAME } doit conserver les versions précédentes."
       ],
@@ -11155,6 +11110,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Essayez ${ productName } en toute tranquillité. Si pour une raison quelconque vous changez d'avis, vous recevrez un remboursement complet. Aucune question ne vous sera posée."
       ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Le mode à deux mots de passe nécessite un mot de passe pour se connecter à votre compte et un autre pour déchiffrer vos données (avancé)."
       ],
@@ -11193,12 +11151,6 @@
       ],
       "Unverified email address.": [
         "L'adresse e-mail n'a pas été vérifiée."
-      ],
-      "Update recovery file": [
-        "Mettre à jour le fichier de récupération"
-      ],
-      "Update recovery phrase": [
-        "Mettre à jour la phrase de récupération"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
@@ -11295,12 +11247,6 @@
       ],
       "Verify domain": [
         "Vérifier le domaine"
-      ],
-      "Verify email address": [
-        "Vérifier l'adresse e-mail"
-      ],
-      "Verify phone number": [
-        "Vérifier le numéro de téléphone"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Confirmez votre identité avec un mot de passe à usage unique et à durée limitée qui est généré par une application d'authentification."
@@ -11748,17 +11694,11 @@
       "Your account has been successfully updated": [
         "Votre compte a été mis à jour."
       ],
-      "Your account recovery method is set": [
-        "Votre méthode de récupération de compte est définie."
-      ],
       "Your account was successfully updated with this promotion": [
         "Votre compte a été mis à jour avec cette promotion."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
-      ],
-      "Your data recovery method is set": [
-        "Votre méthode de récupération de données est définie."
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
@@ -12429,11 +12369,17 @@
       "/month x ${ months }": [
         "/mois x ${ months }"
       ],
+      "0 of 1 email address available": [
+        "0 adresse e-mail disponible sur 1"
+      ],
       "1 hour": [
         "1 heure"
       ],
       "1 minute": [
         "1 minute"
+      ],
+      "1 of 1 email address available": [
+        "1 sur 1 adresse e-mail disponible"
       ],
       "10 hide-my-email aliases": [
         "10 alias hide-my-email"
@@ -13915,6 +13861,9 @@
       "Don't have access to your 2FA?": [
         "Vous n'avez pas accès à votre A2F ?"
       ],
+      "Downloads": [
+        "Téléchargements"
+      ],
       "Encryption and keys": [
         "Chiffrement et clés"
       ],
@@ -14053,6 +14002,9 @@
       "Sign in": [
         "Se connecter"
       ],
+      "Snap store": [
+        "Snap Store"
+      ],
       "switch account": [
         "changer de compte"
       ],
@@ -14085,9 +14037,6 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
-      ],
-      "Why set recovery methods?": [
-        "Pourquoi définir une méthode de récupération ?"
       ]
     },
     "Link label (optional)": {
@@ -16693,6 +16642,9 @@
       "Keep this plan": [
         "Conserver cet abonnement"
       ],
+      "Open ${ PASS_APP_NAME } vaults": [
+        "Ouvrir les coffres-forts ${ PASS_APP_NAME }"
+      ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
       ],
@@ -16949,6 +16901,9 @@
       ],
       "Welcome to ${ plan }": [
         "Bienvenue dans ${ plan }"
+      ],
+      "You already have a ${ BRAND_NAME } account and can start using ${ PASS_APP_NAME } right away.": [
+        "Vous avez déjà un compte ${ BRAND_NAME } et pouvez commencer à utiliser ${ PASS_APP_NAME } immédiatement."
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Vous avez déjà accès aux fonctionnalités premium de ${ appName }, vous n'avez pas besoin de les acheter."
@@ -18554,12 +18509,6 @@
       "You have recommended actions.": [
         "Vous avez des actions recommandées."
       ],
-      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Votre e-mail de récupération pourrait être utilisé à mauvais escient par des attaquants pour prendre le contrôle de votre compte. ${ disableEmail } pour renforcer la sécurité de votre compte."
-      ],
-      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Votre téléphone de récupération pourrait être utilisé à mauvais escient par des attaquants pour prendre le contrôle de votre compte. ${ disablePhone } pour renforcer la sécurité de votre compte."
-      ],
       "You will no longer be able to use this address to reset your account.": [
         "Vous ne pourrez plus utiliser cette adresse pour réinitialiser votre compte."
       ],
@@ -18605,6 +18554,9 @@
       "Your recovery email can **only recover access to your account**.": [
         "Votre e-mail de récupération permet **uniquement de récupérer l'accès à votre compte**."
       ],
+      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Votre e-mail de récupération pourrait être utilisé à mauvais escient par des attaquants pour prendre le contrôle de votre compte. ${ disableEmail } pour renforcer la sécurité de votre compte."
+      ],
       "Your recovery email has been enabled": [
         "L'e-mail de récupération a été activé."
       ],
@@ -18625,6 +18577,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Votre téléphone de récupération permet **uniquement de récupérer l'accès à votre compte**."
+      ],
+      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Votre téléphone de récupération pourrait être utilisé à mauvais escient par des attaquants pour prendre le contrôle de votre compte. ${ disablePhone } pour renforcer la sécurité de votre compte."
       ],
       "Your recovery phone has been enabled": [
         "Le téléphone de récupération a été activé."
@@ -22188,15 +22143,6 @@
       "Folders and labels": [
         "Dossiers et labels"
       ],
-      "For Linux": [
-        "Pour Linux"
-      ],
-      "For macOS": [
-        "Pour macOS"
-      ],
-      "For Windows": [
-        "Pour Windows"
-      ],
       "Forgot password": [
         "Mot de passe oublié"
       ],
@@ -22862,9 +22808,6 @@
       "Switch to two-password mode": [
         "Passer au mode deux mots de passe"
       ],
-      "Take precautions to avoid data loss!": [
-        "Évitez toute perte de données en prenant quelques précautions."
-      ],
       "Text": [
         "Texte"
       ],
@@ -23059,9 +23002,6 @@
       ],
       "Your plan": [
         "Votre abonnement"
-      ],
-      "Your recovery status": [
-        "Votre statut de récupération"
       ],
       "Your referrals": [
         "Vos références"
@@ -23989,10 +23929,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Sélection automatique depuis ${ numberOfCountries } pays",
         "Sélection automatique depuis ${ numberOfCountries } pays"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Sélection depuis ${ numberOfCountries } pays",
-        "Sélection depuis ${ numberOfCountries } pays"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Serveurs dans plus de ${ numberOfCountries } pays",

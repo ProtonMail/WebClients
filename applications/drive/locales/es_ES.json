@@ -252,6 +252,9 @@
       "Continue with Outlook": [
         "Continuar con Outlook"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copiar la dirección"
       ],
@@ -1688,6 +1691,9 @@
       "Application problem": [
         "Problema con la aplicación"
       ],
+      "Authenticator problem": [
+        "Problema con el autenticador"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1919,6 +1925,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de cuenta y red en un solo plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de alta velocidad y funciones de IA avanzadas."
@@ -3451,9 +3460,6 @@
       "Error reading file": [
         "Error al leer el archivo"
       ],
-      "Expanding non-expandable directory tree item": [
-        "Expandiendo elemento de árbol de directorios no expandible"
-      ],
       "Expected structure attached": [
         "Se adjunta la estructura esperada"
       ],
@@ -3474,6 +3480,9 @@
       ],
       "Failed to create public share node": [
         "Error al crear el nodo compartido"
+      ],
+      "Failed to expand folder": [
+        "Error al expandir la carpeta"
       ],
       "Failed to fetch node": [
         "Error al obtener nodo"
@@ -3522,6 +3531,9 @@
       ],
       "Folder \"${ name }\" is already downloading": [
         "La carpeta \"${ name }\" ya se está descargando."
+      ],
+      "Folder creation failed": [
+        "Error al crear la carpeta"
       ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
@@ -3607,6 +3619,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
+      ],
+      "No file to upload": [
+        "No hay ningún archivo para cargar"
       ],
       "No valid address found": [
         "No se ha encontrado una dirección válida."
@@ -3852,6 +3867,9 @@
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
       ],
+      "Upload failed": [
+        "Error al cargar"
+      ],
       "Upload for this folder is temporarily disabled": [
         "La carga para esta carpeta está desactivada temporalmente."
       ],
@@ -3912,6 +3930,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indescifrable"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
@@ -5663,9 +5684,6 @@
       "It's better to have:": [
         "Es mejor tener:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "No es posible copiar la carpeta a sí misma"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borres permanentemente."
       ],
@@ -5864,6 +5882,9 @@
       ],
       "On public WiFi networks": [
         "En redes wifi públicas"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Uno de los archivos o carpetas que quieres copiar ya existe en la carpeta seleccionada."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una de tus almacenamientos cifrados está bloqueado. Lo más probable es que esto se deba a un restablecimiento reciente de la contraseña."
@@ -6678,6 +6699,9 @@
       "You cannot undo this action.": [
         "No se puede deshacer esta acción."
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "No tienes permiso para copiar archivos a esta carpeta."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
@@ -7177,6 +7201,9 @@
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
+      ],
+      "Encrypted node": [
+        "Nodo cifrado"
       ],
       "Enter device name": [
         "Introduce el nombre del dispositivo"
@@ -8402,6 +8429,9 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficios existentes de ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descargas rápidas de P2P/BitTorrent"
       ],
@@ -8619,6 +8649,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartir la caja fuerte con hasta ${ n } persona",
+        "Compartir la caja fuerte con hasta ${ n } personas"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
@@ -9553,9 +9587,15 @@
       ],
       "Upload folder": [
         "Cargar una carpeta"
+      ],
+      "Upload more files": [
+        "Cargar más archivos"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 minutos"
+      ],
       "Access your files on the go": [
         "Accede a tus archivos sobre la marcha"
       ],
@@ -9589,6 +9629,12 @@
       "Faster uploads for large or multiple files": [
         "Cargas más rápidas para varios archivos o grandes"
       ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Los archivos cargados durante este tiempo no contarán para tu límite de almacenamiento."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Los archivos cargados ahora no contarán para tu límite de almacenamiento"
+      ],
       "Final approval in progress": [
         "Aprobación final en progreso"
       ],
@@ -9621,6 +9667,9 @@
       ],
       "Invite team members": [
         "Invita a miembros del equipo"
+      ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Mantén el ritmo cargando más archivos usando el almacenamiento incluido con tu plan."
       ],
       "Manage access": [
         "Gestionar el acceso"
@@ -9657,6 +9706,12 @@
       ],
       "Work together": [
         "Trabaja en equipo"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "¡Acabas de conseguir datos gratis y aseguraste tus archivos con cifrado de extremo a extremo en un tiempo récord!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Tu límite de almacenamiento no se verá afectado"
       ]
     },
     "Onboarding Trial": {
@@ -10030,6 +10085,23 @@
       ],
       "Credits will be added to your balance": [
         "Se añadirán créditos a tu saldo."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "¿Estás seguro de que quieres proceder?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si eliges modificar tu plan ${ planTitle }, puedes perder el acceso a algunas funcionalidades."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguir con ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Si, estoy seguro"
+      ],
+      "Your plan includes this feature already.": [
+        "Tu plan ya incluye esta funcionalidad."
       ]
     },
     "Payments.plan_name": {
@@ -12187,6 +12259,9 @@
       "Get more from your VPN": [
         "Obtén más de tu VPN"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Empieza con 10 minutos de cargas gratuitas, cortesía de la casa."
+      ],
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
@@ -12268,6 +12343,9 @@
       ],
       "Logs": [
         "Registros"
+      ],
+      "Make a copy": [
+        "Hacer una copia"
       ],
       "Make a secure connection your default": [
         "Elige una conexión segura como opción predeterminada"
@@ -12439,6 +12517,9 @@
       ],
       "Re-signing contacts": [
         "Volviendo a firmar los contactos"
+      ],
+      "Ready, set, upload.": [
+        "Listo, configurado, a cargar."
       ],
       "Recommended": [
         "Recomendado"
@@ -12711,6 +12792,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "No pudimos verificar que un usuario anónimo subió esta carpeta."
       ],
+      "Welcome offer": [
+        "Oferta de bienvenida"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Te damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
@@ -12737,6 +12821,9 @@
       ],
       "You have no folders yet": [
         "Todavía no tienes carpetas."
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Tu ${ freeUploadLength } ha comenzado."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Tu prueba gratuita de ${ planName } Plus termina el ${ textDate }."

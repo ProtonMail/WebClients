@@ -809,6 +809,9 @@
       "These items remain at risk": [
         "Estos elementos siguen en riesgo."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Estas cajas fuertes no serán accesibles y su contenido no estará disponible para la busqueda o el relleno automático."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visita el servicio y cambia tu contraseña."
       ],
@@ -1145,6 +1148,9 @@
       "Secure link could not be opened.": [
         "No se ha podido abrir el enlace seguro."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Los servidores no están disponibles.Intenta desbloquear ${ PASS_SHORT_APP_NAME } en unos minutos."
+      ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
       ],
@@ -1232,8 +1238,8 @@
       "Wrong second password": [
         "La segunda contraseña no es correcta."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "No hay conexión. Reanuda la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Estás sin conexión. Vuelve a conectarte a internet para desbloquear ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "El DNS no está configurado correctamente. El registro MX obtenido es:"
@@ -1754,9 +1760,6 @@
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
-      ],
       "Invitation sent": [
         "Se ha enviado la invitación."
       ],
@@ -1865,7 +1868,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2155,6 +2159,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Se han restaurado los elementos seleccionados en la papelera."
+      ],
+      "Servers are unreachable": [
+        "Los servidores no están disponibles"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -4292,6 +4299,9 @@
       "Get Started": [
         "Comenzar"
       ],
+      "Hidden vaults": [
+        "Cajas fuertes ocultas"
+      ],
       "Hide-my-email aliases": [
         "Alias de hide-my-email"
       ],
@@ -4556,6 +4566,9 @@
       ],
       "Vault shared with you": [
         "Caja fuerte compartida contigo"
+      ],
+      "Visible vaults": [
+        "Cajas fuertes visibles"
       ],
       "Want to learn more?": [
         "¿Quieres saber más?"

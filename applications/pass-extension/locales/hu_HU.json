@@ -1177,9 +1177,6 @@
       "Wrong second password": [
         "Rossz második jelszó"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Ön jelenleg offline. A ${ PASS_SHORT_APP_NAME } feloldásához kérjük, kapcsolódjon újra."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "A böngészőjének nehézségei vannak a ${ PASS_APP_NAME } aktiválásával."
       ],
@@ -1698,9 +1695,6 @@
       "Internet connection lost": [
         "Az internetkapcsolat megszakadt"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
-      ],
       "Invitation sent": [
         "Meghívó elküldve"
       ],
@@ -1813,6 +1807,9 @@
       ],
       "No login found": [
         "Nem találhatók bejelentkezések"
+      ],
+      "No network connection": [
+        "Nincs internetkapcsolat"
       ],
       "None": [
         "Nincs"

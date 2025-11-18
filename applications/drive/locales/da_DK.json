@@ -252,6 +252,9 @@
       "Continue with Outlook": [
         "Fortsæt med Outlook"
       ],
+      "Copy": [
+        "Kopier"
+      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -1685,6 +1688,9 @@
       "Application problem": [
         "Applikationsproblem"
       ],
+      "Authenticator problem": [
+        "Autentificeringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1916,6 +1922,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tilføj ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avanceret konto- og netværkssikkerhed i ét abonnement"
       ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
@@ -3466,6 +3475,9 @@
       "Failed to create public share node": [
         "Det lykkedes ikke at oprette offentlig delingsknude"
       ],
+      "Failed to expand folder": [
+        "Kunne ikke udvide mappe"
+      ],
       "Failed to fetch node": [
         "Kunne ikke hente knude"
       ],
@@ -3910,11 +3922,17 @@
       "ZIP code is required": [
         "Postnummer er påkrævet"
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Enhed, der ikke kan dekrypteres"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Log venligst ind med en Gmail-adresse, der allerede videresender til ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Log ind med den samme Gmail-adresse, som du oprindeligt har forbundet."
       ]
@@ -5352,6 +5370,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "Done": [
+        "Udført"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du ikke noget? Husk at slå pop-up-blokkere fra."
       ],
@@ -5853,6 +5874,9 @@
       "On public WiFi networks": [
         "På offentlige WiFi-netværk"
       ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "En af de filer eller mapper, du vil kopiere, findes allerede i den valgte mappe."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Et af dine krypterede drev er låst. Det skyldes sandsynligvis, at adgangskoden for nylig er blevet nulstillet."
       ],
@@ -6082,6 +6106,9 @@
       "Search Enabled": [
         "Søgning aktiveret"
       ],
+      "Select a folder to copy to.": [
+        "Vælg en mappe at kopiere til."
+      ],
       "Select a folder to move to.": [
         "Vælg en mappe at flytte til."
       ],
@@ -6177,6 +6204,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nogle regeringer blokerer eller begrænser adgangen til visse websteder. En VPN hjælper med at omgå censur, samtidig med at din aktivitet og identitet holdes privat."
+      ],
+      "Some items failed": [
+        "Nogle elementer mislykkedes"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Nogle af dine filer er ikke længere tilgængelige. Gendan adgangen til dine filer. ${ StartRecoveryButton }"
@@ -6659,6 +6689,9 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
+      ],
+      "You don’t have permission to copy files to this folder.": [
+        "Du har ikke tilladelse til at kopiere filer til denne mappe."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du får besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
@@ -7156,6 +7189,9 @@
       ],
       "Encrypt emails": [
         "Kryptér e-mails"
+      ],
+      "Encrypted node": [
+        "Krypteret knude"
       ],
       "Enter device name": [
         "Indtast navn på enheden"
@@ -8324,6 +8360,9 @@
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } fordele"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hurtige P2P/BitTorrent-downloads"
       ],
@@ -8541,6 +8580,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } personer)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling af boks med op til ${ n } person",
+        "Deling af boks med op til ${ n } personer"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
@@ -9000,6 +9043,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" gemt"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" blev kopieret"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" blev flyttet"
       ],
@@ -9012,6 +9058,14 @@
       "${ count } item failed to be decrypted": [
         "${ count } element kunne ikke dekrypteres",
         "${ count } elementer kunne ikke dekrypteres"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } element kunne ikke kopieres",
+        "${ errors.length } elementer kunne ikke kopieres"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } element kunne ikke sendes til papirkurven",
+        "${ errors.length } elementer kunne ikke flyttes til papirkurven"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } foto kunne ikke fjernes fra \"${ albumLink.name }\"",
@@ -9028,6 +9082,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } foto er blevet fjernet fra \"${ albumLink.name }\"",
         "${ nbSuccesses } fotos er blevet fjernet fra \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } kopieret element flyttet til papirkurven",
+        "${ numberOfItems } kopierede elementer flyttet til papirkurven"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
@@ -9064,6 +9122,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gendannet fra papirkurven",
         "${ numberOfItems } elementer gendannet fra papirkurven"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } element kopieret",
+        "${ numberOfItems } elementer kopieret"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } element flyttet",
@@ -9107,6 +9169,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe opdateret"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Kopi af \"${ name }\" flyttet til papirkurv"
       ],
       "Device failed to be removed": [
         "Det lykkedes ikke at fjerne enheden"
@@ -9954,6 +10019,23 @@
       ],
       "Credits will be added to your balance": [
         "Kreditter vil blive tilføjet til din saldo"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på, at du vil fortsætte?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du vælger at ændre dit ${ planTitle }-abonnement, kan du miste adgang til visse funktioner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Dit abonnement inkluderer allerede denne funktion."
       ]
     },
     "Payments.plan_name": {
@@ -12180,6 +12262,9 @@
       ],
       "Logs": [
         "Logger"
+      ],
+      "Make a copy": [
+        "Lav en kopi"
       ],
       "Make a secure connection your default": [
         "Gør en sikker forbindelse til din standard"

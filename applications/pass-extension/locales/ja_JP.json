@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "Android 向け ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "iOS 向け ${ PASS_SHORT_APP_NAME }"
+      ],
       "Accept": [
         "承認する"
       ],
@@ -307,6 +313,9 @@
       ],
       "Generating secure link...": [
         "セキュアリンクを生成中..."
+      ],
+      "Get mobile and desktop apps": [
+        "モバイルアプリとデスクトップアプリを入手する"
       ],
       "Get Pass Business": [
         "Business Passを入手する"
@@ -1201,9 +1210,6 @@
       "Wrong second password": [
         "セカンドパスワードが正しくありません"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "現在オフラインです。 ${ PASS_SHORT_APP_NAME }のロックを解除するためにネットワークに接続してください。"
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }を起動する際にブラウザの問題が生じています。"
       ],
@@ -1713,9 +1719,6 @@
       "Internet connection lost": [
         "インターネット接続が切断されました"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "インターネット接続が失われました。デバイスの接続を確認してください。"
-      ],
       "Invitation sent": [
         "招待状の送信"
       ],
@@ -1829,6 +1832,9 @@
       ],
       "No login found": [
         "ログインが見つかりません"
+      ],
+      "No network connection": [
+        "ネットワーク接続がありません"
       ],
       "None": [
         "なし"
@@ -2940,6 +2946,9 @@
       ],
       "Language": [
         "言語"
+      ],
+      "Larger window": [
+        "より大きなウィンドウ"
       ],
       "Last 2 weeks": [
         "過去 2 週間"

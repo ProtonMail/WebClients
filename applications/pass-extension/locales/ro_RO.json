@@ -1220,9 +1220,6 @@
       "Wrong second password": [
         "Parola secundară nu este corectă."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Nu aveți conexiune. Reconectați-vă pentru a debloca ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Navigatorul web întâmpină dificultăți la activarea ${ PASS_APP_NAME }."
       ],
@@ -1768,9 +1765,6 @@
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
-      ],
       "Invitation sent": [
         "Invitația a fost trimisă."
       ],
@@ -1888,6 +1882,9 @@
       ],
       "No login found": [
         "Nu există date de autentificare."
+      ],
+      "No network connection": [
+        "Nu există conexiune la rețea."
       ],
       "None": [
         "Fără"

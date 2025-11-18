@@ -50,6 +50,9 @@
       "Add": [
         "დამატება"
       ],
+      "Add a date": [
+        "თარიღის დამატება"
+      ],
       "Add account": [
         "ანგარიშის დამატება"
       ],
@@ -171,6 +174,9 @@
       "Close navigation": [
         "ნავიგაციის დახურვა"
       ],
+      "Close sidebar": [
+        "გვერდითი პანელის დახურვა"
+      ],
       "Close this banner": [
         "ამ ბანერის დახურვა"
       ],
@@ -221,6 +227,9 @@
       ],
       "Copy alias “${ name }”": [
         "ფსევდონიმის \"${ name }\" კოპირება"
+      ],
+      "Copy booking page link": [
+        "დაჯავშნის გვერდის ბმულის კოპირება"
       ],
       "Copy email address": [
         "ელფოსტის მისამართის კოპირება"
@@ -302,6 +311,9 @@
         "${ selectedCount } კონტაქტების ჯგუფის წაშლა",
         "${ selectedCount } კონტაქტების ჯგუფის წაშლა"
       ],
+      "Delete booking page": [
+        "დაჯავშნის გვერდის წაშლა"
+      ],
       "Delete contact": [
         "კონტაქტის წაშლა"
       ],
@@ -340,6 +352,9 @@
       ],
       "Edit": [
         "ჩასწორება"
+      ],
+      "Edit booking page": [
+        "დაჯავშნის გვერდის ჩასწორება"
       ],
       "Edit email address": [
         "ელ-ფოსტის მისამართის ჩასწორება"
@@ -421,6 +436,9 @@
       ],
       "Go to settings": [
         "მორგებაზე გადასვლა"
+      ],
+      "Go to the next available appointment": [
+        "გადასვლა შემდეგ ხელმისაწვდომ შეხვედრაზე"
       ],
       "Got it": [
         "გავიგე"
@@ -742,6 +760,15 @@
       ],
       "See plan features": [
         "ტარიფის თვისებების ნახვა"
+      ],
+      "See previous availability": [
+        "წინა ხელმისაწვდომობის ნახვა"
+      ],
+      "See upcoming availability": [
+        "მომავალი ხელმისაწვდომობის ნახვა"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "${ dateHeaderLongString }-ის არჩევა ${ timeString }-ზე"
       ],
       "Select ${ planOrAppName }": [
         "აირჩიეთ ${ planOrAppName }"
@@ -1519,6 +1546,9 @@
       "Application problem": [
         "აპლიკაციის პრობლემა"
       ],
+      "Authenticator problem": [
+        "ავთენტიკატორის პრობლემა"
+      ],
       "Black Friday": [
         "შავი პარასკევი"
       ],
@@ -1922,6 +1952,9 @@
     "collider_2025: Info": {
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
+      ],
+      "Advanced account and network security in one plan": [
+        "დამატებითი ანგარიშისა და ქსელის უსაფრთხოება ერთ სატარიფო გეგმაში"
       ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
@@ -3995,6 +4028,9 @@
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით"
       ],
+      "You cannot enter the organizer email": [
+        "ორგანიზატორის ელფოსტას ვერ შეიყვანთ"
+      ],
       "You have reached the maximum number of calendars.": [
         "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას."
       ],
@@ -4015,6 +4051,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "შედით Gmail-ის მისამართით, რომელიც უკვეა გადამისამართებული ${ MAIL_APP_NAME }-ზე"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
       ]
@@ -4556,8 +4595,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "თქვენი საკონტაქტო ინფორმაცია"
+      "Confirm your booking": [
+        "დაადასტურეთ თქვენი ჯავშანი"
       ]
     },
     "Google Meet": {
@@ -5027,6 +5066,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } შეიცავს ${ BRAND_NAME } Scribe წერის დამხმარეს"
       ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME }-ის ვიდეოზარი"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } სამუდამო გეგმას განახლების ფასი არ გააჩნია. ის ერთჯერადი გადასახადია და ${ PASS_SHORT_APP_NAME }-თან სამუდამო წვდომას მოგცემთ."
       ],
@@ -5187,6 +5229,12 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "ამ ბმულის მქონე ნებისმიერ ადამიანს შეუძლია, ნახოს თქვენს კალენდარში გცალიათ, თუ არა. ისინი მოვლენის სათაურს, მდებარეობას და მონაწილეებს ვერ ნახავენ."
       ],
+      "Appointment duration": [
+        "შეხვედრის ხანგრძლივობა"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ ამ ჯავშნის გვერდის წაშლა?"
+      ],
       "Are you sure you want to discard your import?": [
         "გნებავთ თქვენი შემოტანის გაუქმება?"
       ],
@@ -5220,6 +5268,9 @@
       "Booking overlaps with an existing booking.": [
         "დაჯავშნა კონფლიქტშია არსებულ ჯავშანთან."
       ],
+      "Booking page deleted": [
+        "დაჯავშნის გვერდი წაიშალა"
+      ],
       "Booking page example": [
         "ჯავშნის გვერდის მაგალითი"
       ],
@@ -5243,6 +5294,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "ვერ პოულობთ მოვლენებს, რომლებსაც ეძებთ? ზოგიერთი მოვლენა დამალულ კალენდრებში ემთხვევა თქვენს მოთხოვნას. ამ შედეგების სანახავად ჩართეთ მათი ხილვადობა ${ hiddenWithItemsCalendarList }-სთვის."
+      ],
+      "Cannot create booking range across days": [
+        "დაჯავშნის შექმნა, რომელიც რამდენიმე დღე გრძელდება, შეუძლებელია"
+      ],
+      "Cannot create booking range in the past": [
+        "დაჯავშნის წარსულში შექმნა შეუძლებელია"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "ვერ იხსენებთ პაროლს? ჩვენ შეგვიძლია, მოგაშოროთ ამ გასაღებით დაშიფრული ყველა მონაცემი და, ამავე დროს, გაფრთხილებაც მოგაშოროთ."
@@ -5482,6 +5539,9 @@
       "High Priority": [
         "მაღალი პრიორიტეტი"
       ],
+      "Host": [
+        "ჰოსტი"
+      ],
       "How long should an appointment last?": [
         "რამდენ ხანს უნდა გაგრძელდეს შეხვედრა?"
       ],
@@ -5609,11 +5669,17 @@
       "Loading events": [
         "მოვლენების ჩატვირთვა"
       ],
+      "Location": [
+        "მდებარეობა"
+      ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
       "Manage your calendars": [
         "კალენდრების მართვა"
+      ],
+      "Manange booking page": [
+        "დაჯავშნის გვერდის მართვა"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
@@ -5636,14 +5702,14 @@
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
       ],
-      "Name your booking page": [
-        "დაარქვით სახელი თქვენი დაჯავშნის გვერდს"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
       ],
       "New": [
         "ახალი"
+      ],
+      "No appointments available this week": [
+        "ამ კვირაში შეხვედრები ხელმისაწვდომი არაა"
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
@@ -5784,14 +5850,23 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "მოითმინეთ, მიმდინარეობს არააქტიური გასაღებით დაშიფრული მონაცემების ძებნა."
       ],
+      "Powered by ${ protonButton }": [
+        "დაფუძნებულია ${ protonButton }-ის შემდეგ"
+      ],
       "Previous modifications on this series will be lost.": [
         "ამ სერიის წინა მოდიფიკაციები დაიკარგება."
+      ],
+      "Previously booked events won't be deleted.": [
+        "უკვე დაჯავშნილი მოვლენები არ წაიშლება."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
       ],
       "Primary": [
         "ძირითადი"
+      ],
+      "Privacy by default": [
+        "ნაგულისხმევი კონფიდენციალობა"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
@@ -6052,6 +6127,9 @@
       ],
       "Week and month views only apply to desktop.": [
         "კვირეული და თვიური ხედები, მხოლოდ, სამაგიდო კომპიუტერებზე ჩანს."
+      ],
+      "What do you want to call this booking page?": [
+        "რა გნებავთ, ამ დაჯავშნის გვერდს დაარქვათ?"
       ],
       "What should people know before booking?": [
         "რა უნდა იცოდეს ხალხმა შეხვედრის შესახებ?"
@@ -6702,6 +6780,9 @@
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
       ],
+      "Full name": [
+        "სრული სახელი"
+      ],
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
@@ -7005,8 +7086,14 @@
       "End time of the booking range": [
         "დაჯავშნის შუალედის დასრულების დრო"
       ],
+      "How long should an appointment last?": [
+        "რამდენ ხანს უნდა გაგრძელდეს შეხვედრა?"
+      ],
       "Start time of the booking range": [
         "დაჯავშნის შუალედის დასაწყისის დრო"
+      ],
+      "What should people know before booking?": [
+        "რა უნდა იცოდეს ხალხმა შეხვედრის შესახებ?"
       ]
     },
     "Label for contact group color": {
@@ -7073,6 +7160,9 @@
     "Link": {
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
+      ],
+      "Booking pages": [
+        "დაჯავშნის გვერდები"
       ],
       "Calendars": [
         "კალენდრები"
@@ -7778,6 +7868,9 @@
       "End-to-end encryption": [
         "გამჭოლი შიფრაცია"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "არსებული ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-ის უპირატესობები"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "სწრაფი გადმოწერა P2P/BitTorrent-ით"
       ],
@@ -7995,6 +8088,10 @@
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან",
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -9154,6 +9251,20 @@
         "თქვენს ბალანსზე კრედიტები დაგემატებათ"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle }-ის შენარჩუნება"
+      ],
+      "Yes, I'm sure": [
+        "დიახ, დარწმუნებული ვარ"
+      ],
+      "Your plan includes this feature already.": [
+        "თქვენი სატარიფო გეგმა ამ ფუნქციას უკვე შეიცავს."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -9274,14 +9385,14 @@
       "Anytown": [
         "თბილისი"
       ],
-      "Booking page title": [
-        "ჯავშნის გვერდის სათაური"
-      ],
       "Company name": [
         "კომპანიის სახელი"
       ],
       "E.g., ": [
         "მაგ. "
+      ],
+      "Email for booking confirmation": [
+        "ელფოსტა ჯავშნის დადასტურებისთვის"
       ],
       "Enter passphrase": [
         "შეიყვანეთ საკვანძო ფრაზა"
@@ -9318,6 +9429,9 @@
       ],
       "Name": [
         "სახელი"
+      ],
+      "Name of attendee": [
+        "დამსწრის სახელი"
       ],
       "Name or email address": [
         "სახელი ან ელფოსტის მისამართი"
@@ -11085,6 +11199,9 @@
       "Apply gift code": [
         "სასაჩუქრე კოდის გადატარება"
       ],
+      "Appointment details": [
+        "შეხვედრის დეტალები"
+      ],
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
       ],
@@ -11120,6 +11237,9 @@
       ],
       "Change password": [
         "პაროლის შეცვლა"
+      ],
+      "Choose a time": [
+        "დროის არჩევა"
       ],
       "Choose how many times this event will repeat": [
         "აირჩიეთ, ეს მოვლენა რამდენჯერ გამეორდება"
@@ -11206,6 +11326,9 @@
       ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
+      ],
+      "Delete booking page?": [
+        "წავშალო დაჯავშნის გვერდი?"
       ],
       "Delete event": [
         "მოვლენის წაშლა"

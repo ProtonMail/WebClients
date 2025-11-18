@@ -1709,6 +1709,9 @@
       "Application problem": [
         "Applikationsproblem"
       ],
+      "Authenticator problem": [
+        "Autentificeringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1789,8 +1792,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Tilføj brugere manuelt"
+      ],
       "Close": [
         "Luk"
+      ],
+      "Configure your network": [
+        "Konfigurer dit netværk"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
@@ -1810,17 +1819,29 @@
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
       ],
+      "Invite your team": [
+        "Inviter dit team"
+      ],
+      "Manage global VPN permissions": [
+        "Administrer globale VPN-tilladelser"
+      ],
       "Maybe later": [
         "Måske senere"
       ],
       "Remind me later": [
         "Påmind mig senere"
       ],
+      "Secure your organization": [
+        "Sikr din organisation"
+      ],
       "Send": [
         "Send"
       ],
       "Set up other features": [
         "Konfigurer andre funktioner"
+      ],
+      "Set up SSO": [
+        "Konfigurer SSO"
       ],
       "Take a tour": [
         "Tag en tour"
@@ -1946,6 +1967,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tilføj ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avanceret konto- og netværkssikkerhed i ét abonnement"
       ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
@@ -3073,8 +3097,17 @@
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Opret en gateway for at give dine brugere adgang til dine IT-ressourcer via dedikerede servere."
+      ],
       "Create groups you can email with a single address.": [
         "Opret grupper, som du kan sende e-mails til med én enkelt adresse."
+      ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Opret nye brugerkonti eller importér brugere med SSO (single sign-on) SCIM-provisionering."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Bestem, hvilke brugere der kan forbinde til hver af vores 120+ delte serverplaceringer."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Tilgå nemt din e-mail og kalender på desktop og mobil."
@@ -3105,6 +3138,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjælp dit team med sikkert at lagre adgangskoder til følsomme forretnings- og klientoplysninger."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Hvis du ikke allerede har gjort det, aktivér da nogle gendannelsesmetoder for at sikre, at du aldrig mister adgangen til ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
@@ -4019,6 +4055,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Log venligst ind med en Gmail-adresse, der allerede videresender til ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Log ind med den samme Gmail-adresse, som du oprindeligt har forbundet."
       ]
@@ -4569,8 +4608,8 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } enheder"
+      "@pm.me address": [
+        "@pm.me-adresse"
       ],
       "Ad-blocker and malware protection": [
         "Annonceblokering og beskyttelse mod malware"
@@ -6046,6 +6085,9 @@
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
       ],
+      "Get started": [
+        "Kom i gang"
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
       ],
@@ -6424,6 +6466,10 @@
         "eller tildel til et hvilket som helst land om ${ availableAgainAfterDays } dag",
         "eller tildel til et hvilket som helst land om ${ availableAgainAfterDays } dage"
       ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "eller tildel til et hvilket som helst land i ${ availableAgainAfterHours } time",
+        "eller tildel til et hvilket som helst land i ${ availableAgainAfterHours } timer"
+      ],
       "or discover other features:": [
         "eller opdag andre funktioner:"
       ],
@@ -6665,6 +6711,9 @@
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
+      ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Konfigurer din organisation, og begynd at beskytte dine data i nogle få nemme trin."
       ],
       "Setting up ${ feature }…": [
         "Konfigurerer ${ feature }…"
@@ -7251,6 +7300,10 @@
       "You have ${ availableCount } new server available.": [
         "Du har ${ availableCount } ny server tilgængelig.",
         "Du har ${ availableCount } nye servere tilgængelig."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Du har ${ unassignedAvailableCount } nyligt anvendt server til rådighed. For at tildele denne server til et andet land skal du vente, indtil deaktiveringen er afsluttet.",
+        "Du har ${ unassignedAvailableCount } nyligt anvendte servere til rådighed. For at tildele disse servere til et andet land skal du vente, indtil deaktiveringen er afsluttet."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
@@ -9108,6 +9161,9 @@
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } fordele"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hurtige P2P/BitTorrent-downloads"
       ],
@@ -9319,6 +9375,10 @@
       ],
       "User storage management": [
         "Pladshåndtering for bruger"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling af boks med op til ${ n } person",
+        "Deling af boks med op til ${ n } personer"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
@@ -10720,6 +10780,23 @@
         "Kreditter vil blive tilføjet til din saldo"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på, at du vil fortsætte?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du vælger at ændre dit ${ planTitle }-abonnement, kan du miste adgang til visse funktioner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Dit abonnement inkluderer allerede denne funktion."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -12038,9 +12115,17 @@
         "${ n } bruger frakoblet SSO",
         "${ n } brugere frakoblet SSO"
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } bruger er blevet tilføjet til din organisation via din identitetsudbyder. Gennemgå kontoen nu:",
+        "${ n } brugere er blevet tilføjet til din organisation via din identitetsudbyder. Gennemgå deres konti nu:"
+      ],
       "${ n } user is inactive. You can safely remove this user from your organization.": [
         "${ n } bruger er inaktiv. Du kan trygt fjerne denne bruger fra din organisation.",
         "${ n } brugere er inaktive. Du kan trygt fjerne disse brugere fra din organisation."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } bruger beder om din hjælp til at logge ind på sin ${ BRAND_NAME }-konto med single sign-on.",
+        "${ n } brugere beder om din hjælp til at logge ind på deres ${ BRAND_NAME }-konto med single sign-on."
       ],
       "Access denied": [
         "Adgang nægtet"
@@ -13142,6 +13227,14 @@
       "${ feature } is now active": [
         "${ feature } er nu aktiv"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } ven inviteret",
+        "${ friendsInvited } venner inviteret"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } ven har abonneret",
+        "${ friendsSubscribed } venner har abonneret"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } klienter"
       ],
@@ -13484,6 +13577,9 @@
       "Discard changes?": [
         "Kassér ændringer?"
       ],
+      "Dismiss setup checklist": [
+        "Afvis konfigurationstjekliste"
+      ],
       "Domain names": [
         "Domænenavne"
       ],
@@ -13601,6 +13697,9 @@
       ],
       "Get more from your VPN": [
         "Få mere ud af deres VPN"
+      ],
+      "Get started": [
+        "Kom i gang"
       ],
       "Get the apps": [
         "Hent appsene"

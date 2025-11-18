@@ -1148,6 +1148,9 @@
       "Secure link could not be opened.": [
         "Le lien sécurisé n'a pas pu être ouvert."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Les serveurs sont inaccessibles. Veuillez essayer de déverrouiller ${ PASS_SHORT_APP_NAME } dans quelques minutes."
+      ],
       "Settings update failed": [
         "La mise à jour des paramètres n'a pas abouti."
       ],
@@ -1235,7 +1238,7 @@
       "Wrong second password": [
         "Le second mot de passe du compte n'est pas correct."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Vous êtes hors ligne. Veuillez vous reconnecter afin de débloquer ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
@@ -1757,9 +1760,6 @@
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "La connexion internet est perdue. Vérifiez que votre appareil est bien connecté."
-      ],
       "Invitation sent": [
         "L'invitation a été envoyée."
       ],
@@ -1866,6 +1866,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2158,6 +2162,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Les éléments sélectionnés ont été restaurés depuis la corbeille."
+      ],
+      "Servers are unreachable": [
+        "Les serveurs sont inaccessibles."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."

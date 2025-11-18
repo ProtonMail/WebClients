@@ -1186,9 +1186,6 @@
       "Wrong second password": [
         "არასწორი მეორე პაროლი"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "ახლა ქსელის გარეშე მუშაობთ. აღადგინეთ მიერთება, რომ ${ PASS_SHORT_APP_NAME } განბლოკოთ."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "თქვენს ბრაუზერს ${ PASS_APP_NAME }-ის აქტივაციის პრობლემები აქვს."
       ],
@@ -1710,9 +1707,6 @@
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "ინტერნეტთან კავშირის პრობლემა. შეამოწმეთ თქვენი მოწყობილობა."
-      ],
       "Invitation sent": [
         "მოსაწვევი გაგზავნილია"
       ],
@@ -1825,6 +1819,9 @@
       ],
       "No login found": [
         "შესვლის პარამეტრები აღმოჩენილი არაა"
+      ],
+      "No network connection": [
+        "ქსელთან კავშირი არ არის"
       ],
       "None": [
         "არცერთი"

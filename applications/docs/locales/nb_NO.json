@@ -90,9 +90,6 @@
       "Apply": [
         "Anvend"
       ],
-      "Ask me next time": [
-        "Spør meg neste gang"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "På det meste ${ maxContacts } kontakt er tillatt per kontaktgruppe.",
         "På det meste ${ maxContacts } kontakter er tillatt per kontaktgruppe."
@@ -656,9 +653,6 @@
       ],
       "Save changes": [
         "Lagre endringer"
-      ],
-      "Save preferences": [
-        "Lagre preferanser"
       ],
       "Search": [
         "Søk"
@@ -1301,6 +1295,9 @@
       "Application problem": [
         "Applikasjonsproblem"
       ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1488,6 +1485,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Avansert konto- og nettverkssikkerhet i én plan"
+      ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
       ]
@@ -3279,6 +3279,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Logg på med en Gmail-adresse som allerede videresender til ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
       ]
@@ -4399,9 +4402,6 @@
       "Continue": [
         "Fortsett"
       ],
-      "Converting document...": [
-        "Konverterer dokument..."
-      ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
       ],
@@ -4444,9 +4444,6 @@
       ],
       "Creating link to folder": [
         "Oppretter kobling til mappe"
-      ],
-      "Creating new document...": [
-        "Oppretter nytt dokument..."
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -4541,12 +4538,6 @@
       "Enter your own password (as trusted contact).": [
         "Skriv inn ditt eget passord (som betrodd kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Feil ved konvertering av dokument: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Feil ved lasting av dokument: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Feil ved synkronisering"
       ],
@@ -4606,12 +4597,6 @@
       ],
       "Geoblocking": [
         "Geoblokkering"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Få e-postoppdateringer for kommentarer og forslag som er lagt til i dokumentene dine."
-      ],
-      "Get Notified About Comments": [
-        "Bli varslet om kommentarer"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
@@ -4749,9 +4734,6 @@
       "Low Priority": [
         "Lav prioritet"
       ],
-      "Making a copy...": [
-        "Lager en kopi…"
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maksimum ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
@@ -4782,9 +4764,6 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Ingen dokument oppgitt i nettadressen. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
       ],
       "No email address": [
         "Ingen e-postadresse"
@@ -4918,6 +4897,12 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Offentlige dokumenter er ikke aktivert for organisasjonen enda."
+      ],
+      "Recent documents": [
+        "Nylige dokumenter"
+      ],
+      "Recent spreadsheets": [
+        "Nylige regneark"
       ],
       "Recents": [
         "Nylige"
@@ -5063,9 +5048,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
       ],
       "There are no documents in the trash.": [
         "Det er ingen dokumenter i papirkurven."
@@ -5672,9 +5654,6 @@
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
-      "Enable email notifications": [
-        "Aktiver e-postvarsler"
-      ],
       "Encrypt emails": [
         "Krypter e-poster"
       ],
@@ -5722,9 +5701,6 @@
       ],
       "Include application logs in bug report": [
         "Inkluder applikasjonslogger i feilrapport"
-      ],
-      "Include document name in notification": [
-        "Inkluder dokumentnavn i varsel"
       ],
       "Include message and file name in invite email": [
         "Inkluder melding og filnavn i invitasjons-e-post"
@@ -6727,6 +6703,9 @@
       "End-to-end encryption": [
         "Ende-til-ende-kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende fordeler med ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Raske P2P/BitTorrent-nedlastinger"
       ],
@@ -6944,6 +6923,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling av hvelv med opptil ${ n } person",
+        "Deling av hvelv med opptil ${ n } personer"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -8555,9 +8538,6 @@
       ],
       "Replace data at selected cell": [
         "Erstatt data i valgt celle"
-      ],
-      "Select a CSV or TSV file to import": [
-        "Velg en CSV - eller TSV-fil som skal importeres"
       ]
     },
     "sheets_2025:Label": {

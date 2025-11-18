@@ -437,6 +437,9 @@
       "Go to settings": [
         "Vai alle impostazioni"
       ],
+      "Go to the next available appointment": [
+        "Vai al prossimo appuntamento disponibile"
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -757,6 +760,9 @@
       ],
       "See plan features": [
         "Visualizza le caratteristiche del piano"
+      ],
+      "See upcoming availability": [
+        "Visualizza la prossima disponibilità"
       ],
       "Select ${ planOrAppName }": [
         "Seleziona ${ planOrAppName }"
@@ -1548,6 +1554,9 @@
       ],
       "Application problem": [
         "Problema con l'applicazione"
+      ],
+      "Authenticator problem": [
+        "Problema con l'autenticatore"
       ],
       "Black Friday": [
         "Black Friday"
@@ -4077,6 +4086,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Accedi con un indirizzo Gmail che già inoltra a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Accedi con lo stesso indirizzo email che hai usato originariamente"
       ]
@@ -4618,11 +4630,6 @@
       ],
       "Very small": [
         "Molto piccolo"
-      ]
-    },
-    "Form": {
-      "Your contact info": [
-        "Le tue informazioni di contatto"
       ]
     },
     "Google Meet": {
@@ -5764,14 +5771,14 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La maggior parte delle reti WiFi pubbliche sono sicure, ma alcune sono carenti di sicurezza, esponendoti a minacce informatiche. Una VPN crittografa il tuo traffico, mantenendoti protetto."
       ],
-      "Name your booking page": [
-        "Dai un nome alla tua pagina di prenotazione"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
       "New": [
         "Nuovo"
+      ],
+      "No appointments available this week": [
+        "Nessun appuntamento disponibile questa settimana"
       ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
@@ -5857,6 +5864,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Le persone che prenotano un appuntamento con te vedranno ${ selectedCalendar.Email } come tuo indirizzo di contatto."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline è compatibile solo con il formato Testo semplice."
       ],
@@ -5917,6 +5927,9 @@
       ],
       "Previous modifications on this series will be lost.": [
         "Le modifiche precedenti di questa serie andranno perse."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Gli eventi prenotati in precedenza non saranno eliminati."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
@@ -5981,9 +5994,6 @@
       ],
       "Setting up your new address…": [
         "Configurazione del tuo nuovo indirizzo…"
-      ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Condividi questa pagina per permettere ad altri di prenotare un orario nel tuo calendario. Puoi gestirlo in qualsiasi momento nella barra laterale, sotto Pagine di prenotazione."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
@@ -6344,9 +6354,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Hai precedentemente rifiutato quest'invito. Chiedi al proprietario un nuovo invito"
-      ],
-      "You will loose all unsaved changes.": [
-        "Perderai tutte le modifiche non salvate."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderai l'accesso alle funzionalità del piano ${ planTitle } a partire da questa data."
@@ -7181,6 +7188,9 @@
       "End time of the booking range": [
         "Ora di fine dell'intervallo di prenotazione"
       ],
+      "How long should an appointment last?": [
+        "Quanto dovrebbe durare un appuntamento?"
+      ],
       "Start time of the booking range": [
         "Ora di inizio dell'intervallo di prenotazione"
       ]
@@ -7249,6 +7259,9 @@
     "Link": {
       "Add a gift code": [
         "Aggiungi un codice regalo"
+      ],
+      "Booking pages": [
+        "Pagine di prenotazione"
       ],
       "Calendars": [
         "Calendari"
@@ -8182,7 +8195,7 @@
         "Condivisione delle casseforti (fino a ${ n } persone)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Condivisione delle casseforti (fino a ${ n } persona",
+        "Condivisione delle casseforti fino a ${ n } persona",
         "Condivisione delle casseforti fino a ${ n } persone"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
@@ -9514,9 +9527,6 @@
       ],
       "Anytown": [
         "Roma"
-      ],
-      "Booking page title": [
-        "Titolo della pagina di prenotazione"
       ],
       "Company name": [
         "Nome dell'azienda"

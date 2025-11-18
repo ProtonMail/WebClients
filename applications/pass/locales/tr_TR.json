@@ -1148,6 +1148,9 @@
       "Secure link could not be opened.": [
         "Güvenli bağlantı açılamadı."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra ${ PASS_SHORT_APP_NAME } kilidini açmayı deneyin."
+      ],
       "Settings update failed": [
         "Ayarlar güncellenemedi"
       ],
@@ -1235,8 +1238,8 @@
       "Wrong second password": [
         "İkinci parola yanlış"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Şu anda çevrim dışısınız. ${ PASS_SHORT_APP_NAME } kilidini açmak için lütfen yeniden bağlanın."
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Şu anda çevrim dışısınız. ${ PASS_SHORT_APP_NAME } kilidini açmak için lütfen yeniden bağlantı kurun."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS ayarlarınız doğru yapılmamış. Bulduğumuz MX kaydı:"
@@ -1757,9 +1760,6 @@
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "İnternet bağlantısı kesildi. Lütfen aygıtınızın bağlantısını denetleyin."
-      ],
       "Invitation sent": [
         "Davet gönderildi"
       ],
@@ -1866,6 +1866,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2158,6 +2162,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Seçilmiş ögeler çöpten çıkarıldı"
+      ],
+      "Servers are unreachable": [
+        "Sunuculara erişilemiyor"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"

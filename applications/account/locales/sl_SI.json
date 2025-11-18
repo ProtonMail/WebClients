@@ -5948,9 +5948,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } naprav"
-      ],
       "Ad-blocker and malware protection": [
         "Prepoved oglasov in zaščita pred zlonamerno programsko opremo"
       ],
@@ -7267,12 +7264,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Dostopajte do svojih gesel in zaščitite svoje spletne identitete na vseh svojih napravah. Prenesite in namestite ustrezne ${ PASS_APP_NAME } aplikacije in dodatke."
       ],
-      "account recovery and data recovery method": [
-        "način za obnovitev računa in podatkov"
-      ],
-      "account recovery method": [
-        "način za obnovitev računa"
-      ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
       ],
@@ -7288,14 +7279,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodajte e-poštni naslov @pm.me v svoj račun. Ta preprost, krajši domenski naslov pomeni \"Pošlji mi ${ MAIL_APP_NAME } ali zasebno sporočilo\"."
       ],
-      "Add a recovery email address": [
-        "Dodajte e-poštni naslov za obnovitev."
-      ],
       "add a recovery method": [
         "dodajte način obnovitve"
-      ],
-      "Add a recovery phone number": [
-        "Dodajte telefonsko številko za obnovitev."
       ],
       "Add domain": [
         "Dodaj domeno"
@@ -7386,12 +7371,6 @@
       ],
       "Allocated": [
         "Dodeljeno"
-      ],
-      "Allow recovery by email": [
-        "Omogoči obnovitev preko e-pošte."
-      ],
-      "Allow recovery by phone": [
-        "Omogoči obnovitev po telefonu."
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Uporabnikom omogočite, da se povežejo z varnimi, deljenimi strežniki iz razdelka **Države** v aplikaciji ${ VPN_APP_NAME }."
@@ -7803,9 +7782,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Prenesite našo predlogo CSV, izpolnite podrobnosti uporabnikov in nato naložite dokončano CSV datoteko, da ustvarite račune za te uporabnike."
-      ],
-      "Download recovery file": [
-        "Prenesite datoteko za obnovitev"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Prenesite svojo najljubšo aplikacijo in uživajte v svoji zasebnosti povsod."
@@ -8224,9 +8200,6 @@
       "It appears some of your data is encrypted and locked.": [
         "Zdi se, da je nekaj vaših podatkov šifriranih in zaklenjenih."
       ],
-      "it’s imperative": [
-        "je nujno"
-      ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Uporabljam @ProtonMail in pomislil sem, da vam bo morda všeč. To je e-poštna storitev, ki varuje vašo zasebnost. Prijavite se prek te povezave in za en mesec dobite brezplačne premijske funkcije: ${ referrerLink }"
       ],
@@ -8377,17 +8350,11 @@
       "No account keys exist": [
         "Ne obstajajo ključi računa."
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Način za obnovitev računa ni nastavljen, zato tvegate izgubo dostopa do vašega računa."
-      ],
       "No action selected": [
         "Izbrano ni nobeno dejanje"
       ],
       "No addresses exist": [
         "Naslovi ne obstajajo"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Način za obnovitev podatkov ni nastavljen, zato tvegate izgubo dostopa do vaših podatkov."
       ],
       "No folder selected": [
         "Mapa ni izbrana"
@@ -8478,15 +8445,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Naša opozorila dajejo prednost varnosti. Če ne prepoznate nobenih informacij o vdorih, lahko to poročilo varno prezrete."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Zastarela datoteka za obnovitev. Posodobite jo, da si zagotovite dostop do vaših podatkov."
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Zastareli načini obnovitve. Posodobite jih, da si zagotovite dostop do vaših podatkov."
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Obnovitvena fraza je zastarela. Posodobite jo, da si zagotovite dostop do vaših podatkov."
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Več kot 100 milijonov ljudi in podjetij se je odločilo za ${ BRAND_NAME }."
@@ -8772,9 +8730,6 @@
       ],
       "Set password": [
         "Nastavi geslo"
-      ],
-      "Set recovery phrase": [
-        "Nastavi obnovitveno frazo"
       ],
       "Set up forwarding": [
         "Nastavi posredovanje pošte"
@@ -9103,9 +9058,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Za dešifriranje in ogled zaklenjenih podatkov po ponastavitvi gesla izberite način obnovitve."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Nastavite način obnovitve računa in si tako zagotovite neprekinjen dostop do vašega računa."
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Da bi zagotovili, da ne izgubite pomembnih podatkov, ${ DRIVE_APP_NAME } shranjuje starejše različice datotek, medtem ko vi in vaši sodelavci opravljate spremembe. Izberite, kako dolgo naj ${ BRAND_NAME } ohrani prejšnje različice."
       ],
@@ -9193,12 +9145,6 @@
       "Unverified email address.": [
         "Nepotrjen e-poštni naslov."
       ],
-      "Update recovery file": [
-        "Posodobite datoteko za obnovitev"
-      ],
-      "Update recovery phrase": [
-        "Posodobi obnovitveno frazo"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
       ],
@@ -9273,12 +9219,6 @@
       ],
       "Verify domain": [
         "Potrdi domeno"
-      ],
-      "Verify email address": [
-        "Preveri e-poštni naslov"
-      ],
-      "Verify phone number": [
-        "Preveri telefonsko številko"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Potrdite svojo identiteto s časovno omejenim enkratnim geslom iz aplikacije za preverjanje pristnosti."
@@ -9631,17 +9571,11 @@
       "Your account has been successfully updated": [
         "Vaš račun je bil uspešno posodobljen."
       ],
-      "Your account recovery method is set": [
-        "Vaš način obnovitve računa je nastavljen."
-      ],
       "Your account was successfully updated with this promotion": [
         "Vaš račun je bil uspešno posodobljen s to promocijo"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
-      ],
-      "Your data recovery method is set": [
-        "Vaš način obnovitve računa je nastavljen."
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
@@ -11680,9 +11614,6 @@
       ],
       "What’s this?": [
         "Kaj je to?"
-      ],
-      "Why set recovery methods?": [
-        "Zakaj nastaviti načine obnovitve?"
       ]
     },
     "Link label (optional)": {
@@ -18902,9 +18833,6 @@
       "Switch to two-password mode": [
         "Preklopite na dvojno geslo"
       ],
-      "Take precautions to avoid data loss!": [
-        "Sprejmite previdnostne ukrepe, da se izognete izgubi podatkov!"
-      ],
       "Text": [
         "Besedilo"
       ],
@@ -19057,9 +18985,6 @@
       ],
       "Your plan": [
         "Vaš paket"
-      ],
-      "Your recovery status": [
-        "Vaše stanje obnovitve"
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"

@@ -1148,6 +1148,9 @@
       "Secure link could not be opened.": [
         "Fehler beim Öffnen des sicheren Links."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Die Server sind unerreichbar. Bitte versuche, ${ PASS_SHORT_APP_NAME } in ein paar Minuten zu entsperren."
+      ],
       "Settings update failed": [
         "Fehler beim Aktualisieren der Einstellungen."
       ],
@@ -1235,8 +1238,8 @@
       "Wrong second password": [
         "Falsches zusätzliches Passwort"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Du bist offline. Bitte stelle die Verbindung wieder her, um ${ PASS_SHORT_APP_NAME } zu entsperren."
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du bist momentan offline. Bitte stelle die Verbindung wieder her, um ${ PASS_SHORT_APP_NAME } zu entsperren."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Dein DNS ist nicht korrekt eingestellt. Der MX-Eintrag, den wir erhalten, lautet:"
@@ -1757,9 +1760,6 @@
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung unterbrochen. Bitte überprüfe die Verbindung deines Geräts."
-      ],
       "Invitation sent": [
         "Einladung gesendet"
       ],
@@ -1866,6 +1866,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2158,6 +2162,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Ausgewählte Einträge erfolgreich vom Papierkorb wiederhergestellt"
+      ],
+      "Servers are unreachable": [
+        "Server sind nicht erreichbar"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"

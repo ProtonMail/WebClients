@@ -6558,9 +6558,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } eszköz"
-      ],
       "Ad-blocker and malware protection": [
         "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
@@ -7924,12 +7921,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Férjen hozzá jelszavaihoz és védje online személyazonosságait zökkenőmentesen az eszközein. Töltse le és telepítse a releváns ${ PASS_APP_NAME } alkalmazásokat és bővítményeket."
       ],
-      "account recovery and data recovery method": [
-        "fiók helyreállítási és adat helyreállítási módszer"
-      ],
-      "account recovery method": [
-        "fiók helyreállítási módszer"
-      ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
@@ -7945,14 +7936,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
       ],
-      "Add a recovery email address": [
-        "Helyreállító e-mail cím hozzáadása"
-      ],
       "add a recovery method": [
         "adjon hozzá egy helyreállítási módszert"
-      ],
-      "Add a recovery phone number": [
-        "Helyreállítási telefonszám hozzáadása"
       ],
       "Add domain": [
         "Domain hozzáadása"
@@ -8035,12 +8020,6 @@
       ],
       "Allow logging of location and connection details": [
         "A hely és a kapcsolat részleteinek naplózásának engedélyezése"
-      ],
-      "Allow recovery by email": [
-        "Helyreállítás engedélyezése e-mail címmel"
-      ],
-      "Allow recovery by phone": [
-        "Helyreállítás engedélyezése telefonszámmal"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Lehetővé teszi a felhasználók számára, hogy a ${ VPN_APP_NAME } alkalmazás **országok** bármely részéből biztonságos megosztott szerverekhez csatlakozzanak."
@@ -8427,12 +8406,6 @@
       "Did you know?": [
         "Tudta?"
       ],
-      "Disable recovery by email address": [
-        "Az e-mail-cím alapján történő helyreállítás letiltása"
-      ],
-      "Disable recovery by phone number": [
-        "A helyreállítás letiltása telefonszám alapján"
-      ],
       "Disabled countries": [
         "Tiltott országok"
       ],
@@ -8502,9 +8475,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Töltse le a CSV sablonunkat, töltse ki a felhasználói adatokat, majd töltse fel a kész CSV fájlt a felhasználók fiókjának létrehozásához."
-      ],
-      "Download recovery file": [
-        "Helyreállító fájl letöltése"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
@@ -8845,12 +8815,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Ha van ajándék kódja, adja meg itt, a kedvezmény eléréséért."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Ha elveszíti a jelszavát és vissza kell állítania a fiókját, ${ boldImperative } hogy legyen ${ boldAccountRecovery } beállítva."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Ha elveszíti a jelszavát és vissza kell állítania a fiókját, ${ boldImperative } hogy legyen ${ boldAccountAndRecovery } beállítva, különben megeshet, hogy nem fogja tudni többé elérni az e-mailjeit, névjegyeit vagy fájljait."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ha elveszti a kétlépcsős hitelesítéshez használt eszközét, ezekkel a kódokkal jelentkezhet be fiókjába a 6 számjegyű kód helyett. Minden kód csak egyszer használható."
       ],
@@ -9035,9 +8999,6 @@
       ],
       "Item updated in vault": [
         "Elem frissítve a tárolóban"
-      ],
-      "it’s imperative": [
-        "feltétlenül szükséges"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Az @ProtonMailt használom és gondoltam, hogy neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, amely védi a magánéleted. Regisztrálj ezen a hivatkozáson, hogy 1 hónapig ingyen használhasd a prémium funkciókat is: ${ referrerLink }"
@@ -9225,9 +9186,6 @@
       "No account keys exist": [
         "Nincsenek kulcsok a fiókhoz"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Nincs beállítva fiók helyreállítási módszer; megvan a veszélye, hogy elveszti fiókja elérését"
-      ],
       "No action selected": [
         "Nincs kiválasztva művelet"
       ],
@@ -9236,9 +9194,6 @@
       ],
       "No countries enabled": [
         "Nincs ország engedélyezve"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Nincs beállítva adat helyreállítási módszer; megvan a veszélye, hogy elveszti adatai elérését"
       ],
       "No folder selected": [
         "Nincs kiválasztva mappa"
@@ -9349,15 +9304,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Elavult helyreállítási fájl; frissítse, hogy bizonyosan elérhesse adatait"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Elavult helyreállítási módszerek; frissítse, hogy bizonyosan elérhesse adatait"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Elavult helyreállítási jelmondat; frissítse, hogy bizonyosan elérhesse adatait"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Több mint százmillió ember és vállalkozás regisztrált a ${ BRAND_NAME } szolgáltatásaira."
@@ -9664,9 +9610,6 @@
       ],
       "Set password": [
         "Jelszó beállítása"
-      ],
-      "Set recovery phrase": [
-        "Helyreállító jelmondat beállítása"
       ],
       "Set up forwarding": [
         "Továbbítás beállítása"
@@ -10076,12 +10019,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "A jelszó visszaállítás után zárolt adatainak visszafejtéséhez és megjelenítéséhez, válasszon egy helyreállítási módszert."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "A fiók folyamatos elérhetőségének biztosításához, állítson be valamilyen helyreállítási módszert"
-      ],
-      "To ensure highest possible security of your account": [
-        "A fiókjának legmagasabb biztonsága érdekében"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "A fontos adatok elvesztésének elkerülése érdekében a ${ DRIVE_APP_NAME } elmenti fájljai régebbi változatait, miközben ön és munkatársai változtatnak rajtuk. Válassza ki, hogy a ${ BRAND_NAME } meddig tartsa meg a korábbi változatokat."
       ],
@@ -10175,12 +10112,6 @@
       "Unverified email address.": [
         "Hitelesítetlen e-mail cím"
       ],
-      "Update recovery file": [
-        "Helyreállító fájl frissítése"
-      ],
-      "Update recovery phrase": [
-        "Helyreállító jelmondat frissítése"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
       ],
@@ -10267,12 +10198,6 @@
       ],
       "Verify domain": [
         "Domain név ellenőrzése"
-      ],
-      "Verify email address": [
-        "E-mail cím megerősítése"
-      ],
-      "Verify phone number": [
-        "Telefonszám megerősítése"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Ellenőrizze személyazonosságát idő alapú, egyszer használatos jelszóval, egy azonosító alkalmazásból"
@@ -10693,17 +10618,11 @@
       "Your account has been successfully updated": [
         "A fiókja sikeresen frissítve"
       ],
-      "Your account recovery method is set": [
-        "Be van állítva a fiókja helyreállítási módszere"
-      ],
       "Your account was successfully updated with this promotion": [
         "A fiókja sikeresen frissítve az ajánlattal"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Az adatok a ${ BRAND_NAME } fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
-      ],
-      "Your data recovery method is set": [
-        "Be van állítva az adatok helyreállítási módszere"
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -12848,9 +12767,6 @@
       ],
       "What’s this?": [
         "Mi ez?"
-      ],
-      "Why set recovery methods?": [
-        "Miért állítson be helyreállítási módszereket?"
       ]
     },
     "Link label (optional)": {
@@ -20758,9 +20674,6 @@
       "Switch to two-password mode": [
         "Két jelszavas módra váltás"
       ],
-      "Take precautions to avoid data loss!": [
-        "Legyen figyelmes az adatvesztés elkerülése érdekében!"
-      ],
       "Text": [
         "Szöveg"
       ],
@@ -20934,9 +20847,6 @@
       ],
       "Your plan": [
         "Az ön csomagja"
-      ],
-      "Your recovery status": [
-        "A helyreállítási állapota"
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"

@@ -1239,9 +1239,6 @@
       "Wrong second password": [
         "副密码错误"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "您目前处于离线状态。请恢复连接以解锁 ${ PASS_SHORT_APP_NAME }。"
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "您的 DNS 设置不正确。我们获得的 MX 记录是："
       ],
@@ -1762,9 +1759,6 @@
       "Internet connection lost": [
         "网络连接已断开"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "网络连接中断，请检查系统网络情况。"
-      ],
       "Invitation sent": [
         "已发出邀请"
       ],
@@ -1872,9 +1866,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
