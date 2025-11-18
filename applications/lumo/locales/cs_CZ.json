@@ -788,6 +788,9 @@
       "Application problem": [
         "Problém s aplikací"
       ],
+      "Authenticator problem": [
+        "Problém s ověřovací aplikací"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1022,9 +1025,6 @@
       "Send message": [
         "Odeslat zprávu"
       ],
-      "settings": [
-        "nastavení"
-      ],
       "Show safety information": [
         "Zobrazit bezpečnostní informace"
       ],
@@ -1073,6 +1073,9 @@
       ],
       "Learn more": [
         "Více informací"
+      ],
+      "Maybe later": [
+        "Možná později"
       ],
       "Open Link": [
         "Otevřít odkaz"
@@ -2235,8 +2238,11 @@
       "Built by the team that knows privacy": [
         "Vytvořeno týmem, který rozumí soukromí"
       ],
-      "Dark mode and conversation personalization": [
-        "Tmavý režim a personalizace konverzací"
+      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
+        "Tmavý režim byl jednou z nejočekávanějších aktualizací naší komunity pro ${ LUMO_SHORT_APP_NAME }. V rámci celého ekosystému ${ BRAND_NAME } si můžete přizpůsobit vzhled všech svých aplikací a nyní si můžete přizpůsobit i ${ LUMO_SHORT_APP_NAME } pomocí světlého nebo tmavého motivu."
+      ],
+      "Dark mode is here": [
+        "Tmavý režim je zde"
       ],
       "Earlier": [
         "Dříve"
@@ -2259,12 +2265,6 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Jak ${ LUMO_SHORT_APP_NAME } udržuje naše konverzace v soukromí?"
       ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
-        "Představujeme ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } s podporou tmavého režimu a nových možností přizpůsobení vašich konverzací."
-      ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
-        "Představujeme ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } s podporou tmavého režimu a nových možností přizpůsobení vašich konverzací. Vyzkoušejte to v ${ openSettingsModalButton }."
-      ],
       "Last 30 days": [
         "Posledních 30 dnů"
       ],
@@ -2280,6 +2280,12 @@
       "No result.": [
         "Žádný výsledek."
       ],
+      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
+        "Personalizace vám umožňuje přizpůsobit si, jak s vámi ${ LUMO_SHORT_APP_NAME } komunikuje. Sdělte ${ LUMO_SHORT_APP_NAME } své jméno, co děláte a přesně, jak chcete, aby reagoval: vtipným žertováním, technickou přesností nebo přímočarou stručností. Protože nejlepší AI není univerzální. Je to ta, která vám připadá, jako by byla stvořena přímo pro vás."
+      ],
+      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
+        "Personalizace: ${ LUMO_SHORT_APP_NAME } pro vás"
+      ],
       "The AI that respects your privacy": [
         "AI, která respektuje vaše soukromí"
       ],
@@ -2288,9 +2294,6 @@
       ],
       "Today": [
         "Dnes"
-      ],
-      "What's new": [
-        "Co je nového"
       ],
       "Whatever you ask me is:": [
         "Na cokoli se mě zeptáte je:"

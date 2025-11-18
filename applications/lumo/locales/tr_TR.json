@@ -772,6 +772,9 @@
       "Application problem": [
         "Uygulama sorunu"
       ],
+      "Authenticator problem": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
       "Black Friday": [
         "Muhteşem Cuma"
       ],
@@ -1002,9 +1005,6 @@
       "Send message": [
         "İletiyi gönder"
       ],
-      "settings": [
-        "ayarlar"
-      ],
       "Show safety information": [
         "Güvenlik bilgilerini görüntüle"
       ],
@@ -1053,6 +1053,9 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
       ],
       "Open Link": [
         "Bağlantıyı aç"
@@ -1401,6 +1404,9 @@
       ],
       "Adding to knowledge base...": [
         "Bilgi bankasına ekleniyor..."
+      ],
+      "Advanced account and network security in one plan": [
+        "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
       ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } yardımcısına istediğiniz her şeyi sorun"
@@ -2210,8 +2216,11 @@
       "Built by the team that knows privacy": [
         "Gizliliği bilen bir ekip tarafından geliştirildi"
       ],
-      "Dark mode and conversation personalization": [
-        "Koyu kip ve yazışma kişiselleştirme"
+      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
+        "Koyu kip ${ LUMO_SHORT_APP_NAME } için topluluğumuzun en çok beklediği güncellemelerden biriydi. ${ BRAND_NAME } ekosisteminde, tüm uygulamalarınızın görünümünü özelleştirebilirsiniz ve artık ${ LUMO_SHORT_APP_NAME } uygulamasını da açık veya koyu tema ile özelleştirebilirsiniz."
+      ],
+      "Dark mode is here": [
+        "Koyu kip geldi"
       ],
       "Earlier": [
         "Daha önce"
@@ -2234,12 +2243,6 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "${ LUMO_SHORT_APP_NAME } sohbetlerinizi nasıl gizli tutar?"
       ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
-        "Koyu kip desteği ve yazışmalarınızı kişiselleştirmek için yeni seçeneklerle ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } sürümünü sunuyoruz."
-      ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
-        "Koyu kip desteği ve yazışmalarınızı kişiselleştirmek için yeni seçeneklerle ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } sürümünü sunuyoruz. ${ openSettingsModalButton } içinde deneyin."
-      ],
       "Last 30 days": [
         "Son 30 gün"
       ],
@@ -2255,6 +2258,12 @@
       "No result.": [
         "Herhangi bir sonuç bulunamadı."
       ],
+      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
+        "Kişiselleştirme, ${ LUMO_SHORT_APP_NAME } uygulamasının sizinle nasıl etkileşime gireceğini özelleştirmenizi sağlar. ${ LUMO_SHORT_APP_NAME } uygulamasına adınızı, ne iş yaptığınızı ve tam olarak nasıl yanıt vermesini istediğinizi söyleyin: Esprili sohbet, teknik hassasiyet veya doğrudan konuya odaklanan kısalık. Çünkü en iyi yapay zeka, herkese uyan tek bir model değildir. Size özel geliştirilmiş gibi hissettiren yapay zekadır."
+      ],
+      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
+        "Kişiselleştirme: Sizin için ${ LUMO_SHORT_APP_NAME }"
+      ],
       "The AI that respects your privacy": [
         "Gizliliğinize saygı duyan yapay zeka"
       ],
@@ -2263,9 +2272,6 @@
       ],
       "Today": [
         "Bugün"
-      ],
-      "What's new": [
-        "Yenilikler"
       ],
       "Whatever you ask me is:": [
         "Bana istediğinizi sorun:"
@@ -4776,6 +4782,9 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Var olan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } avantajları"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hızlı P2P/BitTorrent indirmeleri"
       ],
@@ -4972,6 +4981,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "${ n } kişiye kadar kasa paylaşımı",
+        "${ n } kişiye kadar kasa paylaşımı"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -5699,6 +5712,23 @@
       ],
       "Credits will be added to your balance": [
         "Kalan kredi bakiyenize eklenecek"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "İlerlemek istediğinize emin misiniz?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } tarifenizi değiştirmeyi seçerseniz bazı özelliklere erişiminizi kaybedebilirsiniz."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } tarifesinde kal"
+      ],
+      "Yes, I'm sure": [
+        "Evet, eminim"
+      ],
+      "Your plan includes this feature already.": [
+        "Tarifenizde bu özellik zaten var."
       ]
     },
     "Payments.plan_name": {
