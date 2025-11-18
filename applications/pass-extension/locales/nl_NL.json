@@ -1180,9 +1180,6 @@
       "Wrong second password": [
         "Foutief tweede wachtwoord"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "U bent momenteel offline. Hervat de verbinding om ${ PASS_SHORT_APP_NAME } te ontgrendelen."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Uw browser ondervindt problemen bij het activeren van ${ PASS_APP_NAME }."
       ],
@@ -1704,9 +1701,6 @@
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbinding verbroken. Controleer uw internetverbinding."
-      ],
       "Invitation sent": [
         "Uitnodiging verzonden"
       ],
@@ -1822,6 +1816,9 @@
       ],
       "No login found": [
         "Geen login gevonden"
+      ],
+      "No network connection": [
+        "Geen netwerkverbinding"
       ],
       "None": [
         "Geen"

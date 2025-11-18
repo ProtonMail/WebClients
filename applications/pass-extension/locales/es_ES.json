@@ -774,6 +774,9 @@
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "La norma SPF ${ WIKIPEDIA_LINK_SPF } es un método de autenticación de correo electrónico diseñado para detectar direcciones de remitentes falsificadas durante la entrega del correo electrónico. Se recomienda encarecidamente configurar SPF para reducir la posibilidad de que tus correos electrónicos terminen en la carpeta de spam del destinatario."
       ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Estas cajas fuertes no serán accesibles y su contenido no estará disponible para la busqueda o el relleno automático."
+      ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visita el servicio y cambia tu contraseña."
       ],
@@ -1047,6 +1050,9 @@
       "Importing items failed": [
         "Error al importar los elementos"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Para continuar, ${ PASS_APP_NAME } requiere estos permisos para la extensión: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "No se han podido eliminar los enlaces seguros inactivos."
       ],
@@ -1086,6 +1092,12 @@
       "Passphrase is incorrect": [
         "La frase contraseña es incorrecta."
       ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Permiso denegado para el acceso al sitio web ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "Permiso denegado para el acceso al sitio web."
+      ],
       "PIN codes do not match": [
         "Los códigos PIN no coinciden."
       ],
@@ -1112,6 +1124,9 @@
       ],
       "Secure link could not be opened.": [
         "No se ha podido abrir el enlace seguro."
+      ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Los servidores no están disponibles.Intenta desbloquear ${ PASS_SHORT_APP_NAME } en unos minutos."
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
@@ -1203,8 +1218,8 @@
       "Wrong second password": [
         "La segunda contraseña no es correcta."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "No hay conexión. Reanuda la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Estás sin conexión. Vuelve a conectarte a internet para desbloquear ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "El navegador está teniendo problemas para activar ${ PASS_APP_NAME }."
@@ -1373,6 +1388,9 @@
       ],
       "Access successfully confirmed": [
         "Se ha confirmado el acceso."
+      ],
+      "access to ${ domains }.": [
+        "acceso a ${ domains }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "El acceso a ${ PASS_APP_NAME } siempre requerirá tu contraseña de ${ BRAND_NAME }."
@@ -1730,9 +1748,6 @@
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
-      ],
       "Invitation sent": [
         "Se ha enviado la invitación."
       ],
@@ -1849,6 +1864,9 @@
       "No login found": [
         "No se ha encontrado ningún inicio de sesión."
       ],
+      "No network connection": [
+        "No hay conexión a la red."
+      ],
       "None": [
         "Ninguno"
       ],
@@ -1869,6 +1887,9 @@
       ],
       "Open the Extensions menu": [
         "Abre el menú de extensiones"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Abre los ajustes de Safari, encuentra ${ PASS_APP_NAME }, ve a \"Permisos\" y activa los permisos del sitio."
       ],
       "Owner": [
         "Propietario"
@@ -2104,6 +2125,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Se han restaurado los elementos seleccionados en la papelera."
+      ],
+      "Servers are unreachable": [
+        "Los servidores no están disponibles"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -4128,6 +4152,9 @@
       "Grant permissions": [
         "Conceder permisos"
       ],
+      "Hidden vaults": [
+        "Cajas fuertes ocultas"
+      ],
       "Hide my email": [
         "Ocultar mi correo electrónico"
       ],
@@ -4337,6 +4364,9 @@
       ],
       "Vault shared with you": [
         "Caja fuerte compartida contigo"
+      ],
+      "Visible vaults": [
+        "Cajas fuertes visibles"
       ],
       "Weak password": [
         "Contraseña poco segura"

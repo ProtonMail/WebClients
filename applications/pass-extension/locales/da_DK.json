@@ -1215,9 +1215,6 @@
       "Wrong second password": [
         "Forkert anden adgangskode"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Du er i øjeblikket offline. Genopret venligst forbindelsen for at oplåse ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Din browser har problemer med at aktivere ${ PASS_APP_NAME }."
       ],
@@ -1745,9 +1742,6 @@
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
-      ],
       "Invitation sent": [
         "Invitation sendt"
       ],
@@ -1863,6 +1857,9 @@
       ],
       "No login found": [
         "Intet login fundet"
+      ],
+      "No network connection": [
+        "Ingen internetforbindelse"
       ],
       "None": [
         "Ingen"
@@ -2990,6 +2987,9 @@
       ],
       "Language": [
         "Sprog"
+      ],
+      "Larger window": [
+        "Større vindue"
       ],
       "Last 2 weeks": [
         "Sidste 2 uger"

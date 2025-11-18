@@ -1225,9 +1225,6 @@
       "Wrong second password": [
         "Nesprávne druhé heslo"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Momentálne ste offline. Obnovte, prosím, pripojenie, aby ste mohli odomknúť ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Váš prehliadač má problémy s aktiváciou ${ PASS_APP_NAME }."
       ],
@@ -1791,9 +1788,6 @@
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Pripojenie k internetu sa prerušilo. Skontrolujte prosím pripojenie vašeho zariadenia."
-      ],
       "Invitation sent": [
         "Pozvánka odoslaná"
       ],
@@ -1913,6 +1907,9 @@
       ],
       "No login found": [
         "Prihlasovacie údaje nenájdené"
+      ],
+      "No network connection": [
+        "Žiadne sieťové pripojenie"
       ],
       "None": [
         "Nezamykať"
