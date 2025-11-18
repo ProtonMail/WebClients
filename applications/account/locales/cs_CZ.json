@@ -556,7 +556,7 @@
         "Hotovo"
       ],
       "Downgrade": [
-        "Downgradovat"
+        "Snížit"
       ],
       "Download": [
         "Stáhnout"
@@ -2255,7 +2255,7 @@
         "Vypnuto"
       ],
       "Enabled": [
-        "Zapnuto"
+        "Povoleno"
       ],
       "Missing keys": [
         "Chybějící klíče"
@@ -2590,20 +2590,17 @@
       "Easily manage your inbox": [
         "Snadná správa doručené pošty"
       ],
-      "Easily manage your inbox with Mail Plus": [
-        "Snadno spravujte svou doručenou poštu s Mail Plus"
-      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "V nastavení VPN povolte Kill Switch a automatické připojení."
       ],
       "Find out how to delete photos from Google Photos and use a private cloud storage app instead.": [
-        "Zjistěte, jak smazat fotografie z Google Photos a místo toho použijte soukromou cloudovou úložnou aplikaci."
+        "Zjistěte, jak smazat fotografie z Fotky Google a místo toho použijte aplikaci soukromého cloudového úložiště."
       ],
       "Get a clean inbox with filters": [
         "Vyčistěte si doručenou poštu pomocí filtrů"
       ],
       "Get enough storage for over 40,000 photos.": [
-        "Získejte dostatek úložiště pro více než 40 000 fotografií."
+        "Získejte úložiště pro více než 40 000 fotografií."
       ],
       "Get round-the-clock protection": [
         "Získejte nepřetržitou ochranu"
@@ -2663,7 +2660,7 @@
         "Zabezpečte soubory svého týmu, zajistěte jejich dostupnost a synchronizaci pomocí aplikace ${ DRIVE_APP_NAME } pro firmy."
       ],
       "Learn how Big Tech uses family photos to train AI, how it affects you.": [
-        "Zjistěte, jak Big Tech využívá rodinné fotografie k trénování umělé inteligence a jak vás to ovlivňuje."
+        "Zjistěte, jak velké technologické firmy využívají rodinné fotografie k trénování umělé inteligence a jak se vás to týká."
       ],
       "Learn how many GB are in a TB and discover the best way to securely store and share your files — no matter their size.": [
         "Zjistěte, kolik GB je v TB a objevte nejlepší způsob, jak bezpečně ukládat a sdílet vaše soubory – bez ohledu na jejich velikost."
@@ -2717,7 +2714,7 @@
         "Sdílejte soubory bezpečně"
       ],
       "Share photos online privately": [
-        "Sdílet fotografie online soukromě"
+        "Sdílejte fotky na internetu soukromým způsobem"
       ],
       "Share your account details, without risking a hack": [
         "Sdílejte údaje o svém účtu bez rizika hacknutí"
@@ -2792,7 +2789,7 @@
         "Obáváte se úniků informací?"
       ],
       "Write, edit, and collaborate on documents with our secure online editors.": [
-        "Pište, upravujte a spolupracujte na dokumentech s našimi bezpečnými online editory."
+        "Pište, upravujte a spolupracujte na dokumentech pomocí našich bezpečných online editorů."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Vaše rodinné fotografie trénují umělou inteligenci a zde je, jak tomu zabránit"
@@ -14383,7 +14380,7 @@
         "Přihlásit se"
       ],
       "Snap store": [
-        "Snap obchod"
+        "Obchod Snap"
       ],
       "switch account": [
         "přepnout účet"
@@ -14602,7 +14599,7 @@
     },
     "mail_cro_experiment": {
       "Get Deal": [
-        "Získat nabídku"
+        "Využít nabídku"
       ]
     },
     "mail_signup_2023: Info": {
@@ -22892,7 +22889,7 @@
         "Vygenerovat SMTP token"
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
-        "Získejte ${ planMaxSpace } úložiště pro Vaše soubory, fotografie a dokumenty s ${ planName }. ${ upgradeButton }"
+        "Získejte ${ planMaxSpace } úložiště pro vaše soubory, fotografie a dokumenty s ${ planName }. ${ upgradeButton }"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Získejte ${ vpnPlus } pro přístup ke všem serverům"
@@ -23069,7 +23066,7 @@
         "Hlavní heslo"
       ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
-        "Spravovat soubory napříč zařízeními na Windows, Mac, Android a iOS."
+        "Spravujte soubory napříč zařízeními s Windows, Mac, Android a iOS."
       ],
       "Messages": [
         "Zprávy"
@@ -24421,7 +24418,7 @@
         "Neomezené soukromí pro vás a vašeho blízkého. Již od ${ priceString }/měsíc."
       ],
       "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
-        "S plánem ${ PLAN_NAMES[PLANS.DUO] } můžete chránit až ${ DUO_MAX_USERS } osob a s plánem ${ PLAN_NAMES[PLANS.FAMILY] } až ${ FAMILY_MAX_USERS } osob. Již od ${ priceString } za měsíc na jeden účet."
+        "S tarifem ${ PLAN_NAMES[PLANS.DUO] } můžete chránit až ${ DUO_MAX_USERS } osob a s tarifem ${ PLAN_NAMES[PLANS.FAMILY] } až ${ FAMILY_MAX_USERS } osob. Již od ${ priceString } měsíčně za jeden účet."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Můžete chránit až ${ FAMILY_MAX_USERS } osob s ${ PLAN_NAMES[plan] }. Již od ${ priceString }/měsíc za jeden účet."
