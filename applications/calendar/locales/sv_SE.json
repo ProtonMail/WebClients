@@ -255,6 +255,9 @@
       "Create a booking page": [
         "Skapa en bokningssida"
       ],
+      "Create a free account": [
+        "Skapa ett gratis konto"
+      ],
       "Create a new bookings page": [
         "Skapa en ny bokningssida"
       ],
@@ -757,6 +760,15 @@
       ],
       "See plan features": [
         "Se paketfunktioner"
+      ],
+      "See previous availability": [
+        "Se tidigare tillgänglighet"
+      ],
+      "See upcoming availability": [
+        "Se kommande tillgänglighet"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Välj ${ dateHeaderLongString } kl. ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Välj ${ planOrAppName }"
@@ -1542,6 +1554,9 @@
       ],
       "Application problem": [
         "Problem med applikation"
+      ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
       ],
       "Black Friday": [
         "Black Friday"
@@ -4036,6 +4051,9 @@
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
         "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
       ],
+      "You cannot enter the organizer email": [
+        "Du kan inte ange organisatörens e-post"
+      ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
       ],
@@ -4603,8 +4621,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Din kontaktinformation"
+      "Confirm your booking": [
+        "Bekräfta din bokning"
       ]
     },
     "Google Meet": {
@@ -5267,6 +5285,9 @@
       "Appointment duration": [
         "Mötets varaktighet"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Är du säker på att du vill ta bort denna bokningssida?"
+      ],
       "Are you sure you want to discard your import?": [
         "Är du säker på att du vill kasta din import?"
       ],
@@ -5302,6 +5323,9 @@
       ],
       "Booking overlaps with an existing booking.": [
         "Bokning överlappar med en befintlig bokning."
+      ],
+      "Booking page deleted": [
+        "Bokningssida borttagen"
       ],
       "Booking page example": [
         "Exempel på bokningssida"
@@ -5743,9 +5767,6 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De flesta offentliga WiFi-nätverk är säkra, men vissa saknar säkerhet, vilket gör att du utsätts för cyberhot. Ett VPN krypterar din trafik och håller dig skyddad."
       ],
-      "Name your booking page": [
-        "Namnge din bokningssida"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
       ],
@@ -5897,6 +5918,9 @@
       "Previous modifications on this series will be lost.": [
         "Tidigare ändringar av denna serie kommer att gå förlorade."
       ],
+      "Previously booked events won't be deleted.": [
+        "Tidigare bokade händelser kommer inte att tas bort."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
       ],
@@ -6003,6 +6027,9 @@
       ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Ta kontroll över ditt digitala liv"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
@@ -6190,6 +6217,9 @@
       "Week and month views only apply to desktop.": [
         "Vecko- och månadsvyer tillämpas endast för stationära datorer."
       ],
+      "What do you want to call this booking page?": [
+        "Vad vill du kalla denna bokningssida?"
+      ],
       "What should people know before booking?": [
         "Vad bör folk veta innan de bokar?"
       ],
@@ -6320,9 +6350,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Du har tidigare avvisat denna inbjudan. Be ägaren om en ny inbjudan"
-      ],
-      "You will loose all unsaved changes.": [
-        "Du kommer förlora alla osparade ändringar."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
@@ -6851,6 +6878,9 @@
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
       ],
+      "Full name": [
+        "Fullständigt namn"
+      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
@@ -7156,6 +7186,9 @@
       ],
       "Start time of the booking range": [
         "Starttid för bokningsintervallet"
+      ],
+      "What should people know before booking?": [
+        "Vad bör folk veta innan de bokar?"
       ]
     },
     "Label for contact group color": {
@@ -7222,6 +7255,9 @@
     "Link": {
       "Add a gift code": [
         "Lägg till en presentkod"
+      ],
+      "Booking pages": [
+        "Bokningssidor"
       ],
       "Calendars": [
         "Kalendrar"
@@ -9477,14 +9513,14 @@
       "Anytown": [
         "Alingsås"
       ],
-      "Booking page title": [
-        "Rubrik på bokningssida"
-      ],
       "Company name": [
         "Företagsnamn"
       ],
       "E.g., ": [
         "T.ex., "
+      ],
+      "Email for booking confirmation": [
+        "E-post för bokningsbekräftelse"
       ],
       "Enter passphrase": [
         "Ange lösenfras"
@@ -9521,6 +9557,9 @@
       ],
       "Name": [
         "Namn"
+      ],
+      "Name of attendee": [
+        "Namn på deltagare"
       ],
       "Name or email address": [
         "Namn eller e-postadress"
@@ -11454,6 +11493,9 @@
       ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
+      ],
+      "Delete booking page?": [
+        "Ta bort bokningssida?"
       ],
       "Delete event": [
         "Ta bort händelse"

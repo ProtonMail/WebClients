@@ -257,6 +257,9 @@
       "Create a booking page": [
         "Vytvořit rezervační stránku"
       ],
+      "Create a free account": [
+        "Vytvořit účet zdarma"
+      ],
       "Create a new bookings page": [
         "Vytvořit novou rezervační stránku"
       ],
@@ -442,6 +445,9 @@
       ],
       "Go to settings": [
         "Přejít do nastavení"
+      ],
+      "Go to the next available appointment": [
+        "Přejít na další dostupnou schůzku"
       ],
       "Got it": [
         "Rozumím"
@@ -763,6 +769,15 @@
       ],
       "See plan features": [
         "Zobrazit funkce tarifu"
+      ],
+      "See previous availability": [
+        "Zobrazit předchozí dostupnost"
+      ],
+      "See upcoming availability": [
+        "Zobrazit nadcházející dostupnost"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Vybrat ${ dateHeaderLongString } v ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Vybrat ${ planOrAppName }"
@@ -1574,6 +1589,9 @@
       ],
       "Application problem": [
         "Problém s aplikací"
+      ],
+      "Authenticator problem": [
+        "Problém s ověřovací aplikací"
       ],
       "Black Friday": [
         "Black Friday"
@@ -4127,6 +4145,9 @@
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou"
       ],
+      "You cannot enter the organizer email": [
+        "Nelze zadat e-mail organizátora"
+      ],
       "You have reached the maximum number of calendars.": [
         "Dosáhli jste maximálního počtu kalendářů."
       ],
@@ -4147,6 +4168,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Přihlaste se prosím s adresou Gmail, která již přeposílá na ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Přihlaste se prosím pomocí stejné adresy Gmail, kterou jste původně použili pro připojení"
       ]
@@ -4709,8 +4733,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Vaše kontaktní údaje"
+      "Confirm your booking": [
+        "Potvrdit svou rezervaci"
       ]
     },
     "Google Meet": {
@@ -5431,6 +5455,9 @@
       "Appointment duration": [
         "Doba trvání schůzky"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Opravdu chcete smazat tuto rezervační stránku?"
+      ],
       "Are you sure you want to discard your import?": [
         "Jste si jistí, že chcete zahodit váš import?"
       ],
@@ -5467,6 +5494,9 @@
       "Booking overlaps with an existing booking.": [
         "Rezervace se překrývá s existující rezervací."
       ],
+      "Booking page deleted": [
+        "Rezervační stránka smazána"
+      ],
       "Booking page example": [
         "Příklad rezervační stránky"
       ],
@@ -5493,6 +5523,9 @@
       ],
       "Cannot create booking range across days": [
         "Nelze vytvořit rozsah rezervace přesahující několik dní"
+      ],
+      "Cannot create booking range in the past": [
+        "Nelze vytvořit rozsah rezervace v minulosti"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
@@ -5920,14 +5953,14 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Většina veřejných sítí Wi-Fi je bezpečná, ale některé nejsou dostatečně zabezpečené a vystavují vás kybernetickým hrozbám. VPN šifruje váš provoz a chrání vás."
       ],
-      "Name your booking page": [
-        "Pojmenujte svou rezervační stránku"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
       ],
       "New": [
         "Nově"
+      ],
+      "No appointments available this week": [
+        "Na tento týden nejsou k dispozici žádné události"
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
@@ -6013,6 +6046,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Lidé, kteří si u vás rezervují čas, uvidí ${ selectedCalendar.Email } jako vaši kontaktní adresu."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu."
       ],
@@ -6070,11 +6106,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, vyčkejte dokud nenajdeme kontakty, které jsou šifrované neaktivním klíčem."
       ],
+      "Powered by": [
+        "Běží na"
+      ],
       "Powered by ${ protonButton }": [
-        "Poháněno ${ protonButton }"
+        "Pohání ${ protonButton }"
       ],
       "Previous modifications on this series will be lost.": [
         "Předchozí úpravy této série budou ztraceny."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Dříve rezervované události nebudou smazány."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
@@ -6142,8 +6184,8 @@
       "Setting up your new address…": [
         "Nastavování nové adresy…"
       ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Sdílejte tuto stránku, aby si ostatní mohli rezervovat čas ve vašem kalendáři. Spravovat ji můžete kdykoli v postranním panelu pod položkou Rezervační stránky."
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Sdílejte tuto stránku, aby si ostatní mohli rezervovat čas ve vašem kalendáři. Můžete ji najít a upravit v postranním panelu pod položkou Rezervační stránky."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -6189,6 +6231,9 @@
       ],
       "Symbols (#$&)": [
         "Symboly (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Převezměte kontrolu nad svým digitálním životem"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -6237,6 +6282,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Tato rezervace byla provedena prostřednictvím aplikace ${ CALENDAR_APP_NAME }, která je součástí sady produktů ${ BRAND_NAME } zaměřených na ochranu soukromí."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Tato událost byla aktualizována organizátorem. Chcete změnit svoji odpověď pouze pro tento výskyt v této sérii?"
@@ -6376,6 +6424,9 @@
       "Week and month views only apply to desktop.": [
         "Zobrazení týdne a měsíce platí pouze pro desktop."
       ],
+      "What do you want to call this booking page?": [
+        "Jak chcete pojmenovat tuto rezervační stránku?"
+      ],
       "What should people know before booking?": [
         "Co by lidé měli vědět před rezervací?"
       ],
@@ -6510,9 +6561,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Tuto pozvánku jste již dříve odmítli. Požádejte vlastníka o opětovné zaslání pozvánky"
-      ],
-      "You will loose all unsaved changes.": [
-        "Ztratíte všechny neuložené změny."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "K tomuto datu ztratíte přístup k funkcím ${ planTitle }."
@@ -7058,6 +7106,9 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
+      "Full name": [
+        "Jméno a příjmení"
+      ],
       "Get the deal": [
         "Využít nabídku"
       ],
@@ -7363,8 +7414,14 @@
       "End time of the booking range": [
         "Čas ukončení rozsahu rezervace"
       ],
+      "How long should an appointment last?": [
+        "Jak dlouho by měla schůzka trvat?"
+      ],
       "Start time of the booking range": [
         "Čas zahájení rozsahu rezervace"
+      ],
+      "What should people know before booking?": [
+        "Co by lidé měli vědět před rezervací?"
       ]
     },
     "Label for contact group color": {
@@ -7431,6 +7488,9 @@
     "Link": {
       "Add a gift code": [
         "Přidat dárkový kód"
+      ],
+      "Booking pages": [
+        "Rezervační stránky"
       ],
       "Calendars": [
         "Kalendáře"
@@ -9833,14 +9893,14 @@
       "Anytown": [
         "Město"
       ],
-      "Booking page title": [
-        "Název rezervační stránky"
-      ],
       "Company name": [
         "Název společnosti"
       ],
       "E.g., ": [
         "Např., "
+      ],
+      "Email for booking confirmation": [
+        "E-mail pro potvrzení rezervace"
       ],
       "Enter passphrase": [
         "Zadejte heslo"
@@ -9877,6 +9937,9 @@
       ],
       "Name": [
         "Jméno"
+      ],
+      "Name of attendee": [
+        "Jméno účastníka"
       ],
       "Name or email address": [
         "Jméno nebo e-mail"
@@ -11827,6 +11890,9 @@
       "Change password": [
         "Změnit heslo"
       ],
+      "Choose a time": [
+        "Zvolte čas"
+      ],
       "Choose how many times this event will repeat": [
         "Zvolte, kolikrát se tato událost bude opakovat"
       ],
@@ -11916,6 +11982,9 @@
       ],
       "Delete ${ value }": [
         "Smazat ${ value }"
+      ],
+      "Delete booking page?": [
+        "Smazat rezervační stránku?"
       ],
       "Delete event": [
         "Smazat událost"

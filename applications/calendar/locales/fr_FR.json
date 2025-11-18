@@ -255,6 +255,9 @@
       "Create a booking page": [
         "Créer une page de réservation"
       ],
+      "Create a free account": [
+        "Créer un compte gratuit"
+      ],
       "Create a new bookings page": [
         "Créer une nouvelle page de réservation"
       ],
@@ -1560,6 +1563,9 @@
       ],
       "Application problem": [
         "Problème d'application"
+      ],
+      "Authenticator problem": [
+        "Problème d'authentification"
       ],
       "Black Friday": [
         "Black Friday"
@@ -4066,6 +4072,9 @@
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataires."
       ],
+      "You cannot enter the organizer email": [
+        "Vous ne pouvez pas saisir l'e-mail de l'organisateur"
+      ],
       "You have reached the maximum number of calendars.": [
         "Vous avez atteint le nombre maximum de calendriers."
       ],
@@ -4633,8 +4642,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Vos coordonnées"
+      "Confirm your booking": [
+        "Confirmez votre réservation"
       ]
     },
     "Google Meet": {
@@ -5297,6 +5306,9 @@
       "Appointment duration": [
         "Durée du rendez-vous"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Voulez-vous vraiment supprimer cette page de réservation ?"
+      ],
       "Are you sure you want to discard your import?": [
         "Voulez-vous vraiment abandonner votre importation ?"
       ],
@@ -5333,6 +5345,9 @@
       "Booking overlaps with an existing booking.": [
         "La réservation chevauche une réservation existante."
       ],
+      "Booking page deleted": [
+        "La page de réservation a été supprimée"
+      ],
       "Booking page example": [
         "Exemple de page de réservation"
       ],
@@ -5359,6 +5374,9 @@
       ],
       "Cannot create booking range across days": [
         "Impossible de créer une plage de réservation s'étendant sur plusieurs jours"
+      ],
+      "Cannot create booking range in the past": [
+        "Impossible de créer une plage de réservation dans le passé"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -5776,9 +5794,6 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La plupart des réseaux wifi publics sont sûrs, mais certains manquent de sécurité, vous exposant ainsi aux cybermenaces. Un VPN chiffre votre trafic pour vous protéger."
       ],
-      "Name your booking page": [
-        "Nommez votre page de réservation"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
       ],
@@ -5872,6 +5887,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Les personnes qui réservent du temps avec vous verront ${ selectedCalendar.Email } comme votre adresse de contact."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline est uniquement compatible avec le format texte brut."
       ],
@@ -5927,11 +5945,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Veuillez patienter pendant que nous cherchons les contacts qui contiennent des données chiffrées avec la clé inactive."
       ],
+      "Powered by": [
+        "Propulsé par"
+      ],
       "Powered by ${ protonButton }": [
         "Propulsé par ${ protonButton }"
       ],
       "Previous modifications on this series will be lost.": [
         "Les modifications précédentes de cette série seront perdues."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Les événements précédemment réservés ne seront pas supprimés."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
@@ -5997,6 +6021,9 @@
       "Setting up your new address…": [
         "Configuration de votre nouvelle adresse…"
       ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Partagez cette page pour permettre à d'autres de réserver du temps dans votre calendrier. Vous pouvez la trouver et la modifier dans la barre latérale sous les pages de réservation."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
@@ -6039,6 +6066,9 @@
       ],
       "Symbols (#$&)": [
         "Symboles (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Prenez le contrôle de votre vie numérique"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -6087,6 +6117,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Cette réservation a été effectuée via ${ CALENDAR_APP_NAME }, qui fait partie de la suite de produits axés sur la protection de la vie privée de ${ BRAND_NAME }."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Cet événement a été mis à jour par l'organisateur. Voulez-vous changer votre réponse uniquement pour cet événement dans la série ?"
@@ -6226,6 +6259,9 @@
       "Week and month views only apply to desktop.": [
         "Les vues de type semaine et mois s'appliquent à la version de bureau (grand écran)."
       ],
+      "What do you want to call this booking page?": [
+        "Comment voulez-vous nommer cette page de réservation ?"
+      ],
       "What should people know before booking?": [
         "Que faut-il savoir avant de réserver ?"
       ],
@@ -6353,9 +6389,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Vous avez déjà refusé cette invitation. Demandez à l'organisateur de vous réinviter."
-      ],
-      "You will loose all unsaved changes.": [
-        "Vous perdrez toutes les modifications non enregistrées."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
@@ -6887,6 +6920,9 @@
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
+      "Full name": [
+        "Nom complet"
+      ],
       "Get the deal": [
         "Profitez de l'offre"
       ],
@@ -7190,8 +7226,14 @@
       "End time of the booking range": [
         "Heure de fin de la plage de réservation"
       ],
+      "How long should an appointment last?": [
+        "Combien de temps un rendez-vous doit-il durer ?"
+      ],
       "Start time of the booking range": [
         "Heure de début de la plage horaire de réservation"
+      ],
+      "What should people know before booking?": [
+        "Que faut-il savoir avant de réserver ?"
       ]
     },
     "Label for contact group color": {
@@ -9527,14 +9569,14 @@
       "Anytown": [
         "Boisclair"
       ],
-      "Booking page title": [
-        "Titre de la page de réservation"
-      ],
       "Company name": [
         "Nom de l'entreprise"
       ],
       "E.g., ": [
         "Par exemple, "
+      ],
+      "Email for booking confirmation": [
+        "Message pour la confirmation de réservation"
       ],
       "Enter passphrase": [
         "Saisir la phrase secrète"
@@ -9571,6 +9613,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Name of attendee": [
+        "Nom du participant"
       ],
       "Name or email address": [
         "Nom ou adresse e-mail"
@@ -11507,6 +11552,9 @@
       ],
       "Delete ${ value }": [
         "Supprimer ${ value } "
+      ],
+      "Delete booking page?": [
+        "Supprimer la page de réservation ?"
       ],
       "Delete event": [
         "Supprimer l'événement"
