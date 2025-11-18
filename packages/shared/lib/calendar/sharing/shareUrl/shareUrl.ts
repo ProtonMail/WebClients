@@ -3,7 +3,6 @@ import { CryptoProxy } from '@proton/crypto';
 
 import { AES256, EVENT_ACTIONS } from '../../../constants';
 import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../../helpers/crypto';
-import { uint8ArrayToPaddedBase64URLString } from '../../../helpers/encoding';
 import type { Nullable } from '../../../interfaces';
 import type { CalendarLink, CalendarUrl } from '../../../interfaces/calendar';
 import { ACCESS_LEVEL } from '../../../interfaces/calendar';
@@ -63,7 +62,7 @@ export const generateEncryptedPassphrase = ({
     passphrase: string;
 }) => xorEncryptDecrypt({ key: passphraseKey, data: Uint8Array.fromBase64(passphrase) }).toBase64();
 
-export const generateCacheKey = () => uint8ArrayToPaddedBase64URLString(generateRandomBytes(16));
+export const generateCacheKey = () => generateRandomBytes(16).toBase64({ alphabet: 'base64url' });
 
 export const generateCacheKeySalt = () => generateRandomBytes(8).toBase64();
 
@@ -131,7 +130,7 @@ export const buildLink = ({
     const encodedCacheKey = encodeURIComponent(cacheKey);
 
     if (accessLevel === ACCESS_LEVEL.FULL && passphraseKey) {
-        const encodedPassphraseKey = encodeURIComponent(uint8ArrayToPaddedBase64URLString(passphraseKey));
+        const encodedPassphraseKey = encodeURIComponent(passphraseKey.toBase64({ alphabet: 'base64url' }));
 
         return `${baseURL}?CacheKey=${encodedCacheKey}&PassphraseKey=${encodedPassphraseKey}`;
     }

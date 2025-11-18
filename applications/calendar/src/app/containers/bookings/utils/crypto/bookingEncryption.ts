@@ -3,10 +3,6 @@ import { getUnixTime } from 'date-fns';
 import { CryptoProxy, type PublicKeyReference, type SessionKey } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import {
-    base64URLStringToUint8Array,
-    uint8ArrayToPaddedBase64URLString,
-} from '@proton/shared/lib/helpers/encoding';
 import type {
     BookingPageCreationPayload,
     BookingPageSlotsPayload,
@@ -154,8 +150,8 @@ export const deriveBookingUid = async (bookingSecretBytes: Uint8Array<ArrayBuffe
  * @returns The booking UID in base64url format (for API calls)
  */
 export const extractBookingUidFromSecret = async (bookingSecretBase64Url: string): Promise<string> => {
-    const bookingSecretBytes = base64URLStringToUint8Array(bookingSecretBase64Url);
-    return uint8ArrayToPaddedBase64URLString(await deriveBookingUid(bookingSecretBytes));
+    const bookingSecretBytes = Uint8Array.fromBase64(bookingSecretBase64Url, { alphabet: 'base64url' });
+    return (await deriveBookingUid(bookingSecretBytes)).toBase64({ alphabet: 'base64url' });
 };
 
 /**
@@ -172,11 +168,9 @@ export const decryptBookingSessionKey = async (
     calendarId: string,
     bookingKeyPacket: string
 ): Promise<SessionKey | undefined> => {
-    const bookingSecretBytes = base64URLStringToUint8Array(bookingSecretBase64Url);
+    const bookingSecretBytes = Uint8Array.fromBase64(bookingSecretBase64Url, { alphabet: 'base64url' });
     const saltBytes = Uint8Array.fromBase64(bookingKeySalt);
-    const bookingKeyPassword = (
-        await deriveBookingKeyPassword(calendarId, bookingSecretBytes, saltBytes)
-    ).toBase64();
+    const bookingKeyPassword = (await deriveBookingKeyPassword(calendarId, bookingSecretBytes, saltBytes)).toBase64();
 
     const bookingKeyPacketBytes = Uint8Array.fromBase64(bookingKeyPacket);
 

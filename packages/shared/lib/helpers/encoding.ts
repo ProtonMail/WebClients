@@ -4,11 +4,6 @@ export const uint8ArrayToString = arrayToBinaryString;
 
 export const stringToUint8Array = binaryStringToArray;
 
-export const base64URLStringToUint8Array = (string: string) => Uint8Array.fromBase64(string, { alphabet: 'base64url' });
-
-export const uint8ArrayToPaddedBase64URLString = (array: Uint8Array<ArrayBuffer>) =>
-    array.toBase64({ alphabet: 'base64url' });
-
 export const validateBase64string = (str: string, useVariantAlphabet?: boolean) => {
     const regex = useVariantAlphabet ? /^[-_A-Za-z0-9]*={0,3}$/ : /^[+/A-Za-z0-9]*={0,3}$/;
 

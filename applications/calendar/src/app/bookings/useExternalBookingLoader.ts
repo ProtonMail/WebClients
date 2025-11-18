@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useApi, useGetVerificationPreferences } from '@proton/components';
 import { queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
-import { base64URLStringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { deriveBookingUid } from '../containers/bookings/utils/crypto/bookingEncryption';
@@ -38,8 +37,8 @@ export const useExternalBookingLoader = () => {
             return;
         }
 
-        const bookingSecretBytes = base64URLStringToUint8Array(bookingSecretBase64Url);
-        const bookingUidBase64Url = uint8ArrayToPaddedBase64URLString(await deriveBookingUid(bookingSecretBytes));
+        const bookingSecretBytes = Uint8Array.fromBase64(bookingSecretBase64Url, { alphabet: 'base64url' });
+        const bookingUidBase64Url = (await deriveBookingUid(bookingSecretBytes)).toBase64({ alphabet: 'base64url' });
 
         const rangeStart = isAfter(rangeStartDate, new Date()) ? rangeStartDate : new Date();
         const weekRangeSimple = rangeEndDate
