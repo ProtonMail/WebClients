@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -48,6 +48,16 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
         payments.selectPlan({ planIDs: { [plan]: 1 }, cycle: CYCLE.YEARLY, currency: payments.currency, coupon });
         void onContinue(true);
     };
+
+    useEffect(() => {
+        if (!payments.initialized) {
+            return;
+        }
+
+        /** A limitation of the payments context initialisation means we need to
+         * check the pricing with the coupon to ensure the UI data is available */
+        void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.currency)]);
+    }, [payments.initialized]);
 
     const openOfferModal = () =>
         offerModal.handler({
