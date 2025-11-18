@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import {
     ColorScheme,
     MotionModeSetting,
@@ -515,7 +515,9 @@ export const getParsedThemeSetting = (storedThemeSetting: string | undefined): T
     // Now it contains JSON
     if (storedThemeSetting && storedThemeSetting?.length >= 10) {
         try {
-            const parsedTheme: any = JSON.parse(decodeBase64URL(storedThemeSetting));
+            const parsedTheme: any = JSON.parse(
+                uint8ArrayToString(Uint8Array.fromBase64(storedThemeSetting, { alphabet: 'base64url' }))
+            );
             return {
                 Mode: getValidatedThemeMode(parsedTheme.Mode) ?? defaultThemeSetting.Mode,
                 LightTheme: getValidatedThemeType(parsedTheme.LightTheme) ?? defaultThemeSetting.LightTheme,

@@ -5,7 +5,7 @@ import {
     getPersistedSessions,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
-import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import isEnumValue from '@proton/utils/isEnumValue';
 import isTruthy from '@proton/utils/isTruthy';
@@ -71,7 +71,7 @@ const from = (value: string | undefined): PersistedSessionLite[] | undefined => 
         if (!value) {
             return;
         }
-        const parsedValue = JSON.parse(decodeBase64URL(value));
+        const parsedValue = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(value, { alphabet: 'base64url' })));
         if (!Array.isArray(parsedValue)) {
             return;
         }

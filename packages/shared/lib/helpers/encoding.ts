@@ -18,20 +18,10 @@ export const encodeBase64URL = (str: string, removePadding = true) => {
     return removePadding ? base64String.replace(/=/g, '') : base64String;
 };
 
-/**
- * Convert a string encoded in base64 URL into a binary string
- * @param str
- */
-export const decodeBase64URL = (str: string) => {
-    const decodeBase64 = (input: string) => atob(input.trim());
-
-    return decodeBase64((str + '==='.slice((str.length + 3) % 4)).replace(/-/g, '+').replace(/_/g, '/'));
-};
-
-export const base64URLStringToUint8Array = (string: string) => stringToUint8Array(decodeBase64URL(string) || '');
+export const base64URLStringToUint8Array = (string: string) => Uint8Array.fromBase64(string, { alphabet: 'base64url' });
 
 export const uint8ArrayToPaddedBase64URLString = (array: Uint8Array<ArrayBuffer>) =>
-    encodeBase64URL(uint8ArrayToString(array), false);
+    array.toBase64({ alphabet: 'base64url' });
 
 export const validateBase64string = (str: string, useVariantAlphabet?: boolean) => {
     const regex = useVariantAlphabet ? /^[-_A-Za-z0-9]*={0,3}$/ : /^[+/A-Za-z0-9]*={0,3}$/;
@@ -51,7 +41,7 @@ export const encodeAutomaticResetParams = (json: any) => {
  * Automatic password reset parameter decoder
  */
 export const decodeAutomaticResetParams = (base64String: string) => {
-    const decodedString = decodeBase64URL(base64String);
+    const decodedString = uint8ArrayToString(Uint8Array.fromBase64(base64String, { alphabet: 'base64url' }));
     return JSON.parse(decodedString);
 };
 

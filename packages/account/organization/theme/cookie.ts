@@ -1,6 +1,6 @@
-import { decodeUtf8, encodeUtf8 } from '@proton/crypto/lib/utils';
+import { encodeUtf8, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
-import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import { encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
@@ -38,7 +38,7 @@ export const serializeOrgTheme = (organization: OrganizationExtended | undefined
 
 export const deserializeOrgTheme = (serializedValue: string): OrgThemeCookie | undefined => {
     try {
-        const deserializedValue = decodeUtf8(decodeBase64URL(serializedValue));
+        const deserializedValue = utf8ArrayToString(Uint8Array.fromBase64(serializedValue, { alphabet: 'base64url' }));
         const parsedValue = JSON.parse(deserializedValue);
         const value: OrgThemeCookie = {
             LogoID: String(parsedValue.LogoID),
