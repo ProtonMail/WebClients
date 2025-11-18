@@ -376,6 +376,9 @@
       "Application problem": [
         "Uygulama sorunu"
       ],
+      "Authenticator problem": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
       "Black Friday": [
         "Muhteşem Cuma"
       ],
@@ -1350,9 +1353,6 @@
       "Failed to initialize handshake": [
         "El sıkışma başlatılamadı"
       ],
-      "Failed to join meeting. Please try again later": [
-        "Görüşmeye katılınamadı. Lütfen bir süre sonra yeniden deneyin"
-      ],
       "Failed to join meeting. Please try again later.": [
         "Görüşmeye katılınamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -1603,6 +1603,12 @@
       ],
       "Custom combination": [
         "Özel kombinasyon"
+      ],
+      "Default": [
+        "Varsayılan"
+      ],
+      "Default - ${ systemDefault.label }": [
+        "Varsayılan - ${ systemDefault.label }"
       ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
         "Görüşmede insanların sizinle ${ deviceContentType } yapmasını ister misiniz?"
