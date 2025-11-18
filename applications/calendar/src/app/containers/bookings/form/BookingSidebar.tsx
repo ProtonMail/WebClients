@@ -2,9 +2,14 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 
 import { BookingManagement } from './BookingsPageManagement';
 
+import './BookingSidebar.scss';
+
 export const BookingSidebar = () => {
     return (
-        <div className="flex flex-column w-full sm:w-custom" style={{ '--sm-w-custom': '25.5rem' }}>
+        <div
+            className="booking-sidebar-container flex flex-column w-full sm:w-custom"
+            style={{ '--sm-w-custom': '25.5rem' }}
+        >
             <div className="p-3 self-end">
                 <BookingManagement.Header />
             </div>
