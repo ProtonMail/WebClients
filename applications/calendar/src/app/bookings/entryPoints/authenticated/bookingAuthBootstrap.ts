@@ -1,5 +1,6 @@
 import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import {
+    InvalidSessionError,
     createAuthentication,
     createHistory,
     createUnleash,
@@ -7,10 +8,11 @@ import {
     loadCrypto,
     loadSession,
     unleashReady,
-    wrap,
 } from '@proton/account/bootstrap';
 import { initMainHost } from '@proton/cross-storage/lib';
 import createApi from '@proton/shared/lib/api/createApi';
+import { requestFork } from '@proton/shared/lib/authentication/fork';
+import { APPS } from '@proton/shared/lib/constants';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
@@ -44,7 +46,6 @@ export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | '
             api,
             pathname: window.location.pathname,
             searchParams: new URLSearchParams(window.location.search),
-            unauthenticatedReturnUrl: '/guest',
         });
 
         const history = createHistory({ sessionResult, pathname: window.location.pathname });
@@ -66,5 +67,23 @@ export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | '
         };
     };
 
-    return wrap({ appName: config.APP_NAME, authentication }, run());
+    try {
+        return await run();
+    } catch (e) {
+        if (e instanceof InvalidSessionError) {
+            requestFork({
+                fromApp: APPS.PROTONCALENDAR,
+                extra: {
+                    localID: (e.extra.localID ?? -1) >= 0 ? e.extra.localID : undefined,
+                    // Reload document true so that it redirects from calendar chunk to booking chunk (TODO: Find a better solution with Account)
+                    reloadDocument: true,
+                    // In case no sessions exist, redirect back to /guest
+                    unauthenticatedReturnUrl: '/guest',
+                },
+            });
+            // Promise that never resolves since request fork is performing a redirect.
+            await new Promise(() => {});
+        }
+        throw e;
+    }
 };
