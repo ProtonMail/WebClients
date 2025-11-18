@@ -1,46 +1,33 @@
 import { useLocation } from 'react-router';
 
-import {
-    addHours,
-    addMinutes,
-    isBefore,
-    isSameDay,
-    isToday,
-    set,
-    startOfDay,
-    startOfToday,
-    subMinutes,
-} from 'date-fns';
+import { addHours, addMinutes, isBefore, isSameDay, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import TimeInput from '@proton/components/components/input/TimeInput';
-import { DateInputTwo, useNotifications } from '@proton/components/index';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { Checkbox, Label, useNotifications } from '@proton/components/index';
 import { addDays, isNextDay } from '@proton/shared/lib/date-fns-utc';
+import useFlag from '@proton/unleash/useFlag';
 
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
 import { validateFormData } from '../utils/form/formHelpers';
-import { createBookingRangeNextAvailableTime } from '../utils/range/rangeHelpers';
-import { roundToNextHalfHour } from '../utils/timeHelpers';
-
-import './FormRangeList.scss';
+import { createBookingRange, createBookingRangeNextAvailableTime } from '../utils/range/rangeHelpers';
+import { DisplayRecurringRanges } from './DisplayRecurringRanges';
+import { DisplayRegularRanges } from './DisplayRegularRanges';
 
 export const FormRangeList = () => {
-    const now = new Date();
-
     const location = useLocation();
     const [userSettings] = useUserSettings();
 
-    const { removeBookingRange, updateBookingRange, addBookingRange, formData } = useBookings();
+    const { removeBookingRange, updateBookingRange, addBookingRange, formData, updateFormData } = useBookings();
     const validation = validateFormData(formData);
 
     const { createNotification } = useNotifications();
+    const { date } = fromUrlParams(location.pathname);
+
+    const isRecurringEnabled = useFlag('RecurringCalendarBookings');
 
     if (!formData.bookingRanges) {
         return null;
@@ -80,11 +67,6 @@ export const FormRangeList = () => {
     };
 
     const handleAddDateClick = () => {
-        if (!formData.timezone) {
-            return;
-        }
-
-        const { date } = fromUrlParams(location.pathname);
         addBookingRange(
             createBookingRangeNextAvailableTime({
                 bookingRanges: formData.bookingRanges,
@@ -122,70 +104,57 @@ export const FormRangeList = () => {
         addBookingRange(newBookingRange);
     };
 
-    // TODO handle the cases where the recurring is enabled and adapt the UI
+    const createRangeOnDate = (date: Date) => {
+        addBookingRange(createBookingRange(date, formData.timezone));
+    };
+
     return (
         <div>
-            {formData.bookingRanges.map((range) => (
-                <div key={range.id} className="flex flex-nowrap gap-2 justify-space-between mb-0.5">
-                    <div className="flex flex-1 items-center gap-0.5">
-                        <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
-                            .t`Date of the booking range`}</label>
-                        <div className="grow-custom flex-1 flex" style={{ '--grow-custom': '1.9' }}>
-                            <DateInputTwo
-                                id={`range-date-input-${range.id}`}
-                                value={range.start}
-                                min={startOfToday()}
-                                onChange={(value) => handleDateChange(range.id, range, value)}
-                            />
-                        </div>
-                        <label htmlFor={`range-start-input-${range.id}`} className="sr-only">{c('label')
-                            .t`Start time of the booking range`}</label>
-                        <TimeInput
-                            id={`range-start-time-${range.id}`}
-                            value={range.start}
-                            onChange={(value) => handleStartChange(range, value)}
-                            min={isToday(range.start) ? roundToNextHalfHour(now) : startOfDay(range.start)}
-                            max={subMinutes(range.end, formData.duration)}
-                            className="booking-time-input"
-                        />
-                        -
-                        <label htmlFor={`range-end-time-${range.id}`} className="sr-only">{c('label')
-                            .t`End time of the booking range`}</label>
-                        <TimeInput
-                            id={`range-end-time-${range.id}`}
-                            value={range.end}
-                            min={addMinutes(range.start, formData.duration)}
-                            onChange={(value) => handleEndChange(range, value)}
-                            preventNextDayOverflow
-                            className="booking-time-input"
-                        />
-                    </div>
-                    <div className="flex flex-nowrap shrink-0">
-                        <Tooltip title={c('Action').t`Split current booking range`}>
-                            <Button icon shape="ghost" onClick={() => handlePlusClick(range)}>
-                                <IcPlus
-                                    name="plus"
-                                    className="color-primary"
-                                    alt={c('Action').t`Split current booking range`}
-                                />
-                            </Button>
-                        </Tooltip>
-                        <Tooltip title={c('Action').t`Remove the booking range`}>
-                            <Button icon shape="ghost" onClick={() => removeBookingRange(range.id)}>
-                                <IcTrash className="color-weak" alt={c('Action').t`Remove the booking range`} />
-                            </Button>
-                        </Tooltip>
-                    </div>
+            {isRecurringEnabled && (
+                <div className="flex flex-row items-start mb-3">
+                    <Checkbox
+                        id="repeat-weekly"
+                        className="mt-2 mr-2"
+                        checked={formData.recurring}
+                        onChange={() => updateFormData('recurring', !formData.recurring, date)}
+                    />
+                    <Label htmlFor="repeat-weekly" className="flex-1">
+                        {c('Label').t`Repeat weekly`}
+                    </Label>
                 </div>
-            ))}
-            <Button
-                shape="underline"
-                color="norm"
-                className="mt-2"
-                size="small"
-                onClick={handleAddDateClick}
-                disabled={validation?.reason === BookingFormValidationReasons.TIME_SLOT_LIMIT}
-            >{c('Action').t`Add a date`}</Button>
+            )}
+
+            {formData.recurring ? (
+                <DisplayRecurringRanges
+                    formData={formData}
+                    userSettings={userSettings}
+                    removeBookingRange={removeBookingRange}
+                    onPlusClick={handlePlusClick}
+                    onAddRange={createRangeOnDate}
+                    onStartChange={handleStartChange}
+                    onEndChange={handleEndChange}
+                />
+            ) : (
+                <>
+                    <DisplayRegularRanges
+                        formData={formData}
+                        removeBookingRange={removeBookingRange}
+                        onStartChange={handleStartChange}
+                        onEndChange={handleEndChange}
+                        onDateChange={handleDateChange}
+                        onPlusClick={handlePlusClick}
+                    />
+
+                    <Button
+                        shape="underline"
+                        color="norm"
+                        className="mt-2"
+                        size="small"
+                        onClick={() => handleAddDateClick()}
+                        disabled={validation?.reason === BookingFormValidationReasons.TIME_SLOT_LIMIT}
+                    >{c('Action').t`Add a date`}</Button>
+                </>
+            )}
         </div>
     );
 };
