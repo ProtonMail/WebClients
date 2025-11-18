@@ -91,7 +91,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const updateFormData = (field: keyof InternalBookingFrom, value: any, currentDate?: Date) => {
         // Auto-update duration when calendar changes (if user hasn't customized duration)
-        if (field === 'selectedCalendar' && internalForm.duration === initialFormData.current?.duration) {
+        if (field === 'selectedCalendar') {
             const calBootstrap = readCalendarBootstrap(value);
             if (calBootstrap && calBootstrap.CalendarSettings.DefaultEventDuration !== internalForm.duration) {
                 updateFormData('duration', calBootstrap.CalendarSettings.DefaultEventDuration);
