@@ -1,0 +1,36 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+$booking-sidebar-breakpoint: em(1000, 16);
+
+// no FAB if booking sidebar is opened
+body:has(.booking-sidebar-container) {
+	.fab {
+		display: none;
+	}
+}
+
+.booking-sidebar {
+	&-container {
+		@include media('<=#{$booking-sidebar-breakpoint}') {
+			position: absolute;
+			inset-block: 0;
+			inline-size: var(--sm-w-custom);
+			max-inline-size: 100%;
+			inset-inline-start: 0;
+			z-index: map.get($z-indexes, 'drawer');
+			background-color: var(--sidebar-background-color);
+			animation: booking-sidebar-in 0.15s ease-in-out;
+		}
+	}
+}
+
+@keyframes booking-sidebar-in {
+	from {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
