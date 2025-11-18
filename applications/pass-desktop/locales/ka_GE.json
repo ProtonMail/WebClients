@@ -1247,9 +1247,6 @@
       "Wrong second password": [
         "არასწორი მეორე პაროლი"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "ახლა ქსელის გარეშე მუშაობთ. აღადგინეთ მიერთება, რომ ${ PASS_SHORT_APP_NAME } განბლოკოთ."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "თქვენი DNS არასწორადაა დაყენებული. MX ჩანაწერი, რომელიც მივიღეთ:"
       ],
@@ -1788,9 +1785,6 @@
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "ინტერნეტთან კავშირის პრობლემა. შეამოწმეთ თქვენი მოწყობილობა."
-      ],
       "Invitation sent": [
         "მოსაწვევი გაგზავნილია"
       ],
@@ -1897,10 +1891,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
