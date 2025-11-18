@@ -2280,6 +2280,9 @@
       "Application problem": [
         "Applikationsproblem"
       ],
+      "Authenticator problem": [
+        "Autentificeringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -2788,6 +2791,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tilføj ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avanceret konto- og netværkssikkerhed i ét abonnement"
       ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
@@ -5168,6 +5174,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Log venligst ind med en Gmail-adresse, der allerede videresender til ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Log ind med den samme Gmail-adresse, som du oprindeligt har forbundet."
       ]
@@ -7509,8 +7518,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -10935,6 +10943,9 @@
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } fordele"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hurtige P2P/BitTorrent-downloads"
       ],
@@ -11152,6 +11163,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } personer)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling af boks med op til ${ n } person",
+        "Deling af boks med op til ${ n } personer"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
@@ -12336,6 +12351,23 @@
       ],
       "Credits will be added to your balance": [
         "Kreditter vil blive tilføjet til din saldo"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på, at du vil fortsætte?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du vælger at ændre dit ${ planTitle }-abonnement, kan du miste adgang til visse funktioner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Dit abonnement inkluderer allerede denne funktion."
       ]
     },
     "Payments.plan_name": {

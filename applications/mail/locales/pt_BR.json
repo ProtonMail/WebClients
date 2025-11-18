@@ -2283,6 +2283,9 @@
       "Application problem": [
         "Problema no aplicativo"
       ],
+      "Authenticator problem": [
+        "Problema de autenticação"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -2791,6 +2794,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Segurança avançada de conta e rede em um único plano"
       ],
       "High-speed chats and advanced AI features.": [
         "Bate-papos de alta velocidade e recursos avançados de IA."
@@ -5180,6 +5186,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Por favor, inicie sessão com um endereço Gmail que já encaminha para ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicie sessão com o mesmo endereço do Gmail que você conectou originalmente"
       ]
@@ -7521,8 +7530,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
