@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -24,13 +24,31 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 interface NewProjectModalProps extends ModalStateProps {
     onProjectCreated?: (projectId: string) => void;
+    initialName?: string;
+    initialInstructions?: string;
+    initialIcon?: string;
 }
 
-export const NewProjectModal = ({ onProjectCreated, ...modalProps }: NewProjectModalProps) => {
+export const NewProjectModal = ({ 
+    onProjectCreated, 
+    initialName,
+    initialInstructions,
+    initialIcon,
+    ...modalProps 
+}: NewProjectModalProps) => {
     const [projectName, setProjectName] = useState('');
     const [projectInstructions, setProjectInstructions] = useState('');
     const [selectedIcon, setSelectedIcon] = useState<string>('other');
     const { createProject } = useProjectActions();
+
+    // Populate initial values when modal opens
+    useEffect(() => {
+        if (modalProps.open) {
+            setProjectName(initialName || '');
+            setProjectInstructions(initialInstructions || '');
+            setSelectedIcon(initialIcon || 'other');
+        }
+    }, [modalProps.open, initialName, initialInstructions, initialIcon]);
 
     const handleCancel = () => {
         setProjectName('');

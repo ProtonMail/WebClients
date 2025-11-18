@@ -1,11 +1,11 @@
 .project-card {
-    background: var(--background-weak);
+    background: var(--background-norm);
     border: 1px solid var(--border-weak);
     border-radius: 12px;
-    padding: 20px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
     transition: all 0.2s ease;
     cursor: pointer;
 
@@ -16,8 +16,33 @@
     }
 
     &--example {
-        background: linear-gradient(135deg, var(--background-weak) 0%, var(--background-norm) 100%);
-        border-color: var(--interaction-norm-minor-2);
+        background: var(--background-weak);
+        border: 1px dashed var(--border-norm);
+        opacity: 0.9;
+        padding: 12px;
+        gap: 8px;
+
+        &:hover {
+            opacity: 1;
+            border-color: var(--interaction-norm-minor-2);
+            background: var(--background-weak);
+        }
+
+        .project-card-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .project-card-title {
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .project-card-description {
+            font-size: 12px;
+            line-height: 1.4;
+            -webkit-line-clamp: 2;
+        }
     }
 }
 
@@ -28,13 +53,14 @@
 }
 
 .project-card-icon {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease;
+    flex-shrink: 0;
 
     .project-card:hover & {
         transform: scale(1.05);
@@ -65,22 +91,23 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
+    min-width: 0;
 }
 
 .project-card-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     margin: 0;
     color: var(--text-norm);
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .project-card-description {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-weak);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -89,8 +116,8 @@
 
 .project-card-stats {
     display: flex;
-    gap: 16px;
-    margin-top: 4px;
+    gap: 12px;
+    margin-top: 2px;
 }
 
 .project-card-stat {
