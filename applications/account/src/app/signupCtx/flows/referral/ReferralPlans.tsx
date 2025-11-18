@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { SelectedPlan, TRIAL_DURATION_DAYS } from '@proton/payments';
+import { TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 
@@ -29,13 +29,18 @@ const ReferralPlans = () => {
      * Sync selected plan with plan parameter
      */
     useEffect(() => {
+        // Wait for payments context to be initialized before syncing
+        if (!payments.initializationStatus.triggered) {
+            return;
+        }
+
         const planParam = signupSearchParams.getPlan(searchParams) || REFERRAL_DEFAULT_PLAN;
-        if (planParam === SelectedPlan.name) {
+        if (planParam === payments.selectedPlan.name) {
             return;
         }
 
         void payments.selectPlan(getReferralSelectedPlan(planParam as SupportedReferralPlans));
-    }, []);
+    }, [payments.initializationStatus.triggered, payments.selectedPlan.name]);
 
     return (
         <Layout>
