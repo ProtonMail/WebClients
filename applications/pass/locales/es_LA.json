@@ -1148,6 +1148,9 @@
       "Secure link could not be opened.": [
         "No se pudo abrir el enlace seguro."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Los servidores no están disponibles. Intente desbloquear ${ PASS_SHORT_APP_NAME } en unos minutos."
+      ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
       ],
@@ -1235,8 +1238,8 @@
       "Wrong second password": [
         "La segunda contraseña no es correcta."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "No hay conexión. Reanude la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Está sin conexión. Vuelva a conectarse a internet para desbloquear ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "El DNS no está configurado correctamente. El registro MX obtenido es:"
@@ -1757,9 +1760,6 @@
       "Internet connection lost": [
         "Sin conexión a Internet"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "No hay conexión a internet. Compruebe la conectividad del dispositivo."
-      ],
       "Invitation sent": [
         "Invitación enviada"
       ],
@@ -1866,6 +1866,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2158,6 +2162,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Se restauraron los elementos seleccionados de la papelera"
+      ],
+      "Servers are unreachable": [
+        "Los servidores no están disponibles"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."

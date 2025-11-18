@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "Android 向け ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "iOS 向け ${ PASS_SHORT_APP_NAME }"
+      ],
       "Accept": [
         "承認する"
       ],
@@ -303,6 +309,9 @@
       ],
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を取得"
+      ],
+      "Get mobile and desktop apps": [
+        "モバイルアプリとデスクトップアプリを入手する"
       ],
       "Get mobile apps": [
         "モバイルアプリを入手する"
@@ -1221,9 +1230,6 @@
       "Wrong second password": [
         "セカンドパスワードが正しくありません"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "現在オフラインです。 ${ PASS_SHORT_APP_NAME }のロックを解除するためにネットワークに接続してください。"
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNSが正しく設定されていません。取得したMXレコードは以下です："
       ],
@@ -1725,9 +1731,6 @@
       "Internet connection lost": [
         "インターネット接続が切断されました"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "インターネット接続が失われました。デバイスの接続を確認してください。"
-      ],
       "Invitation sent": [
         "招待状の送信"
       ],
@@ -1832,6 +1835,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"

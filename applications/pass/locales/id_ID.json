@@ -1230,9 +1230,6 @@
       "Wrong second password": [
         "Kata sandi kedua salah"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Anda sedang offline. Silakan hubungkan kembali diri Anda ke jaringan internet untuk membuka ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS Anda tidak diatur dengan benar. Rekaman MX yang kami peroleh adalah:"
       ],
@@ -1734,9 +1731,6 @@
       "Internet connection lost": [
         "Koneksi internet terputus"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Koneksi internet terputus. Silakan periksa konektivitas perangkat Anda."
-      ],
       "Invitation sent": [
         "Undangan dikirim"
       ],
@@ -1841,6 +1835,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
