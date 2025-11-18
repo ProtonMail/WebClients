@@ -90,6 +90,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Ask me next time": [
+        "Spørg mig næste gang"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Højst ${ maxContacts } kontakt er tilladt pr. kontaktgruppe",
         "Højst ${ maxContacts } kontakter er tilladt pr. kontaktgruppe"
@@ -656,6 +659,9 @@
       ],
       "Save changes": [
         "Gem ændringer"
+      ],
+      "Save preferences": [
+        "Gem præferencer"
       ],
       "Search": [
         "Søg"
@@ -4402,6 +4408,9 @@
       "Continue": [
         "Forsæt"
       ],
+      "Converting document...": [
+        "Konverterer dokument..."
+      ],
       "Copy the link to clipboard": [
         "Kopiér linket til udklipsholder"
       ],
@@ -4444,6 +4453,9 @@
       ],
       "Creating link to folder": [
         "Opretter link til mappe"
+      ],
+      "Creating new document...": [
+        "Opretter nyt dokument..."
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -4538,6 +4550,12 @@
       "Enter your own password (as trusted contact).": [
         "Indtast din egen adgangskode (som betroet kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fejl ved konvertering af dokument: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Fejl ved indlæsning af dokument: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Fejlsynkronisering"
       ],
@@ -4597,6 +4615,12 @@
       ],
       "Geoblocking": [
         "Geoblokering"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Få e-mailopdateringer om kommentarer og forslag, der tilføjes til dine dokumenter."
+      ],
+      "Get Notified About Comments": [
+        "Få besked om kommentarer"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
@@ -4734,6 +4758,9 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Making a copy...": [
+        "Laver en kopi..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn"
@@ -4764,6 +4791,9 @@
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Intet dokument angivet i URL. Gå tilbage til ${ DRIVE_APP_NAME }, og vælg et dokument."
       ],
       "No email address": [
         "Ingen e-mailadresse"
@@ -5048,6 +5078,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Den URL, du indtastede, ser ud til at være blevet kopieret forkert fra Slack. Når du kopierer lange links fra Slack, højreklik da på linket, vælg så \"Kopiér link\" i stedet for at kopiere den afkortede URL-tekst direkte."
       ],
       "There are no documents in the trash.": [
         "Der er ingen dokumenter i papirkurven."
@@ -5654,6 +5687,9 @@
       "Emails (last month)": [
         "E-mails (seneste måned)"
       ],
+      "Enable email notifications": [
+        "Aktiv'er e-mailnotifikationer"
+      ],
       "Encrypt emails": [
         "Kryptér e-mails"
       ],
@@ -5701,6 +5737,9 @@
       ],
       "Include application logs in bug report": [
         "Inkluder applikationslogfiler i fejlrapporten"
+      ],
+      "Include document name in notification": [
+        "Inkluder dokumentnavn i notifikation"
       ],
       "Include message and file name in invite email": [
         "Medtag besked og filnavn i invitationsmail"
