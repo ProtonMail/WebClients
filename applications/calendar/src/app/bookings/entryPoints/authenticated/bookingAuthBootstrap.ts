@@ -9,6 +9,7 @@ import {
     loadSession,
     unleashReady,
 } from '@proton/account/bootstrap';
+import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { initMainHost } from '@proton/cross-storage/lib';
 import createApi from '@proton/shared/lib/api/createApi';
 import { requestFork } from '@proton/shared/lib/authentication/fork';
@@ -19,8 +20,7 @@ import noop from '@proton/utils/noop';
 
 import config from '../../../config';
 import locales from '../../../locales';
-import { setupStore } from '../../../store/bookingsStore';
-import { extendStore } from '../../../store/store';
+import { extendStore, setupStore } from '../../../store/store';
 import type { BookingBootstrapResult } from '../interface';
 
 export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | 'redirect'> => {
@@ -62,8 +62,19 @@ export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | '
             unleashClient,
         });
 
+        const user = sessionResult.session?.User;
+
+        const persistedState = await getDecryptedPersistedState<Partial<any>>({
+            authentication,
+            user,
+        });
+
+        const store = setupStore({
+            preloadedState: persistedState?.state,
+        });
+
         return {
-            store: setupStore(),
+            store,
         };
     };
 
