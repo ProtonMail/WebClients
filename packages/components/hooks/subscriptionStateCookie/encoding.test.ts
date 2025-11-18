@@ -1,5 +1,5 @@
 import { CYCLE, PLANS } from '@proton/payments';
-import { decodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { encodeFreeSubscriptionData, encodePaidSubscriptionData } from './encoding';
 
@@ -53,7 +53,7 @@ describe('encodePaidSubscriptionData', () => {
         expect(result).not.toMatch(/[+/=]/);
 
         // Should be decodable without throwing
-        expect(() => decodeBase64URL(result)).not.toThrow();
+        expect(() => uint8ArrayToString(Uint8Array.fromBase64(result, { alphabet: 'base64url' }))).not.toThrow();
     });
 
     it('should always include type "p" for paid subscriptions', () => {
@@ -62,7 +62,7 @@ describe('encodePaidSubscriptionData', () => {
             cycle: CYCLE.MONTHLY,
         });
 
-        const decoded = JSON.parse(decodeBase64URL(result));
+        const decoded = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(result, { alphabet: 'base64url' })));
         expect(decoded.t).toBe('p');
     });
 
@@ -72,7 +72,7 @@ describe('encodePaidSubscriptionData', () => {
             cycle: CYCLE.MONTHLY,
         });
 
-        const decoded = JSON.parse(decodeBase64URL(result));
+        const decoded = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(result, { alphabet: 'base64url' })));
 
         // Check all required properties exist
         expect(decoded).toHaveProperty('t');
@@ -100,7 +100,7 @@ describe('encodeFreeSubscriptionData', () => {
             hasHadSubscription: true,
         });
 
-        const decoded = JSON.parse(decodeBase64URL(result));
+        const decoded = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(result, { alphabet: 'base64url' })));
 
         expect(decoded.h).toBe('1');
     });
@@ -110,7 +110,7 @@ describe('encodeFreeSubscriptionData', () => {
             hasHadSubscription: false,
         });
 
-        const decoded = JSON.parse(decodeBase64URL(result));
+        const decoded = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(result, { alphabet: 'base64url' })));
 
         expect(decoded.h).toBe('0');
     });
@@ -124,7 +124,7 @@ describe('encodeFreeSubscriptionData', () => {
         expect(result).not.toMatch(/[+/=]/);
 
         // Should be decodable without throwing
-        expect(() => decodeBase64URL(result)).not.toThrow();
+        expect(() => uint8ArrayToString(Uint8Array.fromBase64(result, { alphabet: 'base64url' }))).not.toThrow();
     });
 
     it('should always include type "f" for paid subscriptions', () => {
@@ -132,7 +132,7 @@ describe('encodeFreeSubscriptionData', () => {
             hasHadSubscription: true,
         });
 
-        const decoded = JSON.parse(decodeBase64URL(result));
+        const decoded = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(result, { alphabet: 'base64url' })));
         expect(decoded.t).toBe('f');
     });
 
@@ -141,7 +141,7 @@ describe('encodeFreeSubscriptionData', () => {
             hasHadSubscription: true,
         });
 
-        const decoded = JSON.parse(decodeBase64URL(result));
+        const decoded = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(result, { alphabet: 'base64url' })));
 
         // Check all required properties exist
         expect(decoded).toHaveProperty('t');

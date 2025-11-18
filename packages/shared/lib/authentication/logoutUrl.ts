@@ -3,7 +3,7 @@ import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import isEnumValue from '@proton/utils/isEnumValue';
 
 import { ForkSearchParameters } from './fork';
@@ -32,7 +32,7 @@ const getAccessType = (session: SerializedSignoutUserData | LegacySerializedSign
 
 const parseSessions = (sessions: string | null) => {
     try {
-        const result = JSON.parse(decodeBase64URL(sessions || ''));
+        const result = JSON.parse(uint8ArrayToString(Uint8Array.fromBase64(sessions || '', { alphabet: 'base64url' })));
         if (Array.isArray(result)) {
             // Can't sign out from more than this
             if (result.length > 50) {
