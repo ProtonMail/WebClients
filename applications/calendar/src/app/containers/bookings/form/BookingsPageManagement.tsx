@@ -136,6 +136,7 @@ export const Form = () => {
                     assistContainerClassName="hidden"
                     className="max-w-full"
                     fullWidth={false}
+                    disabled={writeableCalendars.length === 1}
                     size={{ width: DropdownSizeUnit.Static }}
                 >
                     {writeableCalendars.map((calendar) => (
