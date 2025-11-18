@@ -9,7 +9,7 @@ import type { KtState } from '@proton/account/kt';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
 import type { CalendarsState } from '@proton/calendar/calendars';
 import { calendarsThunk } from '@proton/calendar/calendars';
-import { CryptoProxy } from '@proton/crypto/lib';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
@@ -67,11 +67,23 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                 dispatch(getVerificationPreferencesThunk({ email: ownerAddress.Email, lifetime: 0 })),
             ]);
 
+            const signatureContext = verifyingKeys
+                ? { value: `bookings.secret.${calendar.ID}`, required: true }
+                : undefined;
+
             const decrypted = await CryptoProxy.decryptMessage({
                 binaryMessage: base64StringToUint8Array(bookingPage.EncryptedSecret),
                 decryptionKeys,
+                verificationKeys: verifyingKeys,
+                signatureContext,
                 format: 'binary',
             });
+
+            if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                // eslint-disable-next-line no-console
+                console.warn({ errors: decrypted.verificationErrors });
+                throw new Error('Encrypted booking secret verification failed');
+            }
 
             // This decrypts and verify the content of the page
             const data = await decryptBookingContent({
