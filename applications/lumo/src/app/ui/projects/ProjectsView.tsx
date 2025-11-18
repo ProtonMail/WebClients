@@ -1,36 +1,32 @@
-import { useState } from 'react';
+import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
-import { c } from 'ttag';
+import {c} from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Hamburger, Icon, SettingsLink, useModalStateObject } from '@proton/components';
-import clsx from '@proton/utils/clsx';
+import {Button} from '@proton/atoms/Button/Button';
+import {ButtonLike} from '@proton/atoms/Button/ButtonLike';
+import {Hamburger, Icon, SettingsLink, useModalStateObject} from '@proton/components';
 
-import { EXAMPLE_PROJECTS } from './exampleProjects';
-import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useLumoPlan } from '../../providers/LumoPlanProvider';
-import { useSidebar } from '../../providers/SidebarProvider';
-import { useProjects } from './hooks/useProjects';
-import { NewProjectModal } from './modals/NewProjectModal';
-import { ProjectCard } from './ProjectCard';
-import { ProjectLimitModal } from './modals/ProjectLimitModal';
-import type { Project } from './types';
+import {EXAMPLE_PROJECTS} from './exampleProjects';
+import {useIsGuest} from '../../providers/IsGuestProvider';
+import {useLumoPlan} from '../../providers/LumoPlanProvider';
+import {useSidebar} from '../../providers/SidebarProvider';
+import {useProjects} from './hooks/useProjects';
+import {NewProjectModal} from './modals/NewProjectModal';
+import {ProjectCard} from './ProjectCard';
+import {ProjectLimitModal} from './modals/ProjectLimitModal';
 
 import './ProjectsView.scss';
 
-type Tab = 'my-projects' | 'shared' | 'examples';
-
 export const ProjectsView = () => {
-    const [activeTab, setActiveTab] = useState<Tab>('my-projects');
+    const history = useHistory();
     const isGuest = useIsGuest();
-    const { hasLumoPlus } = useLumoPlan();
+    const {hasLumoPlus} = useLumoPlan();
     const newProjectModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
     const myProjects = useProjects();
-    const { isVisible: isSideMenuOpen, toggle: toggleSideMenu, isSmallScreen } = useSidebar();
-    // TODO: Implement shared projects when collaboration features are added
-    const sharedProjects: Project[] = [];
+    const {isVisible: isSideMenuOpen, toggle: toggleSideMenu, isSmallScreen} = useSidebar();
+    const [templateData, setTemplateData] = useState<{ name: string; instructions: string; icon: string } | null>(null);
 
     const handleCreateProject = () => {
         if (isGuest) {
@@ -44,49 +40,92 @@ export const ProjectsView = () => {
             return;
         }
 
+        setTemplateData(null);
         newProjectModal.openModal(true);
     };
 
-    const renderContent = () => {
-        if (activeTab === 'my-projects') {
-            // Guest users - show sign-in prompt
-            if (isGuest) {
-                return (
-                    <div className="projects-empty-state">
-                        <div className="projects-empty-icon">
-                            <Icon name="lock" size={6} />
-                        </div>
-                        <h2 className="projects-empty-title">
-                            {c('collider_2025:Title').t`Sign in to create projects`}
-                        </h2>
-                        <p className="projects-empty-description">
-                            {c('collider_2025:Info')
-                                .t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
-                        </p>
-                        <div className="flex flex-column gap-2 items-center mt-4" style={{ maxWidth: '20rem' }}>
-                            <ButtonLike
-                                as={SettingsLink}
-                                color="norm"
-                                shape="solid"
-                                path="/signup"
-                                className="w-full"
-                            >
-                                {c('collider_2025:Button').t`Create a free account`}
-                            </ButtonLike>
-                            <ButtonLike as={SettingsLink} path="" shape="outline" color="weak" className="w-full">
-                                {c('collider_2025:Button').t`Sign in`}
-                            </ButtonLike>
-                        </div>
-                        <p className="text-sm color-weak mt-4">
-                            <Icon name="lock" size={3} className="mr-1" />
-                            {c('collider_2025:Info').t`Your information is zero-access encrypted`}
-                        </p>
-                    </div>
-                );
-            }
+    const handleOpenTemplateModal = (name: string, instructions: string, icon: string) => {
+        setTemplateData({name, instructions, icon});
+        newProjectModal.openModal(true);
+    };
 
-            if (myProjects.length === 0) {
-                return (
+    const handleProjectCreated = (projectId: string) => {
+        // Navigate to the newly created project
+        if (projectId) {
+            history.push(`/projects/${projectId}`);
+        }
+    };
+
+    const renderContent = () => {
+        // Guest users - show sign-in prompt
+        if (isGuest) {
+            return (
+                <div className="projects-empty-state">
+                    <div className="projects-empty-icon">
+                        <Icon name="lock" size={6}/>
+                    </div>
+                    <h2 className="projects-empty-title">
+                        {c('collider_2025:Title').t`Sign in to create projects`}
+                    </h2>
+                    <p className="projects-empty-description">
+                        {c('collider_2025:Info')
+                            .t`Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.`}
+                    </p>
+                    <div className="flex flex-column gap-2 items-center mt-4" style={{maxWidth: '20rem'}}>
+                        <ButtonLike
+                            as={SettingsLink}
+                            color="norm"
+                            shape="solid"
+                            path="/signup"
+                            className="w-full"
+                        >
+                            {c('collider_2025:Button').t`Create a free account`}
+                        </ButtonLike>
+                        <ButtonLike as={SettingsLink} path="" shape="outline" color="weak" className="w-full">
+                            {c('collider_2025:Button').t`Sign in`}
+                        </ButtonLike>
+                    </div>
+                    <p className="text-sm color-weak mt-4">
+                        <Icon name="lock" size={3} className="mr-1"/>
+                        {c('collider_2025:Info').t`Your information is zero-access encrypted`}
+                    </p>
+                </div>
+            );
+        }
+
+        // If user has projects, show them with Inspiration section below
+        if (myProjects.length > 0) {
+            return (
+                <>
+                    <div className="projects-grid-wrapper">
+                        <div className="projects-grid">
+                            {myProjects.map((project) => (
+                                <ProjectCard key={project.id} project={project}/>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="projects-inspiration-section projects-inspiration-section--with-projects">
+                        <h2 className="projects-inspiration-title">
+                            {c('collider_2025:Title').t`Inspiration`}
+                        </h2>
+                        <div className="projects-grid projects-grid--inspiration">
+                            {EXAMPLE_PROJECTS.slice(0, 3).map((project) => (
+                                <ProjectCard
+                                    key={project.id}
+                                    project={project}
+                                    onOpenNewProjectModal={handleOpenTemplateModal}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </>
+            );
+        }
+
+        // If no projects, show example projects in Inspiration section
+        return (
+            <>
+                <div className="projects-empty-state-wrapper">
                     <div className="projects-empty-state">
                         <div className="projects-empty-icon">
                             <Icon name="folder" size={6}/>
@@ -95,56 +134,26 @@ export const ProjectsView = () => {
                             {c('collider_2025:Title').t`Get started by creating a new project`}
                         </h2>
                         <p className="projects-empty-description">
-                            {c('collider_2025:Info').t`Projects help you set common instructions and attach files for conversations.`}
-                        </p>
-                        <Button color="norm" onClick={handleCreateProject} className="mt-4">
-                            <Icon name="plus" className="mr-2" />
-                            {c('collider_2025:Button').t`New project`}
-                        </Button>
-                    </div>
-                );
-            }
-            return (
-                <div className="projects-grid">
-                    {myProjects.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
-                    ))}
-                </div>
-            );
-        }
-
-        if (activeTab === 'shared') {
-            if (sharedProjects.length === 0) {
-                return (
-                    <div className="projects-empty-state">
-                        <div className="projects-empty-icon">
-                            <Icon name="users" />
-                        </div>
-                        <p className="projects-empty-description">
-                            {c('collider_2025:Info').t`No files yet`}
-                        </p>
-                        <p className="projects-empty-subdescription">
-                            {c('collider_2025:Info').t`Try attaching files to your project. They will be used in all chats in this project.`}
+                            {c('collider_2025:Info')
+                                .t`Projects help you organize conversations with custom instructions and files.`}
                         </p>
                     </div>
-                );
-            }
-            return (
-                <div className="projects-grid">
-                    {sharedProjects.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
-                    ))}
                 </div>
-            );
-        }
-
-        // Examples tab
-        return (
-            <div className="projects-grid">
-                {EXAMPLE_PROJECTS.map((project) => (
-                    <ProjectCard key={project.id} project={project} />
-                ))}
-            </div>
+                <div className="projects-inspiration-section">
+                    <h2 className="projects-inspiration-title">
+                        {c('collider_2025:Title').t`Inspiration`}
+                    </h2>
+                    <div className="projects-grid projects-grid--inspiration">
+                        {EXAMPLE_PROJECTS.slice(0, 3).map((project) => (
+                            <ProjectCard
+                                key={project.id}
+                                project={project}
+                                onOpenNewProjectModal={handleOpenTemplateModal}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </>
         );
     };
 
@@ -153,34 +162,27 @@ export const ProjectsView = () => {
             <div className="projects-view">
                 <div className="projects-header">
                     {isSmallScreen && (
-                        <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5} />
+                        <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5}/>
                     )}
                     <h1 className="projects-title">{c('collider_2025:Title').t`Projects`}</h1>
                     <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
-                        <Icon name="plus" className="mr-2" />
-                        {c('collider_2025:Button').t`Create project`}
+                        <Icon name="plus" className="mr-2"/>
+                        {c('collider_2025:Button').t`New project`}
                     </Button>
-                </div>
-
-                <div className="projects-tabs">
-                    <button
-                        className={clsx('projects-tab', activeTab === 'my-projects' && 'projects-tab--active')}
-                        onClick={() => setActiveTab('my-projects')}
-                    >
-                        {c('collider_2025:Tab').t`My Projects`}
-                    </button>
-                    <button
-                        className={clsx('projects-tab', activeTab === 'examples' && 'projects-tab--active')}
-                        onClick={() => setActiveTab('examples')}
-                    >
-                        {c('collider_2025:Tab').t`Templates`}
-                    </button>
                 </div>
 
                 <div className="projects-content">{renderContent()}</div>
             </div>
 
-            {newProjectModal.render && <NewProjectModal {...newProjectModal.modalProps} />}
+            {newProjectModal.render && (
+                <NewProjectModal
+                    {...newProjectModal.modalProps}
+                    initialName={templateData?.name}
+                    initialInstructions={templateData?.instructions}
+                    initialIcon={templateData?.icon}
+                    onProjectCreated={handleProjectCreated}
+                />
+            )}
             {projectLimitModal.render && <ProjectLimitModal {...projectLimitModal.modalProps} />}
         </>
     );
