@@ -1158,6 +1158,9 @@
       "Secure link could not be opened.": [
         "Bezpečný odkaz nemohl být otevřen."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Servery jsou nedostupné. Zkuste prosím odemknout ${ PASS_SHORT_APP_NAME } za několik minut."
+      ],
       "Settings update failed": [
         "Aktualizace nastavení se nezdařila"
       ],
@@ -1245,7 +1248,7 @@
       "Wrong second password": [
         "Druhé heslo je chybné"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Momentálně jste offline. Prosím obnovte připojení pro odemčení ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
@@ -1803,9 +1806,6 @@
       "Internet connection lost": [
         "Připojení k Internetu bylo ztraceno"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Připojení k Internetu bylo ztraceno. Zkontrolujte prosím připojení vašeho zařízení."
-      ],
       "Invitation sent": [
         "Pozvánka odeslána"
       ],
@@ -1918,7 +1918,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2213,6 +2216,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Vybrané položky byly úspěšně obnoveny z koše"
+      ],
+      "Servers are unreachable": [
+        "Servery jsou nedostupné"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"

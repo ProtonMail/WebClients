@@ -1148,6 +1148,9 @@
       "Secure link could not be opened.": [
         "No s'ha pogut obrir l'enllaç segur."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "No es pot connectar amb els servidors. Proveu de desbloquejar ${ PASS_SHORT_APP_NAME } d'aquí a uns minuts."
+      ],
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
       ],
@@ -1235,7 +1238,7 @@
       "Wrong second password": [
         "La segona contrasenya és incorrecta."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
@@ -1757,9 +1760,6 @@
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
-      ],
       "Invitation sent": [
         "S'ha enviat la invitació."
       ],
@@ -1866,6 +1866,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2158,6 +2162,9 @@
       ],
       "Selected items successfully restored from trash": [
         "S'han restaurat els elements seleccionats des de la paperera."
+      ],
+      "Servers are unreachable": [
+        "No es pot connectar amb els servidors"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"

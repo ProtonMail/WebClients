@@ -1182,9 +1182,6 @@
       "Wrong second password": [
         "Toinen salasana on väärin"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Olet tällä hetkellä yhteydettömässä tilassa. Palauta yhteys avataksesi ${ PASS_SHORT_APP_NAME }in."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS:ääsi ei ole asetettu oikein. Saamamme MX-tietue on:"
       ],
@@ -1682,9 +1679,6 @@
       "Internet connection lost": [
         "Internet-yhteyttä ei ole"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Ei yhteyttä. Tarkista laitteesi yhteydet."
-      ],
       "Invitation sent": [
         "Kutsu on lähetetty"
       ],
@@ -1791,6 +1785,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
