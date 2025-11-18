@@ -507,12 +507,12 @@ const InteractiveCalendarView = ({
             // We want to use the color of the selected calendar in the form, we fallback to default calendar in case of an issue
             const selectedCalendar = calendars.find((calendar) => calendar.ID === formData.selectedCalendar);
             const calendarData = getVisualCalendar(selectedCalendar || createEventCalendar);
-            const booklyCalendarEvents = convertBookingRangesToCalendarViewEvents(calendarData, formData.bookingRanges);
+            const booklyCalendarEvents = convertBookingRangesToCalendarViewEvents(calendarData, formData, date);
             return sortEvents(booklyCalendarEvents.concat(events));
         }
 
         return sortEvents(events.concat());
-    }, [events, isBookingActive, formData.bookingRanges, createEventCalendar, formData.selectedCalendar, calendars]);
+    }, [events, isBookingActive, formData, createEventCalendar, calendars, date]);
 
     const isProcessing = useCallback(
         (uniqueId: string) => {

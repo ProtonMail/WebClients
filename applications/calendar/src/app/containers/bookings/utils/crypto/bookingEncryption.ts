@@ -85,7 +85,7 @@ const encryptBookingSlots = async (
         const StartTime = getUnixTime(startUTC);
         const EndTime = getUnixTime(endUTC);
         const Timezone = formData.timezone;
-        const RRule = null;
+        const RRule = formData.recurring ? 'FREQ=WEEKLY' : null;
 
         const slotSignature = await CryptoProxy.signMessage({
             textData: JSONFormatTextData({ EndTime, RRule, StartTime, Timezone }),

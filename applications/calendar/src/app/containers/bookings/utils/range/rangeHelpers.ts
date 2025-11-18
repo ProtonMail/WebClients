@@ -10,15 +10,22 @@ import {
     startOfWeek,
 } from 'date-fns';
 
-import { convertTimestampToTimezone, fromLocalDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import {
+    convertUTCDateTimeToZone,
+    fromLocalDate,
+    fromUTCDate,
+    toLocalDate,
+    toUTCDate,
+} from '@proton/shared/lib/date/timezone';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { CalendarViewEvent } from '../../../calendar/interface';
-import type { BookingRange } from '../../bookingsProvider/interface';
+import type { BookingFormData, BookingRange, RecurringRangeDisplay } from '../../bookingsProvider/interface';
 import { BOOKING_SLOT_ID, DEFAULT_RANGE_END_HOUR, DEFAULT_RANGE_START_HOUR } from '../../bookingsProvider/interface';
+import { roundToNextHalfHour } from '../timeHelpers';
 
 export const generateBookingRangeID = (start: Date, end: Date) => {
     return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
@@ -57,6 +64,26 @@ export const createBookingRange = (date: Date, timezone: string) => {
     };
 };
 
+export const generateRecurringRanges = (
+    userSettings: UserSettings,
+    startDate: Date,
+    bookingRanges: BookingRange[]
+): RecurringRangeDisplay[] => {
+    const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
+
+    // We want to make sure the stored dates for the range is in UTC
+    const utc = toUTCDate(fromLocalDate(startDate));
+
+    return eachDayOfInterval({
+        start: startOfWeek(utc, { weekStartsOn }),
+        end: endOfWeek(utc, { weekStartsOn }),
+    }).map((day) => ({
+        id: day.getTime(),
+        ranges: bookingRanges.filter((range) => range.start.getDay() === day.getDay()),
+        date: day,
+    }));
+};
+
 /**
  * Returns an array of booking range going from 9am to 5pm on work days of the current week
  */
@@ -64,36 +91,35 @@ export const generateDefaultBookingRange = (
     userSettings: UserSettings,
     startDate: Date,
     timezone: string,
-    isRecurringRange: boolean = true
+    isRecurring: boolean
 ): BookingRange[] => {
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
 
     // We want to make sure the stored dates for the range is in UTC
-    const date = fromLocalDate(startDate);
-    const utc = toUTCDate({ ...date });
-    const todayUTC = toLocalDate(convertTimestampToTimezone(Date.now() / 1000, timezone));
+    const utc = toUTCDate(fromLocalDate(startDate));
+    const todayUTC = toLocalDate(convertUTCDateTimeToZone(fromUTCDate(new Date()), timezone));
 
-    return (
-        eachDayOfInterval({
-            start: startOfWeek(utc, { weekStartsOn }),
-            end: endOfWeek(utc, { weekStartsOn }),
-        })
-            // TODO remove this once we handle recurring slots
-            // remove all days in the past
-            .filter((day) => {
-                return isRecurringRange ? true : !isBefore(day, startOfDay(todayUTC));
-            })
-            .filter((day) => !isWeekend(day))
-            .map((day) => {
-                // TODO remove this once we handle recurring slots
-                // If today, we want to remove slots before the current hour
-                if (!isRecurringRange && isSameDay(day, startOfDay(todayUTC))) {
-                    return createTodayBookingRange(day, timezone, todayUTC);
-                }
+    return eachDayOfInterval({
+        start: startOfWeek(utc, { weekStartsOn }),
+        end: endOfWeek(utc, { weekStartsOn }),
+    })
+        .filter((day) => !isWeekend(day))
+        .map((day) => {
+            if (isRecurring) {
                 return createBookingRange(day, timezone);
-            })
-            .filter(isTruthy)
-    );
+            }
+
+            if (isBefore(day, startOfDay(todayUTC))) {
+                return null;
+            }
+
+            if (isSameDay(day, startOfDay(todayUTC))) {
+                return createTodayBookingRange(day, timezone, todayUTC);
+            }
+
+            return createBookingRange(day, timezone);
+        })
+        .filter(isTruthy);
 };
 
 export const createBookingRangeNextAvailableTime = ({
@@ -129,18 +155,39 @@ export const createBookingRangeNextAvailableTime = ({
 
 export const convertBookingRangesToCalendarViewEvents = (
     calendarData: VisualCalendar,
-    bookingRanges: BookingRange[] | null
+    formData: BookingFormData,
+    date: Date
 ): CalendarViewEvent[] => {
-    if (!bookingRanges) {
+    if (!formData.bookingRanges) {
         return [];
     }
 
-    return bookingRanges.map((range) => {
-        const localStart = fromLocalDate(range.start);
-        const utcStart = toUTCDate(localStart);
+    return formData.bookingRanges.map((range) => {
+        let utcStart = toUTCDate(fromLocalDate(range.start));
+        let utcEnd = toUTCDate(fromLocalDate(range.end));
 
-        const localEnd = fromLocalDate(range.end);
-        const utcEnd = toUTCDate(localEnd);
+        // We need to adjust the range date when creating a recurring page so it's visible when changing week
+        if (formData.recurring) {
+            const weekdayDelta = range.start.getDay() - date.getDay();
+            const targetDay = addDays(date, weekdayDelta);
+
+            const adjustedStartLocal = set(addDays(date, weekdayDelta), {
+                hours: range.start.getHours(),
+                minutes: range.start.getMinutes(),
+                seconds: range.start.getSeconds(),
+                milliseconds: range.start.getMilliseconds(),
+            });
+
+            const adjustedEndLocal = set(targetDay, {
+                hours: range.end.getHours(),
+                minutes: range.end.getMinutes(),
+                seconds: range.end.getSeconds(),
+                milliseconds: range.end.getMilliseconds(),
+            });
+
+            utcStart = toUTCDate(fromLocalDate(adjustedStartLocal));
+            utcEnd = toUTCDate(fromLocalDate(adjustedEndLocal));
+        }
 
         return {
             uniqueId: range.id,
@@ -153,4 +200,15 @@ export const convertBookingRangesToCalendarViewEvents = (
             },
         };
     });
+};
+
+/**
+ * Returns the initial start date when recurring. Alternatively, it rounds the date to the next half hour if the user dragged past the current time.
+ */
+export const getRangeDateStart = (formData: BookingFormData, initialStartDate: Date) => {
+    if (formData.recurring) {
+        return initialStartDate;
+    }
+
+    return isBefore(initialStartDate, new Date()) ? roundToNextHalfHour(new Date()) : initialStartDate;
 };
