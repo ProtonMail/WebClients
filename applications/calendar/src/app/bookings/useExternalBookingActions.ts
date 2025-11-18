@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { useApi } from '@proton/components';
+import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useSaveMeeting } from '@proton/meet';
 import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
@@ -24,6 +25,7 @@ export const useExternalBookingActions = () => {
     const setSelectedBookingSlot = useBookingStore((state) => state.setSelectedBookingSlot);
     const saveMeeting = useSaveMeeting();
     const getVTimezonesMap = useGetVtimezonesMap();
+    const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
 
     const history = useHistory();
 
@@ -49,6 +51,7 @@ export const useExternalBookingActions = () => {
                 organizerName: bookingDetails.inviterDisplayName || '',
                 organizerEmail: bookingDetails.inviterEmail,
                 saveMeeting,
+                getCanonicalEmailsMap,
                 getVTimezonesMap,
             });
 
