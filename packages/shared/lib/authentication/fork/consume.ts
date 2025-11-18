@@ -14,7 +14,6 @@ import type { APP_NAMES } from '../../constants';
 import { APPS, SSO_PATHS } from '../../constants';
 import { withAuthHeaders } from '../../fetch/headers';
 import { replaceUrl } from '../../helpers/browser';
-import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
 import type { Api, User } from '../../interfaces';
 import type { SessionSource } from '../SessionInterface';
 import { getUser } from '../getUser';
@@ -53,7 +52,7 @@ export const requestFork = ({
     const searchParams = new URLSearchParams();
     searchParams.append(ForkSearchParameters.App, fromApp);
 
-    const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
+    const state = crypto.getRandomValues(new Uint8Array(32)).toBase64({ alphabet: 'base64url', omitPadding: true });
     searchParams.append(ForkSearchParameters.State, state);
     searchParams.append(ForkSearchParameters.Version, `${ForkVersion}`);
     if (localID !== undefined) {

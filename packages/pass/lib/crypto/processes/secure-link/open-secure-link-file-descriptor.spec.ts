@@ -2,7 +2,6 @@ import { createFileDescriptor } from '@proton/pass/lib/crypto/processes/file/cre
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { createRandomItemKey } from '@proton/pass/lib/crypto/utils/testing';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
 import { createSecureLink } from './create-secure-link';
 import { openSecureLinkFileDescriptor } from './open-secure-link-file-descriptor';
@@ -21,7 +20,7 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
             encryptedItemKey: secureLinkData.encryptedItemKey.toBase64(),
             encryptedMetadata: fileDescriptor.metadata.toBase64(),
             encryptionVersion: 1,
-            linkKey: encodeBase64URL(String.fromCharCode(...secureLinkData.secureLinkKey)),
+            linkKey: secureLinkData.secureLinkKey.toBase64({ alphabet: 'base64url', omitPadding: true }),
         });
 
         expect(result.fileKey).toEqual(fileDescriptor.fileKey);
@@ -39,7 +38,7 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
             encryptedItemKey: secureLinkData.encryptedItemKey.toBase64(),
             encryptedMetadata: fileDescriptor.metadata.toBase64(),
             encryptionVersion: 2,
-            linkKey: encodeBase64URL(String.fromCharCode(...secureLinkData.secureLinkKey)),
+            linkKey: secureLinkData.secureLinkKey.toBase64({ alphabet: 'base64url', omitPadding: true }),
         });
 
         expect(result.fileKey).toEqual(fileDescriptor.fileKey);
@@ -59,7 +58,7 @@ describe('`openSecureLinkFileDescriptor` crypto process', () => {
                 encryptedItemKey: secureLinkData.encryptedItemKey.toBase64(),
                 encryptedMetadata: fileDescriptor.metadata.toBase64(),
                 encryptionVersion: 1,
-                linkKey: encodeBase64URL(String.fromCharCode(...secureLinkData.secureLinkKey)),
+                linkKey: secureLinkData.secureLinkKey.toBase64({ alphabet: 'base64url', omitPadding: true }),
             })
         ).rejects.toThrow();
     });

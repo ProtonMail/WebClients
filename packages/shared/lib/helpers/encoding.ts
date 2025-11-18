@@ -4,20 +4,6 @@ export const uint8ArrayToString = arrayToBinaryString;
 
 export const stringToUint8Array = binaryStringToArray;
 
-/**
- * Encode a binary string in the so-called base64 URL (https://tools.ietf.org/html/rfc4648#section-5)
- * @dev Each character in a binary string can only be one of the characters in a reduced 255 ASCII alphabet. I.e. morally each character is one byte
- * @dev This function will fail if the argument contains characters which are not in this alphabet
- * @dev This encoding works by converting groups of three "bytes" into groups of four base64 characters (2 ** 6 ** 4 is also three bytes)
- * @dev Therefore, if the argument string has a length not divisible by three, the returned string will be padded with one or two '=' characters
- */
-export const encodeBase64URL = (str: string, removePadding = true) => {
-    const encodeBase64 = (input: string) => btoa(input).trim();
-    const base64String = encodeBase64(str).replace(/\+/g, '-').replace(/\//g, '_');
-
-    return removePadding ? base64String.replace(/=/g, '') : base64String;
-};
-
 export const base64URLStringToUint8Array = (string: string) => Uint8Array.fromBase64(string, { alphabet: 'base64url' });
 
 export const uint8ArrayToPaddedBase64URLString = (array: Uint8Array<ArrayBuffer>) =>
@@ -34,7 +20,7 @@ export const validateBase64string = (str: string, useVariantAlphabet?: boolean) 
  */
 export const encodeAutomaticResetParams = (json: any) => {
     const jsonString = JSON.stringify(json);
-    return encodeBase64URL(jsonString);
+    return stringToUint8Array(jsonString).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
 
 /**

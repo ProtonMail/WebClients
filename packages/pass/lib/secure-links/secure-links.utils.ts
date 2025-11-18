@@ -1,10 +1,9 @@
 import { ContentFormatVersion, type ItemRevision, ItemState, type SecureLinkItem } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 export const buildSecureLink = (url: string, linkKey: Uint8Array<ArrayBuffer>) =>
-    `${url}#${encodeBase64URL(uint8ArrayToString(linkKey))}`;
+    `${url}#${linkKey.toBase64({ alphabet: 'base64url', omitPadding: true })}`;
 
 /** Transforms a `SecureLinkItem` into a mocked `ItemRevision` for UI
  * consumption. It's used to make SecureLinkItems compatible with components
