@@ -1235,9 +1235,6 @@
       "Wrong second password": [
         "Forkert anden adgangskode"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Du er i øjeblikket offline. Genopret venligst forbindelsen for at oplåse ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Din DNS er ikke korrekt indstillet. Den MX-record, vi får, er:"
       ],
@@ -1757,9 +1754,6 @@
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internetforbindelse tabt. Kontroller venligst din enheds forbindelse."
-      ],
       "Invitation sent": [
         "Invitation sendt"
       ],
@@ -1866,6 +1860,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"

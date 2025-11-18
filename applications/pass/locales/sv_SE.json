@@ -1232,9 +1232,6 @@
       "Wrong second password": [
         "Felaktigt andralösenord"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Du är för närvarande offline. Återuppta anslutning för att låsa upp ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Din DNS är inte korrekt inställd. MX-posten vi erhåller är:"
       ],
@@ -1754,9 +1751,6 @@
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internetanslutning förlorad. Kontrollera din enhets anslutning."
-      ],
       "Invitation sent": [
         "Inbjudan skickad"
       ],
@@ -1863,6 +1857,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2152,6 +2150,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Markerade objekt återställda från papperskorg"
+      ],
+      "Servers are unreachable": [
+        "Servrarna är otillgängliga"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"

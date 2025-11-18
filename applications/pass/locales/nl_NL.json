@@ -1212,9 +1212,6 @@
       "Wrong second password": [
         "Foutief tweede wachtwoord"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "U bent momenteel offline. Hervat de verbinding om ${ PASS_SHORT_APP_NAME } te ontgrendelen."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Uw DNS is niet correct ingesteld. Het MX-record dat we krijgen is:"
       ],
@@ -1731,9 +1728,6 @@
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbinding verbroken. Controleer uw internetverbinding."
-      ],
       "Invitation sent": [
         "Uitnodiging verzonden"
       ],
@@ -1840,6 +1834,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"

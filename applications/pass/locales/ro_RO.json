@@ -1240,9 +1240,6 @@
       "Wrong second password": [
         "Parola secundară nu este corectă."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Nu aveți conexiune. Reconectați-vă pentru a debloca ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Serverul DNS nu este configurat corect. Înregistrarea MX obținută este:"
       ],
@@ -1780,9 +1777,6 @@
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Conexiune la internet pierdută. Verificați conexiunea dispozitivului."
-      ],
       "Invitation sent": [
         "Invitația a fost trimisă."
       ],
@@ -1891,6 +1885,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
