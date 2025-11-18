@@ -2122,11 +2122,74 @@
       ]
     },
     "Blog": {
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "您的訂閱包含 **自動刪除**、**延後** 和 **電子郵件排程** 功能。"
+      ],
+      "11 tips to stop spam emails": [
+        "11 個阻止垃圾電子郵件的祕訣"
+      ],
+      "Automate recurring actions to sort and organize incoming emails.": [
+        "將重複性操作自動化，以排序和整理傳入的電子郵件。"
+      ],
+      "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
+        "探索我們有效管理收件匣的祕訣，讓您保持生產力與專注。"
+      ],
+      "Easily manage your inbox": [
+        "輕鬆管理您的收件匣"
+      ],
+      "Get a clean inbox with filters": [
+        "使用篩選器讓收件匣保持整潔"
+      ],
+      "How to get a custom email domain": [
+        "如何取得自訂電子郵件網域"
+      ],
+      "How to get to inbox zero: Privacy-first inbox organization tips": [
+        "如何達到收件匣清空：隱私優先的收件匣整理祕訣"
+      ],
+      "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
+        "如果您想提升您的專業身分，了解為何以及如何建立自訂電子郵件網域至關重要。大多數人使用其電子郵件服務所提供的預設網域免費電子郵件地址。"
+      ],
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "使用 VPN Accelerator 將 VPN 速度提升多達 400%"
       ],
+      "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
+        "了解如何應對惱人且可能有害的垃圾郵件。垃圾電子郵件（也稱為垃圾信件）不僅僅是您收件匣中惱人的雜亂訊息。網路犯罪者可以利用這些不請自來的不必要訊息，發動網路釣魚攻擊及散播惡意軟體。"
+      ],
+      "Protect your business communications": [
+        "保護您的業務通訊"
+      ],
+      "See and manage all your email subscriptions": [
+        "查看並管理您的所有電子郵件訂閱"
+      ],
+      "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
+        "一般專業人士平均每天收到約 120 封電子郵件，相當於一年約 43,800 封。無論您從事哪個行業，這都是需要處理的龐大商務電子郵件數量。"
+      ],
+      "The impact a data breach can have on your life depends greatly on the type of information that was exposed and to whom. A quick reaction to a data breach can often protect your digital identity and prevent any losses.": [
+        "資料外洩對您生活造成的影響，在很大程度上取決於外洩的資訊類型以及資訊外洩的對象。對資料外洩迅速做出反應，通常可以保護您的數位身分並防止任何損失。"
+      ],
+      "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
+        "最私密且安全的線上通訊方式是使用端對端加密。如果您傳送一封端對端加密的電子郵件，該郵件會在您的裝置（iPhone、Android 或筆記型電腦）上加密，直到送達收件人的裝置後才會解密。"
+      ],
+      "Try out **Newsletters view** to declutter your inbox.": [
+        "試用 **電子報檢視** 來整理您的收件匣。"
+      ],
       "Watch your favorite movies and TV shows": [
         "觀看您喜愛的電影與電視節目"
+      ],
+      "What is an email alias?": [
+        "什麼是電子郵件別名？"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "什麼是端對端加密，其運作方式為何？"
+      ],
+      "What to do if your data is leaked in a data breach": [
+        "如果您的資料在資料外洩事件中遭洩漏，該如何處理？"
+      ],
+      "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
+        "正在處理敏感資料嗎？使用 ${ MAIL_APP_NAME } 保護您的通訊，並與客戶建立信任。"
+      ],
+      "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
+        "您的個人電子郵件地址是您數位身分的重要組成部分。就像您的電話號碼一樣，您不會將它給您遇到的每一個人。這就是為什麼擁有其他可用於不同目的之電子郵件地址會很有用。"
       ]
     },
     "breadcrumb": {
@@ -4141,6 +4204,12 @@
       ]
     },
     "Download": {
+      ".deb (Ubuntu/Debian)": [
+        ".deb (Ubuntu/Debian)"
+      ],
+      ".rpm (Fedora/RHEL)": [
+        ".rpm (Fedora/RHEL)"
+      ],
       "Android": [
         "Android"
       ],
@@ -4152,6 +4221,9 @@
       ],
       "Browser": [
         "瀏覽器"
+      ],
+      "Calendar": [
+        "行事曆"
       ],
       "Chrome": [
         "Chrome"
@@ -4168,14 +4240,23 @@
       "Download for Windows": [
         "適用於 Windows 的下載"
       ],
+      "Download on Snap store": [
+        "於 Snap store 下載"
+      ],
       "Download on the Apple App Store": [
         "於 Apple App Store 下載"
+      ],
+      "Download on the Google Play Store": [
+        "於 Google Play 商店下載"
       ],
       "Fire TV": [
         "Fire TV"
       ],
       "Firefox": [
         "Firefox"
+      ],
+      "Get it on Google Play": [
+        "於 Google Play 取得"
       ],
       "Get the app": [
         "取得應用程式"
@@ -4200,6 +4281,9 @@
       ],
       "macOS Monterey": [
         "macOS Monterey"
+      ],
+      "Mail": [
+        "郵件"
       ],
       "Mobile": [
         "手機"
@@ -5939,11 +6023,26 @@
       ]
     },
     "Features": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "@pm.me address": [
+        "@pm.me 位址"
+      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
       "and more premium features...": [
         "還有更多豐富的加值功能..."
+      ],
+      "Connect custom domain": [
+        "連線自訂網域"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "Priority support": [
+        "優先支援"
       ],
       "Secure streaming": [
         "安全的串流"
@@ -13466,7 +13565,7 @@
         "每年付款，安全及最適方案"
       ],
       "Save": [
-        "節省"
+        "省下"
       ],
       "Save big when you pay annually": [
         "按年支付可節省大筆費用"
@@ -17853,6 +17952,9 @@
       "Decrypt key": [
         "解密金鑰"
       ],
+      "Deep dive into email blog posts": [
+        "深入了解電子郵件部落格貼文"
+      ],
       "Deep dive into VPN blog posts": [
         "深度了解VPN部落格貼文"
       ],
@@ -17943,6 +18045,9 @@
       "Downgrade to ${ downgradedPlanName }?": [
         "降級後的方案為 ${ downgradedPlanName }?"
       ],
+      "Download ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "下載 ${ MAIL_APP_NAME } 及 ${ CALENDAR_APP_NAME }"
+      ],
       "Download the desktop app": [
         "下載桌面應用程式"
       ],
@@ -18026,6 +18131,9 @@
       ],
       "Enhance security with 2FA": [
         "透過雙重驗證強化安全性"
+      ],
+      "Enjoy fast, seamless access to your emails with our dedicated apps.": [
+        "透過我們的專用應用程式，享受快速、無縫的電子郵件存取體驗。"
       ],
       "Enter endpoints into your identity provider": [
         "請前往您的身分提供者輸入端點"
@@ -18128,6 +18236,12 @@
       ],
       "Get ${ vpnPlus } to access all servers": [
         "選購 ${ vpnPlus } 即可存取所有的伺服器"
+      ],
+      "Get access to the desktop app with ${ mailPlusPlanName }. ${ upgradeButton }": [
+        "透過 ${ mailPlusPlanName } 方案存取桌面應用程式。${ upgradeButton }"
+      ],
+      "Get more from your email": [
+        "充分利用您的電子郵件"
       ],
       "Get more from your VPN": [
         "從您的VPN取得更多"
@@ -18298,7 +18412,7 @@
         "夜間布景主題"
       ],
       "No account information was found in any data breaches": [
-        "無帳號於此資料外洩被發現"
+        "在任一資料外洩事件中，並未發現任何帳號資訊"
       ],
       "No events": [
         "沒有活動"
