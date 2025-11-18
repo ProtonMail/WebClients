@@ -109,11 +109,11 @@ export const cancelable = <T>(job: () => Promise<T>, canceled: boolean = false) 
 });
 
 /** Processes array items sequentially through an async function */
-export const seq = async <T, R>(items: T[], job: (item: T) => MaybePromise<R>): Promise<R[]> => {
+export const seq = async <T, R>(items: T[], job: (item: T, acc: R[]) => MaybePromise<R>): Promise<R[]> => {
     const results: R[] = [];
 
     for (const item of items) {
-        const result = await job(item);
+        const result = await job(item, results);
         results.push(result);
     }
 
