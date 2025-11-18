@@ -21,7 +21,7 @@ export interface FieldTracker {
 
 export type FieldTrackerState = {
     focused: boolean;
-    focusTimeout: MaybeNull<NodeJS.Timeout>;
+    timeout: MaybeNull<NodeJS.Timeout>;
 };
 
 const FIELD_TIMEOUT = 250;
@@ -49,11 +49,11 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
     (ctx, field, formTracker): FieldTracker => {
         const listeners = createListenerStore();
         const raf = createRAFController();
-        const state: FieldTrackerState = { focused: false, focusTimeout: null };
+        const state: FieldTrackerState = { focused: false, timeout: null };
 
         const onBlur = (_: Event) => {
             if (!state.focused) return;
-            else if (state.focusTimeout) clearTimeout(state.focusTimeout);
+            else if (state.timeout) clearTimeout(state.timeout);
 
             raf.cancel();
             state.focused = false;
@@ -84,7 +84,7 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
 
             raf.request(() => {
                 if (field.actionPrevented) return;
-                if (state.focusTimeout) clearTimeout(state.focusTimeout);
+                if (state.timeout) clearTimeout(state.timeout);
 
                 ctx?.service.inline.icon.attach(field);
                 ctx?.service.inline.dropdown.toggle({
@@ -98,7 +98,7 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
                 /** Browsers may dequeue blur/focusout events when rapid focus
                  * switches between frames/shadowRoots. In such cases, we try to
                  * detect such dequeues to avoid missing blur clean-ups. */
-                state.focusTimeout = setTimeout(async () => {
+                state.timeout = setTimeout(async () => {
                     if (state.focused && !(await field.isActive())) {
                         logger.debug(`[FieldTracker] Browser "blur" dequeue detected`);
                         onBlur(evt);
@@ -111,14 +111,22 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
          * Non-filterable fields: closes dropdown immediately (user typing manually).
          * Filterable fields: sends filter updates to update dropdown results */
         const onInput = (_: Event) => {
-            const { action } = field;
-            const { value } = field.element;
+            if (state.timeout) clearTimeout(state.timeout);
 
-            field.setValue(value);
+            const { action } = field;
+            const elementValue = field.element.value;
+            const trackedValue = field.value;
+
+            /** Tooltips may appear when input value toggles from empty to
+             * non-empty: schedule icon repositioning when this happens */
+            const revalidate = (!trackedValue && elementValue) || (trackedValue && !elementValue);
+            if (revalidate && !field.actionPrevented) state.timeout = setTimeout(() => field.icon?.reposition(), 150);
+
+            field.setValue(elementValue);
 
             if (field.actionPrevented) return;
             else if (!action?.filterable) ctx?.service.inline.dropdown.close({ type: 'field', field });
-            else syncAutofillFilter(value);
+            else syncAutofillFilter(elementValue);
         };
 
         /* When the type attribute of a field changes : detach it from
@@ -142,8 +150,8 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
                         /** NOTE: on rapid switching between top/sub frames,
                          * browsers may dequeue events: when refocusing the
                          * current window: check if we should re-attach */
-                        if (state.focusTimeout) clearTimeout(state.focusTimeout);
-                        state.focusTimeout = setTimeout(
+                        if (state.timeout) clearTimeout(state.timeout);
+                        state.timeout = setTimeout(
                             () => isActiveElement(field.element) && onFocus(data.event),
                             DOM_SETTLE_MS
                         );
@@ -174,7 +182,7 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
 
         return {
             detach: () => {
-                if (state.focusTimeout) clearTimeout(state.focusTimeout);
+                if (state.timeout) clearTimeout(state.timeout);
                 listeners.removeAll();
                 raf.cancel();
             },
