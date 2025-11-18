@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState, memo } from 'react';
+import { memo, useCallback, useRef, useState } from 'react';
 
 import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
 import type { Message, SiblingInfo } from 'applications/lumo/src/app/types';
@@ -9,6 +9,7 @@ import TurndownService from 'turndown';
 
 import { Icon, useModalStateObject } from '@proton/components';
 
+import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
@@ -53,7 +54,6 @@ const AssistantActionToolbar = ({
     message,
     isFinishedGenerating,
     siblingInfo,
-    handleRegenerate,
     generationFailed,
     results,
     onToggleMessageSource,
@@ -66,11 +66,13 @@ const AssistantActionToolbar = ({
     const { hasTierErrors } = useTierErrors();
     const isGuest = useIsGuest();
     const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+    const { showCopyNotification } = useCopyNotification(c('collider_2025:Notification').t`Copied to clipboard`);
 
     const isMessageEmpty = !message?.content || message?.content?.trim()?.length === 0;
 
     const handleCopy = () => {
         sendMessageCopyEvent();
+        showCopyNotification();
     };
 
     return (
@@ -103,7 +105,7 @@ const AssistantActionToolbar = ({
                     />
                     <LumoCopyButton
                         containerRef={markdownContainerRef}
-                        onCopy={handleCopy}
+                        onSuccess={handleCopy}
                         disabled={!isFinishedGenerating || generationFailed || isMessageEmpty}
                         className="lumo-no-copy"
                     />
@@ -134,7 +136,6 @@ interface AssistantMessageProps {
     siblingInfo: SiblingInfo;
     messageChainRef: React.MutableRefObject<HTMLDivElement | null>;
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
-    onCopy: () => void;
     handleRegenerateMessage: HandleRegenerateMessage;
     isLastMessage?: boolean;
     handleOpenSources: (message: Message) => void;
@@ -159,7 +160,6 @@ const AssistantMessage = ({
     isLoading,
     isRunning: _isRunning,
     message,
-    onCopy,
     siblingInfo,
     messageChainRef: _messageChainRef,
     sourcesContainerRef,
@@ -200,7 +200,7 @@ const AssistantMessage = ({
 
     const handleRegenerate = useCallback(
         (retryStrategy: RetryStrategy = 'simple', customInstructions?: string) => {
-            handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
+            void handleRegenerateMessage(message, isWebSearchButtonToggled, retryStrategy, customInstructions);
         },
         [handleRegenerateMessage, message, isWebSearchButtonToggled]
     );
@@ -239,7 +239,6 @@ const AssistantMessage = ({
                                                 message={message}
                                                 content={messageContent}
                                                 isStreaming={isGenerating && isLastMessage}
-                                                onCopy={onCopy}
                                                 handleLinkClick={handleLinkClick}
                                                 toolCallResults={results}
                                                 sourcesContainerRef={sourcesContainerRef}
