@@ -1284,6 +1284,9 @@
       "Application problem": [
         "აპლიკაციის პრობლემა"
       ],
+      "Authenticator problem": [
+        "ავთენტიკატორის პრობლემა"
+      ],
       "Black Friday": [
         "შავი პარასკევი"
       ],
@@ -1468,6 +1471,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "დამატებითი ანგარიშისა და ქსელის უსაფრთხოება ერთ სატარიფო გეგმაში"
+      ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
       ]
@@ -3241,6 +3247,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "შედით Gmail-ის მისამართით, რომელიც უკვეა გადამისამართებული ${ MAIL_APP_NAME }-ზე"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
       ]
@@ -4808,6 +4817,12 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "საჯარო დოკუმენტები თქვენი ორგანიზაციისთვის, ჯერ, ჩართული არაა."
+      ],
+      "Recent documents": [
+        "უახლესი დოკუმენტები"
+      ],
+      "Recent spreadsheets": [
+        "უახლესი ელცხრილები"
       ],
       "Recents": [
         "ახლახან გამოყენებულები"
@@ -6503,6 +6518,9 @@
       "End-to-end encryption": [
         "გამჭოლი შიფრაცია"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "არსებული ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-ის უპირატესობები"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "სწრაფი გადმოწერა P2P/BitTorrent-ით"
       ],
@@ -6720,6 +6738,10 @@
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან",
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -8281,9 +8303,6 @@
       ],
       "Replace data at selected cell": [
         "მონაცემების ჩანაცვლება მონიშნულ უჯრედთან"
-      ],
-      "Select a CSV or TSV file to import": [
-        "აირჩიეთ შემოსატანი CSV ან TSV ფაილი"
       ]
     },
     "sheets_2025:Label": {

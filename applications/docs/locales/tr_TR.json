@@ -1301,6 +1301,9 @@
       "Application problem": [
         "Uygulama sorunu"
       ],
+      "Authenticator problem": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
       "Black Friday": [
         "Muhteşem Cuma"
       ],
@@ -1488,6 +1491,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
+      ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ]
@@ -3279,6 +3285,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Lütfen zaten ${ MAIL_APP_NAME } uygulamasına yönlendiren bir Gmail adresiyle oturum açın"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Lütfen başlangıçta bağlandığınızla aynı Gmail adresiyle oturum açın"
       ]
@@ -4918,6 +4927,12 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Kuruluşunuzda herkese açık belgeler henüz kullanıma alınmamış."
+      ],
+      "Recent documents": [
+        "Son kullanılan belgeler"
+      ],
+      "Recent spreadsheets": [
+        "Son kullanılan hesap tabloları"
       ],
       "Recents": [
         "Son kullanılanlar"
@@ -6670,6 +6685,9 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Var olan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } avantajları"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hızlı P2P/BitTorrent indirmeleri"
       ],
@@ -6887,6 +6905,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "${ n } kişiye kadar kasa paylaşımı",
+        "${ n } kişiye kadar kasa paylaşımı"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -8498,9 +8520,6 @@
       ],
       "Replace data at selected cell": [
         "Seçili hücredeki verileri değiştirin"
-      ],
-      "Select a CSV or TSV file to import": [
-        "İçe aktarmak için bir CSV veya TSV dosyası seçin"
       ]
     },
     "sheets_2025:Label": {
