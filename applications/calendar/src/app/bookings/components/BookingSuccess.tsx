@@ -35,7 +35,7 @@ interface BookingSuccessItemProps {
 
 const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
     return (
-        <div className="flex gap-3 mb-4">
+        <div className="flex gap-3">
             <div
                 className="shrink-0 rounded-full bg-weak flex items-center justify-center w-custom h-custom booking-color-title"
                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
@@ -44,11 +44,7 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
             </div>
             <div className="flex-1">
                 <h2 className="m-0 text-semibold text-rg">{title}</h2>
-                <p
-                    className="m-0 text-ellipsis min-h-custom"
-                    title={data as string}
-                    style={{ '--min-h-custom': '3em' }}
-                >
+                <p className="m-0 text-break-all max-w-full" title={typeof data === 'string' ? data : ''}>
                     {data}
                 </p>
             </div>
@@ -86,7 +82,7 @@ export const BookingSuccess = () => {
         <div className="container">
             <div
                 className="mx-auto mt-8 bg-norm p-8 md:p-12 rounded-xl max-w-custom"
-                style={{ '--max-w-custom': '32rem' }}
+                style={{ '--max-w-custom': '37.5rem' }}
             >
                 <div className="text-center mb-6">
                     <IcCheckmarkCircle size={10} className="color-success mb-2" />
@@ -96,39 +92,40 @@ export const BookingSuccess = () => {
                         .t`You’ll get a secure email with the details shortly.`}</p>
                 </div>
                 <hr className="bg-weak mb-6" />
-                <div className="sm:flex flex-nowrap sm:flex-row gap-4 items-start">
-                    <div className="flex-1 flex flex-column flex-nowrap gap-4 max-w-full">
+                <div className="booking-success-grid gap-4 items-start max-w-full">
+                    <BookingSuccessItem
+                        title={c('Title').t`Host`}
+                        icon={<IcUserCircle size={6} />}
+                        data={hostInformation}
+                    />
+                    <BookingSuccessItem
+                        title={c('Title').t`Date`}
+                        icon={<IcCalendarGrid />}
+                        data={format(selectedBookingSlot.tzDate, 'MMMM d, yyyy', { locale: dateLocale })}
+                    />
+                    {hasLocation && (
                         <BookingSuccessItem
-                            title={c('Title').t`Host`}
-                            icon={<IcUserCircle size={6} />}
-                            data={hostInformation}
+                            title={c('Title').t`Location`}
+                            icon={<IcMapPin size={6} />}
+                            data={
+                                bookingDetails.withProtonMeetLink
+                                    ? c('Info').t`${MEET_APP_NAME} video call`
+                                    : bookingDetails.location
+                            }
                         />
-                        {hasLocation && (
-                            <BookingSuccessItem
-                                title={c('Title').t`Location`}
-                                icon={<IcMapPin size={6} />}
-                                data={
-                                    bookingDetails.withProtonMeetLink
-                                        ? c('Info').t`${MEET_APP_NAME} video call`
-                                        : bookingDetails.location
-                                }
-                            />
-                        )}
-                        <BookingSuccessItem
-                            title={c('Title').t`Time zone`}
-                            icon={<IcGlobe size={6} />}
-                            data={getTimezoneAndOffset(selectedTimezone || bookingDetails.timezone)}
-                        />
-                    </div>
+                    )}
 
-                    <div className="flex-1 flex flex-column flex-nowrap gap-4">
-                        <BookingSuccessItem
-                            title={c('Title').t`Date`}
-                            icon={<IcCalendarGrid />}
-                            data={format(selectedBookingSlot.tzDate, 'MMMM d, yyyy', { locale: dateLocale })}
-                        />
-                        <BookingSuccessItem title={c('Title').t`Time`} icon={<IcClock />} data={timeData} />
-                    </div>
+                    <BookingSuccessItem
+                        title={c('Title').t`Time`}
+                        icon={<IcClock />}
+                        data={hasLocation ? timeData : ''}
+                    />
+
+                    <BookingSuccessItem
+                        title={c('Title').t`Time zone`}
+                        icon={<IcGlobe size={6} />}
+                        data={getTimezoneAndOffset(selectedTimezone || bookingDetails.timezone)}
+                    />
                 </div>
             </div>
 
