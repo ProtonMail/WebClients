@@ -67,8 +67,6 @@ export const computeIconShift = (
         maxWidth: number;
         /** Bounding container element (form field wrapper or input itself) */
         anchor: HTMLElement;
-        /** The input element we're positioning relative to */
-        target: HTMLElement;
         /** Container for filtering (optional) */
         container?: HTMLElement;
     },
@@ -77,7 +75,7 @@ export const computeIconShift = (
     const restore: { el: HTMLElement; pointerEvents: string }[] = [];
 
     try {
-        const { x, y, maxWidth, target, anchor, container } = options;
+        const { x, y, maxWidth, anchor, container } = options;
         const maxShift = options.maxWidth * 0.5; /* Maximum allowed shift */
 
         if (Number.isNaN(x) || Number.isNaN(y)) return 0;
@@ -110,7 +108,7 @@ export const computeIconShift = (
         for (const el of overlays) {
             if (skip.has(el)) continue;
             if (el.classList.contains('protonpass-debug')) continue;
-            if (el === target || el === anchor) break; /* Stop at target elements */
+            if (el === anchor.parentElement) break; /* Stop at target element */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
             if (container && !container.contains(el)) continue; /* Skip elements outside parent element (form) */
@@ -238,7 +236,6 @@ export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'
         maxWidth,
         radius,
         anchor,
-        target: input,
         container: form,
     });
 
