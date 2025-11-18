@@ -20,6 +20,7 @@ import noop from '@proton/utils/noop';
 
 import config from '../../../config';
 import locales from '../../../locales';
+import type { CalendarState } from '../../../store/store';
 import { extendStore, setupStore } from '../../../store/store';
 import type { BookingBootstrapResult } from '../interface';
 
@@ -64,7 +65,7 @@ export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | '
 
         const user = sessionResult.session?.User;
 
-        const persistedState = await getDecryptedPersistedState<Partial<any>>({
+        const persistedState = await getDecryptedPersistedState<Partial<CalendarState>>({
             authentication,
             user,
         });
