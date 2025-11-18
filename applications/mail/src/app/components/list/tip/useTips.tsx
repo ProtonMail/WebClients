@@ -267,7 +267,7 @@ const useTips = () => {
                 id: 11,
                 icon: 'brand-proton-pass',
                 message: c('Info')
-                    .t`Keep your login and credit card details safe but always on hand by adding it to ${PASS_APP_NAME}. It's free, and included with your ${BRAND_NAME} Account.`,
+                    .t`Keep your login and credit card details safe but always on hand by adding them to ${PASS_APP_NAME}. It's free, and included with your ${BRAND_NAME} Account.`,
                 // translator: Open Proton Pass
                 cta: (
                     <Href
