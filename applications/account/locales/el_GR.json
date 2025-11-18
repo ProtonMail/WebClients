@@ -2795,6 +2795,9 @@
       "Application problem": [
         "Πρόβλημα εφαρμογής"
       ],
+      "Authenticator problem": [
+        "Πρόβλημα ταυτοποίησης"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -3262,6 +3265,9 @@
       ],
       "AI assistant that respects business confidentiality": [
         "Βοηθός τεχνητής νοημοσύνης που σέβεται την επιχειρηματική εμπιστευτικότητα"
+      ],
+      "AI assistant that respects your privacy": [
+        "Βοηθός τεχνητής νοημοσύνης που σέβεται την ιδιωτικότητά σας"
       ],
       "Basic chat history": [
         "Βασικό ιστορικό συνομιλιών"
@@ -5145,6 +5151,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm για Fedora / Red Hat"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "Μπορείτε επίσης να κατεβάσετε την εφαρμογή μέσω του ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -7432,9 +7441,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } συσκευές"
-      ],
       "15 GB storage": [
         "15 GB αποθηκευτικού χώρου"
       ],
@@ -8107,6 +8113,9 @@
       ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
+      ],
+      "Downloads": [
+        "Λήψεις"
       ],
       "Enjoying ${ planName }?": [
         "Απολαμβάνετε το ${ planName };"
@@ -8892,12 +8901,6 @@
       "Account monitor": [
         "Παρακολούθηση λογαριασμού"
       ],
-      "account recovery and data recovery method": [
-        "μέθοδος ανάκτησης λογαριασμού και δεδομένων"
-      ],
-      "account recovery method": [
-        "μέθοδος ανάκτησης λογαριασμού"
-      ],
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
@@ -8916,14 +8919,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στον λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\" (Στείλε μου Προσωπικό Μήνυμα)"
       ],
-      "Add a recovery email address": [
-        "Προσθήκη ηλ. διεύθυνσης ανάκτησης"
-      ],
       "add a recovery method": [
         "προσθήκη μεθόδου ανάκτησης"
-      ],
-      "Add a recovery phone number": [
-        "Προσθήκη ενός τηλεφωνικού αριθμού ανάκτησης"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Προσθέστε άλλο ένα επίπεδο ασφάλειας στον λογαριασμό σας. Θα πρέπει να επαληθεύετε τον εαυτό σας με έλεγχο ταυτότητας δύο παραγόντων κάθε φορά που συνδέεστε."
@@ -9012,12 +9009,6 @@
       ],
       "Allow logging of location and connection details": [
         "Να επιτρέπεται η καταγραφή λεπτομερειών τοποθεσίας και σύνδεσης"
-      ],
-      "Allow recovery by email": [
-        "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Allow recovery by phone": [
-        "Άδεια ανάκτησης μέσω τηλεφώνου"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
@@ -9431,12 +9422,6 @@
       "Did you know?": [
         "Το γνωρίζατε;"
       ],
-      "Disable recovery by email address": [
-        "Απενεργοποιήστε την ανάκτηση μέσω διεύθυνσης ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Disable recovery by phone number": [
-        "Απενεργοποιήστε την ανάκτηση μέσω αριθμού τηλεφώνου"
-      ],
       "Disabled countries": [
         "Απενεργοποιημένες χώρες"
       ],
@@ -9515,9 +9500,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Κατεβάστε το πρότυπο CSV, συμπληρώστε τα στοιχεία χρήστη και, στη συνέχεια, ανεβάστε το ολοκληρωμένο αρχείο CSV για να δημιουργήσετε λογαριασμούς για αυτούς τους χρήστες."
-      ],
-      "Download recovery file": [
-        "Κατέβασμα αρχείου ανάκτησης"
       ],
       "Download the app and import existing codes.": [
         "Κατεβάστε την εφαρμογή και εισάγετε υπάρχοντες κωδικούς."
@@ -9894,12 +9876,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Εάν έχετε κωδικό δώρου, προσθέστε τον παρακάτω ώστε να εφαρμοστεί η έκπτωσή σας."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Εάν χάσετε τον κωδικό πρόσβασης σας και πρέπει να ανακτήσετε τον λογαριασμό σας, ${ boldImperative } ότι έχετε ${ boldAccountRecovery } ορισμένα."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Εάν χάσετε τον κωδικό πρόσβασής σας και πρέπει να ανακτήσετε τον λογαριασμό σας, ${ boldImperative } ότι έχετε και τα δύο ${ boldAccountAndRecovery } στη θέση τους, διαφορετικά ενδέχεται να μην μπορείτε να αποκτήσετε πρόσβαση σε κανένα από τα μηνύματα ηλεκτρονικού ταχυδρομείου, τις επαφές ή τα αρχεία σας."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Εάν χάσετε τη συσκευή σας με δύο παράγοντες, αυτοί οι κωδικοί μπορούν να χρησιμοποιηθούν αντί για τον 6-ψήφιο κωδικό ελέγχου ταυτότητας δύο παραγόντων για να συνδεθείτε στον λογαριασμό σας. Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά."
       ],
@@ -10093,9 +10069,6 @@
       ],
       "Item updated in vault": [
         "Το στοιχείο ενημερώθηκε στην κρύπτη"
-      ],
-      "it’s imperative": [
-        "είναι υποχρεωτικό"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Έχω χρησιμοποιήσει το @ProtonMail και σκέφτηκα ότι μπορεί να σας αρέσει. Είναι μια ασφαλής υπηρεσία ηλεκτρονικού ταχυδρομείου που προστατεύει το απόρρητό σας. Εγγραφείτε με τον σύνδεσμο παραπομπής μου για να λάβετε δωρεάν 1 μήνα premium δυνατότητες: ${ referrerLink }"
@@ -10295,9 +10268,6 @@
       "No account keys exist": [
         "Δεν υπάρχουν κλειδιά λογαριασμού"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Δεν έχει οριστεί μέθοδος ανάκτησης λογαριασμού. Διακινδυνεύεται απώλεια πρόσβασης στον λογαριασμό σας"
-      ],
       "No action selected": [
         "Δεν έχει επιλεγεί καμία ενέργεια"
       ],
@@ -10309,9 +10279,6 @@
       ],
       "No credit card required": [
         "Δεν απαιτείται πιστωτική κάρτα"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Δεν έχει οριστεί μέθοδος ανάκτησης δεδομένων. Διακινδυνεύεται απώλεια πρόσβασης στα δεδομένα σας"
       ],
       "No folder selected": [
         "Δεν επιλέχθηκε φάκελος"
@@ -10366,6 +10333,9 @@
       ],
       "On": [
         "Ενεργό"
+      ],
+      "On Ubuntu?": [
+        "Σε Ubuntu;"
       ],
       "Once you reset your password:": [
         "Μετά την αλλαγή του κωδικού σας:"
@@ -10434,15 +10404,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Παρωχημένο αρχείο ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε το."
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Παρωχημένες μέθοδοι ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τες."
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Παρωχημένη φράση ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τη."
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Πάνω από 100 εκατομμύρια άνθρωποι και επιχειρήσεις έχουν εγγραφεί στο ${ BRAND_NAME }."
@@ -10708,6 +10669,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Ασφαλίστε τον ${ BRAND_NAME } Λογαριασμό σας"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Ασφαλής, κρυπτογραφημένη από άκρο σε άκρο τηλεδιάσκεψη"
+      ],
       "Securing your account": [
         "Διασφάλιση του λογαριασμού σας"
       ],
@@ -10764,9 +10728,6 @@
       ],
       "Set password": [
         "Ορισμός κωδικού"
-      ],
-      "Set recovery phrase": [
-        "Ορισμός φράσης ανάκτησης"
       ],
       "Set up forwarding": [
         "Ρύθμιση προώθησης"
@@ -11191,12 +11152,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Για να εξασφαλίσετε συνεχή πρόσβαση στον λογαριασμό σας, ορίστε μια μέθοδο ανάκτησης λογαριασμού"
-      ],
-      "To ensure highest possible security of your account": [
-        "Για να εξασφαλίσουμε την υψηλότερη δυνατή ασφάλεια του λογαριασμού σας"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Για να διασφαλίσετε ότι δε θα χάσετε σημαντικά δεδομένα, το ${ DRIVE_APP_NAME } αποθηκεύει παλαιότερες εκδόσεις των αρχείων σας καθώς εσείς και οι συνεργάτες σας κάνετε αλλαγές. Επιλέξτε πόσο καιρό το ${ BRAND_NAME } θα πρέπει να διατηρεί τις προηγούμενες εκδόσεις."
       ],
@@ -11251,6 +11206,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
       ],
+      "Two-factor authentication": [
+        "Ταυτοποίηση δύο παραγόντων"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Η λειτουργία δύο κωδικών πρόσβασης απαιτεί δύο κωδικούς πρόσβασης: έναν για να συνδεθείτε στον λογαριασμό σας και έναν για να αποκρυπτογραφήσετε τα δεδομένα σας. (Για προχωρημένους)"
       ],
@@ -11289,12 +11247,6 @@
       ],
       "Unverified email address.": [
         "Μη επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
-      ],
-      "Update recovery file": [
-        "Ενημέρωση αρχείου ανάκτησης"
-      ],
-      "Update recovery phrase": [
-        "Ενημέρωση φράσης ανάκτησης"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
@@ -11391,12 +11343,6 @@
       ],
       "Verify domain": [
         "Επαλήθευση τομέα"
-      ],
-      "Verify email address": [
-        "Επαληθεύστε τη διεύθυνση ηλ. ταχυδρομείου"
-      ],
-      "Verify phone number": [
-        "Επαληθεύστε τον αριθμό τηλεφώνου"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Επαληθεύστε την ταυτότητά σας με έναν κωδικό πρόσβασης μίας χρήσης βάσει χρόνου από μια εφαρμογή ελέγχου ταυτότητας"
@@ -11844,17 +11790,11 @@
       "Your account has been successfully updated": [
         "Ο λογαριασμός σας ενημερώθηκε με επιτυχία"
       ],
-      "Your account recovery method is set": [
-        "Η μέθοδος ανάκτησης του λογαριασμού σας έχει οριστεί"
-      ],
       "Your account was successfully updated with this promotion": [
         "Ο λογαριασμός σας ενημερώθηκε με επιτυχία με αυτήν την προσφορά"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
-      ],
-      "Your data recovery method is set": [
-        "Η μέθοδος ανάκτησης των δεδομένων σας έχει οριστεί"
       ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
@@ -12525,11 +12465,17 @@
       "/month x ${ months }": [
         "/μηνα x ${ months }"
       ],
+      "0 of 1 email address available": [
+        "0 από 1 ηλεκτρονική διεύθυνση διαθέσιμη"
+      ],
       "1 hour": [
         "1 ώρα"
       ],
       "1 minute": [
         "1 λεπτό"
+      ],
+      "1 of 1 email address available": [
+        "1 από 1 ηλεκτρονική διεύθυνση διαθέσιμη"
       ],
       "10 hide-my-email aliases": [
         "10 hide-my-email ψευδώνυμα"
@@ -14017,6 +13963,9 @@
       "Don't have access to your 2FA?": [
         "Δεν έχετε πρόσβαση στο 2FA σας;"
       ],
+      "Downloads": [
+        "Λήψεις"
+      ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
       ],
@@ -14155,6 +14104,9 @@
       "Sign in": [
         "Είσοδος"
       ],
+      "Snap store": [
+        "Snap Store"
+      ],
       "switch account": [
         "εναλλαγή λογαριασμού"
       ],
@@ -14187,9 +14139,6 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
-      ],
-      "Why set recovery methods?": [
-        "Γιατί να ορίσετε μεθόδους ανάκτησης;"
       ]
     },
     "Link label (optional)": {
@@ -16795,6 +16744,9 @@
       "Keep this plan": [
         "Διατηρήστε αυτό το πλάνο"
       ],
+      "Open ${ PASS_APP_NAME } vaults": [
+        "Άνοιγμα ${ PASS_APP_NAME } κρυπτών"
+      ],
       "Or ${ createANewAccount }": [
         "Ή ${ createANewAccount }"
       ],
@@ -17063,6 +17015,9 @@
       ],
       "Welcome to ${ plan }": [
         "Καλώς ήρθατε στο ${ plan }"
+      ],
+      "You already have a ${ BRAND_NAME } account and can start using ${ PASS_APP_NAME } right away.": [
+        "Έχετε ήδη έναν λογαριασμό ${ BRAND_NAME } και μπορείτε να ξεκινήσετε να χρησιμοποιείτε το ${ PASS_APP_NAME } αμέσως."
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Έχετε ήδη πρόσβαση σε premium δυνατότητες του ${ appName } — δε χρειάζεται να αγοράσετε ξανά."
@@ -18668,12 +18623,6 @@
       "You have recommended actions.": [
         "Έχετε προτεινόμενες ενέργειες."
       ],
-      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης μπορεί να χρησιμοποιηθεί από κακόβουλους χρήστες για να παραβιάσουν τον λογαριασμό σας. ${ disableEmail } για να αυξήσετε την ασφάλεια του λογαριασμού σας."
-      ],
-      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Το τηλέφωνο ανάκτησης μπορεί να χρησιμοποιηθεί από κακόβουλους χρήστες για να παραβιάσουν τον λογαριασμό σας. ${ disablePhone } για να αυξήσετε την ασφάλεια του λογαριασμού σας."
-      ],
       "You will no longer be able to use this address to reset your account.": [
         "Δε θα μπορείτε πια να χρησιμοποιήσετε αυτή τη διεύθυνση για να επαναφέρετε τον λογαριασμό σας."
       ],
@@ -18719,6 +18668,9 @@
       "Your recovery email can **only recover access to your account**.": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης **μπορεί να ανακτήσει μόνο την πρόσβαση στον λογαριασμό σας**."
       ],
+      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης μπορεί να χρησιμοποιηθεί από κακόβουλους χρήστες για να παραβιάσουν τον λογαριασμό σας. ${ disableEmail } για να αυξήσετε την ασφάλεια του λογαριασμού σας."
+      ],
       "Your recovery email has been enabled": [
         "Το μήνυμα ηλεκτρονικού ταχυδρομείου ανάκτησης έχει ενεργοποιηθεί"
       ],
@@ -18739,6 +18691,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Το τηλέφωνό ανάκτησης σας **μπορεί να ανακτήσει μόνο την πρόσβαση στον λογαριασμό σας**."
+      ],
+      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Το τηλέφωνο ανάκτησης μπορεί να χρησιμοποιηθεί από κακόβουλους χρήστες για να παραβιάσουν τον λογαριασμό σας. ${ disablePhone } για να αυξήσετε την ασφάλεια του λογαριασμού σας."
       ],
       "Your recovery phone has been enabled": [
         "Το τηλέφωνο ανάκτησης σας έχει ενεργοποιηθεί"
@@ -22311,15 +22266,6 @@
       "Folders and labels": [
         "Φάκελοι και ετικέτες"
       ],
-      "For Linux": [
-        "Για Linux"
-      ],
-      "For macOS": [
-        "Για macOS"
-      ],
-      "For Windows": [
-        "Για Windows"
-      ],
       "Forgot password": [
         "Ξέχασα τον κωδικό πρόσβασης"
       ],
@@ -22991,9 +22937,6 @@
       "Switch to two-password mode": [
         "Μετάβαση σε λειτουργία δύο κωδικών πρόσβασης"
       ],
-      "Take precautions to avoid data loss!": [
-        "Λάβετε προφυλάξεις προς αποφυγή απώλειας δεδομένων!"
-      ],
       "Text": [
         "Κείμενο"
       ],
@@ -23188,9 +23131,6 @@
       ],
       "Your plan": [
         "Το πακέτο σας"
-      ],
-      "Your recovery status": [
-        "Το καθεστώς σας ανάκτησης"
       ],
       "Your referrals": [
         "Οι παραπομπές σας"
@@ -24124,10 +24064,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
         "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Επιλέξτε από ${ numberOfCountries }+ χώρα",
-        "Επιλέξτε από ${ numberOfCountries }+ χώρες"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Διακομιστές σε ${ numberOfCountries }+ χώρα",

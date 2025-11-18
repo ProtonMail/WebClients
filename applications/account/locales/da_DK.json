@@ -2410,6 +2410,9 @@
       "Application problem": [
         "Applikationsproblem"
       ],
+      "Authenticator problem": [
+        "Autentificeringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -2863,6 +2866,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Tilføj ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Avanceret konto- og netværkssikkerhed i ét abonnement"
       ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
@@ -4240,6 +4246,10 @@
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurer dette først for at aktivere din organisation og tilpasse din e-mailadresse."
       ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Tillykke! Du har optjent den maksimale ${ rewardsLimit } gratis måned med ${ plusPlanName }.",
+        "Tillykke! Du har optjent de maksimale ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
+      ],
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
@@ -5208,6 +5218,14 @@
         "${ days } dag tilbage",
         "${ days } dage tilbage"
       ],
+      "${ hours } hour left": [
+        "${ hours } time tilbage",
+        "${ hours } timer tilbage"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minut tilbage",
+        "${ minutes } minutter tilbage"
+      ],
       "${ n } day": [
         "${ n } dag",
         "${ n } dage"
@@ -5895,6 +5913,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Log venligst ind med en Gmail-adresse, der allerede videresender til ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Log ind med den samme Gmail-adresse, som du oprindeligt har forbundet."
       ]
@@ -6575,8 +6596,8 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } enheder"
+      "@pm.me address": [
+        "@pm.me-adresse"
       ],
       "Ad-blocker and malware protection": [
         "Annonceblokering og beskyttelse mod malware"
@@ -7926,12 +7947,6 @@
       "Account monitor": [
         "Kontoovervågning"
       ],
-      "account recovery and data recovery method": [
-        "kontogendannelse og data-gendannelsesmetode"
-      ],
-      "account recovery method": [
-        "metode til kontogendannelse"
-      ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
       ],
@@ -7950,14 +7965,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
       ],
-      "Add a recovery email address": [
-        "Tilføj en e-mailadresse til gendannelse"
-      ],
       "add a recovery method": [
         "tilføj en gendannelsesmetode"
-      ],
-      "Add a recovery phone number": [
-        "Tilføj telefonnummer til gendannelse"
       ],
       "Add domain": [
         "Tilføj domæne"
@@ -8037,12 +8046,6 @@
       ],
       "Allocated": [
         "Tildelt"
-      ],
-      "Allow recovery by email": [
-        "Tillad gendannelse via e-mail"
-      ],
-      "Allow recovery by phone": [
-        "Tillad gendannelse via telefon"
       ],
       "Already allocated": [
         "Allerede tildelt"
@@ -8405,12 +8408,6 @@
       "Did you know?": [
         "Vidste du det?"
       ],
-      "Disable recovery by email address": [
-        "Deaktiver gendannelse via e-mailadresse"
-      ],
-      "Disable recovery by phone number": [
-        "Deaktiver gendannelse via telefonnummer"
-      ],
       "Disabled countries": [
         "Deaktiverede lande"
       ],
@@ -8480,9 +8477,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Download vores CSV-skabelon, udfyld brugeroplysningerne, og upload derefter din færdige CSV-fil for at oprette konti til disse brugere."
-      ],
-      "Download recovery file": [
-        "Download gendannelsesfil"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Hent din yndlingsapp i dag, og tag privatsfæren med dig overalt."
@@ -8817,12 +8811,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Hvis du mister din adgangskode og har brug for at gendanne din konto, ${ boldImperative } at du har en ${ boldAccountRecovery } indstillet."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Hvis du mister din adgangskode og har brug for at gendanne din konto, ${ boldImperative } at du både har en ${ boldAccountAndRecovery } indstillet, ellers kan du måske ikke få adgang til dine e-mails, kontakter eller filer."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din to-faktor-aktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede to-faktor-godkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
       ],
@@ -9008,9 +8996,6 @@
       "Item updated in vault": [
         "Element opdateret i boks"
       ],
-      "it’s imperative": [
-        "er det afgørende"
-      ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Jeg har gennem noget tid brugt @ProtonMail og tænkte, at du måske også vil kunne lide den. Det er en sikker e-mailtjeneste, der beskytter dit privatliv. Tilmeld dig med mit henvisningslink for at få 1 måneds premium-funktioner gratis: ${ referrerLink }"
       ],
@@ -9188,9 +9173,6 @@
       "No account keys exist": [
         "Der findes ingen kontonøgler"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Ingen metode til gendannelse indstillet. Du risikerer at miste adgang til din konto"
-      ],
       "No action selected": [
         "Ingen handling valgt"
       ],
@@ -9199,9 +9181,6 @@
       ],
       "No countries enabled": [
         "Ingen lande aktiveret"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Ingen metode til datagendannelse indstillet. Du risikerer at miste adgang til dine data"
       ],
       "No folder selected": [
         "Ingen mappe valgt"
@@ -9279,6 +9258,10 @@
         "eller tildel til et hvilket som helst land om ${ availableAgainAfterDays } dag",
         "eller tildel til et hvilket som helst land om ${ availableAgainAfterDays } dage"
       ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "eller tildel til et hvilket som helst land i ${ availableAgainAfterHours } time",
+        "eller tildel til et hvilket som helst land i ${ availableAgainAfterHours } timer"
+      ],
       "or discover other features:": [
         "eller opdag andre funktioner:"
       ],
@@ -9305,15 +9288,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Forældet gendannelsesfil; opdater for at sikre adgang til dine data"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Forældede gendannelsesmetoder; opdater for at sikre adgang til dine data"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Forældet gendannelsessætning; opdater for at sikre adgang til dine data"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Over 100 millioner mennesker og virksomheder har tilmeldt sig ${ BRAND_NAME }."
@@ -9617,9 +9591,6 @@
       ],
       "Set password": [
         "Indstil adgangskode"
-      ],
-      "Set recovery phrase": [
-        "Indstil gendannelsessætning"
       ],
       "Set up forwarding": [
         "Indstil videresendelse"
@@ -10004,12 +9975,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Vælg en gendannelsesmetode for at dekryptere eller se dine låste data efter en adgangskodenulstilling."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Hvis du vil sikre kontinuerlig adgang til din konto, skal du indstille en metode til gendannelse af kontoen"
-      ],
-      "To ensure highest possible security of your account": [
-        "Sådan sikrer du størst mulig sikkerhed for din konto"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "For at sikre at du ikke mister vigtig data, gemmer ${ DRIVE_APP_NAME } ældre versioner af dine filer, når du og dine samarbejdspartnere foretager ændringer. Vælg, hvor længe ${ BRAND_NAME } skal gemme tidligere versioner."
       ],
@@ -10100,12 +10065,6 @@
       "Unverified email address.": [
         "Uverificeret e-mailadresse."
       ],
-      "Update recovery file": [
-        "Opdater gendannelsesfil"
-      ],
-      "Update recovery phrase": [
-        "Opdater gendannelsessætning"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
@@ -10195,12 +10154,6 @@
       ],
       "Verify domain": [
         "Bekræft domæne"
-      ],
-      "Verify email address": [
-        "Bekræft e-mailadresse"
-      ],
-      "Verify phone number": [
-        "Bekræft telefonnummer"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekræft din identitet med en tidsbaseret engangsadgangskode fra en godkendelsesapp"
@@ -10492,6 +10445,10 @@
         "Du har ${ availableCount } ny server tilgængelig.",
         "Du har ${ availableCount } nye servere tilgængelig."
       ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Du har ${ unassignedAvailableCount } nyligt anvendt server til rådighed. For at tildele denne server til et andet land skal du vente, indtil deaktiveringen er afsluttet.",
+        "Du har ${ unassignedAvailableCount } nyligt anvendte servere til rådighed. For at tildele disse servere til et andet land skal du vente, indtil deaktiveringen er afsluttet."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et ${ planTitle }-prøveabonnement. Hvis du gerne vil fortsætte dit abonnement efter prøveperioden, skal du tilføje en betalingsmetode."
       ],
@@ -10599,17 +10556,11 @@
       "Your account has been successfully updated": [
         "Din konto er blevet opdateret"
       ],
-      "Your account recovery method is set": [
-        "Din metode til kontogendannelse er indstillet"
-      ],
       "Your account was successfully updated with this promotion": [
         "Din konto er blevet opdateret med denne kampagne"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
-      ],
-      "Your data recovery method is set": [
-        "Din metode til datagendannelse er indstillet"
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
@@ -12774,9 +12725,6 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
-      ],
-      "Why set recovery methods?": [
-        "Hvorfor indstille gendannelsesmetoder?"
       ]
     },
     "Link label (optional)": {
@@ -13670,6 +13618,9 @@
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } fordele"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hurtige P2P/BitTorrent-downloads"
       ],
@@ -13909,6 +13860,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } personer)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling af boks med op til ${ n } person",
+        "Deling af boks med op til ${ n } personer"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
@@ -15267,6 +15222,12 @@
         "Begynd at bruge ${ PASS_APP_NAME }"
       ]
     },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Buy now": [
         "Køb nu"
@@ -15919,6 +15880,23 @@
       ],
       "Credits will be added to your balance": [
         "Kreditter vil blive tilføjet til din saldo"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på, at du vil fortsætte?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du vælger at ændre dit ${ planTitle }-abonnement, kan du miste adgang til visse funktioner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Dit abonnement inkluderer allerede denne funktion."
       ]
     },
     "Payments.plan_name": {
@@ -17562,6 +17540,10 @@
         "${ VPN_CONNECTIONS } højhastigheds VPN-forbindelse",
         "${ VPN_CONNECTIONS } højhastigheds VPN-forbindelser"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ VPN-servere i ${ vpnServersCountData.free.countries } land",
+        "${ vpnServersCountData.free.servers }+ VPN-servere i ${ vpnServersCountData.free.countries } lande"
+      ],
       "/user": [
         "/bruger"
       ],
@@ -18144,9 +18126,17 @@
         "${ n } bruger frakoblet SSO",
         "${ n } brugere frakoblet SSO"
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } bruger er blevet tilføjet til din organisation via din identitetsudbyder. Gennemgå kontoen nu:",
+        "${ n } brugere er blevet tilføjet til din organisation via din identitetsudbyder. Gennemgå deres konti nu:"
+      ],
       "${ n } user is inactive. You can safely remove this user from your organization.": [
         "${ n } bruger er inaktiv. Du kan trygt fjerne denne bruger fra din organisation.",
         "${ n } brugere er inaktive. Du kan trygt fjerne disse brugere fra din organisation."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } bruger beder om din hjælp til at logge ind på sin ${ BRAND_NAME }-konto med single sign-on.",
+        "${ n } brugere beder om din hjælp til at logge ind på deres ${ BRAND_NAME }-konto med single sign-on."
       ],
       "Access denied": [
         "Adgang nægtet"
@@ -19479,6 +19469,14 @@
       "${ feature } is now active": [
         "${ feature } er nu aktiv"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } ven inviteret",
+        "${ friendsInvited } venner inviteret"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } ven har abonneret",
+        "${ friendsSubscribed } venner har abonneret"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -20727,9 +20725,6 @@
       "Switch to two-password mode": [
         "Skift til to-adgangskode-tilstand"
       ],
-      "Take precautions to avoid data loss!": [
-        "Tag forholdsregler for at undgå tab af data!"
-      ],
       "Text": [
         "Tekst"
       ],
@@ -20906,9 +20901,6 @@
       ],
       "Your plan": [
         "Dit abonnement"
-      ],
-      "Your recovery status": [
-        "Din gendannelsesstatus"
       ],
       "Your referrals": [
         "Dine henvisninger"

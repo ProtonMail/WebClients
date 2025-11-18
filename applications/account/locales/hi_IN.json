@@ -6726,12 +6726,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "आसानी से अलग-अलग डिवाइसो पे अपने पासवर्ड एक्सेस करें और अपने ऑनलाइन पहचान की रक्षा करें। ज़रूरी ${ PASS_APP_NAME } ऐप और एक्सटेंशन डाउनलोड और इंस्टॉल करें।"
       ],
-      "account recovery and data recovery method": [
-        "खाता पुनर्प्राप्ति और डेटा पुनर्प्राप्ति विधि"
-      ],
-      "account recovery method": [
-        "खाता पुनर्प्राप्ति विधि"
-      ],
       "Account successfully updated": [
         "खाता आधुनिकीकरण सफल हो गया है"
       ],
@@ -6747,14 +6741,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "अपने खाते में @pm.me ईमेल पता जोड़ें। यह सरल, छोटा डोमेन \"${ MAIL_APP_NAME } me\" या \"निजी संदेश मुझे\" के लिए है।"
       ],
-      "Add a recovery email address": [
-        "पुनर्प्राप्ति ईमेल पता जोड़ें"
-      ],
       "add a recovery method": [
         "रिकवरी तरीका जोड़े"
-      ],
-      "Add a recovery phone number": [
-        "पुनर्प्राप्ति फ़ोन नंबर जोड़ें"
       ],
       "Add domain": [
         "डोमेन जोड़ें"
@@ -6827,12 +6815,6 @@
       ],
       "Allocated": [
         "आवंटित"
-      ],
-      "Allow recovery by email": [
-        "ईमेल द्वारा पुनर्प्राप्ति की अनुमति दें"
-      ],
-      "Allow recovery by phone": [
-        "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "उपयोगकर्ताओं को ${ VPN_APP_NAME } ऐप के **देश** अनुभाग से सुरक्षित साझा सर्वर से कनेक्ट करने की अनुमति दें।"
@@ -7176,12 +7158,6 @@
       "Did you know?": [
         "क्या आप जानते हैं?"
       ],
-      "Disable recovery by email address": [
-        "ईमेल पता द्वारा पुनर्प्राप्ति अक्षम करें"
-      ],
-      "Disable recovery by phone number": [
-        "फोन नंबर द्वारा पुनर्प्राप्ति अक्षम करें"
-      ],
       "Discount": [
         "छूट"
       ],
@@ -7245,9 +7221,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "हमारा CSV टेम्पलेट डाउनलोड करें, यूज़र की जानकारी भरें, और फिर यूज़र के लिए खाते बनाने के लिए अपनी भरी हुई CSV फाइल अपलोड करें।"
-      ],
-      "Download recovery file": [
-        "पुनर्प्राप्ति फ़ाइल डाउनलोड करें"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "आज ही अपना पसंदीदा ऐप डाउनलोड करें और आप जहां भी जाएं, अपने साथ गोपनीयता रखें।"
@@ -7531,12 +7504,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "यदि आपके पास कोई उपहार कोड है, तो अपनी छूट लागू करने के लिए उसे नीचे दर्ज करें।"
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "यदि आप अपना पासवर्ड खो देते हैं और अपने खाते को पुनः प्राप्त करने की आवश्यकता होती है, तो ${ boldImperative } कि आपके पास ${ boldAccountRecovery } स्थापित हो।"
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "अगर आप अपना पासवर्ड खो देते है और आपको अपना खाता रीसेट करने की ज़रूरत है, तो ${ boldImperative } की आपके पास ${ boldAccountAndRecovery } है, या फिर आप अपना ईमेल, संपर्क, या फाइल एक्सेस नहीं कर पाएगे।"
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "अगर आप अपना दो-फैक्टर पे चल रहे डिवाइस को खो देते है, तो 6-अंक के दो-फैक्टर सत्यापन कोड की जगह ये कोड इस्तेमाल करके आप अपने खाते में साइन इन कर सकते है। हर कोड सिर्फ एक बार इस्तेमाल किया जा सकता है।"
       ],
@@ -7716,9 +7683,6 @@
       "Item updated in vault": [
         "तिजोरी में आइटम अपडेट हुआ"
       ],
-      "it’s imperative": [
-        "ये ज़रूरी है"
-      ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "हम @ProtonMail इस्तेमाल कर रहे हैं और सोचा की आपको भी पसंद आएगा। ये एक सुरक्षित सुरक्षित ईमेल सेवा है जो आपके निजता को महफूज़ रखता है। 1 महीने की प्रीमियम सुविधाओं को मुफ्त में लेने के लिए हमारे रेफरल लिंक से साइनअप करें: ${ referrerLink }"
       ],
@@ -7887,17 +7851,11 @@
       "No account keys exist": [
         "कोई खाता चाबी मौजूद नहीं"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "कोई खाता पुनर्प्राप्ति विधि सेट नहीं है; आपको अपने खाते तक पहुंच खोने का जोखिम है"
-      ],
       "No action selected": [
         "कोई एक्‍शन नहीं चुना गया है"
       ],
       "No addresses exist": [
         "कोई पता मौजूद नहीं है"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "कोई डेटा रिकवरी विधि सेट नहीं; आपको अपने डेटा तक पहुंच खोने का खतरा है"
       ],
       "No folder selected": [
         "कोई फ़ोल्डर नहीं चुना गया"
@@ -7993,15 +7951,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "आपके संगठन के अन्य उपयोगकर्ता आपके व्यस्त स्लॉट देख सकेंगे। कोई ईवेंट विवरण साझा नहीं किया जाता है।"
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "पुरानी वसूली फ़ाइल; अपने डेटा तक पहुंच सुनिश्चित करने के लिए अद्यतन करें"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "पुरानी वसूली के तरीके; अपने डेटा तक पहुंच सुनिश्चित करने के लिए अद्यतन करें"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "पुराना रिकवरी वाक्यांश; अपने डेटा तक पहुंच सुनिश्चित करने के लिए अद्यतन करें"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "10 करोड़ से अधिक लोगों और व्यवसायों ने ${ BRAND_NAME } के लिए साइन अप किया है।"
@@ -8263,9 +8212,6 @@
       ],
       "Set password": [
         "पासवर्ड सेट करें"
-      ],
-      "Set recovery phrase": [
-        "पुनर्प्राप्ति वाक्यांश सेट करें"
       ],
       "Set up forwarding": [
         "फॉरवर्ड सेट करें"
@@ -8623,12 +8569,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "पासवर्ड रीसेट करने के बाद अपने लॉक किए गए डेटा को डिक्रिप्ट करने और देखने के लिए, एक पुनर्प्राप्ति विधि चुनें।"
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "अपने खाते तक निरंतर पहुंच सुनिश्चित करने के लिए, खाता पुनर्प्राप्ति विधि सेट करें"
-      ],
-      "To ensure highest possible security of your account": [
-        "आपके खाते की सर्वोत्तम सुरक्षा सुनिश्चित करने के लिए"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "यह सुनिश्चित करने के लिए कि आप महत्वपूर्ण डेटा न खोएं, ${ DRIVE_APP_NAME } आपके और आपके सहयोगियों द्वारा परिवर्तन किए जाने पर आपकी फ़ाइलों के पुराने संस्करणों को सहेजता है। चुनें कि ${ BRAND_NAME } को पिछले संस्करण को कितने समय तक रखना चाहिए।"
       ],
@@ -8716,12 +8656,6 @@
       "Unverified email address.": [
         "असत्यापित ईमेल पता।"
       ],
-      "Update recovery file": [
-        "पुनर्प्राप्ति फ़ाइल अपडेट करें"
-      ],
-      "Update recovery phrase": [
-        "पुनर्प्राप्ति वाक्यांश अपडेट करें"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
       ],
@@ -8805,12 +8739,6 @@
       ],
       "Verify domain": [
         "डोमेन सत्यापित करें"
-      ],
-      "Verify email address": [
-        "ईमेल पता सत्यापित करें"
-      ],
-      "Verify phone number": [
-        "फोन नंबर सत्यापित करें"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "सत्यापन ऐप से एक सीमित समय वाले ओटीपी से अपनी पहचान सत्यापित करें।"
@@ -9178,17 +9106,11 @@
       "Your account has been successfully updated": [
         "आपका खाता सफलतापूर्वक अपडेट कर दिया गया है"
       ],
-      "Your account recovery method is set": [
-        "आपकी खाता पुनर्प्राप्ति विधि सेट है"
-      ],
       "Your account was successfully updated with this promotion": [
         "आपका खाता इस प्रोमोशन के साथ सफलतापूर्वक अपडेट किया गया था"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "आपका डाटा ${ importedEmailAddressStrong } से आपके ${ BRAND_NAME } खाते पे आयात करने के लिए तैयार है।"
-      ],
-      "Your data recovery method is set": [
-        "आपका डेटा रिकवरी विधि सेट है"
       ],
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
@@ -11133,9 +11055,6 @@
       ],
       "What’s this?": [
         "यह क्या है?"
-      ],
-      "Why set recovery methods?": [
-        "पुनर्प्राप्ति विधियों को क्यों सेट करें?"
       ]
     },
     "Link label (optional)": {
@@ -17626,9 +17545,6 @@
       "Switch to two-password mode": [
         "दो-पासवर्ड मोड पर स्विच करें"
       ],
-      "Take precautions to avoid data loss!": [
-        "डेटा हानि से बचने के लिए सावधानी बरतें!"
-      ],
       "Text": [
         "पाठ"
       ],
@@ -17769,9 +17685,6 @@
       ],
       "Your plan": [
         "आपका प्लान"
-      ],
-      "Your recovery status": [
-        "आपकी पुनर्प्राप्ति स्थिति"
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
