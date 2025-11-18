@@ -1186,6 +1186,9 @@
       "Secure link could not be opened.": [
         "Sikkert link kunne ikke åbnes."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Servere er utilgængelige. Prøv at låse op for ${ PASS_SHORT_APP_NAME } om et par minutter."
+      ],
       "Settings update failed": [
         "Opdatering af indstillinger mislykkedes"
       ],
@@ -1272,6 +1275,9 @@
       ],
       "Wrong second password": [
         "Forkert anden adgangskode"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du er i øjeblikket offline. Genopret forbindelsen for at låse op for ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Din DNS er ikke korrekt indstillet. Den MX-record, vi får, er:"
@@ -2221,6 +2227,9 @@
       ],
       "Selected items successfully restored from trash": [
         "De valgte elementer blev gendannet fra papirkurven"
+      ],
+      "Servers are unreachable": [
+        "Servere kan ikke kontaktes"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"

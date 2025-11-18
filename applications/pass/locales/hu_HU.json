@@ -1829,10 +1829,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
-      ],
       "Moving items": [
         "Elemek áthelyezése"
       ],
