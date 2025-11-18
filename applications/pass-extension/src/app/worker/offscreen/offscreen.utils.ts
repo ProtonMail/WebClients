@@ -19,7 +19,7 @@ export const setupOffscreenDocument = async (path: string) => {
 
     // create offscreen document
     await asyncLock(() =>
-        chrome.offscreen.createDocument({
+        chromeAPI.offscreen.createDocument({
             url: path,
             reasons: ['CLIPBOARD'],
             justification: 'being able to clear clipboard after a delay',
