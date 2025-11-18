@@ -819,6 +819,9 @@
       "Application problem": [
         "Uygulama sorunu"
       ],
+      "Authenticator problem": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
       "Black Friday": [
         "Muhteşem Cuma"
       ],
@@ -1064,6 +1067,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "Advanced account and network security in one plan": [
+        "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
       ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
@@ -3688,6 +3694,9 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Var olan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } avantajları"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hızlı P2P/BitTorrent indirmeleri"
       ],
@@ -3884,6 +3893,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "${ n } kişiye kadar kasa paylaşımı",
+        "${ n } kişiye kadar kasa paylaşımı"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -4582,6 +4595,23 @@
       ],
       "Credits will be added to your balance": [
         "Kalan kredi bakiyenize eklenecek"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "İlerlemek istediğinize emin misiniz?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } tarifenizi değiştirmeyi seçerseniz bazı özelliklere erişiminizi kaybedebilirsiniz."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } tarifesinde kal"
+      ],
+      "Yes, I'm sure": [
+        "Evet, eminim"
+      ],
+      "Your plan includes this feature already.": [
+        "Tarifenizde bu özellik zaten var."
       ]
     },
     "Payments.plan_name": {
