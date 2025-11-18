@@ -1846,6 +1846,9 @@
       "Application problem": [
         "Πρόβλημα εφαρμογής"
       ],
+      "Authenticator problem": [
+        "Πρόβλημα ταυτοποίησης"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -4828,9 +4831,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } συσκευές"
-      ],
       "15 GB storage": [
         "15 GB αποθηκευτικού χώρου"
       ],
@@ -7085,6 +7085,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Ασφαλίστε τον ${ BRAND_NAME } Λογαριασμό σας"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Ασφαλής, κρυπτογραφημένη από άκρο σε άκρο τηλεδιάσκεψη"
+      ],
       "Securing your account": [
         "Διασφάλιση του λογαριασμού σας"
       ],
@@ -7441,6 +7444,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
+      ],
+      "Two-factor authentication": [
+        "Ταυτοποίηση δύο παραγόντων"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Η λειτουργία δύο κωδικών πρόσβασης απαιτεί δύο κωδικούς πρόσβασης: έναν για να συνδεθείτε στον λογαριασμό σας και έναν για να αποκρυπτογραφήσετε τα δεδομένα σας. (Για προχωρημένους)"
@@ -8132,6 +8138,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
+      ],
+      "0 of 1 email address available": [
+        "0 από 1 ηλεκτρονική διεύθυνση διαθέσιμη"
+      ],
+      "1 of 1 email address available": [
+        "1 από 1 ηλεκτρονική διεύθυνση διαθέσιμη"
       ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
@@ -15719,10 +15731,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
         "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Επιλέξτε από ${ numberOfCountries }+ χώρα",
-        "Επιλέξτε από ${ numberOfCountries }+ χώρες"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Διακομιστές σε ${ numberOfCountries }+ χώρα",

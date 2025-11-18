@@ -4427,9 +4427,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } laitetta"
-      ],
       "Ad-blocker and malware protection": [
         "Mainos- ja haittaohjelmaesto"
       ],
@@ -5728,6 +5725,9 @@
       ],
       "Disabled countries": [
         "Käytöstä poistetut maat"
+      ],
+      "Disabled on ${ boldValue }": [
+        "Poistettu käytöstä ${ boldValue }"
       ],
       "Discover new features unlocked and start using them right away!": [
         "Tutustu uusiin avattuihin ominaisuuksiin ja aloita niiden käyttö heti!"
@@ -10393,6 +10393,9 @@
       "Card number": [
         "Kortin numero"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Krediitit ja alennukset näkyvät laskussasi"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Tilauksen automaattinen uusiminen on tällä hetkellä poistettu käytöstä. Jos muutat tilausta nyt, automaattinen uusiminen otetaan uudelleen käyttöön."
       ],
@@ -14414,10 +14417,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Valitsee automaattisesti ${ numberOfCountries } maasta",
         "Valitsee automaattisesti ${ numberOfCountries } maasta"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Valitse ${ numberOfCountries }+ maa",
-        "Valitse yli ${ numberOfCountries } maasta"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Palvelimet ${ numberOfCountries }+ maassa",

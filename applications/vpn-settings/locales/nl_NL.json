@@ -1369,7 +1369,19 @@
         "Niet-ondersteunde afspraak"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultaat niet getoond",
+        "${ hiddenResultsCount } resultaten worden niet getoond"
+      ]
+    },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefversie eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
@@ -1497,6 +1509,9 @@
       "1 user account": [
         "1 gebruikersaccount"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidig abonnement"
+      ],
       "6 user accounts": [
         "6 gebruikersaccounts"
       ],
@@ -1518,6 +1533,9 @@
       "Password health alerts": [
         "Wachtwoordgezondheidswaarschuwingen"
       ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
       ],
@@ -1532,13 +1550,16 @@
       "Billed at ${ amount } once": [
         "U betaalt ${ amount } eenmaal"
       ],
+      "forever": [
+        "voor altijd"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8.500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
+        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8 500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
@@ -1745,6 +1766,12 @@
       "Application problem": [
         "Applicatieprobleem"
       ],
+      "Authenticator problem": [
+        "Authenticatieprobleem"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Bridge problem": [
         "Probleem met Bridge"
       ],
@@ -1900,7 +1927,7 @@
         "Probeer ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Probeer ${ upsellPlanName } en behoud toegang tot alle premium email- en kalenderfuncties."
+        "Probeer ${ upsellPlanName } en behoud toegang tot alle premium email- en agendafuncties."
       ],
       "Ultra fast and private VPN": [
         "Ultrasnelle en private VPN"
@@ -1968,6 +1995,9 @@
       ],
       "Upload and query small files": [
         "Kleine bestanden uploaden en opvragen"
+      ],
+      "Web search access": [
+        "Toegang tot webzoekopdrachten"
       ]
     },
     "collider_2025: Info": {
@@ -1976,6 +2006,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
+      ],
+      "Advanced account and network security in one plan": [
+        "Geavanceerde account- en netwerkbeveiliging in één abonnement"
       ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
@@ -3412,6 +3445,39 @@
         "Prioriteitsondersteuning"
       ]
     },
+    "Duo offer": {
+      "/month": [
+        "/maand"
+      ],
+      "2 TB of storage to share": [
+        "2 TB opslagruimte om te delen"
+      ],
+      "2 user accounts": [
+        "2 gebruikersaccounts"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium functies van uw huidige abonnement"
+      ],
+      "Only": [
+        "Slechts"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Krijg 4x meer opslagruimte"
+      ],
+      "Share your plan": [
+        "Deel uw abonnement"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Krijg 4x meer Opslag met ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Deel uw abonnementsvoordelen met ${ BRAND_NAME } Duo"
+      ]
+    },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
         "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
@@ -3484,8 +3550,14 @@
       "All events in this series were updated.": [
         "Alle gebeurtenissen in deze serie zijn bijgewerkt."
       ],
+      "DESCRIPTION:": [
+        "BESCHRIJVING:"
+      ],
       "Here's what changed:": [
         "Dit is wat er is veranderd:"
+      ],
+      "LOCATION:": [
+        "LOCATIE:"
       ],
       "NOTE:": [
         "LET OP:"
@@ -3498,6 +3570,15 @@
       ],
       "This event was updated.": [
         "Deze afspraak werd bijgewerkt."
+      ],
+      "TIME:": [
+        "TIJD:"
+      ],
+      "TITLE:": [
+        "TITEL:"
+      ],
+      "You are invited to": [
+        "U bent uitgenodigd voor"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4059,6 +4140,14 @@
         "Postcode is vereist"
       ]
     },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Log in met een Gmail-adres dat al doorstuurt naar ${ MAIL_APP_NAME }"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "Log in met hetzelfde Gmail-adres dat u oorspronkelijk heeft verbonden."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
@@ -4424,7 +4513,7 @@
         "U hebt de limiet van ${ n } geaccepteerde uitnodigingen in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra u opnieuw nieuwe gebruikers kunt uitnodigen."
       ],
       "You have successfully joined the family group": [
-        "U hebt zich succesvol aangesloten bij de familiegroep"
+        "U heeft zich succesvol aangesloten bij de familiegroep"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
@@ -4588,8 +4677,14 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Versleutelde cloudopslag voor bestanden, foto's en documenten"
+      ],
       "Fastest VPN servers": [
         "Snelste VPN-servers"
+      ],
+      "More premium features": [
+        "Meer premium functies"
       ],
       "Remove": [
         "Verwijderen"
@@ -4608,9 +4703,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } apparaten"
-      ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
       ],
@@ -5564,6 +5656,9 @@
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
       ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun abonnement."
+      ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke persoon die zich inschrijft voor een abonnement."
       ],
@@ -5798,6 +5893,9 @@
       "Change your password": [
         "Wijzig uw wachtwoord"
       ],
+      "Choose a plan that works best for you.": [
+        "Kies een abonnement dat het beste bij u past."
+      ],
       "Choose an Entity ID to continue.": [
         "Kies een entiteits-ID om door te gaan."
       ],
@@ -5821,6 +5919,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Verbindingsgegevens zullen beschikbaar zijn in ongeveer 1 uur."
+      ],
+      "Continue": [
+        "Ga verder"
       ],
       "Continue to allow **${ affiliationsText }** from **${ organizationValue.Name }** to join your ${ BRAND_NAME } organization.": [
         "Ga door met toestaan van **${ affiliationsText }** van **${ organizationValue.Name }** om deel te nemen aan uw ${ BRAND_NAME } organisatie."
@@ -6180,6 +6281,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ga naar uw identiteitsprovider, haal de SAML-metadata voor ${ appName } op en importeer deze hier."
+      ],
+      "Google Pay mark": [
+        "Google Pay merk"
       ],
       "Got it": [
         "Begrepen"
@@ -7162,6 +7266,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Upgraden om uw ${ planTitle } voordelen te behouden."
+      ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Upgrade naar Professional of een hoger abonnement om te ontgrendelen"
       ],
@@ -7863,6 +7970,9 @@
       "Billing cycle": [
         "Facturatieperiode"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Block": [
         "Geblokkeerd"
       ],
@@ -8081,6 +8191,9 @@
       ],
       "Gateway name": [
         "Naam Gateway"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
       ],
       "Gift code": [
         "Geschenkcode"
@@ -8371,7 +8484,7 @@
         "Reeksen"
       ],
       "Share your referral link": [
-        "Deel je verwijzingslink:"
+        "Deel uw verwijzingslink:"
       ],
       "Show ${ n } administrator": [
         "Toon ${ n } beheerder",
@@ -8710,6 +8823,9 @@
       "Reactivate now": [
         "Heractiveren"
       ],
+      "Reactivate subscription": [
+        "Heractiveer abonnement"
+      ],
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
@@ -8981,6 +9097,9 @@
       ],
       "View user sign-in, recovery and security events.": [
         "Bekijk de aanmeldings-, herstel- en beveiligingsafspraken van de gebruiker."
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
@@ -9339,6 +9458,9 @@
       "End-to-end encryption": [
         "End-to-end versleuteling"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Bestaande ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } voordelen"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Snelle P2P/BitTorrent-downloads"
       ],
@@ -9449,6 +9571,9 @@
       "Share files with no size limit": [
         "Deel bestanden zonder maximale grootte"
       ],
+      "Short domain (@pm.me)": [
+        "Kort domein (@pm.me)"
+      ],
       "Sign in as user": [
         "Inloggen als gebruiker"
       ],
@@ -9547,6 +9672,10 @@
       ],
       "User storage management": [
         "Beheer gebruikersopslag"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Kluis delen met tot ${ n } persoon",
+        "Kluis delen tot ${ n } personen"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
@@ -10160,11 +10289,17 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } aanbieding verloopt vandaag!"
       ],
+      "Don't show this again": [
+        "Toon dit niet opnieuw"
+      ],
       "Don’t show this again": [
         "Toon dit niet opnieuw"
       ],
       "Don’t show this offer again": [
         "Toon deze aanbieding niet opnieuw"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Neem ${ BRAND_NAME } Duo"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
         "Krijg ${ BRAND_NAME } Unlimited"
@@ -10617,6 +10752,9 @@
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
       ],
+      "File attachments (up to 10GB)": [
+        "Bestandsbijlagen (tot 10GB)"
+      ],
       "Team policies": [
         "Team beleid"
       ]
@@ -10754,6 +10892,9 @@
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
+      "Google Pay": [
+        "Google Pay"
+      ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
       ]
@@ -10767,6 +10908,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Verschuldigd bedrag na de proefversie op ${ formattedDate }"
+      ],
       "Billing Country": [
         "Land van facturering"
       ],
@@ -10809,6 +10953,9 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betaalmethode vereist voor de activering van het abonnement nadat de proefversie is afgelopen."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
@@ -10824,9 +10971,23 @@
       "Taxes": [
         "Belastingen"
       ],
+      "terms and conditions": [
+        "algemene voorwaarden"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
         "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maanden."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
@@ -10846,8 +11007,14 @@
         "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
         "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Deze actie breidt het bestaande abonnement uit. U wordt alleen kosten in rekening gebracht voor de nieuwe add-ons en de resterende tijd van de huidige factureringscyclus. De verlengingsdatum van uw abonnement wordt niet gewijzigd."
+      ],
       "This number will be shown on all future invoices": [
         "Dit nummer zal op alle toekomstige facturen worden getoond."
+      ],
+      "This offer is not available with your current plan.": [
+        "Deze aanbieding is niet beschikbaar met uw huidige abonnement."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
@@ -10861,14 +11028,29 @@
       "VAT number": [
         "BTW-nummer"
       ],
+      "You already have a subscription to this plan.": [
+        "U bent reeds geabonneerd op dit abonnement."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "U hebt al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Via de geselecteerde betaalmethode wordt ${ amountToCharge } in rekening gebracht."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Binnenkort wordt u doorgestuurd om uw betaling te verifiëren."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
       ]
     },
     "Payments.Error": {
@@ -10891,9 +11073,34 @@
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
       ]
     },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Er ging iets mis. Google Pay verificatie mislukt."
+      ]
+    },
     "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Tegoed voor het ongebruikte deel van uw vorig abonnement"
+      ],
       "Credits will be added to your balance": [
         "Tegoed wordt toegevoegd aan uw saldo."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Weet u zeker dat u verder wilt gaan?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Als u ervoor kiest om uw ${ planTitle } abonnement te wijzigen, kunt u de toegang tot bepaalde functies verliezen."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } behouden"
+      ],
+      "Yes, I'm sure": [
+        "Ja, ik weet het zeker."
+      ],
+      "Your plan includes this feature already.": [
+        "Uw abonnement bevat deze functie reeds."
       ]
     },
     "Payments.plan_name": {
@@ -10907,6 +11114,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankoverschrijving - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11295,11 +11505,26 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per doorverwijzing"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
+      ],
       "Invite friends. Get credits.": [
         "Nodig vrienden uit. Ontvang tegoed."
       ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Zodra uw volledige abonnement ingaat, kunt u binnen 30 dagen nog steeds annuleren en een pro rata teruggave ontvangen."
+      ],
+      "Refer friends": [
+        "Verwijs vrienden door"
+      ],
       "Start earning credits": [
         "Begin met het verdienen van tegoed"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
       ]
     },
     "Remove organization logo": {
@@ -12262,7 +12487,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering en meer."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
@@ -12555,6 +12780,9 @@
       "${ app } storage": [
         "${ app } opslagruimte"
       ],
+      "${ app } storage used": [
+        "${ app } opslagruimte gebruikt"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% vol"
       ],
@@ -12566,6 +12794,9 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Voor alle ${ BRAND_NAME }-diensten"
+      ],
+      "Storage used": [
+        "Opslagruimte gebruikt"
       ],
       "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
         "Om ${ BRAND_NAME } producten te blijven gebruiken, maak ruimte vrij of voer een ${ upgrade } uit"
@@ -13350,7 +13581,7 @@
         "Maak veilige inloggegevens op al uw apparaten. Inclusief onbeperkte aliassen, 20 kluizen, geïntegreerde 2FA, automatisch invullen van creditcardgegevens en meer."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering en meer."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
@@ -13959,6 +14190,9 @@
       "Get ${ vpnPlus } to access all servers": [
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Krijg **${ referralInfo.uiData.refereeRewardAmount }** in tegoed met ${ planTitle }"
+      ],
       "Get complete privacy coverage": [
         "Krijg volledige privacy dekking"
       ],
@@ -14312,6 +14546,9 @@
       "Upgrade to ${ planName }": [
         "Upgraden naar ${ planName }"
       ],
+      "Upgrade to keep your premium benefits.": [
+        "Upgraden om uw premium voordelen te behouden."
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Upgrade uw netwerkbescherming met toegewijde servers"
       ],
@@ -14592,6 +14829,9 @@
       ]
     },
     "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI-assistent die uw privacy respecteert"
+      ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ],
@@ -14996,10 +15236,6 @@
         "Selecteert automatisch uit ${ numberOfCountries } land",
         "Selecteert automatisch uit ${ numberOfCountries } landen"
       ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Selecteer uit ${ numberOfCountries }+ land",
-        "Selecteer uit ${ numberOfCountries }+ landen"
-      ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servers in ${ numberOfCountries }+ land",
         "Servers in ${ numberOfCountries }+ landen"
@@ -15173,6 +15409,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {
