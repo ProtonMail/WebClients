@@ -3,7 +3,7 @@ import { useLocation } from 'react-router';
 import { isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
 import { useApi, useGetVerificationPreferences } from '@proton/components';
 import { queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { base64URLStringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
@@ -19,7 +19,7 @@ export const useExternalBookingLoader = () => {
     const location = useLocation();
     const bookingSecretBase64Url = location.hash.substring(1);
 
-    const [user] = useUser();
+    const getUser = useGetUser();
     const getVerificationPreferences = useGetVerificationPreferences();
 
     const setLoading = useBookingStore((state) => state.setLoading);
@@ -83,10 +83,17 @@ export const useExternalBookingLoader = () => {
 
             let verifyingKeys = undefined;
 
-            if (user) {
-                const verificationPreferences = await getVerificationPreferences({ email: user.Email, lifetime: 0 });
-                verifyingKeys = verificationPreferences.verifyingKeys;
-            }
+            try {
+                // This will throw if the user is a guest
+                const user = await getUser();
+                if (user) {
+                    const verificationPreferences = await getVerificationPreferences({
+                        email: user.Email,
+                        lifetime: 0,
+                    });
+                    verifyingKeys = verificationPreferences.verifyingKeys;
+                }
+            } catch (e) {}
 
             const { summary, description, location, withProtonMeetLink } = await decryptBookingContent({
                 encryptedContent: bookingPageData.EncryptedContent,
