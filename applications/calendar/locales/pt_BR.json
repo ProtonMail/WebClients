@@ -255,6 +255,9 @@
       "Create a booking page": [
         "Criar página de agendamentos"
       ],
+      "Create a free account": [
+        "Criar uma conta gratuita"
+      ],
       "Create a new bookings page": [
         "Criar uma página de agendamentos"
       ],
@@ -436,6 +439,9 @@
       ],
       "Go to settings": [
         "Ir para configurações"
+      ],
+      "Go to the next available appointment": [
+        "Vá para o próximo horário disponível"
       ],
       "Got it": [
         "Entendi"
@@ -760,6 +766,12 @@
       ],
       "See previous availability": [
         "Veja a disponibilidade anterior"
+      ],
+      "See upcoming availability": [
+        "Veja a disponibilidade futura"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Selecionar ${ dateHeaderLongString } às ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Selecionar ${ planOrAppName }"
@@ -1552,6 +1564,9 @@
       "Application problem": [
         "Problema no aplicativo"
       ],
+      "Authenticator problem": [
+        "Problema de autenticação"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1961,6 +1976,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Segurança avançada de conta e rede em um único plano"
       ],
       "High-speed chats and advanced AI features.": [
         "Bate-papos de alta velocidade e recursos avançados de IA."
@@ -4057,6 +4075,9 @@
         "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatário",
         "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatários"
       ],
+      "You cannot enter the organizer email": [
+        "Você não pode inserir o e-mail do organizador"
+      ],
       "You have reached the maximum number of calendars.": [
         "Você atingiu o número máximo de calendários."
       ],
@@ -4077,6 +4098,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Por favor, inicie sessão com um endereço Gmail que já encaminha para ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicie sessão com o mesmo endereço do Gmail que você conectou originalmente"
       ]
@@ -4621,8 +4645,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Suas informações de contato"
+      "Confirm your booking": [
+        "Confirme seu agendamento"
       ]
     },
     "Google Meet": {
@@ -5285,6 +5309,9 @@
       "Appointment duration": [
         "Duração do compromisso"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Você tem certeza de que deseja excluir essa página de agendamento?"
+      ],
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
       ],
@@ -5321,6 +5348,9 @@
       "Booking overlaps with an existing booking.": [
         "Agendamento coincide com um agendamento existente."
       ],
+      "Booking page deleted": [
+        "Página de agendamentos excluída"
+      ],
       "Booking page example": [
         "Exemplo de página de agendamentos"
       ],
@@ -5344,6 +5374,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Não consegue encontrar os eventos que procura? Alguns eventos em calendários ocultos correspondem à sua consulta. Para ver esses resultados, ative a visibilidade para ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create booking range across days": [
+        "Não é possível criar um intervalo de reserva que abranja vários dias"
+      ],
+      "Cannot create booking range in the past": [
+        "Não foi possível criar um intervalo de reservas no passado"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
@@ -5761,14 +5797,14 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "A maioria das redes Wi-Fi públicas é segura, mas algumas são vulneráveis, expondo você a ameaças cibernéticas. Uma VPN criptografa seu tráfego, mantendo você protegido."
       ],
-      "Name your booking page": [
-        "Nome da sua página de agendamentos"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
       "New": [
         "Novo"
+      ],
+      "No appointments available this week": [
+        "Não há horários disponíveis esta semana"
       ],
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
@@ -5854,6 +5890,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos com criptografia TLS e leis de privacidade Suíças."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Quem marcar um horário com você, verá ${ selectedCalendar.Email } como seu endereço de contato."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline é compatível apenas com o formato de Texto Simples."
       ],
@@ -5909,11 +5948,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
+      "Powered by": [
+        "Fornecido por"
+      ],
       "Powered by ${ protonButton }": [
         "Com tecnologia da ${ protonButton }"
       ],
       "Previous modifications on this series will be lost.": [
         "As modificações anteriores nesta série serão perdidas."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Eventos previamente agendados não serão excluídos."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
@@ -5979,9 +6024,6 @@
       "Setting up your new address…": [
         "Configurando seu novo endereço…"
       ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Compartilhe esta página para que outras pessoas possam agendar um horário no seu calendário. Você pode gerenciá-la a qualquer momento na barra lateral em Páginas de agendamento."
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
@@ -6024,6 +6066,9 @@
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Assuma o controle da sua vida digital"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
@@ -6211,6 +6256,9 @@
       "Week and month views only apply to desktop.": [
         "As visualizações da semana e do mês só se aplicam ao desktop."
       ],
+      "What do you want to call this booking page?": [
+        "Como você quer chamar esta página de agendamento?"
+      ],
       "What should people know before booking?": [
         "O que as pessoas devem saber antes de reservar?"
       ],
@@ -6341,9 +6389,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Você anteriormente rejeitou esse convite. Pergunte ao proprietário para reenviar o convite"
-      ],
-      "You will loose all unsaved changes.": [
-        "Você perderá todas as alterações não salvas."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
@@ -6875,6 +6920,9 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
+      "Full name": [
+        "Nome completo"
+      ],
       "Get the deal": [
         "Obtenha a oferta"
       ],
@@ -7178,8 +7226,14 @@
       "End time of the booking range": [
         "Horário de término do período de reserva"
       ],
+      "How long should an appointment last?": [
+        "Quanto tempo deve durar um compromisso?"
+      ],
       "Start time of the booking range": [
         "Horário de início do período de reserva"
+      ],
+      "What should people know before booking?": [
+        "O que as pessoas devem saber antes de reservar?"
       ]
     },
     "Label for contact group color": {
@@ -9521,14 +9575,14 @@
       "Anytown": [
         "Nova Esperança"
       ],
-      "Booking page title": [
-        "Título da página de agendamentos"
-      ],
       "Company name": [
         "Nome da empresa"
       ],
       "E.g., ": [
         "Ex., "
+      ],
+      "Email for booking confirmation": [
+        "E-mail para confirmação de agendamento"
       ],
       "Enter passphrase": [
         "Digite a passphrase"
@@ -9565,6 +9619,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Name of attendee": [
+        "Nome do participante"
       ],
       "Name or email address": [
         "Nome ou endereço de e-mail"
@@ -11501,6 +11558,9 @@
       ],
       "Delete ${ value }": [
         "Excluir ${ value }"
+      ],
+      "Delete booking page?": [
+        "Excluir página de agendamentos?"
       ],
       "Delete event": [
         "Excluir evento"

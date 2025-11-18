@@ -772,6 +772,9 @@
       "Application problem": [
         "Problema no aplicativo"
       ],
+      "Authenticator problem": [
+        "Problema de autenticação"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1002,9 +1005,6 @@
       "Send message": [
         "Enviar mensagem"
       ],
-      "settings": [
-        "configurações"
-      ],
       "Show safety information": [
         "Mostrar informações de segurança"
       ],
@@ -1053,6 +1053,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "Open Link": [
         "Abrir link"
@@ -1401,6 +1404,9 @@
       ],
       "Adding to knowledge base...": [
         "Adicionando para a base de conhecimento..."
+      ],
+      "Advanced account and network security in one plan": [
+        "Segurança avançada de conta e rede em um único plano"
       ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Pergunte qualquer coisa ao ${ LUMO_SHORT_APP_NAME }"
@@ -2210,8 +2216,8 @@
       "Built by the team that knows privacy": [
         "Desenvolvido pela equipe que entende de privacidade"
       ],
-      "Dark mode and conversation personalization": [
-        "Modo escuro e personalização da conversa"
+      "Dark mode is here": [
+        "Modo escuro está aqui"
       ],
       "Earlier": [
         "Anterior"
@@ -2233,12 +2239,6 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Como o ${ LUMO_SHORT_APP_NAME } mantém nossas conversas confidenciais?"
-      ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
-        "Apresentando ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } com suporte para modo escuro e novas opções para personalizar suas conversas."
-      ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
-        "Apresentando ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } com suporte para modo escuro e novas opções para personalizar suas conversas. Experimente em ${ openSettingsModalButton }."
       ],
       "Last 30 days": [
         "Últimos 30 dias"
@@ -2263,9 +2263,6 @@
       ],
       "Today": [
         "Hoje"
-      ],
-      "What's new": [
-        "Novidades"
       ],
       "Whatever you ask me is:": [
         "Suas perguntas são:"

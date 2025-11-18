@@ -5241,6 +5241,9 @@
       "Wait time": [
         "Odotusaika"
       ],
+      "Wait time saved": [
+        "Odotusaika tallennettu"
+      ],
       "You are signed in to the account ${ account }.": [
         "Olet kirjautunut tunnuksella ${ account }."
       ],
@@ -6568,9 +6571,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } laitetta"
-      ],
       "Ad-blocker and malware protection": [
         "Mainos- ja haittaohjelmaesto"
       ],
@@ -7957,12 +7957,6 @@
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Käytä salasanojasi ja suojaa verkkoidentiteettisi saumattomasti kaikilla laitteillasi. Lataa ja asenna tarvitsemasi ${ PASS_APP_NAME } -sovellukset ja laajennukset."
       ],
-      "account recovery and data recovery method": [
-        "tilin ja tietojen palautustavat"
-      ],
-      "account recovery method": [
-        "tilin palautustapa"
-      ],
       "Account successfully updated": [
         "Tili on päivitetty"
       ],
@@ -7981,14 +7975,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lisää tilillesi @pm.me-sähköpostiosoite. Tämä yksinkertainen, lyhyempi osoite on lyhenne sanoista \"${ MAIL_APP_NAME } me\" tai \"Private Message me\"."
       ],
-      "Add a recovery email address": [
-        "Lisää palautusosoite"
-      ],
       "add a recovery method": [
         "lisäät palautustavan"
-      ],
-      "Add a recovery phone number": [
-        "Lisää palautusnumero"
       ],
       "Add domain": [
         "Lisää verkkotunnus"
@@ -8071,12 +8059,6 @@
       ],
       "Allow logging of location and connection details": [
         "Salli sijainnin ja yhteyden tietojen lokikirjaus."
-      ],
-      "Allow recovery by email": [
-        "Salli palautus sähköpostitse"
-      ],
-      "Allow recovery by phone": [
-        "Salli palautus puhelimitse"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Salli käyttäjien yhdistää suojattuihin jaettuihin palvelimiin ${ VPN_APP_NAME } -sovelluksen **Maat**-osiosta."
@@ -8457,14 +8439,11 @@
       "Did you know?": [
         "Tiesitkö?"
       ],
-      "Disable recovery by email address": [
-        "Poista palautus sähköpostiosoitteella käytöstä"
-      ],
-      "Disable recovery by phone number": [
-        "Poista palautus puhelinnumerolla käytöstä"
-      ],
       "Disabled countries": [
         "Käytöstä poistetut maat"
+      ],
+      "Disabled on ${ boldValue }": [
+        "Poistettu käytöstä ${ boldValue }"
       ],
       "Discount": [
         "Alennus"
@@ -8535,9 +8514,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Lataa CSV-mallimme ja täytä käyttäjien tiedot, ja luo käyttäjille tilit käyttämällä täytettämääsi CSV-tiedostoa."
-      ],
-      "Download recovery file": [
-        "Lataa palautustiedosto"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
@@ -8869,12 +8845,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Jos sinulla on lahjakoodi, syötä se alle hyödyntääksesi alennuksen."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Jos kadotat salasanasi ja joudut palauttamaan tilisi, ${ boldImperative }, että olet määrittänyt ${ boldAccountRecovery }."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Jos kadotat salasanasi ja joudut palauttamaan tilisi, ${ boldImperative }, että olet määrittänyt ${ boldAccountAndRecovery }, tai et välttämättä pääse käsiksi sähköposteihisi, yhteystietoihisi tai tiedostoihisi."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen vahvistuskoodin sijaan. Koodit ovat kertakäyttöisiä."
       ],
@@ -9063,9 +9033,6 @@
       "Item updated in vault": [
         "Holvin kohdetta muokattiin"
       ],
-      "it’s imperative": [
-        "on erittäin tärkeää"
-      ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Olen käyttänyt @ProtonMailia ja ajattelin, että saatat pitää siitä. Se on turvallinen sähköpostipalvelu, joka suojaa yksityisyyttäsi. Rekisteröidy suosituslinkilläni ja saat kuukauden premium-ominaisuudet ilmaiseksi: ${ referrerLink }"
       ],
@@ -9210,6 +9177,9 @@
       "Monitor accounts": [
         "Valvo tilejä"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Valvo ja auditoi kaikkien ${ BRAND_NAME } -palveluiden tunnistautumisyrityksiä, jotka käyttävät ${ BRAND_NAME } -kirjautumistietojasi."
+      ],
       "Monthly ${ onDayString }": [
         "Joka kuukauden ${ onDayString }"
       ],
@@ -9252,9 +9222,6 @@
       "No account keys exist": [
         "Tiliavaimia ei ole olemassa"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Tilin palautustapaa ei ole määritetty, jonka vuoksi olet altistunut sen käyttöoikeuden menetykselle"
-      ],
       "No action selected": [
         "Toimintoa ei valittu"
       ],
@@ -9263,9 +9230,6 @@
       ],
       "No countries enabled": [
         "Maita ei ole käytössä"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Tietojen palautustapaa ei ole määritetty, jonka vuoksi olet alttiina tietojesi käyttöoikeuden menetykselle"
       ],
       "No folder selected": [
         "Kansiota ei valittu"
@@ -9373,15 +9337,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Vanhentunut palautustiedosto, joka tulee päivittää varmistaaksesi pääsyn tietoihisi"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Vanhentuneita palautustapoja, jotka tulee päivittää varmistaaksesi pääsyn tietoihisi"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Vanhentunut palautuslauseke, joka tulee päivittää varmistaaksesi pääsyn tietoihisi"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Yli 100 miljoonaa ihmistä ja yritystä on rekisteröitynyt ${ BRAND_NAME }-palveluun."
@@ -9691,9 +9646,6 @@
       ],
       "Set password": [
         "Aseta salasana"
-      ],
-      "Set recovery phrase": [
-        "Aseta palautuslauseke"
       ],
       "Set up forwarding": [
         "Määritä välitys"
@@ -10091,12 +10043,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Purkaaksesi lukittujen tietojesi salauksen ja avataksesi ne salasanan uudelleenasetuksen jälkeen, valitse palautustapa."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Varmista pääsy tilillesi aina määrittämällä tilin palautustapa"
-      ],
-      "To ensure highest possible security of your account": [
-        "Varmistaaksesi tilisi parhaan mahdollisen turvallisuuden"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Jotta et menetä tärkeitä tietoja, ${ DRIVE_APP_NAME } säilyttää tiedostojesi vanhempia versioita, samalla kun sinä ja työtoverisi teette muutoksia. Valitse, miten kauan ${ BRAND_NAME } säilyttää aiemmat versiot."
       ],
@@ -10187,12 +10133,6 @@
       "Unverified email address.": [
         "Vahvistamaton sähköpostiosoite."
       ],
-      "Update recovery file": [
-        "Päivitä palautustiedosto"
-      ],
-      "Update recovery phrase": [
-        "Vaihda palautuslause"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
       ],
@@ -10279,12 +10219,6 @@
       ],
       "Verify domain": [
         "Vahvista verkkotunnus"
-      ],
-      "Verify email address": [
-        "Vahvista sähköpostiosoite"
-      ],
-      "Verify phone number": [
-        "Vahvista puhelinnumero"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Tunnistaudu todennussovelluksen näyttämällä, aikaan perustuvalla kertakäyttökoodilla"
@@ -10695,17 +10629,11 @@
       "Your account has been successfully updated": [
         "Tilisi on päivitetty"
       ],
-      "Your account recovery method is set": [
-        "Tilin palautustapa on määritetty"
-      ],
       "Your account was successfully updated with this promotion": [
         "Tilisi päivitys tällä kampanjalla onnistui"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
-      ],
-      "Your data recovery method is set": [
-        "Tietojen palautustapa on määritetty"
       ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
@@ -12879,9 +12807,6 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
-      ],
-      "Why set recovery methods?": [
-        "Miksi palautustapoja kannattaa määrittää?"
       ]
     },
     "Link label (optional)": {
@@ -15790,6 +15715,9 @@
       "Card number": [
         "Kortin numero"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "Krediitit ja alennukset näkyvät laskussasi"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Tilauksen automaattinen uusiminen on tällä hetkellä poistettu käytöstä. Jos muutat tilausta nyt, automaattinen uusiminen otetaan uudelleen käyttöön."
       ],
@@ -16196,6 +16124,11 @@
     "pqc-optin: Action": {
       "Got it": [
         "Selvä"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Luodaan kvanttikestävä tiliavain."
       ]
     },
     "Price": {
@@ -20150,15 +20083,6 @@
       "Folders and labels": [
         "Kansiot ja tunnisteet"
       ],
-      "For Linux": [
-        "Linuxille"
-      ],
-      "For macOS": [
-        "MacOS:lle"
-      ],
-      "For Windows": [
-        "Windowsille"
-      ],
       "Forgot password": [
         "Unohtunut salasana"
       ],
@@ -20770,9 +20694,6 @@
       "Switch to two-password mode": [
         "Vaihda kahden salasanan tilaan"
       ],
-      "Take precautions to avoid data loss!": [
-        "Välty tietojen menetykseltä varautumalla!"
-      ],
       "Text": [
         "Teksti"
       ],
@@ -20934,9 +20855,6 @@
       ],
       "Your plan": [
         "Tilauksesi"
-      ],
-      "Your recovery status": [
-        "Palautustilasi"
       ],
       "Your referrals": [
         "Suosittelusi"
@@ -21804,10 +21722,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Valitsee automaattisesti ${ numberOfCountries } maasta",
         "Valitsee automaattisesti ${ numberOfCountries } maasta"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Valitse ${ numberOfCountries }+ maa",
-        "Valitse yli ${ numberOfCountries } maasta"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Palvelimet ${ numberOfCountries }+ maassa",

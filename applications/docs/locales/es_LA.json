@@ -1304,6 +1304,9 @@
       "Application problem": [
         "Problema con la aplicación"
       ],
+      "Authenticator problem": [
+        "Problema con el autenticador"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1491,6 +1494,9 @@
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de la cuenta y red en un solo plan"
+      ],
       "High-speed chats and advanced AI features.": [
         "Chats de gran velocidad y funciones de IA avanzadas."
       ]
@@ -3282,6 +3288,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Inicie sesión con una dirección de Gmail que ya reenvía a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
       ]
@@ -4611,10 +4620,10 @@
         "Bloqueo geográfico"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios añadidos a sus documentos."
+        "Obtenga actualizaciones por correo electrónico sobre sugerencias y comentarios agregados a sus documentos."
       ],
       "Get Notified About Comments": [
-        "Recibir notificaciones sobre los comentarios"
+        "Recibir notificaciones de los comentarios"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear su actividad en línea. Ocultando su IP real y cifrando su actividad de navegación se vuelve privada."
@@ -4753,7 +4762,7 @@
         "Prioridad baja"
       ],
       "Making a copy...": [
-        "Haciendo una copia..."
+        "Realizando una copia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
@@ -4921,6 +4930,12 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Los documentos públicos aún no están activados para su organización."
+      ],
+      "Recent documents": [
+        "Documentos recientes"
+      ],
+      "Recent spreadsheets": [
+        "Hojas de cálculo recientes"
       ],
       "Recents": [
         "Recientes"
@@ -6730,6 +6745,9 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficios existentes de ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descargas rápidas de P2P/BitTorrent"
       ],
@@ -6947,6 +6965,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartir bóveda con hasta ${ n } persona",
+        "Compartir bóveda con hasta ${ n } personas"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
@@ -8558,9 +8580,6 @@
       ],
       "Replace data at selected cell": [
         "Reemplazar datos en la celda seleccionada"
-      ],
-      "Select a CSV or TSV file to import": [
-        "Seleccione un archivo CSV o TSV para importar"
       ]
     },
     "sheets_2025:Label": {

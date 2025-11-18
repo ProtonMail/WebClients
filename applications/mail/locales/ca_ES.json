@@ -326,7 +326,7 @@
         "Copia l'adreça"
       ],
       "Copy addresses": [
-        "Copiar les adreces"
+        "Copia les adreces"
       ],
       "Copy alias “${ name }”": [
         "Copia l'àlies «${ name }»"
@@ -878,7 +878,7 @@
         "Marca com a legítim"
       ],
       "Maximize composer": [
-        "Maximitzar l'editor"
+        "Maximitza l'editor"
       ],
       "Maybe": [
         "Potser"
@@ -1424,7 +1424,7 @@
         "Mantenir"
       ],
       "Stop downloading assistant": [
-        "Atura la baixada de l'assistent"
+        "Atura la descàrrega de l'assistent"
       ],
       "Stop generating result": [
         "Atura la generació del resultat"
@@ -1436,7 +1436,7 @@
         "Deixa de moure a l'arxiu"
       ],
       "Stop moving to Trash": [
-        "Deixar de moure a la paperera"
+        "Deixa de moure a la paperera"
       ],
       "Strikethrough": [
         "Ratllat"
@@ -1719,7 +1719,7 @@
         "S'ha enviat la invitació i s'ha afegit el participant"
       ],
       "Participant added": [
-        "S'ha afegit aquest participant"
+        "S'ha afegit el participant"
       ]
     },
     "Adding expiration to a message will create an expiring message": {
@@ -2283,8 +2283,11 @@
       "Application problem": [
         "Problema d’aplicació"
       ],
+      "Authenticator problem": [
+        "Problema amb l'autenticador"
+      ],
       "Black Friday": [
-        "Divendres negre"
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -5184,7 +5187,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Si us plau, inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -5873,7 +5876,7 @@
         "Proveu la nova aplicació d'escriptori"
       ],
       "Upgrade now": [
-        "Milloreu de pla ara"
+        "Millora el pla ara"
       ]
     },
     "Get started checklist instructions": {
@@ -6747,7 +6750,7 @@
         "**Pas 3:** Obtingueu ${ referrerRewardAmount } crèdits per cada amistat que es subscrigui a un pla."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
+        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -6843,7 +6846,7 @@
         "Tots els missatges emmagatzemats amb aquesta etiqueta s'eliminaran permanentment."
       ],
       "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Tots els missatges es mostraran a la safata d'entrada, les pestanyes de categoria i les etiquetes ja no seran visibles. "
+        "Tots els missatges es mostraran a la safata d'entrada i les pestanyes de categoria i les etiquetes ja no seran visibles. "
       ],
       "All your calendars are disabled.": [
         "Tots els vostres calendaris estan desactivats."
@@ -6889,7 +6892,7 @@
         "S'estan aplicant les accions a les converses"
       ],
       "Applying actions to messages": [
-        "S\"estan aplicant les accions als missatges"
+        "S'estan aplicant les accions als missatges"
       ],
       "Archive existing messages": [
         "Arxiva els missatges existents"
@@ -7527,8 +7530,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8230,7 +8232,7 @@
         "La configuració inicial pot trigar uns minuts."
       ],
       "The local database is being prepared": [
-        "S\"està preparant la base de dades local"
+        "S'està preparant la base de dades local"
       ],
       "The message has expired": [
         "Aquest missatge ha caducat."
@@ -9300,7 +9302,7 @@
         "Etiqueteu sempre els correus electrònics del remitent"
       ],
       "Always move sender's emails": [
-        "Moveu sempre els correus electrònics del remitent"
+        "Mou sempre els correus electrònics d'aquest remitent"
       ],
       "AND": [
         "I"
@@ -9567,7 +9569,7 @@
         "Ves als fòrums"
       ],
       "Go to Newsletters": [
-        "Aneu als butlletins"
+        "Ves als butlletins"
       ],
       "Go to Primary": [
         "Aneu al primari"
@@ -9846,7 +9848,7 @@
         "Cerca a"
       ],
       "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
-        "Seleccioneu les categories a incloure, i habiliteu-ne les notificacions per rebre alertes sobre correus electrònics nous en cada una."
+        "Seleccioneu les categories a incloure i habiliteu-ne les notificacions per a rebre alertes sobre correus electrònics nous en aquestes."
       ],
       "Send auto-reply": [
         "Envia una resposta automàtica"
@@ -11640,7 +11642,7 @@
         "S'han bloquejat els remitents"
       ],
       "The writing assistant is ready to use": [
-        "L'assistent d'escriptura està llest per a utilitzar"
+        "L'assistent d'escriptura ja està a punt"
       ],
       "Trial started": [
         "S'ha iniciat la prova."
@@ -14381,7 +14383,7 @@
         "El missatge s'ha afegit a ${ labelName }."
       ],
       "Message content search enabled": [
-        "S\"ha activat la cerca al contingut dels missatges"
+        "S'ha activat la cerca al contingut dels missatges"
       ],
       "Message deleted": [
         "S'ha eliminat el missatge"
@@ -14399,7 +14401,7 @@
         "El missatge s'ha marcat com a Destacat."
       ],
       "Message marked as unread.": [
-        "Aquest missatge marcat com a no llegit."
+        "S'ha marcat el missatge com a no llegit."
       ],
       "Message moved to ${ labelName } and sender added to your not spam list.": [
         "El missatge s'ha mogut a ${ labelName } i el remitent s'ha afegit a la vostra llista de permesos."
@@ -14826,7 +14828,7 @@
         "Aniversari"
       ],
       "Blind Carbon Copy": [
-        "Còpia oculta"
+        "Còpia de carbó oculta"
       ],
       "Block sender": [
         "Bloqueja el remitent"

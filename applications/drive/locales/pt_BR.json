@@ -1691,6 +1691,9 @@
       "Application problem": [
         "Problema no aplicativo"
       ],
+      "Authenticator problem": [
+        "Problema de autenticação"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1922,6 +1925,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Segurança avançada de conta e rede em um único plano"
       ],
       "High-speed chats and advanced AI features.": [
         "Bate-papos de alta velocidade e recursos avançados de IA."
@@ -3386,9 +3392,6 @@
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
-      "Cannot load \"My files\" root folder": [
-        "Não é possível carregar a pasta raiz \"Meus arquivos\""
-      ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
       ],
@@ -3456,12 +3459,6 @@
       ],
       "Error reading file": [
         "Erro ao ler arquivo"
-      ],
-      "Expanding non-existent directory tree item": [
-        "Expandindo item inexistente da árvore de diretórios"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "Expandindo um item não expansível da árvore de diretórios"
       ],
       "Expected structure attached": [
         "Estrutura esperada em anexo"
@@ -3934,11 +3931,17 @@
       "ZIP code is required": [
         "O CEP é obrigatório."
       ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Dispositivo indecifrável"
+      ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Por favor, inicie sessão com um endereço Gmail que já encaminha para ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicie sessão com o mesmo endereço do Gmail que você conectou originalmente"
       ]
@@ -5681,9 +5684,6 @@
       "It's better to have:": [
         "É melhor ter:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "Não é possível copiar a pasta para ela mesma"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Os itens na lixeira permanecerão aqui até que você os exclua permanentemente"
       ],
@@ -7192,6 +7192,9 @@
       ],
       "Encrypt emails": [
         "Criptografar e-mails"
+      ],
+      "Encrypted node": [
+        "Nó criptografado"
       ],
       "Enter device name": [
         "Digite o nome do dispositivo"

@@ -632,6 +632,9 @@
       "Or": [
         "Ya da"
       ],
+      "Or use a different Gmail address": [
+        "Veya farklı bir Gmail adresi kullanın"
+      ],
       "Organization": [
         "Kuruluş"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Kurtarma kodunu kullan"
+      ],
+      "Use this Gmail address": [
+        "Bu Gmail adresini kullan"
       ],
       "Use your current email instead": [
         "Bunun yerine var olan e-posta adresinizi kullanın"
@@ -1840,6 +1846,9 @@
       "Application problem": [
         "Uygulama sorunu"
       ],
+      "Authenticator problem": [
+        "Kimlik doğrulayıcı sorunu"
+      ],
       "Black Friday": [
         "Muhteşem Cuma"
       ],
@@ -2095,6 +2104,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "Advanced account and network security in one plan": [
+        "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
       ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
@@ -4257,6 +4269,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Lütfen zaten ${ MAIL_APP_NAME } uygulamasına yönlendiren bir Gmail adresiyle oturum açın"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Lütfen başlangıçta bağlandığınızla aynı Gmail adresiyle oturum açın"
       ]
@@ -4816,9 +4831,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } aygıt"
-      ],
       "15 GB storage": [
         "15 GB depolama alanı"
       ],
@@ -4843,6 +4855,9 @@
       "Double VPN": [
         "Çift VPN"
       ],
+      "File attachment ": [
+        "Ek dosya "
+      ],
       "Lightning-fast speeds": [
         "Işık hızında"
       ],
@@ -4857,6 +4872,9 @@
       ],
       "Secure streaming": [
         "Güvenli yayın akışı"
+      ],
+      "Secure vault, item, and link sharing": [
+        "Güvenli kasa, öge ve bağlantı paylaşımı"
       ],
       "Stream from Netflix, HBO, and more": [
         "Netflix, HBO ve diğerlerinin yayın akışlarını izleyin"
@@ -7067,6 +7085,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızın güvenliğini sağlayın"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Güvenli, uçtan uca şifrelenmiş görüntülü görüşme"
+      ],
       "Securing your account": [
         "Hesabınız korunuyor"
       ],
@@ -7423,6 +7444,9 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
+      ],
+      "Two-factor authentication": [
+        "İki adımlı doğrulama"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri verilerinizin şifresini çözmek için kullanılır. (Gelişmiş)"
@@ -8083,6 +8107,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } / ${ maxAddresses } e-posta adresi kullanılabilir",
+        "${ addressesAvailable } / ${ maxAddresses } e-posta adresi kullanılabilir"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
@@ -8106,6 +8134,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
+      ],
+      "0 of 1 email address available": [
+        "0 / 1 e-posta adresi kullanılabilir"
+      ],
+      "1 of 1 email address available": [
+        "1/1 e-posta adresi kullanılabilir"
       ],
       "Account holder": [
         "Hesap sahibi"
@@ -8851,6 +8885,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Bitiş"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } e-posta adresi var",
+        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } e-posta adresi var"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9706,6 +9746,9 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Var olan ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } avantajları"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Hızlı P2P/BitTorrent indirmeleri"
       ],
@@ -9917,6 +9960,10 @@
       ],
       "User storage management": [
         "Kullanıcı depolama alanı yönetimi"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "${ n } kişiye kadar kasa paylaşımı",
+        "${ n } kişiye kadar kasa paylaşımı"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -10456,6 +10503,9 @@
       ],
       "A disabled address cannot be default": [
         "Kullanımdan kaldırlmış bir adres varsayılan olamaz"
+      ],
+      "Address reconnected.": [
+        "Adres yeniden bağlandı."
       ],
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
@@ -11344,6 +11394,36 @@
         "Kalan kredi bakiyenize eklenecek"
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Ömür boyu hesaplar devredilebilir veya satılabilir"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Sahiplik değişikliğini onaylamak için müşteri destek ekibi ile görüşün."
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Asla"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "İlerlemek istediğinize emin misiniz?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } tarifenizi değiştirmeyi seçerseniz bazı özelliklere erişiminizi kaybedebilirsiniz."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } tarifesinde kal"
+      ],
+      "Yes, I'm sure": [
+        "Evet, eminim"
+      ],
+      "Your plan includes this feature already.": [
+        "Tarifenizde bu özellik zaten var."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -11602,6 +11682,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Ücretli hizmetler ve ${ unlimitedPlanMaxSpace } şifreli bulut depolama alanına sahip gizlilik paketi, hepsi tek bir pakette."
       ]
     },
     "Plans": {
@@ -14212,6 +14295,9 @@
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
       ],
+      "Connect a Gmail address": [
+        "Bir Gmail adresi bağlayın"
+      ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
       ],
@@ -14375,6 +14461,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "${ downgradedPlanName } tarifesine düşürülsün mü?"
+      ],
+      "Download ${ app }": [
+        "${ app } indir"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
@@ -14683,6 +14772,9 @@
       ],
       "Remove domain": [
         "Etki alanını kaldır"
+      ],
+      "Remove forwarding address": [
+        "İletme adresini kaldır"
       ],
       "Remove server?": [
         "Sunucu kaldırılsın mı?"
@@ -15356,6 +15448,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Daha uzun süre abone olarak ${ priceString }** kadar kazanç sağlayın. Aynı ücretli özellikler, daha düşük fiyat."
       ],
+      "Advanced security for your company": [
+        "Şirketiniz için gelişmiş güvenlik"
+      ],
       "Advanced security for your company?": [
         "Kuruluşunuz için gelişmiş güvenlik mi arıyorsunuz?"
       ],
@@ -15368,11 +15463,17 @@
       "Did you know?": [
         "Biliyor muydunuz?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini kurtarın."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "${ PLAN_NAMES[plan] } ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "${ VPN_APP_NAME } for Business ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."
+      ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "${ FAMILY_MAX_USERS } kişiye kadar sınırsız gizlilik. Ayda sadece ${ priceString }."
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Siz ve sevdiğiniz için sınırsız gizlilik. Yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
@@ -15595,10 +15696,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "${ numberOfCountries } ülke arasından otomatik seçilir",
         "${ numberOfCountries } ülke arasından otomatik seçilir"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "${ numberOfCountries } üzerinde ülkeden birini seçin",
-        "${ numberOfCountries } üzerinde ülkeden birini seçin"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "${ numberOfCountries } üzerinde ülkede sunucular",

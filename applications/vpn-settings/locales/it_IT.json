@@ -1828,6 +1828,9 @@
       "Application problem": [
         "Problema con l'applicazione"
       ],
+      "Authenticator problem": [
+        "Problema con l'autenticatore"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -4248,6 +4251,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Accedi con un indirizzo Gmail che già inoltra a ${ MAIL_APP_NAME }"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Accedi con lo stesso indirizzo email che hai usato originariamente"
       ]
@@ -4807,9 +4813,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } dispositivi"
-      ],
       "15 GB storage": [
         "15 GB di archiviazione"
       ],
@@ -9945,7 +9948,7 @@
         "Condivisione delle casseforti (fino a ${ n } persone)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Condivisione delle casseforti (fino a ${ n } persona",
+        "Condivisione delle casseforti fino a ${ n } persona",
         "Condivisione delle casseforti fino a ${ n } persone"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
@@ -15685,10 +15688,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Seleziona automaticamente da ${ numberOfCountries } paese",
         "Seleziona automaticamente da ${ numberOfCountries } paesi"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Scegli tra ${ numberOfCountries }+ paese",
-        "Scegli tra ${ numberOfCountries } o più paesi"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Server in ${ numberOfCountries }+ paese",

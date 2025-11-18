@@ -772,6 +772,9 @@
       "Application problem": [
         "Problema con l'applicazione"
       ],
+      "Authenticator problem": [
+        "Problema con l'autenticatore"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1001,9 +1004,6 @@
       ],
       "Send message": [
         "Invia il messaggio"
-      ],
-      "settings": [
-        "impostazioni"
       ],
       "Show safety information": [
         "Mostra informazioni di sicurezza"
@@ -2213,9 +2213,6 @@
       "Built by the team that knows privacy": [
         "Creato dal team che conosce la privacy"
       ],
-      "Dark mode and conversation personalization": [
-        "Modalità scura e personalizzazione della conversazione"
-      ],
       "Earlier": [
         "Precedente"
       ],
@@ -2236,12 +2233,6 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Come fa ${ LUMO_SHORT_APP_NAME } a mantenere riservate le nostre conversazioni?"
-      ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
-        "Ti presentiamo ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } con il supporto per la modalità scura e nuove opzioni per personalizzare le tue conversazioni."
-      ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
-        "Ti presentiamo ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } con il supporto per la modalità scura e nuove opzioni per personalizzare le tue conversazioni. Provalo in ${ openSettingsModalButton }."
       ],
       "Last 30 days": [
         "Ultimi 30 giorni"
@@ -2266,9 +2257,6 @@
       ],
       "Today": [
         "Oggi"
-      ],
-      "What's new": [
-        "Cosa c'è di nuovo"
       ],
       "Whatever you ask me is:": [
         "Qualunque cosa mi chiedi è:"
@@ -4980,7 +4968,7 @@
         "Condivisione delle casseforti (fino a ${ n } persone)"
       ],
       "Vault sharing with up to ${ n } person": [
-        "Condivisione delle casseforti (fino a ${ n } persona",
+        "Condivisione delle casseforti fino a ${ n } persona",
         "Condivisione delle casseforti fino a ${ n } persone"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [

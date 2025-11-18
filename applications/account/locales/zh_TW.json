@@ -5939,9 +5939,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } 臺裝置"
-      ],
       "Ad-blocker and malware protection": [
         "廣告攔截器及惡意軟體防護"
       ],
@@ -7175,12 +7172,6 @@
       "Account monitor": [
         "帳號監控"
       ],
-      "account recovery and data recovery method": [
-        "復原帳號與資料的手段"
-      ],
-      "account recovery method": [
-        "帳號復原方法"
-      ],
       "Account successfully updated": [
         "帳號已成功更新"
       ],
@@ -7196,14 +7187,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "加入一個 @pm.me 的電郵位址到您的帳號。此較為簡短的網域代表「${ MAIL_APP_NAME } me」或「私訊我」。"
       ],
-      "Add a recovery email address": [
-        "加入復原電郵位址"
-      ],
       "add a recovery method": [
         "加入復原方式"
-      ],
-      "Add a recovery phone number": [
-        "加入復原手機號碼"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "為您的帳戶添加額外的保障。 其後在每次登入時，您將需使用 2FA 核實您的身份。"
@@ -7279,12 +7264,6 @@
       ],
       "Allocated": [
         "已分配"
-      ],
-      "Allow recovery by email": [
-        "允許透過電郵復原"
-      ],
-      "Allow recovery by phone": [
-        "允許透過電話復原"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "允許使用者連接至安全共享於**國家**的${ VPN_APP_NAME }伺服器"
@@ -7631,12 +7610,6 @@
       "Did you know?": [
         "您知道嗎？"
       ],
-      "Disable recovery by email address": [
-        "停用備援電子郵件地址"
-      ],
-      "Disable recovery by phone number": [
-        "停用備援電話號碼復原"
-      ],
       "Discount": [
         "折扣"
       ],
@@ -7699,9 +7672,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "下載我們的 CSV 範本，依序填入使用者相關詳細資料，接著上傳您完成的 CSV 檔案，即可創建這些使用者的帳號。"
-      ],
-      "Download recovery file": [
-        "下載帳號救援檔案"
       ],
       "Download the app and import existing codes.": [
         "下載應用程式並匯入現有代碼。"
@@ -8000,12 +7970,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "若您有禮品代碼，請在下方輸入以套用折扣。"
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "若你遺失登入帳號所需的資訊且需要重設你的帳號，${ boldImperative }您同時擁有${ boldAccountRecovery }。"
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "若您遺失了您的密碼而需要恢復您的帳號，${ boldImperative }您同時擁有${ boldAccountAndRecovery }，不然您可能再也無法存取您的電子郵件、聯絡人或檔案。"
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "萬一您的兩步驟驗證裝置遺失，這些代碼可代替 6 位數的兩步驟驗證碼用來登入您的帳號。每個代碼只能使用一次。"
       ],
@@ -8189,9 +8153,6 @@
       "Item updated in vault": [
         "於保管庫項目已更新"
       ],
-      "it’s imperative": [
-        "最重要的是"
-      ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "我在用 @ProtonMail，覺得您也會喜歡的。它是一個安全的電子郵件服務，可以保護到您的隱私。用我的推介連結註冊的話，還可以免費獲得 1 個月的尊享功能哦：${ referrerLink }"
       ],
@@ -8366,9 +8327,6 @@
       "No account keys exist": [
         "無帳號金鑰存在"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "沒有設定任何帳號恢復手段，您有可能會無法存取您的資料"
-      ],
       "No action selected": [
         "未選取任何動作"
       ],
@@ -8377,9 +8335,6 @@
       ],
       "No credit card required": [
         "無需信用卡"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "沒有設定任何資料還原方法，您有可能會無法存取您的資料"
       ],
       "No folder selected": [
         "未選取任何資料夾"
@@ -8479,15 +8434,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "帳號救援檔案已過時，更新以確保您可以存取您的資料"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "救援手段已過時，更新以確保您可以存取您的資料"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "密碼短語已過時，更新以確保您可以存取您的資料"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "超過億人及企業註冊${ BRAND_NAME }"
@@ -8779,9 +8725,6 @@
       ],
       "Set password": [
         "設定密碼"
-      ],
-      "Set recovery phrase": [
-        "設定還原短語"
       ],
       "Set up forwarding": [
         "設定郵件轉寄"
@@ -9146,12 +9089,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "為了能在密碼重設後存取加密的資料，選擇帳號復原方法。"
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "為確保能持續存取您的帳號，請設定一個帳號復原方式"
-      ],
-      "To ensure highest possible security of your account": [
-        "確保您的帳號處於最安全的狀態"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "為確保您不會遺失重要資料，${ DRIVE_APP_NAME } 會在您與協作者作出變更時，為您的檔案儲存較舊的版本。請選擇 ${ BRAND_NAME } 該保留先前的版本多久。"
       ],
@@ -9239,12 +9176,6 @@
       "Unverified email address.": [
         "未經驗證的電子郵件位址。"
       ],
-      "Update recovery file": [
-        "更新帳號救援檔案"
-      ],
-      "Update recovery phrase": [
-        "更新還原短語"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
@@ -9331,12 +9262,6 @@
       ],
       "Verify domain": [
         "驗證網域"
-      ],
-      "Verify email address": [
-        "驗證電子郵件地址"
-      ],
-      "Verify phone number": [
-        "驗證手機號碼"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "使用身份驗證應用程式生成基於時間的一次性密碼 (OTP) 來確保您的身份"
@@ -9719,17 +9644,11 @@
       "Your account has been successfully updated": [
         "您的帳號已成功升級。"
       ],
-      "Your account recovery method is set": [
-        "你已設定帳號復原方式"
-      ],
       "Your account was successfully updated with this promotion": [
         "您帳號已成功更新此促銷"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
-      ],
-      "Your data recovery method is set": [
-        "你已設定帳號復原方式"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -11744,9 +11663,6 @@
       ],
       "What’s this?": [
         "這是什麼？"
-      ],
-      "Why set recovery methods?": [
-        "為什麼要設定復原方法?"
       ]
     },
     "Link label (optional)": {
@@ -18756,9 +18672,6 @@
       "Switch to two-password mode": [
         "切換為雙重密碼模式"
       ],
-      "Take precautions to avoid data loss!": [
-        "採取行動以免資料遺失！"
-      ],
       "Text": [
         "文字"
       ],
@@ -18908,9 +18821,6 @@
       ],
       "Your plan": [
         "您的方案"
-      ],
-      "Your recovery status": [
-        "你的復原狀態"
       ],
       "Your referrals": [
         "您的推薦邀請"

@@ -230,6 +230,9 @@
       "Copy alias “${ name }”": [
         "Kopírovať alias \"${ name }\""
       ],
+      "Copy booking page link": [
+        "Kopírovať odkaz na stránku rezervácie"
+      ],
       "Copy email address": [
         "Kopírovať emailovú adresu"
       ],
@@ -314,6 +317,9 @@
         "Zmazať ${ selectedCount } skupinu kontaktov",
         "Zmazať ${ selectedCount } skupinu kontaktov"
       ],
+      "Delete booking page": [
+        "Vymazať stránku rezervácií"
+      ],
       "Delete contact": [
         "Zmazať kontakt"
       ],
@@ -352,6 +358,9 @@
       ],
       "Edit": [
         "Upraviť"
+      ],
+      "Edit booking page": [
+        "Upraviť stránku rezervácií"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -433,6 +442,9 @@
       ],
       "Go to settings": [
         "Prejsť do nastavení"
+      ],
+      "Go to the next available appointment": [
+        "Prejsť na ďalší dostupný termín"
       ],
       "Got it": [
         "Rozumiem"
@@ -754,6 +766,15 @@
       ],
       "See plan features": [
         "Pozrite si funkcie plánu"
+      ],
+      "See previous availability": [
+        "Zobraziť predchádzajúcu dostupnosť"
+      ],
+      "See upcoming availability": [
+        "Pozrite si najbližšiu dostupnosť"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Vybrať ${ dateHeaderLongString } o ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Vybrať ${ planOrAppName }"
@@ -1566,6 +1587,9 @@
       "Application problem": [
         "Problém aplikácie"
       ],
+      "Authenticator problem": [
+        "Problém s overovačom"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1985,6 +2009,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Pridať ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Pokročilé zabezpečenie účtu a siete v jednom pláne"
       ],
       "High-speed chats and advanced AI features.": [
         "Vysokorýchlostné chaty a pokročilé funkcie AI"
@@ -4115,6 +4142,9 @@
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom",
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom"
       ],
+      "You cannot enter the organizer email": [
+        "Nemôžete zadať email organizátora"
+      ],
       "You have reached the maximum number of calendars.": [
         "Dosiahli ste maximálny počet kalendárov."
       ],
@@ -4135,6 +4165,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Prihláste sa , prosím, pomocou Gmailovej adresy, ktorá je už presmerovaná na ${ MAIL_APP_NAME }."
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "Prihláste sa pomocou tej istej Gmail adresy, ktorú ste použili pri prvom prihlásení, prosím."
       ]
@@ -4697,8 +4730,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Vaše kontaktné údaje"
+      "Confirm your booking": [
+        "Potvrďte svoju rezerváciu"
       ]
     },
     "Google Meet": {
@@ -5416,6 +5449,12 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Ktokoľvek s týmto odkazom môže vidieť, či ste voľní alebo zaneprázdnení vo vašom kalendári. Nemôže však vidieť podrobnosti o udalostiach, ako napríklad názov, miesto alebo účastníkov."
       ],
+      "Appointment duration": [
+        "Dĺžka trvania schôdzky"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Naozaj chcete vymazať túto rezervačnú stránku?"
+      ],
       "Are you sure you want to discard your import?": [
         "Naozaj chcete zahodiť váš import?"
       ],
@@ -5452,6 +5491,9 @@
       "Booking overlaps with an existing booking.": [
         "Rezervácia sa prekrýva s existujúcou rezerváciou."
       ],
+      "Booking page deleted": [
+        "Stránka rezervácií bola vymazaná"
+      ],
       "Booking page example": [
         "Príklad stránky rezervácií"
       ],
@@ -5478,6 +5520,9 @@
       ],
       "Cannot create booking range across days": [
         "Nie je možné vytvoriť rezerváciu v rozsahu viacerých dní"
+      ],
+      "Cannot create booking range in the past": [
+        "Nie je možné vytvoriť rozsah rezervácie v minulosti"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
@@ -5734,6 +5779,9 @@
       "High Priority": [
         "Vysoká priorita"
       ],
+      "Host": [
+        "Hostiteľ"
+      ],
       "How long should an appointment last?": [
         "Ako dlho by mala trvať schôdzka?"
       ],
@@ -5866,11 +5914,17 @@
       "Loading events": [
         "Nahrávam udalosti"
       ],
+      "Location": [
+        "Miesto"
+      ],
       "Low Priority": [
         "Nízka priorita"
       ],
       "Manage your calendars": [
         "Spravovať vaše kalendáre"
+      ],
+      "Manange booking page": [
+        "Spravovať stránku rezervácií"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5896,14 +5950,14 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Väčšina verejných WiFi sietí je bezpečná, ale niektoré nie sú dostatočne zabezpečené, čo vás vystavuje kybernetickým hrozbám. VPN šifruje vašu prevádzku, čím vás chráni."
       ],
-      "Name your booking page": [
-        "Pomenujte svoju stránku rezervácií"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
       ],
       "New": [
         "Nový"
+      ],
+      "No appointments available this week": [
+        "Tento týždeň nie sú k dispozícii žiadne termíny"
       ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
@@ -5989,6 +6043,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby sú chránené šifrovaním TLS a švajčiarskymi zákonmi o ochrane súkromia."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Ľudia, ktorí si u vás rezervujú čas, uvidia ${ selectedCalendar.Email } ako vašu kontaktnú adresu."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline je kompatibilný iba s formátom obyčajného textu."
       ],
@@ -6046,14 +6103,23 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, počkajte kým zistíme kontakty, ktoré zahŕňajú šifrované dáta s neaktívnym kľúčom."
       ],
+      "Powered by ${ protonButton }": [
+        "Používa ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Predchádzajúce úpravy tejto série sa stratia."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Predtým rezervované udalosti nebudú vymazané."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
       ],
       "Primary": [
         "Hlavný"
+      ],
+      "Privacy by default": [
+        "Súkromie je prvoradé"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Súkromné surfovanie (alebo režim „inkognito“) je užitočné len na to, aby vaša aktivita v zariadení zostala skrytá. Zabráni prehliadaču ukladať históriu a súbory cookie, ale neurobí vás neviditeľnými. Váš poskytovateľ internetových služieb, správca siete a webové stránky, ktoré navštevujete, môžu stále vidieť, čo robíte online."
@@ -6111,9 +6177,6 @@
       ],
       "Setting up your new address…": [
         "Nastavovanie vašej novej adresy…"
-      ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Zdieľajte túto stránku, aby si ostatní mohli rezervovať čas vo vašom kalendári. Môžete ju kedykoľvek spravovať v bočnom paneli v časti Rezervačné stránky."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
@@ -6346,6 +6409,9 @@
       "Week and month views only apply to desktop.": [
         "Zobrazenie týždňa a mesiaca platí iba pre stolné počítače."
       ],
+      "What do you want to call this booking page?": [
+        "Ako chcete nazvať túto rezervačnú stránku?"
+      ],
       "What should people know before booking?": [
         "Čo by mali ľudia vedieť pred rezerváciou?"
       ],
@@ -6480,9 +6546,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Túto pozvánku ste už predtým odmietli. Požiadajte majiteľa o opätovné zaslanie pozvánky"
-      ],
-      "You will loose all unsaved changes.": [
-        "Všetky neuložené zmeny stratíte."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "V tento deň stratíte prístup k funkciám ${ planTitle }."
@@ -7028,6 +7091,9 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
+      "Full name": [
+        "Celé meno"
+      ],
       "Get the deal": [
         "Využiť ponuku"
       ],
@@ -7333,8 +7399,14 @@
       "End time of the booking range": [
         "Koncový čas rozsahu rezervácie"
       ],
+      "How long should an appointment last?": [
+        "Ako dlho by mala trvať schôdzka?"
+      ],
       "Start time of the booking range": [
         "Čas začiatku rozsahu rezervácie"
+      ],
+      "What should people know before booking?": [
+        "Čo by mali ľudia vedieť pred rezerváciou?"
       ]
     },
     "Label for contact group color": {
@@ -7401,6 +7473,9 @@
     "Link": {
       "Add a gift code": [
         "Vložiť darčekový kód"
+      ],
+      "Booking pages": [
+        "Stránky rezervácií"
       ],
       "Calendars": [
         "Kalendáre"
@@ -8162,6 +8237,9 @@
       "End-to-end encryption": [
         "Šifrovanie End-to-end"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Existujúce výhody ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Rýchle sťahovanie P2P/BitTorrent"
       ],
@@ -8389,6 +8467,12 @@
         "Zdieľanie trezora (s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)",
         "Zdieľanie trezora (až s ${ n } osobami)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Zdieľanie trezora s ${ n } osobou",
+        "Zdieľanie trezora až s ${ n } osobami",
+        "Zdieľanie trezora až s ${ n } osobami",
+        "Zdieľanie trezora až s ${ n } osobami"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
@@ -9654,6 +9738,23 @@
         "Kredity budú pridané k vášmu zostatku"
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Naozaj chcete pokračovať?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Ak sa rozhodnete zmeniť svoj plán ${ planTitle }, môžete stratiť prístup k niektorým funkciám."
+      ],
+      "Keep ${ planTitle }": [
+        "Ponechať ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Áno, som si istý/á"
+      ],
+      "Your plan includes this feature already.": [
+        "Váš plán už túto funkciu zahŕňa."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -9777,14 +9878,14 @@
       "Anytown": [
         "Niekdetam"
       ],
-      "Booking page title": [
-        "Názov stránky rezervácií"
-      ],
       "Company name": [
         "Názov spoločnosti"
       ],
       "E.g., ": [
         "Napr., "
+      ],
+      "Email for booking confirmation": [
+        "Email na potvrdenie rezervácie"
       ],
       "Enter passphrase": [
         "Zadajte prístupovú frázu"
@@ -9821,6 +9922,9 @@
       ],
       "Name": [
         "Meno"
+      ],
+      "Name of attendee": [
+        "Meno účastníka"
       ],
       "Name or email address": [
         "Meno alebo emailová adresa"
@@ -11732,6 +11836,9 @@
       "Apply gift code": [
         "Použiť darčekový kód"
       ],
+      "Appointment details": [
+        "Podrobnosti stretnutia"
+      ],
       "Are you sure?": [
         "Ste si istí?"
       ],
@@ -11767,6 +11874,9 @@
       ],
       "Change password": [
         "Zmeniť heslo"
+      ],
+      "Choose a time": [
+        "Vyberte čas"
       ],
       "Choose how many times this event will repeat": [
         "Zvoľte, koľkokrát sa táto udalosť bude opakovať"
@@ -11857,6 +11967,9 @@
       ],
       "Delete ${ value }": [
         "Vymazať ${ value }"
+      ],
+      "Delete booking page?": [
+        "Vymazať stránku rezervácií?"
       ],
       "Delete event": [
         "Vymazať udalosť"

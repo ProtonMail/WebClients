@@ -4693,9 +4693,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } uređaja"
-      ],
       "Ad-blocker and malware protection": [
         "Blokator oglasa i zaštita od zlonamjernih programa"
       ],
@@ -5642,12 +5639,6 @@
       "Account monitor": [
         "Nadzor korisničkog računa"
       ],
-      "account recovery and data recovery method": [
-        "metoda oporavka korisničkog računa i podataka"
-      ],
-      "account recovery method": [
-        "metoda oporavka korisničkog računa"
-      ],
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
       ],
@@ -5663,14 +5654,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodajte @pm.me adresu e-pošte svom računu. Ova jednostavna, kraća domena označava \"${ MAIL_APP_NAME } me\" ili \"pošalji mi privatnu poruku\"."
       ],
-      "Add a recovery email address": [
-        "Dodajte adresu e-pošte za oporavak"
-      ],
       "add a recovery method": [
         "dodate metodu oporavka"
-      ],
-      "Add a recovery phone number": [
-        "Dodajte telefonski broj za oporavak"
       ],
       "Add domain": [
         "Dodaj domenu"
@@ -5710,12 +5695,6 @@
       ],
       "Allow logging of location and connection details": [
         "Omogući bilježenje pojedinosti lokacije i veze"
-      ],
-      "Allow recovery by email": [
-        "Omogući oporavak putem adrese e-pošte"
-      ],
-      "Allow recovery by phone": [
-        "Omogući oporavak putem broja telefona"
       ],
       "Already used": [
         "Već iskorišteno"
@@ -5930,9 +5909,6 @@
       "Did you know?": [
         "Jeste li znali?"
       ],
-      "Disable recovery by phone number": [
-        "Onemogući oporavak telefonskim brojem"
-      ],
       "Disabled on ${ boldValue }": [
         "Onemogućeno ${ boldValue }"
       ],
@@ -5970,9 +5946,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Preuzmite naš CSV predložak, ispunite podatke o korisnicima, a zatim prenesite dovršenu CSV datoteku kako biste kreirali račune za te korisnike."
-      ],
-      "Download recovery file": [
-        "Učitaj datoteku za oporavak"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Preuzmite svoju omiljenu aplikaciju danas i ponesite privatnost sa sobom gdje god idete."
@@ -6399,17 +6372,11 @@
       "No account keys exist": [
         "Nema ključeva korisničkog računa"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Nema postavljenog načina za oporavak računa. Postoji rizik da izgubite pristup svom korisničkom računu."
-      ],
       "No action selected": [
         "Nije odabrana nijedna radnja"
       ],
       "No addresses exist": [
         "Ne postoji ni jedna adresa e-pošte"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Nema postavljenog načina za oporavak podataka. Postoji rizik da izgubite pristup svojim podacima."
       ],
       "No folder selected": [
         "Nije odabrana nijedna mapa"
@@ -6470,9 +6437,6 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Zastarjela fraza za oporavak; ažurirajte kako biste osigurali pristup svojim podacima"
       ],
       "Paid for a ${ rewardMonths } month plan": [
         "Plaćeno za ${ rewardMonths } mjesec plana",
@@ -6625,9 +6589,6 @@
       ],
       "Set password": [
         "Postavi lozinku"
-      ],
-      "Set recovery phrase": [
-        "Postavite frazu za oporavak"
       ],
       "Set up forwarding": [
         "Postavi prosljeđivanje"
@@ -6823,9 +6784,6 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potvrdu unesite ime korisnika kojeg želite izbrisati."
       ],
-      "To ensure highest possible security of your account": [
-        "Kako biste osigurali najvišu moguću sigurnost Vašeg korisničkog računa"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
@@ -6880,12 +6838,6 @@
       "Unverified": [
         "Nije potvrđeno"
       ],
-      "Update recovery file": [
-        "Ažurirajte datoteku za oporavak"
-      ],
-      "Update recovery phrase": [
-        "Ažurirajte frazu za oporavak"
-      ],
       "Upload picture": [
         "Učitaj sliku"
       ],
@@ -6933,12 +6885,6 @@
       ],
       "Verify domain": [
         "Potvrdi domenu"
-      ],
-      "Verify email address": [
-        "Potvrdite adresu e-pošte"
-      ],
-      "Verify phone number": [
-        "Verificirajte broj telefona"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Potvrdite svoj identitet jednokratnom lozinkom na vremenskoj osnovi iz aplikacije za autentikaciju"
@@ -7119,12 +7065,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
-      ],
-      "Your account recovery method is set": [
-        "Postavljen je način oporavka za vaš korisnički račun."
-      ],
-      "Your data recovery method is set": [
-        "Postavljen je način oporavka za vaše podatke."
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
@@ -8843,9 +8783,6 @@
       ],
       "What’s this?": [
         "Što je ovo?"
-      ],
-      "Why set recovery methods?": [
-        "Zašto postaviti metode oporavka?"
       ]
     },
     "Link label (optional)": {
@@ -11389,9 +11326,6 @@
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Prethodno ste preuzeli Komplet za oporavak. Preuzimanjem novog, **stari će biti deaktiviran**."
-      ],
-      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Vašu adresu e-pošte za oporavak napadači bi mogli zloupotrijebiti kako bi preuzeli Vaš korisnički račun. ${ disableEmail } za povećanje sigurnosti Vašeg korisničkog računa."
       ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Vaš korisnički račun i podaci mogu se oporaviti. Imate preporučene radnje."
@@ -13968,9 +13902,6 @@
       ],
       "Switch to two-password mode": [
         "Prijeđite na način rada s dvije lozinke"
-      ],
-      "Take precautions to avoid data loss!": [
-        "Poduzmite mjere opreza kako biste izbjegli gubitak podataka!"
       ],
       "Text": [
         "Tekst"

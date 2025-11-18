@@ -420,6 +420,9 @@
       "Create new policy": [
         "ახალი პოლიტიკის შექმნა"
       ],
+      "Create organization": [
+        "ორგანიზაციის შექმნა"
+      ],
       "Create users": [
         "მომხმარებლების შექმნა"
       ],
@@ -1062,6 +1065,9 @@
       "Or": [
         "ან"
       ],
+      "Or use a different Gmail address": [
+        "ან გამოიყენეთ სხვა Gmail-ის მისამართი"
+      ],
       "Ordered list": [
         "დალაგებული სია"
       ],
@@ -1607,6 +1613,9 @@
       ],
       "Use recovery code": [
         "აღდგენის კოდის გამოყენება"
+      ],
+      "Use this Gmail address": [
+        "ამ Gmail-ის მისამართის გამოყენება"
       ],
       "Use your current email instead": [
         "გამოიყენეთ თქვენი მიმდინარე ელ-ფოსტის მისამართი"
@@ -2505,11 +2514,23 @@
       "11 tips to stop spam emails": [
         "11 მინიშნება სპამის გასაჩერებლად"
       ],
+      "5 ways to backup your files": [
+        "5 გზა თქვენი ფაილების დასამარქაფებლად"
+      ],
+      "Apple can see much of what you store in iCloud": [
+        "Apple-ს შეუძლია თითქმის ყველაფრის ნახვა, რასაც iCloud-ში ინახავთ"
+      ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "მოახდინეთ გამეორებადი ქმედებების ავტომატიზაცია, რომ დაალაგოთ და დააორგანიზოთ შემომავალი ელფოსტები."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "შეუძლია ვინმეს ნახოს ჩემი ბრაუზერის ისტორია, თუ იგივე WiFi-ის ვიყენებთ?"
+      ],
+      "Create and edit with confidence": [
+        "შექმენით და არედაქტირეთ სურვილისამებრ"
+      ],
+      "DeGoogle your life": [
+        "მოიცილეთ Google ცხოვრებიდან"
       ],
       "Easily manage your inbox": [
         "მართეთ ადვილად თქვენი საფოსტო ყუთი"
@@ -2523,6 +2544,9 @@
       "Get a clean inbox with filters": [
         "მიიღეთ სუფთა საფოსტო ყუთი ფილტრებით"
       ],
+      "Get enough storage for over 40,000 photos.": [
+        "მიიღეთ საკმარისი საცავი 40,000-ზე მეტი სურათისთვის."
+      ],
       "Get round-the-clock protection": [
         "მიიღეთ დაცვა ნებისმიერ დროს"
       ],
@@ -2532,11 +2556,23 @@
       "How to change your IP address on Windows": [
         "როგორ შეცვალოთ თქვენი IP მისამართი Windows-ზე"
       ],
+      "How to easily & securely share your WiFi password": [
+        "როგორ გააზიაროთ თქვენი WiFi-ის პაროლი იოლად და დაცულად"
+      ],
+      "How to export passwords from Chrome": [
+        "როგორ გაიტანოთ პაროლები Chrome-დან"
+      ],
       "How to get a custom email domain": [
         "როგორ მივიღოთ ჩვენი ელფოსტის დომენი"
       ],
       "How to get to inbox zero: Privacy-first inbox organization tips": [
         "როგორ დავიყვანოთ საფოსტო ყუთი ნულამდე: კონფიდენციალობის პრიორიტეტად მქონე ორიგანიზაციის საფოსტო ყუთის მინიშნებები"
+      ],
+      "How to prevent data breaches in your business": [
+        "როგორ აიცილოთ თავიდან თქვენი ბიზნესის მონაცემების გაჟონვა"
+      ],
+      "iCloud is not private by default. Here's what Apple can see in iCloud.": [
+        "iCloud ნაგულისხმევად არ წარმოადგენს კონფიდენციალურ ღრუბელს. გაიგეთ, რისი დანახვა შეუძლია Apple-ს iCloud-ში."
       ],
       "Increase VPN speeds by up to 400% with VPN Accelerator": [
         "გაზარდეთ VPN-ის სიჩქარე 400%-მდე VPN-ის ამაჩქარებელთან ერთად"
@@ -2544,8 +2580,20 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Telegram უსაფრთხოა? როგორც ამ სტატიაში განიხილება, ეს დამოკიდებულია იმაზე, როგორ იყენებთ მას."
       ],
+      "Keep your email spam-free": [
+        "იქონიეთ თქვენი ელფოსტა სპამისგან თავისუფლად"
+      ],
+      "Learn how Big Tech uses family photos to train AI, how it affects you.": [
+        "გაიგეთ, როგორ იყენებს Big Tech ოჯახის ფოტოებს ხის გასაწვრთნელად და როგორ გეხებათ ეს თქვენ."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "ისწავლეთ, როგორ ჩართოთ ${ VPN_APP_NAME } თქვენს რაუტერზე."
+      ],
+      "Learn how to make account sharing simple for any family member.": [
+        "ისწავლეთ, როგორ გაუზიაროთ ანგარიში მარტივად ოჯახის წევრს."
+      ],
+      "Organize your memories into albums": [
+        "დააორგანიზეთ თქვენი მოგონებები ალბომებში"
       ],
       "Protect your business communications": [
         "დაიცავით თქვენი საქმიანი მიმოწერა"
@@ -2553,14 +2601,44 @@
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "დაიცავით თქვენი კომპანია მონაცემების გაჟონვისგან და გახადეთ დისტანციურად მუსაობა უსაფრთხო საწარმოო VPN-თან ერთად."
       ],
+      "Protect your company with strong passwords and safe sharing.": [
+        "დაიცავით თქვენი კომპანია ძლიერი პაროლებით და დაცული გაზიარებით."
+      ],
+      "Protect your family online and make account sharing easy": [
+        "დაიცავით თქვენი ოჯახი ინტერნეტში და გაიადვილეთ ანგარიშის გაზიარება"
+      ],
       "Protect your whole household with 1 device": [
         "დაიცავით მთელი ოჯახი ერთი მოწყობილობით"
+      ],
+      "Safeguard your work": [
+        "დაიცავით თქვენ სამუშაო"
       ],
       "See and manage all your email subscriptions": [
         "იხილეთ და მართეთ თქვენი ელფოსტის გამოწერები"
       ],
+      "Send files via secure links or email, revoke access whenever needed.": [
+        "გააგზავნეთ ფაილები დაცული ბმულებით ან ელფოსტით და გათიშეთ წვდომა, როცა გნებავთ."
+      ],
+      "Share files securely": [
+        "გააზიარეთ ფაილები დაცულად"
+      ],
+      "Share photos online privately": [
+        "გააზიარეთ სურათები ინტერნეტში კონფიდენციალურად"
+      ],
+      "Share your account details, without risking a hack": [
+        "გააზიარეთ თქვენი ანგარიშის დეტალები დაჰაკვის შიშის გარეშე"
+      ],
+      "Sign up for services without sharing your email with aliases.": [
+        "დარეგისტრირდით სერვისებზე თქვენი ელფოსტის ფსევდონიმებისთვის გაზიარების გარეშე."
+      ],
+      "Storage capacity explained": [
+        "საცავის მოცულობის ახსნა"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "დასტრიმეთ ყველა ძირითადი პლატფორმიდან ${ PLAN_NAMES[PLANS.VPN2024] }-ით."
+      ],
+      "Take advantage of advanced email alias feature in ${ PASS_APP_NAME }": [
+        "გამოიყენეთ დამატებით ელფოსტის ფსევდონიმის ფუნქციონალი ${ PASS_APP_NAME }-ში"
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "ეს სტატია განახლდა და ახლა WireGuard-ის და Stealth VPN-ის პროტოკოლებს შეიცავს."
@@ -2573,6 +2651,12 @@
       ],
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "ჩვენ ვარჩევთ, როგორ შევცვალოთ გარე და ლოკალური IP მისამართები თქვენი Windows-ის მოწყობილობისთვის."
+      ],
+      "What are passkeys and how do they work?": [
+        "რა არის საკვანძო გასაღები და როგორ მუშაობს ის?"
+      ],
+      "What is a safe username?": [
+        "რა არის უსაფრთხო მომხმარებლის სახელი?"
       ],
       "What is an email alias?": [
         "რა არის ელფოსტის ფსევდონიმი?"
@@ -2588,6 +2672,15 @@
       ],
       "Working with sensitive data?": [
         "მუშაობთ საიდუმლო მონაცემებთან?"
+      ],
+      "Worried about data breaches?": [
+        "ნერვიულობთ მონაცემების გაჟონვის შესახებ?"
+      ],
+      "Write, edit, and collaborate on documents with our secure online editors.": [
+        "დაწერეთ, ჩაასწორეთ და იმუშავეთ ერთად დოკუმენტებზე ჩვენი დაცული ინტერნეტრედაქტორებით."
+      ],
+      "Your family photos are training AI, and here’s how to stop it": [
+        "თქვენი ოჯახის სურათებზე ხის ავარჯიშებენ. აი, როგორ უნდა გააჩეროთ ეს"
       ]
     },
     "breadcrumb": {
@@ -2611,6 +2704,9 @@
       ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
+      ],
+      "Authenticator problem": [
+        "ავთენტიკატორის პრობლემა"
       ],
       "Black Friday": [
         "შავი პარასკევი"
@@ -3068,8 +3164,14 @@
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
       ],
+      "Advanced account and network security in one plan": [
+        "დამატებითი ანგარიშისა და ქსელის უსაფრთხოება ერთ სატარიფო გეგმაში"
+      ],
       "AI assistant that respects business confidentiality": [
         "ხი დამხმარე, რომელიც პატივს სცემს ბიზნესის კონფიდენციალობას"
+      ],
+      "AI assistant that respects your privacy": [
+        "დამხმარე ხი, რომელიც თქვენს კონფიდენციალობას ითვალისწინებს"
       ],
       "Basic chat history": [
         "საბაზისო ჩატის ისტორია"
@@ -4366,6 +4468,9 @@
       ]
     },
     "Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "ურთიერთობა და დაგეგმვა გამჭოლი დაშიფვრით."
+      ],
       "Experience true freedom online and safeguard your privacy.": [
         "იგრძენით ნამდვილი თავისუფლება ინტერნეტში და დაიცავით თქვენი კონფიდენციალობა."
       ],
@@ -4793,6 +4898,9 @@
       "Apple TV": [
         "Apple TV"
       ],
+      "Brave": [
+        "Brave"
+      ],
       "Browser": [
         "ბრაუზერი"
       ],
@@ -4805,11 +4913,26 @@
       "Desktop": [
         "სამუშაო მაგიდა"
       ],
+      "Download for Brave": [
+        "გადმოწერა Brave-ისთვის"
+      ],
+      "Download for Chrome": [
+        "გადმოწერა Chrome-ისთვის"
+      ],
+      "Download for Edge": [
+        "გადმოწერა Edge-ისთვის"
+      ],
+      "Download for Firefox": [
+        "გადმოწერა Firefox-ისთვის"
+      ],
       "Download for Linux": [
         "გადმოწერა Linux-სთვის"
       ],
       "Download for macOS": [
         "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Safari": [
+        "გადმოწერა Safari-ისთვის"
       ],
       "Download for Windows": [
         "გადმოწერეთ Windows-სთვის"
@@ -4822,6 +4945,12 @@
       ],
       "Download on the Google Play Store": [
         "გადმოწერა Google Play Store-დან"
+      ],
+      "download the app (APK)": [
+        "აპის გადმოწერა (APK)"
+      ],
+      "Edge": [
+        "Edge"
       ],
       "Fire TV": [
         "Fire TV"
@@ -4871,6 +5000,12 @@
       "Mobile": [
         "მობილური"
       ],
+      "Safari": [
+        "Safari"
+      ],
+      "Scan the QR code with your mobile device": [
+        "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
+      ],
       "TV": [
         "ტელევიზორი"
       ],
@@ -4893,6 +5028,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm Fedora / Red Hat-სთვის"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "აპის გადმოწერა ასევე შეგიძლიათ ${ linkSnapStore }-დან."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6418,6 +6556,9 @@
       ]
     },
     "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "შედით Gmail-ის მისამართით, რომელიც უკვეა გადამისამართებული ${ MAIL_APP_NAME }-ზე"
+      ],
       "Please sign in with the same Gmail address you originally connected": [
         "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
       ]
@@ -7113,9 +7254,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } მოწყობილობა"
-      ],
       "15 GB storage": [
         "15 გბ საცავი"
       ],
@@ -7140,6 +7278,9 @@
       "Double VPN": [
         "ორმაგი VPN"
       ],
+      "File attachment ": [
+        "მიმაგრებული ფაილი "
+      ],
       "Lightning-fast speeds": [
         "ჩქაროსნული კავშირი"
       ],
@@ -7154,6 +7295,9 @@
       ],
       "Secure streaming": [
         "დაცული სტრიმინგი"
+      ],
+      "Secure vault, item, and link sharing": [
+        "დაცული საცავის, ელემენტების და ბმულის გაზიარება"
       ],
       "Stream from Netflix, HBO, and more": [
         "დასტრიმეთ Netfix-დან, HBQ-დან და სხვ"
@@ -7777,6 +7921,9 @@
       ],
       "Contact us": [
         "დაგვიკავშირდით"
+      ],
+      "Downloads": [
+        "გადმოწერები"
       ],
       "Enjoying ${ planName }?": [
         "მოგწონთ${ planName }?"
@@ -8540,12 +8687,6 @@
       "Account monitor": [
         "ანგარიშის მონიტორინგი"
       ],
-      "account recovery and data recovery method": [
-        "ანგარიშისა და მონაცემების აღდგენის მეთოდი"
-      ],
-      "account recovery method": [
-        "აღდგენის მეთოდი"
-      ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
@@ -8564,14 +8705,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "დაამატეთ @pm.me ელ. ფოსტის მისამართი თქვენს ანგარიშზე. ეს მარტივი, მოკლე დომენი ნიშნავს \"${ MAIL_APP_NAME } me \" ან \" პირადად მომწერე.\""
       ],
-      "Add a recovery email address": [
-        "აღდგენის ელფოსტის მისამართის დამატება"
-      ],
       "add a recovery method": [
         "აღდგენის მეთოდის დამატება"
-      ],
-      "Add a recovery phone number": [
-        "აღდგენის ტელეფონის ნომრის დამატება"
       ],
       "Add domain": [
         "დომენის დამატება"
@@ -8657,12 +8792,6 @@
       ],
       "Allow logging of location and connection details": [
         "მდებარეობის და მიერთების დეტალების ჟურნალში ჩაწერის დაშვება"
-      ],
-      "Allow recovery by email": [
-        "ელფოსტით აღდგენის ჩართვა"
-      ],
-      "Allow recovery by phone": [
-        "ტელეფონით აღდგენის ჩართვა"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "მიეცით უფლება მომხმარებლებს, დაუკავშირდნენ დაცულ გაზიარებულ სერვერებს ${ VPN_APP_NAME } აპლიკაციის **ქვეყნების** სექციიდან."
@@ -9070,12 +9199,6 @@
       "Did you know?": [
         "იცოდით?"
       ],
-      "Disable recovery by email address": [
-        "ელფოსტის მისამართით აღდგენის გამორთვა"
-      ],
-      "Disable recovery by phone number": [
-        "ტელეფონის ნომრით აღდგენის გამორთვა"
-      ],
       "Disabled countries": [
         "გამორთული ქვეყნები"
       ],
@@ -9151,9 +9274,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "მითითებული მომხმარებლების შესაქმნელად გადმოწერეთ ჩვენი CSV შაბლონი, შეავსეთ მომხმარებლის დეტალები და ატვირთეთ შევსებული CSV ფაილი."
-      ],
-      "Download recovery file": [
-        "აღდგენის ფაილის გადმოწერა"
       ],
       "Download the app and import existing codes.": [
         "გადმოწერეთ აპი და შეიტანეთ არსებული კოდები."
@@ -9518,12 +9638,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "სასაჩუქრე კოდის ქონის შემთხვევაში ფასდაკლების მისაღებად მისი კოდი ქვემოთ შეიყვანეთ."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "თუ დაკარგავთ თქვენს პაროლს და გჭირდებათ, აღადგინოთ თქვენი ანგარიში, ${ boldImperative } რომ გაქვთ ${ boldAccountRecovery }."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "თუ პაროლი დაკარგეთ და ანგარიშის აღდგენა გნებავთ, ${ boldImperative } რომ გაქვთ ორივე ${ boldAccountAndRecovery }. წინააღმდეგ შემთხვევაში, წვდომას (ელფოსტა, კონტაქტები, ფაილები) ვერ დაიბრუნებთ."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "თუ თქვენს 2FA-ჩართულ მოწყობილობას დაკარგავთ, ეს კოდები თქვენს ანგარიშში შესასვლელად 6-ციფრიანი 2FA კოდის მაგიერ შეგიძლიათ, გამოიყენოთ. ყოველი კოდი, მხოლოდ, ერთხელ იქნება ნაჩვენები."
       ],
@@ -9711,9 +9825,6 @@
       ],
       "Item updated in vault": [
         "ელემენტი განახლდა საცავში"
-      ],
-      "it’s imperative": [
-        "აუცილებელია"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "მე ვიყენებდი @ProtonMail-ს და ვიფიქრე, თქვენც მოგეწონებოდათ. უფასო, დაცული ელფოსტის სერვისი, რომელიც იცავს თქვენს პირად სივრცეს. ერთთვიანი, პრემიუმ-კლასის, უფასო ანგარიშის მისაღები ბმული: ${ referrerLink }"
@@ -9904,9 +10015,6 @@
       "No account keys exist": [
         "ანგარიშის გასაღები არ არსებობს"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "ანგარიშის აღდგენის მეთოდი დაყენებული არაა. რისკავთ, დაკარგოთ წვდომა თქვენს ანგარიშთან"
-      ],
       "No action selected": [
         "ქმედება არჩეული არაა"
       ],
@@ -9918,9 +10026,6 @@
       ],
       "No credit card required": [
         "საკრედიტო ბარათი საჭირო არაა"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "მონაცემების აღდგენის მეთოდი დაყენებული არაა. რისკავთ დაკარგოთ წვდომა თქვენს მონაცემებთან"
       ],
       "No folder selected": [
         "საქაღალდე არჩეული არაა"
@@ -9975,6 +10080,9 @@
       ],
       "On": [
         "ჩართ"
+      ],
+      "On Ubuntu?": [
+        "Ubuntu-ზე ბრძანდებით?"
       ],
       "Once you reset your password:": [
         "როცა პაროლს შეცვლით:"
@@ -10040,15 +10148,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "აღდგენის ფაილი მოძველებულია; ფაილებთან გარანტირებული წვდომისთვის განაახლეთ ის"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "აღდგენის მეთოდი მოძველებულია; ფაილებთან გარანტირებული წვდომისთვის განაახლეთ ის"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "აღდგენის ფრაზა მოძველებულია; ფაილებთან გარანტირებული წვდომისთვის განაახლეთ ის"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "${ BRAND_NAME }-ს 100 მილიონ ადამიანზე და ბიზნესზე მეტი იყენებს."
@@ -10314,6 +10413,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "დაიცავით თქვენი ${ BRAND_NAME }-ის ანგარიში"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "დაცული, გამჭოლად დაშიფრული ვიდეოკონფერენციები"
+      ],
       "Securing your account": [
         "თქვენი ანგარიშის დაცვა"
       ],
@@ -10370,9 +10472,6 @@
       ],
       "Set password": [
         "პაროლის დაყენება"
-      ],
-      "Set recovery phrase": [
-        "აღსადგენი ფრაზის დაყენება"
       ],
       "Set up forwarding": [
         "გადაგზავნის მორგება"
@@ -10776,12 +10875,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "პაროლის გადაყენების შემდეგ თქვენი დაბლოკილი მონაცემების გასაშიფრად და სანახავად აირჩიეთ აღდგენის მეთოდი."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "ანგარიშთან გარანტირებული უწყვეტი წვდომისთვის აღდგენის მეთოდის დაყენებაა საჭირო"
-      ],
-      "To ensure highest possible security of your account": [
-        "რომ გარანტირებულად მოგაწოდოთ უმაღლესი შესაძლო უსაფრთხოება თქვენი ანგარიშისთვის"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "იმისათვის, რომ არ დაკარგოთ მნიშვნელოვანი მონაცემები, ${ DRIVE_APP_NAME } თქვენი ფაილების ძველ ვერსიებსაც ინახავს. აირჩიეთ, რამდენ ხანს გნებავთ, ${ BRAND_NAME }-მა ძველი ვერსიები შეინახოს."
       ],
@@ -10833,6 +10926,9 @@
       "trusted device": [
         "სანდო მოწყობილობა"
       ],
+      "Two-factor authentication": [
+        "2FA"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "ორპაროლიან რეჟიმს ორი პაროლი ესაჭიროება. ერთი - ანგარიშში შესასვლელად, მეორე კი მონაცემების გასაშიფრად. (დამატებით)"
       ],
@@ -10871,12 +10967,6 @@
       ],
       "Unverified email address.": [
         "გადაუმოწმებელი ელფოსტის მისამართი."
-      ],
-      "Update recovery file": [
-        "აღდგენის ფაილის განახლება"
-      ],
-      "Update recovery phrase": [
-        "აღდგენის ფაზის განახლება"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
@@ -10970,12 +11060,6 @@
       ],
       "Verify domain": [
         "დომენის გადამოწმება"
-      ],
-      "Verify email address": [
-        "ელფოსტის მისამართის გადამოწმება"
-      ],
-      "Verify phone number": [
-        "ტელეფონის ნომრის გადამოწმება"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "შეამოწმეთ თქვენი იდენტიფიკატორი დროზე დამოკიდებული ერთჯერადი პაროლით ავთენტიკატორი აპიდან"
@@ -11206,6 +11290,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "ასევე შეგიძლიათ, შემოტანილი კალენდრების შერწყმა ${ BRAND_NAME }-ის არსებულ კალენდრებთან."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "საცავის გამოყოფა შეგიძლიათ შეცვალოთ მენიუდან **მომხმარებლები და მისამართები**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "ამის შეცვლა ყოველთვის შეგიძლიათ ${ settingsLink }-ში."
       ],
@@ -11398,17 +11485,11 @@
       "Your account has been successfully updated": [
         "თქვენი ანგარიში წარმატებით განახლდა"
       ],
-      "Your account recovery method is set": [
-        "თქვენი ანგარიშის აღდგენის მეთოდი დაყენებულია"
-      ],
       "Your account was successfully updated with this promotion": [
         "თქვენი ანგარიში წარმატებით განახლდა ამ სარეკლამო აქციით"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
-      ],
-      "Your data recovery method is set": [
-        "თქვენი მონაცემების აღდგენის მეთოდი დაყენებულია"
       ],
       "Your email will only be used for this one-time verification.": [
         "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
@@ -11468,6 +11549,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება თვეში ერთხელ."
+      ],
+      "Your storage": [
+        "თქვენი საცავი"
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
@@ -11583,6 +11667,11 @@
     "Input placeholder": {
       "Add label": [
         "ჭდის დამატება"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "რა ჰქვია თქვენს ორგანიზაციას?"
       ]
     },
     "invitation status": {
@@ -12008,6 +12097,10 @@
       " and ${ l }": [
         " და ${ l }"
       ],
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "ხელმისაწვდომია ${ addressesAvailable } ელფოსტის მისამართი ${ maxAddresses }-დან",
+        "ხელმისაწვდომია ${ addressesAvailable } ელფოსტის მისამართი ${ maxAddresses }-დან"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
       ],
@@ -12042,11 +12135,17 @@
       "/month x ${ months }": [
         "/თვე x ${ months }"
       ],
+      "0 of 1 email address available": [
+        "ხელმისაწვდომია 0 ელფოსტა 1-დან"
+      ],
       "1 hour": [
         "1 სთ"
       ],
       "1 minute": [
         "1 წუთი"
+      ],
+      "1 of 1 email address available": [
+        "ხელმისაწვდომია 1 ელფოსტა 1-დან"
       ],
       "10 hide-my-email aliases": [
         "10 hide-my-email-ის ფსევდონიმი"
@@ -13343,6 +13442,12 @@
         "ვის"
       ]
     },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "ხელმისაწვდომია ${ byoeAddressesAvailableCount } ელფოსტის მისამართი ${ maxBYOEAddresses }-დან",
+        "ხელმისაწვდომია ${ byoeAddressesAvailableCount } ელფოსტის მისამართი ${ maxBYOEAddresses }-დან"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "${ MAIL_APP_NAME }-ის ანგარიშისთვის თქვენი დომენის მიბმა."
@@ -13519,6 +13624,9 @@
       "Don't have access to your 2FA?": [
         "არ გაქვთ წვდომა თქვენს 2FA-სთან?"
       ],
+      "Downloads": [
+        "გადმოწერები"
+      ],
       "Encryption and keys": [
         "შიფრაცია და გასაღებები"
       ],
@@ -13657,6 +13765,9 @@
       "Sign in": [
         "შესვლა"
       ],
+      "Snap store": [
+        "Snap store"
+      ],
       "switch account": [
         "ანგარიშის გადართვა"
       ],
@@ -13689,9 +13800,6 @@
       ],
       "What’s this?": [
         "რა არის ეს?"
-      ],
-      "Why set recovery methods?": [
-        "რატომ უნდა დაამატოთ აღდგენის მეთოდები?"
       ]
     },
     "Link label (optional)": {
@@ -13852,6 +13960,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც",
         "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც"
+      ]
+    },
+    "mail_cro_experiment": {
+      "Get Deal": [
+        "შეთავაზების მიღება"
       ]
     },
     "mail_signup_2023: Info": {
@@ -14612,6 +14725,9 @@
       "End-to-end encryption": [
         "გამჭოლი შიფრაცია"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "არსებული ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-ის უპირატესობები"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "სწრაფი გადმოწერა P2P/BitTorrent-ით"
       ],
@@ -14851,6 +14967,10 @@
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან",
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -15452,6 +15572,9 @@
       ],
       "A disabled address cannot be default": [
         "გათიშული მისამართი ნაგულისხმები ვერ იქნება"
+      ],
+      "Address reconnected.": [
+        "მისამართზე თავიდან დაკავშირება."
       ],
       "An external address cannot be default": [
         "გარე მისამართი ნაგულისხმები ვერ იქნება"
@@ -16260,6 +16383,9 @@
       "Keep this plan": [
         "ამ გეგმის დატოვება"
       ],
+      "Open ${ PASS_APP_NAME } vaults": [
+        "${ PASS_APP_NAME }-ის საცავების გახსნა"
+      ],
       "Or ${ createANewAccount }": [
         "ან ${ createANewAccount }"
       ],
@@ -16898,6 +17024,33 @@
         "თქვენს ბალანსზე კრედიტები დაგემატებათ"
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "უვადო ანგარიშები შეგიძლიათ, გადაიტანოთ, ან გაყიდოთ"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "მიწერეთ კლიენტის მხარდაჭერის ცენტრს მფლობელობის შეცვლის დასადასტურებლად"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "არასოდეს"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle }-ის შენარჩუნება"
+      ],
+      "Yes, I'm sure": [
+        "დიახ, დარწმუნებული ვარ"
+      ],
+      "Your plan includes this feature already.": [
+        "თქვენი სატარიფო გეგმა ამ ფუნქციას უკვე შეიცავს."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -17041,6 +17194,9 @@
       ],
       "End date": [
         "დასრულების თარიღი"
+      ],
+      "Enter name": [
+        "შეიყვანეთ სახელი"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -20523,6 +20679,9 @@
       "Organization logo updated": [
         "ორგანიზაციის ლოგო განახლდა"
       ],
+      "Organization name set": [
+        "ორგანიზაციის სახელი დაყენებულია"
+      ],
       "Organization name updated": [
         "ორგანიზაციის სახელი განახლდა"
       ],
@@ -21202,6 +21361,9 @@
       "Connect ${ name }": [
         "${ name }-სთან დაკავშირება"
       ],
+      "Connect a Gmail address": [
+        "Gmail-ის მისამართთან დაკავშირება"
+      ],
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
       ],
@@ -21332,8 +21494,14 @@
       "Decrypt key": [
         "გასაღების გაშიფრვა"
       ],
+      "Deep dive into cloud storage blog posts": [
+        "გაიგეთ მეტი ღრუბლოვანი საცავის ბლოგის პოსტებიდან"
+      ],
       "Deep dive into email blog posts": [
         "ჩაეფალით ელფოსტის ბლოგის პოსტებში"
+      ],
+      "Deep dive into password manager blog posts": [
+        "გაიგეთ მეტი პაროლების მმართველის ბლოგის პოსტებიდან"
       ],
       "Deep dive into VPN blog posts": [
         "ჩაეფალით VPN-ის ბლოგის პოსტებში"
@@ -21431,6 +21599,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
+      ],
+      "Download ${ app }": [
+        "${ app }-ის გადმოწერა"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
@@ -21598,15 +21769,6 @@
       "Folders and labels": [
         "საქაღალდეები და ჭდეები"
       ],
-      "For Linux": [
-        "Linux-სთვის"
-      ],
-      "For macOS": [
-        "macOS-სთვის"
-      ],
-      "For Windows": [
-        "Windows-სთვის"
-      ],
       "Forgot password": [
         "პაროლი დამავიწყდა"
       ],
@@ -21661,11 +21823,20 @@
       "Get complete privacy coverage": [
         "მიიღეთ სრული კონფიდენციალობის დაფარვა"
       ],
+      "Get more from your cloud storage": [
+        "მიიღეთ მეტი თქვენი ღრუბლოვანი საცავიდან"
+      ],
       "Get more from your email": [
         "მიიღეთ მეტი თქვენი ელფოსტიდან"
       ],
+      "Get more from your password manager": [
+        "მიიღეთ მეტი თქვენი პაროლების მმართველიდან"
+      ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
+      ],
+      "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
+        "გადმოწერეთ აპი ყველა თქვენს მოწყობილობაზე და ისიამოვნეთ უსაფრთხო წვდომით ნებისმიერი ადგილიდან."
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "მიიღეთ აპი ყველა თქვენს მოწყობილობაზე და დაიცავით ${ VPN_CONNECTIONS }-მდე მოწყობილობა ერთდროულად."
@@ -21808,6 +21979,9 @@
       ],
       "Main password": [
         "მთავარი პაროლი"
+      ],
+      "Manage files across devices on Windows, Mac, Android, and iOS.": [
+        "მართეთ ფაილები Windows-ზე, Mac-ზე, Android-ზე და iOS-ზე."
       ],
       "Messages": [
         "შეტყობინებები"
@@ -22012,6 +22186,9 @@
       ],
       "Remove domain": [
         "დომენის წაშლა"
+      ],
+      "Remove forwarding address": [
+        "გადაგზავნის მისამართის წაშლა"
       ],
       "Remove server?": [
         "წავშალო სერვერი?"
@@ -22254,9 +22431,6 @@
       "Switch to two-password mode": [
         "ორპაროლიან რეჟიმზე გადართვა"
       ],
-      "Take precautions to avoid data loss!": [
-        "მიიღეთ ზომები მონაცემების დაკარგვის თავიდან ასაცილებლად!"
-      ],
       "Text": [
         "ტექსტი"
       ],
@@ -22404,6 +22578,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ planName }": [
+        "მოგესალმებათ ${ planName }"
+      ],
       "What is an alias?": [
         "რა არის ფსევდონიმი?"
       ],
@@ -22448,9 +22625,6 @@
       ],
       "Your plan": [
         "თქვენი გეგმა"
-      ],
-      "Your recovery status": [
-        "თქვენი აღდგენის მდგომარეობა"
       ],
       "Your referrals": [
         "თქვენი რეფერალები"
@@ -23113,6 +23287,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**დაზოგეთ ${ priceString }-მდე** უფრო გრძელვადიანი გამოწერით. იგივე ფასიანი ფუნქციონალი უფრო დაბალ ფასად."
       ],
+      "Advanced security for your company": [
+        "დამატებითი უსაფრთხოება თქვენი კომპანიისთვის"
+      ],
       "Advanced security for your company?": [
         "დამატებითი უსაფრთხოება თქვენი კომპანიისთვის?"
       ],
@@ -23360,10 +23537,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან",
         "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "აირჩიეთ ${ numberOfCountries }+ ქვეყნიდან",
-        "აირჩიეთ ${ numberOfCountries }+ ქვეყნიდან"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "სერვერები ${ numberOfCountries }+ ქვეყანაში",

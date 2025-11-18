@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "Android용 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "iOS용 ${ PASS_SHORT_APP_NAME }"
+      ],
       "Accept": [
         "수락"
       ],
@@ -309,6 +315,9 @@
       ],
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 사용하기"
+      ],
+      "Get mobile and desktop apps": [
+        "모바일 및 데스크톱 앱 설치"
       ],
       "Get mobile apps": [
         "모바일 앱 다운로드"
@@ -1259,9 +1268,6 @@
       "Wrong second password": [
         "2차 비밀번호 모드가 알맞지 않습니다"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "현재 오프라인 상태입니다. ${ PASS_SHORT_APP_NAME }를 잠금 해제하려면 인터넷에 연결하세요."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS가 올바르게 설정되지 않았습니다. 시스템이 얻은 MX레코드는 다음과 같습니다:"
       ],
@@ -1788,9 +1794,6 @@
       "Internet connection lost": [
         "인터넷 연결 없음"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "인터넷 연결이 끊겼습니다. 기기의 연결을 확인해주세요."
-      ],
       "Invitation sent": [
         "초대장을 보냈습니다"
       ],
@@ -1900,7 +1903,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"

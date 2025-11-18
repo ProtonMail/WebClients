@@ -1837,6 +1837,9 @@
       "Application problem": [
         "Problem med applikation"
       ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -4804,9 +4807,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } enheter"
-      ],
       "15 GB storage": [
         "15 GB lagringsutrymme"
       ],
@@ -7412,6 +7412,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
       ],
+      "Two-factor authentication": [
+        "Tvåfaktorsautentisering"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tvålösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera dina data. (Avancerat)"
       ],
@@ -8084,6 +8087,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
+      ],
+      "0 of 1 email address available": [
+        "0 av 1 e-postadress tillgänglig"
+      ],
+      "1 of 1 email address available": [
+        "1 av 1 e-postadress tillgänglig"
       ],
       "Account holder": [
         "Kontoinnehavare"
@@ -10458,6 +10467,9 @@
       "A disabled address cannot be default": [
         "En inaktiverad adress kan inte vara standard"
       ],
+      "Address reconnected.": [
+        "Adress återansluten."
+      ],
       "An external address cannot be default": [
         "En extern adress kan inte vara standard"
       ],
@@ -11350,6 +11362,16 @@
       ],
       "Credits will be added to your balance": [
         "Krediter kommer att läggas till ditt saldo"
+      ]
+    },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Livstidskonton kan överföras eller säljas"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Aldrig"
       ]
     },
     "Payments.ModificationWarning": {
@@ -15384,6 +15406,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spara upp till ${ priceString }** med en längre prenumeration. Samma premiumfunktioner, lägre pris."
       ],
+      "Advanced security for your company": [
+        "Avancerad säkerhet för ditt företag"
+      ],
       "Advanced security for your company?": [
         "Avancerad säkerhet för ditt företag?"
       ],
@@ -15407,6 +15432,9 @@
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Obegränsad integritet för dig och en närstående. Från endast ${ priceString }/månad."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Du kan skydda upp till ${ DUO_MAX_USERS } personer med ${ PLAN_NAMES[PLANS.DUO] }, och upp till ${ FAMILY_MAX_USERS } med ${ PLAN_NAMES[PLANS.FAMILY] }. Från bara ${ priceString }/månad per konto."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] }. Från bara ${ priceString }/månad per konto."
@@ -15626,10 +15654,6 @@
       "Auto-selects from ${ numberOfCountries } country": [
         "Väljer automatiskt från ${ numberOfCountries } land",
         "Väljer automatiskt från ${ numberOfCountries } länder"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Välj från ${ numberOfCountries }+ land",
-        "Välj från ${ numberOfCountries }+ länder"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Servrar i ${ numberOfCountries }+ land",

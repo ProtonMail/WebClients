@@ -257,6 +257,9 @@
       "Create a booking page": [
         "Стварыць старонку браніравання"
       ],
+      "Create a free account": [
+        "Стварыць бясплатны ўліковы запіс"
+      ],
       "Create a new bookings page": [
         "Стварыць новую старонку браніраванняў"
       ],
@@ -766,6 +769,15 @@
       ],
       "See plan features": [
         "Паглядзець функцыі тарыфнага плана"
+      ],
+      "See previous availability": [
+        "Паглядзець папярэднюю даступнасць"
+      ],
+      "See upcoming availability": [
+        "Прагляд надыходзячай даступнасці"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Выбраць ${ dateHeaderLongString } у ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Выбраць ${ planOrAppName }"
@@ -1577,6 +1589,9 @@
       ],
       "Application problem": [
         "Праблема з праграмай"
+      ],
+      "Authenticator problem": [
+        "Праблема з аўтэнтыфікатарам"
       ],
       "Black Friday": [
         "Чорная пятніца"
@@ -4130,6 +4145,9 @@
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
       ],
+      "You cannot enter the organizer email": [
+        "Вы не можаце ўвесці электронную пошту арганізатара."
+      ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
       ],
@@ -4715,8 +4733,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Ваша кантактная інфармацыя"
+      "Confirm your booking": [
+        "Пацвердзіце браніраванне"
       ]
     },
     "Google Meet": {
@@ -5437,6 +5455,9 @@
       "Appointment duration": [
         "Працягласць сустрэчы"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Вы сапраўды хочаце выдаліць гэту старонку браніравання?"
+      ],
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпарт?"
       ],
@@ -5473,6 +5494,9 @@
       "Booking overlaps with an existing booking.": [
         "Браніраванне супадае з існуючым браніраваннем."
       ],
+      "Booking page deleted": [
+        "Старонка браніравання выдалена"
+      ],
       "Booking page example": [
         "Прыклад старонкі браніравання"
       ],
@@ -5499,6 +5523,9 @@
       ],
       "Cannot create booking range across days": [
         "Немагчыма стварыць дыяпазон браніравання на некалькі дзён"
+      ],
+      "Cannot create booking range in the past": [
+        "Немагчыма стварыць дыяпазон браніравання ў мінулым"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
@@ -5926,9 +5953,6 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
       ],
-      "Name your booking page": [
-        "Назавіце старонку браніравання"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
@@ -6022,6 +6046,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Людзі, якія браніруюць у вас час, убачаць ${ selectedCalendar.Email } у якасці вашага кантактнага."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумяшчальны толькі з фарматам звычайнага тэксту."
       ],
@@ -6079,11 +6106,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
       ],
+      "Powered by": [
+        "Працуе на базе"
+      ],
       "Powered by ${ protonButton }": [
         "Працуе на базе ${ protonButton }"
       ],
       "Previous modifications on this series will be lost.": [
         "Папярэднія змяненні ў гэтай серыі будуць страчаны."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Раней забраніраваныя падзеі не будуць выдалены."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
@@ -6151,8 +6184,8 @@
       "Setting up your new address…": [
         "Наладжванне вашага новага адраса…"
       ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Абагуліце гэту старонку, каб іншыя маглі забраніраваць час у вашым календары. Вы зможаце кіраваць ёй у любы час на бакавой панэлі ў раздзеле \"Старонкі браніравання\"."
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Абагуліце гэту старонку, каб іншыя маглі забраніраваць час у вашым календары. Вы зможаце знайсці і адрэдагаваць яе на бакавой панэлі ў раздзеле \"Старонкі браніравання\"."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
@@ -6198,6 +6231,9 @@
       ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Вазьміце пад кантроль сваё лічбавае жыццё"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паспрабуйце яшчэ раз пазней."
@@ -6246,6 +6282,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Гэта браніраванне было зроблена праз ${ CALENDAR_APP_NAME }, частка набору прадуктаў ${ BRAND_NAME }, якая арыентавана на прыватнасць."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Гэта падзея была абноўлена арганізатарам. Ці хочаце вы змяніць свой адказ толькі для гэтага паўтарэння ў гэтай серыі?"
@@ -6385,6 +6424,9 @@
       "Week and month views only apply to desktop.": [
         "Адлюстраванне тыдня і месяца ўжываюцца толькі для камп'ютара."
       ],
+      "What do you want to call this booking page?": [
+        "Як вы хочаце назваць гэту старонку браніравання?"
+      ],
       "What should people know before booking?": [
         "Што людзям неабходна ведаць перад браніраваннем?"
       ],
@@ -6497,7 +6539,7 @@
         "Гэта дзеянне немагчыма адрабіць."
       ],
       "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "У вас не можа быць больш за ${ MAX_BOOKING_SLOTS } прамежкаў браніравання на старонцы."
+        "У вас не можа быць больш за ${ MAX_BOOKING_SLOTS } слотаў браніравання на старонцы."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -6519,9 +6561,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Мінулы раз вы адхілілі запрашэнне. Папрасіце ўладальніка адправіць яго паўторна"
-      ],
-      "You will loose all unsaved changes.": [
-        "Вы страціце ўсе незахаваныя змены."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Вы страціце доступ да функцый тарыфнага плана ${ planTitle } пасля гэтай даты."
@@ -7067,6 +7106,9 @@
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
       ],
+      "Full name": [
+        "Поўнае імя"
+      ],
       "Get the deal": [
         "Атрымаць прапанову"
       ],
@@ -7372,8 +7414,14 @@
       "End time of the booking range": [
         "Час завяршэння дыяпазону браніравання"
       ],
+      "How long should an appointment last?": [
+        "Як доўга павінна доўжыцца сустрэча?"
+      ],
       "Start time of the booking range": [
         "Час пачатку дыяпазону браніравання"
+      ],
+      "What should people know before booking?": [
+        "Што людзям неабходна ведаць перад браніраваннем?"
       ]
     },
     "Label for contact group color": {
@@ -7440,6 +7488,9 @@
     "Link": {
       "Add a gift code": [
         "Дадаць падарункавы код"
+      ],
+      "Booking pages": [
+        "Старонкі браніравання"
       ],
       "Calendars": [
         "Календары"
@@ -9582,7 +9633,7 @@
         "Падаткі"
       ],
       "terms and conditions": [
-        "ўмовы выкарыстання"
+        "ўмовамі выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
@@ -9654,10 +9705,10 @@
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для пацверджання плацяжу."
       ],
       "You will soon be redirected to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны для пацверджання вашага плацяжу."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
@@ -9842,14 +9893,14 @@
       "Anytown": [
         "Полацк"
       ],
-      "Booking page title": [
-        "Загаловак старонкі браніравання"
-      ],
       "Company name": [
         "Назва кампаніі"
       ],
       "E.g., ": [
         "Напрыклад, "
+      ],
+      "Email for booking confirmation": [
+        "Электронная пошта для пацвярджэння браніравання"
       ],
       "Enter passphrase": [
         "Увядзіце парольную фразу"
@@ -9886,6 +9937,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Name of attendee": [
+        "Імя ўдзельніка"
       ],
       "Name or email address": [
         "Імя або адрас пошты"
@@ -11929,6 +11983,9 @@
       "Delete ${ value }": [
         "Выдаліць ${ value }"
       ],
+      "Delete booking page?": [
+        "Выдаліць старонку браніравання?"
+      ],
       "Delete event": [
         "Выдаліць падзею"
       ],
@@ -12708,7 +12765,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
+        "Бяспечны спосаб захоўвання Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

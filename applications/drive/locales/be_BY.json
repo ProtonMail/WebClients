@@ -1721,6 +1721,9 @@
       "Application problem": [
         "Праблема з праграмай"
       ],
+      "Authenticator problem": [
+        "Праблема з аўтэнтыфікатарам"
+      ],
       "Black Friday": [
         "Чорная пятніца"
       ],
@@ -3423,9 +3426,6 @@
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
-      "Cannot load \"My files\" root folder": [
-        "Немагчыма загрузіць каранёвую папку \"Мае файлы\""
-      ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
       ],
@@ -3498,12 +3498,6 @@
       "Error reading file": [
         "Памылка пры чытанні файла"
       ],
-      "Expanding non-existent directory tree item": [
-        "Разгортванне неіснуючага элемента дрэва каталогаў"
-      ],
-      "Expanding non-expandable directory tree item": [
-        "Разгортванне нерасшыральнага элемента дрэва каталогаў"
-      ],
       "Expected structure attached": [
         "Чаканая структура далучана"
       ],
@@ -3524,6 +3518,9 @@
       ],
       "Failed to create public share node": [
         "Не ўдалося стварыць публічны вузел абагульвання"
+      ],
+      "Failed to expand folder": [
+        "Не ўдалося разгарнуць папку"
       ],
       "Failed to fetch node": [
         "Не ўдалося атрымаць вузел"
@@ -3986,6 +3983,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Прылада не паддаецца расшыфроўцы"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
@@ -4990,7 +4990,7 @@
         "${ canceledCount } скасавана"
       ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
-        "Перадач завершана ${ completedItems.length } з ${ items.length }"
+        "Перадача завершана ${ completedItems.length } з ${ items.length }"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } кантакт змяшчае некалькі адрасоў электроннай пошты.",
@@ -5853,9 +5853,6 @@
       "It's better to have:": [
         "Лепш за ўсё, каб у вас было:"
       ],
-      "It's not possible to copy the folder to itself": [
-        "Немагчыма скапіяваць папку саму ў сябе"
-      ],
       "Items in the trash will stay here until you delete them permanently": [
         "Элементы будуць заставацца ў сметніцы, пакуль вы не выдаліце іх незваротна"
       ],
@@ -6056,6 +6053,9 @@
       ],
       "On public WiFi networks": [
         "У грамадскіх сетках Wi-Fi"
+      ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Адзін з файлаў або папак, якія вы хочаце скапіяваць, ужо існуе ў выбранай папцы."
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна з прычыны таго, што нядаўна было скіданне пароля."
@@ -6882,6 +6882,9 @@
       "You cannot undo this action.": [
         "Гэта дзеянне немагчыма адрабіць."
       ],
+      "You don’t have permission to copy files to this folder.": [
+        "У вас няма правоў, каб капіяваць файлы ў гэту папку."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
@@ -7398,6 +7401,9 @@
       ],
       "Encrypt emails": [
         "Шыфраваць лісты"
+      ],
+      "Encrypted node": [
+        "Зашыфраваны вузел"
       ],
       "Enter device name": [
         "Увядзіце назву прылады"
@@ -9421,10 +9427,10 @@
         "${ nbSuccesses } фатаграфій былі выдалены з ${ albumLink.name }\""
       ],
       "${ numberOfItems } copied item moved to trash": [
-        "${ numberOfItems } элемент скапіяваны ў сметніцу",
-        "${ numberOfItems } элементы скапіяваны ў сметніцу",
-        "${ numberOfItems } элементаў скапіяваны ў сметніцу",
-        "${ numberOfItems } элементаў скапіяваны ў сметніцу"
+        "${ numberOfItems } скапіяваны элемент перанесены ў сметніцу",
+        "${ numberOfItems } скапіяваныя элементы перанесены ў сметніцу",
+        "${ numberOfItems } скапіяваных элементаў перанесены ў сметніцу",
+        "${ numberOfItems } скапіяваных элементаў перанесены ў сметніцу"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",
@@ -10290,7 +10296,7 @@
         "Падаткі"
       ],
       "terms and conditions": [
-        "ўмовы выкарыстання"
+        "ўмовамі выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
@@ -10362,10 +10368,10 @@
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для пацверджання плацяжу."
       ],
       "You will soon be redirected to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны для пацверджання вашага плацяжу."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
@@ -13545,7 +13551,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
+        "Бяспечны спосаб захоўвання Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

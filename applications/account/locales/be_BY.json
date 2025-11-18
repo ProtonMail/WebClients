@@ -2088,19 +2088,19 @@
     },
     "app-switcher": {
       "Browse the web privately and block ads": [
-        "Праглядайце вэб-старонкі прыватна і блакіруйце рэкламу"
+        "Прыватны прагляд вэб-старонак і блакіроўка рэкламы"
       ],
       "Keep your schedule private": [
-        "Трымайце свой расклад у сакрэце"
+        "Трымае ваш расклад у сакрэце"
       ],
       "Protect your passwords and identity": [
-        "Абараняйце свае паролі і ідэнтычнасць"
+        "Абарона вашых пароляў ідэнтычнасці"
       ],
       "Safeguard your files and photos": [
-        "Абараняйце свае файлы і фатаграфіі"
+        "Абарона вашых файлаў і фатаграфій"
       ],
       "Secure your communications": [
-        "Абараняйце свае камунікацыі"
+        "Абарона вашых камунікацый"
       ],
       "Talk confidentially": [
         "Размаўляйце канфідэнцыяльна"
@@ -2578,6 +2578,9 @@
       "Create and edit with confidence": [
         "Стварайце і рэдагуйце з упэўненасцю"
       ],
+      "Data breaches are on the rise. For businesses, a single breach can result in stolen customer data, regulatory penalties, lost revenue, and lasting reputational damage. Luckily, your team can prevent most breaches with the right mix of security practices, technology, and awareness.": [
+        "Колькасць парушэнняў даных павялічваецца. Для бізнесу аднаразовае парушэнне можа прывесці да выкрадання кліенцкіх даных, штрафаў з боку рэгулятара, страты прыбытку і доўгачасовага пашкоджання рэпутацыі. На шчасце, ваша каманда можа прадухіліць большасць парушэнняў з дапамогай правільнага спалучэння метадаў бяспекі, тэхналогій і ўсведамлення."
+      ],
       "DeGoogle your life": [
         "Ізалюйце сваё жыццё ад Google"
       ],
@@ -2604,6 +2607,9 @@
       ],
       "Get round-the-clock protection": [
         "Атрымайце кругласутачную абарону"
+      ],
+      "Helping someone connect to a new WiFi network is a regular occurrence. It’s likely you’ve done it many times at home or work. In this article, we’re going to examine the easiest ways to share WiFi passwords between devices, the risks associated with insecurely sharing your WiFi password, and the safest way to do it.": [
+        "Звычайнай справай з'яўляецца дапамагчы каму-небудзь падключыць сетку Wi-Fi. Верагодна, што вы рабілі гэта шмат разоў на працы або дома. У гэтым артыкуле будзе разгледжаны самы просты спосаб абагульвання пароляў ад Wi-Fi паміж прыладамі, рызыкі звязаныя з небяспечным абагульваннем вашага пароля ад Wi-Fi, а таксама самы бяспечны спосаб зрабіць гэта."
       ],
       "How safe is Telegram?": [
         "На колькі бяспечны Telegram?"
@@ -2677,6 +2683,9 @@
       "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
         "Даведайцеся, як абагуліць асобны элемент, зашыфраваную спасылку або сховішча праз ${ PASS_APP_NAME }."
       ],
+      "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
+        "Перамяшчацца ў інтэрнэце, які запоўнены брокерскімі данымі, спамам, махлярствам і шкоднымі праграмамі, становіцца ўсё больш складана. Вось чаму ${ PASS_APP_NAME } не толькі дапамагае вам кіраваць, захоўваць і аўтаматычна запаўняць вашы паролі, але і забяспечвае вас інструментамі для кантролю прыватнасці і абароны паштовых скрынь з дапамогай псеўданімаў hide-my-email."
+      ],
       "Organize your memories into albums": [
         "Упарадкуйце свае ўспаміны ў альбомы"
       ],
@@ -2715,6 +2724,9 @@
       ],
       "Sign up for services without sharing your email with aliases.": [
         "Зарэгіструйцеся ў сэрвісах без абагульвання вашага адраса электроннай пошты з псеўданімамі."
+      ],
+      "Storage capacity explained": [
+        "Тлумачэнне ёмістасці сховішча"
       ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Плыні з усіх асноўных платформ на тарыфным плане ${ PLAN_NAMES[PLANS.VPN2024] }."
@@ -2810,6 +2822,9 @@
       ],
       "Application problem": [
         "Праблема з праграмай"
+      ],
+      "Authenticator problem": [
+        "Праблема з аўтэнтыфікатарам"
       ],
       "Black Friday": [
         "Чорная пятніца"
@@ -3284,6 +3299,9 @@
       ],
       "AI assistant that respects business confidentiality": [
         "Памочнік ШІ, які паважае канфідэнцыяльнасць бізнесу"
+      ],
+      "AI assistant that respects your privacy": [
+        "Памочнік ШІ, які паважае вашу прыватнасць"
       ],
       "Basic chat history": [
         "Базавая гісторыя чата"
@@ -5181,6 +5199,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm для Fedora/Red Hat"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "Вы таксама можаце спампаваць праграму праз ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -7512,9 +7533,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "${ VPN_CONNECTIONS } прылад"
-      ],
       "15 GB storage": [
         "15 ГБ сховішча"
       ],
@@ -8203,6 +8221,9 @@
       ],
       "Contact us": [
         "Звязацца з намі"
+      ],
+      "Downloads": [
+        "Спампоўкі"
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
@@ -9058,12 +9079,6 @@
       "Account monitor": [
         "Назіранне за ўліковым запісам"
       ],
-      "account recovery and data recovery method": [
-        "аднаўленне ўліковага запісу і спосаб аднаўлення даных"
-      ],
-      "account recovery method": [
-        "спосаб аднаўлення ўліковага запісу"
-      ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
@@ -9082,14 +9097,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
       ],
-      "Add a recovery email address": [
-        "Дадаць адрас электроннай пошты для аднаўлення доступу"
-      ],
       "add a recovery method": [
         "дададзены спосаб аднаўлення"
-      ],
-      "Add a recovery phone number": [
-        "Дадаць нумар тэлефона для аднаўлення"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Дадайце яшчэ адзін слой абароны ў свой уліковы запіс. Вам неабходна будзе спраўдзіць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
@@ -9192,12 +9201,6 @@
       ],
       "Allow logging of location and connection details": [
         "Дазволіць журналяванне месцазнаходжання і падрабязнасці падключэння"
-      ],
-      "Allow recovery by email": [
-        "Дазволіць аднаўленне доступу па электроннай пошце"
-      ],
-      "Allow recovery by phone": [
-        "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
@@ -9619,12 +9622,6 @@
       "Did you know?": [
         "Ці ведалі вы што?"
       ],
-      "Disable recovery by email address": [
-        "Адключыць аднаўленне доступу па адрасе электроннай пошты"
-      ],
-      "Disable recovery by phone number": [
-        "Адключыць аднаўленне доступу па нумары тэлефона"
-      ],
       "Disabled countries": [
         "Адключаныя краіны"
       ],
@@ -9705,9 +9702,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Спампуйце наш шаблон CSV, запоўніце падрабязнасці аб карыстальніку і запампуйце свой запоўнены файл CSV для стварэння ўліковых запісаў для гэтых карыстальнікаў."
-      ],
-      "Download recovery file": [
-        "Спампаваць файл аднаўлення"
       ],
       "Download the app and import existing codes.": [
         "Спампуйце праграму і імпартуйце існуючыя коды."
@@ -10084,12 +10078,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Калі ў вас ёсць падарункавы код, то вы можаце ўжыць яго ніжэй для атрымання скідкі."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Калі вы страціце свой пароль і вам неабходна будзе аднавіць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountRecovery }."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Калі вы страціце свой пароль і вам неабходна будзе аднавіць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountAndRecovery }. У адваротным выпадку вы не зможаце атрымаць доступ да электроннай пошты, кантактаў або файлаў."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
       ],
@@ -10287,9 +10275,6 @@
       ],
       "Item updated in vault": [
         "Элемент абноўлены ў сховішчы"
-      ],
-      "it’s imperative": [
-        "гэта абавязкова"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Я выкарыстоўваю @ProtonMail і думаю, што ён спадабаецца вам таксама. Гэта бяспечны сэрвіс электроннай пошты, які абараняе вашу прыватнасць. Зарэгіструйцеся па маёй рэферальнай спасылцы і атрымайце 1 месяц бясплатных прэміяльных функцый: ${ referrerLink }"
@@ -10489,9 +10474,6 @@
       "No account keys exist": [
         "Адсутнічаюць ключы ўліковага запісу"
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Не зададзены спосаб аднаўлення вашага ўліковага запісу, таму вы можаце страціць доступ да яго"
-      ],
       "No action selected": [
         "Дзеянне не выбрана"
       ],
@@ -10503,9 +10485,6 @@
       ],
       "No credit card required": [
         "Крэдытная картка не патрабуецца"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Не зададзены спосаб аднаўлення вашых даных і гэта азначае, што вы можаце страціць доступ да іх"
       ],
       "No folder selected": [
         "Папка не выбрана"
@@ -10560,6 +10539,9 @@
       ],
       "On": [
         "Уключана"
+      ],
+      "On Ubuntu?": [
+        "Карыстаецеся Ubuntu?"
       ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
@@ -10632,15 +10614,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Састарэлы файл аднаўлення; абнавіце яго для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Састарэлыя спосабы аднаўлення; абнавіце іх для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Састарэлая фраза аднаўлення; абнавіце яе для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Больш за 100 мільёнаў карыстальнікаў і кампаній зарэгістраваліся ў ${ BRAND_NAME }."
@@ -10912,6 +10885,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Абараніце свой уліковы запіс ${ BRAND_NAME }"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Бяспечная і зашыфраваная скразным метадам відэаканферэнцыя"
+      ],
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
       ],
@@ -10968,9 +10944,6 @@
       ],
       "Set password": [
         "Задаць пароль"
-      ],
-      "Set recovery phrase": [
-        "Задаць фразу аднаўлення"
       ],
       "Set up forwarding": [
         "Наладзіць перасылку"
@@ -11407,12 +11380,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Выберыце спосаб аднаўлення для расшыфроўкі і прагляду вашых заблакіраваных даных пасля скідання пароля."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Для пастаяннага доступу да вашага ўліковага запісу, задайце спосаб аднаўлення ўліковага запісу"
-      ],
-      "To ensure highest possible security of your account": [
-        "Для забеспячэння вашаму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "${ DRIVE_APP_NAME } захоўвае старыя версіі вашых файлаў, калі вы і іншыя ўдзельнікі сумеснай працы ўносіце змены. Гэта гарантуе, што вы не страціце важныя даныя. Выберыце, як доўга ${ BRAND_NAME } павінен захоўваць папярэднюю версію."
       ],
@@ -11467,6 +11434,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
       ],
+      "Two-factor authentication": [
+        "Двухфактарная аўтэнтыфікацыя"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Для рэжыму двух пароляў патрабуюцца два паролі: першы для ўваходу ва ўліковы запіс, а другі для расшыфроўкі вашых даных (дадатковая функцыя бяспекі)"
       ],
@@ -11505,12 +11475,6 @@
       ],
       "Unverified email address.": [
         "Неправераны адрас электроннай пошты"
-      ],
-      "Update recovery file": [
-        "Абнавіць файл аднаўлення"
-      ],
-      "Update recovery phrase": [
-        "Абнавіць фразу аднаўлення"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
@@ -11607,12 +11571,6 @@
       ],
       "Verify domain": [
         "Спраўдзіць дамен"
-      ],
-      "Verify email address": [
-        "Спраўджанне адраса электроннай пошты"
-      ],
-      "Verify phone number": [
-        "Спраўджанне нумара тэлефона"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Спраўдзіце сваю ідэнтычнасць пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння, які атрыманы ад праграмы аўтэнтыфікацыі"
@@ -12082,17 +12040,11 @@
       "Your account has been successfully updated": [
         "Ваш уліковы запіс паспяхова абноўлены."
       ],
-      "Your account recovery method is set": [
-        "Спосаб аднаўлення вашага ўліковага запісу зададзены"
-      ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
-      ],
-      "Your data recovery method is set": [
-        "Спосабы аднаўлення вашых даных зададзены"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
@@ -12781,11 +12733,17 @@
       "/month x ${ months }": [
         "/месяц x ${ months }"
       ],
+      "0 of 1 email address available": [
+        "Даступна 0 з 1 адраса электроннай пошты"
+      ],
       "1 hour": [
         "1 гадзіна"
       ],
       "1 minute": [
         "1 хвіліна"
+      ],
+      "1 of 1 email address available": [
+        "Даступна 1 з 1 адраса электроннай пошты"
       ],
       "10 hide-my-email aliases": [
         "10 псеўданімаў hide-my-email"
@@ -14277,6 +14235,9 @@
       "Don't have access to your 2FA?": [
         "Адсутнічае доступ да вашых 2ФА?"
       ],
+      "Downloads": [
+        "Спампоўкі"
+      ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
       ],
@@ -14415,6 +14376,9 @@
       "Sign in": [
         "Увайсці"
       ],
+      "Snap store": [
+        "Snap Store"
+      ],
       "switch account": [
         "змяніць уліковы запіс"
       ],
@@ -14447,9 +14411,6 @@
       ],
       "What’s this?": [
         "Што гэта?"
-      ],
-      "Why set recovery methods?": [
-        "Навошта задаваць спосаб аднаўлення?"
       ]
     },
     "Link label (optional)": {
@@ -14631,6 +14592,11 @@
         "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } меткі з ${ itemsToImportCount }) і пазначыць іх як",
         "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як",
         "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як"
+      ]
+    },
+    "mail_cro_experiment": {
+      "Get Deal": [
+        "Атрымаць прапанову"
       ]
     },
     "mail_signup_2023: Info": {
@@ -16313,6 +16279,9 @@
       "A disabled address cannot be default": [
         "Адключаны адрас не можа быць прадвызначаным"
       ],
+      "Address reconnected.": [
+        "Адрас перападключаны"
+      ],
       "An external address cannot be default": [
         "Знешні адрас не можа быць прадвызначаным"
       ],
@@ -17143,6 +17112,9 @@
       "Keep this plan": [
         "Пакінуць гэты тарыфны план"
       ],
+      "Open ${ PASS_APP_NAME } vaults": [
+        "Адкрыць сховішчы ${ PASS_APP_NAME }"
+      ],
       "Or ${ createANewAccount }": [
         "Або ${ createANewAccount }"
       ],
@@ -17411,6 +17383,9 @@
       ],
       "Welcome to ${ plan }": [
         "Вітаем у ${ plan }"
+      ],
+      "You already have a ${ BRAND_NAME } account and can start using ${ PASS_APP_NAME } right away.": [
+        "Уліковы запіс ${ BRAND_NAME } дае магчымасць адразу пачаць карыстацца ${ PASS_APP_NAME }."
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "У вас ужо ёсць доступ да прэміяльных функцый ${ appName }. Няма неабходнасці купляць іх яшчэ раз."
@@ -17701,7 +17676,7 @@
         "Падаткі"
       ],
       "terms and conditions": [
-        "ўмовы выкарыстання"
+        "ўмовамі выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
@@ -17779,10 +17754,10 @@
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для пацверджання плацяжу."
       ],
       "You will soon be redirected to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны для пацверджання вашага плацяжу."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
@@ -17825,6 +17800,19 @@
       ],
       "Credits will be added to your balance": [
         "Крэдыты будуць дададзены на ваш баланс"
+      ]
+    },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Пажыццёвыя ўліковыя запісы могуць быць перададзены або прададзены"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Звярніцеся ў падтрымку кліентаў, каб пацвердзіць змену ўласнасці."
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Ніколі"
       ]
     },
     "Payments.ModificationWarning": {
@@ -18163,6 +18151,9 @@
       ],
       "Perfect for getting started with secure cloud storage.": [
         "Ідэальна пасуе для пачатку працы з бяспечным воблачным сховішчам."
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Набор прыватнасці з прэміяльнымі сэрвісамі і ${ unlimitedPlanMaxSpace } зашыфраванага воблачнага сховішча. Усё гэта пастаўляецца ў адным камплекце."
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Бяспечнае воблачнае сховішча і супрацоўніцтва для каманд."
@@ -19030,12 +19021,6 @@
       "You have recommended actions.": [
         "У вас ёсць рэкамендаваныя дзеянні."
       ],
-      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Ваша электронная пошта для аднаўлення доступу можа быць выкарыстана зламыснікамі для захопу вашага ўліковага запісу. ${ disableEmail } для павышэння бяспекі вашага ўліковага запісу."
-      ],
-      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Ваш нумар тэлефона для аднаўлення доступу можа быць выкарыстаны зламыснікамі для захопу вашага ўліковага запісу. ${ disablePhone } для павышэння бяспекі вашага ўліковага запісу."
-      ],
       "You will no longer be able to use this address to reset your account.": [
         "Вы больш не зможаце выкарыстоўваць гэты адрас, каб скінуць свой уліковы запіс."
       ],
@@ -19081,6 +19066,9 @@
       "Your recovery email can **only recover access to your account**.": [
         "Ваша электронная пошта можа **аднавіць доступ толькі да вашага ўліковага запісу**."
       ],
+      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Ваша электронная пошта для аднаўлення доступу можа быць выкарыстана зламыснікамі для захопу вашага ўліковага запісу. ${ disableEmail } для павышэння бяспекі свайго ўліковага запісу."
+      ],
       "Your recovery email has been enabled": [
         "Ваша пошта аднаўлення была ўключана."
       ],
@@ -19101,6 +19089,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Ваш нумар тэлефона можа **аднавіць доступ толькі да вашага ўліковага запісу**."
+      ],
+      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Ваш нумар тэлефона для аднаўлення доступу можа быць выкарыстаны зламыснікамі для захопу вашага ўліковага запісу. ${ disablePhone } для павышэння бяспекі свайго ўліковага запісу."
       ],
       "Your recovery phone has been enabled": [
         "Ваш нумар тэлефона для аднаўлення быў уключаны."
@@ -22673,10 +22664,10 @@
         "Спампаваць ${ PASS_APP_NAME } для вашых прылад"
       ],
       "Download the desktop app": [
-        "Спампоўванне праграмы для камп'ютара"
+        "Спампоўванне праграм для камп'ютара"
       ],
       "Download the mobile apps": [
-        "Спампоўка мабільных праграм"
+        "Спампоўванне мабільных праграм"
       ],
       "Downloads": [
         "Спампоўкі"
@@ -22830,15 +22821,6 @@
       ],
       "Folders and labels": [
         "Папкі і меткі"
-      ],
-      "For Linux": [
-        "Для Linux"
-      ],
-      "For macOS": [
-        "Для macOS"
-      ],
-      "For Windows": [
-        "Для Windows"
       ],
       "Forgot password": [
         "Забыты пароль"
@@ -23515,9 +23497,6 @@
       "Switch to two-password mode": [
         "Пераключыцца ў рэжым двух пароляў"
       ],
-      "Take precautions to avoid data loss!": [
-        "Прыміце меры перасцярогі, каб пазбегнуць страты даных!"
-      ],
       "Text": [
         "Тэкст"
       ],
@@ -23712,9 +23691,6 @@
       ],
       "Your plan": [
         "Ваш тарыфны план"
-      ],
-      "Your recovery status": [
-        "Ваш статус аднаўлення"
       ],
       "Your referrals": [
         "Вашы рэфералы"
@@ -24387,6 +24363,9 @@
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Зэканомце да ${ priceString }** з працяглай падпіскай. Тыя ж самыя прэміяльныя функцыі за меншую плату."
       ],
+      "Advanced security for your company": [
+        "Пашыраная бяспека для вашай кампаніі"
+      ],
       "Advanced security for your company?": [
         "Пашырыць бяспеку для вашай кампаніі?"
       ],
@@ -24413,6 +24392,9 @@
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Неабмежаваная прыватнасць для вас і каханага чалавека. Усяго ад ${ priceString }/месяц."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "Вы можаце абараніць да ${ DUO_MAX_USERS }} асоб з тарыфным планам ${ PLAN_NAMES[PLANS.DUO] } і да ${ FAMILY_MAX_USERS } з тарыфным планам ${ PLAN_NAMES[PLANS.FAMILY] }. Кошт падпіскі ўсяго ${ priceString } у месяц за ўліковы запіс."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Вы можаце абараніць да ${ FAMILY_MAX_USERS } асоб з тарыфным планам ${ PLAN_NAMES[plan] }. Пачынаючы ўсяго ад ${ priceString } у месяц за ўліковы запіс."
@@ -24665,12 +24647,6 @@
         "Аўтавыбар з ${ numberOfCountries } краін",
         "Аўтавыбар з ${ numberOfCountries } краін"
       ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Выбірайце ў больш чым ${ numberOfCountries } краіне",
-        "Выбірайце ў больш чым ${ numberOfCountries } краінах",
-        "Выбірайце ў больш чым ${ numberOfCountries } краінах",
-        "Выбірайце ў больш чым ${ numberOfCountries } краінах"
-      ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",
         "Серверы ў больш, чым ${ numberOfCountries } краінах",
@@ -24783,7 +24759,7 @@
         "Праграма ${ PROTON_SENTINEL_NAME }"
       ],
       "A safer way to hold your Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
+        "Бяспечны спосаб захоўвання Bitcoin"
       ],
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
@@ -24830,7 +24806,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
+        "Бяспечны спосаб захоўвання Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

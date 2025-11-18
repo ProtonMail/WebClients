@@ -1304,8 +1304,11 @@
       "Application problem": [
         "Problema d’aplicació"
       ],
+      "Authenticator problem": [
+        "Problema amb l'autenticador"
+      ],
       "Black Friday": [
-        "Divendres negre"
+        "Black Friday"
       ],
       "Bridge problem": [
         "Problema a Bridge"
@@ -3286,7 +3289,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Si us plau, inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -4267,7 +4270,7 @@
         "**Pas 3:** Obtingueu ${ referrerRewardAmount } crèdits per cada amistat que es subscrigui a un pla."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
-        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
+        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -4455,7 +4458,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant el document..."
+        "S'està creant un document nou..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4551,10 +4554,10 @@
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "S'ha produït un error en convertir el document: ${ errorMessage }"
+        "Hi ha hagut un error en convertir el document: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
-        "Hi ha hagut un error en carregar el document: ${ errorDetail }"
+        "S'ha produït un error en carregar el document: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error de sincronització"
@@ -4617,10 +4620,10 @@
         "Geobloqueig"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
+        "Rebeu actualitzacions per correu dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
-        "Rebeu notificacions sobre els comentaris"
+        "Rebeu notificacions dels comentaris"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
@@ -4759,7 +4762,7 @@
         "Prioritat baixa"
       ],
       "Making a copy...": [
-        "S'està fent una còpia..."
+        "S'està creant una còpia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
@@ -4793,7 +4796,7 @@
         "Encara no s'han afegit contactes"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No s'ha especificat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu un document."
+        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu un document."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -5080,7 +5083,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'URL que heu introduït s'ha copiat incorrectament del Slack. Quan copieu enllaços llargs del Slack, feu clic amb el botó dret damunt de l'enllaç i seleccioneu \"Copia l'enllaç\", en lloc de copiar directament el text de l'URL truncat."
+        "Sembla que l'URL que heu introduït s'ha copiat incorrectament de Slack. Quan copieu enllaços llargs de Slack, feu clic amb el botó dret a l'enllaç i seleccioneu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -8577,9 +8580,6 @@
       ],
       "Replace data at selected cell": [
         "Substitueix les dades a la cel·la seleccionada"
-      ],
-      "Select a CSV or TSV file to import": [
-        "Seleccioneu un fitxer CSV o TSV per importar-lo"
       ]
     },
     "sheets_2025:Label": {

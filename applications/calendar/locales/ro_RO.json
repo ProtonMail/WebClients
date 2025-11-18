@@ -256,6 +256,9 @@
       "Create a booking page": [
         "Creare pagină de rezervări"
       ],
+      "Create a free account": [
+        "Creare cont gratuit"
+      ],
       "Create a new bookings page": [
         "Creare pagină nouă de programare"
       ],
@@ -1573,6 +1576,9 @@
       ],
       "Application problem": [
         "Problemă aplicație"
+      ],
+      "Authenticator problem": [
+        "Problemă autentificator"
       ],
       "Black Friday": [
         "Vinerea Neagră"
@@ -4104,6 +4110,9 @@
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }"
       ],
+      "You cannot enter the organizer email": [
+        "Nu puteți introduce e-mailul organizatorului"
+      ],
       "You have reached the maximum number of calendars.": [
         "Ați atins numărul maxim de calendare."
       ],
@@ -4680,8 +4689,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Datele de contact"
+      "Confirm your booking": [
+        "Confirmare rezervare"
       ]
     },
     "Google Meet": {
@@ -5373,6 +5382,9 @@
       "Appointment duration": [
         "Durată programare"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Sigur ștergeți această pagină de rezervare?"
+      ],
       "Are you sure you want to discard your import?": [
         "Anulați importarea?"
       ],
@@ -5409,6 +5421,9 @@
       "Booking overlaps with an existing booking.": [
         "Rezervarea se suprapune cu o rezervare existentă."
       ],
+      "Booking page deleted": [
+        "Pagina de rezervare s-a șters."
+      ],
       "Booking page example": [
         "Pagină exemplu de rezervare"
       ],
@@ -5435,6 +5450,9 @@
       ],
       "Cannot create booking range across days": [
         "Nu se poate crea un interval de rezervare pe parcursul mai multor zile."
+      ],
+      "Cannot create booking range in the past": [
+        "Nu se poate crea un interval de rezervare în trecut."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
@@ -5857,9 +5875,6 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
       ],
-      "Name your booking page": [
-        "Denumiți pagina de rezervări"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
@@ -5953,6 +5968,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Persoanele care rezervă timp cu dvs. vor vedea ${ selectedCalendar.Email } ca adresă de contact."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline este compatibil doar cu formatul de text simplu."
       ],
@@ -6009,11 +6027,17 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
       ],
+      "Powered by": [
+        "Dezvoltat de"
+      ],
       "Powered by ${ protonButton }": [
         "Oferit de ${ protonButton }"
       ],
       "Previous modifications on this series will be lost.": [
         "Modificările anterioare ale acestei serii vor fi pierdute."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Evenimentele programate anterior nu vor fi șterse."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
@@ -6080,8 +6104,8 @@
       "Setting up your new address…": [
         "Vi se configurează noile adrese…"
       ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Partajați această pagină pentru a le permite altora să-și rezerve timp în calendarul dvs. Îl puteți gestiona oricând în bara laterală, în „Pagini de rezervare”."
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Partajați această pagină pentru a le permite altora să-și rezerve timp în calendarul dvs. O puteți găsi și edita în bara laterală în „Pagini de rezervare”."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
@@ -6126,6 +6150,9 @@
       ],
       "Symbols (#$&)": [
         "Simboluri (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Preluați controlul asupra propriei vieți digitale"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Reveniți mai târziu."
@@ -6174,6 +6201,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Această rezervare a fost făcută prin ${ CALENDAR_APP_NAME }, parte din suita de produse cu confidențialitate prioritară de la ${ BRAND_NAME }."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Acest eveniment a fost actualizat de către organizator. Doriți să vă schimbați răspunsul doar pentru această manifestare din serie?"
@@ -6313,6 +6343,9 @@
       "Week and month views only apply to desktop.": [
         "Afișarea săptămânii și lunii se aplică doar pentru desktop."
       ],
+      "What do you want to call this booking page?": [
+        "Cum doriți să numiți această pagină de rezervare?"
+      ],
       "What should people know before booking?": [
         "Ce ar trebui să știe oamenii înainte de a rezerva?"
       ],
@@ -6445,9 +6478,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anterior ați respins această invitație. Solicitați proprietarului o reinvitare."
-      ],
-      "You will loose all unsaved changes.": [
-        "Veți pierde toate modificările nesalvate."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
@@ -6986,6 +7016,9 @@
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
+      "Full name": [
+        "Numele complet"
+      ],
       "Get the deal": [
         "Luați oferta"
       ],
@@ -7290,8 +7323,14 @@
       "End time of the booking range": [
         "Ora de sfârșit a intervalului de rezervare"
       ],
+      "How long should an appointment last?": [
+        "Cât ar trebui să dureze o întâlnire?"
+      ],
       "Start time of the booking range": [
         "Oră început interval de rezervare"
+      ],
+      "What should people know before booking?": [
+        "Ce ar trebui să știe oamenii înainte de a rezerva?"
       ]
     },
     "Label for contact group color": {
@@ -9695,14 +9734,14 @@
       "Anytown": [
         "București"
       ],
-      "Booking page title": [
-        "Titlu pagină de rezervare"
-      ],
       "Company name": [
         "Nume companie"
       ],
       "E.g., ": [
         "Ex.: "
+      ],
+      "Email for booking confirmation": [
+        "E-mail pentru confirmarea rezervării"
       ],
       "Enter passphrase": [
         "Introduceți fraza de acces"
@@ -9739,6 +9778,9 @@
       ],
       "Name": [
         "Nume"
+      ],
+      "Name of attendee": [
+        "Nume participant"
       ],
       "Name or email address": [
         "Nume utilizator/adresa de e-mail"
@@ -11728,6 +11770,9 @@
       ],
       "Delete ${ value }": [
         "Ștergere ${ value }"
+      ],
+      "Delete booking page?": [
+        "Ștergeți pagina de rezervări?"
       ],
       "Delete event": [
         "Ștergere eveniment"

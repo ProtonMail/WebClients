@@ -1175,9 +1175,6 @@
       "Wrong second password": [
         "Неверный второй пароль"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "В настоящее время вы не в сети. Возобновите подключение, чтобы разблокировать ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Ваш браузер испытывает трудности с активацией ${ PASS_APP_NAME }."
       ],
@@ -1723,9 +1720,6 @@
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Подключение к Интернету потеряно. Пожалуйста, проверьте возможность подключения вашего устройства."
-      ],
       "Invitation sent": [
         "Приглашение отправлено"
       ],
@@ -1842,6 +1836,9 @@
       ],
       "No login found": [
         "Логин не найден"
+      ],
+      "No network connection": [
+        "Нет подключения к сети"
       ],
       "None": [
         "Ничего"

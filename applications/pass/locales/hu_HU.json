@@ -1209,9 +1209,6 @@
       "Wrong second password": [
         "Rossz második jelszó"
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Ön jelenleg offline. A ${ PASS_SHORT_APP_NAME } feloldásához kérjük, kapcsolódjon újra."
-      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "A DNS nincs helyesen beállítva. Az MX rekord, amit megkapunk, a következő:"
       ],
@@ -1725,9 +1722,6 @@
       "Internet connection lost": [
         "Az internetkapcsolat megszakadt"
       ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
-      ],
       "Invitation sent": [
         "Meghívó elküldve"
       ],
@@ -1834,6 +1828,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
+        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ],
       "Moving items": [
         "Elemek áthelyezése"

@@ -109,7 +109,7 @@
         "Adăugare adresă"
       ],
       "Add address or domain": [
-        "Adăugare adresă sau domeniu"
+        "Adăugare adresă sau domeniu în"
       ],
       "Add another account": [
         "Adăugare alt cont"
@@ -181,7 +181,7 @@
         "Aliniere"
       ],
       "Allow": [
-        "Permitere"
+        "Permise"
       ],
       "Allow end-to-end encrypted mail for this group": [
         "Permitere mesaje criptate bilateral pentru acest grup"
@@ -220,7 +220,7 @@
         "Înapoi la autentificare"
       ],
       "Block": [
-        "Blocare"
+        "Blocate"
       ],
       "Bold": [
         "Îngroșat"
@@ -2809,6 +2809,9 @@
       "Application problem": [
         "Problemă aplicație"
       ],
+      "Authenticator problem": [
+        "Problemă autentificator"
+      ],
       "Black Friday": [
         "Vinerea Neagră"
       ],
@@ -3279,6 +3282,9 @@
       ],
       "AI assistant that respects business confidentiality": [
         "Asistent de IA care respectă confidențialitatea afacerii"
+      ],
+      "AI assistant that respects your privacy": [
+        "Asistent de IA care vă respectă confidențialitatea"
       ],
       "Basic chat history": [
         "Istoric de bază conversații"
@@ -5169,6 +5175,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm pentru Fedora/Red Hat"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "De asemenea, puteți descărca aplicația prin ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -7478,9 +7487,6 @@
       ]
     },
     "Features": {
-      "${ VPN_CONNECTIONS } devices": [
-        "Dispozitive: ${ VPN_CONNECTIONS }"
-      ],
       "15 GB storage": [
         "15 GiB spațiu de stocare"
       ],
@@ -8161,6 +8167,9 @@
       ],
       "Contact us": [
         "Contactați-ne"
+      ],
+      "Downloads": [
+        "Descărcări"
       ],
       "Enjoying ${ planName }?": [
         "Vă bucurați de ${ planName }?"
@@ -8981,12 +8990,6 @@
       "Account monitor": [
         "Monitorizare cont"
       ],
-      "account recovery and data recovery method": [
-        "metodă de recuperare a contului cât şi a datelor"
-      ],
-      "account recovery method": [
-        "metodă de recuperare a contului"
-      ],
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
@@ -9005,14 +9008,8 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
       ],
-      "Add a recovery email address": [
-        "Adăugați o adresă de e-mail de recuperare"
-      ],
       "add a recovery method": [
         "adăugat o metodă de recuperare"
-      ],
-      "Add a recovery phone number": [
-        "Adăugați un număr de telefon de recuperare"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Aceasta adaugă un nivel suplimentar de protecție contului. Va trebui să folosiți autentificarea cu doi factori de fiecare dată când vă conectați."
@@ -9108,12 +9105,6 @@
       ],
       "Allow logging of location and connection details": [
         "Permiteți înregistrarea detaliilor locului și conexiunii"
-      ],
-      "Allow recovery by email": [
-        "Permitere recuperare prin e-mail"
-      ],
-      "Allow recovery by phone": [
-        "Permitere recuperare prin telefon"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permite utilizatorilor să se conecteze la serverele securizate partajate din secțiunea **Țări** a aplicației ${ VPN_APP_NAME }."
@@ -9531,12 +9522,6 @@
       "Did you know?": [
         "Știați că?"
       ],
-      "Disable recovery by email address": [
-        "Dezactivare recuperare cu adresă de e-mail"
-      ],
-      "Disable recovery by phone number": [
-        "Dezactivare recuperare cu număr de telefon"
-      ],
       "Disabled countries": [
         "Țări dezactivate"
       ],
@@ -9616,9 +9601,6 @@
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Descărcați șablonul CSV, completați datele utilizatorului și apoi încărcați fișierul CSV completat pentru a crea conturi pentru acești utilizatori."
-      ],
-      "Download recovery file": [
-        "Descărcare fișier de recuperare"
       ],
       "Download the app and import existing codes.": [
         "Descărcați aplicația și importați codurile existente."
@@ -9995,12 +9977,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Dacă aveți un cod cadou, introduceți-l mai jos pentru a aplica reducerea."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Dacă vă pierdeți parola și trebuie să vă recuperați contul, ${ boldImperative } să aveți o ${ boldAccountRecovery }."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Dacă vă pierdeți parola și trebuie să vă recuperați contul, ${ boldImperative } să aveți atât o ${ boldAccountAndRecovery }, altfel s-ar putea să nu mai puteți accesa niciunul dintre mesajele, contactele sau fișierele personale."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Dacă vă pierdeți dispozitivul pentru autentificarea cu doi factori (A2F), puteți folosi aceste coduri în locul celor 6 cifre pentru autentificarea cu doi factori pentru a vă conecta la cont. Fiecare cod e de unică folosință."
       ],
@@ -10196,9 +10172,6 @@
       ],
       "Item updated in vault": [
         "Articol actualizat în seif."
-      ],
-      "it’s imperative": [
-        "este imperativ"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Am folosit @ProtonMail și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea prin această legătură web de recomandare oferă o lună gratuită: ${ referrerLink }"
@@ -10398,9 +10371,6 @@
       "No account keys exist": [
         "Nu există chei pentru cont."
       ],
-      "No account recovery method set; you are at risk of losing access to your account": [
-        "Nu este setată o metodă de recuperare a contului; există riscul să vă pierdeți accesul la cont."
-      ],
       "No action selected": [
         "Nicio acțiune selectată"
       ],
@@ -10412,9 +10382,6 @@
       ],
       "No credit card required": [
         "Nu trebuie card de plată"
-      ],
-      "No data recovery method set; you are at risk of losing access to your data": [
-        "Nu este setată o metodă de recuperare adatelor; există riscul de a vă pierde accesul la date."
       ],
       "No folder selected": [
         "Niciun folder selectat"
@@ -10469,6 +10436,9 @@
       ],
       "On": [
         "Activat"
+      ],
+      "On Ubuntu?": [
+        "Pe Ubuntu?"
       ],
       "Once you reset your password:": [
         "După ce veți reseta parola:"
@@ -10539,15 +10509,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Alertele noastre au ca prioritate siguranța. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
-      ],
-      "Outdated recovery file; update to ensure access to your data": [
-        "Fișier de recuperare învechit. Actualizați-l pentru a vă asigura accesul la date."
-      ],
-      "Outdated recovery methods; update to ensure access to your data": [
-        "Metode de recuperare învechite. Actualizați-le pentru a vă asigura accesul la date."
-      ],
-      "Outdated recovery phrase; update to ensure access to your data": [
-        "Frază de recuperare învechită. Actualizați-o pentru a vă asigura accesul la date."
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Peste 100 de milioane de oameni și întreprinderi s-au înscris în ${ BRAND_NAME }."
@@ -10706,7 +10667,7 @@
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
       "Private AI assistant": [
-        "Asistent AI privat"
+        "Asistent de IA privat"
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
@@ -10819,6 +10780,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Asigurați-vă contul ${ BRAND_NAME }"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Conferințe video securizate, criptate bilateral"
+      ],
       "Securing your account": [
         "Securizare cont"
       ],
@@ -10875,9 +10839,6 @@
       ],
       "Set password": [
         "Setare parolă"
-      ],
-      "Set recovery phrase": [
-        "Setare frază de recuperare"
       ],
       "Set up forwarding": [
         "Setare redirecționare"
@@ -11308,12 +11269,6 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
       ],
-      "To ensure continuous access to your account, set an account recovery method": [
-        "Pentru a vă asigura accesul continuu la cont, setați o metodă de recuperare a contului."
-      ],
-      "To ensure highest possible security of your account": [
-        "Pentru a asigura cea mai mare securitate posibilă a contului"
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pentru a vă asigura că nu pierdeți date importante, ${ DRIVE_APP_NAME } salvează versiuni mai vechi ale fișierelor pe măsură ce acestea sunt modificate. Selectați cât timp ar trebui ca ${ BRAND_NAME } să păstreze versiunile anterioare."
       ],
@@ -11368,6 +11323,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Încercați ${ productName } fără riscuri - dacă din orice motiv vă răzgândiți, veți primi o rambursare completă. Fără întrebări."
       ],
+      "Two-factor authentication": [
+        "Autentificare cu doi factori"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Modul cu două parole necesită două parole: una pentru a vă autentifica în cont și una pentru a decripta datele. (Avansat)"
       ],
@@ -11406,12 +11364,6 @@
       ],
       "Unverified email address.": [
         "Adresă de e-mail neverificată."
-      ],
-      "Update recovery file": [
-        "Actualizare fișier de recuperare"
-      ],
-      "Update recovery phrase": [
-        "Actualizare frază de recuperare"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
@@ -11508,12 +11460,6 @@
       ],
       "Verify domain": [
         "Verificare domeniu"
-      ],
-      "Verify email address": [
-        "Verificare adresă de e-mail"
-      ],
-      "Verify phone number": [
-        "Verificare număr de telefon"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Vă verificați identitatea cu o parolă unică temporară, generată de o aplicație de autentificare."
@@ -11972,17 +11918,11 @@
       "Your account has been successfully updated": [
         "Contul a fost actualizat."
       ],
-      "Your account recovery method is set": [
-        "Metoda de recuperare a contului este setată"
-      ],
       "Your account was successfully updated with this promotion": [
         "Contul a fost modificat cu planul din această promoție."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
-      ],
-      "Your data recovery method is set": [
-        "Metoda de recuperare a datelor este setată"
       ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
@@ -12662,11 +12602,17 @@
       "/month x ${ months }": [
         "/lună x ${ months }"
       ],
+      "0 of 1 email address available": [
+        "Adrese de e-mail disponibile: 0 din 1"
+      ],
       "1 hour": [
         "o oră"
       ],
       "1 minute": [
         "1 minut"
+      ],
+      "1 of 1 email address available": [
+        "Adrese de e-mail disponibile: 1 din 1"
       ],
       "10 hide-my-email aliases": [
         "10 aliasuri hide-my-email"
@@ -12744,7 +12690,7 @@
         "Notificări evenimente toată ziua"
       ],
       "Allow": [
-        "Adrese permise"
+        "Permise"
       ],
       "Allow all users to create vaults": [
         "Permitere tuturor utilizatorilor să creeze seifuri"
@@ -12882,7 +12828,7 @@
         "Vinerea Neagră"
       ],
       "Block": [
-        "Adrese blocate"
+        "Blocate"
       ],
       "Block email tracking": [
         "Blocare urmărire mesaje"
@@ -14159,6 +14105,9 @@
       "Don't have access to your 2FA?": [
         "Nu aveți acces la A2F?"
       ],
+      "Downloads": [
+        "Descărcări"
+      ],
       "Encryption and keys": [
         "Criptare și chei"
       ],
@@ -14297,6 +14246,9 @@
       "Sign in": [
         "Autentificare"
       ],
+      "Snap store": [
+        "magazinul Snap"
+      ],
       "switch account": [
         "schimbați contul"
       ],
@@ -14329,9 +14281,6 @@
       ],
       "What’s this?": [
         "Ce este asta?"
-      ],
-      "Why set recovery methods?": [
-        "De ce să setați metode de recuperare?"
       ]
     },
     "Link label (optional)": {
@@ -14922,7 +14871,7 @@
         "Toate"
       ],
       "Allow": [
-        "Adrese permise"
+        "Permise"
       ],
       "Back": [
         "Înapoi"
@@ -14946,7 +14895,7 @@
         "Înapoi la seifuri"
       ],
       "Block": [
-        "Adrese blocate"
+        "Blocate"
       ],
       "Calendar": [
         "Calendar"
@@ -17006,6 +16955,9 @@
       "Keep this plan": [
         "Păstrez planul"
       ],
+      "Open ${ PASS_APP_NAME } vaults": [
+        "Deschidere seifuri ${ PASS_APP_NAME }"
+      ],
       "Or ${ createANewAccount }": [
         "Sau ${ createANewAccount }"
       ],
@@ -17274,6 +17226,9 @@
       ],
       "Welcome to ${ plan }": [
         "Bun venit la ${ plan }"
+      ],
+      "You already have a ${ BRAND_NAME } account and can start using ${ PASS_APP_NAME } right away.": [
+        "Deja aveți un cont ${ BRAND_NAME } și puteți începe să utilizați ${ PASS_APP_NAME } imediat."
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Aveți deja acces la funcțiile premium din ${ appName } - nu este nevoie să cumpărați din nou."
@@ -18893,12 +18848,6 @@
       ],
       "You have recommended actions.": [
         "Aveți acțiuni recomandate."
-      ],
-      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Adresa de e-mail de recuperare v-ar putea fi utilizată abuziv de către atacatori pentru a vă prelua controlul asupra contului. ${ disableEmail } pentru a vă spori securitatea contului."
-      ],
-      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Numărul de telefon pentru recuperare ar putea fi utilizat abuziv de către atacatori pentru a vă prelua controlul asupra contului. ${ disablePhone } pentru a vă spori securitatea contului."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Nu veți mai putea utiliza această adresă pentru a vă reseta contul."
@@ -22435,7 +22384,7 @@
         "Mesagerie electronică fără distrageri"
       ],
       "Domain names": [
-        "Nume domenii"
+        "Nume de domenii"
       ],
       "Don't show again?": [
         "Nu mai afișez asta?"
@@ -22616,15 +22565,6 @@
       "Folders and labels": [
         "Foldere și etichete"
       ],
-      "For Linux": [
-        "Pentru Linux"
-      ],
-      "For macOS": [
-        "Pentru macOS"
-      ],
-      "For Windows": [
-        "Pentru Windows"
-      ],
       "Forgot password": [
         "Am uitat parola"
       ],
@@ -22781,7 +22721,7 @@
         "Importare cheie"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Importare prin ${ PRODUCT_NAMES.EASY_SWITCH }"
+        "Import cu ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Inactive 2FA": [
         "A2F inactive"
@@ -23120,7 +23060,7 @@
         "Securitate"
       ],
       "Security and privacy": [
-        "Securitate și confidențialitate"
+        "Securitate și intimitate"
       ],
       "Security events": [
         "Evenimente de securitate"
@@ -23297,9 +23237,6 @@
       ],
       "Switch to two-password mode": [
         "Comutare la modul cu două parole"
-      ],
-      "Take precautions to avoid data loss!": [
-        "Luați măsuri de precauție pentru a evita pierderea datelor!"
       ],
       "Text": [
         "Text"
@@ -23495,9 +23432,6 @@
       ],
       "Your plan": [
         "Plan actual"
-      ],
-      "Your recovery status": [
-        "Starea actuală de recuperare"
       ],
       "Your referrals": [
         "Persoane recomandate"
@@ -24442,11 +24376,6 @@
         "Țări disponibile selectare automată: ${ numberOfCountries }",
         "Țări disponibile selectare automată: ${ numberOfCountries }",
         "Țări disponibile selectare automată: ${ numberOfCountries }"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Selectare din peste ${ numberOfCountries } țară",
-        "Selectare din peste ${ numberOfCountries } țări",
-        "Selectare din peste ${ numberOfCountries } de țări"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Nr. minim de țări cu servere: ${ numberOfCountries }",

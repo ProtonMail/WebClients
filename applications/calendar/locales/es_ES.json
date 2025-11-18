@@ -228,6 +228,9 @@
       "Copy alias “${ name }”": [
         "Copiar el alias «${ name }»"
       ],
+      "Copy booking page link": [
+        "Copiar enlace de la página de reservas"
+      ],
       "Copy email address": [
         "Copiar la dirección de correo electrónico"
       ],
@@ -251,6 +254,9 @@
       ],
       "Create a booking page": [
         "Crear página de reservas"
+      ],
+      "Create a free account": [
+        "Crear una cuenta gratuita"
       ],
       "Create a new bookings page": [
         "Crear una nueva página de reservas"
@@ -308,6 +314,9 @@
         "Eliminar ${ selectedCount } grupo de contactos",
         "Eliminar ${ selectedCount } grupos de contactos"
       ],
+      "Delete booking page": [
+        "Eliminar página de reservas"
+      ],
       "Delete contact": [
         "Eliminar contacto"
       ],
@@ -346,6 +355,9 @@
       ],
       "Edit": [
         "Editar"
+      ],
+      "Edit booking page": [
+        "Editar página de reservas"
       ],
       "Edit email address": [
         "Editar dirección de correo electrónico"
@@ -1552,6 +1564,9 @@
       "Application problem": [
         "Problema con la aplicación"
       ],
+      "Authenticator problem": [
+        "Problema con el autenticador"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1961,6 +1976,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de cuenta y red en un solo plan"
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de alta velocidad y funciones de IA avanzadas."
@@ -4057,6 +4075,9 @@
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
         "No puedes enviar un correo a más de ${ maxContacts } destinatarios."
       ],
+      "You cannot enter the organizer email": [
+        "No puedes ingresar el correo electrónico del organizador"
+      ],
       "You have reached the maximum number of calendars.": [
         "Ha alcanzado la cantidad máxima de calendarios."
       ],
@@ -4624,8 +4645,8 @@
       ]
     },
     "Form": {
-      "Your contact info": [
-        "Tu información de contacto"
+      "Confirm your booking": [
+        "Confirma tu reserva"
       ]
     },
     "Google Meet": {
@@ -5098,6 +5119,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
       ],
+      "${ MEET_APP_NAME } video call": [
+        "Videollamada con ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5282,6 +5306,12 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Cualquier persona con este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver los detalles de eventos, como título, ubicación o participantes."
       ],
+      "Appointment duration": [
+        "Duración de la cita"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "¿Estás seguro de que quieres eliminar esta página de reserva?"
+      ],
       "Are you sure you want to discard your import?": [
         "¿Estás seguro de que quieres descartar la importación?"
       ],
@@ -5318,6 +5348,9 @@
       "Booking overlaps with an existing booking.": [
         "La reserva se superpone con otra reserva existente."
       ],
+      "Booking page deleted": [
+        "Página de reservas eliminada"
+      ],
       "Booking page example": [
         "Ejemplo de página de reservas"
       ],
@@ -5344,6 +5377,9 @@
       ],
       "Cannot create booking range across days": [
         "No puedes crear un rango de reserva que abarque varios días."
+      ],
+      "Cannot create booking range in the past": [
+        "No puedes crear una reserva en el pasado"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave y desactivar la alerta al mismo tiempo."
@@ -5592,6 +5628,9 @@
       "High Priority": [
         "Prioridad alta"
       ],
+      "Host": [
+        "Anfitrión"
+      ],
       "How long should an appointment last?": [
         "¿Cuánto debería durar una cita?"
       ],
@@ -5722,11 +5761,17 @@
       "Loading events": [
         "Cargando eventos"
       ],
+      "Location": [
+        "Ubicación"
+      ],
       "Low Priority": [
         "Prioridad baja"
       ],
       "Manage your calendars": [
         "Gestionar calendarios"
+      ],
+      "Manange booking page": [
+        "Gestiona la página de reservas"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -5751,9 +5796,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La mayoría de las redes WiFi públicas son seguras, pero algunas carecen de seguridad, exponiéndote a amenazas cibernéticas. Una VPN cifra tu tráfico, manteniéndote protegido."
-      ],
-      "Name your booking page": [
-        "Nombra tu página de reservas"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
@@ -5848,6 +5890,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Quienes reserven una cita contigo verán ${ selectedCalendar.Email } como tu dirección de contacto."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "El formato PGP/Inline solo es compatible con el formato de texto plano."
       ],
@@ -5903,14 +5948,26 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espera mientras buscamos contactos que contengan datos cifrados con la clave inactiva."
       ],
+      "Powered by": [
+        "Operado por"
+      ],
+      "Powered by ${ protonButton }": [
+        "Operado por ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Las modificaciones previas de esta serie se perderán."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Los eventos previamente programados no se eliminarán."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
       ],
       "Primary": [
         "Principal"
+      ],
+      "Privacy by default": [
+        "Privacidad por defecto"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegación privada (o modo «incógnito») solo es útil para mantener oculta tu actividad en tu dispositivo. Evita que tu navegador guarde el historial y las cookies, pero no te hace invisible. Tu ISP, administrador de red y los sitios web que visitas aún pueden ver lo que haces en línea."
@@ -5967,8 +6024,8 @@
       "Setting up your new address…": [
         "Configurando tu nueva dirección…"
       ],
-      "Share this page to let others book time in your calendar. You can manage it anytime in the sidebar under Booking pages.": [
-        "Comparte esta página para que otros puedan reservar tiempo en tu calendario. Puedes administrarlo en cualquier momento en la barra lateral, en Páginas de reserva."
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Comparte esta página para que otros puedan reservar tiempo en tu calendario. Puedes encontrarlo y editarlo en la barra lateral, en Páginas de reserva."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
@@ -6012,6 +6069,9 @@
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Toma el control de tu vida digital"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
@@ -6060,6 +6120,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Esta reserva se realizó a través de ${ CALENDAR_APP_NAME }, parte de la suite de productos de privacidad de ${ BRAND_NAME }."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "El organizador ha actualizado este evento. ¿Quieres cambiar tu respuesta solo para este evento en esta serie?"
@@ -6199,6 +6262,9 @@
       "Week and month views only apply to desktop.": [
         "Las vistas semanales y mensuales solo se aplican al escritorio."
       ],
+      "What do you want to call this booking page?": [
+        "¿Cómo quieres llamar a esta página de reservas?"
+      ],
       "What should people know before booking?": [
         "¿Qué debería saber la gente antes de reservar?"
       ],
@@ -6329,9 +6395,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Ya habías rechazado esta invitación. Solicita al propietario una nueva invitación."
-      ],
-      "You will loose all unsaved changes.": [
-        "Perderás todos los cambios no guardados."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderás el acceso a las funciones de ${ planTitle } en esta fecha."
@@ -6863,6 +6926,9 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
+      "Full name": [
+        "Nombre completo"
+      ],
       "Get the deal": [
         "Aprovecha la oferta"
       ],
@@ -7166,8 +7232,14 @@
       "End time of the booking range": [
         "Hora de finalización del rango de reserva"
       ],
+      "How long should an appointment last?": [
+        "¿Cuánto debería durar una cita?"
+      ],
       "Start time of the booking range": [
         "Hora de inicio del rango de reserva"
+      ],
+      "What should people know before booking?": [
+        "¿Qué debería saber la gente antes de reservar?"
       ]
     },
     "Label for contact group color": {
@@ -7948,6 +8020,9 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficios existentes de ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descargas rápidas de P2P/BitTorrent"
       ],
@@ -8165,6 +8240,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartir la caja fuerte con hasta ${ n } persona",
+        "Compartir la caja fuerte con hasta ${ n } personas"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
@@ -9356,6 +9435,23 @@
         "Se añadirán créditos a tu saldo."
       ]
     },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "¿Estás seguro de que quieres proceder?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si eliges modificar tu plan ${ planTitle }, puedes perder el acceso a algunas funcionalidades."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguir con ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Si, estoy seguro"
+      ],
+      "Your plan includes this feature already.": [
+        "Tu plan ya incluye esta funcionalidad."
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Gratuito"
@@ -9479,14 +9575,14 @@
       "Anytown": [
         "Valclaro"
       ],
-      "Booking page title": [
-        "Título de la página de reservas"
-      ],
       "Company name": [
         "Nombre de la empresa"
       ],
       "E.g., ": [
         "P. ej., "
+      ],
+      "Email for booking confirmation": [
+        "Correo electrónico para la confirmación de la reserva"
       ],
       "Enter passphrase": [
         "Introducir la frase de contraseña"
@@ -9523,6 +9619,9 @@
       ],
       "Name": [
         "Nombre"
+      ],
+      "Name of attendee": [
+        "Nombre del asistente"
       ],
       "Name or email address": [
         "Nombre o dirección de correo electrónico"
@@ -11332,6 +11431,9 @@
       "Apply gift code": [
         "Aplicar código de regalo"
       ],
+      "Appointment details": [
+        "Detalles de la cita"
+      ],
       "Are you sure?": [
         "¿Estás seguro?"
       ],
@@ -11456,6 +11558,9 @@
       ],
       "Delete ${ value }": [
         "Eliminar ${ value }"
+      ],
+      "Delete booking page?": [
+        "¿Eliminar página de reservas?"
       ],
       "Delete event": [
         "Eliminar evento"
