@@ -15,6 +15,7 @@ const textareaElement = document.querySelector('#text') as HTMLTextAreaElement;
 
 const legacyClipboardRead = () => {
     textareaElement.focus();
+    textareaElement.value = '';
     document.execCommand('paste');
     return textareaElement.value;
 };
