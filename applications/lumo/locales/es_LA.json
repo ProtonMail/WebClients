@@ -772,6 +772,9 @@
       "Application problem": [
         "Problema con la aplicación"
       ],
+      "Authenticator problem": [
+        "Problema con el autenticador"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1002,9 +1005,6 @@
       "Send message": [
         "Enviar mensaje"
       ],
-      "settings": [
-        "ajustes"
-      ],
       "Show safety information": [
         "Mostrar información de seguridad"
       ],
@@ -1053,6 +1053,9 @@
       ],
       "Learn more": [
         "Más información"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
       ],
       "Open Link": [
         "Abrir enlace"
@@ -1401,6 +1404,9 @@
       ],
       "Adding to knowledge base...": [
         "Añadiendo a la base de conocimientos..."
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de la cuenta y red en un solo plan"
       ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Pregúntele cualquier cosa a ${ LUMO_SHORT_APP_NAME }."
@@ -2210,8 +2216,11 @@
       "Built by the team that knows privacy": [
         "Creado por el equipo que conoce la privacidad"
       ],
-      "Dark mode and conversation personalization": [
-        "Modo oscuro y personalización de la conversación"
+      "Dark mode has been one of our community’s most highly anticipated updates for ${ LUMO_SHORT_APP_NAME }. Throughout the ${ BRAND_NAME } ecosystem, you can customize the look of all of your apps, and now you can customize ${ LUMO_SHORT_APP_NAME }, too, with a light or dark theme.": [
+        "El modo oscuro ha sido una de las actualizaciones más esperadas de nuestra comunidad para ${ LUMO_SHORT_APP_NAME }. En todo el ecosistema de ${ BRAND_NAME }, puede personalizar el aspecto de todas sus aplicaciones y ahora también puede personalizar ${ LUMO_SHORT_APP_NAME } con un tema claro u oscuro."
+      ],
+      "Dark mode is here": [
+        "El modo oscuro ha llegado"
       ],
       "Earlier": [
         "Anterior"
@@ -2234,12 +2243,6 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "¿Cómo mantiene ${ LUMO_SHORT_APP_NAME } nuestras conversaciones confidenciales?"
       ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations.": [
-        "Presentamos ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } con soporte para modo oscuro y opciones nuevas para personalizar sus conversaciones."
-      ],
-      "Introducing ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } with support for dark mode and new options to personalize your conversations. Try it out in ${ openSettingsModalButton }.": [
-        "Presentamos ${ LUMO_SHORT_APP_NAME } ${ WHATS_NEW_VERSION } con soporte para modo oscuro y opciones nuevas para personalizar sus conversaciones. Pruébelo en ${ openSettingsModalButton }."
-      ],
       "Last 30 days": [
         "Últimos 30 días"
       ],
@@ -2255,6 +2258,12 @@
       "No result.": [
         "No hay resultados."
       ],
+      "Personalization lets you tailor how ${ LUMO_SHORT_APP_NAME } interacts with you. Tell ${ LUMO_SHORT_APP_NAME } your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.": [
+        "La personalización le permite adaptar cómo ${ LUMO_SHORT_APP_NAME } interactúa con usted. Dígale a ${ LUMO_SHORT_APP_NAME } su nombre, a qué se dedica y exactamente cómo quiere que responda: con ingenio, precisión técnica o brevedad directa. Porque la mejor IA no es de talla única. Es una que parece haber sido creada solo para usted."
+      ],
+      "Personalization: ${ LUMO_SHORT_APP_NAME } for you": [
+        "Personalización: ${ LUMO_SHORT_APP_NAME } a su medida"
+      ],
       "The AI that respects your privacy": [
         "La IA que respeta su privacidad"
       ],
@@ -2263,9 +2272,6 @@
       ],
       "Today": [
         "Hoy"
-      ],
-      "What's new": [
-        "Novedades"
       ],
       "Whatever you ask me is:": [
         "Lo que usted me pregunte es:"
@@ -4776,6 +4782,9 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficios existentes de ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
       "Fast P2P/BitTorrent downloads": [
         "Descargas rápidas de P2P/BitTorrent"
       ],
@@ -4972,6 +4981,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartir bóveda con hasta ${ n } persona",
+        "Compartir bóveda con hasta ${ n } personas"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
@@ -5699,6 +5712,23 @@
       ],
       "Credits will be added to your balance": [
         "Se añadirán los créditos a su balance"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "¿En verdad desea continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si elige modificar su plan ${ planTitle }, puede perder el acceso a algunas funciones."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguir en ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sí, estoy seguro"
+      ],
+      "Your plan includes this feature already.": [
+        "Su plan ya incluye esta función."
       ]
     },
     "Payments.plan_name": {
