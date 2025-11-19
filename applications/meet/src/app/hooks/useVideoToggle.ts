@@ -133,14 +133,12 @@ export const useVideoToggle = (
             await currentVideoTrack?.stopProcessor();
         }
 
-        if (!isMobile()) {
-            await switchActiveDevice({
-                deviceType: 'videoinput',
-                deviceId: deviceId as string,
-                isSystemDefaultDevice: videoDeviceId === DEFAULT_DEVICE_ID,
-                preserveDefaultDevice: !!preserveCache,
-            });
-        }
+        await switchActiveDevice({
+            deviceType: 'videoinput',
+            deviceId: deviceId as string,
+            isSystemDefaultDevice: videoDeviceId === DEFAULT_DEVICE_ID,
+            preserveDefaultDevice: !!preserveCache,
+        });
 
         await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions);
 

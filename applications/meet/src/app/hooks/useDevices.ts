@@ -1,6 +1,7 @@
+import { useCallback, useState } from 'react';
+
 import { useMediaDevices } from '@livekit/components-react';
 
-import { useStoredDevices } from '../contexts/StoredDevicesContext';
 import type { DeviceState } from '../types';
 import { filterDevices, getDefaultLabel, isDefaultDevice } from '../utils/device-utils';
 
@@ -19,58 +20,76 @@ const isDeviceAvailable = (devices: MediaDeviceInfo[], deviceId: string | null):
     return !!devices.find((d) => d.deviceId === deviceId);
 };
 
+const getDeviceFromDevicesList = (devices: MediaDeviceInfo[], deviceId: string | null): MediaDeviceInfo | null => {
+    if (deviceId === null) {
+        return null;
+    }
+    return devices.find((d) => d.deviceId === deviceId) ?? null;
+};
+
 export const useDevices = () => {
     const cameras = useMediaDevices({ kind: 'videoinput' });
     const microphones = useMediaDevices({ kind: 'audioinput' });
     const speakers = useMediaDevices({ kind: 'audiooutput' });
 
-    const { storedDevices } = useStoredDevices();
+    const systemDefaultCamera = getDefaultDevice(cameras);
+    const [preferredCamera, setPreferredCamera] = useState<MediaDeviceInfo | null>(null);
 
     const systemDefaultMicrophone = getDefaultDevice(microphones);
-    const defaultMicrophone =
-        microphones.find((m) => m.deviceId === storedDevices.audioDeviceId) ?? systemDefaultMicrophone;
-
-    const systemDefaultCamera = getDefaultDevice(cameras);
-    const defaultCamera = cameras.find((m) => m.deviceId === storedDevices.videoDeviceId) ?? systemDefaultCamera;
+    const [preferredMicrophone, setPreferredMicrophone] = useState<MediaDeviceInfo | null>(null);
 
     const systemDefaultSpeaker = getDefaultDevice(speakers);
-    const defaultSpeaker =
-        speakers.find((m) => m.deviceId === storedDevices.audioOutputDeviceId) ?? systemDefaultSpeaker;
+    const [preferredSpeaker, setPreferredSpeaker] = useState<MediaDeviceInfo | null>(null);
 
-    const microphoneState: DeviceState = {
-        systemDefault: systemDefaultMicrophone,
-        systemDefaultLabel: getDefaultLabel(systemDefaultMicrophone),
-        useSystemDefault: storedDevices.audioDeviceId === null,
-        cachedAvailable: isDeviceAvailable(microphones, storedDevices.audioDeviceId),
-        cachedDeviceId: storedDevices.audioDeviceId,
-    };
+    const setPreferredDevice = useCallback(
+        (deviceId: string | null, type: 'audioinput' | 'audiooutput' | 'videoinput') => {
+            switch (type) {
+                case 'audioinput':
+                    setPreferredMicrophone(getDeviceFromDevicesList(microphones, deviceId));
+                    break;
+                case 'audiooutput':
+                    setPreferredSpeaker(getDeviceFromDevicesList(speakers, deviceId));
+                    break;
+                case 'videoinput':
+                    setPreferredCamera(getDeviceFromDevicesList(cameras, deviceId));
+                    break;
+            }
+        },
+        [cameras, microphones, speakers]
+    );
 
     const cameraState: DeviceState = {
         systemDefault: systemDefaultCamera,
         systemDefaultLabel: getDefaultLabel(systemDefaultCamera),
-        useSystemDefault: storedDevices.videoDeviceId === null,
-        cachedAvailable: isDeviceAvailable(cameras, storedDevices.videoDeviceId),
-        cachedDeviceId: storedDevices.videoDeviceId,
+        useSystemDefault: preferredCamera === null,
+        preferredAvailable: isDeviceAvailable(cameras, preferredCamera?.deviceId ?? null),
+        preferredDevice: preferredCamera ?? null,
+    };
+
+    const microphoneState: DeviceState = {
+        systemDefault: systemDefaultMicrophone,
+        systemDefaultLabel: getDefaultLabel(systemDefaultMicrophone),
+        useSystemDefault: preferredMicrophone === null,
+        preferredAvailable: isDeviceAvailable(microphones, preferredMicrophone?.deviceId ?? null),
+        preferredDevice: preferredMicrophone ?? null,
     };
 
     const speakerState: DeviceState = {
         systemDefault: systemDefaultSpeaker,
         systemDefaultLabel: getDefaultLabel(systemDefaultSpeaker),
-        useSystemDefault: storedDevices.audioOutputDeviceId === null,
-        cachedAvailable: isDeviceAvailable(speakers, storedDevices.audioOutputDeviceId),
-        cachedDeviceId: storedDevices.audioOutputDeviceId,
+        useSystemDefault: preferredSpeaker === null,
+        preferredAvailable: isDeviceAvailable(speakers, preferredSpeaker?.deviceId ?? null),
+        preferredDevice: preferredSpeaker ?? null,
     };
 
     return {
         cameras,
         microphones,
         speakers,
-        defaultMicrophone,
-        defaultCamera,
-        defaultSpeaker,
-        microphoneState,
         cameraState,
+        microphoneState,
         speakerState,
+        setPreferredDevice,
         getDefaultDevice,
     };
 };

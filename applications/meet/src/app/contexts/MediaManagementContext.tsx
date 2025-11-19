@@ -8,8 +8,8 @@ const DEFAULT_DEVICE_STATE: DeviceState = {
     systemDefault: null,
     systemDefaultLabel: '',
     useSystemDefault: true,
-    cachedAvailable: false,
-    cachedDeviceId: null,
+    preferredAvailable: false,
+    preferredDevice: null,
 };
 
 export interface MediaManagementContextType {

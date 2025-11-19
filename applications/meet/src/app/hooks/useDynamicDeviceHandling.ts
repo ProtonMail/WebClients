@@ -67,7 +67,7 @@ export const useDynamicDeviceHandling = ({
         ({
             deviceList,
             deviceId,
-            cachedDeviceId,
+            preferredDeviceId,
             systemDefaultDevice,
             previousSystemDefaultDeviceId,
             useSystemDefault,
@@ -75,7 +75,7 @@ export const useDynamicDeviceHandling = ({
         }: {
             deviceList: MediaDeviceInfo[];
             deviceId: string | null;
-            cachedDeviceId: string | null;
+            preferredDeviceId: string | null;
             systemDefaultDevice: MediaDeviceInfo;
             previousSystemDefaultDeviceId: string | null;
             useSystemDefault: boolean;
@@ -92,8 +92,8 @@ export const useDynamicDeviceHandling = ({
             }
 
             // Handle case where user plugs back device
-            if (cachedDeviceId && deviceList.find((device) => device.deviceId === cachedDeviceId)) {
-                updateFunction(cachedDeviceId);
+            if (preferredDeviceId && deviceList.find((device) => device.deviceId === preferredDeviceId)) {
+                updateFunction(preferredDeviceId);
                 return;
             }
 
@@ -141,7 +141,7 @@ export const useDynamicDeviceHandling = ({
             {
                 deviceList: microphonesAfterDeviceChange,
                 deviceId: activeMicrophoneDeviceId,
-                cachedDeviceId: microphoneState.cachedDeviceId,
+                preferredDeviceId: microphoneState.preferredDevice?.deviceId ?? null,
                 systemDefaultDevice: currentMicrophoneSystemDefault,
                 previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.microphone,
                 useSystemDefault: microphoneState.useSystemDefault,
@@ -161,7 +161,7 @@ export const useDynamicDeviceHandling = ({
             {
                 deviceList: camerasAfterDeviceChange,
                 deviceId: activeCameraDeviceId,
-                cachedDeviceId: cameraState.cachedDeviceId,
+                preferredDeviceId: cameraState.preferredDevice?.deviceId ?? null,
                 systemDefaultDevice: currentCameraSystemDefault,
                 previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.camera,
                 useSystemDefault: cameraState.useSystemDefault,
@@ -188,7 +188,7 @@ export const useDynamicDeviceHandling = ({
             {
                 deviceList: speakersAfterDeviceChange,
                 deviceId: activeAudioOutputDeviceId,
-                cachedDeviceId: speakerState.cachedDeviceId,
+                preferredDeviceId: speakerState.preferredDevice?.deviceId ?? null,
                 systemDefaultDevice: currentSpeakerSystemDefault,
                 previousSystemDefaultDeviceId: previousSystemDefaultsRef.current.speaker,
                 useSystemDefault: speakerState.useSystemDefault,
