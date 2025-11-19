@@ -8156,7 +8156,6 @@ __metadata:
     react-redux: "npm:^9.2.0"
     ttag: "npm:^1.8.12"
     typescript: "npm:^5.9.3"
-    whatwg-fetch: "npm:^3.6.20"
   peerDependencies:
     "@types/react-router-dom": ^5.3.3
     react-router-dom: ^5.3.4
@@ -9106,7 +9105,6 @@ __metadata:
     ttag: "npm:^1.8.12"
     typescript: "npm:^5.9.3"
     webextension-polyfill: "npm:^0.12.0"
-    whatwg-fetch: "npm:^3.6.20"
     x2js: "npm:^3.4.4"
   languageName: unknown
   linkType: soft
@@ -48129,13 +48127,6 @@ __metadata:
   dependencies:
     iconv-lite: "npm:0.6.3"
   checksum: 10c0/273b5f441c2f7fda3368a496c3009edbaa5e43b71b09728f90425e7f487e5cef9eb2b846a31bd760dd8077739c26faf6b5ca43a5f24033172b003b72cf61a93e
-  languageName: node
-  linkType: hard
-
-"whatwg-fetch@npm:^3.6.20":
-  version: 3.6.20
-  resolution: "whatwg-fetch@npm:3.6.20"
-  checksum: 10c0/fa972dd14091321d38f36a4d062298df58c2248393ef9e8b154493c347c62e2756e25be29c16277396046d6eaa4b11bd174f34e6403fff6aaca9fb30fa1ff46d
   languageName: node
   linkType: hard
 
