@@ -64,13 +64,13 @@ export const AutoCloseMeetingModal = ({ onLeave }: AutoCloseMeetingModalProps) =
 
                         <div className="w-full flex flex-column gap-2 mt-4">
                             <Button
-                                className="rounded-full color-invert reload-button py-4"
+                                className="rounded-full close-button py-4"
                                 onClick={() => setTimeAlone(0)}
                                 color="norm"
                                 size="large"
                             >{c('meet_2025 Action').t`Stay in the meeting`}</Button>
                             <Button
-                                className="rounded-full py-4 bg-weak close-button border-none"
+                                className="rounded-full py-4 bg-weak leave-button border-none"
                                 onClick={onLeave}
                                 color="weak"
                                 size="large"
