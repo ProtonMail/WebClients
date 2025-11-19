@@ -622,9 +622,6 @@
       "Skip": [
         "Ignorar"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Alguém compartilhou um item com você no ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Ordenar itens do cofre"
       ],
@@ -1213,9 +1210,6 @@
       "Trashing item failed": [
         "Erro ao mover item para a lixeira"
       ],
-      "Try reaching out to the link owner.": [
-        "Tente entrar em contato com o proprietário do link."
-      ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
       ],
@@ -1272,6 +1266,9 @@
       ],
       "Wrong second password": [
         "Segunda senha incorreta"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Você está sem off-line. Retome a conectividade para desbloquear o ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "O seu DNS não está corretamente configurado. O registro MX que obtermos é:"
@@ -2224,6 +2221,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Os itens selecionados foram restaurados da lixeira."
+      ],
+      "Servers are unreachable": [
+        "Os servidores estão inacessíveis"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -3615,9 +3615,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Este item está disponível até ${ date } ou até que o limite de visualizações seja atingido."
       ],
       "Tier/Level": [
         "Camada/Nível"
