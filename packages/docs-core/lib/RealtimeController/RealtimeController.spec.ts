@@ -11,8 +11,14 @@ import type {
   RtsMessagePayload,
   WebsocketConnectionInterface,
 } from '@proton/docs-shared'
-import { ApiResult, DecryptedMessage, Result } from '@proton/docs-shared'
-import { BroadcastSource, DocumentRole } from '@proton/docs-shared'
+import {
+  ApiResult,
+  DecryptedMessage,
+  Result,
+  BroadcastSource,
+  DocumentRole,
+  ProcessedIncomingRealtimeEventMessage,
+} from '@proton/docs-shared'
 import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
@@ -22,7 +28,6 @@ import {
   RealtimeController,
 } from './RealtimeController'
 import type { LoggerInterface } from '@proton/utils/logs'
-import { ProcessedIncomingRealtimeEventMessage } from '@proton/docs-shared'
 import { ConnectionCloseReason, EventTypeEnum } from '@proton/docs-proto'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { AckLedgerInterface } from '../Services/Websockets/AckLedger/AckLedgerInterface'
@@ -106,6 +111,7 @@ describe('RealtimeController', () => {
         isEnabled: jest.fn().mockReturnValue(false),
       } as unknown as jest.Mocked<UnleashClient>,
       'doc',
+      new DocSizeTracker(logger),
     )
 
     documentState.setProperty('editorReady', true)
@@ -276,18 +282,6 @@ describe('RealtimeController', () => {
     expect(controller.updatesReceivedWhileParentNotReady).toHaveLength(0)
   })
 
-  describe('handleDocumentUpdatesMessage', () => {
-    it('should increment size tracker size', async () => {
-      controller.sizeTracker.incrementSize = jest.fn()
-
-      await controller.handleDocumentUpdatesMessage({
-        byteSize: jest.fn().mockReturnValue(25),
-      } as unknown as DecryptedMessage)
-
-      expect(controller.sizeTracker.incrementSize).toHaveBeenCalledWith(25)
-    })
-  })
-
   describe('websocket lifecycle', () => {
     it('should begin initial sync timer on connected event', () => {
       controller.beginInitialSyncTimer = jest.fn()
@@ -299,24 +293,6 @@ describe('RealtimeController', () => {
   })
 
   describe('propagateUpdate', () => {
-    it('should increment size tracker size', () => {
-      controller.sizeTracker.incrementSize = jest.fn()
-
-      void controller.propagateUpdate(
-        {
-          type: {
-            wrapper: 'du',
-          },
-          content: {
-            byteLength: 123,
-          },
-        } as RtsMessagePayload,
-        'mock' as BroadcastSource,
-      )
-
-      expect(controller.sizeTracker.incrementSize).toHaveBeenCalledWith(123)
-    })
-
     it('should refuse propagation of update if the update is larger than the max update size', () => {
       controller.handleAttemptingToBroadcastUpdateThatIsTooLarge = jest.fn()
 
