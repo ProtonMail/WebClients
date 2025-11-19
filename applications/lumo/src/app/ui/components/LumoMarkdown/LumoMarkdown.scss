@@ -1,5 +1,22 @@
 @import '~@proton/styles/scss/lib';
 
+// Content visibility optimization - Safari-safe
+// Safari has known issues with content-visibility, so we use feature detection
+// Also exclude elements with overflow to avoid rendering issues
+@supports (content-visibility: auto) {
+	.content-visibility-auto {
+		content-visibility: auto;
+		contain-intrinsic-size: auto 100px;
+	}
+
+	// Remove content-visibility from elements with overflow (Safari/compatibility issue)
+	.markdown-table-wrapper,
+	.markdown-rendering {
+		content-visibility: unset;
+		contain-intrinsic-size: unset;
+	}
+}
+
 .markdown-rendering {
 	font-size: 0.875rem;
 	line-height: 1.5;
@@ -217,7 +234,6 @@
 	border-radius: 0.5rem;
 	border: 1px solid var(--border-weak);
 	scroll-behavior: smooth;
-	-webkit-overflow-scrolling: touch;
 	box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
 	background:
 		linear-gradient(90deg, var(--background-norm) 30%, rgb(255 255 255 / 0)),
