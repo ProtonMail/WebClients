@@ -142,6 +142,12 @@ const hasBookingRangesChanged = (currentRanges: BookingRange[] | null, initialRa
         return true;
     }
 
+    for (const id of currentRangeIds) {
+        if (!initialRangeIds.has(id)) {
+            return true;
+        }
+    }
+
     return false;
 };
 

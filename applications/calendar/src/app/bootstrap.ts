@@ -35,6 +35,7 @@ import noop from '@proton/utils/noop';
 
 import { embeddedDrawerAppInfos } from './helpers/drawer';
 import locales from './locales';
+import { internalBookingThunk } from './store/internalBooking/interalBookingSlice';
 import type { CalendarState } from './store/rootReducer';
 import { extendStore, setupStore } from './store/store';
 
@@ -152,6 +153,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             return Promise.all([
                 dispatch(addressesThunk()),
                 dispatch(calendarsThunk()),
+                dispatch(internalBookingThunk()),
                 dispatch(calendarSettingsThunk()),
             ]);
         };
