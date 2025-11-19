@@ -71,14 +71,14 @@ export const PageHeader = ({
         >
             <div className={clsx('flex items-center', showAppSwitcher ? 'gap-4' : 'gap-2')}>
                 <button
-                    className="interactive rounded-full hidden md:block p-2"
+                    className="logo-button rounded-full hidden md:block p-2"
                     onClick={() => history.push('/dashboard')}
                     aria-label={c('Alt').t`Go to dashboard`}
                 >
                     <img className="logo cursor-pointer " src={logo} alt="" />
                 </button>
                 <button
-                    className="interactive rounded-full block md:hidden p-1 flex items-center justify-center"
+                    className="logo-button interactive rounded-full block md:hidden p-1 flex items-center justify-center"
                     onClick={() => history.push('/dashboard')}
                     aria-label={c('Alt').t`Go to dashboard`}
                 >
