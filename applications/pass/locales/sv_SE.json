@@ -1145,6 +1145,9 @@
       "Secure link could not be opened.": [
         "Säker länk kunde inte öppnas."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Servrar är oåtkomliga. Prova låsa upp ${ PASS_SHORT_APP_NAME } om några minuter."
+      ],
       "Settings update failed": [
         "Misslyckades att uppdatera inställningar"
       ],
@@ -1231,6 +1234,9 @@
       ],
       "Wrong second password": [
         "Felaktigt andralösenord"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du är för närvarande offline. Återuppta anslutning för att låsa upp ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Din DNS är inte korrekt inställd. MX-posten vi erhåller är:"
