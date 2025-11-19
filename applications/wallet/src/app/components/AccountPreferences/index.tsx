@@ -41,7 +41,8 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
         onChangeLabel,
         updateWalletAccountLabel,
 
-        getXpub,
+        getConvertedXpub,
+        getDescriptor,
 
         deleteWalletAccount,
 
@@ -62,6 +63,7 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
     const [extendedPublicKeyModalState, setExtendedPublicKeyModalState, renderExtendedPublicKeyModalState] =
         useModalState();
     const [xpub, setXpub] = useState<string | undefined>(undefined);
+    const [descriptor, setDescriptor] = useState<string | undefined>(undefined);
 
     return (
         <InputFieldStackedGroup>
@@ -107,7 +109,8 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
                                     className="text-left flex flex-row items-center"
                                     disabled={isLoadingLabelUpdate}
                                     onClick={async () => {
-                                        setXpub(await getXpub());
+                                        setXpub(await getConvertedXpub());
+                                        setDescriptor(await getDescriptor());
                                         setExtendedPublicKeyModalState(true);
                                     }}
                                 >
@@ -168,10 +171,11 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
                 }}
             />
 
-            {renderExtendedPublicKeyModalState && xpub && (
+            {renderExtendedPublicKeyModalState && xpub && descriptor && (
                 <ExtendedPublicKeyModal
                     accountLabel={walletAccount.Label}
                     xpub={xpub}
+                    descriptor={descriptor}
                     index={index}
                     {...extendedPublicKeyModalState}
                 />
