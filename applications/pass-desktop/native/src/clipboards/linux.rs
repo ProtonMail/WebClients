@@ -14,7 +14,7 @@ impl ClipboardTrait for Clipboard {
         let value = text.to_owned();
         std::thread::spawn(move || -> Result<()> {
             let mut clipboard = arboard::Clipboard::new()?;
-            clipboard.set().exclude_from_history().wait().text(value)?;
+            clipboard.set().wait().text(value)?;
             Ok(())
         });
         Ok(())
