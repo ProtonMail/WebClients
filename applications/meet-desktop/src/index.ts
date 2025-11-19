@@ -73,7 +73,6 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 
     app.on("window-all-closed", () => {
         if (!isMac) {
-            mainLogger.info("All windows closed");
             app.quit();
         }
     });
@@ -84,7 +83,6 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 
     app.on("second-instance", (_ev, argv) => {
         mainLogger.info("Second instance called", argv);
-
         // Bring window to focus
         bringWindowToFront();
     });
@@ -125,9 +123,7 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
         }
     });
 
-    app.on("open-url", (_e: Event, url: string) => {
-        mainLogger.info("Open URL event", url);
-
+    app.on("open-url", (_e: Event) => {
         // Bring window to focus
         bringWindowToFront();
     });

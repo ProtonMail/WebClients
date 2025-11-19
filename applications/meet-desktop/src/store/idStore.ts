@@ -1,6 +1,5 @@
 import { createHash, randomUUID } from "node:crypto";
 import Store from "electron-store";
-import { mainLogger } from "../utils/log";
 import { z } from "zod";
 
 const store = new Store<{ appID: AppID }>();
@@ -32,7 +31,6 @@ export const generateAppID = async () => {
         distribution,
     };
 
-    mainLogger.info("AppID generated", appID);
     return appID;
 };
 

@@ -10,6 +10,7 @@ import {
     isGoogleOAuthAuthorizationURL,
     isHome,
     isHostAllowed,
+    isNavigationAllowed,
     isMeet,
     isUpgradeURL,
     isUpsellURL,
@@ -27,7 +28,7 @@ import {
     getViewURL,
     updateViewURL,
 } from "./viewManagement";
-import { mainLogger, viewLogger } from "../log";
+import { mainLogger, sanitizeUrlForLogging, viewLogger } from "../log";
 
 function isSafeUrl(
     handlerDetails: Electron.HandlerDetails | Electron.Event<Electron.WebContentsWillNavigateEventParams>,
@@ -56,7 +57,7 @@ export function handleWebContents(contents: WebContents) {
     };
 
     contents.on("did-navigate", async (_ev, url) => {
-        logger().info("did-navigate", url);
+        logger().info("did-navigate", sanitizeUrlForLogging(url));
         updateViewURL(contents, url);
 
         if (isHostAllowed(url)) {
@@ -102,11 +103,15 @@ export function handleWebContents(contents: WebContents) {
     });
 
     contents.on("did-navigate-in-page", (ev, url) => {
-        logger().info("did-navigate-in-page", url);
         updateViewURL(contents, url);
 
         if (!isCurrentContent()) {
             return;
+        }
+
+        if (!isNavigationAllowed(url)) {
+            shell.openExternal(url);
+            return ev.preventDefault();
         }
 
         if (!isHostAllowed(url)) {
@@ -128,9 +133,7 @@ export function handleWebContents(contents: WebContents) {
         return event.preventDefault();
     });
 
-    contents.on("did-fail-load", (_event, errorCode, validatedURL) => {
-        logger().error("did-fail-load", errorCode, validatedURL);
-
+    contents.on("did-fail-load", (_event, errorCode) => {
         if (!isCurrentContent()) {
             return;
         }
@@ -142,34 +145,41 @@ export function handleWebContents(contents: WebContents) {
     });
 
     contents.on("will-navigate", (details) => {
-        logger().info("will-navigate", details.url);
-
         if (!isSafeUrl(details)) {
             return details.preventDefault();
         }
 
-        // Open calendar URLs in external browser
-        // This catches navigation from allowed about:blank windows (e.g., from window.open())
-        if (isCalendar(details.url)) {
-            logger().info("opening calendar URL in external browser", details.url);
-            shell.openExternal(details.url);
-            details.preventDefault();
-
-            // Close the window if it's a popup (not one of our managed views)
+        const closeExtraWindow = () => {
             const viewName = getWebContentsViewName(contents);
             if (!viewName) {
                 const browserWindow = BrowserWindow.fromWebContents(contents);
                 if (browserWindow && !browserWindow.isDestroyed()) {
-                    logger().info("closing popup window after opening calendar URL externally");
                     browserWindow.close();
                 }
             }
+        };
+
+        if (isCalendar(details.url)) {
+            shell.openExternal(details.url);
+            details.preventDefault();
+
+            closeExtraWindow();
+
             return;
+        }
+
+        if (!isNavigationAllowed(details.url)) {
+            shell.openExternal(details.url);
+            details.preventDefault();
+
+            closeExtraWindow();
         }
 
         // Only redirect to a different browser view if the navigation is happening in
         // the visible web contents.
-        if (isCurrentContent()) {
+        const isCurrent = isCurrentContent();
+
+        if (isCurrent) {
             if (isAccount(details.url) && !isAccountAuthorize(details.url) && getCurrentView() !== getAccountView()) {
                 showView("account", details.url);
                 return details.preventDefault();
@@ -186,13 +196,10 @@ export function handleWebContents(contents: WebContents) {
 
     contents.setWindowOpenHandler((details) => {
         const { url } = details;
-        const logWindowOpen = (status: "allowed" | "denied", description: string, level: "debug" | "error" = "debug") =>
-            logger()[level](`Window open (${status}) ${description}`);
 
         // Handle about:blank - this is created by window.open() before navigation
         // We allow it, then the subsequent navigation will be caught by will-navigate
         if (url === "about:blank" || url === "") {
-            logWindowOpen("allowed", `blank window - will handle navigation ${url}`);
             return { action: "allow" };
         }
 
@@ -200,46 +207,37 @@ export function handleWebContents(contents: WebContents) {
             return { action: "deny" };
         }
 
+        if (!isNavigationAllowed(url)) {
+            shell.openExternal(url);
+            return { action: "deny" };
+        }
+
         // Open calendar URLs in external browser
         if (isCalendar(url)) {
-            logWindowOpen("denied", `calendar link in external browser ${url}`);
             shell.openExternal(url);
             return { action: "deny" };
         }
 
         if (isMeet(url)) {
-            logWindowOpen("denied", `meet link in meet view ${url}`);
             showView("meet", url);
             return { action: "deny" };
         }
 
         if (isAccount(url) && !isGoogleOAuthAuthorizationURL(url)) {
             if (isAccoutLite(url)) {
-                logWindowOpen("denied", `account lite in browser ${url}`);
                 shell.openExternal(url);
                 return { action: "deny" };
             }
 
             if (isUpsellURL(url)) {
-                logWindowOpen("denied", `upsell in browser ${url}`);
                 shell.openExternal(url);
                 return { action: "deny" };
             }
 
-            logWindowOpen("denied", `account link in account view ${url}`);
             showView("account", url);
             return { action: "deny" };
         }
 
-        if (isHostAllowed(url)) {
-            // We probably want to disable this case, this will only happen with proton URLs
-            // that are not calendar/mail/account domains and should be handled as a regular
-            // unknown link. We are keeping it enabled for now to detect error cases.
-            logWindowOpen("allowed", `host not caught by any electron view ${url}`, "error");
-            return { action: "allow" };
-        }
-
-        logWindowOpen("denied", `unknown link open in browser ${url}`);
         shell.openExternal(url);
         return { action: "deny" };
     });
