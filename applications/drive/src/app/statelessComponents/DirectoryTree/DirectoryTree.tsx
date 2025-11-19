@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { FileIcon, Icon, Radio, useErrorHandler } from '@proton/components';
+import { FileIcon, Radio, useErrorHandler } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 import orderBy from '@proton/utils/orderBy';
 
@@ -12,7 +13,7 @@ export interface DirectoryTreeItem {
     treeItemId: string;
     name: string;
     expandable: boolean;
-    type: 'folder' | string;
+    type: 'devices-root' | 'device' | 'shares-root' | 'folder' | string;
     children: Record<string, DirectoryTreeItem> | null;
 }
 
@@ -116,7 +117,7 @@ function DirectoryTreeBranch({
                 />
 
                 <div className="flex items-center gap-4 pl-6">
-                    <FileIcon mimeType={item.type === 'folder' ? 'Folder' : ''} />
+                    <TreeItemIcon type={item.type} />
 
                     {item.expandable && (
                         <button
@@ -152,4 +153,17 @@ function DirectoryTreeBranch({
             )}
         </li>
     );
+}
+
+function TreeItemIcon({ type }: { type: string }) {
+    if (type === 'devices-root' || type === 'device') {
+        return <Icon name="tv" />;
+    }
+    if (type === 'shares-root') {
+        return <Icon name="users" />;
+    }
+    if (type === 'folder') {
+        return <FileIcon mimeType={'Folder'} />;
+    }
+    return <Icon name="file" />;
 }
