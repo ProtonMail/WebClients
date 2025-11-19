@@ -3,16 +3,20 @@ import { Request } from "electron";
 import { CERT_PROTON_ME } from "../constants";
 import { isProdEnv } from "./isProdEnv";
 import { isHostAllowed } from "./urls/urlTests";
+import { mainLogger } from "./log";
 
 export const checkKeys = (request: Request) => {
-    if (isHostAllowed(request.hostname)) {
+    if (isHostAllowed(request.hostname) || request.hostname.endsWith(".proton.me")) {
         // We dont do any verification for dev and testing environments
         if (!isProdEnv()) {
             return 0;
         }
 
-        if (hasProtonMeCert(request)) return 0;
+        if (hasProtonMeCert(request)) {
+            return 0;
+        }
 
+        mainLogger.error("Certificate pinning failed", request.hostname);
         return -2;
     }
 

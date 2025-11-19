@@ -18,7 +18,7 @@ import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewManagement";
-import { NET_LOGGER_VIEW_PREFIX, sentryLogger } from "./log";
+import { NET_LOGGER_VIEW_PREFIX, sanitizeUrlForLogging, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
 import { getOSInfo } from "./log/getOSInfo";
 
@@ -120,7 +120,7 @@ export async function initializeSentry() {
                     mainWindow: {
                         isMinimized: getMainWindow().isMinimized(),
                         currentView: getCurrentViewID(),
-                        accountViewURL: getAccountView()?.webContents.getURL(),
+                        accountViewURL: sanitizeUrlForLogging(getAccountView()?.webContents.getURL() || ""),
                     },
                     osInfo: getOSInfo(),
                     appURL: getAppURL(),

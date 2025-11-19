@@ -185,6 +185,56 @@ export const isHostAllowed = (host: string) => {
     }
 };
 
+export const isNavigationAllowed = (urlString: string) => {
+    try {
+        const appURL = getAppURL();
+        if (!urlString.includes("://")) {
+            urlString = "https://" + urlString;
+        }
+
+        const finalURL = new URL(urlString);
+
+        if (finalURL.protocol !== "http:" && finalURL.protocol !== "https:") {
+            return false;
+        }
+
+        const meetUrl = new URL(appURL.meet);
+        // Allow all paths on meet domain
+        if (finalURL.hostname.toLowerCase() === meetUrl.hostname.toLowerCase()) {
+            return true;
+        }
+
+        // Allow specific paths on account domain
+        if (finalURL.hostname.toLowerCase() === new URL(appURL.account).hostname.toLowerCase()) {
+            const pathname = finalURL.pathname;
+
+            if (!pathname) {
+                return false;
+            }
+
+            // Allow /meet paths
+            if (pathname.startsWith("/meet")) {
+                return true;
+            }
+
+            // Allow authentication-related paths
+            const authPaths = ["/login", "/authorize", "/switch", "/sso/"];
+            if (authPaths.some((path) => pathname.startsWith(path))) {
+                return true;
+            }
+
+            // Allow user session paths (/u/0, /u/1, etc.)
+            if (/^\/u\/\d+/.test(pathname)) {
+                return true;
+            }
+        }
+
+        return false;
+    } catch {
+        return false;
+    }
+};
+
 export const isHomePage = (url: string) => {
     return isHome(url);
 };
