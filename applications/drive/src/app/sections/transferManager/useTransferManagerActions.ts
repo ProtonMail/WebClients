@@ -12,7 +12,7 @@ import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
-import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
+import { BaseTransferStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import { uploadManager } from '../../zustand/upload/uploadManager';
 import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 import type { TransferManagerEntry } from './useTransferManagerState';
@@ -88,7 +88,9 @@ export const useTransferManagerActions = () => {
             // needs to be async because that's required by ConfirmModal.onSubmit
             onSubmit: async () => {
                 for (const entry of entries) {
-                    cancelTransfer(entry);
+                    if (entry.status === BaseTransferStatus.InProgress || entry.status === BaseTransferStatus.Pending) {
+                        cancelTransfer(entry);
+                    }
                 }
             },
         });
