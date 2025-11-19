@@ -3,8 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { apiStatusReducer } from '@proton/account/apiStatus';
 import { featuresReducer } from '@proton/features/reducer';
 
-// TODO do we need to add listeners here?
-export const setupStore = () => {
+export const setupGuestBookingStore = () => {
     return configureStore({
         devTools: process.env.NODE_ENV !== 'production',
         reducer: {
@@ -22,6 +21,6 @@ export const setupStore = () => {
     });
 };
 
-export type BookingsStore = ReturnType<typeof setupStore>;
+export type BookingsStore = ReturnType<typeof setupGuestBookingStore>;
 export type BookingsDispatch = BookingsStore['dispatch'];
 export type BookingsStoreState = ReturnType<BookingsStore['getState']>;
