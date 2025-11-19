@@ -25,6 +25,12 @@
       ]
     },
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } voor Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } voor iOS"
+      ],
       "Accept": [
         "Accepteren"
       ],
@@ -76,11 +82,17 @@
       "Advanced options": [
         "Geavanceerde instellingen"
       ],
+      "Allow access": [
+        "Toegang verlenen"
+      ],
       "Apply lifetime coupon code": [
         "Pas de lifetime kortingscode toe"
       ],
       "Authenticate": [
         "Authenticeren"
+      ],
+      "Auto-type": [
+        "Automatisch typen"
       ],
       "Back": [
         "Terug"
@@ -250,6 +262,9 @@
       "Dismiss": [
         "Negeren"
       ],
+      "Do not show again": [
+        "Niet meer weergeven"
+      ],
       "Download this CSV template": [
         "Download dit CSV-sjabloon"
       ],
@@ -297,6 +312,9 @@
       ],
       "Get ${ PASS_APP_NAME }": [
         "Kies ${ PASS_APP_NAME }"
+      ],
+      "Get mobile and desktop apps": [
+        "Download mobiele en desktop apps"
       ],
       "Get mobile apps": [
         "Download mobiele apps"
@@ -601,9 +619,6 @@
       "Skip": [
         "Overslaan"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Iemand heeft een item met u gedeeld op ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Sorteer kluisitems"
       ],
@@ -747,6 +762,11 @@
         "Uitvouwen"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Wilt u dat uw klembord automatisch wordt gewist na ${ timeoutDurationHumanReadable }?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } is beschikbaar met een betaald abonnement. Upgrade om direct toegang te krijgen."
@@ -820,6 +840,9 @@
       ],
       "These items remain at risk": [
         "Deze items blijven in gevaar"
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Deze kluizen zullen niet toegankelijk zijn en hun inhoud zal niet beschikbaar zijn voor Zoeken of Automatisch aanvullen."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Dit account is kwetsbaar, bezoek de service en wijzig uw wachtwoord."
@@ -1157,6 +1180,9 @@
       "Secure link could not be opened.": [
         "Beveiligde link kon niet worden geopend."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "De servers zijn onbereikbaar. Probeer ${ PASS_SHORT_APP_NAME } over enkele minuten te ontgrendelen."
+      ],
       "Settings update failed": [
         "Bijwerken instellingen mislukt"
       ],
@@ -1183,9 +1209,6 @@
       ],
       "Trashing item failed": [
         "Item verwijderen mislukt"
-      ],
-      "Try reaching out to the link owner.": [
-        "Probeer uit te reiken aan de eigenaar van de koppeling."
       ],
       "Unable to generate an OTP code for this item": [
         "Kan geen OTP-code genereren voor dit item"
@@ -1243,6 +1266,9 @@
       ],
       "Wrong second password": [
         "Foutief tweede wachtwoord"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "U bent momenteel offline. Hervat de verbinding om ${ PASS_SHORT_APP_NAME } te ontgrendelen."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Uw DNS is niet correct ingesteld. Het MX-record dat we krijgen is:"
@@ -1588,6 +1614,9 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Gekopieerd naar klembord (verloopt over ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Kortingscode succesvol toegepast!"
       ],
@@ -1840,6 +1869,9 @@
       "Item successfully unpinned": [
         "Item succesvol losgemaakt"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "U kunt een sneltoets alleen gebruiken wanneer u zich in de desktop-app van ${ PASS_APP_NAME } bevindt en een inlogitem bekijkt."
+      ],
       "Latest breach on ${ formattedDate }": [
         "Laatste inbreuk op ${ formattedDate }"
       ],
@@ -1939,6 +1971,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Open uw Safari-instellingen voor de extensie en controleer of site toelatingen zijn ingeschakeld voor ${ BRAND_NAME }-domeinen"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
@@ -2094,8 +2129,17 @@
       "Please follow the steps below to set up your domain.": [
         "Volg onderstaande stappen om uw domein in te stellen."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Houd ${ PASS_APP_NAME } open, zodat het klembord automatisch gewist kan worden."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Houd dit venster open terwijl uw gegevens worden geïmporteerd. Dit proces kan enkele minuten duren."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Houd uw browser open, zodat het klembord automatisch gewist kan worden."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Zorg ervoor dat het eerder actieve venster de plek is waar u automatisch wilt typen en dat uw cursor op het inlogveld was gericht."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Let op: eenmaal verwijderd, de alias kan niet worden hersteld. Misschien wilt u de alias in plaats daarvan uitschakelen?"
@@ -2174,6 +2218,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Geselecteerde items succesvol hersteld uit de prullenbak"
+      ],
+      "Servers are unreachable": [
+        "Servers zijn onbereikbaar"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
@@ -2453,6 +2500,12 @@
       "You may close this tab.": [
         "U kunt dit tabblad nu sluiten."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "U moet mogelijk een toestemmingsmelding accepteren en de toepassing herstarten, afhankelijk van uw systeem."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "U moet mogelijk toegangsrechten verlenen aan ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "U heeft een kluis nodig met editeer toelatingen om items te kunnen importeren"
       ],
@@ -2497,6 +2550,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2672,6 +2739,9 @@
       ],
       "Auto-lock after": [
         "Automatisch vergrendelen na"
+      ],
+      "Auto-type in previous window": [
+        "Automatisch typen in vorig venster"
       ],
       "Backup password": [
         "Back-up wachtwoord"
@@ -2849,6 +2919,9 @@
       ],
       "Email": [
         "E-mailadres"
+      ],
+      "EMAIL": [
+        "E-MAIL"
       ],
       "Email (alias)": [
         "E-mail (alias)"
@@ -3066,6 +3139,9 @@
       "Key type": [
         "Sleuteltype"
       ],
+      "Keyboard shortcut:": [
+        "Sneltoets:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
       ],
@@ -3275,6 +3351,9 @@
       ],
       "Password": [
         "Wachtwoord"
+      ],
+      "PASSWORD": [
+        "wachtwoord"
       ],
       "Password history": [
         "Wachtwoordgeschiedenis"
@@ -3534,9 +3613,6 @@
       "Theme": [
         "Thema"
       ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Dit item is toegankelijk tot ${ date } of totdat de weergavelimiet is bereikt."
-      ],
       "Tier/Level": [
         "Rang/Niveau"
       ],
@@ -3617,6 +3693,9 @@
       ],
       "Useful for permanent sharing": [
         "Nuttig voor permanent delen"
+      ],
+      "USERNAME": [
+        "Gebruikersnaam"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -3904,6 +3983,11 @@
       ],
       "${ price }/month": [
         "${ price }/maand"
+      ]
+    },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Toestemming van uw browser is vereist."
       ]
     },
     "Placeholder": {
@@ -4342,6 +4426,9 @@
       "Get Started": [
         "Aan de slag"
       ],
+      "Hidden vaults": [
+        "Verborgen kluizen"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -4476,6 +4563,9 @@
       "Pending access to the shared data": [
         "Toegang tot gedeelde data hangende"
       ],
+      "Perform autotype?": [
+        "Wilt u autotype uitvoeren?"
+      ],
       "Permanently remove all items?": [
         "Alle items permanent verwijderen?"
       ],
@@ -4603,6 +4693,9 @@
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"
+      ],
+      "Visible vaults": [
+        "Zichtbare kluizen"
       ],
       "Want to learn more?": [
         "Wilt u meer weten?"
@@ -4788,8 +4881,14 @@
       "Extra password should have at least 8 characters": [
         "Extra wachtwoord moet ten minste 8 tekens bevatten"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatisch invullen is mislukt. Zorg ervoor dat ${ PASS_APP_NAME } de nodige machtigingen heeft en probeer het opnieuw (${ error })."
+      ],
       "Failed to load breaches.": [
         "Kon inbreuken niet laden."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Verleen klembordtoegang om het automatisch wissen van gekopieerde wachtwoorden en gegevens in te schakelen."
       ],
       "Identity could not be confirmed": [
         "Identiteit kon niet worden bevestigd"

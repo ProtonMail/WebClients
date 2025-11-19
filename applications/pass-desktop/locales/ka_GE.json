@@ -622,9 +622,6 @@
       "Skip": [
         "გამოტოვება"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "ვიღაცამ გაგიზიარათ ელემენტი ${ PASS_APP_NAME }-ზე."
-      ],
       "Sort vault items": [
         "საცავის ელემენტების დალაგება"
       ],
@@ -1186,9 +1183,6 @@
       ],
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
-      ],
-      "Try reaching out to the link owner.": [
-        "სცადეთ, ბმულის ავტორს დაუკავშირდეთ."
       ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
@@ -2180,6 +2174,9 @@
       ],
       "Selected items successfully restored from trash": [
         "მონიშნული ელემენტები წარმატებით იქნა აღდგენილი ნაგვის ყუთიდან"
+      ],
+      "Servers are unreachable": [
+        "სერვერები ხელმიუწვდომელია"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
@@ -3544,9 +3541,6 @@
       ],
       "Theme": [
         "თემა"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "ეს ელემენტი ხელმისაწვდომია ${ date }-მდე, ან, სანამ, ნახვების ლიმიტი არ მიიღწევა."
       ],
       "Tier/Level": [
         "დონე"

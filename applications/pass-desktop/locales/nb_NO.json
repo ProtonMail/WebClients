@@ -622,9 +622,6 @@
       "Skip": [
         "Hopp over"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Noen har delt et element med deg på ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Sorter hvelvelementer"
       ],
@@ -1186,6 +1183,9 @@
       "Secure link could not be opened.": [
         "Sikker kobling kunne ikke åpnes."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Tjenerne er utilgjengelige. Prøv å låse opp ${ PASS_SHORT_APP_NAME } om noen få minutter."
+      ],
       "Settings update failed": [
         "Oppdatering av innstillinger mislyktes"
       ],
@@ -1212,9 +1212,6 @@
       ],
       "Trashing item failed": [
         "Sletting av element til papirkurv mislyktes"
-      ],
-      "Try reaching out to the link owner.": [
-        "Prøv å kontakte eieren av koblingen."
       ],
       "Unable to generate an OTP code for this item": [
         "Ikke i stand tl å generere en OTP-kode for dette elementet."
@@ -1272,6 +1269,9 @@
       ],
       "Wrong second password": [
         "Feil andre passord"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du er frakoblet. Gjenoppta tilkoblingen for å låse opp ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS-en din er ikke riktig angitt. MX-posten vi får er:"
@@ -2221,6 +2221,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Valgte elementer er gjenopprettet fra papirkurven"
+      ],
+      "Servers are unreachable": [
+        "Tjenerne er utilgjengelige"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
@@ -3612,9 +3615,6 @@
       ],
       "Theme": [
         "Tema"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Dette elementet er tilgjengelig til ${ date } eller til visningsgrensen er nådd."
       ],
       "Tier/Level": [
         "Nivå"
