@@ -2,12 +2,13 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import { useLocalState } from '@proton/components/index';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
 import { UpsellBookings } from '../../bookings/UpsellBookings';
@@ -25,7 +26,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
     const [displayView, toggleView] = useLocalState(true, `${user.ID || 'item'}-display-views`);
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
-    const [writeableCalendars] = useWriteableCalendars();
+    const [calendars] = useCalendars();
 
     const [bookings] = useInternalBooking();
 
@@ -64,7 +65,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                 />
                 {displayView &&
                     bookings?.bookingPages.map((page) => (
-                        <BookingItem key={page.id} page={page} writeableCalendars={writeableCalendars} />
+                        <BookingItem key={page.id} page={page} calendars={getVisualCalendars(calendars || [])} />
                     ))}
             </SidebarList>
 
