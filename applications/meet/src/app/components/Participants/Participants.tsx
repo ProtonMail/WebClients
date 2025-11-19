@@ -37,7 +37,8 @@ export const Participants = () => {
 
     const activeSpeakers = useDebouncedActiveSpeakers();
 
-    const { participantNameMap, participantsWithDisabledVideos, setParticipantsWithDisabledVideos } = useMeetContext();
+    const { participantNameMap, participantsWithDisabledVideos, setParticipantsWithDisabledVideos, maxParticipants } =
+        useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -53,6 +54,8 @@ export const Participants = () => {
     if (!sideBarState[MeetingSideBars.Participants]) {
         return null;
     }
+
+    const participantsCount = `${participants.length < 10 ? 0 : ''}${participants.length}`;
 
     return (
         <SideBar
@@ -70,8 +73,15 @@ export const Participants = () => {
                         />
                     ) : (
                         <div className="text-semibold flex items-center">
-                            <div className="text-3xl">{c('Title').t`Participants`}</div>
-                            <div className="text-semibold text-3xl">({participants.length})</div>
+                            <div className="flex items-baseline gap-1">
+                                <span className="text-semibold text-2xl">{c('Title').t`Participants`}</span>
+                                <span className="text-semibold text-sm color-hint">
+                                    {maxParticipants
+                                        ? `(${participantsCount}/${maxParticipants})`
+                                        : `(${participantsCount})`}
+                                </span>
+                            </div>
+
                             <Button
                                 className="search-open-button p-0 ml-2 flex items-center justify-center"
                                 shape="ghost"
