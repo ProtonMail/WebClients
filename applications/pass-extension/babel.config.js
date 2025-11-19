@@ -11,6 +11,7 @@ const presetEnvOpts = {
     corejs: require('core-js/package.json').version,
     useBuiltIns: 'usage',
     debug: false,
+    shippedProposals: true /* needed for typed-array base64 and hex functions */,
 };
 
 module.exports = {

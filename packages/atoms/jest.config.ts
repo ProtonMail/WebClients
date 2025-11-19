@@ -1,3 +1,5 @@
+import { createRequire } from 'module';
+
 export default {
     setupFilesAfterEnv: ['./jest.setup.ts'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
@@ -20,6 +22,11 @@ export default {
                         syntax: 'typescript',
                         tsx: true,
                     },
+                },
+                env: {
+                    /* polyfill typed-array base64 and hex functions */ mode: 'usage',
+                    shippedProposals: true,
+                    coreJs: createRequire(import.meta.url)('core-js/package.json').version,
                 },
             },
         ],

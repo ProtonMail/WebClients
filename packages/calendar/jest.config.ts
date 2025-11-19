@@ -1,3 +1,4 @@
+import { createRequire } from 'module';
 import type { JestConfigWithTsJest } from 'ts-jest';
 
 const jestConfig: JestConfigWithTsJest = {
@@ -20,6 +21,11 @@ const jestConfig: JestConfigWithTsJest = {
                         syntax: 'typescript',
                         tsx: true,
                     },
+                },
+                env: {
+                    /* polyfill typed-array base64 and hex functions */ mode: 'usage',
+                    shippedProposals: true,
+                    coreJs: createRequire(import.meta.url)('core-js/package.json').version,
                 },
             },
         ],
