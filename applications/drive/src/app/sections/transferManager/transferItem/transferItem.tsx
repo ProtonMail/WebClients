@@ -1,11 +1,19 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Icon } from '@proton/components/index';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { BaseTransferStatus, DownloadStatus } from '../../../zustand/download/downloadManager.store';
+import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
+import {
+    BaseTransferStatus,
+    DownloadStatus,
+    useDownloadManagerStore,
+} from '../../../zustand/download/downloadManager.store';
 import { UploadStatus } from '../../../zustand/upload/uploadQueue.store';
 import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
@@ -63,6 +71,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
     const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
     const { cancelTransfer, retryTransfer, goToLocation } = useTransferManagerActions();
+    const [containsDocumentModal, showModal] = useDownloadContainsDocumentsModal();
     const onlyShowTransferredBytes = !totalSize;
     const transferredTotal = onlyShowTransferredBytes
         ? `${shortHumanSize(entry.transferredBytes)}`
@@ -74,6 +83,37 @@ export const TransferItem = ({ entry, onShare }: Props) => {
         BaseTransferStatus.Failed,
         UploadStatus.Skipped,
     ].includes(entry.status as BaseTransferStatus);
+
+    const { getDownloadItem, updateDownloadItem } = useDownloadManagerStore(
+        useShallow((state) => {
+            return {
+                getDownloadItem: state.getQueueItem,
+                updateDownloadItem: state.updateDownloadItem,
+            };
+        })
+    );
+
+    useEffect(() => {
+        const processItem = async () => {
+            const item = getDownloadItem(entry.id);
+
+            if (item?.unsupportedFileDetected === 'detected') {
+                showModal({
+                    onSubmit: () => {
+                        updateDownloadItem(item.downloadId, { unsupportedFileDetected: 'approved' });
+                    },
+                    onCancel: () => {
+                        cancelTransfer(entry);
+                        updateDownloadItem(item.downloadId, { unsupportedFileDetected: 'rejected' });
+                    },
+                });
+            }
+        };
+
+        void processItem();
+
+        // showModal causes infinite rerender
+    }, [entry, getDownloadItem, updateDownloadItem, cancelTransfer]);
 
     return (
         <div
@@ -151,6 +191,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                     </Button>
                 )}
             </div>
+            {containsDocumentModal}
         </div>
     );
 };

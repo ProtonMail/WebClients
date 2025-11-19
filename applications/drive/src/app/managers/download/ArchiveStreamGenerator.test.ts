@@ -43,7 +43,8 @@ const schedulerTracker = trackInstances(() => {
             tasks.push(task);
             return `task-${tasks.length}`;
         }),
-        cancelDownload: jest.fn(),
+        cancelTask: jest.fn(),
+        cancelDownloadsById: jest.fn(),
         clearDownloads: jest.fn(),
         generateTaskId: jest.fn(() => `task-${++counter}`),
         updateDownloadProgress: jest.fn(),
@@ -101,7 +102,8 @@ describe('ArchiveStreamGenerator', () => {
             progressSpy,
             schedulerInstance,
             abortController.signal,
-            parentPaths
+            parentPaths,
+            'download-id'
         );
 
         await flushAsync();
@@ -158,7 +160,8 @@ describe('ArchiveStreamGenerator', () => {
             progressSpy,
             schedulerInstance,
             new AbortController().signal,
-            new Map<string, string[]>([['folder-1', []]])
+            new Map<string, string[]>([['folder-1', [] as string[]]]),
+            'download-id'
         );
 
         await flushAsync();
@@ -176,5 +179,47 @@ describe('ArchiveStreamGenerator', () => {
         const finalIteration = await generatorInstance.generator.next();
         expect(finalIteration.done).toBe(true);
         expect(progressSpy).not.toHaveBeenCalled();
+    });
+
+    it('should resolve waitForFirstItem once first item is scheduled', async () => {
+        const abortController = new AbortController();
+        const schedulerInstance = schedulerTracker.Mock();
+        const downloadController = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(async () => undefined),
+        };
+
+        const downloadToStream = jest.fn(
+            (_writable: unknown, _onProgress: (bytes: number) => void) => downloadController
+        );
+        getDriveMock.mockImplementation(() => ({
+            getFileDownloader: jest.fn(async () => ({
+                downloadToStream,
+            })),
+        }));
+
+        const node = createMockNodeEntity({ uid: 'file-wait', name: 'wait.txt' });
+        async function* entries() {
+            yield node;
+        }
+
+        const generatorInstance = new ArchiveStreamGenerator(
+            entries(),
+            jest.fn(),
+            schedulerInstance,
+            abortController.signal,
+            new Map<string, string[]>([['file-wait', [] as string[]]]),
+            'download-id'
+        );
+
+        await flushAsync();
+        const waitPromise = generatorInstance.waitForFirstItem();
+
+        const task = schedulerInstance._tasks[0];
+        await task.start();
+        await flushAsync();
+
+        await expect(waitPromise).resolves.toBeUndefined();
     });
 });
