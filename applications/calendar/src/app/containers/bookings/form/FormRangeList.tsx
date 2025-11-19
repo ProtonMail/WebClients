@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, Label, useNotifications } from '@proton/components/index';
-import { addDays, isNextDay } from '@proton/shared/lib/date-fns-utc';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
 import useFlag from '@proton/unleash/useFlag';
 
 import { fromUrlParams } from '../../calendar/getUrlHelper';
@@ -90,7 +90,7 @@ export const FormRangeList = () => {
         const newStart = addHours(lastBookingOfDay.end, 1);
         const newEnd = addMinutes(newStart, formData.duration);
 
-        if (isNextDay(lastBookingOfDay.start, newStart)) {
+        if (!isSameDay(lastBookingOfDay.start, newStart)) {
             createNotification({ text: c('Info').t`Cannot create booking range across days` });
             return;
         }
