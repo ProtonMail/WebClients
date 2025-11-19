@@ -1444,6 +1444,9 @@
       "Submit": [
         "Versturen"
       ],
+      "Subscribe now": [
+        "Abonneer nu"
+      ],
       "Switch or add account": [
         "Account toevoegen of wisselen"
       ],
@@ -7563,6 +7566,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
       ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Houd uw inlog- en kredietkaartgegevens veilig, maar altijd bij de hand door ze toe te voegen aan ${ PASS_APP_NAME }. Het is gratis, en inbegrepen bij uw ${ BRAND_NAME }-account."
+      ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Houd uw mailbox netjes door de prullenbak en spam die ruim 30 dagen bestaat automatisch te wissen."
       ],
@@ -9946,6 +9952,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Video conference": [
+        "Videoconferentie"
       ],
       "Vulnerable": [
         "Kwetsbaar"
@@ -12781,11 +12790,17 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per doorverwijzing"
       ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Verdien tot ${ maxRewardAmount } aan tegoed. U ontvangt ${ referrerRewardAmount } wanneer de persoon die u uitnodigt zich abonneert op een ${ BRAND_NAME } abonnement."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Geniet gratis van **${ planTitle }** tot **${ textDate }**."
       ],
       "Friend joined": [
         "Vriend lid geworden",
@@ -12801,6 +12816,9 @@
       "Invited friends": [
         "Uitgenodigde vrienden"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Laatste kans om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
       "More sharing options": [
         "Meer opties om te delen"
       ],
@@ -12815,6 +12833,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
+      "your subscription": [
+        "uw abonnement"
       ]
     },
     "Remaining days before the message expire": {
