@@ -958,6 +958,45 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Add a date": [
+        "날짜 추가"
+      ],
+      "Close sidebar": [
+        "사이드바 닫기"
+      ],
+      "Confirm booking": [
+        "예약 확인"
+      ],
+      "Copy booking page link": [
+        "예약 페이지 링크 복사"
+      ],
+      "Copy link and close": [
+        "링크 복사 및 닫기"
+      ],
+      "Delete booking page": [
+        "예약 페이지 삭제"
+      ],
+      "Edit booking page": [
+        "예약 페이지 편집"
+      ],
+      "Go to the next available appointment": [
+        "다음 빈 약속으로 이동하기"
+      ],
+      "Remove the booking range": [
+        "예약 범위 삭제"
+      ],
+      "See previous availability": [
+        "기존 가용성 확인"
+      ],
+      "See upcoming availability": [
+        "예약 가능 여부 확인"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "${ timeString }에 ${ dateHeaderLongString } 선택"
+      ],
+      "Split current booking range": [
+        "현재 예약 기간 분할"
       ]
     },
     "action": {
@@ -1581,6 +1620,9 @@
       ],
       "Website access problem": [
         "웹사이트 접근 문제"
+      ],
+      "Authenticator problem": [
+        "인증기 문제"
       ]
     },
     "Button": {
@@ -1911,6 +1953,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "고속 채팅 및 고급 AI 기능"
+      ],
+      "Advanced account and network security in one plan": [
+        "하나의 플랜에서 누리는 고급 계정 및 네트워크 보안"
       ]
     },
     "colon": {
@@ -3178,6 +3223,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "곧 세부사항이 담긴 보안 이메일이 발송됩니다."
       ]
     },
     "description": {
@@ -3995,11 +4043,20 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Content verification failed": [
+        "콘텐츠 확인 실패"
+      ],
+      "No booking page data received": [
+        "예약 페이지 데이터를 수신할 수 없음"
       ]
     },
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
         "처음에 연결한 동일한 Gmail 주소로 로그인하세요."
+      ],
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 이미 전달되는 Gmail 주소로 로그인해 주세요."
       ]
     },
     "Error accepting calendar invitation": {
@@ -6302,6 +6359,63 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } 화상 통화"
+      ],
+      "Appointment duration": [
+        "일정 기간"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "이 예약 페이지를 정말 삭제하시겠어요?"
+      ],
+      "Booking already exists.": [
+        "예약이 이미 존재합니다."
+      ],
+      "Booking cannot be added in the past.": [
+        "과거 시점으로 예약을 추가할 수 없습니다."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "예약이 기존 예약과 중복됩니다."
+      ],
+      "Booking page deleted": [
+        "예약 페이지가 삭제되었습니다"
+      ],
+      "Cannot create booking range across days": [
+        "여러 날에 걸쳐 예약 범위를 생성할 수 없습니다."
+      ],
+      "Cannot create booking range in the past": [
+        "과거로 예약 범위를 설정할 수 없습니다"
+      ],
+      "Host": [
+        "호스트"
+      ],
+      "Location": [
+        "위치"
+      ],
+      "Manange booking page": [
+        "예약 페이지 관리"
+      ],
+      "No appointments available this week": [
+        "이번 주에 예약 가능한 일정 없음"
+      ],
+      "Powered by ${ protonButton }": [
+        "Powered by ${ protonButton }"
+      ],
+      "Previously booked events won't be deleted.": [
+        "기존에 예약된 이벤트는 삭제되지 않습니다."
+      ],
+      "Privacy by default": [
+        "Privacy by default"
+      ],
+      "Saving event": [
+        "이벤트를 저장하는 중"
+      ],
+      "When are you free?": [
+        "언제 시간이 괜찮으신가요?"
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "한 페이지에 ${ MAX_BOOKING_SLOTS }개 이상의 예약 슬롯이 포함될 수 없습니다."
       ]
     },
     "info": {
@@ -6984,6 +7098,9 @@
       ],
       "Zoom meeting": [
         "줌 미팅"
+      ],
+      "Full name": [
+        "전체 이름"
       ]
     },
     "Label for contact group color": {
@@ -7137,6 +7254,12 @@
       ],
       "What’s this?": [
         "복구 관련 정보란?"
+      ],
+      "Booking pages": [
+        "예약 페이지"
+      ],
+      "Reactivate subscription": [
+        "구독 재활성화"
       ]
     },
     "Link label (optional)": {
@@ -7948,6 +8071,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "기존 ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 혜택"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "최대 ${ n }명의 사용자와 금고 공유"
       ]
     },
     "new_plans: feature highlight": {
@@ -9326,6 +9455,12 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Email for booking confirmation": [
+        "예약 확인 이메일"
+      ],
+      "Name of attendee": [
+        "참여자 이름"
       ]
     },
     "Placeholder for contact group name": {
@@ -9487,6 +9622,9 @@
       ],
       "your subscription": [
         "내 구독"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "해당 날짜 이후에는 회원님의 계정이 **${ BRAND_NAME } 무료 플랜**으로 다운그레이드됩니다. 마음이 바뀌신다면, 프리미엄 기능을 계속 이용하기 위해 **구독을 재활성화**할 수 있습니다."
       ]
     },
     "Reload event button tooltip": {
@@ -10202,6 +10340,12 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "우선 지원과 무제한 로그인 및 노트, 무제한 hide-my-email 별칭, 20개 금고를 잃게 됩니다."
+      ],
+      "${ app } storage used": [
+        "${ app } 저장공간 사용됨"
+      ],
+      "Storage used": [
+        "저장공간 사용됨"
       ]
     },
     "Subscribe to calendar modal": {
@@ -11650,6 +11794,21 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Appointment details": [
+        "일정 세부사항"
+      ],
+      "Choose a time": [
+        "시간을 선택하세요"
+      ],
+      "Delete booking page?": [
+        "예약 페이지를 삭제합니까?"
+      ],
+      "Host": [
+        "호스트"
+      ],
+      "Your booking is confirmed": [
+        "회원님의 예약이 확인되었습니다."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12179,6 +12338,44 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount }개의 추가 항목이 표시되지 않습니다"
+      ]
+    },
+    "Form": {
+      "Confirm your booking": [
+        "내 예약 확인"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "예약 기간 날짜"
+      ],
+      "End time of the booking range": [
+        "예약 기간의 종료 시간"
+      ],
+      "Start time of the booking range": [
+        "예약 기간의 시작 시간"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "계속 진행하겠습니까?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } 플랜의 수정을 선택시, 일부 기능에 대한 접근을 잃을 수 있습니다."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } 유지"
+      ],
+      "Yes, I'm sure": [
+        "네, 확실합니다."
+      ],
+      "Your plan includes this feature already.": [
+        "회원님의 플랜에 이 기능이 이미 포함되어 있습니다."
       ]
     }
   }

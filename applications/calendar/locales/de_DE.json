@@ -1001,6 +1001,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a free account": [
+        "Kostenloses Konto erstellen"
       ]
     },
     "action": {
@@ -1638,6 +1641,9 @@
       ],
       "Website access problem": [
         "Zugriffsproblem auf eine Website"
+      ],
+      "Authenticator problem": [
+        "Authenticator-Problem"
       ]
     },
     "Button": {
@@ -4086,6 +4092,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "You cannot enter the organizer email": [
+        "Du kannst die E-Mail-Adresse des Organisators nicht eingeben."
       ]
     },
     "error": {
@@ -4638,6 +4647,9 @@
     "Form": {
       "Your contact info": [
         "Deine Kontaktdaten"
+      ],
+      "Confirm your booking": [
+        "Deine Buchung bestätigen"
       ]
     },
     "Google Meet": {
@@ -6502,6 +6514,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Möchtest du diese Buchungsseite wirklich löschen?"
+      ],
+      "Booking page deleted": [
+        "Buchungsseite gelöscht"
+      ],
+      "Cannot create booking range in the past": [
+        "Du kannst keinen Buchungszeitraum in der Vergangenheit erstellen."
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Personen, die Zeit mit dir buchen, werden ${ selectedCalendar.Email } als deine Kontaktadresse sehen."
+      ],
+      "Powered by": [
+        "Unterstützt von"
+      ],
+      "Previously booked events won't be deleted.": [
+        "Zuvor gebuchte Termine werden nicht gelöscht."
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Teile diese Seite, damit andere Termine in deinem Kalender buchen können. Du findest und bearbeitest sie in der Seitenleiste unter Buchungsseiten."
+      ],
+      "Take control of your digital life": [
+        "Die Kontrolle über dein digitales Leben übernehmen"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Diese Buchung wurde über ${ CALENDAR_APP_NAME } vorgenommen, einem Teil der datenschutzfreundlichen Produktpalette von ${ BRAND_NAME }."
+      ],
+      "What do you want to call this booking page?": [
+        "Wie möchtest du diese Buchungsseite nennen?"
       ]
     },
     "info": {
@@ -7190,6 +7232,15 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Full name": [
+        "Vollständiger Name"
+      ],
+      "Repeat weekly": [
+        "Wöchentlich wiederholen"
+      ],
+      "Unavailable": [
+        "Nicht verfügbar"
       ]
     },
     "label": {
@@ -7201,6 +7252,12 @@
       ],
       "Start time of the booking range": [
         "Startzeit des Buchungszeitraums"
+      ],
+      "How long should an appointment last?": [
+        "Wie lange sollte ein Termin dauern?"
+      ],
+      "What should people know before booking?": [
+        "Was sollten die Personen vor dem Buchen wissen?"
       ]
     },
     "Label for contact group color": {
@@ -9640,6 +9697,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Email for booking confirmation": [
+        "E-Mail zur Buchungsbestätigung"
+      ],
+      "Name of attendee": [
+        "Name des Teilnehmers"
       ]
     },
     "Placeholder for contact group name": {
@@ -12039,6 +12102,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Delete booking page?": [
+        "Buchungsseite löschen?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

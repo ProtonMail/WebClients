@@ -988,6 +988,30 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Copy booking page link": [
+        "Kopírovať odkaz na stránku rezervácie"
+      ],
+      "Create a free account": [
+        "Vytvorte si bezplatný účet"
+      ],
+      "Delete booking page": [
+        "Vymazať stránku rezervácií"
+      ],
+      "Edit booking page": [
+        "Upraviť stránku rezervácií"
+      ],
+      "Go to the next available appointment": [
+        "Prejsť na ďalší dostupný termín"
+      ],
+      "See previous availability": [
+        "Zobraziť predchádzajúcu dostupnosť"
+      ],
+      "See upcoming availability": [
+        "Pozrite si najbližšiu dostupnosť"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Vybrať ${ dateHeaderLongString } o ${ timeString }"
       ]
     },
     "action": {
@@ -1643,6 +1667,9 @@
       ],
       "Website access problem": [
         "Problém s prístupom k stránke"
+      ],
+      "Authenticator problem": [
+        "Problém s overovačom"
       ]
     },
     "Button": {
@@ -1988,6 +2015,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Vysokorýchlostné chaty a pokročilé funkcie AI"
+      ],
+      "Advanced account and network security in one plan": [
+        "Pokročilé zabezpečenie účtu a siete v jednom pláne"
       ]
     },
     "colon": {
@@ -4132,11 +4162,17 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "You cannot enter the organizer email": [
+        "Nemôžete zadať email organizátora"
       ]
     },
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
         "Prihláste sa pomocou tej istej Gmail adresy, ktorú ste použili pri prvom prihlásení, prosím."
+      ],
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Prihláste sa , prosím, pomocou Gmailovej adresy, ktorá je už presmerovaná na ${ MAIL_APP_NAME }."
       ]
     },
     "Error accepting calendar invitation": {
@@ -4699,6 +4735,9 @@
     "Form": {
       "Your contact info": [
         "Vaše kontaktné údaje"
+      ],
+      "Confirm your booking": [
+        "Potvrďte svoju rezerváciu"
       ]
     },
     "Google Meet": {
@@ -6624,6 +6663,57 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Appointment duration": [
+        "Dĺžka trvania schôdzky"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Naozaj chcete vymazať túto rezervačnú stránku?"
+      ],
+      "Booking page deleted": [
+        "Stránka rezervácií bola vymazaná"
+      ],
+      "Cannot create booking range in the past": [
+        "Nie je možné vytvoriť rozsah rezervácie v minulosti"
+      ],
+      "Host": [
+        "Hostiteľ"
+      ],
+      "Location": [
+        "Miesto"
+      ],
+      "Manange booking page": [
+        "Spravovať stránku rezervácií"
+      ],
+      "No appointments available this week": [
+        "Tento týždeň nie sú k dispozícii žiadne termíny"
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Ľudia, ktorí si u vás rezervujú čas, uvidia ${ selectedCalendar.Email } ako vašu kontaktnú adresu."
+      ],
+      "Powered by": [
+        "Prevádzkuje"
+      ],
+      "Powered by ${ protonButton }": [
+        "Používa ${ protonButton }"
+      ],
+      "Previously booked events won't be deleted.": [
+        "Predtým rezervované udalosti nebudú vymazané."
+      ],
+      "Privacy by default": [
+        "Súkromie je prvoradé"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Zdieľajte túto stránku, aby si ostatní mohli rezervovať čas vo vašom kalendári. Môžete ju nájsť a upraviť v bočnom paneli v časti Rezervačné stránky."
+      ],
+      "Take control of your digital life": [
+        "Prevezmite kontrolu nad svojím digitálnym životom"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Táto rezervácia bola vykonaná prostredníctvom ${ CALENDAR_APP_NAME }, súčasti sady produktov ${ BRAND_NAME } zameraných na ochranu súkromia."
+      ],
+      "What do you want to call this booking page?": [
+        "Ako chcete nazvať túto rezervačnú stránku?"
       ]
     },
     "info": {
@@ -7324,6 +7414,15 @@
       ],
       "Zoom meeting": [
         "Zoom stretnutie"
+      ],
+      "Full name": [
+        "Celé meno"
+      ],
+      "Repeat weekly": [
+        "Opakovať týždenne"
+      ],
+      "Unavailable": [
+        "Nedostupné"
       ]
     },
     "label": {
@@ -7335,6 +7434,12 @@
       ],
       "Start time of the booking range": [
         "Čas začiatku rozsahu rezervácie"
+      ],
+      "How long should an appointment last?": [
+        "Ako dlho by mala trvať schôdzka?"
+      ],
+      "What should people know before booking?": [
+        "Čo by mali ľudia vedieť pred rezerváciou?"
       ]
     },
     "Label for contact group color": {
@@ -7491,6 +7596,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Booking pages": [
+        "Stránky rezervácií"
       ]
     },
     "Link label (optional)": {
@@ -8392,6 +8500,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Existujúce výhody ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Zdieľanie trezora s ${ n } osobou",
+        "Zdieľanie trezora až s ${ n } osobami",
+        "Zdieľanie trezora až s ${ n } osobami",
+        "Zdieľanie trezora až s ${ n } osobami"
       ]
     },
     "new_plans: feature highlight": {
@@ -9881,6 +9998,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Email for booking confirmation": [
+        "Email na potvrdenie rezervácie"
+      ],
+      "Name of attendee": [
+        "Meno účastníka"
       ]
     },
     "Placeholder for contact group name": {
@@ -11479,6 +11602,12 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "Booking page created": [
+        "Stránka rezervácií bola vytvorená"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Stránka rezervácie bola vytvorená a odkaz bol skopírovaný do schránky"
       ]
     },
     "Suffix": {
@@ -12382,6 +12511,15 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Appointment details": [
+        "Podrobnosti stretnutia"
+      ],
+      "Choose a time": [
+        "Vyberte čas"
+      ],
+      "Delete booking page?": [
+        "Vymazať stránku rezervácií?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13043,6 +13181,23 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Naozaj chcete pokračovať?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Ak sa rozhodnete zmeniť svoj plán ${ planTitle }, môžete stratiť prístup k niektorým funkciám."
+      ],
+      "Keep ${ planTitle }": [
+        "Ponechať ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Áno, som si istý/á"
+      ],
+      "Your plan includes this feature already.": [
+        "Váš plán už túto funkciu zahŕňa."
       ]
     }
   }

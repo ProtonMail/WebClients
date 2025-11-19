@@ -959,6 +959,48 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Add a date": [
+        "Tilføj en dato"
+      ],
+      "Close sidebar": [
+        "Luk sidepanel"
+      ],
+      "Confirm booking": [
+        "Bekræft reservation"
+      ],
+      "Copy booking page link": [
+        "Kopier link til reservationsside"
+      ],
+      "Copy link and close": [
+        "Kopiér link og luk"
+      ],
+      "Create a free account": [
+        "Opret en gratis konto"
+      ],
+      "Delete booking page": [
+        "Slet reservationsside"
+      ],
+      "Edit booking page": [
+        "Rediger reservationsside"
+      ],
+      "Go to the next available appointment": [
+        "Gå til den næste ledige aftale"
+      ],
+      "Remove the booking range": [
+        "Fjern reservationsperioden"
+      ],
+      "See previous availability": [
+        "Se tidligere tilgængelighed"
+      ],
+      "See upcoming availability": [
+        "Se kommende tilgængelighed"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Vælg ${ dateHeaderLongString } kl. ${ timeString }"
+      ],
+      "Split current booking range": [
+        "Opdel nuværende reservationsperiode"
       ]
     },
     "action": {
@@ -1596,6 +1638,9 @@
       ],
       "Website access problem": [
         "Adgangsproblem på websted"
+      ],
+      "Authenticator problem": [
+        "Autentificeringsproblem"
       ]
     },
     "Button": {
@@ -1931,6 +1976,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Højhastighedschats og avancerede AI-funktioner."
+      ],
+      "Advanced account and network security in one plan": [
+        "Avanceret konto- og netværkssikkerhed i ét abonnement"
       ]
     },
     "colon": {
@@ -3203,6 +3251,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "Du modtager snart en sikker e-mail med detaljerne."
       ]
     },
     "description": {
@@ -4026,11 +4077,23 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Content verification failed": [
+        "Indholdsbekræftelse mislykkedes"
+      ],
+      "No booking page data received": [
+        "Der er ikke modtaget reservationssidedata."
+      ],
+      "You cannot enter the organizer email": [
+        "Du kan ikke indtaste arrangørens e-mail"
       ]
     },
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
         "Log ind med den samme Gmail-adresse, som du oprindeligt har forbundet."
+      ],
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Log venligst ind med en Gmail-adresse, der allerede videresender til ${ MAIL_APP_NAME }"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6382,6 +6445,82 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } videoopkald"
+      ],
+      "Appointment duration": [
+        "Aftalevarighed"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Er du sikker på, at du vil slette denne reservationsside?"
+      ],
+      "Booking already exists.": [
+        "Reservation eksisterer allerede."
+      ],
+      "Booking cannot be added in the past.": [
+        "En reservation kan ikke tilføjes i fortiden."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Din reservation overlapper med en eksisterende reservation."
+      ],
+      "Booking page deleted": [
+        "Reservationsside slettet"
+      ],
+      "Cannot create booking range across days": [
+        "Kan ikke oprette reservationsperiode på tværs af dage"
+      ],
+      "Cannot create booking range in the past": [
+        "Kan ikke oprette reservationsperiode i fortiden"
+      ],
+      "Host": [
+        "Vært"
+      ],
+      "Location": [
+        "Placering"
+      ],
+      "Manange booking page": [
+        "Administrer reservationsside"
+      ],
+      "No appointments available this week": [
+        "Ingen aftaler tilgængelige denne uge"
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "De, der reserverer tid med dig, vil se ${ selectedCalendar.Email } som din kontaktadresse."
+      ],
+      "Powered by": [
+        "Drevet af"
+      ],
+      "Powered by ${ protonButton }": [
+        "Drevet af ${ protonButton }"
+      ],
+      "Previously booked events won't be deleted.": [
+        "Tidligere reserverede begivenheder vil ikke blive slettet."
+      ],
+      "Privacy by default": [
+        "Privatlivsbeskyttelse som standard"
+      ],
+      "Saving event": [
+        "Gemmer begivenhed",
+        "Gemmer begivenheder"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Del denne side for at lade andre reservere tid i din kalender. Du kan finde og redigere den i sidebjælken under reservationssider."
+      ],
+      "Take control of your digital life": [
+        "Tag kontrol over dit digitale liv"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Denne reservation blev foretaget via ${ CALENDAR_APP_NAME }, som er en del af ${ BRAND_NAME }'s suite af produkter, der prioriterer privatliv."
+      ],
+      "What do you want to call this booking page?": [
+        "Hvad skal denne reservationsside hedde?"
+      ],
+      "When are you free?": [
+        "Hvornår er du ledig?"
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "Du kan ikke have mere end ${ MAX_BOOKING_SLOTS } reservationspladser på en side."
       ]
     },
     "info": {
@@ -7070,6 +7209,15 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Full name": [
+        "Fulde navn"
+      ],
+      "Repeat weekly": [
+        "Gentag ugentligt"
+      ],
+      "Unavailable": [
+        "Ikke tilgængelig"
       ]
     },
     "Label for contact group color": {
@@ -7226,6 +7374,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Booking pages": [
+        "Reservationssider"
       ]
     },
     "Link label (optional)": {
@@ -8067,6 +8218,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } fordele"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling af boks med op til ${ n } person",
+        "Deling af boks med op til ${ n } personer"
       ]
     },
     "new_plans: feature highlight": {
@@ -9482,6 +9640,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Email for booking confirmation": [
+        "E-mail til reservationsbekræftelse"
+      ],
+      "Name of attendee": [
+        "Navn på deltager"
       ]
     },
     "Placeholder for contact group name": {
@@ -11854,6 +12018,21 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Appointment details": [
+        "Aftaledetaljer"
+      ],
+      "Choose a time": [
+        "Vælg et tidspunkt"
+      ],
+      "Delete booking page?": [
+        "Slet reservationsside?"
+      ],
+      "Host": [
+        "Vært"
+      ],
+      "Your booking is confirmed": [
+        "Din reservation er bekræftet"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12427,6 +12606,45 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Form": {
+      "Confirm your booking": [
+        "Bekræft din reservation"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Dato for reservationsperioden"
+      ],
+      "End time of the booking range": [
+        "Sluttidspunkt for reservationsperioden"
+      ],
+      "How long should an appointment last?": [
+        "Hvor længe skal en aftale vare?"
+      ],
+      "Start time of the booking range": [
+        "Starttidspunkt for reservationsperioden"
+      ],
+      "What should people know before booking?": [
+        "Hvad bør folk vide, før de reserverer?"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på, at du vil fortsætte?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du vælger at ændre dit ${ planTitle }-abonnement, kan du miste adgang til visse funktioner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Dit abonnement inkluderer allerede denne funktion."
       ]
     }
   }

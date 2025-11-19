@@ -1005,6 +1005,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a free account": [
+        "Creare cont gratuit"
       ]
     },
     "action": {
@@ -1651,6 +1654,9 @@
       ],
       "Website access problem": [
         "Problemă accesare site web"
+      ],
+      "Authenticator problem": [
+        "Problemă autentificator"
       ]
     },
     "Button": {
@@ -4121,6 +4127,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "You cannot enter the organizer email": [
+        "Nu puteți introduce e-mailul organizatorului"
       ]
     },
     "error": {
@@ -4682,6 +4691,9 @@
     "Form": {
       "Your contact info": [
         "Datele de contact"
+      ],
+      "Confirm your booking": [
+        "Confirmare rezervare"
       ]
     },
     "Google Meet": {
@@ -6587,6 +6599,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Sigur ștergeți această pagină de rezervare?"
+      ],
+      "Booking page deleted": [
+        "Pagina de rezervare s-a șters."
+      ],
+      "Cannot create booking range in the past": [
+        "Nu se poate crea un interval de rezervare în trecut."
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Persoanele care rezervă timp cu dvs. vor vedea ${ selectedCalendar.Email } ca adresă de contact."
+      ],
+      "Powered by": [
+        "Dezvoltat de"
+      ],
+      "Previously booked events won't be deleted.": [
+        "Evenimentele programate anterior nu vor fi șterse."
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Partajați această pagină pentru a le permite altora să-și rezerve timp în calendarul dvs. O puteți găsi și edita în bara laterală în „Pagini de rezervare”."
+      ],
+      "Take control of your digital life": [
+        "Preluați controlul asupra propriei vieți digitale"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Această rezervare a fost făcută prin ${ CALENDAR_APP_NAME }, parte din suita de produse cu confidențialitate prioritară de la ${ BRAND_NAME }."
+      ],
+      "What do you want to call this booking page?": [
+        "Cum doriți să numiți această pagină de rezervare?"
       ]
     },
     "info": {
@@ -7281,6 +7323,15 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "Full name": [
+        "Numele complet"
+      ],
+      "Repeat weekly": [
+        "Repetare săptămânală"
+      ],
+      "Unavailable": [
+        "Indisponibil"
       ]
     },
     "label": {
@@ -7292,6 +7343,12 @@
       ],
       "Start time of the booking range": [
         "Oră început interval de rezervare"
+      ],
+      "How long should an appointment last?": [
+        "Cât ar trebui să dureze o întâlnire?"
+      ],
+      "What should people know before booking?": [
+        "Ce ar trebui să știe oamenii înainte de a rezerva?"
       ]
     },
     "Label for contact group color": {
@@ -9799,6 +9856,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Email for booking confirmation": [
+        "E-mail pentru confirmarea rezervării"
+      ],
+      "Name of attendee": [
+        "Nume participant"
       ]
     },
     "Placeholder for contact group name": {
@@ -12252,6 +12315,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Delete booking page?": [
+        "Ștergeți pagina de rezervări?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

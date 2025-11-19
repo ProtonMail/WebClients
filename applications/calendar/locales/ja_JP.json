@@ -970,6 +970,36 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Add a date": [
+        "日付を追加"
+      ],
+      "Close sidebar": [
+        "サイドバーを閉じる"
+      ],
+      "Copy booking page link": [
+        "予約ページリンクをコピー"
+      ],
+      "Create a free account": [
+        "無料アカウントを作成"
+      ],
+      "Delete booking page": [
+        "予約ページを削除"
+      ],
+      "Edit booking page": [
+        "予約ページを編集"
+      ],
+      "Go to the next available appointment": [
+        "次の利用可能な予定へ移動"
+      ],
+      "See previous availability": [
+        "以前の空き状況を確認"
+      ],
+      "See upcoming availability": [
+        "今後の空き状況を確認"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "${ dateHeaderLongString } の${ timeString }を選択してください。"
       ]
     },
     "action": {
@@ -1598,6 +1628,9 @@
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
+      ],
+      "Authenticator problem": [
+        "認証の問題"
       ]
     },
     "Button": {
@@ -1928,6 +1961,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
+      ],
+      "Advanced account and network security in one plan": [
+        "1つのプランで高度なアカウントとネットワークセキュリティ"
       ]
     },
     "colon": {
@@ -4021,11 +4057,17 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "You cannot enter the organizer email": [
+        "主催者メールアドレスを入力できません"
       ]
     },
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
         "最初に接続した同じGmailアドレスでサインインしてください"
+      ],
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "すでに ${ MAIL_APP_NAME } へ転送されている Gmail アドレスでサインインしてください"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4561,6 +4603,9 @@
     "Form": {
       "Your contact info": [
         "お客様の連絡先情報"
+      ],
+      "Confirm your booking": [
+        "予約を確認"
       ]
     },
     "Google Meet": {
@@ -6354,6 +6399,63 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME }ビデオ通話"
+      ],
+      "Appointment duration": [
+        "予約期間"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "この予約ページを削除してもよろしいですか？"
+      ],
+      "Booking page deleted": [
+        "予約ページが削除されました"
+      ],
+      "Cannot create booking range across days": [
+        "複数日にまたがる予約期間は作成できません"
+      ],
+      "Cannot create booking range in the past": [
+        "過去の日付に予約範囲を作成できません"
+      ],
+      "Host": [
+        "ホスト"
+      ],
+      "Location": [
+        "位置"
+      ],
+      "Manange booking page": [
+        "予約ページを管理"
+      ],
+      "No appointments available this week": [
+        "今週は利用可能な予定がありません"
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "あなたと時間を予約する人は、連絡先アドレスとして ${ selectedCalendar.Email } を確認します。"
+      ],
+      "Powered by": [
+        "提供元"
+      ],
+      "Powered by ${ protonButton }": [
+        "${ protonButton } によって提供されています"
+      ],
+      "Previously booked events won't be deleted.": [
+        "以前に予約された予定は削除されません。"
+      ],
+      "Privacy by default": [
+        "常にプライバシーを重視"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "他のお客様がお客様のカレンダーで時間を予約できるように、このページを共有してください。サイドバーの「予約ページ」で、見つけて編集できます。"
+      ],
+      "Take control of your digital life": [
+        "お客様のデジタルライフを管理する"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "この予約は${ CALENDAR_APP_NAME }経由で作成されました、これは${ BRAND_NAME }が提供するプライバシーを重視した製品群の一部です。"
+      ],
+      "What do you want to call this booking page?": [
+        "この予約ページを何と呼びたいですか？"
       ]
     },
     "info": {
@@ -7036,6 +7138,15 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Full name": [
+        "フルネーム"
+      ],
+      "Repeat weekly": [
+        "毎週"
+      ],
+      "Unavailable": [
+        "設定不可"
       ]
     },
     "label": {
@@ -7047,6 +7158,12 @@
       ],
       "Start time of the booking range": [
         "予約期間の開始時刻"
+      ],
+      "How long should an appointment last?": [
+        "予約時間はどのくらいに設定しますか？"
+      ],
+      "What should people know before booking?": [
+        "予約前に知っておくべきことは何ですか？"
       ]
     },
     "Label for contact group color": {
@@ -7200,6 +7317,12 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ],
+      "Booking pages": [
+        "予約ページ"
+      ],
+      "Reactivate subscription": [
+        "サブスクリプションを再開"
       ]
     },
     "Link label (optional)": {
@@ -8011,6 +8134,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "既存の ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 特典"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "最大${ n }人までと保管庫共有"
       ]
     },
     "new_plans: feature highlight": {
@@ -9389,6 +9518,12 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Email for booking confirmation": [
+        "予約確認メール"
+      ],
+      "Name of attendee": [
+        "出席者名"
       ]
     },
     "Placeholder for contact group name": {
@@ -9550,6 +9685,9 @@
       ],
       "your subscription": [
         "あなたのサブスクリプション"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "その日付以降、アカウントは**${ BRAND_NAME } Free**にダウングレードされます。気が変わった場合は、**サブスクリプションを再有効化する**ことで引き続きプレミアム機能にアクセスできます。"
       ]
     },
     "Reload event button tooltip": {
@@ -11725,6 +11863,15 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Appointment details": [
+        "予定の詳細"
+      ],
+      "Choose a time": [
+        "時間を選択"
+      ],
+      "Delete booking page?": [
+        "予約ページを削除しますか？"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12254,6 +12401,23 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "本当に続行しますか？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } プランを変更された場合、一部の機能にアクセスできなくなる可能性があります。"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } を使い続ける"
+      ],
+      "Yes, I'm sure": [
+        "はい、構いません"
+      ],
+      "Your plan includes this feature already.": [
+        "お客様のプランには、この機能がすでに含まれています。"
       ]
     }
   }

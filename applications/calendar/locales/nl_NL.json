@@ -941,6 +941,69 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add a date": [
+        "Datum toevoegen"
+      ],
+      "Close sidebar": [
+        "Sluit zijbalk"
+      ],
+      "Confirm booking": [
+        "Boeking bevestigen"
+      ],
+      "Copy booking page link": [
+        "Kopieer link naar boekingspagina"
+      ],
+      "Copy link and close": [
+        "Koppeling kopiëren en sluiten"
+      ],
+      "Create a booking page": [
+        "Maak een boekingspagina"
+      ],
+      "Create a free account": [
+        "Maak een gratis account aan"
+      ],
+      "Create a new bookings page": [
+        "Maak een nieuwe boekingspagina"
+      ],
+      "Create an event": [
+        "Maak een gebeurtenis"
+      ],
+      "Create booking page": [
+        "Maak een boekingspagina aan"
+      ],
+      "Delete booking page": [
+        "Boekingspagina verwijderen"
+      ],
+      "Edit booking page": [
+        "Boekingspagina bewerken"
+      ],
+      "Go to the next available appointment": [
+        "Ga naar de volgende beschikbare afspraak"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "Word lid van ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove the booking range": [
+        "Verwijder het boekingsbereik"
+      ],
+      "Remove video conference": [
+        "Videovergadering verwijderen"
+      ],
+      "See previous availability": [
+        "Bekijk eerdere beschikbaarheid"
+      ],
+      "See upcoming availability": [
+        "Bekijk aankomende beschikbaarheid"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Selecteer ${ dateHeaderLongString } om ${ timeString }"
+      ],
+      "Split current booking range": [
+        "Splits huidig boekingbereik"
+      ],
+      "Subscribe now": [
+        "Abonneer nu"
       ]
     },
     "action": {
@@ -1252,6 +1315,12 @@
       ],
       "You have reached the trial limit.": [
         "U hebt de proeflimiet bereikt."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefversie eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
       ]
     },
     "b2b_trials_Action": {
@@ -1329,6 +1398,12 @@
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidig abonnement"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
       ]
     },
     "BF2024: Offers": {
@@ -1337,11 +1412,14 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
+      ],
+      "forever": [
+        "voor altijd"
       ]
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8.500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
+        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8 500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
@@ -1554,6 +1632,12 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ],
+      "Authenticator problem": [
+        "Authenticatieprobleem"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Button": {
@@ -1818,7 +1902,7 @@
         "Probeer ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Probeer ${ upsellPlanName } en behoud toegang tot alle premium email- en kalenderfuncties."
+        "Probeer ${ upsellPlanName } en behoud toegang tot alle premium email- en agendafuncties."
       ],
       "Ultra fast and private VPN": [
         "Ultrasnelle en private VPN"
@@ -1875,6 +1959,9 @@
       ],
       "Upload and query small files": [
         "Kleine bestanden uploaden en opvragen"
+      ],
+      "Web search access": [
+        "Toegang tot webzoekopdrachten"
       ]
     },
     "collider_2025: Info": {
@@ -1886,6 +1973,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
+      ],
+      "Advanced account and network security in one plan": [
+        "Geavanceerde account- en netwerkbeveiliging in één abonnement"
       ]
     },
     "colon": {
@@ -2903,6 +2993,9 @@
       "event": [
         "gebeurtenis",
         "gebeurtenissen"
+      ],
+      "Doesn't end": [
+        "Eindigt niet"
       ]
     },
     "customer_support.feature.all": {
@@ -3155,6 +3248,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "You’ll get a secure email with the details shortly.": [
+        "U ontvangt binnenkort een beveiligde e-mail met de gegevens."
       ]
     },
     "description": {
@@ -3313,6 +3409,21 @@
       ],
       "This event was updated.": [
         "Deze afspraak werd bijgewerkt."
+      ],
+      "DESCRIPTION:": [
+        "BESCHRIJVING:"
+      ],
+      "LOCATION:": [
+        "LOCATIE:"
+      ],
+      "TIME:": [
+        "TIJD:"
+      ],
+      "TITLE:": [
+        "TITEL:"
+      ],
+      "You are invited to": [
+        "U bent uitgenodigd voor"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3904,6 +4015,21 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Content verification failed": [
+        "Documentverificatie mislukt"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Mislukt om ${ MEET_APP_NAME } videoconferentie aan te maken"
+      ],
+      "Failed to decrypt session key": [
+        "Decoderen van de sessiesleutel mislukt."
+      ],
+      "No booking page data received": [
+        "Geen gegevens van de boekingspagina ontvangen"
+      ],
+      "You cannot enter the organizer email": [
+        "U kunt het e-mailadres van de organisator niet invoeren."
       ]
     },
     "Error accepting calendar invitation": {
@@ -4280,7 +4406,7 @@
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
-        "U hebt zich succesvol aangesloten bij de familiegroep"
+        "U heeft zich succesvol aangesloten bij de familiegroep"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "U heeft onbetaalde facturen. Betaal deze voordat u zich aansluit bij een Family-abonnement"
@@ -4344,6 +4470,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Versleutelde cloudopslag voor bestanden, foto's en documenten"
+      ],
+      "More premium features": [
+        "Meer premium functies"
       ]
     },
     "Features": {
@@ -6198,6 +6330,130 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } minuten duur"
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } videogesprek"
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun gekozen ${ BRAND_NAME } abonnement."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun abonnement."
+      ],
+      "Appointment duration": [
+        "Afspraakduur"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Weet u zeker dat u deze boekingspagina wilt verwijderen?"
+      ],
+      "Booking already exists.": [
+        "Boeking bestaat al."
+      ],
+      "Booking cannot be added in the past.": [
+        "Een boeking in het verleden kan niet worden toegevoegd."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Deze boeking overlapt met een bestaande boeking."
+      ],
+      "Booking page deleted": [
+        "Boekingspagina verwijderd"
+      ],
+      "Booking page example": [
+        "Voorbeeld van een boekingspagina"
+      ],
+      "Cannot create booking range across days": [
+        "Kan geen boekingsbereik over meerdere dagen aanmaken."
+      ],
+      "Cannot create booking range in the past": [
+        "Kan geen boekingsbereik in het verleden aanmaken."
+      ],
+      "Choose a plan that works best for you.": [
+        "Kies een abonnement dat het beste bij u past."
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
+      "Failed to update meeting name": [
+        "Naam vergadering bijwerken mislukt"
+      ],
+      "Failed to update meeting password": [
+        "Wachtwoord vergadering bijwerken mislukt"
+      ],
+      "Google Pay mark": [
+        "Google Pay merk"
+      ],
+      "Host": [
+        "Host"
+      ],
+      "How long should an appointment last?": [
+        "Hoe lang moet een afspraak duren?"
+      ],
+      "In which calendar should bookings appear?": [
+        "In welke agenda moeten de boekingen verschijnen?"
+      ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Laat anderen automatisch tijd met u boeken. Geen heen-en-weer e-mails. Deel een koppeling, en behoud de controle over uw beschikbaarheid."
+      ],
+      "Location": [
+        "Locatie"
+      ],
+      "Manange booking page": [
+        "Boekingspagina beheren"
+      ],
+      "No appointments available this week": [
+        "Geen afspraken beschikbaar deze week"
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Mensen die tijd bij u boeken, zullen ${ selectedCalendar.Email } als uw contactadres zien."
+      ],
+      "Powered by": [
+        "Mogelijk gemaakt door"
+      ],
+      "Powered by ${ protonButton }": [
+        "Mogelijk gemaakt door ${ protonButton }"
+      ],
+      "Previously booked events won't be deleted.": [
+        "Eerder geboekte afspraken worden niet verwijderd."
+      ],
+      "Privacy by default": [
+        "Privacy als standaard"
+      ],
+      "Saving event": [
+        "Gebeurtenis opslaan",
+        "Gebeurtenissen opslaan"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Deel deze pagina zodat anderen tijd in uw agenda kunnen boeken. U kunt deze vinden en bewerken in de zijbalk onder Boekingspagina's."
+      ],
+      "Take control of your digital life": [
+        "Neem de controle over uw digitale leven"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Deze boeking is gemaakt via ${ CALENDAR_APP_NAME }, een onderdeel van de privacygerichte productsuite van ${ BRAND_NAME }."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Upgraden om uw ${ planTitle } voordelen te behouden."
+      ],
+      "Want to create your own booking page?": [
+        "Wilt u uw eigen boekingspagina aanmaken?"
+      ],
+      "What do you want to call this booking page?": [
+        "Hoe wilt u deze boekingspagina noemen?"
+      ],
+      "What should people know before booking?": [
+        "Wat moeten mensen weten voordat zij boeken?"
+      ],
+      "When are you free?": [
+        "Wanneer bent u beschikbaar?"
+      ],
+      "Where will the appointment take place?": [
+        "Waar vindt de afspraak plaats?"
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "U kunt niet meer dan ${ MAX_BOOKING_SLOTS } boekingsmomenten op een pagina hebben."
       ]
     },
     "info": {
@@ -6862,6 +7118,39 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Toevoegen ${ MEET_APP_NAME } videoconferentie"
+      ],
+      "Add Zoom meeting": [
+        "Zoomvergadering toevoegen"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Full name": [
+        "Volledige naam"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Verwijder ${ MEET_APP_NAME } videoconferentie"
+      ],
+      "Remove Zoom video conference": [
+        "Zoom videoconferentie verwijderen"
+      ],
+      "Repeat weekly": [
+        "Wekelijks herhalen"
+      ],
+      "Unavailable": [
+        "Niet beschikbaar"
+      ],
+      "Video conference": [
+        "Videoconferentie"
+      ],
+      "Zoom meeting": [
+        "Zoom-vergadering"
       ]
     },
     "Label for contact group color": {
@@ -7015,6 +7304,12 @@
       ],
       "What’s this?": [
         "Wat is dit?"
+      ],
+      "Booking pages": [
+        "Boekingspagina's"
+      ],
+      "Reactivate subscription": [
+        "Heractiveer abonnement"
       ]
     },
     "Link label (optional)": {
@@ -7131,6 +7426,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Uw gratis proefversie is geëindigd. Toegang tot uw account wordt weldra uitgeschakeld. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Uw gratis proefversie is beëindigd. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7845,6 +8143,16 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Bestaande ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } voordelen"
+      ],
+      "Short domain (@pm.me)": [
+        "Kort domein (@pm.me)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Kluis delen met tot ${ n } persoon",
+        "Kluis delen tot ${ n } personen"
       ]
     },
     "new_plans: feature highlight": {
@@ -8526,6 +8834,12 @@
       ],
       "Your subscription renews soon": [
         "Uw abonnement vernieuwt binnenkort"
+      ],
+      "Don't show this again": [
+        "Toon dit niet opnieuw"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Neem ${ BRAND_NAME } Duo"
       ]
     },
     "Offer fearue": {
@@ -8781,6 +9095,9 @@
       ],
       "Team policies": [
         "Team beleid"
+      ],
+      "File attachments (up to 10GB)": [
+        "Bestandsbijlagen (tot 10GB)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8844,6 +9161,9 @@
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8945,6 +9265,47 @@
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Verschuldigd bedrag na de proefversie op ${ formattedDate }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Betaalmethode vereist voor de activering van het abonnement nadat de proefversie is afgelopen."
+      ],
+      "terms and conditions": [
+        "algemene voorwaarden"
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs is geldig voor de eerste ${ subscriptionLength } maanden."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elk moment annuleren."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Deze actie breidt het bestaande abonnement uit. U wordt alleen kosten in rekening gebracht voor de nieuwe add-ons en de resterende tijd van de huidige factureringscyclus. De verlengingsdatum van uw abonnement wordt niet gewijzigd."
+      ],
+      "This offer is not available with your current plan.": [
+        "Deze aanbieding is niet beschikbaar met uw huidige abonnement."
+      ],
+      "You already have a subscription to this plan.": [
+        "U bent reeds geabonneerd op dit abonnement."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "U hebt al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Binnenkort wordt u doorgestuurd om uw betaling te verifiëren."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
       ]
     },
     "Payments.Error": {
@@ -8970,6 +9331,9 @@
     "Payments.info": {
       "Credits will be added to your balance": [
         "Tegoed wordt toegevoegd aan uw saldo."
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Tegoed voor het ongebruikte deel van uw vorig abonnement"
       ]
     },
     "Payments.plan_name": {
@@ -8983,6 +9347,9 @@
       ],
       "Bank transfer - ${ details }": [
         "Bankoverschrijving - ${ details }"
+      ],
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -9190,6 +9557,15 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Add a booking page description": [
+        "Voeg een beschrijving toe aan de boekingspagina"
+      ],
+      "Email for booking confirmation": [
+        "E-mail voor boekingsbevestiging"
+      ],
+      "Name of attendee": [
+        "Naam van deelnemer"
       ]
     },
     "Placeholder for contact group name": {
@@ -9313,6 +9689,44 @@
       ],
       "Start earning credits": [
         "Begin met het verdienen van tegoed"
+      ],
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per doorverwijzing"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Verdien tot ${ maxRewardAmount } aan tegoed. U ontvangt ${ referrerRewardAmount } wanneer de persoon die u uitnodigt zich abonneert op een ${ BRAND_NAME } abonnement."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Geniet gratis van **${ planTitle }** tot **${ textDate }**."
+      ],
+      "Friend joined": [
+        "Vriend lid geworden",
+        "Vrienden lid geworden"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Laatste kans om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Zodra uw volledige abonnement ingaat, kunt u binnen 30 dagen nog steeds annuleren en een pro rata teruggave ontvangen."
+      ],
+      "Refer friends": [
+        "Verwijs vrienden door"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
+      "your subscription": [
+        "uw abonnement"
       ]
     },
     "Reload event button tooltip": {
@@ -9892,7 +10306,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering en meer."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
@@ -9931,6 +10345,12 @@
       ],
       "Video conferencing is here!": [
         "Videoconferentie is hier!"
+      ],
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } is er!"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Plan en neem deel aan ${ MEET_APP_NAME } oproepen direct vanuit uw agenda."
       ]
     },
     "sso": {
@@ -10040,6 +10460,12 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "U verliest de toegang tot onbeperkte logins en notities, onbeperkte hide-my-email aliassen, 20 kluizen, en prioritaire ondersteuning."
+      ],
+      "${ app } storage used": [
+        "${ app } opslagruimte gebruikt"
+      ],
+      "Storage used": [
+        "Opslagruimte gebruikt"
       ]
     },
     "Subscribe to calendar modal": {
@@ -10671,7 +11097,7 @@
         "Maak veilige inloggegevens op al uw apparaten. Inclusief onbeperkte aliassen, 20 kluizen, geïntegreerde 2FA, automatisch invullen van creditcardgegevens en meer."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering en meer."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
@@ -11494,6 +11920,39 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Appointment details": [
+        "Details afspraak"
+      ],
+      "Choose a time": [
+        "Kies een tijd"
+      ],
+      "Delete booking page?": [
+        "Boekingspagina verwijderen?"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Krijg **${ referralInfo.uiData.refereeRewardAmount }** in tegoed met ${ planTitle }"
+      ],
+      "Host": [
+        "Host"
+      ],
+      "Ready to automate your scheduling?": [
+        "Klaar om je planning het automatiseren?"
+      ],
+      "This booking page does not exist": [
+        "Deze boekingspagina bestaat niet"
+      ],
+      "This booking page has expired": [
+        "Deze boekingspagina is verlopen"
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Upgraden om uw premium voordelen te behouden."
+      ],
+      "Your booking is confirmed": [
+        "Uw boeking is bevestigd"
+      ],
+      "Your booking page is ready": [
+        "Uw boekingspagina is gereed"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11599,6 +12058,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: AI-assistent die uw privacy respecteert"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -11795,6 +12257,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
@@ -12061,6 +12526,128 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } resultaat niet getoond",
+        "${ hiddenResultsCount } resultaten worden niet getoond"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/maand"
+      ],
+      "2 TB of storage to share": [
+        "2 TB opslagruimte om te delen"
+      ],
+      "2 user accounts": [
+        "2 gebruikersaccounts"
+      ],
+      "All premium features from your current plan": [
+        "Alle premium functies van uw huidige abonnement"
+      ],
+      "Only": [
+        "Slechts"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Krijg 4x meer opslagruimte"
+      ],
+      "Share your plan": [
+        "Deel uw abonnement"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Krijg 4x meer Opslag met ${ BRAND_NAME } Duo"
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Deel uw abonnementsvoordelen met ${ BRAND_NAME } Duo"
+      ]
+    },
+    "Duration": {
+      "1.5h": [
+        "1,5u"
+      ],
+      "120 minutes": [
+        "120 minuten"
+      ],
+      "1h": [
+        "1u"
+      ],
+      "2h": [
+        "2u"
+      ],
+      "30 minutes": [
+        "30 minuten"
+      ],
+      "30m": [
+        "30 min"
+      ],
+      "60 minutes": [
+        "60 minuten"
+      ],
+      "90 minutes": [
+        "90 minuten"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Log in met een Gmail-adres dat al doorstuurt naar ${ MAIL_APP_NAME }"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "Log in met hetzelfde Gmail-adres dat u oorspronkelijk heeft verbonden."
+      ]
+    },
+    "Form": {
+      "Confirm your booking": [
+        "Bevestig uw boeking"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Datum van het boekingsbereik"
+      ],
+      "End time of the booking range": [
+        "Eindtijd van het boekingsbereik"
+      ],
+      "How long should an appointment last?": [
+        "Hoe lang moet een afspraak duren?"
+      ],
+      "Start time of the booking range": [
+        "Starttijd van het boekingsbereik"
+      ],
+      "What should people know before booking?": [
+        "Wat moeten mensen weten voordat zij boeken?"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Persoonlijk"
+      ]
+    },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Er ging iets mis. Google Pay verificatie mislukt."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Weet u zeker dat u verder wilt gaan?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Als u ervoor kiest om uw ${ planTitle } abonnement te wijzigen, kunt u de toegang tot bepaalde functies verliezen."
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } behouden"
+      ],
+      "Yes, I'm sure": [
+        "Ja, ik weet het zeker."
+      ],
+      "Your plan includes this feature already.": [
+        "Uw abonnement bevat deze functie reeds."
       ]
     }
   }

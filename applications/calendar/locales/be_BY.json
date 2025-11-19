@@ -1000,6 +1000,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a free account": [
+        "Стварыць бясплатны ўліковы запіс"
+      ],
+      "See previous availability": [
+        "Паглядзець папярэднюю даступнасць"
+      ],
+      "See upcoming availability": [
+        "Прагляд надыходзячай даступнасці"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Выбраць ${ dateHeaderLongString } у ${ timeString }"
       ]
     },
     "action": {
@@ -1655,6 +1667,9 @@
       ],
       "Website access problem": [
         "Праблема з доступам да вэб-сайта"
+      ],
+      "Authenticator problem": [
+        "Праблема з аўтэнтыфікатарам"
       ]
     },
     "Button": {
@@ -4147,6 +4162,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "You cannot enter the organizer email": [
+        "Вы не можаце ўвесці электронную пошту арганізатара."
       ]
     },
     "error": {
@@ -4717,6 +4735,9 @@
     "Form": {
       "Your contact info": [
         "Ваша кантактная інфармацыя"
+      ],
+      "Confirm your booking": [
+        "Пацвердзіце браніраванне"
       ]
     },
     "Google Meet": {
@@ -6497,7 +6518,7 @@
         "Гэта дзеянне немагчыма адрабіць."
       ],
       "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
-        "У вас не можа быць больш за ${ MAX_BOOKING_SLOTS } прамежкаў браніравання на старонцы."
+        "У вас не можа быць больш за ${ MAX_BOOKING_SLOTS } слотаў браніравання на старонцы."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
@@ -6663,6 +6684,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Вы сапраўды хочаце выдаліць гэту старонку браніравання?"
+      ],
+      "Booking page deleted": [
+        "Старонка браніравання выдалена"
+      ],
+      "Cannot create booking range in the past": [
+        "Немагчыма стварыць дыяпазон браніравання ў мінулым"
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Людзі, якія браніруюць у вас час, убачаць ${ selectedCalendar.Email } у якасці вашага кантактнага."
+      ],
+      "Powered by": [
+        "Працуе на базе"
+      ],
+      "Previously booked events won't be deleted.": [
+        "Раней забраніраваныя падзеі не будуць выдалены."
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Абагуліце гэту старонку, каб іншыя маглі забраніраваць час у вашым календары. Вы зможаце знайсці і адрэдагаваць яе на бакавой панэлі ў раздзеле \"Старонкі браніравання\"."
+      ],
+      "Take control of your digital life": [
+        "Вазьміце пад кантроль сваё лічбавае жыццё"
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Гэта браніраванне было зроблена праз ${ CALENDAR_APP_NAME }, частка набору прадуктаў ${ BRAND_NAME }, якая арыентавана на прыватнасць."
+      ],
+      "What do you want to call this booking page?": [
+        "Як вы хочаце назваць гэту старонку браніравання?"
       ]
     },
     "info": {
@@ -7363,6 +7414,15 @@
       ],
       "Zoom meeting": [
         "Сустрэча па Zoom"
+      ],
+      "Full name": [
+        "Поўнае імя"
+      ],
+      "Repeat weekly": [
+        "Паўтараць штотыдзень"
+      ],
+      "Unavailable": [
+        "Недаступна"
       ]
     },
     "label": {
@@ -7374,6 +7434,12 @@
       ],
       "Start time of the booking range": [
         "Час пачатку дыяпазону браніравання"
+      ],
+      "How long should an appointment last?": [
+        "Як доўга павінна доўжыцца сустрэча?"
+      ],
+      "What should people know before booking?": [
+        "Што людзям неабходна ведаць перад браніраваннем?"
       ]
     },
     "Label for contact group color": {
@@ -7530,6 +7596,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Booking pages": [
+        "Старонкі браніравання"
       ]
     },
     "Link label (optional)": {
@@ -9582,7 +9651,7 @@
         "Падаткі"
       ],
       "terms and conditions": [
-        "ўмовы выкарыстання"
+        "ўмовамі выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
@@ -9654,10 +9723,10 @@
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для пацверджання плацяжу."
       ],
       "You will soon be redirected to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
+        "Неўзабаве вы будзеце перанакіраваны для пацверджання вашага плацяжу."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
@@ -9946,6 +10015,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Email for booking confirmation": [
+        "Электронная пошта для пацвярджэння браніравання"
+      ],
+      "Name of attendee": [
+        "Імя ўдзельніка"
       ]
     },
     "Placeholder for contact group name": {
@@ -12453,6 +12528,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Delete booking page?": [
+        "Выдаліць старонку браніравання?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12708,7 +12786,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer way to hold Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
+        "Бяспечны спосаб захоўвання Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
