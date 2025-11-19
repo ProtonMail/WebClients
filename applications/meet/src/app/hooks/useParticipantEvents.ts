@@ -5,10 +5,13 @@ import type { Participant } from 'livekit-client';
 
 import isTruthy from '@proton/utils/isTruthy';
 
+import { JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT } from '../constants';
 import { ParticipantEvent, type ParticipantEventRecord } from '../types';
+import { useAudioPlayer } from './useAudioPlayer';
 
 export const useParticipantEvents = (participantNameMap: Record<string, string>) => {
     const room = useRoomContext();
+    const { playAudio } = useAudioPlayer('/assets/sounds/join_notification.wav');
 
     const [events, setEvents] = useState<ParticipantEventRecord[]>([]);
 
@@ -34,6 +37,10 @@ export const useParticipantEvents = (participantNameMap: Record<string, string>)
                     type: 'event',
                 },
             ]);
+
+            if (room.numParticipants <= JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT) {
+                playAudio();
+            }
         };
 
         const handleParticipantDisconnected = (participant: Participant) => {
@@ -56,7 +63,7 @@ export const useParticipantEvents = (participantNameMap: Record<string, string>)
             room.off('participantConnected', handleParticipantConnected);
             room.off('participantDisconnected', handleParticipantDisconnected);
         };
-    }, [room, participantNameMap]);
+    }, [room, participantNameMap, playAudio]);
 
     return eventsHavingNamedParticipants;
 };
