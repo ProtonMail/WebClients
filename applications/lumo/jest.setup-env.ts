@@ -2,7 +2,6 @@ import '@testing-library/jest-dom';
 import { Blob, File } from 'buffer';
 import { ReadableStream, WritableStream } from 'stream/web';
 import { TextDecoder, TextEncoder } from 'util';
-import 'whatwg-fetch';
 
 // Getting ReferenceError: TextDecoder is not defined without
 // @ts-ignore

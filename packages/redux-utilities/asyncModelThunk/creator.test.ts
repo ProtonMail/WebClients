@@ -188,7 +188,7 @@ describe('creator', () => {
         expect(selectState(store.getState())).toEqual({
             value: undefined,
             error: serializedError,
-            meta: { fetchedAt: 1, fetchedEphemeral: undefined },
+            meta: { fetchedAt: 1, fetchedEphemeral: true },
         });
         expect(actions[2]).toEqual(thunkActionCreator.rejected(serializedError));
     });
@@ -221,7 +221,7 @@ describe('creator', () => {
         expect(selectState(store.getState())).toEqual({
             value: undefined,
             error: serializedError,
-            meta: { fetchedAt: 1, fetchedEphemeral: undefined },
+            meta: { fetchedAt: 1, fetchedEphemeral: true },
         });
         expect(actions[2]).toEqual(thunkActionCreator.rejected(serializedError));
 
@@ -230,7 +230,7 @@ describe('creator', () => {
         expect(selectState(store.getState())).toEqual({
             value: undefined,
             error: undefined,
-            meta: { fetchedAt: 1, fetchedEphemeral: undefined },
+            meta: { fetchedAt: 1, fetchedEphemeral: true },
         });
         expect(actions[4]).toEqual(thunkActionCreator.pending());
 

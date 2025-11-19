@@ -6,7 +6,8 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
-        "test": "jest --runInBand"
+        "test": "jest --runInBand",
+        "test:ci": "yarn test"
     },
     "dependencies": {
         "@proton/react-redux-store": "workspace:^",
