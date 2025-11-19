@@ -1235,6 +1235,9 @@
       "Wrong second password": [
         "Segunda senha incorreta"
       ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Você está sem off-line. Retome a conectividade para desbloquear o ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "O seu DNS não está corretamente configurado. O registro MX que obtermos é:"
       ],
@@ -2155,6 +2158,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Os itens selecionados foram restaurados da lixeira."
+      ],
+      "Servers are unreachable": [
+        "Os servidores estão inacessíveis"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
