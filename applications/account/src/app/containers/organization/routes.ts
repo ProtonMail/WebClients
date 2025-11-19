@@ -343,7 +343,7 @@ export const getOrganizationAppRoutes = ({
                         organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED),
                 subsections: [
                     {
-                        text: PROTON_SENTINEL_NAME,
+                        text: c('Title').t`${PROTON_SENTINEL_NAME} for organizations`,
                         id: 'sentinel',
                         available: canShowB2BActivityMonitorEvents,
                     },
