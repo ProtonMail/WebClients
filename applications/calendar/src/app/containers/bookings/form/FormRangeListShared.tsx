@@ -65,9 +65,13 @@ interface ButtonProps {
 
 export const AddButton = ({ onClick, btnClassName }: ButtonProps) => {
     return (
-        <Tooltip title={c('Action').t`Split current booking range`}>
+        <Tooltip title={c('Action').t`Add another booking range to this day`}>
             <Button icon shape="ghost" onClick={onClick} className={btnClassName}>
-                <IcPlus name="plus" className="color-primary" alt={c('Action').t`Split current booking range`} />
+                <IcPlus
+                    name="plus"
+                    className="color-primary"
+                    alt={c('Action').t`Add another booking range to this day`}
+                />
             </Button>
         </Tooltip>
     );
