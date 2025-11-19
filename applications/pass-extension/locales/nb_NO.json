@@ -1125,6 +1125,9 @@
       "Secure link could not be opened.": [
         "Sikker kobling kunne ikke åpnes."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Tjenerne er utilgjengelige. Prøv å låse opp ${ PASS_SHORT_APP_NAME } om noen få minutter."
+      ],
       "Settings update failed": [
         "Oppdatering av innstillinger mislyktes"
       ],
@@ -1214,6 +1217,9 @@
       ],
       "Wrong second password": [
         "Feil andre passord"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Du er frakoblet. Gjenoppta tilkoblingen for å låse opp ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Nettleseren har problemer med å aktivere ${ PASS_APP_NAME }."
@@ -2129,6 +2135,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Valgte elementer er gjenopprettet fra papirkurven"
+      ],
+      "Servers are unreachable": [
+        "Tjenerne er utilgjengelige"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
