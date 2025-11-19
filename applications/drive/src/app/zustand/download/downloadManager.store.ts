@@ -35,7 +35,7 @@ export enum MalawareDownloadResolution {
     ContinueDownload = 'ContinueDownload',
 }
 
-type MalawareStatus = 'clean' | 'infected';
+type IssueStatus = 'detected' | 'approved' | 'rejected';
 
 export type DownloadItem = {
     downloadId: string;
@@ -47,7 +47,8 @@ export type DownloadItem = {
     status: DownloadStatusKeys;
     nodeUids: string[];
     downloadedBytes: number;
-    malawareDetected?: Record<string, MalawareStatus>;
+    malwareDetected?: Map<string, IssueStatus>;
+    unsupportedFileDetected?: IssueStatus;
     lastStatusUpdateTime: Date;
 };
 
@@ -77,7 +78,7 @@ export const useDownloadManagerStore = create<DownloadManagerStore>()(
                 const downloadId = generateUID();
                 const downloadItem: DownloadItem = {
                     ...item,
-                    malawareDetected: undefined,
+                    malwareDetected: undefined,
                     downloadId,
                     lastStatusUpdateTime: new Date(),
                 };

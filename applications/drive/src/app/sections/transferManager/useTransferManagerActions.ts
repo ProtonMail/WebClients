@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
@@ -23,10 +25,12 @@ export const useTransferManagerActions = () => {
     const { activeFolder } = useActiveShare();
     const { navigateToLink } = useDriveNavigation();
     const { drive } = useDrive();
-    const { clearDownloads } = useDownloadManagerStore(
+    const { clearDownloads, updateDownloadItem, getDownloadItem } = useDownloadManagerStore(
         useShallow((state) => {
             return {
                 clearDownloads: state.clearQueue,
+                updateDownloadItem: state.updateDownloadItem,
+                getDownloadItem: state.getQueueItem,
             };
         })
     );
@@ -43,17 +47,24 @@ export const useTransferManagerActions = () => {
         clearUploads();
     };
 
-    const cancelTransfer = (entry: TransferManagerEntry) => {
-        if (entry.type === 'download') {
-            downloadManager.cancel([entry.id]);
-        }
-        if (entry.type === 'upload') {
-            uploadManager.cancelUpload(entry.id);
-        }
-    };
+    const cancelTransfer = useCallback(
+        (entry: TransferManagerEntry) => {
+            if (entry.type === 'download') {
+                downloadManager.cancel([entry.id]);
+            }
+            if (entry.type === 'upload') {
+                uploadManager.cancelUpload(entry.id);
+            }
+        },
+        [downloadManager]
+    );
 
     const retryTransfer = (entry: TransferManagerEntry) => {
         if (entry.type === 'download') {
+            const item = getDownloadItem(entry.id);
+            if (item?.unsupportedFileDetected) {
+                updateDownloadItem(entry.id, { unsupportedFileDetected: 'detected' });
+            }
             downloadManager.retry([entry.id]);
         }
         if (entry.type === 'upload') {

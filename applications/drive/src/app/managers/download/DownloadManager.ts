@@ -85,7 +85,7 @@ export class DownloadManager {
             return;
         }
 
-        const nodes = await hydrateAndCheckNodes(nodeUids);
+        const { nodes, containsUnsupportedFile } = await hydrateAndCheckNodes(nodeUids);
         if (!nodes.length) {
             return;
         }
@@ -102,6 +102,7 @@ export class DownloadManager {
                 downloadedBytes: 0,
                 status: DownloadStatus.Pending,
                 nodeUids: [node.uid],
+                unsupportedFileDetected: containsUnsupportedFile ? 'detected' : undefined,
             });
             this.requestedDownloads.set(downloadId, nodes);
             void this.scheduleSingleFileDownload(downloadId, node);
@@ -113,6 +114,7 @@ export class DownloadManager {
                 downloadedBytes: 0,
                 status: DownloadStatus.Pending,
                 nodeUids: nodes.map(({ uid }) => uid),
+                unsupportedFileDetected: containsUnsupportedFile ? 'detected' : undefined,
             });
             this.requestedDownloads.set(downloadId, nodes);
 
@@ -128,6 +130,7 @@ export class DownloadManager {
             node,
             storageSizeEstimate: getNodeStorageSize(node),
             start: () => this.startSingleFileDownload(node, downloadId),
+            downloadId,
         });
     }
 
@@ -247,7 +250,8 @@ export class DownloadManager {
                 updateProgress,
                 this.scheduler,
                 abortController.signal,
-                parentPathByUid
+                parentPathByUid,
+                downloadId
             );
             const generator = archiveStreamGenerator.generator;
             const trackerController = archiveStreamGenerator.controller;
@@ -257,24 +261,28 @@ export class DownloadManager {
             const archiveGenerator = new ArchiveGenerator();
             abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
 
-            // Archive creation
-            const archivePromise = archiveGenerator.writeLinks(generator);
-            void archivePromise.then(() => {
-                this.updateStatus([downloadId], DownloadStatus.Finalizing);
-            });
+            const startArchiveSaving = () => {
+                const archivePromise = archiveGenerator.writeLinks(generator);
+                void archivePromise.then(() => {
+                    this.updateStatus([downloadId], DownloadStatus.Finalizing);
+                });
 
-            // Saving file
-            const savePromise = fileSaver.instance.saveAsFile(
-                archiveGenerator.stream,
-                {
-                    filename: archiveName,
-                    mimeType: 'application/zip',
-                    size: archiveSizeInBytes > 0 ? archiveSizeInBytes : undefined,
-                },
-                log
-            );
+                const savePromise = fileSaver.instance.saveAsFile(
+                    archiveGenerator.stream,
+                    {
+                        filename: archiveName,
+                        mimeType: 'application/zip',
+                        size: archiveSizeInBytes > 0 ? archiveSizeInBytes : undefined,
+                    },
+                    log
+                );
 
-            const combinedCompletion = Promise.all([totalEncryptedSizePromise, archivePromise, savePromise]);
+                return Promise.all([archivePromise, savePromise]).then(() => {});
+            };
+
+            const savingPromise = archiveStreamGenerator.waitForFirstItem().then(() => startArchiveSaving());
+
+            const combinedCompletion = Promise.all([totalEncryptedSizePromise, savingPromise]);
 
             const controllerProxy: DownloadController = {
                 pause: () => trackerController.pause(),
@@ -371,11 +379,13 @@ export class DownloadManager {
         const { getQueueItem } = useDownloadManagerStore.getState();
         downloadIds.forEach((id) => {
             const storeItem = getQueueItem(id);
-            const activeDownload = this.activeDownloads.get(id);
-            if (storeItem && activeDownload) {
+            if (storeItem && this.activeDownloads.has(id)) {
                 void this.stopDownload(downloadIds);
-                this.updateStatus(downloadIds, DownloadStatus.Cancelled);
+            } else if (storeItem && this.requestedDownloads.has(id)) {
+                this.requestedDownloads.delete(id);
+                this.scheduler.cancelDownloadsById(id);
             }
+            this.updateStatus(downloadIds, DownloadStatus.Cancelled);
         });
     }
 
