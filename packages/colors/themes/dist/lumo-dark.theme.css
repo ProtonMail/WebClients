@@ -102,9 +102,11 @@
   --optional-promotion-background-end: rgb(70 26 255 / 0.04);
   --optional-upgrade-color-1: #ffac2e;
   --optional-upgrade-color-2: #6d4aff;
-  --text-error-banner-title: #15006f;
-  --text-error-banner-message: #50409b;
-  --text-error-banner-button: var(--interaction-norm);
+  --text-error-banner-title: white;
+  --text-error-banner-message: white;
+  --text-error-banner-button: white;
+  --error-banner-high-opacity: 0.55;
+  --error-banner-low-opacity: 0.35;
   --markdown-code-background: #282c34;
   --markdown-pre-background: #282c34;
   --markdown-pre-border: #343140;
