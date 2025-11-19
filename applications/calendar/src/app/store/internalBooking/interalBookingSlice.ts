@@ -30,6 +30,12 @@ export const selectInternalBooking = (state: InternalBookingState) => state[name
 
 const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
+        if (!extraArgument.unleashClient.isEnabled('CalendarBookings')) {
+            return {
+                bookingPages: [],
+            };
+        }
+
         const [calendars, bookingPages] = await Promise.all([
             dispatch(calendarsThunk()),
             extraArgument.api<{ BookingPages: InternalBookingPagePayload[]; Code: number }>(getUserBookingPage()),
