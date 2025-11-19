@@ -11,6 +11,9 @@ module.exports = {
     ],
     resolver: './jest.resolver.js',
     testEnvironment: '@proton/jest-env',
+    testEnvironmentOptions: {
+        abortSignal: true
+    },
     transformIgnorePatterns: [
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs|until-async)/)',
     ],
