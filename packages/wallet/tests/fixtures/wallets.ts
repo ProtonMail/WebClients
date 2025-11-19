@@ -58,6 +58,8 @@ export const getMockedWasmAccount = (mocked?: Partial<WasmAccount>): WasmAccount
         getAddresses: vi.fn(),
         getHighestUsedAddressIndexInOutput: vi.fn().mockReturnValue(0),
         getXpub: vi.fn(),
+        getConvertedXpub: vi.fn(),
+        getFullDescriptor: vi.fn(),
         [Symbol.dispose]: vi.fn(),
         ...mocked,
     };

@@ -134,8 +134,12 @@ export const useAccountPreferences = (
         void withLoadingFiatCurrencyUpdate(promise());
     };
 
-    const getXpub = () => {
-        return wasmAccount?.getXpub();
+    const getConvertedXpub = () => {
+        return wasmAccount?.getConvertedXpub();
+    };
+
+    const getDescriptor = () => {
+        return wasmAccount?.getFullDescriptor();
     };
 
     return {
@@ -144,7 +148,8 @@ export const useAccountPreferences = (
         onChangeLabel,
         updateWalletAccountLabel,
 
-        getXpub,
+        getConvertedXpub,
+        getDescriptor,
 
         deleteWalletAccount,
 
