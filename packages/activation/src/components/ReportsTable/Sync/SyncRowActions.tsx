@@ -12,6 +12,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Alert, DropdownActions, Prompt, useApi, useModalState } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 
 import { getTokensByFeature } from '../../../api';
 import DisconnectBYOEModal from '../../Modals/DisconnectBYOEModal/DisconnectBYOEModal';
@@ -30,7 +31,8 @@ const SyncRowActions = ({ syncId }: Props) => {
     const [deleteModalProps, showDeleteModal, renderDeleteModal] = useModalState();
     const [disconnectBYOEProps, setDisconnectBYOEOpen, renderDisconnectBYOEModal] = useModalState();
 
-    const addressWithSync = addresses.find((address) => address.Email === syncItem.account);
+    const emailAddress = addresses.find((address) => address.Email === syncItem.account);
+    const isBYOE = emailAddress ? getIsBYOEAddress(emailAddress) : false;
 
     const [loadingApiChange, withLoadingApiChange] = useLoading();
 
@@ -41,8 +43,6 @@ const SyncRowActions = ({ syncId }: Props) => {
     const { feature } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
 
     const handleReconnectClick = async () => {
-        const emailAddresses = addresses.map((address) => address.Email);
-        const isBYOE = emailAddresses.includes(syncItem.account);
         const features = [isBYOE ? EASY_SWITCH_FEATURES.BYOE : EASY_SWITCH_FEATURES.IMPORT_MAIL];
 
         const { Tokens } = await api<{ Tokens: ImportToken[] }>(
@@ -90,7 +90,7 @@ const SyncRowActions = ({ syncId }: Props) => {
     };
 
     const handleClickDelete = () => {
-        if (addressWithSync) {
+        if (isBYOE) {
             setDisconnectBYOEOpen(true);
         } else {
             showDeleteModal(true);
@@ -160,8 +160,8 @@ const SyncRowActions = ({ syncId }: Props) => {
                 </Prompt>
             )}
 
-            {renderDisconnectBYOEModal && addressWithSync && (
-                <DisconnectBYOEModal address={addressWithSync} {...disconnectBYOEProps} />
+            {renderDisconnectBYOEModal && emailAddress && (
+                <DisconnectBYOEModal address={emailAddress} {...disconnectBYOEProps} />
             )}
         </>
     );
