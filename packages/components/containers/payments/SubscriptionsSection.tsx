@@ -159,6 +159,11 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             return null;
         }
 
+        // handle the case when user has an upcoming subscription that should eventually downcycle automatically.
+        if (upcoming && getShouldHaveUpcomingSubscription(upcoming)) {
+            return c('Billing cycle').t`Renews automatically`;
+        }
+
         const renewPrice = getSimplePriceString(renewCurrency, renewAmount);
         return c('Billing cycle').ngettext(
             msgid`Renews automatically at ${renewPrice}, for ${renewLength} month`,
