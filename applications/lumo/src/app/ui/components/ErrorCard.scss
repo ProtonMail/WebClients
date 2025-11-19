@@ -12,10 +12,14 @@
 }
 
 .error-card {
-	// --upgrade-background-color: #ffffff0d;
-	background: linear-gradient(85.16deg, rgb(255 172 47 / 0.15) 0%, rgb(255 172 47 / 0.05) 100%);
+	background: linear-gradient(
+		85.16deg,
+		rgb(255 172 47 / var(--error-banner-high-opacity)) 0%,
+		rgb(255 172 47 / var(--error-banner-low-opacity)) 100%
+	);
 	border: 1px solid #c5b7ff26;
-	inset-block-end: 8px;
+
+	// inset-block-end: 8px;
 
 	&.high-load-warning {
 		inset-block-end: 0;
