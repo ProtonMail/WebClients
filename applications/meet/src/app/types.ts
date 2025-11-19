@@ -91,6 +91,6 @@ export interface DeviceState {
     systemDefault: MediaDeviceInfo | null;
     systemDefaultLabel: string;
     useSystemDefault: boolean;
-    cachedAvailable: boolean;
-    cachedDeviceId: string | null;
+    preferredAvailable: boolean;
+    preferredDevice: MediaDeviceInfo | null;
 }

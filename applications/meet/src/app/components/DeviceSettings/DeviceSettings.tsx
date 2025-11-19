@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
@@ -113,8 +112,6 @@ export const DeviceSettings = ({
         );
     };
 
-    const { activeBreakpoint } = useActiveBreakpoint();
-
     let microphoneLabel;
     if (noMicrophonePermission) {
         microphoneLabel = c('Info').t`Permissions not given.`;
@@ -131,7 +128,7 @@ export const DeviceSettings = ({
             supportsSetSinkId()
         ) {
             microphoneLabel = c('Info').t`Custom combination`;
-        } else if (microphoneState.useSystemDefault || !microphoneState.cachedAvailable) {
+        } else if (microphoneState.useSystemDefault || !microphoneState.preferredAvailable) {
             microphoneLabel = microphoneState.systemDefaultLabel;
         } else {
             microphoneLabel = audioDevice?.label ?? microphoneState.systemDefaultLabel;
@@ -146,7 +143,7 @@ export const DeviceSettings = ({
     } else {
         const selectedCamera = cameras.find((camera) => camera.deviceId === selectedCameraId);
         cameraLabel =
-            cameraState.useSystemDefault || !cameraState.cachedAvailable
+            cameraState.useSystemDefault || !cameraState.preferredAvailable
                 ? cameraState.systemDefaultLabel
                 : (selectedCamera?.label ?? cameraState.systemDefaultLabel);
     }
@@ -168,7 +165,7 @@ export const DeviceSettings = ({
                         {displayName}
                     </div>
                 )}
-                {activeBreakpoint === 'xsmall' && initialCameraState && (
+                {isMobile() && initialCameraState && (
                     <div
                         className="absolute right-custom top-custom z-up text-ellipsis"
                         style={{ '--right-custom': '0.5rem', '--top-custom': '1.25rem' }}
