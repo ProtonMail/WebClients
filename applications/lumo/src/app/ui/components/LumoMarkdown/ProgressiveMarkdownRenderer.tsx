@@ -241,15 +241,6 @@ const MarkdownBlock: React.FC<{
             };
         }, [theme]);
 
-        // OPTIMIZATION: CSS containment for better rendering performance
-        // Browser can skip rendering this block if off-screen
-        const containerStyle: React.CSSProperties = {
-            contentVisibility: 'auto' as any,
-            contain: 'layout style paint',
-        };
-
-        // Always include remarkGfm for table support (even during streaming)
-        // Users need to see partial tables rendered as they stream, not just raw text
         const plugins = [remarkGfm];
 
         // Custom components for markdown rendering
@@ -288,11 +279,9 @@ const MarkdownBlock: React.FC<{
         );
 
         return (
-            <div style={containerStyle}>
-                <Markdown remarkPlugins={plugins} components={components}>
-                    {content}
-                </Markdown>
-            </div>
+            <Markdown remarkPlugins={plugins} components={components}>
+                {content}
+            </Markdown>
         );
     },
     (prev, next) => {
@@ -364,14 +353,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
         return (
             <div className="progressive-markdown-content">
                 {blocks.map((block) => (
-                    <div
-                        key={block.key}
-                        style={{
-                            contentVisibility: 'auto',
-                            containIntrinsicSize: 'auto 100px',
-                            overflowX: 'auto', // For tables.
-                        }}
-                    >
+                    <div key={block.key} className="content-visibility-auto">
                         <MarkdownBlock
                             content={block.content}
                             theme={theme}
