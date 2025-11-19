@@ -220,10 +220,9 @@
 	inset-block-start: 0;
 	inset-inline-start: 0;
 	block-size: 100%;
-
-	// Fixed width prevents text reflow as sidebar animates from 64px to 260px
-	inline-size: 236px; // 260px (expanded sidebar) - 24px (padding)
-	max-inline-size: 236px;
+	inline-size: 100%;
+	max-inline-size: 100%;
+	min-inline-size: 235px;
 
 	// Enable scrolling for content overflow
 	overflow: hidden auto;
@@ -360,7 +359,7 @@
 		inset-block-start: 0;
 		inset-inline-start: 0;
 		inline-size: 100vw;
-		block-size: 100vh;
+		block-size: 100%; // Use percentage instead of viewport units for Safari compatibility
 		opacity: 1 !important;
 		pointer-events: auto !important;
 		z-index: 90 !important; // Behind sidebar (which is z-index: 100) but above content
