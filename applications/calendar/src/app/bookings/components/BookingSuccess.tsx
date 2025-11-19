@@ -115,11 +115,7 @@ export const BookingSuccess = () => {
                         />
                     )}
 
-                    <BookingSuccessItem
-                        title={c('Title').t`Time`}
-                        icon={<IcClock />}
-                        data={hasLocation ? timeData : ''}
-                    />
+                    <BookingSuccessItem title={c('Title').t`Time`} icon={<IcClock />} data={timeData} />
 
                     <BookingSuccessItem
                         title={c('Title').t`Time zone`}
