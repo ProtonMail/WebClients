@@ -57,7 +57,7 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
     const isCopyAllowed = checkIsCopyAllowed(itemsToCopy, copyTargetUid);
     const targetIsWritable = copyTargetUid
         ? [MemberRole.Admin, MemberRole.Editor].includes(get(copyTargetUid)?.highestEffectiveRole ?? MemberRole.Viewer)
-        : false;
+        : undefined;
 
     const handleSelect = useCallback((treeItemId: string, targetItem: DirectoryTreeItem) => {
         if (targetItem.type === NodeType.Folder) {
@@ -77,11 +77,13 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
             .finally(() => setIsCopying(false));
     };
 
+    const errorMessage = getErrorMessage(isCopyAllowed, targetIsWritable);
+
     return (
         <ModalTwo size="large" open={open} onClose={onClose} onExit={onExit}>
             <ModalTwoHeader title={c('Title').t`Make a copy`} />
             <ModalTwoContent>
-                <div className="alert-block mb-4">{c('Info').t`Select a folder to copy to.`}</div>
+                <div className="alert-block mb-4">{c('Info').t`Select a folder to make the copy in`}</div>
                 {isLoading ? (
                     <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
                 ) : (
@@ -95,29 +97,31 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
             </ModalTwoContent>
             <ModalTwoFooter className="flex justify-end gap-4">
                 <Button onClick={onClose}>{c('Action').t`Close`}</Button>
-                <Tooltip
-                    title={
-                        <>
-                            {isCopyAllowed &&
-                                c('Info')
-                                    .t`One of the files or folders you want to copy already exist in selected folder.`}
-                            {!targetIsWritable && c('Info').t`You don’t have permission to copy files to this folder.`}
-                        </>
-                    }
-                >
+                <Tooltip title={errorMessage}>
                     {/* Disabled elements block pointer events, you need a wrapper for the tooltip to work properly */}
                     <span>
                         <Button
                             color="norm"
                             onClick={copyItemsToTarget}
-                            disabled={isCopying || !copyTargetUid || isCopyAllowed || !targetIsWritable}
-                        >{c('Action').t`Copy`}</Button>
+                            disabled={isCopying || !copyTargetUid || !!errorMessage}
+                        >{c('Action').t`Make a copy`}</Button>
                     </span>
                 </Tooltip>
             </ModalTwoFooter>
         </ModalTwo>
     );
 };
+
+function getErrorMessage(isCopyAllowed: boolean, targetIsWritable: boolean | undefined) {
+    const messages = [];
+    if (isCopyAllowed) {
+        messages.push(c('Info').t`One of the files or folders you want to copy already exist in selected folder.`);
+    }
+    if (targetIsWritable === false) {
+        messages.push(c('Info').t`You don’t have permission to copy files to this folder.`);
+    }
+    return messages.length > 0 ? messages.join('\n') : undefined;
+}
 
 export const useCopyItemsModal = () => {
     const [copyModal, showModal] = useModalTwoStatic(CopyItemsModal);

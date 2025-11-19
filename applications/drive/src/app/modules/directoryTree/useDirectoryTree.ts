@@ -65,7 +65,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
             treeItemId: makeTreeItemId(null, DEVICES_ROOT_ID),
             parentUid: null,
             name: c('Title').t`Computers`,
-            type: DirectoryTreeRootType.PlaceholderRoot,
+            type: DirectoryTreeRootType.DevicesRoot,
             expandable: true,
             isSharedWithMe: false,
         });
@@ -76,7 +76,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
             treeItemId: makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID),
             parentUid: null,
             name: c('Title').t`Shared with me`,
-            type: DirectoryTreeRootType.PlaceholderRoot,
+            type: DirectoryTreeRootType.SharesRoot,
             expandable: true,
             isSharedWithMe: false,
         });

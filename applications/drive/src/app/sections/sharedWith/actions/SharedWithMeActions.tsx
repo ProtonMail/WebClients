@@ -1,6 +1,6 @@
 import type { useConfirmActionModal } from '@proton/components';
 
-import type { SharedWithMeListingItemUI } from '../../../zustand/sections/sharedWithMeListing.store';
+import type { DirectShareItem, SharedWithMeListingItemUI } from '../../../zustand/sections/sharedWithMeListing.store';
 import { BookmarkActions } from './BookmarkActions';
 import { DirectShareActions } from './DirectShareActions';
 import { InvitationActions } from './InvitationActions';
@@ -12,6 +12,7 @@ interface BaseSharedWithMeActionsProps {
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     showDetailsModal: (props: { shareId: string; linkId: string; volumeId: string }) => void;
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
+    showCopyModal: (items: DirectShareItem[]) => void;
 }
 
 interface ContextMenuSharedWithMeActionsProps extends BaseSharedWithMeActionsProps {
@@ -31,6 +32,7 @@ export const SharedWithMeActions = ({
     showConfirmModal,
     showDetailsModal,
     showFilesDetailsModal,
+    showCopyModal,
     close,
     buttonType,
 }: SharedWithMeActionsProps) => {
@@ -71,6 +73,7 @@ export const SharedWithMeActions = ({
                 showConfirmModal={showConfirmModal}
                 showDetailsModal={showDetailsModal}
                 showFilesDetailsModal={showFilesDetailsModal}
+                showCopyModal={showCopyModal}
                 {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         );

@@ -182,6 +182,7 @@ export type IconName =
     | 'dots'
     | 'drawer-dividers'
     | 'drive'
+    | 'duplicate'
     | 'earth'
     | 'emoji'
     | 'envelope'

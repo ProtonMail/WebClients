@@ -18,6 +18,7 @@ import {
 } from '../../../components/sections/ToolbarButtons';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { DirectShareItem } from '../../../zustand/sections/sharedWithMeListing.store';
+import { CopyButton } from '../../folders/buttons/CopyButton';
 import { RemoveMeButton } from '../buttons/RemoveMeButton';
 import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 
@@ -26,6 +27,7 @@ interface BaseDirectShareActionsProps {
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     showDetailsModal: (props: { shareId: string; linkId: string; volumeId: string }) => void;
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
+    showCopyModal: (items: DirectShareItem[]) => void;
 }
 
 interface ContextMenuDirectShareActionsProps extends BaseDirectShareActionsProps {
@@ -45,11 +47,14 @@ export const DirectShareActions = ({
     showConfirmModal,
     showDetailsModal,
     showFilesDetailsModal,
+    showCopyModal,
     close,
     buttonType,
 }: DirectShareActionsProps) => {
     const itemChecker = createItemChecker(selectedItems);
     const singleItem = selectedItems.at(0);
+
+    const copyAction = () => showCopyModal(selectedItems);
 
     const openInDocs = useOpenInDocs(
         singleItem
@@ -75,6 +80,7 @@ export const DirectShareActions = ({
                 <ToolbarPreviewButton selectedBrowserItems={legacyItems} />
                 <ToolbarOpenInDocsButton selectedBrowserItems={legacyItems} />
                 {itemChecker.canDownload && <ToolbarDownloadButton selectedBrowserItems={legacyItems} />}
+                <CopyButton type="toolbar" close={close} onClick={copyAction} />
                 <ToolbarDetailsButton selectedBrowserItems={legacyItems} />
                 {itemChecker.isOnlyOneItem && (
                     <>
@@ -107,6 +113,8 @@ export const DirectShareActions = ({
             )}
 
             {itemChecker.canDownload && <ContextDownloadButton selectedBrowserItems={legacyItems} close={close} />}
+
+            <CopyButton type="context" close={close} onClick={copyAction} />
 
             <ContextDetailsButton
                 selectedBrowserItems={legacyItems}
