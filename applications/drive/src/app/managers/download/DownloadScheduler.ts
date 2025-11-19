@@ -1,3 +1,4 @@
+import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { DownloadQueueTask, DownloadQueueTaskHandle } from './downloadTypes';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
 
@@ -31,7 +32,7 @@ export class DownloadScheduler {
     }
 
     // Remove a task from any queue state and free the load it reserved.
-    cancelDownload(taskId: string): void {
+    cancelTask(taskId: string): void {
         const index = this.pendingTasks.findIndex((task) => task.taskId === taskId);
         if (index >= 0) {
             this.pendingTasks.splice(index, 1);
@@ -39,6 +40,13 @@ export class DownloadScheduler {
 
         if (this.activeTasksLoad.delete(taskId)) {
             this.drainQueue();
+        }
+    }
+
+    cancelDownloadsById(downloadId: string): void {
+        const downloads = this.pendingTasks.filter((task) => task.downloadId === downloadId);
+        for (const download of downloads) {
+            this.cancelTask(download.taskId);
         }
     }
 
@@ -77,6 +85,12 @@ export class DownloadScheduler {
             const nextTask = this.pendingTasks[index];
             const estimatedBytes = this.getTaskLoad(nextTask);
 
+            const isBlockedByUser = this.isBlockedByUser(nextTask);
+
+            if (isBlockedByUser) {
+                continue;
+            }
+
             if (!this.canStartWithLoad(estimatedBytes)) {
                 continue;
             }
@@ -86,13 +100,19 @@ export class DownloadScheduler {
             this.startTask(nextTask, pendingTaskLoad);
             break;
         }
+
+        // We have tasks but they cannot be started, probably waiting user decision
+        if (this.pendingTasks.length) {
+            setTimeout(() => {
+                this.drainQueue();
+            }, UPDATE_PROGRESS_THROTTLE_MS);
+        }
     }
 
     // Transition a task into the starting state and attach teardown handlers.
     private startTask(task: DownloadQueueTask, pendingTaskLoad: TaskLoad): void {
         const id = task.taskId;
         this.activeTasksLoad.set(id, pendingTaskLoad);
-
         task.start()
             .then((handle: DownloadQueueTaskHandle) => {
                 handle.completion
@@ -147,5 +167,11 @@ export class DownloadScheduler {
         task.storageSizeEstimate = task.storageSizeEstimate ?? getNodeStorageSize(task.node);
 
         return task.storageSizeEstimate;
+    }
+
+    private isBlockedByUser(task: DownloadQueueTask) {
+        const { getQueueItem } = useDownloadManagerStore.getState();
+        const storeItem = getQueueItem(task.downloadId);
+        return storeItem?.unsupportedFileDetected === 'detected';
     }
 }

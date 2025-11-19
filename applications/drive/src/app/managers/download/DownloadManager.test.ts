@@ -30,6 +30,7 @@ const archiveStreamGeneratorTracker = trackInstances((...args: unknown[]) => ({
         completion: jest.fn().mockResolvedValue(undefined),
     },
     generator: createEmptyAsyncGenerator<unknown>(),
+    waitForFirstItem: jest.fn().mockResolvedValue(undefined),
 }));
 
 const archiveGeneratorTracker = trackInstances(() => ({
@@ -245,7 +246,7 @@ describe('DownloadManager', () => {
             name: 'file.txt',
         });
         const nodeSize = node.activeRevision?.storageSize ?? 0;
-        hydrateAndCheckNodesMock.mockResolvedValue([node]);
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
@@ -325,7 +326,7 @@ describe('DownloadManager', () => {
             uid: 'file-2',
             name: 'broken.txt',
         });
-        hydrateAndCheckNodesMock.mockResolvedValue([node]);
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
         const failure = new Error('sdk failure');
         sdkMock.driveMock.getFileDownloader.mockRejectedValue(failure);
@@ -349,7 +350,7 @@ describe('DownloadManager', () => {
             uid: 'file-retry',
             name: 'retry-me.txt',
         });
-        hydrateAndCheckNodesMock.mockResolvedValue([node]);
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
 
         storeMockState.addDownloadItem.mockReturnValue('download-retry');
 
@@ -377,7 +378,7 @@ describe('DownloadManager', () => {
             createMockNodeEntity({ uid: 'file-a', name: 'a.txt' }),
             createMockNodeEntity({ uid: 'file-b', name: 'b.txt' }),
         ];
-        hydrateAndCheckNodesMock.mockResolvedValue(nodes);
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
         storeMockState.addDownloadItem.mockReturnValue('archive-retry');
         storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Failed });
@@ -425,7 +426,7 @@ describe('DownloadManager', () => {
             createMockNodeEntity({ uid: 'folder-1', name: 'folder', type: NodeType.Folder, activeRevision: undefined }),
             createMockNodeEntity({ uid: 'file-3', name: 'photo.jpg' }),
         ];
-        hydrateAndCheckNodesMock.mockResolvedValue(nodes);
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
         const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
         const totalSizeDeferred = createDeferred<number>();
@@ -483,14 +484,82 @@ describe('DownloadManager', () => {
         saveDeferred.resolve();
         await flushAsync(2);
 
+        await waitForCondition(() =>
+            storeMockState.updateDownloadItem.mock.calls.some(
+                ([id, update]: [string, Partial<{ status: (typeof DownloadStatus)[keyof typeof DownloadStatus] }>]) =>
+                    id === 'archive-id' && update.status === DownloadStatus.Finalizing
+            )
+        );
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('archive-id', {
             status: DownloadStatus.Finalizing,
         });
+
+        await waitForCondition(() =>
+            storeMockState.updateDownloadItem.mock.calls.some(
+                ([id, update]: [string, Partial<{ status: (typeof DownloadStatus)[keyof typeof DownloadStatus] }>]) =>
+                    id === 'archive-id' && update.status === DownloadStatus.Finished
+            )
+        );
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('archive-id', {
             status: DownloadStatus.Finished,
         });
         await waitForCondition(() => !activeDownloads.has('archive-id'));
 
+        archiveGeneratorTracker.restoreFactory();
+    });
+
+    it('should defer archive saving until first item is available', async () => {
+        const manager = DownloadManager.getInstance();
+        storeMockState.addDownloadItem.mockReturnValue('archive-delay');
+        storeMockState.getQueueItem.mockReturnValue(undefined);
+
+        const nodes: NodeEntity[] = [
+            createMockNodeEntity({ uid: 'file-1', name: 'first.txt' }),
+            createMockNodeEntity({ uid: 'file-2', name: 'second.txt' }),
+        ];
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
+
+        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
+        nodesStructureTraversalMock.mockReturnValue({
+            nodesQueue: { iterator: iteratorMock },
+            totalEncryptedSizePromise: Promise.resolve(0),
+            parentPathByUid: new Map(nodes.map((node) => [node.uid, []])),
+        });
+
+        const waitDeferred = createDeferred<void>();
+        archiveStreamGeneratorTracker.setFactory((...args: unknown[]) => ({
+            constructorArgs: args,
+            controller: {
+                pause: jest.fn(),
+                resume: jest.fn(),
+                completion: jest.fn().mockResolvedValue(undefined),
+            },
+            generator: createEmptyAsyncGenerator<unknown>(),
+            waitForFirstItem: jest.fn(() => waitDeferred.promise),
+        }));
+
+        archiveGeneratorTracker.setFactory(() => ({
+            stream: 'archive-stream',
+            writeLinks: jest.fn().mockResolvedValue(undefined),
+            cancel: jest.fn(),
+        }));
+
+        fileSaverSaveAsFileMock.mockResolvedValue(undefined);
+
+        await manager.download(nodes.map((node) => node.uid));
+        await flushAsync();
+
+        const archiveGenInstance = getArchiveGeneratorInstance();
+        expect(archiveGenInstance.writeLinks).not.toHaveBeenCalled();
+        expect(fileSaverSaveAsFileMock).not.toHaveBeenCalled();
+
+        waitDeferred.resolve();
+        await flushAsync();
+
+        expect(archiveGenInstance.writeLinks).toHaveBeenCalled();
+        expect(fileSaverSaveAsFileMock).toHaveBeenCalled();
+
+        archiveStreamGeneratorTracker.restoreFactory();
         archiveGeneratorTracker.restoreFactory();
     });
 

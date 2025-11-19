@@ -28,13 +28,15 @@ export type DownloadQueueTaskHandle = {
 export type DownloadQueueTask = {
     taskId: string;
     node: NodeEntity;
+    downloadId: string;
     storageSizeEstimate?: number;
     start: () => Promise<DownloadQueueTaskHandle>;
 };
 
 export type DownloadScheduler = {
     scheduleDownload(task: DownloadQueueTask): string;
-    cancelDownload(taskId: string): void;
+    cancelTask(taskId: string): void;
+    cancelDownloadsById(downloadId: string): void;
     clearDownloads(): void;
     generateTaskId(): string;
     updateDownloadProgress(taskId: string, downloadedBytes: number): void;

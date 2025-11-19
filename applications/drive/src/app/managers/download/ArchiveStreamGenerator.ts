@@ -15,6 +15,9 @@ type ArchiveTracker = {
     pauseAll(): void;
     resumeAll(): void;
     waitForCompletion(): Promise<void>;
+    notifyItemReady(): void;
+    notifyError(error: unknown): void;
+    waitForFirstItem(): Promise<void>;
 };
 
 /**
@@ -27,6 +30,13 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): Ar
     const downloadedBytesMap: Record<string, number> = {};
     const controllerByUid = new Map<string, DownloadController>();
     const completionPromises = new Map<string, Promise<void>>();
+    let firstItemSettled = false;
+    let resolveFirstItem: () => void;
+    let rejectFirstItem: (error: unknown) => void;
+    const firstItemPromise = new Promise<void>((resolve, reject) => {
+        resolveFirstItem = resolve;
+        rejectFirstItem = reject;
+    });
 
     const updateTotalProgress = () => {
         const inFlightBytes = Object.values(downloadedBytesMap).reduce((acc, val) => acc + val, 0);
@@ -64,6 +74,24 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): Ar
             }
             // Only return ONCE when all archive files have finished download
             return Promise.all(pendingCompletions).then(() => {});
+        },
+        notifyItemReady() {
+            if (!firstItemSettled) {
+                firstItemSettled = true;
+                resolveFirstItem();
+            }
+        },
+        notifyError(error: unknown) {
+            if (!firstItemSettled) {
+                firstItemSettled = true;
+                rejectFirstItem(error);
+            }
+        },
+        waitForFirstItem(): Promise<void> {
+            if (firstItemSettled) {
+                return Promise.resolve();
+            }
+            return firstItemPromise;
         },
     };
 };
@@ -126,6 +154,8 @@ export class ArchiveStreamGenerator {
     private readonly archiveItemsQueue = createAsyncQueue<ArchiveItem>();
     private pendingArchiveTasks = 0;
     private schedulingCompleted = false;
+    private scheduledTasksAwaitingStart = 0;
+    private hasProducedItem = false;
 
     readonly generator: AsyncGenerator<ArchiveItem>;
     readonly controller: DownloadController;
@@ -135,7 +165,8 @@ export class ArchiveStreamGenerator {
         onProgress: (downloadedBytes: number) => void,
         private readonly scheduler: DownloadScheduler,
         private readonly abortSignal: AbortSignal,
-        private readonly parentPathByUid: Map<string, string[]>
+        private readonly parentPathByUid: Map<string, string[]>,
+        private readonly downloadId: string
     ) {
         this.tracker = createArchiveTracker(onProgress);
         this.generator = this.createGenerator();
@@ -144,6 +175,12 @@ export class ArchiveStreamGenerator {
             resume: () => this.tracker.resumeAll(),
             completion: () => this.tracker.waitForCompletion(),
         };
+
+        this.abortSignal.addEventListener('abort', () => {
+            const abortError = new Error('Archive download aborted');
+            this.tracker.notifyError(abortError);
+            this.archiveItemsQueue.error(abortError);
+        });
 
         void this.scheduleEntries();
     }
@@ -170,7 +207,9 @@ export class ArchiveStreamGenerator {
         const downloadTask: DownloadQueueTask = {
             taskId,
             node,
+            downloadId: this.downloadId,
             start: async () => {
+                this.scheduledTasksAwaitingStart = Math.max(this.scheduledTasksAwaitingStart - 1, 0);
                 this.pendingArchiveTasks += 1;
                 const parentPath = this.parentPathByUid.get(node.uid) ?? [];
                 const archivePromise = createArchiveItem(
@@ -184,9 +223,16 @@ export class ArchiveStreamGenerator {
 
                 archivePromise
                     .then((item) => {
+                        if (!this.hasProducedItem) {
+                            this.hasProducedItem = true;
+                        }
+                        this.tracker.notifyItemReady();
                         this.archiveItemsQueue.push(item);
                     })
                     .catch((error) => {
+                        if (!this.hasProducedItem) {
+                            this.tracker.notifyError(error);
+                        }
                         this.archiveItemsQueue.error(error);
                     })
                     .finally(() => {
@@ -201,11 +247,12 @@ export class ArchiveStreamGenerator {
             storageSizeEstimate: node.activeRevision?.storageSize ?? 0,
         };
 
+        this.scheduledTasksAwaitingStart += 1;
         this.scheduler.scheduleDownload(downloadTask);
     }
 
     private maybeCloseQueue() {
-        if (this.schedulingCompleted && this.pendingArchiveTasks === 0) {
+        if (this.schedulingCompleted && this.pendingArchiveTasks === 0 && this.scheduledTasksAwaitingStart === 0) {
             this.archiveItemsQueue.close();
         }
     }
@@ -219,7 +266,14 @@ export class ArchiveStreamGenerator {
             this.schedulingCompleted = true;
             this.maybeCloseQueue();
         } catch (error) {
+            if (!this.hasProducedItem) {
+                this.tracker.notifyError(error);
+            }
             this.archiveItemsQueue.error(error);
         }
+    }
+
+    waitForFirstItem(): Promise<void> {
+        return this.tracker.waitForFirstItem();
     }
 }

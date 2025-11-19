@@ -27,10 +27,11 @@ function makeTask(
     start: jest.Mock<Promise<DownloadQueueTaskHandle>>,
     overrides: Partial<DownloadQueueTask> = {}
 ): DownloadQueueTask {
-    const { taskId, node, storageSizeEstimate, ...rest } = overrides;
+    const { taskId, node, storageSizeEstimate, downloadId, ...rest } = overrides;
 
     taskCounter += 1;
     const resolvedTaskId = taskId ?? `task-${taskCounter}`;
+    const resolvedDownloadId = downloadId ?? resolvedTaskId;
     const resolvedNode =
         node ??
         createMockNodeEntity({
@@ -40,6 +41,7 @@ function makeTask(
 
     return {
         taskId: resolvedTaskId,
+        downloadId: resolvedDownloadId,
         node: resolvedNode,
         storageSizeEstimate,
         ...rest,
@@ -90,7 +92,7 @@ describe('DownloadScheduler', () => {
 
         expect(secondStart).not.toHaveBeenCalled();
 
-        scheduler.cancelDownload(secondId);
+        scheduler.cancelTask(secondId);
 
         blockingTasks[0].completion.resolve();
         await Promise.resolve();
