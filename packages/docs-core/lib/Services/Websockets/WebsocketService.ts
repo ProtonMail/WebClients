@@ -5,7 +5,12 @@ import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Type
 import type { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
 import type { InternalEventBusInterface, WebsocketConnectionInterface, WebsocketCallbacks } from '@proton/docs-shared'
-import { BroadcastSource, ProcessedIncomingRealtimeEventMessage, assertUnreachableAndLog } from '@proton/docs-shared'
+import {
+  BroadcastSource,
+  ProcessedIncomingRealtimeEventMessage,
+  assertUnreachableAndLog,
+  GenerateUUID,
+} from '@proton/docs-shared'
 import type { FetchRealtimeToken } from '../../UseCase/FetchRealtimeToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
 import metrics from '@proton/metrics'
@@ -15,8 +20,9 @@ import type {
   ServerMessageWithMessageAcks,
   ConnectionReadyPayload,
 } from '@proton/docs-proto'
-import { CreateDocumentUpdate, DocumentUpdate } from '@proton/docs-proto'
 import {
+  CreateDocumentUpdate,
+  DocumentUpdate,
   ClientMessage,
   ServerMessage,
   ServerMessageType,
@@ -33,7 +39,6 @@ import {
 import { c } from 'ttag'
 import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
-import { GenerateUUID } from '@proton/docs-shared'
 import { AckLedger } from './AckLedger/AckLedger'
 import type { AckLedgerInterface } from './AckLedger/AckLedgerInterface'
 import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
@@ -64,6 +69,7 @@ import {
 } from '../../utils/document-update-chunking'
 import type { UnleashClient } from '@proton/unleash'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 
 type LinkID = string
 
@@ -85,6 +91,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     private metricService: MetricService,
     private appVersion: string,
     private unleashClient: UnleashClient,
+    readonly sizeTracker: DocSizeTracker,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
@@ -363,16 +370,23 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const uuid = GenerateUUID()
 
-    const message = CreateDocumentUpdateMessage({
-      content,
+    const documentUpdate = CreateDocumentUpdate({
+      content: content,
       uuid: uuid,
       ...metadata,
     })
 
+    /* What's committed to actual DB is an array of `DocumentUpdate`s, so we only track the size of this
+    instead of the message wrapper  */
+    const size = documentUpdate.serializeBinary().byteLength
+    this.sizeTracker.incrementSize(size)
+
+    const message = CreateDocumentUpdateMessage(documentUpdate)
+
     const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
     const binary = messageWrapper.serializeBinary() as Uint8Array<ArrayBuffer>
 
-    this.logger.info(`Broadcasting document update ${uuid} of size: ${binary.byteLength} bytes`)
+    this.logger.info(`Broadcasting document update message for ${uuid} of size: ${binary.byteLength} bytes`)
 
     this.ledger.messagePosted(message)
 
@@ -694,6 +708,8 @@ export class WebsocketService implements WebsocketServiceInterface {
       } else {
         await this.decryptAndPublishDocumentUpdate(update, keys, document)
       }
+
+      this.sizeTracker.incrementSize(update.serializeBinary().byteLength)
     }
   }
 
