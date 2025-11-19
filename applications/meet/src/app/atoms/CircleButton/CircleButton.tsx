@@ -1,4 +1,4 @@
-import type { CSSProperties, RefObject } from 'react';
+import type { CSSProperties, ReactNode, RefObject } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -15,7 +15,7 @@ interface CircleButtonProps {
     IconComponent: (props: Pick<IconProps, 'viewBox' | 'size'>) => JSX.Element;
     onClick?: () => void;
     className?: string;
-    indicatorContent?: string;
+    indicatorContent?: string | ReactNode;
     indicatorStatus?: IndicatorStatus;
     iconViewPort?: string;
     variant?: CircleButtonVariant;
@@ -67,15 +67,16 @@ export const CircleButton = ({
                 {indicatorContent && (
                     <div
                         className={clsx(
-                            'indicator rounded-full flex justify-center items-center absolute top-custom right-custom w-custom h-custom',
+                            'indicator rounded-full flex justify-center items-center absolute h-custom w-custom top-custom right-custom',
                             `indicator-${indicatorStatus}`,
-                            Number(indicatorContent) > 9 && 'text-xs'
+                            (typeof indicatorContent !== 'string' || (indicatorContent as string).length > 1) &&
+                                'text-xs'
                         )}
                         style={{
-                            '--w-custom': '1.25rem',
-                            '--h-custom': '1.25rem',
-                            '--top-custom': '-0.15rem',
-                            '--right-custom': '-0.15rem',
+                            '--top-custom': '-0.25rem',
+                            '--right-custom': '-0.25rem',
+                            '--w-custom': '1.5rem',
+                            '--h-custom': '1.5rem',
                         }}
                     >
                         {indicatorContent}

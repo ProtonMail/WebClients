@@ -8,12 +8,21 @@ export enum ProtonCalendarState {
     FROM_PROTON_CALENDAR = 1,
 }
 
+enum EnumLockedState {
+    UNLOCKED = 0,
+    LOCKED = 1,
+}
+
 export interface MeetingInfoResponse {
     MeetingInfo: {
         Salt: string;
         SessionKey: string;
         MeetingName: string;
         CustomPassword: CustomPasswordState;
+        Locked: EnumLockedState;
+        MaxDuration: number;
+        MaxParticipants: number;
+        ExpirationTime: number;
     };
     Code: 1000;
 }
