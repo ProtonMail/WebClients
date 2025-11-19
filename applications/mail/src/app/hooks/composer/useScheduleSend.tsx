@@ -4,13 +4,15 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt, useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useConversationCounts, useMessageCounts } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -44,6 +46,7 @@ export const useScheduleSend = ({
     handleNoReplyEmail,
 }: Props) => {
     const { canScheduleSend } = useScheduleSendFeature();
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const location = useLocation();
     const dispatch = useMailDispatch();
@@ -126,8 +129,12 @@ export const useScheduleSend = ({
         }
     };
 
+    const hasExpiration = modelMessage.draftFlags?.expiresIn || modelMessage.data?.ExpirationTime;
+
+    // With retention policies enabled, BE will check if the scheduled time for the draft is within the expiration time,
+    // thus we can safely remove the check for draft expiration
     return {
-        canScheduleSend: canScheduleSend && !modelMessage.draftFlags?.expiresIn && !modelMessage.data?.ExpirationTime,
+        canScheduleSend: canScheduleSend && (isRetentionPoliciesEnabled || !hasExpiration),
         scheduleCount,
         loadingScheduleCount,
         handleScheduleSendModal,
