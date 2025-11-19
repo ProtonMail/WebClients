@@ -2409,6 +2409,9 @@
       "Easily manage your inbox": [
         "Z łatwością zarządzaj swoją skrzynką odbiorczą"
       ],
+      "Easily manage your inbox with ${ mailPlusPlanName }": [
+        "Łatwo zarządzaj swoją skrzynką odbiorczą z ${ mailPlusPlanName }."
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Włącz funkcję Kill Switch i automatyczne połączenie w ustawieniach VPN."
       ],
@@ -4193,6 +4196,14 @@
         "Co ${ interval } dni, ${ untilString }",
         "Co ${ interval } dni, ${ untilString }",
         "Co ${ interval } dnia, ${ untilString }"
+      ]
+    },
+    "Dashboard": {
+      "Set secure passwords without the hassle.": [
+        "Ustaw bezpieczne hasła bez problemów."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "W planie ${ planTitlePlusMaybeBrand } otrzymasz darmowy dostęp do wszystkich usług ${ BRAND_NAME } zwiększających prywatność."
       ]
     },
     "Day": {
