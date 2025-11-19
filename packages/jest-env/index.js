@@ -25,7 +25,11 @@ class MyEnvironment extends JSDOMEnvironment {
                         BroadcastChannel,
                         TransformStream,
                         fetch,
+                        Headers,
+                        FormData,
                         structuredClone,
+                        // Optionally global AbortController and AbortSignal since it breaks jsdom dom event listeners which use AbortSignals (docs-editor and drive)
+                        ...(projectConfig.testEnvironmentOptions?.abortSignal ? { AbortController, AbortSignal } : {}),
                     },
                 },
             },
