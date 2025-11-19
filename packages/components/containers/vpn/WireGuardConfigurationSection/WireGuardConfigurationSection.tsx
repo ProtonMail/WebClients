@@ -1,5 +1,5 @@
 import type { ChangeEvent, FormEvent } from 'react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import { Point, utils } from '@noble/ed25519';
@@ -188,10 +188,10 @@ const formatServerName = (bestServerName: string, alt: (code: string) => string 
     const flag = getFlagSvg(countryCode);
 
     return (
-        <>
+        <Fragment key="formatted-server-name">
             {flag && <img width={20} className="mx-2 border" src={flag} alt={alt(countryCode)} loading="lazy" />}
             <strong className="align-middle">{bestServerName}</strong>
-        </>
+        </Fragment>
     );
 };
 
