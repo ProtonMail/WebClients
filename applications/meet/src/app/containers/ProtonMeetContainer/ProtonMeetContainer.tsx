@@ -85,7 +85,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
     const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
 
-    const { getRoomName, initHandshake, token, urlPassword, getAccessDetails } = useMeetingSetup();
+    const { getMeetingDetails, initHandshake, token, urlPassword, getAccessDetails } = useMeetingSetup();
 
     const { toggleMeetingLock, isMeetingLocked } = useLockMeeting();
 
@@ -105,6 +105,9 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         meetingId: token,
         meetingPassword: urlPassword,
         meetingName: '',
+        locked: false,
+        maxDuration: 0,
+        maxParticipants: 0,
     });
 
     const [connectionLost, setConnectionLost] = useState(false);
@@ -283,7 +286,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
             const handshakeInfo = await initHandshake(token);
 
-            const roomName = await getRoomName({
+            const { roomName, locked, maxDuration, maxParticipants } = await getMeetingDetails({
                 customPassword: password,
                 urlPassword,
                 token,
@@ -295,6 +298,9 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             setMeetingDetails((prev) => ({
                 ...prev,
                 meetingName: roomName,
+                locked,
+                maxDuration,
+                maxParticipants,
             }));
 
             return true;
@@ -447,7 +453,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 return;
             }
 
-            const roomName = await getRoomName({
+            const { roomName, locked, maxDuration, maxParticipants } = await getMeetingDetails({
                 token: id,
                 customPassword: '',
                 urlPassword: passwordBase,
@@ -458,6 +464,9 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 meetingId: id,
                 meetingPassword: passwordBase,
                 meetingName: roomName,
+                locked,
+                maxDuration,
+                maxParticipants,
             });
 
             await handleJoin(displayName, id);
@@ -493,15 +502,27 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 return;
             }
 
-            let roomName = '';
+            let details = {
+                meetingName: '',
+                locked: false,
+                maxDuration: 0,
+                maxParticipants: 0,
+            };
 
             try {
-                roomName = await getRoomName({
+                const { roomName, locked, maxDuration, maxParticipants } = await getMeetingDetails({
                     token: meetingToken,
                     customPassword: password,
                     urlPassword,
                     handshakeInfo: handshakeInfo as SRPHandshakeInfo,
                 });
+
+                details = {
+                    meetingName: roomName,
+                    locked,
+                    maxDuration,
+                    maxParticipants,
+                };
             } catch {
                 createNotification({
                     type: 'error',
@@ -516,7 +537,10 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
             setMeetingDetails((prev) => ({
                 ...prev,
-                meetingName: roomName,
+                meetingName: details.meetingName,
+                locked: details.locked,
+                maxDuration: details.maxDuration,
+                maxParticipants: details.maxParticipants,
             }));
 
             await handleJoin(displayName, meetingToken);
@@ -661,6 +685,9 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                         pipSetup={pipSetup}
                         pipCleanup={pipCleanup}
                         preparePictureInPicture={preparePictureInPicture}
+                        locked={meetingDetails.locked}
+                        maxDuration={meetingDetails.maxDuration}
+                        maxParticipants={meetingDetails.maxParticipants}
                     />
                 ) : (
                     <PrejoinContainer

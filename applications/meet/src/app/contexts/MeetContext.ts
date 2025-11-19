@@ -8,6 +8,9 @@ import { PAGE_SIZE } from '../constants';
 import type { MLSGroupState, MeetChatMessage, ParticipantEntity, ParticipantEventRecord } from '../types';
 
 export interface MeetContextValues {
+    locked: boolean;
+    maxDuration: number;
+    maxParticipants: number;
     page: number;
     quality: VideoQuality;
     setPage: React.Dispatch<React.SetStateAction<number>>;
@@ -49,9 +52,13 @@ export interface MeetContextValues {
     startPiP: () => void;
     stopPiP: () => void;
     preparePictureInPicture: () => void;
+    instantMeeting: boolean;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
+    locked: false,
+    maxDuration: 0,
+    maxParticipants: 0,
     page: 0,
     quality: VideoQuality.HIGH,
     setPage: () => {},
@@ -93,6 +100,7 @@ export const MeetContext = createContext<MeetContextValues>({
     startPiP: () => {},
     stopPiP: () => {},
     preparePictureInPicture: () => {},
+    instantMeeting: false,
 });
 
 export const useMeetContext = () => {

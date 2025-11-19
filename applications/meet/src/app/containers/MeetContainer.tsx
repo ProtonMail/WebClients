@@ -17,6 +17,9 @@ import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import type { MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
 
 interface MeetContainerProps {
+    locked: boolean;
+    maxDuration: number;
+    maxParticipants: number;
     mlsGroupState: MLSGroupState | null;
     displayName: string;
     handleLeave: () => void;
@@ -42,6 +45,9 @@ interface MeetContainerProps {
 }
 
 export const MeetContainer = ({
+    locked,
+    maxDuration,
+    maxParticipants,
     mlsGroupState,
     displayName,
     handleLeave,
@@ -147,6 +153,10 @@ export const MeetContainer = ({
                     startPiP,
                     stopPiP,
                     preparePictureInPicture,
+                    locked,
+                    maxDuration,
+                    maxParticipants,
+                    instantMeeting,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>

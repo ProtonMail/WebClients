@@ -8,7 +8,6 @@ import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
-import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -25,6 +24,7 @@ import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
 import { LeaveModal } from '../LeaveModal/LeaveModal';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
+import { ParticipantsButton, WrappedParticipantsButton } from '../ParticipantsButton';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { VideoSettings } from '../VideoSettings/VideoSettings';
@@ -34,7 +34,7 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const { isMicrophoneEnabled, isCameraEnabled, localParticipant } = useLocalParticipant();
-    const { roomName, page, setPage, pageSize, participantsMap, isScreenShare } = useMeetContext();
+    const { roomName, page, setPage, pageSize, participantsMap, isScreenShare, guestMode } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -278,16 +278,12 @@ export const ParticipantControls = () => {
 
                     <div className="flex-nowrap gap-2 hidden lg:flex">
                         <ScreenShareButton />
-                        <CircleButton
-                            IconComponent={IcMeetParticipants}
-                            variant={sideBarState[MeetingSideBars.Participants] ? 'active' : 'default'}
-                            onClick={() => {
-                                toggleSideBarState(MeetingSideBars.Participants);
-                            }}
-                            indicatorContent={participants.length.toString()}
-                            indicatorStatus={sideBarState[MeetingSideBars.Participants] ? 'success' : 'default'}
-                            ariaLabel={c('Alt').t`Toggle participants`}
-                        />
+                        {guestMode ? (
+                            <ParticipantsButton hasAdminPermission={hasAdminPermission} isPaid={false} />
+                        ) : (
+                            <WrappedParticipantsButton hasAdminPermission={hasAdminPermission} />
+                        )}
+
                         <ChatButton />
                         <CircleButton
                             IconComponent={IcMeetSettings}
@@ -305,7 +301,7 @@ export const ParticipantControls = () => {
                         />
                     </div>
                     <div className="flex lg:hidden gap-2 flex-nowrap">
-                        <ScreenShareButton />
+                        <ChatButton />
                         <MenuButton />
                     </div>
 
