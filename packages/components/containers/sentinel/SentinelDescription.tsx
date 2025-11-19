@@ -4,7 +4,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
-import { PLANS, PLAN_NAMES, getPlanName } from '@proton/payments';
+import { getPlanName, PLAN_NAMES, PLANS } from '@proton/payments';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -48,7 +48,7 @@ const SentinelDescription = ({ variant, eligible }: Props) => {
 
                 {variant === 'organization' &&
                     c('Info')
-                        .t`${PROTON_SENTINEL_NAME} is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.`}
+                        .t`${PROTON_SENTINEL_NAME} for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.`}
             </SettingsParagraph>
 
             <SettingsParagraph large>
@@ -63,8 +63,13 @@ const SentinelDescription = ({ variant, eligible }: Props) => {
 
             {!eligible && (
                 <SettingsParagraph large>
-                    {c('Info')
-                        .t`Upgrade your plan to ${firstPlanNames} or ${lastPlanName} to get access to ${PROTON_SENTINEL_NAME}.`}
+                    {variant === 'user' &&
+                        c('Info')
+                            .t`Upgrade your plan to ${firstPlanNames} or ${lastPlanName} to get access to ${PROTON_SENTINEL_NAME}.`}
+
+                    {variant === 'organization' &&
+                        c('Info')
+                            .t`Upgrade your plan to ${firstPlanNames} or ${lastPlanName} to get access to ${PROTON_SENTINEL_NAME} for organizations.`}
                 </SettingsParagraph>
             )}
 
