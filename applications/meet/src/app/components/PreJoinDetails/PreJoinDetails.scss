@@ -58,7 +58,7 @@
 .pre-join-details-name-input-field {
 	border-radius: 1rem;
 
-	@include media('>medium') {
+	@include media('>small') {
 		border-radius: initial;
 	}
 }
