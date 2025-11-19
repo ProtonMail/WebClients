@@ -2342,6 +2342,9 @@
       ],
       "Website access problem": [
         "ვებგვერდთან წვდომის პრობლემა"
+      ],
+      "Authenticator problem": [
+        "ავთენტიკატორის პრობლემა"
       ]
     },
     "Button": {
@@ -2770,6 +2773,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
+      ],
+      "Advanced account and network security in one plan": [
+        "დამატებითი ანგარიშისა და ქსელის უსაფრთხოება ერთ სატარიფო გეგმაში"
       ]
     },
     "color": {
@@ -5135,6 +5141,9 @@
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
         "შედით იგივე Gmail-ის მისამართით, რომლითაც პირველად"
+      ],
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "შედით Gmail-ის მისამართით, რომელიც უკვეა გადამისამართებული ${ MAIL_APP_NAME }-ზე"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -10985,6 +10994,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "არსებული ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }-ის უპირატესობები"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან",
+        "საცავის გაზიარება ${ n }-მდე პოროვნებასთან"
       ]
     },
     "new_plans: feature highlight": {
@@ -16002,6 +16018,20 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle }-ის შენარჩუნება"
+      ],
+      "Yes, I'm sure": [
+        "დიახ, დარწმუნებული ვარ"
+      ],
+      "Your plan includes this feature already.": [
+        "თქვენი სატარიფო გეგმა ამ ფუნქციას უკვე შეიცავს."
       ]
     }
   }

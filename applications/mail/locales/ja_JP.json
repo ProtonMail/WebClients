@@ -2343,6 +2343,9 @@
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
+      ],
+      "Authenticator problem": [
+        "認証の問題"
       ]
     },
     "Button": {
@@ -2775,6 +2778,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "高速チャットと高度なAI機能。"
+      ],
+      "Advanced account and network security in one plan": [
+        "1つのプランで高度なアカウントとネットワークセキュリティ"
       ]
     },
     "color": {
@@ -5145,6 +5151,9 @@
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
         "最初に接続した同じGmailアドレスでサインインしてください"
+      ],
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "すでに ${ MAIL_APP_NAME } へ転送されている Gmail アドレスでサインインしてください"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8800,6 +8809,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "Addresses settings": [
+        "アドレス設定"
       ]
     },
     "info": {
@@ -10183,6 +10195,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "更新された招待を表示するには、鍵を再度有効にする必要があります"
+      ],
+      "Reactivate subscription": [
+        "サブスクリプションを再開"
       ]
     },
     "Link to calendar event": {
@@ -10979,6 +10994,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "既存の ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } 特典"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "最大${ n }人までと保管庫共有"
       ]
     },
     "new_plans: feature highlight": {
@@ -12607,6 +12628,9 @@
       ],
       "your subscription": [
         "あなたのサブスクリプション"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "その日付以降、アカウントは**${ BRAND_NAME } Free**にダウングレードされます。気が変わった場合は、**サブスクリプションを再有効化する**ことで引き続きプレミアム機能にアクセスできます。"
       ]
     },
     "Remaining days before the message expire": {
@@ -15931,6 +15955,23 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "本当に続行しますか？"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "${ planTitle } プランを変更された場合、一部の機能にアクセスできなくなる可能性があります。"
+      ],
+      "Keep ${ planTitle }": [
+        "${ planTitle } を使い続ける"
+      ],
+      "Yes, I'm sure": [
+        "はい、構いません"
+      ],
+      "Your plan includes this feature already.": [
+        "お客様のプランには、この機能がすでに含まれています。"
       ]
     }
   }

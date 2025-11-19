@@ -2360,6 +2360,9 @@
       ],
       "Website access problem": [
         "Problema de acceso web"
+      ],
+      "Authenticator problem": [
+        "Problema con el autenticador"
       ]
     },
     "Button": {
@@ -2794,6 +2797,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de gran velocidad y funciones de IA avanzadas."
+      ],
+      "Advanced account and network security in one plan": [
+        "Seguridad avanzada de la cuenta y red en un solo plan"
       ]
     },
     "color": {
@@ -5182,6 +5188,9 @@
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
         "Inicie sesión con la misma dirección de Gmail que conectó originalmente"
+      ],
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Inicie sesión con una dirección de Gmail que ya reenvía a ${ MAIL_APP_NAME }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8947,6 +8956,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Mantenga a salvo los detalles de su inicio de sesión y de su tarjeta de débito o crédito, pero téngalos siempre a mano al añadirlos a ${ PASS_APP_NAME }. Es gratis y está incluido en su cuenta de ${ BRAND_NAME }."
       ]
     },
     "info": {
@@ -11167,6 +11179,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Beneficios existentes de ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Compartir bóveda con hasta ${ n } persona",
+        "Compartir bóveda con hasta ${ n } personas"
       ]
     },
     "new_plans: feature highlight": {
@@ -16273,6 +16292,23 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "¿En verdad desea continuar?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Si elige modificar su plan ${ planTitle }, puede perder el acceso a algunas funciones."
+      ],
+      "Keep ${ planTitle }": [
+        "Seguir en ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Sí, estoy seguro"
+      ],
+      "Your plan includes this feature already.": [
+        "Su plan ya incluye esta función."
       ]
     }
   }

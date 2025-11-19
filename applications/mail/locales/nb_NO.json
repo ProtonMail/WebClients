@@ -2357,6 +2357,9 @@
       ],
       "Website access problem": [
         "Problem med tilgang til nettsted"
+      ],
+      "Authenticator problem": [
+        "Autentiseringsproblem"
       ]
     },
     "Button": {
@@ -2791,6 +2794,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Advanced account and network security in one plan": [
+        "Avansert konto- og nettverkssikkerhet i én plan"
       ]
     },
     "color": {
@@ -5179,6 +5185,9 @@
     "error": {
       "Please sign in with the same Gmail address you originally connected": [
         "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
+      ],
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Logg på med en Gmail-adresse som allerede videresender til ${ MAIL_APP_NAME }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8944,6 +8953,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Hold innloggings- og kredittkortdetaljene dine trygge, men alltid tilgjengelige, ved å legge dem til i ${ PASS_APP_NAME }. Det er gratis og inkludert i ${ BRAND_NAME }-kontoen din."
       ]
     },
     "info": {
@@ -11164,6 +11176,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Eksisterende fordeler med ${ PLAN_NAMES[PLANS.VPN_BUSINESS] }"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Deling av hvelv med opptil ${ n } person",
+        "Deling av hvelv med opptil ${ n } personer"
       ]
     },
     "new_plans: feature highlight": {
@@ -16270,6 +16289,23 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Er du sikker på at du vil fortsette?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Hvis du velger å endre ${ planTitle }-planen din, kan du miste tilgangen til enkelte funksjoner."
+      ],
+      "Keep ${ planTitle }": [
+        "Behold ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Ja, jeg er sikker"
+      ],
+      "Your plan includes this feature already.": [
+        "Planen din inkluderer denne funksjonen allerede."
       ]
     }
   }
