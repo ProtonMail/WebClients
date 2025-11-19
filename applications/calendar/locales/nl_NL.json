@@ -50,6 +50,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add a date": [
+        "Datum toevoegen"
+      ],
       "Add account": [
         "Account toevoegen"
       ],
@@ -171,6 +174,9 @@
       "Close navigation": [
         "Navigatie sluiten"
       ],
+      "Close sidebar": [
+        "Sluit zijbalk"
+      ],
       "Close this banner": [
         "Sluit deze banner"
       ],
@@ -185,6 +191,9 @@
       ],
       "Confirm": [
         "Bevestigen"
+      ],
+      "Confirm booking": [
+        "Boeking bevestigen"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bevestig het openen van link ${ linkToShow }"
@@ -219,6 +228,9 @@
       "Copy alias “${ name }”": [
         "Kopieer alias \"${ name }\""
       ],
+      "Copy booking page link": [
+        "Kopieer link naar boekingspagina"
+      ],
       "Copy email address": [
         "Kopieer e-mailadres"
       ],
@@ -227,6 +239,9 @@
       ],
       "Copy link": [
         "Link kopiëren"
+      ],
+      "Copy link and close": [
+        "Koppeling kopiëren en sluiten"
       ],
       "Copy password": [
         "Wachtwoord kopiëren"
@@ -237,11 +252,26 @@
       "Create": [
         "Aanmaken"
       ],
+      "Create a booking page": [
+        "Maak een boekingspagina"
+      ],
+      "Create a free account": [
+        "Maak een gratis account aan"
+      ],
+      "Create a new bookings page": [
+        "Maak een nieuwe boekingspagina"
+      ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
+      "Create an event": [
+        "Maak een gebeurtenis"
+      ],
       "Create and copy alias": [
         "Maak en kopieer alias"
+      ],
+      "Create booking page": [
+        "Maak een boekingspagina aan"
       ],
       "Create calendar": [
         "Agenda aanmaken"
@@ -284,6 +314,9 @@
         "${ selectedCount } contactgroep verwijderen",
         "${ selectedCount } contactgroepen verwijderen"
       ],
+      "Delete booking page": [
+        "Boekingspagina verwijderen"
+      ],
       "Delete contact": [
         "Contactpersoon verwijderen"
       ],
@@ -322,6 +355,9 @@
       ],
       "Edit": [
         "Bewerken"
+      ],
+      "Edit booking page": [
+        "Boekingspagina bewerken"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -404,6 +440,9 @@
       "Go to settings": [
         "Ga naar instellingen"
       ],
+      "Go to the next available appointment": [
+        "Ga naar de volgende beschikbare afspraak"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -472,6 +511,9 @@
       ],
       "Increase": [
         "Verhogen"
+      ],
+      "Join ${ CALENDAR_APP_NAME }": [
+        "Word lid van ${ CALENDAR_APP_NAME }"
       ],
       "Join calendar": [
         "Vervoeg agenda"
@@ -668,6 +710,9 @@
       "Remove gift code": [
         "Verwijder geschenkcode"
       ],
+      "Remove the booking range": [
+        "Verwijder het boekingsbereik"
+      ],
       "Remove this notification": [
         "Deze melding verwijderen"
       ],
@@ -718,6 +763,15 @@
       ],
       "See plan features": [
         "Bekijk de abonnementskenmerken"
+      ],
+      "See previous availability": [
+        "Bekijk eerdere beschikbaarheid"
+      ],
+      "See upcoming availability": [
+        "Bekijk aankomende beschikbaarheid"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Selecteer ${ dateHeaderLongString } om ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Selecteer ${ planOrAppName }"
@@ -803,6 +857,9 @@
       "Skip verification": [
         "Verificatie overslaan"
       ],
+      "Split current booking range": [
+        "Splits huidig boekingbereik"
+      ],
       "Start import": [
         "Begin met importeren"
       ],
@@ -814,6 +871,9 @@
       ],
       "Submit": [
         "Versturen"
+      ],
+      "Subscribe now": [
+        "Abonneer nu"
       ],
       "Switch or add account": [
         "Account toevoegen of wisselen"
@@ -2930,6 +2990,9 @@
       ]
     },
     "Custom frequency option": {
+      "Doesn't end": [
+        "Eindigt niet"
+      ],
       "End after": [
         "Eindigt na"
       ],
@@ -3189,6 +3252,9 @@
       "Your account and data recovery methods are set.": [
         "Uw account en dataherstelmethodes zijn ingesteld."
       ],
+      "You’ll get a secure email with the details shortly.": [
+        "U ontvangt binnenkort een beveiligde e-mail met de gegevens."
+      ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
       ]
@@ -3346,6 +3412,32 @@
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "Afspraak dupliceren"
+      ]
+    },
+    "Duration": {
+      "1.5h": [
+        "1,5u"
+      ],
+      "120 minutes": [
+        "120 minuten"
+      ],
+      "1h": [
+        "1u"
+      ],
+      "2h": [
+        "2u"
+      ],
+      "30 minutes": [
+        "30 minuten"
+      ],
+      "30m": [
+        "30 min"
+      ],
+      "60 minutes": [
+        "60 minuten"
+      ],
+      "90 minutes": [
+        "90 minuten"
       ]
     },
     "Edit billing address form note": {
@@ -3555,6 +3647,9 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Zoeken naar inhoud kan niet worden ingeschakeld. Herstart de applicatie of wis de gegevens."
       ],
+      "Content verification failed": [
+        "Documentverificatie mislukt"
+      ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
       ],
@@ -3608,8 +3703,14 @@
       "Event not found": [
         "Afspraak niet gevonden"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Mislukt om ${ MEET_APP_NAME } videoconferentie aan te maken"
+      ],
       "Failed to create meeting": [
         "Maken van vergadering is mislukt"
+      ],
+      "Failed to decrypt session key": [
+        "Decoderen van de sessiesleutel mislukt."
       ],
       "Failed to get event": [
         "Kan afspraak niet opvragen"
@@ -3719,6 +3820,9 @@
       ],
       "Name required": [
         "Naam vereist"
+      ],
+      "No booking page data received": [
+        "Geen gegevens van de boekingspagina ontvangen"
       ],
       "No calendars found to import": [
         "Geen agenda's gevonden om te importeren"
@@ -3970,6 +4074,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
         "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
+      ],
+      "You cannot enter the organizer email": [
+        "U kunt het e-mailadres van de organisator niet invoeren."
       ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
@@ -4537,6 +4644,11 @@
         "Zeer klein"
       ]
     },
+    "Form": {
+      "Confirm your booking": [
+        "Bevestig uw boeking"
+      ]
+    },
     "Google Meet": {
       "Join Google Meet": [
         "Deelnemen aan Google Meet"
@@ -4958,6 +5070,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
+      "${ bookingDetails.duration } min duration": [
+        "${ bookingDetails.duration } minuten duur"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
@@ -5003,6 +5118,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
+      ],
+      "${ MEET_APP_NAME } video call": [
+        "${ MEET_APP_NAME } videogesprek"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
@@ -5188,6 +5306,12 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Iedereen met deze link kan zien of u beschikbaar of bezet bent op uw agenda. Ze zien geen afspraakgegevens, zoals titel, locatie of deelnemers."
       ],
+      "Appointment duration": [
+        "Afspraakduur"
+      ],
+      "Are you sure you want to delete this booking page?": [
+        "Weet u zeker dat u deze boekingspagina wilt verwijderen?"
+      ],
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
@@ -5215,6 +5339,21 @@
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
       ],
+      "Booking already exists.": [
+        "Boeking bestaat al."
+      ],
+      "Booking cannot be added in the past.": [
+        "Een boeking in het verleden kan niet worden toegevoegd."
+      ],
+      "Booking overlaps with an existing booking.": [
+        "Deze boeking overlapt met een bestaande boeking."
+      ],
+      "Booking page deleted": [
+        "Boekingspagina verwijderd"
+      ],
+      "Booking page example": [
+        "Voorbeeld van een boekingspagina"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
       ],
@@ -5235,6 +5374,12 @@
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
         "Kunt u de evenementen die u zoekt niet vinden? Sommige evenementen in verborgen agenda's komen overeen met uw zoekopdracht. Om die resultaten te zien, schakel de zichtbaarheid in voor ${ hiddenWithItemsCalendarList }."
+      ],
+      "Cannot create booking range across days": [
+        "Kan geen boekingsbereik over meerdere dagen aanmaken."
+      ],
+      "Cannot create booking range in the past": [
+        "Kan geen boekingsbereik in het verleden aanmaken."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -5453,6 +5598,12 @@
       "Expired": [
         "Verlopen"
       ],
+      "Failed to update meeting name": [
+        "Naam vergadering bijwerken mislukt"
+      ],
+      "Failed to update meeting password": [
+        "Wachtwoord vergadering bijwerken mislukt"
+      ],
       "finance": [
         "financiën"
       ],
@@ -5476,6 +5627,12 @@
       ],
       "High Priority": [
         "Hoge Prioriteit"
+      ],
+      "Host": [
+        "Host"
+      ],
+      "How long should an appointment last?": [
+        "Hoe lang moet een afspraak duren?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Als sneltoetsen ingeschakeld zijn, kunt u de volgende toetsen gebruiken voor snelle acties of naar verschillende weergaven springen. ${ metaKey } + K is altijd ingeschakeld."
@@ -5525,6 +5682,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
+      ],
+      "In which calendar should bookings appear?": [
+        "In welke agenda moeten de boekingen verschijnen?"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Afspraken indexeren: ${ current }/${ total }"
@@ -5577,6 +5737,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Leer wat te doen ${ dataLeakedLink }"
       ],
+      "Let others book time with you automatically. No back-and-forth emails. Share a link, and stay in control of your availability.": [
+        "Laat anderen automatisch tijd met u boeken. Geen heen-en-weer e-mails. Deel een koppeling, en behoud de controle over uw beschikbaarheid."
+      ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
@@ -5598,11 +5761,17 @@
       "Loading events": [
         "Afspraken laden"
       ],
+      "Location": [
+        "Locatie"
+      ],
       "Low Priority": [
         "Lage Prioriteit"
       ],
       "Manage your calendars": [
         "Uw agenda's beheren"
+      ],
+      "Manange booking page": [
+        "Boekingspagina beheren"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5633,6 +5802,9 @@
       ],
       "New": [
         "Nieuw"
+      ],
+      "No appointments available this week": [
+        "Geen afspraken beschikbaar deze week"
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
@@ -5718,6 +5890,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "Mensen die tijd bij u boeken, zullen ${ selectedCalendar.Email } als uw contactadres zien."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
       ],
@@ -5773,14 +5948,26 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
       ],
+      "Powered by": [
+        "Mogelijk gemaakt door"
+      ],
+      "Powered by ${ protonButton }": [
+        "Mogelijk gemaakt door ${ protonButton }"
+      ],
       "Previous modifications on this series will be lost.": [
         "Eerdere wijzigingen in deze serie zullen verloren gaan."
+      ],
+      "Previously booked events won't be deleted.": [
+        "Eerder geboekte afspraken worden niet verwijderd."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
       "Primary": [
         "Primair"
+      ],
+      "Privacy by default": [
+        "Privacy als standaard"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
@@ -5799,6 +5986,10 @@
       ],
       "Removed participants will be notified.": [
         "Verwijderde deelnemers zullen op de hoogte worden gebracht."
+      ],
+      "Saving event": [
+        "Gebeurtenis opslaan",
+        "Gebeurtenissen opslaan"
       ],
       "Scan the QR code with your mobile device": [
         "Scan de QR-code met uw mobiele apparaat"
@@ -5832,6 +6023,9 @@
       ],
       "Setting up your new address…": [
         "Uw nieuwe adres instellen…"
+      ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "Deel deze pagina zodat anderen tijd in uw agenda kunnen boeken. U kunt deze vinden en bewerken in de zijbalk onder Boekingspagina's."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
@@ -5875,6 +6069,9 @@
       ],
       "Symbols (#$&)": [
         "Symbolen (#$&)"
+      ],
+      "Take control of your digital life": [
+        "Neem de controle over uw digitale leven"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
@@ -5923,6 +6120,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "Deze boeking is gemaakt via ${ CALENDAR_APP_NAME }, een onderdeel van de privacygerichte productsuite van ${ BRAND_NAME }."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Dit evenement is bijgewerkt door de organisator. Wilt u uw antwoord wijzigen alleen voor deze herhaling in deze serie?"
@@ -6026,6 +6226,9 @@
       "VPN IP": [
         "VPN IP-adres"
       ],
+      "Want to create your own booking page?": [
+        "Wilt u uw eigen boekingspagina aanmaken?"
+      ],
       "Warning": [
         "Waarschuwing"
       ],
@@ -6059,6 +6262,15 @@
       "Week and month views only apply to desktop.": [
         "Week en maand weergaven zijn alleen van toepassing op bureaublad."
       ],
+      "What do you want to call this booking page?": [
+        "Hoe wilt u deze boekingspagina noemen?"
+      ],
+      "What should people know before booking?": [
+        "Wat moeten mensen weten voordat zij boeken?"
+      ],
+      "When are you free?": [
+        "Wanneer bent u beschikbaar?"
+      ],
       "When working remotely": [
         "Bij werken op afstand"
       ],
@@ -6067,6 +6279,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
+      ],
+      "Where will the appointment take place?": [
+        "Waar vindt de afspraak plaats?"
       ],
       "Which event would you like to delete?": [
         "Welke afspraken wilt u verwijderen?"
@@ -6156,6 +6371,9 @@
       ],
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
+      ],
+      "You can’t have more than ${ MAX_BOOKING_SLOTS } booking slots on a page.": [
+        "U kunt niet meer dan ${ MAX_BOOKING_SLOTS } boekingsmomenten op een pagina hebben."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
@@ -6498,6 +6716,9 @@
       "Account holder": [
         "Rekeninghouder"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Toevoegen ${ MEET_APP_NAME } videoconferentie"
+      ],
       "Add email address": [
         "E-mailadres toevoegen"
       ],
@@ -6506,6 +6727,9 @@
       ],
       "Add to group": [
         "Toevoegen aan groep"
+      ],
+      "Add Zoom meeting": [
+        "Zoomvergadering toevoegen"
       ],
       "Address": [
         "Adres"
@@ -6702,6 +6926,9 @@
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
+      "Full name": [
+        "Volledige naam"
+      ],
       "Get the deal": [
         "Pak deze deal"
       ],
@@ -6874,6 +7101,9 @@
       "Remove Zoom video conference": [
         "Zoom videoconferentie verwijderen"
       ],
+      "Repeat weekly": [
+        "Wekelijks herhalen"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
@@ -6934,6 +7164,9 @@
       "Toolbar": [
         "Werkbalk"
       ],
+      "Unavailable": [
+        "Niet beschikbaar"
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -6945,6 +7178,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Video conference": [
+        "Videoconferentie"
       ],
       "Vulnerable": [
         "Kwetsbaar"
@@ -6990,6 +7226,26 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Zoom meeting": [
+        "Zoom-vergadering"
+      ]
+    },
+    "label": {
+      "Date of the booking range": [
+        "Datum van het boekingsbereik"
+      ],
+      "End time of the booking range": [
+        "Eindtijd van het boekingsbereik"
+      ],
+      "How long should an appointment last?": [
+        "Hoe lang moet een afspraak duren?"
+      ],
+      "Start time of the booking range": [
+        "Starttijd van het boekingsbereik"
+      ],
+      "What should people know before booking?": [
+        "Wat moeten mensen weten voordat zij boeken?"
       ]
     },
     "Label for contact group color": {
@@ -7056,6 +7312,9 @@
     "Link": {
       "Add a gift code": [
         "Voeg een geschenkcode toe"
+      ],
+      "Booking pages": [
+        "Boekingspagina's"
       ],
       "Calendars": [
         "Agenda's"
@@ -7185,6 +7444,11 @@
       ],
       "Your import is starting": [
         "Uw import begint"
+      ]
+    },
+    "Location": {
+      "In person": [
+        "Persoonlijk"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -9290,6 +9554,9 @@
       "A way to contact you": [
         "Een manier om u te contacteren"
       ],
+      "Add a booking page description": [
+        "Voeg een beschrijving toe aan de boekingspagina"
+      ],
       "Add a calendar description": [
         "Voeg een beschrijving toe aan de agenda"
       ],
@@ -9319,6 +9586,9 @@
       ],
       "E.g., ": [
         "Bijv., "
+      ],
+      "Email for booking confirmation": [
+        "E-mail voor boekingsbevestiging"
       ],
       "Enter passphrase": [
         "Voer wachtwoordzin in"
@@ -9355,6 +9625,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Name of attendee": [
+        "Naam van deelnemer"
       ],
       "Name or email address": [
         "Naam of e-mailadres"
@@ -9526,11 +9799,17 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per doorverwijzing"
       ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Verdien tot ${ maxRewardAmount } aan tegoed. U ontvangt ${ referrerRewardAmount } wanneer de persoon die u uitnodigt zich abonneert op een ${ BRAND_NAME } abonnement."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Geniet gratis van **${ planTitle }** tot **${ textDate }**."
       ],
       "Friend joined": [
         "Vriend lid geworden",
@@ -9546,6 +9825,9 @@
       "Invited friends": [
         "Uitgenodigde vrienden"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Laatste kans om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
       "More sharing options": [
         "Meer opties om te delen"
       ],
@@ -9560,6 +9842,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
+      "your subscription": [
+        "uw abonnement"
       ]
     },
     "Reload event button tooltip": {
@@ -10161,6 +10450,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } is er!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Voorzie uw agenda van kleurcodes om uw dag beter te organiseren, uw tijd beter bij te houden, en meer."
       ],
@@ -10172,6 +10464,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Plan en neem deel aan ${ MEET_APP_NAME } oproepen direct vanuit uw agenda."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Maak naadloos videobijeenkomsten en voeg links toe aan uw evenementen."
@@ -10750,6 +11045,9 @@
       "Billing details updated": [
         "Factuurgegevens bijgewerkt"
       ],
+      "Booking link copied to clipboard": [
+        "Link naar boeking gekopieerd naar klembord"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Agenda toegevoegd. Het kan een paar minuten duren om te synchroniseren."
       ],
@@ -11130,6 +11428,9 @@
       "Apply gift code": [
         "Geschenkcode toepassen"
       ],
+      "Appointment details": [
+        "Details afspraak"
+      ],
       "Are you sure?": [
         "Weet u het zeker?"
       ],
@@ -11165,6 +11466,9 @@
       ],
       "Change password": [
         "Wachtwoord wijzigen"
+      ],
+      "Choose a time": [
+        "Kies een tijd"
       ],
       "Choose how many times this event will repeat": [
         "Kies hoeveel keer deze afspraak zich herhaalt"
@@ -11251,6 +11555,9 @@
       ],
       "Delete ${ value }": [
         "Verwijder ${ value }"
+      ],
+      "Delete booking page?": [
+        "Boekingspagina verwijderen?"
       ],
       "Delete event": [
         "Afspraak verwijderen"
@@ -11381,6 +11688,9 @@
       "High security for your account": [
         "Hoge beveiliging voor uw account"
       ],
+      "Host": [
+        "Host"
+      ],
       "How does it all work?": [
         "Hoe werkt het?"
       ],
@@ -11510,6 +11820,9 @@
       ],
       "Reactivate calendar keys": [
         "Agendasleutels heractiveren"
+      ],
+      "Ready to automate your scheduling?": [
+        "Klaar om je planning het automatiseren?"
       ],
       "Recommended": [
         "Aanbevolen"
@@ -11646,6 +11959,12 @@
       "Summary": [
         "Overzicht"
       ],
+      "This booking page does not exist": [
+        "Deze boekingspagina bestaat niet"
+      ],
+      "This booking page has expired": [
+        "Deze boekingspagina is verlopen"
+      ],
       "Time": [
         "Tijd"
       ],
@@ -11741,6 +12060,12 @@
       ],
       "Your account is protected": [
         "Uw account is beschermd"
+      ],
+      "Your booking is confirmed": [
+        "Uw boeking is bevestigd"
+      ],
+      "Your booking page is ready": [
+        "Uw boekingspagina is gereed"
       ],
       "Your calendar link": [
         "Uw agendakoppeling"
