@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { cleanup } from '@testing-library/react';
 import { vi } from 'vitest';
 
+import '@proton/polyfill';
 import '@proton/testing/lib/vitest/mockMatchMedia';
 import '@proton/testing/lib/vitest/mockUnleash';
 

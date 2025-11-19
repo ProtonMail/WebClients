@@ -13,7 +13,7 @@ module.exports = {
         '.*': [
             'ts-jest',
             {
-                babelConfig: true,
+                babelConfig: './babel.config.js',
             },
         ],
     },

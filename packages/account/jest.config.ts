@@ -6,7 +6,7 @@ const jestConfig: JestConfigWithTsJest = {
         '^.+\\.(ts|js)x?$': [
             'ts-jest',
             {
-                babelConfig: true,
+                babelConfig: './babel.config.js',
             },
         ],
     },
