@@ -43,10 +43,10 @@ interface UploadMetadata {
     overrideExistingDraftByOtherClient?: boolean;
     modificationTime?: Date;
     additionalMetadata: {
-        media: {
-            width?: number;
-            height?: number;
-            duration?: number;
+        Media: {
+            Width?: number;
+            Height?: number;
+            Duration?: number;
         };
     };
 }
@@ -67,10 +67,10 @@ function createUploadMetadata(params: {
         mediaType,
         expectedSize: fileSize,
         additionalMetadata: {
-            media: {
-                width: mediaInfo?.width,
-                height: mediaInfo?.height,
-                duration: mediaInfo?.duration,
+            Media: {
+                Width: mediaInfo?.width,
+                Height: mediaInfo?.height,
+                Duration: mediaInfo?.duration,
             },
         },
         modificationTime,
