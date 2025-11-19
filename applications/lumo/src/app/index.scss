@@ -94,7 +94,7 @@
 		position: fixed !important;
 		inset-block-start: 0 !important;
 		inset-inline-start: 0 !important;
-		block-size: 100vh !important;
+		block-size: 100% !important; // Use percentage instead of viewport units for Safari compatibility
 		z-index: 100 !important;
 		inline-size: 260px !important; // Always full width on mobile
 
@@ -144,7 +144,7 @@
 	inset-block-start: 0;
 	inset-inline-start: 0;
 	inline-size: 100vw;
-	block-size: 100vh;
+	block-size: 100%; // Use percentage instead of viewport units for Safari compatibility
 	opacity: 1;
 	pointer-events: auto;
 	z-index: 90; // Behind sidebar (which is z-index: 100) but above content
