@@ -79,9 +79,11 @@
     --optional-upgrade-color-1: #FFAC2E;
     --optional-upgrade-color-2: #6D4AFF;
 
-    --text-error-banner-title: #15006F;
-    --text-error-banner-message: #50409B;
-    --text-error-banner-button: var(--interaction-norm);
+    --text-error-banner-title: white;
+    --text-error-banner-message: white;
+    --text-error-banner-button: white;
+    --error-banner-high-opacity: 0.55;
+    --error-banner-low-opacity: 0.35;
 
      /* lumo markdown */
     --markdown-code-background: #282C34;

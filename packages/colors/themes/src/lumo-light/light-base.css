@@ -81,6 +81,8 @@
     --text-error-banner-title: #15006F;
     --text-error-banner-message: #50409B;
     --text-error-banner-button: var(--interaction-norm);
+    --error-banner-high-opacity: 0.15;
+    --error-banner-low-opacity: 0.05;
 
     /* lumo markdown */
     --markdown-code-background: #f1f3f5;
