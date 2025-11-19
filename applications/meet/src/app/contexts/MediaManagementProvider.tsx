@@ -12,6 +12,7 @@ import { useDynamicDeviceHandling } from '../hooks/useDynamicDeviceHandling';
 import { useVideoToggle } from '../hooks/useVideoToggle';
 import type { SwitchActiveDevice } from '../types';
 import { supportsSetSinkId } from '../utils/browser';
+import { setAudioSessionType } from '../utils/ios-audio-session';
 import { MediaManagementContext } from './MediaManagementContext';
 
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
@@ -107,10 +108,35 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
     };
 
+    const initializeMicrophone = async (initialAudioState: boolean) => {
+        setAudioSessionType('auto');
+
+        // Always create and publish the track for faster unmuting
+        const audioConstraints = {
+            autoGainControl: true,
+            echoCancellation: true,
+            noiseSuppression: true,
+        };
+
+        await room.localParticipant.setMicrophoneEnabled(true, audioConstraints);
+        setAudioSessionType('play-and-record');
+
+        // If starting muted, mute the track (keeps it published but silent)
+        if (!initialAudioState) {
+            const audioPublication = [...room.localParticipant.audioTrackPublications.values()].find(
+                (pub) => pub.kind === Track.Kind.Audio && pub.source !== Track.Source.ScreenShare
+            );
+
+            if (audioPublication?.track) {
+                await audioPublication.track.mute();
+            }
+        }
+    };
+
     const initializeDevices = async () => {
         await Promise.all([
             room.localParticipant.setCameraEnabled(initialCameraState, isMobile() ? { facingMode } : undefined),
-            room.localParticipant.setMicrophoneEnabled(initialAudioState),
+            initializeMicrophone(initialAudioState),
         ]);
 
         // We need to restart the video track on mobile to make sure the facing mode is applied

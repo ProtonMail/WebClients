@@ -3,7 +3,6 @@ import { describe, expect, it, vi } from 'vitest';
 import {
     getAudioSessionType,
     isAudioSessionAvailable,
-    restoreIOSAudioQuality,
     setAudioSessionType,
     withIOSAudioSessionWorkaround,
 } from './ios-audio-session';
@@ -104,28 +103,6 @@ describe('ios-audio-session', () => {
 
             await expect(withIOSAudioSessionWorkaround(mockGetUserMedia)).rejects.toThrow('Permission denied');
             // On error, audioSession should be reset to 'auto'
-            expect(mockAudioSession.type).toBe('auto');
-
-            delete (navigator as any).audioSession;
-        });
-    });
-
-    describe('restoreIOSAudioQuality', () => {
-        it('should do nothing when audioSession is not available', () => {
-            expect(() => restoreIOSAudioQuality()).not.toThrow();
-        });
-
-        it('should restore audio quality by cycling audioSession types', () => {
-            const mockAudioSession = { type: 'play-and-record' as any };
-            Object.defineProperty(navigator, 'audioSession', {
-                value: mockAudioSession,
-                configurable: true,
-            });
-
-            restoreIOSAudioQuality();
-
-            // After restoration, audioSession.type should be 'auto'
-            // (it goes playback -> auto)
             expect(mockAudioSession.type).toBe('auto');
 
             delete (navigator as any).audioSession;
