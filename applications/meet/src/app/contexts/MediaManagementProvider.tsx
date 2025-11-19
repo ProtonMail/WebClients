@@ -13,11 +13,9 @@ import { useVideoToggle } from '../hooks/useVideoToggle';
 import type { SwitchActiveDevice } from '../types';
 import { supportsSetSinkId } from '../utils/browser';
 import { MediaManagementContext } from './MediaManagementContext';
-import { useStoredDevices } from './StoredDevicesContext';
 
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
     const room = useRoomContext();
-    const { saveAudioDevice, saveVideoDevice, saveAudioOutputDevice } = useStoredDevices();
 
     const [initialCameraState, setInitialCameraState] = useState<boolean>(false);
     const [initialAudioState, setInitialAudioState] = useState<boolean>(false);
@@ -36,12 +34,10 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         microphones,
         cameras,
         speakers,
-        defaultCamera,
-        defaultMicrophone,
-        defaultSpeaker,
         cameraState,
         microphoneState,
         speakerState,
+        setPreferredDevice,
         getDefaultDevice,
     } = useDevices();
     const [devicePermissions, setDevicePermissions] = useState<{
@@ -54,7 +50,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const switchActiveDevice: SwitchActiveDevice = useCallback(
         async ({ deviceType, deviceId, isSystemDefaultDevice, preserveDefaultDevice = false }) => {
-            if (deviceType === 'audiooutput' && !supportsSetSinkId()) {
+            if ((deviceType === 'audiooutput' && !supportsSetSinkId()) || isMobile()) {
                 return;
             }
 
@@ -71,15 +67,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             }
 
             const toSave = isSystemDefaultDevice ? null : deviceId;
-            if (deviceType === 'videoinput') {
-                saveVideoDevice(toSave);
-            } else if (deviceType === 'audioinput') {
-                saveAudioDevice(toSave);
-            } else if (deviceType === 'audiooutput') {
-                saveAudioOutputDevice(toSave);
-            }
+            setPreferredDevice(toSave, deviceType);
         },
-        [room, saveAudioDevice, saveVideoDevice, saveAudioOutputDevice]
+        [room, setPreferredDevice]
     );
 
     const {
@@ -157,33 +147,38 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     });
 
     useEffect(() => {
-        if (!initializedDevices.current.video && defaultCamera?.deviceId) {
+        if (!initializedDevices.current.video && cameraState.preferredDevice?.deviceId) {
             void switchActiveDevice({
                 deviceType: 'videoinput',
-                deviceId: defaultCamera.deviceId,
+                deviceId: cameraState.preferredDevice.deviceId,
                 isSystemDefaultDevice: cameraState.useSystemDefault,
             });
             initializedDevices.current.video = true;
         }
 
-        if (!initializedDevices.current.audio && defaultMicrophone?.deviceId) {
+        if (!initializedDevices.current.audio && microphoneState.preferredDevice?.deviceId) {
             void switchActiveDevice({
                 deviceType: 'audioinput',
-                deviceId: defaultMicrophone.deviceId,
+                deviceId: microphoneState.preferredDevice.deviceId,
                 isSystemDefaultDevice: microphoneState.useSystemDefault,
             });
             initializedDevices.current.audio = true;
         }
 
-        if (!initializedDevices.current.audioOutput && defaultSpeaker?.deviceId) {
+        if (!initializedDevices.current.audioOutput && speakerState.preferredDevice?.deviceId) {
             void switchActiveDevice({
                 deviceType: 'audiooutput',
-                deviceId: defaultSpeaker.deviceId,
+                deviceId: speakerState.preferredDevice.deviceId,
                 isSystemDefaultDevice: speakerState.useSystemDefault,
             });
             initializedDevices.current.audioOutput = true;
         }
-    }, [switchActiveDevice, defaultCamera?.deviceId, defaultMicrophone?.deviceId, defaultSpeaker?.deviceId]);
+    }, [
+        switchActiveDevice,
+        cameraState.preferredDevice?.deviceId,
+        microphoneState.preferredDevice?.deviceId,
+        speakerState.preferredDevice?.deviceId,
+    ]);
 
     return (
         <MediaManagementContext.Provider
@@ -193,15 +188,15 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 microphones,
                 cameras,
                 speakers,
-                defaultCamera,
-                defaultMicrophone,
-                defaultSpeaker,
+                defaultCamera: cameraState.preferredDevice,
+                defaultMicrophone: microphoneState.preferredDevice,
+                defaultSpeaker: speakerState.preferredDevice,
                 cameraState,
                 microphoneState,
                 speakerState,
-                selectedCameraId: defaultCamera?.deviceId ?? activeCameraDeviceId,
-                selectedMicrophoneId: defaultMicrophone?.deviceId ?? activeMicrophoneDeviceId,
-                selectedAudioOutputDeviceId: defaultSpeaker?.deviceId ?? activeAudioOutputDeviceId,
+                selectedCameraId: cameraState.preferredDevice?.deviceId ?? activeCameraDeviceId,
+                selectedMicrophoneId: microphoneState.preferredDevice?.deviceId ?? activeMicrophoneDeviceId,
+                selectedAudioOutputDeviceId: speakerState.preferredDevice?.deviceId ?? activeAudioOutputDeviceId,
                 isVideoEnabled,
                 isAudioEnabled,
                 facingMode,

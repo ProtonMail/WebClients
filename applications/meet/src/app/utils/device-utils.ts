@@ -28,17 +28,16 @@ export const shouldShowDeviceCheckmark = (
 ): boolean => {
     const isCurrentlyActiveDevice = deviceId === activeDeviceId;
     const isUsingSpecificDevice = !deviceState.useSystemDefault;
-    const isCachedDeviceAvailable = deviceState.cachedAvailable;
-    const cachedDeviceMatchesActive = deviceState.cachedDeviceId === activeDeviceId;
+    const isPreferredDeviceAvailable = deviceState.preferredAvailable;
 
-    return isCurrentlyActiveDevice && isUsingSpecificDevice && isCachedDeviceAvailable && cachedDeviceMatchesActive;
+    return isCurrentlyActiveDevice && isUsingSpecificDevice && isPreferredDeviceAvailable;
 };
 
 export const shouldShowSystemDefaultCheckmark = (deviceState: DeviceState): boolean => {
     const userSelectedSystemDefault = deviceState.useSystemDefault;
-    const cachedDeviceNoLongerAvailable = !deviceState.cachedAvailable;
+    const preferredDeviceNoLongerAvailable = !deviceState.preferredAvailable;
 
-    return userSelectedSystemDefault || cachedDeviceNoLongerAvailable;
+    return userSelectedSystemDefault || preferredDeviceNoLongerAvailable;
 };
 
 export const isDefaultDevice = (deviceId: string | null): boolean => {

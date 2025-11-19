@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export const useIsNarrowHeight = () => {
     // Build the media query string once
-    const query = `(max-height: 640px)`; // Align with Tailwind value
+    const query = `(max-height: 480px)`;
 
     // Initialise from the current match status
     const [isNarrowHeight, setIsNarrowHeight] = useState(() => window.matchMedia(query).matches);
