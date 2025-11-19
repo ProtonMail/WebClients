@@ -25,6 +25,20 @@ export const viewLogger = (viewID: ViewID | null) => (viewID ? Logger.scope(view
 export const sentryLogger = Logger.scope("sentry");
 export const notificationLogger = Logger.scope("notification");
 
+export function sanitizeUrlForLogging(urlString: string): string {
+    try {
+        const url = new URL(urlString);
+
+        if (url.protocol !== "http:" && url.protocol !== "https:") {
+            return "[blocked-protocol]";
+        }
+
+        return `${url.protocol}//${url.hostname}${url.pathname}`;
+    } catch {
+        return "[invalid-url]";
+    }
+}
+
 const filterSensitiveLogMessage: Hook = (msg: LogMessage, _transport?: Transport): LogMessage => {
     return {
         ...msg,
@@ -72,6 +86,10 @@ const isEmailDomain = (key: string, value: string) => {
     return ["identifier"].includes(key.toLowerCase()) && /^@\S+\.\S+$/i.test(value);
 };
 
+const isIDKey = (str: string) => {
+    return str.toLowerCase() === "sentry_key";
+};
+
 const getFilteredHomePath = (somePath: string) => {
     const normalizedPath = somePath.replaceAll("\\", "/");
     const basePath = app.getPath("home").replaceAll("\\", "/");
@@ -85,10 +103,6 @@ const getFilteredHomePath = (somePath: string) => {
     const hash = createHash("sha1").update(basePath).digest("hex");
     const replacement = hasNotASCII ? `/__HOME_NONASCII_${hash}__` : `/__HOME_ASCII_${hash}__`;
     return normalizedPath.replaceAll(basePathRegExp, replacement);
-};
-
-const isIDKey = (str: string) => {
-    return str.toLowerCase() === "sentry_key";
 };
 
 /** @see https://docs.sentry.io/security-legal-pii/scrubbing/server-side-scrubbing/ */
@@ -108,6 +122,7 @@ const FORBIDDEN_REGEXP_LIST = [
     /github_token/gi,
     /privatekey/gi,
     /private_key/gi,
+    /token/gi,
 ];
 
 const filterSensitiveString = (data: string): string => {
@@ -198,12 +213,11 @@ export async function connectNetLogger(getWebContentsViewName: (webContents: Web
     appSession().webRequest.onCompleted((details) => {
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
 
-        if (details.statusCode >= 200 && details.statusCode < 400) {
-            netLogger(viewName).verbose(details.method, details.url, details.statusCode, details.statusLine);
-        } else {
+        // Only log network errors - successful requests don't need logging
+        if (details.statusCode < 200 || details.statusCode >= 400) {
             netLogger(viewName).error(
                 details.method,
-                details.url,
+                sanitizeUrlForLogging(details.url),
                 details.statusCode,
                 details.statusLine,
                 details.error,

@@ -3,7 +3,7 @@ import { debounce } from "lodash";
 import { updateDownloaded } from "../../update";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
-import { mainLogger, viewLogger } from "../log";
+import { mainLogger, sanitizeUrlForLogging, viewLogger } from "../log";
 import { setApplicationMenu } from "../menus/menuApplication";
 import {
     getLocalID,
@@ -129,7 +129,6 @@ const createView = (viewID: ViewID) => {
 };
 
 const createViews = () => {
-    mainLogger.info("Creating views");
     viewMap.meet = createView("meet");
     viewMap.account = createView("account");
 
@@ -204,7 +203,6 @@ function updateViewBounds(view: WebContentsView | undefined, viewID: ViewID | nu
         return;
     }
 
-    viewLogger(viewID).verbose("updating view bounds", JSON.stringify(updatedBounds));
     view.setBounds(updatedBounds);
 }
 
@@ -239,7 +237,7 @@ async function updateLocalID(urlString: string) {
     const url = new URL(trimLocalID(urlString));
     url.pathname = `/u/${currentLocalID}${url.pathname}`;
 
-    mainLogger.info("Rewriting URL to include local id", url.toString());
+    mainLogger.info("Rewriting URL to include local id", sanitizeUrlForLogging(url.toString()));
     return url.toString();
 }
 
@@ -254,11 +252,9 @@ export async function showView(viewID: ViewID, url: string = "") {
 
     if (viewID === currentViewID) {
         if (!url) {
-            viewLogger(viewID).silly("already in current view");
             return;
         }
 
-        viewLogger(viewID).info("showView loading in current view", url);
         await loadURL(viewID, url);
         return;
     }
@@ -267,13 +263,10 @@ export async function showView(viewID: ViewID, url: string = "") {
     mainWindow!.title = viewTitleMap[viewID];
 
     if (url && !isSameURL(url, getViewURL(viewID))) {
-        viewLogger(viewID).debug("showView current url is different", getViewURL(viewID));
-        viewLogger(viewID).info("showView loading", url);
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
         mainWindow!.setContentView(view);
     } else {
-        viewLogger(viewID).info("showView showing view for ", url);
         mainWindow!.setContentView(view);
     }
 }
@@ -293,11 +286,8 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
     const isAccountSwitching = isHomePage(url) && currentLocalID !== targetLocalID;
 
     if (!isAccountSwitching && isSameURL(viewURL, url) && !force) {
-        viewLogger(viewID).info("loadURL already in given url", url);
         return;
     }
-
-    viewLogger(viewID).info("loadURL from", viewURL, "to", url);
 
     if (view.webContents.isLoadingMainFrame()) {
         view.webContents.stop();
@@ -315,19 +305,18 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         };
 
         const handleLoadTimeout = () => {
-            viewLogger(viewID).error("loadURL timeout", url);
+            viewLogger(viewID).error("loadURL timeout", sanitizeUrlForLogging(url));
             showNetworkErrorPage(viewID);
             cleanup();
         };
 
         const handleLoadFinish = () => {
-            viewLogger(viewID).debug("did-finish-load", url);
             cleanup();
         };
 
         const handleLoadError = (_event: Event, errorCode: number, errorDescription: string) => {
             if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
-                viewLogger(viewID).error("did-fail-load", url, errorCode, errorDescription);
+                viewLogger(viewID).error("did-fail-load", sanitizeUrlForLogging(url), errorCode, errorDescription);
                 showNetworkErrorPage(viewID);
             }
             cleanup();
@@ -386,7 +375,6 @@ async function showLoadingPage(title: string): Promise<void> {
         return;
     }
 
-    mainLogger.info("Show loading view");
     loadingView = new WebContentsView(getWindowConfig());
     await renderLoadingPage(loadingView, title);
 
@@ -445,10 +433,8 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
         if (viewID !== currentViewID && view) {
             if (PRELOADED_VIEWS.includes(viewID as ViewID) && toHomepage) {
                 const homepageURL = await updateLocalID(appURL[viewID as ViewID]);
-                viewLogger(viewID as ViewID).info("reset to home page", homepageURL);
                 loadPromises.push(loadURL(viewID as ViewID, homepageURL));
             } else {
-                viewLogger(viewID as ViewID).info("reset to blank");
                 loadPromises.push(renderLoadingPage(view, viewTitleMap[viewID as ViewID]));
             }
         }
@@ -487,15 +473,12 @@ export function getZoom() {
 }
 
 export function setZoom(zoomFactor: ZoomFactor) {
-    mainLogger.info("set zoom factor to", zoomFactor);
-
     for (const view of Object.values(viewMap)) {
         view?.webContents.setZoomFactor(zoomFactor);
     }
 }
 
 export function resetZoom() {
-    mainLogger.info("reset zoom");
     setZoom(DEFAULT_ZOOM_FACTOR);
 }
 
@@ -512,7 +495,6 @@ export function updateZoom(direction: "in" | "out") {
 
 export const bringWindowToFront = () => {
     if (!mainWindow) {
-        mainLogger.info("Cannot bring window to front: window unavailable.");
         return;
     }
 
@@ -521,7 +503,6 @@ export const bringWindowToFront = () => {
     }
 
     if (isWindows) {
-        mainLogger.debug("Main window topMost On, focus and Off");
         mainWindow.setAlwaysOnTop(true);
     }
 
