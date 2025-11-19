@@ -1629,42 +1629,6 @@
       ],
       "Zoom out": [
         "Zoom uit"
-      ],
-      "Cancel request": [
-        "Aanvraag annuleren"
-      ],
-      "Create organization": [
-        "Organisatie aanmaken"
-      ],
-      "Download for macOS": [
-        "Download voor macOS"
-      ],
-      "Download for Windows": [
-        "Download voor Windows"
-      ],
-      "Get Pass Family": [
-        "Kies Pass Family"
-      ],
-      "Get the full suite": [
-        "Ontvang het volledige pakket"
-      ],
-      "No thanks": [
-        "Nee, bedankt"
-      ],
-      "Open ${ PASS_APP_NAME } in your browser": [
-        "Open ${ PASS_APP_NAME } in uw browser"
-      ],
-      "Start subscription": [
-        "Abonnement starten"
-      ],
-      "Start using ${ PASS_APP_NAME } now": [
-        "Begin ${ PASS_APP_NAME } nu te gebruiken"
-      ],
-      "Subscribe": [
-        "Abonneren"
-      ],
-      "Subscribe now": [
-        "Abonneer nu"
       ]
     },
     "action": {
@@ -1729,9 +1693,6 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
-      ],
-      "${ LUMO_APP_NAME } AI assistant": [
-        "${ LUMO_APP_NAME } AI-assistent"
       ]
     },
     "Address action": {
@@ -1794,9 +1755,6 @@
       ],
       "Set “${ emailAddress }” as default address": [
         "Stel \"${ emailAddress }\" in als standaard adres"
-      ],
-      "Grant permission to “${ emailAddress }”": [
-        "Toegang verlenen aan \"${ emailAddress }\""
       ]
     },
     "Address status": {
@@ -1826,9 +1784,6 @@
       ],
       "Orphan": [
         "Wees"
-      ],
-      "Permission revoked": [
-        "Toestemming onderbroken"
       ]
     },
     "Admin": {
@@ -2580,48 +2535,6 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Uw persoonlijke e-mailadres is een essentieel onderdeel van uw digitale identiteit. Net als uw telefoonnummer geeft u het niet aan iedereen die u ontmoet. Daarom is het handig om andere e-mailadressen te hebben die u voor verschillende doeleinden kunt gebruiken."
-      ],
-      "DeGoogle your life": [
-        "DeGoogle uw leven"
-      ],
-      "Easily manage your inbox with ${ mailPlusPlanName }": [
-        "Beheer uw inbox eenvoudig met ${ mailPlusPlanName }."
-      ],
-      "How to change your IP address on Windows": [
-        "Hoe u uw IP-adres wijzigt op Windows"
-      ],
-      "How to export passwords from Chrome": [
-        "Hoe wachtwoorden exporteren uit Chrome"
-      ],
-      "How to prevent data breaches in your business": [
-        "Hoe u gegevensschendingen in uw bedrijf voorkomt"
-      ],
-      "If you want to leave Google, one of the first things you must do is stop using its proprietary browser, Chrome, and its built-in password manager. A vital first step towards leaving Google is downloading your passwords so you can transition more easily to a new, better password manager.": [
-        "Als u Google wilt verlaten, is een van de eerste dingen die u moet doen, stoppen met het gebruik van de eigen browser, Chrome, en de ingebouwde wachtwoordbeheerder. Een cruciale eerste stap om Google te verlaten, is het downloaden van uw wachtwoorden, zodat u gemakkelijker kunt overstappen naar een nieuwe, betere wachtwoordbeheerder."
-      ],
-      "Learn how many GB are in a TB and discover the best way to securely store and share your files — no matter their size.": [
-        "Leer hoeveel GB er in een TB zitten en ontdek de beste manier om uw bestanden veilig op te slaan en te delen — ongeacht hun grootte."
-      ],
-      "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
-        "Navigeren op een internet vol datamakelaars, spam, oplichting en malware voelt steeds lastiger. Daarom gaat ${ PASS_APP_NAME } verder dan u alleen helpen bij het beheren, opslaan en automatisch aanvullen van uw wachtwoorden. Wij bieden u de tools om de controle over uw privacy te nemen en uw inboxen te beschermen met hide-my-email aliases."
-      ],
-      "Organize your memories into albums": [
-        "Organiseer uw herinneringen in albums"
-      ],
-      "Share photos online privately": [
-        "Deel online foto's privé"
-      ],
-      "Share your account details, without risking a hack": [
-        "Deel uw accountgegevens, zonder het risico te lopen op een hack"
-      ],
-      "Sign up for services without sharing your email with aliases.": [
-        "Schrijf u in voor diensten zonder uw e-mail te delen met behulp van aliassen."
-      ],
-      "Take advantage of advanced email alias feature in ${ PASS_APP_NAME }": [
-        "Maak gebruik van de geavanceerde e-mailadres alias functie in ${ PASS_APP_NAME }"
-      ],
-      "What are passkeys and how do they work?": [
-        "Wat zijn Passkeys en hoe werken ze?"
       ]
     },
     "breadcrumb": {
@@ -3129,21 +3042,6 @@
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
-      ],
-      "AI assistant that respects your privacy": [
-        "AI-assistent die uw privacy respecteert"
-      ],
-      "Compliance with data protection regulations": [
-        "Naleving van de regelgeving inzake gegevensbescherming"
-      ],
-      "Upload and query small files": [
-        "Kleine bestanden uploaden en opzoeken"
-      ],
-      "Web search access": [
-        "Toegang tot webzoekopdrachten"
-      ],
-      "Zero-access encryption": [
-        "Zero-access versleuteling"
       ]
     },
     "collider_2025: Navigation": {
@@ -4650,9 +4548,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
-      ],
-      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
-        "U kunt de lijst van domeinen aanpassen waar bepaalde automatische functies in de ${ PASS_APP_NAME } browser extensie (Automatisch aanvullen, automatisch suggesties geven, automatisch opslaan) niet mogen worden uitgevoerd."
       ]
     },
     "description": {
@@ -4915,24 +4810,6 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 of Windows 32-bit (ARM64)"
-      ],
-      "Brave": [
-        "Brave"
-      ],
-      "Download for Edge": [
-        "Downloaden voor Edge"
-      ],
-      "Download for Firefox": [
-        "Downloaden voor Firefox"
-      ],
-      "download the app (APK)": [
-        "download de app (APK)"
-      ],
-      "Safari": [
-        "Safari"
-      ],
-      "Scan the QR code with your mobile device. You can also ${ downloadButton } directly.": [
-        "Scan de QR-code met uw mobiele apparaat. U kunt ook direct ${ downloadButton }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -5824,21 +5701,6 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Uw noodcontact ${ name } vraagt toegang tot uw account."
-      ],
-      "${ days } day left": [
-        "${ days } dag resterend",
-        "${ days } dagen resterend"
-      ],
-      "${ hours } hour left": [
-        "${ hours } uur resterend",
-        "${ hours } uren resterend"
-      ],
-      "${ minutes } minute left": [
-        "${ minutes } minuut resterend",
-        "${ minutes } minuten resterend"
-      ],
-      "Cancel request?": [
-        "Aanvraag annuleren?"
       ]
     },
     "Empty group name": {
@@ -6469,15 +6331,6 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
-      ],
-      "Failed to add group member": [
-        "Kon geen groepslid toevoegen."
-      ],
-      "Failed to lookup server. Please try again": [
-        "Opzoeken server mislukt. Probeer opnieuw."
-      ],
-      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
-        "U hebt een actief aangepast domeinadres nodig om een SMTP verzendtoken te genereren."
       ]
     },
     "error": {
@@ -7223,9 +7076,6 @@
       ],
       "Stream from Netflix, HBO, and more": [
         "Stream van Netflix, HBO en meer"
-      ],
-      "Secure vault, item, and link sharing": [
-        "Veilig delen van kluizen, items en koppelingen"
       ]
     },
     "Features: Tooltip": {
@@ -7787,9 +7637,6 @@
       ],
       "Username": [
         "Gebruikersnaam"
-      ],
-      "Drag to reorder": [
-        "Sleep om volgorde te wijzigen"
       ]
     },
     "Header for domain modal": {
@@ -7858,9 +7705,6 @@
       ],
       "Your plan": [
         "Uw abonnement"
-      ],
-      "Downloads": [
-        "Downloads"
       ]
     },
     "Hint": {
@@ -11518,42 +11362,6 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } is een geavanceerd accountbeschermingsprogramma dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om uw organisatie te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
-      ],
-      "Authenticator app 2FA disabled": [
-        "Authenticatie-app 2FA uitgeschakeld"
-      ],
-      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
-        "Het uitschakelen van de authenticatie-app 2FA maakt uw account minder veilig. Ga alleen verder als dit absoluut noodzakelijk is."
-      ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Eindigt op ${ formattedPeriodEndDate }"
-      ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Snel en gefocust. E-mail en agenda, direct op uw bureaublad."
-      ],
-      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
-        "Helpt bij het schrijven, beantwoorden en proeflezen van e-mails. Indien uitgeschakeld hebben alleen beheerders toegang. Beheer voor individuele gebruikers in ${ userAndAddress } of ${ addMoreSeats }"
-      ],
-      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
-        "Voer deze informatie handmatig in uw authenticatie-app in om uw account in te stellen. ${ switchButton }."
-      ],
-      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
-        "Open uw Safari-instellingen voor de extensie en controleer of site toelatingen zijn ingeschakeld voor ${ BRAND_NAME }-domeinen"
-      ],
-      "Organization Monitor": [
-        "Organisatiemonitor"
-      ],
-      "Select users to view their activity": [
-        "Selecteer gebruikers om hun activiteit te bekijken."
-      ],
-      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
-        "Met e-mailcategorieën komen belangrijke berichten in een primaire inbox terecht. Al het andere wordt in categorieën geordend."
-      ],
-      "Your storage": [
-        "Uw opslag"
       ]
     },
     "info": {
@@ -13303,51 +13111,6 @@
       ],
       "ZIP code": [
         "Postcode"
-      ],
-      "1 of 1 email address available": [
-        "1 van 1 e-mailadres beschikbaar"
-      ],
-      "10 hide-my-email aliases": [
-        "10 hide-my-email aliassen"
-      ],
-      "10 VPN devices": [
-        "10 VPN apparaten"
-      ],
-      "500 GB Storage": [
-        "500 GB opslagruimte"
-      ],
-      "Admin panel for your family": [
-        "Beheerderpaneel voor uw gezin"
-      ],
-      "Beta": [
-        "Beta"
-      ],
-      "Email categories": [
-        "E-mailcategorieën"
-      ],
-      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
-        "${ DARK_WEB_MONITORING_NAME } inschakelen voor ${ domain.DomainName }"
-      ],
-      "Highest VPN speed": [
-        "Hoogste VPN-snelheid"
-      ],
-      "Online privacy for your whole family": [
-        "Online privacy voor het hele gezin"
-      ],
-      "Renews at ${ renewalPrice }, cancel anytime.": [
-        "Wordt verlengd voor ${ renewalPrice }, altijd opzegbaar."
-      ],
-      "Secure password generator": [
-        "Veilige wachtwoordgenerator"
-      ],
-      "Server name": [
-        "Servernaam"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Onbeperkt aantal hide-my-email-aliassen"
-      ],
-      "Unlimited logins and devices": [
-        "Onbeperkt aantal inloggen en apparaten"
       ]
     },
     "label": {
@@ -13717,9 +13480,6 @@
       ],
       "What’s this?": [
         "Wat is dit?"
-      ],
-      "Snap store": [
-        "Snap Store"
       ]
     },
     "Link label (optional)": {
@@ -14072,9 +13832,6 @@
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "U kan ${ BRAND_NAME } gratis proberen met deze link."
-      ],
-      "Take control of your data with end-to-end encryption": [
-        "Neem de controle over uw gegevens met end-to-end versleuteling"
       ]
     },
     "Modal title": {
@@ -15545,15 +15302,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tweestapsverificatie is niet langer vereist"
-      ],
-      "Address reconnected.": [
-        "Adres opnieuw verbonden."
-      ],
-      "Monitoring enabled": [
-        "Monitoring ingeschakeld"
-      ],
-      "Zoom video conferencing settings have been updated": [
-        "Zoom Instellingen voor videoconferenties zijn bijgewerkt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16550,15 +16298,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Uw organisatie heeft toegang tot ${ free }. Neem contact op met uw organisatiebeheerder om te upgraden als u premium toegang wil tot ${ appName }-functies."
-      ],
-      "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Maar u kunt upgraden naar **${ upsellPlanTitle }** — het is slechts ${ relativePrice } extra per maand."
-      ],
-      "But you can upgrade to **${ upsellPlanTitle }**.": [
-        "Maar u kunt upgraden naar **${ upsellPlanTitle }**."
-      ],
-      "You already have a ${ BRAND_NAME } account and can start using ${ PASS_APP_NAME } right away.": [
-        "U heeft al een ${ BRAND_NAME } account en kunt meteen beginnen met het gebruiken van ${ PASS_APP_NAME }."
       ]
     },
     "pass_signup_2023: Title": {
@@ -16905,12 +16644,6 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
-      ],
-      "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
-        "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
       ]
     },
     "Payments.Error": {
@@ -17214,9 +16947,6 @@
       ],
       "ZIP code": [
         "Postcode"
-      ],
-      "e.g., AT#62": [
-        "bv. AT#62"
       ]
     },
     "placeholder": {
@@ -17288,9 +17018,6 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Het ideale abonnement voor privacybewuste powergebruikers."
-      ],
-      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
-        "Privacy suite met premium services en ${ unlimitedPlanMaxSpace } versleutelde cloudopslag, alles in één bundel."
       ]
     },
     "Plans": {
@@ -17581,22 +17308,6 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
-      ],
-      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
-        "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
-      ],
-      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
-        "Geniet gratis van **${ planTitle }** tot **${ textDate }**."
-      ],
-      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
-        "Laatste kans om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
-      ],
-      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
-        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
-        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
-      ],
-      "your subscription": [
-        "uw abonnement"
       ]
     },
     "Remark about a key type option": {
@@ -18109,42 +17820,6 @@
       ],
       "Your recovery phone number is:": [
         "Uw hersteltelefoonnummer is:"
-      ],
-      "Account reset by email has been disabled": [
-        "Accountreset via e-mail is uitgeschakeld."
-      ],
-      "Add an email": [
-        "Voeg een e-mailadres toe"
-      ],
-      "Disable recovery by email": [
-        "Herstellen via e-mail uitschakelen"
-      ],
-      "Disable recovery by email ": [
-        "Herstellen via e-mail uitschakelen "
-      ],
-      "Disable recovery by phone": [
-        "Herstellen via telefoon uitschakelen"
-      ],
-      "in case we need to contact you": [
-        "voor het geval we contact met u moeten opnemen"
-      ],
-      "Verify your email address": [
-        "Verifieer uw e-mailadres"
-      ],
-      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
-        "Er is een fout opgetreden tijdens het verifiëren van uw e-mail. Probeer het later opnieuw of neem contact op met support als het probleem zich blijft voordoen."
-      ],
-      "You have recommended actions to safeguard your account.": [
-        "U hebt aanbevolen acties om uw account te beveiligen."
-      ],
-      "Your account and data can be recovered.": [
-        "Uw account en gegevens kunnen worden hersteld."
-      ],
-      "Your email address is:": [
-        "Uw e-mailadres:"
-      ],
-      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Uw herstel-e-mailadres kan door aanvallers worden misbruikt om uw account over te nemen. ${ disableEmail } om de beveiliging van uw account te vergroten."
       ]
     },
     "saml: Action": {
@@ -19111,30 +18786,6 @@
       ],
       "Your trial": [
         "Uw proefversie"
-      ],
-      "4.8+ rating": [
-        "4,8+ waardering"
-      ],
-      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
-        "En ontvang ${ referralInfo.uiData.refereeRewardAmount } aan tegoed, als u zich abonneert."
-      ],
-      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
-        "Krijg ${ referralInfo.uiData.refereeRewardAmount } in tegoed"
-      ],
-      "Get a new encrypted email for free": [
-        "Verkrijg gratis een nieuwe versleutelde e-mail"
-      ],
-      "Swiss-based": [
-        "Gevestigd in Zwitserland"
-      ],
-      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
-        "Daarna ${ priceWithDiscountPerMonth } per maand. U kunt op elk moment annuleren."
-      ],
-      "Trusted by over 100 million people and businesses": [
-        "Vertrouwd door meer dan 100 miljoen mensen en bedrijven"
-      ],
-      "Use your current email": [
-        "Gebruik uw huidige e-mailadres"
       ]
     },
     "Signup label": {
@@ -19262,12 +18913,6 @@
       ],
       "Works on all devices": [
         "Werkt op alle apparaten"
-      ],
-      "Mail, calendar, file storage, and VPN included": [
-        "E-mail, agenda, bestandsopslag en VPN inbegrepen"
-      ],
-      "The only password manager with:": [
-        "De enige wachtwoordbeheerder met:"
       ]
     },
     "signup_2024: Feature": {
@@ -20452,9 +20097,6 @@
     "Subtitle": {
       "View VPN session details for your organization.": [
         "Bekijk VPN-sessiedetails voor uw organisatie."
-      ],
-      "Free forever": [
-        "Voor altijd gratis"
       ]
     },
     "Success": {
@@ -20702,9 +20344,6 @@
       ],
       "User deleted": [
         "Gebruiker verwijderd"
-      ],
-      "User enabled": [
-        "Gebruiker ingeschakeld"
       ]
     },
     "Success message after sorting folders": {
@@ -22470,54 +22109,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
-      ],
-      "Application access": [
-        "Toegang tot toepassing"
-      ],
-      "Disable two-factor authentication app?": [
-        "Tweestapsverificatie app uitschakelen?"
-      ],
-      "Download ${ app }": [
-        "${ app } downloaden"
-      ],
-      "Email categories": [
-        "E-mailcategorieën"
-      ],
-      "Feature access": [
-        "Functietoegang"
-      ],
-      "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
-        "Krijg ${ planMaxSpace } opslagruimte voor uw bestanden, foto's en documenten met ${ planName }. ${ upgradeButton }"
-      ],
-      "Get more from your password manager": [
-        "Haal meer uit uw wachtwoordbeheerder"
-      ],
-      "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
-        "Installeer de app op al uw apparaten en geniet overal van veilige, naadloze toegang."
-      ],
-      "Manage files across devices on Windows, Mac, Android, and iOS.": [
-        "Beheer bestanden op al uw apparaten, waaronder Windows, Mac, Android en iOS."
-      ],
-      "No events": [
-        "Geen afspraken"
-      ],
-      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
-        "Pass Plus Levenslang voor ${ plusLifetimePrice }"
-      ],
-      "Secure your passwords. Everywhere.": [
-        "Beveilig uw wachtwoorden. Overal."
-      ],
-      "Security": [
-        "Beveiliging"
-      ],
-      "Set up authenticator app": [
-        "Authenticatie-app instellen"
-      ],
-      "There are no events yet for your organization.": [
-        "Er zijn nog geen afspraken voor uw organisatie."
-      ],
-      "You've successfully signed in!": [
-        "U bent succesvol ingelogd!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22869,12 +22460,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Uw externe account heeft mogelijk 24-uurs bandbreedtelimiet bereikt. ${ BRAND_NAME } zal proberen de import zo snel mogelijk te hervatten."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Maakt het mogelijk om naadloos Zoom-koppelingen voor videoconferenties toe te voegen aan uw agenda-uitnodigingen."
-      ],
-      "Emails in your inbox are shown organized into categories": [
-        "E-mails in uw inbox worden geordend in categorieën getoond"
       ]
     },
     "tooltip": {
@@ -23176,12 +22761,6 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "U kunt tot ${ FAMILY_MAX_USERS } mensen beveiligen met ${ PLAN_NAMES[plan] }. Vanaf slechts ${ priceString }/maand per account."
-      ],
-      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
-        "Bescherm uw organisatie tegen dataschendingen met ${ PLAN_NAMES[plan] }."
-      ],
-      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
-        "U kunt tot ${ DUO_MAX_USERS } personen beveiligen met ${ PLAN_NAMES[PLANS.DUO] }, en tot ${ FAMILY_MAX_USERS } met ${ PLAN_NAMES[PLANS.FAMILY] }. Vanaf slechts ${ priceString }/maand per account."
       ]
     },
     "upsell panel": {
@@ -23308,15 +22887,6 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
-      ],
-      "2FA": [
-        "2FA"
-      ],
-      "User has enabled two-factor authentication with a security key.": [
-        "De gebruiker heeft tweestapsverificatie ingeschakeld met een beveiligingssleutel."
-      ],
-      "User has enabled two-factor authentication with an authenticator app.": [
-        "De gebruiker heeft tweestapsverificatie ingeschakeld met een authenticatie-app."
       ]
     },
     "Validation": {
@@ -23927,108 +23497,6 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
-      ]
-    },
-    "Accounts": {
-      "Accounts": [
-        "Accounts"
-      ]
-    },
-    "Dashboard": {
-      "Communicate and schedule with end-to-end encryption.": [
-        "Communiceer en plan met end-to-end versleuteling."
-      ],
-      "Experience true freedom online and safeguard your privacy.": [
-        "Ervaar echte vrijheid online en bescherm uw privacy."
-      ],
-      "Set secure passwords without the hassle.": [
-        "Stel veilige wachtwoorden in zonder gedoe."
-      ],
-      "With ${ planTitlePlusMaybeBrand }, you get free access to ${ VPN_APP_NAME } and other privacy services.": [
-        "Met ${ planTitlePlusMaybeBrand } krijgt u gratis toegang tot ${ VPN_APP_NAME } en andere privacydiensten."
-      ],
-      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
-        "Met ${ planTitlePlusMaybeBrand } krijgt u gratis toegang tot alle ${ BRAND_NAME } privacydiensten."
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb voor Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm voor Fedora / Red Hat"
-      ]
-    },
-    "Duration": {
-      "1.5h": [
-        "1,5u"
-      ],
-      "120 minutes": [
-        "120 minuten"
-      ],
-      "1h": [
-        "1u"
-      ],
-      "2h": [
-        "2u"
-      ],
-      "30 minutes": [
-        "30 minuten"
-      ],
-      "30m": [
-        "30 min"
-      ],
-      "60 minutes": [
-        "60 minuten"
-      ],
-      "90 minutes": [
-        "90 minuten"
-      ]
-    },
-    "Get started checklist instructions": {
-      "${ appName } on Play Store": [
-        "${ appName } in de Play Store"
-      ]
-    },
-    "Input assistive text": {
-      "This is how your organization will appear to users. You can change it at any time.": [
-        "Zo verschijnt uw organisatie aan gebruikers. U kunt dit op elk moment wijzigen."
-      ]
-    },
-    "lumo_signup_2025: Info": {
-      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
-        "Bescherm uw hele bedrijf. Ontvang ${ LUMO_SHORT_APP_NAME } Professional met alle ${ BRAND_NAME } voor Bedrijven apps en premium functies."
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Neem deze aanbieding"
-      ]
-    },
-    "Organization": {
-      "Organization": [
-        "Organisatie"
-      ]
-    },
-    "Pass signup: info": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nooit"
-      ]
-    },
-    "retention_policy_2025_Hint": {
-      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
-        "${ currentLength }/${ MAX_TITLE_LENGTH } tekens"
-      ]
-    },
-    "VPN Gateways": {
-      "VPN Gateways": [
-        "VPN-gateways"
       ]
     }
   }
