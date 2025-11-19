@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -31,12 +31,6 @@ type Props = ModalOwnProps & ExtendedPublicKeyModalOwnProps;
 export const ExtendedPublicKeyModal = ({ accountLabel, xpub, descriptor, index, ...modalProps }: Props) => {
     const { createNotification } = useNotifications();
     const [isXPub, setIsXpub] = useState<boolean>(false);
-
-    useEffect(() => {
-        if (modalProps.open) {
-            setIsXpub(false);
-        }
-    }, [modalProps.open]);
 
     const prefix = xpub.slice(0, 4);
     // translator: prefix is always a 4-character string like XPUB, YPUB, or ZPUB
@@ -96,6 +90,7 @@ export const ExtendedPublicKeyModal = ({ accountLabel, xpub, descriptor, index, 
             <Collapsible>
                 <CollapsibleHeader
                     className="color-weak"
+                    onClick={() => setIsXpub(!isXPub)}
                     suffix={
                         <CollapsibleHeaderIconButton className="color-weak" onClick={() => setIsXpub(!isXPub)}>
                             <Icon name="chevron-down" />
