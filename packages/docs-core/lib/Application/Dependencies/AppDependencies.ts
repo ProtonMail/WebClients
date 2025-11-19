@@ -1,6 +1,6 @@
 import type { LoggerInterface } from '@proton/utils/logs'
 import { Logger } from '@proton/utils/logs'
-import { DOCS_DEBUG_KEY, DependencyContainer } from '@proton/docs-shared'
+import { DOCS_DEBUG_KEY, DependencyContainer, InternalEventBus } from '@proton/docs-shared'
 import { App_TYPES } from './Types'
 import type { HttpHeaders } from '../../Api/Types/HttpHeaders'
 import { DocsApi } from '../../Api/DocsApi'
@@ -8,7 +8,6 @@ import { SquashDocument } from '../../UseCase/SquashDocument'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { DocLoader } from '../../Services/DocumentLoader/DocLoader'
 import type { InternalEventBusInterface, SyncedEditorState } from '@proton/docs-shared'
-import { InternalEventBus } from '@proton/docs-shared'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { Api } from '@proton/shared/lib/interfaces'
 import { EncryptionService } from '../../Services/Encryption/EncryptionService'
@@ -54,6 +53,7 @@ import { FetchMetaAndRawCommit } from '../../UseCase/FetchMetaAndRawCommit'
 import { IndexedDatabase } from '../../Database/IndexedDB'
 import type { DatabaseSchema } from '../../Database/Schema'
 import { CURRENT_DB_VERSION, DATABASE_NAME, migrations } from '../../Database/Schema'
+import { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 
 export class AppDependencies extends DependencyContainer {
   constructor(
@@ -320,6 +320,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<HandleRealtimeCommentsEvent>(App_TYPES.HandleRealtimeCommentsEvent),
         this.get<MetricService>(App_TYPES.MetricService),
         this.get<GetNode>(App_TYPES.GetNode),
+        this.get<DocSizeTracker>(App_TYPES.SizeTracker),
       )
     })
 
@@ -346,7 +347,12 @@ export class AppDependencies extends DependencyContainer {
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),
         unleashClient,
+        this.get<DocSizeTracker>(App_TYPES.SizeTracker),
       )
+    })
+
+    this.bind(App_TYPES.SizeTracker, () => {
+      return new DocSizeTracker(this.get<LoggerInterface>(App_TYPES.Logger))
     })
 
     this.bind(App_TYPES.WebsocketService, () => {
@@ -359,6 +365,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<MetricService>(App_TYPES.MetricService),
         appVersion,
         unleashClient,
+        this.get<DocSizeTracker>(App_TYPES.SizeTracker),
       )
     })
 

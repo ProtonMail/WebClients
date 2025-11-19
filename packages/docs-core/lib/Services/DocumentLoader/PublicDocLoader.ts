@@ -29,6 +29,7 @@ import type { GetNode } from '../../UseCase/GetNode'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface
@@ -57,6 +58,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
     private handleRealtimeCommentsEvent: HandleRealtimeCommentsEvent,
     private metricService: MetricService,
     private getNode: GetNode,
+    private sizeTracker: DocSizeTracker,
   ) {}
 
   destroy(): void {}
@@ -132,6 +134,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
         this.logger,
         this.unleashClient,
         documentType,
+        this.sizeTracker,
       )
 
       realtime.initializeConnection()

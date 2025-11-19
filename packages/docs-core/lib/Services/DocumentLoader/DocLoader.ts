@@ -35,6 +35,7 @@ import { PrivateRenameController, type RenameControllerInterface } from '../../R
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 import type { UnleashClient } from '@proton/unleash'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 
 export class DocLoader implements DocLoaderInterface<DocumentState> {
   private docController?: AuthenticatedDocControllerInterface
@@ -67,6 +68,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
     private unleashClient: UnleashClient,
+    private sizeTracker: DocSizeTracker,
   ) {}
 
   destroy(): void {
@@ -127,6 +129,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       this.logger,
       this.unleashClient,
       documentType,
+      this.sizeTracker,
     )
     realtime.initializeConnection()
 
