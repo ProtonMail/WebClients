@@ -1,7 +1,9 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { RoomContext } from '@livekit/components-react';
-import { Room } from 'livekit-client';
+import { LogLevel, Room, setLogExtension } from 'livekit-client';
+
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider';
 import { audioQuality, qualityConstants, screenShareQuality } from '../../qualityConstants';
@@ -15,6 +17,26 @@ const worker = new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)
 
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
     const roomRef = useRef<Room>();
+
+    const reportMeetError = useMeetErrorReporting();
+
+    const isLogExtensionSetup = useRef(false);
+
+    useEffect(() => {
+        if (!isLogExtensionSetup.current) {
+            isLogExtensionSetup.current = true;
+
+            setLogExtension((level, msg) => {
+                if (level === LogLevel.error || level === LogLevel.warn) {
+                    if (msg.includes('missing key at index')) {
+                        reportMeetError(`[LiveKit] Missing key at index error detected`, {
+                            level: 'error',
+                        });
+                    }
+                }
+            });
+        }
+    }, []);
 
     if (!roomRef.current) {
         roomRef.current = new Room({
