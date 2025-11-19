@@ -36,8 +36,12 @@ export const GlobalBookingSuccess = () => {
         return unsubscribe;
     }, [subscribe, setOpen]);
 
-    const handleClose = () => {
+    const handleClose = (notification?: string) => {
         bookingPageCreationProps?.onClose();
+
+        createNotification({
+            text: notification || c('Success').t`Booking page created`,
+        });
 
         setOpen(false);
         setBookingPageCreationProps(null);
@@ -45,9 +49,7 @@ export const GlobalBookingSuccess = () => {
 
     const handleCopyURLClick = () => {
         textToClipboard(bookingPageCreationProps?.bookingLink);
-        createNotification({
-            text: c('Success').t`Booking link copied to clipboard`,
-        });
+        handleClose(c('Success').t`Booking page created and link copied to clipboard`);
     };
 
     if (!bookingPageCreationProps) {
@@ -101,7 +103,6 @@ export const GlobalBookingSuccess = () => {
                             fullWidth
                             onClick={() => {
                                 handleCopyURLClick();
-                                handleClose();
                             }}
                         >{c('Action').t`Copy link and close`}</Button>
                     </ModalContent>
