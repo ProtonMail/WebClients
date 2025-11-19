@@ -17,7 +17,7 @@ import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketCo
 import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { ConnectionCloseReason, EventTypeEnum } from '@proton/docs-proto'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
-import { DocSizeTracker } from '../SizeTracker/SizeTracker'
+import type { DocSizeTracker } from '../SizeTracker/SizeTracker'
 import { PostApplicationError } from '../Application/ApplicationEvent'
 import type { RealtimeControllerInterface } from './RealtimeControllerInterface'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
@@ -46,7 +46,6 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
   isDestroyed = false
   abortWebsocketConnectionAttempt = false
-  sizeTracker: DocSizeTracker = new DocSizeTracker()
   isRefetchingStaleCommit = false
 
   readonly updatesReceivedWhileParentNotReady: (DecryptedMessage | ProcessedIncomingRealtimeEventMessage)[] = []
@@ -60,6 +59,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     readonly logger: LoggerInterface,
     readonly unleashClient: UnleashClient,
     readonly documentType: DocumentType,
+    readonly sizeTracker: DocSizeTracker,
   ) {
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToConnect)
@@ -232,8 +232,6 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       return
     }
 
-    this.sizeTracker.incrementSize(message.byteSize())
-
     this.documentState.emitEvent({
       name: 'RealtimeReceivedDocumentUpdate',
       payload: message,
@@ -349,8 +347,6 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
       ) {
         this.handleAttemptingToBroadcastUpdateThatIsTooLarge()
       } else {
-        this.sizeTracker.incrementSize(message.content.byteLength)
-
         void this.websocketService.sendDocumentUpdateMessage(
           this.documentState.getProperty('entitlements').nodeMeta,
           message.content,
@@ -363,7 +359,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         this.documentState.getProperty('entitlements').nodeMeta,
         message.content,
         (content) => {
-          console.debug('Creating initial commit from conversion content')
+          this.logger.info('Creating initial commit from conversion content')
           this.documentState.emitEvent({
             name: 'CommitInitialConversionContent',
             payload: content,

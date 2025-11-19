@@ -9,8 +9,7 @@ import type { DecryptMessage } from '../../UseCase/DecryptMessage'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
 import type { InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
-import { BroadcastSource } from '@proton/docs-shared'
-import { Result } from '@proton/docs-shared'
+import { BroadcastSource, Result } from '@proton/docs-shared'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
@@ -22,6 +21,7 @@ import type { DocumentStateValues } from '../../State/DocumentState'
 import { DocumentState } from '../../State/DocumentState'
 import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 import type UnleashClient from '@proton/unleash/UnleashClient'
+import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
   JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
@@ -100,6 +100,13 @@ describe('WebsocketService', () => {
         isReady: jest.fn().mockReturnValue(true),
         isEnabled: jest.fn().mockReturnValue(true),
       } as unknown as jest.Mocked<UnleashClient>,
+      {
+        incrementSize: jest.fn(),
+        canIncrementSize: jest.fn(),
+        canPostUpdateOfSize: jest.fn(),
+        resetWithSize: jest.fn(),
+        currentSize: 0,
+      } as unknown as jest.Mocked<DocSizeTracker>,
     )
 
     service.createConnection(documentState)
@@ -145,7 +152,6 @@ describe('WebsocketService', () => {
       debouncer.addUpdates = jest.fn()
 
       await service.sendDocumentUpdateMessage(document, new Uint8Array())
-
       expect(debouncer.addUpdates).toHaveBeenCalled()
     })
   })
@@ -171,6 +177,12 @@ describe('WebsocketService', () => {
       await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
 
       expect(connection.broadcastMessage).toHaveBeenCalled()
+    })
+
+    it('should track size', async () => {
+      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
+
+      expect(service.sizeTracker.incrementSize).toHaveBeenCalled()
     })
 
     it('should add message to ack ledger', async () => {
@@ -386,6 +398,7 @@ describe('WebsocketService', () => {
             {
               encryptedContent: new Uint8Array(),
               authorAddress: 'bar',
+              serializeBinary: jest.fn().mockReturnValue(new Uint8Array()),
             },
           ],
         },
@@ -403,10 +416,12 @@ describe('WebsocketService', () => {
             {
               encryptedContent: new Uint8Array(),
               authorAddress: 'foo',
+              serializeBinary: jest.fn().mockReturnValue(new Uint8Array()),
             },
           ],
         },
       } as unknown as ServerMessageWithDocumentUpdates)
+      expect(service.sizeTracker.incrementSize).toHaveBeenCalledWith(new Uint8Array().byteLength)
 
       expect(switchToRealtimeMode).not.toHaveBeenCalled()
     })
