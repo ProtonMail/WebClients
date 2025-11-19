@@ -3,7 +3,8 @@ import { useLocation } from 'react-router';
 import { isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components';
+import { useGetUser } from '@proton/account/user/hooks';
+import { useApi, useContactEmailsCache, useGetVerificationPreferences } from '@proton/components';
 import { queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { base64URLStringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
@@ -17,6 +18,10 @@ export const useExternalBookingLoader = () => {
     const api = useApi();
     const location = useLocation();
     const bookingSecretBase64Url = location.hash.substring(1);
+
+    const getUser = useGetUser();
+    const { contactEmailsMap } = useContactEmailsCache();
+    const getVerificationPreferences = useGetVerificationPreferences();
 
     const setLoading = useBookingStore((state) => state.setLoading);
     const setBookingDetails = useBookingStore((state) => state.setBookingDetails);
@@ -77,12 +82,28 @@ export const useExternalBookingLoader = () => {
                 throw new Error(c('Error').t`No booking page data received`);
             }
 
+            let verifyingKeys = undefined;
+
+            try {
+                // This will throw if the user is a guest
+                const user = await getUser();
+                if (user) {
+                    const verificationPreferences = await getVerificationPreferences({
+                        email: user.Email,
+                        contactEmailsMap,
+                        lifetime: 0,
+                    });
+                    verifyingKeys = verificationPreferences.verifyingKeys;
+                }
+            } catch (e) {}
+
             const { summary, description, location, withProtonMeetLink } = await decryptBookingContent({
                 encryptedContent: bookingPageData.EncryptedContent,
                 bookingSecretBytes,
                 bookingKeySalt: bookingPageData.BookingKeySalt,
                 calendarId: bookingPageData.CalendarID,
                 bookingUid: bookingPageData.BookingUID,
+                verificationKeys: verifyingKeys,
             });
 
             setBookingDetails({
