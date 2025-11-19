@@ -29,7 +29,6 @@ export const updateSettings = (settings: Partial<SettingsStore>) => {
         return;
     }
 
-    settingsLogger.info("Settings saved", JSON.stringify(settings));
     store.set("settings", { ...oldSettings, ...settings });
 };
 
@@ -57,7 +56,6 @@ export const getSettings = (): SettingsStore => {
         return settings;
     }
 
-    settingsLogger.info("Settings not found, using default settings");
     store.set("settings", defaultSettings);
     return defaultSettings;
 };

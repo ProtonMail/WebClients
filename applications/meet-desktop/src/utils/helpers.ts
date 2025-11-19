@@ -38,7 +38,6 @@ export const clearStorage = async () => {
     clearLogs();
 
     const timeout = 500;
-    mainLogger.info("Closing app in", timeout, "ms");
     setTimeout(() => {
         // Since the app can crash under some circunstances when being restarted
         // We are just keeping it closed after clearing data.
