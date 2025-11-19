@@ -34,7 +34,9 @@ import {
     isManagedExternally,
     isUpcomingSubscriptionUnpaid,
 } from '@proton/payments';
+import { shouldHaveUpcomingSubscription as getShouldHaveUpcomingSubscription } from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -128,6 +130,8 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const renewCurrency = latestSubscription.Currency;
     const renewLength = latestSubscription.Cycle;
 
+    const shouldHaveUpcomingSubscription = getShouldHaveUpcomingSubscription(subscription);
+
     const renewalText = (() => {
         if (hasLifetimeCoupon(subscription)) {
             return c('Payments.Lifetime Subscription').t`Lifetime accounts can be transferred or sold`;
@@ -137,6 +141,22 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             const subscriptionManagerName = getSubscriptionManagerName(subscription.External);
             // translator: possible values are "Google Play" or "Apple App Store". This sentence means "Subscription renews automatically on Google Play (or Apple App Store)"
             return c('Billing cycle').t`Renews automatically on ${subscriptionManagerName}`;
+        }
+
+        /**
+         * When user subscribes, for example, to mail2022 24m then the backend must automatically schedule a 12m
+         * subscription. In case if this upcoming subscription is missing, it means that the frontend didn't receive the
+         * upcoming subscription yet. Typically it's a 2-step process (even though it lasts only one second). First user
+         * creates the subscription, we call the events endpoint, and know that we need to fetch the subscription. The
+         * frontend fetches the subscription, but at this point it might not have the upcoming subscription yet, because
+         * the backend creates the upcoming subscription asynchronously. At this point the frontend has a risk of
+         * displaying wrong information about renewal price and cycle. It usually lasts only a second, if happens at
+         * all, so soon enough the frontend receives another event that the subscription was updated, and now the
+         * frontend finally fetches the subscription endpoint that now contains the upcoming subscription. Basically
+         * this condition handles the situation when the upcoming subscription is unexpectedly missing.
+         */
+        if (shouldHaveUpcomingSubscription && !upcoming) {
+            return null;
         }
 
         const renewPrice = getSimplePriceString(renewCurrency, renewAmount);
@@ -167,17 +187,22 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
         return null;
     })();
 
+    // Adding an alias to make it clearer that this logic also affects the layout. When we change the renewal text, the
+    // size of table cells will change. To prevent it, we manually override the width of table cells. But we do so only
+    // when we know that the renewal text can change.
+    const mightChangeRenewalText = shouldHaveUpcomingSubscription;
+
     return (
         <TableRow>
-            <TableCell label={c('Title subscription').t`Plan`}>
+            <TableCell label={c('Title subscription').t`Plan`} className={clsx(mightChangeRenewalText && 'w-1/6')}>
                 <span data-testid="planNameId">{planTitle}</span>
             </TableCell>
-            <TableCell data-testid="subscriptionStatusId">
+            <TableCell data-testid="subscriptionStatusId" className={clsx(mightChangeRenewalText && 'w-1/10')}>
                 <Badge type={status.type} className="text-nowrap">
                     {status.label}
                 </Badge>
             </TableCell>
-            <TableCell label={c('Title subscription').t`End date`}>
+            <TableCell label={c('Title subscription').t`End date`} className={clsx(mightChangeRenewalText && 'w-2/10')}>
                 <div className="flex items-center">
                     {hasLifetimeCoupon(subscription) ? (
                         c('Payments.Lifetime Subscription.Renewal time').t`Never`
@@ -196,7 +221,7 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                     )}
                 </div>
             </TableCell>
-            <TableCell data-testid="subscriptionActionsId">
+            <TableCell data-testid="subscriptionActionsId" className={clsx(mightChangeRenewalText && 'w-full')}>
                 {subscriptionExpiresSoon ? (
                     <DropdownActions size="small" list={reactivateAction} />
                 ) : (
