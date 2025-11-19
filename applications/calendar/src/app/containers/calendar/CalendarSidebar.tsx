@@ -31,6 +31,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
+import { useBookingsAvailability } from '../bookings/useBookingsAvailability';
 import { ProtonMeetSpotlightWrapper } from './ProtonMeetSpotlightWrapper';
 import { Bookings } from './sidebar/Bookings';
 import { MyCalendars } from './sidebar/MyCalendars';
@@ -62,6 +63,8 @@ const CalendarSidebar = ({
     const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONCALENDAR}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
     const collapsed = !showSideBar && !viewportWidth['<=small'];
+
+    const isBookingsEnabled = useBookingsAvailability();
 
     const onClickExpandNav = () => {
         sendRequestCollapsibleSidebarReport({
@@ -127,7 +130,9 @@ const CalendarSidebar = ({
                     <>
                         <div className="shrink-0 w-full">{miniCalendar}</div>
                         <div>
-                            <Bookings headerRef={headerRef} utcDate={utcDate} disabled={!onCreateEvent} />
+                            {isBookingsEnabled && (
+                                <Bookings headerRef={headerRef} utcDate={utcDate} disabled={!onCreateEvent} />
+                            )}
                             <MyCalendars
                                 myCalendars={myCalendars}
                                 calendars={calendars}

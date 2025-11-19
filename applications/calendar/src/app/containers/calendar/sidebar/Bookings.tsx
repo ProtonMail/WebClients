@@ -12,7 +12,6 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
 import { UpsellBookings } from '../../bookings/UpsellBookings';
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
-import { useBookingsAvailability } from '../../bookings/useBookingsAvailability';
 import { BookingItem } from './BookingsItem';
 
 interface Props {
@@ -30,12 +29,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
 
     const [bookings] = useInternalBooking();
 
-    const isBookingsAvailable = useBookingsAvailability();
     const { openBookingSidebar, canCreateBooking } = useBookings();
-
-    if (!isBookingsAvailable) {
-        return null;
-    }
 
     const handleCreate = () => {
         if (user.hasPaidMail) {
