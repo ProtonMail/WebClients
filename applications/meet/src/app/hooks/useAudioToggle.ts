@@ -8,7 +8,7 @@ import { Track } from 'livekit-client';
 import { DEFAULT_DEVICE_ID } from '../constants';
 import { audioQuality } from '../qualityConstants';
 import type { SwitchActiveDevice } from '../types';
-import { isAudioSessionAvailable, restoreIOSAudioQuality, setAudioSessionType } from '../utils/ios-audio-session';
+import { isAudioSessionAvailable, setAudioSessionType } from '../utils/ios-audio-session';
 
 const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
 
@@ -26,8 +26,7 @@ export const useAudioToggle = (
     const trackId = useRef<string | null>(null);
 
     const toggleInProgress = useRef(false);
-
-    const prevEnabled = useRef<boolean | null>(null);
+    const currentDeviceId = useRef<string | null>(null);
 
     const toggleAudio = async (
         params: {
@@ -37,8 +36,14 @@ export const useAudioToggle = (
             preserveCache?: boolean;
         } = {}
     ) => {
+        // Get current mute state from the actual track (more reliable than a ref)
+        const currentAudioPublication = [...localParticipant.audioTrackPublications.values()].find(
+            (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
+        );
+        const currentMuteState = currentAudioPublication?.isMuted ?? !initialAudioState;
+
         const {
-            isEnabled = prevEnabled.current ?? initialAudioState,
+            isEnabled = !currentMuteState, // Use actual track state, fallback to initialAudioState if no track exists yet
             audioDeviceId = activeMicrophoneDeviceId,
             enableNoiseFilter = noiseFilter,
             preserveCache,
@@ -49,9 +54,6 @@ export const useAudioToggle = (
         if (toggleInProgress.current || !deviceId) {
             return;
         }
-
-        // In case of unplugging a device LiveKit sets the enabled status to false, but we want to keep the previous state
-        prevEnabled.current = isEnabled;
 
         toggleInProgress.current = true;
 
@@ -67,23 +69,57 @@ export const useAudioToggle = (
         };
 
         try {
-            // Apply iOS Safari audioSession workaround before enabling microphone
-            // This ensures the correct device is selected and audio routing is correct
-            if (useIOSWorkaround && isEnabled) {
-                setAudioSessionType('auto');
-            }
+            // Get existing audio track and publication
+            const audioPublication = [...localParticipant.audioTrackPublications.values()].find(
+                (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
+            );
+            const audioTrack = audioPublication?.audioTrack;
 
-            await localParticipant.setMicrophoneEnabled(isEnabled && !!deviceId, deviceId ? audio : undefined, {
-                audioPreset: {
-                    maxBitrate: audioQuality,
-                },
-            });
+            // Check if we're just toggling mute state (not changing devices or noise filter settings)
+            const isDeviceChanging = currentDeviceId.current !== deviceId;
+            const isJustTogglingMute = audioTrack && !isDeviceChanging && enableNoiseFilter === noiseFilter;
 
-            if (useIOSWorkaround) {
+            if (isJustTogglingMute) {
+                // Fast path: just mute/unmute the existing track
                 if (isEnabled) {
-                    setAudioSessionType('play-and-record');
+                    await audioTrack.unmute();
                 } else {
-                    restoreIOSAudioQuality();
+                    await audioTrack.mute();
+                }
+            } else {
+                // Need to recreate track (device change, noise filter change, or no track exists)
+                // Apply iOS Safari audioSession workaround before enabling microphone
+                // This ensures the correct device is selected and audio routing is correct
+                if (useIOSWorkaround) {
+                    setAudioSessionType('auto');
+                }
+
+                // Always create and publish the track (even if we want it muted)
+                // This keeps iOS audio playback working and enables fast unmute
+                await localParticipant.setMicrophoneEnabled(true, audio, {
+                    audioPreset: {
+                        maxBitrate: audioQuality,
+                    },
+                });
+
+                if (useIOSWorkaround) {
+                    setAudioSessionType('play-and-record');
+                }
+
+                currentDeviceId.current = deviceId;
+
+                // Now mute/unmute the newly created track based on desired state
+                const newAudioPublication = [...localParticipant.audioTrackPublications.values()].find(
+                    (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
+                );
+                const newAudioTrack = newAudioPublication?.audioTrack;
+
+                if (newAudioTrack) {
+                    if (isEnabled) {
+                        await newAudioTrack.unmute();
+                    } else {
+                        await newAudioTrack.mute();
+                    }
                 }
             }
 
@@ -94,29 +130,29 @@ export const useAudioToggle = (
                 preserveDefaultDevice: !!preserveCache,
             });
 
-            const audioTrack = [...localParticipant.audioTrackPublications.values()].find(
+            const currentAudioTrack = [...localParticipant.audioTrackPublications.values()].find(
                 (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare && item.audioTrack
             )?.audioTrack;
 
-            if (!audioTrack) {
+            if (!currentAudioTrack) {
                 return;
             }
 
             if (enableNoiseFilter && isEnabled && audioDeviceId && isAdvancedNoiseFilterSupported) {
-                if (trackId.current === audioTrack.id) {
-                    await noiseFilterProcessor.current?.setEnabled(true);
+                if (trackId.current === currentAudioTrack.id) {
+                    void noiseFilterProcessor.current?.setEnabled(true);
                 } else {
-                    trackId.current = audioTrack.id;
+                    trackId.current = currentAudioTrack.id;
 
                     noiseFilterProcessor.current = KrispNoiseFilter();
                     // @ts-ignore - webkitAudioContext is not available in all browsers
                     audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
 
-                    await audioTrack?.setAudioContext(audioContext.current);
-                    await audioTrack?.setProcessor(noiseFilterProcessor.current);
+                    void currentAudioTrack?.setAudioContext(audioContext.current);
+                    void currentAudioTrack?.setProcessor(noiseFilterProcessor.current);
                 }
             } else {
-                await noiseFilterProcessor.current?.setEnabled(false);
+                void noiseFilterProcessor.current?.setEnabled(false);
             }
 
             setNoiseFilter(enableNoiseFilter);
@@ -139,5 +175,13 @@ export const useAudioToggle = (
         }
     };
 
-    return { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled: isMicrophoneEnabled };
+    // Check actual mute state, not just publication state
+    const audioPublication = [...localParticipant.audioTrackPublications.values()].find(
+        (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
+    );
+
+    // If track exists but is muted, we're effectively "disabled"
+    const isAudioEnabled = isMicrophoneEnabled && !audioPublication?.isMuted;
+
+    return { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled };
 };

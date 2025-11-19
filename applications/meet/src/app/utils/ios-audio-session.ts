@@ -56,20 +56,3 @@ export const withIOSAudioSessionWorkaround = async <T>(getUserMediaFn: () => Pro
         throw error;
     }
 };
-
-/**
- * Restore default audio output quality after closing mic streams.
- *
- * After closing microphone tracks, iOS Safari may leave the audioSession in 'play-and-record' mode,
- * which results in degraded audio output quality.
- *
- * The solution is to reset the audioSession type to restore full audio quality.
- * Call this function after stopping/closing microphone tracks.
- */
-export const restoreIOSAudioQuality = (): void => {
-    if (!isAudioSessionAvailable()) {
-        return;
-    }
-    setAudioSessionType('playback');
-    setAudioSessionType('auto');
-};
