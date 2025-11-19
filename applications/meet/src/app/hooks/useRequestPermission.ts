@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { useMediaManagementContext } from '../contexts/MediaManagementContext';
-import { restoreIOSAudioQuality, withIOSAudioSessionWorkaround } from '../utils/ios-audio-session';
+import { isAudioSessionAvailable, setAudioSessionType } from '../utils/ios-audio-session';
 
 export const useRequestPermission = () => {
     const { devicePermissions } = useMediaManagementContext();
@@ -18,11 +18,11 @@ export const useRequestPermission = () => {
                 let stream: MediaStream;
 
                 if (deviceType === 'microphone') {
-                    stream = await withIOSAudioSessionWorkaround(async () => {
-                        return navigator.mediaDevices.getUserMedia({
-                            audio: deviceId ? { deviceId } : true,
-                        });
+                    setAudioSessionType('auto');
+                    stream = await navigator.mediaDevices.getUserMedia({
+                        audio: isAudioSessionAvailable() || !deviceId ? true : { deviceId },
                     });
+                    setAudioSessionType('play-and-record');
                 } else {
                     stream = await navigator.mediaDevices.getUserMedia({
                         video: deviceId ? { deviceId } : true,
@@ -31,15 +31,8 @@ export const useRequestPermission = () => {
 
                 stream.getTracks().forEach((track) => track.stop());
 
-                if (deviceType === 'microphone') {
-                    restoreIOSAudioQuality();
-                }
-
                 return 'granted';
             } catch (err) {
-                if (deviceType === 'microphone') {
-                    restoreIOSAudioQuality();
-                }
                 return 'denied';
             }
         }

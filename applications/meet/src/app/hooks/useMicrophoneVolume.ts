@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useLocalParticipant } from '@livekit/components-react';
+import { Track } from 'livekit-client';
+
 import { useMediaManagementContext } from '../contexts/MediaManagementContext';
-import { restoreIOSAudioQuality, withIOSAudioSessionWorkaround } from '../utils/ios-audio-session';
+import { withIOSAudioSessionWorkaround } from '../utils/ios-audio-session';
 
 function calculateRms(data: Uint8Array<ArrayBuffer>) {
     let sum = 0;
@@ -34,7 +37,6 @@ function startMicVolumeAnalysis(
         if (stream) {
             stream.getTracks().forEach((track) => track.stop());
             stream = null;
-            restoreIOSAudioQuality();
         }
     };
 
@@ -73,11 +75,36 @@ function startMicVolumeAnalysis(
 
 export const useMicrophoneVolume = (isMicOn: boolean, throttleMs: number = 100) => {
     const { defaultMicrophone } = useMediaManagementContext();
+    const { localParticipant } = useLocalParticipant();
     const [volume, setVolume] = useState(0);
     const lastUpdateRef = useRef<number>(0);
 
+    const liveKitMicTrack = localParticipant
+        ? [...localParticipant.trackPublications.values()].find(
+              (track) => track.kind === Track.Kind.Audio && track.source === Track.Source.Microphone
+          )
+        : null;
+
+    const hasLiveKitTrack = !!liveKitMicTrack?.track;
+
     useEffect(() => {
-        if (!isMicOn || !defaultMicrophone) {
+        if (!isMicOn) {
+            setVolume(0);
+            return;
+        }
+
+        if (hasLiveKitTrack && localParticipant) {
+            const interval = setInterval(() => {
+                const audioLevel = localParticipant.audioLevel;
+                setVolume(Math.pow(audioLevel, 0.5));
+            }, throttleMs);
+
+            return () => {
+                clearInterval(interval);
+            };
+        }
+
+        if (!defaultMicrophone) {
             setVolume(0);
             return;
         }
@@ -87,7 +114,7 @@ export const useMicrophoneVolume = (isMicOn: boolean, throttleMs: number = 100) 
         return () => {
             cleanup();
         };
-    }, [isMicOn, throttleMs, defaultMicrophone]);
+    }, [isMicOn, throttleMs, defaultMicrophone, hasLiveKitTrack, localParticipant]);
 
     return volume;
 };
