@@ -3,8 +3,9 @@ import type { MemberRole, NodeType } from '@proton/drive';
 import type { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 
 export enum DirectoryTreeRootType {
+    DevicesRoot = 'devices-root',
     Device = 'device',
-    PlaceholderRoot = 'placeholder-root',
+    SharesRoot = 'shares-root',
 }
 
 export interface TreeStoreItem {

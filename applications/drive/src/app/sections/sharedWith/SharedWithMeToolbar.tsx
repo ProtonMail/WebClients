@@ -8,6 +8,8 @@ import { useSelection } from '../../components/FileBrowser';
 import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
+import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
+import type { DirectShareItem } from '../../zustand/sections/sharedWithMeListing.store';
 import { useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 
@@ -19,7 +21,7 @@ const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
     selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
 
 const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
-    const selectionControls = useSelection()!;
+    const selectionControls = useSelection();
     const { getSharedWithMeStoreItem } = useSharedWithMeListingStore(
         useShallow((state) => ({
             getSharedWithMeStoreItem: state.getSharedWithMeItem,
@@ -29,7 +31,12 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
 
-    const selectedItemsIds = getSelectedItemsId(uids, selectionControls.selectedItemIds);
+    const { copyModal, showCopyItemsModal } = useCopyItemsModal();
+    function convertDataShowModal(items: DirectShareItem[]) {
+        showCopyItemsModal(items.map((item) => ({ uid: item.nodeUid, name: item.name })));
+    }
+
+    const selectedItemsIds = getSelectedItemsId(uids, selectionControls?.selectedItemIds ?? []);
     const selectedItems = selectedItemsIds.map((uid) => getSharedWithMeStoreItem(uid)).filter(isTruthy);
 
     const renderSelectionActions = () => {
@@ -43,6 +50,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
                 showConfirmModal={showConfirmModal}
                 showDetailsModal={showDetailsModal}
                 showFilesDetailsModal={showFilesDetailsModal}
+                showCopyModal={convertDataShowModal}
                 buttonType="toolbar"
             />
         );
@@ -60,6 +68,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
             {confirmModal}
             {detailsModal}
             {filesDetailsModal}
+            {copyModal}
         </>
     );
 };

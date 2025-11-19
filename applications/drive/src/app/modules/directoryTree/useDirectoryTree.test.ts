@@ -97,7 +97,7 @@ describe('useDirectoryTree', () => {
             expect(devicesRoot).toMatchObject({
                 parentUid: null,
                 name: 'Computers',
-                type: DirectoryTreeRootType.PlaceholderRoot,
+                type: DirectoryTreeRootType.DevicesRoot,
                 expandable: true,
                 children: null,
             });
@@ -106,7 +106,7 @@ describe('useDirectoryTree', () => {
             expect(sharedRoot).toMatchObject({
                 parentUid: null,
                 name: 'Shared with me',
-                type: DirectoryTreeRootType.PlaceholderRoot,
+                type: DirectoryTreeRootType.SharesRoot,
                 expandable: true,
                 children: null,
             });

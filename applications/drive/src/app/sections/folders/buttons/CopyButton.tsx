@@ -7,7 +7,7 @@ import type { FolderButtonProps } from './types';
 
 export const CopyButton = ({ type, onClick, close }: FolderButtonProps) => {
     const title = c('Action').t`Make a copy`;
-    const icon = 'image-stacked';
+    const icon = 'duplicate';
 
     if (type === 'toolbar') {
         return (
