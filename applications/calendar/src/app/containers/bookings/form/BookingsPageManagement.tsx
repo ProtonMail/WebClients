@@ -194,7 +194,7 @@ const Buttons = () => {
     return (
         <>
             {isError ? <p className="color-danger text-sm text-right m-0 mb-2">{validation.message}</p> : null}
-            <div className="flex justify-space-between gap-6">
+            <div className="flex justify-space-between gap-2">
                 <Button disabled={loading} onClick={() => closeBookingSidebar()}>{c('Action').t`Cancel`}</Button>
                 <Button disabled={!!validation} loading={loading} color="norm" type="submit" onClick={submitForm}>{c(
                     'Action'
