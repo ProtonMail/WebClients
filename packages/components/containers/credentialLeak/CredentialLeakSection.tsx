@@ -256,11 +256,13 @@ const CredentialLeakSection = () => {
     );
 
     // translator: full sentence is: Get notified if your password or other personal data was leaked. <Learn more>
-    const learnMoreLinkNoBreach = <Href href={href} className="inline-block">{c('Link').t`Learn more`}</Href>;
+    const learnMoreLinkNoBreach = (
+        <Href key="learn-more" href={href} className="inline-block">{c('Link').t`Learn more`}</Href>
+    );
 
     // translator: full sentence is: Your information was found in at least one data breach. Turn on Dark Web Monitoring to view details and take action. <Learn more>
     const learnMoreLinkBreach = (
-        <Href href={href} className="inline-block color-danger">{c('Link').t`Learn more`}</Href>
+        <Href key="learn-more-breach" href={href} className="inline-block color-danger">{c('Link').t`Learn more`}</Href>
     );
 
     return (
@@ -288,7 +290,7 @@ const CredentialLeakSection = () => {
                                         <SettingsParagraph>
                                             <div
                                                 className="flex flex-nowrap color-danger p-4 rounded"
-                                                style={{ 'background-color': 'var(--signal-danger-minor-2)' }}
+                                                style={{ backgroundColor: 'var(--signal-danger-minor-2)' }}
                                             >
                                                 <Icon
                                                     name="exclamation-circle-filled"

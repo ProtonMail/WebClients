@@ -21,9 +21,11 @@ export const ThirdPartySection = () => {
         <SettingsSectionWide>
             <Table hasActions responsive="cards">
                 <TableHeader>
-                    <TableHeaderCell className="w-2/10">{c('Title').t`Service`}</TableHeaderCell>
-                    <TableHeaderCell className="w-6/10">{c('Title').t`Description`}</TableHeaderCell>
-                    <TableHeaderCell className="w-2/10">{c('Title').t`Connection status`}</TableHeaderCell>
+                    <TableRow>
+                        <TableHeaderCell className="w-2/10">{c('Title').t`Service`}</TableHeaderCell>
+                        <TableHeaderCell className="w-6/10">{c('Title').t`Description`}</TableHeaderCell>
+                        <TableHeaderCell className="w-2/10">{c('Title').t`Connection status`}</TableHeaderCell>
+                    </TableRow>
                 </TableHeader>
                 <TableBody colSpan={4} loading={loading}>
                     <TableRow>
