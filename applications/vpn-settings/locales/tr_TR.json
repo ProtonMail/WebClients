@@ -633,7 +633,7 @@
         "Ya da"
       ],
       "Or use a different Gmail address": [
-        "Veya farklı bir Gmail adresi kullanın"
+        "Ya da farklı bir Gmail adresi kullanın"
       ],
       "Organization": [
         "Kuruluş"
@@ -8889,8 +8889,8 @@
     },
     "Label BYOE": {
       "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
-        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } e-posta adresi var",
-        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } e-posta adresi var"
+        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } e-posta adresi kullanılabilir",
+        "${ byoeAddressesAvailableCount } / ${ maxBYOEAddresses } e-posta adresi kullanılabilir"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11396,7 +11396,7 @@
     },
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
-        "Ömür boyu hesaplar devredilebilir veya satılabilir"
+        "Lifetime hesapları devredilebilir veya satılabilir"
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Sahiplik değişikliğini onaylamak için müşteri destek ekibi ile görüşün."
@@ -11684,7 +11684,7 @@
         "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
       ],
       "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
-        "Ücretli hizmetler ve ${ unlimitedPlanMaxSpace } şifreli bulut depolama alanına sahip gizlilik paketi, hepsi tek bir pakette."
+        "Ücretli hizmetler ve ${ unlimitedPlanMaxSpace } şifrelenmiş bulut depolama alanı ile gizlilik paketi. Tümü tek bir pakette."
       ]
     },
     "Plans": {
@@ -15449,7 +15449,7 @@
         "**Daha uzun süre abone olarak ${ priceString }** kadar kazanç sağlayın. Aynı ücretli özellikler, daha düşük fiyat."
       ],
       "Advanced security for your company": [
-        "Şirketiniz için gelişmiş güvenlik"
+        "Kuruluşunuz için gelişmiş güvenlik"
       ],
       "Advanced security for your company?": [
         "Kuruluşunuz için gelişmiş güvenlik mi arıyorsunuz?"
@@ -15473,10 +15473,13 @@
         "${ VPN_APP_NAME } for Business ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."
       ],
       "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
-        "${ FAMILY_MAX_USERS } kişiye kadar sınırsız gizlilik. Ayda sadece ${ priceString }."
+        "${ FAMILY_MAX_USERS } kişiye kadar sınırsız gizlilik. Ayda yalnızca ${ priceString }."
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Siz ve sevdiğiniz için sınırsız gizlilik. Yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "${ PLAN_NAMES[PLANS.DUO] } ile ${ DUO_MAX_USERS } kişiye kadar, ${ PLAN_NAMES[PLANS.FAMILY] } ile ${ FAMILY_MAX_USERS } kişiye kadar koruyabilirsiniz. Her hesap için yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "${ PLAN_NAMES[plan] } ile ${ FAMILY_MAX_USERS } kişiye kadar koruyabilirsiniz. Her hesap için yalnızca ${ priceString }/ay ile başlayan fiyatlarla."
