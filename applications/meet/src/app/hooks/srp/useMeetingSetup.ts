@@ -5,12 +5,12 @@ export const useMeetingSetup = () => {
     const token = getPublicToken();
     const urlPassword = getUrlPassword();
 
-    const { getRoomName, getAccessDetails, initHandshake } = useMeetingAuthentication();
+    const { getMeetingDetails, getAccessDetails, initHandshake } = useMeetingAuthentication();
 
     return {
         token,
         urlPassword,
-        getRoomName,
+        getMeetingDetails,
         getAccessDetails,
         initHandshake,
     };

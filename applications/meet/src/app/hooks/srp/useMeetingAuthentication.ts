@@ -12,7 +12,7 @@ export const useMeetingAuthentication = () => {
     const { initHandshake, getSessionToken, getMeetingInfo, getAccessToken } = useMeetSrp();
 
     const reportMeetError = useMeetErrorReporting();
-    const getRoomName = useCallback(
+    const getMeetingDetails = useCallback(
         async ({
             customPassword,
             urlPassword,
@@ -23,11 +23,17 @@ export const useMeetingAuthentication = () => {
             urlPassword: string;
             token: string;
             handshakeInfo?: SRPHandshakeInfo;
-        }): Promise<string> => {
+        }) => {
             let meetingName = '';
 
             if (!handshakeInfo) {
-                return '';
+                return {
+                    locked: false,
+                    maxDuration: 0,
+                    maxParticipants: 0,
+                    expirationTime: 0,
+                    roomName: '',
+                };
             }
 
             try {
@@ -41,12 +47,18 @@ export const useMeetingAuthentication = () => {
                     encryptedMeetingName: meetingInfo.MeetingInfo.MeetingName,
                     salt: meetingInfo.MeetingInfo.Salt,
                 });
+
+                return {
+                    roomName: meetingName,
+                    locked: !!meetingInfo.MeetingInfo.Locked,
+                    maxDuration: meetingInfo.MeetingInfo.MaxDuration,
+                    maxParticipants: meetingInfo.MeetingInfo.MaxParticipants,
+                    expirationTime: meetingInfo.MeetingInfo.ExpirationTime,
+                };
             } catch (error) {
                 reportMeetError('Failed to get meeting info', error);
                 throw new Error(c('Error').t`Failed to get room name`);
             }
-
-            return meetingName;
         },
         [getSessionToken, getMeetingInfo]
     );
@@ -64,5 +76,5 @@ export const useMeetingAuthentication = () => {
         }
     }, []);
 
-    return { getRoomName, getAccessDetails, initHandshake };
+    return { getMeetingDetails, getAccessDetails, initHandshake };
 };
