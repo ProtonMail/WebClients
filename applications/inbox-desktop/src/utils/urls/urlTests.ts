@@ -180,6 +180,22 @@ export const isUpsellURL = (host: string) => {
     }
 };
 
+export const isBookingURL = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+
+        if (getAppURL().calendar !== url.origin) {
+            return false;
+        }
+
+        // Match booking url patterns
+        // /bookings, /bookings/, /bookings/*, /u/{digit}/bookings
+        return /^\/bookings(?:\/.*)?$/i.test(url.pathname) || /^\/u\/\d+\/bookings\/?$/i.test(url.pathname);
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isHostAllowed = (host: string) => {
     try {
         const appURL = getAppURL();
