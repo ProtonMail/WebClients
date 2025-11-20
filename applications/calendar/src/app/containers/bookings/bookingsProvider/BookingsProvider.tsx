@@ -15,6 +15,7 @@ import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import useFlag from '@proton/unleash/useFlag';
 
+import { splitTimeGridEventsPerDay } from '../../../components/calendar/splitTimeGridEventsPerDay';
 import { useCalendarDispatch } from '../../../store/hooks';
 import { internalBookingActions } from '../../../store/internalBooking/interalBookingSlice';
 import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
@@ -29,7 +30,12 @@ import {
     validateRangeOperation,
     wasBookingFormTouched,
 } from '../utils/provider/providerHelper';
-import { generateBookingRangeID, generateDefaultBookingRange, getRangeDateStart } from '../utils/range/rangeHelpers';
+import {
+    convertBookingRangesToCalendarViewEvents,
+    generateBookingRangeID,
+    generateDefaultBookingRange,
+    getRangeDateStart,
+} from '../utils/range/rangeHelpers';
 import type { BookingRange, BookingsContextValue, InternalBookingFrom, Intersection } from './interface';
 import { type BookingFormData, BookingLocation, BookingState, DEFAULT_RECURRING } from './interface';
 
@@ -316,6 +322,20 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         }
     };
 
+    const getRangeAsCalendarViewEvents = (utcDate: Date) => {
+        const selectedCalendar = writeableCalendars?.find((calendar) => calendar.ID === formData.selectedCalendar);
+        return convertBookingRangesToCalendarViewEvents(selectedCalendar!, formData, utcDate);
+    };
+
+    const getRangesAsLayoutEvents = (utcDate: Date, days: Date[]) => {
+        return splitTimeGridEventsPerDay({
+            events: getRangeAsCalendarViewEvents(utcDate),
+            min: days[0],
+            max: days[days.length - 1],
+            totalMinutes: 24 * 60,
+        });
+    };
+
     const value: BookingsContextValue = {
         canCreateBooking: writeableCalendars.length > 0,
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
@@ -331,6 +351,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         updateBookingRange,
         removeBookingRange,
         isIntersectingBookingRange,
+        getRangeAsCalendarViewEvents,
+        getRangesAsLayoutEvents,
     };
 
     return <BookingsContext.Provider value={value}>{children}</BookingsContext.Provider>;

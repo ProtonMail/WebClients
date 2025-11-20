@@ -9,13 +9,13 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ButtonGroup, useActiveBreakpoint, useElementRect } from '@proton/components';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
+import { useBookings } from '../../containers/bookings/bookingsProvider/BookingsProvider';
 import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,
@@ -109,6 +109,7 @@ const TimeGrid = ({
     ...rest
 }: Props) => {
     const attendeeBusySlots = useCalendarSelector(selectAttendeesBusySlots);
+    const { getRangesAsLayoutEvents, getRangeAsCalendarViewEvents, isBookingActive } = useBookings();
     const containerRef = useRef<HTMLDivElement>(null);
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLUListElement>(null);
@@ -169,6 +170,9 @@ const TimeGrid = ({
         return [days];
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1CD7F9
     }, [days, viewportWidth['<=small'], date]);
+
+    const rangesPerDay = isBookingActive ? getRangesAsLayoutEvents(date, days) : {};
+    const rangesEvents = isBookingActive ? getRangeAsCalendarViewEvents(date) : [];
 
     const dayEventHeight = 28;
     const numberOfRows = 3;
@@ -476,8 +480,8 @@ const TimeGrid = ({
                                     >
                                         <DayEvents
                                             tzid={tzid}
-                                            events={timeEvents}
-                                            eventsInDay={eventsPerDay[key]}
+                                            events={[...timeEvents, ...rangesEvents]}
+                                            eventsInDay={eventsPerDay[key] || []}
                                             dayIndex={viewportWidth['<=small'] ? 0 : dayIndex}
                                             totalMinutes={totalMinutes}
                                             targetEventData={targetEventData}
@@ -486,6 +490,7 @@ const TimeGrid = ({
                                             now={now}
                                             colHeight={rect?.height}
                                             partDayEventViewStyleValues={partDayEventViewStyleValues}
+                                            rangeInDay={rangesPerDay[key] || []}
                                         />
                                         {isSameDay(day, now) ? (
                                             <div
