@@ -1,3 +1,9 @@
+### Version 1.33.0
+
+- Allow offline mode fallback when services are down
+- Fine-tune automatic clipboard clearing
+- Fix in-app notifications race-condition
+
 ### Version 1.32.11
 
 - Improve in-app notifications

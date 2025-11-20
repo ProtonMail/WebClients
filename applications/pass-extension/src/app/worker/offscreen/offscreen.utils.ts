@@ -1,3 +1,4 @@
+import { chromeAPI } from '@proton/pass/lib/globals/browser';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 
 // Offscreen is only working on Chrome at the moment
@@ -6,8 +7,8 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 export const setupOffscreenDocument = async (path: string) => {
     // Check all windows controlled by the service worker to see if one
     // of them is the offscreen document with the given path
-    const offscreenUrl = chrome.runtime.getURL(path);
-    const existingContexts = await chrome.runtime.getContexts({
+    const offscreenUrl = chromeAPI.runtime.getURL(path);
+    const existingContexts = await chromeAPI.runtime.getContexts({
         contextTypes: ['OFFSCREEN_DOCUMENT'],
         documentUrls: [offscreenUrl],
     });
@@ -18,7 +19,7 @@ export const setupOffscreenDocument = async (path: string) => {
 
     // create offscreen document
     await asyncLock(() =>
-        chrome.offscreen.createDocument({
+        chromeAPI.offscreen.createDocument({
             url: path,
             reasons: ['CLIPBOARD'],
             justification: 'being able to clear clipboard after a delay',
