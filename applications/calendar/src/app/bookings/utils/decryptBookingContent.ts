@@ -4,6 +4,7 @@ import { CryptoProxy, type PublicKeyReference, VERIFICATION_STATUS } from '@prot
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { deriveBookingKeyPassword } from '../../containers/bookings/utils/crypto/bookingEncryption';
+import { bookingContentSignatureValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 
 /**
  * Parameters required to decrypt booking content
@@ -96,7 +97,10 @@ export const decryptBookingContent = async ({
         binaryMessage: base64StringToUint8Array(encryptedContent),
         passwords: [bookingKeyPassword],
         verificationKeys,
-        signatureContext: verificationKeys ? { required: true, value: `bookings.content.${bookingUid}` } : undefined,
+        signatureContext:
+            verificationKeys && verificationKeys?.length > 0
+                ? { required: true, value: bookingContentSignatureValue(bookingUid) }
+                : undefined,
     });
 
     if (verificationKeys && verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
