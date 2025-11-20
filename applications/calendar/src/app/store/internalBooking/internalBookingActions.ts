@@ -4,20 +4,17 @@ import { getBookingPageDetails } from '@proton/shared/lib/api/calendarBookings';
 
 import type { APIBooking } from '../../containers/bookings/bookingsTypes';
 import type { CalendarThunkExtra } from '../store';
+import type { BookingPageEditData } from './interface';
 
-// TODO move this elsewhere
-interface LoadBookingPageReturn {
-    slots: any[];
-    bookingId: string;
-}
-
-export const loadBookingPage = createAsyncThunk<LoadBookingPageReturn, string, CalendarThunkExtra>(
+export const loadBookingPage = createAsyncThunk<BookingPageEditData, string, CalendarThunkExtra>(
     'internalBookings/loadPage',
     async (payload, thunkExtra) => {
         if (!thunkExtra.extra.unleashClient.isEnabled('EditCalendarBookings')) {
             return {
                 slots: [],
                 bookingId: payload,
+                encryptedSecret: '',
+                encryptedContent: '',
             };
         }
 
@@ -26,14 +23,17 @@ export const loadBookingPage = createAsyncThunk<LoadBookingPageReturn, string, C
                 getBookingPageDetails(payload)
             );
 
-            const pages = thunkExtra.getState().internalBookings.value;
-            // eslint-disable-next-line no-console
-            console.log({ BookingPage, pages });
+            const formattedSlots = BookingPage.Slots.map((slot) => ({
+                start: slot.StartTime,
+                end: slot.EndTime,
+                timezone: slot.Timezone,
+            }));
 
-            // todo handle this
             return {
-                slots: [],
+                slots: formattedSlots,
                 bookingId: BookingPage.ID,
+                encryptedSecret: BookingPage.EncryptedSecret,
+                encryptedContent: BookingPage.EncryptedContent,
             };
         } catch (e) {
             // eslint-disable-next-line no-console
