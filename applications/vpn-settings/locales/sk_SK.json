@@ -5824,11 +5824,11 @@
       "${ planName } expires today.": [
         "${ planName } skončí dnes."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } pre organizácie je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na ochranu vašej organizácie pred nechcenými útočníkmi a bezpečnostnými hrozbami."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na vašej ochrane pred nechcenými útočníkmi a bezpečnostnými hrozbami."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na ochranu vašej organizácie pred nechcenými útočníkmi a bezpečnostnými hrozbami."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou špeciálneho monitorovania podozrivých aktivít."
@@ -7680,6 +7680,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Zvýšiť úroveň na Professional alebo vyšší plán na odomknutie"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Navýšte svoj plán na ${ firstPlanNames } alebo ${ lastPlanName }, aby ste získali prístup k ${ PROTON_SENTINEL_NAME } pre organizácie."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Navýšte svoj plán na ${ firstPlanNames } alebo ${ lastPlanName }, aby ste získali prístup k ${ PROTON_SENTINEL_NAME }."
@@ -14536,6 +14539,9 @@
         "${ friendsSubscribed } priatelia s predplatným",
         "${ friendsSubscribed } priateľov s predplatným",
         "${ friendsSubscribed } priateľov s predplatným"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } pre organizácie"
       ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } klienti"
