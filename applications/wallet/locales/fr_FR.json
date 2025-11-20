@@ -97,8 +97,11 @@
       "Copy address": [
         "Copier l'adresse"
       ],
-      "Copy public key (XPUB)": [
-        "Copier la clé publique (XPUB)"
+      "Copy descriptor": [
+        "Copier le descripteur"
+      ],
+      "Copy public key (${ prefix })": [
+        "Copier la clé publique (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "Copier le numéro de version dans le presse-papiers"
@@ -2376,8 +2379,23 @@
       ]
     },
     "Extended public key": {
-      "Public key (XPUB) copied to clipboard": [
-        "La clé publique (XPUB) a été copiée dans le presse-papiers."
+      "Descriptor copied to clipboard": [
+        "Le descripteur a été copié dans le presse-papiers."
+      ],
+      "I want the ${ prefix } instead": [
+        "Je souhaite plutôt le ${ prefix }"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importez ce descripteur dans d'autres logiciels de portefeuille pour surveiller votre solde et générer des adresses de réception sans exposer vos clés privées."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "La clé publique (${ prefix }) a été copiée dans le presse-papiers."
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Vérifiez que les premières adresses dérivées correspondent à celles de ${ WALLET_APP_NAME } avant de continuer."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Nous vous recommandons fortement d'utiliser le descripteur ci-dessus à la place, car il contient toutes les informations nécessaires pour assurer la génération correcte de l'adresse. Les xpub, ypub et zpub ne font pas partie des BIP standards et ne doivent être utilisés qu'avec prudence."
       ]
     },
     "familyOffer_2023:Error": {
@@ -4818,9 +4836,6 @@
       ],
       "External recipient": [
         "Destinataire externe"
-      ],
-      "Public key (XPUB)": [
-        "Clé publique (XPUB)"
       ]
     },
     "Safety review": {
