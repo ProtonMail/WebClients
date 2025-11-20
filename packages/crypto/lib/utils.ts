@@ -1,11 +1,4 @@
 // This module should be kept free of functions that require 'openpgp'
-const ifDefined =
-    <T, R>(cb: (input: T) => R) =>
-    <U extends T | undefined>(input: U) => {
-        return (input !== undefined ? cb(input as T) : undefined) as U extends T ? R : undefined;
-    };
-
-export const decodeUtf8 = ifDefined((input: string) => decodeURIComponent(escape(input)));
 
 const isString = (data: any): data is string | String => {
     return typeof data === 'string' || data instanceof String;

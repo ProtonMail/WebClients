@@ -233,7 +233,7 @@ const fromInternalComponent = (properties: any) => {
     return component;
 };
 
-export const serialize = (component: any) => {
+export const serialize = (component: any): string => {
     return fromInternalComponent(component).toString();
 };
 
