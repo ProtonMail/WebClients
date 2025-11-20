@@ -1,14 +1,26 @@
 import { getModelState } from '@proton/account/test';
 import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
 import { CYCLE, FREE_PLAN, PLANS, Renew, type Subscription, changeRenewState } from '@proton/payments';
+import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { apiMock, getSubscriptionState, renderWithProviders } from '@proton/testing';
 import { buildSubscription } from '@proton/testing/builders';
 
 import SubscriptionsSection from './SubscriptionsSection';
 
+jest.mock('@proton/payments/core/subscription/helpers', () => ({
+    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
+    isReferralTrial: jest.fn(),
+}));
+
+const mockGetPaymentMethods = jest.fn();
+jest.mock('@proton/account/paymentMethods/hooks', () => ({
+    useGetPaymentMethods: () => mockGetPaymentMethods,
+}));
+
 describe('SubscriptionsSection', () => {
     let subscription: Subscription;
     let upcoming: Subscription | null = null;
+    const mockIsReferralTrial = isReferralTrial as jest.MockedFunction<typeof isReferralTrial>;
 
     beforeEach(() => {
         subscription = buildSubscription(
@@ -38,6 +50,8 @@ describe('SubscriptionsSection', () => {
         );
 
         jest.clearAllMocks();
+        mockIsReferralTrial.mockReturnValue(false);
+        mockGetPaymentMethods.mockResolvedValue([{ ID: 'pm1' }]);
     });
 
     const defaultPlansState = {
@@ -153,7 +167,7 @@ describe('SubscriptionsSection', () => {
         expect(container).not.toHaveTextContent('Upcoming');
     });
 
-    it('should call API when user presses reactivate button', () => {
+    it('should call API when user presses reactivate button', async () => {
         subscription.Renew = Renew.Disabled;
 
         const { getByText } = renderWithProviders(<SubscriptionsSection />, {
@@ -163,6 +177,10 @@ describe('SubscriptionsSection', () => {
             },
         });
         getByText('Reactivate').click();
+
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        expect(mockGetPaymentMethods).toHaveBeenCalled();
         expect(apiMock).toHaveBeenCalledWith(
             changeRenewState(
                 {
@@ -171,5 +189,25 @@ describe('SubscriptionsSection', () => {
                 'v5'
             )
         );
+    });
+
+    it('should not call API when user presses reactivate button for referral trial without payment methods', async () => {
+        subscription.Renew = Renew.Disabled;
+        mockIsReferralTrial.mockReturnValue(true);
+        mockGetPaymentMethods.mockResolvedValue([]);
+
+        const { getByText } = renderWithProviders(<SubscriptionsSection />, {
+            preloadedState: {
+                subscription: getSubscriptionState(subscription),
+                plans: defaultPlansState,
+            },
+        });
+        getByText('Reactivate').click();
+
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        expect(mockGetPaymentMethods).toHaveBeenCalled();
+        expect(mockIsReferralTrial).toHaveBeenCalledWith(subscription);
+        expect(apiMock).not.toHaveBeenCalled();
     });
 });
