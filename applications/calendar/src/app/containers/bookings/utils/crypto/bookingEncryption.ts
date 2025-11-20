@@ -1,8 +1,5 @@
-import { getUnixTime } from 'date-fns';
-
 import { CryptoProxy, type PublicKeyReference, type SessionKey } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import type {
     BookingPageCreationPayload,
     BookingPageSlotsPayload,
@@ -10,7 +7,8 @@ import type {
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 
-import { type BookingFormData, BookingLocation } from '../../bookingsProvider/interface';
+import { BookingLocation } from '../../bookingsProvider/interface';
+import type { SerializedFormData } from '../../bookingsTypes';
 import { JSONFormatData, JSONFormatTextData, createBookingLink } from './bookingEncryptionHelpers';
 import {
     bookingContentSignatureContextValue,
@@ -19,14 +17,14 @@ import {
 } from './cryptoHelpers';
 
 interface EncryptionParams {
-    formData: BookingFormData;
+    formData: SerializedFormData;
     encryptionKey: PrimaryAddressKeyForEncryption;
     signingKeys: PrimaryAddressKeysForSigning;
     calendarKeys: DecryptedCalendarKey[];
 }
 
 const encryptBookingData = async (
-    formData: BookingFormData,
+    formData: SerializedFormData,
     bookingKeyPassword: string,
     bookingUid: string,
     signingKeys: PrimaryAddressKeysForSigning
@@ -48,7 +46,7 @@ const encryptBookingData = async (
 };
 
 const encryptBookingSlots = async (
-    formData: BookingFormData,
+    formData: SerializedFormData,
     bookingUid: string,
     bookingKeyPassword: string,
     signingKeys: PrimaryAddressKeysForSigning,
@@ -73,21 +71,13 @@ const encryptBookingSlots = async (
             format: 'binary',
         });
 
-        // We need to get the locale date first, that we then convert to UTC timestamp
-        // We should end up with the UTC timestamp corresponding to the user locale
-        const startComponents = fromLocalDate(slot.start);
-        const endComponents = fromLocalDate(slot.end);
-
-        const startUTC = toUTCDate(convertZonedDateTimeToUTC(startComponents, formData.timezone));
-        const endUTC = toUTCDate(convertZonedDateTimeToUTC(endComponents, formData.timezone));
-
-        const StartTime = getUnixTime(startUTC);
-        const EndTime = getUnixTime(endUTC);
-        const Timezone = formData.timezone;
-        const RRule = formData.recurring ? 'FREQ=WEEKLY' : null;
-
         const slotSignature = await CryptoProxy.signMessage({
-            textData: JSONFormatTextData({ EndTime, RRule, StartTime, Timezone }),
+            textData: JSONFormatTextData({
+                EndTime: slot.end,
+                RRule: formData.recurring ? 'FREQ=WEEKLY' : null,
+                StartTime: slot.start,
+                Timezone: formData.timezone,
+            }),
             signingKeys,
             detached: true,
             format: 'binary',
@@ -95,10 +85,10 @@ const encryptBookingSlots = async (
         });
 
         Slots.push({
-            StartTime,
-            EndTime,
-            Timezone,
-            RRule,
+            StartTime: slot.start,
+            EndTime: slot.end,
+            Timezone: formData.timezone,
+            RRule: formData.recurring ? 'FREQ=WEEKLY' : null,
             DetachedSignature: slotSignature.toBase64(),
             BookingKeyPacket: bookingKeyPacket.toBase64(),
             SharedKeyPacket: sharedKeyPacket.toBase64(),

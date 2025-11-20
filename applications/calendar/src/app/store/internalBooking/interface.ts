@@ -1,3 +1,5 @@
+import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';
+
 export interface InternalBookingPage {
     id: string;
     bookingUID: string;
@@ -26,4 +28,10 @@ export interface BookingPageEditData {
 export interface InternalBookingPageSliceInterface {
     bookingPages: InternalBookingPage[];
     bookingPageEditData?: BookingPageEditData;
+}
+
+export interface BookingPageCreationReturn {
+    bookingLink: string;
+    bookingPage: APIBooking;
+    initialBookingPage: SerializedFormData;
 }

@@ -1,7 +1,11 @@
+import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
+
+import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 import { BookingFormValidationReasons, MAX_BOOKING_SLOTS } from '../../bookingsProvider/interface';
 import type { BookingFormData, BookingFormValidation } from '../../bookingsProvider/interface';
+import type { SerializedFormData } from '../../bookingsTypes';
 
 export const validateFormData = (data: BookingFormData): BookingFormValidation | undefined => {
     if (data.bookingSlots.length >= MAX_BOOKING_SLOTS) {
@@ -27,4 +31,21 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
     }
 
     return undefined;
+};
+
+export const serializeFormData = (formData: BookingFormData): SerializedFormData => {
+    return {
+        ...formData,
+        bookingSlots: formData.bookingSlots.map((slot) => ({
+            ...slot,
+            start: getUnixTime(toUTCDate(convertZonedDateTimeToUTC(fromLocalDate(slot.start), formData.timezone))),
+            end: getUnixTime(toUTCDate(convertZonedDateTimeToUTC(fromLocalDate(slot.end), formData.timezone))),
+        })),
+        bookingRanges: formData.bookingRanges.map((range) => ({
+            ...range,
+            // TODO this might need to be updated
+            start: range.start.getTime(),
+            end: range.end.getTime(),
+        })),
+    };
 };

@@ -16,10 +16,11 @@ import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/ca
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { decryptBookingContent } from '../../bookings/utils/decryptBookingContent';
+import { BookingLocation } from '../../containers/bookings/bookingsProvider/interface';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
 import { bookingSecretSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
-import { loadBookingPage } from './internalBookingActions';
+import { createNewBookingPage, loadBookingPage } from './internalBookingActions';
 
 const name = 'internalBookings' as const;
 interface InternalBookingState extends CalendarsState, AddressKeysState, KtState {
@@ -145,6 +146,28 @@ const slice = createSlice({
             }
 
             state.value.bookingPageEditData = payload;
+        });
+
+        builder.addCase(createNewBookingPage.fulfilled, (state, { payload }) => {
+            if (!state.value) {
+                return;
+            }
+
+            if (!payload?.bookingPage) {
+                return;
+            }
+
+            const newBookingPage: InternalBookingPage = {
+                id: payload.bookingPage.ID,
+                bookingUID: payload.bookingPage.BookingUID,
+                calendarID: payload.bookingPage.CalendarID,
+                summary: payload.initialBookingPage.summary,
+                description: payload.initialBookingPage.description,
+                location: payload.initialBookingPage.location,
+                withProtonMeetLink: payload.initialBookingPage.locationType === BookingLocation.MEET,
+                link: payload.bookingLink,
+            };
+            state.value.bookingPages = [...state.value.bookingPages, newBookingPage];
         });
     },
 });
