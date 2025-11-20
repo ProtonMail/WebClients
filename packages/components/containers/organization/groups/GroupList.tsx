@@ -52,7 +52,7 @@ const GroupList = ({
 
     return (
         <>
-            <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 mr-4">
+            <div className="flex flex-row grow-0 shrink-0 flex-nowrap pb-3 mr-4">
                 {!!groups.length && (
                     <Input
                         value={input}
