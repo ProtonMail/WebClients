@@ -55,6 +55,7 @@ export const Form = () => {
                     maxLength={MAX_CHARS_API.TITLE}
                     assistContainerClassName="hidden"
                     inputContainerClassName="text-xl text-semibold"
+                    className="resize-none"
                     minRows={1}
                     rows={3}
                     unstyled
