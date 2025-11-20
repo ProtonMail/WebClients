@@ -86,24 +86,22 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
 
     return (
         <div className="chat-history-container flex flex-column flex-nowrap gap-2">
-            {/* Show Favorites section - include starred conversations in search results */}
-            {favorites.length > 0 && (
-                <>
-                    <div className="sidebar-section-header">
-                        <Icon name="star" size={4} />
-                        <span>{c('collider_2025:Title').t`Favorites`}</span>
-                    </div>
-                    <div className="max-h-custom overflow-y-auto" style={{ '--max-h-custom': '20%' }}>
-                        <RecentChatsList
-                            conversations={favorites}
-                            selectedConversationId={conversationId}
-                            onItemClick={onItemClick}
-                        />
-                    </div>
-                </>
-            )}
-
             <Scroll className="flex-1">
+                {favorites.length > 0 && (
+                    <>
+                        <div className="sidebar-section-header">
+                            <Icon name="star" size={4} />
+                            <span>{c('collider_2025:Title').t`Favorites`}</span>
+                        </div>
+                        <div className="max-h-custom overflow-y-auto" style={{ '--max-h-custom': '20%' }}>
+                            <RecentChatsList
+                                conversations={favorites}
+                                selectedConversationId={conversationId}
+                                onItemClick={onItemClick}
+                            />
+                        </div>
+                    </>
+                )}
                 {/* History section header - hide for mobile guests to keep UI clean, but show when searching */}
                 {(searchInput || !(isSmallScreen && isGuest)) && (
                     <div className="sidebar-section-header">
