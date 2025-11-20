@@ -7,7 +7,6 @@ import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/const
 import type { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
-import { base64ToArray } from '../base64';
 import { addApiMock } from './api';
 
 export interface GeneratedKey {
@@ -165,7 +164,7 @@ export const generateSessionKey = async (publicKey: PublicKeyReference) => {
 
 export const decryptSessionKey = async (keyPacket: string, privateKeys: PrivateKeyReference[]) => {
     const sessionKey = await CryptoProxy.decryptSessionKey({
-        binaryMessage: base64ToArray(keyPacket),
+        binaryMessage: Uint8Array.fromBase64(keyPacket),
         decryptionKeys: privateKeys,
     });
     return sessionKey as SessionKey;

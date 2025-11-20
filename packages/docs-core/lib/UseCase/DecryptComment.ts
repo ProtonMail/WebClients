@@ -9,7 +9,6 @@ import { GetAssociatedEncryptionDataForComment, isAnonymousComment } from './Get
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Comment } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import metrics from '@proton/metrics'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 import { canKeysSign } from '../Types/DocumentEntitlements'
@@ -35,7 +34,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
     }
 
     const decrypted = await this.encryption.decryptData(
-      base64StringToUint8Array(dto.Content),
+      Uint8Array.fromBase64(dto.Content),
       aad,
       keys.documentContentKey,
     )

@@ -1,5 +1,4 @@
 import { isObject } from '@proton/pass/utils/object/is-object';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { objectMap } from '../object/map';
 
@@ -27,9 +26,9 @@ export const SafeUint8Array = typeof window !== 'undefined' ? window.Uint8Array 
 /** If this function is invoked within a content-script, use constructors
  * from the window object to mitigate privilege errors in Firefox add-ons */
 export const sanitizeBuffers = <T>(value: T): SanitizedBuffers<T> => {
-    if (isArrayBuffer(value)) return uint8ArrayToBase64String(new SafeUint8Array(value)) as SanitizedBuffers<T>;
-    else if (isUint8Array(value)) return uint8ArrayToBase64String(value) as SanitizedBuffers<T>;
-    else if (isInt8Array(value)) return uint8ArrayToBase64String(new SafeUint8Array(value)) as SanitizedBuffers<T>;
+    if (isArrayBuffer(value)) return new SafeUint8Array(value).toBase64() as SanitizedBuffers<T>;
+    else if (isUint8Array(value)) return value.toBase64() as SanitizedBuffers<T>;
+    else if (isInt8Array(value)) return new SafeUint8Array(value).toBase64() as SanitizedBuffers<T>;
     else if (Array.isArray(value)) return value.map(sanitizeBuffers) as SanitizedBuffers<T>;
     else if (isObject(value)) return objectMap(value, (_, val) => sanitizeBuffers(val)) as SanitizedBuffers<T>;
     return value as SanitizedBuffers<T>;

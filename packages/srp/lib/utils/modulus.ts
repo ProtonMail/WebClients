@@ -1,6 +1,5 @@
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 
 import { SRP_MODULUS_KEY } from '../constants';
 
@@ -66,5 +65,5 @@ export const verifyModulus = async (publicKey: PublicKeyReference, modulus: stri
 export const verifyAndGetModulus = async (modulus: string) => {
     const publicKey = await getModulusKey();
     const modulusData = await verifyModulus(publicKey, modulus);
-    return binaryStringToArray(decodeBase64(modulusData));
+    return Uint8Array.fromBase64(modulusData);
 };

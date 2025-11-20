@@ -7,7 +7,6 @@ import {
     getPersistedSessions,
     removePersistedSessionByLocalIDAndUID,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -60,7 +59,7 @@ const createAuthService = () => {
     const parseStoredKey = ({ id, userKeyId, encodedKey }: RemoteKey): EncryptionKey => ({
         id,
         userKeyId,
-        keyBytes: base64StringToUint8Array(encodedKey),
+        keyBytes: Uint8Array.fromBase64(encodedKey),
     });
 
     const getEncryptionKeys = () => db.keys.toSafeArray();
@@ -92,7 +91,7 @@ const createAuthService = () => {
         const storedKeys: RemoteKey[] = keys.map(({ id, userKeyId, keyBytes }) => ({
             id,
             userKeyId,
-            encodedKey: uint8ArrayToBase64String(keyBytes),
+            encodedKey: keyBytes.toBase64(),
         }));
 
         await db.keys.bulkPut(storedKeys);

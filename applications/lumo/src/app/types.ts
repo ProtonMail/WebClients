@@ -1,5 +1,3 @@
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-
 import { deriveDataEncryptionKey } from './crypto';
 import type { AesGcmCryptoKey } from './crypto/types';
 import type { AttachmentMap } from './redux/slices/core/attachments';
@@ -189,7 +187,7 @@ export function cleanSerializedSpace(space: SerializedSpace): SerializedSpace {
 }
 
 export async function getSpaceDek(s: SpaceKeyClear): Promise<AesGcmCryptoKey> {
-    const spaceKeyBytes = base64StringToUint8Array(s.spaceKey);
+    const spaceKeyBytes = Uint8Array.fromBase64(s.spaceKey);
     return deriveDataEncryptionKey(spaceKeyBytes);
 }
 

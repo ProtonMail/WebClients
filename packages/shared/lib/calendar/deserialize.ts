@@ -3,7 +3,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
 import { canonicalizeInternalEmail } from '../helpers/email';
-import { base64StringToUint8Array } from '../helpers/encoding';
 import type { Address, Nullable } from '../interfaces';
 import type { VerificationPreferences } from '../interfaces/VerificationPreferences';
 import type {
@@ -36,7 +35,7 @@ export const readSessionKey = (
     if (!KeyPacket || !privateKeys) {
         return;
     }
-    return getDecryptedSessionKey(base64StringToUint8Array(KeyPacket), privateKeys);
+    return getDecryptedSessionKey(Uint8Array.fromBase64(KeyPacket), privateKeys);
 };
 
 /**

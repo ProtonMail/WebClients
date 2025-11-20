@@ -6,6 +6,7 @@ const presetEnvOpts = {
     bugfixes: true,
     useBuiltIns: 'usage',
     corejs: require('core-js/package.json').version,
+    shippedProposals: true /* polyfill typed-array base64 and hex functions */,
 };
 
 module.exports = {

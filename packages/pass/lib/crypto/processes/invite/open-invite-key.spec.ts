@@ -5,7 +5,6 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '@proton/pass/lib/crypto/utils/testing';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { createInviteKeys } from './create-invite-keys';
 import { openInviteKey } from './open-invite-key';
@@ -40,17 +39,15 @@ describe('open invite keys', () => {
         const inviterKey = await createRandomKey();
 
         const inviteKey = {
-            Key: uint8ArrayToBase64String(
-                (
-                    await CryptoProxy.encryptMessage({
-                        binaryData: vaultKey.raw,
-                        encryptionKeys: [invitedKey.publicKey],
-                        signingKeys: [inviterKey.privateKey],
-                        format: 'binary',
-                        signatureContext: { value: 'WRONG_SIGNATURE_CONTEXT', critical: true },
-                    })
-                ).message
-            ),
+            Key: (
+                await CryptoProxy.encryptMessage({
+                    binaryData: vaultKey.raw,
+                    encryptionKeys: [invitedKey.publicKey],
+                    signingKeys: [inviterKey.privateKey],
+                    format: 'binary',
+                    signatureContext: { value: 'WRONG_SIGNATURE_CONTEXT', critical: true },
+                })
+            ).message.toBase64(),
             KeyRotation: vaultKey.rotation,
         };
 

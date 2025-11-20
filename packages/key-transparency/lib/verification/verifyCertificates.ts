@@ -1,7 +1,6 @@
 import type { Certificate, GeneralName } from 'pkijs';
 
 import { hexStringToArray } from '@proton/crypto/lib/utils';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { ctLogs, rootCertificates } from '../constants/certificates';
 import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
@@ -49,7 +48,7 @@ export const pemToString = (cert: string) => {
  */
 export const parseCertificate = async (cert: string) => {
     const [{ fromBER }, { Certificate }] = await Promise.all([importAsn1js(), importPkijs()]);
-    const asn1Certificate = fromBER(base64StringToUint8Array(pemToString(cert)).buffer);
+    const asn1Certificate = fromBER(Uint8Array.fromBase64(pemToString(cert)).buffer);
     return new Certificate({ schema: asn1Certificate.result });
 };
 
@@ -130,7 +129,7 @@ export const verifyAltName = async (
  * Convert a certificate back to string
  */
 const printCertificate = (cert: Certificate) => {
-    const body = uint8ArrayToBase64String(new Uint8Array(cert.toSchema().toBER()));
+    const body = new Uint8Array(cert.toSchema().toBER()).toBase64();
     let result = `-----BEGIN CERTIFICATE-----`;
     let i = 0;
     while (i < body.length) {
@@ -196,7 +195,7 @@ export const extractSCTs = (certificate: Certificate) => {
                     ...parsedValue
                         .toJSON()
                         .timestamps.map(({ logID }: { logID: string }) =>
-                            uint8ArrayToBase64String(hexStringToArray(logID))
+                            hexStringToArray(logID).toBase64()
                         )
                 );
             }

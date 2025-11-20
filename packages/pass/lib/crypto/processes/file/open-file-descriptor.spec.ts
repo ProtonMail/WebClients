@@ -3,7 +3,6 @@ import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoFileError } from '@proton/pass/lib/crypto/utils/errors';
 import { createRandomItemKey } from '@proton/pass/lib/crypto/utils/testing';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { openFileDescriptor } from './open-file-descriptor';
 
@@ -15,8 +14,8 @@ describe('`openFileDescriptor` crypto process', () => {
         const fileDescriptor = await createFileDescriptor(mockMetadata, 1);
         const encryptedFileKey = await encryptData(itemKey.key, fileDescriptor.fileKey, PassEncryptionTag.FileKey);
 
-        const encryptedMetadata = uint8ArrayToBase64String(fileDescriptor.metadata);
-        const encryptedFileKeyBase64 = uint8ArrayToBase64String(encryptedFileKey);
+        const encryptedMetadata = fileDescriptor.metadata.toBase64();
+        const encryptedFileKeyBase64 = encryptedFileKey.toBase64();
         const result = await openFileDescriptor(encryptedMetadata, encryptedFileKeyBase64, itemKey, 1);
 
         expect(result.fileKey).toEqual(fileDescriptor.fileKey);
@@ -28,8 +27,8 @@ describe('`openFileDescriptor` crypto process', () => {
         const fileDescriptor = await createFileDescriptor(mockMetadata, 2);
         const encryptedFileKey = await encryptData(itemKey.key, fileDescriptor.fileKey, PassEncryptionTag.FileKey);
 
-        const encryptedMetadata = uint8ArrayToBase64String(fileDescriptor.metadata);
-        const encryptedFileKeyBase64 = uint8ArrayToBase64String(encryptedFileKey);
+        const encryptedMetadata = fileDescriptor.metadata.toBase64();
+        const encryptedFileKeyBase64 = encryptedFileKey.toBase64();
         const result = await openFileDescriptor(encryptedMetadata, encryptedFileKeyBase64, itemKey, 2);
 
         expect(result.fileKey).toEqual(fileDescriptor.fileKey);
@@ -41,7 +40,7 @@ describe('`openFileDescriptor` crypto process', () => {
         const fileDescriptor = await createFileDescriptor(mockMetadata, 1);
         const encryptedFileKey = await encryptData(itemKey.key, fileDescriptor.fileKey, PassEncryptionTag.FileKey);
 
-        const encryptedFileKeyBase64 = uint8ArrayToBase64String(encryptedFileKey);
+        const encryptedFileKeyBase64 = encryptedFileKey.toBase64();
         await expect(openFileDescriptor('', encryptedFileKeyBase64, itemKey, 1)).rejects.toThrow(PassCryptoFileError);
     });
 
@@ -51,8 +50,8 @@ describe('`openFileDescriptor` crypto process', () => {
         const fileDescriptor = await createFileDescriptor(mockMetadata, 1);
         const encryptedFileKey = await encryptData(itemKey.key, fileDescriptor.fileKey, PassEncryptionTag.FileKey);
 
-        const encryptedMetadata = uint8ArrayToBase64String(fileDescriptor.metadata);
-        const encryptedFileKeyBase64 = uint8ArrayToBase64String(encryptedFileKey);
+        const encryptedMetadata = fileDescriptor.metadata.toBase64();
+        const encryptedFileKeyBase64 = encryptedFileKey.toBase64();
 
         await expect(openFileDescriptor(encryptedMetadata, encryptedFileKeyBase64, otherItemKey, 1)).rejects.toThrow();
     });

@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
+import '@proton/polyfill';
 import '@proton/testing/lib/vitest/mockMatchMedia';
 import '@proton/testing/lib/vitest/mockUnleash';
 
@@ -40,8 +41,8 @@ vi.mock('@proton/components/hooks/useEventManager.ts', () => {
 
 // @ts-ignore
 global.MutationObserver = class {
-    disconnect() {} // eslint-disable-line
-    observe() {} // eslint-disable-line
+    disconnect() {}
+    observe() {}
 };
 
 // Mock backdrop container because it's always rendered, and it's rendered in a portal which causes issues with the hook renderer

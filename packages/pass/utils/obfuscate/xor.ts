@@ -1,5 +1,4 @@
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 // Browser-imposed limitation - maximum byte length for crypto.getRandomValues
 const MAX_ENTROPY = 65536;
@@ -16,14 +15,14 @@ export const obfuscate = (str: string): XorObfuscation => {
     }
 
     return {
-        v: uint8ArrayToBase64String(bytes),
-        m: uint8ArrayToBase64String(xor),
+        v: bytes.toBase64(),
+        m: xor.toBase64(),
     };
 };
 
 export const deobfuscate = (obfuscation: XorObfuscation): string => {
-    const data = base64StringToUint8Array(obfuscation.v);
-    const xor = base64StringToUint8Array(obfuscation.m);
+    const data = Uint8Array.fromBase64(obfuscation.v);
+    const xor = Uint8Array.fromBase64(obfuscation.m);
 
     for (var i = 0, len = data.length; i < len; i++) {
         data[i] ^= xor[i % xor.length];
@@ -37,8 +36,8 @@ export const deobfuscate = (obfuscation: XorObfuscation): string => {
  * everything in between with asterisks. If input length is less than 12 bytes
  * (shortest valid CC length), returns a masked string. */
 export const deobfuscatePartialCCField = (obfuscation: XorObfuscation): string => {
-    const data = base64StringToUint8Array(obfuscation.v);
-    const xor = base64StringToUint8Array(obfuscation.m);
+    const data = Uint8Array.fromBase64(obfuscation.v);
+    const xor = Uint8Array.fromBase64(obfuscation.m);
     const valid = data.length >= 12;
 
     for (let i = 0; i < data.length; i++) {

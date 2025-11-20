@@ -1,4 +1,3 @@
-import { uint8ArrayToBase64String } from './encoding';
 import { removeItem, setItem } from './storage';
 
 export const PASSWORD_CHANGE_MESSAGE_TYPE = 'password-change';
@@ -8,7 +7,7 @@ const CROSS_TAB_EVENT_KEY = 'cte';
 let id: string | undefined;
 
 const generateId = () => {
-    return uint8ArrayToBase64String(crypto.getRandomValues(new Uint8Array(6)));
+    return  crypto.getRandomValues(new Uint8Array(6)).toBase64();
 };
 
 export const sendMessageToTabs = (type: string, data: any) => {

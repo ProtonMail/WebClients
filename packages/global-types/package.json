@@ -1,0 +1,6 @@
+{
+  "name": "@types/global-types-monorepo",
+  "description": "Types that need to be available across the monorepo",
+  "main": "./lib/index.d.ts",
+  "types": "./lib/index.d.ts"
+}

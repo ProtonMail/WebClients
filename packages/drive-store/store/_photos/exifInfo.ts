@@ -2,9 +2,6 @@ import { DOMParser, onErrorStopParsing } from '@xmldom/xmldom';
 import ExifReader from 'exifreader';
 import type { ExifTags, ExpandedTags } from 'exifreader';
 
-import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { encodeBase64 } from '@proton/crypto/lib/utils';
 import { getFileExtension, isRAWExtension, isRAWPhoto, isSVG, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
@@ -41,22 +38,6 @@ export const getExifInfo = async (file: File, mimeType: string): Promise<Expande
 
     return undefined;
 };
-
-export async function encryptExifInfo(
-    exifInfo: ExpandedTags,
-    nodePrivateKey: PrivateKeyReference,
-    addressPrivateKey: PrivateKeyReference
-) {
-    const exifInfoString = JSON.stringify(exifInfo);
-    const { message } = await CryptoProxy.encryptMessage({
-        textData: exifInfoString,
-        encryptionKeys: nodePrivateKey,
-        signingKeys: addressPrivateKey,
-        compress: true,
-        signatureContext: { value: 'drive.photo.exif', critical: true },
-    });
-    return encodeBase64(message);
-}
 
 export const getFormattedDateTime = (exif?: ExifTags) => {
     if (!exif) {

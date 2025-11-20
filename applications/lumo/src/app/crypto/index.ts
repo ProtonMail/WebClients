@@ -12,7 +12,6 @@ import {
 } from '@proton/crypto/lib/subtle/aesGcm';
 import { computeSHA256 } from '@proton/crypto/lib/subtle/hash';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { type AdString, type Base64, type EncryptedData, isOldEncryptedData } from '../types';
 import type { AesGcmCryptoKey, AesKwCryptoKey } from './types';
@@ -21,8 +20,8 @@ export const generateMasterKeyBytes = () => generateAesWrapKeyBytes();
 export const generateSpaceKeyBytes = () => generateAesGcmKeyBytes(); // meant to go through HKDF to achieve domain separation (e.g. `SPACE_DEK_CONTEXT`)
 export const generateRequestKeyBytes = () => generateAesGcmKeyBytes();
 
-export const generateSpaceKeyBase64 = () => uint8ArrayToBase64String(generateSpaceKeyBytes());
-export const generateMasterKeyBase64 = () => uint8ArrayToBase64String(generateMasterKeyBytes());
+export const generateSpaceKeyBase64 = () => generateSpaceKeyBytes().toBase64();
+export const generateMasterKeyBase64 = () => generateMasterKeyBytes().toBase64();
 
 export async function encryptString(
     plaintext: string,
@@ -32,7 +31,7 @@ export async function encryptString(
     const plaintextBytes = stringToUtf8Array(plaintext);
     const adBytes = adString ? stringToUtf8Array(adString) : undefined;
     const result = await encryptData(encryptKey, plaintextBytes, adBytes);
-    return uint8ArrayToBase64String(result);
+    return result.toBase64();
 }
 
 export async function encryptUint8Array(
@@ -42,12 +41,12 @@ export async function encryptUint8Array(
 ): Promise<string> {
     const adBytes = adString ? stringToUtf8Array(adString) : undefined;
     const result = await encryptData(encryptKey, plaintextBytes, adBytes);
-    return uint8ArrayToBase64String(result);
+    return result.toBase64();
 }
 
 export async function cryptoKeyToBase64(key: CryptoKey): Promise<Base64> {
     const exportedKey = await exportKey(key);
-    return uint8ArrayToBase64String(exportedKey);
+    return exportedKey.toBase64();
 }
 
 export async function bytesToAesGcmCryptoKey(
@@ -65,7 +64,7 @@ export async function bytesToAesGcmCryptoKey(
 }
 
 async function base64ToAesGcmCryptoKey(base64Key: string, extractable?: boolean): Promise<AesGcmCryptoKey> {
-    const bytes = base64StringToUint8Array(base64Key);
+    const bytes = Uint8Array.fromBase64(base64Key);
     return bytesToAesGcmCryptoKey(bytes, extractable);
 }
 
@@ -80,7 +79,7 @@ export async function bytesToAesWrapKey(bytes: Uint8Array<ArrayBuffer>): Promise
 }
 
 export async function base64ToAesWrapKey(base64Key: string): Promise<AesKwCryptoKey> {
-    const bytes = base64StringToUint8Array(base64Key);
+    const bytes = Uint8Array.fromBase64(base64Key);
     return bytesToAesWrapKey(bytes);
 }
 
@@ -94,13 +93,13 @@ export async function decryptUint8Array(
 ): Promise<Uint8Array<ArrayBuffer>> {
     let encryptedBytes: Uint8Array<ArrayBuffer>;
     if (typeof encryptedBase64 === 'string') {
-        encryptedBytes = base64StringToUint8Array(encryptedBase64);
+        encryptedBytes = Uint8Array.fromBase64(encryptedBase64);
     } else if (isOldEncryptedData(encryptedBase64)) {
         // Messages stored before Jan 2025 can have this { iv, data } structure instead of all-concatenated "$iv$data".
         // We make sure we still handle them.
         const { iv, data } = encryptedBase64;
         const concat = `${iv}${data}`;
-        encryptedBytes = base64StringToUint8Array(concat);
+        encryptedBytes = Uint8Array.fromBase64(concat);
     } else {
         throw new Error('Unexpected shape for EncryptedData');
     }
@@ -133,7 +132,7 @@ export async function decryptString(
 const SPACE_KEY_DERIVATION_SALT = 'Xd6V94/+5BmLAfc67xIBZcjsBPimm9/j02kHPI7Vsuc=';
 const SPACE_DEK_CONTEXT = 'dek.space.lumo';
 const HKDF_PARAMS_SPACE_DATA_ENCRYPTION = {
-    salt: base64StringToUint8Array(SPACE_KEY_DERIVATION_SALT),
+    salt: Uint8Array.fromBase64(SPACE_KEY_DERIVATION_SALT),
     info: stringToUtf8Array(SPACE_DEK_CONTEXT),
 };
 
@@ -178,7 +177,7 @@ export async function unwrapAesKey(
 export async function computeSha256AsBase64(input: string, urlSafe: boolean = false): Promise<Base64> {
     const data = stringToUtf8Array(input);
     const hashBytes = await computeSHA256(data);
-    let hashString = uint8ArrayToBase64String(hashBytes);
+    let hashString = hashBytes.toBase64();
     if (urlSafe) {
         hashString = hashString.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
     }

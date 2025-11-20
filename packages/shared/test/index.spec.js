@@ -1,3 +1,4 @@
+import '@proton/polyfill';
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 

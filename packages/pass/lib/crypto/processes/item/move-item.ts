@@ -6,7 +6,6 @@ import type {
     VaultShareKey,
 } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type MoveItemProcessParams = {
     itemId: string;
@@ -26,7 +25,7 @@ export const moveItem = async ({
             const encryptedKey = await encryptData(vaultKey, raw, PassEncryptionTag.ItemKey);
 
             return {
-                Key: uint8ArrayToBase64String(encryptedKey),
+                Key: encryptedKey.toBase64(),
                 KeyRotation: rotation,
             };
         })

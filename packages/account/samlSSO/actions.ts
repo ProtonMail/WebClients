@@ -3,7 +3,6 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { setupSCIM as setupSCIMConfig, updateSCIM as updateSCIMConfig } from '@proton/shared/lib/api/samlSSO';
 import { generateRandomBytes } from '@proton/shared/lib/helpers/crypto';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { type SamlState, selectSamlSSO, updateScim } from './index';
@@ -28,7 +27,7 @@ export const setupSCIMAction = ({
 }): ThunkAction<Promise<{ token: string; baseUrl: string }>, SamlState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState) => {
         const token = generateRandomBytes(20);
-        const base64Token = uint8ArrayToBase64String(token);
+        const base64Token = token.toBase64();
         const config =
             type === 'setup'
                 ? setupSCIMConfig({ Password: base64Token })

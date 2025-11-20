@@ -1,6 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 
 import type { MIME_TYPES } from '../../constants';
 import { hasBitBigInt } from '../../helpers/bitset';
@@ -56,7 +55,7 @@ export const getSessionKey = async (
     //     return attachment;
     // }
 
-    const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets) || '');
+    const keyPackets = Uint8Array.fromBase64(attachment.KeyPackets || '');
     const options = {
         binaryMessage: keyPackets,
         decryptionKeys: privateKeys,
@@ -81,7 +80,7 @@ export const getSessionKey = async (
 };
 
 export const getEOSessionKey = async (attachment: Attachment, password: string): Promise<SessionKey> => {
-    const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets) || '');
+    const keyPackets = Uint8Array.fromBase64(attachment.KeyPackets || '');
     const options = { binaryMessage: keyPackets, passwords: [password] };
 
     const sessionKey = await CryptoProxy.decryptSessionKey(options);

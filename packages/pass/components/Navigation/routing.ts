@@ -1,6 +1,6 @@
 import { type Location, createBrowserHistory } from 'history';
 
-import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { ItemFilters, ItemType, MaybeNull, Unpack } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
@@ -90,7 +90,7 @@ export const decodeFilters = (encodedFilters: MaybeNull<string>): ItemFilters =>
         (() => {
             try {
                 if (!encodedFilters) return {};
-                return JSON.parse(decodeUtf8Base64(encodedFilters));
+                return JSON.parse(utf8ArrayToString(Uint8Array.fromBase64(encodedFilters)));
             } catch {
                 return {};
             }
@@ -102,7 +102,7 @@ export const decodeFiltersFromSearch = (search: string) => {
     return decodeFilters(params.get('filters'));
 };
 
-export const encodeFilters = (filters: ItemFilters): string => encodeUtf8Base64(JSON.stringify(filters));
+export const encodeFilters = (filters: ItemFilters): string => stringToUtf8Array(JSON.stringify(filters)).toBase64();
 
 export const getPassWebUrl = (apiUrl: string, subPath: string = '') => {
     const appUrl = getAppUrlFromApiUrl(apiUrl, APPS.PROTONPASS);

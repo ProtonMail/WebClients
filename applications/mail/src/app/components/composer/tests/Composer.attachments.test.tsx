@@ -7,7 +7,6 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey } from '@proton/shared/lib/interfaces';
 import type { AttachmentFullMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { arrayToBase64 } from '../../../helpers/base64';
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import type { GeneratedKey } from '../../../helpers/test/helper';
 import {
@@ -239,6 +238,6 @@ describe('Composer attachments', () => {
         const attachmentKey = sendData.Packages['text/plain'].AttachmentKeys[attachmentId].Key;
 
         // Attachment session key sent is the one we generated
-        expect(attachmentKey).toBe(arrayToBase64(generatedSessionKey.data));
+        expect(attachmentKey).toBe(generatedSessionKey.data.toBase64());
     });
 });

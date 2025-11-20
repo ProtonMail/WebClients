@@ -1,6 +1,5 @@
 import { generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { ItemKey } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { createSecureLink } from './create-secure-link';
 import { openLinkKey } from './open-link-key';
@@ -16,7 +15,7 @@ describe('`openLinkKey` crypto process', () => {
         };
 
         const secureLink = await createSecureLink({ itemKey });
-        const encryptedLinkKeyBase64 = uint8ArrayToBase64String(secureLink.encryptedLinkKey);
+        const encryptedLinkKeyBase64 = secureLink.encryptedLinkKey.toBase64();
         const decryptedLinkKey = await openLinkKey({
             encryptedLinkKey: encryptedLinkKeyBase64,
             key: itemKey.key,

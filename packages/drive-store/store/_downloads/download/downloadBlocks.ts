@@ -5,7 +5,6 @@ import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_DOWNLOAD, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -128,7 +127,7 @@ export default function initDownloadBlocks(
                     );
                 }
                 if (result.thumbnailHashes) {
-                    thumbnailHashes = result.thumbnailHashes.map(base64StringToUint8Array);
+                    thumbnailHashes = result.thumbnailHashes.map(hash => Uint8Array.fromBase64(hash));
                 }
                 manifestSignature = result.manifestSignature;
                 xAttr = result.xAttr;

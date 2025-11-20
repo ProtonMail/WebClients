@@ -1,7 +1,6 @@
 import type { APP_NAMES } from '../../constants';
 import { APPS, APPS_CONFIGURATION } from '../../constants';
 import { validateEmailAddress } from '../../helpers/email';
-import { decodeBase64URL, stringToUint8Array } from '../../helpers/encoding';
 import { ExtraSessionForkSearchParameters, ForkSearchParameters, ForkType, ForkableApps } from './constants';
 
 export const getValidatedApp = (app = ''): APP_NAMES | undefined => {
@@ -50,7 +49,7 @@ export const getLocalIDForkSearchParameter = (searchParams: URLSearchParams) => 
 
 export const getValidatedRawKey = (str: string) => {
     try {
-        return stringToUint8Array(decodeBase64URL(str));
+        return Uint8Array.fromBase64(str, { alphabet: 'base64url' });
     } catch (e: any) {
         return undefined;
     }

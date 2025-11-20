@@ -1,6 +1,5 @@
 import type { PublicKeyReference, SessionKey, WorkerDecryptionResult } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
 import { getEOAttachment } from '@proton/shared/lib/api/eo';
@@ -107,7 +106,7 @@ export const getDecryptedAttachment = async (
             },
         });
         const blob = mergeUint8Arrays([
-            binaryStringToArray(decodeBase64(attachment.KeyPackets) || ''),
+            Uint8Array.fromBase64(attachment.KeyPackets || ''),
             new Uint8Array(encryptedBinary),
         ]);
         // Fallback download raw attachment

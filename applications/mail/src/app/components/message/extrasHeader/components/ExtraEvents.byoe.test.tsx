@@ -9,7 +9,6 @@ import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { type ApiMockHandler, addApiMock } from '@proton/testing/lib/api';
 
@@ -106,7 +105,7 @@ const setup = async ({
                 Attachments: encryptedAttachments.map(({ attachmentID, filename, attachmentPackets }) => ({
                     ID: attachmentID,
                     Name: filename,
-                    KeyPackets: uint8ArrayToBase64String(attachmentPackets.keys),
+                    KeyPackets: attachmentPackets.keys.toBase64(),
                     MIMEType: 'text/calendar',
                 })),
                 ParsedHeaders: {

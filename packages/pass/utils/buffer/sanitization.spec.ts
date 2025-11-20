@@ -1,9 +1,7 @@
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-
 import { sanitizeBuffers } from './sanitization';
 
 const byteArray = crypto.getRandomValues(new Uint8Array({ length: 32 }));
-const base64 = uint8ArrayToBase64String(byteArray);
+const base64 = byteArray.toBase64();
 
 describe('sanitizeBuffers', () => {
     test('should convert typed arrays', () => {

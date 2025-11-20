@@ -18,6 +18,11 @@ module.exports = {
                         tsx: true,
                     },
                 },
+                env: {
+                    /* polyfill typed-array base64 and hex functions */ mode: 'usage',
+                    shippedProposals: true,
+                    coreJs: require('core-js/package.json').version,
+                },
             },
         ],
     },

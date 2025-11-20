@@ -1,7 +1,6 @@
 // Bootstrap stuff that's specific to Lumo and not common with other apps.
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { generateMasterKeyBytes } from '../crypto';
@@ -37,7 +36,7 @@ async function decryptAndVerifyMasterKey(
 
     try {
         const decryptResult = await CryptoProxy.decryptMessage({
-            binaryMessage: base64StringToUint8Array(encryptedMasterKeyB64),
+            binaryMessage: Uint8Array.fromBase64(encryptedMasterKeyB64),
             decryptionKeys: privateKeys,
             verificationKeys: publicKeys,
             signatureContext: { value: AES_MASTER_KEY_OPENPGP_SIGNATURE_CONTEXT, required: true },
@@ -50,7 +49,7 @@ async function decryptAndVerifyMasterKey(
         }
 
         console.log('Master key was successfully decrypted');
-        return uint8ArrayToBase64String(decryptResult.data);
+        return decryptResult.data.toBase64();
     } catch (error) {
         // This might happen after a user did a password reset; their old keys won't work anymore.
         // By returning null we let caller know this happened and take action.
@@ -80,7 +79,7 @@ async function createAndPushMasterKey(lumoApi: LumoApi, uaKeys: UserAndAddressKe
                 format: 'binary',
                 signatureContext: { critical: true, value: AES_MASTER_KEY_OPENPGP_SIGNATURE_CONTEXT },
             });
-            const encryptedMasterKeyBase64 = uint8ArrayToBase64String(encryptedMasterKeyBytes.message);
+            const encryptedMasterKeyBase64 = encryptedMasterKeyBytes.message.toBase64();
 
             // post to API
             const masterKeyToApi = convertMasterKeyToApi(encryptedMasterKeyBase64);

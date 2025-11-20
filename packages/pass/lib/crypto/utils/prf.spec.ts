@@ -1,11 +1,7 @@
 import { decryptData, encryptData, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import * as browser from '@proton/shared/lib/helpers/browser';
-import {
-    base64StringToUint8Array,
-    stringToUint8Array,
-    uint8ArrayToBase64String,
-} from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { PassCryptoError } from './errors';
 import {
@@ -103,7 +99,7 @@ describe('PRF utilities', () => {
         test('should derive key via HKDF pass', async () => {
             const credential = createMockCredential({ results: { first: TEST_PRF_BYTES } });
             const result = await deriveKeyFromPRFCredential(credential, true);
-            expect(pipe(stringToUint8Array, uint8ArrayToBase64String)(result)).toEqual(TEST_HKDF_B64);
+            expect(pipe(stringToUint8Array, bytes => bytes.toBase64())(result)).toEqual(TEST_HKDF_B64);
         });
 
         test('should return valid crypto key derived from HKDF pass', async () => {
@@ -111,7 +107,7 @@ describe('PRF utilities', () => {
             const result = await deriveKeyFromPRFCredential(credential);
 
             const message = stringToUint8Array('test.message');
-            const expectedKey = await importKey(base64StringToUint8Array(TEST_HKDF_B64));
+            const expectedKey = await importKey(Uint8Array.fromBase64(TEST_HKDF_B64));
             const encryptedMessage = await encryptData(expectedKey, message);
 
             const decryptedMessage = await decryptData(result, encryptedMessage);

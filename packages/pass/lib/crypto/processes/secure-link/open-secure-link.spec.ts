@@ -1,7 +1,7 @@
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { ItemKey, ShareKey, VaultShareKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { encodeBase64URL, stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type { CreateSecureLinkData } from './create-secure-link';
 import { createSecureLink } from './create-secure-link';
@@ -54,9 +54,9 @@ describe('`openSecureLink` crypto process', () => {
 
         const secureLink = await createLegacySecureLink({ itemKey, shareKey });
         const encryptedContent = await encryptData(itemKey.key, testContent, PassEncryptionTag.ItemContent);
-        const encryptedItemKeyBase64 = uint8ArrayToBase64String(secureLink.encryptedItemKey);
-        const contentBase64 = uint8ArrayToBase64String(encryptedContent);
-        const linkKeyBase64URL = encodeBase64URL(String.fromCharCode.apply(null, [...secureLink.secureLinkKey]));
+        const encryptedItemKeyBase64 = secureLink.encryptedItemKey.toBase64();
+        const contentBase64 = encryptedContent.toBase64();
+        const linkKeyBase64URL = secureLink.secureLinkKey.toBase64({ alphabet: 'base64url', omitPadding: true });
 
         const decryptedContent = await openSecureLink({
             encryptedItemKey: encryptedItemKeyBase64,
@@ -79,9 +79,9 @@ describe('`openSecureLink` crypto process', () => {
 
         const secureLink = await createSecureLink({ itemKey });
         const encryptedContent = await encryptData(itemKey.key, testContent, PassEncryptionTag.ItemContent);
-        const encryptedItemKeyBase64 = uint8ArrayToBase64String(secureLink.encryptedItemKey);
-        const contentBase64 = uint8ArrayToBase64String(encryptedContent);
-        const linkKeyBase64URL = encodeBase64URL(String.fromCharCode.apply(null, [...secureLink.secureLinkKey]));
+        const encryptedItemKeyBase64 = secureLink.encryptedItemKey.toBase64();
+        const contentBase64 = encryptedContent.toBase64();
+        const linkKeyBase64URL = secureLink.secureLinkKey.toBase64({ alphabet: 'base64url', omitPadding: true });
 
         const decryptedContent = await openSecureLink({
             encryptedItemKey: encryptedItemKeyBase64,

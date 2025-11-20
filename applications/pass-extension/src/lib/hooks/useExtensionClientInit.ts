@@ -14,7 +14,6 @@ import type { AppState } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 import { useEndpointMessage } from './useEndpointMessage';
@@ -52,7 +51,7 @@ export const useExtensionClientInit = (options: {
             if (matchExtensionMessage(message, { type: WorkerMessageType.FS_WRITE })) {
                 const { fileRef, b64 } = message.payload;
                 const chunks = MemoryStorage.files.get(fileRef) ?? [];
-                chunks.push(base64StringToUint8Array(b64));
+                chunks.push(Uint8Array.fromBase64(b64));
                 MemoryStorage.files.set(fileRef, chunks);
                 return;
             }

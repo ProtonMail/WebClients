@@ -4,7 +4,6 @@ import { verifyAllWhenMocksCalled, when } from 'jest-when';
 import { queryMigrateLegacyShares } from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { useDebouncedRequest } from '../_api';
 import { useLink } from '../_links';
@@ -108,7 +107,7 @@ describe('useShareActions', () => {
             await result.current.migrateShares();
             expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
                 PassphraseNodeKeyPackets: [
-                    { ShareID: 'shareId', PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket) },
+                    { ShareID: 'shareId', PassphraseNodeKeyPacket: PassphraseNodeKeyPacket.toBase64() },
                 ],
             });
             expect(mockedRemoveLinkForMigration).toHaveBeenCalledWith('shareId', 'rootLinkId');
@@ -128,19 +127,19 @@ describe('useShareActions', () => {
             expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
                 PassphraseNodeKeyPackets: shareIds.slice(0, 50).map((shareId) => ({
                     ShareID: shareId,
-                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                    PassphraseNodeKeyPacket: PassphraseNodeKeyPacket.toBase64(),
                 })),
             });
             expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
                 PassphraseNodeKeyPackets: shareIds.slice(50, 100).map((shareId) => ({
                     ShareID: shareId,
-                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                    PassphraseNodeKeyPacket: PassphraseNodeKeyPacket.toBase64(),
                 })),
             });
             expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
                 PassphraseNodeKeyPackets: shareIds.slice(100, 120).map((shareId) => ({
                     ShareID: shareId,
-                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                    PassphraseNodeKeyPacket: PassphraseNodeKeyPacket.toBase64(),
                 })),
             });
             expect(mockedRemoveLinkForMigration.mock.calls).toEqual(shareIds.map((shareId) => [shareId, 'rootLinkId']));
@@ -175,13 +174,13 @@ describe('useShareActions', () => {
             expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
                 PassphraseNodeKeyPackets: shareIds.slice(0, 50).map((shareId) => ({
                     ShareID: shareId,
-                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                    PassphraseNodeKeyPacket: PassphraseNodeKeyPacket.toBase64(),
                 })),
             });
             expect(mockedQueryLegacyShares).not.toHaveBeenCalledWith({
                 PassphraseNodeKeyPackets: shareIds.slice(50, 100).map((shareId) => ({
                     ShareID: shareId,
-                    PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
+                    PassphraseNodeKeyPacket: PassphraseNodeKeyPacket.toBase64(),
                 })),
             });
         });
@@ -202,7 +201,7 @@ describe('useShareActions', () => {
 
             expect(mockedQueryLegacyShares).toHaveBeenCalledWith({
                 PassphraseNodeKeyPackets: [
-                    { ShareID: 'shareId', PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket) },
+                    { ShareID: 'shareId', PassphraseNodeKeyPacket: PassphraseNodeKeyPacket.toBase64() },
                 ],
                 UnreadableShareIDs: ['corrupted'],
             });

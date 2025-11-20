@@ -46,6 +46,7 @@
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+        "@types/global-types-monorepo": "workspace:^",
         "@types/jest-when": "^3.5.5",
         "husky": "^9.1.7",
         "lint-staged": "^16.2.6",

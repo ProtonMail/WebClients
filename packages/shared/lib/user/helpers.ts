@@ -4,7 +4,6 @@ import { AccessType } from '../authentication/accessType';
 import { getAccessType } from '../authentication/getAccessType';
 import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
-import { decodeBase64URL } from '../helpers/encoding';
 import type { User, UserInfo, UserModel } from '../interfaces';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
@@ -58,8 +57,8 @@ export const formatUser = (User: User) => {
 
 export const getUserByte = (user: User) => {
     const userID = user?.ID || '';
-    const byteCharacters = decodeBase64URL(userID);
-    return byteCharacters.charCodeAt(0);
+    const byteCharacters = Uint8Array.fromBase64(userID, { alphabet: 'base64url' });
+    return byteCharacters[0];
 };
 
 export const getUserCreationDate = (user: User) => {

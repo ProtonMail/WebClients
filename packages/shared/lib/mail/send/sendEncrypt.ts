@@ -10,7 +10,6 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { AES256, MIME_TYPES } from '../../constants';
 import { hasBit } from '../../helpers/bitset';
-import { uint8ArrayToBase64String } from '../../helpers/encoding';
 import type { Attachment, Message } from '../../interfaces/mail/Message';
 import type { PackageDirect } from '../../interfaces/mail/crypto';
 import type { RequireOnly, SimpleMap } from '../../interfaces/utils';
@@ -24,7 +23,7 @@ interface AttachmentKeys {
 const { SEND_CLEAR, SEND_CLEAR_MIME } = PACKAGE_TYPE;
 
 const packToBase64 = ({ data, algorithm: Algorithm = AES256 }: SessionKey) => {
-    return { Key: uint8ArrayToBase64String(data), Algorithm };
+    return { Key: data.toBase64(), Algorithm };
 };
 
 const encryptKeyPacket = async ({
@@ -46,7 +45,7 @@ const encryptKeyPacket = async ({
                 format: 'binary',
             });
 
-            return uint8ArrayToBase64String(encryptedSessionKey);
+            return encryptedSessionKey.toBase64();
         })
     );
 
@@ -240,14 +239,14 @@ const encryptBody = async ({
         if (!address) {
             return;
         }
-        address.BodyKeyPacket = uint8ArrayToBase64String(key);
+        address.BodyKeyPacket = key.toBase64();
     });
 
     if ((pack.Type || 0) & (SEND_CLEAR | SEND_CLEAR_MIME)) {
         pack.BodyKey = packToBase64(sessionKey);
     }
 
-    pack.Body = uint8ArrayToBase64String(encrypted);
+    pack.Body = encrypted.toBase64();
 };
 
 const encryptPackage = async ({

@@ -4,7 +4,7 @@
         "sourceMap": true,
         "outDir": "dist",
         "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext"],
-        "types": ["webpack-env", "jest"]
+        "types": ["webpack-env", "global-types-monorepo", "jest"]
     },
     "ts-node": {
         "compilerOptions": {

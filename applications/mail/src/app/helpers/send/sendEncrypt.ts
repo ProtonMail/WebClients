@@ -10,8 +10,6 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { arrayToBase64 } from '../base64';
-
 const MEGABYTE = 1024 * 1024;
 
 // Reference: Angular/src/app/composer/services/encryptPackages.js
@@ -22,7 +20,7 @@ interface AttachmentKeys {
 }
 
 const packToBase64 = ({ data, algorithm: Algorithm = AES256 }: SessionKey) => {
-    return { Key: arrayToBase64(data), Algorithm };
+    return { Key: data.toBase64(), Algorithm };
 };
 
 const encryptKeyPacket = async ({
@@ -43,7 +41,7 @@ const encryptKeyPacket = async ({
                 passwords,
                 format: 'binary',
             });
-            return arrayToBase64(encryptedSessionKey);
+            return encryptedSessionKey.toBase64();
         })
     );
 
@@ -215,7 +213,7 @@ const encryptBody = async (pack: Package, messageKeys: PublicPrivateKey, message
         }
 
         const key = keys[counter++];
-        (pack.Addresses || {})[addressKeys[index]].BodyKeyPacket = arrayToBase64(key);
+        (pack.Addresses || {})[addressKeys[index]].BodyKeyPacket = key.toBase64();
     });
 
     await Promise.all(

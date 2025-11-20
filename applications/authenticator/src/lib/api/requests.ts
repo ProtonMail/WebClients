@@ -1,7 +1,5 @@
 import type { ItemSyncMetadata } from 'proton-authenticator/lib/db/entities/items';
 
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-
 import type {
     AuthenticatorCreateEntriesRequest,
     AuthenticatorEntryDeleteBulkInput,
@@ -31,7 +29,7 @@ export const createEntries = (encryptedEntries: Uint8Array<ArrayBuffer>[], keyId
     const data: AuthenticatorCreateEntriesRequest = {
         Entries: encryptedEntries.map((content) => ({
             AuthenticatorKeyID: keyId,
-            Content: uint8ArrayToBase64String(content),
+            Content: content.toBase64(),
             ContentFormatVersion: 1,
         })),
     };
@@ -57,7 +55,7 @@ export const updateEntries = (
     payload: { syncMetadata: ItemSyncMetadata; encryptedEntry: Uint8Array<ArrayBuffer> }[]
 ) => {
     const Entries: AuthenticatorEntryUpdateWithEntryRequest[] = payload.map((i) => ({
-        Content: uint8ArrayToBase64String(i.encryptedEntry),
+        Content: i.encryptedEntry.toBase64(),
         EntryID: i.syncMetadata.entryId,
         AuthenticatorKeyID: i.syncMetadata.keyId,
         LastRevision: i.syncMetadata.revision,

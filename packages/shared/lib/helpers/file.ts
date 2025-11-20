@@ -1,4 +1,4 @@
-import { base64StringToUint8Array, uint8ArrayToString } from './encoding';
+import { uint8ArrayToString } from './encoding';
 
 /**
  * Convert file to encoded base 64 string
@@ -102,7 +102,7 @@ export const readDataUrl = (url = '') => {
         throw new Error(error);
     }
 
-    return base64StringToUint8Array(base64);
+    return Uint8Array.fromBase64(base64);
 };
 
 /**

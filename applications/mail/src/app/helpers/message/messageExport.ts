@@ -1,6 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type {
     MessageKeys,
@@ -91,7 +90,7 @@ export const encryptAttachmentKeyPackets = async (
                         encryptionKeys: newAddressEncryptionKey,
                         format: 'binary',
                     });
-                    return [attachment.ID || '', encodeBase64(arrayToBinaryString(encryptedSessionKey))];
+                    return [attachment.ID || '', encryptedSessionKey.toBase64()];
                 })
         )
     );

@@ -5,7 +5,6 @@ import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { sendMessageDirect } from '@proton/shared/lib/api/messages';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -83,9 +82,9 @@ const useSendIcs = () => {
             const attachment = {
                 Filename: packets.Filename,
                 MIMEType: packets.MIMEType,
-                Contents: uint8ArrayToBase64String(attachmentContents),
-                KeyPackets: uint8ArrayToBase64String(packets.keys),
-                Signature: packets.signature ? uint8ArrayToBase64String(packets.signature) : undefined,
+                Contents: attachmentContents.toBase64(),
+                KeyPackets: packets.keys.toBase64(),
+                Signature: packets.signature ? packets.signature.toBase64() : undefined,
             };
             const attachmentData = {
                 attachment,
@@ -140,7 +139,7 @@ const useSendIcs = () => {
             });
             const payload: any = {
                 Message: directMessage,
-                AttachmentKeys: uint8ArrayToBase64String(packets.keys),
+                AttachmentKeys: packets.keys.toBase64(),
                 // do not save organizer address as contact on REPLY (it could be a calendar group address)
                 AutoSaveContacts: method === ICAL_METHOD.REPLY ? AUTO_SAVE_CONTACTS.DISABLED : AutoSaveContacts,
                 Packages: Object.values(packages),

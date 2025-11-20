@@ -8,7 +8,6 @@ import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
 import type { APP_NAMES } from '../../constants';
 import { SSO_PATHS } from '../../constants';
-import { encodeBase64URL, uint8ArrayToString } from '../../helpers/encoding';
 import type { Api, User } from '../../interfaces';
 import type { PushForkResponse } from '../interface';
 import type { ResumedSessionResult } from '../persistedSessionHelper';
@@ -48,7 +47,7 @@ export const produceFork = async ({
     forkParameters: { state, app, independent, forkType, forkVersion, payloadType, payloadVersion },
 }: ProduceForkArguments): Promise<ProduceForkPayload> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
-    const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
+    const base64StringKey = rawKey.toBase64({ alphabet: 'base64url', omitPadding: true });
     const encryptedPayload = await (async () => {
         const forkData = (() => {
             if (payloadType === 'offline' && offlineKey && offlineKey.salt && offlineKey.password) {

@@ -1,7 +1,6 @@
 import type { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { SECOND } from '@proton/shared/lib/constants';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -95,7 +94,7 @@ export const buildNetworkTransactionByHashedTxId = async (
                 const hashedTxIdBuffer = await hmac(hmacKey, transaction.txid);
                 const normalisedDerivationPath = removeMasterPrefix(transaction.account_derivation_path);
                 const accountId = accountIdByDerivationPathAndWalletId[walletId]?.[normalisedDerivationPath] ?? '';
-                const key = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
+                const key = new Uint8Array(hashedTxIdBuffer).toBase64();
 
                 return {
                     ...acc,
@@ -280,7 +279,7 @@ export const hashApiTransactions = async ({
 
             // Then hash it
             const hashedTxIdBuffer = await hmac(hmacKey, decryptedTransactionData.TransactionID);
-            const hashedTransactionID = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
+            const hashedTransactionID = new Uint8Array(hashedTxIdBuffer).toBase64();
 
             await api.wallet
                 .updateWalletTransactionHashedTxId(

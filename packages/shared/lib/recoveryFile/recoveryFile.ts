@@ -1,6 +1,5 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -55,7 +54,7 @@ export const parseRecoveryFiles = async (filesAsStrings: string[] = [], recovery
 export const generateRecoverySecret = async (privateKey: PrivateKeyReference) => {
     const length = 32;
     const randomValues = crypto.getRandomValues(new Uint8Array(length));
-    const recoverySecret = uint8ArrayToBase64String(randomValues);
+    const recoverySecret = randomValues.toBase64();
 
     const signature = await CryptoProxy.signMessage({
         textData: recoverySecret,

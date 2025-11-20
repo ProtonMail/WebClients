@@ -1,5 +1,3 @@
-import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
-
 import type {
     AuthenticationCredentialsPayload,
     AuthenticationOptions,
@@ -41,13 +39,9 @@ export const getAuthentication = async (
     };
     return {
         AuthenticationOptions: authenticationOptions,
-        ClientData: response.clientDataJSON
-            ? encodeBase64(arrayToBinaryString(new Uint8Array(response.clientDataJSON)))
-            : null!,
-        AuthenticatorData: response.authenticatorData
-            ? encodeBase64(arrayToBinaryString(new Uint8Array(response.authenticatorData)))
-            : null!,
-        Signature: response.signature ? encodeBase64(arrayToBinaryString(new Uint8Array(response.signature))) : null!,
+        ClientData: response.clientDataJSON ? new Uint8Array(response.clientDataJSON).toBase64() : null!,
+        AuthenticatorData: response.authenticatorData ? new Uint8Array(response.authenticatorData).toBase64() : null!,
+        Signature: response.signature ? new Uint8Array(response.signature).toBase64() : null!,
         CredentialID: publicKeyCredentials.rawId ? [...new Uint8Array(publicKeyCredentials.rawId)] : null!,
     };
 };

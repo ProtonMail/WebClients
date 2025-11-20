@@ -1,13 +1,13 @@
 import { DAY } from '@proton/shared/lib/constants';
 
-import { decodeBase64URL, encodeBase64URL } from '../../helpers/encoding';
+import { stringToUint8Array, uint8ArrayToString } from '../../helpers/encoding';
 import { getItem, removeItem, setItem } from '../../helpers/storage';
 import { isNumber } from '../../helpers/validators';
 
 const prefix = 'r-';
 
 const getKey = (UID: string) => {
-    return encodeBase64URL(`${prefix}${UID}`);
+    return stringToUint8Array(`${prefix}${UID}`).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
 
 export const setLastRefreshDate = (UID: string, now: Date) => {
@@ -44,7 +44,7 @@ export const getLastRefreshDates = (): LastRefreshDate[] => {
             if (parsedValue === undefined) {
                 return acc;
             }
-            const parsedKey = decodeBase64URL(key);
+            const parsedKey = uint8ArrayToString(Uint8Array.fromBase64(key, { alphabet: 'base64url' }));
             if (!parsedKey.startsWith(prefix)) {
                 return acc;
             }
