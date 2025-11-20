@@ -2517,6 +2517,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Працягваецца аўтаматычна"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяц",
         "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяцы",
@@ -8857,11 +8860,11 @@
       "${ planName } expires today.": [
         "${ planName } міне сёння."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } для арганізацый, з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вашу арганізацыю ад зламыснікаў і пагроз бяспекі."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вашу арганізацыю ад зламыснікаў і пагроз бяспекі."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага назірання падазронай актыўнасці."
@@ -11490,6 +11493,9 @@
       ],
       "Upgrade to unlock": [
         "Палепшыць, каб разблакіраваць"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Палепшыць ваш тарыфны план да ${ firstPlanNames } або ${ lastPlanName }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME } для арганізацый."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Абнавіць ваш тарыфны план да ${ firstPlanNames } або ${ lastPlanName }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
@@ -22107,6 +22113,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Report"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } для арганізацый"
       ],
       "(active)": [
         "(актыўны)"

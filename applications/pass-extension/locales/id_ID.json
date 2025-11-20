@@ -1120,6 +1120,9 @@
       "Secure link could not be opened.": [
         "Tautan aman tidak dapat dibuka."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Server tidak dapat dijangkau. Silakan coba buka kunci ${ PASS_SHORT_APP_NAME } dalam beberapa menit."
+      ],
       "Settings update failed": [
         "Pengaturan gagal diperbarui"
       ],
@@ -1209,6 +1212,9 @@
       ],
       "Wrong second password": [
         "Kata sandi kedua salah"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Anda sedang offline. Silakan hubungkan kembali internet untuk membuka ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Browser Anda mengalami masalah dalam mengaktifkan ${ PASS_APP_NAME }."
@@ -2099,6 +2105,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Item yang dipilih berhasil dipulihkan dari sampah"
+      ],
+      "Servers are unreachable": [
+        "Server tidak dapat dijangkau"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"

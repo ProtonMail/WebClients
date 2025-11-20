@@ -1741,6 +1741,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Renovació automàtica"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Es renova automàticament a ${ renewPrice } durant ${ renewLength } mes.",
         "Es renova automàticament a ${ renewPrice } durant ${ renewLength } mesos."
@@ -5706,11 +5709,11 @@
       "${ planName } expires today.": [
         "${ planName } caduca avui."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } per a organitzacions és un programa avançat de protecció de comptes impulsat per sistemes sofisticats d'IA i especialistes que treballen sense parar per protegir la vostra organització d'actors maliciosos i amenaces de seguretat."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció de comptes alimentat per sofisticats sistemes d'IA i especialistes que treballen tot el dia per protegir-vos dels agents maliciosos i les amenaces de seguretat."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció de comptes potenciat per sistemes d'IA sofisticats i especialistes que treballen ininterrompudament per a protegir la vostra organització d'agents maliciosos i amenaces de seguretat."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
@@ -7486,6 +7489,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Milloreu al pla Professional o a un de superior per poder desbloquejar"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Actualitzeu el vostre pla a ${ firstPlanNames } o ${ lastPlanName } per obtenir accés a ${ PROTON_SENTINEL_NAME } per a organitzacions."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Milloreu al pla ${ firstPlanNames } o ${ lastPlanName } per tenir accés a ${ PROTON_SENTINEL_NAME }."
@@ -14115,6 +14121,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } amistat s'ha subscrit",
         "${ friendsSubscribed } amistats s'han subscrit"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } per a organitzacions"
       ],
       "${ VPN_APP_NAME } clients": [
         "Clients ${ VPN_APP_NAME }"

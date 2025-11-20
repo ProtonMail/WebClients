@@ -622,6 +622,9 @@
       "Skip": [
         "Παράλειψη"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Κάποιος μοιράστηκε ένα στοιχείο μαζί σας στο ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Ταξινόμηση στοιχείων κρύπτης"
       ],
@@ -1212,6 +1215,9 @@
       ],
       "Trashing item failed": [
         "Αποτυχία μετακίνησης στοιχείου στα Διαγραμμένα"
+      ],
+      "Try reaching out to the link owner.": [
+        "Δοκιμάστε να επικοινωνήσετε με τον κάτοχο του συνδέσμου."
       ],
       "Unable to generate an OTP code for this item": [
         "Δεν είναι δυνατή η δημιουργία κωδικού OTP για αυτό το στοιχείο"
@@ -1926,6 +1932,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -3603,6 +3613,9 @@
       ],
       "Theme": [
         "Θέμα"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Αυτό το στοιχείο είναι προσβάσιμο μέχρι τις ${ date } ή μέχρι να συμπληρωθεί το όριο προβολής."
       ],
       "Tier/Level": [
         "Βαθμίδα/Επίπεδο"

@@ -97,8 +97,11 @@
       "Copy address": [
         "Kopírovat adresu"
       ],
-      "Copy public key (XPUB)": [
-        "Zkopírovat veřejný klíč (XPUB)"
+      "Copy descriptor": [
+        "Kopírovat popisovač"
+      ],
+      "Copy public key (${ prefix })": [
+        "Zkopírovat veřejný klíč (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "Zkopírovat číslo verze do schránky"
@@ -2390,8 +2393,23 @@
       ]
     },
     "Extended public key": {
-      "Public key (XPUB) copied to clipboard": [
-        "Veřejný klíč (XPUB) zkopírován do schránky"
+      "Descriptor copied to clipboard": [
+        "Popisovač zkopírován do schránky"
+      ],
+      "I want the ${ prefix } instead": [
+        "Místo toho chci ${ prefix }"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importujte tento popisovač do jiného softwaru peněženky, abyste mohli sledovat svůj zůstatek a generovat přijímací adresy, aniž byste odhalili své soukromé klíče."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Veřejný klíč (${ prefix }) zkopírován do schránky"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Ověřte, že se prvních několik odvozených adres shoduje s těmi v ${ WALLET_APP_NAME }, než budete pokračovat."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Důrazně doporučujeme používat výše uvedený popisovač, protože obsahuje všechny informace potřebné pro správné generování adresy. xpub, ypub a zpub nejsou součástí standardních BIP a měly by být používány pouze s opatrností."
       ]
     },
     "familyOffer_2023:Error": {
@@ -4932,9 +4950,6 @@
       ],
       "External recipient": [
         "Externí příjemce"
-      ],
-      "Public key (XPUB)": [
-        "Veřejný klíč (XPUB)"
       ]
     },
     "Safety review": {

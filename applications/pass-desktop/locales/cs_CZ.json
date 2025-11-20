@@ -622,6 +622,9 @@
       "Skip": [
         "Přeskočit"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Někdo s vámi sdílel položku ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Seřadit položky trezoru"
       ],
@@ -1222,6 +1225,9 @@
       ],
       "Trashing item failed": [
         "Přesun do koše selhal"
+      ],
+      "Try reaching out to the link owner.": [
+        "Zkuste kontaktovat vlastníka odkazu."
       ],
       "Unable to generate an OTP code for this item": [
         "Nelze vygenerovat OTP kód pro tuto položku"
@@ -1978,7 +1984,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -3708,6 +3717,9 @@
       ],
       "Theme": [
         "Motiv"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Tato položka je přístupná do ${ date } nebo do dosažení limitu počtu zobrazení."
       ],
       "Tier/Level": [
         "Úroveň"

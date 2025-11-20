@@ -2491,6 +2491,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Ανανεώνεται αυτόματα"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewLength } μήνα",
         "Ανανεώνεται αυτόματα σε ${ renewPrice }, για ${ renewLength } μήνες"
@@ -8707,11 +8710,11 @@
       "${ planName } expires today.": [
         "Το ${ planName } λήγει σήμερα."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } για οργανισμούς είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και ειδικούς που εργάζονται συνεχώς για να προστατέψουν τον οργανισμό σας από κακούς λειτουργούς και απειλές ασφαλείας."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και οι ειδικοί εργάζονται συνεχώς για να σας προστατεύσουν από κακούς λειτουργούς και από απειλές ασφαλείας."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και ειδικούς που εργάζονται συνεχώς για να προστατέψουν τον οργανισμό σας από κακούς λειτουργούς και απειλές ασφαλείας."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "Το ${ PROTON_SENTINEL_NAME } προστατεύει τον λογαριασμό σας με αποκλειστική παρακολούθηση ύποπτης δραστηριότητας."
@@ -11262,6 +11265,9 @@
       ],
       "Upgrade to unlock": [
         "Αναβαθμίστε για να ξεκλειδώσετε"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Αναβαθμίστε το πλάνο σας σε ${ firstPlanNames } ή ${ lastPlanName } για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME } για οργανισμούς."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Αναβαθμίστε το πλάνο σας σε ${ firstPlanNames } ή ${ lastPlanName } για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
@@ -21559,6 +21565,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Αναφορά Παρακολούθησης"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } για οργανισμούς"
       ],
       "(active)": [
         "(ενεργό)"
