@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "${ PASS_SHORT_APP_NAME } for Android": [
+        "${ PASS_SHORT_APP_NAME } voor Android"
+      ],
+      "${ PASS_SHORT_APP_NAME } for iOS": [
+        "${ PASS_SHORT_APP_NAME } voor iOS"
+      ],
       "Accept": [
         "Accepteren"
       ],
@@ -55,6 +61,9 @@
       ],
       "Advanced options": [
         "Geavanceerde instellingen"
+      ],
+      "Allow access": [
+        "Toegang verlenen"
       ],
       "and": [
         "en"
@@ -245,6 +254,9 @@
       "Dismiss": [
         "Negeren"
       ],
+      "Do not show again": [
+        "Niet meer weergeven"
+      ],
       "Do not show on this website": [
         "Niet weergeven op deze website"
       ],
@@ -298,6 +310,9 @@
       ],
       "Generating secure link...": [
         "Beveiligde link genereren..."
+      ],
+      "Get mobile and desktop apps": [
+        "Download mobiele en desktop apps"
       ],
       "Get Pass Business": [
         "Kies Pass Business"
@@ -704,6 +719,11 @@
         "Uitvouwen"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Wilt u dat uw klembord automatisch wordt gewist na ${ timeoutDurationHumanReadable }?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } is beschikbaar met een betaald abonnement. Upgrade om direct toegang te krijgen."
@@ -750,6 +770,9 @@
       ],
       "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
         "SPF ${ WIKIPEDIA_LINK_SPF } is een verificatiemethode ontworpen om het vervalsen van afzenderadressen te detecteren tijdens de levering van de e-mail. Het instellen van SPF wordt sterk aanbevolen om de kans te verminderen dat uw e-mails in de Spam map van de ontvanger terechtkomen."
+      ],
+      "These vaults will not be accessible and their content won’t be available to Search or Autofill.": [
+        "Deze kluizen zullen niet toegankelijk zijn en hun inhoud zal niet beschikbaar zijn voor Zoeken of Automatisch aanvullen."
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Dit account is kwetsbaar, bezoek de service en wijzig uw wachtwoord."
@@ -1024,6 +1047,9 @@
       "Importing items failed": [
         "Items importeren mislukt"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Om verder te gaan, vereist ${ PASS_APP_NAME } deze extensie-rechten: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Inactieve beveiligde links konden niet worden verwijderd."
       ],
@@ -1063,6 +1089,9 @@
       "Passphrase is incorrect": [
         "Wachtzin is onjuist"
       ],
+      "Permission denied for website access.": [
+        "Toestemming geweigerd voor website toegang."
+      ],
       "PIN codes do not match": [
         "Pincodes komen niet overeen"
       ],
@@ -1089,6 +1118,9 @@
       ],
       "Secure link could not be opened.": [
         "Beveiligde link kon niet worden geopend."
+      ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "De servers zijn onbereikbaar. Probeer ${ PASS_SHORT_APP_NAME } over enkele minuten te ontgrendelen."
       ],
       "Settings update failed": [
         "Bijwerken instellingen mislukt"
@@ -1179,6 +1211,9 @@
       ],
       "Wrong second password": [
         "Foutief tweede wachtwoord"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "U bent momenteel offline. Hervat de verbinding om ${ PASS_SHORT_APP_NAME } te ontgrendelen."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Uw browser ondervindt problemen bij het activeren van ${ PASS_APP_NAME }."
@@ -1501,6 +1536,9 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Gekopieerd naar klembord (verloopt over ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Kortingscode succesvol toegepast!"
       ],
@@ -1806,6 +1844,9 @@
       "Moving items to trash": [
         "Items verplaatsen naar prullenbak"
       ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Ga naar de instellingen van uw browser extensie en schakel sitemachtigingen in voor ${ PASS_SHORT_APP_NAME }."
+      ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Wil u iemand e-mailen, maar wilt u niet dat ze uw e-mailadres zien? Maak een alias aan."
       ],
@@ -1841,6 +1882,9 @@
       ],
       "Open the Extensions menu": [
         "Open het Extensie-menu"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Open de Safari-instellingen, zoek ${ PASS_APP_NAME }, ga naar \"Machtigingen\" en schakel sitemachtigingen in."
       ],
       "Owner": [
         "Eigenaar"
@@ -1978,8 +2022,17 @@
       "Please follow the steps below to set up your domain.": [
         "Volg onderstaande stappen om uw domein in te stellen."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Houd ${ PASS_APP_NAME } open, zodat het klembord automatisch gewist kan worden."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Houd dit venster open terwijl uw gegevens worden geïmporteerd. Dit proces kan enkele minuten duren."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Houd uw browser open, zodat het klembord automatisch gewist kan worden."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Zorg ervoor dat het eerder actieve venster de plek is waar u automatisch wilt typen en dat uw cursor op het inlogveld was gericht."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Let op: eenmaal verwijderd, de alias kan niet worden hersteld. Misschien wilt u de alias in plaats daarvan uitschakelen?"
@@ -2038,6 +2091,12 @@
       "Restoring trashed items...": [
         "Verwijderde items herstellen..."
       ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Klik met de rechtermuisknop op het pictogram van de extensie en selecteer \"Extensie beheren\". Navigeer naar \"Machtigingen & gegevens\" en schakel sitepermissies in."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Rechtsklik op het extensiepictogram en selecteer \"Extensie beheren\". Navigeer naar \"Site-toegang\" en schakel siterechten in."
+      ],
       "Save login": [
         "Bewaar login"
       ],
@@ -2067,6 +2126,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Geselecteerde items succesvol hersteld uit de prullenbak"
+      ],
+      "Servers are unreachable": [
+        "Servers zijn onbereikbaar"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
@@ -2352,6 +2414,12 @@
       "You may close this tab.": [
         "U kunt dit tabblad nu sluiten."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "U moet mogelijk een toestemmingsmelding accepteren en de toepassing herstarten, afhankelijk van uw systeem."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "U moet mogelijk toegangsrechten verlenen aan ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "U heeft een kluis nodig met editeer toelatingen om items te kunnen importeren"
       ],
@@ -2387,6 +2455,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3650,6 +3726,11 @@
         "U kunt dit venster sluiten na het opslaan van het bestand."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Toestemming van uw browser is vereist."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Voeg een geheime sleutel van 2FA toe"
@@ -4066,6 +4147,9 @@
       "Grant permissions": [
         "Toestemmingen verlenen"
       ],
+      "Hidden vaults": [
+        "Verborgen kluizen"
+      ],
       "Hide my email": [
         "Verberg mijn e-mail"
       ],
@@ -4163,6 +4247,9 @@
       ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data hangende"
+      ],
+      "Perform autotype?": [
+        "Wilt u autotype uitvoeren?"
       ],
       "Permanently remove all items?": [
         "Alle items permanent verwijderen?"
@@ -4272,6 +4359,9 @@
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"
+      ],
+      "Visible vaults": [
+        "Zichtbare kluizen"
       ],
       "Weak password": [
         "Zwak wachtwoord"
@@ -4436,6 +4526,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Extra wachtwoord moet ten minste 8 tekens bevatten"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Verleen klembordtoegang om het automatisch wissen van gekopieerde wachtwoorden en gegevens in te schakelen."
       ],
       "Invalid alias prefix": [
         "Ongeldig aliasvoorvoegsel"

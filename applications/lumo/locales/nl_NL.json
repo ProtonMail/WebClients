@@ -948,6 +948,9 @@
       ]
     },
     "collider_2025: Action": {
+      "Browse ${ DRIVE_SHORT_APP_NAME }": [
+        "Blader door ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -1069,6 +1072,11 @@
         "U heeft de controle"
       ]
     },
+    "collider_2025: Context": {
+      "I believe pizza is a vegetable if it has enough toppings": [
+        "Ik geloof dat pizza een groente is als er genoeg beleg op zit."
+      ]
+    },
     "collider_2025: Description": {
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Meld u aan om toegang te krijgen tot uw account en meer functies te ontgrendelen. Hebt u er geen? ${ createLink }"
@@ -1183,6 +1191,9 @@
       ]
     },
     "collider_2025: Info": {
+      "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
+        "${ DRIVE_SHORT_APP_NAME } opslagruimte is nog niet ingesteld"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
@@ -1333,17 +1344,28 @@
       "To refer back to this conversation later, sign in or create an account.": [
         "Om later naar dit gesprek te kunnen verwijzen, meldt u zich aan of maakt u een account aan."
       ],
+      "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
+        "Probeer de slimste versie van ${ LUMO_SHORT_APP_NAME } met geavanceerde mogelijkheden."
+      ],
       "Unable to parse this file as a table. You can view the raw content instead.": [
         "Kan dit bestand niet als tabel parseren. U kunt in plaats daarvan de ruwe inhoud bekijken."
       ],
       "Unsupported File Type": [
         "Niet-ondersteund bestandstype"
       ],
+      "Uploading ${ uploadProgress.fileName }": [
+        "Opladen van ${ uploadProgress.fileName }"
+      ],
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Let op spelfouten (bijv. proton.me vs pr0t0n.me)"
       ],
       "You are about to visit an external website:": [
         "U staat op het punt een externe website te bezoeken:"
+      ]
+    },
+    "collider_2025: Job": {
+      "Cat herder": [
+        "Kattenhoeder"
       ]
     },
     "collider_2025: Label": {
@@ -1358,6 +1380,14 @@
       ],
       "Unsafe or problematic": [
         "Onveilig of problematisch"
+      ]
+    },
+    "collider_2025: Legal link": {
+      "Privacy Policy": [
+        "Privacybeleid"
+      ],
+      "Terms": [
+        "Voorwaarden"
       ]
     },
     "collider_2025: Link": {
@@ -1384,6 +1414,16 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "upgrade naar ${ LUMO_SHORT_APP_NAME } Plus."
+      ]
+    },
+    "collider_2025: Personality": {
+      "Sassy Cat": [
+        "Pittige Kat"
+      ]
+    },
+    "collider_2025: Personality Description": {
+      "Energetic and fun-loving": [
+        "Energiek en levenslustig"
       ]
     },
     "collider_2025: Pill": {
@@ -1451,8 +1491,35 @@
       "About": [
         "Over"
       ],
+      "New": [
+        "Nieuw"
+      ],
       "Try ${ MAIL_APP_NAME }": [
         "Probeer ${ MAIL_APP_NAME }"
+      ]
+    },
+    "collider_2025: Trait": {
+      "Gen Z": [
+        "Generatie Z"
+      ]
+    },
+    "collider_2025: Trait Description": {
+      "Be conversational and engaging in responses": [
+        "Weest u conversatiegericht en boeiend in reacties"
+      ],
+      "Use modern slang and trendy communication style": [
+        "Gebruik moderne omgangstaal en een eigentijdse communicatiestijl"
+      ]
+    },
+    "collider_2025: Trait Sentence": {
+      "Maintain a formal and conventional approach.": [
+        "Hanteer een formele en conventionele benadering."
+      ],
+      "Use clever humor and wordplay when appropriate.": [
+        "Gebruik slimme humor en woordspelingen indien van toepassing."
+      ],
+      "Use modern slang and trendy communication style.": [
+        "Gebruik moderne omgangstaal en een eigentijdse communicatiestijl."
       ]
     },
     "collider_2025: Upsell": {
@@ -1478,6 +1545,9 @@
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Verdacht: ${ urlParts.subdomainCount } subdomein",
         "Verdacht: ${ urlParts.subdomainCount } subdomeinen"
+      ],
+      "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. ${ signInLink } for faster access.": [
+        "Er is momenteel een hogere dan gebruikelijke verkeersdrukte, waardoor reacties mogelijk iets trager zijn dan normaal. ${ signInLink } voor snellere toegang."
       ]
     },
     "collider_2025: Web Search": {
@@ -1486,6 +1556,9 @@
       ]
     },
     "collider_2025:Action": {
+      "Ask the model to be more careful and thorough": [
+        "Vraag het model om voorzichtiger en grondiger te zijn."
+      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -1517,6 +1590,9 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Krijg ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Manage chat knowledge files(${ totalFiles })": [
+        "Chatkennisbestanden beheren (${ totalFiles })"
       ],
       "New chat": [
         "Nieuwe chat"
@@ -1562,6 +1638,9 @@
     "collider_2025:Notification": {
       "Code copied to clipboard": [
         "Code gekopieerd naar klembord"
+      ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
       ]
     },
     "collider_2025:Placeholder": {

@@ -1158,6 +1158,9 @@
       "Secure link could not be opened.": [
         "Bezpečný odkaz nie je možné otvoriť"
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Servery sú nedostupné. Skúste odomknúť ${ PASS_SHORT_APP_NAME } o pár minút, prosím."
+      ],
       "Settings update failed": [
         "Aktualizácia nastavení zlyhala"
       ],
@@ -1244,6 +1247,9 @@
       ],
       "Wrong second password": [
         "Nesprávne druhé heslo"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Momentálne nie ste pripojení. Obnovte pripojenie, aby ste odomkli ${ PASS_SHORT_APP_NAME }, prosím."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Váš DNS nie je správne nastavený. MX záznam, ktorý sme získali, je:"
@@ -2204,6 +2210,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Vybrané položky boli úspešne obnovené z koša"
+      ],
+      "Servers are unreachable": [
+        "Servery sú nedostupné"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
