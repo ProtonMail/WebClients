@@ -11,6 +11,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Loader from '@proton/components/components/loader/Loader';
+import TrialInfoDashboardV2 from '@proton/components/containers/referral/components/TrialInfo/TrialInfoDashboardV2';
 import SubscriptionEndsBannerV2 from '@proton/components/containers/topBanners/SubscriptionEndsBannerV2';
 import useLoad from '@proton/components/hooks/useLoad';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -58,6 +59,7 @@ const YourPlanSectionV2 = ({ app, editBillingCycle = false, cta }: YourPlanSecti
                         />
                     </DashboardCardContent>
                 </DashboardCard>
+                <TrialInfoDashboardV2 />
             </DashboardGrid>
         </>
     );
