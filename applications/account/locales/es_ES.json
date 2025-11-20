@@ -8670,11 +8670,11 @@
       "${ planName } expires today.": [
         "${ planName } expira hoy."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } para organizaciones es un programa avanzado de protección de cuenta impulsado por sofisticados sistemas de IA y especialistas que trabajan las 24 horas para proteger a tu organización de malos actores y amenazas de seguridad."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } es un programa avanzado de protección de cuentas impulsado por sistemas sofisticados de inteligencia artificial y especialistas que trabajan las 24 horas para protegerte de malos actores y amenazas de seguridad."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } es un programa avanzado de protección de cuentas impulsado por sofisticados sistemas de inteligencia artificial y especialistas que trabajan las 24 horas para proteger a tu organización de malos actores y amenazas de seguridad."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado de actividades sospechosas."
@@ -11222,6 +11222,9 @@
       ],
       "Upgrade to unlock": [
         "Mejora tu suscripción para desbloquear"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Mejora tu plan a ${ firstPlanNames } o ${ lastPlanName } para obtener acceso a ${ PROTON_SENTINEL_NAME } para organizaciones."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Mejora tu plan a ${ firstPlanNames } o ${ lastPlanName } para obtener acceso a ${ PROTON_SENTINEL_NAME }."
@@ -21513,6 +21516,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Informe de ${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } para organizaciones"
       ],
       "(active)": [
         "(activo)"

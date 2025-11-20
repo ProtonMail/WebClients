@@ -1065,6 +1065,9 @@
       "Or": [
         "Ou"
       ],
+      "Or use a different Gmail address": [
+        "ou use um endereço do Gmail diferente"
+      ],
       "Ordered list": [
         "Lista ordenada"
       ],
@@ -2532,11 +2535,23 @@
       "11 tips to stop spam emails": [
         "11 dicas para parar e-mails de spam"
       ],
+      "5 ways to backup your files": [
+        "5 maneiras de fazer backup dos seus arquivos"
+      ],
+      "Apple can see much of what you store in iCloud": [
+        "Apple pode ver muito que você armazena no iCloud"
+      ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "Automatize ações recorrentes para classificar e organizar e-mails recebidos."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Alguém pode ver meu histórico de internet se usarmos o mesmo WiFi?"
+      ],
+      "Create and edit with confidence": [
+        "Crie e edite com confiança"
+      ],
+      "DeGoogle your life": [
+        "Desconecte sua vido do Google"
       ],
       "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
         "Descubra nossas dicas para gerenciar sua caixa de entrada de forma eficaz e manter a produtividade e o foco."
@@ -2571,6 +2586,9 @@
       "How to get to inbox zero: Privacy-first inbox organization tips": [
         "Como alcançar a caixa de entrada vazia: dicas de organização da caixa de entrada com foco na privacidade"
       ],
+      "How to prevent data breaches in your business": [
+        "Como evitar violações de dados na sua empresa"
+      ],
       "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
         "Se você quer elevar sua identidade profissional, é importante aprender por que e como criar um domínio de e-mail personalizado. A maioria das pessoas usa endereços de e-mail gratuitos com domínios padrão fornecidos pelo serviço de e-mail delas."
       ],
@@ -2604,6 +2622,9 @@
       "Protect your whole household with 1 device": [
         "Proteja toda a sua casa com 1 dispositivo"
       ],
+      "Safeguard your work": [
+        "Proteja seu trabalho"
+      ],
       "See and manage all your email subscriptions": [
         "Veja e gerencie todas as suas assinaturas de e-mail."
       ],
@@ -2612,6 +2633,9 @@
       ],
       "Share photos online privately": [
         "Compartilhar fotos on-line privadamente"
+      ],
+      "Share your account details, without risking a hack": [
+        "Compartilhe os detalhes da sua conta, sem arriscar de ser hackeado"
       ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Faça streaming para todas as grandes plataformas com ${ PLAN_NAMES[PLANS.VPN2024] }."
@@ -8593,9 +8617,6 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger você de pessoas mal-intencionadas e ameaças à segurança."
       ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger sua organização de pessoas mal-intencionadas e ameaças à segurança."
-      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado de atividades suspeitas."
       ],
@@ -11145,6 +11166,9 @@
       ],
       "Upgrade to unlock": [
         "Faça o upgrade para desbloquear"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Faça upgrade do seu plano para ${ firstPlanNames } ou ${ lastPlanName } para obter acesso ao ${ PROTON_SENTINEL_NAME } para organizações"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Faça upgrade do seu plano para ${ firstPlanNames } ou ${ lastPlanName } para obter acesso ao ${ PROTON_SENTINEL_NAME }."
@@ -17321,6 +17345,11 @@
         "Créditos serão adicionados ao seu saldo."
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Contas vitalícias podem ser transferidas ou vendidas"
+      ]
+    },
     "Payments.Lifetime Subscription.Renewal time": {
       "Never": [
         "Nunca"
@@ -21447,6 +21476,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Report"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } para organizações"
+      ],
       "(active)": [
         "(ativo)"
       ],
@@ -22201,8 +22233,14 @@
       "Get complete privacy coverage": [
         "Obtenha a cobertura completa de privacidade"
       ],
+      "Get more from your cloud storage": [
+        "Obtenha mais do seu armazenamento em nuvem"
+      ],
       "Get more from your email": [
         "Obtenha mais do seu e-mail"
+      ],
+      "Get more from your password manager": [
+        "Obtenha mais do seu gerenciador de senhas"
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
@@ -22561,6 +22599,9 @@
       ],
       "Remove domain": [
         "Remover domínio"
+      ],
+      "Remove forwarding address": [
+        "Remover endereço de encaminhamento"
       ],
       "Remove server?": [
         "Remover servidor?"
@@ -23667,6 +23708,9 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Economize até ${ priceString }** com uma assinatura mais longa. Os mesmos recursos premium, preço mais baixo."
+      ],
+      "Advanced security for your company": [
+        "Segurança avançada para sua empresa"
       ],
       "Advanced security for your company?": [
         "Segurança avançada para sua empresa?"
