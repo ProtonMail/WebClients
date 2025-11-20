@@ -1759,6 +1759,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移至其他保险库会清除其安全链接。"
+      ],
       "Moving items": [
         "正在移动"
       ],
