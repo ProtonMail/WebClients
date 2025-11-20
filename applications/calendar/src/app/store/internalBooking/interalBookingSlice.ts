@@ -18,6 +18,7 @@ import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/c
 import { decryptBookingContent } from '../../bookings/utils/decryptBookingContent';
 import { bookingSecretSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
+import { loadBookingPage } from './internalBookingActions';
 
 const name = 'internalBookings' as const;
 interface InternalBookingState extends CalendarsState, AddressKeysState, KtState {
@@ -136,6 +137,19 @@ const slice = createSlice({
             if (state.value?.bookingPages) {
                 state.value.bookingPages = state.value.bookingPages.filter((page) => page.id !== action.payload);
             }
+        });
+
+        builder.addCase(loadBookingPage.fulfilled, (state, { payload }) => {
+            if (!state.value) {
+                return;
+            }
+
+            const bookingPage = state.value.bookingPages.find((page) => page.id === payload.bookingId);
+            if (!bookingPage) {
+                return;
+            }
+
+            state.value.bookingPageEditData = payload;
         });
     },
 });
