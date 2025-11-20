@@ -23,7 +23,7 @@ interface Props {
 
 export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props) => {
     const [user] = useUser();
-    const { openBookingSidebar, canCreateBooking } = useBookings();
+    const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
@@ -33,7 +33,7 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
             return;
         }
 
-        openBookingSidebar(utcDate);
+        openBookingSidebarCreation(utcDate);
     };
 
     return (
