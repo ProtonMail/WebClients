@@ -1,7 +1,6 @@
 import { sha1 } from '@noble/hashes/sha1';
 import { c } from 'ttag';
 
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_DOWNLOAD, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -395,7 +394,7 @@ export default function initDownloadBlocks(
 
             if (checkFileHash && hashInstance) {
                 const sha1Digest = hashInstance.digest() as Uint8Array<ArrayBuffer>;
-                const fileHash = arrayToHexString(sha1Digest);
+                const fileHash = sha1Digest.toHex();
                 await checkFileHash(abortController.signal, fileHash);
             }
 

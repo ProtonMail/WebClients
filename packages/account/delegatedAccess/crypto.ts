@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 
 const DELEGATED_ACCESS_SIGNATURE_CONTEXT = {
     KEY_TOKEN_SIGNATURE_CONTEXT: 'account.key-token.delegated',
@@ -9,7 +8,7 @@ const DELEGATED_ACCESS_SIGNATURE_CONTEXT = {
 
 export const generateDelegatedAccessToken = () => {
     const randomBytes = crypto.getRandomValues(new Uint8Array(32));
-    return arrayToHexString(randomBytes);
+    return randomBytes.toHex();
 };
 
 export const getEncryptedDelegatedAccessToken = async ({

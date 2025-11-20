@@ -1,7 +1,5 @@
 import type { Certificate, GeneralName } from 'pkijs';
 
-import { hexStringToArray } from '@proton/crypto/lib/utils';
-
 import { ctLogs, rootCertificates } from '../constants/certificates';
 import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
 import { SCT_THRESHOLD, epochChainVersion } from '../constants/constants';
@@ -195,7 +193,7 @@ export const extractSCTs = (certificate: Certificate) => {
                     ...parsedValue
                         .toJSON()
                         .timestamps.map(({ logID }: { logID: string }) =>
-                            hexStringToArray(logID).toBase64()
+                            Uint8Array.fromHex(logID).toBase64()
                         )
                 );
             }

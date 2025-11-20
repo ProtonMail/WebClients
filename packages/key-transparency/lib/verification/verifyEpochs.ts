@@ -1,5 +1,4 @@
 import { CryptoProxy, serverTime } from '@proton/crypto';
-import { arrayToHexString, hexStringToArray } from '@proton/crypto/lib/utils';
 
 import { throwKTError } from '../helpers/utils';
 import type { Epoch } from '../interfaces';
@@ -18,12 +17,12 @@ export const verifyEpoch = async (epoch: Epoch) => {
     await verifySCT(epochCert, issuerCert);
 
     // 2. Validate the epoch
-    const checkChainHash = arrayToHexString(
+    const checkChainHash = (
         await CryptoProxy.computeHash({
             algorithm: 'SHA256',
-            data: hexStringToArray(`${PrevChainHash}${TreeHash}`),
+            data: Uint8Array.fromHex(`${PrevChainHash}${TreeHash}`),
         })
-    );
+    ).toHex();
     if (ChainHash !== checkChainHash) {
         return throwKTError('Chain hash of fetched epoch is not consistent', {
             ChainHash,

@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToHexString, binaryStringToArray, hexStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToArray } from '@proton/crypto/lib/utils';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -13,7 +13,7 @@ import { vrfVerify } from './vrf';
 /**
  * Pick the correct VRF key based on the domain
  */
-const getVRFKey = () => hexStringToArray(getBaseDomain() === KT_DOMAINS.PROD ? vrfHexKeyProd : vrfHexKeyDev);
+const getVRFKey = () => Uint8Array.fromHex(getBaseDomain() === KT_DOMAINS.PROD ? vrfHexKeyProd : vrfHexKeyDev);
 
 /**
  * Verify the VRF proof given by the server for a specific email address
@@ -22,7 +22,7 @@ const verifyVRFProof = async (proof: Proof, email: string) => {
     try {
         const vrfHash = await vrfVerify(
             binaryStringToArray(canonicalizeInternalEmail(email)),
-            hexStringToArray(proof.Verifier),
+            Uint8Array.fromHex(proof.Verifier),
             getVRFKey()
         );
         return vrfHash;
@@ -80,7 +80,7 @@ const verifyNeighbors = async (
         const bit = (key[Math.floor(i / 8)] >>> (8 - (i % 8) - 1)) & 1;
         let neighbor = emptyNode;
         if (neighborToCheck !== null) {
-            neighbor = hexStringToArray(neighborToCheck);
+            neighbor = Uint8Array.fromHex(neighborToCheck);
         }
 
         const toHash =
@@ -91,12 +91,12 @@ const verifyNeighbors = async (
         });
     }
 
-    if (arrayToHexString(leafValue) !== TreeHash) {
+    if (leafValue.toHex() !== TreeHash) {
         return throwKTError('Hash chain does not result in TreeHash', {
             Neighbors: JSON.stringify(Neighbors),
             TreeHash,
-            vrfHash: arrayToHexString(vrfHash),
-            leafValue: arrayToHexString(leafValue),
+            vrfHash: vrfHash.toHex(),
+            leafValue: leafValue.toHex(),
             incompleteHashing,
             email,
             proofType,

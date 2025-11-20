@@ -2,7 +2,6 @@ import { sha1 } from '@noble/hashes/sha1';
 import { getUnixTime } from 'date-fns';
 
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import {
     generateContentKeys,
@@ -156,7 +155,7 @@ async function start(
             duration: media?.duration,
         };
 
-        const sha1 = arrayToHexString(sha1Digest);
+        const sha1 = sha1Digest.toHex();
 
         const [xattr] = await Promise.all([
             encryptFileExtendedAttributes(
