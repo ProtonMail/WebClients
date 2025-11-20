@@ -12,7 +12,6 @@ import {
 } from 'date-fns';
 
 import {
-    convertTimestampToTimezone,
     convertUTCDateTimeToZone,
     fromLocalDate,
     fromUTCDate,
@@ -27,7 +26,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import type { CalendarViewEvent } from '../../../calendar/interface';
 import type { BookingFormData, BookingRange, RecurringRangeDisplay } from '../../bookingsProvider/interface';
 import { BOOKING_SLOT_ID, DEFAULT_RANGE_END_HOUR, DEFAULT_RANGE_START_HOUR } from '../../bookingsProvider/interface';
-import { roundToNextHalfHour } from '../timeHelpers';
+import { fromTimestampToUTCDate, roundToNextHalfHour } from '../timeHelpers';
 
 export const generateBookingRangeID = (start: Date, end: Date) => {
     return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
@@ -219,8 +218,8 @@ export const generateRangeFromSlots = (editData: BookingPageEditData): BookingRa
     const formattedSlots = editData.slots
         .map((slot) => ({
             ...slot,
-            start: toLocalDate(convertTimestampToTimezone(slot.start, slot.timezone)),
-            end: toLocalDate(convertTimestampToTimezone(slot.end, slot.timezone)),
+            start: fromTimestampToUTCDate(slot.start, slot.timezone),
+            end: fromTimestampToUTCDate(slot.end, slot.timezone),
         }))
         .sort((a, b) => a.start.getTime() - b.start.getTime());
 

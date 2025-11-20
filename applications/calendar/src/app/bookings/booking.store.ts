@@ -3,12 +3,12 @@ import { create } from 'zustand';
 
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 
-import { fromTimeSlotToUTCDate } from './components/bookingViewHelpers';
+import { fromTimestampToUTCDate } from '../containers/bookings/utils/timeHelpers';
 import { getDateKey } from './utils/bookingsHelpers';
 
 export type BookingTimeslot = {
     id: string;
-    // This date is adjusted to the selecetd timezone of the page. Use this to avoid problems.
+    // This date is adjusted to the selected timezone of the page. Use this to avoid problems.
     tzDate: Date;
     startTime: number;
     endTime: number;
@@ -82,7 +82,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     setBookingSlots: (bookingSlots: Omit<BookingTimeslot, 'tzDate'>[]) => {
         const newSlots = bookingSlots.map((slot) => ({
             ...slot,
-            tzDate: fromTimeSlotToUTCDate(slot as BookingTimeslot, get().selectedTimezone),
+            tzDate: fromTimestampToUTCDate(slot.startTime, get().selectedTimezone),
         }));
 
         const newTimeSlots = [...get().bookingSlots, ...newSlots].sort((a, b) => a.startTime - b.startTime);
@@ -108,7 +108,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     setSelectedTimezone: (timezone: string) => {
         const newSlots = get().bookingSlots.map((slot) => ({
             ...slot,
-            tzDate: fromTimeSlotToUTCDate(slot, timezone),
+            tzDate: fromTimestampToUTCDate(slot.startTime, timezone),
         }));
 
         set({ selectedTimezone: timezone, bookingSlots: newSlots });
