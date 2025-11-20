@@ -97,9 +97,10 @@ export const decryptBookingContent = async ({
         binaryMessage: base64StringToUint8Array(encryptedContent),
         passwords: [bookingKeyPassword],
         verificationKeys,
-        signatureContext: verificationKeys
-            ? { required: true, value: bookingContentSignatureValue(bookingUid) }
-            : undefined,
+        signatureContext:
+            verificationKeys && verificationKeys?.length > 0
+                ? { required: true, value: bookingContentSignatureValue(bookingUid) }
+                : undefined,
     });
 
     if (verificationKeys && verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {

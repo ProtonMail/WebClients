@@ -72,9 +72,10 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                 binaryMessage: base64StringToUint8Array(bookingPage.EncryptedSecret),
                 decryptionKeys,
                 verificationKeys: verifyingKeys,
-                signatureContext: verifyingKeys
-                    ? { value: bookingSecretSignatureValue(calendar.ID), required: true }
-                    : undefined,
+                signatureContext:
+                    verifyingKeys?.length > 0
+                        ? { value: bookingSecretSignatureValue(calendar.ID), required: true }
+                        : undefined,
                 format: 'binary',
             });
 

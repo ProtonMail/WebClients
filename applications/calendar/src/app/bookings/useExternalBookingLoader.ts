@@ -87,11 +87,11 @@ export const useExternalBookingLoader = () => {
                 // This will throw if the user is a guest
                 const user = await getUser();
                 if (user) {
-                    const verificationPreferences = await getVerificationPreferences({
+                    const { verifyingKeys: tmpVerifyingKeys } = await getVerificationPreferences({
                         email: user.Email,
                         lifetime: 0,
                     });
-                    verifyingKeys = verificationPreferences.verifyingKeys;
+                    verifyingKeys = tmpVerifyingKeys && tmpVerifyingKeys.length > 0 ? tmpVerifyingKeys : undefined;
                 }
             } catch (e) {}
 
