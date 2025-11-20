@@ -54,7 +54,6 @@ import {
     getIsCalendarProbablyActive,
     getIsCalendarWritable,
     getIsOwnedCalendar,
-    getVisualCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import {
     ATTENDEE_COMMENT_ENCRYPTION_TYPE,
@@ -168,7 +167,6 @@ import { type CalendarViewEventStore, eventsActions } from '../../store/events/e
 import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import { TEMPORARY_BOOKING_SLOT } from '../bookings/bookingsProvider/interface';
-import { convertBookingRangesToCalendarViewEvents } from '../bookings/utils/range/rangeHelpers';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -503,16 +501,8 @@ const InteractiveCalendarView = ({
     useBeforeUnload(isInTemporaryBlocking ? c('Alert').t`By leaving now, you will lose your event.` : '');
 
     const sortedEvents = useMemo(() => {
-        if (isBookingActive && createEventCalendar) {
-            // We want to use the color of the selected calendar in the form, we fallback to default calendar in case of an issue
-            const selectedCalendar = calendars.find((calendar) => calendar.ID === formData.selectedCalendar);
-            const calendarData = getVisualCalendar(selectedCalendar || createEventCalendar);
-            const booklyCalendarEvents = convertBookingRangesToCalendarViewEvents(calendarData, formData, date);
-            return sortEvents(booklyCalendarEvents.concat(events));
-        }
-
         return sortEvents(events.concat());
-    }, [events, isBookingActive, formData, createEventCalendar, calendars, date]);
+    }, [events]);
 
     const isProcessing = useCallback(
         (uniqueId: string) => {
