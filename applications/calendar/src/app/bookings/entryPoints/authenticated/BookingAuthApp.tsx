@@ -4,7 +4,6 @@ import { Router } from 'react-router-dom';
 import {
     ApiProvider,
     AuthenticationProvider,
-    ContactEmailsProvider,
     ErrorBoundary,
     LoaderPage,
     ModalsChildren,
@@ -75,13 +74,11 @@ export const BookingAuthApp = () => {
                     <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
                         <ApiProvider api={extraThunkArguments.api}>
                             <ErrorBoundary big component={<StandardErrorPage big />}>
-                                <ContactEmailsProvider>
-                                    <NotificationsChildren />
-                                    <ModalsChildren />
-                                    <Router history={extraThunkArguments.history}>
-                                        <BookingsRouter />
-                                    </Router>
-                                </ContactEmailsProvider>
+                                <NotificationsChildren />
+                                <ModalsChildren />
+                                <Router history={extraThunkArguments.history}>
+                                    <BookingsRouter />
+                                </Router>
                             </ErrorBoundary>
                         </ApiProvider>
                     </FlagProvider>
