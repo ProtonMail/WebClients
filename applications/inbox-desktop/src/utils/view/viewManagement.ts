@@ -413,16 +413,15 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
     const isAccountSwitching = isHomePage(url) && currentLocalID !== targetLocalID;
 
-    // NOTE isSameURL will ignore `#mailto` arguments, but we want to load even if it's
-    // same. In some cases this might cause a view reload.
+    // NOTE isSameURL will ignore `#mailto` arguments.
+    // In some cases we want to force react-router to re-evaluate what needs to be displayed.
+    // E.g. a mailto address might already be specified in the URL, and the composer was closed. The mailto in the URL is still kept.
+    // We would like to open it again if we're clicking on the same mailto URL, thus we force a router hash refresh.
     if (urlHasMailto(url) || urlHasOpenMailParams(url)) {
         if (viewURL == url) {
-            const defURL = url.replace(/#.*$/, "#mailto=default");
-            viewLogger(viewID).info(
-                `loadURL asked to navigate to the same anchor ${url}, first navigating to ${defURL}`,
-            );
-            viewURLMap[viewID] = defURL;
-            await view.webContents.loadURL(defURL);
+            const bounceHash = "_refresh_" + Date.now();
+            viewLogger(viewID).info(`Same anchor navigation detected for ${url}; forcing router hash refresh`);
+            await view.webContents.executeJavaScript(`location.hash = "${bounceHash}";`);
         }
     } else if (!isAccountSwitching && isSameURL(viewURL, url) && !force) {
         viewLogger(viewID).info("loadURL already in given url", url);
