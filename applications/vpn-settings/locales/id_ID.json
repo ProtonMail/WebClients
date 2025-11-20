@@ -632,6 +632,9 @@
       "Or": [
         "Atau"
       ],
+      "Or use a different Gmail address": [
+        "Atau gunakan alamat Gmail yang berbeda"
+      ],
       "Organization": [
         "Organisasi"
       ],
@@ -1018,6 +1021,9 @@
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
+      ],
+      "Use this Gmail address": [
+        "Gunakan alamat Gmail ini"
       ],
       "Use your current email instead": [
         "Gunakan alamat email Anda saat ini"
@@ -1422,6 +1428,11 @@
         "Acara tidak didukung"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } hasil lainnya tidak ditampilkan"
+      ]
+    },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Setelah uji coba ini berakhir pada ${ formattedDate }, paket Anda akan menjadi langganan berbayar yang diperbarui secara otomatis setiap ${ renewCycle } bulan. Anda tidak akan ditagih apabila Anda membatalkan sebelum ${ formattedDate }."
@@ -1708,6 +1719,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Diperbarui secara otomatis"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Diperbarui secara otomatis seharga ${ renewPrice }, selama ${ renewLength } bulan"
       ],
@@ -4801,6 +4815,9 @@
       "Secure streaming": [
         "Streaming aman"
       ],
+      "Secure vault, item, and link sharing": [
+        "Pembagian brankas, item, dan tautan aman"
+      ],
       "Stream from Netflix, HBO, and more": [
         "Tonton Netflix, HBO, dan lainnya"
       ]
@@ -5603,11 +5620,11 @@
       "${ planName } expires today.": [
         "${ planName } akan kedaluwarsa hari ini."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } untuk organisasi merupakan program perlindungan akun mutakhir yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi organisasi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } merupakan program perlindungan akun mutakhir yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } merupakan program perlindungan akun mutakhir yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi organisasi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
@@ -6947,6 +6964,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "Amankan akun ${ BRAND_NAME } Anda"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Konferensi video yang aman dan terenkripsi secara end-to-end"
+      ],
       "Securing your account": [
         "Mengamankan akun Anda"
       ],
@@ -7298,6 +7318,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Coba ${ productName } tanpa risiko apa pun - apabila karena satu dan lain hal Anda berubah pikiran, uang Anda akan dikembalikan sepenuhnya. Tanpa ada basa-basi."
       ],
+      "Two-factor authentication": [
+        "Autentikasi dua faktor"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Mode kata sandi ganda mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi data Anda. (Fitur lanjutan)"
       ],
@@ -7336,6 +7359,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Tingkatkan ke Professional atau paket yang lebih tinggi untuk membuka fitur ini"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Tingkatkan paket Anda ke ${ firstPlanNames } atau ${ lastPlanName } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME } untuk organisasi."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Tingkatkan paket Anda ke ${ firstPlanNames } atau ${ lastPlanName } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
@@ -7970,6 +7996,12 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
+      ],
+      "0 of 1 email address available": [
+        "0 dari 1 alamat email tersedia"
+      ],
+      "1 of 1 email address available": [
+        "1 dari 1 alamat email tersedia"
       ],
       "Account holder": [
         "Pemilik akun"
@@ -8915,6 +8947,9 @@
       "Reactivate now": [
         "Aktifkan ulang sekarang"
       ],
+      "Reactivate subscription": [
+        "Aktifkan ulang langganan"
+      ],
       "Request an invite": [
         "Minta undangan"
       ],
@@ -9762,6 +9797,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Pembagian berkas dengan hingga ${ n } pengguna"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
       ]
@@ -10295,6 +10333,9 @@
       ],
       "A disabled address cannot be default": [
         "Alamat yang dinonaktifkan tidak dapat dijadikan alamat bawaan"
+      ],
+      "Address reconnected.": [
+        "Alamat dihubungkan ulang."
       ],
       "An external address cannot be default": [
         "Alamat eksternal tidak dapat dijadikan alamat bawaan"
@@ -11067,6 +11108,12 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Harga diskon khusus ini valid untuk ${ subscriptionLength } bulan pertama."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
       ],
@@ -11145,6 +11192,24 @@
       ],
       "Credits will be added to your balance": [
         "Saldo akan ditambahkan ke tabungan Anda"
+      ]
+    },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Akun Lifetime dapat dipindahtangankan atau dijual"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Hubungi Layanan Dukungan untuk mengonfirmasi perubahan kepemilikan"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Tidak pernah"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Apakah Anda yakin ingin melanjutkan?"
       ]
     },
     "Payments.plan_name": {
@@ -11402,6 +11467,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Paket privasi dengan berbagai layanan premium dan ruang penyimpanan cloud terenkripsi ${ unlimitedPlanMaxSpace }, tersaji lengkap dalam satu bundel."
       ]
     },
     "Plans": {
@@ -13738,6 +13806,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } Teman berlangganan"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } untuk organisasi"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Klien ${ VPN_APP_NAME }"
       ],
@@ -13951,6 +14022,9 @@
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
       ],
+      "Connect a Gmail address": [
+        "Hubungkan alamat Gmail"
+      ],
       "Connect apps and devices": [
         "Hubungkan aplkasi dan perangkat"
       ],
@@ -14112,6 +14186,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Turunkan ke ${ downgradedPlanName }?"
+      ],
+      "Download ${ app }": [
+        "Unduh ${ app }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
@@ -14418,6 +14495,9 @@
       ],
       "Remove domain": [
         "Hapus domain"
+      ],
+      "Remove forwarding address": [
+        "Hapus alamat penerusan"
       ],
       "Remove server?": [
         "Hapus server?"
@@ -15100,6 +15180,9 @@
       ],
       "Did you know?": [
         "Tahukah Anda?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Dapatkan ruang penyimpanan ${ drivePlusPlanMaxSpace } untuk berkas, foto, dan dokumen Anda, serta pulihkan versi lawas berkas dengan pemulihan berkas hingga 10 tahun."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Lindungi organisasi Anda dari kebocoran data dengan ${ PLAN_NAMES[plan] }"

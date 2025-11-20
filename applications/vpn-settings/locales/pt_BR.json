@@ -632,6 +632,9 @@
       "Or": [
         "Ou"
       ],
+      "Or use a different Gmail address": [
+        "ou use um endereço do Gmail diferente"
+      ],
       "Organization": [
         "Organização"
       ],
@@ -5706,9 +5709,6 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger você de pessoas mal-intencionadas e ameaças à segurança."
       ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger sua organização de pessoas mal-intencionadas e ameaças à segurança."
-      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "O ${ PROTON_SENTINEL_NAME } protege sua conta com monitoramento dedicado de atividades suspeitas."
       ],
@@ -7483,6 +7483,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Faça upgrade para Professional ou um plano superior para desbloquear"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Faça upgrade do seu plano para ${ firstPlanNames } ou ${ lastPlanName } para obter acesso ao ${ PROTON_SENTINEL_NAME } para organizações"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Faça upgrade do seu plano para ${ firstPlanNames } ou ${ lastPlanName } para obter acesso ao ${ PROTON_SENTINEL_NAME }."
@@ -11426,6 +11429,11 @@
         "Créditos serão adicionados ao seu saldo."
       ]
     },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Contas vitalícias podem ser transferidas ou vendidas"
+      ]
+    },
     "Payments.Lifetime Subscription.Renewal time": {
       "Never": [
         "Nunca"
@@ -14114,6 +14122,9 @@
         "${ friendsSubscribed } amigo(a) inscrito(a)",
         "${ friendsSubscribed } amigos(as) inscritos(as)"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } para organizações"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } clientes"
       ],
@@ -14806,6 +14817,9 @@
       "Remove domain": [
         "Remover domínio"
       ],
+      "Remove forwarding address": [
+        "Remover endereço de encaminhamento"
+      ],
       "Remove server?": [
         "Remover servidor?"
       ],
@@ -15477,6 +15491,9 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Economize até ${ priceString }** com uma assinatura mais longa. Os mesmos recursos premium, preço mais baixo."
+      ],
+      "Advanced security for your company": [
+        "Segurança avançada para sua empresa"
       ],
       "Advanced security for your company?": [
         "Segurança avançada para sua empresa?"

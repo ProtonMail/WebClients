@@ -1693,6 +1693,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Wordt automatisch vernieuwd"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maand",
         "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maanden"
@@ -5612,9 +5615,6 @@
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } is een geavanceerd programma voor accountbescherming dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om u te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } is een geavanceerd accountbeschermingsprogramma dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om uw organisatie te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
