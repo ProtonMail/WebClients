@@ -56,8 +56,7 @@ const encryptBookingSlots = async (
         throw new Error('Calendar public key is required');
     }
 
-    const Slots: BookingPageSlotsPayload[] = [];
-    for (const slot of formData.bookingSlots) {
+    const slotPromises = formData.bookingSlots.map(async (slot) => {
         const sharedSessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: calendarPublicKeys });
         const bookingKeyPacket = await CryptoProxy.encryptSessionKey({
             ...sharedSessionKey,
@@ -84,7 +83,7 @@ const encryptBookingSlots = async (
             signatureContext: { critical: true, value: bookingSlotSignatureContextValue(bookingUid) },
         });
 
-        Slots.push({
+        return {
             StartTime: slot.start,
             EndTime: slot.end,
             Timezone: formData.timezone,
@@ -92,8 +91,10 @@ const encryptBookingSlots = async (
             DetachedSignature: slotSignature.toBase64(),
             BookingKeyPacket: bookingKeyPacket.toBase64(),
             SharedKeyPacket: sharedKeyPacket.toBase64(),
-        });
-    }
+        };
+    });
+
+    const Slots = await Promise.all(slotPromises);
 
     return Slots;
 };
