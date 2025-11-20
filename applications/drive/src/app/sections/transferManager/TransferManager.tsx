@@ -40,7 +40,7 @@ export const TransferManager = () => {
     }, [pendingConflict, showUploadConflictModal]);
 
     useEffect(() => {
-        if (status === TransferManagerStatus.InProgress) {
+        if (status === TransferManagerStatus.InProgress || status === TransferManagerStatus.Failed) {
             const message = c('Unload warning').t`Changes you made may not be saved.`;
             setLeaveMessage(message);
         } else {
