@@ -116,6 +116,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       this.getNode,
       this.eventBus,
       this.logger,
+      documentType,
     )
 
     this.docController = controller

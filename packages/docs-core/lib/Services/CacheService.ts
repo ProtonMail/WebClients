@@ -135,6 +135,16 @@ export class CacheService {
     }
   }
 
+  async removeCachedCommit(commitId: string): Promise<Result<void>> {
+    try {
+      await this.database.deleteRecords('commits', [commitId])
+      return Result.ok()
+    } catch (error) {
+      this.logger.error(`[CacheService] Failed to remove cached commit ${commitId}: ${error}`)
+      return Result.fail(`Failed to remove cached commit ${commitId}: ${error}`)
+    }
+  }
+
   async getCachedCommit(dto: { commitId: string }): Promise<Result<Commit | undefined>> {
     try {
       const recordsResult = await this.database.getRecordsByIndex('commits', 'id', dto.commitId)

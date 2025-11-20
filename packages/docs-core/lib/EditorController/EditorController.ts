@@ -120,6 +120,7 @@ export class EditorController implements EditorControllerInterface {
       'realtimeIsExperiencingErroredSync',
       'realtimeIsLockedDueToSizeContraint',
       'realtimeIsParticipantLimitReached',
+      'realtimeIsLockedDueToSquashError',
       'realtimeStatus',
       'userRole',
     ]
@@ -387,6 +388,8 @@ export class EditorController implements EditorControllerInterface {
       this.logger.info('Locking editor due to size constraint')
     } else if (this.documentState.getProperty('editorHasRenderingIssue')) {
       this.logger.info('Locking editor due to editor rendering issue')
+    } else if (this.documentState.getProperty('realtimeIsLockedDueToSquashError')) {
+      this.logger.info('Locking editor due to squash error')
     } else if (this.documentState.getProperty('realtimeStatus') !== 'connected') {
       this.logger.info('Locking editor due to websocket status', this.documentState.getProperty('realtimeStatus'))
     } else if (this.documentState.getProperty('documentTrashState') === 'trashed') {

@@ -49,6 +49,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     readonly _getNode: GetNode,
     readonly eventBus: InternalEventBusInterface,
     readonly logger: LoggerInterface,
+    readonly documentType: DocumentType,
   ) {
     this.subscribeToEvents()
   }
@@ -251,18 +252,13 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
     const { keys, nodeMeta } = this.documentState.getProperty('entitlements')
 
-    const result = await this._squashDocument.execute({
+    await this._squashDocument.execute({
       nodeMeta,
       commitId: baseCommit.commitId,
       keys,
       handleVerificationObjection,
+      documentType: this.documentType,
     })
-
-    if (result.isFailed()) {
-      this.logger.error('Failed to squash document', result.getError())
-    } else {
-      this.logger.info('Squash result', result.getValue())
-    }
   }
 
   public async duplicateDocument(editorYjsState: Uint8Array<ArrayBuffer>): Promise<void> {
