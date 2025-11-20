@@ -7,8 +7,6 @@ import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { TrialInfoModal } from '@proton/components/containers/referral/components/TrialInfo/TrialInfo';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import type { ADDON_NAMES } from '@proton/payments';
 import {
@@ -25,11 +23,7 @@ import {
     isManagedExternally,
     isTrial,
 } from '@proton/payments';
-import {
-    isReferralTrial,
-    isTrialRenewing,
-    willTrialExpireInLessThan1Week,
-} from '@proton/payments/core/subscription/helpers';
+import { isTrialRenewing, willTrialExpireInLessThan1Week } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -102,33 +96,13 @@ const AddonSection = ({
 };
 
 const TrialInfoBadge = ({ subscription }: { subscription: Subscription }) => {
-    const [modalProps, setModal, renderModal] = useModalState();
-    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
-
-    const pill = (
-        <Pill className="text-semibold" backgroundColor="#C9EBFF" color="#023856" rounded="rounded-sm">{c('Info')
-            .t`Free trial`}</Pill>
-    );
-
-    if (!isReferralExpansionEnabled || !isTrial(subscription)) {
+    if (!isTrial(subscription)) {
         return null;
     }
 
-    if (!isReferralTrial(subscription)) {
-        return pill;
-    }
-
     return (
-        <>
-            <button
-                onClick={() => setModal(true)}
-                type="button"
-                className="relative interactive-pseudo-protrude rounded"
-            >
-                {pill}
-            </button>
-            {renderModal && <TrialInfoModal modalProps={modalProps} />}
-        </>
+        <Pill className="text-semibold" backgroundColor="#C9EBFF" color="#023856" rounded="rounded-sm">{c('Info')
+            .t`Free trial`}</Pill>
     );
 };
 
@@ -248,7 +222,6 @@ export const CurrentPlanInfoSection = ({
 
     const cta = (() => {
         if (
-            showEditBillingDetails &&
             !isAutoRenewTrial(subscription) &&
             willTrialExpireInLessThan1Week(subscription) &&
             subscriptionExpiresSoon
@@ -260,7 +233,7 @@ export const CurrentPlanInfoSection = ({
             );
         }
 
-        if (showEditBillingDetails && isAutoRenewTrial(subscription) && isTrialRenewing(subscription)) {
+        if (isAutoRenewTrial(subscription) && isTrialRenewing(subscription)) {
             return (
                 <Button onClick={handleCancelSubscription} data-testid="edit-billing-details-trial-cancel-subscription">
                     {c('Action').t`Cancel subscription`}
