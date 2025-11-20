@@ -26,7 +26,10 @@ if (typeof browser !== 'undefined') {
          * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10*/
         const globalScope = self as any as ServiceWorkerGlobalScope;
 
-        const localeChunks = Object.keys(config.LOCALES).map((locale: string) => `chunk.locales/${locale}-json.js`);
+        const localeChunks = Object.keys(config.LOCALES)
+            .filter((locale) => locale !== 'en_US')
+            .map((locale) => `chunk.locales/${locale}-json.js`);
+
         const extraChunks = ['chunk.zip.js', 'chunk.csv.reader.js'];
         const cryptoChunks = [
             'chunk.crypto-worker-api.js',
