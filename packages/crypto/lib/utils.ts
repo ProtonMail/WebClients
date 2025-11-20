@@ -4,7 +4,7 @@ const ifDefined =
     <U extends T | undefined>(input: U) => {
         return (input !== undefined ? cb(input as T) : undefined) as U extends T ? R : undefined;
     };
-export const encodeUtf8 = ifDefined((input: string) => unescape(encodeURIComponent(input)));
+
 export const decodeUtf8 = ifDefined((input: string) => decodeURIComponent(escape(input)));
 
 const isString = (data: any): data is string | String => {

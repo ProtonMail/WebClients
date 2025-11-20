@@ -4,6 +4,13 @@ export const uint8ArrayToString = arrayToBinaryString;
 
 export const stringToUint8Array = binaryStringToArray;
 
+/**
+ * Convert a utf8 string to a so-called binary string, where each character can be encoded as one byte.
+ * The conversion done is equivalent to encoding the utf8 string to bytes (using the utf8 encoder)
+ * and decoding them back as 8-bit ASCII characters.
+ */
+export const utf8StringToBinaryString = (input: string) => unescape(encodeURIComponent(input));
+
 export const validateBase64string = (str: string, useVariantAlphabet?: boolean) => {
     const regex = useVariantAlphabet ? /^[-_A-Za-z0-9]*={0,3}$/ : /^[+/A-Za-z0-9]*={0,3}$/;
 
