@@ -27,7 +27,6 @@ export const loadBookingPage = createAsyncThunk<BookingPageEditData, string, Cal
                 start: slot.StartTime,
                 end: slot.EndTime,
                 timezone: slot.Timezone,
-                duration: slot.Duration,
                 rrule: slot.RRule,
             }));
 
