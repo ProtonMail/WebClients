@@ -1,3 +1,3 @@
-export const bookingSlotSignatureValue = (bookingID: string) => `bookings.slot.${bookingID}`;
-export const bookingContentSignatureValue = (bookingID: string) => `bookings.content.${bookingID}`;
-export const bookingSecretSignatureValue = (calendarID: string) => `bookings.secret.${calendarID}`;
+export const bookingSlotSignatureContextValue = (bookingID: string) => `bookings.slot.${bookingID}`;
+export const bookingContentSignatureContextValue = (bookingID: string) => `bookings.content.${bookingID}`;
+export const bookingSecretSignatureContextValue = (calendarID: string) => `bookings.secret.${calendarID}`;
