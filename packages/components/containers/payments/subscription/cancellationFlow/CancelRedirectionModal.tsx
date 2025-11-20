@@ -6,10 +6,9 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { PLANS } from '@proton/payments';
+import { PLANS, getRenewalTime } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { subscriptionExpires } from '../helpers';
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';
 
 interface Props extends ModalProps {
@@ -21,8 +20,11 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
     const { sendResubscribeModalResubcribeReport, sendResubscribeModalCloseReport } = useCancellationTelemetry();
     const [subscription] = useSubscription();
 
-    const subscriptionEndDate = fromUnixTime(subscriptionExpires(subscription, true).expirationDate ?? 0);
-    const subscriptionEndDateString = format(subscriptionEndDate, 'PPP', {
+    if (!subscription) {
+        return null;
+    }
+
+    const subscriptionEndDateString = format(fromUnixTime(getRenewalTime(subscription)), 'PPP', {
         locale: dateLocale,
     });
     const boldedDate = <strong key="subscription-end-date">{subscriptionEndDateString}</strong>;
