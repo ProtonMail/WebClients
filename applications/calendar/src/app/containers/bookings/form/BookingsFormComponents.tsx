@@ -43,7 +43,7 @@ export const FormLocationOptionContent = ({ value, text }: FormLocationOptionPro
     let icon: ReactNode = null;
     switch (value) {
         case BookingLocation.MEET:
-            icon = <MeetLogo variant="glyph-only" size={4} />;
+            icon = <MeetLogo variant="glyph-only" />;
             break;
         case BookingLocation.IN_PERSON:
             icon = <IcMapPin />;
@@ -52,7 +52,9 @@ export const FormLocationOptionContent = ({ value, text }: FormLocationOptionPro
 
     return (
         <span className="flex items-center gap-2">
-            {icon}
+            <span className="shrink-0 w-custom ratio-square" style={{ width: '1.25rem' }}>
+                {icon}
+            </span>
             {text}
         </span>
     );
