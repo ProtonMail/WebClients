@@ -12,6 +12,8 @@ body:has(.booking-sidebar-container) {
 
 .booking-sidebar {
 	&-container {
+		animation: booking-sidebar-in 0.15s ease-in-out;
+
 		@include media('<=#{$booking-sidebar-breakpoint}') {
 			position: absolute;
 			inset-block: 0;
@@ -20,7 +22,6 @@ body:has(.booking-sidebar-container) {
 			inset-inline-start: 0;
 			z-index: map.get($z-indexes, 'drawer');
 			background-color: var(--sidebar-background-color);
-			animation: booking-sidebar-in 0.15s ease-in-out;
 		}
 	}
 }
