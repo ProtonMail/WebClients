@@ -32,6 +32,7 @@ import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
 import { defaultTranslations, ensureTokenChargeable } from '../ensureTokenChargeable';
+import { abortSignalAny } from './AbortSignalAny';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
 /**
@@ -132,7 +133,7 @@ export const useChargebeeCardVerifyPayment = (api: Api): PaymentVerificatorV5 =>
         const tokenPaymentMethod = await new Promise<V5PaymentToken>((resolve, reject) => {
             const cancelledByUser = new AbortController();
 
-            const cancelledByAnything = AbortSignal.any(
+            const cancelledByAnything = abortSignalAny(
                 [cancelledByUser.signal, cancelledByCaller?.signal].filter(isTruthy)
             );
 
