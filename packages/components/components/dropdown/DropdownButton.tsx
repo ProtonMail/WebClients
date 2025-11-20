@@ -13,6 +13,7 @@ interface OwnProps {
     caretClassName?: string;
     hasCaret?: boolean;
     isOpen?: boolean;
+    caretAlt?: string;
 }
 
 export type DropdownButtonProps<E extends ElementType> = PolymorphicPropsWithRef<OwnProps, E>;
@@ -29,6 +30,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
         loading = false,
         disabled,
         as,
+        caretAlt,
         ...rest
     }: DropdownButtonProps<E>,
     ref: typeof rest.ref
@@ -54,6 +56,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
                 <DropdownCaret
                     className={clsx(['shrink-0', children ? ' ml-1' : '', caretClassName])}
                     isOpen={isOpen}
+                    caretAlt={caretAlt}
                 />
             )}
         </Element>
