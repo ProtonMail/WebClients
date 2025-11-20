@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import type { BackgroundProcessorOptions } from '@livekit/track-processors';
 import type { LocalParticipant, LocalTrackPublication } from 'livekit-client';
 import { ConnectionState, Track } from 'livekit-client';
 
@@ -9,49 +8,19 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import debounce from '@proton/utils/debounce';
 
 import { DEFAULT_DEVICE_ID } from '../constants';
-import { BackgroundBlur } from '../processors/background-processor/MulticlassBackgroundProcessor';
+import {
+    createBackgroundProcessor,
+    preloadBackgroundProcessorAssets,
+} from '../processors/background-processor/createBackgroundProcessor';
 import type { SwitchActiveDevice } from '../types';
 import { getPersistedBackgroundBlur, persistBackgroundBlur } from '../utils/backgroundBlurPersistance';
-import { isLowEndDevice } from '../utils/isLowEndDevice';
-
-const backgroundProcessorOptions: BackgroundProcessorOptions = {
-    assetPaths: {
-        tasksVisionFileSet: '/assets/background-blur',
-        modelAssetPath: isLowEndDevice()
-            ? 'assets/background-blur/selfie_segmenter.tflite'
-            : 'assets/background-blur/selfie_multiclass_256x256.tflite',
-    },
-};
-
-let backgroundBlurProcessorInstance: ReturnType<typeof BackgroundBlur> | null = null;
-let backgroundBlurInitializationFailed = false;
-
-const initializeBackgroundBlurProcessor = async (): Promise<boolean> => {
-    if (isMobile()) {
-        return false;
-    }
-
-    if (backgroundBlurProcessorInstance) {
-        return true;
-    }
-    if (backgroundBlurInitializationFailed) {
-        return false;
-    }
-
-    try {
-        backgroundBlurProcessorInstance = BackgroundBlur(60, undefined, backgroundProcessorOptions);
-        return true;
-    } catch (error) {
-        backgroundBlurInitializationFailed = true;
-        return false;
-    }
-};
 
 const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
     return [...localParticipant.trackPublications.values()].filter(
         (track) => track.kind === Track.Kind.Video && track.source !== Track.Source.ScreenShare
     );
 };
+const backgroundBlurProcessorInstance = createBackgroundProcessor();
 
 export const useVideoToggle = (
     activeCameraDeviceId: string,
@@ -64,7 +33,6 @@ export const useVideoToggle = (
 
     const [facingMode, setFacingMode] = useState<'environment' | 'user'>('user');
     const [backgroundBlur, setBackgroundBlur] = useState(getPersistedBackgroundBlur());
-    const [isBackgroundBlurSupported, setIsBackgroundBlurSupported] = useState(true);
 
     const toggleInProgress = useRef(false);
 
@@ -72,16 +40,7 @@ export const useVideoToggle = (
     const preventAutoApplyingBlur = useRef(false);
 
     useEffect(() => {
-        const initialize = async () => {
-            const isSupported = await initializeBackgroundBlurProcessor();
-            setIsBackgroundBlurSupported(isSupported);
-
-            // Pre-fetch the model asset to avoid blocking the main thread when the model is loaded
-            if (isSupported && backgroundProcessorOptions.assetPaths?.modelAssetPath && !isMobile()) {
-                void fetch(backgroundProcessorOptions.assetPaths.modelAssetPath, { cache: 'force-cache' });
-            }
-        };
-        void initialize();
+        void preloadBackgroundProcessorAssets();
     }, []);
 
     const getCurrentVideoTrack = () => {
@@ -171,7 +130,7 @@ export const useVideoToggle = (
     };
 
     const turnOnBackgroundBlur = async () => {
-        if (!isBackgroundBlurSupported || !backgroundBlurProcessorInstance) {
+        if (!backgroundBlurProcessorInstance) {
             return;
         }
 
@@ -181,7 +140,7 @@ export const useVideoToggle = (
     };
 
     const toggleBackgroundBlur = async () => {
-        if (!isBackgroundBlurSupported || !backgroundBlurProcessorInstance) {
+        if (!backgroundBlurProcessorInstance) {
             return;
         }
 
@@ -250,6 +209,6 @@ export const useVideoToggle = (
         toggleBackgroundBlur: debouncedToggleBackgroundBlur,
         isVideoEnabled: isCameraEnabled,
         facingMode,
-        isBackgroundBlurSupported,
+        isBackgroundBlurSupported: !!backgroundBlurProcessorInstance,
     };
 };

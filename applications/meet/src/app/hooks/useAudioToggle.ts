@@ -167,8 +167,8 @@ export const useAudioToggle = (
         if (isMicrophoneEnabled) {
             await toggleAudio({
                 isEnabled: isMicrophoneEnabled,
-                audioDeviceId: activeMicrophoneDeviceId,
                 enableNoiseFilter: !noiseFilter,
+                preserveCache: true,
             });
         } else {
             setNoiseFilter((prev) => !prev);

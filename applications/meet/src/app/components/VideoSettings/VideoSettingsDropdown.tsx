@@ -5,12 +5,15 @@ import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
+import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { DEFAULT_DEVICE_ID } from '../../constants';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import type { DeviceState } from '../../types';
 import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '../../utils/device-utils';
+import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 
 interface VideoSettingsDropdownProps {
@@ -39,6 +42,10 @@ const VideoSettingsDropdownComponent = ({
     const noCameraDetected = cameras.length === 0;
 
     const { activeBreakpoint } = useActiveBreakpoint();
+
+    const { backgroundBlur, toggleBackgroundBlur, isBackgroundBlurSupported } = useMediaManagementContext();
+
+    const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
 
     return (
         <DeviceSettingsDropdown
@@ -88,6 +95,19 @@ const VideoSettingsDropdownComponent = ({
                             Icon={IcCheckmark}
                         />
                     ))}
+                </div>
+                <div className="flex flex-column gap-4">
+                    <div className="color-weak meet-font-weight">{c('Info').t`Video effects`}</div>
+                    <div className="w-full pl-10 pr-4">
+                        <BackgroundBlurToggle
+                            backgroundBlur={backgroundBlur}
+                            loadingBackgroundBlur={loadingBackgroundBlur}
+                            isBackgroundBlurSupported={isBackgroundBlurSupported}
+                            onChange={() => {
+                                void withLoadingBackgroundBlur(toggleBackgroundBlur());
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
         </DeviceSettingsDropdown>

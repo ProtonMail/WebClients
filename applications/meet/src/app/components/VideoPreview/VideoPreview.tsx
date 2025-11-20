@@ -5,7 +5,12 @@ import type { LocalVideoTrack } from 'livekit-client';
 
 import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { createBackgroundProcessor } from '../../processors/background-processor/createBackgroundProcessor';
+
 import './VideoPreview.scss';
+
+const backgroundBlurProcessorInstance = createBackgroundProcessor();
 
 interface VideoPreviewProps {
     selectedCameraId: string;
@@ -15,6 +20,8 @@ interface VideoPreviewProps {
 export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps) => {
     const trackRef = useRef<LocalVideoTrack | null>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
+
+    const { isBackgroundBlurSupported, backgroundBlur } = useMediaManagementContext();
 
     useEffect(() => {
         const handleCameraToggle = async () => {
@@ -38,6 +45,10 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
                 });
 
                 if (videoRef.current && videoTrack) {
+                    if (backgroundBlurProcessorInstance && backgroundBlur && isBackgroundBlurSupported) {
+                        await videoTrack.setProcessor(backgroundBlurProcessorInstance);
+                    }
+
                     videoTrack.attach(videoRef.current);
                     trackRef.current = videoTrack;
                 }
@@ -48,15 +59,22 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
             }
         };
 
-        void handleCameraToggle();
-
-        return () => {
+        const cleanup = async () => {
             if (trackRef.current) {
+                if (isBackgroundBlurSupported && backgroundBlur && backgroundBlurProcessorInstance) {
+                    await trackRef.current.stopProcessor();
+                }
                 trackRef.current.stop();
                 trackRef.current = null;
             }
         };
-    }, [selectedCameraId, facingMode]);
+
+        void handleCameraToggle();
+
+        return () => {
+            void cleanup();
+        };
+    }, [selectedCameraId, facingMode, isBackgroundBlurSupported, backgroundBlur, backgroundBlurProcessorInstance]);
 
     return (
         <>

@@ -18,6 +18,82 @@ import {
     VERTICES,
 } from './constants';
 
+export interface BackgroundProcessorOptions extends ProcessorWrapperOptions {
+    blurRadius?: number;
+    segmenterOptions?: SegmenterOptions;
+    assetPaths?: {
+        tasksVisionFileSet?: string;
+        modelAssetPath?: string;
+    };
+}
+
+const CACHE_NAME = 'proton-meet-background-blur-v1';
+
+const fetchWithCache = async (url: string): Promise<Response> => {
+    if (!('caches' in window)) {
+        return fetch(url);
+    }
+
+    try {
+        const cache = await caches.open(CACHE_NAME);
+        const cachedResponse = await cache.match(url);
+
+        if (cachedResponse) {
+            return cachedResponse;
+        }
+
+        const response = await fetch(url);
+        if (response.ok) {
+            await cache.put(url, response.clone());
+        }
+        return response;
+    } catch {
+        return fetch(url);
+    }
+};
+
+const getCachedModelBuffer = async (modelPath: string): Promise<Uint8Array<ArrayBuffer>> => {
+    const response = await fetchWithCache(modelPath);
+    const arrayBuffer = await response.arrayBuffer();
+    return new Uint8Array(arrayBuffer) as Uint8Array<ArrayBuffer>;
+};
+
+export const preloadBackgroundBlurAssets = async (assetPaths?: {
+    tasksVisionFileSet?: string;
+    modelAssetPath?: string;
+}) => {
+    if (!('caches' in window)) {
+        return;
+    }
+
+    const filesetPath = assetPaths?.tasksVisionFileSet ?? DEFAULT_ASSET_PATH;
+    const modelPath = assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH;
+
+    const wasmFiles = [`${filesetPath}/vision_wasm_internal.wasm`, `${filesetPath}/vision_wasm_internal.js`, modelPath];
+
+    try {
+        const cache = await caches.open(CACHE_NAME);
+
+        await Promise.all(
+            wasmFiles.map(async (url) => {
+                try {
+                    const cached = await cache.match(url);
+                    if (!cached) {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            await cache.put(url, response);
+                        }
+                    }
+                } catch {
+                    // Ignore individual fetch errors
+                }
+            })
+        );
+    } catch {
+        // Cache API failed, but don't block
+    }
+};
+
 export default class MulticlassBackgroundProcessor extends VideoTransformer<BackgroundOptions> {
     static get isSupported() {
         return (
@@ -66,9 +142,31 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     }
 
     private async initializeSegmenter(delegateOverride?: 'GPU' | 'CPU') {
-        const fileSet = await vision.FilesetResolver.forVisionTasks(
-            this.options.assetPaths?.tasksVisionFileSet ?? DEFAULT_ASSET_PATH
-        );
+        const filesetPath = this.options.assetPaths?.tasksVisionFileSet ?? DEFAULT_ASSET_PATH;
+        const modelPath = this.options.assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH;
+
+        // Create custom fileset that uses cached wasm files
+        const wasmLoaderPath = `${filesetPath}/vision_wasm_internal.js`;
+        const wasmBinaryPath = `${filesetPath}/vision_wasm_internal.wasm`;
+
+        // Fetch wasm files from cache
+        const [wasmLoaderResponse, wasmBinaryResponse] = await Promise.all([
+            fetchWithCache(wasmLoaderPath),
+            fetchWithCache(wasmBinaryPath),
+        ]);
+
+        const [wasmLoaderBlob, wasmBinaryBlob] = await Promise.all([
+            wasmLoaderResponse.blob(),
+            wasmBinaryResponse.blob(),
+        ]);
+
+        const fileSet = {
+            wasmLoaderPath: URL.createObjectURL(wasmLoaderBlob),
+            wasmBinaryPath: URL.createObjectURL(wasmBinaryBlob),
+        };
+
+        // Get cached model buffer
+        const modelAssetBuffer = await getCachedModelBuffer(modelPath);
 
         const configuredDelegate = this.options.segmenterOptions?.delegate;
         const normalizedDelegate =
@@ -78,7 +176,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         try {
             this.imageSegmenter = await vision.ImageSegmenter.createFromOptions(fileSet, {
                 baseOptions: {
-                    modelAssetPath: this.options.assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH,
+                    modelAssetBuffer,
                     ...(this.options.segmenterOptions ?? {}),
                     delegate: desiredDelegate,
                 },
