@@ -51,6 +51,6 @@ describe('DecryptedCommit', () => {
         timestamp: 123456,
       }),
     ])
-    expect(decryptedCommit.needsSquash()).toBe(false)
+    expect(decryptedCommit.needsSquash('doc')).toBe(false)
   })
 })

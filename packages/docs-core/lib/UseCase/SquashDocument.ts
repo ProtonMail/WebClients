@@ -58,6 +58,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     private logger: LoggerInterface,
     private unleashClient: UnleashClient,
     private cacheService: CacheService,
+    // @ts-expect-error - eventBus is temporarily not used
     private eventBus: InternalEventBusInterface,
   ) {}
 
@@ -114,11 +115,20 @@ export class SquashDocument implements UseCaseInterface<boolean> {
       }
 
       const squashCommit = squashCommitResult.getValue()
+      if (squashCommit === undefined) {
+        // nothing to squash which means the commit is already squashed but we've loaded
+        // a cached version, which we can remove.
+        this.logger.info('[Squash] No updates to squash, removing commit from cache...')
+        this.attemptsToSquash = 0
+        void this.removeCommitFromCache(decryptedCommit.commitId)
+        return Result.ok(true)
+      }
 
       this.logger.info('[Squash] Sending squash commit to API...')
 
       const commitResult = await this.docsApi.squashCommit(nodeMeta, decryptedCommit.commitId, squashCommit)
       if (commitResult.isFailed()) {
+        metrics.docs_aborted_squashes_total.increment({ reason: 'network_error' })
         throw new Error(commitResult.getErrorMessage())
       }
 
@@ -136,14 +146,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
       metrics.docs_squashes_total.increment({})
 
-      void this.cacheService
-        .removeCachedCommit(squashLock.commitId)
-        .then(() => {
-          this.logger.info(`[Squash] Removed cached commit ${squashLock.commitId} after successful squash`)
-        })
-        .catch((error) => {
-          this.logger.error(`[Squash] Failed to remove cached commit ${squashLock.commitId}: ${error}`)
-        })
+      void this.removeCommitFromCache(squashLock.commitId)
     } catch (error) {
       this.logger.error(`[Squash] Failed to squash document: ${error}`)
       if (lockID) {
@@ -154,10 +157,10 @@ export class SquashDocument implements UseCaseInterface<boolean> {
       }
       if (this.attemptsToSquash >= MaxRetryAttempts) {
         this.logger.error(`[Squash] Failed to squash document after ${MaxRetryAttempts} attempts`)
-        this.eventBus.publish({
-          type: SquashErrorEvent,
-          payload: undefined,
-        })
+        // this.eventBus.publish({
+        //   type: SquashErrorEvent,
+        //   payload: undefined,
+        // })
         return Result.fail(`Failed to squash document after ${MaxRetryAttempts} attempts`)
       } else {
         const delay = Math.min(Math.pow(2, this.attemptsToSquash) * 1000, MaxRetryBackoffInMilliseconds)
@@ -174,12 +177,23 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     return Result.ok(true)
   }
 
+  async removeCommitFromCache(commitId: string): Promise<void> {
+    void this.cacheService
+      .removeCachedCommit(commitId)
+      .then(() => {
+        this.logger.info(`[Squash] Removed cached commit ${commitId} after successful squash`)
+      })
+      .catch((error) => {
+        this.logger.error(`[Squash] Failed to remove cached commit ${commitId}: ${error}`)
+      })
+  }
+
   async squashTheCommit(
     decryptedCommit: DecryptedCommit,
     squashLock: SquashLock,
     keys: DocumentKeys,
     documentType: DocumentType,
-  ): Promise<Result<SquashCommit>> {
+  ): Promise<Result<SquashCommit | undefined>> {
     const updatePairs: UpdatePair[] = decryptedCommit.messages.map((update, index) => ({
       encrypted: squashLock.commit.updates.documentUpdates[index],
       decrypted: update,
@@ -188,7 +202,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     this.logger.info('[Squash] Executing squash algorithm...')
 
     const squashResult = await this.squashAlgoritm.execute(updatePairs, {
-      limit: GetCommitDULimit(),
+      limit: GetCommitDULimit(documentType),
       factor: SQUASH_FACTOR,
     })
     if (squashResult.isFailed()) {
@@ -199,8 +213,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     const squashValue = squashResult.getValue()
 
     if (!squashValue.updatesAsSquashed) {
-      metrics.docs_aborted_squashes_total.increment({ reason: 'unknown' })
-      return Result.fail('Squash failed; nothing to squash.')
+      return Result.ok(undefined)
     }
 
     this.logger.info('[Squash] Encrypting squash result...')
