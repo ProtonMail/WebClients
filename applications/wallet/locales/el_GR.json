@@ -97,8 +97,11 @@
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
       ],
-      "Copy public key (XPUB)": [
-        "Αντιγραφή δημόσιου κλειδιού (XPUB)"
+      "Copy descriptor": [
+        "Αντιγραφή περιγραφέα"
+      ],
+      "Copy public key (${ prefix })": [
+        "Αντιγραφή δημόσιου κλειδιού (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
@@ -2376,8 +2379,23 @@
       ]
     },
     "Extended public key": {
-      "Public key (XPUB) copied to clipboard": [
-        "Το δημόσιο κλειδί (XPUB) αντιγράφηκε στο πρόχειρο"
+      "Descriptor copied to clipboard": [
+        "Ο περιγραφέας αντιγράφηκε στο πρόχειρο"
+      ],
+      "I want the ${ prefix } instead": [
+        "Θέλω το ${ prefix } αντ' αυτού"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Εισάγετε αυτόν τον περιγραφέα σε άλλο λογισμικό πορτοφολιού για να παρακολουθείτε το υπόλοιπό σας και να δημιουργείτε διευθύνσεις λήψης χωρίς να εκθέτετε τα ιδιωτικά σας κλειδιά."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Το δημόσιο κλειδί (${ prefix }) αντιγράφηκε στο πρόχειρο"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Επαληθεύστε ότι οι πρώτες παραγόμενες διευθύνσεις ταιριάζουν με αυτές στο ${ WALLET_APP_NAME } πριν προχωρήσετε."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Συνιστούμε ανεπιφύλακτα να χρησιμοποιείτε τον παραπάνω περιγραφέα αντ'αυτού, καθώς περιέχει όλες τις απαραίτητες πληροφορίες για τη σωστή δημιουργία διευθύνσεων. Τα xpub, ypub και zpub δεν αποτελούν μέρος των τυπικών BIP και πρέπει να χρησιμοποιούνται με προσοχή."
       ]
     },
     "familyOffer_2023:Error": {
@@ -4818,9 +4836,6 @@
       ],
       "External recipient": [
         "Εξωτερικός παραλήπτης"
-      ],
-      "Public key (XPUB)": [
-        "Δημόσιο κλειδί (XPUB)"
       ]
     },
     "Safety review": {

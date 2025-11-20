@@ -1282,6 +1282,12 @@
       ]
     },
     "Info": {
+      "${ maxParticipants } participant limit reached": [
+        "La limite de ${ maxParticipants } participants a été atteinte."
+      ],
+      "${ participantCount } of ${ maxParticipants } participants": [
+        "${ participantCount } sur ${ maxParticipants } participants"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
@@ -1356,6 +1362,9 @@
       ],
       "Loading...": [
         "Chargement en cours"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Réunion pleine (${ maxParticipants } participants)"
       ],
       "Member": [
         "Membre"

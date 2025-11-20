@@ -5706,11 +5706,11 @@
       "${ planName } expires today.": [
         "${ planName } bugün sona eriyor."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "Kuruluşlar için ${ PROTON_SENTINEL_NAME }, kuruluşunuzu kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için 24 saat çalışan sofistike yapay zeka sistemleri ve uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME }, sizi kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME }, kuruluşunuzu kötü niyetli kişilerden ve güvenlik tehditlerinden korumak için günün her saati çalışan, gelişmiş yapay zeka sistemleri ile uzmanlar tarafından desteklenen gelişmiş bir hesap koruma programıdır."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } şüpheli etkinlikleri özel olarak izleyerek hesabınızı korur."
@@ -7486,6 +7486,9 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Professional ya da daha yüksek bir tarifeye yükselterek kullanın"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Kuruluşlar için ${ PROTON_SENTINEL_NAME } hizmetine erişmek için ${ firstPlanNames } ya da ${ lastPlanName } tarifesine yükseltin."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "${ PROTON_SENTINEL_NAME } hizmetine erişmek için ${ firstPlanNames } ya da ${ lastPlanName } tarifesine yükseltin."
@@ -14080,6 +14083,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } arkadaş abone oldu",
         "${ friendsSubscribed } arkadaş abone oldu"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "Kuruluşlar için ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } istemcileri"

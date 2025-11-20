@@ -1065,6 +1065,9 @@
       "Or": [
         "Atau"
       ],
+      "Or use a different Gmail address": [
+        "Atau gunakan alamat Gmail yang berbeda"
+      ],
       "Ordered list": [
         "Daftar numerik"
       ],
@@ -1611,6 +1614,9 @@
       "Use recovery code": [
         "Gunakan kode pemulihan"
       ],
+      "Use this Gmail address": [
+        "Gunakan alamat Gmail ini"
+      ],
       "Use your current email instead": [
         "Gunakan alamat email Anda saat ini"
       ],
@@ -2131,6 +2137,11 @@
         "Tambah ke kalender dan tandai sebagai belum ditanggapi"
       ]
     },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } hasil lainnya tidak ditampilkan"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Saya sedang berada di luar kantor dengan akses email yang terbatas."
@@ -2458,6 +2469,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Diperbarui secara otomatis"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Diperbarui secara otomatis seharga ${ renewPrice }, selama ${ renewLength } bulan"
       ],
@@ -2501,6 +2515,12 @@
       "11 tips to stop spam emails": [
         "11 tips untuk menghentikan email spam"
       ],
+      "5 ways to backup your files": [
+        "5 cara untuk mencadangkan berkas Anda"
+      ],
+      "Apple can see much of what you store in iCloud": [
+        "Apple dapat melihat banyak hal yang Anda simpan di iCloud"
+      ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "Otomatiskan tindakan berulang untuk menyortir dan mengorganisir email yang masuk."
       ],
@@ -2510,14 +2530,26 @@
       "Create and edit with confidence": [
         "Buat dan sunting dengan penuh keyakinan"
       ],
+      "Data breaches are on the rise. For businesses, a single breach can result in stolen customer data, regulatory penalties, lost revenue, and lasting reputational damage. Luckily, your team can prevent most breaches with the right mix of security practices, technology, and awareness.": [
+        "Kebocoran data saat ini sedang marak-maraknya. Untuk bisnis, satu kebocoran saja dapat mengakibatkan tercurinya data pelanggan, sanksi hukum, hilangnya pendapatan, dan kerusakan reputasi yang berkepanjangan. Untungnya, tim Anda daapt mencegah sebagian besar kebocoran ini dengan menggabungkan praktik, teknologi, dan pemahaman keamanan yang tepat guna."
+      ],
+      "DeGoogle your life": [
+        "Lepas Google dari hidup Anda"
+      ],
       "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
         "Telusuri tips dari kami untuk mengelola kotak masuk Anda secara efektif agar Anda dapat tetap produktif dan terfokus."
       ],
       "Easily manage your inbox": [
         "Kelola kotak masuk Anda dengan mudah"
       ],
+      "Easily manage your inbox with ${ mailPlusPlanName }": [
+        "Kelola kotak masuk Anda secara mudah dengan ${ mailPlusPlanName }"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Aktifkan kill switch dan penghubungan otomatis pada pengaturan VPN Anda."
+      ],
+      "Find out how to delete photos from Google Photos and use a private cloud storage app instead.": [
+        "Cari tahu cara untuk menghapus foto dari Google Photos dan menggunakan aplikasi penyimpanan privat berbasis cloud sebagai gantinya."
       ],
       "Get a clean inbox with filters": [
         "Dapatkan kotak masuk yang bersih dengan filter"
@@ -2528,17 +2560,29 @@
       "Get round-the-clock protection": [
         "Dapatkan perlindungan sepanjang waktu"
       ],
+      "Helping someone connect to a new WiFi network is a regular occurrence. It’s likely you’ve done it many times at home or work. In this article, we’re going to examine the easiest ways to share WiFi passwords between devices, the risks associated with insecurely sharing your WiFi password, and the safest way to do it.": [
+        "Membantu orang lain untuk terhubung ke jaringan WiFi yang baru merupakan hal yang lumrah. Sering kalinya, Anda telah banyak melakukan hal ini di rumah atau di tempat kerja. Pada artikel ini, kami akan membahas berbagai cara yang paling mudah untuk membagikan kata sandi WiFi antar perangkat, risiko yang dapat timbul dari membagikan kata sandi WiFi secara tidak aman, dan cara yang paling aman untuk membagikan kata sandi ini."
+      ],
       "How safe is Telegram?": [
         "Seberapa aman Telegram?"
       ],
       "How to change your IP address on Windows": [
         "Cara mengubah alamat IP Anda di Windows"
       ],
+      "How to easily & securely share your WiFi password": [
+        "Cara membagikan kata sandi WiFI secara mudah dan aman"
+      ],
+      "How to export passwords from Chrome": [
+        "Cara mengekspor kata sandi dari Chrome"
+      ],
       "How to get a custom email domain": [
         "Cara memperoleh domain email khusus"
       ],
       "How to get to inbox zero: Privacy-first inbox organization tips": [
         "Cara mencapai kotak masuk tanpa pesan yang belum terbaca: Kiat organisasi kotak masuk yang mengutamakan privasi"
+      ],
+      "How to prevent data breaches in your business": [
+        "Cara mencegah kebocoran data pada bisnis Anda"
       ],
       "iCloud is not private by default. Here's what Apple can see in iCloud.": [
         "iCloud tidak privat secara bawaan. Berikut ini adalah apa-apa saja yang dapat Apple lihat di iCloud."
@@ -2548,6 +2592,9 @@
       ],
       "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
         "Apabila Anda ingin mengembangkan identitas profesional Anda, penting adanya bagi Anda untuk mempelajari mengapa Anda perlu dan bagaimana caranya untuk membuat domain email khusus milik Anda sendiri. Kebanyakan orang hanya menggunakan alamat email gratis dengan domain bawaan yang disediakan oleh layanan email mereka."
+      ],
+      "If you want to leave Google, one of the first things you must do is stop using its proprietary browser, Chrome, and its built-in password manager. A vital first step towards leaving Google is downloading your passwords so you can transition more easily to a new, better password manager.": [
+        "Apabila Anda ingin melepas diri Anda dari Google, salah satu hal pertama yang harus Anda lakukan adalah berhenti menggunakan browser milik perusahaan ini, Chrome, beserta dengan pengelola kata sandi yang terkandung di dalamnya. Untuk mencapai hal ini, langkah penting yang paling pertama adalah mengunduh kata sandi Anda sehingga Anda dapat berpindah secara lebih mudah ke pengelola kata sandi yang baru dan lebih baik."
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "Pada artikel ini, kita akan menelusuri siapa saja yang dapat melihat riwayat internet Anda pada saat Anda menggunakan WiFi, hal apa saja yang dapat mereka lihat, dan mengapa mereka bisa sampai melakukan hal ini."
@@ -2561,14 +2608,38 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "Apakah Telegram aman untuk digunakan? Seperti yang akan kita bahas pada artikel ini, segala sesuatunya sangat tergantung dari bagaimana Anda menggunakan Telegram."
       ],
+      "Keep your email spam-free": [
+        "Jaga email Anda bebas dari spam"
+      ],
+      "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
+        "Jaga agar berkas milik tim Anda tetap terlindung, dapat diakses, dan tersinkron dengan ${ DRIVE_APP_NAME } for Business."
+      ],
+      "Learn how Big Tech uses family photos to train AI, how it affects you.": [
+        "Pelajari bagaimana berbagai firma teknologi raksasa (Big Tech) menggunakan foto keluarga Anda untuk melatih AI, dan bagaimana hal ini dapat memengaruhi Anda."
+      ],
+      "Learn how many GB are in a TB and discover the best way to securely store and share your files — no matter their size.": [
+        "Pelajari berapa banyak GB yang ada dalam satu TB dan temukan cara terbaik untuk menyimpan dan membagikan berkas Anda secara aman — tanpa peduli seberapa besar ukuran berkas ini."
+      ],
+      "Learn how to back up your files to the cloud or on an external drive while keeping your data secure.": [
+        "Pelajari cara untuk mencadangkan berkas Anda ke layanan cloud atau perangkat lunak eksternal sambil menjaga data Anda tetap aman."
+      ],
       "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
         "Pelajari cara untuk mengalahkan pesan sampah yang mengganggu dan dapat membahayakan. Email spam, yang juga dikenal sebagai pesan sampah, dapat menjelma menjadi sesuatu yang lebih berbahaya dari sekadar tumpukan sampah di kotak masuk Anda. Para penjahat siber dapat menggunakan pesan yang tidak diminta dan tidak diinginkan ini untuk meluncurkan serangan phishing dan menyebarkan malware."
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Pelajari cara untuk mengaktifkan ${ VPN_APP_NAME } pada router Anda."
       ],
+      "Learn how to make account sharing simple for any family member.": [
+        "Pelajari cara untuk menyederhanakan pembagian akun untuk seluruh anggota keluarga."
+      ],
+      "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
+        "Pelajari cara untuk membagikan item, tautan terenkripsi, atau brankas tunggal melalui ${ PASS_APP_NAME }."
+      ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Menjelajahi internet yang penuh dengan penjual data, spam, penipuan, dan malware terasa kian sulit setiap harinya. Inilah mengapa ${ PASS_APP_NAME } menawarkan yang lebih dari hanya sekadar membantu Anda mengelola, menyimpan, dan mengisi kata sandi Anda secara otomatis. Kami memberikan Anda alat untuk memperoleh kendali atas privasi Anda dan melindungi kotak masuk Anda dengan alias hide-my-email."
+      ],
+      "Organize your memories into albums": [
+        "Organisir kenangan Anda ke dalam album"
       ],
       "Protect your business communications": [
         "Lindungi percapakan bisnis Anda"
@@ -2579,17 +2650,41 @@
       "Protect your company with strong passwords and safe sharing.": [
         "Lindungi perusahaan Anda dengan kata sandi yang kuat dan pembagian item yang aman."
       ],
+      "Protect your family online and make account sharing easy": [
+        "Lindungi keluarga Anda secara online dan permudah pembagian akun"
+      ],
       "Protect your whole household with 1 device": [
         "Lindungi seluruh rumah tangga Anda dengan 1 perangkat"
       ],
+      "Safeguard your work": [
+        "Amankan pekerjaan Anda"
+      ],
       "See and manage all your email subscriptions": [
         "Lihat dan kelola seluruh langganan email Anda"
+      ],
+      "Send files via secure links or email, revoke access whenever needed.": [
+        "Bagikan berkas melalui tautan aman atau email, dan cabut akses ke berkas ini kapan pun dibutuhkan."
+      ],
+      "Share files securely": [
+        "Bagikan berkas secara aman"
+      ],
+      "Share photos online privately": [
+        "Bagikan foto online secara privat"
+      ],
+      "Share your account details, without risking a hack": [
+        "Bagikan rincian akun Anda tanpa berisiko untuk diretas"
+      ],
+      "Sign up for services without sharing your email with aliases.": [
+        "Daftarkan diri Anda ke berbagai layanan tanpa perlu membagikan alamat email asli Anda dengan alias email."
       ],
       "Storage capacity explained": [
         "Penjelasan kapasitas penyimpanan"
       ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Tonton tayangan streaming dari seluruh platform besar dengan ${ PLAN_NAMES[PLANS.VPN2024] }."
+      ],
+      "Take advantage of advanced email alias feature in ${ PASS_APP_NAME }": [
+        "Manfaatkan fitur alias email canggih di ${ PASS_APP_NAME }"
       ],
       "The average professional receives around 120 emails a day, amounting to roughly 43,800 emails a year. No matter what industry you work in, that’s an overwhelming amount of business email to deal with.": [
         "Pelaku bisnis profesional menerima sekitar 120 email per harinya, atau kurang lebih setara dengan 43800 email per tahunnya. Terlepas dari pada industri apa Anda bekerja, jumlah ini adalah jumlah yang sangat banyak untuk ditangani."
@@ -2600,11 +2695,17 @@
       "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
         "Cara yang paling pribadi dan aman untuk berkomunikasi secara online adalah dengan menggunakan enkripsi end-to-end. Apabila Anda mengirimkan email yang terenkripsi end-to-end, email ini terenkripsi pada perangkat Anda (mis. iPhone, Android, atau laptop Anda) dan tidak akan didekripsi hingga email ini mencapai perangkat milik orang yang Anda tuju."
       ],
+      "The most secure way to send pictures is with end-to-end encryption. Here are four ways to store and share photos privately.": [
+        "Cara paling aman untuk mengirimkan gambar adalah dengan enkripsi end-to-end. Berikut merupakan empat cara untuk menyimpan dan membagikan foto secara pribadi."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Artikel ini telah diperbarui untuk meliputi protokol VPN WireGuard dan Stealth."
       ],
       "Try out **Newsletters view** to declutter your inbox.": [
         "Coba **tampilan Buletin** kami untuk merapikan kotak masuk Anda."
+      ],
+      "Understand passkeys, their benefits over passwords, and how ${ PASS_APP_NAME } keeps them safe.": [
+        "Pahami apa itu kunci sandi, manfaatnya dibandingkan dengan kata sandi, dan bagaimana ${ PASS_APP_NAME } menjaga kunci ini tetap aman."
       ],
       "VPN Accelerator uses a combination of advanced VPN technologies to improve connection stability and increase your connection speed": [
         "VPN Accelerator menggunakan kombinasi serangkaian teknologi VPN mutakhir untuk meningkatkan stabilitas dan meningkatkan kecepatan koneksi Anda"
@@ -2614,6 +2715,9 @@
       ],
       "We discuss how to change the external and local IP addresses of your Windows device.": [
         "Kami membahas cara untuk mengubah alamat IP eksternal dan lokal milik perangkat Windows Anda."
+      ],
+      "What are passkeys and how do they work?": [
+        "Apa itu kunci sandi dan bagaimana kunci ini bekerja?"
       ],
       "What is a safe username?": [
         "Apa itu nama pengguna yang aman?"
@@ -2638,6 +2742,9 @@
       ],
       "Worried about data breaches?": [
         "Khawatir dengan pembobolan data?"
+      ],
+      "Write, edit, and collaborate on documents with our secure online editors.": [
+        "Tulis, sunting, dan kolaborasikan dokumen dengan aplikasi penyunting online kami."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Foto keluarga Anda digunakan untuk melatih AI, dan berikut adalah cara untuk menghentikannya"
@@ -3126,6 +3233,9 @@
       ],
       "AI assistant that respects business confidentiality": [
         "Asisten AI yang menghargai kerahasiaan bisnis"
+      ],
+      "AI assistant that respects your privacy": [
+        "Asisten AI yang menghargai privasi Anda"
       ],
       "Basic chat history": [
         "Riwayat percakapan dasar"
@@ -4416,6 +4526,9 @@
       ]
     },
     "Dashboard": {
+      "Communicate and schedule with end-to-end encryption.": [
+        "Berkomunikasilah dan jadwalkan berbagai hal dengan enkripsi end-to-end."
+      ],
       "Experience true freedom online and safeguard your privacy.": [
         "Rasakan kebebasan online yang hakiki dan lindungi privasi Anda."
       ],
@@ -4884,6 +4997,9 @@
       "Download for Brave": [
         "Unduh untuk Brave"
       ],
+      "Download for Chrome": [
+        "Unduh untuk Chrome"
+      ],
       "Download for Edge": [
         "Unduh untuk Edge"
       ],
@@ -4910,6 +5026,12 @@
       ],
       "Download on the Google Play Store": [
         "Unduh di Google Play Store"
+      ],
+      "download the app (APK)": [
+        "unduh aplikasi ini (APK)"
+      ],
+      "Edge": [
+        "Edge"
       ],
       "Fire TV": [
         "Fire TV"
@@ -4958,6 +5080,12 @@
       ],
       "Mobile": [
         "Perangkat seluler"
+      ],
+      "Safari": [
+        "Safari"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Pindai kode QR ini dengan perangkat seluler Anda"
       ],
       "Scan the QR code with your mobile device. You can also ${ downloadButton } directly.": [
         "Pindai kode QR ini dengan perangkat seluler Anda. Anda juga dapat secara langsung ${ downloadButton }."
@@ -7256,6 +7384,9 @@
       "Secure streaming": [
         "Streaming aman"
       ],
+      "Secure vault, item, and link sharing": [
+        "Pembagian brankas, item, dan tautan aman"
+      ],
       "Stream from Netflix, HBO, and more": [
         "Tonton Netflix, HBO, dan lainnya"
       ]
@@ -7876,6 +8007,9 @@
       "Contact us": [
         "Hubungi kami"
       ],
+      "Downloads": [
+        "Unduhan"
+      ],
       "Enjoying ${ planName }?": [
         "Menikmati ${ planName }?"
       ],
@@ -8445,11 +8579,11 @@
       "${ planName } expires today.": [
         "${ planName } akan kedaluwarsa hari ini."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } untuk organisasi merupakan program perlindungan akun mutakhir yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi organisasi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } merupakan program perlindungan akun mutakhir yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } merupakan program perlindungan akun mutakhir yang diberdayakan oleh sistem AI canggih dan para ahli yang bekerja tanpa henti untuk melindungi organisasi Anda dari pelaku tindak kejahatan dan ancaman keamanan."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pengawasan yang telaten terhadap aktivitas yang mencurigakan."
@@ -10041,6 +10175,9 @@
       "On": [
         "Nyala"
       ],
+      "On Ubuntu?": [
+        "Menggunakan Ubuntu?"
+      ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
       ],
@@ -10367,6 +10504,9 @@
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Amankan akun ${ BRAND_NAME } Anda"
+      ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Konferensi video yang aman dan terenkripsi secara end-to-end"
       ],
       "Securing your account": [
         "Mengamankan akun Anda"
@@ -10896,6 +11036,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Coba ${ productName } tanpa risiko apa pun - apabila karena satu dan lain hal Anda berubah pikiran, uang Anda akan dikembalikan sepenuhnya. Tanpa ada basa-basi."
       ],
+      "Two-factor authentication": [
+        "Autentikasi dua faktor"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Mode kata sandi ganda mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi data Anda. (Fitur lanjutan)"
       ],
@@ -10949,6 +11092,9 @@
       ],
       "Upgrade to unlock": [
         "Tingkatkan untuk membuka"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Tingkatkan paket Anda ke ${ firstPlanNames } atau ${ lastPlanName } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME } untuk organisasi."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Tingkatkan paket Anda ke ${ firstPlanNames } atau ${ lastPlanName } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
@@ -12132,11 +12278,17 @@
       "/month x ${ months }": [
         "/bulan x ${ months }"
       ],
+      "0 of 1 email address available": [
+        "0 dari 1 alamat email tersedia"
+      ],
       "1 hour": [
         "1 jam"
       ],
       "1 minute": [
         "1 menit"
+      ],
+      "1 of 1 email address available": [
+        "1 dari 1 alamat email tersedia"
       ],
       "10 hide-my-email aliases": [
         "10 alias hide-my-email"
@@ -13739,6 +13891,9 @@
       "Reactivate now": [
         "Aktifkan ulang sekarang"
       ],
+      "Reactivate subscription": [
+        "Aktifkan ulang langganan"
+      ],
       "Request an invite": [
         "Minta undangan"
       ],
@@ -13753,6 +13908,9 @@
       ],
       "Sign in": [
         "Masuk"
+      ],
+      "Snap store": [
+        "toko Snap"
       ],
       "switch account": [
         "ganti akun"
@@ -14929,6 +15087,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
+      "Vault sharing with up to ${ n } person": [
+        "Pembagian berkas dengan hingga ${ n } pengguna"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
       ]
@@ -15530,6 +15691,9 @@
       ],
       "A disabled address cannot be default": [
         "Alamat yang dinonaktifkan tidak dapat dijadikan alamat bawaan"
+      ],
+      "Address reconnected.": [
+        "Alamat dihubungkan ulang."
       ],
       "An external address cannot be default": [
         "Alamat eksternal tidak dapat dijadikan alamat bawaan"
@@ -16606,6 +16770,9 @@
       "Welcome to ${ plan }": [
         "Selamat datang di ${ plan }"
       ],
+      "You already have a ${ BRAND_NAME } account and can start using ${ PASS_APP_NAME } right away.": [
+        "Anda telah memiliki akun ${ BRAND_NAME } dan dapat mulai menggunakan ${ PASS_APP_NAME } dengan segera."
+      ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Anda telah memiliki akses ke seluruh fitur premium ${ appName } — Anda tidak perlu membeli paket apapun lagi."
       ],
@@ -16891,6 +17058,12 @@
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
       ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Harga diskon khusus ini valid untuk ${ subscriptionLength } bulan pertama."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini valid untuk bulan pertama. Kupon ini valid untuk ${ couponRedemptions } kali pembaruan. Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } untuk 1 bulan. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
       ],
@@ -16969,6 +17142,24 @@
       ],
       "Credits will be added to your balance": [
         "Saldo akan ditambahkan ke tabungan Anda"
+      ]
+    },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Akun Lifetime dapat dipindahtangankan atau dijual"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Hubungi Layanan Dukungan untuk mengonfirmasi perubahan kepemilikan"
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Tidak pernah"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Apakah Anda yakin ingin melanjutkan?"
       ]
     },
     "Payments.plan_name": {
@@ -17287,6 +17478,9 @@
       ],
       "Perfect for getting started with secure cloud storage.": [
         "Paket yang sempurna untuk memulai dengan ruang penyimpanan cloud yang aman."
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Paket privasi dengan berbagai layanan premium dan ruang penyimpanan cloud terenkripsi ${ unlimitedPlanMaxSpace }, tersaji lengkap dalam satu bundel."
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Ruang penyimpanan cloud dan kolaborasi yang aman untuk tim."
@@ -18172,6 +18366,9 @@
       "Your recovery email can **only recover access to your account**.": [
         "Email pemulihan Anda **hanya dapat memulihkan akses ke akun Anda**."
       ],
+      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Email pemulihan Anda dapat disalahgunakan oleh penyerang siber untuk mengambil alih akun Anda. ${ disableEmail } untuk meningkatkan keamanan akun Anda."
+      ],
       "Your recovery email has been enabled": [
         "Email pemulihan Anda telah diaktifkan"
       ],
@@ -18192,6 +18389,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Ponsel pemulihan Anda **hanya dapat memulihkan akses ke akun Anda**."
+      ],
+      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Nomor telepon pemulihan Anda dapat disalahgunakan oleh penyerang siber untuk mengambil alih akun Anda. ${ disablePhone } untuk meningkatkan keamanan akun Anda."
       ],
       "Your recovery phone has been enabled": [
         "Ponsel pemulihan Anda telah diaktifkan"
@@ -20977,6 +21177,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Laporan ${ PASS_SHORT_APP_NAME } Monitor"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } untuk organisasi"
+      ],
       "(active)": [
         "(aktif)"
       ],
@@ -21274,6 +21477,9 @@
       "Connect ${ name }": [
         "Hubungkan ${ name }"
       ],
+      "Connect a Gmail address": [
+        "Hubungkan alamat Gmail"
+      ],
       "Connect apps and devices": [
         "Hubungkan aplkasi dan perangkat"
       ],
@@ -21403,8 +21609,14 @@
       "Decrypt key": [
         "Dekripsi kunci"
       ],
+      "Deep dive into cloud storage blog posts": [
+        "Dalami postingan blog ruang penyimpanan cloud kami"
+      ],
       "Deep dive into email blog posts": [
         "Dalami postingan blog email"
+      ],
+      "Deep dive into password manager blog posts": [
+        "Dalami postingan blog pengelola kata sandi kami"
       ],
       "Deep dive into VPN blog posts": [
         "Dalami postingan blog VPN"
@@ -21501,6 +21713,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Turunkan ke ${ downgradedPlanName }?"
+      ],
+      "Download ${ app }": [
+        "Unduh ${ app }"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
@@ -21709,6 +21924,9 @@
       "Generate SMTP token": [
         "Hasilkan token SMTP"
       ],
+      "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
+        "Dapatkan ruang penyimpanan ${ planMaxSpace } untuk berkas, foto, dan dokumen Anda dengan ${ planName }. ${ upgradeButton }"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
       ],
@@ -21721,6 +21939,9 @@
       "Get complete privacy coverage": [
         "Dapatkan cakupan privasi yang menyeluruh"
       ],
+      "Get more from your cloud storage": [
+        "Dapatkan yang lebih dari ruang penyimpanan cloud Anda"
+      ],
       "Get more from your email": [
         "Dapatkan yang lebih dari email Anda"
       ],
@@ -21729,6 +21950,9 @@
       ],
       "Get more from your VPN": [
         "Dapatkan yang lebh dari VPN Anda"
+      ],
+      "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
+        "Dapatkan aplikasinya pada seluruh perangkat Anda dan nikmati akses yang aman dan terpadu di mana saja."
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
         "Dapatkan aplikasinya pada seluruh perangkat Anda dan lindungi hingga ${ VPN_CONNECTIONS } secara bersamaan."
@@ -21873,6 +22097,9 @@
       ],
       "Main password": [
         "Kata sandi utama"
+      ],
+      "Manage files across devices on Windows, Mac, Android, and iOS.": [
+        "Kelola berkas lintas perangkat pada Windows, Mac, Android, dan iOS."
       ],
       "Messages": [
         "Pesan"
@@ -22077,6 +22304,9 @@
       ],
       "Remove domain": [
         "Hapus domain"
+      ],
+      "Remove forwarding address": [
+        "Hapus alamat penerusan"
       ],
       "Remove server?": [
         "Hapus server?"
@@ -23192,6 +23422,9 @@
       ],
       "Did you know?": [
         "Tahukah Anda?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Dapatkan ruang penyimpanan ${ drivePlusPlanMaxSpace } untuk berkas, foto, dan dokumen Anda, serta pulihkan versi lawas berkas dengan pemulihan berkas hingga 10 tahun."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Lindungi organisasi Anda dari kebocoran data dengan ${ PLAN_NAMES[plan] }"

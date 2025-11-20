@@ -1130,6 +1130,9 @@
       "Secure link could not be opened.": [
         "Legătura web securizată nu a putut fi deschisă."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Serverele nu sunt accesibile. Vă rugăm să încercați să deblocați ${ PASS_SHORT_APP_NAME } peste câteva minute."
+      ],
       "Settings update failed": [
         "Actualizarea setărilor a eșuat."
       ],
@@ -1219,6 +1222,9 @@
       ],
       "Wrong second password": [
         "Parola secundară nu este corectă."
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Nu aveți conexiune. Reconectați-vă pentru a debloca ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Navigatorul web întâmpină dificultăți la activarea ${ PASS_APP_NAME }."
@@ -1856,11 +1862,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2156,6 +2157,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Articolele selectate s-au restaurat din gunoi."
+      ],
+      "Servers are unreachable": [
+        "Serverele nu sunt disponibile."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
