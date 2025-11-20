@@ -21,7 +21,7 @@ import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
-import type { Subscription } from '@proton/payments';
+import { type Subscription, getRenewalTime } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -81,13 +81,13 @@ export const ServersSection = ({ organization, app }: { organization?: Organizat
 export const BillingDateSection = ({ subscription }: { subscription: Subscription }) => {
     const { renewDisabled } = subscriptionExpires(subscription);
 
-    if (!subscription?.PeriodEnd) {
+    if (!subscription) {
         return false;
     }
 
     const formattedPeriodEndDate = (
         <Time format="PP" key="period-end" data-testid="period-end">
-            {subscription?.PeriodEnd}
+            {getRenewalTime(subscription)}
         </Time>
     );
 

@@ -23,6 +23,7 @@ import {
     getAvailableSubscriptionActions,
     getPlan,
     getPlanName,
+    getRenewalTime,
     hasCancellablePlan,
     hasMigrationDiscount,
     hasPassLaunchOffer,
@@ -311,7 +312,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             }
         }
 
-        const { PeriodEnd = 0 } = subscription || {};
         const currentPlan = getPlan(subscription);
         const shortPlan = currentPlan
             ? getShortPlan(currentPlan.Name as PLANS, plansMap, {
@@ -333,7 +333,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                     plansMap,
                     app,
                     shortPlan,
-                    periodEnd: PeriodEnd,
+                    periodEnd: getRenewalTime(subscription),
                     freePlan,
                     cancellationFlow: true,
                     subscription,
@@ -372,6 +372,10 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     };
 
     const handleUnsubscribe = async (subscriptionReminderFlow: boolean = false) => {
+        if (!subscription) {
+            return SUBSCRIPTION_KEPT;
+        }
+
         const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
             user,
             newPlan: {},
@@ -384,7 +388,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             await showDiscountWarningModal();
         }
 
-        const { PeriodEnd = 0 } = subscription || {};
         const currentPlan = getPlan(subscription);
         const shortPlan = currentPlan
             ? getShortPlan(currentPlan.Name as PLANS, plansMap, {
@@ -400,7 +403,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 plansMap,
                 app,
                 shortPlan,
-                periodEnd: PeriodEnd,
+                periodEnd: getRenewalTime(subscription),
                 freePlan,
                 cancellationFlow: false,
                 subscription,
