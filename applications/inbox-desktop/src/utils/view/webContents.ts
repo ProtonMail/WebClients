@@ -6,6 +6,7 @@ import {
     isAccountLogin,
     isAccountSwitch,
     isAccoutLite,
+    isBookingURL,
     isCalendar,
     isGoogleOAuthAuthorizationURL,
     isHome,
@@ -154,6 +155,13 @@ export function handleWebContents(contents: WebContents) {
             return details.preventDefault();
         }
 
+        // We want to open booking URLs in the browser to avoid blocking the user
+        if (isBookingURL(details.url)) {
+            logger().info("opening booking URL in browser", details.url);
+            shell.openExternal(details.url);
+            return details.preventDefault();
+        }
+
         // Only redirect to a different browser view if the navigation is happening in
         // the visible web contents.
         if (isCurrentContent()) {
@@ -180,6 +188,13 @@ export function handleWebContents(contents: WebContents) {
         const { url } = details;
         const logWindowOpen = (status: "allowed" | "denied", description: string, level: "debug" | "error" = "debug") =>
             logger()[level](`Window open (${status}) ${description}`);
+
+        // We want to open booking URLs in the browser to avoid blocking the user
+        if (isBookingURL(url)) {
+            logWindowOpen("denied", `booking link in browser ${url}`);
+            shell.openExternal(url);
+            return { action: "deny" };
+        }
 
         if (isCalendar(url)) {
             logWindowOpen("denied", `calendar link in calendar view ${url}`);
