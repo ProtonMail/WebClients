@@ -1,3 +1,11 @@
+### Version 1.33.0
+
+- Enable automatic clipboard clearing
+- Fine-tune extension in-app menu
+- Fine-tune detached extension mode
+- Fix post-quantum crypto chunk registration [chrome]
+- Fix in-app notifications race-condition
+
 ### Version 1.32.11
 
 - Improve in-app notifications
