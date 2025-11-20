@@ -32,7 +32,7 @@ export const splitTimeGridEventsPerDay = ({
     max: maxDate,
     totalMinutes,
 }: SplitTimeGridEventsPerDay) => {
-    return events.reduce<{ [key: string]: LayoutEvent[] }>((acc, { start, end }, i) => {
+    return events.reduce<{ [key: string]: LayoutEvent[] }>((acc, { start, end, uniqueId }, i) => {
         const startDate = startOfDay(max(start, minDate));
         const endDate = endOfDay(min(end, maxDate));
 
@@ -61,7 +61,7 @@ export const splitTimeGridEventsPerDay = ({
             const endTimeWithMinDuration =
                 endTime - startTimeWithMinDuration < MIN_DURATION ? startTimeWithMinDuration + MIN_DURATION : endTime;
 
-            acc[key].push({ idx: i, start: startTimeWithMinDuration, end: endTimeWithMinDuration });
+            acc[key].push({ idx: i, start: startTimeWithMinDuration, end: endTimeWithMinDuration, id: uniqueId });
         });
 
         return acc;

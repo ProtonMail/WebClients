@@ -3,7 +3,6 @@ import { useMemo } from 'react';
 
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 
-import { useBookings } from '../../../containers/bookings/bookingsProvider/BookingsProvider';
 import type { CalendarViewBusyEvent, CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
 import { isBusySlotEvent } from '../../../helpers/busySlots';
 import PartDayBusyEvent from '../../events/PartDayBusyEvent';
@@ -52,11 +51,42 @@ const getSize = (duration: number): EventSize | undefined => {
     // MIN_DURATION is 15, so don't need to get lower
 };
 
+interface LaidOutEvent {
+    height: number;
+    size?: EventSize;
+    style: React.CSSProperties;
+}
+
+const getEventsLaidOut = (layoutEvents: LayoutEvent[], totalMinutes: number): LaidOutEvent[] => {
+    return layout(layoutEvents).map(({ column, columns }, i) => {
+        const { start, end } = layoutEvents[i];
+
+        const top = start / totalMinutes;
+        const duration = end - start;
+        const height = duration / totalMinutes;
+
+        const width = 1 / columns;
+        const left = column * width;
+
+        return {
+            height,
+            size: getSize(duration),
+            style: {
+                top: toPercent(top),
+                left: toPercent(left),
+                height: toPercent(height),
+                width: toPercent(width),
+            },
+        };
+    });
+};
+
 interface Props {
     tzid: string;
     now: Date;
     events: (CalendarViewEvent | CalendarViewBusyEvent)[];
     eventsInDay: LayoutEvent[];
+    rangeInDay: LayoutEvent[];
     totalMinutes: number;
     targetEventData?: TargetEventData;
     targetEventRef?: Ref<HTMLDivElement>;
@@ -65,11 +95,13 @@ interface Props {
     colHeight?: number;
     partDayEventViewStyleValues: { lineHeight: number; padding: number };
 }
+
 const DayEvents = ({
     tzid,
     now,
     events,
     eventsInDay,
+    rangeInDay,
     totalMinutes,
     targetEventData,
     targetEventRef,
@@ -78,103 +110,94 @@ const DayEvents = ({
     colHeight,
     partDayEventViewStyleValues,
 }: Props) => {
-    const { isBookingActive } = useBookings();
-
     const eventsLaidOut = useMemo(() => {
-        return layout(eventsInDay).map(({ column, columns }, i) => {
-            const { start, end } = eventsInDay[i];
+        return getEventsLaidOut(eventsInDay, totalMinutes);
+    }, [eventsInDay, totalMinutes]);
 
-            const top = start / totalMinutes;
-            const duration = end - start;
-            const height = duration / totalMinutes;
+    const rangesLaidOut = useMemo(() => {
+        return getEventsLaidOut(rangeInDay, totalMinutes);
+    }, [rangeInDay, totalMinutes]);
 
-            // We want to display events on top of each-other when the booking page is active.
-            // When booking is active we display one additional column, but we want events displayed on top of it
-            // so we can exclude it from computations.
-            const numberOfColumns = isBookingActive ? Math.max(columns - 1, 1) : columns;
-            const width = 1 / numberOfColumns;
-            const columnIndex = isBookingActive ? Math.max(column - 1, 0) : column;
-            const left = columnIndex * width;
-
-            return {
-                height,
-                size: getSize(duration),
-                style: {
-                    top: toPercent(top),
-                    left: toPercent(left),
-                    height: toPercent(height),
-                    width: toPercent(width),
-                },
-            };
-        });
-    }, [eventsInDay, totalMinutes, isBookingActive]);
-
-    if (!Array.isArray(eventsInDay)) {
+    if (eventsInDay.length === 0 && rangeInDay.length === 0) {
         return null;
     }
 
-    const result = eventsInDay.map((eventTimeDay, i) => {
-        const { idx, end: colEnd } = eventTimeDay;
-        const event = events[idx];
-        const { start, end } = event;
+    const displayEvents = (inputEvents: LayoutEvent[], eventsLaidOut: LaidOutEvent[]) => {
+        return inputEvents.map((eventTimeDay, i) => {
+            const { id, end: colEnd } = eventTimeDay;
+            const event = events.find((event) => event.uniqueId === id);
+            if (!event) {
+                return null;
+            }
+            const { start, end } = event;
 
-        const { style, height: eventHeight, size } = eventsLaidOut[i];
+            const { style, height: eventHeight, size } = eventsLaidOut[i];
 
-        const isTemporary = !!event?.isTemporary;
-        const isSelected = targetEventData ? event.uniqueId === targetEventData.uniqueId : false;
-        const isThisSelected =
-            (isSelected && isTemporary) || (isSelected && targetEventData && dayIndex === targetEventData.idx);
+            const isTemporary = !!event?.isTemporary;
+            const isSelected = targetEventData ? event.uniqueId === targetEventData.uniqueId : false;
+            const isThisSelected =
+                (isSelected && isTemporary) || (isSelected && targetEventData && dayIndex === targetEventData.idx);
 
-        const eventRef = isThisSelected ? targetEventRef : undefined;
+            const eventRef = isThisSelected ? targetEventRef : undefined;
 
-        const eventPartDuration = getEventPartDuration({ start, end, colEnd });
-        const isBeforeNow = getIsBeforeNow(event, now);
+            const eventPartDuration = getEventPartDuration({ start, end, colEnd });
+            const isBeforeNow = getIsBeforeNow(event, now);
 
-        const lineNumber =
-            colHeight === undefined
-                ? undefined
-                : Math.floor(
-                      (colHeight * eventHeight - partDayEventViewStyleValues.padding) /
-                          partDayEventViewStyleValues.lineHeight
-                  );
+            const lineNumber =
+                colHeight === undefined
+                    ? undefined
+                    : Math.floor(
+                          (colHeight * eventHeight - partDayEventViewStyleValues.padding) /
+                              partDayEventViewStyleValues.lineHeight
+                      );
 
-        return isBusySlotEvent(event) ? (
-            <PartDayBusyEvent
-                event={event}
-                eventPartDuration={eventPartDuration}
-                style={{
-                    ...style,
-                    '--line-number': lineNumber || 1,
-                    '--line-height': size && colHeight ? colHeight * eventHeight : undefined,
-                }}
-                key={event.uniqueId}
-                formatTime={formatTime}
-                eventRef={eventRef}
-                isSelected={isSelected}
-                isBeforeNow={isBeforeNow}
-                size={size}
-            />
-        ) : (
-            <PartDayEvent
-                event={event}
-                eventPartDuration={eventPartDuration}
-                style={{
-                    ...style,
-                    '--line-number': lineNumber || 1,
-                    '--line-height': size && colHeight ? colHeight * eventHeight : undefined,
-                }}
-                key={event.uniqueId}
-                formatTime={formatTime}
-                eventRef={eventRef}
-                isSelected={isSelected}
-                isBeforeNow={isBeforeNow}
-                size={size}
-                tzid={tzid}
-            />
+            return isBusySlotEvent(event) ? (
+                <PartDayBusyEvent
+                    event={event}
+                    eventPartDuration={eventPartDuration}
+                    style={{
+                        ...style,
+                        '--line-number': lineNumber || 1,
+                        '--line-height': size && colHeight ? colHeight * eventHeight : undefined,
+                    }}
+                    key={event.uniqueId}
+                    formatTime={formatTime}
+                    eventRef={eventRef}
+                    isSelected={isSelected}
+                    isBeforeNow={isBeforeNow}
+                    size={size}
+                />
+            ) : (
+                <PartDayEvent
+                    event={event}
+                    eventPartDuration={eventPartDuration}
+                    style={{
+                        ...style,
+                        '--line-number': lineNumber || 1,
+                        '--line-height': size && colHeight ? colHeight * eventHeight : undefined,
+                    }}
+                    key={event.uniqueId}
+                    formatTime={formatTime}
+                    eventRef={eventRef}
+                    isSelected={isSelected}
+                    isBeforeNow={isBeforeNow}
+                    size={size}
+                    tzid={tzid}
+                />
+            );
+        });
+    };
+
+    if (rangeInDay.length > 0) {
+        return (
+            <>
+                {displayEvents(rangeInDay, rangesLaidOut)}
+                {displayEvents(eventsInDay, eventsLaidOut)}
+            </>
         );
-    });
+    }
 
-    return <>{result}</>;
+    return <>{displayEvents(eventsInDay, eventsLaidOut)}</>;
 };
 
 export default DayEvents;
