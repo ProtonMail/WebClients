@@ -1,5 +1,3 @@
-import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
-
 const MANDATORY_FIELDS = ['keydata', 'addr'];
 const OPTIONAL_FIELDS = ['prefer-encrypt'];
 const CRITICAL_FIELDS = OPTIONAL_FIELDS.concat(MANDATORY_FIELDS);
@@ -26,7 +24,7 @@ export const getParsedAutocryptHeader = (header = '', sender = ''): AutocryptHea
                 if (trimmedKeyValue.startsWith('keydata=')) {
                     try {
                         const keydataStringValue = trimmedKeyValue.slice('keydata='.length);
-                        const keydataValue = binaryStringToArray(decodeBase64(keydataStringValue));
+                        const keydataValue = Uint8Array.fromBase64(keydataStringValue);
                         return ['keydata', keydataValue];
                     } catch (e: any) {
                         return ['', ''];

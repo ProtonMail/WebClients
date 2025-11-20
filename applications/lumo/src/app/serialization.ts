@@ -4,7 +4,6 @@ import stableStringify from 'json-stable-stringify';
 import isNil from 'lodash/isNil';
 import isObject from 'lodash/isObject';
 
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
 
 import {
@@ -132,7 +131,7 @@ export async function serializeSpace(space: Space, masterKey: AesKwCryptoKey): P
     const spaceKeyBase64 = spaceKeyClear.spaceKey;
     const spaceKey = await base64ToSpaceKey(spaceKeyBase64, true);
     const spaceKeyWrappedBytes = await wrapAesKey(spaceKey, masterKey);
-    const spaceKeyWrappedBase64 = uint8ArrayToBase64String(spaceKeyWrappedBytes);
+    const spaceKeyWrappedBase64 = spaceKeyWrappedBytes.toBase64();
     const spaceKeyEnc: SpaceKeyEnc = { wrappedSpaceKey: spaceKeyWrappedBase64 };
 
     const spacePrivJson = JSON.stringify(spacePriv);
@@ -164,7 +163,7 @@ export async function deserializeSpace(
             throw new Error(`Space ${serializedSpace.id} has no wrappedSpaceKey but is not deleted`);
         }
 
-        const spaceKeyWrappedBytes = base64StringToUint8Array(spaceKeyWrappedBase64);
+        const spaceKeyWrappedBytes = Uint8Array.fromBase64(spaceKeyWrappedBase64);
         const spaceKey = await unwrapAesKey(spaceKeyWrappedBytes, masterKey, true);
         const spaceKeyClear: SpaceKeyClear = { spaceKey: await cryptoKeyToBase64(spaceKey.encryptKey) };
 
@@ -373,7 +372,7 @@ export async function serializeUserSettings(
         { type: 'AesGcmCryptoKey', encryptKey: userSettingsDek },
         masterKey
     );
-    const wrappedKeyBase64 = uint8ArrayToBase64String(wrappedKey);
+    const wrappedKeyBase64 = wrappedKey.toBase64();
 
     // Serialize user settings to JSON
     const userSettingsJson = JSON.stringify(userSettings);
@@ -390,7 +389,7 @@ export async function serializeUserSettings(
 
     return {
         UserSettingsTag: crypto.randomUUID(), // Unique tag for user settings
-        Encrypted: uint8ArrayToBase64String(msgpackEncode(combined) as Uint8Array<ArrayBuffer>),
+        Encrypted: (msgpackEncode(combined) as Uint8Array<ArrayBuffer>).toBase64(),
     };
 }
 
@@ -400,14 +399,14 @@ export async function deserializeUserSettings(
 ): Promise<LumoUserSettings | null> {
     try {
         // Decode the combined data
-        const combinedBytes = base64StringToUint8Array(serializedUserSettings.encrypted);
+        const combinedBytes = Uint8Array.fromBase64(serializedUserSettings.encrypted);
         const combined = msgpackDecode(combinedBytes) as {
             wrappedKey: string;
             encrypted: EncryptedData;
         };
         
         // Unwrap the DEK
-        const wrappedKeyBytes = base64StringToUint8Array(combined.wrappedKey);
+        const wrappedKeyBytes = Uint8Array.fromBase64(combined.wrappedKey);
         const userSettingsDek = await unwrapAesKey(wrappedKeyBytes, masterKey);
         
         // Decrypt the user settings data

@@ -1,8 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 
-import { uint8ArrayToBase64String } from '../helpers/encoding';
-
 /**
  * Decrypts a member token with the organization private key
  */
@@ -31,7 +29,7 @@ export const decryptMemberToken = async (
  */
 export const generateMemberToken = () => {
     const token = crypto.getRandomValues(new Uint8Array(128));
-    return uint8ArrayToBase64String(token);
+    return token.toBase64();
 };
 
 /**

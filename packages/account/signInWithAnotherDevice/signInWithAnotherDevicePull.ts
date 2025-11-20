@@ -18,7 +18,6 @@ import {
     maybeResumeSessionByUser,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { type APP_NAMES, HTTP_STATUS_CODE, MINUTE, SECOND } from '@proton/shared/lib/constants';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import type { Api, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
@@ -76,7 +75,7 @@ const getPersistedForkData = (): ForkDataResult | null => {
             qrCode,
             date: result.date || Date.now(),
             extra: {
-                bytes: base64StringToUint8Array(qrCodePayload.encodedBytes),
+                bytes: Uint8Array.fromBase64(qrCodePayload.encodedBytes),
                 qrCode: qrCodePayload,
             },
         };
@@ -111,7 +110,7 @@ const getNewForkData = async ({
     const bytes = crypto.getRandomValues(new Uint8Array(32));
     const qrCodePayload = getQrCodePayload({
         userCode: UserCode,
-        encodedBytes: uint8ArrayToBase64String(bytes),
+        encodedBytes: bytes.toBase64(),
         childClientId: getClientID(config.appName),
     });
     return {

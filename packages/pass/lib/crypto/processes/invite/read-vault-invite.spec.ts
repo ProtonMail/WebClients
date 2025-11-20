@@ -7,7 +7,6 @@ import {
     setupCryptoProxyForTesting,
 } from '@proton/pass/lib/crypto/utils/testing';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { createInviteKeys } from './create-invite-keys';
 import { readVaultInviteContent } from './read-vault-invite';
@@ -32,7 +31,7 @@ describe('read vault invite content', () => {
 
         const decryptedVaultContent = await readVaultInviteContent({
             inviteKey,
-            encryptedVaultContent: uint8ArrayToBase64String(encryptedVaultContent),
+            encryptedVaultContent: encryptedVaultContent.toBase64(),
             invitedPrivateKey: invitedKey.privateKey,
             inviterPublicKeys: inviterKeys.map((key) => key.publicKey),
         });

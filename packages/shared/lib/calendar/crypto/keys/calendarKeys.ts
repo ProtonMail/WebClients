@@ -6,7 +6,6 @@ import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers'
 import isTruthy from '@proton/utils/isTruthy';
 
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../../constants';
-import { uint8ArrayToBase64String } from '../../../helpers/encoding';
 import type { KeyGenConfig, SimpleMap } from '../../../interfaces';
 import type {
     CreateOrResetCalendarPayload,
@@ -17,7 +16,7 @@ import { getEncryptedSessionKey } from '../encrypt';
 
 export const generatePassphrase = () => {
     const value = crypto.getRandomValues(new Uint8Array(32));
-    return uint8ArrayToBase64String(value);
+    return value.toBase64();
 };
 
 /**
@@ -76,8 +75,8 @@ export const encryptPassphrase = async ({
     });
 
     return {
-        keyPacket: uint8ArrayToBase64String(encryptedSessionKey),
-        dataPacket: uint8ArrayToBase64String(encryptedData),
+        keyPacket: encryptedSessionKey.toBase64(),
+        dataPacket: encryptedData.toBase64(),
         signature: await CryptoProxy.getArmoredSignature({ binarySignature }),
     };
 };
@@ -132,7 +131,7 @@ export async function encryptPassphraseSessionKey({
     if (publicKey) {
         const [armoredSignature, encryptedSessionKey] = await Promise.all([
             armoredSignaturePromise,
-            uint8ArrayToBase64String(await getEncryptedSessionKey(sessionKey, publicKey)),
+            (await getEncryptedSessionKey(sessionKey, publicKey)).toBase64(),
         ]);
 
         return {
@@ -145,7 +144,7 @@ export async function encryptPassphraseSessionKey({
                 if (!publicKey) {
                     throw new Error('Missing public key for member');
                 }
-                const keyPacket = uint8ArrayToBase64String(await getEncryptedSessionKey(sessionKey, publicKey));
+                const keyPacket = (await getEncryptedSessionKey(sessionKey, publicKey)).toBase64();
 
                 return [id, keyPacket];
             })

@@ -35,7 +35,6 @@ import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import { selectItem } from '@proton/pass/store/selectors';
 import type { FileDescriptor, FileForDownload, ItemFileOutput, ItemKey, ItemRevision, Maybe } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 const initiateUpload = createRequestSaga({
@@ -50,7 +49,7 @@ const initiateUpload = createRequestSaga({
         });
 
         const fileID = await createPendingFile(
-            uint8ArrayToBase64String(fileDescriptor.metadata),
+            fileDescriptor.metadata.toBase64(),
             totalChunks,
             encryptionVersion
         );
@@ -183,7 +182,7 @@ const updateMetadata = createRequestSaga({
             ...(pending ? { pending, fileID } : { pending: false, shareId, fileID }),
         });
 
-        const metadata = uint8ArrayToBase64String(fileDescriptor.metadata);
+        const metadata = fileDescriptor.metadata.toBase64();
 
         await (pending
             ? updatePendingFileMetadata(metadata, fileID)

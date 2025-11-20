@@ -22,7 +22,6 @@ import {
     getAuthDevicesConfig,
     getPendingMemberAuthDevicesConfig,
 } from '../api/authDevice';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 import type { Address, AddressKey, Api, User, User as tsUser } from '../interfaces';
 
 const AesContext = {
@@ -118,11 +117,11 @@ export interface AssociateAuthDeviceOutput {
 }
 
 export const deserializeAuthDeviceSecret = (value: string) => {
-    return base64StringToUint8Array(value);
+    return Uint8Array.fromBase64(value);
 };
 
 const serializeAuthDeviceSecret = (value: Uint8Array<ArrayBuffer>) => {
-    return uint8ArrayToBase64String(value);
+    return value.toBase64();
 };
 
 export const getAuthDeviceSecretConfirmationCode = async (data: string) => {
@@ -251,7 +250,7 @@ export const encryptAuthDeviceSecret = async ({
         stringToUtf8Array(keyPassword),
         stringToUtf8Array(AesContext.deviceSecret)
     );
-    return uint8ArrayToBase64String(encryptedSecret);
+    return encryptedSecret.toBase64();
 };
 
 export const getDecryptedAuthDeviceSecret = async ({
@@ -264,7 +263,7 @@ export const getDecryptedAuthDeviceSecret = async ({
     try {
         const decryptedSecret = await decryptData(
             deviceDataSerialized.deviceSecretData.key,
-            base64StringToUint8Array(encryptedSecret),
+            Uint8Array.fromBase64(encryptedSecret),
             stringToUtf8Array(AesContext.deviceSecret)
         );
         return utf8ArrayToString(decryptedSecret);

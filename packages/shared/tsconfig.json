@@ -1,6 +1,6 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "types": ["@proton/types", "webpack-env", "jasmine", "@webgpu/types"]
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "jasmine", "@webgpu/types"]
     }
 }

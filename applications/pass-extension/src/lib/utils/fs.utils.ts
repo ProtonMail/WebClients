@@ -2,7 +2,6 @@ import type { FileTransferErrorMessage, FileTransferWriteMessage } from 'proton-
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { FilePortWriter } from '@proton/pass/lib/file-storage/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 export const portTransferWriter: FilePortWriter = (fileRef, stream, signal, port) => {
@@ -20,7 +19,7 @@ export const portTransferWriter: FilePortWriter = (fileRef, stream, signal, port
             port.postMessage({
                 type: WorkerMessageType.FS_WRITE,
                 payload: {
-                    b64: uint8ArrayToBase64String(chunk),
+                    b64: chunk.toBase64(),
                     fileRef,
                 },
             } satisfies FileTransferWriteMessage);

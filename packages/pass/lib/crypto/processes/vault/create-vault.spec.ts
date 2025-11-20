@@ -2,7 +2,6 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import {
     createRandomKey,
@@ -25,7 +24,7 @@ describe('createVault crypto process', () => {
         const vault = await createVault({ content, addressId: address.ID, userKey });
 
         const { data, verificationStatus } = await CryptoProxy.decryptMessage({
-            binaryMessage: base64StringToUint8Array(vault.EncryptedVaultKey),
+            binaryMessage: Uint8Array.fromBase64(vault.EncryptedVaultKey),
             decryptionKeys: [userKey.privateKey],
             verificationKeys: [userKey.privateKey],
             format: 'binary',
@@ -36,7 +35,7 @@ describe('createVault crypto process', () => {
         const vaultKey = await importSymmetricKey(data);
         const decryptedContent = await decryptData(
             vaultKey,
-            base64StringToUint8Array(vault.Content),
+            Uint8Array.fromBase64(vault.Content),
             PassEncryptionTag.VaultContent
         );
 

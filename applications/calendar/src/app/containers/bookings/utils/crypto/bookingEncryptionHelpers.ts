@@ -1,5 +1,4 @@
 // The keys MUST be sorted alphabetically.
-import { uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 
 // We didn't used a replacer to avoid any potential issue with nested objects.
 export const JSONFormatData = ({
@@ -33,7 +32,7 @@ export const JSONFormatTextData = ({
 };
 
 export const createBookingLink = (secretBytes: Uint8Array<ArrayBuffer>) => {
-    const base64Secret = uint8ArrayToPaddedBase64URLString(secretBytes);
+    const base64Secret = secretBytes.toBase64({ alphabet: 'base64url' });
 
     return `${window.location.origin}/bookings#${base64Secret}`;
 };

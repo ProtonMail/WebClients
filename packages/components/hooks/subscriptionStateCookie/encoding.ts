@@ -1,4 +1,4 @@
-import { encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type {
     DecodedFreeCookieData,
@@ -14,7 +14,7 @@ export const encodePaidSubscriptionData = ({ planName, cycle }: Omit<DecodedPaid
         c: cycle,
     };
 
-    return encodeBase64URL(JSON.stringify(data));
+    return stringToUint8Array(JSON.stringify(data)).toBase64({ alphabet: 'base64url', omitPadding: true });
 };
 
 export const encodeFreeSubscriptionData = ({ hasHadSubscription }: Omit<DecodedFreeCookieData, 'type'>): string => {
@@ -23,5 +23,5 @@ export const encodeFreeSubscriptionData = ({ hasHadSubscription }: Omit<DecodedF
         h: hasHadSubscription ? '1' : '0',
     };
 
-    return encodeBase64URL(JSON.stringify(data));
+    return stringToUint8Array(JSON.stringify(data)).toBase64({ alphabet: 'base64url', omitPadding: true });
 };

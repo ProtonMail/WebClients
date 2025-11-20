@@ -6,7 +6,6 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { uint8ArrayToBase64String } from '../helpers/encoding';
 import type { SimpleMap } from '../interfaces';
 import type { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';
 import type { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
@@ -61,7 +60,7 @@ export const formatData = ({
     };
 
     if (sharedSessionKey) {
-        result.SharedKeyPacket = uint8ArrayToBase64String(sharedSessionKey);
+        result.SharedKeyPacket = sharedSessionKey.toBase64();
     }
 
     if (sharedSignedPart && sharedEncryptedPart) {
@@ -73,7 +72,7 @@ export const formatData = ({
             },
             {
                 Type: ENCRYPTED_AND_SIGNED,
-                Data: uint8ArrayToBase64String(sharedEncryptedPart.dataPacket),
+                Data: sharedEncryptedPart.dataPacket.toBase64(),
                 Signature: sharedEncryptedPart.signature,
             },
         ];
@@ -90,7 +89,7 @@ export const formatData = ({
     }
 
     if (calendarEncryptedPart && calendarSessionKey) {
-        result.CalendarKeyPacket = uint8ArrayToBase64String(calendarSessionKey);
+        result.CalendarKeyPacket = calendarSessionKey.toBase64();
     }
 
     if (calendarSignedPart || calendarEncryptedPart) {
@@ -102,7 +101,7 @@ export const formatData = ({
             },
             calendarEncryptedPart && {
                 Type: ENCRYPTED_AND_SIGNED,
-                Data: uint8ArrayToBase64String(calendarEncryptedPart.dataPacket),
+                Data: calendarEncryptedPart.dataPacket.toBase64(),
                 Signature: calendarEncryptedPart.signature,
             },
         ].filter(isTruthy);
@@ -112,7 +111,7 @@ export const formatData = ({
         result.AttendeesEventContent = [
             {
                 Type: ENCRYPTED_AND_SIGNED,
-                Data: uint8ArrayToBase64String(attendeesEncryptedPart.dataPacket),
+                Data: attendeesEncryptedPart.dataPacket.toBase64(),
                 Signature: attendeesEncryptedPart.signature,
             },
         ];
@@ -137,7 +136,7 @@ export const formatData = ({
                 if (!sharedEncryptedSessionKey) {
                     return;
                 }
-                return { Email: email, AddressKeyPacket: uint8ArrayToBase64String(sharedEncryptedSessionKey) };
+                return { Email: email, AddressKeyPacket: sharedEncryptedSessionKey.toBase64() };
             })
             .filter(isTruthy);
     }

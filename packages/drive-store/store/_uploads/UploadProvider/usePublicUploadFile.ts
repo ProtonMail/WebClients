@@ -10,7 +10,6 @@ import {
     queryPublicVerificationData,
 } from '@proton/shared/lib/api/drive/files';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type {
     CreateFileResult,
     GetVerificationDataResult,
@@ -458,7 +457,7 @@ export default function usePublicUploadFile() {
                         );
 
                         const verifierSessionKey = await CryptoProxy.decryptSessionKey({
-                            binaryMessage: base64StringToUint8Array(ContentKeyPacket),
+                            binaryMessage: Uint8Array.fromBase64(ContentKeyPacket),
                             decryptionKeys: createdFileRevision.privateKey,
                         });
 
@@ -467,7 +466,7 @@ export default function usePublicUploadFile() {
                         }
 
                         return {
-                            verificationCode: base64StringToUint8Array(VerificationCode),
+                            verificationCode: Uint8Array.fromBase64(VerificationCode),
                             verifierSessionKey,
                         } satisfies VerificationData;
                     } catch (e) {
@@ -495,18 +494,18 @@ export default function usePublicUploadFile() {
                         queryPublicRequestUpload(token, {
                             BlockList: fileBlocks.map((block) => ({
                                 Index: block.index,
-                                Hash: uint8ArrayToBase64String(block.hash),
+                                Hash: block.hash.toBase64(),
                                 EncSignature: !!block.signature ? block.signature : undefined,
                                 Size: block.size,
                                 Verifier: {
-                                    Token: uint8ArrayToBase64String(block.verificationToken),
+                                    Token: block.verificationToken.toBase64(),
                                 },
                             })),
                             SignatureEmail: addressKeyInfo?.address.Email,
                             LinkID: createdFileRevision.fileID,
                             RevisionID: createdFileRevision.revisionID,
                             ThumbnailList: thumbnailBlocks?.map((block) => ({
-                                Hash: uint8ArrayToBase64String(block.hash),
+                                Hash: block.hash.toBase64(),
                                 Size: block.size,
                                 Type: block.type,
                             })),

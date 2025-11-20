@@ -4,7 +4,6 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { selectItem, selectPasskeys } from '@proton/pass/store/selectors';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 export const createPasskeyService = () => {
     WorkerMessageBroker.registerMessage(
@@ -35,7 +34,7 @@ export const createPasskeyService = () => {
             const passkey = passkeys?.find(({ credentialId }) => selectedPasskey.credentialId === credentialId);
             if (!passkey) throw new Error(c('Error').t`Unknown passkey`);
 
-            const content = base64StringToUint8Array(passkey.content);
+            const content = Uint8Array.fromBase64(passkey.content);
 
             return {
                 intercept: true,

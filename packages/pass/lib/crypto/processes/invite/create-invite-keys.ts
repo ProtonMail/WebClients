@@ -2,7 +2,6 @@ import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { InviteTargetKey } from '@proton/pass/types';
 import { type KeyRotationKeyPair, PassSignatureContext } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateInviteKeysProcessParams = {
     targetKeys: InviteTargetKey[];
@@ -18,7 +17,7 @@ export const createInviteKeys = async ({
     return Promise.all(
         targetKeys.map(
             async ({ raw: binaryData, rotation: KeyRotation }): Promise<KeyRotationKeyPair> => ({
-                Key: uint8ArrayToBase64String(
+                Key: 
                     (
                         await CryptoProxy.encryptMessage({
                             binaryData,
@@ -30,8 +29,7 @@ export const createInviteKeys = async ({
                                 critical: true,
                             },
                         })
-                    ).message
-                ),
+                    ).message.toBase64(),
                 KeyRotation,
             })
         )

@@ -3,7 +3,6 @@ import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/c
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { VaultCreateRequest } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 type CreateVaultProcessParams = {
@@ -35,7 +34,7 @@ export const createVault = async ({
     return {
         AddressID: addressId,
         ContentFormatVersion: ContentFormatVersion.Share,
-        Content: uint8ArrayToBase64String(encryptedVaultContent),
-        EncryptedVaultKey: uint8ArrayToBase64String(encryptedVaultKey.message),
+        Content: encryptedVaultContent.toBase64(),
+        EncryptedVaultKey: encryptedVaultKey.message.toBase64(),
     };
 };

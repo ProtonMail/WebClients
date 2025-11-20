@@ -1,20 +1,15 @@
 import { MemoryStorage, fileStorage } from '@proton/pass/lib/file-storage/fs';
 import type { FileBuffer, FileStorage } from '@proton/pass/lib/file-storage/types';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import {
-    base64StringToUint8Array,
-    blobToUint8Array,
-    uint8ArrayToBase64String,
-    uint8ArrayToBlob,
-} from '@proton/shared/lib/helpers/encoding';
+import { blobToUint8Array, uint8ArrayToBlob } from '@proton/shared/lib/helpers/encoding';
 
 export const blobToBase64 = async (blob: Blob): Promise<string> => {
     const buffer = await blobToUint8Array(blob);
-    return uint8ArrayToBase64String(buffer);
+    return buffer.toBase64();
 };
 
 export const base64ToBlob = (b64: string): Blob => {
-    const buffer = base64StringToUint8Array(b64);
+    const buffer = Uint8Array.fromBase64(b64);
     return uint8ArrayToBlob(buffer);
 };
 

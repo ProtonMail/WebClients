@@ -11,7 +11,6 @@ import {
     queryVerificationData,
 } from '@proton/shared/lib/api/drive/files';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type {
     CreateFileResult,
     CreateFileRevisionResult,
@@ -490,7 +489,7 @@ export default function useUploadFile() {
                         );
 
                         const verifierSessionKey = await CryptoProxy.decryptSessionKey({
-                            binaryMessage: base64StringToUint8Array(ContentKeyPacket),
+                            binaryMessage: Uint8Array.fromBase64(ContentKeyPacket),
                             decryptionKeys: createdFileRevision.privateKey,
                         });
 
@@ -499,7 +498,7 @@ export default function useUploadFile() {
                         }
 
                         return {
-                            verificationCode: base64StringToUint8Array(VerificationCode),
+                            verificationCode: Uint8Array.fromBase64(VerificationCode),
                             verifierSessionKey,
                         } satisfies VerificationData;
                     } catch (e) {
@@ -527,11 +526,11 @@ export default function useUploadFile() {
                         queryRequestUpload({
                             BlockList: fileBlocks.map((block) => ({
                                 Index: block.index,
-                                Hash: uint8ArrayToBase64String(block.hash),
+                                Hash: block.hash.toBase64(),
                                 EncSignature: block.signature,
                                 Size: block.size,
                                 Verifier: {
-                                    Token: uint8ArrayToBase64String(block.verificationToken),
+                                    Token: block.verificationToken.toBase64(),
                                 },
                             })),
                             AddressID: addressKeyInfo.address.ID,
@@ -539,7 +538,7 @@ export default function useUploadFile() {
                             RevisionID: createdFileRevision.revisionID,
                             ShareID: shareId,
                             ThumbnailList: thumbnailBlocks?.map((block) => ({
-                                Hash: uint8ArrayToBase64String(block.hash),
+                                Hash: block.hash.toBase64(),
                                 Size: block.size,
                                 Type: block.type,
                             })),

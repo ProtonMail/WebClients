@@ -57,7 +57,6 @@ import type { Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
-import { decodeBase64URL, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
@@ -144,7 +143,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         getBiometricsKey: async (store) => {
             const { storageKey } = inferBiometricsStorageKey(store);
             const encodedId = localStorage.getItem(storageKey) ?? '';
-            const credentialId = stringToUint8Array(decodeBase64URL(encodedId));
+            const credentialId = Uint8Array.fromBase64(encodedId, { alphabet: 'base64url' });
 
             return getSerializedCredential(credentialId);
         },

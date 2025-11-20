@@ -6,7 +6,6 @@ import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/c
 import { PassCryptoFileError } from '@proton/pass/lib/crypto/utils/errors';
 import type { RotationKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 export const openFileDescriptor = async (
     encryptedMetadata: string,
@@ -18,14 +17,14 @@ export const openFileDescriptor = async (
 
     const fileKeyRaw = await decryptData(
         itemKey.key,
-        base64StringToUint8Array(encryptedFileKey),
+        Uint8Array.fromBase64(encryptedFileKey),
         PassEncryptionTag.FileKey
     );
 
     const fileKey = await importSymmetricKey(fileKeyRaw);
     const metadata = await decryptData(
         fileKey,
-        base64StringToUint8Array(encryptedMetadata),
+        Uint8Array.fromBase64(encryptedMetadata),
         getFileMetadataEncryptionTag(encryptionVersion)
     );
 

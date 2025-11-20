@@ -30,7 +30,6 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 import { sortOn } from '@proton/pass/utils/fp/sort';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import chunk from '@proton/utils/chunk';
@@ -56,7 +55,7 @@ const serializeKey = async (keyBytes: Uint8Array<ArrayBuffer>, userKey: Decrypte
         format: 'binary',
     });
 
-    return uint8ArrayToBase64String(message);
+    return message.toBase64();
 };
 
 const parseRemoteKey = async ({ UserKeyID, Key, KeyID }: AuthenticatorKeyResponse): Promise<Maybe<EncryptionKey>> => {
@@ -70,7 +69,7 @@ const parseRemoteKey = async ({ UserKeyID, Key, KeyID }: AuthenticatorKeyRespons
         }
 
         const { data: keyBytes } = await CryptoProxy.decryptMessage({
-            binaryMessage: base64StringToUint8Array(Key),
+            binaryMessage: Uint8Array.fromBase64(Key),
             decryptionKeys: [userKey.privateKey],
             verificationKeys: [userKey.publicKey],
             format: 'binary',
@@ -90,7 +89,7 @@ const parseRemoteEntry = async (payload: AuthenticatorEntryResponse): Promise<Ma
             return;
         }
 
-        const content = base64StringToUint8Array(payload.Content);
+        const content = Uint8Array.fromBase64(payload.Content);
         const [entry] = service.decrypt_entries([content], key.keyBytes);
 
         return {

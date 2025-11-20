@@ -6,7 +6,6 @@ import { arrayToHexString, stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/crypto/encrypt';
 import { generatePassphrase } from '../calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
-import { uint8ArrayToBase64String } from '../helpers/encoding';
 
 interface UnsignedEncryptionPayload {
     message: string | Uint8Array<ArrayBuffer>;
@@ -169,7 +168,7 @@ export const generateContentKeys = async (nodeKey: PrivateKeyReference) => {
     const sessionKey = await createSessionKey(publicKey);
     const sessionKeySignature = await sign(sessionKey.data, nodeKey);
     const contentKeys = await getEncryptedSessionKey(sessionKey, publicKey);
-    const ContentKeyPacket = uint8ArrayToBase64String(contentKeys);
+    const ContentKeyPacket = contentKeys.toBase64();
     return { sessionKey, ContentKeyPacket, ContentKeyPacketSignature: sessionKeySignature };
 };
 

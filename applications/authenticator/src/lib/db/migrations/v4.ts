@@ -18,7 +18,6 @@ import { c } from 'ttag';
 import { importKey as importAesGcmKey, exportKey as exportAesGcmKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { MaybeNull } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 export const V4_MIGRATION_BACK_UP_ID = 'authenticator::migration::v4';
 
@@ -44,7 +43,7 @@ export const migrateLegacyKeys = async (legacyKeys: LegacyRemoteKey[]): Promise<
                      * a `LegacyStoredRemoteKey` prior to v4 */
                     if (!userKeyId || id === 'local') return null;
                     const rawKey = await exportAesGcmKey(remoteKey.key);
-                    const encodedKey = uint8ArrayToBase64String(new Uint8Array(rawKey));
+                    const encodedKey = rawKey.toBase64();
                     return { id, userKeyId, encodedKey };
                 } catch {
                     return null;
@@ -61,7 +60,7 @@ export const downgradeToLegacyKeys = async (keys: RemoteKey[]): Promise<LegacyRe
             keys.map(async (legacyKey): Promise<MaybeNull<LegacyRemoteKey>> => {
                 try {
                     const { id, userKeyId, encodedKey } = legacyKey;
-                    const bytes = base64StringToUint8Array(encodedKey);
+                    const bytes = Uint8Array.fromBase64(encodedKey);
                     const key = await importAesGcmKey(bytes, { extractable: true });
 
                     return { id, userKeyId, key };

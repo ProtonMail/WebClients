@@ -1,7 +1,6 @@
 import type { SessionKey } from '@proton/crypto';
 
 import { upgradeP2PInvite } from '../../api/calendars';
-import { uint8ArrayToBase64String } from '../../helpers/encoding';
 import type { Api } from '../../interfaces';
 import type { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
 import { getEncryptedSessionKey } from '../crypto/encrypt';
@@ -20,7 +19,7 @@ export const reencryptCalendarSharedEvent = async ({
 }): Promise<CalendarEvent> => {
     const { publicKey } = getPrimaryCalendarKey(calendarKeys);
 
-    const SharedKeyPacket = uint8ArrayToBase64String(await getEncryptedSessionKey(sharedSessionKey, publicKey));
+    const SharedKeyPacket = (await getEncryptedSessionKey(sharedSessionKey, publicKey)).toBase64();
 
     const { Event } = await api<{ Event: CalendarEvent }>(
         upgradeP2PInvite(calendarEvent.CalendarID, calendarEvent.ID, { SharedKeyPacket })

@@ -2,7 +2,6 @@ import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { VaultShareKey, VaultUpdateRequest } from '@proton/pass/types';
 import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type UpdateVaultProcessParams = {
     vaultKey: VaultShareKey;
@@ -18,7 +17,7 @@ export const updateVault = async ({ vaultKey, content }: UpdateVaultProcessParam
 
     return {
         ContentFormatVersion: ContentFormatVersion.Share,
-        Content: uint8ArrayToBase64String(encryptedVaultContent),
+        Content: encryptedVaultContent.toBase64(),
         KeyRotation: vaultKey.rotation,
     };
 };

@@ -13,7 +13,6 @@ import type {
     SecureLinkQuery,
 } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { buildSecureLink } from './secure-links.utils';
 
@@ -27,8 +26,8 @@ export const createSecureLink = async (
 
     const data: PublicLinkCreateRequest = {
         Revision: revision,
-        EncryptedItemKey: uint8ArrayToBase64String(encryptedItemKey),
-        EncryptedLinkKey: uint8ArrayToBase64String(encryptedLinkKey),
+        EncryptedItemKey: encryptedItemKey.toBase64(),
+        EncryptedLinkKey: encryptedLinkKey.toBase64(),
         ExpirationTime: options.expirationTime,
         LinkKeyShareKeyRotation: keyRotation,
         LinkKeyEncryptedWithItemKey: linkKeyEncryptedWithItemKey,

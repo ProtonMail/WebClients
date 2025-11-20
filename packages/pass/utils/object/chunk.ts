@@ -1,6 +1,5 @@
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 export type Chunk = {
     /** batch identifier */
@@ -35,7 +34,7 @@ export function* toChunks(state: object, chunkSize: number = MAX_CHUNK_SIZE): Ge
         const size = Math.min(chunkSize, byteLength - offset);
         const buffer = new Uint8Array(size);
         buffer.set(data.subarray(offset, offset + size));
-        const chunk = uint8ArrayToBase64String(buffer);
+        const chunk = buffer.toBase64();
 
         yield { streamID, index: index++, chunk, size, total };
     }
@@ -56,7 +55,7 @@ export const fromChunks = <T = object>(chunks: Chunk[]): T => {
 
     for (const { chunk, size, streamID } of sortedChunks) {
         if (base.streamID !== streamID) throw new Error('Invalid chunk');
-        const buffer = base64StringToUint8Array(chunk);
+        const buffer = Uint8Array.fromBase64(chunk);
         data.set(buffer, offset);
         offset += size;
     }

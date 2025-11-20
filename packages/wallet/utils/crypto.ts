@@ -8,7 +8,6 @@ import {
 } from '@proton/crypto/lib/subtle/aesGcm';
 import { signData as computeHmacSignature, importKey as importHmacKey } from '@proton/crypto/lib/subtle/hmac';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 export enum WalletSignatureContextEnum {
@@ -103,7 +102,7 @@ export const encryptTransactionMessage = async (
                 format: 'binary',
             });
 
-            return { email, key: uint8ArrayToBase64String(encryptedSessionKey) };
+            return { email, key: encryptedSessionKey.toBase64() };
         })
     );
 
@@ -112,7 +111,7 @@ export const encryptTransactionMessage = async (
         {}
     );
 
-    return { data_packet: uint8ArrayToBase64String(encrypted), key_packets: keyPackets };
+    return { data_packet: encrypted.toBase64(), key_packets: keyPackets };
 };
 
 export const signData = async <T extends string | Uint8Array<ArrayBuffer>>(
@@ -216,7 +215,7 @@ export const encryptWalletDataWithWalletKey = async (dataToEncrypt: string[], ke
             const binaryData = encoder.encode(data);
 
             const encryptedMnemonic = await encryptData(key, binaryData);
-            return uint8ArrayToBase64String(encryptedMnemonic);
+            return encryptedMnemonic.toBase64();
         })
     );
 
@@ -260,7 +259,7 @@ export const decryptWalletData = async (dataToDecrypt: (string | null)[], wallet
             }
 
             try {
-                const decodedEncryptedMnemonic = base64StringToUint8Array(data);
+                const decodedEncryptedMnemonic = Uint8Array.fromBase64(data);
 
                 const decryptedBinaryMnemonic = await decryptData(walletKey, decodedEncryptedMnemonic);
                 return decoder.decode(decryptedBinaryMnemonic);
@@ -285,10 +284,10 @@ export const decryptMnemonicWithUserKey = async (encryptedMnemonic: string | nul
         return null;
     }
     const { data: decryptedBinaryMnemonic } = await CryptoProxy.decryptMessage({
-        binaryMessage: base64StringToUint8Array(encryptedMnemonic),
+        binaryMessage: Uint8Array.fromBase64(encryptedMnemonic),
         decryptionKeys: keys.map((k) => k.privateKey),
         format: 'binary',
     });
 
-    return uint8ArrayToBase64String(decryptedBinaryMnemonic);
+    return decryptedBinaryMnemonic.toBase64();
 };

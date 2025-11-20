@@ -1,5 +1,3 @@
-import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
-
 import type {
     PublicKeyCredentialCreationOptionsSerialized,
     RegisterCredentials,
@@ -46,12 +44,8 @@ export const getCreatePayload = async (
     };
     return {
         RegistrationOptions: registerCredentials.RegistrationOptions,
-        ClientData: response.clientDataJSON
-            ? encodeBase64(arrayToBinaryString(new Uint8Array(response.clientDataJSON)))
-            : null!,
-        AttestationObject: response.attestationObject
-            ? encodeBase64(arrayToBinaryString(new Uint8Array(response.attestationObject)))
-            : null!,
+        ClientData: response.clientDataJSON ? new Uint8Array(response.clientDataJSON).toBase64() : null!,
+        AttestationObject: response.attestationObject ? new Uint8Array(response.attestationObject).toBase64() : null!,
         Transports: response.getTransports?.() || [],
         Name: '',
     };

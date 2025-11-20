@@ -1,5 +1,4 @@
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey'
-import { uint8ArrayToBase64String, base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib'
 import { nodeMetaUniqueId, type AnyNodeMeta } from '@proton/drive-store/lib'
 import type { CacheConfig } from '@proton/drive-store/lib/CacheConfig'
@@ -61,7 +60,7 @@ export class CacheService {
       }
 
       const cacheValue: CachedValue = {
-        encryptedValue: uint8ArrayToBase64String(encryptedValue.getValue()),
+        encryptedValue: encryptedValue.getValue().toBase64(),
         expirationTime: dto.expirationTime,
       }
 
@@ -92,7 +91,7 @@ export class CacheService {
       const key = await this.encryptionKey
 
       const decryptedValue = await this.encryptionService.decryptDataForLocalStorage(
-        base64StringToUint8Array(encryptedValue),
+        Uint8Array.fromBase64(encryptedValue),
         this.cacheConfig.namespace,
         key,
       )

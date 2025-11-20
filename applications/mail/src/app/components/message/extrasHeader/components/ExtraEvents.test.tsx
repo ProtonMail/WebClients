@@ -19,7 +19,6 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { ADDRESS_STATUS, API_CODES, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import type {
     CalendarUserSettings,
@@ -312,7 +311,7 @@ const getSetup = async ({
                 Attachments: encryptedAttachments.map(({ attachmentID, filename, attachmentPackets }) => ({
                     ID: attachmentID,
                     Name: filename,
-                    KeyPackets: uint8ArrayToBase64String(attachmentPackets.keys),
+                    KeyPackets: attachmentPackets.keys.toBase64(),
                     MIMEType: 'text/calendar',
                 })),
                 ParsedHeaders: {

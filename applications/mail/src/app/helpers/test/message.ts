@@ -3,7 +3,6 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import type { MessageEmbeddedImage, MessageImage, MessageImages } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { arrayToBase64, base64ToArray } from '../base64';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
 import type { GeneratedKey } from './crypto';
 import { encryptSessionKey, generateSessionKey } from './crypto';
@@ -15,7 +14,7 @@ export const removeLineBreaks = (text: string) => {
 
 export const readSessionKey = (key: any) => {
     return {
-        data: base64ToArray(key.Key),
+        data: Uint8Array.fromBase64(key.Key),
         algorithm: key.Algorithm,
     };
 };
@@ -101,7 +100,7 @@ export const createAttachment = async (inputAttachment: Partial<Attachment>, pub
     const sessionKey = await generateSessionKey(publicKeys[0]);
     const encryptedSessionKey = await encryptSessionKey(sessionKey, publicKeys[0]);
 
-    attachment.KeyPackets = arrayToBase64(encryptedSessionKey);
+    attachment.KeyPackets = encryptedSessionKey.toBase64();
 
     return { attachment, sessionKey };
 };

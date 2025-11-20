@@ -13,7 +13,6 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
-import { base64StringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@proton/shared/lib/helpers/encoding';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { decryptBookingContent } from '../../bookings/utils/decryptBookingContent';
@@ -69,7 +68,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                 ]);
 
                 const decrypted = await CryptoProxy.decryptMessage({
-                    binaryMessage: base64StringToUint8Array(bookingPage.EncryptedSecret),
+                    binaryMessage: Uint8Array.fromBase64(bookingPage.EncryptedSecret),
                     decryptionKeys,
                     verificationKeys: verifyingKeys,
                     signatureContext:
@@ -100,7 +99,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                     id: bookingPage.ID,
                     calendarID: bookingPage.CalendarID,
                     bookingUID: bookingPage.BookingUID,
-                    link: `${window.location.origin}/bookings#${uint8ArrayToPaddedBase64URLString(decrypted.data)}`,
+                    link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
                 });
             }
         } catch (error) {

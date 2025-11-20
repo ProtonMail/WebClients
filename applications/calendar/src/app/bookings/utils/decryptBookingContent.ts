@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { CryptoProxy, type PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { deriveBookingKeyPassword } from '../../containers/bookings/utils/crypto/bookingEncryption';
 import { bookingContentSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
@@ -84,17 +83,17 @@ export const decryptBookingContent = async ({
     bookingUid,
     verificationKeys,
 }: DecryptBookingContentParams): Promise<BookingContentData> => {
-    const salt = base64StringToUint8Array(bookingKeySalt);
-    const bookingKeyPassword = uint8ArrayToBase64String(
+    const salt = Uint8Array.fromBase64(bookingKeySalt);
+    const bookingKeyPassword = (
         await deriveBookingKeyPassword(calendarId, bookingSecretBytes, salt)
-    );
+    ).toBase64();
 
     const {
         data: decryptedContent,
         verificationStatus,
         verificationErrors,
     } = await CryptoProxy.decryptMessage({
-        binaryMessage: base64StringToUint8Array(encryptedContent),
+        binaryMessage: Uint8Array.fromBase64(encryptedContent),
         passwords: [bookingKeyPassword],
         verificationKeys,
         signatureContext:

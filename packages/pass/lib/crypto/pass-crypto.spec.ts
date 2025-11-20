@@ -2,7 +2,6 @@ import { CryptoProxy } from '@proton/crypto';
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';
 import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '@proton/pass/types';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 
 import { PassCrypto, exposePassCrypto } from './index';
@@ -164,7 +163,7 @@ describe('PassCrypto', () => {
 
             const decryptedContent = await decryptData(
                 vaultKey.key,
-                base64StringToUint8Array(vault.Content),
+                Uint8Array.fromBase64(vault.Content),
                 PassEncryptionTag.VaultContent
             );
 
@@ -193,7 +192,7 @@ describe('PassCrypto', () => {
 
             const decryptedContent = await decryptData(
                 vaultKey.key,
-                base64StringToUint8Array(vaultUpdate.Content),
+                Uint8Array.fromBase64(vaultUpdate.Content),
                 PassEncryptionTag.VaultContent
             );
 

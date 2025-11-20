@@ -6,10 +6,6 @@ const ifDefined =
     };
 export const encodeUtf8 = ifDefined((input: string) => unescape(encodeURIComponent(input)));
 export const decodeUtf8 = ifDefined((input: string) => decodeURIComponent(escape(input)));
-export const encodeBase64 = ifDefined((input: string) => btoa(input).trim());
-export const decodeBase64 = ifDefined((input: string) => atob(input.trim()));
-export const encodeUtf8Base64 = ifDefined((input: string) => encodeBase64(encodeUtf8(input)));
-export const decodeUtf8Base64 = ifDefined((input: string) => decodeUtf8(decodeBase64(input)));
 
 const isString = (data: any): data is string | String => {
     return typeof data === 'string' || data instanceof String;

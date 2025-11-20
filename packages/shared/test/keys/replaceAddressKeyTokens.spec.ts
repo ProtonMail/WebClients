@@ -1,5 +1,4 @@
 import { CryptoProxy } from '@proton/crypto';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import type { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import { getDecryptedUserKeysHelper, getReplacedAddressKeyTokens, splitKeys } from '../../lib/keys';
@@ -76,7 +75,7 @@ describe('re-encrypt address keys', () => {
         const decryptedTokens = await Promise.all(
             tokens.AddressKeyTokens.map(async (addressKeyToken) => {
                 await CryptoProxy.decryptSessionKey({
-                    binaryMessage: base64StringToUint8Array(addressKeyToken.KeyPacket),
+                    binaryMessage: Uint8Array.fromBase64(addressKeyToken.KeyPacket),
                     decryptionKeys: [setup.userKeys[0].privateKey],
                 });
                 return true;
@@ -95,7 +94,7 @@ describe('re-encrypt address keys', () => {
         const decryptedTokens = await Promise.all(
             tokens.AddressKeyTokens.map(async (addressKeyToken) => {
                 await CryptoProxy.decryptSessionKey({
-                    binaryMessage: base64StringToUint8Array(addressKeyToken.KeyPacket),
+                    binaryMessage: Uint8Array.fromBase64(addressKeyToken.KeyPacket),
                     decryptionKeys: [setup.userKeys[0].privateKey],
                 });
                 return true;
