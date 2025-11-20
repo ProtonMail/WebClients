@@ -7,7 +7,7 @@ import './BookingSidebar.scss';
 export const BookingSidebar = () => {
     return (
         <div
-            className="booking-sidebar-container flex flex-column w-full sm:w-custom"
+            className="booking-sidebar-container ui-standard bg-lowered flex flex-column w-full sm:w-custom border-right border-weak"
             style={{ '--sm-w-custom': '25.5rem' }}
         >
             <div className="p-3 self-end">

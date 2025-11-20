@@ -6,12 +6,14 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
 import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
+import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { UpsellBookings } from './UpsellBookings';
 import { useBookings } from './bookingsProvider/BookingsProvider';
+
+import './BookingSidebarAction.scss';
 
 interface Props {
     onCreateEvent?: () => void;
@@ -44,6 +46,8 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
                 color="norm"
                 icon
                 group
+                className="booking-main-dropdown flex items-center justify-center"
+                caretAlt={c('Action').t`More options`}
             >
                 <DropdownMenu className="my-2">
                     <DropdownMenuButton onClick={onCreateEvent}>
@@ -55,7 +59,7 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
                     <DropdownMenuButton onClick={handleBookingPage} disabled={!canCreateBooking}>
                         <div className="flex gap-8 items-center">
                             <div className="flex gap-2 items-center">
-                                <IcCalendarCheckmark />
+                                <IcCalendarListCheck />
                                 {c('Action').t`Create a booking page`}
                             </div>
                             {user.hasPaidMail ? null : <IcUpgrade className="color-hint" name="upgrade" />}
