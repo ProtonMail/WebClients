@@ -2,7 +2,6 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -14,6 +13,8 @@ import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLocalParticipantHost } from '../../hooks/useIsLocalParticipantHost';
 import { MeetingSideBars } from '../../types';
+import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
+import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
 
 import './Settings.scss';
 
@@ -77,56 +78,22 @@ export const Settings = () => {
                     {isLocalParticipantHost && <div className="text-semibold color-weak py-2">Meeting</div>}
                     <div className={clsx('flex flex-column w-full gap-4', isLocalParticipantHost && 'pl-4')}>
                         {!isMobile() && (
-                            <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
-                                <label
-                                    className={clsx(
-                                        'setting-label text-ellipsis',
-                                        backgroundBlur ? 'color-norm' : 'color-hint'
-                                    )}
-                                    htmlFor="blur-background"
-                                >{c('Action').t`Blur background`}</label>
-                                <Tooltip
-                                    title={
-                                        !isBackgroundBlurSupported
-                                            ? c('Tooltip').t`Blur background is not supported on your browser`
-                                            : c('Tooltip').t`Blur background`
-                                    }
-                                >
-                                    <span>
-                                        <Toggle
-                                            id="blur-background"
-                                            checked={backgroundBlur}
-                                            onChange={() => {
-                                                void withLoadingBackgroundBlur(toggleBackgroundBlur());
-                                            }}
-                                            className={clsx(
-                                                'settings-toggle',
-                                                backgroundBlur ? '' : 'settings-toggle-inactive'
-                                            )}
-                                            aria-label={c('Alt').t`Blur background`}
-                                            loading={loadingBackgroundBlur}
-                                            disabled={!isBackgroundBlurSupported || loadingBackgroundBlur}
-                                        />
-                                    </span>
-                                </Tooltip>
-                            </div>
-                        )}
-                        <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
-                            <label
-                                className={clsx(
-                                    'setting-label text-ellipsis',
-                                    noiseFilter ? 'color-norm' : 'color-hint'
-                                )}
-                                htmlFor="noise-filter"
-                            >{c('Action').t`Noise filter`}</label>
-                            <Toggle
-                                id="noise-filter"
-                                checked={noiseFilter}
-                                onChange={() => toggleNoiseFilter()}
-                                className={clsx('settings-toggle', noiseFilter ? '' : 'settings-toggle-inactive')}
-                                aria-label={c('Alt').t`Noise filter`}
+                            <BackgroundBlurToggle
+                                backgroundBlur={backgroundBlur}
+                                loadingBackgroundBlur={loadingBackgroundBlur}
+                                isBackgroundBlurSupported={isBackgroundBlurSupported}
+                                onChange={() => {
+                                    void withLoadingBackgroundBlur(toggleBackgroundBlur());
+                                }}
+                                withTooltip={true}
                             />
-                        </div>
+                        )}
+
+                        <NoiseCancellingToggle
+                            idBase="settings"
+                            noiseFilter={noiseFilter}
+                            toggleNoiseFilter={toggleNoiseFilter}
+                        />
                         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
                                 className={clsx(

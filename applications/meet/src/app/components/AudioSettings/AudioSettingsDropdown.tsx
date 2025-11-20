@@ -9,9 +9,11 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { DEFAULT_DEVICE_ID } from '../../constants';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import type { DeviceState } from '../../types';
 import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '../../utils/device-utils';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
+import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
 
 interface AudioSettingsDropdownProps {
     anchorRef: RefObject<HTMLButtonElement>;
@@ -51,9 +53,11 @@ const AudioSettingsDropdownComponent = ({
     const noMicrophoneDetected = microphones.length === 0;
     const noSpeakerDetected = speakers.length === 0;
 
+    const { noiseFilter, toggleNoiseFilter } = useMediaManagementContext();
+
     return (
         <DeviceSettingsDropdown anchorRef={anchorRef} anchorPosition={anchorPosition} onClose={onClose}>
-            <div className="flex flex-column gap-2 p-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
+            <div className="flex flex-column gap-4 p-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
                     <div className="color-weak meet-font-weight">
                         {!noMicrophoneDetected ? c('Info').t`Select a microphone` : c('Info').t`No microphone detected`}
@@ -97,6 +101,19 @@ const AudioSettingsDropdownComponent = ({
                         />
                     ))}
                 </div>
+                {!noMicrophoneDetected && (
+                    <div className="flex flex-column gap-4">
+                        <div className="color-weak meet-font-weight">{c('Info').t`Microphone effects`}</div>
+                        <div className="w-full pl-10 pr-4">
+                            <NoiseCancellingToggle
+                                idBase="audio-settings"
+                                noiseFilter={noiseFilter}
+                                toggleNoiseFilter={toggleNoiseFilter}
+                            />
+                        </div>
+                    </div>
+                )}
+
                 {!isSafari() && (
                     <div className="flex flex-column gap-2">
                         <div className="color-weak meet-font-weight">
