@@ -2,7 +2,7 @@ import { differenceInDays, format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import type { Subscription } from '@proton/payments';
+import { type Subscription, getRenewalTime } from '@proton/payments';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -10,7 +10,6 @@ import compliance from '@proton/styles/assets/img/cancellation-flow/testimonial_
 import connected from '@proton/styles/assets/img/cancellation-flow/testimonial_connceted.svg';
 import standOut from '@proton/styles/assets/img/cancellation-flow/testimonial_stand_out.svg';
 
-import { subscriptionExpires } from '../../helpers';
 import type { ConfirmationModal, PlanConfigTestimonial } from '../interface';
 
 export const getDefaultTestimonial = (planName: string): PlanConfigTestimonial => {
@@ -54,18 +53,18 @@ export const ExpirationTime = ({
     subscription: Subscription;
     isChargeBeeUser?: boolean;
 }) => {
-    const subscriptionExpiryTime = subscriptionExpires(subscription, true).expirationDate ?? 0;
+    const nextBillingDate = getRenewalTime(subscription);
 
     if (isChargeBeeUser) {
-        const endDate = fromUnixTime(subscriptionExpiryTime);
-        const formattedEndDate = format(fromUnixTime(subscriptionExpiryTime), 'PPP', { locale: dateLocale });
+        const endDate = fromUnixTime(nextBillingDate);
+        const formattedEndDate = format(fromUnixTime(nextBillingDate), 'PPP', { locale: dateLocale });
         return (
-            <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd')}>
+            <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd', { locale: dateLocale })}>
                 {formattedEndDate}
             </time>
         );
     } else {
-        const endSubDate = fromUnixTime(subscriptionExpiryTime);
+        const endSubDate = fromUnixTime(nextBillingDate);
         const dayDiff = differenceInDays(endSubDate, new Date());
         return (
             <strong>

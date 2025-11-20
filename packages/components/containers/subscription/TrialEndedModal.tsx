@@ -9,7 +9,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Time from '@proton/components/components/time/Time';
 import useApi from '@proton/components/hooks/useApi';
-import { CYCLE } from '@proton/payments';
+import { CYCLE, getRenewalTime } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import illustration from '@proton/styles/assets/img/illustrations/b2b-trial-end.svg';
 
@@ -19,7 +19,7 @@ const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
 
     const planName = subscription?.Plans?.[0]?.Title;
 
-    if (planName === undefined) {
+    if (planName === undefined || !subscription) {
         return null;
     }
 
@@ -38,7 +38,7 @@ const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
 
     const nextBillingDate = (
         <span className="text-bold" key="next-billing-date">
-            <Time>{subscription?.PeriodEnd}</Time>
+            <Time>{getRenewalTime(subscription)}</Time>
         </span>
     );
 
