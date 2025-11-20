@@ -12,6 +12,8 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
+import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
+import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useDownload } from '../../store';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import PortalPreview from '../PortalPreview';
@@ -93,8 +95,15 @@ export const RevisionsProvider = ({
     const [selectedRevision, setSelectedRevision] = useState<Revision | null>(null);
     const { download } = useDownload();
 
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
+    const dm = DownloadManager.getInstance();
     const downloadRevision = (revision: Revision) => {
         const { revisionId } = splitNodeRevisionUid(revision.uid);
+
+        if (isSDKTransferEnabled) {
+            return dm.download([generateNodeUid(link.volumeId, link.linkId)]);
+        }
+
         void download([{ ...link, shareId: link.rootShareId, revisionId }]);
     };
 
