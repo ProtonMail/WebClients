@@ -1,3 +1,4 @@
+import type { InternalEventBusInterface } from '@proton/docs-shared'
 import { ApiResult, Result } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { DecryptCommit } from './DecryptCommit'
@@ -8,6 +9,8 @@ import { SquashDocument } from './SquashDocument'
 import type { VerifyCommit } from './VerifyCommit'
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 import type { LoggerInterface } from '@proton/utils/logs'
+import type UnleashClient from '@proton/unleash/UnleashClient'
+import type { CacheService } from '../Services/CacheService'
 
 jest.mock('@proton/docs-proto', () => ({
   ...jest.requireActual('@proton/docs-proto'),
@@ -31,12 +34,16 @@ describe('SquashDocument', () => {
   let squashAlgorithm: SquashAlgorithm
   let encryptMessage: EncryptMessage
   let logger: LoggerInterface
+  let unleashClient: UnleashClient
+  let cacheService: CacheService
+  let eventBus: InternalEventBusInterface
 
   const dto: SquashDocumentDTO = {
     nodeMeta: {} as any,
     commitId: 'commitId',
     keys: {} as any,
     handleVerificationObjection: jest.fn(),
+    documentType: 'doc',
   }
 
   beforeEach(() => {
@@ -72,9 +79,33 @@ describe('SquashDocument', () => {
 
     logger = {
       info: jest.fn(),
+      error: jest.fn(),
     } as unknown as LoggerInterface
 
-    usecase = new SquashDocument(docsApi, encryptMessage, decryptCommit, verifyCommit, squashAlgorithm, logger)
+    unleashClient = {
+      isReady: jest.fn().mockReturnValue(true),
+      isEnabled: jest.fn().mockReturnValue(true),
+    } as unknown as UnleashClient
+
+    cacheService = {
+      removeCachedCommit: jest.fn().mockResolvedValue(Result.ok()),
+    } as unknown as CacheService
+
+    eventBus = {
+      publish: jest.fn(),
+    } as unknown as InternalEventBusInterface
+
+    usecase = new SquashDocument(
+      docsApi,
+      encryptMessage,
+      decryptCommit,
+      verifyCommit,
+      squashAlgorithm,
+      logger,
+      unleashClient,
+      cacheService,
+      eventBus,
+    )
   })
 
   afterEach(() => {
@@ -151,7 +182,7 @@ describe('SquashDocument', () => {
     expect(squashTheCommitSpy).toHaveBeenCalled()
   })
 
-  it('should upload the squashed commit', async () => {
+  it.only('should upload the squashed commit', async () => {
     const commitResult = Result.ok({})
     docsApi.squashCommit = jest.fn().mockReturnValue(commitResult)
 

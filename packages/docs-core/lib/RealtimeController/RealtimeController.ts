@@ -30,6 +30,7 @@ import type { FetchDecryptedCommit } from '../UseCase/FetchDecryptedCommit'
 import { isDocumentUpdateChunkingEnabled } from '../utils/document-update-chunking'
 import type { UnleashClient } from '@proton/unleash'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { SquashErrorEvent } from '../UseCase/SquashDocument'
 
 /**
  * @TODO DRVDOC-802
@@ -69,6 +70,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync)
+    eventBus.addEventHandler(this, SquashErrorEvent)
 
     documentState.subscribeToProperty('editorReady', (value) => {
       if (value) {
@@ -220,6 +222,11 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
        * what the server was expecting.
        */
       void this.refetchCommitDueToStaleContents('token-fail')
+    } else if (event.type === SquashErrorEvent) {
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error').t`We are having trouble syncing your document. Please refresh the page.`,
+      })
+      this.documentState.setProperty('realtimeIsLockedDueToSquashError', true)
     } else {
       return
     }

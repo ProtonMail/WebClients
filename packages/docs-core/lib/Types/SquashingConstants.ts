@@ -3,7 +3,7 @@ import { isDevOrBlack } from '@proton/docs-shared'
 /** Number of DUs in a commit before we need to squash */
 export function GetCommitDULimit() {
   if (isDevOrBlack()) {
-    return 100
+    return 30
   } else {
     return 500
   }

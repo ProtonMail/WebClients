@@ -1,8 +1,7 @@
 import type { DocumentMetaInterface, InternalEventBusInterface } from '@proton/docs-shared'
-import { DocumentRole } from '@proton/docs-shared'
+import { DocumentRole, Result } from '@proton/docs-shared'
 import type { DecryptedNode, DriveCompat } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
-import { Result } from '@proton/docs-shared'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
@@ -55,6 +54,7 @@ describe('AuthenticatedDocController', () => {
         warn: jest.fn(),
         error: console.error,
       } as unknown as jest.Mocked<LoggerInterface>,
+      'doc',
     )
   })
 

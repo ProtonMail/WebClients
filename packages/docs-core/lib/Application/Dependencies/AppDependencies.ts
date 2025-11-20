@@ -200,6 +200,9 @@ export class AppDependencies extends DependencyContainer {
         this.get<VerifyCommit>(App_TYPES.VerifyCommit),
         this.get<SquashAlgorithm>(App_TYPES.SquashAlgorithm),
         this.get<LoggerInterface>(App_TYPES.Logger),
+        unleashClient,
+        this.get<CacheService>(App_TYPES.CacheService),
+        this.get<InternalEventBusInterface>(App_TYPES.EventBus),
       )
     })
 
