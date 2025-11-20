@@ -1,4 +1,8 @@
-import { areIntervalsOverlapping, isBefore } from 'date-fns';
+import type {
+    BookingPageEditData,
+    InternalBookingPage,
+} from 'applications/calendar/src/app/store/internalBooking/interface';
+import { areIntervalsOverlapping, differenceInMinutes, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/date/timezone';
@@ -7,8 +11,9 @@ import type { CalendarBootstrap, CalendarUserSettings } from '@proton/shared/lib
 
 import type { BookingRange, InternalBookingFrom, Slot } from '../../bookingsProvider/interface';
 import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../bookingsProvider/interface';
-import { generateDefaultBookingRange } from '../range/rangeHelpers';
+import { generateDefaultBookingRange, generateRangeFromSlots } from '../range/rangeHelpers';
 import { generateSlotsFromRange } from '../slot/slotHelpers';
+import { fromTimestampToUTCDate } from '../timeHelpers';
 
 export const getInitialBookingFormState = (isRecurringEnabled: boolean): InternalBookingFrom => {
     const localTimeZone = getTimezone();
@@ -35,7 +40,7 @@ export const recomputeSlotsForRanges = (bookingRanges: BookingRange[] | null, ne
             rangeID: range.id,
             start: range.start,
             end: range.end,
-            duration: newDuration,
+            duration: newDuration === 0 ? DEFAULT_EVENT_DURATION : newDuration,
             timezone: range.timezone,
         });
 
@@ -73,6 +78,39 @@ export const computeInitialFormData = ({
         duration,
         timezone,
         bookingRanges,
+    };
+};
+
+export const computeEditFormData = ({
+    bookingPage,
+    editData,
+}: {
+    bookingPage: InternalBookingPage;
+    editData: BookingPageEditData;
+}): InternalBookingFrom => {
+    const firstSlot = editData.slots[0];
+
+    const timezone = firstSlot?.timezone || getTimezone();
+    const duration = firstSlot
+        ? differenceInMinutes(
+              fromTimestampToUTCDate(firstSlot.end, firstSlot.timezone),
+              fromTimestampToUTCDate(firstSlot.start, firstSlot.timezone)
+          )
+        : DEFAULT_EVENT_DURATION;
+
+    const recurring = firstSlot ? !!firstSlot.rrule : DEFAULT_RECURRING;
+    const ranges = generateRangeFromSlots(editData);
+
+    return {
+        summary: bookingPage.summary,
+        description: bookingPage.description,
+        selectedCalendar: bookingPage.calendarID,
+        locationType: bookingPage.location ? BookingLocation.IN_PERSON : BookingLocation.MEET,
+        location: bookingPage.location,
+        timezone: timezone,
+        recurring,
+        duration,
+        bookingRanges: ranges,
     };
 };
 

@@ -1,3 +1,4 @@
+import type { BookingPageEditData } from 'applications/calendar/src/app/store/internalBooking/interface';
 import {
     addDays,
     eachDayOfInterval,
@@ -25,7 +26,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import type { CalendarViewEvent } from '../../../calendar/interface';
 import type { BookingFormData, BookingRange, RecurringRangeDisplay } from '../../bookingsProvider/interface';
 import { BOOKING_SLOT_ID, DEFAULT_RANGE_END_HOUR, DEFAULT_RANGE_START_HOUR } from '../../bookingsProvider/interface';
-import { roundToNextHalfHour } from '../timeHelpers';
+import { fromTimestampToUTCDate, roundToNextHalfHour } from '../timeHelpers';
 
 export const generateBookingRangeID = (start: Date, end: Date) => {
     return `${BOOKING_SLOT_ID}-${start.getTime()}-${end.getTime()}`;
@@ -211,4 +212,53 @@ export const getRangeDateStart = (formData: BookingFormData, initialStartDate: D
     }
 
     return isBefore(initialStartDate, new Date()) ? roundToNextHalfHour(new Date()) : initialStartDate;
+};
+
+export const generateRangeFromSlots = (editData: BookingPageEditData): BookingRange[] => {
+    const formattedSlots = editData.slots
+        .map((slot) => ({
+            ...slot,
+            start: fromTimestampToUTCDate(slot.start, slot.timezone),
+            end: fromTimestampToUTCDate(slot.end, slot.timezone),
+        }))
+        .sort((a, b) => a.start.getTime() - b.start.getTime());
+
+    if (formattedSlots.length === 0) {
+        return [];
+    }
+
+    const ranges: BookingRange[] = [];
+
+    let currentStart = formattedSlots[0].start;
+    let currentEnd = formattedSlots[0].end;
+    const timezone = formattedSlots[0].timezone;
+
+    for (let i = 1; i < formattedSlots.length; i += 1) {
+        const slot = formattedSlots[i];
+        const isContiguous = slot.start.getTime() === currentEnd.getTime();
+
+        if (isContiguous) {
+            currentEnd = slot.end;
+            continue;
+        }
+
+        ranges.push({
+            id: generateBookingRangeID(currentStart, currentEnd),
+            start: currentStart,
+            end: currentEnd,
+            timezone,
+        });
+
+        currentStart = slot.start;
+        currentEnd = slot.end;
+    }
+
+    ranges.push({
+        id: generateBookingRangeID(currentStart, currentEnd),
+        start: currentStart,
+        end: currentEnd,
+        timezone,
+    });
+
+    return ranges;
 };
