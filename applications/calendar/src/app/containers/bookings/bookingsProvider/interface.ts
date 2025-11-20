@@ -10,7 +10,7 @@ export interface BookingsContextValue {
     submitForm: () => Promise<void>;
     isBookingActive: boolean;
     canCreateBooking: boolean;
-    openBookingSidebar: (date: Date) => void;
+    openBookingSidebarCreation: (date: Date) => void;
     closeBookingSidebar: () => void;
     formData: BookingFormData;
     updateFormData: (field: keyof InternalBookingFrom, value: any, date?: Date) => void;

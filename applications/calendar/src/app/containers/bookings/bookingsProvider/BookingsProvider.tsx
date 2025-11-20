@@ -190,7 +190,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         intersectionRef.current = null;
     };
 
-    const openBookingSidebar = (currentDate: Date) => {
+    const openBookingSidebarCreation = (currentDate: Date) => {
         initializeFormData(currentDate);
         setBookingsState(BookingState.CREATE_NEW);
     };
@@ -308,7 +308,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const value: BookingsContextValue = {
         canCreateBooking: writeableCalendars.length > 0,
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
-        openBookingSidebar,
+        openBookingSidebarCreation,
         closeBookingSidebar,
         formData,
         updateFormData,
