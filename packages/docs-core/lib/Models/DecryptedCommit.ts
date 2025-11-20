@@ -2,6 +2,7 @@ import type { DecryptedMessage } from '@proton/docs-shared'
 import { GetCommitDULimit } from '../Types/SquashingConstants'
 import { mergeUpdates } from 'yjs'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export class DecryptedCommit {
   public readonly byteSize: number
@@ -19,8 +20,8 @@ export class DecryptedCommit {
     return this.messages.length
   }
 
-  needsSquash(): boolean {
-    return this.numberOfMessages() > GetCommitDULimit()
+  needsSquash(documentType: DocumentType): boolean {
+    return this.numberOfMessages() > GetCommitDULimit(documentType)
   }
 
   async squashedRepresentation(): Promise<Uint8Array<ArrayBuffer>> {
