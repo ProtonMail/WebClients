@@ -90,6 +90,9 @@
       "Apply": [
         "გადატარება"
       ],
+      "Ask me next time": [
+        "მკითხე შემდეგ ჯერზე"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -653,6 +656,9 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Save preferences": [
+        "პარამეტრების შენახვა"
       ],
       "Search": [
         "ძებნა"
@@ -4334,6 +4340,9 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Converting document...": [
+        "დოკუმენტის გადაყვანა..."
+      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -4376,6 +4385,9 @@
       ],
       "Creating link to folder": [
         "საქაღალდემდე ბმულის შექმნა"
+      ],
+      "Creating new document...": [
+        "ახალი დოკუმენტის შექმნა..."
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -4467,6 +4479,12 @@
       "Enter your own password (as trusted contact).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "დოკუმენტის ჩატვირთვის შეცდომა. ${ errorDetail }"
+      ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
       ],
@@ -4526,6 +4544,12 @@
       ],
       "Geoblocking": [
         "გეოდაბლოკვა"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
+      ],
+      "Get Notified About Comments": [
+        "გაფრთხილებების მიღება კომენტარების შესახებ"
       ],
       "here": [
         "აქ"
@@ -4660,6 +4684,9 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Making a copy...": [
+        "ასლის შექმნა..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
@@ -4687,6 +4714,9 @@
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL-ში დოკუმენტი მითითებული არაა. დაბრუნდით ${ DRIVE_APP_NAME }-ზე და აირჩიეთ დოკუმენტი."
       ],
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
@@ -5532,6 +5562,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enable email notifications": [
+        "ელფოსტის გაფრთხილებების ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -5579,6 +5612,9 @@
       ],
       "Include application logs in bug report": [
         "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
+      "Include document name in notification": [
+        "დოკუმენტის სახელის ჩასმა გაფრთხილებებში"
       ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"

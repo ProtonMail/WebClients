@@ -32,6 +32,11 @@
         "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Accounts"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
@@ -233,6 +238,9 @@
       ],
       "Create new policy": [
         "Nieuwe policy aanmaken"
+      ],
+      "Create organization": [
+        "Organisatie aanmaken"
       ],
       "Create users": [
         "Gebruikers aanmaken"
@@ -888,6 +896,9 @@
       "Start live chat": [
         "Start Live Chat"
       ],
+      "Start subscription": [
+        "Abonnement starten"
+      ],
       "Stay": [
         "Blijf"
       ],
@@ -896,6 +907,12 @@
       ],
       "Submit": [
         "Versturen"
+      ],
+      "Subscribe": [
+        "Abonneren"
+      ],
+      "Subscribe now": [
+        "Abonneer nu"
       ],
       "Support": [
         "Ondersteuning"
@@ -1058,6 +1075,9 @@
         "${ ips } server",
         "${ ips } servers"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI-assistent"
+      ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
       ],
@@ -1129,6 +1149,9 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Genereer ontbrekende sleutels voor adres \"${ emailAddress }\""
       ],
+      "Grant permission to “${ emailAddress }”": [
+        "Toegang verlenen aan \"${ emailAddress }\""
+      ],
       "Reconnect": [
         "Opnieuw verbinden"
       ],
@@ -1172,6 +1195,9 @@
       ],
       "Orphan": [
         "Wees"
+      ],
+      "Permission revoked": [
+        "Toestemming onderbroken"
       ]
     },
     "Admin": {
@@ -1713,6 +1739,9 @@
       ],
       "How safe is Telegram?": [
         "Hoe veilig is Telegram?"
+      ],
+      "How to change your IP address on Windows": [
+        "Hoe u uw IP-adres wijzigt op Windows"
       ],
       "In this article, we look at who can see your internet history when you use WiFi, what they can see, and why they might do this.": [
         "In dit artikel kijken we naar wie uw internetgeschiedenis kan zien wanneer u wifi gebruikt, wat ze kunnen zien en waarom ze dat zouden doen."
@@ -3753,8 +3782,14 @@
       "Error publishing changes": [
         "Fout bij publiceren wijzigingen"
       ],
+      "Failed to add group member": [
+        "Kon geen groepslid toevoegen."
+      ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
+      ],
+      "Failed to lookup server. Please try again": [
+        "Opzoeken server mislukt. Probeer opnieuw."
       ],
       "Failed to process the logo": [
         "Het logo kon niet worden verwerkt"
@@ -4742,6 +4777,9 @@
       "Secure streaming": [
         "Veilig streamen"
       ],
+      "Secure vault, item, and link sharing": [
+        "Veilig delen van kluizen, items en koppelingen"
+      ],
       "Stream from Netflix, HBO, and more": [
         "Stream van Netflix, HBO en meer"
       ]
@@ -5085,6 +5123,9 @@
       ],
       "Domain": [
         "Domein"
+      ],
+      "Drag to reorder": [
+        "Sleep om volgorde te wijzigen"
       ],
       "Status": [
         "Status"
@@ -5572,6 +5613,9 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } is een geavanceerd programma voor accountbescherming dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om u te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
       ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } is een geavanceerd accountbeschermingsprogramma dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om uw organisatie te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
       ],
@@ -5860,6 +5904,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Authenticator app 2FA disabled": [
+        "Authenticatie-app 2FA uitgeschakeld"
+      ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
       ],
@@ -6056,6 +6103,9 @@
       "Disabled on ${ boldValue }": [
         "Uitgeschakeld op ${ boldValue }"
       ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Het uitschakelen van de authenticatie-app 2FA maakt uw account minder veilig. Ga alleen verder als dit absoluut noodzakelijk is."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Ontdek nieuwe functies ontgrendeld en begin direct met het gebruik ervan!"
       ],
@@ -6189,6 +6239,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL ontvangen van uw identiteitsprovider (bv. https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Eindigt op ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Verbeter uw netwerkbeveiliging"
       ],
@@ -6308,6 +6361,9 @@
       ],
       "Groups": [
         "Groepen"
+      ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Helpt bij het schrijven, beantwoorden en proeflezen van e-mails. Indien uitgeschakeld hebben alleen beheerders toegang. Beheer voor individuele gebruikers in ${ userAndAddress } of ${ addMoreSeats }"
       ],
       "here": [
         "hier"
@@ -6581,6 +6637,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Beheer welke ${ BRAND_NAME } applicaties toegankelijk zijn voor de leden van uw organisatie. Indien uitgeschakeld, hebben alleen beheerders toegang."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Voer deze informatie handmatig in uw authenticatie-app in om uw account in te stellen. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -6701,6 +6760,9 @@
         "Of selecteer een specifieke server:"
       ],
       "Organization monitor": [
+        "Organisatiemonitor"
+      ],
+      "Organization Monitor": [
         "Organisatiemonitor"
       ],
       "Organization size": [
@@ -6914,6 +6976,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selecteer de bij ${ getFormattedOrganization } aangesloten gebruikers die u wilt toelaten tot uw ${ BRAND_NAME } organisatie:"
+      ],
+      "Select users to view their activity": [
+        "Selecteer gebruikers om hun activiteit te bekijken."
       ],
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
@@ -7473,6 +7538,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Met e-mailcategorieën komen belangrijke berichten in een primaire inbox terecht. Al het andere wordt in categorieën geordend."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Met groepen kunt u snel en gemakkelijk e-mails versturen naar alle mensen in een specifieke groep."
       ],
@@ -7713,6 +7781,9 @@
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
       ],
+      "Your storage": [
+        "Uw opslag"
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
       ],
@@ -7800,6 +7871,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Alleen bekijken"
+      ]
+    },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "Zo verschijnt uw organisatie aan gebruikers. U kunt dit op elk moment wijzigen."
       ]
     },
     "Input Error": {
@@ -7906,6 +7982,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
+      ],
+      "1 of 1 email address available": [
+        "1 van 1 e-mailadres beschikbaar"
       ],
       "Account holder": [
         "Rekeninghouder"
@@ -8173,6 +8252,9 @@
       ],
       "Emails (last month)": [
         "E-mails (laatste maand)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "${ DARK_WEB_MONITORING_NAME } inschakelen voor ${ domain.DomainName }"
       ],
       "Enabled": [
         "Ingeschakeld"
@@ -8497,6 +8579,9 @@
       ],
       "Sequences": [
         "Reeksen"
+      ],
+      "Server name": [
+        "Servernaam"
       ],
       "Share your referral link": [
         "Deel uw verwijzingslink:"
@@ -9025,6 +9110,11 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } inschakelen"
+      ]
+    },
+    "lumo_signup_2025: Info": {
+      "Protect your entire business. Get ${ LUMO_SHORT_APP_NAME } Professional with all ${ BRAND_NAME } for Business apps and premium features.": [
+        "Bescherm uw hele bedrijf. Ontvang ${ LUMO_SHORT_APP_NAME } Professional met alle ${ BRAND_NAME } voor Bedrijven apps en premium functies."
       ]
     },
     "Mail import summary": {
@@ -10231,6 +10321,9 @@
       "A disabled address cannot be default": [
         "Een uitgeschakeld adres kan niet primair zijn"
       ],
+      "Address reconnected.": [
+        "Adres opnieuw verbonden."
+      ],
       "An external address cannot be default": [
         "Een extern adres kan niet primair zijn"
       ],
@@ -10252,6 +10345,9 @@
       "Key copied to the clipboard": [
         "Sleutel naar het klembord gekopieerd"
       ],
+      "Monitoring enabled": [
+        "Monitoring ingeschakeld"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "Aantal records overschrijdt de download limiet van 10000"
       ],
@@ -10272,6 +10368,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tweestapsverificatie is niet langer vereist"
+      ],
+      "Zoom video conferencing settings have been updated": [
+        "Zoom Instellingen voor videoconferenties zijn bijgewerkt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10566,6 +10665,11 @@
       ],
       "Merge with calendar": [
         "Samenvoegen met agenda"
+      ]
+    },
+    "Organization": {
+      "Organization": [
+        "Organisatie"
       ]
     },
     "Organization capacity error": {
@@ -10983,6 +11087,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
+      ],
       "Taxes": [
         "Belastingen"
       ],
@@ -11099,6 +11206,11 @@
       ],
       "Credits will be added to your balance": [
         "Tegoed wordt toegevoegd aan uw saldo."
+      ]
+    },
+    "Payments.Lifetime Subscription.Renewal time": {
+      "Never": [
+        "Nooit"
       ]
     },
     "Payments.ModificationWarning": {
@@ -11240,6 +11352,9 @@
       "E.g., ": [
         "Bijv., "
       ],
+      "e.g., AT#62": [
+        "bv. AT#62"
+      ],
       "End date": [
         "Eind datum"
       ],
@@ -11370,6 +11485,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Privacy suite met premium services en ${ unlimitedPlanMaxSpace } versleutelde cloudopslag, alles in één bundel."
       ]
     },
     "Plans": {
@@ -11523,11 +11641,20 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per doorverwijzing"
       ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
       ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Geniet gratis van **${ planTitle }** tot **${ textDate }**."
+      ],
       "Invite friends. Get credits.": [
         "Nodig vrienden uit. Ontvang tegoed."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Laatste kans om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
       ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
         "Zodra uw volledige abonnement ingaat, kunt u binnen 30 dagen nog steeds annuleren en een pro rata teruggave ontvangen."
@@ -11540,6 +11667,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
+      "your subscription": [
+        "uw abonnement"
       ]
     },
     "Remove organization logo": {
@@ -11628,6 +11762,11 @@
       ],
       "Scopes cannot have the same value": [
         "Bereiken mogen niet dezelfde waarde hebben"
+      ]
+    },
+    "retention_policy_2025_Hint": {
+      "${ currentLength }/${ MAX_TITLE_LENGTH } characters": [
+        "${ currentLength }/${ MAX_TITLE_LENGTH } tekens"
       ]
     },
     "retention_policy_2025_Info": {
@@ -13535,6 +13674,9 @@
       ],
       "User deleted": [
         "Gebruiker verwijderd"
+      ],
+      "User enabled": [
+        "Gebruiker ingeschakeld"
       ]
     },
     "Success notification": {
@@ -13857,6 +13999,9 @@
       "Appearance": [
         "Uiterlijk"
       ],
+      "Application access": [
+        "Toegang tot toepassing"
+      ],
       "Apply gift code": [
         "Geschenkcode toepassen"
       ],
@@ -14081,6 +14226,9 @@
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
       ],
+      "Disable two-factor authentication app?": [
+        "Tweestapsverificatie app uitschakelen?"
+      ],
       "Disable two-factor authentication?": [
         "Tweestapsverificatie uitschakelen?"
       ],
@@ -14095,6 +14243,9 @@
       ],
       "Downgrade to ${ downgradedPlanName }?": [
         "Downgrade naar ${ downgradedPlanName }?"
+      ],
+      "Download ${ app }": [
+        "${ app } downloaden"
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
@@ -14147,6 +14298,9 @@
       "Email": [
         "E-mailadres"
       ],
+      "Email categories": [
+        "E-mailcategorieën"
+      ],
       "Email subscriptions": [
         "Nieuwsbrieven"
       ],
@@ -14177,6 +14331,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } gebruikersaccount aanmaken niet gelukt.",
         "${ failedUsers.length } gebruikersaccounts aanmaken niet gelukt."
+      ],
+      "Feature access": [
+        "Functietoegang"
       ],
       "Find email or username": [
         "Vind e-mail of gebruikersnaam"
@@ -14302,6 +14459,9 @@
       "Night theme": [
         "Nacht thema"
       ],
+      "No events": [
+        "Geen afspraken"
+      ],
       "No recovery method": [
         "Geen herstelmethode"
       ],
@@ -14422,6 +14582,9 @@
       "SAML authentication": [
         "SAML-authenticatie"
       ],
+      "Security": [
+        "Beveiliging"
+      ],
       "Security events": [
         "Veiligheidsgebeurtenissen"
       ],
@@ -14448,6 +14611,9 @@
       ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
+      ],
+      "Set up authenticator app": [
+        "Authenticatie-app instellen"
       ],
       "Set up email forwarding": [
         "E-mail doorsturen instellen"
@@ -14527,6 +14693,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "There are no events yet for your organization.": [
+        "Er zijn nog geen afspraken voor uw organisatie."
       ],
       "There are no groups": [
         "Er zijn geen groepen"
@@ -15043,11 +15212,17 @@
       "Did you know?": [
         "Wist u dat?"
       ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Bescherm uw organisatie tegen dataschendingen met ${ PLAN_NAMES[plan] }."
+      ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Bescherm uw organisatie tegen dataschendingen met ${ VPN_APP_NAME } voor Bedrijven."
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "Onbeperkte privacy voor u en een dierbare. Vanaf slechts ${ priceString }/maand."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "U kunt tot ${ DUO_MAX_USERS } personen beveiligen met ${ PLAN_NAMES[PLANS.DUO] }, en tot ${ FAMILY_MAX_USERS } met ${ PLAN_NAMES[PLANS.FAMILY] }. Vanaf slechts ${ priceString }/maand per account."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "U kunt tot ${ FAMILY_MAX_USERS } mensen beveiligen met ${ PLAN_NAMES[plan] }. Vanaf slechts ${ priceString }/maand per account."
@@ -15138,6 +15313,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administrators hebben geen toegang tot de gegevens van privégebruikers"
       ],
@@ -15164,6 +15342,12 @@
       ],
       "SSO user provided by your identity provider": [
         "SSO-gebruiker verstrekt door uw identiteitsprovider"
+      ],
+      "User has enabled two-factor authentication with a security key.": [
+        "De gebruiker heeft tweestapsverificatie ingeschakeld met een beveiligingssleutel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app.": [
+        "De gebruiker heeft tweestapsverificatie ingeschakeld met een authenticatie-app."
       ],
       "Writing assistant": [
         "Schrijfassistent"
@@ -15219,6 +15403,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Met ${ planTitlePlusMaybeBrand } krijgt u gratis toegang tot alle ${ BRAND_NAME } privacydiensten."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN-gateways"
       ]
     },
     "VPN info": {

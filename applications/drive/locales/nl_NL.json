@@ -147,6 +147,9 @@
       "Cancel upload": [
         "Upload annuleren"
       ],
+      "Cancel uploads": [
+        "Uploads annuleren"
+      ],
       "Change": [
         "Wijzigen"
       ],
@@ -248,6 +251,9 @@
       ],
       "Continue with Outlook": [
         "Ga verder met Outlook"
+      ],
+      "Copy": [
+        "Kopieer"
       ],
       "Copy address": [
         "Adres kopiëren"
@@ -989,6 +995,9 @@
       "Show advanced PGP settings": [
         "Geavanceerde PGP-instellingen tonen"
       ],
+      "Show location": [
+        "Toon locatie"
+      ],
       "Show more": [
         "Meer weergeven"
       ],
@@ -1039,6 +1048,9 @@
       ],
       "Submit report": [
         "Rapport indienen"
+      ],
+      "Subscribe now": [
+        "Abonneer nu"
       ],
       "Switch or add account": [
         "Account toevoegen of wisselen"
@@ -3374,6 +3386,9 @@
       "Calendar limit reached": [
         "Agendalimiet bereikt"
       ],
+      "Can't find any secure link": [
+        "Kan geen beveiligde koppeling vinden"
+      ],
       "Cannot export this contact": [
         "Kan dit contact niet exporteren"
       ],
@@ -3442,6 +3457,12 @@
       "Error decrypting a computer": [
         "Fout bij het ontsleutelen van een computer"
       ],
+      "Error reading file": [
+        "Fout bij lezen bestand"
+      ],
+      "Expected structure attached": [
+        "Verwachte structuur bijgevoegd"
+      ],
       "External accounts are not supported yet": [
         "Externe accounts worden nog niet ondersteund"
       ],
@@ -3459,6 +3480,9 @@
       ],
       "Failed to create public share node": [
         "Aanmaken van openbaar gedeelde node is mislukt"
+      ],
+      "Failed to expand folder": [
+        "Map uitvouwen mislukt"
       ],
       "Failed to fetch node": [
         "Fout bij het ophalen van knooppunt"
@@ -3508,6 +3532,9 @@
       "Folder \"${ name }\" is already downloading": [
         "Map \"${ name }\" wordt reeds gedownload"
       ],
+      "Folder creation failed": [
+        "Map aanmaken mislukt"
+      ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
       ],
@@ -3543,6 +3570,9 @@
       ],
       "Invalid IBAN": [
         "Ongeldige IBAN"
+      ],
+      "Invalid JSON file": [
+        "Ongeldig JSON-bestand"
       ],
       "Invalid name": [
         "Ongeldige naam"
@@ -3589,6 +3619,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
+      ],
+      "No file to upload": [
+        "Geen bestand om te op te laden"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -3720,6 +3753,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
+      "Something went wrong during folder listing": [
+        "Er is iets misgegaan tijdens het oplijsten van de mappen"
+      ],
       "Something went wrong. Please try again.": [
         "Er is iets fout gegaan. Probeer het later nog eens."
       ],
@@ -3831,8 +3867,14 @@
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
       ],
+      "Upload failed": [
+        "Opladen mislukt"
+      ],
       "Upload for this folder is temporarily disabled": [
         "Uploaden voor deze map is tijdelijk uitgeschakeld"
+      ],
+      "Upload not found": [
+        "Upload niet gevonden"
       ],
       "Username must begin with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer beginnen"
@@ -3857,6 +3899,9 @@
       ],
       "We were not able to load some of your invitation to shared items": [
         "We konden sommige van uw uitnodigingen voor gedeelde items niet laden."
+      ],
+      "We were not able to load some of your invitations": [
+        "We konden sommige van uw uitnodigingen niet laden."
       ],
       "We were not able to load some of your saved shared links": [
         "We konden sommige van uw opgeslagen gedeelde koppelingen niet laden."
@@ -3888,6 +3933,9 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "⚠️ Undecryptable device": [
+        "⚠️ Onversleutelbaar apparaat"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Onversleutelbare naam"
@@ -4841,6 +4889,9 @@
         "${ canceledCount } geannuleerd",
         "${ canceledCount } geannuleerd"
       ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } van ${ items.length } overdrachten voltooid"
+      ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } contact bevat meerdere e-mailadressen.",
         "${ contactCount } contacten bevatten meerdere e-mailadressen."
@@ -4904,6 +4955,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
+      ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress }% voltooid"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
@@ -5328,6 +5382,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "Done": [
+        "Voltooid"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
       ],
@@ -5342,6 +5399,9 @@
       ],
       "Download current logs": [
         "Huidige logboeken downloaden"
+      ],
+      "Download Failed": [
+        "Download mislukt"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download van ${ downloadFileName } zal afgebroken worden"
@@ -5581,6 +5641,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
+      ],
+      "In progress": [
+        "In uitvoering"
       ],
       "In restrictive countries": [
         "In restrictieve landen"
@@ -5823,6 +5886,9 @@
       "On public WiFi networks": [
         "Op openbare wifinetwerken"
       ],
+      "One of the files or folders you want to copy already exist in selected folder.": [
+        "Eén van de bestanden of mappen die u wilt kopiëren bestaat al in de geselecteerde map."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
       ],
@@ -6052,6 +6118,9 @@
       "Search Enabled": [
         "Zoeken Ingeschakeld"
       ],
+      "Select a folder to copy to.": [
+        "Selecteer een map om naartoe te kopiëren."
+      ],
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
       ],
@@ -6147,6 +6216,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Sommige regeringen blokkeren of beperken de toegang tot bepaalde websites. Een VPN helpt censuur te omzeilen en uw activiteit en identiteit privé te houden."
+      ],
+      "Some items failed": [
+        "Sommige items zijn mislukt"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ StartRecoveryButton }"
@@ -6285,6 +6357,9 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Deze unieke code kan worden gebruikt door websites en ISP's (internet service providers) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
       ],
+      "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
+        "Dit zal alle resterende uploads annuleren. Geannuleerde bestanden worden niet opgeslagen in ${ DRIVE_APP_NAME }."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Dit verwijdert alleen het album. Uw foto's blijven in uw tijdlijn. Deze actie kan niet ongedaan worden gemaakt."
       ],
@@ -6299,6 +6374,12 @@
       ],
       "This will replace the existing file with the folder": [
         "Dit zal het bestaande bestand vervangen door de map"
+      ],
+      "This will replace the existing folder or file with the file": [
+        "Dit zal de bestaande map of het bestand vervangen door het bestand."
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "Dit zal de bestaande map of het bestand vervangen door de map"
       ],
       "This will replace the existing folder with the file": [
         "Dit zal de bestaande map vervangen door het bestand"
@@ -6423,6 +6504,9 @@
       "upgrade your storage": [
         "upgrade uw opslag"
       ],
+      "Upload Failed": [
+        "Opladen mislukt"
+      ],
       "Uploaded": [
         "Geüpload"
       ],
@@ -6467,6 +6551,9 @@
       ],
       "VPN IP": [
         "VPN IP-adres"
+      ],
+      "Waiting": [
+        "Wachten"
       ],
       "Want to sync files faster?": [
         "Wilt u bestanden sneller synchroniseren?"
@@ -6614,6 +6701,9 @@
       ],
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
+      ],
+      "You don’t have permission to copy files to this folder.": [
+        "U heeft geen rechten om bestanden naar deze map te kopiëren."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
@@ -7112,6 +7202,9 @@
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
+      "Encrypted node": [
+        "Versleutelde node"
+      ],
       "Enter device name": [
         "Apparaatnaam invoeren"
       ],
@@ -7132,6 +7225,9 @@
       ],
       "File name": [
         "Bestandsnaam"
+      ],
+      "File transfer overview": [
+        "Overzicht bestandsoverdracht"
       ],
       "First name": [
         "Voornaam"
@@ -7333,6 +7429,9 @@
       ],
       "Replace existing folder": [
         "Bestaande map vervangen"
+      ],
+      "Replace existing folder or file": [
+        "Bestaande map of bestand vervangen"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -8956,6 +9055,9 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" succesvol aangemaakt"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" succesvol gekopieerd"
+      ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" succesvol verplaatst"
       ],
@@ -8968,6 +9070,10 @@
       "${ count } item failed to be decrypted": [
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } item kon niet in de prullenbak worden geplaatst",
+        "${ errors.length } items konden niet naar de prullenbak worden verplaatst"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } foto kon niet verwijderd worden uit \"${ albumLink.name }\"",
@@ -8984,6 +9090,10 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } foto is verwijderd uit \"${ albumLink.name }\"",
         "${ nbSuccesses } foto's zijn verwijderd uit \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } gekopieerd item verplaatst naar de prullenbak",
+        "${ numberOfItems } gekopieerde items verplaatst naar de prullenbak"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item verwijderd",
@@ -9020,6 +9130,10 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item hersteld uit prullenbak",
         "${ numberOfItems } items hersteld uit prullenbak"
+      ],
+      "${ numberOfItems } item successfully copied": [
+        "${ numberOfItems } item succesvol gekopieerd",
+        "${ numberOfItems } items succesvol gekopieerd"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item succesvol verplaatst",
@@ -9063,6 +9177,9 @@
       ],
       "Contact group updated": [
         "Contactgroep bijgewerkt"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Kopie van \"${ name }\" verplaatst naar de prullenbak"
       ],
       "Device failed to be removed": [
         "Apparaat kon niet worden verwijderd"
@@ -9202,6 +9319,9 @@
       ],
       "The spreadsheet failed to be created": [
         "De spreadsheet kon niet aangemaakt worden"
+      ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Deze beveiligde koppeling is verlopen, wijzig de verloopdatum in de deelinstellingen."
       ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
@@ -9406,9 +9526,15 @@
       ],
       "Upload folder": [
         "Map uploaden"
+      ],
+      "Upload more files": [
+        "Meer bestanden opladen"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 minuten"
+      ],
       "Access your files on the go": [
         "Onderweg toegang tot uw bestanden"
       ],
@@ -9433,11 +9559,20 @@
       "Edit documents online": [
         "Documenten online bewerken"
       ],
+      "Encryption happens automatically": [
+        "Versleuteling vindt automatisch plaats."
+      ],
       "End-to-end encrypted storage for your files": [
         "End-to-end versleutelde opslag voor uw bestanden"
       ],
       "Faster uploads for large or multiple files": [
         "Sneller uploaden voor grote of meerdere bestanden"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Bestanden die gedurende deze periode zijn opgeladen, tellen niet mee voor uw opslaglimiet."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Bestanden die nu zijn opgeladen, tellen niet mee voor uw opslaglimiet."
       ],
       "Final approval in progress": [
         "De laatste goedkeuring is bezig"
@@ -9472,6 +9607,9 @@
       "Invite team members": [
         "Teamleden uitnodigen"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Houd het momentum vast door meer bestanden op te laden met de opslagruimte die bij uw abonnement is inbegrepen."
+      ],
       "Manage access": [
         "Toegang beheren"
       ],
@@ -9499,6 +9637,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "De eigenaar moet de toegang tot delen goedkeuren. U ontvangt een e-mail zodra dit is gedaan."
       ],
+      "Upload files, folders, photos": [
+        "Upload bestanden, mappen, foto's"
+      ],
       "Upload your first file": [
         "Upload uw eerste bestand"
       ],
@@ -9507,6 +9648,12 @@
       ],
       "Work together": [
         "Werk samen"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "U hebt zojuist gratis data bemachtigd en uw bestanden beveiligd met end-to-end versleuteling — in recordtijd!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Uw opslaglimiet wordt niet beïnvloed."
       ]
     },
     "Onboarding Trial": {
@@ -9566,6 +9713,9 @@
       "Create new group": [
         "Nieuwe groep maken"
       ],
+      "Expected strcuture": [
+        "Verwachte structuur"
+      ],
       "Ignore group": [
         "Groep negeren"
       ],
@@ -9577,6 +9727,9 @@
       ],
       "Only current location: ${ name }": [
         "Alleen huidige locatie: ${ name }"
+      ],
+      "Select JSON file": [
+        "Selecteer JSON-bestand"
       ],
       "Verify content": [
         "Inhoud bevestigen"
@@ -10208,11 +10361,17 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per doorverwijzing"
       ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Verdien tot ${ maxRewardAmount } aan tegoed. U ontvangt ${ referrerRewardAmount } wanneer de persoon die u uitnodigt zich abonneert op een ${ BRAND_NAME } abonnement."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Geniet gratis van **${ planTitle }** tot **${ textDate }**."
       ],
       "Friend joined": [
         "Vriend lid geworden",
@@ -10228,6 +10387,9 @@
       "Invited friends": [
         "Uitgenodigde vrienden"
       ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Laatste kans om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
       "More sharing options": [
         "Meer opties om te delen"
       ],
@@ -10242,6 +10404,13 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
+      "your subscription": [
+        "uw abonnement"
       ]
     },
     "Safety review": {
@@ -11731,6 +11900,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
       ],
+      "Cancel all uploads?": [
+        "Alle uploads annuleren?"
+      ],
       "Cancel subscription?": [
         "Abonnement opzeggen?"
       ],
@@ -12020,6 +12192,9 @@
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Ga aan de slag met 10 minuten gratis uploadtijd, van het huis."
+      ],
       "Get the apps": [
         "Verkrijg de apps"
       ],
@@ -12098,6 +12273,9 @@
       ],
       "Logs": [
         "Logboeken"
+      ],
+      "Make a copy": [
+        "Een kopie maken"
       ],
       "Make a secure connection your default": [
         "Maak een beveiligde verbinding uw standaard"
@@ -12269,6 +12447,9 @@
       ],
       "Re-signing contacts": [
         "Contacten opnieuw ondertekenen"
+      ],
+      "Ready, set, upload.": [
+        "Klaar, instellen, opladen."
       ],
       "Recommended": [
         "Aanbevolen"
@@ -12541,6 +12722,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "We konden niet verifiëren dat een anonieme gebruiker deze map heeft opgeladen."
       ],
+      "Welcome offer": [
+        "Welkomstaanbieding"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
       ],
@@ -12567,6 +12751,9 @@
       ],
       "You have no folders yet": [
         "U hebt nog geen mappen"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Uw ${ freeUploadLength } is gestart."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
@@ -12597,6 +12784,9 @@
       ],
       "Your welcome actions": [
         "Uw welkomstacties"
+      ],
+      "You’re off to a great start!": [
+        "U bent goed begonnen!"
       ],
       "You’ve got 5 GB of storage": [
         "U heeft 5 GB aan opslag"

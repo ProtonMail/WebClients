@@ -622,9 +622,6 @@
       "Skip": [
         "Preskočiť"
       ],
-      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Niekto s vami zdieľal položku v ${ PASS_APP_NAME }."
-      ],
       "Sort vault items": [
         "Triediť položky trezoru"
       ],
@@ -1196,6 +1193,9 @@
       "Secure link could not be opened.": [
         "Bezpečný odkaz nie je možné otvoriť"
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Servery sú nedostupné. Skúste odomknúť ${ PASS_SHORT_APP_NAME } o pár minút, prosím."
+      ],
       "Settings update failed": [
         "Aktualizácia nastavení zlyhala"
       ],
@@ -1222,9 +1222,6 @@
       ],
       "Trashing item failed": [
         "Presun do koša zlyhal"
-      ],
-      "Try reaching out to the link owner.": [
-        "Skúste kontaktovať vlastníka odkazu."
       ],
       "Unable to generate an OTP code for this item": [
         "Pre túto položku nie je možné vygenerovať OTP kód"
@@ -1282,6 +1279,9 @@
       ],
       "Wrong second password": [
         "Nesprávne druhé heslo"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Momentálne nie ste pripojení. Obnovte pripojenie, aby ste odomkli ${ PASS_SHORT_APP_NAME }, prosím."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Váš DNS nie je správne nastavený. MX záznam, ktorý sme získali, je:"
@@ -2273,6 +2273,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Vybrané položky boli úspešne obnovené z koša"
+      ],
+      "Servers are unreachable": [
+        "Servery sú nedostupné"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
@@ -3702,9 +3705,6 @@
       ],
       "Theme": [
         "Vzhľad"
-      ],
-      "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Táto položka je prístupná do ${ date } alebo do dosiahnutia limitu zobrazení."
       ],
       "Tier/Level": [
         "Úroveň členstva"

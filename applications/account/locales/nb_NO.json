@@ -2562,6 +2562,9 @@
       "Easily manage your inbox": [
         "Administrer enkelt innboksen din"
       ],
+      "Easily manage your inbox with ${ mailPlusPlanName }": [
+        "Administrer enkelt innboksen din med ${ mailPlusPlanName }"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Aktiver nødstopp og automatisk tilkobling i VPN-innstillingene dine."
       ],
@@ -18692,6 +18695,9 @@
       "Your recovery email can **only recover access to your account**.": [
         "Gjenopprettings-e-posten kan **bare gjenopprette tilgangen til kontoen din**."
       ],
+      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Gjenopprettings-e-postadressen din kan misbrukes av angripere til å ta over kontoen din. ${ disableEmail } for å øke kontosikkerheten din."
+      ],
       "Your recovery email has been enabled": [
         "Gjenopprettings-e-posten din er aktivert"
       ],
@@ -18712,6 +18718,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Gjenopprettings-telefonen kan **bare gjenopprette tilgangen til kontoen din**."
+      ],
+      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Gjenopprettingstelefonen din kan misbrukes av angripere til å ta over kontoen din. ${ disablePhone } for å øke kontosikkerheten."
       ],
       "Your recovery phone has been enabled": [
         "Gjenopprettingstelefonen din er aktivert"

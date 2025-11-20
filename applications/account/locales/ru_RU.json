@@ -2228,6 +2228,9 @@
       "Easily manage your inbox": [
         "Управляйте своим почтовым ящиком с лёгкостью"
       ],
+      "Easily manage your inbox with ${ mailPlusPlanName }": [
+        "Легко управляйте своим почтовым ящиком с ${ mailPlusPlanName }."
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Включите kill switch и автоматическое подключение в настройках VPN."
       ],
@@ -4006,6 +4009,14 @@
         "Каждые ${ interval } дня, ${ untilString }",
         "Каждые ${ interval } дней, ${ untilString }",
         "Каждые ${ interval } дней, ${ untilString }"
+      ]
+    },
+    "Dashboard": {
+      "Set secure passwords without the hassle.": [
+        "Устанавливайте надежные пароли без лишних хлопот."
+      ],
+      "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
+        "С ${ planTitlePlusMaybeBrand } вы получаете бесплатный доступ ко всем службам конфиденциальности ${ BRAND_NAME }."
       ]
     },
     "Day": {

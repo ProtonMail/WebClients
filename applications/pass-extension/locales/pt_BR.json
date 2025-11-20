@@ -1215,6 +1215,9 @@
       "Wrong second password": [
         "Segunda senha incorreta"
       ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Você está sem off-line. Retome a conectividade para desbloquear o ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Seu navegador está com dificuldades para ativar o ${ PASS_APP_NAME }."
       ],
@@ -2129,6 +2132,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Os itens selecionados foram restaurados da lixeira."
+      ],
+      "Servers are unreachable": [
+        "Os servidores estão inacessíveis"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
