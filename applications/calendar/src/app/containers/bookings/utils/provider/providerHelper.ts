@@ -5,12 +5,7 @@ import type {
 import { areIntervalsOverlapping, differenceInMinutes, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
-import {
-    convertTimestampToTimezone,
-    fromUTCDateToLocalFakeUTCDate,
-    getTimezone,
-    toLocalDate,
-} from '@proton/shared/lib/date/timezone';
+import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/date/timezone';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { CalendarBootstrap, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
@@ -18,6 +13,7 @@ import type { BookingRange, InternalBookingFrom, Slot } from '../../bookingsProv
 import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../bookingsProvider/interface';
 import { generateDefaultBookingRange, generateRangeFromSlots } from '../range/rangeHelpers';
 import { generateSlotsFromRange } from '../slot/slotHelpers';
+import { fromTimestampToUTCDate } from '../timeHelpers';
 
 export const getInitialBookingFormState = (isRecurringEnabled: boolean): InternalBookingFrom => {
     const localTimeZone = getTimezone();
@@ -97,8 +93,8 @@ export const computeEditFormData = ({
     const timezone = firstSlot?.timezone || getTimezone();
     const duration = firstSlot
         ? differenceInMinutes(
-              toLocalDate(convertTimestampToTimezone(firstSlot.end, firstSlot.timezone)),
-              toLocalDate(convertTimestampToTimezone(firstSlot.start, firstSlot.timezone))
+              fromTimestampToUTCDate(firstSlot.end, firstSlot.timezone),
+              fromTimestampToUTCDate(firstSlot.start, firstSlot.timezone)
           )
         : DEFAULT_EVENT_DURATION;
 
