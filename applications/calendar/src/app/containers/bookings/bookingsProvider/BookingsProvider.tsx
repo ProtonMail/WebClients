@@ -17,10 +17,12 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { useCalendarDispatch } from '../../../store/hooks';
 import { internalBookingActions } from '../../../store/internalBooking/interalBookingSlice';
+import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { encryptBookingPage } from '../utils/crypto/bookingEncryption';
 import {
+    computeEditFormData,
     computeInitialFormData,
     getInitialBookingFormState,
     recomputeSlotsForRanges,
@@ -195,6 +197,15 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         setBookingsState(BookingState.CREATE_NEW);
     };
 
+    const openBookingSidebarEdition = (bookingPage: InternalBookingPage, editData: BookingPageEditData) => {
+        const form = computeEditFormData({
+            bookingPage,
+            editData,
+        });
+        setInternalForm(form);
+        setBookingsState(BookingState.EDIT_EXISTING);
+    };
+
     const closeBookingSidebar = () => {
         const formWasTouched = wasBookingFormTouched({
             currentFormData: formData,
@@ -309,6 +320,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         canCreateBooking: writeableCalendars.length > 0,
         isBookingActive: bookingsState === BookingState.CREATE_NEW || bookingsState === BookingState.EDIT_EXISTING,
         openBookingSidebarCreation,
+        openBookingSidebarEdition,
         closeBookingSidebar,
         formData,
         updateFormData,

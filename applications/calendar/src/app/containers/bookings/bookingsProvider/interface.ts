@@ -1,3 +1,5 @@
+import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
+
 export const BOOKING_SLOT_ID = 'booking-slot-' as const;
 export const TEMPORARY_BOOKING_SLOT = 'temporary-booking-slot-' as const;
 export const MAX_BOOKING_SLOTS = 100 as const;
@@ -11,6 +13,7 @@ export interface BookingsContextValue {
     isBookingActive: boolean;
     canCreateBooking: boolean;
     openBookingSidebarCreation: (date: Date) => void;
+    openBookingSidebarEdition: (bookingPage: InternalBookingPage, editData: BookingPageEditData) => void;
     closeBookingSidebar: () => void;
     formData: BookingFormData;
     updateFormData: (field: keyof InternalBookingFrom, value: any, date?: Date) => void;
