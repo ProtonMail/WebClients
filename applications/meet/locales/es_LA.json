@@ -1538,8 +1538,14 @@
       " and ": [
         " y "
       ],
+      "${ maxParticipants } participant limit reached": [
+        "Se ha alcanzado el límite de ${ maxParticipants } participantes."
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualice su navegador o dispositivo a una versión que sea compatible con WebRTC, pruebe un navegador diferente o desactive cualquier extensión que pueda estar bloqueándolo."
+      ],
+      "${ participantCount } of ${ maxParticipants } participants": [
+        "${ participantCount } de ${ maxParticipants } participantes"
       ],
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } le ha invitado a una reunión de ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:"
@@ -1699,6 +1705,9 @@
       ],
       "Meeting created": [
         "Reunión creada"
+      ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Reunión llena (${ maxParticipants } participantes)"
       ],
       "Meeting ID: ${ id }": [
         "ID de la reunión: ${ id }"
