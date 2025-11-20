@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -22,6 +23,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useCancellationTelemetry from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import {
     Renew,
@@ -35,6 +37,7 @@ import {
     isUpcomingSubscriptionUnpaid,
 } from '@proton/payments';
 import { shouldHaveUpcomingSubscription as getShouldHaveUpcomingSubscription } from '@proton/payments/core/subscription/helpers';
+import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -54,10 +57,12 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const api = useApi();
     const { sendDashboardReactivateReport } = useCancellationTelemetry();
     const eventManager = useEventManager();
+    const { createNotification } = useNotifications();
     const upcoming = subscription?.UpcomingSubscription ?? undefined;
     const [organization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [user] = useUser();
+    const getPaymentMethods = useGetPaymentMethods();
 
     const { planTitle } = getSubscriptionPlanTitle(user, subscription);
 
@@ -94,12 +99,21 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             text: c('Action subscription').t`Reactivate`,
             loading: reactivating,
             onClick: () => {
-                const searchParams = new URLSearchParams(location.search);
-                const reactivationSource = searchParams.get('source');
-
-                sendDashboardReactivateReport(reactivationSource || 'default');
-
                 withReactivating(async () => {
+                    // For Referral Trials only: Check if user has payment methods before reactivating
+                    const paymentMethods = await getPaymentMethods();
+                    if (isReferralTrial(subscription) && paymentMethods.length === 0) {
+                        createNotification({
+                            type: 'error',
+                            text: c('Error').t`Please add a payment method before reactivating your subscription`,
+                        });
+                        return;
+                    }
+
+                    const searchParams = new URLSearchParams(location.search);
+                    const reactivationSource = searchParams.get('source');
+                    sendDashboardReactivateReport(reactivationSource || 'default');
+
                     await api(
                         changeRenewState(
                             {
