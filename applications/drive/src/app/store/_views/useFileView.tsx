@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
@@ -15,7 +16,9 @@ import {
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import type { VideoData } from '@proton/shared/lib/interfaces/drive/video';
 
+import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
 import { useVideoStreaming } from '../../hooks/util/useVideoStreaming';
+import { DownloadManager } from '../../managers/download/DownloadManager';
 import { isIgnoredError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
 import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
@@ -140,7 +143,8 @@ function useFileViewBase(
     const { download } = useDownloadProvider();
     const [isContentLoading, withContentLoading] = useLoading(true);
     const isVideoStreamingEnabled = unleashVanillaStore.getState().isEnabled('DriveWebVideoStreaming');
-
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
+    const dm = DownloadManager.getInstance();
     const [error, setError] = useState<any>();
     const [link, setLink] = useState<DecryptedLink>();
     const [contents, setContents] = useState<Uint8Array<ArrayBuffer>[]>();
@@ -242,6 +246,11 @@ function useFileViewBase(
         if (!link) {
             return;
         }
+
+        if (isSDKTransferEnabled) {
+            return dm.download([generateNodeUid(link.volumeId, link.linkId)]);
+        }
+
         void download([
             {
                 ...link,
