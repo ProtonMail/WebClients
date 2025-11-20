@@ -8,6 +8,7 @@ import {
   CreateSquashCommit,
 } from '@proton/docs-proto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { InternalEventBusInterface } from '@proton/docs-shared'
 import { Result, GenerateUUID } from '@proton/docs-shared'
 import type { DocsApi } from '../Api/DocsApi'
 import type { EncryptMessage } from './EncryptMessage'
@@ -22,18 +23,32 @@ import type { SquashVerificationObjectionCallback } from '../Types/SquashVerific
 import { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 import { metricsBucketNumberForUpdateCount } from '../Util/bucketNumberForUpdateCount'
 import type { LoggerInterface } from '@proton/utils/logs'
+import type UnleashClient from '@proton/unleash/UnleashClient'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { compressDocumentUpdate, isDocumentUpdateCompressionEnabled } from '../utils/document-update-compression'
+import type { CacheService } from '../Services/CacheService'
+import { seconds_to_ms } from '../Util/time-utils'
 
 export type SquashDocumentDTO = {
+  documentType: DocumentType
   nodeMeta: NodeMeta
   commitId: string
   keys: DocumentKeys
   handleVerificationObjection: SquashVerificationObjectionCallback
 }
 
+const MaxRetryAttempts = 5
+const MaxRetryBackoffInMilliseconds = seconds_to_ms(32)
+
+export const SquashErrorEvent = 'SquashErrorEvent'
+
 /**
  * Squashes a document's series of updates into one or more resulting updates.
  */
 export class SquashDocument implements UseCaseInterface<boolean> {
+  private attemptsToSquash = 0
+  private retryTimeout: ReturnType<typeof setTimeout> | undefined = undefined
+
   constructor(
     private docsApi: DocsApi,
     private encryptMessage: EncryptMessage,
@@ -41,6 +56,9 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     private verifyCommit: VerifyCommit,
     private squashAlgoritm: SquashAlgorithm,
     private logger: LoggerInterface,
+    private unleashClient: UnleashClient,
+    private cacheService: CacheService,
+    private eventBus: InternalEventBusInterface,
   ) {}
 
   async execute(dto: SquashDocumentDTO): Promise<Result<boolean>> {
@@ -50,63 +68,108 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     this.logger.info('[Squash] Locking document...')
 
-    const lockResult = await this.docsApi.lockDocument(nodeMeta, commitId)
-    if (lockResult.isFailed()) {
-      return Result.fail(lockResult.getErrorMessage())
-    }
+    this.attemptsToSquash++
+    clearTimeout(this.retryTimeout)
 
-    const squashLock = SquashLock.deserializeBinary(lockResult.getValue())
+    let lockID: string | undefined = undefined
 
-    this.logger.info('[Squash] Decrypting commit...')
-
-    const decryptionResult = await this.decryptCommit.execute({
-      commit: squashLock.commit,
-      documentContentKey: keys.documentContentKey,
-      commitId: squashLock.commitId,
-    })
-    if (decryptionResult.isFailed()) {
-      metrics.docs_aborted_squashes_total.increment({ reason: 'decryption_error' })
-      return Result.fail(decryptionResult.getError())
-    }
-
-    const decryptedCommit = decryptionResult.getValue()
-
-    const verificationResult = await this.performVerification(decryptedCommit)
-
-    if (verificationResult.isFailed()) {
-      const objectionDecision = await dto.handleVerificationObjection()
-      if (objectionDecision === SquashVerificationObjectionDecision.AbortSquash) {
-        return Result.fail('Verification failed')
+    try {
+      const lockResult = await this.docsApi.lockDocument(nodeMeta, commitId)
+      if (lockResult.isFailed()) {
+        metrics.docs_aborted_squashes_total.increment({ reason: 'network_error' })
+        throw new Error(lockResult.getErrorMessage())
       }
+
+      const squashLock = SquashLock.deserializeBinary(lockResult.getValue())
+
+      lockID = squashLock.lockId
+
+      this.logger.info('[Squash] Decrypting commit...')
+
+      const decryptionResult = await this.decryptCommit.execute({
+        commit: squashLock.commit,
+        documentContentKey: keys.documentContentKey,
+        commitId: squashLock.commitId,
+      })
+      if (decryptionResult.isFailed()) {
+        metrics.docs_aborted_squashes_total.increment({ reason: 'decryption_error' })
+        throw new Error(decryptionResult.getError())
+      }
+
+      const decryptedCommit = decryptionResult.getValue()
+
+      const verificationResult = await this.performVerification(decryptedCommit)
+
+      if (verificationResult.isFailed()) {
+        const objectionDecision = await dto.handleVerificationObjection()
+        if (objectionDecision === SquashVerificationObjectionDecision.AbortSquash) {
+          metrics.docs_aborted_squashes_total.increment({ reason: 'unknown' })
+          throw new Error('Verification failed')
+        }
+      }
+
+      const squashCommitResult = await this.squashTheCommit(decryptedCommit, squashLock, keys, dto.documentType)
+      if (squashCommitResult.isFailed()) {
+        throw new Error(squashCommitResult.getError())
+      }
+
+      const squashCommit = squashCommitResult.getValue()
+
+      this.logger.info('[Squash] Sending squash commit to API...')
+
+      const commitResult = await this.docsApi.squashCommit(nodeMeta, decryptedCommit.commitId, squashCommit)
+      if (commitResult.isFailed()) {
+        throw new Error(commitResult.getErrorMessage())
+      }
+
+      const endTime = Date.now()
+      const timeToSquashInSeconds = Math.floor((endTime - startTime) / 1000)
+
+      this.logger.info(`[Squash] Took ${timeToSquashInSeconds} seconds to complete successfully`)
+
+      metrics.docs_squashes_latency_histogram.observe({
+        Labels: {
+          updates: metricsBucketNumberForUpdateCount(decryptedCommit.messages.length),
+        },
+        Value: timeToSquashInSeconds,
+      })
+
+      metrics.docs_squashes_total.increment({})
+
+      void this.cacheService
+        .removeCachedCommit(squashLock.commitId)
+        .then(() => {
+          this.logger.info(`[Squash] Removed cached commit ${squashLock.commitId} after successful squash`)
+        })
+        .catch((error) => {
+          this.logger.error(`[Squash] Failed to remove cached commit ${squashLock.commitId}: ${error}`)
+        })
+    } catch (error) {
+      this.logger.error(`[Squash] Failed to squash document: ${error}`)
+      if (lockID) {
+        this.logger.info(`[Squash] Unlocking document with lock ID ${lockID}...`)
+        await this.docsApi.unlockDocument(nodeMeta, lockID).catch((error) => {
+          this.logger.error(`[Squash] Failed to unlock document ${nodeMeta.linkId}: ${error}`)
+        })
+      }
+      if (this.attemptsToSquash >= MaxRetryAttempts) {
+        this.logger.error(`[Squash] Failed to squash document after ${MaxRetryAttempts} attempts`)
+        this.eventBus.publish({
+          type: SquashErrorEvent,
+          payload: undefined,
+        })
+        return Result.fail(`Failed to squash document after ${MaxRetryAttempts} attempts`)
+      } else {
+        const delay = Math.min(Math.pow(2, this.attemptsToSquash) * 1000, MaxRetryBackoffInMilliseconds)
+        this.logger.info(`[Squash] Retrying squash document in ${delay} milliseconds...`)
+        this.retryTimeout = setTimeout(() => {
+          void this.execute(dto)
+        }, delay)
+      }
+      return Result.fail(`Failed to squash document`)
     }
 
-    const squashCommitResult = await this.squashTheCommit(decryptedCommit, squashLock, keys)
-    if (squashCommitResult.isFailed()) {
-      return Result.fail(squashCommitResult.getError())
-    }
-
-    const squashCommit = squashCommitResult.getValue()
-
-    this.logger.info('[Squash] Sending squash commit to API...')
-
-    const commitResult = await this.docsApi.squashCommit(nodeMeta, decryptedCommit.commitId, squashCommit)
-    if (commitResult.isFailed()) {
-      return Result.fail(commitResult.getErrorMessage())
-    }
-
-    const endTime = Date.now()
-    const timeToSquashInSeconds = Math.floor((endTime - startTime) / 1000)
-
-    this.logger.info(`[Squash] Took ${timeToSquashInSeconds} seconds to complete successfully`)
-
-    metrics.docs_squashes_latency_histogram.observe({
-      Labels: {
-        updates: metricsBucketNumberForUpdateCount(decryptedCommit.messages.length),
-      },
-      Value: timeToSquashInSeconds,
-    })
-
-    metrics.docs_squashes_total.increment({})
+    this.attemptsToSquash = 0
 
     return Result.ok(true)
   }
@@ -115,6 +178,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     decryptedCommit: DecryptedCommit,
     squashLock: SquashLock,
     keys: DocumentKeys,
+    documentType: DocumentType,
   ): Promise<Result<SquashCommit>> {
     const updatePairs: UpdatePair[] = decryptedCommit.messages.map((update, index) => ({
       encrypted: squashLock.commit.updates.documentUpdates[index],
@@ -128,18 +192,20 @@ export class SquashDocument implements UseCaseInterface<boolean> {
       factor: SQUASH_FACTOR,
     })
     if (squashResult.isFailed()) {
+      metrics.docs_aborted_squashes_total.increment({ reason: 'unknown' })
       return Result.fail(squashResult.getError())
     }
 
     const squashValue = squashResult.getValue()
 
     if (!squashValue.updatesAsSquashed) {
+      metrics.docs_aborted_squashes_total.increment({ reason: 'unknown' })
       return Result.fail('Squash failed; nothing to squash.')
     }
 
     this.logger.info('[Squash] Encrypting squash result...')
 
-    const encryptedResult = await this.encryptSquashResult(squashValue, keys)
+    const encryptedResult = await this.encryptSquashResult(squashValue, keys, documentType)
     if (encryptedResult.isFailed()) {
       metrics.docs_aborted_squashes_total.increment({ reason: 'encryption_error' })
       return Result.fail(encryptedResult.getError())
@@ -180,18 +246,31 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     return Result.ok(true)
   }
 
-  async encryptSquashResult(squashResult: SquashResult, keys: DocumentKeys): Promise<Result<DocumentUpdate[]>> {
+  async encryptSquashResult(
+    squashResult: SquashResult,
+    keys: DocumentKeys,
+    documentType: DocumentType,
+  ): Promise<Result<DocumentUpdate[]>> {
     const resultingUpdates: DocumentUpdate[] = []
     resultingUpdates.push(...squashResult.unmodifiedUpdates.map((update) => update.encrypted))
 
     if (squashResult.updatesAsSquashed) {
+      let squashedContent = squashResult.updatesAsSquashed
+      if (isDocumentUpdateCompressionEnabled(this.unleashClient, documentType)) {
+        const sizeBeforeCompression = squashedContent.byteLength
+        squashedContent = compressDocumentUpdate(squashedContent)
+        this.logger.info(
+          `[Squash] Compressed squash result from ${sizeBeforeCompression} bytes to ${squashedContent.byteLength} bytes`,
+        )
+      }
+
       const metadata = {
         version: DocumentUpdateVersion.V1,
         authorAddress: keys.userOwnAddress,
         timestamp: Date.now(),
       }
 
-      const encryptedUpdate = await this.encryptMessage.execute(squashResult.updatesAsSquashed, metadata, keys)
+      const encryptedUpdate = await this.encryptMessage.execute(squashedContent, metadata, keys)
       if (encryptedUpdate.isFailed()) {
         return Result.fail(encryptedUpdate.getError())
       }
