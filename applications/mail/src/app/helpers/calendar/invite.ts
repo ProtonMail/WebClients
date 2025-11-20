@@ -55,6 +55,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { omit } from '@proton/shared/lib/helpers/object';
 import type { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -708,14 +709,14 @@ export const getInitialInvitationModel = ({
 export const getSupportedEventInvitation = async ({
     vcalComponent,
     message,
-    icsBinaryString,
+    icsBytes,
     icsFileName,
     primaryTimezone,
     canImportEventColor,
 }: {
     vcalComponent: VcalVcalendar;
     message: MessageWithOptionalBody;
-    icsBinaryString: string;
+    icsBytes: Uint8Array<ArrayBuffer>;
     icsFileName: string;
     primaryTimezone: string;
     canImportEventColor: boolean;
@@ -724,7 +725,7 @@ export const getSupportedEventInvitation = async ({
     const prodId = prodIdProperty.value;
     const supportedMethod = getIcalMethod(method);
     const supportedCalscale = getSupportedCalscale(calscale);
-    let originalUniqueIdentifier = await generateVeventHashUID(serialize(vcalComponent));
+    let originalUniqueIdentifier = await generateVeventHashUID(stringToUint8Array(serialize(vcalComponent)));
     const vevent = extractVevent(vcalComponent);
     const vtimezone = extractUniqueVTimezone(vcalComponent);
     const uid = vevent?.uid?.value || '';
@@ -788,11 +789,11 @@ export const getSupportedEventInvitation = async ({
     let legacyUid;
     let originalIcsHasNoOrganizer = false;
     if (isImport) {
-        const sha1Uid = await generateVeventHashUID(icsBinaryString, originalUID);
+        const sha1Uid = await generateVeventHashUID(icsBytes, originalUID);
         if (originalUID) {
             // generate a hash UID with legacy format. The ICS widget will need it to find the event in the DB
             // in case it was added before the UID migration
-            legacyUid = await generateVeventHashUID(icsBinaryString, originalUID, true);
+            legacyUid = await generateVeventHashUID(icsBytes, originalUID, true);
         }
         completeVevent.uid = { value: sha1Uid };
     } else if (!originalUID) {

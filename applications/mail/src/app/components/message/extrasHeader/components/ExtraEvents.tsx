@@ -9,7 +9,7 @@ import { useApi, useGetCalendarEventRaw, useGetCalendarInfo } from '@proton/comp
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToBinaryString, decodeUtf8 } from '@proton/crypto/lib/utils';
+import { utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
@@ -187,7 +187,8 @@ const ExtraEvents = ({ message }: Props) => {
                                     if (download.isError) {
                                         return new EventInvitationError(INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                                     }
-                                    const icsBinaryString = arrayToBinaryString(download.data);
+                                    const icsBytes = download.data;
+                                    const icsString = utf8ArrayToString(icsBytes);
                                     hashedIcs = await CryptoProxy.computeHash({
                                         algorithm: 'unsafeSHA1',
                                         data: download.data,
@@ -200,9 +201,7 @@ const ExtraEvents = ({ message }: Props) => {
                                             });
                                             return 'failed_to_hash';
                                         });
-                                    const parsedVcalendar = parseVcalendar(
-                                        decodeUtf8(icsBinaryString)
-                                    ) as VcalVcalendarWithMaybeErrors;
+                                    const parsedVcalendar = parseVcalendar(icsString) as VcalVcalendarWithMaybeErrors;
                                     if (!parsedVcalendar) {
                                         return;
                                     }
@@ -227,7 +226,7 @@ const ExtraEvents = ({ message }: Props) => {
                                     const supportedEventInvitation = await getSupportedEventInvitation({
                                         vcalComponent: parsedVcalendar,
                                         message: message.data,
-                                        icsBinaryString,
+                                        icsBytes,
                                         icsFileName: attachment.Name || '',
                                         primaryTimezone,
                                         canImportEventColor,

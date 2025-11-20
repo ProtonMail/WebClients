@@ -14,6 +14,7 @@ import { getEventByUID } from '../../api/calendars';
 import type { Options as FormatOptions } from '../../date-fns-utc/format';
 import formatUTC from '../../date-fns-utc/format';
 import { getSupportedTimezone, toUTCDate } from '../../date/timezone';
+import { stringToUint8Array } from '../../helpers/encoding';
 import { readFileAsString } from '../../helpers/file';
 import { dateLocale } from '../../i18n';
 import type { Api, SimpleMap } from '../../interfaces';
@@ -285,7 +286,7 @@ export const extractSupportedEvent = async ({
 
     if (generateHashUid) {
         validVevent.uid = {
-            value: await generateVeventHashUID(serialize(vcalComponent), vcalComponent?.uid?.value),
+            value: await generateVeventHashUID(stringToUint8Array(serialize(vcalComponent)), vcalComponent?.uid?.value),
         };
     }
 
@@ -455,10 +456,12 @@ export const getSupportedEventsWithRecurrenceId = async ({
     prodId = '',
 }: GetSupportedEventsWithRecurrenceIdArgs) => {
     // map uid -> parent event
-    const mapParentEvents = parentEvents.reduce<SimpleMap<{
-        vcalComponent: VcalVeventComponent;
-        calendarEvent: CalendarEvent;
-    }>>((acc, event) => {
+    const mapParentEvents = parentEvents.reduce<
+        SimpleMap<{
+            vcalComponent: VcalVeventComponent;
+            calendarEvent: CalendarEvent;
+        }>
+    >((acc, event) => {
         acc[event.component.uid.value] = {
             vcalComponent: event.component,
             calendarEvent: event.response.Response.Event,

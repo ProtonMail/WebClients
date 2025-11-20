@@ -7,6 +7,7 @@ import { EVENT_INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurg
 import { getIsRruleSupported } from '@proton/shared/lib/calendar/recurrence/rrule';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { getIsTimezoneComponent } from '@proton/shared/lib/calendar/vcalHelper';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { Attendee, CalendarEvent, Participant } from '@proton/shared/lib/interfaces/calendar';
 import type { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -137,7 +138,7 @@ END:VCALENDAR`;
                 await getSupportedEventInvitation({
                     vcalComponent: parsedInvitation,
                     message,
-                    icsBinaryString: invitation,
+                    icsBytes: stringToUint8Array(invitation),
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
                     canImportEventColor: false,
@@ -218,7 +219,7 @@ END:VCALENDAR`;
             return getSupportedEventInvitation({
                 vcalComponent: parsedInvitation,
                 message,
-                icsBinaryString: invitation,
+                icsBytes: stringToUint8Array(invitation),
                 icsFileName: 'test.ics',
                 primaryTimezone: 'America/Sao_Paulo',
                 canImportEventColor: false,
@@ -261,7 +262,7 @@ END:VCALENDAR`;
             return getSupportedEventInvitation({
                 vcalComponent: parsedInvitation,
                 message,
-                icsBinaryString: invitation,
+                icsBytes: stringToUint8Array(invitation),
                 icsFileName: 'test.ics',
                 primaryTimezone: 'America/Sao_Paulo',
                 canImportEventColor: false,
@@ -310,7 +311,7 @@ END:VCALENDAR`;
                 await getSupportedEventInvitation({
                     vcalComponent: parsedInvitation,
                     message,
-                    icsBinaryString: invitation,
+                    icsBytes: stringToUint8Array(invitation),
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
                     canImportEventColor: false,
@@ -371,7 +372,7 @@ END:VCALENDAR`;
                 await getSupportedEventInvitation({
                     vcalComponent: parsedInvitation,
                     message,
-                    icsBinaryString: invitation,
+                    icsBytes: stringToUint8Array(invitation),
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
                     canImportEventColor: false,
@@ -422,7 +423,7 @@ END:VCALENDAR`;
                 getSupportedEventInvitation({
                     vcalComponent: parsedInvitation,
                     message,
-                    icsBinaryString: invitation,
+                    icsBytes: stringToUint8Array(invitation),
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
                     canImportEventColor: false,
@@ -458,7 +459,7 @@ END:VCALENDAR`;
             return getSupportedEventInvitation({
                 vcalComponent: parsedInvitation,
                 message,
-                icsBinaryString: invitation,
+                icsBytes: stringToUint8Array(invitation),
                 icsFileName: 'test.ics',
                 primaryTimezone: 'America/Sao_Paulo',
                 canImportEventColor: false,
@@ -540,7 +541,7 @@ END:VCALENDAR`;
                 getSupportedEventInvitation({
                     vcalComponent: parsedInvitation,
                     message,
-                    icsBinaryString: invitation,
+                    icsBytes: stringToUint8Array(invitation),
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
                     canImportEventColor: false,
@@ -581,7 +582,7 @@ END:VCALENDAR`;
                 await getSupportedEventInvitation({
                     vcalComponent: parsedInvitation,
                     message,
-                    icsBinaryString: invitation,
+                    icsBytes: stringToUint8Array(invitation),
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
                     canImportEventColor: false,
@@ -663,7 +664,7 @@ END:VCALENDAR`;
                     await getSupportedEventInvitation({
                         vcalComponent: parsedInvitation,
                         message,
-                        icsBinaryString: invitation,
+                        icsBytes: stringToUint8Array(invitation),
                         icsFileName: 'test.ics',
                         primaryTimezone: 'America/Sao_Paulo',
                         canImportEventColor: false,
@@ -710,7 +711,7 @@ END:VCALENDAR`;
                     await getSupportedEventInvitation({
                         vcalComponent: parsedInvitation,
                         message,
-                        icsBinaryString: invitation,
+                        icsBytes: stringToUint8Array(invitation),
                         icsFileName: 'test.ics',
                         primaryTimezone: 'America/Sao_Paulo',
                         canImportEventColor: false,
@@ -773,7 +774,7 @@ END:VCALENDAR`;
             return {
                 vcalComponent: parse(vcal) as VcalVcalendar,
                 message: { Time: Math.round(Date.now() / 1000) } as Message,
-                icsBinaryString: vcal,
+                icsBytes: stringToUint8Array(vcal),
                 icsFileName: 'test.ics',
                 primaryTimezone,
                 canImportEventColor: false,
@@ -942,14 +943,14 @@ RRULE:FREQ=DAILY;INTERVAL=2;COUNT=5
 END:VEVENT
 END:VCALENDAR`;
             const parsedVcal = parse(vcal) as VcalVcalendar;
-
+            const icsBytes = stringToUint8Array(vcal);
             return {
                 vcalComponent: parsedVcal,
                 message: { Time: Math.round(Date.now() / 1000) } as Message,
-                icsBinaryString: vcal,
+                icsBytes,
                 icsFileName: 'test.ics',
                 primaryTimezone,
-                hashUid: await generateVeventHashUID(vcal, uid),
+                hashUid: await generateVeventHashUID(icsBytes, uid),
                 canImportEventColor: false,
             };
         };
@@ -1065,14 +1066,14 @@ RRULE:FREQ=DAILY;INTERVAL=2;COUNT=5
 END:VEVENT
 END:VCALENDAR`;
             const parsedVcal = parse(vcal) as VcalVcalendar;
-
+            const icsBytes = stringToUint8Array(vcal);
             return {
                 vcalComponent: parsedVcal,
                 message: { Time: Math.round(Date.now() / 1000) } as Message,
-                icsBinaryString: vcal,
+                icsBytes,
                 icsFileName: 'test.ics',
                 primaryTimezone,
-                hashUid: await generateVeventHashUID(vcal, uid),
+                hashUid: await generateVeventHashUID(icsBytes, uid),
                 canImportEventColor: false,
             };
         };
