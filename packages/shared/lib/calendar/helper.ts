@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToArray } from '@proton/crypto/lib/utils';
 
 import { API_CODES } from '../constants';
 import type {
@@ -39,9 +39,9 @@ export const generateProtonCalendarUID = () => {
 };
 
 export const generateVeventHashUID = async (binaryString: string, uid = '', legacyFormat = false) => {
-    const hash = arrayToHexString(
+    const hash = (
         await CryptoProxy.computeHash({ algorithm: 'unsafeSHA1', data: binaryStringToArray(binaryString) })
-    );
+    ).toHex();
     const hashUid = `${HASH_UID_PREFIX}${hash}`;
     if (!uid) {
         return hashUid;

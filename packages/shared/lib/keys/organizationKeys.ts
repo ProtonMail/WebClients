@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
@@ -78,7 +77,7 @@ export const generateOrganizationKeys = async ({
 
 export const generateOrganizationKeyToken = async (userKey: PrivateKeyReference) => {
     const randomBytes = crypto.getRandomValues(new Uint8Array(32));
-    const token = arrayToHexString(randomBytes);
+    const token = randomBytes.toHex();
     return encryptAddressKeyToken({
         token,
         userKey,

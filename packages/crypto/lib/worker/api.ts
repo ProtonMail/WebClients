@@ -40,7 +40,6 @@ import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
 import { type UserID, enums } from 'pmcrypto/lib/openpgp';
 
 import { ARGON2_PARAMS, KeyCompatibilityLevel } from '../constants';
-import { arrayToHexString } from '../utils';
 import type {
     ComputeHashStreamOptions,
     InitOptions,
@@ -118,7 +117,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     const creationTime = publicKey.getCreationTime();
     const expirationTime = await publicKey.getExpirationTime();
     const userIDs = publicKey.getUserIDs();
-    const keyContentHash = await SHA256(publicKey.write()).then(arrayToHexString);
+    const keyContentHash = await SHA256(publicKey.write()).then(bytes => bytes.toHex());
     // Allow comparing keys without third-party certification
     let keyContentHashNoCerts: string;
     // Check if third-party certs are present
@@ -128,7 +127,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
         publicKeyClone.users.forEach((user) => {
             user.otherCertifications = [];
         });
-        keyContentHashNoCerts = await SHA256(publicKeyClone.write()).then(arrayToHexString);
+        keyContentHashNoCerts = await SHA256(publicKeyClone.write()).then(bytes => bytes.toHex());
     } else {
         keyContentHashNoCerts = keyContentHash;
     }

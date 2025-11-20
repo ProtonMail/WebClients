@@ -7,7 +7,6 @@ import type {
     PublicKeyReference,
 } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS, canKeyEncryptAndDecrypt, serverTime } from '@proton/crypto';
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import isTruthy from '@proton/utils/isTruthy';
@@ -208,13 +207,13 @@ export function generateAddressKeyTokens(
 
 export async function generateAddressKeyTokens(userKey: PrivateKeyReference, organizationKey?: PrivateKeyReference) {
     const randomBytes = crypto.getRandomValues(new Uint8Array(32));
-    const token = arrayToHexString(randomBytes);
+    const token = randomBytes.toHex();
     return encryptAddressKeyToken({ token, organizationKey, userKey });
 }
 
 export async function generateAddressKeyTokensUsingOrgKey(organizationKey: PrivateKeyReference) {
     const randomBytes = crypto.getRandomValues(new Uint8Array(32));
-    const token = arrayToHexString(randomBytes);
+    const token = randomBytes.toHex();
     return encryptAddressKeyUsingOrgKeyToken({ token, organizationKey });
 }
 

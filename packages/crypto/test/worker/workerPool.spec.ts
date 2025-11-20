@@ -8,7 +8,6 @@ import {
 } from 'pmcrypto/lib/openpgp';
 
 import { VERIFICATION_STATUS } from '../../lib';
-import { arrayToHexString } from '../../lib/utils';
 import { CryptoWorkerPool } from '../../lib/worker/workerPool';
 
 chaiUse(chaiAsPromised);
@@ -82,10 +81,10 @@ describe('Worker Pool', () => {
         const testHashSHA1Streamed = await CryptoWorkerPool.computeHashStream({
             algorithm: 'unsafeSHA1',
             dataStream,
-        }).then(arrayToHexString);
+        }).then(bytes => bytes.toHex());
 
         const testHashSHA1 = await CryptoWorkerPool.computeHash({ algorithm: 'unsafeSHA1', data }).then(
-            arrayToHexString
+            bytes => bytes.toHex()
         );
 
         expect(testHashSHA1Streamed).to.equal(testHashSHA1);

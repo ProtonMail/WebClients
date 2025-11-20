@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { fetchSignedKeyLists } from '@proton/key-transparency/lib/helpers/apiHelpers';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
@@ -92,7 +91,7 @@ export const getSignedInvitationData = async (signingKey: PrivateKeyReference, t
 
 const generateActivationToken = () => {
     const randomBytes = crypto.getRandomValues(new Uint8Array(32));
-    return arrayToHexString(randomBytes);
+    return randomBytes.toHex();
 };
 
 const getDecryptedOrganizationActivationToken = async ({
