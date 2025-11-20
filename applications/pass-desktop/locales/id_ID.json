@@ -622,6 +622,9 @@
       "Skip": [
         "Lewati"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Seseorang telah membagikan item kepada Anda di ${ PASS_APP_NAME }"
+      ],
       "Sort vault items": [
         "Sortir item brankas"
       ],
@@ -1178,6 +1181,9 @@
       "Secure link could not be opened.": [
         "Tautan aman tidak dapat dibuka."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Server tidak dapat dijangkau. Silakan coba buka kunci ${ PASS_SHORT_APP_NAME } dalam beberapa menit."
+      ],
       "Settings update failed": [
         "Pengaturan gagal diperbarui"
       ],
@@ -1204,6 +1210,9 @@
       ],
       "Trashing item failed": [
         "Item gagal dibuang"
+      ],
+      "Try reaching out to the link owner.": [
+        "Cobalah untuk menghubungi pemilik tautan."
       ],
       "Unable to generate an OTP code for this item": [
         "Kode OTP untuk item ini tidak dapat dibuat"
@@ -1261,6 +1270,9 @@
       ],
       "Wrong second password": [
         "Kata sandi kedua salah"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Anda sedang offline. Silakan hubungkan kembali internet untuk membuka ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS Anda tidak diatur dengan benar. Rekaman MX yang kami peroleh adalah:"
@@ -1896,6 +1908,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -2189,6 +2204,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Item yang dipilih berhasil dipulihkan dari sampah"
+      ],
+      "Servers are unreachable": [
+        "Server tidak dapat dijangkau"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
@@ -3561,6 +3579,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Item ini dapat diakses hingga ${ date } atau hingga batas jumlah tampilannya tercapai."
       ],
       "Tier/Level": [
         "Tingkat/Level Keanggotaan"

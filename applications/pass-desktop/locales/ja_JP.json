@@ -622,6 +622,9 @@
       "Skip": [
         "スキップ"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "誰かが ${ PASS_APP_NAME }上でアイテムを共有しました。"
+      ],
       "Sort vault items": [
         "保管庫のアイテムを並び替え"
       ],
@@ -1207,6 +1210,9 @@
       ],
       "Trashing item failed": [
         "アイテムの削除に失敗しました"
+      ],
+      "Try reaching out to the link owner.": [
+        "リンクの所有者に連絡してみてください。"
       ],
       "Unable to generate an OTP code for this item": [
         "このアイテムの OTP コードを生成できません"
@@ -1901,6 +1907,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -3570,6 +3579,9 @@
       ],
       "Theme": [
         "テーマ"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "このアイテムは、 ${ date } またはビューの上限に達するまでアクセスできます。"
       ],
       "Tier/Level": [
         "階級/レベル"

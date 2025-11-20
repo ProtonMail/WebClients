@@ -622,6 +622,9 @@
       "Skip": [
         "Hopp over"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Noen har delt et element med deg på ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Sorter hvelvelementer"
       ],
@@ -1212,6 +1215,9 @@
       ],
       "Trashing item failed": [
         "Sletting av element til papirkurv mislyktes"
+      ],
+      "Try reaching out to the link owner.": [
+        "Prøv å kontakte eieren av koblingen."
       ],
       "Unable to generate an OTP code for this item": [
         "Ikke i stand tl å generere en OTP-kode for dette elementet."
@@ -1926,6 +1932,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3615,6 +3625,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dette elementet er tilgjengelig til ${ date } eller til visningsgrensen er nådd."
       ],
       "Tier/Level": [
         "Nivå"
