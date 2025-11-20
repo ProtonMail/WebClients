@@ -5,21 +5,19 @@ import { forgeImageURL } from '@proton/shared/lib/helpers/image'
 import { getErrorString } from '../Util/GetErrorString'
 import { isPublicNodeMeta } from '@proton/drive-store'
 import { Result } from '@proton/docs-shared'
-import type { ApiAddCommentToThread } from './Requests/ApiAddCommentToThread'
-import type { SuggestionThreadStateAction } from '@proton/docs-shared'
-import type { AddCommentToThreadDTO } from './Requests/ApiAddCommentToThread'
+import type { ApiAddCommentToThread, AddCommentToThreadDTO } from './Requests/ApiAddCommentToThread'
+import type { SuggestionThreadStateAction, ApiResult } from '@proton/docs-shared'
 import type { AddCommentToThreadResponse } from './Types/AddCommentToThreadResponse'
 import type { ApiCreateThread, CreateThreadDTO } from './Requests/ApiCreateThread'
 import type { ApiEditComment, EditCommentDTO } from './Requests/ApiEditComment'
 import type { ApiGetThread } from './Requests/ApiGetThread'
-import type { ApiResult } from '@proton/docs-shared'
 import type { Commit, SquashCommit } from '@proton/docs-proto'
 import type { CreateDocumentResponse } from './Types/CreateDocumentResponse'
 import type { CreateThreadResponse } from './Types/CreateThreadResponse'
 import type { CreateValetTokenResponse } from './Types/CreateValetTokenResponse'
 import type { DeleteCommentResponse } from './Types/DeleteCommentResponse'
 import type { DeleteThreadResponse } from './Types/DeleteThreadResponse'
-import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
+import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { EditCommentResponse } from './Types/EditCommentResponse'
 import type { GetAllThreadIDsResponse } from './Types/GetAllThreadIDsResponse'
 import type { GetCommentThreadResponse } from './Types/GetCommentThreadResponse'
@@ -28,7 +26,6 @@ import type { GetRecentsResponse } from './Types/GetRecentsResponse'
 import type { HttpHeaders } from './Types/HttpHeaders'
 import type { ImageProxyParams } from './Types/ImageProxyParams'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
-import type { PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { ResolveThreadResponse } from './Types/ResolveThreadResponse'
 import type { RouteExecutor } from './RouteExecutor'
 import type { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'
@@ -124,6 +121,15 @@ export class DocsApi {
       volumeId: nodeMeta.volumeId,
       linkId: nodeMeta.linkId,
     }).lock({ fetchCommitId })
+
+    return this.routeExecutor.execute(route)
+  }
+
+  async unlockDocument(nodeMeta: NodeMeta, lockId: string): Promise<ApiResult<Uint8Array<ArrayBuffer>>> {
+    const route = new DocsApiPrivateRouteBuilder({
+      volumeId: nodeMeta.volumeId,
+      linkId: nodeMeta.linkId,
+    }).unlock({ lockId })
 
     return this.routeExecutor.execute(route)
   }

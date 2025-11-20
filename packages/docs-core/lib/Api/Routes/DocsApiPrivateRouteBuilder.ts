@@ -48,6 +48,16 @@ export class DocsApiPrivateRouteBuilder extends DocsApiRouteBuilder {
     }
   }
 
+  unlock(params: { lockId: string }): DocsRoute {
+    return {
+      method: 'post',
+      url: `${this.basePath}/unlock`,
+      data: { LockID: params.lockId },
+      output: 'raw',
+      silence: true,
+    }
+  }
+
   squashCommit(params: { commitId: string; data: Uint8Array<ArrayBuffer> }): DocsRoute {
     return {
       method: 'put',

@@ -103,6 +103,7 @@ export interface DocumentStateValues {
   realtimeIsExperiencingErroredSync: boolean
   realtimeIsLockedDueToSizeContraint: boolean
   realtimeIsParticipantLimitReached: boolean
+  realtimeIsLockedDueToSquashError: boolean
   realtimeConnectionToken: string | undefined
 }
 
@@ -121,6 +122,7 @@ const DefaultValues: Pick<
   | 'realtimeIsExperiencingErroredSync'
   | 'realtimeIsLockedDueToSizeContraint'
   | 'realtimeIsParticipantLimitReached'
+  | 'realtimeIsLockedDueToSquashError'
 > = {
   documentName: '',
   currentCommitId: undefined,
@@ -136,6 +138,7 @@ const DefaultValues: Pick<
   realtimeIsExperiencingErroredSync: false,
   realtimeIsLockedDueToSizeContraint: false,
   realtimeIsParticipantLimitReached: false,
+  realtimeIsLockedDueToSquashError: false,
 }
 
 export function isDocumentState(state: DocumentState | PublicDocumentState): state is DocumentState {
