@@ -1,7 +1,7 @@
 import { encodeBase64 as bcryptEncodeBase64, hash as bcryptHash } from 'bcryptjs';
 
 import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToArray, encodeUtf8 } from '@proton/crypto/lib/utils';
+import { binaryStringToArray, stringToUtf8Array } from '@proton/crypto/lib/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { BCRYPT_PREFIX } from './constants';
@@ -40,7 +40,7 @@ const hashPassword3 = (password: string, salt: string, modulus: Uint8Array<Array
  * Hash password in version 1.
  */
 const hashPassword1 = async (password: string, username: string, modulus: Uint8Array<ArrayBuffer>) => {
-    const value = binaryStringToArray(encodeUtf8(username.toLowerCase()));
+    const value = stringToUtf8Array(username.toLowerCase());
     const salt = (await CryptoProxy.computeHash({ algorithm: 'unsafeMD5', data: value })).toHex();
     return formatHash(password, salt, modulus);
 };
@@ -51,7 +51,7 @@ const hashPassword1 = async (password: string, username: string, modulus: Uint8A
 const hashPassword0 = async (password: string, username: string, modulus: Uint8Array<ArrayBuffer>) => {
     const value = await CryptoProxy.computeHash({
         algorithm: 'SHA512',
-        data: binaryStringToArray(username.toLowerCase() + encodeUtf8(password)),
+        data: stringToUtf8Array(username.toLowerCase() + password),
     });
     const prehashed = value.toBase64();
     return hashPassword1(prehashed, username, modulus);
