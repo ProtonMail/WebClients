@@ -5,7 +5,7 @@ import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { screenShareQuality } from '../qualityConstants';
@@ -59,8 +59,8 @@ export function useCurrentScreenShare({
             await room.localParticipant.setScreenShareEnabled(
                 true,
                 {
-                    audio: true,
-                    systemAudio: 'include',
+                    audio: !(isElectronApp && isWindows()),
+                    systemAudio: isElectronApp && isWindows() ? undefined : 'include',
                     resolution: {
                         width: screenShareQuality.resolution.width,
                         height: screenShareQuality.resolution.height,
