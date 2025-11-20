@@ -24,10 +24,10 @@ import { DeleteBookingModal } from './DeleteBookingModal';
 
 interface Props {
     page: InternalBookingPage;
-    writeableCalendars: VisualCalendar[];
+    calendars: VisualCalendar[];
 }
 
-export const BookingItem = ({ page, writeableCalendars }: Props) => {
+export const BookingItem = ({ page, calendars }: Props) => {
     const { createNotification } = useNotifications();
 
     const handleCopy = (e: MouseEvent, link: string) => {
@@ -41,9 +41,7 @@ export const BookingItem = ({ page, writeableCalendars }: Props) => {
     const [deleteBookingModal, showDeleteModal] = useModalTwo(DeleteBookingModal);
 
     const bookingPageIcon = (bookingPageID: string) => {
-        return (
-            <IcCalendarListFilled color={writeableCalendars.find((calendar) => calendar.ID === bookingPageID)?.Color} />
-        );
+        return <IcCalendarListFilled color={calendars.find((calendar) => calendar.ID === bookingPageID)?.Color} />;
     };
 
     return (

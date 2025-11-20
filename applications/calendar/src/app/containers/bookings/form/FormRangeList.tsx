@@ -1,12 +1,12 @@
 import { useLocation } from 'react-router';
 
-import { addHours, addMinutes, isBefore, isSameDay, set } from 'date-fns';
+import { addHours, addMinutes, differenceInMinutes, isBefore, isSameDay, set, subMinutes } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, Label, useNotifications } from '@proton/components/index';
-import { addDays, isNextDay } from '@proton/shared/lib/date-fns-utc';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
 import useFlag from '@proton/unleash/useFlag';
 
 import { fromUrlParams } from '../../calendar/getUrlHelper';
@@ -34,11 +34,23 @@ export const FormRangeList = () => {
     }
 
     const handleStartChange = (range: BookingRange, start: Date) => {
-        updateBookingRange(range.id, start, range.end);
+        let tmpStart = start;
+
+        // Users can enter a manual date and we need to make sure it's not shorter than the duration
+        if (differenceInMinutes(range.end, start) < formData.duration) {
+            tmpStart = subMinutes(range.end, formData.duration);
+        }
+
+        updateBookingRange(range.id, tmpStart, range.end);
     };
 
     const handleEndChange = (range: BookingRange, end: Date) => {
         let tmpEnd = end;
+
+        // Users can enter a manual date and we need to make sure it's not shorter than the duration
+        if (differenceInMinutes(end, range.start) < formData.duration) {
+            tmpEnd = addMinutes(range.start, formData.duration);
+        }
 
         // If the end date is midnight, we add one day
         if (end.getHours() === 0) {
@@ -90,7 +102,7 @@ export const FormRangeList = () => {
         const newStart = addHours(lastBookingOfDay.end, 1);
         const newEnd = addMinutes(newStart, formData.duration);
 
-        if (isNextDay(lastBookingOfDay.start, newStart)) {
+        if (!isSameDay(lastBookingOfDay.start, newStart)) {
             createNotification({ text: c('Info').t`Cannot create booking range across days` });
             return;
         }
