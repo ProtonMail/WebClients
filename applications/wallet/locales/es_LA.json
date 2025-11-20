@@ -97,8 +97,11 @@
       "Copy address": [
         "Copiar la dirección"
       ],
-      "Copy public key (XPUB)": [
-        "Copiar clave pública (XPUB)"
+      "Copy descriptor": [
+        "Copiar descriptor"
+      ],
+      "Copy public key (${ prefix })": [
+        "Copiar clave pública (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "Copiar el número de versión en el portapapeles"
@@ -2376,8 +2379,23 @@
       ]
     },
     "Extended public key": {
-      "Public key (XPUB) copied to clipboard": [
-        "Se copió la clave pública (XPUB) al portapapeles."
+      "Descriptor copied to clipboard": [
+        "Descriptor copiado al portapapeles"
+      ],
+      "I want the ${ prefix } instead": [
+        "Quiero el ${ prefix } en su lugar"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importar este descriptor en otro software de cartera para monitorear su saldo y generar direcciones de recepción sin exponer sus claves privadas."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Se copió la clave pública (${ prefix }) al portapapeles."
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Verifique que las primeras direcciones derivadas coincidan con las de ${ WALLET_APP_NAME } antes de continuar."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Recomendamos encarecidamente utilizar el descriptor anterior en su lugar porque contiene toda la información necesaria para garantizar la generación correcta de la dirección. xpub, ypub y zpub no forman parte del estándar BIP y solo deben usarse con precaución."
       ]
     },
     "familyOffer_2023:Error": {
@@ -4818,9 +4836,6 @@
       ],
       "External recipient": [
         "Destinatario externo"
-      ],
-      "Public key (XPUB)": [
-        "Clave pública (XPUB)"
       ]
     },
     "Safety review": {
