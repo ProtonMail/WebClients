@@ -84,7 +84,7 @@ export const Form = () => {
                 </div>
             </FormIconRow>
 
-            <FormIconRow icon={<IcCalendarListCheck />} title={c('Info').t`When are you free?`}>
+            <FormIconRow icon={<IcCalendarListCheck />} title={c('Info').t`When can appointments be booked?`}>
                 <FormRangeList />
             </FormIconRow>
 
@@ -160,12 +160,12 @@ export const Form = () => {
                 )}
             </FormIconRow>
 
-            <FormIconRow icon={<IcFileLines />} title={c('Info').t`What should people know before booking?`}>
+            <FormIconRow icon={<IcFileLines />} title={c('label').t`What should people know about this appointment?`}>
                 <label htmlFor="booking-description" className="sr-only">{c('label')
-                    .t`What should people know before booking?`}</label>
+                    .t`What should people know about this appointment?`}</label>
                 <TextArea
                     id="booking-description"
-                    placeholder={c('Placeholder').t`Add a booking page description`}
+                    placeholder={c('Placeholder').t`Enter a short description or additional info`}
                     value={formData.description}
                     onChange={(e) => updateFormData('description', e.target.value)}
                     rows={2}
