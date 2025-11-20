@@ -18,7 +18,11 @@ import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } fro
 
 import { type BookingFormData, BookingLocation } from '../../bookingsProvider/interface';
 import { JSONFormatData, JSONFormatTextData, createBookingLink } from './bookingEncryptionHelpers';
-import { bookingContentSignatureValue, bookingSecretSignatureValue, bookingSlotSignatureValue } from './cryptoHelpers';
+import {
+    bookingContentSignatureContextValue,
+    bookingSecretSignatureContextValue,
+    bookingSlotSignatureContextValue,
+} from './cryptoHelpers';
 
 interface EncryptionParams {
     formData: BookingFormData;
@@ -43,7 +47,7 @@ const encryptBookingData = async (
         passwords: bookingKeyPassword,
         signingKeys: signingKeys,
         format: 'binary',
-        signatureContext: { critical: true, value: bookingContentSignatureValue(bookingUid) },
+        signatureContext: { critical: true, value: bookingContentSignatureContextValue(bookingUid) },
     });
 
     return encryptedContent;
@@ -93,7 +97,7 @@ const encryptBookingSlots = async (
             signingKeys,
             detached: true,
             format: 'binary',
-            signatureContext: { critical: true, value: bookingSlotSignatureValue(bookingUid) },
+            signatureContext: { critical: true, value: bookingSlotSignatureContextValue(bookingUid) },
         });
 
         Slots.push({
@@ -216,7 +220,7 @@ export const encryptBookingPage = async ({
         signingKeys: signingKeys,
         format: 'binary',
         signatureContext: {
-            value: bookingSecretSignatureValue(calendarID),
+            value: bookingSecretSignatureContextValue(calendarID),
             critical: true,
         },
     });
