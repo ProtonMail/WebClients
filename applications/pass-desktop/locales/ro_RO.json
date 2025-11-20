@@ -622,6 +622,9 @@
       "Skip": [
         "Omitere"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Sortare articole seif"
       ],
@@ -1188,6 +1191,9 @@
       "Secure link could not be opened.": [
         "Legătura web securizată nu a putut fi deschisă."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Serverele nu sunt accesibile. Vă rugăm să încercați să deblocați ${ PASS_SHORT_APP_NAME } peste câteva minute."
+      ],
       "Settings update failed": [
         "Actualizarea setărilor a eșuat."
       ],
@@ -1214,6 +1220,9 @@
       ],
       "Trashing item failed": [
         "Punerea în gunoi a articolelor a eșuat."
+      ],
+      "Try reaching out to the link owner.": [
+        "Încercați să contactați proprietarul legăturii web."
       ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
@@ -1271,6 +1280,9 @@
       ],
       "Wrong second password": [
         "Parola secundară nu este corectă."
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Nu aveți conexiune. Reconectați-vă pentru a debloca ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "Serverul DNS nu este configurat corect. Înregistrarea MX obținută este:"
@@ -1946,6 +1958,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2241,6 +2258,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Articolele selectate s-au restaurat din gunoi."
+      ],
+      "Servers are unreachable": [
+        "Serverele nu sunt disponibile."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
@@ -3651,6 +3671,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Acest articol este disponibil până la ${ date } sau până când este atinsă limita de vizualizări."
       ],
       "Tier/Level": [
         "Rang/Nivel"
