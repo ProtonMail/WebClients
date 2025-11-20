@@ -26,6 +26,7 @@ interface Arguments {
     referralInfo: {
         refereeRewardAmount: string;
         referrerRewardAmount: string;
+        maxRewardAmount: string;
     };
 }
 
@@ -44,6 +45,7 @@ export const getRoutes = ({
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const planIsManagedExternally = isManagedExternally(subscription);
+    const credits = referralInfo.maxRewardAmount;
 
     return {
         dashboardV2: {
@@ -308,10 +310,7 @@ export const getRoutes = ({
             id: 'referral',
             text: c('Title').t`Refer a friend`,
             title: c('Title').t`Invite friends. Get credits.`,
-            description:
-                // translator: Full sentence 'You’ll receive US$20 in Proton credit when the person you invite signs up for a Proton plan, and they’ll also get US$20 in credits to get started.'
-                c('Description')
-                    .t`You’ll receive ${referralInfo.referrerRewardAmount} in ${BRAND_NAME} credit when the person you invite signs up for a ${BRAND_NAME} plan, and they’ll also get ${referralInfo.refereeRewardAmount} in credits to get started.`,
+            description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
             to: '/referral',
             icon: 'money-bills',
             available: !!isReferralProgramEnabled && !!isReferralExpansionEnabled,

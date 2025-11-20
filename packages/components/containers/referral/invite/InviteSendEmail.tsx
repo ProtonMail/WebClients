@@ -188,7 +188,8 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
                     </div>
                     <div className="shrink-0 text-right self-start">
                         <Button
-                            color="norm"
+                            color="weak"
+                            shape="ghost"
                             onClick={handleSendEmails}
                             loading={apiLoading}
                             disabled={hasInvalidRecipients || contactEmailIsLoading}
