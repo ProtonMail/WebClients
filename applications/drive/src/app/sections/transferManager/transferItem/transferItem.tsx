@@ -68,9 +68,9 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
 };
 
 export const TransferItem = ({ entry, onShare }: Props) => {
-    const showLocationText = c('Action').t`Show location`;
+    // const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
-    const { cancelTransfer, retryTransfer, goToLocation } = useTransferManagerActions();
+    const { cancelTransfer, retryTransfer } = useTransferManagerActions();
     const [containsDocumentModal, showModal] = useDownloadContainsDocumentsModal();
     const onlyShowTransferredBytes = !totalSize;
     const transferredTotal = onlyShowTransferredBytes
@@ -132,8 +132,8 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                     <span className="text-sm color-weak" data-testid="transfer-row:status">
                         {getStatusLabel(entry)}
                     </span>
-
-                    {entry.type === 'upload' && entry.status === BaseTransferStatus.Finished && (
+                    {/* TODO: Uncomment once Show location is able to highlight and scroll to the item */}
+                    {/*{entry.type === 'upload' && entry.status === BaseTransferStatus.Finished && (
                         <>
                             <span aria-hidden="true" className="text-sm text-weak">
                                 &middot;
@@ -148,7 +148,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                                 {showLocationText}
                             </Button>
                         </>
-                    )}
+                    )}*/}
                     {!shouldHideSizeInfo && (
                         <>
                             <span aria-hidden="true" className="text-sm text-weak">
