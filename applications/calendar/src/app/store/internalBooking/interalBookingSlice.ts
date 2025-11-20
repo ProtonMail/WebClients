@@ -38,73 +38,79 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
             };
         }
 
-        const [calendars, bookingPages] = await Promise.all([
-            dispatch(calendarsThunk()),
-            extraArgument.api<{ BookingPages: InternalBookingPagePayload[] }>(getUserBookingPage()),
-        ]);
-
         const pagesArray: InternalBookingPage[] = [];
-
-        for (const bookingPage of bookingPages.BookingPages) {
-            const calendar = calendars.find((calendar) => calendar.ID === bookingPage.CalendarID);
-            if (!calendar) {
-                continue;
-            }
-
-            const calendarOwner = calendar.Owner.Email;
-            const ownerAddress = calendar.Members.find((member) => member.Email === calendarOwner);
-            if (!ownerAddress) {
-                continue;
-            }
-
-            const [{ decryptionKeys }, { verifyingKeys }] = await Promise.all([
-                dispatch(
-                    getAddressKeysByUsageThunk({
-                        AddressID: ownerAddress.AddressID,
-                        withV6SupportForEncryption: true,
-                        withV6SupportForSigning: false,
-                    })
-                ),
-                dispatch(getVerificationPreferencesThunk({ email: ownerAddress.Email, lifetime: 0 })),
+        try {
+            const [calendars, bookingPages] = await Promise.all([
+                dispatch(calendarsThunk()),
+                extraArgument.api<{ BookingPages: InternalBookingPagePayload[] }>(getUserBookingPage()),
             ]);
 
-            const decrypted = await CryptoProxy.decryptMessage({
-                binaryMessage: base64StringToUint8Array(bookingPage.EncryptedSecret),
-                decryptionKeys,
-                verificationKeys: verifyingKeys,
-                signatureContext:
-                    verifyingKeys?.length > 0
-                        ? { value: bookingSecretSignatureValue(calendar.ID), required: true }
-                        : undefined,
-                format: 'binary',
-            });
+            const pagesArray: InternalBookingPage[] = [];
 
-            if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                // eslint-disable-next-line no-console
-                console.warn({ errors: decrypted.verificationErrors });
-                throw new Error('Encrypted booking secret verification failed');
+            for (const bookingPage of bookingPages.BookingPages) {
+                const calendar = calendars.find((calendar) => calendar.ID === bookingPage.CalendarID);
+                if (!calendar) {
+                    continue;
+                }
+
+                const calendarOwner = calendar.Owner.Email;
+                const ownerAddress = calendar.Members.find((member) => member.Email === calendarOwner);
+                if (!ownerAddress) {
+                    continue;
+                }
+
+                const [{ decryptionKeys }, { verifyingKeys }] = await Promise.all([
+                    dispatch(
+                        getAddressKeysByUsageThunk({
+                            AddressID: ownerAddress.AddressID,
+                            withV6SupportForEncryption: true,
+                            withV6SupportForSigning: false,
+                        })
+                    ),
+                    dispatch(getVerificationPreferencesThunk({ email: ownerAddress.Email, lifetime: 0 })),
+                ]);
+
+                const decrypted = await CryptoProxy.decryptMessage({
+                    binaryMessage: base64StringToUint8Array(bookingPage.EncryptedSecret),
+                    decryptionKeys,
+                    verificationKeys: verifyingKeys,
+                    signatureContext:
+                        verifyingKeys?.length > 0
+                            ? { value: bookingSecretSignatureValue(calendar.ID), required: true }
+                            : undefined,
+                    format: 'binary',
+                });
+
+                if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    // eslint-disable-next-line no-console
+                    console.warn({ errors: decrypted.verificationErrors });
+                    throw new Error('Encrypted booking secret verification failed');
+                }
+
+                // This decrypts and verify the content of the page
+                const data = await decryptBookingContent({
+                    bookingSecretBytes: decrypted.data,
+                    encryptedContent: bookingPage.EncryptedContent,
+                    bookingKeySalt: bookingPage.BookingKeySalt,
+                    calendarId: bookingPage.CalendarID,
+                    bookingUid: bookingPage.BookingUID,
+                    verificationKeys: verifyingKeys,
+                });
+
+                pagesArray.push({
+                    ...data,
+                    id: bookingPage.ID,
+                    calendarID: bookingPage.CalendarID,
+                    bookingUID: bookingPage.BookingUID,
+                    link: `${window.location.origin}/bookings#${uint8ArrayToPaddedBase64URLString(decrypted.data)}`,
+                });
             }
-
-            // This decrypts and verify the content of the page
-            const data = await decryptBookingContent({
-                bookingSecretBytes: decrypted.data,
-                encryptedContent: bookingPage.EncryptedContent,
-                bookingKeySalt: bookingPage.BookingKeySalt,
-                calendarId: bookingPage.CalendarID,
-                bookingUid: bookingPage.BookingUID,
-                verificationKeys: verifyingKeys,
-            });
-
-            pagesArray.push({
-                ...data,
-                id: bookingPage.ID,
-                calendarID: bookingPage.CalendarID,
-                bookingUID: bookingPage.BookingUID,
-                link: `${window.location.origin}/bookings#${uint8ArrayToPaddedBase64URLString(decrypted.data)}`,
-            });
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.warn({ error });
+        } finally {
+            return { bookingPages: pagesArray };
         }
-
-        return { bookingPages: pagesArray };
     },
     previous: previousSelector(selectInternalBooking),
 });
