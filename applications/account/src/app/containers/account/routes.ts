@@ -211,6 +211,7 @@ export const getAccountAppRoutes = ({
     referralInfo: {
         refereeRewardAmount: string;
         referrerRewardAmount: string;
+        maxRewardAmount: string;
     };
     canDisplayNonPrivateEmailPhone: boolean;
     showMailDashboard: boolean;
@@ -221,7 +222,9 @@ export const getAccountAppRoutes = ({
     showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
-    const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
+    const credits = isReferralExpansionEnabled
+        ? referralInfo.maxRewardAmount
+        : getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
 
     // Used to determine if a user is on a family plan or a duo plan
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
@@ -611,11 +614,7 @@ export const getAccountAppRoutes = ({
                 id: 'referral',
                 text: c('Title').t`Refer a friend`,
                 title: isReferralExpansionEnabled ? c('Title').t`Invite friends. Get credits.` : undefined,
-                description: isReferralExpansionEnabled
-                    ? // translator: Full sentence 'You’ll receive US$20 in Proton credit when the person you invite signs up for a Proton plan, and they’ll also get US$20 in credits to get started.'
-                      c('Description')
-                          .t`You’ll receive ${referralInfo.referrerRewardAmount} in ${BRAND_NAME} credit when the person you invite signs up for a ${BRAND_NAME} plan, and they’ll also get ${referralInfo.refereeRewardAmount} in credits to get started.`
-                    : c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
+                description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
                 icon: isReferralExpansionEnabled ? 'money-bills' : 'heart',
                 available: !!isReferralProgramEnabled,

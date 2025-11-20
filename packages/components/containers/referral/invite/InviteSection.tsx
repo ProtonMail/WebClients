@@ -8,7 +8,7 @@ import InviteShareLink from './InviteShareLink';
 export const InviteSection = () => {
     const borderedBoxClasses = 'border border-weak rounded-lg p-6';
     return (
-        <SettingsSectionWide className="flex gap-6 lg:flex-row flex-column-reverse flex-nowrap">
+        <SettingsSectionWide className="flex gap-6 lg:flex-row flex-column flex-nowrap">
             <div className="flex flex-column gap-6 flex-auto">
                 <InviteShareLink className={borderedBoxClasses} />
                 <InviteSendEmail className={borderedBoxClasses} />

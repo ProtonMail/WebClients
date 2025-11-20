@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useReferrals } from '@proton/account/referrals/hooks';
 import Price from '@proton/components/components/price/Price';
 import clsx from '@proton/utils/clsx';
@@ -28,6 +29,8 @@ const getStat = (text: string, n: number) => {
 
 const RewardsProgress = () => {
     const [referral, loadingReferral] = useReferrals();
+    const [referralInfo] = useReferralInfo();
+    const { maxRewardAmount } = referralInfo.uiData;
 
     const friendsInvited = referral.total;
     const friendsSubscribed = referral.totalSubscribed;
@@ -77,7 +80,13 @@ const RewardsProgress = () => {
             </div>
             <div className={clsx(borderedBoxClasses, 'flex-1 flex justify-space-between flex-nowrap gap-4')}>
                 <div>
-                    <StatTitle>{<Price currency={currency}>{totalEarned}</Price>}</StatTitle>
+                    <StatTitle>
+                        {<Price currency={currency}>{totalEarned}</Price>}
+                        <span className="text-xs color-weak">
+                            {' /'}
+                            {maxRewardAmount}
+                        </span>
+                    </StatTitle>
                     <StatDescription>{c('Title').t`Credit earned`}</StatDescription>
                 </div>
                 <img src={totalEarned > 0 ? money : moneyGrey} alt="" width={48} height={48} className="shrink-0" />
