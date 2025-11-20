@@ -21,8 +21,9 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useCalendarDispatch } from '../../../store/hooks';
-import type { InternalBookingPage } from '../../../store/internalBooking/interface';
+import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
 import { loadBookingPage } from '../../../store/internalBooking/internalBookingActions';
+import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
 import { DeleteBookingModal } from './DeleteBookingModal';
 
 interface Props {
@@ -33,6 +34,8 @@ interface Props {
 export const BookingItem = ({ page, calendars }: Props) => {
     const { createNotification } = useNotifications();
     const dispatch = useCalendarDispatch();
+
+    const { openBookingSidebarEdition } = useBookings();
 
     const isEditingEnabled = useFlag('EditCalendarBookings');
 
@@ -55,7 +58,8 @@ export const BookingItem = ({ page, calendars }: Props) => {
             return;
         }
 
-        await dispatch(loadBookingPage(page.id));
+        const { payload } = (await dispatch(loadBookingPage(page.id))) as { payload: BookingPageEditData };
+        openBookingSidebarEdition(page, payload);
     };
 
     return (

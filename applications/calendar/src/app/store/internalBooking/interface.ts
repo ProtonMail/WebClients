@@ -13,6 +13,7 @@ export interface EditSlotData {
     start: number;
     end: number;
     timezone: string;
+    rrule: string | null;
 }
 
 export interface BookingPageEditData {
