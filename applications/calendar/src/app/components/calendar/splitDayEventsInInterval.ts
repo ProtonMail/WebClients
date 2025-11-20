@@ -26,7 +26,7 @@ export const splitDayEventsInInterval = ({
     min: minDate,
     max: maxDate,
 }: SplitDayEventsInIntervalArguments) => {
-    return events.reduce<LayoutEvent[]>((acc, { start, end, isAllDay, isAllPartDay }, i) => {
+    return events.reduce<LayoutEvent[]>((acc, { start, end, isAllDay, isAllPartDay, uniqueId }, i) => {
         const startDate = startOfDay(max(start, minDate));
         const endDate = getEndDate(end, maxDate, isAllPartDay);
 
@@ -48,6 +48,7 @@ export const splitDayEventsInInterval = ({
             idx: i,
             start: startIndex,
             end: startIndex + calendarDaysDifference + 1,
+            id: uniqueId,
         });
 
         return acc;

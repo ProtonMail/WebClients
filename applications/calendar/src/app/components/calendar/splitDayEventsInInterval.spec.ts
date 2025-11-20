@@ -33,6 +33,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 2,
                         end: 3,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -58,6 +59,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 6,
                         end: 7,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -83,6 +85,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 2,
                         end: 4,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -108,6 +111,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 2,
                         end: 4,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -133,6 +137,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 6,
                         end: 7,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -158,6 +163,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 1,
                         end: 3,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -183,6 +189,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 2,
                         end: 3,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -208,6 +215,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 2,
                         end: 4,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -235,6 +243,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 6,
                         end: 7,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -260,6 +269,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 6,
                         end: 7,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -285,6 +295,7 @@ describe('splitDayEventsInInterval()', () => {
                         idx: 0,
                         start: 6,
                         end: 7,
+                        id: 'tmp',
                     },
                 ]);
             });
@@ -357,6 +368,7 @@ describe('splitDayEventsInInterval()', () => {
                     idx: 0,
                     start: 2,
                     end: 3,
+                    id: 'tmp',
                 },
             ]);
         });
@@ -382,6 +394,7 @@ describe('splitDayEventsInInterval()', () => {
                     idx: 0,
                     start: 2,
                     end: 3,
+                    id: 'tmp',
                 },
             ]);
         });

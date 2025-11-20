@@ -60,6 +60,7 @@ export interface LayoutEvent {
     idx: number;
     start: number;
     end: number;
+    id: string;
 }
 export interface LayoutResult {
     column: number;
