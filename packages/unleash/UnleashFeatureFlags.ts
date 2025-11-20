@@ -118,6 +118,7 @@ enum CalendarFeatureFlag {
     CalendarBookings = 'CalendarBookings',
     CalendarExternalBookings = 'CalendarExternalBookings',
     RecurringCalendarBookings = 'RecurringCalendarBookings',
+    EditCalendarBookings = 'EditCalendarBookings',
 }
 
 enum DriveFeatureFlag {
