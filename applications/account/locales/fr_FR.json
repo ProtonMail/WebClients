@@ -2485,6 +2485,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Renouvelé automatiquement"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Renouvellement automatique au prix de ${ renewPrice } pour ${ renewLength } mois",
         "Renouvellement automatique au prix de ${ renewPrice } pour ${ renewLength } mois"
@@ -8701,11 +8704,11 @@
       "${ planName } expires today.": [
         "${ planName } arrive à expiration aujourd'hui."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } pour les organisations est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour protéger votre organisation des acteurs malveillants et des menaces de sécurité."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour vous protéger des acteurs malveillants et des menaces de sécurité."
-      ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour protéger votre organisation des acteurs malveillants et des menaces de sécurité."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée des activités suspectes."
@@ -11256,6 +11259,9 @@
       ],
       "Upgrade to unlock": [
         "Changez d'abonnement pour débloquer cette fonctionnalité."
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Passez à l'abonnement ${ firstPlanNames } ou ${ lastPlanName } pour bénéficier de ${ PROTON_SENTINEL_NAME } pour les organisations."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Passez à l'abonnement ${ firstPlanNames } ou ${ lastPlanName } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
@@ -21538,6 +21544,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Rapport de surveillance de ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } pour les organisations"
       ],
       "(active)": [
         "(active)"

@@ -2517,6 +2517,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Obnovuje se automaticky"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíc",
         "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíce",
@@ -8857,10 +8860,10 @@
       "${ planName } expires today.": [
         "${ planName } vyprší dnes."
       ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } pro organizace je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
       ],
-      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
@@ -11493,6 +11496,9 @@
       ],
       "Upgrade to unlock": [
         "Navyšte pro odemknutí"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Navyšte svůj tarif na ${ firstPlanNames } nebo ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME } pro organizace."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Navyšte váš tarif na ${ firstPlanNames } nebo ${ lastPlanName } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
@@ -22134,6 +22140,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor hlášení"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } pro organizace"
       ],
       "(active)": [
         "(aktivní)"
