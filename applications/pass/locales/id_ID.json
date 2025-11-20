@@ -1143,6 +1143,9 @@
       "Secure link could not be opened.": [
         "Tautan aman tidak dapat dibuka."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "Server tidak dapat dijangkau. Silakan coba buka kunci ${ PASS_SHORT_APP_NAME } dalam beberapa menit."
+      ],
       "Settings update failed": [
         "Pengaturan gagal diperbarui"
       ],
@@ -1229,6 +1232,9 @@
       ],
       "Wrong second password": [
         "Kata sandi kedua salah"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Anda sedang offline. Silakan hubungkan kembali internet untuk membuka ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS Anda tidak diatur dengan benar. Rekaman MX yang kami peroleh adalah:"
@@ -2126,6 +2132,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Item yang dipilih berhasil dipulihkan dari sampah"
+      ],
+      "Servers are unreachable": [
+        "Server tidak dapat dijangkau"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
