@@ -56,7 +56,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                 const [{ decryptionKeys }, { verifyingKeys }] = await Promise.all([
                     dispatch(
                         getAddressKeysByUsageThunk({
-                            AddressID: calData.calendar.ID,
+                            AddressID: calData.ownerAddress.AddressID,
                             withV6SupportForEncryption: true,
                             withV6SupportForSigning: false,
                         })
