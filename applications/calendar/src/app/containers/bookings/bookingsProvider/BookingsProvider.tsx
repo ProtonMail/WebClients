@@ -171,6 +171,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
         if (validationError) {
             createNotification({ text: validationError });
+            intersectionRef.current = null;
             return;
         }
 
