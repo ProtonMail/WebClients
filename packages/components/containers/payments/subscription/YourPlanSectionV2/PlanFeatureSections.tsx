@@ -81,13 +81,14 @@ export const ServersSection = ({ organization, app }: { organization?: Organizat
 export const BillingDateSection = ({ subscription }: { subscription: Subscription }) => {
     const { renewDisabled } = subscriptionExpires(subscription);
 
-    if (!subscription) {
-        return false;
+    const subscriptionPeriodEnd = getRenewalTime(subscription);
+    if (!subscriptionPeriodEnd) {
+        return null;
     }
 
     const formattedPeriodEndDate = (
         <Time format="PP" key="period-end" data-testid="period-end">
-            {getRenewalTime(subscription)}
+            {subscriptionPeriodEnd}
         </Time>
     );
 
