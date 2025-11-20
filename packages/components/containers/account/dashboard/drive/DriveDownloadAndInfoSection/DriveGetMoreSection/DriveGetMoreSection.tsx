@@ -6,7 +6,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import type { Subscription } from '@proton/payments';
 import { PLANS, PLAN_NAMES, hasFree } from '@proton/payments';
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
@@ -23,6 +23,7 @@ interface Props {
 }
 
 const DriveGetMoreSection = ({ subscription }: Props) => {
+    const isFreeSubscription = hasFree(subscription);
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONDRIVE);
     const handleDrivePlusUpsell = () => {
@@ -37,27 +38,31 @@ const DriveGetMoreSection = ({ subscription }: Props) => {
     const sections: DashboardMoreInfoSection[] = [
         {
             title: () => c('Blog').t`Create and edit with confidence`,
-            description: () => c('Blog').t`Write, edit, and collaborate on documents with our secure online editors.`,
+            description: () => c('Blog').t`Write, edit and collaborate on documents securely with ${DOCS_APP_NAME}.`,
             image: editDocuments,
             link: 'https://proton.me/drive/docs',
         },
         {
-            title: () => c('Blog').t`Organize your memories into albums`,
-            tag: (
+            title: () => c('Blog').t`Keep your photos out of AI training`,
+            tag: isFreeSubscription ? (
                 <DashboardMoreInfoSectionTag
                     key="organize-memories-drive-label"
                     prefix={<DriveLogo variant="glyph-only" size={5} />}
                     text={PLAN_NAMES[PLANS.DRIVE]}
                 />
-            ),
-            description: () => c('Blog').t`Get enough storage for over 40,000 photos.`,
+            ) : undefined,
+            description: () =>
+                isFreeSubscription
+                    ? c('Blog').t`Get enough storage for over 40,000 photos.`
+                    : c('Blog').t`Backup, organize, and securely share a lifetime of memories.`,
             image: organizeMemories,
-            onClick: hasFree(subscription) ? () => handleDrivePlusUpsell() : undefined,
+            onClick: isFreeSubscription ? () => handleDrivePlusUpsell() : undefined,
         },
         {
             title: () => c('Blog').t`Share files securely`,
             description: () => c('Blog').t`Send files via secure links or email, revoke access whenever needed.`,
             image: shareFiles,
+            link: 'https://proton.me/drive/file-sharing',
         },
         {
             title: () => c('Blog').t`Safeguard your work`,
