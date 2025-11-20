@@ -30,11 +30,11 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
 
     const [bookings] = useInternalBooking();
 
-    const { openBookingSidebar, canCreateBooking } = useBookings();
+    const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
     const handleCreate = () => {
         if (user.hasPaidMail) {
-            openBookingSidebar(utcDate);
+            openBookingSidebarCreation(utcDate);
         } else {
             setModalOpen(true);
         }

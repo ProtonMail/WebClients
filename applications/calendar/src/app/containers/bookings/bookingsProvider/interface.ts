@@ -1,3 +1,5 @@
+import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
+
 export const BOOKING_SLOT_ID = 'booking-slot-' as const;
 export const TEMPORARY_BOOKING_SLOT = 'temporary-booking-slot-' as const;
 export const MAX_BOOKING_SLOTS = 100 as const;
@@ -8,9 +10,11 @@ export const DEFAULT_RECURRING = true;
 
 export interface BookingsContextValue {
     submitForm: () => Promise<void>;
+    bookingsState: BookingState;
     isBookingActive: boolean;
     canCreateBooking: boolean;
-    openBookingSidebar: (date: Date) => void;
+    openBookingSidebarCreation: (date: Date) => void;
+    openBookingSidebarEdition: (bookingPage: InternalBookingPage, editData: BookingPageEditData) => void;
     closeBookingSidebar: () => void;
     formData: BookingFormData;
     updateFormData: (field: keyof InternalBookingFrom, value: any, date?: Date) => void;
