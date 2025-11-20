@@ -16,6 +16,7 @@ import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/ca
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { decryptBookingContent } from '../../bookings/utils/decryptBookingContent';
+import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
 import { bookingSecretSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
 import { loadBookingPage } from './internalBookingActions';
@@ -46,26 +47,20 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
             ]);
 
             for (const bookingPage of bookingPages.BookingPages) {
-                const calendar = calendars.find((calendar) => calendar.ID === bookingPage.CalendarID);
-                if (!calendar) {
-                    continue;
-                }
-
-                const calendarOwner = calendar.Owner.Email;
-                const ownerAddress = calendar.Members.find((member) => member.Email === calendarOwner);
-                if (!ownerAddress) {
+                const calData = getCalendarAndOwner(bookingPage.CalendarID, calendars);
+                if (!calData) {
                     continue;
                 }
 
                 const [{ decryptionKeys }, { verifyingKeys }] = await Promise.all([
                     dispatch(
                         getAddressKeysByUsageThunk({
-                            AddressID: ownerAddress.AddressID,
+                            AddressID: calData.calendar.ID,
                             withV6SupportForEncryption: true,
                             withV6SupportForSigning: false,
                         })
                     ),
-                    dispatch(getVerificationPreferencesThunk({ email: ownerAddress.Email, lifetime: 0 })),
+                    dispatch(getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })),
                 ]);
 
                 const decrypted = await CryptoProxy.decryptMessage({
@@ -74,7 +69,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                     verificationKeys: verifyingKeys,
                     signatureContext:
                         verifyingKeys?.length > 0
-                            ? { value: bookingSecretSignatureContextValue(calendar.ID), required: true }
+                            ? { value: bookingSecretSignatureContextValue(calData.calendar.ID), required: true }
                             : undefined,
                     format: 'binary',
                 });
