@@ -21,6 +21,7 @@ import { internalBookingActions } from '../../../store/internalBooking/interalBo
 import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
+import { getCalendarAndOwner } from '../utils/calendar/calendarHelper';
 import { encryptBookingPage } from '../utils/crypto/bookingEncryption';
 import {
     computeEditFormData,
@@ -259,45 +260,41 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const submitForm = async () => {
         try {
             setLoading(true);
-            const selectedCalendar = writeableCalendars.find((cal) => cal.ID === internalForm.selectedCalendar);
+            if (!formData.selectedCalendar) {
+                throw new Error('Missing selected calendar');
+            }
 
-            if (!selectedCalendar) {
+            const calData = getCalendarAndOwner(formData.selectedCalendar, writeableCalendars);
+            if (!calData) {
                 return;
             }
 
-            const ownerEmail = selectedCalendar.Owner.Email;
-            const ownerAddressId = selectedCalendar.Members.find((member) => member.Email === ownerEmail)?.AddressID;
-
-            if (!ownerAddressId) {
-                throw new Error('Owner address ID not found');
-            }
-
             const { encryptionKey, signingKeys } = await getAddressKeysByUsage({
-                AddressID: ownerAddressId,
+                AddressID: calData.ownerAddress.AddressID,
                 withV6SupportForEncryption: true,
                 withV6SupportForSigning: false,
             });
 
-            const calendarKeys = await getCalendarKeys(selectedCalendar.ID);
+            const calendarKeys = await getCalendarKeys(calData.calendar.ID);
             const data = await encryptBookingPage({
                 formData,
                 calendarKeys,
                 encryptionKey,
                 signingKeys,
-                calendarID: selectedCalendar.ID,
+                calendarID: calData.calendar.ID,
             });
 
             const { BookingLink: bookingLink, ...apiPayload } = data;
 
             const response = await api<{ BookingPage: { ID: string }; Code: number }>(
-                createBookingPage({ ...apiPayload, CalendarID: selectedCalendar.ID })
+                createBookingPage({ ...apiPayload, CalendarID: calData.calendar.ID })
             );
 
             dispatch(
                 internalBookingActions.addBookingPage({
                     id: response.BookingPage.ID,
                     bookingUID: data.BookingUID,
-                    calendarID: selectedCalendar.ID,
+                    calendarID: calData.calendar.ID,
                     summary: internalForm.summary,
                     description: internalForm?.description,
                     location: internalForm?.location,
