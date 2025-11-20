@@ -10,6 +10,7 @@ export const DEFAULT_RECURRING = true;
 
 export interface BookingsContextValue {
     submitForm: () => Promise<void>;
+    bookingsState: BookingState;
     isBookingActive: boolean;
     canCreateBooking: boolean;
     openBookingSidebarCreation: (date: Date) => void;

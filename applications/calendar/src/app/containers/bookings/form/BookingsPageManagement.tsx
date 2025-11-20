@@ -19,7 +19,7 @@ import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eve
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
-import { BookingLocation } from '../bookingsProvider/interface';
+import { BookingLocation, BookingState } from '../bookingsProvider/interface';
 import { validateFormData } from '../utils/form/formHelpers';
 import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { FormRangeList } from './FormRangeList';
@@ -187,7 +187,7 @@ const Header = () => {
 };
 
 const Buttons = () => {
-    const { closeBookingSidebar, submitForm, formData, loading } = useBookings();
+    const { closeBookingSidebar, submitForm, formData, loading, bookingsState } = useBookings();
 
     const validation = validateFormData(formData);
     const isError = validation && validation.type === 'error';
@@ -197,9 +197,17 @@ const Buttons = () => {
             {isError ? <p className="color-danger text-sm text-right m-0 mb-2">{validation.message}</p> : null}
             <div className="flex justify-space-between gap-2">
                 <Button disabled={loading} onClick={() => closeBookingSidebar()}>{c('Action').t`Cancel`}</Button>
-                <Button disabled={!!validation} loading={loading} color="norm" type="submit" onClick={submitForm}>{c(
-                    'Action'
-                ).t`Create booking page`}</Button>
+                <Button
+                    disabled={!!validation || bookingsState === BookingState.EDIT_EXISTING}
+                    loading={loading}
+                    color="norm"
+                    type="submit"
+                    onClick={submitForm}
+                >
+                    {bookingsState === BookingState.EDIT_EXISTING
+                        ? c('Action').t`Save`
+                        : c('Action').t`Create booking page`}
+                </Button>
             </div>
         </>
     );
