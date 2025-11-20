@@ -45,8 +45,6 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                 extraArgument.api<{ BookingPages: InternalBookingPagePayload[] }>(getUserBookingPage()),
             ]);
 
-            const pagesArray: InternalBookingPage[] = [];
-
             for (const bookingPage of bookingPages.BookingPages) {
                 const calendar = calendars.find((calendar) => calendar.ID === bookingPage.CalendarID);
                 if (!calendar) {

@@ -11,6 +11,11 @@ export const createBookingPage = (data: BookingPageCreationPayload) => ({
     data,
 });
 
+export const getBookingPageDetails = (bookingUid: string) => ({
+    url: `calendar/v1/booking/${bookingUid}`,
+    method: 'GET',
+});
+
 export const queryPublicBookingPage = (
     bookingUid: string,
     { startTime, endTime }: { startTime: number; endTime: number }
