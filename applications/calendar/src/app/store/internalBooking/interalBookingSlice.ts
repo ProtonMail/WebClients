@@ -17,6 +17,7 @@ import { base64StringToUint8Array, uint8ArrayToPaddedBase64URLString } from '@pr
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { decryptBookingContent } from '../../bookings/utils/decryptBookingContent';
+import { bookingSecretSignatureValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
 
 const name = 'internalBookings' as const;
@@ -67,15 +68,13 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                 dispatch(getVerificationPreferencesThunk({ email: ownerAddress.Email, lifetime: 0 })),
             ]);
 
-            const signatureContext = verifyingKeys
-                ? { value: `bookings.secret.${calendar.ID}`, required: true }
-                : undefined;
-
             const decrypted = await CryptoProxy.decryptMessage({
                 binaryMessage: base64StringToUint8Array(bookingPage.EncryptedSecret),
                 decryptionKeys,
                 verificationKeys: verifyingKeys,
-                signatureContext,
+                signatureContext: verifyingKeys
+                    ? { value: bookingSecretSignatureValue(calendar.ID), required: true }
+                    : undefined,
                 format: 'binary',
             });
 
