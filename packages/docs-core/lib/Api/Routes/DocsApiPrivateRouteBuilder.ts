@@ -64,6 +64,7 @@ export class DocsApiPrivateRouteBuilder extends DocsApiRouteBuilder {
       url: `${this.basePath}/commits/${params.commitId}/squash`,
       input: 'protobuf',
       data: params.data,
+      timeout: 120_000,
     }
   }
 

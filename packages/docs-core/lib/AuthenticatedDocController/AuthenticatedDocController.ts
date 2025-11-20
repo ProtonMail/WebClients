@@ -60,7 +60,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
   subscribeToEvents(): void {
     this.documentState.subscribeToProperty('baseCommit', (value) => {
-      if (value && value.needsSquash()) {
+      if (value && value.needsSquash(this.documentType)) {
         void this.squashDocument()
       }
     })
@@ -102,7 +102,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const baseCommit = this.documentState.getProperty('baseCommit')
     const updates = [...(baseCommit ? getVersionHistoryUpdatesFromCommit(baseCommit) : []), ...this.receivedOrSentDUs]
 
-    return updates.length > 0 ? new NativeVersionHistory(updates) : undefined
+    return updates.length > 0 ? new NativeVersionHistory(updates, this.documentType) : undefined
   }
 
   /**

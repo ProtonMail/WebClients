@@ -2,6 +2,7 @@ import { BatchDocumentUpdates } from './BatchDocumentUpdates'
 import { mergeUpdates } from 'yjs'
 import type { VersionHistoryBatch, VersionHistoryUpdate } from './VersionHistoryBatch'
 import { DateFormatter } from './DateFormatter'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 /**
  * How many DUs should make up a presentable revision in the history viewer. If the threshold is 10 and a
@@ -13,9 +14,13 @@ export class NativeVersionHistory {
   private versionHistoryBatches: VersionHistoryBatch[] = []
   private _batchDocumentUpdates = new BatchDocumentUpdates()
   private dateFormatter = new DateFormatter()
-  private _batchThreshold = DefaultBatchThreshold
+  private _batchThreshold: number = DefaultBatchThreshold
 
-  constructor(private updates: VersionHistoryUpdate[]) {
+  constructor(
+    private updates: VersionHistoryUpdate[],
+    documentType: DocumentType,
+  ) {
+    this._batchThreshold = documentType === 'sheet' ? 30 : 10
     this.versionHistoryBatches = this._batchDocumentUpdates.execute(updates, this._batchThreshold).getValue()
   }
 
