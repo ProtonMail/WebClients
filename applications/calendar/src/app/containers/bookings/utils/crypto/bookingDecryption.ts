@@ -14,7 +14,7 @@ export const decryptBookingPageSecrets = async ({
     selectedCalendar: string;
     decryptionKeys: PrivateKeyReference[];
     verifyingKeys?: PublicKeyReference[];
-}): Promise<Uint8Array<ArrayBuffer>> => {
+}): Promise<{ data: Uint8Array<ArrayBuffer>; failedToVerify: boolean }> => {
     const decrypted = await CryptoProxy.decryptMessage({
         binaryMessage: Uint8Array.fromBase64(encryptedSecret),
         decryptionKeys,
@@ -26,6 +26,8 @@ export const decryptBookingPageSecrets = async ({
         format: 'binary',
     });
 
+    let failedToVerify = false;
+
     if (
         verifyingKeys &&
         verifyingKeys.length > 0 &&
@@ -33,9 +35,10 @@ export const decryptBookingPageSecrets = async ({
     ) {
         // eslint-disable-next-line no-console
         console.warn({ errors: decrypted.verificationErrors });
+        failedToVerify = true;
     }
 
-    return decrypted.data;
+    return { data: decrypted.data, failedToVerify };
 };
 
 /**
