@@ -9,7 +9,7 @@ import { useApi, useGetCalendarEventRaw, useGetCalendarInfo } from '@proton/comp
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToBinaryString, arrayToHexString, decodeUtf8 } from '@proton/crypto/lib/utils';
+import { arrayToBinaryString, decodeUtf8 } from '@proton/crypto/lib/utils';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
@@ -192,7 +192,7 @@ const ExtraEvents = ({ message }: Props) => {
                                         algorithm: 'unsafeSHA1',
                                         data: download.data,
                                     })
-                                        .then((result) => arrayToHexString(result))
+                                        .then((result) => result.toHex())
                                         .catch((error: any) => {
                                             captureMessage('Failed to hash ics', {
                                                 level: 'info',

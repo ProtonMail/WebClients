@@ -1,5 +1,4 @@
 import { CryptoProxy, type MaybeArray, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 
 interface UserID {
     name?: string;
@@ -8,7 +7,7 @@ interface UserID {
 
 const generateRandomHexPassphrase = () => {
     const randomBytes = crypto.getRandomValues(new Uint8Array(32));
-    return arrayToHexString(randomBytes);
+    return randomBytes.toHex();
 };
 
 const generateForwardingMaterial = async (
@@ -46,9 +45,9 @@ interface ProxyInstance {
 
 const mapProxyInstance = (proxyInstance: ProxyInstance) => ({
     PgpVersion: proxyInstance.keyVersion,
-    ForwarderKeyFingerprint: arrayToHexString(proxyInstance.forwarderKeyFingerprint),
-    ForwardeeKeyFingerprint: arrayToHexString(proxyInstance.forwardeeKeyFingerprint),
-    ProxyParam: arrayToHexString(proxyInstance.proxyParameter),
+    ForwarderKeyFingerprint: proxyInstance.forwarderKeyFingerprint.toHex(),
+    ForwardeeKeyFingerprint: proxyInstance.forwardeeKeyFingerprint.toHex(),
+    ProxyParam: proxyInstance.proxyParameter.toHex(),
 });
 
 export const getInternalParametersPrivate = async (

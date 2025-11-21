@@ -1,6 +1,5 @@
 import { sha1 } from '@noble/hashes/sha1';
 
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
 import { queryPhotosDuplicates } from '@proton/shared/lib/api/drive/photos';
 import type { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
@@ -160,7 +159,7 @@ export default function useUploadHelper() {
 
         const sha1Hash = sha1Instance.digest() as Uint8Array<ArrayBuffer>;
 
-        const contentHash = await generateLookupHash(arrayToHexString(sha1Hash), parentHashKey);
+        const contentHash = await generateLookupHash(sha1Hash.toHex(), parentHashKey);
 
         const duplicatePhotoHashActive = DuplicateHashes.find(
             (duplicatePhotosHash) =>

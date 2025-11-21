@@ -1,7 +1,6 @@
 import { CURVE, Point } from '@noble/ed25519';
 
 import { CryptoProxy } from '@proton/crypto';
-import { arrayToHexString } from '@proton/crypto/lib/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { CO_FACTOR, N, ptLen } from '../constants/constants';
@@ -9,7 +8,7 @@ import { CO_FACTOR, N, ptLen } from '../constants/constants';
 /**
  * Convert an Uint8Array representing a scalar to a bigint instance, also swapping endianness
  */
-const stringToScalar = (array: Uint8Array<ArrayBuffer>) => BigInt(`0x${arrayToHexString(array.reverse())}`);
+const stringToScalar = (array: Uint8Array<ArrayBuffer>) => BigInt(`0x${array.reverse().toHex()}`);
 
 /**
  * Convert a ptLen-octet Uint8Array to EC point, according to section 5.1.3 of rfc8032.

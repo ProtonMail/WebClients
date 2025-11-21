@@ -17,9 +17,7 @@ import {
 import type { CryptoApiInterface, PrivateKeyReferenceV4, PrivateKeyReferenceV6, SessionKey } from '../../lib';
 import { ARGON2_PARAMS, KeyCompatibilityLevel, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
 import {
-    arrayToHexString,
     binaryStringToArray,
-    hexStringToArray,
     stringToUtf8Array,
     utf8ArrayToString,
 } from '../../lib/utils';
@@ -592,7 +590,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
                 enums.symmetricNames,
                 'plaintext'
             >,
-            data: hexStringToArray('01FE16BBACFD1E7B78EF3B865187374F'),
+            data: Uint8Array.fromHex('01FE16BBACFD1E7B78EF3B865187374F'),
         };
         const encrypted = await CryptoApiImplementation.encryptSessionKey({
             ...sessionKey,
@@ -803,7 +801,7 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const hexBinaryPublicKey = `c63304623b4fac16092b06010401da470f010107405787b1d537d9974a40fea2f239578b81c355991ac4fe619a1595c3f21ecfb3abcd113c7465737440776f726b65722e636f6d3ec28c0410160a001d0502623b4fac040b0907080315080a0416000201021901021b03021e0100210910db8c8a5d901c2766162104d26cda9d40b4fea61b6cb65adb8c8a5d901c2766f80e00fd1eb4b4c4917d18436081ff9f463b9cc595af7805c789ba3b57a6b66511ff95d600fe36072060165618fed927051527d585ff26c3293b42671f2a169f47a4df6ba50cce3804623b4fac120a2b06010401975501050101074057571d1c77fbcb8f9fd0abd3d4f0e95ea725f569a49ec4faf0d2d0df8df3cd4103010807c2780418160800090502623b4fac021b0c00210910db8c8a5d901c2766162104d26cda9d40b4fea61b6cb65adb8c8a5d901c27665f760100e650904af11ea8933e9b91028df04375867f15b2542e8f8f86c2069081f66ed000fb06ddfa8ce3370eb9b92e93c40f7a624c1bf3b190f26beba3a9a93107b9ad310e`;
 
         const armoredKeys = await CryptoApiImplementation.getArmoredKeys({
-            binaryKeys: hexStringToArray(hexBinaryPublicKey),
+            binaryKeys: Uint8Array.fromHex(hexBinaryPublicKey),
         });
         expect(armoredKeys).to.have.length(1);
         const key = await openpgp_readKey({ armoredKey: armoredKeys[0] });
@@ -814,7 +812,7 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const hexBinarySignature = `c2750401160a0006050262351cc9002109101a5092c9a2df33531621041f75b4729655e143dc146f941a5092c9a2df33532cba0100ab31401b4aca8b449dc490d16927e37c9510c076745795b3e73bba0209b826770100dc6a6fcc1aaa6fcbce51a5b20682ea201414ec923d387a4eb88932df87f6e60c`;
 
         const armoredSignature = await CryptoApiImplementation.getArmoredSignature({
-            binarySignature: hexStringToArray(hexBinarySignature),
+            binarySignature: Uint8Array.fromHex(hexBinarySignature),
         });
         const signatureInfo = await CryptoApiImplementation.getSignatureInfo({ armoredSignature });
         expect(signatureInfo.signingKeyIDs).to.not.be.empty;
@@ -824,7 +822,7 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const hexBinaryMessage = `c15e03f95c1ce325f4cb90120107409ebcb5a71c378c1f0936a5264aa69cd97d11abc03ff7e82077641e1e2000fd2e3000316865a8f7516e3048376a949ea31e84f1d5588fef7d485ece4e8a96358697c1c25a2019c8d6b527cea6c234265354d23c013b5dc3c8ab1a6bd1afda98ea4c5476dc93e4319c9f3734148ed7eec41adef1d80a86b02eb256e185bce5958f43dd0cbbf6eb654970d65234595e72`;
 
         const armoredMessage = await CryptoApiImplementation.getArmoredMessage({
-            binaryMessage: hexStringToArray(hexBinaryMessage),
+            binaryMessage: Uint8Array.fromHex(hexBinaryMessage),
         });
 
         const message = await openpgp_readMessage({ armoredMessage });
@@ -896,25 +894,25 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const testHashMD5 = await CryptoApiImplementation.computeHash({
             algorithm: 'unsafeMD5',
             data: binaryStringToArray('The quick brown fox jumps over the lazy dog'),
-        }).then(arrayToHexString);
+        }).then(bytes => bytes.toHex());
         expect(testHashMD5).to.equal('9e107d9d372bb6826bd81d3542a419d6');
 
         const testHashSHA1 = await CryptoApiImplementation.computeHash({
             algorithm: 'unsafeSHA1',
             data: new Uint8Array(),
-        }).then(arrayToHexString);
+        }).then(bytes => bytes.toHex());
         expect(testHashSHA1).to.equal('da39a3ee5e6b4b0d3255bfef95601890afd80709');
 
         const testHashSHA256 = await CryptoApiImplementation.computeHash({
             algorithm: 'SHA256',
             data: new Uint8Array(),
-        }).then(arrayToHexString);
+        }).then(bytes => bytes.toHex());
         expect(testHashSHA256).to.equal('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855');
 
         const testHashSHA512 = await CryptoApiImplementation.computeHash({
             algorithm: 'SHA512',
             data: new Uint8Array(),
-        }).then(arrayToHexString);
+        }).then(bytes => bytes.toHex());
         expect(testHashSHA512).to.equal(
             'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e'
         );
@@ -932,7 +930,7 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const testHashSHA1Empty = await CryptoApiImplementation.computeHashStream({
             algorithm: 'unsafeSHA1',
             dataStream: emptyDataStream,
-        }).then(arrayToHexString);
+        }).then(bytes => bytes.toHex());
         expect(testHashSHA1Empty).to.equal('da39a3ee5e6b4b0d3255bfef95601890afd80709');
 
         // `data` and `dataStream` share the underlying buffer: this is to test that no byte transferring is taking place
@@ -948,9 +946,9 @@ Z3SSOseslp6+4nnQ3zOqnisO
         const testHashSHA1Streamed = await CryptoApiImplementation.computeHashStream({
             algorithm: 'unsafeSHA1',
             dataStream,
-        }).then(arrayToHexString);
+        }).then(bytes => bytes.toHex());
         const testHashSHA1 = await CryptoApiImplementation.computeHash({ algorithm: 'unsafeSHA1', data }).then(
-            arrayToHexString
+            bytes => bytes.toHex()
         );
         expect(testHashSHA1).to.equal('3f3feea4f73d400fe98b7518a4b21ad4fc80476d');
         expect(testHashSHA1Streamed).to.equal(testHashSHA1);
@@ -958,15 +956,15 @@ Z3SSOseslp6+4nnQ3zOqnisO
 
     it('computeArgon2', async () => {
         const expected = '6904f1422410f8360c6538300210a2868f5e80cd88606ec7d6e7e93b49983cea';
-        const passwordBytes = hexStringToArray('0101010101010101010101010101010101010101010101010101010101010101');
+        const passwordBytes = Uint8Array.fromHex('0101010101010101010101010101010101010101010101010101010101010101');
 
         const tag = await CryptoApiImplementation.computeArgon2({
             password: new TextDecoder().decode(passwordBytes),
-            salt: hexStringToArray('0202020202020202020202020202020202020202020202020202020202020202'),
+            salt: Uint8Array.fromHex('0202020202020202020202020202020202020202020202020202020202020202'),
             params: ARGON2_PARAMS.MINIMUM,
         });
 
-        expect(arrayToHexString(tag)).to.equal(expected);
+        expect(tag.toHex()).to.equal(expected);
     });
 
     it('replaceUserIDs - the target key user IDs match the source key ones', async () => {
@@ -1216,8 +1214,8 @@ AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
         expect(charlieKey.equals(bobKey)).to.be.false; // sanity check
         expect(charlieKey.subkeys.length).to.equal(1);
         expect(proxyInstances[0].keyVersion).to.equal(4);
-        expect(arrayToHexString(proxyInstances[0].forwarderKeyFingerprint)).to.include(bobKey.subkeys[0].getKeyID());
-        expect(arrayToHexString(proxyInstances[0].forwardeeKeyFingerprint)).to.include(
+        expect(proxyInstances[0].forwarderKeyFingerprint.toHex()).to.include(bobKey.subkeys[0].getKeyID());
+        expect(proxyInstances[0].forwardeeKeyFingerprint.toHex()).to.include(
             charlieKey.subkeys[0].getKeyID()
         );
     });
@@ -1273,10 +1271,10 @@ RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
         proxyInstances.forEach((proxyInstance, i) => {
             expect(proxyInstance.proxyParameter).to.have.length(32);
             expect(proxyInstance.keyVersion).to.equal(4);
-            expect(arrayToHexString(proxyInstance.forwarderKeyFingerprint)).to.include(
+            expect(proxyInstance.forwarderKeyFingerprint.toHex()).to.include(
                 bobForwardingSubkeys[i].getKeyID()
             );
-            expect(arrayToHexString(proxyInstance.forwardeeKeyFingerprint)).to.include(
+            expect(proxyInstance.forwardeeKeyFingerprint.toHex()).to.include(
                 charlieKey.subkeys[i].getKeyID()
             );
         });

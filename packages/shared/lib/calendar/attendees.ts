@@ -1,5 +1,5 @@
 import { CryptoProxy, type SessionKey } from '@proton/crypto';
-import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
+import { binaryStringToArray } from '@proton/crypto/lib/utils';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
@@ -37,7 +37,7 @@ export const generateAttendeeToken = async (normalizedEmail: string, uid: string
     const uidEmail = `${uid}${normalizedEmail}`;
     const byteArray = binaryStringToArray(uidEmail);
     const hash = await CryptoProxy.computeHash({ algorithm: 'unsafeSHA1', data: byteArray });
-    return arrayToHexString(hash);
+    return hash.toHex();
 };
 
 export const toApiPartstat = (partstat?: string) => {
