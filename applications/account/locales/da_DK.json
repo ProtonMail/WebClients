@@ -1601,6 +1601,15 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Add ${ BRAND_NAME } address": [
+        "Tilføj ${ BRAND_NAME } adresse"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Begynd at bruge ${ PASS_APP_NAME } nu"
+      ],
+      "Subscribe now": [
+        "Abonnér nu"
       ]
     },
     "action": {
@@ -1724,6 +1733,9 @@
       ],
       "Set “${ emailAddress }” as default address": [
         "Indstil \"${ emailAddress }\" som standardadresse"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Afbryd forbindelse til adressen “${ emailAddress }”"
       ]
     },
     "Address status": {
@@ -1951,6 +1963,9 @@
       ],
       "Secure your communications": [
         "Beskyt din kommunikation"
+      ],
+      "Talk confidentially": [
+        "Tal fortroligt"
       ]
     },
     "Apps dropdown": {
@@ -2386,6 +2401,27 @@
       ],
       "Working with sensitive data?": [
         "Arbejder du med følsomme data?"
+      ],
+      "Get a clean inbox with filters": [
+        "Få en ren indbakke med filtre"
+      ],
+      "Keep your email spam-free": [
+        "Hold din e-mail fri for spam"
+      ],
+      "Learn how Big Tech uses family photos to train AI, how it affects you.": [
+        "Lær, hvordan Big Tech bruger familiebilleder til at træne AI, og hvordan det påvirker dig."
+      ],
+      "Protect your business communications": [
+        "Beskyt din virksomhedskommunikation"
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Denne artikel er blevet opdateret til at inkludere WireGuard- og Stealth VPN-protokollerne."
+      ],
+      "What is an email alias?": [
+        "Hvad er et e-mail-alias?"
+      ],
+      "What is end-to-end encryption and how does it work?": [
+        "Hvad er end-to-end kryptering, og hvordan virker det?"
       ]
     },
     "breadcrumb": {
@@ -2878,6 +2914,15 @@
       ],
       "Upload and query small files": [
         "Upload og forespørg små filer"
+      ],
+      "Access to advanced AI models": [
+        "Adgang til avancerede AI-modeller"
+      ],
+      "AI assistant that respects your privacy": [
+        "En AI-assistent, der respekterer dit privatliv"
+      ],
+      "Basic chat history": [
+        "Grundlæggende chathistorik"
       ]
     },
     "color": {
@@ -4348,6 +4393,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ],
+      "Make your email footer your own — showcase your unique brand, not ours.": [
+        "Gør din e-mail-fod til din egen – fremvis dit unikke brand, ikke vores."
+      ],
+      "Send a code to your recovery email or phone": [
+        "Send en kode til din gendannelses-e-mail eller din telefon"
       ]
     },
     "description": {
@@ -4592,6 +4643,12 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 eller Windows 32-bit (ARM64)"
+      ],
+      "Get it on Google Play": [
+        "Hent på Google Play"
+      ],
+      "Mail": [
+        "Mail"
       ]
     },
     "drive_signup_2023: Title": {
@@ -4920,6 +4977,9 @@
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Du gentegnede abonnement på ${ categoriesJsx } e-mails."
+      ],
+      "If you unsubscribed by accident, you are welcome to resubscribe.": [
+        "Hvis du fejlagtigt har afmeldt dig, er du velkommen til at re-abonnere."
       ]
     },
     "Email verification": {
@@ -5307,6 +5367,27 @@
       ],
       "You'll receive access to their account immediately.": [
         "Du vil få adgang til deres konto øjeblikkeligt."
+      ],
+      "Add emergency contact": [
+        "Tilføj nødkontakt"
+      ],
+      "Emergency access for ${ user } removed": [
+        "Nødadgang for ${ user } blev fjernet"
+      ],
+      "Emergency contact removed": [
+        "Nødkontakt fjernet"
+      ],
+      "Give immediate access?": [
+        "Giv umiddelbar adgang?"
+      ],
+      "Less than a day": [
+        "Mindre end 1 dag"
+      ],
+      "Request access?": [
+        "Anmod om adgang?"
+      ],
+      "Wait time saved": [
+        "Sparet ventetid"
       ]
     },
     "Empty group name": {
@@ -5910,6 +5991,12 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Please upload a square logo": [
+        "Overfør et kvadratisk logo"
+      ],
+      "Postal code is required": [
+        "Postnummer kræves"
       ]
     },
     "error": {
@@ -10647,6 +10734,33 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "${ name } for Web": [
+        "${ name } til Web"
+      ],
+      "${ name } for Windows": [
+        "${ name } til Windows"
+      ],
+      "**Sync codes** to all your devices": [
+        "**Synkroniser koder** til alle dine enheder"
+      ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Tilføjelse af en ekstern e-mailadresse vil deaktivere end-to-end-kryptering for al e-mail-kommunikation inden for den pågældende gruppe. Vil du fortsætte?"
+      ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Sikker, end-to-end krypteret videokonference"
+      ],
+      "Select users to view their activity": [
+        "Vælg brugere for at se deres aktivitet"
+      ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "Gruppefunktionen understøttes ikke af dit nuværende abonnement. Tidligere oprettede grupper er deaktiveret og kan kun slettes."
+      ],
+      "Two-factor authentication": [
+        "To-faktor-godkendelse"
+      ],
+      "Your free trial includes 1 dedicated server.": [
+        "Din gratis prøveperiode inkluderer 1 dedikeret server."
       ]
     },
     "info": {
@@ -10837,6 +10951,9 @@
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Dette vil generere en ny nøgle, som bruges til at kryptere fremtidige e-mails, blandt andre data."
+      ],
+      "New key generated": [
+        "Ny nøgle genereret"
       ]
     },
     "Key state badge": {
@@ -12359,6 +12476,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Ask members to set up 2FA": [
+        "Bed medlemmerne om at konfigurere 2FA"
+      ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Delt mellem ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ WALLET_SHORT_APP_NAME }."
+      ],
+      "Special Offer!": [
+        "Særtilbud!"
       ]
     },
     "label": {
@@ -12861,6 +12987,9 @@
     "lumo_signup_2025: title": {
       "For businesses": [
         "For virksomheder"
+      ],
+      "For individuals": [
+        "Til enkeltpersoner"
       ]
     },
     "Mail import summary": {
@@ -13001,6 +13130,9 @@
       ],
       "Sign in": [
         "Log ind"
+      ],
+      "Enable user": [
+        "Aktivér bruger"
       ]
     },
     "Message": {
@@ -15504,6 +15636,15 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Din organisation har adgang til ${ free }. Hvis du vil have adgang til premium ${ appName }-funktioner, skal du bede din organisations administrator om at opgradere."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan låse op for **${ unlockPlanTitle }** og flere ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }** — det er blot ${ relativePrice } ekstra hver måned."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Men du kan låse op for **${ unlockPlanTitle }** og flere ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }**."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Ved at fortsætte accepterer du vores ${ termsAndConditionsLink } og ${ privacyPolicyLink }."
       ]
     },
     "pass_signup_2023: Title": {
@@ -16200,6 +16341,12 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
+      ],
+      "Perfect for getting started with secure cloud storage.": [
+        "En perfekt start på sikker lagerplads i skyen."
+      ],
+      "The ideal plan for privacy-conscious power users.": [
+        "Den ideelle plan for privatlivsbevidste superbrugere"
       ]
     },
     "Plans": {
@@ -16520,6 +16667,9 @@
       ],
       "Save changes": [
         "Gem ændringer"
+      ],
+      "Add users or groups": [
+        "Tilføj brugere eller grupper"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16869,6 +17019,9 @@
       ],
       "Your recovery phone number is:": [
         "Din telefonnummer til gendannelse er:"
+      ],
+      "in case we need to contact you": [
+        "Hvis vi får brug for at kontakte dig"
       ]
     },
     "saml: Action": {
@@ -17738,6 +17891,18 @@
       ],
       "Your plan": [
         "Dit abonnement"
+      ],
+      "Get a new encrypted email for free": [
+        "Få en ny gratis krypteret e-mailadresse"
+      ],
+      "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
+        "Har du brug for mere lagerplads? Du kan opgradere når som helst, med abonnementer fra 200 GB til 3 TB. 5 GB er nok til 2.500 billeder fra en moderne telefon (ved ~2 MB hver)."
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Derefter ${ priceWithDiscountPerMonth } pr. måned. Annullér når som helst."
+      ],
+      "Up to -${ percentage }%": [
+        "Op til ${ percentage }%"
       ]
     },
     "Signup label": {
@@ -17868,6 +18033,9 @@
       ],
       "Works on all devices": [
         "Virker på alle enheder"
+      ],
+      "The only password manager with:": [
+        "Den eneste password-administrator med:"
       ]
     },
     "signup_2024: Feature": {
@@ -18313,6 +18481,12 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
+      ],
+      "The email address ${ email } already exists in ${ BRAND_NAME }. Sign in with your ${ BRAND_NAME } credentials to continue.": [
+        "E-mailadressen ${ email } eksisterer allerede i ${ BRAND_NAME }. Log ind med dine ${ BRAND_NAME } legitimationsoplysninger for at fortsætte."
+      ],
+      "Tried to sign in at": [
+        "Forsøgte at logge ind på"
       ]
     },
     "sso: auth device state": {
@@ -18991,6 +19165,9 @@
     "Subtitle": {
       "Free forever": [
         "Gratis for altid"
+      ],
+      "Pay once, access forever.": [
+        "Betal én gang, få adgang for evigt."
       ]
     },
     "Success": {
@@ -19209,6 +19386,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil modtage dit brugernavn via SMS indenfor et minut, hvis du har indtastet et gyldigt telefonnummer til gendannelse."
+      ],
+      "Address successfully added": [
+        "Adresse blev tilføjet med succes"
       ]
     },
     "Success message": {
@@ -19277,6 +19457,9 @@
       ],
       "Status updated": [
         "Status opdateret"
+      ],
+      "Group end-to-end email encryption disabled": [
+        "Gruppe end-to-end e-mailkryptering deaktiveret"
       ]
     },
     "Suffix": {
@@ -20919,6 +21102,21 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blevet inviteret til at prøve ${ MAIL_APP_NAME }"
+      ],
+      "Connect more addresses": [
+        "Tilføj flere adresser"
+      ],
+      "Email categories": [
+        "E-mail-kategorier"
+      ],
+      "Invite friends. Get credits.": [
+        "Inviter venner. Få kreditter."
+      ],
+      "Revoke certificate?": [
+        "Tilbagekald certifikat?"
+      ],
+      "Wipe all logs?": [
+        "Slet alle logge?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -21243,6 +21441,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
+      ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Angiv de brugere af eduGAIN-enheden, der har tilladelse til at godkende med SAML SSO"
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Denne e-mailadresse kan kun bruges til at logge ind på din ${ BRAND_NAME }-konto."
       ]
     },
     "tooltip": {
@@ -21517,6 +21721,9 @@
       ],
       "Did you know?": [
         "Vidste du det?"
+      ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Få ${ drivePlusPlanMaxSpace } lagerplads til dine filer, fotos og dokumenter, og gendan filversioner med mulighed for 10-års filgendannelse."
       ]
     },
     "upsell panel": {
@@ -22241,6 +22448,34 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Betalingsdetaljer"
+      ]
+    },
+    "Dashboard": {
+      "Get more from your ${ planTitle } subscription.": [
+        "Få mere ud af dit ${ planTitle } abonnement."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
+        "Opbevar dine filer, fotos og dokumenter sikkert med ${ maxDriveSpace } gratis lagerplads i skyen."
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Hvad er navnet på din organisation?"
+      ]
+    },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Fortsæt til ${ appName }"
+      ]
+    },
+    "RecoveryPhrase: Title": {
+      "Save your Recovery Kit": [
+        "Gem dit Recovery Kit"
       ]
     }
   }

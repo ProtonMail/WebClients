@@ -2511,6 +2511,9 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Reînnoire automată pe ${ subscriptionManagerName }"
+      ],
+      "Renews automatically": [
+        "Se reînnoiește automat"
       ]
     },
     "Billing cycle option": {
@@ -2785,6 +2788,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Adresa personală de e-mail este o parte esențială a identității dvs. digitale. Asemănător cu numărul de telefon, nu-l oferiți oricui vă întâlniți. De aceea, este util să aveți alte adrese de e-mail pe care le puteți utiliza în diverse scopuri."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Conservați, organizați și partajați în siguranță o viață de amintiri."
+      ],
+      "Keep your photos out of AI training": [
+        "Păstrați-vă fotografiile departe de antrenarea pentru IA"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Scrieți, editați și colaborați la documente în siguranță cu ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6775,6 +6787,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Adăugați o metodă de plată înainte de a vă reactiva abonamentul."
       ]
     },
     "error": {
@@ -12020,6 +12035,21 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } pentru organizații este un program avansat de protecție a conturilor, alimentat de sisteme de IA sofisticate și specialiști care lucrează non-stop pentru a vă proteja organizația de actori răi și amenințările de securitate."
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pasul 1: Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Pasul 2:** Persoanele recomandate primesc **două săptămâni gratuite** pentru planul lor."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Pasul 3:** Obțineți **${ referrerRewardAmount } credite** pentru fiecare persoană care se abonează la un plan."
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Treceți la ${ firstPlanNames } sau ${ lastPlanName } pentru a obține acces la ${ PROTON_SENTINEL_NAME } pentru organizații."
       ]
     },
     "info": {
@@ -18314,6 +18344,21 @@
       ],
       "your subscription": [
         "abonament personal"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Oferiți două săptămâni, primiți ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Cum funcționează probarea gratuită:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Dacă anulați până atunci, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } atunci când perioada de probare se încheie. Dacă nu anulați, va începe planul complet și veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Dacă vă abonați înainte de această dată, veți primi **${ referrerRewardAmount }** în credite. Dacă nu vă abonați, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Și persoana recomandată va primi ${ refereeRewardAmount } pentru răscumpărare la următoarea factură!"
       ]
     },
     "Remark about a key type option": {
@@ -23453,6 +23498,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Ați fost invitat să încercați ${ MAIL_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } pentru organizații"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

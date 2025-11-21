@@ -2497,6 +2497,9 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName } tarihinde otomatik olarak yenilenir"
+      ],
+      "Renews automatically": [
+        "Otomatik olarak yenilenir"
       ]
     },
     "Billing cycle option": {
@@ -2771,6 +2774,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Kişisel e-posta adresiniz, dijital kimliğinizin önemli bir parçasıdır. Onu da, telefon numaranız gibi, tanıştığınız herkese vermezsiniz. Bu nedenle, farklı amaçlar için kullanabileceğiniz başka e-posta adreslerinizin olması yararlıdır."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Ömür boyu biriktirdiğiniz anıları yedekleyin, düzenleyin ve güvenli olarak paylaşın."
+      ],
+      "Keep your photos out of AI training": [
+        "Fotoğraflarınızı yapay zekayı eğitimenin dışında tutun"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "${ DOCS_APP_NAME } ile belgeleri güvenli olarak yazın, düzenleyin ve üzerinde iş birliği yapın."
       ]
     },
     "breadcrumb": {
@@ -6737,6 +6749,9 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Aboneliğinizi yeniden etkinleştirmeden önce bir ödeme yöntemi ekleyin"
       ]
     },
     "error": {
@@ -11896,6 +11911,15 @@
       ],
       "Zoom meeting": [
         "Zoom toplantısı"
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**1. Adım: Arkadaşlarınızı** öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**2. adım:** Arkadaşlarınız tarifelerine **2 hafta ek ücretsiz süre** alsın."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**3. adım**: Bir tarifeye abone olan her kişi için **${ referrerRewardAmount } kredi** kazanın."
       ]
     },
     "info": {
@@ -18099,6 +18123,21 @@
       ],
       "your subscription": [
         "aboneliğiniz"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "2 hafta hediye edin, ${ referrerRewardAmount } kazanın"
+      ],
+      "How your free trial works:": [
+        "Ücretsiz deneme süreniz nasıl işler:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Bu tarihten önce abone olursanız **${ referrerRewardAmount }** tutarında kredi kazanırsınız. Abone olmazsanız ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Arkadaşınız da bir sonraki fatura döneminde kullanabileceği ${ refereeRewardAmount } alacak!"
       ]
     },
     "Remark about a key type option": {
