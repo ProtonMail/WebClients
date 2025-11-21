@@ -1,11 +1,13 @@
 import type { ReactNode } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
+import type { Location } from 'history';
 import { c } from 'ttag';
 
 import { EmergencyAccessSection } from '@proton/account/delegatedAccess/emergencyAccess/EmergencyAccessSection';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import { EasySwitchSettingsArea } from '@proton/activation';
+import type { SectionConfig } from '@proton/components';
 import {
     AccessibilitySection,
     AccountDashboard,
@@ -68,6 +70,23 @@ import useFlag from '@proton/unleash/useFlag';
 
 import type { getAccountAppRoutes } from './routes';
 
+const shouldRedirectToSubscriptions = (location: Location<unknown>, path: string, dashboard: SectionConfig) => {
+    /**
+     * Dashboard -> Subscription redirect to handle sections we moved from Dashboard to subscriptions page
+     */
+    if (location.hash && location.pathname === `${path}${dashboard.to}`) {
+        return [
+            '#your-subscriptions',
+            '#payment-methods',
+            '#credits',
+            '#gift-code',
+            '#invoices',
+            '#email-subscription',
+            '#cancel-subscription',
+        ].includes(location.hash);
+    }
+};
+
 const AccountSettingsRouter = ({
     redirect,
     path,
@@ -80,6 +99,7 @@ const AccountSettingsRouter = ({
     app: APP_NAMES;
 }) => {
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
+    const location = useLocation();
     const {
         routes: {
             vpnDashboardV2,
@@ -99,6 +119,9 @@ const AccountSettingsRouter = ({
 
     return (
         <Switch>
+            {getIsSectionAvailable(subscription) && shouldRedirectToSubscriptions(location, path, dashboard) ? (
+                <Redirect to={`${path}${subscription.to}${location.search}${location.hash}`} />
+            ) : null}
             {getIsSectionAvailable(vpnDashboardV2) && (
                 <Route path={getSectionPath(path, vpnDashboardV2)}>
                     <DashboardTelemetry app={app} />
