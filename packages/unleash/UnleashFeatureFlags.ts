@@ -233,6 +233,7 @@ enum MeetFeatureFlag {
     MeetPassphraseEnabled = 'MeetPassphraseEnabled',
     MeetUpsell = 'MeetUpsell',
     PersonalMeetingRotation = 'PersonalMeetingRotation',
+    MeetPromptOnTabClose = 'MeetPromptOnTabClose',
 }
 
 enum LumoFeatureFlag {
