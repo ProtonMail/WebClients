@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { DropdownSizeUnit } from '@proton/components';
 import Option from '@proton/components/components/option/Option';
@@ -23,6 +24,8 @@ import { BookingLocation, BookingState } from '../bookingsProvider/interface';
 import { validateFormData } from '../utils/form/formHelpers';
 import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { FormRangeList } from './FormRangeList';
+
+import './BookingForms.scss';
 
 export const getBookingLocationOption = () => {
     return [
@@ -55,7 +58,7 @@ export const Form = () => {
                     maxLength={MAX_CHARS_API.TITLE}
                     assistContainerClassName="hidden"
                     inputContainerClassName="text-xl text-semibold"
-                    className="resize-none"
+                    className="resize-none booking-sidebar-title-textarea relative"
                     minRows={1}
                     rows={3}
                     unstyled
@@ -180,9 +183,11 @@ const Header = () => {
     const { closeBookingSidebar } = useBookings();
 
     return (
-        <Button icon shape="ghost" onClick={() => closeBookingSidebar()}>
-            <IcCrossBig alt={c('Action').t`Close sidebar`} />
-        </Button>
+        <Tooltip title={c('Action').t`Close sidebar`}>
+            <Button icon shape="ghost" className="rounded-full shadow-norm" onClick={() => closeBookingSidebar()}>
+                <IcCrossBig alt={c('Action').t`Close sidebar`} />
+            </Button>
+        </Tooltip>
     );
 };
 
@@ -195,7 +200,7 @@ const Buttons = () => {
     return (
         <>
             {isError ? <p className="color-danger text-sm text-right m-0 mb-2">{validation.message}</p> : null}
-            <div className="flex justify-space-between gap-2">
+            <div className="flex flex-column-reverse sm:flex-row justify-space-between gap-2">
                 <Button disabled={loading} onClick={() => closeBookingSidebar()}>{c('Action').t`Cancel`}</Button>
                 <Button
                     disabled={!!validation || bookingsState === BookingState.EDIT_EXISTING}
