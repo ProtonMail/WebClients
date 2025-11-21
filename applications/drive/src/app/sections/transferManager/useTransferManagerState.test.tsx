@@ -2,13 +2,13 @@ import { act, renderHook } from '@testing-library/react';
 import { performance } from 'perf_hooks';
 
 import { NodeType } from '@proton/drive';
+import { type UploadItem, UploadStatus, useUploadQueueStore } from '@proton/drive/modules/upload';
 
 import {
     type DownloadItem,
     DownloadStatus,
     useDownloadManagerStore,
 } from '../../zustand/download/downloadManager.store';
-import { type UploadItem, UploadStatus, useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 import { TransferManagerStatus, useTransferManagerState } from './useTransferManagerState';
 
 const resetStores = () => {
@@ -45,8 +45,9 @@ const createDownloadItem = (overrides: Partial<DownloadItem> = {}): DownloadItem
     ...overrides,
 });
 
-const createUploadItem = (overrides: Partial<UploadItem> = {}): UploadItem => {
-    return {
+const createUploadItem = (overrides: Partial<UploadItem> = {}): UploadItem =>
+    ({
+        uploadId: 'upload-1',
         name: 'Upload item',
         uploadedBytes: 0,
         clearTextExpectedSize: 100,
@@ -55,8 +56,7 @@ const createUploadItem = (overrides: Partial<UploadItem> = {}): UploadItem => {
         batchId: 'batch-1',
         lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? new Date('2024-01-01T00:00:00Z'),
         ...overrides,
-    } as UploadItem;
-};
+    }) as UploadItem;
 
 const addDownloadItems = (...items: DownloadItem[]) => {
     seedDownloadQueue((state) => {
@@ -70,11 +70,11 @@ const addDownloadItems = (...items: DownloadItem[]) => {
     });
 };
 
-const addUploadItems = (...items: { uploadId: string; item: UploadItem }[]) => {
+const addUploadItems = (...items: UploadItem[]) => {
     seedUploadStore((state) => {
         const queue = new Map(state.queue);
-        items.forEach(({ uploadId, item }) => {
-            queue.set(uploadId, item);
+        items.forEach((item) => {
+            queue.set(item.uploadId, item);
         });
         return { ...state, queue };
     });
@@ -103,14 +103,14 @@ describe('useTransferManagerState', () => {
             })
         );
 
-        addUploadItems({
-            uploadId: 'upload-1',
-            item: createUploadItem({
+        addUploadItems(
+            createUploadItem({
+                uploadId: 'upload-1',
                 name: 'Draft.docx',
                 uploadedBytes: 25,
                 status: UploadStatus.Pending,
-            }),
-        });
+            })
+        );
 
         const { result } = renderHook(() => useTransferManagerState());
 
@@ -144,15 +144,15 @@ describe('useTransferManagerState', () => {
     });
 
     it('should return upload-only queue details', () => {
-        addUploadItems({
-            uploadId: 'upload-1',
-            item: createUploadItem({
+        addUploadItems(
+            createUploadItem({
+                uploadId: 'upload-1',
                 name: 'Upload only',
                 uploadedBytes: 75,
                 status: UploadStatus.InProgress,
                 type: NodeType.File,
-            }),
-        });
+            })
+        );
 
         const { result } = renderHook(() => useTransferManagerState());
 
@@ -167,14 +167,14 @@ describe('useTransferManagerState', () => {
     });
 
     it('should return 0 transferredBytes for pending folders', () => {
-        addUploadItems({
-            uploadId: 'upload-folder-1',
-            item: createUploadItem({
+        addUploadItems(
+            createUploadItem({
+                uploadId: 'upload-folder-1',
                 name: 'My Folder',
                 status: UploadStatus.Pending,
                 type: NodeType.Folder,
-            }),
-        });
+            })
+        );
 
         const { result } = renderHook(() => useTransferManagerState());
 
@@ -184,14 +184,14 @@ describe('useTransferManagerState', () => {
     });
 
     it('should return 100 transferredBytes for finished folders', () => {
-        addUploadItems({
-            uploadId: 'upload-folder-2',
-            item: createUploadItem({
+        addUploadItems(
+            createUploadItem({
+                uploadId: 'upload-folder-2',
                 name: 'My Folder',
                 status: UploadStatus.Finished,
                 type: NodeType.Folder,
-            }),
-        });
+            })
+        );
 
         const { result } = renderHook(() => useTransferManagerState());
 
@@ -224,26 +224,22 @@ describe('useTransferManagerState', () => {
         );
 
         addUploadItems(
-            {
+            createUploadItem({
                 uploadId: 'upload-in-progress',
-                item: createUploadItem({
-                    name: 'Active upload',
-                    uploadedBytes: 40,
-                    status: UploadStatus.InProgress,
-                    type: NodeType.File,
-                    lastStatusUpdateTime: older,
-                }),
-            },
-            {
+                name: 'Active upload',
+                uploadedBytes: 40,
+                status: UploadStatus.InProgress,
+                type: NodeType.File,
+                lastStatusUpdateTime: older,
+            }),
+            createUploadItem({
                 uploadId: 'upload-finished',
-                item: createUploadItem({
-                    name: 'Finished upload',
-                    uploadedBytes: 80,
-                    status: UploadStatus.Finished,
-                    type: NodeType.File,
-                    lastStatusUpdateTime: oldest,
-                }),
-            }
+                name: 'Finished upload',
+                uploadedBytes: 80,
+                status: UploadStatus.Finished,
+                type: NodeType.File,
+                lastStatusUpdateTime: oldest,
+            })
         );
 
         const { result } = renderHook(() => useTransferManagerState());

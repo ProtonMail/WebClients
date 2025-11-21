@@ -1,7 +1,6 @@
+import type { UploadController } from '@protontech/drive-sdk';
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
-
-import type { UploadController } from '@proton/drive';
 
 type UploadControllerStore = {
     controllers: Map<string, { uploadController: UploadController; abortController: AbortController }>;

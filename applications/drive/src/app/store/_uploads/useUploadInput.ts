@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 
 import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
 import { logError } from '../../utils/errorHandling';
-import { uploadManager } from '../../zustand/upload/uploadManager';
 import { useUploadProvider } from './UploadProvider';
 import type {
     OnFileSkippedSuccessCallbackData,

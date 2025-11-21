@@ -1,0 +1,184 @@
+import { NodeType } from '../../../index';
+import { MAX_FOLDERS_CREATED_IN_PARALLEL, MAX_UPLOAD_JOBS } from '../constants';
+import { FileUploadExecutor } from '../execution/FileUploadExecutor';
+import { FolderCreationExecutor } from '../execution/FolderCreationExecutor';
+import { CapacityManager } from '../scheduling/CapacityManager';
+import { useUploadQueueStore } from '../store/uploadQueue.store';
+import type { UploadEvent, UploadTask } from '../types';
+import { type UploadConflictStrategy, UploadStatus } from '../types';
+import { getBlockedChildren } from '../utils/dependencyHelpers';
+import { getNextTasks } from '../utils/schedulerHelpers';
+import { ConflictManager } from './ConflictManager';
+import { SDKTransferActivity } from './SDKTransferActivity';
+import { UploadEventHandler } from './UploadEventHandler';
+
+/**
+ * Orchestrates uploads using event-driven architecture
+ * ONLY component with store access
+ * Coordinates execution, conflict resolution, and SDK events
+ */
+export class UploadOrchestrator {
+    private isRunning = false;
+    private shouldStop = false;
+
+    private capacityManager = new CapacityManager();
+    private fileExecutor = new FileUploadExecutor();
+    private folderExecutor = new FolderCreationExecutor();
+
+    private sdkTransferActivity = new SDKTransferActivity();
+    private conflictManager = new ConflictManager(() => this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty());
+    private eventHandler = new UploadEventHandler(
+        this.capacityManager,
+        this.conflictManager,
+        this.sdkTransferActivity,
+        (uploadId) => this.cancelFolderChildren(uploadId)
+    );
+
+    constructor() {
+        this.fileExecutor.setEventCallback((event) => this.eventHandler.handleEvent(event));
+        this.folderExecutor.setEventCallback((event) => this.eventHandler.handleEvent(event));
+    }
+
+    onUploadEvent(callback: (event: UploadEvent) => Promise<void>) {
+        this.eventHandler.onUploadEvent(callback);
+    }
+
+    /**
+     * Main orchestration loop
+     */
+    async start(): Promise<void> {
+        if (this.isRunning) {
+            return;
+        }
+
+        const queueStore = useUploadQueueStore.getState();
+        if (queueStore.getQueue().length > 0 && !this.sdkTransferActivity.isSubscribed()) {
+            this.sdkTransferActivity.subscribe();
+        }
+
+        this.isRunning = true;
+        this.shouldStop = false;
+
+        while (!this.shouldStop) {
+            const queueItems = queueStore.getQueue();
+            const currentLoad = this.capacityManager.getCurrentLoad();
+
+            const tasks = getNextTasks(queueItems, currentLoad, MAX_UPLOAD_JOBS, MAX_FOLDERS_CREATED_IN_PARALLEL);
+
+            if (tasks.length === 0) {
+                const hasActive = this.hasActiveUploads();
+                const hasMore = queueItems.some(
+                    (item) => item.status === UploadStatus.Pending || item.status === UploadStatus.InProgress
+                );
+
+                if (hasActive || hasMore) {
+                    await this.waitForCapacity();
+                    continue;
+                } else {
+                    this.sdkTransferActivity.unsubscribe();
+                    break;
+                }
+            }
+
+            void this.executeTasksBatch(tasks);
+
+            await this.waitForCapacity();
+        }
+
+        this.isRunning = false;
+    }
+
+    /**
+     * Execute multiple tasks in parallel
+     */
+    private async executeTasksBatch(tasks: UploadTask[]): Promise<void> {
+        const promises = tasks.map((task) => this.executeTask(task));
+        await Promise.allSettled(promises);
+    }
+
+    /**
+     * Execute a single task
+     */
+    private async executeTask(task: UploadTask): Promise<void> {
+        const queueStore = useUploadQueueStore.getState();
+
+        if (task.type === NodeType.Folder) {
+            this.capacityManager.reserveFolder();
+        } else {
+            this.capacityManager.reserveFile(task.uploadId, task.sizeEstimate);
+        }
+
+        queueStore.updateQueueItems(task.uploadId, { status: UploadStatus.InProgress });
+
+        if (task.type === NodeType.Folder) {
+            await this.folderExecutor.execute(task);
+        } else {
+            await this.fileExecutor.execute(task);
+        }
+
+        if (task.type === NodeType.Folder) {
+            this.capacityManager.releaseFolder();
+        } else {
+            this.capacityManager.releaseFile(task.uploadId);
+        }
+    }
+
+    /**
+     * Cancel all children of a failed folder
+     */
+    private cancelFolderChildren(uploadId: string): void {
+        const queueStore = useUploadQueueStore.getState();
+        const allItems = queueStore.getQueue();
+
+        const childrenIds = getBlockedChildren(uploadId, allItems);
+
+        childrenIds.forEach((childId) => {
+            queueStore.updateQueueItems(childId, {
+                status: UploadStatus.ParentCancelled,
+            });
+        });
+    }
+
+    /**
+     * Checks if there are any uploads currently in progress
+     */
+    private hasActiveUploads(): boolean {
+        const load = this.capacityManager.getCurrentLoad();
+        return load.activeFiles > 0 || load.activeFolders > 0;
+    }
+
+    /**
+     * Waits for a short interval to allow async operations to complete.
+     * This prevents tight loops while waiting for uploads to finish or conflicts to be resolved.
+     * The 100ms interval is a balance between responsiveness and CPU usage.
+     */
+    private async waitForCapacity(): Promise<void> {
+        return new Promise((resolve) => setTimeout(resolve, 100));
+    }
+
+    /**
+     * Choose conflict for item(s)
+     */
+    async chooseConflictStrategy(uploadIds: string | string[], strategy: UploadConflictStrategy): Promise<void> {
+        const queueStore = useUploadQueueStore.getState();
+        queueStore.updateQueueItems(uploadIds, {
+            resolvedStrategy: strategy,
+        });
+
+        const idsArray = Array.isArray(uploadIds) ? uploadIds : [uploadIds];
+
+        // TODO: Check if we can do Promise.all()
+        for (const uploadId of idsArray) {
+            await this.conflictManager.chooseConflictStrategy(uploadId, strategy);
+        }
+    }
+
+    stop(): void {
+        this.shouldStop = true;
+    }
+
+    reset(): void {
+        this.capacityManager.reset();
+        this.sdkTransferActivity.unsubscribe();
+    }
+}
