@@ -75,10 +75,13 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                         format: 'binary',
                     });
 
-                    if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    if (
+                        verifyingKeys &&
+                        verifyingKeys.length > 0 &&
+                        decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
+                    ) {
                         // eslint-disable-next-line no-console
                         console.warn({ errors: decrypted.verificationErrors });
-                        throw new Error('Encrypted booking secret verification failed');
                     }
 
                     // This decrypts and verify the content of the page

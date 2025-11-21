@@ -2,6 +2,7 @@ import type { BookingPageEditData } from 'applications/calendar/src/app/store/in
 
 import { CryptoProxy, type PublicKeyReference } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import type {
     BookingPageCreationPayload,
     BookingPageSlotsPayload,
@@ -52,14 +53,10 @@ const encryptBookingSlots = async (
     bookingUid: string,
     bookingKeyPassword: string,
     signingKeys: PrimaryAddressKeysForSigning,
-    calendarPublicKeys: PublicKeyReference[]
+    primaryCalendarPublicKey: PublicKeyReference
 ): Promise<BookingPageSlotsPayload[]> => {
-    if (!calendarPublicKeys?.length) {
-        throw new Error('Calendar public key is required');
-    }
-
     const slotPromises = formData.bookingSlots.map(async (slot) => {
-        const sharedSessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: calendarPublicKeys });
+        const sharedSessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: primaryCalendarPublicKey });
         const bookingKeyPacket = await CryptoProxy.encryptSessionKey({
             ...sharedSessionKey,
             passwords: bookingKeyPassword,
@@ -68,7 +65,7 @@ const encryptBookingSlots = async (
 
         const sharedKeyPacket = await CryptoProxy.encryptSessionKey({
             ...sharedSessionKey,
-            encryptionKeys: calendarPublicKeys,
+            encryptionKeys: primaryCalendarPublicKey,
             format: 'binary',
         });
 
@@ -161,10 +158,10 @@ export const encryptBookingPage = async ({
 
     const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, secretBytes, salt)).toBase64();
     const bookingUid = (await deriveBookingUid(secretBytes)).toBase64();
-    const calendarPublicKeys = calendarKeys.map(({ publicKey }) => publicKey);
+    const primaryCalendarPublicKey = getPrimaryCalendarKey(calendarKeys).publicKey;
 
     const [Slots, encryptedContent, encryptedSecret] = await Promise.all([
-        encryptBookingSlots(formData, bookingUid, bookingKeyPassword, signingKeys, calendarPublicKeys),
+        encryptBookingSlots(formData, bookingUid, bookingKeyPassword, signingKeys, primaryCalendarPublicKey),
         encryptBookingData(formData, bookingKeyPassword, bookingUid, signingKeys),
         CryptoProxy.encryptMessage({
             binaryData: secretBytes,
@@ -207,10 +204,10 @@ export const encryptBookingPageEdition = async ({
     const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, decryptedSecret, saltBytes)).toBase64();
 
     const bookingID = (await deriveBookingUid(decryptedSecret)).toBase64();
-    const calendarPublicKeys = calendarKeys.map(({ publicKey }) => publicKey);
+    const primaryCalendarPublicKey = getPrimaryCalendarKey(calendarKeys).publicKey;
 
     const [Slots, encryptedContent] = await Promise.all([
-        encryptBookingSlots(updateData, bookingID, bookingKeyPassword, signingKeys, calendarPublicKeys),
+        encryptBookingSlots(updateData, bookingID, bookingKeyPassword, signingKeys, primaryCalendarPublicKey),
         CryptoProxy.encryptMessage({
             textData: JSONFormatData({
                 description: updateData.description,
