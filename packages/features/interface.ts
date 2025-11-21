@@ -56,7 +56,6 @@ export enum FeatureCode {
     InboxDesktopFreeTrialReminders = 'InboxDesktopFreeTrialReminders',
     LumoWhatsNewCard = 'LumoWhatsNewCard',
     MailActionsChunkSize = 'MailActionsChunkSize',
-    MailServiceWorker = 'MailServiceWorker',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     PassNudgeDontShowAgain = 'PassNudgeDontShowAgain',
