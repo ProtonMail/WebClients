@@ -226,16 +226,18 @@ export const encryptBookingPageEdition = async ({
     updateData,
     signingKeys,
     decryptedSecret,
+    calendarKeys,
 }: {
     editData: BookingPageEditData;
     calendarID: string;
     updateData: SerializedFormData;
     signingKeys: PrimaryAddressKeysForSigning;
     decryptedSecret: Uint8Array<ArrayBuffer>;
+    calendarKeys: DecryptedCalendarKey[];
 }) => {
     const saltBytes = Uint8Array.fromBase64(editData.bookingKeySalt);
     const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, decryptedSecret, saltBytes)).toBase64();
-    const bookingID = await deriveBookingUid(decryptedSecret);
+    const bookingID = (await deriveBookingUid(decryptedSecret)).toBase64();
 
     const encryptedContent = await CryptoProxy.encryptMessage({
         textData: JSONFormatData({
@@ -249,11 +251,15 @@ export const encryptBookingPageEdition = async ({
         format: 'binary',
         signatureContext: {
             critical: true,
-            value: bookingContentSignatureContextValue(bookingID.toBase64()),
+            value: bookingContentSignatureContextValue(bookingID),
         },
     });
 
+    const calendarPublicKeys = calendarKeys.map(({ publicKey }) => publicKey);
+    const Slots = await encryptBookingSlots(updateData, bookingID, bookingKeyPassword, signingKeys, calendarPublicKeys);
+
     return {
         EncryptedContent: encryptedContent.message.toBase64(),
+        Slots,
     };
 };
