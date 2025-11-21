@@ -6,6 +6,7 @@ import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal'
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
 import type { DirectShareItem, SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
+import { usePreviewModal } from '../../modals/preview';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 
 export function SharedWithMeContextMenu({
@@ -18,6 +19,7 @@ export function SharedWithMeContextMenu({
 }: ContextMenuProps & {
     selectedBrowserItems: SharedWithMeListingItemUI[];
 }) {
+    const [previewModal, showPreviewModal] = usePreviewModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
@@ -32,6 +34,7 @@ export function SharedWithMeContextMenu({
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
                 <SharedWithMeActions
                     selectedItems={selectedBrowserItems}
+                    showPreviewModal={showPreviewModal}
                     showConfirmModal={showConfirmModal}
                     showDetailsModal={showDetailsModal}
                     showFilesDetailsModal={showFilesDetailsModal}
@@ -40,6 +43,7 @@ export function SharedWithMeContextMenu({
                     buttonType="contextMenu"
                 />
             </ItemContextMenu>
+            {previewModal}
             {detailsModal}
             {filesDetailsModal}
             {confirmModal}

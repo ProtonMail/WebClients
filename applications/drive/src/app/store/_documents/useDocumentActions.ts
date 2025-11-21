@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { splitNodeUid } from '@proton/drive/index';
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
 
@@ -73,6 +74,24 @@ export const useDocumentActions = () => {
         }
     };
 
+    const openDocumentWithNodeUid = async ({ nodeUid, type }: { nodeUid: string; type: DocumentType }) => {
+        const w = getNewWindow();
+        const { volumeId, nodeId } = splitNodeUid(nodeUid);
+
+        try {
+            openDocumentWindow({
+                type,
+                mode: 'open',
+                window: w.handle,
+                volumeId,
+                linkId: nodeId,
+            });
+        } catch (e) {
+            w.close();
+            throw e;
+        }
+    };
+
     const createDocument = async ({
         shareId,
         parentLinkId,
@@ -125,6 +144,24 @@ export const useDocumentActions = () => {
         }
     };
 
+    const convertDocumentWithNodeUid = async ({ nodeUid, type }: { nodeUid: string; type: DocumentType }) => {
+        const w = getNewWindow();
+        const { volumeId, nodeId } = splitNodeUid(nodeUid);
+
+        try {
+            openDocumentWindow({
+                type,
+                mode: 'convert',
+                window: w.handle,
+                volumeId,
+                linkId: nodeId,
+            });
+        } catch (e) {
+            w.close();
+            throw e;
+        }
+    };
+
     const downloadDocument = async ({
         shareId,
         linkId,
@@ -143,6 +180,24 @@ export const useDocumentActions = () => {
                 window: w.handle,
                 volumeId: await findVolume(shareId),
                 linkId,
+            });
+        } catch (e) {
+            w.close();
+            throw e;
+        }
+    };
+
+    const downloadDocumentWithNodeUid = async ({ nodeUid, type }: { nodeUid: string; type: DocumentType }) => {
+        const w = getNewWindow();
+
+        try {
+            const { volumeId, nodeId } = splitNodeUid(nodeUid);
+            openDocumentWindow({
+                type,
+                mode: 'download',
+                window: w.handle,
+                volumeId,
+                linkId: nodeId,
             });
         } catch (e) {
             w.close();
@@ -177,9 +232,12 @@ export const useDocumentActions = () => {
 
     return {
         openDocument,
+        openDocumentWithNodeUid,
         createDocument,
         convertDocument,
+        convertDocumentWithNodeUid,
         downloadDocument,
+        downloadDocumentWithNodeUid,
         openDocumentHistory,
     };
 };

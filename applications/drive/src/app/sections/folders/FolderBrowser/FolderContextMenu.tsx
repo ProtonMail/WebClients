@@ -53,7 +53,7 @@ export function FolderContextMenu({
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
         uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
         modals,
-    } = useFolderActions({ selectedItems: [], shareId, linkId, volumeId });
+    } = useFolderActions({ allSortedItems: [], selectedItems: [], shareId, linkId, volumeId });
 
     const { permissions } = useFolderStore(
         useShallow((state) => ({

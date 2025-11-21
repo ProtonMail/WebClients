@@ -5,6 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { useActiveBreakpoint } from '@proton/components';
 import { MemberRole, NodeType, splitNodeUid } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import type { SortParams } from '../../../components/FileBrowser';
@@ -25,11 +26,13 @@ import { ModifiedCell, ShareOptionsCell, SizeCell } from '../../../components/se
 import headerItems from '../../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../../components/sections/SortDropdown';
 import useOpenPreview from '../../../components/useOpenPreview';
+import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
+import { usePreviewModal } from '../../../modals/preview';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
 import { useDocumentActions } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
@@ -133,7 +136,10 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     );
     const { loadThumbnail } = useBatchThumbnailLoader();
 
-    const openPreview = useOpenPreview();
+    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
+    const openLegacyPreview = useOpenPreview();
+    const [previewModal, showPreviewModal] = usePreviewModal();
+
     const { permissions, isLoading, role, folder, hasEverLoaded } = useFolderStore(
         useShallow((state) => ({
             isLoading: state.isLoading,
@@ -234,12 +240,24 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
             }
 
             if (item.isFile) {
-                openPreview(shareId, nodeId);
+                if (isSDKPreviewEnabled) {
+                    const previewableNodeUids = sortedList
+                        .filter((item) => item.mimeType && isPreviewAvailable(item.mimeType, item.size))
+                        .map((item) => item.uid);
+
+                    showPreviewModal({
+                        deprecatedContextShareId: shareId,
+                        nodeUid: item.uid,
+                        previewableNodeUids,
+                    });
+                } else {
+                    openLegacyPreview(shareId, nodeId);
+                }
                 return;
             }
             navigateToLink(shareId, nodeId, item.isFile);
         },
-        [browserItems, navigateToLink, shareId, isDocsEnabled, openDocument, openPreview]
+        [browserItems, sortedList, navigateToLink, shareId, isDocsEnabled, openDocument, openLegacyPreview]
     );
 
     const handleScroll = () => {
@@ -281,6 +299,11 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                 volumeId={volumeId}
                 shareId={shareId}
                 linkId={linkId}
+                allSortedItems={sortedList.map((item) => ({
+                    nodeUid: item.uid,
+                    mimeType: item.mimeType,
+                    storageSize: item.size, // TODO: item has only display size which is fine for preview but we need to fix this
+                }))}
                 selectedItems={selectedItems}
                 anchorRef={contextMenuAnchorRef}
                 close={closeBrowserItemContextMenu}
@@ -311,6 +334,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                 getDragMoveControls={permissions.canEdit ? getDragMoveControls : undefined}
             />
             {linkSharingModal}
+            {previewModal}
         </>
     );
 }

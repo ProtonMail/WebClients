@@ -5,7 +5,6 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { hasFoldersSelected, isMultiSelect } from '../../../components/sections/ToolbarButtons/utils';
-import useOpenPreview from '../../../components/useOpenPreview';
 import type { FolderButtonProps } from './types';
 
 type Item = {
@@ -19,10 +18,10 @@ type Item = {
 
 type Props = Omit<FolderButtonProps, 'onClick'> & {
     selectedItems: Item[];
+    onClick: () => void;
 };
 
-export const PreviewButton = ({ selectedItems, type, close }: Props) => {
-    const openPreview = useOpenPreview();
+export const PreviewButton = ({ selectedItems, type, close, onClick }: Props) => {
     const item = selectedItems[0];
 
     const disabled =
@@ -42,11 +41,7 @@ export const PreviewButton = ({ selectedItems, type, close }: Props) => {
             <ToolbarButton
                 title={title}
                 icon={<Icon name={icon} alt={title} />}
-                onClick={() => {
-                    if (selectedItems.length) {
-                        openPreview(item.rootShareId, item.linkId);
-                    }
-                }}
+                onClick={onClick}
                 data-testid="toolbar-preview"
             />
         );
@@ -58,7 +53,7 @@ export const PreviewButton = ({ selectedItems, type, close }: Props) => {
                 name={title}
                 icon={icon}
                 testId="context-menu-preview"
-                action={() => openPreview(item.rootShareId, item.linkId)}
+                action={onClick}
                 close={() => close?.()}
             />
         );

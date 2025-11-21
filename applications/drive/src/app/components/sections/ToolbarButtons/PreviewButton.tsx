@@ -3,15 +3,31 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
+import { usePreviewModal } from '../../../modals/preview';
 import useOpenPreview from '../../useOpenPreview';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 
 interface Props {
-    selectedBrowserItems: { rootShareId: string; linkId: string; mimeType: string; size?: number; isFile: boolean }[];
+    selectedBrowserItems: {
+        rootShareId: string;
+        linkId: string;
+        mimeType: string;
+        size?: number;
+        isFile: boolean;
+        // Various sections use uid or nodeUid. It is the same thing.
+        // Only new sections include UIDs. We allow new preview only for new sections.
+        // TODO: Each section should use own button or it must be unified.
+        uid?: string;
+        nodeUid?: string;
+    }[];
 }
 
 const PreviewButton = ({ selectedBrowserItems }: Props) => {
-    const openPreview = useOpenPreview();
+    const openLegacyPreview = useOpenPreview();
+    const [previewModal, showPreviewModal] = usePreviewModal();
+
+    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
 
     const disabled =
         isMultiSelect(selectedBrowserItems) ||
@@ -23,16 +39,27 @@ const PreviewButton = ({ selectedBrowserItems }: Props) => {
     }
 
     return (
-        <ToolbarButton
-            title={c('Action').t`Preview`}
-            icon={<Icon name="eye" alt={c('Action').t`Preview`} />}
-            onClick={() => {
-                if (selectedBrowserItems.length) {
-                    openPreview(selectedBrowserItems[0].rootShareId, selectedBrowserItems[0].linkId);
-                }
-            }}
-            data-testid="toolbar-preview"
-        />
+        <>
+            <ToolbarButton
+                title={c('Action').t`Preview`}
+                icon={<Icon name="eye" alt={c('Action').t`Preview`} />}
+                onClick={() => {
+                    if (selectedBrowserItems.length) {
+                        const nodeUid = selectedBrowserItems[0].nodeUid || selectedBrowserItems[0].uid;
+                        if (isSDKPreviewEnabled && nodeUid) {
+                            showPreviewModal({
+                                deprecatedContextShareId: selectedBrowserItems[0].rootShareId,
+                                nodeUid,
+                            });
+                        } else {
+                            openLegacyPreview(selectedBrowserItems[0].rootShareId, selectedBrowserItems[0].linkId);
+                        }
+                    }
+                }}
+                data-testid="toolbar-preview"
+            />
+            {previewModal}
+        </>
     );
 };
 

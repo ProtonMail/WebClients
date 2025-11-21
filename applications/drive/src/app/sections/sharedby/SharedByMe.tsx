@@ -74,6 +74,7 @@ export const SharedByMe = ({ shareId }: SharedByMeProps) => {
         handleRenderItem,
         handleSorting,
         isEmpty,
+        previewModal,
     } = useSharedByMeItemsWithSelection();
 
     /* eslint-disable react/display-name */
@@ -130,6 +131,7 @@ export const SharedByMe = ({ shareId }: SharedByMeProps) => {
                 onSort={handleSorting}
                 onScroll={browserItemContextMenu.close}
             />
+            {previewModal}
         </>
     );
 };

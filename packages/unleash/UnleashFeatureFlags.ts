@@ -157,6 +157,7 @@ enum DriveFeatureFlag {
     DriveWebSDKSidebar = 'DriveWebSDKSidebar',
     DriveWebSDKTransfer = 'DriveWebSDKTransfer',
     DriveWebSDKCopy = 'DriveWebSDKCopy',
+    DriveWebSDKPreview = 'DriveWebSDKPreview',
     // Video Preview
     DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
     // Thumbnail Generation
