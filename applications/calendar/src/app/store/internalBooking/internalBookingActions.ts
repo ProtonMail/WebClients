@@ -126,7 +126,7 @@ export const editBookingPage = createAsyncThunk<
             return;
         }
 
-        const [{ decryptionKeys, signingKeys }, { verifyingKeys }] = await Promise.all([
+        const [{ decryptionKeys, signingKeys }, { verifyingKeys }, { decryptedCalendarKeys }] = await Promise.all([
             thunkExtra.dispatch(
                 getAddressKeysByUsageThunk({
                     AddressID: calData.ownerAddress.AddressID,
@@ -135,6 +135,7 @@ export const editBookingPage = createAsyncThunk<
                 })
             ),
             thunkExtra.dispatch(getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })),
+            thunkExtra.dispatch(getDecryptedPassphraseAndCalendarKeysThunk({ calendarID: calData.calendar.ID })),
         ]);
 
         const decrypted = await decryptBookingPageSecrets({
@@ -144,18 +145,19 @@ export const editBookingPage = createAsyncThunk<
             verifyingKeys,
         });
 
-        const { EncryptedContent } = await encryptBookingPageEdition({
+        const { EncryptedContent, Slots } = await encryptBookingPageEdition({
             editData,
             calendarID: calData.calendar.ID,
             updateData: payload,
             signingKeys,
             decryptedSecret: decrypted,
+            calendarKeys: decryptedCalendarKeys,
         });
 
         const response = await thunkExtra.extra.api<{ BookingPage: APIBooking }>(
             updateBookingPage(editData.bookingId, {
                 EncryptedContent,
-                Slots: [],
+                Slots,
             })
         );
 
