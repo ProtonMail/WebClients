@@ -94,7 +94,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                 dispatch(
                     fetchFeatures([
                         FeatureCode.EarlyAccessScope,
-                        FeatureCode.ESAutomaticBackgroundIndexing,
                         FeatureCode.MailActionsChunkSize,
                         FeatureCode.AccountSecurityDismissed2FACard,
                     ])
