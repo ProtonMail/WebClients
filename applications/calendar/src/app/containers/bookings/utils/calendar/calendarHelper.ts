@@ -16,13 +16,13 @@ export const isTemporaryBookingSlotEvent = (
 export const getCalendarAndOwner = (selectedCalendarId: string, calendars?: CalendarWithOwnMembers[]) => {
     const calendar = calendars?.find((calendar) => calendar.ID === selectedCalendarId);
     if (!calendar) {
-        return undefined;
+        return;
     }
 
     const calendarOwner = calendar.Owner.Email;
     const ownerAddress = calendar.Members.find((member) => member.Email === calendarOwner);
     if (!ownerAddress) {
-        return undefined;
+        return;
     }
 
     return {
