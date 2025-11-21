@@ -95,8 +95,9 @@ export interface EditorRequiresClientMethods {
   reportWordCount(wordCountInfo: WordCountInfoCollection): Promise<void>
   updateFrameSize(size: number): void
   showGenericAlertModal(message: string): void
-
+  showGenericInfoModal(props: { title: string; translatedMessage: string }): void
   fetchExternalImageAsBase64(url: string): Promise<string | undefined>
+  getIsRunningInNativeMobileWeb(): Promise<boolean>
 
   handleFileMenuAction(action: FileMenuAction): Promise<void>
 }
