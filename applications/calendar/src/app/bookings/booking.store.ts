@@ -103,7 +103,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         };
         const updatedTimeSlots = [...get().bookingSlots, nextAvailableSlot].sort((a, b) => a.startTime - b.startTime);
 
-        // Also add the next slot in bookingSlots in case it's too far in the future and not laoded by default
+        // Also add the next slot in bookingSlots in case it's too far in the future and not loaded by default
         set({
             nextAvailableSlot,
             bookingSlots: uniqueBy(updatedTimeSlots, (slot: BookingTimeslot) => slot.id),
