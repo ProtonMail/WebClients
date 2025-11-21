@@ -1,4 +1,8 @@
-import type { BookingPageCreationPayload, BookingSlotConfirmationPayload } from '../interfaces/calendar/Bookings';
+import type {
+    BookingPageCreationPayload,
+    BookingPageEditPayload,
+    BookingSlotConfirmationPayload,
+} from '../interfaces/calendar/Bookings';
 
 export const getUserBookingPage = () => ({
     url: `calendar/v1/booking`,
@@ -8,6 +12,12 @@ export const getUserBookingPage = () => ({
 export const createBookingPage = (data: BookingPageCreationPayload) => ({
     url: 'calendar/v1/booking',
     method: 'POST',
+    data,
+});
+
+export const updateBookingPage = (bookingId: string, data: BookingPageEditPayload) => ({
+    url: `calendar/v1/booking/${bookingId}`,
+    method: 'PUT',
     data,
 });
 

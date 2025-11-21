@@ -16,9 +16,11 @@ import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/ca
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { decryptBookingContent } from '../../bookings/utils/decryptBookingContent';
+import { BookingLocation } from '../../containers/bookings/bookingsProvider/interface';
+import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
 import { bookingSecretSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
-import { loadBookingPage } from './internalBookingActions';
+import { createNewBookingPage, editBookingPage, loadBookingPage } from './internalBookingActions';
 
 const name = 'internalBookings' as const;
 interface InternalBookingState extends CalendarsState, AddressKeysState, KtState {
@@ -46,62 +48,60 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
             ]);
 
             for (const bookingPage of bookingPages.BookingPages) {
-                const calendar = calendars.find((calendar) => calendar.ID === bookingPage.CalendarID);
-                if (!calendar) {
-                    continue;
-                }
-
-                const calendarOwner = calendar.Owner.Email;
-                const ownerAddress = calendar.Members.find((member) => member.Email === calendarOwner);
-                if (!ownerAddress) {
+                const calData = getCalendarAndOwner(bookingPage.CalendarID, calendars);
+                if (!calData) {
                     continue;
                 }
 
                 const [{ decryptionKeys }, { verifyingKeys }] = await Promise.all([
                     dispatch(
                         getAddressKeysByUsageThunk({
-                            AddressID: ownerAddress.AddressID,
+                            AddressID: calData.ownerAddress.AddressID,
                             withV6SupportForEncryption: true,
                             withV6SupportForSigning: false,
                         })
                     ),
-                    dispatch(getVerificationPreferencesThunk({ email: ownerAddress.Email, lifetime: 0 })),
+                    dispatch(getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })),
                 ]);
+                try {
+                    const decrypted = await CryptoProxy.decryptMessage({
+                        binaryMessage: Uint8Array.fromBase64(bookingPage.EncryptedSecret),
+                        decryptionKeys,
+                        verificationKeys: verifyingKeys,
+                        signatureContext:
+                            verifyingKeys?.length > 0
+                                ? { value: bookingSecretSignatureContextValue(calData.calendar.ID), required: true }
+                                : undefined,
+                        format: 'binary',
+                    });
 
-                const decrypted = await CryptoProxy.decryptMessage({
-                    binaryMessage: Uint8Array.fromBase64(bookingPage.EncryptedSecret),
-                    decryptionKeys,
-                    verificationKeys: verifyingKeys,
-                    signatureContext:
-                        verifyingKeys?.length > 0
-                            ? { value: bookingSecretSignatureContextValue(calendar.ID), required: true }
-                            : undefined,
-                    format: 'binary',
-                });
+                    if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                        // eslint-disable-next-line no-console
+                        console.warn({ errors: decrypted.verificationErrors });
+                        throw new Error('Encrypted booking secret verification failed');
+                    }
 
-                if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                    // eslint-disable-next-line no-console
-                    console.warn({ errors: decrypted.verificationErrors });
-                    throw new Error('Encrypted booking secret verification failed');
+                    // This decrypts and verify the content of the page
+                    const data = await decryptBookingContent({
+                        bookingSecretBytes: decrypted.data,
+                        encryptedContent: bookingPage.EncryptedContent,
+                        bookingKeySalt: bookingPage.BookingKeySalt,
+                        calendarId: bookingPage.CalendarID,
+                        bookingUid: bookingPage.BookingUID,
+                        verificationKeys: verifyingKeys,
+                    });
+
+                    pagesArray.push({
+                        ...data,
+                        id: bookingPage.ID,
+                        calendarID: bookingPage.CalendarID,
+                        bookingUID: bookingPage.BookingUID,
+                        link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
+                    });
+                    // We want to continue if decrypting one page fails
+                } catch (e) {
+                    continue;
                 }
-
-                // This decrypts and verify the content of the page
-                const data = await decryptBookingContent({
-                    bookingSecretBytes: decrypted.data,
-                    encryptedContent: bookingPage.EncryptedContent,
-                    bookingKeySalt: bookingPage.BookingKeySalt,
-                    calendarId: bookingPage.CalendarID,
-                    bookingUid: bookingPage.BookingUID,
-                    verificationKeys: verifyingKeys,
-                });
-
-                pagesArray.push({
-                    ...data,
-                    id: bookingPage.ID,
-                    calendarID: bookingPage.CalendarID,
-                    bookingUID: bookingPage.BookingUID,
-                    link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
-                });
             }
         } catch (error) {
             // eslint-disable-next-line no-console
@@ -144,12 +144,56 @@ const slice = createSlice({
                 return;
             }
 
-            const bookingPage = state.value.bookingPages.find((page) => page.id === payload.bookingId);
+            const bookingPage = state.value.bookingPages.find((page) => page.id === payload?.bookingId);
             if (!bookingPage) {
                 return;
             }
 
             state.value.bookingPageEditData = payload;
+        });
+
+        builder.addCase(createNewBookingPage.fulfilled, (state, { payload }) => {
+            if (!state.value || !payload?.bookingPage) {
+                return;
+            }
+
+            const newBookingPage: InternalBookingPage = {
+                id: payload.bookingPage.ID,
+                bookingUID: payload.bookingPage.BookingUID,
+                calendarID: payload.bookingPage.CalendarID,
+                summary: payload.initialBookingPage.summary,
+                description: payload.initialBookingPage.description,
+                location: payload.initialBookingPage.location,
+                withProtonMeetLink: payload.initialBookingPage.locationType === BookingLocation.MEET,
+                link: payload.bookingLink,
+            };
+            state.value.bookingPages = [...state.value.bookingPages, newBookingPage];
+        });
+
+        builder.addCase(editBookingPage.fulfilled, (state, { payload }) => {
+            if (!state.value || !payload?.bookingPage) {
+                return;
+            }
+
+            const currentBookingPage = state.value.bookingPages.find((page) => page.id === payload.bookingPage.ID);
+            if (!currentBookingPage) {
+                return;
+            }
+
+            const editedPage: InternalBookingPage = {
+                id: payload.bookingPage.ID,
+                bookingUID: payload.bookingPage.BookingUID,
+                calendarID: payload.bookingPage.CalendarID,
+                summary: payload.initialBookingPage.summary,
+                description: payload.initialBookingPage.description,
+                location: payload.initialBookingPage.location,
+                withProtonMeetLink: payload.initialBookingPage.locationType === BookingLocation.MEET,
+                link: currentBookingPage.link,
+            };
+
+            state.value.bookingPages = state.value.bookingPages.map((page) =>
+                page.id === editedPage.id ? editedPage : page
+            );
         });
     },
 });

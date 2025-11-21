@@ -1,3 +1,5 @@
+import type { BookingLocation } from './bookingsProvider/interface';
+
 export interface APISlot {
     ID: string;
     StartTime: number;
@@ -19,4 +21,28 @@ export interface APIBooking {
     CreateTime: number;
     ModifyTime: number;
     Slots: APISlot[];
+}
+
+export interface SerializedBookingRange {
+    id: string;
+    start: number;
+    end: number;
+    timezone: string;
+}
+
+export interface SerializedSlot extends SerializedBookingRange {
+    rangeID: string;
+}
+
+export interface SerializedFormData {
+    recurring: boolean;
+    summary: string;
+    description?: string;
+    selectedCalendar: string | null;
+    duration: number;
+    timezone: string;
+    locationType: BookingLocation;
+    location?: string;
+    bookingSlots: SerializedSlot[];
+    bookingRanges: SerializedBookingRange[];
 }

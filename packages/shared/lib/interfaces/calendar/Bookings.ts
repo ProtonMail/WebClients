@@ -17,6 +17,11 @@ export interface BookingPageCreationPayload {
     Slots: BookingPageSlotsPayload[];
 }
 
+export interface BookingPageEditPayload {
+    EncryptedContent: string;
+    Slots: BookingPageSlotsPayload[];
+}
+
 export interface ExternalBookingPageSlotsPayload {
     ID: string;
     StartTime: number;
