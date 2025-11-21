@@ -5,10 +5,10 @@ import { FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import { resolveIdentitySections } from './autofill.identity.sections';
 
 describe('resolveIdentitySections', () => {
-    const createField = (identityType?: IdentityFieldType): FieldHandle =>
+    const createField = (fieldSubType?: IdentityFieldType): FieldHandle =>
         ({
             fieldType: FieldType.IDENTITY,
-            identityType,
+            fieldSubType,
             element: document.createElement('input'),
         }) as any as FieldHandle;
 

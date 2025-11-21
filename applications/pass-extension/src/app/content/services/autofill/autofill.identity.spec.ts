@@ -8,11 +8,17 @@ import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMidd
 let MOCK_ITEM = itemBuilder('identity');
 const MOCK_FIELDS: FieldHandle[] = [];
 
-const createField = (identityType: IdentityFieldType, sectionIndex: number = 1, value: string = '') =>
+const createField = (
+    fieldType: FieldType,
+    fieldSubType: IdentityFieldType,
+    sectionIndex: number = 1,
+    value: string = ''
+) =>
     ({
         autofilled: null,
         element: { value },
-        identityType,
+        fieldType,
+        fieldSubType,
         sectionIndex,
         autofill: jest.fn(),
     }) as any as FieldHandle;
@@ -121,10 +127,10 @@ describe('Identity', () => {
     describe('`autofillIdentityFields`', () => {
         test('it autofills fields with different types', async () => {
             MOCK_FIELDS.push(
-                createField(IdentityFieldType.FIRSTNAME),
-                createField(IdentityFieldType.LASTNAME),
-                createField(IdentityFieldType.ADDRESS),
-                createField(IdentityFieldType.ZIPCODE)
+                createField(FieldType.IDENTITY, IdentityFieldType.FIRSTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.LASTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.ADDRESS),
+                createField(FieldType.IDENTITY, IdentityFieldType.ZIPCODE)
             );
 
             MOCK_ITEM.set('content', (content) => {
@@ -145,10 +151,10 @@ describe('Identity', () => {
 
         test('it skips consecutive fields when autofilling', async () => {
             MOCK_FIELDS.push(
-                createField(IdentityFieldType.FIRSTNAME),
-                createField(IdentityFieldType.FIRSTNAME),
-                createField(IdentityFieldType.LASTNAME),
-                createField(IdentityFieldType.LASTNAME)
+                createField(FieldType.IDENTITY, IdentityFieldType.FIRSTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.FIRSTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.LASTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.LASTNAME)
             );
 
             MOCK_ITEM.set('content', (content) => {
@@ -166,7 +172,7 @@ describe('Identity', () => {
         });
 
         test('it skips already autofilled fields', async () => {
-            const field = createField(IdentityFieldType.EMAIL);
+            const field = createField(FieldType.EMAIL, IdentityFieldType.EMAIL);
             field.autofilled = FieldType.EMAIL;
 
             MOCK_FIELDS.push(field);
@@ -179,9 +185,9 @@ describe('Identity', () => {
 
         test('it does not autofill fields when no matching data is available', async () => {
             MOCK_FIELDS.push(
-                createField(IdentityFieldType.FIRSTNAME),
-                createField(IdentityFieldType.LASTNAME),
-                createField(IdentityFieldType.ADDRESS)
+                createField(FieldType.IDENTITY, IdentityFieldType.FIRSTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.LASTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.ADDRESS)
             );
 
             await autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
@@ -193,9 +199,9 @@ describe('Identity', () => {
 
         test('it autofills name fields from fullName when individual fields are not available', async () => {
             MOCK_FIELDS.push(
-                createField(IdentityFieldType.FIRSTNAME),
-                createField(IdentityFieldType.MIDDLENAME),
-                createField(IdentityFieldType.LASTNAME)
+                createField(FieldType.IDENTITY, IdentityFieldType.FIRSTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.MIDDLENAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.LASTNAME)
             );
 
             MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Middle Doe'));
@@ -209,9 +215,9 @@ describe('Identity', () => {
 
         test('it handles single-word fullName', async () => {
             MOCK_FIELDS.push(
-                createField(IdentityFieldType.FIRSTNAME),
-                createField(IdentityFieldType.MIDDLENAME),
-                createField(IdentityFieldType.LASTNAME)
+                createField(FieldType.IDENTITY, IdentityFieldType.FIRSTNAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.MIDDLENAME),
+                createField(FieldType.IDENTITY, IdentityFieldType.LASTNAME)
             );
 
             MOCK_ITEM.set('content', (content) => content.set('fullName', 'John'));
@@ -224,7 +230,10 @@ describe('Identity', () => {
         });
 
         test('it autofills address fields of different types', async () => {
-            MOCK_FIELDS.push(createField(IdentityFieldType.ADDRESS), createField(IdentityFieldType.ZIPCODE));
+            MOCK_FIELDS.push(
+                createField(FieldType.IDENTITY, IdentityFieldType.ADDRESS),
+                createField(FieldType.IDENTITY, IdentityFieldType.ZIPCODE)
+            );
             MOCK_ITEM.set('content', (content) => {
                 content.set('streetAddress', '123 Main St');
                 content.set('city', 'Anytown');
@@ -241,9 +250,9 @@ describe('Identity', () => {
 
         test('it autofills only the first occurrence of address fields with the same type', async () => {
             MOCK_FIELDS.push(
-                createField(IdentityFieldType.ADDRESS),
-                createField(IdentityFieldType.CITY),
-                createField(IdentityFieldType.ADDRESS)
+                createField(FieldType.IDENTITY, IdentityFieldType.ADDRESS),
+                createField(FieldType.IDENTITY, IdentityFieldType.CITY),
+                createField(FieldType.IDENTITY, IdentityFieldType.ADDRESS)
             );
 
             MOCK_ITEM.set('content', (content) => content.set('streetAddress', '123 Main St'));
@@ -257,10 +266,10 @@ describe('Identity', () => {
 
         test('it autofills only the first occurrence of telephone fields with the same type', async () => {
             MOCK_FIELDS.push(
-                createField(IdentityFieldType.TELEPHONE),
-                createField(IdentityFieldType.TELEPHONE),
-                createField(IdentityFieldType.TELEPHONE),
-                createField(IdentityFieldType.TELEPHONE)
+                createField(FieldType.IDENTITY, IdentityFieldType.TELEPHONE),
+                createField(FieldType.IDENTITY, IdentityFieldType.TELEPHONE),
+                createField(FieldType.IDENTITY, IdentityFieldType.TELEPHONE),
+                createField(FieldType.IDENTITY, IdentityFieldType.TELEPHONE)
             );
 
             MOCK_ITEM.set('content', (content) => content.set('phoneNumber', '1234567890'));
@@ -274,7 +283,7 @@ describe('Identity', () => {
         });
 
         test('it autofills organization', async () => {
-            MOCK_FIELDS.push(createField(IdentityFieldType.ORGANIZATION));
+            MOCK_FIELDS.push(createField(FieldType.IDENTITY, IdentityFieldType.ORGANIZATION));
             MOCK_ITEM.set('content', (content) => content.set('organization', 'Proton'));
 
             await autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
@@ -283,7 +292,10 @@ describe('Identity', () => {
         });
 
         test('it handles partial address data', async () => {
-            MOCK_FIELDS.push(createField(IdentityFieldType.ADDRESS), createField(IdentityFieldType.ZIPCODE));
+            MOCK_FIELDS.push(
+                createField(FieldType.IDENTITY, IdentityFieldType.ADDRESS),
+                createField(FieldType.IDENTITY, IdentityFieldType.ZIPCODE)
+            );
 
             MOCK_ITEM.set('content', (content) => {
                 content.set('city', 'Meudon');

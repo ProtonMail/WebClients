@@ -7,6 +7,7 @@ import { hasProcessableFields } from 'proton-pass-extension/app/content/services
 
 import {
     buttonSelector,
+    getCCFieldType,
     isIgnored,
     isVisibleForm,
     removeClassifierFlags,
@@ -49,7 +50,7 @@ export interface FormHandle {
     detachField: (field: FieldElement) => void;
     getFieldById: (fieldId: string) => Maybe<FieldHandle>;
     getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
-    getFieldsFor: (type: FieldType, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    getFieldsFor: <T extends FieldType>(type: T, predicate?: (handle: FieldHandle) => boolean) => FieldHandle<T>[];
     reconciliate: (type: FormType, fields: DetectedField[]) => void;
 }
 
@@ -114,9 +115,11 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             return !isIgnored(formHandle.element) && formHandle.getFieldsFor(FieldType.OTP).length > 0;
         },
 
-        getFieldsFor: (type, predicate) => {
+        getFieldsFor: <T extends FieldType>(type: T, predicate?: (handle: FieldHandle) => boolean) => {
             const fields = Array.from(formHandle.fields.values());
-            return fields.filter((field) => field.fieldType === type && (predicate?.(field) ?? true));
+            return fields.filter(
+                (field): field is FieldHandle<T> => field.fieldType === type && (predicate?.(field) ?? true)
+            );
         },
 
         getFieldById: (fieldId) => {
@@ -190,6 +193,9 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                         getFormHandle: () => formHandle,
                     });
 
+                /** Early resolve CC field type */
+                if (fieldType === FieldType.CREDIT_CARD) handle.fieldSubType = getCCFieldType(field);
+
                 nextFields.set(handle.element, handle);
             });
 
@@ -202,7 +208,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                 resolveIdentitySections(formHandle.getFields()).forEach((section, idx) => {
                     section.fields.forEach(({ field, type }) => {
                         field.sectionIndex = idx;
-                        field.identityType = type;
+                        field.fieldSubType = type;
                     });
                 });
             }
