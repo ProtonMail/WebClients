@@ -2,14 +2,14 @@ import { useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType } from '@proton/drive/index';
+import { NodeType } from '@proton/drive';
+import { type UploadItem, UploadStatus, useUploadQueueStore } from '@proton/drive/modules/upload';
 
 import {
     BaseTransferStatus,
     type DownloadItem,
     useDownloadManagerStore,
 } from '../../zustand/download/downloadManager.store';
-import { type UploadItem, UploadStatus, useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 
 type TransferType = 'empty' | 'downloading' | 'uploading' | 'both';
 
@@ -67,9 +67,9 @@ const getUploadTransferredBytes = (item: UploadItem): number => {
     return item.status === UploadStatus.Finished ? 100 : 0;
 };
 
-const mapUpload = ({ uploadId, item }: { uploadId: string; item: UploadItem }): TransferManagerUploadEntry => ({
+const mapUpload = (item: UploadItem): TransferManagerUploadEntry => ({
     type: 'upload',
-    id: uploadId,
+    id: item.uploadId,
     name: item.name,
     status: item.status,
     transferredBytes: getUploadTransferredBytes(item),
@@ -90,7 +90,6 @@ const getShouldIgnoreTransferProgress = (
 export const useTransferManagerState = () => {
     const downloadQueue = useDownloadManagerStore(useShallow((state) => state.getQueue()));
     const uploadQueue = useUploadQueueStore(useShallow((state) => state.getQueue()));
-
     return useMemo(() => {
         const downloads = downloadQueue.map(mapDownload);
         const uploads = uploadQueue.map(mapUpload);

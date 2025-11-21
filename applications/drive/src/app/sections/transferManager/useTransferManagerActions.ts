@@ -5,6 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components/index';
 import { NodeType, splitNodeUid, useDrive } from '@proton/drive/index';
+import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
@@ -13,8 +14,6 @@ import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { BaseTransferStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
-import { uploadManager } from '../../zustand/upload/uploadManager';
-import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 import type { TransferManagerEntry } from './useTransferManagerState';
 
 export const useTransferManagerActions = () => {

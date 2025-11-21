@@ -6,8 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Checkbox, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Radio, Row } from '@proton/components';
 import type { ModalProps } from '@proton/components';
 import { NodeType } from '@proton/drive';
-
-import { UploadConflictStrategy, UploadConflictType } from '../../zustand/upload/types';
+import { UploadConflictStrategy, UploadConflictType } from '@proton/drive/modules/upload';
 
 export type UploadConflictModalViewProps = {
     name: string;

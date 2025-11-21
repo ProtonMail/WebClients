@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { generateNodeUid } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { DS_STORE } from '@proton/shared/lib/drive/constants';
 import {
     getFileExtension,
@@ -21,7 +22,6 @@ import type {
     UploadFileList,
 } from '../../store/_uploads/interface';
 import { isTransferCancelError } from '../../utils/transfer';
-import { uploadManager } from '../../zustand/upload/uploadManager';
 
 declare global {
     interface DataTransferItem {
