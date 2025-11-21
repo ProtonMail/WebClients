@@ -57,6 +57,7 @@ export type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; 
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & {
     sender: ClientEndpoint;
+    receiver?: ClientEndpoint;
     version: string;
 };
 
