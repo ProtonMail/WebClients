@@ -9,6 +9,7 @@ import {
     type Subscription,
     getPlanFromIDs,
     hasCycle,
+    isBF2025Offer,
     isRegularCycle,
     isTrial,
 } from '@proton/payments';
@@ -50,6 +51,10 @@ export const isSupportedCycle = ({
     planIDs: PlanIDs;
     plansMap: PlansMap;
 }): boolean => {
+    if (isBF2025Offer({ planIDs, cycle, coupon: undefined })) {
+        return true;
+    }
+
     if (!isRegularCycle(cycle)) {
         return false;
     }

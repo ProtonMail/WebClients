@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import { getPlanNameFromIDs } from '@proton/payments/index';
+
 import { anniversary11Config } from './anniverary11';
 import { bf2025Config } from './bf2025';
 import { hasAlikeCoupon } from './helpers';
@@ -15,7 +17,7 @@ import {
 import { monthlyNudgeConfig } from './monthlyNudge';
 import { tldrNewsletterConfig } from './tldrNewsletter';
 
-const couponConfig: CouponConfig[] = [monthlyNudgeConfig, anniversary11Config, tldrNewsletterConfig, bf2025Config];
+const couponConfigs: CouponConfig[] = [monthlyNudgeConfig, anniversary11Config, tldrNewsletterConfig, bf2025Config];
 
 export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
     renderAmountDueMessage?: () => ReactNode;
@@ -25,22 +27,34 @@ export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cycl
     renderPayCTA?: () => string;
 };
 
+export function matchCouponConfig(checkoutProps: CouponConfigProps): CouponConfig | undefined {
+    if (!isCouponConfigRequiredProps(checkoutProps)) {
+        return;
+    }
+
+    const selectedCoupon = checkoutProps.checkResult.Coupon?.Code;
+    const selectedCycle = checkoutProps.checkResult.Cycle;
+    const selectedPlanName = getPlanNameFromIDs(checkoutProps.planIDs);
+
+    return couponConfigs.find(
+        (it) =>
+            (selectedCoupon && it.coupons.includes(selectedCoupon)) ||
+            (selectedCycle &&
+                it.specialCases?.some(
+                    (specialCase) => specialCase.planName === selectedPlanName && specialCase.cycle === selectedCycle
+                ))
+    );
+}
 /**
  * Defines overrides for the UI of subscription view. If a certain coupon is present it might change the view.
  * See details of {@link CouponConfig}.
  */
-export const useCouponConfig = (config: CouponConfigProps): CouponConfigRendered | undefined => {
-    if (!isCouponConfigRequiredProps(config)) {
+export const useCouponConfig = (checkoutProps: CouponConfigProps): CouponConfigRendered | undefined => {
+    if (!isCouponConfigRequiredProps(checkoutProps)) {
         return;
     }
 
-    const checkResultCoupon = config.checkResult.Coupon?.Code;
-
-    if (!checkResultCoupon) {
-        return;
-    }
-
-    const matchingConfig = couponConfig.find((config) => config.coupons.includes(checkResultCoupon));
+    const matchingConfig = matchCouponConfig(checkoutProps);
     if (!matchingConfig) {
         return;
     }
@@ -50,20 +64,20 @@ export const useCouponConfig = (config: CouponConfigProps): CouponConfigRendered
     return {
         ...matchingConfig,
 
-        renderAmountDueMessage: amountDueMessage ? () => amountDueMessage(config) : undefined,
+        renderAmountDueMessage: amountDueMessage ? () => amountDueMessage(checkoutProps) : undefined,
 
-        renderCyclePriceCompare: cyclePriceCompare ? (params) => cyclePriceCompare(params, config) : undefined,
+        renderCyclePriceCompare: cyclePriceCompare ? (params) => cyclePriceCompare(params, checkoutProps) : undefined,
 
-        renderCycleTitle: cycleTitle ? (params) => cycleTitle(params, config) : undefined,
+        renderCycleTitle: cycleTitle ? (params) => cycleTitle(params, checkoutProps) : undefined,
 
         renderShowMigrationDiscountLossWarning: () => {
             if (!matchingConfig.showMigrationDiscountLossWarning) {
                 return false;
             }
 
-            return hasAlikeCoupon(matchingConfig, config.checkResult.Coupon);
+            return hasAlikeCoupon(matchingConfig, checkoutProps.checkResult.Coupon);
         },
 
-        renderPayCTA: payCTA ? () => payCTA(config) : undefined,
-    };
+        renderPayCTA: payCTA ? () => payCTA(checkoutProps) : undefined,
+    } satisfies CouponConfigRendered;
 };
