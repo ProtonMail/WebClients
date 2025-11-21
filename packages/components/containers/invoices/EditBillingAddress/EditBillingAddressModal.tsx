@@ -18,8 +18,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import type { PaymentsApi } from '@proton/payments';
 import { type FullBillingAddress, type Invoice, isCountryWithRequiredPostalCode } from '@proton/payments';
-import { CountryStateSelector } from '@proton/payments/ui';
-import { getEditVatNumberText, getVatNumberName } from '@proton/payments/ui';
+import { CountryStateSelector, getEditVatNumberText, getVatNumberName } from '@proton/payments/ui';
 import { useDispatch } from '@proton/redux-shared-store';
 
 type EditExistingInvoiceProps = {
@@ -39,7 +38,6 @@ type EditInvoiceProps =
 
 export type EditBillingAdressModalInputs = EditInvoiceProps & {
     editVatOnly?: boolean;
-    as?: 'div';
     paymentsApi?: PaymentsApi;
     initialFullBillingAddress?: Partial<FullBillingAddress>;
 };
@@ -62,27 +60,21 @@ const zipCodeValidator = (countryCode: string, zipCode: string | null) => {
     return '';
 };
 
-// function to avoid react warning due to passing the unknown props to the modal
-function getModalProps(props: Props): ModalProps {
-    const propsCopy: any = { ...props };
-
-    delete propsCopy.invoice;
-    delete propsCopy.editExistingInvoice;
-    delete propsCopy.editVatOnly;
-    delete propsCopy.as;
-    delete propsCopy.onReject;
-    delete propsCopy.onResolve;
-    delete propsCopy.initialFullBillingAddress;
-    delete propsCopy.paymentsApi;
-
-    return propsCopy;
-}
-
 const EditBillingAddressModal = (props: Props) => {
+    const {
+        initialFullBillingAddress,
+        editExistingInvoice,
+        editVatOnly,
+        onReject,
+        onResolve,
+        paymentsApi: paymentsApiParam,
+        ...rest
+    } = props;
+
     const { createNotification } = useNotifications();
-    const [fullBillingAddress, setFullBillingAddress] = useState<FullBillingAddress>(props.initialFullBillingAddress);
+    const [fullBillingAddress, setFullBillingAddress] = useState<FullBillingAddress>(initialFullBillingAddress);
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
-    const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
+    const paymentsApi = paymentsApiParam ?? defaultPaymentsApi;
 
     const { validator, onFormSubmit } = useFormErrors();
     const dispatch = useDispatch();
@@ -99,41 +91,41 @@ const EditBillingAddressModal = (props: Props) => {
             );
         }
 
-        props.onResolve?.();
+        onResolve?.();
         createNotification({ text: c('Success').t`Billing details updated` });
     };
 
     // If user edits billing address of the existing invoice, then we can't let them change the parameters that
     // affect taxes.
-    const hideFieldsThatAffectTaxes = props.editExistingInvoice;
+    const hideFieldsThatAffectTaxes = editExistingInvoice;
 
-    const showCountryAndState = !hideFieldsThatAffectTaxes && !props.editVatOnly;
+    const showCountryAndState = !hideFieldsThatAffectTaxes && !editVatOnly;
 
-    const showPostalCode =
-        (!hideFieldsThatAffectTaxes || !isCountryWithRequiredPostalCode(fullBillingAddress.CountryCode)) &&
-        !props.editVatOnly;
+    const hidePostalCode =
+        (hideFieldsThatAffectTaxes && isCountryWithRequiredPostalCode(fullBillingAddress.CountryCode)) || editVatOnly;
+    const showPostalCode = !hidePostalCode;
 
     return (
-        <ModalTwo as={props.as ?? Form} onSubmit={handleSubmit} onClose={props.onReject} {...getModalProps(props)}>
+        <ModalTwo as={Form} onSubmit={handleSubmit} onClose={onReject} {...rest}>
             <ModalTwoHeader
                 title={
-                    props.editVatOnly
-                        ? getEditVatNumberText(props.initialFullBillingAddress.CountryCode)
+                    editVatOnly
+                        ? getEditVatNumberText(initialFullBillingAddress.CountryCode)
                         : c('Title').t`Edit billing address`
                 }
             />
             <ModalTwoContent>
-                {!props.editVatOnly && (
+                {!editVatOnly && (
                     <p className="mb-4">
-                        {props.editExistingInvoice
+                        {editExistingInvoice
                             ? c('Edit billing address form note')
                                   .t`Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.`
                             : c('Edit billing address form note')
                                   .t`Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.`}
                     </p>
                 )}
-                <form name="billing-address-form">
-                    {!props.editVatOnly && (
+                <div>
+                    {!editVatOnly && (
                         <InputFieldTwo
                             label={c('Label').t`Company`}
                             placeholder={c('Placeholder').t`Company name`}
@@ -147,15 +139,15 @@ const EditBillingAddressModal = (props: Props) => {
                         />
                     )}
                     <InputFieldTwo
-                        label={getVatNumberName(props.initialFullBillingAddress.CountryCode)}
+                        label={getVatNumberName(initialFullBillingAddress.CountryCode)}
                         placeholder={c('Placeholder').t`VAT number`}
-                        autoFocus={props.editVatOnly}
+                        autoFocus={editVatOnly}
                         name="vat"
                         data-testid="billing-address-vat"
                         value={fullBillingAddress.VatId ?? ''}
                         onValue={(value: string) => setFullBillingAddress((model) => ({ ...model, VatId: value }))}
                     />
-                    {!props.editVatOnly && (
+                    {!editVatOnly && (
                         <InputFieldTwo
                             label={c('Label').t`First name`}
                             placeholder={c('Placeholder').t`Thomas`}
@@ -167,7 +159,7 @@ const EditBillingAddressModal = (props: Props) => {
                             }
                         />
                     )}
-                    {!props.editVatOnly && (
+                    {!editVatOnly && (
                         <InputFieldTwo
                             label={c('Label').t`Last name`}
                             placeholder={c('Placeholder').t`Anderson`}
@@ -179,7 +171,7 @@ const EditBillingAddressModal = (props: Props) => {
                             }
                         />
                     )}
-                    {!props.editVatOnly && (
+                    {!editVatOnly && (
                         <InputFieldTwo
                             label={c('Label').t`Street address`}
                             placeholder={c('Placeholder').t`Main street 12`}
@@ -191,7 +183,7 @@ const EditBillingAddressModal = (props: Props) => {
                             }
                         />
                     )}
-                    {!props.editVatOnly && (
+                    {!editVatOnly && (
                         <InputFieldTwo
                             label={c('Label').t`City`}
                             placeholder={c('Placeholder').t`Anytown`}
@@ -240,15 +232,14 @@ const EditBillingAddressModal = (props: Props) => {
                             />
                         </div>
                     )}
-                </form>
+                </div>
             </ModalTwoContent>
 
             <ModalTwoFooter>
-                <Button onClick={props.onReject}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={onReject}>{c('Action').t`Cancel`}</Button>
                 <Button
                     color="norm"
                     type="submit"
-                    form="billing-address-form"
                     onClick={() => {
                         if (!onFormSubmit()) {
                             return;
