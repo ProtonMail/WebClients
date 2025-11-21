@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { COUPON_CODES, getCheckout, getPlanNameFromIDs, hasLumoAddonFromPlanIDs } from '@proton/payments';
+import { COUPON_CODES, CYCLE, PLANS, getCheckout, getPlanNameFromIDs, hasLumoAddonFromPlanIDs } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getShortBillingText } from '../helpers';
@@ -18,6 +18,12 @@ export const bf2025Config: CouponConfig = {
         COUPON_CODES.BLACK_FRIDAY_2025_DEALPD,
         COUPON_CODES.BLACK_FRIDAY_2025_DEALVM,
         COUPON_CODES.BLACK_FRIDAY_2025_TWOYEAR,
+    ],
+    specialCases: [
+        {
+            planName: PLANS.VPN2024,
+            cycle: CYCLE.FIFTEEN,
+        },
     ],
     hidden: true,
     cyclePriceComparePosition: 'before',
