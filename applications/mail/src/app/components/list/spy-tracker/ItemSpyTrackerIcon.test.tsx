@@ -11,13 +11,6 @@ import { clearAll } from '../../../helpers/test/helper';
 import { mailTestRender } from '../../../helpers/test/render';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 
-jest.mock('@proton/components/hooks/useProgressiveRollout', () => {
-    return {
-        __esModule: true,
-        default: jest.fn(() => true),
-    };
-});
-
 const messageWithTrackers: MessageState = {
     localID: 'messageWithTrackerId',
     messageImages: {
