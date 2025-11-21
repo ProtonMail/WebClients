@@ -34,11 +34,17 @@ interface Props {
     volumeId: string;
     shareId: string;
     linkId: string;
-
+    allSortedItems: { nodeUid: string; mimeType?: string; storageSize: number }[];
     showOptionsForNoSelection?: boolean;
 }
 
-export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelection = true }: Props) => {
+export const FolderToolbar = ({
+    volumeId,
+    shareId,
+    linkId,
+    allSortedItems,
+    showOptionsForNoSelection = true,
+}: Props) => {
     const isDesktop = !getDevice()?.type;
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
@@ -53,6 +59,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
     const selectedItems = getSelectedItems(items, selectionControls?.selectedItemIds || []);
     const {
         actions: {
+            showPreviewModal,
             showRenameModal,
             showMoveModal,
             showCopyModal,
@@ -67,7 +74,17 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
         uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
         modals,
-    } = useFolderActions({ selectedItems, shareId, linkId, volumeId });
+    } = useFolderActions({
+        allSortedItems: allSortedItems.map((item) => ({
+            nodeUid: item.nodeUid,
+            mimeType: item.mimeType,
+            storageSize: item.storageSize,
+        })),
+        selectedItems,
+        shareId,
+        linkId,
+        volumeId,
+    });
 
     const isAdmin = role === MemberRole.Admin;
     const shouldShowShareButton = permissions.canShare && selectedItems.length === 0 && items.length > 0;
@@ -109,7 +126,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
 
         return (
             <>
-                <PreviewButton selectedItems={selectedItems} type="toolbar" />
+                <PreviewButton selectedItems={selectedItems} type="toolbar" onClick={showPreviewModal} />
                 <OpenInDocsButton type="toolbar" selectedItems={selectedItems} />
                 <DownloadButton type="toolbar" selectedItems={selectedItems} onClick={downloadItems} />
                 {viewportWidth['<=small'] ? (
@@ -157,6 +174,7 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
             </span>
             <input multiple type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} />
             <input type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
+            {modals.previewModal}
             {modals.renameModal}
             {modals.moveModal}
             {modals.copyModal}

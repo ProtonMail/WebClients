@@ -125,6 +125,7 @@ export const mapToLegacyFormat = (items: SharedWithMeListingItemUI[]) => {
             size: item.size || 0,
             parentLinkId: '', // No parentLinkId on shared with me items
             volumeId: volumeId,
+            nodeUid: item.nodeUid,
         };
     });
 };

@@ -8,10 +8,12 @@ import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/li
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../../components/FileBrowser';
+import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { type SortField, type SortParams, useSortingWithDefault } from '../../../hooks/util/useSorting';
+import { usePreviewModal } from '../../../modals/preview/usePreviewModal';
 import { useDocumentActions, useUserSettings } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
@@ -68,6 +70,9 @@ export const useSharedWithMeItemsWithSelection = () => {
     }, [clearItemsWithInvitationPosition]);
 
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
+
+    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
+    const [previewModal, showPreviewModal] = usePreviewModal();
 
     // Do not add logic here, it will be removed later
     const handleRenderItem = useCallback(
@@ -212,6 +217,15 @@ export const useSharedWithMeItemsWithSelection = () => {
                 navigateToAlbum(item.shareId, nodeId);
                 return;
             }
+
+            if (item.type === NodeType.File && isSDKPreviewEnabled) {
+                showPreviewModal({
+                    deprecatedContextShareId: item.shareId,
+                    nodeUid: item.nodeUid,
+                });
+                return;
+            }
+
             navigateToLink(item.shareId, nodeId, item.type === NodeType.File);
         },
         [navigateToLink, openBookmark, isDocsEnabled, openDocument, navigateToAlbum, getSharedWithMeStoreItem]
@@ -228,5 +242,6 @@ export const useSharedWithMeItemsWithSelection = () => {
         handleSorting,
         selectionControls,
         isEmpty: hasEverLoaded && !isLoading && itemUidsSize === 0,
+        previewModal,
     };
 };

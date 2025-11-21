@@ -10,6 +10,7 @@ import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal'
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButtons';
 import { useRenameModal } from '../../modals/RenameModal';
+import { usePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import { useSharedByMeStore } from './useSharedByMe.store';
 
@@ -22,6 +23,7 @@ const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
     selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
 
 const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
+    const [previewModal, showPreviewModal] = usePreviewModal();
     const [renameModal, showRenameModal] = useRenameModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
@@ -45,6 +47,7 @@ const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
         return (
             <SharedByMeActions
                 selectedItems={selectedItems}
+                showPreviewModal={showPreviewModal}
                 showDetailsModal={showDetailsModal}
                 showLinkSharingModal={showLinkSharingModal}
                 showFilesDetailsModal={showFilesDetailsModal}
@@ -62,6 +65,7 @@ const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
                 <Vr className="hidden lg:flex mx-2" />
                 <LayoutButton />
             </span>
+            {previewModal}
             {renameModal}
             {detailsModal}
             {filesDetailsModal}

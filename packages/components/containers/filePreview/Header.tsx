@@ -147,18 +147,6 @@ const Header = ({
                         {c('Info').t`Restore`}
                     </Button>
                 )}
-                {onDownload && (
-                    <Button
-                        icon
-                        shape="ghost"
-                        title={c('Action').t`Download`}
-                        onClick={onDownload}
-                        className="sm:ml-2 hidden sm:inline-flex"
-                        data-testid="file-preview:actions:download"
-                    >
-                        <Icon name="arrow-down-line" size={5} alt={c('Action').t`Download`} />
-                    </Button>
-                )}
                 {onSave && (
                     <Button
                         icon
@@ -175,10 +163,22 @@ const Header = ({
                         disabled={!isDirty}
                     >
                         <Icon
-                            name={saveError ? 'exclamation-circle-filled' : 'arrow-up-line'}
+                            name={saveError ? 'exclamation-circle-filled' : 'pen'}
                             size={5}
                             alt={c('Action').t`Save`}
                         />
+                    </Button>
+                )}
+                {onDownload && (
+                    <Button
+                        icon
+                        shape="ghost"
+                        title={c('Action').t`Download`}
+                        onClick={onDownload}
+                        className="sm:ml-2 hidden sm:inline-flex"
+                        data-testid="file-preview:actions:download"
+                    >
+                        <Icon name="arrow-down-line" size={5} alt={c('Action').t`Download`} />
                     </Button>
                 )}
                 {onDetails && (

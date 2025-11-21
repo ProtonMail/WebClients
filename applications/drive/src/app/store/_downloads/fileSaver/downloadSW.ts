@@ -159,7 +159,7 @@ class DownloadServiceWorker {
                         const { start, end } = range;
                         const indices = getBlockIndices(start, end, videoStream);
 
-                        const client = await self.clients.get(event.clientId!);
+                        const client = await self.clients.get(event.clientId);
                         if (!client) {
                             return new Response(null, {
                                 status: 500,
@@ -240,6 +240,102 @@ class DownloadServiceWorker {
                         return new Response(chunk, { status: 206, statusText: 'Partial Content', headers });
                     } catch (error) {
                         console.error('Error handling video range request:', error);
+                        return new Response(null, {
+                            status: 500,
+                            statusText: 'Internal Server Error',
+                            headers: new Headers(SECURITY_HEADERS),
+                        });
+                    }
+                })()
+            );
+            return;
+        }
+
+        // Stream range requests: /sw/stream/{id}
+        const streamMatch = url.pathname.startsWith('/sw/stream/');
+        if (event.request.method === 'GET' && streamMatch) {
+            event.respondWith(
+                (async () => {
+                    try {
+                        const streamId = url.pathname.split('/sw/stream/')[1];
+                        const rangeHeader = event.request.headers.get('Range');
+
+                        if (!rangeHeader) {
+                            return new Response(null, {
+                                status: 400,
+                                statusText: 'Bad Request - Missing range header',
+                                headers: new Headers(SECURITY_HEADERS),
+                            });
+                        }
+
+                        const rangeMatch = /bytes=(\d+)-(\d*)/.exec(rangeHeader);
+                        if (!rangeMatch) {
+                            return new Response(null, {
+                                status: 400,
+                                statusText: 'Bad Request - Invalid range header format',
+                                headers: new Headers(SECURITY_HEADERS),
+                            });
+                        }
+
+                        const start = parseInt(rangeMatch[1], 10);
+                        const end = rangeMatch[2] ? parseInt(rangeMatch[2], 10) : undefined;
+
+                        const client = await self.clients.get(event.clientId);
+                        if (!client) {
+                            return new Response(null, {
+                                status: 500,
+                                statusText: 'Client not found',
+                                headers: new Headers(SECURITY_HEADERS),
+                            });
+                        }
+
+                        const channel = new MessageChannel();
+                        const resultPromise: Promise<{
+                            data: Uint8Array<ArrayBuffer>;
+                            claimedTotalSize?: number;
+                            mimeType: string;
+                        }> = new Promise((resolve, reject) => {
+                            const timeout = setTimeout(() => {
+                                reject(new Error('Stream chunk request timeout'));
+                            }, VIDEO_STREAMING_BLOCK_TIMEOUT);
+
+                            channel.port1.onmessage = (msg) => {
+                                clearTimeout(timeout);
+                                resolve(msg.data);
+                            };
+                        });
+
+                        // For open-ended ranges, request a reasonable chunk size
+                        const requestedEnd = end ?? start + 4 * 1024 * 1024 - 1;
+
+                        client.postMessage(
+                            {
+                                type: 'get_stream_chunk',
+                                streamId,
+                                range: [start, requestedEnd] as [number, number],
+                            },
+                            [channel.port2]
+                        );
+
+                        const result = await resultPromise;
+
+                        const actualEnd = start + result.data.byteLength - 1;
+                        const totalSize = result.claimedTotalSize ?? actualEnd + 1;
+
+                        // Ensure it is own copy of data for reading by the consumer.
+                        const data = new Uint8Array(result.data);
+
+                        const headers = new Headers({
+                            'Content-Range': `bytes ${start}-${actualEnd}/${totalSize}`,
+                            'Accept-Ranges': 'bytes',
+                            'Content-Length': data.byteLength.toString(),
+                            'Content-Type': result.mimeType,
+                            ...SECURITY_HEADERS,
+                        });
+
+                        return new Response(data, { status: 206, statusText: 'Partial Content', headers });
+                    } catch (error) {
+                        console.error('Error handling stream range request:', error);
                         return new Response(null, {
                             status: 500,
                             statusText: 'Internal Server Error',

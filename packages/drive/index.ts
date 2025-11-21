@@ -61,6 +61,7 @@ export type {
     DriveEvent,
     UploadController,
     Result,
+    SeekableReadableStream,
 } from '@protontech/drive-sdk';
 export type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 

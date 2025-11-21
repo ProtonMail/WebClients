@@ -64,7 +64,16 @@ export function FolderView() {
     const breadcrumbs = activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />;
 
     const toolbar = activeFolder ? (
-        <FolderToolbar volumeId={activeFolder.volumeId} shareId={activeFolder.shareId} linkId={activeFolder.linkId} />
+        <FolderToolbar
+            volumeId={activeFolder.volumeId}
+            shareId={activeFolder.shareId}
+            linkId={activeFolder.linkId}
+            allSortedItems={sortedList.map((item) => ({
+                nodeUid: item.uid,
+                mimeType: item.mimeType,
+                storageSize: item.size,
+            }))}
+        />
     ) : (
         <Toolbar className="toolbar--in-container" />
     );

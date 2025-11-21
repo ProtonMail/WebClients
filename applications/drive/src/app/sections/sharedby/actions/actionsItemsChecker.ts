@@ -81,6 +81,7 @@ export const mapToLegacyFormat = (items: SharedByMeItem[]) => {
             size: item.size || 0,
             parentLinkId: parentNodeId,
             volumeId,
+            nodeUid: item.nodeUid,
         };
     });
 };
