@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { AccountRecoverySection, CrashReportsToggle, TelemetryToggle } from '@proton/components';
+import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
 import MobileAddressSection from '../components/Address/MobileAddressSection';
 import MobileSection from '../components/MobileSection';
@@ -19,8 +20,10 @@ const AccountSettings = ({
     layout: (children: ReactNode, props?: any) => ReactNode;
     loader: ReactNode;
 }) => {
-    const [, loadingAddresses] = useAddresses();
+    const [addresses, loadingAddresses] = useAddresses();
     const loading = loadingAddresses;
+
+    const canShowAddressSection = !getIsBYOEOnlyAccount(addresses);
 
     if (loading) {
         return loader;
@@ -30,7 +33,7 @@ const AccountSettings = ({
         <>
             <div className="mobile-settings">
                 <MobileSection>
-                    <MobileAddressSection />
+                    {canShowAddressSection && <MobileAddressSection />}
                     <MobileSectionRow>
                         <MobileSectionLabel htmlFor="crashReports">{c('Label')
                             .t`Send crash reports`}</MobileSectionLabel>
