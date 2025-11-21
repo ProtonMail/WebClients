@@ -2,26 +2,23 @@ import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import { areIntervalsOverlapping, isWithinInterval } from 'date-fns';
+import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
-import useApi from '@proton/components/hooks/useApi';
-import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { createBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import useFlag from '@proton/unleash/useFlag';
 
 import { splitTimeGridEventsPerDay } from '../../../components/calendar/splitTimeGridEventsPerDay';
 import { useCalendarDispatch } from '../../../store/hooks';
-import { internalBookingActions } from '../../../store/internalBooking/interalBookingSlice';
 import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
+import { createNewBookingPage, editBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
-import { encryptBookingPage } from '../utils/crypto/bookingEncryption';
+import { serializeFormData } from '../utils/form/formHelpers';
 import {
     computeEditFormData,
     computeInitialFormData,
@@ -37,12 +34,11 @@ import {
     getRangeDateStart,
 } from '../utils/range/rangeHelpers';
 import type { BookingRange, BookingsContextValue, InternalBookingFrom, Intersection } from './interface';
-import { type BookingFormData, BookingLocation, BookingState, DEFAULT_RECURRING } from './interface';
+import { type BookingFormData, BookingState, DEFAULT_RECURRING } from './interface';
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
 export const BookingsProvider = ({ children }: { children: ReactNode }) => {
-    const api = useApi();
     const dispatch = useCalendarDispatch();
     const { notify } = useCalendarGlobalModals();
     const { createNotification } = useNotifications();
@@ -51,9 +47,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [calendarUserSettings] = useCalendarUserSettings();
     const [writeableCalendars = []] = useWriteableCalendars();
     const readCalendarBootstrap = useReadCalendarBootstrap();
-
-    const getCalendarKeys = useGetCalendarKeys();
-    const getAddressKeysByUsage = useGetAddressKeysByUsage();
 
     const [loading, setLoading] = useState(false);
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
@@ -259,62 +252,31 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const submitForm = async () => {
         try {
             setLoading(true);
-            const selectedCalendar = writeableCalendars.find((cal) => cal.ID === internalForm.selectedCalendar);
 
-            if (!selectedCalendar) {
-                return;
-            }
+            const serializedFormData = serializeFormData(formData);
 
-            const ownerEmail = selectedCalendar.Owner.Email;
-            const ownerAddressId = selectedCalendar.Members.find((member) => member.Email === ownerEmail)?.AddressID;
+            if (bookingsState === BookingState.CREATE_NEW) {
+                const data = (await dispatch(createNewBookingPage(serializedFormData))) as any;
+                if (!data?.payload?.bookingLink) {
+                    return;
+                }
 
-            if (!ownerAddressId) {
-                throw new Error('Owner address ID not found');
-            }
-
-            const { encryptionKey, signingKeys } = await getAddressKeysByUsage({
-                AddressID: ownerAddressId,
-                withV6SupportForEncryption: true,
-                withV6SupportForSigning: false,
-            });
-
-            const calendarKeys = await getCalendarKeys(selectedCalendar.ID);
-            const data = await encryptBookingPage({
-                formData,
-                calendarKeys,
-                encryptionKey,
-                signingKeys,
-                calendarID: selectedCalendar.ID,
-            });
-
-            const { BookingLink: bookingLink, ...apiPayload } = data;
-
-            const response = await api<{ BookingPage: { ID: string }; Code: number }>(
-                createBookingPage({ ...apiPayload, CalendarID: selectedCalendar.ID })
-            );
-
-            dispatch(
-                internalBookingActions.addBookingPage({
-                    id: response.BookingPage.ID,
-                    bookingUID: data.BookingUID,
-                    calendarID: selectedCalendar.ID,
-                    summary: internalForm.summary,
-                    description: internalForm?.description,
-                    location: internalForm?.location,
-                    withProtonMeetLink: internalForm.location === BookingLocation.MEET,
-                    link: bookingLink,
-                })
-            );
-
-            notify({
-                type: ModalType.BookingPageCreation,
-                value: {
-                    bookingLink,
-                    onClose: () => {
-                        setBookingsState(BookingState.OFF);
+                notify({
+                    type: ModalType.BookingPageCreation,
+                    value: {
+                        bookingLink: data.payload.bookingLink,
+                        onClose: () => {
+                            setBookingsState(BookingState.OFF);
+                        },
                     },
-                },
-            });
+                });
+            }
+
+            if (bookingsState === BookingState.EDIT_EXISTING) {
+                await dispatch(editBookingPage(serializedFormData));
+                createNotification({ text: c('Info').t`Booking updated successfully` });
+                setBookingsState(BookingState.OFF);
+            }
         } catch (error) {
             throw error;
         } finally {

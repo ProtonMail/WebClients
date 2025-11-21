@@ -1,8 +1,7 @@
-import { getUnixTime } from 'date-fns';
+import type { BookingPageEditData } from 'applications/calendar/src/app/store/internalBooking/interface';
 
-import { CryptoProxy, type PublicKeyReference, type SessionKey } from '@proton/crypto';
+import { CryptoProxy, type PublicKeyReference } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import type {
     BookingPageCreationPayload,
     BookingPageSlotsPayload,
@@ -10,7 +9,8 @@ import type {
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 
-import { type BookingFormData, BookingLocation } from '../../bookingsProvider/interface';
+import { BookingLocation } from '../../bookingsProvider/interface';
+import type { SerializedFormData } from '../../bookingsTypes';
 import { JSONFormatData, JSONFormatTextData, createBookingLink } from './bookingEncryptionHelpers';
 import {
     bookingContentSignatureContextValue,
@@ -19,22 +19,22 @@ import {
 } from './cryptoHelpers';
 
 interface EncryptionParams {
-    formData: BookingFormData;
+    formData: SerializedFormData;
     encryptionKey: PrimaryAddressKeyForEncryption;
     signingKeys: PrimaryAddressKeysForSigning;
     calendarKeys: DecryptedCalendarKey[];
 }
 
 const encryptBookingData = async (
-    formData: BookingFormData,
+    formData: SerializedFormData,
     bookingKeyPassword: string,
     bookingUid: string,
     signingKeys: PrimaryAddressKeysForSigning
 ) => {
     const { message: encryptedContent } = await CryptoProxy.encryptMessage({
         textData: JSONFormatData({
-            description: formData.description || '',
-            location: formData.location || '',
+            description: formData.description,
+            location: formData.location,
             summary: formData.summary,
             withProtonMeetLink: formData.locationType === BookingLocation.MEET,
         }),
@@ -48,7 +48,7 @@ const encryptBookingData = async (
 };
 
 const encryptBookingSlots = async (
-    formData: BookingFormData,
+    formData: SerializedFormData,
     bookingUid: string,
     bookingKeyPassword: string,
     signingKeys: PrimaryAddressKeysForSigning,
@@ -58,8 +58,7 @@ const encryptBookingSlots = async (
         throw new Error('Calendar public key is required');
     }
 
-    const Slots: BookingPageSlotsPayload[] = [];
-    for (const slot of formData.bookingSlots) {
+    const slotPromises = formData.bookingSlots.map(async (slot) => {
         const sharedSessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: calendarPublicKeys });
         const bookingKeyPacket = await CryptoProxy.encryptSessionKey({
             ...sharedSessionKey,
@@ -73,37 +72,31 @@ const encryptBookingSlots = async (
             format: 'binary',
         });
 
-        // We need to get the locale date first, that we then convert to UTC timestamp
-        // We should end up with the UTC timestamp corresponding to the user locale
-        const startComponents = fromLocalDate(slot.start);
-        const endComponents = fromLocalDate(slot.end);
-
-        const startUTC = toUTCDate(convertZonedDateTimeToUTC(startComponents, formData.timezone));
-        const endUTC = toUTCDate(convertZonedDateTimeToUTC(endComponents, formData.timezone));
-
-        const StartTime = getUnixTime(startUTC);
-        const EndTime = getUnixTime(endUTC);
-        const Timezone = formData.timezone;
-        const RRule = formData.recurring ? 'FREQ=WEEKLY' : null;
-
         const slotSignature = await CryptoProxy.signMessage({
-            textData: JSONFormatTextData({ EndTime, RRule, StartTime, Timezone }),
+            textData: JSONFormatTextData({
+                EndTime: slot.end,
+                RRule: formData.recurring ? 'FREQ=WEEKLY' : null,
+                StartTime: slot.start,
+                Timezone: formData.timezone,
+            }),
             signingKeys,
             detached: true,
             format: 'binary',
             signatureContext: { critical: true, value: bookingSlotSignatureContextValue(bookingUid) },
         });
 
-        Slots.push({
-            StartTime,
-            EndTime,
-            Timezone,
-            RRule,
+        return {
+            StartTime: slot.start,
+            EndTime: slot.end,
+            Timezone: formData.timezone,
+            RRule: formData.recurring ? 'FREQ=WEEKLY' : null,
             DetachedSignature: slotSignature.toBase64(),
             BookingKeyPacket: bookingKeyPacket.toBase64(),
             SharedKeyPacket: sharedKeyPacket.toBase64(),
-        });
-    }
+        };
+    });
+
+    const Slots = await Promise.all(slotPromises);
 
     return Slots;
 };
@@ -154,32 +147,6 @@ export const extractBookingUidFromSecret = async (bookingSecretBase64Url: string
     return (await deriveBookingUid(bookingSecretBytes)).toBase64({ alphabet: 'base64url' });
 };
 
-/**
- * Decrypts the booking session key using the booking secret
- * @param bookingSecretBase64Url - The booking secret in base64url format (from URL hash)
- * @param bookingKeySalt - The salt in base64 format (from API)
- * @param calendarId - The calendar ID
- * @param bookingKeyPacket - The encrypted session key packet in base64 format (from API)
- * @returns The decrypted session key
- */
-export const decryptBookingSessionKey = async (
-    bookingSecretBase64Url: string,
-    bookingKeySalt: string,
-    calendarId: string,
-    bookingKeyPacket: string
-): Promise<SessionKey | undefined> => {
-    const bookingSecretBytes = Uint8Array.fromBase64(bookingSecretBase64Url, { alphabet: 'base64url' });
-    const saltBytes = Uint8Array.fromBase64(bookingKeySalt);
-    const bookingKeyPassword = (await deriveBookingKeyPassword(calendarId, bookingSecretBytes, saltBytes)).toBase64();
-
-    const bookingKeyPacketBytes = Uint8Array.fromBase64(bookingKeyPacket);
-
-    return CryptoProxy.decryptSessionKey({
-        binaryMessage: bookingKeyPacketBytes,
-        passwords: [bookingKeyPassword],
-    });
-};
-
 export const encryptBookingPage = async ({
     calendarKeys,
     formData,
@@ -194,35 +161,75 @@ export const encryptBookingPage = async ({
 
     const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, secretBytes, salt)).toBase64();
     const bookingUid = (await deriveBookingUid(secretBytes)).toBase64();
-
     const calendarPublicKeys = calendarKeys.map(({ publicKey }) => publicKey);
-    const Slots: BookingPageSlotsPayload[] = await encryptBookingSlots(
-        formData,
-        bookingUid,
-        bookingKeyPassword,
-        signingKeys,
-        calendarPublicKeys
-    );
 
-    const encryptedContent = await encryptBookingData(formData, bookingKeyPassword, bookingUid, signingKeys);
-
-    const { message: encryptedSecret } = await CryptoProxy.encryptMessage({
-        binaryData: secretBytes,
-        encryptionKeys: encryptionKey,
-        signingKeys: signingKeys,
-        format: 'binary',
-        signatureContext: {
-            value: bookingSecretSignatureContextValue(calendarID),
-            critical: true,
-        },
-    });
+    const [Slots, encryptedContent, encryptedSecret] = await Promise.all([
+        encryptBookingSlots(formData, bookingUid, bookingKeyPassword, signingKeys, calendarPublicKeys),
+        encryptBookingData(formData, bookingKeyPassword, bookingUid, signingKeys),
+        CryptoProxy.encryptMessage({
+            binaryData: secretBytes,
+            encryptionKeys: encryptionKey,
+            signingKeys: signingKeys,
+            format: 'binary',
+            signatureContext: {
+                value: bookingSecretSignatureContextValue(calendarID),
+                critical: true,
+            },
+        }),
+    ]);
 
     return {
         BookingUID: bookingUid,
         BookingLink: createBookingLink(secretBytes),
         BookingKeySalt: salt.toBase64(),
-        EncryptedSecret: encryptedSecret.toBase64(),
+        EncryptedSecret: encryptedSecret.message.toBase64(),
         EncryptedContent: encryptedContent.toBase64(),
+        Slots,
+    };
+};
+
+export const encryptBookingPageEdition = async ({
+    editData,
+    calendarID,
+    updateData,
+    signingKeys,
+    decryptedSecret,
+    calendarKeys,
+}: {
+    editData: BookingPageEditData;
+    calendarID: string;
+    updateData: SerializedFormData;
+    signingKeys: PrimaryAddressKeysForSigning;
+    decryptedSecret: Uint8Array<ArrayBuffer>;
+    calendarKeys: DecryptedCalendarKey[];
+}) => {
+    const saltBytes = Uint8Array.fromBase64(editData.bookingKeySalt);
+    const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, decryptedSecret, saltBytes)).toBase64();
+
+    const bookingID = (await deriveBookingUid(decryptedSecret)).toBase64();
+    const calendarPublicKeys = calendarKeys.map(({ publicKey }) => publicKey);
+
+    const [Slots, encryptedContent] = await Promise.all([
+        encryptBookingSlots(updateData, bookingID, bookingKeyPassword, signingKeys, calendarPublicKeys),
+        CryptoProxy.encryptMessage({
+            textData: JSONFormatData({
+                description: updateData.description,
+                location: updateData.location,
+                summary: updateData.summary,
+                withProtonMeetLink: updateData.locationType === BookingLocation.MEET,
+            }),
+            passwords: bookingKeyPassword,
+            signingKeys: signingKeys,
+            format: 'binary',
+            signatureContext: {
+                critical: true,
+                value: bookingContentSignatureContextValue(bookingID),
+            },
+        }),
+    ]);
+
+    return {
+        EncryptedContent: encryptedContent.message.toBase64(),
         Slots,
     };
 };
