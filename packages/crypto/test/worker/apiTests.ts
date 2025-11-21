@@ -1,8 +1,8 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import { generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto';
-import type { CompressedDataPacket } from 'pmcrypto/lib/openpgp';
 import {
+    type CompressedDataPacket,
     SymEncryptedIntegrityProtectedDataPacket,
     enums,
     config as openpgp_config,
@@ -680,6 +680,44 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
             });
             expect(decryptedSessionKeyWithKey).to.deep.equal(sessionKey);
         });
+    });
+
+    it('generateKey/generateSessionKey/encryptMessage - seipdv2 integration - should only use aead encryption when appropriate config options are passed (aeadProtect, ignoreSEIPDv2FeatureFlag)', async () => {
+        const keyWithSEIPDv2Flag = await CryptoApiImplementation.generateKey({
+            userIDs: { name: 'name', email: 'email@test.com' },
+            config: { aeadProtect: true },
+        });
+        const keyWithoutSEIPDv2Flag = await CryptoApiImplementation.generateKey({
+            userIDs: { name: 'name', email: 'email@test.com' },
+        });
+
+        const sessionKeyWithAEAD = await CryptoApiImplementation.generateSessionKey({
+            recipientKeys: keyWithSEIPDv2Flag,
+            config: { ignoreSEIPDv2FeatureFlag: false },
+        });
+        expect(sessionKeyWithAEAD.aeadAlgorithm).to.equal('gcm');
+        // `ignoreSEIPDv2FeatureFlag: true` by default -> session key without aead
+        const sessionKeyWithoutAEAD = await CryptoApiImplementation.generateSessionKey({
+            recipientKeys: keyWithSEIPDv2Flag,
+        });
+        expect(sessionKeyWithoutAEAD.aeadAlgorithm).to.equal(undefined);
+        // keyWithoutSEIPDv2Flag -> session key without aead, regardless of config.ignoreSEIPDv2FeatureFlag
+        const anotherSessionKeyWithoutAEAD = await CryptoApiImplementation.generateSessionKey({
+            recipientKeys: keyWithoutSEIPDv2Flag,
+            config: { ignoreSEIPDv2FeatureFlag: false },
+        });
+        expect(anotherSessionKeyWithoutAEAD.aeadAlgorithm).to.equal(undefined);
+
+        const { message: seipdv2ArmoredMessage } = await CryptoApiImplementation.encryptMessage({
+            textData: 'test',
+            sessionKey: sessionKeyWithAEAD,
+        });
+        const seipdv2Message = await openpgp_readMessage({ armoredMessage: seipdv2ArmoredMessage });
+        const seipdv2Packet = seipdv2Message.packets.findPacket(
+            enums.packet.symEncryptedIntegrityProtectedData
+        ) as SymEncryptedIntegrityProtectedDataPacket;
+        // @ts-expect-error missing field declaration for SymEncryptedIntegrityProtectedDataPacket
+        expect(seipdv2Packet.version === 2 && seipdv2Message.packets[0].aeadAlgorithm === enums.aead.gcm);
     });
 
     it('processMIME - it can process multipart/signed mime messages and verify the signature', async () => {
