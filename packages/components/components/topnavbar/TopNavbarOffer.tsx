@@ -144,14 +144,12 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                         offerConfig.topButton?.variant === 'bf-2025-paid' && 'text-uppercase text-semibold',
                         offerConfig.topButton?.variant === 'bf-2025-free' && 'text-uppercase text-semibold',
                         offerConfig.topButton?.variant === 'bf-2025-wave2' && 'text-uppercase text-semibold',
-                        offerConfig.topButton?.variant === 'anniversary-2025' && 'text-uppercase text-semibold',
                     ])}
                     pill={
                         !!offerConfig.topButton?.variant &&
                         offerConfig.topButton?.variant !== 'bf-2025-free' &&
                         offerConfig.topButton?.variant !== 'bf-2025-paid' &&
-                        offerConfig.topButton?.variant !== 'bf-2025-wave2' &&
-                        offerConfig.topButton?.variant !== 'anniversary-2025'
+                        offerConfig.topButton?.variant !== 'bf-2025-wave2'
                     }
                     data-testid="cta:special-offer"
                 >
