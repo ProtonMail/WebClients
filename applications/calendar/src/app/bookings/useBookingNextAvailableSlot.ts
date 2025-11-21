@@ -36,15 +36,15 @@ export const useBookingNextAvailableSlot = () => {
     const handleNavigateToNextAvailableSlot = async () => {
         // Redirect to the next event. If no events in the future, redirect to the first available slot
         if (availabilityState === AvailabilityState.HasNextSlot && nextAvailableSlot) {
+            setSelectedDate(nextAvailableSlot.tzDate);
+
             const newRangeEnd = addDays(nextAvailableSlot.tzDate, gridSize);
             await loadPublicBooking(nextAvailableSlot.tzDate, newRangeEnd);
-
-            setSelectedDate(nextAvailableSlot.tzDate);
         } else if (availabilityState === AvailabilityState.ShouldNavigateToFirst) {
+            setSelectedDate(bookingSlots[0].tzDate);
+
             const newRangeEnd = addDays(bookingSlots[0].tzDate, gridSize);
             await loadPublicBooking(bookingSlots[0].tzDate, newRangeEnd);
-
-            setSelectedDate(bookingSlots[0].tzDate);
         }
     };
 
