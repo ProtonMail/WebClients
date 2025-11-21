@@ -2,7 +2,9 @@ import React, { useMemo, useRef } from 'react';
 import Markdown from 'react-markdown';
 import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
+import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
@@ -11,7 +13,7 @@ import { useCopyNotification } from '../../../hooks/useCopyNotification';
 import type { SearchItem } from '../../../lib/toolCall/types';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 import { parseInteger } from '../../../util/number';
-import { convertRefTokensToSpans } from '../../../util/tokens';
+import { convertRefTokensToSpans, processForLatexMarkdown } from '../../../util/tokens';
 import LumoCopyButton from '../../interactiveConversation/messageChain/message/actionToolbar/LumoCopyButton';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
@@ -241,8 +243,6 @@ const MarkdownBlock: React.FC<{
             };
         }, [theme]);
 
-        const plugins = [remarkGfm];
-
         // Custom components for markdown rendering
         const components = useMemo(
             () => ({
@@ -279,7 +279,11 @@ const MarkdownBlock: React.FC<{
         );
 
         return (
-            <Markdown remarkPlugins={plugins} components={components}>
+            <Markdown
+                remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: false }]]}
+                rehypePlugins={[() => rehypeKatex({ output: 'mathml' })]}
+                components={components}
+            >
                 {content}
             </Markdown>
         );
@@ -340,7 +344,9 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
 
         // Process REF tokens and convert to markdown links
         const processedContent = useMemo(() => {
-            return convertRefTokensToSpans(content || '');
+            const processedContent = convertRefTokensToSpans(content || '');
+            const processedContentWithMath = processForLatexMarkdown(processedContent);
+            return processedContentWithMath;
         }, [content]);
 
         // Split content into complete (cacheable) and incomplete (active) blocks
