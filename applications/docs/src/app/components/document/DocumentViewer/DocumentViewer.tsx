@@ -8,6 +8,7 @@ import type {
   PublicDocumentState,
   WebsocketConnectionEventPayloads,
   EditorControllerInterface,
+  GenericInfoEventPayload,
 } from '@proton/docs-core'
 import {
   ClientToEditorBridge,
@@ -104,6 +105,7 @@ export function DocumentViewer({
 
   const [publicSplashModal, openPublicSplashModal] = useWelcomeSplashModal()
   const [genericAlertModal, showGenericAlertModal] = useGenericAlertModal()
+  const [genericInfoModal, showGenericInfoModal] = useGenericAlertModal()
 
   const [editorFrame, setEditorFrame] = useState<HTMLIFrameElement | null>(null)
   const [docOrchestrator, setDocOrchestrator] = useState<EditorOrchestratorInterface | null>(null)
@@ -193,6 +195,12 @@ export function DocumentViewer({
       })
     }, DocControllerEvent.UnableToResolveCommitIdConflict)
   }, [application.eventBus, showGenericAlertModal])
+
+  useEffect(() => {
+    return application.eventBus.addEventCallback((payload: GenericInfoEventPayload) => {
+      showGenericInfoModal(payload)
+    }, ApplicationEvent.GenericInfo)
+  }, [application.eventBus, showGenericInfoModal])
 
   useEffect(() => {
     return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>(
@@ -510,6 +518,7 @@ export function DocumentViewer({
       {publicSplashModal}
       {signatureFailedModal}
       {genericAlertModal}
+      {genericInfoModal}
     </div>
   )
 }

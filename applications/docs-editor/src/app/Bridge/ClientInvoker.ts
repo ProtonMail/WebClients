@@ -13,11 +13,15 @@ import type {
   SafeDocsUserState,
   FileMenuAction,
 } from '@proton/docs-shared'
-import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
-import { GenerateUUID } from '@proton/docs-shared'
+import {
+  GenerateUUID,
+  EditorBridgeMessageType,
+  BridgeOriginProvider,
+  type WordCountInfoCollection,
+  type EditorEvent,
+  type EditorEventData,
+} from '@proton/docs-shared'
 import type { ErrorInfo } from 'react'
-import type { WordCountInfoCollection } from '@proton/docs-shared'
-import type { EditorEvent, EditorEventData } from '@proton/docs-shared'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -135,6 +139,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('showGenericAlertModal', [message])
   }
 
+  async showGenericInfoModal(props: { title: string; translatedMessage: string }): Promise<void> {
+    return this.invokeClientMethod('showGenericInfoModal', [props])
+  }
+
   async fetchExternalImageAsBase64(url: string): Promise<string | undefined> {
     return this.invokeClientMethod('fetchExternalImageAsBase64', [url])
   }
@@ -174,5 +182,9 @@ export class ClientInvoker implements EditorRequiresClientMethods {
         resolve,
       })
     })
+  }
+
+  async getIsRunningInNativeMobileWeb(): Promise<boolean> {
+    return this.invokeClientMethod('getIsRunningInNativeMobileWeb', [])
   }
 }

@@ -14,8 +14,11 @@ import type {
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import type { ErrorInfo } from 'react'
-import { ApplicationEvent } from '../Application/ApplicationEvent'
+import { ApplicationEvent, type GenericInfoEventPayload } from '../Application/ApplicationEvent'
 import { WordCountEvent } from './Events'
+import type { CustomWindow } from '../Application/Window'
+
+declare const window: CustomWindow
 
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
@@ -150,11 +153,22 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     })
   }
 
+  showGenericInfoModal(props: GenericInfoEventPayload): void {
+    this.eventBus.publish({
+      type: ApplicationEvent.GenericInfo,
+      payload: props,
+    })
+  }
+
   async fetchExternalImageAsBase64(url: string): Promise<string | undefined> {
     return this.docOrchestrator.fetchExternalImageAsBase64(url)
   }
 
   async handleFileMenuAction(action: FileMenuAction): Promise<void> {
     return this.docOrchestrator.handleFileMenuAction(action)
+  }
+
+  async getIsRunningInNativeMobileWeb(): Promise<boolean> {
+    return window.Android != null || window.webkit?.messageHandlers?.iOS != null
   }
 }
