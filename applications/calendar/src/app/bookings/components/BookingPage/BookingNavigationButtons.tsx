@@ -23,17 +23,19 @@ export const BookingNavigationButtons = ({ gridSize, disabled }: Props) => {
 
     // TODO improve with loaded slots caching
     const handleLoadPreviousPage = async () => {
+        setSelectedDate(addDays(selectedDate, -gridSize));
+
         const newRangeStart = addDays(selectedDate, -gridSize);
         await loadPublicBooking(newRangeStart, selectedDate);
-        setSelectedDate(addDays(selectedDate, -gridSize));
     };
 
     // TODO improve with loaded slots caching
     const handleLoadNextPage = async () => {
+        setSelectedDate(addDays(selectedDate, gridSize));
+
         const currentRangeEnd = addDays(selectedDate, gridSize);
         const newRangeEnd = addDays(currentRangeEnd, gridSize);
         await loadPublicBooking(currentRangeEnd, newRangeEnd);
-        setSelectedDate(addDays(selectedDate, gridSize));
     };
 
     return (
