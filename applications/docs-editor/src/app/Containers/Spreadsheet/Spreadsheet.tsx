@@ -249,7 +249,7 @@ function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublic
         />
       )}
       <div className="flex h-full min-h-0 w-full min-w-0 bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
-        <div className="relative flex h-full min-h-0 grow flex-col">
+        <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
           {!isRevisionMode && (
             <>
               <Menubar
