@@ -17,18 +17,18 @@ export const getBookingPageDetails = (bookingUid: string) => ({
 });
 
 export const queryPublicBookingPage = (
-    bookingUid: string,
+    bookingId: string,
     { startTime, endTime }: { startTime: number; endTime: number }
 ) => ({
-    url: `calendar/v1/booking/external/${bookingUid}`,
+    url: `calendar/v1/booking/external/${bookingId}`,
     method: 'GET',
     params: {
         Start: startTime,
         End: endTime,
     },
 });
-export const confirmBookingSlot = (bookingUid: string, slotId: string, data: BookingSlotConfirmationPayload) => ({
-    url: `calendar/v1/booking/external/${bookingUid}/slots/${slotId}/confirm`,
+export const confirmBookingSlot = (bookingId: string, slotId: string, data: BookingSlotConfirmationPayload) => ({
+    url: `calendar/v1/booking/external/${bookingId}/slots/${slotId}/confirm`,
     method: 'POST',
     data,
 });
@@ -36,4 +36,12 @@ export const confirmBookingSlot = (bookingUid: string, slotId: string, data: Boo
 export const deleteBookingPage = (bookingId: string) => ({
     url: `calendar/v1/booking/${bookingId}`,
     method: 'DELETE',
+});
+
+export const getNextAvailableSlot = (bookingId: string, startTime: number) => ({
+    url: `calendar/v1/booking/external/${bookingId}/next-slot`,
+    method: 'GET',
+    params: {
+        StartTime: startTime,
+    },
 });

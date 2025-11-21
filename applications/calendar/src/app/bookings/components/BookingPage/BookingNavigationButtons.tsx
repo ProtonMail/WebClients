@@ -11,9 +11,10 @@ import { useExternalBookingLoader } from '../../useExternalBookingLoader';
 
 interface Props {
     gridSize: number;
+    disabled?: boolean;
 }
 
-export const BookingNavigationButtons = ({ gridSize }: Props) => {
+export const BookingNavigationButtons = ({ gridSize, disabled }: Props) => {
     const selectedDate = useBookingStore((state) => state.selectedDate);
     const setSelectedDate = useBookingStore((state) => state.setSelectedDate);
     const { loadPublicBooking } = useExternalBookingLoader();
@@ -38,12 +39,12 @@ export const BookingNavigationButtons = ({ gridSize }: Props) => {
     return (
         <div className="flex gap-2">
             <Tooltip title={c('Action').t`See previous availability`}>
-                <Button icon pill onClick={handleLoadPreviousPage} disabled={isInEarliestRange}>
+                <Button icon pill onClick={handleLoadPreviousPage} disabled={isInEarliestRange || disabled}>
                     <IcChevronLeft alt={c('Action').t`See previous availability`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`See upcoming availability`}>
-                <Button icon pill onClick={handleLoadNextPage}>
+                <Button icon pill onClick={handleLoadNextPage} disabled={disabled}>
                     <IcChevronRight alt={c('Action').t`See upcoming availability`} />
                 </Button>
             </Tooltip>
