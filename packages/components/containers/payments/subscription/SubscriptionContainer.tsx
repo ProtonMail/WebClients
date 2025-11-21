@@ -72,6 +72,7 @@ import {
     hasLumo,
     hasLumoAddonFromPlanIDs,
     hasPlanIDs,
+    isBF2025Offer,
     isFreeSubscription,
     isManagedExternally,
     isSubscriptionCheckForbidden,
@@ -432,7 +433,7 @@ const SubscriptionContainerInner = ({
         canAddLumoAddon(subscription) &&
         ((!couponConfig?.hideLumoAddonBanner &&
             // Hides the Lumo Banner during loading
-            !getHas2025OfferCoupon(maybeCoupon)) ||
+            !isBF2025Offer({ coupon: maybeCoupon, planIDs, cycle: model.cycle })) ||
             // if user already has lumo addon and it was transfered to the new selected plan then display the lumo addon
             // customizer
             hasLumoAddonFromPlanIDs(planIDs));
