@@ -593,7 +593,7 @@ export const markMessagesAsReadPending = (
         }
     >
 ) => {
-    const { elements, labelID, conversations } = action.meta.arg;
+    const { elements, conversations } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
         const selectedMessage = selectedElement as Message;
@@ -617,7 +617,7 @@ export const markMessagesAsReadPending = (
             conversationElementState.ContextNumUnread = safeDecreaseCount(conversationElementState.ContextNumUnread, 1);
             conversationElementState.NumUnread = safeDecreaseCount(conversationElementState.NumUnread, 1);
             conversationElementState.Labels?.forEach((label) => {
-                if (label.ID === labelID && selectedMessage.LabelIDs.includes(label.ID)) {
+                if (selectedMessage.LabelIDs.includes(label.ID)) {
                     label.ContextNumUnread = safeDecreaseCount(label.ContextNumUnread, 1);
                 }
             });
@@ -644,7 +644,7 @@ export const markMessagesAsUnreadPending = (
         }
     >
 ) => {
-    const { elements, labelID, conversations } = action.meta.arg;
+    const { elements, conversations } = action.meta.arg;
 
     elements.forEach((selectedElement) => {
         const selectedMessage = selectedElement as Message;
@@ -667,7 +667,7 @@ export const markMessagesAsUnreadPending = (
             conversationElementState.ContextNumUnread = safeIncreaseCount(conversationElementState.ContextNumUnread, 1);
             conversationElementState.NumUnread = safeIncreaseCount(conversationElementState.NumUnread, 1);
             conversationElementState.Labels?.forEach((label) => {
-                if (label.ID === labelID && selectedMessage.LabelIDs.includes(label.ID)) {
+                if (selectedMessage.LabelIDs.includes(label.ID)) {
                     label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
                 }
             });
