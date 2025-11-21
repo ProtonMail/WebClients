@@ -47,7 +47,6 @@ export enum FeatureCode {
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     DriveSpotlightInMail = 'DriveSpotlightInMail',
     ESAutomaticBackgroundIndexing = 'ESAutomaticBackgroundIndexing',
-    ESUserInterface = 'ESUserInterface',
     EarlyAccessScope = 'EarlyAccess',
     EasySwitch = 'EasySwitch',
     ElectronESInboxThreshold = 'ElectronESInboxThreshold',

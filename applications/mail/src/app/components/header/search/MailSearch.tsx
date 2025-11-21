@@ -3,22 +3,14 @@ import { useEffect, useState } from 'react';
 import type { Location } from 'history';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUser } from '@proton/account/user/hooks';
-import {
-    TopNavbarListItemSearchButton,
-    useActiveBreakpoint,
-    usePopperAnchor,
-    useProgressiveRollout,
-    useToggle,
-} from '@proton/components';
+import { TopNavbarListItemSearchButton, useActiveBreakpoint, usePopperAnchor, useToggle } from '@proton/components';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
-import { FeatureCode } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import generateUID from '@proton/utils/generateUID';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { isEncryptedSearchAvailable } from '../../../helpers/encryptedSearch/esUtils';
 import { extractSearchParameters } from '../../../helpers/mailboxUrl';
 import { useClickMailContent } from '../../../hooks/useClickMailContent';
 import AdvancedSearch from './AdvancedSearch';
@@ -35,17 +27,15 @@ interface Props {
 
 const MailSearch = ({ labelID, location, columnMode }: Props) => {
     const [uid] = useState(generateUID('advanced-search-overlay'));
-    const isESUserInterfaceAvailable = useProgressiveRollout(FeatureCode.ESUserInterface);
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
     const searchParams = extractSearchParameters(location);
     const [searchInputValue, setSearchInputValue] = useState(searchParams.keyword || '');
-    const [user] = useUser();
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
     const { esStatus, cacheIndexedDB, closeDropdown, esIndexingProgressState } = useEncryptedSearchContext();
     const { dropdownOpened, esEnabled } = esStatus;
-    const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
+
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
 
@@ -124,7 +114,8 @@ const MailSearch = ({ labelID, location, columnMode }: Props) => {
             )}
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
-                    showEncryptedSearch={showEncryptedSearch}
+                    // We hide ES on mobile
+                    showEncryptedSearch={!isMobile()}
                     onClose={close}
                     esIndexingProgressState={esIndexingProgressState}
                     showMore={showMore}
