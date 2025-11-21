@@ -12,20 +12,24 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../../booking.store';
+import { AvailabilityState } from '../../useBookingNextAvailableSlot';
 import { BookingMiniCalendar } from './BookingMiniCalendar';
 import { BookingNavigationButtons } from './BookingNavigationButtons';
 
 interface Props {
     gridSize: number;
+    availabilityState: AvailabilityState;
 }
 
-export const BookingHeader = ({ gridSize }: Props) => {
+export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
     const setSelectedDate = useBookingStore((state) => state.setSelectedDate);
     const setSelectedTimezone = useBookingStore((state) => state.setSelectedTimezone);
     const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedDate = useBookingStore((state) => state.selectedDate);
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
+
+    const hasNoSlots = availabilityState === AvailabilityState.NoSlotAvailable;
 
     const handleSelectDate = (date: Date) => {
         setSelectedDate(date);
@@ -42,6 +46,7 @@ export const BookingHeader = ({ gridSize }: Props) => {
 
                 <TimeZoneSelector
                     data-testid="calendar-view:time-zone-dropdown"
+                    disabled={hasNoSlots}
                     className="w-auto mb-2"
                     date={selectedDate}
                     timezone={selectedTimezone || bookingDetails?.timezone || getTimezone()}
@@ -53,7 +58,14 @@ export const BookingHeader = ({ gridSize }: Props) => {
             </div>
             <div className="flex justify-between w-full mb-4">
                 <div className="flex-1 flex space-between">
-                    <Button pill onClick={toggle} ref={anchorRef} className="flex items-center" aria-expanded={isOpen}>
+                    <Button
+                        pill
+                        onClick={toggle}
+                        ref={anchorRef}
+                        className="flex items-center"
+                        aria-expanded={isOpen}
+                        disabled={hasNoSlots}
+                    >
                         {/*TODO replace icon*/}
                         <IcCalendarGrid className="mr-2" />
                         {format(selectedDate, 'MMMM Y', { locale: dateLocale })}
@@ -64,7 +76,7 @@ export const BookingHeader = ({ gridSize }: Props) => {
                     </Dropdown>
                 </div>
 
-                <BookingNavigationButtons gridSize={gridSize} />
+                <BookingNavigationButtons gridSize={gridSize} disabled={hasNoSlots} />
             </div>
         </>
     );

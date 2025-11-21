@@ -1,7 +1,8 @@
-import { isSameDay } from 'date-fns';
+import { isSameDay, startOfDay } from 'date-fns';
 import { create } from 'zustand';
 
 import { getTimezone } from '@proton/shared/lib/date/timezone';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { fromTimestampToUTCDate } from '../containers/bookings/utils/timeHelpers';
 import { getDateKey } from './utils/bookingsHelpers';
@@ -49,6 +50,8 @@ interface BookingStore {
     bookingSlots: BookingTimeslot[];
     setBookingSlots: (bookingSlots: Omit<BookingTimeslot, 'tzDate'>[]) => void;
     filterBookingSlotPerDay: (date: Date) => BookingTimeslot[];
+    nextAvailableSlot: BookingTimeslot | null;
+    setNextAvailableSlot: (slot: Omit<BookingTimeslot, 'tzDate'>) => void;
     getDateKeySet: () => Set<string>;
 }
 
@@ -61,6 +64,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     bookingSlots: [],
     bookingDetails: null,
     selectedBookingSlot: null,
+    nextAvailableSlot: null,
 
     setLoading: (loading: boolean) => {
         set({ isLoading: loading });
@@ -88,7 +92,21 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         const newTimeSlots = [...get().bookingSlots, ...newSlots].sort((a, b) => a.startTime - b.startTime);
 
         set({
-            bookingSlots: newTimeSlots,
+            bookingSlots: uniqueBy(newTimeSlots, (slot: BookingTimeslot) => slot.id),
+        });
+    },
+
+    setNextAvailableSlot: (bookingSlot: Omit<BookingTimeslot, 'tzDate'>) => {
+        const nextAvailableSlot = {
+            ...bookingSlot,
+            tzDate: fromTimestampToUTCDate(bookingSlot.startTime, get().selectedTimezone),
+        };
+        const updatedTimeSlots = [...get().bookingSlots, nextAvailableSlot].sort((a, b) => a.startTime - b.startTime);
+
+        // Also add the next slot in bookingSlots in case it's too far in the future and not laoded by default
+        set({
+            nextAvailableSlot,
+            bookingSlots: uniqueBy(updatedTimeSlots, (slot: BookingTimeslot) => slot.id),
         });
     },
 
@@ -98,7 +116,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     },
 
     setSelectedDate: (date: Date) => {
-        set({ selectedDate: date });
+        set({ selectedDate: startOfDay(date) });
     },
 
     setSelectedBookingSlot: (slot: BookingTimeslot) => {
