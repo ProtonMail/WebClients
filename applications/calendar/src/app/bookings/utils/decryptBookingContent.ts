@@ -53,6 +53,7 @@ interface BookingContentData {
      * Whether or not the location is a proton meet link
      */
     withProtonMeetLink: boolean;
+    failedToVerify: boolean;
 }
 
 /**
@@ -98,6 +99,7 @@ export const decryptBookingContent = async ({
                 : undefined,
     });
 
+    let failedToVerify = false;
     if (
         verificationKeys &&
         verificationKeys.length > 0 &&
@@ -105,7 +107,10 @@ export const decryptBookingContent = async ({
     ) {
         // eslint-disable-next-line no-console
         console.warn({ verificationErrors });
+        failedToVerify = true;
     }
 
-    return JSON.parse(decryptedContent);
+    const data = JSON.parse(decryptedContent);
+
+    return { ...data, failedToVerify };
 };
