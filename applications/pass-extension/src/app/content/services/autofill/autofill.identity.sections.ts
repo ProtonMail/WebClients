@@ -24,7 +24,7 @@ export const resolveIdentitySections = (fields: FieldHandle[]): IdentitySection[
         if (!(identityField || emailField)) return sections;
         if (!isInputElement(field.element)) return sections;
 
-        const type = emailField ? IdentityFieldType.EMAIL : (field.identityType ?? getIdentityFieldType(field.element));
+        const type = emailField ? IdentityFieldType.EMAIL : (field.fieldSubType ?? getIdentityFieldType(field.element));
         if (type === undefined) return sections;
 
         const current = sections[sections.length - 1];

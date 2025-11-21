@@ -82,7 +82,10 @@ export const autofillIdentityFields = async (
      * detect and prevent rapid, simultaneous field autofill. The delay increases
      * for each field, mimicking human-like interaction. */
     await seq(reorderedFields, async (field) => {
-        const { identityType } = field;
+        const identityType =
+            field.fieldType === FieldType.IDENTITY || field.fieldType === FieldType.EMAIL
+                ? field.fieldSubType
+                : undefined;
 
         const prevAutofilled = field.autofilled === FieldType.IDENTITY;
         const notAutofilled = field.autofilled === null;

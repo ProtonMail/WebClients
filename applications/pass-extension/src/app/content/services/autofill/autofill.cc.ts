@@ -3,7 +3,6 @@ import type { FieldElement, FieldHandle } from 'proton-pass-extension/app/conten
 
 import {
     formatExpirationDate,
-    getCCFieldType,
     getExpirationFormat,
     getInputExpirationMonthFormat,
     getInputExpirationYearFormat,
@@ -64,9 +63,12 @@ export const CC_FIELDS_CONFIG: Record<CCFieldType, CCFieldValueExtract> = {
     [CCFieldType.NUMBER]: prop('number'),
 };
 
-export const autofillCCFields = async (fields: FieldHandle[], data: Partial<CCItemData>): Promise<CCFieldType[]> => {
+export const autofillCCFields = async (
+    fields: FieldHandle<FieldType.CREDIT_CARD>[],
+    data: Partial<CCItemData>
+): Promise<CCFieldType[]> => {
     const result = await seq(fields, async (field, autofilled): Promise<Maybe<CCFieldType>> => {
-        const ccType = getCCFieldType(field.element);
+        const ccType = field.fieldSubType;
 
         /** No match or `CCFieldType` has already been autofilled */
         if (!ccType || autofilled.includes(ccType)) return;

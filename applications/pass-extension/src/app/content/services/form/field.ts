@@ -6,10 +6,11 @@ import type { InteractivityController } from 'proton-pass-extension/app/content/
 import { createInteractivityController } from 'proton-pass-extension/app/content/services/form/field.interactivity';
 import type { IconController } from 'proton-pass-extension/app/content/services/inline/icon/icon.controller';
 import { getFrameID, getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
+import type { AbstractField } from 'proton-pass-extension/types/field';
 import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import { isVisible } from '@proton/pass/fathom';
-import type { FieldType, FormType, IdentityFieldType } from '@proton/pass/fathom/labels';
+import type { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
@@ -36,7 +37,7 @@ type CreateFieldHandlesOptions = {
 export type FieldAction = { type: DropdownAction; filterable?: boolean };
 export type FieldElement = HTMLInputElement | HTMLSelectElement;
 
-export interface FieldHandle extends FrameField {
+interface FieldHandleBase extends FrameField {
     /** action attached for this field */
     action: MaybeNull<FieldAction>;
     actionPrevented: boolean;
@@ -46,16 +47,12 @@ export interface FieldHandle extends FrameField {
     autofilled: MaybeNull<FieldType>;
     /** underlying input element */
     element: FieldElement;
-    /** predicted field type */
-    fieldType: FieldType;
     /** optional `IconHandle` if attached */
     icon: MaybeNull<IconController>;
     /** InteractivityController exposed for autofill sequences */
     interactivity: InteractivityController;
     /** optional form section index */
     sectionIndex?: number;
-    /** optional identity field sub-type */
-    identityType?: IdentityFieldType;
     /** flag indicating event listeners have been registered */
     tracked: boolean;
     /** Attached field tracker instance */
@@ -77,6 +74,11 @@ export interface FieldHandle extends FrameField {
     setValue: (value: string) => void;
     sync: () => void;
 }
+
+export type FieldHandle<T extends FieldType = FieldType> = Extract<
+    { [K in FieldType]: FieldHandleBase & AbstractField<K> }[FieldType],
+    { fieldType: T }
+>;
 
 const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, action) => {
     const features = ctx?.getFeatures();
