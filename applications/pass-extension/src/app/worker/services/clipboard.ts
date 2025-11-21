@@ -1,6 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
-import { setupOffscreenDocument } from 'proton-pass-extension/app/worker/offscreen/offscreen.utils';
+import { withOffscreenDocument } from 'proton-pass-extension/app/worker/offscreen/offscreen.utils';
 import { backgroundMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { createExtensionAlarm } from 'proton-pass-extension/lib/utils/alarm';
 import { CLIPBOARD_PERMISSIONS } from 'proton-pass-extension/lib/utils/permissions';
@@ -44,11 +44,13 @@ export const extensionClipboardApi: ClipboardApi = {
 
         if (BUILD_TARGET === 'chrome') {
             try {
-                await setupOffscreenDocument(CLIPBOARD_OFFSCREEN_PATH);
-                return await sendMessage.on(
-                    backgroundMessage({ type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ }),
-                    (res) => (res.type === 'success' ? res.content : Promise.reject())
-                );
+                return await withOffscreenDocument(CLIPBOARD_OFFSCREEN_PATH, async () => {
+                    const message = backgroundMessage({ type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ });
+                    message.receiver = 'offscreen';
+                    const res = await sendMessage(message);
+                    if (res.type !== 'success') throw new Error('Offscreen read failure');
+                    return res.content;
+                });
             } catch {
                 logger.debug('[Clipboard] Failed to read using offscreen document');
             }
@@ -76,11 +78,16 @@ export const extensionClipboardApi: ClipboardApi = {
 
         if (BUILD_TARGET === 'chrome') {
             try {
-                await setupOffscreenDocument(CLIPBOARD_OFFSCREEN_PATH);
-                return await sendMessage.on(
-                    backgroundMessage({ type: WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, payload: { content } }),
-                    (res) => (res.type === 'error' ? Promise.reject() : undefined)
-                );
+                return await withOffscreenDocument(CLIPBOARD_OFFSCREEN_PATH, async () => {
+                    const message = backgroundMessage({
+                        type: WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE,
+                        payload: { content },
+                    });
+
+                    message.receiver = 'offscreen';
+                    const res = await sendMessage(message);
+                    if (res.type !== 'success') throw new Error('Offscreen write failure');
+                });
             } catch {
                 logger.debug('[Clipboard] Failed to write clipboard using offscreen document');
             }
