@@ -143,7 +143,7 @@ export const BookingSuccess = () => {
                     <p className="my-6">
                         <ButtonLike
                             as="a"
-                            href="https://account.proton.me/"
+                            href="https://account.proton.me/signup?ref=booking-success"
                             pill
                             shape="solid"
                             color="norm"
