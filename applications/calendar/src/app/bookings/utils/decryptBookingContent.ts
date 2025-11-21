@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { CryptoProxy, type PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 
 import { deriveBookingKeyPassword } from '../../containers/bookings/utils/crypto/bookingEncryption';
@@ -84,9 +82,7 @@ export const decryptBookingContent = async ({
     verificationKeys,
 }: DecryptBookingContentParams): Promise<BookingContentData> => {
     const salt = Uint8Array.fromBase64(bookingKeySalt);
-    const bookingKeyPassword = (
-        await deriveBookingKeyPassword(calendarId, bookingSecretBytes, salt)
-    ).toBase64();
+    const bookingKeyPassword = (await deriveBookingKeyPassword(calendarId, bookingSecretBytes, salt)).toBase64();
 
     const {
         data: decryptedContent,
@@ -102,11 +98,13 @@ export const decryptBookingContent = async ({
                 : undefined,
     });
 
-    if (verificationKeys && verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-        //TODO: Improve verification error handling
+    if (
+        verificationKeys &&
+        verificationKeys.length > 0 &&
+        verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
+    ) {
         // eslint-disable-next-line no-console
         console.warn({ verificationErrors });
-        throw new Error(c('Error').t`Content verification failed`);
     }
 
     return JSON.parse(decryptedContent);
