@@ -4,6 +4,12 @@ import type { SquashVerificationObjectionDecision } from '../Types/SquashVerific
 export enum ApplicationEvent {
   SquashVerificationObjectionDecisionMade = 'SquashVerificationObjectionDecisionMade',
   GeneralUserDisplayableErrorOccurred = 'GeneralUserDisplayableErrorOccurred',
+  GenericInfo = 'GenericInfo',
+}
+
+export type GenericInfoEventPayload = {
+  title: string
+  translatedMessage: string
 }
 
 export type DocsClientSquashVerificationObjectionMadePayload = {

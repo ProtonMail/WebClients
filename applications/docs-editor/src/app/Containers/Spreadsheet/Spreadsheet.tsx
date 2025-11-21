@@ -37,6 +37,7 @@ import { Dialogs } from './components/Dialogs/Dialogs'
 import { Sidebar } from './components/Sidebar/Sidebar'
 import { useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { useActiveBreakpoint } from '@proton/components'
+import { EditingDisabledDialog } from './components/EditingDisabledViews'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -248,7 +249,7 @@ function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublic
         />
       )}
       <div className="flex h-full min-h-0 w-full min-w-0 bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
-        <div className="flex h-full grow flex-col">
+        <div className="relative flex h-full min-h-0 grow flex-col">
           {!isRevisionMode && (
             <>
               <Menubar
@@ -256,12 +257,13 @@ function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublic
                 clientInvoker={clientInvoker}
                 isPublicMode={isPublicMode}
               />
-              <Toolbar className="m-2" />
+              <Toolbar className="m-2 max-sm:m-0" clientInvoker={clientInvoker} />
             </>
           )}
           <LegacyGrid />
           <OldBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
           <Dialogs />
+          <EditingDisabledDialog clientInvoker={clientInvoker} />
         </div>
         <Sidebar />
       </div>
