@@ -4,9 +4,9 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useBeforeUnload, useDrawerWidth } from '@proton/components';
+import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
-import { useUploadQueueStore } from '../../zustand/upload/uploadQueue.store';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
 import { TransferManagerList } from './transferManagerList/transferManagerList';
 import { useTransferManagerActions } from './useTransferManagerActions';
@@ -21,23 +21,25 @@ export const TransferManager = () => {
     const drawerWidth = useDrawerWidth();
     const [leaveMessage, setLeaveMessage] = useState('');
     useBeforeUnload(leaveMessage);
-    const { pendingConflict } = useUploadQueueStore(
+    const { hasPendingConflicts, firstConflictItem } = useUploadQueueStore(
         useShallow((state) => ({
-            pendingConflict: state.getFirstPendingConflict(),
+            hasPendingConflicts: state.getHasPendingConflicts(),
+            firstConflictItem: state.firstConflictItem,
         }))
     );
 
     const [uploadConflictModal, showUploadConflictModal] = useUploadConflictModal();
     useEffect(() => {
-        if (pendingConflict) {
+        if (hasPendingConflicts && firstConflictItem) {
             showUploadConflictModal({
-                name: pendingConflict.name,
-                nodeType: pendingConflict.nodeType,
-                conflictType: pendingConflict.conflictType,
-                onResolve: pendingConflict.resolve,
+                name: firstConflictItem.name,
+                nodeType: firstConflictItem.nodeType,
+                conflictType: firstConflictItem.conflictType,
+                onResolve: (strategy, applyToAll) =>
+                    uploadManager.resolveConflict(firstConflictItem.uploadId, strategy, applyToAll),
             });
         }
-    }, [pendingConflict, showUploadConflictModal]);
+    }, [hasPendingConflicts, firstConflictItem, showUploadConflictModal]);
 
     useEffect(() => {
         if (status === TransferManagerStatus.InProgress || status === TransferManagerStatus.Failed) {

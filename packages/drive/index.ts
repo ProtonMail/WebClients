@@ -6,7 +6,7 @@ import type { LogHandler } from '@protontech/drive-sdk/dist/telemetry';
 // TODO: Remove that when sdk will be transpile with bun
 import 'core-js/actual/array/from-async';
 
-import { useLocalState } from '@proton/components';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';

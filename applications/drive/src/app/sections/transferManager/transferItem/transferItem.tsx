@@ -6,6 +6,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Icon } from '@proton/components/index';
+import { UploadStatus } from '@proton/drive/modules/upload';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
@@ -14,7 +15,6 @@ import {
     DownloadStatus,
     useDownloadManagerStore,
 } from '../../../zustand/download/downloadManager.store';
-import { UploadStatus } from '../../../zustand/upload/uploadQueue.store';
 import { useTransferManagerActions } from '../useTransferManagerActions';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 

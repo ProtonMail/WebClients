@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { NodeType } from '@proton/drive';
+import { UploadConflictStrategy, UploadConflictType } from '@proton/drive/modules/upload';
 
-import { UploadConflictStrategy, UploadConflictType } from '../../zustand/upload/types';
 import { useUploadConflictModalState } from './useUploadConflictModalState';
 
 describe('useUploadConflictModalState', () => {

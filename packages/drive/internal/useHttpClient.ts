@@ -7,7 +7,7 @@ import type {
 } from '@protontech/drive-sdk';
 import { AbortError } from '@protontech/drive-sdk';
 
-import { useApi } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 

@@ -2,6 +2,7 @@ import type { DriveEvent } from '@protontech/drive-sdk';
 import type { EventSubscription } from '@protontech/drive-sdk/dist/internal/events/interface';
 
 import { DriveEventType, getDrive } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { sendErrorReport } from '../errorHandling';
@@ -257,6 +258,20 @@ class ActionEventManager {
         const drive = getDrive();
         const subscription = drive.subscribeToTreeEvents(treeEventScopeId, async (event: DriveEvent) => {
             await this.handleSdkEvent(event);
+        });
+        // TODO: This is probably the worst place to put this, but I need advice to move it
+        uploadManager.onUploadEvent(async (event) => {
+            if (event.type === 'file:complete' && event.isUpdatedNode) {
+                await this.emit({
+                    type: ActionEventName.UPDATED_NODES,
+                    items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
+                });
+            } else if (event.type === 'file:complete' || event.type === 'folder:complete') {
+                await this.emit({
+                    type: ActionEventName.CREATED_NODES,
+                    items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
+                });
+            }
         });
 
         this.treeEventSubscriptions.set(treeEventScopeId, {

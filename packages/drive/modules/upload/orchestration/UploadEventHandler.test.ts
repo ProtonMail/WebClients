@@ -1,0 +1,309 @@
+import { NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
+
+import type { CapacityManager } from '../scheduling/CapacityManager';
+import { useUploadControllerStore } from '../store/uploadController.store';
+import { useUploadQueueStore } from '../store/uploadQueue.store';
+import { UploadStatus } from '../types';
+import type { ConflictManager } from './ConflictManager';
+import type { SDKTransferActivity } from './SDKTransferActivity';
+import { UploadEventHandler } from './UploadEventHandler';
+
+jest.mock('../store/uploadController.store');
+jest.mock('../store/uploadQueue.store');
+
+describe('UploadEventHandler', () => {
+    let handler: UploadEventHandler;
+    let mockCapacityManager: jest.Mocked<CapacityManager>;
+    let mockConflictManager: jest.Mocked<ConflictManager>;
+    let mockSDKTransferActivity: jest.Mocked<SDKTransferActivity>;
+    let mockCancelFolderChildren: jest.Mock;
+    let mockUpdateQueueItems: jest.Mock;
+    let mockSetController: jest.Mock;
+    let mockRemoveController: jest.Mock;
+    let mockCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+
+        mockUpdateQueueItems = jest.fn();
+        mockSetController = jest.fn();
+        mockRemoveController = jest.fn();
+        mockCheckAndUnsubscribeIfQueueEmpty = jest.fn();
+        mockCancelFolderChildren = jest.fn();
+
+        jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+            updateQueueItems: mockUpdateQueueItems,
+        } as any);
+
+        jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+            setController: mockSetController,
+            removeController: mockRemoveController,
+        } as any);
+
+        mockCapacityManager = {
+            updateProgress: jest.fn(),
+        } as any;
+
+        mockConflictManager = {
+            handleConflict: jest.fn(),
+        } as any;
+
+        mockSDKTransferActivity = {
+            isPaused: jest.fn().mockReturnValue(false),
+            checkAndUnsubscribeIfQueueEmpty: mockCheckAndUnsubscribeIfQueueEmpty,
+        } as any;
+
+        handler = new UploadEventHandler(
+            mockCapacityManager,
+            mockConflictManager,
+            mockSDKTransferActivity,
+            mockCancelFolderChildren
+        );
+    });
+
+    describe('handleEvent - file:started', () => {
+        it('should set controller for started file', async () => {
+            const mockUploadController = {} as any;
+            const mockAbortController = new AbortController();
+            const event = {
+                type: 'file:started' as const,
+                uploadId: 'task123',
+                controller: mockUploadController,
+                abortController: mockAbortController,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockSetController).toHaveBeenCalledWith('task123', {
+                uploadController: mockUploadController,
+                abortController: mockAbortController,
+            });
+        });
+    });
+
+    describe('handleEvent - file:progress', () => {
+        it('should update progress when not paused', async () => {
+            const event = {
+                type: 'file:progress' as const,
+                uploadId: 'task123',
+                uploadedBytes: 500,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                uploadedBytes: 500,
+            });
+            expect(mockCapacityManager.updateProgress).toHaveBeenCalledWith('task123', 500);
+        });
+
+        it('should not update progress when paused', async () => {
+            mockSDKTransferActivity.isPaused.mockReturnValue(true);
+            const event = {
+                type: 'file:progress' as const,
+                uploadId: 'task123',
+                uploadedBytes: 500,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).not.toHaveBeenCalled();
+            expect(mockCapacityManager.updateProgress).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('handleEvent - file:complete', () => {
+        it('should mark file as finished and remove controller', async () => {
+            const event = {
+                type: 'file:complete' as const,
+                uploadId: 'task123',
+                nodeUid: 'node456',
+                parentUid: 'parent123',
+                isUpdatedNode: true,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Finished,
+                nodeUid: 'node456',
+            });
+            expect(mockRemoveController).toHaveBeenCalledWith('task123');
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+    });
+
+    describe('handleEvent - file:error', () => {
+        it('should mark file as failed and remove controller', async () => {
+            const error = new Error('Upload failed');
+            const event = {
+                type: 'file:error' as const,
+                uploadId: 'task123',
+                error,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Failed,
+                error,
+            });
+            expect(mockRemoveController).toHaveBeenCalledWith('task123');
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+    });
+
+    describe('handleEvent - file:conflict', () => {
+        it('should delegate to conflict manager', async () => {
+            const error = new NodeWithSameNameExistsValidationError('node123', 400);
+            const event = {
+                type: 'file:conflict' as const,
+                uploadId: 'task123',
+                error,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockConflictManager.handleConflict).toHaveBeenCalledWith('task123', error);
+        });
+    });
+
+    describe('handleEvent - folder:complete', () => {
+        it('should mark folder as finished', async () => {
+            const event = {
+                type: 'folder:complete' as const,
+                uploadId: 'task123',
+                nodeUid: 'node456',
+                parentUid: 'parent123',
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Finished,
+                nodeUid: 'node456',
+            });
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+    });
+
+    describe('handleEvent - folder:error', () => {
+        it('should mark folder as failed and cancel children', async () => {
+            const error = new Error('Folder creation failed');
+            const event = {
+                type: 'folder:error' as const,
+                uploadId: 'task123',
+                error,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Failed,
+                error,
+            });
+            expect(mockCancelFolderChildren).toHaveBeenCalledWith('task123');
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+    });
+
+    describe('handleEvent - folder:conflict', () => {
+        it('should delegate to conflict manager', async () => {
+            const error = new NodeWithSameNameExistsValidationError('node123', 400);
+            const event = {
+                type: 'folder:conflict' as const,
+                uploadId: 'task123',
+                error,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockConflictManager.handleConflict).toHaveBeenCalledWith('task123', error);
+        });
+    });
+
+    describe('event sequencing', () => {
+        it('should handle file upload lifecycle', async () => {
+            const mockController = {} as any;
+            const mockAbortController = new AbortController();
+
+            await handler.handleEvent({
+                type: 'file:started',
+                uploadId: 'task123',
+                controller: mockController,
+                abortController: mockAbortController,
+            });
+
+            await handler.handleEvent({
+                type: 'file:progress',
+                uploadId: 'task123',
+                uploadedBytes: 500,
+            });
+
+            await handler.handleEvent({
+                type: 'file:progress',
+                uploadId: 'task123',
+                uploadedBytes: 1000,
+            });
+
+            await handler.handleEvent({
+                type: 'file:complete',
+                uploadId: 'task123',
+                nodeUid: 'node456',
+                parentUid: 'parent123',
+                isUpdatedNode: false,
+            });
+
+            expect(mockSetController).toHaveBeenCalledTimes(1);
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(3);
+            expect(mockCapacityManager.updateProgress).toHaveBeenCalledTimes(2);
+            expect(mockRemoveController).toHaveBeenCalledTimes(1);
+        });
+
+        it('should handle file upload with error', async () => {
+            const mockController = {} as any;
+            const mockAbortController = new AbortController();
+            const error = new Error('Upload failed');
+
+            await handler.handleEvent({
+                type: 'file:started',
+                uploadId: 'task123',
+                controller: mockController,
+                abortController: mockAbortController,
+            });
+
+            await handler.handleEvent({
+                type: 'file:progress',
+                uploadId: 'task123',
+                uploadedBytes: 500,
+            });
+
+            await handler.handleEvent({
+                type: 'file:error',
+                uploadId: 'task123',
+                error,
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Failed,
+                error,
+            });
+            expect(mockRemoveController).toHaveBeenCalled();
+        });
+
+        it('should handle folder creation lifecycle', async () => {
+            await handler.handleEvent({
+                type: 'folder:complete',
+                uploadId: 'folder123',
+                nodeUid: 'folderNode456',
+                parentUid: 'parent123',
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('folder123', {
+                status: UploadStatus.Finished,
+                nodeUid: 'folderNode456',
+            });
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+    });
+});
