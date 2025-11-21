@@ -282,7 +282,7 @@ class KeyManagementApi {
      * @param options.date - use the given date as creation date of the key and the key signatures, instead of the server time
      * @returns reference to the generated private key
      */
-    async generateKey<CustomConfig extends { v6Keys?: boolean } | undefined = {}>(
+    async generateKey<CustomConfig extends { v6Keys?: boolean; aeadProtect?: boolean } | undefined = {}>(
         options: WorkerGenerateKeyOptions<CustomConfig>
     ) {
         const { privateKey } = await generateKey({
