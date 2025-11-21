@@ -161,34 +161,28 @@ export const encryptBookingPage = async ({
 
     const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, secretBytes, salt)).toBase64();
     const bookingUid = (await deriveBookingUid(secretBytes)).toBase64();
-
     const calendarPublicKeys = calendarKeys.map(({ publicKey }) => publicKey);
-    const Slots: BookingPageSlotsPayload[] = await encryptBookingSlots(
-        formData,
-        bookingUid,
-        bookingKeyPassword,
-        signingKeys,
-        calendarPublicKeys
-    );
 
-    const encryptedContent = await encryptBookingData(formData, bookingKeyPassword, bookingUid, signingKeys);
-
-    const { message: encryptedSecret } = await CryptoProxy.encryptMessage({
-        binaryData: secretBytes,
-        encryptionKeys: encryptionKey,
-        signingKeys: signingKeys,
-        format: 'binary',
-        signatureContext: {
-            value: bookingSecretSignatureContextValue(calendarID),
-            critical: true,
-        },
-    });
+    const [Slots, encryptedContent, encryptedSecret] = await Promise.all([
+        encryptBookingSlots(formData, bookingUid, bookingKeyPassword, signingKeys, calendarPublicKeys),
+        encryptBookingData(formData, bookingKeyPassword, bookingUid, signingKeys),
+        CryptoProxy.encryptMessage({
+            binaryData: secretBytes,
+            encryptionKeys: encryptionKey,
+            signingKeys: signingKeys,
+            format: 'binary',
+            signatureContext: {
+                value: bookingSecretSignatureContextValue(calendarID),
+                critical: true,
+            },
+        }),
+    ]);
 
     return {
         BookingUID: bookingUid,
         BookingLink: createBookingLink(secretBytes),
         BookingKeySalt: salt.toBase64(),
-        EncryptedSecret: encryptedSecret.toBase64(),
+        EncryptedSecret: encryptedSecret.message.toBase64(),
         EncryptedContent: encryptedContent.toBase64(),
         Slots,
     };
@@ -211,26 +205,28 @@ export const encryptBookingPageEdition = async ({
 }) => {
     const saltBytes = Uint8Array.fromBase64(editData.bookingKeySalt);
     const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, decryptedSecret, saltBytes)).toBase64();
+
     const bookingID = (await deriveBookingUid(decryptedSecret)).toBase64();
-
-    const encryptedContent = await CryptoProxy.encryptMessage({
-        textData: JSONFormatData({
-            description: updateData.description,
-            location: updateData.location,
-            summary: updateData.summary,
-            withProtonMeetLink: updateData.locationType === BookingLocation.MEET,
-        }),
-        passwords: bookingKeyPassword,
-        signingKeys: signingKeys,
-        format: 'binary',
-        signatureContext: {
-            critical: true,
-            value: bookingContentSignatureContextValue(bookingID),
-        },
-    });
-
     const calendarPublicKeys = calendarKeys.map(({ publicKey }) => publicKey);
-    const Slots = await encryptBookingSlots(updateData, bookingID, bookingKeyPassword, signingKeys, calendarPublicKeys);
+
+    const [Slots, encryptedContent] = await Promise.all([
+        encryptBookingSlots(updateData, bookingID, bookingKeyPassword, signingKeys, calendarPublicKeys),
+        CryptoProxy.encryptMessage({
+            textData: JSONFormatData({
+                description: updateData.description,
+                location: updateData.location,
+                summary: updateData.summary,
+                withProtonMeetLink: updateData.locationType === BookingLocation.MEET,
+            }),
+            passwords: bookingKeyPassword,
+            signingKeys: signingKeys,
+            format: 'binary',
+            signatureContext: {
+                critical: true,
+                value: bookingContentSignatureContextValue(bookingID),
+            },
+        }),
+    ]);
 
     return {
         EncryptedContent: encryptedContent.message.toBase64(),
