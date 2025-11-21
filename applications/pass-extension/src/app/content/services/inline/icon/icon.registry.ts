@@ -10,7 +10,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { MaybeNull } from '@proton/pass/types';
-import { createStyleParser, pixelParser } from '@proton/pass/utils/dom/computed-styles';
+import { createStyleParser, getOffsetLeft, getOffsetTop } from '@proton/pass/utils/dom/computed-styles';
 import { getNthParent } from '@proton/pass/utils/dom/tree';
 import noop from '@proton/utils/noop';
 
@@ -46,10 +46,11 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
                     const rect = target.getBoundingClientRect();
                     const anchor = getNthParent(target, 2);
                     const parser = createStyleParser(target);
-                    const pl = parser('padding-left', pixelParser);
-                    const pt = parser('padding-top', pixelParser);
-                    const x = payload.left + rect.left + pl;
-                    const y = payload.top + rect.top + pt;
+                    const offsetX = getOffsetLeft(parser);
+                    const offsetY = getOffsetTop(parser);
+
+                    const x = payload.left + rect.left + offsetX;
+                    const y = payload.top + rect.top + offsetY;
                     const { maxWidth, radius } = payload;
                     const dx = computeIconShift({ x, y, maxWidth, radius, anchor });
                     sendResponse({ dx });

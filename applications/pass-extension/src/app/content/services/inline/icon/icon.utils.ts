@@ -51,7 +51,6 @@ export type IconStyles = {
 type FieldOverrides = { ['padding-right']?: string };
 
 const FLICKER_TRESHOLD = 2;
-const OVERLAY_OFFSET = 1;
 const MAX_OVERLAY_CHECKS = 2;
 /** Calculates the maximum horizontal shift required for injected elements.
  * Determines the optimal positioning to avoid overlap with existing elements */
@@ -100,7 +99,24 @@ export const computeIconShift = (
          * becomes standard. Right now, some browsers return only the shadow root elements
          * present at that location. Other browsers include elements outside of the shadow DOM,
          * from the shadow DOM element in the topmost layer to the document root node. */
-        const overlays = document.elementsFromPoint(x + OVERLAY_OFFSET, y + OVERLAY_OFFSET);
+
+        /** We trace a diagonal across the icon to hit-test at top-left and bottom-right,
+         * accounting for the icon's radius from its center point. This diagonal sampling
+         * ensures we don't miss underlying elements that might only be present at the
+         * icon's edges rather than its center.
+         *
+         *  ____________
+         * |            |
+         * |    ↖       | (x-offset, y-offset)
+         * |      x     | (x, y) center
+         * |        ↘   | (x+offset, y+offset)
+         * |____________|
+         */
+        const offset = Math.max(options.radius / 2);
+        const overlaysLeft = document.elementsFromPoint(x - offset, y - offset);
+        const overlaysRight = document.elementsFromPoint(x + offset, y + offset);
+        const overlays = overlaysLeft.length > overlaysRight.length ? overlaysLeft : overlaysRight;
+
         let maxDx: number = 0;
 
         const skip = new Set();
