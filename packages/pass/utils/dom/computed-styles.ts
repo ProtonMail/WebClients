@@ -28,7 +28,7 @@ export const pixelTransformer = (value: string, transformer: (value: number) => 
 
 const getOffsetFor = (dir: 'top' | 'left' | 'bottom' | 'right') => (parser: StyleParser) => {
     const padding = parser(`padding-${dir}`, pixelParser);
-    const border = parser(`border-${dir}`, pixelParser);
+    const border = parser(`border-${dir}-width`, pixelParser);
     return padding + border;
 };
 
