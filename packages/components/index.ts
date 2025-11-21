@@ -829,7 +829,6 @@ export { default as useNotifications } from './hooks/useNotifications';
 export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
 export { default as usePreventCloseTab } from './hooks/usePreventCloseTab';
 export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePreventLeave';
-export { default as useProgressiveRollout } from './hooks/useProgressiveRollout';
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
