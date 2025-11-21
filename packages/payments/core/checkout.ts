@@ -18,7 +18,7 @@ import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from
 import type { Plan, PlansMap } from './plan/interface';
 import { INCLUDED_IP_PRICING, getPrice, getPricingPerMember } from './price-helpers';
 import { SubscriptionMode } from './subscription/constants';
-import { customCycles } from './subscription/helpers';
+import { customCycles, getHas2025OfferCoupon } from './subscription/helpers';
 import type { EnrichedCheckResponse, Subscription, SubscriptionCheckResponse } from './subscription/interface';
 import { isValidPlanName } from './type-guards';
 
@@ -353,4 +353,16 @@ export const getOptimisticCheckout = (params: Parameters<typeof getOptimisticChe
 
 export const getIsCustomCycle = (cycle: CYCLE) => {
     return customCycles.includes(cycle);
+};
+
+export const isBF2025Offer = ({
+    coupon,
+    planIDs,
+    cycle,
+}: {
+    coupon: string | undefined | null;
+    planIDs: PlanIDs;
+    cycle: CYCLE;
+}): boolean => {
+    return getHas2025OfferCoupon(coupon) || (!!planIDs[PLANS.VPN2024] && cycle === CYCLE.FIFTEEN);
 };

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { CYCLE, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/payments';
+import type { CYCLE, PLANS, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/payments';
 import type { StrictRequired } from '@proton/shared/lib/interfaces';
 
 export type CouponConfigProps = {
@@ -20,6 +20,15 @@ export type CouponConfig = {
      * The coupon codes that trigger this config.
      */
     coupons: string | string[];
+
+    /**
+     * If the config matches any of the special cases, then it will be considered a campaign config as well. Example:
+     * for BF2025 we wanted to enable vpn2024 15m deal WITHOUT any coupon code. So this was the ad-hoc solution.
+     */
+    specialCases?: {
+        planName: PLANS;
+        cycle: CYCLE;
+    }[];
     /**
      * If set to true then the coupon will not be displayed in the UI. It hides the coupon and "coupon discount" number.
      * In addition, it changes the displayed price per user and total. These amounts now include the discount.
