@@ -37,14 +37,7 @@ export type OfferId =
     | 'black-friday-2025-lumo-plus-monthly'
     | 'go-unlimited-2022'
     | 'mail-trial-2023'
-    | 'pass-family-plan-2024-yearly'
-    | 'anniversary-2025-bundle'
-    | 'anniversary-2025-duo'
-    | 'anniversary-2025-family'
-    | 'anniversary-2025-mail-plus'
-    | 'anniversary-2025-drive-plus'
-    | 'anniversary-2025-pass-plus'
-    | 'anniversary-2025-vpn-plus';
+    | 'pass-family-plan-2024-yearly';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
