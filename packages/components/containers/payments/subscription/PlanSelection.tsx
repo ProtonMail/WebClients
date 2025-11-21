@@ -263,22 +263,10 @@ export function useAccessiblePlans({
 
     let IndividualPlans: (Plan | ShortPlanLike)[] = [];
 
-    const driveIndividualPlans = filterPlans([
-        hasFreePlan ? FREE_PLAN : null,
-        plansMap[PLANS.DRIVE],
-        plansMap[PLANS.BUNDLE],
-        plansMap[PLANS.DUO],
-    ]);
-
     const walletIndividualPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.VISIONARY]]);
-
-    const isDriveIndividualPlans = isDriveSettingsApp && driveIndividualPlans.length !== 0;
     const isWalletIndividualPlans = isWalletSettingsApp && walletIndividualPlans.length !== 0;
 
-    // Update IndividualPlans to use Drive-specific plans when in Drive settings app
-    if (isDriveIndividualPlans) {
-        IndividualPlans = driveIndividualPlans;
-    } else if (isWalletIndividualPlans) {
+    if (isWalletIndividualPlans) {
         IndividualPlans = walletIndividualPlans;
     } else {
         const plusPlan =
