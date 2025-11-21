@@ -7,9 +7,9 @@ import {
     type FreeSubscription,
     type PlanIDs,
     type Subscription,
+    getNormalCycleFromCustomCycle,
     isFreeSubscription,
 } from '@proton/payments';
-import { getNormalCycleFromCustomCycle } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 
