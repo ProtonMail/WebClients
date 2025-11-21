@@ -7,6 +7,7 @@ import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
 import './ParticipantSidebar.scss';
@@ -20,7 +21,11 @@ export const ParticipantSidebar = ({
 }) => {
     const [isParticipantSidebarHovered, setIsParticipantSidebarHovered] = useState(false);
 
-    const { pagedParticipants } = useMeetContext();
+    const { pagedParticipants, pagedParticipantsWithoutSelfView } = useMeetContext();
+
+    const { selfView } = useUIStateContext();
+
+    const participants = selfView ? pagedParticipants : pagedParticipantsWithoutSelfView;
 
     return (
         <div
@@ -54,7 +59,7 @@ export const ParticipantSidebar = ({
             )}
             {participantSideBarOpen && (
                 <div className="h-full flex items-start flex-column">
-                    {pagedParticipants.map((participant) => {
+                    {participants.map((participant) => {
                         return (
                             <div
                                 key={participant.identity}
