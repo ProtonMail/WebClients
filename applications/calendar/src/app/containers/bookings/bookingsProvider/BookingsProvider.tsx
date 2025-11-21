@@ -2,6 +2,7 @@ import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import { areIntervalsOverlapping, isWithinInterval } from 'date-fns';
+import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
@@ -14,7 +15,7 @@ import useFlag from '@proton/unleash/useFlag';
 import { splitTimeGridEventsPerDay } from '../../../components/calendar/splitTimeGridEventsPerDay';
 import { useCalendarDispatch } from '../../../store/hooks';
 import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
-import { createNewBookingPage } from '../../../store/internalBooking/internalBookingActions';
+import { createNewBookingPage, editBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
 import { serializeFormData } from '../utils/form/formHelpers';
@@ -269,6 +270,12 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                         },
                     },
                 });
+            }
+
+            if (bookingsState === BookingState.EDIT_EXISTING) {
+                await dispatch(editBookingPage(serializedFormData));
+                createNotification({ text: c('Info').t`Booking updated successfully` });
+                setBookingsState(BookingState.OFF);
             }
         } catch (error) {
             throw error;

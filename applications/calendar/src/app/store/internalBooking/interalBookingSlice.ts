@@ -20,7 +20,7 @@ import { BookingLocation } from '../../containers/bookings/bookingsProvider/inte
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
 import { bookingSecretSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
-import { createNewBookingPage, loadBookingPage } from './internalBookingActions';
+import { createNewBookingPage, editBookingPage, loadBookingPage } from './internalBookingActions';
 
 const name = 'internalBookings' as const;
 interface InternalBookingState extends CalendarsState, AddressKeysState, KtState {
@@ -153,11 +153,7 @@ const slice = createSlice({
         });
 
         builder.addCase(createNewBookingPage.fulfilled, (state, { payload }) => {
-            if (!state.value) {
-                return;
-            }
-
-            if (!payload?.bookingPage) {
+            if (!state.value || !payload?.bookingPage) {
                 return;
             }
 
@@ -172,6 +168,32 @@ const slice = createSlice({
                 link: payload.bookingLink,
             };
             state.value.bookingPages = [...state.value.bookingPages, newBookingPage];
+        });
+
+        builder.addCase(editBookingPage.fulfilled, (state, { payload }) => {
+            if (!state.value || !payload?.bookingPage) {
+                return;
+            }
+
+            const currentBookingPage = state.value.bookingPages.find((page) => page.id === payload.bookingPage.ID);
+            if (!currentBookingPage) {
+                return;
+            }
+
+            const editedPage: InternalBookingPage = {
+                id: payload.bookingPage.ID,
+                bookingUID: payload.bookingPage.BookingUID,
+                calendarID: payload.bookingPage.CalendarID,
+                summary: payload.initialBookingPage.summary,
+                description: payload.initialBookingPage.description,
+                location: payload.initialBookingPage.location,
+                withProtonMeetLink: payload.initialBookingPage.locationType === BookingLocation.MEET,
+                link: currentBookingPage.link,
+            };
+
+            state.value.bookingPages = state.value.bookingPages.map((page) =>
+                page.id === editedPage.id ? editedPage : page
+            );
         });
     },
 });

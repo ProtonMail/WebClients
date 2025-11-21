@@ -1,3 +1,5 @@
+import type { BookingPageEditData } from 'applications/calendar/src/app/store/internalBooking/interface';
+
 import { CryptoProxy, type PublicKeyReference, type SessionKey } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type {
@@ -215,5 +217,43 @@ export const encryptBookingPage = async ({
         EncryptedSecret: encryptedSecret.toBase64(),
         EncryptedContent: encryptedContent.toBase64(),
         Slots,
+    };
+};
+
+export const encryptBookingPageEdition = async ({
+    editData,
+    calendarID,
+    updateData,
+    signingKeys,
+    decryptedSecret,
+}: {
+    editData: BookingPageEditData;
+    calendarID: string;
+    updateData: SerializedFormData;
+    signingKeys: PrimaryAddressKeysForSigning;
+    decryptedSecret: Uint8Array<ArrayBuffer>;
+}) => {
+    const saltBytes = Uint8Array.fromBase64(editData.bookingKeySalt);
+    const bookingKeyPassword = (await deriveBookingKeyPassword(calendarID, decryptedSecret, saltBytes)).toBase64();
+    const bookingID = await deriveBookingUid(decryptedSecret);
+
+    const encryptedContent = await CryptoProxy.encryptMessage({
+        textData: JSONFormatData({
+            description: updateData.description,
+            location: updateData.location,
+            summary: updateData.summary,
+            withProtonMeetLink: updateData.locationType === BookingLocation.MEET,
+        }),
+        passwords: bookingKeyPassword,
+        signingKeys: signingKeys,
+        format: 'binary',
+        signatureContext: {
+            critical: true,
+            value: bookingContentSignatureContextValue(bookingID.toBase64()),
+        },
+    });
+
+    return {
+        EncryptedContent: encryptedContent.message.toBase64(),
     };
 };

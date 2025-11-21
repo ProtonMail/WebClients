@@ -17,6 +17,12 @@ export interface BookingPageCreationPayload {
     Slots: BookingPageSlotsPayload[];
 }
 
+export interface BookingPageEditPayload {
+    EncryptedContent: string;
+    // TODO define this
+    Slots: any[];
+}
+
 export interface ExternalBookingPageSlotsPayload {
     ID: string;
     StartTime: number;

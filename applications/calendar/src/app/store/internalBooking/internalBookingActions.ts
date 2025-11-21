@@ -1,14 +1,19 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
+import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
 import { getDecryptedPassphraseAndCalendarKeysThunk } from '@proton/calendar/calendarBootstrap/keys';
-import { createBookingPage, getBookingPageDetails } from '@proton/shared/lib/api/calendarBookings';
+import { createBookingPage, getBookingPageDetails, updateBookingPage } from '@proton/shared/lib/api/calendarBookings';
 
 import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
-import { encryptBookingPage } from '../../containers/bookings/utils/crypto/bookingEncryption';
+import { decryptBookingPageSecrets } from '../../containers/bookings/utils/crypto/bookingDecryption';
+import {
+    encryptBookingPage,
+    encryptBookingPageEdition,
+} from '../../containers/bookings/utils/crypto/bookingEncryption';
 import type { CalendarThunkExtra } from '../store';
-import type { BookingPageCreationReturn, BookingPageEditData } from './interface';
+import type { BookingPageCreationReturn, BookingPageEditData, BookingPageEditionReturn } from './interface';
 
 export const loadBookingPage = createAsyncThunk<BookingPageEditData, string, CalendarThunkExtra>(
     'internalBookings/loadPage',
@@ -19,6 +24,7 @@ export const loadBookingPage = createAsyncThunk<BookingPageEditData, string, Cal
                 bookingId: payload,
                 encryptedSecret: '',
                 encryptedContent: '',
+                bookingKeySalt: '',
             };
         }
 
@@ -39,6 +45,7 @@ export const loadBookingPage = createAsyncThunk<BookingPageEditData, string, Cal
                 bookingId: BookingPage.ID,
                 encryptedSecret: BookingPage.EncryptedSecret,
                 encryptedContent: BookingPage.EncryptedContent,
+                bookingKeySalt: BookingPage.BookingKeySalt,
             };
         } catch (e) {
             // eslint-disable-next-line no-console
@@ -53,6 +60,10 @@ export const createNewBookingPage = createAsyncThunk<
     SerializedFormData,
     CalendarThunkExtra
 >('internalBookings/createPage', async (payload, thunkExtra) => {
+    if (!thunkExtra.extra.unleashClient.isEnabled('CalendarBookings')) {
+        return;
+    }
+
     const calendars = thunkExtra.getState().calendars.value;
     if (!payload.selectedCalendar) {
         throw new Error('Missing selected calendar');
@@ -89,4 +100,67 @@ export const createNewBookingPage = createAsyncThunk<
     );
 
     return { bookingPage: response.BookingPage, initialBookingPage: payload, bookingLink };
+});
+
+export const editBookingPage = createAsyncThunk<
+    BookingPageEditionReturn | undefined,
+    SerializedFormData,
+    CalendarThunkExtra
+>('internalBookings/editPage', async (payload, thunkExtra) => {
+    if (!thunkExtra.extra.unleashClient.isEnabled('EditCalendarBookings')) {
+        return;
+    }
+
+    if (!payload.selectedCalendar) {
+        throw new Error('Missing selected calendar');
+    }
+
+    try {
+        const editData = thunkExtra.getState().internalBookings.value?.bookingPageEditData;
+        if (!editData) {
+            throw new Error('No booking page edit data found');
+        }
+
+        const calData = getCalendarAndOwner(payload.selectedCalendar, thunkExtra.getState().calendars.value);
+        if (!calData) {
+            return;
+        }
+
+        const [{ decryptionKeys, signingKeys }, { verifyingKeys }] = await Promise.all([
+            thunkExtra.dispatch(
+                getAddressKeysByUsageThunk({
+                    AddressID: calData.ownerAddress.AddressID,
+                    withV6SupportForEncryption: true,
+                    withV6SupportForSigning: false,
+                })
+            ),
+            thunkExtra.dispatch(getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })),
+        ]);
+
+        const decrypted = await decryptBookingPageSecrets({
+            encryptedSecret: editData.encryptedSecret,
+            selectedCalendar: calData.calendar.ID,
+            decryptionKeys,
+            verifyingKeys,
+        });
+
+        const { EncryptedContent } = await encryptBookingPageEdition({
+            editData,
+            calendarID: calData.calendar.ID,
+            updateData: payload,
+            signingKeys,
+            decryptedSecret: decrypted,
+        });
+
+        const response = await thunkExtra.extra.api<{ BookingPage: APIBooking }>(
+            updateBookingPage(editData.bookingId, {
+                EncryptedContent,
+                Slots: [],
+            })
+        );
+
+        return { bookingPage: response.BookingPage, initialBookingPage: payload };
+    } catch (e) {
+        throw e;
+    }
 });
