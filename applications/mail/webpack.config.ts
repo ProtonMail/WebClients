@@ -3,7 +3,6 @@ import { produce, setAutoFreeze } from 'immer';
 import path from 'path';
 import type { Configuration } from 'webpack';
 import { ProvidePlugin } from 'webpack';
-import { InjectManifest } from 'workbox-webpack-plugin';
 
 import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
 import { addDevEntry, getConfig } from '@proton/pack/webpack.config';
@@ -36,22 +35,6 @@ const result = (opts: WebpackEnvArguments): Configuration => {
             'proton-mail': path.resolve(__dirname, 'src/app/'),
             perf_hooks: path.resolve(__dirname, './perf_hooks_polyfill.ts'),
         };
-
-        // if (config.mode !== 'development') {
-        config.plugins.push(
-            new InjectManifest({
-                swSrc: './src/service-worker.js',
-                swDest: 'service-worker.js',
-                /**
-                 * Keep this value above the size of the entry points to prevent
-                 * `InjectManifest` from being called multiple times.
-                 * The precache manifest generated after the first call could be
-                 * innacurate see https://github.com/GoogleChrome/workbox/issues/1790
-                 */
-                maximumFileSizeToCacheInBytes: 20_000_000,
-            })
-        );
-        // }
 
         // The order is important so that the unsupported file is loaded after
         config.entry = mergeEntry(config.entry, {

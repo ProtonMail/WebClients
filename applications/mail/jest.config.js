@@ -5,7 +5,6 @@ module.exports = {
     collectCoverageFrom: [
         'src/**/*.{js,jsx,ts,tsx}',
         '!<rootDir>/src/app/locales.ts',
-        '!<rootDir>/src/service-worker.js',
         '!<rootDir>/src/app/*.{js,jsx,ts,tsx}',
         '!<rootDir>src/app/components/layout/*.{js,jsx,ts,tsx}',
         '!<rootDir>/src/app/helpers/encryptedSearch/*.{js,jsx,ts,tsx}',
