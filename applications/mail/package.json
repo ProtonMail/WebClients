@@ -76,12 +76,7 @@
         "react-router-dom": "^5.3.4",
         "roosterjs-editor-types": "^8.62.0",
         "ttag": "^1.8.12",
-        "turndown": "^7.2.2",
-        "workbox-cacheable-response": "^7.3.0",
-        "workbox-expiration": "^7.3.0",
-        "workbox-precaching": "^7.3.0",
-        "workbox-routing": "^7.3.0",
-        "workbox-strategies": "^7.3.0"
+        "turndown": "^7.2.2"
     },
     "devDependencies": {
         "@jest/globals": "^30.2.0",
@@ -110,7 +105,6 @@
         "jest-mock": "^30.2.0",
         "prettier": "^3.6.2",
         "typescript": "^5.9.3",
-        "webpack": "^5.102.1",
-        "workbox-webpack-plugin": "^7.3.0"
+        "webpack": "^5.102.1"
     }
 }
