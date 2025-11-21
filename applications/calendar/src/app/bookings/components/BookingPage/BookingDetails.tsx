@@ -43,13 +43,13 @@ export const BookingDetails = () => {
                 .t`Appointment details`}</h1>
             <h2
                 className={clsx(
-                    'booking-color-title text-4xl m-0 text-break-all font-arizona',
+                    'booking-color-title text-4xl m-0 text-break font-arizona',
                     hasDescription ? undefined : 'mb-4'
                 )}
             >
                 {bookingDetails?.summary}
             </h2>
-            {hasDescription && <p className="my-6 text-pre-wrap text-break-all">{bookingDetails.description}</p>}
+            {hasDescription && <p className="my-6 text-pre-wrap text-break">{bookingDetails.description}</p>}
             <div className="flex flex-column flex-nowrap gap-4">
                 <div className="flex flex-nowrap flex-row gap-3 items-start">
                     <div className="bg-weak shrink-0 rounded-full p-2">
@@ -84,7 +84,7 @@ export const BookingDetails = () => {
                         </div>
                         <div className="flex-1">
                             <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Location`}</h3>
-                            <div className="text-break-all">
+                            <div className="text-break">
                                 {bookingDetails.withProtonMeetLink
                                     ? c('Info').t`${MEET_APP_NAME} video call`
                                     : bookingDetails.location}
