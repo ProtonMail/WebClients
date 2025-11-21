@@ -37,6 +37,8 @@ export interface MeetContextValues {
     sortedParticipants: (RemoteParticipant | LocalParticipant)[];
     pagedParticipants: (RemoteParticipant | LocalParticipant)[];
     pageCount: number;
+    pagedParticipantsWithoutSelfView: (RemoteParticipant | LocalParticipant)[];
+    pageCountWithoutSelfView: number;
     passphrase: string;
     guestMode: boolean;
     mlsGroupState: MLSGroupState | null;
@@ -85,6 +87,8 @@ export const MeetContext = createContext<MeetContextValues>({
     sortedParticipants: [],
     pagedParticipants: [],
     pageCount: 0,
+    pagedParticipantsWithoutSelfView: [],
+    pageCountWithoutSelfView: 0,
     passphrase: '',
     guestMode: false,
     mlsGroupState: null,

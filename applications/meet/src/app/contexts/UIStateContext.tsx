@@ -3,6 +3,8 @@ import { createContext, useCallback, useContext, useState } from 'react';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../types';
 
 export interface UIStateContextType {
+    selfView: boolean;
+    setSelfView: (selfView: boolean) => void;
     meetingReadyPopupOpen: boolean;
     setMeetingReadyPopupOpen: (meetingReadyPopupOpen: boolean) => void;
     sideBarState: {
@@ -24,6 +26,8 @@ export interface UIStateContextType {
 }
 
 export const UIStateContext = createContext<UIStateContextType>({
+    selfView: true,
+    setSelfView: () => {},
     meetingReadyPopupOpen: false,
     setMeetingReadyPopupOpen: () => {},
     sideBarState: {
@@ -57,6 +61,7 @@ export const UIStateProvider = ({
     children: React.ReactNode;
     instantMeeting: boolean;
 }) => {
+    const [selfView, setSelfView] = useState(true);
     const [meetingReadyPopupOpen, setMeetingReadyPopupOpen] = useState(instantMeeting);
     const [sideBarState, setSideBarState] = useState<UIStateContextType['sideBarState']>({
         [MeetingSideBars.Participants]: false,
@@ -102,6 +107,8 @@ export const UIStateProvider = ({
     return (
         <UIStateContext.Provider
             value={{
+                selfView,
+                setSelfView,
                 meetingReadyPopupOpen,
                 setMeetingReadyPopupOpen,
                 sideBarState,
