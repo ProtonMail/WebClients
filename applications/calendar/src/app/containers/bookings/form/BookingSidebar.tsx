@@ -10,12 +10,12 @@ export const BookingSidebar = () => {
             className="booking-sidebar-container ui-standard bg-lowered flex flex-column w-full sm:w-custom border-right border-weak"
             style={{ '--sm-w-custom': '25.5rem' }}
         >
-            <div className="p-3 self-end">
+            <div className="self-end bg-norm mt-4 mr-4 absolute rounded-full ">
                 <BookingManagement.Header />
             </div>
 
             <Scroll className="flex-1 w-full">
-                <div className="px-6 py-4">
+                <div className="mt-8 px-6 py-4">
                     <BookingManagement.Form />
                 </div>
             </Scroll>
