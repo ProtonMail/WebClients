@@ -6,7 +6,8 @@ export { fathomWeb as fathom };
 
 declare const FORM_CLUSTER_ATTR = 'data-protonpass-form';
 declare const kFieldSelector = 'input, select, textarea';
-declare const kEmailSelector = 'input[name="email"], input[id="email"]';
+declare const kFieldLabelSelector = '[class*="label"], [id*="label"]';
+declare const kEmailSelector = 'input[name="email"], input[id="email"], input[name="user_email"]';
 declare const kPasswordSelector = 'input[type="password"], input[type="text"][id="password"]';
 declare const kCaptchaSelector = '[class*="captcha"], [id*="captcha"], [name*="captcha"]';
 declare const kSocialSelector = '[class*=social], [aria-label*=with]';
@@ -74,7 +75,6 @@ type CCExpirationFormat = {
     fullYear: boolean;
     monthFirst: boolean;
 };
-declare const kCCFieldSelector = 'input, select';
 declare const CC_ATTRIBUTES: string[];
 declare const CC_INPUT_TYPES: string[];
 declare const getExpirationFormat: (field: HTMLElement, allowFallback?: boolean) => CCExpirationFormat | undefined;
@@ -89,14 +89,25 @@ declare const getSelectExpirationYearFormat: (select: HTMLSelectElement) => CCEx
 declare const getSelectExpirationMonthFormat: (select: HTMLSelectElement) => CCExpirationMonthFormat | undefined;
 declare const getCCHaystack: (field: HTMLElement) => string;
 declare const getCCFieldType: (field: HTMLElement) => CCFieldType | undefined;
-declare const maybeCCField: (fnode: Fnode) => boolean;
+type MatchCCInputFieldParams = {
+    type: string | null;
+    visible: boolean;
+};
+declare const matchCCInputField: (input: HTMLInputElement, { type, visible }: MatchCCInputFieldParams) => boolean;
+declare const isCCInputField: (fnode: Fnode) => boolean;
+declare const isCCSelectField: (fnode: Fnode) => boolean;
 
 declare const getTypeScore: (node: Fnode | null, type: string) => any;
+type FormClassification = {
+    login: boolean;
+    register: boolean;
+    pwChange: boolean;
+    recovery: boolean;
+    noop: boolean;
+};
 
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
 declare const fType: (type: FieldType) => (fnode: Fnode) => boolean;
-declare const fCC: (fnode: Fnode) => boolean;
-declare const fIdentity: (fnode: Fnode) => boolean;
 declare const maybeEmail: (value: Fnode) => boolean;
 declare const maybePassword: (value: Fnode) => boolean;
 declare const maybeOTP: (value: Fnode) => boolean;
@@ -152,7 +163,17 @@ declare const selectFormCandidates: (root?: Document | HTMLElement) => HTMLEleme
 
 declare const getIdentityHaystack: (input: HTMLInputElement) => string;
 declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
-declare const maybeIdentity: (fnode: Fnode) => boolean;
+type MatchIdendityFieldParams = {
+    form: FormClassification;
+    searchField: boolean;
+    type: string | null;
+    visible: boolean;
+};
+declare const matchIdentityField: (
+    input: HTMLInputElement,
+    { form, searchField, type, visible }: MatchIdendityFieldParams
+) => boolean;
+declare const isIdentity: (fnode: Fnode) => boolean;
 
 type Override = {
     form: HTMLElement;
@@ -230,8 +251,6 @@ export {
     clearOverrides,
     clearVisibilityCache,
     createInputIterator,
-    fCC,
-    fIdentity,
     fType,
     flagAsHidden,
     flagAsIgnored,
@@ -265,12 +284,15 @@ export {
     getVisibilityCache,
     inputCandidateSelector,
     isBtnCandidate,
+    isCCInputField,
+    isCCSelectField,
     isClassifiable,
     isClassifiableField,
     isCluster,
     isCustomElementWithShadowRoot,
     isEmailCandidate,
     isHidden,
+    isIdentity,
     isIgnored,
     isOAuthCandidate,
     isPredictedField,
@@ -288,13 +310,13 @@ export {
     isVisibleForm,
     kAnchorLinkSelector,
     kButtonSubmitSelector,
-    kCCFieldSelector,
     kCaptchaSelector,
     kDomGroupSelector,
     kEditorElements,
     kEditorPatterns,
     kEditorSelector,
     kEmailSelector,
+    kFieldLabelSelector,
     kFieldSelector,
     kHeadingSelector,
     kHiddenUsernameSelector,
@@ -302,11 +324,11 @@ export {
     kPasswordSelector,
     kSocialSelector,
     kUsernameSelector,
+    matchCCInputField,
+    matchIdentityField,
     matchPredictedType,
-    maybeCCField,
     maybeEmail,
     maybeHiddenUsername,
-    maybeIdentity,
     maybeOTP,
     maybePassword,
     maybeUsername,
