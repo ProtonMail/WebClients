@@ -247,7 +247,7 @@ const SubscriptionCheckout = ({
                 if (discountTarget === 'base-users') {
                     membersAmount = withDiscountMembersPerMonth;
                 } else if (noAddonsAndCouponIsHidden) {
-                    return withDiscountPerMonth;
+                    membersAmount = withDiscountPerMonth;
                 } else {
                     membersAmount = membersPerMonth;
                 }

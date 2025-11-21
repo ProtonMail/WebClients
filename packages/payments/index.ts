@@ -70,6 +70,7 @@ export {
     getIsCustomCycle,
     getOptimisticCheckout,
     getOptimisticCheckResult,
+    isBF2025Offer,
     type AddonDescription,
     type PaymentsCheckout,
     type RequiredCheckResponse,
