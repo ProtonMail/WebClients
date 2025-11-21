@@ -2,7 +2,7 @@ import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proto
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
 
 import { deriveBookingKeyPassword } from './bookingEncryption';
-import { bookingSecretSignatureContextValue } from './cryptoHelpers';
+import { bookingContentSignatureContextValue, bookingSecretSignatureContextValue } from './cryptoHelpers';
 
 export const decryptBookingPageSecrets = async ({
     encryptedSecret,
@@ -62,4 +62,58 @@ export const decryptBookingSessionKey = async (
         binaryMessage: bookingKeyPacketBytes,
         passwords: [bookingKeyPassword],
     });
+};
+
+export const decryptBookingContent = async ({
+    encryptedContent,
+    bookingSecretBytes,
+    bookingKeySalt,
+    calendarId,
+    bookingUid,
+    verificationKeys,
+}: {
+    encryptedContent: string;
+    bookingSecretBytes: Uint8Array<ArrayBuffer>;
+    bookingKeySalt: string;
+    calendarId: string;
+    bookingUid: string;
+    verificationKeys?: PublicKeyReference[];
+}): Promise<{
+    summary: string;
+    description: string;
+    location: string;
+    withProtonMeetLink: boolean;
+    failedToVerify: boolean;
+}> => {
+    const salt = Uint8Array.fromBase64(bookingKeySalt);
+    const bookingKeyPassword = (await deriveBookingKeyPassword(calendarId, bookingSecretBytes, salt)).toBase64();
+
+    const {
+        data: decryptedContent,
+        verificationStatus,
+        verificationErrors,
+    } = await CryptoProxy.decryptMessage({
+        binaryMessage: Uint8Array.fromBase64(encryptedContent),
+        passwords: [bookingKeyPassword],
+        verificationKeys,
+        signatureContext:
+            verificationKeys && verificationKeys?.length > 0
+                ? { required: true, value: bookingContentSignatureContextValue(bookingUid) }
+                : undefined,
+    });
+
+    let failedToVerify = false;
+    if (
+        verificationKeys &&
+        verificationKeys.length > 0 &&
+        verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
+    ) {
+        // eslint-disable-next-line no-console
+        console.warn({ verificationErrors });
+        failedToVerify = true;
+    }
+
+    const data = JSON.parse(decryptedContent);
+
+    return { ...data, failedToVerify };
 };

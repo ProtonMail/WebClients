@@ -11,10 +11,10 @@ import type {
     ExternalBookingPageSlotsPayload,
 } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
+import { decryptBookingContent } from '../containers/bookings/utils/crypto/bookingDecryption';
 import { deriveBookingUid } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
 import { generateWeeklyRangeSimple, transformAvailableSlotToTimeslot } from './utils/bookingsHelpers';
-import { decryptBookingContent } from './utils/decryptBookingContent';
 
 export const useExternalBookingLoader = () => {
     const api = useApi();
