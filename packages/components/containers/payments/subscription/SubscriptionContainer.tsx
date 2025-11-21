@@ -1178,8 +1178,8 @@ const SubscriptionContainerInner = ({
     const backStep = BACK[model.step];
     const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;
 
-    const onSubmit = (e: FormEvent) => {
-        e.preventDefault();
+    const onSubmit = (e?: FormEvent) => {
+        e?.preventDefault();
 
         if (model.paymentForbiddenReason.forbidden) {
             onCancel?.();
@@ -1229,6 +1229,7 @@ const SubscriptionContainerInner = ({
             paymentFacade={paymentFacade}
             couponConfig={couponConfig}
             showVisionaryWarning={renderVisionaryDowngradeWarningText}
+            onSubmit={onSubmit}
         />
     );
 

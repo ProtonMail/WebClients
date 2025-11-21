@@ -10,17 +10,18 @@ import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import {
     type Currency,
+    type EnrichedCheckResponse,
     type FreeSubscription,
     PAYMENT_METHOD_TYPES,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
-    type SubscriptionCheckResponse,
     SubscriptionMode,
     SubscriptionPlatform,
     hasMigrationDiscount,
     isFreeSubscription,
     isTrial,
 } from '@proton/payments';
+import { isSubscriptionUnchanged } from '@proton/payments/core/subscription/helpers';
 import { EditCardModal, InclusiveVatText, PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -34,7 +35,7 @@ type Props = {
     currency: Currency;
     step: SUBSCRIPTION_STEPS;
     onDone?: () => void;
-    checkResult?: SubscriptionCheckResponse;
+    checkResult?: EnrichedCheckResponse;
     loading?: boolean;
     disabled?: boolean;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
@@ -44,6 +45,7 @@ type Props = {
     paymentFacade: PaymentFacade;
     couponConfig?: CouponConfigRendered;
     showVisionaryWarning: boolean;
+    onSubmit: () => void;
 };
 
 const InfoBanner = ({ children, variant }: PropsWithChildren & { variant?: BannerVariants }) => {
@@ -68,32 +70,55 @@ const SubscriptionSubmitButton = ({
     paymentFacade,
     couponConfig,
     showVisionaryWarning,
+    onSubmit,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const { APP_NAME } = useConfig();
 
-    if (paymentForbiddenReason.forbidden) {
-        if (isTrial(subscription) && !hasPaymentMethod) {
-            return (
-                <>
-                    <Button
-                        color="norm"
-                        className={className}
-                        disabled={disabled}
-                        loading={loading}
-                        onClick={() => setCreditCardModalOpen(true)}
-                    >
-                        {c('Action').t`Add credit / debit card`}
-                    </Button>
-                    <InfoBanner>{c('Payments')
-                        .t`Payment method required for the subscription to be activated after the trial ends.`}</InfoBanner>
-                    {renderCreditCardModal && (
-                        <EditCardModal enableRenewToggle={false} onMethodAdded={onDone} {...creditCardModalProps} />
-                    )}
-                </>
-            );
-        }
+    const selectedLowerCycle =
+        subscription && !isFreeSubscription(subscription) && checkResult && subscription.Cycle > checkResult.Cycle;
+    const selectedSamePlan = checkResult && isSubscriptionUnchanged(subscription, checkResult.requestData.Plans);
+    const hasTrialSubscriptionWithoutPaymentMethods = isTrial(subscription) && !hasPaymentMethod;
 
+    const subscribesToTheSameCycle = paymentForbiddenReason.reason === 'already-subscribed';
+    const subscribesToLowerCycle = selectedSamePlan && selectedLowerCycle;
+
+    if (hasTrialSubscriptionWithoutPaymentMethods && (subscribesToTheSameCycle || subscribesToLowerCycle)) {
+        return (
+            <>
+                <Button
+                    color="norm"
+                    className={className}
+                    disabled={disabled}
+                    loading={loading}
+                    onClick={() => setCreditCardModalOpen(true)}
+                >
+                    {c('Action').t`Add credit / debit card`}
+                </Button>
+                <InfoBanner>{c('Payments')
+                    .t`Payment method required for the subscription to be activated after the trial ends.`}</InfoBanner>
+                {renderCreditCardModal && (
+                    <EditCardModal
+                        enableRenewToggle={false}
+                        onMethodAdded={() => {
+                            if (subscribesToTheSameCycle) {
+                                onDone?.();
+                                return;
+                            }
+
+                            if (subscribesToLowerCycle) {
+                                onSubmit();
+                                return;
+                            }
+                        }}
+                        {...creditCardModalProps}
+                    />
+                )}
+            </>
+        );
+    }
+
+    if (paymentForbiddenReason.forbidden) {
         const info = (() => {
             let text = '';
 
@@ -169,12 +194,6 @@ const SubscriptionSubmitButton = ({
             const price = getSimplePriceString(currency, amountDue);
             return {
                 children: couponConfig?.renderPayCTA?.() ?? c('Action').t`Pay ${price} now`,
-            };
-        }
-
-        if (isTrial(subscription)) {
-            return {
-                children: c('Action').t`Save`,
             };
         }
 

@@ -725,7 +725,7 @@ export function isSubscriptionCheckForbiddenWithReason(
 
     const variableCycleOffer = getIsVariableCycleOffer(subscription);
 
-    const isScheduledUnpaidModification =
+    const hasScheduledUnpaidModification =
         hasUpcomingSubscription && !variableCycleOffer && isUpcomingSubscriptionUnpaid(subscription);
 
     const selectedSameAsCurrentIgnorringCycle =
@@ -734,14 +734,19 @@ export function isSubscriptionCheckForbiddenWithReason(
     const managedExternally = isManagedExternally(subscription);
 
     /**
-     * Consider the table with possible cases: |                                | selectedSameAsCurrent |
-     * selectedSameAsUpcoming        |
-     * |--------------------------------|-----------------------|-------------------------------|
-     * | hasVariableCycleOffer          | check forbidden       | check forbidden               | |
-     * hasUpcomingPrepaidSubscription | check forbidden       | check forbidden               | |
-     * hasNoUpcomingSubscription      | check forbidden       | n/a                           | |
-     * hasScheduledUnpaidDowncycling  | check allowed         | check forbidden               |
+     * Consider the table with possible cases:
      *
+     * | Scenario                       | selectedSameAsCurrent | selectedSameAsUpcoming |
+     * |--------------------------------|-----------------------|------------------------|
+     * | hasVariableCycleOffer          | check forbidden       | check forbidden        |
+     * | hasUpcomingPrepaidSubscription | check forbidden       | check forbidden        |
+     * | hasNoUpcomingSubscription      | check forbidden       | n/a                    |
+     * | hasScheduledUnpaidDowncycling  | check allowed         | check forbidden        |
+     *
+     * Please do not join this multi-line comment with others, I keep it separated to prevent some auto-formatting
+     * tools from breaking this table.
+     */
+    /**
      * "check forbidden" means that the /check endpoint will return an error. "check allowed" means that the /check
      * endpoint will work as expected.
      *
@@ -758,7 +763,7 @@ export function isSubscriptionCheckForbiddenWithReason(
      * scribe addons and they want to decrease the number of scribes then it creates a scheduled subscription with lower
      * number of scribes.
      *
-     * The four cases described above are handled by: `(selectedSameAsCurrent && !isScheduledUnpaidModification) ||
+     * The four cases described above are handled by: `(selectedSameAsCurrent && !hasScheduledUnpaidModification) ||
      * selectedSameAsUpcoming`
      *
      * The condition `selectedSameAsCurrentIgnorringCycle && managedExternally` is a special case for multi-subs. If
@@ -773,8 +778,7 @@ export function isSubscriptionCheckForbiddenWithReason(
      * externally managed Lumo subscription.
      *
      */
-
-    if ((selectedSameAsCurrent && !isScheduledUnpaidModification) || selectedSameAsUpcoming) {
+    if ((selectedSameAsCurrent && !hasScheduledUnpaidModification) || selectedSameAsUpcoming) {
         return { forbidden: true, reason: 'already-subscribed' };
     }
 
