@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { format, isToday, startOfDay } from 'date-fns';
+import { format, isToday } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -10,8 +10,10 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 import { type BookingTimeslot, useBookingStore } from '../../booking.store';
+import { AvailabilityState, useBookingNextAvailableSlot } from '../../useBookingNextAvailableSlot';
 import { getDaysRange, getDaysSlotRange, getGridCount } from '../bookingViewHelpers';
 import { BookSlotModal } from './BookSlotModal';
+import { BookingEmptyRangeCard } from './BookingEmptyRangeCard';
 import { BookingHeader } from './BookingHeader';
 
 export const BookingTimeSlotGrid = () => {
@@ -19,26 +21,18 @@ export const BookingTimeSlotGrid = () => {
     const [timeslot, setTimeslot] = useState<BookingTimeslot>();
     const [slotsArray, setSlotsArray] = useState<BookingTimeslot[][] | undefined[][]>([]);
 
-    const bookingSlots = useBookingStore((state) => state.bookingSlots);
     const filterBookingSlotPerDay = useBookingStore((state) => state.filterBookingSlotPerDay);
-    const setSelectedDate = useBookingStore((state) => state.setSelectedDate);
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedDate = useBookingStore((state) => state.selectedDate);
-    const selectedTimeZone = useBookingStore((state) => state.selectedTimezone);
+    const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
+
+    const { availabilityState, handleNavigateToNextAvailableSlot } = useBookingNextAvailableSlot();
 
     const { activeBreakpoint } = useActiveBreakpoint();
     const gridSize = getGridCount(activeBreakpoint);
     const canShowSlots = slotsArray.length > 0;
 
     const [bookSlotModalProps, setBookSlotModalOpen, renderBookModal] = useModalState();
-
-    const handleGoToNextAvailableAppointment = () => {
-        const firstAvailableDate = startOfDay(bookingSlots[0].tzDate) || null;
-
-        if (firstAvailableDate) {
-            setSelectedDate(firstAvailableDate);
-        }
-    };
 
     useEffect(() => {
         if (!bookingDetails) {
@@ -50,11 +44,11 @@ export const BookingTimeSlotGrid = () => {
 
         setRange(tmpRange);
         setSlotsArray(rangeBooking);
-    }, [gridSize, bookingDetails, selectedDate, filterBookingSlotPerDay, selectedTimeZone]);
+    }, [gridSize, bookingDetails, selectedDate, filterBookingSlotPerDay, selectedTimezone]);
 
     return (
         <main className="flex-1 w-full" aria-labelledby="booking-main-header-title">
-            <BookingHeader gridSize={gridSize} />
+            <BookingHeader gridSize={gridSize} availabilityState={availabilityState} />
 
             <div className="flex flex-row flex-nowrap gap-2 w-full">
                 {range.map((date, i) => {
@@ -124,11 +118,31 @@ export const BookingTimeSlotGrid = () => {
                 })}
             </div>
             {!canShowSlots && (
-                <div className="border rounded-xl flex flex-column items-center justify-center p-20 mt-2 text-center booking-no-booking-container">
-                    <div>{c('Info').t`No appointments available this week`}</div>
-                    <Button shape="underline" color="norm" onClick={handleGoToNextAvailableAppointment}>{c('Action')
-                        .t`Go to the next available appointment`}</Button>
-                </div>
+                <>
+                    {availabilityState === AvailabilityState.HasNextSlot && (
+                        <BookingEmptyRangeCard
+                            message={c('Info').t`No appointments available this week`}
+                            action={
+                                <Button shape="underline" color="norm" onClick={handleNavigateToNextAvailableSlot}>{c(
+                                    'Action'
+                                ).t`Go to the next available appointment`}</Button>
+                            }
+                        />
+                    )}
+                    {availabilityState === AvailabilityState.ShouldNavigateToFirst && (
+                        <BookingEmptyRangeCard
+                            message={c('Info').t`No future appointments available`}
+                            action={
+                                <Button shape="underline" color="norm" onClick={handleNavigateToNextAvailableSlot}>{c(
+                                    'Action'
+                                ).t`Go to the first available appointment`}</Button>
+                            }
+                        />
+                    )}
+                    {availabilityState === AvailabilityState.NoSlotAvailable && (
+                        <BookingEmptyRangeCard message={c('Info').t`No appointments available`} />
+                    )}
+                </>
             )}
             {renderBookModal && timeslot && <BookSlotModal timeslot={timeslot} {...bookSlotModalProps} />}
         </main>

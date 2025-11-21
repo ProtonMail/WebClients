@@ -1,12 +1,15 @@
 import { useLocation } from 'react-router';
 
-import { isAfter } from 'date-fns';
+import { endOfDay, getUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import { useApi, useGetVerificationPreferences } from '@proton/components';
-import { queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
-import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
+import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
+import type {
+    ExternalBookingPagePayload,
+    ExternalBookingPageSlotsPayload,
+} from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { deriveBookingUid } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
@@ -24,6 +27,7 @@ export const useExternalBookingLoader = () => {
     const setLoading = useBookingStore((state) => state.setLoading);
     const setBookingDetails = useBookingStore((state) => state.setBookingDetails);
     const setBookingSlots = useBookingStore((state) => state.setBookingSlots);
+    const setNextAvailableSlot = useBookingStore((state) => state.setNextAvailableSlot);
 
     /**
      * The logic here is to load public booking
@@ -65,7 +69,14 @@ export const useExternalBookingLoader = () => {
                 );
             }
 
-            const results = await Promise.all(rangePromise);
+            const nextSlotStartTime = getUnixTime(endOfDay(rangeEndDate || rangeStart));
+            const nextAvailableSlotPromise = api<{ NextSlot: ExternalBookingPageSlotsPayload }>(
+                getNextAvailableSlot(bookingUidBase64Url, nextSlotStartTime)
+            );
+            const [results, nextAvailableSlotResult] = await Promise.all([
+                Promise.all(rangePromise),
+                nextAvailableSlotPromise,
+            ]);
 
             for (const result of results) {
                 if (!bookingPageData) {
@@ -118,6 +129,7 @@ export const useExternalBookingLoader = () => {
             });
 
             setBookingSlots(allBookingSlot);
+            setNextAvailableSlot(transformAvailableSlotToTimeslot(nextAvailableSlotResult.NextSlot));
         } catch (error) {
             throw error;
         } finally {
