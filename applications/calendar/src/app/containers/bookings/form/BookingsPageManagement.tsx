@@ -202,13 +202,7 @@ const Buttons = () => {
             {isError ? <p className="color-danger text-sm text-right m-0 mb-2">{validation.message}</p> : null}
             <div className="flex flex-column-reverse sm:flex-row justify-space-between gap-2">
                 <Button disabled={loading} onClick={() => closeBookingSidebar()}>{c('Action').t`Cancel`}</Button>
-                <Button
-                    disabled={!!validation || bookingsState === BookingState.EDIT_EXISTING}
-                    loading={loading}
-                    color="norm"
-                    type="submit"
-                    onClick={submitForm}
-                >
+                <Button disabled={!!validation} loading={loading} color="norm" type="submit" onClick={submitForm}>
                     {bookingsState === BookingState.EDIT_EXISTING
                         ? c('Action').t`Save`
                         : c('Action').t`Create booking page`}

@@ -23,6 +23,7 @@ export interface BookingPageEditData {
     bookingId: string;
     encryptedSecret: string;
     encryptedContent: string;
+    bookingKeySalt: string;
 }
 
 export interface InternalBookingPageSliceInterface {
@@ -32,6 +33,11 @@ export interface InternalBookingPageSliceInterface {
 
 export interface BookingPageCreationReturn {
     bookingLink: string;
+    bookingPage: APIBooking;
+    initialBookingPage: SerializedFormData;
+}
+
+export interface BookingPageEditionReturn {
     bookingPage: APIBooking;
     initialBookingPage: SerializedFormData;
 }
