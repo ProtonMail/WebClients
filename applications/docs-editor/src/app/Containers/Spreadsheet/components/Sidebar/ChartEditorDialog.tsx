@@ -15,11 +15,13 @@ import { CHART_TYPES, getBaseChartSpecData, getChartTypeByName, getChartTypeBySp
 import clsx from '@proton/utils/clsx'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import { useUI } from '../../ui-store'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { uuid } from '@rowsncolumns/utils'
 import { c } from 'ttag'
 import { createStringifier } from '../../stringifier'
 import { Icon } from '../ui'
+import { useEvent } from '../utils'
+import debounce from 'lodash/debounce'
 
 const { s } = createStringifier(strings)
 
@@ -30,12 +32,31 @@ interface ChartEditorProps {
 
 function ChartEditor({ chart, onDone }: ChartEditorProps) {
   const form = useForm({ defaultValues: chart })
+  const { subscribe, handleSubmit } = form
   const formValue = form.watch()
   const sheetId = useUI((ui) => ui.legacy.activeSheetId)
   const updateChart = useUI((ui) => ui.charts.update)
   const { rangeToFormula, formulaToRange } = useFormulaRangeHelpers({
     sheetId,
   })
+
+  const _saveChanges = useEvent((data: EmbeddedChart) => {
+    updateChart(data)
+  })
+  const saveChanges = useMemo(() => debounce(_saveChanges, 250), [_saveChanges])
+
+  useEffect(() => {
+    return subscribe({
+      formState: { values: true },
+      callback() {
+        handleSubmit((data) => {
+          saveChanges(data)
+        })()
+          .then(() => {})
+          .catch(() => {})
+      },
+    })
+  }, [subscribe, handleSubmit, saveChanges])
 
   const dataRangeFormula = useMemo(() => {
     const dataRange = formValue.spec?.dataRange
@@ -79,8 +100,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
   const selectedChartType = getChartTypeBySpec(formValue.spec)
 
   const onSubmit: SubmitHandler<EmbeddedChart> = (data) => {
-    updateChart(data)
-    onDone()
+    saveChanges(data)
   }
 
   return (
@@ -115,9 +135,11 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                                 key={name}
                                 value={name}
                                 className={clsx(
-                                  'cursor-pointer rounded border border-[transparent] !outline-none transition',
-                                  'data-[focus-visible]:border-[#6D4AFF] data-[focus-visible]:ring-[3px] data-[focus-visible]:ring-[#6D4AFF33]',
-                                  'data-[active-item]:bg-[black]/[0.02]',
+                                  'cursor-pointer rounded border border-[#EAE7E4] !outline-none transition',
+                                  'data-[active-item]:border-[#D1CFCD] data-[active-item]:bg-[#C2C1C033]',
+                                  'aria-selected:border-[#D1CFCD] aria-selected:bg-[#C2C0BE59]',
+                                  'aria-selected:data-[active-item]:border-[#D1CFCD] aria-selected:data-[active-item]:bg-[#C2C0BE59]',
+                                  'data-[focus-visible]:!border-[#6D4AFF] data-[focus-visible]:ring-[3px] data-[focus-visible]:ring-[#6D4AFF33]',
                                 )}
                               >
                                 <Ariakit.VisuallyHidden>{name}</Ariakit.VisuallyHidden>
@@ -159,7 +181,7 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
 
             <FormGroup>
               <div className="flex items-center justify-between gap-2">
-                <FormLabel>{s('Legend entries (series)')}</FormLabel>
+                <FormLabel>{s('Series')}</FormLabel>
                 <Button
                   type="button"
                   className="shrink-0 rounded px-2 py-1 text-xs text-[#6D4AFF]"
@@ -176,16 +198,15 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                   {s('Add')}
                 </Button>
               </div>
-              <div className="flex flex-col gap-2">
+              <div>
                 {seriesFormula.map((domain, domainIdx) => {
                   return (
-                    <div
-                      key={domainIdx}
-                      className="flex flex-col gap-2 rounded-lg border border-[black]/[0.12] px-3 py-3"
-                    >
+                    <div key={domainIdx} className="flex flex-col gap-2 border-b border-[black]/[0.12] py-4 first:pt-0">
                       <FormGroup>
                         <div className="flex items-center justify-between gap-2">
-                          <FormLabel>{s('Name')}</FormLabel>
+                          <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
+                            {s('Name')} ({s('Series')} {domainIdx + 1})
+                          </Ariakit.Role.label>
 
                           <Button
                             type="button"
@@ -210,7 +231,9 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
                       {domain.sources.map((source, sourceIdx) => {
                         return (
                           <FormGroup key={sourceIdx}>
-                            <FormLabel>{s('Y values')}</FormLabel>
+                            <Ariakit.Role.label className="text-[0.8125rem] text-[#5C5958]">
+                              {s('Range')}
+                            </Ariakit.Role.label>
                             <div className="flex items-center">
                               <FormulaInput
                                 value={source}
@@ -291,22 +314,6 @@ function ChartEditor({ chart, onDone }: ChartEditorProps) {
           </div>
         </div>
       </div>
-
-      <div className="mt-auto flex shrink-0 items-center justify-end gap-2 border-t-[0.5px] border-[#EAE7E4] px-4 py-2">
-        <Button
-          type="button"
-          className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
-          onClick={onDone}
-        >
-          {s('Cancel')}
-        </Button>
-        <Button
-          type="submit"
-          className="inline-flex h-[36px] items-center gap-1.5 rounded-lg bg-[#6D4AFF] px-4 text-[13px] text-[white]"
-        >
-          {s('Save')}
-        </Button>
-      </div>
     </form>
   )
 }
@@ -352,12 +359,12 @@ function strings() {
     'Chart title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Chart title`,
     'Select a range': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Select a range`,
     'Chart data range': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Chart data range`,
-    'Legend entries (series)': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Legend entries (series)`,
+    Series: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Series`,
     Add: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Add`,
     Name: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Name`,
     Save: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Save`,
     Cancel: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Cancel`,
-    'Y values': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Y values`,
+    Range: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Range`,
     'Horizontal (category) axis labels': c('sheets_2025:Spreadsheet sidebar chart editor dialog')
       .t`Horizontal (category) axis labels`,
     'Vertical axis title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Vertical axis title`,
