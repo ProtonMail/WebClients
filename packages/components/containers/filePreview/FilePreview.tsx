@@ -33,12 +33,12 @@ import PDFPreview from './PDFPreview';
 import PreviewError from './PreviewError';
 import PreviewLoader from './PreviewLoader';
 import { ProtonDocsPreview } from './ProtonDocsPreview';
-import SandboxedPreview from './SandboxedPreview';
+import { SandboxedPreview } from './SandboxedPreview';
 import SignatureIssue from './SignatureIssue';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
-import VideoStreamingPreview from './VideoStreamingPreview';
+import { VideoStreamingPreview } from './VideoStreamingPreview';
 
 // Lazy Loaded since it includes jszip and it's a rare file type (not common)
 const ComicBookPreview = lazy(() => import(/* webpackChunkName: "comic-book-preview" */ './ComicBookPreview'));
@@ -392,7 +392,11 @@ const FilePreview = (
                 isFavorite={isFavorite}
                 date={date}
             >
-                {isDirty ? <div className="flex items-center">{c('Info').t`Unsaved changes`}</div> : navigationControls}
+                {isDirty ? (
+                    <div className="flex items-center absolute inset-center">{c('Info').t`Unsaved changes`}</div>
+                ) : (
+                    navigationControls
+                )}
             </Header>
             <FilePreviewContent
                 isMetaLoading={isMetaLoading}

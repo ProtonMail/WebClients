@@ -1,15 +1,19 @@
 import { generateNodeUid, useDrive } from '@proton/drive';
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useCreateFileModal } from '../../../components/modals/CreateFileModal';
 import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
 import { useFileSharingModal } from '../../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import useOpenPreview from '../../../components/useOpenPreview';
+import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import { useCopyItemsModal } from '../../../modals/CopyItemsModal/CopyItemsModal';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
+import { usePreviewModal } from '../../../modals/preview';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { getPublicLinkIsExpired } from '../../../utils/sdk/getPublicLinkIsExpired';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
@@ -18,13 +22,21 @@ type Props = {
     shareId: string;
     linkId: string;
     volumeId: string;
+    allSortedItems: {
+        nodeUid: string;
+        mimeType?: string;
+        storageSize: number;
+    }[];
     selectedItems: LegacyItem[];
 };
 
-export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: Props) => {
+export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkId, volumeId }: Props) => {
     const { createDocument } = useDocumentActions();
     const { drive } = useDrive();
     const uid = generateNodeUid(volumeId, linkId);
+
+    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
+    const openLegacyPreview = useOpenPreview();
 
     // Upload hooks
     const {
@@ -40,6 +52,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
     } = useFolderUploadInput(volumeId, shareId, linkId);
 
     // Modal hooks
+    const [previewModal, showPreviewModal] = usePreviewModal();
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
@@ -50,6 +63,27 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
     const [renameModal, showRenameModal] = useRenameModal();
     const [moveModal, showMoveModal] = useMoveItemsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
+
+    const showPreview = () => {
+        const item = selectedItems[0];
+        if (!item) {
+            return;
+        }
+
+        if (isSDKPreviewEnabled) {
+            const previewableNodeUids = allSortedItems
+                .filter((item) => item.mimeType && isPreviewAvailable(item.mimeType, item.storageSize))
+                .map((item) => item.nodeUid);
+
+            showPreviewModal({
+                deprecatedContextShareId: shareId,
+                nodeUid: item.uid,
+                previewableNodeUids,
+            });
+        } else {
+            openLegacyPreview(shareId, linkId);
+        }
+    };
 
     const createFolder = () => showCreateFolderModal({ parentFolderUid: uid });
 
@@ -127,6 +161,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
         uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
         // Modal actions
         actions: {
+            showPreviewModal: showPreview,
             showLinkSharingModal: createShareLink,
             showDetailsModal: showDetails,
             showRenameModal: renameAction,
@@ -142,6 +177,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
         },
         // Modals
         modals: {
+            previewModal,
             createFolderModal,
             createFileModal,
             fileSharingModal,

@@ -1,20 +1,23 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
 import { FilePreview, NavigationControl } from '@proton/components';
+import { splitNodeUid, useDrive } from '@proton/drive';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { SignatureAlertBody } from '../components/SignatureAlert';
-import SignatureIcon from '../components/SignatureIcon';
+import { DeprecatedSignatureIcon as SignatureIcon } from '../components/SignatureIcon';
 import { useDetailsModal } from '../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
+import { useFlagsDriveSDKPreview } from '../flags/useFlagsDriveSDKPreview';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import useDriveNavigation from '../hooks/drive/useNavigate';
+import { Preview } from '../modals/preview';
 import { useActions, useFileView } from '../store';
 import { useOpenInDocs } from '../store/_documents';
 // TODO: ideally not use here
@@ -22,6 +25,51 @@ import useSearchResults from '../store/_search/useSearchResults';
 import { getSharedStatus } from '../utils/share';
 
 export default function PreviewContainer() {
+    const useSDK = useFlagsDriveSDKPreview();
+    return useSDK ? <PreviewContainerSDK /> : <PreviewContainerDeprecated />;
+}
+
+function PreviewContainerSDK() {
+    const [nodeUid, setNodeUid] = useState<string | undefined>();
+    const [parentFolderId, setParentFolderId] = useState<string | undefined>();
+    const { drive } = useDrive();
+    const { shareId, linkId } = useParams<{ shareId: string; linkId: string }>() as { shareId: string; linkId: string };
+
+    const { navigateToLink, navigateToRoot } = useDriveNavigation();
+
+    useEffect(() => {
+        void drive.getNodeUid(shareId, linkId).then((nodeUid) => {
+            setNodeUid(nodeUid);
+            void drive.getNode(nodeUid).then((node) => {
+                const parentFolderUid = node.ok ? node.value.parentUid : node.error.parentUid;
+                if (parentFolderUid) {
+                    const { nodeId } = splitNodeUid(parentFolderUid);
+                    setParentFolderId(nodeId);
+                }
+            });
+        });
+    }, [shareId, linkId]);
+
+    if (!window.location.href.includes('/file/') || !nodeUid) {
+        return null;
+    }
+
+    return (
+        <Preview
+            deprecatedContextShareId={shareId}
+            nodeUid={nodeUid}
+            onClose={() => {
+                if (parentFolderId) {
+                    navigateToLink(shareId, parentFolderId, false);
+                } else {
+                    navigateToRoot();
+                }
+            }}
+        />
+    );
+}
+
+function PreviewContainerDeprecated() {
     const { shareId, linkId } = useParams<{ shareId: string; linkId: string }>() as { shareId: string; linkId: string };
     const {
         navigateToLink,

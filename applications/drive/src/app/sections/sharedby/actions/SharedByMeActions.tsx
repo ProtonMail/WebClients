@@ -22,6 +22,7 @@ import {
     ShareLinkButton as ToolbarShareLinkButton,
 } from '../../../components/sections/ToolbarButtons';
 import { useOpenInDocs } from '../../../hooks/docs/useOpenInDocs';
+import type { usePreviewModal } from '../../../modals/preview';
 import { useActions } from '../../../store';
 import { StopSharingButton } from '../buttons/StopSharingButton';
 import type { SharedByMeItem } from '../useSharedByMe.store';
@@ -29,6 +30,7 @@ import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 
 interface BaseSharedByMeActionsProps {
     selectedItems: SharedByMeItem[];
+    showPreviewModal: ReturnType<typeof usePreviewModal>[1];
     showDetailsModal: (props: { shareId: string; linkId: string; volumeId: string }) => void;
     showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
     showRenameModal: ReturnType<typeof useRenameModal>[1];
@@ -52,6 +54,7 @@ export const SharedByMeActions = ({
     selectedItems,
     close,
     buttonType,
+    showPreviewModal,
     showDetailsModal,
     showRenameModal,
     showFilesDetailsModal,
@@ -116,6 +119,8 @@ export const SharedByMeActions = ({
                 <ContextPreviewButton
                     shareId={singleItem.rootShareId}
                     linkId={splitedSingleItemUid.nodeId}
+                    nodeUid={singleItem.nodeUid}
+                    showPreviewModal={showPreviewModal}
                     close={close}
                 />
             )}

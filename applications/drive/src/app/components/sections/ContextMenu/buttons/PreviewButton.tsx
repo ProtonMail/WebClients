@@ -1,23 +1,38 @@
 import { c } from 'ttag';
 
+import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
+import type { usePreviewModal } from '../../../../modals/preview';
 import useOpenPreview from '../../../useOpenPreview';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
     linkId: string;
+    nodeUid?: string;
+    showPreviewModal?: ReturnType<typeof usePreviewModal>[1];
     close: () => void;
 }
 
-const PreviewButton = ({ shareId, linkId, close }: Props) => {
-    const openPreview = useOpenPreview();
+const PreviewButton = ({ shareId, linkId, nodeUid, showPreviewModal, close }: Props) => {
+    const openLegacyPreview = useOpenPreview();
+
+    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
 
     return (
         <ContextMenuButton
             name={c('Action').t`Preview`}
             icon="eye"
             testId="context-menu-preview"
-            action={() => openPreview(shareId, linkId)}
+            action={() => {
+                if (showPreviewModal && isSDKPreviewEnabled && nodeUid) {
+                    showPreviewModal({
+                        deprecatedContextShareId: shareId,
+                        nodeUid,
+                    });
+                } else {
+                    openLegacyPreview(shareId, linkId);
+                }
+            }}
             close={close}
         />
     );
