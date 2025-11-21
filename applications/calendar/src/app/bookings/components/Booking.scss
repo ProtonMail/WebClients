@@ -59,9 +59,13 @@ body:has(.booking-main-container) {
 
 	&-success-grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		@include media('<=#{$booking-breakpoint}') {
-			grid-template-columns: repeat(1, 1fr);
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+		}
+
+		* {
+			min-inline-size: 0;
 		}
 	}
 }
