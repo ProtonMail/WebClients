@@ -10,6 +10,7 @@ import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal'
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal/CopyItemsModal';
 import type { DirectShareItem } from '../../zustand/sections/sharedWithMeListing.store';
+import { usePreviewModal } from '../../modals/preview';
 import { useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 
@@ -27,6 +28,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
             getSharedWithMeStoreItem: state.getSharedWithMeItem,
         }))
     );
+    const [previewModal, showPreviewModal] = usePreviewModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
@@ -36,7 +38,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
         showCopyItemsModal(items.map((item) => ({ uid: item.nodeUid, name: item.name })));
     }
 
-    const selectedItemsIds = getSelectedItemsId(uids, selectionControls?.selectedItemIds ?? []);
+    const selectedItemsIds = getSelectedItemsId(uids, selectionControls?.selectedItemIds || []);
     const selectedItems = selectedItemsIds.map((uid) => getSharedWithMeStoreItem(uid)).filter(isTruthy);
 
     const renderSelectionActions = () => {
@@ -47,6 +49,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
         return (
             <SharedWithMeActions
                 selectedItems={selectedItems}
+                showPreviewModal={showPreviewModal}
                 showConfirmModal={showConfirmModal}
                 showDetailsModal={showDetailsModal}
                 showFilesDetailsModal={showFilesDetailsModal}
@@ -65,6 +68,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
                     <LayoutButton />
                 </span>
             </Toolbar>
+            {previewModal}
             {confirmModal}
             {detailsModal}
             {filesDetailsModal}

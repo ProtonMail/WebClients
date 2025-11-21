@@ -42,6 +42,7 @@ const SharedWithMe = () => {
         handleRenderItem,
         handleSorting,
         isEmpty,
+        previewModal,
     } = useSharedWithMeItemsWithSelection();
 
     const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
@@ -100,6 +101,7 @@ const SharedWithMe = () => {
                 onSort={handleSorting}
                 onScroll={browserItemContextMenu.close}
             />
+            {previewModal}
         </ContactEmailsProvider>
     );
 };

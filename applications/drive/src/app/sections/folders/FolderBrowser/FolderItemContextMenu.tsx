@@ -27,6 +27,7 @@ export function FolderItemContextMenu({
     shareId,
     linkId,
     volumeId,
+    allSortedItems,
     selectedItems,
     anchorRef,
     isOpen,
@@ -38,6 +39,7 @@ export function FolderItemContextMenu({
     shareId: string;
     linkId: string;
     volumeId: string;
+    allSortedItems: { nodeUid: string; mimeType?: string; storageSize: number }[];
     selectedItems: LegacyItem[];
 }) {
     const selectedItem = selectedItems.length > 0 ? selectedItems[0] : undefined;
@@ -59,6 +61,7 @@ export function FolderItemContextMenu({
 
     const {
         actions: {
+            showPreviewModal,
             showDetailsModal,
             showRevisionsModal,
             showRenameModal,
@@ -68,12 +71,29 @@ export function FolderItemContextMenu({
             getPublicLinkInfo,
         },
         modals,
-    } = useFolderActions({ selectedItems, shareId, linkId, volumeId });
+    } = useFolderActions({
+        allSortedItems: allSortedItems.map((item) => ({
+            nodeUid: item.nodeUid,
+            mimeType: item.mimeType,
+            storageSize: item.storageSize,
+        })),
+        selectedItems,
+        shareId,
+        linkId,
+        volumeId,
+    });
 
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-                {hasPreviewAvailable && <PreviewButton selectedItems={selectedItems} type="context" close={close} />}
+                {hasPreviewAvailable && (
+                    <PreviewButton
+                        selectedItems={selectedItems}
+                        type="context"
+                        close={close}
+                        onClick={showPreviewModal}
+                    />
+                )}
                 {isOnlyOneFileItem && <OpenInDocsButton type="context" selectedItems={selectedItems} close={close} />}
                 {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen)) && <ContextSeparator />}
                 <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
@@ -114,6 +134,7 @@ export function FolderItemContextMenu({
                 {permissions.canTrash && <TrashButton type="context" selectedItems={selectedItems} close={close} />}
                 {children}
             </ItemContextMenu>
+            {modals.previewModal}
             {modals.detailsModal}
             {modals.filesDetailsModal}
             {modals.linkSharingModal}

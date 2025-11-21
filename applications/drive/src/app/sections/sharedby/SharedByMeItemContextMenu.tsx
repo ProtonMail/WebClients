@@ -6,6 +6,7 @@ import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal'
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useRenameModal } from '../../modals/RenameModal';
+import { usePreviewModal } from '../../modals/preview';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import type { SharedByMeItem } from './useSharedByMe.store';
 
@@ -19,6 +20,7 @@ export function SharedByMeItemContextMenu({
 }: ContextMenuProps & {
     selectedBrowserItems: SharedByMeItem[];
 }) {
+    const [previewModal, showPreviewModal] = usePreviewModal();
     const [renameModal, showRenameModal] = useRenameModal();
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
@@ -32,6 +34,7 @@ export function SharedByMeItemContextMenu({
                     selectedItems={selectedBrowserItems}
                     close={close}
                     buttonType="contextMenu"
+                    showPreviewModal={showPreviewModal}
                     showDetailsModal={showDetailsModal}
                     showLinkSharingModal={showLinkSharingModal}
                     showFilesDetailsModal={showFilesDetailsModal}
@@ -39,6 +42,7 @@ export function SharedByMeItemContextMenu({
                     showConfirmModal={showConfirmModal}
                 />
             </ItemContextMenu>
+            {previewModal}
             {renameModal}
             {detailsModal}
             {filesDetailsModal}

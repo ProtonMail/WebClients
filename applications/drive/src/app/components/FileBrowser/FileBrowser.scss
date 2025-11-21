@@ -5,6 +5,7 @@
 	position: relative; // Because of .expand-click-area
 	padding-inline: 1em;
 	inline-size: calc(#{rem(16)} + 2em);
+	z-index: 0 !important; // The table has z-index 1 which conflicts with the preview component
 }
 
 .file-browser-header-sort-cell {

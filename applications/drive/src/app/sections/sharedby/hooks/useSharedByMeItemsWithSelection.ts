@@ -2,18 +2,20 @@ import { useCallback, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { splitNodeUid } from '@proton/drive/index';
+import { NodeType, splitNodeUid } from '@proton/drive/index';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type BrowserItemId, useSelection } from '../../../components/FileBrowser';
+import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import { useDocumentActions } from '../../../hooks/docs/useDocumentActions';
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { SortField } from '../../../hooks/util/useSorting';
 import { useSortingWithDefault } from '../../../hooks/util/useSorting';
+import { usePreviewModal } from '../../../modals/preview/usePreviewModal';
 import { useUserSettings } from '../../../store';
 import { useSharingInfoStore } from '../../../zustand/share/sharingInfo.store';
 import type { MappedLegacyItem } from '../SharedByMeCells';
@@ -48,6 +50,9 @@ export const useSharedByMeItemsWithSelection = () => {
                 state.isLoading(uid) || state.isEmptyOrFailed(uid) || state.hasSharingInfo(uid),
         }))
     );
+
+    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
+    const [previewModal, showPreviewModal] = usePreviewModal();
 
     // TODO: Cleanup mappedItems as we probably don't need all of this
     const mappedItems = useMemo((): MappedLegacyItem[] => {
@@ -121,9 +126,17 @@ export const useSharedByMeItemsWithSelection = () => {
                 return;
             }
 
-            navigateToLink(storeItem.rootShareId, nodeId, storeItem.type === 'file');
+            if (storeItem.type === NodeType.File && isSDKPreviewEnabled) {
+                showPreviewModal({
+                    deprecatedContextShareId: storeItem.rootShareId,
+                    nodeUid: storeItem.nodeUid,
+                });
+                return;
+            }
+
+            navigateToLink(storeItem.rootShareId, nodeId, storeItem.type === NodeType.File);
         },
-        [getSharedByMeItem, openDocument, navigateToAlbum, navigateToLink]
+        [getSharedByMeItem, openDocument, navigateToAlbum, navigateToLink, isSDKPreviewEnabled, showPreviewModal]
     );
 
     const handleRenderItem = useCallback(
@@ -175,5 +188,6 @@ export const useSharedByMeItemsWithSelection = () => {
         handleRenderItem,
         handleSorting,
         isEmpty,
+        previewModal,
     };
 };

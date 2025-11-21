@@ -16,6 +16,7 @@ import {
     OpenInDocsButton as ToolbarOpenInDocsButton,
     PreviewButton as ToolbarPreviewButton,
 } from '../../../components/sections/ToolbarButtons';
+import type { usePreviewModal } from '../../../modals/preview';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { DirectShareItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { CopyButton } from '../../folders/buttons/CopyButton';
@@ -24,6 +25,7 @@ import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 
 interface BaseDirectShareActionsProps {
     selectedItems: DirectShareItem[];
+    showPreviewModal: ReturnType<typeof usePreviewModal>[1];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     showDetailsModal: (props: { shareId: string; linkId: string; volumeId: string }) => void;
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
@@ -44,6 +46,7 @@ type DirectShareActionsProps = ContextMenuDirectShareActionsProps | ToolbarDirec
 
 export const DirectShareActions = ({
     selectedItems,
+    showPreviewModal,
     showConfirmModal,
     showDetailsModal,
     showFilesDetailsModal,
@@ -104,6 +107,8 @@ export const DirectShareActions = ({
                 <ContextPreviewButton
                     shareId={singleItem.shareId}
                     linkId={splitNodeUid(singleItem.nodeUid).nodeId}
+                    nodeUid={singleItem.nodeUid}
+                    showPreviewModal={showPreviewModal}
                     close={close}
                 />
             )}
