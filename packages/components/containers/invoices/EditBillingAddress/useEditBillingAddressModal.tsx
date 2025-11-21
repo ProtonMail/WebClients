@@ -49,7 +49,7 @@ export const useEditBillingAddressModal = () => {
         let fullBillingAddressBackend: FullBillingAddress;
         try {
             const promise = fetchBillingAddress(props);
-            withLoading(promise);
+            void withLoading(promise);
             fullBillingAddressBackend = await promise;
         } catch (error) {
             return Promise.reject(error);

@@ -157,12 +157,9 @@ export const VatNumberInput = ({
                                             await openBillingAddressModal({
                                                 editExistingInvoice: false,
                                                 editVatOnly: true,
-                                                as: 'div',
                                                 paymentsApi,
                                                 initialFullBillingAddress: {
                                                     CountryCode: taxCountry.selectedCountryCode,
-                                                    State: taxCountry.federalStateCode,
-                                                    ZipCode: taxCountry.zipCode,
                                                 },
                                             });
 
