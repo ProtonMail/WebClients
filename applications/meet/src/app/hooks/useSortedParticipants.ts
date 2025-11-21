@@ -27,7 +27,7 @@ export const useSortedParticipants = ({ page, pageSize }: { page: number; pageSi
 
     const prevFirstPageParticipants = useRef<ParticipantWithMetadata[]>([]);
 
-    const { sortedParticipants, pagedParticipants } = useMemo(() => {
+    const { sortedParticipants, pagedParticipants, pagedParticipantsWithoutSelfView } = useMemo(() => {
         // Add visual metadata to all participants
         const participantsWithColors = participants.map((participant, index) =>
             getParticipantWithEnhancedMetadata(participant, index)
@@ -73,12 +73,18 @@ export const useSortedParticipants = ({ page, pageSize }: { page: number; pageSi
         const firstPage = sortedResult.slice(0, pageSize);
         const currentPageParticipants = sortedResult.slice(start, start + pageSize);
 
+        const pagedParticipantsWithoutSelfView =
+            participants.length === 1
+                ? sortedResult
+                : sortedResult.filter((p) => p.identity !== localIdentity).slice(start, start + pageSize);
+
         // Update the reference for next render
         prevFirstPageParticipants.current = firstPage;
 
         return {
             sortedParticipants: sortedResult,
             pagedParticipants: currentPageParticipants,
+            pagedParticipantsWithoutSelfView,
         };
     }, [participants, activeSpeakers, localIdentity, page, pageSize]);
 
@@ -86,5 +92,7 @@ export const useSortedParticipants = ({ page, pageSize }: { page: number; pageSi
         sortedParticipants,
         pagedParticipants,
         pageCount: Math.ceil(sortedParticipants.length / pageSize),
+        pagedParticipantsWithoutSelfView,
+        pageCountWithoutSelfView: Math.max(1, Math.ceil((sortedParticipants.length - 1) / pageSize)),
     };
 };

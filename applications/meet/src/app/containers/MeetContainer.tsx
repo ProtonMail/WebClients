@@ -86,7 +86,13 @@ export const MeetContainer = ({
 
     const [participantsWithDisabledVideos, setParticipantsWithDisabledVideos] = useState<string[]>([]);
 
-    const { sortedParticipants, pagedParticipants, pageCount } = useSortedParticipants({
+    const {
+        sortedParticipants,
+        pagedParticipants,
+        pageCount,
+        pagedParticipantsWithoutSelfView,
+        pageCountWithoutSelfView,
+    } = useSortedParticipants({
         page,
         pageSize,
     });
@@ -138,6 +144,8 @@ export const MeetContainer = ({
                     sortedParticipants,
                     pagedParticipants,
                     pageCount,
+                    pagedParticipantsWithoutSelfView,
+                    pageCountWithoutSelfView,
                     passphrase,
                     guestMode,
                     mlsGroupState,

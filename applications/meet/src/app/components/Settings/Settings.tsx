@@ -24,7 +24,7 @@ export const Settings = () => {
     const { backgroundBlur, toggleBackgroundBlur, isBackgroundBlurSupported, noiseFilter, toggleNoiseFilter } =
         useMediaManagementContext();
 
-    const { sideBarState, toggleSideBarState } = useUIStateContext();
+    const { sideBarState, toggleSideBarState, selfView, setSelfView } = useUIStateContext();
 
     const isLocalParticipantHost = useIsLocalParticipantHost();
 
@@ -94,6 +94,19 @@ export const Settings = () => {
                             noiseFilter={noiseFilter}
                             toggleNoiseFilter={toggleNoiseFilter}
                         />
+                        <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
+                            <label
+                                className={clsx('setting-label text-ellipsis', !selfView ? 'color-norm' : 'color-hint')}
+                                htmlFor="self-view"
+                            >{c('Action').t`Hide self view`}</label>
+                            <Toggle
+                                id="self-view"
+                                checked={!selfView}
+                                onChange={() => setSelfView(!selfView)}
+                                className={clsx('settings-toggle', !selfView ? '' : 'settings-toggle-inactive')}
+                                aria-label={c('Alt').t`Hide self view`}
+                            />
+                        </div>
                         <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap">
                             <label
                                 className={clsx(
