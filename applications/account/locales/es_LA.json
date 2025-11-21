@@ -2774,6 +2774,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Su dirección de correo personal es una parte esencial de su identidad digital. Al igual que su número de teléfono, no lo da a todo el mundo que conoce. Por eso es útil disponer de otras direcciones de correo que pueda usar para diferentes propósitos."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Realice una copia de seguridad, organice y comparta de forma segura los recuerdos de toda una vida."
+      ],
+      "Keep your photos out of AI training": [
+        "Mantenga sus fotos fuera del entrenamiento de IA"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Escriba, edite y colabore en documentos de forma segura con ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6740,6 +6749,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Agregue un método de pago antes de reactivar su suscripción"
       ]
     },
     "error": {
@@ -11902,6 +11914,15 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Paso 1: Invite a sus amistades** a ${ BRAND_NAME } con su enlace de referidos."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Paso 2:** Sus amistades obtienen **2 semanas gratis** en el plan."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Paso 3:** Obtenga **${ referrerRewardAmount } créditos **por cada persona que se suscriba a un plan."
       ]
     },
     "info": {
@@ -18105,6 +18126,21 @@
       ],
       "your subscription": [
         "su suscripción"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Regale 2 semanas, reciba ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Cómo funciona su prueba gratuita:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Si cancela antes de esa fecha, será degradado a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando finalice la prueba. Si no cancela, su plan completo comenzará y obtendrá **${ referrerRewardAmount }** en créditos."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Si se suscribe antes de esta fecha, recibirá **${ referrerRewardAmount }** en créditos. Si no se suscribe, se le degradará a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "¡Su amistad también recibirá ${ refereeRewardAmount } para canjear en su próxima factura!"
       ]
     },
     "Remark about a key type option": {

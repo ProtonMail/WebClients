@@ -2774,6 +2774,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Η προσωπική σας διεύθυνση ηλεκτρονικού ταχυδρομείου αποτελεί ουσιαστικό μέρος της ψηφιακής σας ταυτότητας. Όπως και τον αριθμό τηλεφώνου σας, δεν τον δίνετε σε όλους όσους συναντάτε. Γι' αυτό είναι χρήσιμο να έχετε άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου που μπορείτε να χρησιμοποιείτε για διαφορετικούς σκοπούς."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Δημιουργήστε αντίγραφα ασφαλείας, οργανώστε και μοιραστείτε με ασφάλεια τις αναμνήσεις μιας ολόκληρης ζωής."
+      ],
+      "Keep your photos out of AI training": [
+        "Κρατήστε τις φωτογραφίες σας μακριά από την εκπαίδευση τεχνητής νοημοσύνης"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Γράψτε, επεξεργαστείτε και συνεργαστείτε σε έγγραφα με ασφάλεια με το ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6740,6 +6749,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Παρακαλούμε προσθέστε μια μέθοδο πληρωμής πριν ενεργοποιήσετε ξανά τη συνδρομή σας"
       ]
     },
     "error": {
@@ -11899,6 +11911,15 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Βήμα 1: Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Βήμα 2:** Οι φίλοι σας λαμβάνουν **2 εβδομάδες δωρεάν** στο πλάνο τους."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Βήμα 3:** Κερδίστε **${ referrerRewardAmount } σε πιστώσεις** για κάθε άτομο που εγγράφεται σε ένα πλάνο."
       ]
     },
     "info": {
@@ -18102,6 +18123,21 @@
       ],
       "your subscription": [
         "η συνδρομή σας"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Δώστε 2 εβδομάδες, λάβετε ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Πως λειτουργεί η δοκιμαστική περίοδος σας:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Εάν ακυρώσετε πριν από τότε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν τελειώσει η δοκιμαστική περίοδος. Εάν δεν ακυρώσετε, το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Εάν εγγραφείτε πριν από αυτήν την ημερομηνία, θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις. Εάν δεν εγγραφείτε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Ο φίλος σας θα λάβει επίσης ${ refereeRewardAmount } για να εξαργυρώσει στον επόμενο λογαριασμό του!"
       ]
     },
     "Remark about a key type option": {

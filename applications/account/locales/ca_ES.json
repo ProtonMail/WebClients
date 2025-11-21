@@ -2492,7 +2492,7 @@
     },
     "Billing cycle": {
       "Renews automatically": [
-        "Renovació automàtica"
+        "Es renova automàticament"
       ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Es renova automàticament a ${ renewPrice } durant ${ renewLength } mes.",
@@ -2774,6 +2774,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "La vostra adreça de correu electrònic personal és una part essencial de la vostra identitat digital. Com el vostre número de telèfon, no la doneu a tothom que conegueu. Per això és útil tenir altres adreces de correu electrònic que podeu utilitzar per a diferents propòsits."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Feu una còpia de seguretat, organitzeu i compartiu de manera segura tota una vida de records."
+      ],
+      "Keep your photos out of AI training": [
+        "Manteniu les vostres fotos fora de l'entrenament d'IA"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Escriviu, editeu i col·laboreu en documents de manera segura amb ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6740,6 +6749,9 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Afegiu un mètode de pagament abans de reactivar la vostra subscripció"
       ]
     },
     "error": {
@@ -11899,6 +11911,15 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pas 1: Convideu les vostres amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Pas 2:** Els vostres amics rebran **2 setmanes gratuïtes** en el seu pla."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Pas 3:** Aconseguiu **${ referrerRewardAmount } en crèdits** per cada persona que se subscrigui a un pla."
       ]
     },
     "info": {
@@ -18102,6 +18123,21 @@
       ],
       "your subscription": [
         "la vostra subscripció"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Doneu 2 setmanes, aconseguiu ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Com funciona la vostra prova gratuïta:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Si cancel·leu abans, se us rebaixarà a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan acabi la prova. Si no cancel·leu, començarà el vostre pla complet i rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Si us subscriviu abans d'aquesta data, rebreu **${ referrerRewardAmount }** en crèdits. Si no us subscriviu, se us rebaixarà a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "El vostre amic també rebrà ${ refereeRewardAmount } per bescanviar en la seva pròxima factura!"
       ]
     },
     "Remark about a key type option": {

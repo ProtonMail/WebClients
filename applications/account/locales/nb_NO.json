@@ -2497,6 +2497,9 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Fornyes automatisk på ${ subscriptionManagerName }"
+      ],
+      "Renews automatically": [
+        "Fornyes automatisk"
       ]
     },
     "Billing cycle option": {
@@ -2771,6 +2774,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Din personlige e-postadresse er en viktig del av din digitale identitet. Som telefonnummeret ditt, gir du det ikke til alle du møter. Derfor er det nyttig å ha andre e-postadresser du kan bruke til forskjellige formål."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Sikkerhetskopier, organiser og del minner for livet på en sikker måte."
+      ],
+      "Keep your photos out of AI training": [
+        "Hold bildene dine unna KI-opplæring"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Skriv, rediger og samarbeid om dokumenter sikkert med ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6737,6 +6749,9 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Legg til en betalingsmåte før du reaktiverer abonnementet ditt"
       ]
     },
     "error": {
@@ -11893,6 +11908,21 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } for organisasjoner er et avansert kontobeskyttelsesprogram drevet av sofistikerte AI-systemer og spesialister som jobber døgnet rundt for å beskytte din organisasjon mot dårlige aktører og sikkerhetstrusler."
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Trinn 1: Inviter vennene dine** til ${ BRAND_NAME } med vervekoblingen."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Trinn 2:** Vennene dine får **2 uker gratis** på planene deres."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Trinn 3:** Få **${ referrerRewardAmount } i kreditter** for hver person som abonnerer på en plan."
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Oppgrader planen din til ${ firstPlanNames } eller ${ lastPlanName } for å få tilgang til ${ PROTON_SENTINEL_NAME } for organisasjoner."
       ]
     },
     "info": {
@@ -18120,6 +18150,21 @@
       ],
       "your subscription": [
         "abonnementet ditt"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Gi 2 uker, få ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Hvordan din gratis prøveperiode fungerer:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Hvis du kansellerer før den tid, vil du bli nedgradert til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveperioden er over. Hvis du ikke kansellerer, starter hele abonnementet ditt, og du får **${ referrerRewardAmount }** i kreditter."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Hvis du abonnerer før denne datoen, får du **${ referrerRewardAmount }** i kreditter. Hvis du ikke abonnerer, blir du nedgradert til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Vennen din vil også få ${ refereeRewardAmount } å innløse på sin neste faktura!"
       ]
     },
     "Remark about a key type option": {
@@ -23173,6 +23218,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blitt invitert til å forsøke ${ MAIL_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } for organisasjoner"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -2518,7 +2518,7 @@
     },
     "Billing cycle": {
       "Renews automatically": [
-        "Працягваецца аўтаматычна"
+        "Падаўжаецца аўтаматычна"
       ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Аўтаматычнае падаўжэнне па кошце ${ renewPrice } за перыяд часу ${ renewLength } месяц",
@@ -2802,6 +2802,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Ваш асабісты адрас электроннай пошты - гэта важная частка вашай лічбавай ідэнтычнасці. Як і ваш нумар тэлефона, які вы не распаўсюджваеце сярод незнаёмых людзей. Вось чаму карысна мець іншыя адрасы электроннай пошты, якія можна выкарыстоўваць для розных мэт."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Рабіце рэзервовыя копіі, арганізуйце і бяспечна дзяліцеся ўспамінамі на ўсё жыццё."
+      ],
+      "Keep your photos out of AI training": [
+        "Абараніце свае фота ад навучання ШІ"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Стварайце, рэдагуйце і супрацоўнічайце над дакументамі бяспечна з ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6816,6 +6825,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Дадайце спосаб аплаты, перш чым аднавіць вашу падпіску"
       ]
     },
     "error": {
@@ -8861,7 +8873,7 @@
         "${ planName } міне сёння."
       ],
       "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } для арганізацый, з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вашу арганізацыю ад зламыснікаў і пагроз бяспекі."
+        "${ PROTON_SENTINEL_NAME } для арганізацый з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць для абароны вашай арганізацыі ад зламыснікаў і пагроз бяспекі."
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
@@ -11495,7 +11507,7 @@
         "Палепшыць, каб разблакіраваць"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
-        "Палепшыць ваш тарыфны план да ${ firstPlanNames } або ${ lastPlanName }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME } для арганізацый."
+        "Палепшыць свой тарыфны план да ${ firstPlanNames } або ${ lastPlanName }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME } для арганізацый."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Абнавіць ваш тарыфны план да ${ firstPlanNames } або ${ lastPlanName }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
@@ -12153,6 +12165,15 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Крок 1: Запрашайце сваіх сяброў** у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Крок 2:** Вашы сябры атрымаюць **2 тыдні бясплатнага выкарыстання** на сваім тарыфным плане."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Крок 3:** Атрымайце **${ referrerRewardAmount } крэдытаў** за кожную асобу, якая падпішацца на тарыфны план."
       ]
     },
     "info": {
@@ -18490,6 +18511,21 @@
       ],
       "your subscription": [
         "ваша падпіска"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Дайце 2 тыдні, атрымайце ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Як працуе бясплатны пробны перыяд:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Калі вы скасуеце да таго часу, вас панізяць да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, калі скончыцца пробны перыяд. Калі вы не скасуеце, ваш поўны тарыфны план пачнецца, і вы атрымаеце **${ referrerRewardAmount }** крэдытаў."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Калі вы падпішацеся да гэтай даты, вы атрымаеце **${ referrerRewardAmount }** у крэдытах. Калі вы не падпішацеся, вы будзеце паніжаны да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Ваш сябар таксама атрымае ${ refereeRewardAmount }, каб выкарыстаць пры аплаце наступнага рахунку!"
       ]
     },
     "Remark about a key type option": {

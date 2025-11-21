@@ -1772,6 +1772,10 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } asistente de IA (para ${ quantity } usuario)",
+        "${ LUMO_APP_NAME } Asistente de IA (para ${ quantity } usuarios)"
       ]
     },
     "Address action": {
@@ -2493,6 +2497,9 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se renueva automáticamente el ${ subscriptionManagerName }."
+      ],
+      "Renews automatically": [
+        "Se renueva automáticamente"
       ]
     },
     "Billing cycle option": {
@@ -2737,6 +2744,30 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Tu dirección de correo electrónico personal es una parte esencial de tu identidad digital. Al igual que tu número de teléfono, no lo das a todo el mundo que conoces. Por eso es útil disponer de otras direcciones de correo electrónico que puedas usar para diferentes propósitos."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Respalda, organiza y comparte de forma segura los recuerdos de toda una vida."
+      ],
+      "Data breaches are on the rise. For businesses, a single breach can result in stolen customer data, regulatory penalties, lost revenue, and lasting reputational damage. Luckily, your team can prevent most breaches with the right mix of security practices, technology, and awareness.": [
+        "Las filtraciones de datos están aumentando. Para las empresas, una sola filtración puede provocar el robo de datos de clientes, sanciones regulatorias, pérdida de ingresos y un daño duradero a la reputación. Afortunadamente, tu equipo puede prevenir la mayoría de las filtraciones con la combinación adecuada de prácticas de seguridad, tecnología y concienciación."
+      ],
+      "Helping someone connect to a new WiFi network is a regular occurrence. It’s likely you’ve done it many times at home or work. In this article, we’re going to examine the easiest ways to share WiFi passwords between devices, the risks associated with insecurely sharing your WiFi password, and the safest way to do it.": [
+        "Ayudar a alguien a conectarse a una nueva red WiFi es algo habitual. Probablemente lo hayas hecho muchas veces en casa o en el trabajo. En este artículo, vamos a examinar las formas más sencillas de compartir contraseñas WiFi entre dispositivos, los riesgos asociados al intercambio inseguro de tu contraseña WiFi y la forma más segura de hacerlo."
+      ],
+      "How to prevent data breaches in your business": [
+        "Cómo prevenir las filtraciones de datos en tu empresa"
+      ],
+      "Keep your photos out of AI training": [
+        "Mantén tus fotos fuera del entrenamiento de IA"
+      ],
+      "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
+        "Aprende a compartir un solo elemento, un enlace encriptado o una caja fuerte a través de ${ PASS_APP_NAME }."
+      ],
+      "Worried about data breaches?": [
+        "¿Te preocupan las filtraciones de datos?"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Escribe, edita y colabora en documentos de forma segura con ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6700,6 +6731,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Añade un método de pago antes de reactivar tu suscripción"
       ]
     },
     "error": {
@@ -11850,6 +11884,21 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Paso 1:** Invita a tus amigos a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Paso 2:** Tus amigos obtienen **2 semanas gratis** en su plan."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Paso 3:** Consigue **${ referrerRewardAmount } créditos** por cada amigo que se suscriba a un plan."
+      ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Puedes cambiar la asignación de almacenamiento en **Usuarios y direcciones**"
+      ],
+      "Your storage": [
+        "Tu almacenamiento"
       ]
     },
     "info": {
@@ -14093,6 +14142,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Snap store": [
+        "Snap store"
       ]
     },
     "Link label (optional)": {
@@ -18050,6 +18102,21 @@
       ],
       "your subscription": [
         "tu suscripción"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Regala 2 semanas, consigue ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Cómo funciona tu prueba gratuita:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Si cancelas antes de esa fecha, pasarás a un plan inferior de ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando termine la prueba. Si no cancelas, tu plan completo comenzará y obtendrás **${ referrerRewardAmount }** en créditos."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Si te suscribes antes de esta fecha, recibirás **${ referrerRewardAmount }** en créditos. Si no te suscribes, pasarás a un plan inferior de ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "¡Tu amigo también recibirá ${ refereeRewardAmount } para canjear en su próxima factura!"
       ]
     },
     "Remark about a key type option": {
@@ -23103,6 +23170,12 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Estás invitado a probar ${ MAIL_APP_NAME }."
+      ],
+      "Deep dive into password manager blog posts": [
+        "Análisis en profundidad de las publicaciones del blog sobre gestores de contraseñas"
+      ],
+      "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
+        "Fortalece tu seguridad en todos tus dispositivos con ${ passPlusPlanName }. ${ upgradeButton }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23785,6 +23858,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Puedes proteger hasta ${ FAMILY_MAX_USERS } personas con ${ PLAN_NAMES[plan] }. Desde ${ priceString }/mes por cuenta."
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Protege tu organización de las filtraciones de datos con ${ PLAN_NAMES[plan] }."
       ]
     },
     "upsell panel": {

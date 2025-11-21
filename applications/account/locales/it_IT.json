@@ -2479,6 +2479,9 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Si rinnova automaticamente il ${ subscriptionManagerName }"
+      ],
+      "Renews automatically": [
+        "Si rinnova automaticamente"
       ]
     },
     "Billing cycle option": {
@@ -2693,6 +2696,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Il tuo indirizzo email personale è una parte essenziale della tua identità digitale. Come il tuo numero di telefono, non lo dai a tutti quelli che incontri. Ecco perché è utile avere altri indirizzi email che puoi usare per scopi diversi."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Esegui il backup, organizza e condividi in modo sicuro una vita di ricordi."
+      ],
+      "Keep your photos out of AI training": [
+        "Tieni le tue foto fuori dall'addestramento AI"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Scrivi, modifica e collabora su documenti in modo sicuro con ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6644,6 +6656,9 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Aggiungi un metodo di pagamento prima di riattivare il tuo abbonamento"
       ]
     },
     "error": {
@@ -11788,6 +11803,21 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } per le organizzazioni è un avanzato programma di protezione degli account, basato su sofisticati sistemi di intelligenza artificiale e su specialisti che lavorano 24 ore su 24 per proteggere la tua organizzazione da malintenzionati e minacce alla sicurezza."
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Passo 2:** I tuoi amici ottengono **2 settimane gratis** sul loro piano."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Passaggio 3:** Ottieni **${ referrerRewardAmount } crediti** per ogni persona che si abbona a un piano."
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
       ]
     },
     "info": {
@@ -17963,6 +17993,21 @@
       ],
       "your subscription": [
         "il tuo abbonamento"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Dai 2 settimane, ottieni ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Come funziona la tua prova gratuita:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Se annulli prima di allora, sarai declassato a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando la prova scade. Se non annulli, il tuo piano completo si attiverà e riceverai **${ referrerRewardAmount }** in crediti."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Se ti abboni prima di questa data, riceverai **${ referrerRewardAmount }** in crediti. Se non ti abboni, ti verrà eseguito il downgrade al piano ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Il tuo amico riceverà anche ${ refereeRewardAmount } da riscattare sulla sua prossima fattura!"
       ]
     },
     "Remark about a key type option": {
@@ -18564,6 +18609,12 @@
       ],
       "Your recovery phone number is:": [
         "Il tuo numero di telefono di recupero è:"
+      ],
+      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "La tua email di recupero potrebbe essere sfruttata da malintenzionati per prendere il controllo del tuo account. ${ disableEmail } per aumentare la sicurezza del tuo account."
+      ],
+      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Il tuo numero di telefono di recupero potrebbe essere sfruttato da malintenzionati per prendere il controllo del tuo account. ${ disablePhone } per aumentare la sicurezza del tuo account."
       ]
     },
     "saml: Action": {
@@ -22992,6 +23043,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sei stato invitato a provare ${ MAIL_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } per organizzazioni"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -11759,6 +11759,15 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Steg 2:** Dina vänner får **2 veckor gratis** på sitt paket."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Steg 3:** Få **${ referrerRewardAmount } krediter** för varje person som prenumererar på ett paket."
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Uppgradera ditt paket till ${ firstPlanNames } eller ${ lastPlanName } för att få åtkomst till ${ PROTON_SENTINEL_NAME } för organisationer."
       ]
     },
     "info": {
@@ -17947,6 +17956,9 @@
       ],
       "your subscription": [
         "din prenumeration"
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Din vän får också ${ refereeRewardAmount } att lösa in på sin nästa faktura!"
       ]
     },
     "Remark about a key type option": {
@@ -22997,6 +23009,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du har blivit inbjuden att prova ${ MAIL_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } för organisationer"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24446,6 +24461,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Vad heter din organisation?"
       ]
     }
   }

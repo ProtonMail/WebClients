@@ -2525,6 +2525,9 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automaticky sa obnovuje ${ subscriptionManagerName }"
+      ],
+      "Renews automatically": [
+        "Obnovuje sa automaticky"
       ]
     },
     "Billing cycle option": {
@@ -2799,6 +2802,15 @@
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Vaša osobná emailová adresa je dôležitou súčasťou vašej digitálnej identity. Rovnako ako telefónne číslo, nedávate ju každému, koho stretnete. Preto je užitočné mať ďalšie emailové adresy, ktoré môžete používať na rôzne účely."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Zálohujte, organizujte a bezpečne zdieľajte spomienky na celý život."
+      ],
+      "Keep your photos out of AI training": [
+        "Zabráňte tomu, aby boli vaše fotografie použité na trénovanie umelej inteligencie"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Píšte, upravujte a spolupracujte na dokumentoch bezpečne s ${ DOCS_APP_NAME }."
       ]
     },
     "breadcrumb": {
@@ -6813,6 +6825,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Pred opätovnou aktiváciou predplatného pridajte spôsob platby."
       ]
     },
     "error": {
@@ -12150,6 +12165,15 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1: Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Krok 2:** Vaši priatelia získajú **2 týždne zadarmo** v rámci svojho plánu."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Krok 3:** Získajte **${ referrerRewardAmount } v kreditoch** za každú osobu, ktorá si predplatí plán."
       ]
     },
     "info": {
@@ -18487,6 +18511,21 @@
       ],
       "your subscription": [
         "vaše predplatné"
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Darujte 2 týždne, získajte ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Ako funguje vaša bezplatná skúšobná verzia:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Ak zrušíte pred týmto termínom, po skončení skúšobnej doby dôjde k zníženiu na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }. Ak nezrušíte, začne platiť váš plný plán a získate **${ referrerRewardAmount }** v kreditoch."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Ak si predplatíte pred týmto dátumom, získate **${ referrerRewardAmount }** kreditov. Ak si nepredplatíte dôjde k zníženiu na úroveň ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Váš priateľ zároveň získa ${ refereeRewardAmount } na uplatnenie pri najbližšej platbe!"
       ]
     },
     "Remark about a key type option": {
