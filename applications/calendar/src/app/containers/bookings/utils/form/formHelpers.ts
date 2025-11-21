@@ -43,7 +43,6 @@ export const serializeFormData = (formData: BookingFormData): SerializedFormData
         })),
         bookingRanges: formData.bookingRanges.map((range) => ({
             ...range,
-            // TODO this might need to be updated
             start: range.start.getTime(),
             end: range.end.getTime(),
         })),

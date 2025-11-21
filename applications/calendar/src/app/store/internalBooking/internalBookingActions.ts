@@ -71,7 +71,7 @@ export const createNewBookingPage = createAsyncThunk<
 
     const calData = getCalendarAndOwner(payload.selectedCalendar, calendars);
     if (!calData) {
-        return undefined;
+        throw new Error('No calendar data found');
     }
 
     const [{ encryptionKey, signingKeys }, { decryptedCalendarKeys }] = await Promise.all([
