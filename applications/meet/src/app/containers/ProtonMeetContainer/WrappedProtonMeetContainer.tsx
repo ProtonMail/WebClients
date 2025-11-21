@@ -60,6 +60,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                 screenShareEncoding: screenShareQuality.encoding,
                 screenShareSimulcastLayers: [],
             },
+            disconnectOnPageLeave: false,
         });
     }
 

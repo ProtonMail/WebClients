@@ -16,6 +16,7 @@ import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported'
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
+import useFlag from '@proton/unleash/useFlag';
 
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
@@ -54,6 +55,8 @@ interface ProtonMeetContainerProps {
 }
 
 export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: ProtonMeetContainerProps) => {
+    const promptOnTabClose = useFlag('MeetPromptOnTabClose');
+
     useWakeLock();
 
     useDependencySetup(guestMode);
@@ -602,12 +605,35 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         await toggleMeetingLock(enable, token, accessTokenRef.current as string);
     };
 
+    // Warn user before leaving if in a meeting
+    useEffect(() => {
+        if (!promptOnTabClose) {
+            return;
+        }
+
+        const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+            if (joinedRoom) {
+                e.preventDefault();
+                return '';
+            }
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, [joinedRoom]);
+
+    // Actually disconnect when page unloads (after user confirms)
     useEffect(() => {
         const handleUnload = () => {
-            try {
-                void wasmApp?.leaveMeeting();
-            } catch (error) {
-                reportMeetError('Error leaving meeting', error);
+            if (joinedRoom) {
+                try {
+                    void room.disconnect();
+                    void wasmApp?.leaveMeeting();
+                } catch (error) {
+                    reportMeetError('Error leaving meeting', error);
+                }
             }
         };
 
@@ -615,7 +641,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         return () => {
             window.removeEventListener('unload', handleUnload);
         };
-    }, []);
+    }, [joinedRoom, room, wasmApp, reportMeetError]);
 
     useEffect(() => {
         if (refetchedParticipantNameMapRef.current) {
