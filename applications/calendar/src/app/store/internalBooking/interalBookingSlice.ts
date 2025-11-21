@@ -63,41 +63,45 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                     ),
                     dispatch(getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })),
                 ]);
+                try {
+                    const decrypted = await CryptoProxy.decryptMessage({
+                        binaryMessage: Uint8Array.fromBase64(bookingPage.EncryptedSecret),
+                        decryptionKeys,
+                        verificationKeys: verifyingKeys,
+                        signatureContext:
+                            verifyingKeys?.length > 0
+                                ? { value: bookingSecretSignatureContextValue(calData.calendar.ID), required: true }
+                                : undefined,
+                        format: 'binary',
+                    });
 
-                const decrypted = await CryptoProxy.decryptMessage({
-                    binaryMessage: Uint8Array.fromBase64(bookingPage.EncryptedSecret),
-                    decryptionKeys,
-                    verificationKeys: verifyingKeys,
-                    signatureContext:
-                        verifyingKeys?.length > 0
-                            ? { value: bookingSecretSignatureContextValue(calData.calendar.ID), required: true }
-                            : undefined,
-                    format: 'binary',
-                });
+                    if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                        // eslint-disable-next-line no-console
+                        console.warn({ errors: decrypted.verificationErrors });
+                        throw new Error('Encrypted booking secret verification failed');
+                    }
 
-                if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                    // eslint-disable-next-line no-console
-                    console.warn({ errors: decrypted.verificationErrors });
-                    throw new Error('Encrypted booking secret verification failed');
+                    // This decrypts and verify the content of the page
+                    const data = await decryptBookingContent({
+                        bookingSecretBytes: decrypted.data,
+                        encryptedContent: bookingPage.EncryptedContent,
+                        bookingKeySalt: bookingPage.BookingKeySalt,
+                        calendarId: bookingPage.CalendarID,
+                        bookingUid: bookingPage.BookingUID,
+                        verificationKeys: verifyingKeys,
+                    });
+
+                    pagesArray.push({
+                        ...data,
+                        id: bookingPage.ID,
+                        calendarID: bookingPage.CalendarID,
+                        bookingUID: bookingPage.BookingUID,
+                        link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
+                    });
+                    // We want to continue if decrypting one page fails
+                } catch (e) {
+                    continue;
                 }
-
-                // This decrypts and verify the content of the page
-                const data = await decryptBookingContent({
-                    bookingSecretBytes: decrypted.data,
-                    encryptedContent: bookingPage.EncryptedContent,
-                    bookingKeySalt: bookingPage.BookingKeySalt,
-                    calendarId: bookingPage.CalendarID,
-                    bookingUid: bookingPage.BookingUID,
-                    verificationKeys: verifyingKeys,
-                });
-
-                pagesArray.push({
-                    ...data,
-                    id: bookingPage.ID,
-                    calendarID: bookingPage.CalendarID,
-                    bookingUID: bookingPage.BookingUID,
-                    link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
-                });
             }
         } catch (error) {
             // eslint-disable-next-line no-console
@@ -140,7 +144,7 @@ const slice = createSlice({
                 return;
             }
 
-            const bookingPage = state.value.bookingPages.find((page) => page.id === payload.bookingId);
+            const bookingPage = state.value.bookingPages.find((page) => page.id === payload?.bookingId);
             if (!bookingPage) {
                 return;
             }
