@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { useLocalParticipant, useParticipants } from '@livekit/components-react';
+import { useLocalParticipant } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
@@ -34,7 +34,7 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const { isMicrophoneEnabled, isCameraEnabled, localParticipant } = useLocalParticipant();
-    const { roomName, page, setPage, pageSize, participantsMap, isScreenShare, guestMode } = useMeetContext();
+    const { roomName, page, setPage, participantsMap, isScreenShare, guestMode } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -46,9 +46,12 @@ export const ParticipantControls = () => {
         setPermissionPromptStatus,
         setNoDeviceDetected,
         popupState,
+        selfView,
     } = useUIStateContext();
 
-    const participants = useParticipants();
+    const { pageCount, pageCountWithoutSelfView } = useMeetContext();
+
+    const currentPageCount = selfView ? pageCount : pageCountWithoutSelfView;
 
     const participantData = participantsMap[localParticipant.identity];
     const hasAdminPermission =
@@ -58,8 +61,6 @@ export const ParticipantControls = () => {
         camera: 'prompt',
         microphone: 'prompt',
     });
-
-    const pageCount = Math.ceil(participants.length / pageSize);
 
     const {
         devicePermissions: { camera: cameraPermission, microphone: microphonePermission },
@@ -308,7 +309,9 @@ export const ParticipantControls = () => {
                     <LeaveModal hasAdminPermission={hasAdminPermission} />
                 </div>
                 <div className={clsx(isLargerThanMd || isNarrowHeight ? '' : 'hidden', 'flex flex-1 justify-end')}>
-                    {pageCount > 1 && <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />}
+                    {currentPageCount > 1 && (
+                        <Pagination totalPages={currentPageCount} currentPage={page} onPageChange={setPage} />
+                    )}
                 </div>
             </div>
         </div>

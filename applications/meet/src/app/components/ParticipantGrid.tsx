@@ -1,10 +1,13 @@
 import { useMeetContext } from '../contexts/MeetContext';
+import { useUIStateContext } from '../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
-    const { pagedParticipants } = useMeetContext();
+    const { pagedParticipants, pagedParticipantsWithoutSelfView } = useMeetContext();
+
+    const { selfView } = useUIStateContext();
 
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -72,12 +75,16 @@ export const ParticipantGrid = () => {
                 className="w-full h-full"
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: gridTemplateColumns(pagedParticipants.length),
-                    gridTemplateRows: gridTemplateRows(pagedParticipants.length),
+                    gridTemplateColumns: gridTemplateColumns(
+                        selfView ? pagedParticipants.length : pagedParticipantsWithoutSelfView.length
+                    ),
+                    gridTemplateRows: gridTemplateRows(
+                        selfView ? pagedParticipants.length : pagedParticipantsWithoutSelfView.length
+                    ),
                     gap: '0.6875rem',
                 }}
             >
-                {pagedParticipants.map((participant) => {
+                {(selfView ? pagedParticipants : pagedParticipantsWithoutSelfView).map((participant) => {
                     return (
                         <ParticipantTile
                             key={participant.identity}
