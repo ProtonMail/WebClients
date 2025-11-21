@@ -1,0 +1,337 @@
+import { NodeType } from '../../../index';
+import { FileUploadExecutor } from '../execution/FileUploadExecutor';
+import { FolderCreationExecutor } from '../execution/FolderCreationExecutor';
+import { CapacityManager } from '../scheduling/CapacityManager';
+import { useUploadQueueStore } from '../store/uploadQueue.store';
+import { UploadConflictStrategy, UploadStatus } from '../types';
+import { getNextTasks } from '../utils/schedulerHelpers';
+import { ConflictManager } from './ConflictManager';
+import { SDKTransferActivity } from './SDKTransferActivity';
+import { UploadEventHandler } from './UploadEventHandler';
+import { UploadOrchestrator } from './UploadOrchestrator';
+
+jest.mock('../store/uploadQueue.store');
+jest.mock('../execution/FileUploadExecutor');
+jest.mock('../execution/FolderCreationExecutor');
+jest.mock('./ConflictManager');
+jest.mock('./SDKTransferActivity');
+jest.mock('./UploadEventHandler');
+jest.mock('../utils/schedulerHelpers');
+jest.mock('../scheduling/CapacityManager');
+
+describe('UploadOrchestrator', () => {
+    let orchestrator: UploadOrchestrator;
+    let mockGetQueue: jest.Mock;
+    let mockGetItem: jest.Mock;
+    let mockUpdateQueueItems: jest.Mock;
+    let mockGetNextTasks: jest.Mock;
+    let mockGetCurrentLoad: jest.Mock;
+    let mockReserveFile: jest.Mock;
+    let mockReserveFolder: jest.Mock;
+    let mockReleaseFile: jest.Mock;
+    let mockReleaseFolder: jest.Mock;
+    let mockReset: jest.Mock;
+    let mockFileExecutorExecute: jest.Mock;
+    let mockFolderExecutorExecute: jest.Mock;
+    let mockSetEventCallback: jest.Mock;
+    let mockSubscribe: jest.Mock;
+    let mockUnsubscribe: jest.Mock;
+    let mockIsSubscribed: jest.Mock;
+    let mockCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        jest.useFakeTimers();
+
+        mockGetQueue = jest.fn().mockReturnValue([]);
+        mockGetItem = jest.fn();
+        mockUpdateQueueItems = jest.fn();
+
+        jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+            getQueue: mockGetQueue,
+            getItem: mockGetItem,
+            updateQueueItems: mockUpdateQueueItems,
+        } as any);
+
+        jest.mocked(useUploadQueueStore.subscribe).mockReturnValue(jest.fn());
+
+        mockGetNextTasks = jest.fn().mockReturnValue([]);
+        jest.mocked(getNextTasks).mockImplementation(mockGetNextTasks);
+
+        mockGetCurrentLoad = jest.fn().mockReturnValue({
+            activeFiles: 0,
+            activeFolders: 0,
+            activeBytesTotal: 0,
+            taskLoads: new Map(),
+        });
+        mockReserveFile = jest.fn();
+        mockReserveFolder = jest.fn();
+        mockReleaseFile = jest.fn();
+        mockReleaseFolder = jest.fn();
+        mockReset = jest.fn();
+
+        jest.mocked(CapacityManager).mockImplementation(
+            () =>
+                ({
+                    getCurrentLoad: mockGetCurrentLoad,
+                    reserveFile: mockReserveFile,
+                    reserveFolder: mockReserveFolder,
+                    releaseFile: mockReleaseFile,
+                    releaseFolder: mockReleaseFolder,
+                    reset: mockReset,
+                }) as any
+        );
+
+        mockSetEventCallback = jest.fn();
+        mockFileExecutorExecute = jest.fn().mockResolvedValue(undefined);
+        jest.mocked(FileUploadExecutor).mockImplementation(
+            () =>
+                ({
+                    setEventCallback: mockSetEventCallback,
+                    execute: mockFileExecutorExecute,
+                }) as any
+        );
+
+        mockFolderExecutorExecute = jest.fn().mockResolvedValue(undefined);
+        jest.mocked(FolderCreationExecutor).mockImplementation(
+            () =>
+                ({
+                    setEventCallback: mockSetEventCallback,
+                    execute: mockFolderExecutorExecute,
+                }) as any
+        );
+
+        mockSubscribe = jest.fn();
+        mockUnsubscribe = jest.fn();
+        mockIsSubscribed = jest.fn().mockReturnValue(false);
+        mockCheckAndUnsubscribeIfQueueEmpty = jest.fn();
+
+        jest.mocked(SDKTransferActivity).mockImplementation(
+            () =>
+                ({
+                    subscribe: mockSubscribe,
+                    unsubscribe: mockUnsubscribe,
+                    isSubscribed: mockIsSubscribed,
+                    checkAndUnsubscribeIfQueueEmpty: mockCheckAndUnsubscribeIfQueueEmpty,
+                }) as any
+        );
+
+        jest.mocked(ConflictManager).mockImplementation(
+            () =>
+                ({
+                    chooseConflictStrategy: jest.fn().mockResolvedValue(undefined),
+                }) as any
+        );
+
+        jest.mocked(UploadEventHandler).mockImplementation(
+            () =>
+                ({
+                    handleEvent: jest.fn().mockResolvedValue(undefined),
+                }) as any
+        );
+
+        orchestrator = new UploadOrchestrator();
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    const createFileTask = (overrides = {}) => ({
+        uploadId: 'file1',
+        type: NodeType.File,
+        name: 'test.txt',
+        parentUid: 'parent1',
+        batchId: 'batch1',
+        file: new File(['content'], 'test.txt'),
+        sizeEstimate: 1000,
+        ...overrides,
+    });
+
+    const createFolderTask = (overrides = {}) => ({
+        uploadId: 'folder1',
+        type: NodeType.Folder,
+        name: 'MyFolder',
+        parentUid: 'parent1',
+        batchId: 'batch1',
+        modificationTime: new Date(),
+        ...overrides,
+    });
+
+    const mockEmptyLoad = () => ({
+        activeFiles: 0,
+        activeFolders: 0,
+        activeBytesTotal: 0,
+        taskLoads: new Map(),
+    });
+
+    describe('start', () => {
+        it('should not start if already running', async () => {
+            mockGetNextTasks.mockReturnValue([]);
+            mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.Pending }]);
+
+            const startPromise1 = orchestrator.start();
+            const startPromise2 = orchestrator.start();
+
+            jest.advanceTimersByTime(200);
+            orchestrator.stop();
+            jest.advanceTimersByTime(200);
+
+            await Promise.all([startPromise1, startPromise2]);
+
+            expect(mockSubscribe).toHaveBeenCalledTimes(1);
+        });
+
+        it('should subscribe to SDK events if queue has items', async () => {
+            mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.Pending }]);
+            mockGetNextTasks.mockReturnValue([]);
+
+            const startPromise = orchestrator.start();
+            jest.advanceTimersByTime(200);
+            orchestrator.stop();
+            jest.advanceTimersByTime(200);
+
+            await startPromise;
+
+            expect(mockSubscribe).toHaveBeenCalled();
+        });
+
+        it('should not subscribe if already subscribed', async () => {
+            mockIsSubscribed.mockReturnValue(true);
+            mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.Pending }]);
+            mockGetNextTasks.mockReturnValue([]);
+
+            const startPromise = orchestrator.start();
+            jest.advanceTimersByTime(200);
+            orchestrator.stop();
+            jest.advanceTimersByTime(200);
+
+            await startPromise;
+
+            expect(mockSubscribe).not.toHaveBeenCalled();
+        });
+
+        it('should unsubscribe when queue is empty', async () => {
+            mockGetQueue.mockReturnValue([]);
+            mockGetNextTasks.mockReturnValue([]);
+
+            await orchestrator.start();
+
+            expect(mockUnsubscribe).toHaveBeenCalled();
+        });
+
+        it('should execute scheduled tasks', async () => {
+            const fileTask = createFileTask();
+            mockGetQueue.mockReturnValueOnce([{ uploadId: 'file1', status: UploadStatus.Pending }]).mockReturnValue([]);
+            mockGetNextTasks.mockReturnValueOnce([fileTask]).mockReturnValue([]);
+            mockGetCurrentLoad.mockReturnValue(mockEmptyLoad());
+
+            const startPromise = orchestrator.start();
+            await jest.runAllTimersAsync();
+            await startPromise;
+
+            expect(mockFileExecutorExecute).toHaveBeenCalledWith(fileTask);
+        });
+
+        it('should reserve and release capacity for file uploads', async () => {
+            const fileTask = createFileTask();
+            mockGetQueue.mockReturnValueOnce([{ uploadId: 'file1', status: UploadStatus.Pending }]).mockReturnValue([]);
+            mockGetNextTasks.mockReturnValueOnce([fileTask]).mockReturnValue([]);
+            mockGetCurrentLoad.mockReturnValue(mockEmptyLoad());
+
+            const startPromise = orchestrator.start();
+            await jest.runAllTimersAsync();
+            await startPromise;
+
+            expect(mockReserveFile).toHaveBeenCalledWith('file1', 1000);
+            expect(mockReleaseFile).toHaveBeenCalledWith('file1');
+        });
+
+        it('should reserve and release capacity for folder creation', async () => {
+            const folderTask = createFolderTask();
+            mockGetQueue
+                .mockReturnValueOnce([{ uploadId: 'folder1', status: UploadStatus.Pending }])
+                .mockReturnValue([]);
+            mockGetNextTasks.mockReturnValueOnce([folderTask]).mockReturnValue([]);
+            mockGetCurrentLoad.mockReturnValue(mockEmptyLoad());
+
+            const startPromise = orchestrator.start();
+            await jest.runAllTimersAsync();
+            await startPromise;
+
+            expect(mockReserveFolder).toHaveBeenCalled();
+            expect(mockReleaseFolder).toHaveBeenCalled();
+        });
+
+        it('should mark tasks as InProgress before execution', async () => {
+            const fileTask = createFileTask();
+            mockGetQueue.mockReturnValueOnce([{ uploadId: 'file1', status: UploadStatus.Pending }]).mockReturnValue([]);
+            mockGetNextTasks.mockReturnValueOnce([fileTask]).mockReturnValue([]);
+            mockGetCurrentLoad.mockReturnValue(mockEmptyLoad());
+
+            const startPromise = orchestrator.start();
+            await jest.runAllTimersAsync();
+            await startPromise;
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('file1', { status: UploadStatus.InProgress });
+        });
+
+        it('should wait when no tasks available but uploads active', async () => {
+            mockGetCurrentLoad.mockReturnValue({ activeFiles: 1, activeFolders: 0 });
+            mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.InProgress }]);
+            mockGetNextTasks.mockReturnValue([]);
+
+            const startPromise = orchestrator.start();
+
+            jest.advanceTimersByTime(100);
+            expect(mockGetNextTasks).toHaveBeenCalled();
+
+            mockGetCurrentLoad.mockReturnValue({ activeFiles: 0, activeFolders: 0 });
+            mockGetQueue.mockReturnValue([]);
+
+            jest.advanceTimersByTime(100);
+
+            await startPromise;
+        });
+    });
+
+    describe('stop', () => {
+        it('should stop the orchestration loop', async () => {
+            mockGetQueue.mockReturnValue([{ uploadId: 'file1', status: UploadStatus.Pending }]);
+            mockGetNextTasks.mockReturnValue([]);
+
+            const startPromise = orchestrator.start();
+            orchestrator.stop();
+
+            jest.advanceTimersByTime(200);
+
+            await startPromise;
+
+            expect(mockGetNextTasks).toHaveBeenCalled();
+        });
+    });
+
+    describe('reset', () => {
+        it('should reset capacity manager and unsubscribe', () => {
+            orchestrator.reset();
+
+            expect(mockReset).toHaveBeenCalled();
+            expect(mockUnsubscribe).toHaveBeenCalled();
+        });
+    });
+
+    describe('chooseConflictStrategy', () => {
+        it('should resolve conflict and restart', async () => {
+            mockGetQueue.mockReturnValue([]);
+            mockGetNextTasks.mockReturnValue([]);
+
+            await orchestrator.chooseConflictStrategy('file1', UploadConflictStrategy.Rename);
+
+            const conflictManagerInstance = jest.mocked(ConflictManager).mock.results[0].value;
+            expect(conflictManagerInstance.chooseConflictStrategy).toHaveBeenCalledWith(
+                'file1',
+                UploadConflictStrategy.Rename
+            );
+        });
+    });
+});

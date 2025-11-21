@@ -12,14 +12,3 @@ export interface AnonymousUploadTokenState {
     setUploadToken: ({ linkId, authorizationToken }: { linkId: string; authorizationToken: string }) => void;
     removeUploadTokens: (linkId: string | string[]) => void;
 }
-
-export enum UploadConflictStrategy {
-    Rename = 'rename',
-    Replace = 'replace',
-    Skip = 'skip',
-}
-
-export enum UploadConflictType {
-    Draft = 'draft',
-    Normal = 'normal',
-}
