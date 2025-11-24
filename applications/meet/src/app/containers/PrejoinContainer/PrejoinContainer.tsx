@@ -107,13 +107,13 @@ export const PrejoinContainer = ({
                     isInstantJoin={isInstantJoin}
                 />
             </div>
-            <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center">
+            <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center meet-container-padding-x">
                 <div
                     className={clsx(
-                        'prejoin-container-content w-full md:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-2 md:px-4',
+                        'prejoin-container-content w-full md:w-custom xl:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-2 md:px-4',
                         isInstantJoin && 'justify-center'
                     )}
-                    style={{ '--md-w-custom': '71rem' }}
+                    style={{ '--md-w-custom': '71rem', '--xl-w-custom': '76rem' }}
                 >
                     {!isInstantJoin && (
                         <DeviceSettings
