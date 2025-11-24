@@ -94,7 +94,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                             onDragStart={handleDragStart}
                                             onDragEnd={handleDragEnd}
                                             onSelect={onSelect}
-                                            onContextMenu={onContextMenu}
+                                            onContextMenu={bulkEnabled ? undefined : onContextMenu}
                                         />
                                     </div>
                                 );
