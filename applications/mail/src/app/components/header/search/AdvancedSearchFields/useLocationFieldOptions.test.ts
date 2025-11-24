@@ -16,10 +16,16 @@ jest.mock('proton-mail/components/categoryView/useCategoriesView', () => ({
     })),
 }));
 
+const mockUseRetentionPolicies = jest.fn(() => [[], false]);
+jest.mock('@proton/account/retentionPolicies/hooks', () => ({
+    useRetentionPolicies: () => mockUseRetentionPolicies(),
+}));
+
 describe('useLocationFieldOptions', () => {
     beforeEach(() => {
         mockUseMailSettings();
         mockUseScheduleSendFeature();
+        mockUseRetentionPolicies.mockReturnValue([[], false]);
         mockUseLabels([
             [
                 {
@@ -85,6 +91,30 @@ describe('useLocationFieldOptions', () => {
                 },
                 ...expectedAll.slice(1),
             ]);
+        });
+    });
+
+    describe('retention policies', () => {
+        it("should not include deleted folder when retention policies are disabled by user's organization", () => {
+            mockUseRetentionPolicies.mockReturnValue([[], false]);
+            const helper = useLocationFieldOptions();
+
+            expect(helper.all).toStrictEqual(expectedAll);
+        });
+
+        it("should include deleted folder when retention policies are enabled by user's organization", () => {
+            mockUseRetentionPolicies.mockReturnValue([[{ ID: 'rule1' } as never], false]);
+            const helper = useLocationFieldOptions();
+
+            const expectedWithSoftDeleted = [...expectedAll];
+            expectedWithSoftDeleted.splice(9, 0, {
+                value: '40',
+                text: 'Deleted',
+                url: '/deleted',
+                icon: 'trash-clock',
+            });
+
+            expect(helper.all).toStrictEqual(expectedWithSoftDeleted);
         });
     });
 });
