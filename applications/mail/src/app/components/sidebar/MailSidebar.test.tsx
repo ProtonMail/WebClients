@@ -23,7 +23,6 @@ import * as GetStartedChecklistProviderModule from '../../containers/onboardingC
 import { assertFocus, clearAll, getDropdown, mailTestRender, minimalCache } from '../../helpers/test/helper';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
-import { useDriveSpotlight } from './useDriveSpotlight';
 
 jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
 
@@ -36,8 +35,9 @@ const mockedUseRetentionPolicies = useRetentionPolicies as jest.MockedFunction<a
 jest.mock('@proton/features/useFeature');
 const mockedUseFeature = useFeature as jest.MockedFunction<any>;
 
-jest.mock('./useDriveSpotlight');
-const mockedUseDriveSpotlight = useDriveSpotlight as jest.MockedFunction<any>;
+jest.mock('./DriveSpotlight', () => ({
+    DriveSpotlight: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}));
 
 loudRejection();
 
@@ -119,7 +119,6 @@ describe('MailSidebar', () => {
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
 
         // Mock DriveSpotlight dependencies
-        mockedUseDriveSpotlight.mockReturnValue(false);
         mockedUseFeature.mockReturnValue({
             feature: { Value: true },
             update: jest.fn(() => Promise.resolve()),
@@ -566,7 +565,6 @@ describe('Sidebar checklist display', () => {
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
 
         // Mock DriveSpotlight dependencies
-        mockedUseDriveSpotlight.mockReturnValue(false);
         mockedUseFeature.mockReturnValue({
             feature: { Value: true },
             update: jest.fn(() => Promise.resolve()),
