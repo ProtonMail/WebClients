@@ -4,6 +4,7 @@ import type { List } from 'react-virtualized';
 import { c, msgid } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { ItemsListContextMenu, useItemContextMenu } from '@proton/pass/components/Item/List/ItemsListContextMenu';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
@@ -41,12 +42,14 @@ const interpolateDuplicates = (groups: UniqueItem[][], items: ItemRevision[]): I
 export const DuplicatePasswords: FC = () => {
     const { onTelemetry } = usePassCore();
     const listRef = useRef<List>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const selectItem = useSelectItemAction();
 
     const { duplicates } = useMonitor();
     const duplicatedData = useMemo(() => duplicates.data.flat(), [duplicates.data]);
     const items = useMemoSelector(selectSelectedItems, [duplicatedData]);
     const selectedItem = useSelectedItem();
+    const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
     const { interpolation, interpolationIndexes } = useMemo(
         () => interpolateDuplicates(duplicates.data, items),
@@ -62,39 +65,44 @@ export const DuplicatePasswords: FC = () => {
     }, []);
 
     return interpolation.length > 0 ? (
-        <VirtualList
-            interpolationIndexes={interpolationIndexes}
-            ref={listRef}
-            rowCount={interpolation.length}
-            rowHeight={(idx) => (interpolationIndexes.includes(idx) ? 28 : 54)}
-            rowRenderer={({ style, index, key }) => {
-                const row = interpolation[index];
-                switch (row.type) {
-                    case 'item': {
-                        const item = row.item;
-                        const id = getItemKey(item);
-                        return (
-                            <div style={style} key={key}>
-                                <ItemsListItem
-                                    active={selectedItem && itemEq(selectedItem)(item)}
-                                    id={id}
-                                    item={item}
-                                    key={id}
-                                    onSelect={onSelect}
-                                />
-                            </div>
-                        );
+        <>
+            <VirtualList
+                interpolationIndexes={interpolationIndexes}
+                ref={listRef}
+                containerRef={containerRef}
+                rowCount={interpolation.length}
+                rowHeight={(idx) => (interpolationIndexes.includes(idx) ? 28 : 54)}
+                rowRenderer={({ style, index, key }) => {
+                    const row = interpolation[index];
+                    switch (row.type) {
+                        case 'item': {
+                            const item = row.item;
+                            const id = getItemKey(item);
+                            return (
+                                <div style={style} key={key}>
+                                    <ItemsListItem
+                                        active={selectedItem && itemEq(selectedItem)(item)}
+                                        id={id}
+                                        item={item}
+                                        key={id}
+                                        onSelect={onSelect}
+                                        onContextMenu={onContextMenu}
+                                    />
+                                </div>
+                            );
+                        }
+                        case 'divider': {
+                            return (
+                                <div style={style} key={key} className="flex color-weak text-sm pt-2 pb-1 pl-3">
+                                    {row.label}
+                                </div>
+                            );
+                        }
                     }
-                    case 'divider': {
-                        return (
-                            <div style={style} key={key} className="flex color-weak text-sm pt-2 pb-1 pl-3">
-                                {row.label}
-                            </div>
-                        );
-                    }
-                }
-            }}
-        />
+                }}
+            />
+            {contextMenuItem && <ItemsListContextMenu anchorRef={containerRef} {...contextMenuItem} />}
+        </>
     ) : (
         <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
             <strong>{c('Title').t`No reused passwords`}</strong>
