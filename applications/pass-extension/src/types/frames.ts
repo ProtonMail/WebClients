@@ -1,6 +1,8 @@
+import type { AbstractField } from 'proton-pass-extension/types/field';
 import type { Coords } from 'proton-pass-extension/types/inline';
 
-import type { MaybeNull, Result } from '@proton/pass/types';
+import type { FieldType, FormType } from '@proton/pass/fathom/labels';
+import type { FrameId, MaybeNull, Result } from '@proton/pass/types';
 
 export type FrameAttributes = {
     src?: string;
@@ -53,3 +55,8 @@ export type FrameField = {
  * and re-dispatched to the relevant frameId. This allows having different
  * types if data needs to be transformed before relaying */
 export type FrameRelay<T, Relayed = {}> = T & ({ type: 'initial' } | ({ type: 'relay' } & Relayed));
+
+export type FrameFormMatch = { formId: string; formType: FormType; fields: FrameFieldMatch[] };
+export type FrameFieldMatch<T extends FieldType = FieldType> = { fieldId: string } & AbstractField<T>;
+export type FrameFormsResult = { forms: FrameFormMatch[]; frameAttributes: FrameAttributes };
+export type FrameForms = { frameId: FrameId } & FrameFormsResult;

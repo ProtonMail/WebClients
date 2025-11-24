@@ -7,9 +7,11 @@ import { getAutofillableFrameIDs } from 'proton-pass-extension/lib/utils/frames'
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 import type { AutofillRequest, AutofillSequence } from 'proton-pass-extension/types/autofill';
+import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { CCFieldType } from '@proton/pass/fathom/labels';
+import { FormType } from '@proton/pass/fathom/labels';
 import { clientReady } from '@proton/pass/lib/client';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
@@ -43,6 +45,7 @@ import {
 import type {
     CCItemData,
     FormCredentials,
+    FrameId,
     ItemContent,
     ItemRevision,
     Maybe,
@@ -163,14 +166,18 @@ export const createAutoFillService = () => {
             .catch(noop);
     };
 
+    const queryFrameForms = async (tabId: TabId, frameId: FrameId): Promise<Maybe<FrameFormsResult>> => {
+        const message = backgroundMessage({ type: WorkerMessageType.FRAME_FORMS_QUERY });
+        return sendTabMessage(message, { tabId, frameId }).catch(noop);
+    };
+
     const queryTabLoginForms = async (tabId: TabId): Promise<boolean> => {
         try {
             const frames = (await browser.webNavigation.getAllFrames({ tabId })) ?? [];
 
             for (const frame of frames) {
-                const message = backgroundMessage({ type: WorkerMessageType.AUTOFILL_CHECK_FORM });
-                const res = await sendTabMessage(message, { tabId, frameId: frame.frameId }).catch(noop);
-                if (res?.hasLoginForm) return true;
+                const forms = (await queryFrameForms(tabId, frame.frameId))?.forms;
+                if (forms?.some((form) => form.formType === FormType.LOGIN)) return true;
             }
 
             return false;
