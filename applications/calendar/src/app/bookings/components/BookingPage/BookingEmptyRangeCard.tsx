@@ -1,5 +1,5 @@
 interface Props {
-    message: string;
+    message: React.ReactNode;
     action?: React.ReactNode;
 }
 
