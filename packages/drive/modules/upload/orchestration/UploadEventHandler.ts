@@ -3,6 +3,7 @@ import { useUploadControllerStore } from '../store/uploadController.store';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadEvent, FolderCreationEvent, UploadEvent } from '../types';
 import { UploadStatus } from '../types';
+import { getBlockedChildren } from '../utils/dependencyHelpers';
 import type { ConflictManager } from './ConflictManager';
 import type { SDKTransferActivity } from './SDKTransferActivity';
 
@@ -99,6 +100,15 @@ export class UploadEventHandler {
             status: UploadStatus.Finished,
             nodeUid: event.nodeUid,
         });
+
+        const allItems = Array.from(queueStore.queue.values());
+        const childrenIds = getBlockedChildren(event.uploadId, allItems);
+        for (const childId of childrenIds) {
+            queueStore.updateQueueItems(childId, {
+                parentUid: event.nodeUid,
+            });
+        }
+
         this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
     }
 
