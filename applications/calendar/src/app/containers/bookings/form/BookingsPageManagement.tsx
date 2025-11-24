@@ -18,6 +18,7 @@ import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingLocation, BookingState } from '../bookingsProvider/interface';
@@ -75,10 +76,14 @@ export const Form = () => {
                         <Button
                             key={option.value}
                             onClick={() => updateFormData('duration', option.value)}
-                            shape={formData.duration === option.value ? 'solid' : 'outline'}
-                            color="weak"
+                            shape="outline"
+                            color={formData.duration === option.value ? 'norm' : 'weak'}
                             aria-pressed={formData.duration === option.value}
                             aria-describedby="duration-select"
+                            className={clsx(
+                                'booking-sidebar-duration-button',
+                                formData.duration === option.value && 'text-semibold'
+                            )}
                             pill
                         >
                             {option.text}
