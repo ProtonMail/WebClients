@@ -4,6 +4,7 @@ import { format, isToday } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/components';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -119,6 +120,16 @@ export const BookingTimeSlotGrid = () => {
             </div>
             {!canShowSlots && (
                 <>
+                    {availabilityState === AvailabilityState.Loading && (
+                        <BookingEmptyRangeCard
+                            message={
+                                <div className="flex justify-center items-center gap-2">
+                                    <Loader />
+                                    {c('Info').t`Loading appointments...`}
+                                </div>
+                            }
+                        />
+                    )}
                     {availabilityState === AvailabilityState.HasNextSlot && (
                         <BookingEmptyRangeCard
                             message={c('Info').t`No appointments available this week`}
