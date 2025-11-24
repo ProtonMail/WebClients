@@ -102,6 +102,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                                                 ...payload,
                                                 itemId,
                                                 shareId,
+                                                crossFrame: true,
                                                 type: 'creditCard',
                                             },
                                         });

@@ -1,5 +1,5 @@
 import type { BridgeResponse } from 'proton-pass-extension/app/content/bridge/types';
-import type { AutofillItem } from 'proton-pass-extension/types/autofill';
+import type { AutofillActionDTO } from 'proton-pass-extension/types/autofill';
 import type {
     AutofillSyncMessage,
     FeatureFlagsUpdateMessage,
@@ -13,7 +13,7 @@ import type {
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, ClientEndpoint, FormCredentials, ItemContent, ItemType } from '@proton/pass/types';
+import type { AppState, ClientEndpoint, FormCredentials, ItemContent } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 import { isObject } from '@proton/pass/utils/object/is-object';
 
@@ -86,7 +86,7 @@ export type InlineMessageType = InlinePortMessageType | InlineWorkerMessages['ty
 
 export type InlineMessage<T extends InlineMessageType = InlineMessageType> = Extract<
     | InlineWorkerMessages
-    | { type: InlinePortMessageType.AUTOFILL_ACTION; payload: AutofillItem & { type: ItemType } }
+    | { type: InlinePortMessageType.AUTOFILL_ACTION; payload: AutofillActionDTO }
     | { type: InlinePortMessageType.AUTOFILL_EMAIL; payload: { email: string } }
     | { type: InlinePortMessageType.AUTOFILL_FILTER; payload: { startsWith: string } }
     | { type: InlinePortMessageType.AUTOFILL_GENERATED_PW; payload: { password: string } }
