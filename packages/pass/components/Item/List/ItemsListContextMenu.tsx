@@ -125,6 +125,7 @@ type ConnectedProps = { item: ItemRevision; share: Share; anchorRef: RefObject<H
 const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, share, anchorRef }) => {
     const id = getItemKey(item);
 
+    const { isOpen, close } = useContextMenu();
     const itemState = useItemState(item, share);
     const itemActions = useItemActions(item);
 
@@ -135,6 +136,13 @@ const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, share, anchor
 
         return copyBtns.concat(separator, actionBtns);
     }, [item, itemState, itemActions]);
+
+    const itemOpened = isOpen(getItemKey(item));
+    const autoClose = elements.length === 0 && itemOpened;
+
+    useEffect(() => {
+        if (autoClose) close();
+    }, [autoClose]);
 
     return (
         <ContextMenu
