@@ -1,5 +1,6 @@
 import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { DownloadQueueTask, DownloadQueueTaskHandle } from './downloadTypes';
+import { downloadLogDebug } from './utils/downloadLogger';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
 
 const ALLOWED_BYTES_PER_FILE = 40 * 1024 * 1024; // 40 MiB
@@ -34,11 +35,14 @@ export class DownloadScheduler {
     // Remove a task from any queue state and free the load it reserved.
     cancelTask(taskId: string): void {
         const index = this.pendingTasks.findIndex((task) => task.taskId === taskId);
+
         if (index >= 0) {
+            downloadLogDebug('Cancel download task', { taskId, isPending: true });
             this.pendingTasks.splice(index, 1);
         }
 
         if (this.activeTasksLoad.delete(taskId)) {
+            downloadLogDebug('Cancel download task', { taskId, isActive: true });
             this.drainQueue();
         }
     }
@@ -113,6 +117,13 @@ export class DownloadScheduler {
     private startTask(task: DownloadQueueTask, pendingTaskLoad: TaskLoad): void {
         const id = task.taskId;
         this.activeTasksLoad.set(id, pendingTaskLoad);
+        downloadLogDebug('Start download task', {
+            taskId: task.taskId,
+            downloadId: task.downloadId,
+            mediaType: task.node.mediaType,
+            storageSizeEstimate: task.storageSizeEstimate,
+        });
+
         task.start()
             .then((handle: DownloadQueueTaskHandle) => {
                 handle.completion
