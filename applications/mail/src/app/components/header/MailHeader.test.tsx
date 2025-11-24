@@ -38,6 +38,10 @@ jest.mock('@proton/components/containers/offers/hooks/useOfferConfig.ts', () => 
     default: jest.fn(() => [undefined, false]),
 }));
 
+jest.mock('@proton/account/retentionPolicies/hooks', () => ({
+    useRetentionPolicies: jest.fn(() => [[], false]),
+}));
+
 describe('MailHeader', () => {
     let props: ReturnType<typeof getProps>;
 
