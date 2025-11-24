@@ -48,6 +48,7 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
                     {
                         targets: browserslist,
                         useBuiltIns: 'entry',
+                        shippedProposals: true /* needed for typed-array base64 and hex functions. NOTE: Only works for useBuiltIns: 'usage' */,
                         corejs: { version: coreJsVersion },
                         exclude: ['transform-typeof-symbol'], // Exclude transforms that make all code slower
                     },
