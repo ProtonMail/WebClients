@@ -6,6 +6,8 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features/interface';
 import spotlightImg from '@proton/styles/assets/img/calendar-booking/spotlight-icon.svg';
 
+import { useBookingsAvailability } from '../useBookingsAvailability';
+
 export const IntroduceBookingsSpotlightContent = () => {
     return (
         <>
@@ -27,9 +29,11 @@ export const useIntroduceBookingsSpotlight = () => {
         welcomeFlags: { isWelcomeFlow },
     } = useWelcomeFlags();
 
+    const bookingsAvailability = useBookingsAvailability();
+
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.SpotlightIntroduceBookings,
-        !isWelcomeFlow
+        !isWelcomeFlow && bookingsAvailability
     );
 
     const shouldShowSpotlight = useSpotlightShow(show);

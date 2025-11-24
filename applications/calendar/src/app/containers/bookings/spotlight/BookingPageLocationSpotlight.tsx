@@ -4,7 +4,10 @@ import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import spotlightImg from '@proton/styles/assets/img/calendar-booking/spotlight-icon.svg';
+
+import { useBookingsAvailability } from '../useBookingsAvailability';
 
 export const BookingPageLocationSpotlightContent = () => {
     return (
@@ -27,9 +30,12 @@ export const useBookingPageLocationSpotlight = () => {
         welcomeFlags: { isWelcomeFlow },
     } = useWelcomeFlags();
 
+    const bookingsAvailability = useBookingsAvailability();
+    const { feature } = useFeature(FeatureCode.SpotlightIntroduceBookings);
+
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.BookingPageLocationSpotlight,
-        !isWelcomeFlow
+        !isWelcomeFlow && bookingsAvailability && !feature?.Value
     );
 
     const shouldShowSpotlight = useSpotlightShow(show);
