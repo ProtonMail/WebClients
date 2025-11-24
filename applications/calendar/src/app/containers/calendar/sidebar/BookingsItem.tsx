@@ -99,6 +99,9 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                                         hasCaret={false}
                                         shape="ghost"
                                         size="small"
+                                        onToggle={() => {
+                                            spotlight.onClose();
+                                        }}
                                         className="group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm shrink-0 hidden md:inline-flex"
                                         content={
                                             <IcThreeDotsHorizontal
