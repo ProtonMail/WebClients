@@ -269,9 +269,9 @@ export const generateRangeFromSlots = (editData: BookingPageEditData): BookingRa
     return ranges;
 };
 
-export const computeRangesErrors = (ranges: BookingRange[], duration: number) => {
+export const computeRangesErrors = (ranges: BookingRange[], duration: number): BookingRange[] => {
     return ranges.map((range) => {
         const isTooShort = differenceInMinutes(range.end, range.start) < duration;
-        return isTooShort ? { ...range, error: BookingRangeError.TOO_SHORT } : { ...range, error: null };
+        return isTooShort ? { ...range, error: BookingRangeError.TOO_SHORT } : { ...range, error: undefined };
     });
 };
