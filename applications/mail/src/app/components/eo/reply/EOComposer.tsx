@@ -5,7 +5,11 @@ import { useHandler } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
-import { EO_DEFAULT_MAILSETTINGS, EO_DEFAULT_USER_SETTINGS } from '@proton/shared/lib/mail/eo/constants';
+import {
+    EO_DEFAULT_MAILSETTINGS,
+    EO_DEFAULT_USER,
+    EO_DEFAULT_USER_SETTINGS,
+} from '@proton/shared/lib/mail/eo/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
@@ -44,6 +48,7 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
             referenceMessage,
             EO_DEFAULT_MAILSETTINGS,
             EO_DEFAULT_USER_SETTINGS,
+            EO_DEFAULT_USER,
             [],
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             (ID) => {
