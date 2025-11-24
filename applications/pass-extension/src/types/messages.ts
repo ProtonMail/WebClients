@@ -1,8 +1,9 @@
-import type { AutofillItem, AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
+import type { AutofillActionDTO, AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
 import type {
     FrameAttributes,
     FrameCheckResult,
     FrameField,
+    FrameFormsResult,
     FrameQueryDTO,
     FrameQueryResult,
 } from 'proton-pass-extension/types/frames';
@@ -101,9 +102,9 @@ export enum WorkerMessageType {
     AUTH_INIT = 'AUTH_INIT',
     AUTH_PULL_FORK = 'AUTH_PULL_FORK',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
+
     AUTOFILL_CC = 'AUTOFILL_CC',
     AUTOFILL_CC_QUERY = 'AUTOFILL_CC_QUERY',
-    AUTOFILL_CHECK_FORM = 'AUTOFILL_CHECK_FORM',
     AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_IDENTITY_QUERY = 'AUTOFILL_IDENTITY_QUERY',
     AUTOFILL_LOGIN = 'AUTOFILL_LOGIN',
@@ -111,6 +112,7 @@ export enum WorkerMessageType {
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
     AUTOFILL_SEQUENCE = 'AUTOFILL_SEQUENCE',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
+
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
     B2B_EVENT = 'B2B_EVENT',
@@ -142,6 +144,7 @@ export enum WorkerMessageType {
 
     FRAME_QUERY = 'FRAME_QUERY',
     FRAME_VISIBILITY = 'FRAME_VISIBILITY',
+    FRAME_FORMS_QUERY = 'FRAME_FORMS_QUERY',
 
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
@@ -195,10 +198,9 @@ export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONF
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
-export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillItem>;
+export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillActionDTO>;
 
 export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
-export type AutofillCheckFormMessage = { type: WorkerMessageType.AUTOFILL_CHECK_FORM };
 export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
 export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, SelectedItem>;
@@ -207,6 +209,7 @@ export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHE
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
 export type AutofillSequenceMessage = WithPayload<WorkerMessageType.AUTOFILL_SEQUENCE, AutofillRequest>;
 export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
+
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 
@@ -231,6 +234,7 @@ export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, F
 
 export type FrameQueryMessage = WithPayload<WorkerMessageType.FRAME_QUERY, FrameQueryDTO>;
 export type FrameVisibilityMessage = WithPayload<WorkerMessageType.FRAME_VISIBILITY, FrameAttributes>;
+export type FrameFormsQueryMessage = { type: WorkerMessageType.FRAME_FORMS_QUERY };
 
 export type InlineDropdownAttachMessage = { type: WorkerMessageType.INLINE_DROPDOWN_ATTACH };
 export type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
@@ -291,7 +295,6 @@ export type WorkerMessage =
     | AuthUnlockMessage
     | AutofillCCMessage
     | AutofillCCQueryMessage
-    | AutofillCheckFormMessage
     | AutofillIdentityMessage
     | AutofillIdentityQueryMessage
     | AutofillLoginMessage
@@ -320,6 +323,7 @@ export type WorkerMessage =
     | FormStatusMessage
     | FrameQueryMessage
     | FrameVisibilityMessage
+    | FrameFormsQueryMessage
     | InlineDropdownAttachMessage
     | InlineDropdownClosedMessage
     | InlineDropdownCloseMessage
@@ -379,7 +383,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_PULL_FORK]: Result<PullForkResponse>;
     [WorkerMessageType.AUTH_UNLOCK]: Result;
     [WorkerMessageType.AUTOFILL_CC_QUERY]: AutofillCCResult;
-    [WorkerMessageType.AUTOFILL_CHECK_FORM]: { hasLoginForm: boolean };
     [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
     [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
@@ -396,6 +399,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FRAME_QUERY]: FrameQueryResult;
     [WorkerMessageType.FRAME_VISIBILITY]: FrameCheckResult;
+    [WorkerMessageType.FRAME_FORMS_QUERY]: FrameFormsResult;
     [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
     [WorkerMessageType.INLINE_ICON_SHIFT]: IconShiftResult;
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };

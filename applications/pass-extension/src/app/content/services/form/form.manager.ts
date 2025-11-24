@@ -3,11 +3,14 @@ import type {
     FrameMessageBroker,
     FrameMessageHandler,
 } from 'proton-pass-extension/app/content/services/client/client.channel';
+import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
+import type { FrameFieldMatch, FrameFormMatch } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clearDetectionCache } from '@proton/pass/fathom';
-import { FieldType, FormType } from '@proton/pass/fathom/labels';
+import { FieldType } from '@proton/pass/fathom/labels';
 import { logger } from '@proton/pass/utils/logger';
+import { pick } from '@proton/shared/lib/helpers/object';
 import throttle from '@proton/utils/throttle';
 
 import type { FormHandle } from './form';
@@ -149,18 +152,23 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
         void runDetection(options.reason);
     };
 
-    const onCheckForm: FrameMessageHandler<WorkerMessageType.AUTOFILL_CHECK_FORM> = (_, sendResponse) => {
-        const trackedForms = getTrackedForms();
-        const hasLoginForm = trackedForms?.some(({ formType }) => formType === FormType.LOGIN);
-        sendResponse({ hasLoginForm });
+    const onFrameFormsQuery: FrameMessageHandler<WorkerMessageType.FRAME_FORMS_QUERY> = (_, sendResponse) => {
+        const forms = getTrackedForms().map<FrameFormMatch>((form) => ({
+            formId: form.formId,
+            formType: form.formType,
+            fields: form
+                .getFields()
+                .map<FrameFieldMatch>((field) => pick(field, ['fieldId', 'fieldSubType', 'fieldType'])),
+        }));
 
+        sendResponse({ forms, frameAttributes: getFrameAttributes() });
         return true;
     };
 
-    channel.register(WorkerMessageType.AUTOFILL_CHECK_FORM, onCheckForm);
+    channel.register(WorkerMessageType.FRAME_FORMS_QUERY, onFrameFormsQuery);
 
     const destroy = () => {
-        channel.unregister(WorkerMessageType.AUTOFILL_CHECK_FORM, onCheckForm);
+        channel.unregister(WorkerMessageType.FRAME_FORMS_QUERY, onFrameFormsQuery);
 
         cancelIdleCallback(state.detectionRequest);
         runDetection.cancel();
