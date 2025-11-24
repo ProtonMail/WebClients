@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import type { ThemeColor } from '@proton/colors/types';
 import type { SectionConfig } from '@proton/components';
 import {
     Renew,
@@ -10,9 +11,10 @@ import {
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments';
-import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import type { UserModel } from '@proton/shared/lib/interfaces';
-import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
+import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
+import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 interface Arguments {
@@ -23,6 +25,13 @@ interface Arguments {
     isB2BTrial: boolean;
     isReferralProgramEnabled: boolean;
     isReferralExpansionEnabled: boolean;
+    isBreachesAccountDashboardEnabled: boolean;
+    isZoomIntegrationEnabled: boolean;
+    isProtonMeetIntegrationEnabled: boolean;
+    organization?: OrganizationExtended;
+    isDataRecoveryAvailable: boolean;
+    isSessionRecoveryAvailable: boolean;
+    recoveryNotificationColor?: ThemeColor;
     referralInfo: {
         refereeRewardAmount: string;
         referrerRewardAmount: string;
@@ -39,6 +48,13 @@ export const getRoutes = ({
     isReferralProgramEnabled,
     isReferralExpansionEnabled,
     referralInfo,
+    isBreachesAccountDashboardEnabled,
+    isZoomIntegrationEnabled,
+    isProtonMeetIntegrationEnabled,
+    organization,
+    isSessionRecoveryAvailable,
+    isDataRecoveryAvailable,
+    recoveryNotificationColor,
 }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const cancellablePlan = hasCancellablePlan(subscription);
@@ -46,6 +62,14 @@ export const getRoutes = ({
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const planIsManagedExternally = isManagedExternally(subscription);
     const credits = referralInfo.maxRewardAmount;
+
+    const isExternalUser = getIsExternalAccount(user);
+    const showVideoConferenceSection =
+        (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&
+        !isExternalUser &&
+        (organization?.Settings.VideoConferencingEnabled || !user.hasPaidMail);
+
+    const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
 
     return {
         dashboardV2: {
@@ -235,6 +259,34 @@ export const getRoutes = ({
                 },
             ],
         },
+        recovery: {
+            id: 'recovery',
+            text: c('Title').t`Recovery`,
+            to: '/recovery',
+            icon: 'key',
+            available: isAccountRecoveryAvailable,
+            notification: recoveryNotificationColor,
+            subsections: [
+                {
+                    text: '',
+                    id: 'checklist',
+                },
+                {
+                    text: c('Title').t`Account recovery`,
+                    id: 'account',
+                },
+                {
+                    text: c('Title').t`Data recovery`,
+                    id: 'data',
+                    available: isDataRecoveryAvailable,
+                },
+                {
+                    text: c('Title').t`Password reset settings`,
+                    id: 'password-reset',
+                    available: isSessionRecoveryAvailable,
+                },
+            ],
+        },
         account: {
             id: 'account',
             text: c('Title').t`Account`,
@@ -283,6 +335,48 @@ export const getRoutes = ({
                 {
                     text: c('Themes').t`Themes`,
                     id: 'themes',
+                },
+            ],
+        },
+        vpnSecurity: {
+            id: 'security',
+            text: c('Title').t`Security and privacy`,
+            to: '/security',
+            icon: 'shield',
+            subsections: [
+                {
+                    text: PROTON_SENTINEL_NAME,
+                    id: 'sentinel',
+                    available: !isSSOUser,
+                },
+                {
+                    text: DARK_WEB_MONITORING_NAME,
+                    id: 'breaches',
+                    available: isBreachesAccountDashboardEnabled && !isSSOUser,
+                },
+                {
+                    text: c('sso').t`Devices management`,
+                    id: 'devices',
+                    available: getIsGlobalSSOAccount(user),
+                },
+                {
+                    text: c('Title').t`Session management`,
+                    id: 'sessions',
+                    available: !isSSOUser,
+                },
+                {
+                    text: c('Title').t`Activity monitor`,
+                    id: 'logs',
+                    available: !isSSOUser,
+                },
+                {
+                    text: c('Title').t`Third-party apps and services`,
+                    id: 'third-party',
+                    available: showVideoConferenceSection,
+                },
+                {
+                    text: c('Title').t`Privacy and data collection`,
+                    id: 'privacy',
                 },
             ],
         },
