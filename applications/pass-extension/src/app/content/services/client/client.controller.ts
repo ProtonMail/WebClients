@@ -6,6 +6,7 @@
  * unnecessary resource allocation in irrelevant frames. Main frames start immediately when visible.
  * Includes activity probing for service worker connection health on long-running tabs. */
 import type { DebouncedFunc } from 'lodash';
+import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type {
     ContentScriptClient,
     ContentScriptClientFactoryOptions,
@@ -62,25 +63,39 @@ const sendActivityProbe = () => sendMessage(contentScriptMessage({ type: WorkerM
 
 /** Validates frame visibility to prevent autofill in hidden iframes and ensure
  * UI overlays only appear on visible frames. Rejects if any parent frame is hidden. */
-const onFrameQuery: FrameMessageHandler<WorkerMessageType.FRAME_QUERY> = ({ payload }, sendResponse) => {
-    const target = getFrameElement(payload.frameId, payload.frameAttributes);
-    if (!target) sendResponse({ ok: false });
-    else if (isSandboxedFrame(target)) sendResponse({ ok: false });
-    else if (!getFrameVisibility(target)) sendResponse({ ok: false });
-    else {
-        sendResponse({
-            ok: true,
-            /** Report frame position relative to current
-             * document (may be nested iframe) */
-            coords: getNodePosition(target),
-            /** Return frame attributes to enable continued
-             * tree-walking in parent frames  */
-            frameAttributes: getFrameAttributes(),
-        });
-    }
+const onFrameQuery: FrameMessageHandler<WorkerMessageType.FRAME_QUERY> = withContext(
+    (ctx, { payload }, sendResponse) => {
+        const target = getFrameElement(payload.frameId, payload.frameAttributes);
+        if (!target) sendResponse({ ok: false });
+        else if (isSandboxedFrame(target)) sendResponse({ ok: false });
+        else {
+            switch (payload.type) {
+                case 'form':
+                    const forms = ctx?.service.formManager.getForms();
+                    const form = forms?.find((form) => form.element.contains(target));
+                    sendResponse({ ok: true, type: 'form', formId: form?.formId ?? null });
+                    break;
 
-    return true;
-};
+                case 'position':
+                    if (!getFrameVisibility(target)) sendResponse({ ok: false });
+                    else {
+                        sendResponse({
+                            ok: true,
+                            type: 'position',
+                            /** Report frame position relative to current
+                             * document (may be nested iframe) */
+                            coords: getNodePosition(target),
+                            /** Return frame attributes to enable continued
+                             * tree-walking in parent frames  */
+                            frameAttributes: getFrameAttributes(),
+                        });
+                    }
+                    break;
+            }
+        }
+        return true;
+    }
+);
 
 /** Multi-layer visibility validation to avoid unnecessary work in hidden contexts.
  * Main frames only check document visibility; sub-frames validate size and parent visibility. */

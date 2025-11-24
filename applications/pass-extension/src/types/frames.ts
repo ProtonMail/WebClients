@@ -11,25 +11,33 @@ export type FrameAttributes = {
     ariaLabel?: string;
 };
 
+export type FrameQueryType = 'position' | 'form';
+
 /** Query payload sent to parent frame to get child iframe position */
 export type FrameQueryDTO = {
     /** ID of child frame whose position is being queried */
     frameId: number;
     /** Child frame attributes for identification in parent DOM */
     frameAttributes: FrameAttributes;
-    /** Parent frame ID (null for main frame) */
-    parentFrameId: MaybeNull<number>;
+    /** "position": resolves relative positioning
+     *  "form": resolves relative parent form */
+    type: FrameQueryType;
 };
 
 /** Response from parent frame containing child iframe positioning data */
-export type FrameQueryResponse = {
-    /** Child iframe coordinates relative to parent frame viewport */
-    coords: Coords;
-    /** Parent frame attributes for next iteration in coordinate chain */
-    frameAttributes: FrameAttributes;
-};
+export type FrameQueryResponse<T extends FrameQueryType> = Extract<
+    | {
+          type: 'position';
+          /** Child iframe coordinates relative to parent frame viewport */
+          coords: Coords;
+          /** Parent frame attributes for next iteration in coordinate chain */
+          frameAttributes: FrameAttributes;
+      }
+    | { type: 'form'; formId: MaybeNull<string> },
+    { type: T }
+>;
 
-export type FrameQueryResult = Result<FrameQueryResponse>;
+export type FrameQueryResult = Result<FrameQueryResponse<FrameQueryType>>;
 export type FrameCheckResult = { visible: boolean };
 
 export type FrameField = {
