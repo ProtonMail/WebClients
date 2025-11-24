@@ -43,10 +43,10 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
         trackedForms: new Map(),
     };
 
-    const getTrackedForms = () => Array.from(state.trackedForms.values());
-    const getTrackedFields = () => Array.from(getTrackedForms().flatMap((form) => form.getFields()));
-
-    const getFormById = (formId: string) => getTrackedForms().find((form) => form.formId === formId);
+    const getForms = () => Array.from(state.trackedForms.values());
+    const getFormByIds = (formIds: string[]) => getForms().filter((form) => formIds.includes(form.formId));
+    const getFormById = (formId: string) => getForms().find((form) => form.formId === formId);
+    const getFields = () => Array.from(getForms().flatMap((form) => form.getFields()));
 
     const detachTrackedForm = (formEl: HTMLElement) => {
         state.trackedForms.get(formEl)?.detach();
@@ -109,7 +109,7 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
                                 formHandle.reconciliate(options.formType, options.fields);
                             });
 
-                            onDetection(getTrackedForms());
+                            onDetection(getForms());
                         } catch (err) {
                             logger.warn(`[FormTracker::Detector] ${err}`);
                         }
@@ -153,7 +153,7 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
     };
 
     const onFrameFormsQuery: FrameMessageHandler<WorkerMessageType.FRAME_FORMS_QUERY> = (_, sendResponse) => {
-        const forms = getTrackedForms().map<FrameFormMatch>((form) => ({
+        const forms = getForms().map<FrameFormMatch>((form) => ({
             formId: form.formId,
             formType: form.formType,
             fields: form
@@ -181,7 +181,7 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
         state.trackedForms.clear();
     };
 
-    return { getFormById, getTrackedFields, getTrackedForms, detect, sync, destroy };
+    return { getFormById, getFormByIds, getFields, getForms, detect, sync, destroy };
 };
 
 export type FormManager = ReturnType<typeof createFormManager>;

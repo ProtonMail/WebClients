@@ -100,7 +100,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         let identities = false;
         let ccs = false;
 
-        const fields = ctx.service.formManager.getTrackedFields();
+        const fields = ctx.service.formManager.getFields();
 
         for (const field of fields) {
             if (field.action?.type === DropdownAction.AUTOFILL_LOGIN) logins = true;
@@ -122,7 +122,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
     const autofillSequence = <T extends AsyncCallback>(fn: T) =>
         withContext<(...args: Parameters<T>) => Promise<ReturnType<T>>>(async (ctx, ...args) => {
             const formManager = ctx?.service.formManager;
-            const fields = formManager?.getTrackedFields();
+            const fields = formManager?.getFields();
 
             fields?.forEach((field) => field.interactivity.lock());
             state.processing = true;
@@ -245,7 +245,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                     /** Origin check is enforced service-worker side. */
                     const ccFields =
                         ctx?.service.formManager
-                            .getTrackedForms()
+                            .getForms()
                             .flatMap((form) => form.getFieldsFor(FieldType.CREDIT_CARD)) ?? [];
 
                     return autofillCCFields(ccFields, payload.data)
@@ -262,7 +262,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
     const onAutofillRequest: FrameMessageHandler<WorkerMessageType.AUTOFILL_SEQUENCE> = withContext(
         (ctx, { payload }, sendResponse) => {
             const formManager = ctx?.service.formManager;
-            const fields = formManager?.getTrackedFields();
+            const fields = formManager?.getFields();
 
             switch (payload.status) {
                 case 'start':
