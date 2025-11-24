@@ -45,6 +45,7 @@ const LocalizedMiniCalendar = ({ weekStartsOn, now, todayTitle: todayTitleProp, 
 
     return (
         <MiniCalendar
+            now={now}
             nextMonth={c('Action').t`Next month`}
             prevMonth={c('Action').t`Previous month`}
             weekdaysLong={weekdaysLong}
