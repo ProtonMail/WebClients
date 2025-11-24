@@ -39217,6 +39217,7 @@ __metadata:
   resolution: "proton-vpn-settings@workspace:applications/vpn-settings"
   dependencies:
     "@proton/account": "workspace:^"
+    "@proton/activation": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/components": "workspace:^"
