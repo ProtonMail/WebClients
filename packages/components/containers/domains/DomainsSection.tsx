@@ -180,6 +180,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                                                                     setTmpDomainProps({ domain, domainAddresses });
                                                                     setEditDomainModalOpen(true);
                                                                 },
+                                                                key: 'review',
                                                             } as const),
                                                         isOrgActive &&
                                                             Array.isArray(domainAddresses) &&
@@ -191,6 +192,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                                                                     setTmpDomainProps({ domain, domainAddresses });
                                                                     setCatchAllDomainModalOpen(true);
                                                                 },
+                                                                key: 'catch-all',
                                                             } as const),
                                                         {
                                                             text: deleteText,
@@ -200,6 +202,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                                                                 setTmpDomainProps({ domain, domainAddresses });
                                                                 setDeleteDomainModalOpen(true);
                                                             },
+                                                            key: 'delete',
                                                         } as const,
                                                     ].filter(isTruthy)}
                                                 />,
