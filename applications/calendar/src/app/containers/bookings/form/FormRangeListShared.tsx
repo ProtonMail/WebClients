@@ -9,7 +9,7 @@ import TimeInput from '@proton/components/components/input/TimeInput';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
-import type { BookingRange } from '../bookingsProvider/interface';
+import { type BookingRange, BookingRangeError } from '../bookingsProvider/interface';
 import { roundToNextHalfHour } from '../utils/timeHelpers';
 
 export const RangeWrapper = ({ children }: PropsWithChildren) => {
@@ -53,6 +53,7 @@ export const EndTimeInput = ({ id, range, duration, onChange, className }: Input
             min={addMinutes(range.start, duration)}
             onChange={onChange}
             className={className}
+            error={range?.error === BookingRangeError.TOO_SHORT}
             preventNextDayOverflow
         />
     );
@@ -85,4 +86,12 @@ export const RemoveButton = ({ onClick, btnClassName }: ButtonProps) => {
             </Button>
         </Tooltip>
     );
+};
+
+export const RangeErrors = ({ range }: { range: BookingRange }) => {
+    if (range.error === BookingRangeError.TOO_SHORT) {
+        return <p className="color-danger m-0 mb-1">{c('Error').t`Periods is too short`}</p>;
+    }
+
+    return null;
 };
