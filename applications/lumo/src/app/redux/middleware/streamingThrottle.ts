@@ -1,4 +1,5 @@
 import type { Middleware } from '@reduxjs/toolkit';
+
 import { appendChunk } from '../slices/core/messages';
 
 /**
@@ -190,4 +191,3 @@ export const clearStreamingBuffers = () => {
 };
 
 export default streamingThrottleMiddleware;
-

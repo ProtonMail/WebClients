@@ -55,13 +55,6 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
             const chunk = action.payload;
             const message = state[chunk.messageId];
             message.content ??= '';
-            
-            // Dedupe: Don't append if message already ends with this exact chunk
-            // This prevents duplicate last token issues from double-flushing
-            if (message.content.endsWith(chunk.content)) {
-                return;
-            }
-            
             message.content += chunk.content;
         })
         .addCase(setToolCall, (state, action) => {
@@ -86,7 +79,7 @@ const messagesReducer = createReducer<MessageMap>(initialState, (builder) => {
                 console.warn(`cannot modify message ${messageId}: not found in Redux state`);
                 return;
             }
-            
+
             // Only update content if message has no content yet (wasn't streamed)
             // If content was streamed via appendChunk, keep the streamed version
             if (!message.content || message.content.length === 0) {
