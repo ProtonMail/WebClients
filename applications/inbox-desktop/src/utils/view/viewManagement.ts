@@ -76,8 +76,8 @@ const viewTitleMap: Record<ViewID, string> = {
 };
 
 const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
-let mainWindow: undefined | BrowserWindow = undefined;
-let loadingView: undefined | WebContentsView = undefined;
+let mainWindow: BrowserWindow | null = null;
+let loadingView: WebContentsView | null = null;
 
 /**
  * @see https://www.electronjs.org/docs/latest/api/web-contents#event-did-fail-load
@@ -125,6 +125,11 @@ export const viewCreationAppStartup = async () => {
     if (getWindowBounds().maximized) {
         mainWindow!.maximize();
     }
+
+    // Clean up main window reference when it's destroyed.
+    mainWindow.on("closed", () => {
+        mainWindow = null;
+    });
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
@@ -690,7 +695,7 @@ export function updateZoom(direction: "in" | "out") {
 }
 
 export const bringWindowToFront = () => {
-    if (!mainWindow) {
+    if (!mainWindow || mainWindow.isDestroyed()) {
         mainLogger.info("Cannot bring window to front: window unavailable.");
         return;
     }
