@@ -29,6 +29,7 @@ import {
     wasBookingFormTouched,
 } from '../utils/provider/providerHelper';
 import {
+    computeRangesErrors,
     convertBookingRangesToCalendarViewEvents,
     generateBookingRangeID,
     generateDefaultBookingRange,
@@ -105,6 +106,11 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             const date = currentDate || new Date();
             const newRanges = generateDefaultBookingRange(userSettings, date, formData.timezone, value);
             updateFormData('bookingRanges', newRanges);
+        }
+
+        if (field === 'duration') {
+            const rangeErrorsComputation = computeRangesErrors(internalForm.bookingRanges, value);
+            updateFormData('bookingRanges', rangeErrorsComputation);
         }
 
         setInternalForm((prev) => ({ ...prev, [field]: value }));

@@ -30,6 +30,13 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
         };
     }
 
+    if (data.bookingRanges.some((range) => range.error)) {
+        return {
+            type: 'warning',
+            reason: BookingFormValidationReasons.RANGE_ERROR,
+        };
+    }
+
     return undefined;
 };
 
