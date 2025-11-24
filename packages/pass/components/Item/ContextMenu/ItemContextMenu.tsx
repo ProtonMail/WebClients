@@ -1,6 +1,5 @@
-import type { FC, MouseEvent, RefObject } from 'react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+import type { FC, RefObject } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { pipe } from 'imask/esm/masked/pipe';
 import { c } from 'ttag';
@@ -24,8 +23,7 @@ import type { ItemState } from '@proton/pass/hooks/items/useItemState';
 import { useItemState } from '@proton/pass/hooks/items/useItemState';
 import { otpGenerationErrorNotifcation } from '@proton/pass/hooks/useOTPCode';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { selectItemWithOptimistic, selectShare } from '@proton/pass/store/selectors';
-import type { Item, ItemRevision, MaybeNull, Share, UniqueItem } from '@proton/pass/types';
+import type { Item, ItemRevision, Share } from '@proton/pass/types';
 import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
@@ -180,9 +178,9 @@ const getItemActionButtons = (
           ];
 };
 
-type ConnectedProps = { item: ItemRevision; share: Share; anchorRef: RefObject<HTMLElement> };
+type Props = { item: ItemRevision; share: Share; anchorRef: RefObject<HTMLElement> };
 
-const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, share, anchorRef }) => {
+export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const id = getItemKey(item);
 
     const { generateOTP } = usePassCore();
@@ -216,44 +214,4 @@ const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, share, anchor
             elements={elements}
         />
     );
-};
-
-type Props = UniqueItem & { anchorRef: RefObject<HTMLElement> };
-
-/** NOTE: A context menu can remain open after its item is removed or updated.
- * This component handles graceful failures while keeping fresh data available. */
-export const ItemsListContextMenu: FC<Props> = ({ anchorRef, ...selectedItem }) => {
-    const { isOpen, close } = useContextMenu();
-    const { shareId, itemId } = selectedItem;
-
-    const item = useSelector(selectItemWithOptimistic(shareId, itemId));
-    const share = useSelector(selectShare(shareId));
-    const itemOpened = isOpen(getItemKey(selectedItem));
-    const autoClose = !item && itemOpened;
-
-    useEffect(() => {
-        if (autoClose) close();
-    }, [autoClose]);
-
-    return item && share && <ConnectedItemsListContextMenu item={item} share={share} anchorRef={anchorRef} />;
-};
-
-export const useItemContextMenu = () => {
-    const [item, setItem] = useState<MaybeNull<UniqueItem>>(null);
-    const { open, isOpen } = useContextMenu();
-
-    /** FIXME: Should check for "item list" context menu type specifically
-     * to avoid stale `UniqueItem` state when other menu types are added. */
-    const closed = !isOpen();
-
-    useEffect(() => {
-        if (closed) setItem(null);
-    }, [closed]);
-
-    const onContextMenu = useCallback((event: MouseEvent, item: UniqueItem) => {
-        open(event, getItemKey(item));
-        setItem(item);
-    }, []);
-
-    return { item, onContextMenu };
 };

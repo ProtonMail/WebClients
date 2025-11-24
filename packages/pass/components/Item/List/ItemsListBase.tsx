@@ -1,11 +1,15 @@
-import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
+import type { MouseEvent } from 'react';
+import { type FC, type ReactElement, useCallback, useEffect, useMemo, useRef } from 'react';
 import { useStore } from 'react-redux';
 import type { List } from 'react-virtualized';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
-import { ItemsListContextMenu, useItemContextMenu } from '@proton/pass/components/Item/List/ItemsListContextMenu';
+import {
+    ItemsListContextMenu,
+    useItemContextMenu,
+} from '@proton/pass/components/Item/ContextMenu/ItemsListContextMenu';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
@@ -55,6 +59,14 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
         [filters.type, filters.sort, items]
     );
 
+    const handleContextMenu = useCallback(
+        (item: ItemRevision, bulkSelected: boolean) => (event: MouseEvent) => {
+            /** Active context menu if no bulk or if bulk and over one of the selected items */
+            if (!bulkEnabled || bulkSelected) return onContextMenu(event, item);
+        },
+        [bulkEnabled, bulk]
+    );
+
     return (
         <>
             {items.length === 0 ? (
@@ -94,7 +106,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                             onDragStart={handleDragStart}
                                             onDragEnd={handleDragEnd}
                                             onSelect={onSelect}
-                                            onContextMenu={bulkEnabled ? undefined : onContextMenu}
+                                            onContextMenu={handleContextMenu(item, bulkSelected)}
                                         />
                                     </div>
                                 );
