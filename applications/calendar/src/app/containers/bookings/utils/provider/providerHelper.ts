@@ -5,9 +5,14 @@ import type {
 import { areIntervalsOverlapping, differenceInMinutes, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/date/timezone';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
-import type { CalendarBootstrap, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type {
+    CalendarBootstrap,
+    CalendarUserSettings,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type { BookingRange, InternalBookingFrom, Slot } from '../../bookingsProvider/interface';
 import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../bookingsProvider/interface';
@@ -81,10 +86,28 @@ export const computeInitialFormData = ({
     };
 };
 
+export const getBookingPageCalendar = ({
+    writeableCalendars,
+    bookingPage,
+}: {
+    writeableCalendars: VisualCalendar[];
+    bookingPage: InternalBookingPage;
+}): VisualCalendar | undefined => {
+    const bookingCalendar = writeableCalendars.find((calendar) => calendar.ID === bookingPage.calendarID);
+    const isCalendarDisabled = !bookingCalendar || getIsCalendarDisabled(bookingCalendar);
+    const selectedCalendar = isCalendarDisabled
+        ? writeableCalendars.find((calendar) => !getIsCalendarDisabled(calendar))
+        : bookingCalendar;
+
+    return selectedCalendar;
+};
+
 export const computeEditFormData = ({
+    bookingPageCalendar,
     bookingPage,
     editData,
 }: {
+    bookingPageCalendar: VisualCalendar;
     bookingPage: InternalBookingPage;
     editData: BookingPageEditData;
 }): InternalBookingFrom => {
@@ -104,7 +127,7 @@ export const computeEditFormData = ({
     return {
         summary: bookingPage.summary,
         description: bookingPage.description,
-        selectedCalendar: bookingPage.calendarID,
+        selectedCalendar: bookingPageCalendar.ID,
         locationType: bookingPage.location ? BookingLocation.IN_PERSON : BookingLocation.MEET,
         location: bookingPage.location,
         timezone: timezone,
