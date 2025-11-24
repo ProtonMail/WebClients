@@ -155,6 +155,10 @@ export function parseOpenAction(
   const linkId = searchParams.get('linkId') || undefined
   const token = searchParams.get('token')
 
+  if (type !== 'doc' && type !== 'sheet') {
+    type = 'doc'
+  }
+
   if (type === 'sheet' && !isSheetsEnabled) {
     type = 'doc'
   }
