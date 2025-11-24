@@ -11,10 +11,10 @@ import type {
     ExternalBookingPageSlotsPayload,
 } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
+import { decryptBookingContent } from '../containers/bookings/utils/crypto/bookingDecryption';
 import { deriveBookingUid } from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
 import { generateWeeklyRangeSimple, transformAvailableSlotToTimeslot } from './utils/bookingsHelpers';
-import { decryptBookingContent } from './utils/decryptBookingContent';
 
 export const useExternalBookingLoader = () => {
     const api = useApi();
@@ -28,6 +28,7 @@ export const useExternalBookingLoader = () => {
     const setBookingDetails = useBookingStore((state) => state.setBookingDetails);
     const setBookingSlots = useBookingStore((state) => state.setBookingSlots);
     const setNextAvailableSlot = useBookingStore((state) => state.setNextAvailableSlot);
+    const setFailedToVerify = useBookingStore((state) => state.setFailedToVerify);
 
     /**
      * The logic here is to load public booking
@@ -105,7 +106,7 @@ export const useExternalBookingLoader = () => {
                 }
             } catch (e) {}
 
-            const { summary, description, location, withProtonMeetLink } = await decryptBookingContent({
+            const { summary, description, location, withProtonMeetLink, failedToVerify } = await decryptBookingContent({
                 encryptedContent: bookingPageData.EncryptedContent,
                 bookingSecretBytes,
                 bookingKeySalt: bookingPageData.BookingKeySalt,
@@ -128,6 +129,7 @@ export const useExternalBookingLoader = () => {
                 inviterEmail: bookingPageData.Email,
             });
 
+            setFailedToVerify(failedToVerify);
             setBookingSlots(allBookingSlot);
             setNextAvailableSlot(transformAvailableSlotToTimeslot(nextAvailableSlotResult.NextSlot));
         } catch (error) {

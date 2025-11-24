@@ -15,9 +15,9 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
-import { decryptBookingContent } from '../../bookings/utils/decryptBookingContent';
 import { BookingLocation } from '../../containers/bookings/bookingsProvider/interface';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
+import { decryptBookingContent } from '../../containers/bookings/utils/crypto/bookingDecryption';
 import { bookingSecretSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
 import { createNewBookingPage, editBookingPage, loadBookingPage } from './internalBookingActions';
@@ -75,10 +75,13 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                         format: 'binary',
                     });
 
-                    if (verifyingKeys && decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    if (
+                        verifyingKeys &&
+                        verifyingKeys.length > 0 &&
+                        decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
+                    ) {
                         // eslint-disable-next-line no-console
                         console.warn({ errors: decrypted.verificationErrors });
-                        throw new Error('Encrypted booking secret verification failed');
                     }
 
                     // This decrypts and verify the content of the page
