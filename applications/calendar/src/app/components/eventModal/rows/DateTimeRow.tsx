@@ -120,6 +120,7 @@ export const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn,
                                     min={MINIMUM_DATE}
                                     max={MAXIMUM_DATE}
                                     title={c('Title').t`Select event start date`}
+                                    tzid={start.tzid}
                                 />
                             </div>
 
@@ -167,6 +168,7 @@ export const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn,
                                     min={minEndDate}
                                     max={MAXIMUM_DATE}
                                     title={c('Title').t`Select event end date`}
+                                    tzid={end.tzid}
                                 />
                             </div>
 

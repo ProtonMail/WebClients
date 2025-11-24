@@ -8,6 +8,7 @@ import { c } from 'ttag';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
@@ -49,6 +50,7 @@ interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     fromFormatter?: (value: string, locale: Locale) => Date;
     toFormatter?: (value: Date, locale: Locale) => string;
     hasToday?: boolean;
+    tzid?: string;
 }
 const DateInput = ({
     value,
@@ -67,6 +69,7 @@ const DateInput = ({
     fromFormatter = fromFormatted,
     toFormatter = toFormatted,
     hasToday = true,
+    tzid,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -102,7 +105,6 @@ const DateInput = ({
                 return;
             }
             return newDate;
-            // eslint-disable-next-line no-empty
         } catch (e: any) {}
     }, [temporaryInput]);
 
@@ -199,6 +201,16 @@ const DateInput = ({
         return toFormatted(actualDefaultDate, dateLocale);
     }, [dateLocale, defaultDate]);
 
+    const utcNowDateInTimezone = useMemo(() => {
+        const now = new Date();
+
+        if (!tzid) {
+            return now;
+        }
+
+        return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(now), tzid));
+    }, [tzid]);
+
     return (
         <>
             <Input
@@ -239,6 +251,7 @@ const DateInput = ({
                     fixedSize
                     hasToday={hasToday}
                     preventLeaveFocus
+                    now={utcNowDateInTimezone}
                 />
             </Dropdown>
         </>
