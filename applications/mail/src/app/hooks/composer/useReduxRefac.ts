@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -26,6 +27,7 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const [addresses = []] = useAddresses();
+    const [user] = useUser();
     const composer = useMailSelector((state) => selectComposer(state, composerID || ''));
 
     useEffect(() => {
@@ -53,6 +55,7 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
                     modelMessage,
                     mailSettings,
                     userSettings,
+                    user,
                     fontStyle,
                     prevAddress?.Signature || '',
                     newAddress?.Signature || ''
