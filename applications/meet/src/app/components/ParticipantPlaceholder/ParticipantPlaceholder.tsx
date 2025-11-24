@@ -10,12 +10,13 @@ interface ParticipantPlaceholderProps {
     smallView?: boolean;
     backgroundColor?: string;
     profileColor?: string;
-    viewSize?: 'small' | 'medium' | 'large';
+    viewSize?: 'small' | 'medium' | 'large' | 'midLarge';
 }
 
 const sizeByViewSize = {
     small: 2.5,
     medium: 3,
+    midLarge: 4.5,
     large: 5,
 };
 

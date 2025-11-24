@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
@@ -91,6 +92,8 @@ export const DeviceSettings = ({
     const filteredSpeakers = useMemo(() => filterDevices(speakers), [speakers]);
     const filteredCameras = useMemo(() => filterDevices(cameras), [cameras]);
 
+    const { activeBreakpoint } = useActiveBreakpoint();
+
     const handleMicrophoneChange = async (deviceId: string) => {
         await onMicrophoneChange(
             resolveDevice(deviceId, filteredMicrophones, microphoneState.systemDefault!),
@@ -148,6 +151,14 @@ export const DeviceSettings = ({
                 : (selectedCamera?.label ?? cameraState.systemDefaultLabel);
     }
 
+    const getInitalsCircleSize = () => {
+        if (isMobile()) {
+            return 'medium';
+        }
+
+        return activeBreakpoint === 'large' ? 'midLarge' : 'large';
+    };
+
     return (
         <div
             className={clsx(
@@ -159,7 +170,7 @@ export const DeviceSettings = ({
                 {displayName && (
                     <div
                         className="absolute left-custom bottom-custom z-up text-ellipsis max-w-custom hidden md:block"
-                        style={{ '--left-custom': '1.5rem', '--bottom-custom': '1rem', '--max-w-custom': '12rem' }}
+                        style={{ '--left-custom': '1.5rem', '--bottom-custom': '2rem', '--max-w-custom': '12rem' }}
                         title={displayName}
                     >
                         {displayName}
@@ -192,13 +203,13 @@ export const DeviceSettings = ({
                         participantName={displayName}
                         backgroundColor={`meet-background-${colorIndex}`}
                         profileColor={`profile-background-${colorIndex}`}
-                        viewSize={isMobile() ? 'medium' : 'large'}
+                        viewSize={getInitalsCircleSize()}
                     />
                 )}
 
                 <div
                     className="device-toggle-buttons flex flex-nowrap w-full justify-center gap-2 absolute bottom-custom z-up"
-                    style={{ '--bottom-custom': isLargerThanMd ? '1.5rem' : '0.75rem' }}
+                    style={{ '--bottom-custom': isLargerThanMd ? '2rem' : '1.5rem' }}
                 >
                     <CircleButton
                         className="border white-border"

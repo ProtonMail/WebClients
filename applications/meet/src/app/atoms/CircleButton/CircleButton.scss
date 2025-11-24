@@ -3,8 +3,8 @@
 @import '~@proton/styles/scss/meet/meet-breakpoints';
 
 .circle-button {
-	inline-size: rem(56);
-	block-size: rem(56);
+	inline-size: 3.5rem;
+	block-size: 3.5rem;
 	background-color: var(--circle-button-bg, var(--interaction-weak-minor-1)) !important;
 
 	&:hover,
