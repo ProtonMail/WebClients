@@ -90,6 +90,7 @@ export enum FeatureCode {
 
     // Bookings spotlights
     SpotlightIntroduceBookings = 'SpotlightIntroduceBookings',
+    BookingPageLocationSpotlight = 'BookingPageLocationSpotlight',
 
     // Black Friday 2025
     OfferBlackFriday2025InboxFreeYearly = 'OfferBlackFriday2025InboxFreeYearly',
