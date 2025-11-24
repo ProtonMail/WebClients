@@ -7,7 +7,7 @@ import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -38,6 +38,8 @@ import { insertSignature } from './messageSignature';
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
 export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
+
+const fakePaidUser = { isFree: false } as UserModel;
 
 /**
  * Copy embeddeds images from the reference message
@@ -240,6 +242,7 @@ export const generateBlockquote = (
                 referenceMessage.decryption?.decryptedBody,
                 mailSettings,
                 userSettings,
+                fakePaidUser,
                 addresses
             )
           : getDocumentContent(
@@ -261,6 +264,7 @@ export const createNewDraft = (
     referenceMessage: PartialMessageState | undefined,
     mailSettings: MailSettings,
     userSettings: UserSettings,
+    user: UserModel,
     addresses: Address[],
     getAttachment: (ID: string) => DecryptedAttachment | undefined,
     isOutside = false
@@ -314,8 +318,17 @@ export const createNewDraft = (
 
     content =
         action === MESSAGE_ACTIONS.NEW && referenceMessage?.decryption?.decryptedBody
-            ? insertSignature(content, senderAddress?.Signature, action, mailSettings, userSettings, fontStyle, true)
-            : insertSignature(content, senderAddress?.Signature, action, mailSettings, userSettings, fontStyle);
+            ? insertSignature(
+                  content,
+                  senderAddress?.Signature,
+                  action,
+                  mailSettings,
+                  userSettings,
+                  user,
+                  fontStyle,
+                  true
+              )
+            : insertSignature(content, senderAddress?.Signature, action, mailSettings, userSettings, user, fontStyle);
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseStringToDOM(content).body;
