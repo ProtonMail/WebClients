@@ -22,10 +22,9 @@ import { useItemActions } from '@proton/pass/hooks/items/useItemActions';
 import { useItemState } from '@proton/pass/hooks/items/useItemState';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
-import { isMonitored, isPinned } from '@proton/pass/lib/items/item.predicates';
+import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
-import { selectAllVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { selectAllVaults } from '@proton/pass/store/selectors';
 import { type ItemType, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -52,9 +51,8 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 }) => {
     const upsell = useUpselling();
 
-    const { shareId, itemId, data, optimistic, failed } = revision;
+    const { data, optimistic, failed } = revision;
     const { name } = data.metadata;
-    const pinned = isPinned(revision);
     const online = useOnline();
     const isVault = isVaultShare(share);
 
@@ -70,9 +68,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
     const hasMultipleVaults = vaults.length > 1;
 
-    const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
-    const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
-    const canTogglePinned = !(pinInFlight || unpinInFlight);
     const accessCount = targetMembers + (revision.shareCount ?? 0);
 
     const disabledSharing = !(itemState.canItemShare || itemState.canLinkShare || itemState.canManageAccess);
@@ -272,10 +267,10 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                                 <DropdownMenuButton
                                     onClick={itemActions.onPin}
-                                    label={pinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
-                                    icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
-                                    disabled={!canTogglePinned}
-                                    loading={!canTogglePinned}
+                                    label={itemState.isPinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
+                                    icon={itemState.isPinned ? 'pin-angled-slash' : 'pin-angled'}
+                                    disabled={!itemState.canTogglePinned}
+                                    loading={!itemState.canTogglePinned}
                                 />
 
                                 {itemState.canHistory && (

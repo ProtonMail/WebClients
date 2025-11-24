@@ -2,6 +2,7 @@ import type { FC, MouseEvent, RefObject } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { pipe } from 'imask/esm/masked/pipe';
 import { c } from 'ttag';
 
 import { ContextMenu } from '@proton/pass/components/ContextMenu/ContextMenu';
@@ -11,6 +12,7 @@ import {
     type ContextMenuItem,
 } from '@proton/pass/components/ContextMenu/ContextMenuItems';
 import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+import { expDateMask } from '@proton/pass/components/Form/Field/masks/credit-card';
 import type { ItemActions } from '@proton/pass/hooks/items/useItemActions';
 import { useItemActions } from '@proton/pass/hooks/items/useItemActions';
 import type { ItemState } from '@proton/pass/hooks/items/useItemState';
@@ -19,12 +21,15 @@ import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectItemWithOptimistic, selectShare } from '@proton/pass/store/selectors';
 import type { Item, ItemRevision, Maybe, MaybeNull, Share, UniqueItem } from '@proton/pass/types';
 import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
+import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
 
 const isEmpty = (value: Maybe<string | ObfuscatedItemProperty>) => {
     if (!value) return true;
     if (typeof value === 'string') return value.length === 0;
     return value.v.length === 0;
 };
+
+const formatExpirationCopy = (content: string) => pipe(formatExpirationDateMMYY(content), expDateMask);
 
 const getItemCopyButtons = (item: Item): ContextMenuItem[] => {
     switch (item.type) {
@@ -52,7 +57,7 @@ const getItemCopyButtons = (item: Item): ContextMenuItem[] => {
                     type: 'button',
                     icon: 'calendar-today',
                     name: c('Action').t`Copy expiration date`,
-                    copy: item.content.expirationDate,
+                    copy: formatExpirationCopy(item.content.expirationDate),
                 },
                 {
                     type: 'button',
@@ -69,7 +74,7 @@ const getItemCopyButtons = (item: Item): ContextMenuItem[] => {
 };
 
 const getItemActionButtons = (
-    { isTrashed, canHistory, canTogglePinned, canMove }: ItemState,
+    { isTrashed, isPinned, isReadOnly, canHistory, canTogglePinned, canMove }: ItemState,
     { onEdit, onMove, onPin, onHistory, onTrash }: ItemActions
 ): ContextMenuItem[] => {
     return isTrashed
@@ -82,6 +87,7 @@ const getItemActionButtons = (
                   icon: 'pen',
                   name: c('Action').t`Edit`,
                   action: onEdit,
+                  lock: isReadOnly,
               },
               {
                   type: 'button',
@@ -92,8 +98,8 @@ const getItemActionButtons = (
               },
               {
                   type: 'button',
-                  icon: 'pin-angled',
-                  name: c('Action').t`Pin`,
+                  icon: isPinned ? 'pin-angled-slash' : 'pin-angled',
+                  name: isPinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`,
                   action: onPin,
                   lock: !canTogglePinned,
               },
@@ -109,6 +115,7 @@ const getItemActionButtons = (
                   icon: 'pass-trash',
                   name: c('Action').t`Move to trash`,
                   action: onTrash,
+                  lock: isReadOnly,
               },
           ];
 };
