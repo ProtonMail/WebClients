@@ -12,7 +12,7 @@
 	padding-block-start: 5.63rem;
 
 	@include media('>medium') {
-		padding: 0;
+		padding-inline: 0;
 		padding-block-start: 0;
 	}
 
