@@ -1,13 +1,14 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createBasicAuthController } from 'proton-pass-extension/app/worker/listeners/auth-required';
+import { resolveCCFormClusters } from 'proton-pass-extension/app/worker/services/autofill.cc';
 import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { AutofillableFrame } from 'proton-pass-extension/lib/utils/frames';
-import { getAutofillableFrameIDs } from 'proton-pass-extension/lib/utils/frames';
+import { getAutofillableFrames } from 'proton-pass-extension/lib/utils/frames';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 import type { AutofillRequest, AutofillSequence } from 'proton-pass-extension/types/autofill';
-import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
+import type { FrameForms, FrameFormsResult } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { CCFieldType } from '@proton/pass/fathom/labels';
@@ -53,6 +54,7 @@ import type {
     SelectedItem,
     TabId,
 } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -192,13 +194,13 @@ export const createAutoFillService = () => {
         frames: AutofillableFrame[]
     ) =>
         Promise.all(
-            frames.map(({ frameId }) =>
+            frames.map(({ frame }) =>
                 sendTabMessage(
                     backgroundMessage({
                         type: WorkerMessageType.AUTOFILL_SEQUENCE,
                         payload,
                     }),
-                    { tabId, frameId }
+                    { tabId, frameId: frame.frameId }
                 ).catch(noop)
             )
         );
@@ -302,19 +304,32 @@ export const createAutoFillService = () => {
              * attempts. Frames are ordered by sender frame origin to start the autofill
              * sequence from the source field. */
             const autofilledFields = new Set<CCFieldType>();
-            const frames = await getAutofillableFrameIDs(tabId, frameOrigin, frameId);
+            const autofillableFrames = await getAutofillableFrames(tabId, frameOrigin, frameId);
+            const frames = Array.from(autofillableFrames.values());
+
+            const frameForms: FrameForms[] = (
+                await Promise.all(
+                    frames.map(async ({ frame }) => {
+                        const result = await queryFrameForms(tabId, frame.frameId);
+                        if (result) return { ...result, frameId: frame.frameId };
+                    })
+                )
+            ).filter(truthy);
 
             await onAutofillSequenceUpdate({ status: 'start' }, tabId, frames);
+            const clusters = await resolveCCFormClusters(autofillableFrames, frameForms, payload);
 
-            /** Process each frame sequentially, building up the set of autofilled fields.
+            /** Process each cluster sequentially, building up the set of autofilled fields.
              * Generates frame-specific autofill data that respects cross-origin restrictions
              * and previously filled fields, then tracks which fields were successfully filled
              * for use in subsequent frames. */
-            for (const frame of frames) {
-                const data = intoAutofillableCCItem(item, autofilledFields, frame.crossOrigin);
-                const request = { status: 'fill', type: 'creditCard', data } as const;
-                const [res] = await onAutofillSequenceUpdate(request, tabId, [frame]);
+            for (const [frameId, formIds] of clusters) {
+                const frame = autofillableFrames.get(frameId);
+                if (!frame) continue;
 
+                const data = intoAutofillableCCItem(item, autofilledFields, frame.crossOrigin);
+                const request = { status: 'fill', type: 'creditCard', data, formIds: Array.from(formIds) } as const;
+                const [res] = await onAutofillSequenceUpdate(request, tabId, [frame]);
                 if (res && res.type === 'creditCard') res.autofilled.forEach((type) => autofilledFields.add(type));
             }
 

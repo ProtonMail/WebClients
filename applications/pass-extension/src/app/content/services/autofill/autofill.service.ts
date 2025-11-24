@@ -242,10 +242,11 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         (ctx, payload) => {
             switch (payload.type) {
                 case 'creditCard':
-                    /** Origin check is enforced service-worker side. */
+                    /** `formIds` are resolved via service worker's clustering phase.
+                     * Origin validation is enforced service-worker side. */
                     const ccFields =
                         ctx?.service.formManager
-                            .getForms()
+                            .getFormByIds(payload.formIds)
                             .flatMap((form) => form.getFieldsFor(FieldType.CREDIT_CARD)) ?? [];
 
                     return autofillCCFields(ccFields, payload.data)

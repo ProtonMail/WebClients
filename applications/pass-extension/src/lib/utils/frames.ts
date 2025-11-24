@@ -1,7 +1,10 @@
+import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
+import type { FrameAttributes } from 'proton-pass-extension/types/frames';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { WebNavigation } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
-import type { MaybeNull, TabId } from '@proton/pass/types';
+import type { FrameId, MaybeNull, TabId } from '@proton/pass/types';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 
@@ -62,17 +65,18 @@ export const validateFramePath = (frames: Frames, frameID: FrameID, trustedOrigi
     });
 };
 
-export type AutofillableFrame = { frameId: FrameID; crossOrigin: boolean };
+export type AutofillableFrame = { frame: FrameData; crossOrigin: boolean; tabId: TabId };
+export type AutofillableFrames = Map<FrameID, AutofillableFrame>;
 
 /** Determines which frames are safe to autofill based on origin validation.
  * - Validates complete frame ancestry to prevent malicious intermediate frames
  * - Only autofills frames matching the trigger origin or top-level origin
  * - Rejects any frame with untrusted origins in its ancestry chain */
-export const getAutofillableFrameIDs = async (
+export const getAutofillableFrames = async (
     tabId: TabId,
     frameOrigin: string,
     originFrameID: FrameID
-): Promise<AutofillableFrame[]> => {
+): Promise<AutofillableFrames> => {
     const frames = await getTabFrames(tabId, { parseOrigin: true });
     const trustedOrigins = new Set<string>();
     const autofillableOrigins = new Set<string>();
@@ -98,7 +102,7 @@ export const getAutofillableFrameIDs = async (
         current = parent;
     }
 
-    const autofillableFrameIDs: AutofillableFrame[] = [];
+    const autofillableFrames: AutofillableFrames = new Map();
 
     for (const [frameId, frame] of frames) {
         if (!frame.origin) continue;
@@ -109,22 +113,37 @@ export const getAutofillableFrameIDs = async (
 
         if (isAutofillableOrigin && validateFramePath(frames, frameId, trustedOrigins)) {
             const crossOrigin = frame.origin !== frameOrigin;
-            autofillableFrameIDs.push({ frameId, crossOrigin });
+            autofillableFrames.set(frameId, { frame, crossOrigin, tabId });
         }
     }
 
     autofillableOrigins.clear();
-
-    return autofillableFrameIDs.sort((a, b) => {
-        /** 1. Direct originFrameID match takes highest priority */
-        if (a.frameId === originFrameID) return -1;
-        if (b.frameId === originFrameID) return 1;
-
-        /** 2. Same origin frames (non-cross-origin) come next */
-        if (!a.crossOrigin && b.crossOrigin) return -1;
-        if (a.crossOrigin && !b.crossOrigin) return 1;
-
-        /** 3. Rest maintain their relative order */
-        return 0;
-    });
+    return autofillableFrames;
 };
+
+type ParentFormQueryParams = {
+    tabId: TabId;
+    parentFrameID: FrameId;
+    childFrameID: FrameId;
+    childFrameAttributes: FrameAttributes;
+};
+
+export const getFrameParentFormId = (options: ParentFormQueryParams): Promise<MaybeNull<string>> =>
+    sendTabMessage(
+        backgroundMessage({
+            type: WorkerMessageType.FRAME_QUERY,
+            payload: {
+                type: 'form',
+                frameId: options.childFrameID,
+                frameAttributes: options.childFrameAttributes,
+            },
+        }),
+        { tabId: options.tabId, frameId: options.parentFrameID }
+    )
+        .then((res) => (res?.ok && res.type === 'form' ? res.formId : null))
+        .catch(() => null);
+
+export const isFrameContainedInParentForm = (parentFormID: string, options: ParentFormQueryParams): Promise<boolean> =>
+    getFrameParentFormId(options)
+        .then((formId) => formId === parentFormID)
+        .catch(() => false);

@@ -1,6 +1,7 @@
 import browser from '@proton/pass/lib/globals/browser';
 
-import { getAutofillableFrameIDs, getFramePath, getTabFrames, validateFramePath } from './frames';
+import type { AutofillableFrames } from './frames';
+import { getAutofillableFrames, getFramePath, getTabFrames, validateFramePath } from './frames';
 
 const getAllFrames = browser.webNavigation.getAllFrames as jest.Mock;
 const tabId = 42;
@@ -138,7 +139,13 @@ describe('inline service', () => {
         });
     });
 
-    describe('getAutofillableFrameIDs', () => {
+    describe('getAutofillableFrames', () => {
+        const formatResults = (result: AutofillableFrames) =>
+            Array.from(result.values()).map((data) => ({
+                frameId: data.frame.frameId,
+                crossOrigin: data.crossOrigin,
+            }));
+
         test('should filter frames by origin when triggered from top frame', async () => {
             /*
             <frame origin="example.com">          <!-- frame0 -->
@@ -156,9 +163,9 @@ describe('inline service', () => {
                 { frameId: 4, parentFrameId: 0, url: 'https://phishing.com/fake' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'example.com', 0);
+            const result = await getAutofillableFrames(tabId, 'example.com', 0);
 
-            expect(result).toEqual([
+            expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: false },
                 { frameId: 1, crossOrigin: false },
                 { frameId: 3, crossOrigin: false },
@@ -178,11 +185,11 @@ describe('inline service', () => {
                 { frameId: 2, parentFrameId: 0, url: 'https://evil.com/malicious' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'payments.com', 1);
+            const result = await getAutofillableFrames(tabId, 'payments.com', 1);
 
-            expect(result).toEqual([
-                { frameId: 1, crossOrigin: false },
+            expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: true },
+                { frameId: 1, crossOrigin: false },
             ]);
         });
 
@@ -201,9 +208,9 @@ describe('inline service', () => {
                 { frameId: 3, parentFrameId: 0, url: 'https://example.com/valid' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'example.com', 0);
+            const result = await getAutofillableFrames(tabId, 'example.com', 0);
 
-            expect(result).toEqual([
+            expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: false },
                 { frameId: 3, crossOrigin: false },
             ]);
@@ -211,10 +218,10 @@ describe('inline service', () => {
 
         test('should handle empty or null frame responses', async () => {
             getAllFrames.mockResolvedValue(null);
-            expect(await getAutofillableFrameIDs(tabId, 'example.com', 0)).toEqual([]);
+            expect(formatResults(await getAutofillableFrames(tabId, 'example.com', 0))).toEqual([]);
 
             getAllFrames.mockResolvedValue([]);
-            expect(await getAutofillableFrameIDs(tabId, 'example.com', 0)).toEqual([]);
+            expect(formatResults(await getAutofillableFrames(tabId, 'example.com', 0))).toEqual([]);
         });
 
         test('should handle complex nested frame hierarchy with mixed origins', async () => {
@@ -239,13 +246,13 @@ describe('inline service', () => {
                 { frameId: 5, parentFrameId: 4, url: 'https://shop.com/support' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'payments.com', 2);
+            const result = await getAutofillableFrames(tabId, 'payments.com', 2);
 
-            expect(result).toEqual([
-                { frameId: 2, crossOrigin: false },
-                { frameId: 4, crossOrigin: false },
+            expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: true },
                 { frameId: 1, crossOrigin: true },
+                { frameId: 2, crossOrigin: false },
+                { frameId: 4, crossOrigin: false },
                 { frameId: 5, crossOrigin: true },
             ]);
         });
@@ -261,8 +268,8 @@ describe('inline service', () => {
                 { frameId: 2, parentFrameId: 0, url: 'https://shop.com/page' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'payments.com', 1);
-            expect(result).toEqual([]);
+            const result = await getAutofillableFrames(tabId, 'payments.com', 1);
+            expect(formatResults(result)).toEqual([]);
         });
 
         test('should handle subdomain scenarios correctly', async () => {
@@ -276,11 +283,11 @@ describe('inline service', () => {
                 { frameId: 1, parentFrameId: 0, url: 'https://api.example.com/widget' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'example.com', 1);
+            const result = await getAutofillableFrames(tabId, 'example.com', 1);
 
-            expect(result).toEqual([
-                { frameId: 1, crossOrigin: false },
+            expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: false },
+                { frameId: 1, crossOrigin: false },
             ]);
         });
 
@@ -301,11 +308,11 @@ describe('inline service', () => {
             ]);
 
             /** Autofill triggered from frame3 : should exclude frame2 in malicious chain */
-            const result = await getAutofillableFrameIDs(tabId, 'payment.com', 3);
+            const result = await getAutofillableFrames(tabId, 'payment.com', 3);
 
-            expect(result).toEqual([
-                { frameId: 3, crossOrigin: false },
+            expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: true },
+                { frameId: 3, crossOrigin: false },
             ]);
         });
 
@@ -331,13 +338,13 @@ describe('inline service', () => {
                 { frameId: 5, parentFrameId: 4, url: 'https://payment.com/fake' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'payment.com', 2);
+            const result = await getAutofillableFrames(tabId, 'payment.com', 2);
 
-            expect(result).toEqual([
-                { frameId: 2, crossOrigin: false },
-                { frameId: 3, crossOrigin: false },
+            expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: true },
                 { frameId: 1, crossOrigin: true },
+                { frameId: 2, crossOrigin: false },
+                { frameId: 3, crossOrigin: false },
             ]);
         });
 
@@ -357,12 +364,12 @@ describe('inline service', () => {
                 { frameId: 3, parentFrameId: 0, url: 'https://cdn.store.com/assets' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'stripe.com', 1);
+            const result = await getAutofillableFrames(tabId, 'stripe.com', 1);
 
-            expect(result).toEqual([
+            expect(formatResults(result)).toEqual([
+                { frameId: 0, crossOrigin: true },
                 { frameId: 1, crossOrigin: false },
                 { frameId: 2, crossOrigin: false },
-                { frameId: 0, crossOrigin: true },
                 { frameId: 3, crossOrigin: true },
             ]);
         });
@@ -383,9 +390,9 @@ describe('inline service', () => {
                 { frameId: 6, parentFrameId: 5, url: 'https://example.com/nested' },
             ]);
 
-            const result = await getAutofillableFrameIDs(tabId, 'example.com', 0);
+            const result = await getAutofillableFrames(tabId, 'example.com', 0);
 
-            expect(result).toEqual([
+            expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: false },
                 { frameId: 1, crossOrigin: false },
             ]);
