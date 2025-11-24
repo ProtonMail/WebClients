@@ -8,6 +8,7 @@ import { isVisible } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
+import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createWeakRefCache, maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import identity from '@proton/utils/identity';
@@ -83,6 +84,7 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
 
 export const getFrameAttributes = (): FrameAttributes => {
     const doc = document.documentElement;
+    if (isMainFrame()) return {};
 
     return BUILD_TARGET !== 'chrome' && 'getFrameId' in browser.runtime
         ? {}
