@@ -1,241 +1,253 @@
 import { processDroppedItems } from './processDroppedItems';
 
 describe('processDroppedItems', () => {
-    const createMockFile = (name: string): File => {
+    const createFile = (name: string): File => {
         return new File(['content'], name, { type: 'text/plain' });
     };
 
-    const createMockFileEntry = (name: string, file: File): FileSystemFileEntry => {
+    const createFileEntry = (name: string, file: File): FileSystemFileEntry => {
         return {
             isFile: true,
             isDirectory: false,
             name,
-            file: (successCallback: (file: File) => void) => {
-                successCallback(file);
-            },
+            file: (cb: (file: File) => void) => cb(file),
         } as FileSystemFileEntry;
     };
 
-    const createMockDataTransferItem = (file: File, entry: FileSystemEntry | null): DataTransferItem => {
+    const createItem = (file: File | null, entry: FileSystemEntry | null = null): DataTransferItem => {
         return {
             kind: 'file',
-            type: file.type,
-            getAsFile: () => {
-                return file;
-            },
-            webkitGetAsEntry: () => {
-                return entry;
-            },
+            type: file?.type || 'text/plain',
+            getAsFile: () => file,
+            webkitGetAsEntry: () => entry,
         } as DataTransferItem;
     };
 
-    const createMockDataTransferItemList = (items: DataTransferItem[]): DataTransferItemList => {
-        const list = {
+    const createItemList = (items: DataTransferItem[]): DataTransferItemList => {
+        return Object.assign(items, {
             length: items.length,
-            [Symbol.iterator]: function* () {
-                for (let i = 0; i < items.length; i++) {
-                    yield items[i];
-                }
-            },
-            item: (index: number) => {
-                return items[index] || null;
-            },
-            add: () => {
-                throw new Error('Not implemented');
-            },
-            remove: () => {
-                throw new Error('Not implemented');
-            },
-            clear: () => {
-                throw new Error('Not implemented');
-            },
-        } as DataTransferItemList;
-
-        for (let i = 0; i < items.length; i++) {
-            (list as unknown as Record<number, DataTransferItem>)[i] = items[i];
-        }
-
-        return list;
+            item: (index: number) => items[index] || null,
+        }) as unknown as DataTransferItemList;
     };
 
-    const createMockFileList = (files: File[]): FileList => {
-        const list = {
+    const createFileList = (files: File[]): FileList => {
+        return Object.assign(files, {
             length: files.length,
-            item: (index: number) => {
-                return files[index] || null;
-            },
-            [Symbol.iterator]: function* () {
-                for (let i = 0; i < files.length; i++) {
-                    yield files[i];
-                }
-            },
-        } as FileList;
-
-        for (let i = 0; i < files.length; i++) {
-            (list as unknown as Record<number, File>)[i] = files[i];
-        }
-
-        return list;
+            item: (index: number) => files[index] || null,
+        }) as unknown as FileList;
     };
 
-    it('should process single file with FileSystemEntry support', async () => {
-        const mockFile = createMockFile('test.txt');
-        const fileEntry = createMockFileEntry('test.txt', mockFile);
-        const dataTransferItem = createMockDataTransferItem(mockFile, fileEntry);
-        const itemList = createMockDataTransferItemList([dataTransferItem]);
+    const createDirectoryEntry = (name: string, entries: FileSystemEntry[]): FileSystemDirectoryEntry => {
+        let hasRead = false;
+        return {
+            isFile: false,
+            isDirectory: true,
+            name,
+            createReader: () => ({
+                readEntries: (cb: (entries: FileSystemEntry[]) => void) => {
+                    if (!hasRead) {
+                        hasRead = true;
+                        cb(entries);
+                    } else {
+                        cb([]);
+                    }
+                },
+            }),
+        } as FileSystemDirectoryEntry;
+    };
 
-        const result = await processDroppedItems(itemList, createMockFileList([]));
+    it('should process single file with FileSystemEntry', async () => {
+        const file = createFile('test.txt');
+        const entry = createFileEntry('test.txt', file);
+        const items = createItemList([createItem(file, entry)]);
+
+        const result = await processDroppedItems(items, createFileList([]));
 
         expect(result).toHaveLength(1);
         expect(result[0].name).toBe('test.txt');
     });
 
-    it('should process multiple files with FileSystemEntry support', async () => {
-        const mockFile1 = createMockFile('file1.txt');
-        const mockFile2 = createMockFile('file2.txt');
-        const fileEntry1 = createMockFileEntry('file1.txt', mockFile1);
-        const fileEntry2 = createMockFileEntry('file2.txt', mockFile2);
-        const item1 = createMockDataTransferItem(mockFile1, fileEntry1);
-        const item2 = createMockDataTransferItem(mockFile2, fileEntry2);
-        const itemList = createMockDataTransferItemList([item1, item2]);
+    it('should process multiple files with FileSystemEntry', async () => {
+        const file1 = createFile('file1.txt');
+        const file2 = createFile('file2.txt');
+        const items = createItemList([
+            createItem(file1, createFileEntry('file1.txt', file1)),
+            createItem(file2, createFileEntry('file2.txt', file2)),
+        ]);
 
-        const result = await processDroppedItems(itemList, createMockFileList([]));
+        const result = await processDroppedItems(items, createFileList([]));
 
-        expect(result).toHaveLength(2);
-        expect(result[0].name).toBe('file1.txt');
-        expect(result[1].name).toBe('file2.txt');
+        expect(result.map((f) => f.name)).toEqual(['file1.txt', 'file2.txt']);
     });
 
     it('should fallback to getAsFile when webkitGetAsEntry returns null', async () => {
-        const mockFile = createMockFile('fallback.txt');
-        const dataTransferItem = createMockDataTransferItem(mockFile, null);
-        const itemList = createMockDataTransferItemList([dataTransferItem]);
+        const file = createFile('fallback.txt');
+        const items = createItemList([createItem(file, null)]);
 
-        const result = await processDroppedItems(itemList, createMockFileList([]));
+        const result = await processDroppedItems(items, createFileList([]));
 
         expect(result).toHaveLength(1);
         expect(result[0].name).toBe('fallback.txt');
     });
 
-    it('should handle mixed scenarios with entry and fallback', async () => {
-        const mockFile1 = createMockFile('with-entry.txt');
-        const mockFile2 = createMockFile('without-entry.txt');
-        const fileEntry1 = createMockFileEntry('with-entry.txt', mockFile1);
-        const item1 = createMockDataTransferItem(mockFile1, fileEntry1);
-        const item2 = createMockDataTransferItem(mockFile2, null);
-        const itemList = createMockDataTransferItemList([item1, item2]);
-
-        const result = await processDroppedItems(itemList, createMockFileList([]));
-
-        expect(result).toHaveLength(2);
-        expect(result[0].name).toBe('with-entry.txt');
-        expect(result[1].name).toBe('without-entry.txt');
-    });
-
     it('should skip items where getAsFile returns null', async () => {
-        const dataTransferItem = {
-            kind: 'file',
-            type: 'text/plain',
-            getAsFile: () => {
-                return null;
-            },
-            webkitGetAsEntry: () => {
-                return null;
-            },
-        } as DataTransferItem;
-        const itemList = createMockDataTransferItemList([dataTransferItem]);
+        const items = createItemList([createItem(null, null)]);
 
-        const result = await processDroppedItems(itemList, createMockFileList([]));
-
-        expect(result).toHaveLength(0);
-    });
-
-    it('should skip non-file items', async () => {
-        const dataTransferItem = {
-            kind: 'string',
-            type: 'text/plain',
-            getAsFile: () => {
-                return null;
-            },
-            webkitGetAsEntry: () => {
-                return null;
-            },
-        } as DataTransferItem;
-        const itemList = createMockDataTransferItemList([dataTransferItem]);
-
-        const result = await processDroppedItems(itemList, createMockFileList([]));
+        const result = await processDroppedItems(items, createFileList([]));
 
         expect(result).toHaveLength(0);
     });
 
     it('should handle empty DataTransferItemList', async () => {
-        const itemList = createMockDataTransferItemList([]);
-
-        const result = await processDroppedItems(itemList, createMockFileList([]));
+        const result = await processDroppedItems(createItemList([]), createFileList([]));
 
         expect(result).toHaveLength(0);
     });
 
     it('should process directory entries', async () => {
-        const mockFile1 = createMockFile('file1.txt');
-        const mockFile2 = createMockFile('file2.txt');
-        const fileEntry1 = createMockFileEntry('file1.txt', mockFile1);
-        const fileEntry2 = createMockFileEntry('file2.txt', mockFile2);
+        const file1 = createFile('file1.txt');
+        const file2 = createFile('file2.txt');
+        const dirEntry = createDirectoryEntry('myFolder', [
+            createFileEntry('file1.txt', file1),
+            createFileEntry('file2.txt', file2),
+        ]);
+        const items = createItemList([createItem(createFile('folder'), dirEntry)]);
 
-        const dirEntry = {
-            isFile: false,
-            isDirectory: true,
-            name: 'myFolder',
-            createReader: () => {
-                let entriesRemaining = [fileEntry1, fileEntry2];
-                return {
-                    readEntries: (successCallback: (entries: FileSystemEntry[]) => void) => {
-                        if (entriesRemaining.length > 0) {
-                            const currentEntries = entriesRemaining;
-                            entriesRemaining = [];
-                            successCallback(currentEntries);
-                        } else {
-                            successCallback([]);
-                        }
-                    },
-                } as FileSystemDirectoryReader;
-            },
-        } as FileSystemDirectoryEntry;
+        const result = await processDroppedItems(items, createFileList([]));
 
-        const mockFile = createMockFile('folder');
-        const dataTransferItem = createMockDataTransferItem(mockFile, dirEntry);
-        const itemList = createMockDataTransferItemList([dataTransferItem]);
-
-        const result = await processDroppedItems(itemList, createMockFileList([]));
-
-        expect(result).toHaveLength(2);
-        expect(result[0].name).toBe('file1.txt');
-        expect(result[1].name).toBe('file2.txt');
+        expect(result.map((f) => f.name)).toEqual(['file1.txt', 'file2.txt']);
     });
 
     it('should return fallback files when items list is empty', async () => {
-        const mockFile = new File(['content'], 'from-fallback.txt', { type: 'text/plain' });
-        const fallbackList = createMockFileList([mockFile]);
-        const itemList = createMockDataTransferItemList([]);
+        const fallback = createFileList([createFile('from-fallback.txt')]);
 
-        const result = await processDroppedItems(itemList, fallbackList);
+        const result = await processDroppedItems(createItemList([]), fallback);
 
         expect(result).toHaveLength(1);
         expect(result[0].name).toBe('from-fallback.txt');
     });
 
-    it('should keep item files preferred over duplicates found in fallback', async () => {
-        const mockFile = createMockFile('from-items.txt');
-        const itemList = createMockDataTransferItemList([createMockDataTransferItem(mockFile, null)]);
+    it('should dedupe files by name between items and fallback', async () => {
+        const file = createFile('from-items.txt');
+        const items = createItemList([createItem(file, null)]);
+        const fallback = createFileList([createFile('from-items.txt'), createFile('extra.txt')]);
 
-        const duplicate = new File(['content'], 'from-items.txt', { type: 'text/plain' });
-        const extra = new File(['content'], 'extra.txt', { type: 'text/plain' });
-        const fallbackList = createMockFileList([duplicate, extra]);
+        const result = await processDroppedItems(items, fallback);
 
-        const result = await processDroppedItems(itemList, fallbackList);
+        expect(result.map((f) => f.name).sort()).toEqual(['extra.txt', 'from-items.txt']);
+    });
 
-        expect(result).toHaveLength(2);
-        expect(result.find((file) => file.name === 'from-items.txt')).toBeDefined();
-        expect(result.find((file) => file.name === 'extra.txt')).toBeDefined();
+    it('should pick up files from fallback that are not in items', async () => {
+        const items = createItemList([createItem(createFile('file1.txt'), null)]);
+        const fallback = createFileList([createFile('file1.txt'), createFile('file2.txt')]);
+
+        const result = await processDroppedItems(items, fallback);
+
+        expect(result.map((f) => f.name).sort()).toEqual(['file1.txt', 'file2.txt']);
+    });
+
+    it('should handle Chrome/Brave quirk where only first file is accessible via getAsFile', async () => {
+        const items = createItemList([createItem(createFile('first.txt'), null), createItem(null, null)]);
+        const fallback = createFileList([createFile('first.txt'), createFile('second.txt')]);
+
+        const result = await processDroppedItems(items, fallback);
+
+        expect(result.map((f) => f.name)).toEqual(['first.txt', 'second.txt']);
+    });
+
+    it('should not duplicate folder contents when folder is processed via FileSystemEntry', async () => {
+        const file1 = createFile('file1.txt');
+        const file2 = createFile('file2.txt');
+        const dirEntry = createDirectoryEntry('myFolder', [
+            createFileEntry('file1.txt', file1),
+            createFileEntry('file2.txt', file2),
+        ]);
+        const items = createItemList([createItem(createFile('myFolder'), dirEntry)]);
+        const fallback = createFileList([new File([], 'myFolder', { type: '' })]);
+
+        const result = await processDroppedItems(items, fallback);
+
+        expect(result.map((f) => f.name)).toEqual(['file1.txt', 'file2.txt']);
+    });
+
+    it('should handle mixed files and folders without duplication', async () => {
+        const file1 = createFile('standalone.txt');
+        const file2 = createFile('nested.txt');
+        const dirEntry = createDirectoryEntry('folder', [createFileEntry('nested.txt', file2)]);
+        const items = createItemList([
+            createItem(file1, createFileEntry('standalone.txt', file1)),
+            createItem(createFile('folder'), dirEntry),
+        ]);
+        const fallback = createFileList([createFile('standalone.txt'), new File([], 'folder', { type: '' })]);
+
+        const result = await processDroppedItems(items, fallback);
+
+        expect(result.map((f) => f.name).sort()).toEqual(['nested.txt', 'standalone.txt']);
+    });
+
+    it('should process multiple folders in parallel', async () => {
+        const file1 = createFile('file1.txt');
+        const file2 = createFile('file2.txt');
+        const file3 = createFile('file3.txt');
+        const dirEntry1 = createDirectoryEntry('folder1', [createFileEntry('file1.txt', file1)]);
+        const dirEntry2 = createDirectoryEntry('folder2', [
+            createFileEntry('file2.txt', file2),
+            createFileEntry('file3.txt', file3),
+        ]);
+        const items = createItemList([
+            createItem(createFile('folder1'), dirEntry1),
+            createItem(createFile('folder2'), dirEntry2),
+        ]);
+
+        const result = await processDroppedItems(items, createFileList([]));
+
+        expect(result.map((f) => f.name).sort()).toEqual(['file1.txt', 'file2.txt', 'file3.txt']);
+    });
+
+    it('should filter out multiple root folders from fallback', async () => {
+        const file1 = createFile('file1.txt');
+        const file2 = createFile('file2.txt');
+        const dirEntry1 = createDirectoryEntry('folder1', [createFileEntry('file1.txt', file1)]);
+        const dirEntry2 = createDirectoryEntry('folder2', [createFileEntry('file2.txt', file2)]);
+        const items = createItemList([
+            createItem(createFile('folder1'), dirEntry1),
+            createItem(createFile('folder2'), dirEntry2),
+        ]);
+        const fallback = createFileList([new File([], 'folder1', { type: '' }), new File([], 'folder2', { type: '' })]);
+
+        const result = await processDroppedItems(items, fallback);
+
+        expect(result.map((f) => f.name).sort()).toEqual(['file1.txt', 'file2.txt']);
+    });
+
+    it('should deduplicate files with same name from different entries', async () => {
+        const file1 = createFile('duplicate.txt');
+        const file2 = createFile('duplicate.txt');
+        const dirEntry1 = createDirectoryEntry('folder1', [createFileEntry('duplicate.txt', file1)]);
+        const dirEntry2 = createDirectoryEntry('folder2', [createFileEntry('duplicate.txt', file2)]);
+        const items = createItemList([
+            createItem(createFile('folder1'), dirEntry1),
+            createItem(createFile('folder2'), dirEntry2),
+        ]);
+
+        const result = await processDroppedItems(items, createFileList([]));
+
+        expect(result).toHaveLength(1);
+        expect(result[0].name).toBe('duplicate.txt');
+    });
+
+    it('should not filter out legitimate files that have same name as a folder', async () => {
+        const file = createFile('test');
+        const fileInFolder = createFile('nested.txt');
+        const dirEntry = createDirectoryEntry('test', [createFileEntry('nested.txt', fileInFolder)]);
+        const items = createItemList([
+            createItem(file, createFileEntry('test', file)),
+            createItem(createFile('test'), dirEntry),
+        ]);
+        const fallback = createFileList([createFile('test'), new File([], 'test', { type: '' })]);
+
+        const result = await processDroppedItems(items, fallback);
+
+        expect(result.map((f) => f.name).sort()).toEqual(['nested.txt', 'test']);
     });
 });

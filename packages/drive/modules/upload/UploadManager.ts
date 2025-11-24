@@ -45,8 +45,11 @@ export class UploadManager {
                 });
             }
         } else {
-            const structure = buildFolderStructure(filesArray);
-            this.addFolderStructureToQueue(structure, parentUid, batchId);
+            const rootFolders = this.groupFilesByRootFolder(filesArray);
+            for (const rootFiles of rootFolders.values()) {
+                const structure = buildFolderStructure(rootFiles);
+                this.addFolderStructureToQueue(structure, parentUid, batchId);
+            }
         }
 
         await this.orchestrator.start();
@@ -119,6 +122,22 @@ export class UploadManager {
 
         controllerStore.clearAllControllers();
         queueStore.clearQueue();
+    }
+
+    private groupFilesByRootFolder(files: File[]): Map<string, File[]> {
+        const rootFolders = new Map<string, File[]>();
+
+        for (const file of files) {
+            const relativePath = file.webkitRelativePath || file.name;
+            const rootName = relativePath.split('/')[0];
+
+            if (!rootFolders.has(rootName)) {
+                rootFolders.set(rootName, []);
+            }
+            rootFolders.get(rootName)!.push(file);
+        }
+
+        return rootFolders;
     }
 
     /**
