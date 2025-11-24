@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { c } from 'ttag';
 
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
@@ -138,19 +139,26 @@ export const editBookingPage = createAsyncThunk<
             thunkExtra.dispatch(getDecryptedPassphraseAndCalendarKeysThunk({ calendarID: calData.calendar.ID })),
         ]);
 
-        const decrypted = await decryptBookingPageSecrets({
+        const { data, failedToVerify } = await decryptBookingPageSecrets({
             encryptedSecret: editData.encryptedSecret,
             selectedCalendar: calData.calendar.ID,
             decryptionKeys,
             verifyingKeys,
         });
 
+        if (failedToVerify) {
+            thunkExtra.extra.notificationManager.createNotification({
+                text: c('Info').t`Could not verify signature over booking page data`,
+                type: 'error',
+            });
+        }
+
         const { EncryptedContent, Slots } = await encryptBookingPageEdition({
             editData,
             calendarID: calData.calendar.ID,
             updateData: payload,
             signingKeys,
-            decryptedSecret: decrypted,
+            decryptedSecret: data,
             calendarKeys: decryptedCalendarKeys,
         });
 

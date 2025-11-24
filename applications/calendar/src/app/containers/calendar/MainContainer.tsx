@@ -27,6 +27,7 @@ import UnlockCalendarsContainer from '../setup/UnlockCalendarsContainer';
 import { getCalendarsToAct } from '../setup/helper';
 import MainContainerSetup from './MainContainerSetup';
 import { fromUrlParams } from './getUrlHelper';
+import NotificationManagerInjector from './notifications/NotificationManagerInjector';
 
 const MainContainer = () => {
     useCalendarFavicon();
@@ -144,6 +145,7 @@ const WrappedMainContainer = () => {
     useDrawerParent();
     return (
         <GlobalModalProvider>
+            <NotificationManagerInjector />
             <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
                 <BookingsProvider>
                     <KeyTransparencyManager>
