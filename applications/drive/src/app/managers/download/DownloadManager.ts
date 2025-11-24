@@ -16,6 +16,7 @@ import ArchiveGenerator from './ArchiveGenerator';
 import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadScheduler } from './DownloadScheduler';
 import type { DownloadQueueTaskHandle } from './downloadTypes';
+import { downloadLogDebug } from './utils/downloadLogger';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { hydrateAndCheckNodes } from './utils/hydrateAndCheckNodes';
 import { nodesStructureTraversal } from './utils/nodesStructureTraversal';
@@ -93,10 +94,10 @@ export class DownloadManager {
         const { addDownloadItem } = useDownloadManagerStore.getState();
 
         const isSingleFileDownload = nodes.length === 1 && nodes[0].type === NodeType.File;
-
+        let downloadId;
         if (isSingleFileDownload) {
             const node = nodes[0];
-            const downloadId = addDownloadItem({
+            downloadId = addDownloadItem({
                 name: node.name,
                 storageSize: getNodeStorageSize(node),
                 downloadedBytes: 0,
@@ -108,7 +109,7 @@ export class DownloadManager {
             void this.scheduleSingleFileDownload(downloadId, node);
         } else {
             const archiveName = this.getArchiveName(nodes);
-            const downloadId = addDownloadItem({
+            downloadId = addDownloadItem({
                 name: archiveName,
                 storageSize: undefined,
                 downloadedBytes: 0,
@@ -117,11 +118,15 @@ export class DownloadManager {
                 unsupportedFileDetected: containsUnsupportedFile ? 'detected' : undefined,
             });
             this.requestedDownloads.set(downloadId, nodes);
-
             // While the single file can be immediately queued and scheduled, the archive first needs to be traversed
             // then one by one all "discovered" files get scheduled for download
             this.scheduleArchiveDownload(downloadId, nodes);
         }
+        downloadLogDebug('Queue download', {
+            downloadId,
+            containsUnsupportedFile,
+            fileMediaTypes: nodes.map((f) => f.mediaType),
+        });
     }
 
     private async scheduleSingleFileDownload(downloadId: string, node: NodeEntity) {
@@ -256,8 +261,7 @@ export class DownloadManager {
             const generator = archiveStreamGenerator.generator;
             const trackerController = archiveStreamGenerator.controller;
 
-            // eslint-disable-next-line no-console
-            const log = (message: string) => console.debug(`[DownloadManager] ${downloadId}: ${message}`);
+            const log = (message: string) => downloadLogDebug('FileSaver', message);
             const archiveGenerator = new ArchiveGenerator();
             abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
 
@@ -298,6 +302,7 @@ export class DownloadManager {
             combinedCompletion
                 .then(() => {
                     updateDownloadItem(downloadId, { status: DownloadStatus.Finished });
+                    downloadLogDebug('Completed download', { downloadId });
                 })
                 .catch((error) => {
                     const existing = getQueueItem(downloadId);
@@ -311,7 +316,8 @@ export class DownloadManager {
                     ) {
                         updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
                     } else {
-                        updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error });
+                        this.activeDownloads.delete(downloadId);
+                        throw error;
                     }
                 })
                 .finally(() => {
@@ -380,8 +386,10 @@ export class DownloadManager {
         downloadIds.forEach((id) => {
             const storeItem = getQueueItem(id);
             if (storeItem && this.activeDownloads.has(id)) {
+                downloadLogDebug('Cancel download', { downloadId: id, isActive: true });
                 void this.stopDownload(downloadIds);
             } else if (storeItem && this.requestedDownloads.has(id)) {
+                downloadLogDebug('Cancel download', { downloadId: id, isPending: true });
                 this.requestedDownloads.delete(id);
                 this.scheduler.cancelDownloadsById(id);
             }
@@ -395,6 +403,7 @@ export class DownloadManager {
             const storeItem = getQueueItem(id);
             const requestedDownload = this.requestedDownloads.get(id);
             if (storeItem && requestedDownload) {
+                downloadLogDebug('Retry download', { downloadId: id });
                 if (requestedDownload.length === 1) {
                     void this.scheduleSingleFileDownload(id, requestedDownload[0]);
                 }
