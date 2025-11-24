@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { ItemsListContextMenu, useItemContextMenu } from '@proton/pass/components/Item/List/ItemsListContextMenu';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
@@ -22,11 +23,13 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 export const WeakPasswords: FC = () => {
     const { onTelemetry } = usePassCore();
     const listRef = useRef<List>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const selectItem = useSelectItemAction();
 
     const { insecure } = useMonitor();
     const items = useMemoSelector(selectSelectedItems, [insecure.data]);
     const selectedItem = useSelectedItem();
+    const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
     useAutoSelect(items);
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayWeakPasswords, {}, {})([]);
@@ -47,26 +50,31 @@ export const WeakPasswords: FC = () => {
     }
 
     return (
-        <VirtualList
-            ref={listRef}
-            rowCount={items.length}
-            rowHeight={() => 54}
-            rowRenderer={({ style, index, key }) => {
-                const item = items[index];
-                const id = getItemKey(item);
+        <>
+            <VirtualList
+                ref={listRef}
+                containerRef={containerRef}
+                rowCount={items.length}
+                rowHeight={() => 54}
+                rowRenderer={({ style, index, key }) => {
+                    const item = items[index];
+                    const id = getItemKey(item);
 
-                return (
-                    <div style={style} key={key}>
-                        <ItemsListItem
-                            active={selectedItem && itemEq(selectedItem)(item)}
-                            id={id}
-                            item={item}
-                            key={id}
-                            onSelect={onSelect}
-                        />
-                    </div>
-                );
-            }}
-        />
+                    return (
+                        <div style={style} key={key}>
+                            <ItemsListItem
+                                active={selectedItem && itemEq(selectedItem)(item)}
+                                id={id}
+                                item={item}
+                                key={id}
+                                onSelect={onSelect}
+                                onContextMenu={onContextMenu}
+                            />
+                        </div>
+                    );
+                }}
+            />
+            {contextMenuItem && <ItemsListContextMenu anchorRef={containerRef} {...contextMenuItem} />}
+        </>
     );
 };
