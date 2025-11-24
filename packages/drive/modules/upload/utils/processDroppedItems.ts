@@ -6,9 +6,6 @@ import { processFileSystemEntry } from './processFileSystemEntry';
  * Handles both FileSystemEntry API (for directory support) and fallback to getAsFile().
  * Some browsers (e.g. Safari, Windows Chromium builds) surface only the first dropped file
  * via DataTransferItem.kind === 'file'; the rest show up exclusively in `DataTransfer.files`.
- * https://caniuse.com/dragndrop as per caniuse `dataTransfer.items only supported by Chrome`
- *
- * Passing the fallback list ensures we still pick up those additional entries.
  *
  * @param items - The DataTransferItemList from a drop event
  * @param fallbackFiles - Optional FileList to cover browsers that expose files only via DataTransfer.files
@@ -19,20 +16,32 @@ export async function processDroppedItems(
     fallbackFiles?: FileList | null
 ): Promise<File[]> {
     const collectedFiles: File[] = [];
-    const seen = new Set();
+    const seen = new Set<string>();
+    const rootFolderNames = new Set<string>();
+
+    const promises: Promise<void>[] = [];
 
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
-
         const entry =
             item.webkitGetAsEntry?.() ??
             (item as typeof item & { getAsEntry?: () => FileSystemEntry | null }).getAsEntry?.() ??
             null;
 
         if (entry) {
-            const files = await processFileSystemEntry(entry);
-            files.forEach((f) => seen.add(f.name));
-            collectedFiles.push(...files);
+            if (entry.isDirectory) {
+                rootFolderNames.add(entry.name);
+            }
+
+            const promise = processFileSystemEntry(entry).then((files) => {
+                files.forEach((f) => {
+                    if (!seen.has(f.name)) {
+                        seen.add(f.name);
+                        collectedFiles.push(f);
+                    }
+                });
+            });
+            promises.push(promise);
             continue;
         }
 
@@ -43,8 +52,16 @@ export async function processDroppedItems(
         }
     }
 
+    await Promise.all(promises);
+
     if (fallbackFiles && fallbackFiles.length > 0) {
-        collectedFiles.push(...Array.from(fallbackFiles).filter((file) => !!file.type && !seen.has(file.name)));
+        for (const file of Array.from(fallbackFiles)) {
+            const isRootFolderMarker = rootFolderNames.has(file.name) && !seen.has(file.name);
+            if (!isRootFolderMarker && !seen.has(file.name)) {
+                seen.add(file.name);
+                collectedFiles.push(file);
+            }
+        }
     }
 
     return collectedFiles;
