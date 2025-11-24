@@ -22,6 +22,7 @@ import { serializeFormData } from '../utils/form/formHelpers';
 import {
     computeEditFormData,
     computeInitialFormData,
+    getBookingPageCalendar,
     getInitialBookingFormState,
     recomputeSlotsForRanges,
     validateRangeOperation,
@@ -197,7 +198,14 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const openBookingSidebarEdition = (bookingPage: InternalBookingPage, editData: BookingPageEditData) => {
+        const bookingPageCalendar = getBookingPageCalendar({ writeableCalendars, bookingPage });
+        if (!bookingPageCalendar) {
+            createNotification({ text: c('Info').t`No calendar available; please delete the booking page.` });
+            return;
+        }
+
         const form = computeEditFormData({
+            bookingPageCalendar,
             bookingPage,
             editData,
         });
