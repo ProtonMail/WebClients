@@ -4,6 +4,7 @@ import type { List } from 'react-virtualized';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useBulkEnabled, useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
+import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { ItemsListContextMenu, useItemContextMenu } from '@proton/pass/components/Item/List/ItemsListContextMenu';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
@@ -41,6 +42,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
     const bulk = useBulkSelection();
     const bulkEnabled = useBulkEnabled();
     const { draggable, handleDragStart, handleDragEnd } = useItemDrag();
+    const { close } = useContextMenu();
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -106,6 +108,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                             }
                         }
                     }}
+                    onScroll={close}
                 />
             )}
             {contextMenuItem && <ItemsListContextMenu anchorRef={containerRef} {...contextMenuItem} />}

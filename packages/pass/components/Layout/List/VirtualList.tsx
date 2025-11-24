@@ -16,6 +16,7 @@ import './VirtualList.scss';
 type Props = {
     interpolationIndexes?: number[];
     rowCount: number;
+    onScroll?: (scrollParams: ScrollParams) => void;
     onScrollEnd?: () => void;
     rowHeight: (index: number) => number;
     rowRenderer: ListRowRenderer;
@@ -23,13 +24,17 @@ type Props = {
 };
 
 const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
-    { interpolationIndexes = [], rowCount, rowHeight, onScrollEnd, rowRenderer, containerRef },
+    { interpolationIndexes = [], rowCount, rowHeight, onScroll, onScrollEnd, rowRenderer, containerRef },
     virtualListRef
 ) => {
     const [shadows, setShadows] = useState({ top: false, bottom: false });
 
     const handleScroll = useCallback(
-        ({ scrollTop, clientHeight, scrollHeight }: ScrollParams) => {
+        (scrollParams: ScrollParams) => {
+            onScroll?.(scrollParams);
+
+            const { scrollTop, clientHeight, scrollHeight } = scrollParams;
+
             const scrollable = clientHeight > 0 && scrollHeight > clientHeight;
 
             if (scrollTop + clientHeight >= scrollHeight) onScrollEnd?.();
