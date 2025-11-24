@@ -82,8 +82,13 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                     </div>
                 </Spotlight>
                 {displayView &&
-                    bookings?.bookingPages.map((page) => (
-                        <BookingItem key={page.id} page={page} calendars={getVisualCalendars(calendars || [])} />
+                    bookings?.bookingPages.map((page, index) => (
+                        <BookingItem
+                            key={page.id}
+                            page={page}
+                            calendars={getVisualCalendars(calendars || [])}
+                            canShowSpotlight={index === 0}
+                        />
                     ))}
             </SidebarList>
 
