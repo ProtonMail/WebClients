@@ -10,6 +10,7 @@ import { c } from 'ttag';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
+import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -23,8 +24,10 @@ import {
     CancelSubscriptionSection,
     CancelSubscriptionViaSupportSection,
     CancellationReminderSection,
+    CredentialLeakSection,
     CreditsSection,
     DashboardTelemetry,
+    DataRecoverySection,
     DeleteSection,
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
@@ -33,12 +36,15 @@ import {
     InviteSection,
     InvoicesSection,
     LanguageSection,
+    LogsSection,
     MainLogo,
     OpenVPNConfigurationSection,
     OpenVPNCredentialsSection,
+    OverviewSection,
     PasswordsSection,
     PaymentMethodsSection,
     PlansSection,
+    PrivacySection,
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainAreaLoading,
@@ -46,6 +52,9 @@ import {
     ProtonVPNClientsSection,
     ReferralInvitesContextProvider,
     RewardSection,
+    SentinelSection,
+    SessionRecoverySection,
+    SessionsSection,
     SettingsListItem,
     Sidebar,
     SidebarList,
@@ -54,6 +63,7 @@ import {
     SubscriptionsSection,
     TVContainer,
     ThemesSection,
+    ThirdPartySection,
     TopBanners,
     TopNavbarGetStartedButton,
     TopNavbarUpsell,
@@ -70,7 +80,10 @@ import {
     YourPlanSectionV2,
     YourPlanUpsellsSectionV2,
     useActiveBreakpoint,
+    useIsDataRecoveryAvailable,
+    useIsSessionRecoveryAvailable,
     useModalState,
+    useRecoveryNotification,
     useToggle,
 } from '@proton/components';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
@@ -119,6 +132,10 @@ const MainContainer: FunctionComponent = () => {
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const [referralInfo] = useReferralInfo();
+    const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
+    const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
+    const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
+    const recoveryNotification = useRecoveryNotification(false, false);
 
     const vpnRoutes = getRoutes({
         user,
@@ -129,6 +146,13 @@ const MainContainer: FunctionComponent = () => {
         isReferralProgramEnabled: Boolean(userSettings.Referral?.Eligible),
         isReferralExpansionEnabled,
         referralInfo: referralInfo.uiData,
+        isBreachesAccountDashboardEnabled,
+        isProtonMeetIntegrationEnabled,
+        isZoomIntegrationEnabled,
+        organization,
+        isDataRecoveryAvailable,
+        isSessionRecoveryAvailable,
+        recoveryNotificationColor: recoveryNotification?.color,
     });
 
     const organizationAppRoutes = getOrganizationAppRoutes({
@@ -267,7 +291,13 @@ const MainContainer: FunctionComponent = () => {
     };
 
     const redirect = (() => {
-        if (loadingSubscription || loadingOrganization || loadingGroups) {
+        if (
+            loadingSubscription ||
+            loadingOrganization ||
+            loadingGroups ||
+            loadingDataRecovery ||
+            loadingIsSessionRecoveryAvailable
+        ) {
             return <PrivateMainAreaLoading />;
         }
 
@@ -358,6 +388,16 @@ const MainContainer: FunctionComponent = () => {
                                     </PrivateMainSettingsArea>
                                 </Route>
                             )}
+                            {getIsSectionAvailable(vpnRoutes.recovery) && (
+                                <Route path={vpnRoutes.recovery.to}>
+                                    <PrivateMainSettingsArea config={vpnRoutes.recovery}>
+                                        <OverviewSection />
+                                        <AccountRecoverySection />
+                                        <DataRecoverySection />
+                                        <SessionRecoverySection />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                            )}
                             <Route path="/account">
                                 <Redirect to={vpnRoutes.account.to} />
                             </Route>
@@ -370,7 +410,6 @@ const MainContainer: FunctionComponent = () => {
                                     <LanguageSection locales={locales} />
                                     <TwoFactorSection />
                                     <OpenVPNCredentialsSection />
-                                    <AccountRecoverySection />
                                     <EmailSubscriptionSection />
                                     <DeleteSection />
                                 </PrivateMainSettingsArea>
@@ -378,6 +417,18 @@ const MainContainer: FunctionComponent = () => {
                             <Route path={vpnRoutes.appearance.to}>
                                 <PrivateMainSettingsArea config={vpnRoutes.appearance}>
                                     <ThemesSection />
+                                </PrivateMainSettingsArea>
+                            </Route>
+                            <Route path={vpnRoutes.vpnSecurity.to}>
+                                <AutomaticSubscriptionModal />
+                                <PrivateMainSettingsArea config={vpnRoutes.vpnSecurity}>
+                                    <SentinelSection app={app} />
+                                    <CredentialLeakSection />
+                                    <AuthDevicesSettings />
+                                    <SessionsSection />
+                                    <LogsSection />
+                                    <ThirdPartySection />
+                                    <PrivacySection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={vpnRoutes.downloads.to}>

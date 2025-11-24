@@ -7,13 +7,12 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useSessionRecoveryLocalStorage } from '@proton/components/containers/account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { useInterval } from '@proton/hooks';
-import { APPS, DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
+import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useAuthentication from './useAuthentication';
-import useConfig from './useConfig';
 import { useSessionRecoveryState } from './useSessionRecoveryState';
 
 export const useIsSessionRecoveryInitiatedByCurrentSession = () => {
@@ -53,15 +52,11 @@ export const useAvailableRecoveryMethods = () => {
 export const useIsSessionRecoveryAvailable = () => {
     const [user] = useUser();
     const [addresses = [], loadingAddresses] = useAddresses();
-    const { APP_NAME } = useConfig();
 
     const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
     const isPrivateUser = user?.isPrivate;
 
-    return [
-        APP_NAME !== APPS.PROTONVPN_SETTINGS && !loadingAddresses && hasMigratedKeys && isPrivateUser,
-        loadingAddresses,
-    ];
+    return [!loadingAddresses && hasMigratedKeys && isPrivateUser, loadingAddresses];
 };
 
 export const useIsSessionRecoveryInitiationAvailable = () => {
