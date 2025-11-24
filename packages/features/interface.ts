@@ -93,6 +93,10 @@ export enum FeatureCode {
     OfferMailTrial2023 = 'OfferMailTrial2023',
     OfferMailTrial2024 = 'OfferMailTrial2024',
 
+    // Bookings spotlights
+    SpotlightIntroduceBookings = 'SpotlightIntroduceBookings',
+    BookingPageLocationSpotlight = 'BookingPageLocationSpotlight',
+
     // Black Friday 2025
     OfferBlackFriday2025InboxFreeYearly = 'OfferBlackFriday2025InboxFreeYearly',
     OfferBlackFriday2025InboxFreeMonthly = 'OfferBlackFriday2025InboxFreeMonthly',
