@@ -39,23 +39,6 @@ export function convertRefTokensToSpans(content: string) {
     return content;
 }
 
-// remark-math does not natively support latex delimiters like \(, \[, \\(, etc so we must convert them to markdown-style math delimiters $$
-// for more information see https://github.com/remarkjs/react-markdown/issues/785
-// also replace \Bigl and \Bigr with \left and \right to prevent rendering different size parentheses
-export function processForLatexMarkdown(markdown: string) {
-    return markdown
-        .replace(/\\\\\[/g, '$$$$')
-        .replace(/\\\\\]/g, '$$$$')
-        .replace(/\\\\\(/g, '$$$$')
-        .replace(/\\\\\)/g, '$$$$')
-        .replace(/\\\[/g, '$$$$')
-        .replace(/\\\]/g, '$$$$')
-        .replace(/\\\(/g, '$$$$')
-        .replace(/\\\)/g, '$$$$')
-        .replace(/\\Bigl/g, '\\left')
-        .replace(/\\Bigr/g, '\\right');
-}
-
 // Keep the original function for backward compatibility
 export function removeRefTokens(content: string) {
     // Remove complete REF tags (including CJK brackets)
@@ -119,3 +102,19 @@ export function testRefToSpanConversion() {
         console.log('---');
     });
 }
+
+// replace \Bigl and \Bigr with \left and \right to prevent rendering different size parentheses
+export function processForLatexParentheses(markdown: string) {
+    return markdown.replace(/\\Bigl/g, '\\left').replace(/\\Bigr/g, '\\right');
+}
+
+// remark-math does not natively support latex delimiters like \(, \[, \\(, etc so we must convert both block-level and inline LaTeX delimiters \[ \] and \( \)
+//  to markdown-style math delimiters $$
+// for more information see https://github.com/remarkjs/react-markdown/issues/785
+export const processForLatexMarkdown = (content: string) => {
+    const processedContent = processForLatexParentheses(content);
+    const blockProcessedContent = processedContent.replace(/\\\[(.*?)\\\]/gs, (_, equation) => `$$${equation}$$`);
+    const inlineProcessedContent = blockProcessedContent.replace(/\\\((.*?)\\\)/gs, (_, equation) => `$$${equation}$$`);
+
+    return inlineProcessedContent;
+};
