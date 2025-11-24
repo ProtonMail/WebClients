@@ -33,6 +33,7 @@ describe('UploadEventHandler', () => {
 
         jest.mocked(useUploadQueueStore.getState).mockReturnValue({
             updateQueueItems: mockUpdateQueueItems,
+            queue: new Map(),
         } as any);
 
         jest.mocked(useUploadControllerStore.getState).mockReturnValue({
@@ -183,6 +184,99 @@ describe('UploadEventHandler', () => {
                 status: UploadStatus.Finished,
                 nodeUid: 'node456',
             });
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+
+        it('should update parentUid for blocked children when folder completes', async () => {
+            const mockQueue = new Map([
+                [
+                    'child1',
+                    {
+                        uploadId: 'child1',
+                        parentUploadId: 'task123',
+                        status: UploadStatus.Pending,
+                    },
+                ],
+                [
+                    'child2',
+                    {
+                        uploadId: 'child2',
+                        parentUploadId: 'task123',
+                        status: UploadStatus.Pending,
+                    },
+                ],
+                [
+                    'unrelated',
+                    {
+                        uploadId: 'unrelated',
+                        parentUploadId: 'other-parent',
+                        status: UploadStatus.Pending,
+                    },
+                ],
+            ]);
+
+            jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+                updateQueueItems: mockUpdateQueueItems,
+                queue: mockQueue,
+            } as any);
+
+            const event = {
+                type: 'folder:complete' as const,
+                uploadId: 'task123',
+                nodeUid: 'node456',
+                parentUid: 'parent123',
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Finished,
+                nodeUid: 'node456',
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child1', {
+                parentUid: 'node456',
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child2', {
+                parentUid: 'node456',
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(3);
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+
+        it('should handle folder with no children', async () => {
+            const mockQueue = new Map([
+                [
+                    'task123',
+                    {
+                        uploadId: 'task123',
+                        status: UploadStatus.InProgress,
+                    },
+                ],
+            ]);
+
+            jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+                updateQueueItems: mockUpdateQueueItems,
+                queue: mockQueue,
+            } as any);
+
+            const event = {
+                type: 'folder:complete' as const,
+                uploadId: 'task123',
+                nodeUid: 'node456',
+                parentUid: 'parent123',
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Finished,
+                nodeUid: 'node456',
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(1);
             expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
         });
     });

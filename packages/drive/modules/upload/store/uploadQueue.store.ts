@@ -50,6 +50,7 @@ type QueueItemUpdate = {
     speedBytesPerSecond?: number;
     error?: Error;
     nodeUid?: string;
+    parentUid?: string;
     thumbnailUrl?: string;
     conflictType?: UploadConflictType;
     nodeType?: NodeType;
