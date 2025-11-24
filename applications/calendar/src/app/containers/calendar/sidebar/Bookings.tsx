@@ -39,6 +39,8 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
     const spotlight = useIntroduceBookingsSpotlight();
 
     const handleCreate = () => {
+        spotlight.onClose();
+
         if (user.hasPaidMail) {
             openBookingSidebarCreation(utcDate);
         } else {
