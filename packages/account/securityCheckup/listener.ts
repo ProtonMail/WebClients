@@ -83,7 +83,6 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
             const isMnemonicAvailable = getIsMnemonicAvailable({
                 addresses: addresses.value,
                 user: user.value,
-                app: config.APP_NAME,
             });
             const isRecoveryFileAvailable = getIsRecoveryFileAvailable({
                 user: user.value,
