@@ -105,14 +105,18 @@ export const PageHeader = ({
                         {buttons}
                     </div>
                     {guestMode ? (
-                        <Button className="action-button rounded-full" onClick={handleSignInClick} size="large">
+                        <Button
+                            className="action-button rounded-full mr-2 md:mr-0"
+                            onClick={handleSignInClick}
+                            size="large"
+                        >
                             {c('Action').t`Sign in`}
                         </Button>
                     ) : (
-                        <>
+                        <div className="flex items-center gap-2 mr-2 md:mr-0">
                             <UpgradeButton />
                             <UserDropdown app={APPS.PROTONMEET} />
-                        </>
+                        </div>
                     )}
                 </div>
             )}
