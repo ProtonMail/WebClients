@@ -15,4 +15,10 @@
 			}
 		}
 	}
+
+	&-duration-button[aria-pressed='true'] {
+		border-color: color-mix(in srgb, var(--interaction-norm-active) 50%, transparent);
+		color: var(--interaction-norm-active);
+		background-color: color-mix(in srgb, var(--interaction-norm-active) 15%, transparent);
+	}
 }
