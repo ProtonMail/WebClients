@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { CreateNotificationOptions } from '@proton/components/containers/notifications/interfaces';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
@@ -21,6 +22,11 @@ export type UsePeriodOtpCodeOptions = {
 /** Frame-skipping rate to achieve no more than
  * 24fps for performance reasons. */
 const REFRESH_RATE = 1000 / 24;
+
+export const otpGenerationErrorNotifcation = (): CreateNotificationOptions => ({
+    text: c('Error').t`Unable to generate an OTP code for this item`,
+    type: 'error',
+});
 
 export const useOTPCode = (payload: OtpRequest, ref: MutableRefObject<MaybeNull<IOtpRenderer>>): Maybe<string> => {
     const core = usePassCore();
@@ -46,10 +52,7 @@ export const useOTPCode = (payload: OtpRequest, ref: MutableRefObject<MaybeNull<
             setOtp(otpCode);
 
             if (otpCode === null) {
-                return createNotification({
-                    text: c('Error').t`Unable to generate an OTP code for this item`,
-                    type: 'error',
-                });
+                return createNotification(otpGenerationErrorNotifcation());
             }
 
             if (otpCode !== null && otpCode.period && otpCode.period > 0) {

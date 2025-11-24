@@ -6,14 +6,15 @@ import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import { useContextMenuClose } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
-import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
+
+export type ContextMenuItemCopy = Maybe<() => MaybePromise<MaybeNull<string>>>;
 
 export type ContextMenuItem = {
     type: 'button';
     icon: IconName;
     name: string;
-    copy?: ObfuscatedItemProperty | string;
+    copy?: ContextMenuItemCopy;
     action?: () => void;
     lock?: boolean;
 };
@@ -27,12 +28,12 @@ export const ContextMenuContent: FC<Props> = ({ elements }) => {
     const close = useContextMenuClose();
     const copyToClipboard = useCopyToClipboard();
 
-    const handleAction = (element: ContextMenuItem) => {
+    const handleAction = async (element: ContextMenuItem) => {
         element.action?.();
 
         if (element.copy) {
-            const value = typeof element.copy === 'string' ? element.copy : deobfuscate(element.copy);
-            void copyToClipboard(value);
+            const value = await element.copy();
+            if (value !== null) void copyToClipboard(value);
         }
 
         close();
