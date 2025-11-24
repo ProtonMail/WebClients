@@ -3,6 +3,7 @@ import type { List } from 'react-virtualized';
 
 import { c, msgid } from 'ttag';
 
+import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     ItemsListContextMenu,
@@ -52,6 +53,7 @@ export const DuplicatePasswords: FC = () => {
     const duplicatedData = useMemo(() => duplicates.data.flat(), [duplicates.data]);
     const items = useMemoSelector(selectSelectedItems, [duplicatedData]);
     const selectedItem = useSelectedItem();
+    const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
     const { interpolation, interpolationIndexes } = useMemo(
@@ -103,6 +105,7 @@ export const DuplicatePasswords: FC = () => {
                         }
                     }
                 }}
+                onScroll={close}
             />
             {contextMenuItem && <ItemsListContextMenu anchorRef={containerRef} {...contextMenuItem} />}
         </>

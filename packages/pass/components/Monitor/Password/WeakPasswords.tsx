@@ -4,6 +4,7 @@ import type { List } from 'react-virtualized';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     ItemsListContextMenu,
@@ -32,6 +33,7 @@ export const WeakPasswords: FC = () => {
     const { insecure } = useMonitor();
     const items = useMemoSelector(selectSelectedItems, [insecure.data]);
     const selectedItem = useSelectedItem();
+    const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
     useAutoSelect(items);
@@ -76,6 +78,7 @@ export const WeakPasswords: FC = () => {
                         </div>
                     );
                 }}
+                onScroll={close}
             />
             {contextMenuItem && <ItemsListContextMenu anchorRef={containerRef} {...contextMenuItem} />}
         </>
