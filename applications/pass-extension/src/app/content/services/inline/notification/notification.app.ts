@@ -63,7 +63,7 @@ export const createNotification = (popover: PopoverController): NotificationApp 
             case NotificationAction.OTP:
                 if (options?.discard) {
                     ctx?.service.formManager
-                        .getTrackedForms()
+                        .getForms()
                         .filter(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0)
                         .forEach(({ element, getFieldsFor }) => {
                             removeClassifierFlags(element, { preserveIgnored: true });
@@ -90,7 +90,7 @@ export const createNotification = (popover: PopoverController): NotificationApp 
         InlinePortMessageType.AUTOFILL_OTP,
         withContext(async (ctx, { payload: { code } }) => {
             const form = ctx?.service.formManager
-                .getTrackedForms()
+                .getForms()
                 .find(({ getFieldsFor }) => getFieldsFor(FieldType.OTP).length > 0);
 
             if (form) await ctx?.service.autofill.autofillOTP(form, code);

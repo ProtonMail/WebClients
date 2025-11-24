@@ -53,7 +53,7 @@ export const createAutosaveService = (): AutosaveService => {
              * The submit state is checked to avoid stashing form submission
              * data for `FORM_TYPE_PRESENT` in case reconciliation happens
              * as a result of a form submission. */
-            const forms = ctx?.service.formManager.getTrackedForms() ?? [];
+            const forms = ctx?.service.formManager.getForms() ?? [];
             const form = forms.find((form) => form.formId === formId);
             const typedForms = forms.filter(({ formType, detached }) => formType === type && !detached);
             const submissionTypeMatch = typedForms.length > 0;
