@@ -3,7 +3,6 @@ import type { ReactElement, ReactNode } from 'react';
 import { addMinutes, format } from 'date-fns';
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DriveLogo, LumoLogo, MailLogo, PassLogo, ProtonLogo, VpnLogo } from '@proton/components';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
@@ -53,12 +52,14 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
     );
 };
 
-export const BookingSuccess = () => {
+interface Props {
+    isGuest: boolean;
+}
+
+export const BookingSuccess = ({ isGuest }: Props) => {
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedBookingSlot = useBookingStore((state) => state.selectedBookingSlot);
     const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
-
-    const [user] = useUser();
 
     if (!bookingDetails || !selectedBookingSlot) {
         return <NoMatch reason={Reason.notFound} />;
@@ -128,7 +129,7 @@ export const BookingSuccess = () => {
                 </div>
             </div>
 
-            {!user && (
+            {isGuest && (
                 <div className="mx-auto text-center max-w-custom p-8" style={{ '--max-w-custom': '32rem' }}>
                     <p className="color-weak inline-flex flex-nowrap items-center gap-2 mt-0 mb-6">
                         <span className="text-sm mt-3">{c('Info').t`Powered by`}</span>
