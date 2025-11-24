@@ -52,7 +52,11 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
     );
 };
 
-export const BookingSuccess = () => {
+interface Props {
+    isGuest: boolean;
+}
+
+export const BookingSuccess = ({ isGuest }: Props) => {
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedBookingSlot = useBookingStore((state) => state.selectedBookingSlot);
     const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
@@ -125,54 +129,56 @@ export const BookingSuccess = () => {
                 </div>
             </div>
 
-            <div className="mx-auto text-center max-w-custom p-8" style={{ '--max-w-custom': '32rem' }}>
-                <p className="color-weak inline-flex flex-nowrap items-center gap-2 mt-0 mb-6">
-                    <span className="text-sm mt-3">{c('Info').t`Powered by`}</span>
-                    <ProtonLogo />
-                </p>
+            {isGuest && (
+                <div className="mx-auto text-center max-w-custom p-8" style={{ '--max-w-custom': '32rem' }}>
+                    <p className="color-weak inline-flex flex-nowrap items-center gap-2 mt-0 mb-6">
+                        <span className="text-sm mt-3">{c('Info').t`Powered by`}</span>
+                        <ProtonLogo />
+                    </p>
 
-                <h2 className="text-3xl booking-color-title font-arizona">{c('Info')
-                    .t`Take control of your digital life`}</h2>
-                <p className="text-wrap-balance mb-6 booking-color-title">{c('Info')
-                    .t`This booking was made via ${CALENDAR_APP_NAME}, part of ${BRAND_NAME}'s suite of privacy-first products.`}</p>
+                    <h2 className="text-3xl booking-color-title font-arizona">{c('Info')
+                        .t`Take control of your digital life`}</h2>
+                    <p className="text-wrap-balance mb-6 booking-color-title">{c('Info')
+                        .t`This booking was made via ${CALENDAR_APP_NAME}, part of ${BRAND_NAME}'s suite of privacy-first products.`}</p>
 
-                <p className="my-6">
-                    <ButtonLike
-                        as="a"
-                        href="https://account.proton.me/"
-                        pill
-                        shape="solid"
-                        color="norm"
-                        size="large"
-                        target="_blank"
-                    >
-                        {c('Action').t`Create a free account`}
-                    </ButtonLike>
-                </p>
+                    <p className="my-6">
+                        <ButtonLike
+                            as="a"
+                            href="https://account.proton.me/signup?ref=booking-success"
+                            pill
+                            shape="solid"
+                            color="norm"
+                            size="large"
+                            target="_blank"
+                        >
+                            {c('Action').t`Create a free account`}
+                        </ButtonLike>
+                    </p>
 
-                <p className="text-center inline-flex flex-row flex-wrap items-center gap-5 my-0">
-                    <span className="">
-                        <MailLogo variant="glyph-only" />
-                        <span className="block">{MAIL_SHORT_APP_NAME}</span>
-                    </span>
-                    <span className="">
-                        <VpnLogo variant="glyph-only" />
-                        <span className="block">{VPN_SHORT_APP_NAME}</span>
-                    </span>
-                    <span className="">
-                        <PassLogo variant="glyph-only" />
-                        <span className="block">{PASS_SHORT_APP_NAME}</span>
-                    </span>
-                    <span className="">
-                        <LumoLogo variant="glyph-only" />
-                        <span className="block">{LUMO_SHORT_APP_NAME}</span>
-                    </span>
-                    <span className="">
-                        <DriveLogo variant="glyph-only" />
-                        <span className="block">{DRIVE_SHORT_APP_NAME}</span>
-                    </span>
-                </p>
-            </div>
+                    <p className="text-center inline-flex flex-row flex-wrap items-center gap-5 my-0">
+                        <span className="">
+                            <MailLogo variant="glyph-only" />
+                            <span className="block">{MAIL_SHORT_APP_NAME}</span>
+                        </span>
+                        <span className="">
+                            <VpnLogo variant="glyph-only" />
+                            <span className="block">{VPN_SHORT_APP_NAME}</span>
+                        </span>
+                        <span className="">
+                            <PassLogo variant="glyph-only" />
+                            <span className="block">{PASS_SHORT_APP_NAME}</span>
+                        </span>
+                        <span className="">
+                            <LumoLogo variant="glyph-only" />
+                            <span className="block">{LUMO_SHORT_APP_NAME}</span>
+                        </span>
+                        <span className="">
+                            <DriveLogo variant="glyph-only" />
+                            <span className="block">{DRIVE_SHORT_APP_NAME}</span>
+                        </span>
+                    </p>
+                </div>
+            )}
         </div>
     );
 };
