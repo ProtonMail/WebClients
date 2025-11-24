@@ -10,8 +10,6 @@ import whatsNewDarkMode from '../../../components/Animations/whats-new-dark-mode
 import whatsNewPersonalization from '../../../components/Animations/whats-new-personalization.json';
 import { useStaggeredWhatsNewFeatures } from '../../../hooks/useStaggeredWhatsNewFeatures';
 import { useLumoTheme } from '../../../providers/LumoThemeProvider';
-import { useLumoSelector } from '../../../redux/hooks';
-import { selectHasModifiedPersonalization } from '../../../redux/slices/personalization';
 import SettingsModal from '../SettingsModal/SettingsModal';
 import WhatsNewModal from './WhatsNewModal';
 
@@ -31,7 +29,6 @@ export type WhatsNewFeature = {
 
 const WhatsNew = () => {
     const isFeatureEnabled = useFlag(WHATS_NEW_FEATURE_FLAG);
-    const hasModifiedPersonalization = useLumoSelector((state) => selectHasModifiedPersonalization(state));
     const { isDarkLumoTheme, isAutoMode } = useLumoTheme();
 
     const features: WhatsNewFeature[] = useMemo(
@@ -56,10 +53,10 @@ const WhatsNew = () => {
                     c('collider_2025:Title')
                         .t`Personalization lets you tailor how ${LUMO_SHORT_APP_NAME} interacts with you. Tell ${LUMO_SHORT_APP_NAME} your name, what you do, and exactly how you want it to respond, witty banter, technical precision, or straight-to-the-point brevity. Because the best AI isn't one-size-fits-all. It's one that feels like it was built just for you.`,
                 settingsPanelToOpen: 'personalization',
-                canShow: !hasModifiedPersonalization,
+                canShow: true,
             },
         ],
-        [hasModifiedPersonalization, isDarkLumoTheme, isAutoMode]
+        [isDarkLumoTheme, isAutoMode]
     );
 
     const { currentFeature, dismissFeature } = useStaggeredWhatsNewFeatures(features, isFeatureEnabled);
@@ -87,7 +84,7 @@ const WhatsNew = () => {
         if (currentFeature) {
             timerRef.current = window.setTimeout(() => {
                 whatsNewModalProps.openModal(true);
-            }, 1500);
+            }, 500);
         }
 
         return () => {

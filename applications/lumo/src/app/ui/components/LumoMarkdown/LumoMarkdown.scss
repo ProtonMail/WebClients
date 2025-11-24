@@ -211,6 +211,10 @@
 		}
 	}
 
+	math {
+		margin-block: 0.5rem;
+	}
+
 	@media (prefers-color-scheme: dark) {
 		table {
 			background-color: var(--background-norm);
