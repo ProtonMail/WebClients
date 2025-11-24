@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
+import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCache } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
@@ -61,6 +61,7 @@ export const useDraft = () => {
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
+    const [user] = useUser();
     const getAttachment = useGetAttachment();
 
     useEffect(() => {
@@ -73,6 +74,7 @@ export const useDraft = () => {
                 undefined,
                 mailSettings,
                 userSettings,
+                user,
                 addresses,
                 getAttachment
             );
@@ -98,6 +100,7 @@ export const useDraft = () => {
                     referenceMessage,
                     mailSettings,
                     userSettings,
+                    user,
                     addresses,
                     getAttachment,
                     false

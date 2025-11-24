@@ -2,7 +2,7 @@ import markdownit from 'markdown-it';
 
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { toText } from '@proton/mail/helpers/parserHtml';
-import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { templateBuilder } from './message/messageSignature';
 
@@ -106,10 +106,11 @@ const replaceSignature = (
     input: string,
     signature: string,
     mailSettings: MailSettings | undefined,
-    userSettings: UserSettings | undefined
+    userSettings: UserSettings | undefined,
+    user: UserModel
 ) => {
     const fontStyle = defaultFontStyle(mailSettings);
-    const signatureTemplate = templateBuilder(signature, mailSettings, userSettings, fontStyle, false, true);
+    const signatureTemplate = templateBuilder(signature, mailSettings, userSettings, user, fontStyle, false, true);
     const signatureText = toText(signatureTemplate)
         .replace(/\u200B/g, '')
         .trim();
@@ -126,13 +127,15 @@ const attachSignature = (
     signature: string,
     plaintext: string,
     mailSettings: MailSettings | undefined,
-    userSettings: UserSettings | undefined
+    userSettings: UserSettings | undefined,
+    user: UserModel
 ) => {
     const fontStyle = defaultFontStyle(mailSettings);
     const signatureTemplate = templateBuilder(
         signature,
         mailSettings,
         userSettings,
+        user,
         fontStyle,
         false,
         !plaintext.startsWith(SIGNATURE_PLACEHOLDER)
@@ -144,13 +147,14 @@ export const textToHtml = (
     input = '',
     signature: string,
     mailSettings: MailSettings | undefined,
-    userSettings: UserSettings | undefined
+    userSettings: UserSettings | undefined,
+    user: UserModel
 ) => {
-    const text = replaceSignature(input, signature, mailSettings, userSettings);
+    const text = replaceSignature(input, signature, mailSettings, userSettings, user);
 
     const html = prepareConversionToHTML(text);
 
-    const withSignature = attachSignature(html, signature, text, mailSettings, userSettings).trim();
+    const withSignature = attachSignature(html, signature, text, mailSettings, userSettings, user).trim();
 
     /**
      * The capturing group includes negative lookup "(?!<p>)" in order to avoid nested problems.
