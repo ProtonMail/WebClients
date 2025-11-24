@@ -4,7 +4,10 @@ import type { List } from 'react-virtualized';
 import { c, msgid } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { ItemsListContextMenu, useItemContextMenu } from '@proton/pass/components/Item/List/ItemsListContextMenu';
+import {
+    ItemsListContextMenu,
+    useItemContextMenu,
+} from '@proton/pass/components/Item/ContextMenu/ItemsListContextMenu';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
