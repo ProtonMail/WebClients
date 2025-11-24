@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import type { IconName } from '@proton/icons/types';
 import { useFolders, useLabels } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -63,6 +64,8 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const [folders] = useFolders();
     const treeview = buildTreeview(folders);
     const { canScheduleSend } = useScheduleSendFeature();
+    const [retentionRules] = useRetentionPolicies();
+    const hasRetentionRules = !!retentionRules?.length;
 
     const folderMap = getStandardFolders();
 
@@ -100,6 +103,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
         buildFolderOption(folderMap, MAILBOX_LABEL_IDS.ARCHIVE),
         buildFolderOption(folderMap, MAILBOX_LABEL_IDS.SPAM),
         buildFolderOption(folderMap, MAILBOX_LABEL_IDS.TRASH),
+        ...(hasRetentionRules ? [buildFolderOption(folderMap, MAILBOX_LABEL_IDS.SOFT_DELETED)] : []),
     ];
 
     const customFolders: ItemCustomFolder[] = treeview.reduce(
