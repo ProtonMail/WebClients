@@ -8,10 +8,10 @@ import { NoMatch, Reason } from '../components/NoMatch';
 import { useExternalBookingLoader } from '../useExternalBookingLoader';
 
 interface Props {
-    isGuest?: boolean;
+    isGuest: boolean;
 }
 
-export const BookingsRouter = ({}: Props) => {
+export const BookingsRouter = ({ isGuest }: Props) => {
     const { loadPublicBooking } = useExternalBookingLoader();
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export const BookingsRouter = ({}: Props) => {
             <Switch>
                 {/* TODO how could we have a shared basename instead of the array */}
                 <Route path={['/bookings', '/bookings/guest']} exact component={BookingPage} />
-                <Route path="/bookings/success" exact component={BookingSuccess} />
+                <Route path="/bookings/success" exact render={() => <BookingSuccess isGuest={isGuest} />} />
                 <Route>
                     <NoMatch reason={Reason.notFound} />
                 </Route>

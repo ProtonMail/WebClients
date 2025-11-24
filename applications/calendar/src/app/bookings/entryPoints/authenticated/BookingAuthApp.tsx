@@ -77,7 +77,7 @@ export const BookingAuthApp = () => {
                                 <NotificationsChildren />
                                 <ModalsChildren />
                                 <Router history={extraThunkArguments.history}>
-                                    <BookingsRouter />
+                                    <BookingsRouter isGuest={false} />
                                 </Router>
                             </ErrorBoundary>
                         </ApiProvider>
