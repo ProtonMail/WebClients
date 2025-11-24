@@ -16,6 +16,8 @@ import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/c
 import type { BookingTimeslot } from '../booking.store';
 import { WEEKS_IN_MINI_CALENDAR } from '../constants';
 
+const MAX_WEEK_SECOND = 7 * 24 * 60 * 60;
+
 /**
  * Transforms an available slot from the external booking page API payload
  * into the internal BookingTimeslot format used by the booking store.
@@ -58,9 +60,16 @@ export const generateWeeklyRangeSimple = (startDate: Date, endDate?: Date) => {
         : WEEKS_IN_MINI_CALENDAR;
 
     for (let i = 0; i < numberOfWeeks; i++) {
+        const start = getUnixTime(startOfDay(startOfWeek(addWeeks(startDate, i))));
+        const end = getUnixTime(endOfDay(endOfWeek(addWeeks(startDate, i))));
+
+        // When having DST transition happening in the range, the time frame between start and end can be bigger than
+        // 7 days, leading to a backend error.
+        const updatedEnd = Math.min(end, start + MAX_WEEK_SECOND - 1);
+
         weekRangeSimple.push({
-            start: getUnixTime(startOfDay(startOfWeek(addWeeks(startDate, i)))),
-            end: getUnixTime(endOfDay(endOfWeek(addWeeks(startDate, i)))),
+            start,
+            end: updatedEnd,
         });
     }
 
