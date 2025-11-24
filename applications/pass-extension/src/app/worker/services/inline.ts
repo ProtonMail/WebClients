@@ -45,7 +45,7 @@ export const createInlineService = () => {
                 tabId,
                 backgroundMessage({
                     type: WorkerMessageType.FRAME_QUERY,
-                    payload: { frameId, parentFrameId, frameAttributes },
+                    payload: { type: 'position', frameId, frameAttributes },
                 }),
                 { frameId: parentFrameId }
             );
@@ -71,7 +71,7 @@ export const createInlineService = () => {
     const getFrameCoords = async (
         tabId: TabId,
         frameId: FrameID,
-        { coords, frameAttributes }: FrameQueryResponse,
+        { coords, frameAttributes }: Omit<FrameQueryResponse<'position'>, 'type'>,
         frames: Frames
     ): Promise<MaybeNull<CurrentFrame>> => {
         try {
@@ -85,7 +85,7 @@ export const createInlineService = () => {
                 const result = await queryFrame(tabId, current.frame, current.frameAttributes);
 
                 /** Hidden/missing frame detected */
-                if (!result.ok) return null;
+                if (!(result.ok && result.type === 'position')) return null;
 
                 /** Accumulate coordinate offsets from parent frame */
                 current.coords.top += result.coords.top;
@@ -113,7 +113,7 @@ export const createInlineService = () => {
         WorkerMessageType.FRAME_VISIBILITY,
         withSender(async ({ payload: frameAttributes }, tabId, frameId) => {
             const frames = await getTabFrames(tabId);
-            const res: FrameQueryResponse = { coords: { top: 0, left: 0 }, frameAttributes };
+            const res = { type: 'position', coords: { top: 0, left: 0 }, frameAttributes } as const;
             const result = await getFrameCoords(tabId, frameId, res, frames);
             return { visible: result !== null };
         })

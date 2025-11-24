@@ -1,3 +1,5 @@
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+
 import browser from '@proton/pass/lib/globals/browser';
 
 import { createInlineService } from './inline';
@@ -25,12 +27,8 @@ describe('inline service', () => {
             expect(tabsSendMessage).toHaveBeenCalledWith(
                 tabId,
                 expect.objectContaining({
-                    type: 'FRAME_QUERY',
-                    payload: {
-                        frameId: 2,
-                        parentFrameId: 1,
-                        frameAttributes,
-                    },
+                    type: WorkerMessageType.FRAME_QUERY,
+                    payload: { frameId: 2, frameAttributes, type: 'position' },
                 }),
                 { frameId: 1 }
             );
@@ -43,6 +41,7 @@ describe('inline service', () => {
                 ok: true,
                 coords: { top: 10, left: 20 },
                 frameAttributes,
+                type: 'position',
             });
         });
 
@@ -51,10 +50,7 @@ describe('inline service', () => {
             const result = await service.getFrameCoords(
                 tabId,
                 0,
-                {
-                    coords: { top: 100, left: 200 },
-                    frameAttributes,
-                },
+                { coords: { top: 100, left: 200 }, frameAttributes },
                 frames
             );
 
@@ -85,22 +81,21 @@ describe('inline service', () => {
                     ok: true,
                     coords: { top: 15, left: 25 },
                     frameAttributes,
+                    type: 'position',
                 })
                 /** Frame 1 -> Frame 0 offset */
                 .mockResolvedValueOnce({
                     ok: true,
                     coords: { top: 30, left: 35 },
                     frameAttributes,
+                    type: 'position',
                 });
 
             /** Starting coordinate accumulation in Frame 2 */
             const result = await service.getFrameCoords(
                 tabId,
                 2,
-                {
-                    coords: { top: 5, left: 10 },
-                    frameAttributes,
-                },
+                { coords: { top: 5, left: 10 }, frameAttributes },
                 frames
             );
 
