@@ -165,7 +165,7 @@ export const FreeVaultFeatures = ({
     const emailAliasText = getNHideMyEmailAliasesText(FREE_PASS_ALIASES);
 
     return (
-        <ul className="m-0 unstyled flex flex-nowrap gap-4">
+        <ul className="m-0 unstyled flex gap-4">
             <li className="flex flex-nowrap gap-1 items-center">
                 <IcVault size={5} className="shrink-0 color-primary" />
                 {vaultText}
