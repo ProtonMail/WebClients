@@ -16,6 +16,9 @@ enum RetentionLifeTimeType {
     Duration = 1,
 }
 
+// Maximum retention duration is set to 50 years (18250 days)
+const MAX_RETENTION_DURATION_DAYS = 365 * 50;
+
 interface Props {
     values: RetentionRuleFormData;
     setValues: (
@@ -98,7 +101,7 @@ const RetentionDurationSetting = ({ values, setValues }: Props) => {
                             id="policy-duration"
                             type="number"
                             min={30}
-                            max={36500}
+                            max={MAX_RETENTION_DURATION_DAYS}
                             value={lifetime}
                             onValue={(value: string) => setValues({ ...values, lifetime: Number(value) })}
                             placeholder={c('retention_policy_2025_Placeholder').t`Enter duration`}
