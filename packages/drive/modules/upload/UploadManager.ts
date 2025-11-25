@@ -7,7 +7,7 @@ import { useUploadQueueStore } from './store/uploadQueue.store';
 import { type UploadConflictStrategy, type UploadEvent, UploadStatus } from './types';
 import { type FolderNode, buildFolderStructure } from './utils/buildFolderStructure';
 import { hasFolderStructure } from './utils/hasFolderStructure';
-import { processDroppedItems } from './utils/processDroppedItems';
+import { isDataTransferList, processDroppedItems } from './utils/processDroppedItems';
 
 /**
  * Public API - thin wrapper around orchestrator
@@ -17,47 +17,121 @@ export class UploadManager {
     private orchestrator = new UploadOrchestrator();
 
     /**
-     * Only support one onUploadEvent subscription for now
-     * TODO: Support multiple with unsubscribe
+     * Subscribe to upload events.
+     * Only supports one subscription for now.
+     *
+     * @param callback - Async function called for each upload event
+     *
+     * @example
+     * uploadManager.onUploadEvent(async (event) => {
+     *   if (event.type === 'file:complete') {
+     *     console.log('Upload complete:', event.nodeUid);
+     *   }
+     * });
      */
     onUploadEvent(callback: (event: UploadEvent) => Promise<void>) {
         this.orchestrator.onUploadEvent(callback);
     }
 
-    async upload(files: File[] | FileList, parentUid: string): Promise<void> {
+    /**
+     * Upload files or folders to a parent node in Drive.
+     * Automatically detects and preserves folder structures from webkitRelativePath.
+     *
+     * @param files - Files from file input (File[] | FileList) or drag & drop (DataTransfer)
+     * @param parentUid - Parent node UID where files will be uploaded
+     * @param fallbackFileList - Optional FileList for browser compatibility with drag & drop
+     *
+     * @example
+     * // From file input
+     * await uploadManager.upload(fileInput.files, parentNodeUid);
+     *
+     * @example
+     * // From drag & drop
+     * const handleDrop = async (e: React.DragEvent) => {
+     *   e.preventDefault();
+     *   await uploadManager.upload(e.dataTransfer,parentNodeUid );
+     * };
+     */
+    async upload(filesOrDataTransfer: File[] | FileList | DataTransfer, parentUid: string): Promise<void> {
+        await this.processUpload(filesOrDataTransfer, parentUid, false);
+    }
+
+    /**
+     * Upload photos (no parent node required).
+     * Photos uploads are always flat - folder structures are ignored.
+     *
+     * @param files - Files from file input (File[] | FileList) or drag & drop (DataTransferItemList)
+     * @param fallbackFileList - Optional FileList for browser compatibility with drag & drop
+     *
+     * @example
+     * // From file input
+     * await uploadManager.uploadPhotos(fileInput.files);
+     *
+     * @example
+     * // From drag & drop
+     * const handleDrop = async (e: React.DragEvent) => {
+     *   e.preventDefault();
+     *   await uploadManager.uploadPhotos(e.dataTransfer);
+     * };
+     */
+    async uploadPhotos(filesOrDataTransfer: File[] | FileList | DataTransfer): Promise<void> {
+        await this.processUpload(filesOrDataTransfer, undefined, true);
+    }
+
+    private async processUpload(
+        filesOrDataTransfer: File[] | FileList | DataTransfer,
+        parentUid: string | undefined,
+        isForPhotos: boolean
+    ): Promise<void> {
         const queueStore = useUploadQueueStore.getState();
         const batchId = generateUID();
-        const filesArray = Array.from(files);
 
+        const filesArray = isDataTransferList(filesOrDataTransfer)
+            ? await processDroppedItems(filesOrDataTransfer)
+            : Array.from(filesOrDataTransfer);
         const hasStructure = hasFolderStructure(filesArray);
 
-        if (!hasStructure) {
+        if (isForPhotos) {
             for (const file of filesArray) {
                 queueStore.addItem({
                     type: NodeType.File,
                     file,
-                    parentUid,
                     name: file.name,
                     uploadedBytes: 0,
                     clearTextExpectedSize: file.size,
                     status: UploadStatus.Pending,
                     batchId,
+                    isForPhotos,
                 });
             }
         } else {
-            const rootFolders = this.groupFilesByRootFolder(filesArray);
-            for (const rootFiles of rootFolders.values()) {
-                const structure = buildFolderStructure(rootFiles);
-                this.addFolderStructureToQueue(structure, parentUid, batchId);
+            if (!parentUid) {
+                // Should never happen
+                throw new Error('parentUid is mendatory for non-photos upload, you probably called wrong endpoint');
+            }
+            if (!hasStructure) {
+                for (const file of filesArray) {
+                    queueStore.addItem({
+                        type: NodeType.File,
+                        file,
+                        parentUid,
+                        name: file.name,
+                        uploadedBytes: 0,
+                        clearTextExpectedSize: file.size,
+                        status: UploadStatus.Pending,
+                        batchId,
+                    });
+                }
+            } else {
+                const rootFolders = this.groupFilesByRootFolder(filesArray);
+                for (const rootFiles of rootFolders.values()) {
+                    const structure = buildFolderStructure(rootFiles);
+                    this.addFolderStructureToQueue(structure, parentUid, batchId);
+                }
             }
         }
 
         await this.orchestrator.start();
-    }
-
-    async uploadDrop(items: DataTransferItemList, fileList: FileList, parentUid: string): Promise<void> {
-        const filesEntries = await processDroppedItems(items, fileList);
-        await this.upload(filesEntries, parentUid);
     }
 
     async cancelUpload(uploadId: string): Promise<void> {

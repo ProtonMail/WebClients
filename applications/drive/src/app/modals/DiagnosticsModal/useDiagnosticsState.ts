@@ -6,7 +6,7 @@ import { useDrive } from '@proton/drive';
 import {
     type Diagnostic,
     type DiagnosticResult,
-    type ExcpectedTreeNode,
+    type ExpectedTreeNode,
     useDriveDiagnostics,
 } from '@proton/drive/diagnostic';
 
@@ -106,7 +106,7 @@ export const useDiagnosticsState = () => {
         node?: MaybeNode;
         verifyContent?: boolean;
         verifyThumbnails?: boolean;
-        expectedStructure?: ExcpectedTreeNode;
+        expectedStructure?: ExpectedTreeNode;
     }): void => {
         if (!diagnostics) {
             return;

@@ -83,7 +83,8 @@ const getShouldIgnoreTransferProgress = (
     return (
         status === BaseTransferStatus.Cancelled ||
         status === BaseTransferStatus.Failed ||
-        status === UploadStatus.Skipped
+        status === UploadStatus.Skipped ||
+        status === UploadStatus.PhotosDuplicate
     );
 };
 

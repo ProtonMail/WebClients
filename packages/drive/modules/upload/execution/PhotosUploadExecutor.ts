@@ -1,19 +1,42 @@
 import { c } from 'ttag';
 
-import { NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
-import { type ExtendedAttributesMetadata, generateExtendedAttributes } from '../../extendedAttributes';
+import { CryptoProxy } from '@proton/crypto';
+
+import { NodeWithSameNameExistsValidationError, getDriveForPhotos } from '../../../index';
+import { type ExtendedAttributesMetadata, generatePhotosExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
-import type { FileUploadTask } from '../types';
+import type { PhotosUploadTask } from '../types';
 import { TaskExecutor } from './TaskExecutor';
 
 /**
  * Executes file uploads and emits events
  * NO store access - only emits events
  */
-export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
-    async execute(task: FileUploadTask): Promise<void> {
+export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
+    async execute(task: PhotosUploadTask): Promise<void> {
         const abortController = new AbortController();
+
         try {
+            const driveForPhotos = getDriveForPhotos();
+            const photoAlreadyExist = await driveForPhotos.isDuplicatePhoto(
+                task.file.name,
+                async () => {
+                    const fileStream = task.file.stream();
+                    const hashResult = await CryptoProxy.computeHashStream({
+                        algorithm: 'unsafeSHA1',
+                        dataStream: fileStream,
+                    });
+                    return hashResult.toHex();
+                },
+                abortController.signal
+            );
+            if (photoAlreadyExist) {
+                this.eventCallback?.({
+                    type: 'photo:exist',
+                    uploadId: task.uploadId,
+                });
+                return;
+            }
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
             const metadata = await this.createFileUploaderMetadata(
                 task.file,
@@ -21,10 +44,7 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 mediaInfo,
                 task.isUnfinishedUpload
             );
-
-            const drive = getDrive();
-            const uploader = await this.getUploader(drive, task, metadata, abortController.signal);
-
+            const uploader = await driveForPhotos.getFileUploader(task.file.name, metadata, abortController.signal);
             const controller = await uploader.uploadFromFile(task.file, thumbnails, (uploadedBytes: number) => {
                 this.eventCallback?.({
                     type: 'file:progress',
@@ -46,9 +66,10 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
                 type: 'file:complete',
                 uploadId: task.uploadId,
                 nodeUid,
-                parentUid: task.parentUid,
-                isUpdatedNode: Boolean(task.existingNodeUid),
-                isForPhotos: task.isForPhotos,
+                parentUid: undefined,
+                isUpdatedNode: false,
+                // TODO: Not needed after Photos section migrated to SDK
+                isForPhotos: true,
             });
         } catch (error) {
             if (error instanceof NodeWithSameNameExistsValidationError) {
@@ -102,33 +123,20 @@ export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
         modificationTime: Date;
         overrideExistingDraftByOtherClient?: boolean;
         additionalMetadata: ExtendedAttributesMetadata;
+        tags: (0 | 3 | 1 | 2 | 7 | 4 | 5 | 6 | 8 | 9)[];
+        mainPhotoLinkID: string | undefined;
+        captureTime: Date | undefined;
     }> {
-        const { metadata } = await generateExtendedAttributes(file, mimeType, mediaInfo);
+        const { metadata, tags, captureTime } = await generatePhotosExtendedAttributes(file, mimeType, mediaInfo);
         return {
             mediaType: mimeType,
             expectedSize: file.size,
+            mainPhotoLinkID: undefined,
+            captureTime,
+            tags: tags as (0 | 3 | 1 | 2 | 7 | 4 | 5 | 6 | 8 | 9)[],
             modificationTime: new Date(file.lastModified),
             overrideExistingDraftByOtherClient: isUnfinishedUpload,
             additionalMetadata: metadata,
         };
-    }
-
-    private async getUploader(
-        drive: ReturnType<typeof getDrive>,
-        task: FileUploadTask,
-        metadata: {
-            mediaType: string;
-            expectedSize: number;
-            modificationTime: Date;
-            overrideExistingDraftByOtherClient?: boolean;
-            additionalMetadata: ExtendedAttributesMetadata;
-        },
-        signal: AbortSignal
-    ) {
-        if (task.existingNodeUid && !task.isUnfinishedUpload) {
-            return drive.getFileRevisionUploader(task.existingNodeUid, metadata, signal);
-        }
-
-        return drive.getFileUploader(task.parentUid, task.name, metadata, signal);
     }
 }

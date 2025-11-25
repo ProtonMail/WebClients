@@ -1,5 +1,6 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
 
+import type { createWorker } from '@proton/raw-images/src';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
@@ -11,21 +12,14 @@ jest.mock('@proton/raw-images/src', () => ({
 
 describe('RawImageHandler', () => {
     let handler: RawImageHandler;
+    let mockCreateWorker: jest.MockedFunction<typeof createWorker>;
 
     beforeEach(async () => {
         handler = new RawImageHandler();
         jest.clearAllMocks();
 
-        const { createWorker } = await import('@proton/raw-images/src');
-        const mockTerminate = jest.fn();
-        const mockInitialize = jest.fn().mockResolvedValue(undefined);
-        const mockExtractThumbnail = jest.fn();
-
-        jest.mocked(createWorker).mockResolvedValue({
-            initialize: mockInitialize,
-            extractThumbnail: mockExtractThumbnail,
-            terminate: mockTerminate,
-        } as any);
+        const rawImagesModule = await import('@proton/raw-images/src');
+        mockCreateWorker = jest.mocked(rawImagesModule.createWorker);
     });
 
     describe('canHandle', () => {
@@ -50,15 +44,18 @@ describe('RawImageHandler', () => {
 
     describe('generate', () => {
         test('Throws MissingDataError when RAW has no embedded thumbnail', async () => {
-            const { createWorker } = await import('@proton/raw-images/src');
             const mockTerminate = jest.fn();
-            jest.mocked(createWorker).mockResolvedValue({
-                initialize: jest.fn().mockResolvedValue(undefined),
-                extractThumbnail: jest.fn().mockResolvedValue(null),
+            const mockInitialize = jest.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = jest.fn().mockResolvedValue(null);
+
+            mockCreateWorker.mockResolvedValue({
+                initialize: mockInitialize,
+                extractThumbnail: mockExtractThumbnail,
                 terminate: mockTerminate,
             } as any);
 
             const blob = new Blob(['raw content'], { type: 'image/x-nikon-nef' });
+            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             await expect(
                 handler.generate(blob, 'photo.nef', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1])
@@ -68,15 +65,18 @@ describe('RawImageHandler', () => {
         });
 
         test('MissingDataError includes proper context', async () => {
-            const { createWorker } = await import('@proton/raw-images/src');
             const mockTerminate = jest.fn();
-            jest.mocked(createWorker).mockResolvedValue({
-                initialize: jest.fn().mockResolvedValue(undefined),
-                extractThumbnail: jest.fn().mockResolvedValue(null),
+            const mockInitialize = jest.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = jest.fn().mockResolvedValue(null);
+
+            mockCreateWorker.mockResolvedValue({
+                initialize: mockInitialize,
+                extractThumbnail: mockExtractThumbnail,
                 terminate: mockTerminate,
             } as any);
 
             const blob = new Blob(['raw content'], { type: 'image/x-nikon-nef' });
+            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             try {
                 await handler.generate(blob, 'photo.nef', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1]);
@@ -93,15 +93,18 @@ describe('RawImageHandler', () => {
         });
 
         test('Throws UnsupportedFormatError when RAW processing fails', async () => {
-            const { createWorker } = await import('@proton/raw-images/src');
             const mockTerminate = jest.fn();
-            jest.mocked(createWorker).mockResolvedValue({
-                initialize: jest.fn().mockResolvedValue(undefined),
-                extractThumbnail: jest.fn().mockRejectedValue(new Error('Unsupported RAW format')),
+            const mockInitialize = jest.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = jest.fn().mockRejectedValue(new Error('Unsupported RAW format'));
+
+            mockCreateWorker.mockResolvedValue({
+                initialize: mockInitialize,
+                extractThumbnail: mockExtractThumbnail,
                 terminate: mockTerminate,
             } as any);
 
             const blob = new Blob(['corrupted raw'], { type: 'image/x-nikon-nef' });
+            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             await expect(
                 handler.generate(blob, 'corrupted.nef', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1])
@@ -111,15 +114,18 @@ describe('RawImageHandler', () => {
         });
 
         test('UnsupportedFormatError includes proper context', async () => {
-            const { createWorker } = await import('@proton/raw-images/src');
             const mockTerminate = jest.fn();
-            jest.mocked(createWorker).mockResolvedValue({
-                initialize: jest.fn().mockResolvedValue(undefined),
-                extractThumbnail: jest.fn().mockRejectedValue(new Error('Processing failed')),
+            const mockInitialize = jest.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = jest.fn().mockRejectedValue(new Error('Processing failed'));
+
+            mockCreateWorker.mockResolvedValue({
+                initialize: mockInitialize,
+                extractThumbnail: mockExtractThumbnail,
                 terminate: mockTerminate,
             } as any);
 
             const blob = new Blob(['corrupted raw'], { type: 'image/x-nikon-nef' });
+            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             try {
                 await handler.generate(blob, 'corrupted.nef', blob.size, SupportedMimeTypes.webp, [
@@ -138,15 +144,18 @@ describe('RawImageHandler', () => {
         });
 
         test('Worker is terminated even on success', async () => {
-            const { createWorker } = await import('@proton/raw-images/src');
             const mockTerminate = jest.fn();
-            jest.mocked(createWorker).mockResolvedValue({
-                initialize: jest.fn().mockResolvedValue(undefined),
-                extractThumbnail: jest.fn().mockResolvedValue(new Uint8Array([0xff, 0xd8, 0xff])),
+            const mockInitialize = jest.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = jest.fn().mockResolvedValue(new Uint8Array([0xff, 0xd8, 0xff]));
+
+            mockCreateWorker.mockResolvedValue({
+                initialize: mockInitialize,
+                extractThumbnail: mockExtractThumbnail,
                 terminate: mockTerminate,
             } as any);
 
             const blob = new Blob(['raw content'], { type: 'image/x-nikon-nef' });
+            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
 
             try {
                 await handler.generate(blob, 'photo.nef', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1]);

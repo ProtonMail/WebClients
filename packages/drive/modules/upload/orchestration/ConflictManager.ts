@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { NodeType, NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
 import { isUploadItemConflict, useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadItem, FolderCreationItem } from '../types';
-import { UploadConflictStrategy, UploadConflictType, UploadStatus } from '../types';
+import { UploadConflictStrategy, UploadConflictType, UploadStatus, isPhotosUploadItem } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 
 type ResolutionResult =
@@ -135,6 +135,15 @@ export class ConflictManager {
                         isUnfinishedUpload: resolution.isUnfinishedUpload,
                         nodeUid: isFolder ? resolution.existingNodeUid : undefined,
                     });
+                    if (isFolder && resolution.existingNodeUid) {
+                        const allItems = queueStore.getQueue();
+                        const childrenIds = getBlockedChildren(uploadId, allItems);
+                        for (const childId of childrenIds) {
+                            queueStore.updateQueueItems(childId, {
+                                parentUid: resolution.existingNodeUid,
+                            });
+                        }
+                    }
                     break;
             }
         } catch (err) {
@@ -162,7 +171,8 @@ export class ConflictManager {
             !item ||
             item.status !== UploadStatus.ConflictFound ||
             !item.error ||
-            !(item.error instanceof NodeWithSameNameExistsValidationError)
+            !(item.error instanceof NodeWithSameNameExistsValidationError) ||
+            isPhotosUploadItem(item)
         ) {
             return;
         }

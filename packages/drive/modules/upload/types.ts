@@ -9,6 +9,7 @@ export type FileUploadEvent =
           nodeUid: string;
           parentUid: string | undefined;
           isUpdatedNode: boolean | undefined;
+          isForPhotos: boolean | undefined;
       }
     | { type: 'file:error'; uploadId: string; error: Error }
     | { type: 'file:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError }
@@ -20,28 +21,43 @@ export type FolderCreationEvent =
     | { type: 'folder:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError }
     | { type: 'folder:cancelled'; uploadId: string };
 
-export type UploadEvent = FileUploadEvent | FolderCreationEvent;
+export type PhotosUploadEvent = {
+    type: 'photo:exist';
+    uploadId: string;
+};
 
-export type UploadTask =
-    | {
-          uploadId: string;
-          type: NodeType.File;
-          name: string;
-          parentUid: string;
-          batchId: string;
-          file: File;
-          sizeEstimate: number;
-          existingNodeUid?: string;
-          isUnfinishedUpload?: boolean;
-      }
-    | {
-          uploadId: string;
-          type: NodeType.Folder;
-          name: string;
-          parentUid: string;
-          batchId: string;
-          modificationTime?: Date;
-      };
+export type UploadEvent = FileUploadEvent | FolderCreationEvent | PhotosUploadEvent;
+
+type BaseFileUploadTask = {
+    uploadId: string;
+    type: NodeType.File;
+    name: string;
+    batchId: string;
+    file: File;
+    sizeEstimate: number;
+    existingNodeUid?: string;
+    isUnfinishedUpload?: boolean;
+};
+
+export type FileUploadTask = BaseFileUploadTask & {
+    parentUid: string;
+    isForPhotos?: false;
+};
+
+export type PhotosUploadTask = BaseFileUploadTask & {
+    isForPhotos: true;
+};
+
+export type FolderCreationTask = {
+    uploadId: string;
+    type: NodeType.Folder;
+    name: string;
+    parentUid: string;
+    batchId: string;
+    modificationTime?: Date;
+};
+
+export type UploadTask = FileUploadTask | PhotosUploadTask | FolderCreationTask;
 
 export type ExecutionResult = {
     success: boolean;
@@ -92,6 +108,7 @@ export enum UploadStatus {
     Skipped = 'skipped',
     ConflictFound = 'conflictFound',
     PausedServer = BaseTransferStatus.PausedServer,
+    PhotosDuplicate = 'photosDuplicate',
 }
 
 export type BaseUploadItem = {
@@ -105,10 +122,9 @@ export type BaseUploadItem = {
     resolvedStrategy?: UploadConflictStrategy;
 };
 
-export type FileUploadItem = BaseUploadItem & {
+type BaseFileUploadItem = BaseUploadItem & {
     type: NodeType.File;
     file: File;
-    parentUid: string;
     parentUploadId?: string;
     uploadedBytes: number;
     clearTextExpectedSize: number;
@@ -118,6 +134,14 @@ export type FileUploadItem = BaseUploadItem & {
     isUnfinishedUpload?: boolean;
 };
 
+export type FileUploadItem = BaseFileUploadItem & {
+    parentUid: string;
+};
+
+export type PhotosUploadItem = BaseFileUploadItem & {
+    isForPhotos: true;
+};
+
 export type FolderCreationItem = BaseUploadItem & {
     type: NodeType.Folder;
     parentUid: string;
@@ -125,14 +149,12 @@ export type FolderCreationItem = BaseUploadItem & {
     modificationTime?: Date;
 };
 
-export type UploadItem = FileUploadItem | FolderCreationItem;
+export type UploadItem = FileUploadItem | FolderCreationItem | PhotosUploadItem;
+
+export type FileUploadItems = FileUploadItem | PhotosUploadItem;
+
+export function isPhotosUploadItem(item: UploadItem): item is PhotosUploadItem {
+    return 'isForPhotos' in item && item.isForPhotos === true;
+}
 
 export type EventCallback = (event: UploadEvent) => void;
-
-export interface ExtendedAttributesMetadata {
-    Media?: {
-        Width?: number;
-        Height?: number;
-        Duration?: number;
-    };
-}

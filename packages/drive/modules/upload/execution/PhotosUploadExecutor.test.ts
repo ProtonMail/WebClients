@@ -1,28 +1,50 @@
 import { NodeType } from '@protontech/drive-sdk';
 
-import { NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
-import { generateExtendedAttributes } from '../../extendedAttributes';
+import { CryptoProxy } from '@proton/crypto';
+
+import { NodeWithSameNameExistsValidationError, getDriveForPhotos } from '../../../index';
+import { generatePhotosExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
-import type { EventCallback, FileUploadTask } from '../types';
-import { FileUploadExecutor } from './FileUploadExecutor';
+import type { EventCallback, PhotosUploadTask } from '../types';
+import { PhotosUploadExecutor } from './PhotosUploadExecutor';
 
 jest.mock('../../../index', () => {
     const actual = jest.requireActual('../../../index');
     return {
         ...actual,
-        getDrive: jest.fn(),
+        getDriveForPhotos: jest.fn(),
     };
 });
 jest.mock('../../thumbnails');
 jest.mock('../../extendedAttributes');
+jest.mock('@proton/crypto', () => {
+    const actual = jest.requireActual('@proton/crypto');
+    return {
+        ...actual,
+        CryptoProxy: {
+            computeHashStream: jest.fn(),
+        },
+    };
+});
 
-describe('FileUploadExecutor', () => {
-    let executor: FileUploadExecutor;
+describe('PhotosUploadExecutor', () => {
+    let executor: PhotosUploadExecutor;
     let mockEventCallback: jest.MockedFunction<EventCallback>;
     let mockUploadFromFile: jest.Mock;
     let mockCompletion: jest.Mock;
     let mockGetFileUploader: jest.Mock;
-    let mockGetFileRevisionUploader: jest.Mock;
+    let mockIsDuplicatePhoto: jest.Mock;
+
+    // TODO: Remove that once jest/node include newly added toHex
+    beforeAll(() => {
+        if (!Uint8Array.prototype.toHex) {
+            Uint8Array.prototype.toHex = function () {
+                return Array.from(this)
+                    .map((byte) => byte.toString(16).padStart(2, '0'))
+                    .join('');
+            };
+        }
+    });
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -31,7 +53,7 @@ describe('FileUploadExecutor', () => {
         mockUploadFromFile = jest.fn();
         mockCompletion = jest.fn();
         mockGetFileUploader = jest.fn();
-        mockGetFileRevisionUploader = jest.fn();
+        mockIsDuplicatePhoto = jest.fn();
 
         jest.mocked(generateThumbnail).mockReturnValue({
             thumbnailsPromise: Promise.resolve({
@@ -45,14 +67,20 @@ describe('FileUploadExecutor', () => {
             mimeTypePromise: Promise.resolve('image/jpeg'),
         });
 
-        jest.mocked(generateExtendedAttributes).mockResolvedValue({
+        jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
             metadata: {
                 Media: {
                     Width: 1920,
                     Height: 1080,
                 },
             },
+            tags: [],
+            captureTime: new Date('2024-01-01T00:00:00Z'),
         });
+
+        jest.mocked(CryptoProxy.computeHashStream).mockResolvedValue(new Uint8Array([1, 2, 3, 4]));
+
+        mockIsDuplicatePhoto.mockResolvedValue(false);
 
         mockUploadFromFile.mockResolvedValue({
             completion: mockCompletion,
@@ -66,35 +94,43 @@ describe('FileUploadExecutor', () => {
             uploadFromFile: mockUploadFromFile,
         });
 
-        mockGetFileRevisionUploader.mockResolvedValue({
-            uploadFromFile: mockUploadFromFile,
-        });
-
-        jest.mocked(getDrive).mockReturnValue({
+        jest.mocked(getDriveForPhotos).mockReturnValue({
             getFileUploader: mockGetFileUploader,
-            getFileRevisionUploader: mockGetFileRevisionUploader,
+            isDuplicatePhoto: mockIsDuplicatePhoto,
         } as any);
 
-        executor = new FileUploadExecutor();
+        executor = new PhotosUploadExecutor();
         executor.setEventCallback(mockEventCallback);
     });
 
-    const createFileTask = (overrides?: Partial<FileUploadTask>): FileUploadTask => {
+    const createFileTask = (overrides?: Partial<PhotosUploadTask>): PhotosUploadTask => {
+        const defaultFile = new File(['content'], 'test.jpg', { type: 'image/jpeg' });
+        Object.defineProperty(defaultFile, 'stream', {
+            value: () => new ReadableStream(),
+        });
+
+        const finalFile = overrides?.file || defaultFile;
+        if (finalFile && !finalFile.stream) {
+            Object.defineProperty(finalFile, 'stream', {
+                value: () => new ReadableStream(),
+            });
+        }
+
         return {
             uploadId: 'task123',
             type: NodeType.File,
             name: 'test.jpg',
-            parentUid: 'parent123',
             batchId: 'batch1',
-            file: new File(['content'], 'test.jpg', { type: 'image/jpeg' }),
+            file: finalFile,
             sizeEstimate: 1000,
+            isForPhotos: true,
             ...overrides,
         };
     };
 
     describe('setEventCallback', () => {
         it('should set event callback', () => {
-            const newExecutor = new FileUploadExecutor();
+            const newExecutor = new PhotosUploadExecutor();
             const callback = jest.fn();
 
             newExecutor.setEventCallback(callback);
@@ -104,7 +140,33 @@ describe('FileUploadExecutor', () => {
     });
 
     describe('execute', () => {
-        it('should upload file successfully', async () => {
+        it('should check for duplicate photo before upload', async () => {
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            expect(mockIsDuplicatePhoto).toHaveBeenCalledWith(
+                'test.jpg',
+                expect.any(Function),
+                expect.any(AbortSignal)
+            );
+        });
+
+        it('should emit photo:exist event when photo is duplicate', async () => {
+            mockIsDuplicatePhoto.mockResolvedValue(true);
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            expect(mockEventCallback).toHaveBeenCalledWith({
+                type: 'photo:exist',
+                uploadId: 'task123',
+            });
+
+            expect(mockGetFileUploader).not.toHaveBeenCalled();
+        });
+
+        it('should upload file successfully when not duplicate', async () => {
             const task = createFileTask();
 
             await executor.execute(task);
@@ -162,22 +224,7 @@ describe('FileUploadExecutor', () => {
             await executor.execute(task);
 
             const calls = mockGetFileUploader.mock.calls[0];
-            expect(calls[0]).toBe('parent123');
-            expect(calls[1]).toBe('test.jpg');
-            expect(calls[2]).toMatchObject({
-                mediaType: 'image/jpeg',
-                expectedSize: task.file.size,
-            });
-            expect(calls[3]).toBeInstanceOf(AbortSignal);
-        });
-
-        it('should use getFileRevisionUploader for existing file', async () => {
-            const task = createFileTask({ existingNodeUid: 'existing-node-123' });
-
-            await executor.execute(task);
-
-            const calls = mockGetFileRevisionUploader.mock.calls[0];
-            expect(calls[0]).toBe('existing-node-123');
+            expect(calls[0]).toBe('test.jpg');
             expect(calls[1]).toMatchObject({
                 mediaType: 'image/jpeg',
                 expectedSize: task.file.size,
@@ -186,19 +233,18 @@ describe('FileUploadExecutor', () => {
         });
 
         it('should use getFileUploader for unfinished upload', async () => {
-            const task = createFileTask({ existingNodeUid: 'existing-node-123', isUnfinishedUpload: true });
+            const task = createFileTask({ isUnfinishedUpload: true });
 
             await executor.execute(task);
 
             const calls = mockGetFileUploader.mock.calls[0];
-            expect(calls[0]).toBe('parent123');
-            expect(calls[1]).toBe('test.jpg');
-            expect(calls[2]).toMatchObject({
+            expect(calls[0]).toBe('test.jpg');
+            expect(calls[1]).toMatchObject({
                 mediaType: 'image/jpeg',
                 expectedSize: task.file.size,
                 overrideExistingDraftByOtherClient: true,
             });
-            expect(calls[3]).toBeInstanceOf(AbortSignal);
+            expect(calls[2]).toBeInstanceOf(AbortSignal);
         });
 
         it('should include media metadata when available', async () => {
@@ -215,7 +261,7 @@ describe('FileUploadExecutor', () => {
                 mimeTypePromise: Promise.resolve('video/mp4'),
             });
 
-            jest.mocked(generateExtendedAttributes).mockResolvedValue({
+            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -223,30 +269,30 @@ describe('FileUploadExecutor', () => {
                         Duration: 120,
                     },
                 },
+                tags: [],
+                captureTime: new Date('2024-01-01T00:00:00Z'),
             });
 
             const task = createFileTask();
 
             await executor.execute(task);
 
-            expect(generateExtendedAttributes).toHaveBeenCalledWith(task.file, 'video/mp4', {
+            const metadataArg = mockGetFileUploader.mock.calls[0][1];
+            expect(metadataArg.additionalMetadata.Media).toEqual({
+                Width: 1920,
+                Height: 1080,
+                Duration: 120,
+            });
+
+            expect(generatePhotosExtendedAttributes).toHaveBeenCalledWith(task.file, 'video/mp4', {
                 width: 1920,
                 height: 1080,
                 duration: 120,
             });
-
-            const metadataArg = mockGetFileUploader.mock.calls[0][2];
-            expect(metadataArg.additionalMetadata).toEqual({
-                Media: {
-                    Width: 1920,
-                    Height: 1080,
-                    Duration: 120,
-                },
-            });
         });
 
-        it('should extract EXIF info and pass to metadata helper', async () => {
-            jest.mocked(generateExtendedAttributes).mockResolvedValue({
+        it('should include Location metadata when available', async () => {
+            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -256,30 +302,111 @@ describe('FileUploadExecutor', () => {
                         Latitude: 48.8566,
                         Longitude: 2.3522,
                     },
-                    Camera: {
-                        Device: 'iPhone 12',
-                    },
                 },
+                tags: [],
+                captureTime: new Date('2024-01-01T00:00:00Z'),
             });
 
-            const file = new File(['content'], 'test.jpg', { type: 'image/jpeg' });
-            const task = createFileTask({ file });
+            const task = createFileTask();
 
             await executor.execute(task);
 
-            expect(generateExtendedAttributes).toHaveBeenCalledWith(file, 'image/jpeg', {
-                width: 1920,
-                height: 1080,
-            });
-
-            const metadataArg = mockGetFileUploader.mock.calls[0][2];
+            const metadataArg = mockGetFileUploader.mock.calls[0][1];
             expect(metadataArg.additionalMetadata.Location).toEqual({
                 Latitude: 48.8566,
                 Longitude: 2.3522,
             });
+        });
+
+        it('should include Camera metadata when available', async () => {
+            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+                metadata: {
+                    Media: {
+                        Width: 1920,
+                        Height: 1080,
+                    },
+                    Camera: {
+                        Device: 'iPhone 12',
+                        Orientation: 1,
+                        CaptureTime: '2024-01-01T00:00:00.000Z',
+                        SubjectCoordinates: {
+                            Top: 100,
+                            Left: 100,
+                            Bottom: 200,
+                            Right: 200,
+                        },
+                    },
+                },
+                tags: [],
+                captureTime: new Date('2024-01-01T00:00:00Z'),
+            });
+
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            const metadataArg = mockGetFileUploader.mock.calls[0][1];
             expect(metadataArg.additionalMetadata.Camera).toEqual({
                 Device: 'iPhone 12',
+                Orientation: 1,
+                CaptureTime: '2024-01-01T00:00:00.000Z',
+                SubjectCoordinates: {
+                    Top: 100,
+                    Left: 100,
+                    Bottom: 200,
+                    Right: 200,
+                },
             });
+        });
+
+        it('should include tags metadata', async () => {
+            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+                metadata: {
+                    Media: {
+                        Width: 1920,
+                        Height: 1080,
+                    },
+                },
+                tags: [1, 2, 3],
+                captureTime: new Date('2024-01-01T00:00:00Z'),
+            });
+
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            const metadataArg = mockGetFileUploader.mock.calls[0][1];
+            expect(metadataArg.tags).toEqual([1, 2, 3]);
+        });
+
+        it('should include captureTime metadata', async () => {
+            const captureDate = new Date('2024-06-15T12:30:00Z');
+            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+                metadata: {
+                    Media: {
+                        Width: 1920,
+                        Height: 1080,
+                    },
+                },
+                tags: [],
+                captureTime: captureDate,
+            });
+
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            const metadataArg = mockGetFileUploader.mock.calls[0][1];
+            expect(metadataArg.captureTime).toEqual(captureDate);
+        });
+
+        it('should include mainPhotoLinkID as undefined', async () => {
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            const metadataArg = mockGetFileUploader.mock.calls[0][1];
+            expect(metadataArg.mainPhotoLinkID).toBeUndefined();
         });
 
         it('should handle thumbnail generation failure gracefully', async () => {
@@ -356,7 +483,7 @@ describe('FileUploadExecutor', () => {
 
             await executor.execute(task);
 
-            const metadataArg = mockGetFileUploader.mock.calls[0][2];
+            const metadataArg = mockGetFileUploader.mock.calls[0][1];
             expect(metadataArg.modificationTime).toEqual(new Date(1234567890));
         });
 
@@ -380,6 +507,20 @@ describe('FileUploadExecutor', () => {
             expect(uploadArgs[0]).toBeInstanceOf(File);
             expect(uploadArgs[1]).toEqual(mockThumbnails);
             expect(typeof uploadArgs[2]).toBe('function');
+        });
+
+        it('should compute SHA1 hash for duplicate detection', async () => {
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            const hashFunction = mockIsDuplicatePhoto.mock.calls[0][1];
+            await hashFunction();
+
+            expect(CryptoProxy.computeHashStream).toHaveBeenCalledWith({
+                algorithm: 'unsafeSHA1',
+                dataStream: expect.any(ReadableStream),
+            });
         });
     });
 });
