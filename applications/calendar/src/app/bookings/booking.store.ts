@@ -51,7 +51,7 @@ interface BookingStore {
     setBookingSlots: (bookingSlots: Omit<BookingTimeslot, 'tzDate'>[]) => void;
     filterBookingSlotPerDay: (date: Date) => BookingTimeslot[];
     nextAvailableSlot: BookingTimeslot | null;
-    setNextAvailableSlot: (slot: Omit<BookingTimeslot, 'tzDate'>) => void;
+    setNextAvailableSlot: (slot: Omit<BookingTimeslot, 'tzDate'> | null) => void;
     getDateKeySet: () => Set<string>;
 
     failedToVerify: boolean;
@@ -97,11 +97,17 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         const newTimeSlots = [...get().bookingSlots, ...newSlots].sort((a, b) => a.startTime - b.startTime);
 
         set({
-            bookingSlots: uniqueBy(newTimeSlots, (slot: BookingTimeslot) => slot.id),
+            // Recurring events have the same ID, so we need to check both id and startTime to remove duplicates
+            bookingSlots: uniqueBy(newTimeSlots, (slot: BookingTimeslot) => `${slot.id}-${slot.startTime}`),
         });
     },
 
-    setNextAvailableSlot: (bookingSlot: Omit<BookingTimeslot, 'tzDate'>) => {
+    setNextAvailableSlot: (bookingSlot: Omit<BookingTimeslot, 'tzDate'> | null) => {
+        if (!bookingSlot) {
+            set({ nextAvailableSlot: null });
+            return;
+        }
+
         const nextAvailableSlot = {
             ...bookingSlot,
             tzDate: fromTimestampToUTCDate(bookingSlot.startTime, get().selectedTimezone),
@@ -111,7 +117,8 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         // Also add the next slot in bookingSlots in case it's too far in the future and not loaded by default
         set({
             nextAvailableSlot,
-            bookingSlots: uniqueBy(updatedTimeSlots, (slot: BookingTimeslot) => slot.id),
+            // Recurring events have the same ID, so we need to check both id and startTime to remove duplicates
+            bookingSlots: uniqueBy(updatedTimeSlots, (slot: BookingTimeslot) => `${slot.id}-${slot.startTime}`),
         });
     },
 
