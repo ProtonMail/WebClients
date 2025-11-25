@@ -17,12 +17,11 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -39,13 +38,13 @@ const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) =>
     const dispatch = useDispatch();
     const errorHandler = useErrorHandler();
     const [payload, setPayload] = useState<AcceptOrganizationKeyInvitePayload | null>(null);
-    const silentApi = getSilentApi(useApi());
+    const silentApi = useSilentApi();
 
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
 
     useEffect(() => {
-        withLoadingInit(
+        void withLoadingInit(
             dispatch(
                 prepareAcceptOrganizationKeyInvite({
                     api: silentApi,
@@ -145,7 +144,7 @@ const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) =>
                             color="norm"
                             loading={loading}
                             onClick={() => {
-                                withLoading(handleSubmit());
+                                void withLoading(handleSubmit());
                             }}
                         >
                             {c('Action').t`Activate`}

@@ -13,6 +13,7 @@ import {
     useErrorHandler,
 } from '@proton/components';
 import { getIsVPNPassPromotion } from '@proton/components/containers/payments/subscription/helpers';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -36,7 +37,6 @@ import {
     hasPlanIDs,
 } from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
@@ -149,7 +149,7 @@ const SingleSignupContainer = ({
 }: Props) => {
     const getKtActivation = useGetAccountKTActivation();
     const unauthApi = useApi();
-    const silentApi = getSilentApi(unauthApi);
+    const silentApi = useSilentApi();
     const { paymentsApi } = usePaymentsApi(silentApi);
     const { APP_NAME } = useConfig();
     const [error, setError] = useState<any>();

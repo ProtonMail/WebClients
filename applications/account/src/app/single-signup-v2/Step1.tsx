@@ -54,6 +54,7 @@ import {
     isSubscriptionCheckForbidden,
     switchPlan,
 } from '@proton/payments';
+// eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';

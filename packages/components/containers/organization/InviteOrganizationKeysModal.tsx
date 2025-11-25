@@ -12,13 +12,12 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 
@@ -33,8 +32,7 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
     const { call } = useEventManager();
-    const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
     const { createNotification } = useNotifications();
     const [result, setResult] = useState<null | {
         payload: MemberKeyPayload[];
@@ -174,7 +172,7 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                             rest.onClose?.();
                             return;
                         }
-                        withLoading(handleSubmit(result.payload));
+                        void withLoading(handleSubmit(result.payload));
                     }}
                 >
                     {result && !result.payload.length ? c('Title').t`Close` : c('Title').t`Confirm`}

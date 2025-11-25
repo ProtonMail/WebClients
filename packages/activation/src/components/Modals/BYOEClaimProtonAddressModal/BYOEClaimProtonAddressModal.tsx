@@ -23,7 +23,6 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -39,6 +38,7 @@ import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/in
 import claimProtonAddressImg from '@proton/styles/assets/img/illustrations/claim-proton-address.svg';
 
 import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 
 interface Props extends ModalProps {
     toApp: APP_NAMES;
@@ -63,7 +63,7 @@ const BYOEClaimProtonAddressModal = ({
 }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi()
     const { call } = useEventManager();
     const errorHandler = useErrorHandler();
     const authentication = useAuthentication();

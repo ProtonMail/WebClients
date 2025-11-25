@@ -2,6 +2,7 @@ import { type ReactNode, createContext, useContext, useEffect, useRef, useState 
 
 import { type OnLoginCallback, StandardErrorPage, useApi } from '@proton/components';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';
 import metrics, { observeError } from '@proton/metrics/index';
 import {
@@ -18,7 +19,6 @@ import {
 import type { PaymentsContextOptimisticType, PlanToCheck } from '@proton/payments/ui';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
@@ -254,7 +254,7 @@ export const InnerSignupContextProvider = ({
     const [error, setError] = useState(false);
 
     const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
 
     const getKtActivation = useGetAccountKTActivation();
 
@@ -273,8 +273,6 @@ export const InnerSignupContextProvider = ({
 
     useEffect(() => {
         const initialize = async () => {
-            const silentApi = getSilentApi(api);
-
             /**
              * Ensure auth params have been set
              */

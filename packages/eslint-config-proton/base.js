@@ -372,6 +372,7 @@ export default defineConfig(
                     patterns: [
                         {
                             group: ['@proton/shared/lib/api/helpers/customConfig'],
+                            importNames: ['getSilentApi'],
                             message: 'Use the useSilentApi hook instead',
                         },
                     ],

@@ -1,10 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext } from 'react';
 
-import useApi from '@proton/components/hooks/useApi';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useInstance from '@proton/hooks/useInstance';
 import type { MaybeNull } from '@proton/pass/types';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import { createPassBridge } from '.';
 import type { PassBridge } from './types';
@@ -12,8 +11,7 @@ import type { PassBridge } from './types';
 export const PassBridgeContext = createContext<MaybeNull<PassBridge>>(null);
 
 export const PassBridgeProvider: FC<PropsWithChildren> = ({ children }) => {
-    const api = useApi();
-    const silentAPI = getSilentApi(api);
+    const silentAPI = useSilentApi();
     const bridge = useInstance(() => createPassBridge(silentAPI));
 
     return <PassBridgeContext.Provider value={bridge}>{children}</PassBridgeContext.Provider>;

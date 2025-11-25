@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Spotlight, useApi } from '@proton/components';
+import { Spotlight } from '@proton/components';
 import ProductIcon from '@proton/components/containers/app/ProductIcon';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { FeatureCode, useFeature } from '@proton/features';
 import { getDriveChecklist } from '@proton/shared/lib/api/checklist';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import type { ChecklistApiResponse } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -15,7 +15,7 @@ import noop from '@proton/utils/noop';
 const FIRST_OF_DECEMBER = new Date(2025, 11, 1).valueOf();
 
 export function DriveSpotlight({ children }: { children: any }) {
-    const normalApi = useApi();
+    const silentApi = useSilentApi();
 
     const [user] = useUser();
     const [driveChecklist, setDriveChecklist] = useState<ChecklistApiResponse>();
@@ -31,14 +31,12 @@ export function DriveSpotlight({ children }: { children: any }) {
         }
 
         const effect = async () => {
-            const silentApi = getSilentApi(normalApi);
             const checklist = await silentApi<ChecklistApiResponse>(getDriveChecklist('get-started'));
             setDriveChecklist(checklist);
         };
 
         void effect();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isEligibleForSpotlight]); // normalApi is not a dependency
+    }, [isEligibleForSpotlight, silentApi]); // normalApi is not a dependency
 
     return (
         <Spotlight

@@ -12,7 +12,7 @@ import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-import useApi from '@proton/components/hooks/useApi';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import { PLANS, getPlan } from '@proton/payments';
@@ -20,7 +20,6 @@ import {
     type ConnectionInformationResult,
     getConnectionInformation,
 } from '@proton/shared/lib/api/core/connection-information';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { SentryMailInitiatives } from '@proton/shared/lib/helpers/sentry';
@@ -36,8 +35,7 @@ interface Props {
 }
 
 const VPNDrawerSpotlight = ({ children }: Props) => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const [user] = useUser();
     const [showSpotlight, setShowSpotlight] = useState(false);
     const [subscription] = useSubscription();

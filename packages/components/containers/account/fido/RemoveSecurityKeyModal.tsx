@@ -6,13 +6,12 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/asyncModelThunk/interface';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { removeSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 
@@ -28,7 +27,7 @@ interface Props extends ModalProps {
 
 const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
-    const normalApi = useApi();
+    const silentApi = useSilentApi();
     const dispatch = useDispatch();
     const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
     const { createNotification } = useNotifications();
@@ -51,12 +50,11 @@ const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
                     onSuccess={async () => {
                         const run = async () => {
                             try {
-                                const api = getSilentApi(normalApi);
                                 for (const key of keys) {
                                     // Sequentially to avoid race conditions
-                                    await api(removeSecurityKey(key.id));
+                                    await silentApi(removeSecurityKey(key.id));
                                 }
-                                await api(lockSensitiveSettings());
+                                await silentApi(lockSensitiveSettings());
                                 await dispatch(userSettingsThunk({ cache: CacheType.None }));
                                 if (type === 'single') {
                                     createNotification({ text: c('fido2: Info').t`Security key removed` });

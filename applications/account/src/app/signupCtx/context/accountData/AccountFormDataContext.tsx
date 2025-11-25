@@ -1,13 +1,12 @@
 import type { MutableRefObject, ReactNode, RefObject } from 'react';
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import merge from 'lodash/merge';
 
 import type { ChallengeRef, ChallengeResult } from '@proton/components/containers/challenge/interface';
-import useApi from '@proton/components/hooks/useApi';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { runAfterScroll } from '@proton/shared/lib/dom/runAfterScroll';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
@@ -391,9 +390,8 @@ type DeepPartial<T> = T extends object
     : T;
 
 export const AccountFormDataContextProvider = ({ children, availableSignupTypes, domains, defaultEmail }: Props) => {
-    const normalApi = useApi();
     const [, setRerender] = useState({});
-    const api = useMemo(() => getSilentApi(normalApi), [normalApi]);
+    const silentApi = useSilentApi();
 
     // State
     const accountFormDataContextProviderStateRef = useRef<AccountFormDataContextProviderState>(defaultState);
@@ -489,7 +487,7 @@ export const AccountFormDataContextProvider = ({ children, availableSignupTypes,
         const value = email;
         usernameAsyncValidator.trigger({
             validate: async (value, abortController) => {
-                const result = await validateEmailAvailability(value, api, abortController);
+                const result = await validateEmailAvailability(value, silentApi, abortController);
                 return result;
             },
             error: !!emailError,
@@ -508,7 +506,7 @@ export const AccountFormDataContextProvider = ({ children, availableSignupTypes,
             const value = joinUsernameDomain(username, domain);
             usernameAsyncValidator.trigger({
                 validate: async (value, abortController) => {
-                    const result = await validateUsernameAvailability(value, api, abortController);
+                    const result = await validateUsernameAvailability(value, silentApi, abortController);
                     return result;
                 },
                 key: `${value}-${SignupType.Proton}`,

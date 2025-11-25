@@ -17,19 +17,17 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
-import useApi from '@proton/components/hooks/useApi';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import type { FreePlanDefault, PLANS, Plan } from '@proton/payments';
 import { FREE_PLAN, getPlansMap } from '@proton/payments';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const FeatureList = () => {
-    const api = useApi();
     const [subscription] = useSubscription();
 
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const getPlans = useGetPlans();
 
     const [vpnServers, loadingVPNServers] = useVPNServersCount();

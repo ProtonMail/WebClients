@@ -22,11 +22,12 @@ import ForceRefreshContext from '@proton/components/containers/forceRefresh/cont
 import { AuthType } from '@proton/components/containers/login/interface';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useApi from '@proton/components/hooks/useApi';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { initMainHost } from '@proton/cross-storage/lib';
 import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
-import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import {
     getEmailSessionForkSearchParameter,
@@ -208,7 +209,7 @@ const ephemeralLoginPaths = [SSO_PATHS.APP_SWITCHER, SSO_PATHS.REAUTH];
 
 const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>['sessions'] }) => {
     const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
     const history = useHistory();
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
