@@ -149,6 +149,6 @@ export const mapNodeToLegacyItem = async (
         isShared: node.isShared,
         isSharedPublicly: node.isSharedPublicly,
         treeEventScopeId: node.treeEventScopeId,
-        hasSignatureIssues: sdkSignatureIssues.ok,
+        hasSignatureIssues: !sdkSignatureIssues.ok,
     };
 };
