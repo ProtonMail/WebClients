@@ -18,11 +18,12 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementContext
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
+import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
-import { LeaveModal } from '../LeaveModal/LeaveModal';
+import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ParticipantsButton, WrappedParticipantsButton } from '../ParticipantsButton';
 import { ScreenShareButton } from '../ScreenShareButton';
@@ -33,8 +34,8 @@ import { MenuButton } from './MenuButton';
 import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
-    const { isMicrophoneEnabled, isCameraEnabled, localParticipant } = useLocalParticipant();
-    const { roomName, page, setPage, participantsMap, isScreenShare, guestMode } = useMeetContext();
+    const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
+    const { roomName, page, setPage, isScreenShare, guestMode } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -49,13 +50,13 @@ export const ParticipantControls = () => {
         selfView,
     } = useUIStateContext();
 
+    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
+
+    const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost;
+
     const { pageCount, pageCountWithoutSelfView } = useMeetContext();
 
     const currentPageCount = selfView ? pageCount : pageCountWithoutSelfView;
-
-    const participantData = participantsMap[localParticipant.identity];
-    const hasAdminPermission =
-        participantData !== undefined ? !!participantData.IsAdmin || !!participantData.IsHost : false;
 
     const prevDevicePermissionsRef = useRef<{ camera?: PermissionState; microphone?: PermissionState }>({
         camera: 'prompt',
@@ -306,7 +307,7 @@ export const ParticipantControls = () => {
                         <MenuButton />
                     </div>
 
-                    <LeaveModal hasAdminPermission={hasAdminPermission} />
+                    <LeaveMeetingPopup />
                 </div>
                 <div className={clsx(isLargerThanMd || isNarrowHeight ? '' : 'hidden', 'flex flex-1 justify-end')}>
                     {currentPageCount > 1 && (

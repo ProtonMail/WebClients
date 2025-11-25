@@ -55,6 +55,7 @@ export interface MeetContextValues {
     stopPiP: () => void;
     preparePictureInPicture: () => void;
     instantMeeting: boolean;
+    assignHost: (participantUuid: string) => Promise<void>;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -105,6 +106,7 @@ export const MeetContext = createContext<MeetContextValues>({
     stopPiP: () => {},
     preparePictureInPicture: () => {},
     instantMeeting: false,
+    assignHost: () => Promise.resolve(),
 });
 
 export const useMeetContext = () => {

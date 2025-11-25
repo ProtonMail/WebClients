@@ -8,7 +8,6 @@ import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoC
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
-import { UIStateProvider } from '../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
@@ -29,7 +28,6 @@ interface MeetContainerProps {
     participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
-    instantMeeting: boolean;
     passphrase: string;
     guestMode: boolean;
     handleMeetingLockToggle: (enable: boolean) => Promise<void>;
@@ -42,6 +40,8 @@ interface MeetContainerProps {
     pipSetup: (throttle: boolean) => void;
     pipCleanup: () => void;
     preparePictureInPicture: () => void;
+    instantMeeting: boolean;
+    assignHost: (participantUuid: string) => Promise<void>;
 }
 
 export const MeetContainer = ({
@@ -57,7 +57,6 @@ export const MeetContainer = ({
     participantsMap,
     participantNameMap,
     getParticipants,
-    instantMeeting,
     passphrase,
     guestMode,
     handleMeetingLockToggle,
@@ -70,6 +69,8 @@ export const MeetContainer = ({
     pipSetup,
     pipCleanup,
     preparePictureInPicture,
+    instantMeeting,
+    assignHost,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -165,17 +166,16 @@ export const MeetContainer = ({
                     maxDuration,
                     maxParticipants,
                     instantMeeting,
+                    assignHost,
                 }}
             >
-                <UIStateProvider instantMeeting={instantMeeting}>
-                    <MeetingBody
-                        isScreenShare={isScreenShare}
-                        isLocalScreenShare={isLocalScreenShare}
-                        stopScreenShare={stopScreenShare}
-                        screenShareTrack={screenShareTrack}
-                        screenShareParticipant={screenShareParticipant}
-                    />
-                </UIStateProvider>
+                <MeetingBody
+                    isScreenShare={isScreenShare}
+                    isLocalScreenShare={isLocalScreenShare}
+                    stopScreenShare={stopScreenShare}
+                    screenShareTrack={screenShareTrack}
+                    screenShareParticipant={screenShareParticipant}
+                />
             </MeetContext.Provider>
             <AutoCloseMeetingModal onLeave={() => handleLeave()} />
         </div>

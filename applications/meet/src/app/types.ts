@@ -29,6 +29,7 @@ export type MeetingRoomUpdate = ParticipantEventRecord | MeetChatMessage;
 
 export enum MeetingSideBars {
     Participants = 'Participants',
+    AssignHost = 'AssignHost',
     Settings = 'Settings',
     Chat = 'Chat',
     MeetingDetails = 'MeetingDetails',

@@ -5,7 +5,7 @@ import type { MeetContextValues } from '../../contexts/MeetContext';
 import { MeetContext } from '../../contexts/MeetContext';
 import type { UIStateContextType } from '../../contexts/UIStateContext';
 import { UIStateContext } from '../../contexts/UIStateContext';
-import { useIsLocalParticipantHost } from '../../hooks/useIsLocalParticipantHost';
+import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { MeetingSideBars } from '../../types';
 import { Settings } from './Settings';
 
@@ -16,8 +16,13 @@ vi.mock('../../hooks/useLocalParticipantResolution', () => ({
     }),
 }));
 
-vi.mock('../../hooks/useIsLocalParticipantHost', () => ({
-    useIsLocalParticipantHost: vi.fn().mockReturnValue(false),
+vi.mock('../../hooks/useIsLocalParticipantAdmin', () => ({
+    useIsLocalParticipantAdmin: vi.fn().mockReturnValue({
+        isLocalParticipantAdmin: false,
+        hasAnotherAdmin: false,
+        hostIsPresent: false,
+        isLocalParticipantHost: false,
+    }),
 }));
 
 const mockContextValues = {
@@ -92,8 +97,13 @@ describe('Settings', () => {
 
     it('should show host options when user is a host', () => {
         // Temporarily override the mock for this test
-        const mockUseIsLocalParticipantHost = vi.mocked(useIsLocalParticipantHost);
-        mockUseIsLocalParticipantHost.mockReturnValueOnce(true);
+        const mockUseIsLocalParticipantAdmin = vi.mocked(useIsLocalParticipantAdmin);
+        mockUseIsLocalParticipantAdmin.mockReturnValueOnce({
+            isLocalParticipantAdmin: true,
+            hasAnotherAdmin: false,
+            hostIsPresent: true,
+            isLocalParticipantHost: false,
+        });
 
         render(
             <Wrapper>
