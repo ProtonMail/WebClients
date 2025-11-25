@@ -920,138 +920,6 @@
         "Wenn du jetzt beendest, werden einige Termine eventuell nicht importiert."
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Zugreifen"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "200 GB storage": [
-        "200 GB Speicherplatz"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB verschlüsselter Speicherplatz"
-      ],
-      "Add unlimited credit cards": [
-        "Unbegrenzte Kreditkarten hinzufügen"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabatte basieren auf monatlichen Standard-Preisen. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum jährlichen Standard-Tarif."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdoppele deinen verschlüsselten Speicher – hol dir 1 TB für all deine Daten"
-      ],
-      "Encrypted password manager": [
-        "Verschlüsselter Passwortmanager"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier ist ein exklusives Geschenk, um unsere gemeinsame Reise zu feiern."
-      ],
-      "High speed streaming with VPN": [
-        "Hochgeschwindigkeits-Streaming mit VPN"
-      ],
-      "of privacy": [
-        "der Privatsphäre"
-      ],
-      "Online document editor": [
-        "Editor für Onlinedokumente"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online-Privatsphäre für bis zu 2 Personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer)"
-      ],
-      "Protect up to 10 devices": [
-        "Schütze bis zu 10 Geräte"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Mail-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-VPN-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save time with built-in 2FA": [
-        "Spare Zeit mit integriertem 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sichere E-Mail mit unbegrenzten Aliassen"
-      ],
-      "Select any server": [
-        "Einen beliebigen Server wählen"
-      ],
-      "Share passwords easily": [
-        "Passwörter einfach teilen"
-      ],
-      "Short @pm.me address": [
-        "Kurze @pm.me E-Mail-Adresse"
-      ],
-      "Stream your favorite content": [
-        "Streame deine Lieblingsinhalte"
-      ],
-      "thanks to you": [
-        "Dank dir"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdreifache deinen verschlüsselten Speicher – hol dir 3 TB für all deine Daten"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ],
-      "years": [
-        "Jahre"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubiläumsangebot"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "/ month": [
-        "/ Monat"
-      ],
-      "12 months": [
-        "12 Monate"
-      ],
-      "15 months": [
-        "15 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
-      ],
-      "30 months": [
-        "30 Monate"
-      ],
-      "for ${ durationDeal }": [
-        "Für ${ durationDeal }"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-Anwendungen"
@@ -3267,6 +3135,9 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Es gibt Probleme beim Speichern der letzten Änderungen. Bitte lade die Seite neu."
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Es gibt Probleme beim Synchronisieren deines Dokuments. Bitte aktualisiere die Seite."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden."
@@ -4455,7 +4326,7 @@
         "Link zum Ordner wird erstellt"
       ],
       "Creating new document...": [
-        "Neues Dokument erstellen..."
+        "Neues Dokument wird erstellt..."
       ],
       "Current plan": [
         "Aktuelles Abonnement"
@@ -4759,7 +4630,7 @@
         "Niedrige Priorität"
       ],
       "Making a copy...": [
-        "Kopie wird erstellt..."
+        "Kopie erstellen..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximal ${ MAX_SHARED_URL_PASSWORD_LENGTH } Zeichen",
