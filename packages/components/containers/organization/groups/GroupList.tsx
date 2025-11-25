@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import type { Group } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
@@ -58,10 +59,10 @@ const GroupList = ({
                         value={input}
                         onValue={setInput}
                         placeholder={c('Placeholder').t`Group name`}
-                        prefix={<Icon name="magnifier" />}
+                        prefix={<IcMagnifier />}
                         suffix={
                             <Button shape="ghost" size="small" icon onClick={() => setInput('')}>
-                                <Icon name="cross-small" alt={c('Action').t`Delete`} />
+                                <IcCrossSmall alt={c('Action').t`Delete`} />
                             </Button>
                         }
                     />

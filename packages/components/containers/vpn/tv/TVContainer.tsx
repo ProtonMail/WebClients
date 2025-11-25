@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
@@ -101,7 +101,7 @@ const TVContainer = ({ background = true }: Props) => {
                     <h2>{c('Title').t`Device connected!`}</h2>
                     <div className="flex justify-center my-8">
                         <span className="inline-flex bg-success rounded-50 p-7">
-                            <Icon name="checkmark" size={15} />
+                            <IcCheckmark size={15} />
                         </span>
                     </div>
                 </>

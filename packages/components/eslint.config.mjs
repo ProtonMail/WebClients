@@ -1,11 +1,11 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 import defaultConfig from '@proton/eslint-config-proton/all';
-import { createBarrelConfig } from '@proton/eslint-config-proton/barrel';
+import { createBarrelConfig, iconsPackage } from '@proton/eslint-config-proton/barrel';
 
 export default defineConfig([
     defaultConfig,
-    createBarrelConfig(),
+    createBarrelConfig({ packages: [iconsPackage] }),
     {
         rules: {
             'react/button-has-type': ['warn'],

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { SortableList } from '@proton/components/components/dnd/SortableList';
 import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
+import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
@@ -252,7 +253,7 @@ const ContactEditProperties = (
             {canAdd && (
                 <div className="flex flex-nowrap shrink-0">
                     <div className="mr-2 flex items-center shrink-0">
-                        <Icon name="text-align-justify" className="visibility-hidden" />
+                        <IcTextAlignJustify className="visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w-custom" style={{ '--w-custom': '95%' }}>
                         <Button

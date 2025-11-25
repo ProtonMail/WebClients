@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Autocomplete from '@proton/components/components/autocomplete/Autocomplete';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { RetentionRuleProduct, RetentionRuleScopeType } from '@proton/shared/lib/interfaces/RetentionRule';
@@ -74,7 +74,7 @@ const RetentionScopeItem = ({
             <div className="shrink-0 w-custom" style={{ '--w-custom': '3em' }}>
                 <Tooltip title={c('retention_policy_2025_Action').t`Delete this scope`}>
                     <Button className="ml-auto flex" shape="ghost" onClick={() => onRemoveScope(scope.id)} icon>
-                        <Icon name="trash" alt={c('retention_policy_2025_Action').t`Delete this scope`} />
+                        <IcTrash alt={c('retention_policy_2025_Action').t`Delete this scope`} />
                     </Button>
                 </Tooltip>
             </div>
