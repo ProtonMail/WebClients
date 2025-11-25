@@ -21,6 +21,7 @@ import { FlagProvider } from '@proton/unleash';
 
 import config from '../../../config';
 import { extraThunkArguments } from '../../../store/thunk';
+import { BookingThemeProvider } from '../BookingsEntry';
 import { BookingsRouter } from '../BookingsRouter';
 import type { BookingBootstrapResult } from '../interface';
 import { bookingAuthBootstrap } from './bookingAuthBootstrap';
@@ -68,7 +69,7 @@ export const BookingAuthApp = () => {
     const { store } = bootstrapRef.current!;
 
     return (
-        <ProtonApp config={config}>
+        <ProtonApp config={config} ThemeProvider={BookingThemeProvider}>
             <ProtonStoreProvider store={store}>
                 <AuthenticationProvider store={extraThunkArguments.authentication}>
                     <FlagProvider unleashClient={extraThunkArguments.unleashClient}>
