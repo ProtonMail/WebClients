@@ -8,7 +8,7 @@ import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { FileInput, Icon, InputFieldTwo, Tabs, Toggle } from '@proton/components';
 import type { MaybeNode } from '@proton/drive';
-import type { ExcpectedTreeNode } from '@proton/drive/diagnostic';
+import type { ExpectedTreeNode } from '@proton/drive/diagnostic';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import { withHoc } from '../../hooks/withHoc';
@@ -24,7 +24,7 @@ type Props = {
         node?: MaybeNode;
         verifyContent?: boolean;
         verifyThumbnails?: boolean;
-        expectedStructure?: ExcpectedTreeNode;
+        expectedStructure?: ExpectedTreeNode;
     }) => void;
 };
 
@@ -73,13 +73,13 @@ function DiagnosticsModalViewOptions({
         node?: MaybeNode;
         verifyContent?: boolean;
         verifyThumbnails?: boolean;
-        expectedStructure?: ExcpectedTreeNode;
+        expectedStructure?: ExpectedTreeNode;
     }) => void;
 }) {
     const [onlyCurrentFolder, setOnlyCurrentFolder] = useState(false);
     const [verifyContent, setVerifyContent] = useState(false);
     const [verifyThumbnails, setVerifyThumbnails] = useState(false);
-    const [expectedStructure, setExpectedStructure] = useState<ExcpectedTreeNode | undefined>(undefined);
+    const [expectedStructure, setExpectedStructure] = useState<ExpectedTreeNode | undefined>(undefined);
     const [expectedStructureError, setExpectedStructureError] = useState<string | undefined>(undefined);
 
     const handleRun = () => {
@@ -125,7 +125,7 @@ function DiagnosticsModalViewOptions({
                             try {
                                 const expectedStructure = JSON.parse(
                                     event.target?.result as string
-                                ) as ExcpectedTreeNode;
+                                ) as ExpectedTreeNode;
                                 setExpectedStructure(expectedStructure);
                                 setExpectedStructureError(undefined);
                             } catch (error) {
@@ -196,6 +196,7 @@ function DiagnosticsModalViewResultsTable({ type, results }: { type: string; res
             <thead>
                 <tr>
                     <th style={{ width: '100px' }}>{c('Info').t`Time`}</th>
+                    {/*eslint-disable-next-line jsx-a11y/control-has-associated-label*/}
                     <th style={{ width: '20px' }}></th>
                     <th>{c('Info').t`Details`}</th>
                 </tr>

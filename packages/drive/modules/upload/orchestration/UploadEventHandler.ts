@@ -1,7 +1,7 @@
 import type { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadControllerStore } from '../store/uploadController.store';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
-import type { FileUploadEvent, FolderCreationEvent, UploadEvent } from '../types';
+import type { FileUploadEvent, FolderCreationEvent, PhotosUploadEvent, UploadEvent } from '../types';
 import { UploadStatus } from '../types';
 import { getBlockedChildren } from '../utils/dependencyHelpers';
 import type { ConflictManager } from './ConflictManager';
@@ -28,6 +28,7 @@ export class UploadEventHandler {
             'file:progress': (event: Extract<UploadEvent, { type: 'file:progress' }>) => this.handleFileProgress(event),
             'file:complete': (event: Extract<UploadEvent, { type: 'file:complete' }>) => this.handleFileComplete(event),
             'file:error': (event: Extract<UploadEvent, { type: 'file:error' }>) => this.handleFileError(event),
+            'photo:exist': (event: Extract<UploadEvent, { type: 'photo:exist' }>) => this.handlePhotoExist(event),
             'file:conflict': (event: Extract<UploadEvent, { type: 'file:conflict' }>) =>
                 this.conflictManager.handleConflict(event.uploadId, event.error),
             'file:cancelled': (event: Extract<UploadEvent, { type: 'file:cancelled' }>) =>
@@ -130,6 +131,13 @@ export class UploadEventHandler {
         });
         this.cancelFolderChildren(event.uploadId);
         this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+    }
+
+    private handlePhotoExist(event: PhotosUploadEvent & { type: 'photo:exist' }): void {
+        const queueStore = useUploadQueueStore.getState();
+        queueStore.updateQueueItems(event.uploadId, {
+            status: UploadStatus.PhotosDuplicate,
+        });
     }
 
     private handleFileCancelled(event: FileUploadEvent & { type: 'file:cancelled' }): void {

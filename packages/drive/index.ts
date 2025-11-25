@@ -220,3 +220,7 @@ export function useDrive() {
 export const getDrive = (): ProtonDriveClient => {
     return driveSingleton;
 };
+
+export const getDriveForPhotos = (): ProtonDrivePhotosClient => {
+    return photosSingleton;
+};

@@ -22,6 +22,7 @@ module.exports = {
             },
         ],
     },
+    testEnvironment: '@proton/jest-env',
     moduleNameMapper: {},
     reporters: ['default'],
 };

@@ -1,4 +1,4 @@
-import { sha1 } from '@noble/hashes/sha1';
+import { sha1 } from '@noble/hashes/legacy';
 
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
 import { queryPhotosDuplicates } from '@proton/shared/lib/api/drive/photos';

@@ -7,6 +7,7 @@ import generateUID from '@proton/utils/generateUID';
 import {
     type FileUploadItem,
     type FolderCreationItem,
+    type PhotosUploadItem,
     type UploadConflictStrategy,
     type UploadConflictType,
     type UploadItem,
@@ -23,7 +24,8 @@ export type QueueEntry = UploadItem | UploadItemConflict;
 
 export type UploadItemInput =
     | Omit<FileUploadItem, 'lastStatusUpdateTime' | 'uploadId'>
-    | Omit<FolderCreationItem, 'lastStatusUpdateTime' | 'uploadId'>;
+    | Omit<FolderCreationItem, 'lastStatusUpdateTime' | 'uploadId'>
+    | Omit<PhotosUploadItem, 'lastStatusUpdateTime' | 'uploadId'>;
 
 /**
  * Type guard to check if a QueueEntry is an UploadItemConflict.

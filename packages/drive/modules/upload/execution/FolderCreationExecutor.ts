@@ -1,7 +1,7 @@
-import { type NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
+import { NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
 
 import { getDrive } from '../../../index';
-import type { UploadTask } from '../types';
+import type { FolderCreationTask } from '../types';
 import { getNodeEntityFromMaybeNode } from '../utils/getNodeEntityFromMaybeNode';
 import { TaskExecutor } from './TaskExecutor';
 
@@ -9,8 +9,8 @@ import { TaskExecutor } from './TaskExecutor';
  * Executes folder creation and emits events
  * NO store access - only emits events
  */
-export class FolderCreationExecutor extends TaskExecutor<UploadTask & { type: NodeType.Folder }> {
-    async execute(task: UploadTask & { type: NodeType.Folder }): Promise<void> {
+export class FolderCreationExecutor extends TaskExecutor<FolderCreationTask> {
+    async execute(task: FolderCreationTask): Promise<void> {
         const drive = getDrive();
 
         try {

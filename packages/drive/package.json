@@ -10,10 +10,14 @@
         "test:ci": "jest --coverage --runInBand --ci"
     },
     "dependencies": {
-        "@protontech/drive-sdk": "^0.6.0",
+        "@proton/components": "workspace:^",
+        "@proton/crypto": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@protontech/drive-sdk": "^0.6.2",
         "@types/node": "^24.10.1"
     },
     "devDependencies": {
+        "@proton/jest-env": "workspace:^",
         "@types/jest": "^30.0.0",
         "eslint": "^9.39.1",
         "jest": "^30.2.0",
