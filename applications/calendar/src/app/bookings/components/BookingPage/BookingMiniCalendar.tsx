@@ -3,9 +3,6 @@ import { useEffect, useState } from 'react';
 import { startOfMonth, startOfToday } from 'date-fns';
 
 import { Loader, LocalizedMiniCalendar } from '@proton/components';
-import { getDaysInMonth } from '@proton/components/components/miniCalendar/helper';
-import { getWeekStartsOn } from '@proton/shared/lib/date/date';
-import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../../booking.store';
 import { WEEKS_IN_MINI_CALENDAR } from '../../constants';
@@ -42,12 +39,6 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
     };
 
     const handleMonthChange = (date: Date) => {
-        const startDate = getDaysInMonth(date, {
-            weekStartsOn: getWeekStartsOn(dateLocale),
-            weeks: WEEKS_IN_MINI_CALENDAR - 1,
-        });
-
-        void loadPublicBooking(startDate[0]);
         setDisplayedMonth(startOfMonth(date));
     };
 

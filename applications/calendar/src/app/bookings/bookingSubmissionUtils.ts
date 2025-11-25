@@ -78,7 +78,7 @@ const getBookingGeneralProperties = async ({
         return modelToGeneralProperties({
             uid,
             title: bookingDetails.summary,
-            location: bookingDetails.location,
+            location: bookingDetails.location.trim(),
         });
     }
 
@@ -249,7 +249,7 @@ export const prepareBookingSubmission = async ({
             },
         ],
     });
-    const descriptionProperties = modelToDescriptionProperties({ description: bookingDetails.description });
+    const descriptionProperties = modelToDescriptionProperties({ description: bookingDetails.description.trim() });
 
     const vevent: VcalVeventComponent = withDtstamp({
         ...generalProperties,
