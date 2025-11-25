@@ -11,12 +11,14 @@ export type FileUploadEvent =
           isUpdatedNode: boolean | undefined;
       }
     | { type: 'file:error'; uploadId: string; error: Error }
-    | { type: 'file:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError };
+    | { type: 'file:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError }
+    | { type: 'file:cancelled'; uploadId: string };
 
 export type FolderCreationEvent =
     | { type: 'folder:complete'; uploadId: string; nodeUid: string; parentUid: string | undefined }
     | { type: 'folder:error'; uploadId: string; error: Error }
-    | { type: 'folder:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError };
+    | { type: 'folder:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError }
+    | { type: 'folder:cancelled'; uploadId: string };
 
 export type UploadEvent = FileUploadEvent | FolderCreationEvent;
 
