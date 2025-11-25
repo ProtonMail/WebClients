@@ -1,8 +1,8 @@
 import { NodeType } from '@protontech/drive-sdk';
 
 import type { QueueEntry } from '../store/uploadQueue.store';
-import type { FileUploadItem, FolderCreationItem, SchedulerLoad, UploadTask } from '../types';
-import { UploadStatus } from '../types';
+import type { FileUploadItems, FolderCreationItem, SchedulerLoad, UploadTask } from '../types';
+import { UploadStatus, isPhotosUploadItem } from '../types';
 import { getFolderDepth, isParentReady } from './dependencyHelpers';
 
 function getReadyFolderTasks(queueItems: QueueEntry[], maxCount: number): UploadTask[] {
@@ -34,26 +34,42 @@ function getReadyFolderTasks(queueItems: QueueEntry[], maxCount: number): Upload
 
 function getReadyFileTasks(queueItems: QueueEntry[], maxCount: number): UploadTask[] {
     const readyFiles = queueItems
-        .filter((entry): entry is FileUploadItem => {
-            const isReady =
+        .filter((entry): entry is FileUploadItems => {
+            return (
                 entry.type === NodeType.File &&
                 entry.status === UploadStatus.Pending &&
-                isParentReady(entry, queueItems);
-            return isReady;
+                isParentReady(entry, queueItems)
+            );
         })
         .slice(0, maxCount);
 
-    return readyFiles.map((entry) => ({
-        uploadId: entry.uploadId,
-        type: NodeType.File,
-        name: entry.name,
-        parentUid: entry.parentUid,
-        batchId: entry.batchId,
-        file: entry.file,
-        sizeEstimate: entry.clearTextExpectedSize,
-        existingNodeUid: entry.existingNodeUid,
-        isUnfinishedUpload: entry.isUnfinishedUpload,
-    }));
+    return readyFiles.map((entry): UploadTask => {
+        if (isPhotosUploadItem(entry)) {
+            return {
+                uploadId: entry.uploadId,
+                type: NodeType.File,
+                name: entry.name,
+                batchId: entry.batchId,
+                file: entry.file,
+                sizeEstimate: entry.clearTextExpectedSize,
+                existingNodeUid: entry.existingNodeUid,
+                isUnfinishedUpload: entry.isUnfinishedUpload,
+                isForPhotos: true,
+            };
+        }
+
+        return {
+            uploadId: entry.uploadId,
+            type: NodeType.File,
+            name: entry.name,
+            parentUid: entry.parentUid,
+            batchId: entry.batchId,
+            file: entry.file,
+            sizeEstimate: entry.clearTextExpectedSize,
+            existingNodeUid: entry.existingNodeUid,
+            isUnfinishedUpload: entry.isUnfinishedUpload,
+        };
+    });
 }
 
 export function getNextTasks(

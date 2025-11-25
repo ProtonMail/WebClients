@@ -1,8 +1,9 @@
 import { NodeType } from '@protontech/drive-sdk';
 
 import { NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
+import { generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
-import type { EventCallback, UploadTask } from '../types';
+import type { EventCallback, FileUploadTask } from '../types';
 import { FileUploadExecutor } from './FileUploadExecutor';
 
 jest.mock('../../../index', () => {
@@ -13,6 +14,7 @@ jest.mock('../../../index', () => {
     };
 });
 jest.mock('../../thumbnails');
+jest.mock('../../extendedAttributes');
 
 describe('FileUploadExecutor', () => {
     let executor: FileUploadExecutor;
@@ -43,6 +45,15 @@ describe('FileUploadExecutor', () => {
             mimeTypePromise: Promise.resolve('image/jpeg'),
         });
 
+        jest.mocked(generateExtendedAttributes).mockResolvedValue({
+            metadata: {
+                Media: {
+                    Width: 1920,
+                    Height: 1080,
+                },
+            },
+        });
+
         mockUploadFromFile.mockResolvedValue({
             completion: mockCompletion,
         });
@@ -68,9 +79,7 @@ describe('FileUploadExecutor', () => {
         executor.setEventCallback(mockEventCallback);
     });
 
-    const createFileTask = (
-        overrides?: Partial<UploadTask & { type: NodeType.File }>
-    ): UploadTask & { type: NodeType.File } => {
+    const createFileTask = (overrides?: Partial<FileUploadTask>): FileUploadTask => {
         return {
             uploadId: 'task123',
             type: NodeType.File,
@@ -206,9 +215,25 @@ describe('FileUploadExecutor', () => {
                 mimeTypePromise: Promise.resolve('video/mp4'),
             });
 
+            jest.mocked(generateExtendedAttributes).mockResolvedValue({
+                metadata: {
+                    Media: {
+                        Width: 1920,
+                        Height: 1080,
+                        Duration: 120,
+                    },
+                },
+            });
+
             const task = createFileTask();
 
             await executor.execute(task);
+
+            expect(generateExtendedAttributes).toHaveBeenCalledWith(task.file, 'video/mp4', {
+                width: 1920,
+                height: 1080,
+                duration: 120,
+            });
 
             const metadataArg = mockGetFileUploader.mock.calls[0][2];
             expect(metadataArg.additionalMetadata).toEqual({
@@ -217,6 +242,43 @@ describe('FileUploadExecutor', () => {
                     Height: 1080,
                     Duration: 120,
                 },
+            });
+        });
+
+        it('should extract EXIF info and pass to metadata helper', async () => {
+            jest.mocked(generateExtendedAttributes).mockResolvedValue({
+                metadata: {
+                    Media: {
+                        Width: 1920,
+                        Height: 1080,
+                    },
+                    Location: {
+                        Latitude: 48.8566,
+                        Longitude: 2.3522,
+                    },
+                    Camera: {
+                        Device: 'iPhone 12',
+                    },
+                },
+            });
+
+            const file = new File(['content'], 'test.jpg', { type: 'image/jpeg' });
+            const task = createFileTask({ file });
+
+            await executor.execute(task);
+
+            expect(generateExtendedAttributes).toHaveBeenCalledWith(file, 'image/jpeg', {
+                width: 1920,
+                height: 1080,
+            });
+
+            const metadataArg = mockGetFileUploader.mock.calls[0][2];
+            expect(metadataArg.additionalMetadata.Location).toEqual({
+                Latitude: 48.8566,
+                Longitude: 2.3522,
+            });
+            expect(metadataArg.additionalMetadata.Camera).toEqual({
+                Device: 'iPhone 12',
             });
         });
 

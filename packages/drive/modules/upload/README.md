@@ -7,11 +7,17 @@ SDK-based upload system for Proton Drive. Handles file and folder uploads with c
 ```typescript
 import { UploadConflictStrategy, uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 
-// Upload files
+// Upload files to Drive
 await uploadManager.upload(files, parentNodeUid);
 
-// Upload from drag & drop
-await uploadManager.uploadDrop(dataTransferItems, fileList, parentNodeUid);
+// Upload photos (no parent needed)
+await uploadManager.uploadPhotos(files);
+
+// Upload from drag & drop (supports folders)
+await uploadManager.upload(event.dataTransfer, parentNodeUid);
+
+// Upload photos from drag & drop
+await uploadManager.uploadPhotos(event.dataTransfer);
 
 // Monitor upload queue
 const queue = useUploadQueueStore((state) => state.queue);
@@ -23,23 +29,43 @@ const queue = useUploadQueueStore((state) => state.queue);
 
 Global singleton instance. Provides the main upload interface.
 
-#### `upload(files: File[] | FileList, parentUid: string): Promise<void>`
+#### `upload(files: File[] | FileList | DataTransferItemList, parentUid: string, fallbackFileList?: FileList): Promise<void>`
 
-Upload files or folders to a parent node. Automatically detects folder structures from `webkitRelativePath`.
+Upload files or folders to a parent node in Drive. Automatically detects folder structures from `webkitRelativePath`.
+
+**Parameters:**
+
+- `files` - Files from file input, or DataTransferfrom drag & drop
+- `parentUid` - Parent node UID where files will be uploaded
+- `fallbackFileList` - Optional FileList for browser compatibility with drag & drop
 
 ```typescript
+// From file input
 await uploadManager.upload(fileInput.files, parentNodeUid);
-```
 
-#### `uploadDrop(items: DataTransferItemList, fileList: FileList, parentUid: string): Promise<void>`
-
-Upload from drag & drop events. Handles folders dropped from file system.
-
-```typescript
+// From drag & drop
 const handleDrop = async (e: React.DragEvent) => {
     e.preventDefault();
-    const { items, files } = e.dataTransfer;
-    await uploadManager.uploadDrop(items, files, parentUid);
+    await uploadManager.upload(e.dataTransfer, parentUid);
+};
+```
+
+#### `uploadPhotos(files: File[] | FileList | DataTransfer): Promise<void>`
+
+Upload photos (no parent node required). Photos uploads are flat - no folder structure.
+
+**Parameters:**
+
+- `files` - Files from file input, or DataTransfer from drag & drop
+
+```typescript
+// From file input
+await uploadManager.uploadPhotos(fileInput.files);
+
+// From drag & drop
+const handleDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    await uploadManager.uploadPhotos(e.dataTransfer, files);
 };
 ```
 
@@ -123,37 +149,6 @@ function UploadProgress() {
 }
 ```
 
-### UploadItem
-
-```typescript
-type UploadItem = {
-    uploadId: string;
-    type: NodeType.File | NodeType.Folder;
-    name: string;
-    parentUid: string;
-    status: UploadStatus;
-    batchId: string; // Groups uploads from same operation
-    lastStatusUpdateTime: Date;
-
-    // File-specific
-    file?: File;
-    uploadedBytes?: number;
-    clearTextExpectedSize?: number;
-    speedBytesPerSecond?: number;
-
-    // Conflict resolution
-    conflictType?: UploadConflictType;
-    resolvedStrategy?: UploadConflictStrategy;
-    existingNodeUid?: string;
-
-    // Folder hierarchy
-    parentUploadId?: string; // Links child uploads to parent folder upload
-
-    // Error info
-    error?: Error;
-};
-```
-
 ### UploadStatus
 
 - `Pending` - Queued, waiting to start
@@ -165,6 +160,7 @@ type UploadItem = {
 - `Skipped` - Skipped due to conflict resolution
 - `PausedServer` - Paused due to server event
 - `ParentCancelled` - Parent folder was cancelled
+- `PhotosDuplicate` - Skipped when same photos (content is the same) was found
 
 ## Architecture
 

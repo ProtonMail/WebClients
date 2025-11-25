@@ -2,6 +2,7 @@ import { NodeType } from '../../../index';
 import { MAX_FOLDERS_CREATED_IN_PARALLEL, MAX_UPLOAD_JOBS } from '../constants';
 import { FileUploadExecutor } from '../execution/FileUploadExecutor';
 import { FolderCreationExecutor } from '../execution/FolderCreationExecutor';
+import { PhotosUploadExecutor } from '../execution/PhotosUploadExecutor';
 import { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { UploadEvent, UploadTask } from '../types';
@@ -24,6 +25,7 @@ export class UploadOrchestrator {
     private capacityManager = new CapacityManager();
     private fileExecutor = new FileUploadExecutor();
     private folderExecutor = new FolderCreationExecutor();
+    private photosExecutor = new PhotosUploadExecutor();
 
     private sdkTransferActivity = new SDKTransferActivity();
     private conflictManager = new ConflictManager(() => this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty());
@@ -37,6 +39,7 @@ export class UploadOrchestrator {
     constructor() {
         this.fileExecutor.setEventCallback((event) => this.eventHandler.handleEvent(event));
         this.folderExecutor.setEventCallback((event) => this.eventHandler.handleEvent(event));
+        this.photosExecutor.setEventCallback((event) => this.eventHandler.handleEvent(event));
     }
 
     onUploadEvent(callback: (event: UploadEvent) => Promise<void>) {
@@ -112,6 +115,8 @@ export class UploadOrchestrator {
 
         if (task.type === NodeType.Folder) {
             await this.folderExecutor.execute(task);
+        } else if (task.isForPhotos) {
+            await this.photosExecutor.execute(task);
         } else {
             await this.fileExecutor.execute(task);
         }
