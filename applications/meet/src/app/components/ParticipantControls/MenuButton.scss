@@ -1,0 +1,20 @@
+.menu-wrapper {
+	backdrop-filter: blur(10px);
+	border-radius: 2.5rem;
+	touch-action: pan-y;
+	user-select: none;
+}
+
+.menu-wrapper-content {
+	border-radius: 2.5rem;
+	background-color: #1a1a2899;
+	color: var(--interaction-norm) !important;
+}
+
+.menu-item {
+	color: var(--interaction-norm) !important;
+}
+
+.menu-handle {
+	background-color: rgb(255 255 255 / 0.3);
+}
