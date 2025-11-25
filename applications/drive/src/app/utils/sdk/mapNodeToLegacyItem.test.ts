@@ -136,6 +136,7 @@ describe('mapNodeToLegacyItem', () => {
             thumbnailId: 'nodeRevId',
             rootUid: 'root-uid',
             treeEventScopeId: 'treeEventScopeId',
+            hasSignatureIssues: true,
             activeRevision: {
                 id: revId,
                 createTime: revisionTime / 1000,
