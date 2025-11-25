@@ -1,35 +1,63 @@
+import type { MaybeNull } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 import { safeAsyncCall } from '@proton/pass/utils/fp/safe-call';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-const REFRESH_RATE = 1000 / 24;
+export const REFRESH_RATE = 1000 / 24;
 
 export const animatePositionChange = (options: {
-    /** Resolve the bounding client rect for comparison */
+    /** Returns the current bounding rect to track */
     get: () => Partial<Rect>;
+    /** Called when position changes are detected */
     set?: (rect: Partial<Rect>) => void;
+    /** Called when animation completes (position stable or timeout) */
     onComplete?: (timestamp: number) => void;
+    /** Called with each new requestAnimationFrame ID */
     onAnimate: (request: number) => void;
+    /** Minimum pixel change to trigger update [default=0.1px] */
+    threshold?: number;
+    /** Maximum animation duration before force complete [default=500ms] */
+    maxDuration?: number;
 }): void => {
     const current = options.get();
-    let { top, left, right, bottom } = current;
+    const threshold = options.threshold ?? 0.1;
+    const maxDuration = options.maxDuration ?? 500;
+
     options.set?.(current);
-    let updatedAt = 0;
+
+    let { top = 0, left = 0, right = 0, bottom = 0 } = current;
+    let updatedAt: MaybeNull<number> = null;
+    let startedAt: MaybeNull<number> = null;
+
+    const isSignificantChange = ({
+        top: nTop = 0,
+        left: nLeft = 0,
+        right: nRight = 0,
+        bottom: nBottom = 0,
+    }: Partial<Rect>): boolean =>
+        Math.abs(nTop - top) > threshold ||
+        Math.abs(nLeft - left) > threshold ||
+        Math.abs(nRight - right) > threshold ||
+        Math.abs(nBottom - bottom) > threshold;
 
     const check = () =>
         options.onAnimate(
             requestAnimationFrame((timestamp) => {
+                if (updatedAt === null) updatedAt = timestamp;
+                if (startedAt === null) startedAt = timestamp;
+
+                if (timestamp - startedAt >= maxDuration) return options.onComplete?.(timestamp);
+
                 if (timestamp - updatedAt >= REFRESH_RATE) {
                     updatedAt = timestamp;
                     const next = options.get();
-                    const { top: nTop, left: nLeft, right: nRight, bottom: nBottom } = next;
-                    if (nTop !== top || nLeft !== left || nRight !== right || nBottom !== bottom) {
+                    if (isSignificantChange(next)) {
                         options.set?.(next);
-                        top = nTop;
-                        left = nLeft;
-                        right = nRight;
-                        bottom = nBottom;
+                        top = next.top ?? 0;
+                        left = next.left ?? 0;
+                        right = next.right ?? 0;
+                        bottom = next.bottom ?? 0;
                         check();
                     } else options.onComplete?.(timestamp);
                 } else check();
