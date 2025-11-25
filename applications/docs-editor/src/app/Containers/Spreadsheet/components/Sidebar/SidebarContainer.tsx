@@ -70,7 +70,7 @@ export function SidebarContainer(props: PropsWithChildren) {
   const contextValue: SidebarContextValue = { activeDialogId, onChange, closeDialog }
 
   return (
-    <div className={clsx('h-full min-h-0 w-[340px] min-w-0 shrink-0 px-2', activeDialogId === null && 'hidden')}>
+    <div className={clsx('h-full min-h-0 w-[340px] min-w-0 shrink-0 px-2 pt-2', activeDialogId === null && 'hidden')}>
       <div className="relative h-full min-h-0 w-full overflow-hidden rounded-t-[16px] border-[0.5px] border-[#EAE7E4] bg-[white] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.1)]">
         <SidebarContext.Provider value={contextValue}>{props.children}</SidebarContext.Provider>
       </div>
