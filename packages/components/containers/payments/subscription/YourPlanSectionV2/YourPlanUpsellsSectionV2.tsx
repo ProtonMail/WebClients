@@ -68,6 +68,7 @@ import DrivePlusExtendSubscription, {
     useDrivePlusExtendSubscription,
 } from './Upsells/drive/DrivePlusExtendSubscription';
 import DrivePlusFromFreeBanner from './Upsells/drive/DrivePlusFromFreeBanner';
+import { useSubscriptionPriceComparison } from './Upsells/helper';
 import MailPlusExtendSubscription, { useMailPlusExtendSubscription } from './Upsells/mail/MailPlusExtendSubscription';
 import MailPlusFromFree, { useMailPlusFromFreeUpsells } from './Upsells/mail/MailPlusFromFree';
 import PassFamilyBannerExtendSubscription, {
@@ -165,6 +166,10 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
         unit: 'GB',
         fraction: 0,
     });
+
+    // Check if the user can save money by switching to annual cycle. If not, do not show annual cycle upsell
+    const { showSavings } = useSubscriptionPriceComparison(app, subscription);
+    const shouldExtendPlusPlan = subscription?.Cycle === CYCLE.MONTHLY && showSavings;
 
     const upsellSections = [
         {
@@ -324,21 +329,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasMail(subscription) && subscription?.Cycle === CYCLE.YEARLY,
-            upsells: mailPlusExtendSubscriptionUpsells.upsells,
-            element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
-            ),
-        },
-        {
-            enabled: hasMail(subscription),
+            enabled: hasMail(subscription) && shouldExtendPlusPlan,
             upsells: mailPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -349,6 +340,20 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
+            ),
+        },
+        {
+            enabled: hasMail(subscription),
+            upsells: mailPlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    app={app}
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
             ),
         },
         {
@@ -368,21 +373,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasPass(subscription) && subscription?.Cycle === CYCLE.YEARLY,
-            upsells: passPlusExtendSubscriptionUpsells.upsells,
-            element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
-            ),
-        },
-        {
-            enabled: hasPass(subscription),
+            enabled: hasPass(subscription) && shouldExtendPlusPlan,
             upsells: passPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -393,6 +384,20 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
+            ),
+        },
+        {
+            enabled: hasPass(subscription),
+            upsells: passPlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    app={app}
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
             ),
         },
         {
@@ -435,21 +440,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasDrive(subscription) && subscription?.Cycle === CYCLE.YEARLY,
-            upsells: drivePlusExtendSubscriptionUpsells.upsells,
-            element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
-            ),
-        },
-        {
-            enabled: hasDrive(subscription),
+            enabled: hasDrive(subscription) && shouldExtendPlusPlan,
             upsells: drivePlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -464,8 +455,8 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasDrive1TB(subscription) && subscription?.Cycle === CYCLE.YEARLY,
-            upsells: drivePlusOneTBExtendSubscriptionUpsells.upsells,
+            enabled: hasDrive(subscription),
+            upsells: drivePlusExtendSubscriptionUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
                     app={app}
@@ -478,7 +469,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasDrive1TB(subscription),
+            enabled: hasDrive1TB(subscription) && shouldExtendPlusPlan,
             upsells: drivePlusOneTBExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -490,6 +481,20 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                     />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
+            ),
+        },
+        {
+            enabled: hasDrive1TB(subscription),
+            upsells: drivePlusOneTBExtendSubscriptionUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    app={app}
+                    showProductCards={true}
+                    showUpsellPanels={true}
+                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
             ),
         },
         {

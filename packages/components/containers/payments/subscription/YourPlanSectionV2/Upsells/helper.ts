@@ -23,7 +23,7 @@ import {
 
 export const useSubscriptionPriceComparison = (
     app: APP_NAMES,
-    subscription: Subscription | FreeSubscription,
+    subscription: Subscription | FreeSubscription | undefined,
     compareWithPlan?: PLANS
 ) => {
     // We forbid currencyFallback because we want to compare against the same currency
