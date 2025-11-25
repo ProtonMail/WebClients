@@ -363,6 +363,23 @@ export default defineConfig(
         },
     },
     {
+        name: 'tsx-restricted-imports',
+        files: ['**/*.tsx', '**/*/jsx'],
+        rules: {
+            'no-restricted-imports': [
+                'error',
+                {
+                    patterns: [
+                        {
+                            group: ['@proton/shared/lib/api/helpers/customConfig'],
+                            message: 'Use the useSilentApi hook instead',
+                        },
+                    ],
+                },
+            ],
+        },
+    },
+    {
         // disable type-aware linting on JS files
         files: ['**/*.js'],
         extends: [configs.disableTypeChecked],
