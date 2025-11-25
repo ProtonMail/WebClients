@@ -660,9 +660,6 @@
       "Edit “${ label.Name }”": [
         "Redigera “${ label.Name }“"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "Aktivera ${ darkWebMonitoring }"
       ],
@@ -1936,135 +1933,6 @@
         "Ny e-post"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "200 GB storage": [
-        "200 GB lagringsutrymme"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB krypterat lagringsutrymme"
-      ],
-      "Add unlimited credit cards": [
-        "Lägg till obegränsat antal kreditkort"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alla premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive och Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockera annonser, spårare och skadlig kod"
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dubbla ditt krypterade lagringsutrymme – få 1 TB för alla dina data"
-      ],
-      "Encrypted password manager": [
-        "Krypterad lösenordshanterare"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Här är en exklusiv gåva för att fira vår resa tillsammans."
-      ],
-      "High speed streaming with VPN": [
-        "Höghastighetsstreaming med VPN"
-      ],
-      "of privacy": [
-        "av integritet"
-      ],
-      "Online document editor": [
-        "Dokumentredigerare online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Integritet online för upp till 2 personer"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Integritet online för hela din familj (upp till 6 användare)"
-      ],
-      "Protect up to 10 devices": [
-        "Skydda upp till 10 enheter"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Spara stort på premium Drive-funktioner med en tidsbegränsad rabatt."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Spara stort på premium Mail-funktioner med en tidsbegränsad rabatt."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Spara stort på premium Pass-funktioner med en tidsbegränsad rabatt."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Spara stort på premium VPN-funktioner med en tidsbegränsad rabatt."
-      ],
-      "Save time with built-in 2FA": [
-        "Spara tid med inbyggd 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Säker e-post med obegränsade alias"
-      ],
-      "Select any server": [
-        "Välj vilken server som helst"
-      ],
-      "Share passwords easily": [
-        "Dela lösenord enkelt"
-      ],
-      "Short @pm.me address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Stream your favorite content": [
-        "Streama ditt favoritinnehåll"
-      ],
-      "thanks to you": [
-        "tack vare dig"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Trippla ditt krypterade lagringsutrymme – få 3 TB för alla dina data"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Obegränsat antal mappar, etiketter och filter"
-      ],
-      "Use your own email domain": [
-        "Använd din egen e-postdomän"
-      ],
-      "years": [
-        "år"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumserbjudande"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } månad",
-        "${ n } månader"
-      ],
-      "/ month": [
-        "/månad"
-      ],
-      "12 months": [
-        "12 månader"
-      ],
-      "15 months": [
-        "15 månader"
-      ],
-      "24 months": [
-        "24 månader"
-      ],
-      "30 months": [
-        "30 månader"
-      ],
-      "for ${ durationDeal }": [
-        "för ${ durationDeal }"
-      ]
-    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Surfa på webben privat och blockera annonser"
@@ -2482,6 +2350,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Förnyas automatiskt"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Förnyas automatiskt med ${ renewPrice }, för ${ renewLength } månad",
         "Förnyas automatiskt med ${ renewPrice }, för ${ renewLength } månader"
@@ -2598,8 +2469,14 @@
       "Keep your email spam-free": [
         "Håll din e-post fri från skräppost"
       ],
+      "Keep your photos out of AI training": [
+        "Håll dina foton borta från AI-träning"
+      ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "Håll ditt teams filer skyddade, åtkomliga och synkroniserade med ${ DRIVE_APP_NAME } för företag."
+      ],
+      "Learn how many GB are in a TB and discover the best way to securely store and share your files — no matter their size.": [
+        "Lär dig hur många GB det finns i ett TB och upptäck det bästa sättet att säkert lagra och dela dina filer – oavsett storlek."
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Lär dig hur man aktiverar ${ VPN_APP_NAME } på din router."
@@ -2609,9 +2486,6 @@
       ],
       "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
         "Lär dig hur man delar ett enskilt objekt, en krypterad länk eller ett valv via ${ PASS_APP_NAME }."
-      ],
-      "Organize your memories into albums": [
-        "Organisera dina minnen i album"
       ],
       "Protect your business communications": [
         "Skydda din företagskommunikation"
@@ -2652,6 +2526,9 @@
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Streama från alla större plattformar med ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
+      "Take advantage of advanced email alias feature in ${ PASS_APP_NAME }": [
+        "Dra nytta av den avancerade funktionen för e-postalias i ${ PASS_APP_NAME }"
+      ],
       "The most secure way to send pictures is with end-to-end encryption. Here are four ways to store and share photos privately.": [
         "Det säkraste sättet att skicka bilder är med end-to-end-kryptering. Här är fyra sätt att lagra och dela foton privat."
       ],
@@ -2691,8 +2568,8 @@
       "Worried about data breaches?": [
         "Orolig för dataintrång?"
       ],
-      "Write, edit, and collaborate on documents with our secure online editors.": [
-        "Skriv, redigera och samarbeta i dokument med vår säkra onlineredigerare."
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Skriv, redigera och samarbeta på dokument säkert med ${ DOCS_APP_NAME }."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Dina familjefoton tränar AI, och så här gör man för att stoppa det"
@@ -3181,6 +3058,12 @@
       ],
       "Advanced account and network security in one plan": [
         "Avancerad konto- och nätverkssäkerhet i ett paket"
+      ],
+      "AI assistant that respects business confidentiality": [
+        "AI-assistent som respekterar företagskonfidentialitet"
+      ],
+      "AI assistant that respects your privacy": [
+        "AI-assistent som respekterar din integritet"
       ],
       "Basic chat history": [
         "Grundläggande chatthistorik"
@@ -4749,9 +4632,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Du får ${ referralInfo.referrerRewardAmount } i ${ BRAND_NAME }-kredit när personen du bjuder in registrerar sig för ett ${ BRAND_NAME }-paket, och de får också ${ referralInfo.refereeRewardAmount } i krediter för att komma igång."
       ]
     },
     "description": {
@@ -6320,6 +6200,9 @@
       ],
       "Permissions request failed.": [
         "Behörighetsbegäran misslyckades."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Lägg till en betalningsmetod innan du återaktiverar din prenumeration"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Konfigurera en anpassad domän innan du lägger till adresser."
@@ -8595,6 +8478,9 @@
       "${ planName } expires today.": [
         "${ planName } löper ut idag."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } för organisationer är ett avancerat kontoskyddsprogram som drivs av sofistikerade AI-system och specialister som arbetar dygnet runt för att skydda din organisation från dåliga aktörer och säkerhetshot."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } är ett avancerat kontoskyddsprogram som drivs av sofistikerade AI-system och specialister som arbetar dygnet runt för att skydda dig från dåliga aktörer och säkerhetshot."
       ],
@@ -8712,17 +8598,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importera dina befintliga koder** från andra 2FA-appar, som Google Authenticator"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Steg 1: Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Steg 1:** Bjud in dina vänner till ${ BRAND_NAME } med din hänvisningslänk."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Steg 2:** Dina vänner får **2 veckor gratis** på sitt paket."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Steg 2:** Dina vänner får 2 veckor gratis på sitt paket."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje person som prenumererar på ett paket."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Steg 3:** Få **${ referrerRewardAmount } krediter** för varje person som prenumererar på ett paket."
       ],
       "**Sync codes** to all your devices": [
         "**Synkronisera koder** till alla dina enheter"
@@ -9652,9 +9544,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Skaffa ${ upsellPlanName }"
-      ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Få **${ referrerRewardAmount } krediter** för varje vän som prenumererar."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få åtkomst genom att skapa ett ${ BRAND_NAME }-konto och acceptera inbjudan."
@@ -11145,6 +11034,9 @@
       "Upgrade to unlock": [
         "Uppgradera för att låsa upp"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Uppgradera ditt paket till ${ firstPlanNames } eller ${ lastPlanName } för att få åtkomst till ${ PROTON_SENTINEL_NAME } för organisationer."
+      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Uppgradera ditt paket till ${ firstPlanNames } eller ${ lastPlanName } för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
       ],
@@ -11680,9 +11572,6 @@
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
       ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Dina vänner får **2 veckor gratis** på sitt valda paket."
-      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Din import från ${ accounts } är tillfälligt fördröjd.",
         "Din import från ${ accounts } är tillfälligt fördröjd."
@@ -11857,6 +11746,11 @@
     "Input placeholder": {
       "Add label": [
         "Lägg till etikett"
+      ]
+    },
+    "Input title": {
+      "What is your organization's name?": [
+        "Vad heter din organisation?"
       ]
     },
     "invitation status": {
@@ -13967,9 +13861,6 @@
       ],
       "Terms": [
         "Villkor"
-      ],
-      "Terms and conditions": [
-        "Användarvillkor"
       ],
       "Trouble signing in?": [
         "Problem att logga in?"
@@ -17286,6 +17177,9 @@
     "Payments.Lifetime Subscription": {
       "Lifetime accounts can be transferred or sold": [
         "Livstidskonton kan överföras eller säljas"
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Kontakta kundsupport för att bekräfta ägarskapsbyte"
       ]
     },
     "Payments.Lifetime Subscription.Renewal time": {
@@ -17923,6 +17817,12 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Ge 2 veckor, få ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Hur din gratis provperiod fungerar:"
+      ],
       "Invite friends. Get credits.": [
         "Bjud in vänner. Få krediter."
       ],
@@ -17944,6 +17844,9 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Du har **${ daysRemaining } dag kvar** att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda.",
         "Du har **${ daysRemaining } dagar kvar** för att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Din vän får också ${ refereeRewardAmount } att lösa in på sin nästa faktura!"
       ],
       "your subscription": [
         "din prenumeration"
@@ -21408,6 +21311,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } för organisationer"
+      ],
       "(active)": [
         "(aktiv)"
       ],
@@ -22188,9 +22094,6 @@
       ],
       "Gift code": [
         "Presentkod"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "Ge ${ refereeRewardAmount } och 2 veckor gratis. Få ${ referrerRewardAmount } krediter."
       ],
       "Group": [
         "Grupp"

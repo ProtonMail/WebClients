@@ -101,7 +101,7 @@
         "Kopírovat popisovač"
       ],
       "Copy public key (${ prefix })": [
-        "Zkopírovat veřejný klíč (${ prefix })"
+        "Kopírovat veřejný klíč (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "Zkopírovat číslo verze do schránky"
@@ -2406,7 +2406,7 @@
         "Veřejný klíč (${ prefix }) zkopírován do schránky"
       ],
       "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
-        "Ověřte, že se prvních několik odvozených adres shoduje s těmi v ${ WALLET_APP_NAME }, než budete pokračovat."
+        "Než budete pokračovat, ověřte, zda se prvních několik odvozených adres shoduje s adresami v ${ WALLET_APP_NAME }."
       ],
       "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
         "Důrazně doporučujeme používat výše uvedený popisovač, protože obsahuje všechny informace potřebné pro správné generování adresy. xpub, ypub a zpub nejsou součástí standardních BIP a měly by být používány pouze s opatrností."

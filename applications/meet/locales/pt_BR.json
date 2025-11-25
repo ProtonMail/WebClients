@@ -107,6 +107,9 @@
       "Hide participants": [
         "Ocultar participantes"
       ],
+      "Hide self view": [
+        "Ocultar minha visualização"
+      ],
       "Hide timezones": [
         "Ocultar fusos horários"
       ],
@@ -291,6 +294,9 @@
       ],
       "Go to dashboard": [
         "Ir para painel de controle"
+      ],
+      "Hide self view": [
+        "Ocultar minha visualização"
       ],
       "Leave": [
         "Sair"
@@ -1538,8 +1544,14 @@
       " and ": [
         " e "
       ],
+      "${ maxParticipants } participant limit reached": [
+        "Limites de ${ maxParticipants } participantes alcançados"
+      ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } precisa de WebRTC para funcionar. Por favor, atualize seu navegador ou dispositivo para uma versão que suporte WebRTC, tente outro navegador ou desative quaisquer extensões que possam estar bloqueando-o."
+      ],
+      "${ participantCount } of ${ maxParticipants } participants": [
+        "${ participantCount } de ${ maxParticipants } participantes"
       ],
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } convidou você para uma reunião ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }:"
@@ -1700,6 +1712,9 @@
       "Meeting created": [
         "Reunião criada"
       ],
+      "Meeting full (${ maxParticipants } participants)": [
+        "Reunião cheia (${ maxParticipants } participantes)"
+      ],
       "Meeting ID: ${ id }": [
         "ID da reunião: ${ id }"
       ],
@@ -1717,6 +1732,9 @@
       ],
       "microphone": [
         "microfone"
+      ],
+      "Microphone effects": [
+        "Efeitos de microfone"
       ],
       "New": [
         "Novo"
@@ -1834,6 +1852,9 @@
       ],
       "Turn on microphone": [
         "Ativar microfone"
+      ],
+      "Video effects": [
+        "Efeitos de vídeo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"

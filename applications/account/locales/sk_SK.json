@@ -660,9 +660,6 @@
       "Edit “${ label.Name }”": [
         "Upraviť „${ label.Name }“"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "Povoliť ${ darkWebMonitoring }"
       ],
@@ -1952,140 +1949,6 @@
         "Nový email"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Využiť ponuku"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB úložisko"
-      ],
-      "200 GB storage": [
-        "200 GB úložisko"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB zašifrovaného úložiska"
-      ],
-      "Add unlimited credit cards": [
-        "Pridajte neobmedzený počet platobných kariet"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Všetky prémiové funkcie ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokujte reklamy, sledovače a malvér"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Zľavy sú založené na štandardných mesačných cenách. Na konci fakturačného cyklu sa vaše predplatné obnoví za štandardnú ročnú sadzbu."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Zdvojnásobte svoje zašifrované úložisko – získajte 1 TB pre všetky svoje dáta"
-      ],
-      "Encrypted password manager": [
-        "Šifrovaný správca hesiel"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Tu je exkluzívny darček na oslavu našej spoločnej cesty."
-      ],
-      "High speed streaming with VPN": [
-        "Vysokorýchlostné streamovanie s VPN"
-      ],
-      "of privacy": [
-        "súkromia"
-      ],
-      "Online document editor": [
-        "Online editor dokumentov"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online súkromie až pre 2 osoby"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online súkromie pre celú vašu rodinu (až pre 6 používateľov)"
-      ],
-      "Protect up to 10 devices": [
-        "Ochráňte až 10 zariadení"
-      ],
-      "Recover previous file versions": [
-        "Obnova predchádzajúcich verzií súborov"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Ušetrite veľa na prémiových Drive funkciách s časovo obmedzenou zľavou."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Ušetrite veľa na prémiových Mail funkciách s časovo obmedzenou zľavou."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Ušetrite veľa na prémiových Pass funkciách s časovo obmedzenou zľavou."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Ušetrite veľa na prémiových funkciách VPN s časovo obmedzenou zľavou."
-      ],
-      "Save time with built-in 2FA": [
-        "Ušetrite čas pomocou vstavanej 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Zabezpečený email s neobmedzenými aliasmi"
-      ],
-      "Select any server": [
-        "Vyberte ľubovoľný server"
-      ],
-      "Share passwords easily": [
-        "Zdieľajte heslá s ľahkosťou"
-      ],
-      "Short @pm.me address": [
-        "Skrátená adresa @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Streamujte svoj obľúbený obsah"
-      ],
-      "thanks to you": [
-        "vďaka vám"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Strojnásobte svoje zašifrované úložisko – získajte 3 TB pre všetky svoje dáta"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Neobmedzený počet priečinkov, štítkov a filtrov"
-      ],
-      "Use your own email domain": [
-        "Používajte vlastnú emailovú doménu"
-      ],
-      "years": [
-        "rokov"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Výročná ponuka"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mesiac",
-        "${ n } mesiace",
-        "${ n } mesiacov",
-        "${ n } mesiacov"
-      ],
-      "/ month": [
-        "/ mesiac"
-      ],
-      "12 months": [
-        "12 mesiacov"
-      ],
-      "15 months": [
-        "15 mesiacov"
-      ],
-      "24 months": [
-        "24 mesiacov"
-      ],
-      "30 months": [
-        "30 mesiacov"
-      ],
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ]
-    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Prezerajte web v súkromí a blokujte reklamy"
@@ -2517,6 +2380,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Obnovuje sa automaticky"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiac",
         "Bude automaticky obnovené za ${ renewPrice } na ${ renewLength } mesiace",
@@ -2571,6 +2437,9 @@
       ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "Automatizujte opakované akcie na triedenie a organizovanie prichádzajúcich emailov."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Zálohujte, organizujte a bezpečne zdieľajte spomienky na celý život."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Môže niekto vidieť moju internetovú históriu, ak používame rovnakú Wi-Fi?"
@@ -2659,6 +2528,9 @@
       "Keep your email spam-free": [
         "Udržujte svoj email bez spamu"
       ],
+      "Keep your photos out of AI training": [
+        "Zabráňte tomu, aby boli vaše fotografie použité na trénovanie umelej inteligencie"
+      ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "Zabezpečte ochranu, dostupnosť a synchronizáciu súborov vášho tímu pomocou ${ DRIVE_APP_NAME } pre firmy."
       ],
@@ -2685,9 +2557,6 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Prehliadanie internetu plného agentov obchodujúcich s údajmi, spamu, podvodov a škodlivého softvéru je čoraz ťažšie. Preto vám ${ PASS_APP_NAME } pomáha nielen spravovať, ukladať a automaticky vypĺňať heslá. Poskytujeme vám nástroje, vďaka ktorým môžete mať kontrolu nad svojím súkromím a chrániť svoje emailové schránky pomocou hide-my-email aliasov."
-      ],
-      "Organize your memories into albums": [
-        "Usporiadajte si spomienky do albumov"
       ],
       "Protect your business communications": [
         "Chráňte svoju firemnú komunikáciu"
@@ -2791,8 +2660,8 @@
       "Worried about data breaches?": [
         "Máte obavy z únikov údajov?"
       ],
-      "Write, edit, and collaborate on documents with our secure online editors.": [
-        "Píšte, upravujte a spolupracujte na dokumentoch pomocou našich bezpečných online editorov."
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Píšte, upravujte a spolupracujte na dokumentoch bezpečne s ${ DOCS_APP_NAME }."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Vaše rodinné fotografie trénujú umelú inteligenciu a tu je návod, ako tomu zabrániť"
@@ -4893,9 +4762,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Získate ${ referralInfo.referrerRewardAmount } vo forme kreditu ${ BRAND_NAME }, keď sa osoba, ktorú pozvete zaregistruje na plán ${ BRAND_NAME }, a tiež získa ${ referralInfo.refereeRewardAmount } vo forme kreditov na začiatok."
       ]
     },
     "description": {
@@ -6501,6 +6367,9 @@
       ],
       "Permissions request failed.": [
         "Žiadosť o oprávnenia zlyhala."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Pred opätovnou aktiváciou predplatného pridajte spôsob platby."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Pred pridaním adries nastavte vlastnú doménu."
@@ -9001,17 +8870,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importujte svoje existujúce kódy** z iných 2FA aplikácií, ako je Google Authenticator"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1: Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Krok 1:** Pozvite svojich priateľov do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Krok 2:** Vaši priatelia získajú **2 týždne zadarmo** v rámci svojho plánu."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Krok 2:** Vaši priatelia získajú 2 týždne zadarmo v rámci svojho plánu."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Krok 3:** Získajte ${ referrerRewardAmount } v kreditoch za každú osobu, ktorá si predplatí plán."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Krok 3:** Získajte **${ referrerRewardAmount } v kreditoch** za každú osobu, ktorá si predplatí plán."
       ],
       "**Sync codes** to all your devices": [
         "**Synchronizovať kódy** do všetkých vašich zariadení"
@@ -9969,9 +9844,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Získať ${ upsellPlanName }"
-      ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Získajte **${ referrerRewardAmount } kreditov** za každého priateľa, ktorý sa prihlási."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Získajte prístup vytvorením ${ BRAND_NAME } účtu a prijatím pozvánky."
@@ -12063,9 +11935,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaša bezplatná skúšobná verzia bola úspešne konvertovaná na mesačné predplatné. Váš dátum obnovenia je ${ nextBillingDate }."
-      ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Vaši priatelia získajú **2 týždne zadarmo** na nimi zvolený plán."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Váš import z ${ accounts } je dočasne oneskorený.",
@@ -14387,9 +14256,6 @@
       ],
       "Terms": [
         "Podmienky"
-      ],
-      "Terms and conditions": [
-        "Zmluvné podmienky používania"
       ],
       "Trouble signing in?": [
         "Problémy s prihlásením?"
@@ -18461,6 +18327,18 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užite si **${ planTitle }** zadarmo až do **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Darujte 2 týždne, získajte ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Ako funguje vaša bezplatná skúšobná verzia:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Ak zrušíte pred týmto termínom, po skončení skúšobnej doby dôjde k zníženiu na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }. Ak nezrušíte, začne platiť váš plný plán a získate **${ referrerRewardAmount }** v kreditoch."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Ak si predplatíte pred týmto dátumom, získate **${ referrerRewardAmount }** kreditov. Ak si nepredplatíte dôjde k zníženiu na úroveň ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "Invite friends. Get credits.": [
         "Pozvite priateľov. Získajte kredity."
       ],
@@ -18484,6 +18362,9 @@
         "Zostávajú vám **${ daysRemaining } dni** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
         "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
         "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Váš priateľ zároveň získa ${ refereeRewardAmount } na uplatnenie pri najbližšej platbe!"
       ],
       "your subscription": [
         "vaše predplatné"
@@ -22911,9 +22792,6 @@
       ],
       "Gift code": [
         "Darčekový kód"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "Darujte ${ refereeRewardAmount } a 2 týždne zadarmo. Získajte kredity za ${ referrerRewardAmount }."
       ],
       "Group": [
         "Skupina"

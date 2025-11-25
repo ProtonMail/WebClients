@@ -20,6 +20,9 @@
       "Authenticate": [
         "S'authentifier"
       ],
+      "Blur background": [
+        "Flouter l'arrière-plan"
+      ],
       "Cancel": [
         "Annuler"
       ],
@@ -35,11 +38,17 @@
       "Continue": [
         "Continuer"
       ],
+      "Continue without camera": [
+        "Continuer sans caméra"
+      ],
       "Copy address": [
         "Copier l'adresse"
       ],
       "Copy link": [
         "Copier le lien"
+      ],
+      "Create meeting": [
+        "Créer une réunion"
       ],
       "Delete": [
         "Supprimer"
@@ -59,6 +68,9 @@
       "Edit sign-in details": [
         "Modifier les informations de connexion"
       ],
+      "End meeting for all": [
+        "Mettre fin à la réunion"
+      ],
       "Forgot password?": [
         "Mot de passe oublié ?"
       ],
@@ -71,8 +83,14 @@
       "Help and resources": [
         "Aide et ressources"
       ],
+      "Hide advanced options": [
+        "Masquer les options avancées"
+      ],
       "Leave": [
         "Quitter"
+      ],
+      "Lock meeting": [
+        "Verrouiller la réunion"
       ],
       "More info: ${ safeTitle }": [
         "Plus d'informations : ${ safeTitle }"
@@ -85,6 +103,12 @@
       ],
       "Next page": [
         "Page suivante"
+      ],
+      "Noise filter": [
+        "Filtre anti-bruit"
+      ],
+      "Open link": [
+        "Ouvrir le lien"
       ],
       "Previous month": [
         "Mois précédent"
@@ -113,6 +137,9 @@
       "Resend code": [
         "Renvoyer le code"
       ],
+      "Schedule meeting": [
+        "Planifier une réunion"
+      ],
       "Search countries": [
         "Rechercher dans les pays"
       ],
@@ -125,6 +152,9 @@
       "Show advanced options": [
         "Afficher les options avancées"
       ],
+      "Show timezones": [
+        "Afficher les fuseaux horaires"
+      ],
       "Sign in": [
         "Se connecter"
       ],
@@ -136,6 +166,9 @@
       ],
       "Start": [
         "Commencer"
+      ],
+      "Start meeting": [
+        "Démarrer la réunion"
       ],
       "Stay in meeting": [
         "Rester dans la réunion"
@@ -166,6 +199,23 @@
       ],
       "View invoice": [
         "Voir la facture"
+      ]
+    },
+    "Alt": {
+      "Close search": [
+        "Fermer la recherche"
+      ],
+      "Meeting details": [
+        "Informations de la réunion"
+      ],
+      "Participants": [
+        "Participants"
+      ],
+      "Show passphrase": [
+        "Afficher la phrase secrète"
+      ],
+      "Toggle chat": [
+        "Afficher/Masquer la discussion"
       ]
     },
     "Apps dropdown": {
@@ -1130,6 +1180,12 @@
       "Failed to decrypt session key": [
         "Le déchiffrement de la clé de session n'a pas abouti."
       ],
+      "Failed to get meeting info": [
+        "La récupération des informations de la réunion n'a pas abouti."
+      ],
+      "Failed to join meeting. Please try again later.": [
+        "Impossible de rejoindre la réunion. Veuillez réessayer plus tard."
+      ],
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
       ],
@@ -1145,11 +1201,17 @@
       "Request timed out": [
         "La requête a expiré."
       ],
+      "Screen share is not supported on mobile browsers": [
+        "Le partage d'écran n'est pas pris en charge sur les navigateurs mobiles"
+      ],
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ],
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
+      ],
+      "The meeting link you are trying to access does not exist or may have been deleted.": [
+        "Le lien de la réunion n'est pas valide ou peut avoir été supprimé."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
@@ -1159,6 +1221,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
+      ],
+      "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
+        "Cette réunion utilise une version plus ancienne, l'organisateur doit y mettre fin et actualiser Meet pour redémarrer avec la dernière version."
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
@@ -1297,8 +1362,17 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
+      "Chat with everyone": [
+        "Discuter avec tout le monde"
+      ],
+      "Check your system settings to make sure that a microphone is available.": [
+        "Vérifiez les paramètres de votre système pour vous assurer qu'un microphone est disponible."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
+      ],
+      "Coming soon": [
+        "Bientôt disponible"
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
@@ -1320,6 +1394,9 @@
       ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
+      ],
+      "End-to-end encryption is active for this chat.": [
+        "Le chiffrement de bout en bout est actif pour cette discussion."
       ],
       "Enter the code from your authenticator app": [
         "Saisissez le code de votre application d'authentification."
@@ -1348,6 +1425,9 @@
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
+      "is presenting": [
+        "présente"
+      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -1366,17 +1446,44 @@
       "Meeting full (${ maxParticipants } participants)": [
         "Réunion pleine (${ maxParticipants } participants)"
       ],
+      "Meeting link": [
+        "Lien de la réunion "
+      ],
       "Member": [
         "Membre"
+      ],
+      "Microphone effects": [
+        "Effets du microphone"
       ],
       "New": [
         "Nouveau"
       ],
+      "No camera detected": [
+        "Aucune caméra détectée"
+      ],
+      "No camera detected.": [
+        "Aucune caméra détectée."
+      ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
+      "No search results": [
+        "Aucun résultat trouvé"
+      ],
+      "Open external link": [
+        "Ouvrir le lien externe"
+      ],
       "Other accounts": [
         "Autres comptes"
+      ],
+      "Permission denied": [
+        "Permission refusée"
+      ],
+      "Permissions not given.": [
+        "Autorisations non accordées."
+      ],
+      "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
+        "Veuillez activer l'accès à votre ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pour une expérience optimale."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
@@ -1387,11 +1494,20 @@
       "Secure meeting": [
         "Réunion sécurisée"
       ],
+      "Select a microphone": [
+        "Sélectionnez un microphone"
+      ],
+      "Select a speaker": [
+        "Sélectionner une sortie audio"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
       "Session timed out": [
         "La session a expiré."
+      ],
+      "Stop sharing your screen": [
+        "Mettre fin au partage d'écran"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
@@ -1401,6 +1517,9 @@
       ],
       "Turn off microphone": [
         "Désactiver le microphone"
+      ],
+      "Video effects": [
+        "Effets vidéo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
@@ -1518,7 +1637,18 @@
         "Qu'est-ce que c'est ?"
       ]
     },
+    "meet_2025 Action": {
+      "Stay in the meeting": [
+        "Rester dans la réunion"
+      ]
+    },
     "Notification": {
+      "Coming soon": [
+        "Bientôt disponible"
+      ],
+      "Copied to clipboard": [
+        "Copié dans le presse-papiers"
+      ],
       "Link copied to clipboard": [
         "Le lien a été copié dans le presse-papiers."
       ]
@@ -1538,6 +1668,9 @@
       "Enter passphrase": [
         "Saisir la phrase secrète"
       ],
+      "Loading...": [
+        "Chargement..."
+      ],
       "Password": [
         "Mot de passe"
       ],
@@ -1546,6 +1679,9 @@
       ],
       "Select": [
         "Sélectionnez"
+      ],
+      "Type your name": [
+        "Saisissez votre nom"
       ]
     },
     "Safety review": {
@@ -1668,6 +1804,15 @@
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
+      "Invite link": [
+        "Lien d'invitation"
+      ],
+      "Join a meeting": [
+        "Rejoindre une réunion"
+      ],
+      "Join meeting": [
+        "Rejoindre la réunion"
+      ],
       "Minicalendar": [
         "Mini calendrier"
       ],
@@ -1686,8 +1831,14 @@
       "Sign out": [
         "Se déconnecter"
       ],
+      "Talk confidentially": [
+        "Parler en toute confidentialité"
+      ],
       "Time": [
         "Heure"
+      ],
+      "Title": [
+        "Titre"
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
@@ -1699,6 +1850,11 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Aujourd'hui"
+      ]
+    },
+    "Tooltip": {
+      "Recurring meeting": [
+        "Réunion récurrente"
       ]
     },
     "Upgrade Button": {

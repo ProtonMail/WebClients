@@ -107,6 +107,9 @@
       "Hide participants": [
         "Katılımcıları gizle"
       ],
+      "Hide self view": [
+        "Kendi görüntünü gizle"
+      ],
       "Hide timezones": [
         "Saat dilimlerini gizle"
       ],
@@ -291,6 +294,9 @@
       ],
       "Go to dashboard": [
         "Panoya git"
+      ],
+      "Hide self view": [
+        "Kendi görüntünü gizle"
       ],
       "Leave": [
         "Ayrıl"
@@ -1545,7 +1551,7 @@
         "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
       ],
       "${ participantCount } of ${ maxParticipants } participants": [
-        "${ maxParticipants } katılımcıdan ${ participantCount } tanesi"
+        "${ maxParticipants } / ${ participantCount } katılımcı"
       ],
       "${ user.DisplayName } has invited you to a ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } meeting:": [
         "${ user.DisplayName } sizi bir ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } görüşmesine davet etti:"
@@ -1727,6 +1733,9 @@
       "microphone": [
         "mikrofon"
       ],
+      "Microphone effects": [
+        "Mikrofon etkileri"
+      ],
       "New": [
         "Yeni"
       ],
@@ -1843,6 +1852,9 @@
       ],
       "Turn on microphone": [
         "Mikrofonu aç"
+      ],
+      "Video effects": [
+        "Video etkileri"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"

@@ -97,6 +97,12 @@
       "Copy address": [
         "复制邮箱地址"
       ],
+      "Copy descriptor": [
+        "复制描述符"
+      ],
+      "Copy public key (${ prefix })": [
+        "复制公钥 (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "复制版本号"
       ],
@@ -2290,6 +2296,26 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "没有选择图像"
+      ]
+    },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "描述符已复制到剪贴板"
+      ],
+      "I want the ${ prefix } instead": [
+        "我想要的是 ${ prefix }。"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "将此描述符导入其他钱包软件，即可监控余额并生成收款地址，同时无需暴露您的私钥。"
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "公钥 (${ prefix }) 已复制到剪贴板"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "在继续操作前，请确认前几个派生地址与 ${ WALLET_APP_NAME } 中的地址一致。"
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "我们强烈建议改用上述描述符，因为它包含了正确生成地址所需的所有必要信息。xpub、ypub 和 zpub 并非标准 BIP 的一部分，应谨慎使用。"
       ]
     },
     "familyOffer_2023:Error": {

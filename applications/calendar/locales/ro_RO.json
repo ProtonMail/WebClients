@@ -14,10 +14,10 @@
     },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Redirecționarea va începe curând. Noile mesaje vor apărea în folderul «Primite»."
+        "Transferarea va începe în curând. Noile mesaje vor apărea în folderul «Primite»."
       ],
       "Mail forward stopped": [
-        "Redirecționare mesaje oprită"
+        "Transferare mesaje oprită"
       ]
     },
     "Account Settings - Info": {
@@ -61,6 +61,9 @@
       ],
       "Add another account": [
         "Adăugare alt cont"
+      ],
+      "Add another booking range to this day": [
+        "Adăugare alt interval de rezervare pentru această zi"
       ],
       "Add birthday": [
         "Adăugare dată naștere"
@@ -402,7 +405,7 @@
         "Ați uitat parola?"
       ],
       "Forward as attachment": [
-        "Redirecționare ca atașament"
+        "Transferare ca atașament"
       ],
       "Generate password": [
         "Generare parolă"
@@ -442,6 +445,9 @@
       ],
       "Go to settings": [
         "Accesare setări"
+      ],
+      "Go to the first available appointment": [
+        "Salt la prima programare disponibilă"
       ],
       "Go to the next available appointment": [
         "Salt la următoarea programare disponibilă"
@@ -810,7 +816,7 @@
         "Configurați un domeniu personal"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Settings": [
         "Setări"
@@ -859,9 +865,6 @@
       ],
       "Skip verification": [
         "Ignorare verificare"
-      ],
-      "Split current booking range": [
-        "Divizare perioadă curentă de rezervare"
       ],
       "Start import": [
         "Pornire importare"
@@ -1137,139 +1140,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Nu închideți această filă. Unele solicitări sunt încă procesate în fundal."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Luați oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "200 GB storage": [
-        "200 GiB spațiu de stocare"
-      ],
-      "500 GB encrypted storage": [
-        "500 GiB de stocare criptată"
-      ],
-      "Add unlimited credit cards": [
-        "Adăugați carduri de plată nelimitate"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Toate funcțiile speciale ale ${ BRAND_NAME } Mail, Pass, VPN, Drive și Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocare reclame, urmăritori și programe malițioase"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Reducerile se bazează pe prețurile lunare standard. La sfârșitul ciclului de facturare, abonamentul se va reînnoi la tariful anual standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dublați-vă stocarea criptată – obțineți 1 TiB pentru toate datele stocate"
-      ],
-      "Encrypted password manager": [
-        "Manager de parole criptat"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Iată un cadou exclusiv pentru a sărbători călătoria noastră împreună."
-      ],
-      "High speed streaming with VPN": [
-        "Transmisii în flux de mare viteză cu VPN"
-      ],
-      "of privacy": [
-        "de confidențialitate"
-      ],
-      "Online document editor": [
-        "Editor de documente online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Confidențialitate online pentru maxim două persoane"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Confidențialitate online pentru întreaga familie (până la 6 utilizatori)"
-      ],
-      "Protect up to 10 devices": [
-        "Protejați până la 10 dispozitive"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale Drive cu oferta limitată de reducere."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale Mail cu oferta limitată de reducere."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale PASS cu oferta limitată de reducere."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale VPN cu oferta limitată de reducere."
-      ],
-      "Save time with built-in 2FA": [
-        "Salvați timp cu A2F integrată"
-      ],
-      "Secure email with unlimited aliases": [
-        "E-mail securizat cu aliasuri nelimitate"
-      ],
-      "Select any server": [
-        "Selectați orice server"
-      ],
-      "Share passwords easily": [
-        "Partajați ușor parolele"
-      ],
-      "Short @pm.me address": [
-        "Adresă scurtă @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Vizionați conținutul preferat"
-      ],
-      "thanks to you": [
-        "mulțumită dvs."
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplați-vă stocarea criptată – obțineți 3 TiB pentru toate datele stocate"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Use your own email domain": [
-        "Utilizați propriul domeniu de e-mail"
-      ],
-      "years": [
-        "ani"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Ofertă aniversară"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "/ month": [
-        "/lună"
-      ],
-      "12 months": [
-        "12 luni"
-      ],
-      "15 months": [
-        "15 luni"
-      ],
-      "24 months": [
-        "24 de luni"
-      ],
-      "30 months": [
-        "30 de luni"
-      ],
-      "for ${ durationDeal }": [
-        "cu ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -3159,7 +3029,7 @@
         "De asemenea, inclus"
       ],
       "Automatically forward incoming email to another email address.": [
-        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+        "Transferați automat mesajele primite către o altă adresă de e-mail."
       ],
       "Availability unknown": [
         "Disponibilitate necunoscută"
@@ -3674,9 +3544,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Căutarea în conținut nu poate fi activată. Reporniți aplicația sau ștergeți datele."
       ],
-      "Content verification failed": [
-        "Verificarea conținutului a eșuat."
-      ],
       "Could not open created vault": [
         "Nu s-a putut deschide seiful creat."
       ],
@@ -3763,7 +3630,7 @@
         "Numele folderului nu poate fi gol."
       ],
       "Forward address is required": [
-        "Adresa de redirecționare este obligatorie."
+        "Adresa de transferare este obligatorie."
       ],
       "Image upload failed": [
         "Eșuare încărcare imagine"
@@ -4134,7 +4001,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Conectați-vă cu o adresă Gmail care deja se redirecționează către ${ MAIL_APP_NAME }"
+        "Conectați-vă cu o adresă Gmail care deja se transferă mesaje către ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
@@ -5427,6 +5294,9 @@
       "Booking page example": [
         "Pagină exemplu de rezervare"
       ],
+      "Booking updated successfully": [
+        "Rezervarea a fost actualizată"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
@@ -5501,6 +5371,9 @@
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
+      ],
+      "Could not verify signature over booking page data": [
+        "Nu s-a putut verifica semnătura pentru datele paginii de rezervare."
       ],
       "Country code": [
         "Cod țară"
@@ -5708,6 +5581,9 @@
       "Host": [
         "Gazdă"
       ],
+      "Host signature verification failed": [
+        "Eșuare verificare semnătură gazdă"
+      ],
       "How long should an appointment last?": [
         "Cât ar trebui să dureze o întâlnire?"
       ],
@@ -5830,6 +5706,9 @@
       "Loading ${ appName }": [
         "Se încarcă ${ appName }"
       ],
+      "Loading appointments...": [
+        "Se încarcă programările..."
+      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
       ],
@@ -5845,11 +5724,11 @@
       "Low Priority": [
         "Prioritate scăzută"
       ],
+      "Manage booking page": [
+        "Gestionare pagină de rezervări"
+      ],
       "Manage your calendars": [
         "Gestionare calendare"
-      ],
-      "Manange booking page": [
-        "Gestionare pagină de rezervări"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -5881,6 +5760,9 @@
       "New": [
         "Nou"
       ],
+      "No appointments available": [
+        "Nu există programări disponibile"
+      ],
       "No appointments available this week": [
         "Nu sunt programări disponibile săptămâna asta"
       ],
@@ -5889,6 +5771,9 @@
       ],
       "No email address": [
         "Lipsă adresă de e-mail"
+      ],
+      "No future appointments available": [
+        "Nu există programări viitoare disponibile"
       ],
       "No group found": [
         "Nu există grupuri"
@@ -6346,11 +6231,8 @@
       "What do you want to call this booking page?": [
         "Cum doriți să numiți această pagină de rezervare?"
       ],
-      "What should people know before booking?": [
-        "Ce ar trebui să știe oamenii înainte de a rezerva?"
-      ],
-      "When are you free?": [
-        "Când aveți timp liber?"
+      "When can appointments be booked?": [
+        "Când se pot programa întâlnirile?"
       ],
       "When working remotely": [
         "Când lucrați la distanță"
@@ -6914,6 +6796,9 @@
       "Copy": [
         "Copiere"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copiați legătura web sau gestionați-vă pagina de aici oricând."
+      ],
       "Could you please let us know which provider?": [
         "Ați putea să ne spuneți care furnizor?"
       ],
@@ -6925,6 +6810,9 @@
       ],
       "Country": [
         "Țara"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Creați pagini partajabile unde persoanele pot rezerva timp pentru a vă întâlni."
       ],
       "Credits": [
         "Credite"
@@ -7011,7 +6899,7 @@
         "Amplasare folder"
       ],
       "Forwards to": [
-        "Redirecționare către"
+        "Transferare către"
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
@@ -7335,8 +7223,8 @@
       "Start time of the booking range": [
         "Oră început interval de rezervare"
       ],
-      "What should people know before booking?": [
-        "Ce ar trebui să știe oamenii înainte de a rezerva?"
+      "What should people know about this appointment?": [
+        "Ce ar trebui să știe oamenii despre această întâlnire?"
       ]
     },
     "Label for contact group color": {
@@ -7456,7 +7344,7 @@
         "Cum să utilizați ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Cum se utilizează redirecționarea mesajelor"
+        "Cum se utilizează transferarea mesajelor"
       ],
       "How to use Groups": [
         "Cum să utilizați grupurile"
@@ -8068,7 +7956,7 @@
         "Autocompletare carduri de credit (în curând)"
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
@@ -9713,9 +9601,6 @@
       "A way to contact you": [
         "Modalitate de contactare"
       ],
-      "Add a booking page description": [
-        "Adăugare descriere pagină de rezervări"
-      ],
       "Add a calendar description": [
         "Adăugare descriere calendar"
       ],
@@ -9748,6 +9633,9 @@
       ],
       "Email for booking confirmation": [
         "E-mail pentru confirmarea rezervării"
+      ],
+      "Enter a short description or additional info": [
+        "Introduceți o scurtă descriere sau informații suplimentare"
       ],
       "Enter passphrase": [
         "Introduceți fraza de acces"
@@ -10977,7 +10865,7 @@
         "Orice domeniu de e-mail personal va fi dezactivat."
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Back up photos from your devices": [
         "Conservați fotografiile de pe dispozitive"
@@ -11150,7 +11038,7 @@
         "și încă alte 15 funcții premium"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
+        "Transferare automată mesaje ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Alerte divulgări date ${ strongArgument }"
@@ -11249,6 +11137,12 @@
       ],
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
+      ],
+      "Booking page created": [
+        "Pagina de rezervare s-a creat."
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Pagina de rezervare a fost creată și legătura web s-a copiat în memorie."
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
@@ -11944,6 +11838,9 @@
       "Information exposed in breach": [
         "Informații expuse în divulgare"
       ],
+      "Introducing booking pages": [
+        "Vă prezentăm paginile de rezervare"
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
@@ -12140,7 +12037,7 @@
         "Setare frază de recuperare"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Set up your organization": [
         "Setați organizația"
@@ -12288,6 +12185,9 @@
       ],
       "Your booking page is ready": [
         "Pagina de rezervare este gata."
+      ],
+      "Your booking pages live here": [
+        "Paginile personale de rezervare se găsesc aici"
       ],
       "Your calendar link": [
         "legătură web calendar"

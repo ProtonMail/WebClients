@@ -107,6 +107,9 @@
       "Hide participants": [
         "Ocultar participantes"
       ],
+      "Hide self view": [
+        "Ocultar mi vista"
+      ],
       "Hide timezones": [
         "Ocultar zonas horarias"
       ],
@@ -291,6 +294,9 @@
       ],
       "Go to dashboard": [
         "Ir al panel de control"
+      ],
+      "Hide self view": [
+        "Ocultar mi vista"
       ],
       "Leave": [
         "Salir"
@@ -1539,7 +1545,7 @@
         " y "
       ],
       "${ maxParticipants } participant limit reached": [
-        "Se ha alcanzado el límite de ${ maxParticipants } participantes."
+        "Se alcanzó el límite de ${ maxParticipants } participantes"
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualice su navegador o dispositivo a una versión que sea compatible con WebRTC, pruebe un navegador diferente o desactive cualquier extensión que pueda estar bloqueándolo."
@@ -1727,6 +1733,9 @@
       "microphone": [
         "micrófono"
       ],
+      "Microphone effects": [
+        "Efectos de micrófono"
+      ],
       "New": [
         "Nuevo"
       ],
@@ -1843,6 +1852,9 @@
       ],
       "Turn on microphone": [
         "Encender el micrófono"
+      ],
+      "Video effects": [
+        "Efectos de video"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"

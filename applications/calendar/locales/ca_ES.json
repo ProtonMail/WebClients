@@ -62,6 +62,9 @@
       "Add another account": [
         "Afegeix un altre compte"
       ],
+      "Add another booking range to this day": [
+        "Afegiu un altre període de reserva a aquest dia"
+      ],
       "Add birthday": [
         "Afegeix una data de naixement"
       ],
@@ -439,6 +442,9 @@
       ],
       "Go to settings": [
         "Ves a les preferències"
+      ],
+      "Go to the first available appointment": [
+        "Aneu a la primera cita disponible"
       ],
       "Go to the next available appointment": [
         "Anar a la següent cita disponible"
@@ -857,9 +863,6 @@
       "Skip verification": [
         "Omet la verificació"
       ],
-      "Split current booking range": [
-        "Dividiu l'interval de la reserva actual"
-      ],
       "Start import": [
         "Comença la importació"
       ],
@@ -1128,138 +1131,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "No tanqueu aquesta pestanya. Algunes sol·licituds encara s'estan processant en segon pla."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Aconseguiu l'oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB d'emmagatzemament"
-      ],
-      "200 GB storage": [
-        "200 GB d'emmagatzematge"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB d'emmagatzematge xifrat"
-      ],
-      "Add unlimited credit cards": [
-        "Afegiu-hi un nombre il·limitat de targetes de crèdit"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Totes les característiques prèmium de ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquegeu anuncis, rastrejadors i programari maliciós"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Els descomptes es basen en els preus mensuals estàndard. Al final del cicle de facturació, la subscripció es renovarà a la tarifa anual estàndard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dupliqueu el vostre emmagatzematge xifrat: obteniu 1 TB per a totes les vostres dades."
-      ],
-      "Encrypted password manager": [
-        "Gestor de contrasenyes xifrat"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Heus aquí un regal exclusiu per celebrar el nostre camí plegats."
-      ],
-      "High speed streaming with VPN": [
-        "Estríming d'alta velocitat amb VPN"
-      ],
-      "of privacy": [
-        "de privacitat"
-      ],
-      "Online document editor": [
-        "Editor de documents en línia"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacitat en línia fins a 2 persones"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacitat en línia per a tota la família (fins a 6 usuaris)"
-      ],
-      "Protect up to 10 devices": [
-        "Protegiu fins a 10 dispositius"
-      ],
-      "Recover previous file versions": [
-        "Recupereu versions anteriors dels fitxers"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Drive amb un descompte per temps limitat."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Mail amb un descompte per temps limitat."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Pass amb un descompte per temps limitat."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de VPN amb un descompte per temps limitat."
-      ],
-      "Save time with built-in 2FA": [
-        "Estalvieu temps amb 2FA integrat"
-      ],
-      "Secure email with unlimited aliases": [
-        "Correu electrònic segur amb àlies il·limitats"
-      ],
-      "Select any server": [
-        "Seleccioneu qualsevol servidor"
-      ],
-      "Share passwords easily": [
-        "Compartiu contrasenyes fàcilment"
-      ],
-      "Short @pm.me address": [
-        "Adreça curta de @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Reproduïu en continu el vostre contingut favorit"
-      ],
-      "thanks to you": [
-        "gràcies a vós"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tripliqueu el vostre emmagatzematge xifrat – obteniu 3 TB per a totes les vostres dades"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Use your own email domain": [
-        "Utilitzeu el vostre propi domini de correu electrònic"
-      ],
-      "years": [
-        "anys"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta d'aniversari"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
-      "/ month": [
-        "/ mes"
-      ],
-      "12 months": [
-        "12 mesos"
-      ],
-      "15 months": [
-        "15 mesos"
-      ],
-      "24 months": [
-        "24 mesos"
-      ],
-      "30 months": [
-        "30 mesos"
-      ],
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1565,7 +1436,7 @@
         "Problema d’aplicació"
       ],
       "Authenticator problem": [
-        "Problema amb l'autenticador"
+        "Hi ha hagut un problema amb l'autenticador"
       ],
       "Black Friday": [
         "Black Friday"
@@ -3647,9 +3518,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "No es pot activar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
       ],
-      "Content verification failed": [
-        "La verificació del contingut ha fallat"
-      ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
       ],
@@ -4099,7 +3967,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja us reenviarà a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -5310,7 +5178,7 @@
         "Durada de la cita"
       ],
       "Are you sure you want to delete this booking page?": [
-        "Estàs segur que vols eliminar aquesta pàgina de reserves?"
+        "Esteu segur que voleu eliminar aquesta pàgina de reserves?"
       ],
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la vostra importació?"
@@ -5349,10 +5217,13 @@
         "La reserva es superposa amb una reserva existent."
       ],
       "Booking page deleted": [
-        "Pàgina de reserves eliminada."
+        "S'ha eliminat la pàgina de reserves."
       ],
       "Booking page example": [
         "Exemple de pàgina de reserves"
+      ],
+      "Booking updated successfully": [
+        "La reserva s'ha actualitzat correctament"
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
@@ -5428,6 +5299,9 @@
       ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
+      ],
+      "Could not verify signature over booking page data": [
+        "No s'ha pogut verificar la signatura de les dades de la pàgina de reserva"
       ],
       "Country code": [
         "Codi de país"
@@ -5631,6 +5505,9 @@
       "Host": [
         "Amfitrió"
       ],
+      "Host signature verification failed": [
+        "Ha fallat la verificació de la signatura de l'amfitrió"
+      ],
       "How long should an appointment last?": [
         "Quant ha de durar una cita?"
       ],
@@ -5752,6 +5629,9 @@
       "Loading ${ appName }": [
         "Carregant ${ appName }"
       ],
+      "Loading appointments...": [
+        "S'estan carregant les cites..."
+      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "S'està carregant el calendari, espereu. Se us redirigirà a la nostra plataforma de planificació Calendly en una pestanya nova."
       ],
@@ -5767,11 +5647,11 @@
       "Low Priority": [
         "Prioritat baixa"
       ],
+      "Manage booking page": [
+        "Gestioneu la pàgina de reserves"
+      ],
       "Manage your calendars": [
         "Gestió dels teus calendaris"
-      ],
-      "Manange booking page": [
-        "Gestioneu la pàgina de reserves"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -5803,6 +5683,9 @@
       "New": [
         "Nova"
       ],
+      "No appointments available": [
+        "No hi ha cites disponibles"
+      ],
       "No appointments available this week": [
         "No hi ha cites disponibles aquesta setmana"
       ],
@@ -5811,6 +5694,9 @@
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
+      ],
+      "No future appointments available": [
+        "No hi ha cites disponibles en el futur"
       ],
       "No group found": [
         "No s'ha trobat cap grup"
@@ -5891,7 +5777,7 @@
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
       ],
       "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
-        "Les persones que reservin temps amb vosaltres veuran ${ selectedCalendar.Email } com a la vostra adreça de contacte."
+        "Les persones que reservin temps amb vosaltres veuran ${ selectedCalendar.Email } com la vostra adreça de contacte."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline només és compatible amb format de Text Pla."
@@ -6025,7 +5911,7 @@
         "S'està configurant la vostra nova adreça…"
       ],
       "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
-        "Compartiu aquesta pàgina per permetre que altres persones reservin hora al vostre calendari. La podeu trobar i editar a la barra lateral, a l'apartat Pàgines de reserves."
+        "Compartiu aquesta pàgina perquè altres puguin reservar temps al vostre calendari. La podreu trobar i editar a la barra lateral, a Pàgines de reserves."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
@@ -6265,11 +6151,8 @@
       "What do you want to call this booking page?": [
         "Com voleu anomenar aquesta pàgina de reserves?"
       ],
-      "What should people know before booking?": [
-        "Què s'hauria de saber abans de reservar?"
-      ],
-      "When are you free?": [
-        "Quan teniu disponibilitat?"
+      "When can appointments be booked?": [
+        "Quan es poden reservar cites?"
       ],
       "When working remotely": [
         "Quan es treballa a distància"
@@ -6824,6 +6707,9 @@
       "Copy": [
         "Copia"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copieu l'enllaç o gestioneu la vostra pàgina des d'aquí en qualsevol moment."
+      ],
       "Could you please let us know which provider?": [
         "Podeu fer-nos saber quin proveïdor?"
       ],
@@ -6835,6 +6721,9 @@
       ],
       "Country": [
         "País"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Creeu pàgines compartibles on les persones puguin reservar temps amb vosaltres."
       ],
       "Credits": [
         "Crèdits"
@@ -7239,13 +7128,13 @@
         "Hora de finalització de l'interval de la reserva"
       ],
       "How long should an appointment last?": [
-        "Quant ha de durar una cita?"
+        "Quant hauria de durar una cita?"
       ],
       "Start time of the booking range": [
         "Hora d'inici de l'interval de la reserva"
       ],
-      "What should people know before booking?": [
-        "Què hauria de saber la gent abans de reservar?"
+      "What should people know about this appointment?": [
+        "Què hauria de saber la gent sobre aquesta cita?"
       ]
     },
     "Label for contact group color": {
@@ -9554,9 +9443,6 @@
       "A way to contact you": [
         "Una manera de contactar amb tu"
       ],
-      "Add a booking page description": [
-        "Afegiu una descripció a la pàgina de reserves"
-      ],
       "Add a calendar description": [
         "Afegeix una descripció al calendari"
       ],
@@ -9588,7 +9474,10 @@
         "Ex., "
       ],
       "Email for booking confirmation": [
-        "Correu electrònic per a la confirmació de la reserva"
+        "Correu electrònic per la confirmació de la reserva"
+      ],
+      "Enter a short description or additional info": [
+        "Introduïu una descripció breu o informació addicional"
       ],
       "Enter passphrase": [
         "Introduïu la frase de contrasenya"
@@ -11055,10 +10944,10 @@
         "S'han actualitzat els detalls de facturació."
       ],
       "Booking page created": [
-        "Pàgina de reserva creada"
+        "S'ha creat la pàgina de reserves"
       ],
       "Booking page created and link copied to clipboard": [
-        "Pàgina de reserva creada i enllaç copiat al porta-retalls"
+        "S'ha creat la pàgina de reserves i enllaç s'ha copiat al porta-retalls"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
@@ -11569,7 +11458,7 @@
         "Elimina ${ value }"
       ],
       "Delete booking page?": [
-        "Eliminar la pàgina de reserves?"
+        "Voleu eliminar la pàgina de reserves?"
       ],
       "Delete event": [
         "Elimina l'esdeveniment"
@@ -11736,6 +11625,9 @@
       ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"
+      ],
+      "Introducing booking pages": [
+        "Us presentem les pàgines de reserva"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
@@ -12081,6 +11973,9 @@
       ],
       "Your booking page is ready": [
         "La vostra pàgina de reserves és a punt"
+      ],
+      "Your booking pages live here": [
+        "Les vostres pàgines de reserves es troben aquí"
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"

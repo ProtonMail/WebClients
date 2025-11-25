@@ -97,6 +97,12 @@
       "Copy address": [
         "Copia l'indirizzo"
       ],
+      "Copy descriptor": [
+        "Copia descrittore"
+      ],
+      "Copy public key (${ prefix })": [
+        "Copia chiave pubblica (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "Copia il numero di versione negli appunti"
       ],
@@ -2370,6 +2376,26 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nessuna immagine selezionata"
+      ]
+    },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Descrittore copiato negli appunti"
+      ],
+      "I want the ${ prefix } instead": [
+        "Voglio il ${ prefix } invece"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importa questo descrittore in un altro software di portafoglio per monitorare il tuo saldo e generare indirizzi di ricezione senza esporre le tue chiavi private."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Chiave pubblica (${ prefix }) copiata negli appunti"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Verifica che i primi indirizzi derivati corrispondano a quelli in ${ WALLET_APP_NAME } prima di procedere."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Ti consigliamo vivamente di usare il descrittore qui sopra, poiché contiene tutte le informazioni necessarie per garantire la corretta generazione dell'indirizzo. xpub, ypub e zpub non fanno parte dei BIP standard e dovrebbero essere usati solo con cautela."
       ]
     },
     "familyOffer_2023:Error": {

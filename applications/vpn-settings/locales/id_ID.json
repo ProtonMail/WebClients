@@ -50,6 +50,9 @@
       "Activate organization key": [
         "Aktifkan kunci organisasi"
       ],
+      "Activate recovery": [
+        "Aktifkan metode pemulihan"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -194,11 +197,17 @@
       "Confirm": [
         "Konfirmasi"
       ],
+      "Connect": [
+        "Hubungkan"
+      ],
       "Connect apps and devices": [
         "Hubungkan aplkasi dan perangkat"
       ],
       "Connect to video conferencing": [
         "Hubungkan ke konferensi video"
+      ],
+      "Connected": [
+        "Terhubung"
       ],
       "Contact support": [
         "Hubungi layanan dukungan"
@@ -266,6 +275,9 @@
       "Decrease": [
         "Kurangi"
       ],
+      "Decrypt": [
+        "Dekripsi"
+      ],
       "Delete": [
         "Hapus"
       ],
@@ -280,6 +292,9 @@
       ],
       "Delete logo": [
         "Hapus logo"
+      ],
+      "Delete logs": [
+        "Hapus log"
       ],
       "Delete member": [
         "Hapus anggota"
@@ -305,6 +320,15 @@
       "Disable": [
         "Nonaktifkan"
       ],
+      "Disable recovery phrase": [
+        "Nonaktifkan frasa pemulihan"
+      ],
+      "Disable recovery phrase?": [
+        "Nonaktifkan frasa pemulihan?"
+      ],
+      "Disable security events": [
+        "Nonaktifkan peristiwa keamanan"
+      ],
       "Discard": [
         "Buang"
       ],
@@ -322,6 +346,9 @@
       ],
       "Domain name": [
         "Nama domain"
+      ],
+      "Don't show again": [
+        "Jangan tampilkan lagi"
       ],
       "Done": [
         "Selesai"
@@ -343,6 +370,9 @@
       ],
       "Download our CSV template": [
         "Unduh template CSV kami"
+      ],
+      "Download recovery file": [
+        "Unduh berkas pemulihan"
       ],
       "Edit": [
         "Sunting"
@@ -434,8 +464,14 @@
       "Forgot recovery method?": [
         "Lupa metode pemulihan?"
       ],
+      "Generate new recovery phrase": [
+        "Buat frasa pemulihan baru"
+      ],
       "Generate password": [
         "Hasilkan kata sandi"
+      ],
+      "Generate recovery phrase": [
+        "Hasilkan frasa pemulihan"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Dapatkan ${ planName } dengan harga ${ priceCoupon }"
@@ -590,6 +626,12 @@
       "Mark as favorite": [
         "Tandai sebagai favorit"
       ],
+      "Mark as open": [
+        "Tandai sebagai terbuka"
+      ],
+      "Mark as resolved": [
+        "Tandai sebagai terselesaikan"
+      ],
       "More benefits": [
         "Lebih banyak manfaat"
       ],
@@ -683,11 +725,20 @@
       "refresh the page": [
         "muat ulang halaman"
       ],
+      "Reject": [
+        "Tolak"
+      ],
+      "Reload": [
+        "Muat ulang"
+      ],
       "Remove": [
         "Hapus"
       ],
       "Remove all members": [
         "Keluarkan semua anggota"
+      ],
+      "Remove all other devices": [
+        "Hapus seluruh perangkat lainnya"
       ],
       "Remove bonuses": [
         "Hapus bonus"
@@ -760,6 +811,9 @@
       ],
       "Revoke ${ name }": [
         "Cabut ${ name }"
+      ],
+      "Revoke all other sessions": [
+        "Cabut seluruh sesi lainnya"
       ],
       "Revoke invitation": [
         "Cabut undangan"
@@ -835,6 +889,9 @@
       ],
       "Set recovery methods": [
         "Atur metode pemulihan"
+      ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
       ],
       "Set up 2FA": [
         "Atur 2FA"
@@ -968,6 +1025,15 @@
       "Unlock": [
         "Membuka"
       ],
+      "Unlock data": [
+        "Buka kunci data"
+      ],
+      "Update recovery file": [
+        "Perbarui berkas pemulihan"
+      ],
+      "Update recovery phrase": [
+        "Perbarui frasa pemulihan"
+      ],
       "Upgrade": [
         "Tingkatkan"
       ],
@@ -985,6 +1051,9 @@
       ],
       "Upgrade to Professional": [
         "Tingkatkan ke Professional"
+      ],
+      "Upgrade to view all": [
+        "Tingkatkan paket untuk melihat semua"
       ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
@@ -1055,14 +1124,29 @@
       "View": [
         "Lihat"
       ],
+      "View all reports": [
+        "Lihat seluruh laporan"
+      ],
       "View invoice": [
         "Lihat faktur"
       ],
       "View plans details": [
         "Lihat rincian paket"
       ],
+      "Void": [
+        "Batal"
+      ],
+      "Void all recovery files": [
+        "Anulir seluruh berkas pemulihan"
+      ],
+      "Void all recovery files?": [
+        "Anulir seluruh berkas pemulihan?"
+      ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
+      ],
+      "Wipe": [
+        "Hapus"
       ],
       "Your server will be provisioned in the next days": [
         "Server Anda akan disediakan dalam beberapa hari ke depan"
@@ -1077,6 +1161,11 @@
     "action": {
       "Resuming forward": [
         "Melanjutkan penerusan email"
+      ]
+    },
+    "Action for user session": {
+      "Revoke": [
+        "Cabut"
       ]
     },
     "Action subscription": {
@@ -1272,137 +1361,6 @@
         "Email baru"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Dapatkan penawaran ini"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "200 GB storage": [
-        "Ruang penyimpanan 200 GB"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB penyimpanan terenkripsi"
-      ],
-      "Add unlimited credit cards": [
-        "Tambahkan Tanpa batasan jumlah kartu kredit"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Semua fitur premium dari ${ BRAND_NAME } Mail, Pass, VPN, Drive, dan Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokir iklan, pelacak, dan malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Diskon didasarkan pada harga bulanan standar. Pada akhir siklus tagihan, langganan Anda akan diperpanjang dengan tarif tahunan standar."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Gandakan ruang penyimpanan terenkripsi Anda – dapatkan 1 TB untuk seluruh data Anda"
-      ],
-      "Encrypted password manager": [
-        "Pengelola sandi terenkripsi"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Ini adalah hadiah eksklusif untuk merayakan perjalanan kita bersama."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming berkecepatan tinggi dengan VPN"
-      ],
-      "of privacy": [
-        "privasi"
-      ],
-      "Online document editor": [
-        "Penyunting dokumen online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privasi online untuk hingga 2 orang"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privasi online untuk seluruh keluarga Anda (hingga 6 pengguna)"
-      ],
-      "Protect up to 10 devices": [
-        "Lindungi hingga 10 perangkat"
-      ],
-      "Recover previous file versions": [
-        "Pulihkan versi berkas sebelumnya"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Dapatkan potongan harga besar-besaran untuk fitur premium Drive dengan diskon waktu terbatas."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Dapatkan potongan harga besar-besaran untuk berbagai fitur Mail premium dengan diskon waktu terbatas."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Dapatkan potongan harga besar-besaran untuk berbagai fitur Pass premium dengan diskon waktu terbatas."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Dapatkan potongan harga besar-besaran untuk berbagai fitur VPN premium dengan diskon waktu terbatas."
-      ],
-      "Save time with built-in 2FA": [
-        "Hemat waktu dengan 2FA yang tersedia secara bawaan"
-      ],
-      "Secure email with unlimited aliases": [
-        "Email aman dengan alias tidak terbatas"
-      ],
-      "Select any server": [
-        "Pilih server mana saja"
-      ],
-      "Share passwords easily": [
-        "Bagikan kata sandi dengan mudah"
-      ],
-      "Short @pm.me address": [
-        "Alamat pendek @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Tonton konten streaming favorit Anda"
-      ],
-      "thanks to you": [
-        "berkat Anda"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Lipat tigakan penyimpanan terenkripsi Anda – dapatkan 3 TB untuk semua data Anda"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Use your own email domain": [
-        "Gunakan domain email milik Anda sendiri"
-      ],
-      "years": [
-        "tahun"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Penawaran Ulang Tahun"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } bulan"
-      ],
-      "/ month": [
-        "/ bulan"
-      ],
-      "12 months": [
-        "12 bulan"
-      ],
-      "15 months": [
-        "15 bulan"
-      ],
-      "24 months": [
-        "24 bulan"
-      ],
-      "30 months": [
-        "30 bulan"
-      ],
-      "for ${ durationDeal }": [
-        "untuk ${ durationDeal }"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan mengoreksi email Anda."
@@ -1510,6 +1468,11 @@
       ],
       "Missing keys": [
         "Kunci yang hilang"
+      ]
+    },
+    "Badge for user sessions table": {
+      "Current session": [
+        "Sesi saat ini"
       ]
     },
     "bf2023: Action": {
@@ -3199,6 +3162,9 @@
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Tambahkan folder dan berkas ke ${ DRIVE_APP_NAME } dan undang anggota tim untuk meninjau atau menyunting berkas ini."
       ],
+      "Also included": [
+        "Turut meliputi"
+      ],
       "Automatically forward incoming email to another email address.": [
         "Meneruskan email yang masuk ke alamat email lainnya secara otomatis."
       ],
@@ -3210,6 +3176,9 @@
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
         "Buat Gateway untuk memberikan pengguna Anda akses ke sumber daya IT Anda melalui server khusus."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Buat pertemuan Zoom dan tambahkan rincian untuk bergabung ke acara Anda hanya dengan sekali klik."
       ],
       "Create groups you can email with a single address.": [
         "Buat grup yang dapat Anda kirimi email dengan satu alamat."
@@ -3228,6 +3197,15 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sinkronkan berkas ke layanan cloud dari desktop Anda dengan mudah dan akses berkas ini dari perangkat seluler Anda."
+      ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Aktifkan rekaman peristiwa terperinci dan ${ PROTON_SENTINEL_NAME } untuk mengakses rangkaian fitur ini"
+      ],
+      "Enable detailed events to access these features": [
+        "Aktifkan rekaman peristiwa terperinci untuk mengakses rangkaian fitur ini"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Anjurkan penggunaan autentikasi dua faktor di dalam organisasi Anda untuk keamanan yang lebih."
@@ -3252,6 +3230,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Dapatkan pemberitahuan apabila kata sandi atau data lain Anda terbocorkan dari layanan pihak ketiga."
+      ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Dapatkan saldo hingga ${ credits } dengan mengundang teman ke ${ BRAND_NAME }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Bantu tim Anda menyimpan kata sandi bisnis dan informasi klien yang sensitif secara aman."
@@ -3294,9 +3275,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Anda akan menerima ${ referralInfo.referrerRewardAmount } dalam saldo ${ BRAND_NAME } pada saat pengguna yang Anda undang mendaftarkan diri mereka ke paket ${ BRAND_NAME }, dan mereka juga akan memperoleh saldo senilai ${ referralInfo.refereeRewardAmount } sebagai imbalannya."
       ]
     },
     "description": {
@@ -3823,6 +3801,9 @@
       "Failed to add group member": [
         "Anggota grup gagal ditambahkan"
       ],
+      "Failed to load OAuth modal.": [
+        "Modal OAuth gagal dimuat."
+      ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
       ],
@@ -4117,6 +4098,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Nama folder terlalu panjang. Mohon pilih nama lain."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Kunci-kunci yang ada dalam berkas pemulihan Anda tidak dapat diverifikasi. Silakan hubungi layanan dukungan."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Kunci yang terdapat pada berkas pemulihan Anda tidak dapat diverifikasi. Harap unggah berkas pemulihan Anda secara satu persatu untuk keterangan lebih lanjut."
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Nama label tidak valid. Silakan pilih nama lain."
       ],
@@ -4174,6 +4161,12 @@
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
+      ],
+      "Uploaded files are not valid private keys. Please verify and try again.": [
+        "Berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
+      ],
       "Username must begin with a letter or digit": [
         "Nama pengguna harus dimulai dengan huruf atau angka"
       ],
@@ -4215,6 +4208,9 @@
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
+      ],
+      "Zero keys reactivated": [
+        "Tidak ada kunci yang diaktifkan ulang"
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
@@ -4370,6 +4366,9 @@
     "Error message": {
       "App currently unavailable": [
         "Aplikasi saat ini tidak tersedia"
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "Mintalah adminstrator Anda untuk mengaktifkan Monitor Aktivitas."
       ],
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
@@ -5086,6 +5085,9 @@
       "Device": [
         "Perangkat"
       ],
+      "Domain": [
+        "Domain"
+      ],
       "Enter your email address": [
         "Masukkan alamat email Anda"
       ],
@@ -5109,6 +5111,9 @@
       ],
       "Organization key fingerprint": [
         "Sidik jari kunci organisasi"
+      ],
+      "Password ends with": [
+        "Kata sandi berakhir dengan"
       ],
       "Payment details": [
         "Rincian pembayaran"
@@ -5142,6 +5147,9 @@
       ],
       "User": [
         "Pengguna"
+      ],
+      "Username": [
+        "Nama pengguna"
       ]
     },
     "Header for addresses table": {
@@ -5512,6 +5520,23 @@
         "Pilih ${ boldExport } untuk mengekspor kalender sebagai berkas ICS."
       ]
     },
+    "Import provider": {
+      "Import from ${ provider }": [
+        "Impor dari ${ provider }"
+      ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from other": [
+        "Impor dari layanan lain"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
+      ],
+      "Import from Yahoo": [
+        "Impor dari Yahoo"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -5541,6 +5566,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } tidak pernah membagikan informasi Anda dengan pihak ketiga. Data yang tersedia bersumber dari analisis mandiri ${ BRAND_NAME } dan Constella Intelligence."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
@@ -5604,6 +5632,9 @@
       ],
       "${ number } server": [
         "${ number } server"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } berkas yang diunggah bukan merupakan kunci privat yang valid. Silakan verifikasi keabsahan kunci dan coba lagi."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
@@ -5707,9 +5738,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Impor kode yang telah Anda miliki** dari aplikasi 2FA lainnya, seperti Google Authenticator"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Undang teman Anda** ke ${ BRAND_NAME } dengan tautan rujukan Anda."
-      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Langkah 1:** Undang teman Anda ke ${ BRAND_NAME } dengan tautan rujukan Anda."
       ],
@@ -5752,6 +5780,12 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Berkas pemulihan memungkinkan Anda untuk mengakses dan melihat data Anda setelah pemulhan akun berlangsung"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
       ],
@@ -5763,6 +5797,9 @@
       ],
       "Accounts": [
         "Akun"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
       "active": [
         "aktif"
@@ -5818,6 +5855,9 @@
       "All inactive members deleted": [
         "Seluruh pengguna yang tidak aktif dihapus"
       ],
+      "All keys successfully reactivated": [
+        "Seluruh kunci berhasil diaktifkan ulang"
+      ],
       "All members have been added.": [
         "Semua anggota telah ditambahkan."
       ],
@@ -5857,6 +5897,9 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Alias email berfungsi seperti alamat email pada umumnya, namun alias akan mengurangi spam dan menjaga agar alamat email asli dan identitas diri Anda tersembunyi."
+      ],
       "and": [
         "dan"
       ],
@@ -5871,6 +5914,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Apakah Anda yakin untuk memberikan hak administratif kepada pengguna ini?"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Apakah Anda yakin ingin menghapus seluruh log Anda secara permanen?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
@@ -5937,6 +5983,12 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Dengan menonaktifkan pemantauan peristiwa keamanan, Anda juga akan menghapus seluruh riwayat Anda. Apakah Anda yakin ingin menonaktifkan fitur ini?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -6064,6 +6116,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
+      "Data locked": [
+        "Data terkunci"
+      ],
       "Data recoverable on this device": [
         "Data pada perangkat ini dapat dipulihkan"
       ],
@@ -6120,6 +6175,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "JANGAN lupakan kata sandi ini. Apabila Anda lupa, Anda tidak lagi akan dapat mengelola organisasi Anda."
+      ],
+      "Do you want to revoke all other sessions than the current one?": [
+        "Apakah Anda ingin mencabut seluruh sesi kecuali sesi ini?"
       ],
       "Domain ownership failed verification.": [
         "Kepemilikan domain gagal diverifikasi."
@@ -6205,6 +6263,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Aktifkan pembaruan otomatis untuk mempertahankan akses ke fitur premium Anda."
       ],
+      "Enable email notifications": [
+        "Aktifkan notifikasi email"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktifkan single sign-on untuk menjaga organisasi Anda tetap aman"
       ],
@@ -6216,6 +6277,9 @@
       ],
       "Enabling auto-deletion…": [
         "Mengaktifkan penghapusan otomatis…"
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Mengaktifkan ulang frasa pemulihan akan membuat frasa pemulihan baru."
       ],
       "End date": [
         "Tanggal akhir"
@@ -6304,6 +6368,9 @@
       "expires ${ expirationDate }": [
         "kedaluwarsa ${ expirationDate }"
       ],
+      "Failed to fetch logs.": [
+        "Log gagal diperoleh."
+      ],
       "Fill in user details": [
         "Isi rincian pengguna"
       ],
@@ -6331,14 +6398,17 @@
       "Gateways": [
         "Gateway"
       ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Dengan menghasilkan frasa pemulihan baru, frasa pemulihan Anda yang terdahulu akan dinonaktifkan."
+      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Dapatkan ${ AUTHENTICATOR_APP_NAME } untuk seluruh perangkat Anda."
       ],
       "Get ${ upsellPlanName }": [
         "Dapatkan ${ upsellPlanName }"
       ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Dapatkan **saldo senilai ${ referrerRewardAmount }** untuk setiap teman yang mendaftar."
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Dapatkan notifikasi apabila kata sandi atau data pribadi Anda lainnya dibocorkan. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
         "Mulai"
@@ -6376,6 +6446,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "Apabila paket ini tidak sesuai untuk Anda, kami akan mengembalikan uang Anda."
       ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Apabila hal ini disebabkan oleh pengaturan ulang kata sandi yang telah lama, Anda dapat mengatur agar pesan ini tidak lagi muncul ke depannya"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
@@ -6411,6 +6484,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda lanjut menurunkan akun, Anda akan kehilangan akses ke berbagai fitur berbayar ${ VPN_APP_NAME }."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Apabila Anda baru saja mengatur ulang kata sandi Anda, Anda dapat menggunakan salah satu metode pemulihan untuk membuka kunci data Anda"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Apabila organisasi Anda diisi oleh sosok publik, menangani data yang sensitif, atau berpotensi untuk menjadi target serangan siber, Anda sangat dianjurkan untuk mengaktifkan ${ PROTON_SENTINEL_NAME } bagi semua orang di organisasi Anda."
@@ -6499,6 +6575,9 @@
       "Invited": [
         "Diundang"
       ],
+      "It appears some of your data is encrypted and locked.": [
+        "Sepertinya sebagian data Anda terenkripsi dan terkunci."
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Perubahan negara server akan memakan waktu 10 hari. Oleh karenanya, pastikan pilihan Anda sudah benar."
       ],
@@ -6562,6 +6641,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Jadikan informasi seputar diri Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
+      ],
       "Keys created": [
         "Kunci dihasilkan"
       ],
@@ -6588,6 +6670,9 @@
       ],
       "Learn more about single sign-on": [
         "Pelajari lebih lanjut mengenai single sign-on"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Pelajari apa yang harus dilakukan ${ dataLeakedLink }"
       ],
       "Let's get started by pressing the New group button above": [
         "Mari kita mulai dengan mengeklik tombol Grup baru di atas"
@@ -6661,6 +6746,9 @@
       "Monitor accounts": [
         "Monitor akun"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Pantau dan audit upaya autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME } Anda."
+      ],
       "Multi-user support not enabled.": [
         "Dukungan multi-pengguna tidak diaktifkan."
       ],
@@ -6678,6 +6766,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield merupakan fitur pemblokir iklan milik ${ VPN_APP_NAME } yang melindungi perangkat Anda dari iklan, pelacak, dan malware."
       ],
       "New": [
         "Baru"
@@ -6705,6 +6796,9 @@
       ],
       "No Gateways yet": [
         "Belum ada Gateway"
+      ],
+      "No logs yet.": [
+        "Belum ada log."
       ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
@@ -6735,6 +6829,9 @@
       ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
+      ],
+      "One time import": [
+        "Impor sekali jadi"
       ],
       "Open source": [
         "Open source"
@@ -6774,6 +6871,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Berhubung terdapat admin-admin lain pada organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru ini kepada mereka."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
       "Paid for a plan": [
         "Dibayar untuk paket"
@@ -6844,6 +6944,9 @@
       "Please fill in all required fields.": [
         "Silakan ini seluruh kolom yang dibutuhkan."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
+      ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
       ],
@@ -6864,6 +6967,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Silakan tunggu hingga perubahan Anda tersinkron dengan server."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "Plus ${ numOfBreaches } kebocoran lainnya"
       ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
@@ -6910,8 +7016,29 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Direkomendasikan pada perangkat yang Anda percayai. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery file downloaded": [
+        "Berkas pemulihan diunduh"
+      ],
+      "Recovery files have been voided": [
+        "Berkas-berkas pemulihan telah dianulir"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap tersimpan pada perangkat ini kecuali Anda memilih untuk menghapusnya."
+      ],
+      "Recovery phrase copied to clipboard": [
+        "Frasa pemulihan disalin ke papan klip"
+      ],
+      "Recovery phrase downloaded": [
+        "Frasa pemulihan diunduh"
+      ],
+      "Recovery phrase has been disabled": [
+        "Frasa pemulihan telah dinonaktifkan"
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        "Frasa pemulihan tidak terhubung dengan kunci mana pun."
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        "Frasa pemulihan tidak terhubung dengan kunci mana pun yang telah usang."
       ],
       "Referral link copied to your clipboard": [
         "Tautan rujukan disalin ke papan klip"
@@ -7054,6 +7181,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
+      "Some keys successfully reactivated": [
+        "Sebagian kunci berhasil diaktifkan ulang"
+      ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Sebagian server dapat tidak muncul pada daftar di atas. Carilah berdasarkan nama (mis. AT#62) untuk mencari server ini."
       ],
@@ -7105,6 +7235,9 @@
       "Summary": [
         "Rangkuman"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Dukungan untuk memantau domain khusus dan alamat email non-${ BRAND_NAME } akan segera hadir."
+      ],
       "support team": [
         "tim dukungan"
       ],
@@ -7129,11 +7262,20 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Terima kasih karena telah mendukung misi kami untuk mewujudkan internet yang mengutamakan privasi dan kebebasan."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Pesan ${ boldDataLocked } tidak akan lagi muncul, namun Anda akan tetap dapat membuka kunci data Anda melalui ${ encryptionAndKeysLink }."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web merupakan bagian tersembunyi dari internet di mana informasi pribadi yang dicuri, seperti identitas diri, dapat diperjualbelikan."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
       ],
       "The following address is invalid.": [
         "Alamat berikut tidak valid."
@@ -7195,11 +7337,23 @@
       "This file is too large to preview": [
         "Berkas ini terlalu besar untuk dipratinjau"
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Berikut ini adalah 12 kata yang telah ditentukan sebagai frasa pemulihan Anda."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Nama ini adalah nama atau julukan organisasi yang akan dilihat oleh para pengguna Anda. Anda dapat mengubah nama ini kapan saja."
       ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Ini adalah berkas pemulihan atau kunci enkripsi yang telah Anda simpan sebelumnya."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Ini adalah kunci enkripsi yang telah Anda simpan sebelumnya."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Alamat ini kini merupakan ${ defaultEmailAddress } Anda untuk mengirim pesan baru."
+      ],
+      "This is the password you used before the password reset.": [
+        "Berikut ini adalah kata sandi yang Anda gunakan sebelum kata sandi Anda diatur ulang."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Pesan ini tidak akan tersampaikan ke tim layanan dukungan. Apabila Anda memiliki masalah dengan layanan kami atau memerlukan tindakan lebih lanjut dari pihak kami, ${ supportLink }."
@@ -7219,6 +7373,9 @@
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Ini akan menonaktifkan autentikasi dua faktor, termasuk metode aplikasi autentikator dan kunci keamanan."
       ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Tindakan ini akan menonaktifkan frasa pemulihan Anda saat ini. Anda tidak akan lagi dapat menggunakan frasa pemulihan tersebut untuk mengakses akun Anda atau mendekripsi data-data Anda."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
       ],
@@ -7230,6 +7387,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Tindakan ini akan menolak izin akses perangkat **${ name }** yang mencoba untuk masuk ke akun ${ BRAND_NAME } Anda pada **${ date }**."
       ],
       "This will remove any enabled 2FA methods.": [
         "Tindakan ini akan menonaktifkan seluruh metode 2FA yang terpasang."
@@ -7252,6 +7412,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan autentikasi dua faktor."
       ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Tindakan ini akan melepas tautan perangkat **${ name } (yang dibuat pada ${ date })** dari akun ${ BRAND_NAME } Anda."
+      ],
       "This will wipe all logs for your organization members.": [
         "Tindakan ini akan menghapus seluruh log untuk anggota organisasi Anda."
       ],
@@ -7273,8 +7436,14 @@
       "To continue to ${ product }": [
         "Untuk melanjutkan ke ${ product }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Agar layanan kami terus berkembang, kami mengumpulkan berbagai data yang digunakan untuk memantau kinerja aplikasi kami dari waktu ke waktu. Informasi ini tidak akan dibagikan kepada layanan pihak ketiga mana pun."
+      ],
       "To create your first user group, go to": [
         "Untuk membuat grup pengguna pertama Anda, tuju"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Untuk mendekripsi dan mengakses data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
@@ -7330,6 +7499,9 @@
       "Unable to check gateways monitoring current status.": [
         "Tidak dapat memeriksa status pemantauan gateway saat ini."
       ],
+      "Unable to verify recovery file signature. Please contact support.": [
+        "Tidak dapat memverifikasi tanda tangan berkas pemulihan. Silakan hubungi layanan dukungan."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
       ],
@@ -7338,6 +7510,9 @@
       ],
       "Unknown event type": [
         "Jenis peristiwa tidak diketahui"
+      ],
+      "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
+        "Selama Anda tidak keluar dari akun atau mengubah kata sandi Anda, sesi Anda akan tetap aktif. Seluruh sesi akan berakhir setelah 60 hari tidak aktif."
       ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
@@ -7372,8 +7547,14 @@
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Unggah logo organisasi Anda untuk mengangkat identitas merek Anda dan menciptakan pengalaman yang personal bagi para pengguna Anda."
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Berkas terunggah bukan kunci privat yang valid. Mohon periksa dan coba lagi."
+      ],
       "Uppercase and lowercase letters": [
         "Huruf besar dan kecil"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Gunakan pengelola kata sandi untuk menghasilkan dan menyimpan kata sandi Anda secara aman, yang menjamin kata sandi yang kuat dan entri masuk yang lebih mudah."
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Gunakan metode pemulihan untuk menonaktifkan metode autentikasi dua faktor Anda."
@@ -7447,6 +7628,9 @@
       "VPN with dedicated servers and IP addresses": [
         "VPN dengan server dan alamat IP khusus"
       ],
+      "Want to learn more?": [
+        "Ingin mempelajari lebih lanjut?"
+      ],
       "Warning:": [
         "Peringatan:"
       ],
@@ -7461,6 +7645,9 @@
       ],
       "We generated a strong password for you": [
         "Kami telah menghasilkan kata sandi yang kuat untuk Anda"
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Kami memantau dark web untuk melihat apakah informasi pribadi Anda (seperti alamat email atau kata sandi yang digunakan pada layanan pihak ketiga) telah bocor atau disusupi."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
@@ -7482,6 +7669,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Kami menyimpan informasi pemulihan pada perangkat yang Anda percaya secara aman untuk mencegah Anda kehilangan data"
       ],
       "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
         "Kami menyimpan berkas cadangan pada browser ini karena Anda mengizinkan pemulihan data pada ${ deviceLink }. Apabila berkas cadangan ini valid, Anda akan segera memperoleh kembali akses menuju data terenkripsi Anda baik secara parsial ataupun menyeluruh."
@@ -7717,6 +7907,12 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Anda tidak akan dapat menetapkan ulang server ini ke negara lain selama 10 hari."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Anda tidak akan lagi dapat memulihkan data yang terkunci dengan menggunakan berkas pemulihan yang Anda unduh."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Anda tidak akan dapat memulihkan data yang terkunci dengan menggunakan berkas pemulihan yang Anda unduh. Tindakan ini juga akan menonaktifkan pemulihan berbasis perangkat."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Anda kemudian akan ditagih setiap ${ renewCycle } bulan pada harga ${ renewAmountStr }."
       ],
@@ -7759,11 +7955,11 @@
       "Your free trial includes 1 dedicated server.": [
         "Uji coba Anda meliputi 1 server khusus."
       ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Teman Anda memperoleh **2 minggu gratis** untuk paket yang mereka pilih."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informasi Anda aman di tangan kami. Kami hanya akan menghubungi Anda pada saat tindak lanjut Anda dibutuhkan untuk menghadirkan layanan kami."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
@@ -7785,6 +7981,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
+      ],
+      "Your recovery phrase": [
+        "Frasa pemulihan Anda"
+      ],
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Frasa pemulihan Anda tersusun atas 12 kata yang terangkai dalam urutan yang spesifik."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Paket terjadwal Anda dimulai pada ${ renewalTime } dan akan diperbarui secara otomatis setiap ${ cycle } bulan."
@@ -7818,6 +8020,12 @@
       ]
     },
     "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
       "Optional": [
         "Opsional"
       ],
@@ -8039,6 +8247,12 @@
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
       ],
+      "Allow recovery by recovery phrase": [
+        "Izinkan pemulihan akun melalui frasa pemulihan"
+      ],
+      "Allow recovery using a trusted device": [
+        "Izinkan pemulihan melalui perangkat yang dipercaya"
+      ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
       ],
@@ -8134,6 +8348,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
+      "Collect usage diagnostics": [
+        "Kumpulkan informasi diagnostik"
       ],
       "Colors": [
         "Warna"
@@ -8273,8 +8490,14 @@
       "Enabled": [
         "Aktif"
       ],
+      "Enter password": [
+        "Masukkan kata sandi"
+      ],
       "Enter the code displayed on your TV": [
         "Masukkan kode yang tertera pada TV Anda"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "Masukkan kata sandi untuk kunci dengan kode sidik jari berikut: ${ fingerprintCode }"
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
@@ -8290,6 +8513,9 @@
       ],
       "Expires": [
         "Kedaluwarsa"
+      ],
+      "File": [
+        "Berkas"
       ],
       "First name": [
         "Nama depan"
@@ -8522,6 +8748,9 @@
       "Phone number": [
         "Nomor telepon"
       ],
+      "Phrase": [
+        "Frasa"
+      ],
       "Phrase consists of 12 unique words in a specific order": [
         "Frasa tersusun atas 12 kata berbeda yang terangkai dalam urutan yang spesifik"
       ],
@@ -8546,6 +8775,9 @@
       "Postal code": [
         "Kode pos"
       ],
+      "Previous password": [
+        "Kata sandi sebelumnya"
+      ],
       "Proration": [
         "Prorasi"
       ],
@@ -8557,6 +8789,9 @@
       ],
       "Recovery email address": [
         "Alamat surel pemulihan"
+      ],
+      "Recovery file": [
+        "Berkas pemulihan"
       ],
       "Recovery phone number": [
         "Nomor telepon pemulihan"
@@ -8596,6 +8831,9 @@
       ],
       "Second password": [
         "Kata sandi kedua"
+      ],
+      "Send crash reports": [
+        "Kirim laporan crash"
       ],
       "Sequences": [
         "Urutan"
@@ -8663,6 +8901,12 @@
       "Type": [
         "Jenis"
       ],
+      "Upload 1 or more encryption keys": [
+        "Unggah setidaknya 1 kunci enkripsi"
+      ],
+      "Upload 1 or more recovery files or encryption keys": [
+        "Unggah setidaknya 1 berkas pemulihan atau kunci enkripsi"
+      ],
       "Uppercase and lowercase letters": [
         "Huruf besar dan huruf kecil"
       ],
@@ -8728,8 +8972,14 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Pemulihan berbasis perangkat"
+      ],
       "Recovery phone number": [
         "Nomor telepon pemulihan"
+      ],
+      "Recovery phrase": [
+        "Frasa pemulihan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8857,8 +9107,14 @@
       "Create account": [
         "Buat akun"
       ],
+      "Create an alias": [
+        "Buat alias"
+      ],
       "Don't have access to your 2FA?": [
         "Tidak memiliki akses ke 2FA Anda?"
+      ],
+      "Encryption and keys": [
+        "Enkripsi dan kunci"
       ],
       "Enforcing 2FA for organizations": [
         "Mewajibkan 2FA untuk organisasi"
@@ -8872,6 +9128,12 @@
       "Forgot username?": [
         "Lupa nama pengguna?"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Dapatkan ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Dapatkan ${ VPN_APP_NAME }"
+      ],
       "Groups": [
         "Grup"
       ],
@@ -8880,6 +9142,9 @@
       ],
       "here": [
         "di sini"
+      ],
+      "How does monitoring work?": [
+        "Bagaimana cara pemantauan ini bekerja?"
       ],
       "How to add users": [
         "Cara menambahkan pengguna"
@@ -8917,6 +9182,9 @@
       "How to share via email": [
         "Cara berbagi via email"
       ],
+      "How to unlock data": [
+        "Bagaimana cara membuka kunci data"
+      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Cara menggunakan ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -8929,8 +9197,14 @@
       "How to use Groups": [
         "Cara menggunakan Grup"
       ],
+      "if your data is leaked": [
+        "apabila data Anda sampai dibocorkan"
+      ],
       "Learn more": [
         "Lebih lanjut"
+      ],
+      "Learn more about data recovery": [
+        "Pelajari lebih lanjut mengenai pemulihan data"
       ],
       "Not activated": [
         "Belum diaktifkan"
@@ -8964,9 +9238,6 @@
       ],
       "Terms": [
         "Ketentuan layanan"
-      ],
-      "Terms and conditions": [
-        "Syarat dan ketentuan"
       ],
       "Trouble signing in?": [
         "Mengalami masalah saat akan masuk?"
@@ -9131,8 +9402,14 @@
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Monitor aktivitas"
+      ],
       "Enable ${ reason }": [
         "Aktifkan ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Aktifkan rekaman peristiwa terperinci"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -9461,11 +9738,26 @@
       "${ size } storage per user": [
         "Ruang penyimpanan ${ size } per pengguna"
       ],
+      "1 TB secure storage": [
+        "Ruang penyimpanan aman 1 TB"
+      ],
       "1 user": [
         "1 pengguna"
       ],
+      "10 email addresses/aliases": [
+        "10 alamat email/alias"
+      ],
+      "10 more premium features": [
+        "10 fitur premium lainnya"
+      ],
       "10-year file version history": [
         "Riwayat versi berkas 10 tahun"
+      ],
+      "15 GB storage": [
+        "Penyimpanan 15 GB"
+      ],
+      "200 GB of storage": [
+        "Ruang penyimpanan 200 GB"
       ],
       "24/7 account management support": [
         "Layanan pengelolaan akun 24/7"
@@ -9485,11 +9777,17 @@
       "Administration Panel": [
         "Panel Administrasi"
       ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Fitur alias lanjutan (diberdayakan oleh SimpleLogin)"
       ],
       "Advanced network security": [
         "Keamanan jaringan lanjutan"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Seluruh produk dan fitur ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9602,6 +9900,9 @@
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
       ],
+      "Generate emails with a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
+      ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
       ],
@@ -9662,6 +9963,15 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Private photo backup": [
+        "Pencadangan foto pribadi"
+      ],
+      "Proofread and refine your emails": [
+        "Periksa dan sempurnakan email Anda"
+      ],
+      "Quickly craft replies": [
+        "Tulis pesan balasan dengan cepat"
+      ],
       "Recover previous file versions": [
         "Pulihkan versi berkas sebelumnya"
       ],
@@ -9674,11 +9984,17 @@
       "Router support": [
         "Dukungan router"
       ],
+      "Save time emailing": [
+        "Hemat waktu dalam mengirim email"
+      ],
       "Schedule and snooze emails for any time": [
         "Jadwalkan dan tunda email kapan saja"
       ],
       "Secure Core servers": [
         "Server Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Penyimpanan dan pembagian berkas yang aman"
       ],
       "Secure link sharing": [
         "Pembagian tautan aman"
@@ -9718,6 +10034,9 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa pencatatan yang ketat"
+      ],
+      "Support for up to 2 users": [
+        "Dukungan hingga 2 pengguna"
       ],
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
@@ -9810,6 +10129,17 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domain email khusus"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -10342,6 +10672,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Kode pemulihan 2FA terunduh"
+      ],
+      "Email notifications have been disabled": [
+        "Notifikasi email telah dinonaktifkan"
+      ],
+      "Email notifications have been enabled": [
+        "Notifikasi email telah diaktifkan"
       ],
       "Invalid code": [
         "Kode tidak valid"
@@ -11885,8 +12221,47 @@
       ]
     },
     "Safety review": {
+      "Check account security": [
+        "Periksa keamanan akun"
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Apabila Anda kehilangan rincian entri masuk Anda dan perlu untuk mengatur ulang akun, **sangat penting** bagi Anda untuk memiliki **metode pemulhan akun dan data** yang aktif. Apabila tidak, Anda berisiko untuk tidak lagi dapat mengakses email, kontak, berkas, atau kata sandi yang Anda miliki."
+      ],
       "Review account safety": [
         "Tinjau keamanan akun"
+      ],
+      "Safeguard account now": [
+        "Amankan akun sekarang juga"
+      ],
+      "Safeguard your account": [
+        "Amankan akun Anda"
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Anda berisiko untuk kehilangan akses ke akun dan data Anda."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Anda berisiko untuk kehilangan akses ke data Anda."
+      ],
+      "You have recommended actions to safeguard your account further.": [
+        "Anda memiliki tindakan yang disarankan untuk melindungi akun Anda lebih jauh."
+      ],
+      "You have recommended actions.": [
+        "Anda memiliki tindakan yang disarankan."
+      ],
+      "Your account and data can be recovered": [
+        "Akun dan data Anda dapat dipulihkan"
+      ],
+      "Your account and data can be recovered.": [
+        "Akun dan data Anda dapat dipulihkan."
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Akun dan data Anda dapat dipulihkan. Periksa bahwa Anda masih dapat mengakses metode pemulihan Anda."
+      ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Akun dan data Anda dapat dipulihkan. Anda memiliki tindakan yang disarankan untuk melindungi akun Anda lebih jauh."
+      ],
+      "Your account is fully secure.": [
+        "Akun Anda sepenuhnya aman."
       ]
     },
     "saml: Action": {
@@ -12059,6 +12434,17 @@
         "Unggah berkas CSV"
       ]
     },
+    "Select files": {
+      "Browse": [
+        "Telusur"
+      ],
+      "Upload": [
+        "Unggah"
+      ],
+      "Upload additional files": [
+        "Unggah berkas tambahan"
+      ]
+    },
     "Select invoice document": {
       "Credit note": [
         "Catatan saldo"
@@ -12093,6 +12479,11 @@
       ],
       "to be deleted": [
         "untuk dihapus ke depannya"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Memungkinkan Anda untuk menambahkan konferensi video Zoom ke acara kalender mana pun milik Anda"
       ]
     },
     "session_recovery:available:action": {
@@ -12212,6 +12603,24 @@
         "ubah kata sandi Anda sekarang"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Nonaktifkan pengaturan ulang kata sandi"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Pastikan Anda memiliki akses ke metode pemulihan."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Anda tidak akan lagi dapat meminta pengaturan ulang kata sandi dari menu pengaturan akun Anda."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Nonaktifkan pengaturan ulang kata sandi?"
+      ]
+    },
     "session_recovery:in_progress:action": {
       "Cancel password reset": [
         "Batalkan pengaturan ulang kata sandi"
@@ -12306,6 +12715,22 @@
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Anda akan dapat mengatur ulang kata sandi Anda dalam ${ gracePeriodHoursRemaining } jam"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Izinkan pengaturan ulang kata sandi dari menu pengaturan"
+      ],
+      "Request password reset": [
+        "Minta pengaturan ulang kata sandi"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Untuk menghapus izin atur ulang sandi, Anda harus mengatur metode pemulihan."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Untuk meningkatkan keamanan akun dan melindungi data Anda, Anda dapat meminta pengaturan ulang kata sandi dari menu pengaturan akun pada aplikasi web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12669,6 +13094,9 @@
       "added you to their ${ BRAND_NAME } organization": [
         "menambahkan Anda ke organisasi ${ BRAND_NAME } mereka"
       ],
+      "Approve": [
+        "Terima"
+      ],
       "Approve or deny it now": [
         "Setujui atau tolak permintaan ini sekarang"
       ],
@@ -12702,6 +13130,9 @@
       "Contact your administrator if the problem persists.": [
         "Hubungi administrator Anda apabila masalah ini terus berlanjut."
       ],
+      "Current device": [
+        "Perangkat saat ini"
+      ],
       "Delete ${ n } inactive user?": [
         "Hapus ${ n } pengguna yang tidak aktif?"
       ],
@@ -12716,6 +13147,15 @@
       ],
       "Devices available": [
         "Perangkat yang tersedia"
+      ],
+      "Devices management": [
+        "Pengelolaan perangkat"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "Apakah Anda ingin menghapus seluruh perangkat di samping yang Anda gunakan saat ini?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Masukkan kode konfirmasi yang kami kirim ke perangkat lainnya yang Anda miliki."
       ],
       "Enter the confirmation code we sent to this user.": [
         "Masukkan kode konfirmasi yang kami kirim ke pengguna ini."
@@ -12738,6 +13178,9 @@
       "Grant access to users?": [
         "Berikan akses ke pengguna?"
       ],
+      "If you didn't make this request, cancel it now.": [
+        "Apabila Anda tidak mengajukan hal ini, batalkan permintaan ini sekarang juga."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Jika Anda terkunci dari Akun ${ BRAND_NAME } Anda, kata sandi cadangan Anda akan memungkinkan Anda untuk masuk dan memulihkan data Anda."
       ],
@@ -12756,11 +13199,23 @@
       "New backup password": [
         "Kata sandi cadangan baru"
       ],
+      "No, it wasn’t me": [
+        "Tidak, itu bukan saya"
+      ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
         "Pengguna non-SSO (yang dihasilkan secara manual, bukan yang disediakan oleh Penyedia Identitas Anda) akan tetap dapat masuk ke organisasi Anda."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Setelah single sign-on dinonaktifkan untuk organisasi Anda:"
+      ],
+      "Reject": [
+        "Tolak"
+      ],
+      "Remove": [
+        "Hapus"
+      ],
+      "Remove all other devices": [
+        "Hapus seluruh perangkat lainnya"
       ],
       "Remove single sign-on": [
         "Hapus single sign-on"
@@ -12785,6 +13240,15 @@
       ],
       "Sign out and in again to change your backup password": [
         "Keluar dan masuk kembali untuk mengubah kata sandi cadangan Anda"
+      ],
+      "Sign-in confirmed": [
+        "Masuk dikonfirmasi"
+      ],
+      "Sign-in rejected": [
+        "Masuk ditolak"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Terdapat permintaan entri masuk pada perangkat lainnya. Apakah ini Anda?"
       ],
       "Single sign-on removed": [
         "Single sign-on dihapus"
@@ -12821,6 +13285,9 @@
       ],
       "Welcome": [
         "Selamat datang"
+      ],
+      "Yes, it was me": [
+        "Ya, itu saya"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Anda akan perlu untuk membuat pengguna baru secara manual untuk menambahkan pengguna ini ke organisasi Anda."
@@ -13475,6 +13942,12 @@
       "Credits added": [
         "Saldo ditambahkan"
       ],
+      "Device deleted": [
+        "Perangkat dihapus"
+      ],
+      "Device rejected": [
+        "Perangkat ditolak"
+      ],
       "Display name updated": [
         "Nama tampilan diperbarui"
       ],
@@ -13567,6 +14040,12 @@
       ],
       "Problem reported": [
         "Masalah dilaporkan"
+      ],
+      "Session revoked": [
+        "Sesi berhasil dicabut"
+      ],
+      "Sessions revoked": [
+        "Sesi berhasil dicabut"
       ],
       "SPF value copied to clipboard": [
         "Nilai SPF disalin ke papan klip"
@@ -13842,6 +14321,9 @@
       "Account": [
         "Akun"
       ],
+      "Account recovery": [
+        "Pemulihan akun"
+      ],
       "Account restricted": [
         "Akun dibatasi"
       ],
@@ -13935,6 +14417,9 @@
       "An address for each role": [
         "Alamat untuk masing-masing jabatan"
       ],
+      "App": [
+        "Aplikasi"
+      ],
       "Appearance": [
         "Tampilan"
       ],
@@ -13955,6 +14440,9 @@
       ],
       "Billing cycle": [
         "Siklus tagihan"
+      ],
+      "Block trackers and malware": [
+        "Blokir pelacak dan malware"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
@@ -14043,6 +14531,9 @@
       "Connect your custom domain": [
         "Hubungkan domain khusus Anda"
       ],
+      "Connection status": [
+        "Status koneksi"
+      ],
       "Contact us": [
         "Hubungi kami"
       ],
@@ -14079,6 +14570,9 @@
       "Create user accounts": [
         "Buat akun pengguna"
       ],
+      "Created": [
+        "Dibuat"
+      ],
       "Creating user accounts": [
         "Membuat akun pengguna"
       ],
@@ -14109,6 +14603,12 @@
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
       ],
+      "Data locked": [
+        "Data terkunci"
+      ],
+      "Data recovery": [
+        "Pemulihan data"
+      ],
       "Data retention": [
         "Penyimpanan data"
       ],
@@ -14117,6 +14617,9 @@
       ],
       "Day theme": [
         "Tema siang"
+      ],
+      "Decrypt key": [
+        "Dekripsi kunci"
       ],
       "Deep dive into VPN blog posts": [
         "Dalami postingan blog VPN"
@@ -14180,6 +14683,9 @@
       ],
       "Domain names": [
         "Nama domain"
+      ],
+      "Don't show again?": [
+        "Jangan tampilkan lagi?"
       ],
       "Downgrade account": [
         "Turunkan jenis akun"
@@ -14301,6 +14807,9 @@
       "Generate missing keys": [
         "Hasilkan kunci yang hilang"
       ],
+      "Generate new recovery phrase?": [
+        "Buat frasa pemulihan baru?"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
       ],
@@ -14327,9 +14836,6 @@
       ],
       "Gift code": [
         "Kode hadiah"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "Berikan ${ refereeRewardAmount } dan 2 minggu secara cuma-cuma. Dapatkan saldo senilai ${ referrerRewardAmount }."
       ],
       "Groups": [
         "Grup"
@@ -14370,6 +14876,9 @@
       "Import groups": [
         "Impor grup"
       ],
+      "Information exposed in breach": [
+        "Informasi yang terpapar dalam kebocoran data"
+      ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
@@ -14397,6 +14906,9 @@
       "Multiple accounts, 1 private inbox": [
         "Banyak akun, 1 kotak masuk privat"
       ],
+      "Name": [
+        "Nama"
+      ],
       "Network error": [
         "Kesalahan jaringan"
       ],
@@ -14406,11 +14918,17 @@
       "Night theme": [
         "Tema malam"
       ],
+      "No account information was found in any data breaches": [
+        "Tidak ada informasi akun yang ditemukan pada kebocoran data mana pun"
+      ],
       "No events": [
         "Tidak ada acara"
       ],
       "No recovery method": [
         "Tidak ada metode pemulihan"
+      ],
+      "Open": [
+        "Terbuka"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
@@ -14445,6 +14963,12 @@
       "Password": [
         "Kata sandi"
       ],
+      "Password reset settings": [
+        "Opsi pengaturan ulang kata sandi"
+      ],
+      "Passwords made easy": [
+        "Kata sandi menjadi mudah"
+      ],
       "Pay invoice": [
         "Bayar faktur"
       ],
@@ -14472,6 +14996,9 @@
       "Previous": [
         "Sebelumnya"
       ],
+      "Privacy and data collection": [
+        "Privasi dan pengumpulan data"
+      ],
       "Processing...": [
         "Memproses..."
       ],
@@ -14481,17 +15008,32 @@
       "Recommended": [
         "Direkomendasikan"
       ],
+      "Recommended actions": [
+        "Tindakan yang direkomendasikan"
+      ],
       "Reconnect your account": [
         "Hubungkan ulang akun Anda"
+      ],
+      "Recover data": [
+        "Pulihkan data"
       ],
       "Recovery": [
         "Pemulihan"
       ],
+      "Recovery file": [
+        "Berkas pemulihan"
+      ],
       "Refer a friend": [
         "Rujuk teman"
       ],
+      "Reject device?": [
+        "Tolak perangkat?"
+      ],
       "Remove all members?": [
         "Hapus seluruh anggota?"
+      ],
+      "Remove device?": [
+        "Hapus perangkat?"
       ],
       "Remove domain": [
         "Hapus domain"
@@ -14526,6 +15068,9 @@
       "Reset password?": [
         "Atur ulang kata sandi?"
       ],
+      "Resolved": [
+        "Terselesaikan"
+      ],
       "Restore administrator privileges": [
         "Pulihkan hak administrator"
       ],
@@ -14535,11 +15080,17 @@
       "SAML authentication": [
         "Autentikasi SAML"
       ],
+      "Schedule meetings in one click": [
+        "Jadwalkan rapat dalam sekali klik"
+      ],
       "Search for additional servers": [
         "Cari server tambahan"
       ],
       "Security": [
         "Keamanan"
+      ],
+      "Security and privacy": [
+        "Keamanan dan privasi"
       ],
       "Security events": [
         "Peristiwa keamanan"
@@ -14558,6 +15109,12 @@
       ],
       "Send new invite?": [
         "Kirim undangan baru?"
+      ],
+      "Service": [
+        "Layanan"
+      ],
+      "Session management": [
+        "Pengelolaan sesi"
       ],
       "Set new password": [
         "Atur kata sandi baru"
@@ -14625,6 +15182,9 @@
       "Start import process": [
         "Mulai proses impor"
       ],
+      "State": [
+        "Keadaan"
+      ],
       "Status": [
         "Status"
       ],
@@ -14649,11 +15209,17 @@
       "Text": [
         "Teks"
       ],
+      "There are no events for your account": [
+        "Akun Anda tidak memiliki peristiwa"
+      ],
       "There are no events yet for your organization.": [
         "Belum ada acara untuk organisasi Anda."
       ],
       "There are no groups": [
         "Tidak ada grup"
+      ],
+      "Third-party apps and services": [
+        "Aplikasi dan layanan pihak ketiga"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Coba ${ AUTHENTICATOR_APP_NAME }"
@@ -14751,6 +15317,12 @@
       "Welcome to ${ planName }": [
         "Selamat datang di ${ planName }"
       ],
+      "What is an alias?": [
+        "Apa itu alias?"
+      ],
+      "What is the dark web?": [
+        "Apa itu dark web?"
+      ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
       ],
@@ -14763,6 +15335,12 @@
       "You can now create unlimited folders and labels": [
         "Anda kini dapat membuat folder dan label tanpa batasan jumlah"
       ],
+      "You have no open alerts": [
+        "Anda tidak memiliki peringatan yang terbuka"
+      ],
+      "You have no resolved alerts": [
+        "Anda tidak memiliki peringatan yang terselesaikan"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Masa uji coba gratis ${ planName } Anda akan berakhir pada ${ textDate }"
       ],
@@ -14771,6 +15349,9 @@
       ],
       "Your current plan": [
         "Paket Anda saat ini"
+      ],
+      "Your exposed information": [
+        "Informasi Anda yang terpapar"
       ],
       "Your plan": [
         "Paket Anda"
@@ -14891,6 +15472,9 @@
       "Edit label names": [
         "Sunting nama label"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Dengan mengaktifkan rekaman peristiwa terperinci, alamat IP untuk masing-masing peristiwa akan dicatat."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL endpoint dari penyedia identitas (mis. https://idp.contoh.com/sso/saml)"
       ],
@@ -14917,6 +15501,15 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Anggota yang tidak menggunakan 2FA akan mendapatkan email untuk meminta mereka mengaktifkan sesegera mungkin. Pengguna sistem masuk tunggal tidak akan menerima pengingat email."
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."
+      ],
+      "Origin Internet Service Provider (ISP)": [
+        "Internet Service Provider (ISP) asal"
+      ],
+      "Origin IP address": [
+        "Alamat IP asal"
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Alamat IP dan penyedia layanan internet (ISP) sumber"
@@ -14959,6 +15552,9 @@
       ],
       "This setting is managed by your organization": [
         "Pengaturan ini dikelola oleh organisasi Anda"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Kecuali kata sandi ini didekripsi, kata sandi yang terenkripsi akan tetap aman bahkan apabila terpapar."
       ],
       "User's approximate location (based on their IP address)": [
         "Perkiraan lokasi pengguna (berdasarkan alamat IP mereka)"
@@ -15580,6 +16176,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Berkas pemulihan Anda telah kedaluwarsa. Berkas ini tidak lagi dapat digunakan untuk memulihkan data baru apabila Anda kembali mengatur ulang kata sandi."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Frasa pemulihan Anda telah kedaluwarsa. Frasa ini tidak lagi dapat digunakan untuk memulihkan data baru apabila Anda kembali mengatur ulang kata sandi."
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
