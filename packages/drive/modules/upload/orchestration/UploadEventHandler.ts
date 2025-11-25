@@ -30,11 +30,15 @@ export class UploadEventHandler {
             'file:error': (event: Extract<UploadEvent, { type: 'file:error' }>) => this.handleFileError(event),
             'file:conflict': (event: Extract<UploadEvent, { type: 'file:conflict' }>) =>
                 this.conflictManager.handleConflict(event.uploadId, event.error),
+            'file:cancelled': (event: Extract<UploadEvent, { type: 'file:cancelled' }>) =>
+                this.handleFileCancelled(event),
             'folder:conflict': (event: Extract<UploadEvent, { type: 'folder:conflict' }>) =>
                 this.conflictManager.handleConflict(event.uploadId, event.error),
             'folder:complete': (event: Extract<UploadEvent, { type: 'folder:complete' }>) =>
                 this.handleFolderComplete(event),
             'folder:error': (event: Extract<UploadEvent, { type: 'folder:error' }>) => this.handleFolderError(event),
+            'folder:cancelled': (event: Extract<UploadEvent, { type: 'folder:cancelled' }>) =>
+                this.handleFolderCancelled(event),
         };
     }
 
@@ -60,11 +64,14 @@ export class UploadEventHandler {
     }
 
     private handleFileProgress(event: FileUploadEvent & { type: 'file:progress' }): void {
-        if (this.sdkTransferActivity.isPaused()) {
+        const queueStore = useUploadQueueStore.getState();
+        if (
+            this.sdkTransferActivity.isPaused() ||
+            queueStore.getItem(event.uploadId)?.status === UploadStatus.Cancelled
+        ) {
             return;
         }
 
-        const queueStore = useUploadQueueStore.getState();
         queueStore.updateQueueItems(event.uploadId, {
             uploadedBytes: event.uploadedBytes,
         });
@@ -84,6 +91,9 @@ export class UploadEventHandler {
 
     private handleFileError(event: FileUploadEvent & { type: 'file:error' }): void {
         const queueStore = useUploadQueueStore.getState();
+        if (queueStore.getItem(event.uploadId)?.status === UploadStatus.Cancelled) {
+            return;
+        }
         const controllerStore = useUploadControllerStore.getState();
 
         queueStore.updateQueueItems(event.uploadId, {
@@ -117,6 +127,32 @@ export class UploadEventHandler {
         queueStore.updateQueueItems(event.uploadId, {
             status: UploadStatus.Failed,
             error: event.error,
+        });
+        this.cancelFolderChildren(event.uploadId);
+        this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+    }
+
+    private handleFileCancelled(event: FileUploadEvent & { type: 'file:cancelled' }): void {
+        const queueStore = useUploadQueueStore.getState();
+        const controllerStore = useUploadControllerStore.getState();
+
+        const controller = controllerStore.getController(event.uploadId);
+        if (controller) {
+            controller.abortController.abort();
+        }
+
+        queueStore.updateQueueItems(event.uploadId, {
+            status: UploadStatus.Cancelled,
+        });
+        controllerStore.removeController(event.uploadId);
+        this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+    }
+
+    private handleFolderCancelled(event: FolderCreationEvent & { type: 'folder:cancelled' }): void {
+        const queueStore = useUploadQueueStore.getState();
+
+        queueStore.updateQueueItems(event.uploadId, {
+            status: UploadStatus.Cancelled,
         });
         this.cancelFolderChildren(event.uploadId);
         this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
