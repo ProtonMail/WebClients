@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT } from '../constants';
@@ -11,6 +12,7 @@ import { useAudioPlayer } from './useAudioPlayer';
 
 export const useParticipantEvents = (participantNameMap: Record<string, string>) => {
     const room = useRoomContext();
+    const areSoundNotificationsEnabled = useFlag('MeetSoundNotificationsEnabled');
     const { playAudio } = useAudioPlayer('/assets/sounds/join_notification.wav');
 
     const [events, setEvents] = useState<ParticipantEventRecord[]>([]);
@@ -38,7 +40,7 @@ export const useParticipantEvents = (participantNameMap: Record<string, string>)
                 },
             ]);
 
-            if (room.numParticipants <= JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT) {
+            if (room.numParticipants <= JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT && areSoundNotificationsEnabled) {
                 playAudio();
             }
         };
