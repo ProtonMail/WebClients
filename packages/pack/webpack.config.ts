@@ -7,7 +7,6 @@ import { parseResource } from 'webpack/lib/util/identifier';
 import type { WebpackOptions } from './lib/interface';
 import { getEntries } from './webpack/entries';
 
-const jsLoader = require('./webpack/js.loader');
 const jsSwcLoader = require('./webpack/js.loader.swc');
 const getCssLoaders = require('./webpack/css.loader');
 const getAssetsLoaders = require('./webpack/assets.loader');
@@ -72,9 +71,7 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
         mode: webpackOptions.isProduction ? 'production' : 'development',
         module: {
             rules: [
-                ...(webpackOptions.webpackOnCaffeine
-                    ? jsSwcLoader.getJsLoaders(webpackOptions)
-                    : jsLoader.getJsLoaders(webpackOptions)),
+                ...jsSwcLoader.getJsLoaders(webpackOptions),
                 ...getCssLoaders(webpackOptions),
                 ...getAssetsLoaders(webpackOptions),
             ],
