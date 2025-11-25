@@ -1277,7 +1277,7 @@
         "La segona contrasenya és incorrecta."
       ],
       "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
+        "Ara mateix esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "El DNS no està configurat correctament. El registre MX que obtenim és:"
@@ -1933,10 +1933,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
-      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -2233,7 +2229,7 @@
         "S'han restaurat els elements seleccionats des de la paperera."
       ],
       "Servers are unreachable": [
-        "No es pot connectar amb els servidors"
+        "No es pot accedir als servidors"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
