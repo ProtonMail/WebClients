@@ -97,6 +97,12 @@
       "Copy address": [
         "Kopier adresse"
       ],
+      "Copy descriptor": [
+        "Kopier beskriver"
+      ],
+      "Copy public key (${ prefix })": [
+        "Kopier offentlig nøkkel (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "Kopier versjonsnummeret til utklippstavlen"
       ],
@@ -2370,6 +2376,26 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ingen bilde valgt"
+      ]
+    },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Beskriveren er kopiert til utklippstavlen"
+      ],
+      "I want the ${ prefix } instead": [
+        "Jeg ønsker ${ prefix } i stedet"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importer denne beskriveren til annen lommebokprogramvare for å overvåke saldoen din og generere mottaksadresser uten å eksponere dine private nøkler."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Offentlig nøkkel (${ prefix }) kopiert til utklippstavlen"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Bekreft at de første få avledede adressene samsvarer med de i ${ WALLET_APP_NAME } før du fortsetter."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Vi anbefaler på det sterkeste å bruke beskriveren ovenfor i stedet, da den inneholder all nødvendig informasjon for å sikre korrekt adressegenerering. xpub, ypub og zpub er ikke en del av standard BIP-er og bør kun brukes med forsiktighet."
       ]
     },
     "familyOffer_2023:Error": {

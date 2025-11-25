@@ -97,6 +97,12 @@
       "Copy address": [
         "Adresse kopieren"
       ],
+      "Copy descriptor": [
+        "Deskriptor kopieren"
+      ],
+      "Copy public key (${ prefix })": [
+        "Öffentlichen Schlüssel kopieren (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "Versionsnummer in die Zwischenablage kopieren"
       ],
@@ -2370,6 +2376,26 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Kein Bild ausgewählt"
+      ]
+    },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Deskriptor in die Zwischenablage kopiert"
+      ],
+      "I want the ${ prefix } instead": [
+        "Ich möchte stattdessen ${ prefix }."
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importiere diesen Deskriptor in andere Wallet-Software, um dein Guthaben zu überwachen und Empfangsadressen zu generieren, ohne deine privaten Schlüssel preiszugeben."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Öffentlicher Schlüssel (${ prefix }) in die Zwischenablage kopiert"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Überprüfe, ob die ersten paar abgeleiteten Adressen mit denen in ${ WALLET_APP_NAME } übereinstimmen, bevor du fortfährst."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Wir empfehlen dringend, stattdessen den oben genannten Deskriptor zu verwenden, da er alle notwendigen Informationen enthält, um die korrekte Adressgenerierung zu gewährleisten. xpub, ypub und zpub sind nicht Teil der Standard-BIPs und sollten nur mit Vorsicht verwendet werden."
       ]
     },
     "familyOffer_2023:Error": {
