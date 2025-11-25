@@ -16,7 +16,7 @@ const FIRST_OF_DECEMBER = new Date(2025, 11, 1).valueOf();
 
 export function DriveSpotlight({ children }: { children: any }) {
     const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+
     const [user] = useUser();
     const [driveChecklist, setDriveChecklist] = useState<ChecklistApiResponse>();
     const { feature, update } = useFeature(FeatureCode.DriveSpotlightInMail);
@@ -30,13 +30,15 @@ export function DriveSpotlight({ children }: { children: any }) {
             return;
         }
 
+        const silentApi = getSilentApi(normalApi);
+
         const effect = async () => {
             const checklist = await silentApi<ChecklistApiResponse>(getDriveChecklist('get-started'));
             setDriveChecklist(checklist);
         };
 
         void effect();
-    }, [silentApi, isEligibleForSpotlight]);
+    }, [isEligibleForSpotlight]);
 
     return (
         <Spotlight
