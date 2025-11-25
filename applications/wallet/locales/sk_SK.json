@@ -97,6 +97,12 @@
       "Copy address": [
         "Kopírovať adresu"
       ],
+      "Copy descriptor": [
+        "Kopírovať deskriptor"
+      ],
+      "Copy public key (${ prefix })": [
+        "Kopírovať verejný kľúč (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "Skopírovať číslo verzie do schránky"
       ],
@@ -2384,6 +2390,26 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nie je vybraný žiadny obrázok"
+      ]
+    },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Deskriptor skopírovaný do schránky"
+      ],
+      "I want the ${ prefix } instead": [
+        "Chcem namiesto toho ${ prefix }"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importujte tento deskriptor do iného softvéru peňaženky na sledovanie vášho zostatku a generovanie prijímacích adries bez odhalenia vašich súkromných kľúčov."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Verejný kľúč (${ prefix }) skopírovaný do schránky"
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Pred pokračovaním overte, či sa prvých niekoľko odvodených adries zhoduje s adresami v ${ WALLET_APP_NAME }."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Dôrazne odporúčame namiesto toho použiť vyššie uvedený deskriptor, pretože obsahuje všetky potrebné informácie na zabezpečenie správnej generácie adresy. xpub, ypub a zpub nie sú súčasťou štandardných BIPov a mali by sa používať len s opatrnosťou."
       ]
     },
     "familyOffer_2023:Error": {

@@ -97,6 +97,9 @@
       "Copy address": [
         "Kopiera adress"
       ],
+      "Copy public key (${ prefix })": [
+        "Kopiera offentlig nyckel (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "Kopiera versionsnummer till urklipp"
       ],
@@ -2358,6 +2361,14 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ingen bild vald"
+      ]
+    },
+    "Extended public key": {
+      "I want the ${ prefix } instead": [
+        "Jag vill ha ${ prefix } istället"
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Offentlig nyckel (${ prefix }) kopierad till urklipp"
       ]
     },
     "familyOffer_2023:Error": {

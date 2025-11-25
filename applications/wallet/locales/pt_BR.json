@@ -97,6 +97,12 @@
       "Copy address": [
         "Copiar o endereço"
       ],
+      "Copy descriptor": [
+        "Copiar descritor"
+      ],
+      "Copy public key (${ prefix })": [
+        "Copiar chave pública (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "Copiar número da versão para a área de transferência"
       ],
@@ -2370,6 +2376,14 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem selecionada"
+      ]
+    },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Descritor copiado para a área de transferência"
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Chave pública (${ prefix }) copiada para a área de transferência"
       ]
     },
     "familyOffer_2023:Error": {
@@ -5007,7 +5021,7 @@
         "Para todos os serviços da ${ BRAND_NAME }"
       ],
       "Storage used": [
-        "De armazenamento usado"
+        "Armazenamento usado"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Adicionaremos os créditos do tempo restante à sua conta ${ BRAND_NAME }."
