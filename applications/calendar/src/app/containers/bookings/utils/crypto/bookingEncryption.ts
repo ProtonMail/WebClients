@@ -34,8 +34,8 @@ const encryptBookingData = async (
 ) => {
     const { message: encryptedContent } = await CryptoProxy.encryptMessage({
         textData: JSONFormatData({
-            description: formData.description,
-            location: formData.location,
+            description: formData.description?.trim(),
+            location: formData.location?.trim(),
             summary: formData.summary,
             withProtonMeetLink: formData.locationType === BookingLocation.MEET,
         }),
