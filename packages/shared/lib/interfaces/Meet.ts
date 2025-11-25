@@ -102,3 +102,15 @@ export interface RotatePersonalMeetingResponse {
     Meeting: Meeting;
     Code: 1000;
 }
+
+export enum ParticipantCapabilityPermission {
+    NotAllowed = 0,
+    Allowed = 1,
+}
+
+export interface ParticipantPermissions {
+    Publish: ParticipantCapabilityPermission;
+    PublishData: ParticipantCapabilityPermission;
+    Subscribe: ParticipantCapabilityPermission;
+    Admin: ParticipantCapabilityPermission;
+}

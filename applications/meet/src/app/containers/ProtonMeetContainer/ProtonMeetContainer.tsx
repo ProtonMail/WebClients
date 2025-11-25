@@ -26,9 +26,11 @@ import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
+import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useWasmApp } from '../../contexts/WasmContext';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
+import { useAssignHost } from '../../hooks/useAssignHost';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useLockMeeting } from '../../hooks/useLockMeeting';
@@ -68,6 +70,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
     const [isInstantJoin, setIsInstantJoin] = useState(instantJoinParam === 'true');
 
     const { initializeDevices } = useMediaManagementContext();
+
+    const { setMeetingReadyPopupOpen } = useUIStateContext();
 
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
@@ -117,7 +121,10 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);
 
-    const { getParticipants, participantNameMap, participantsMap, resetParticipantNameMap } = useParticipantNameMap();
+    const accessTokenRef = useRef<string | null>(null);
+
+    const { getParticipants, participantNameMap, participantsMap, resetParticipantNameMap, updateAdminParticipant } =
+        useParticipantNameMap();
 
     const { stopPiP, startPiP, isPipActive, canvas, tracksLength, pipSetup, pipCleanup, preparePictureInPicture } =
         usePictureInPicture({
@@ -139,7 +146,6 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const mlsSetupDone = useRef(false);
     const startHealthCheck = useRef(false);
-    const accessTokenRef = useRef<string | null>(null);
 
     const notifications = useNotifications();
 
@@ -152,6 +158,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             reportMeetError('Epoch is undefined', {});
         }
     };
+    const assignHost = useAssignHost(accessTokenRef.current as string, token);
 
     const getGroupKeyInfo = async () => {
         try {
@@ -182,23 +189,12 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         }
     };
 
-    const onLiveKitAdminChanged = async (roomId: string, newAdminParticipantUid: string) => {
-        try {
-            // TODO: Implement logic for admin participant change
-        } catch (err) {
-            reportMeetError(
-                'Could not update admin participant uid: ' + newAdminParticipantUid + ' for room: ' + roomId,
-                err
-            );
-        }
-    };
-
     const handleMlsSetup = async (meetingLinkName: string, accessToken: string) => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
 
             setupWasmDependencies({ getGroupKeyInfo, onNewGroupKeyInfo });
-            setupLiveKitAdminChangeEvent({ onLiveKitAdminChanged });
+            setupLiveKitAdminChangeEvent({ onLiveKitAdminChanged: updateAdminParticipant });
         }
 
         if (!wasmApp) {
@@ -238,6 +234,10 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                     throw new Error(c('Error').t`Failed to join meeting. Please try again later.`);
             }
         }
+    };
+
+    const updateAccessToken = (accessToken: string) => {
+        accessTokenRef.current = accessToken;
     };
 
     useEffect(() => {
@@ -402,6 +402,13 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
             await initializeDevices();
 
+            const originalOnTokenRefresh = room.engine.client.onTokenRefresh;
+
+            room.engine.client.onTokenRefresh = (token) => {
+                updateAccessToken(token);
+                originalOnTokenRefresh?.(token);
+            };
+
             room.on('disconnected', () => {
                 instantMeetingRef.current = false;
                 mlsSetupDone.current = false;
@@ -471,6 +478,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                 maxDuration,
                 maxParticipants,
             });
+
+            setMeetingReadyPopupOpen(true);
 
             await handleJoin(displayName, id);
 
@@ -697,7 +706,6 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                         participantNameMap={participantNameMap}
                         participantsMap={participantsMap}
                         getParticipants={() => getParticipants(meetingDetails.meetingId as string)}
-                        instantMeeting={instantMeetingRef.current}
                         passphrase={password}
                         guestMode={guestMode}
                         handleMeetingLockToggle={handleMeetingLockToggle}
@@ -714,6 +722,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                         locked={meetingDetails.locked}
                         maxDuration={meetingDetails.maxDuration}
                         maxParticipants={meetingDetails.maxParticipants}
+                        instantMeeting={instantMeetingRef.current}
+                        assignHost={assignHost}
                     />
                 ) : (
                     <PrejoinContainer
