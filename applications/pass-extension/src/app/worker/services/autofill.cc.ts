@@ -1,12 +1,13 @@
+import { isCCField } from 'proton-pass-extension/lib/utils/field';
 import {
     type AutofillableFrames,
     getFrameParentFormId,
     isFrameContainedInParentForm,
 } from 'proton-pass-extension/lib/utils/frames';
 import type { AutofillActionDTO } from 'proton-pass-extension/types/autofill';
-import type { FrameAttributes, FrameFieldMatch, FrameFormMatch, FrameForms } from 'proton-pass-extension/types/frames';
+import type { FrameAttributes, FrameFormMatch, FrameForms } from 'proton-pass-extension/types/frames';
 
-import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
+import { CCFieldType } from '@proton/pass/fathom/labels';
 import type { FrameId, MaybeNull } from '@proton/pass/types';
 
 /** Maximum distance (in frames) from the source frame when clustering.
@@ -31,9 +32,6 @@ export const isCCFormComplete = (fields: Set<CCFieldType>): boolean =>
             else return fields.has(requirement);
         })
     );
-
-const isCCField = (field: FrameFieldMatch): field is Required<FrameFieldMatch<FieldType.CREDIT_CARD>> =>
-    field.fieldType === FieldType.CREDIT_CARD && field.fieldSubType !== undefined;
 
 export type FrameFormClusters = Map<FrameId, Set<string>>;
 

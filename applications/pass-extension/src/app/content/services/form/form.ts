@@ -1,6 +1,6 @@
 import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/autofill/autofill.identity.sections';
+import { resolveFieldSections } from 'proton-pass-extension/app/content/services/autofill/autofill.sections';
 import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/detector/detector.service';
 import { hasProcessableFields } from 'proton-pass-extension/app/content/services/detector/detector.utils';
@@ -8,6 +8,7 @@ import { hasProcessableFields } from 'proton-pass-extension/app/content/services
 import {
     buttonSelector,
     getCCFieldType,
+    getIdentityFieldType,
     isIgnored,
     isVisibleForm,
     removeClassifierFlags,
@@ -158,7 +159,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             }
 
             let didChange = formType !== formHandle.formType;
-            let hasIdentityFields: boolean = false;
+            let hasSections: boolean = false;
 
             formHandle.formType = formType;
             formHandle.canAutosave = canAutosave(options.form);
@@ -181,7 +182,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             fields.forEach(({ field, fieldType }) => {
                 const currField = formHandle.fields.get(field);
                 didChange = currField === undefined;
-                hasIdentityFields = hasIdentityFields || fieldType === FieldType.IDENTITY;
+                hasSections = hasSections || fieldType === FieldType.IDENTITY || fieldType === FieldType.CREDIT_CARD;
 
                 const handle =
                     currField ??
@@ -193,8 +194,14 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                         getFormHandle: () => formHandle,
                     });
 
-                /** Early resolve CC field type */
-                if (fieldType === FieldType.CREDIT_CARD) handle.fieldSubType = getCCFieldType(field);
+                switch (handle.fieldType) {
+                    case FieldType.IDENTITY:
+                        handle.fieldSubType = handle.fieldSubType ?? getIdentityFieldType(field);
+                        break;
+                    case FieldType.CREDIT_CARD:
+                        handle.fieldSubType = handle.fieldSubType ?? getCCFieldType(field);
+                        break;
+                }
 
                 nextFields.set(handle.element, handle);
             });
@@ -202,16 +209,9 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             formHandle.fields = nextFields;
             currentFields.clear();
 
-            if (hasIdentityFields) {
-                /** resolve potential identity sections only if we have identity
-                 * fields to process. Avoids unnecessary runs of section detection. */
-                resolveIdentitySections(formHandle.getFields()).forEach((section, idx) => {
-                    section.fields.forEach(({ field, type }) => {
-                        field.sectionIndex = idx;
-                        field.fieldSubType = type;
-                    });
-                });
-            }
+            /** resolve potential identity sections only if we have identity
+             * fields to process. Avoids unnecessary runs of section detection. */
+            if (hasSections) resolveFieldSections(formHandle.getFields());
 
             /** Reset form tracker state if fields were added or removed. Some
              * forms have appearing fields and may trigge multiple submissions.
