@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { GenericError, useApi, useErrorHandler } from '@proton/components';
+import { GenericError, useErrorHandler } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -30,8 +30,7 @@ enum ErrorType {
 }
 
 const VerifyEmailContainer = ({ onSubscribe }: Props) => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const handleError = useErrorHandler();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading(true);

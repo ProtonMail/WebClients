@@ -9,7 +9,6 @@ import { useLoading } from '@proton/hooks';
 // import type { ExternalForwardingResult } from '@proton/shared/lib/api/forwardings';
 import { acceptExternalGroupMembership, declineExternalGroupMembership } from '@proton/shared/lib/api/groups';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-// import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import PublicFooter from '../components/PublicFooter';
@@ -72,7 +71,6 @@ const GroupInviteContainer = ({ request }: Props) => {
     const handleError = useErrorHandler();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading(true);
-    // const silentApi = getSilentApi(api);
     const location = useLocation();
     const header = getHeader(request);
     // const [groupEmail, setGroupEmail] = useState<string>('');

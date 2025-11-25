@@ -3,10 +3,9 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { CYCLE, PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import * as signupSearchParams from '../../helpers/signupSearchParams';
@@ -23,14 +22,13 @@ const DrivePricing = () => {
 
     const history = useHistory();
 
-    const api = useApi();
+    const silentApi = useSilentApi();
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
 
     useEffect(() => {
         const run = async () => {
-            const silentApi = getSilentApi(api);
             await payments.initialize({
                 api: silentApi,
                 paymentFlow: 'signup',

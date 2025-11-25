@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { GenericError, useApi, useErrorHandler } from '@proton/components';
+import { GenericError, useErrorHandler } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { closeTicket } from '@proton/shared/lib/api/reports';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -22,10 +22,9 @@ enum ErrorType {
 }
 
 const CloseTicketContainer = () => {
-    const api = useApi();
     const handleError = useErrorHandler();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const location = useLocation();
     const [loading, withLoading] = useLoading(true);
     const closeTab = () => {

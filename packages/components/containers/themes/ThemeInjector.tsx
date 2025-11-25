@@ -1,8 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import useApi from '@proton/components/hooks/useApi';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { updateTheme } from '@proton/shared/lib/api/settings';
 import {
     canGetInboxDesktopInfo,
@@ -43,8 +42,7 @@ export const DrawerThemeInjector = () => {
 export const ThemeInjector = () => {
     const [userSettings] = useUserSettings();
     const { addListener, settings, setThemeSetting } = useTheme();
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
 
     const legacyThemeType = userSettings.ThemeType;
     const legacyThemeSettings = useMemo(() => getDefaultThemeSetting(legacyThemeType), [legacyThemeType]);

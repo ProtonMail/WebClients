@@ -19,12 +19,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import useApi from '@proton/components/hooks/useApi';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
@@ -97,8 +96,7 @@ const ChangePasswordModal = ({
     ...rest
 }: Props) => {
     const dispatch = useDispatch();
-    const normalApi = useApi();
-    const api = getSilentApi(normalApi);
+    const api = useSilentApi();
     const { createNotification } = useNotifications();
     const passwordStrengthIndicator = useLoadPasswordStrengthIndicatorWasm();
     const { validator, onFormSubmit, reset } = useFormErrors();

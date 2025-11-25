@@ -6,9 +6,9 @@ import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hook
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
-import { LoaderPage, StandardLoadErrorPage, useApi, useEventManager } from '@proton/components';
+import { LoaderPage, StandardLoadErrorPage, useEventManager } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { CacheType } from '@proton/redux-utilities';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { setupCalendarKeys } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import setupHolidaysCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupHolidaysCalendarHelper';
@@ -37,8 +37,7 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getCalendarUserSettings = useGetCalendarUserSettings();
 
-    const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
 
     const [error, setError] = useState();
 

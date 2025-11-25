@@ -9,6 +9,7 @@ import StandardErrorPage from '@proton/components/containers/app/StandardErrorPa
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { auth, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+// eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';

@@ -5,14 +5,13 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account';
 import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
-import useApi from '@proton/components/hooks/useApi';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import useStateRef from '@proton/hooks/useStateRef';
 import {
     type ConnectionInformationResult,
     getConnectionInformation,
 } from '@proton/shared/lib/api/core/connection-information';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { VPN_HUB_URL } from '@proton/shared/lib/vpn/constants';
 
@@ -26,8 +25,7 @@ import useVPNDrawerTelemetry from './useVPNDrawerTelemetry';
 const EVERY_MINUTE = MINUTE;
 
 const VPNDrawerContainer = () => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const [userSettings] = useUserSettings();
     const [loading, withLoading] = useLoading();
     const [connectionInformation, setConnectionInformation, connectionInformationRef] =

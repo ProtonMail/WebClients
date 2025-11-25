@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useApi } from '@proton/components';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getLogo } from '@proton/shared/lib/api/images';
 
 function blobToDataURL(blob: Blob): Promise<string | null> {
@@ -78,8 +77,7 @@ export const useSourceFavIcon = (domain: string) => {
     const [src, setSrc] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<Error | null>(null);
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
 
     useEffect(() => {
         if (!domain) {
@@ -112,7 +110,7 @@ export const useSourceFavIcon = (domain: string) => {
             .finally(() => {
                 setLoading(false);
             });
-    }, [domain, api]);
+    }, [domain]);
 
     return { src, loading, error };
 };

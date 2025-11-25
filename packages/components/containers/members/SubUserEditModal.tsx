@@ -14,10 +14,10 @@ import {
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -31,12 +31,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     BRAND_NAME,
     LUMO_APP_NAME,
@@ -224,8 +223,7 @@ const SubUserEditModal = ({
     const [loadingScribe, withLoadingScribe] = useLoading();
     const [loadingLumo, withLoadingLumo] = useLoading();
     const { createNotification } = useNotifications();
-    const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
 
     const hasVPN = Boolean(organization?.MaxVPN);
     const unprivatization = getMemberUnprivatizationMode(member);
