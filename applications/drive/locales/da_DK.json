@@ -402,7 +402,7 @@
         "Download info"
       ],
       "Download logs": [
-        "Download-logfiler"
+        "Download logfiler"
       ],
       "Download results": [
         "Download resultater"
@@ -744,7 +744,7 @@
         "Åbn navigation"
       ],
       "Pause all": [
-        "Pause alle"
+        "Sæt alle på pause"
       ],
       "Pause download": [
         "Pause download"
@@ -992,9 +992,6 @@
       "Show advanced PGP settings": [
         "Vis avancerede PGP-indstillinger"
       ],
-      "Show location": [
-        "Vis placering"
-      ],
       "Show more": [
         "Vis mere"
       ],
@@ -1045,6 +1042,9 @@
       ],
       "Submit report": [
         "Indsend rapport"
+      ],
+      "Subscribe now": [
+        "Abonnér nu"
       ],
       "Switch or add account": [
         "Skift eller tilføj konto"
@@ -1254,138 +1254,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Ved at forlade nu, vil nogle begivenheder måske ikke blive importeret"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Tag imod tilbuddet"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "200 GB storage": [
-        "200 GB lagerplads"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB krypteret lagerplads"
-      ],
-      "Add unlimited credit cards": [
-        "Tilføj ubegrænset antal betalingskort"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloker annoncer, trackere og malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Fordobl din krypterede lagerplads – få 1 TB til alle dine data"
-      ],
-      "Encrypted password manager": [
-        "Krypteret adgangskodeadministrator"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Her er en eksklusiv gave for at fejre vores fælles rejse."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming ved høj hastighed med VPN"
-      ],
-      "of privacy": [
-        "af privatliv"
-      ],
-      "Online document editor": [
-        "Online dokumenteditor"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online privatliv til op til 2 personer"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online privatliv for hele familien (op til 6 brugere)"
-      ],
-      "Protect up to 10 devices": [
-        "Beskyt op til 10 enheder"
-      ],
-      "Recover previous file versions": [
-        "Gendan tidligere filversioner"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Spar stort på premium Drive-funktioner med en tidsbegrænset rabat."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Spar stort på premium Mail-funktioner med en tidsbegrænset rabat."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Spar stort på premium Pass-funktioner med en tidsbegrænset rabat."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Spar stort på premium VPN-funktioner med en tidsbegrænset rabat."
-      ],
-      "Save time with built-in 2FA": [
-        "Spar tid med indbygget 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sikker e-mail med ubegrænsede aliasser"
-      ],
-      "Select any server": [
-        "Vælg en hvilken som helst server"
-      ],
-      "Share passwords easily": [
-        "Del let kodeord"
-      ],
-      "Short @pm.me address": [
-        "Kort @pm.me-adresse"
-      ],
-      "Stream your favorite content": [
-        "Stream dit yndlingsindhold"
-      ],
-      "thanks to you": [
-        "takket være dig"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tredobl din krypterede lagerplads – få 3 TB til alle dine data"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
-      ],
-      "Use your own email domain": [
-        "Brug dit eget e-mail-domæne"
-      ],
-      "years": [
-        "år"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubilæumstilbud"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
-      "/ month": [
-        "/måned"
-      ],
-      "12 months": [
-        "12 måneder"
-      ],
-      "15 months": [
-        "15 måneder"
-      ],
-      "24 months": [
-        "24 måneder"
-      ],
-      "30 months": [
-        "30 måneder"
-      ],
-      "for ${ durationDeal }": [
-        "til ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -2134,7 +2002,7 @@
         "Aruba"
       ],
       "Ascension Island": [
-        "Ascension"
+        "Ascension Island"
       ],
       "Australia": [
         "Australien"
@@ -2875,7 +2743,7 @@
         "Jomfruøerne, britiske"
       ],
       "Virgin Islands, U.S.": [
-        "Jomfruøerne, Amerika."
+        "Jomfruøerne (de amerikanske, USVI)"
       ],
       "Wallis and Futuna": [
         "Wallis og Futuna"
@@ -3333,7 +3201,7 @@
         "En gruppe med dette navn findes allerede"
       ],
       "A problem occurred, please try again.": [
-        "Der opstod et problem. Prøv venligst igen."
+        "Der opstod et problem. Prøv igen."
       ],
       "Account does not exist": [
         "Konto findes ikke"
@@ -3354,7 +3222,7 @@
         "Aliasser kunne ikke indlæses"
       ],
       "Already a member of this share": [
-        "Allerede et medlem af denne deling"
+        "Allerede medlem af denne deling"
       ],
       "Amount above the maximum.": [
         "Beløb over maksimum."
@@ -3405,7 +3273,7 @@
         "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
       ],
       "Could not add to favorites": [
-        "Kunne ikke tilføje til favoritter"
+        "Kunne ikke tilføjes til favoritter"
       ],
       "Could not open created vault": [
         "Kunne ikke åbne den oprettede boks"
@@ -3414,7 +3282,7 @@
         "Kunne ikke åbne den opdaterede boks"
       ],
       "Could not remove from favorites": [
-        "Kunne ikke fjerne fra favoritter"
+        "Kunne ikke fjernes fra favoritter"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fravælg mindst ${ calendarsToFixCount } kalender",
@@ -3432,6 +3300,9 @@
       ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering af faktureringsadresse er ikke tilgængelig i øjeblikket. Prøv igen senere."
       ],
       "Email address is required": [
         "E-mailadresse er påkrævet."
@@ -3482,7 +3353,10 @@
         "Kunne ikke hente delingsoplysninger"
       ],
       "Failed to get details, please try again later": [
-        "Det lykkedes ikke at hente detaljer, prøv venligst igen senere"
+        "Det lykkedes ikke at hente detaljer, prøv igen senere"
+      ],
+      "Failed to load the STL preview": [
+        "Indlæsning af STL-forhåndsvisningen mislykkedes"
       ],
       "Failed to open to contact": [
         "Kunne ikke oprette kontakten"
@@ -3519,9 +3393,6 @@
       ],
       "Folder \"${ name }\" is already downloading": [
         "Mappen \"${ name }\" er allerede ved at blive hentet"
-      ],
-      "Folder creation failed": [
-        "Oprettelse af mappe mislykkedes"
       ],
       "Folder name cannot be empty.": [
         "Mappenavn må ikke være tomt."
@@ -3686,6 +3557,9 @@
       "Port is required": [
         "Port er påkrævet."
       ],
+      "Postal code is required": [
+        "Postnummer kræves"
+      ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
       ],
@@ -3760,7 +3634,7 @@
         "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
       "The email addresses do not match": [
-        "E-Mailadresserne stemmer ikke overens"
+        "E-mailadresserne stemmer ikke overens"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
@@ -3840,6 +3714,9 @@
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
       ],
+      "Unknown conflict strategy: ${ strategy }": [
+        "Ukendt konfliktstrategi: ${ strategy }"
+      ],
       "Unknown error": [
         "Ukendt fejl"
       ],
@@ -3857,9 +3734,6 @@
       ],
       "Upload for this folder is temporarily disabled": [
         "Upload er midlertidigt deaktiveret for denne mappe"
-      ],
-      "Upload not found": [
-        "Upload ikke fundet"
       ],
       "Username must begin with a letter or digit": [
         "Brugernavn skal begynde med et bogstav eller ciffer"
@@ -4473,7 +4347,7 @@
         "Alle albummer"
       ],
       "Recent": [
-        "Seneste"
+        "Nylig(e)"
       ],
       "Share ${ photoCount } photo via": [
         "Del ${ photoCount } foto via",
@@ -5389,7 +5263,7 @@
         "Download mislykkedes"
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        "Hentning af ${ downloadFileName } vil blive afbrudt"
+        "Hent af ${ downloadFileName } afbrydes"
       ],
       "Download was canceled": [
         "Download blev annulleret"
@@ -5561,7 +5435,7 @@
         "Hent skrivebordsappen for at synkronisere filer fra din computer."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
-        "Lær ${ DRIVE_APP_NAME } at kende og optjen din 3 GB lagerbonus! Tag handling i dag."
+        "Lær ${ DRIVE_APP_NAME } at kende og optjen din 3 GB lagerbonus! Gør det i dag."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Gå til \"Mine filer\" og upload nogle filer først."
@@ -5637,7 +5511,7 @@
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Indekserer ${ esProgress } elementer out of ${ totalProgressToShow }"
+        "Indekserer ${ esProgress } elementer ud of ${ totalProgressToShow }"
       ],
       "Indexing search results…": [
         "Indekserer søgeresultater…"
@@ -5667,7 +5541,7 @@
         "Problemer fundet"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Det ser ud til, at du for nylig har forsøgt at uploade ${ uploadName }. Hvis upload mislykkedes, bedes du ${ replaceFile }. Hvis upload stadig er i gang, vil det annullere den igangværende upload, hvis du erstatter den."
+        "Det ser ud til, at du for nylig har forsøgt at uploade ${ uploadName }. Hvis upload mislykkedes, bedes du ${ replaceFile }. Hvis upload stadig er i gang, vil det annullere det igangværende upload."
       ],
       "It's better to have:": [
         "Det er bedre at have:"
@@ -6002,7 +5876,7 @@
         "Brug en anden browser eller download filen."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Vent venligst, indtil dine ændringer er synkroniseret med serveren."
+        "Vent indtil dine ændringer er synkroniseret med serveren."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
@@ -6020,7 +5894,7 @@
         "Forhåndsvisning af denne filtype er ikke understøttet"
       ],
       "Preview of documents is not yet supported.": [
-        "Smugkig af dokumenter understøttes ikke endnu."
+        "Forhåndsvisning af dokumenter understøttes ikke endnu."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Tidligere versioner gemmes i ${ retentionLabel }"
@@ -6038,7 +5912,7 @@
         "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Privat søgning aktiveret. Du kan nu lukke dialogen og søger efter filer og mapper."
+        "Privat søgning aktiveret. Du kan nu lukke dialogen og søge efter filer og mapper."
       ],
       "Public link": [
         "Offentligt link"
@@ -6102,6 +5976,9 @@
       ],
       "Search Enabled": [
         "Søgning aktiveret"
+      ],
+      "Select a folder to make the copy in": [
+        "Vælg en mappe at kopiere til"
       ],
       "Select a folder to move to.": [
         "Vælg en mappe at flytte til."
@@ -6206,7 +6083,7 @@
         "Nogle af dine filer er ikke længere tilgængelige. Gendan adgangen til dine filer. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Nogle billeder i dette album er ikke gemt i din tidslinje. Ved at slette albummet vil disse billeder slettes permanent."
+        "Nogle billeder i dette album er ikke gemt i din tidslinje. Ved at slette albummet slettes disse billeder permanent."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Nogle websteder og streamingservices blokerer indhold efter region. En VPN giver dig mulighed for at omgå disse begrænsninger og få fri adgang til internettet."
@@ -6261,10 +6138,10 @@
         "De albummer, du opretter, vises her."
       ],
       "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitale signatur er delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+        "Den digitale signatur er delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
       ],
       "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Den digitale signatur er delvist verificeret. Denne mappe blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+        "Den digitale signatur er delvist verificeret. Denne mappe blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
@@ -6297,7 +6174,7 @@
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+        "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download filen."
       ],
       "This can NOT be undone. Please enter the device name to confirm removal.": [
         "Dette kan IKKE fortrydes. Indtast enhedens navn for at bekræfte fjernelsen."
@@ -6306,7 +6183,7 @@
         "Denne fil er for stor til forhåndsvisning"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
-        "Denne fil er blevet slettet, flyttet eller gjort utilgængelig. Prøv at kontakte fil-ejeren."
+        "Denne fil er slettet, flyttet eller gjort utilgængelig. Prøv at kontakte fil-ejeren."
       ],
       "This folder is empty": [
         "Denne mappe er tom"
@@ -6321,8 +6198,8 @@
         "Dette element findes allerede i dit bibliotek"
       ],
       "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Det valgte element er ikke gemt i dit billedebibliotek. Hvis du fjerner det fra dette album, mister du permanent adgang til det.",
-        "Nogle af de valgte elementer er ikke gemt i dit billedebibliotek. Hvis du fjerner dem fra dette album, mister du permanent adgang til dem."
+        "Det valgte element er ikke gemt i dit billedbibliotek. Hvis du fjerner det fra dette album, mister du permanent adgang til det.",
+        "Nogle af de valgte elementer er ikke gemt i dit billedbibliotek. Hvis du fjerner dem fra dette album, mister du permanent adgang til dem."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
@@ -6355,7 +6232,7 @@
         "Dette vil permanent slette de valgte elementer, du har uploadet."
       ],
       "This will replace the existing file with the folder": [
-        "Dette vil erstatte eksisterende fil med mappen"
+        "Dette vil erstatte den eksisterende fil med mappen"
       ],
       "This will replace the existing folder or file with the file": [
         "Dette vil erstatte den eksisterende mappe eller fil med filen"
@@ -6595,7 +6472,7 @@
         "Når du forbinder til VPN, bruges krypteringsteknologi til at skjule din IP-adresse (en unik kode tildelt din enhed)."
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "Når du fjerner ${ deviceName } som en synkroniseret enhed, vil alle mapper tilføjet til Mine Computere fra denne enhed blive permanent slettet fra ${ DRIVE_APP_NAME }."
+        "Når du fjerner ${ deviceName } som en synkroniseret enhed, slettes alle mapper tilføjet til Mine Computere fra denne enhed permanent fra ${ DRIVE_APP_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
@@ -7323,7 +7200,7 @@
         "Skal være mindst ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "My Albums": [
-        "Mit albummer"
+        "Mine albummer"
       ],
       "Name": [
         "Navn"
@@ -7380,7 +7257,7 @@
         "Foto"
       ],
       "Please provide full details to help us take appropriate action": [
-        "Angiv venligst alle oplysninger for at hjælpe os med at træffe passende foranstaltninger"
+        "Angiv alle oplysninger for at hjælpe os med at træffe passende foranstaltninger"
       ],
       "Port": [
         "Port"
@@ -7933,7 +7810,7 @@
         "Flash Video"
       ],
       "Graphics Interchange Format (GIF)": [
-        "Grafisk Udskiftningsformat (GIF)"
+        "Graphics Interchange Format (GIF)"
       ],
       "GZip Archive": [
         "GZip-arkiv"
@@ -8002,13 +7879,13 @@
         "RAR-arkiv"
       ],
       "Rich Text Format (RTF)": [
-        "Rig Tekst Format (RTF)"
+        "Rich Text Format (RTF)"
       ],
       "Scalable Vector Graphics (SVG)": [
         "Skalerbar vektorgrafik (SVG)"
       ],
       "Small web format (SWF)": [
-        "Lille webformat (SWF)"
+        "Small web format (SWF)"
       ],
       "Tagged Image File Format (TIFF)": [
         "Tagget billedfilformat (TIFF)"
@@ -9058,7 +8935,7 @@
         "${ errors.length } elementer kunne ikke kopieres"
       ],
       "${ errors.length } item failed to be trashed": [
-        "${ errors.length } element kunne ikke sendes til papirkurven",
+        "${ errors.length } element kunne ikke flyttes til papirkurven",
         "${ errors.length } elementer kunne ikke flyttes til papirkurven"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
@@ -9204,7 +9081,7 @@
         "Kunne ikke indlæse invitationsdetaljer"
       ],
       "Failed to move, please try again": [
-        "Flytning mislykkedes. Forsøg venligst igen"
+        "Flytning mislykkedes. Forsøg igen"
       ],
       "Failed to open document": [
         "Dokument kunne ikke åbnes"
@@ -9276,7 +9153,7 @@
         "Valgte foto(s) er allerede i \"${ albumName }\""
       ],
       "Share invitation accepted successfully": [
-        "Del-invitation accepteret"
+        "Delingsinvitation accepteret"
       ],
       "Share invitation declined": [
         "Afvist invitation til at dele"
@@ -9525,7 +9402,7 @@
         "Tilgå dine filer på farten"
       ],
       "Back up your photos and memories": [
-        "Sikkerhedskopier dine fotos og minder"
+        "Sikkerhedskopiér dine fotos og minder"
       ],
       "Backup your photos and memories": [
         "Sikkerhedskopier dine fotos og minder"
@@ -9615,13 +9492,13 @@
         "Del filer og mapper på sikker vis"
       ],
       "Share files & folders": [
-        "Delte mapper & filer"
+        "Del filer og mapper"
       ],
       "Sync and access your files from anywhere": [
         "Synkronisér og tilgå dine filer hvorsomhelst"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
-        "Ejeren skal bekræfte adgang til deling. Du får en mail, så snart det er gjort."
+        "Ejeren skal bekræfte adgang til deling. Du får en e-mail, så snart det er gjort."
       ],
       "Upload files, folders, photos": [
         "Upload filer, mapper, fotos"
@@ -10347,6 +10224,18 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } pr. henvisning"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Hvis du annullerer før denne dato,** vil du blive **nedgraderet** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveversionen udløber."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Hvis du ikke abonnerer,** bliver du **nedgraderet** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du ikke annullerer,** starter dit fulde abonnement, og du får **${ referrerRewardAmount }** i kreditter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du abonnerer før denne dato,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Efter den dato vil din konto blive nedgraderet til **${ BRAND_NAME } Free**. Hvis du ombestemmer dig, kan du **genaktivere dit abonnement** for at bevare adgangen til premium-funktioner."
       ],
@@ -10369,6 +10258,9 @@
       ],
       "Invited friends": [
         "Inviterede venner"
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sidste chance for at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde."
       ],
       "More sharing options": [
         "Flere delingsmuligheder"
@@ -12031,16 +11923,16 @@
         "Diagnosticering"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digital signatur delvist verificeret. Denne fil blev oprettet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+        "Digital signatur delvist verificeret. Denne fil blev oprettet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
       ],
       "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digital signatur delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+        "Digital signatur delvist verificeret. Denne fil blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
       ],
       "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digital signatur delvist verificeret. Denne mappe blev oprettet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+        "Digital signatur delvist verificeret. Denne mappe blev oprettet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
       ],
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Digital signatur delvist verificeret. Denne mappe blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så deres identitet kan ikke verificeres."
+        "Digital signatur delvist verificeret. Denne mappe blev uploadet ved hjælp af et offentligt tilgængeligt delingslink af en bruger uden en ${ BRAND_NAME }-konto, så brugerens identitet kan ikke verificeres."
       ],
       "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
         "Digital signatur verificeret. Denne fil blev oprettet sikkert af <strong>${ emailAddress }</strong>."
@@ -12255,7 +12147,7 @@
         "Logbog"
       ],
       "Logs": [
-        "Logger"
+        "Log-filer"
       ],
       "Make a copy": [
         "Lav en kopi"
@@ -12312,7 +12204,7 @@
         "Nattetema"
       ],
       "No albums shared with me": [
-        "Ingen album delt med mig"
+        "Intet album delt med mig"
       ],
       "No breaches detected": [
         "Ingen databrud registreret"
@@ -12324,7 +12216,7 @@
         "Ingen favoritter"
       ],
       "No Live Photos": [
-        "Ingen live fotos"
+        "Ingen Live fotos"
       ],
       "No panorama": [
         "Intet panorama"
@@ -12450,8 +12342,8 @@
         "Fjern enhed?"
       ],
       "Remove item?": [
-        "Fjern element?",
-        "Fjern elementer?"
+        "Fjern elementet?",
+        "Fjern elementerne?"
       ],
       "Rename a file": [
         "Omdøb en fil"

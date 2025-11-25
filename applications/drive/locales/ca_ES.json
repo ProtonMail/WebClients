@@ -992,9 +992,6 @@
       "Show advanced PGP settings": [
         "Mostra la configuració avançada del PGP"
       ],
-      "Show location": [
-        "Mostra la ubicació"
-      ],
       "Show more": [
         "Mostrar més"
       ],
@@ -1257,138 +1254,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Si sortiu ara, és possible que alguns esdeveniments no s'importin"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Aconseguiu l'oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB d'emmagatzemament"
-      ],
-      "200 GB storage": [
-        "200 GB d'emmagatzematge"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB d'emmagatzematge xifrat"
-      ],
-      "Add unlimited credit cards": [
-        "Afegiu-hi un nombre il·limitat de targetes de crèdit"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Totes les característiques prèmium de ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquegeu anuncis, rastrejadors i programari maliciós"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Els descomptes es basen en els preus mensuals estàndard. Al final del cicle de facturació, la subscripció es renovarà a la tarifa anual estàndard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dupliqueu el vostre emmagatzematge xifrat: obteniu 1 TB per a totes les vostres dades."
-      ],
-      "Encrypted password manager": [
-        "Gestor de contrasenyes xifrat"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Heus aquí un regal exclusiu per celebrar el nostre camí plegats."
-      ],
-      "High speed streaming with VPN": [
-        "Estríming d'alta velocitat amb VPN"
-      ],
-      "of privacy": [
-        "de privacitat"
-      ],
-      "Online document editor": [
-        "Editor de documents en línia"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacitat en línia fins a 2 persones"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacitat en línia per a tota la família (fins a 6 usuaris)"
-      ],
-      "Protect up to 10 devices": [
-        "Protegiu fins a 10 dispositius"
-      ],
-      "Recover previous file versions": [
-        "Recupereu versions anteriors dels fitxers"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Drive amb un descompte per temps limitat."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Mail amb un descompte per temps limitat."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Pass amb un descompte per temps limitat."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de VPN amb un descompte per temps limitat."
-      ],
-      "Save time with built-in 2FA": [
-        "Estalvieu temps amb 2FA integrat"
-      ],
-      "Secure email with unlimited aliases": [
-        "Correu electrònic segur amb àlies il·limitats"
-      ],
-      "Select any server": [
-        "Seleccioneu qualsevol servidor"
-      ],
-      "Share passwords easily": [
-        "Compartiu contrasenyes fàcilment"
-      ],
-      "Short @pm.me address": [
-        "Adreça curta de @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Reproduïu en continu el vostre contingut favorit"
-      ],
-      "thanks to you": [
-        "gràcies a vós"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tripliqueu el vostre emmagatzematge xifrat – obteniu 3 TB per a totes les vostres dades"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Use your own email domain": [
-        "Utilitzeu el vostre propi domini de correu electrònic"
-      ],
-      "years": [
-        "anys"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta d'aniversari"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
-      "/ month": [
-        "/ mes"
-      ],
-      "12 months": [
-        "12 mesos"
-      ],
-      "15 months": [
-        "15 mesos"
-      ],
-      "24 months": [
-        "24 mesos"
-      ],
-      "30 months": [
-        "30 mesos"
-      ],
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1689,7 +1554,7 @@
         "Problema d’aplicació"
       ],
       "Authenticator problem": [
-        "Problema amb l'autenticador"
+        "Hi ha hagut un problema amb l'autenticador"
       ],
       "Black Friday": [
         "Black Friday"
@@ -3529,9 +3394,6 @@
       "Folder \"${ name }\" is already downloading": [
         "La carpeta «${ name }»  ja s'està descarregant"
       ],
-      "Folder creation failed": [
-        "No s'ha pogut crear la carpeta"
-      ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
       ],
@@ -3852,6 +3714,9 @@
       "Unexpected error, we can't import the contacts": [
         "S'ha produït un error inesperat. No es poden importar els contactes"
       ],
+      "Unknown conflict strategy: ${ strategy }": [
+        "Estratègia de conflicte desconeguda: ${ strategy }"
+      ],
       "Unknown error": [
         "Error desconegut"
       ],
@@ -3869,9 +3734,6 @@
       ],
       "Upload for this folder is temporarily disabled": [
         "La càrrega d'aquesta carpeta està temporalment desactivada"
-      ],
-      "Upload not found": [
-        "No s'ha trobat el fitxer a carregar"
       ],
       "Username must begin with a letter or digit": [
         "El nom d'usuari ha de començar amb una lletra o un dígit."
@@ -3932,7 +3794,7 @@
         "Es requereix el codi postal."
       ],
       "⚠️ Undecryptable device": [
-        "⚠️ Dispositiu indesxifrable"
+        "⚠️ No es pot desxifrar el dispositiu"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
@@ -3940,7 +3802,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja us reenviarà a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -6116,7 +5978,7 @@
         "Cerca activa"
       ],
       "Select a folder to make the copy in": [
-        "Seleccioneu una carpeta on fer la còpia"
+        "Seleccioneu una carpeta per fer-hi la còpia"
       ],
       "Select a folder to move to.": [
         "Seleccioneu la carpeta de destinació."
@@ -6700,7 +6562,7 @@
         "No pots desfer aquesta acció."
       ],
       "You don’t have permission to copy files to this folder.": [
-        "No teniu permís per a copiar fitxers a aquesta carpeta."
+        "No teniu permís per copiar fitxers a aquesta carpeta."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Rebeu una notificació si la vostra contrasenya o altres dades han estat filtrades des d'un servei de tercers."
