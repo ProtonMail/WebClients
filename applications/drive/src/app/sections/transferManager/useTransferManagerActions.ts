@@ -52,7 +52,7 @@ export const useTransferManagerActions = () => {
                 downloadManager.cancel([entry.id]);
             }
             if (entry.type === 'upload') {
-                uploadManager.cancelUpload(entry.id);
+                void uploadManager.cancelUpload(entry.id);
             }
         },
         [downloadManager]

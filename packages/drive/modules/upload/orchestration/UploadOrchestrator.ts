@@ -173,6 +173,24 @@ export class UploadOrchestrator {
         }
     }
 
+    /**
+     * Cancel an upload
+     * Emits cancel event for proper cleanup
+     */
+    async cancel(uploadId: string): Promise<void> {
+        const queueStore = useUploadQueueStore.getState();
+        const item = queueStore.getItem(uploadId);
+
+        if (!item) {
+            return;
+        }
+
+        await this.eventHandler.handleEvent({
+            type: item.type === NodeType.File ? 'file:cancelled' : 'folder:cancelled',
+            uploadId,
+        });
+    }
+
     stop(): void {
         this.shouldStop = true;
     }

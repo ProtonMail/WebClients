@@ -60,17 +60,8 @@ export class UploadManager {
         await this.upload(filesEntries, parentUid);
     }
 
-    cancelUpload(uploadId: string): void {
-        const controllerStore = useUploadControllerStore.getState();
-        const queueStore = useUploadQueueStore.getState();
-
-        const controller = controllerStore.getController(uploadId);
-        if (controller) {
-            controller.abortController.abort();
-            controllerStore.removeController(uploadId);
-        }
-
-        queueStore.updateQueueItems(uploadId, { status: UploadStatus.Cancelled });
+    async cancelUpload(uploadId: string): Promise<void> {
+        await this.orchestrator.cancel(uploadId);
     }
 
     retryUpload(uploadId: string): void {

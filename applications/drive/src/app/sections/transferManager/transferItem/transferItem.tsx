@@ -73,9 +73,11 @@ export const TransferItem = ({ entry, onShare }: Props) => {
     const { cancelTransfer, retryTransfer } = useTransferManagerActions();
     const [containsDocumentModal, showModal] = useDownloadContainsDocumentsModal();
     const onlyShowTransferredBytes = !totalSize;
+    // Encrypted size is larger from file clear text size, we prevent showing larger transferred size to the user during upload
+    const transferredBytes = Math.min(totalSize, entry.transferredBytes);
     const transferredTotal = onlyShowTransferredBytes
-        ? `${shortHumanSize(entry.transferredBytes)}`
-        : `${shortHumanSize(entry.transferredBytes)} / ${shortHumanSize(totalSize)}`;
+        ? `${shortHumanSize(transferredBytes)}`
+        : `${shortHumanSize(transferredBytes)} / ${shortHumanSize(totalSize)}`;
 
     const shouldHideSizeInfo = [
         BaseTransferStatus.Finished,
