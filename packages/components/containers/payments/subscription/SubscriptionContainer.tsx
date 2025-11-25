@@ -7,7 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcGift } from '@proton/icons/icons/IcGift';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import PlusToPlusUpsell from '@proton/components/containers/payments/subscription/PlusToPlusUpsell';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
@@ -1238,7 +1238,7 @@ const SubscriptionContainerInner = ({
         <>
             {couponCode && (
                 <div className="flex items-center mb-1">
-                    <Icon name="gift" className="mr-2 mb-1" />
+                    <IcGift className="mr-2 mb-1" />
                     <Tooltip title={couponDescription}>
                         <code>{couponCode.toUpperCase()}</code>
                     </Tooltip>

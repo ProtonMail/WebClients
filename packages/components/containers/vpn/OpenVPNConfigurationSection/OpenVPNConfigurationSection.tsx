@@ -9,7 +9,8 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import Radio from '@proton/components/components/input/Radio';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Info from '@proton/components/components/link/Info';
@@ -472,7 +473,7 @@ const OpenVPNConfigurationSection = ({
 
                     {(lookupError || retryAfterTime) && (
                         <div className="mt-4 color-danger">
-                            <Icon name="cross-circle" className="mr-2" />
+                            <IcCrossCircle className="mr-2" />
                             {getLookupErrorMessage()}
                         </div>
                     )}
@@ -509,23 +510,23 @@ const OpenVPNConfigurationSection = ({
                             }</h3>
                             <ul className="unstyled inline-flex mt-0 mb-8 flex-column md:flex-row">
                                 <li className="flex flex-nowrap items-center mr-4">
-                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <IcCheckmark className="color-success mr-2" />
                                     <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
                                 </li>
                                 <li className="flex flex-nowrap items-center mr-4">
-                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <IcCheckmark className="color-success mr-2" />
                                     <span className="text-bold">{c('Feature').t`Secure Core servers`}</span>
                                 </li>
                                 <li className="flex flex-nowrap items-center mr-4">
-                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <IcCheckmark className="color-success mr-2" />
                                     <span className="text-bold">{c('Feature').t`Fastest VPN servers`}</span>
                                 </li>
                                 <li className="flex flex-nowrap items-center mr-4">
-                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <IcCheckmark className="color-success mr-2" />
                                     <span className="text-bold">{c('Feature').t`Torrenting support (P2P)`}</span>
                                 </li>
                                 <li className="flex flex-nowrap items-center mr-4">
-                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <IcCheckmark className="color-success mr-2" />
                                     <span className="text-bold">
                                         {c('Feature').ngettext(
                                             msgid`Connection for up to ${plusVpnConnections} device`,
@@ -535,7 +536,7 @@ const OpenVPNConfigurationSection = ({
                                     </span>
                                 </li>
                                 <li className="flex flex-nowrap items-center ">
-                                    <Icon name="checkmark" className="color-success mr-2" />
+                                    <IcCheckmark className="color-success mr-2" />
                                     <span className="text-bold mr-2">{c('Feature').t`Secure streaming support`}</span>
                                     <Info
                                         url="https://protonvpn.com/support/streaming-guide/"

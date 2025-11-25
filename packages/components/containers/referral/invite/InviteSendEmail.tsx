@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import AddressesAutocomplete from '@proton/components/components/addressesAutocomplete/AddressesAutocomplete';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
@@ -195,7 +195,7 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
                             disabled={hasInvalidRecipients || contactEmailIsLoading}
                         >
                             <span className="flex flex-nowrap items-center">
-                                <Icon name="paper-plane" className="mr-2 shrink-0" /> {c('Button').t`Send`}
+                                <IcPaperPlane className="mr-2 shrink-0" /> {c('Button').t`Send`}
                             </span>
                         </Button>
                     </div>
