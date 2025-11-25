@@ -56,7 +56,7 @@
         "Adăugare câmp"
       ],
       "Add forwarding mailbox": [
-        "Adăugare adresă redirecționare"
+        "Adăugare adresă de transferare"
       ],
       "Add mailbox": [
         "Adăugare cont de e-mail"
@@ -164,7 +164,7 @@
         "Copiere și închidere"
       ],
       "Copy forwarding address": [
-        "Copiere adresă de redirecționare"
+        "Copiere adresă de transferare"
       ],
       "Copy link": [
         "Copiere legătură web"
@@ -1363,9 +1363,9 @@
         "Vizualizări: ${ count }/${ maxReads }"
       ],
       "${ forwardedEmailsCount } forwarded": [
-        "Redirecționate: ${ forwardedEmailsCount }",
-        "Redirecționate: ${ forwardedEmailsCount }",
-        "Redirecționate: ${ forwardedEmailsCount }"
+        "Transferate: ${ forwardedEmailsCount }",
+        "Transferate: ${ forwardedEmailsCount }",
+        "Transferate: ${ forwardedEmailsCount }"
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } dorește să vă partajeze un articol."
@@ -1390,7 +1390,7 @@
         "${ PASS_APP_NAME } va folosi tema ca cea a sistemului."
       ],
       "${ PASS_APP_NAME } will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.": [
-        "${ PASS_APP_NAME } va genera o adresă de redirecționare (cunoscută și ca alias invers) pe care o puteți copia în memorie."
+        "${ PASS_APP_NAME } va genera o adresă de transferare (cunoscută și ca alias invers) pe care o puteți copia în memorie."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } va importa doar date de conectare, notițe, carduri de plată și identități."
@@ -1657,7 +1657,7 @@
         "Mesajele trimise de la această adresă vor apărea ca fiind trimise de la ${ exampleEmail } de exemplu."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Mesajele trimise către aliasurile personale sunt redirecționate către conturile de e-mail. Un alias poate avea mai multe conturi de e-mail: util pentru a partaja un alias între dvs. și alți prieteni."
+        "Mesajele trimise către aliasurile personale sunt transferate către conturile de e-mail. Un alias poate avea mai multe conturi de e-mail: util pentru a partaja un alias între dvs. și alți prieteni."
       ],
       "Emptying trash...": [
         "Se golește gunoiul..."
@@ -1740,7 +1740,7 @@
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
-        "Adresa de redirecționare a fost copiată în memorie. Trimite un mesaj la această adresă și ${ Email } îl va primi."
+        "Adresa de transferarea a mesajelor a fost copiată în memorie. Trimite un mesaj la această adresă și ${ Email } îl va primi."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână.",
@@ -2116,7 +2116,7 @@
         "După ștergere, aliasul nu mai poate fi restaurat. Doriți să-l dezactivați în schimb?"
       ],
       "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
-        "După ștergere, aliasul nu poate fi restaurat. Aliasul este deja dezactivat și nu va redirecționa mesajele către adresa de e-mail."
+        "După ștergere, aliasul nu poate fi restaurat. Aliasul este deja dezactivat și nu va transfera mesajele către adresa de e-mail."
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
         "Utilizați domeniul cu calea completă, de exemplu domeniul-meu.com sau subdomeniul-meu.domeniul-meu.com dacă utilizați un subdomeniu."
@@ -2206,7 +2206,7 @@
         "Setările s-au actualizat."
       ],
       "Share aliases with others by adding their inbox as a forwarding mailbox.": [
-        "Partajați aliasuri cu alții adăugând adresa lor de e-mail ca adresă de redirecționare."
+        "Partajați aliasuri cu alții adăugând adresa lor de e-mail ca adresă de transferare."
       ],
       "Share your logins and secure notes, with up to 10 people": [
         "Partajați-vă datele de conectare și notițele securizate cu până la 10 persoane"
@@ -2568,9 +2568,9 @@
         "${ days } de zile"
       ],
       "${ forwardCount } forward": [
-        "Redirecționate: ${ forwardCount }",
-        "Redirecționate: ${ forwardCount }",
-        "Redirecționate: ${ forwardCount }"
+        "Transferate: ${ forwardCount }",
+        "Transferate: ${ forwardCount }",
+        "Transferate: ${ forwardCount }"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails } și ${ blockedEmails } în ultimele 14 zile."
@@ -2965,7 +2965,7 @@
         "Din motive de securitate, ${ PASS_SHORT_APP_NAME } se blochează automat după 10 minute de inactivitate."
       ],
       "Forwards to": [
-        "Redirecționare către"
+        "Transferare către"
       ],
       "Free": [
         "Free"
@@ -4736,7 +4736,7 @@
         "Adrese deja invitate."
       ],
       "Aliases in trash will continue forwarding emails.": [
-        "Aliasurile din gunoi vor continua să redirecționeze mesajele primite."
+        "Aliasurile din gunoi vor continua să transfere mesajele primite."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Toate articolele trimise în gunoi vor fi șterse definitiv. Nu puteți anula această acțiune."
