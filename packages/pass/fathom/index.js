@@ -507,7 +507,7 @@ const CC_PREFIX_ATTR_START_RE =
 
 const CC_NUMBER_ATTR_RE = /num(?:ero)?carte|c(?:ardn(?:um|[or])|bnum|cno)|\b(c(?:ard |c)number)\b/i;
 
-const CC_NUMBER_OUTLIER_ATTR_RE = /logincard/i;
+const CC_NUMBER_OUTLIER_ATTR_RE = /c(?:ertificate|oupon)|logincard|voucher|promo|gift/i;
 
 const CC_CVC_ATTR_RE = /c(?:ard(?:verification|code)|sc|v[cv])|payments?code|\b(security code|ccc(?:ode|vv|sc))\b/i;
 
@@ -662,7 +662,7 @@ const matchCCLastName = andRe([CC_PREFIX_ATTR_START_RE, IDENTITY_LASTNAME_ATTR_R
 
 const matchCCNumber = and(test(CC_NUMBER_ATTR_RE), notRe(CC_NUMBER_OUTLIER_ATTR_RE));
 
-const matchCCSecurityCode = test(CC_CVC_ATTR_RE);
+const matchCCSecurityCode = and(test(CC_CVC_ATTR_RE), notRe(CC_NUMBER_OUTLIER_ATTR_RE));
 
 const matchCCExp = and(test(CC_EXP_ATTR_RE), notRe(DOCUMENT_ATTR_RE));
 
