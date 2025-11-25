@@ -660,9 +660,6 @@
       "Edit “${ label.Name }”": [
         "\"${ label.Name }\"-ის ჩასწორება"
       ],
-      "Emoji": [
-        "ემოჯი"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring }-ის ჩართვა"
       ],
@@ -1936,135 +1933,6 @@
         "ახალი ელფოსტა"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 გბ საცავი"
-      ],
-      "200 GB storage": [
-        "200 გბ საცავი"
-      ],
-      "500 GB encrypted storage": [
-        "500 გბ დაშიფრული საცავი"
-      ],
-      "Add unlimited credit cards": [
-        "დაამატეთ განუსაზღვრელი რაოდენობის საკრედიტო ბარათი"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "${ BRAND_NAME } Mail, Pass, VPN, Drive და Calendar-ის ყველა ფასიანი ფუნქცია"
-      ],
-      "Block ads, trackers, and malware": [
-        "რეკლამის, ტრეკერებისა და მავნე პროგრამების დაბლოკვა"
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "გააორმაგეთ თქვენი დაშიფრული საცავი – მიიღეთ 1 ტბ ყველა თქვენი მონაცემისთვის"
-      ],
-      "Encrypted password manager": [
-        "დაშიფრული პაროლების მმართველი"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "ეს ექსკლუზიური საჩუქარია ჩვენი ერთობლივი მოგზაურობის აღსანიშნავად."
-      ],
-      "High speed streaming with VPN": [
-        "ჩქაროსნული სტრიმინგი VPN-ით"
-      ],
-      "of privacy": [
-        "კონფიდენციალობა"
-      ],
-      "Online document editor": [
-        "დოკუმენტების რედაქტორი ინტერნეტში"
-      ],
-      "Online privacy for up to 2 people": [
-        "ინტერნეტკონფიდენციალობა ორამდე ადამიანისთვის"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის (6-მდე მომხმარებელი)"
-      ],
-      "Protect up to 10 devices": [
-        "დაიცავით 10-მდე მოწყობილობა"
-      ],
-      "Recover previous file versions": [
-        "წინა ფაილის ვერსიების აღდგენა"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "დაზოგეთ ბევრი Drive-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "დაზოგეთ ბევრი ელფოსტის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "დაზოგეთ ბევრი Pass-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
-      ],
-      "Save time with built-in 2FA": [
-        "დაზოგეთ დრო ჩაშენებული 2FA-ით"
-      ],
-      "Secure email with unlimited aliases": [
-        "დაცული ელფოსტა შეუზღუდავი ფსევდონიმების რაოდენობით"
-      ],
-      "Select any server": [
-        "აირჩიეთ ნებისმიერი სერვერი"
-      ],
-      "Share passwords easily": [
-        "გააზიარეთ პაროლები ადვილად"
-      ],
-      "Short @pm.me address": [
-        "მოკლე @pm.me მისამართი"
-      ],
-      "Stream your favorite content": [
-        "დასტრიმეთ თქვენი რჩეული შემცველობა"
-      ],
-      "thanks to you": [
-        "მადლობა"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "გაასამმაგეთ თქვენი დაშიფრული საცავი – მიიღეთ 3 ტბ ყველა თქვენი მონაცემისთვის"
-      ],
-      "Unlimited folders, labels and filters": [
-        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
-      ],
-      "Use your own email domain": [
-        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
-      ],
-      "years": [
-        "წელი"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "საიუბილეო შეთავაზება"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } თვე",
-        "${ n } თვე"
-      ],
-      "/ month": [
-        "/ თვეში"
-      ],
-      "12 months": [
-        "12 თვე"
-      ],
-      "15 months": [
-        "15 თვე"
-      ],
-      "24 months": [
-        "24 თვე"
-      ],
-      "30 months": [
-        "30 თვე"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal }-სთვის"
-      ]
-    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "იმუშავეთ ინტერნეტში კონფიდენციალურად და დაბლოკეთ რეკლამა"
@@ -2473,6 +2341,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "ავტომატურად განახლდება"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "განახლდება ${ renewPrice }-ით, ${ renewLength } თვის განმავლობაში",
         "განახლდება ${ renewPrice }-ით, ${ renewLength } თვის განმავლობაში"
@@ -2583,6 +2454,9 @@
       "Keep your email spam-free": [
         "იქონიეთ თქვენი ელფოსტა სპამისგან თავისუფლად"
       ],
+      "Keep your photos out of AI training": [
+        "იქონიეთ სურათები ხი-ისგან შორს"
+      ],
       "Learn how Big Tech uses family photos to train AI, how it affects you.": [
         "გაიგეთ, როგორ იყენებს Big Tech ოჯახის ფოტოებს ხის გასაწვრთნელად და როგორ გეხებათ ეს თქვენ."
       ],
@@ -2591,9 +2465,6 @@
       ],
       "Learn how to make account sharing simple for any family member.": [
         "ისწავლეთ, როგორ გაუზიაროთ ანგარიში მარტივად ოჯახის წევრს."
-      ],
-      "Organize your memories into albums": [
-        "დააორგანიზეთ თქვენი მოგონებები ალბომებში"
       ],
       "Protect your business communications": [
         "დაიცავით თქვენი საქმიანი მიმოწერა"
@@ -2675,9 +2546,6 @@
       ],
       "Worried about data breaches?": [
         "ნერვიულობთ მონაცემების გაჟონვის შესახებ?"
-      ],
-      "Write, edit, and collaborate on documents with our secure online editors.": [
-        "დაწერეთ, ჩაასწორეთ და იმუშავეთ ერთად დოკუმენტებზე ჩვენი დაცული ინტერნეტრედაქტორებით."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "თქვენი ოჯახის სურათებზე ხის ავარჯიშებენ. აი, როგორ უნდა გააჩეროთ ეს"
@@ -8616,9 +8484,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**შემოიტანეთ თქვენი არსებული კოდები** სხვა 2FA აპებიდან, მაგალითად Google Authenticator"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**მოიწვიეთ მეგობრები** ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
-      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
       ],
@@ -9532,9 +9397,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName }-ის მიღება"
-      ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "მიიღეთ **${ referrerRewardAmount }-ის კრედიტები** ყოველი მეგობრისთვის, რომელიც გამოიწერს."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "მიიღწეთ წვდომა ${ BRAND_NAME }-ის ანგარიშის შექმნით და მოსაწვევის დათანხმებით."
@@ -11496,9 +11358,6 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "თქვენი უფასო საცდელი პერიოდი მოიცავს 1 გამოყოფილ სერვერს."
-      ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "თქვენი მეგობრები მიიღებენ **2 კვირას უფასოდ** თავიანთ არჩეულ სატარიფო გეგმაზე."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts }-დან შემოტანა შეყოვნდება.",
@@ -13770,9 +13629,6 @@
       ],
       "Terms": [
         "წესები"
-      ],
-      "Terms and conditions": [
-        "წესები და პირობები"
       ],
       "Trouble signing in?": [
         "შესვლის პრობლემები გაქვთ?"
@@ -17619,6 +17475,12 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "ისიამოვნეთ **${ planTitle }**-ით **${ textDate }**-მდე"
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "მოითმინეთ 2 კვირა, მიიღეთ ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "როგორ მუშაობს საცდელი ვერსია:"
+      ],
       "Invite friends. Get credits.": [
         "მოიწვიეთ მეგობრები და მიიღეთ კრედიტები."
       ],
@@ -21059,6 +20921,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME }-ის მონიტორინგის ანგარიში"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } ორგანიზაციებისთვის"
       ],
       "(active)": [
         "(აქტიური)"

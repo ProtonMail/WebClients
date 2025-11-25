@@ -660,9 +660,6 @@
       "Edit “${ label.Name }”": [
         "「${ label.Name }」を編集"
       ],
-      "Emoji": [
-        "絵文字"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } を有効にする"
       ],
@@ -1928,137 +1925,6 @@
         "新しいメール"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "お得情報を入手"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "200 GB storage": [
-        "200GBストレージ"
-      ],
-      "500 GB encrypted storage": [
-        "500 GBの暗号化されたストレージ"
-      ],
-      "Add unlimited credit cards": [
-        "無制限のクレジットカードを追加する"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "${ BRAND_NAME } Mail、Pass、VPN、Drive、Claendarの全てのプレミアム機能"
-      ],
-      "Block ads, trackers, and malware": [
-        "広告、トラッカー、マルウェアをブロック"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "割引は標準の月額料金に基づいています。支払いサイクルの終わりに、お客様のサブスクリプションは標準の年間料金で更新されます。"
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "お客様の暗号化済みストレージを2倍に — お客様のすべてのデータに1 TBを提供します"
-      ],
-      "Encrypted password manager": [
-        "暗号化されたパスワードマネージャー"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "これまでの道のりを祝う特別な贈り物です。"
-      ],
-      "High speed streaming with VPN": [
-        "VPNでの高速ストリーミング"
-      ],
-      "of privacy": [
-        "プライバシーの"
-      ],
-      "Online document editor": [
-        "オンライン文書エディタ"
-      ],
-      "Online privacy for up to 2 people": [
-        "最大2人までのオンラインプライバシー"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "家族(6人まで)のためのオンラインプライバシー"
-      ],
-      "Protect up to 10 devices": [
-        "最大10台のデバイスを保護"
-      ],
-      "Recover previous file versions": [
-        "以前のファイルを復元"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "期間限定の割引で、プレミアムDrive機能をお得にご利用いただけます。"
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "期間限定の割引で、プレミアムMail機能をお得にご利用いただけます。"
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "期間限定の割引で、プレミアムPass機能をお得にご利用いただけます。"
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "期間限定の割引で、プレミアムVPN機能をお得にご利用いただけます。"
-      ],
-      "Save time with built-in 2FA": [
-        "内蔵の2要素認証で時間を節約"
-      ],
-      "Secure email with unlimited aliases": [
-        "無制限のエイリアスを備えたセキュアなメール"
-      ],
-      "Select any server": [
-        "サーバーを選択"
-      ],
-      "Share passwords easily": [
-        "パスワードを簡単に共有"
-      ],
-      "Short @pm.me address": [
-        "短い @pm.me メールアドレス"
-      ],
-      "Stream your favorite content": [
-        "お気に入りのコンテンツをストリーミングする"
-      ],
-      "thanks to you": [
-        "ありがとうございます"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "お客様の暗号化済みストレージを3倍に — お客様のすべてのデータに3 TBを提供します"
-      ],
-      "Unlimited folders, labels and filters": [
-        "無制限のフォルダー、ラベル、フィルター"
-      ],
-      "Use your own email domain": [
-        "独自メールドメインを使用する"
-      ],
-      "years": [
-        "年"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "記念セール"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } ヶ月"
-      ],
-      "/ month": [
-        "/ 月"
-      ],
-      "12 months": [
-        "12 か月"
-      ],
-      "15 months": [
-        "15 か月"
-      ],
-      "24 months": [
-        "24 か月"
-      ],
-      "30 months": [
-        "30 か月"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal } の場合"
-      ]
-    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "広告をブロックしプライベートにウェブを閲覧します"
@@ -2478,6 +2344,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "自動更新"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "${ renewLength }ヶ月間、${ renewPrice }で自動で更新されます"
       ],
@@ -2529,6 +2398,9 @@
       ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "受信メールを分類し整理するための繰り返し行うアクションを自動化します。"
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "バックアップし、整理し、 一生の思い出を安全に共有しましょう。"
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "同じWiFiを使用している場合、誰かが私のインターネット履歴を見ることができますか?"
@@ -2617,6 +2489,9 @@
       "Keep your email spam-free": [
         "メールをスパムから守りましょう"
       ],
+      "Keep your photos out of AI training": [
+        "お客様の写真をAIトレーニングから保護する"
+      ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "ビジネス向け ${ DRIVE_APP_NAME } で、チームのファイルを保護し、アクセス可能に保ち、同期させましょう。"
       ],
@@ -2643,9 +2518,6 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "データブローカー、スパム、詐欺、マルウェアが蔓延するインターネットを安全に利用することは、ますます困難になっています。だからこそ、${ PASS_APP_NAME } はパスワードの管理・保存・自動入力の支援だけにとどまりません。プライバシーを制御し、hide-my-email機能で受信箱を保護するツールを提供します。"
-      ],
-      "Organize your memories into albums": [
-        "思い出をアルバムに整理しましょう"
       ],
       "Protect your business communications": [
         "お客様のビジネスコミュニケーションを保護"
@@ -2749,8 +2621,8 @@
       "Worried about data breaches?": [
         "データ漏洩が心配ですか？"
       ],
-      "Write, edit, and collaborate on documents with our secure online editors.": [
-        "当社の安全なオンラインエディターで、文書を作成、編集、共同作業しましょう。"
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "${ DOCS_APP_NAME } を使用して、安全にドキュメントの作成、編集、共同作業を行うことができます。"
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "あなたの家族写真がAIを訓練しています、それを止める方法はこちら"
@@ -4821,9 +4693,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "招待した人が${ BRAND_NAME }のプランにサインアップすると、お客様は${ BRAND_NAME }のクレジットで${ referralInfo.referrerRewardAmount }を受け取り、その方も開始時に${ referralInfo.refereeRewardAmount }のクレジットを受け取ることができます。"
       ]
     },
     "description": {
@@ -8632,6 +8501,9 @@
       "${ planName } expires today.": [
         "${ planName } の有効期限は本日です。"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "組織向け${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、お客様の組織を悪者やセキュリティの脅威から保護するために 24 時間体制で稼働しています。"
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } は、高度な AI システムとスペシャリストを活用した高度なアカウント保護プログラムで、悪者やセキュリティの脅威からユーザーを保護するために 24 時間体制で働いています。"
       ],
@@ -8737,17 +8609,20 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator などの他の2要素認証アプリから、**既存のコードをインポート**"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "招待リンクで${ BRAND_NAME }に**友達を招待してください**"
-      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "ステップ1：招待リンクで${ BRAND_NAME }に**友達を招待してください**"
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**ステップ2：** あなたの友達は、プランを**2週間無料**でご利用いただけます。"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**ステップ2：** あなたの友達は、プランを2週間無料でご利用いただけます。"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**ステップ3：**プランに登録する人ごとに、${ referrerRewardAmount } クレジットを獲得できます。"
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**ステップ3：**プランに登録する人ごとに、**${ referrerRewardAmount } クレジット**を獲得できます。"
       ],
       "**Sync codes** to all your devices": [
         "すべてのデバイスに**コードを同期**"
@@ -9663,9 +9538,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } を入手"
-      ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "友達が登録するたびに、**${ referrerRewardAmount } クレジット**を獲得できます。"
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } アカウントを作成し、招待を承諾することでアクセスできます。"
@@ -11146,6 +11018,9 @@
       "Upgrade to unlock": [
         "アップグレードしてロックを解除"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "組織向けの${ PROTON_SENTINEL_NAME }にアクセスするには、${ firstPlanNames }または${ lastPlanName }にアップグレードしてください。"
+      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "${ PROTON_SENTINEL_NAME }を利用するには、${ firstPlanNames }または${ lastPlanName }をアップグレードしてください。"
       ],
@@ -11682,9 +11557,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
-      ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "あなたの友達は選択されたプランを**2週間無料**で利用できます。"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } からのインポートが一時的に遅延しています。"
@@ -13972,9 +13844,6 @@
         "アカウントを切り替える"
       ],
       "Terms": [
-        "利用規約"
-      ],
-      "Terms and conditions": [
         "利用規約"
       ],
       "Trouble signing in?": [
@@ -17876,6 +17745,18 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ textDate }** まで、**${ planTitle }** を無料でお楽しみいただけます。"
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "2週間待って、${ referrerRewardAmount }をもらおう"
+      ],
+      "How your free trial works:": [
+        "無料トライアルについて："
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "それまでにキャンセルすると、トライアル終了時に${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }にダウングレードされます。キャンセルしない場合、お客様のフルプランが開始され、**${ referrerRewardAmount }** のクレジットを獲得できます。"
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "お客様がこの日付までに登録された場合、**${ referrerRewardAmount }**のクレジットを獲得できます。登録されなかった場合、${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }へダウングレードされます。"
+      ],
       "Invite friends. Get credits.": [
         "友達を招待。クレジットを獲得。"
       ],
@@ -17896,6 +17777,9 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }**が提供するすべての強力な機能をお試しいただける期間は、残り**${ daysRemaining }日**です。"
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "お友達も、次回の請求で ${ refereeRewardAmount } を獲得できます！"
       ],
       "your subscription": [
         "あなたのサブスクリプション"
@@ -21283,6 +21167,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor レポート"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "組織向け ${ PROTON_SENTINEL_NAME }"
+      ],
       "(active)": [
         "(転送中)"
       ],
@@ -22068,9 +21955,6 @@
       ],
       "Gift code": [
         "ギフトコード"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "${ refereeRewardAmount }を与え、2週間の無料期間を提供します。${ referrerRewardAmount }クレジットを取得してください。"
       ],
       "Group": [
         "グループ"

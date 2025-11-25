@@ -660,9 +660,6 @@
       "Edit “${ label.Name }”": [
         "Modifica \"${ label.Name }\""
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "Attiva ${ darkWebMonitoring }"
       ],
@@ -1918,138 +1915,6 @@
         "Nuova email"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Approfitta dell'offerta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB di archiviazione"
-      ],
-      "200 GB storage": [
-        "200 GB di spazio di archiviazione"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB di spazio di archiviazione crittografato"
-      ],
-      "Add unlimited credit cards": [
-        "Aggiungi un numero illimitato di carte di credito"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Tutte le funzionalità premium di ${ BRAND_NAME } Mail, Pass, VPN, Drive e Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocca annunci, tracker e malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Gli sconti si basano sui prezzi mensili standard. Alla fine del ciclo di fatturazione, il tuo abbonamento si rinnoverà alla tariffa annuale standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Raddoppia la tua archiviazione crittografata e ottieni 1 TB per tutti i tuoi dati."
-      ],
-      "Encrypted password manager": [
-        "Gestore di password crittografato"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Ecco un regalo esclusivo per celebrare il nostro percorso insieme."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming ad alta velocità con VPN"
-      ],
-      "of privacy": [
-        "di privacy"
-      ],
-      "Online document editor": [
-        "Editor di documenti online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacy online per fino a 2 persone"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacy online per tutta la famiglia (fino a 6 utenti)"
-      ],
-      "Protect up to 10 devices": [
-        "Proteggi fino a 10 dispositivi"
-      ],
-      "Recover previous file versions": [
-        "Recupera versioni precedenti del file"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Risparmia alla grande sulle funzionalità premium di Drive con uno sconto a tempo limitato."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Risparmia alla grande sulle funzionalità premium di Mail con uno sconto a tempo limitato."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Risparmia alla grande sulle funzionalità premium di Pass con uno sconto a tempo limitato."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Risparmia alla grande sulle funzionalità premium di VPN con uno sconto a tempo limitato."
-      ],
-      "Save time with built-in 2FA": [
-        "Risparmia tempo con 2FA integrato"
-      ],
-      "Secure email with unlimited aliases": [
-        "Posta elettronica sicura con alias illimitati"
-      ],
-      "Select any server": [
-        "Seleziona qualsiasi server"
-      ],
-      "Share passwords easily": [
-        "Condividi password facilmente"
-      ],
-      "Short @pm.me address": [
-        "Indirizzo breve @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Guarda i tuoi contenuti preferiti"
-      ],
-      "thanks to you": [
-        "grazie a te"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplica la tua archiviazione crittografata e ottieni 3 TB per tutti i tuoi dati."
-      ],
-      "Unlimited folders, labels and filters": [
-        "Cartelle, etichette e filtri illimitati"
-      ],
-      "Use your own email domain": [
-        "Usa il tuo dominio di posta personalizzato"
-      ],
-      "years": [
-        "anni"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offerta per l'anniversario"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mese",
-        "${ n } mesi"
-      ],
-      "/ month": [
-        "/mese"
-      ],
-      "12 months": [
-        "12 mesi"
-      ],
-      "15 months": [
-        "15 mesi"
-      ],
-      "24 months": [
-        "24 mesi"
-      ],
-      "30 months": [
-        "30 mesi"
-      ],
-      "for ${ durationDeal }": [
-        "per ${ durationDeal }"
-      ]
-    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Naviga privatamente sul web e blocca gli annunci"
@@ -2473,6 +2338,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Si rinnova automaticamente"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Si rinnova automaticamente a ${ renewPrice } per ${ renewLength } mese",
         "Si rinnova automaticamente a ${ renewPrice } per ${ renewLength } mesi"
@@ -2519,6 +2387,9 @@
       ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "Automatizza azioni ricorrenti per ordinare e organizzare le email in arrivo."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Esegui il backup, organizza e condividi in modo sicuro una vita di ricordi."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Qualcuno può vedere la mia cronologia Internet se utilizziamo la stessa rete WiFi?"
@@ -2591,6 +2462,9 @@
       ],
       "Keep your email spam-free": [
         "Mantieni la tua email senza spam"
+      ],
+      "Keep your photos out of AI training": [
+        "Tieni le tue foto fuori dall'addestramento AI"
       ],
       "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
         "Scopri come sconfiggere la posta indesiderata fastidiosa e potenzialmente dannosa. Le email di spam, anche conosciute come posta indesiderata, possono essere più di un fastidioso ingombro nella tua posta in arrivo. I criminali informatici possono usare questi messaggi non richiesti e indesiderati per lanciare attacchi di phishing e diffondere malware."
@@ -2690,6 +2564,9 @@
       ],
       "Worried about data breaches?": [
         "Sei preoccupato per le violazioni dei dati?"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Scrivi, modifica e collabora su documenti in modo sicuro con ${ DOCS_APP_NAME }."
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Il tuo indirizzo email personale è una parte essenziale della tua identità digitale. Come il tuo numero di telefono, non lo dai a tutti quelli che incontri. Ecco perché è utile avere altri indirizzi email che puoi usare per scopi diversi."
@@ -4764,9 +4641,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Riceverai ${ referralInfo.referrerRewardAmount } in crediti ${ BRAND_NAME } quando la persona che inviti si iscrive a un piano ${ BRAND_NAME }; anche loro riceveranno ${ referralInfo.refereeRewardAmount } in crediti per iniziare."
       ]
     },
     "description": {
@@ -5061,6 +4935,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm per Fedora / Red Hat"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "Puoi anche scaricare l'app attraverso il ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6336,6 +6213,9 @@
       ],
       "Permissions request failed.": [
         "Richiesta di autorizzazioni non riuscita."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Aggiungi un metodo di pagamento prima di riattivare il tuo abbonamento"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizzato prima di aggiungere indirizzi."
@@ -8021,6 +7901,9 @@
       "Contact us": [
         "Contattaci"
       ],
+      "Downloads": [
+        "Download"
+      ],
       "Enjoying ${ planName }?": [
         "Ti piace ${ planName }?"
       ],
@@ -8611,6 +8494,9 @@
       "${ planName } expires today.": [
         "${ planName } scade oggi."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } per le organizzazioni è un avanzato programma di protezione degli account, basato su sofisticati sistemi di intelligenza artificiale e su specialisti che lavorano 24 ore su 24 per proteggere la tua organizzazione da malintenzionati e minacce alla sicurezza."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } è un programma di protezione avanzato per gli account, basato su una sofisticata intelligenza artificiale e specialisti pronti a proteggerti dai malintenzionati in rete e da tutte le minacce di sicurezza."
       ],
@@ -8728,17 +8614,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importa i codici esistenti** da altre app 2FA, come Google Authenticator."
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Invita i tuoi amici** a ${ BRAND_NAME } con il tuo link di affiliazione."
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Passo 2:** I tuoi amici ottengono **2 settimane gratis** sul loro piano."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul loro piano."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni persona che si abbona a un piano."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Passaggio 3:** Ottieni **${ referrerRewardAmount } crediti** per ogni persona che si abbona a un piano."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronizza i codici** su tutti i tuoi dispositivi."
@@ -9669,9 +9561,6 @@
       "Get ${ upsellPlanName }": [
         "Scegli ${ upsellPlanName }"
       ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Ottieni **${ referrerRewardAmount } crediti** per ogni amico che si iscrive."
-      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Ottieni l'accesso creando un account ${ BRAND_NAME } e accettando l'invito."
       ],
@@ -10234,6 +10123,9 @@
       ],
       "On": [
         "Attiva"
+      ],
+      "On Ubuntu?": [
+        "Su Ubuntu?"
       ],
       "Once you reset your password:": [
         "Una volta che reimposti la tua password:"
@@ -11104,6 +10996,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } senza alcun rischio: se per qualsiasi motivo cambi idea, riceverai un rimborso completo. Nessuna domanda."
       ],
+      "Two-factor authentication": [
+        "Autenticazione a due fattori"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "La modalità a due password richiede due password: una per accedere al tuo account e una per decrittografare i tuoi dati. (Avanzato)"
       ],
@@ -11157,6 +11052,9 @@
       ],
       "Upgrade to unlock": [
         "Effettua l'upgrade per sbloccare"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
@@ -11705,9 +11603,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "La tua prova gratuita è stata convertita con successo in un abbonamento mensile. La tua data di rinnovo è il ${ nextBillingDate }."
-      ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "I tuoi amici ottengono **2 settimane gratis** sul piano che hanno scelto."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "L'importazione dagli account ${ accounts } è temporaneamente rinviato.",
@@ -12356,11 +12251,17 @@
       "/month x ${ months }": [
         "/mese x ${ months }"
       ],
+      "0 of 1 email address available": [
+        "0 su 1 indirizzo email disponibile"
+      ],
       "1 hour": [
         "1 ora"
       ],
       "1 minute": [
         "1 minuto"
+      ],
+      "1 of 1 email address available": [
+        "1 su 1 indirizzo email disponibile"
       ],
       "10 hide-my-email aliases": [
         "10 alias hide-my-email"
@@ -13845,6 +13746,9 @@
       "Don't have access to your 2FA?": [
         "Non hai accesso alla tua 2FA?"
       ],
+      "Downloads": [
+        "Download"
+      ],
       "Encryption and keys": [
         "Crittografia e chiavi"
       ],
@@ -13988,9 +13892,6 @@
       ],
       "Terms": [
         "Termini"
-      ],
-      "Terms and conditions": [
-        "Termini e condizioni"
       ],
       "Trouble signing in?": [
         "Altre opzioni di accesso"
@@ -16633,6 +16534,9 @@
       "Keep this plan": [
         "Mantieni questo piano"
       ],
+      "Open ${ PASS_APP_NAME } vaults": [
+        "Apri ${ PASS_APP_NAME }"
+      ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
       ],
@@ -17939,6 +17843,18 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Goditi **${ planTitle }** gratuitamente fino al **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Dai 2 settimane, ottieni ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Come funziona la tua prova gratuita:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Se annulli prima di allora, sarai declassato a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando la prova scade. Se non annulli, il tuo piano completo si attiverà e riceverai **${ referrerRewardAmount }** in crediti."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Se ti abboni prima di questa data, riceverai **${ referrerRewardAmount }** in crediti. Se non ti abboni, ti verrà eseguito il downgrade al piano ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "Invite friends. Get credits.": [
         "Invita amici. Ottieni crediti."
       ],
@@ -17960,6 +17876,9 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Ti rimane **${ daysRemaining } giorno** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire.",
         "Ti restano **${ daysRemaining } giorni** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Il tuo amico riceverà anche ${ refereeRewardAmount } da riscattare sulla sua prossima fattura!"
       ],
       "your subscription": [
         "il tuo abbonamento"
@@ -18535,6 +18454,9 @@
       "Your recovery email can **only recover access to your account**.": [
         "La tua email di recupero può **solo recuperare l'accesso al tuo account**."
       ],
+      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "La tua email di recupero potrebbe essere sfruttata da malintenzionati per prendere il controllo del tuo account. ${ disableEmail } per aumentare la sicurezza del tuo account."
+      ],
       "Your recovery email has been enabled": [
         "La tua email di recupero è stata abilitata"
       ],
@@ -18555,6 +18477,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Il tuo numero di telefono di recupero può **solo recuperare l'accesso al tuo account**."
+      ],
+      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Il tuo numero di telefono di recupero potrebbe essere sfruttato da malintenzionati per prendere il controllo del tuo account. ${ disablePhone } per aumentare la sicurezza del tuo account."
       ],
       "Your recovery phone has been enabled": [
         "Il tuo telefono di recupero è stato abilitato"
@@ -21421,6 +21346,9 @@
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Segnalazione di monitoraggio di ${ PASS_SHORT_APP_NAME }"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } per organizzazioni"
+      ],
       "(active)": [
         "(abilitata)"
       ],
@@ -22198,9 +22126,6 @@
       ],
       "Gift code": [
         "Codice regalo"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "Regala ${ refereeRewardAmount } e 2 settimane gratuite. Ottieni ${ referrerRewardAmount } crediti."
       ],
       "Group": [
         "Gruppo"

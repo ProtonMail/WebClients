@@ -660,9 +660,6 @@
       "Edit “${ label.Name }”": [
         "${ label.Name } etiketini düzenle"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } özelliğini aç"
       ],
@@ -1936,138 +1933,6 @@
         "Yeni e-posta"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "200 GB storage": [
-        "200 GB depolama alanı"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB şifrelenmiş depolama alanı"
-      ],
-      "Add unlimited credit cards": [
-        "Sınırsız sayıda kredi kartı ekleyin"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Tüm ücretli ${ BRAND_NAME } Mail, Pass, VPN, Drive ve Calendar özellikleri"
-      ],
-      "Block ads, trackers, and malware": [
-        "Reklamları, etkinlik izleyicileri ve kötü amaçlı yazılımları engelleyin"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "İndirimler standart aylık fiyatlandırmaya göre belirlenir. Aboneliğiniz fatura döneminin sonunda standart yıllık fiyattan yenilenir."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Şifrelenmiş depolama alanınızı iki katına çıkarın. Tüm verileriniz için 1 TB edinin."
-      ],
-      "Encrypted password manager": [
-        "Şifrelenmiş parola yöneticisi"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Birlikte çıktığımız bu yolculuğu kutlamak için size özel bir hediye."
-      ],
-      "High speed streaming with VPN": [
-        "VPN ile yüksek hızda yayın akışı izleme"
-      ],
-      "of privacy": [
-        "ile gizlilik"
-      ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
-      "Online privacy for up to 2 people": [
-        "2 kişiye kadar çevrim içi gizlilik"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Tüm aileniz için çevrim içi gizlilik (6 kullanıcıya kadar)"
-      ],
-      "Protect up to 10 devices": [
-        "10 aygıta kadar koruyun"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Sınırlı süreli indirimle ücretli Drive özelliklerinde büyük indirim kazanın."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Sınırlı süreli indirimle ücretli Mail özelliklerinde büyük indirim kazanın."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Sınırlı süreli indirimle ücretli Pass özelliklerinde büyük indirim kazanın."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Sınırlı süreli indirimle ücretli VPN özelliklerinde büyük indirim kazanın."
-      ],
-      "Save time with built-in 2FA": [
-        "İç iki adımlı doğrulama ile zaman kazanın"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sınırsız takma ad ile güvenli e-posta"
-      ],
-      "Select any server": [
-        "Herhangi bir sunucu seçin"
-      ],
-      "Share passwords easily": [
-        "Parolaları kolayca paylaşın"
-      ],
-      "Short @pm.me address": [
-        "Kısa @pm.me adresi"
-      ],
-      "Stream your favorite content": [
-        "Beğendiğiniz yayın akışı içeriklerini izleyin"
-      ],
-      "thanks to you": [
-        "sayenizde"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Şifrelenmiş depolama alanınızı üç katına çıkarın. Tüm verileriniz için 3 TB edinin."
-      ],
-      "Unlimited folders, labels and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ],
-      "years": [
-        "yıl"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Yıl dönümü teklifi"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } ay",
-        "${ n } ay"
-      ],
-      "/ month": [
-        "/ ay"
-      ],
-      "12 months": [
-        "12 ay"
-      ],
-      "15 months": [
-        "15 ay"
-      ],
-      "24 months": [
-        "24 ay"
-      ],
-      "30 months": [
-        "30 ay"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal } için"
-      ]
-    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
@@ -2491,6 +2356,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Otomatik olarak yenilenir"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir",
         "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir"
@@ -2543,6 +2411,9 @@
       ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "Gelen e-postaları sıralamak ve düzenlemek için yinelenen işlemleri otomatikleştirin."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Ömür boyu biriktirdiğiniz anıları yedekleyin, düzenleyin ve güvenli olarak paylaşın."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Aynı Wi-Fi ağındaki biri internet geçmişimi görebilir mi?"
@@ -2631,6 +2502,9 @@
       "Keep your email spam-free": [
         "İstenmeyen e-postalardan kurtulun"
       ],
+      "Keep your photos out of AI training": [
+        "Fotoğraflarınızı yapay zekayı eğitimenin dışında tutun"
+      ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "Ekibinizin dosyalarını ${ DRIVE_APP_NAME } for Business ile korunmuş, erişilebilir ve eşitlenmiş tutun."
       ],
@@ -2657,9 +2531,6 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Veri simsarları, istenmeyen iletiler, dolandırıcılık ve kötü amaçlı yazılımlarla dolu bir internette gezinmek giderek zorlaşıyor. Bu nedenle ${ PASS_APP_NAME } parolalarınızı yönetmenize, saklamanıza ve otomatik olarak doldurmanıza yardımcı olmanın ötesine geçiyor. Gizliliğinizi elinize almanızı ve hide-my-email takma adlarıyla e-posta kutularınızı korumanızı sağlayan araçlar sunuyoruz."
-      ],
-      "Organize your memories into albums": [
-        "Anılarınızı albümlerle düzenleyin"
       ],
       "Protect your business communications": [
         "İş iletişimlerinizi koruyun."
@@ -2763,8 +2634,8 @@
       "Worried about data breaches?": [
         "Verilerin ele geçirilmesinden endişeleniyor musunuz?"
       ],
-      "Write, edit, and collaborate on documents with our secure online editors.": [
-        "Güvenli çevrim içi düzenleyicilerimizle belgeleri yazın, düzenleyin ve üzerlerinde iş birliği yapın."
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "${ DOCS_APP_NAME } ile belgeleri güvenli olarak yazın, düzenleyin ve üzerinde iş birliği yapın."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Aile fotoğraflarınız yapay zekayı eğitiyor. Bunu nasıl durdurabileceğinizi öğrenin"
@@ -4845,9 +4716,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesi ile hesap açtığında, size ${ BRAND_NAME } için ${ referralInfo.referrerRewardAmount } kredi ve arkadaşınıza da başlaması için ${ referralInfo.refereeRewardAmount } kredi verilir."
       ]
     },
     "description": {
@@ -6429,6 +6297,9 @@
       ],
       "Permissions request failed.": [
         "Erişim izni isteği yapılamadı."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Aboneliğinizi yeniden etkinleştirmeden önce bir ödeme yöntemi ekleyin"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
@@ -8827,17 +8698,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator gibi diğer iki adımlı doğrulama uygulamalarında **var olan kodlarınızı içe aktarın**."
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Arkadaşlarınızı** öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**1. Adım: Arkadaşlarınızı** öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**1. adım:** Arkadaşlarınızı öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**2. adım:** Arkadaşlarınız tarifelerine **2 hafta ek ücretsiz süre** alsın."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**2. adım:** Arkadaşlarınız tarifelerine 2 hafta ücretsiz kullanım alacak."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**3. adım**: Bir tarifeye abone olan her kişi için ${ referrerRewardAmount } kredi kazanın."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**3. adım**: Bir tarifeye abone olan her kişi için **${ referrerRewardAmount } kredi** kazanın."
       ],
       "**Sync codes** to all your devices": [
         "Tüm aygıtlarınızda **kodları eşitleyin**"
@@ -9767,9 +9644,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
-      ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Abone olan her arkadaşınız için **${ referrerRewardAmount } kredi** kazanın."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Bir ${ BRAND_NAME } hesabı açarak ve daveti kabul ederek verilere erişebilirsiniz."
@@ -11813,9 +11687,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ücretsiz deneme süreniz aylık aboneliğe dönüştürüldü. Yenilenme tarihi ${ nextBillingDate }."
-      ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Arkadaşlarınız, seçtikleri tarifeyi **2 hafta ücretsiz** kullanabilir."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
@@ -14115,9 +13986,6 @@
       ],
       "Terms": [
         "Koşullar"
-      ],
-      "Terms and conditions": [
-        "Hüküm ve koşullar"
       ],
       "Trouble signing in?": [
         "Oturum açmakta sorun mu yaşıyorsunuz?"
@@ -18075,6 +17943,18 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ planTitle }** tarifesini **${ textDate }** tarihine kadar ücretsiz kullanın."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "2 hafta hediye edin, ${ referrerRewardAmount } kazanın"
+      ],
+      "How your free trial works:": [
+        "Ücretsiz deneme süreniz nasıl işler:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Bu tarihten önce abone olursanız **${ referrerRewardAmount }** tutarında kredi kazanırsınız. Abone olmazsanız ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz."
+      ],
       "Invite friends. Get credits.": [
         "Arkadaşlarınızı davet edin. Kredi kazanın."
       ],
@@ -18096,6 +17976,9 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**.",
         "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Arkadaşınız da bir sonraki fatura döneminde kullanabileceği ${ refereeRewardAmount } alacak!"
       ],
       "your subscription": [
         "aboneliğiniz"
@@ -22355,9 +22238,6 @@
       ],
       "Gift code": [
         "Hediye kodu"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "${ refereeRewardAmount } ve 2 hafta ücretsiz kullanım verin. ${ referrerRewardAmount } kredi kazanın."
       ],
       "Group": [
         "Grup"

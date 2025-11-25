@@ -660,9 +660,6 @@
       "Edit “${ label.Name }”": [
         "Edita «${ label.Name }»"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "Activa ${ darkWebMonitoring }"
       ],
@@ -1936,138 +1933,6 @@
         "Correu nou"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Aconseguiu l'oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB d'emmagatzemament"
-      ],
-      "200 GB storage": [
-        "200 GB d'emmagatzematge"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB d'emmagatzematge xifrat"
-      ],
-      "Add unlimited credit cards": [
-        "Afegiu-hi un nombre il·limitat de targetes de crèdit"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Totes les característiques prèmium de ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquegeu anuncis, rastrejadors i programari maliciós"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Els descomptes es basen en els preus mensuals estàndard. Al final del cicle de facturació, la subscripció es renovarà a la tarifa anual estàndard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dupliqueu el vostre emmagatzematge xifrat: obteniu 1 TB per a totes les vostres dades."
-      ],
-      "Encrypted password manager": [
-        "Gestor de contrasenyes xifrat"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Heus aquí un regal exclusiu per celebrar el nostre camí plegats."
-      ],
-      "High speed streaming with VPN": [
-        "Estríming d'alta velocitat amb VPN"
-      ],
-      "of privacy": [
-        "de privacitat"
-      ],
-      "Online document editor": [
-        "Editor de documents en línia"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacitat en línia fins a 2 persones"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacitat en línia per a tota la família (fins a 6 usuaris)"
-      ],
-      "Protect up to 10 devices": [
-        "Protegiu fins a 10 dispositius"
-      ],
-      "Recover previous file versions": [
-        "Recupereu versions anteriors dels fitxers"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Drive amb un descompte per temps limitat."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Mail amb un descompte per temps limitat."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Pass amb un descompte per temps limitat."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de VPN amb un descompte per temps limitat."
-      ],
-      "Save time with built-in 2FA": [
-        "Estalvieu temps amb 2FA integrat"
-      ],
-      "Secure email with unlimited aliases": [
-        "Correu electrònic segur amb àlies il·limitats"
-      ],
-      "Select any server": [
-        "Seleccioneu qualsevol servidor"
-      ],
-      "Share passwords easily": [
-        "Compartiu contrasenyes fàcilment"
-      ],
-      "Short @pm.me address": [
-        "Adreça curta de @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Reproduïu en continu el vostre contingut favorit"
-      ],
-      "thanks to you": [
-        "gràcies a vós"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tripliqueu el vostre emmagatzematge xifrat – obteniu 3 TB per a totes les vostres dades"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Use your own email domain": [
-        "Utilitzeu el vostre propi domini de correu electrònic"
-      ],
-      "years": [
-        "anys"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta d'aniversari"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
-      "/ month": [
-        "/ mes"
-      ],
-      "12 months": [
-        "12 mesos"
-      ],
-      "15 months": [
-        "15 mesos"
-      ],
-      "24 months": [
-        "24 mesos"
-      ],
-      "30 months": [
-        "30 mesos"
-      ],
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ]
-    },
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Navegueu pel web de manera privada i bloquegeu els anuncis"
@@ -2492,7 +2357,7 @@
     },
     "Billing cycle": {
       "Renews automatically": [
-        "Renovació automàtica"
+        "Es renova automàticament"
       ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Es renova automàticament a ${ renewPrice } durant ${ renewLength } mes.",
@@ -2539,13 +2404,16 @@
         "11 consells per impedir el correu brossa"
       ],
       "5 ways to backup your files": [
-        "5 maneres de fer una còpia de seguretat dels fitxers"
+        "5 maneres de fer còpies de seguretat dels vostres fitxers"
       ],
       "Apple can see much of what you store in iCloud": [
-        "Apple pot veure molt del que emmagatzemeu a iCloud"
+        "Apple pot veure gran part del que emmagatzemeu a iCloud"
       ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "Automatitzeu accions recurrents per ordenar i organitzar els correus electrònics entrants."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Feu una còpia de seguretat, organitzeu i compartiu de manera segura tota una vida de records."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Algú pot veure el meu historial d'internet si utilitzem el mateix wifi?"
@@ -2557,7 +2425,7 @@
         "Les infraccions de dades van a l'alça. Per a les empreses, una sola escletxa pot tenir com a resultat el robatori de dades de clients, sancions normatives, pèrdua d'ingressos i danys duradors a la reputació. Afortunadament, el vostre equip pot prevenir la majoria d'escletxes amb la combinació adequada de pràctiques de seguretat, tecnologia i conscienciació."
       ],
       "DeGoogle your life": [
-        "Desgoogleitzeu la vostra vida"
+        "Allibereu de Google la vostra vida"
       ],
       "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
         "Descobriu els nostres consells per gestionar eficaçment la vostra safata d'entrada i mantenir la productivitat i la concentració."
@@ -2566,13 +2434,13 @@
         "Gestioneu fàcilment la vostra safata d'entrada"
       ],
       "Easily manage your inbox with ${ mailPlusPlanName }": [
-        "Gestioneu fàcilment la vostra bústia d'entrada amb ${ mailPlusPlanName }"
+        "Gestioneu fàcilment la vostra safata d'entrada amb ${ mailPlusPlanName }"
       ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Activeu el kill switch i la connexió automàtica a les preferències de la VPN."
       ],
       "Find out how to delete photos from Google Photos and use a private cloud storage app instead.": [
-        "Apreneu a suprimir fotos de Google Fotos i a utilitzar una aplicació d'emmagatzematge al núvol privada."
+        "Descobriu com eliminar fotos de Google Photos i com utilitzar una aplicació d'emmagatzematge privat al núvol en el seu lloc."
       ],
       "Get a clean inbox with filters": [
         "Obtingueu una bústia d'entrada neta amb filtres"
@@ -2608,7 +2476,7 @@
         "Com prevenir les infraccions de dades a la vostra empresa"
       ],
       "iCloud is not private by default. Here's what Apple can see in iCloud.": [
-        "iCloud no és privat per defecte. Aquí teniu el que Apple pot veure a l'iCloud."
+        "iCloud no és privat per defecte. Això és el que Apple pot veure a l'iCloud."
       ],
       "If you take your online safety seriously, you know you need to create a strong password to protect your online accounts. However, do you know that using the same username for all your accounts isn’t safe? In this article we go over why you should create varied and strong usernames.": [
         "Si us preneu seriosament la vostra seguretat en línia, ja sabeu que heu de crear una contrasenya robusta per protegir els vostres comptes en línia. Tanmateix, sabeu que fer servir el mateix nom d'usuari per a tots els vostres comptes no és segur? En aquest article repassem per què hauríeu de crear noms d'usuari variats i robustos."
@@ -2634,6 +2502,9 @@
       "Keep your email spam-free": [
         "Manteniu el vostre correu electrònic lliure de correu brossa"
       ],
+      "Keep your photos out of AI training": [
+        "Mantingueu les vostres fotos fora de l'entrenament de la IA"
+      ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "Mantingueu els fitxers del vostre equip protegits, accessibles i sincronitzats amb ${ DRIVE_APP_NAME } per a empreses."
       ],
@@ -2641,10 +2512,10 @@
         "Apreneu com les grans tecnològiques fan servir les fotos familiars per entrenar la IA i com us afecta."
       ],
       "Learn how many GB are in a TB and discover the best way to securely store and share your files — no matter their size.": [
-        "Apreneu quants GB hi ha en un TB i descobriu la millor manera d'emmagatzemar i compartir de manera segura els vostres fitxers, independentment de la seva mida."
+        "Sapigueu quants GB hi ha en un TB i descobriu la millor manera d'emmagatzemar i compartir de forma segura els vostres fitxers, independentment de la seva mida."
       ],
       "Learn how to back up your files to the cloud or on an external drive while keeping your data secure.": [
-        "Apreneu a fer còpies de seguretat dels vostres fitxers al núvol o en una unitat externa mentre manteniu les vostres dades segures."
+        "Apreneu a fer còpia de seguretat dels vostres fitxers al núvol o en un drive extern, tot mantenint les vostres dades segures."
       ],
       "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
         "Apreneu a combatre el correu brossa molest i potencialment perjudicial. Els missatges de correu brossa poden ser més que una simple molèstia a la vostra bústia d'entrada. Els ciberdelinqüents poden utilitzar aquests missatges no sol·licitats i no desitjats per llançar atacs de suplantació d'identitat i propagar programari maliciós."
@@ -2660,9 +2531,6 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Navegar per una internet plena de corredors de dades, correu brossa, estafes i programari maliciós és cada cop més difícil. És per això que ${ PASS_APP_NAME } va més enllà d'ajudar-vos a gestionar, emmagatzemar i emplenar automàticament les vostres contrasenyes. Us donem les eines per prendre el control de la vostra privacitat i protegir les vostres bústies d'entrada amb àlies hide-my-email."
-      ],
-      "Organize your memories into albums": [
-        "Organitzeu els vostres records en àlbums"
       ],
       "Protect your business communications": [
         "Protegiu les vostres comunicacions empresarials"
@@ -2686,13 +2554,13 @@
         "Visualitzeu i gestioneu totes les vostres subscripcions de correu electrònic"
       ],
       "Send files via secure links or email, revoke access whenever needed.": [
-        "Envieu fitxers mitjançant enllaços segurs o correu electrònic, revoqueu l'accés sempre que sigui necessari."
+        "Envieu fitxers mitjançant enllaços segurs o correu electrònic. Revoqueu l'accés sempre que sigui necessari."
       ],
       "Share files securely": [
         "Compartiu fitxers de manera segura"
       ],
       "Share photos online privately": [
-        "Compartiu fotos en línia de forma privada."
+        "Compartiu fotos en línia de manera privada."
       ],
       "Share your account details, without risking a hack": [
         "Compartiu les dades del vostre compte sense arriscar-vos a un atac informàtic"
@@ -2701,7 +2569,7 @@
         "Creeu un compte per a serveis sense compartir el vostre correu electrònic amb àlies."
       ],
       "Storage capacity explained": [
-        "Capacitat d'emmagatzematge explicada"
+        "Explicació de la capacitat d'emmagatzematge"
       ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Feu estríming de les principals plataformes amb ${ PLAN_NAMES[PLANS.VPN2024] }."
@@ -2719,7 +2587,7 @@
         "La manera més privada i segura de comunicar-se en línia és utilitzant el xifratge d'extrem a extrem. Si envieu un correu electrònic xifrat d'extrem a extrem, es xifra al vostre dispositiu (iPhone, Android o portàtil) i no es desxifra fins que arriba al dispositiu de la persona a qui li heu enviat."
       ],
       "The most secure way to send pictures is with end-to-end encryption. Here are four ways to store and share photos privately.": [
-        "La manera més segura d'enviar fotos és amb el xifratge d'extrem a extrem. Aquí teniu quatre maneres d'emmagatzemar i compartir fotos de manera privada."
+        "La manera més segura d'enviar imatges és amb xifratge d'extrem a extrem. Aquí hi ha quatre maneres d'emmagatzemar-les i compartir-les de forma privada."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Aquest article s'ha actualitzat per incloure els protocols VPN WireGuard i Stealth."
@@ -2766,8 +2634,8 @@
       "Worried about data breaches?": [
         "Us preocupen les infraccions de dades?"
       ],
-      "Write, edit, and collaborate on documents with our secure online editors.": [
-        "Escribiu, editeu i col·laboreu en documents amb els nostres editors en línia segurs."
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Escriviu, editeu i col·laboreu en documents de manera segura amb ${ DOCS_APP_NAME }."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Les vostres fotos familiars estan entrenant la IA, i així és com podeu aturar-ho"
@@ -2799,7 +2667,7 @@
         "Problema d’aplicació"
       ],
       "Authenticator problem": [
-        "Problema amb l'autenticador"
+        "Hi ha hagut un problema amb l'autenticador"
       ],
       "Black Friday": [
         "Black Friday"
@@ -3270,7 +3138,7 @@
         "L'assistent d'IA que respecta la confidencialitat empresarial"
       ],
       "AI assistant that respects your privacy": [
-        "Assistent d'IA que respecta la vostra privacitat"
+        "Un assistent d'IA que respecta la vostra privacitat"
       ],
       "Basic chat history": [
         "Historial de xat bàsic"
@@ -4848,9 +4716,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Rebreu ${ referralInfo.referrerRewardAmount } en crèdit de ${ BRAND_NAME } quan la persona que convideu creï un compte per a un pla de ${ BRAND_NAME }. I ella també rebrà ${ referralInfo.refereeRewardAmount } en crèdits per començar."
       ]
     },
     "description": {
@@ -5070,7 +4935,7 @@
         "Descarrega a Google Play Store"
       ],
       "download the app (APK)": [
-        "descarrega l'aplicació (APK)"
+        "descarregueu l'aplicació (APK)"
       ],
       "Edge": [
         "Edge"
@@ -6433,6 +6298,9 @@
       "Permissions request failed.": [
         "La sol·licitud de permisos ha fallat."
       ],
+      "Please add a payment method before reactivating your subscription": [
+        "Afegiu un mètode de pagament abans de reactivar la vostra subscripció"
+      ],
       "Please configure a custom domain before adding addresses.": [
         "Configureu un domini personalitzat abans d'afegir adreces."
       ],
@@ -6744,7 +6612,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja us reenviarà a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -8711,7 +8579,7 @@
         "${ planName } caduca avui."
       ],
       "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } per a organitzacions és un programa avançat de protecció de comptes impulsat per sistemes sofisticats d'IA i especialistes que treballen sense parar per protegir la vostra organització d'actors maliciosos i amenaces de seguretat."
+        "${ PROTON_SENTINEL_NAME } per organitzacions és un programa avançat de protecció de comptes impulsat per sistemes sofisticats d'IA i especialistes que treballen sense parar per protegir la vostra organització d'actors maliciosos i amenaces de seguretat."
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció de comptes alimentat per sofisticats sistemes d'IA i especialistes que treballen tot el dia per protegir-vos dels agents maliciosos i les amenaces de seguretat."
@@ -8830,17 +8698,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importeu els vostres codis** d'altres aplicacions 2FA, com ara Google Authenticator"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pas 1: Convideu les vostres amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de recomanació."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Pas 2:** Les vostres amistats obtindran **2 setmanes de franc** en el seu pla."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que se subscrigui a un pla."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Pas 3:** Aconseguiu **${ referrerRewardAmount } en crèdits** per cada persona que se subscrigui a un pla."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronitzeu els codis** a tots els dispositius"
@@ -9770,9 +9644,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obteniu ${ upsellPlanName }"
-      ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Obtingueu **${ referrerRewardAmount } crèdits** per a cada amistat que se subscrigui."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Accedeix creant un compte ${ BRAND_NAME } i acceptant la invitació."
@@ -11267,7 +11138,7 @@
         "Milloreu el vostre pla per a desbloquejar"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
-        "Actualitzeu el vostre pla a ${ firstPlanNames } o ${ lastPlanName } per obtenir accés a ${ PROTON_SENTINEL_NAME } per a organitzacions."
+        "Actualitzeu el vostre pla a ${ firstPlanNames } o ${ lastPlanName } per obtenir accés a ${ PROTON_SENTINEL_NAME } per organitzacions."
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Milloreu al pla ${ firstPlanNames } o ${ lastPlanName } per tenir accés a ${ PROTON_SENTINEL_NAME }."
@@ -11816,9 +11687,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "La prova gratuïta s'ha convertit correctament en una subscripció mensual. La data de renovació és ${ nextBillingDate }."
-      ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Les vostres amistats obtindran **2 setmanes de franc** en el seu pla escollit."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "La vostra importació de ${ accounts } s'ha retardat temporalment.",
@@ -14119,9 +13987,6 @@
       "Terms": [
         "Termes"
       ],
-      "Terms and conditions": [
-        "Termes i condicions"
-      ],
       "Trouble signing in?": [
         "Teniu problemes per iniciar la sessió?"
       ],
@@ -15936,7 +15801,7 @@
         "Una adreça desactivada no pot ser una adreça per defecte."
       ],
       "Address reconnected.": [
-        "Adreça reconnectada."
+        "S'ha reconnectat l'adreça."
       ],
       "An external address cannot be default": [
         "Una adreça externa no pot ser una adreça per defecte."
@@ -18078,6 +17943,18 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Oferiu 2 setmanes, rebeu ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Com funciona la vostra prova gratuïta:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Si cancel·leu abans, se us rebaixarà a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan acabi la prova. Si no cancel·leu, començarà el vostre pla complet i rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Si us subscriviu abans d'aquesta data, rebreu **${ referrerRewardAmount }** en crèdits. Si no us subscriviu, se us rebaixarà a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "Invite friends. Get credits.": [
         "Convideu amistats. Aconseguiu crèdits."
       ],
@@ -18099,6 +17976,9 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
         "Us queden **${ daysRemaining } dies** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "El vostre amic també rebrà ${ refereeRewardAmount } per bescanviar en la seva pròxima factura!"
       ],
       "your subscription": [
         "la vostra subscripció"
@@ -18675,7 +18555,7 @@
         "El vostre correu electrònic de recuperació **només pot recuperar l'accés al vostre compte**."
       ],
       "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Els atacants podrien fer servir la vostra adreça electrònica de recuperació per apoderar-se del vostre compte. ${ disableEmail } per augmentar la seguretat del vostre compte."
+        "Els atacants podrien fer servir la vostra adreça electrònica de recuperació per apoderar-se del vostre compte. ${ disableEmail } per augmentar-ne la seguretat."
       ],
       "Your recovery email has been enabled": [
         "S'ha activat el vostre correu electrònic de recuperació."
@@ -18699,7 +18579,7 @@
         "El telèfon de recuperació **només pot recuperar l'accés al compte**."
       ],
       "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
-        "Els atacants podrien utilitzar el vostre telèfon de recuperació per apoderar-se del vostre compte. ${ disablePhone } per augmentar la seguretat del vostre compte."
+        "Els atacants podrien utilitzar el vostre telèfon de recuperació per apoderar-se del vostre compte. ${ disablePhone } per augmentar-ne la seguretat."
       ],
       "Your recovery phone has been enabled": [
         "S'ha activat el vostre telèfon de recuperació."
@@ -21570,7 +21450,7 @@
         "Informe de supervisió de ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
-        "${ PROTON_SENTINEL_NAME } per a organitzacions"
+        "${ PROTON_SENTINEL_NAME } per organitzacions"
       ],
       "(active)": [
         "(actiu)"
@@ -21871,7 +21751,7 @@
         "Connecta ${ name }"
       ],
       "Connect a Gmail address": [
-        "Connecteu una adreça de Gmail"
+        "Connecteu-vos a una adreça de Gmail"
       ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
@@ -22321,7 +22201,7 @@
         "Genera un token SMTP"
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
-        "Obteniu ${ planMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents amb ${ planName }. ${ upgradeButton }"
+        "Obtingueu ${ planMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents amb ${ planName }. ${ upgradeButton }"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Obteniu ${ vpnPlus } per accedir a tots els servidors"
@@ -22336,7 +22216,7 @@
         "Obteniu una cobertura de privadesa completa"
       ],
       "Get more from your cloud storage": [
-        "Traieu més partit del vostre emmagatzematge al núvol"
+        "Traieu-ne més partit del vostre emmagatzematge al núvol"
       ],
       "Get more from your email": [
         "Traieu més profit del vostre correu electrònic"
@@ -22361,9 +22241,6 @@
       ],
       "Gift code": [
         "Codi regal"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "Doneu ${ refereeRewardAmount } i 2 setmanes de franc. Obtingueu ${ referrerRewardAmount } crèdits."
       ],
       "Group": [
         "Grup"
@@ -23812,7 +23689,7 @@
         "**Estalvieu fins a ${ priceString }** amb una subscripció més llarga. Mateixes funcionalitats prèmium per un preu més baix."
       ],
       "Advanced security for your company": [
-        "Seguretat avançada per a la vostra empresa"
+        "Seguretat avançada per la vostra empresa"
       ],
       "Advanced security for your company?": [
         "Voleu seguretat avançada per a la vostra empresa?"
