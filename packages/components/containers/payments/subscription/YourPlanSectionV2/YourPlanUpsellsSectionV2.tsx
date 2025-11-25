@@ -169,7 +169,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
 
     // Check if the user can save money by switching to annual cycle. If not, do not show annual cycle upsell
     const { showSavings } = useSubscriptionPriceComparison(app, subscription);
-    const shouldExtendPlusPlan = subscription?.Cycle === CYCLE.MONTHLY && showSavings;
+    const canSaveByExtendingPlan = subscription?.Cycle === CYCLE.MONTHLY && showSavings;
 
     const upsellSections = [
         {
@@ -329,7 +329,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasMail(subscription) && shouldExtendPlusPlan,
+            enabled: hasMail(subscription) && canSaveByExtendingPlan,
             upsells: mailPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -373,7 +373,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasPass(subscription) && shouldExtendPlusPlan,
+            enabled: hasPass(subscription) && canSaveByExtendingPlan,
             upsells: passPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -401,7 +401,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasPassFamily(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            enabled: hasPassFamily(subscription) && canSaveByExtendingPlan,
             upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -440,7 +440,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasDrive(subscription) && shouldExtendPlusPlan,
+            enabled: hasDrive(subscription) && canSaveByExtendingPlan,
             upsells: drivePlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -469,7 +469,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasDrive1TB(subscription) && shouldExtendPlusPlan,
+            enabled: hasDrive1TB(subscription) && canSaveByExtendingPlan,
             upsells: drivePlusOneTBExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -498,7 +498,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasBundle(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            enabled: hasBundle(subscription) && canSaveByExtendingPlan,
             upsells: unlimitedBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <UnlimitedBannerExtendSubscription
@@ -510,14 +510,11 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled:
-                hasBundle(subscription) &&
-                subscription?.Cycle !== CYCLE.MONTHLY &&
-                getCanAccessFamilyPlans(subscription),
+            enabled: hasBundle(subscription) && getCanAccessFamilyPlans(subscription),
             element: <ExploreGroupPlansBanner app={app} subscription={subscription as Subscription} />,
         },
         {
-            enabled: hasDuo(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            enabled: hasDuo(subscription) && canSaveByExtendingPlan,
             upsells: duoBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <DuoBannerExtendSubscription
@@ -529,12 +526,11 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled:
-                hasDuo(subscription) && subscription?.Cycle !== CYCLE.MONTHLY && getCanAccessFamilyPlans(subscription),
+            enabled: hasDuo(subscription) && getCanAccessFamilyPlans(subscription),
             element: <FamilyBanner app={app} subscription={subscription as Subscription} />,
         },
         {
-            enabled: hasFamily(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            enabled: hasFamily(subscription) && canSaveByExtendingPlan,
             upsells: familyBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <FamilyBannerExtendSubscription
@@ -554,7 +550,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             element: <VPNB2BBanner app={app} />,
         },
         {
-            enabled: hasVisionary(subscription) && subscription?.Cycle === CYCLE.MONTHLY,
+            enabled: hasVisionary(subscription) && canSaveByExtendingPlan,
             upsells: visionaryExtendSubscriptionUpsells.upsells,
             element: (
                 <VisionaryExtendSubscription
