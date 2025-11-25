@@ -1,6 +1,7 @@
 import type { BookingPageEditData } from 'applications/calendar/src/app/store/internalBooking/interface';
 import {
     addDays,
+    differenceInMinutes,
     eachDayOfInterval,
     endOfWeek,
     isBefore,
@@ -25,7 +26,12 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { CalendarViewEvent } from '../../../calendar/interface';
 import type { BookingFormData, BookingRange, RecurringRangeDisplay } from '../../bookingsProvider/interface';
-import { BOOKING_SLOT_ID, DEFAULT_RANGE_END_HOUR, DEFAULT_RANGE_START_HOUR } from '../../bookingsProvider/interface';
+import {
+    BOOKING_SLOT_ID,
+    BookingRangeError,
+    DEFAULT_RANGE_END_HOUR,
+    DEFAULT_RANGE_START_HOUR,
+} from '../../bookingsProvider/interface';
 import { fromTimestampToUTCDate, roundToNextHalfHour } from '../timeHelpers';
 
 export const generateBookingRangeID = (start: Date, end: Date) => {
@@ -261,4 +267,11 @@ export const generateRangeFromSlots = (editData: BookingPageEditData): BookingRa
     });
 
     return ranges;
+};
+
+export const computeRangesErrors = (ranges: BookingRange[], duration: number): BookingRange[] => {
+    return ranges.map((range) => {
+        const isTooShort = differenceInMinutes(range.end, range.start) < duration;
+        return isTooShort ? { ...range, error: BookingRangeError.TOO_SHORT } : { ...range, error: undefined };
+    });
 };
