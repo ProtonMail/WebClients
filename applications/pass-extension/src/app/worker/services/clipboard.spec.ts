@@ -1,5 +1,4 @@
-import { setupOffscreenDocument as setupOffscreen } from 'proton-pass-extension/app/worker/offscreen/offscreen.utils';
-import { sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { withOffscreenDocument as withOffscreen } from 'proton-pass-extension/app/worker/offscreen/offscreen.utils';
 import { sendSafariMessage as sendSafari } from 'proton-pass-extension/lib/utils/safari';
 
 import { extensionClipboardApi } from './clipboard';
@@ -12,8 +11,7 @@ jest.mock('proton-pass-extension/lib/utils/safari');
 
 const navigatorClipboard = { readText: jest.fn(), writeText: jest.fn() };
 
-const onMessage = sendMessage.on as jest.MockedFn<typeof sendMessage.on>;
-const setupOffscreenDocument = setupOffscreen as jest.MockedFn<typeof setupOffscreen>;
+const withOffscreenDocument = withOffscreen as jest.MockedFn<typeof withOffscreen>;
 const sendSafariMessage = sendSafari as jest.MockedFn<typeof sendSafari>;
 
 describe('extensionClipboardApi', () => {
@@ -37,35 +35,13 @@ describe('extensionClipboardApi', () => {
             setBuildTarget('chrome');
             (global as any).navigator = { clipboard: navigatorClipboard };
             navigatorClipboard.readText.mockRejectedValue(new Error());
-            setupOffscreenDocument.mockResolvedValue();
-
-            onMessage.mockImplementation(async (_, callback) =>
-                callback({
-                    type: 'success',
-                    content: 'offscreen-content',
-                })
-            );
+            withOffscreenDocument.mockResolvedValue('offscreen-content');
 
             const result = await extensionClipboardApi.read();
             expect(result).toBe('offscreen-content');
-            expect(setupOffscreenDocument).toHaveBeenCalledWith('offscreen.html');
-        });
 
-        test('should try chrome offscreen when navigator fails when `BUILD_TARGET=chrome`', async () => {
-            setBuildTarget('chrome');
-            (global as any).navigator = { clipboard: navigatorClipboard };
-            navigatorClipboard.readText.mockRejectedValue(new Error());
-            setupOffscreenDocument.mockResolvedValue(undefined);
-            onMessage.mockImplementation(async (_, callback) =>
-                callback({
-                    type: 'success',
-                    content: 'chrome-fallback',
-                })
-            );
-
-            const result = await extensionClipboardApi.read();
-            expect(result).toBe('chrome-fallback');
-            expect(setupOffscreenDocument).toHaveBeenCalled();
+            expect(withOffscreenDocument).toHaveBeenCalled();
+            expect(withOffscreenDocument.mock.calls[0][0]).toEqual('offscreen.html');
         });
 
         test('should use safari bridge when `BUILD_TARGET=safari`', async () => {
@@ -94,7 +70,7 @@ describe('extensionClipboardApi', () => {
             setBuildTarget('chrome');
             (global as any).navigator = { clipboard: navigatorClipboard };
             navigatorClipboard.readText.mockRejectedValue(new Error());
-            setupOffscreenDocument.mockRejectedValue(new Error());
+            withOffscreenDocument.mockRejectedValue(new Error());
 
             const result = await extensionClipboardApi.read();
             expect(result).toBe('');
@@ -114,11 +90,11 @@ describe('extensionClipboardApi', () => {
             setBuildTarget('chrome');
             (global as any).navigator = { clipboard: navigatorClipboard };
             navigatorClipboard.writeText.mockRejectedValue(new Error('Permission denied'));
-            setupOffscreenDocument.mockResolvedValue(undefined);
-            onMessage.mockImplementation(async (_, callback) => callback({ type: 'success' }));
+            withOffscreenDocument.mockResolvedValue(undefined);
 
             await extensionClipboardApi.write('test-content');
-            expect(setupOffscreenDocument).toHaveBeenCalledWith('offscreen.html');
+            expect(withOffscreenDocument).toHaveBeenCalled();
+            expect(withOffscreenDocument.mock.calls[0][0]).toEqual('offscreen.html');
         });
 
         test('should use safari bridge when `BUILD_TARGET=safari`', async () => {
@@ -129,17 +105,6 @@ describe('extensionClipboardApi', () => {
 
             await extensionClipboardApi.write('test-content');
             expect(sendSafariMessage).toHaveBeenCalledWith({ writeToClipboard: { Content: 'test-content' } });
-        });
-
-        test('should try chrome offscreen when navigator fails when `BUILD_TARGET=chrome`', async () => {
-            setBuildTarget('chrome');
-            (global as any).navigator = { clipboard: navigatorClipboard };
-            navigatorClipboard.writeText.mockRejectedValue(new Error());
-            setupOffscreenDocument.mockResolvedValue(undefined);
-            onMessage.mockImplementation(async (_, callback) => callback({ type: 'success' }));
-
-            await extensionClipboardApi.write('test-content');
-            expect(setupOffscreenDocument).toHaveBeenCalledWith('offscreen.html');
         });
 
         test('should try safari bridge when navigator fails `BUILD_TARGET=safari`', async () => {
