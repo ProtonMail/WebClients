@@ -195,7 +195,7 @@ const config: Configuration = {
                 ],
             },
 
-            ...getCssLoaders({ browserslist: undefined, logical: false, webpackOnCaffeine: false }),
+            ...getCssLoaders({ browserslist: undefined, logical: false }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],
     },
