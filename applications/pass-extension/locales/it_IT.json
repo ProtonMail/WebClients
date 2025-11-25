@@ -1125,6 +1125,9 @@
       "Secure link could not be opened.": [
         "Impossibile aprire il link sicuro."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "I server sono irraggiungibili. Riprova a sbloccare ${ PASS_SHORT_APP_NAME } tra qualche minuto."
+      ],
       "Settings update failed": [
         "Aggiornamento impostazioni non riuscito"
       ],
@@ -1214,6 +1217,9 @@
       ],
       "Wrong second password": [
         "Seconda password errata"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Sei offline. Riattiva la connessione per sbloccare ${ PASS_SHORT_APP_NAME }."
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "Il tuo browser ha difficoltà ad attivare ${ PASS_APP_NAME }."
@@ -2128,6 +2134,9 @@
       ],
       "Selected items successfully restored from trash": [
         "Gli elementi selezionati sono stati ripristinati dal cestino"
+      ],
+      "Servers are unreachable": [
+        "I server sono irraggiungibili."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
