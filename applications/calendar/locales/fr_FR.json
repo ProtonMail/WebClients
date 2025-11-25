@@ -62,6 +62,9 @@
       "Add another account": [
         "Ajouter un autre compte"
       ],
+      "Add another booking range to this day": [
+        "Ajouter une autre plage de réservation pour ce jour"
+      ],
       "Add birthday": [
         "Ajouter une date de naissance"
       ],
@@ -439,6 +442,9 @@
       ],
       "Go to settings": [
         "Accéder aux paramètres"
+      ],
+      "Go to the first available appointment": [
+        "Aller au premier rendez-vous disponible"
       ],
       "Go to the next available appointment": [
         "Aller au prochain rendez-vous disponible"
@@ -857,9 +863,6 @@
       "Skip verification": [
         "Ignorer la vérification"
       ],
-      "Split current booking range": [
-        "Diviser la plage de réservation actuelle"
-      ],
       "Start import": [
         "Démarrer l'importation"
       ],
@@ -1128,138 +1131,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Veuillez ne pas fermer cet onglet. Certaines requêtes sont encore en cours de traitement en arrière-plan."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "200 GB storage": [
-        "200 Go d'espace de stockage"
-      ],
-      "500 GB encrypted storage": [
-        "500 Go d'espace de stockage chiffré"
-      ],
-      "Add unlimited credit cards": [
-        "Ajoutez un nombre illimité de cartes de paiement"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Toutes les fonctionnalités premium de ${ BRAND_NAME } Mail, Pass, VPN, Drive et Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquer les pubs, traqueurs et logiciels malveillants"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Les réductions sont basées sur les tarifs mensuels standards. À la fin du cycle de facturation, votre abonnement sera renouvelé au tarif annuel standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Doublez votre espace de stockage chiffré et bénéficiez de 1 To pour toutes vos données."
-      ],
-      "Encrypted password manager": [
-        "Gestionnaire de mots de passe chiffré"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Voici un cadeau exclusif pour célébrer notre parcours ensemble."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming ultra rapide avec VPN"
-      ],
-      "of privacy": [
-        "du respect de la vie privée"
-      ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
-      "Online privacy for up to 2 people": [
-        "Confidentialité en ligne pour jusqu’à 2 personnes"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Respect de la vie privée en ligne pour toute votre famille (jusqu'à 6 utilisateurs)"
-      ],
-      "Protect up to 10 devices": [
-        "Protégez jusqu’à 10 appareils."
-      ],
-      "Recover previous file versions": [
-        "Récupérez les versions précédentes de vos fichiers"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Réalisez d'importantes économies sur les fonctionnalités premium de Drive en profitant d'une réduction à durée limitée."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Réalisez d'importantes économies sur les fonctionnalités premium de Mail en profitant d'une réduction à durée limitée."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Réalisez d'importantes économies sur les fonctionnalités premium de Pass en profitant d'une réduction à durée limitée."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Réalisez d'importantes économies sur les fonctionnalités premium de VPN en profitant d'une réduction à durée limitée."
-      ],
-      "Save time with built-in 2FA": [
-        "Gagnez du temps avec l’A2F intégrée"
-      ],
-      "Secure email with unlimited aliases": [
-        "Boîte mail sécurisée avec alias illimités"
-      ],
-      "Select any server": [
-        "Sélectionnez un serveur"
-      ],
-      "Share passwords easily": [
-        "Partagez facilement vos mots de passe"
-      ],
-      "Short @pm.me address": [
-        "Adresse @pm.me courte"
-      ],
-      "Stream your favorite content": [
-        "Accédez à vos services de streaming préférés"
-      ],
-      "thanks to you": [
-        "grâce à vous"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplez votre espace de stockage chiffré et bénéficiez de 3 To pour toutes vos données."
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre illimité de dossiers, labels et filtres"
-      ],
-      "Use your own email domain": [
-        "Utilisez vos propres domaines de messagerie"
-      ],
-      "years": [
-        "années"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offre anniversaire"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
-      "/ month": [
-        "/mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "15 months": [
-        "15 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ],
-      "30 months": [
-        "30 mois"
-      ],
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -3644,9 +3515,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "La recherche dans le contenu n'a pas pu être activée. Nous vous invitons à redémarrer l'application ou à effacer les données."
       ],
-      "Content verification failed": [
-        "La vérification du contenu n'a pas abouti."
-      ],
       "Could not open created vault": [
         "Le coffre-fort créé n'a pas pu être ouvert."
       ],
@@ -5351,6 +5219,9 @@
       "Booking page example": [
         "Exemple de page de réservation"
       ],
+      "Booking updated successfully": [
+        "La réservation a été mise à jour avec succès"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
       ],
@@ -5425,6 +5296,9 @@
       ],
       "Copy your referral link": [
         "Copiez votre lien de parrainage."
+      ],
+      "Could not verify signature over booking page data": [
+        "Impossible de vérifier la signature des données de la page de réservation"
       ],
       "Country code": [
         "Indicatif du pays"
@@ -5628,6 +5502,9 @@
       "Host": [
         "Hôte"
       ],
+      "Host signature verification failed": [
+        "La signature de l'hôte n'a pas pu être vérifiée."
+      ],
       "How long should an appointment last?": [
         "Combien de temps un rendez-vous doit-il durer ?"
       ],
@@ -5749,6 +5626,9 @@
       "Loading ${ appName }": [
         "Chargement de ${ appName }"
       ],
+      "Loading appointments...": [
+        "Chargement des rendez-vous..."
+      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
       ],
@@ -5764,11 +5644,11 @@
       "Low Priority": [
         "Priorité basse"
       ],
+      "Manage booking page": [
+        "Gérer la page de réservation"
+      ],
       "Manage your calendars": [
         "Gérer vos calendriers"
-      ],
-      "Manange booking page": [
-        "Gérer la page de réservation"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -5800,6 +5680,9 @@
       "New": [
         "Nouveau"
       ],
+      "No appointments available": [
+        "Aucun rendez-vous disponible"
+      ],
       "No appointments available this week": [
         "Aucun rendez-vous disponible cette semaine"
       ],
@@ -5808,6 +5691,9 @@
       ],
       "No email address": [
         "Aucune adresse e-mail"
+      ],
+      "No future appointments available": [
+        "Aucun prochain rendez-vous disponible."
       ],
       "No group found": [
         "Aucun groupe n'a été trouvé."
@@ -6262,11 +6148,8 @@
       "What do you want to call this booking page?": [
         "Comment voulez-vous nommer cette page de réservation ?"
       ],
-      "What should people know before booking?": [
-        "Que faut-il savoir avant de réserver ?"
-      ],
-      "When are you free?": [
-        "Quand êtes-vous libre ?"
+      "When can appointments be booked?": [
+        "Quand les rendez-vous peuvent-ils être réservés ?"
       ],
       "When working remotely": [
         "Lorsque vous travaillez à distance"
@@ -6818,6 +6701,9 @@
       "Copy": [
         "Copier"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copier le lien ou gérer votre page d'ici à tout moment."
+      ],
       "Could you please let us know which provider?": [
         "Pouvez-vous nous préciser quel fournisseur ?"
       ],
@@ -6829,6 +6715,9 @@
       ],
       "Country": [
         "Pays"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Créez des pages partageables où les gens peuvent réserver du temps avec vous."
       ],
       "Credits": [
         "Crédits"
@@ -7095,6 +6984,9 @@
       "Remove Zoom video conference": [
         "Retirer la vidéoconférence Zoom"
       ],
+      "Repeat weekly": [
+        "Répéter chaque semaine"
+      ],
       "Reveal password": [
         "Afficher le mot de passe"
       ],
@@ -7232,8 +7124,8 @@
       "Start time of the booking range": [
         "Heure de début de la plage horaire de réservation"
       ],
-      "What should people know before booking?": [
-        "Que faut-il savoir avant de réserver ?"
+      "What should people know about this appointment?": [
+        "Que faut-il savoir à propos de ce rendez-vous ?"
       ]
     },
     "Label for contact group color": {
@@ -9542,9 +9434,6 @@
       "A way to contact you": [
         "Un moyen de vous contacter"
       ],
-      "Add a booking page description": [
-        "Ajouter une description à la page de réservation"
-      ],
       "Add a calendar description": [
         "Ajouter une description au calendrier"
       ],
@@ -9577,6 +9466,9 @@
       ],
       "Email for booking confirmation": [
         "Message pour la confirmation de réservation"
+      ],
+      "Enter a short description or additional info": [
+        "Saisissez une courte description ou des informations supplémentaires"
       ],
       "Enter passphrase": [
         "Saisir la phrase secrète"
@@ -11725,6 +11617,9 @@
       "Information exposed in breach": [
         "Informations divulguées lors de la fuite de données"
       ],
+      "Introducing booking pages": [
+        "Présentation des pages de réservation"
+      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
@@ -12069,6 +11964,9 @@
       ],
       "Your booking page is ready": [
         "Votre page de réservation est prête."
+      ],
+      "Your booking pages live here": [
+        "Vos pages de réservation se trouvent ici"
       ],
       "Your calendar link": [
         "Lien de votre calendrier"

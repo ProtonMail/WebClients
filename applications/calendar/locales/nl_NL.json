@@ -62,6 +62,9 @@
       "Add another account": [
         "Voeg een account toe"
       ],
+      "Add another booking range to this day": [
+        "Voeg nog een boekingsperiode toe aan deze dag"
+      ],
       "Add birthday": [
         "Verjaardag toevoegen"
       ],
@@ -439,6 +442,9 @@
       ],
       "Go to settings": [
         "Ga naar instellingen"
+      ],
+      "Go to the first available appointment": [
+        "Ga naar de volgende beschikbare afspraak"
       ],
       "Go to the next available appointment": [
         "Ga naar de volgende beschikbare afspraak"
@@ -857,9 +863,6 @@
       "Skip verification": [
         "Verificatie overslaan"
       ],
-      "Split current booking range": [
-        "Splits huidig boekingbereik"
-      ],
       "Start import": [
         "Begin met importeren"
       ],
@@ -1128,138 +1131,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Sluit dit tabblad niet. Sommige verzoeken worden nog steeds in de achtergrond verwerkt."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Kies deze deal"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "200 GB storage": [
-        "200 GB opslagruimte"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB versleutelde opslagruimte"
-      ],
-      "Add unlimited credit cards": [
-        "Onbeperkt aantal kredietkaarten toevoegen"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle premium functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive, en Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokkeer advertenties, trackers en malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijs. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw gegevens"
-      ],
-      "Encrypted password manager": [
-        "Versleutelde wachtwoordbeheerder"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier is een exclusief geschenk om onze reis samen te vieren."
-      ],
-      "High speed streaming with VPN": [
-        "Streamen aan hoge snelheid met VPN"
-      ],
-      "of privacy": [
-        "van privacy"
-      ],
-      "Online document editor": [
-        "Online document editor"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online privacy voor maximaal 2 personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online privacy voor het hele gezin (tot 6 gebruikers)"
-      ],
-      "Protect up to 10 devices": [
-        "Bescherm tot 10 apparaten"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Bespaar veel op premium Drive functies met een tijdelijke korting."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Bespaar veel op premium Mail functies met een tijdelijke korting."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Bespaar veel op premium Pass functies met een tijdelijke korting."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Bespaar veel op premium VPN functies met een tijdelijke korting."
-      ],
-      "Save time with built-in 2FA": [
-        "Bespaar tijd met ingebouwde 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Beveiligde e-mail met onbeperkt aantal aliassen"
-      ],
-      "Select any server": [
-        "Selecteer een willekeurige server"
-      ],
-      "Share passwords easily": [
-        "Eenvoudig wachtwoorden delen"
-      ],
-      "Short @pm.me address": [
-        "Kort @pm.me adres"
-      ],
-      "Stream your favorite content": [
-        "Stream uw favoriete inhoud"
-      ],
-      "thanks to you": [
-        "dankzij u"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdrievoudig uw versleutelde opslag – krijg 3 TB voor al uw gegevens"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
-      ],
-      "Use your own email domain": [
-        "Gebruik uw eigen e-maildomein"
-      ],
-      "years": [
-        "jaren"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumaanbieding"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "/ month": [
-        "/ maand"
-      ],
-      "12 months": [
-        "12 maanden"
-      ],
-      "15 months": [
-        "15 maanden"
-      ],
-      "24 months": [
-        "24 maanden"
-      ],
-      "30 months": [
-        "30 maanden"
-      ],
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -3647,9 +3518,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Zoeken naar inhoud kan niet worden ingeschakeld. Herstart de applicatie of wis de gegevens."
       ],
-      "Content verification failed": [
-        "Documentverificatie mislukt"
-      ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
       ],
@@ -5767,11 +5635,11 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
+      "Manage booking page": [
+        "Boekingspagina beheren"
+      ],
       "Manage your calendars": [
         "Uw agenda's beheren"
-      ],
-      "Manange booking page": [
-        "Boekingspagina beheren"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5803,6 +5671,9 @@
       "New": [
         "Nieuw"
       ],
+      "No appointments available": [
+        "Geen afspraken beschikbaar"
+      ],
       "No appointments available this week": [
         "Geen afspraken beschikbaar deze week"
       ],
@@ -5811,6 +5682,9 @@
       ],
       "No email address": [
         "Geen e-mailadres"
+      ],
+      "No future appointments available": [
+        "Geen toekomstige afspraken beschikbaar"
       ],
       "No group found": [
         "Geen groep gevonden"
@@ -6265,11 +6139,8 @@
       "What do you want to call this booking page?": [
         "Hoe wilt u deze boekingspagina noemen?"
       ],
-      "What should people know before booking?": [
-        "Wat moeten mensen weten voordat zij boeken?"
-      ],
-      "When are you free?": [
-        "Wanneer bent u beschikbaar?"
+      "When can appointments be booked?": [
+        "Wanneer moet de afspraak geboekt worden?"
       ],
       "When working remotely": [
         "Bij werken op afstand"
@@ -7244,8 +7115,8 @@
       "Start time of the booking range": [
         "Starttijd van het boekingsbereik"
       ],
-      "What should people know before booking?": [
-        "Wat moeten mensen weten voordat zij boeken?"
+      "What should people know about this appointment?": [
+        "Wat moeten mensen weten over deze afspraak?"
       ]
     },
     "Label for contact group color": {
@@ -9554,9 +9425,6 @@
       "A way to contact you": [
         "Een manier om u te contacteren"
       ],
-      "Add a booking page description": [
-        "Voeg een beschrijving toe aan de boekingspagina"
-      ],
       "Add a calendar description": [
         "Voeg een beschrijving toe aan de agenda"
       ],
@@ -9589,6 +9457,9 @@
       ],
       "Email for booking confirmation": [
         "E-mail voor boekingsbevestiging"
+      ],
+      "Enter a short description or additional info": [
+        "Vul een korte beschrijving of extra informatie in"
       ],
       "Enter passphrase": [
         "Voer wachtwoordzin in"
@@ -11044,6 +10915,12 @@
       ],
       "Billing details updated": [
         "Factuurgegevens bijgewerkt"
+      ],
+      "Booking page created": [
+        "Boekingspagina gemaakt"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Boekingspagina aangemaakt en koppeling gekopieerd naar klembord"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Agenda toegevoegd. Het kan een paar minuten duren om te synchroniseren."

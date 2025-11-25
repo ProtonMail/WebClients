@@ -62,6 +62,9 @@
       "Add another account": [
         "Weiteres Konto hinzufügen"
       ],
+      "Add another booking range to this day": [
+        "Einen weiteren Buchungszeitraum zu diesem Tag hinzufügen"
+      ],
       "Add birthday": [
         "Geburtstag hinzufügen"
       ],
@@ -439,6 +442,9 @@
       ],
       "Go to settings": [
         "Einstellungen öffnen"
+      ],
+      "Go to the first available appointment": [
+        "Zum ersten verfügbaren Termin gehen"
       ],
       "Go to the next available appointment": [
         "Gehe zum nächsten verfügbaren Termin"
@@ -857,9 +863,6 @@
       "Skip verification": [
         "Überprüfung überspringen"
       ],
-      "Split current booking range": [
-        "Aktuellen Buchungszeitraum aufteilen"
-      ],
       "Start import": [
         "Importvorgang starten"
       ],
@@ -1128,138 +1131,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Bitte schließ diese Registerkarte nicht. Einige Anfragen werden noch im Hintergrund bearbeitet."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Zugreifen"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB Speicher"
-      ],
-      "200 GB storage": [
-        "200 GB Speicherplatz"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB verschlüsselter Speicherplatz"
-      ],
-      "Add unlimited credit cards": [
-        "Unbegrenzte Kreditkarten hinzufügen"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle Premium-Funktionen von ${ BRAND_NAME } Mail, Pass, VPN, Drive und Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockiere Werbung, Tracker und Malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabatte basieren auf monatlichen Standard-Preisen. Am Ende des Abrechnungszeitraums verlängert sich dein Abonnement zum jährlichen Standard-Tarif."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdoppele deinen verschlüsselten Speicher – hol dir 1 TB für all deine Daten"
-      ],
-      "Encrypted password manager": [
-        "Verschlüsselter Passwortmanager"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier ist ein exklusives Geschenk, um unsere gemeinsame Reise zu feiern."
-      ],
-      "High speed streaming with VPN": [
-        "Hochgeschwindigkeits-Streaming mit VPN"
-      ],
-      "of privacy": [
-        "der Privatsphäre"
-      ],
-      "Online document editor": [
-        "Editor für Onlinedokumente"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online-Privatsphäre für bis zu 2 Personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online-Privatsphäre für deine ganze Familie (bis zu 6 Benutzer)"
-      ],
-      "Protect up to 10 devices": [
-        "Schütze bis zu 10 Geräte"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Drive-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Mail-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-Pass-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Ordentlich sparen bei Premium-VPN-Funktionen mit einem zeitlich begrenzten Rabatt."
-      ],
-      "Save time with built-in 2FA": [
-        "Spare Zeit mit integriertem 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sichere E-Mail mit unbegrenzten Aliassen"
-      ],
-      "Select any server": [
-        "Einen beliebigen Server wählen"
-      ],
-      "Share passwords easily": [
-        "Passwörter einfach teilen"
-      ],
-      "Short @pm.me address": [
-        "Kurze @pm.me E-Mail-Adresse"
-      ],
-      "Stream your favorite content": [
-        "Streame deine Lieblingsinhalte"
-      ],
-      "thanks to you": [
-        "Dank dir"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdreifache deinen verschlüsselten Speicher – hol dir 3 TB für all deine Daten"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
-      ],
-      "Use your own email domain": [
-        "Nutze deine eigene E-Mail-Domain"
-      ],
-      "years": [
-        "Jahre"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubiläumsangebot"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "/ month": [
-        "/ Monat"
-      ],
-      "12 months": [
-        "12 Monate"
-      ],
-      "15 months": [
-        "15 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
-      ],
-      "30 months": [
-        "30 Monate"
-      ],
-      "for ${ durationDeal }": [
-        "Für ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -3647,9 +3518,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Fehler beim Aktivieren der Inhaltssuche. Bitte starte die Anwendung neu oder leere den Cache."
       ],
-      "Content verification failed": [
-        "Fehler bei der Inhaltsüberprüfung"
-      ],
       "Could not open created vault": [
         "Erstellter Tresor konnte nicht geöffnet werden."
       ],
@@ -5354,6 +5222,9 @@
       "Booking page example": [
         "Beispiel für eine Buchungsseite"
       ],
+      "Booking updated successfully": [
+        "Buchung erfolgreich aktualisiert"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
       ],
@@ -5428,6 +5299,9 @@
       ],
       "Copy your referral link": [
         "Einladungslink kopieren"
+      ],
+      "Could not verify signature over booking page data": [
+        "Die Signatur von Buchungsseiten-Daten konnte nicht überprüft werden."
       ],
       "Country code": [
         "Ländercode"
@@ -5631,6 +5505,9 @@
       "Host": [
         "Organisator"
       ],
+      "Host signature verification failed": [
+        "Host-Signaturprüfung fehlgeschlagen"
+      ],
       "How long should an appointment last?": [
         "Wie lange sollte ein Termin dauern?"
       ],
@@ -5752,6 +5629,9 @@
       "Loading ${ appName }": [
         "${ appName } wird geladen"
       ],
+      "Loading appointments...": [
+        "Termine werden geladen…"
+      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
       ],
@@ -5767,11 +5647,11 @@
       "Low Priority": [
         "Niedrige Priorität"
       ],
+      "Manage booking page": [
+        "Buchungsseite verwalten"
+      ],
       "Manage your calendars": [
         "Kalender verwalten"
-      ],
-      "Manange booking page": [
-        "Buchungsseite organisieren"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
@@ -5803,6 +5683,9 @@
       "New": [
         "Neu"
       ],
+      "No appointments available": [
+        "Keine Termine verfügbar"
+      ],
       "No appointments available this week": [
         "Diese Woche sind keine Termine verfügbar"
       ],
@@ -5811,6 +5694,9 @@
       ],
       "No email address": [
         "Keine E-Mail-Adresse"
+      ],
+      "No future appointments available": [
+        "Keine zukünftigen Termine verfügbar"
       ],
       "No group found": [
         "Keine Gruppe gefunden"
@@ -6265,11 +6151,8 @@
       "What do you want to call this booking page?": [
         "Wie möchtest du diese Buchungsseite nennen?"
       ],
-      "What should people know before booking?": [
-        "Was sollten die Personen vor dem Buchen wissen?"
-      ],
-      "When are you free?": [
-        "Wann bist du frei?"
+      "When can appointments be booked?": [
+        "Wann können Termine gebucht werden?"
       ],
       "When working remotely": [
         "Wenn von auswärts gearbeitet wird"
@@ -6824,6 +6707,9 @@
       "Copy": [
         "Kopieren"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "Link kopieren oder deine Seite jederzeit von hier aus verwalten."
+      ],
       "Could you please let us know which provider?": [
         "Kannst du uns bitte mitteilen, welcher Anbieter das ist?"
       ],
@@ -6835,6 +6721,9 @@
       ],
       "Country": [
         "Land"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Teilbare Seiten erstellen, auf denen andere Termine mit dir buchen können."
       ],
       "Credits": [
         "Guthaben"
@@ -7244,8 +7133,8 @@
       "Start time of the booking range": [
         "Startzeit des Buchungszeitraums"
       ],
-      "What should people know before booking?": [
-        "Was sollten die Personen vor dem Buchen wissen?"
+      "What should people know about this appointment?": [
+        "Was sollten Teilnehmer über diesen Termin wissen?"
       ]
     },
     "Label for contact group color": {
@@ -9554,9 +9443,6 @@
       "A way to contact you": [
         "Eine Möglichkeit, dich zu kontaktieren"
       ],
-      "Add a booking page description": [
-        "Eine Beschreibung der Buchungsseite hinzufügen"
-      ],
       "Add a calendar description": [
         "Kalenderbeschreibung hinzufügen"
       ],
@@ -9589,6 +9475,9 @@
       ],
       "Email for booking confirmation": [
         "E-Mail zur Buchungsbestätigung"
+      ],
+      "Enter a short description or additional info": [
+        "Eine kurze Beschreibung oder zusätzliche Informationen eingeben"
       ],
       "Enter passphrase": [
         "Passphrase eingeben"
@@ -11737,6 +11626,9 @@
       "Information exposed in breach": [
         "Informationen, die beim Datenleck offengelegt wurden"
       ],
+      "Introducing booking pages": [
+        "Wir präsentieren Buchungsseiten"
+      ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
@@ -12081,6 +11973,9 @@
       ],
       "Your booking page is ready": [
         "Deine Buchungsseite ist bereit"
+      ],
+      "Your booking pages live here": [
+        "Deine Buchungsseiten findest du hier"
       ],
       "Your calendar link": [
         "Dein Kalender-Link"
