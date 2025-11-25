@@ -90,6 +90,9 @@
       "Apply": [
         "Applica"
       ],
+      "Ask me next time": [
+        "Chiedimelo la prossima volta"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
         "Sono consentiti al massimo ${ maxContacts } contatti per ogni gruppo di contatti"
@@ -654,6 +657,9 @@
       "Save changes": [
         "Salva le modifiche"
       ],
+      "Save preferences": [
+        "Salva le preferenze"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -912,138 +918,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Uscendo ora, alcuni eventi potrebbero non essere importati"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Approfitta dell'offerta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB di archiviazione"
-      ],
-      "200 GB storage": [
-        "200 GB di spazio di archiviazione"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB di spazio di archiviazione crittografato"
-      ],
-      "Add unlimited credit cards": [
-        "Aggiungi un numero illimitato di carte di credito"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Tutte le funzionalità premium di ${ BRAND_NAME } Mail, Pass, VPN, Drive e Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocca annunci, tracker e malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Gli sconti si basano sui prezzi mensili standard. Alla fine del ciclo di fatturazione, il tuo abbonamento si rinnoverà alla tariffa annuale standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Raddoppia la tua archiviazione crittografata e ottieni 1 TB per tutti i tuoi dati."
-      ],
-      "Encrypted password manager": [
-        "Gestore di password crittografato"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Ecco un regalo esclusivo per celebrare il nostro percorso insieme."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming ad alta velocità con VPN"
-      ],
-      "of privacy": [
-        "di privacy"
-      ],
-      "Online document editor": [
-        "Editor di documenti online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacy online per fino a 2 persone"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacy online per tutta la famiglia (fino a 6 utenti)"
-      ],
-      "Protect up to 10 devices": [
-        "Proteggi fino a 10 dispositivi"
-      ],
-      "Recover previous file versions": [
-        "Recupera versioni precedenti del file"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Risparmia alla grande sulle funzionalità premium di Drive con uno sconto a tempo limitato."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Risparmia alla grande sulle funzionalità premium di Mail con uno sconto a tempo limitato."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Risparmia alla grande sulle funzionalità premium di Pass con uno sconto a tempo limitato."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Risparmia alla grande sulle funzionalità premium di VPN con uno sconto a tempo limitato."
-      ],
-      "Save time with built-in 2FA": [
-        "Risparmia tempo con 2FA integrato"
-      ],
-      "Secure email with unlimited aliases": [
-        "Posta elettronica sicura con alias illimitati"
-      ],
-      "Select any server": [
-        "Seleziona qualsiasi server"
-      ],
-      "Share passwords easily": [
-        "Condividi password facilmente"
-      ],
-      "Short @pm.me address": [
-        "Indirizzo breve @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Guarda i tuoi contenuti preferiti"
-      ],
-      "thanks to you": [
-        "grazie a te"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplica la tua archiviazione crittografata e ottieni 3 TB per tutti i tuoi dati."
-      ],
-      "Unlimited folders, labels and filters": [
-        "Cartelle, etichette e filtri illimitati"
-      ],
-      "Use your own email domain": [
-        "Usa il tuo dominio di posta personalizzato"
-      ],
-      "years": [
-        "anni"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offerta per l'anniversario"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mese",
-        "${ n } mesi"
-      ],
-      "/ month": [
-        "/mese"
-      ],
-      "12 months": [
-        "12 mesi"
-      ],
-      "15 months": [
-        "15 mesi"
-      ],
-      "24 months": [
-        "24 mesi"
-      ],
-      "30 months": [
-        "30 mesi"
-      ],
-      "for ${ durationDeal }": [
-        "per ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -3261,6 +3135,9 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Stiamo riscontrando problemi nel salvare le modifiche recenti. Aggiorna la pagina."
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Stiamo riscontrando problemi nella sincronizzazione del tuo documento. Aggiorna la pagina."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
         "Non puoi inviare un'email a più di ${ maxContacts } destinatari"
@@ -4402,6 +4279,9 @@
       "Continue": [
         "Continua"
       ],
+      "Converting document...": [
+        "Conversione del documento..."
+      ],
       "Copy the link to clipboard": [
         "Copia il link negli appunti"
       ],
@@ -4444,6 +4324,9 @@
       ],
       "Creating link to folder": [
         "Creazione del link alla cartella"
+      ],
+      "Creating new document...": [
+        "Creazione del documento..."
       ],
       "Current plan": [
         "Piano attuale"
@@ -4538,6 +4421,12 @@
       "Enter your own password (as trusted contact).": [
         "Inserisci la tua password (come contatto attendibile)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Errore durante la conversione del documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Errore durante il caricamento del documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Errore nella sincronizzazione"
       ],
@@ -4597,6 +4486,12 @@
       ],
       "Geoblocking": [
         "Blocco geografico"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ricevi aggiornamenti via email per commenti e suggerimenti aggiunti ai tuoi documenti."
+      ],
+      "Get Notified About Comments": [
+        "Ricevi notifiche sui commenti"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "I governi e gli ISP possono monitorare la tua attività online. Nascondendo il tuo vero IP e crittografando la tua attività, la tua navigazione diventa privata."
@@ -4734,6 +4629,9 @@
       "Low Priority": [
         "Priorità bassa"
       ],
+      "Making a copy...": [
+        "Creazione di una copia..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carattere",
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caratteri"
@@ -4764,6 +4662,9 @@
       ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nessun documento fornito nell'URL. Torna a ${ DRIVE_APP_NAME } e selezionane uno."
       ],
       "No email address": [
         "Nessun indirizzo email"
@@ -5048,6 +4949,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "L'URL che hai inserito sembra essere stato copiato da Slack in modo errato. Quando copi collegamenti lunghi da Slack, fai clic con il pulsante destro del mouse sul collegamento, quindi scegli \"Copia collegamento\" anziché copiare direttamente il testo dell'URL tagliato."
       ],
       "There are no documents in the trash.": [
         "Non ci sono documenti nel cestino."
@@ -5654,6 +5558,9 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
+      "Enable email notifications": [
+        "Attiva le notifiche email"
+      ],
       "Encrypt emails": [
         "Email crittografate"
       ],
@@ -5701,6 +5608,9 @@
       ],
       "Include application logs in bug report": [
         "Includi i log dell'applicazione nella segnalazione di bug"
+      ],
+      "Include document name in notification": [
+        "Includi il nome del documento nella notifica"
       ],
       "Include message and file name in invite email": [
         "Includi il messaggio e il nome del file nell'email di invito"

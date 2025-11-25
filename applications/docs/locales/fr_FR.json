@@ -923,138 +923,6 @@
         "En quittant maintenant, certains événements pourraient ne pas être importés."
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "200 GB storage": [
-        "200 Go d'espace de stockage"
-      ],
-      "500 GB encrypted storage": [
-        "500 Go d'espace de stockage chiffré"
-      ],
-      "Add unlimited credit cards": [
-        "Ajoutez un nombre illimité de cartes de paiement"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Toutes les fonctionnalités premium de ${ BRAND_NAME } Mail, Pass, VPN, Drive et Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquer les pubs, traqueurs et logiciels malveillants"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Les réductions sont basées sur les tarifs mensuels standards. À la fin du cycle de facturation, votre abonnement sera renouvelé au tarif annuel standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Doublez votre espace de stockage chiffré et bénéficiez de 1 To pour toutes vos données."
-      ],
-      "Encrypted password manager": [
-        "Gestionnaire de mots de passe chiffré"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Voici un cadeau exclusif pour célébrer notre parcours ensemble."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming ultra rapide avec VPN"
-      ],
-      "of privacy": [
-        "du respect de la vie privée"
-      ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
-      "Online privacy for up to 2 people": [
-        "Confidentialité en ligne pour jusqu’à 2 personnes"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Respect de la vie privée en ligne pour toute votre famille (jusqu'à 6 utilisateurs)"
-      ],
-      "Protect up to 10 devices": [
-        "Protégez jusqu’à 10 appareils."
-      ],
-      "Recover previous file versions": [
-        "Récupérez les versions précédentes de vos fichiers"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Réalisez d'importantes économies sur les fonctionnalités premium de Drive en profitant d'une réduction à durée limitée."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Réalisez d'importantes économies sur les fonctionnalités premium de Mail en profitant d'une réduction à durée limitée."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Réalisez d'importantes économies sur les fonctionnalités premium de Pass en profitant d'une réduction à durée limitée."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Réalisez d'importantes économies sur les fonctionnalités premium de VPN en profitant d'une réduction à durée limitée."
-      ],
-      "Save time with built-in 2FA": [
-        "Gagnez du temps avec l’A2F intégrée"
-      ],
-      "Secure email with unlimited aliases": [
-        "Boîte mail sécurisée avec alias illimités"
-      ],
-      "Select any server": [
-        "Sélectionnez un serveur"
-      ],
-      "Share passwords easily": [
-        "Partagez facilement vos mots de passe"
-      ],
-      "Short @pm.me address": [
-        "Adresse @pm.me courte"
-      ],
-      "Stream your favorite content": [
-        "Accédez à vos services de streaming préférés"
-      ],
-      "thanks to you": [
-        "grâce à vous"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplez votre espace de stockage chiffré et bénéficiez de 3 To pour toutes vos données."
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre illimité de dossiers, labels et filtres"
-      ],
-      "Use your own email domain": [
-        "Utilisez vos propres domaines de messagerie"
-      ],
-      "years": [
-        "années"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Offre anniversaire"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
-      "/ month": [
-        "/mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "15 months": [
-        "15 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ],
-      "30 months": [
-        "30 mois"
-      ],
-      "for ${ durationDeal }": [
-        "pour ${ durationDeal }"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Applications ${ BRAND_NAME }"
@@ -3270,6 +3138,9 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Un problème est survenu en tentant d'enregistrer les dernières modifications. Veuillez actualiser la page."
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Nous rencontrons des difficultés à synchroniser votre document. Veuillez actualiser la page."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataires."
@@ -4795,9 +4666,6 @@
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
       ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Aucun document n'est indiqué dans l'URL. Retournez dans ${ DRIVE_APP_NAME } et sélectionnez un document."
-      ],
       "No email address": [
         "Aucune adresse e-mail"
       ],
@@ -5081,9 +4949,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "L'URL que vous avez saisie semble avoir été mal copiée depuis Slack. Lorsque vous copiez des liens longs depuis Slack, faites un clic droit sur le lien, puis choisissez « Copier le lien » plutôt que de copier directement le texte tronqué de l’URL."
       ],
       "There are no documents in the trash.": [
         "Il n'y a aucun document dans la corbeille."
