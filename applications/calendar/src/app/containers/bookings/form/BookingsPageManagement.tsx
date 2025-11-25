@@ -39,7 +39,7 @@ export const Form = () => {
     const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
     const locationOptions = getBookingLocationOption();
 
-    const { formData, updateFormData } = useBookings();
+    const { formData, updateFormData, bookingsState } = useBookings();
 
     const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
     const selectedCalendar = writeableCalendars.find((calendar) => calendar.ID === formData.selectedCalendar);
@@ -145,7 +145,7 @@ export const Form = () => {
                     assistContainerClassName="hidden"
                     className="max-w-full"
                     fullWidth={false}
-                    disabled={writeableCalendars.length === 1}
+                    disabled={writeableCalendars.length === 1 || bookingsState === BookingState.EDIT_EXISTING}
                     size={{ width: DropdownSizeUnit.Static }}
                 >
                     {writeableCalendars.map((calendar) => (

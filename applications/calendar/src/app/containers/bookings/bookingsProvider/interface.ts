@@ -1,5 +1,5 @@
-import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
 import type { LayoutEvent } from '../../../components/calendar/layout';
+import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
 import type { CalendarViewEvent } from '../../calendar/interface';
 
 export const BOOKING_SLOT_ID = 'booking-slot-' as const;
@@ -45,11 +45,16 @@ export enum BookingState {
     EDIT_EXISTING = 'EDIT_EXISTING',
 }
 
+export enum BookingRangeError {
+    TOO_SHORT = 'TOO_SHORT',
+}
+
 export interface BookingRange {
     id: string;
     start: Date;
     end: Date;
     timezone: string;
+    error?: BookingRangeError;
 }
 
 // Each slot is associated with a booking range for easy removal
@@ -82,6 +87,7 @@ export enum BookingFormValidationReasons {
     TIME_SLOT_LIMIT = 'TIME_SLOT_LIMIT',
     TIME_SLOT_REQUIRED = 'NO_TIME_SLOT',
     TITLE_REQUIRED = 'TITLE_REQUIRED',
+    RANGE_ERROR = 'RANGE_ERROR',
 }
 
 export type BookingFormValidation =
