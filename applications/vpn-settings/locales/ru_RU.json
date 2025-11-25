@@ -45,6 +45,9 @@
       "Activate organization key": [
         "Активировать ключ организации"
       ],
+      "Activate recovery": [
+        "Активировать восстановление"
+      ],
       "Add": [
         "Добавить"
       ],
@@ -168,11 +171,17 @@
       "Confirm": [
         "Подтвердить"
       ],
+      "Connect": [
+        "Подключить"
+      ],
       "Connect apps and devices": [
         "Подключить приложения и устройства"
       ],
       "Connect to video conferencing": [
         "Подключайтесь к видеоконференциям"
+      ],
+      "Connected": [
+        "Подключено"
       ],
       "Contact support": [
         "Связаться с поддержкой"
@@ -237,6 +246,9 @@
       "Decrease": [
         "Уменьшить"
       ],
+      "Decrypt": [
+        "Расшифровать"
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -251,6 +263,9 @@
       ],
       "Delete logo": [
         "Удалить логотип"
+      ],
+      "Delete logs": [
+        "Удалить журналы"
       ],
       "Delete member": [
         "Удалить участника"
@@ -276,6 +291,12 @@
       "Disable": [
         "Отключить"
       ],
+      "Disable recovery phrase": [
+        "Отключить фразу для восстановления доступа к учетной записи"
+      ],
+      "Disable recovery phrase?": [
+        "Отключить фразу для восстановления доступа к учетной записи?"
+      ],
       "Discard": [
         "Сбросить"
       ],
@@ -293,6 +314,9 @@
       ],
       "Domain name": [
         "Доменное имя"
+      ],
+      "Don't show again": [
+        "Больше не показывать"
       ],
       "Done": [
         "Готово"
@@ -314,6 +338,9 @@
       ],
       "Download our CSV template": [
         "Скачайте наш шаблон CSV"
+      ],
+      "Download recovery file": [
+        "Скачать файл восстановления"
       ],
       "Edit": [
         "Изменить"
@@ -399,8 +426,14 @@
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
       ],
+      "Generate new recovery phrase": [
+        "Создать новую фразу для восстановления"
+      ],
       "Generate password": [
         "Создать пароль"
+      ],
+      "Generate recovery phrase": [
+        "Создать фразу для восстановления"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Получить ${ planName } за ${ priceCoupon }"
@@ -543,6 +576,12 @@
       "Mark as favorite": [
         "Отметить как избранное"
       ],
+      "Mark as open": [
+        "Пометить как открытый"
+      ],
+      "Mark as resolved": [
+        "Отметить как устраненную"
+      ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
       ],
@@ -627,11 +666,20 @@
       "refresh the page": [
         "обновить страницу"
       ],
+      "Reject": [
+        "Отказать"
+      ],
+      "Reload": [
+        "Перезагрузить"
+      ],
       "Remove": [
         "Удалить"
       ],
       "Remove all members": [
         "Удалить всех участников"
+      ],
+      "Remove all other devices": [
+        "Удалить все остальные устройства"
       ],
       "Remove bonuses": [
         "Удалить бонусы"
@@ -704,6 +752,9 @@
       ],
       "Revoke ${ name }": [
         "Отозвать ${ name }"
+      ],
+      "Revoke all other sessions": [
+        "Прервать все другие сессии"
       ],
       "Revoke invitation": [
         "Отозвать приглашение"
@@ -779,6 +830,9 @@
       ],
       "Set recovery methods": [
         "Установить методы восстановления"
+      ],
+      "Set recovery phrase": [
+        "Установить фразу для восстановления"
       ],
       "Set up 2FA": [
         "Настроить 2FA"
@@ -900,6 +954,15 @@
       "Unlock": [
         "Разблокировать"
       ],
+      "Unlock data": [
+        "Разблокировать данные"
+      ],
+      "Update recovery file": [
+        "Обновить файл восстановления"
+      ],
+      "Update recovery phrase": [
+        "Обновить фразу для восстановления"
+      ],
       "Upgrade": [
         "Улучшить"
       ],
@@ -911,6 +974,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Улучшение, чтобы включить ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to view all": [
+        "Улучшить, чтобы просмотреть все"
       ],
       "Upgrade your plan": [
         "Улучшить тариф"
@@ -975,14 +1041,29 @@
       "View": [
         "Посмотреть"
       ],
+      "View all reports": [
+        "Просмотреть все отчеты"
+      ],
       "View invoice": [
         "Посмотреть счет"
       ],
       "View plans details": [
         "Посмотреть детали тарифа"
       ],
+      "Void": [
+        "Аннулировать"
+      ],
+      "Void all recovery files": [
+        "Уничтожить все файлы восстановления"
+      ],
+      "Void all recovery files?": [
+        "Уничтожить все файлы восстановления?"
+      ],
       "What do I get?": [
         "Что я получу?"
+      ],
+      "Wipe": [
+        "Стереть"
       ],
       "Your server will be provisioned in the next days": [
         "Ваш сервер будет предоставлен в ближайшие дни"
@@ -997,6 +1078,11 @@
     "action": {
       "Resuming forward": [
         "Пересылка возобновляется"
+      ]
+    },
+    "Action for user session": {
+      "Revoke": [
+        "Отозвать"
       ]
     },
     "Action subscription": {
@@ -1144,75 +1230,6 @@
         "Новое письмо"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Воспользоваться предложением"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "200 GB storage": [
-        "200 ГБ хранилища"
-      ],
-      "500 GB encrypted storage": [
-        "500 ГБ зашифрованного хранилища"
-      ],
-      "Encrypted password manager": [
-        "Зашифрованный менеджер паролей"
-      ],
-      "Online document editor": [
-        "Онлайн-редактор документов"
-      ],
-      "Protect up to 10 devices": [
-        "Защитите до 10 устройств"
-      ],
-      "Recover previous file versions": [
-        "Восстановить предыдущие версии файла"
-      ],
-      "Short @pm.me address": [
-        "Короткий адрес @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Смотрите любимый контент"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
-      ],
-      "Use your own email domain": [
-        "Используйте свой собственный домен электронной почты"
-      ],
-      "years": [
-        "лет"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "/ month": [
-        "/ месяц"
-      ],
-      "12 months": [
-        "12 месяцев"
-      ],
-      "15 months": [
-        "15 месяцев"
-      ],
-      "24 months": [
-        "24 месяца"
-      ],
-      "30 months": [
-        "30 месяцев"
-      ],
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
@@ -1292,6 +1309,11 @@
       ],
       "Missing keys": [
         "Отсутствуют ключи"
+      ]
+    },
+    "Badge for user sessions table": {
+      "Current session": [
+        "Текущая сессия"
       ]
     },
     "bf2023: Action": {
@@ -2925,6 +2947,9 @@
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Добавляйте папки и файлы в ${ DRIVE_APP_NAME } и приглашайте членов команды для просмотра или изменения."
       ],
+      "Also included": [
+        "Также включены"
+      ],
       "Automatically forward incoming email to another email address.": [
         "Автоматически пересылайте входящие сообщения на другой адрес электронной почты."
       ],
@@ -2933,6 +2958,9 @@
       ],
       "Connect your CRM, website, printers, and more.": [
         "Подключите CRM (управление взаимоотношениями с клиентами), веб-сайт, принтеры и многое другое."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Создайте встречу в Zoom и добавьте информацию о присоединении к мероприятию одним нажатием."
       ],
       "Create groups you can email with a single address.": [
         "Создавайте группы, в которые вы сможете отправлять электронные письма с одного адреса."
@@ -2945,6 +2973,15 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Легко синхронизируйте файлы с облаком с настольного компьютера и получайте к ним доступ с мобильного устройства."
+      ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Включите ${ PROTON_SENTINEL_NAME } для доступа к этим функциям"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Включите подробные события и ${ PROTON_SENTINEL_NAME }, чтобы получить доступ к этим функциям."
+      ],
+      "Enable detailed events to access these features": [
+        "Включите подробные события, чтобы получить доступ к этим функциям"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Поощряйте использование двухфакторной аутентификации в вашей организации для обеспечения дополнительной безопасности."
@@ -2969,6 +3006,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
+      ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Получите до ${ credits } кредитов, приглашая друзей в ${ BRAND_NAME }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Поможет вашей команде защищенно хранить пароли к конфиденциальной деловой и клиентской информации."
@@ -3485,6 +3525,9 @@
       "Error publishing changes": [
         "Ошибка при публикации изменений"
       ],
+      "Failed to load OAuth modal.": [
+        "Не удалось загрузить модальную страницу OAuth."
+      ],
       "Failed to load the STL preview": [
         "Не удалось загрузить предварительный просмотр STL"
       ],
@@ -3752,6 +3795,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Ключи в вашем файле восстановления не могут быть проверены. Пожалуйста, обратитесь в службу поддержки."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Ключи в ваших файлах восстановления не могут быть проверены. Пожалуйста, загрузите по отдельности для получения дополнительной информации."
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Недопустимое название ярлыка. Пожалуйста, выберите другое название."
       ],
@@ -3803,6 +3852,12 @@
       "Unknown payment token status": [
         "Неизвестный статус платежного токена"
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Загруженный файл не является действительным закрытым ключом. Пожалуйста, проверьте и повторите попытку."
+      ],
+      "Uploaded files are not valid private keys. Please verify and try again.": [
+        "Загруженные файлы не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
+      ],
       "Username must begin with a letter or digit": [
         "Имя пользователя должно начинаться с буквы или цифры"
       ],
@@ -3844,6 +3899,9 @@
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
+      ],
+      "Zero keys reactivated": [
+        "Ноль ключей активировано повторно"
       ],
       "ZIP code is required": [
         "Необходимо указать почтовый индекс"
@@ -5172,6 +5230,23 @@
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ]
     },
+    "Import provider": {
+      "Import from ${ provider }": [
+        "Импортировать из ${ provider }"
+      ],
+      "Import from Google": [
+        "Импортировать из Google"
+      ],
+      "Import from other": [
+        "Импортировать из другого"
+      ],
+      "Import from Outlook": [
+        "Импортировать из Outlook"
+      ],
+      "Import from Yahoo": [
+        "Импортировать из Yahoo"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -5204,6 +5279,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } никогда не передает вашу информацию третьим лицам. Данные получены в результате собственного анализа ${ BRAND_NAME } и разведки Constella Intelligence."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помощник по написанию ${ BRAND_NAME } Scribe"
@@ -5291,6 +5369,12 @@
         "${ number } сервера",
         "${ number } серверов",
         "${ number } серверов"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } загруженный файл не является действительным закрытым ключом. Пожалуйста, проверьте и повторите попытку.",
+        "${ numberOfNonPrivateKeys } загруженных файла не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку.",
+        "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку.",
+        "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
@@ -5454,11 +5538,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Файл восстановления позволяет разблокировать и просмотреть данные после восстановления аккаунта"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Фраза восстановления позволяет получить доступ к аккаунту и восстановить зашифрованные сообщения, если вы забыли пароль"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
       "active": [
         "активный"
@@ -5526,6 +5619,9 @@
       "All inactive members deleted": [
         "Все неактивные участники удалены"
       ],
+      "All keys successfully reactivated": [
+        "Все ключи успешно реактивированы"
+      ],
       "All members have been added.": [
         "Все участники были добавлены."
       ],
@@ -5565,6 +5661,9 @@
       "Amount due": [
         "Сумма к оплате"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псевдоним электронной почты работает так же, как и адрес электронной почты, но при этом уменьшает количество спама и сохраняет в тайне ваш реальный адрес электронной почты и вашу личность."
+      ],
       "and": [
         "и"
       ],
@@ -5579,6 +5678,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Вы уверены, что хотите предоставить этому пользователю права администратора?"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Вы уверены, что хотите безвозвратно удалить все журналы доступа?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
@@ -5630,6 +5732,12 @@
       ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Перенесите ваши сообщения, контакты и календари в ${ BRAND_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Отключив мониторинг событий безопасности, вы также очистите всю свою историю. Вы уверены, что хотите отключить это?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -5760,6 +5868,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Настройте внешний вид ${ BRAND_NAME } приложений."
       ],
+      "Data locked": [
+        "Данные заблокированы"
+      ],
       "Data recoverable on this device": [
         "Данные, которые можно восстановить на этом устройстве"
       ],
@@ -5813,6 +5924,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забудьте этот пароль. Если вы его забудете, то не сможете управлять настройками своей организациии."
+      ],
+      "Do you want to revoke all other sessions than the current one?": [
+        "Вы хотите прервать все остальные сессии, кроме текущей?"
       ],
       "Domain ownership failed verification.": [
         "Проверка владения доменом не удалась."
@@ -5895,6 +6009,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Включите автообновление для сохранения доступа к вашим платным функциям."
       ],
+      "Enable email notifications": [
+        "Включить уведомления по электронной почте"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Включите единый вход для обеспечения безопасности вашей организации"
       ],
@@ -5903,6 +6020,9 @@
       ],
       "Enabling auto-deletion…": [
         "Включение автоудаления…"
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Повторное включение восстановления по фразе приведет к созданию новой фразы восстановления."
       ],
       "End date": [
         "Дата окончания"
@@ -5982,6 +6102,9 @@
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
       ],
+      "Failed to fetch logs.": [
+        "Не удалось загрузить журналы."
+      ],
       "Fill in user details": [
         "Заполните данные пользователя"
       ],
@@ -6000,8 +6123,14 @@
       "Gateways": [
         "Шлюзы"
       ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Генерирование новой фразы восстановления приведет к деактивации старой."
+      ],
       "Get ${ upsellPlanName }": [
         "Получить ${ upsellPlanName }"
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Получайте уведомления, если ваш пароль или другие личные данные подвергнутся утечке. ${ learnMoreLinkNoBreach }"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перейдите к своему провайдеру идентификации, получите метаданные SAML для ${ appName } и импортируйте их сюда."
@@ -6029,6 +6158,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Если он вам не подойдет, мы вернём деньги."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Если это произошло из-за сброса старого пароля, вы можете отключить повторное отображение сообщения"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
@@ -6062,6 +6194,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ VPN_APP_NAME }."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Если вы недавно сбросили пароль, для разблокировки данных можно воспользоваться методом восстановления данных"
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Если у вас возникли проблемы, мы готовы помочь. ${ boldPhoneCall } или ${ boldZoomMeeting } одному из наших специалистов по поддержке, или откройте чат ${ boldLiveChat } для поддержки в чате."
@@ -6150,6 +6285,9 @@
       "Invited": [
         "Приглашение отправлено"
       ],
+      "It appears some of your data is encrypted and locked.": [
+        "Похоже, что некоторые ваши данные зашифрованы и заблокированы."
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Изменение страны сервера займет 10 дней, поэтому убедитесь, что ваш выбор правильный."
       ],
@@ -6210,6 +6348,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Обеспечьте защиту и конфиденциальность своей информации с помощью этих руководств и советов."
+      ],
       "Keys created": [
         "Ключи созданы"
       ],
@@ -6233,6 +6374,9 @@
       ],
       "Learn more about single sign-on": [
         "Узнайте больше о едином входе"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Узнайте, что делать ${ dataLeakedLink }"
       ],
       "Let's get started by pressing the New group button above": [
         "Давайте начнем с нажатия кнопки Новая группа, расположенной выше."
@@ -6315,6 +6459,9 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield - это функция блокировки рекламы от ${ VPN_APP_NAME }, которая защищает ваше устройство от рекламы, трекеров и вредоносных программ."
+      ],
       "New": [
         "Новый"
       ],
@@ -6338,6 +6485,9 @@
       ],
       "No Gateways yet": [
         "Шлюзов пока нет"
+      ],
+      "No logs yet.": [
+        "Журналов доступа ещё нет."
       ],
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
@@ -6365,6 +6515,9 @@
       ],
       "Once you reset your password:": [
         "После изменения пароля:"
+      ],
+      "One time import": [
+        "Одноразовый импорт"
       ],
       "Open source": [
         "Открытый исходный код"
@@ -6404,6 +6557,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "В вашей организации есть другие администраторы, ответственность сообщить им новый пароль лежит на вас."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - пользовательский адрес эл. почты подтверждён"
@@ -6474,6 +6630,9 @@
       "Please fill in all required fields.": [
         "Заполните все обязательные поля."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Пожалуйста, храните её в безопасности. Она понадобится вам для доступа к вашему аккаунту и расшифровки данных в случае сброса пароля."
+      ],
       "please open a support ticket": [
         "откройте заявку в службу поддержки"
       ],
@@ -6494,6 +6653,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Ожидайте пока изменения синхронизируются с сервером."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "Плюс еще ${ numOfBreaches }"
       ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
@@ -6537,8 +6699,29 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Рекомендуется на доверенных устройствах. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery file downloaded": [
+        "Файл восстановления скачан"
+      ],
+      "Recovery files have been voided": [
+        "Файлы восстановления были уничтожены"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
+      ],
+      "Recovery phrase copied to clipboard": [
+        "Фраза для восстановления скопирована в буфер обмена"
+      ],
+      "Recovery phrase downloaded": [
+        "Фраза для восстановления скачана"
+      ],
+      "Recovery phrase has been disabled": [
+        "Фраза восстановления была отключена"
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        "Фраза восстановления не связана ни с одним ключом."
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        "Фраза восстановления не связана ни с одним устаревшим ключом."
       ],
       "Referral link copied to your clipboard": [
         "Реферальная ссылка скопирована в буфер обмена"
@@ -6669,6 +6852,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
+      "Some keys successfully reactivated": [
+        "Некоторые ключи успешно реактивированы"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Укажите домен, которому разрешена аутентификация с помощью SAML SSO."
       ],
@@ -6714,6 +6900,9 @@
       "Summary": [
         "Сводка"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Поддержка контроля пользовательских доменов и адресов электронной почты, не относящихся к ${ BRAND_NAME }, появится в ближайшее время."
+      ],
       "support team": [
         "служба поддержки"
       ],
@@ -6738,11 +6927,20 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Спасибо за поддержку нашей миссии по созданию лучшего Интернета, в котором частная жизнь и свобода стоят на первом месте."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Сообщение ${ boldDataLocked } больше не будет отображаться, но вы по-прежнему можете разблокировать свои данные по ссылке: ${ encryptionAndKeysLink }."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Темная паутина - это скрытая часть Интернета, где можно купить и продать украденную персональную информацию, например, личные данные."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Размер зашифрованных данных увеличивается за счет дополнительной информации о шифровании и подписях, обеспечивающих безопасность ваших данных."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
       ],
       "The following address is invalid.": [
         "Следующий адрес недействителен.",
@@ -6810,11 +7008,23 @@
       "This file is too large to preview": [
         "Этот файл слишком большой для предпросмотра"
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Это фраза из 12 слов, которую вам было предложено задать."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Это название или псевдоним для вашей организации, который будут видеть ваши пользователи. Вы можете изменить его в любое время."
       ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Это файл восстановления или ключ шифрования, который вы могли сохранить ранее."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Это ключ шифрования, который вы могли сохранить ранее."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Теперь это ваш ${ defaultEmailAddress } для отправки новых сообщений."
+      ],
+      "This is the password you used before the password reset.": [
+        "Это пароль, который вы использовали до сброса пароля."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Это сообщение не дойдет до службы поддержки, если у вас возникнут проблемы с нашей службой или потребуются дальнейшие действия с нашей стороны ${ supportLink }."
@@ -6834,6 +7044,9 @@
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Это отключит двухфакторную аутентификацию, в том числе приложение для аутентификации и ключи безопасности."
       ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Это отключит вашу текущую фразу восстановления. Вы не сможете использовать ее для доступа к своему аккаунту или для расшифровки данных."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит использовать PayPal для оплаты подписки на ${ BRAND_NAME }. Мы перенаправим вас на PayPal в новой вкладке браузера. Если вы используете какие-либо блокировщики всплывающих окон, пожалуйста, отключите их, чтобы продолжить."
       ],
@@ -6845,6 +7058,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Это приведет к окончательному удалению вашего аккаунта и всех его данных. Вы не сможете повторно активировать этот аккаунт."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Это отклонит устройство **${ name }**, которое пыталось войти в ваш аккаунт ${ BRAND_NAME } **${ date }**."
       ],
       "This will remove any enabled 2FA methods.": [
         "Это приведет к удалению всех включенных методов 2FA."
@@ -6867,6 +7083,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
       ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Это позволит отвязать устройство **${ name } (созданное ${ date })** от вашего аккаунта ${ BRAND_NAME }."
+      ],
       "to ${ product } Business": [
         "на ${ product } Business"
       ],
@@ -6885,8 +7104,14 @@
       "To continue to ${ product }": [
         "Чтобы продолжить в ${ product }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Для постоянного совершенствования наших услуг мы иногда собираем данные для контроля надлежащего функционирования наших приложений. Эта информация не передается никаким сторонним службам."
+      ],
       "To create your first user group, go to": [
         "Чтобы создать свою первую группу пользователей, перейдите к"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Чтобы расшифровать и просмотреть заблокированные данные после сброса пароля, выберите метод восстановления."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -6939,6 +7164,9 @@
       "Unable to check gateways monitoring current status.": [
         "Невозможно проверить текущее состояние отслеживания шлюзов."
       ],
+      "Unable to verify recovery file signature. Please contact support.": [
+        "Невозможно проверить подпись файла восстановления. Обратитесь в службу поддержки."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "К сожалению, для этого аккаунта не настроен ни один метод восстановления."
       ],
@@ -6947,6 +7175,9 @@
       ],
       "Unknown event type": [
         "Неизвестный тип события"
+      ],
+      "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
+        "Пока вы не выйдете из своей учётной записи либо не измените свой пароль, ваша сессия остаётся активной. Срок действия сессий истекает после 60 дней бездействия."
       ],
       "Unsaved changes": [
         "Несохраненные изменения"
@@ -6969,8 +7200,14 @@
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Загрузите логотип вашей организации, чтобы повысить узнаваемость вашего бренда и создать индивидуальный интерфейс для ваших пользователей."
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Загруженный файл не является действительным закрытым ключом. Пожалуйста, проверьте и повторите попытку."
+      ],
       "Uppercase and lowercase letters": [
         "Заглавные и строчные буквы"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Используйте менеджер паролей для создания и безопасного хранения паролей, что обеспечит надежные пароли и упростит входы в системы."
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Воспользуйтесь одним из способов восстановления, чтобы отключить двухфакторную аутентификацию."
@@ -7041,6 +7278,9 @@
       "VPN with dedicated servers and IP addresses": [
         "VPN с выделенными серверами и адресами IP"
       ],
+      "Want to learn more?": [
+        "Хотите узнать больше?"
+      ],
       "Warning:": [
         "Предупреждение:"
       ],
@@ -7055,6 +7295,9 @@
       ],
       "We generated a strong password for you": [
         "Мы сгенерировали для вас надежный пароль"
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Мы отслеживаем темную паутину на предмет случаев утечки или раскрытия вашей личной информации (например, адреса электронной почты или пароля, используемого на стороннем сайте)."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
@@ -7076,6 +7319,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Мы рекомендуем использовать вместо этого вашу фразу восстановления."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Мы надежно храним информацию о восстановлении на вашем доверенном устройстве, чтобы вы не потеряли свои данные"
       ],
       "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
         "Мы сохранили файл резервной копии в этом браузере, поскольку вы разрешили восстановление данных на этом ${ deviceLink }. Если файл резервной копии действителен, вы немедленно восстановите полный или частичный доступ к зашифрованным данным."
@@ -7314,6 +7560,12 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Вы не сможете переназначить эти серверы в другую страну в течение 10 дней."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления. При этом также будет отключено восстановление на основе устройства."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
         "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
@@ -7359,6 +7611,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "С нами ваши данные находятся в безопасности. Мы свяжемся с вами только в случае предоставления наших сервисов."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Ваша информация была найдена ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
       ],
@@ -7380,6 +7635,12 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
       ],
+      "Your recovery phrase": [
+        "Ваша фраза для восстановления"
+      ],
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Ваша фраза для восстановления — это набор из 12 случайных слов в определенном порядке."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждый ${ cycle } месяц.",
         "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяца.",
@@ -7400,6 +7661,12 @@
       ]
     },
     "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ],
       "Optional": [
         "Дополнительно"
       ],
@@ -7614,6 +7881,12 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
+      "Allow recovery by recovery phrase": [
+        "Разрешить восстановление с помощью фразы для восстановления"
+      ],
+      "Allow recovery using a trusted device": [
+        "Разрешить восстановление с использованием доверенного устройства"
+      ],
       "Allowed Domain": [
         "Разрешённый Домен"
       ],
@@ -7709,6 +7982,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
+      ],
+      "Collect usage diagnostics": [
+        "Собирайте диагностику использования"
       ],
       "Colors": [
         "Цвета"
@@ -7842,8 +8118,14 @@
       "Enabled": [
         "Включены"
       ],
+      "Enter password": [
+        "Введите пароль"
+      ],
       "Enter the code displayed on your TV": [
         "Введите код, отображаемый на вашем ТВ"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "Введите пароль для ключа с цифровым отпечатком: ${ fingerprintCode }"
       ],
       "Enter your password": [
         "Введите пароль"
@@ -7859,6 +8141,9 @@
       ],
       "Expires": [
         "Срок действия"
+      ],
+      "File": [
+        "Файл"
       ],
       "First name": [
         "Имя"
@@ -8079,6 +8364,9 @@
       "Phone number": [
         "Номер телефона"
       ],
+      "Phrase": [
+        "Фраза"
+      ],
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза состоит из 12 уникальных слов, расположенных в определенном порядке"
       ],
@@ -8103,6 +8391,9 @@
       "Postal code": [
         "Почтовый индекс"
       ],
+      "Previous password": [
+        "Предыдущий пароль"
+      ],
       "Proration": [
         "Пропорциональное распределение"
       ],
@@ -8114,6 +8405,9 @@
       ],
       "Recovery email address": [
         "Резервный адрес электронной почты"
+      ],
+      "Recovery file": [
+        "Файл восстановления"
       ],
       "Recovery phone number": [
         "Номер телефона для восстановления"
@@ -8150,6 +8444,9 @@
       ],
       "Second password": [
         "Второй пароль"
+      ],
+      "Send crash reports": [
+        "Отправлять отчеты об ошибках"
       ],
       "Sequences": [
         "Последовательности"
@@ -8210,6 +8507,12 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "Upload 1 or more encryption keys": [
+        "Загрузите 1 или несколько ключей шифрования"
+      ],
+      "Upload 1 or more recovery files or encryption keys": [
+        "Загрузите 1 или несколько файлов восстановления или ключей шифрования"
       ],
       "Uppercase and lowercase letters": [
         "Заглавные и строчные буквы"
@@ -8273,8 +8576,14 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Восстановление на базе устройств"
+      ],
       "Recovery phone number": [
         "Номер телефона для восстановления доступа"
+      ],
+      "Recovery phrase": [
+        "Фраза для восстановления доступа к учетной записи"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8397,8 +8706,14 @@
       "Create account": [
         "Создать аккаунт"
       ],
+      "Create an alias": [
+        "Создать псевдоним"
+      ],
       "Don't have access to your 2FA?": [
         "У вас нет доступа к двухфакторной аутентификации?"
+      ],
+      "Encryption and keys": [
+        "Шифрование и ключи"
       ],
       "Enforcing 2FA for organizations": [
         "Обеспечение двухфакторной аутентификации для организаций"
@@ -8412,6 +8727,12 @@
       "Forgot username?": [
         "Забыли имя пользователя?"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Получить ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Перейти на тариф ${ VPN_APP_NAME }"
+      ],
       "Groups": [
         "Группы"
       ],
@@ -8423,6 +8744,9 @@
       ],
       "here": [
         "здесь"
+      ],
+      "How does monitoring work?": [
+        "Как работает мониторинг?"
       ],
       "How to add users": [
         "Как добавить пользователей"
@@ -8460,6 +8784,9 @@
       "How to share via email": [
         "Как поделиться по электронной почте"
       ],
+      "How to unlock data": [
+        "Как разблокировать данные"
+      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Как использовать ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -8472,8 +8799,14 @@
       "How to use Groups": [
         "Как использовать Группы"
       ],
+      "if your data is leaked": [
+        "в случае утечки ваших данных"
+      ],
       "Learn more": [
         "Подробнее"
+      ],
+      "Learn more about data recovery": [
+        "Подробнее о восстановлении данных"
       ],
       "Not activated": [
         "Не активировано"
@@ -8653,8 +8986,14 @@
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Монитор активности"
+      ],
       "Enable ${ reason }": [
         "Включить ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Включить подробные события"
       ]
     },
     "Mail import summary": {
@@ -9014,8 +9353,20 @@
       "1 user": [
         "1 пользователь"
       ],
+      "10 email addresses/aliases": [
+        "10 адресов электронной почты или псевдонимов"
+      ],
+      "10 more premium features": [
+        "и еще 10 платных функций"
+      ],
       "10-year file version history": [
         "10-летняя история версий файла"
+      ],
+      "15 GB storage": [
+        "15 ГБ хранилище"
+      ],
+      "200 GB of storage": [
+        "200 ГБ памяти"
       ],
       "24/7 account management support": [
         "Постоянная круглосуточная поддержка управления аккаунтом"
@@ -9034,6 +9385,9 @@
       ],
       "Administration Panel": [
         "Панель администратора"
+      ],
+      "Advanced account protection": [
+        "Расширенная защита аккаунта"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Расширенные возможности псевдонимов (с помощью SimpleLogin)"
@@ -9215,6 +9569,9 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
+      "Private photo backup": [
+        "Конфиденциальное резервное копирование фото"
+      ],
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
       ],
@@ -9227,11 +9584,17 @@
       "Router support": [
         "Поддержка маршрутизаторов"
       ],
+      "Save time emailing": [
+        "Экономьте время на переписке по электронной почте"
+      ],
       "Schedule and snooze emails for any time": [
         "Планируйте и откладывайте сообщения электронной почты на любое время"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Безопасное хранение и обмен файлами"
       ],
       "Secure link sharing": [
         "Защищенный совместный доступ к ссылкам"
@@ -9378,6 +9741,17 @@
         "${ users } пользователя",
         "${ users } пользователей",
         "${ users } пользователей"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 пользовательский домен электронной почты"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -9907,6 +10281,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Скачать коды восстановления двухфакторной аутентификации"
+      ],
+      "Email notifications have been disabled": [
+        "Уведомления по электронной почте отключены"
+      ],
+      "Email notifications have been enabled": [
+        "Уведомления по электронной почте включены"
       ],
       "Invalid code": [
         "Недействительный код"
@@ -11035,8 +11415,41 @@
       ]
     },
     "Safety review": {
+      "Check account security": [
+        "Проверить безопасность аккаунта"
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Если вы потеряете данные для входа и вам потребуется сбросить аккаунт, **крайне необходимо**, чтобы у вас был **настроен способ восстановления аккаунта и данных**, иначе вы не сможете получить доступ ко всей вашей электронной почте, контактам, файлам и паролям."
+      ],
       "Review account safety": [
         "Проверьте безопасность аккаунта"
+      ],
+      "Safeguard account now": [
+        "Защитите аккаунт сейчас"
+      ],
+      "Safeguard your account": [
+        "Защитите свой аккаунт"
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Вам грозит потеря доступа к аккаунту и данным."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Вам грозит потеря доступа к данным."
+      ],
+      "You have recommended actions.": [
+        "У вас есть рекомендованные действия."
+      ],
+      "Your account and data can be recovered": [
+        "Вы можете восстановить аккаунт и данные"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Вы можете восстановить аккаунт и данные. Проверьте, есть ли у вас доступ к методам восстановления."
+      ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Вы можете восстановить аккаунт и данные. У вас есть рекомендованные действия, чтобы дальше защитить аккаунт."
+      ],
+      "Your account is fully secure.": [
+        "Ваш аккаунт полностью защищен."
       ]
     },
     "saml: Action": {
@@ -11209,6 +11622,17 @@
         "Загрузить файл CSV"
       ]
     },
+    "Select files": {
+      "Browse": [
+        "Просмотреть"
+      ],
+      "Upload": [
+        "Загрузить"
+      ],
+      "Upload additional files": [
+        "Загрузить дополнительный файлы"
+      ]
+    },
     "Select invoice document": {
       "Credit note": [
         "Кредит-нота"
@@ -11243,6 +11667,11 @@
       ],
       "to be deleted": [
         "будет удален"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Позволяет добавлять видеоконференции Zoom к любым событиям календаря."
       ]
     },
     "session_recovery:available:action": {
@@ -11386,6 +11815,24 @@
         "изменить пароль сейчас"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Отключить сброс пароля"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Убедитесь, что у вас есть доступ к методу восстановления."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Вы больше не сможете запросить сброс пароля из настроек вашего аккаунта."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Отключить сброс пароля?"
+      ]
+    },
     "session_recovery:in_progress:action": {
       "Cancel password reset": [
         "Отменить сброс пароля"
@@ -11492,6 +11939,22 @@
         "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часа",
         "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часов",
         "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часов"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Разрешить сброс пароля из настроек"
+      ],
+      "Request password reset": [
+        "Запросить сброс пароля"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Чтобы запретить сброс пароля, необходимо настроить метод восстановления."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Чтобы повысить безопасность вашего аккаунта и защитить ваши данные, вы можете запросить сброс пароля из настроек вашего аккаунта в веб-приложении."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11852,6 +12315,9 @@
       "added you to their ${ BRAND_NAME } organization": [
         "добавил вас в свою организацию ${ BRAND_NAME }"
       ],
+      "Approve": [
+        "Одобрить"
+      ],
       "Approve or deny it now": [
         "Одобрить или отклонить сейчас"
       ],
@@ -11885,6 +12351,9 @@
       "Contact your administrator if the problem persists.": [
         "Если проблема не устраняется, обратитесь к администратору."
       ],
+      "Current device": [
+        "Это устройство"
+      ],
       "Delete ${ n } inactive user?": [
         "Удалить ${ n } неактивного пользователя?",
         "Удалить ${ n } неактивных пользователей?",
@@ -11905,6 +12374,15 @@
       ],
       "Devices available": [
         "Доступные устройства"
+      ],
+      "Devices management": [
+        "Управление устройствами"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "Вы хотите удалить все остальные устройства, кроме этого?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Введите код подтверждения, который мы отправили на другое устройство."
       ],
       "Enter the confirmation code we sent to this user.": [
         "Введите код подтверждения, который мы отправили этому пользователю."
@@ -11927,6 +12405,9 @@
       "Grant access to users?": [
         "Предоставить доступ пользователям?"
       ],
+      "If you didn't make this request, cancel it now.": [
+        "Если вы не делали этот запрос, отмените его сейчас."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Если вы заблокируете свой аккаунт ${ BRAND_NAME }, пароль резервной копии позволит войти и восстановить данные."
       ],
@@ -11945,11 +12426,23 @@
       "New backup password": [
         "Новый пароль резервной копии"
       ],
+      "No, it wasn’t me": [
+        "Нет, это было не я"
+      ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
         "Пользователи, не входящие в систему SSO (созданные вручную, а не предоставленные поставщиком идентификационных данных), по-прежнему могут входить в вашу организацию."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Если в вашей организации отключена единая регистрация:"
+      ],
+      "Reject": [
+        "Отказать"
+      ],
+      "Remove": [
+        "Удалить"
+      ],
+      "Remove all other devices": [
+        "Удалить все остальные устройства"
       ],
       "Remove single sign-on": [
         "Удалить единый вход"
@@ -11974,6 +12467,15 @@
       ],
       "Sign out and in again to change your backup password": [
         "Выйдите и войдите снова, чтобы изменить пароль резервной копии."
+      ],
+      "Sign-in confirmed": [
+        "Вход подтвержден"
+      ],
+      "Sign-in rejected": [
+        "Вход отклонен"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Запрос входа на другом устройстве. Это были вы?"
       ],
       "Single sign-on removed": [
         "SSO удалён"
@@ -12010,6 +12512,9 @@
       ],
       "Welcome": [
         "Добро пожаловать"
+      ],
+      "Yes, it was me": [
+        "Да, это была я."
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вы должны будете создать новых пользователей вручную, чтобы добавить их в вашу организацию."
@@ -12712,6 +13217,12 @@
       "Credits added": [
         "Кредиты добавлены"
       ],
+      "Device deleted": [
+        "Устройство удалено"
+      ],
+      "Device rejected": [
+        "Устройство отклонено"
+      ],
       "Display name updated": [
         "Отображаемое имя обновлено"
       ],
@@ -12792,6 +13303,12 @@
       ],
       "Problem reported": [
         "О проблеме сообщено"
+      ],
+      "Session revoked": [
+        "Сессия прервана"
+      ],
+      "Sessions revoked": [
+        "Сессии прерваны"
       ],
       "SPF value copied to clipboard": [
         "Значение SPF скопировано в буфер обмена"
@@ -13064,6 +13581,9 @@
       "Account": [
         "Аккаунт"
       ],
+      "Account recovery": [
+        "Восстановление аккаунта"
+      ],
       "Account restricted": [
         "Аккаунт ограничен"
       ],
@@ -13157,6 +13677,9 @@
       "An address for each role": [
         "Адрес для каждой должности"
       ],
+      "App": [
+        "Приложение"
+      ],
       "Appearance": [
         "Внешний вид"
       ],
@@ -13174,6 +13697,9 @@
       ],
       "Billing cycle": [
         "Платежный цикл"
+      ],
+      "Block trackers and malware": [
+        "Блокируйте трекеры и вредоносные программы"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"
@@ -13253,6 +13779,9 @@
       "Connect your custom domain": [
         "Подключить пользовательский домен"
       ],
+      "Connection status": [
+        "Состояние подключения"
+      ],
       "Contact us": [
         "Свяжитесь с нами"
       ],
@@ -13292,6 +13821,9 @@
       "Create user accounts": [
         "Создать пользовательские аккаунты"
       ],
+      "Created": [
+        "Создан"
+      ],
       "Creating user accounts": [
         "Создание пользовательских аккаунтов"
       ],
@@ -13319,11 +13851,20 @@
       "Customize your mail import": [
         "Настройка импорта вашей почты"
       ],
+      "Data locked": [
+        "Данные заблокированы"
+      ],
+      "Data recovery": [
+        "Восстановление данных"
+      ],
       "Date": [
         "Дата"
       ],
       "Day theme": [
         "Дневная тема"
+      ],
+      "Decrypt key": [
+        "Расшифровать ключ"
       ],
       "Deep dive into VPN blog posts": [
         "Подробное изучение постов блога VPN"
@@ -13378,6 +13919,9 @@
       ],
       "Domain names": [
         "Доменные имена"
+      ],
+      "Don't show again?": [
+        "Больше не показывать?"
       ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
@@ -13493,6 +14037,9 @@
       "Generate missing keys": [
         "Сгенерировать недостающие ключи"
       ],
+      "Generate new recovery phrase?": [
+        "Сгенерировать новую фразу для восстановления?"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Получите ${ vpnPlus } для доступа ко всем серверам"
       ],
@@ -13553,6 +14100,9 @@
       "Import groups": [
         "Импорт групп"
       ],
+      "Information exposed in breach": [
+        "Информация, раскрытая при утечке"
+      ],
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
@@ -13574,6 +14124,9 @@
       "Multi-user support": [
         "Многопользовательская поддержка"
       ],
+      "Name": [
+        "Имя"
+      ],
       "Network error": [
         "Ошибка сети"
       ],
@@ -13583,8 +14136,14 @@
       "Night theme": [
         "Ночная тема"
       ],
+      "No account information was found in any data breaches": [
+        "Никакой информации об аккаунте не было обнаружено какой бы то ни было утечке данных"
+      ],
       "No recovery method": [
         "Отсутствует метод восстановления"
+      ],
+      "Open": [
+        "Открыть"
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
@@ -13619,6 +14178,12 @@
       "Password": [
         "Пароль"
       ],
+      "Password reset settings": [
+        "Настройки сброса пароля"
+      ],
+      "Passwords made easy": [
+        "Пароли стали простыми"
+      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
@@ -13646,6 +14211,9 @@
       "Previous": [
         "Назад"
       ],
+      "Privacy and data collection": [
+        "Конфиденциальность и сбор данных"
+      ],
       "Processing...": [
         "Обработка…"
       ],
@@ -13655,17 +14223,32 @@
       "Recommended": [
         "Рекомендованный"
       ],
+      "Recommended actions": [
+        "Рекомендуемые действия"
+      ],
       "Reconnect your account": [
         "Повторно подключить свою учётную запись"
+      ],
+      "Recover data": [
+        "Восстановление данных"
       ],
       "Recovery": [
         "Восстановление"
       ],
+      "Recovery file": [
+        "Файл восстановления"
+      ],
       "Refer a friend": [
         "Порекомендуйте другу"
       ],
+      "Reject device?": [
+        "Отклонить устройство?"
+      ],
       "Remove all members?": [
         "Удалить всех участников?"
+      ],
+      "Remove device?": [
+        "Удалить устройство?"
       ],
       "Remove domain": [
         "Удалить домен"
@@ -13697,11 +14280,20 @@
       "Reset password?": [
         "Сбросить пароль?"
       ],
+      "Resolved": [
+        "Решено"
+      ],
       "Restore administrator privileges": [
         "Восстановить права администратора"
       ],
       "SAML authentication": [
         "Аутентификация SAML"
+      ],
+      "Schedule meetings in one click": [
+        "Запланировать встречи одним нажатием"
+      ],
+      "Security and privacy": [
+        "Безопасность и конфиденциальность"
       ],
       "Security events": [
         "События безопасности"
@@ -13720,6 +14312,12 @@
       ],
       "Send new invite?": [
         "Отправить новое приглашение?"
+      ],
+      "Service": [
+        "Сервис"
+      ],
+      "Session management": [
+        "Управление сеансами"
       ],
       "Set new password": [
         "Установите новый пароль"
@@ -13784,6 +14382,9 @@
       "Start import process": [
         "Начать процесс импорта"
       ],
+      "State": [
+        "Состояние"
+      ],
       "Status": [
         "Состояние"
       ],
@@ -13813,6 +14414,9 @@
       ],
       "There are no groups": [
         "Нет ни одной группы"
+      ],
+      "Third-party apps and services": [
+        "Сторонние приложения и службы"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
@@ -13889,6 +14493,12 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Добро пожаловать в ${ BRAND_NAME } для бизнеса"
       ],
+      "What is an alias?": [
+        "Что такое псевдоним?"
+      ],
+      "What is the dark web?": [
+        "Что такое Dark Web?"
+      ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
       ],
@@ -13898,6 +14508,12 @@
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."
       ],
+      "You have no open alerts": [
+        "У вас нет открытых оповещений"
+      ],
+      "You have no resolved alerts": [
+        "У вас нет решенных предупреждений"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия ${ planName } заканчивается ${ textDate }"
       ],
@@ -13906,6 +14522,9 @@
       ],
       "Your current plan": [
         "Ваш текущий тариф"
+      ],
+      "Your exposed information": [
+        "Ваша раскрытая информация"
       ],
       "Your plan": [
         "Ваш тариф"
@@ -14017,6 +14636,9 @@
       "Edit label names": [
         "Изменить названия ярлыков"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "При включении подробных событий записывается адрес IP для каждого события."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
       ],
@@ -14043,6 +14665,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Пользователи, которые не используют двухфакторную идентификацию, получат электронное письмо с просьбой включить ее как можно скорее. Пользователи единого входа не получат напоминание по электронной почте."
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Не вся перечисленная здесь информация была открыта для всех пользователей."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Устанавливает следующий нижний колонтитул в отправляемых вами электронных письмах: ${ signature }. Ссылка указывает на вашу реферальную ссылку. Нижний колонтитул будет отображаться под вашей подписью. Вы можете персонализировать свою подпись в настройках любое время."
@@ -14076,6 +14701,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Этот адрес электронной почты будет показан всем членам организации при выполнении операций управления аккаунтом."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Зашифрованные пароли остаются в безопасности, пока их не расшифруют, даже если они находятся в открытом доступе."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
@@ -14683,6 +15311,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бесплатный пробный период заканчивается ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Ваш файл восстановления устарел. Он не сможет восстановить новые данные, если вы снова сбросите пароль."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Ваша фраза восстановления устарела. Она не сможет восстановить новые данные, если вы снова сбросите пароль."
       ]
     },
     "Warning for domain modal": {

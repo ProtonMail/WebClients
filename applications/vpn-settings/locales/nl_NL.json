@@ -50,6 +50,9 @@
       "Activate organization key": [
         "Organisatiesleutel activeren"
       ],
+      "Activate recovery": [
+        "Herstel activeren"
+      ],
       "Add": [
         "Voeg toe"
       ],
@@ -188,11 +191,17 @@
       "Confirm": [
         "Bevestigen"
       ],
+      "Connect": [
+        "Verbinden"
+      ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
       ],
       "Connect to video conferencing": [
         "Verbinding maken met videovergadering"
+      ],
+      "Connected": [
+        "Verbonden"
       ],
       "Contact support": [
         "Neem contact op met ondersteuning"
@@ -260,6 +269,9 @@
       "Decrease": [
         "Verlagen"
       ],
+      "Decrypt": [
+        "Decoderen"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -274,6 +286,9 @@
       ],
       "Delete logo": [
         "Logo verwijderen"
+      ],
+      "Delete logs": [
+        "Logboeken wissen"
       ],
       "Delete member": [
         "Verwijder lid"
@@ -299,6 +314,15 @@
       "Disable": [
         "Uitschakelen"
       ],
+      "Disable recovery phrase": [
+        "Herstelzin uitschakelen"
+      ],
+      "Disable recovery phrase?": [
+        "Herstelzin uitschakelen?"
+      ],
+      "Disable security events": [
+        "Veiligheidsgebeurtenissen uitschakelen"
+      ],
       "Discard": [
         "Verwijderen"
       ],
@@ -316,6 +340,9 @@
       ],
       "Domain name": [
         "Domeinnaam"
+      ],
+      "Don't show again": [
+        "Niet meer weergeven"
       ],
       "Done": [
         "Klaar"
@@ -337,6 +364,9 @@
       ],
       "Download our CSV template": [
         "Ons CSV-sjabloon downloaden"
+      ],
+      "Download recovery file": [
+        "Herstelbestand downloaden"
       ],
       "Edit": [
         "Bewerken"
@@ -428,8 +458,14 @@
       "Forgot recovery method?": [
         "Herstelmethode vergeten?"
       ],
+      "Generate new recovery phrase": [
+        "Genereer nieuwe herstelzin"
+      ],
       "Generate password": [
         "Wachtwoord genereren"
+      ],
+      "Generate recovery phrase": [
+        "Genereer herstelzin"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Neem ${ planName } voor ${ priceCoupon }"
@@ -578,6 +614,12 @@
       "Mark as favorite": [
         "Markeer als favoriet"
       ],
+      "Mark as open": [
+        "Markeren als open"
+      ],
+      "Mark as resolved": [
+        "Markeren als opgelost"
+      ],
       "More benefits": [
         "Meer voordelen"
       ],
@@ -668,11 +710,20 @@
       "refresh the page": [
         "pagina vernieuwen"
       ],
+      "Reject": [
+        "Afwijzen"
+      ],
+      "Reload": [
+        "Opnieuw laden"
+      ],
       "Remove": [
         "Verwijderen"
       ],
       "Remove all members": [
         "Alle leden verwijderen"
+      ],
+      "Remove all other devices": [
+        "Alle andere apparaten verwijderen"
       ],
       "Remove bonuses": [
         "Verwijder bonussen"
@@ -745,6 +796,9 @@
       ],
       "Revoke ${ name }": [
         "${ name } intrekken"
+      ],
+      "Revoke all other sessions": [
+        "Alle andere sessies beëindigen"
       ],
       "Revoke invitation": [
         "Uitnodiging intrekken"
@@ -820,6 +874,9 @@
       ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
+      ],
+      "Set recovery phrase": [
+        "Herstelzin instellen"
       ],
       "Set up 2FA": [
         "2FA instellen"
@@ -953,6 +1010,15 @@
       "Unlock": [
         "Ontgrendel"
       ],
+      "Unlock data": [
+        "Ontgrendel gegevens"
+      ],
+      "Update recovery file": [
+        "Herstelbestand bijwerken"
+      ],
+      "Update recovery phrase": [
+        "Herstelzin bijwerken"
+      ],
       "Upgrade": [
         "Upgraden"
       ],
@@ -970,6 +1036,9 @@
       ],
       "Upgrade to Professional": [
         "Upgraden naar Professional"
+      ],
+      "Upgrade to view all": [
+        "Upgrade om volledig te bekijken"
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
@@ -1037,14 +1106,29 @@
       "View": [
         "Bekijken"
       ],
+      "View all reports": [
+        "Bekijk alle rapporten"
+      ],
       "View invoice": [
         "Factuur bekijken"
       ],
       "View plans details": [
         "Abonnementsgegevens bekijken"
       ],
+      "Void": [
+        "Ongeldig"
+      ],
+      "Void all recovery files": [
+        "Alle herstelbestanden ongeldig maken"
+      ],
+      "Void all recovery files?": [
+        "Alle herstelbestanden ongeldig maken?"
+      ],
       "What do I get?": [
         "Wat krijg ik?"
+      ],
+      "Wipe": [
+        "Wissen"
       ],
       "Your server will be provisioned in the next days": [
         "Uw server wordt in de komende dagen geleverd"
@@ -1059,6 +1143,11 @@
     "action": {
       "Resuming forward": [
         "Doorsturen hervatten"
+      ]
+    },
+    "Action for user session": {
+      "Revoke": [
+        "Intrekken"
       ]
     },
     "Action subscription": {
@@ -1238,138 +1327,6 @@
         "Nieuwe e-mail"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Kies deze deal"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "200 GB storage": [
-        "200 GB opslagruimte"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB versleutelde opslagruimte"
-      ],
-      "Add unlimited credit cards": [
-        "Onbeperkt aantal kredietkaarten toevoegen"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle premium functies van ${ BRAND_NAME } Mail, Pass, VPN, Drive, en Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokkeer advertenties, trackers en malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Kortingen zijn gebaseerd op de standaard maandelijkse prijs. Aan het einde van de factureringscyclus wordt uw abonnement verlengd tegen het standaard jaarlijkse tarief."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Verdubbel uw versleutelde opslag – krijg 1 TB voor al uw gegevens"
-      ],
-      "Encrypted password manager": [
-        "Versleutelde wachtwoordbeheerder"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Hier is een exclusief geschenk om onze reis samen te vieren."
-      ],
-      "High speed streaming with VPN": [
-        "Streamen aan hoge snelheid met VPN"
-      ],
-      "of privacy": [
-        "van privacy"
-      ],
-      "Online document editor": [
-        "Online document editor"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online privacy voor maximaal 2 personen"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online privacy voor het hele gezin (tot 6 gebruikers)"
-      ],
-      "Protect up to 10 devices": [
-        "Bescherm tot 10 apparaten"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Bespaar veel op premium Drive functies met een tijdelijke korting."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Bespaar veel op premium Mail functies met een tijdelijke korting."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Bespaar veel op premium Pass functies met een tijdelijke korting."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Bespaar veel op premium VPN functies met een tijdelijke korting."
-      ],
-      "Save time with built-in 2FA": [
-        "Bespaar tijd met ingebouwde 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Beveiligde e-mail met onbeperkt aantal aliassen"
-      ],
-      "Select any server": [
-        "Selecteer een willekeurige server"
-      ],
-      "Share passwords easily": [
-        "Eenvoudig wachtwoorden delen"
-      ],
-      "Short @pm.me address": [
-        "Kort @pm.me adres"
-      ],
-      "Stream your favorite content": [
-        "Stream uw favoriete inhoud"
-      ],
-      "thanks to you": [
-        "dankzij u"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Verdrievoudig uw versleutelde opslag – krijg 3 TB voor al uw gegevens"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
-      ],
-      "Use your own email domain": [
-        "Gebruik uw eigen e-maildomein"
-      ],
-      "years": [
-        "jaren"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumaanbieding"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "/ month": [
-        "/ maand"
-      ],
-      "12 months": [
-        "12 maanden"
-      ],
-      "15 months": [
-        "15 maanden"
-      ],
-      "24 months": [
-        "24 maanden"
-      ],
-      "30 months": [
-        "30 maanden"
-      ],
-      "for ${ durationDeal }": [
-        "voor ${ durationDeal }"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
@@ -1472,6 +1429,11 @@
       ],
       "Missing keys": [
         "Ontbrekende sleutels"
+      ]
+    },
+    "Badge for user sessions table": {
+      "Current session": [
+        "Huidige sessie"
       ]
     },
     "bf2023: Action": {
@@ -3166,6 +3128,9 @@
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
       ],
+      "Also included": [
+        "Ook inbegrepen"
+      ],
       "Automatically forward incoming email to another email address.": [
         "Inkomende e-mail automatisch doorsturen naar een ander e-mailadres."
       ],
@@ -3174,6 +3139,9 @@
       ],
       "Connect your CRM, website, printers, and more.": [
         "Verbind uw CRM, website, printers en meer."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Maak een Zoom vergadering en voeg aansluitgegevens met één klik toe aan uw evenement."
       ],
       "Create groups you can email with a single address.": [
         "Maak groepen aan die u een e-mail kunt sturen met één enkel adres."
@@ -3186,6 +3154,15 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
+      ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Schakel ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Schakel gedetailleerde gebeurtenissen en ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
+      ],
+      "Enable detailed events to access these features": [
+        "Schakel gedetailleerde gebeurtenissen in om toegang te krijgen tot deze functies"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Moedig het gebruik van tweestapsverificatie in uw organisatie aan voor extra beveiliging."
@@ -3210,6 +3187,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Ontvang een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
+      ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Krijg tot wel ${ credits } aan tegoed door vrienden uit te nodigen voor ${ BRAND_NAME }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
@@ -3788,6 +3768,9 @@
       "Failed to add group member": [
         "Kon geen groepslid toevoegen."
       ],
+      "Failed to load OAuth modal.": [
+        "Fout bij het laden van OAuth modal."
+      ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
       ],
@@ -4081,6 +4064,12 @@
       "The folder name is too long. Please choose a different name.": [
         "De mapnaam is te lang. Kies een andere naam."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "De sleutels in uw herstelbestand kunnen niet worden gevalideerd. Neem contact op met ondersteuning."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "De sleutels in uw herstelbestanden kunnen niet worden gevalideerd. Upload ze afzonderlijk voor meer informatie."
+      ],
       "The label name is invalid. Please choose a different name.": [
         "De naam van het label is ongeldig. Kies een andere naam."
       ],
@@ -4132,6 +4121,12 @@
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Geüploadde file is geen geldige geheime sleutel. Controleer en probeer opnieuw."
+      ],
+      "Uploaded files are not valid private keys. Please verify and try again.": [
+        "Geüploadde files zijn geen geldige geheime sleutels. Controleer en probeer opnieuw."
+      ],
       "Username must begin with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer beginnen"
       ],
@@ -4173,6 +4168,9 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "Zero keys reactivated": [
+        "Nul sleutels gereactiveerd"
       ],
       "ZIP code is required": [
         "Postcode is vereist"
@@ -4332,6 +4330,9 @@
     "Error message": {
       "App currently unavailable": [
         "App momenteel niet beschikbaar"
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "Vraag uw beheerder om Account monitor in te schakelen."
       ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
@@ -5059,6 +5060,9 @@
       "Device": [
         "Apparaat"
       ],
+      "Domain": [
+        "Domein"
+      ],
       "Enter your email address": [
         "Voer uw e-mailadres in"
       ],
@@ -5082,6 +5086,9 @@
       ],
       "Organization key fingerprint": [
         "Vingerafdruk van organisatiesleutel"
+      ],
+      "Password ends with": [
+        "Wachtwoord eindigt met"
       ],
       "Payment details": [
         "Betalingsgegevens"
@@ -5115,6 +5122,9 @@
       ],
       "User": [
         "Gebruiker"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ]
     },
     "Header for addresses table": {
@@ -5492,6 +5502,23 @@
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
       ]
     },
+    "Import provider": {
+      "Import from ${ provider }": [
+        "Importeer uit ${ provider }"
+      ],
+      "Import from Google": [
+        "Importeer uit Google"
+      ],
+      "Import from other": [
+        "Importeer uit andere"
+      ],
+      "Import from Outlook": [
+        "Importeer uit Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importeer uit Yahoo"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -5523,6 +5550,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } deelt nooit uw informatie met derden. Gegevens zijn afkomstig van ${ BRAND_NAME } eigen analyses en Constella Intelligentie."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
@@ -5596,6 +5626,10 @@
       "${ number } server": [
         "${ number } server",
         "${ number } servers"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } geüploade bestand is geen geldige geheime sleutel. Controleer het en probeer het opnieuw.",
+        "${ numberOfNonPrivateKeys } geüploade bestanden zijn geen geldige geheime sleutels. Controleer het en probeer het opnieuw."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
@@ -5709,9 +5743,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importeer uw bestaande codes** van andere 2FA-apps, zoals Google Authenticator"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
-      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
       ],
@@ -5756,6 +5787,12 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Een herstelbestand laat u uw gegevens ontgrendelen en bekijken na accountherstel"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Met een herstelzin kunt u toegang krijgen tot uw account en uw gecodeerde berichten herstellen als u uw wachtwoord bent vergeten"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
@@ -5764,6 +5801,9 @@
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Activeer ten minste één methode voor gegevensherstel om ervoor te zorgen dat u toegang kunt blijven krijgen tot de inhoud van uw ${ BRAND_NAME } Account als u uw wachtwoord verliest."
       ],
       "active": [
         "actief"
@@ -5825,6 +5865,9 @@
       "All inactive members deleted": [
         "Alle inactieve leden verwijderd"
       ],
+      "All keys successfully reactivated": [
+        "Alle sleutels zijn succesvol geheractiveerd"
+      ],
       "All members have been added.": [
         "Alle leden zijn toegevoegd."
       ],
@@ -5865,6 +5908,9 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
+      ],
       "and": [
         "en"
       ],
@@ -5879,6 +5925,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Weet u zeker dat u beheerdersrechten aan deze gebruiker wilt geven?"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Weet u zeker dat u alle logboeken permanent wilt verwijderen?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Weet u zeker dat u beheerdersbevoegdheden van deze gebruiker wilt wegnemen?"
@@ -5939,6 +5988,12 @@
       ],
       "Billing cycle: ${ text }": [
         "Facturatiefrequentie: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Door het uitschakelen van beveiligingsmonitoring wist u ook uw gehele geschiedenis. Weet u zeker dat u dit wilt uitschakelen?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
@@ -6069,6 +6124,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
+      "Data locked": [
+        "Gegevens vergrendeld"
+      ],
       "Data recoverable on this device": [
         "Gegevens herstelbaar op dit apparaat"
       ],
@@ -6126,6 +6184,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet, kan u uw organisatie niet meer beheren."
+      ],
+      "Do you want to revoke all other sessions than the current one?": [
+        "Wilt u alle andere sessies intrekken behalve de huidige?"
       ],
       "Domain ownership failed verification.": [
         "Domeineigendom mislukt verificatie."
@@ -6212,6 +6273,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Schakel automatisch vernieuwen in om toegang tot premium functies te behouden."
       ],
+      "Enable email notifications": [
+        "E-mailmelding inschakelen"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Schakel eenmalig inloggen in om uw organisatie veilig te houden"
       ],
@@ -6223,6 +6287,9 @@
       ],
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Het opnieuw inschakelen van herstel per uitdrukking zal een nieuwe herstelzin genereren."
       ],
       "End date": [
         "Eind datum"
@@ -6311,6 +6378,9 @@
       "expires ${ expirationDate }": [
         "verloopt op ${ expirationDate }"
       ],
+      "Failed to fetch logs.": [
+        "Fout bij het ophalen van logboeken."
+      ],
       "Fill in user details": [
         "Vul gebruikersgegevens in"
       ],
@@ -6335,14 +6405,17 @@
       "Gateways": [
         "Gateways"
       ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Als u een nieuwe herstelzin genereert, wordt uw oude zin gedeactiveerd."
+      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Verkrijg ${ AUTHENTICATOR_APP_NAME } voor al uw apparaten."
       ],
       "Get ${ upsellPlanName }": [
         "Kies ${ upsellPlanName }"
       ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Ontvang en geef **${ referrerRewardAmount } tegoed** voor elke vriend die zich abonneert."
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Ontvang een melding als uw wachtwoord of andere persoonlijke gegevens gelekt zijn. ${ learnMoreLinkNoBreach }"
       ],
       "Get started with the referral link above.": [
         "Ga aan de slag met de verwijzingskoppeling hierboven."
@@ -6380,6 +6453,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "Als u het niet goed genoeg vindt, dan betalen we u terug."
       ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Als dit gebeurt wegens een oude wachtwoord reset, kan u voorkomen dat dit bericht opnieuw wordt weergegeven"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
@@ -6415,6 +6491,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ VPN_APP_NAME }."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Als u recent uw wachtwoord gereset heeft, kan u de data herstelmethode gebruiken om uw data te ontgrendelen"
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Als u problemen hebt, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten, of open een ${ boldLiveChat } voor chatondersteuning."
@@ -6502,6 +6581,9 @@
       "Invited": [
         "Uitgenodigd"
       ],
+      "It appears some of your data is encrypted and locked.": [
+        "Het ziet er naar uit dat een deel van uw data versleuteld en vergrendeld is."
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Het duurt 10 dagen om het land van een server te veranderen, dus zorg ervoor dat uw selectie correct is."
       ],
@@ -6565,6 +6647,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Houd uw info veiliger en privé met deze handleidingen en tips."
+      ],
       "Keys created": [
         "Sleutels aangemaakt"
       ],
@@ -6591,6 +6676,9 @@
       ],
       "Learn more about single sign-on": [
         "Meer informatie over single sign-on"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Leer wat te doen ${ dataLeakedLink }"
       ],
       "Let's get started by pressing the New group button above": [
         "Laten we beginnen door bovenin op de Nieuwe groep knop te klikken"
@@ -6661,6 +6749,9 @@
       "Monitor accounts": [
         "Accounts monitoren"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Monitor en audit verificatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME }-inloggegevens gebruiken."
+      ],
       "Multi-user support not enabled.": [
         "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
       ],
@@ -6678,6 +6769,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield is een advertentieblokkerende functie van ${ VPN_APP_NAME } die uw apparaat beschermt tegen advertenties, trackers en malware."
       ],
       "New": [
         "Nieuw"
@@ -6705,6 +6799,9 @@
       ],
       "No Gateways yet": [
         "Nog geen gateways"
+      ],
+      "No logs yet.": [
+        "Nog geen logbestanden."
       ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
@@ -6735,6 +6832,9 @@
       ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
+      ],
+      "One time import": [
+        "Eenmalige import"
       ],
       "Open source": [
         "Open source"
@@ -6776,6 +6876,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
       ],
       "Paid for a plan": [
         "Betaald voor een abonnement"
@@ -6848,6 +6951,9 @@
       "Please fill in all required fields.": [
         "Vul alle verplichte velden in."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Bewaar het veilig. U hebt het nodig om toegang te krijgen tot uw account en om uw gegevens te decoderen in geval van een nieuw wachtwoord."
+      ],
       "please open a support ticket": [
         "open een support ticket"
       ],
@@ -6868,6 +6974,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "Plus ${ numOfBreaches } meer"
       ],
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
@@ -6914,8 +7023,29 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Aanbevolen op vertrouwde apparaten. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery file downloaded": [
+        "Herstelbestand gedownload"
+      ],
+      "Recovery files have been voided": [
+        "Herstelbestanden zijn ongeldig gemaakt"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
+      ],
+      "Recovery phrase copied to clipboard": [
+        "Herstelzin gekopieerd naar klembord"
+      ],
+      "Recovery phrase downloaded": [
+        "Herstelzin gedownload"
+      ],
+      "Recovery phrase has been disabled": [
+        "Herstelzin is uitgeschakeld"
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        "Herstelzin is niet gekoppeld aan sleutels."
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        "Herstelzin is niet geassocieerd met een verouderde sleutel."
       ],
       "Referral link copied to your clipboard": [
         "Doorverwijslink gekopieerd naar het klembord"
@@ -7047,6 +7177,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Some keys successfully reactivated": [
+        "Sommige sleutels zijn succesvol geheractiveerd"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO."
       ],
@@ -7097,6 +7230,9 @@
       "Summary": [
         "Overzicht"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Ondersteuning voor het monitoren van eigen domeinen en niet-${ BRAND_NAME } e-mailadressen komt binnenkort."
+      ],
       "support team": [
         "ondersteuningsteam"
       ],
@@ -7121,11 +7257,20 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Bedankt voor het ondersteunen van onze missie om een beter internet te bouwen waar privacy en vrijheid op de eerste plaats staan."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Het ${ boldDataLocked } bericht wordt niet meer weergegeven, maar u kan nog steeds uw gegevens ontgrendelen via ${ encryptionAndKeysLink }."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Het dark web is een verborgen onderdeel van het internet waar gestolen persoonlijke informatie, zoals identiteiten, gekocht en verkocht kunnen worden."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Het aantal downloads omvat zowel daadwerkelijke downloads als exemplaren waarin bestanden worden bekeken."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De versleutelde gegevens zijn iets groter door de extra gegevens voor de versleuteling en de handtekening, die de beveiliging van uw gegevens garanderen."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
       ],
       "The following address is invalid.": [
         "Het volgende adres is ongeldig.",
@@ -7190,11 +7335,23 @@
       "This file is too large to preview": [
         "Dit bestand is te groot om het te kunnen tonen"
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Dit is een zin van 12 woorden die u moest instellen."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dit is een naam of bijnaam voor uw organisatie die uw gebruikers zullen zien. U kunt dit op elk moment wijzigen."
       ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Dit is een herstelbestand of een coderingssleutel die u misschien eerder hebt opgeslagen."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Dit is een coderingssleutel die u misschien eerder hebt opgeslagen."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dit is nu uw ${ defaultEmailAddress } voor het verzenden van nieuwe berichten."
+      ],
+      "This is the password you used before the password reset.": [
+        "Dit is het wachtwoord dat u gebruikte vóór de wachtwoordreset."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Dit bericht zal het supportteam niet bereiken. Als u een probleem heeft met onze dienst of als er vanuit onze kant actie ondernomen moet worden ${ supportLink }."
@@ -7214,6 +7371,9 @@
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Dit zal tweestapsauthenticatie uitschakelen, zowel de authenticatie-app als beveiligingssleutelmethoden."
       ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Dit zal uw huidige herstelzin uitschakelen. U kunt deze dan niet meer gebruiken om toegang te krijgen tot uw account of om uw gegevens te ontsleutelen."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw ${ BRAND_NAME } abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
       ],
@@ -7225,6 +7385,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dit zal uw account en alle bijbehorende gegevens permanent verwijderen. U zult dit account niet kunnen heractiveren."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Dit zal het apparaat **${ name }** afwijzen, die proberen in te loggen op uw ${ BRAND_NAME } account op **${ date }**."
       ],
       "This will remove any enabled 2FA methods.": [
         "Dit verwijdert alle ingeschakelde 2FA methoden."
@@ -7247,6 +7410,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dit zal je afmelden van alle actieve sessies en de 2-factor authenticatie uitschakelen."
       ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Dit zal het koppelen van het apparaat **${ name } (aangemaakt op ${ date })** loskoppelen van uw ${ BRAND_NAME }-account."
+      ],
       "This will wipe all logs for your organization members.": [
         "Hiermee worden alle logboeken gewist voor de leden van uw organisatie."
       ],
@@ -7268,8 +7434,14 @@
       "To continue to ${ product }": [
         "Om door te gaan naar ${ product }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Om onze diensten voortdurend te verbeteren, verzamelen wij soms gegevens om de goede werking van onze toepassingen te controleren. Deze informatie wordt niet gedeeld met diensten van derden."
+      ],
       "To create your first user group, go to": [
         "Om uw eerste gebruikersgroep aan te maken, ga naar"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Om uw vergrendelde gegevens te decoderen en te bekijken na een wachtwoordreset, selecteert u een herstelmethode."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -7322,6 +7494,9 @@
       "Unable to check gateways monitoring current status.": [
         "Kan de huidige status van het monitoren van gateways niet controleren."
       ],
+      "Unable to verify recovery file signature. Please contact support.": [
+        "Kan de handtekening van het herstelbestand niet verifiëren. Neem contact op met ondersteuning."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
       ],
@@ -7330,6 +7505,9 @@
       ],
       "Unknown event type": [
         "Onbekend gebeurtenistype"
+      ],
+      "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
+        "Tenzij u uitlogt of uw wachtwoord wijzigt, blijft uw sessie actief. Sessies verlopen na 60 dagen van inactiviteit."
       ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
@@ -7358,8 +7536,14 @@
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Upload het logo van uw organisatie om uw merkidentiteit te versterken en een gepersonaliseerde ervaring voor uw gebruikers te maken."
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Geüploadde file is geen geldige geheime sleutel. Controleer en probeer opnieuw."
+      ],
       "Uppercase and lowercase letters": [
         "Hoofdletters en kleine letters"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Gebruik een wachtwoordbeheerder om voor u sterke wachtwoorden te genereren en veilig op te slaan en gemakkelijker in te loggen."
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Gebruik een herstelmethode om uw tweestapsverificatiemethodes uit te schakelen."
@@ -7433,6 +7617,9 @@
       "VPN with dedicated servers and IP addresses": [
         "VPN met toegewijde servers en IP-adressen"
       ],
+      "Want to learn more?": [
+        "Wilt u meer weten?"
+      ],
       "Warning:": [
         "Waarschuwing:"
       ],
@@ -7447,6 +7634,9 @@
       ],
       "We generated a strong password for you": [
         "We genereerden een sterk wachtwoord voor u"
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "We houden het dark web in de gaten voor instanties waar uw persoonlijke gegevens (zoals een e-mailadres of wachtwoord dat op een website van derden wordt gebruikt) worden gelekt of gecompromitteerd."
       ],
       "We need to authenticate your payment method with your bank.": [
         "We moeten uw betalingsmethode authenticeren met uw bank."
@@ -7468,6 +7658,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Wij slaan herstelinformatie veilig op uw vertrouwde apparaat op om te voorkomen dat u uw gegevens verliest"
       ],
       "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
         "Wij hebben een back-upbestand in deze browser opgeslagen omdat u gegevens herstellen voor dit ${ deviceLink } toestond. Als het back-upbestand geldig is, krijgt u onmiddellijk volledige of gedeeltelijke toegang tot uw versleutelde gegevens."
@@ -7706,6 +7899,12 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "U kunt deze servers niet meer toewijzen aan een ander land gedurende 10 dagen."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden. Hiermee schakelt u ook de op toestel-gebaseerde herstelfunctie uit."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
@@ -7747,11 +7946,11 @@
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Uw vrienden krijgen **2 weken gratis** op hun gekozen abonnement."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Uw informatie is gevonden op ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
@@ -7773,6 +7972,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your recovery phrase": [
+        "Uw herstelzin"
+      ],
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Uw herstel zin is een serie van 12 willekeurig gegenereerde woorden in een specifieke volgorde."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
@@ -7807,6 +8012,12 @@
       ]
     },
     "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
       "Optional": [
         "Optioneel"
       ],
@@ -8022,6 +8233,12 @@
       "Allow recovery by phone": [
         "Herstellen via telefoon toestaan"
       ],
+      "Allow recovery by recovery phrase": [
+        "Laat herstel door herstelzin toe"
+      ],
+      "Allow recovery using a trusted device": [
+        "Herstel toestaan met een vertrouwd apparaat"
+      ],
       "Allowed Domain": [
         "Toegestaan domein"
       ],
@@ -8120,6 +8337,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
+      ],
+      "Collect usage diagnostics": [
+        "Gebruiksdiagnoses verzamelen"
       ],
       "Colors": [
         "Kleuren"
@@ -8259,8 +8479,14 @@
       "Enabled": [
         "Ingeschakeld"
       ],
+      "Enter password": [
+        "Vul login wachtwoord in"
+      ],
       "Enter the code displayed on your TV": [
         "Voer de op uw TV weergegeven code in"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -8276,6 +8502,9 @@
       ],
       "Expires": [
         "Verloopt"
+      ],
+      "File": [
+        "Bestand"
       ],
       "First name": [
         "Voornaam"
@@ -8502,6 +8731,9 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Phrase": [
+        "Zin"
+      ],
       "Phrase consists of 12 unique words in a specific order": [
         "Zin bestaat uit 12 unieke woorden in een specifieke volgorde"
       ],
@@ -8526,6 +8758,9 @@
       "Postal code": [
         "Postcode"
       ],
+      "Previous password": [
+        "Vorig wachtwoord"
+      ],
       "Proration": [
         "Verrekening"
       ],
@@ -8537,6 +8772,9 @@
       ],
       "Recovery email address": [
         "E-mailadres voor herstel"
+      ],
+      "Recovery file": [
+        "Herstelbestand"
       ],
       "Recovery phone number": [
         "Herstel-telefoonnummer"
@@ -8576,6 +8814,9 @@
       ],
       "Second password": [
         "Tweede wachtwoord"
+      ],
+      "Send crash reports": [
+        "Stuur crashrapporten"
       ],
       "Sequences": [
         "Reeksen"
@@ -8640,6 +8881,12 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Upload 1 or more encryption keys": [
+        "Upload 1 of meer encryptiesleutels"
+      ],
+      "Upload 1 or more recovery files or encryption keys": [
+        "Upload 1 of meer herstelbestanden of encryptiesleutels"
       ],
       "Uppercase and lowercase letters": [
         "Hoofdletters en kleine letters"
@@ -8706,8 +8953,14 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Apparaat-gebaseerd herstel"
+      ],
       "Recovery phone number": [
         "Herstel-telefoonnummer"
+      ],
+      "Recovery phrase": [
+        "Herstelzin"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8830,8 +9083,14 @@
       "Create account": [
         "Account aanmaken"
       ],
+      "Create an alias": [
+        "Alias aanmaken"
+      ],
       "Don't have access to your 2FA?": [
         "Heeft u geen tot uw 2FA?"
+      ],
+      "Encryption and keys": [
+        "Versleuteling en sleutels"
       ],
       "Enforcing 2FA for organizations": [
         "2FA forceren voor organisaties"
@@ -8845,6 +9104,12 @@
       "Forgot username?": [
         "Gebruikersnaam vergeten?"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Verkrijg ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Kies ${ VPN_APP_NAME }"
+      ],
       "Groups": [
         "Groepen"
       ],
@@ -8856,6 +9121,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "How does monitoring work?": [
+        "Hoe werkt monitoring?"
       ],
       "How to add users": [
         "Hoe gebruikers toe te voegen"
@@ -8893,6 +9161,9 @@
       "How to share via email": [
         "Delen via e-mail"
       ],
+      "How to unlock data": [
+        "Hoe gegevens ontgrendelen"
+      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Hoe gebruikt u ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -8905,8 +9176,14 @@
       "How to use Groups": [
         "Hoe gebruikt u Groepen"
       ],
+      "if your data is leaked": [
+        "als uw gegevens zijn gelekt"
+      ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Learn more about data recovery": [
+        "Meer informatie over dataherstel"
       ],
       "Not activated": [
         "Niet geactiveerd"
@@ -8940,9 +9217,6 @@
       ],
       "Terms": [
         "Voorwaarden"
-      ],
-      "Terms and conditions": [
-        "Algemene voorwaarden"
       ],
       "Trouble signing in?": [
         "Problemen met inloggen?"
@@ -9108,8 +9382,14 @@
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Activiteitenmonitor"
+      ],
       "Enable ${ reason }": [
         "${ reason } inschakelen"
+      ],
+      "Enable detailed events": [
+        "Gedetailleerde gebeurtenissen inschakelen"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -9437,11 +9717,26 @@
       "${ size } storage per user": [
         "${ size } opslagruimte per gebruiker"
       ],
+      "1 TB secure storage": [
+        "1 TB veilige opslag"
+      ],
       "1 user": [
         "1 gebruiker"
       ],
+      "10 email addresses/aliases": [
+        "10 e-mailadressen/aliassen"
+      ],
+      "10 more premium features": [
+        "10 meer premium functies"
+      ],
       "10-year file version history": [
         "10-jarige bestandsversiegeschiedenis"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB of storage": [
+        "200 GB opslagruimte"
       ],
       "24/7 account management support": [
         "24/7 ondersteuning voor accountbeheer"
@@ -9461,11 +9756,17 @@
       "Administration Panel": [
         "Beheerderspaneel"
       ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
       ],
       "Advanced network security": [
         "Geavanceerde netwerkbeveiliging"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } producten en functies"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9581,6 +9882,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Generate emails with a prompt": [
+        "Genereer e-mails met een prompt"
+      ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
@@ -9642,6 +9946,15 @@
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
       ],
+      "Private photo backup": [
+        "Privé foto back-up"
+      ],
+      "Proofread and refine your emails": [
+        "Controleer en verfijn uw e-mails"
+      ],
+      "Quickly craft replies": [
+        "Snel antwoorden opstellen"
+      ],
       "Recover previous file versions": [
         "Herstel vorige bestandsversies"
       ],
@@ -9654,11 +9967,17 @@
       "Router support": [
         "Routerondersteuning"
       ],
+      "Save time emailing": [
+        "Bespaar tijd op e-mailen"
+      ],
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
       ],
       "Secure Core servers": [
         "Secure Core-servers"
+      ],
+      "Secure file storage and sharing": [
+        "Veilig bestanden opslaan en delen"
       ],
       "Secure link sharing": [
         "Veilig delen van links"
@@ -9699,6 +10018,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
+      ],
+      "Support for up to 2 users": [
+        "Ondersteuning voor maximaal 2 gebruikers"
       ],
       "Sync and backup all your files across devices": [
         "Synchroniseer en back-up al uw bestanden op alle apparaten"
@@ -9794,6 +10116,17 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 eigen e-maildomein"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -10329,6 +10662,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Herstelcodes van 2FA gedownload"
+      ],
+      "Email notifications have been disabled": [
+        "E-mailmeldingen zijn uitgeschakeld"
+      ],
+      "Email notifications have been enabled": [
+        "E-mailmeldingen zijn ingeschakeld"
       ],
       "Invalid code": [
         "Ongeldige code"
@@ -11905,8 +12244,44 @@
       ]
     },
     "Safety review": {
+      "Check account security": [
+        "Controleer accountbeveiliging"
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Als u uw inloggegevens verliest en uw account opnieuw moet instellen **Het is dwingend** dat u zowel een **account recovery en data recovery** heeft geïnstalleerd. Anders heeft u mogelijk geen toegang tot uw e-mails, contacten, bestanden of wachtwoorden."
+      ],
       "Review account safety": [
         "Controleer de veiligheid van uw account"
+      ],
+      "Safeguard account now": [
+        "Veilige account nu"
+      ],
+      "Safeguard your account": [
+        "Bescherm uw account"
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "U loopt het risico de toegang tot uw account en gegevens te verliezen."
+      ],
+      "You are at risk of losing access to your data.": [
+        "U loopt het risico de toegang tot uw gegevens te verliezen."
+      ],
+      "You have recommended actions.": [
+        "U heeft aanbevolen acties."
+      ],
+      "Your account and data can be recovered": [
+        "Uw account en gegevens kunnen worden hersteld"
+      ],
+      "Your account and data can be recovered.": [
+        "Uw account en gegevens kunnen worden hersteld."
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Uw account en gegevens kunnen worden hersteld. Controleer of u nog steeds toegang heeft tot uw herstelmethoden."
+      ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Uw account en gegevens kunnen worden hersteld. U heeft aanbevolen acties om uw account verder te beveiligen."
+      ],
+      "Your account is fully secure.": [
+        "Uw account is volledig veilig."
       ]
     },
     "saml: Action": {
@@ -12079,6 +12454,17 @@
         "Upload CSV-bestand"
       ]
     },
+    "Select files": {
+      "Browse": [
+        "Doorzoek"
+      ],
+      "Upload": [
+        "Uploaden"
+      ],
+      "Upload additional files": [
+        "Extra bestanden uploaden"
+      ]
+    },
     "Select invoice document": {
       "Credit note": [
         "Creditnota"
@@ -12113,6 +12499,11 @@
       ],
       "to be deleted": [
         "om te worden verwijderd"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Maakt het mogelijk om een videoconferentie aan een van uw agenda-afspraken toe te voegen"
       ]
     },
     "session_recovery:available:action": {
@@ -12240,6 +12631,24 @@
         "wijzig uw wachtwoord nu"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Wachtwoordherstel uitschakelen"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Zorg ervoor dat u toegang heeft tot een herstelmethode."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "U zult niet langer een wachtwoordherstel kunnen aanvragen vanuit uw accountinstellingen."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Wachtwoordherstel uitschakelen?"
+      ]
+    },
     "session_recovery:in_progress:action": {
       "Cancel password reset": [
         "Wachtwoord reset annuleren"
@@ -12338,6 +12747,22 @@
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uur",
         "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uren"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Sta wachtwoordherstel toe vanuit instellingen"
+      ],
+      "Request password reset": [
+        "Nieuw wachtwoord aanvragen"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Om het wachtwoordherstel uit te schakelen, moet u een herstelmethode ingesteld hebben."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Om de veiligheid van uw account te verbeteren en uw data te beschermen kunt u in de account instellingen van de webapplicatie een verzoek doen om uw wachtwoord te resetten."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12713,6 +13138,9 @@
       "added you to their ${ BRAND_NAME } organization": [
         "heeft u toegevoegd aan hun ${ BRAND_NAME } organisatie"
       ],
+      "Approve": [
+        "Goedkeuren"
+      ],
       "Approve or deny it now": [
         "Keur goed of weiger nu"
       ],
@@ -12746,6 +13174,9 @@
       "Contact your administrator if the problem persists.": [
         "Neem contact op met de beheerder als het probleem aanhoudt."
       ],
+      "Current device": [
+        "Huidig apparaat"
+      ],
       "Delete ${ n } inactive user?": [
         "Verwijder ${ n } inactieve gebruiker?",
         "Verwijder ${ n } inactieve gebruikers?"
@@ -12762,6 +13193,15 @@
       ],
       "Devices available": [
         "Beschikbare apparaten"
+      ],
+      "Devices management": [
+        "Apparaatbeheer"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "Wilt u alle andere apparaten dan de huidige verwijderen?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Voer de bevestigingscode in die we op uw andere apparaat hebben verzonden."
       ],
       "Enter the confirmation code we sent to this user.": [
         "Voer de bevestigingscode in die we naar deze gebruiker hebben gestuurd."
@@ -12784,6 +13224,9 @@
       "Grant access to users?": [
         "Toegang verlenen aan gebruiker?"
       ],
+      "If you didn't make this request, cancel it now.": [
+        "Als u dit verzoek niet heeft gemaakt, annuleer het dan nu."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Als u van uw ${ BRAND_NAME }-account wordt geblokkeerd, kunt u met uw back-upwachtwoord inloggen en uw gegevens herstellen."
       ],
@@ -12802,11 +13245,23 @@
       "New backup password": [
         "Nieuw back-up wachtwoord"
       ],
+      "No, it wasn’t me": [
+        "Nee, dat was ik niet"
+      ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
         "Niet-SSO-gebruikers (handmatig gemaakt, niet door uw identiteitsprovider) kunnen nog steeds inloggen in uw organisatie."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Zodra eenmalige aanmelding voor uw organisatie is uitgeschakeld:"
+      ],
+      "Reject": [
+        "Afwijzen"
+      ],
+      "Remove": [
+        "Verwijderen"
+      ],
+      "Remove all other devices": [
+        "Alle andere apparaten verwijderen"
       ],
       "Remove single sign-on": [
         "Verwijder single sign-on"
@@ -12831,6 +13286,15 @@
       ],
       "Sign out and in again to change your backup password": [
         "Log uit en opnieuw in om uw back-up wachtwoord te wijzigen"
+      ],
+      "Sign-in confirmed": [
+        "Inloggen bevestigd"
+      ],
+      "Sign-in rejected": [
+        "Inloggen geweigerd"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Inloggen op een ander apparaat. Was u het?"
       ],
       "Single sign-on removed": [
         "Single sign-on verwijderd"
@@ -12867,6 +13331,9 @@
       ],
       "Welcome": [
         "Welkom"
+      ],
+      "Yes, it was me": [
+        "Ja, dat was ik"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "U moet handmatig nieuwe gebruikers aanmaken om ze toe te voegen aan uw organisatie."
@@ -13538,6 +14005,12 @@
       "Credits added": [
         "Tegoed toegevoegd"
       ],
+      "Device deleted": [
+        "Apparaat verwijderd"
+      ],
+      "Device rejected": [
+        "Apparaat geweigerd"
+      ],
       "Display name updated": [
         "Weergavenaam bijgewerkt"
       ],
@@ -13627,6 +14100,12 @@
       ],
       "Problem reported": [
         "Probleem gerapporteerd"
+      ],
+      "Session revoked": [
+        "Sessie ingetrokken"
+      ],
+      "Sessions revoked": [
+        "Sessies ingetrokken"
       ],
       "SPF value copied to clipboard": [
         "SPF-waarde gekopieerd naar klembord"
@@ -13902,6 +14381,9 @@
       "Account": [
         "Account"
       ],
+      "Account recovery": [
+        "Accountherstel"
+      ],
       "Account restricted": [
         "Account beperkt"
       ],
@@ -13996,6 +14478,9 @@
       "An address for each role": [
         "Een adres voor elke rol"
       ],
+      "App": [
+        "App"
+      ],
       "Appearance": [
         "Uiterlijk"
       ],
@@ -14016,6 +14501,9 @@
       ],
       "Billing cycle": [
         "Facturatieperiode"
+      ],
+      "Block trackers and malware": [
+        "Blokkeer trackers en malware"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
@@ -14101,6 +14589,9 @@
       "Connect your custom domain": [
         "Verbind uw eigen domein"
       ],
+      "Connection status": [
+        "Verbindingsstatus"
+      ],
       "Contact us": [
         "Contacteer ons"
       ],
@@ -14138,6 +14629,9 @@
       "Create user accounts": [
         "Gebruikersaccounts aanmaken"
       ],
+      "Created": [
+        "Aangemaakt"
+      ],
       "Creating user accounts": [
         "Gebruikersaccounts aan het maken"
       ],
@@ -14168,6 +14662,12 @@
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
       ],
+      "Data locked": [
+        "Gegevens vergrendeld"
+      ],
+      "Data recovery": [
+        "Dataherstel"
+      ],
       "Data retention": [
         "Gegevensbewaring"
       ],
@@ -14176,6 +14676,9 @@
       ],
       "Day theme": [
         "Dag thema"
+      ],
+      "Decrypt key": [
+        "Sleutel decoderen"
       ],
       "Deep dive into VPN blog posts": [
         "Diep duiken in VPN blog posts"
@@ -14237,6 +14740,9 @@
       ],
       "Domain names": [
         "Domeinnamen"
+      ],
+      "Don't show again?": [
+        "Niet meer weergeven?"
       ],
       "Downgrade account": [
         "Account downgraden"
@@ -14359,6 +14865,9 @@
       "Generate missing keys": [
         "Ontbrekende sleutels genereren"
       ],
+      "Generate new recovery phrase?": [
+        "Nieuwe herstelzin genereren?"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
       ],
@@ -14382,9 +14891,6 @@
       ],
       "Gift code": [
         "Geschenkcode"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "Geef ${ refereeRewardAmount } en 2 weken gratis. Ontvang ${ referrerRewardAmount } tegoed."
       ],
       "Groups": [
         "Groepen"
@@ -14423,6 +14929,9 @@
       "Import groups": [
         "Importeer groepen"
       ],
+      "Information exposed in breach": [
+        "Informatie die is blootgesteld bij datalek"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
@@ -14450,6 +14959,9 @@
       "Multiple accounts, 1 private inbox": [
         "Meerdere accounts, 1 privé inbox"
       ],
+      "Name": [
+        "Naam"
+      ],
       "Network error": [
         "Netwerkfout"
       ],
@@ -14459,11 +14971,17 @@
       "Night theme": [
         "Nacht thema"
       ],
+      "No account information was found in any data breaches": [
+        "Er is geen account informatie gevonden in enige datalek"
+      ],
       "No events": [
         "Geen afspraken"
       ],
       "No recovery method": [
         "Geen herstelmethode"
+      ],
+      "Open": [
+        "Open"
       ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
@@ -14498,6 +15016,12 @@
       "Password": [
         "Wachtwoord"
       ],
+      "Password reset settings": [
+        "Wachtwoord reset instellingen"
+      ],
+      "Passwords made easy": [
+        "Gemakkelijk wachtwoorden gemaakt"
+      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
@@ -14525,6 +15049,9 @@
       "Previous": [
         "Vorige"
       ],
+      "Privacy and data collection": [
+        "Privacy en gegevensverzameling"
+      ],
       "Processing...": [
         "Verwerken..."
       ],
@@ -14534,17 +15061,32 @@
       "Recommended": [
         "Aanbevolen"
       ],
+      "Recommended actions": [
+        "Aanbevolen acties"
+      ],
       "Reconnect your account": [
         "Uw account opnieuw verbinden"
+      ],
+      "Recover data": [
+        "Gegevens herstellen"
       ],
       "Recovery": [
         "Herstel"
       ],
+      "Recovery file": [
+        "Herstelbestand"
+      ],
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
+      "Reject device?": [
+        "Apparaat weigeren?"
+      ],
       "Remove all members?": [
         "Alle leden verwijderen?"
+      ],
+      "Remove device?": [
+        "Apparaat verwijderen?"
       ],
       "Remove domain": [
         "Verwijder bestand"
@@ -14576,14 +15118,23 @@
       "Reset password?": [
         "Wachtwoord resetten?"
       ],
+      "Resolved": [
+        "Opgelost"
+      ],
       "Restore administrator privileges": [
         "Herstel beheerdersbevoegdheden"
       ],
       "SAML authentication": [
         "SAML-authenticatie"
       ],
+      "Schedule meetings in one click": [
+        "Plan vergaderingen in één klik"
+      ],
       "Security": [
         "Beveiliging"
+      ],
+      "Security and privacy": [
+        "Veiligheid en privacy"
       ],
       "Security events": [
         "Veiligheidsgebeurtenissen"
@@ -14602,6 +15153,12 @@
       ],
       "Send new invite?": [
         "Nieuwe uitnodiging versturen?"
+      ],
+      "Service": [
+        "Dienst"
+      ],
+      "Session management": [
+        "Sessiebeheer"
       ],
       "Set new password": [
         "Nieuw wachtwoord instellen"
@@ -14669,6 +15226,9 @@
       "Start import process": [
         "Importproces starten"
       ],
+      "State": [
+        "Land/Staat"
+      ],
       "Status": [
         "Status"
       ],
@@ -14694,11 +15254,17 @@
       "Text": [
         "Tekst"
       ],
+      "There are no events for your account": [
+        "Er zijn geen afspraken voor uw account"
+      ],
       "There are no events yet for your organization.": [
         "Er zijn nog geen afspraken voor uw organisatie."
       ],
       "There are no groups": [
         "Er zijn geen groepen"
+      ],
+      "Third-party apps and services": [
+        "Apps en services van derden"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Probeer ${ AUTHENTICATOR_APP_NAME }"
@@ -14793,6 +15359,12 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
       ],
+      "What is an alias?": [
+        "Wat is een alias?"
+      ],
+      "What is the dark web?": [
+        "Wat is het dark web?"
+      ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"
       ],
@@ -14805,6 +15377,12 @@
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
       ],
+      "You have no open alerts": [
+        "U heeft geen open waarschuwingen"
+      ],
+      "You have no resolved alerts": [
+        "U heeft geen opgeloste waarschuwingen"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Uw ${ planName } gratis proefperiode eindigt op ${ textDate }"
       ],
@@ -14813,6 +15391,9 @@
       ],
       "Your current plan": [
         "Uw huidige abonnement"
+      ],
+      "Your exposed information": [
+        "Uw blootgestelde informatie"
       ],
       "Your plan": [
         "Uw abonnement"
@@ -14927,6 +15508,9 @@
       "Edit label names": [
         "Labelnamen bewerken"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Het inschakelen van gedetailleerde gebeurtenissen registreert IP-adressen voor elke gebeurtenis."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Eindpunt URL van identiteitsprovider (bv. https://idp.example.com/sso/saml)"
       ],
@@ -14953,6 +15537,15 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Leden die geen 2FA gebruiken krijgen een e-mail met het verzoek om deze zo snel mogelijk in te schakelen. Single sign-on gebruikers zullen de e-mail herinnering niet ontvangen."
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
+      ],
+      "Origin Internet Service Provider (ISP)": [
+        "Oorspronkelijke Internet Service Provider (ISP)"
+      ],
+      "Origin IP address": [
+        "Oorspronkelijk IP-adres"
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Oorspronkelijk IP-adres en Internet Service Provider (ISP)"
@@ -14989,6 +15582,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Dit e-mailadres zal worden getoond aan alle leden van de organisatie bij het uitvoeren van operaties binnen accountbeheer."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
       ],
       "User's approximate location (based on their IP address)": [
         "Geschatte locatie van de gebruiker (gebaseerd op hun IP-adres)"
@@ -15613,6 +16209,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Uw herstelbestand is verouderd. Het kan geen nieuwe gegevens herstellen als u uw wachtwoord opnieuw reset."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Uw herstel zin is verouderd. Het kan geen nieuwe gegevens herstellen als u uw wachtwoord opnieuw instelt."
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
