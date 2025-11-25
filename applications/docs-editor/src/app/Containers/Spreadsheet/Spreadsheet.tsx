@@ -248,24 +248,25 @@ function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublic
           data-testid="editor-curtain"
         />
       )}
-      <div className="flex h-full min-h-0 w-full min-w-0 bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
-        <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
-          {!isRevisionMode && (
-            <>
-              <Menubar
-                className="mx-[1.125rem] max-sm:hidden"
-                clientInvoker={clientInvoker}
-                isPublicMode={isPublicMode}
-              />
-              <Toolbar className="m-2 max-sm:m-0" clientInvoker={clientInvoker} />
-            </>
-          )}
-          <LegacyGrid />
-          <OldBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
-          <Dialogs />
-          <EditingDisabledDialog clientInvoker={clientInvoker} />
+      <div className="flex h-full min-h-0 w-full min-w-0 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
+        {!isRevisionMode && (
+          <Menubar
+            className="mx-[1.125rem] shrink-0 max-sm:hidden"
+            clientInvoker={clientInvoker}
+            isPublicMode={isPublicMode}
+          />
+        )}
+
+        <div className="flex min-h-0 min-w-0 grow">
+          <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
+            {!isRevisionMode && <Toolbar className="m-2 max-sm:m-0" clientInvoker={clientInvoker} />}
+            <LegacyGrid />
+            <OldBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+            <Dialogs />
+            <EditingDisabledDialog clientInvoker={clientInvoker} />
+          </div>
+          <Sidebar />
         </div>
-        <Sidebar />
       </div>
     </>
   )
