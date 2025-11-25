@@ -473,9 +473,6 @@
       "Edit users": [
         "Uredi korisnike"
       ],
-      "Emoji": [
-        "Emotikoni"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "Omogući ${ darkWebMonitoring }"
       ],
@@ -1356,53 +1353,6 @@
       ],
       "New email": [
         "Nova e-pošta"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Ugrabite ponudu"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "200 GB storage": [
-        "200 MB prostora za pohranu"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokirajte oglase, pratitelje i zlonamjerne programe"
-      ],
-      "Online document editor": [
-        "Online uređivač dokumenata"
-      ],
-      "years": [
-        "godine"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "/ month": [
-        "/ mjesec"
-      ],
-      "12 months": [
-        "12 mjeseci"
-      ],
-      "15 months": [
-        "15 mjeseci"
-      ],
-      "24 months": [
-        "24 mjeseca"
-      ],
-      "30 months": [
-        "30 mjeseci"
-      ],
-      "for ${ durationDeal }": [
-        "za ${ durationDeal }"
       ]
     },
     "app-switcher": {
@@ -3252,9 +3202,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Primit ćete ${ referralInfo.referrerRewardAmount } u ${ BRAND_NAME } kreditu kada se osoba koju pozovete registrira za ${ BRAND_NAME } plan, a ona će također dobiti ${ referralInfo.refereeRewardAmount } u kreditima za početak."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7072,9 +7019,6 @@
       "Your free trial includes 1 dedicated server.": [
         "Vaš besplatni probni period uključuje 1 namjenski poslužitelj."
       ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Vaši prijatelji dobivaju **2 tjedna besplatno** na svom odabranom planu."
-      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Vaš uvoz s ${ accounts } privremeno kasni.",
         "Vaši uvozi s ${ accounts } privremeno kasne.",
@@ -8762,9 +8706,6 @@
       ],
       "Terms": [
         "Uvjeti"
-      ],
-      "Terms and conditions": [
-        "Uvjeti i odredbe"
       ],
       "Upgrade your plan": [
         "Nadogradite vaš plan"

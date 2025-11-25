@@ -660,9 +660,6 @@
       "Edit “${ label.Name }”": [
         "Editar «${ label.Name }»"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable ${ darkWebMonitoring }": [
         "Activar ${ darkWebMonitoring }"
       ],
@@ -1745,6 +1742,10 @@
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } asistente de IA"
       ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } asistente de IA (para ${ quantity } usuario)",
+        "${ LUMO_APP_NAME } Asistente de IA (para ${ quantity } usuarios)"
+      ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
       ],
@@ -1930,138 +1931,6 @@
       ],
       "New email": [
         "Nuevo correo electrónico"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Aprovecha la oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB de espacio de almacenamiento"
-      ],
-      "200 GB storage": [
-        "200 GB de almacenamiento"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB de almacenamiento cifrado"
-      ],
-      "Add unlimited credit cards": [
-        "Añade un número ilimitado de tarjetas de crédito"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Todas las funciones prémium de ${ BRAND_NAME } Mail, Pass, VPN, Drive y Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquea anuncios, rastreadores y malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Los descuentos se basan en los precios mensuales estándar. Al final del ciclo de facturación, tu suscripción se renovará a la tarifa anual estándar."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dobla tu almacenamiento cifrado y obtén 1 TB para todos tus datos."
-      ],
-      "Encrypted password manager": [
-        "Gestor de contraseñas cifrado"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Este es un regalo exclusivo para celebrar nuestro camino juntos."
-      ],
-      "High speed streaming with VPN": [
-        "Streaming de alta velocidad con VPN"
-      ],
-      "of privacy": [
-        "de privacidad"
-      ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacidad online para hasta 2 personas"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacidad online para toda la familia (hasta 6 usuarios)"
-      ],
-      "Protect up to 10 devices": [
-        "Protege hasta 10 dispositivos"
-      ],
-      "Recover previous file versions": [
-        "Recupera las versiones previas de los archivos"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Ahorra a lo grande en funciones premium de Drive con un descuento por tiempo limitado."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Ahorra a lo grande en funciones premium de Mail con un descuento por tiempo limitado."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Ahorra a lo grande en funciones premium de Pass con un descuento por tiempo limitado."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Ahorra a lo grande en funciones premium de VPN con un descuento por tiempo limitado."
-      ],
-      "Save time with built-in 2FA": [
-        "Ahorra tiempo con 2FA integrada"
-      ],
-      "Secure email with unlimited aliases": [
-        "Correo electrónico seguro con alias ilimitados"
-      ],
-      "Select any server": [
-        "Selecciona cualquier servidor"
-      ],
-      "Share passwords easily": [
-        "Comparte contraseñas fácilmente"
-      ],
-      "Short @pm.me address": [
-        "Dirección corta @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Transmite tu contenido favorito"
-      ],
-      "thanks to you": [
-        "gracias a ti"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplica tu almacenamiento cifrado y obtén 3 TB para todos tus datos."
-      ],
-      "Unlimited folders, labels and filters": [
-        "Número ilimitado de carpetas, etiquetas y filtros"
-      ],
-      "Use your own email domain": [
-        "Usa tu propio dominio de correo electrónico"
-      ],
-      "years": [
-        "años"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta de aniversario"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } meses"
-      ],
-      "/ month": [
-        "/mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "15 months": [
-        "15 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "30 months": [
-        "30 meses"
-      ],
-      "for ${ durationDeal }": [
-        "por ${ durationDeal }"
       ]
     },
     "app-switcher": {
@@ -2487,6 +2356,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Se renueva automáticamente"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } mes.",
         "Se renueva automáticamente por ${ renewPrice } durante ${ renewLength } meses."
@@ -2540,11 +2412,17 @@
       "Automate recurring actions to sort and organize incoming emails.": [
         "Automatiza las acciones recurrentes para ordenar y organizar los correos electrónicos entrantes."
       ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Respalda, organiza y comparte de forma segura los recuerdos de toda una vida."
+      ],
       "Can someone see my internet history if we use the same WiFi?": [
         "¿Alguien puede ver mi historial de internet si usamos la misma red wifi?"
       ],
       "Create and edit with confidence": [
         "Crea y edita con confianza"
+      ],
+      "Data breaches are on the rise. For businesses, a single breach can result in stolen customer data, regulatory penalties, lost revenue, and lasting reputational damage. Luckily, your team can prevent most breaches with the right mix of security practices, technology, and awareness.": [
+        "Las filtraciones de datos están aumentando. Para las empresas, una sola filtración puede provocar el robo de datos de clientes, sanciones regulatorias, pérdida de ingresos y un daño duradero a la reputación. Afortunadamente, tu equipo puede prevenir la mayoría de las filtraciones con la combinación adecuada de prácticas de seguridad, tecnología y concienciación."
       ],
       "DeGoogle your life": [
         "Desconecta tu vida de Google"
@@ -2573,6 +2451,9 @@
       "Get round-the-clock protection": [
         "Obtén protección las 24 horas del día"
       ],
+      "Helping someone connect to a new WiFi network is a regular occurrence. It’s likely you’ve done it many times at home or work. In this article, we’re going to examine the easiest ways to share WiFi passwords between devices, the risks associated with insecurely sharing your WiFi password, and the safest way to do it.": [
+        "Ayudar a alguien a conectarse a una nueva red WiFi es algo habitual. Probablemente lo hayas hecho muchas veces en casa o en el trabajo. En este artículo, vamos a examinar las formas más sencillas de compartir contraseñas WiFi entre dispositivos, los riesgos asociados al intercambio inseguro de tu contraseña WiFi y la forma más segura de hacerlo."
+      ],
       "How safe is Telegram?": [
         "¿Qué tan seguro es Telegram?"
       ],
@@ -2587,6 +2468,9 @@
       ],
       "How to get to inbox zero: Privacy-first inbox organization tips": [
         "Cómo lograr una bandeja de entrada a cero: consejos de organización de la bandeja de entrada con la privacidad como prioridad."
+      ],
+      "How to prevent data breaches in your business": [
+        "Cómo prevenir las filtraciones de datos en tu empresa"
       ],
       "iCloud is not private by default. Here's what Apple can see in iCloud.": [
         "iCloud no es privado por defecto. Esto es lo que Apple puede ver en iCloud."
@@ -2615,6 +2499,9 @@
       "Keep your email spam-free": [
         "Mantén tu correo electrónico libre de spam"
       ],
+      "Keep your photos out of AI training": [
+        "Mantén tus fotos fuera del entrenamiento de IA"
+      ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "Mantén los archivos de los miembros de tu equipo protegidos, accesibles y sincronizados con ${ DRIVE_APP_NAME } para empresas."
       ],
@@ -2636,8 +2523,8 @@
       "Learn how to make account sharing simple for any family member.": [
         "Aprende cómo hacer que compartir la cuenta sea sencillo para cualquier miembro de la familia."
       ],
-      "Organize your memories into albums": [
-        "Organiza tus recuerdos en álbumes"
+      "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
+        "Aprende a compartir un solo elemento, un enlace encriptado o una caja fuerte a través de ${ PASS_APP_NAME }."
       ],
       "Protect your business communications": [
         "Protege tus comunicaciones empresariales"
@@ -2729,8 +2616,11 @@
       "Working with sensitive data? Use ${ MAIL_APP_NAME } to protect your communications and build trust with clients.": [
         "¿Trabajas con datos sensibles? Usa ${ MAIL_APP_NAME } para proteger tus comunicaciones y generar confianza con tus clientes."
       ],
-      "Write, edit, and collaborate on documents with our secure online editors.": [
-        "Escribe, edita y colabora en documentos con nuestros editores online seguros."
+      "Worried about data breaches?": [
+        "¿Te preocupan las filtraciones de datos?"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Escribe, edita y colabora en documentos de forma segura con ${ DOCS_APP_NAME }."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Tus fotos familiares están entrenando a la IA, y así es como puedes evitarlo"
@@ -4808,9 +4698,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Recibirás ${ referralInfo.referrerRewardAmount } en crédito de ${ BRAND_NAME } cuando la persona que invites se registre para un plan de ${ BRAND_NAME }, y también recibirán ${ referralInfo.refereeRewardAmount } en créditos para empezar."
       ]
     },
     "description": {
@@ -6392,6 +6279,9 @@
       ],
       "Permissions request failed.": [
         "Error con la solicitud de permisos"
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "Añade un método de pago antes de reactivar tu suscripción"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizado antes de añadir direcciones."
@@ -8790,17 +8680,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importa tus códigos existentes** de otras aplicaciones 2FA, como Google Authenticator"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Invita a tus amigos** a ${ BRAND_NAME } con tu enlace de referidos."
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Paso 1:** Invita a tus amigos a ${ BRAND_NAME } con tu enlace de referidos."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Paso 1:** Invita a tus amigos a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Paso 2:** Tus amigos obtienen **2 semanas gratis** en su plan."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Paso 2:** Tus amigos obtienen 2 semanas gratis en su plan."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Paso 3:** Consigue ${ referrerRewardAmount } créditos por cada amigo que se suscriba a un plan."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Paso 3:** Consigue **${ referrerRewardAmount } créditos** por cada amigo que se suscriba a un plan."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** en todos los dispositivos"
@@ -9730,9 +9626,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
-      ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Consigue **${ referrerRewardAmount } créditos** por cada amigo que se suscriba."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obtén acceso al crear una cuenta de ${ BRAND_NAME } y aceptar la invitación."
@@ -11548,6 +11441,9 @@
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "También puedes combinar calendarios importados con calendarios ${ BRAND_NAME } existentes."
       ],
+      "You can change storage allocation at **Users and addresses**": [
+        "Puedes cambiar la asignación de almacenamiento en **Usuarios y direcciones**"
+      ],
       "You can change this anytime in ${ settingsLink }.": [
         "Puedes cambiarlo en cualquier momento en ${ settingsLink }."
       ],
@@ -11771,9 +11667,6 @@
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Tu prueba gratuita se convirtió correctamente en una suscripción mensual. Tu fecha de renovación es ${ nextBillingDate }."
       ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Tus amigos obtienen **2 semanas gratis** en el plan que elijan."
-      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Tu importación desde ${ accounts } se ha retrasado temporalmente.",
         "Tus importaciones desde ${ accounts } se han retrasado temporalmente."
@@ -11820,6 +11713,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada mes."
+      ],
+      "Your storage": [
+        "Tu almacenamiento"
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Tu suscripción se renovará automáticamente el ${ renewalTime }."
@@ -14061,14 +13957,14 @@
       "Sign in": [
         "Iniciar sesión"
       ],
+      "Snap store": [
+        "Snap store"
+      ],
       "switch account": [
         "cambiar de cuenta"
       ],
       "Terms": [
         "Términos"
-      ],
-      "Terms and conditions": [
-        "Términos y condiciones"
       ],
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
@@ -18026,6 +17922,18 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Disfruta de **${ planTitle }** gratis hasta el **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Regala 2 semanas, consigue ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Cómo funciona tu prueba gratuita:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Si cancelas antes de esa fecha, pasarás a un plan inferior de ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando termine la prueba. Si no cancelas, tu plan completo comenzará y obtendrás **${ referrerRewardAmount }** en créditos."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Si te suscribes antes de esta fecha, recibirás **${ referrerRewardAmount }** en créditos. Si no te suscribes, pasarás a un plan inferior de ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "Invite friends. Get credits.": [
         "Invita a tus amigos. Obtén créditos."
       ],
@@ -18047,6 +17955,9 @@
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Te queda **${ daysRemaining } día** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte.",
         "Te quedan **${ daysRemaining } días** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "¡Tu amigo también recibirá ${ refereeRewardAmount } para canjear en su próxima factura!"
       ],
       "your subscription": [
         "tu suscripción"
@@ -21957,6 +21868,9 @@
       "Deep dive into email blog posts": [
         "Análisis en profundidad de las publicaciones de nuestro blog de correo electrónico"
       ],
+      "Deep dive into password manager blog posts": [
+        "Análisis en profundidad de las publicaciones del blog sobre gestores de contraseñas"
+      ],
       "Deep dive into VPN blog posts": [
         "Análisis en profundidad de las publicaciones de nuestro blog de VPN"
       ],
@@ -22306,9 +22220,6 @@
       ],
       "Gift code": [
         "Código promocional"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "Regala ${ refereeRewardAmount } y 2 semanas gratis. Obtén ${ referrerRewardAmount } en créditos."
       ],
       "Group": [
         "Grupo"
@@ -22862,6 +22773,9 @@
       ],
       "Status": [
         "Estado"
+      ],
+      "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
+        "Fortalece tu seguridad en todos tus dispositivos con ${ passPlusPlanName }. ${ upgradeButton }"
       ],
       "Subscription": [
         "Suscripción"
@@ -23770,6 +23684,9 @@
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtén ${ drivePlusPlanMaxSpace } de almacenamiento para tus archivos, fotos y documentos, y recupera versiones con una recuperación de archivos de 10 años."
+      ],
+      "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
+        "Protege tu organización de las filtraciones de datos con ${ PLAN_NAMES[plan] }."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protege tu organización de las vulneraciones de datos con ${ VPN_APP_NAME } for Business."
