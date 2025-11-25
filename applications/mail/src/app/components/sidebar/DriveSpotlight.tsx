@@ -22,7 +22,7 @@ export function DriveSpotlight({ children }: { children: any }) {
     const { feature, update } = useFeature(FeatureCode.DriveSpotlightInMail);
 
     const isEligibleForSpotlight = FIRST_OF_DECEMBER > Date.now() && user.ProductUsedSpace.Drive === 0;
-    const canShowSpotlight = isEligibleForSpotlight && !!driveChecklist?.Completed;
+    const canShowSpotlight = isEligibleForSpotlight && driveChecklist?.Completed === false;
     const spotlightAlreadyShown = (feature?.Value ?? false) === false;
 
     useEffect(() => {
@@ -30,15 +30,15 @@ export function DriveSpotlight({ children }: { children: any }) {
             return;
         }
 
-        const silentApi = getSilentApi(normalApi);
-
         const effect = async () => {
+            const silentApi = getSilentApi(normalApi);
             const checklist = await silentApi<ChecklistApiResponse>(getDriveChecklist('get-started'));
             setDriveChecklist(checklist);
         };
 
         void effect();
-    }, [isEligibleForSpotlight]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isEligibleForSpotlight]); // normalApi is not a dependency
 
     return (
         <Spotlight
