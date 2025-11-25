@@ -11,6 +11,7 @@ import {
     AddButton,
     EndTimeInput,
     RangeEndTimeLabel,
+    RangeErrors,
     RangeStartTimeLabel,
     RemoveButton,
     StartTimeInput,
@@ -51,36 +52,44 @@ export const DisplayRecurringRanges = ({
 
                 if (day.ranges && day.ranges.length > 0) {
                     return day.ranges.map((range, index) => (
-                        <div className="day-grid grid grid-cols-4 gap-1 items-center mb-1" key={range.id}>
-                            <p className={clsx(index !== 0 && 'visibility-hidden', 'text-semibold m-0')}>
-                                {formatterLabel}
-                            </p>
-                            <div className="m-0">
-                                <RangeStartTimeLabel htmlFor={`recurring-range-start-time-${day.id}`} />
-                                <StartTimeInput
-                                    id={`recurring-range-start-time-${day.id}`}
-                                    range={range}
-                                    duration={formData.duration}
-                                    onChange={(value) => onStartChange(range, value)}
-                                />
+                        <>
+                            <div className="day-grid grid grid-cols-4 gap-1 items-center mb-1" key={range.id}>
+                                <p className={clsx(index !== 0 && 'visibility-hidden', 'text-semibold m-0')}>
+                                    {formatterLabel}
+                                </p>
+                                <div className="m-0">
+                                    <RangeStartTimeLabel htmlFor={`recurring-range-start-time-${day.id}`} />
+                                    <StartTimeInput
+                                        id={`recurring-range-start-time-${day.id}`}
+                                        range={range}
+                                        duration={formData.duration}
+                                        onChange={(value) => onStartChange(range, value)}
+                                    />
+                                </div>
+                                <div className="m-0">
+                                    <RangeEndTimeLabel htmlFor={`recurring-range-end-time-${day.id}`} />
+                                    <EndTimeInput
+                                        id={`recurring-range-end-time-${day.id}`}
+                                        range={range}
+                                        duration={formData.duration}
+                                        onChange={(value) => onEndChange(range, value)}
+                                    />
+                                </div>
+                                <div className="flex flex-nowrap shrink-0">
+                                    <AddButton
+                                        onClick={() => onPlusClick(range)}
+                                        btnClassName={clsx(index !== 0 && 'visibility-hidden')}
+                                    />
+                                    <RemoveButton onClick={() => removeBookingRange(range.id)} />
+                                </div>
                             </div>
-                            <div className="m-0">
-                                <RangeEndTimeLabel htmlFor={`recurring-range-end-time-${day.id}`} />
-                                <EndTimeInput
-                                    id={`recurring-range-end-time-${day.id}`}
-                                    range={range}
-                                    duration={formData.duration}
-                                    onChange={(value) => onEndChange(range, value)}
-                                />
+
+                            {/* Recreate a grid to properly align the error message */}
+                            <div className="day-grid grid grid-cols-4 gap-1 items-center mb-1">
+                                <span></span>
+                                <RangeErrors range={range} />
                             </div>
-                            <div className="flex flex-nowrap shrink-0">
-                                <AddButton
-                                    onClick={() => onPlusClick(range)}
-                                    btnClassName={clsx(index !== 0 && 'visibility-hidden')}
-                                />
-                                <RemoveButton onClick={() => removeBookingRange(range.id)} />
-                            </div>
-                        </div>
+                        </>
                     ));
                 }
 

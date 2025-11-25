@@ -22,19 +22,21 @@ import { serializeFormData } from '../utils/form/formHelpers';
 import {
     computeEditFormData,
     computeInitialFormData,
+    getBookingPageCalendar,
     getInitialBookingFormState,
     recomputeSlotsForRanges,
     validateRangeOperation,
     wasBookingFormTouched,
 } from '../utils/provider/providerHelper';
 import {
+    computeRangesErrors,
     convertBookingRangesToCalendarViewEvents,
     generateBookingRangeID,
     generateDefaultBookingRange,
     getRangeDateStart,
 } from '../utils/range/rangeHelpers';
 import type { BookingRange, BookingsContextValue, InternalBookingFrom, Intersection } from './interface';
-import { type BookingFormData, BookingState, DEFAULT_RECURRING } from './interface';
+import { type BookingFormData, BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from './interface';
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
@@ -55,6 +57,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const intersectionRef = useRef<Intersection | null>(null);
     const initialFormData = useRef<InternalBookingFrom | undefined>(undefined);
+    const touchedFormFields = useRef<Set<keyof InternalBookingFrom>>(new Set());
 
     const [internalForm, setInternalForm] = useState<InternalBookingFrom>(
         getInitialBookingFormState(isRecurringEnabled)
@@ -91,11 +94,18 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const updateFormData = (field: keyof InternalBookingFrom, value: any, currentDate?: Date) => {
+        let updatedForm = { ...internalForm, [field]: value };
+
         // Auto-update duration when calendar changes (if user hasn't customized duration)
         if (field === 'selectedCalendar') {
             const calBootstrap = readCalendarBootstrap(value);
-            if (calBootstrap && calBootstrap.CalendarSettings.DefaultEventDuration !== internalForm.duration) {
-                updateFormData('duration', calBootstrap.CalendarSettings.DefaultEventDuration);
+            const defaultDuration = calBootstrap?.CalendarSettings.DefaultEventDuration || DEFAULT_EVENT_DURATION;
+            if (
+                calBootstrap &&
+                defaultDuration !== internalForm.duration &&
+                !touchedFormFields.current.has('duration')
+            ) {
+                updatedForm = { ...updatedForm, duration: defaultDuration };
             }
         }
 
@@ -103,10 +113,16 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         if (field === 'recurring') {
             const date = currentDate || new Date();
             const newRanges = generateDefaultBookingRange(userSettings, date, formData.timezone, value);
-            updateFormData('bookingRanges', newRanges);
+            updatedForm = { ...updatedForm, bookingRanges: newRanges };
         }
 
-        setInternalForm((prev) => ({ ...prev, [field]: value }));
+        if (field === 'duration') {
+            const rangeErrorsComputation = computeRangesErrors(internalForm.bookingRanges, value);
+            updatedForm = { ...updatedForm, bookingRanges: rangeErrorsComputation };
+        }
+
+        touchedFormFields.current.add(field);
+        setInternalForm((prev) => ({ ...prev, ...updatedForm }));
     };
 
     const updateBookingRange = (oldRangeId: string, start: Date, end: Date) => {
@@ -197,7 +213,14 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const openBookingSidebarEdition = (bookingPage: InternalBookingPage, editData: BookingPageEditData) => {
+        const bookingPageCalendar = getBookingPageCalendar({ writeableCalendars, bookingPage });
+        if (!bookingPageCalendar) {
+            createNotification({ text: c('Info').t`No calendar available; please delete the booking page.` });
+            return;
+        }
+
         const form = computeEditFormData({
+            bookingPageCalendar,
             bookingPage,
             editData,
         });
@@ -217,11 +240,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
                 value: {
                     onClose: () => {
                         setBookingsState(BookingState.OFF);
+                        touchedFormFields.current.clear();
                     },
                 },
             });
         } else {
             setBookingsState(BookingState.OFF);
+            touchedFormFields.current.clear();
         }
     };
 
