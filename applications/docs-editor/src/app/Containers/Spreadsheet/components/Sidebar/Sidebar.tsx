@@ -5,6 +5,7 @@ import { NamedRangeEditorDialog } from './NamedRangeEditorDialog'
 import { CellFormatDialog } from './CellFormatDialog'
 import { SidebarContainer } from './SidebarContainer'
 import { ChartEditorDialog } from './ChartEditorDialog'
+import { TableEditorDialog } from './TableEditorDialog'
 
 export function Sidebar() {
   return (
@@ -14,6 +15,7 @@ export function Sidebar() {
       <NamedRangeEditorDialog />
       <CellFormatDialog />
       <ChartEditorDialog />
+      <TableEditorDialog />
     </SidebarContainer>
   )
 }
