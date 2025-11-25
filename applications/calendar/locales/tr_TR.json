@@ -62,6 +62,9 @@
       "Add another account": [
         "Başka bir hesap ekle"
       ],
+      "Add another booking range to this day": [
+        "Bu güne başka bir rezervasyon aralığı ekle"
+      ],
       "Add birthday": [
         "Doğum günü ekle"
       ],
@@ -439,6 +442,9 @@
       ],
       "Go to settings": [
         "Ayarlara git"
+      ],
+      "Go to the first available appointment": [
+        "İlk uygun randevuya git"
       ],
       "Go to the next available appointment": [
         "Sonraki uygun randevuya git"
@@ -857,9 +863,6 @@
       "Skip verification": [
         "Doğrulamayı atla"
       ],
-      "Split current booking range": [
-        "Geçerli rezervasyon aralığını böl"
-      ],
       "Start import": [
         "İçe aktarmayı başlat"
       ],
@@ -1128,138 +1131,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Lütfen bu sekmeyi kapatmayın. Bazı istekler hala arka planda işleniyor."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "200 GB storage": [
-        "200 GB depolama alanı"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB şifrelenmiş depolama alanı"
-      ],
-      "Add unlimited credit cards": [
-        "Sınırsız sayıda kredi kartı ekleyin"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Tüm ücretli ${ BRAND_NAME } Mail, Pass, VPN, Drive ve Calendar özellikleri"
-      ],
-      "Block ads, trackers, and malware": [
-        "Reklamları, etkinlik izleyicileri ve kötü amaçlı yazılımları engelleyin"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "İndirimler standart aylık fiyatlandırmaya göre belirlenir. Aboneliğiniz fatura döneminin sonunda standart yıllık fiyattan yenilenir."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Şifrelenmiş depolama alanınızı iki katına çıkarın. Tüm verileriniz için 1 TB edinin."
-      ],
-      "Encrypted password manager": [
-        "Şifrelenmiş parola yöneticisi"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Birlikte çıktığımız bu yolculuğu kutlamak için size özel bir hediye."
-      ],
-      "High speed streaming with VPN": [
-        "VPN ile yüksek hızda yayın akışı izleme"
-      ],
-      "of privacy": [
-        "ile gizlilik"
-      ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
-      "Online privacy for up to 2 people": [
-        "2 kişiye kadar çevrim içi gizlilik"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Tüm aileniz için çevrim içi gizlilik (6 kullanıcıya kadar)"
-      ],
-      "Protect up to 10 devices": [
-        "10 aygıta kadar koruyun"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleyin"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Sınırlı süreli indirimle ücretli Drive özelliklerinde büyük indirim kazanın."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Sınırlı süreli indirimle ücretli Mail özelliklerinde büyük indirim kazanın."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Sınırlı süreli indirimle ücretli Pass özelliklerinde büyük indirim kazanın."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Sınırlı süreli indirimle ücretli VPN özelliklerinde büyük indirim kazanın."
-      ],
-      "Save time with built-in 2FA": [
-        "İç iki adımlı doğrulama ile zaman kazanın"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sınırsız takma ad ile güvenli e-posta"
-      ],
-      "Select any server": [
-        "Herhangi bir sunucu seçin"
-      ],
-      "Share passwords easily": [
-        "Parolaları kolayca paylaşın"
-      ],
-      "Short @pm.me address": [
-        "Kısa @pm.me adresi"
-      ],
-      "Stream your favorite content": [
-        "Beğendiğiniz yayın akışı içeriklerini izleyin"
-      ],
-      "thanks to you": [
-        "sayenizde"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Şifrelenmiş depolama alanınızı üç katına çıkarın. Tüm verileriniz için 3 TB edinin."
-      ],
-      "Unlimited folders, labels and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
-      ],
-      "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanın"
-      ],
-      "years": [
-        "yıl"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Yıl dönümü teklifi"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } ay",
-        "${ n } ay"
-      ],
-      "/ month": [
-        "/ ay"
-      ],
-      "12 months": [
-        "12 ay"
-      ],
-      "15 months": [
-        "15 ay"
-      ],
-      "24 months": [
-        "24 ay"
-      ],
-      "30 months": [
-        "30 ay"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal } için"
       ]
     },
     "Apps dropdown": {
@@ -3647,9 +3518,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
       ],
-      "Content verification failed": [
-        "İçerik doğrulanamadı"
-      ],
       "Could not open created vault": [
         "Oluşturulan kasa açılamadı"
       ],
@@ -5354,6 +5222,9 @@
       "Booking page example": [
         "Rezervasyon sayfası örneği"
       ],
+      "Booking updated successfully": [
+        "Randevu güncellendi"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha tutarlı bir çevrim içi deneyim sunun."
       ],
@@ -5428,6 +5299,9 @@
       ],
       "Copy your referral link": [
         "Öneri bağlantınızı kopyalayın"
+      ],
+      "Could not verify signature over booking page data": [
+        "Rezervasyon sayfası verilerinin imzası doğrulanamadı"
       ],
       "Country code": [
         "Ülke kodu"
@@ -5631,6 +5505,9 @@
       "Host": [
         "Sunucu"
       ],
+      "Host signature verification failed": [
+        "Ana bilgisayar imzası doğrulanamadı"
+      ],
       "How long should an appointment last?": [
         "Randevu ne kadar sürmeli?"
       ],
@@ -5767,11 +5644,11 @@
       "Low Priority": [
         "Düşük Öncelik"
       ],
+      "Manage booking page": [
+        "Rezervasyon sayfası yönetimi"
+      ],
       "Manage your calendars": [
         "Takvimlerinizi yönetin"
-      ],
-      "Manange booking page": [
-        "Rezervasyon sayfası yönetimi"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -5803,6 +5680,9 @@
       "New": [
         "Yeni"
       ],
+      "No appointments available": [
+        "Uygun bir randevu yok"
+      ],
       "No appointments available this week": [
         "Bu hafta alınabilecek bir randevu yok"
       ],
@@ -5811,6 +5691,9 @@
       ],
       "No email address": [
         "E-posta adresi yok"
+      ],
+      "No future appointments available": [
+        "Gelecekte uygun bir randevu yok"
       ],
       "No group found": [
         "Grup bulunamadı"
@@ -6265,11 +6148,8 @@
       "What do you want to call this booking page?": [
         "Bu rezervasyon sayfasına ne ad vermek istersiniz?"
       ],
-      "What should people know before booking?": [
-        "İnsanlar rezervasyon yapmadan önce nelere dikkat etmeliler?"
-      ],
-      "When are you free?": [
-        "Ne zaman uygunsunuz?"
+      "When can appointments be booked?": [
+        "Randevular ne zaman rezerve edilebilir?"
       ],
       "When working remotely": [
         "Uzaktan çalışırken"
@@ -6824,6 +6704,9 @@
       "Copy": [
         "Kopyala"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "Dilediğiniz zaman buradan bağlantınızı paylaşın ya da sayfanızı yönetin"
+      ],
       "Could you please let us know which provider?": [
         "Hangi hizmet sağlayıcı olduğunu belirtebilir misiniz?"
       ],
@@ -6835,6 +6718,9 @@
       ],
       "Country": [
         "Ülke"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "İnsanların sizinle randevu oluşturabileceği paylaşılabilir sayfanızı oluşturun"
       ],
       "Credits": [
         "Kredi"
@@ -7101,6 +6987,9 @@
       "Remove Zoom video conference": [
         "Zoom görüntülü görüşmesini kaldır"
       ],
+      "Repeat weekly": [
+        "Haftalık yinelensin"
+      ],
       "Reveal password": [
         "Parolayı görüntüle"
       ],
@@ -7160,6 +7049,9 @@
       ],
       "Toolbar": [
         "Araç çubuğu"
+      ],
+      "Unavailable": [
+        "Kullanılamıyor"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -7238,8 +7130,8 @@
       "Start time of the booking range": [
         "Rezervasyon aralığının başlangıç saati"
       ],
-      "What should people know before booking?": [
-        "Rezervasyon almadan önce insanların neyi bilmesi gerekir?"
+      "What should people know about this appointment?": [
+        "İnsanların bu randevu hakkında ne bilmesi gerekir?"
       ]
     },
     "Label for contact group color": {
@@ -9548,9 +9440,6 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
-      "Add a booking page description": [
-        "Bir rezervasyon sayfası açıklaması ekleyin"
-      ],
       "Add a calendar description": [
         "Bir takvim açıklaması ekleyin"
       ],
@@ -9583,6 +9472,9 @@
       ],
       "Email for booking confirmation": [
         "Rezervasyon onayı için e-posta adresi"
+      ],
+      "Enter a short description or additional info": [
+        "Kısa bir açıklama veya ek bilgiler yazın"
       ],
       "Enter passphrase": [
         "Parola ifadesini yazın"
@@ -11731,6 +11623,9 @@
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
       ],
+      "Introducing booking pages": [
+        "İşte karşınızda randevu sayfaları"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
@@ -12075,6 +11970,9 @@
       ],
       "Your booking page is ready": [
         "Rezervasyon sayfanız hazır"
+      ],
+      "Your booking pages live here": [
+        "Randevu sayfanız burada hazır"
       ],
       "Your calendar link": [
         "Takvim bağlantınız"

@@ -854,9 +854,6 @@
       "Skip verification": [
         "Hoppa över verifiering"
       ],
-      "Split current booking range": [
-        "Dela nuvarande bokningsintervall"
-      ],
       "Start import": [
         "Starta import"
       ],
@@ -1125,135 +1122,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Stäng inte denna flik. Några förfrågningar bearbetas fortfarande i bakgrunden."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Ta del av erbjudandet"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB lagringsutrymme"
-      ],
-      "200 GB storage": [
-        "200 GB lagringsutrymme"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB krypterat lagringsutrymme"
-      ],
-      "Add unlimited credit cards": [
-        "Lägg till obegränsat antal kreditkort"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alla premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive och Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blockera annonser, spårare och skadlig kod"
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dubbla ditt krypterade lagringsutrymme – få 1 TB för alla dina data"
-      ],
-      "Encrypted password manager": [
-        "Krypterad lösenordshanterare"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Här är en exklusiv gåva för att fira vår resa tillsammans."
-      ],
-      "High speed streaming with VPN": [
-        "Höghastighetsstreaming med VPN"
-      ],
-      "of privacy": [
-        "av integritet"
-      ],
-      "Online document editor": [
-        "Dokumentredigerare online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Integritet online för upp till 2 personer"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Integritet online för hela din familj (upp till 6 användare)"
-      ],
-      "Protect up to 10 devices": [
-        "Skydda upp till 10 enheter"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Spara stort på premium Drive-funktioner med en tidsbegränsad rabatt."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Spara stort på premium Mail-funktioner med en tidsbegränsad rabatt."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Spara stort på premium Pass-funktioner med en tidsbegränsad rabatt."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Spara stort på premium VPN-funktioner med en tidsbegränsad rabatt."
-      ],
-      "Save time with built-in 2FA": [
-        "Spara tid med inbyggd 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Säker e-post med obegränsade alias"
-      ],
-      "Select any server": [
-        "Välj vilken server som helst"
-      ],
-      "Share passwords easily": [
-        "Dela lösenord enkelt"
-      ],
-      "Short @pm.me address": [
-        "Kort @pm.me e-postadress"
-      ],
-      "Stream your favorite content": [
-        "Streama ditt favoritinnehåll"
-      ],
-      "thanks to you": [
-        "tack vare dig"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Trippla ditt krypterade lagringsutrymme – få 3 TB för alla dina data"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Obegränsat antal mappar, etiketter och filter"
-      ],
-      "Use your own email domain": [
-        "Använd din egen e-postdomän"
-      ],
-      "years": [
-        "år"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumserbjudande"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } månad",
-        "${ n } månader"
-      ],
-      "/ month": [
-        "/månad"
-      ],
-      "12 months": [
-        "12 månader"
-      ],
-      "15 months": [
-        "15 månader"
-      ],
-      "24 months": [
-        "24 månader"
-      ],
-      "30 months": [
-        "30 månader"
-      ],
-      "for ${ durationDeal }": [
-        "för ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -3626,9 +3494,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innehållssökning kan inte aktiveras. Starta om applikationen eller rensa data."
       ],
-      "Content verification failed": [
-        "Innehållsverifiering misslyckades"
-      ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
       ],
@@ -5330,6 +5195,9 @@
       "Booking page example": [
         "Exempel på bokningssida"
       ],
+      "Booking updated successfully": [
+        "Bokning uppdaterad"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
       ],
@@ -5737,11 +5605,11 @@
       "Low Priority": [
         "Låg prioritet"
       ],
+      "Manage booking page": [
+        "Hantera bokningssida"
+      ],
       "Manage your calendars": [
         "Hantera dina kalendrar"
-      ],
-      "Manange booking page": [
-        "Hantera bokningssida"
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -5911,6 +5779,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vänta medan vi letar efter kontakter som innehåller data krypterad med den inaktiva nyckeln."
+      ],
+      "Powered by": [
+        "Drivs av"
       ],
       "Powered by ${ protonButton }": [
         "Drivs av ${ protonButton }"
@@ -6219,12 +6090,6 @@
       ],
       "What do you want to call this booking page?": [
         "Vad vill du kalla denna bokningssida?"
-      ],
-      "What should people know before booking?": [
-        "Vad bör folk veta innan de bokar?"
-      ],
-      "When are you free?": [
-        "När är du ledig?"
       ],
       "When working remotely": [
         "När du arbetar på distans"
@@ -6776,6 +6641,9 @@
       "Copy": [
         "Kopiera"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "Kopiera länken eller hantera din sida härifrån när som helst."
+      ],
       "Could you please let us know which provider?": [
         "Kan du berätta vilken leverantör?"
       ],
@@ -7192,9 +7060,6 @@
       ],
       "Start time of the booking range": [
         "Starttid för bokningsintervallet"
-      ],
-      "What should people know before booking?": [
-        "Vad bör folk veta innan de bokar?"
       ]
     },
     "Label for contact group color": {
@@ -9492,9 +9357,6 @@
       "A way to contact you": [
         "Ett sätt att kontakta dig"
       ],
-      "Add a booking page description": [
-        "Lägg till en beskrivning av bokningssida"
-      ],
       "Add a calendar description": [
         "Lägg till en kalenderbeskrivning"
       ],
@@ -9527,6 +9389,9 @@
       ],
       "Email for booking confirmation": [
         "E-post för bokningsbekräftelse"
+      ],
+      "Enter a short description or additional info": [
+        "Ange en kort beskrivning eller ytterligare information"
       ],
       "Enter passphrase": [
         "Ange lösenfras"
@@ -10989,6 +10854,12 @@
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
       ],
+      "Booking page created": [
+        "Bokningssida skapad"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Bokningssida skapad och länk kopierad till urklipp"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender har lagts till. Det kan ta några minuter att synkronisera."
       ],
@@ -12010,6 +11881,9 @@
       ],
       "Your booking page is ready": [
         "Din bokningssida är redo"
+      ],
+      "Your booking pages live here": [
+        "Dina bokningssidor finns här"
       ],
       "Your calendar link": [
         "Din kalenderlänk"

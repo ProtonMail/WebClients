@@ -62,6 +62,9 @@
       "Add another account": [
         "Legg til en annen konto"
       ],
+      "Add another booking range to this day": [
+        "Legg til et annet bestillingsintervall til denne dagen"
+      ],
       "Add birthday": [
         "Legg til bursdag"
       ],
@@ -439,6 +442,9 @@
       ],
       "Go to settings": [
         "Gå til innstillinger"
+      ],
+      "Go to the first available appointment": [
+        "Gå til første ledige avtale"
       ],
       "Go to the next available appointment": [
         "Gå til neste ledige avtale"
@@ -857,9 +863,6 @@
       "Skip verification": [
         "Hopp over bekreftelse"
       ],
-      "Split current booking range": [
-        "Del gjeldende bestillingsintervall"
-      ],
       "Start import": [
         "Start importen"
       ],
@@ -1128,138 +1131,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "Ikke lukk denne fanen. Noen forespørsler behandles fortsatt i bakgrunnen."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Skaff deg tilbudet"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB lagringsplass"
-      ],
-      "200 GB storage": [
-        "200 GB lagringsplass"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB kryptert lagring"
-      ],
-      "Add unlimited credit cards": [
-        "Legg til ubegrenset antall kredittkort"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Alle premiumfunksjoner fra ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokkér annonser, sporere og skadelig programvare"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabatter er basert på standard månedlig pris. Ved slutten av faktureringssyklusen vil abonnementet ditt fornyes til standard årlig sats."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Doble den krypterte lagringen din – få 1 TB for alle dataene dine"
-      ],
-      "Encrypted password manager": [
-        "Kryptert passordbehandler"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Her er en eksklusiv gave for å feire reisen vår sammen."
-      ],
-      "High speed streaming with VPN": [
-        "Strømming med høy hastighet med VPN"
-      ],
-      "of privacy": [
-        "respekt for privatlivet"
-      ],
-      "Online document editor": [
-        "Dokumentredigering på nett"
-      ],
-      "Online privacy for up to 2 people": [
-        "Personvern på nett for opptil 2 personer"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Personvern på nett for hele familien din (opptil 6 brukere)"
-      ],
-      "Protect up to 10 devices": [
-        "Beskytt opptil 10 enheter"
-      ],
-      "Recover previous file versions": [
-        "Gjenopprett tidligere filversjoner"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Spar stort på premium Drive-funksjoner med en tidsbegrenset rabatt."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Spar stort på premium Mail-funksjoner med tidsbegrenset rabatt."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Spar mye på premium Pass-funksjoner med en tidsbegrenset rabatt."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Spar mye på premium VPN-funksjoner med en tidsbegrenset rabatt."
-      ],
-      "Save time with built-in 2FA": [
-        "Spar tid med innebygd 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Sikker e-post med ubegrenset antall alias"
-      ],
-      "Select any server": [
-        "Velg hvilken som helst tjener"
-      ],
-      "Share passwords easily": [
-        "Enkel passorddeling"
-      ],
-      "Short @pm.me address": [
-        "Kort @pm.me-adresse"
-      ],
-      "Stream your favorite content": [
-        "Strøm favorittinnholdet ditt"
-      ],
-      "thanks to you": [
-        "takket være deg"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tredoble den krypterte lagringsplassen og få 3 TB for alle dataene dine."
-      ],
-      "Unlimited folders, labels and filters": [
-        "Ubegrenset antall mapper, etiketter og filtre"
-      ],
-      "Use your own email domain": [
-        "Bruk ditt eget e-postdomene"
-      ],
-      "years": [
-        "år"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Jubileumstilbud"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
-      "/ month": [
-        "/måned"
-      ],
-      "12 months": [
-        "12 måneder"
-      ],
-      "15 months": [
-        "15 måneder"
-      ],
-      "24 months": [
-        "24 måneder"
-      ],
-      "30 months": [
-        "30 måneder"
-      ],
-      "for ${ durationDeal }": [
-        "for ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -3647,9 +3518,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
       ],
-      "Content verification failed": [
-        "Innholdsverifisering mislyktes"
-      ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
       ],
@@ -5354,6 +5222,9 @@
       "Booking page example": [
         "Eksempel på bestillingsside"
       ],
+      "Booking updated successfully": [
+        "Bestilling vellykket oppdatert"
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
       ],
@@ -5767,11 +5638,11 @@
       "Low Priority": [
         "Lav prioritet"
       ],
+      "Manage booking page": [
+        "Administrer bestillingsside"
+      ],
       "Manage your calendars": [
         "Administrer dine kalendere"
-      ],
-      "Manange booking page": [
-        "Administrer bestillingsside"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5803,6 +5674,9 @@
       "New": [
         "Ny"
       ],
+      "No appointments available": [
+        "Ingen ledige avtaler"
+      ],
       "No appointments available this week": [
         "Ingen avtaler tilgjengelige denne uken"
       ],
@@ -5811,6 +5685,9 @@
       ],
       "No email address": [
         "Ingen e-postadresse"
+      ],
+      "No future appointments available": [
+        "Ingen fremtidige avtaler tilgjengelig"
       ],
       "No group found": [
         "Ingen gruppe funnet"
@@ -6265,11 +6142,8 @@
       "What do you want to call this booking page?": [
         "Hva vil du kalle denne bestillingssiden?"
       ],
-      "What should people know before booking?": [
-        "Hva bør folk vite før de bestiller?"
-      ],
-      "When are you free?": [
-        "Når er du ledig?"
+      "When can appointments be booked?": [
+        "Når kan avtaler bestilles?"
       ],
       "When working remotely": [
         "Når du jobber eksternt"
@@ -7244,8 +7118,8 @@
       "Start time of the booking range": [
         "Starttidspunkt for bestillingsintervallet"
       ],
-      "What should people know before booking?": [
-        "Hva bør folk vite før de bestiller?"
+      "What should people know about this appointment?": [
+        "Hva bør folk vite om denne avtalen?"
       ]
     },
     "Label for contact group color": {
@@ -9554,9 +9428,6 @@
       "A way to contact you": [
         "En måte å kontakte deg på"
       ],
-      "Add a booking page description": [
-        "Legg til en beskrivelse av bestillingssiden"
-      ],
       "Add a calendar description": [
         "Legg til en kalenderbeskrivelse"
       ],
@@ -9589,6 +9460,9 @@
       ],
       "Email for booking confirmation": [
         "E-post for bestillingsbekreftelse"
+      ],
+      "Enter a short description or additional info": [
+        "Angi en kort beskrivelse eller tilleggsinformasjon"
       ],
       "Enter passphrase": [
         "Skriv inn passfrase"
@@ -11053,6 +10927,12 @@
       ],
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
+      ],
+      "Booking page created": [
+        "Bestillingsside opprettet"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "Bestillingsside opprettet og kobling kopiert til utklippstavlen"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender lagt til. Det kan ta noen minutter å synkronisere."

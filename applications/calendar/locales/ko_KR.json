@@ -851,9 +851,6 @@
       "Skip verification": [
         "인증 건너뛰기"
       ],
-      "Split current booking range": [
-        "현재 예약 기간 분할"
-      ],
       "Start import": [
         "가져오기 시작"
       ],
@@ -1116,137 +1113,6 @@
       ],
       "Please do not close this tab. Some requests are still being processed in the background.": [
         "이 탭을 닫지 마세요. 일부 요청이 백그라운드에서 진행 중입니다."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "특가로 구매"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB 저장 공간"
-      ],
-      "200 GB storage": [
-        "200 GB 저장 공간"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB 암호화된 저장 공간"
-      ],
-      "Add unlimited credit cards": [
-        "무제한 신용 카드 항목 추가"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "${ BRAND_NAME } Mail, Pass, VPN, Drive, Calendar의 모든 프리미엄 기능"
-      ],
-      "Block ads, trackers, and malware": [
-        "광고, 멀웨어 및 트래커 차단"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "할인은 표준 월별 요금 기준입니다. 청구 주기가 끝나면 구독은 표준 연간 요금으로 갱신됩니다."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "암호화된 저장 공간을 2배로 확장하세요 - 나의 모든 데이터를 저장할 2 TB 저장 공간을 받아보세요"
-      ],
-      "Encrypted password manager": [
-        "암호화된 비밀번호 관리자"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "저희와 함께 걸어온 여정을 기념하는 특별 선물을 준비했어요."
-      ],
-      "High speed streaming with VPN": [
-        "VPN을 통한 빠른 속도의 스트리밍"
-      ],
-      "of privacy": [
-        "개인정보 보호에"
-      ],
-      "Online document editor": [
-        "온라인 문서 편집기"
-      ],
-      "Online privacy for up to 2 people": [
-        "최대 두 명까지 온라인 프라이버시 보호"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "우리 가족을 위한 온라인 프라이버시 보호 (최대 6명)"
-      ],
-      "Protect up to 10 devices": [
-        "최대 10대 기기 보호"
-      ],
-      "Recover previous file versions": [
-        "기존 파일 버전 복원"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "기간 한정 할인으로 프리미엄 Drive 기능을 알뜰하게 이용해 보세요."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "기간 한정 할인으로 프리미엄 Mail 기능을 알뜰하게 이용해 보세요."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "기간 한정 할인으로 프리미엄 Pass 기능을 알뜰하게 이용해 보세요."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "기간 한정 할인으로 프리미엄 VPN 기능을 알뜰하게 이용해 보세요."
-      ],
-      "Save time with built-in 2FA": [
-        "내장형 2단계 인증기로 시간 절약하기"
-      ],
-      "Secure email with unlimited aliases": [
-        "무제한 별칭이 포함된 보안 이메일"
-      ],
-      "Select any server": [
-        "아무 서버 선택"
-      ],
-      "Share passwords easily": [
-        "간편하게 비밀번호 공유하기"
-      ],
-      "Short @pm.me address": [
-        "짧은 @pm.me 이메일 주소"
-      ],
-      "Stream your favorite content": [
-        "좋아하는 비디오 콘텐츠 스트리밍"
-      ],
-      "thanks to you": [
-        "감사드립니다"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "암호화된 저장 공간을 3배로 확장하세요 - 나의 모든 데이터를 저장할 3 TB 저장 공간을 받아보세요"
-      ],
-      "Unlimited folders, labels and filters": [
-        "무제한 폴더, 라벨 및 필터"
-      ],
-      "Use your own email domain": [
-        "기존 이메일 도메인 사용"
-      ],
-      "years": [
-        "년"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "창립 기념 혜택"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n }/월간"
-      ],
-      "/ month": [
-        "/ 월"
-      ],
-      "12 months": [
-        "12개월"
-      ],
-      "15 months": [
-        "15개월"
-      ],
-      "24 months": [
-        "24개월"
-      ],
-      "30 months": [
-        "30개월"
-      ],
-      "for ${ durationDeal }": [
-        "${ durationDeal }간"
       ]
     },
     "Apps dropdown": {
@@ -3617,9 +3483,6 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "내용 검색을 활성화 할 수 없습니다. 어플리케이션을 재시작하거나 데이터를 제거하십시오."
       ],
-      "Content verification failed": [
-        "콘텐츠 확인 실패"
-      ],
       "Could not open created vault": [
         "생성된 금고를 열 수 없습니다."
       ],
@@ -5686,9 +5549,6 @@
       "Manage your calendars": [
         "캘린더 관리"
       ],
-      "Manange booking page": [
-        "예약 페이지 관리"
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
@@ -6159,12 +6019,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "주 및 월 보기는 홈 화면에서만 적용됩니다."
-      ],
-      "What should people know before booking?": [
-        "예약 전에 알아두어야 할 사항은 무엇인가요?"
-      ],
-      "When are you free?": [
-        "언제 시간이 괜찮으신가요?"
       ],
       "When working remotely": [
         "재택 근무시"
@@ -9358,9 +9212,6 @@
     "Placeholder": {
       "A way to contact you": [
         "사용자에게 연락할 방법"
-      ],
-      "Add a booking page description": [
-        "예약 페이지 설명 추가"
       ],
       "Add a calendar description": [
         "캘린더 설명 추가"
