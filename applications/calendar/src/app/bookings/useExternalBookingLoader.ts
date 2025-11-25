@@ -131,7 +131,12 @@ export const useExternalBookingLoader = () => {
 
             setFailedToVerify(failedToVerify);
             setBookingSlots(allBookingSlot);
-            setNextAvailableSlot(transformAvailableSlotToTimeslot(nextAvailableSlotResult.NextSlot));
+
+            if (nextAvailableSlotResult.NextSlot) {
+                setNextAvailableSlot(transformAvailableSlotToTimeslot(nextAvailableSlotResult.NextSlot));
+            } else {
+                setNextAvailableSlot(null);
+            }
         } catch (error) {
             throw error;
         } finally {
