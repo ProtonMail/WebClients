@@ -18,6 +18,7 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
+import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
@@ -171,6 +172,7 @@ export const MeetingBody = ({
                         <Participants />
                         <Settings />
                         <Chat />
+                        <AssignHostSidebar />
                         {guestMode || !isEarlyAccess ? <MeetingDetails /> : <WrappedMeetingDetails />}
                     </div>
                 )}

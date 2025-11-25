@@ -1,0 +1,41 @@
+.assign-host-sidebar {
+	.participant-container {
+		&:hover,
+		&:focus-within {
+			background-color: var(--interaction-norm-minor-3);
+		}
+	}
+
+	.selected-participant-container {
+		background-color: var(--interaction-norm-minor-2) !important;
+	}
+
+	.assign-button-container {
+		backdrop-filter: blur(6px);
+		border-end-start-radius: 1.5rem;
+		border-end-end-radius: 1.5rem;
+
+		button {
+			background-color: var(--interaction-norm);
+
+			&:hover,
+			&:focus-within {
+				color: var(--text-invert);
+				background-color: var(--interaction-norm-major-2);
+			}
+		}
+
+		&.scrolled {
+			border-block-end: 1px solid var(--border-norm);
+		}
+	}
+
+	.checkmark-icon {
+		color: var(--interaction-norm);
+	}
+
+	.new-host-label {
+		color: var(--interaction-norm);
+		text-align: start;
+	}
+}

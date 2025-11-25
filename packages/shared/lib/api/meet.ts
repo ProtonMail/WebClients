@@ -1,4 +1,4 @@
-import type { MeetingPayload, UpdateMeetingPasswordData } from '../interfaces/Meet';
+import type { MeetingPayload, ParticipantPermissions, UpdateMeetingPasswordData } from '../interfaces/Meet';
 
 export const queryParticipants = (meetingLinkName: string) => {
     return {
@@ -110,6 +110,18 @@ export const rotatePersonalMeetingLink = (data: MeetingPayload) => {
     return {
         method: 'post',
         url: `meet/v1/meetings/personal/rotate`,
+        data,
+    };
+};
+
+export const updateParticipantPermissions = (
+    meetingLinkName: string,
+    participantUuid: string,
+    data: ParticipantPermissions & { AccessToken: string }
+) => {
+    return {
+        method: 'put',
+        url: `meet/v1/meetings/links/${meetingLinkName}/participants/${participantUuid}/permissions`,
         data,
     };
 };

@@ -9,6 +9,7 @@ export interface UIStateContextType {
     setMeetingReadyPopupOpen: (meetingReadyPopupOpen: boolean) => void;
     sideBarState: {
         [MeetingSideBars.Participants]: boolean;
+        [MeetingSideBars.AssignHost]: boolean;
         [MeetingSideBars.Settings]: boolean;
         [MeetingSideBars.Chat]: boolean;
         [MeetingSideBars.MeetingDetails]: boolean;
@@ -32,6 +33,7 @@ export const UIStateContext = createContext<UIStateContextType>({
     setMeetingReadyPopupOpen: () => {},
     sideBarState: {
         [MeetingSideBars.Participants]: false,
+        [MeetingSideBars.AssignHost]: false,
         [MeetingSideBars.Settings]: false,
         [MeetingSideBars.Chat]: false,
         [MeetingSideBars.MeetingDetails]: false,
@@ -65,6 +67,7 @@ export const UIStateProvider = ({
     const [meetingReadyPopupOpen, setMeetingReadyPopupOpen] = useState(instantMeeting);
     const [sideBarState, setSideBarState] = useState<UIStateContextType['sideBarState']>({
         [MeetingSideBars.Participants]: false,
+        [MeetingSideBars.AssignHost]: false,
         [MeetingSideBars.Settings]: false,
         [MeetingSideBars.Chat]: false,
         [MeetingSideBars.MeetingDetails]: false,

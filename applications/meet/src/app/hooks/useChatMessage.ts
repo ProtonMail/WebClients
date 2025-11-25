@@ -33,7 +33,7 @@ export const useChatMessage = () => {
                 timestamp: Date.now(),
             };
 
-            const encodedMessage = new TextEncoder().encode(JSON.stringify(message));
+            const encodedMessage = new TextEncoder().encode(JSON.stringify({ messageType: 'chat', ...message }));
 
             await room.localParticipant.publishData(encodedMessage, { reliable: true });
 
@@ -49,6 +49,7 @@ export const useChatMessage = () => {
                 },
             ]);
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.error('Error sending chat message:', error);
         }
     };

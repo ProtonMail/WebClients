@@ -6,6 +6,7 @@ import { LogLevel, Room, setLogExtension } from 'livekit-client';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider';
+import { UIStateProvider } from '../../contexts/UIStateContext';
 import { audioQuality, qualityConstants, screenShareQuality } from '../../qualityConstants';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
@@ -67,7 +68,9 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     return (
         <RoomContext.Provider value={roomRef.current}>
             <MediaManagementProvider>
-                <ProtonMeetContainer guestMode={guestMode} room={roomRef.current} keyProvider={keyProvider} />
+                <UIStateProvider instantMeeting={false}>
+                    <ProtonMeetContainer guestMode={guestMode} room={roomRef.current} keyProvider={keyProvider} />
+                </UIStateProvider>
             </MediaManagementProvider>
         </RoomContext.Provider>
     );
