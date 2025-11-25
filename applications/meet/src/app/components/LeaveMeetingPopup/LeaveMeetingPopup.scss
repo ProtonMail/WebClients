@@ -1,0 +1,27 @@
+.end-meeting-for-all-button,
+.leave-meeting-button {
+	background-color: var(--signal-danger-major-3);
+
+	&:hover,
+	&:focus-within {
+		background-color: var(--signal-danger-minor-1);
+	}
+}
+
+.assign-new-host-button {
+	background-color: var(--interaction-weak);
+
+	&:hover,
+	&:focus-within {
+		background-color: var(--interaction-weak-minor-1);
+	}
+}
+
+.leave-button {
+	background-color: var(--signal-danger-major-3);
+
+	&:hover,
+	&:focus-within {
+		background-color: var(--signal-danger-minor-1);
+	}
+}

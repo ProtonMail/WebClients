@@ -1,14 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
+import type { Participant } from 'livekit-client';
+
 import useApi from '@proton/components/hooks/useApi';
 import { queryParticipants } from '@proton/shared/lib/api/meet';
 
-import type { ParticipantEntity } from '../types';
+import { ParticipantCapabilityPermission, type ParticipantEntity } from '../types';
 
 const FETCH_TIME_CONSTRAINT_MS = 5000;
 const PARTICIPANT_COUNT_THRESHOLD = 10;
 
 export const useParticipantNameMap = () => {
+    const room = useRoomContext();
+    const { localParticipant } = useLocalParticipant();
+
     const [participantNameMap, setParticipantNameMap] = useState<Record<string, string>>({});
     const [participantsMap, setParticipantsMap] = useState<Record<string, ParticipantEntity>>({});
 
@@ -64,6 +70,7 @@ export const useParticipantNameMap = () => {
                 await handleFetch(meetingLinkName);
             }
         } catch (error) {
+            // eslint-disable-next-line no-console
             console.error(error);
         } finally {
             isFetchingRef.current = false;
@@ -75,6 +82,46 @@ export const useParticipantNameMap = () => {
         setParticipantsMap({});
     };
 
+    const updateAdminParticipant = async (roomId: string, participantUid: string, participantType: Number) => {
+        if (participantUid === localParticipant?.identity) {
+            await getParticipants(roomId);
+            return;
+        }
+
+        setParticipantsMap((prev) =>
+            Object.fromEntries(
+                Object.entries(prev).map(([key, value]) => {
+                    const isTargetParticipant = value.ParticipantUUID === participantUid;
+                    const isAdmin = isTargetParticipant && participantType === 1;
+                    const adminPermission = isAdmin ? ParticipantCapabilityPermission.Allowed : value.IsAdmin;
+
+                    return [
+                        key,
+                        {
+                            ...value,
+                            IsAdmin: adminPermission,
+                        },
+                    ];
+                })
+            )
+        );
+    };
+
+    useEffect(() => {
+        const handleParticipantDisconnected = (participant: Participant) => {
+            setParticipantsMap((prev) => {
+                const { [participant.identity]: removed, ...rest } = prev;
+                return rest;
+            });
+        };
+
+        room.on('participantDisconnected', handleParticipantDisconnected);
+
+        return () => {
+            room.off('participantDisconnected', handleParticipantDisconnected);
+        };
+    }, [room]);
+
     useEffect(() => {
         return () => {
             if (timeoutRef.current) {
@@ -83,5 +130,5 @@ export const useParticipantNameMap = () => {
         };
     }, []);
 
-    return { participantNameMap, getParticipants, participantsMap, resetParticipantNameMap };
+    return { participantNameMap, getParticipants, participantsMap, resetParticipantNameMap, updateAdminParticipant };
 };

@@ -11,21 +11,7 @@ import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
 import type { MeetChatMessage } from '../types';
 import { MeetingSideBars } from '../types';
-
-const isValidChatMessageString = (jsonString: string): boolean => {
-    const dangerousPatterns = [
-        '__proto__',
-        'constructor',
-        'prototype',
-        '__defineGetter__',
-        '__defineSetter__',
-        '__lookupGetter__',
-        '__lookupSetter__',
-    ];
-
-    const lowerStr = jsonString.toLowerCase();
-    return !dangerousPatterns.some((pattern) => lowerStr.includes(pattern));
-};
+import { isValidMessageString } from '../utils/isValidMessageString';
 
 export const useChat = () => {
     const room = useRoomContext();
@@ -50,7 +36,7 @@ export const useChat = () => {
                 const decodedPayload = new TextDecoder().decode(payload);
 
                 if (
-                    !isValidChatMessageString(decodedPayload) ||
+                    !isValidMessageString(decodedPayload) ||
                     decodedPayload.length === 0 ||
                     decodedPayload.length > 50000
                 ) {

@@ -12,7 +12,7 @@ import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { useMLSContext } from '../../contexts/MLSContext';
-import { useIsLocalParticipantHost } from '../../hooks/useIsLocalParticipantHost';
+import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { ParticipantCapabilityPermission } from '../../types';
 
 import './ParticipantHostControls.scss';
@@ -30,11 +30,11 @@ export const ParticipantHostControls = ({
 }: ParticipantHostControlsProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const isLocalParticipantHost = useIsLocalParticipantHost();
+    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
     const mls = useMLSContext();
 
-    if (!isLocalParticipantHost) {
+    if (!isLocalParticipantAdmin && !isLocalParticipantHost) {
         return null;
     }
 

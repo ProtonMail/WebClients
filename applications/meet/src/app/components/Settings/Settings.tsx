@@ -11,7 +11,7 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
-import { useIsLocalParticipantHost } from '../../hooks/useIsLocalParticipantHost';
+import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { MeetingSideBars } from '../../types';
 import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
 import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
@@ -26,7 +26,7 @@ export const Settings = () => {
 
     const { sideBarState, toggleSideBarState, selfView, setSelfView } = useUIStateContext();
 
-    const isLocalParticipantHost = useIsLocalParticipantHost();
+    const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
     const [loadingLock, withLoadingLock] = useLoading();
     const [loadingBackgroundBlur, withLoadingBackgroundBlur] = useLoading();
@@ -45,7 +45,7 @@ export const Settings = () => {
             }
         >
             <div className="flex flex-column w-full gap-4 pr-4">
-                {isLocalParticipantHost && (
+                {(isLocalParticipantAdmin || isLocalParticipantHost) && (
                     <div className="flex flex-column w-full gap-4">
                         <div className="text-semibold color-weak pb-2">Host</div>
                         <div className="flex flex-column w-full gap-4 pl-4">
