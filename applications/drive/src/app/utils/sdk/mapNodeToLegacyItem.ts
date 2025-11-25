@@ -11,8 +11,9 @@ import {
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { FileBrowserBaseItem } from '../../components/FileBrowser';
-import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../store';
+import type { EncryptedLink, LinkShareUrl } from '../../store';
 import { getNodeEntity } from './getNodeEntity';
+import { getSignatureIssues } from './getSignatureIssues';
 import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';
 
 export type LegacyItem = FileBrowserBaseItem & {
@@ -27,7 +28,7 @@ export type LegacyItem = FileBrowserBaseItem & {
     mimeType: string;
     fileModifyTime: number;
     shareUrl?: LinkShareUrl;
-    signatureIssues?: SignatureIssues;
+    hasSignatureIssues: boolean;
     signatureEmail?: string;
     /** @deprecated use storageSize instead */
     size: number;
@@ -92,7 +93,7 @@ export const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): P
 };
 
 export const mapNodeToLegacyItem = async (
-    maybeNode: MaybeNode | NodeEntity,
+    maybeNode: MaybeNode,
     defaultShareId: string,
     drive: ProtonDriveClient = getDrive()
 ): Promise<LegacyItem> => {
@@ -118,6 +119,8 @@ export const mapNodeToLegacyItem = async (
             thumbnails: [],
         };
     }
+
+    const sdkSignatureIssues = getSignatureIssues(maybeNode);
 
     return {
         uid: node.uid,
@@ -146,5 +149,6 @@ export const mapNodeToLegacyItem = async (
         isShared: node.isShared,
         isSharedPublicly: node.isSharedPublicly,
         treeEventScopeId: node.treeEventScopeId,
+        hasSignatureIssues: sdkSignatureIssues.ok,
     };
 };

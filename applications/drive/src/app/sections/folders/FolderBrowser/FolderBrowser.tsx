@@ -84,6 +84,7 @@ const NameCellWithThumbnail = ({ item }: { item: ItemWithAdditionalProps }) => {
     const thumbnail = useThumbnailStore((state) =>
         item.thumbnailId ? state.getThumbnail(item.thumbnailId) : undefined
     );
+
     return (
         <NameCell
             name={item.name}
@@ -91,7 +92,7 @@ const NameCellWithThumbnail = ({ item }: { item: ItemWithAdditionalProps }) => {
             type={item.isFile ? NodeType.File : NodeType.Folder}
             thumbnailUrl={thumbnail?.sdUrl}
             isInvitation={false}
-            haveSignatureIssues={undefined}
+            haveSignatureIssues={item.hasSignatureIssues}
         />
     );
 };

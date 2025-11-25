@@ -24,6 +24,7 @@ export type FolderViewItem = {
     trashed: number | null;
     rootUid?: string;
     parentUid: string | undefined;
+    hasSignatureIssues: boolean;
 };
 
 export type FolderViewData = {
