@@ -3,7 +3,8 @@ import { type ReactElement, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import Info from '@proton/components/components/link/Info';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
@@ -143,7 +144,7 @@ const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency
     return (
         <div className="mt-6 flex flex-nowrap color-weak">
             <div className="shrink-0 mr-2">
-                <Icon name="info-circle" />
+                <IcInfoCircle />
             </div>
             <div>{c('Info').jt`${plan.Title} requires at least 1 dedicated server ${serverPricePerMonth}`}</div>
         </div>
@@ -863,15 +864,15 @@ const PlanSelection = (props: Props) => {
     const logosRow = (
         <div className="my-6 flex justify-center flex-nowrap items-center color-weak">
             <MailLogo variant="glyph-only" />
-            <Icon name="plus" alt="+" className="mx-2" />
+            <IcPlus alt="+" className="mx-2" />
             <CalendarLogo variant="glyph-only" />
-            <Icon name="plus" alt="+" className="mx-2" />
+            <IcPlus alt="+" className="mx-2" />
             <DriveLogo variant="glyph-only" />
-            <Icon name="plus" alt="+" className="mx-2" />
+            <IcPlus alt="+" className="mx-2" />
             <VpnLogo variant="glyph-only" />
-            <Icon name="plus" alt="+" className="mx-2" />
+            <IcPlus alt="+" className="mx-2" />
             <PassLogo variant="glyph-only" />
-            <Icon name="plus" alt="+" className="mx-2" />
+            <IcPlus alt="+" className="mx-2" />
             <WalletLogo variant="glyph-only" />
         </div>
     );

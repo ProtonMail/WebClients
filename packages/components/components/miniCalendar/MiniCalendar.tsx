@@ -7,7 +7,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import TodayIcon from '@proton/components/components/icon/TodayIcon';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import clsx from '@proton/utils/clsx';
@@ -198,7 +199,7 @@ const MiniCalendar = ({
                                 onClick={() => handleSwitchMonth(-1)}
                                 data-testid="minicalendar:previous-month"
                             >
-                                <Icon name="chevron-left" className="minicalendar-icon" alt={prevMonth} />
+                                <IcChevronLeft className="minicalendar-icon" alt={prevMonth} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={nextMonth}>
@@ -212,7 +213,7 @@ const MiniCalendar = ({
                                 onClick={() => handleSwitchMonth(1)}
                                 data-testid="minicalendar:next-month"
                             >
-                                <Icon name="chevron-right" className="minicalendar-icon" alt={nextMonth} />
+                                <IcChevronRight className="minicalendar-icon" alt={nextMonth} />
                             </Button>
                         </Tooltip>
                     </>

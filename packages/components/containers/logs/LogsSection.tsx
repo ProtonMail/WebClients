@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import Info from '@proton/components/components/link/Info';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import Pagination from '@proton/components/components/pagination/Pagination';
@@ -240,7 +241,7 @@ const LogsSection = () => {
                                 onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
                                 title={c('Action').t`Reload`}
                             >
-                                <Icon name="arrow-rotate-right" className="mr-2" />
+                                <IcArrowRotateRight className="mr-2" />
                                 <span>{c('Action').t`Reload`}</span>
                             </Button>
                             {!hasB2BLogs && state.logs.length > 0 && (
@@ -257,7 +258,7 @@ const LogsSection = () => {
                                         loading={loadingDownload}
                                         title={c('Action').t`Export`}
                                     >
-                                        <Icon name="arrow-down-line" className="mr-2" />
+                                        <IcArrowDownLine className="mr-2" />
                                         {c('Action').t`Export`}
                                     </Button>
                                 </>

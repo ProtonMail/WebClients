@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
@@ -136,7 +136,7 @@ const CalendarMemberRow = ({
                         onClick={handleDelete}
                         className="ml-auto calendar-member-delete-button-icon"
                     >
-                        <Icon name="trash" alt={deleteLabel} />
+                        <IcTrash alt={deleteLabel} />
                     </Button>
                 </Tooltip>
                 <div className="calendar-member-delete-button-full">
@@ -148,7 +148,7 @@ const CalendarMemberRow = ({
                         onClick={handleDelete}
                         className="inline-flex items-center flex-nowrap"
                     >
-                        <Icon name="trash" alt="" className="mr-1 shrink-0" />
+                        <IcTrash alt="" className="mr-1 shrink-0" />
                         <span>{deleteLabel}</span>
                     </Button>
                 </div>

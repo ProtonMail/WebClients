@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type {
@@ -76,7 +76,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('custom-domain')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Set up a custom domain`} />
+                    <IcChevronRight alt={c('Action').t`Set up a custom domain`} />
                 </ButtonLike>
             ),
             illustration: customDomainImg,
@@ -101,7 +101,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('add-users')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Manage users/addresses`} />
+                    <IcChevronRight alt={c('Action').t`Manage users/addresses`} />
                 </ButtonLike>
             ),
             illustration: addUsersImg,
@@ -127,7 +127,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('easy-switch')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Import emails, calendars, contacts`} />
+                    <IcChevronRight alt={c('Action').t`Import emails, calendars, contacts`} />
                 </ButtonLike>
             ),
             illustration: easySwitchImg,
@@ -153,7 +153,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('recovery')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Set recovery methods`} />
+                    <IcChevronRight alt={c('Action').t`Set recovery methods`} />
                 </ButtonLike>
             ),
             illustration: recoveryImg,
@@ -179,7 +179,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('2fa')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Set up 2FA`} />
+                    <IcChevronRight alt={c('Action').t`Set up 2FA`} />
                 </ButtonLike>
             ),
             illustration: twoFAImg,
@@ -204,7 +204,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('user-groups')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Manage groups`} />
+                    <IcChevronRight alt={c('Action').t`Manage groups`} />
                 </ButtonLike>
             ),
             illustration: userGroupsImg,
@@ -230,7 +230,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('security')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Manage advanced account protections`} />
+                    <IcChevronRight alt={c('Action').t`Manage advanced account protections`} />
                 </ButtonLike>
             ),
             illustration: securityImg,
@@ -256,7 +256,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('security-breaches')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Turn on ${DARK_WEB_MONITORING_NAME}`} />
+                    <IcChevronRight alt={c('Action').t`Turn on ${DARK_WEB_MONITORING_NAME}`} />
                 </ButtonLike>
             ),
             illustration: securityBreachesImg,
@@ -277,7 +277,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('get-the-apps')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Get the apps`} />
+                    <IcChevronRight alt={c('Action').t`Get the apps`} />
                 </ButtonLike>
             ),
             illustration: appsImg,
@@ -302,7 +302,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('imap-smtp')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Connect apps and devices`} />
+                    <IcChevronRight alt={c('Action').t`Connect apps and devices`} />
                 </ButtonLike>
             ),
             illustration: imapSmtpImg,
@@ -327,7 +327,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('email-forwarding')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Set up email forwarding`} />
+                    <IcChevronRight alt={c('Action').t`Set up email forwarding`} />
                 </ButtonLike>
             ),
             illustration: forwardImg,
@@ -352,7 +352,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('calendar-sharing')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Share your calendar with your team`} />
+                    <IcChevronRight alt={c('Action').t`Share your calendar with your team`} />
                 </ButtonLike>
             ),
             illustration: calendarSharingImg,
@@ -377,7 +377,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('calendar-zoom')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Connect to video conferencing`} />
+                    <IcChevronRight alt={c('Action').t`Connect to video conferencing`} />
                 </ButtonLike>
             ),
             illustration: zoomImg,
@@ -403,7 +403,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('share-files')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Upload and share files`} />
+                    <IcChevronRight alt={c('Action').t`Upload and share files`} />
                 </ButtonLike>
             ),
             illustration: driveSharingImg,
@@ -429,7 +429,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('docs')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Collaborate on documents`} />
+                    <IcChevronRight alt={c('Action').t`Collaborate on documents`} />
                 </ButtonLike>
             ),
             illustration: docsImg,
@@ -451,7 +451,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('get-drive-app')}
                     target="_blank"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Download ${DRIVE_APP_NAME} apps`} />
+                    <IcChevronRight alt={c('Action').t`Download ${DRIVE_APP_NAME} apps`} />
                 </ButtonLike>
             ),
             illustration: driveAppImg,
@@ -478,7 +478,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('use-vpn')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Use ${VPN_SHORT_APP_NAME} for data privacy`} />
+                    <IcChevronRight alt={c('Action').t`Use ${VPN_SHORT_APP_NAME} for data privacy`} />
                 </ButtonLike>
             ),
             illustration: vpnImg,
@@ -505,7 +505,7 @@ export const getFeatures = (
                     onClick={() => onClickCTA?.('password-management')}
                     target="_self"
                 >
-                    <Icon name="chevron-right" alt={c('Action').t`Use ${PASS_APP_NAME} for Business`} />
+                    <IcChevronRight alt={c('Action').t`Use ${PASS_APP_NAME} for Business`} />
                 </ButtonLike>
             ),
             illustration: passImg,

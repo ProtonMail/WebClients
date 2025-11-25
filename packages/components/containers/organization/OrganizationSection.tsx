@@ -12,6 +12,8 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Row from '@proton/components/components/container/Row';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
@@ -387,7 +389,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                                     onClick={() => setOrganizationLogoModal(true)}
                                                     className="inline-flex items-center"
                                                 >
-                                                    <Icon name="pen" className="mr-1" /> {c('Action').t`Change`}
+                                                    <IcPen className="mr-1" /> {c('Action').t`Change`}
                                                 </Button>
 
                                                 <Button
@@ -395,7 +397,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                                     onClick={() => setOrganizationLogoRemovalModal(true)}
                                                     className="inline-flex items-center"
                                                 >
-                                                    <Icon name="trash" className="mr-1" /> {c('Action').t`Remove`}
+                                                    <IcTrash className="mr-1" /> {c('Action').t`Remove`}
                                                 </Button>
                                             </ButtonGroup>
                                         </div>

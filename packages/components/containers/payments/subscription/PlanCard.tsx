@@ -3,7 +3,7 @@ import type { ReactElement, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import Price, { type Props as PriceProps } from '@proton/components/components/price/Price';
 import { PLANS, getIsB2BAudienceFromPlan } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
@@ -97,7 +97,7 @@ const PlanCard = ({
                 {recommended ? (
                     <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
                         <div className="plan-selection-plan-recommended-pill inline-flex mx-auto bg-primary py-1 px-3">
-                            <Icon name="star-filled" className="my-auto" />
+                            <IcStarFilled className="my-auto" />
                             <span className="ml-1">{c('Title').t`Recommended`}</span>
                         </div>
                     </div>

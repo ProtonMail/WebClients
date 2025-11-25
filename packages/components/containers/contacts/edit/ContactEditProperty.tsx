@@ -5,7 +5,9 @@ import { c } from 'ttag';
 
 import type { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
@@ -68,7 +70,7 @@ const ContactEditProperty = (
         list.push({
             color: 'weak',
             shape: 'outline',
-            text: <Icon name="trash" className="m-auto" alt={c('Action').t`Delete`} />,
+            text: <IcTrash className="m-auto" alt={c('Action').t`Delete`} />,
             onClick: () => {
                 if (vCardProperty.uid) {
                     onRemove(vCardProperty.uid);
@@ -102,12 +104,12 @@ const ContactEditProperty = (
             {sortable ? (
                 <div {...sortable.attributes} {...sortable.listeners}>
                     <div className="cursor-row-resize mr-2 flex shrink-0 mb-4 mt-0.5">
-                        <Icon name="text-align-justify" className="mt-2" />
+                        <IcTextAlignJustify className="mt-2" />
                     </div>
                 </div>
             ) : (
                 <div className="mr-2 flex items-center shrink-0">
-                    <Icon name="text-align-justify" className="visibility-hidden" />
+                    <IcTextAlignJustify className="visibility-hidden" />
                 </div>
             )}
             <div className="contact-modal-field relative flex flex-nowrap flex-column md:flex-row w-full items-stretch md:items-start">
@@ -164,7 +166,7 @@ const ContactEditProperty = (
                                             onUpgrade={onUpgrade}
                                             disabled={!validateEmailAddress(vCardProperty.value || '')}
                                         >
-                                            <Icon name="users" alt={c('Action').t`Contact group`} />
+                                            <IcUsers alt={c('Action').t`Contact group`} />
                                         </ContactGroupDropdown>
                                     )}
                                     <DropdownActions icon list={list} />

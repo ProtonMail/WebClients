@@ -8,7 +8,8 @@ import { organizationActions } from '@proton/account/organization';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import DateInput from '@proton/components/components/input/DateInput';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
@@ -347,7 +348,7 @@ const AuthenticationLogs = ({
                                         loading={loadingDownload}
                                         title={c('Action').t`Refresh`}
                                     >
-                                        <Icon name="arrow-rotate-right" className="mr-2" />
+                                        <IcArrowRotateRight className="mr-2" />
                                         {c('Action').t`Refresh`}
                                     </Button>
                                     <Button
@@ -357,7 +358,7 @@ const AuthenticationLogs = ({
                                         loading={loadingDownload}
                                         title={c('Action').t`Export`}
                                     >
-                                        <Icon name="arrow-down-line" className="mr-2" />
+                                        <IcArrowDownLine className="mr-2" />
                                         {c('Action').t`Export`}
                                     </Button>
                                 </div>

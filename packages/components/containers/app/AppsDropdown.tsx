@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import type { AppLinkProps } from '@proton/components/components/link/AppLink';
 import useConfig from '@proton/components/hooks/useConfig';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
@@ -58,7 +58,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
             <SimpleDropdown
                 type="button"
                 hasCaret={false}
-                content={<Icon name="app-switch" size={6} className="apps-dropdown-button-icon shrink-0 no-print" />}
+                content={<IcAppSwitch size={6} className="apps-dropdown-button-icon shrink-0 no-print" />}
                 className="apps-dropdown-button shrink-0"
                 dropdownClassName="apps-dropdown rounded-lg"
                 originalPlacement="bottom-start"

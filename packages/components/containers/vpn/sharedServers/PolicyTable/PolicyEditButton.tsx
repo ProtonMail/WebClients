@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 
 import EditPolicyDropdownMenu from '../EditPolicyDropdownMenu';
@@ -33,7 +33,7 @@ const PolicyEditButton = ({
                 shape="ghost"
                 size="small"
             >
-                {c('Action').t`Edit`} <Icon name="three-dots-vertical" alt={c('Action').t`Edit`} />
+                {c('Action').t`Edit`} <IcThreeDotsVertical alt={c('Action').t`Edit`} />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <EditPolicyDropdownMenu

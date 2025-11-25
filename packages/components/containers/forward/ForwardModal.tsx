@@ -6,7 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import LoadingTextStepper from '@proton/components/components/loader/LoadingTextStepper';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -411,7 +411,7 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
                         </div>
                         {model.encryptionFixupDetails ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
-                                <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
+                                <IcExclamationCircleFilled className="shrink-0 color-warning" />
                                 <p className="text-sm color-weak flex-1 pl-4 my-0">
                                     {model.encryptionFixupDetails.setup}
                                 </p>

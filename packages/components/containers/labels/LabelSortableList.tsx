@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { SortableList } from '@proton/components/components/dnd/SortableList';
 import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
+import { IcTag } from '@proton/icons/icons/IcTag';
 import { Handle } from '@proton/components/components/table/Handle';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -27,7 +28,7 @@ const SortableListItem = ({ label }: { label: Label }) => {
             </TableCell>
             <TableCell>
                 <div key="label" className="flex flex-nowrap">
-                    <Icon name="tag" style={{ fill: Color }} className="icon-size-4 shrink-0 mr-4 my-auto" />
+                    <IcTag style={{ fill: Color }} className="icon-size-4 shrink-0 mr-4 my-auto" />
                     <span className="text-ellipsis" title={Name} data-testid="folders/labels:item-name">
                         {Name}
                     </span>
@@ -55,7 +56,7 @@ const LabelSortableList = ({ items, onSortEnd }: Props) => {
                 <TableHeader>
                     <tr>
                         <th scope="col" className="w-custom" style={{ '--w-custom': '5%' }}>
-                            <Icon name="arrows-cross" alt={c('Settings/labels - table').t`Drag to reorder`} />
+                            <IcArrowsCross alt={c('Settings/labels - table').t`Drag to reorder`} />
                         </th>
                         <th scope="col">{c('Settings/labels - table').t`Labels`}</th>
                         <th scope="col" className="w-custom" style={{ '--w-custom': '10em' }}>

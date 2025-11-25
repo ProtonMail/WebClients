@@ -7,7 +7,8 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms/Input/Input';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import generateUID from '@proton/utils/generateUID';
 
@@ -71,7 +72,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
             >
                 <span className="flex mr-2">
                     {!value ? (
-                        <Icon name="globe" className="align-middle inline-flex" />
+                        <IcGlobe className="align-middle inline-flex" />
                     ) : (
                         <img
                             role="presentation"
@@ -142,7 +143,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                         onValue={setSearch}
                         autoFocus={!embedded}
                         placeholder="Country"
-                        prefix={<Icon name="magnifier" alt={c('Action').t`Search countries`} />}
+                        prefix={<IcMagnifier alt={c('Action').t`Search countries`} />}
                     />
                 </form>
 

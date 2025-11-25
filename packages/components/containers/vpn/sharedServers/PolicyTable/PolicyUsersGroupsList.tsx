@@ -4,7 +4,8 @@ import { c, msgid } from 'ttag';
 
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
+import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type {
     SharedServerGroup,
@@ -26,7 +27,7 @@ const PolicyUserChip = ({ user: u, deleted }: { user: SharedServerUser; deleted:
             `flex items-center gap-1 px-2 rounded-lg policy-member-chip prevent-interaction`
         )}
     >
-        <Icon name="user-filled" />
+        <IcUserFilled />
         <div className="text-base text-semibold">{u.Name}</div>
     </div>
 );
@@ -50,13 +51,13 @@ const PolicyGroupChip = ({ group, deleted }: { group: SharedServerGroup; deleted
                 shape="ghost"
                 size="small"
             >
-                <Icon name="users-filled" />
+                <IcUsersFilled />
                 <div className="text-base text-semibold">{group.Name}</div>
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 {group.Users.map((user) => (
                     <div key={user.UserID} className="flex items-center gap-1 py-2 px-4">
-                        <Icon name="user-filled" />
+                        <IcUserFilled />
                         <div className="text-base">{user.Name}</div>
                     </div>
                 ))}
