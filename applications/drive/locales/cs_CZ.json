@@ -1002,9 +1002,6 @@
       "Show advanced PGP settings": [
         "Zobrazit pokročilé nastavení PGP"
       ],
-      "Show location": [
-        "Zobrazit umístění"
-      ],
       "Show more": [
         "Zobrazit více"
       ],
@@ -1279,140 +1276,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Pokud teď odejdete, některé události nebudou importovány"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Využít nabídku"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB úložiště"
-      ],
-      "200 GB storage": [
-        "200 GB prostoru"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB šifrovaného úložiště"
-      ],
-      "Add unlimited credit cards": [
-        "Přidejte neomezený počet platebních karet"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Všechny prémiové funkce ${ BRAND_NAME } Mail, Pass, VPN, Drive a Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokování reklam, sledovacích prvků a malware"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Slevy jsou založeny na standardních měsíčních cenách. Na konci fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Zdvojnásobte své šifrované úložiště – získejte 1 TB pro všechna svá data"
-      ],
-      "Encrypted password manager": [
-        "Šifrovaný správce hesel"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Zde je exkluzivní dárek na oslavu naší společné cesty."
-      ],
-      "High speed streaming with VPN": [
-        "Vysokorychlostní streamování pomocí VPN"
-      ],
-      "of privacy": [
-        "soukromí"
-      ],
-      "Online document editor": [
-        "Online editor dokumentů"
-      ],
-      "Online privacy for up to 2 people": [
-        "Online soukromí až pro 2 osoby"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Online soukromí pro celou rodinu (až 6 uživatelů)"
-      ],
-      "Protect up to 10 devices": [
-        "Chraňte až 10 zařízení"
-      ],
-      "Recover previous file versions": [
-        "Obnova předchozích verzí souborů"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Drive."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Mail."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích Pass."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "S časově omezenou slevovou nabídkou ušetříte na prémiových funkcích VPN."
-      ],
-      "Save time with built-in 2FA": [
-        "Úspora času díky integrovanému 2FA"
-      ],
-      "Secure email with unlimited aliases": [
-        "Zabezpečený e-mail s neomezeným počtem aliasů"
-      ],
-      "Select any server": [
-        "Vyberte libovolný server"
-      ],
-      "Share passwords easily": [
-        "Snadné sdílení hesel"
-      ],
-      "Short @pm.me address": [
-        "Krátká adresa @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Streamujte svůj oblíbený obsah"
-      ],
-      "thanks to you": [
-        "díky vám"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Ztrojnásobte své šifrované úložiště – získejte 3 TB pro všechna svá data"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Neomezený počet složek, štítků a filtrů"
-      ],
-      "Use your own email domain": [
-        "Použijte svou vlastní e-mailovou doménu"
-      ],
-      "years": [
-        "let"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Výroční nabídka"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } měsíc",
-        "${ n } měsíce",
-        "${ n } měsíců",
-        "${ n } měsíců"
-      ],
-      "/ month": [
-        "/ měsíc"
-      ],
-      "12 months": [
-        "12 měsíců"
-      ],
-      "15 months": [
-        "15 měsíců"
-      ],
-      "24 months": [
-        "24 měsíců"
-      ],
-      "30 months": [
-        "30 měsíců"
-      ],
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -3567,9 +3430,6 @@
       "Folder \"${ name }\" is already downloading": [
         "Složka \"${ name }\" se již stahuje"
       ],
-      "Folder creation failed": [
-        "Vytvoření složky selhalo"
-      ],
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
       ],
@@ -3900,6 +3760,9 @@
       "Unexpected error, we can't import the contacts": [
         "Neočekávaná chyba, kontakty nelze importovat"
       ],
+      "Unknown conflict strategy: ${ strategy }": [
+        "Neznámá strategie řešení konfliktů: ${ strategy }"
+      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
@@ -3917,9 +3780,6 @@
       ],
       "Upload for this folder is temporarily disabled": [
         "Nahrávání pro tuto složku je dočasně zakázáno"
-      ],
-      "Upload not found": [
-        "Nahrávání nenalezeno"
       ],
       "Username must begin with a letter or digit": [
         "Uživatelské jméno musí začínat písmenem nebo číslicí"

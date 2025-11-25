@@ -6,10 +6,10 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Redirecționarea va începe curând. Noile mesaje vor apărea în folderul «Primite»."
+        "Transferarea va începe în curând. Noile mesaje vor apărea în folderul «Primite»."
       ],
       "Mail forward stopped": [
-        "Redirecționare mesaje oprită"
+        "Transferare mesaje oprită"
       ]
     },
     "Account Settings - Info": {
@@ -361,7 +361,7 @@
         "Ați uitat parola?"
       ],
       "Forward as attachment": [
-        "Redirecționare ca atașament"
+        "Transferare ca atașament"
       ],
       "Generate password": [
         "Generare parolă"
@@ -706,7 +706,7 @@
         "Configurați un domeniu personal"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Settings": [
         "Setări"
@@ -928,139 +928,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Renunțând acum, unele evenimente nu vor fi importate."
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Luați oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "200 GB storage": [
-        "200 GiB spațiu de stocare"
-      ],
-      "500 GB encrypted storage": [
-        "500 GiB de stocare criptată"
-      ],
-      "Add unlimited credit cards": [
-        "Adăugați carduri de plată nelimitate"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Toate funcțiile speciale ale ${ BRAND_NAME } Mail, Pass, VPN, Drive și Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocare reclame, urmăritori și programe malițioase"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Reducerile se bazează pe prețurile lunare standard. La sfârșitul ciclului de facturare, abonamentul se va reînnoi la tariful anual standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dublați-vă stocarea criptată – obțineți 1 TiB pentru toate datele stocate"
-      ],
-      "Encrypted password manager": [
-        "Manager de parole criptat"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Iată un cadou exclusiv pentru a sărbători călătoria noastră împreună."
-      ],
-      "High speed streaming with VPN": [
-        "Transmisii în flux de mare viteză cu VPN"
-      ],
-      "of privacy": [
-        "de confidențialitate"
-      ],
-      "Online document editor": [
-        "Editor de documente online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Confidențialitate online pentru maxim două persoane"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Confidențialitate online pentru întreaga familie (până la 6 utilizatori)"
-      ],
-      "Protect up to 10 devices": [
-        "Protejați până la 10 dispozitive"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale Drive cu oferta limitată de reducere."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale Mail cu oferta limitată de reducere."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale PASS cu oferta limitată de reducere."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale VPN cu oferta limitată de reducere."
-      ],
-      "Save time with built-in 2FA": [
-        "Salvați timp cu A2F integrată"
-      ],
-      "Secure email with unlimited aliases": [
-        "E-mail securizat cu aliasuri nelimitate"
-      ],
-      "Select any server": [
-        "Selectați orice server"
-      ],
-      "Share passwords easily": [
-        "Partajați ușor parolele"
-      ],
-      "Short @pm.me address": [
-        "Adresă scurtă @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Vizionați conținutul preferat"
-      ],
-      "thanks to you": [
-        "mulțumită dvs."
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplați-vă stocarea criptată – obțineți 3 TiB pentru toate datele stocate"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Use your own email domain": [
-        "Utilizați propriul domeniu de e-mail"
-      ],
-      "years": [
-        "ani"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Ofertă aniversară"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "/ month": [
-        "/lună"
-      ],
-      "12 months": [
-        "12 luni"
-      ],
-      "15 months": [
-        "15 luni"
-      ],
-      "24 months": [
-        "24 de luni"
-      ],
-      "30 months": [
-        "30 de luni"
-      ],
-      "for ${ durationDeal }": [
-        "cu ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -2544,7 +2411,7 @@
         "De asemenea, inclus"
       ],
       "Automatically forward incoming email to another email address.": [
-        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+        "Transferați automat mesajele primite către o altă adresă de e-mail."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
@@ -3028,7 +2895,7 @@
         "Numele folderului nu poate fi gol."
       ],
       "Forward address is required": [
-        "Adresa de redirecționare este obligatorie."
+        "Adresa de transferare este obligatorie."
       ],
       "Image upload failed": [
         "Eșuare încărcare imagine"
@@ -3289,6 +3156,9 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Există probleme la salvarea editărilor recente. Împrospătați pagina."
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Există probleme la sincronizarea documentului. Împrospătați pagina."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
@@ -3309,7 +3179,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Conectați-vă cu o adresă Gmail care deja se redirecționează către ${ MAIL_APP_NAME }"
+        "Conectați-vă cu o adresă Gmail care deja se transferă mesaje către ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
@@ -5780,7 +5650,7 @@
         "Nume folder"
       ],
       "Forwards to": [
-        "Redirecționare către"
+        "Transferare către"
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
@@ -6121,7 +5991,7 @@
         "Cum să utilizați ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Cum se utilizează redirecționarea mesajelor"
+        "Cum se utilizează transferarea mesajelor"
       ],
       "How to use Groups": [
         "Cum să utilizați grupurile"
@@ -6704,7 +6574,7 @@
         "Autocompletare carduri de credit (în curând)"
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
@@ -9142,7 +9012,7 @@
         "și încă alte 15 funcții premium"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
+        "Transferare automată mesaje ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Alerte divulgări date ${ strongArgument }"
@@ -9850,7 +9720,7 @@
         "Setare frază de recuperare"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Set up your organization": [
         "Setați organizația"

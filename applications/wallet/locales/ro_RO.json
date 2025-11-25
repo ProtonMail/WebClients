@@ -97,6 +97,12 @@
       "Copy address": [
         "Copiere adresă"
       ],
+      "Copy descriptor": [
+        "Copiere descriptor"
+      ],
+      "Copy public key (${ prefix })": [
+        "Copiere cheie publică (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "Copiere număr versiune în memorie"
       ],
@@ -314,7 +320,7 @@
         "Configurați un domeniu personal"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Settings": [
         "Setări"
@@ -2013,7 +2019,7 @@
         "Adăugați foldere și fișiere în ${ DRIVE_APP_NAME } și invitați membrii echipei să le vadă sau să le editeze."
       ],
       "Automatically forward incoming email to another email address.": [
-        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+        "Transferați automat mesajele primite către o altă adresă de e-mail."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
@@ -2377,6 +2383,26 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Imagine neselectată"
+      ]
+    },
+    "Extended public key": {
+      "Descriptor copied to clipboard": [
+        "Descriptorul s-a copiat în memorie."
+      ],
+      "I want the ${ prefix } instead": [
+        "Doresc prefixul ${ prefix } în schimb"
+      ],
+      "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
+        "Importați acest descriptor în alte programe de portofel pentru a vă monitoriza soldul și a genera adrese de primire fără a vă expune cheile private."
+      ],
+      "Public key (${ prefix }) copied to clipboard": [
+        "Cheia publică (${ prefix }) a fost copiată în memorie."
+      ],
+      "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
+        "Verificați ca primele câteva adrese derivate să corespundă cu cele din ${ WALLET_APP_NAME } înainte de a continua."
+      ],
+      "We strongly recommend using the descriptor above instead, as it contains all necessary information to ensure correct address generation. xpub, ypub, and zpub are not part of standard BIPs and should only be used with caution.": [
+        "Vă recomandăm cu tărie să utilizați descriptorul de mai sus în schimb, deoarece conține toate informațiile necesare pentru a asigura generarea corectă a adresei. xpub, ypub și zpub nu fac parte din BIP-urile standard și ar trebui utilizate doar cu precauție."
       ]
     },
     "familyOffer_2023:Error": {
@@ -3391,7 +3417,7 @@
         "Cum să utilizați ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Cum se utilizează redirecționarea mesajelor"
+        "Cum se utilizează transferarea mesajelor"
       ],
       "How to use Groups": [
         "Cum să utilizați grupurile"
@@ -3651,7 +3677,7 @@
         "Autocompletare carduri de credit (în curând)"
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
@@ -5476,7 +5502,7 @@
         "Setați metodele de recuperare"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Set up your organization": [
         "Setați organizația"

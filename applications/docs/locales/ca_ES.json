@@ -923,138 +923,6 @@
         "Si sortiu ara, és possible que alguns esdeveniments no s'importin"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Aconseguiu l'oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB d'emmagatzemament"
-      ],
-      "200 GB storage": [
-        "200 GB d'emmagatzematge"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB d'emmagatzematge xifrat"
-      ],
-      "Add unlimited credit cards": [
-        "Afegiu-hi un nombre il·limitat de targetes de crèdit"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Totes les característiques prèmium de ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Bloquegeu anuncis, rastrejadors i programari maliciós"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Els descomptes es basen en els preus mensuals estàndard. Al final del cicle de facturació, la subscripció es renovarà a la tarifa anual estàndard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dupliqueu el vostre emmagatzematge xifrat: obteniu 1 TB per a totes les vostres dades."
-      ],
-      "Encrypted password manager": [
-        "Gestor de contrasenyes xifrat"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Heus aquí un regal exclusiu per celebrar el nostre camí plegats."
-      ],
-      "High speed streaming with VPN": [
-        "Estríming d'alta velocitat amb VPN"
-      ],
-      "of privacy": [
-        "de privacitat"
-      ],
-      "Online document editor": [
-        "Editor de documents en línia"
-      ],
-      "Online privacy for up to 2 people": [
-        "Privacitat en línia fins a 2 persones"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Privacitat en línia per a tota la família (fins a 6 usuaris)"
-      ],
-      "Protect up to 10 devices": [
-        "Protegiu fins a 10 dispositius"
-      ],
-      "Recover previous file versions": [
-        "Recupereu versions anteriors dels fitxers"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Drive amb un descompte per temps limitat."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Mail amb un descompte per temps limitat."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de Pass amb un descompte per temps limitat."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Aprofiteu els grans estalvis en les funcions prèmium de VPN amb un descompte per temps limitat."
-      ],
-      "Save time with built-in 2FA": [
-        "Estalvieu temps amb 2FA integrat"
-      ],
-      "Secure email with unlimited aliases": [
-        "Correu electrònic segur amb àlies il·limitats"
-      ],
-      "Select any server": [
-        "Seleccioneu qualsevol servidor"
-      ],
-      "Share passwords easily": [
-        "Compartiu contrasenyes fàcilment"
-      ],
-      "Short @pm.me address": [
-        "Adreça curta de @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Reproduïu en continu el vostre contingut favorit"
-      ],
-      "thanks to you": [
-        "gràcies a vós"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tripliqueu el vostre emmagatzematge xifrat – obteniu 3 TB per a totes les vostres dades"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre il·limitat de carpetes, etiquetes i filtres"
-      ],
-      "Use your own email domain": [
-        "Utilitzeu el vostre propi domini de correu electrònic"
-      ],
-      "years": [
-        "anys"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta d'aniversari"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
-      "/ month": [
-        "/ mes"
-      ],
-      "12 months": [
-        "12 mesos"
-      ],
-      "15 months": [
-        "15 mesos"
-      ],
-      "24 months": [
-        "24 mesos"
-      ],
-      "30 months": [
-        "30 mesos"
-      ],
-      "for ${ durationDeal }": [
-        "durant ${ durationDeal }"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicacions de ${ BRAND_NAME }"
@@ -1305,7 +1173,7 @@
         "Problema d’aplicació"
       ],
       "Authenticator problem": [
-        "Problema amb l'autenticador"
+        "Hi ha hagut un problema amb l'autenticador"
       ],
       "Black Friday": [
         "Black Friday"
@@ -3270,6 +3138,9 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Estem tenint problemes per desar les edicions recents. Actualitzeu la pàgina."
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Estem tenint problemes per sincronitzar el vostre document. Actualitzeu la pàgina."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
         "No podeu enviar un correu a més de ${ maxContacts } destinataris."
@@ -3289,7 +3160,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja us reenviarà a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -4458,7 +4329,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant un document nou..."
+        "S'està creant el nou document..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4554,7 +4425,7 @@
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Hi ha hagut un error en convertir el document: ${ errorMessage }"
+        "S'ha produït un error en convertir el document: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
         "S'ha produït un error en carregar el document: ${ errorDetail }"
@@ -4620,7 +4491,7 @@
         "Geobloqueig"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Rebeu actualitzacions per correu dels comentaris i suggeriments afegits als vostres documents."
+        "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
         "Rebeu notificacions dels comentaris"
@@ -4762,7 +4633,7 @@
         "Prioritat baixa"
       ],
       "Making a copy...": [
-        "S'està creant una còpia..."
+        "S'està fent una còpia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
@@ -4796,7 +4667,7 @@
         "Encara no s'han afegit contactes"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu un document."
+        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne un."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -5083,7 +4954,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'URL que heu introduït s'ha copiat incorrectament de Slack. Quan copieu enllaços llargs de Slack, feu clic amb el botó dret a l'enllaç i seleccioneu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'URL."
+        "Sembla que l'URL que heu introduït s'ha copiat incorrectament de l'Slack. Quan copieu enllaços llargs de l'Slack, feu clic amb el botó dret a l'enllaç i seleccioneu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5691,7 +5562,7 @@
         "Correus electrònics (el mes passat)"
       ],
       "Enable email notifications": [
-        "Habiliteu les notificacions per correu electrònic"
+        "Habiliteu les notificacions per correu"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"

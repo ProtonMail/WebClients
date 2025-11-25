@@ -1837,6 +1837,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2252,6 +2255,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "Denne version vil blive tilføjet til historikken som den nyeste version."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Dette vil afvise enheden **${ name }**, der forsøgte at logge ind på din ${ BRAND_NAME }-konto den **${ date }**."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsætte med at modtage e-mails, skal du overføre disse aliasser til en anden postkasse:"
@@ -3853,6 +3859,9 @@
       "Approve or deny it now": [
         "Godkend eller nægt det nu"
       ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Indtast bekræftelseskoden, vi sendte til din anden enhed."
+      ],
       "If you didn't make this request, cancel it now.": [
         "Hvis du ikke har anmodet om dette, så annuller det nu."
       ],
@@ -4156,7 +4165,7 @@
         "Skjulte bokse"
       ],
       "Hide my email": [
-        "Skjul min e-mail adresse"
+        "Skjul min e-mailadresse"
       ],
       "History": [
         "Historik"

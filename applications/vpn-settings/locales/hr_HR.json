@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Aktivirajte ključ organizacije"
       ],
+      "Activate recovery": [
+        "Aktivirajte oporavak"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -119,6 +122,12 @@
       "Confirm": [
         "Potvrdi"
       ],
+      "Connect": [
+        "Poveži"
+      ],
+      "Connected": [
+        "Povezano"
+      ],
       "Contact support": [
         "Kontaktiraj podršku"
       ],
@@ -176,6 +185,9 @@
       "Decrease": [
         "Smanji"
       ],
+      "Decrypt": [
+        "Dešifriraj"
+      ],
       "Delete": [
         "Izbriši"
       ],
@@ -187,6 +199,9 @@
       ],
       "Delete logo": [
         "Izbriši logo"
+      ],
+      "Delete logs": [
+        "Izbriši zapise"
       ],
       "Delete member": [
         "Izbriši člana"
@@ -212,6 +227,15 @@
       "Disable": [
         "Onemogući"
       ],
+      "Disable recovery phrase": [
+        "Onemogući frazu za oporavak"
+      ],
+      "Disable recovery phrase?": [
+        "Omogućiti frazu za oporavak?"
+      ],
+      "Disable security events": [
+        "Onemogući sigurnosne događaje"
+      ],
       "Discard": [
         "Odbaci"
       ],
@@ -227,6 +251,9 @@
       "Domain name": [
         "Naziv domene"
       ],
+      "Don't show again": [
+        "Ne prikazuj ponovno"
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -235,6 +262,9 @@
       ],
       "Download": [
         "Preuzmi"
+      ],
+      "Download recovery file": [
+        "Preuzimanje datoteke za oporavak"
       ],
       "Edit": [
         "Uredi"
@@ -307,6 +337,12 @@
       ],
       "Forgot recovery method?": [
         "Zaboravili ste metodu oporavka?"
+      ],
+      "Generate new recovery phrase": [
+        "Generirajte novu frazu za oporavak"
+      ],
+      "Generate recovery phrase": [
+        "Generirajte frazu za oporavak"
       ],
       "Get ${ planOrAppName }": [
         "Nabavite ${ planOrAppName }"
@@ -395,6 +431,12 @@
       "Mark as default": [
         "Postavi kao zadano"
       ],
+      "Mark as open": [
+        "Označi kao otvoreno"
+      ],
+      "Mark as resolved": [
+        "Označi kao riješeno"
+      ],
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
       ],
@@ -479,11 +521,20 @@
       "refresh the page": [
         "osvježi stranicu"
       ],
+      "Reject": [
+        "Odbiti"
+      ],
+      "Reload": [
+        "Ponovno učitaj"
+      ],
       "Remove": [
         "Ukloni"
       ],
       "Remove all members": [
         "Ukloniti sve članove"
+      ],
+      "Remove all other devices": [
+        "Uklanjanje svih ostalih uređaja"
       ],
       "Remove bonuses": [
         "Ukloni bonuse"
@@ -542,6 +593,9 @@
       "Revoke": [
         "Opozovi"
       ],
+      "Revoke all other sessions": [
+        "Opozovi sve ostale sesije"
+      ],
       "Save": [
         "Spremi"
       ],
@@ -595,6 +649,9 @@
       ],
       "Set new password": [
         "Postavi novu lozinku"
+      ],
+      "Set recovery phrase": [
+        "Postavite frazu za oporavak"
       ],
       "Set up auto-forwarding from Gmail": [
         "Postavite automatsko prosljeđivanje iz Gmaila"
@@ -677,11 +734,23 @@
       "Unlock": [
         "Otključaj"
       ],
+      "Unlock data": [
+        "Otključajte podatke"
+      ],
+      "Update recovery file": [
+        "Ažurirajte datoteku za oporavak"
+      ],
+      "Update recovery phrase": [
+        "Ažurirajte frazu za oporavak"
+      ],
       "Upgrade": [
         "Nadogradnja"
       ],
       "Upgrade now": [
         "Nadogradi sada"
+      ],
+      "Upgrade to view all": [
+        "Nadogradite kako biste pregledali sve"
       ],
       "Upgrade your plan": [
         "Nadogradite vaš plan"
@@ -737,11 +806,28 @@
       "View plans details": [
         "Prikaži detalje planova"
       ],
+      "Void": [
+        "Nevažeće"
+      ],
+      "Void all recovery files": [
+        "Izbrisati sve datoteke za oporavak"
+      ],
+      "Void all recovery files?": [
+        "Izbrisati sve datoteke za oporavak?"
+      ],
+      "Wipe": [
+        "Očisti"
+      ],
       "Zoom in": [
         "Povećaj"
       ],
       "Zoom out": [
         "Smanji"
+      ]
+    },
+    "Action for user session": {
+      "Revoke": [
+        "Opozovi"
       ]
     },
     "Action subscription": {
@@ -873,53 +959,6 @@
         "Nova e-pošta"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Ugrabite ponudu"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "200 GB storage": [
-        "200 MB prostora za pohranu"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blokirajte oglase, pratitelje i zlonamjerne programe"
-      ],
-      "Online document editor": [
-        "Online uređivač dokumenata"
-      ],
-      "years": [
-        "godine"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "/ month": [
-        "/ mjesec"
-      ],
-      "12 months": [
-        "12 mjeseci"
-      ],
-      "15 months": [
-        "15 mjeseci"
-      ],
-      "24 months": [
-        "24 mjeseca"
-      ],
-      "30 months": [
-        "30 mjeseci"
-      ],
-      "for ${ durationDeal }": [
-        "za ${ durationDeal }"
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Prazna ICS datoteka"
@@ -966,6 +1005,11 @@
       ],
       "Missing keys": [
         "Nedostaju ključevi"
+      ]
+    },
+    "Badge for user sessions table": {
+      "Current session": [
+        "Trenutna sesija"
       ]
     },
     "bf2023: Action": {
@@ -2330,6 +2374,12 @@
       "Create policies to decide who can connect to shared servers in each country.": [
         "Izradite pravila za odlučivanje tko se može povezati na dijeljene poslužitelje u svakoj zemlji."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Omogućite ${ PROTON_SENTINEL_NAME } za pristup ovim značajkama"
+      ],
+      "Enable detailed events to access these features": [
+        "Omogućite detaljne događaje za pristup ovim značajkama"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
       ],
@@ -2341,9 +2391,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Možete uvesti događaje u iCal formatu (ICS datoteka). Datoteka bi trebala imati maksimalnu veličinu od ${ MAX_IMPORT_FILE_SIZE_STRING } i imati do ${ MAX_IMPORT_EVENTS_STRING } događaja. Ako je vaša datoteka veća, podijelite je na manje datoteke."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Primit ćete ${ referralInfo.referrerRewardAmount } u ${ BRAND_NAME } kreditu kada se osoba koju pozovete registrira za ${ BRAND_NAME } plan, a ona će također dobiti ${ referralInfo.refereeRewardAmount } u kreditima za početak."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2789,6 +2836,9 @@
       ],
       "Unknown payment token status": [
         "Nepoznati status tokena za plaćanje"
+      ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Učitana datoteka nije valjani privatni ključ. Molimo, provjerite i pokušajte ponovno."
       ],
       "Username must begin with a letter or digit": [
         "Korisničko ime mora započinjati slovom ili brojkom"
@@ -3404,6 +3454,9 @@
       "Device": [
         "Uređaj"
       ],
+      "Domain": [
+        "Domena"
+      ],
       "Event": [
         "Događaj"
       ],
@@ -3424,6 +3477,9 @@
       ],
       "Organization key fingerprint": [
         "Jedinstveni ključ organizacije"
+      ],
+      "Password ends with": [
+        "Lozinka završava sa"
       ],
       "Payment details": [
         "Detalji o plaćanju"
@@ -3448,6 +3504,9 @@
       ],
       "User": [
         "Korisnik"
+      ],
+      "Username": [
+        "Korisničko ime"
       ]
     },
     "Header for addresses table": {
@@ -3710,6 +3769,20 @@
         "Yahoo"
       ]
     },
+    "Import provider": {
+      "Import from ${ provider }": [
+        "Uvoz iz ${ provider }a"
+      ],
+      "Import from Google": [
+        "Uvoz iz Googlea"
+      ],
+      "Import from Outlook": [
+        "Uvoz iz Outlooka"
+      ],
+      "Import from Yahoo": [
+        "Uvoz iz Yahooa"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -3810,11 +3883,17 @@
       "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "Za stvaranje grupa potrebna je prilagođena domena. Ako nemate postavljenu prilagođenu domenu, najprije to učinite na ${ linkToDomainPage }."
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Datoteka za oporavak omogućuje Vam otključavanje i pregledavanje Vaših podataka nakon oporavka korisničkog računa"
+      ],
       "Account monitor": [
         "Nadzor korisničkog računa"
       ],
       "Account successfully updated": [
         "Račun je uspješno ažuriran"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Aktivirajte barem jednu metodu oporavka podataka kako biste bili sigurni da i dalje možete pristupiti sadržaju svog ${ BRAND_NAME } računa ako izgubite lozinku."
       ],
       "active": [
         "aktivno"
@@ -3861,6 +3940,9 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Alias e-pošte funkcionira kao adresa e-pošte, ali smanjuje neželjenu poštu i čuva Vašu stvarnu e-poštu i identitet skrivenima."
+      ],
       "and": [
         "i"
       ],
@@ -3872,6 +3954,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Jeste li sigurni da želite odbaciti vaš uvoz?"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Jeste li sigurni da želite trajno izbrisati vaše zapise?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Jeste li sigurni da želite ukloniti administrativne ovlasti ovog korisnika?"
@@ -3951,6 +4036,9 @@
       "Custom policies": [
         "Prilagođena pravila"
       ],
+      "Data locked": [
+        "Podaci zaključani"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Namjenski poslužitelji s namjenskim IP adresama mogu se dodati privatnim pristupnicima radi omogućavanja precizne kontrole pristupa."
       ],
@@ -3977,6 +4065,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći upravljati vašom organizacijom."
+      ],
+      "Do you want to revoke all other sessions than the current one?": [
+        "Želite li opozvati sve ostale sesije osim trenutne?"
       ],
       "domain used": [
         "iskorištena domena",
@@ -4013,8 +4104,14 @@
       "Emailing preference saved": [
         "Spremljena je postavka e-pošte"
       ],
+      "Enable email notifications": [
+        "Omogućite obavijesti e-pošte"
+      ],
       "Enabled on ${ boldValue }": [
         "Omogućeno ${ boldValue }"
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Ponovno omogućavanje oporavka pomoću fraze generirat će novu frazu za oporavak."
       ],
       "End date": [
         "Datum završetka"
@@ -4061,6 +4158,9 @@
       "Expired": [
         "Isteklo"
       ],
+      "Failed to fetch logs.": [
+        "Dohvaćanje zapisa nije uspjelo."
+      ],
       "finance": [
         "financije"
       ],
@@ -4078,6 +4178,9 @@
       ],
       "Gateways": [
         "Pristupnici"
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Generiranjem nove fraze za oporavak deaktivirat će se Vaša stara fraza."
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Preuzmite ${ AUTHENTICATOR_APP_NAME } za sve svoje uređaje."
@@ -4106,6 +4209,9 @@
       "If it’s not right for you, we’ll refund you.": [
         "Ako Vam ne odgovara, vratit ćemo Vam novac."
       ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Ako je to zbog starog reseta lozinke, možete spriječiti da se poruka ponovno prikazuje."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
       ],
@@ -4132,6 +4238,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ako nastavite sa snižavanjem statusa, izgubit ćete pristup plaćenim ${ VPN_APP_NAME } značajkama."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Ako ste nedavno resetirali svoju lozinku, možete koristiti metodu oporavka podataka kako biste otključali svoje podatke"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Ako Vaša organizacija ima javne ličnosti, rukuje osjetljivim podacima ili bi mogla biti metom kibernetičkih napada, izrazito se preporučuje da omogućite ${ PROTON_SENTINEL_NAME } za sve u Vašoj organizaciji."
@@ -4273,6 +4382,9 @@
       "Monitor accounts": [
         "Nadzor korisničkih računa"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Nadzirite i revidirajte pokušaje autentifikacije za sve ${ BRAND_NAME } usluge koje koriste Vaše ${ BRAND_NAME } vjerodajnice."
+      ],
       "Multi-user support not enabled.": [
         "Višekorisnička podrška nije omogućena."
       ],
@@ -4290,6 +4402,9 @@
       ],
       "No addresses exist": [
         "Ne postoji ni jedna adresa e-pošte"
+      ],
+      "No logs yet.": [
+        "Nema zapisa."
       ],
       "No payment is required at this time.": [
         "Trenutno nije potrebno plaćanje."
@@ -4354,8 +4469,14 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Molimo, unesite frazu za oporavak od 12 riječi povezanu s Vašim korisničkim računom."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Molimo, čuvajte ju na sigurnom. Trebat će Vam za pristup vašem korisničkom računu i dešifriranje Vaših podataka u slučaju resetiranja lozinke."
+      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Pokušajte ponovo, koristite drugi način plaćanja ili kontaktirajte PayPal za pomoć."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "I još ${ numOfBreaches }"
       ],
       "Plus or Visionary subscription required": [
         "Plus ili Visionary pretplata je potrebna"
@@ -4380,6 +4501,12 @@
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Preporučeno na pouzdanim uređajima. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery phrase copied to clipboard": [
+        "Fraza za oporavak kopirana u međuspremnik"
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        "Fraza za oporavak nije povezana ni sa jednim ključem."
       ],
       "Referral link copied to your clipboard": [
         "Referalna poveznica je kopirana u Vaš međuspremnik"
@@ -4482,6 +4609,12 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Hvala Vam što podržavate našu misiju izgradnje boljeg interneta gdje su privatnost i sloboda na prvom mjestu."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "${ boldDataLocked } poruka više se neće prikazivati, ali još uvijek možete otključati svoje podatke pod ${ encryptionAndKeysLink }."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web je skriveni dio interneta gdje se ukradeni osobni podaci poput identiteta mogu kupiti i prodati."
+      ],
       "The format of your CSV file is incorrect.": [
         "Format Vaše CSV datoteke je neispravan."
       ],
@@ -4506,6 +4639,12 @@
       "This cannot be undone.": [
         "Ovo se ne može poništiti."
       ],
+      "This is an encryption key you may have previously saved.": [
+        "Ovo je ključ za šifriranje koji ste možda prethodno spremili."
+      ],
+      "This is the password you used before the password reset.": [
+        "Ovo je lozinka koju ste koristili prije resetiranja lozinke."
+      ],
       "This service is not available to users signing in with single sign-on.": [
         "Ova usluga nije dostupna korisnicima koji se prijavljuju jedinstvenom prijavom."
       ],
@@ -4514,6 +4653,9 @@
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Ovo će odbiti pristup adresi e-pošte **${ email }**. Jeste li sigurni da želite nastaviti?"
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Ovo će onemogućiti Vašu trenutnu frazu za oporavak. Nećete je moći koristiti za pristup Vašem korisničkom računu ili za dešifriranje vaših podataka."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ovo će omogućiti PayPalu da se koristi za plaćanje vaše ${ BRAND_NAME } pretplate. Preusmjerit ćemo vas na PayPal u novoj kartici preglednika. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
@@ -4535,6 +4677,9 @@
       ],
       "This will send a new invite to **${ email }**.": [
         "Ovo će poslati novu pozivnicu na **${ email }**."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Ovo će odspojiti uređaj **${ name } (stvoren ${ date })** s Vašeg ${ BRAND_NAME } računa."
       ],
       "to ${ product } Business": [
         "u ${ product } za posao"
@@ -4581,11 +4726,17 @@
       "Unable to check gateways monitoring current status.": [
         "Nije moguće provjeriti trenutačno stanje nadzora pristupnika."
       ],
+      "Unable to verify recovery file signature. Please contact support.": [
+        "Nije moguće provjeriti potpis datoteke za oporavak. Molimo kontaktirajte podršku."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Nažalost, za ovaj račun nije postavljen način oporavka."
       ],
       "Unknown event type": [
         "Nepoznata vrsta događaja"
+      ],
+      "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
+        "Osim ako se ne odjavite s vašeg računa ili promijenite lozinku, vaše sesije ostaju aktivne. Sesije ističu nakon 60 dana neaktivnosti."
       ],
       "Unsaved changes": [
         "Nespremljene promjene"
@@ -4598,6 +4749,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "Učitajte svoju dovršenu CSV datoteku za stvaranje korisničkih računa"
+      ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Učitana datoteka nije valjani privatni ključ. Molimo, provjerite i pokušajte ponovno."
       ],
       "Uppercase and lowercase letters": [
         "Velika i mala slova"
@@ -4647,14 +4801,23 @@
       "Visa Secure logo": [
         "Visa Secure logotip"
       ],
+      "Want to learn more?": [
+        "Želite li saznati više?"
+      ],
       "Warning:": [
         "Upozorenje:"
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Pratimo tamni web za slučajeve u kojima su vaši osobni podaci (kao što je e-pošta ili lozinka korištena na web-mjestu treće strane) procurili ili su kompromitirani."
       ],
       "We need to authenticate your payment with your bank.": [
         "Moramo potvrditi Vašu uplatu s Vašom bankom."
       ],
       "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Preporučujemo da obavijestite članove obitelji i zamolite ih da postave 2FA na svojim računima prije nego što uvedete obaveznu upotrebu 2FA."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Sigurno pohranjujemo informacije za oporavak na Vašem pouzdanom uređaju kako bismo spriječili gubitak Vaših podataka."
       ],
       "We use 3-D Secure to protect your payments": [
         "Koristimo 3-D Secure za zaštitu vaših plaćanja"
@@ -4728,6 +4891,12 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Nećete moći oporaviti zaključane podatke koristeći svoje preuzete datoteke za oporavak."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Nećete moći oporaviti zaključane podatke koristeći svoje preuzete datoteke za oporavak. Ovo će također onemogućiti oporavak temeljen na uređaju."
+      ],
       "Your ${ BRAND_NAME } password": [
         "Vaša ${ BRAND_NAME } lozinka"
       ],
@@ -4749,9 +4918,6 @@
       "Your free trial includes 1 dedicated server.": [
         "Vaš besplatni probni period uključuje 1 namjenski poslužitelj."
       ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Vaši prijatelji dobivaju **2 tjedna besplatno** na svom odabranom planu."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
       ],
@@ -4767,6 +4933,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
       ],
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Vaša fraza za oporavak je niz od 12 nasumično generiranih riječi u određenom redoslijedu."
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Moći ćete odmah dodati ove poslužitelje drugom pristupniku."
       ],
@@ -4775,6 +4944,9 @@
       ]
     },
     "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ključ ${ fingerprint } je već prenesen"
+      ],
       "Optional": [
         "Neobavezno"
       ]
@@ -5035,6 +5207,9 @@
       "Code is 6 digits without spaces": [
         "Kod se sastoji od 6 znamenki bez razmaka."
       ],
+      "Collect usage diagnostics": [
+        "Prikupljaj dijagnostiku korištenja"
+      ],
       "Colors": [
         "Boje"
       ],
@@ -5137,8 +5312,14 @@
       "Enabled": [
         "Omogućeno"
       ],
+      "Enter password": [
+        "Unesi lozinku"
+      ],
       "Enter the code displayed on your TV": [
         "Unesite kôd prikazan na vašem televizoru"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "Unesite lozinku za ključ s otiskom prsta: ${ fingerprintCode }"
       ],
       "Enter your password": [
         "Unesite lozinku"
@@ -5154,6 +5335,9 @@
       ],
       "Expires": [
         "Ističe"
+      ],
+      "File": [
+        "Datoteka"
       ],
       "First name": [
         "Ime"
@@ -5332,6 +5516,9 @@
       "Phone number": [
         "Broj telefona"
       ],
+      "Phrase": [
+        "Fraza"
+      ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
         "Molimo dodajte sljedeća dva MX zapisa. Napomena: Ažuriranje DNS zapisa može potrajati nekoliko sati."
       ],
@@ -5344,11 +5531,17 @@
       "Postal code": [
         "Poštanski broj"
       ],
+      "Previous password": [
+        "Prethodna lozinka"
+      ],
       "Purpose": [
         "Svrha"
       ],
       "Recovery email address": [
         "Adresa e-pošte za oporavak"
+      ],
+      "Recovery file": [
+        "Datoteka za oporavak"
       ],
       "Recovery phone number": [
         "Broj mobitela za oporavak"
@@ -5376,6 +5569,9 @@
       ],
       "Second password": [
         "Sekundarna lozinka"
+      ],
+      "Send crash reports": [
+        "Slanje izvještaja o rušenju"
       ],
       "Sequences": [
         "Sekvence"
@@ -5418,6 +5614,9 @@
       ],
       "Type": [
         "Vrsta"
+      ],
+      "Upload 1 or more recovery files or encryption keys": [
+        "Učitajte jednu ili više datoteka za oporavak ili ključeva za šifriranje"
       ],
       "Uppercase and lowercase letters": [
         "Velika i mala slova"
@@ -5471,6 +5670,9 @@
     "label": {
       "Recovery phone number": [
         "Broj mobitela za oporavak"
+      ],
+      "Recovery phrase": [
+        "Fraza za oporavak"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -5579,6 +5781,12 @@
       "Create account": [
         "Stvori račun"
       ],
+      "Create an alias": [
+        "Stvori pseudonim"
+      ],
+      "Encryption and keys": [
+        "Šifriranje i ključevi"
+      ],
       "Forgot email?": [
         "Zaboravili ste e-poštu?"
       ],
@@ -5587,6 +5795,9 @@
       ],
       "Forgot username?": [
         "Zaboravili ste korisničko ime?"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Nabavite ${ VPN_APP_NAME }"
       ],
       "Groups": [
         "Grupe"
@@ -5600,11 +5811,17 @@
       "here": [
         "ovdje"
       ],
+      "How does monitoring work?": [
+        "Kako funkcionira praćenje?"
+      ],
       "How to create strong passwords": [
         "Kako stvoriti jake lozinke"
       ],
       "Learn more": [
         "Saznajte više"
+      ],
+      "Learn more about data recovery": [
+        "Naučite više o oporavku podataka"
       ],
       "Pay invoice": [
         "Plati račun"
@@ -5623,9 +5840,6 @@
       ],
       "Terms": [
         "Uvjeti"
-      ],
-      "Terms and conditions": [
-        "Uvjeti i odredbe"
       ],
       "Upgrade your plan": [
         "Nadogradite vaš plan"
@@ -5947,6 +6161,9 @@
       ],
       "1 user": [
         "1 korisnik"
+      ],
+      "15 GB storage": [
+        "15 GB pohrane"
       ],
       "24/7 account management support": [
         "24/7 podrška za upravljanje korisničkim računom"
@@ -6385,6 +6602,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Preuzeti 2FA kodovi za oporavak"
+      ],
+      "Email notifications have been disabled": [
+        "Obavijesti putem e-pošte su onemogućene"
+      ],
+      "Email notifications have been enabled": [
+        "Obavijesti putem e-pošte su onemogućene"
       ],
       "Invalid code": [
         "Nevažeći kôd"
@@ -7177,6 +7400,20 @@
         "Korisnik"
       ]
     },
+    "Safety review": {
+      "Check account security": [
+        "Provjera sigurnosti računa"
+      ],
+      "Safeguard account now": [
+        "Zaštitite korisnički račun sada"
+      ],
+      "Safeguard your account": [
+        "Zaštitite svoj račun"
+      ],
+      "Your account is fully secure.": [
+        "Vaš korisnički račun je potpuno siguran."
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Poništi"
@@ -7246,6 +7483,14 @@
         "URL SCIM konektora na koji Vaš IdP Provisioning Agent prosljeđuje SCIM podatke"
       ]
     },
+    "Select files": {
+      "Browse": [
+        "Pregled"
+      ],
+      "Upload": [
+        "Učitaj"
+      ]
+    },
     "Select invoice document": {
       "Credit note": [
         "Kreditna napomena"
@@ -7280,6 +7525,11 @@
       ],
       "to be deleted": [
         "bit će izbrisan"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Omogućuje dodavanje Zoom video konferencije bilo kojem događaju u Vašem kalendaru."
       ]
     },
     "session_recovery:available:action": {
@@ -7347,6 +7597,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Poništiti ponovno postavljanje lozinke?"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Nećete više moći zatražiti resetiranje lozinke iz Vaših postavki računa."
       ]
     },
     "session_recovery:in_progress:action": {
@@ -7423,6 +7678,11 @@
         "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sat",
         "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sata",
         "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sati"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Request password reset": [
+        "Zahtjev za ponovno postavljanje lozinke"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -7623,6 +7883,9 @@
       "Access denied": [
         "Pristup odbijen"
       ],
+      "Approve": [
+        "Odobri"
+      ],
       "Approve or deny it now": [
         "Odobrite ili odbijte to sada"
       ],
@@ -7647,6 +7910,9 @@
       "Confirmation code": [
         "Kôd za potvrdu"
       ],
+      "Current device": [
+        "Trenutni uređaj"
+      ],
       "Deny": [
         "Odbij"
       ],
@@ -7656,6 +7922,12 @@
       "Devices available": [
         "Dostupni uređaji"
       ],
+      "Do you want to remove all other devices than the current one?": [
+        "Želite li ukloniti sve ostale uređaje osim trenutačnog?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Unesite kôd za potvrdu koji smo poslali na Vaš drugi uređaj."
+      ],
       "Enter your backup password": [
         "Unesite rezervnu lozinku"
       ],
@@ -7664,6 +7936,9 @@
       ],
       "Grant access": [
         "Odobrite pristup"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Ako niste poslali ovaj zahtjev, otkažite ga sada."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Ako se zaključate iz svog ${ BRAND_NAME } korisničkog računa, Vaša rezervna lozinka omogućit će Vam da se prijavite i oporavite svoje podatke."
@@ -7679,6 +7954,18 @@
       ],
       "New backup password": [
         "Nova sigurnosna lozinka za oporavak"
+      ],
+      "No, it wasn’t me": [
+        "Ne, to nisam ja"
+      ],
+      "Reject": [
+        "Odbiti"
+      ],
+      "Remove": [
+        "Ukloni"
+      ],
+      "Remove all other devices": [
+        "Uklanjanje svih ostalih uređaja"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Postavite lozinku za sigurnosnu kopiju za dodatan sloj zaštite. Omogućit će Vam prijavu ako Vam se onemogući pristup, stoga je obavezno čuvajte na sigurnom mjestu."
@@ -7698,6 +7985,12 @@
       "Sign out and in again to change your backup password": [
         "Odjavite se i ponovno se prijavite kako biste promijenili lozinku svoje sigurnosne kopije"
       ],
+      "Sign-in rejected": [
+        "Prijava odbijena"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Zatražena je prijava na drugom uređaju. Jeste li to Vi?"
+      ],
       "Single sign-on removed": [
         "Jedinstvena prijava uklonjena"
       ],
@@ -7715,6 +8008,9 @@
       ],
       "Welcome": [
         "Dobro došli"
+      ],
+      "Yes, it was me": [
+        "Da, to sam ja"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Morat ćete ručno stvoriti nove korisnike kako biste ih dodali u svoju organizaciju."
@@ -8053,6 +8349,9 @@
       "Credits added": [
         "Nadodan je kredit"
       ],
+      "Device deleted": [
+        "Uređaj izbrisan"
+      ],
       "Display name updated": [
         "Zaslonski naziv je ažuriran"
       ],
@@ -8115,6 +8414,12 @@
       ],
       "Preference saved": [
         "Postavke su spremljene"
+      ],
+      "Session revoked": [
+        "Sesija je opozvana"
+      ],
+      "Sessions revoked": [
+        "Sesije su opozvane"
       ],
       "User updated": [
         "Korisnik je ažuriran"
@@ -8306,6 +8611,9 @@
       "Account": [
         "Korisnički račun"
       ],
+      "Account recovery": [
+        "Oporavak računa"
+      ],
       "Account restricted": [
         "Račun ograničen"
       ],
@@ -8368,6 +8676,9 @@
       ],
       "Amount due": [
         "Dospjeli iznos"
+      ],
+      "App": [
+        "Aplikacija"
       ],
       "Appearance": [
         "Izgled"
@@ -8459,6 +8770,9 @@
       "Create organization key": [
         "Stvorite organizacijski ključ"
       ],
+      "Created": [
+        "Stvoreno"
+      ],
       "Creating user accounts": [
         "Izrada korisničkih računa"
       ],
@@ -8471,6 +8785,12 @@
       "Customization": [
         "Prilagodba"
       ],
+      "Data locked": [
+        "Podaci zaključani"
+      ],
+      "Data recovery": [
+        "Povrat podataka"
+      ],
       "Data retention": [
         "Zadržavanje podataka"
       ],
@@ -8479,6 +8799,9 @@
       ],
       "Day theme": [
         "Dnevna tema"
+      ],
+      "Decrypt key": [
+        "Dešifriranje ključa"
       ],
       "Deep dive into VPN blog posts": [
         "Detaljna analiza blog objava o VPN-u"
@@ -8524,6 +8847,9 @@
       ],
       "Domain names": [
         "Nazivi domena"
+      ],
+      "Don't show again?": [
+        "Ne prikazuj ponovno?"
       ],
       "Downgrade account": [
         "Smanjite svoj plan"
@@ -8594,6 +8920,9 @@
       "Generate missing keys": [
         "Generirajte ključeve koji nedostaju"
       ],
+      "Generate new recovery phrase?": [
+        "Generirajte novu frazu za oporavak?"
+      ],
       "Get complete privacy coverage": [
         "Ostvarite potpunu zaštitu privatnosti"
       ],
@@ -8657,6 +8986,9 @@
       "Multi-user support": [
         "Višekorisnička podrška"
       ],
+      "Name": [
+        "Naziv"
+      ],
       "Network error": [
         "Pogreška mreže"
       ],
@@ -8668,6 +9000,9 @@
       ],
       "No recovery method": [
         "Nema načina za oporavak"
+      ],
+      "Open": [
+        "Otvori"
       ],
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
@@ -8723,6 +9058,9 @@
       "Previous": [
         "Prethodno"
       ],
+      "Privacy and data collection": [
+        "Privatnost i prikupljanje podataka"
+      ],
       "Processing...": [
         "Obrada..."
       ],
@@ -8735,14 +9073,26 @@
       "Reconnect your account": [
         "Ponovno povežite vaš račun"
       ],
+      "Recover data": [
+        "Oporavi podatke"
+      ],
       "Recovery": [
         "Oporavak"
+      ],
+      "Recovery file": [
+        "Datoteka za oporavak"
       ],
       "Refer a friend": [
         "Uputi prijatelja"
       ],
+      "Reject device?": [
+        "Odbiti uređaj?"
+      ],
       "Remove all members?": [
         "Ukloniti sve članove?"
+      ],
+      "Remove device?": [
+        "Ukloni uređaj?"
       ],
       "Remove server?": [
         "Ukloniti poslužitelj?"
@@ -8765,8 +9115,14 @@
       "Reset password?": [
         "Ponovno postavljanje lozinke?"
       ],
+      "Resolved": [
+        "Riješeno"
+      ],
       "Restore administrator privileges": [
         "Vraćanje administratorskih ovlasti"
+      ],
+      "Security and privacy": [
+        "Sigurnost i privatnost"
       ],
       "Select a plan": [
         "Odaberite plan"
@@ -8782,6 +9138,12 @@
       ],
       "Send new invite?": [
         "Poslati novu pozivnicu?"
+      ],
+      "Service": [
+        "Usluga"
+      ],
+      "Session management": [
+        "Upravljanje sesijama"
       ],
       "Set new password": [
         "Postavi novu lozinku"
@@ -8818,6 +9180,9 @@
       ],
       "Start import process": [
         "Započni uvoz"
+      ],
+      "State": [
+        "Država"
       ],
       "Status": [
         "Status"
@@ -8884,11 +9249,20 @@
       "Warning": [
         "Upozorenje"
       ],
+      "What is an alias?": [
+        "Što je pseudonim?"
+      ],
       "Wipe all logs?": [
         "Izbrisati sve zapisnike?"
       ],
       "WireGuard configuration": [
         "WireGuard konfiguracija"
+      ],
+      "You have no open alerts": [
+        "Nema otvorenih upozorenja"
+      ],
+      "You have no resolved alerts": [
+        "Nemate riješenih upozorenja"
       ],
       "Your current plan": [
         "Vaš trenutni plan"

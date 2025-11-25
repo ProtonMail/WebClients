@@ -14,6 +14,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Confirm reset": [
+        "Confirmar restablecimiento"
+      ],
       "Create": [
         "Crear"
       ],
@@ -28,6 +31,9 @@
       ]
     },
     "authenticator-2025:Action": {
+      "Confirm": [
+        "Confirmar"
+      ],
       "Continue anyway": [
         "Continuar de todas formas"
       ],
@@ -59,6 +65,11 @@
         "Iniciar sesión"
       ]
     },
+    "authenticator-2025:Error": {
+      "Biometric authentication failure (Code: ${ code })": [
+        "Error en la autenticación biométrica (Código: ${ code })"
+      ]
+    },
     "authenticator-2025:Import": {
       "${ count } item was skipped. HOTP isn’t currently supported.": [
         "${ count } elemento fue omitido. HOTP no es compatible actualmente.",
@@ -82,6 +93,9 @@
       "Failed to edit code": [
         "Error al editar código"
       ],
+      "Importing codes...": [
+        "Importando códigos..."
+      ],
       "New version ${ latestVersion.version } is available": [
         "Una versión nueva de ${ latestVersion.version } está disponible"
       ],
@@ -90,6 +104,12 @@
       ],
       "Plain text": [
         "Texto plano"
+      ],
+      "Please go to ${ settingsPath }.": [
+        "Ve a ${ settingsPath }."
+      ],
+      "ZIP": [
+        "Código postal"
       ]
     },
     "authenticator-2025:Label": {
@@ -101,6 +121,9 @@
       ],
       "Advanced options": [
         "Opciones avanzadas"
+      ],
+      "App lock": [
+        "Bloqueo de la aplicación"
       ],
       "Appearance": [
         "Apariencia"
@@ -125,6 +148,9 @@
       ],
       "Manage your data": [
         "Gestiona tus datos"
+      ],
+      "Once deleted, this code cannot be recovered.": [
+        "Una vez eliminado, no podrás recuperar este código."
       ],
       "Password": [
         "Contraseña"
@@ -154,6 +180,9 @@
       ]
     },
     "authenticator-2025:Warning": {
+      "Nothing to import.": [
+        "No hay nada que importar."
+      ],
       "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
         "Contraseña incorrecta. Te queda ${ remainingCount } intento, después de eso, tus datos serán borrados.",
         "Contraseña incorrecta. Te quedan ${ remainingCount } intentos; después de eso, tus datos se borrarán."
@@ -252,6 +281,9 @@
     "Title": {
       "Confirm password": [
         "Confirmar contraseña"
+      ],
+      "Device sync": [
+        "Sincronización de dispositivos"
       ]
     },
     "Warning": {

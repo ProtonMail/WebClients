@@ -25,22 +25,22 @@
     },
     "account": {
       "Delete forward": [
-        "Ștergere redirecționare"
+        "Ștergere transferare"
       ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Redirecționarea va începe curând. Noile mesaje vor apărea în folderul «Primite»."
+        "Transferarea va începe în curând. Noile mesaje vor apărea în folderul «Primite»."
       ],
       "Mail forward stopped": [
-        "Redirecționare mesaje oprită"
+        "Transferare mesaje oprită"
       ],
       "Reconnect": [
         "Reconectare"
       ],
       "Remove forward": [
-        "Eliminare redirecționare"
+        "Eliminare transferare"
       ],
       "You will stop the mail forwarding.": [
-        "Veți opri redirecționarea mesajelor."
+        "Veți opri transferarea mesajelor."
       ]
     },
     "Account Settings - Info": {
@@ -659,9 +659,6 @@
       ],
       "Edit “${ label.Name }”": [
         "Editare „${ label.Name }”"
-      ],
-      "Emoji": [
-        "Emoticon"
       ],
       "Enable ${ darkWebMonitoring }": [
         "Activare ${ darkWebMonitoring }"
@@ -1381,7 +1378,7 @@
         "Setați redirecționarea automată din Gmail"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Settings": [
         "Setări"
@@ -1698,7 +1695,7 @@
     },
     "action": {
       "Resuming forward": [
-        "Reluare redirecționare"
+        "Reluare transferare"
       ]
     },
     "Action for user session": {
@@ -1916,7 +1913,7 @@
         "Încercați ${ PASS_APP_NAME }"
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
-        "Cu ${ PASS_APP_NAME } puteți genera aliasuri unice pentru a vă ascunde identitatea și pentru a redirecționa e-mailurile către adresa de e-mail principală personală."
+        "Cu ${ PASS_APP_NAME } puteți genera aliasuri unice pentru a vă ascunde identitatea și pentru a transfera mesajele către adresa de e-mail principală personală."
       ]
     },
     "Alter": {
@@ -1932,7 +1929,7 @@
         "5 urmăritori eliminați"
       ],
       "Auto forwarded": [
-        "Redirecționat automat"
+        "Transferat automat"
       ],
       "Email received": [
         "Mesaj primit"
@@ -1942,139 +1939,6 @@
       ],
       "New email": [
         "Mesaj nou"
-      ]
-    },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Luați oferta"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "200 GB storage": [
-        "200 GiB spațiu de stocare"
-      ],
-      "500 GB encrypted storage": [
-        "500 GiB de stocare criptată"
-      ],
-      "Add unlimited credit cards": [
-        "Adăugați carduri de plată nelimitate"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Toate funcțiile speciale ale ${ BRAND_NAME } Mail, Pass, VPN, Drive și Calendar"
-      ],
-      "Block ads, trackers, and malware": [
-        "Blocare reclame, urmăritori și programe malițioase"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Reducerile se bazează pe prețurile lunare standard. La sfârșitul ciclului de facturare, abonamentul se va reînnoi la tariful anual standard."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Dublați-vă stocarea criptată – obțineți 1 TiB pentru toate datele stocate"
-      ],
-      "Encrypted password manager": [
-        "Manager de parole criptat"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Iată un cadou exclusiv pentru a sărbători călătoria noastră împreună."
-      ],
-      "High speed streaming with VPN": [
-        "Transmisii în flux de mare viteză cu VPN"
-      ],
-      "of privacy": [
-        "de confidențialitate"
-      ],
-      "Online document editor": [
-        "Editor de documente online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Confidențialitate online pentru maxim două persoane"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Confidențialitate online pentru întreaga familie (până la 6 utilizatori)"
-      ],
-      "Protect up to 10 devices": [
-        "Protejați până la 10 dispozitive"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale Drive cu oferta limitată de reducere."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale Mail cu oferta limitată de reducere."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale PASS cu oferta limitată de reducere."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Economisiți mult la funcțiile speciale VPN cu oferta limitată de reducere."
-      ],
-      "Save time with built-in 2FA": [
-        "Salvați timp cu A2F integrată"
-      ],
-      "Secure email with unlimited aliases": [
-        "E-mail securizat cu aliasuri nelimitate"
-      ],
-      "Select any server": [
-        "Selectați orice server"
-      ],
-      "Share passwords easily": [
-        "Partajați ușor parolele"
-      ],
-      "Short @pm.me address": [
-        "Adresă scurtă @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Vizionați conținutul preferat"
-      ],
-      "thanks to you": [
-        "mulțumită dvs."
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Triplați-vă stocarea criptată – obțineți 3 TiB pentru toate datele stocate"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Use your own email domain": [
-        "Utilizați propriul domeniu de e-mail"
-      ],
-      "years": [
-        "ani"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Ofertă aniversară"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "/ month": [
-        "/lună"
-      ],
-      "12 months": [
-        "12 luni"
-      ],
-      "15 months": [
-        "15 luni"
-      ],
-      "24 months": [
-        "24 de luni"
-      ],
-      "30 months": [
-        "30 de luni"
-      ],
-      "for ${ durationDeal }": [
-        "cu ${ durationDeal }"
       ]
     },
     "app-switcher": {
@@ -2504,6 +2368,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "Se reînnoiește automat"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } lună.",
         "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } luni.",
@@ -2557,6 +2424,9 @@
       ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "Automatizați acțiunile recurente pentru a sorta și organiza mesajele primite."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Conservați, organizați și partajați în siguranță o viață de amintiri."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Îmi poate vedea cineva istoricul de navigare pe internet dacă folosim același Wi-Fi?"
@@ -2645,6 +2515,9 @@
       "Keep your email spam-free": [
         "Păstrați-vă contul de e-mail curat"
       ],
+      "Keep your photos out of AI training": [
+        "Păstrați-vă fotografiile departe de antrenarea pentru IA"
+      ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "Păstrați fișierele echipei protejate, accesibile și sincronizate cu ${ DRIVE_APP_NAME } for Business."
       ],
@@ -2671,9 +2544,6 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Navigarea pe un internet plin de brokeri de date, mesaje nedorite, escrocherii și programe malițioase devine din ce în ce mai dificilă. De aceea, ${ PASS_APP_NAME } merge mai departe în a vă ajuta să gestionați, să stocați și să vă autocompletați parolele. Vă oferim instrumentele pentru a vă prelua controlul asupra confidențialității și pentru a vă proteja adresele de e-mail cu aliasuri hide-my-email."
-      ],
-      "Organize your memories into albums": [
-        "Organizați-vă amintirile în albume"
       ],
       "Protect your business communications": [
         "Protejați-vă comunicațiile de afaceri"
@@ -2777,8 +2647,8 @@
       "Worried about data breaches?": [
         "Vă îngrijorează divulgările de date?"
       ],
-      "Write, edit, and collaborate on documents with our secure online editors.": [
-        "Scrieți, editați și colaborați la documente cu editoarele noastre online sigure."
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Scrieți, editați și colaborați la documente în siguranță cu ${ DOCS_APP_NAME }."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Fotografiile de familie antrenează inteligența artificială, iar iată cum puteți opri acest lucru."
@@ -4731,7 +4601,7 @@
         "Ștergeți automat mesajele mutate în folderul „Gunoi” și „Nedorite” mai vechi de 30 de zile."
       ],
       "Automatically forward incoming email to another email address.": [
-        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+        "Transferați automat mesajele primite către o altă adresă de e-mail."
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortați automat mesajele primite înainte ca acestea să vă ajungă în contul de e-mail."
@@ -4832,7 +4702,7 @@
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
-        "Configurați redirecționarea automată pentru a redirecționa mesajele primite către o altă adresă de e-mail."
+        "Configurați transferarea automată pentru a redirecționa mesajele primite către o altă adresă de e-mail."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
@@ -4869,9 +4739,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
-      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
-        "Veți primi ${ referralInfo.referrerRewardAmount } în credite ${ BRAND_NAME } atunci când persoana pe care o invitați se înscrie la un plan ${ BRAND_NAME } și aceasta va primi ${ referralInfo.refereeRewardAmount } în credite pentru a începe."
       ]
     },
     "description": {
@@ -5292,14 +5159,14 @@
     },
     "Easy switch": {
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Pentru a redirecționa mesaje de la ${ MAX_SYNC_PAID_USER } cont, treceți la ${ planName }.",
-        "Pentru a redirecționa mesaje de până la ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }.",
-        "Pentru a redirecționa mesaje de până la ${ MAX_SYNC_PAID_USER } de conturi, treceți la ${ planName }."
+        "Pentru a transfera mesaje de la ${ MAX_SYNC_PAID_USER } cont, treceți la ${ planName }.",
+        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }.",
+        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } de conturi, treceți la ${ planName }."
       ],
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
-        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
-        "Redirecționați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5617,7 +5484,7 @@
         "Trimitere e-mail de confirmare"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -5635,7 +5502,7 @@
     },
     "email_forwarding_2023: Forwarding tooltip": {
       "Emails forwarded to you are excluded and will not be forwarded.": [
-        "Mesajele redirecționate către dvs. sunt excluse și nu vor fi redirecționate."
+        "Mesajele transferate către dvs. sunt excluse și nu vor fi transferate."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -5643,10 +5510,10 @@
         "Acțiuni"
       ],
       "Forward from": [
-        "Redirecționare de la"
+        "Transferat de la"
       ],
       "Forward to": [
-        "Redirecționare către"
+        "Transferare către"
       ],
       "From": [
         "De la"
@@ -5695,31 +5562,31 @@
         "Destinatarul redirecționării este invitat și trebuie să accepte/refuze invitația sau să actualizeze."
       ],
       "Forwarding is active": [
-        "Redirecționarea este activă."
+        "Transferarea este activă."
       ],
       "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
         "Redirecționarea către ${ boldForwardeeEmail } va deveni activă după ce destinatarul acceptă solicitarea."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Redirecționarea către o adresă fără criptare în ambele capete va dezactiva criptarea la ambele capete pentru adresa proprie ${ boldForwarderEmail }, dar criptarea cu acces zero rămâne activată. ${ learnMoreLink }"
+        "Transferarea mesajelor către o adresă fără criptare bilaterală va dezactiva criptarea bilaterală pentru adresa proprie ${ boldForwarderEmail }, dar criptarea cu acces zero rămâne activată. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "Redirecționarea către această adresă se va activa după ce destinatarul acceptă redirecționarea."
       ],
       "No incoming forwarding rules": [
-        "Nu există reguli de intrare pentru redirecționare."
+        "Nu există reguli de intrare pentru transferare mesaje."
       ],
       "No outgoing forwarding rules": [
         "Nu există reguli de ieșire pentru redirecționare."
       ],
       "Please update your forwarding keys": [
-        "Actualizați-vă cheile de redirecționare."
+        "Actualizați-vă cheile de transferare."
       ],
       "The forwardee rejected the forwarding request": [
-        "Destinatarul redirecționării a refuzat solicitarea de redirecționare."
+        "Destinatarul mesajelor transferate a refuzat solicitarea de transferare."
       ],
       "The forwarding is temporarily paused": [
-        "Redirecționarea este temporar suspendată."
+        "Transferarea este temporar suspendată."
       ],
       "You can safely close this tab.": [
         "Puteți închide această filă în siguranță."
@@ -5733,7 +5600,7 @@
         "ȘI"
       ],
       "Forward from": [
-        "Redirecționare de la"
+        "Transferat de la"
       ],
       "Forward to": [
         "Redirecționare către"
@@ -5780,7 +5647,7 @@
         "Trimitere e-mail de confirmare"
       ],
       "Setting up forwarding": [
-        "Configurare redirecționare"
+        "Se configurează transferarea"
       ]
     },
     "email_forwarding_2023: Prompt": {
@@ -5788,7 +5655,7 @@
         "Criptarea bilaterală va fi reactivată pentru adresa de expediere."
       ],
       "Forwarding to the destination address will end.": [
-        "Redirecționarea către adresa de destinație se va încheia."
+        "Transferarea mesajelor către adresa de destinație se va încheia."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -5816,16 +5683,16 @@
         "Mesaj trimis către ${ existingForwardingConfig.ForwardeeEmail }."
       ],
       "Forwarding accepted": [
-        "Redirecționare acceptată."
+        "Transferare acceptată."
       ],
       "Forwarding declined": [
         "Redirecționare refuzată."
       ],
       "Forwarding deleted": [
-        "Redirecționare ștearsă."
+        "Transferare ștearsă."
       ],
       "Forwarding paused": [
-        "Redirecționare suspendată."
+        "Transferare mesaje suspendată."
       ],
       "Forwarding resumed": [
         "Redirecționare reluată."
@@ -5836,13 +5703,13 @@
         "Ștergere redirecționare?"
       ],
       "Email forwarding deactivated": [
-        "Redirecționare e-mail reactivată"
+        "Transferare mesaje dezactivată"
       ],
       "Forwarding activated": [
-        "Redirecționare activată"
+        "Transferare activată"
       ],
       "Request confirmation?": [
-        "Solicitați confirmarea?"
+        "Solicitați confirmare?"
       ],
       "Request sent": [
         "Solicitare trimisă"
@@ -5851,7 +5718,7 @@
         "Solicitare confirmare"
       ],
       "Set up forwarding": [
-        "Setare redirecționare"
+        "Setare transferare"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -6466,6 +6333,9 @@
       "Permissions request failed.": [
         "Solicitarea de permisiuni a eșuat."
       ],
+      "Please add a payment method before reactivating your subscription": [
+        "Adăugați o metodă de plată înainte de a vă reactiva abonamentul."
+      ],
       "Please configure a custom domain before adding addresses.": [
         "Configurația un domeniu personal înainte de a adăuga adrese."
       ],
@@ -6779,7 +6649,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Conectați-vă cu o adresă Gmail care deja se redirecționează către ${ MAIL_APP_NAME }"
+        "Conectați-vă cu o adresă Gmail care deja se transferă mesaje către ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
@@ -7887,7 +7757,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Redirecționați automat"
+        "Transferare automată"
       ],
       "Gmail messages to your inbox": [
         "mesajele Gmail către adresa de primire"
@@ -8782,6 +8652,9 @@
       "${ planName } expires today.": [
         "${ planName } expiră astăzi."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } pentru organizații este un program avansat de protecție a conturilor, alimentat de sisteme de IA sofisticate și specialiști care lucrează non-stop pentru a vă proteja organizația de actori răi și amenințările de securitate."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } este un program avansat de protecție a conturilor, alimentat de sisteme de IA sofisticate și specialiști care lucrează non-stop pentru a vă proteja de atacatori și amenințările de securitate."
       ],
@@ -8911,17 +8784,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importați-vă codurile existente** din alte aplicații de A2F, precum Google Authenticator."
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pasul 1: Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Pasul 2:** Persoanele recomandate primesc **două săptămâni gratuite** pentru planul lor."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Pasul 3:** Obțineți **${ referrerRewardAmount } credite** pentru fiecare persoană care se abonează la un plan."
       ],
       "**Sync codes** to all your devices": [
         "**Vă sincronizați codurile** pe toate dispozitivele"
@@ -9783,7 +9662,7 @@
         "Exemplu: ${ spfExample }"
       ],
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
-        "Redirecționările mesajelor criptate bilateral existente vor trebui reactivate manual în secțiunea **${ autoReplySettingsTitle }** din setări."
+        "Transferările mesajelor criptate bilateral existente vor trebui reactivate manual în secțiunea **${ autoReplySettingsTitle }** din setări."
       ],
       "Expired": [
         "Expirat"
@@ -9865,9 +9744,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
-      ],
-      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
-        "Obțineți **${ referrerRewardAmount } credite** pentru fiecare prieten care se abonează."
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obțineți acces creând un cont ${ BRAND_NAME } și acceptând invitația."
@@ -10390,7 +10266,7 @@
         "Încă nu există porți de acces"
       ],
       "No imports or forwarding history.": [
-        "Nu există istoric de importări și redirecționări."
+        "Nu există istoric de importări și mesaje transferate."
       ],
       "No label selected": [
         "Nicio etichetă selectată"
@@ -11377,6 +11253,9 @@
       "Upgrade to unlock": [
         "Treceți la alt tip de cont pentru deblocare."
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Treceți la ${ firstPlanNames } sau ${ lastPlanName } pentru a obține acces la ${ PROTON_SENTINEL_NAME } pentru organizații."
+      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Treceți la ${ firstPlanNames } sau ${ lastPlanName } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
       ],
@@ -11884,9 +11763,9 @@
         "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
-        "Ați activat redirecționarea pentru ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
-        "Ați activat redirecționarea pentru ${ MAX_SYNC_PAID_USER } adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
-        "Ați activat redirecționarea pentru ${ MAX_SYNC_PAID_USER } de adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una."
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } de adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una."
       ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "Ați atins limita de 50 de utilizatori pentru acest filtru. Eliminați unul pentru a adăuga altul."
@@ -11935,9 +11814,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament lunar. Data lui de reînnoire este ${ nextBillingDate }."
-      ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Cei recomandați vor primi **două săptămâni gratuite** pentru planul ales de ei."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Importarea din ${ accounts } este temporar întârziată.",
@@ -12250,7 +12126,7 @@
         "Alternativă"
       ],
       "Forwarding": [
-        "Redirecționare"
+        "Transferare"
       ],
       "Inactive": [
         "Inactivă"
@@ -13398,7 +13274,7 @@
         "Nume"
       ],
       "NAT-PMP (Port Forwarding)": [
-        "NAT-PMP (Port redirecționare)"
+        "NAT-PMP (Port transferare)"
       ],
       "Navigation": [
         "Navigare"
@@ -14190,7 +14066,7 @@
         "Cum să utilizați ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Cum se utilizează redirecționarea mesajelor"
+        "Cum se utilizează transferarea mesajelor"
       ],
       "How to use Groups": [
         "Cum să utilizați grupurile"
@@ -14251,9 +14127,6 @@
       ],
       "Terms": [
         "Termeni"
-      ],
-      "Terms and conditions": [
-        "Termeni și condiții"
       ],
       "Trouble signing in?": [
         "Aveți probleme la autentificare?"
@@ -15158,7 +15031,7 @@
         "Autocompletare carduri de credit (în curând)"
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
@@ -18289,6 +18162,18 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Oferiți două săptămâni, primiți ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Cum funcționează probarea gratuită:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Dacă anulați până atunci, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } atunci când perioada de probare se încheie. Dacă nu anulați, va începe planul complet și veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Dacă vă abonați înainte de această dată, veți primi **${ referrerRewardAmount }** în credite. Dacă nu vă abonați, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "Invite friends. Get credits.": [
         "Invitați persoane. Obțineți credite."
       ],
@@ -18311,6 +18196,9 @@
         "Mai aveți **${ daysRemaining } zi** pentru a explora toate funcțiile puternice pe care le oferă **${ planTitle }**.",
         "Mai aveți **${ daysRemaining } zile** pentru a explora toate funcțiile puternice pe care vi le oferă **${ planTitle }**.",
         "Mai aveți **${ daysRemaining } de zile** pentru a explora toate funcțiile puternice pe care **${ planTitle }** le are de oferit."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Și persoana recomandată va primi ${ refereeRewardAmount } pentru răscumpărare la următoarea factură!"
       ],
       "your subscription": [
         "abonament personal"
@@ -21037,7 +20925,7 @@
         "Orice domeniu de e-mail personal va fi dezactivat."
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Back up photos from your devices": [
         "Conservați fotografiile de pe dispozitive"
@@ -21240,7 +21128,7 @@
         "și încă alte 15 funcții premium"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
+        "Transferare automată mesaje ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Alerte divulgări date ${ strongArgument }"
@@ -21857,6 +21745,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "Raport monitorizare ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } pentru organizații"
       ],
       "(active)": [
         "(activ)"
@@ -22575,10 +22466,10 @@
         "Ați uitat metoda de recuperare"
       ],
       "Forward and auto-reply": [
-        "Redirecționare și răspuns automat"
+        "Transferare/Autorăspuns"
       ],
       "Forward emails": [
-        "Redirecționare mesaje"
+        "Transferare mesaje"
       ],
       "Free": [
         "Gratuit"
@@ -22651,9 +22542,6 @@
       ],
       "Gift code": [
         "Cod cadou"
-      ],
-      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
-        "Acordați ${ refereeRewardAmount } în credite și două săptămâni gratuite. Obțineți ${ referrerRewardAmount } în credite."
       ],
       "Group": [
         "Grup"
@@ -23123,7 +23011,7 @@
         "Configurați aplicația de autentificare"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Set up your family account": [
         "Configurare cont de familie"
@@ -23773,7 +23661,7 @@
         "Cheia este folosită de către ${ MAIL_APP_NAME } pentru a vă cripta datele contactelor."
       ],
       "This key is used for email forwarding": [
-        "Această cheie este folosită pentru redirecționarea mesajelor."
+        "Această cheie este folosită pentru transferarea mesajelor."
       ],
       "This setting is managed by your organization": [
         "Această setare este gestionată de către organizația proprie."
