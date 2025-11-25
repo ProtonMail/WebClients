@@ -26,7 +26,7 @@ import type { IconName } from '@proton/icons/types'
 import { InsertFormulaMenu } from '../shared/InsertFormulaMenu'
 import { MergeMenuItems } from '../shared/MergeMenuItems'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { EditingDisabledButton } from '../EditingDisabledViews'
+import { EditingDisabledButton } from '../EditingDisabledButton'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {
   clientInvoker: EditorRequiresClientMethods
