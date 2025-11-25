@@ -93,8 +93,8 @@ export const useTrashStore = create<TrashStore>((set, get) => ({
             for (const item of event.items) {
                 try {
                     if (item.isTrashed && !trashNodes[item.uid]) {
-                        const node = await drive.getNode(item.uid);
-                        const legacyItem = await mapNodeToLegacyItem(node, deprecatedRootShareId, drive);
+                        const maybeNode = await drive.getNode(item.uid);
+                        const legacyItem = await mapNodeToLegacyItem(maybeNode, deprecatedRootShareId, drive);
                         setNodes({ [item.uid]: legacyItem });
                     }
                 } catch (error) {
@@ -110,8 +110,8 @@ export const useTrashStore = create<TrashStore>((set, get) => ({
                     if (item.isTrashed === false && trashNodes[item.uid]) {
                         removeNodes([item.uid]);
                     } else if (item.isTrashed) {
-                        const node = await drive.getNode(item.uid);
-                        const legacyItem = await mapNodeToLegacyItem(node, deprecatedRootShareId, drive);
+                        const maybeNode = await drive.getNode(item.uid);
+                        const legacyItem = await mapNodeToLegacyItem(maybeNode, deprecatedRootShareId, drive);
                         setNodes({ [item.uid]: legacyItem });
                     }
                 } catch (error) {

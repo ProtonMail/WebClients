@@ -54,8 +54,9 @@ export function useFolder() {
             setIsLoading(true);
 
             try {
-                const { node } = getNodeEntity(await drive.getNode(folderNodeUid));
-                const legacyNode = await mapNodeToLegacyItem(node, folderShareId, drive);
+                const maybeNode = await drive.getNode(folderNodeUid);
+                const legacyNode = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
+                const { node } = getNodeEntity(maybeNode);
                 const isDeviceRoot = !node.parentUid && !!getByRootFolderUid(folderNodeUid);
                 const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && !!getByRootFolderUid(legacyNode.rootUid));
                 const role = await getNodeEffectiveRole(node, drive);
