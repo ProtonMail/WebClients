@@ -208,7 +208,6 @@ export const createInlineApp = <T extends InlineRequest>({
     };
 
     const setIframePosition = (values: IFramePosition) => {
-        cancelAnimationFrame(state.positionReq);
         state.position = values;
 
         const { top, left, right } = values;
@@ -252,8 +251,6 @@ export const createInlineApp = <T extends InlineRequest>({
      * when autofill detection occurs. */
     const open = safeAsyncCall(async (request: T, ctrl?: AbortController) => {
         try {
-            cancelAnimationFrame(state.positionReq);
-
             await ensureReady();
             if (ctrl?.signal.aborted || state.visible) return pubsub.publish({ type: 'abort', request });
 

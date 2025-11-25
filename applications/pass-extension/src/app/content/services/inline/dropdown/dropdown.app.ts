@@ -259,7 +259,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
             iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_ACTION, payload });
             iframe.setPosition(getDropdownPosition(request));
 
-            return iframe.open(request, ctrl);
+            await iframe.open(request, ctrl);
         },
 
         sendMessage: iframe.sendPortMessage,
