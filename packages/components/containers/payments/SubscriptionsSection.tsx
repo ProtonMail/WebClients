@@ -9,7 +9,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
@@ -235,7 +235,7 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                             title={c('Info subscription').t`You can prevent expiry by reactivating the subscription`}
                             data-testid="periodEndWarning"
                         >
-                            <Icon name="exclamation-circle-filled" className="color-danger ml-1" size={4.5} />
+                            <IcExclamationCircleFilled className="color-danger ml-1" size={4.5} />
                         </Tooltip>
                     )}
                 </div>

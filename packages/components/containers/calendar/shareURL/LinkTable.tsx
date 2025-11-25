@@ -4,7 +4,7 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcLink } from '@proton/icons/icons/IcLink';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -77,7 +77,7 @@ const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap }: Props)
                                 cells={[
                                     <div key="calendar">
                                         <div className="flex items-center">
-                                            <Icon name="link" className="mr-2" />
+                                            <IcLink className="mr-2" />
                                             {accessLevel === ACCESS_LEVEL.FULL
                                                 ? c('Access level').t`Full view`
                                                 : c('Access level').t`Limited view`}

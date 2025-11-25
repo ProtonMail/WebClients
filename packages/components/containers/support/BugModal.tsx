@@ -12,7 +12,7 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -475,7 +475,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
                         disableFullWidth
                         suffix={
                             <CollapsibleHeaderIconButton size="small">
-                                <Icon name="chevron-down" />
+                                <IcChevronDown />
                             </CollapsibleHeaderIconButton>
                         }
                     >

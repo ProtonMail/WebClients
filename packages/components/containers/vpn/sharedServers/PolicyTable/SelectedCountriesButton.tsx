@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -76,7 +76,7 @@ const SelectedCountriesButton = ({
                 }}
                 hasCaret
             >
-                <Icon name="earth" className="color-weak mr-2" />
+                <IcEarth className="color-weak mr-2" />
                 {locationText}
             </DropdownButton>
             <Dropdown

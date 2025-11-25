@@ -4,9 +4,9 @@ import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
-import Icon from '@proton/components/components/icon/Icon';
 import Marks from '@proton/components/components/text/Marks';
 import { useCombinedRefs } from '@proton/hooks';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
@@ -226,8 +226,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                             >
                                 {option.type === 'group' ? (
                                     <div className="flex flex-nowrap *:items-center gap-2">
-                                        <Icon
-                                            name="circle-filled"
+                                        <IcCircleFilled
                                             color={option.value.Color}
                                             size={3}
                                             className="shrink-0 self-center my-auto"

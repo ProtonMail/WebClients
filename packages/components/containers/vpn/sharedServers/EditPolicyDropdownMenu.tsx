@@ -4,7 +4,10 @@ import { c } from 'ttag';
 
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcEarth } from '@proton/icons/icons/IcEarth';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 import { POLICY_STEP } from './PolicyModal/modalPolicyStepEnum';
 import type { VpnLocationFilterPolicy } from './useSharedServers';
@@ -32,7 +35,7 @@ const EditPolicyDropdownMenu = ({
                     handleEditPolicy(policy, POLICY_STEP.NAME, () => {});
                 }}
             >
-                <Icon name="pen" size={4} /> {c('Action').t`Edit name`}
+                <IcPen size={4} /> {c('Action').t`Edit name`}
             </DropdownMenuButton>
 
             <DropdownMenuButton
@@ -43,7 +46,7 @@ const EditPolicyDropdownMenu = ({
                     handleEditPolicy(policy, POLICY_STEP.MEMBERS, () => {});
                 }}
             >
-                <Icon name="users" size={4} /> {c('Action').t`Edit users`}
+                <IcUsers size={4} /> {c('Action').t`Edit users`}
             </DropdownMenuButton>
 
             <DropdownMenuButton
@@ -54,7 +57,7 @@ const EditPolicyDropdownMenu = ({
                     handleEditPolicy(policy, POLICY_STEP.COUNTRIES, () => {});
                 }}
             >
-                <Icon name="earth" size={4} /> {c('Action').t`Edit countries`}
+                <IcEarth size={4} /> {c('Action').t`Edit countries`}
             </DropdownMenuButton>
 
             <hr className="mt-2 mb-0" />
@@ -67,7 +70,7 @@ const EditPolicyDropdownMenu = ({
                     handleDeletePolicy(policy, () => {});
                 }}
             >
-                <Icon name="trash" size={4} /> {c('Action').t`Delete`}
+                <IcTrash size={4} /> {c('Action').t`Delete`}
             </DropdownMenuButton>
         </DropdownMenu>
     );

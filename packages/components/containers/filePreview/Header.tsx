@@ -6,6 +6,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import Icon from '@proton/components/components/icon/Icon';
 import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
@@ -178,7 +182,7 @@ const Header = ({
                         className="sm:ml-2 hidden sm:inline-flex"
                         data-testid="file-preview:actions:download"
                     >
-                        <Icon name="arrow-down-line" size={5} alt={c('Action').t`Download`} />
+                        <IcArrowDownLine size={5} alt={c('Action').t`Download`} />
                     </Button>
                 )}
                 {onDetails && (
@@ -190,7 +194,7 @@ const Header = ({
                         className="md:ml-2 hidden md:inline-flex"
                         data-testid="file-preview:actions:details"
                     >
-                        <Icon name="info-circle" size={5} alt={c('Action').t`Details`} />
+                        <IcInfoCircle size={5} alt={c('Action').t`Details`} />
                     </Button>
                 )}
                 {onShare && !isMobileHeaderPreview && (
@@ -237,7 +241,7 @@ const Header = ({
                         className="md:ml-2 md:inline-flex"
                         data-testid="file-preview:actions:selectcover"
                     >
-                        <Icon name="window-image" size={5} alt={c('Action').t`Set as album cover`} />
+                        <IcWindowImage size={5} alt={c('Action').t`Set as album cover`} />
                     </Button>
                 )}
                 {onClose && (
@@ -249,7 +253,7 @@ const Header = ({
                         className="md:ml-2"
                         data-testid="preview:button:close"
                     >
-                        <Icon name="cross" size={5} alt={c('Action').t`Close`} />
+                        <IcCross size={5} alt={c('Action').t`Close`} />
                     </Button>
                 )}
             </div>

@@ -6,13 +6,15 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -143,11 +145,7 @@ const MembersStep = ({
                         {!isEditing ? c('Label').t`Apply policy to` : policyName}
                         {!isEditing && (
                             <Tooltip title={applyPolicyTooltipMessage} className="ml-2 mb-1" originalPlacement="right">
-                                <Icon
-                                    name="info-circle"
-                                    color="var(--interaction-norm)"
-                                    alt={applyPolicyTooltipMessage}
-                                />
+                                <IcInfoCircle color="var(--interaction-norm)" alt={applyPolicyTooltipMessage} />
                             </Tooltip>
                         )}
                     </span>
@@ -170,7 +168,7 @@ const MembersStep = ({
                 <div className="my-4 w-full">
                     <Input
                         placeholder={c('Action').t`Search`}
-                        prefix={<Icon name="magnifier" />}
+                        prefix={<IcMagnifier />}
                         className="pl-0"
                         value={searchQuery}
                         onChange={({ target }) => setSearchQuery(target.value)}
@@ -246,7 +244,7 @@ const MembersStep = ({
                                     onSelectEntity={onSelectGroup}
                                     checked={checked}
                                     entity={group}
-                                    avatar={<Icon name="users-filled"></Icon>}
+                                    avatar={<IcUsersFilled />}
                                     description={c('Label').ngettext(
                                         msgid`${group.UserCount} user`,
                                         `${group.UserCount} users`,

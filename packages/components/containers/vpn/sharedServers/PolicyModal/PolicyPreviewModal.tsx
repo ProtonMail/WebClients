@@ -7,16 +7,20 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import useSharedServers, {
+import {
     type VpnLocationFilterPolicy,
+    useSharedServers,
 } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { getCountryOptions } from '@proton/payments';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -107,7 +111,7 @@ const PolicyPreviewModal = ({
                             toggle();
                         }}
                     >
-                        <Icon name="pencil" size={4} /> {c('Action').t`Edit`}
+                        <IcPencil size={4} /> {c('Action').t`Edit`}
                     </Button>
                 }
             />
@@ -126,7 +130,7 @@ const PolicyPreviewModal = ({
                             policy.Groups.map((group) => (
                                 <EntityRow
                                     key={group.GroupID}
-                                    avatar={<Icon name="users-filled"></Icon>}
+                                    avatar={<IcUsersFilled />}
                                     name={group.Name}
                                     description={c('Label').ngettext(
                                         msgid`${group.UserCount} user`,
@@ -151,7 +155,7 @@ const PolicyPreviewModal = ({
                         style={{ '--w-custom': '31.5%', '--max-w-custom': '30rem' }}
                     >
                         <p className="border-bottom text-semibold p-2">
-                            <Icon name="checkmark-circle-filled" size={4} color="var(--signal-success)" />{' '}
+                            <IcCheckmarkCircleFilled size={4} color="var(--signal-success)" />{' '}
                             {c('Info').t`Enabled countries`} ({selectedGroupedLocations.length})
                         </p>
 
@@ -171,8 +175,8 @@ const PolicyPreviewModal = ({
                         style={{ '--w-custom': '31.5%', '--max-w-custom': '30rem' }}
                     >
                         <p className="border-bottom text-semibold p-2">
-                            <Icon name="circle-slash" size={4} color="var(--signal-danger)" />{' '}
-                            {c('Info').t`Disabled countries`} ({notSelectedGroupedLocations.length})
+                            <IcCircleSlash size={4} color="var(--signal-danger)" /> {c('Info').t`Disabled countries`} (
+                            {notSelectedGroupedLocations.length})
                         </p>
 
                         {loading && (

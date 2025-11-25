@@ -4,7 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -75,7 +76,7 @@ const CountriesStep = ({
             <div className="my-4 w-full">
                 <Input
                     placeholder={c('Action').t`Search`}
-                    prefix={<Icon name="magnifier" />}
+                    prefix={<IcMagnifier />}
                     className="pl-0"
                     value={searchQuery}
                     onChange={({ target }) => setSearchQuery(target.value)}
@@ -175,7 +176,7 @@ const CountriesStep = ({
                                                             onChange={() => onSelectCity(country, city)}
                                                             aria-label={c('Action').t`Select city ${city}`}
                                                         />
-                                                        <Icon name="map-pin" />
+                                                        <IcMapPin />
                                                         <span
                                                             onClick={() => onSelectCity(country, city)}
                                                             className="text-nowrap flex grow cursor-pointer"
