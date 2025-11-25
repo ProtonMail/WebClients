@@ -105,7 +105,7 @@ function useUploadInput(
 
         if (isSDKTransferEnabled) {
             const parentUid = generateNodeUid(volumeId, linkId);
-            return uploadManager.upload(files, parentUid);
+            return isForPhotos ? uploadManager.uploadPhotos(files) : uploadManager.upload(files, parentUid);
         }
 
         let filesToUpload = getItemsToUpload(files);

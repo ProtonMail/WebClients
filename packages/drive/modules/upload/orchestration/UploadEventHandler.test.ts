@@ -145,6 +145,7 @@ describe('UploadEventHandler', () => {
                 nodeUid: 'node456',
                 parentUid: 'parent123',
                 isUpdatedNode: true,
+                isForPhotos: false,
             };
 
             await handler.handleEvent(event);
@@ -450,6 +451,7 @@ describe('UploadEventHandler', () => {
                 nodeUid: 'node456',
                 parentUid: 'parent123',
                 isUpdatedNode: false,
+                isForPhotos: false,
             });
 
             expect(mockSetController).toHaveBeenCalledTimes(1);

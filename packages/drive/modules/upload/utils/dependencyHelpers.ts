@@ -1,9 +1,9 @@
 import { NodeType } from '@protontech/drive-sdk';
 
 import type { QueueEntry } from '../store/uploadQueue.store';
-import { type FileUploadItem, type FolderCreationItem, UploadStatus } from '../types';
+import { type FolderCreationItem, type UploadItem, UploadStatus } from '../types';
 
-export function isParentReady(item: FileUploadItem | FolderCreationItem, allItems: QueueEntry[]): boolean {
+export function isParentReady(item: UploadItem, allItems: QueueEntry[]): boolean {
     if (!item.parentUploadId) {
         return true;
     }

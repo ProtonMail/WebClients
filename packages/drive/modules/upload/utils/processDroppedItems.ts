@@ -1,6 +1,15 @@
 import { processFileSystemEntry } from './processFileSystemEntry';
 
 /**
+ * Type guard for DataTransferItemList
+ */
+export function isDataTransferList(
+    filesOrDataTransfer: File[] | FileList | DataTransfer
+): filesOrDataTransfer is DataTransfer {
+    return 'items' in filesOrDataTransfer;
+}
+
+/**
  * Processes dropped items from a drag-and-drop operation and converts them to Files.
  *
  * Handles both FileSystemEntry API (for directory support) and fallback to getAsFile().
@@ -11,10 +20,8 @@ import { processFileSystemEntry } from './processFileSystemEntry';
  * @param fallbackFiles - Optional FileList to cover browsers that expose files only via DataTransfer.files
  * @returns Promise resolving to an array of Files
  */
-export async function processDroppedItems(
-    items: DataTransferItemList,
-    fallbackFiles?: FileList | null
-): Promise<File[]> {
+export async function processDroppedItems(dataTransfer: DataTransfer): Promise<File[]> {
+    const { items, files: fallbackFiles } = dataTransfer;
     const collectedFiles: File[] = [];
     const seen = new Set<string>();
     const rootFolderNames = new Set<string>();

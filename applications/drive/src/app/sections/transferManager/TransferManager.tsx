@@ -4,9 +4,13 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useBeforeUnload, useDrawerWidth } from '@proton/components';
+import { splitNodeUid } from '@proton/drive/index';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
+import { useDriveEventManager } from '../../store';
+import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
+import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
 import { TransferManagerList } from './transferManagerList/transferManagerList';
 import { useTransferManagerActions } from './useTransferManagerActions';
@@ -20,6 +24,7 @@ export const TransferManager = () => {
     const [isMinimized, setMinimized] = useState(false);
     const drawerWidth = useDrawerWidth();
     const [leaveMessage, setLeaveMessage] = useState('');
+    const driveEventManager = useDriveEventManager();
     useBeforeUnload(leaveMessage);
     const { hasPendingConflicts, firstConflictItem } = useUploadQueueStore(
         useShallow((state) => ({
@@ -49,6 +54,29 @@ export const TransferManager = () => {
             setLeaveMessage('');
         }
     }, [status]);
+
+    useEffect(() => {
+        // TODO: Move out of here once we have multi event subscription
+        // Also we can create photos:complete event so we can separate
+        const actionEventManager = getActionEventManager();
+        uploadManager.onUploadEvent(async (event) => {
+            if (event.type === 'file:complete' && event.isUpdatedNode) {
+                await actionEventManager.emit({
+                    type: ActionEventName.UPDATED_NODES,
+                    items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
+                });
+            } else if (event.type === 'file:complete' && event.isForPhotos) {
+                // TODO: Remove when photos section listing is using the sdk
+                const { volumeId } = splitNodeUid(event.nodeUid);
+                await driveEventManager.pollEvents.volumes(volumeId);
+            } else if (event.type === 'file:complete' || event.type === 'folder:complete') {
+                await actionEventManager.emit({
+                    type: ActionEventName.CREATED_NODES,
+                    items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
+                });
+            }
+        });
+    }, [driveEventManager.pollEvents]);
 
     const toggleMinimize = () => {
         setMinimized((value) => !value);

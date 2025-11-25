@@ -1,21 +1,26 @@
-import type { NodeType } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { NodeWithSameNameExistsValidationError, getDrive } from '../../../index';
+import { type ExtendedAttributesMetadata, generateExtendedAttributes } from '../../extendedAttributes';
 import { generateThumbnail } from '../../thumbnails';
-import type { ExtendedAttributesMetadata, UploadTask } from '../types';
+import type { FileUploadTask } from '../types';
 import { TaskExecutor } from './TaskExecutor';
 
 /**
  * Executes file uploads and emits events
  * NO store access - only emits events
  */
-export class FileUploadExecutor extends TaskExecutor<UploadTask & { type: NodeType.File }> {
-    async execute(task: UploadTask & { type: NodeType.File }): Promise<void> {
+export class FileUploadExecutor extends TaskExecutor<FileUploadTask> {
+    async execute(task: FileUploadTask): Promise<void> {
         const abortController = new AbortController();
         try {
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
-            const metadata = this.createMetadata(task.file, mimeType, mediaInfo, task.isUnfinishedUpload);
+            const metadata = await this.createFileUploaderMetadata(
+                task.file,
+                mimeType,
+                mediaInfo,
+                task.isUnfinishedUpload
+            );
 
             const drive = getDrive();
             const uploader = await this.getUploader(drive, task, metadata, abortController.signal);
@@ -43,6 +48,7 @@ export class FileUploadExecutor extends TaskExecutor<UploadTask & { type: NodeTy
                 nodeUid,
                 parentUid: task.parentUid,
                 isUpdatedNode: Boolean(task.existingNodeUid),
+                isForPhotos: task.isForPhotos,
             });
         } catch (error) {
             if (error instanceof NodeWithSameNameExistsValidationError) {
@@ -69,45 +75,54 @@ export class FileUploadExecutor extends TaskExecutor<UploadTask & { type: NodeTy
         const thumbnailsResult = await thumbnailsPromise;
         const mimeType = await mimeTypePromise;
 
+        const result = thumbnailsResult.ok ? thumbnailsResult.result : undefined;
+        const mediaInfo = result
+            ? {
+                  width: result.width,
+                  height: result.height,
+                  duration: result.duration,
+              }
+            : undefined;
+
         return {
-            thumbnails: thumbnailsResult.ok ? thumbnailsResult.result?.thumbnails || [] : [],
-            mediaInfo: thumbnailsResult.ok ? thumbnailsResult.result : undefined,
+            thumbnails: result?.thumbnails || [],
+            mediaInfo,
             mimeType,
         };
     }
 
-    // TODO: Extract logic somewhere else, as it will grow with photos upload implementation
-    private createMetadata(
+    private async createFileUploaderMetadata(
         file: File,
         mimeType: string,
         mediaInfo?: { width?: number; height?: number; duration?: number },
         isUnfinishedUpload?: boolean
-    ): {
+    ): Promise<{
         mediaType: string;
         expectedSize: number;
         modificationTime: Date;
         overrideExistingDraftByOtherClient?: boolean;
         additionalMetadata: ExtendedAttributesMetadata;
-    } {
+    }> {
+        const { metadata } = await generateExtendedAttributes(file, mimeType, mediaInfo);
         return {
             mediaType: mimeType,
             expectedSize: file.size,
             modificationTime: new Date(file.lastModified),
             overrideExistingDraftByOtherClient: isUnfinishedUpload,
-            additionalMetadata: {
-                Media: {
-                    Width: mediaInfo?.width,
-                    Height: mediaInfo?.height,
-                    Duration: mediaInfo?.duration,
-                },
-            },
+            additionalMetadata: metadata,
         };
     }
 
     private async getUploader(
         drive: ReturnType<typeof getDrive>,
-        task: UploadTask & { type: NodeType.File },
-        metadata: ReturnType<typeof this.createMetadata>,
+        task: FileUploadTask,
+        metadata: {
+            mediaType: string;
+            expectedSize: number;
+            modificationTime: Date;
+            overrideExistingDraftByOtherClient?: boolean;
+            additionalMetadata: ExtendedAttributesMetadata;
+        },
         signal: AbortSignal
     ) {
         if (task.existingNodeUid && !task.isUnfinishedUpload) {

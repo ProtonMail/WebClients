@@ -37,6 +37,7 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [UploadStatus.ParentCancelled]: c('Info').t`Canceled`,
         // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
         [UploadStatus.Skipped]: c('Info').t`Skipped`,
+        [UploadStatus.PhotosDuplicate]: c('Info').t`Same photo or video already exist`,
         [DownloadStatus.Finalizing]: c('Info').t`Finalizing`,
     };
     return labels[entry.status];
@@ -55,7 +56,7 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     if (entry.status === BaseTransferStatus.Cancelled) {
         return <Icon size={5} className="color-weak" name="cross-circle" />;
     }
-    if (entry.status === UploadStatus.Skipped) {
+    if (entry.status === UploadStatus.Skipped || entry.status === UploadStatus.PhotosDuplicate) {
         return <Icon size={5} className="color-weak" name="cross-circle" />;
     }
     if (entry.status === BaseTransferStatus.Failed) {
@@ -84,6 +85,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
         BaseTransferStatus.Cancelled,
         BaseTransferStatus.Failed,
         UploadStatus.Skipped,
+        UploadStatus.PhotosDuplicate,
     ].includes(entry.status as BaseTransferStatus);
 
     const { getDownloadItem, updateDownloadItem } = useDownloadManagerStore(

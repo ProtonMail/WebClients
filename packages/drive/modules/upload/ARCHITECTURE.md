@@ -37,7 +37,11 @@ The upload system is organized into several layers:
 
 - **UploadManager** (`UploadManager.ts`)
     - Public API for uploads
+    - Provides two upload methods:
+        - `upload()` - Regular Drive uploads (requires parentUid)
+        - `uploadPhotos()` - Photos uploads (no parentUid)
     - Handles file/folder structure building
+    - Supports drag & drop via DataTransferItemList
     - Starts/stops orchestrator
     - Exposes conflict resolution
 
@@ -66,10 +70,17 @@ The upload system is organized into several layers:
     - Abstract base class for all executors
     - Ensures consistent API (`execute()`, `setEventCallback()`)
 - **FileUploadExecutor** (`execution/FileUploadExecutor.ts`)
-    - Executes file uploads via SDK
+    - Executes regular file uploads to Drive via SDK
+    - Requires parentUid for upload location
     - Generates thumbnails
     - Handles upload progress tracking
     - Emits events (started, progress, complete, error, conflict)
+- **PhotosUploadExecutor** (`execution/PhotosUploadExecutor.ts`)
+    - Executes photo uploads via SDK
+    - No parentUid required (uses photos-specific API)
+    - Handles duplicate photo detection
+    - Generates thumbnails and extracts EXIF data
+    - Emits events (started, progress, complete, photo:exist, error)
 - **FolderCreationExecutor** (`execution/FolderCreationExecutor.ts`)
     - Creates folders via SDK
     - Emits events (complete, error, conflict)

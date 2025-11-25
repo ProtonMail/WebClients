@@ -62,7 +62,7 @@ export const useFileDrop = ({
     const handleDrop = useCallback(
         async (e: React.DragEvent<HTMLDivElement>) => {
             e.preventDefault();
-            const { items, files } = e.dataTransfer;
+            const { items } = e.dataTransfer;
 
             if (!items) {
                 return;
@@ -72,7 +72,9 @@ export const useFileDrop = ({
 
             if (isSDKTransferEnabled) {
                 const parentUid = generateNodeUid(volumeId, parentLinkId);
-                return uploadManager.uploadDrop(items, files, parentUid);
+                return isForPhotos
+                    ? uploadManager.uploadPhotos(e.dataTransfer)
+                    : uploadManager.upload(e.dataTransfer, parentUid);
             }
 
             let unSupportedFiles = false;

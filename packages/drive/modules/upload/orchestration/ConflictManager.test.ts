@@ -260,5 +260,94 @@ describe('ConflictManager', () => {
 
             expect(mockGetAvailableName).not.toHaveBeenCalled();
         });
+
+        it('should resolve file conflict with replace strategy', async () => {
+            const fileItem = {
+                ...createFileItem('test.txt', UploadStatus.ConflictFound),
+                error: createConflictError('existing-node-123'),
+            };
+            mockGetItem.mockReturnValue(fileItem);
+            mockGetQueue.mockReturnValue([]);
+
+            await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Replace);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(
+                'task1',
+                expect.objectContaining({
+                    status: UploadStatus.Pending,
+                    existingNodeUid: 'existing-node-123',
+                    nodeUid: undefined,
+                })
+            );
+        });
+
+        it('should resolve folder conflict with replace strategy and update children parentUid', async () => {
+            const folderItem = {
+                ...createFolderItem('MyFolder', UploadStatus.ConflictFound),
+                error: createConflictError('existing-folder-456'),
+            };
+            mockGetItem.mockReturnValue(folderItem);
+            mockGetQueue.mockReturnValue([
+                folderItem,
+                { uploadId: 'child1', parentUploadId: 'task1' },
+                { uploadId: 'child2', parentUploadId: 'task1' },
+                { uploadId: 'other', parentUploadId: 'other-parent' },
+            ]);
+            jest.mocked(getBlockedChildren).mockReturnValue(['child1', 'child2']);
+
+            await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Replace);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(
+                'task1',
+                expect.objectContaining({
+                    status: UploadStatus.Finished,
+                    existingNodeUid: 'existing-folder-456',
+                    nodeUid: 'existing-folder-456',
+                })
+            );
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child1', {
+                parentUid: 'existing-folder-456',
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child2', {
+                parentUid: 'existing-folder-456',
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(3);
+        });
+
+        it('should resolve folder conflict with skip strategy and cancel children', async () => {
+            const folderItem = {
+                ...createFolderItem('MyFolder', UploadStatus.ConflictFound),
+                error: createConflictError('existing-folder-456'),
+            };
+            mockGetItem.mockReturnValue(folderItem);
+            mockGetQueue.mockReturnValue([
+                folderItem,
+                { uploadId: 'child1', parentUploadId: 'task1' },
+                { uploadId: 'child2', parentUploadId: 'task1' },
+            ]);
+            jest.mocked(getBlockedChildren).mockReturnValue(['child1', 'child2']);
+
+            await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Skip);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith(
+                'task1',
+                expect.objectContaining({
+                    status: UploadStatus.Skipped,
+                })
+            );
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child1', {
+                status: UploadStatus.ParentCancelled,
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('child2', {
+                status: UploadStatus.ParentCancelled,
+            });
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledTimes(3);
+        });
     });
 });
