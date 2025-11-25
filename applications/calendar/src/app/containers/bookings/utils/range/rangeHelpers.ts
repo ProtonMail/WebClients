@@ -163,11 +163,14 @@ export const createBookingRangeNextAvailableTime = ({
 export const convertBookingRangesToCalendarViewEvents = (
     calendarData: VisualCalendar,
     formData: BookingFormData,
-    date: Date
+    date: Date,
+    userSettings: UserSettings
 ): CalendarViewEvent[] => {
     if (!formData.bookingRanges) {
         return [];
     }
+    const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
+    const weekStart = startOfWeek(date, { weekStartsOn });
 
     return formData.bookingRanges.map((range) => {
         let utcStart = toUTCDate(fromLocalDate(range.start));
@@ -175,10 +178,17 @@ export const convertBookingRangesToCalendarViewEvents = (
 
         // We need to adjust the range date when creating a recurring page so it's visible when changing week
         if (formData.recurring) {
-            const weekdayDelta = range.start.getDay() - date.getDay();
-            const targetDay = addDays(date, weekdayDelta);
+            // Calculate the day offset from the week start range.start.getDay() gives us 0-6 (Sun-Sat)
+            // We need to find the correct offset based on the user's week start preference
+            const rangeWeekday = range.start.getDay();
+            let dayOffset = rangeWeekday - weekStartsOn;
+            if (dayOffset < 0) {
+                dayOffset += 7;
+            }
 
-            const adjustedStartLocal = set(addDays(date, weekdayDelta), {
+            const targetDay = addDays(weekStart, dayOffset);
+
+            const adjustedStartLocal = set(targetDay, {
                 hours: range.start.getHours(),
                 minutes: range.start.getMinutes(),
                 seconds: range.start.getSeconds(),
