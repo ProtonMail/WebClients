@@ -30,7 +30,6 @@ const addGlobalOptions = (program) => {
         .option('--sso <sso>', '')
         .option('--no-api-proxy', '')
         .option('--inline-icons', false)
-        .option('--webpackOnCaffeine', '', false)
         .option('--handleSupportAndErrors', '', false)
         .option('--logical', '', false)
         .option('--benchmarkBuild', '', false)
@@ -53,6 +52,7 @@ const getWebpackArgs = (options, env) => {
 };
 
 const commandWithLog = (...args) => {
+    // eslint-disable-next-line no-console
     console.log(styleText('cyan', args[0]), '\n');
     return execa.command(...args);
 };
@@ -60,6 +60,7 @@ const commandWithLog = (...args) => {
 addGlobalOptions(program.command('build').description('create an optimized production build'))
     .option('--no-sri', 'disable sri')
     .action(async (options, env) => {
+        // eslint-disable-next-line no-console
         console.log(styleText('magenta', 'Creating a production build...\n'));
 
         const webpackArgs = getWebpackArgs(options, env);
@@ -98,6 +99,7 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
     .option('--overlay-runtime-errors', 'show a full screen overlay when there are runtime errors')
     .option('--overlay-errors', 'show a full screen overlay when there are compiler errors')
     .action(async (options, env) => {
+        // eslint-disable-next-line no-console
         console.log(styleText('magenta', 'Starting development server...\n'));
 
         const webpackArgs = getWebpackArgs(options, env);

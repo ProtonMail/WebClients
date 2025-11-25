@@ -19,7 +19,6 @@ const options: Partial<ProtonPackOptions> = {
     sso: `https://account.${apiEnv}`,
     publicPath: '/',
     appMode: 'standalone',
-    webpackOnCaffeine: true,
     featureFlags: '',
     sri: true,
     inlineIcons: false,
