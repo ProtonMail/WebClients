@@ -5,7 +5,6 @@ import { getActionEventManager } from '../../utils/ActionEventManager/ActionEven
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { FolderViewData } from './useFolder.store';
 import { useFolderStore } from './useFolder.store';
@@ -15,8 +14,8 @@ const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
     let shareUrl: LinkShareUrl | undefined;
     try {
         const drive = getDrive();
-        const { node } = getNodeEntity(await drive.getNode(uid));
-        legacyItem = await mapNodeToLegacyItem(node, folder.shareId);
+        const maybeNode = await drive.getNode(uid);
+        legacyItem = await mapNodeToLegacyItem(maybeNode, folder.shareId);
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'Unhandled Error';
         sendErrorReport(new EnrichedError(errorMessage, { tags: { component: 'drive-sdk' }, extra: { uid } }));
