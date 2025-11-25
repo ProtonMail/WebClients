@@ -180,9 +180,13 @@ const getPassCoreProviderProps = (
         writeToClipboard: async (content, clipboardTTL, promptForPermissions) => {
             let granted = !promptForPermissions;
 
-            /** Clipboard write can be done directly in the view. No await is important
-             * because FF requires to request permissions in sync with the user event */
-            void navigator.clipboard.writeText(content);
+            /** Clipboard write is done directly in the view with clipboard async api.
+             * Chrome needs to wait because requesting permissions will close the popup and
+             * the ongoing async write will fail otherwise.
+             * Firefox in the contrary requires to not await unless requesting permissions is
+             * considered not being in sync with a user interraction. */
+            const writePromise = navigator.clipboard.writeText(content).catch(noop);
+            if (BUILD_TARGET === 'chrome') await writePromise;
 
             /** Handle clipboard auto-clear if TTL is specified. Auto-clear must be delegated
              * to the background worker since the view may be closed before the timeout expires.
