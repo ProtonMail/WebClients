@@ -20,7 +20,9 @@ describe('UploadEventHandler', () => {
     let mockUpdateQueueItems: jest.Mock;
     let mockSetController: jest.Mock;
     let mockRemoveController: jest.Mock;
+    let mockGetController: jest.Mock;
     let mockCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
+    let mockGetItem: jest.Mock;
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -28,17 +30,21 @@ describe('UploadEventHandler', () => {
         mockUpdateQueueItems = jest.fn();
         mockSetController = jest.fn();
         mockRemoveController = jest.fn();
+        mockGetController = jest.fn();
         mockCheckAndUnsubscribeIfQueueEmpty = jest.fn();
         mockCancelFolderChildren = jest.fn();
+        mockGetItem = jest.fn();
 
         jest.mocked(useUploadQueueStore.getState).mockReturnValue({
             updateQueueItems: mockUpdateQueueItems,
             queue: new Map(),
+            getItem: mockGetItem,
         } as any);
 
         jest.mocked(useUploadControllerStore.getState).mockReturnValue({
             setController: mockSetController,
             removeController: mockRemoveController,
+            getController: mockGetController,
         } as any);
 
         mockCapacityManager = {
@@ -111,6 +117,24 @@ describe('UploadEventHandler', () => {
             expect(mockUpdateQueueItems).not.toHaveBeenCalled();
             expect(mockCapacityManager.updateProgress).not.toHaveBeenCalled();
         });
+
+        it('should not update progress when file is cancelled', async () => {
+            mockGetItem.mockReturnValue({
+                uploadId: 'task123',
+                status: UploadStatus.Cancelled,
+            });
+
+            const event = {
+                type: 'file:progress' as const,
+                uploadId: 'task123',
+                uploadedBytes: 500,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).not.toHaveBeenCalled();
+            expect(mockCapacityManager.updateProgress).not.toHaveBeenCalled();
+        });
     });
 
     describe('handleEvent - file:complete', () => {
@@ -151,6 +175,26 @@ describe('UploadEventHandler', () => {
             });
             expect(mockRemoveController).toHaveBeenCalledWith('task123');
             expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+
+        it('should not mark file as failed when file is cancelled', async () => {
+            mockGetItem.mockReturnValue({
+                uploadId: 'task123',
+                status: UploadStatus.Cancelled,
+            });
+
+            const error = new Error('Upload failed');
+            const event = {
+                type: 'file:error' as const,
+                uploadId: 'task123',
+                error,
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).not.toHaveBeenCalled();
+            expect(mockRemoveController).not.toHaveBeenCalled();
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).not.toHaveBeenCalled();
         });
     });
 
@@ -313,6 +357,66 @@ describe('UploadEventHandler', () => {
             await handler.handleEvent(event);
 
             expect(mockConflictManager.handleConflict).toHaveBeenCalledWith('task123', error);
+        });
+    });
+
+    describe('handleEvent - file:cancelled', () => {
+        it('should abort controller, mark file as cancelled and remove controller', async () => {
+            const mockAbortController = new AbortController();
+            const abortSpy = jest.spyOn(mockAbortController, 'abort');
+            mockGetController.mockReturnValue({
+                abortController: mockAbortController,
+            });
+
+            const event = {
+                type: 'file:cancelled' as const,
+                uploadId: 'task123',
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockGetController).toHaveBeenCalledWith('task123');
+            expect(abortSpy).toHaveBeenCalled();
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Cancelled,
+            });
+            expect(mockRemoveController).toHaveBeenCalledWith('task123');
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+
+        it('should handle cancellation when no controller exists', async () => {
+            mockGetController.mockReturnValue(null);
+
+            const event = {
+                type: 'file:cancelled' as const,
+                uploadId: 'task123',
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockGetController).toHaveBeenCalledWith('task123');
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Cancelled,
+            });
+            expect(mockRemoveController).toHaveBeenCalledWith('task123');
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+        });
+    });
+
+    describe('handleEvent - folder:cancelled', () => {
+        it('should mark folder as cancelled and cancel children', async () => {
+            const event = {
+                type: 'folder:cancelled' as const,
+                uploadId: 'task123',
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.Cancelled,
+            });
+            expect(mockCancelFolderChildren).toHaveBeenCalledWith('task123');
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
         });
     });
 

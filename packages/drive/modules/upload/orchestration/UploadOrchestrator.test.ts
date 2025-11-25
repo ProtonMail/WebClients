@@ -334,4 +334,47 @@ describe('UploadOrchestrator', () => {
             );
         });
     });
+
+    describe('cancel', () => {
+        it('should emit file:cancelled event for file uploads', async () => {
+            mockGetItem.mockReturnValue({
+                uploadId: 'file1',
+                type: NodeType.File,
+                status: UploadStatus.InProgress,
+            });
+
+            await orchestrator.cancel('file1');
+
+            const eventHandlerInstance = jest.mocked(UploadEventHandler).mock.results[0].value;
+            expect(eventHandlerInstance.handleEvent).toHaveBeenCalledWith({
+                type: 'file:cancelled',
+                uploadId: 'file1',
+            });
+        });
+
+        it('should emit folder:cancelled event for folder uploads', async () => {
+            mockGetItem.mockReturnValue({
+                uploadId: 'folder1',
+                type: NodeType.Folder,
+                status: UploadStatus.InProgress,
+            });
+
+            await orchestrator.cancel('folder1');
+
+            const eventHandlerInstance = jest.mocked(UploadEventHandler).mock.results[0].value;
+            expect(eventHandlerInstance.handleEvent).toHaveBeenCalledWith({
+                type: 'folder:cancelled',
+                uploadId: 'folder1',
+            });
+        });
+
+        it('should not emit event when upload does not exist', async () => {
+            mockGetItem.mockReturnValue(undefined);
+
+            await orchestrator.cancel('nonexistent');
+
+            const eventHandlerInstance = jest.mocked(UploadEventHandler).mock.results[0].value;
+            expect(eventHandlerInstance.handleEvent).not.toHaveBeenCalled();
+        });
+    });
 });
