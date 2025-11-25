@@ -17,6 +17,9 @@
       "Activate organization key": [
         "کلید سازمان را فعال کنید"
       ],
+      "Activate recovery": [
+        "فعال‌سازی بازیابی"
+      ],
       "Add": [
         "افزودن"
       ],
@@ -89,6 +92,12 @@
       "Confirm": [
         "تایید"
       ],
+      "Connect": [
+        "اتصال"
+      ],
+      "Connected": [
+        "متصل"
+      ],
       "Contact support": [
         "تماس با پشتیبانی"
       ],
@@ -128,11 +137,17 @@
       "Decrease": [
         "کاهش"
       ],
+      "Decrypt": [
+        "رمزگشایی"
+      ],
       "Delete": [
         "حذف"
       ],
       "Delete account": [
         "حذف حساب کاربری"
+      ],
+      "Delete logs": [
+        "حذف گزارش‌ها"
       ],
       "Delete user": [
         "حذف کاربر"
@@ -149,6 +164,12 @@
       "Disable": [
         "غیرفعال"
       ],
+      "Disable recovery phrase": [
+        "غیرفعالسازی عبارت بازیابی"
+      ],
+      "Disable recovery phrase?": [
+        "عبارت بازیابی غیرفعال شود؟"
+      ],
       "Discard": [
         "کنارگذاری"
       ],
@@ -160,6 +181,9 @@
       ],
       "Domain name": [
         "نام دامنه"
+      ],
+      "Don't show again": [
+        "دیگر نشان نده"
       ],
       "Done": [
         "انجام شد"
@@ -175,6 +199,9 @@
       ],
       "Download logs": [
         "گزارش های دانلود"
+      ],
+      "Download recovery file": [
+        "دانلود فایل بازیابی"
       ],
       "Edit": [
         "ویرایش"
@@ -220,6 +247,12 @@
       ],
       "Forgot password?": [
         "فراموشی رمز عبور?"
+      ],
+      "Generate new recovery phrase": [
+        "تولید عبارت بازیابی نو"
+      ],
+      "Generate recovery phrase": [
+        "تولید عبارت بازیابی"
       ],
       "Get ${ planOrAppName }": [
         "دریافت ${ planOrAppName }"
@@ -356,6 +389,9 @@
       "refresh the page": [
         "بازخوانی صفحه"
       ],
+      "Reload": [
+        "بارگزاری مجدد"
+      ],
       "Remove": [
         "حذف"
       ],
@@ -410,6 +446,9 @@
       "Revoke ${ name }": [
         "لغو ${ name }"
       ],
+      "Revoke all other sessions": [
+        "لغو دیگر نشست‌ها"
+      ],
       "Save": [
         "ذخیره"
       ],
@@ -448,6 +487,9 @@
       ],
       "Set new password": [
         "تنظیم گذرواژه جدید"
+      ],
+      "Set recovery phrase": [
+        "تنظیم عبارت بازیابی"
       ],
       "Settings": [
         "تنظیمات"
@@ -533,6 +575,15 @@
       "Unlock": [
         "بازکردن"
       ],
+      "Unlock data": [
+        "بازگشایی داده"
+      ],
+      "Update recovery file": [
+        "به‌روزرسانی فایل بازیابی"
+      ],
+      "Update recovery phrase": [
+        "به‌ روزرسانی عبارت بازیابی"
+      ],
       "Upgrade": [
         "ارتقا"
       ],
@@ -587,14 +638,31 @@
       "View plans details": [
         "مشاهدهٔ جزئیات طرح‌ها"
       ],
+      "Void": [
+        "باطل"
+      ],
+      "Void all recovery files": [
+        "باطل کردن تمام فایل های بازیابی"
+      ],
+      "Void all recovery files?": [
+        "آیا تمام فایل های بازیابی باطل شوند؟"
+      ],
       "What do I get?": [
         "چه چیزی دیافت میکنم?"
+      ],
+      "Wipe": [
+        "پاک‌سازی"
       ],
       "Zoom in": [
         "بزرگ‌نمایی"
       ],
       "Zoom out": [
         "کوچک‌نمایی"
+      ]
+    },
+    "Action for user session": {
+      "Revoke": [
+        "لغو"
       ]
     },
     "Addon": {
@@ -666,44 +734,6 @@
         "رمزگذاری شده"
       ]
     },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "۱۵ گیگابایت فضای ذخیره‌سازی"
-      ],
-      "200 GB storage": [
-        "۲۰۰ گیگابایت فضای ذخیره‌سازی"
-      ],
-      "Protect up to 10 devices": [
-        "محافظت از حداکثر ۱۰ تا دستگاه"
-      ],
-      "Unlimited folders, labels and filters": [
-        "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
-      ],
-      "years": [
-        "سال"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } ماه",
-        "${ n } ماه"
-      ],
-      "/ month": [
-        "/ ماه"
-      ],
-      "12 months": [
-        "12 ماه"
-      ],
-      "15 months": [
-        "15 ماه"
-      ],
-      "24 months": [
-        "24 ماه"
-      ],
-      "30 months": [
-        "30 ماه"
-      ]
-    },
     "Attached ics file error": {
       "Empty ICS file": [
         "فایل ICS خالی است"
@@ -733,6 +763,11 @@
       ],
       "Missing keys": [
         "کلیدهای گمشده"
+      ]
+    },
+    "Badge for user sessions table": {
+      "Current session": [
+        "نشست کنونی"
       ]
     },
     "bf2023: Action": {
@@ -2340,6 +2375,12 @@
       "The folder name is too long. Please choose a different name.": [
         "نام پوشه خیلی طولانی است. لطفا نام دیگری انتخاب کنید."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "نمیتوان کلید های موجود در فایل بازیابی را تایید کرد. لطفا با پشتیبانی تماس بگیرید."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "نمیتوان کلید های موجود در فایل بازیابی را تایید کرد. لطفا برای اطلاعات بیشتر بطور مجزا آپلود کنید."
+      ],
       "The label name is invalid. Please choose a different name.": [
         "نام برچسب نامعتبر است. لطفا نام دیگری انتخاب کنید."
       ],
@@ -2372,6 +2413,12 @@
       ],
       "Unknown payment token status": [
         "وضعیت نمودافزار پرداخت ناشناخته است"
+      ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "فایلی که بارگذاری کردید یک کلید خصوصی صحیح نیست. لطفا پس از راستی‌آزمایی، دوباره امتحان کنید."
+      ],
+      "Uploaded files are not valid private keys. Please verify and try again.": [
+        "فایل‌هایی که بارگذاری کردید کلیدهای خصوصی صحیح نیستند. لطفا پس از راستی‌آزمایی، دوباره امتحان کنید."
       ],
       "Username must begin with a letter or digit": [
         "نام کاربری میبایست با یک حرف یا رقم آغاز شود"
@@ -2408,6 +2455,9 @@
       ],
       "Your import will not be processed.": [
         "واردسازی شما پردازش نخواهد شد."
+      ],
+      "Zero keys reactivated": [
+        "کلیدهای صفر بازفعالسازی شدند"
       ]
     },
     "Error importing calendar": {
@@ -3121,6 +3171,11 @@
         "${ boldExport } را برای خارج سازی بعنوان یک فایل ICS انتخاب کنید."
       ]
     },
+    "Import provider": {
+      "Import from Google": [
+        "وارد سازی از Google"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } از ${ totalContacts } مخاطب درون‌برد نشد. برای جزئیات کلیک کنید"
@@ -3171,6 +3226,10 @@
       "${ number } server": [
         "${ number } سرور",
         "${ number } سرور"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } فایلی که بارگذاری کردید کلیدهای خصوصی صحیح نیستند. لطفا پس از تایید، دوباره امتحان کنید.",
+        "${ numberOfNonPrivateKeys } فایلی که بارگذاری کردید کلیدهای خصوصی صحیح نیستند. لطفا پس از تایید، دوباره امتحان کنید."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } پوشه یافت شد",
@@ -3228,11 +3287,17 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "نامی که به شما کمک کند که مشخص کنید کجا از آن استفاده میکنید تا بعدا راحت آنرا لغو یا تمدید کنید."
       ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "یک عبارت بازیابی به شما اجازه می دهد تا درصورتی که رمز عبور خود را فراموش کنید به حسابتان دسترسی پیدا کنید و اطلاعات رمزگذاری شده ی خود را بازیابی کنید"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "یک کاربر، یک حساب کاربری مرتبط با نام کاربری، صندوق نامه و شخص واحد است"
       ],
       "Account successfully updated": [
         "حساب کاربری با موفقیت بروز شد"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "حداقل یک روش بازیابی داده را فعال کنید تا اگر رمز عبورتان را از دست دادید، بتوانید به دسترسی به محتوایات حساب ${ BRAND_NAME } خود ادامه دهید."
       ],
       "active": [
         "فعال"
@@ -3256,6 +3321,9 @@
       "All (${ totalFoldersCount } label)": [
         "همه (${ totalFoldersCount } برچسب)",
         "همه (${ totalFoldersCount } برچسب)"
+      ],
+      "All keys successfully reactivated": [
+        "همه کلیدها با موفقیت بازفعال شدند"
       ],
       "All your changes will be lost.": [
         "تمام تغییرات شما از دست خواهد رفت."
@@ -3286,6 +3354,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "آیا مطمئن هستید که می‌خواهید درون‌برد خود را کنار بگذارید؟"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "آیا مطمئن هستید که می‌خواهید همه گزارش‌های خود را برای همیشه حذف کنید؟"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "آیا مطمئن هستید که می‌خواهید امتیازات مدیریتی این کاربر را حذف کنید؟"
@@ -3353,6 +3424,9 @@
       "Custom email domains": [
         "دامنه های ایمیل سفارشی"
       ],
+      "Data locked": [
+        "داده‌ها قفل شده‌اند"
+      ],
       "default email address": [
         "آدرس ایمیل پیش‌فرض"
       ],
@@ -3364,6 +3438,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "این گذرواژه را فراموش نکنید اگر آن را فراموش کنید، نمی‌توانید سازمان خود را مدیریت کنید."
+      ],
+      "Do you want to revoke all other sessions than the current one?": [
+        "آیا می‌خواهید تمام نشست‌های قبل از نشست کنونی را لغو کنید؟"
       ],
       "domain used": [
         "دامنه استفاده شد",
@@ -3395,6 +3472,9 @@
       ],
       "Emailing preference saved": [
         "تنظیمات رایانامه‌نگاری بروز شد"
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "با دوباره فعال کردن عبارت بازیابی، یک عبارت جدید تولید می‌شود."
       ],
       "End date": [
         "تاریخ پایان"
@@ -3444,8 +3524,14 @@
       "expires ${ expirationDate }": [
         "در ${ expirationDate } منقضی میشود"
       ],
+      "Failed to fetch logs.": [
+        "واکشی گزارش‌ها انجام نشد."
+      ],
       "Gateways": [
         "دروازه‌ها"
+      ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "ایجاد یک عبارت بازیابی تازه، عبارت قبلی را غیرفعال می‌کند."
       ],
       "Get ${ upsellPlanName }": [
         "دریافت ${ upsellPlanName }"
@@ -3461,6 +3547,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "اگر مدیران دیگری این گذرواژه را تغییر داده باشند، باید از آنها گذرواژه جدید سازمان را بخواهید."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "اگر این به دلیل بازنشانی گذرواژهٔ قدیمی است، می‌توانید از نمایش مجدد پیام جلوگیری کنید"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "اگر در ایجاد حساب کاربری خود مشکلی دارید، لطفا یک دعوت‌ نامه درخواست کنید و ما ظرف یک روز کاری پاسخ خواهیم داد."
@@ -3485,6 +3574,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "اگر به تنزیل طرح خود ادامه دهید، دسترسی به ویژگی های خریدنی ${ VPN_APP_NAME } را از دست خواهید داد."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "اگر به‌تازگی گذرواژه خود را بازنشانی کرده‌اید، می‌توانید از یک روش بازیابی برای باز کردن قفل اطلاعات خود استفاده نمایید"
       ],
       "Import from": [
         "واردسازی از"
@@ -3531,6 +3623,9 @@
       "Invite successfully sent": [
         "دعوت با موفقیت ارسال شد",
         "دعوت ها با موفقیت ارسال شدند"
+      ],
+      "It appears some of your data is encrypted and locked.": [
+        "به نظر می‌رسد که برخی از داده‌های شما رمزگذاری و قفل شده‌است."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "تنها کافیست انتخاب خود را تأیید کنید سپس ما بقیهٔ کار را انجام می‌دهیم."
@@ -3586,6 +3681,9 @@
       "No addresses exist": [
         "نشانی‌ای وجود ندارد"
       ],
+      "No logs yet.": [
+        "هنوز گزارشی نیست"
+      ],
       "No payment is required at this time.": [
         "در حال حاضر پرداختی لازم نیست."
       ],
@@ -3628,6 +3726,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "لطفاً عبارت بازیابی ١٢ واژه‌ای مرتبط با حساب خود را وارد نمایید."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "لطفاً از آن مکانی امن نگهداری کنید. اگر رمزعبور خود را بازیابی کنید، برای دسترسی به حساب خود و رمزگشایی اطلاعاتتان به آن نیاز خواهید داشت."
+      ],
       "Please select the folders you would like to import:": [
         "لطفا پوشه‌‌هایی را که مایلید واردسازی کنید را انتخاب کنید:"
       ],
@@ -3655,8 +3756,29 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "بر روی دستگاه های قابل اعتماد توصیه می شود. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery file downloaded": [
+        "فایل بازیابی بارگیری شد"
+      ],
+      "Recovery files have been voided": [
+        "فایل های بازیابی سلب اعتبار شده اند"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "اطلاعات بازیابی بر روی این دستگاه باقی خواهد ماند مگر اینکه شما آن را برای حذف انتخاب کنید."
+      ],
+      "Recovery phrase copied to clipboard": [
+        "عبارت بازیابی به کلیپ‌بورد کپی شد"
+      ],
+      "Recovery phrase downloaded": [
+        "عبارت بازیابی دانلود شد"
+      ],
+      "Recovery phrase has been disabled": [
+        "عبارت بازیابی غیرفعال است"
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        "عبارت بازیابی با هیچ کلیدی مرتبط نیست."
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        "عبارت بازیابی با هیچ کلید منسوخی مرتبط نیست."
       ],
       "Referral link copied to your clipboard": [
         "لینک معرف به کلیپبورد کپی شد"
@@ -3703,6 +3825,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجا که شما یک کاربر وفادار هستید، حساب شما امکانات اضافی فعال شده‌ای دارد."
       ],
+      "Some keys successfully reactivated": [
+        "بعضی کلیدها با موفقیت بازفعال شدند"
+      ],
       "Step ${ step }": [
         "قدم ${ step }",
         "مرحله ${ step }"
@@ -3724,6 +3849,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "به‌طور موقت از دسترس خارج است. لطفاً بعداً دوباره امتحان کنید."
+      ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "پیام ${ boldDataLocked } دیگر نمایش داده نمی‌شود. با این حال، شما کماکان می‌توانید قفل داده‌های خود را در ${ encryptionAndKeysLink } باز کنید."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "تعداد دانلود شامل تعداد دانلود های واقعی و تعداد بارهایی است که فایل پیش نمایش داده شده است."
@@ -3757,8 +3885,23 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "بسته به دستگاه شما می‌تواند چند ثانیه یا چند دقیقه طول بکشد"
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "این یک عبارت ۱۲ کلمه ایست که از شما برای تنظیمش درخواست شده بود."
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "این یک فایل بازیابی یا کلید رمزنگاری است که شما احتمالا پیشتر ذخیره کرده اید."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "این یک کلید رمزنگاری است که شما احتمالا پیشتر ذخیره کرده اید."
+      ],
+      "This is the password you used before the password reset.": [
+        "این رمز عبوریست که شما پیش از بازنشانی آن استفاده کردید."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "این کاربر در حال حاضر مسئول پرداخت‌های سازمان شما است. با تنزل درجه این عضو، شما مسئول پرداخت‌های سازمان خود خواهید بود."
+      ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "این کنش عبارت بازیابی فعلی شما را غیرفعال می‌کند. دیگر نمی‌توانید از آن برای دسترسی به حساب یا رمزگشایی داده‌های خود استفاده کنید."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "این گزینه امکان استفاده از PayPal را برای پرداخت اشتراک ${ BRAND_NAME } شما فراهم می‌کند. شما از طریق یک زبانه جدید در مرورگر به PayPal منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های پیش‌آ استفاده می‌کنید، آن‌ها را غیرفعال کنید."
@@ -3780,6 +3923,12 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "برای تایید، لطفا نام کاربری که مایلید حذف کنید را وارد کنید."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "برای بهبود مداوم سرویس هایمان، برخی مواقع داده ها را جمع آوری میکنیم تا بر عملکرد صحیح برنامه هایمان نظارت داشته باشیم. این اطلاعات با هیچ سرویس مستقل از ما به اشتراک گذاشته نمیشود."
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "برای رمزگشایی و مشاهده داده های قفل شده خود پس از بازنشانی رمز عبور، یک روش بازیابی را انتخاب کتید."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "برای نبرد با هرزنامه و سوء استفاده، لطفا تایید کنید که شما انسان هستید."
@@ -3805,11 +3954,20 @@
       "Total VPN connections": [
         "مجموع اتصالات VPN"
       ],
+      "Unable to verify recovery file signature. Please contact support.": [
+        "اعتبار سنجی امضای فایل بازیابی ممکن نیست. لطفا با پشتیبانی تماس بگیرید."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "متاسفانه هیچ روش بازیابی برای این حساب ذخیره نشده است."
       ],
+      "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
+        "تا زمانی که از حساب خود خارج نشوید یا گذرواژه خود را تغییر ندهید، نشست شما فعال خواهد ماند. نشست‌ها پس از 60 روز عدم فعالیت منقضی می‌شوند."
+      ],
       "Unsupported file": [
         "فایل پشتیبانی نشده"
+      ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "فایلی که بارگذاری کردید یک کلید خصوصی صحیح نیست. لطفا پس از راستی‌آزمایی، دوباره امتحان کنید."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "بهترین سرور را براساس میزان بار و مکان استفاده کنید: ${ formattedBestServerName }"
@@ -3841,6 +3999,9 @@
       "Visa Secure logo": [
         "لوگوی Visa Secure"
       ],
+      "Want to learn more?": [
+        "می‌خواهید بیشتر بدانید؟"
+      ],
       "Warning:": [
         "هشدار:"
       ],
@@ -3849,6 +4010,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "پیشنهاد می‌کنیم به‌جای آن از عبارت بازیابی خود استفاده کنید."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "ما برای جلوگیری شما از از دست دادن داده های شما اطلاعات بازیابی را به طور ایمن بر روی دستگاه قابل اعتماد شما ذخیر می کنیم"
       ],
       "We use 3-D Secure to protect your payments": [
         "ما برای محافظت از پرداخت‌های شما از 3D Secure استفاده می‌کنیم"
@@ -3931,6 +4095,9 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "به زودی برای تایید پرداخت به PayPal هدایت می‌شوید."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "شما قادر نخواهید بود با استفاده از فایل های بازیابی دانلود شده داده های قفل شده را بازیابی کنید."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "حساب شما حداقل یک صورت‌حساب به تعویق افتاده دارد. دسترسی شما به زودی محدود خواهد شد. ${ payInvoiceLink }"
       ],
@@ -3954,9 +4121,18 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "از شماره تلفن شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
+      ],
+      "Your recovery phrase": [
+        "عبارت بازیابی شما"
       ]
     },
     "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "کلید های تکراری دیگر تشخیص داده شدند. لطفا برای اطلاعات بیشتر بصورت تکی آپلود کنید."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "کلید ${ fingerprint } قبلا آپلود شده است"
+      ],
       "Optional": [
         "اختیاری"
       ]
@@ -4097,6 +4273,12 @@
       "Allow recovery by phone": [
         "اجازه بازیابی از طریق تلفن"
       ],
+      "Allow recovery by recovery phrase": [
+        "اجازه بازیابی با عبارت بازیابی"
+      ],
+      "Allow recovery using a trusted device": [
+        "اجازه دادن بازیابی با استفاده از یک دستگاه قابل اعتماد"
+      ],
       "Amount": [
         "مبلغ"
       ],
@@ -4168,6 +4350,9 @@
       ],
       "Code is 6 digits without spaces": [
         "کد ۶ رقمی بدون فاصله می‌باشد"
+      ],
+      "Collect usage diagnostics": [
+        "جمع آوری تشخیص استفاده"
       ],
       "Config to connect to ${ serverName }": [
         "پیکربندی برای اتصال به ${ serverName }"
@@ -4265,8 +4450,14 @@
       "Enabled": [
         "فعال"
       ],
+      "Enter password": [
+        "گذرواژه را وارد کنید"
+      ],
       "Enter the code displayed on your TV": [
         "کد نشان داده شده بر روی تلویزیون خود را وارد کنید"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "گذرواژه کلید را با اثر انگشت وارد کنید: ${ fingerprintCode }"
       ],
       "Enter your password": [
         "کلمه عبور خود را وارد نمایید"
@@ -4276,6 +4467,9 @@
       ],
       "Expires": [
         "تاریخ انقضا"
+      ],
+      "File": [
+        "فایل"
       ],
       "First name": [
         "نام"
@@ -4442,6 +4636,9 @@
       "Phone number": [
         "شماره تلفن"
       ],
+      "Phrase": [
+        "عبارت"
+      ],
       "Phrase consists of 12 unique words in a specific order": [
         "عبارت شامل 12 کلمه منحصربفرد به ترتیبی خاص است"
       ],
@@ -4451,11 +4648,17 @@
       "Postal code": [
         "کد پستی"
       ],
+      "Previous password": [
+        "گذرواژه پیشین"
+      ],
       "Proration": [
         "کسر"
       ],
       "Recovery email address": [
         "نشانی ایمیل بازیابی"
+      ],
+      "Recovery file": [
+        "فایل بازیابی"
       ],
       "Recovery phone number": [
         "شماره تلفن بازیابی"
@@ -4474,6 +4677,9 @@
       ],
       "Second password": [
         "گذرواژه دوم"
+      ],
+      "Send crash reports": [
+        "ارسال گزارش های از کار افتادن"
       ],
       "Spam": [
         "هرزنامه"
@@ -4501,6 +4707,12 @@
       ],
       "Type": [
         "نوع"
+      ],
+      "Upload 1 or more encryption keys": [
+        "۱ یا چند کلید رمزگذاری را آپلود نمایید"
+      ],
+      "Upload 1 or more recovery files or encryption keys": [
+        "۱ یا چند فایل بازیابی یا کلیدهای رمزگذاری را آپلود نمایید"
       ],
       "User": [
         "کاربر"
@@ -4542,6 +4754,9 @@
     "label": {
       "Recovery phone number": [
         "شماره تلفن بازیابی"
+      ],
+      "Recovery phrase": [
+        "عبارت بازیابی"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -4637,11 +4852,17 @@
       "Create account": [
         "ساختن حساب"
       ],
+      "Encryption and keys": [
+        "رمزگذاری و کلیدها"
+      ],
       "Forgot password?": [
         "فراموشی گذرواژه?"
       ],
       "Forgot username?": [
         "نام کاربریتان را فراموش کرده‌اید؟"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "دریافت ${ VPN_APP_NAME }"
       ],
       "Groups": [
         "گروه‌ها"
@@ -4652,8 +4873,14 @@
       "here": [
         "اینجا"
       ],
+      "How to unlock data": [
+        "نحوه باز کردن قفل داده‌ها"
+      ],
       "Learn more": [
         "بیشتر بدانید"
+      ],
+      "Learn more about data recovery": [
+        "در مورد بازیابی داده ها بیشتر بدانید"
       ],
       "Not activated": [
         "فعال نیست"
@@ -4980,6 +5207,12 @@
       ],
       "1 user": [
         "۱ کاربر"
+      ],
+      "10 email addresses/aliases": [
+        "10 نشانی ایمیل/نام مستعار"
+      ],
+      "15 GB storage": [
+        "۱۵ گیگابایت فضای ذخیره‌سازی"
       ],
       "Ad-blocker and malware protection": [
         "محدودسازی تبلیغات و محافظت در برابر بدافزارها"
@@ -5862,6 +6095,17 @@
         "ایمیل"
       ]
     },
+    "Select files": {
+      "Browse": [
+        "مرور"
+      ],
+      "Upload": [
+        "بارگذاری"
+      ],
+      "Upload additional files": [
+        "آپلود کردن فایل های دیگر"
+      ]
+    },
     "Select search results": {
       "No results found": [
         "نتیجه‌ای یافت نشد"
@@ -5944,6 +6188,11 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "درخواست بازنشانی گذرواژه?"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Request password reset": [
+        "درخواست بازنشانی گذرواژه"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -6084,6 +6333,9 @@
       "Deny": [
         "رد کردن"
       ],
+      "Remove": [
+        "حذف کردن"
+      ],
       "Share the confirmation code with your administrator": [
         "اشتراک گذاری کد اعتبارسنجی با مدیر سیستم"
       ],
@@ -6092,6 +6344,9 @@
       ],
       "Sign in to your organization": [
         "به سازمان خود وارد شوید"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "درخواستی برای ورود از دستگاه دیگری ارسال شده است. شما بودید؟"
       ],
       "Use backup password instead": [
         "استفاده از رمز عبور پشتیبان"
@@ -6344,6 +6599,12 @@
       "Preference saved": [
         "تنظیمات ذخیره شد"
       ],
+      "Session revoked": [
+        "نشست لغو شد"
+      ],
+      "Sessions revoked": [
+        "نشست‌ها لغو شدند"
+      ],
       "SPF value copied to clipboard": [
         "مقدار SPF در کلیپ‌بورد کپی شد"
       ],
@@ -6539,6 +6800,9 @@
       "Account": [
         "حساب"
       ],
+      "Account recovery": [
+        "بازیابی حساب کاربری"
+      ],
       "Account suspended": [
         "حساب کاربری معلق شده است"
       ],
@@ -6583,6 +6847,9 @@
       ],
       "Amount due": [
         "مبلغ قابل پرداخت"
+      ],
+      "App": [
+        "برنامه"
       ],
       "Appearance": [
         "ظاهر"
@@ -6650,6 +6917,9 @@
       "Create user accounts": [
         "ایجاد حساب های کاربری"
       ],
+      "Created": [
+        "ایجاد شد"
+      ],
       "Creating user accounts": [
         "در حال ایجاد حساب های کاربری"
       ],
@@ -6668,8 +6938,17 @@
       "Customize your mail import": [
         "شخصی سازی واردسازی نامه"
       ],
+      "Data locked": [
+        "داده قفل شده است"
+      ],
+      "Data recovery": [
+        "بازیابی داده"
+      ],
       "Date": [
         "تاریخ"
+      ],
+      "Decrypt key": [
+        "رمزگشایی کلید"
       ],
       "Delete": [
         "حذف"
@@ -6706,6 +6985,9 @@
       ],
       "Domain names": [
         "نام‌های دامنه"
+      ],
+      "Don't show again?": [
+        "دوباره نشان داده نشود؟"
       ],
       "Downgrade account": [
         "تنزیل درجه حساب کاربری"
@@ -6754,6 +7036,9 @@
       ],
       "Generate missing keys": [
         "تولید کلیدهای گمشده"
+      ],
+      "Generate new recovery phrase?": [
+        "عبارت بازیابی جدید تولید شود؟"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "جهت دسترسی به همه سرورها ${ vpnPlus } را دریافت کنید"
@@ -6807,6 +7092,9 @@
       "Multi-user support": [
         "پشتیبانی چند کاربره"
       ],
+      "Name": [
+        "نام"
+      ],
       "Network error": [
         "خطای شبکه"
       ],
@@ -6815,6 +7103,9 @@
       ],
       "No recovery method": [
         "هیچ روش بازیابی"
+      ],
+      "Open": [
+        "بازگشایی"
       ],
       "Open actions dropdown": [
         "بازگشایی منوی اقدامات"
@@ -6861,6 +7152,9 @@
       "Previous": [
         "پیشین"
       ],
+      "Privacy and data collection": [
+        "حریم خصوصی و جمع آوری داده ها"
+      ],
       "Processing...": [
         "در حال پردازش..."
       ],
@@ -6870,11 +7164,20 @@
       "Reconnect your account": [
         "دوباره حساب خود را وصل کنید"
       ],
+      "Recover data": [
+        "بازیابی داده‌"
+      ],
       "Recovery": [
         "بازیابی"
       ],
+      "Recovery file": [
+        "فایل بازیابی"
+      ],
       "Refer a friend": [
         "معرفی به یک دوست"
+      ],
+      "Remove device?": [
+        "حذف دستگاه?"
       ],
       "Report a problem": [
         "گزارش یک مشکل"
@@ -6891,6 +7194,9 @@
       "Restore administrator privileges": [
         "بازیابی امتیازات مدیر"
       ],
+      "Security and privacy": [
+        "امنیت و حریم خصوصی"
+      ],
       "Select a plan": [
         "یک طرح انتخاب کنید"
       ],
@@ -6899,6 +7205,9 @@
       ],
       "Select contact group": [
         "گروه مخاطب را انتخاب کنید"
+      ],
+      "Session management": [
+        "مدیریت نشست ها"
       ],
       "Set new password": [
         "تنظیم گذرواژه جدید"
@@ -6929,6 +7238,9 @@
       ],
       "Start import process": [
         "شروع فرایند درون‌برد"
+      ],
+      "State": [
+        "ایالت"
       ],
       "Status": [
         "وضعیت"

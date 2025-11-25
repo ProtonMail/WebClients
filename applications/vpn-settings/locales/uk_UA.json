@@ -45,6 +45,9 @@
       "Activate organization key": [
         "Активувати ключ організації"
       ],
+      "Activate recovery": [
+        "Активувати відновлення"
+      ],
       "Add": [
         "Додати"
       ],
@@ -159,6 +162,12 @@
       "Confirm": [
         "Підтвердити"
       ],
+      "Connect": [
+        "З'єднатися"
+      ],
+      "Connected": [
+        "Під'єднано"
+      ],
       "Contact support": [
         "Зв'язатися з підтримкою"
       ],
@@ -219,6 +228,9 @@
       "Decrease": [
         "Зменшити"
       ],
+      "Decrypt": [
+        "Розшифрувати"
+      ],
       "Delete": [
         "Видалити"
       ],
@@ -233,6 +245,9 @@
       ],
       "Delete logo": [
         "Видалити логотип"
+      ],
+      "Delete logs": [
+        "Вилучити записи журналу"
       ],
       "Delete member": [
         "Видалити учасника"
@@ -255,6 +270,12 @@
       "Disable": [
         "Вимкнути"
       ],
+      "Disable recovery phrase": [
+        "Вимкнути фразу відновлення"
+      ],
+      "Disable recovery phrase?": [
+        "Вимкнути фразу відновлення?"
+      ],
       "Discard": [
         "Відхилити"
       ],
@@ -273,6 +294,9 @@
       "Domain name": [
         "Ім'я домену"
       ],
+      "Don't show again": [
+        "Не показувати знову"
+      ],
       "Done": [
         "Готово"
       ],
@@ -290,6 +314,9 @@
       ],
       "Download our CSV template": [
         "Завантажте наш CSV-шаблон"
+      ],
+      "Download recovery file": [
+        "Завантажити файл відновлення"
       ],
       "Edit": [
         "Змінити"
@@ -360,8 +387,14 @@
       "Forgot recovery method?": [
         "Забули спосіб відновлення?"
       ],
+      "Generate new recovery phrase": [
+        "Згенерувати нову фразу відновлення"
+      ],
       "Generate password": [
         "Згенерувати пароль"
+      ],
+      "Generate recovery phrase": [
+        "Згенерувати фразу відновлення"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Отримайте ${ planName } за ${ priceCoupon }"
@@ -483,6 +516,12 @@
       "Mark as default": [
         "Позначити типовим"
       ],
+      "Mark as open": [
+        "Позначити відкритим"
+      ],
+      "Mark as resolved": [
+        "Позначити як вирішене"
+      ],
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
@@ -561,11 +600,20 @@
       "refresh the page": [
         "оновити сторінку"
       ],
+      "Reject": [
+        "Відхилити"
+      ],
+      "Reload": [
+        "Перезавантажити"
+      ],
       "Remove": [
         "Вилучити"
       ],
       "Remove all members": [
         "Видалити всіх учасників"
+      ],
+      "Remove all other devices": [
+        "Вилучити всі інші пристрої"
       ],
       "Remove bonuses": [
         "Вилучити бонуси"
@@ -633,6 +681,9 @@
       "Revoke ${ name }": [
         "Відкликати ${ name }"
       ],
+      "Revoke all other sessions": [
+        "Відкликати всі інші сеанси"
+      ],
       "Revoke invitation": [
         "Відкликати запрошення"
       ],
@@ -695,6 +746,9 @@
       ],
       "Set new password": [
         "Встановити новий пароль"
+      ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
       ],
       "Set up 2FA": [
         "Налаштувати 2ЕП"
@@ -804,6 +858,15 @@
       "Unlock": [
         "Розблокувати"
       ],
+      "Unlock data": [
+        "Розблокувати дані"
+      ],
+      "Update recovery file": [
+        "Оновити файл відновлення"
+      ],
+      "Update recovery phrase": [
+        "Оновити фразу відновлення"
+      ],
       "Upgrade": [
         "Покращити"
       ],
@@ -815,6 +878,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Щоб увімкнути ${ PROTON_SENTINEL_NAME }, передплатіть тарифний план"
+      ],
+      "Upgrade to view all": [
+        "Передплатіть, щоб переглянути все"
       ],
       "Upgrade your plan": [
         "Покращити тарифний план"
@@ -873,14 +939,29 @@
       "View": [
         "Переглянути"
       ],
+      "View all reports": [
+        "Переглянути всі звіти"
+      ],
       "View invoice": [
         "Переглянути рахунок"
       ],
       "View plans details": [
         "Переглянути подробиці тарифного плану"
       ],
+      "Void": [
+        "Видалити"
+      ],
+      "Void all recovery files": [
+        "Видалити всі файли відновлення"
+      ],
+      "Void all recovery files?": [
+        "Видалити всі файли відновлення?"
+      ],
       "What do I get?": [
         "Що я отримую?"
+      ],
+      "Wipe": [
+        "Стерти"
       ],
       "Your server will be provisioned in the next days": [
         "Вам буде надано сервер найближчими днями"
@@ -895,6 +976,11 @@
     "action": {
       "Resuming forward": [
         "Відновлення пересилання"
+      ]
+    },
+    "Action for user session": {
+      "Revoke": [
+        "Відкликати"
       ]
     },
     "Action subscription": {
@@ -1048,69 +1134,6 @@
         "Новий лист"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 ГБ сховища"
-      ],
-      "200 GB storage": [
-        "200 ГБ сховища"
-      ],
-      "Encrypted password manager": [
-        "Зашифрований менеджер паролів"
-      ],
-      "Online document editor": [
-        "Онлайн редактор документів"
-      ],
-      "Protect up to 10 devices": [
-        "Захистіть до 10 пристроїв"
-      ],
-      "Recover previous file versions": [
-        "Відновити попередні версії файлів"
-      ],
-      "Stream your favorite content": [
-        "Дивіться улюблені фільми та серіали"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Use your own email domain": [
-        "Використовуйте свій власний домен електронної пошти"
-      ],
-      "years": [
-        "років"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } місяць",
-        "${ n } місяців",
-        "${ n } місяці",
-        "${ n } місяці"
-      ],
-      "/ month": [
-        "/ місяць"
-      ],
-      "12 months": [
-        "12 місяців"
-      ],
-      "15 months": [
-        "15 місяців"
-      ],
-      "24 months": [
-        "24 місяці"
-      ],
-      "30 months": [
-        "30 місяців"
-      ],
-      "for ${ durationDeal }": [
-        "за ${ durationDeal }"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Вдоскональте рівень продуктивності електронної пошти. Дозвольте ${ BRAND_NAME } Scribe допомогти вам писати, відповідати й рецензувати ваші листи."
@@ -1153,6 +1176,11 @@
       ],
       "Missing keys": [
         "Відсутні ключі"
+      ]
+    },
+    "Badge for user sessions table": {
+      "Current session": [
+        "Поточний сеанс"
       ]
     },
     "bf2023: Action": {
@@ -2694,6 +2722,9 @@
       ]
     },
     "Description": {
+      "Also included": [
+        "Також включено"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
       ],
@@ -2702,6 +2733,9 @@
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
         "Створіть мережевий шлюз, щоб надати користувачам доступ до ваших ІТ-ресурсів через виділені сервери."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Миттєво створіть конференцію Zoom і додайте відомості для приєднання до події."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
         "Створення нових облікових записів користувачів або імпорт користувачів із забезпеченням SCIM, які мають SSO (єдиний вхід)."
@@ -2712,6 +2746,15 @@
       "Decide which users can connect to each of our 120+ shared server locations.": [
         "Вирішіть, які користувачі можуть під’єднуватися до кожного з наших понад 120 спільних серверних розташувань."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Увімкніть ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Увімкніть детальні події та ${ PROTON_SENTINEL_NAME }, щоб отримати доступ до цих функцій"
+      ],
+      "Enable detailed events to access these features": [
+        "Увімкніть детальні події, щоб отримати доступ до цих функцій"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
@@ -2720,6 +2763,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
+      ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Отримайте до ${ credits } кредитів, запросивши друзів до ${ BRAND_NAME }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
@@ -3108,6 +3154,9 @@
       "Error connecting to the Bitcoin API.": [
         "Помилка підключення до Bitcoin API."
       ],
+      "Failed to load OAuth modal.": [
+        "Не вдалося завантажити діалогове вікно OAuth."
+      ],
       "Failed to lookup server. Please try again": [
         "Не вдалося знайти сервер. Спробуйте ще раз"
       ],
@@ -3390,6 +3439,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Назва теки надто довга. Будь ласка, скоротіть назву."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Неможливо засвідчити ключі у вашому файлі відновлення. Будь ласка, зв'яжіться зі службою підтримки."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Неможливо засвідчити ключі у ваших файлах відновлення. Будь ласка, вивантажте їх окремо для отримання подробиць."
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Назва мітки неправильна. Оберіть іншу назву."
       ],
@@ -3444,6 +3499,12 @@
       "Unknown payment token status": [
         "Невідомий стан платіжного токена"
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Завантажений файл не є чинним приватним ключем. Перевірте його та повторіть спробу."
+      ],
+      "Uploaded files are not valid private keys. Please verify and try again.": [
+        "Вивантажені файли не є чинними приватними ключами. Перевірте його та повторіть спробу."
+      ],
       "Username must begin with a letter or digit": [
         "Ім'я користувача повинно починатися з літери або цифри"
       ],
@@ -3485,6 +3546,9 @@
       ],
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
+      ],
+      "Zero keys reactivated": [
+        "Нуль ключів повторно активовано"
       ]
     },
     "Error importing calendar": {
@@ -4774,6 +4838,17 @@
         "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
       ]
     },
+    "Import provider": {
+      "Import from ${ provider }": [
+        "Імпорт з ${ provider }"
+      ],
+      "Import from Google": [
+        "Імпортувати з Google"
+      ],
+      "Import from Outlook": [
+        "Імпортувати з Outlook"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
@@ -4800,6 +4875,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } ніколи не передає вашу інформацію третім сторонам. Дані отримуються від ${ BRAND_NAME } та Constella Intelligence."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помічник у написанні ${ BRAND_NAME } Scribe"
@@ -4872,6 +4950,12 @@
         "${ number } сервери",
         "${ number } серверів",
         "${ number } серверів"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } вивантажений файл не є чинним приватним ключем. Перевірте його та повторіть спробу.",
+        "${ numberOfNonPrivateKeys } вивантажені файли не є чинним приватними ключами. Перевірте їх та повторіть спробу.",
+        "${ numberOfNonPrivateKeys } вивантажених файлів не є чинним приватними ключами. Перевірте їх та повторіть спробу.",
+        "${ numberOfNonPrivateKeys } вивантажені файли не є чинним приватними ключами. Перевірте їх та повторіть спробу."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Довічна угода ${ PASS_SHORT_APP_NAME } не має ціни поновлення, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }."
@@ -5035,11 +5119,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Файл відновлення дозволяє розблокувати та переглянути дані після відновлення облікового запису"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Фраза відновлення дасть змогу отримати доступ до вашого облікового запису та відновити зашифровані повідомлення, якщо ви забудете пароль"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
       ],
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Активуйте принаймні один спосіб відновлення даних, щоб не втратити доступ до вмісту свого облікового запису ${ BRAND_NAME } у разі втрати пароля."
       ],
       "active": [
         "активний"
@@ -5107,6 +5200,9 @@
       "All inactive members deleted": [
         "Всіх неактивних членів видалено"
       ],
+      "All keys successfully reactivated": [
+        "Усі ключі успішно повторно активовано"
+      ],
       "All members have been added.": [
         "Всіх учасників було додано."
       ],
@@ -5146,6 +5242,9 @@
       "Amount due": [
         "До сплати"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Псевдонім – це спеціальна адреса електронної пошти, призначена для зменшення спаму і приховування вашої справжньої адреси й особистості."
+      ],
       "and": [
         "та"
       ],
@@ -5160,6 +5259,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Ви дійсно хочете надати цьому користувачу адміністративні привілеї?"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Ви дійсно хочете остаточно видалити усі ваші журнали?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ви впевнені, що хочете забрати права адміністратора у цього користувача?"
@@ -5208,6 +5310,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Вимкнувши моніторинг подій безпеки, ви також очистите всю історію. Ви впевнені, що хочете це вимкнути?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
@@ -5329,6 +5434,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
+      "Data locked": [
+        "Дані заблоковано"
+      ],
       "dedicated servers": [
         "виділені сервери"
       ],
@@ -5367,6 +5475,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його забудете, то не зможете керувати своєю організацією."
+      ],
+      "Do you want to revoke all other sessions than the current one?": [
+        "Хочете відкликати всі інші сеанси, окрім поточного?"
       ],
       "Domain ownership failed verification.": [
         "Не вдалося засвідчити володіння доменом."
@@ -5434,8 +5545,14 @@
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Увімкніть автоматичне поновлення, щоб і надалі користуватися серверами Plus і додатковими функціями."
       ],
+      "Enable email notifications": [
+        "Увімкнути сповіщення електронною поштою"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Увімкніть єдиний вхід, щоб гарантувати безпеку вашої організації"
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Увімкнувши відновлення за фразою знову, буде згенерована нова фраза."
       ],
       "End date": [
         "Дата завершення"
@@ -5515,6 +5632,9 @@
       "expires ${ expirationDate }": [
         "чинний до ${ expirationDate }"
       ],
+      "Failed to fetch logs.": [
+        "Помилка отримання журналів."
+      ],
       "Fill in user details": [
         "Заповніть дані користувача"
       ],
@@ -5533,8 +5653,14 @@
       "Gateways": [
         "Мережеві шлюзи"
       ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Генерування нової фрази відновлення деактивує попередню."
+      ],
       "Get ${ upsellPlanName }": [
         "Отримати ${ upsellPlanName }"
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Отримуйте сповіщення, якщо ваш пароль або інші персональні дані потрапили до витоку. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
         "Початок роботи"
@@ -5565,6 +5691,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Якщо вам не сподобається, ми повернемо гроші."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Якщо це пов'язано зі скиданням старого пароля, ви можете запобігти повторному показу повідомлення"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
@@ -5598,6 +5727,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ VPN_APP_NAME }."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Якщо ви нещодавно скинули пароль, можете скористатися способом відновлення для розблокування своїх даних"
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Якщо у вас виникли проблеми, ми вам допоможемо. ${ boldPhoneCall }, ${ boldZoomMeeting } з нашим фахівцем, або відкрийте ${ boldLiveChat } для отримання підтримки онлайн."
@@ -5686,6 +5818,9 @@
       "Invited": [
         "Запрошено"
       ],
+      "It appears some of your data is encrypted and locked.": [
+        "Здається, деякі з ваших даних зашифровано та заблоковано."
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Зміна країни сервера займає 10 днів, тому переконайтеся, що ви вибрали правильну країну."
       ],
@@ -5742,6 +5877,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Скористайтеся цими настановами й порадами, щоб зберігати свою інформацію в безпеці та приватності."
       ],
       "Keys created": [
         "Ключі створено"
@@ -5845,6 +5983,9 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield – це функція ${ VPN_APP_NAME }, яка блокує рекламу, елементи стеження і зловмисні програми на вашому пристрої."
+      ],
       "New": [
         "Нове"
       ],
@@ -5862,6 +6003,9 @@
       ],
       "No Gateways yet": [
         "Ще немає мережевих шлюзів"
+      ],
+      "No logs yet.": [
+        "Наразі немає журналів."
       ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
@@ -5916,6 +6060,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашій організації є інші адміністратори. Ви відповідальні за передачу їм нового пароля."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor – користувацьку пошту підтверджено"
@@ -5974,6 +6121,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введіть фразу відновлення з 12 слів, пов'язану з вашим обліковим записом."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Збережіть її в надійному місці. Вона знадобиться вам для доступу до облікового запису та розшифрування ваших даних у разі скидання пароля."
+      ],
       "please open a support ticket": [
         "будь ласка, відкрийте заявку служби підтримки"
       ],
@@ -5994,6 +6144,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Будь ласка, зачекайте, поки ваші зміни будуть синхронізовані з сервером."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "Плюс ще ${ numOfBreaches }"
       ],
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
@@ -6037,8 +6190,29 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Рекомендовано на довірених пристроях. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery file downloaded": [
+        "Файл відновлення завантажено"
+      ],
+      "Recovery files have been voided": [
+        "Фали відновлення були видалені"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
+      ],
+      "Recovery phrase copied to clipboard": [
+        "Фразу відновлення скопійовано до буфера обміну"
+      ],
+      "Recovery phrase downloaded": [
+        "Фразу відновлення завантажено"
+      ],
+      "Recovery phrase has been disabled": [
+        "Фразу відновлення вимкнено"
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        "Фраза відновлення не пов'язана з жодним ключем."
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        "Фраза відновлення не пов'язана з жодним застарілим ключем."
       ],
       "Referral link copied to your clipboard": [
         "Реферальне посилання успішно скопійовано до буферу обміну"
@@ -6160,6 +6334,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
+      "Some keys successfully reactivated": [
+        "Деякі ключі успішно повторно активовано"
+      ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Деякі сервери можуть не відображатися у списку вище. Шукайте за назвою сервера (наприклад, AT#62), щоб їх знайти."
       ],
@@ -6202,6 +6379,9 @@
       "Summary": [
         "Підсумок"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Незабаром з'явиться підтримка моніторингу власних доменів та адрес електронної пошти, що не належать до ${ BRAND_NAME }."
+      ],
       "support team": [
         "командою підтримки"
       ],
@@ -6217,11 +6397,20 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Дякуємо за підтримку нашої місії – створити кращий інтернет, де приватність і свобода цінуються понад усе."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Повідомлення ${ boldDataLocked } більше не буде показано, але ви все ще можете розблокувати свої дані в ${ encryptionAndKeysLink }."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web – це прихована частина інтернету, де можна купувати й продавати викрадену особисту інформацію, як-от облікові дані."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Кількість завантажень включає як фактичні завантаження, так і випадки попереднього перегляду файлів."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Зашифровані дані трохи більші через витрату додаткових ресурсів на шифрування та підписи, які забезпечують безпеку ваших даних."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
       ],
       "The following address is invalid.": [
         "Ця адреса недійсна.",
@@ -6283,8 +6472,20 @@
       "This file is too large to preview": [
         "Цей файл завеликий для перегляду"
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "Це фраза з 12 слів, яку ви просили встановити."
+      ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "Це файл відновлення чи ключ шифрування, який ви могли раніше зберегти."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Це ключ шифрування, який ви могли раніше зберегти."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Тепер це ваша ${ defaultEmailAddress } для надсилання нових повідомлень."
+      ],
+      "This is the password you used before the password reset.": [
+        "Це пароль, яким ви користувалися перед скиданням пароля."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Це повідомлення не надійде до служби підтримки, якщо у вас виникли проблеми з нашим сервісом або вам потрібні подальші дії з нашого боку ${ supportLink }."
@@ -6301,6 +6502,9 @@
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Це вимкне двофакторну автентифікацію, включаючи як додаток-автентифікатор, так і методи ключів безпеки."
       ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Це вимкне вашу чинну фразу відновлення. Ви не зможете скористатися нею для доступу до облікового запису чи розшифрування своїх даних."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Це дасть змогу використовувати PayPal для вашої передплати ${ BRAND_NAME }. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
       ],
@@ -6312,6 +6516,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ця дія остаточно видалить ваш обліковий запис та всі пов'язані з ним дані. Ви не зможете відновити цей обліковий запис."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Це призведе до відхилення пристрою **${ name }**, який намагався увійти до вашого облікового запису ${ BRAND_NAME } у **${ date }**."
       ],
       "This will remove any enabled 2FA methods.": [
         "Це видалить будь-які увімкнені методи 2FA."
@@ -6331,6 +6538,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "При цьому виконається вихід з системи в будь-яких активних сеансах та вимкнеться двоетапна перевірка."
       ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Це відв'яже пристрій **${ name } (створений у ${ date })** з вашим обліковим записом ${ BRAND_NAME }."
+      ],
       "to ${ product } Business": [
         "у ${ product } Business"
       ],
@@ -6348,6 +6558,12 @@
       ],
       "To continue to ${ product }": [
         "Щоб продовжити в ${ product }"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Щоб постійно вдосконалювати наші служби, ми іноді збираємо дані для моніторингу належного функціонування наших програм. Ці дані не передаються жодним стороннім службам."
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Щоб розшифрувати й переглянути свої заблоковані дані після скидання пароля, виберіть спосіб відновлення."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
@@ -6394,6 +6610,9 @@
       "Unable to check gateways monitoring current status.": [
         "Неможливо перевірити шлюзи, що відстежують поточний стан."
       ],
+      "Unable to verify recovery file signature. Please contact support.": [
+        "Неможливо перевірити підпис файлу відновлення. Зверніться до служби підтримки."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для цього облікового запису не збережено спосіб відновлення."
       ],
@@ -6402,6 +6621,9 @@
       ],
       "Unknown event type": [
         "Невідомий тип події"
+      ],
+      "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
+        "Доки ви не вийдете зі свого облікового запису чи не зміните пароль, ваш сеанс залишатиметься активним. Термін дії сеансів завершується через 60 днів неактивності."
       ],
       "Unsaved changes": [
         "Незбережені зміни"
@@ -6423,6 +6645,12 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Вивантажте логотип вашої організації, щоб підкреслити свій бренд і створити особливе враження у користувачів."
+      ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Завантажений файл не є чинним приватним ключем. Перевірте його та повторіть спробу."
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Використовуйте менеджер паролів для створення надійних паролів і безпечного їх зберігання, а також для спрощення входу на вебсайтах і в програмах."
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Використовуйте метод відновлення, щоб вимкнути методи двофакторної автентифікації."
@@ -6490,6 +6718,9 @@
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
+      "Want to learn more?": [
+        "Хочете дізнатися більше?"
+      ],
       "Warning:": [
         "Попередження:"
       ],
@@ -6501,6 +6732,9 @@
       ],
       "We generated a strong password for you": [
         "Ми згенерували для вас надійний пароль"
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Ми відстежуємо випадки витоку або компрометації вашої особистої інформації (наприклад, адреси електронної пошти або пароля, використаного на сторонньому сайті) у мережі dark web."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
@@ -6522,6 +6756,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Радимо натомість скористатися вашою фразою відновлення."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Ми надійно зберігаємо інформацію для відновлення на вашому довіреному пристрої, щоб запобігти втраті ваших даних"
       ],
       "We use 3-D Secure to protect your payments": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів"
@@ -6742,6 +6979,12 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Ви не зможете перепризначити ці сервери в іншу країну протягом 10 днів."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Ви не зможете відновити заблоковані дані за допомогою ваших завантажених файлів відновлення. Це також вимкне відновлення довіреного пристрою."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адресу Gmail. Щоб додати іншу, спочатку вимкніть цю.",
         "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адреси Gmail. Щоб додати іншу, спочатку вимкніть одну з них.",
@@ -6775,6 +7018,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Ваша інформація в безпеці з нами. Ми зв'яжемося з вами лише тоді, коли це буде необхідно для надання наших послуг."
       ],
+      "Your information was found on ${ displayedDate }": [
+        "Вашу інформацію було знайдено на ${ displayedDate }"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
       ],
@@ -6796,6 +7042,12 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
       ],
+      "Your recovery phrase": [
+        "Ваша фраза відновлення"
+      ],
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Ваша фраз для відновлення – це 12 випадково згенерованих слів у певному порядку."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
       ],
@@ -6807,6 +7059,12 @@
       ]
     },
     "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
       "Optional": [
         "Необов'язково"
       ],
@@ -7008,6 +7266,12 @@
       "Allow recovery by phone": [
         "Дозволити відновлення за телефоном"
       ],
+      "Allow recovery by recovery phrase": [
+        "Дозволити доступ за фразою відновлення"
+      ],
+      "Allow recovery using a trusted device": [
+        "Дозволити відновлення за допомогою довіреного пристрою"
+      ],
       "Allowed Domain": [
         "Дозволений домен"
       ],
@@ -7097,6 +7361,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
+      ],
+      "Collect usage diagnostics": [
+        "Збирати діагностику користування"
       ],
       "Colors": [
         "Кольори"
@@ -7227,8 +7494,14 @@
       "Enabled": [
         "Увімкнено"
       ],
+      "Enter password": [
+        "Введіть пароль"
+      ],
       "Enter the code displayed on your TV": [
         "Введіть код, показаний на вашому телевізорі"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "Введіть пароль для ключа з відбитком: ${ fingerprintCode }"
       ],
       "Enter your password": [
         "Введіть ваш пароль"
@@ -7244,6 +7517,9 @@
       ],
       "Expires": [
         "Термін дії"
+      ],
+      "File": [
+        "Файл"
       ],
       "First name": [
         "Ім'я"
@@ -7446,6 +7722,9 @@
       "Phone number": [
         "Номер телефону"
       ],
+      "Phrase": [
+        "Фраза"
+      ],
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза складається з 12 унікальних слів у певному порядку"
       ],
@@ -7467,6 +7746,9 @@
       "Postal code": [
         "Поштовий індекс"
       ],
+      "Previous password": [
+        "Попередній пароль"
+      ],
       "Proration": [
         "Розподілення"
       ],
@@ -7478,6 +7760,9 @@
       ],
       "Recovery email address": [
         "Адреса резервної електронної пошти"
+      ],
+      "Recovery file": [
+        "Файл відновлення"
       ],
       "Recovery phone number": [
         "Номер телефону для відновлення"
@@ -7511,6 +7796,9 @@
       ],
       "Second password": [
         "Другий пароль"
+      ],
+      "Send crash reports": [
+        "Надсилати звіти про збої"
       ],
       "Server name": [
         "Ім'я сервера"
@@ -7565,6 +7853,12 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "Upload 1 or more encryption keys": [
+        "Вивантажте 1 чи більше ключів шифрування"
+      ],
+      "Upload 1 or more recovery files or encryption keys": [
+        "Вивантажте 1 чи більше файлів відновлення чи ключів шифрування"
       ],
       "User": [
         "Користувач"
@@ -7622,8 +7916,14 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Відновлення на основі пристрою"
+      ],
       "Recovery phone number": [
         "Номер телефону для відновлення"
+      ],
+      "Recovery phrase": [
+        "Фраза відновлення"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7746,14 +8046,26 @@
       "Create account": [
         "Зареєструватися"
       ],
+      "Create an alias": [
+        "Створити псевдонім"
+      ],
       "Don't have access to your 2FA?": [
         "Не маєте доступу до 2FA?"
+      ],
+      "Encryption and keys": [
+        "Шифрування та ключі"
       ],
       "Forgot password?": [
         "Забули пароль?"
       ],
       "Forgot username?": [
         "Забули ім'я користувача?"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Отримати ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Отримати ${ VPN_APP_NAME }"
       ],
       "Groups": [
         "Групи"
@@ -7767,17 +8079,26 @@
       "here": [
         "тут"
       ],
+      "How does monitoring work?": [
+        "Як працює моніторинг?"
+      ],
       "How to enable ${ PROTON_SENTINEL_NAME }": [
         "Як увімкнути ${ PROTON_SENTINEL_NAME }"
       ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
       ],
+      "How to unlock data": [
+        "Як розблокувати дані"
+      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Як використовувати ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "Learn more about data recovery": [
+        "Дізнатися більше про відновлення даних"
       ],
       "Not activated": [
         "Не активовано"
@@ -7956,6 +8277,9 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Увімкнути ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Увімкнути детальні події"
       ]
     },
     "Mail import summary": {
@@ -8291,11 +8615,23 @@
       "${ size } storage per user": [
         "${ size } сховища на користувача"
       ],
+      "1 TB secure storage": [
+        "1 ТБ безпечного сховища"
+      ],
       "1 user": [
         "1 користувач"
       ],
+      "10 email addresses/aliases": [
+        "10 адрес/псевдонімів е-пошти"
+      ],
+      "10 more premium features": [
+        "Ще 10 преміум функцій"
+      ],
       "10-year file version history": [
         "10-річна історія версій файлу"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховища"
       ],
       "24/7 account management support": [
         "Цілодобова підтримка щодо керування обліковими записами"
@@ -8315,11 +8651,17 @@
       "Administration Panel": [
         "Панель адміністрування"
       ],
+      "Advanced account protection": [
+        "Розширений захист облікового запису"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Розширені функції псевдонімів (на базі SimpleLogin)"
       ],
       "Advanced network security": [
         "Розширений захист мережі"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Всі ${ BRAND_NAME } продукти та функції"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Всі базові ${ BRAND_NAME } послуги (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -8426,6 +8768,9 @@
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
       ],
+      "Generate emails with a prompt": [
+        "Генерувати електронні листи за запитом"
+      ],
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
@@ -8486,6 +8831,12 @@
       "Priority support & live chat": [
         "Пріоритетна підтримка і чат"
       ],
+      "Proofread and refine your emails": [
+        "Вичитуйте та вдосконалюйте свої електронні листи"
+      ],
+      "Quickly craft replies": [
+        "Швидко створюйте відповіді"
+      ],
       "Recover previous file versions": [
         "Відновити попередні версії файлів"
       ],
@@ -8497,6 +8848,9 @@
       ],
       "Router support": [
         "Підтримка маршрутизатора"
+      ],
+      "Save time emailing": [
+        "Заощаджуйте час з електронною поштою"
       ],
       "Schedule and snooze emails for any time": [
         "Плануйте і відкладайте електронні листи на будь-який час"
@@ -8539,6 +8893,9 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
+      ],
+      "Support for up to 2 users": [
+        "Підтримка до 2 користувачів"
       ],
       "Sync and backup all your files across devices": [
         "Синхронізуйте та створюйте резервні копії всіх файлів на різних пристроях"
@@ -8643,6 +9000,17 @@
         "${ users } користувачі",
         "${ users } користувачів",
         "${ users } користувачів"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 користувацький домен електронної пошти"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -9154,6 +9522,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Завантажені коди двофакторного відновлення"
+      ],
+      "Email notifications have been disabled": [
+        "Сповіщення електронною поштою було вимкнено"
+      ],
+      "Email notifications have been enabled": [
+        "Сповіщення електронною поштою були увімкнені"
       ],
       "Invalid code": [
         "Недійсний код"
@@ -10167,6 +10541,41 @@
         "Користувач"
       ]
     },
+    "Safety review": {
+      "Check account security": [
+        "Перевірка безпеки облікового запису"
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Якщо ви втратили свої дані для входу і вам потрібно скинути обліковий запис, **обов'язково**, щоб у вас був спосіб **відновлення облікового запису та даних**, інакше ви не зможете отримати доступ до своїх електронних листів, контактів, файлів або паролів."
+      ],
+      "Safeguard account now": [
+        "Безпечний захист облікового запису зараз"
+      ],
+      "Safeguard your account": [
+        "Безпечний захист вашого облікового запису"
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Ви ризикуєте втратити доступ до свого облікового запису та даних."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Ви ризикуєте втратити доступ до своїх даних."
+      ],
+      "You have recommended actions.": [
+        "Вам було рекомендовано дії."
+      ],
+      "Your account and data can be recovered": [
+        "Ваш обліковий запис і дані можна відновити"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Ваш обліковий запис і дані можна відновити. Перевірте, чи є у вас доступ до методів відновлення."
+      ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Ваш обліковий запис і дані можна відновити. Ви отримали рекомендації щодо подальшого захисту вашого облікового запису."
+      ],
+      "Your account is fully secure.": [
+        "Ваш обліковий запис повністю захищений."
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Скасувати"
@@ -10332,6 +10741,17 @@
         "Вивантажити файл CSV"
       ]
     },
+    "Select files": {
+      "Browse": [
+        "Огляд"
+      ],
+      "Upload": [
+        "Вивантажити"
+      ],
+      "Upload additional files": [
+        "Вивантажити додаткові файли"
+      ]
+    },
     "Select invoice document": {
       "Credit note": [
         "Кредит-нота"
@@ -10366,6 +10786,11 @@
       ],
       "to be deleted": [
         "буде видалено"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Дозволяє додати відеоконференцію Zoom до будь-якої події календаря"
       ]
     },
     "session_recovery:available:action": {
@@ -10509,6 +10934,24 @@
         "змініть свій пароль зараз"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Вимкнути скидання пароля"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Обов'язково перевірте свій доступ до способу відновлення."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Ви більше не зможете запитувати скидання пароля в налаштуваннях облікового запису."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Вимкнути скидання пароля?"
+      ]
+    },
     "session_recovery:in_progress:action": {
       "Cancel password reset": [
         "Скасувати скидання пароля"
@@ -10615,6 +11058,22 @@
         "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } години",
         "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } годин",
         "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } годин"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Дозволити скидання пароля в налаштуваннях"
+      ],
+      "Request password reset": [
+        "Запитати скидання пароля"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Щоб заборонити скидання пароля, необхідно налаштувати спосіб відновлення."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Щоб вдосконалити безпеку свого облікового запису та захистити дані, ви можете запитати скидання пароля в налаштуваннях вебверсії програми."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -10958,6 +11417,9 @@
       "added you to their ${ BRAND_NAME } organization": [
         "додав вас до їх ${ BRAND_NAME } організації"
       ],
+      "Approve": [
+        "Затвердити"
+      ],
       "Approve or deny it now": [
         "Затвердити або відхилити це зараз"
       ],
@@ -10991,6 +11453,9 @@
       "Contact your administrator if the problem persists.": [
         "Якщо проблема не зникне, зверніться до адміністратора."
       ],
+      "Current device": [
+        "Поточний пристрій"
+      ],
       "Delete ${ n } inactive user?": [
         "Видалити ${ n } неактивного користувача?",
         "Видалити ${ n } неактивних користувачів?",
@@ -11011,6 +11476,15 @@
       ],
       "Devices available": [
         "Доступні пристрої"
+      ],
+      "Devices management": [
+        "Керування пристроями"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "Ви хочете вилучити всі інші пристрої, крім поточного?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Введіть код підтвердження, який ми надіслали на інший пристрій."
       ],
       "Enter the confirmation code we sent to this user.": [
         "Введіть код підтвердження, який ми надіслали цьому користувачеві."
@@ -11033,6 +11507,9 @@
       "Grant access to users?": [
         "Надати доступ користувачам?"
       ],
+      "If you didn't make this request, cancel it now.": [
+        "Якщо ви не зробили цього запиту, скасуйте його зараз."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Якщо ви заблокували свій ${ BRAND_NAME } Обліковий запис, резервний пароль дозволить вам увійти й відновити дані."
       ],
@@ -11051,11 +11528,23 @@
       "New backup password": [
         "Новий резервний пароль"
       ],
+      "No, it wasn’t me": [
+        "Ні, це був не я"
+      ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
         "Користувачі, які не є SSO (створені вручну, а не надані вашим постачальником ідентифікаційних даних), все ще можуть увійти до вашої організації."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Після того, як єдиний вхід для вашої організації буде вимкнено:"
+      ],
+      "Reject": [
+        "Відхилити"
+      ],
+      "Remove": [
+        "Вилучити"
+      ],
+      "Remove all other devices": [
+        "Вилучити всі інші пристрої"
       ],
       "Remove single sign-on": [
         "Вилучити єдиний вхід"
@@ -11080,6 +11569,15 @@
       ],
       "Sign out and in again to change your backup password": [
         "Вийдіть і увійдіть знову, щоб змінити резервний пароль"
+      ],
+      "Sign-in confirmed": [
+        "Вхід підтверджено"
+      ],
+      "Sign-in rejected": [
+        "Вхід відхилено"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Запитано вхід на іншому пристрої. Це був ти?"
       ],
       "Single sign-on removed": [
         "Єдиний вхід вилучено"
@@ -11110,6 +11608,9 @@
       ],
       "Welcome": [
         "Вітаємо"
+      ],
+      "Yes, it was me": [
+        "Так, це був я"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам доведеться створювати нових користувачів вручну, щоб додати їх до вашої організації."
@@ -11806,6 +12307,12 @@
       "Credits added": [
         "Кошти зараховано"
       ],
+      "Device deleted": [
+        "Пристрій видалено"
+      ],
+      "Device rejected": [
+        "Пристрій відхилено"
+      ],
       "Display name updated": [
         "Ім'я оновлено"
       ],
@@ -11886,6 +12393,12 @@
       ],
       "Problem reported": [
         "Про проблему повідомлено"
+      ],
+      "Session revoked": [
+        "Сеанс відкликано"
+      ],
+      "Sessions revoked": [
+        "Сеанси відкликано"
       ],
       "SPF value copied to clipboard": [
         "Значення SPF скопійовано в буфер обміну"
@@ -12149,6 +12662,9 @@
       "Account": [
         "Обліковий запис"
       ],
+      "Account recovery": [
+        "Відновлення облікового запису"
+      ],
       "Account restricted": [
         "Обліковий запис обмежено"
       ],
@@ -12230,6 +12746,9 @@
       "An address for each role": [
         "Адреса для кожної ролі"
       ],
+      "App": [
+        "Програма"
+      ],
       "Appearance": [
         "Зовнішній вигляд"
       ],
@@ -12244,6 +12763,9 @@
       ],
       "Billing cycle": [
         "Платіжний цикл"
+      ],
+      "Block trackers and malware": [
+        "Блокування стеження і зловмисних програм"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
@@ -12308,6 +12830,9 @@
       "Connect organization": [
         "Приєднати організацію"
       ],
+      "Connection status": [
+        "Статус з`єднання"
+      ],
       "Contact us": [
         "Зв'яжіться з нами"
       ],
@@ -12347,6 +12872,9 @@
       "Create user accounts": [
         "Створити облікові записи користувачів"
       ],
+      "Created": [
+        "Створено"
+      ],
       "Creating user accounts": [
         "Створення облікових записів користувачів"
       ],
@@ -12374,11 +12902,20 @@
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
       ],
+      "Data locked": [
+        "Дані заблоковано"
+      ],
+      "Data recovery": [
+        "Відновлення даних"
+      ],
       "Date": [
         "Дата"
       ],
       "Day theme": [
         "Світла тема"
+      ],
+      "Decrypt key": [
+        "Розшифрувати ключ"
       ],
       "Delete": [
         "Видалити"
@@ -12433,6 +12970,9 @@
       ],
       "Domain names": [
         "Домени"
+      ],
+      "Don't show again?": [
+        "Не показувати знову?"
       ],
       "Downgrade account": [
         "Понизити тарифний план"
@@ -12530,6 +13070,9 @@
       "Generate missing keys": [
         "Генерувати відсутні ключі"
       ],
+      "Generate new recovery phrase?": [
+        "Згенерувати нову фразу відновлення?"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Отримайте ${ vpnPlus } для доступу до всіх серверів"
       ],
@@ -12599,6 +13142,9 @@
       "Multi-user support": [
         "Підтримка декількох користувачів"
       ],
+      "Name": [
+        "Назва"
+      ],
       "Network error": [
         "Помилка мережі"
       ],
@@ -12608,8 +13154,14 @@
       "Night theme": [
         "Темна тема"
       ],
+      "No account information was found in any data breaches": [
+        "Інформацію з облікового запису не знайдено в жодному витоці даних"
+      ],
       "No recovery method": [
         "Немає способу відновлення"
+      ],
+      "Open": [
+        "Відкрити"
       ],
       "Open actions dropdown": [
         "Випадне меню дій"
@@ -12638,6 +13190,12 @@
       "Password": [
         "Пароль"
       ],
+      "Password reset settings": [
+        "Налаштування скидання пароля"
+      ],
+      "Passwords made easy": [
+        "Паросте керування паролями"
+      ],
       "Pay invoice": [
         "Сплатити рахунок"
       ],
@@ -12665,6 +13223,9 @@
       "Previous": [
         "Назад"
       ],
+      "Privacy and data collection": [
+        "Приватність і збір даних"
+      ],
       "Processing...": [
         "Триває обробка..."
       ],
@@ -12674,17 +13235,32 @@
       "Recommended": [
         "Рекомендовано"
       ],
+      "Recommended actions": [
+        "Рекомендовані дії"
+      ],
       "Reconnect your account": [
         "Повторно під'єднайте свій обліковий запис"
+      ],
+      "Recover data": [
+        "Відновити дані"
       ],
       "Recovery": [
         "Відновлення"
       ],
+      "Recovery file": [
+        "Файл відновлення"
+      ],
       "Refer a friend": [
         "Запросити друга"
       ],
+      "Reject device?": [
+        "Відхилити пристрій?"
+      ],
       "Remove all members?": [
         "Видалити всіх учасників?"
+      ],
+      "Remove device?": [
+        "Вилучити пристрій?"
       ],
       "Remove domain": [
         "Вилучити домен"
@@ -12716,14 +13292,23 @@
       "Reset password?": [
         "Скинути пароль?"
       ],
+      "Resolved": [
+        "Вирішено"
+      ],
       "Restore administrator privileges": [
         "Відновити права адміністратора"
       ],
       "SAML authentication": [
         "Автентифікація SAML"
       ],
+      "Schedule meetings in one click": [
+        "Запланувати зустрічі одним кліком"
+      ],
       "Search for additional servers": [
         "Пошук додаткових серверів"
+      ],
+      "Security and privacy": [
+        "Безпека й приватність"
       ],
       "Security events": [
         "Події безпеки"
@@ -12742,6 +13327,12 @@
       ],
       "Send new invite?": [
         "Надіслати нове запрошення?"
+      ],
+      "Service": [
+        "Служба"
+      ],
+      "Session management": [
+        "Керування сеансами"
       ],
       "Set new password": [
         "Встановити новий пароль"
@@ -12794,6 +13385,9 @@
       "Start import process": [
         "Початок процесу імпортування"
       ],
+      "State": [
+        "Стан"
+      ],
       "Status": [
         "Стан"
       ],
@@ -12823,6 +13417,9 @@
       ],
       "There are no groups": [
         "Групи відсутні"
+      ],
+      "Third-party apps and services": [
+        "Сторонні додатки та сервіси"
       ],
       "TV sign in": [
         "Вхід на телевізорі"
@@ -12890,11 +13487,23 @@
       "We'll send an email to your new address with instructions on completing the change.": [
         "Ми надішлемо лист на вашу нову адресу з інструкцією для завершення зміни."
       ],
+      "What is an alias?": [
+        "Що таке псевдонім?"
+      ],
+      "What is the dark web?": [
+        "Що таке dark web?"
+      ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"
       ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
+      ],
+      "You have no open alerts": [
+        "У вас немає відкритих попереджень"
+      ],
+      "You have no resolved alerts": [
+        "У вас немає вирішених попереджень"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш безплатний пробний період ${ planName } завершується ${ textDate }"
@@ -12904,6 +13513,9 @@
       ],
       "Your current plan": [
         "Поточний тарифний план"
+      ],
+      "Your exposed information": [
+        "Ваша викрита інформація"
       ],
       "Your plan": [
         "Ваш тарифний план"
@@ -13011,6 +13623,9 @@
       ],
       "Edit label names": [
         "Редагувати назви міток"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Увімкнення докладних подій записує IP-адресу для кожного заходу."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адреса кінцевої точки провайдера ідентифікації (наприклад, https://idp.example.com/sso/saml)"
@@ -13618,6 +14233,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Ваш файл відновлення застарів. Він не зможе відновити нові дані, якщо ви знову скинете пароль."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Ваша фраза для відновлення застаріла. Вона не зможе відновити нові дані, якщо ви знову скинете пароль."
       ]
     },
     "Warning for domain modal": {

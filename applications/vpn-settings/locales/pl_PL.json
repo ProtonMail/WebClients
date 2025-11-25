@@ -45,6 +45,9 @@
       "Activate organization key": [
         "Aktywuj klucz organizacji"
       ],
+      "Activate recovery": [
+        "Aktywuj odzyskiwanie"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -183,11 +186,17 @@
       "Confirm": [
         "Potwierdź"
       ],
+      "Connect": [
+        "Połącz"
+      ],
       "Connect apps and devices": [
         "Połącz aplikacje i urządzenia"
       ],
       "Connect to video conferencing": [
         "Połącz się z wideokonferencją"
+      ],
+      "Connected": [
+        "Połączono"
       ],
       "Contact support": [
         "Skontaktuj się ze wsparciem technicznym"
@@ -252,6 +261,9 @@
       "Decrease": [
         "Zmniejsz"
       ],
+      "Decrypt": [
+        "Odszyfruj"
+      ],
       "Delete": [
         "Usuń"
       ],
@@ -266,6 +278,9 @@
       ],
       "Delete logo": [
         "Usuń logo"
+      ],
+      "Delete logs": [
+        "Usuń logi"
       ],
       "Delete member": [
         "Usuń członka"
@@ -291,6 +306,15 @@
       "Disable": [
         "Wyłącz"
       ],
+      "Disable recovery phrase": [
+        "Wyłącz hasło odzyskiwania"
+      ],
+      "Disable recovery phrase?": [
+        "Wyłączyć hasło odzyskiwania?"
+      ],
+      "Disable security events": [
+        "Wyłącz logi"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -308,6 +332,9 @@
       ],
       "Domain name": [
         "Nazwa domeny"
+      ],
+      "Don't show again": [
+        "Nie pokazuj ponownie"
       ],
       "Done": [
         "Gotowe"
@@ -329,6 +356,9 @@
       ],
       "Download our CSV template": [
         "Pobierz szablon pliku CSV"
+      ],
+      "Download recovery file": [
+        "Pobierz plik odzyskiwania"
       ],
       "Edit": [
         "Edytuj"
@@ -420,8 +450,14 @@
       "Forgot recovery method?": [
         "Nie pamiętasz metody odzyskiwania?"
       ],
+      "Generate new recovery phrase": [
+        "Generuj nowe hasło odzyskiwania"
+      ],
       "Generate password": [
         "Generuj hasło"
+      ],
+      "Generate recovery phrase": [
+        "Generuj hasło odzyskiwania"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Wybierz plan ${ planName } za ${ priceCoupon }"
@@ -570,6 +606,12 @@
       "Mark as favorite": [
         "Dodaj do ulubionych"
       ],
+      "Mark as open": [
+        "Oznacz jako nierozwiązane"
+      ],
+      "Mark as resolved": [
+        "Oznacz jako rozwiązane"
+      ],
       "More benefits": [
         "Więcej bonusów"
       ],
@@ -657,11 +699,20 @@
       "refresh the page": [
         "Odśwież stronę"
       ],
+      "Reject": [
+        "Odrzuć"
+      ],
+      "Reload": [
+        "Odśwież"
+      ],
       "Remove": [
         "Usuń"
       ],
       "Remove all members": [
         "Usuń wszystkich użytkowników"
+      ],
+      "Remove all other devices": [
+        "Usuń inne urządzenia"
       ],
       "Remove bonuses": [
         "Zrezygnuj z bonusów"
@@ -734,6 +785,9 @@
       ],
       "Revoke ${ name }": [
         "Unieważnij ${ name }"
+      ],
+      "Revoke all other sessions": [
+        "Unieważnij pozostałe sesje"
       ],
       "Revoke invitation": [
         "Unieważnij zaproszenie"
@@ -809,6 +863,9 @@
       ],
       "Set recovery methods": [
         "Ustaw metody odzyskiwania"
+      ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
       ],
       "Set up 2FA": [
         "Skonfiguruj uwierzytelnianie dwustopniowe"
@@ -933,6 +990,15 @@
       "Unlock": [
         "Odblokuj"
       ],
+      "Unlock data": [
+        "Odblokuj dane"
+      ],
+      "Update recovery file": [
+        "Zaktualizuj plik odzyskiwania"
+      ],
+      "Update recovery phrase": [
+        "Zaktualizuj hasło odzyskiwania"
+      ],
       "Upgrade": [
         "Ulepsz"
       ],
@@ -950,6 +1016,9 @@
       ],
       "Upgrade to Professional": [
         "Ulepsz konto do planu Professional"
+      ],
+      "Upgrade to view all": [
+        "Ulepsz konto, aby zobaczyć wszystko"
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
@@ -1014,14 +1083,29 @@
       "View": [
         "Podgląd"
       ],
+      "View all reports": [
+        "Pokaż wszystkie raporty"
+      ],
       "View invoice": [
         "Pokaż fakturę"
       ],
       "View plans details": [
         "Pokaż szczegóły planów"
       ],
+      "Void": [
+        "Unieważnij"
+      ],
+      "Void all recovery files": [
+        "Unieważnij wszystkie pliki odzyskiwania"
+      ],
+      "Void all recovery files?": [
+        "Unieważnić wszystkie pliki odzyskiwania?"
+      ],
       "What do I get?": [
         "Co otrzymam?"
+      ],
+      "Wipe": [
+        "Usuń"
       ],
       "Your server will be provisioned in the next days": [
         "Serwer zostanie udostępniony w ciągu najbliższych dni"
@@ -1036,6 +1120,11 @@
     "action": {
       "Resuming forward": [
         "Wznawianie przekierowania"
+      ]
+    },
+    "Action for user session": {
+      "Revoke": [
+        "Unieważnij"
       ]
     },
     "Action subscription": {
@@ -1207,140 +1296,6 @@
         "Nowa wiadomość"
       ]
     },
-    "anniversary_2025": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ]
-    },
-    "anniversary_2025: Offer": {
-      "15 GB storage": [
-        "15 GB przestrzeni dyskowej"
-      ],
-      "200 GB storage": [
-        "200 GB przestrzeni dyskowej"
-      ],
-      "500 GB encrypted storage": [
-        "500 GB szyfrowanej przestrzeni dyskowej"
-      ],
-      "Add unlimited credit cards": [
-        "Dodaj nieograniczoną liczbę kart płatniczych"
-      ],
-      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
-        "Wszystkie funkcje premium usług ${ BRAND_NAME } Mail, Pass, VPN, Drive i Calendar."
-      ],
-      "Block ads, trackers, and malware": [
-        "Zablokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
-      ],
-      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
-        "Rabaty są obliczane na podstawie standardowych cen miesięcznych. Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie odnowiona w standardowej cenie."
-      ],
-      "Double your encrypted storage – get 1 TB for all your data": [
-        "Podwójna szyfrowana przestrzeń dyskowa – 1 TB na wszystkie dane"
-      ],
-      "Encrypted password manager": [
-        "Szyfrowany menadżer haseł"
-      ],
-      "Here's an exclusive gift to celebrate our journey together.": [
-        "Oto ekskluzywny prezent, aby uczcić naszą wspólną podróż."
-      ],
-      "High speed streaming with VPN": [
-        "Szybki streaming z VPN"
-      ],
-      "of privacy": [
-        "prywatności"
-      ],
-      "Online document editor": [
-        "Edytor dokumentów online"
-      ],
-      "Online privacy for up to 2 people": [
-        "Prywatność w sieci dla 2 użytkowników"
-      ],
-      "Online privacy for your whole family (up to 6 users)": [
-        "Prywatność online dla całej rodziny (do 6 użytkowników)"
-      ],
-      "Protect up to 10 devices": [
-        "Ochrona do 10 urządzeń"
-      ],
-      "Recover previous file versions": [
-        "Odzyskaj poprzednie wersje pliku"
-      ],
-      "Save big on premium Drive features with a limited-time discount.": [
-        "Zaoszczędź dużo na funkcjach premium dysku dzięki ofercie ograniczonej czasowo."
-      ],
-      "Save big on premium Mail features with a limited-time discount.": [
-        "Zaoszczędź dużo na funkcjach premium poczty dzięki ofercie ograniczonej czasowo."
-      ],
-      "Save big on premium Pass features with a limited-time discount.": [
-        "Zaoszczędź dużo na funkcjach premium Proton Pass dzięki ofercie ograniczonej czasowo."
-      ],
-      "Save big on premium VPN features with a limited-time discount.": [
-        "Zaoszczędź dużo na funkcjach premium VPN dzięki ofercie ograniczonej czasowo."
-      ],
-      "Save time with built-in 2FA": [
-        "Zaoszczędź czas dzięki wbudowanemu uwierzytelnianiu dwustopniowemu"
-      ],
-      "Secure email with unlimited aliases": [
-        "Bezpieczna poczta e-mail z nieograniczoną liczbą aliasów"
-      ],
-      "Select any server": [
-        "Wybierz serwer"
-      ],
-      "Share passwords easily": [
-        "Łatwe udostępnianie haseł"
-      ],
-      "Short @pm.me address": [
-        "Krótki adres @pm.me"
-      ],
-      "Stream your favorite content": [
-        "Streamuj ulubione filmy"
-      ],
-      "thanks to you": [
-        "dzięki Tobie"
-      ],
-      "Triple your encrypted storage – get 3 TB for all your data": [
-        "Potrójna szyfrowana przestrzeń dyskowa – 3 TB na wszystkie dane"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nieograniczona liczba folderów, etykiet i filtrów"
-      ],
-      "Use your own email domain": [
-        "Użyj własnej domeny"
-      ],
-      "years": [
-        "lat"
-      ]
-    },
-    "anniversary_2025: offer": {
-      "Anniversary offer": [
-        "Oferta jubileuszowa"
-      ]
-    },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } miesiąc",
-        "${ n } miesiące",
-        "${ n } miesięcy",
-        "${ n } miesiąca"
-      ],
-      "/ month": [
-        "/ miesiąc"
-      ],
-      "12 months": [
-        "12 miesięcy"
-      ],
-      "15 months": [
-        "15 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
-      ],
-      "30 months": [
-        "30 miesięcy"
-      ],
-      "for ${ durationDeal }": [
-        "na ${ durationDeal }"
-      ]
-    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Wznieś produktywność poczty na nowy poziom. ${ BRAND_NAME } Scribe pomoże Ci pisać, odpowiadać i sprawdzać wiadomości."
@@ -1425,6 +1380,11 @@
       ],
       "Missing keys": [
         "Brak kluczy"
+      ]
+    },
+    "Badge for user sessions table": {
+      "Current session": [
+        "Obecna sesja"
       ]
     },
     "bf2023: Action": {
@@ -3070,6 +3030,9 @@
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Dodawaj foldery i pliki do ${ DRIVE_APP_NAME } i zapraszaj użytkowników zespołu do ich przeglądania lub edytowania."
       ],
+      "Also included": [
+        "Również w zestawie"
+      ],
       "Automatically forward incoming email to another email address.": [
         "Automatyczne przekierowanie wiadomości przychodzących na inny adres e-mail."
       ],
@@ -3078,6 +3041,9 @@
       ],
       "Connect your CRM, website, printers, and more.": [
         "Połącz CRM, stronę internetową, drukarki i nie tylko."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Utwórz spotkanie Zoom i dodaj jego szczegóły do wydarzenia za pomocą jednego kliknięcia."
       ],
       "Create groups you can email with a single address.": [
         "Twórz grupy, do których możesz wysyłać wiadomości za pomocą jednego adresu."
@@ -3090,6 +3056,15 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Łatwa synchronizacja plików komputera z chmurą i dostęp do danych z urządzenia mobilnego."
+      ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Włącz ${ PROTON_SENTINEL_NAME }, aby uzyskać dostęp do tych funkcji"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Włącz szczegółowe logi i ${ PROTON_SENTINEL_NAME }, aby uzyskać dostęp do tych funkcji"
+      ],
+      "Enable detailed events to access these features": [
+        "Włącz szczegółowe logi, aby uzyskać dostęp do tych funkcji"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Aby zapewnić dodatkowe bezpieczeństwo, zachęcaj do korzystania z uwierzytelniania dwustopniowego w organizacji."
@@ -3114,6 +3089,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych przez usługi stron trzecich."
+      ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "Uzyskaj do ${ credits }, zapraszając znajomych do usługi ${ BRAND_NAME }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomóż zespołowi bezpiecznie przechowywać hasła do poufnych danych firmowych i informacji o klientach."
@@ -3649,6 +3627,9 @@
       "Error publishing changes": [
         "Wystąpił błąd podczas publikowania zmian"
       ],
+      "Failed to load OAuth modal.": [
+        "Nie udało się załadować okna OAuth."
+      ],
       "Failed to load the STL preview": [
         "Nie udało się załadować podglądu STL"
       ],
@@ -3943,6 +3924,12 @@
       "The folder name is too long. Please choose a different name.": [
         "Nazwa folderu jest zbyt długa. Wpisz krótszą nazwę."
       ],
+      "The keys in your recovery file can't be validated. Please contact support.": [
+        "Klucze w pliku odzyskiwania są nieprawidłowe. Skontaktuj się ze wsparciem technicznym."
+      ],
+      "The keys in your recovery files can't be validated. Please upload individually for more information.": [
+        "Klucze w plikach odzyskiwania są nieprawidłowe. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Nazwa etykiety jest nieprawidłowa. Wpisz inną nazwę."
       ],
@@ -3994,6 +3981,12 @@
       "Unknown payment token status": [
         "Token statusu płatności jest nieznany"
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Przesłany plik nie jest prawidłowym kluczem prywatnym. Zweryfikuj plik i spróbuj ponownie."
+      ],
+      "Uploaded files are not valid private keys. Please verify and try again.": [
+        "Przesłane pliki nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
+      ],
       "Username must begin with a letter or digit": [
         "Nazwa użytkownika musi zaczynać się literą lub cyfrą"
       ],
@@ -4035,6 +4028,9 @@
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
+      ],
+      "Zero keys reactivated": [
+        "Brak reaktywowanych kluczy"
       ],
       "ZIP code is required": [
         "Kod pocztowy jest wymagany"
@@ -4188,6 +4184,9 @@
     "Error message": {
       "App currently unavailable": [
         "Aplikacja jest niedostępna"
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "Poproś administratora o włączenie zabezpieczenia."
       ],
       "Error: ${ errorMessage }": [
         "Błąd: ${ errorMessage }"
@@ -5375,6 +5374,23 @@
         "Kliknij ${ boldExport }, aby wyeksportować plik ICS."
       ]
     },
+    "Import provider": {
+      "Import from ${ provider }": [
+        "Importuj z ${ provider }"
+      ],
+      "Import from Google": [
+        "Importuj z konta Google"
+      ],
+      "Import from other": [
+        "Importuj z innego konta"
+      ],
+      "Import from Outlook": [
+        "Importuj z konta Outlook"
+      ],
+      "Import from Yahoo": [
+        "Importuj z konta Yahoo"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
@@ -5410,6 +5426,9 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Jeśli to zrobisz, stracisz dostęp do wszystkich obecnie zaszyfrowanych danych."
+      ],
+      "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
+        "${ BRAND_NAME } nigdy nie udostępnia informacji o użytkownikach stronom trzecim. Dane pochodzą z własnych źródeł ${ BRAND_NAME } i firmy Constella Intelligence."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asystent pisania ${ BRAND_NAME } Scribe"
@@ -5503,6 +5522,12 @@
         "${ number } serwery",
         "${ number } serwerów",
         "${ number } serwerów"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "Przesłany plik nie jest prawidłowym kluczem prywatnym. Zweryfikuj plik i spróbuj ponownie.",
+        "${ numberOfNonPrivateKeys } przesłane pliki nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie.",
+        "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie.",
+        "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
@@ -5642,9 +5667,6 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importuj obecne kody** z innych aplikacji uwierzytelniających, takich jak Google Authenticator"
       ],
-      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Zaproś znajomych** do ${ BRAND_NAME } za pomocą linku polecającego."
-      ],
       "**Sync codes** to all your devices": [
         "**Synchronizuj kody** na wszystkich urządzeniach"
       ],
@@ -5684,11 +5706,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Plik odzyskiwania umożliwia odblokowanie danych po odzyskaniu konta"
+      ],
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Jeśli zapomnisz hasła, to hasło odzyskiwania umożliwia odzyskanie dostępu do konta i zaszyfrowanych wiadomości"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
       "Account successfully updated": [
         "Konto zostało zaktualizowane"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Aktywuj co najmniej jedną metodę odzyskiwania danych, aby uniknąć utraty dostępu do konta ${ BRAND_NAME }."
       ],
       "active": [
         "aktywna"
@@ -5759,6 +5790,9 @@
       "All inactive members deleted": [
         "Usunięto wszystkich nieaktywnych użytkowników"
       ],
+      "All keys successfully reactivated": [
+        "Wszystkie klucze zostały reaktywowane"
+      ],
       "All members have been added.": [
         "Wszyscy użytkownicy zostali dodani."
       ],
@@ -5798,6 +5832,9 @@
       "Amount due": [
         "Do zapłaty"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "Alias działa jak adres e-mail, ale ogranicza spam i ukrywa prawdziwy adres e-mail oraz tożsamość użytkownika."
+      ],
       "and": [
         "i"
       ],
@@ -5812,6 +5849,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Czy na pewno chcesz przyznać uprawnienia administratora temu użytkownikowi?"
+      ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Czy na pewno chcesz trwale usunąć wszystkie logi?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Czy na pewno chcesz cofnąć uprawnienia administratora temu użytkownikowi?"
@@ -5869,6 +5909,12 @@
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
+      ],
+      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
+        "Przenieś wiadomości, kontakty i kalendarze do ${ BRAND_NAME }."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Wyłączenie logów spowoduje usunięcie całej jej historii. Czy na pewno chcesz wyłączyć tę funkcję?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
@@ -5999,6 +6045,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
+      "Data locked": [
+        "Dane są zablokowane"
+      ],
       "Data recoverable on this device": [
         "Dane możliwe do odzyskania na tym urządzeniu"
       ],
@@ -6052,6 +6101,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz w stanie zarządzać organizacją."
+      ],
+      "Do you want to revoke all other sessions than the current one?": [
+        "Czy chcesz unieważnić wszystkie sesje oprócz obecnej?"
       ],
       "Domain ownership failed verification.": [
         "Weryfikacja domeny nie powiodła się."
@@ -6140,6 +6192,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Włącz automatyczne odnowienie, aby zachować dostęp do funkcji premium."
       ],
+      "Enable email notifications": [
+        "Włącz powiadomienia"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Włącz logowanie SSO, aby zapewnić swojej organizacji bezpieczeństwo"
       ],
@@ -6148,6 +6203,9 @@
       ],
       "Enabling auto-deletion…": [
         "Włączanie automatycznego usuwania…"
+      ],
+      "Enabling recovery by phrase again will generate a new recovery phrase.": [
+        "Włączenie odzyskiwania za pomocą hasła wygeneruje nowe hasło odzyskiwania."
       ],
       "End date": [
         "Data zakończenia"
@@ -6233,6 +6291,9 @@
       "expires ${ expirationDate }": [
         "wygasa ${ expirationDate }"
       ],
+      "Failed to fetch logs.": [
+        "Nie udało się pobrać logów."
+      ],
       "Fill in user details": [
         "Uzupełnij szczegóły użytkownika"
       ],
@@ -6254,11 +6315,17 @@
       "Gateways": [
         "bramy"
       ],
+      "Generating a new recovery phrase will deactivate your old one.": [
+        "Nowe hasło odzyskiwania zastąpi stare."
+      ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Pobierz ${ AUTHENTICATOR_APP_NAME } na swoje urządzenia."
       ],
       "Get ${ upsellPlanName }": [
         "Wybierz plan ${ upsellPlanName }"
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "Otrzymaj powiadomienie o wycieku swojego hasła i innych danych osobowych. ${ learnMoreLinkNoBreach }"
       ],
       "Get started with the referral link above.": [
         "Zacznij od powyższego linku polecającego."
@@ -6289,6 +6356,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Zwrócimy pieniądze, jeśli nie spodoba Ci się usługa."
+      ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Jeśli jest to spowodowane starym resetowaniem hasła, możesz zatrzymać ponowne pokazywanie tej wiadomości"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -6325,6 +6395,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Po obniżeniu planu stracisz dostęp do płatnych funkcji usługi ${ VPN_APP_NAME }."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Po zresetowaniu hasła możesz odblokować dane za pomocą metody odzyskiwania danych"
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Jesteśmy tu, aby pomóc. ${ boldPhoneCall }, ${ boldZoomMeeting } z jednym z naszych specjalistów lub rozpocznij ${ boldLiveChat }."
@@ -6413,6 +6486,9 @@
       "Invited": [
         "Zaproszono"
       ],
+      "It appears some of your data is encrypted and locked.": [
+        "Niektóre dane są zaszyfrowane i zablokowane."
+      ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Zmiana kraju serwera zajmie 10 dni, więc upewnij się, że wybór jest prawidłowy."
       ],
@@ -6476,6 +6552,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "Zachowaj bezpieczeństwo i prywatność swoich danych dzięki tym przewodnikom i wskazówkom."
+      ],
       "Keys created": [
         "Klucze zostały utworzone"
       ],
@@ -6502,6 +6581,9 @@
       ],
       "Learn more about single sign-on": [
         "Dowiedz się więcej o logowaniu SSO"
+      ],
+      "Learn what to do ${ dataLeakedLink }": [
+        "Dowiedz się co możesz zrobić ${ dataLeakedLink }"
       ],
       "Let's get started by pressing the New group button above": [
         "Rozpocznij od kliknięcia przycisku Nowa grupa"
@@ -6569,6 +6651,9 @@
       "Monitor accounts": [
         "Monitoring kont"
       ],
+      "Monitor and audit authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
+        "Monitorowanie i inspekcja prób uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają danych logowania ${ BRAND_NAME }."
+      ],
       "Multi-user support not enabled.": [
         "Obsługa wielu użytkowników jest wyłączona."
       ],
@@ -6586,6 +6671,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
+      ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "Funkcja NetShield w ${ VPN_APP_NAME } chroni urządzenie przed reklamami, elementami śledzącymi i złośliwym oprogramowaniem."
       ],
       "New": [
         "Nowy"
@@ -6613,6 +6701,9 @@
       ],
       "No Gateways yet": [
         "Brak bram"
+      ],
+      "No logs yet.": [
+        "Logi są puste."
       ],
       "No payment is required at this time.": [
         "Płatność nie jest wymagana."
@@ -6643,6 +6734,9 @@
       ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
+      ],
+      "One time import": [
+        "Jednorazowy import"
       ],
       "Open source": [
         "Otwarty kod źródłowy"
@@ -6682,6 +6776,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organizacja posiada jeszcze innych administratorów. Jesteś odpowiedzialny za przekazanie im nowego hasła."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
       ],
       "Paid for a plan": [
         "Zapłacono za plan"
@@ -6755,6 +6852,9 @@
       "Please fill in all required fields.": [
         "Uzupełnij wszystkie wymagane pola."
       ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Zachowaj to hasło. Jeśli zresetujesz hasło, będziesz go potrzebować do odzyskania dostępu do konta i odszyfrowania danych."
+      ],
       "please open a support ticket": [
         "wyślij zgłoszenie"
       ],
@@ -6775,6 +6875,9 @@
       ],
       "Please wait till your changes are synced with the server.": [
         "Poczekaj na synchronizację zmian z serwerem."
+      ],
+      "Plus ${ numOfBreaches } more": [
+        "+${ numOfBreaches } więcej"
       ],
       "Plus or Visionary subscription required": [
         "Subskrypcja planu Plus lub Visionary jest wymagana"
@@ -6821,8 +6924,29 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Zalecane na zaufanych urządzeniach. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery file downloaded": [
+        "Plik odzyskiwania został pobrany"
+      ],
+      "Recovery files have been voided": [
+        "Pliki odzyskiwania zostały unieważnione"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
+      ],
+      "Recovery phrase copied to clipboard": [
+        "Hasło odzyskiwania zostało skopiowane do schowka"
+      ],
+      "Recovery phrase downloaded": [
+        "Hasło odzyskiwania zostało pobrane"
+      ],
+      "Recovery phrase has been disabled": [
+        "Hasło odzyskiwania zostało wyłączone"
+      ],
+      "Recovery phrase is not associated with any keys.": [
+        "Hasło odzyskiwania nie jest powiązane z żadnym kluczem."
+      ],
+      "Recovery phrase is not associated with any outdated keys.": [
+        "Hasło odzyskiwania nie jest powiązane z żadnym starym kluczem."
       ],
       "Referral link copied to your clipboard": [
         "Link polecający został skopiowany do schowka"
@@ -6953,6 +7077,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
+      "Some keys successfully reactivated": [
+        "Niektóre klucze zostały reaktywowane"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Wybierz dozwoloną domenę dla logowania SSO (SAML)."
       ],
@@ -7007,6 +7134,9 @@
       "Summary": [
         "Podsumowanie"
       ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "Monitoring niestandardowych domen i adresów e-mail spoza ${ BRAND_NAME } będzie dostępny wkrótce."
+      ],
       "support team": [
         "pomocą techniczną"
       ],
@@ -7031,11 +7161,20 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Dziękujemy za wsparcie naszej misji budowania lepszego Internetu, w którym prywatność i wolność są na pierwszym miejscu."
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "Wiadomość \"${ boldDataLocked }\" nie będzie pokazywana, ale możesz nadal odblokować dane w sekcji ${ encryptionAndKeysLink }."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "Dark web to ukryta część Internetu, w której można kupować i sprzedawać skradzione dane osobowe."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Liczba pobrań obejmuje rzeczywiste pobrania i podgląd plików."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Zaszyfrowane dane zajmują więcej miejsca ze względu na proces szyfrowania oraz podpisy zapewniające bezpieczeństwo danych."
+      ],
+      "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
+        "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
       ],
       "The following address is invalid.": [
         "Następujący adres jest nieprawidłowy.",
@@ -7106,11 +7245,23 @@
       "This file is too large to preview": [
         "Plik jest zbyt duży do podglądu"
       ],
+      "This is a 12-word phrase that you were prompted to set.": [
+        "To jest hasło odzyskiwania składające się z 12 słów, które ustawiano."
+      ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "To jest nazwa organizacji, którą będą widzieć użytkownicy. Możesz ją zmienić w dowolnym momencie."
       ],
+      "This is a recovery file or encryption key you may have previously saved.": [
+        "To jest plik odzyskiwania lub klucz szyfrowania, który mógł zostać wcześniej zapisany."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "To jest klucz szyfrowania, który mógł zostać wcześniej zapisany."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "To Twój ${ defaultEmailAddress } do wysyłania nowych wiadomości."
+      ],
+      "This is the password you used before the password reset.": [
+        "To jest hasło używane przed zrestartowaniem hasła."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Wiadomość nie zostanie dostarczona do pomocy technicznej. Jeśli masz problem z naszą usługą lub potrzebujesz dalszej pomocy, ${ supportLink }."
@@ -7130,6 +7281,9 @@
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Spowoduje to wyłączenie uwierzytelniania dwustopniowego, w tym aplikacji uwierzytelniającej i kluczy bezpieczeństwa."
       ],
+      "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
+        "Ta opcja wyłączy obecne hasło odzyskiwania. Nie będziesz mógł użyć tego hasła, aby uzyska dostęp do konta lub odszyfrowywać dane."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
       ],
@@ -7141,6 +7295,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ta czynność spowoduje trwałe usunięcie konta. Nie będziesz mógł reaktywować tego konta."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Odrzuci to urządzenie **${ name }**, które próbowało zalogować się na konto ${ BRAND_NAME } **${ date }**."
       ],
       "This will remove any enabled 2FA methods.": [
         "Spowoduje to usunięcie metod uwierzytelniania dwustopniowego."
@@ -7163,6 +7320,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ta czynność spowoduje wylogowanie z każdej aktywnej sesji i wyłączenie uwierzytelniania dwustopniowego."
       ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Spowoduje to odłączenie urządzenia **${ name } (utworzono ${ date })** z konta ${ BRAND_NAME }."
+      ],
       "This will wipe all logs for your organization members.": [
         "Spowoduje to usunięcie wszystkich logów użytkowników organizacji."
       ],
@@ -7184,8 +7344,14 @@
       "To continue to ${ product }": [
         "i przejdź do ${ product }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Aby stale ulepszać nasze usługi, czasami zbieramy dane, które monitorują poprawne działanie naszych aplikacji. Te informacje nie są udostępniane innym stronom trzecim."
+      ],
       "To create your first user group, go to": [
         "Aby utworzyć pierwszą grupę użytkowników, przejdź do"
+      ],
+      "To decrypt and view your locked data after a password reset, select a recovery method.": [
+        "Wybierz metodę odzyskiwania, aby odszyfrować dane zablokowane przed zresetowaniem hasła."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."
@@ -7238,6 +7404,9 @@
       "Unable to check gateways monitoring current status.": [
         "Nie można sprawdzić obecnego statusu monitorowania bram."
       ],
+      "Unable to verify recovery file signature. Please contact support.": [
+        "Nie można zweryfikować podpisu pliku odzyskiwania. Skontaktuj się ze wsparciem technicznym."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Brak zapisanych metod odzyskiwania dla tego konta."
       ],
@@ -7246,6 +7415,9 @@
       ],
       "Unknown event type": [
         "Nieznany typ zdarzenia"
+      ],
+      "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
+        "Jeśli nie wylogujesz się lub nie zmienisz hasła, sesje pozostaną aktywne i wygasną po 60 dniach nieaktywności."
       ],
       "Unsaved changes": [
         "Niezapisane zmiany"
@@ -7271,8 +7443,14 @@
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Prześlij logo organizacji, aby zwiększyć rozpoznawalność marki."
       ],
+      "Uploaded file is not a valid private key. Please verify and try again.": [
+        "Przesłany plik nie jest prawidłowym kluczem prywatnym. Zweryfikuj plik i spróbuj ponownie."
+      ],
       "Uppercase and lowercase letters": [
         "Wielkie i małe litery"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "Użyj menedżera haseł, aby bezpiecznie generować i przechowywać silne hasła oraz łatwo się logować."
       ],
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Użyj metody odzyskiwania, aby wyłączyć uwierzytelnianie dwustopniowe."
@@ -7343,6 +7521,9 @@
       "VPN with dedicated servers and IP addresses": [
         "VPN z dedykowanymi serwerami i adresami IP"
       ],
+      "Want to learn more?": [
+        "Chcesz dowiedzieć się więcej?"
+      ],
       "Warning:": [
         "Ostrzeżenie:"
       ],
@@ -7357,6 +7538,9 @@
       ],
       "We generated a strong password for you": [
         "Wygenerowaliśmy silne hasło"
+      ],
+      "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
+        "Monitorujemy sieć dark web pod kątem wycieków danych osobowych (jak adresy e-mail, hasła)."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
@@ -7378,6 +7562,9 @@
       ],
       "We recommend using your recovery phrase instead.": [
         "Zamiast tego zalecamy użycie hasła odzyskiwania."
+      ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Aby uniknąć utraty danych, informacje o odzyskiwaniu pozostaną zachowane na zaufanym urządzeniu"
       ],
       "We stored a backup file in this browser because you allowed data recovery on this ${ deviceLink }. If the backup file is valid, you will immediately regain complete or partial access to your encrypted data.": [
         "Zapisaliśmy plik kopii zapasowej w tej przeglądarce, ponieważ zezwoliłeś na odzyskiwanie danych na ${ deviceLink }. Jeśli plik kopii zapasowej jest prawidłowy, odzyskasz pełny lub częściowy dostęp do zaszyfrowanych danych."
@@ -7628,6 +7815,12 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Nie będziesz mógł ponownie przypisać tych serwerów do innego kraju przez 10 dni."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Nie będziesz mógł odzyskać zablokowanych danych za pomocą plików odzyskiwania."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Odzyskiwanie zablokowanych danych za pomocą pobranych plików odzyskiwania nie będzie możliwe. Spowoduje to również wyłączenie odzyskiwania za pomocą zaufanego urządzenia."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Następnie zapłacisz co ${ renewCycle } miesiąc ${ renewAmountStr }.",
         "Następnie zapłacisz co ${ renewCycle } miesiące ${ renewAmountStr }.",
@@ -7673,11 +7866,11 @@
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
       ],
-      "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Twoi znajomi otrzymają **2 tygodnie planu za darmo**."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Twoje dane są u nas bezpieczne. Skontaktujemy się z Tobą tylko wtedy, gdy będzie to konieczne."
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "Twoje informacje zostały znalezione w dniu: ${ displayedDate }"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
@@ -7699,6 +7892,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your recovery phrase": [
+        "Twoje hasło odzyskiwania"
+      ],
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Hasłem odzyskiwania jest seria 12 słów w określonej kolejności."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co ${ cycle } miesiąc.",
@@ -7732,6 +7931,12 @@
       ]
     },
     "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
       "Optional": [
         "Opcjonalne"
       ],
@@ -7949,6 +8154,12 @@
       "Allow recovery by phone": [
         "Zezwalaj na odzyskiwanie przez telefon"
       ],
+      "Allow recovery by recovery phrase": [
+        "Zezwalaj na odzyskiwanie przez hasło odzyskiwania"
+      ],
+      "Allow recovery using a trusted device": [
+        "Zezwalaj na odzyskiwanie za pomocą zaufanego urządzenia"
+      ],
       "Allowed Domain": [
         "Dozwolona domena"
       ],
@@ -8044,6 +8255,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
+      ],
+      "Collect usage diagnostics": [
+        "Zbieraj dane diagnostyczne"
       ],
       "Colors": [
         "Kolory"
@@ -8180,8 +8394,14 @@
       "Enabled": [
         "Włączone"
       ],
+      "Enter password": [
+        "Wpisz hasło"
+      ],
       "Enter the code displayed on your TV": [
         "Wpisz kod wyświetlony na telewizorze"
+      ],
+      "Enter the password for key with fingerprint: ${ fingerprintCode }": [
+        "Wpisz hasło dla klucza z odciskiem: ${ fingerprintCode }"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -8197,6 +8417,9 @@
       ],
       "Expires": [
         "Wygasa"
+      ],
+      "File": [
+        "Plik"
       ],
       "First name": [
         "Imię"
@@ -8420,6 +8643,9 @@
       "Phone number": [
         "Numer telefonu"
       ],
+      "Phrase": [
+        "Hasło odzyskiwania"
+      ],
       "Phrase consists of 12 unique words in a specific order": [
         "Hasłem odzyskiwania jest seria 12 słów w określonej kolejności"
       ],
@@ -8444,6 +8670,9 @@
       "Postal code": [
         "Kod pocztowy"
       ],
+      "Previous password": [
+        "Poprzednie hasło"
+      ],
       "Proration": [
         "Dzielenie proporcjonalne"
       ],
@@ -8455,6 +8684,9 @@
       ],
       "Recovery email address": [
         "Adres pomocniczy"
+      ],
+      "Recovery file": [
+        "Plik odzyskiwania"
       ],
       "Recovery phone number": [
         "Numer pomocniczy"
@@ -8494,6 +8726,9 @@
       ],
       "Second password": [
         "Drugie hasło"
+      ],
+      "Send crash reports": [
+        "Wysyłaj raporty o awariach"
       ],
       "Sequences": [
         "Sekwencje"
@@ -8557,6 +8792,12 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Upload 1 or more encryption keys": [
+        "Prześlij co najmniej 1 klucz szyfrowania"
+      ],
+      "Upload 1 or more recovery files or encryption keys": [
+        "Prześlij co najmniej 1 plik odzyskiwania lub klucz szyfrowania"
       ],
       "Uppercase and lowercase letters": [
         "Wielkie i małe litery"
@@ -8623,8 +8864,14 @@
       ]
     },
     "label": {
+      "Device-based recovery": [
+        "Odzyskiwanie za pomocą zaufanego urządzenia"
+      ],
       "Recovery phone number": [
         "Numer pomocniczy"
+      ],
+      "Recovery phrase": [
+        "Hasło odzyskiwania"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8747,8 +8994,14 @@
       "Create account": [
         "Utwórz konto"
       ],
+      "Create an alias": [
+        "Utwórz alias"
+      ],
       "Don't have access to your 2FA?": [
         "Nie masz dostępu do uwierzytelniania dwustopniowego?"
+      ],
+      "Encryption and keys": [
+        "Szyfrowanie i klucze"
       ],
       "Enforcing 2FA for organizations": [
         "Wymuszenie uwierzytelniania dwustopniowego w organizacjach"
@@ -8762,6 +9015,12 @@
       "Forgot username?": [
         "Nie pamiętasz nazwy użytkownika?"
       ],
+      "Get ${ BRAND_NAME } Pass": [
+        "Uzyskaj ${ BRAND_NAME } Pass"
+      ],
+      "Get ${ VPN_APP_NAME }": [
+        "Uzyskaj ${ VPN_APP_NAME }"
+      ],
       "Groups": [
         "Grupy"
       ],
@@ -8773,6 +9032,9 @@
       ],
       "here": [
         "tutaj"
+      ],
+      "How does monitoring work?": [
+        "Jak działa monitoring?"
       ],
       "How to add users": [
         "Jak dodać użytkowników"
@@ -8810,6 +9072,9 @@
       "How to share via email": [
         "Jak udostępnić za pomocą poczty e-mail?"
       ],
+      "How to unlock data": [
+        "Jak odblokować dane"
+      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "Jak używać ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -8822,8 +9087,14 @@
       "How to use Groups": [
         "Jak używać grup"
       ],
+      "if your data is leaked": [
+        "w przypadku wycieku danych"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "Learn more about data recovery": [
+        "Dowiedz się więcej o odzyskiwaniu danych"
       ],
       "Not activated": [
         "Nieaktywowany"
@@ -8853,9 +9124,6 @@
         "Zaloguj się"
       ],
       "Terms": [
-        "Regulamin"
-      ],
-      "Terms and conditions": [
         "Regulamin"
       ],
       "Trouble signing in?": [
@@ -9021,8 +9289,14 @@
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Monitor aktywności"
+      ],
       "Enable ${ reason }": [
         "Włącz ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Włącz szczegółowe logi"
       ]
     },
     "Mail import summary": {
@@ -9355,11 +9629,26 @@
       "${ size } storage per user": [
         "${ size } przestrzeni dyskowej na użytkownika"
       ],
+      "1 TB secure storage": [
+        "1 TB bezpiecznej przestrzeni dyskowej"
+      ],
       "1 user": [
         "1 użytkownik"
       ],
+      "10 email addresses/aliases": [
+        "10 adresów e-mail / aliasów"
+      ],
+      "10 more premium features": [
+        "10 więcej funkcji premium"
+      ],
       "10-year file version history": [
         "10-letnia historia wersji plików"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB of storage": [
+        "200 GB przestrzeni dyskowej"
       ],
       "24/7 account management support": [
         "Wsparcie zarządzania kontem 24/7"
@@ -9379,11 +9668,17 @@
       "Administration Panel": [
         "Panel administratora"
       ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Zaawansowane funkcje aliasów (technologia SimpleLogin)"
       ],
       "Advanced network security": [
         "Zaawansowane bezpieczeństwo sieci"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Wszystkie usługi i funkcje ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Wszystkie podstawowe usługi ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9496,6 +9791,9 @@
       "GDPR data processing agreement": [
         "Umowa przetwarzania danych zgodnie z RODO"
       ],
+      "Generate emails with a prompt": [
+        "Generowanie wiadomości z zadania"
+      ],
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
@@ -9553,6 +9851,15 @@
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
       ],
+      "Private photo backup": [
+        "Prywatna kopia zapasowa zdjęć"
+      ],
+      "Proofread and refine your emails": [
+        "Sprawdzaj i poprawiaj teksty"
+      ],
+      "Quickly craft replies": [
+        "Twórz szybsze wiadomości"
+      ],
       "Recover previous file versions": [
         "Odzyskaj poprzednie wersje pliku"
       ],
@@ -9565,11 +9872,17 @@
       "Router support": [
         "Wsparcie routerów"
       ],
+      "Save time emailing": [
+        "Zaoszczędź czas podczas pisania"
+      ],
       "Schedule and snooze emails for any time": [
         "Planowanie i usypianie wiadomości o dowolnej porze"
       ],
       "Secure Core servers": [
         "Serwery Secure Core"
+      ],
+      "Secure file storage and sharing": [
+        "Bezpieczne przechowywanie i udostępnianie plików"
       ],
       "Secure link sharing": [
         "Bezpieczne udostępnianie linków"
@@ -9609,6 +9922,9 @@
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
+      ],
+      "Support for up to 2 users": [
+        "Wsparcie do 2 użytkowników"
       ],
       "Sync and backup all your files across devices": [
         "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
@@ -9716,6 +10032,17 @@
         "${ users } użytkowników",
         "${ users } użytkowników",
         "${ users } użytkowników"
+      ]
+    },
+    "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 niestandardowa domena"
+      ],
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain2 } dla subskrybowania wiadomości"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: heading": {
@@ -10254,6 +10581,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Pobrane kody odzyskiwania"
+      ],
+      "Email notifications have been disabled": [
+        "Powiadomienia zostały wyłączone"
+      ],
+      "Email notifications have been enabled": [
+        "Powiadomienia zostały włączone"
       ],
       "Invalid code": [
         "Kod jest nieprawidłowy"
@@ -11675,8 +12008,41 @@
       ]
     },
     "Safety review": {
+      "Check account security": [
+        "Sprawdź bezpieczeństwo konta"
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Jeśli zapomnisz danych logowania, **metoda odzyskiwania konta i danych** **jest konieczna**, aby zresetować konto. W przeciwnym razie nie będziesz mógł uzyskać dostępu do swoich wiadomości, kontaktów, plików i haseł."
+      ],
       "Review account safety": [
         "Sprawdź bezpieczeństwo konta"
+      ],
+      "Safeguard account now": [
+        "Zabezpiecz konto"
+      ],
+      "Safeguard your account": [
+        "Zabezpiecz konto"
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Istnieje ryzyko utraty dostępu do konta i danych."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Istnieje ryzyko utraty dostępu do danych."
+      ],
+      "You have recommended actions.": [
+        "Masz zalecane akcje."
+      ],
+      "Your account and data can be recovered": [
+        "Konto i dane mogą zostać odzyskane"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Konto i dane mogą zostać odzyskane. Sprawdź, czy możesz uzyskać dostęp do metod odzyskiwania."
+      ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Konto i dane mogą zostać odzyskane. Masz zalecane akcje, aby zabezpieczyć swoje konto."
+      ],
+      "Your account is fully secure.": [
+        "Konto jest bezpieczne"
       ]
     },
     "saml: Action": {
@@ -11849,6 +12215,17 @@
         "Prześlij plik CSV"
       ]
     },
+    "Select files": {
+      "Browse": [
+        "Przeglądaj"
+      ],
+      "Upload": [
+        "Prześlij"
+      ],
+      "Upload additional files": [
+        "Prześlij dodatkowe pliki"
+      ]
+    },
     "Select invoice document": {
       "Credit note": [
         "Nota uznaniowa"
@@ -11883,6 +12260,11 @@
       ],
       "to be deleted": [
         "do usunięcia"
+      ]
+    },
+    "Service provider": {
+      "Allows you to add a Zoom video conference to any of your calendar events": [
+        "Umożliwia dodanie wideokonferencji Zoom do wydarzenia w kalendarzu"
       ]
     },
     "session_recovery:available:action": {
@@ -12026,6 +12408,24 @@
         "zmień hasło"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Wyłącz resetowania hasła"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Upewnij się, że masz dostęp do metody odzyskiwania."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Nie będzie już można poprosić o zresetowanie hasła w ustawieniach konta."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Wyłączyć resetowanie hasła?"
+      ]
+    },
     "session_recovery:in_progress:action": {
       "Cancel password reset": [
         "Anuluj resetowanie hasła"
@@ -12132,6 +12532,22 @@
         "Możesz zresetować hasło za ${ gracePeriodHoursRemaining } godziny",
         "Możesz zresetować hasło za ${ gracePeriodHoursRemaining } godzin",
         "Możesz zresetować hasło za ${ gracePeriodHoursRemaining } godziny"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Zezwalaj na resetowanie hasła z poziomu ustawień"
+      ],
+      "Request password reset": [
+        "Żądanie zresetowania hasła"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Ustaw metodę odzyskiwania, aby wyłączyć resetowanie hasła."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Możesz zresetować hasło w ustawieniach konta, aby zwiększyć bezpieczeństwo konta i danych."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12505,6 +12921,9 @@
       "added you to their ${ BRAND_NAME } organization": [
         "dodał Cię do organizacji ${ BRAND_NAME }"
       ],
+      "Approve": [
+        "Zatwierdź"
+      ],
       "Approve or deny it now": [
         "Potwierdź lub odrzuć"
       ],
@@ -12538,6 +12957,9 @@
       "Contact your administrator if the problem persists.": [
         "Jeśli problem powtarza się, skontaktuj się z administratorem."
       ],
+      "Current device": [
+        "Obecne urządzenie"
+      ],
       "Delete ${ n } inactive user?": [
         "Usunąć ${ n } nieaktywnego użytkownika?",
         "Usunąć ${ n } nieaktywnych użytkowników?",
@@ -12558,6 +12980,15 @@
       ],
       "Devices available": [
         "Dostępne urządzenia"
+      ],
+      "Devices management": [
+        "Zarządzanie urządzeniami"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "Czy chcesz usunąć wszystkie pozostałe urządzenia?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Wpisz kod potwierdzający wysłany na inne urządzenie."
       ],
       "Enter the confirmation code we sent to this user.": [
         "Wpisz kod potwierdzający wysłany do użytkownika."
@@ -12580,6 +13011,9 @@
       "Grant access to users?": [
         "Przyznać dostęp do użytkowników?"
       ],
+      "If you didn't make this request, cancel it now.": [
+        "Jeśli żądanie nie zostało wysłane przez Ciebie, anuluj je."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Jeśli konto ${ BRAND_NAME } zostanie zablokowane, hasło zapasowe umożliwi zalogowanie się i odzyskanie danych."
       ],
@@ -12598,11 +13032,23 @@
       "New backup password": [
         "Nowe hasło zapasowe"
       ],
+      "No, it wasn’t me": [
+        "Nie, to nie ja"
+      ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
         "Użytkownicy utworzeni ręcznie (nie od dostawcy tożsamości) nadal mogą zalogować się do organizacji."
       ],
       "Once single sign-on is disabled for your organization:": [
         "Logowanie SSO jest wyłączone dla Twojej organizacji:"
+      ],
+      "Reject": [
+        "Odrzuć"
+      ],
+      "Remove": [
+        "Usuń"
+      ],
+      "Remove all other devices": [
+        "Usuń inne urządzenia"
       ],
       "Remove single sign-on": [
         "Usuń logowanie SSO"
@@ -12627,6 +13073,15 @@
       ],
       "Sign out and in again to change your backup password": [
         "Zaloguj się ponownie, aby zmienić hasło zapasowe"
+      ],
+      "Sign-in confirmed": [
+        "Logowanie zostało potwierdzone"
+      ],
+      "Sign-in rejected": [
+        "Logowanie zostało odrzucone"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Potwierdź logowanie na innym urządzeniu. To nie Ty?"
       ],
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
@@ -12663,6 +13118,9 @@
       ],
       "Welcome": [
         "Witaj"
+      ],
+      "Yes, it was me": [
+        "Tak, to ja"
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Konieczne będzie ręcznie utworzenie nowych użytkowników i dodanie ich do organizacji."
@@ -13386,6 +13844,12 @@
       "Credits added": [
         "Środki zostały dodane"
       ],
+      "Device deleted": [
+        "Urządzenie zostało usunięte"
+      ],
+      "Device rejected": [
+        "Urządzenie zostało odrzucone"
+      ],
       "Display name updated": [
         "Nazwa wyświetlana została zaktualizowana"
       ],
@@ -13475,6 +13939,12 @@
       ],
       "Problem reported": [
         "Problem został zgłoszony"
+      ],
+      "Session revoked": [
+        "Sesja została unieważniona"
+      ],
+      "Sessions revoked": [
+        "Sesje zostały unieważnione"
       ],
       "SPF value copied to clipboard": [
         "Wartość SPF została skopiowana do schowka"
@@ -13747,6 +14217,9 @@
       "Account": [
         "Konto"
       ],
+      "Account recovery": [
+        "Odzyskiwanie konta"
+      ],
       "Account restricted": [
         "Konto zostało ograniczone"
       ],
@@ -13840,6 +14313,9 @@
       "An address for each role": [
         "Adres dla każdej roli"
       ],
+      "App": [
+        "Aplikacja"
+      ],
       "Appearance": [
         "Wygląd"
       ],
@@ -13857,6 +14333,9 @@
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
+      ],
+      "Block trackers and malware": [
+        "Zablokuj elementy śledzące i złośliwe oprogramowanie"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anuluj subskrypcję ${ MAIL_SHORT_APP_NAME }"
@@ -13942,6 +14421,9 @@
       "Connect your custom domain": [
         "Połącz niestandardową domenę"
       ],
+      "Connection status": [
+        "Status połączenia"
+      ],
       "Contact us": [
         "Skontaktuj się z nami"
       ],
@@ -13981,6 +14463,9 @@
       "Create user accounts": [
         "Utwórz konta użytkowników"
       ],
+      "Created": [
+        "Utworzono"
+      ],
       "Creating user accounts": [
         "Tworzenie kont użytkowników"
       ],
@@ -14008,6 +14493,12 @@
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
       ],
+      "Data locked": [
+        "Dane są zablokowane"
+      ],
+      "Data recovery": [
+        "Odzyskiwanie danych"
+      ],
       "Data retention": [
         "Przechowywanie danych"
       ],
@@ -14016,6 +14507,9 @@
       ],
       "Day theme": [
         "Jasny motyw"
+      ],
+      "Decrypt key": [
+        "Odszyfruj klucz"
       ],
       "Deep dive into VPN blog posts": [
         "Szczegółowa analiza wpisów na blogu VPN"
@@ -14073,6 +14567,9 @@
       ],
       "Domain names": [
         "Nazwy domen"
+      ],
+      "Don't show again?": [
+        "Nie pokazywać ponownie?"
       ],
       "Downgrade account": [
         "Obniż plan"
@@ -14188,6 +14685,9 @@
       "Generate missing keys": [
         "Generuj brakujące klucze"
       ],
+      "Generate new recovery phrase?": [
+        "Wygenerować nowe hasło odzyskiwania?"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Wybierz plan ${ vpnPlus }, aby uzyskać dostęp do wszystkich serwerów"
       ],
@@ -14248,6 +14748,9 @@
       "Import groups": [
         "Importuj grupy"
       ],
+      "Information exposed in breach": [
+        "Ujawnione informacje w wycieku"
+      ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
@@ -14275,6 +14778,9 @@
       "Multiple accounts, 1 private inbox": [
         "Wiele kont, 1 prywatna skrzynka odbiorcza"
       ],
+      "Name": [
+        "Nazwa"
+      ],
       "Network error": [
         "Błąd sieci"
       ],
@@ -14284,8 +14790,14 @@
       "Night theme": [
         "Ciemny motyw"
       ],
+      "No account information was found in any data breaches": [
+        "Brak informacji o koncie w wyciekach danych"
+      ],
       "No recovery method": [
         "Brak metody odzyskiwania"
+      ],
+      "Open": [
+        "Nierozwiązane"
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
@@ -14320,6 +14832,12 @@
       "Password": [
         "Hasło"
       ],
+      "Password reset settings": [
+        "Ustawienia resetowania hasła"
+      ],
+      "Passwords made easy": [
+        "Twórz łatwo hasła"
+      ],
       "Pay invoice": [
         "Zapłać fakturę"
       ],
@@ -14347,6 +14865,9 @@
       "Previous": [
         "Wstecz"
       ],
+      "Privacy and data collection": [
+        "Prywatność i zbieranie danych"
+      ],
       "Processing...": [
         "Przetwarzanie..."
       ],
@@ -14356,17 +14877,32 @@
       "Recommended": [
         "Zalecane"
       ],
+      "Recommended actions": [
+        "Zalecane kroki"
+      ],
       "Reconnect your account": [
         "Połącz ponownie ze swoim kontem"
+      ],
+      "Recover data": [
+        "Odzyskaj dane"
       ],
       "Recovery": [
         "Odzyskiwanie"
       ],
+      "Recovery file": [
+        "Plik odzyskiwania"
+      ],
       "Refer a friend": [
         "Poleć znajomemu"
       ],
+      "Reject device?": [
+        "Odrzucić urządzenie?"
+      ],
       "Remove all members?": [
         "Usunąć wszystkich użytkowników?"
+      ],
+      "Remove device?": [
+        "Usunąć urządzenie?"
       ],
       "Remove domain": [
         "Usuń domenę"
@@ -14398,11 +14934,20 @@
       "Reset password?": [
         "Zresetować hasło?"
       ],
+      "Resolved": [
+        "Rozwiązane"
+      ],
       "Restore administrator privileges": [
         "Przywróć uprawnienia administratora"
       ],
       "SAML authentication": [
         "Uwierzytelnianie SAML"
+      ],
+      "Schedule meetings in one click": [
+        "Planuj spotkania jednym kliknięciem"
+      ],
+      "Security and privacy": [
+        "Bezpieczeństwo i prywatność"
       ],
       "Security events": [
         "Logi bezpieczeństwa"
@@ -14421,6 +14966,12 @@
       ],
       "Send new invite?": [
         "Wysłać nowe zaproszenie?"
+      ],
+      "Service": [
+        "Usługa"
+      ],
+      "Session management": [
+        "Zarządzanie sesją"
       ],
       "Set new password": [
         "Ustaw nowe hasło"
@@ -14485,6 +15036,9 @@
       "Start import process": [
         "Rozpocznij proces importowania"
       ],
+      "State": [
+        "Status"
+      ],
       "Status": [
         "Status"
       ],
@@ -14512,8 +15066,14 @@
       "Text": [
         "Tekst"
       ],
+      "There are no events for your account": [
+        "Brak logów dla konta"
+      ],
       "There are no groups": [
         "Brak grup"
+      ],
+      "Third-party apps and services": [
+        "Aplikacje i usługi stron trzecich"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Wypróbuj ${ AUTHENTICATOR_APP_NAME }"
@@ -14602,6 +15162,12 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Witaj w planie ${ BRAND_NAME } for Business"
       ],
+      "What is an alias?": [
+        "Co to jest alias?"
+      ],
+      "What is the dark web?": [
+        "Co to jest dark web?"
+      ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"
       ],
@@ -14614,6 +15180,12 @@
       "You can now create unlimited folders and labels": [
         "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
       ],
+      "You have no open alerts": [
+        "Brak nierozwiązanych alertów"
+      ],
+      "You have no resolved alerts": [
+        "Brak rozwiązanych alertów"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"
       ],
@@ -14622,6 +15194,9 @@
       ],
       "Your current plan": [
         "Obecny plan"
+      ],
+      "Your exposed information": [
+        "Twoje ujawnione informacje:"
       ],
       "Your plan": [
         "Twój plan"
@@ -14736,6 +15311,9 @@
       "Edit label names": [
         "Edytuj nazwy etykiet"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Włączenie szczegółowych logów zapisze adres IP każdego zdarzenia."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adres URL punktu końcowego od dostawcy tożsamości (np. https://idp.przyklad.pl/sso/saml)"
       ],
@@ -14762,6 +15340,15 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Użytkownicy, którzy nie korzystają z uwierzytelniania dwustopniowego, otrzymają wiadomość z prośbą o jak włączenie tej funkcji. Użytkownicy logowania SSO nie otrzymają takiej wiadomości."
+      ],
+      "Not all information listed here was exposed for all users.": [
+        "Nie wszystkie wymienione tutaj informacje zostały ujawnione wszystkim użytkownikom."
+      ],
+      "Origin Internet Service Provider (ISP)": [
+        "Dostawca Internetu (ISP)"
+      ],
+      "Origin IP address": [
+        "Adres IP"
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adres IP i dostawca Internetu (ISP)"
@@ -14798,6 +15385,9 @@
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Adres e-mail będzie widoczny dla wszystkich użytkowników organizacji podczas zarządzania kontem."
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Zaszyfrowane hasła (nawet ujawnione) pozostaną bezpieczne, dopóki nie zostaną odszyfrowane."
       ],
       "User's approximate location (based on their IP address)": [
         "Przybliżona lokalizacja użytkownika (na podstawie adresu IP)"
@@ -15435,6 +16025,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Darmowa wersja próbna zakończy się ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Plik odzyskiwania jest nieaktualny. Jeżeli ponownie zresetujesz hasło, odzyskanie nowych danych nie będzie możliwe."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Hasło odzyskiwania jest nieaktualne. Jeżeli ponownie zresetujesz hasło, odzyskanie nowych danych nie będzie możliwe."
       ]
     },
     "Warning for domain modal": {
