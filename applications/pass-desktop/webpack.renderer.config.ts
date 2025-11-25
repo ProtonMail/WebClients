@@ -40,7 +40,7 @@ const config: Configuration = {
         strictExportPresence: true,
         rules: [
             ...getJsLoaders({ ...webpackOptions, hasReactRefresh: false }),
-            ...getCssLoaders({ browserslist: undefined, logical: false, webpackOnCaffeine: false }),
+            ...getCssLoaders({ browserslist: undefined, logical: false }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],
     },
