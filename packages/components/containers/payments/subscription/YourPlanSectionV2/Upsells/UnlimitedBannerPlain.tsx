@@ -5,7 +5,7 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES, type Subscription } from '@proton/payments';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
@@ -54,10 +54,11 @@ const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
                         showPriceDifference
                             ? getBoldFormattedText(
                                   c('Upsell')
-                                      .t`All premium ${BRAND_NAME} services. Only **${priceString}** more each month.`,
+                                      .t`Privacy suite with secure email, ${VPN_SHORT_APP_NAME}, cloud storage, and password manager in one bundle. Only **${priceString}** more each month.`,
                                   'color-primary'
                               )
-                            : c('Upsell').t`All premium ${BRAND_NAME} services. From only ${fallBackString} per month`
+                            : c('Upsell')
+                                  .t`Privacy suite with secure email, ${VPN_SHORT_APP_NAME}, cloud storage, and password manager in one bundle. From only ${fallBackString} per month`
                     }
                 />
             }
