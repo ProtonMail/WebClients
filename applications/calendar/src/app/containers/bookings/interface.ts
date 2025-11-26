@@ -10,6 +10,12 @@ export const DEFAULT_RANGE_START_HOUR = 9;
 export const DEFAULT_RANGE_END_HOUR = 17;
 export const DEFAULT_RECURRING = true;
 
+export enum BookingLimitReached {
+    NONE = 'none',
+    MAX_PLAN = 'maxPlan',
+    MAX_BOOKINGS = 'maxBookings',
+}
+
 export interface BookingsContextValue {
     submitForm: () => Promise<void>;
     bookingsState: BookingState;
