@@ -150,8 +150,12 @@ function HistoryViewerModalContent({
             submitText: c('Action').t`Restore`,
             className: 'restore-revision-modal',
             canUndo: true,
-            message: c('Info')
-              .t`Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.`,
+            message:
+              documentType === 'sheet'
+                ? c('sheets_2025:Info')
+                    .t`Your current spreadsheet, including all sheets within it, will be replaced with this version.`
+                : c('Info')
+                    .t`Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.`,
             onCancel: resolve,
             onSubmit: async () => {
               if (documentType === 'sheet') {
