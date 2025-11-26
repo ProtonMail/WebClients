@@ -814,10 +814,17 @@ export type MasterKey = {
 
 // *** Turn ***
 
+export type WireImage = {
+    encrypted: boolean;
+    image_id: string;
+    data: string; // base64-encoded image bytes
+};
+
 export type Turn = {
     role: Role;
     content?: string;
     encrypted?: boolean;
+    images?: WireImage[];
 };
 
 export type EncryptedTurn = Turn & { encrypted: true };
@@ -830,7 +837,18 @@ export function isTurn(obj: any): obj is Turn {
         'role' in obj &&
         isRole(obj.role) &&
         (obj.content === undefined || typeof obj.content === 'string') &&
-        (obj.encrypted === undefined || typeof obj.encrypted === 'boolean')
+        (obj.encrypted === undefined || typeof obj.encrypted === 'boolean') &&
+        (obj.images === undefined || (Array.isArray(obj.images) && obj.images.every((img: any) => isWireImage(img))))
+    );
+}
+
+export function isWireImage(obj: any): obj is WireImage {
+    return (
+        obj &&
+        typeof obj === 'object' &&
+        typeof obj.encrypted === 'boolean' &&
+        typeof obj.image_id === 'string' &&
+        typeof obj.data === 'string'
     );
 }
 
