@@ -3,12 +3,15 @@ import { getCalendarView, getMailView } from "./view/viewManagement";
 import { clearLogs, mainLogger } from "./log";
 import { DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { c } from "ttag";
+import { release } from "node:os";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
 export const isLinux = process.platform === "linux";
 export const isSnap = process.env.IS_SNAP === "1";
 export const snapRevision: string = process.env.SNAP_REVISION ?? "";
+
+export const isMacMockable = () => isMac;
 
 export const getPlatform = (): DESKTOP_PLATFORMS => {
     if (isMac) {
@@ -21,6 +24,11 @@ export const getPlatform = (): DESKTOP_PLATFORMS => {
 
     throw new Error(`Platform "${process.platform}" not supported.`);
 };
+
+export function getOSVersion() {
+    if (isMac) return process.getSystemVersion();
+    return release();
+}
 
 const clear = (view: WebContentsView) => {
     view.webContents.session.flushStorageData();
