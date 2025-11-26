@@ -251,7 +251,7 @@ function HistoryViewerModalContent({
             />
 
             <div className="flex items-center gap-2 px-5 pb-3 pt-5">
-              <MimeIcon name="proton-doc" size={4} />
+              <MimeIcon name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'} size={4} />
               <span>{c('Info').t`The Beginning`}</span>
             </div>
           </div>
