@@ -55,6 +55,8 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
             if (!state.focused) return;
             else if (state.timeout) clearTimeout(state.timeout);
 
+            syncAutofillFilter.cancel();
+
             raf.cancel();
             state.focused = false;
 
