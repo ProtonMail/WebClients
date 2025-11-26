@@ -5,7 +5,8 @@ import { createStyleParser, getComputedHeight, pixelParser } from './computed-st
 import { allChildrenOverlap } from './overlap';
 
 const containsTextNode = (el: HTMLElement) =>
-    [...el.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue?.trim() !== '');
+    [...el.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue?.trim() !== '') ||
+    el.querySelector('[role="alert"]') !== null;
 
 /* Constants for fine-tuning the bounding element selection algorithm */
 
@@ -85,7 +86,7 @@ export const findInputBoundingElement = (
 
             for (let i = 0; i < MAX_DEPTH && candidate; i++) {
                 const borderWidth = pixelParser(getComputedStyle(candidate).borderBottomWidth);
-                if (borderWidth > 0) return candidate;
+                if (borderWidth > 0 && !containsTextNode(candidate)) return candidate;
                 candidate = candidate.parentElement;
             }
 
@@ -101,7 +102,7 @@ export const findInputBoundingElement = (
         if (label && label.querySelectorAll('input:not([type="hidden"])').length === 1) {
             const labelHeightCheck = label.getBoundingClientRect().height >= constraints.minHeight;
             const labelChildrenOverlap = allChildrenOverlap(getChildren(label), BOUNDING_ELEMENT_OFFSET);
-            if (labelHeightCheck && labelChildrenOverlap) return label;
+            if (labelHeightCheck && labelChildrenOverlap && !containsTextNode(label)) return label;
         }
     }
 
