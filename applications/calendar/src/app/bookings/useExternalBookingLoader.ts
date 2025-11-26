@@ -10,6 +10,7 @@ import type {
     ExternalBookingPagePayload,
     ExternalBookingPageSlotsPayload,
 } from '@proton/shared/lib/interfaces/calendar/Bookings';
+import { useFlag } from '@proton/unleash';
 
 import { decryptBookingContent } from '../containers/bookings/utils/crypto/bookingDecryption';
 import { deriveBookingUid } from '../containers/bookings/utils/crypto/bookingEncryption';
@@ -20,6 +21,7 @@ export const useExternalBookingLoader = () => {
     const api = useApi();
     const location = useLocation();
     const bookingSecretBase64Url = location.hash.substring(1);
+    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
 
     const getUser = useGetUser();
     const getVerificationPreferences = useGetVerificationPreferences();
@@ -121,7 +123,7 @@ export const useExternalBookingLoader = () => {
                 summary,
                 description,
                 location,
-                withProtonMeetLink,
+                withProtonMeetLink: isMeetVideoConferenceEnabled ? withProtonMeetLink : false,
                 duration: bookingPageData.Duration ? bookingPageData.Duration / 60 : undefined,
                 timezone: bookingPageData.Timezone ?? undefined,
                 bookingKeySalt: bookingPageData.BookingKeySalt,
