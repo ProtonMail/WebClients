@@ -9,6 +9,7 @@ export interface ProtonPackOptions {
     appMode: string;
     featureFlags: string;
     sri: boolean;
+    babelLoader: boolean;
     inlineIcons: boolean;
     browserslist: string;
     warningLogs: boolean;
@@ -52,6 +53,7 @@ export interface WebpackOptions {
     publicPath: string;
     api: string;
     appMode: string;
+    babelLoader: boolean;
     featureFlags: string;
     writeSRI: boolean;
     inlineIcons: boolean;

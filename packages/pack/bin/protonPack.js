@@ -25,6 +25,7 @@ const addGlobalOptions = (program) => {
         .option('--appMode <appMode>', '')
         .option('--analyze', '')
         .option('--optimizeAssets', '')
+        .option('--babelLoader', '')
         .option('--featureFlags <featureFlags>', '')
         .option('--api <api>', '', (api) => getApi(api), '')
         .option('--sso <sso>', '')

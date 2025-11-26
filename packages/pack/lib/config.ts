@@ -127,6 +127,7 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         browserslist: protonPackOptions.browserslist ?? defaultBrowsersList,
         buildData,
         defineWebpackConfig,
+        babelLoader: protonPackOptions.babelLoader ?? false,
         errorLogs: protonPackOptions.errorLogs ?? false,
         featureFlags: protonPackOptions.featureFlags ?? '',
         handleSupportAndErrors: protonPackOptions.handleSupportAndErrors ?? false,
