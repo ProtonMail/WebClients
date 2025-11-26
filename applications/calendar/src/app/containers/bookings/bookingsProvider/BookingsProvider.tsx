@@ -311,7 +311,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
     const getRangeAsCalendarViewEvents = (utcDate: Date) => {
         const selectedCalendar = writeableCalendars?.find((calendar) => calendar.ID === formData.selectedCalendar);
-        return convertBookingRangesToCalendarViewEvents(selectedCalendar!, formData, utcDate);
+        return convertBookingRangesToCalendarViewEvents(selectedCalendar!, formData, utcDate, userSettings);
     };
 
     const getRangesAsLayoutEvents = (utcDate: Date, days: Date[]) => {
