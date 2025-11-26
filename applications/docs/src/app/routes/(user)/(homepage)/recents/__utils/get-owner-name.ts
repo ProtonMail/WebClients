@@ -1,4 +1,4 @@
-import type { RecentDocumentsItem } from 'packages/docs-core'
+import type { RecentDocumentsItem } from '@proton/docs-core'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
 import { c } from 'ttag'
 
