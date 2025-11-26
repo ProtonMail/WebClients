@@ -1,5 +1,6 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const { EsbuildPlugin } = require('esbuild-loader');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 let parallel = undefined;
 if (typeof process.env.WEBPACK_PARALLELISM !== 'undefined') {
@@ -37,7 +38,17 @@ const fastSplit = {
     },
 };
 
-module.exports = /** @type { (env: any) => import('webpack').Options.Optimization } */ ({ isProduction }) => ({
+const slowSplit = {
+    chunks(chunk) {
+        // We exclude the crypto-worker and recovery-kit to be split, because we want them all in one file
+        return !chunk.canBeInitial() && !EXCLUDED_CHUNKS.has(chunk.name);
+    },
+};
+
+module.exports = /** @type { (env: any) => import('webpack').Options.Optimization } */ ({
+    isProduction,
+    webpackOnCaffeine,
+}) => ({
     // Needs to be single because we embed two entry points
     runtimeChunk: 'single',
     minimize: isProduction,
@@ -53,9 +64,21 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
             terserOptions: { compress: { passes: 5 } },
             extractComments: false,
         }),
-        new EsbuildPlugin({
-            css: true,
-        }),
+        webpackOnCaffeine
+            ? new EsbuildPlugin({
+                  css: true,
+              })
+            : new CssMinimizerPlugin({
+                  parallel,
+                  minimizerOptions: {
+                      preset: [
+                          'default',
+                          {
+                              calc: false,
+                          },
+                      ],
+                  },
+              }),
     ],
-    splitChunks: fastSplit,
+    splitChunks: webpackOnCaffeine ? fastSplit : slowSplit,
 });

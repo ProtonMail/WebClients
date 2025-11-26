@@ -2,7 +2,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
 import getCssLoaders from '@proton/pack/webpack/css.loader';
-import { getJsLoaders } from '@proton/pack/webpack/js.loader.swc';
+import { getJsLoaders } from '@proton/pack/webpack/js.loader';
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
@@ -11,7 +11,7 @@ const config = {
     },
     stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     staticDirs: [],
-    addons: ['@storybook/addon-webpack5-compiler-swc', '@storybook/addon-links', '@storybook/addon-essentials'],
+    addons: ['@storybook/addon-webpack5-compiler-babel', '@storybook/addon-links', '@storybook/addon-essentials'],
     framework: '@storybook/react-webpack5',
     typescript: {
         check: false,
