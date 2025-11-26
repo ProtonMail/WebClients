@@ -16,7 +16,9 @@ import {
     IntroduceBookingsSpotlightContent,
     useIntroduceBookingsSpotlight,
 } from '../../bookings/spotlight/IntroduceBookingsSpotlight';
+import { BookingsLimitReached } from '../../bookings/upsells/BookingsLimitReached';
 import { UpsellBookings } from '../../bookings/upsells/UpsellBookings';
+import { hasUserReachedBookingLimit } from '../../bookings/upsells/upsellHelpers';
 import { BookingItem } from './BookingsItem';
 
 interface Props {
@@ -28,7 +30,9 @@ interface Props {
 export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
     const [user] = useUser();
     const [displayView, toggleView] = useLocalState(true, `${user.ID || 'item'}-display-views`);
-    const [modalProps, setModalOpen, renderModal] = useModalState();
+
+    const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
+    const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
 
     const [calendars] = useCalendars();
 
@@ -40,11 +44,14 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
 
     const handleCreate = () => {
         spotlight.onClose();
+        const userReachedBookingLimit = hasUserReachedBookingLimit();
 
-        if (user.hasPaidMail) {
-            openBookingSidebarCreation(utcDate);
+        if (userReachedBookingLimit) {
+            setLimitModalOpen(true);
+        } else if (!user.hasPaidMail) {
+            setUpsellModalOpen(true);
         } else {
-            setModalOpen(true);
+            openBookingSidebarCreation(utcDate);
         }
     };
 
@@ -94,7 +101,8 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                     ))}
             </SidebarList>
 
-            {renderModal && <UpsellBookings {...modalProps} />}
+            {renderUpsellModal && <UpsellBookings {...upsellModalProps} />}
+            {renderLimitModal && <BookingsLimitReached {...limitModalProps} />}
         </>
     );
 };
