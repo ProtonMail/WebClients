@@ -312,6 +312,10 @@ export default defineConfig(
                                 'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
                         },
                         {
+                            group: ['packages/'],
+                            message: 'You should import from `@proton/` instead.',
+                        },
+                        {
                             group: ['@proton/payments/index'],
                             message: 'You should import from `@proton/payments` instead.',
                         },
