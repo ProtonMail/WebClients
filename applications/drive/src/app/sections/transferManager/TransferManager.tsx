@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { useBeforeUnload, useDrawerWidth } from '@proton/components';
+import { useBeforeUnload, useConfirmActionModal, useDrawerWidth } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 
@@ -25,6 +25,7 @@ export const TransferManager = () => {
     const drawerWidth = useDrawerWidth();
     const [leaveMessage, setLeaveMessage] = useState('');
     const driveEventManager = useDriveEventManager();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     useBeforeUnload(leaveMessage);
     const { hasPendingConflicts, firstConflictItem } = useUploadQueueStore(
         useShallow((state) => ({
@@ -83,10 +84,19 @@ export const TransferManager = () => {
     };
 
     const onClose = () => {
-        if (status !== TransferManagerStatus.InProgress) {
+        if (status === TransferManagerStatus.InProgress || status === TransferManagerStatus.Failed) {
+            void showConfirmModal({
+                title: c('Title').t`Stop transfers?`,
+                cancelText: c('Action').t`Continue transfers`,
+                submitText: c('Action').t`Stop transfers`,
+                message: c('Info')
+                    .t`There are files that still need to be transferred. Closing the transfer manager will end all operations.`,
+                onSubmit: async () => clearQueue(),
+                canUndo: true,
+            });
+        } else {
             clearQueue();
         }
-        // TBI request to cancell all transfers in progress with modal
     };
 
     if (!items.length) {
@@ -110,6 +120,7 @@ export const TransferManager = () => {
                     </div>
                 )}
                 {uploadConflictModal}
+                {confirmModal}
             </section>
         </div>
     );

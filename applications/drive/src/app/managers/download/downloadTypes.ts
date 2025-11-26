@@ -19,6 +19,7 @@ export type ArchiveItem =
           parentPath: string[];
           stream: ReadableStream<Uint8Array<ArrayBuffer>>;
           fileModifyTime?: number;
+          claimedSize?: number;
       };
 
 export type DownloadQueueTaskHandle = {
