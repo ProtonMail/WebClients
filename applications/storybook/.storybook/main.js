@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { getJsLoader } = require('@proton/pack/webpack/js.loader');
+const { getJsLoader } = require('@proton/pack/webpack/js.loader.swc');
 const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 const getOptimization = require('@proton/pack/webpack/optimization');

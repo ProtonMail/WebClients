@@ -5,7 +5,7 @@ import type { Configuration } from 'webpack';
 
 import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
 import getCssLoaders from '@proton/pack/webpack/css.loader';
-import { getJsLoaders } from '@proton/pack/webpack/js.loader';
+import { getJsLoaders } from '@proton/pack/webpack/js.loader.swc';
 
 import { webpackOptions } from './webpack.options';
 import plugins from './webpack.plugins';
