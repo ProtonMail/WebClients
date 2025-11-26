@@ -5,7 +5,7 @@ import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
-import { initializeUpdateChecks, updateDownloaded } from "./update";
+import { initializeUpdateChecks, updateDownloaded } from "./update/update";
 import { isMac } from "./utils/helpers";
 import { urlOverrideError } from "./utils/view/dialogs";
 import {

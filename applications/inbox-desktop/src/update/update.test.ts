@@ -1,9 +1,9 @@
-import { getNewUpdateTestOnly, LocalDesktopVersion, releaseListSchemaTestOnly } from "./update";
 import { describe } from "@jest/globals";
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { VersionFile } from "@proton/shared/lib/desktop/DesktopVersion";
+import { expectGetNewUpdate } from "./update.test.utils";
 
-jest.mock("./utils/view/viewManagement", () => ({
+jest.mock("../utils/view/viewManagement", () => ({
     getCalendarView: () => {},
     getMailView: () => {},
 }));
@@ -130,45 +130,6 @@ const availableVersions: VersionFile = {
     ],
 };
 
-type newUpdateTestData = {
-    localCategory?: RELEASE_CATEGORIES;
-    localVersion?: string;
-    localRollout?: number;
-    expectedVersion?: string;
-    expectedCategory?: string;
-    expectedRollout?: number;
-};
-
-function expectGetNewUpdate(td: newUpdateTestData) {
-    td.localCategory ??= RELEASE_CATEGORIES.STABLE;
-    td.localVersion ??= "1.0.0";
-    td.localRollout ??= 1;
-    td.expectedCategory ??= td.localCategory;
-    td.expectedRollout ??= 1;
-
-    const have = getNewUpdateTestOnly(
-        { Version: td.localVersion, RolloutProportion: td.localRollout, CategoryName: td.localCategory },
-        releaseListSchemaTestOnly.parse(availableVersions),
-    );
-
-    if (!td.expectedVersion) {
-        expect(have).toBeUndefined();
-        return;
-    }
-
-    expect(have).toBeDefined();
-
-    expect({
-        Version: have!.Version,
-        CategoryName: have!.CategoryName,
-        RolloutProportion: have!.RolloutProportion,
-    } satisfies LocalDesktopVersion).toStrictEqual({
-        Version: td.expectedVersion,
-        CategoryName: td.expectedCategory,
-        RolloutProportion: td.expectedRollout,
-    } satisfies LocalDesktopVersion);
-}
-
 describe("get new update", () => {
     describe.each([
         [RELEASE_CATEGORIES.STABLE, "1.0.0", 1, "1.0.1", 1],
@@ -176,7 +137,7 @@ describe("get new update", () => {
         [RELEASE_CATEGORIES.ALPHA, "1.0.2", 0.2, "1.0.3", 0.2],
     ])("for each category", (localCategory, localVersion, localRollout, expectedVersion, expectedRollout) => {
         it(`finds a new ${localCategory} version if rollout is same as local`, () => {
-            expectGetNewUpdate({
+            expectGetNewUpdate(availableVersions, {
                 localCategory,
                 localVersion,
                 localRollout,
@@ -186,7 +147,7 @@ describe("get new update", () => {
         });
 
         it(`finds a new ${localCategory} version if rollout is higher than local`, () => {
-            expectGetNewUpdate({
+            expectGetNewUpdate(availableVersions, {
                 localCategory,
                 localVersion,
                 localRollout: localRollout - 0.1,
@@ -196,7 +157,7 @@ describe("get new update", () => {
         });
 
         it(`finds no new ${localCategory} version if rollout too low`, () => {
-            expectGetNewUpdate({
+            expectGetNewUpdate(availableVersions, {
                 localCategory,
                 localVersion,
                 localRollout: localRollout + 0.2,
@@ -207,7 +168,7 @@ describe("get new update", () => {
     });
 
     it("finds beta version if rollout is not enough for alpha", () => {
-        expectGetNewUpdate({
+        expectGetNewUpdate(availableVersions, {
             localCategory: RELEASE_CATEGORIES.ALPHA,
             localVersion: "0.0.9", // really old
             localRollout: 0.5, // same as beta, more than alpha
@@ -218,7 +179,7 @@ describe("get new update", () => {
     });
 
     it("finds stable version if rollout is not enough for alpha or beta", () => {
-        expectGetNewUpdate({
+        expectGetNewUpdate(availableVersions, {
             localCategory: RELEASE_CATEGORIES.ALPHA,
             localVersion: "0.0.9", // really old
             localRollout: 1, // more than beta, more than alpha
@@ -229,7 +190,7 @@ describe("get new update", () => {
     });
 
     it("finds stable version if rollout is not enough for beta", () => {
-        expectGetNewUpdate({
+        expectGetNewUpdate(availableVersions, {
             localCategory: RELEASE_CATEGORIES.EARLY_ACCESS,
             localVersion: "0.0.9", // really old
             localRollout: 1, // more than beta, more than alpha

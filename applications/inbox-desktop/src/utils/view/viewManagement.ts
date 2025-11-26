@@ -2,7 +2,7 @@ import { BrowserWindow, Event, Rectangle, WebContents, WebContentsView, app, nat
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, updateSettings } from "../../store/settingsStore";
-import { updateDownloaded } from "../../update";
+import { updateDownloaded } from "../../update/update";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { urlHasMailto, readAndClearMailtoArgs } from "../protocol/mailto";
