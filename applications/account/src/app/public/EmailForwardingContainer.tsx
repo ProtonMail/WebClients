@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { GenericError, useApi, useErrorHandler } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import type { ExternalForwardingResult } from '@proton/shared/lib/api/forwardings';
 import {
@@ -13,7 +14,6 @@ import {
     rejectExternalForwarding,
 } from '@proton/shared/lib/api/forwardings';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import PublicFooter from '../components/PublicFooter';
@@ -75,7 +75,7 @@ const EmailForwardingContainer = ({ request }: Props) => {
     const handleError = useErrorHandler();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading(true);
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const location = useLocation();
     const header = getHeader(request);
     const [forwarderEmail, setForwarderEmail] = useState<string>('');

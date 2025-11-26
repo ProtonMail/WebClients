@@ -46,10 +46,10 @@ import {
 } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import { isB2bPlanSupportingScribe } from '@proton/components/helpers/assistant';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
-import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import {
     getHasDriveB2BPlan,
     getHasExternalMemberCapableB2BPlan,
@@ -60,7 +60,6 @@ import {
 } from '@proton/payments';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { useDispatch } from '@proton/redux-shared-store';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -129,8 +128,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const { value: memberAddressesMap, retry } = useMemberAddresses({ members, partial: true });
     const [keywords, setKeywords] = useState('');
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
-    const normalApi = useApi();
-    const api = getSilentApi(normalApi);
+    const api = useSilentApi();
     const wrapError = useErrorWrapper();
     const dispatch = useDispatch();
     const accessToAssistant = useAssistantFeatureEnabled();

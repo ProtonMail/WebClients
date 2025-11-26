@@ -3,11 +3,10 @@ import { useEffect, useState } from 'react';
 import type { AuthModalProps } from '@proton/components/containers/password/AuthModal';
 import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
 import SrpAuthModal from '@proton/components/containers/password/SrpAuthModal';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { InfoAuthedResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
@@ -22,13 +21,12 @@ type InfoResult =
       };
 
 const DetermineAuthModal = (props: AuthModalProps) => {
-    const normalApi = useApi();
+    const api = useSilentApi();
     const handleError = useErrorHandler();
     const [info, setInfo] = useState<InfoResult | null>(null);
 
     useEffect(() => {
         const run = async () => {
-            const api = getSilentApi(normalApi);
             let result: SSOInfoResponse | InfoAuthedResponse;
             try {
                 result = await api<SSOInfoResponse | InfoAuthedResponse>(
