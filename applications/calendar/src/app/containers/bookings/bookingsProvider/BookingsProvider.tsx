@@ -226,6 +226,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             bookingPage,
             editData,
             isMeetVideoConferenceEnabled,
+            calendarUserSettings,
         });
         setInternalForm(form);
         setBookingsState(BookingState.EDIT_EXISTING);
