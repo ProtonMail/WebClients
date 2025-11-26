@@ -236,6 +236,13 @@ export const hasFreeOrPlus = (subscription: MaybeFreeSubscription) =>
     hasVPN2024(subscription) ||
     hasLumo(subscription);
 
+export const hasAnyPlusWithoutVPN = (subscription: MaybeFreeSubscription) =>
+    hasMail(subscription) ||
+    hasDrive(subscription) ||
+    hasDrive1TB(subscription) ||
+    hasPass(subscription) ||
+    hasLumo(subscription);
+
 const hasAIAssistantCondition = [
     ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS,
     ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO,
