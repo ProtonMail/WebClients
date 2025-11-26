@@ -18,7 +18,7 @@ import {
 } from '../../bookings/spotlight/IntroduceBookingsSpotlight';
 import { BookingsLimitReached } from '../../bookings/upsells/BookingsLimitReached';
 import { UpsellBookings } from '../../bookings/upsells/UpsellBookings';
-import { hasUserReachedBookingLimit } from '../../bookings/upsells/upsellHelpers';
+import { useBookingUpsell } from '../../bookings/upsells/useBookingUpsell';
 import { BookingItem } from './BookingsItem';
 
 interface Props {
@@ -31,6 +31,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
     const [user] = useUser();
     const [displayView, toggleView] = useLocalState(true, `${user.ID || 'item'}-display-views`);
 
+    const { shouldShowLimitModal, loadingLimits } = useBookingUpsell();
     const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
     const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
 
@@ -44,11 +45,11 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
 
     const handleCreate = () => {
         spotlight.onClose();
-        const userReachedBookingLimit = hasUserReachedBookingLimit();
 
-        if (userReachedBookingLimit) {
+        const userReachedBookingLimit = shouldShowLimitModal();
+        if (userReachedBookingLimit.booking) {
             setLimitModalOpen(true);
-        } else if (!user.hasPaidMail) {
+        } else if (userReachedBookingLimit.plan) {
             setUpsellModalOpen(true);
         } else {
             openBookingSidebarCreation(utcDate);
@@ -78,7 +79,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                                 <Tooltip title={c('Action').t`Create a new booking page`}>
                                     <button
                                         type="button"
-                                        disabled={disabled || !canCreateBooking}
+                                        disabled={disabled || !canCreateBooking || loadingLimits}
                                         className="flex navigation-link-header-group-control shrink-0"
                                         onClick={handleCreate}
                                         data-testid="navigation-link:create-bookings-page"
