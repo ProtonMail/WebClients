@@ -132,7 +132,7 @@ export const getFrameVisibility = maxAgeMemoize(
     (frame: HTMLIFrameElement) => {
         const rect = frame.getBoundingClientRect();
         if (isNegligableFrameRect(rect.width, rect.height)) return false;
-        return isVisible(frame, { opacity: true, skipCache: true });
+        return isVisible(frame, { opacity: false, skipCache: true });
     },
     { maxAge: 1_000, cache: createWeakRefCache(identity) }
 );
