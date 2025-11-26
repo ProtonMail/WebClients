@@ -1,5 +1,9 @@
+import type { User } from '@proton/shared/lib/interfaces';
+
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
+import { createImageAttachment, generateImageMarkdown } from '../lib/imageAttachment';
+import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import {
     changeConversationTitle,
     pushConversationRequest,
@@ -13,13 +17,22 @@ import {
     setToolCall,
     setToolResult,
 } from '../redux/slices/core/messages';
-import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import type { LumoDispatch } from '../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../services/errors/errorHandling';
-import type { Base64, ConversationId, Message, RequestId, SpaceId, Status, Turn } from '../types';
+import type {
+    Attachment,
+    Base64,
+    ConversationId,
+    Message,
+    RequestId,
+    SpaceId,
+    Status,
+    Turn,
+    WireImage,
+} from '../types';
 import { ConversationStatus, Role } from '../types';
 import type { GenerationToFrontendMessage } from '../types-api';
-import { createImageAttachment, generateImageMarkdown } from '../lib/imageAttachment';
+import { fillAttachmentData, separateAttachmentsByType } from './attachments';
 import { removeFileFromMessageContext } from './utils';
 
 export type ContextFilter = {
@@ -36,6 +49,32 @@ export const ENABLE_U2L_ENCRYPTION = true;
 
 function concat(array: (undefined | string)[]) {
     return array.filter((s) => s && s.length > 0).join('\n\n');
+}
+
+/**
+ * Convert Uint8Array to base64 string
+ */
+function uint8ArrayToBase64(buffer: Uint8Array<ArrayBuffer>): string {
+    let binary = '';
+    const len = buffer.byteLength;
+    for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(buffer[i]);
+    }
+    return btoa(binary);
+}
+
+/**
+ * Convert image attachment to WireImage format
+ */
+function attachmentToWireImage(attachment: Attachment): WireImage {
+    if (!attachment.data) {
+        throw new Error(`Attachment ${attachment.id} has no data`);
+    }
+    return {
+        encrypted: false, // Will be set during encryption phase
+        image_id: attachment.id,
+        data: uint8ArrayToBase64(attachment.data),
+    };
 }
 
 export function prepareTurns(
@@ -83,7 +122,7 @@ export function prepareTurns(
             const existingContext = userTurn.context || '';
             turns[firstUserIndex] = {
                 ...userTurn,
-                context: existingContext 
+                context: existingContext
                     ? `${documentContext}\n\n${existingContext}`
                     : documentContext,
             };
@@ -102,7 +141,7 @@ export function prepareTurns(
                 break;
             }
         }
-        
+
         if (lastUserIndex !== -1) {
             const userTurn = turns[lastUserIndex];
             const originalContent = userTurn.content || '';
@@ -127,8 +166,8 @@ export function prepareTurns(
                 content: updatedContent,
             };
 
-            console.log('Updated user message with instructions:', { 
-                personalizationPrompt: !!personalizationPrompt, 
+            console.log('Updated user message with instructions:', {
+                personalizationPrompt: !!personalizationPrompt,
                 projectInstructions: !!projectInstructions,
             });
         }
@@ -157,19 +196,172 @@ export function prepareTurns(
     return turns;
 }
 
+/**
+ * Find the corresponding message for a user turn
+ */
+function findCorrespondingUserMessage(
+    turn: Turn,
+    turnIndex: number,
+    turns: Turn[],
+    linearChain: Message[]
+): Message | undefined {
+    if (turn.role !== Role.User) {
+        return undefined;
+    }
+
+    const userMessages = linearChain.filter((m) => m.role === Role.User);
+    const userTurnIndex = turns.slice(0, turnIndex).filter((t) => t.role === Role.User).length;
+    return userMessages[userTurnIndex];
+}
+
+/**
+ * Safely convert attachment to WireImage, returning null on error
+ */
+function tryConvertToWireImage(attachment: Attachment): WireImage | null {
+    try {
+        return attachmentToWireImage(attachment);
+    } catch (error) {
+        console.error(`Failed to convert attachment ${attachment.id} to WireImage:`, error);
+        return null;
+    }
+}
+
+/**
+ * Load and convert image attachments from a message to WireImage format
+ */
+async function loadImageAttachmentsForMessage(
+    message: Message,
+    user: User,
+    spaceDek: AesGcmCryptoKey
+): Promise<WireImage[]> {
+    if (!message.attachments || message.attachments.length === 0) {
+        return [];
+    }
+
+    // Load full attachment data from IndexedDB
+    const fullAttachments = await fillAttachmentData(message.attachments as Attachment[], user, spaceDek);
+
+    // Separate images from text attachments
+    const { imageAttachments } = separateAttachmentsByType(fullAttachments);
+
+    if (imageAttachments.length === 0) {
+        return [];
+    }
+
+    // Convert images to WireImage format
+    const images: WireImage[] = imageAttachments
+        .map(tryConvertToWireImage)
+        .filter((img): img is WireImage => img !== null);
+
+    return images;
+}
+
+/**
+ * Enrich a single turn with image attachments if applicable
+ */
+async function enrichTurnWithImages(
+    turn: Turn,
+    turnIndex: number,
+    turns: Turn[],
+    linearChain: Message[],
+    user: User,
+    spaceDek: AesGcmCryptoKey
+): Promise<Turn> {
+    // Only process user turns
+    if (turn.role !== Role.User) {
+        return turn;
+    }
+
+    // Find corresponding message in linearChain
+    const correspondingMessage = findCorrespondingUserMessage(turn, turnIndex, turns, linearChain);
+
+    if (!correspondingMessage) {
+        return turn;
+    }
+
+    // Load and convert images
+    const images = await loadImageAttachmentsForMessage(correspondingMessage, user, spaceDek);
+
+    if (images.length === 0) {
+        return turn;
+    }
+
+    // Add images to turn
+    return {
+        ...turn,
+        images,
+    };
+}
+
+/**
+ * Async version of prepareTurns that loads full attachment data and extracts images
+ */
+export async function prepareTurnsWithImages(
+    linearChain: Message[],
+    user: User | undefined,
+    spaceDek: AesGcmCryptoKey | undefined,
+    finalTurn = ASSISTANT_TURN,
+    contextFilters: ContextFilter[] = [],
+    personalizationPrompt?: string
+): Promise<Turn[]> {
+    // First, get basic turns without images
+    const turns = prepareTurns(linearChain, finalTurn, contextFilters, personalizationPrompt);
+
+    // If no user/spaceDek, can't load attachments
+    if (!user || !spaceDek) {
+        return turns;
+    }
+
+    // Now enrich user turns with images
+    const enrichedTurns = await Promise.all(
+        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, user, spaceDek))
+    );
+
+    return enrichedTurns;
+}
+
 export function appendFinalTurn(turns: Turn[], finalTurn = ASSISTANT_TURN): Turn[] {
     return [...turns, finalTurn];
 }
 
 // return turns that are either user or assistant where assistant turns are not empty
 export const getFilteredTurns = (
-    linearChain: Message[], 
-    contextFilters: ContextFilter[] = [], 
-    personalizationPrompt?: string, 
+    linearChain: Message[],
+    contextFilters: ContextFilter[] = [],
+    personalizationPrompt?: string,
     projectInstructions?: string,
     documentContext?: string
 ) => {
     return prepareTurns(linearChain, ASSISTANT_TURN, contextFilters, personalizationPrompt, projectInstructions, documentContext)
+        .filter((turn) => {
+            // Keep system messages that contain personalization, filter out other system messages
+            if (turn.role === Role.System) {
+                return personalizationPrompt && turn.content === personalizationPrompt;
+            }
+            return true;
+        })
+        .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
+};
+
+/**
+ * Async version of getFilteredTurns that includes image attachments
+ */
+export const getFilteredTurnsWithImages = async (
+    linearChain: Message[],
+    user: User | undefined,
+    spaceDek: AesGcmCryptoKey | undefined,
+    contextFilters: ContextFilter[] = [],
+    personalizationPrompt?: string
+): Promise<Turn[]> => {
+    const turns = await prepareTurnsWithImages(
+        linearChain,
+        user,
+        spaceDek,
+        ASSISTANT_TURN,
+        contextFilters,
+        personalizationPrompt
+    );
+    return turns
         .filter((turn) => {
             // Keep system messages that contain personalization, filter out other system messages
             if (turn.role === Role.System) {
@@ -298,7 +490,9 @@ export function getCallbacks(
 
                     dispatch(addAttachment({ ...attachment, data: imageData }));
                     dispatch(addImageAttachment({ messageId: assistantMessageId, attachment }));
-                    dispatch(appendChunk({ messageId: assistantMessageId, content: generateImageMarkdown(m.image_id) }));
+                    dispatch(
+                        appendChunk({ messageId: assistantMessageId, content: generateImageMarkdown(m.image_id) })
+                    );
                     // Push attachment to server now that it has spaceId
                     dispatch(pushAttachmentRequest({ id: m.image_id }));
                 }
