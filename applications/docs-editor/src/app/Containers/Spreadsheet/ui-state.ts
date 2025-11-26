@@ -15,6 +15,7 @@ import {
   isProtectedRange as isProtectedRangeFn,
   getUserSelections,
   useFocusSheet,
+  sortSheetsByIndex,
 } from '@rowsncolumns/spreadsheet'
 import { number2Alpha, ssfFormat, uuid } from '@rowsncolumns/utils'
 import {
@@ -50,7 +51,11 @@ function focusGridWarningFallback() {
  */
 export function useProtonSheetsUIState(
   state: ProtonSheetsState,
-  { isReadonly, isViewOnlyMode }: { isReadonly: boolean; isViewOnlyMode: boolean },
+  {
+    isReadonly,
+    isRevisionMode,
+    isViewOnlyMode,
+  }: { isReadonly: boolean; isRevisionMode: boolean; isViewOnlyMode: boolean },
 ) {
   const currencySymbol = getCurrencySymbol(LOCALE, CURRENCY)
   if (!currencySymbol) {
@@ -110,6 +115,7 @@ export function useProtonSheetsUIState(
     selectedColumnCount: defaultSelection.range.endColumnIndex - defaultSelection.range.startColumnIndex + 1,
     selectedRowCount: defaultSelection.range.endRowIndex - defaultSelection.range.startRowIndex + 1,
     isReadonly,
+    isRevisionMode,
     isViewOnlyMode,
   }
 
@@ -179,6 +185,7 @@ export function useProtonSheetsUIState(
   const [showGridlines, setShowGridlines] = useState(true)
   const [showInsertLinkDialog, setShowInsertLinkDialog] = useState(false)
   const [insertLinkCell, setInsertLinkCell] = useState<CellInterface>(() => state.activeCell)
+  const [deleteSheetId, setDeleteSheetId] = useState<number | undefined>(undefined)
   const view = {
     formulaBar: {
       enabled: showFormulaBar,
@@ -213,12 +220,17 @@ export function useProtonSheetsUIState(
       }),
       close: useEvent(() => setShowInsertLinkDialog(false)),
     },
+    deleteSheetConfirmation: {
+      sheetId: deleteSheetId,
+      open: useEvent((sheetId: number) => setDeleteSheetId(sheetId)),
+      close: useEvent(() => setDeleteSheetId(undefined)),
+    },
   }
 
   // sheets
   const sheetList = useMemo(
     () =>
-      state.sheets.map((sheet) => ({
+      sortSheetsByIndex(state.sheets).map((sheet) => ({
         id: sheet.sheetId,
         name: sheet.title,
         hidden: sheet.hidden ?? false,
@@ -226,14 +238,48 @@ export function useProtonSheetsUIState(
       })),
     [state.sheets],
   )
+  const visibleSheets = useMemo(() => sheetList.filter((sheet) => !sheet.hidden), [sheetList])
   const sheets = {
     list: sheetList,
+    visible: visibleSheets,
     activeId: state.activeSheetId,
     setActiveId: useEvent((sheetId: number) => state.onChangeActiveSheet(sheetId)),
-    delete: useEvent((sheetId: number) => state.onDeleteSheet(sheetId)),
-    rename: useEvent((sheetId: number, newName: string) =>
-      state.onRenameSheet(sheetId, newName, sheetList.find((sheet) => sheet.id === sheetId)?.name || ''),
-    ),
+    delete: useEvent((sheetId: number) => {
+      logger.info('action: delete sheet', sheetId)
+      state.onDeleteSheet(sheetId)
+    }),
+    rename: useEvent((sheetId: number, newName: string) => {
+      logger.info('action: rename sheet', sheetId, newName)
+      state.onRenameSheet(sheetId, newName, sheetList.find((sheet) => sheet.id === sheetId)?.name || '')
+    }),
+    duplicate: useEvent((sheetId: number) => {
+      logger.info('action: duplicate sheet', sheetId)
+      state.onDuplicateSheet(sheetId)
+    }),
+    move: useEvent((sheetId: number, currentPosition: number, newPosition: number) => {
+      logger.info('action: move sheet', sheetId, currentPosition, newPosition)
+      state.onMoveSheet(sheetId, currentPosition, newPosition)
+    }),
+    moveInDirection: useEvent((sheetId: number, direction: 'left' | 'right') => {
+      logger.info('action: move sheet in direction', sheetId, direction)
+      const currentPosition = sheetList.findIndex((sheet) => sheet.id === sheetId)
+      if (currentPosition === -1) {
+        return
+      }
+      let newPosition = currentPosition
+      const delta = direction === 'left' ? -1 : 1
+      do {
+        newPosition += delta
+      } while (newPosition >= 0 && newPosition < sheetList.length && sheetList[newPosition].hidden)
+      if (newPosition === currentPosition || newPosition < 0 || newPosition >= sheetList.length) {
+        return
+      }
+      state.onMoveSheet(sheetId, currentPosition, newPosition)
+    }),
+    changeTabColor: useEvent((sheetId: number, color: Color | undefined) => {
+      logger.info('action: change tab color', sheetId, color)
+      state.onChangeSheetTabColor(sheetId, color)
+    }),
   }
 
   // history
@@ -325,7 +371,7 @@ export function useProtonSheetsUIState(
         /**
          * Pass `undefined` to set the text color to the default value.
          */
-        set: useEvent((value: string | undefined) => formatUtils.setTextFormat('color', value)),
+        set: useEvent((value: Color | undefined) => formatUtils.setTextFormat('color', value)),
       },
     },
     backgroundColor: {
@@ -336,7 +382,7 @@ export function useProtonSheetsUIState(
       /**
        * Pass `undefined` to set the background color to the default value.
        */
-      set: useEvent((value: string | undefined) => formatUtils.setBackgroundColor(value)),
+      set: useEvent((value: Color | undefined) => formatUtils.setBackgroundColor(value)),
     },
     borders: {
       /**
@@ -616,7 +662,7 @@ function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, P
     return { active: isTextFormat(format), toggle: useEvent(() => toggleTextFormat(format)) }
   }
 
-  function setBackgroundColor(value: string | undefined) {
+  function setBackgroundColor(value: Color | undefined) {
     setFormat('backgroundColor', value)
   }
 

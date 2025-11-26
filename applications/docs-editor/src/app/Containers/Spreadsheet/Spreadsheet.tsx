@@ -26,7 +26,7 @@ import { type ProtonSheetsState, useLocalState, useProtonSheetsState } from './s
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
 import { Toolbar } from './components/Toolbar/Toolbar'
-import { OldBottomBar } from './components/BottomBar'
+import { BottomBar } from './components/BottomBar/BottomBar'
 import { LegacyBottomBar } from './components/legacy/LegacyBottomBar'
 import { LegacyDialogs } from './components/legacy/LegacyDialogs'
 import { LegacyGrid } from './components/legacy/LegacyGrid'
@@ -205,20 +205,23 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   if (useNewUIEnabled()) {
     return (
-      <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly} isViewOnlyMode={isViewOnlyMode}>
-        <UI
-          hidden={hidden}
-          state={state}
-          isReadonly={isReadonly}
-          isRevisionMode={isRevisionMode}
-          clientInvoker={clientInvoker}
-          isPublicMode={isPublicMode}
-        />
+      <ProtonSheetsUIStoreProvider
+        state={state}
+        isReadonly={isReadonly}
+        isRevisionMode={isRevisionMode}
+        isViewOnlyMode={isViewOnlyMode}
+      >
+        <UI hidden={hidden} isRevisionMode={isRevisionMode} clientInvoker={clientInvoker} isPublicMode={isPublicMode} />
       </ProtonSheetsUIStoreProvider>
     )
   }
   return (
-    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly} isViewOnlyMode={isViewOnlyMode}>
+    <ProtonSheetsUIStoreProvider
+      state={state}
+      isReadonly={isReadonly}
+      isRevisionMode={isRevisionMode}
+      isViewOnlyMode={isViewOnlyMode}
+    >
       <LegacyUI
         hidden={hidden}
         state={state}
@@ -232,14 +235,12 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
 type UIProps = {
   hidden: boolean
-  state: ProtonSheetsState
-  isReadonly: boolean
   isRevisionMode: boolean
   clientInvoker: EditorRequiresClientMethods
   isPublicMode: boolean
 }
 
-function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
+function UI({ hidden, isRevisionMode, clientInvoker, isPublicMode }: UIProps) {
   return (
     <>
       {hidden && (
@@ -261,7 +262,7 @@ function UI({ hidden, state, isReadonly, isRevisionMode, clientInvoker, isPublic
           <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
             {!isRevisionMode && <Toolbar className="m-2 max-sm:m-0" clientInvoker={clientInvoker} />}
             <LegacyGrid />
-            <OldBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+            <BottomBar />
             <Dialogs />
             <EditingDisabledDialog clientInvoker={clientInvoker} />
           </div>
