@@ -1,4 +1,3 @@
-import type { useSpreadsheetState } from '@rowsncolumns/spreadsheet-state'
 import { pattern_currency_decimal, pattern_percent_decimal } from '@rowsncolumns/spreadsheet-state'
 import {
   ButtonInsertChart,
@@ -33,21 +32,10 @@ import {
   FormulaBarInput,
   FormulaBar,
 } from '@rowsncolumns/spreadsheet'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuPortal,
-  DropdownMenuTrigger,
-  IconButton,
-  Separator,
-  SimpleTooltip,
-} from '@rowsncolumns/ui'
-import { MagnifyingGlassIcon, DownloadIcon, ImageIcon } from '@rowsncolumns/icons'
+import { IconButton, Separator, SimpleTooltip } from '@rowsncolumns/ui'
+import { MagnifyingGlassIcon, DownloadIcon } from '@rowsncolumns/icons'
 import type { ProtonSheetsState } from '../../state'
 import { LOCALE, CURRENCY, FUNCTION_DESCRIPTIONS } from '../../constants'
-import { useRef } from 'react'
-import { c } from 'ttag'
 
 export type LegacyToolbarProps = {
   state: ProtonSheetsState
@@ -215,7 +203,7 @@ export function LegacyToolbar({ state, downloadLogs, isReadonly }: LegacyToolbar
         />
         <ToolbarSeparator />
 
-        <InsertImageMenu onInsertFile={state.onInsertFile} />
+        {/* <InsertImageMenu onInsertFile={state.onInsertFile} /> */}
         <ButtonInsertChart
           onClick={() => state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)}
         />
@@ -245,50 +233,50 @@ export function LegacyToolbar({ state, downloadLogs, isReadonly }: LegacyToolbar
   )
 }
 
-function InsertImageMenu({ onInsertFile }: { onInsertFile: ReturnType<typeof useSpreadsheetState>['onInsertFile'] }) {
-  const insertOverCellsRef = useRef(false)
-  const imageInputRef = useRef<HTMLInputElement>(null)
-
-  return (
-    <DropdownMenu modal={false}>
-      <DropdownMenuTrigger asChild>
-        <IconButton tooltip="Insert image">
-          <ImageIcon />
-          <input
-            ref={imageInputRef}
-            type="file"
-            accept="image/*"
-            className="absolute left-0 top-0 h-px w-px opacity-0"
-            onChange={(e) => {
-              const file = e.target.files?.[0]
-              if (file) {
-                onInsertFile?.(file, undefined, undefined, {
-                  insertOverCells: insertOverCellsRef.current,
-                }).catch(console.error)
-              }
-            }}
-          />
-        </IconButton>
-      </DropdownMenuTrigger>
-      <DropdownMenuPortal>
-        <DropdownMenuContent align="start">
-          <DropdownMenuItem
-            onClick={() => {
-              insertOverCellsRef.current = false
-              imageInputRef.current?.click()
-            }}
-          >{c('sheets_2025:Action').t`Insert image in cell`}</DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => {
-              insertOverCellsRef.current = true
-              imageInputRef.current?.click()
-            }}
-          >{c('sheets_2025:Action').t`Insert image over cells`}</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenuPortal>
-    </DropdownMenu>
-  )
-}
+// https://protonag.atlassian.net/browse/REALTIME-33
+// function InsertImageMenu({ onInsertFile }: { onInsertFile: ReturnType<typeof useSpreadsheetState>['onInsertFile'] }) {
+//   const insertOverCellsRef = useRef(false)
+//   const imageInputRef = useRef<HTMLInputElement>(null)
+//   return (
+//     <DropdownMenu modal={false}>
+//       <DropdownMenuTrigger asChild>
+//         <IconButton tooltip="Insert image">
+//           <ImageIcon />
+//           <input
+//             ref={imageInputRef}
+//             type="file"
+//             accept="image/*"
+//             className="absolute left-0 top-0 h-px w-px opacity-0"
+//             onChange={(e) => {
+//               const file = e.target.files?.[0]
+//               if (file) {
+//                 onInsertFile?.(file, undefined, undefined, {
+//                   insertOverCells: insertOverCellsRef.current,
+//                 }).catch(console.error)
+//               }
+//             }}
+//           />
+//         </IconButton>
+//       </DropdownMenuTrigger>
+//       <DropdownMenuPortal>
+//         <DropdownMenuContent align="start">
+//           <DropdownMenuItem
+//             onClick={() => {
+//               insertOverCellsRef.current = false
+//               imageInputRef.current?.click()
+//             }}
+//           >{c('sheets_2025:Action').t`Insert image in cell`}</DropdownMenuItem>
+//           <DropdownMenuItem
+//             onClick={() => {
+//               insertOverCellsRef.current = true
+//               imageInputRef.current?.click()
+//             }}
+//           >{c('sheets_2025:Action').t`Insert image over cells`}</DropdownMenuItem>
+//         </DropdownMenuContent>
+//       </DropdownMenuPortal>
+//     </DropdownMenu>
+//   )
+// }
 
 type LegacyFormulaBarProps = {
   state: ProtonSheetsState
