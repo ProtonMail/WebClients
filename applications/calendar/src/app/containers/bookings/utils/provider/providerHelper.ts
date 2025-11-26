@@ -62,6 +62,7 @@ export const computeInitialFormData = ({
     currentUTCDate,
     preferredCalendarID,
     recurring,
+    isMeetVideoConferenceEnabled,
 }: {
     userSettings: UserSettings;
     calendarUserSettings?: CalendarUserSettings;
@@ -69,6 +70,7 @@ export const computeInitialFormData = ({
     currentUTCDate: Date;
     preferredCalendarID: string;
     recurring: boolean;
+    isMeetVideoConferenceEnabled: boolean;
 }): InternalBookingFrom => {
     const timezone = calendarUserSettings?.PrimaryTimezone || calendarUserSettings?.SecondaryTimezone || getTimezone();
 
@@ -79,7 +81,7 @@ export const computeInitialFormData = ({
         recurring,
         summary: '',
         selectedCalendar: preferredCalendarID,
-        locationType: BookingLocation.MEET,
+        locationType: isMeetVideoConferenceEnabled ? BookingLocation.MEET : BookingLocation.IN_PERSON,
         duration,
         timezone,
         bookingRanges,
@@ -106,10 +108,12 @@ export const computeEditFormData = ({
     bookingPageCalendar,
     bookingPage,
     editData,
+    isMeetVideoConferenceEnabled,
 }: {
     bookingPageCalendar: VisualCalendar;
     bookingPage: InternalBookingPage;
     editData: BookingPageEditData;
+    isMeetVideoConferenceEnabled: boolean;
 }): InternalBookingFrom => {
     const firstSlot = editData.slots[0];
 
@@ -128,7 +132,8 @@ export const computeEditFormData = ({
         summary: bookingPage.summary,
         description: bookingPage.description,
         selectedCalendar: bookingPageCalendar.ID,
-        locationType: bookingPage.location ? BookingLocation.IN_PERSON : BookingLocation.MEET,
+        locationType:
+            bookingPage.location || !isMeetVideoConferenceEnabled ? BookingLocation.IN_PERSON : BookingLocation.MEET,
         location: bookingPage.location,
         timezone: timezone,
         recurring,
