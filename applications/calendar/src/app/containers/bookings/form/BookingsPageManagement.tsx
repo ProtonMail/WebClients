@@ -19,6 +19,8 @@ import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+import useFlag from '@proton/unleash/useFlag';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingLocation, BookingState } from '../bookingsProvider/interface';
@@ -28,16 +30,17 @@ import { FormRangeList } from './FormRangeList';
 
 import './BookingForms.scss';
 
-export const getBookingLocationOption = () => {
+export const getBookingLocationOption = (isMeetEnabled: boolean) => {
     return [
-        { text: MEET_APP_NAME, value: BookingLocation.MEET },
+        isMeetEnabled && { text: MEET_APP_NAME, value: BookingLocation.MEET },
         { text: c('Location').t`In person`, value: BookingLocation.IN_PERSON },
-    ];
+    ].filter(isTruthy);
 };
 
 export const Form = () => {
+    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
     const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
-    const locationOptions = getBookingLocationOption();
+    const locationOptions = getBookingLocationOption(isMeetVideoConferenceEnabled);
 
     const { formData, updateFormData, bookingsState } = useBookings();
 
@@ -97,24 +100,26 @@ export const Form = () => {
             </FormIconRow>
 
             <FormIconRow icon={<IcMapPin />} title={c('Info').t`Where will the appointment take place?`}>
-                <InputField
-                    as={SelectTwo}
-                    id="location-select"
-                    value={formData.locationType}
-                    label={c('Info').t`Where will the appointment take place?`}
-                    labelContainerClassName="sr-only"
-                    onChange={({ value }: { value: any }) => {
-                        updateFormData('locationType', value);
-                    }}
-                    assistContainerClassName="hidden"
-                    fullWidth={false}
-                >
-                    {locationOptions.map((option) => (
-                        <Option key={option.value} value={option.value} title={option.text}>
-                            <FormLocationOptionContent value={option.value} text={option.text} />
-                        </Option>
-                    ))}
-                </InputField>
+                {locationOptions.length > 1 && (
+                    <InputField
+                        as={SelectTwo}
+                        id="location-select"
+                        value={formData.locationType}
+                        label={c('Info').t`Where will the appointment take place?`}
+                        labelContainerClassName="sr-only"
+                        onChange={({ value }: { value: any }) => {
+                            updateFormData('locationType', value);
+                        }}
+                        assistContainerClassName="hidden"
+                        fullWidth={false}
+                    >
+                        {locationOptions.map((option) => (
+                            <Option key={option.value} value={option.value} title={option.text}>
+                                <FormLocationOptionContent value={option.value} text={option.text} />
+                            </Option>
+                        ))}
+                    </InputField>
+                )}
 
                 {formData.locationType === BookingLocation.IN_PERSON && (
                     <InputField

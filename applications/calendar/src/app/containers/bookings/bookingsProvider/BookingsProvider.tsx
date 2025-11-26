@@ -54,6 +54,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
 
     const isRecurringEnabled = useFlag('RecurringCalendarBookings');
+    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
 
     const intersectionRef = useRef<Intersection | null>(null);
     const initialFormData = useRef<InternalBookingFrom | undefined>(undefined);
@@ -87,6 +88,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             currentUTCDate,
             preferredCalendarID: defaultCalendarID,
             recurring: isRecurringEnabled ? DEFAULT_RECURRING : false,
+            isMeetVideoConferenceEnabled,
         });
 
         setInternalForm(formData);
@@ -223,6 +225,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             bookingPageCalendar,
             bookingPage,
             editData,
+            isMeetVideoConferenceEnabled,
         });
         setInternalForm(form);
         setBookingsState(BookingState.EDIT_EXISTING);
