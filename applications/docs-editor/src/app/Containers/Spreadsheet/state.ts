@@ -53,6 +53,7 @@ type LocalState = {
   protectedRanges: ProtectedRange[]
   cellXfs: CellXfs | null | undefined
   scale: number
+  userDefinedColors: string[]
 
   onChangeSheets: SetState<Sheet[]>
   onChangeSheetData: SetState<SheetData<CellData>>
@@ -66,6 +67,7 @@ type LocalState = {
   onChangeProtectedRanges: SetState<ProtectedRange[]>
   onChangeCellXfs: SetState<CellXfs | null | undefined>
   onChangeScale: SetState<number>
+  onChangeUserDefinedColors: SetState<string[]>
 }
 type LocalStateWithoutActions = Omit<
   LocalState,
@@ -81,6 +83,7 @@ type LocalStateWithoutActions = Omit<
   | 'onChangeProtectedRanges'
   | 'onChangeCellXfs'
   | 'onChangeScale'
+  | 'onChangeUserDefinedColors'
 >
 function getValueFromUpdateAction<T>(updateAction: UpdateAction<T>, prevValue: T): T {
   return typeof updateAction === 'function' ? (updateAction as (state: T) => T)(prevValue) : updateAction
@@ -99,6 +102,7 @@ const useLocalSpreadsheetState = create<LocalState>()((set) => ({
   protectedRanges: [],
   cellXfs: new Map(),
   scale: 1,
+  userDefinedColors: [],
 
   onChangeSheets: (sheets) => set((state) => ({ sheets: getValueFromUpdateAction(sheets, state.sheets) })),
   onChangeSheetData: (sheetData) =>
@@ -123,6 +127,8 @@ const useLocalSpreadsheetState = create<LocalState>()((set) => ({
     })),
   onChangeCellXfs: (cellXfs) => set((state) => ({ cellXfs: getValueFromUpdateAction(cellXfs, state.cellXfs) })),
   onChangeScale: (scale) => set((state) => ({ scale: getValueFromUpdateAction(scale, state.scale) })),
+  onChangeUserDefinedColors: (userDefinedColors) =>
+    set((state) => ({ userDefinedColors: getValueFromUpdateAction(userDefinedColors, state.userDefinedColors) })),
 }))
 
 // spreadsheet state
@@ -413,37 +419,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onSelectRange({ ...range, sheetId })
   })
 
-  // Add onMoveSheet function
-  const onMoveSheet = useCallback(
-    (sheetId: number, currentPosition: number, newPosition: number) => {
-      // Validate input parameters
-      if (newPosition < 0 || newPosition >= localState.sheets.length) {
-        console.error('Invalid new position:', newPosition)
-        return
-      }
-
-      // Get the current sheets array from localState
-      const sheets = [...localState.sheets]
-
-      // Validate that the current position matches the actual sheet position
-      if (currentPosition < 0 || currentPosition >= sheets.length || sheets[currentPosition].sheetId !== sheetId) {
-        console.error('Position mismatch for sheet:', sheetId, 'expected position:', currentPosition)
-        return
-      }
-
-      // Remove the sheet from its current position
-      const [sheetToMove] = sheets.splice(currentPosition, 1)
-
-      // Insert the sheet at the new position
-      // No need to adjust target index since we're working with absolute positions
-      sheets.splice(newPosition, 0, sheetToMove)
-
-      // Update the sheets using localState's onChangeSheets
-      localState.onChangeSheets(sheets)
-    },
-    [localState],
-  )
-
   // Wrap onCreateNewSheet to ensure proper naming with space and length limit
   const onCreateNewSheet = useEvent((sheetSpec?: any) => {
     const newSheet = baseState.onCreateNewSheet(sheetSpec)
@@ -506,6 +481,10 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     })
   })
 
+  const onAddUserDefinedColor = useEvent((color: string) => {
+    localState.onChangeUserDefinedColors((userDefinedColors) => [...userDefinedColors, color])
+  })
+
   return {
     ...baseState,
     chartsState,
@@ -515,7 +494,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onSelectRange,
     onSelectNamedRange,
     onSelectTable,
-    onMoveSheet,
     onCreateNewSheet,
     onDeleteRow,
     onDeleteColumn,
@@ -525,6 +503,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     getHyperlink,
     onRequestFonts,
     goToCell,
+    onAddUserDefinedColor,
   }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
@@ -548,6 +527,7 @@ export function useLocalState(
       dataValidations: state.dataValidations,
       cellXfs: state.cellXfs,
       scale: state.scale,
+      userDefinedColors: state.userDefinedColors,
     }),
     [
       state.cellXfs,
@@ -562,6 +542,7 @@ export function useLocalState(
       state.sheets,
       state.tables,
       state.theme,
+      state.userDefinedColors,
     ],
   )
 
