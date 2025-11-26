@@ -372,7 +372,7 @@ const UnlimitedBannerGradient = ({
     const priceString = getSimplePriceString(subscription.Currency, priceDifference);
 
     const sectionHeaderCopy = getBoldFormattedText(
-        c('Headline').t`Unlock 4 more premium privacy services for just **${priceString}** more each month`,
+        c('Headline').t`Unlock 4 premium privacy services for just **${priceString}** more each month`,
         'color-primary'
     );
 
