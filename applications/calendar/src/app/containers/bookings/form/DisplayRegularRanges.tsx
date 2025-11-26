@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { startOfToday } from 'date-fns';
 import { c } from 'ttag';
 
@@ -35,8 +37,8 @@ export const DisplayRegularRanges = ({
     onPlusClick,
 }: Props) => {
     return formData.bookingRanges.map((range) => (
-        <>
-            <RangeWrapper key={range.id}>
+        <Fragment key={range.id}>
+            <RangeWrapper>
                 <div className="flex flex-1 items-center gap-0.5">
                     <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
                         .t`Date of the booking range`}</label>
@@ -72,6 +74,6 @@ export const DisplayRegularRanges = ({
                 </div>
             </RangeWrapper>
             <RangeErrors range={range} />
-        </>
+        </Fragment>
     ));
 };
