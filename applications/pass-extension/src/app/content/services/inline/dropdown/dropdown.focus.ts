@@ -1,17 +1,20 @@
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
+import type { InlineFrameTarget } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.abstract';
 import type { InlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
-import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
+import { onNextTick } from '@proton/pass/utils/time/next-tick';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import noop from '@proton/utils/noop';
 
-import type { DropdownAnchorRef, DropdownRequest } from './dropdown.app';
+import type { DropdownAnchor, DropdownAnchorRef, DropdownRequest } from './dropdown.app';
 
 /** Debounce timeout for focus events to prevent rapid focus/blur cycles */
 export const DROPDOWN_FOCUS_TIMEOUT = 50;
@@ -69,14 +72,29 @@ export const createDropdownFocusController = ({
 
     const hasFocus = () => document.activeElement === popover.root.customElement;
 
+    /** In order to toggle interactivity in sub-frames, we rely on message
+     * passing to the anchor's frameID (see `FormManager::onFrameFieldLock`) */
+    const onFrameFieldLock = async (anchor: InlineFrameTarget, locked: boolean) =>
+        sendMessage(
+            contentScriptMessage({
+                type: WorkerMessageType.FRAME_FIELD_LOCK,
+                payload: { ...anchor, locked },
+            })
+        );
+
     const disconnect = () => {
         clearTimeout(state.willFocusTimer);
         delete state.willFocusTimer;
         state.willFocus = false;
 
-        if (anchor.current?.type === 'field') {
-            const fields = anchor.current.field.getFormHandle().getFields();
-            fields.forEach((formField) => formField.interactivity.unlock());
+        switch (anchor.current?.type) {
+            case 'field':
+                const fields = anchor.current.field.getFormHandle().getFields();
+                fields.forEach((formField) => formField.interactivity.unlock());
+                break;
+            case 'frame':
+                void onFrameFieldLock(anchor.current, false).catch(noop);
+                break;
         }
     };
 
@@ -98,18 +116,25 @@ export const createDropdownFocusController = ({
      * Focus-lock libraries monitor focus changes and redirect focus back to trapped
      * elements. By blurring first, we leave no element for the trap to redirect to,
      * allowing our dropdown to successfully acquire focus. */
-    const releaseFocus = async (field?: FieldHandle): Promise<boolean> => {
+    const releaseFocus = async (anchor: MaybeNull<DropdownAnchor>): Promise<boolean> => {
         if (!iframe.state.visible) return true;
         if (hasFocus()) return true;
 
-        if (field && isActiveElement(field.element)) {
-            /** Lock all fields temporarily - prevents websites from focus
-             * trapping or auto-focusing the next field during blur */
-            const fields = field.getFormHandle().getFields();
-            fields.forEach((formField) => formField.interactivity.lock(DROPDOWN_FOCUS_TIMEOUT));
-            field?.element.blur();
+        switch (anchor?.type) {
+            case 'field':
+                if (!isActiveElement(anchor.field.element)) break;
+                /** Lock all fields temporarily - prevents websites from focus
+                 * trapping or auto-focusing the next field during blur */
+                const fields = anchor.field.getFormHandle().getFields();
+                fields.forEach((formField) => formField.interactivity.lock(DROPDOWN_FOCUS_TIMEOUT));
+                anchor.field.element.blur();
 
-            return false;
+                return false;
+
+            case 'frame':
+                const res = await onFrameFieldLock(anchor, true);
+                if (res.type === 'success' && res.wasFocused) return false;
+                break;
         }
 
         if (document.activeElement && isHTMLElement(document.activeElement)) document.activeElement.blur();
@@ -126,19 +151,9 @@ export const createDropdownFocusController = ({
         onWillFocus();
 
         if (!hasFocus()) {
-            switch (anchor.current?.type) {
-                case 'field':
-                    const field = anchor.current.field;
-                    return waitUntil(() => releaseFocus(field), 25, DROPDOWN_FOCUS_TRAP_TIMEOUT)
-                        .then(() => iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS }))
-                        .catch(disconnect);
-
-                case 'frame':
-                    return nextTick(async () => {
-                        await releaseFocus();
-                        return iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS });
-                    });
-            }
+            return waitUntil(() => releaseFocus(anchor.current), 25, DROPDOWN_FOCUS_TRAP_TIMEOUT)
+                .then(() => iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_FOCUS }))
+                .catch(disconnect);
         }
     });
 

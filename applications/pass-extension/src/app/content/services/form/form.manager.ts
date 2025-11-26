@@ -9,6 +9,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clearDetectionCache } from '@proton/pass/fathom';
 import { FieldType } from '@proton/pass/fathom/labels';
+import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { logger } from '@proton/pass/utils/logger';
 import { pick } from '@proton/shared/lib/helpers/object';
 import throttle from '@proton/utils/throttle';
@@ -165,7 +166,29 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
         return true;
     };
 
+    /** Only relevant when the dropdown is acquiring focus cross-frame. In order
+     * to bypass focus-traps in frame fields, we apply the same locking mechanism
+     * as the `DropdownFocusController` living in the top-frame. */
+    const onFrameFieldLock: FrameMessageHandler<WorkerMessageType.FRAME_FIELD_LOCK> = ({ payload }, sendResponse) => {
+        const form = getFormById(payload.formId);
+        const field = form?.getFieldById(payload.fieldId);
+        const fields = form?.getFields();
+
+        const wasFocused = Boolean(field && isActiveElement(field.element));
+
+        if (wasFocused && payload.locked) {
+            fields?.forEach((formField) => formField.interactivity.lock());
+            field?.element.blur();
+        } else if (!payload.locked) {
+            fields?.forEach((formField) => formField.interactivity.unlock());
+        }
+
+        sendResponse({ wasFocused });
+        return true;
+    };
+
     channel.register(WorkerMessageType.FRAME_FORMS_QUERY, onFrameFormsQuery);
+    channel.register(WorkerMessageType.FRAME_FIELD_LOCK, onFrameFieldLock);
 
     const destroy = () => {
         channel.unregister(WorkerMessageType.FRAME_FORMS_QUERY, onFrameFormsQuery);
