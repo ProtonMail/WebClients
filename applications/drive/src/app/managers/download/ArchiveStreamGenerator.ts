@@ -4,13 +4,14 @@ import { NodeType, getDrive } from '@proton/drive/index';
 import type { DownloadController } from './DownloadManager';
 import type { ArchiveItem, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import { createAsyncQueue } from './utils/asyncQueue';
+import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { getNodeModifiedTime } from './utils/nodeHelpers';
 
 export type { ArchiveItem } from './downloadTypes';
 
 type ArchiveTracker = {
     registerFile(taskId: string): void;
-    updateDownloadProgress(taskId: string, downloadedBytes: number): void;
+    updateDownloadProgress(taskId: string, downloadedBytes: number, claimedSize: number): void;
     attachController(taskId: string, controller: DownloadController): void;
     pauseAll(): void;
     resumeAll(): void;
@@ -25,7 +26,7 @@ type ArchiveTracker = {
  * will keep track of the individual files being downloaded while they are scheduled
  * it's a sort of orchestrator object
  */
-const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): ArchiveTracker => {
+const createArchiveTracker = (onProgress: (downloadedBytes: number, claimedSize: number) => void): ArchiveTracker => {
     // Each file of the archive records its own downloaded bytes
     const downloadedBytesMap: Record<string, number> = {};
     const controllerByUid = new Map<string, DownloadController>();
@@ -38,18 +39,14 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): Ar
         rejectFirstItem = reject;
     });
 
-    const updateTotalProgress = () => {
-        const inFlightBytes = Object.values(downloadedBytesMap).reduce((acc, val) => acc + val, 0);
-        onProgress(inFlightBytes);
-    };
-
     return {
         registerFile(taskId: string) {
             downloadedBytesMap[taskId] = 0;
         },
-        updateDownloadProgress(taskId: string, downloadedBytes: number) {
+        updateDownloadProgress(taskId: string, downloadedBytes: number, claimedSize: number) {
             downloadedBytesMap[taskId] = downloadedBytes;
-            updateTotalProgress();
+            const inFlightBytes = Object.values(downloadedBytesMap).reduce((acc, val) => acc + val, 0);
+            onProgress(inFlightBytes, claimedSize);
         },
         attachController(taskId: string, controller: DownloadController) {
             controllerByUid.set(taskId, controller);
@@ -97,54 +94,6 @@ const createArchiveTracker = (onProgress: (downloadedBytes: number) => void): Ar
 };
 
 /**
- * createArchiveItem sets things up: it registers the file, kicks off downloader.writeToStream,
- * and returns the ArchiveItem.
- * It does not wait for the network transfer to finish.
- */
-const createArchiveItem = async (
-    taskId: string,
-    node: NodeEntity,
-    parentPath: string[],
-    tracker: ArchiveTracker,
-    scheduler: DownloadScheduler,
-    abortSignal: AbortSignal
-): Promise<ArchiveItem> => {
-    if (node.type !== NodeType.File) {
-        return {
-            isFile: false,
-            name: node.name,
-            parentPath,
-        };
-    }
-
-    const drive = getDrive();
-    const downloader = await drive.getFileDownloader(node.uid, abortSignal);
-
-    const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
-    tracker.registerFile(taskId);
-
-    let controller: DownloadController;
-    try {
-        controller = downloader.downloadToStream(writable, (downloadedBytes) => {
-            tracker.updateDownloadProgress(taskId, downloadedBytes);
-            scheduler.updateDownloadProgress(taskId, downloadedBytes);
-        });
-    } catch (error) {
-        throw error;
-    }
-
-    tracker.attachController(taskId, controller);
-
-    return {
-        isFile: true,
-        name: node.name,
-        parentPath,
-        stream: readable,
-        fileModifyTime: getNodeModifiedTime(node),
-    };
-};
-
-/**
  * Instantiates an ArchiveTracker and uses the shared scheduler to start downloading the archive files individually.
  * All the logic related to when and why files start downloading must be kept inside the Scheduler.
  */
@@ -156,13 +105,14 @@ export class ArchiveStreamGenerator {
     private schedulingCompleted = false;
     private scheduledTasksAwaitingStart = 0;
     private hasProducedItem = false;
+    private totalClaimedSize = 0;
 
     readonly generator: AsyncGenerator<ArchiveItem>;
     readonly controller: DownloadController;
 
     constructor(
         private readonly entries: AsyncIterable<NodeEntity>,
-        onProgress: (downloadedBytes: number) => void,
+        onProgress: (downloadedBytes: number, claimedSize: number) => void,
         private readonly scheduler: DownloadScheduler,
         private readonly abortSignal: AbortSignal,
         private readonly parentPathByUid: Map<string, string[]>,
@@ -183,6 +133,44 @@ export class ArchiveStreamGenerator {
         });
 
         void this.scheduleEntries();
+    }
+
+    /**
+     * createArchiveItem sets things up: it registers the file, kicks off downloader.writeToStream,
+     * and returns the ArchiveItem.
+     * It does not wait for the network transfer to finish.
+     */
+    private async createArchiveItem(taskId: string, node: NodeEntity, parentPath: string[]): Promise<ArchiveItem> {
+        if (node.type !== NodeType.File) {
+            return {
+                isFile: false,
+                name: node.name,
+                parentPath,
+            };
+        }
+
+        const drive = getDrive();
+        const downloader = await drive.getFileDownloader(node.uid, this.abortSignal);
+        const claimedSize = downloader.getClaimedSizeInBytes();
+
+        const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
+        this.tracker.registerFile(taskId);
+
+        const controller = downloader.downloadToStream(writable, (downloadedBytes) => {
+            this.tracker.updateDownloadProgress(taskId, downloadedBytes, this.totalClaimedSize);
+            this.scheduler.updateDownloadProgress(taskId, downloadedBytes);
+        });
+
+        this.tracker.attachController(taskId, controller);
+
+        return {
+            isFile: true,
+            name: node.name,
+            parentPath,
+            stream: readable,
+            fileModifyTime: getNodeModifiedTime(node),
+            claimedSize,
+        };
     }
 
     /**
@@ -212,19 +200,14 @@ export class ArchiveStreamGenerator {
                 this.scheduledTasksAwaitingStart = Math.max(this.scheduledTasksAwaitingStart - 1, 0);
                 this.pendingArchiveTasks += 1;
                 const parentPath = this.parentPathByUid.get(node.uid) ?? [];
-                const archivePromise = createArchiveItem(
-                    taskId,
-                    node,
-                    parentPath,
-                    this.tracker,
-                    this.scheduler,
-                    this.abortSignal
-                );
-
+                const archivePromise = this.createArchiveItem(taskId, node, parentPath);
                 archivePromise
                     .then((item) => {
                         if (!this.hasProducedItem) {
                             this.hasProducedItem = true;
+                        }
+                        if (item.isFile) {
+                            this.totalClaimedSize += item.claimedSize ?? getNodeStorageSize(node);
                         }
                         this.tracker.notifyItemReady();
                         this.archiveItemsQueue.push(item);
