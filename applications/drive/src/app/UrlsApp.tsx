@@ -19,6 +19,7 @@ import {
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
+// eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';

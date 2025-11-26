@@ -2,10 +2,10 @@ import { type Dispatch, Fragment, type SetStateAction, useCallback, useEffect, u
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import type { OnLoginCallback } from '@proton/components';
 import {
     ConfirmSignOutModal,
@@ -18,6 +18,7 @@ import {
 import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
 import { useLoading } from '@proton/hooks';
 import { revoke } from '@proton/shared/lib/api/auth';
+// eslint-disable-next-line no-restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';

@@ -15,13 +15,12 @@ import { usePasswordPolicyValidation } from '@proton/components/components/passw
 import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import useApi from '@proton/components/hooks/useApi';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store';
 import { revoke } from '@proton/shared/lib/api/auth';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { authMember } from '@proton/shared/lib/api/members';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -41,9 +40,8 @@ interface Props extends ModalProps {
 }
 
 const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
-    const normalApi = useApi();
     const dispatch = useDispatch();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
     const [memberAuthData, setMemberAuthData] = useState<{ UID: string }>();
     const handleError = useErrorHandler();
 

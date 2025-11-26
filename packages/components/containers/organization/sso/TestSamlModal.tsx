@@ -13,12 +13,12 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { auth, createSession, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import type {
     AuthResponse,
     RefreshSessionResponse,
@@ -113,8 +113,7 @@ const WrapError = ({ children }: { children: ReactNode }) => {
 };
 
 const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
-    const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
     const [username, setUsername] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
     const abortRef = useRef<AbortController | null>(null);
@@ -245,7 +244,7 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                                     }
                                 };
 
-                                run();
+                                void run();
                             }}
                         >
                             <div className="color-weak mb-4">

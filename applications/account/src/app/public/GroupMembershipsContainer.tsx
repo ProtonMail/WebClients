@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { ModalStateProps } from '@proton/components';
 import { GenericError, Prompt, useApi, useErrorHandler, useModalState } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import {
     acceptExternalGroupMembership,
@@ -14,7 +15,6 @@ import {
     getExternalGroupMemberships,
 } from '@proton/shared/lib/api/groups';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
@@ -77,7 +77,7 @@ const GroupMembershipsContainer = () => {
     const handleError = useErrorHandler();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading(true);
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const location = useLocation();
     const [groupMemberships, setGroupMemberships] = useState<GroupMembershipsReturn | null>(null);
     const [confirmLeaveModalProps, setConfirmLeaveModal, renderConfirmLeaveModal] = useModalState();

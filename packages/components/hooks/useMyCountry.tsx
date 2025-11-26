@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getLocation } from '@proton/shared/lib/api/vpn';
 import { singleCountryTimezoneDatabase } from '@proton/shared/lib/date/singleCountryTimezoneDatabase';
 import { manualFindTimeZone } from '@proton/shared/lib/date/timezoneDatabase';
 import { getNaiveCountryCode } from '@proton/shared/lib/i18n/helper';
 import type { Api, MyLocationResponse } from '@proton/shared/lib/interfaces';
 
-import useApi from './useApi';
+import { useSilentApi } from './useSilentApi';
 
 const tryTimezone = (tz: string): string | undefined =>
     singleCountryTimezoneDatabase[tz as keyof typeof singleCountryTimezoneDatabase];
@@ -55,11 +54,11 @@ const getInitialValue = () => {
     return state.value;
 };
 
-const getCountryPromise = (api: Api) => {
+const getCountryPromise = (silentApi: Api) => {
     if (state.promise) {
         return state.promise;
     }
-    state.promise = getMyCountry(getSilentApi(api))
+    state.promise = getMyCountry(silentApi)
         .then((value) => {
             state.value = value;
             return value;
@@ -72,12 +71,12 @@ const getCountryPromise = (api: Api) => {
 
 const useMyCountry = (): string | undefined => {
     const [country, setMyCountry] = useState<string | undefined>(getInitialValue);
-    const api = useApi();
+    const silentApi = useSilentApi();
     useEffect(() => {
         if (country) {
             return;
         }
-        void getCountryPromise(api).then(setMyCountry);
+        void getCountryPromise(silentApi).then(setMyCountry);
     }, []);
     return country;
 };

@@ -17,13 +17,12 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import AdministratorList from './AdministratorList';
 
@@ -36,8 +35,7 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
     const [config, setConfig] = useState<any>();
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const { createNotification } = useNotifications();
     const [authModalProps, setAuthModal, renderAuthModal] = useModalState();
     const [result, setResult] = useState<null | OrganizationKeyRotationPayload>(null);

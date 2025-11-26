@@ -4,12 +4,13 @@ import { useLocation, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { GenericError, useApi, useErrorHandler, useNotifications } from '@proton/components';
+import { GenericError, useErrorHandler, useNotifications } from '@proton/components';
 import { getUpdateNotification } from '@proton/components/containers/account/constants/email-subscriptions';
 import { getEmailSubscriptionCategories } from '@proton/components/containers/account/getEmailSubscriptionCategories';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import { getNewsExternal, patchNewsExternal } from '@proton/shared/lib/api/settings';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -53,8 +54,7 @@ const getDiff = (subscriptionBits: NEWSLETTER_SUBSCRIPTIONS_BITS[], isEnabled = 
 };
 
 const EmailUnsubscribeContainer = () => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const authApiRef = useRef<Api | null>(null);
     const [news, setNews] = useState<number | null>(null);
     const [page, setPage] = useState(PAGE.UNSUBSCRIBE);
