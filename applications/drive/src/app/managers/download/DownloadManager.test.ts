@@ -41,7 +41,7 @@ const archiveGeneratorTracker = trackInstances(() => ({
 
 const fileSaverSaveAsFileMock = jest.fn();
 const loadCreateReadableStreamWrapperMock = jest.fn();
-const nodesStructureTraversalMock = jest.fn();
+const traverseNodeStructureMock = jest.fn();
 const hydrateAndCheckNodesMock = jest.fn();
 
 jest.mock('../../store/_downloads/fileSaver/fileSaver', () => ({
@@ -91,8 +91,8 @@ jest.mock('./ArchiveGenerator', () => ({
     default: archiveGeneratorTracker.Mock,
 }));
 
-jest.mock('./utils/nodesStructureTraversal', () => ({
-    nodesStructureTraversal: nodesStructureTraversalMock,
+jest.mock('./utils/traverseNodeStructure', () => ({
+    traverseNodeStructure: traverseNodeStructureMock,
 }));
 
 jest.mock('./utils/hydrateAndCheckNodes', () => ({
@@ -202,7 +202,7 @@ beforeEach(() => {
 
     loadCreateReadableStreamWrapperMock.mockReset();
     fileSaverSaveAsFileMock.mockReset();
-    nodesStructureTraversalMock.mockReset();
+    traverseNodeStructureMock.mockReset();
     hydrateAndCheckNodesMock.mockReset();
 
     schedulerTracker.reset();
@@ -288,13 +288,14 @@ describe('DownloadManager', () => {
 
         const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
         expect(activeDownloads.has('download-1')).toBe(true);
-        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
-            storageSize: nodeSize,
-        });
-
-        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
-            status: DownloadStatus.InProgress,
-        });
+        expect(storeMockState.updateDownloadItem).toHaveBeenNthCalledWith(
+            1,
+            'download-1',
+            expect.objectContaining({
+                storageSize: nodeSize,
+                status: DownloadStatus.InProgress,
+            })
+        );
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', { downloadedBytes: 64 });
 
         controllerCompletion.resolve();
@@ -310,9 +311,16 @@ describe('DownloadManager', () => {
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
             status: DownloadStatus.Finalizing,
         });
-        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('download-1', {
-            status: DownloadStatus.Finished,
-        });
+        await waitForCondition(() =>
+            storeMockState.updateDownloadItem.mock.calls.some(
+                ([id, update]: [string, Partial<{ status: (typeof DownloadStatus)[keyof typeof DownloadStatus] }>]) =>
+                    id === 'download-1' && update.status === DownloadStatus.Finished
+            )
+        );
+        expect(storeMockState.updateDownloadItem.mock.calls).toContainEqual([
+            'download-1',
+            expect.objectContaining({ status: DownloadStatus.Finished }),
+        ]);
         expect(activeDownloads.has('download-1')).toBe(false);
     });
 
@@ -385,10 +393,11 @@ describe('DownloadManager', () => {
         storeMockState.getQueueItem.mockReturnValueOnce(undefined);
 
         const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
-        nodesStructureTraversalMock.mockReturnValue({
+        traverseNodeStructureMock.mockResolvedValue({
             nodesQueue: { iterator: iteratorMock },
-            totalEncryptedSizePromise: Promise.resolve(0),
+            totalEncryptedSize: 0,
             parentPathByUid: new Map(nodes.map((node) => [node.uid, []])),
+            containsUnsupportedFile: false,
         });
 
         fileSaverSaveAsFileMock.mockResolvedValue(undefined);
@@ -401,16 +410,16 @@ describe('DownloadManager', () => {
         await manager.download(nodes.map((node) => node.uid));
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledTimes(1);
-        expect(nodesStructureTraversalMock).toHaveBeenCalledTimes(1);
-        expect(nodesStructureTraversalMock.mock.calls[0][0]).toEqual(nodes);
+        expect(traverseNodeStructureMock).toHaveBeenCalledTimes(1);
+        expect(traverseNodeStructureMock.mock.calls[0][0]).toEqual(nodes);
         expect(archiveStreamGeneratorTracker.instances).toHaveLength(1);
 
         manager.retry(['archive-retry']);
         await flushAsync();
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledTimes(1);
-        expect(nodesStructureTraversalMock).toHaveBeenCalledTimes(2);
-        expect(nodesStructureTraversalMock.mock.calls[1][0]).toEqual(nodes);
+        expect(traverseNodeStructureMock).toHaveBeenCalledTimes(2);
+        expect(traverseNodeStructureMock.mock.calls[1][0]).toEqual(nodes);
         expect(archiveStreamGeneratorTracker.instances).toHaveLength(2);
 
         archiveGeneratorTracker.restoreFactory();
@@ -429,13 +438,14 @@ describe('DownloadManager', () => {
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
         const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
-        const totalSizeDeferred = createDeferred<number>();
+        const traversalDeferred = createDeferred<{
+            nodesQueue: { iterator: typeof iteratorMock };
+            totalEncryptedSize: number;
+            parentPathByUid: Map<string, string[]>;
+            containsUnsupportedFile?: boolean;
+        }>();
         const parentPathByUid = new Map(nodes.map((node) => [node.uid, []]));
-        nodesStructureTraversalMock.mockReturnValue({
-            nodesQueue: { iterator: iteratorMock },
-            totalEncryptedSizePromise: totalSizeDeferred.promise,
-            parentPathByUid,
-        });
+        traverseNodeStructureMock.mockReturnValue(traversalDeferred.promise);
 
         const writeLinksDeferred = createDeferred<void>();
         archiveGeneratorTracker.setFactory(() => ({
@@ -449,10 +459,20 @@ describe('DownloadManager', () => {
 
         await manager.download(nodes.map((node) => node.uid));
 
-        expect(nodesStructureTraversalMock).toHaveBeenCalled();
-        const traversalArgs = nodesStructureTraversalMock.mock.calls[0];
+        expect(traverseNodeStructureMock).toHaveBeenCalled();
+        const traversalArgs = traverseNodeStructureMock.mock.calls[0];
         expect(traversalArgs[0]).toEqual(nodes);
         expect(traversalArgs[1]).toHaveProperty('aborted', false);
+
+        expect(archiveStreamGeneratorTracker.instances).toHaveLength(0);
+
+        traversalDeferred.resolve({
+            nodesQueue: { iterator: iteratorMock },
+            totalEncryptedSize: 4096,
+            parentPathByUid,
+            containsUnsupportedFile: false,
+        });
+        await flushAsync();
 
         const archiveInstance = getArchiveStreamGeneratorInstance();
         expect(archiveInstance.constructorArgs[0]).toBe(iteratorMock.mock.results[0].value);
@@ -468,18 +488,17 @@ describe('DownloadManager', () => {
 
         expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(
             'archive-stream',
-            {
+            expect.objectContaining({
                 filename: expect.stringMatching(/\.zip$/),
                 mimeType: 'application/zip',
-                size: undefined,
-            },
+                size: 4096,
+            }),
             expect.any(Function)
         );
 
         const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
         expect(activeDownloads.has('archive-id')).toBe(true);
 
-        totalSizeDeferred.resolve(4096);
         writeLinksDeferred.resolve();
         saveDeferred.resolve();
         await flushAsync(2);
@@ -500,9 +519,10 @@ describe('DownloadManager', () => {
                     id === 'archive-id' && update.status === DownloadStatus.Finished
             )
         );
-        expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('archive-id', {
-            status: DownloadStatus.Finished,
-        });
+        expect(storeMockState.updateDownloadItem.mock.calls).toContainEqual([
+            'archive-id',
+            expect.objectContaining({ status: DownloadStatus.Finished }),
+        ]);
         await waitForCondition(() => !activeDownloads.has('archive-id'));
 
         archiveGeneratorTracker.restoreFactory();
@@ -520,10 +540,11 @@ describe('DownloadManager', () => {
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
         const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
-        nodesStructureTraversalMock.mockReturnValue({
+        traverseNodeStructureMock.mockResolvedValue({
             nodesQueue: { iterator: iteratorMock },
-            totalEncryptedSizePromise: Promise.resolve(0),
+            totalEncryptedSize: 0,
             parentPathByUid: new Map(nodes.map((node) => [node.uid, []])),
+            containsUnsupportedFile: false,
         });
 
         const waitDeferred = createDeferred<void>();

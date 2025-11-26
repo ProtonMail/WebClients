@@ -4,6 +4,11 @@ import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/li
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 
+export const checkUnsupportedNode = (node: NodeEntity) => {
+    const mediaType = node.mediaType ?? '';
+    return isProtonDocsDocument(mediaType) || isProtonDocsSpreadsheet(mediaType);
+};
+
 export const hydrateAndCheckNodes = async (uids: string[]) => {
     const drive = getDrive();
     const nodes: NodeEntity[] = [];
@@ -11,8 +16,7 @@ export const hydrateAndCheckNodes = async (uids: string[]) => {
     for (const uid of uids) {
         const maybeNode = await drive.getNode(uid);
         const { node } = getNodeEntity(maybeNode);
-        const mediaType = node.mediaType ?? '';
-        if (isProtonDocsDocument(mediaType) || isProtonDocsSpreadsheet(mediaType)) {
+        if (checkUnsupportedNode(node)) {
             containsUnsupportedFile = true;
         } else {
             nodes.push(node);
