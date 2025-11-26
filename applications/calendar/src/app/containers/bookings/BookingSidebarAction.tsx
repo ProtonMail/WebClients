@@ -13,7 +13,7 @@ import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { useBookings } from './bookingsProvider/BookingsProvider';
 import { BookingsLimitReached } from './upsells/BookingsLimitReached';
 import { UpsellBookings } from './upsells/UpsellBookings';
-import { hasUserReachedBookingLimit } from './upsells/upsellHelpers';
+import { useBookingUpsell } from './upsells/useBookingUpsell';
 
 import './BookingSidebarAction.scss';
 
@@ -27,15 +27,16 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
     const [user] = useUser();
     const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
+    const { shouldShowLimitModal, loadingLimits } = useBookingUpsell();
     const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
     const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
 
     const handleBookingPage = () => {
-        const userReachedBookingLimit = hasUserReachedBookingLimit();
+        const userReachedBookingLimit = shouldShowLimitModal();
 
-        if (userReachedBookingLimit) {
+        if (userReachedBookingLimit.booking) {
             setLimitModalOpen(true);
-        } else if (!user.hasPaidMail) {
+        } else if (userReachedBookingLimit.plan) {
             setUpsellModalOpen(true);
         } else {
             openBookingSidebarCreation(utcDate);
@@ -62,7 +63,7 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
                             {c('Action').t`Create an event`}
                         </div>
                     </DropdownMenuButton>
-                    <DropdownMenuButton onClick={handleBookingPage} disabled={!canCreateBooking}>
+                    <DropdownMenuButton onClick={handleBookingPage} disabled={!canCreateBooking || loadingLimits}>
                         <div className="flex gap-8 items-center">
                             <div className="flex gap-2 items-center">
                                 <IcCalendarListCheck />
