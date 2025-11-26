@@ -14,7 +14,6 @@ import { createComponent } from '../utils'
 import { FormulaBar } from './FormulaBar'
 import {
   BorderSelectorContent,
-  ColorSelector,
   getStringifiedColor,
   TextHorizontalAlignSelectorContent,
   TextVerticalAlignSelectorContent,
@@ -27,6 +26,7 @@ import { InsertFormulaMenu } from '../shared/InsertFormulaMenu'
 import { MergeMenuItems } from '../shared/MergeMenuItems'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { EditingDisabledButton } from '../EditingDisabledButton'
+import { ColorPicker } from '../shared/ColorPicker'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {
   clientInvoker: EditorRequiresClientMethods
@@ -319,7 +319,7 @@ function TextColor() {
       />
       {mounted && (
         <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} className="p-2" render={<Ariakit.Popover />}>
-          <ColorSelector color={color} theme={theme} onChange={onChange} />
+          <ColorPicker selectedColor={color} onChange={onChange} />
         </Atoms.DropdownPopover>
       )}
     </Ariakit.PopoverProvider>
@@ -330,8 +330,6 @@ function FillColor() {
   const popover = Ariakit.usePopoverStore()
   const mounted = Ariakit.useStoreState(popover, 'mounted')
   const color = useUI((ui) => ui.format.backgroundColor.value)
-  const theme = useUI((ui) => ui.legacy.theme)
-  // const colorString = getStringifiedColor(color, theme)
   const onChange = useUI.$.format.backgroundColor.set
   return (
     <Ariakit.PopoverProvider store={popover}>
@@ -344,7 +342,7 @@ function FillColor() {
       />
       {mounted && (
         <Atoms.DropdownPopover {...Atoms.DROPDOWN_POPOVER_DEFAULTS} className="p-2" render={<Ariakit.Popover />}>
-          <ColorSelector color={color} theme={theme} onChange={onChange} />
+          <ColorPicker selectedColor={color} onChange={onChange} />
         </Atoms.DropdownPopover>
       )}
     </Ariakit.PopoverProvider>

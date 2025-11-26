@@ -1,7 +1,7 @@
-import { DeleteSheetConfirmation } from '@rowsncolumns/spreadsheet-state'
 import { SheetSearch } from './SheetSearch'
 import { InsertLinkDialog } from './InsertLink'
 import { useUI } from '../../ui-store'
+import { DeleteSheetDialog } from './DeleteSheet'
 
 export function Dialogs() {
   return (
@@ -19,8 +19,7 @@ export function Dialogs() {
         totalResults={useUI((ui) => ui.legacy.searchState.totalResults)}
         searchQuery={useUI((ui) => ui.legacy.searchState.searchQuery)}
       />
-      {/* All dialogs below are legacy and will be incrementally replaced */}
-      <DeleteSheetConfirmation onDeleteSheet={useUI((ui) => ui.legacy.onDeleteSheet)} />
+      <DeleteSheetDialog />
     </>
   )
 }
