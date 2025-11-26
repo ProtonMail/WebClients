@@ -18,7 +18,7 @@ import { CYCLE, PLANS, PLAN_NAMES, type Subscription, getSubscriptionPlanTitle }
 import { getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { APPS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNameText, selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
@@ -279,8 +279,7 @@ const PopoverCard = ({ card }: { card: CardProps }) => {
 const UnlimitedProductCards = ({ plansMap, freePlan }: { plansMap: PlansMap; freePlan: FreePlanDefault }) => {
     return (
         <>
-            <h4 className="mt-0 mb-3 text-center text-lg text-semibold">{c('Features')
-                .t`All premium ${BRAND_NAME} services`}</h4>
+            <h4 className="mt-0 mb-3 text-center text-lg text-semibold">{c('Features').t`4 more privacy services`}</h4>
             <ul className="unstyled m-0 flex flex-row gap-2">
                 {cards(plansMap, freePlan).map((card) => (
                     <PopoverCard key={card.name} card={card} />

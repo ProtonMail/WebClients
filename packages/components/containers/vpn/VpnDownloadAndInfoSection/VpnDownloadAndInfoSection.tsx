@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -11,6 +13,7 @@ import {
 import Loader from '@proton/components/components/loader/Loader';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { hasAnyPlusWithoutVPN, hasFree } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 
@@ -25,7 +28,7 @@ export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
-    const plan = PLANS.VPN2024;
+    const plan = hasAnyPlusWithoutVPN(subscription) ? PLANS.BUNDLE : PLANS.VPN2024;
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
@@ -53,12 +56,15 @@ export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
         </Button>
     );
 
-    const vpnPlus = PLAN_NAMES[plan];
-    const downloadsSubtitle = !user.canPay
-        ? null
-        : !subscription?.Plans
-          ? c('Title').jt`Connect to ${VPN_CONNECTIONS} devices at once with ${vpnPlus}. ${upgradeButton}`
-          : c('Title').t`Get the app on all your devices and protect up to ${VPN_CONNECTIONS} at one time.`;
+    let downloadsSubtitle: ReactNode;
+    if (user.canPay) {
+        const vpnPlusOrUnlimited = PLAN_NAMES[plan];
+        downloadsSubtitle =
+            hasFree(subscription) || hasAnyPlusWithoutVPN(subscription)
+                ? c('Title')
+                      .jt`Connect to ${VPN_CONNECTIONS} devices at once with ${vpnPlusOrUnlimited}. ${upgradeButton}`
+                : c('Title').t`Start protecting your devices with the ${VPN_APP_NAME} app.`;
+    }
 
     return (
         <DashboardGrid columns={2}>
