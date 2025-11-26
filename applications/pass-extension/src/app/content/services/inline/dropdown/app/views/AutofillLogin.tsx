@@ -73,7 +73,10 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
 
     useEffect(() => {
         if (visible) void resolveCandidates();
-        else setState(null);
+        else {
+            setState(null);
+            setFilterState('');
+        }
     }, [visible]);
 
     const dropdownItems = useMemo(
