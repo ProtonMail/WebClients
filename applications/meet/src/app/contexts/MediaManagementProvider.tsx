@@ -109,27 +109,32 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     };
 
     const initializeMicrophone = async (initialAudioState: boolean) => {
-        setAudioSessionType('auto');
+        try {
+            setAudioSessionType('auto');
 
-        // Always create and publish the track for faster unmuting
-        const audioConstraints = {
-            autoGainControl: true,
-            echoCancellation: true,
-            noiseSuppression: true,
-        };
+            // Always create and publish the track for faster unmuting
+            const audioConstraints = {
+                autoGainControl: true,
+                echoCancellation: true,
+                noiseSuppression: true,
+            };
 
-        await room.localParticipant.setMicrophoneEnabled(true, audioConstraints);
-        setAudioSessionType('play-and-record');
+            await room.localParticipant.setMicrophoneEnabled(true, audioConstraints);
+            setAudioSessionType('play-and-record');
 
-        // If starting muted, mute the track (keeps it published but silent)
-        if (!initialAudioState) {
-            const audioPublication = [...room.localParticipant.audioTrackPublications.values()].find(
-                (pub) => pub.kind === Track.Kind.Audio && pub.source !== Track.Source.ScreenShare
-            );
+            // If starting muted, mute the track (keeps it published but silent)
+            if (!initialAudioState) {
+                const audioPublication = [...room.localParticipant.audioTrackPublications.values()].find(
+                    (pub) => pub.kind === Track.Kind.Audio && pub.source !== Track.Source.ScreenShare
+                );
 
-            if (audioPublication?.track) {
-                await audioPublication.track.mute();
+                if (audioPublication?.track) {
+                    await audioPublication.track.mute();
+                }
             }
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
         }
     };
 
