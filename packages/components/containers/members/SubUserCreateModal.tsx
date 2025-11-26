@@ -34,14 +34,13 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     type APP_NAMES,
     BRAND_NAME,
@@ -119,8 +118,7 @@ const SubUserCreateModal = ({
 }: Props) => {
     const { createNotification } = useNotifications();
     const { stop, start } = useEventManager();
-    const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
     const dispatch = useDispatch();
     const [organizationKey] = useOrganizationKey();
     const storageSizeUnit = sizeUnits.GB;

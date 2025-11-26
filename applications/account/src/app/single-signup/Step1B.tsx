@@ -15,7 +15,6 @@ import {
     SkeletonLoader,
     Toggle,
     getCheckoutRenewNoticeTextFromCheckResult,
-    useApi,
     useModalState,
 } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
@@ -25,6 +24,7 @@ import {
     getProtectDevices,
     getStreaming,
 } from '@proton/components/containers/payments/features/vpn';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
@@ -62,7 +62,6 @@ import {
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
 import { PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
@@ -225,8 +224,7 @@ const Step1B = ({
     couponUrlParam: string | undefined;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
-    const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
     const { getPaymentsApi } = usePaymentsApi();
     const [toggleUpsell, setToggleUpsell] = useState<{ from: CYCLE; to: CYCLE } | undefined>(undefined);
     const accountDetailsRef = useRef<AccountStepDetailsRef>();

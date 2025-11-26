@@ -17,6 +17,7 @@ import { handleLogin, handleNextLogin } from '@proton/components/containers/logi
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+// eslint-disable-next-line no-restricted-imports
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';

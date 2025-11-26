@@ -26,14 +26,13 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
 import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -56,8 +55,7 @@ enum STEPS {
 const storageSizeUnit = sizeUnits.GB;
 
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
-    const normalApi = useApi();
-    const silentApi = getSilentApi(normalApi);
+    const silentApi = useSilentApi();
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
 

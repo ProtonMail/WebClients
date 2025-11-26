@@ -4,10 +4,10 @@ import { addressesThunk } from '@proton/account/addresses';
 import { domainsThunk } from '@proton/account/domains';
 import { syncDomain } from '@proton/account/domains/actions';
 import { convertExternalAddress } from '@proton/account/organizationKey/convertAddresses';
-import { StandardLoadErrorPage, useApi, useErrorHandler, useKTVerifier } from '@proton/components';
+import { StandardLoadErrorPage, useErrorHandler, useKTVerifier } from '@proton/components';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { claimOrphanDomain } from '@proton/shared/lib/api/partner';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ADDRESS_TYPE, APPS } from '@proton/shared/lib/constants';
@@ -18,8 +18,7 @@ import noop from '@proton/utils/noop';
 import AccountLoaderPage from '../content/AccountLoaderPage';
 
 const PartnerClaimContainer = () => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const dispatch = useDispatch();
     const errorHandler = useErrorHandler();
     const createKtVerifier = useKTVerifier();

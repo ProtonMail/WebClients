@@ -12,17 +12,16 @@ import Modal, { type ModalProps } from '@proton/components/components/modalTwo/M
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import InputField from '@proton/components/components/v2/field/InputField';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import metrics from '@proton/metrics';
 import observeApiError from '@proton/metrics/lib/observeApiError';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
@@ -32,7 +31,7 @@ const SignInWithAnotherDeviceModal = (props: Props) => {
     const [qrCodeData, setQrCodeData] = useState('');
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit, reset } = useFormErrors();
-    const api = useApi();
+    const silentApi = useSilentApi();
     const handleError = useErrorHandler();
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
@@ -46,7 +45,7 @@ const SignInWithAnotherDeviceModal = (props: Props) => {
     const handleSubmit = async () => {
         try {
             await signInWithAnotherDevicePush({
-                api: getSilentApi(api),
+                api: silentApi,
                 qrCodePayload: deserializeQrCodePayload(qrCodeData),
                 keyPassword: authentication.getPassword(),
             });

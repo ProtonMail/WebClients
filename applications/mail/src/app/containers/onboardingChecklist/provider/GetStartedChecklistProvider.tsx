@@ -5,9 +5,9 @@ import { fromUnixTime } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useApi, useEventManager } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { seenCompletedChecklist, updateChecklistDisplay, updateChecklistItem } from '@proton/shared/lib/api/checklist';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     CHECKLIST_DISPLAY_TYPE,
     type ChecklistApiResponse,
@@ -66,7 +66,7 @@ export const useGetStartedChecklist = () => {
 
 const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const api = useApi();
-    const silentApi = getSilentApi(api);
+    const silentApi = useSilentApi();
     const { call } = useEventManager();
     const [user] = useUser();
     const [submitting, withSubmitting] = useLoading();
