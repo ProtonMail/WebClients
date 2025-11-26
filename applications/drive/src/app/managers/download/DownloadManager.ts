@@ -19,7 +19,7 @@ import type { DownloadQueueTaskHandle } from './downloadTypes';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { hydrateAndCheckNodes } from './utils/hydrateAndCheckNodes';
-import { nodesStructureTraversal } from './utils/nodesStructureTraversal';
+import { traverseNodeStructure } from './utils/traverseNodeStructure';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
 
@@ -120,7 +120,7 @@ export class DownloadManager {
             this.requestedDownloads.set(downloadId, nodes);
             // While the single file can be immediately queued and scheduled, the archive first needs to be traversed
             // then one by one all "discovered" files get scheduled for download
-            this.scheduleArchiveDownload(downloadId, nodes);
+            void this.scheduleArchiveDownload(downloadId, nodes);
         }
         downloadLogDebug('Queue download', {
             downloadId,
@@ -146,19 +146,18 @@ export class DownloadManager {
         const abortController = new AbortController();
         let fileDownloader: FileDownloader;
         let completionPromise: Promise<void>;
+        let currentDownloadedBytes = 0;
 
         try {
             fileDownloader = await drive.getFileDownloader(node.uid, abortController.signal);
-            const claimedSize = fileDownloader.getClaimedSizeInBytes();
-            updateDownloadItem(downloadId, { storageSize: claimedSize });
-            updateDownloadItem(downloadId, {
-                status: DownloadStatus.InProgress,
-            });
+            const storageSize = getNodeStorageSize(node);
+            updateDownloadItem(downloadId, { storageSize: storageSize, status: DownloadStatus.InProgress });
 
             const { readable, writable } = new TransformStream<Uint8Array<ArrayBuffer>>();
             const streamWrapperPromise = loadCreateReadableStreamWrapper(readable);
 
             const controller = fileDownloader.downloadToStream(writable, (downloadedBytes) => {
+                currentDownloadedBytes = downloadedBytes;
                 updateDownloadItem(downloadId, { downloadedBytes });
                 this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
             });
@@ -186,7 +185,10 @@ export class DownloadManager {
 
             completionPromise = Promise.all([controllerCompletion, savePromise])
                 .then(() => {
-                    updateDownloadItem(downloadId, { status: DownloadStatus.Finished });
+                    // At the moment images storageSize mistakenly includes the thumbnail, to avoid progress showing <100%
+                    // we force the downloaded size to match the storage size until this is fixed
+                    updateDownloadItem(downloadId, { status: DownloadStatus.Finished, downloadedBytes: storageSize });
+                    downloadLogDebug('Completed download', { downloadId, currentDownloadedBytes, storageSize });
                 })
                 .catch((error) => {
                     const existing = getQueueItem(downloadId);
@@ -203,53 +205,55 @@ export class DownloadManager {
                     this.activeDownloads.delete(downloadId);
                 });
         } catch (error) {
-            const errorToHandle = error instanceof Error ? error : new Error('Unexpected Download Error');
-            updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: error });
-            sendErrorReport(
-                new EnrichedError(errorToHandle.message, {
-                    tags: {
-                        component: 'download-manager',
-                    },
-                    extra: {
-                        filesTypes: getFileExtension(node.name),
-                        storageSize: getNodeStorageSize(node),
-                    },
-                })
-            );
-            completionPromise = Promise.reject(errorToHandle);
+            this.handleError(error, downloadId, [node]);
+            completionPromise = Promise.reject(error);
         }
 
         return { completion: completionPromise };
     }
 
-    private scheduleArchiveDownload(downloadId: string, nodes: NodeEntity[]): void {
+    private async scheduleArchiveDownload(downloadId: string, nodes: NodeEntity[]): Promise<void> {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
         const queueItem = getQueueItem(downloadId);
         const archiveName = queueItem?.name ?? this.getArchiveName(nodes);
-        let archiveSizeInBytes = 0;
+        let currentDownloadedBytes = 0;
 
         const abortController = new AbortController();
 
+        const handleArchiveError = (error: unknown) => {
+            const existing = getQueueItem(downloadId);
+            if (!existing) {
+                return;
+            }
+            if (
+                existing.status === DownloadStatus.Cancelled ||
+                abortController.signal.aborted ||
+                error instanceof AbortError
+            ) {
+                updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
+            } else {
+                this.handleError(error, downloadId, nodes);
+            }
+        };
+
         try {
             // Traversing all folders to get the node entities + parentPath
-            const { nodesQueue, totalEncryptedSizePromise, parentPathByUid } = nodesStructureTraversal(
-                nodes,
-                abortController.signal
-            );
+            const { nodesQueue, totalEncryptedSize, parentPathByUid, containsUnsupportedFile } =
+                await traverseNodeStructure(nodes, abortController.signal);
 
-            // We can only know the full size of the archive after traversing all nodes
-            void totalEncryptedSizePromise.then((totalSize) => {
-                updateDownloadItem(downloadId, { storageSize: totalSize });
-                archiveSizeInBytes = totalSize;
-            });
-            updateDownloadItem(downloadId, { status: DownloadStatus.InProgress });
+            // Traversal is completed at this point so the size is known and the queue is closed
+            updateDownloadItem(downloadId, { storageSize: totalEncryptedSize, status: DownloadStatus.InProgress });
+            if (containsUnsupportedFile) {
+                updateDownloadItem(downloadId, { unsupportedFileDetected: 'detected' });
+            }
 
             const updateProgress = (downloadedBytes: number) => {
                 updateDownloadItem(downloadId, { downloadedBytes });
+                this.scheduler.updateDownloadProgress(downloadId, downloadedBytes);
+                currentDownloadedBytes = downloadedBytes;
             };
 
-            // While the traversal is happening the nodesQueue is populated with entities to archive
-            // and passed to the ArchiveStreamGenerator that will create archive and update download progress
+            // Traversal already populated and closed the queue; pass it to the generator to build the archive
             const archiveStreamGenerator = new ArchiveStreamGenerator(
                 nodesQueue.iterator(),
                 updateProgress,
@@ -276,7 +280,7 @@ export class DownloadManager {
                     {
                         filename: archiveName,
                         mimeType: 'application/zip',
-                        size: archiveSizeInBytes > 0 ? archiveSizeInBytes : undefined,
+                        size: totalEncryptedSize > 0 ? totalEncryptedSize : undefined,
                     },
                     log
                 );
@@ -286,12 +290,10 @@ export class DownloadManager {
 
             const savingPromise = archiveStreamGenerator.waitForFirstItem().then(() => startArchiveSaving());
 
-            const combinedCompletion = Promise.all([totalEncryptedSizePromise, savingPromise]);
-
             const controllerProxy: DownloadController = {
                 pause: () => trackerController.pause(),
                 resume: () => trackerController.resume(),
-                completion: () => combinedCompletion.then(() => {}),
+                completion: () => savingPromise.then(() => {}),
             };
 
             this.activeDownloads.set(downloadId, {
@@ -299,45 +301,43 @@ export class DownloadManager {
                 abortController,
             });
 
-            combinedCompletion
+            savingPromise
                 .then(() => {
-                    updateDownloadItem(downloadId, { status: DownloadStatus.Finished });
-                    downloadLogDebug('Completed download', { downloadId });
+                    // At the moment images storageSize mistakenly includes the thumbnail, to avoid progress showing <100%
+                    // we force the downloaded size to match the storage size until this is fixed
+                    updateDownloadItem(downloadId, {
+                        status: DownloadStatus.Finished,
+                        downloadedBytes: totalEncryptedSize,
+                    });
+                    downloadLogDebug('Completed download', { downloadId, currentDownloadedBytes, totalEncryptedSize });
                 })
                 .catch((error) => {
-                    const existing = getQueueItem(downloadId);
-                    if (!existing) {
-                        return;
-                    }
-                    if (
-                        existing.status === DownloadStatus.Cancelled ||
-                        abortController.signal.aborted ||
-                        error instanceof AbortError
-                    ) {
-                        updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
-                    } else {
-                        this.activeDownloads.delete(downloadId);
-                        throw error;
-                    }
+                    handleArchiveError(error);
                 })
                 .finally(() => {
                     this.activeDownloads.delete(downloadId);
                 });
         } catch (error) {
-            const errorToHandle = error instanceof Error ? error : new Error('Unexpected Download Error');
-            updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: error });
-            sendErrorReport(
-                new EnrichedError(errorToHandle.message, {
-                    tags: {
-                        component: 'download-manager',
-                    },
-                    extra: {
-                        filesTypes: nodes.map((f) => getFileExtension(f.name)),
-                        archiveSizeInBytes,
-                    },
-                })
-            );
+            handleArchiveError(error);
         }
+    }
+
+    private handleError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
+        const { updateDownloadItem } = useDownloadManagerStore.getState();
+        const errorToHandle = error instanceof Error ? error : new Error('Unexpected Download Error');
+        updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: errorToHandle });
+
+        sendErrorReport(
+            new EnrichedError(errorToHandle.message, {
+                tags: {
+                    component: 'download-manager',
+                },
+                extra: {
+                    filesTypes: nodes.map((f) => getFileExtension(f.name)),
+                    storageSize: nodes.reduce((acc, node) => getNodeStorageSize(node) + acc, 0),
+                },
+            })
+        );
     }
 
     private getArchiveName(nodes: NodeEntity[]): string {

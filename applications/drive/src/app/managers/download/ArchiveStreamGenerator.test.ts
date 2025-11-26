@@ -72,13 +72,15 @@ describe('ArchiveStreamGenerator', () => {
             completion: jest.fn(() => downloadControllerDeferred.promise),
         };
 
+        let progressCallback: ((bytes: number) => void) | undefined;
         const downloadToStream = jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
-            onProgress(512);
+            progressCallback = onProgress;
             return downloadController;
         });
 
         const getFileDownloader = jest.fn(async (_uid: string, _signal: AbortSignal) => ({
             downloadToStream,
+            getClaimedSizeInBytes: jest.fn(() => 1024),
         }));
 
         getDriveMock.mockImplementation(() => ({
@@ -118,10 +120,16 @@ describe('ArchiveStreamGenerator', () => {
         expect(value?.isFile).toBe(true);
         expect(value?.name).toBe(node.name);
         expect(value?.parentPath).toEqual(['folder']);
+        expect(value?.claimedSize).toBe(1024);
 
         expect(getFileDownloader).toHaveBeenCalledWith(node.uid, abortController.signal);
         expect(downloadToStream).toHaveBeenCalledTimes(1);
-        expect(progressSpy).toHaveBeenCalledWith(512);
+
+        progressCallback?.(512);
+        expect(progressSpy).toHaveBeenCalledWith(512, 1024);
+
+        progressCallback?.(256);
+        expect(progressSpy).toHaveBeenLastCalledWith(256, 1024);
 
         generatorInstance.controller.pause();
         expect(downloadController.pause).toHaveBeenCalled();
@@ -196,6 +204,7 @@ describe('ArchiveStreamGenerator', () => {
         getDriveMock.mockImplementation(() => ({
             getFileDownloader: jest.fn(async () => ({
                 downloadToStream,
+                getClaimedSizeInBytes: jest.fn(() => 1024),
             })),
         }));
 
