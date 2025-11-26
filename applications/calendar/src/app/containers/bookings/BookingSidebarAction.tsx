@@ -11,7 +11,9 @@ import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { useBookings } from './bookingsProvider/BookingsProvider';
+import { BookingsLimitReached } from './upsells/BookingsLimitReached';
 import { UpsellBookings } from './upsells/UpsellBookings';
+import { hasUserReachedBookingLimit } from './upsells/upsellHelpers';
 
 import './BookingSidebarAction.scss';
 
@@ -25,15 +27,19 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
     const [user] = useUser();
     const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
-    const [modalProps, setModalOpen, renderModal] = useModalState();
+    const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
+    const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
 
     const handleBookingPage = () => {
-        if (!user.hasPaidMail) {
-            setModalOpen(true);
-            return;
-        }
+        const userReachedBookingLimit = hasUserReachedBookingLimit();
 
-        openBookingSidebarCreation(utcDate);
+        if (userReachedBookingLimit) {
+            setLimitModalOpen(true);
+        } else if (!user.hasPaidMail) {
+            setUpsellModalOpen(true);
+        } else {
+            openBookingSidebarCreation(utcDate);
+        }
     };
 
     return (
@@ -67,7 +73,8 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
                     </DropdownMenuButton>
                 </DropdownMenu>
             </SimpleDropdown>
-            {renderModal && <UpsellBookings {...modalProps} />}
+            {renderUpsellModal && <UpsellBookings {...upsellModalProps} />}
+            {renderLimitModal && <BookingsLimitReached {...limitModalProps} />}
         </>
     );
 };
