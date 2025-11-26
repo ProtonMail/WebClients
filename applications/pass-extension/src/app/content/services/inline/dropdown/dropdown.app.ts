@@ -210,7 +210,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
              * target form exists in the top frame and contains no iframes, we can
              * safely mark this as a same-frame operation. */
             const form = ctx?.service.formManager.getFormById(payload.formId);
-            if (form && !form.element.querySelector('iframe')) payload.crossFrame = false;
+            if (form && !form.hasFrameFields()) payload.crossFrame = false;
         }
 
         return payload;
