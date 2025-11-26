@@ -9,6 +9,7 @@ import {
     buttonSelector,
     getCCFieldType,
     getIdentityFieldType,
+    isIFrameField,
     isIgnored,
     isVisibleForm,
     removeClassifierFlags,
@@ -52,6 +53,7 @@ export interface FormHandle {
     getFieldById: (fieldId: string) => Maybe<FieldHandle>;
     getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     getFieldsFor: <T extends FieldType>(type: T, predicate?: (handle: FieldHandle) => boolean) => FieldHandle<T>[];
+    hasFrameFields: () => boolean;
     reconciliate: (type: FormType, fields: DetectedField[]) => void;
 }
 
@@ -258,6 +260,14 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                 fields: formHandle.getFields().map(prop('element')),
             });
         }),
+
+        hasFrameFields: () => {
+            for (const iframe of form.querySelectorAll('iframe')) {
+                if (isIFrameField(iframe)) return true;
+            }
+
+            return false;
+        },
     };
 
     /**

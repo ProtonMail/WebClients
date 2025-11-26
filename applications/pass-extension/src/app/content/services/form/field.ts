@@ -1,4 +1,4 @@
-import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
+import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { AutofillOptions } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
 import { createAutofill } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
@@ -11,7 +11,6 @@ import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import { isVisible } from '@proton/pass/fathom';
 import type { FieldType, FormType } from '@proton/pass/fathom/labels';
-import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
@@ -22,7 +21,7 @@ import noop from '@proton/utils/noop';
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
 import type { FieldTracker } from './field.tracker';
 import { createFieldTracker } from './field.tracker';
-import { createElementTrap } from './field.utils';
+import { createElementTrap, validateAction } from './field.utils';
 import type { FormHandle } from './form';
 import type { FormTracker } from './form.tracker';
 
@@ -80,25 +79,6 @@ export type FieldHandle<T extends FieldType = FieldType> = Extract<
     { fieldType: T }
 >;
 
-const canProcessAction = withContext<(action: DropdownAction) => boolean>((ctx, action) => {
-    const features = ctx?.getFeatures();
-    const settings = ctx?.getSettings();
-    const autofillEnabled = settings?.autofill && enableLoginAutofill(settings.autofill);
-
-    switch (action) {
-        case DropdownAction.AUTOFILL_LOGIN:
-            return Boolean(features?.Autofill && (settings?.autofill.login ?? autofillEnabled));
-        case DropdownAction.AUTOFILL_IDENTITY:
-            return Boolean(features?.Autofill && (settings?.autofill.identity ?? autofillEnabled));
-        case DropdownAction.AUTOSUGGEST_ALIAS:
-            return features?.AutosuggestAlias ?? false;
-        case DropdownAction.AUTOSUGGEST_PASSWORD:
-            return features?.AutosuggestPassword ?? false;
-        case DropdownAction.AUTOFILL_CC:
-            return Boolean(features?.CreditCard);
-    }
-});
-
 export const createFieldHandles = ({
     element,
     fieldType,
@@ -145,7 +125,7 @@ export const createFieldHandles = ({
 
         setAction: (action) => {
             if (!action) field.action = null;
-            else field.action = canProcessAction(action.type) ? action : null;
+            else field.action = validateAction(field, action.type) ? action : null;
         },
 
         /* if the field is already focused we need to re-dispatch the event on the input
@@ -249,7 +229,7 @@ export const createFieldHandles = ({
         sync: () => {
             /** If settings or feature flags have changed, this field's action may
              * have been invalidated. As such, reset the action and detach icon */
-            if (field.action && !canProcessAction(field.action.type)) {
+            if (field.action && !validateAction(field, field.action.type)) {
                 field.action = null;
                 field.icon?.detach();
                 return;
