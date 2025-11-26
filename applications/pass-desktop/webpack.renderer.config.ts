@@ -5,7 +5,7 @@ import type { Configuration } from 'webpack';
 
 import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
 import getCssLoaders from '@proton/pack/webpack/css.loader';
-import { getJsLoaders } from '@proton/pack/webpack/js.loader.swc';
+import { getJsLoaders } from '@proton/pack/webpack/js.loader';
 
 import { webpackOptions } from './webpack.options';
 import plugins from './webpack.plugins';
@@ -40,7 +40,7 @@ const config: Configuration = {
         strictExportPresence: true,
         rules: [
             ...getJsLoaders({ ...webpackOptions, hasReactRefresh: false }),
-            ...getCssLoaders({ browserslist: undefined, logical: false }),
+            ...getCssLoaders({ browserslist: undefined, logical: false, webpackOnCaffeine: false }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],
     },
