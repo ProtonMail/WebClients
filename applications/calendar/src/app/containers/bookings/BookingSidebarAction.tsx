@@ -10,8 +10,8 @@ import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
 import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
-import { UpsellBookings } from './UpsellBookings';
 import { useBookings } from './bookingsProvider/BookingsProvider';
+import { UpsellBookings } from './upsells/UpsellBookings';
 
 import './BookingSidebarAction.scss';
 

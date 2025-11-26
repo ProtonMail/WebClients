@@ -11,12 +11,12 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
-import { UpsellBookings } from '../../bookings/UpsellBookings';
 import { useBookings } from '../../bookings/bookingsProvider/BookingsProvider';
 import {
     IntroduceBookingsSpotlightContent,
     useIntroduceBookingsSpotlight,
 } from '../../bookings/spotlight/IntroduceBookingsSpotlight';
+import { UpsellBookings } from '../../bookings/upsells/UpsellBookings';
 import { BookingItem } from './BookingsItem';
 
 interface Props {
