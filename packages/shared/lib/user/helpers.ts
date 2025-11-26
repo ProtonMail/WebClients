@@ -18,6 +18,7 @@ export const hasPaidPass = (user: User) =>
     hasBit(user.Subscribed, PRODUCT_BIT.PASS) || hasPassLifetime(user) || hasPassViaSimpleLogin(user);
 export const hasPassLifetimeOrViaSimpleLogin = (user: User) => hasPassLifetime(user) || hasPassViaSimpleLogin(user);
 export const hasPaidLumo = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.LUMO);
+export const hasPaidMeet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.MEET);
 export const isPaid = (user: User) => !!user.Subscribed;
 export const isPrivate = (user: User) => user.Private === 1;
 export const isFree = (user: User) => !isPaid(user);
@@ -42,6 +43,7 @@ export const getInfo = (User: User): UserInfo => {
         hasPaidDrive: hasPaidDrive(User),
         hasPaidPass: hasPaidPass(User),
         hasPaidLumo: hasPaidLumo(User),
+        hasPaidMeet: hasPaidMeet(User),
         hasPassLifetime: hasPassLifetime(User),
         accessType: getAccessType(User),
         canPay: canPay(User),

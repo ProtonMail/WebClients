@@ -136,6 +136,7 @@ export interface UserInfo {
     hasPaidDrive: boolean;
     hasPaidPass: boolean;
     hasPaidLumo: boolean;
+    hasPaidMeet: boolean;
     hasPassLifetime: boolean;
     canPay: boolean;
     accessType: AccessType;
