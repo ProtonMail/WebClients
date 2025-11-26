@@ -1,7 +1,8 @@
 import type { ElementType } from 'react';
 
-import type { PolymorphicPropsWithoutRef } from 'packages/react-polymorphic-types';
 import tinycolor from 'tinycolor2';
+
+import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 
 import { getAccentColorForUsername } from './getAccentColorForUsername';
 

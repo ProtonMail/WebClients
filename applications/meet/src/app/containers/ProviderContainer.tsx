@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import type { App } from '@proton-meet/proton-meet-core';
-import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -15,6 +14,7 @@ import AuthenticationProvider from '@proton/components/containers/authentication
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { FlagProvider } from '@proton/unleash';

@@ -1,14 +1,13 @@
-import type { CommentType } from 'packages/docs-shared/lib/CommentType'
+import type { CommentType } from '@proton/docs-shared/lib/CommentType'
 import type { HttpHeaders } from '../Types/HttpHeaders'
-import type { CommentThreadType } from 'packages/docs-shared/lib/CommentThreadType'
+import type { CommentThreadType } from '@proton/docs-shared/lib/CommentThreadType'
 import type { CreateThreadResponse } from '../Types/CreateThreadResponse'
 import type { ApiResult } from '@proton/docs-shared'
 import { DocsApiPrivateRouteBuilder } from '../Routes/DocsApiPrivateRouteBuilder'
 import { DocsApiPublicRouteBuilder } from '../Routes/DocsApiPublicRouteBuilder'
 import type { RouteExecutor } from '../RouteExecutor'
 import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import type { PublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
-import { isPublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
+import { type PublicDocumentEntitlements, isPublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
 
 export type CreateThreadDTO = {
   markId: string

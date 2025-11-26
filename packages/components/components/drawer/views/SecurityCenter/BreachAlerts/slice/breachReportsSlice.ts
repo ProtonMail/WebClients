@@ -1,6 +1,6 @@
 // TODO: until design and api changes are made this slice is no longer being used. Data fetching is in BreachAlertsSecurityCenter component.
 // import { createSlice } from '@reduxjs/toolkit';
-// import type { ModelState, UserState } from 'packages/account';
+// import type { ModelState, UserState } from '@proton/account';
 
 // import { FetchedBreaches } from '@proton/components/containers/credentialLeak/CredentialLeakSection';
 // import { toCamelCase } from '@proton/components/containers/credentialLeak/helpers';

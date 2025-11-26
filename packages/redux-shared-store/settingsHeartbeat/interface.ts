@@ -1,5 +1,3 @@
-import type { CategoriesState, MailSettingState } from 'packages/mail';
-
 import type {
     AddressKeysState,
     OrganizationKeyState,
@@ -9,6 +7,7 @@ import type {
     UserKeysState,
     UserSettingsState,
 } from '@proton/account';
+import type { CategoriesState, MailSettingState } from '@proton/mail';
 
 export interface RequiredState
     extends AddressKeysState,

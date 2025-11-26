@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 
 import type { Action, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
-import type { SessionKey } from 'packages/crypto';
 import type { ThunkAction } from 'redux-thunk';
 
 import { addressKeysThunk } from '@proton/account/addressKeys';
 import { addressesThunk } from '@proton/account/addresses';
+import type { SessionKey } from '@proton/crypto';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
