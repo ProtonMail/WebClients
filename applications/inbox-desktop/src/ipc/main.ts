@@ -1,6 +1,6 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
-import { cachedLatestVersion } from "../update";
+import { cachedLatestVersion } from "../update/update";
 import type {
     IPCInboxClientUpdateMessage,
     IPCInboxGetInfoMessage,
