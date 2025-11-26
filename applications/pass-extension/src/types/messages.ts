@@ -142,9 +142,10 @@ export enum WorkerMessageType {
     INLINE_ICON_SHIFT = 'INLINE_ICON_SHIFT',
     INLINE_ICON_ATTACHED = 'INLINE_ICON_ATTACHED',
 
+    FRAME_FIELD_LOCK = 'FRAME_FIELD_LOCK',
+    FRAME_FORMS_QUERY = 'FRAME_FORMS_QUERY',
     FRAME_QUERY = 'FRAME_QUERY',
     FRAME_VISIBILITY = 'FRAME_VISIBILITY',
-    FRAME_FORMS_QUERY = 'FRAME_FORMS_QUERY',
 
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
@@ -232,9 +233,10 @@ export type FormStatusMessage = WithPayload<WorkerMessageType.FORM_STATUS, FormS
 export type FileTransferWriteMessage = WithPayload<WorkerMessageType.FS_WRITE, FileTransferWriteDTO>;
 export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, FileTransferErrorDTO>;
 
+export type FrameFieldLockMessage = WithPayload<WorkerMessageType.FRAME_FIELD_LOCK, FrameField & { locked: boolean }>;
+export type FrameFormsQueryMessage = { type: WorkerMessageType.FRAME_FORMS_QUERY };
 export type FrameQueryMessage = WithPayload<WorkerMessageType.FRAME_QUERY, FrameQueryDTO>;
 export type FrameVisibilityMessage = WithPayload<WorkerMessageType.FRAME_VISIBILITY, FrameAttributes>;
-export type FrameFormsQueryMessage = { type: WorkerMessageType.FRAME_FORMS_QUERY };
 
 export type InlineDropdownAttachMessage = { type: WorkerMessageType.INLINE_DROPDOWN_ATTACH };
 export type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
@@ -321,9 +323,10 @@ export type WorkerMessage =
     | FormEntryStageMessage
     | FormEntryStashMessage
     | FormStatusMessage
+    | FrameFieldLockMessage
+    | FrameFormsQueryMessage
     | FrameQueryMessage
     | FrameVisibilityMessage
-    | FrameFormsQueryMessage
     | InlineDropdownAttachMessage
     | InlineDropdownClosedMessage
     | InlineDropdownCloseMessage
@@ -397,9 +400,10 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
+    [WorkerMessageType.FRAME_FIELD_LOCK]: { wasFocused: boolean };
+    [WorkerMessageType.FRAME_FORMS_QUERY]: FrameFormsResult;
     [WorkerMessageType.FRAME_QUERY]: FrameQueryResult;
     [WorkerMessageType.FRAME_VISIBILITY]: FrameCheckResult;
-    [WorkerMessageType.FRAME_FORMS_QUERY]: FrameFormsResult;
     [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
     [WorkerMessageType.INLINE_ICON_SHIFT]: IconShiftResult;
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };

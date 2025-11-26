@@ -274,6 +274,22 @@ export const createInlineService = () => {
         })
     );
 
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.FRAME_FIELD_LOCK,
+        withSender(async ({ payload }, tabId) => {
+            const res = await sendTabMessage(
+                backgroundMessage({
+                    type: WorkerMessageType.FRAME_FIELD_LOCK,
+                    payload,
+                }),
+                { tabId, frameId: payload.frameId }
+            );
+
+            if (!res) throw new Error('No responder');
+            return res;
+        })
+    );
+
     return { getTabFrames, queryFrame, getFrameCoords };
 };
 
