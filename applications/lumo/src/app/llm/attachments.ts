@@ -1,3 +1,5 @@
+import partition from 'lodash/partition';
+
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { AesGcmCryptoKey } from '../crypto/types';
@@ -5,9 +7,34 @@ import { DbApi } from '../indexedDb/db';
 import { deserializeAttachment } from '../serialization';
 import type { Attachment, Message } from '../types';
 
+// Supported image MIME types
+const IMAGE_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+
+/**
+ * Check if an attachment is an image based on its MIME type
+ */
+export function isImageAttachment(attachment: Attachment): boolean {
+    return IMAGE_MIME_TYPES.some((type) => attachment.mimeType?.startsWith(type));
+}
+
+/**
+ * Separate attachments into images and text/document files
+ */
+export function separateAttachmentsByType(attachments: Attachment[]): {
+    imageAttachments: Attachment[];
+    textAttachments: Attachment[];
+} {
+    const [imageAttachments, textAttachments] = partition(attachments, isImageAttachment);
+    return { imageAttachments, textAttachments };
+}
+
 // Generates a multiline string for the LLM (the "context") that represents the aggregated contents of the attachments.
+// Note: Images are excluded and should be sent as WireImage instead.
 export function flattenAttachmentsForLlm(attachments: Attachment[]) {
-    const contextLines = attachments.flatMap((a) => {
+    // Filter out images - they will be sent separately as WireImage objects
+    const { textAttachments } = separateAttachmentsByType(attachments);
+
+    const contextLines = textAttachments.flatMap((a) => {
         let content: string | undefined;
         if (a.markdown) {
             content = (a as Attachment)?.markdown?.trim() ?? '';
@@ -31,7 +58,7 @@ export function flattenAttachmentsForLlm(attachments: Attachment[]) {
     });
 
     if (contextLines.length > 0) {
-        const fileCount = attachments.filter((a) => a.markdown || a.error).length;
+        const fileCount = textAttachments.filter((a) => a.markdown || a.error).length;
         const fileCountText = fileCount === 1 ? '1 file' : `${fileCount} files`;
 
         return [
