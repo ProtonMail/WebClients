@@ -153,6 +153,8 @@ export function LegacyToolbar({ state, downloadLogs, isReadonly }: LegacyToolbar
               color,
             })
           }}
+          userDefinedColors={state.userDefinedColors}
+          onAddUserDefinedColor={state.onAddUserDefinedColor}
         />
         <ToolbarSeparator />
         <BackgroundColorSelector
@@ -161,6 +163,8 @@ export function LegacyToolbar({ state, downloadLogs, isReadonly }: LegacyToolbar
           onChange={(color) => {
             state.onChangeFormatting(state.activeSheetId, state.activeCell, state.selections, 'backgroundColor', color)
           }}
+          userDefinedColors={state.userDefinedColors}
+          onAddUserDefinedColor={state.onAddUserDefinedColor}
         />
 
         <BorderSelector
