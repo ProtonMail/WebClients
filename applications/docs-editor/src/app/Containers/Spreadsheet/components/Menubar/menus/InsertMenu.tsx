@@ -24,7 +24,7 @@ export function InsertMenu({ renderMenuButton, ...props }: InsertMenuProps) {
         <Sheet />
         <UI.MenuSeparator />
         <Chart />
-        <ImageSubmenu />
+        {/* <ImageSubmenu /> */}
         <UI.MenuSeparator />
         <FunctionSubmenu />
         <Link />
@@ -149,19 +149,20 @@ function Chart() {
   )
 }
 
-function ImageSubmenu() {
-  return (
-    <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="image" />} disabled={useUI((ui) => ui.info.isReadonly)}>
-        {s('Image')}
-      </UI.SubMenuButton>
-      <UI.SubMenu>
-        {/* TODO: waiting for design */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
-      </UI.SubMenu>
-    </Ariakit.MenuProvider>
-  )
-}
+// https://protonag.atlassian.net/browse/REALTIME-33
+// function ImageSubmenu() {
+//   return (
+//     <Ariakit.MenuProvider>
+//       <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="image" />} disabled={useUI((ui) => ui.info.isReadonly)}>
+//         {s('Image')}
+//       </UI.SubMenuButton>
+//       <UI.SubMenu>
+//         {/* TODO: waiting for design */}
+//         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
+//       </UI.SubMenu>
+//     </Ariakit.MenuProvider>
+//   )
+// }
 
 function FunctionSubmenu() {
   return (
