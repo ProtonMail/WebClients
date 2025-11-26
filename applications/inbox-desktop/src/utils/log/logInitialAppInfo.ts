@@ -1,7 +1,7 @@
 import { app } from "electron";
 import { mainLogger } from ".";
 import { DESKTOP_FEATURES } from "../../ipc/ipcConstants";
-import { isLinux, isMac, isSnap, isWindows, snapRevision } from "../helpers";
+import { getOSVersion, isLinux, isMac, isSnap, isWindows, snapRevision } from "../helpers";
 import pkg from "../../../package.json";
 
 export function logInitialAppInfo() {
@@ -18,6 +18,8 @@ export function logInitialAppInfo() {
         snapRevision,
         "version:",
         app.getVersion(),
+        "osVersion:",
+        getOSVersion(),
         "params",
         process.argv,
     );
