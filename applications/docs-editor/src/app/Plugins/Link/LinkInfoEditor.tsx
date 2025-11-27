@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { LinkNode } from '@lexical/link'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import { createPortal } from 'react-dom'
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
 import { Icon } from '@proton/components'
 import { mergeRegister } from '@lexical/utils'
@@ -136,7 +136,7 @@ export function LinkInfoEditor({
 
   return createPortal(
     <div
-      className="bg-norm shadow-norm border-weak absolute left-0 top-0 rounded border px-3 py-1.5 text-sm"
+      className="bg-norm shadow-norm border-weak absolute left-0 top-0 rounded border px-3 py-1.5 text-sm print:hidden"
       style={{
         top: position.top,
         left: position.left,

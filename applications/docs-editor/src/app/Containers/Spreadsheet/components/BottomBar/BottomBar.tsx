@@ -339,7 +339,7 @@ export interface BottomBarProps extends ComponentPropsWithoutRef<'div'> {}
 
 export const BottomBar = memo(function BottomBar(props: BottomBarProps) {
   return (
-    <div {...props} className="flex items-center gap-2.5 border-t border-[#DEDEDE] bg-[#F9FCFA] pl-3">
+    <div {...props} className="flex items-center gap-2.5 border-t border-[#DEDEDE] bg-[#F9FCFA] pl-3 print:hidden">
       <SheetSwitcher />
       <SheetTabs />
       <div className="shrink-0 py-0.5 pl-2.5 pr-[3.125rem]">
