@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "\"${ label.Name }\"-ის ჩასწორება"
       ],
+      "Emoji": [
+        "ემოჯი"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring }-ის ჩართვა"
       ],
@@ -2046,6 +2049,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "სცადეთ უფასოდ ${ TRIAL_DURATION_DAYS } დღით"
       ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
       ],
@@ -2379,6 +2385,9 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "${ VPN_APP_NAME }-ის პოლიტიკა 'არა ჟურნალს' დადასტურებულია გარე აუდიტის მიერ"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**ავტომატური წაშლა**, **დროებით გადადება** და **ელფოსტის დაგეგმვა** შედის თქვენს ხელმოწერაში."
+      ],
       "**Streaming** is included in your subscription.": [
         "თქვენი გამოწერა **სტრიმინგს** შეიცავს."
       ],
@@ -2393,6 +2402,9 @@
       ],
       "Automate recurring actions to sort and organize incoming emails.": [
         "მოახდინეთ გამეორებადი ქმედებების ავტომატიზაცია, რომ დაალაგოთ და დააორგანიზოთ შემომავალი ელფოსტები."
+      ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "დაამარქაფეთ, დააორგანიზეთ და უსაფრთხოდ გააზიარეთ მთელი ცხოვრების მოგონებები."
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "შეუძლია ვინმეს ნახოს ჩემი ბრაუზერის ისტორია, თუ იგივე WiFi-ის ვიყენებთ?"
@@ -2465,6 +2477,9 @@
       ],
       "Learn how to make account sharing simple for any family member.": [
         "ისწავლეთ, როგორ გაუზიაროთ ანგარიში მარტივად ოჯახის წევრს."
+      ],
+      "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
+        "ისწავლეთ, როგორ გააზიაროთ ერთი ელემენტი, დაშიფრული ბმული ან საცავი ${ PASS_APP_NAME }-ის მეშვეობით."
       ],
       "Protect your business communications": [
         "დაიცავით თქვენი საქმიანი მიმოწერა"
@@ -2546,6 +2561,9 @@
       ],
       "Worried about data breaches?": [
         "ნერვიულობთ მონაცემების გაჟონვის შესახებ?"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "დაწერეთ, ჩაასწორეთ და უსაფრთხოდ ითანამშრომლეთ დოკუმენტებზე ${ DOCS_APP_NAME }-ის საშუალებით."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "თქვენი ოჯახის სურათებზე ხის ავარჯიშებენ. აი, როგორ უნდა გააჩეროთ ეს"
@@ -4874,6 +4892,9 @@
       "Scan the QR code with your mobile device": [
         "დაასკანერეთ QR კოდი თქვენი მობილური მოწყობილობით"
       ],
+      "Scan the QR code with your mobile device. You can also ${ downloadButton } directly.": [
+        "დაასკანირეთ QR კოდი თქვენი მობილური მოწყობილობით. ასევე შეგიძლიათ ${ downloadButton } პირდაპირ."
+      ],
       "TV": [
         "ტელევიზორი"
       ],
@@ -5575,6 +5596,9 @@
       "${ user } will be able to use your account and change your data.": [
         "${ user }-ს ექნება უფლება, გამოიყენოს თქვენი ანგარიში და შეცვალოს თქვენი მონაცემები."
       ],
+      "${ user } will no longer be able to request access to your account in case of emergency.": [
+        "${ user }-ს აღარ შეეძლება თქვენს ანგარიშზე წვდომის მოთხოვნა საგანგებო სიტუაციის შემთხვევაში."
+      ],
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user }-ს თქვენს ანგარიშთან წვდომა არ ექნება შემდეგ სასწრაფო მოთხოვნამდე."
       ],
@@ -5608,8 +5632,14 @@
       "Change access wait time": [
         "წვდომის მოლოდინის დროის შეცვლა"
       ],
+      "Change the time that ${ user } will have to wait before automatically giving them access.": [
+        "შეცვალეთ დრო, რა ხნის განმავლობაშიც ${ user }-ს მოუწევს ლოდინი, სანამ მას წვდომა ავტომატურად მიეცემა."
+      ],
       "Change wait time": [
         "მოლოდინის დროის შეცვლა"
+      ],
+      "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
+        "აირჩიეთ ვინმე, ვისაც ანდობთ თქვენს მონაცემებს. მას უკვე უნდა ჰქონდეს ${ BRAND_NAME }-ის ანგარიში."
       ],
       "Disabled": [
         "გათიშული"
@@ -6116,6 +6146,9 @@
       ],
       "Permissions request failed.": [
         "წვდომების მოთხოვნა ჩავარდა."
+      ],
+      "Please add a payment method before reactivating your subscription": [
+        "დაამატეთ გადახდის მეთოდი თქვენი გამოწერის ხელახლა გააქტიურებამდე"
       ],
       "Please configure a custom domain before adding addresses.": [
         "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
@@ -7131,9 +7164,6 @@
       "Ad-blocker and malware protection": [
         "რეკლამების დაბლოკვა და არასასურველი პროგრამებისგან დაცვა"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "${ BRAND_NAME }-ის ყველა ფასიანი სერვისი"
-      ],
       "and more premium features...": [
         "და მეტი ფასიანი ფუნქცია..."
       ],
@@ -7795,9 +7825,6 @@
       ],
       "Enjoying ${ planName }?": [
         "მოგწონთ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "განბლოკეთ კიდევ 4 ფასიანი კონფიდენფიალობის სერვისი, მხოლოდ, **${ priceString }**-ით მეტით თვეში"
       ],
       "Upgrade your privacy": [
         "გააუმჯობესეთ თქვენი კონფიდენციალობა"
@@ -8484,8 +8511,14 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**შემოიტანეთ თქვენი არსებული კოდები** სხვა 2FA აპებიდან, მაგალითად Google Authenticator"
       ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ **2 კვირას უფასოდ** თავიანთ სატარიფო გეგმაზე."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
@@ -11510,6 +11543,11 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "ასე გამოჩნდება თქვენი ორგანიზაცია მომხმარებლებისთვის. შეგიძლიათ შეცვალოთ ის ნებისმიერ დროს."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "არასწორი ელფოსტის მისამართია"
@@ -12572,6 +12610,9 @@
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }-ისთვის და ${ DOCS_SHORT_APP_NAME }-ისთვის."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME } -ისთვის, ${ DOCS_SHORT_APP_NAME } -ისთვის და ${ SHEETS_SHORT_APP_NAME } -ისთვის."
       ],
       "for your first month": [
         "თქვენი პირველი თვისთვის"
@@ -16894,6 +16935,9 @@
       "Are you sure you want to proceed?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
       ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "თუ აირჩევთ, შეცვალოთ თქვენი ${ planTitle } სატარიფო გეგმა, შეიძლება, ზოგიერთ ფუნქციასთან წვდომა დაკარგოთ."
+      ],
       "Keep ${ planTitle }": [
         "${ planTitle }-ის შენარჩუნება"
       ],
@@ -17458,6 +17502,9 @@
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "${ downloadRecoveryKitSwitchButton }-ის გამოყენება."
+      ],
+      "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
+        "თქვენი **აღდგენის ნაკრები** საშუალებას გაძლევთ აღადგინოთ თქვენი ${ BRAND_NAME } ანგარიში, თუ დაბლოკილი ბრძანდებით."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -17495,6 +17542,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "თქვენი მეგობარი ასევე მიიღებს ${ refereeRewardAmount }-ს, რათა დაფაროს შემდეგი გადასახადი!"
       ],
       "your subscription": [
         "თქვენი გამოწერა"
@@ -21235,9 +21285,6 @@
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "დაუკავშირდით ${ VPN_CONNECTIONS } მოწყობილობას ერთდროულად ${ vpnPlus }-ით. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
       ],
@@ -21699,9 +21746,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "გადმოწერეთ აპი ყველა თქვენს მოწყობილობაზე და ისიამოვნეთ უსაფრთხო წვდომით ნებისმიერი ადგილიდან."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "მიიღეთ აპი ყველა თქვენს მოწყობილობაზე და დაიცავით ${ VPN_CONNECTIONS }-მდე მოწყობილობა ერთდროულად."
       ],
       "Get the apps": [
         "აპების გადმოწერა"
@@ -23155,12 +23199,6 @@
       "Advanced security for your company?": [
         "დამატებითი უსაფრთხოება თქვენი კომპანიისთვის?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "ყველა ${ BRAND_NAME }-ის ფასიანი სერვისი. მხოლოდ ${ fallBackString } თვეში"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "ყველა ${ BRAND_NAME }-ის ფასიანი ფუნქცია. მხოლოდ **${ priceString }**-ით მეტი თვეში."
-      ],
       "Did you know?": [
         "იცოდით?"
       ],
@@ -23301,6 +23339,9 @@
       ],
       "User has enabled two-factor authentication with a security key.": [
         "მომხმარებელმა ჩართო 2FA უსაფრთხოების გასაღებით."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "მომხმარებელმა ჩართო 2FA ავთენტიკატორი აპით და უსაფრთხოების გასაღებით."
       ],
       "User has enabled two-factor authentication with an authenticator app.": [
         "მომხმარებელმა ჩართო 2FA ავთენტიკატორი აპით."

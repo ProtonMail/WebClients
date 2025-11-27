@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Επεξεργασία “${ label.Name }”"
       ],
+      "Emoji": [
+        "Εικονίδια"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Ενεργοποίηση ${ darkWebMonitoring }"
       ],
@@ -2418,6 +2421,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Μπορεί κάποιος να δει το ιστορικό περιήγησής μου αν χρησιμοποιούμε το ίδιο WiFi;"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Συνδέστε ${ VPN_CONNECTIONS } συσκευές ταυτόχρονα"
+      ],
       "Create and edit with confidence": [
         "Δημιουργήστε και επεξεργαστείτε με σιγουριά"
       ],
@@ -2531,6 +2537,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Η πλοήγηση σε ένα διαδίκτυο γεμάτο με μεσίτες δεδομένων, spam, απάτες και κακόβουλο λογισμικό γίνεται όλο και πιο δύσκολη. Γι' αυτό το ${ PASS_APP_NAME } δεν σας βοηθά μόνο να διαχειρίζεστε, να αποθηκεύετε και να συμπληρώνετε αυτόματα τους κωδικούς πρόσβασής σας. Σας παρέχουμε τα εργαλεία για να ελέγχετε την ιδιωτικότητά σας και να προστατεύετε τα εισερχόμενά σας με ψευδώνυμα hide-my-email."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Προστατέψτε όλες τις οικιακές συσκευές σας ταυτόχρονα με το ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Προστατέψτε τις επιχειρηματικές σας επικοινωνίες"
@@ -7315,14 +7324,14 @@
       "15 GB storage": [
         "15 GB αποθηκευτικού χώρου"
       ],
+      "4 more privacy services": [
+        "4 επιπλέον υπηρεσίες απορρήτου"
+      ],
       "@pm.me address": [
         "@pm.me διεύθυνση"
       ],
       "Ad-blocker and malware protection": [
         "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Όλες οι premium υπηρεσίες του ${ BRAND_NAME }"
       ],
       "and more premium features...": [
         "και περισσότερες προηγμένες δυνατότητες..."
@@ -7991,8 +8000,8 @@
       "Enjoying ${ planName }?": [
         "Απολαμβάνετε το ${ planName };"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Ξεκλειδώστε 4 επιπλέον λειτουργίες απορρήτου με μόλις **${ priceString }** επιπλέον κάθε μήνα."
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Ξεκλειδώστε 4 premium λειτουργίες απορρήτου με μόλις **${ priceString }** επιπλέον κάθε μήνα."
       ],
       "Upgrade your privacy": [
         "Αναβαθμίστε το απόρρητό σας"
@@ -11364,6 +11373,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ανανεωθεί, αλλά θα εξακολουθείτε να απολαμβάνετε προνόμια προγράμματος μέχρι το τέλος της περιόδου συνδρομής. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Όταν ακυρώσετε, η συνδρομή σας δε θα ξεκινήσει, αλλά θα μπορείτε να συνεχίσετε να απολαμβάνετε τα οφέλη του προγράμματος μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Όταν κάνετε κλικ σε έναν σύνδεσμο, αυτή η δυνατότητα κατά του ηλεκτρονικού ψαρέματος (phishing) θα σας ζητά να επιβεβαιώσετε τη διεύθυνση URL της ιστοσελίδας."
@@ -17952,6 +17964,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Εάν ακυρώσετε πριν από τότε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν τελειώσει η δοκιμαστική περίοδος. Εάν δεν ακυρώσετε, το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Εάν ακυρώσετε, θα χάσετε την πιστωτική σας ανταμοιβή **${ referrerRewardAmount }**."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Εάν εγγραφείτε πριν από αυτήν την ημερομηνία, θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις. Εάν δεν εγγραφείτε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -21759,8 +21774,8 @@
       "Connect organization": [
         "Σύνδεση οργανισμού"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Συνδεθείτε σε ${ VPN_CONNECTIONS } συσκευές ταυτόχρονα με ${ vpnPlus }. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Συνδεθείτε σε ${ VPN_CONNECTIONS } συσκευές ταυτόχρονα με ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
@@ -22226,9 +22241,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Αποκτήστε την εφαρμογή σε όλες τις συσκευές σας και απολαύστε ασφαλή, απρόσκοπτη πρόσβαση οπουδήποτε."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Λάβετε την εφαρμογή σε όλες τις συσκευές σας και προστατεύστε μέχρι ${ VPN_CONNECTIONS } ταυτόχρονα."
       ],
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
@@ -22785,6 +22797,9 @@
       ],
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Ξεκινήστε να προστατεύετε τις συσκευές σας με την εφαρμογή ${ VPN_APP_NAME }."
       ],
       "State": [
         "Πολιτεία"
@@ -23691,17 +23706,17 @@
       "Advanced security for your company?": [
         "Προηγμένη ασφάλεια για την εταιρεία σας;"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες. Από μόλις ${ fallBackString } το μήνα"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες. Μόνο **${ priceString }** επιπλέον κάθε μήνα."
-      ],
       "Did you know?": [
         "Το γνωρίζατε;"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Αποκτήστε ${ drivePlusPlanMaxSpace } χώρο αποθήκευσης για τα αρχεία, τις φωτογραφίες και τα έγγραφά σας και ανακτήστε εκδόσεις αρχείων με ιστορικό 10 ετών."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Σουίτα προστασίας προσωπικών δεδομένων με ασφαλές email, ${ VPN_SHORT_APP_NAME }, αποθήκευση στο cloud και διαχείριση κωδικών πρόσβασης σε ένα πακέτο. Από μόνο ${ fallBackString } ανά μήνα."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Σουίτα προστασίας προσωπικών δεδομένων με ασφαλές email, ${ VPN_SHORT_APP_NAME }, αποθήκευση στο cloud και διαχείριση κωδικών πρόσβασης σε ένα πακέτο. Μόνο **${ priceString }** επιπλέον κάθε μήνα."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Προστατέψτε τον οργανισμό σας από παραβιάσεις δεδομένων με το ${ PLAN_NAMES[plan] }."

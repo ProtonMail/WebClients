@@ -616,6 +616,9 @@
       "Edit “${ label.Name }”": [
         "${ label.Name } szerkesztése"
       ],
+      "Emoji": [
+        "Hangulatjel"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } engedélyezése"
       ],
@@ -6426,9 +6429,6 @@
       "Ad-blocker and malware protection": [
         "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "Az összes prémium ${ BRAND_NAME } szolgáltatás"
-      ],
       "and more premium features...": [
         "és további prémium funkciók..."
       ],
@@ -7049,9 +7049,6 @@
       ],
       "Enjoying ${ planName }?": [
         "Kedveli a ${ planName } csomagot?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "További 4 prémium adatvédelmi szolgáltatás feloldása mindössze **${ priceString }** összegért havonta"
       ],
       "Upgrade your privacy": [
         "Fejlessze az adatvédelmét"
@@ -19586,9 +19583,6 @@
       "Connect organization": [
         "Kapcsolódás a szervezethez"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "${ vpnPlus } segítségével egyszerre akár ${ VPN_CONNECTIONS } eszközhöz is kapcsolódhat. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "Kapcsolódás videokonferenciához"
       ],
@@ -19990,9 +19984,6 @@
       ],
       "Get more from your VPN": [
         "Hozzon ki többet a VPN-ből"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Szerezze be az alkalmazást az összes eszközére, és védjen egyszerre akár ${ VPN_CONNECTIONS } eszközt."
       ],
       "Get the apps": [
         "Alkalmazások letöltése"
@@ -21355,12 +21346,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Akár ${ priceString } megtakarítás** hosszabb előfizetéssel. Ugyanazok a prémium funkciók, alacsonyabb áron."
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Minden prémium ${ BRAND_NAME } szolgáltatás. Már havi ${ fallBackString } összegtől"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Minden prémium ${ BRAND_NAME } szolgáltatás. Csupán **${ priceString }**-val több havonta."
       ],
       "Did you know?": [
         "Tudta?"

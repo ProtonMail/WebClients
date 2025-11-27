@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Editar «${ label.Name }»"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Ative o ${ darkWebMonitoring }"
       ],
@@ -2445,6 +2448,9 @@
       "How to change your IP address on Windows": [
         "Como mudar o seu enderenço de IP no Windows"
       ],
+      "How to easily & securely share your WiFi password": [
+        "Como compartilhar sua senha de Wi-Fi de forma fácil e segura"
+      ],
       "How to export passwords from Chrome": [
         "Como exportar senhas do Chrome"
       ],
@@ -2456,6 +2462,9 @@
       ],
       "How to prevent data breaches in your business": [
         "Como evitar violações de dados na sua empresa"
+      ],
+      "iCloud is not private by default. Here's what Apple can see in iCloud.": [
+        "O iCloud não é privado por padrão. Veja o que a Apple pode ver no iCloud."
       ],
       "If you want to elevate your professional identity, it’s important to learn why and how to create a custom email domain. Most people use free email addresses with default domains provided by their email service.": [
         "Se você quer elevar sua identidade profissional, é importante aprender por que e como criar um domínio de e-mail personalizado. A maioria das pessoas usa endereços de e-mail gratuitos com domínios padrão fornecidos pelo serviço de e-mail delas."
@@ -2472,8 +2481,20 @@
       "Is Telegram safe to use? As we'll discuss in this article, that very much depends on how you use it.": [
         "O Telegram é seguro para uso? Como discutiremos neste artigo, isso depende muito de como você o usa."
       ],
+      "Keep your email spam-free": [
+        "Mantenha seu e-mail livre de spam"
+      ],
       "Keep your photos out of AI training": [
         "Mantenha suas fotos fora do treinamento de IA"
+      ],
+      "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
+        "Mantenha os arquivos da sua equipe protegidos, acessíveis e sincronizados com o ${ DRIVE_APP_NAME } para Business."
+      ],
+      "Learn how Big Tech uses family photos to train AI, how it affects you.": [
+        "Saiba como as grandes tecnologias usam fotos de família para treinar IA e como isso afeta você."
+      ],
+      "Learn how to back up your files to the cloud or on an external drive while keeping your data secure.": [
+        "Aprenda como fazer backup dos seus arquivos na nuvem ou em um drive externo, mantendo seus dados seguros."
       ],
       "Learn how to beat annoying and potentially harmful junk mail. Spam emails, also known as junk mail, can be more than just irritating clutter in your inbox. Cybercriminals can use these unsolicited and unwanted messages to launch phishing attacks and spread malware.": [
         "Aprenda como se livrar de e-mails indesejados e potencialmente prejudiciais. E-mails de spam, também conhecidos como lixo eletrônico, podem ser mais do que apenas uma bagunça irritante na sua caixa de entrada. Criminosos cibernéticos podem usar essas mensagens não solicitadas e indesejadas para lançar ataques de phishing e disseminar malware."
@@ -2486,6 +2507,9 @@
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Proteja sua empresa contra violações de dados e torne o trabalho remoto mais seguro com uma VPN empresarial."
+      ],
+      "Protect your family online and make account sharing easy": [
+        "Proteja sua família on-line e torne o compartilhamento de contas fácil"
       ],
       "Protect your whole household with 1 device": [
         "Proteja toda a sua casa com 1 dispositivo"
@@ -2558,6 +2582,9 @@
       ],
       "Worried about data breaches?": [
         "Preocupado com violações de dados?"
+      ],
+      "Your family photos are training AI, and here’s how to stop it": [
+        "Suas fotos de família estão treinando a IA e veja como impedir isso."
       ],
       "Your personal email address is an essential part of your digital identity. Like your phone number, you don’t give it to everyone you meet. That’s why it’s useful to have other email addresses you can use for different purposes.": [
         "Seu endereço de e-mail pessoal é uma parte essencial da sua identidade digital. Assim como seu número de telefone, você não o fornece a todas as pessoas que conhece. Por isso, é útil ter outros endereços de e-mail que você possa usar para diferentes finalidades."
@@ -4913,6 +4940,9 @@
       "Scan the QR code with your mobile device": [
         "Escaneie o código QR com seu dispositivo móvel"
       ],
+      "Scan the QR code with your mobile device. You can also ${ downloadButton } directly.": [
+        "Escaneie o código QR com seu dispositivo móvel. Você também pode ${ downloadButton } diretamente."
+      ],
       "TV": [
         "TV"
       ],
@@ -4935,6 +4965,9 @@
       ],
       ".rpm for Fedora / Red Hat": [
         ".rpm para Fedora / Red Hat"
+      ],
+      "You can also download the app through the ${ linkSnapStore }.": [
+        "Você também pode baixar o aplicativo através da ${ linkSnapStore }."
       ]
     },
     "drive_signup_2023: Title": {
@@ -6211,6 +6244,9 @@
       "Permissions request failed.": [
         "Falha na solicitação de permissões."
       ],
+      "Please add a payment method before reactivating your subscription": [
+        "Adicione um método de pagamento antes de reativar sua assinatura."
+      ],
       "Please configure a custom domain before adding addresses.": [
         "Configure um domínio personalizado antes de adicionar endereços."
       ],
@@ -7234,9 +7270,6 @@
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção contra malware"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "Todos os serviços premium da ${ BRAND_NAME }"
-      ],
       "and more premium features...": [
         "e outros recursos premium..."
       ],
@@ -7903,9 +7936,6 @@
       ],
       "Enjoying ${ planName }?": [
         "Aproveitando o ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Desbloqueie mais quatro serviços de privacidade premium por apenas **${ priceString }** a mais por mês"
       ],
       "Upgrade your privacy": [
         "Faça um upgrade na sua privacidade"
@@ -17563,6 +17593,9 @@
       "Perfect for getting started with secure cloud storage.": [
         "Perfeito para começar a usar armazenamento em nuvem seguro."
       ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Suíte de privacidade com serviços premium e ${ unlimitedPlanMaxSpace } de armazenamento criptografado em nuvem, tudo em um único pacote"
+      ],
       "Secure cloud storage and collaboration for teams.": [
         "Armazenamento seguro em nuvem e colaboração para equipes."
       ],
@@ -17864,6 +17897,9 @@
       ],
       "How your free trial works:": [
         "Como funciona seu teste gratuito:"
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Se você cancelar, você perderá sua recompensa de crédito **${ referrerRewardAmount }**."
       ],
       "Invite friends. Get credits.": [
         "Convide amigos. Ganhe créditos."
@@ -18481,6 +18517,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Seu telefone de recuperação somente **pode recuperar o acesso à sua conta**."
+      ],
+      "Your recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Seu telefone de recuperação pode ser usado indevidamente por invasores para assumir o controle de sua conta. ${ disablePhone } para aumentar sua segurança."
       ],
       "Your recovery phone has been enabled": [
         "Seu telefone de recuperação está ativado"
@@ -21663,9 +21702,6 @@
       "Connect organization": [
         "Conectar organização"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo com o ${ vpnPlus }. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência"
       ],
@@ -21783,6 +21819,9 @@
       ],
       "Decrypt key": [
         "Descriptografar chave"
+      ],
+      "Deep dive into cloud storage blog posts": [
+        "Aprofunde-se nas postagens do blog sobre armazenamento em nuvem"
       ],
       "Deep dive into email blog posts": [
         "Aprofunde-se nas postagens do blog sobre e-mail"
@@ -22118,9 +22157,6 @@
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Instale o aplicativo em todos os seus dispositivos e proteja até ${ VPN_CONNECTIONS } de uma só vez."
       ],
       "Get the apps": [
         "Obtenha os aplicativos"
@@ -22686,6 +22722,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
+        "Fortaleça sua segurança em todos os seus dispositivos com ${ passPlusPlanName }. ${ upgradeButton }"
       ],
       "Subscription": [
         "Assinatura"
@@ -23585,12 +23624,6 @@
       ],
       "Advanced security for your company?": [
         "Segurança avançada para sua empresa?"
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Todos os serviços premium da ${ BRAND_NAME }. A partir de apenas ${ fallBackString } por mês"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Todos os serviços premium da ${ BRAND_NAME }. Apenas **${ priceString }** a mais por mês."
       ],
       "Did you know?": [
         "Você sabia?"
