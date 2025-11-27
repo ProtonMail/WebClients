@@ -102,8 +102,11 @@ export const generateDefaultBookingRange = (
 ): BookingRange[] => {
     const weekStartsOn = getWeekStartsOn({ WeekStart: userSettings.WeekStart });
 
+    // When doing recurrign we want to use the current week as starting date and not calendar date
+    const start = isRecurring ? new Date() : startDate;
+
     // We want to make sure the stored dates for the range is in UTC
-    const utc = toUTCDate(fromLocalDate(startDate));
+    const utc = toUTCDate(fromLocalDate(start));
     const todayUTC = toLocalDate(convertUTCDateTimeToZone(fromUTCDate(new Date()), timezone));
 
     return eachDayOfInterval({
