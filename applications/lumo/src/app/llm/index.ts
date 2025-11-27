@@ -1,5 +1,3 @@
-import type { User } from '@proton/shared/lib/interfaces';
-
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { createImageAttachment, generateImageMarkdown } from '../lib/imageAttachment';
@@ -32,7 +30,7 @@ import type {
 } from '../types';
 import { ConversationStatus, Role } from '../types';
 import type { GenerationToFrontendMessage } from '../types-api';
-import { fillAttachmentData, separateAttachmentsByType } from './attachments';
+import { separateAttachmentsByType } from './attachments';
 import { removeFileFromMessageContext } from './utils';
 
 export type ContextFilter = {
