@@ -768,6 +768,11 @@
         "ამოკეცვა"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "გსურთ თქვენი ბუფერი ავტომატურად გასუფთავდეს ${ timeoutDurationHumanReadable }-ის შემდეგ?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } ფასიან ვერსიაშია ხელმისაწვდომი. ასწიეთ ტარიფი წვდომის დაუყოვნებლივ მისაღებად."
@@ -817,6 +822,9 @@
       ],
       "Some domain registrars (Namecheap, Cloudflare, etc.) might also use @ for the root domain.": [
         "ზოგიერთი დომენის რეგისტრატორი (Namecheap, Cloudflare და ა.შ.) ძირითადი დომენისთვის ასევე იყენებს სიმბოლოს @."
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } არის ელფოსტის ავთენტიკაციის მეთოდი, რომელიც შექმნილია გამგზავნის ყალბი მისამართების აღმოსაჩენად ელფოსტის მიწოდების დროს. SPF-ის დაყენება მკაცრად რეკომენდებულია იმის ალბათობის შესამცირებლად, რომ თქვენი ელფოსტა მოხვდეს მიმღების სპამის საქაღალდეში."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
         "დაიწყეთ მონაცემების გაჟონვის მონიტორინგი თქვენი ელფოსტის მისამართებით და hide-my-email-ის ფსევდონიმებით შექმნილი ანგარიშებისთვის."
@@ -1160,6 +1168,9 @@
       "Secure link could not be opened.": [
         "დაცული ბმულის გახსნა შეუძლებელია."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "სერვერები მიუწვდომელია. ${ PASS_SHORT_APP_NAME }-ის განბლოკვა რამდენიმე წუთში სცადეთ."
+      ],
       "Settings update failed": [
         "პარამეტრების განახლების შეცდომა"
       ],
@@ -1246,6 +1257,9 @@
       ],
       "Wrong second password": [
         "არასწორი მეორე პაროლი"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "ახლა ქსელის გარეშე მუშაობთ. აღადგინეთ მიერთება, რომ ${ PASS_SHORT_APP_NAME } განბლოკოთ."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "თქვენი DNS არასწორადაა დაყენებული. MX ჩანაწერი, რომელიც მივიღეთ:"
@@ -1891,6 +1905,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"

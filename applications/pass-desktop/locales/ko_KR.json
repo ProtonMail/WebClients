@@ -1181,6 +1181,9 @@
       "Secure link could not be opened.": [
         "안전한 링크를 열 수 없습니다."
       ],
+      "Servers are unreachable. Please try unlocking ${ PASS_SHORT_APP_NAME } in a few minutes.": [
+        "서버에 도달할 수 없습니다. 몇 분뒤 ${ PASS_SHORT_APP_NAME }의 잠금을 해제해 주세요."
+      ],
       "Settings update failed": [
         "설정 업데이트 실패"
       ],
@@ -1267,6 +1270,9 @@
       ],
       "Wrong second password": [
         "2차 비밀번호 모드가 알맞지 않습니다"
+      ],
+      "You're currently offline. Please resume connectivity to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "현재 오프라인입니다. ${ PASS_SHORT_APP_NAME }를 잠금해제하기 위해 인터넷에 연결하세요."
       ],
       "Your DNS is not correctly set. The MX record we obtain is:": [
         "DNS가 올바르게 설정되지 않았습니다. 시스템이 얻은 MX레코드는 다음과 같습니다:"
@@ -1903,7 +1909,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2198,6 +2204,9 @@
       ],
       "Selected items successfully restored from trash": [
         "휴지통에서 선택된 항목을 성공적으로 복구했습니다."
+      ],
+      "Servers are unreachable": [
+        "서버에 도달할 수 없습니다"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
@@ -3308,7 +3317,7 @@
         "여권 번호"
       ],
       "Password": [
-        "암호"
+        "비밀번호"
       ],
       "PASSWORD": [
         "비밀번호"
