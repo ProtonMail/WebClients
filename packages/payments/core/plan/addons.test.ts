@@ -304,6 +304,7 @@ describe('getSupportedAddons', () => {
                 PLANS.DRIVE_BUSINESS,
                 PLANS.BUNDLE_PRO,
                 PLANS.BUNDLE_PRO_2024,
+                PLANS.BUNDLE_BIZ_2025,
                 PLANS.VPN_PRO,
                 PLANS.VPN_BUSINESS,
                 PLANS.PASS_PRO,
