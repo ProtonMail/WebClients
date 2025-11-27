@@ -2,7 +2,7 @@ import type { LinkNode } from '@lexical/link'
 import { $isAutoLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { mergeRegister } from '@lexical/utils'
-import { Button } from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { Icon } from '@proton/components'
 import clsx from '@proton/utils/clsx'
@@ -109,7 +109,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
 
   return createPortal(
     <div
-      className="bg-norm shadow-norm border-weak absolute left-0 top-0 rounded border px-2.5 py-1.5"
+      className="bg-norm shadow-norm border-weak absolute left-0 top-0 rounded border px-2.5 py-1.5 print:hidden"
       style={{
         top: position.top,
         left: position.left,

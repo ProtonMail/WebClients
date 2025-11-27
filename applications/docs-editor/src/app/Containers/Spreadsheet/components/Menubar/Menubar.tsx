@@ -21,7 +21,7 @@ export interface MenubarProps extends Ariakit.MenubarProps {
 
 export const Menubar = createComponent(function Menubar({ clientInvoker, isPublicMode, ...props }: MenubarProps) {
   return (
-    <Ariakit.Menubar {...props} className={clsx('flex gap-5', props.className)}>
+    <Ariakit.Menubar {...props} className={clsx('flex gap-5 print:hidden', props.className)}>
       <FileMenu
         renderMenuButton={<MenubarItem>{s('File')}</MenubarItem>}
         clientInvoker={clientInvoker}
