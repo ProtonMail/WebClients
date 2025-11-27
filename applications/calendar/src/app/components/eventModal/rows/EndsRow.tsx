@@ -65,7 +65,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
             value: END_TYPE.UNTIL,
             label: (
                 <OptionRow
-                    title={c('Custom frequency option').t`End on`}
+                    title={c('Custom frequency option').t`Ends on`}
                     input={
                         <div className="sm:flex-1 sm:ml-2 w-custom" style={{ '--w-custom': '10rem' }}>
                             <label htmlFor={UNTIL_ID} className="sr-only">{c('Title')
@@ -96,7 +96,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
             value: END_TYPE.AFTER_N_TIMES,
             label: (
                 <OptionRow
-                    title={c('Custom frequency option').t`End after`}
+                    title={c('Custom frequency option').t`Ends after`}
                     input={
                         <div className="flex flex-nowrap items-center sm:flex-1 sm:ml-2">
                             <div className="max-w-custom" style={{ '--max-w-custom': '6em' }}>
