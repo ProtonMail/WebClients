@@ -9,6 +9,7 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
+import { IcMeetShieldStar } from '@proton/icons/icons/IcMeetShieldStar';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -28,6 +29,7 @@ import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume
 import { ParticipantsButton, WrappedParticipantsButton } from '../ParticipantsButton';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
+import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 import { VideoSettings } from '../VideoSettings/VideoSettings';
 import { MenuButton } from './MenuButton';
 
@@ -35,7 +37,7 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const { roomName, page, setPage, isScreenShare, guestMode } = useMeetContext();
+    const { roomName, page, setPage, isScreenShare, guestMode, paidUser } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -145,10 +147,11 @@ export const ParticipantControls = () => {
                 <div
                     className={clsx(
                         isLargerThanMd || isNarrowHeight ? '' : 'hidden',
-                        'lg:flex flex-1 justify-start h3'
+                        'lg:flex flex-1 justify-start h3 items-center gap-2 pl-4'
                     )}
                 >
-                    {roomName}
+                    {guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}
+                    <span className="participant-controls-title">{roomName}</span>
                 </div>
                 <div className="participant-controls-buttons flex flex-nowrap gap-2">
                     {!isMobile() ? (

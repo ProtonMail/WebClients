@@ -1,0 +1,121 @@
+import { c } from 'ttag';
+
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcPhone } from '@proton/icons/icons/IcPhone';
+import { IcUser } from '@proton/icons/icons/IcUser';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
+import isTruthy from '@proton/utils/isTruthy';
+
+import { CardButton } from '../../atoms/CardButton/CardButton';
+import { MeetingRow } from '../../components/MeetingRow/MeetingRow';
+import { NoUpcomingMeetings } from '../../components/NoUpcomingMeetings/NoUpcomingMeetings';
+import { PageHeader } from '../../components/PageHeader/PageHeader';
+
+interface DashboardContainerBodyProps {
+    onScheduleClick: () => void;
+    onPersonalMeetingClick: () => void;
+    onJoinWithLinkClick: () => void;
+    onStartMeetingClick: () => void;
+    upcomingMeetings: Meeting[];
+    meetings: Meeting[];
+    isGuest: boolean;
+}
+
+export const DashboardContainerBody = ({
+    onScheduleClick,
+    onPersonalMeetingClick,
+    onJoinWithLinkClick,
+    onStartMeetingClick,
+    upcomingMeetings,
+    meetings,
+    isGuest,
+}: DashboardContainerBodyProps) => {
+    return (
+        <div className="w-full h-full meet-container-padding-x overflow-y-auto lg:overflow-y-hidden flex flex-column flex-nowrap bg-weak">
+            <PageHeader isScheduleInAdvanceEnabled={false} guestMode={isGuest} showAppSwitcher={!isElectronApp} />
+            <div className="flex gap-4 py-4 flex-nowrap w-full shrink-0">
+                <div className="flex flex-column md:flex-row flex-nowrap gap-1 md:gap-3 xl:gap-4 w-full">
+                    <CardButton
+                        className="w-full md:w-1/3"
+                        title={c('Title').t`Schedule meeting`}
+                        description={c('Description').t`Plan meetings and send invites with ${CALENDAR_APP_NAME}.`}
+                        icon={<IcCalendarToday size={5} />}
+                        circleColor="var(--ui-blue-interaction-minor-3)"
+                        iconColor="var(--ui-blue-interaction-minor-1)"
+                        onClick={onScheduleClick}
+                    />
+                    <CardButton
+                        className="w-full md:w-1/3"
+                        title={c('Title').t`Personal meeting link`}
+                        description={c('Description').t`An always available meeting room for people you trust.`}
+                        icon={<IcUser size={5} />}
+                        circleColor="var(--ui-purple-interaction-minor-3)"
+                        iconColor="var(--ui-purple-interaction-minor-1)"
+                        onClick={onPersonalMeetingClick}
+                    />
+                    {isElectronApp && (
+                        <CardButton
+                            className="w-full md:w-1/3"
+                            title={c('Title').t`Join with link`}
+                            description={c('Description').t`Use a link to join a meeting.`}
+                            icon={<IcLink size={5} />}
+                            circleColor="var(--ui-blue-interaction-minor-3)"
+                            iconColor="var(-ui-blue-interaction-minor-1)"
+                            onClick={onJoinWithLinkClick}
+                        />
+                    )}
+                    <CardButton
+                        className="w-full md:w-1/3"
+                        title={c('Title').t`Start secure meeting`}
+                        description={c('Description').t`Start a call immediately then share the link with others.`}
+                        icon={<IcPhone size={5} />}
+                        circleColor="var(--ui-green-interaction-minor-3)"
+                        iconColor="var(--ui-green-interaction-minor-1)"
+                        onClick={onStartMeetingClick}
+                    />
+                </div>
+            </div>
+            <div className="flex flex-column gap-4 py-4 flex-nowrap w-full shrink-0">
+                <div className="flex justify-start items-center w-full">
+                    <div className="text-lg md:text-xl color-hint text-semibold">{c('Title').t`Upcoming meetings`}</div>
+                    <div
+                        className="flex items-center justify-center bg-strong rounded-full w-custom h-custom ml-2 text-sm color-weak"
+                        style={{ '--w-custom': '1.5rem', '--h-custom': '1.5rem' }}
+                    >
+                        {upcomingMeetings?.length ?? 0}
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-column shrink-0 lg:flex-1 w-full py-4">
+                <div className="flex flex-column gap-1 flex-nowrap w-full h-full overflow-y-auto">
+                    {meetings === null && (
+                        <CircleLoader
+                            className="color-primary w-custom h-custom m-auto"
+                            style={{ '--w-custom': '5.3rem', '--h-custom': '5.3rem', '--stroke-width': 1.3 }}
+                        />
+                    )}
+                    {meetings && upcomingMeetings.length > 0 && (
+                        <>
+                            {upcomingMeetings.map((meeting, index) => (
+                                <MeetingRow
+                                    key={[meeting.ID, meeting.CalendarID, meeting.CalendarEventID]
+                                        .filter(isTruthy)
+                                        .join('-')}
+                                    meeting={meeting}
+                                    index={index}
+                                />
+                            ))}
+                        </>
+                    )}
+                    {meetings && upcomingMeetings.length === 0 && (
+                        <NoUpcomingMeetings onSchedule={onScheduleClick} onStart={onStartMeetingClick} />
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
