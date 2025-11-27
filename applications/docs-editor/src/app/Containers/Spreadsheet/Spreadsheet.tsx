@@ -38,6 +38,7 @@ import { Sidebar } from './components/Sidebar/Sidebar'
 import { useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { useActiveBreakpoint } from '@proton/components'
 import { EditingDisabledDialog } from './components/EditingDisabledDialog'
+import type { SpreadsheetConversionType } from '@proton/shared/lib/docs/constants'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -74,7 +75,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const { application } = useApplication()
   const { viewportWidth } = useActiveBreakpoint()
 
-  const didImportFromExcelFile = useRef(false)
+  const didConvertFromFile = useRef(false)
 
   // TODO: Consider refactoring these into a single derived mode "state"
   const isRevisionMode = systemMode === EditorSystemMode.Revision
@@ -114,7 +115,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     onEditorLoadResult(TranslatedResult.ok())
   }, [onEditorLoadResult])
 
-  const { onInsertFile, importExcelFile, generateStatePatches } = state
+  const { onInsertFile, importExcelFile, importCSVFile, generateStatePatches } = state
   const handleExcelFileImport = useCallback(
     async (file: File) => {
       await importExcelFile(file, 1000, 100)
@@ -127,15 +128,19 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     const canConvertFile =
       editorInitializationConfig &&
       editorInitializationConfig.mode === 'conversion' &&
-      editorInitializationConfig.type.dataType === 'xlsx'
-    if (canConvertFile && !didImportFromExcelFile.current) {
-      didImportFromExcelFile.current = true
-      const file = new File([editorInitializationConfig.data], 'import.xlsx', {
-        type: SupportedProtonDocsMimeTypes.xlsx,
+      ['xlsx', 'csv', 'tsv'].includes(editorInitializationConfig.type.dataType)
+    if (canConvertFile && !didConvertFromFile.current) {
+      didConvertFromFile.current = true
+      const file = new File([editorInitializationConfig.data], `import.${editorInitializationConfig.type.dataType}`, {
+        type: SupportedProtonDocsMimeTypes[editorInitializationConfig.type.dataType as SpreadsheetConversionType],
       })
-      void handleExcelFileImport(file)
+      if (editorInitializationConfig.type.dataType === 'xlsx') {
+        void handleExcelFileImport(file)
+      } else {
+        void importCSVFile(file)
+      }
     }
-  }, [editorInitializationConfig, handleExcelFileImport])
+  }, [editorInitializationConfig, handleExcelFileImport, importCSVFile])
 
   // TODO: document this effect
   const { onCreateNewSheet, onRenameSheet, calculateNow } = state

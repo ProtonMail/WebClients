@@ -1,6 +1,5 @@
-import type { LexicalEditor } from 'lexical'
+import type { LexicalEditor, LexicalNode } from 'lexical'
 import { $generateNodesFromDOM } from '@lexical/html'
-import type { LexicalNode } from 'lexical'
 import { $createParagraphNode, $getRoot, $insertNodes } from 'lexical'
 import { $importNodesFromDocx } from './Docx/DocxToLexical/ImportNodesFromDocx'
 import { $convertFromMarkdownString } from '@lexical/markdown'
@@ -34,7 +33,7 @@ export async function $importDataIntoEditor(
     return TranslatedResult.ok()
   }
 
-  if (dataFormat.docType === 'sheet' || dataFormat.dataType === 'xlsx') {
+  if (dataFormat.docType === 'sheet' || ['xlsx', 'csv', 'tsv'].includes(dataFormat.dataType)) {
     return TranslatedResult.failWithTranslatedError(c('Error').t`Tried to import Sheet data into Lexical`)
   }
 
