@@ -138,6 +138,11 @@ export enum ADDON_NAMES {
     MEMBER_SCRIBE_BUNDLE_PRO_2024 = `${ADDON_PREFIXES.SCRIBE}-bundlepro2024`,
     LUMO_BUNDLE_PRO_2024 = `${ADDON_PREFIXES.LUMO}-bundlepro2024`,
 
+    // bundlebiz2025
+    MEMBER_BUNDLE_BIZ_2025 = `${ADDON_PREFIXES.MEMBER}-bundlebiz2025`,
+    DOMAIN_BUNDLE_BIZ_2025 = `${ADDON_PREFIXES.DOMAIN}-bundlebiz2025`,
+    IP_BUNDLE_BIZ_2025 = `${ADDON_PREFIXES.IP}-bundlebiz2025`,
+
     // vpnpro2023
     MEMBER_VPN_PRO = `${ADDON_PREFIXES.MEMBER}-vpnpro2023`,
     LUMO_VPN_PRO = `${ADDON_PREFIXES.LUMO}-vpnpro2023`,
@@ -209,6 +214,11 @@ export const AddonFeatureLimitKeyMapping: Readonly<{
     [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 'MaxIPs',
     [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: 'MaxAI',
     [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 'MaxLumo',
+
+    // bundlebiz2025
+    [ADDON_NAMES.MEMBER_BUNDLE_BIZ_2025]: 'MaxMembers',
+    [ADDON_NAMES.DOMAIN_BUNDLE_BIZ_2025]: 'MaxDomains',
+    [ADDON_NAMES.IP_BUNDLE_BIZ_2025]: 'MaxIPs',
 
     // vpnpro2023
     [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
@@ -302,6 +312,11 @@ export const AddonLimit: { [key in ADDON_NAMES]: number } = {
     [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: MAX_MEMBER_LUMO_ADDON,
 
+    // bundlebiz2025
+    [ADDON_NAMES.MEMBER_BUNDLE_BIZ_2025]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.DOMAIN_BUNDLE_BIZ_2025]: MAX_DOMAIN_PRO_ADDON,
+    [ADDON_NAMES.IP_BUNDLE_BIZ_2025]: MAX_IPS_ADDON,
+
     // vpnpro2023
     [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.LUMO_VPN_PRO]: MAX_MEMBER_LUMO_ADDON,
@@ -363,6 +378,7 @@ export enum PLANS {
      */
     BUNDLE_PRO = 'bundlepro2022',
     BUNDLE_PRO_2024 = 'bundlepro2024',
+    BUNDLE_BIZ_2025 = 'bundlebiz2025',
     FAMILY = 'family2022',
     DUO = 'duo2024',
     VISIONARY = 'visionary2022',
@@ -400,6 +416,7 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.BUNDLE]: 'Proton Unlimited',
     [PLANS.BUNDLE_PRO]: 'Proton Business Suite',
     [PLANS.BUNDLE_PRO_2024]: 'Proton Business Suite',
+    [PLANS.BUNDLE_BIZ_2025]: 'Proton Business Premium',
     [PLANS.FAMILY]: 'Proton Family',
     [PLANS.DUO]: 'Proton Duo',
     [PLANS.VISIONARY]: 'Proton Visionary',

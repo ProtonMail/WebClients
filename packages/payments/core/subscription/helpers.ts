@@ -212,6 +212,8 @@ export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(su
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.BUNDLE_PRO);
 export const hasBundlePro2024 = (subscription: MaybeFreeSubscription) =>
     hasSomePlan(subscription, PLANS.BUNDLE_PRO_2024);
+export const hasBundleBiz2025 = (subscription: MaybeFreeSubscription) =>
+    hasSomePlan(subscription, PLANS.BUNDLE_BIZ_2025);
 export const hasFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.FAMILY);
 export const hasDuo = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.DUO);
 export const hasVpnPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.VPN_PRO);
@@ -887,6 +889,7 @@ const plansWithAutomatic12mTo24mDowncycling: Record<PLANS, boolean> = {
     [PLANS.BUNDLE]: true,
     [PLANS.BUNDLE_PRO]: false,
     [PLANS.BUNDLE_PRO_2024]: false,
+    [PLANS.BUNDLE_BIZ_2025]: false,
     [PLANS.FAMILY]: true,
     [PLANS.DUO]: true,
     [PLANS.VISIONARY]: true,
