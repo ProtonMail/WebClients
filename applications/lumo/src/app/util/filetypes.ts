@@ -8,11 +8,43 @@ export interface FileTypeConfig {
     extensions: string[];
     mimeTypes: string[];
     description: string;
-    category: 'document' | 'spreadsheet' | 'presentation' | 'text' | 'code' | 'config' | 'log' | 'ebook' | 'web' | 'build';
+    category: 'document' | 'spreadsheet' | 'presentation' | 'text' | 'code' | 'config' | 'log' | 'ebook' | 'web' | 'build' | 'image';
     pandocFormat?: string;
 }
 
 export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
+    // Image formats
+    jpeg: {
+        extensions: ['jpg', 'jpeg'],
+        mimeTypes: ['image/jpeg'],
+        description: 'JPEG Image',
+        category: 'image',
+    },
+    png: {
+        extensions: ['png'],
+        mimeTypes: ['image/png'],
+        description: 'PNG Image',
+        category: 'image',
+    },
+    gif: {
+        extensions: ['gif'],
+        mimeTypes: ['image/gif'],
+        description: 'GIF Image',
+        category: 'image',
+    },
+    webp: {
+        extensions: ['webp'],
+        mimeTypes: ['image/webp'],
+        description: 'WebP Image',
+        category: 'image',
+    },
+    heic: {
+        extensions: ['heic', 'heif'],
+        mimeTypes: ['image/heic', 'image/heif'],
+        description: 'HEIC Image',
+        category: 'image',
+    },
+
     // Document formats
     pdf: {
         extensions: ['pdf'],
