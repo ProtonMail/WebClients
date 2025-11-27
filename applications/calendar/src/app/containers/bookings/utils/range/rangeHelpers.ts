@@ -1,12 +1,16 @@
+import type { MutableRefObject } from 'react';
+
 import type { BookingPageEditData } from 'applications/calendar/src/app/store/internalBooking/interface';
 import {
     addDays,
+    areIntervalsOverlapping,
     differenceInMinutes,
     eachDayOfInterval,
     endOfWeek,
     isBefore,
     isSameDay,
     isWeekend,
+    isWithinInterval,
     set,
     startOfDay,
     startOfWeek,
@@ -25,7 +29,12 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { CalendarViewEvent } from '../../../calendar/interface';
-import type { BookingFormData, BookingRange, RecurringRangeDisplay } from '../../bookingsProvider/interface';
+import type {
+    BookingFormData,
+    BookingRange,
+    Intersection,
+    RecurringRangeDisplay,
+} from '../../bookingsProvider/interface';
 import {
     BOOKING_SLOT_ID,
     BookingRangeError,
@@ -293,4 +302,106 @@ export const computeRangesErrors = (ranges: BookingRange[], duration: number): B
     return ranges.map((range) => {
         return computeRangeErrors(range, duration);
     });
+};
+
+export const normalizeBookingRangeToTimeOfWeek = (date: Date) => {
+    const today = new Date();
+    const todayDayOfWeek = today.getDay();
+    const targetDayOfWeek = date.getDay();
+    const dayDifference = targetDayOfWeek - todayDayOfWeek;
+
+    const normalizedDate = new Date(today);
+    normalizedDate.setDate(today.getDate() + dayDifference);
+    normalizedDate.setHours(date.getHours(), date.getMinutes(), 0, 0);
+
+    return normalizedDate;
+};
+
+export const getIsBookingsIntersection = ({
+    start,
+    end,
+    bookingRanges,
+    intersectionRef,
+}: {
+    start: Date;
+    end: Date;
+    bookingRanges: BookingRange[];
+    intersectionRef: MutableRefObject<Intersection | null>;
+}) => {
+    const intersection = bookingRanges.find((range) => {
+        return areIntervalsOverlapping({ start, end }, { start: range.start, end: range.end });
+    });
+
+    if (!intersection) {
+        return false;
+    }
+
+    if (!intersectionRef.current) {
+        // The intersection is happening at the end of a range
+        if (isWithinInterval(start, intersection)) {
+            intersectionRef.current = { start: intersection.end, end };
+        }
+
+        // The intersection is happening at the start of a range
+        if (isWithinInterval(end, intersection)) {
+            intersectionRef.current = { start, end: intersection.start };
+        }
+    }
+
+    return true;
+};
+
+export const getIsRecurringBookingsIntersection = ({
+    start,
+    end,
+    bookingRanges,
+    intersectionRef,
+}: {
+    start: Date;
+    end: Date;
+    bookingRanges: BookingRange[];
+    intersectionRef: MutableRefObject<Intersection | null>;
+}) => {
+    // In the recurring scenario, the user can try to add ranges in future weeks
+    // To compute intersections properly, dates needs to be normalized so that we check intersections "on the same day"
+    const normalizedStart = normalizeBookingRangeToTimeOfWeek(start);
+    const normalizedEnd = normalizeBookingRangeToTimeOfWeek(end);
+
+    const overlappingRange = bookingRanges
+        .filter((range) => range.start.getDay() === start.getDay())
+        .find((range) => {
+            const normalizedRangeStart = normalizeBookingRangeToTimeOfWeek(range.start);
+            const normalizedRangeEnd = normalizeBookingRangeToTimeOfWeek(range.end);
+
+            return areIntervalsOverlapping(
+                { start: normalizedStart, end: normalizedEnd },
+                { start: normalizedRangeStart, end: normalizedRangeEnd }
+            );
+        });
+
+    if (!overlappingRange) {
+        intersectionRef.current = null;
+        return false;
+    }
+
+    if (!intersectionRef.current) {
+        const normalizedOverlapStart = normalizeBookingRangeToTimeOfWeek(overlappingRange.start);
+        const normalizedOverlapEnd = normalizeBookingRangeToTimeOfWeek(overlappingRange.end);
+
+        // The intersection is happening at the end of a range
+        if (isWithinInterval(normalizedStart, { start: normalizedOverlapStart, end: normalizedOverlapEnd })) {
+            const minutesDiff = (normalizedOverlapEnd.getTime() - normalizedStart.getTime()) / 60000;
+            const adjustedStart = new Date(start.getTime() + minutesDiff * 60000);
+            intersectionRef.current = { start: adjustedStart, end };
+        }
+
+        // The intersection is happening at the start of a range
+        if (isWithinInterval(normalizedEnd, { start: normalizedOverlapStart, end: normalizedOverlapEnd })) {
+            const minutesDiff = (normalizedEnd.getTime() - normalizedOverlapStart.getTime()) / 60000;
+            const adjustedEnd = new Date(end.getTime() - minutesDiff * 60000);
+            intersectionRef.current = { start, end: adjustedEnd };
+        }
+    }
+
+    return true;
 };

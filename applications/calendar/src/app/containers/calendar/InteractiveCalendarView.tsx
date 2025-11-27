@@ -958,13 +958,12 @@ const InteractiveCalendarView = ({
                 const bookingStart = toLocalDate(fromUTCDate(start));
                 const bookingEnd = toLocalDate(fromUTCDate(end));
 
-                // TODO this will change when adding recurring ranges
                 const isStrictlyInPast = isBefore(bookingStart, now) && isBefore(bookingEnd, now);
 
                 if (action === ACTIONS.CREATE_MOVE) {
                     if (isBookingActive) {
                         // We prevent drag and drop if the booking is strictly in the past
-                        if (isStrictlyInPast) {
+                        if (isStrictlyInPast && !formData.recurring) {
                             return;
                         }
 
@@ -986,7 +985,7 @@ const InteractiveCalendarView = ({
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
                     if (isBookingActive) {
                         // We prevent drag and drop if the booking is strictly in the past
-                        if (isStrictlyInPast) {
+                        if (isStrictlyInPast && !formData.recurring) {
                             return;
                         }
 
