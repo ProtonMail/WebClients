@@ -105,6 +105,7 @@ enum PaymentsFlag {
     TransactionsView = 'TransactionsView',
     VatId = 'VatId',
     PaymentsZipCodeValidation = 'PaymentsZipCodeValidation',
+    NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
     LumoB2B = 'LumoB2B',
     GooglePay = 'GooglePay',
 }
