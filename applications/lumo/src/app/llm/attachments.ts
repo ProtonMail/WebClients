@@ -8,7 +8,7 @@ import { deserializeAttachment } from '../serialization';
 import type { Attachment, Message } from '../types';
 
 // Supported image MIME types
-const IMAGE_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+const IMAGE_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp', 'image/heic', 'image/heif'];
 
 /**
  * Check if an attachment is an image based on its MIME type
