@@ -654,6 +654,9 @@
       "Edit “${ label.Name }”": [
         "Bewerk \"${ label.Name }\""
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } activeren"
       ],
@@ -7112,9 +7115,6 @@
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "Alle premium ${ BRAND_NAME }-diensten"
-      ],
       "and more premium features...": [
         "en meer premium functies..."
       ],
@@ -7775,9 +7775,6 @@
       ],
       "Enjoying ${ planName }?": [
         "Tevreden met ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Ontgrendel nog 4 premium privacydiensten voor slechts **${ priceString }** meer per maand"
       ],
       "Upgrade your privacy": [
         "Upgrade uw privacy"
@@ -21219,9 +21216,6 @@
       "Connect organization": [
         "Connecteer organisatie"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Verbind met ${ VPN_CONNECTIONS } apparaten tegelijk met ${ vpnPlus }. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "Verbinding maken met videoconferentie"
       ],
@@ -21671,9 +21665,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Installeer de app op al uw apparaten en geniet overal van veilige, naadloze toegang."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Download de app op al uw apparaten en bescherm tot ${ VPN_CONNECTIONS } tegelijk."
       ],
       "Get the apps": [
         "Verkrijg de apps"
@@ -23102,12 +23093,6 @@
       ],
       "Advanced security for your company?": [
         "Geavanceerde beveiliging voor uw bedrijf?"
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Alle premium ${ BRAND_NAME } diensten. Vanaf slechts ${ fallBackString } per maand"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Alle premium ${ BRAND_NAME } diensten. Slechts **${ priceString }** meer elke maand."
       ],
       "Did you know?": [
         "Wist u dat?"

@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Upravit “${ label.Name }”"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Povolit ${ darkWebMonitoring }"
       ],
@@ -7399,9 +7402,6 @@
       "Ad-blocker and malware protection": [
         "Blokování reklam a ochrana před malware"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "Všechny prémiové služby ${ BRAND_NAME }"
-      ],
       "and more premium features...": [
         "a další prémiové funkce..."
       ],
@@ -8084,9 +8084,6 @@
       ],
       "Enjoying ${ planName }?": [
         "Užíváte si ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Odemkněte další 4 prémiové služby ochrany soukromí za pouhých **${ priceString }** měsíčně navíc"
       ],
       "Upgrade your privacy": [
         "Zvyšte své soukromí"
@@ -8861,11 +8858,17 @@
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Krok 1:** Pozvěte své přátele do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
       ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Krok 2:** Vaši přátelé získají **2 týdny zdarma** na svém tarifu."
+      ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na svém tarifu."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každou osobu, která se přihlásí k odběru tarifu."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Krok 3:** Získejte **${ referrerRewardAmount } v kreditech** za každou osobu, která si předplatí tarif."
       ],
       "**Sync codes** to all your devices": [
         "**Synchronizovat kódy** na všechny vaše zařízení"
@@ -11572,6 +11575,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Když předplatné zrušíte, nebude obnoveno, ale výhody tarifu můžete využívat až do konce předplaceného období. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Po zrušení se vaše předplatné neaktivuje, ale můžete nadále využívat výhody tarifu až do konce zkušební doby. Poté bude váš účet snížen na tarif ${ BRAND_NAME } Free."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Po kliknutí na odkaz vás tato funkce proti phishingu požádá o potvrzení adresy webové stránky."
@@ -18333,6 +18339,12 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užívejte si **${ planTitle }** zdarma až do **${ textDate }**."
       ],
+      "How your free trial works:": [
+        "Jak funguje bezplatná zkušební verze:"
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Pokud zrušíte předplatné, přijdete o svou odměnu **${ referrerRewardAmount }** kreditů."
+      ],
       "Invite friends. Get credits.": [
         "Pozvěte přátele. Získejte kredity."
       ],
@@ -18356,6 +18368,9 @@
         "Zbývají vám **${ daysRemaining } dny** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
         "Zbývá vám **${ daysRemaining } dní** na to, abyste prozkoumali všechny výkonné funkce, které **${ planTitle }** nabízí.",
         "Zbývá vám **${ daysRemaining } dní** na to, abyste prozkoumali všechny výkonné funkce, které **${ planTitle }** nabízí."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Váš přítel také získá ${ refereeRewardAmount } k uplatnění při svém příštím vyúčtování!"
       ],
       "your subscription": [
         "vaše předplatné"
@@ -22298,9 +22313,6 @@
       "Connect organization": [
         "Připojení organizace"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Připojte se k ${ VPN_CONNECTIONS } zařízení současně s ${ vpnPlus }. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
       ],
@@ -22771,9 +22783,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Získejte aplikaci pro všechna svá zařízení a užívejte si bezpečný a snadný přístup odkudkoli."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Získejte aplikaci do všech svých zařízení a chraňte až ${ VPN_CONNECTIONS } současně."
       ],
       "Get the apps": [
         "Získat aplikace"
@@ -24243,12 +24252,6 @@
       ],
       "Advanced security for your company?": [
         "Pokročilé zabezpečení pro vaši společnost?"
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Všechny prémiové služby ${ BRAND_NAME }. Od pouhých ${ fallBackString } měsíčně"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Všechny prémiové služby ${ BRAND_NAME }. Pouze **${ priceString }** navíc měsíčně."
       ],
       "Did you know?": [
         "Věděli jste?"

@@ -4006,6 +4006,9 @@
       "Permissions request failed.": [
         "Falha na solicitação de permissões."
       ],
+      "Please add a payment method before reactivating your subscription": [
+        "Adicione um método de pagamento antes de reativar sua assinatura."
+      ],
       "Please configure a custom domain before adding addresses.": [
         "Configure um domínio personalizado antes de adicionar endereços."
       ],
@@ -4841,9 +4844,6 @@
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção contra malware"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "Todos os serviços premium da ${ BRAND_NAME }"
-      ],
       "and more premium features...": [
         "e outros recursos premium..."
       ],
@@ -5266,9 +5266,6 @@
       ],
       "Enjoying ${ planName }?": [
         "Aproveitando o ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Desbloqueie mais quatro serviços de privacidade premium por apenas **${ priceString }** a mais por mês"
       ],
       "Upgrade your privacy": [
         "Faça um upgrade na sua privacidade"
@@ -12059,6 +12056,9 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todos os recursos premium para ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
+        "Suíte de privacidade com serviços premium e ${ unlimitedPlanMaxSpace } de armazenamento criptografado em nuvem, tudo em um único pacote"
       ]
     },
     "Plans": {
@@ -12232,6 +12232,9 @@
       ],
       "How your free trial works:": [
         "Como funciona seu teste gratuito:"
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Se você cancelar, você perderá sua recompensa de crédito **${ referrerRewardAmount }**."
       ],
       "Invite friends. Get credits.": [
         "Convide amigos. Ganhe créditos."
@@ -14851,9 +14854,6 @@
       "Connect organization": [
         "Conectar organização"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo com o ${ vpnPlus }. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência"
       ],
@@ -15156,9 +15156,6 @@
       ],
       "Get started": [
         "Começar"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Instale o aplicativo em todos os seus dispositivos e proteja até ${ VPN_CONNECTIONS } de uma só vez."
       ],
       "Get the apps": [
         "Obtenha os aplicativos"
@@ -16105,12 +16102,6 @@
       ],
       "Advanced security for your company?": [
         "Segurança avançada para sua empresa?"
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Todos os serviços premium da ${ BRAND_NAME }. A partir de apenas ${ fallBackString } por mês"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Todos os serviços premium da ${ BRAND_NAME }. Apenas **${ priceString }** a mais por mês."
       ],
       "Did you know?": [
         "Você sabia?"

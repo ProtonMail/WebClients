@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Рэдагаваць “${ label.Name }”"
       ],
+      "Emoji": [
+        "Эмодзі"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Уключыць ${ darkWebMonitoring }"
       ],
@@ -7411,9 +7414,6 @@
       "Ad-blocker and malware protection": [
         "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }"
-      ],
       "and more premium features...": [
         "і іншыя прэміяльныя функцыі..."
       ],
@@ -8096,9 +8096,6 @@
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Разблакіруйце яшчэ 4 прэміяльныя сэрвісы прыватнасці ўсяго за **${ priceString }** дадатковай платы ў месяц"
       ],
       "Upgrade your privacy": [
         "Паляпшэнне вашай прыватнасці"
@@ -11841,7 +11838,7 @@
         "Вы павінны экспартаваць рэзервовую копію гэтага ключа на выпадак, калі вам спатрэбіцца аднавіць даныя, якія ім зашыфраваны."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Вам усё яшчэ неабходна адказаць на запрашэнні для таго, каб арганізатар мог убачыць ваш адказ."
+        "Вам усё яшчэ неабходна адказаць на запрашэнні для таго, каб вядучы мог убачыць ваш адказ."
       ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "У вас будзе магчымасць павысіць карыстальніка да адміністратара, як толькі ён прыме запрашэнне."
@@ -22307,9 +22304,6 @@
       "Connect organization": [
         "Падключэнне арганізацыі"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Падключайце да ${ VPN_CONNECTIONS } прылад адначасова з ${ vpnPlus }. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
       ],
@@ -22780,9 +22774,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Атрымайце праграму на ўсе свае прылады і атрымлівайце асалоду ад бяспечнага, бесперабойнага доступу ў любым месцы."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Атрымайце праграму на ўсе вашы прылады і абараняйце да ${ VPN_CONNECTIONS } прылад адначасова."
       ],
       "Get the apps": [
         "Атрымаць праграмы"
@@ -24252,12 +24243,6 @@
       ],
       "Advanced security for your company?": [
         "Пашырыць бяспеку для вашай кампаніі?"
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Усяго ад ${ fallBackString } у месяц"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Усяго за **${ priceString }** дадатковай платы ў месяц."
       ],
       "Did you know?": [
         "Ці ведалі вы што?"

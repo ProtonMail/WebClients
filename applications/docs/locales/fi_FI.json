@@ -2594,6 +2594,9 @@
       ],
       "TIME:": [
         "AIKA:"
+      ],
+      "TITLE:": [
+        "OTSIKKO:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5026,6 +5029,9 @@
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaintasi sivustolle:"
       ],
+      "You are currently signed in as ${ username }.": [
+        "Olet nyt kirjautuneena ${ username } tilille."
+      ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "Tarkastelet tätä dokumenttia tällä hetkellä vain tarkastelu -tilassa. Ota yhteyttä omistajaan ja pyydä muokkaus- ja kommentointioikeuksia."
       ],
@@ -6513,6 +6519,9 @@
       "Share files with no size limit": [
         "Jaa tiedostoja ilman kokorajoituksia"
       ],
+      "Short domain (@pm.me)": [
+        "Lyhyt verkkotunnus (@pm.me)"
+      ],
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
       ],
@@ -7527,6 +7536,9 @@
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusiminen sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa.",
         "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusimista sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",

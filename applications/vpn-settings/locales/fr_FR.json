@@ -1738,6 +1738,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Quelqu'un peut-il voir mon historique Internet si nous utilisons le même wifi ?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Connectez ${ VPN_CONNECTIONS } appareils en même temps"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Activez les fonctions kill switch et connexion automatique dans vos paramètres VPN."
       ],
@@ -1764,6 +1767,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Apprenez à activer ${ VPN_APP_NAME } sur votre routeur."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Protégez tous vos appareils domestiques en même temps avec ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Protégez votre entreprise contre les violations de données et rendez le travail à distance plus sûr avec un VPN d'entreprise."
@@ -4832,14 +4838,14 @@
       "15 GB storage": [
         "15 Go d'espace de stockage"
       ],
+      "4 more privacy services": [
+        "4 services supplémentaires de confidentialité"
+      ],
       "@pm.me address": [
         "Adresse @pm.me"
       ],
       "Ad-blocker and malware protection": [
         "Bloqueur de publicité et protection contre les logiciels malveillants"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Tous les services premium de ${ BRAND_NAME }"
       ],
       "and more premium features...": [
         "et plus de fonctionnalités premium…"
@@ -5264,8 +5270,8 @@
       "Enjoying ${ planName }?": [
         "Vous appréciez ${ planName } ?"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Débloquez 4 autres services de confidentialité premium pour seulement **${ priceString }** de plus chaque mois"
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Débloquez 4 services de confidentialité premium pour seulement **${ priceString }** de plus chaque mois"
       ],
       "Upgrade your privacy": [
         "Faites passer le respect de votre vie privée au niveau supérieur."
@@ -7853,6 +7859,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Lorsque vous annulez votre abonnement, ce dernier ne démarrera pas. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période d'essai. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Lorsque vous retirez un serveur d'une passerelle, il entre dans une période de désactivation de 10 jours. Ce serveur peut être ajouté comme nouvelle passerelle mais son pays ne peut pas être changé."
@@ -12230,6 +12239,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Si vous annulez avant cette date, vous passerez à un abonnement inférieur ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } lorsque la version d'essai prendra fin. Si vous n'annulez pas, votre abonnement complet commencera et vous recevrez **${ referrerRewardAmount }** en crédits."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Si vous annulez, vous perdrez votre récompense de crédit de **${ referrerRewardAmount }**."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Si vous vous abonnez avant cette date, vous recevrez **${ referrerRewardAmount }** en crédits. Si vous ne vous abonnez pas, vous passerez à un abonnement inférieur à ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -14857,8 +14869,8 @@
       "Connect organization": [
         "Connecter l'organisation"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Connectez jusqu'à ${ VPN_CONNECTIONS } appareils à la fois avec ${ vpnPlus }. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Connectez jusqu'à ${ VPN_CONNECTIONS } appareils à la fois avec ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Se connecter à la vidéoconférence"
@@ -15162,9 +15174,6 @@
       ],
       "Get started": [
         "Commencez"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Obtenez l'application sur tous vos appareils et protégez jusqu'à ${ VPN_CONNECTIONS } à la fois."
       ],
       "Get the apps": [
         "Obtenir les applications"
@@ -15520,6 +15529,9 @@
       ],
       "Start import process": [
         "Démarrer l'importation"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Commencez à protéger vos appareils avec l'application ${ VPN_APP_NAME }."
       ],
       "State": [
         "État"
@@ -16109,17 +16121,17 @@
       "Advanced security for your company?": [
         "Une sécurité avancée pour votre entreprise ?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Tous les services premium de ${ BRAND_NAME }. À partir de seulement ${ fallBackString } par mois"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Tous les services premium de ${ BRAND_NAME }. Pour seulement **${ priceString }** de plus chaque mois."
-      ],
       "Did you know?": [
         "Le saviez-vous ?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenez ${ drivePlusPlanMaxSpace } d'espace de stockage pour vos fichiers, photos et documents, et récupérez les versions de fichiers avec une récupération de fichiers sur 10 ans."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Suite de confidentialité avec une boite mail sécurisée, ${ VPN_SHORT_APP_NAME }, un espace de stockage cloud et un gestionnaire de mots de passe en une seule offre groupée. À partir de seulement ${ fallBackString } par mois"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Suite de confidentialité avec une boite mail sécurisée, ${ VPN_SHORT_APP_NAME }, un espace de stockage cloud et un gestionnaire de mots de passe en une seule offre groupée. Seulement **${ priceString }** de plus chaque mois."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Protégez votre organisation des fuites de données avec ${ VPN_APP_NAME } for Business."

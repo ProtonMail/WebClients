@@ -639,6 +639,9 @@
       "Edit “${ label.Name }”": [
         "Muokkaa \"${ label.Name }\""
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Ota ${ darkWebMonitoring } käyttöön"
       ],
@@ -2231,6 +2234,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Voiko joku nähdä Internet-historiani, jos käytämme samaa Wi-Fi-verkkoa?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Yhdistä ${ VPN_CONNECTIONS } laitetta samanaikaisesti"
+      ],
       "Get round-the-clock protection": [
         "Hanki ympärivuorokautinen suojaus"
       ],
@@ -2248,6 +2254,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Opi käyttämään ${ VPN_APP_NAME }:ää reitittimelläsi."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Suojaa kaikkia kotisi laitteita samanaikaisesti ${ PLAN_NAMES[PLANS.BUNDLE] } -tilauksen avulla."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Suojaa yrityksenne tietomurroilta ja tee etätyöstä turvallisempaa yritys-VPN:n avulla."
@@ -4726,6 +4735,9 @@
       ],
       "TIME:": [
         "AIKA:"
+      ],
+      "TITLE:": [
+        "OTSIKKO:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -6585,11 +6597,11 @@
       ]
     },
     "Features": {
+      "4 more privacy services": [
+        "4 muuta yksityisyyspalvelua"
+      ],
       "Ad-blocker and malware protection": [
         "Mainos- ja haittaohjelmaesto"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Kaikki ${ BRAND_NAME }-premium-palvelut"
       ],
       "and more premium features...": [
         "sekä lisää premium-ominaisuuksia..."
@@ -7219,6 +7231,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Nautitko ${ planName }ista?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Saat käyttöösi 4 premium yksityisyyspalvelua vain **${ priceString }** enemmän kuukaudesa."
       ],
       "Upgrade your privacy": [
         "Paranna yksityisyyttäsi"
@@ -10384,6 +10399,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun peruutat tilauksesi, sitä ei uusita, mutta voit silti nauttia tilauksen eduista tilausjakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Kun peruutat tilauksesi, sitä ei aloiteta, mutta voit silti nauttia tilauksen eduista kokeilujakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
+      ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Linkkiä painettaessa tämä tietojenkalastelusuojaustoiminto pyytää vahvistamaan verkkosivuston URL-osoitteen."
       ],
@@ -10440,6 +10458,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaintasi sivustolle:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Olet nyt kirjautuneena ${ username } tilille."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Käytössäsi on tällä hetkellä ${ ipCount } tilauksesi ${ ipAddresses } omasta palvelimesta.",
@@ -13855,6 +13876,9 @@
       "Share files with no size limit": [
         "Jaa tiedostoja ilman kokorajoituksia"
       ],
+      "Short domain (@pm.me)": [
+        "Lyhyt verkkotunnus (@pm.me)"
+      ],
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
       ],
@@ -15841,6 +15865,9 @@
         "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusiminen sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa.",
         "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusimista sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa."
       ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
@@ -16441,6 +16468,9 @@
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Tämän päivän jälkeen tilisi alennetaan **${ BRAND_NAME } Free -tilaukseen**. Jos muutat mieltäsi, voit **uudelleenaktivoida tilauksesi** säilyttääksesi pääsyn premium-ominaisuuksiin."
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Jos peruutat, menetät **${ referrerRewardAmount }** krediittipalkkion."
       ],
       "Invite friends. Get credits.": [
         "Kutsu kavereita. Hanki krediittejä."
@@ -19878,6 +19908,9 @@
       "Connect organization": [
         "Yhdistä organisaatio"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Yhdistä ${ VPN_CONNECTIONS } laitetta samanaikaisesti ${ vpnPlusOrUnlimited }-palvelulla. ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "Yhdistä videoneuvotteluun"
       ],
@@ -20282,9 +20315,6 @@
       ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Hanki sovellus kaikkiin laitteisiisi ja suojaa jopa ${ VPN_CONNECTIONS } kerralla."
       ],
       "Get the apps": [
         "Hanki sovellukset"
@@ -20805,6 +20835,9 @@
       ],
       "Start import process": [
         "Aloita tuonti"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Aloita laitteidesi suojaaminen ${ VPN_APP_NAME }-sovelluksella."
       ],
       "State": [
         "Osavaltio"
@@ -21648,14 +21681,14 @@
       ]
     },
     "Upsell": {
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Kaikki ${ BRAND_NAME }-premium-palvelut. Alkaen vain ${ fallBackString } kuukaudessa"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Kaikki ${ BRAND_NAME }-premium-palvelut. Vain **${ priceString }** enemmän kuukaudessa."
-      ],
       "Did you know?": [
         "Tiesitkö?"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Yksityisyyspaketti, joka sisältää suojatun sähköpostin, ${ VPN_SHORT_APP_NAME }:n, pilvitallennustilan ja salasananhallinnan yhdessä paketissa. Alkaen ${ fallBackString } kuukaudessa."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Yksityisyyspaketti, joka sisältää suojatun sähköpostin, ${ VPN_SHORT_APP_NAME }:n, pilvitallennustilan ja salasananhallinnan yhdessä paketissa. Vain **${ priceString }** lisää kuukaudessa."
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "Suojaa organisaatiosi datamurroilta ${ VPN_APP_NAME } for Business -palvelulla."
