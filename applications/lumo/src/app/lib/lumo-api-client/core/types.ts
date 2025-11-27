@@ -5,6 +5,7 @@
 // I'm not sure what is the best location: here (lib/lumo-api-client) or there (applications/lumo) -> TBD.
 //
 // FIXME FIXME FIXME
+import type { WireImage } from '../../../types';
 
 export type Role = 'assistant' | 'user' | 'system' | 'tool_call' | 'tool_result';
 
@@ -12,6 +13,7 @@ export type Turn = {
     role: Role;
     content?: string;
     encrypted?: boolean;
+    images?: WireImage[];
 };
 
 export type EncryptedTurn = Turn & { encrypted: true };
@@ -132,13 +134,12 @@ export function isGenerationToFrontendMessage(obj: any): obj is GenerationToFron
             );
 
         case 'image_data':
-            const isValid = (
+            const isValid =
                 (!('image_id' in obj) || typeof obj.image_id === 'string') &&
                 (!('data' in obj) || typeof obj.data === 'string') &&
                 (!('is_final' in obj) || typeof obj.is_final === 'boolean') &&
                 (!('seed' in obj) || typeof obj.seed === 'number') &&
-                (!('encrypted' in obj) || typeof obj.encrypted === 'boolean')
-            );
+                (!('encrypted' in obj) || typeof obj.encrypted === 'boolean');
             if (!isValid) {
                 console.warn('[IMAGE_DATA] Type guard failed:', obj);
             }
