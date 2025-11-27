@@ -360,6 +360,16 @@ const updateEventApi = async ({
         addressKeys,
         calendarKeys,
     } = calendarData;
+
+    // We use the sharedSessionKey only if we have linked events (if the shared event ID is the same).
+    // This was needed for bookings updates because they aren't linked event.
+    // If they are now linked, this code might not be necessary anymore.
+    const isEventLinked = calendarEvent?.SharedEventID === getPmSharedEventID(vevent);
+    const tmpPmData: PmInviteData = {
+        ...pmData,
+        sharedSessionKey: isEventLinked ? calendarEvent.SharedEventID : undefined,
+    };
+
     // organizer mode
     if (updateTime !== undefined && updatePartstat) {
         const { ID: eventID, AttendeesInfo } = calendarEvent;
@@ -383,7 +393,7 @@ const updateEventApi = async ({
         calendarEvent: createSingleEdit ? undefined : calendarEvent,
         newAddressKeys: addressKeys,
         newCalendarKeys: calendarKeys,
-        decryptedSharedKeyPacket: pmData?.sharedSessionKey,
+        decryptedSharedKeyPacket: tmpPmData?.sharedSessionKey,
     });
     const data = await createCalendarEvent({
         eventComponent: veventWithPmAttendees,
