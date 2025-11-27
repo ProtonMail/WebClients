@@ -1,5 +1,4 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
@@ -18,7 +17,6 @@ export const getKTFlag = ({ logOnly, showUI }: { logOnly: boolean; showUI: boole
 
 export const getKTActivationValue = ({
     featureFlag,
-    appName,
     mailSettings,
 }: {
     featureFlag: KtFeatureEnum;
@@ -35,14 +33,11 @@ export const getKTActivationValue = ({
         return KeyTransparencyActivation.LOG_ONLY;
     }
     if (featureFlag == KtFeatureEnum.ENABLE_UI) {
-        if (appName === APPS.PROTONMAIL) {
-            if (mailSettings?.KT === KEY_TRANSPARENCY_SETTING.ENABLED) {
-                return KeyTransparencyActivation.SHOW_UI;
-            } else {
-                return KeyTransparencyActivation.LOG_ONLY;
-            }
+        if (mailSettings?.KT === KEY_TRANSPARENCY_SETTING.ENABLED) {
+            return KeyTransparencyActivation.SHOW_UI;
+        } else {
+            return KeyTransparencyActivation.LOG_ONLY;
         }
-        return KeyTransparencyActivation.SHOW_UI;
     }
     return KeyTransparencyActivation.DISABLED;
 };
