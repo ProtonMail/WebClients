@@ -44,6 +44,7 @@ const LOCALES = (() => {
     try {
         return require(join(process.cwd(), 'locales', 'config', 'locales.json'));
     } catch (e) {
+        // eslint-disable-next-line no-console
         console.warn('[pack][config] No locales found');
         return {};
     }
@@ -126,6 +127,7 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         browserslist: protonPackOptions.browserslist ?? defaultBrowsersList,
         buildData,
         defineWebpackConfig,
+        babelLoader: protonPackOptions.babelLoader ?? false,
         errorLogs: protonPackOptions.errorLogs ?? false,
         featureFlags: protonPackOptions.featureFlags ?? '',
         handleSupportAndErrors: protonPackOptions.handleSupportAndErrors ?? false,
@@ -139,7 +141,6 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         overlayWarnings: protonPackOptions.overlayWarnings ?? false,
         publicPath: appData.publicPath,
         warningLogs: protonPackOptions.warningLogs ?? false,
-        webpackOnCaffeine: protonPackOptions.webpackOnCaffeine ?? false,
         writeSRI: protonPackOptions.sri !== false,
         benchmarkBuild: protonPackOptions.benchmarkBuild ?? false,
     };
