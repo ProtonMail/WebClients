@@ -44,6 +44,7 @@ import { setPreviousMeetingLink, setUpsellModalType } from '../../store/slices/m
 import type { MLSGroupState, MeetChatMessage } from '../../types';
 import { LoadingState, UpsellModalTypes } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
+import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
 import { PrejoinContainer } from '../PrejoinContainer/PrejoinContainer';
@@ -162,6 +163,11 @@ export const ProtonMeetContainer = ({
 
     const notifications = useNotifications();
 
+    const keyRotationScheduler = new KeyRotationScheduler(keyProvider);
+
+    const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
+    const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
+
     const reportMLSRelatedError = (key: string | undefined, epoch: bigint | undefined) => {
         if (!key) {
             reportMeetError('Key is undefined', { epoch });
@@ -192,8 +198,11 @@ export const ProtonMeetContainer = ({
     const onNewGroupKeyInfo = async (key: string, epoch: bigint) => {
         try {
             reportMLSRelatedError(key, epoch);
-
-            await keyProvider.setKeyWithEpoch(key, epoch);
+            if (isMeetSeamlessKeyRotationEnabled) {
+                await keyRotationScheduler.schedule(key, epoch);
+            } else {
+                await keyProvider.setKeyWithEpoch(key, epoch);
+            }
 
             const displayCode = await wasmApp?.getGroupDisplayCode();
             setMlsGroupState({ displayCode: displayCode?.full_code || null, epoch: epoch });
@@ -216,7 +225,19 @@ export const ProtonMeetContainer = ({
 
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
-            await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName, sessionId);
+
+            if (isMeetNewJoinTypeEnabled) {
+                // eslint-disable-next-line no-console
+                console.log('Joining room with proposal');
+                try {
+                    await wasmApp.joinRoomWithProposal(accessToken, meetingLinkName, sessionId);
+                } catch (error) {
+                    // fallback to join with external commit
+                    await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName, sessionId);
+                }
+            } else {
+                await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName, sessionId);
+            }
 
             await wasmApp.setMlsGroupUpdateHandler();
             await wasmApp.setLiveKitAdminChangeHandler();
@@ -395,8 +416,13 @@ export const ProtonMeetContainer = ({
                 throw new Error('Group key or epoch is missing');
             }
 
-            await keyProvider.setKeyWithEpoch(groupKey, epoch);
-
+            if (isMeetSeamlessKeyRotationEnabled) {
+                // eslint-disable-next-line no-console
+                console.log('Enabled seamless key rotation');
+                await keyRotationScheduler.schedule(groupKey, epoch);
+            } else {
+                await keyProvider.setKeyWithEpoch(groupKey, epoch);
+            }
             // Turning auto subscribe off so we have better control over the quality of the tracks
             await room.connect(websocketUrl, accessToken, {
                 autoSubscribe: false,
@@ -623,6 +649,11 @@ export const ProtonMeetContainer = ({
         void stopPiP();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
         startHealthCheck.current = false;
+
+        if (isMeetSeamlessKeyRotationEnabled) {
+            // clean the current key and epoch to avoid use them in next meeting
+            keyRotationScheduler.clean();
+        }
 
         setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);
