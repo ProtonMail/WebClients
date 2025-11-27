@@ -88,6 +88,7 @@ declare const getInputExpirationYearFormat: (input: HTMLInputElement) => CCExpir
 declare const getSelectExpirationYearFormat: (select: HTMLSelectElement) => CCExpirationYearFormat | undefined;
 declare const getSelectExpirationMonthFormat: (select: HTMLSelectElement) => CCExpirationMonthFormat | undefined;
 declare const getCCHaystack: (field: HTMLElement) => string;
+declare const getCachedCCSubtype: (el: HTMLElement) => CCFieldType | undefined;
 declare const getCCFieldType: (field: HTMLElement) => CCFieldType | undefined;
 type MatchCCInputFieldParams = {
     type: string | null;
@@ -120,6 +121,7 @@ declare const isBtnCandidate: (btn: HTMLElement) => boolean;
 declare const isProcessableField: (input: HTMLElement) => boolean;
 declare const isClassifiableField: (fnode: Fnode) => boolean;
 declare const selectInputCandidates: (target?: Document | HTMLElement) => HTMLInputElement[];
+declare const isIFrameField: (iframe: HTMLIFrameElement) => boolean;
 
 declare const isCluster: (el: HTMLElement) => boolean;
 declare const flagCluster: (el: HTMLElement) => void;
@@ -136,8 +138,10 @@ declare const isProcessed: (el: HTMLElement) => boolean;
 declare const flagAsProcessed: (el: HTMLElement) => boolean;
 declare const removeProcessedFlag: (el: HTMLElement) => boolean;
 declare const isPrediction: (el: HTMLElement) => boolean;
-declare const removePredictionFlag: (el: HTMLElement) => boolean;
+declare const removePredictionFlag: (el: HTMLElement) => void;
 declare const getParentFormPrediction: (el?: HTMLElement) => HTMLElement | null;
+declare const setCachedSubType: (_el: HTMLElement, subType: string) => void;
+declare const getCachedSubType: (el: HTMLElement) => string | undefined;
 declare const matchPredictedType: (type: string) => (str: string) => boolean;
 declare const setCachedPredictionScore: (_el: HTMLElement, type: string, score: number) => void;
 declare const getCachedPredictionScore: (type: string) => (fnode: Fnode) => number;
@@ -161,6 +165,7 @@ declare const createInputIterator: (form: HTMLElement) => {
 };
 declare const selectFormCandidates: (root?: Document | HTMLElement) => HTMLElement[];
 
+declare const getCachedIdentitySubType: (el: HTMLElement) => IdentityFieldType | undefined;
 declare const getIdentityHaystack: (input: HTMLInputElement) => string;
 declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
 type MatchIdendityFieldParams = {
@@ -264,7 +269,10 @@ export {
     getBaseAttributes,
     getCCFieldType,
     getCCHaystack,
+    getCachedCCSubtype,
+    getCachedIdentitySubType,
     getCachedPredictionScore,
+    getCachedSubType,
     getExpirationFormat,
     getFieldAttributes,
     getFormAttributes,
@@ -292,6 +300,7 @@ export {
     isCustomElementWithShadowRoot,
     isEmailCandidate,
     isHidden,
+    isIFrameField,
     isIdentity,
     isIgnored,
     isOAuthCandidate,
@@ -344,6 +353,7 @@ export {
     selectFormCandidates,
     selectInputCandidates,
     setCachedPredictionScore,
+    setCachedSubType,
     shadowPiercingAncestors,
     shadowPiercingContains,
     shallowShadowQuerySelector,

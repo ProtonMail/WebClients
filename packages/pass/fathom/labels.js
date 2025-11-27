@@ -24,35 +24,39 @@ var FieldType;
 var IdentityFieldType;
 
 (function (IdentityFieldType) {
-    IdentityFieldType[(IdentityFieldType['FULLNAME'] = 1)] = 'FULLNAME';
-    IdentityFieldType[(IdentityFieldType['FIRSTNAME'] = 2)] = 'FIRSTNAME';
-    IdentityFieldType[(IdentityFieldType['MIDDLENAME'] = 3)] = 'MIDDLENAME';
-    IdentityFieldType[(IdentityFieldType['LASTNAME'] = 4)] = 'LASTNAME';
-    IdentityFieldType[(IdentityFieldType['TELEPHONE'] = 5)] = 'TELEPHONE';
-    IdentityFieldType[(IdentityFieldType['ADDRESS'] = 6)] = 'ADDRESS';
-    IdentityFieldType[(IdentityFieldType['STATE'] = 7)] = 'STATE';
-    IdentityFieldType[(IdentityFieldType['CITY'] = 8)] = 'CITY';
-    IdentityFieldType[(IdentityFieldType['ZIPCODE'] = 9)] = 'ZIPCODE';
-    IdentityFieldType[(IdentityFieldType['ORGANIZATION'] = 10)] = 'ORGANIZATION';
-    IdentityFieldType[(IdentityFieldType['COUNTRY'] = 11)] = 'COUNTRY';
-    IdentityFieldType[(IdentityFieldType['EMAIL'] = 12)] = 'EMAIL';
+    IdentityFieldType['FULLNAME'] = 'id:fullname';
+    IdentityFieldType['FIRSTNAME'] = 'id:firstname';
+    IdentityFieldType['MIDDLENAME'] = 'id:middlname';
+    IdentityFieldType['LASTNAME'] = 'id:lastname';
+    IdentityFieldType['TELEPHONE'] = 'id:tel';
+    IdentityFieldType['ADDRESS'] = 'id:address';
+    IdentityFieldType['STATE'] = 'id:state';
+    IdentityFieldType['CITY'] = 'id:city';
+    IdentityFieldType['ZIPCODE'] = 'id:zipcode';
+    IdentityFieldType['ORGANIZATION'] = 'id:org';
+    IdentityFieldType['COUNTRY'] = 'id:country';
+    IdentityFieldType['EMAIL'] = 'id:email';
 })(IdentityFieldType || (IdentityFieldType = {}));
 
 var CCFieldType;
 
 (function (CCFieldType) {
-    CCFieldType[(CCFieldType['NAME'] = 1)] = 'NAME';
-    CCFieldType[(CCFieldType['FIRSTNAME'] = 2)] = 'FIRSTNAME';
-    CCFieldType[(CCFieldType['LASTNAME'] = 3)] = 'LASTNAME';
-    CCFieldType[(CCFieldType['NUMBER'] = 4)] = 'NUMBER';
-    CCFieldType[(CCFieldType['CSC'] = 5)] = 'CSC';
-    CCFieldType[(CCFieldType['EXP'] = 6)] = 'EXP';
-    CCFieldType[(CCFieldType['EXP_YEAR'] = 7)] = 'EXP_YEAR';
-    CCFieldType[(CCFieldType['EXP_MONTH'] = 8)] = 'EXP_MONTH';
+    CCFieldType['NAME'] = 'cc:name';
+    CCFieldType['FIRSTNAME'] = 'cc:firstname';
+    CCFieldType['LASTNAME'] = 'cc:lastname';
+    CCFieldType['NUMBER'] = 'cc:number';
+    CCFieldType['CSC'] = 'cc:cvc';
+    CCFieldType['EXP'] = 'cc:exp';
+    CCFieldType['EXP_YEAR'] = 'cc:exp-year';
+    CCFieldType['EXP_MONTH'] = 'cc:exp-month';
 })(CCFieldType || (CCFieldType = {}));
 
 const formTypes = Object.values(FormType);
 
 const fieldTypes = Object.values(FieldType);
 
-export { CCFieldType, FieldType, FormType, IdentityFieldType, fieldTypes, formTypes };
+const identityFields = new Set(Object.values(IdentityFieldType));
+
+const ccFields = new Set(Object.values(CCFieldType));
+
+export { CCFieldType, FieldType, FormType, IdentityFieldType, ccFields, fieldTypes, formTypes, identityFields };

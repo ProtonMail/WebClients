@@ -16,30 +16,32 @@ declare enum FieldType {
     CREDIT_CARD = 'cc',
 }
 declare enum IdentityFieldType {
-    FULLNAME = 1,
-    FIRSTNAME = 2,
-    MIDDLENAME = 3,
-    LASTNAME = 4,
-    TELEPHONE = 5,
-    ADDRESS = 6,
-    STATE = 7,
-    CITY = 8,
-    ZIPCODE = 9,
-    ORGANIZATION = 10,
-    COUNTRY = 11,
-    EMAIL = 12,
+    FULLNAME = 'id:fullname',
+    FIRSTNAME = 'id:firstname',
+    MIDDLENAME = 'id:middlname',
+    LASTNAME = 'id:lastname',
+    TELEPHONE = 'id:tel',
+    ADDRESS = 'id:address',
+    STATE = 'id:state',
+    CITY = 'id:city',
+    ZIPCODE = 'id:zipcode',
+    ORGANIZATION = 'id:org',
+    COUNTRY = 'id:country',
+    EMAIL = 'id:email',
 }
 declare enum CCFieldType {
-    NAME = 1,
-    FIRSTNAME = 2,
-    LASTNAME = 3,
-    NUMBER = 4,
-    CSC = 5,
-    EXP = 6,
-    EXP_YEAR = 7,
-    EXP_MONTH = 8,
+    NAME = 'cc:name',
+    FIRSTNAME = 'cc:firstname',
+    LASTNAME = 'cc:lastname',
+    NUMBER = 'cc:number',
+    CSC = 'cc:cvc',
+    EXP = 'cc:exp',
+    EXP_YEAR = 'cc:exp-year',
+    EXP_MONTH = 'cc:exp-month',
 }
 declare const formTypes: FormType[];
 declare const fieldTypes: FieldType[];
+declare const identityFields: Set<string>;
+declare const ccFields: Set<string>;
 
-export { CCFieldType, FieldType, FormType, IdentityFieldType, fieldTypes, formTypes };
+export { CCFieldType, FieldType, FormType, IdentityFieldType, ccFields, fieldTypes, formTypes, identityFields };
