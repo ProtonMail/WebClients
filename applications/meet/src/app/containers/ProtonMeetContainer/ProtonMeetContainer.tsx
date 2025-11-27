@@ -5,6 +5,7 @@ import { ConnectionStateInfo, type GroupKeyInfo, MeetCoreErrorEnum } from '@prot
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
@@ -15,6 +16,7 @@ import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -37,8 +39,10 @@ import { useLockMeeting } from '../../hooks/useLockMeeting';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
 import { useWakeLock } from '../../hooks/useWakeLock';
+import { useMeetDispatch } from '../../store/hooks';
+import { setPreviousMeetingLink, setUpsellModalType } from '../../store/slices/meetAppStateSlice';
 import type { MLSGroupState, MeetChatMessage } from '../../types';
-import { LoadingState } from '../../types';
+import { LoadingState, UpsellModalTypes } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { setupLiveKitAdminChangeEvent, setupWasmDependencies } from '../../utils/wasmUtils';
 import { MeetContainer } from '../MeetContainer';
@@ -54,9 +58,17 @@ interface ProtonMeetContainerProps {
     guestMode?: boolean;
     room: Room;
     keyProvider: ProtonMeetKeyProvider;
+    user?: UserModel | null;
 }
 
-export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: ProtonMeetContainerProps) => {
+export const ProtonMeetContainer = ({
+    guestMode = false,
+    room,
+    keyProvider,
+    user = null,
+}: ProtonMeetContainerProps) => {
+    const dispatch = useMeetDispatch();
+
     const promptOnTabClose = useFlag('MeetPromptOnTabClose');
 
     useWakeLock();
@@ -146,6 +158,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
     const mlsSetupDone = useRef(false);
     const startHealthCheck = useRef(false);
+    const meetingLinkRef = useRef<string | null>(null);
 
     const notifications = useNotifications();
 
@@ -483,7 +496,9 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
             await handleJoin(displayName, id);
 
-            history.push(getMeetingLink(id, passwordBase));
+            meetingLinkRef.current = getMeetingLink(id, passwordBase);
+
+            history.push(meetingLinkRef.current);
         } catch (error: any) {
             reportMeetError('Failed to create instant meeting', error);
             setJoiningInProgress(false);
@@ -556,6 +571,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             }));
 
             await handleJoin(displayName, meetingToken);
+
+            meetingLinkRef.current = getMeetingLink(token, urlPassword);
         } catch (error: any) {
             reportMeetError('Failed to join meeting', error);
             setJoiningInProgress(false);
@@ -578,6 +595,26 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         void setup();
     }, []);
 
+    const prepareUpsell = () => {
+        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+
+        if (guestMode) {
+            dispatch(setUpsellModalType(UpsellModalTypes.Schedule));
+            history.push('/anonymous');
+            return;
+        }
+
+        if (user && !user.hasPaidMeet) {
+            dispatch(setUpsellModalType(UpsellModalTypes.FreeAccount));
+        }
+
+        if (user && user.hasPaidMeet) {
+            dispatch(setUpsellModalType(UpsellModalTypes.PaidAccount));
+        }
+
+        history.push('/dashboard');
+    };
+
     const handleLeave = () => {
         instantMeetingRef.current = false;
         void room.disconnect();
@@ -589,6 +626,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
         setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);
+
+        prepareUpsell();
     };
 
     const handleEndMeeting = async () => {
@@ -608,6 +647,8 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
         mlsSetupDone.current = false; // need to set mls again after leave meeting
         setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);
+
+        prepareUpsell();
     };
 
     const handleMeetingLockToggle = async (enable: boolean) => {
@@ -724,6 +765,7 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
                         maxParticipants={meetingDetails.maxParticipants}
                         instantMeeting={instantMeetingRef.current}
                         assignHost={assignHost}
+                        paidUser={!!user?.hasPaidMeet}
                     />
                 ) : (
                     <PrejoinContainer
@@ -758,4 +800,10 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
             </div>
         </MLSContext.Provider>
     );
+};
+
+export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps, 'user'>) => {
+    const [user] = useUser();
+
+    return <ProtonMeetContainer {...props} user={user} />;
 };

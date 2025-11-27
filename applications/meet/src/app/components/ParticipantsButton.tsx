@@ -83,5 +83,5 @@ export const ParticipantsButton = ({
 
 export const WrappedParticipantsButton = ({ hasAdminPermission }: { hasAdminPermission: boolean }) => {
     const [user] = useUser();
-    return <ParticipantsButton hasAdminPermission={hasAdminPermission} isPaid={user?.isPaid} />;
+    return <ParticipantsButton hasAdminPermission={hasAdminPermission} isPaid={user?.hasPaidMeet} />;
 };

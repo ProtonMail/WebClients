@@ -28,8 +28,8 @@ import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';
-import type { MeetDispatch, MeetStore } from './store';
-import { setupStore } from './store';
+import type { MeetDispatch, MeetStore } from './store/store';
+import { setupStore } from './store/store';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
 

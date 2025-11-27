@@ -301,6 +301,7 @@ export type IconName =
     | 'meet-settings'
     | 'meet-shield-full'
     | 'meet-shield'
+    | 'meet-shield-star'
     | 'meet-speaker'
     | 'meet-speaker-alt'
     | 'meet-participants'

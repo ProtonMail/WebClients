@@ -14,7 +14,7 @@ import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useGetMeetings, useMeetings } from '../store';
+import { useGetMeetings, useMeetings } from '../store/hooks/useMeetings';
 import { saveRotatePersonalMeetingDisable } from '../utils/disableRotatePersonalMeeting';
 import { useRotatePersonalMeetingLink } from './useRotatePersonalMeetingLink';
 
@@ -29,7 +29,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
     const notifications = useNotifications();
     const [loadingRotatePersonalMeeting, withLoadingRotatePersonalMeeting] = useLoading();
 
-    const [activeMeetings] = useMeetings();
+    const [activeMeetings]: [Meeting[] | undefined, boolean] = useMeetings();
 
     const disableRotateButton = useCallback(() => {
         const disabledUntil = Date.now() + HOUR;
@@ -67,7 +67,6 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
                 MeetingName: meetingName,
             };
         } catch (err) {
-            console.error(err);
             return null;
         }
     };
@@ -78,23 +77,23 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
                 return;
             }
 
-            const filteredMeetings = activeMeetings.filter((meeting) =>
+            const filteredMeetings = activeMeetings.filter((meeting: Meeting) =>
                 [MeetingType.PERSONAL, MeetingType.RECURRING, MeetingType.SCHEDULED].includes(meeting.Type)
             );
 
-            const decryptionTasks = filteredMeetings.map((meeting) => () => getDecryptedMeeting(meeting));
+            const decryptionTasks = filteredMeetings.map((meeting: Meeting) => () => getDecryptedMeeting(meeting));
             const decryptedMeetings = await runInQueue(decryptionTasks, DECRYPTION_BATCH_SIZE);
 
-            const validDecryptedMeetings = decryptedMeetings.filter(isTruthy);
+            const validDecryptedMeetings: Meeting[] = decryptedMeetings.filter(isTruthy) as Meeting[];
 
             setMeetings(validDecryptedMeetings);
 
-            const personalMeeting = validDecryptedMeetings.find((m) => m.Type === MeetingType.PERSONAL) || null;
+            const personalMeeting =
+                validDecryptedMeetings.find((m: Meeting) => m.Type === MeetingType.PERSONAL) || null;
             setPersonalMeeting(personalMeeting);
         } catch (error) {
             setPersonalMeeting(null);
             setMeetings([]);
-            console.error(error);
         }
     };
 
@@ -120,8 +119,8 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
     const setupPersonalMeeting = async () => {
         if (
             !meetings ||
-            meetings.find((meeting) => meeting.Type === MeetingType.PERSONAL) ||
-            (activeMeetings && activeMeetings.find((meeting) => meeting.Type === MeetingType.PERSONAL))
+            meetings.find((meeting: Meeting) => meeting.Type === MeetingType.PERSONAL) ||
+            (activeMeetings && activeMeetings.find((meeting: Meeting) => meeting.Type === MeetingType.PERSONAL))
         ) {
             return;
         }

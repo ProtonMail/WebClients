@@ -10,7 +10,7 @@ import { UIStateProvider } from '../../contexts/UIStateContext';
 import { audioQuality, qualityConstants, screenShareQuality } from '../../qualityConstants';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
-import { ProtonMeetContainer } from './ProtonMeetContainer';
+import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
 const keyProvider = new ProtonMeetKeyProvider();
 
@@ -69,7 +69,15 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
         <RoomContext.Provider value={roomRef.current}>
             <MediaManagementProvider>
                 <UIStateProvider instantMeeting={false}>
-                    <ProtonMeetContainer guestMode={guestMode} room={roomRef.current} keyProvider={keyProvider} />
+                    {guestMode ? (
+                        <ProtonMeetContainer guestMode={true} room={roomRef.current} keyProvider={keyProvider} />
+                    ) : (
+                        <ProtonMeetContainerWithUser
+                            guestMode={false}
+                            room={roomRef.current}
+                            keyProvider={keyProvider}
+                        />
+                    )}
                 </UIStateProvider>
             </MediaManagementProvider>
         </RoomContext.Provider>
