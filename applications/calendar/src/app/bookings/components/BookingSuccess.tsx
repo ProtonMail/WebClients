@@ -124,7 +124,10 @@ export const BookingSuccess = ({ isGuest }: Props) => {
                     <BookingSuccessItem
                         title={c('Title').t`Time zone`}
                         icon={<IcGlobe size={6} />}
-                        data={getTimezoneAndOffset(selectedTimezone || bookingDetails.timezone)}
+                        data={getTimezoneAndOffset(
+                            selectedTimezone || bookingDetails.timezone,
+                            selectedBookingSlot.tzDate
+                        )}
                     />
                 </div>
             </div>
