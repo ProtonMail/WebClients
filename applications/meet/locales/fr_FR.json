@@ -14,6 +14,12 @@
       "Add another account": [
         "Ajouter un autre compte"
       ],
+      "Assign ${ selectedParticipantName } as host": [
+        "Désigner ${ selectedParticipantName } comme hôte"
+      ],
+      "Assign new host": [
+        "Désigner un nouvel hôte"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -1174,6 +1180,9 @@
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
       ],
+      "Failed to assign host": [
+        "La désignation de l'hôte n'a pas abouti."
+      ],
       "Failed to create meeting": [
         "La création de la réunion n'a pas abouti."
       ],
@@ -1431,6 +1440,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "Leaving will stop your screen sharing. Do you want to continue?": [
+        "En quittant, vous mettrez fin au partage d'écran. Voulez-vous continuer ?"
+      ],
       "Loading": [
         "Chargement"
       ],
@@ -1457,6 +1469,9 @@
       ],
       "New": [
         "Nouveau"
+      ],
+      "New host": [
+        "Nouvel hôte"
       ],
       "No camera detected": [
         "Aucune caméra détectée"
@@ -1496,6 +1511,9 @@
       ],
       "Select a microphone": [
         "Sélectionnez un microphone"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Sélectionnez un participant à désigner comme nouvel hôte avant votre départ : "
       ],
       "Select a speaker": [
         "Sélectionner une sortie audio"
@@ -1763,6 +1781,9 @@
       ]
     },
     "Success": {
+      "Assigned new host": [
+        "L'hôte a été désigné"
+      ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
       ],
@@ -1785,6 +1806,9 @@
       ],
       "Are you sure?": [
         "Êtes-vous sûr ?"
+      ],
+      "Assign a new host": [
+        "Désigner un nouvel hôte"
       ],
       "Date": [
         "Date"
@@ -1815,6 +1839,9 @@
       ],
       "Minicalendar": [
         "Mini calendrier"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Participants (${ filteredParticipants.length })"
       ],
       "Protecting meeting with end-to-end encryption...": [
         "Protection de la réunion avec un chiffrement de bout en bout..."

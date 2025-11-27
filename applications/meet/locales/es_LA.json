@@ -14,6 +14,12 @@
       "Add another account": [
         "Añada otra cuenta"
       ],
+      "Assign ${ selectedParticipantName } as host": [
+        "Asignar a ${ selectedParticipantName } como anfitrión"
+      ],
+      "Assign new host": [
+        "Asignar nuevo anfitrión"
+      ],
       "Attach screenshot(s)": [
         "Adjuntar una o varias capturas de pantalla"
       ],
@@ -1341,6 +1347,9 @@
       "Enter 6 digits": [
         "Ingrese 6 dígitos"
       ],
+      "Failed to assign host": [
+        "Error al asignar anfitrión"
+      ],
       "Failed to create meeting": [
         "Error al crear la reunión"
       ],
@@ -1574,9 +1583,6 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anónimo ${ particle } ${ participantNumber }"
       ],
-      "Are you sure you want to leave the meeting?": [
-        "¿En verdad desea salir de la reunión?"
-      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -1694,6 +1700,9 @@
       "Learn more": [
         "Más información"
       ],
+      "Leaving will stop your screen sharing. Do you want to continue?": [
+        "Salir detendrá su pantalla compartida. ¿Desea continuar?"
+      ],
       "Left": [
         "Izquierda"
       ],
@@ -1738,6 +1747,9 @@
       ],
       "New": [
         "Nuevo"
+      ],
+      "New host": [
+        "Nuevo anfitrión"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "No se detectaron un ${ microphoneLinkButton }${ andString }${ cameraLinkButton }."
@@ -1801,6 +1813,9 @@
       ],
       "Select a microphone": [
         "Seleccionar un micrófono"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Seleccione un participante para asignarlo como el nuevo anfitrión antes de irse: "
       ],
       "Select a speaker": [
         "Seleccionar un altavoz"
@@ -2170,6 +2185,9 @@
       ]
     },
     "Success": {
+      "Assigned new host": [
+        "Se asignó un nuevo anfitrión"
+      ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
       ],
@@ -2195,6 +2213,9 @@
       ],
       "Are you sure?": [
         "¿Está seguro?"
+      ],
+      "Assign a new host": [
+        "Asignar un nuevo anfitrión"
       ],
       "Authenticator": [
         "Autenticador"
@@ -2252,6 +2273,9 @@
       ],
       "Participants": [
         "Participantes"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Participantes (${ filteredParticipants.length })"
       ],
       "Passphrase": [
         "Frase de contraseña"
