@@ -14,6 +14,12 @@
       "Add another account": [
         "Başka bir hesap ekle"
       ],
+      "Assign ${ selectedParticipantName } as host": [
+        "${ selectedParticipantName } katılımcısını ev sahibi olarak atayın"
+      ],
+      "Assign new host": [
+        "Yeni ev sahibi atayın"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -1341,6 +1347,9 @@
       "Enter 6 digits": [
         "6 rakam yazın"
       ],
+      "Failed to assign host": [
+        "Ev sahibi ataması başarısız oldu"
+      ],
       "Failed to create meeting": [
         "Görüşme oluşturulamadı"
       ],
@@ -1574,9 +1583,6 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } ${ participantNumber } anonim"
       ],
-      "Are you sure you want to leave the meeting?": [
-        "Görüşmeden ayrılmak istediğinize emin misiniz?"
-      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -1694,6 +1700,9 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Leaving will stop your screen sharing. Do you want to continue?": [
+        "Ayrılmak ekran paylaşımınızı durduracaktır. Devam etmek istiyor musunuz?"
+      ],
       "Left": [
         "Ayrıldı"
       ],
@@ -1738,6 +1747,9 @@
       ],
       "New": [
         "Yeni"
+      ],
+      "New host": [
+        "Yeni ev sahibi"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "${ microphoneLinkButton }${ andString }${ cameraLinkButton } bulunamadı."
@@ -1801,6 +1813,9 @@
       ],
       "Select a microphone": [
         "Bir mikrofon seçin"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Gitmeden önce yeni ev sahibi olarak atayacağınız katılımcıyı seçin: "
       ],
       "Select a speaker": [
         "Hoparlör seçin"
@@ -2170,6 +2185,9 @@
       ]
     },
     "Success": {
+      "Assigned new host": [
+        "Yeni ev sahibi atandı"
+      ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
@@ -2195,6 +2213,9 @@
       ],
       "Are you sure?": [
         "Emin misiniz?"
+      ],
+      "Assign a new host": [
+        "Yeni bir ev sahibi atayın"
       ],
       "Authenticator": [
         "Kimlik doğrulayıcı"
@@ -2252,6 +2273,9 @@
       ],
       "Participants": [
         "Katılımcılar"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Katılımcılar (${ filteredParticipants.length })"
       ],
       "Passphrase": [
         "Parola ifadesi"
