@@ -230,12 +230,12 @@ export const getRangeDateStart = (formData: BookingFormData, initialStartDate: D
     return isBefore(initialStartDate, new Date()) ? roundToNextHalfHour(new Date()) : initialStartDate;
 };
 
-export const generateRangeFromSlots = (editData: BookingPageEditData): BookingRange[] => {
+export const generateRangeFromSlots = (editData: BookingPageEditData, timezone: string): BookingRange[] => {
     const formattedSlots = editData.slots
         .map((slot) => ({
             ...slot,
-            start: fromTimestampToUTCDate(slot.start, slot.timezone),
-            end: fromTimestampToUTCDate(slot.end, slot.timezone),
+            start: fromTimestampToUTCDate(slot.start, timezone),
+            end: fromTimestampToUTCDate(slot.end, timezone),
         }))
         .sort((a, b) => a.start.getTime() - b.start.getTime());
 
@@ -247,7 +247,6 @@ export const generateRangeFromSlots = (editData: BookingPageEditData): BookingRa
 
     let currentStart = formattedSlots[0].start;
     let currentEnd = formattedSlots[0].end;
-    const timezone = formattedSlots[0].timezone;
 
     for (let i = 1; i < formattedSlots.length; i += 1) {
         const slot = formattedSlots[i];
