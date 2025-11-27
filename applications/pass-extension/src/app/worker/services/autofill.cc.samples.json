@@ -1,0 +1,875 @@
+{
+    "autofilth.lol/payment": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "autofilth.lol" },
+                "crossOrigin": false,
+                "tabId": 1959875817
+            },
+            "838": {
+                "frame": { "parent": 0, "frameId": 838, "origin": "autofilth.lol" },
+                "crossOrigin": false,
+                "tabId": 1959875817
+            }
+        },
+        "clusters": {
+            "0": { "forms": [], "frameAttributes": {} },
+            "838": {
+                "forms": [
+                    {
+                        "formId": "93546be1",
+                        "fields": [
+                            { "type": "field", "fieldId": "eb10e9d1", "fieldType": "cc", "fieldSubType": "cc:number" },
+                            { "type": "field", "fieldId": "3c4c82c6", "fieldType": "cc", "fieldSubType": "cc:cvc" },
+                            {
+                                "type": "field",
+                                "fieldId": "eb316378",
+                                "fieldType": "cc",
+                                "fieldSubType": "cc:exp-month"
+                            },
+                            { "type": "field", "fieldId": "32336fd7", "fieldType": "cc", "fieldSubType": "cc:exp-year" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://www.autofilth.lol/frame?definition=JTdCJTIyaWQlMjIlM0ElMjIlMjIlMkMlMjJuYW1lJTIyJTNBJTIyJTIyJTJDJTIyZGVzY3JpcHRpb24lMjIlM0ElMjIlMjIlMkMlMjJzdWJtaXRUZXh0JTIyJTNBJTIyJTIyJTJDJTIyZXJyb3JUZXh0JTIyJTNBJTIyJTIyJTJDJTIyZmllbGRzJTIyJTNBJTVCJTdCJTIyaWQlMjIlM0ElMjJjYy1udW1iZXIlMjIlMkMlMjJ0eXBlJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyQ2FyZCUyMG51bWJlciUyMiUyQyUyMmF1dG9jb21wbGV0ZSUyMiUzQSUyMmNjLW51bWJlciUyMiUyQyUyMnJlcXVpcmVkJTIyJTNBdHJ1ZSUyQyUyMmlucHV0TW9kZSUyMiUzQSUyMm51bWVyaWMlMjIlN0QlMkMlN0IlMjJpZCUyMiUzQSUyMmNjLWN2diUyMiUyQyUyMnR5cGUlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGFiZWwlMjIlM0ElMjJTZWN1cml0eSUyMENvZGUlMjIlMkMlMjJhdXRvY29tcGxldGUlMjIlM0ElMjJjYy1jc2MlMjIlMkMlMjJyZXF1aXJlZCUyMiUzQXRydWUlMkMlMjJpbnB1dE1vZGUlMjIlM0ElMjJudW1lcmljJTIyJTdEJTJDJTdCJTIyaWQlMjIlM0ElMjJjYy1leHAtbW9udGglMjIlMkMlMjJ0eXBlJTIyJTNBJTIyc2VsZWN0JTIyJTJDJTIyb3B0aW9ucyUyMiUzQSU1QiU3QiUyMnZhbHVlJTIyJTNBJTIyJTIyJTJDJTIybGFiZWwlMjIlM0ElMjJTZWxlY3QlMjBtb250aCUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMDElMjIlMkMlMjJsYWJlbCUyMiUzQSUyMmphbnVhcnklMjIlN0QlMkMlN0IlMjJ2YWx1ZSUyMiUzQSUyMjAyJTIyJTJDJTIybGFiZWwlMjIlM0ElMjJmZWJydWFyeSUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMDMlMjIlMkMlMjJsYWJlbCUyMiUzQSUyMm1hcmNoJTIyJTdEJTJDJTdCJTIydmFsdWUlMjIlM0ElMjIwNCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyYXByaWwlMjIlN0QlMkMlN0IlMjJ2YWx1ZSUyMiUzQSUyMjA1JTIyJTJDJTIybGFiZWwlMjIlM0ElMjJtYXklMjIlN0QlMkMlN0IlMjJ2YWx1ZSUyMiUzQSUyMjA2JTIyJTJDJTIybGFiZWwlMjIlM0ElMjJqdW5lJTIyJTdEJTJDJTdCJTIydmFsdWUlMjIlM0ElMjIwNyUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyanVseSUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMDglMjIlMkMlMjJsYWJlbCUyMiUzQSUyMmF1Z3VzdCUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMDklMjIlMkMlMjJsYWJlbCUyMiUzQSUyMnNlcHRlbWJlciUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMTAlMjIlMkMlMjJsYWJlbCUyMiUzQSUyMm9jdG9iZXIlMjIlN0QlMkMlN0IlMjJ2YWx1ZSUyMiUzQSUyMjExJTIyJTJDJTIybGFiZWwlMjIlM0ElMjJub3ZlbWJlciUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMTIlMjIlMkMlMjJsYWJlbCUyMiUzQSUyMmRlY2VtYmVyJTIyJTdEJTVEJTJDJTIybGFiZWwlMjIlM0ElMjJFeHBpcmF0aW9uJTIwbW9udGglMjIlMkMlMjJhdXRvY29tcGxldGUlMjIlM0ElMjJjYy1leHAtbW9udGglMjIlMkMlMjJyZXF1aXJlZCUyMiUzQXRydWUlN0QlMkMlN0IlMjJpZCUyMiUzQSUyMmNjLWV4cC15ZWFyJTIyJTJDJTIydHlwZSUyMiUzQSUyMnNlbGVjdCUyMiUyQyUyMm9wdGlvbnMlMjIlM0ElNUIlN0IlMjJ2YWx1ZSUyMiUzQSUyMiUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyU2VsZWN0JTIweWVhciUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAyNCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAyNCUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAyNSUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAyNSUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAyNiUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAyNiUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAyNyUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAyNyUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAyOCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAyOCUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAyOSUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAyOSUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAzMCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAzMCUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAzMSUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAzMSUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAzMiUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAzMiUyMiU3RCUyQyU3QiUyMnZhbHVlJTIyJTNBJTIyMjAzMyUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyMjAzMyUyMiU3RCU1RCUyQyUyMmxhYmVsJTIyJTNBJTIyRXhwaXJhdGlvbiUyMHllYXIlMjIlMkMlMjJhdXRvY29tcGxldGUlMjIlM0ElMjJjYy1leHAteWVhciUyMiUyQyUyMnJlcXVpcmVkJTIyJTNBdHJ1ZSU3RCU1RCU3RA==",
+                    "name": "",
+                    "width": 280,
+                    "height": 420
+                }
+            }
+        }
+    },
+    "autofilth.lol/checkout": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "autofilth.lol" },
+                "crossOrigin": false,
+                "tabId": 1959875817
+            },
+            "841": {
+                "frame": { "parent": 0, "frameId": 841, "origin": "autofilth.lol" },
+                "crossOrigin": false,
+                "tabId": 1959875817
+            }
+        },
+        "clusters": {
+            "0": {
+                "forms": [
+                    {
+                        "formId": "2fa1a751",
+                        "fields": [
+                            { "type": "field", "fieldId": "bda56c58", "fieldType": "cc", "fieldSubType": "cc:name" },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "/frame?definition=JTdCJTIyaWQlMjIlM0ElMjIlMjIlMkMlMjJuYW1lJTIyJTNBJTIyJTIyJTJDJTIyZGVzY3JpcHRpb24lMjIlM0ElMjIlMjIlMkMlMjJzdWJtaXRUZXh0JTIyJTNBJTIyJTIyJTJDJTIyZXJyb3JUZXh0JTIyJTNBJTIyJTIyJTJDJTIyZmllbGRzJTIyJTNBJTVCJTdCJTIyaWQlMjIlM0ElMjJjYy1udW1iZXIlMjIlMkMlMjJ0eXBlJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyQ2FyZCUyMG51bWJlciUyMiUyQyUyMmF1dG9jb21wbGV0ZSUyMiUzQSUyMmNjLW51bWJlciUyMiUyQyUyMnJlcXVpcmVkJTIyJTNBdHJ1ZSUyQyUyMmlucHV0TW9kZSUyMiUzQSUyMm51bWVyaWMlMjIlN0QlMkMlN0IlMjJpZCUyMiUzQSUyMmNjLWN2diUyMiUyQyUyMnR5cGUlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGFiZWwlMjIlM0ElMjJTZWN1cml0eSUyMENvZGUlMjIlMkMlMjJhdXRvY29tcGxldGUlMjIlM0ElMjJjYy1jc2MlMjIlMkMlMjJyZXF1aXJlZCUyMiUzQXRydWUlMkMlMjJpbnB1dE1vZGUlMjIlM0ElMjJudW1lcmljJTIyJTdEJTJDJTdCJTIyaWQlMjIlM0ElMjJjYy1leHAlMjIlMkMlMjJ0eXBlJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyRXhwaXJhdGlvbiUyMChtbSUyRnl5KSUyMiUyQyUyMmF1dG9jb21wbGV0ZSUyMiUzQSUyMmNjLWV4cCUyMiUyQyUyMnJlcXVpcmVkJTIyJTNBdHJ1ZSU3RCU1RCU3RA==",
+                                    "name": "",
+                                    "title": "",
+                                    "ariaLabel": "",
+                                    "width": 280,
+                                    "height": 305
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "841": {
+                "forms": [
+                    {
+                        "formId": "1c8b65b2",
+                        "fields": [
+                            { "type": "field", "fieldId": "8bb4e5da", "fieldType": "cc", "fieldSubType": "cc:number" },
+                            { "type": "field", "fieldId": "217c7b4e", "fieldType": "cc", "fieldSubType": "cc:cvc" },
+                            { "type": "field", "fieldId": "2c3e3b8b", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://www.autofilth.lol/frame?definition=JTdCJTIyaWQlMjIlM0ElMjIlMjIlMkMlMjJuYW1lJTIyJTNBJTIyJTIyJTJDJTIyZGVzY3JpcHRpb24lMjIlM0ElMjIlMjIlMkMlMjJzdWJtaXRUZXh0JTIyJTNBJTIyJTIyJTJDJTIyZXJyb3JUZXh0JTIyJTNBJTIyJTIyJTJDJTIyZmllbGRzJTIyJTNBJTVCJTdCJTIyaWQlMjIlM0ElMjJjYy1udW1iZXIlMjIlMkMlMjJ0eXBlJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyQ2FyZCUyMG51bWJlciUyMiUyQyUyMmF1dG9jb21wbGV0ZSUyMiUzQSUyMmNjLW51bWJlciUyMiUyQyUyMnJlcXVpcmVkJTIyJTNBdHJ1ZSUyQyUyMmlucHV0TW9kZSUyMiUzQSUyMm51bWVyaWMlMjIlN0QlMkMlN0IlMjJpZCUyMiUzQSUyMmNjLWN2diUyMiUyQyUyMnR5cGUlMjIlM0ElMjJ0ZXh0JTIyJTJDJTIybGFiZWwlMjIlM0ElMjJTZWN1cml0eSUyMENvZGUlMjIlMkMlMjJhdXRvY29tcGxldGUlMjIlM0ElMjJjYy1jc2MlMjIlMkMlMjJyZXF1aXJlZCUyMiUzQXRydWUlMkMlMjJpbnB1dE1vZGUlMjIlM0ElMjJudW1lcmljJTIyJTdEJTJDJTdCJTIyaWQlMjIlM0ElMjJjYy1leHAlMjIlMkMlMjJ0eXBlJTIyJTNBJTIydGV4dCUyMiUyQyUyMmxhYmVsJTIyJTNBJTIyRXhwaXJhdGlvbiUyMChtbSUyRnl5KSUyMiUyQyUyMmF1dG9jb21wbGV0ZSUyMiUzQSUyMmNjLWV4cCUyMiUyQyUyMnJlcXVpcmVkJTIyJTNBdHJ1ZSU3RCU1RCU3RA==",
+                    "name": "",
+                    "width": 280,
+                    "height": 305
+                }
+            }
+        }
+    },
+    "adobe.com": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "adobe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875814
+            },
+            "683": {
+                "frame": { "parent": 0, "frameId": 683, "origin": "adobe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875814
+            },
+            "697": {
+                "frame": { "parent": 0, "frameId": 697, "origin": "adobe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875814
+            },
+            "698": {
+                "frame": { "parent": 0, "frameId": 698, "origin": "adobe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875814
+            },
+            "702": {
+                "frame": { "parent": 698, "frameId": 702, "origin": "adobe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875814
+            },
+            "708": {
+                "frame": { "parent": 698, "frameId": 708, "origin": "adobe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875814
+            },
+            "709": {
+                "frame": { "parent": 698, "frameId": 709, "origin": "adobe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875814
+            },
+            "710": {
+                "frame": { "parent": 698, "frameId": 710, "origin": "adobe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875814
+            }
+        },
+        "clusters": {
+            "0": { "forms": [], "frameAttributes": {} },
+            "698": {
+                "forms": [],
+                "frameAttributes": {
+                    "src": "https://commerce.adobe.com/store/checkout?ctxRtUrl=https%3A%2F%2Fwww.adobe.com%2Fhome%3Fopen-dialog%3Dtrue&items%5B0%5D%5Bid%5D=632B3ADD940A7FBB7864AA5AD19B8D28&items%5B0%5D%5Bq%5D=1&rrItems%5B0%5D%5Bid%5D=632B3ADD940A7FBB7864AA5AD19B8D28&rrItems%5B0%5D%5Bq%5D=1&cli=cc_home&ctx=if&co=CH&lang=en&ms=COM&ot=BASE&cs=INDIVIDUAL&pa=ccsn_direct_individual&dialog-type=cme-1&locale=de&csm=dark&ss=segmentation&fps=t&srs=t&apc=BFCCSN50PAEA",
+                    "name": "",
+                    "width": 1006,
+                    "height": 860,
+                    "ariaLabel": "Adobe logo container",
+                    "title": "Adobe Checkout"
+                }
+            },
+            "708": {
+                "forms": [
+                    {
+                        "formId": "32fe822a",
+                        "fields": [
+                            { "type": "field", "fieldId": "8d885283", "fieldType": "cc", "fieldSubType": "cc:number" },
+                            { "type": "field", "fieldId": "29f0aad5", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://tokui-commerce.adobe.com/tokenizer-ui/tokenizer?typekitId=nil6fkt",
+                    "name": "",
+                    "width": 775,
+                    "height": 71,
+                    "ariaLabel": "Card Number",
+                    "title": "Card information"
+                }
+            }
+        }
+    },
+    "wish.com": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "wish.com" },
+                "crossOrigin": true,
+                "tabId": 1959875813
+            },
+            "591": {
+                "frame": { "parent": 588, "frameId": 591, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "593": {
+                "frame": { "parent": 588, "frameId": 593, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "594": {
+                "frame": { "parent": 588, "frameId": 594, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "595": {
+                "frame": { "parent": 588, "frameId": 595, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "596": {
+                "frame": { "parent": 588, "frameId": 596, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "598": {
+                "frame": { "parent": 588, "frameId": 598, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "605": {
+                "frame": { "parent": 588, "frameId": 605, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "614": {
+                "frame": { "parent": 588, "frameId": 614, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "615": {
+                "frame": { "parent": 588, "frameId": 615, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            },
+            "616": {
+                "frame": { "parent": 588, "frameId": 616, "origin": "stripe.com" },
+                "crossOrigin": false,
+                "tabId": 1959875813
+            }
+        },
+        "clusters": {
+            "0": { "forms": [], "frameAttributes": {} },
+            "616": {
+                "forms": [
+                    {
+                        "formId": "d6d9fe4a",
+                        "fields": [
+                            { "type": "field", "fieldId": "bef6683a", "fieldType": "cc", "fieldSubType": "cc:number" },
+                            { "type": "field", "fieldId": "8899fdbe", "fieldType": "cc", "fieldSubType": "cc:exp" },
+                            { "type": "field", "fieldId": "1850802a", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://js.stripe.com/v3/elements-inner-payment-6691d455486bdacbfdf894429625b1f4.html#__shared_params__[version]=basil&__shared_params__[light_experiment_assignments]=%7B%22token%22%3A%223c7764b2-39ec-4c09-8c81-7b9e0dff92f9%22%2C%22assignments%22%3A%7B%7D%7D&wait=false&rtl=false&publicOptions[paymentMethodOrder][0]=klarna&publicOptions[paymentMethodOrder][1]=swish&publicOptions[paymentMethodOrder][2]=card&publicOptions[fields][billingDetails]=never&publicOptions[wallets][applePay]=never&publicOptions[wallets][googlePay]=never&publicOptions[wallets][link]=never&publicOptions[layout][type]=tabs&stripeAccount=acct_1RCOO8H0QhTSahNv&locale=de&elementsInitSource=stripe.elements&elementId=payment-4eb662f2-440a-483b-a2bf-0d296a36f465&componentName=payment&keyMode=live&apiKey=pk_live_51Pt5ukHeGWIddV7yhKedwQU5pWL53BYLQmVFd93HfnPh3cy1PFD228vjJTGlDRLa9u5dqA2tO9J9FFyxKhshnkUa00S7VEudn5&frameMessagingStrategy=direct&cryptoWalletDetected=false&referrer=https%3A%2F%2Fjs.live.kustom.co%2Fkcoc%2F251124-9a905d0%2Fcheckout-template.html%23%257B%2522ORDER_URL%2522%253A%2522https%253A%252F%252Fjs.live.kustom.co%252Fkco%252Fcheckout%252Forders%252Fd08abc22-dc54-23ca-9b39-e63fe25629e1%2522%252C%2522AUTH_HEADER%2522%253A%2522KlarnaCheckout%2520grdcq1agfe0h4s4wiiob%2522%252C%2522IS_CANARY%2522%253Afalse%252C%2522IS_IN_CLIENT_ROLLOUT%2522%253Afalse%252C%2522LOCALE%2522%253A%2522de_DE%2522%252C%2522ORDER_STATUS%2522%253A%2522checkout_incomplete%2522%252C%2522HOSTED_CONFIRMATION_ENABLED%2522%253Afalse%252C%2522HOSTED_CHECKOUT_VERSION%2522%253A%2522251119-e20ad6%2522%252C%2522MERCHANT_NAME%2522%253A%2522Wish%2522%252C%2522STRIPE_ACCOUNT_ID%2522%253A%2522acct_1RCOO8H0QhTSahNv%2522%252C%2522STRIPE_PUBLIC_KEY%2522%253A%2522pk_live_51Pt5ukHeGWIddV7yhKedwQU5pWL53BYLQmVFd93HfnPh3cy1PFD228vjJTGlDRLa9u5dqA2tO9J9FFyxKhshnkUa00S7VEudn5%2522%252C%2522GUI_OPTIONS%2522%253A%255B%255D%252C%2522ALLOW_SEPARATE_SHIPPING_ADDRESS%2522%253Atrue%252C%2522PURCHASE_COUNTRY%2522%253A%2522deu%2522%252C%2522PURCHASE_CURRENCY%2522%253A%2522EUR%2522%252C%2522TESTDRIVE%2522%253Afalse%252C%2522BOOTSTRAP_SRC%2522%253A%2522https%253A%252F%252Fjs.live.kustom.co%252Fkcoc%252F251124-9a905d0%252Fcheckout.bootstrap.js%2522%252C%2522FE_EVENTS_DISABLED%2522%253A%2522false%2522%252C%2522SDID_VALUE%2522%253A%25222092c49f-7d9c-4208-a991-a803d8f3f8e7%2522%252C%2522SDID_STATUS%2522%253A%2522used%2522%252C%2522MERCHANT_URL%2522%253A%2522https%253A%252F%252Fwww.wish.com%2522%252C%2522TRACKING_OPTIONS%2522%253A%257B%2522baseUrl%2522%253A%2522https%253A%252F%252Fjs.live.kustom.co%252Fevt%2522%252C%2522client%2522%253A%2522checkout%2522%252C%2522clientVersion%2522%253A%2522251124-9a905d0%2522%252C%2522sessionId%2522%253A%2522d08abc22-dc54-23ca-9b39-e63fe25629e1%2522%252C%2522instanceId%2522%253A5466%252C%2522logLevel%2522%253A0%257D%252C%2522ORIGIN%2522%253A%2522https%253A%252F%252Fwww.wish.com%2522%257D&controllerId=__privateStripeController52713",
+                    "name": "__privateStripeFrame52715",
+                    "width": 544,
+                    "height": 225,
+                    "ariaLabel": "Kartennetzwerk",
+                    "title": "Sicherer Eingaberahmen für Zahlungen"
+                }
+            }
+        }
+    },
+    "ikea.com/gift-card": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "ikea.com" },
+                "crossOrigin": false,
+                "tabId": 1959875816
+            }
+        },
+        "clusters": {
+            "0": {
+                "forms": [
+                    {
+                        "formId": "15726986",
+                        "fields": [
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "https://eu-prod.oppwa.com/v1/pciIframe.html?checkoutId=624502CF15A2D2FC04E67FCEDFC4DE81.prod01-vm-tx16",
+                                    "name": "card.number",
+                                    "title": "Card number *",
+                                    "ariaLabel": "Card number *",
+                                    "width": 422,
+                                    "height": 28
+                                }
+                            },
+                            { "type": "field", "fieldId": "d23050eb", "fieldType": "cc", "fieldSubType": "cc:exp" },
+                            { "type": "field", "fieldId": "5144cf49", "fieldType": "cc", "fieldSubType": "cc:name" },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "https://eu-prod.oppwa.com/v1/pciIframe.html?checkoutId=624502CF15A2D2FC04E67FCEDFC4DE81.prod01-vm-tx16",
+                                    "name": "card.cvv",
+                                    "title": "Security Code CVV",
+                                    "ariaLabel": "Security Code CVV",
+                                    "width": 422,
+                                    "height": 28
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "formId": "867a6a75",
+                        "fields": [
+                            { "type": "field", "fieldId": "9f613269", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            }
+        }
+    },
+    "ikea.com/checkout": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "ikea.com" },
+                "crossOrigin": true,
+                "tabId": 1959875816
+            },
+            "861": {
+                "frame": { "parent": 0, "frameId": 861, "origin": "oppwa.com" },
+                "crossOrigin": false,
+                "tabId": 1959875816
+            },
+            "862": {
+                "frame": { "parent": 0, "frameId": 862, "origin": "oppwa.com" },
+                "crossOrigin": false,
+                "tabId": 1959875816
+            },
+            "864": {
+                "frame": { "parent": 0, "frameId": 864, "origin": "oppwa.com" },
+                "crossOrigin": false,
+                "tabId": 1959875816
+            }
+        },
+        "clusters": {
+            "0": {
+                "forms": [
+                    {
+                        "formId": "15726986",
+                        "fields": [
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "https://eu-prod.oppwa.com/v1/pciIframe.html?checkoutId=624502CF15A2D2FC04E67FCEDFC4DE81.prod01-vm-tx16",
+                                    "name": "card.number",
+                                    "title": "Card number *",
+                                    "ariaLabel": "Card number *",
+                                    "width": 422,
+                                    "height": 28
+                                }
+                            },
+                            { "type": "field", "fieldId": "d23050eb", "fieldType": "cc", "fieldSubType": "cc:exp" },
+                            { "type": "field", "fieldId": "5144cf49", "fieldType": "cc", "fieldSubType": "cc:name" },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "https://eu-prod.oppwa.com/v1/pciIframe.html?checkoutId=624502CF15A2D2FC04E67FCEDFC4DE81.prod01-vm-tx16",
+                                    "name": "card.cvv",
+                                    "title": "Security Code CVV",
+                                    "ariaLabel": "Security Code CVV",
+                                    "width": 422,
+                                    "height": 28
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "861": {
+                "forms": [
+                    {
+                        "formId": "1b2c9925",
+                        "fields": [
+                            { "type": "field", "fieldId": "29fbb4b2", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://eu-prod.oppwa.com/v1/pciIframe.html?checkoutId=624502CF15A2D2FC04E67FCEDFC4DE81.prod01-vm-tx16",
+                    "name": "card.number",
+                    "width": 423,
+                    "height": 28,
+                    "ariaLabel": "Card number *",
+                    "title": "Card number *"
+                }
+            },
+            "862": {
+                "forms": [
+                    {
+                        "formId": "4e22babb",
+                        "fields": [
+                            { "type": "field", "fieldId": "d1bc98be", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://eu-prod.oppwa.com/v1/pciIframe.html?checkoutId=624502CF15A2D2FC04E67FCEDFC4DE81.prod01-vm-tx16",
+                    "name": "card.cvv",
+                    "width": 423,
+                    "height": 28,
+                    "ariaLabel": "Security Code CVV",
+                    "title": "Security Code CVV"
+                }
+            }
+        }
+    },
+    "etos.com": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            },
+            "472": {
+                "frame": { "parent": 0, "frameId": 472, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            },
+            "473": {
+                "frame": { "parent": 0, "frameId": 473, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            },
+            "474": {
+                "frame": { "parent": 0, "frameId": 474, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            },
+            "475": {
+                "frame": { "parent": 0, "frameId": 475, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            },
+            "476": {
+                "frame": { "parent": 0, "frameId": 476, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            }
+        },
+        "clusters": {
+            "0": {
+                "forms": [
+                    {
+                        "formId": "c0f9b5b8",
+                        "fields": [
+                            { "type": "field", "fieldId": "e1b718ce", "fieldType": "cc", "fieldSubType": "cc:name" },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-cc-num.html",
+                                    "name": "",
+                                    "title": "Iframe for card number",
+                                    "ariaLabel": "",
+                                    "width": 308,
+                                    "height": 48
+                                }
+                            },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-cc-exp.html",
+                                    "name": "",
+                                    "title": "Iframe for expiration date",
+                                    "ariaLabel": "",
+                                    "width": 113,
+                                    "height": 48
+                                }
+                            },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-cc-cvc.html",
+                                    "name": "",
+                                    "title": "Iframe for security code",
+                                    "ariaLabel": "",
+                                    "width": 113,
+                                    "height": 48
+                                }
+                            },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-gift-num.html",
+                                    "name": "",
+                                    "title": "Iframe for card number",
+                                    "ariaLabel": "",
+                                    "width": 342,
+                                    "height": 48
+                                }
+                            },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-gift-pin.html",
+                                    "name": "",
+                                    "title": "Iframe for PIN",
+                                    "ariaLabel": "",
+                                    "width": 158,
+                                    "height": 48
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "472": {
+                "forms": [
+                    {
+                        "formId": "13b37f22",
+                        "fields": [
+                            { "type": "field", "fieldId": "fd17f733", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-cc-num.html",
+                    "name": "",
+                    "width": 308,
+                    "height": 48,
+                    "ariaLabel": "Kaartnummer",
+                    "title": "Iframe voor kaartnummer"
+                }
+            },
+            "473": {
+                "forms": [
+                    {
+                        "formId": "a215f770",
+                        "fields": [
+                            { "type": "field", "fieldId": "7426de9c", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-cc-exp.html",
+                    "name": "",
+                    "width": 113,
+                    "height": 48,
+                    "ariaLabel": "Vervaldatum",
+                    "title": "Iframe voor vervaldatum"
+                }
+            },
+            "474": {
+                "forms": [
+                    {
+                        "formId": "da74cc1e",
+                        "fields": [
+                            { "type": "field", "fieldId": "d99c1644", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-cc-cvc.html",
+                    "name": "",
+                    "width": 113,
+                    "height": 48,
+                    "ariaLabel": "Beveiligingscode",
+                    "title": "Iframe voor beveiligingscode"
+                }
+            },
+            "475": {
+                "forms": [
+                    {
+                        "formId": "d4cdf1ab",
+                        "fields": [
+                            { "type": "field", "fieldId": "a3b2c650", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-gift-num.html",
+                    "name": "",
+                    "width": 343,
+                    "height": 48,
+                    "ariaLabel": "Kaartnummer",
+                    "title": "Iframe voor kaartnummer"
+                }
+            },
+            "476": {
+                "forms": [
+                    {
+                        "formId": "68946ccf",
+                        "fields": [
+                            { "type": "field", "fieldId": "dba4916d", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "http://10.20.4.124:3000/new/clustering/etos.com-gift-pin.html",
+                    "name": "",
+                    "width": 159,
+                    "height": 48,
+                    "ariaLabel": "Vervaldatum",
+                    "title": "Iframe voor vervaldatum"
+                }
+            }
+        }
+    },
+    "decathlon.es": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            },
+            "871": {
+                "frame": { "parent": 0, "frameId": 871, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            },
+            "872": {
+                "frame": { "parent": 0, "frameId": 872, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            },
+            "873": {
+                "frame": { "parent": 0, "frameId": 873, "origin": "10.20.4.124" },
+                "crossOrigin": false,
+                "tabId": 1959875464
+            }
+        },
+        "clusters": {
+            "0": {
+                "forms": [
+                    {
+                        "formId": "a6cf3634",
+                        "fields": [
+                            { "type": "field", "fieldId": "977ecff9", "fieldType": "cc", "fieldSubType": "cc:number" },
+                            { "type": "field", "fieldId": "45a6aebd", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    },
+                    {
+                        "formId": "c828b47d",
+                        "fields": [
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "http://10.20.4.124:3000/new/clustering/decathlon.com-cc-num.html",
+                                    "name": "",
+                                    "title": "Utilice Iframe para el número de tarjeta",
+                                    "ariaLabel": "",
+                                    "width": 836,
+                                    "height": 48
+                                }
+                            },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "http://10.20.4.124:3000/new/clustering/decathlon.com-cc-exp.html",
+                                    "name": "",
+                                    "title": "Utilice iframe para la fecha de caducidad",
+                                    "ariaLabel": "",
+                                    "width": 386,
+                                    "height": 48
+                                }
+                            },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "http://10.20.4.124:3000/new/clustering/decathlon.com-cc-cvc.html",
+                                    "name": "",
+                                    "title": "Utilice iframe para el código de seguridad",
+                                    "ariaLabel": "",
+                                    "width": 386,
+                                    "height": 48
+                                }
+                            },
+                            { "type": "field", "fieldId": "1e5e4645", "fieldType": "cc", "fieldSubType": "cc:name" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "871": {
+                "forms": [
+                    {
+                        "formId": "45899854",
+                        "fields": [
+                            { "type": "field", "fieldId": "3a7d16cb", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "http://10.20.4.124:3000/new/clustering/decathlon.com-cc-num.html",
+                    "name": "",
+                    "width": 836,
+                    "height": 48,
+                    "ariaLabel": "Número de tarjeta",
+                    "title": "Utilice Iframe para el número de tarjeta"
+                }
+            },
+            "872": {
+                "forms": [
+                    {
+                        "formId": "d8a53da1",
+                        "fields": [
+                            { "type": "field", "fieldId": "532687bd", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "http://10.20.4.124:3000/new/clustering/decathlon.com-cc-exp.html",
+                    "name": "",
+                    "width": 386,
+                    "height": 48,
+                    "ariaLabel": "Fecha de caducidad",
+                    "title": "Utilice iframe para la fecha de caducidad"
+                }
+            },
+            "873": {
+                "forms": [
+                    {
+                        "formId": "9b42bb8c",
+                        "fields": [
+                            { "type": "field", "fieldId": "328035e2", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "http://10.20.4.124:3000/new/clustering/decathlon.com-cc-cvc.html",
+                    "name": "",
+                    "width": 386,
+                    "height": 48,
+                    "ariaLabel": "CVV",
+                    "title": "Utilice iframe para el código de seguridad"
+                }
+            }
+        }
+    },
+    "rituals.com/gift-card": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "rituals.com" },
+                "crossOrigin": false,
+                "tabId": 1959875824
+            }
+        },
+        "clusters": {
+            "0": {
+                "forms": [
+                    {
+                        "formId": "d638e23a",
+                        "fields": [
+                            { "type": "field", "fieldId": "a6747091", "fieldType": "cc", "fieldSubType": "cc:number" },
+                            { "type": "field", "fieldId": "e2b863e7", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            }
+        }
+    },
+    "rituals.com/payment": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "rituals.com" },
+                "crossOrigin": true,
+                "tabId": 1959875824
+            },
+            "898": {
+                "frame": { "parent": 0, "frameId": 898, "origin": "adyen.com" },
+                "crossOrigin": false,
+                "tabId": 1959875824
+            },
+            "899": {
+                "frame": { "parent": 0, "frameId": 899, "origin": "adyen.com" },
+                "crossOrigin": false,
+                "tabId": 1959875824
+            },
+            "900": {
+                "frame": { "parent": 0, "frameId": 900, "origin": "adyen.com" },
+                "crossOrigin": false,
+                "tabId": 1959875824
+            }
+        },
+        "clusters": {
+            "0": {
+                "forms": [
+                    {
+                        "formId": "d638e23a",
+                        "fields": [
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "https://checkoutshopper-live.adyen.com/checkoutshopper/securedfields/live_4KS435BJBBDFPNJ3YTXOVLGQ5MJO5FE6/3.5.4/securedFields.html?type=card&d=aHR0cHM6Ly93d3cucml0dWFscy5jb20=",
+                                    "name": "",
+                                    "title": "Iframe for secured card number",
+                                    "ariaLabel": "",
+                                    "width": 722,
+                                    "height": 36
+                                }
+                            },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "https://checkoutshopper-live.adyen.com/checkoutshopper/securedfields/live_4KS435BJBBDFPNJ3YTXOVLGQ5MJO5FE6/3.5.4/securedFields.html?type=card&d=aHR0cHM6Ly93d3cucml0dWFscy5jb20=",
+                                    "name": "",
+                                    "title": "Iframe for secured card expiry date",
+                                    "ariaLabel": "",
+                                    "width": 332,
+                                    "height": 36
+                                }
+                            },
+                            {
+                                "type": "frame",
+                                "frameAttributes": {
+                                    "src": "https://checkoutshopper-live.adyen.com/checkoutshopper/securedfields/live_4KS435BJBBDFPNJ3YTXOVLGQ5MJO5FE6/3.5.4/securedFields.html?type=card&d=aHR0cHM6Ly93d3cucml0dWFscy5jb20=",
+                                    "name": "",
+                                    "title": "Iframe for secured card security code",
+                                    "ariaLabel": "",
+                                    "width": 332,
+                                    "height": 36
+                                }
+                            },
+                            { "type": "field", "fieldId": "1a1623f3", "fieldType": "cc", "fieldSubType": "cc:name" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "898": {
+                "forms": [
+                    {
+                        "formId": "19aa4710",
+                        "fields": [
+                            { "type": "field", "fieldId": "fad289ca", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://checkoutshopper-live.adyen.com/checkoutshopper/securedfields/live_4KS435BJBBDFPNJ3YTXOVLGQ5MJO5FE6/3.5.4/securedFields.html?type=card&d=aHR0cHM6Ly93d3cucml0dWFscy5jb20=",
+                    "name": "",
+                    "width": 722,
+                    "height": 36,
+                    "ariaLabel": "Card number field",
+                    "title": "Iframe for secured card number"
+                }
+            },
+            "899": {
+                "forms": [
+                    {
+                        "formId": "6c66189e",
+                        "fields": [
+                            { "type": "field", "fieldId": "a57e8d2d", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://checkoutshopper-live.adyen.com/checkoutshopper/securedfields/live_4KS435BJBBDFPNJ3YTXOVLGQ5MJO5FE6/3.5.4/securedFields.html?type=card&d=aHR0cHM6Ly93d3cucml0dWFscy5jb20=",
+                    "name": "",
+                    "width": 332,
+                    "height": 36,
+                    "ariaLabel": "Expiry date field",
+                    "title": "Iframe for secured card expiry date"
+                }
+            },
+            "900": {
+                "forms": [
+                    {
+                        "formId": "27255072",
+                        "fields": [
+                            { "type": "field", "fieldId": "b4c59d5f", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {
+                    "src": "https://checkoutshopper-live.adyen.com/checkoutshopper/securedfields/live_4KS435BJBBDFPNJ3YTXOVLGQ5MJO5FE6/3.5.4/securedFields.html?type=card&d=aHR0cHM6Ly93d3cucml0dWFscy5jb20=",
+                    "name": "",
+                    "width": 332,
+                    "height": 36,
+                    "ariaLabel": "Security code field",
+                    "title": "Iframe for secured card security code"
+                }
+            }
+        }
+    }
+}
