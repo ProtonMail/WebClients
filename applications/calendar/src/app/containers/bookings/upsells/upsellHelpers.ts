@@ -32,7 +32,8 @@ export const hasUserReachPlanLimit = (
     switch (planName) {
         case PLANS.VISIONARY:
         case PLANS.BUNDLE_PRO_2024:
-            // TODO add the logic for the meetbiz2025 and budlebiz2025
+        case PLANS.BUNDLE_BIZ_2025:
+            // TODO add the logic for the meetbiz2025
             return bookingsPages.length >= MAX_BOOKING_PAGES;
         case PLANS.MAIL_BUSINESS:
             return bookingsPages.length >= MAX_BOOKING_PAGE_MAIL_B2B;
