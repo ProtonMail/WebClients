@@ -9,4 +9,5 @@ export type FieldSubTypes = {
 export type AbstractField<T extends FieldType> = {
     fieldType: T;
     fieldSubType?: T extends keyof FieldSubTypes ? FieldSubTypes[T] : never;
+    sectionIndex?: number;
 };

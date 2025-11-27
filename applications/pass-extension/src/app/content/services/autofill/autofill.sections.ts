@@ -1,13 +1,12 @@
-import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import { isCCField, isEmailField, isIdentityField } from 'proton-pass-extension/lib/utils/field';
+import type { AbstractField } from 'proton-pass-extension/types/field';
 
 import { CCFieldType, FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
-import { isInputElement } from '@proton/pass/utils/dom/predicates';
 
 export type FieldSubType = IdentityFieldType | CCFieldType;
-type FieldSection = {
+type FieldSection<T extends AbstractField<FieldType>> = {
     subTypes: Set<FieldSubType>;
-    fields: FieldHandle[];
+    fields: T[];
     type: FieldType.IDENTITY | FieldType.CREDIT_CARD;
 };
 
@@ -23,15 +22,12 @@ const isCriticalType = (type: FieldSubType): boolean =>
 /** Resolves a list of form fields into logically grouped identity sections.
  * Creates a new section when a critical field type (ADDRESS, FIRSTNAME, FULLNAME)
  * is encountered and already exists in the current section, but not consecutively */
-export const resolveFieldSections = (fields: FieldHandle[]) =>
-    fields.reduce<FieldSection[]>((sections, field: FieldHandle) => {
-        const element = field.element;
-        const isInput = isInputElement(element);
-
+export const resolveFieldSections = <T extends AbstractField<FieldType>>(fields: T[]) =>
+    fields.reduce<FieldSection<T>[]>((sections, field: T) => {
         const email = isEmailField(field);
         const identity = isIdentityField(field);
         const cc = isCCField(field);
-        const isSectionField = (identity && isInput) || cc || (email && isInput);
+        const isSectionField = identity || cc || email;
 
         if (!isSectionField) return sections;
 
