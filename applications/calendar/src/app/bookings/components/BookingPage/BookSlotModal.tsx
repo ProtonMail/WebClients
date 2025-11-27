@@ -68,7 +68,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                 {' - '}
                 {format(addMinutes(timeslot.tzDate, bookingDetails?.duration || 0), 'HH:mm', { locale: dateLocale })}
             </div>
-            <div className="color-weak">{getTimezoneAndOffset(selectedTimezone)}</div>
+            <div className="color-weak">{getTimezoneAndOffset(selectedTimezone, timeslot.tzDate)}</div>
         </>
     );
 

@@ -78,6 +78,7 @@ export const loadAllowedTimeZones = async (api: Api) => {
             findTimeZone(tzid);
             return tzid;
         } catch (e: any) {
+            // eslint-disable-next-line no-console
             console.error(`${tzid} not supported`);
         }
     }).filter(isTruthy);
@@ -391,8 +392,8 @@ export const getAbbreviatedTimezoneName = (
     }
 };
 
-export const getTimezoneAndOffset = (timezone?: string) => {
-    const timezoneOffset = getAbbreviatedTimezoneName('offset', timezone);
+export const getTimezoneAndOffset = (timezone?: string, date?: Date) => {
+    const timezoneOffset = getAbbreviatedTimezoneName('offset', timezone, date);
     const timezoneName = getTimeZoneDisplayName(timezone || '');
 
     return `${timezoneOffset} • ${timezoneName}`;
