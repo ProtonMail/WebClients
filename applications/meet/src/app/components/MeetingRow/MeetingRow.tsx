@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useAppLink from '@proton/components/components/link/useAppLink';
@@ -31,6 +32,8 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
     const notifications = useNotifications();
 
     const goToApp = useAppLink();
+
+    const [user] = useUser();
 
     const colorIndex = (index % 6) + 1;
 
@@ -92,7 +95,7 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
     const handleEditMeeting = () => {
         if (meeting.CalendarEventID && meeting.CalendarID) {
             goToApp(
-                `/?action=edit&eventId=${meeting.CalendarEventID}&calendarId=${meeting.CalendarID}`,
+                `/?action=edit&eventId=${meeting.CalendarEventID}&calendarId=${meeting.CalendarID}&email=${encodeURIComponent(user.Email)}`,
                 APPS.PROTONCALENDAR,
                 true
             );

@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import useAppLink from '@proton/components/components/link/useAppLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -38,6 +39,8 @@ export const DashboardContainer = () => {
 
     const isScheduleEnabled = useFlag('NewScheduleOption');
 
+    const [user] = useUser();
+
     const handleScheduleMeeting = () => {
         if (!isScheduleEnabled) {
             notifications.createNotification({
@@ -49,7 +52,11 @@ export const DashboardContainer = () => {
             return;
         }
 
-        goToApp('/?action=create&videoConferenceProvider=2', APPS.PROTONCALENDAR, true);
+        goToApp(
+            `/?action=create&videoConferenceProvider=2&email=${encodeURIComponent(user.Email)}`,
+            APPS.PROTONCALENDAR,
+            true
+        );
     };
 
     const handleStartMeeting = () => {
