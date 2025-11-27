@@ -3,15 +3,12 @@ import { c } from 'ttag';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
-import type { PersonalizationSettings } from '../../redux/slices/personalization';
-import { PERSONALITY_OPTIONS } from '../../redux/slices/personalization';
 import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
 import type { ContextFilter } from '../../llm';
 import { ENABLE_U2L_ENCRYPTION, getFilteredTurnsWithImages } from '../../llm';
-import { SearchService } from '../../services/search/searchService';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
+import { calculateSingleAttachmentContextSize } from '../../llm/utils';
 import { newAttachmentId, pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
-import { parseFileReferences } from '../../util/fileReferences';
 import {
     addConversation,
     newConversationId,
@@ -26,8 +23,11 @@ import {
     pushMessageRequest,
 } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
+import type { PersonalizationSettings } from '../../redux/slices/personalization';
+import { PERSONALITY_OPTIONS } from '../../redux/slices/personalization';
 import type { LumoDispatch as AppDispatch } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
+import { SearchService } from '../../services/search/searchService';
 import type { AttachmentId, MessageId, ShallowAttachment } from '../../types';
 import {
     type Attachment,
@@ -40,15 +40,12 @@ import {
     getAttachmentPub,
 } from '../../types';
 import type { GenerationToFrontendMessage } from '../../types-api';
-import { calculateSingleAttachmentContextSize } from '../../llm/utils';
+import { parseFileReferences } from '../../util/fileReferences';
 
 const SMALL_FILE_SET_TOKEN_THRESHOLD = 30000; // ~45k tokens threshold to include all uploaded files in the first message
 const MAX_SINGLE_FILE_TOKENS = 15000; // Max tokens for a single file when including all files (prevents one large file from dominating context)
 
-function getContextFilesForMessage(
-    messageChain: Message[],
-    contextFilters: ContextFilter[] = []
-): AttachmentId[] {
+function getContextFilesForMessage(messageChain: Message[], contextFilters: ContextFilter[] = []): AttachmentId[] {
     const contextFiles: AttachmentId[] = [];
     const seenIds = new Set<AttachmentId>();
 
@@ -98,7 +95,7 @@ function getUploadedProjectFiles(
     alreadyRetrievedDocIds: Set<string>,
     referencedFileNames: Set<string>,
     maxSingleFileTokens?: number
-): { files: Attachment[], totalTokens: number, hasOversizedFile: boolean } {
+): { files: Attachment[]; totalTokens: number; hasOversizedFile: boolean } {
     const uploadedFiles: Attachment[] = [];
     let totalTokens = 0;
     let hasOversizedFile = false;
@@ -118,14 +115,16 @@ function getUploadedProjectFiles(
             attachment.markdown
         ) {
             const fileTokens = calculateSingleAttachmentContextSize(attachment);
-            
+
             // Check if this file exceeds the per-file limit
             if (maxSingleFileTokens && fileTokens > maxSingleFileTokens) {
-                console.log(`[RAG] File ${attachment.filename} exceeds per-file limit: ${fileTokens} > ${maxSingleFileTokens} tokens`);
+                console.log(
+                    `[RAG] File ${attachment.filename} exceeds per-file limit: ${fileTokens} > ${maxSingleFileTokens} tokens`
+                );
                 hasOversizedFile = true;
                 continue; // Skip this file
             }
-            
+
             uploadedFiles.push(attachment);
             totalTokens += fileTokens;
         }
@@ -163,9 +162,11 @@ async function retrieveDocumentContextForProject(
     allAttachments: Record<string, Attachment> = {},
     referencedFileNames: Set<string> = new Set()
 ): Promise<RAGRetrievalResult | undefined> {
-    const userMessageCount = messageChain.filter(m => m.role === Role.User).length;
+    const userMessageCount = messageChain.filter((m) => m.role === Role.User).length;
 
-    console.log(`[RAG] retrieveDocumentContextForProject called: isProject=${isProject}, spaceId=${spaceId}, userId=${userId ? 'present' : 'missing'}, userMessages=${userMessageCount}`);
+    console.log(
+        `[RAG] retrieveDocumentContextForProject called: isProject=${isProject}, spaceId=${spaceId}, userId=${userId ? 'present' : 'missing'}, userMessages=${userMessageCount}`
+    );
 
     // Only retrieve documents for project conversations
     if (!isProject || !userId) {
@@ -176,8 +177,8 @@ async function retrieveDocumentContextForProject(
     // Collect document IDs that have already been used in this conversation
     // This includes both driveNodeIds (for Drive files) and attachment IDs (for uploaded files)
     const alreadyRetrievedDocIds = new Set<string>();
-    messageChain.forEach(msg => {
-        msg.attachments?.forEach(shallowAtt => {
+    messageChain.forEach((msg) => {
+        msg.attachments?.forEach((shallowAtt) => {
             const fullAtt = allAttachments[shallowAtt.id];
             if (fullAtt) {
                 // For auto-retrieved files (Drive), check driveNodeId
@@ -197,7 +198,11 @@ async function retrieveDocumentContextForProject(
     const isFirstMessage = userMessageCount === 1;
 
     if (isFirstMessage) {
-        const { files: uploadedFiles, totalTokens, hasOversizedFile } = getUploadedProjectFiles(
+        const {
+            files: uploadedFiles,
+            totalTokens,
+            hasOversizedFile,
+        } = getUploadedProjectFiles(
             spaceId,
             allAttachments,
             alreadyRetrievedDocIds,
@@ -205,15 +210,19 @@ async function retrieveDocumentContextForProject(
             MAX_SINGLE_FILE_TOKENS
         );
 
-        console.log(`[RAG] First message - found ${uploadedFiles.length} uploaded files with ${totalTokens} total tokens${hasOversizedFile ? ' (some files excluded due to size)' : ''}`);
+        console.log(
+            `[RAG] First message - found ${uploadedFiles.length} uploaded files with ${totalTokens} total tokens${hasOversizedFile ? ' (some files excluded due to size)' : ''}`
+        );
 
         // If total tokens are under threshold AND no files were excluded due to size, include all uploaded files directly
         // If we had to exclude oversized files, fall back to search-based retrieval to ensure fair selection
         if (uploadedFiles.length > 0 && totalTokens <= SMALL_FILE_SET_TOKEN_THRESHOLD && !hasOversizedFile) {
-            console.log(`[RAG] Including all ${uploadedFiles.length} uploaded files (${totalTokens} tokens < ${SMALL_FILE_SET_TOKEN_THRESHOLD} threshold)`);
+            console.log(
+                `[RAG] Including all ${uploadedFiles.length} uploaded files (${totalTokens} tokens < ${SMALL_FILE_SET_TOKEN_THRESHOLD} threshold)`
+            );
 
             // Mark files as auto-retrieved for consistent handling
-            const attachments: Attachment[] = uploadedFiles.map(file => ({
+            const attachments: Attachment[] = uploadedFiles.map((file) => ({
                 ...file,
                 autoRetrieved: true,
                 isUploadedProjectFile: true,
@@ -222,7 +231,7 @@ async function retrieveDocumentContextForProject(
 
             // Format context for all files
             const searchService = SearchService.get(userId);
-            const formattedDocs = uploadedFiles.map(file => ({
+            const formattedDocs = uploadedFiles.map((file) => ({
                 id: file.id,
                 name: file.filename,
                 content: file.markdown || '',
@@ -234,7 +243,7 @@ async function retrieveDocumentContextForProject(
                 attachments,
             };
         } else if (uploadedFiles.length > 0 || hasOversizedFile) {
-            const reason = hasOversizedFile 
+            const reason = hasOversizedFile
                 ? 'some files exceed per-file limit'
                 : `total tokens (${totalTokens}) > ${SMALL_FILE_SET_TOKEN_THRESHOLD}`;
             console.log(`[RAG] Falling back to search-based retrieval: ${reason}`);
@@ -244,14 +253,17 @@ async function retrieveDocumentContextForProject(
     try {
         const searchService = SearchService.get(userId);
         console.log(`[RAG] Calling retrieveForRAG with query="${query.slice(0, 100)}", spaceId=${spaceId}`);
-        
+
         // Get candidates for intelligent filtering (use higher limit to allow more relevant docs through)
         const candidateDocs = await searchService.retrieveForRAG(query, spaceId, 50, 0);
-        
-        console.log(`[RAG] retrieveForRAG returned ${candidateDocs.length} candidates:`, candidateDocs.map(d => ({ name: d.name, score: d.score })));
+
+        console.log(
+            `[RAG] retrieveForRAG returned ${candidateDocs.length} candidates:`,
+            candidateDocs.map((d) => ({ name: d.name, score: d.score }))
+        );
 
         // Filter out zero-score documents, already-retrieved documents, and @mentioned files
-        const nonZeroDocs = candidateDocs.filter(doc => {
+        const nonZeroDocs = candidateDocs.filter((doc) => {
             if (doc.score <= 0) return false;
             if (alreadyRetrievedDocIds.has(doc.id)) return false;
             // Exclude files that were explicitly @mentioned (their content is already in the message)
@@ -269,7 +281,7 @@ async function retrieveDocumentContextForProject(
 
         // Smart percentile-based filtering
         const topScore = nonZeroDocs[0]?.score || 0;
-        const scores = nonZeroDocs.map(d => d.score);
+        const scores = nonZeroDocs.map((d) => d.score);
 
         // Calculate the 75th percentile threshold (top 25% of documents)
         // This means we only include documents scoring in the top quarter
@@ -278,13 +290,15 @@ async function retrieveDocumentContextForProject(
         const percentile75Threshold = sortedScores[Math.min(percentile75Index, sortedScores.length - 1)] || 0;
 
         // Also require at least 40% of top score (absolute quality gate)
-        const MIN_RELATIVE_SCORE = 0.40;
+        const MIN_RELATIVE_SCORE = 0.4;
         const absoluteThreshold = topScore * MIN_RELATIVE_SCORE;
 
         // Use the higher of the two thresholds
         const effectiveThreshold = Math.max(percentile75Threshold, absoluteThreshold);
 
-        console.log(`[RAG] Thresholds: top=${topScore.toFixed(4)}, p75=${percentile75Threshold.toFixed(4)}, min40%=${absoluteThreshold.toFixed(4)}, effective=${effectiveThreshold.toFixed(4)}`);
+        console.log(
+            `[RAG] Thresholds: top=${topScore.toFixed(4)}, p75=${percentile75Threshold.toFixed(4)}, min40%=${absoluteThreshold.toFixed(4)}, effective=${effectiveThreshold.toFixed(4)}`
+        );
 
         // Select documents above threshold, with gap detection
         const relevantDocs: typeof nonZeroDocs = [];
@@ -295,7 +309,9 @@ async function retrieveDocumentContextForProject(
 
             // Must meet the effective threshold
             if (doc.score < effectiveThreshold) {
-                console.log(`[RAG] Stopping at doc ${i}: score ${doc.score.toFixed(4)} below threshold ${effectiveThreshold.toFixed(4)}`);
+                console.log(
+                    `[RAG] Stopping at doc ${i}: score ${doc.score.toFixed(4)} below threshold ${effectiveThreshold.toFixed(4)}`
+                );
                 break;
             }
 
@@ -305,7 +321,9 @@ async function retrieveDocumentContextForProject(
                 const dropRatio = doc.score / prevScore;
                 if (dropRatio < 0.5) {
                     // More than 50% drop from previous - this is a relevance cliff
-                    console.log(`[RAG] Stopping at doc ${i}: score gap detected (${(dropRatio * 100).toFixed(0)}% of previous)`);
+                    console.log(
+                        `[RAG] Stopping at doc ${i}: score gap detected (${(dropRatio * 100).toFixed(0)}% of previous)`
+                    );
                     break;
                 }
             }
@@ -321,7 +339,7 @@ async function retrieveDocumentContextForProject(
         // Create Attachment objects from retrieved documents
         // - For uploaded files: reuse existing attachment (document ID = attachment ID)
         // - For Drive files: check driveNodeId, or create new attachment
-        const attachments: Attachment[] = relevantDocs.map(doc => {
+        const attachments: Attachment[] = relevantDocs.map((doc) => {
             const normalizedScore = topScore > 0 ? doc.score / topScore : 0;
             // Extract chunk info from doc if present
             const isChunk = (doc as { isChunk?: boolean }).isChunk;
@@ -346,12 +364,14 @@ async function retrieveDocumentContextForProject(
 
             // Check if we already have an auto-retrieved attachment for this driveNodeId
             const existingAutoRetrieved = Object.values(allAttachments).find(
-                att => att.autoRetrieved && att.driveNodeId === originalDocId
+                (att) => att.autoRetrieved && att.driveNodeId === originalDocId
             );
 
             if (existingAutoRetrieved) {
                 // Reuse the existing auto-retrieved attachment, update the relevance score
-                console.log(`[RAG] Reusing existing auto-retrieved attachment for ${doc.name} (ID: ${existingAutoRetrieved.id})`);
+                console.log(
+                    `[RAG] Reusing existing auto-retrieved attachment for ${doc.name} (ID: ${existingAutoRetrieved.id})`
+                );
                 return {
                     ...existingAutoRetrieved,
                     relevanceScore: normalizedScore,
@@ -377,13 +397,17 @@ async function retrieveDocumentContextForProject(
             };
         });
 
-        console.log(`[RAG] Retrieved ${attachments.length} relevant documents for project ${spaceId}:`,
+        console.log(
+            `[RAG] Retrieved ${attachments.length} relevant documents for project ${spaceId}:`,
             `\n  Candidates: ${candidateDocs.length}, Non-zero: ${nonZeroDocs.length}, Selected: ${relevantDocs.length}`,
             `\n  Top score: ${topScore.toFixed(4)}, Threshold: ${(topScore * MIN_RELATIVE_SCORE).toFixed(4)}`,
-            `\n  Selected: ${attachments.map(a => {
-                const chunkInfo = a.isChunk ? ` [CHUNK: ${a.chunkTitle || 'untitled'}]` : '';
-                return `${a.filename}${chunkInfo} (${((a.relevanceScore ?? 0) * 100).toFixed(0)}%)`;
-            }).join(', ')}`);
+            `\n  Selected: ${attachments
+                .map((a) => {
+                    const chunkInfo = a.isChunk ? ` [CHUNK: ${a.chunkTitle || 'untitled'}]` : '';
+                    return `${a.filename}${chunkInfo} (${((a.relevanceScore ?? 0) * 100).toFixed(0)}%)`;
+                })
+                .join(', ')}`
+        );
 
         return {
             context: searchService.formatRAGContext(relevantDocs),
@@ -399,17 +423,17 @@ async function retrieveDocumentContextForProject(
 function getMimeTypeFromName(filename: string): string {
     const ext = filename.split('.').pop()?.toLowerCase() || '';
     const mimeTypes: Record<string, string> = {
-        'pdf': 'application/pdf',
-        'doc': 'application/msword',
-        'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'txt': 'text/plain',
-        'md': 'text/markdown',
-        'csv': 'text/csv',
-        'xls': 'application/vnd.ms-excel',
-        'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'json': 'application/json',
-        'html': 'text/html',
-        'xml': 'application/xml',
+        pdf: 'application/pdf',
+        doc: 'application/msword',
+        docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        txt: 'text/plain',
+        md: 'text/markdown',
+        csv: 'text/csv',
+        xls: 'application/vnd.ms-excel',
+        xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        json: 'application/json',
+        html: 'text/html',
+        xml: 'application/xml',
     };
     return mimeTypes[ext] || 'application/octet-stream';
 }
@@ -418,7 +442,8 @@ function getMimeTypeFromName(filename: string): string {
 export function sendMessage({
     api,
     newMessageContent,
-    attachments,
+    newMessageAttachments,
+    allConversationAttachments,
     messageChain,
     conversationId,
     spaceId,
@@ -433,7 +458,8 @@ export function sendMessage({
 }: {
     api: Api;
     newMessageContent: string;
-    attachments: Attachment[];
+    newMessageAttachments: Attachment[];
+    allConversationAttachments: Attachment[];
     messageChain: Message[];
     conversationId: ConversationId | undefined;
     spaceId: SpaceId | undefined;
@@ -471,7 +497,13 @@ export function sendMessage({
         // Get space attachments (project-level files) - these should be available for @ references
         const spaceAssets: Attachment[] = Object.values(allAttachmentsState || {})
             .filter((attachment: any) => {
-                return attachment && typeof attachment === 'object' && attachment.spaceId === spaceId && !attachment.processing && !attachment.error;
+                return (
+                    attachment &&
+                    typeof attachment === 'object' &&
+                    attachment.spaceId === spaceId &&
+                    !attachment.processing &&
+                    !attachment.error
+                );
             })
             .map((attachment: any) => attachment as Attachment);
 
@@ -491,7 +523,7 @@ export function sendMessage({
         // Combine space assets, conversation attachments, and provisional attachments for @ references
         // Exclude space attachments from other conversations
         const allMessageAttachments: Attachment[] = [...spaceAssets, ...conversationAttachments];
-        attachments.forEach((att) => {
+        allConversationAttachments.forEach((att) => {
             if (!allMessageAttachments.some((a) => a.id === att.id)) {
                 allMessageAttachments.push(att);
             }
@@ -499,43 +531,35 @@ export function sendMessage({
 
         // Parse file references from the message content
         const fileReferences = parseFileReferences(newMessageContent);
-        const referencedFileNames = new Set(fileReferences.map(ref => ref.fileName.toLowerCase()));
+        const referencedFileNames = new Set(fileReferences.map((ref) => ref.fileName.toLowerCase()));
 
         // Find attachments that match the referenced files
         const referencedAttachments: Attachment[] = [];
-        fileReferences.forEach(ref => {
+        fileReferences.forEach((ref) => {
             const foundFile = allMessageAttachments.find(
                 (att) => att.filename.toLowerCase() === ref.fileName.toLowerCase()
             );
-            if (foundFile && !referencedAttachments.some(a => a.id === foundFile.id)) {
+            if (foundFile && !referencedAttachments.some((a) => a.id === foundFile.id)) {
                 referencedAttachments.push(foundFile);
-            }
-        });
-
-        const allAttachmentsForMessage = [...attachments];
-        referencedAttachments.forEach(refAtt => {
-            if (!allAttachmentsForMessage.some(a => a.id === refAtt.id)) {
-                allAttachmentsForMessage.push(refAtt);
             }
         });
 
         // For space assignment, only consider provisional attachments (those without spaceId)
         // Referenced files should not be assigned to space regardless of their source
-        const nonReferencedAttachments = attachments.filter(att =>
-            !referencedFileNames.has(att.filename.toLowerCase())
+        const nonReferencedAttachments = newMessageAttachments.filter(
+            (att) => !referencedFileNames.has(att.filename.toLowerCase())
         );
 
         // Identify provisional referenced attachments (from composer)
-        const provisionalReferencedAttachments = attachments.filter(att =>
+        const provisionalReferencedAttachments = newMessageAttachments.filter((att) =>
             referencedFileNames.has(att.filename.toLowerCase())
         );
 
         const processedContent: string = newMessageContent;
-        const messageAttachments = allAttachmentsForMessage;
 
         const { userMessage, assistantMessage } = createMessagePair(
             processedContent,
-            messageAttachments,
+            newMessageAttachments,
             conversationId,
             lastMessage,
             date1,
@@ -588,7 +612,7 @@ export function sendMessage({
         if (isEdit && updateSibling) updateSibling(userMessage);
 
         // When we attach files, disable web search, otherwise this feels awkward.
-        const noAttachment = attachments.length === 0;
+        const noAttachment = newMessageAttachments.length === 0;
 
         // Call the LLM.
         try {
@@ -637,7 +661,7 @@ export function sendMessage({
                 isProject,
                 allAttachments: state.attachments,
                 referencedFileNames,
-                attachments,
+                attachments: allConversationAttachments,
             });
         } catch (error) {
             console.warn('error: ', error);
@@ -703,7 +727,7 @@ export function regenerateMessage(
             // Pass allAttachments so we can filter out already-retrieved documents
             const userId = state.user?.value?.ID;
             const allAttachments = state.attachments;
-            const lastUserMessage = messagesWithContext.filter(m => m.role === Role.User).pop();
+            const lastUserMessage = messagesWithContext.filter((m) => m.role === Role.User).pop();
             const userQuery = lastUserMessage?.content || '';
             const ragResult = await retrieveDocumentContextForProject(
                 userQuery,
@@ -745,12 +769,12 @@ export function regenerateMessage(
 
                 // Create shallow attachment refs for the message
                 const existingAttachments = lastUserMessage.attachments || [];
-                const existingAttachmentIds = new Set(existingAttachments.map(att => att.id));
+                const existingAttachmentIds = new Set(existingAttachments.map((att) => att.id));
 
                 // Only add attachments that aren't already in the message (avoid duplicates)
                 const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
-                    .filter(att => !existingAttachmentIds.has(att.id))
-                    .map(att => {
+                    .filter((att) => !existingAttachmentIds.has(att.id))
+                    .map((att) => {
                         const { data, markdown, ...shallow } = att;
                         return shallow as ShallowAttachment;
                     });
@@ -763,7 +787,7 @@ export function regenerateMessage(
                 dispatch(pushMessageRequest({ id: lastUserMessage.id }));
 
                 // Update messagesWithContext to include the updated user message
-                updatedMessagesWithContext = messagesWithContext.map(msg =>
+                updatedMessagesWithContext = messagesWithContext.map((msg) =>
                     msg.id === lastUserMessage.id ? updatedUserMessage : msg
                 );
 
@@ -787,7 +811,7 @@ export function regenerateMessage(
                 contextFilters,
                 personalizationPrompt,
                 projectInstructions,
-                ragResult?.context,
+                ragResult?.context
             );
 
             // Add retry instructions if provided
@@ -1041,7 +1065,7 @@ export async function fetchAssistantResponse({
     attachments?: Attachment[];
 }) {
     // Extract the user's query from the last user message for RAG retrieval
-    const lastUserMessage = linearChain.filter(m => m.role === Role.User).pop();
+    const lastUserMessage = linearChain.filter((m) => m.role === Role.User).pop();
     const userQuery = lastUserMessage?.content || '';
 
     // Retrieve relevant documents from the project's indexed Drive folder (RAG)
@@ -1088,12 +1112,12 @@ export async function fetchAssistantResponse({
 
         // Create shallow attachment refs for the message
         const existingAttachments = lastUserMessage.attachments || [];
-        const existingAttachmentIds = new Set(existingAttachments.map(att => att.id));
+        const existingAttachmentIds = new Set(existingAttachments.map((att) => att.id));
 
         // Only add new attachments that aren't already in the message (avoid duplicates when reusing IDs)
         const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
-            .filter(att => !existingAttachmentIds.has(att.id))
-            .map(att => {
+            .filter((att) => !existingAttachmentIds.has(att.id))
+            .map((att) => {
                 const { data, markdown, ...shallow } = att;
                 return shallow as ShallowAttachment;
             });
@@ -1106,9 +1130,7 @@ export async function fetchAssistantResponse({
         dispatch(pushMessageRequest({ id: lastUserMessage.id }));
 
         // Update the linearChain with the updated user message
-        updatedLinearChain = linearChain.map(msg =>
-            msg.id === lastUserMessage.id ? updatedUserMessage : msg
-        );
+        updatedLinearChain = linearChain.map((msg) => (msg.id === lastUserMessage.id ? updatedUserMessage : msg));
 
         // Recalculate contextFiles to include the auto-retrieved attachments
         const updatedContextFiles = getContextFilesForMessage(updatedLinearChain, contextFilters);
@@ -1141,7 +1163,7 @@ export async function fetchAssistantResponse({
         contextFilters,
         personalizationPrompt,
         projectInstructions,
-        ragResult?.context,
+        ragResult?.context
     );
     await dispatch(
         sendMessageWithRedux(api, turns, {
@@ -1240,7 +1262,7 @@ export function getPersonalizationPromptFromState(personalization: Personalizati
     }
 
     if (personalization.personality !== 'default') {
-        const personalityOption = PERSONALITY_OPTIONS.find(p => p.value === personalization.personality);
+        const personalityOption = PERSONALITY_OPTIONS.find((p) => p.value === personalization.personality);
         const description = personalityOption?.description;
         if (description) {
             parts.push(`Please adopt a ${description.toLowerCase()} personality.`);
