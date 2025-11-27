@@ -44,7 +44,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
   const overflow = useCompositeOverflowStore({ placement: 'bottom-end' })
   const [toolbarContainerElement, setToolbarContainerElement] = useState<HTMLDivElement | null>(null)
   return (
-    <div ref={ref} {...props} className={clsx('select-none', props.className)}>
+    <div ref={ref} {...props} className={clsx('select-none print:hidden', props.className)}>
       <div className="border-weak rounded-[1rem] border bg-[white] shadow-[0_4px_10px_0_rgba(0,0,0,0.06)] max-sm:rounded-none">
         <GroupsProvider toolbarContainerElement={toolbarContainerElement}>
           <Ariakit.Toolbar className="flex grow gap-[.5rem] py-[.375rem]">

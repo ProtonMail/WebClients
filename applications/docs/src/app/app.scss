@@ -172,6 +172,13 @@ input[type='number'] {
 	}
 }
 
+// Required to remove the page title, url, etc that are printed by default.
+// Does not make a difference when not printing.
+@page {
+	size: auto;
+	margin: 0;
+}
+
 .dropdown-content:not(.is-homepage *) {
 	background-image: none;
 }
