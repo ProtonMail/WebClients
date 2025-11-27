@@ -1,7 +1,6 @@
 import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import { areIntervalsOverlapping, isWithinInterval } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/index';
@@ -34,7 +33,10 @@ import {
     convertBookingRangesToCalendarViewEvents,
     generateBookingRangeID,
     generateDefaultBookingRange,
+    getIsBookingsIntersection,
+    getIsRecurringBookingsIntersection,
     getRangeDateStart,
+    normalizeBookingRangeToTimeOfWeek,
 } from '../utils/range/rangeHelpers';
 import type { BookingRange, BookingsContextValue, InternalBookingFrom, Intersection } from './interface';
 import { type BookingFormData, BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from './interface';
@@ -176,13 +178,17 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         const start = intersectionRef.current?.start || getRangeDateStart(formData, data.start);
         const end = intersectionRef.current?.end || data.end;
 
-        const dataId = generateBookingRangeID(start, end);
+        const isRecurring = formData.recurring;
+        const normalizedStart = isRecurring ? normalizeBookingRangeToTimeOfWeek(start) : start;
+        const normalizedEnd = isRecurring ? normalizeBookingRangeToTimeOfWeek(end) : end;
+
+        const dataId = generateBookingRangeID(normalizedStart, normalizedEnd);
 
         // Validate the operation using pure function
         const validationError = validateRangeOperation({
             operation: 'add',
-            start,
-            end,
+            start: normalizedStart,
+            end: normalizedEnd,
             timezone: data.timezone,
             rangeId: dataId,
             existingRanges: internalForm.bookingRanges,
@@ -197,8 +203,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
         const newRange: BookingRange = {
             id: dataId,
-            start,
-            end,
+            start: normalizedStart,
+            end: normalizedEnd,
             timezone: data.timezone,
         };
 
@@ -256,27 +262,21 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const isIntersectingBookingRange = (start: Date, end: Date) => {
-        const intersection = internalForm.bookingRanges?.find((range) => {
-            return areIntervalsOverlapping({ start, end }, { start: range.start, end: range.end });
+        if (formData.recurring) {
+            return getIsRecurringBookingsIntersection({
+                start,
+                end,
+                bookingRanges: internalForm.bookingRanges,
+                intersectionRef,
+            });
+        }
+
+        return getIsBookingsIntersection({
+            start,
+            end,
+            bookingRanges: internalForm.bookingRanges,
+            intersectionRef,
         });
-
-        if (!intersection) {
-            return false;
-        }
-
-        if (!intersectionRef.current) {
-            // The intersection is happening at the end of a range
-            if (isWithinInterval(start, intersection)) {
-                intersectionRef.current = { start: intersection.end, end };
-            }
-
-            // The intersection is happening at the start of a range
-            if (isWithinInterval(end, intersection)) {
-                intersectionRef.current = { start, end: intersection.start };
-            }
-        }
-
-        return !!intersection;
     };
 
     const submitForm = async () => {
