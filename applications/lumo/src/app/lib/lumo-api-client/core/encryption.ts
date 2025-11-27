@@ -39,18 +39,42 @@ export async function encryptTurns(
     requestKey: AesGcmCryptoKey,
     requestId: RequestId
 ): Promise<EncryptedTurn[]> {
-    return Promise.all(
-        turns.map(async (turn) => {
-            const content = turn.content ?? '';
-            const turnAd = `lumo.request.${requestId}.turn`;
-            const contentEnc = await encryptString(content, requestKey, turnAd);
-            return {
+    const requestAd = `lumo.request.${requestId}.turn`;
+
+    // Start all encryption operations in parallel
+    const turnPromises = turns.map((turn) => {
+        const content = turn.content ?? '';
+        const contentPromise = encryptString(content, requestKey, requestAd);
+
+        // Start encrypting images in parallel if present
+        const imagePromises =
+            turn.images?.map((image) => {
+                const dataPromise = encryptString(image.data, requestKey, requestAd);
+                return dataPromise.then((encryptedData) => ({
+                    ...image,
+                    data: encryptedData,
+                    encrypted: true,
+                }));
+            }) || [];
+
+        // Combine content and images promises
+        return Promise.all([contentPromise, ...imagePromises]).then(([encryptedContent, ...encryptedImages]) => {
+            const encryptedTurn: EncryptedTurn = {
                 ...turn,
-                content: contentEnc,
+                content: encryptedContent,
                 encrypted: true,
             };
-        })
-    );
+
+            if (encryptedImages.length > 0) {
+                encryptedTurn.images = encryptedImages;
+            }
+
+            return encryptedTurn;
+        });
+    });
+
+    // Await all turns at once
+    return Promise.all(turnPromises);
 }
 
 /**

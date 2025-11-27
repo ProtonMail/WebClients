@@ -227,61 +227,45 @@ function tryConvertToWireImage(attachment: Attachment): WireImage | null {
 }
 
 /**
- * Load and convert image attachments from a message to WireImage format
- */
-async function loadImageAttachmentsForMessage(
-    message: Message,
-    user: User,
-    spaceDek: AesGcmCryptoKey
-): Promise<WireImage[]> {
-    if (!message.attachments || message.attachments.length === 0) {
-        return [];
-    }
-
-    // Load full attachment data from IndexedDB
-    const fullAttachments = await fillAttachmentData(message.attachments as Attachment[], user, spaceDek);
-
-    // Separate images from text attachments
-    const { imageAttachments } = separateAttachmentsByType(fullAttachments);
-
-    if (imageAttachments.length === 0) {
-        return [];
-    }
-
-    // Convert images to WireImage format
-    const images: WireImage[] = imageAttachments
-        .map(tryConvertToWireImage)
-        .filter((img): img is WireImage => img !== null);
-
-    return images;
-}
-
-/**
  * Enrich a single turn with image attachments if applicable
+ * Enrich a single turn with image attachments by matching attachment IDs
+ * Works for ALL user turns in the conversation
  */
 async function enrichTurnWithImages(
     turn: Turn,
     turnIndex: number,
     turns: Turn[],
     linearChain: Message[],
-    user: User,
-    spaceDek: AesGcmCryptoKey
+    allAttachments: Attachment[]
 ): Promise<Turn> {
     // Only process user turns
     if (turn.role !== Role.User) {
         return turn;
     }
 
-    // Find corresponding message in linearChain
+    // Find the corresponding message for this turn
     const correspondingMessage = findCorrespondingUserMessage(turn, turnIndex, turns, linearChain);
-
-    if (!correspondingMessage) {
+    if (!correspondingMessage || !correspondingMessage.attachments || correspondingMessage.attachments.length === 0) {
         return turn;
     }
 
-    // Load and convert images
-    const images = await loadImageAttachmentsForMessage(correspondingMessage, user, spaceDek);
+    // Match this message's attachments by ID from the allAttachments array
+    const messageAttachmentIds = correspondingMessage.attachments.map((a) => a.id);
+    const messageAttachments = allAttachments.filter((a) => messageAttachmentIds.includes(a.id));
+    if (messageAttachments.length === 0) {
+        return turn;
+    }
 
+    // Filter to get only image attachments, without text attachments
+    const { imageAttachments } = separateAttachmentsByType(messageAttachments);
+    if (imageAttachments.length === 0) {
+        return turn;
+    }
+
+    // Convert images to WireImage format
+    const images: WireImage[] = imageAttachments
+        .map(tryConvertToWireImage)
+        .filter((img): img is WireImage => img !== null);
     if (images.length === 0) {
         return turn;
     }
@@ -294,27 +278,28 @@ async function enrichTurnWithImages(
 }
 
 /**
- * Async version of prepareTurns that loads full attachment data and extracts images
+ * Async version of prepareTurns that extracts images from provided attachments
  */
 export async function prepareTurnsWithImages(
     linearChain: Message[],
-    user: User | undefined,
-    spaceDek: AesGcmCryptoKey | undefined,
+    attachments: Attachment[],
     finalTurn = ASSISTANT_TURN,
     contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string
+    personalizationPrompt?: string,
+    projectInstructions?: string,
+    documentContext?: string
 ): Promise<Turn[]> {
     // First, get basic turns without images
-    const turns = prepareTurns(linearChain, finalTurn, contextFilters, personalizationPrompt);
+    const turns = prepareTurns(linearChain, finalTurn, contextFilters, personalizationPrompt, projectInstructions, documentContext);
 
-    // If no user/spaceDek, can't load attachments
-    if (!user || !spaceDek) {
+    // If no attachments, nothing to add
+    if (attachments.length === 0) {
         return turns;
     }
 
     // Now enrich user turns with images
     const enrichedTurns = await Promise.all(
-        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, user, spaceDek))
+        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, attachments))
     );
 
     return enrichedTurns;
@@ -348,18 +333,20 @@ export const getFilteredTurns = (
  */
 export const getFilteredTurnsWithImages = async (
     linearChain: Message[],
-    user: User | undefined,
-    spaceDek: AesGcmCryptoKey | undefined,
+    attachments: Attachment[],
     contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string
+    personalizationPrompt?: string,
+    projectInstructions?: string,
+    documentContext?: string
 ): Promise<Turn[]> => {
     const turns = await prepareTurnsWithImages(
         linearChain,
-        user,
-        spaceDek,
+        attachments,
         ASSISTANT_TURN,
         contextFilters,
-        personalizationPrompt
+        personalizationPrompt,
+        projectInstructions,
+        documentContext
     );
     return turns
         .filter((turn) => {
