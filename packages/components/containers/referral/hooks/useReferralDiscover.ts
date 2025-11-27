@@ -18,7 +18,7 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
     const settingsSpotlightFeature = useFeature(FeatureCode.ReferralSpotlightSettings);
     const topButtonFeature = useFeature(FeatureCode.ReferralTopBarButton);
 
-    const isFeatureActive = useFlag('ReferralExpansion');
+    const isFeatureActive = useFlag('ReferralExpansionDiscover');
     const isUserEligible = !!userSettings?.Referral?.Eligible;
 
     const subscriptionStartedThirtyDaysAgo =
