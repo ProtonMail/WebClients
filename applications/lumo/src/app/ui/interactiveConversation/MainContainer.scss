@@ -1,13 +1,7 @@
 .composer-container {
 	margin-block-start: -1.188rem;
 
-	// When Halloween is enabled and NOT in ghost mode, remove margin-top
-	&.halloween-no-ghost {
+	&.without-margin {
 		margin-block-start: 0;
-	}
-
-	// When Halloween is enabled and in ghost mode, keep the margin-top
-	&.halloween-ghost {
-		margin-block-start: -1.188rem;
 	}
 }
