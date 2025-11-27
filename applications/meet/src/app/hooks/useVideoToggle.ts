@@ -87,9 +87,13 @@ export const useVideoToggle = (
 
         const currentVideoTrack = getCurrentVideoTrack();
 
-        // If we have a background blur processor, we need to stop it
-        if (backgroundBlur) {
-            await currentVideoTrack?.stopProcessor();
+        if (backgroundBlur && currentVideoTrack) {
+            try {
+                await currentVideoTrack.stopProcessor();
+            } catch (error) {
+                // eslint-disable-next-line no-console
+                console.error(error);
+            }
         }
 
         await switchActiveDevice({
