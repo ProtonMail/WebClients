@@ -254,6 +254,9 @@
       "Create new policy": [
         "새 정책 추가"
       ],
+      "Create organization": [
+        "조직 생성"
+      ],
       "Create users": [
         "사용자 만들기"
       ],
@@ -670,6 +673,9 @@
       ],
       "Or": [
         "또는"
+      ],
+      "Or use a different Gmail address": [
+        "또는 다른 Gmail 주소를 사용하세요"
       ],
       "Organization": [
         "조직"
@@ -1180,6 +1186,9 @@
       "${ ips } server": [
         "${ ips }개 서버"
       ],
+      "${ LUMO_APP_NAME } AI assistant": [
+        "${ LUMO_APP_NAME } AI 어시스턴트"
+      ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
         "${ LUMO_APP_NAME } AI 어시스턴트 (${ quantity }명 사용자용)"
       ],
@@ -1682,6 +1691,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically": [
+        "자동으로 갱신"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "${ renewLength }개월간 자동으로 ${ renewPrice }에 갱신"
       ],
@@ -3972,6 +3984,9 @@
       "Permissions request failed.": [
         "권한 요청을 실패했습니다."
       ],
+      "Please add a payment method before reactivating your subscription": [
+        "구독을 다시 활성화하기 전 결제 수단을 추가해 주세요."
+      ],
       "Please configure a custom domain before adding addresses.": [
         "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
       ],
@@ -4799,9 +4814,6 @@
       "Ad-blocker and malware protection": [
         "광고 차단기 및 멀웨어 보호"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "모든 ${ BRAND_NAME } 프리미엄 서비스"
-      ],
       "and more premium features...": [
         "그리고 더 많은 프리미엄 기능들..."
       ],
@@ -4831,6 +4843,9 @@
       ],
       "Secure streaming": [
         "안전한 영상 스트리밍"
+      ],
+      "Secure vault, item, and link sharing": [
+        "안전한 금고, 항목 및 링크 공유"
       ],
       "Stream from Netflix, HBO, and more": [
         "Netflix, HBO 등에서 스트리밍하세요"
@@ -5213,9 +5228,6 @@
       ],
       "Enjoying ${ planName }?": [
         "${ planName }을(를) 잘 사용하고 계신가요?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "매달 **${ priceString }**만 더 결제하여 4가지 이상의 프리미엄 개인정보 보호 서비스를 잠금 해제하세요."
       ],
       "Upgrade your privacy": [
         "개인정보 보호를 업그레이드하세요"
@@ -5666,6 +5678,9 @@
       "${ planName } expires today.": [
         "${ planName }이(가) 오늘 만료됩니다."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "조직용 ${ PROTON_SENTINEL_NAME }은 보안 위협으로부터 사용자를 보호하기 위해 24시간 작동하는 정교한 AI 시스템과 보안계 전문가들로 이루워진 고급 계정 보호 프로그램입니다."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME }은 보안 위협으로부터 사용자를 보호하기 위해 24시간 작동하는 정교한 AI 시스템과 보안계 전문가들로 이루워진 고급 계정 보호 프로그램입니다."
       ],
@@ -5750,14 +5765,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator과 같은 다른 2단계 인증 앱으로부터 **기존 코드를 불러올 수 있어요**"
       ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**1단계:** 리퍼럴 링크로 친구들을 ${ BRAND_NAME }에 초대하세요."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 **2주 무료 혜택**을 받습니다"
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**2단계:** 초대한 친구들은 구독한 플랜에 추가로 2주 무료 혜택을 받습니다"
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**3단계:** 플랜을 구독하는 친구 한 명당 ${ referrerRewardAmount } 크레딧을 받아보세요."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**3단계:** 플랜을 구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받아보세요."
       ],
       "**Sync codes** to all your devices": [
         "가지고 계신 모든 기기와 **코드를 동기화할 수 있어요**"
@@ -7109,6 +7133,9 @@
       "Secure your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 보호하기"
       ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "안전하고 종단 간 암호화된 영상 회의"
+      ],
       "Securing your account": [
         "계정을 보호하는 중"
       ],
@@ -7550,6 +7577,9 @@
       "Upgrade to Professional or a higher plan to unlock": [
         "Professional 또는 더 상위의 플랜으로 업그레이드하여"
       ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "조직용 ${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 또는 ${ lastPlanName }(으)로 업그레이드하세요."
+      ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
         "${ PROTON_SENTINEL_NAME }에 접근하려면 ${ firstPlanNames } 또는 ${ lastPlanName }(으)로 업그레이드하세요."
       ],
@@ -7801,6 +7831,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "기존 ${ BRAND_NAME } 캘린더에 불러온 캘린더를 병합할 수도 있습니다."
+      ],
+      "You can change storage allocation at **Users and addresses**": [
+        "**사용자 및 주소**에서 스토리지 할당 변경이 가능합니다"
       ],
       "You can change this anytime in ${ settingsLink }.": [
         "언제든지 ${ settingsLink }(에)서 변경하실 수 있습니다."
@@ -8214,6 +8247,12 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
+      "0 of 1 email address available": [
+        "1개 중 0개 이메일 주소 사용 가능"
+      ],
+      "1 of 1 email address available": [
+        "1개 중 1개 이메일 주소 사용 가능"
+      ],
       "Account holder": [
         "예금주"
       ],
@@ -8529,6 +8568,9 @@
       "Folder location": [
         "폴더 위치"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME } 및 ${ DOCS_SHORT_APP_NAME }용."
+      ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, 및 ${ SHEETS_SHORT_APP_NAME }용."
       ],
@@ -8734,7 +8776,7 @@
         "다른 금액"
       ],
       "Password": [
-        "암호"
+        "비밀번호"
       ],
       "Password strength": [
         "비밀번호 보안 강도"
@@ -12046,6 +12088,18 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ textDate }**까지 **${ planTitle }**을(를) 무료로 즐겨보세요."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "2주 혜택 추천 시 ${ referrerRewardAmount } 크레딧을 받아보세요."
+      ],
+      "How your free trial works:": [
+        "무료 체험 작동 방식:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "해당 날짜 전에 취소시 무료체험 종료 후 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }로 다운그레이드됩니다. 취소하지 않으면 전체 플랜이 시작되며 **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "해당 날짜 전에 취소시 크레딧으로 **${ referrerRewardAmount }**을(를) 받게 됩니다. 구독하지 않게 되면 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }로 다운그레이드됩니다."
+      ],
       "Invite friends. Get credits.": [
         "친구 초대하고. 크레딧도 받고."
       ],
@@ -12066,6 +12120,9 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }**가 제공하는 강력한 기능들을 탐색할 수 있는 시간이 **${ daysRemaining }일** 남았습니다."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "친구 또한 차후 청구서에서 사용 가능하도록 ${ refereeRewardAmount } 크레딧을 받게 됩니다!"
       ],
       "your subscription": [
         "내 구독"
@@ -14365,6 +14422,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "친구 ${ friendsSubscribed }명 구독"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "조직용 ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } 클라이언트"
       ],
@@ -14587,6 +14647,9 @@
       "Confirm phone number": [
         "전화번호 확인"
       ],
+      "Connect a Gmail address": [
+        "Gmail 주소 연결"
+      ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
       ],
@@ -14595,9 +14658,6 @@
       ],
       "Connect organization": [
         "조직에 연결"
-      ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "${ vpnPlus }로 한 번에 ${ VPN_CONNECTIONS }대의 기기를 동시 연결하세요. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "화상 회의에 연결하기"
@@ -14899,9 +14959,6 @@
       "Get started": [
         "시작하기"
       ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "가지고 계신 기기에 앱을 설치하여 최대 ${ VPN_CONNECTIONS }대 기기를 한 번에 보호하세요."
-      ],
       "Get the apps": [
         "앱 다운로드"
       ],
@@ -15111,6 +15168,9 @@
       ],
       "Remove domain": [
         "도메인 제거"
+      ],
+      "Remove forwarding address": [
+        "포워딩 주소 삭제"
       ],
       "Remove server?": [
         "서버를 삭제할까요?"
@@ -15504,6 +15564,9 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Gmail 측의 변경으로 인해 ${ BRAND_NAME }의 연결이 차단되고 있습니다. 이메일 기능을 다시 활성화하려면 권한을 부여해야 합니다."
       ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "플랜에 추가됨: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
       ],
@@ -15839,12 +15902,6 @@
       "Advanced security for your company?": [
         "귀사를 위한 고급 보안이 필요하신가요?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "매달 ${ fallBackString }의 가격으로 모든 프리미엄 ${ BRAND_NAME } 서비스를"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "매달 **${ priceString }**의 가격으로 모든 프리미엄 ${ BRAND_NAME } 서비스를."
-      ],
       "Did you know?": [
         "알고 계셨나요?"
       ],
@@ -15862,6 +15919,9 @@
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "나와 소중한 사람을 위한 무제한 개인정보 보호. 단 매월 ${ priceString }부터."
+      ],
+      "You can protect up to ${ DUO_MAX_USERS } people with ${ PLAN_NAMES[PLANS.DUO] }, and up to ${ FAMILY_MAX_USERS } with ${ PLAN_NAMES[PLANS.FAMILY] }. From only ${ priceString }/month per account.": [
+        "${ PLAN_NAMES[PLANS.DUO] }로 최대 ${ DUO_MAX_USERS }명, ${ PLAN_NAMES[PLANS.FAMILY] }로 최대 ${ FAMILY_MAX_USERS }까지 보호할 수 있습니다. 계정당 매월 ${ priceString }부터 시작합니다."
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "매월 계정 당 ${ priceString }에 불과한 ${ PLAN_NAMES[plan] }(으)로 최대 ${ FAMILY_MAX_USERS }명의 사용자를 동시에 보호할 수 있습니다."
