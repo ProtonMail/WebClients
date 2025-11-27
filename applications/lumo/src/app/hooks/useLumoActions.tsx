@@ -96,6 +96,33 @@ export const useLumoActions = ({
 
     const spaceId = space?.id;
 
+    // Helper to load and deduplicate attachments from message history
+    const loadAndDeduplicateAttachments = async (
+        messages: Message[],
+        user: User | undefined,
+        spaceDek: any
+    ): Promise<Attachment[]> => {
+        const allAttachments: Attachment[] = [];
+        const seenIds = new Set<string>();
+
+        for (const message of messages) {
+            if (message.attachments && message.attachments.length > 0) {
+                // Filter out already-seen attachments to avoid redundant loading
+                const unseenAttachments = message.attachments.filter((a) => !seenIds.has(a.id));
+
+                if (unseenAttachments.length > 0) {
+                    const filled = await fillAttachmentData(unseenAttachments, user, spaceDek);
+                    allAttachments.push(...filled);
+
+                    // Mark as seen
+                    filled.forEach((a) => seenIds.add(a.id));
+                }
+            }
+        }
+
+        return allAttachments;
+    };
+
     const handleSendAction = async (
         actionParams: ActionParams,
         finalConversationId: ConversationId,
@@ -112,11 +139,15 @@ export const useLumoActions = ({
 
         const messagesWithContext = await addContextToMessages(messageChain, user, spaceDek);
 
+        // Load all attachments from conversation history and combine with new message attachments
+        const historyAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
+        const allAttachments = [...historyAttachments, ...provisionalAttachments];
+
         await dispatch(
             sendMessage({
                 api,
                 newMessageContent,
-                attachments: provisionalAttachments,
+                attachments: allAttachments,
                 messageChain: messagesWithContext,
                 conversationId: finalConversationId,
                 spaceId: finalSpaceId,
@@ -157,10 +188,13 @@ export const useLumoActions = ({
             spaceDek
         );
 
+        // Load all attachments from conversation history
+        const historyAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
+
         // Get personalization data for retry from saved user settings (not unsaved Redux state)
         const savedPersonalization = lumoUserSettings?.personalization;
         let personalizationPrompt: string | undefined;
-        
+
         if (savedPersonalization?.enableForNewChats) {
             personalizationPrompt = getPersonalizationPromptFromState(savedPersonalization);
             console.log('Retry: Generated personalization prompt from saved settings:', personalizationPrompt);
@@ -179,6 +213,7 @@ export const useLumoActions = ({
             dispatch,
             lastUserMessage,
             messageChain: messagesWithContext,
+            attachments: historyAttachments,
             spaceId: finalSpaceId,
             conversationId: finalConversationId,
             signal,
@@ -205,13 +240,17 @@ export const useLumoActions = ({
         const parentMessageChain = buildLinearChain(messageMap, originalMessage.parentId, preferredSiblings);
         const conversationId = originalMessage.conversationId;
         const messagesWithContext = await addContextToMessages(parentMessageChain, user, spaceDek);
-        const attachments = await fillAttachmentData(originalMessage.attachments ?? [], user, spaceDek);
+
+        // Load all attachments from conversation history and combine with edited message attachments
+        const historyAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
+        const editedMessageAttachments = await fillAttachmentData(originalMessage.attachments ?? [], user, spaceDek);
+        const allAttachments = [...historyAttachments, ...editedMessageAttachments];
 
         await dispatch(
             sendMessage({
                 api,
                 newMessageContent,
-                attachments,
+                attachments: allAttachments,
                 messageChain: messagesWithContext,
                 conversationId,
                 spaceId,
@@ -271,6 +310,9 @@ export const useLumoActions = ({
         const messagesWithContext = await addContextToMessages(parentMessageChain, user, spaceDek);
         const retryInstructions = getRetryInstructions(retryStrategy, customInstructions);
 
+        // Load all attachments from conversation history
+        const allAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
+
         // Create a new placeholder assistant message
         const assistantMessageId = newMessageId();
         const assistantMessage: Message = {
@@ -301,6 +343,7 @@ export const useLumoActions = ({
                 conversationId,
                 assistantMessageId,
                 messagesWithContext,
+                allAttachments,
                 signal,
                 enableExternalTools,
                 enableSmoothing,
