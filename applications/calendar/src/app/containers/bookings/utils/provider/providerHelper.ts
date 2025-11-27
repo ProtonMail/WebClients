@@ -104,20 +104,44 @@ export const getBookingPageCalendar = ({
     return selectedCalendar;
 };
 
+const getEditBookingPageTimezone = ({
+    bookingPageTimezone,
+    calendarPrimaryTimezone,
+}: {
+    bookingPageTimezone?: string;
+    calendarPrimaryTimezone?: string;
+}): string => {
+    if (bookingPageTimezone && !calendarPrimaryTimezone) {
+        return bookingPageTimezone;
+    }
+
+    if (bookingPageTimezone && calendarPrimaryTimezone) {
+        return bookingPageTimezone !== calendarPrimaryTimezone ? calendarPrimaryTimezone : bookingPageTimezone;
+    }
+
+    return getTimezone();
+};
+
 export const computeEditFormData = ({
     bookingPageCalendar,
     bookingPage,
     editData,
     isMeetVideoConferenceEnabled,
+    calendarUserSettings,
 }: {
     bookingPageCalendar: VisualCalendar;
     bookingPage: InternalBookingPage;
     editData: BookingPageEditData;
     isMeetVideoConferenceEnabled: boolean;
+    calendarUserSettings?: CalendarUserSettings;
 }): InternalBookingFrom => {
     const firstSlot = editData.slots[0];
 
-    const timezone = firstSlot?.timezone || getTimezone();
+    const timezone = getEditBookingPageTimezone({
+        bookingPageTimezone: firstSlot.timezone,
+        calendarPrimaryTimezone: calendarUserSettings?.PrimaryTimezone,
+    });
+
     const duration = firstSlot
         ? differenceInMinutes(
               fromTimestampToUTCDate(firstSlot.end, firstSlot.timezone),
@@ -126,7 +150,7 @@ export const computeEditFormData = ({
         : DEFAULT_EVENT_DURATION;
 
     const recurring = firstSlot ? !!firstSlot.rrule : DEFAULT_RECURRING;
-    const ranges = generateRangeFromSlots(editData);
+    const ranges = generateRangeFromSlots(editData, timezone);
 
     return {
         summary: bookingPage.summary,
