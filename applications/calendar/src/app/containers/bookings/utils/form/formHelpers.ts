@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
-import { BookingFormValidationReasons, MAX_BOOKING_SLOTS } from '../../bookingsProvider/interface';
+import { BookingFormValidationReasons, BookingLocation, MAX_BOOKING_SLOTS } from '../../bookingsProvider/interface';
 import type { BookingFormData, BookingFormValidation } from '../../bookingsProvider/interface';
 import type { SerializedFormData } from '../../bookingsTypes';
 
@@ -27,6 +27,13 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
         return {
             type: 'warning',
             reason: BookingFormValidationReasons.TIME_SLOT_REQUIRED,
+        };
+    }
+
+    if (data.locationType === BookingLocation.IN_PERSON && (data.location?.trim().length === 0 || !data.location)) {
+        return {
+            type: 'warning',
+            reason: BookingFormValidationReasons.MISSING_LOCATION,
         };
     }
 

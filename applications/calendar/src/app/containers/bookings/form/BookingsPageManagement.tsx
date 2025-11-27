@@ -18,8 +18,8 @@ import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 import useFlag from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
@@ -131,7 +131,7 @@ export const Form = () => {
                         value={formData.location}
                         onChange={(e) => updateFormData('location', e.target.value)}
                         maxLength={MAX_CHARS_API.LOCATION}
-                        assistContainerClassName="hidden"
+                        error={formData.location?.trim().length === 0 ? c('Error').t`Location is required` : undefined}
                         autoFocus
                     />
                 )}
