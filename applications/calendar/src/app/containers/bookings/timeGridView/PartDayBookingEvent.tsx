@@ -1,9 +1,10 @@
 import { useCallback, useMemo } from 'react';
 
-import { addMinutes, differenceInMinutes, isBefore } from 'date-fns';
+import { addMinutes, isBefore } from 'date-fns';
 
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
 
+import { getEventPartDuration } from '../../../components/calendar/TimeGrid/dayEventsHelpers';
 import { type PartDayEventProps, PartDayEventView } from '../../../components/events/PartDayEvent';
 import { getBookingSlotStyle } from '../../../helpers/color';
 import type { CalendarViewEvent } from '../../calendar/interface';
@@ -19,21 +20,25 @@ interface PartDayBusyEventProps
 
 interface BookingSlotsProps {
     start: Date;
-    end: Date;
+    eventPartDuration: number;
+    slotPartDuration: number;
     backgroundColor: string;
 }
 
-const computeHeight = (duration: number, totalMinutes: number) => {
-    const height = duration / totalMinutes;
+const computeHeight = (slotDuration: number, partEventDuration: number) => {
+    const height = slotDuration / partEventDuration;
     return `${height * 100}%`;
 };
 
-const BookingSlots = ({ start, end, backgroundColor }: BookingSlotsProps) => {
+/**
+ * We use eventPartDuration and slotPartDuration to compute the height and number of booking slots.
+ * This is because, we can have ranges spreading across multiple days when user change timezone.
+ */
+const BookingSlots = ({ start, eventPartDuration, slotPartDuration, backgroundColor }: BookingSlotsProps) => {
     const { formData } = useBookings();
 
-    const totalMinutes = differenceInMinutes(end, start);
-    const height = computeHeight(formData.duration, totalMinutes);
-    const availableRanges = Math.floor(totalMinutes / formData.duration);
+    const height = computeHeight(slotPartDuration, eventPartDuration);
+    const availableRanges = Math.floor(eventPartDuration / slotPartDuration);
 
     const getItemOpacity = useCallback(
         (index: number) => {
@@ -59,9 +64,17 @@ const BookingSlots = ({ start, end, backgroundColor }: BookingSlotsProps) => {
 };
 
 export const PartDayBookingEvent = ({ size, style, event, eventRef, eventPartDuration }: PartDayBusyEventProps) => {
+    const { formData } = useBookings();
+
     const eventStyle = useMemo(() => {
         return getBookingSlotStyle(event.data.calendarData.Color, style);
     }, [event.data.calendarData.Color, style]);
+
+    const slotPartDuration = getEventPartDuration({
+        start: new Date(),
+        end: addMinutes(new Date(), formData.duration),
+        colEnd: 0,
+    });
 
     return (
         <PartDayEventView
@@ -73,7 +86,12 @@ export const PartDayBookingEvent = ({ size, style, event, eventRef, eventPartDur
             eventPartDuration={eventPartDuration}
         >
             <div data-testid="calendar-day-week-view:part-day-event" className="booking-cell h-full w-full">
-                <BookingSlots start={event.start} end={event.end} backgroundColor={event.data.calendarData.Color} />
+                <BookingSlots
+                    start={event.start}
+                    eventPartDuration={eventPartDuration}
+                    slotPartDuration={slotPartDuration}
+                    backgroundColor={event.data.calendarData.Color}
+                />
             </div>
         </PartDayEventView>
     );
