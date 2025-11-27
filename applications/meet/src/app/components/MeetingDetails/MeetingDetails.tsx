@@ -14,7 +14,7 @@ import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
-import { useMeetings } from '../../store';
+import { useMeetings } from '../../store/hooks/useMeetings';
 import { MeetingSideBars } from '../../types';
 
 import './MeetingDetails.scss';

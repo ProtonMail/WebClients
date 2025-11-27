@@ -11,6 +11,7 @@ export interface MeetContextValues {
     locked: boolean;
     maxDuration: number;
     maxParticipants: number;
+    paidUser: boolean;
     page: number;
     quality: VideoQuality;
     setPage: React.Dispatch<React.SetStateAction<number>>;
@@ -62,6 +63,7 @@ export const MeetContext = createContext<MeetContextValues>({
     locked: false,
     maxDuration: 0,
     maxParticipants: 0,
+    paidUser: false,
     page: 0,
     quality: VideoQuality.HIGH,
     setPage: () => {},

@@ -95,3 +95,11 @@ export interface DeviceState {
     preferredAvailable: boolean;
     preferredDevice: MediaDeviceInfo | null;
 }
+
+export enum UpsellModalTypes {
+    Schedule = 'schedule',
+    PersonalMeeting = 'personalMeeting',
+    StartMeeting = 'startMeeting',
+    FreeAccount = 'freeAccount',
+    PaidAccount = 'paidAccount',
+}

@@ -22,7 +22,7 @@ import { FlagProvider } from '@proton/unleash';
 import { bootstrapApp } from '../bootstrap';
 import config from '../config';
 import { WasmContext } from '../contexts/WasmContext';
-import type { MeetStore } from '../store';
+import type { MeetStore } from '../store/store';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config'>;
 

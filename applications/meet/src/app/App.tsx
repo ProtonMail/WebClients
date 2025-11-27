@@ -14,7 +14,8 @@ import { ComingSoon } from './components/ComingSoon/ComingSoon';
 import { WasmUnsupportedError } from './components/WasmUnsupportedError';
 import config from './config';
 import { AdminContainer } from './containers/AdminContainer';
-import { DashboardContainer } from './containers/DashboardContainer';
+import { DashboardContainer } from './containers/DashboardContainer/DashboardContainer';
+import { GuestDashboardContainer } from './containers/DashboardContainer/GuestDashboardContainer';
 import { GuestContainer } from './containers/GuestContainer';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
@@ -23,7 +24,7 @@ import { getPublicToken } from './hooks/srp/usePublicToken';
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
 
-const routes = ['join', 'admin/create', 'dashboard'];
+const routes = ['join', 'admin/create', 'dashboard', 'anonymous'];
 
 const landingPageRoute = '/start-free-meeting';
 
@@ -71,6 +72,10 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
             }
         }
 
+        if (!isGuest && location.pathname.includes('anonymous')) {
+            history.push('/dashboard');
+        }
+
         const userPattern = /\/u\/\d+/;
 
         if (isGuest && location.pathname.match(userPattern)) {
@@ -115,6 +120,7 @@ export const App = () => {
                         <RedirectWrapper>
                             <ComingSoonWrapper>
                                 <Route path="/join" render={() => <WrappedProtonMeetContainer guestMode={true} />} />
+                                <Route path="/anonymous" component={GuestDashboardContainer} />
                             </ComingSoonWrapper>
                         </RedirectWrapper>
                     </GuestContainer>
