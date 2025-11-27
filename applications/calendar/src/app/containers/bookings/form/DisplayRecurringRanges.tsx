@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -52,8 +54,8 @@ export const DisplayRecurringRanges = ({
 
                 if (day.ranges && day.ranges.length > 0) {
                     return day.ranges.map((range, index) => (
-                        <>
-                            <div className="day-grid grid grid-cols-4 gap-1 items-center mb-1" key={range.id}>
+                        <Fragment key={range.id}>
+                            <div className="day-grid grid grid-cols-4 gap-1 items-center mb-1">
                                 <p className={clsx(index !== 0 && 'visibility-hidden', 'text-semibold m-0')}>
                                     {formatterLabel}
                                 </p>
@@ -89,7 +91,7 @@ export const DisplayRecurringRanges = ({
                                 <span></span>
                                 <RangeErrors range={range} />
                             </div>
-                        </>
+                        </Fragment>
                     ));
                 }
 
