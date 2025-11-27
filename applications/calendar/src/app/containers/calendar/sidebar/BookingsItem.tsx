@@ -14,12 +14,15 @@ import SidebarListItemContent from '@proton/components/components/sidebar/Sideba
 import SidebarListItemLabel from '@proton/components/components/sidebar/SidebarListItemLabel';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { Info } from '@proton/components/index';
 import { IcCalendarListFilled } from '@proton/icons/icons/IcCalendarListFilled';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import { useCalendarDispatch } from '../../../store/hooks';
 import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
@@ -44,6 +47,11 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
     const { openBookingSidebarEdition } = useBookings();
     const spotlight = useBookingPageLocationSpotlight();
 
+    const [deleteBookingModal, showDeleteModal] = useModalTwo(DeleteBookingModal);
+
+    const bookignCalendar = calendars.find((calendar) => calendar.ID === page.calendarID);
+    const isCalendarDisabled = getIsCalendarDisabled(bookignCalendar);
+
     const isEditingEnabled = useFlag('EditCalendarBookings');
 
     const handleCopy = (e: MouseEvent, link: string) => {
@@ -54,13 +62,13 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
         createNotification({ text: c('Info').t`Link copied to clipboard` });
     };
 
-    const [deleteBookingModal, showDeleteModal] = useModalTwo(DeleteBookingModal);
+    const handleEditClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (isCalendarDisabled) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
 
-    const bookingPageIcon = (bookingPageID: string) => {
-        return <IcCalendarListFilled color={calendars.find((calendar) => calendar.ID === bookingPageID)?.Color} />;
-    };
-
-    const handleEditClick = async () => {
         if (!isEditingEnabled) {
             return;
         }
@@ -86,7 +94,7 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                             htmlFor={`booking-page-${page.id}`}
                             className="group-hover-opacity-container"
                         >
-                            <SidebarListItemContent left={bookingPageIcon(page.calendarID)}>
+                            <SidebarListItemContent left={<IcCalendarListFilled color={bookignCalendar?.Color} />}>
                                 <div className="flex flex-nowrap justify-space-between items-center w-full">
                                     <p className="text-ellipsis m-0" title={page.summary}>
                                         {page.summary}
@@ -111,9 +119,24 @@ export const BookingItem = ({ canShowSpotlight, page, calendars }: Props) => {
                                     >
                                         <DropdownMenu>
                                             {isEditingEnabled && (
-                                                <DropdownMenuButton onClick={handleEditClick} className="text-left">{c(
-                                                    'Action'
-                                                ).t`Edit booking page`}</DropdownMenuButton>
+                                                <DropdownMenuButton
+                                                    fakeDisabled={isCalendarDisabled}
+                                                    onClick={handleEditClick}
+                                                    className={clsx(
+                                                        'text-left flex items-center flex-nowrap',
+                                                        isCalendarDisabled && 'color-weak hover:color-weak'
+                                                    )}
+                                                >
+                                                    {isCalendarDisabled && (
+                                                        <Info
+                                                            fakeDisabled
+                                                            className="mr-2 shrink-0"
+                                                            title={c('Info')
+                                                                .t`This booking page cannot be edited, the associated calendar is disabled`}
+                                                        />
+                                                    )}
+                                                    {c('Action').t`Edit booking page`}
+                                                </DropdownMenuButton>
                                             )}
                                             <DropdownMenuButton
                                                 onClick={() => showDeleteModal({ bookingId: page.id })}
