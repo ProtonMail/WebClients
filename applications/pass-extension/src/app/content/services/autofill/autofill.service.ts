@@ -15,6 +15,7 @@ import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { AsyncCallback, FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array/first';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -244,12 +245,13 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                 case 'creditCard':
                     /** `formIds` are resolved via service worker's clustering phase.
                      * Origin validation is enforced service-worker side. */
-                    const ccFields =
+                    const ccFields = payload.fields.map((field) =>
                         ctx?.service.formManager
-                            .getFormByIds(payload.formIds)
-                            .flatMap((form) => form.getFieldsFor(FieldType.CREDIT_CARD)) ?? [];
+                            .getFormById(field.formId)
+                            ?.getFieldById<FieldType.CREDIT_CARD>(field.fieldId)
+                    );
 
-                    return autofillCCFields(ccFields, payload.data)
+                    return autofillCCFields(ccFields.filter(truthy), payload.data)
                         .then((autofilled) => ({ type: 'creditCard' as const, autofilled: autofilled.flat() }))
                         .catch(() => ({ type: 'creditCard' as const, autofilled: [] }));
             }

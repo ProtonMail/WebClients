@@ -30,7 +30,7 @@ export type AutofillRequest<T extends AutofillStatus = AutofillStatus> = Extract
          * cross-origin autofill scenarios where sensitive fields (number, CVV) must be
          * stripped when autofilling across origin boundaries. */
         data: Partial<CCItemData>;
-        formIds: string[];
+        fields: FrameField[];
     }>,
     { status: T }
 >;

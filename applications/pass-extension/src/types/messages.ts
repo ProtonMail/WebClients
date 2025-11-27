@@ -1,3 +1,4 @@
+import type { ClusterFrame } from 'proton-pass-extension/app/worker/services/autofill.cc';
 import type { AutofillActionDTO, AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
 import type {
     FrameAttributes,
@@ -146,6 +147,7 @@ export enum WorkerMessageType {
     FRAME_FORMS_QUERY = 'FRAME_FORMS_QUERY',
     FRAME_QUERY = 'FRAME_QUERY',
     FRAME_VISIBILITY = 'FRAME_VISIBILITY',
+    FRAME_FORM_CLUSTER = 'FRAME_FORM_CLUSTER',
 
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
@@ -234,6 +236,7 @@ export type FileTransferWriteMessage = WithPayload<WorkerMessageType.FS_WRITE, F
 export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, FileTransferErrorDTO>;
 
 export type FrameFieldLockMessage = WithPayload<WorkerMessageType.FRAME_FIELD_LOCK, FrameField & { locked: boolean }>;
+export type FrameFormClusterMessage = { type: WorkerMessageType.FRAME_FORM_CLUSTER };
 export type FrameFormsQueryMessage = { type: WorkerMessageType.FRAME_FORMS_QUERY };
 export type FrameQueryMessage = WithPayload<WorkerMessageType.FRAME_QUERY, FrameQueryDTO>;
 export type FrameVisibilityMessage = WithPayload<WorkerMessageType.FRAME_VISIBILITY, FrameAttributes>;
@@ -324,6 +327,7 @@ export type WorkerMessage =
     | FormEntryStashMessage
     | FormStatusMessage
     | FrameFieldLockMessage
+    | FrameFormClusterMessage
     | FrameFormsQueryMessage
     | FrameQueryMessage
     | FrameVisibilityMessage
@@ -404,6 +408,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FRAME_FORMS_QUERY]: FrameFormsResult;
     [WorkerMessageType.FRAME_QUERY]: FrameQueryResult;
     [WorkerMessageType.FRAME_VISIBILITY]: FrameCheckResult;
+    [WorkerMessageType.FRAME_FORM_CLUSTER]: ClusterFrame;
     [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
     [WorkerMessageType.INLINE_ICON_SHIFT]: IconShiftResult;
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };

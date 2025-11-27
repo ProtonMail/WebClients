@@ -4,14 +4,13 @@ import type {
     FrameMessageHandler,
 } from 'proton-pass-extension/app/content/services/client/client.channel';
 import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
-import type { FrameFieldMatch, FrameFormMatch } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clearDetectionCache } from '@proton/pass/fathom';
 import { FieldType } from '@proton/pass/fathom/labels';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
-import { pick } from '@proton/shared/lib/helpers/object';
 import throttle from '@proton/utils/throttle';
 
 import type { FormHandle } from './form';
@@ -154,15 +153,17 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
     };
 
     const onFrameFormsQuery: FrameMessageHandler<WorkerMessageType.FRAME_FORMS_QUERY> = (_, sendResponse) => {
-        const forms = getForms().map<FrameFormMatch>((form) => ({
-            formId: form.formId,
-            formType: form.formType,
-            fields: form
-                .getFields()
-                .map<FrameFieldMatch>((field) => pick(field, ['fieldId', 'fieldSubType', 'fieldType'])),
-        }));
+        const formTypes = getForms().map(prop('formType'));
+        sendResponse({ formTypes });
 
-        sendResponse({ forms, frameAttributes: getFrameAttributes() });
+        return true;
+    };
+
+    const onFrameFormsCluster: FrameMessageHandler<WorkerMessageType.FRAME_FORM_CLUSTER> = (_, sendResponse) => {
+        const forms = getForms().map((form) => ({ formId: form.formId, fields: form.getClusterables() }));
+        const frameAttributes = getFrameAttributes();
+        sendResponse({ forms, frameAttributes });
+
         return true;
     };
 
@@ -189,9 +190,12 @@ export const createFormManager = ({ onDetection, channel }: FormManagerOptions) 
 
     channel.register(WorkerMessageType.FRAME_FORMS_QUERY, onFrameFormsQuery);
     channel.register(WorkerMessageType.FRAME_FIELD_LOCK, onFrameFieldLock);
+    channel.register(WorkerMessageType.FRAME_FORM_CLUSTER, onFrameFormsCluster);
 
     const destroy = () => {
         channel.unregister(WorkerMessageType.FRAME_FORMS_QUERY, onFrameFormsQuery);
+        channel.unregister(WorkerMessageType.FRAME_FORM_CLUSTER, onFrameFormsCluster);
+        channel.unregister(WorkerMessageType.FRAME_FIELD_LOCK, onFrameFieldLock);
 
         cancelIdleCallback(state.detectionRequest);
         runDetection.cancel();

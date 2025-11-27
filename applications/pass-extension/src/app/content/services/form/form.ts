@@ -4,6 +4,9 @@ import { resolveFieldSections } from 'proton-pass-extension/app/content/services
 import { canAutosave } from 'proton-pass-extension/app/content/services/autosave/autosave.utils';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/services/detector/detector.service';
 import { hasProcessableFields } from 'proton-pass-extension/app/content/services/detector/detector.utils';
+import { getFrameAttributesFromElement, isNegligableFrameRect } from 'proton-pass-extension/app/content/utils/frame';
+import type { ClusterFrameFormItem } from 'proton-pass-extension/app/worker/services/autofill.cc';
+import { isCCField } from 'proton-pass-extension/lib/utils/field';
 
 import {
     buttonSelector,
@@ -17,6 +20,7 @@ import {
 } from '@proton/pass/fathom';
 import type { FormType } from '@proton/pass/fathom/labels';
 import { FieldType } from '@proton/pass/fathom/labels';
+import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
@@ -50,9 +54,10 @@ export interface FormHandle {
     scrollChild: HTMLElement;
     detach: () => void;
     detachField: (field: FieldElement) => void;
-    getFieldById: (fieldId: string) => Maybe<FieldHandle>;
+    getFieldById: <T extends FieldType = FieldType>(fieldId: string) => Maybe<FieldHandle<T>>;
     getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
     getFieldsFor: <T extends FieldType>(type: T, predicate?: (handle: FieldHandle) => boolean) => FieldHandle<T>[];
+    getClusterables: () => ClusterFrameFormItem[];
     hasFrameFields: () => boolean;
     reconciliate: (type: FormType, fields: DetectedField[]) => void;
 }
@@ -125,8 +130,8 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             );
         },
 
-        getFieldById: (fieldId) => {
-            return formHandle.getFields().find((field) => field.fieldId === fieldId);
+        getFieldById: <T extends FieldType = FieldType>(fieldId: string) => {
+            return formHandle.getFields().find((field) => field.fieldId === fieldId) as Maybe<FieldHandle<T>>;
         },
 
         getFields: (predicate) => {
@@ -267,6 +272,32 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             }
 
             return false;
+        },
+
+        /** Builds clusterable items for cross-frame form reconciliation.
+         * Extracts credit card fields and iframes in document order, enabling the
+         * service worker to reconstruct forms spanning multiple frames. Only invoke
+         * before autofill operations due to performance cost. */
+        getClusterables: () => {
+            const clusterables: ClusterFrameFormItem[] = [];
+
+            /** `querySelectorAll` returns elements in document order, preserving the
+             * structural layout needed for cross-frame form reconstruction */
+            for (const candidate of form.querySelectorAll('input, select, iframe')) {
+                const field = formHandle.fields.get(candidate as FieldElement);
+                if (field && isCCField(field)) {
+                    const { fieldId, fieldType, fieldSubType } = field;
+                    clusterables.push({ type: 'field', fieldId, fieldType, fieldSubType });
+                } else if (candidate instanceof HTMLIFrameElement) {
+                    if (isNegligableFrameRect(candidate.offsetWidth, candidate.offsetHeight)) continue;
+                    const canResolveFrameID = BUILD_TARGET !== 'chrome' && 'getFrameId' in browser.runtime;
+                    const frameId = canResolveFrameID ? browser.runtime.getFrameId(candidate) : undefined;
+                    const frameAttributes = !canResolveFrameID ? getFrameAttributesFromElement(candidate) : undefined;
+                    clusterables.push({ type: 'frame', frameId, frameAttributes });
+                }
+            }
+
+            return clusterables;
         },
     };
 
