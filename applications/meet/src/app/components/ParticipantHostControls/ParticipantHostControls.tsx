@@ -1,3 +1,4 @@
+import { useLocalParticipant } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -10,8 +11,10 @@ import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import clsx from '@proton/utils/clsx';
 
 import { useMLSContext } from '../../contexts/MLSContext';
+import { useMeetContext } from '../../contexts/MeetContext';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { ParticipantCapabilityPermission } from '../../types';
 
@@ -28,11 +31,23 @@ export const ParticipantHostControls = ({
     isAudioEnabled,
     isVideoEnabled,
 }: ParticipantHostControlsProps) => {
+    const { localParticipant } = useLocalParticipant();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
     const mls = useMLSContext();
+
+    const { participantsMap } = useMeetContext();
+
+    const participantData = participantsMap[participant.identity];
+
+    const participantHasAdminPermission =
+        participantData !== undefined ? !!participantData.IsAdmin || !!participantData.IsHost : false;
+
+    const hasAccessToParticipantAdminControls =
+        (isLocalParticipantHost || (isLocalParticipantAdmin && !participantHasAdminPermission)) &&
+        localParticipant?.identity !== participant.identity;
 
     if (!isLocalParticipantAdmin && !isLocalParticipantHost) {
         return null;
@@ -46,7 +61,10 @@ export const ParticipantHostControls = ({
                 onClick={toggle}
                 hasCaret={false}
                 shape="ghost"
-                className="participant-host-controls-dropdown-button rounded-full w-custom h-custom flex items-center justify-center"
+                className={clsx(
+                    'participant-host-controls-dropdown-button rounded-full w-custom h-custom flex items-center justify-center',
+                    !hasAccessToParticipantAdminControls && 'visibility-hidden'
+                )}
                 size="small"
                 style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                 icon
