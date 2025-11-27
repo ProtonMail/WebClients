@@ -316,12 +316,11 @@ export const applyIconInjectionStyles = ({ icon, input }: IconElementRefs, style
 };
 
 export type CreateIconConfig = {
-    parent: HTMLElement | ShadowRoot;
     tag: string;
     zIndex: number;
 };
 
-export const createIcon = ({ parent, tag, zIndex }: CreateIconConfig): IconElement => {
+export const createIcon = ({ tag, zIndex }: CreateIconConfig): IconElement => {
     const control = createCustomElement<ProtonPassControl>({ type: tag, styles: ProtonPassControlStyles });
     const icon = createElement<HTMLButtonElement>({ type: 'button', classNames: [] });
 
@@ -330,7 +329,6 @@ export const createIcon = ({ parent, tag, zIndex }: CreateIconConfig): IconEleme
     icon.setAttribute('type', 'button');
 
     control.shadowRoot.appendChild(icon);
-    parent.appendChild(control.customElement);
 
     return { icon, control: control.customElement };
 };

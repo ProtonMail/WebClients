@@ -67,14 +67,17 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
 
     if (!isInputElement(input)) return null;
 
+    const noAnchor = anchor.element === input || anchor.element === input.parentElement;
     const container = (() => {
-        const noAnchor = anchor.element === input;
-        const parentEl = noAnchor ? input.parentElement! : anchor.element;
-        return parentEl;
+        const wrapper = noAnchor ? input.parentElement! : anchor.element;
+        return wrapper;
     })();
 
     const listeners = createListenerStore();
-    const { icon, control } = createIcon({ parent: container, zIndex, tag });
+    const { icon, control } = createIcon({ zIndex, tag });
+
+    if (noAnchor) container.insertBefore(control, input);
+    else container.appendChild(control);
 
     const state: IconState = {
         abortCtrl: null,
