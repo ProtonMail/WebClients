@@ -58,5 +58,5 @@ export type FrameRelay<T, Relayed = {}> = T & ({ type: 'initial' } | ({ type: 'r
 
 export type FrameFormMatch = { formId: string; formType: FormType; fields: FrameFieldMatch[] };
 export type FrameFieldMatch<T extends FieldType = FieldType> = { fieldId: string } & AbstractField<T>;
-export type FrameFormsResult = { forms: FrameFormMatch[]; frameAttributes: FrameAttributes };
+export type FrameFormsResult = { formTypes: FormType[] };
 export type FrameForms = { frameId: FrameId } & FrameFormsResult;
