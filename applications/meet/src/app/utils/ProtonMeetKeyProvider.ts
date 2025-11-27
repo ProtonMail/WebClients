@@ -10,6 +10,8 @@ function getKeyIndex(epoch: bigint, keyringSize: number) {
 }
 
 export class ProtonMeetKeyProvider extends BaseKeyProvider {
+    private currentEpoch: bigint | undefined;
+    private currentKey: string | undefined;
     constructor() {
         super({
             sharedKey: true,
@@ -27,5 +29,26 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
         const material = await importKey(bytes.buffer, 'PBKDF2', 'derive');
         const index = getKeyIndex(epoch, this.getOptions().keyringSize);
         this.onSetEncryptionKey(material, undefined, index);
+    }
+
+    setCurrentKey(key: string) {
+        this.currentKey = key;
+    }
+
+    setCurrentEpoch(epoch: bigint) {
+        this.currentEpoch = epoch;
+    }
+
+    getCurrentKey(): string | undefined {
+        return this.currentKey;
+    }
+
+    getCurrentEpoch(): bigint | undefined {
+        return this.currentEpoch;
+    }
+
+    cleanCurrent() {
+        this.currentEpoch = undefined;
+        this.currentKey = undefined;
     }
 }
