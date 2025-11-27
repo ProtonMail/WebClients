@@ -136,7 +136,7 @@
         "적용"
       ],
       "Archive": [
-        "아카이브"
+        "보관함"
       ],
       "As Scheduled": [
         "예약됨"
@@ -1273,7 +1273,7 @@
         "7일 내에 자동 폭파"
       ],
       "Self-destruct message": [
-        "자동 삭제 메시지"
+        "메시지 자동 폭파"
       ],
       "Self-destruct on ...": [
         "해당 일에 자동 폭파 ..."
@@ -5514,7 +5514,7 @@
     },
     "Filter Actions": {
       "Archive": [
-        "아카이브"
+        "보관함"
       ],
       "Do not move": [
         "이동 안함"
@@ -5563,7 +5563,7 @@
         "첨부 파일"
       ],
       "The recipient": [
-        "받는이"
+        "받는 사람"
       ],
       "The sender": [
         "보낸사람"
@@ -7144,7 +7144,7 @@
         "무료로 ${ ASSISTANT_TRIAL_TIME_DAYS }일 동안 사용해 보세요"
       ],
       "From": [
-        "발신"
+        "보낸사람"
       ],
       "Generate text": [
         "텍스트 생성"
@@ -7639,7 +7639,7 @@
         "가져올 폴더 선택:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "빈칸을 채우고, 추가하실 링크 형식을 선택해주세요."
+        "빈칸을 채우고, 추가할 링크 형식을 선택하세요."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "${ groupCount }개 그룹에 추가 할 이메일 주소를 선택하세요."
@@ -7810,7 +7810,7 @@
         "선택 창"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        "암호화된 암호로 보호된 메시지를 ${ boldText } 이메일 주소로 보내세요."
+        "암호화된 비밀번호로 보호된 메시지를 ${ boldText } 이메일 주소로 보내세요."
       ],
       "Send messages at just the right now": [
         "지금 바로 메시지를 전송하세요"
@@ -9494,7 +9494,7 @@
         "암호 문구:"
       ],
       "Password": [
-        "암호"
+        "비밀번호"
       ],
       "Password hint": [
         "비밀번호 힌트"
@@ -9641,7 +9641,7 @@
         "시간"
       ],
       "To:": [
-        "받는 이:"
+        "받는사람:"
       ],
       "To: ${ toEmail }": [
         "받는 사람: ${ toEmail }"
@@ -9766,10 +9766,10 @@
     },
     "Label Recipient": {
       "From": [
-        "발신"
+        "보낸사람"
       ],
       "To": [
-        "수신자:"
+        "받는사람"
       ]
     },
     "Label, credit card": {
@@ -9847,10 +9847,10 @@
         "기프트 코드 추가"
       ],
       "All mail": [
-        "모든 메일"
+        "전체 메일함"
       ],
       "Archive": [
-        "아카이브"
+        "보관함"
       ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
@@ -10006,7 +10006,7 @@
         "예약됨"
       ],
       "Sent": [
-        "보낸편지함"
+        "보낸 메일함"
       ],
       "settings": [
         "설정"
@@ -10169,7 +10169,7 @@
     },
     "Mailbox": {
       "Archive": [
-        "아카이브"
+        "보관함"
       ],
       "Inbox": [
         "받은 편지함"
@@ -12238,7 +12238,7 @@
         "문제를 설명해 주시고 오류 메시지를 포함해 주십시오"
       ],
       "Please insert link first": [
-        "처음으로 링크를 입력해주세요"
+        "링크를 먼저 입력해 주세요"
       ],
       "Please share what you expected": [
         "기대했던 것을 공유해 주세요"
@@ -12313,7 +12313,7 @@
         "홍"
       ],
       "To": [
-        "수신자:"
+        "받는사람"
       ],
       "Type text or keyword": [
         "텍스트 및 키워드 입력"
@@ -15011,7 +15011,7 @@
         "수신자를 찾을 수 없습니다."
       ],
       "Recipients": [
-        "받는 이"
+        "받는 사람"
       ],
       "Recommended": [
         "추천됨"
@@ -15071,7 +15071,7 @@
         "연락처 그룹"
       ],
       "Self-destruct message": [
-        "자동 삭제 메시지"
+        "메시지 자동 폭파"
       ],
       "Send email": [
         "이메일 전송"
