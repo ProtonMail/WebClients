@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoFooter } from '@proton/components';
+import { ModalContent, ModalTwo, ModalTwoFooter } from '@proton/components';
 
 import './WhatsNew.scss';
 
@@ -20,13 +20,15 @@ interface WhatsNewModalProps extends ModalProps {
 const WhatsNewModal = ({ feature, onCallToAction, onCancel, ...modalProps }: WhatsNewModalProps) => {
     return (
         <ModalTwo size="large" className="whats-new-modal p-4" enableCloseWhenClickOutside {...modalProps}>
-            <div className="whats-new-content">
-                <LottieView animationData={feature.image} loop={true} />
-                <div className="flex flex-column flex-nowrap gap-2 px-8 py-4">
-                    <h2 className="text-2xl text-semibold">{feature.getTitle()}</h2>
-                    <p className="m-0 color-weak">{feature.getDescription()}</p>
+            <LottieView animationData={feature.image} loop={true} className="pb-3 md:pb-4" />
+            <ModalContent>
+                <div className="whats-new-content">
+                    <div className="flex flex-column flex-nowrap gap-2">
+                        <h2 className="text-2xl text-semibold">{feature.getTitle()}</h2>
+                        <p className="m-0 color-weak">{feature.getDescription()}</p>
+                    </div>
                 </div>
-            </div>
+            </ModalContent>
 
             <ModalTwoFooter>
                 <div className="flex flex-row flex-nowrap gap-2 mr-auto">
