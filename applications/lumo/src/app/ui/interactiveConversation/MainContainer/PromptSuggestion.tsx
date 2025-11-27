@@ -1,4 +1,5 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
+
 import './PromptSuggestion.scss';
 
 interface PromptSuggestionProps {
@@ -8,12 +9,10 @@ interface PromptSuggestionProps {
     icon?: string;
     /** Callback when the prompt is clicked */
     onPromptClick: (prompt: string) => void;
-    /** Whether the screen is small (for responsive styling) */
-    isSmallScreen: boolean;
     className?: string;
 }
 
-const PromptSuggestion = ({ prompt, icon, onPromptClick, isSmallScreen, className }: PromptSuggestionProps) => {
+const PromptSuggestion = ({ prompt, icon, onPromptClick, className }: PromptSuggestionProps) => {
     const handleClick = () => {
         onPromptClick(prompt);
     };
@@ -42,4 +41,3 @@ const PromptSuggestion = ({ prompt, icon, onPromptClick, isSmallScreen, classNam
 };
 
 export default PromptSuggestion;
-

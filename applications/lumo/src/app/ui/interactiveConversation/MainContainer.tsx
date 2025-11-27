@@ -3,9 +3,8 @@ import { useCallback, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import useFlag from '@proton/unleash/useFlag';
-
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
@@ -18,10 +17,10 @@ import { NewGhostChatButton } from '../components/NewGhostChatButton';
 import WhatsNew from '../components/WhatsNew/WhatsNew';
 import { HeaderWrapper } from '../header/HeaderWrapper';
 import LumoNavbarUpsell from '../upsells/composed/LumoNavbarUpsell';
-import PromptSuggestion from './MainContainer/PromptSuggestion';
 import LumoCat from './MainContainer/LumoCat';
 import LumoMainText from './MainContainer/LumoMainText';
 import LumoOnboarding from './MainContainer/Onboarding/LumoOnboarding';
+import PromptSuggestion from './MainContainer/PromptSuggestion';
 import TermsAndConditions from './MainContainer/TermsAndConditions';
 import { ComposerComponent } from './composer/ComposerComponent';
 
@@ -42,7 +41,7 @@ const MainContainer = ({
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
     const [isEditorEmpty, setIsEditorEmpty] = useState(true);
-    const isLumoHalloweenEnabled = useFlag('LumoHalloween');
+    const isLumoSpecialThemeEnabled = useFlag('LumoSpecialTheme');
     const [promptSuggestion, setPromptSuggestion] = useState<string | undefined>(undefined);
 
     // Files panel state
@@ -115,36 +114,33 @@ const MainContainer = ({
                             isSmallScreen={isSmallScreen}
                             isGhostMode={isGhostChatMode}
                         />
-                        {isLumoHalloweenEnabled && !isSmallScreen && (
+                        {isLumoSpecialThemeEnabled && !isSmallScreen && (
                             <PromptSuggestion
-                                prompt={c('collider_2025:Prompt').t`Where does Halloween come from?`}
-                                icon="🎃"
+                                prompt={c('collider_2025:Prompt').t`What are the origins of Thanksgiving?`}
+                                icon="🍂"
                                 onPromptClick={handlePromptSuggestionClick}
-                                isSmallScreen={isSmallScreen}
                             />
                         )}
                     </div>
                     <LumoCat
                         isSmallScreen={isSmallScreen}
                         isGhostChatMode={isGhostChatMode}
-                        isLumoHalloweenEnabled={isLumoHalloweenEnabled}
+                        isLumoSpecialThemeEnabled={isLumoSpecialThemeEnabled}
                     />
                 </div>
 
-                {isLumoHalloweenEnabled && isSmallScreen && isEditorEmpty && (
+                {isLumoSpecialThemeEnabled && isSmallScreen && isEditorEmpty && (
                     <PromptSuggestion
-                        prompt={c('collider_2025:Prompt').t`Where does Halloween come from?`}
-                        icon="🎃"
+                        prompt={c('collider_2025:Prompt').t`What are the origins of Thanksgiving?`}
+                        icon="🍂"
                         onPromptClick={handlePromptSuggestionClick}
-                        className={clsx("align-self-center")}
-                        isSmallScreen={isSmallScreen}
+                        className={clsx('align-self-center')}
                     />
                 )}
 
                 <div
                     className={clsx('composer-container md:px-4 w-full', {
-                        'halloween-ghost': isLumoHalloweenEnabled && isGhostChatMode,
-                        'halloween-no-ghost': isLumoHalloweenEnabled && !isGhostChatMode,
+                        'without-margin': isLumoSpecialThemeEnabled && !isGhostChatMode,
                     })}
                 >
                     <ComposerComponent
