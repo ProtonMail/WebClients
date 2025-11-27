@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { isClonableItem, isItemShared, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
@@ -33,6 +33,7 @@ export type ItemState = {
     isShared: boolean;
     isTrashed: boolean;
     isPinned: boolean;
+    isMonitored: boolean;
 };
 
 type UseItemState = (item: ItemRevision, share: ShareItem) => ItemState;
@@ -60,6 +61,7 @@ export const useItemState: UseItemState = (item, share) => {
         const trashed = isTrashed(item);
         const pinned = isPinned(item);
         const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
+        const monitored = isMonitored(item);
 
         const canManage = isShareManageable(share);
         const canClone = cloneFeatureFlag && canManage && isClonableItem(free)(item);
@@ -92,6 +94,7 @@ export const useItemState: UseItemState = (item, share) => {
             isShared: shared,
             isTrashed: trashed,
             isPinned: pinned,
+            isMonitored: monitored,
         };
     }, [item, share, plan, vaults, pinInFlight, unpinInFlight, org]);
 };
