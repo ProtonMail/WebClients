@@ -19,6 +19,9 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
+import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
+import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
+import { locales as sharedLocales } from '@proton/shared/lib/i18n/locales';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { FlagProvider } from '@proton/unleash';
@@ -61,6 +64,13 @@ const bootstrapApp = async () => {
     const api = createApi({ config, sendLocaleHeaders: true });
     const authentication = createAuthentication({ initialAuth: false });
     init({ config, authentication, locales });
+
+    await loadLocales({
+        locale: getBrowserLocale(),
+        locales: sharedLocales,
+        userSettings: undefined,
+    });
+
     telemetry.init({ config, uid: authentication.UID, ...lumoTelemetryConfig });
     initMainHost();
     initElectronClassnames();
