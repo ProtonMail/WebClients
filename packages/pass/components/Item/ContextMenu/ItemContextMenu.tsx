@@ -59,6 +59,8 @@ const getTotpFactory =
 const getExpiration = (content: string) =>
     content.length === 0 ? undefined : () => pipe(formatExpirationDateMMYY(content), expDateMask);
 
+const conditionalItem = (condition: boolean, item: ContextMenuItem): ContextMenuItem[] => (condition ? [item] : []);
+
 /** Returns context menu items to copy item fields depending on item type */
 const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => {
     switch (item.type) {
@@ -131,50 +133,76 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
 };
 
 /** Returns context menu items about actions on the item */
-const getItemActionButtons = (
-    { isTrashed, isPinned, isReadOnly, canHistory, canTogglePinned, canMove }: ItemState,
-    { onEdit, onMove, onPin, onHistory, onTrash }: ItemActions
-): ContextMenuItem[] => {
-    return isTrashed
+const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): ContextMenuItem[] => {
+    const monitorActions = conditionalItem(itemState.canMonitor, {
+        type: 'button',
+        icon: itemState.isMonitored ? 'eye-slash' : 'eye',
+        name: itemState.isMonitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`,
+        action: itemActions.onToggleFlags,
+    });
+
+    const leaveActions = conditionalItem(itemState.canLeave, {
+        type: 'button',
+        icon: 'arrow-out-from-rectangle',
+        name: c('Action').t`Leave`,
+        action: itemActions.onLeave,
+    });
+
+    return itemState.isTrashed
         ? [
-              /** FIXME: we should be able to restore/delete permanently */
+              {
+                  type: 'button',
+                  icon: 'arrows-rotate',
+                  name: c('Action').t`Restore item`,
+                  action: itemActions.onRestore,
+                  lock: itemState.isReadOnly,
+              },
+              {
+                  type: 'button',
+                  icon: 'trash-cross',
+                  name: c('Action').t`Delete permanently`,
+                  action: itemActions.onDelete,
+                  lock: itemState.isReadOnly,
+              },
+              ...monitorActions,
+              ...leaveActions,
           ]
         : [
-              {
+              ...conditionalItem(!itemState.isReadOnly, {
                   type: 'button',
                   icon: 'pen',
                   name: c('Action').t`Edit`,
-                  action: onEdit,
-                  lock: isReadOnly,
-              },
-              {
+                  action: itemActions.onEdit,
+              }),
+              ...conditionalItem(!itemState.isReadOnly, {
                   type: 'button',
                   icon: 'folder-arrow-in',
                   name: c('Action').t`Move to another vault`,
-                  action: onMove,
-                  lock: !canMove,
-              },
+                  action: itemActions.onMove,
+              }),
               {
                   type: 'button',
-                  icon: isPinned ? 'pin-angled-slash' : 'pin-angled',
-                  name: isPinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`,
-                  action: onPin,
-                  lock: !canTogglePinned,
+                  icon: itemState.isPinned ? 'pin-angled-slash' : 'pin-angled',
+                  name: itemState.isPinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`,
+                  action: itemActions.onPin,
+                  lock: !itemState.canTogglePinned,
               },
               {
                   type: 'button',
                   icon: 'clock-rotate-left',
                   name: c('Action').t`View history`,
-                  action: onHistory,
-                  lock: !canHistory,
+                  action: itemActions.onHistory,
+                  lock: !itemState.canHistory,
               },
               {
                   type: 'button',
                   icon: 'pass-trash',
                   name: c('Action').t`Move to trash`,
-                  action: onTrash,
-                  lock: isReadOnly,
+                  action: itemActions.onTrash,
+                  lock: itemState.isReadOnly,
               },
+              ...monitorActions,
+              ...leaveActions,
           ];
 };
 

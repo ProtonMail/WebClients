@@ -22,13 +22,13 @@ const getBulkActionButtons = (
               {
                   type: 'button',
                   icon: 'clock-rotate-left',
-                  name: c('Action').t`Bulk restore items from trash`,
+                  name: c('Action').t`Restore`,
                   action: () => restoreMany(selection),
               },
               {
                   type: 'button',
                   icon: 'trash-cross',
-                  name: c('Action').t`Bulk delete items from trash`,
+                  name: c('Action').t`Delete`,
                   action: () => deleteMany(selection),
               },
           ]

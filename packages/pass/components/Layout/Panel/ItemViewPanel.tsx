@@ -22,7 +22,6 @@ import { useItemActions } from '@proton/pass/hooks/items/useItemActions';
 import { useItemState } from '@proton/pass/hooks/items/useItemState';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
-import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { selectAllVaults } from '@proton/pass/store/selectors';
 import { type ItemType, SpotlightMessage } from '@proton/pass/types';
@@ -57,7 +56,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const isVault = isVaultShare(share);
 
     const vaults = useSelector(selectAllVaults);
-    const monitored = isMonitored(revision);
     const loading = useItemLoading(revision);
     const actionsDisabled = loading || optimistic;
 
@@ -81,8 +79,10 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
         <DropdownMenuButton
             disabled={actionsDisabled}
             onClick={itemActions.onToggleFlags}
-            icon={monitored ? 'eye-slash' : 'eye'}
-            label={monitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`}
+            icon={itemState.isMonitored ? 'eye-slash' : 'eye'}
+            label={
+                itemState.isMonitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`
+            }
         />
     );
 
