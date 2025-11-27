@@ -4,8 +4,9 @@ import { CryptoProxy } from '@proton/crypto';
 import { exportKey, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 
 import { decryptString as decryptContent, decryptUint8Array, encryptString } from '../../../crypto';
+import type { AesGcmCryptoKey } from '../../../crypto/types';
 import { LUMO_GPG_PUB_KEY } from '../../../keys';
-import type { AesGcmCryptoKey, Base64, EncryptedTurn, RequestId, Turn } from './types';
+import type { Base64, EncryptedTurn, RequestId, Turn } from './types';
 
 // Default Lumo public key (uses production key or custom key from LUMO_PUB_KEY_PATH env var)
 export const DEFAULT_LUMO_PUB_KEY = LUMO_GPG_PUB_KEY;

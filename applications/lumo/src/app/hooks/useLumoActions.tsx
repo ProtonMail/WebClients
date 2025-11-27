@@ -147,7 +147,8 @@ export const useLumoActions = ({
             sendMessage({
                 api,
                 newMessageContent,
-                attachments: allAttachments,
+                newMessageAttachments: provisionalAttachments,
+                allConversationAttachments: allAttachments,
                 messageChain: messagesWithContext,
                 conversationId: finalConversationId,
                 spaceId: finalSpaceId,
@@ -250,7 +251,8 @@ export const useLumoActions = ({
             sendMessage({
                 api,
                 newMessageContent,
-                attachments: allAttachments,
+                newMessageAttachments: editedMessageAttachments,
+                allConversationAttachments: allAttachments,
                 messageChain: messagesWithContext,
                 conversationId,
                 spaceId,
