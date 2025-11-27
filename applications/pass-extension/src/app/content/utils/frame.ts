@@ -13,73 +13,27 @@ import { createWeakRefCache, maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import identity from '@proton/utils/identity';
 
+/** Iframes may get resized on focus if constrained
+ * by a wrapper's element content-box with borders */
+const IFRAME_SIZE_THRESHOLD = 4; /* px */
+
 export const getFrameID = withContext<() => FrameID>((ctx) => {
     const frameId = ctx?.getExtensionContext()?.frameId;
     if (frameId === undefined) throw new Error('Unknown frameID');
     return frameId;
 });
 
-/** Iframes may get resized on focus if constrained
- * by a wrapper's element content-box with borders */
-const IFRAME_SIZE_THRESHOLD = 4; /* px */
+export const getFrameAttributesFromElement = (iframe: HTMLIFrameElement): FrameAttributes => {
+    const src = iframe.getAttribute('src') ?? '';
+    const name = iframe.getAttribute('name') ?? '';
+    const title = iframe.getAttribute('title') ?? '';
+    const ariaLabel = iframe.getAttribute('aria-label') ?? '';
 
-export const getFrameElement = (frameId: number, frameAttributes: FrameAttributes): Maybe<HTMLIFrameElement> => {
-    const iframes = document.getElementsByTagName('iframe');
+    const parser = createStyleParser(iframe);
+    const width = getComputedWidth(parser, 'inner').value;
+    const height = getComputedHeight(parser, 'inner').value;
 
-    /** Chromium browsers do not support the `getFrameId` API. Monitor
-     * https://github.com/w3c/webextensions/issues/12 */
-    if (BUILD_TARGET !== 'chrome' && 'getFrameId' in browser.runtime) {
-        return ((): Maybe<HTMLIFrameElement> => {
-            for (const iframe of iframes) {
-                if (frameId === browser.runtime.getFrameId(iframe)) return iframe;
-            }
-        })();
-    }
-
-    /** Since we can't directly use the `frameId` on chromium, we need to
-     * identify iframes by their attributes. We score each iframe based on
-     * how well its properties match our signature. The iframe with the highest
-     * matching score is selected. This approach handles cases where some
-     * properties are missing or multiple iframes have similar attributes. */
-    let bestCandidate: Maybe<HTMLIFrameElement>;
-    let bestScore = -1;
-
-    for (const iframe of iframes) {
-        let score = 0;
-        const { width, height, src, name, title, ariaLabel } = frameAttributes;
-
-        /** FIXME: this should support relative src's as well */
-        const frameSrc = iframe.getAttribute('src');
-        const frameName = iframe.getAttribute('name');
-        const frameTitle = iframe.getAttribute('title');
-        const frameAriaLabel = iframe.getAttribute('aria-label');
-
-        const parser = createStyleParser(iframe);
-        const frameWidth = getComputedWidth(parser, 'inner').value;
-        const frameHeight = getComputedHeight(parser, 'inner').value;
-
-        /** direct attribute matches */
-        if (src && frameSrc === src) score++;
-        if (name && frameName === name) score++;
-        if (title && frameTitle === title) score++;
-        if (ariaLabel && frameAriaLabel === ariaLabel) score++;
-
-        /** size match with threshold */
-        if (width && Math.abs(frameWidth - width) < IFRAME_SIZE_THRESHOLD) score++;
-        if (height && Math.abs(frameHeight - height) < IFRAME_SIZE_THRESHOLD) score++;
-
-        /** cross-attribute scoring */
-        if (name && (name === frameTitle || name === frameAriaLabel)) score += 0.5;
-        if (title && (title === frameName || title === frameAriaLabel)) score += 0.5;
-        if (ariaLabel && (ariaLabel === frameTitle || ariaLabel === frameName)) score += 0.5;
-
-        if (score > 0 && score > bestScore) {
-            bestScore = score;
-            bestCandidate = iframe;
-        }
-    }
-
-    return bestCandidate;
+    return { src, name, title, ariaLabel, width, height };
 };
 
 export const getFrameAttributes = (): FrameAttributes => {
@@ -107,6 +61,60 @@ export const getFrameAttributes = (): FrameAttributes => {
  * Used as a fast pre-check to avoid expensive visibility calculations on tiny frames
  * that are typically used for tracking, analytics, or other non-interactive purposes */
 export const isNegligableFrameRect = (width: number, height: number) => width < 40 || height < 15;
+
+export const getFrameScore = (match: FrameAttributes, candidate: FrameAttributes): number => {
+    let score = 0;
+    const { width, height, src, name, title, ariaLabel } = match;
+
+    /** direct attribute matches */
+    if (src && candidate.src === src) score += 1.5;
+    if (name && candidate.name === name) score++;
+    if (title && candidate.title === title) score++;
+    if (ariaLabel && candidate.ariaLabel === ariaLabel) score++;
+
+    /** size match with threshold */
+    if (width && Math.abs((candidate.width ?? 0) - width) < IFRAME_SIZE_THRESHOLD) score++;
+    if (height && Math.abs((candidate.height ?? 0) - height) < IFRAME_SIZE_THRESHOLD) score++;
+
+    /** cross-attribute scoring */
+    if (name && (name === candidate.title || name === candidate.ariaLabel)) score += 0.5;
+    if (title && (title === candidate.name || title === candidate.ariaLabel)) score += 0.5;
+    if (ariaLabel && (ariaLabel === candidate.title || ariaLabel === candidate.name)) score += 0.5;
+
+    return score;
+};
+
+export const getFrameElement = (frameId: number, frameAttributes: FrameAttributes): Maybe<HTMLIFrameElement> => {
+    const iframes = document.getElementsByTagName('iframe');
+
+    /** Chromium browsers do not support the `getFrameId` API. Monitor
+     * https://github.com/w3c/webextensions/issues/12 */
+    if (BUILD_TARGET !== 'chrome' && 'getFrameId' in browser.runtime) {
+        return ((): Maybe<HTMLIFrameElement> => {
+            for (const iframe of iframes) {
+                if (frameId === browser.runtime.getFrameId(iframe)) return iframe;
+            }
+        })();
+    }
+
+    /** Since we can't directly use the `frameId` on chromium, we need to
+     * identify iframes by their attributes. We score each iframe based on
+     * how well its properties match our signature. The iframe with the highest
+     * matching score is selected. This approach handles cases where some
+     * properties are missing or multiple iframes have similar attributes. */
+    let bestCandidate: Maybe<HTMLIFrameElement>;
+    let bestScore = -1;
+
+    for (const iframe of iframes) {
+        const score = getFrameScore(frameAttributes, getFrameAttributesFromElement(iframe));
+        if (score > 0 && score > bestScore) {
+            bestScore = score;
+            bestCandidate = iframe;
+        }
+    }
+
+    return bestCandidate;
+};
 
 /** Checks if the current frame is visible in the parent window by querying the service
  * worker. Uses async locking to prevent concurrent requests and brief memoization (1s)
