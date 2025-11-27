@@ -625,6 +625,9 @@
       "Edit “${ label.Name }”": [
         "Editar «${ label.Name }»"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Ative o ${ darkWebMonitoring }"
       ],
@@ -6299,9 +6302,6 @@
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção de malware"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "Todos os serviços premium da ${ BRAND_NAME }"
-      ],
       "and more premium features...": [
         "e mais funcionalidades premium..."
       ],
@@ -6913,9 +6913,6 @@
       ],
       "Enjoying ${ planName }?": [
         "Está a gostar do ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Desbloqueie 4 serviços premium de privacidade adicionais por apenas **${ priceString }** a mais por mês."
       ],
       "Upgrade your privacy": [
         "Melhorar a sua privacidade"
@@ -19464,9 +19461,6 @@
       "Connect organization": [
         "Conectar a organização"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo, com o ${ vpnPlus }. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "Ligar à videoconferência"
       ],
@@ -19871,9 +19865,6 @@
       ],
       "Get more from your VPN": [
         "Obtenha mais da sua VPN"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Instale a aplicação em todos os seus dispositivos e proteja até ${ VPN_CONNECTIONS } de uma só vez."
       ],
       "Get the apps": [
         "Obter as aplicações"
@@ -21242,12 +21233,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Poupe até ${ priceString }** com uma subscrição mais longa. As mesmas funcionalidades premium a um preço mais baixo."
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Todos os serviços premium de ${ BRAND_NAME }. A partir de apenas ${ fallBackString } por mês."
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Todos os serviços premium de ${ BRAND_NAME } . Apenas **${ priceString }** a mais por mês."
       ],
       "Did you know?": [
         "Sabia?"

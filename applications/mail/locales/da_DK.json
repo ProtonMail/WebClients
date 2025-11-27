@@ -935,7 +935,7 @@
         "Flere søgemuligheder"
       ],
       "Most frequent": [
-        "Mest hyppige"
+        "Hyppigst"
       ],
       "Most read": [
         "Mest læste"
@@ -1496,7 +1496,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -7398,8 +7399,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -11724,7 +11724,7 @@
         "browser"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Tøm slettede og spam e-mails efter 30 dage"
+        "Slet slettede e-mails og spam-e-mails efter 30 dage."
       ],
       "Continue": [
         "Forsæt"
@@ -14081,8 +14081,8 @@
         "${ elementsCount } samtaler flyttet til ${ labelName } og afsendere tilføjet din ikke-spam-liste."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
-        "${ elementsCount } Konversation flyttet til ${ labelName }.",
-        "${ elementsCount } Konversationer er flyttet til ${ labelName }."
+        "${ elementsCount } samtale flyttet til ${ labelName }.",
+        "${ elementsCount } samtaler flyttet til ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } samtale flyttet til spam og afsender tilføjet din spam-liste.",
@@ -14125,7 +14125,7 @@
         "${ elementsCount } beskeder flyttet til ${ labelName } og afsendere tilføjet til din ikke-spam-liste."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } Besked flyttet til ${ labelName }.",
+        "${ elementsCount } besked flyttet til ${ labelName }.",
         "${ elementsCount } beskeder flyttet til ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [

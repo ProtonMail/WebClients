@@ -14,6 +14,12 @@
       "Add another account": [
         "Weiteres Konto hinzufügen"
       ],
+      "Assign ${ selectedParticipantName } as host": [
+        "${ selectedParticipantName } zum Organisator machen"
+      ],
+      "Assign new host": [
+        "Neuen Organisator zuweisen"
+      ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
       ],
@@ -1341,6 +1347,9 @@
       "Enter 6 digits": [
         "6 Ziffern eingeben"
       ],
+      "Failed to assign host": [
+        "Fehler beim Zuweisen eines Organisators"
+      ],
       "Failed to create meeting": [
         "Fehler beim Erstellen des Meetings."
       ],
@@ -1571,9 +1580,6 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
       ],
-      "Are you sure you want to leave the meeting?": [
-        "Bist du sicher, dass du das Meeting verlassen möchtest?"
-      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -1691,6 +1697,9 @@
       "Learn more": [
         "Mehr erfahren"
       ],
+      "Leaving will stop your screen sharing. Do you want to continue?": [
+        "Wenn du gehst, wird deine Bildschirmfreigabe beendet. Möchtest du fortfahren?"
+      ],
       "Left": [
         "Verbleibend"
       ],
@@ -1735,6 +1744,9 @@
       ],
       "New": [
         "Neu"
+      ],
+      "New host": [
+        "Neuer Organisator"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "Kein ${ microphoneLinkButton }${ andString }${ cameraLinkButton } erkannt."
@@ -1798,6 +1810,9 @@
       ],
       "Select a microphone": [
         "Wähle ein Mikrofon aus"
+      ],
+      "Select a participant to assign as the new host before you go: ": [
+        "Wähle einen Teilnehmer aus, den du als neuen Organisator zuweisen möchtest, bevor du gehst: "
       ],
       "Select a speaker": [
         "Lautsprecher auswählen"
@@ -2167,6 +2182,9 @@
       ]
     },
     "Success": {
+      "Assigned new host": [
+        "Neuer Organisator zugewiesen"
+      ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
       ],
@@ -2192,6 +2210,9 @@
       ],
       "Are you sure?": [
         "Bist du sicher?"
+      ],
+      "Assign a new host": [
+        "Neuen Organisator zuweisen"
       ],
       "Authenticator": [
         "Authenticator"
@@ -2249,6 +2270,9 @@
       ],
       "Participants": [
         "Teilnehmer"
+      ],
+      "Participants (${ filteredParticipants.length })": [
+        "Teilnehmer (${ filteredParticipants.length })"
       ],
       "Passphrase": [
         "Passphrase"

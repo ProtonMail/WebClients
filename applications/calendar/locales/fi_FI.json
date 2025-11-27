@@ -243,6 +243,9 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
+      "Create an event": [
+        "Luo tapahtuma"
+      ],
       "Create and copy alias": [
         "Tallenna ja kopioi alias"
       ],
@@ -3215,6 +3218,9 @@
       ],
       "TIME:": [
         "AIKA:"
+      ],
+      "TITLE:": [
+        "OTSIKKO:"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3593,6 +3599,9 @@
       ],
       "Payment process not supported": [
         "Maksutapahtumaa ei tueta"
+      ],
+      "Periods is too short": [
+        "Jakso on liian lyhyt"
       ],
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
@@ -5446,6 +5455,9 @@
       "No appointments available this week": [
         "Tälle viikolle ei ole aikoja saatavilla."
       ],
+      "No calendar available; please delete the booking page.": [
+        "Kalenteria ei saatavilla; poista varaussivu."
+      ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
       ],
@@ -5924,6 +5936,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaintasi sivustolle:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Olet nyt kirjautuneena ${ username } tilille."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
@@ -7677,6 +7692,9 @@
       "Share files with no size limit": [
         "Jaa tiedostoja ilman kokorajoituksia"
       ],
+      "Short domain (@pm.me)": [
+        "Lyhyt verkkotunnus (@pm.me)"
+      ],
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
       ],
@@ -8798,6 +8816,9 @@
       "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusiminen sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa.",
         "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusimista sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",

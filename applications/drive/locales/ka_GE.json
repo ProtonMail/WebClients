@@ -1293,6 +1293,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
       ],
@@ -5867,6 +5870,9 @@
       "Running diagnostics...": [
         "მიმდინარეობს დიაგნოსტიკა..."
       ],
+      "Same photo or video already exist": [
+        "იგივე ფოტო ან ვიდეო უკვე არსებობს"
+      ],
       "Saving...": [
         "შენახვა..."
       ],
@@ -9299,6 +9305,9 @@
       "Invite team members": [
         "მოიწვიეთ გუნდის წევრები"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "შეინარჩუნეთ ტემპი მეტი ფაილის ატვირთვით, თქვენი გეგმით გათვალისწინებული მეხსიერების გამოყენებით."
+      ],
       "Manage access": [
         "წვდომის მართვა"
       ],
@@ -9692,6 +9701,9 @@
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "თუ აირჩევთ, შეცვალოთ თქვენი ${ planTitle } სატარიფო გეგმა, შეიძლება, ზოგიერთ ფუნქციასთან წვდომა დაკარგოთ."
       ],
       "Keep ${ planTitle }": [
         "${ planTitle }-ის შენარჩუნება"

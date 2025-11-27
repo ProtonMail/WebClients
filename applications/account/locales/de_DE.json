@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "„${ label.Name }“ bearbeiten"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } aktivieren"
       ],
@@ -2418,6 +2421,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Kann jemand meinen Internetverlauf sehen, wenn wir dasselbe WLAN nutzen?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Verbinde ${ VPN_CONNECTIONS } Geräte gleichzeitig"
+      ],
       "Create and edit with confidence": [
         "Mit Zuversicht erstellen und bearbeiten"
       ],
@@ -2531,6 +2537,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Im Internet voller Datenbroker, Spam, Betrug und Malware zu navigieren, wird immer schwieriger. Deshalb bietet ${ PASS_APP_NAME } mehr als nur die Verwaltung, Speicherung und das automatische Ausfüllen deiner Passwörter. Wir geben dir die Werkzeuge, um die Kontrolle über deine Privatsphäre zu übernehmen und deine Posteingänge mit hide-my-email-Aliase zu schützen."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Schütze alle deine Geräte im Haushalt gleichzeitig mit ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Deine Geschäftskommunikation schützen"
@@ -7315,14 +7324,14 @@
       "15 GB storage": [
         "15 GB Speicher"
       ],
+      "4 more privacy services": [
+        "4 weitere Privatsphäre-Dienste"
+      ],
       "@pm.me address": [
         "@pm.me E-Mail-Adresse"
       ],
       "Ad-blocker and malware protection": [
         "Werbeblocker und Malware-Schutz"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Alle Premium-Dienste von ${ BRAND_NAME }"
       ],
       "and more premium features...": [
         "und weitere Premium-Funktionen …"
@@ -7991,8 +8000,8 @@
       "Enjoying ${ planName }?": [
         "Gefällt dir ${ planName }?"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Schalte 4 weitere Premium-Privatsphäre-Dienste für nur **${ priceString }** mehr pro Monat frei"
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Schalte 4 Premium-Privatsphäre-Dienste für nur **${ priceString }** mehr pro Monat frei"
       ],
       "Upgrade your privacy": [
         "Verbessere deine Privatsphäre"
@@ -11364,6 +11373,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Abonnementzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende der Testphase nutzen. Danach wirst du auf den ${ BRAND_NAME } Free-Abonnement zurückgestuft."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Wenn du auf einen Link klickst, wirst du von dieser Anti-Phishing-Funktion aufgefordert, die URL der Webseite zu bestätigen."
@@ -17952,6 +17964,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Wenn du vorher kündigst, wirst du auf ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } zurückgestuft, wenn die Testversion endet. Wenn du nicht kündigst, beginnt dein vollständiges Abonnement und du erhältst **${ referrerRewardAmount }** Guthaben."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Wenn du kündigst, verlierst du deine Gutschrift von **${ referrerRewardAmount }**."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Wenn du vor diesem Datum abonnierst, bekommst du **${ referrerRewardAmount }** an Guthaben. Wenn du nicht abonnierst, wirst du auf ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } zurückgestuft."
       ],
@@ -21759,8 +21774,8 @@
       "Connect organization": [
         "Organisation verbinden"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Verbinde bis zu ${ VPN_CONNECTIONS } Geräte gleichzeitig mit ${ vpnPlus }. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Verbinde bis zu ${ VPN_CONNECTIONS } Geräte gleichzeitig mit ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Mit Videokonferenzen verbinden"
@@ -22226,9 +22241,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Hol dir die App auf all deine Geräte und genieße überall sicheren, nahtlosen Zugriff."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Lade dir die App auf allen deinen Geräten herunter und schütze bis zu ${ VPN_CONNECTIONS } gleichzeitig."
       ],
       "Get the apps": [
         "Apps herunterladen"
@@ -22785,6 +22797,9 @@
       ],
       "Start import process": [
         "Importvorgang starten"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Schütze deine Geräte mit der ${ VPN_APP_NAME }-App."
       ],
       "State": [
         "Status"
@@ -23691,17 +23706,17 @@
       "Advanced security for your company?": [
         "Erweiterte Sicherheit für dein Unternehmen?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Alle Premium ${ BRAND_NAME }-Dienste. Ab nur ${ fallBackString } pro Monat."
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Alle Premium ${ BRAND_NAME }-Dienste. Nur **${ priceString }** mehr pro Monat."
-      ],
       "Did you know?": [
         "Wusstest du das?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "${ drivePlusPlanMaxSpace } Speicherplatz für deine Dateien, Fotos und Dokumente erhalten und Dateiversionen mit 10-jähriger Dateiwiederherstellung wiederherstellen."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Privatsphäre-Suite mit sicherer E-Mail, ${ VPN_SHORT_APP_NAME }, Cloud-Speicher und Passwort-Manager in einem Paket. Ab nur ${ fallBackString } pro Monat,"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Privatsphäre-Suite mit sicherer E-Mail, ${ VPN_SHORT_APP_NAME }, Cloud-Speicher und Passwort-Manager in einem Paket. Nur **${ priceString }** zusätzlich pro Monat."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Deine Organisation vor Datenlecks mit ${ PLAN_NAMES[plan] } schützen."

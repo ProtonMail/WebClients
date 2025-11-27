@@ -1744,6 +1744,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Μπορεί κάποιος να δει το ιστορικό περιήγησής μου αν χρησιμοποιούμε το ίδιο WiFi;"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Συνδέστε ${ VPN_CONNECTIONS } συσκευές ταυτόχρονα"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Ενεργοποιήστε το kill switch και την αυτόματη σύνδεση μέσα από τις ρυθμίσεις VPN σας."
       ],
@@ -1770,6 +1773,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Μάθετε πώς θα ενεργοποιήσετε το ${ VPN_APP_NAME } στο router σας."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Προστατέψτε όλες τις οικιακές συσκευές σας ταυτόχρονα με το ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Προστατεύστε την επιχείρησή σας από παραβιάσεις δεδομένων και κάντε την απομακρυσμένη εργασία ασφαλέστερη με ένα εταιρικό VPN."
@@ -4838,14 +4844,14 @@
       "15 GB storage": [
         "15 GB αποθηκευτικού χώρου"
       ],
+      "4 more privacy services": [
+        "4 επιπλέον υπηρεσίες απορρήτου"
+      ],
       "@pm.me address": [
         "@pm.me διεύθυνση"
       ],
       "Ad-blocker and malware protection": [
         "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Όλες οι premium υπηρεσίες του ${ BRAND_NAME }"
       ],
       "and more premium features...": [
         "και περισσότερες προηγμένες δυνατότητες..."
@@ -5270,8 +5276,8 @@
       "Enjoying ${ planName }?": [
         "Απολαμβάνετε το ${ planName };"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Ξεκλειδώστε 4 επιπλέον λειτουργίες απορρήτου με μόλις **${ priceString }** επιπλέον κάθε μήνα."
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Ξεκλειδώστε 4 premium λειτουργίες απορρήτου με μόλις **${ priceString }** επιπλέον κάθε μήνα."
       ],
       "Upgrade your privacy": [
         "Αναβαθμίστε το απόρρητό σας"
@@ -7859,6 +7865,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ανανεωθεί, αλλά θα εξακολουθείτε να απολαμβάνετε προνόμια προγράμματος μέχρι το τέλος της περιόδου συνδρομής. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Όταν ακυρώσετε, η συνδρομή σας δε θα ξεκινήσει, αλλά θα μπορείτε να συνεχίσετε να απολαμβάνετε τα οφέλη του προγράμματος μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Όταν καταργείτε έναν διακομιστή από μια πύλη, εισέρχεται σε περίοδο απενεργοποίησης 10 ημερών. Αυτός ο διακομιστής μπορεί να προστεθεί σε μια νέα πύλη, αλλά η χώρα του δεν μπορεί να αλλάξει."
@@ -12235,6 +12244,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Εάν ακυρώσετε πριν από τότε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν τελειώσει η δοκιμαστική περίοδος. Εάν δεν ακυρώσετε, το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Εάν ακυρώσετε, θα χάσετε την πιστωτική σας ανταμοιβή **${ referrerRewardAmount }**."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Εάν εγγραφείτε πριν από αυτήν την ημερομηνία, θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις. Εάν δεν εγγραφείτε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -14859,8 +14871,8 @@
       "Connect organization": [
         "Σύνδεση οργανισμού"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Συνδεθείτε σε ${ VPN_CONNECTIONS } συσκευές ταυτόχρονα με ${ vpnPlus }. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Συνδεθείτε σε ${ VPN_CONNECTIONS } συσκευές ταυτόχρονα με ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
@@ -15164,9 +15176,6 @@
       ],
       "Get started": [
         "Ας ξεκινήσουμε"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Λάβετε την εφαρμογή σε όλες τις συσκευές σας και προστατεύστε μέχρι ${ VPN_CONNECTIONS } ταυτόχρονα."
       ],
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
@@ -15522,6 +15531,9 @@
       ],
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Ξεκινήστε να προστατεύετε τις συσκευές σας με την εφαρμογή ${ VPN_APP_NAME }."
       ],
       "State": [
         "Πολιτεία"
@@ -16114,17 +16126,17 @@
       "Advanced security for your company?": [
         "Προηγμένη ασφάλεια για την εταιρεία σας;"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες. Από μόλις ${ fallBackString } το μήνα"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες. Μόνο **${ priceString }** επιπλέον κάθε μήνα."
-      ],
       "Did you know?": [
         "Το γνωρίζατε;"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Αποκτήστε ${ drivePlusPlanMaxSpace } χώρο αποθήκευσης για τα αρχεία, τις φωτογραφίες και τα έγγραφά σας και ανακτήστε εκδόσεις αρχείων με ιστορικό 10 ετών."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Σουίτα προστασίας προσωπικών δεδομένων με ασφαλές email, ${ VPN_SHORT_APP_NAME }, αποθήκευση στο cloud και διαχείριση κωδικών πρόσβασης σε ένα πακέτο. Από μόνο ${ fallBackString } ανά μήνα."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Σουίτα προστασίας προσωπικών δεδομένων με ασφαλές email, ${ VPN_SHORT_APP_NAME }, αποθήκευση στο cloud και διαχείριση κωδικών πρόσβασης σε ένα πακέτο. Μόνο **${ priceString }** επιπλέον κάθε μήνα."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Προστατέψτε τον οργανισμό σας από παραβιάσεις δεδομένων με το ${ PLAN_NAMES[plan] }."

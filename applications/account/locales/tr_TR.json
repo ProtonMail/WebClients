@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "${ label.Name } etiketini düzenle"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } özelliğini aç"
       ],
@@ -2418,6 +2421,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Aynı Wi-Fi ağındaki biri internet geçmişimi görebilir mi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Aynı anda ${ VPN_CONNECTIONS } aygıtı bağlayın"
+      ],
       "Create and edit with confidence": [
         "Güvenle oluşturun ve düzenleyin"
       ],
@@ -2531,6 +2537,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Veri simsarları, istenmeyen iletiler, dolandırıcılık ve kötü amaçlı yazılımlarla dolu bir internette gezinmek giderek zorlaşıyor. Bu nedenle ${ PASS_APP_NAME } parolalarınızı yönetmenize, saklamanıza ve otomatik olarak doldurmanıza yardımcı olmanın ötesine geçiyor. Gizliliğinizi elinize almanızı ve hide-my-email takma adlarıyla e-posta kutularınızı korumanızı sağlayan araçlar sunuyoruz."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Tüm ev aygıtlarınızı ${ PLAN_NAMES[PLANS.BUNDLE] } ile aynı anda koruyun."
       ],
       "Protect your business communications": [
         "İş iletişimlerinizi koruyun."
@@ -7315,14 +7324,14 @@
       "15 GB storage": [
         "15 GB depolama alanı"
       ],
+      "4 more privacy services": [
+        "4 ek gizlilik hizmeti"
+      ],
       "@pm.me address": [
         "@pm.me adresi"
       ],
       "Ad-blocker and malware protection": [
         "Reklam engelleyici ve kötü amaçlı yazılım koruması"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri"
       ],
       "and more premium features...": [
         "ve diğer ücretli özellikler..."
@@ -7991,8 +8000,8 @@
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Ayda yalnızca **${ priceString }** ile 4 ücretli gizlilik hizmetine erişin"
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Ayda yalnızca **${ priceString }** daha fazla ödeyerek 4 ücretli gizlilik hizmetinin kilidini açın"
       ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
@@ -11364,6 +11373,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde aboneliğiniz yenilenmez ancak abonelik süresinin sonuna kadar tarifenizin özelliklerinden yararlanmayı sürdürürsünüz. Bundan sonra ${ BRAND_NAME } Free tarifesine geçersiniz."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "İptal ettiğinizde aboneliğiniz başlamaz ancak deneme süresi sonuna kadar plan avantajlarından yararlanmaya devam edebilirsiniz. Deneme süresi sona erdikten sonra ${ BRAND_NAME } Free plan'a geçersiniz."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Bir bağlantıya tıkladığınızda, bu kimlik avı girişimi önleme özelliği, site sayfasının adresini onaylamanızı ister."
@@ -17952,6 +17964,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "İptal ederseniz **${ referrerRewardAmount }** kredi ödülünüzü kaybedersiniz."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Bu tarihten önce abone olursanız **${ referrerRewardAmount }** tutarında kredi kazanırsınız. Abone olmazsanız ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz."
       ],
@@ -21759,8 +21774,8 @@
       "Connect organization": [
         "Kuruluş ile bağlantı kur"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "${ vpnPlus } ile aynı anda ${ VPN_CONNECTIONS } aygıttan bağlanın. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "${ vpnPlusOrUnlimited } ile aynı anda ${ VPN_CONNECTIONS } aygıttan bağlanın. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Görüntülü konferansa bağlanın"
@@ -22226,9 +22241,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Uygulamayı tüm aygıtlarınıza indirin ve her yerde güvenli, kesintisiz erişimin tadını çıkarın."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Uygulamayı tüm aygıtlarınıza indirin ve aynı anda ${ VPN_CONNECTIONS } aygıta kadar koruyun."
       ],
       "Get the apps": [
         "Uygulamaları indirme"
@@ -22785,6 +22797,9 @@
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "${ VPN_APP_NAME } uygulamasıyla aygıtlarınızı korumaya başlayın."
       ],
       "State": [
         "Durum"
@@ -23691,17 +23706,17 @@
       "Advanced security for your company?": [
         "Kuruluşunuz için gelişmiş güvenlik mi arıyorsunuz?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Aylık yalnızca ${ fallBackString } ile başlayarak"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Aylık yalnızca **${ priceString }** daha fazla."
-      ],
       "Did you know?": [
         "Biliyor muydunuz?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini kurtarın."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini tek bir pakette sunan gizlilik paketi. Ayda sadece ${ fallBackString } karşılığında"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini tek bir pakette sunan gizlilik paketi. Ayda sadece **${ priceString }** daha fazla."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "${ PLAN_NAMES[plan] } ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."

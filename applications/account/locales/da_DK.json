@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Ret \"${ label.Name }\""
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Aktiver ${ darkWebMonitoring }"
       ],
@@ -2418,6 +2421,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Kan nogen se min internethistorik, hvis vi bruger samme WiFi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Forbind ${ VPN_CONNECTIONS } enheder på én gang"
+      ],
       "Create and edit with confidence": [
         "Opret og rediger med tillid"
       ],
@@ -2531,6 +2537,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Det føles stadig sværere at navigere på et internet fyldt med datahandlere, spam, svindel og malware. Derfor hjælper ${ PASS_APP_NAME } dig ved ikke blot at administrere, lagre og autoudfylde dine adgangskoder. Vi giver dig værktøjerne til at tage kontrol over dit privatliv og beskytte dine indbakker med hide-my-email aliaser."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Beskyt alle enheder i din husstand med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Beskyt din virksomhedskommunikation"
@@ -4712,7 +4721,7 @@
         "Du kan tilpasse listen over domæner, hvor visse autofunktioner i ${ PASS_APP_NAME } -browserudvidelsen (Autofill, Autosuggest, Autosave) ikke bør afvikles."
       ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
-        "De kan håndhæve de adgangskoderegler, som organisationsmedlemmerne skal bruge, når de genererer en adgangskode i ${ PASS_APP_NAME }."
+        "Du kan håndhæve de adgangskoderegler, som organisationsmedlemmerne skal bruge, når de genererer en adgangskode i ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
@@ -7318,14 +7327,14 @@
       "15 GB storage": [
         "15 GB lagerplads"
       ],
+      "4 more privacy services": [
+        "4 yderligere privatlivstjenester"
+      ],
       "@pm.me address": [
         "@pm.me-adresse"
       ],
       "Ad-blocker and malware protection": [
         "Annonceblokering og beskyttelse mod malware"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Alle premium ${ BRAND_NAME }-tjenester"
       ],
       "and more premium features...": [
         "og flere premium-funktioner..."
@@ -7994,8 +8003,8 @@
       "Enjoying ${ planName }?": [
         "Glad for ${ planName }?"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Oplås 4 flere premium privatlivstjenester for kun **${ priceString }** mere hver måned"
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Lås op for 4 premium privatlivstjenester for kun **${ priceString }** mere om måneden"
       ],
       "Upgrade your privacy": [
         "Opgradér dit privatlivs fred"
@@ -11367,6 +11376,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ved opsigelsen bliver dit abonnement ikke fornyet, men du kan stadig nyde godt af abonnementets fordele indtil udløb af abonnementsperioden. Herefter nedgraderes du til ${ BRAND_NAME } Free-abonnement."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Siger du op vil dit abonnement ikke starte, men du kan stadig nyde godt af abonnementets fordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } Free plan."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Når du klikker på et link, vil denne anti-phishing-funktion bede dig om at bekræfte websidens URL."
@@ -17955,6 +17967,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Hvis du annullerer inden da, nedgraderes du til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, når prøveversionen udløber. Hvis du ikke annullerer, starter dit fulde abonnement, og du modtager **${ referrerRewardAmount }** i kreditter."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Hvis du opsiger mister du din **${ referrerRewardAmount }** kredit-belønning."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Hvis du tegner abonnement før denne dato, får du **${ referrerRewardAmount }** i kredit. Ellers nedgraderes du til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -21762,8 +21777,8 @@
       "Connect organization": [
         "Forbind organisation"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Forbind op til ${ VPN_CONNECTIONS } enheder på én gang med ${ vpnPlus }. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Forbind op til ${ VPN_CONNECTIONS } enheder på én gang med ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
@@ -22229,9 +22244,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Få appen på alle dine enheder, og nyd sikker, problemfri adgang overalt."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Få appen på alle dine enheder, og beskyt op til ${ VPN_CONNECTIONS } på én gang."
       ],
       "Get the apps": [
         "Hent appsene"
@@ -22788,6 +22800,9 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Begynd at beskytte dine enheder med ${ VPN_APP_NAME }-appen."
       ],
       "State": [
         "Status"
@@ -23694,17 +23709,17 @@
       "Advanced security for your company?": [
         "Avanceret sikkerhed til din virksomhed?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Alle premium ${ BRAND_NAME }-tjenester. Fra kun ${ fallBackString } pr. måned"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Alle premium ${ BRAND_NAME }-tjenester. Kun **${ priceString }** mere hver måned."
-      ],
       "Did you know?": [
         "Vidste du det?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Få ${ drivePlusPlanMaxSpace } lagerplads til dine filer, fotos og dokumenter, og gendan filversioner med mulighed for 10-års filgendannelse."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Privatlivspakke med sikker e-mail, ${ VPN_SHORT_APP_NAME }, skylagring og adgangskodeadministrator. Fra kun ${ fallBackString } om måneden"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Privatlivspakke med sikker e-mail, ${ VPN_SHORT_APP_NAME }, skylagring, og adgangskodeadministrator. Kun **${ priceString }** mere om måneden"
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Beskyt din organisation mod databrud med ${ PLAN_NAMES[plan] }."

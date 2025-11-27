@@ -1419,6 +1419,9 @@
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "სცადეთ უფასოდ ${ TRIAL_DURATION_DAYS } დღით"
       ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
       ],
@@ -3935,6 +3938,9 @@
       "Permissions request failed.": [
         "წვდომების მოთხოვნა ჩავარდა."
       ],
+      "Please add a payment method before reactivating your subscription": [
+        "დაამატეთ გადახდის მეთოდი თქვენი გამოწერის ხელახლა გააქტიურებამდე"
+      ],
       "Please configure a custom domain before adding addresses.": [
         "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
       ],
@@ -4767,9 +4773,6 @@
       "Ad-blocker and malware protection": [
         "რეკლამების დაბლოკვა და არასასურველი პროგრამებისგან დაცვა"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "${ BRAND_NAME }-ის ყველა ფასიანი სერვისი"
-      ],
       "and more premium features...": [
         "და მეტი ფასიანი ფუნქცია..."
       ],
@@ -5192,9 +5195,6 @@
       ],
       "Enjoying ${ planName }?": [
         "მოგწონთ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "განბლოკეთ კიდევ 4 ფასიანი კონფიდენფიალობის სერვისი, მხოლოდ, **${ priceString }**-ით მეტით თვეში"
       ],
       "Upgrade your privacy": [
         "გააუმჯობესეთ თქვენი კონფიდენციალობა"
@@ -5752,8 +5752,14 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**შემოიტანეთ თქვენი არსებული კოდები** სხვა 2FA აპებიდან, მაგალითად Google Authenticator"
       ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**ნაბიჯი 1:** მოიწვიეთ თქვენი მეგობრები ${ BRAND_NAME }-ზე თქვენი რეფერალი ბმულით."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ **2 კვირას უფასოდ** თავიანთ სატარიფო გეგმაზე."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
@@ -8060,6 +8066,11 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
+    "Input assistive text": {
+      "This is how your organization will appear to users. You can change it at any time.": [
+        "ასე გამოჩნდება თქვენი ორგანიზაცია მომხმარებლებისთვის. შეგიძლიათ შეცვალოთ ის ნებისმიერ დროს."
+      ]
+    },
     "Input Error": {
       "Not a valid email address": [
         "არასწორი ელფოსტის მისამართია"
@@ -8497,6 +8508,9 @@
       ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }-ისთვის და ${ DOCS_SHORT_APP_NAME }-ისთვის."
+      ],
+      "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
+        "${ DRIVE_SHORT_APP_NAME } -ისთვის, ${ DOCS_SHORT_APP_NAME } -ისთვის და ${ SHEETS_SHORT_APP_NAME } -ისთვის."
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
@@ -11533,6 +11547,9 @@
       "Are you sure you want to proceed?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
       ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "თუ აირჩევთ, შეცვალოთ თქვენი ${ planTitle } სატარიფო გეგმა, შეიძლება, ზოგიერთ ფუნქციასთან წვდომა დაკარგოთ."
+      ],
       "Keep ${ planTitle }": [
         "${ planTitle }-ის შენარჩუნება"
       ],
@@ -11963,6 +11980,9 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "თქვენი მეგობარი ასევე მიიღებს ${ refereeRewardAmount }-ს, რათა დაფაროს შემდეგი გადასახადი!"
       ],
       "your subscription": [
         "თქვენი გამოწერა"
@@ -14539,9 +14559,6 @@
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "დაუკავშირდით ${ VPN_CONNECTIONS } მოწყობილობას ერთდროულად ${ vpnPlus }-ით. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
       ],
@@ -14844,9 +14861,6 @@
       ],
       "Get started": [
         "დაიწყეთ"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "მიიღეთ აპი ყველა თქვენს მოწყობილობაზე და დაიცავით ${ VPN_CONNECTIONS }-მდე მოწყობილობა ერთდროულად."
       ],
       "Get the apps": [
         "აპების გადმოწერა"
@@ -15788,12 +15802,6 @@
       "Advanced security for your company?": [
         "დამატებითი უსაფრთხოება თქვენი კომპანიისთვის?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "ყველა ${ BRAND_NAME }-ის ფასიანი სერვისი. მხოლოდ ${ fallBackString } თვეში"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "ყველა ${ BRAND_NAME }-ის ფასიანი ფუნქცია. მხოლოდ **${ priceString }**-ით მეტი თვეში."
-      ],
       "Did you know?": [
         "იცოდით?"
       ],
@@ -15924,6 +15932,9 @@
       ],
       "User has enabled two-factor authentication with a security key.": [
         "მომხმარებელმა ჩართო 2FA უსაფრთხოების გასაღებით."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "მომხმარებელმა ჩართო 2FA ავთენტიკატორი აპით და უსაფრთხოების გასაღებით."
       ],
       "User has enabled two-factor authentication with an authenticator app.": [
         "მომხმარებელმა ჩართო 2FA ავთენტიკატორი აპით."
