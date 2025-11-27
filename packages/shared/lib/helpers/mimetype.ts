@@ -160,12 +160,18 @@ export const isConvertibleToProtonDocsDocument = (mimeType: string) =>
  * Whether a given mimetype can be converted to a Proton Sheets spreadsheet.
  */
 export const isConvertibleToProtonDocsSpreadsheet = (mimeType: string) =>
-    mimeType === SupportedProtonDocsMimeTypes.xlsx;
+    mimeType === SupportedProtonDocsMimeTypes.xlsx ||
+    mimeType === SupportedProtonDocsMimeTypes.csv ||
+    mimeType === SupportedProtonDocsMimeTypes.tsv;
 
 export const getDocsConversionType = (mimeType: string): DocsConversionType => {
     switch (mimeType) {
         case SupportedProtonDocsMimeTypes.xlsx:
             return 'xlsx';
+        case SupportedProtonDocsMimeTypes.csv:
+            return 'csv';
+        case SupportedProtonDocsMimeTypes.tsv:
+            return 'tsv';
         case SupportedProtonDocsMimeTypes.docx:
             return 'docx';
         case SupportedProtonDocsMimeTypes.txt:
