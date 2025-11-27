@@ -7,8 +7,7 @@ import type { UpsellModalConfigCase } from '../interface';
 
 export const getUpsellModalBookingsConfig: UpsellModalConfigCase = async (props) => {
     const { currency, paymentsApi, plans, user } = props;
-    // TODO change this value to the workspace plan
-    const plan = user.hasPaidMail ? PLANS.BUNDLE_PRO_2024 : PLANS.MAIL;
+    const plan = user.hasPaidMail ? PLANS.BUNDLE_BIZ_2025 : PLANS.MAIL;
     const planIDs = { [plan]: 1 };
     const cycle = CYCLE.YEARLY;
 
