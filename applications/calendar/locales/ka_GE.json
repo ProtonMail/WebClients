@@ -1175,6 +1175,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_DEDICATED_IPS }-მდე გამოყოფილი სერვერი იქონიოთ."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "გამოსაცდელი პერიოდისას შეგიძლიათ ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-ის მომხმარებლის შექმნა."
       ],
@@ -3707,6 +3710,9 @@
       "Payment process not supported": [
         "გადახდის პროცესის მხარდაჭერა არ არსებობს"
       ],
+      "Periods is too short": [
+        "პერიოდები ძალიან მოკლეა"
+      ],
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
       ],
@@ -5226,6 +5232,9 @@
       "Copy your referral link": [
         "თქვენი მიმართვის ბმულის კოპირება"
       ],
+      "Could not verify signature over booking page data": [
+        "ვერ მოხერხდა ხელმოწერის გადამოწმება დაჯავშნის გვერდის მონაცემებისთვის."
+      ],
       "Country code": [
         "ქვეყნის კოდი"
       ],
@@ -5419,6 +5428,9 @@
       "Host": [
         "ჰოსტი"
       ],
+      "Host signature verification failed": [
+        "ჰოსტის ხელმოწერის გადამოწმება ჩავარდა"
+      ],
       "How long should an appointment last?": [
         "რამდენ ხანს უნდა გაგრძელდეს შეხვედრა?"
       ],
@@ -5537,6 +5549,9 @@
       "Loading ${ appName }": [
         "იტვირთება ${ appName }"
       ],
+      "Loading appointments...": [
+        "შეხვედრების ჩატვირთვა..."
+      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
       ],
@@ -5590,6 +5605,9 @@
       ],
       "No appointments available this week": [
         "ამ კვირაში შეხვედრები ხელმისაწვდომი არაა"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "კალენდარი არ არის ხელმისაწვდომი; წაშალეთ ჯავშნის გვერდი."
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
@@ -5677,6 +5695,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდები TLS-ით და შვეიცარიული კანონებითაა დაცული."
+      ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "ადამიანები, რომლებიც თქვენთან დროს დაჯავშნიან, ${ selectedCalendar.Email }-ს თქვენს საკონტაქტო მისამართად დაინახავენ."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline, მხოლოდ, უბრალო ტექსტის ფორმატთანაა თავსებადი."
@@ -6564,6 +6585,9 @@
       "Copy": [
         "კოპირება"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "დააკოპირეთ ბმული, ან მართეთ თქვენი გვერდი აქედან ნებისმიერ დროს."
+      ],
       "Could you please let us know which provider?": [
         "შეგიძლიათ, გვითხრათ, რომელი მომწოდებელი?"
       ],
@@ -6575,6 +6599,9 @@
       ],
       "Country": [
         "ქვეყანა"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "შექმენით გასაზიარებელი გვერდები, სადაც ადამიანებს შეუძლიათ თქვენთან დროის დაჯავშნა."
       ],
       "Credits": [
         "კრედიტები"
@@ -6983,6 +7010,9 @@
       ],
       "Start time of the booking range": [
         "დაჯავშნის შუალედის დასაწყისის დრო"
+      ],
+      "What should people know about this appointment?": [
+        "რა უნდა იცოდეს ხალხმა ამ შეხვედრის შესახებ?"
       ]
     },
     "Label for contact group color": {
@@ -9144,6 +9174,9 @@
       "Are you sure you want to proceed?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
       ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "თუ აირჩევთ, შეცვალოთ თქვენი ${ planTitle } სატარიფო გეგმა, შეიძლება, ზოგიერთ ფუნქციასთან წვდომა დაკარგოთ."
+      ],
       "Keep ${ planTitle }": [
         "${ planTitle }-ის შენარჩუნება"
       ],
@@ -10708,6 +10741,9 @@
       "Booking page created": [
         "დაჯავშნის გვერდი შეიქმნა"
       ],
+      "Booking page created and link copied to clipboard": [
+        "დაჯავშნის გვერდი შეიქმნა და ბმული დაკოპირდა ბუფერში"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "კალენდარი დაემატა. სინქრონიზაციას რამდენიმე წუთი შეიძლება დასჭირდეს."
       ],
@@ -11385,6 +11421,9 @@
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
       ],
+      "Introducing booking pages": [
+        "წარმოგიდგენთ ჯავშნის გვერდებს"
+      ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
@@ -11729,6 +11768,9 @@
       ],
       "Your booking page is ready": [
         "თქვენი დაჯავშნის გვერდი მზადაა"
+      ],
+      "Your booking pages live here": [
+        "თქვენი დაჯავშნის გვერდები აქაა."
       ],
       "Your calendar link": [
         "თქვენი კალენდრის ბმული"

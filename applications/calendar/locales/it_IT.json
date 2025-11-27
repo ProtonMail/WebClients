@@ -770,8 +770,14 @@
       "See plan features": [
         "Visualizza le caratteristiche del piano"
       ],
+      "See previous availability": [
+        "Vedi disponibilità precedente"
+      ],
       "See upcoming availability": [
         "Visualizza la prossima disponibilità"
+      ],
+      "Select ${ dateHeaderLongString } at ${ timeString }": [
+        "Seleziona ${ dateHeaderLongString } alle ${ timeString }"
       ],
       "Select ${ planOrAppName }": [
         "Seleziona ${ planOrAppName }"
@@ -3742,6 +3748,9 @@
       "Payment process not supported": [
         "Processo di pagamento non supportato"
       ],
+      "Periods is too short": [
+        "Il periodo è troppo breve"
+      ],
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
       ],
@@ -3936,6 +3945,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
         "Non puoi inviare un'email a più di ${ maxContacts } destinatari"
+      ],
+      "You cannot enter the organizer email": [
+        "Non puoi inserire l'email dell'organizzatore"
       ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
@@ -4501,6 +4513,11 @@
       ],
       "Very small": [
         "Molto piccolo"
+      ]
+    },
+    "Form": {
+      "Confirm your booking": [
+        "Conferma la tua prenotazione"
       ]
     },
     "Google Meet": {
@@ -5163,6 +5180,9 @@
       "Appointment duration": [
         "Durata dell'appuntamento"
       ],
+      "Are you sure you want to delete this booking page?": [
+        "Sei sicuro di voler eliminare questa pagina di prenotazione?"
+      ],
       "Are you sure you want to discard your import?": [
         "Sei sicuro di voler annullare la tua importazione?"
       ],
@@ -5199,6 +5219,9 @@
       "Booking overlaps with an existing booking.": [
         "Questa prenotazione si sovrappone a una prenotazione esistente."
       ],
+      "Booking page deleted": [
+        "Pagina di prenotazione eliminata"
+      ],
       "Booking page example": [
         "Pagina prenotazione esempio"
       ],
@@ -5228,6 +5251,9 @@
       ],
       "Cannot create booking range across days": [
         "Non puoi creare un intervallo di prenotazione su più giorni."
+      ],
+      "Cannot create booking range in the past": [
+        "Non puoi creare un intervallo di prenotazione nel passato"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
@@ -5606,6 +5632,9 @@
       "Loading ${ appName }": [
         "Caricamento di ${ appName } in corso"
       ],
+      "Loading appointments...": [
+        "Caricamento appuntamenti..."
+      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Caricamento del calendario in corso. Verrai reindirizzato alla nostra piattaforma di pianificazione Calendly in una nuova scheda."
       ],
@@ -5662,6 +5691,9 @@
       ],
       "No appointments available this week": [
         "Nessun appuntamento disponibile questa settimana"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Nessun calendario disponibile; per favore elimina la pagina di prenotazione."
       ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
@@ -6121,6 +6153,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "Le visualizzazioni settimanali e mensili si applicano solo al desktop."
+      ],
+      "What do you want to call this booking page?": [
+        "Come vuoi chiamare questa pagina di prenotazione?"
+      ],
+      "When can appointments be booked?": [
+        "Quando si possono prenotare gli appuntamenti?"
       ],
       "When working remotely": [
         "Quando si lavora da remoto"
@@ -6675,6 +6713,9 @@
       "Copy": [
         "Copia"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "Copia il link o gestisci la tua pagina da qui in qualsiasi momento."
+      ],
       "Could you please let us know which provider?": [
         "Potresti indicarci quale fornitore?"
       ],
@@ -6686,6 +6727,9 @@
       ],
       "Country": [
         "Paese"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Crea pagine condivisibili dove le persone possono prenotare un appuntamento con te."
       ],
       "Credits": [
         "Crediti"
@@ -6776,6 +6820,9 @@
       ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
+      ],
+      "Full name": [
+        "Nome completo"
       ],
       "Get the deal": [
         "Approfitta dell'offerta"
@@ -9432,6 +9479,12 @@
       "E.g., ": [
         "Ad es "
       ],
+      "Email for booking confirmation": [
+        "Email per conferma di prenotazione"
+      ],
+      "Enter a short description or additional info": [
+        "Inserisci una breve descrizione o informazioni aggiuntive"
+      ],
       "Enter passphrase": [
         "Inserisci la frase di accesso"
       ],
@@ -9467,6 +9520,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Name of attendee": [
+        "Nome del partecipante"
       ],
       "Name or email address": [
         "Nome o indirizzo email"
@@ -11318,6 +11374,9 @@
       "Change password": [
         "Modifica la password"
       ],
+      "Choose a time": [
+        "Scegli un orario"
+      ],
       "Choose how many times this event will repeat": [
         "Scegli quante volte questo evento si ripeterà"
       ],
@@ -11403,6 +11462,9 @@
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
+      ],
+      "Delete booking page?": [
+        "Elimina pagina di prenotazione?"
       ],
       "Delete event": [
         "Elimina evento"
@@ -11569,6 +11631,9 @@
       ],
       "Information exposed in breach": [
         "Informazioni esposte in caso di violazioni"
+      ],
+      "Introducing booking pages": [
+        "Ti presentiamo le pagine di prenotazione"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
@@ -11914,6 +11979,9 @@
       ],
       "Your booking page is ready": [
         "La tua pagina di prenotazione è pronta"
+      ],
+      "Your booking pages live here": [
+        "Le tue pagine di prenotazione si trovano qui"
       ],
       "Your calendar link": [
         "Link del tuo calendario"

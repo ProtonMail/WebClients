@@ -62,6 +62,9 @@
       "Add another account": [
         "다른 계정 추가"
       ],
+      "Add another booking range to this day": [
+        "이 날짜에 다른 예약 시간대 추가"
+      ],
       "Add birthday": [
         "생일 추가"
       ],
@@ -254,6 +257,9 @@
       "Create a booking page": [
         "예약 페이지 만들기"
       ],
+      "Create a free account": [
+        "무료 계정 생성"
+      ],
       "Create a new bookings page": [
         "새 예약 페이지를 생성하세요"
       ],
@@ -433,6 +439,9 @@
       ],
       "Go to settings": [
         "설정으로 이동하기"
+      ],
+      "Go to the first available appointment": [
+        "처음 빈 약속으로 이동하기"
       ],
       "Go to the next available appointment": [
         "다음 빈 약속으로 이동하기"
@@ -3708,6 +3717,9 @@
       "Payment process not supported": [
         "지원하지 않는 결제수단"
       ],
+      "Periods is too short": [
+        "기간이 너무 짧습니다"
+      ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
       ],
@@ -3899,6 +3911,9 @@
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
+      ],
+      "You cannot enter the organizer email": [
+        "주최자 이메일을 입력할 수 없습니다."
       ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
@@ -5138,6 +5153,9 @@
       "Booking page example": [
         "예약 페이지 예시"
       ],
+      "Booking updated successfully": [
+        "예약이 성공적으로 업데이트되었습니다."
+      ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
@@ -5212,6 +5230,9 @@
       ],
       "Copy your referral link": [
         "당신의 추천인 링크를 공유하세요"
+      ],
+      "Could not verify signature over booking page data": [
+        "예약 페이지 데이터 이상으로 서명을 확인할 수 없습니다"
       ],
       "Country code": [
         "국가 코드"
@@ -5411,6 +5432,9 @@
       "Host": [
         "호스트"
       ],
+      "Host signature verification failed": [
+        "주최자 서명 검증 실패"
+      ],
       "How long should an appointment last?": [
         "일정 소요시간이 얼마입니까?"
       ],
@@ -5531,6 +5555,9 @@
       "Loading ${ appName }": [
         "${ appName } 로딩 중"
       ],
+      "Loading appointments...": [
+        "일정 로드 중..."
+      ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
       ],
@@ -5545,6 +5572,9 @@
       ],
       "Low Priority": [
         "중요도 낮음"
+      ],
+      "Manage booking page": [
+        "예약 페이지 관리"
       ],
       "Manage your calendars": [
         "캘린더 관리"
@@ -5579,14 +5609,23 @@
       "New": [
         "신규"
       ],
+      "No appointments available": [
+        "사용 가능한 일정이 없음"
+      ],
       "No appointments available this week": [
         "이번 주에 예약 가능한 일정 없음"
+      ],
+      "No calendar available; please delete the booking page.": [
+        "사용 가능한 캘린더 없음; 예약 페이지를 제거해 주세요."
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
       ],
       "No email address": [
         "이메일 주소 없음"
+      ],
+      "No future appointments available": [
+        "사용 가능한 추후 일정이 없음"
       ],
       "No group found": [
         "찾은 그룹 없음"
@@ -5666,6 +5705,9 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "결제는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
       ],
+      "People booking time with you will see ${ selectedCalendar.Email } as your contact address.": [
+        "회원님과 시간을 예약하는 사용자들은 ${ selectedCalendar.Email }을(를) 회원님의 연락처 주소로 보게 됩니다."
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGM/Inline은 오직 일반 텍스트 포맷에만 호환됩니다."
       ],
@@ -5719,6 +5761,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "비활성 키로 암호화된 데이터가 포함된 연락처를 찾는 동안 기다려 주세요."
+      ],
+      "Powered by": [
+        "Powered by"
       ],
       "Powered by ${ protonButton }": [
         "Powered by ${ protonButton }"
@@ -5792,6 +5837,9 @@
       "Setting up your new address…": [
         "새 주소를 설정하는 중…"
       ],
+      "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
+        "다른 사람들이 회원님의 캘린더에 시간을 예약할 수 있도록 이 페이지를 공유하세요. 예약 페이지 아래 사이드바에서 찾아서 편집할 수 있습니다."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
       ],
@@ -5833,6 +5881,9 @@
       ],
       "Symbols (#$&)": [
         "기호 (#$&)"
+      ],
+      "Take control of your digital life": [
+        "디지털 라이프의 주도권을 잡으세요"
       ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
@@ -5881,6 +5932,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
+      ],
+      "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
+        "이 예약 페이지는 ${ BRAND_NAME }의 프라이버시 보호 우선 스위트 중 하나인 ${ CALENDAR_APP_NAME }로 생성되었습니다."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "이 이벤트는 주최자에 의해 업데이트 되었습니다. 이 시리즈에서 발생된 대답을 변경하시겠습니까?"
@@ -6019,6 +6073,12 @@
       ],
       "Week and month views only apply to desktop.": [
         "주 및 월 보기는 홈 화면에서만 적용됩니다."
+      ],
+      "What do you want to call this booking page?": [
+        "이 예약 페이지를 어떻게 불리고 싶으신가요?"
+      ],
+      "When can appointments be booked?": [
+        "예약은 언제 가능한가요?"
       ],
       "When working remotely": [
         "재택 근무시"
@@ -6564,6 +6624,9 @@
       "Copy": [
         "복사"
       ],
+      "Copy the link or manage your page from here anytime.": [
+        "링크를 복사하거나 언제든지 여기에서 페이지를 관리할 수 있습니다."
+      ],
       "Could you please let us know which provider?": [
         "어느 제공자인지 말해주실 수 있나요?"
       ],
@@ -6575,6 +6638,9 @@
       ],
       "Country": [
         "국가"
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "사람들이 회원님과의 시간을 예약할 수 있는 공유 가능한 페이지를 만들어 보세요."
       ],
       "Credits": [
         "크레딧"
@@ -6793,7 +6859,7 @@
         "암호 문구:"
       ],
       "Password": [
-        "암호"
+        "비밀번호"
       ],
       "Password strength": [
         "비밀번호 보안 강도"
@@ -6839,6 +6905,9 @@
       ],
       "Remove Zoom video conference": [
         "Zoom 화상 회의 삭제"
+      ],
+      "Repeat weekly": [
+        "매주 반복"
       ],
       "Reveal password": [
         "비밀번호 표시"
@@ -6899,6 +6968,9 @@
       ],
       "Toolbar": [
         "툴바"
+      ],
+      "Unavailable": [
+        "사용 불가"
       ],
       "Upload picture": [
         "사진 업로드"
@@ -6971,8 +7043,14 @@
       "End time of the booking range": [
         "예약 기간의 종료 시간"
       ],
+      "How long should an appointment last?": [
+        "일정 소요시간이 얼마인가요?"
+      ],
       "Start time of the booking range": [
         "예약 기간의 시작 시간"
+      ],
+      "What should people know about this appointment?": [
+        "이 예약에 대해 사람들이 알아야 할 사항은 무엇인가요?"
       ]
     },
     "Label for contact group color": {
@@ -9246,6 +9324,9 @@
       "Email for booking confirmation": [
         "예약 확인 이메일"
       ],
+      "Enter a short description or additional info": [
+        "간략한 설명 또는 추가 정보를 입력하세요"
+      ],
       "Enter passphrase": [
         "암호 문구 입력"
       ],
@@ -10673,6 +10754,12 @@
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
       ],
+      "Booking page created": [
+        "예약 페이지가 생성되었습니다"
+      ],
+      "Booking page created and link copied to clipboard": [
+        "예약 페이지가 생성되었으며 해당 페이지의 링크가 클립보드로 복사되었습니다"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "캘린더가 생성되었습니다. 동기화 되는데 시간이 걸릴 수 있습니다."
       ],
@@ -11333,6 +11420,9 @@
       "Information exposed in breach": [
         "유출 시 노출된 정보"
       ],
+      "Introducing booking pages": [
+        "예약 페이지를 만나보세요"
+      ],
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
@@ -11677,6 +11767,9 @@
       ],
       "Your booking page is ready": [
         "예약 페이지가 준비되었습니다"
+      ],
+      "Your booking pages live here": [
+        "회원님의 예약 페이지을 여기서 볼 수 있습니다"
       ],
       "Your calendar link": [
         "내 캘린더 링크"
