@@ -19,6 +19,7 @@ interface MeetContainerProps {
     locked: boolean;
     maxDuration: number;
     maxParticipants: number;
+    paidUser: boolean;
     mlsGroupState: MLSGroupState | null;
     displayName: string;
     handleLeave: () => void;
@@ -48,6 +49,7 @@ export const MeetContainer = ({
     locked,
     maxDuration,
     maxParticipants,
+    paidUser,
     mlsGroupState,
     displayName,
     handleLeave,
@@ -167,6 +169,7 @@ export const MeetContainer = ({
                     maxParticipants,
                     instantMeeting,
                     assignHost,
+                    paidUser,
                 }}
             >
                 <MeetingBody

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import callIcon from '@proton/styles/assets/img/meet/call-icon.svg';
+import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import useFlag from '@proton/unleash/useFlag';
 
 import './NoUpcomingMeetings.scss';
@@ -19,11 +19,10 @@ export const NoUpcomingMeetings = ({ onSchedule, onStart }: NoUpcomingMeetingsPr
             className="w-custom mx-auto flex flex-column items-center justify-center gap-4"
             style={{ '--w-custom': '21.4375rem' }}
         >
-            <img
-                src={callIcon}
-                alt=""
+            <MeetLogo
+                variant="glyph-only"
                 className="w-custom h-custom"
-                style={{ '--w-custom': '2.75rem', '--h-custom': '2.75rem' }}
+                style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
             />
             <div className="color-norm text-center text-3xl text-semibold">
                 {c('Info')

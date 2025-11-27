@@ -6,6 +6,7 @@ import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
+import { IcMeetShieldStar } from '@proton/icons/icons/IcMeetShieldStar';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import useFlag from '@proton/unleash/useFlag';
@@ -32,6 +33,7 @@ import { Participants } from '../Participants/Participants';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { ScreenShareHeading } from '../ScreenShareHeading/ScreenShareHeading';
 import { Settings } from '../Settings/Settings';
+import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 
 import './MeetingBody.scss';
 
@@ -57,7 +59,7 @@ export const MeetingBody = ({
 
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const { participantNameMap, meetingLink, roomName, guestMode } = useMeetContext();
+    const { participantNameMap, meetingLink, roomName, guestMode, paidUser } = useMeetContext();
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
@@ -95,7 +97,11 @@ export const MeetingBody = ({
         >
             {!isNarrowHeight && (
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
-                    <div className="flex-1 h3 text-ellipsis overflow-hidden">{roomName}</div>
+                    {guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}
+                    <div className="meeting-name flex-1 text-lg text-ellipsis overflow-hidden text-semibold">
+                        {roomName}
+                    </div>
+
                     <div className="text-ellipsis overflow-hidden">
                         {isVideoEnabled && isMobile() && (
                             <CircleButton

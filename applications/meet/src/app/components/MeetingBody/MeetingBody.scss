@@ -1,3 +1,8 @@
 .screen-share-video {
 	background: black;
 }
+
+.meeting-name,
+.shield-star {
+	color: var(--meeting-title-color) !important;
+}
