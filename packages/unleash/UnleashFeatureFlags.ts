@@ -240,7 +240,7 @@ enum MeetFeatureFlag {
 enum LumoFeatureFlag {
     LumoDarkMode = 'LumoDarkMode',
     WhatsNewV1p2 = 'WhatsNewV1p2',
-    LumoHalloween = 'LumoHalloween',
+    LumoSpecialTheme = 'LumoSpecialTheme',
 }
 
 export type FeatureFlag =
