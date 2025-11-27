@@ -7,7 +7,7 @@ import type { PersonalizationSettings } from '../../redux/slices/personalization
 import { PERSONALITY_OPTIONS } from '../../redux/slices/personalization';
 import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
 import type { ContextFilter } from '../../llm';
-import { ENABLE_U2L_ENCRYPTION, getFilteredTurns } from '../../llm';
+import { ENABLE_U2L_ENCRYPTION, getFilteredTurnsWithImages } from '../../llm';
 import { SearchService } from '../../services/search/searchService';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { newAttachmentId, pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
@@ -85,7 +85,7 @@ interface RAGRetrievalResult {
  * Get all uploaded files for a project space and calculate their total token count.
  * This is used to determine if we should include all files in the first message
  * instead of relying on search-based retrieval.
- * 
+ *
  * @param spaceId - The project space ID
  * @param allAttachments - All attachments from Redux state
  * @param alreadyRetrievedDocIds - Set of document IDs already used in conversation
@@ -211,7 +211,7 @@ async function retrieveDocumentContextForProject(
         // If we had to exclude oversized files, fall back to search-based retrieval to ensure fair selection
         if (uploadedFiles.length > 0 && totalTokens <= SMALL_FILE_SET_TOKEN_THRESHOLD && !hasOversizedFile) {
             console.log(`[RAG] Including all ${uploadedFiles.length} uploaded files (${totalTokens} tokens < ${SMALL_FILE_SET_TOKEN_THRESHOLD} threshold)`);
-            
+
             // Mark files as auto-retrieved for consistent handling
             const attachments: Attachment[] = uploadedFiles.map(file => ({
                 ...file,
@@ -637,6 +637,7 @@ export function sendMessage({
                 isProject,
                 allAttachments: state.attachments,
                 referencedFileNames,
+                attachments,
             });
         } catch (error) {
             console.warn('error: ', error);
@@ -654,6 +655,7 @@ export function regenerateMessage(
     conversationId: ConversationId,
     assistantMessageId: MessageId,
     messagesWithContext: Message[],
+    attachments: Attachment[],
     signal: AbortSignal,
     enableExternalTools: boolean,
     enableSmoothing: boolean = true,
@@ -779,7 +781,14 @@ export function regenerateMessage(
                 }
             }
 
-            const turns = getFilteredTurns(updatedMessagesWithContext, contextFilters, personalizationPrompt, projectInstructions, ragResult?.context);
+            const turns = await getFilteredTurnsWithImages(
+                updatedMessagesWithContext,
+                attachments,
+                contextFilters,
+                personalizationPrompt,
+                projectInstructions,
+                ragResult?.context,
+            );
 
             // Add retry instructions if provided
             if (retryInstructions) {
@@ -818,6 +827,7 @@ export async function retrySendMessage({
     dispatch,
     lastUserMessage,
     messageChain,
+    attachments,
     spaceId,
     conversationId,
     signal,
@@ -831,6 +841,7 @@ export async function retrySendMessage({
     dispatch: AppDispatch;
     lastUserMessage: Message;
     messageChain: Message[];
+    attachments: Attachment[];
     spaceId: SpaceId;
     conversationId: ConversationId;
     signal: AbortSignal;
@@ -884,6 +895,7 @@ export async function retrySendMessage({
             personalizationPrompt,
             projectInstructions,
             allAttachments,
+            attachments,
         });
     } catch (error) {
         console.warn('retry error: ', error);
@@ -1007,6 +1019,7 @@ export async function fetchAssistantResponse({
     isProject = false,
     allAttachments = {},
     referencedFileNames = new Set<string>(),
+    attachments = [],
 }: {
     api: Api;
     dispatch: AppDispatch;
@@ -1025,6 +1038,7 @@ export async function fetchAssistantResponse({
     isProject?: boolean;
     allAttachments?: Record<string, Attachment>;
     referencedFileNames?: Set<string>;
+    attachments?: Attachment[];
 }) {
     // Extract the user's query from the last user message for RAG retrieval
     const lastUserMessage = linearChain.filter(m => m.role === Role.User).pop();
@@ -1121,7 +1135,14 @@ export async function fetchAssistantResponse({
         dispatch(pushMessageRequest({ id: lastUserMessage.id }));
     }
 
-    const turns = getFilteredTurns(updatedLinearChain, contextFilters, personalizationPrompt, projectInstructions, ragResult?.context);
+    const turns = await getFilteredTurnsWithImages(
+        updatedLinearChain,
+        attachments,
+        contextFilters,
+        personalizationPrompt,
+        projectInstructions,
+        ragResult?.context,
+    );
     await dispatch(
         sendMessageWithRedux(api, turns, {
             messageId: assistantMessageId,
