@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Modifica \"${ label.Name }\""
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Attiva ${ darkWebMonitoring }"
       ],
@@ -1721,6 +1724,10 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utente)",
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe (per ${ quantity } utenti)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } dominio personalizzato aggiuntivo",
         "${ domains } domini personalizzati aggiuntivi"
@@ -1731,6 +1738,10 @@
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } assistente IA"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } assistente AI (per ${ quantity } utente)",
+        "${ LUMO_APP_NAME } assistente AI (per ${ quantity } utenti)"
       ],
       "${ price } per dedicated server": [
         "${ price } per server dedicato"
@@ -1743,6 +1754,10 @@
       ],
       "${ price } per user": [
         "${ price } per utente"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } dominio personalizzato",
+        "${ quantity } domini personalizzati"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licenza ${ LUMO_APP_NAME }",
@@ -7237,9 +7252,6 @@
       "Ad-blocker and malware protection": [
         "Blocco degli annunci e protezione da malware"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "Tutti i servizi premium di ${ BRAND_NAME }"
-      ],
       "and more premium features...": [
         "e altre funzioni premium..."
       ],
@@ -7906,9 +7918,6 @@
       ],
       "Enjoying ${ planName }?": [
         "Ti piace ${ planName }?"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Sblocca altri 4 servizi premium per la privacy a soli **${ priceString }** in più ogni mese"
       ],
       "Upgrade your privacy": [
         "Migliora la tua privacy"
@@ -13886,6 +13895,9 @@
       ],
       "Sign in": [
         "Accedi"
+      ],
+      "Snap store": [
+        "Snap store"
       ],
       "switch account": [
         "cambia account"
@@ -21656,9 +21668,6 @@
       "Connect organization": [
         "Connetti l'organizzazione"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Connettiti a ${ VPN_CONNECTIONS } dispositivi contemporaneamente con ${ vpnPlus }. ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "Connettiti alla videoconferenza"
       ],
@@ -22114,9 +22123,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Ottieni l'app su tutti i tuoi dispositivi e goditi un accesso sicuro e senza interruzioni ovunque."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Scarica l'app su tutti i tuoi dispositivi e proteggi fino a ${ VPN_CONNECTIONS } in una volta."
       ],
       "Get the apps": [
         "Ottieni le app"
@@ -23569,12 +23575,6 @@
       ],
       "Advanced security for your company?": [
         "Sicurezza avanzata per la tua azienda?"
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Tutti i servizi premium ${ BRAND_NAME }. A partire da soli ${ fallBackString } al mese"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Tutti i servizi premium ${ BRAND_NAME }. Solo **${ priceString }** in più ogni mese."
       ],
       "Did you know?": [
         "Lo sapevi?"

@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Editar «${ label.Name }»"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Activar ${ darkWebMonitoring }"
       ],
@@ -2418,6 +2421,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "¿Alguien puede ver mi historial de internet si usamos la misma red Wi-Fi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Conecte ${ VPN_CONNECTIONS } dispositivos simultáneamente"
+      ],
       "Create and edit with confidence": [
         "Cree y edite con confianza"
       ],
@@ -2531,6 +2537,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Navegar por un internet lleno de corredores de datos, spam, estafas y malware resulta cada vez más difícil. Por eso ${ PASS_APP_NAME } va más allá de ayudarle a gestionar, almacenar y completar automáticamente sus contraseñas. Le damos las herramientas para tomar el control de su privacidad y proteger sus bandejas de entrada con alias hide-my-email."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Proteja todos sus dispositivos domésticos al mismo tiempo con ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Proteja sus comunicaciones empresariales"
@@ -7318,14 +7327,14 @@
       "15 GB storage": [
         "15 GB de almacenamiento"
       ],
+      "4 more privacy services": [
+        "4 servicios de privacidad más"
+      ],
       "@pm.me address": [
         "Dirección @pm.me"
       ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Todos los servicios premium de ${ BRAND_NAME }"
       ],
       "and more premium features...": [
         "y más funciones premium..."
@@ -7994,7 +8003,7 @@
       "Enjoying ${ planName }?": [
         "¿Disfrutando ${ planName }?"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Desbloquee cuatro servicios de privacidad premium por solo **${ priceString }** más cada mes"
       ],
       "Upgrade your privacy": [
@@ -11367,6 +11376,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancela, la suscripción no se renovará pero podrá seguir disfrutando los beneficios del plan hasta terminar el periodo de suscripción. Luego cambiará al plan ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Cuando cancele, su suscripción no se iniciará, pero podrá seguir disfrutando de los beneficios del plan hasta el final del período de prueba. Después de eso, pasará al plan ${ BRAND_NAME } Free."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Al hacer clic en un enlace, esta función de anti suplantación le pedirá que confirme la URL de la página web."
@@ -17955,6 +17967,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Si cancela antes de esa fecha, será degradado a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando finalice la prueba. Si no cancela, su plan completo comenzará y obtendrá **${ referrerRewardAmount }** en créditos."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Si cancela, perderá su recompensa de **${ referrerRewardAmount }** créditos."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Si se suscribe antes de esta fecha, recibirá **${ referrerRewardAmount }** en créditos. Si no se suscribe, se le degradará a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -21762,8 +21777,8 @@
       "Connect organization": [
         "Conectar la organización"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Conéctese a ${ VPN_CONNECTIONS } dispositivos al mismo tiempo con ${ vpnPlus }. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Conéctese a ${ VPN_CONNECTIONS } dispositivos al mismo tiempo con ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Conéctese a la videoconferencia"
@@ -22229,9 +22244,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obtenga la aplicación en todos sus dispositivos y acceda de forma segura y sin interrupciones en cualquier lugar."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Obtenga la aplicación en todos sus dispositivos y proteja hasta ${ VPN_CONNECTIONS } al mismo tiempo."
       ],
       "Get the apps": [
         "Obtener las aplicaciones"
@@ -22788,6 +22800,9 @@
       ],
       "Start import process": [
         "Iniciar proceso de importación"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Empiece a proteger sus dispositivos con la aplicación ${ VPN_APP_NAME }."
       ],
       "State": [
         "Estado"
@@ -23694,17 +23709,17 @@
       "Advanced security for your company?": [
         "¿Seguridad avanzada para su compañía?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Todos los servicios premium de ${ BRAND_NAME }. Por solo ${ fallBackString } al mes."
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Todos los servicios premium de ${ BRAND_NAME }. Solo por **${ priceString }** más cada mes."
-      ],
       "Did you know?": [
         "¿Lo sabía?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obtenga ${ drivePlusPlanMaxSpace } de almacenamiento para sus archivos, fotos y documentos, y recupere versiones con una recuperación de archivos de 10 años."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Suite de privacidad con correo electrónico seguro, ${ VPN_SHORT_APP_NAME }, almacenamiento en la nube y gestor de contraseñas en un solo paquete. Desde solo ${ fallBackString } al mes"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Suite de privacidad con correo electrónico seguro, ${ VPN_SHORT_APP_NAME }, almacenamiento en la nube y gestor de contraseñas en un solo paquete. Solo **${ priceString }** más cada mes."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Proteja su organización de vulneraciones de datos con ${ PLAN_NAMES[plan] }."

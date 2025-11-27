@@ -538,6 +538,9 @@
       "Edit users": [
         "यूजर बदलें"
       ],
+      "Emoji": [
+        "इमोजी"
+      ],
       "enable desktop notifications": [
         "डेस्कटॉप सूचनाएं सक्षम करें"
       ],
@@ -16642,9 +16645,6 @@
       "Connect organization": [
         "संगठन कनेक्ट करें"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "एक साथ ${ VPN_CONNECTIONS } डिवाइस से कनेक्ट करें ${ vpnPlus } के साथ। ${ upgradeButton }"
-      ],
       "Connection status": [
         "कनेक्शन हालत"
       ],
@@ -17010,9 +17010,6 @@
       ],
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "अपने सभी डिवाइस पर ऐप प्राप्त करें और एक बार में ${ VPN_CONNECTIONS } तक सुरक्षा प्रदान करें।"
       ],
       "Get the apps": [
         "ऐप प्राप्त करें"
@@ -18232,12 +18229,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**${ priceString } तक बचत करें** एक लंबी सदस्यता के साथ। वही प्रीमियम खासियत, कम कीमत।"
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "सभी प्रीमियम ${ BRAND_NAME } सेवाएँ. केवल ${ fallBackString } प्रति माह से"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "सभी प्रीमियम ${ BRAND_NAME } सेवाएँ। प्रत्येक माह केवल **${ priceString }** अधिक।"
       ],
       "Did you know?": [
         "क्या आप जानते हैं?"

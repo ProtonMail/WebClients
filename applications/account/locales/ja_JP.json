@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "「${ label.Name }」を編集"
       ],
+      "Emoji": [
+        "絵文字"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "${ darkWebMonitoring } を有効にする"
       ],
@@ -7273,9 +7276,6 @@
       "Ad-blocker and malware protection": [
         "広告ブロックとマルウェア保護"
       ],
-      "All premium ${ BRAND_NAME } services": [
-        "すべてのプレミアム ${ BRAND_NAME } サービス"
-      ],
       "and more premium features...": [
         "そして更に、プレミアムな機能が..."
       ],
@@ -7934,9 +7934,6 @@
       ],
       "Enjoying ${ planName }?": [
         "${ planName } を楽しんでいますか？"
-      ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "あと **${ priceString }** で、さらに 4 つのプレミアムプライバシーサービスを毎月利用できます。"
       ],
       "Upgrade your privacy": [
         "プライバシーをアップグレード"
@@ -21479,9 +21476,6 @@
       "Connect organization": [
         "組織を接続"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "${ vpnPlus }なら一度に${ VPN_CONNECTIONS }台のデバイスに接続できます。 ${ upgradeButton }"
-      ],
       "Connect to video conferencing": [
         "ビデオ会議に接続"
       ],
@@ -21943,9 +21937,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "すべてのデバイスにアプリをインストールして、どこでも安全でシームレスなアクセスをお楽しみください。"
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "すべてのデバイスでアプリを入手し、一度に ${ VPN_CONNECTIONS } まで保護します。"
       ],
       "Get the apps": [
         "アプリを入手"
@@ -23403,12 +23394,6 @@
       ],
       "Advanced security for your company?": [
         "あなたの会社のための高度なセキュリティ？"
-      ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "全てのプレミアム ${ BRAND_NAME } サービス。毎月たった ${ fallBackString } から。"
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "全てのプレミアム ${ BRAND_NAME } サービス。毎月 **${ priceString }** のみ。"
       ],
       "Did you know?": [
         "知ってましたか？"

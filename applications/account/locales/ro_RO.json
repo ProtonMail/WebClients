@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Editare „${ label.Name }”"
       ],
+      "Emoji": [
+        "Emoticon"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Activare ${ darkWebMonitoring }"
       ],
@@ -2431,6 +2434,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Îmi poate vedea cineva istoricul de navigare pe internet dacă folosim același Wi-Fi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Conectați ${ VPN_CONNECTIONS } dispozitive simultan"
+      ],
       "Create and edit with confidence": [
         "Creați și editați cu încredere"
       ],
@@ -2544,6 +2550,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Navigarea pe un internet plin de brokeri de date, mesaje nedorite, escrocherii și programe malițioase devine din ce în ce mai dificilă. De aceea, ${ PASS_APP_NAME } merge mai departe în a vă ajuta să gestionați, să stocați și să vă autocompletați parolele. Vă oferim instrumentele pentru a vă prelua controlul asupra confidențialității și pentru a vă proteja adresele de e-mail cu aliasuri hide-my-email."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Protejați-vă toate dispozitivele de acasă în același timp cu ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Protejați-vă comunicațiile de afaceri"
@@ -5433,7 +5442,7 @@
         "Adăugare condiție"
       ],
       "Add forwarding rule": [
-        "Adăugare regulă de redirecționare"
+        "Adăugare regulă de transferare"
       ],
       "Back": [
         "Înapoi"
@@ -5535,7 +5544,7 @@
         "Va fi trimis un mesaj de confirmare pe adresa ${ boldForwardeeEmail }."
       ],
       "Automatically forward emails to another email address.": [
-        "Redirecționare automată mesaje spre altă adresă de e-mail."
+        "Transferare automată mesaje spre altă adresă de e-mail."
       ],
       "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Criptarea bilaterală a fost dezactivată pentru adresa ${ boldForwarderEmail }, dar criptarea cu acces zero rămâne activată. ${ learnMoreLink }"
@@ -7360,14 +7369,14 @@
       "15 GB storage": [
         "15 GiB spațiu de stocare"
       ],
+      "4 more privacy services": [
+        "4 servicii de confidențialitate în plus"
+      ],
       "@pm.me address": [
         "Adresa @pm.me"
       ],
       "Ad-blocker and malware protection": [
         "Protecție programe malițioase și blocare reclame"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Toate serviciile premium ${ BRAND_NAME }"
       ],
       "and more premium features...": [
         "și alte funcții premium..."
@@ -8044,8 +8053,8 @@
       "Enjoying ${ planName }?": [
         "Vă bucurați de ${ planName }?"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Deblocați încă patru servicii premium de confidențialitate cu doar **${ priceString }** lunar"
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Deblocați încă patru servicii premium de confidențialitate cu doar **${ priceString }** în plus lunar"
       ],
       "Upgrade your privacy": [
         "Îmbunătățiți-vă confidențialitatea"
@@ -11480,6 +11489,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, abonamentul nu va fi reînnoit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de abonament. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Dacă anulați, abonamentul nu va fi începe, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de probare. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Când faceți clic pe o legătură web, această funcție antiînșelăciune vă va cere să confirmați adresa URL a paginii web."
@@ -15495,7 +15507,7 @@
         "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
-        "Setați răspunsuri automate pentru a anunța expeditorii că nu puteți răspunde."
+        "Setați un răspuns automat pentru a anunța expeditorii că nu puteți răspunde."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Soluția VPN dedicată care oferă acces sigur, fără restricții, de mare viteză la Internet."
@@ -18170,6 +18182,9 @@
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Dacă anulați până atunci, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } atunci când perioada de probare se încheie. Dacă nu anulați, va începe planul complet și veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Dacă anulați, veți pierde recompensa în credite de **${ referrerRewardAmount }**."
       ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Dacă vă abonați înainte de această dată, veți primi **${ referrerRewardAmount }** în credite. Dacă nu vă abonați, contul va fi retrogradat la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -22060,8 +22075,8 @@
       "Connect organization": [
         "Conectare organizație"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Conectați-vă la ${ VPN_CONNECTIONS } dispozitive simultan cu ${ vpnPlus }. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Conectați-vă la ${ VPN_CONNECTIONS } dispozitive simultan cu ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Conectați-vă la conferințe video"
@@ -22530,9 +22545,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obțineți aplicația pe toate dispozitivele și bucurați-vă de o accesare sigură, fără întreruperi oriunde."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Luați aplicația pe toate dispozitivele și protejați până la ${ VPN_CONNECTIONS } dispozitive simultan."
       ],
       "Get the apps": [
         "Luați aplicațiile"
@@ -23090,6 +23102,9 @@
       ],
       "Start import process": [
         "Începere proces de importare"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Începeți să vă protejați dispozitivele cu aplicația ${ VPN_APP_NAME }."
       ],
       "State": [
         "Stat"
@@ -23999,17 +24014,17 @@
       "Advanced security for your company?": [
         "Securitate avansată pentru compania dvs.?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Toate serviciile ${ BRAND_NAME } premium. De la doar ${ fallBackString } lunar."
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Toate serviciile ${ BRAND_NAME } premium. Doar încă **${ priceString }** lunar."
-      ],
       "Did you know?": [
         "Știați că?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obțineți ${ drivePlusPlanMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale și recuperați fișierele cu versiuni de fișiere de până la 10 ani."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Suită de confidențialitate cu e-mail securizat, ${ VPN_SHORT_APP_NAME }, stocare în cloud și manager de parole într-un singur pachet. Doar cu ${ fallBackString } lunar."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Suită de confidențialitate cu e-mail securizat, ${ VPN_SHORT_APP_NAME }, stocare în cloud și manager de parole într-un singur pachet. Doar cu **${ priceString }** în plus în fiecare lună."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Protejați-vă organizația împotriva compromiterii datelor cu ${ PLAN_NAMES[plan] }."

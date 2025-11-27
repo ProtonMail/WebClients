@@ -660,6 +660,9 @@
       "Edit “${ label.Name }”": [
         "Edita «${ label.Name }»"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable ${ darkWebMonitoring }": [
         "Activa ${ darkWebMonitoring }"
       ],
@@ -2418,6 +2421,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Algú pot veure el meu historial d'internet si utilitzem el mateix wifi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Connecteu ${ VPN_CONNECTIONS } dispositius alhora"
+      ],
       "Create and edit with confidence": [
         "Creeu i editeu amb confiança"
       ],
@@ -2531,6 +2537,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Navegar per una internet plena de corredors de dades, correu brossa, estafes i programari maliciós és cada cop més difícil. És per això que ${ PASS_APP_NAME } va més enllà d'ajudar-vos a gestionar, emmagatzemar i emplenar automàticament les vostres contrasenyes. Us donem les eines per prendre el control de la vostra privacitat i protegir les vostres bústies d'entrada amb àlies hide-my-email."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Protegiu tots els vostres dispositius de la llar al mateix temps amb ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Protegiu les vostres comunicacions empresarials"
@@ -7315,14 +7324,14 @@
       "15 GB storage": [
         "15 GB d'emmagatzematge"
       ],
+      "4 more privacy services": [
+        "4 serveis més de privacitat"
+      ],
       "@pm.me address": [
         "Adreça @pm.me"
       ],
       "Ad-blocker and malware protection": [
         "Bloquejador d'anuncis i protecció contra programari maliciós"
-      ],
-      "All premium ${ BRAND_NAME } services": [
-        "Tots els serveis prèmium de ${ BRAND_NAME }"
       ],
       "and more premium features...": [
         "i més característiques prèmium."
@@ -7991,8 +8000,8 @@
       "Enjoying ${ planName }?": [
         "Esteu gaudint de ${ planName }?"
       ],
-      "Unlock 4 more premium privacy services for just **${ priceString }** more each month": [
-        "Desbloquegeu 4 serveis de privadesa prèmium més per només **${ priceString }** més al mes."
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Desbloquegeu 4 serveis de privacitat prèmium per només **${ priceString }** més al mes"
       ],
       "Upgrade your privacy": [
         "Milloreu la vostra privacitat"
@@ -11364,6 +11373,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quan cancel·leu, la vostra subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de subscripció. Després d'això, passarà al pla gratuït de ${ BRAND_NAME }."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Quan la cancel·leu, la vostra subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de subscripció. Després, passareu al pla gratuït de ${ BRAND_NAME }."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Quan cliqueu en un enllaç, aquesta característica antipesca us demanarà que confirmeu l'URL de la pàgina web."
@@ -17952,6 +17964,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Si cancel·leu abans, se us rebaixarà a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan acabi la prova. Si no cancel·leu, començarà el vostre pla complet i rebreu **${ referrerRewardAmount }** en crèdits."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Si la cancel·leu, perdreu la vostra recompensa de crèdit de **${ referrerRewardAmount }**."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Si us subscriviu abans d'aquesta data, rebreu **${ referrerRewardAmount }** en crèdits. Si no us subscriviu, se us rebaixarà a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -21762,8 +21777,8 @@
       "Connect organization": [
         "Connecta l'organització"
       ],
-      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlus }. ${ upgradeButton }": [
-        "Connecteu fins a ${ VPN_CONNECTIONS } dispositius alhora amb ${ vpnPlus }. ${ upgradeButton }"
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Connecteu fins a ${ VPN_CONNECTIONS } dispositius alhora amb ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Connecteu-vos a una videoconferència"
@@ -22229,9 +22244,6 @@
       ],
       "Get the app on all your devices and enjoy safe, seamless access anywhere.": [
         "Obtingueu l'aplicació a tots els vostres dispositius i gaudiu d'un accés segur i fluid des de qualsevol lloc."
-      ],
-      "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Obteniu l'aplicació a tots els vostres dispositius i protegiu-ne fins a ${ VPN_CONNECTIONS } alhora."
       ],
       "Get the apps": [
         "Aconseguiu les aplicacions"
@@ -22788,6 +22800,9 @@
       ],
       "Start import process": [
         "Iniciar el procés d'importació"
+      ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Comenceu a protegir els vostres dispositius amb l'aplicació ${ VPN_APP_NAME }."
       ],
       "State": [
         "Estat"
@@ -23694,17 +23709,17 @@
       "Advanced security for your company?": [
         "Voleu seguretat avançada per a la vostra empresa?"
       ],
-      "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
-        "Tots els serveis prèmium de ${ BRAND_NAME }. Des de només ${ fallBackString } al mes."
-      ],
-      "All premium ${ BRAND_NAME } services. Only **${ priceString }** more each month.": [
-        "Tots els serveis prèmium de ${ BRAND_NAME }. Només **${ priceString }** més al mes."
-      ],
       "Did you know?": [
         "Ho sabíeu?"
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Aconseguiu ${ drivePlusPlanMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents, i recupereu versions de fitxers amb una recuperació de fitxers de 10 anys."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Suite de privacitat amb correu electrònic segur, ${ VPN_SHORT_APP_NAME }, emmagatzematge al núvol i gestor de contrasenyes en un sol paquet. A partir de només ${ fallBackString } al mes"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Suite de privacitat amb correu electrònic segur, ${ VPN_SHORT_APP_NAME }, emmagatzematge al núvol i gestor de contrasenyes en un sol paquet. Només **${ priceString }** més cada mes."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Protegiu la vostra organització d'infraccions de dades amb ${ PLAN_NAMES[plan] }."
