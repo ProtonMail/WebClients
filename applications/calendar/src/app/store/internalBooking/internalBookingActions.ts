@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { c } from 'ttag';
 
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
@@ -71,10 +70,7 @@ export const loadBookingPage = createAsyncThunk<
             storePage?.verificationErrors.contentVerificationError ||
             slotVerification.failedToVerify
         ) {
-            thunkExtra.extra.notificationManager.createNotification({
-                text: c('Info').t`Could not verify signature over booking page data`,
-                type: 'error',
-            });
+            // TODO send data to sentry
         }
 
         const formattedSlots = BookingPage.Slots.map((slot) => ({

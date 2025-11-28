@@ -43,6 +43,7 @@ export const verifyBookingSlots = async ({
         shouldCheckSignatureVerificationStatus(verificationPreferences) &&
         results.some((res) => res.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID)
     ) {
+        // TODO send data to sentry
         failedToVerify = true;
     }
 

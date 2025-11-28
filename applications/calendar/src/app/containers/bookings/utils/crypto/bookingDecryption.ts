@@ -37,6 +37,7 @@ export const decryptAndVerifyBookingPageSecret = async ({
     ) {
         // eslint-disable-next-line no-console
         console.warn({ errors: decrypted.verificationErrors });
+        // TODO send data to sentry
         failedToVerify = true;
     }
 
@@ -115,6 +116,7 @@ export const decryptBookingContent = async ({
     ) {
         // eslint-disable-next-line no-console
         console.warn({ verificationErrors });
+        // TODO send data to sentry
         failedToVerify = true;
     }
 
