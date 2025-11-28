@@ -233,8 +233,15 @@ export const resolveCCFormFields = async (
     frames: AutofillableFrames,
     tabId: TabId,
     payload: AutofillActionDTO
-): Promise<Map<FrameId, FrameField[]>> => {
+): Promise<{ frameId: FrameId; fields: FrameField[] }[]> => {
     /** Get clusterable items for all autofillable frames */
     const clusters = await resolveFormClusters(tabId, Array.from(frames.keys()));
-    return clusterCCFormFields(frames, clusters, payload);
+    const clusteredFields = clusterCCFormFields(frames, clusters, payload);
+
+    /** Start from source frameId */
+    const fields = Array.from(clusteredFields.entries()).map(([frameId, fields]) => ({ frameId, fields }));
+    const startAt = fields.findIndex(({ frameId }) => frameId === payload.frameId);
+    if (startAt !== -1) return fields.slice(startAt).concat(fields.slice(0, startAt));
+
+    return fields;
 };
