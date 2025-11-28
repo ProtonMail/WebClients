@@ -264,21 +264,24 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const isIntersectingBookingRange = (start: Date, end: Date) => {
-        if (formData.recurring) {
-            return getIsRecurringBookingsIntersection({
-                start,
-                end,
-                bookingRanges: internalForm.bookingRanges,
-                intersectionRef,
-            });
+        if (intersectionRef.current) {
+            return true;
         }
 
-        return getIsBookingsIntersection({
-            start,
-            end,
-            bookingRanges: internalForm.bookingRanges,
-            intersectionRef,
-        });
+        const intersection = formData.recurring
+            ? getIsRecurringBookingsIntersection({
+                  start,
+                  end,
+                  bookingRanges: internalForm.bookingRanges,
+              })
+            : getIsBookingsIntersection({
+                  start,
+                  end,
+                  bookingRanges: internalForm.bookingRanges,
+              });
+
+        intersectionRef.current = intersection;
+        return !!intersection;
     };
 
     const submitForm = async () => {
