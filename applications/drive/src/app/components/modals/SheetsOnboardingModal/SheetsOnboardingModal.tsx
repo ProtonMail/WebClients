@@ -20,6 +20,11 @@ import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useDocumentActions } from '../../../store/_documents';
 import screenshot from './sheetsScreenshot.webp';
 
+// TODO: Once this modal is removed, remove BasePage.ts close of the modal
+// Search for:
+// await this.page.addLocatorHandler(this.sheetsOnboarding, async () => {
+//     await this.sheetsOnboarding.press('Escape');
+// });
 function SheetsOnboardingModal(modalProps: ModalProps) {
     const { activeFolder } = useActiveShare();
     const { createDocument } = useDocumentActions();
@@ -34,7 +39,7 @@ function SheetsOnboardingModal(modalProps: ModalProps) {
     };
 
     return (
-        <ModalTwo {...modalProps} size="xlarge">
+        <ModalTwo {...modalProps} size="xlarge" data-testid="drive-sheets-onboarding">
             <ModalTwoHeader />
             <ModalTwoContent>
                 <img src={screenshot} alt={c('Label').t`A screenshot of ${SHEETS_APP_NAME}`} />
