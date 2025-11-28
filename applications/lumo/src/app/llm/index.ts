@@ -1,5 +1,3 @@
-import type { User } from '@proton/shared/lib/interfaces';
-
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { createImageAttachment, generateImageMarkdown } from '../lib/imageAttachment';
