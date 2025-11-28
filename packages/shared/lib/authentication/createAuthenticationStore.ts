@@ -57,11 +57,12 @@ interface Arguments {
     store: {
         set: (key: string, value: any) => void;
         get: (key: string) => any;
+        flush: () => void;
     };
     onUID?: (UID: string | undefined) => void;
 }
 
-const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, get }, onUID }: Arguments) => {
+const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, get, flush }, onUID }: Arguments) => {
     const setUID = (UID: string | undefined) => {
         set(UID_KEY, UID);
         onUID?.(UID);
@@ -136,6 +137,8 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
             setLocalID(undefined);
             basename = undefined;
         }
+
+        flush();
     };
 
     const logout = () => {
@@ -147,6 +150,8 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
         setClientKey(undefined);
         setOfflineKey(undefined);
         basename = undefined;
+
+        flush();
     };
 
     return {
