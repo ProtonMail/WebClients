@@ -1,14 +1,10 @@
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcClock } from '@proton/icons/icons/IcClock';
-import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import { useBookingStore } from '../../booking.store';
@@ -27,7 +23,6 @@ export const BookingDetails = () => {
                 withProtonMeetLink: state.bookingDetails.withProtonMeetLink,
                 inviterDisplayName: state.bookingDetails.inviterDisplayName,
                 inviterEmail: state.bookingDetails.inviterEmail,
-                failedToVerify: state.failedToVerify,
             };
         })
     );
@@ -64,19 +59,6 @@ export const BookingDetails = () => {
                     <div className="flex-1">
                         <span className="flex flex-nowrap gap-2 items-center">
                             <h3 className="text-rg m-0 booking-color-title text-semibold">{c('Info').t`Host`}</h3>
-                            {bookingDetails.failedToVerify && (
-                                <Tooltip title={c('Info').t`Host signature verification failed`}>
-                                    <ButtonLike
-                                        as="a"
-                                        size="small"
-                                        shape="underline"
-                                        href={getKnowledgeBaseUrl('/sender-verification-failed')}
-                                        target="_blank"
-                                    >
-                                        <IcExclamationTriangleFilled className="color-warning" />
-                                    </ButtonLike>
-                                </Tooltip>
-                            )}
                         </span>
                         {bookingDetails.inviterDisplayName && (
                             <div className="text-ellipsis" title={bookingDetails.inviterDisplayName}>

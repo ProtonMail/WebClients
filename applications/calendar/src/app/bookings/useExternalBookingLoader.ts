@@ -199,6 +199,10 @@ export const useExternalBookingLoader = () => {
                         verificationPreferences,
                     });
 
+                if (failedToVerify) {
+                    // TODO send data to sentry
+                }
+
                 setBookingDetails({
                     calendarId: bookingPageData.CalendarID,
                     bookingUid: bookingPageData.BookingUID,
