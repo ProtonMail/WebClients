@@ -18,8 +18,8 @@ export const hasUserReachPlanLimit = (
         return true;
     }
 
-    // Users with no booking pages didn't reach any limit yet
-    if (!bookingsPages) {
+    // Users with no booking pages didn't reach any limit yet or if the user cannot pay
+    if (!bookingsPages || !user.canPay) {
         return false;
     }
 
