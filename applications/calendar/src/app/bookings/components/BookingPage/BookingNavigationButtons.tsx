@@ -21,15 +21,14 @@ export const BookingNavigationButtons = ({ gridSize, disabled }: Props) => {
 
     const isInEarliestRange = isBefore(addDays(startOfDay(selectedDate), -gridSize), startOfDay(new Date()));
 
-    // TODO improve with loaded slots caching
     const handleLoadPreviousPage = async () => {
         setSelectedDate(addDays(selectedDate, -gridSize));
 
         const newRangeStart = addDays(selectedDate, -gridSize);
-        await loadPublicBooking(newRangeStart, selectedDate);
+        const newRangeEnd = addDays(selectedDate, -1);
+        await loadPublicBooking(newRangeStart, newRangeEnd);
     };
 
-    // TODO improve with loaded slots caching
     const handleLoadNextPage = async () => {
         setSelectedDate(addDays(selectedDate, gridSize));
 
