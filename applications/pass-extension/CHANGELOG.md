@@ -1,3 +1,8 @@
+### Version 1.33.1
+
+- Fix clipboard action discarded when accepting permissions for the first time
+- Improve automatic clipboard clearing support
+
 ### Version 1.33.0
 
 - Enable automatic clipboard clearing
