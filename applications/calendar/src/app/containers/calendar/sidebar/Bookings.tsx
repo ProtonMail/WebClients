@@ -50,7 +50,11 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
         if (userReachedBookingLimit.booking) {
             setLimitModalOpen(true);
         } else if (userReachedBookingLimit.plan) {
-            setUpsellModalOpen(true);
+            if (user.canPay) {
+                setUpsellModalOpen(true);
+            } else {
+                setLimitModalOpen(true);
+            }
         } else {
             openBookingSidebarCreation(utcDate);
         }

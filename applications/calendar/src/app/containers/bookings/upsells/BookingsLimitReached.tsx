@@ -1,10 +1,13 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 
 export const BookingsLimitReached = ({ ...modalProps }: ModalStateProps) => {
+    const [user] = useUser();
+
     return (
         <Prompt
             title={c('Title').t`Cannot create more Booking pages`}
@@ -13,8 +16,13 @@ export const BookingsLimitReached = ({ ...modalProps }: ModalStateProps) => {
         >
             <p className="m-0 mb-2">{c('Info')
                 .t`You've reached the maximum number of booking pages available in your plan.`}</p>
-            <p className="m-0">{c('Info')
-                .t`To add a new booking page, remove an existing one from the Booking pages sidebar.`}</p>
+            {user.canPay ? (
+                <p className="m-0">{c('Info')
+                    .t`To add a new booking page, remove an existing one from the Booking pages sidebar.`}</p>
+            ) : (
+                <p className="m-0">{c('Info')
+                    .t`Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.`}</p>
+            )}
         </Prompt>
     );
 };
