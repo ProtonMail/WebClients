@@ -94,17 +94,16 @@ export const useExternalBookingLoader = () => {
                 throw new Error(c('Error').t`No booking page data received`);
             }
 
-            let verifyingKeys = undefined;
+            let verificationPreferences = null;
 
             try {
                 // This will throw if the user is a guest
                 const user = await getUser();
                 if (user) {
-                    const { verifyingKeys: tmpVerifyingKeys } = await getVerificationPreferences({
-                        email: user.Email,
+                    verificationPreferences = await getVerificationPreferences({
+                        email: bookingPageData.Email,
                         lifetime: 0,
                     });
-                    verifyingKeys = tmpVerifyingKeys && tmpVerifyingKeys.length > 0 ? tmpVerifyingKeys : undefined;
                 }
             } catch (e) {}
 
@@ -114,7 +113,7 @@ export const useExternalBookingLoader = () => {
                 bookingKeySalt: bookingPageData.BookingKeySalt,
                 calendarId: bookingPageData.CalendarID,
                 bookingUid: bookingPageData.BookingUID,
-                verificationKeys: verifyingKeys,
+                verificationPreferences,
             });
 
             setBookingDetails({

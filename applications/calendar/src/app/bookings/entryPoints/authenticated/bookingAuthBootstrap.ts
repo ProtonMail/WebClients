@@ -9,8 +9,10 @@ import {
     loadSession,
     unleashReady,
 } from '@proton/account/bootstrap';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { initMainHost } from '@proton/cross-storage/lib';
+import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
 import createApi from '@proton/shared/lib/api/createApi';
 import { requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
@@ -74,6 +76,8 @@ export const bookingAuthBootstrap = async (): Promise<BookingBootstrapResult | '
             preloadedState: persistedState?.state,
         });
 
+        await store.dispatch(mailSettingsThunk());
+        store.dispatch(bootstrapEvent({ type: 'complete' }));
         return {
             store,
         };
