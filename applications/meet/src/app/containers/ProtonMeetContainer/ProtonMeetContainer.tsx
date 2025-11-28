@@ -71,6 +71,7 @@ export const ProtonMeetContainer = ({
     const dispatch = useMeetDispatch();
 
     const promptOnTabClose = useFlag('MeetPromptOnTabClose');
+    const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
 
     useWakeLock();
 
@@ -622,6 +623,15 @@ export const ProtonMeetContainer = ({
     }, []);
 
     const prepareUpsell = () => {
+        if (!showUpsellModalAfterMeeting) {
+            if (guestMode) {
+                history.push(meetingLinkRef.current as string);
+            } else {
+                history.push('/dashboard');
+            }
+            return;
+        }
+
         dispatch(setPreviousMeetingLink(meetingLinkRef.current));
 
         if (guestMode) {

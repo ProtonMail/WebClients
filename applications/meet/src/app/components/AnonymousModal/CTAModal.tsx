@@ -6,6 +6,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { CALENDAR_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
+import useFlag from '@proton/unleash/useFlag';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { UpsellModalTypes } from '../../types';
@@ -20,6 +21,7 @@ interface CTAModalProps {
 }
 
 export const CTAModal = ({ onClose, ctaModalType, rejoin, action }: CTAModalProps) => {
+    const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const titles = {
         [UpsellModalTypes.Schedule]: c('Info').t`Schedule your next meeting`,
         [UpsellModalTypes.PersonalMeeting]: c('Info').t`Get your personal meeting ID`,
@@ -59,6 +61,10 @@ export const CTAModal = ({ onClose, ctaModalType, rejoin, action }: CTAModalProp
             {actionText[ctaModalType]}
         </Button>
     );
+
+    if (!showUpsellModalAfterMeeting) {
+        return null;
+    }
 
     return (
         <ModalTwo open={true} rootClassName="bg-transparent anonymous-modal" className="meet-radius border border-norm">
