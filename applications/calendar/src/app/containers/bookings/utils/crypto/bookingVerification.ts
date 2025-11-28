@@ -44,8 +44,6 @@ export const verifyBookingSlots = async ({
         shouldCheckSignatureVerificationStatus(verificationPreferences) &&
         results.some((res) => res.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID)
     ) {
-        // eslint-disable-next-line no-console
-        console.warn('Error verifying booking slots');
         traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
             type: 'bookingSlots',
             verificationStatusArray: results.map(({ verificationStatus }) => verificationStatus),
