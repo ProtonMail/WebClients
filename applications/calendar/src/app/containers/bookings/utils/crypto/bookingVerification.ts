@@ -1,5 +1,6 @@
 import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 
 import type { APISlot } from '../../bookingsTypes';
@@ -8,11 +9,11 @@ import { bookingSlotSignatureContextValue } from './cryptoHelpers';
 
 export const verifyBookingSlots = async ({
     bookingSlots,
-    bookingID,
+    bookingUID,
     verificationPreferences,
 }: {
     bookingSlots: APISlot[];
-    bookingID: string;
+    bookingUID: string;
     verificationPreferences: VerificationPreferences;
 }) => {
     const slotsArray = [];
@@ -30,7 +31,7 @@ export const verifyBookingSlots = async ({
                 verificationKeys: verificationPreferences.verifyingKeys,
                 signatureContext:
                     verificationPreferences && verificationPreferences.verifyingKeys.length > 0
-                        ? { value: bookingSlotSignatureContextValue(bookingID), required: true }
+                        ? { value: bookingSlotSignatureContextValue(bookingUID), required: true }
                         : undefined,
             })
         );
@@ -43,7 +44,13 @@ export const verifyBookingSlots = async ({
         shouldCheckSignatureVerificationStatus(verificationPreferences) &&
         results.some((res) => res.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID)
     ) {
-        // TODO send data to sentry
+        // eslint-disable-next-line no-console
+        console.warn('Error verifying booking slots');
+        traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
+            verificationStatusArray: results.map(({ verificationStatus }) => verificationStatus),
+            bookingUID,
+        });
+
         failedToVerify = true;
     }
 

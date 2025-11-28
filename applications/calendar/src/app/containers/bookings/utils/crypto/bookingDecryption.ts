@@ -1,17 +1,20 @@
 import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto/lib';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 
 import { deriveBookingKeyPassword } from './bookingEncryption';
 import { bookingContentSignatureContextValue, bookingSecretSignatureContextValue } from './cryptoHelpers';
 
 export const decryptAndVerifyBookingPageSecret = async ({
+    bookingUID,
     encryptedSecret,
     selectedCalendar,
     decryptionKeys,
     verificationPreferences,
 }: {
+    bookingUID: string;
     encryptedSecret: string;
     selectedCalendar: string;
     decryptionKeys: PrivateKeyReference[];
@@ -37,7 +40,11 @@ export const decryptAndVerifyBookingPageSecret = async ({
     ) {
         // eslint-disable-next-line no-console
         console.warn({ errors: decrypted.verificationErrors });
-        // TODO send data to sentry
+        traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
+            verificationErrors: decrypted.verificationErrors,
+            bookingUID,
+        });
+
         failedToVerify = true;
     }
 
@@ -116,7 +123,11 @@ export const decryptBookingContent = async ({
     ) {
         // eslint-disable-next-line no-console
         console.warn({ verificationErrors });
-        // TODO send data to sentry
+        traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
+            verificationErrors,
+            bookingUID: bookingUid,
+        });
+
         failedToVerify = true;
     }
 

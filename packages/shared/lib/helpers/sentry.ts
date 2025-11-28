@@ -345,6 +345,7 @@ export enum SentryCommonInitiatives {
 
 export enum SentryCalendarInitiatives {
     RSVP_NOTE = 'rsvp-note',
+    BOOKINGS = 'bookings',
 }
 
 export type SentryInitiative =
