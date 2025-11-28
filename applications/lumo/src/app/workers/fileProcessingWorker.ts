@@ -242,6 +242,23 @@ async function processFile(fileData: FileProcessingRequest['file'], isLumoPaid: 
                 };
             }
 
+            case 'image/jpeg':
+            case 'image/jpg':
+            case 'image/png':
+            case 'image/gif':
+            case 'image/webp':
+            case 'image/heic':
+            case 'image/heif': {
+                // Images don't need text conversion - binary data will be sent as WireImage
+                console.log(`Processing image file: ${fileData.name} (${fileData.type})`);
+                return {
+                    originalContent: `[Binary ${fileData.type} image]`,
+                    convertedContent: '', // No markdown for images
+                    originalSize: fileData.size,
+                    convertedSize: 0,
+                };
+            }
+
             default: {
                 // Check if this file should be processed as plain text (JSON, JS, etc.)
                 if (shouldProcessAsPlainText(fileData.type)) {

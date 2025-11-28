@@ -7,6 +7,7 @@ import {
     generateRequestId,
     generateRequestKey,
     prepareEncryptedRequestKey,
+    uint8ArrayToBase64String,
 } from './encryption';
 import { callEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
@@ -30,8 +31,6 @@ import type {
     Status,
     Turn,
 } from './types';
-
-// Default configuration
 
 // Default configuration
 const DEFAULT_CONFIG: Required<LumoApiClientConfig> = {
