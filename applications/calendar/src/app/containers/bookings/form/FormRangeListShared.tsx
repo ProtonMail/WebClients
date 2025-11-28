@@ -46,11 +46,14 @@ export const StartTimeInput = ({ id, range, duration, onChange, className }: Inp
 };
 
 export const EndTimeInput = ({ id, range, duration, onChange, className }: InputTimeProps) => {
+    // When changing timezone users could end up in range that spreads across two days
+    const isRangeInTwoDays = range.end.getDate() - range.start.getDate() === 1;
+
     return (
         <TimeInput
             id={id}
             value={range.end}
-            min={addMinutes(range.start, duration)}
+            min={isRangeInTwoDays ? startOfDay(range.end) : addMinutes(range.start, duration)}
             onChange={onChange}
             className={className}
             error={range?.error === BookingRangeError.TOO_SHORT}
