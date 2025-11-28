@@ -30,7 +30,7 @@ const legacyClipboardWrite = (content: string) => {
 const MessageBroker = createMessageBroker({
     allowExternal: [],
     strictOriginCheck: [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ, WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE],
-    onAccept: (message) => message.sender === 'background',
+    onAccept: (message) => message.sender === 'background' && message.receiver === 'offscreen',
     onDisconnect: () => logger.debug('Offscreen broker disconnect'),
     onError: () => logger.error('Offscreen broker error'),
 });
