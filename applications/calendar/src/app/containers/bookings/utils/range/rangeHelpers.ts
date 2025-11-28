@@ -198,7 +198,10 @@ export const convertBookingRangesToCalendarViewEvents = (
                 milliseconds: range.start.getMilliseconds(),
             });
 
-            const adjustedEndLocal = set(targetDay, {
+            // When editing a booking range, users could have changed the timezone and the range is in two days
+            // This ensure that we add one day if this is the case
+            const endTargetDay = addDays(targetDay, range.end.getDate() - range.start.getDate());
+            const adjustedEndLocal = set(endTargetDay, {
                 hours: range.end.getHours(),
                 minutes: range.end.getMinutes(),
                 seconds: range.end.getSeconds(),
