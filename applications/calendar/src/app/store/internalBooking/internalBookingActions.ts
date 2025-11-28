@@ -57,21 +57,9 @@ export const loadBookingPage = createAsyncThunk<
 
         const slotVerification = await verifyBookingSlots({
             bookingSlots: BookingPage.Slots,
-            bookingID: BookingPage.BookingUID,
+            bookingUID: BookingPage.BookingUID,
             verificationPreferences,
         });
-
-        const storePage = thunkExtra
-            .getState()
-            .internalBookings.value?.bookingPages.find((booking) => booking.id === BookingPage.ID);
-
-        if (
-            storePage?.verificationErrors.secretVerificationError ||
-            storePage?.verificationErrors.contentVerificationError ||
-            slotVerification.failedToVerify
-        ) {
-            // TODO send data to sentry
-        }
 
         const formattedSlots = BookingPage.Slots.map((slot) => ({
             start: slot.StartTime,
@@ -184,6 +172,7 @@ export const editBookingPage = createAsyncThunk<
         ]);
 
         const decryptedSecret = await decryptAndVerifyBookingPageSecret({
+            bookingUID: bookingPage.bookingUID,
             encryptedSecret: editData.encryptedSecret,
             selectedCalendar: calData.calendar.ID,
             decryptionKeys,
