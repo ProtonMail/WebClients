@@ -1,26 +1,28 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto/lib';
+import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto/lib';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
 
 import { deriveBookingKeyPassword } from './bookingEncryption';
 import { bookingContentSignatureContextValue, bookingSecretSignatureContextValue } from './cryptoHelpers';
 
-export const decryptBookingPageSecrets = async ({
+export const decryptAndVerifyBookingPageSecret = async ({
     encryptedSecret,
     selectedCalendar,
     decryptionKeys,
-    verifyingKeys,
+    verificationPreferences,
 }: {
     encryptedSecret: string;
     selectedCalendar: string;
     decryptionKeys: PrivateKeyReference[];
-    verifyingKeys?: PublicKeyReference[];
+    verificationPreferences: VerificationPreferences | null;
 }): Promise<{ data: Uint8Array<ArrayBuffer>; failedToVerify: boolean }> => {
     const decrypted = await CryptoProxy.decryptMessage({
         binaryMessage: Uint8Array.fromBase64(encryptedSecret),
         decryptionKeys,
-        verificationKeys: verifyingKeys,
+        verificationKeys: verificationPreferences?.verifyingKeys,
         signatureContext:
-            verifyingKeys && verifyingKeys.length > 0
+            verificationPreferences && verificationPreferences.verifyingKeys.length > 0
                 ? { value: bookingSecretSignatureContextValue(selectedCalendar), required: true }
                 : undefined,
         format: 'binary',
@@ -29,8 +31,8 @@ export const decryptBookingPageSecrets = async ({
     let failedToVerify = false;
 
     if (
-        verifyingKeys &&
-        verifyingKeys.length > 0 &&
+        verificationPreferences &&
+        shouldCheckSignatureVerificationStatus(verificationPreferences) &&
         decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
     ) {
         // eslint-disable-next-line no-console
@@ -73,14 +75,14 @@ export const decryptBookingContent = async ({
     bookingKeySalt,
     calendarId,
     bookingUid,
-    verificationKeys,
+    verificationPreferences,
 }: {
     encryptedContent: string;
     bookingSecretBytes: Uint8Array<ArrayBuffer>;
     bookingKeySalt: string;
     calendarId: string;
     bookingUid: string;
-    verificationKeys?: PublicKeyReference[];
+    verificationPreferences: VerificationPreferences | null;
 }): Promise<{
     summary: string;
     description: string;
@@ -98,17 +100,17 @@ export const decryptBookingContent = async ({
     } = await CryptoProxy.decryptMessage({
         binaryMessage: Uint8Array.fromBase64(encryptedContent),
         passwords: [bookingKeyPassword],
-        verificationKeys,
+        verificationKeys: verificationPreferences?.verifyingKeys,
         signatureContext:
-            verificationKeys && verificationKeys?.length > 0
+            verificationPreferences && verificationPreferences.verifyingKeys.length > 0
                 ? { required: true, value: bookingContentSignatureContextValue(bookingUid) }
                 : undefined,
     });
 
     let failedToVerify = false;
     if (
-        verificationKeys &&
-        verificationKeys.length > 0 &&
+        verificationPreferences &&
+        shouldCheckSignatureVerificationStatus(verificationPreferences) &&
         verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
     ) {
         // eslint-disable-next-line no-console

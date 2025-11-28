@@ -1,5 +1,11 @@
 import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';
 
+export interface VerificationError {
+    secretVerificationError: boolean;
+    slotVerificationError: boolean;
+    contentVerificationError: boolean;
+}
+
 export interface InternalBookingPage {
     id: string;
     bookingUID: string;
@@ -9,6 +15,7 @@ export interface InternalBookingPage {
     location?: string;
     withProtonMeetLink: boolean;
     link: string;
+    verificationErrors: VerificationError;
 }
 
 export interface EditSlotData {
