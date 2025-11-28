@@ -9,7 +9,6 @@ import type { KtState } from '@proton/account/kt';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
 import type { CalendarsState } from '@proton/calendar/calendars';
 import { calendarsThunk } from '@proton/calendar/calendars';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
@@ -17,8 +16,10 @@ import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/c
 
 import { BookingLocation } from '../../containers/bookings/bookingsProvider/interface';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
-import { decryptBookingContent } from '../../containers/bookings/utils/crypto/bookingDecryption';
-import { bookingSecretSignatureContextValue } from '../../containers/bookings/utils/crypto/cryptoHelpers';
+import {
+    decryptAndVerifyBookingPageSecret,
+    decryptBookingContent,
+} from '../../containers/bookings/utils/crypto/bookingDecryption';
 import type { InternalBookingPage, InternalBookingPageSliceInterface } from './interface';
 import { createNewBookingPage, editBookingPage, loadBookingPage } from './internalBookingActions';
 
@@ -53,35 +54,26 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                     continue;
                 }
 
-                const [{ decryptionKeys }, { verifyingKeys }] = await Promise.all([
+                const [{ decryptionKeys }, verificationPreferences] = await Promise.all([
                     dispatch(
                         getAddressKeysByUsageThunk({
                             AddressID: calData.ownerAddress.AddressID,
-                            withV6SupportForEncryption: true,
+                            withV6SupportForEncryption: false,
                             withV6SupportForSigning: false,
                         })
                     ),
                     dispatch(getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })),
                 ]);
                 try {
-                    const decrypted = await CryptoProxy.decryptMessage({
-                        binaryMessage: Uint8Array.fromBase64(bookingPage.EncryptedSecret),
+                    const decrypted = await decryptAndVerifyBookingPageSecret({
+                        encryptedSecret: bookingPage.EncryptedSecret,
+                        selectedCalendar: bookingPage.CalendarID,
                         decryptionKeys,
-                        verificationKeys: verifyingKeys,
-                        signatureContext:
-                            verifyingKeys?.length > 0
-                                ? { value: bookingSecretSignatureContextValue(calData.calendar.ID), required: true }
-                                : undefined,
-                        format: 'binary',
+                        verificationPreferences,
                     });
 
-                    if (
-                        verifyingKeys &&
-                        verifyingKeys.length > 0 &&
-                        decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
-                    ) {
-                        // eslint-disable-next-line no-console
-                        console.warn({ errors: decrypted.verificationErrors });
+                    if (!decrypted) {
+                        continue;
                     }
 
                     // This decrypts and verify the content of the page
@@ -91,7 +83,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                         bookingKeySalt: bookingPage.BookingKeySalt,
                         calendarId: bookingPage.CalendarID,
                         bookingUid: bookingPage.BookingUID,
-                        verificationKeys: verifyingKeys,
+                        verificationPreferences,
                     });
 
                     pagesArray.push({
@@ -100,6 +92,11 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                         calendarID: bookingPage.CalendarID,
                         bookingUID: bookingPage.BookingUID,
                         link: `${window.location.origin}/bookings#${decrypted.data.toBase64({ alphabet: 'base64url' })}`,
+                        verificationErrors: {
+                            secretVerificationError: decrypted.failedToVerify,
+                            slotVerificationError: false,
+                            contentVerificationError: data.failedToVerify,
+                        },
                     });
                     // We want to continue if decrypting one page fails
                 } catch (e) {
@@ -152,7 +149,23 @@ const slice = createSlice({
                 return;
             }
 
-            state.value.bookingPageEditData = payload;
+            // We update the stored booking pages to keep the verification errors
+            state.value.bookingPages = state.value.bookingPages.map((page) => {
+                if (page.id === bookingPage.id) {
+                    return {
+                        ...page,
+                        verificationErrors: {
+                            ...page.verificationErrors,
+                            slotVerificationError: payload.verificationErrors.slotVerificationError,
+                        },
+                    };
+                }
+                return page;
+            });
+
+            state.value.bookingPageEditData = {
+                ...payload,
+            };
         });
 
         builder.addCase(createNewBookingPage.fulfilled, (state, { payload }) => {
@@ -169,6 +182,11 @@ const slice = createSlice({
                 location: payload.initialBookingPage.location,
                 withProtonMeetLink: payload.initialBookingPage.locationType === BookingLocation.MEET,
                 link: payload.bookingLink,
+                verificationErrors: {
+                    secretVerificationError: false,
+                    slotVerificationError: false,
+                    contentVerificationError: false,
+                },
             };
             state.value.bookingPages = [...state.value.bookingPages, newBookingPage];
         });
@@ -192,6 +210,11 @@ const slice = createSlice({
                 location: payload.initialBookingPage.location,
                 withProtonMeetLink: payload.initialBookingPage.locationType === BookingLocation.MEET,
                 link: currentBookingPage.link,
+                verificationErrors: {
+                    secretVerificationError: false,
+                    slotVerificationError: false,
+                    contentVerificationError: false,
+                },
             };
 
             state.value.bookingPages = state.value.bookingPages.map((page) =>

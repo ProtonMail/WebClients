@@ -8,53 +8,98 @@ import { createBookingPage, getBookingPageDetails, updateBookingPage } from '@pr
 
 import type { APIBooking, SerializedFormData } from '../../containers/bookings/bookingsTypes';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
-import { decryptBookingPageSecrets } from '../../containers/bookings/utils/crypto/bookingDecryption';
+import { decryptAndVerifyBookingPageSecret } from '../../containers/bookings/utils/crypto/bookingDecryption';
 import {
     encryptBookingPage,
     encryptBookingPageEdition,
 } from '../../containers/bookings/utils/crypto/bookingEncryption';
+import { verifyBookingSlots } from '../../containers/bookings/utils/crypto/bookingVerification';
 import type { CalendarThunkExtra } from '../store';
-import type { BookingPageCreationReturn, BookingPageEditData, BookingPageEditionReturn } from './interface';
+import type {
+    BookingPageCreationReturn,
+    BookingPageEditData,
+    BookingPageEditionReturn,
+    VerificationError,
+} from './interface';
 
-export const loadBookingPage = createAsyncThunk<BookingPageEditData, string, CalendarThunkExtra>(
-    'internalBookings/loadPage',
-    async (payload, thunkExtra) => {
-        if (!thunkExtra.extra.unleashClient.isEnabled('EditCalendarBookings')) {
-            return {
-                slots: [],
-                bookingId: payload,
-                encryptedSecret: '',
-                encryptedContent: '',
-                bookingKeySalt: '',
-            };
-        }
+export const loadBookingPage = createAsyncThunk<
+    Omit<BookingPageEditData, 'verificationErrors'> & {
+        verificationErrors: Omit<VerificationError, 'secretVerificationError' | 'contentVerificationError'>;
+    },
+    string,
+    CalendarThunkExtra
+>('internalBookings/loadPage', async (payload, thunkExtra) => {
+    const emptyReturn = {
+        slots: [],
+        bookingId: payload,
+        encryptedSecret: '',
+        encryptedContent: '',
+        bookingKeySalt: '',
+        verificationErrors: {
+            slotVerificationError: false,
+        },
+    };
 
-        try {
-            const { BookingPage } = await thunkExtra.extra.api<{ BookingPage: APIBooking }>(
-                getBookingPageDetails(payload)
-            );
-
-            const formattedSlots = BookingPage.Slots.map((slot) => ({
-                start: slot.StartTime,
-                end: slot.EndTime,
-                timezone: slot.Timezone,
-                rrule: slot.RRule,
-            }));
-
-            return {
-                slots: formattedSlots,
-                bookingId: BookingPage.ID,
-                encryptedSecret: BookingPage.EncryptedSecret,
-                encryptedContent: BookingPage.EncryptedContent,
-                bookingKeySalt: BookingPage.BookingKeySalt,
-            };
-        } catch (e) {
-            // eslint-disable-next-line no-console
-            console.warn(e);
-            throw e;
-        }
+    if (!thunkExtra.extra.unleashClient.isEnabled('EditCalendarBookings')) {
+        return emptyReturn;
     }
-);
+
+    try {
+        const { BookingPage } = await thunkExtra.extra.api<{ BookingPage: APIBooking }>(getBookingPageDetails(payload));
+
+        const calData = getCalendarAndOwner(BookingPage.CalendarID, thunkExtra.getState().calendars.value);
+        if (!calData) {
+            return emptyReturn;
+        }
+
+        const verificationPreferences = await thunkExtra.dispatch(
+            getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })
+        );
+
+        const slotVerification = await verifyBookingSlots({
+            bookingSlots: BookingPage.Slots,
+            bookingID: BookingPage.BookingUID,
+            verificationPreferences,
+        });
+
+        const storePage = thunkExtra
+            .getState()
+            .internalBookings.value?.bookingPages.find((booking) => booking.id === BookingPage.ID);
+
+        if (
+            storePage?.verificationErrors.secretVerificationError ||
+            storePage?.verificationErrors.contentVerificationError ||
+            slotVerification.failedToVerify
+        ) {
+            thunkExtra.extra.notificationManager.createNotification({
+                text: c('Info').t`Could not verify signature over booking page data`,
+                type: 'error',
+            });
+        }
+
+        const formattedSlots = BookingPage.Slots.map((slot) => ({
+            start: slot.StartTime,
+            end: slot.EndTime,
+            timezone: slot.Timezone,
+            rrule: slot.RRule,
+        }));
+
+        return {
+            slots: formattedSlots,
+            bookingId: BookingPage.ID,
+            encryptedSecret: BookingPage.EncryptedSecret,
+            encryptedContent: BookingPage.EncryptedContent,
+            bookingKeySalt: BookingPage.BookingKeySalt,
+            verificationErrors: {
+                slotVerificationError: slotVerification.failedToVerify,
+            },
+        };
+    } catch (e) {
+        // eslint-disable-next-line no-console
+        console.warn(e);
+        throw e;
+    }
+});
 
 export const createNewBookingPage = createAsyncThunk<
     BookingPageCreationReturn | undefined,
@@ -79,7 +124,7 @@ export const createNewBookingPage = createAsyncThunk<
         thunkExtra.dispatch(
             getAddressKeysByUsageThunk({
                 AddressID: calData.ownerAddress.AddressID,
-                withV6SupportForEncryption: true,
+                withV6SupportForEncryption: false,
                 withV6SupportForSigning: false,
             })
         ),
@@ -118,7 +163,11 @@ export const editBookingPage = createAsyncThunk<
 
     try {
         const editData = thunkExtra.getState().internalBookings.value?.bookingPageEditData;
-        if (!editData) {
+        const bookingPage = thunkExtra
+            .getState()
+            .internalBookings.value?.bookingPages.find((page) => page.bookingUID === editData?.bookingId);
+
+        if (!editData || !bookingPage) {
             throw new Error('No booking page edit data found');
         }
 
@@ -127,44 +176,45 @@ export const editBookingPage = createAsyncThunk<
             return;
         }
 
-        const [{ decryptionKeys, signingKeys }, { verifyingKeys }, { decryptedCalendarKeys }] = await Promise.all([
+        const [{ decryptionKeys, encryptionKey, signingKeys }, { decryptedCalendarKeys }] = await Promise.all([
             thunkExtra.dispatch(
                 getAddressKeysByUsageThunk({
                     AddressID: calData.ownerAddress.AddressID,
-                    withV6SupportForEncryption: true,
+                    withV6SupportForEncryption: false,
                     withV6SupportForSigning: false,
                 })
             ),
-            thunkExtra.dispatch(getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })),
             thunkExtra.dispatch(getDecryptedPassphraseAndCalendarKeysThunk({ calendarID: calData.calendar.ID })),
         ]);
 
-        const { data, failedToVerify } = await decryptBookingPageSecrets({
+        const decryptedSecret = await decryptAndVerifyBookingPageSecret({
             encryptedSecret: editData.encryptedSecret,
             selectedCalendar: calData.calendar.ID,
             decryptionKeys,
-            verifyingKeys,
+            // We skip verification here as it was already done and is stored in the booking page
+            verificationPreferences: null,
         });
 
-        if (failedToVerify) {
-            thunkExtra.extra.notificationManager.createNotification({
-                text: c('Info').t`Could not verify signature over booking page data`,
-                type: 'error',
-            });
-        }
-
-        const { EncryptedContent, Slots } = await encryptBookingPageEdition({
+        const {
+            EncryptedContent,
+            EncryptedSecret: NewEncryptedSecret,
+            Slots,
+        } = await encryptBookingPageEdition({
             editData,
             calendarID: calData.calendar.ID,
             updateData: payload,
             signingKeys,
-            decryptedSecret: data,
+            encryptionKey,
+            decryptedSecret: decryptedSecret.data,
             calendarKeys: decryptedCalendarKeys,
         });
 
         const response = await thunkExtra.extra.api<{ BookingPage: APIBooking }>(
             updateBookingPage(editData.bookingId, {
                 EncryptedContent,
+                EncryptedSecret: bookingPage.verificationErrors.secretVerificationError
+                    ? NewEncryptedSecret
+                    : editData.encryptedSecret,
                 Slots,
             })
         );

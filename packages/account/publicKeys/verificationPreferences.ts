@@ -156,3 +156,15 @@ export const getVerificationPreferencesThunk = ({
         return getPromiseValue(cache, canonicalEmail, miss, lifetime);
     };
 };
+
+/**
+ * When verifying signatures using `verificationPreferences.verifyingKeys`,
+ * if those keys are missing, it does not mean the verification can be skipped:
+ * if pinned keys are present, but are all marked as compromised, they won't be
+ * returned as `verifyingKeys`.
+ *
+ * This function helps determine whether the signature verification status should be checked,
+ * based on the verification preferences.
+ */
+export const shouldCheckSignatureVerificationStatus = (verificationPreferences: VerificationPreferences) =>
+    verificationPreferences.pinnedKeys.length > 0 || verificationPreferences.verifyingKeys.length > 0;
