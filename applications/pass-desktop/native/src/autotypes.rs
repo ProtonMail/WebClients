@@ -16,9 +16,18 @@ pub struct Autotype {
 
 impl Autotype {
     pub fn new() -> Result<Self, Error> {
-        Ok(Self {
-            enigo: Enigo::new(&Settings::default())?,
-        })
+        use std::panic;
+
+        // On Linux, Enigo with libei feature will panic if user denies OS permission prompt
+        let result = panic::catch_unwind(|| Enigo::new(&Settings::default()));
+
+        match result {
+            Ok(Ok(enigo)) => Ok(Self { enigo }),
+            Ok(Err(e)) => Err(e.into()),
+            Err(_) => Err(anyhow::anyhow!(
+                "Failed to initialize autotype. Please make sure to accept the system permission prompt"
+            )),
+        }
     }
 
     #[cfg_attr(target_os = "linux", allow(dead_code))]
