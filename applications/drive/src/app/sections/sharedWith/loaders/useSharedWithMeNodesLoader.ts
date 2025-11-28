@@ -14,7 +14,7 @@ import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 
 export const useSharedWithMeNodesLoader = () => {
-    const { drive } = useDrive();
+    const { drive, photos } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
     const { setVolumeShareIds } = useVolumesState();
@@ -104,6 +104,73 @@ export const useSharedWithMeNodesLoader = () => {
                     }
                 }
 
+                // TODO: Quick fix, we should combine with logic above
+                for await (const sharedWithMeMaybeNode of photos.iterateSharedNodesWithMe(abortSignal)) {
+                    try {
+                        const { node } = getNodeEntity(sharedWithMeMaybeNode);
+                        const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
+                        if (!node.deprecatedShareId) {
+                            handleError(
+                                new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
+                                    tags: { component: 'drive-sdk' },
+                                    extra: { uid: node.uid },
+                                }),
+                                { showNotification: false }
+                            );
+                            continue;
+                        }
+                        if (!node.membership) {
+                            handleError(
+                                new EnrichedError('Shared with me node have missing membership', {
+                                    tags: { component: 'drive-sdk' },
+                                    extra: {
+                                        uid: node.uid,
+                                        message:
+                                            'The shared with me node entity is missing membershif info. It could be race condition and means it is probably not shared anymore.',
+                                    },
+                                }),
+                                { showNotification: false }
+                            );
+                            continue;
+                        }
+                        const { volumeId } = splitNodeUid(node.uid);
+
+                        // TODO: Remove that when we will fully migrate to upload using sdk
+                        // Basically for upload we need to have the volume inside our volume state
+                        const currentShareIds = volumeShareMap.get(volumeId);
+                        volumeShareMap.set(
+                            volumeId,
+                            currentShareIds ? [...currentShareIds, node.deprecatedShareId] : [node.deprecatedShareId]
+                        );
+
+                        loadedUids.add(node.uid);
+                        setSharedWithMeItemInStore({
+                            nodeUid: node.uid,
+                            name: node.name,
+                            type: node.type,
+                            mediaType: node.mediaType,
+                            itemType: ItemType.DIRECT_SHARE,
+                            thumbnailId: node.activeRevision?.uid || node.uid,
+                            size: node.totalStorageSize,
+                            directShare: {
+                                sharedOn: node.membership.inviteTime,
+                                // TODO: Add indication that we weren't able to load the sharedBy, this way we will be able to show some info in the UI
+                                sharedBy:
+                                    (node.membership.sharedBy.ok
+                                        ? node.membership.sharedBy.value
+                                        : node.membership.sharedBy.error.claimedAuthor) || '',
+                            },
+                            haveSignatureIssues: !signatureResult.ok,
+                            shareId: node.deprecatedShareId,
+                        });
+                    } catch (e) {
+                        handleError(e, {
+                            showNotification: false,
+                        });
+                        showErrorNotification = true;
+                    }
+                }
+
                 for (const [volumeId, shareIdsArray] of volumeShareMap) {
                     setVolumeShareIds(volumeId, shareIdsArray);
                 }
@@ -122,10 +189,12 @@ export const useSharedWithMeNodesLoader = () => {
                 setLoadingNodes(false);
             }
         },
+
         [
             /* setVolumeShareIds is unstable, ignore it */
             // setVolumeShareIds,
             drive,
+            photos,
             handleError,
             createNotification,
             setSharedWithMeItemInStore,
