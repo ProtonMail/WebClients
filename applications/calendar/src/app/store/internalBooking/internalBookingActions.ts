@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { c } from 'ttag';
 
 import { getAddressKeysByUsageThunk } from '@proton/account/addressKeys/getAddressKeysByUsage';
 import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/verificationPreferences';
@@ -58,24 +57,9 @@ export const loadBookingPage = createAsyncThunk<
 
         const slotVerification = await verifyBookingSlots({
             bookingSlots: BookingPage.Slots,
-            bookingID: BookingPage.BookingUID,
+            bookingUID: BookingPage.BookingUID,
             verificationPreferences,
         });
-
-        const storePage = thunkExtra
-            .getState()
-            .internalBookings.value?.bookingPages.find((booking) => booking.id === BookingPage.ID);
-
-        if (
-            storePage?.verificationErrors.secretVerificationError ||
-            storePage?.verificationErrors.contentVerificationError ||
-            slotVerification.failedToVerify
-        ) {
-            thunkExtra.extra.notificationManager.createNotification({
-                text: c('Info').t`Could not verify signature over booking page data`,
-                type: 'error',
-            });
-        }
 
         const formattedSlots = BookingPage.Slots.map((slot) => ({
             start: slot.StartTime,
@@ -188,6 +172,7 @@ export const editBookingPage = createAsyncThunk<
         ]);
 
         const decryptedSecret = await decryptAndVerifyBookingPageSecret({
+            bookingUID: bookingPage.bookingUID,
             encryptedSecret: editData.encryptedSecret,
             selectedCalendar: calData.calendar.ID,
             decryptionKeys,
