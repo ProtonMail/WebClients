@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { BookingPage } from '../components/BookingPage/BookingPage';
@@ -12,10 +12,14 @@ interface Props {
 }
 
 export const BookingsRouter = ({ isGuest }: Props) => {
+    const initialized = useRef(false);
     const { loadPublicBooking } = useExternalBookingLoader();
 
     useEffect(() => {
-        void loadPublicBooking(new Date());
+        if (!initialized.current) {
+            void loadPublicBooking(new Date());
+            initialized.current = true;
+        }
     }, [loadPublicBooking]);
 
     return (
