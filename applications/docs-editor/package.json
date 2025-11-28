@@ -17,8 +17,8 @@
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
-    "@ariakit/react": "^0.4.19",
-    "@ariakit/react-core": "^0.4.19",
+    "@ariakit/react": "^0.4.20",
+    "@ariakit/react-core": "^0.4.20",
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/modifiers": "^9.0.0",
     "@dnd-kit/sortable": "^10.0.0",
@@ -61,7 +61,7 @@
     "lexical": "0.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.66.0"
+    "react-hook-form": "^7.66.1"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.5",
@@ -70,14 +70,14 @@
     "@proton/jest-env": "workspace:^",
     "@proton/testing": "workspace:^",
     "@types/jest": "^30.0.0",
-    "@types/react": "^18.3.26",
+    "@types/react": "^18.3.27",
     "@types/react-dom": "^18.3.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/uuid": "^9.0.8",
     "autoprefixer": "^10.4.22",
     "babel-jest": "^30.2.0",
     "babel-plugin-transform-require-context": "^0.1.1",
-    "core-js": "^3.46.0",
+    "core-js": "^3.47.0",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
     "jest": "^30.2.0",
