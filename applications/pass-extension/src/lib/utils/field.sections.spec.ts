@@ -2,8 +2,8 @@ import type { FieldHandle } from 'proton-pass-extension/app/content/services/for
 
 import { CCFieldType, FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
 
-import type { FieldSubType } from './autofill.sections';
-import { resolveFieldSections } from './autofill.sections';
+import type { FieldSubType } from './field.sections';
+import { resolveFieldSections } from './field.sections';
 
 describe('resolveFieldSections', () => {
     const createField = (fieldType: FieldType, fieldSubType?: FieldSubType): FieldHandle =>
