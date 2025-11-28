@@ -41,6 +41,7 @@ export const decryptAndVerifyBookingPageSecret = async ({
         // eslint-disable-next-line no-console
         console.warn({ errors: decrypted.verificationErrors });
         traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
+            type: 'encryptedSecret',
             verificationErrors: decrypted.verificationErrors,
             bookingUID,
         });
@@ -124,6 +125,7 @@ export const decryptBookingContent = async ({
         // eslint-disable-next-line no-console
         console.warn({ verificationErrors });
         traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
+            type: 'encryptedContent',
             verificationErrors,
             bookingUID: bookingUid,
         });
