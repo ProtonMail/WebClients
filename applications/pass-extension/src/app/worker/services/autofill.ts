@@ -314,7 +314,7 @@ export const createAutoFillService = () => {
              * Generates frame-specific autofill data that respects cross-origin restrictions
              * and previously filled fields, then tracks which fields were successfully filled
              * for use in subsequent frames. */
-            for (const [frameId, fields] of frameFields) {
+            for (const { frameId, fields } of frameFields) {
                 const frame = autofillableFrames.get(frameId);
                 if (!frame) continue;
 
