@@ -11,6 +11,7 @@ import { useFolderView } from '../../../store';
 import DriveBreadcrumbs from '../../DriveBreadcrumbs';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import { useAlbumOnboardingModal } from '../../modals/AlbumOnboardingModal';
+import { useSheetsOnboardingModal } from '../../modals/SheetsOnboardingModal/SheetsOnboardingModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import Drive from './Drive';
@@ -25,6 +26,7 @@ export function DriveViewDeprecated() {
     const { activeFolder } = useActiveShare();
     const { navigateToRoot, navigateToLink } = useDriveNavigation();
     const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
+    const sheetsOnboardingModal = useSheetsOnboardingModal();
 
     const folderView = useFolderView(activeFolder);
     const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
@@ -62,6 +64,7 @@ export function DriveViewDeprecated() {
     return (
         <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>
             {renderAlbumOnboardingModal}
+            {sheetsOnboardingModal}
             {isEditor ? (
                 <UploadDragDrop
                     shareId={activeFolder.shareId}

@@ -1,3 +1,6 @@
+import { c } from 'ttag';
+
+import { Pill } from '@proton/atoms/Pill/Pill';
 import { MimeIcon } from '@proton/components';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
@@ -23,6 +26,10 @@ export const OpenInDocsButton = ({ openInDocs, mimeType, linkId, close }: Props)
             testId="context-menu-open-in-docs"
             action={() => openInDocs(linkId)}
             close={close}
-        />
+        >
+            {openInDocsType.type === 'spreadsheet' && !openInDocsType.isNative && (
+                <Pill className="ml-2">{c('Label').t`New`}</Pill>
+            )}
+        </ContextMenuButton>
     );
 };

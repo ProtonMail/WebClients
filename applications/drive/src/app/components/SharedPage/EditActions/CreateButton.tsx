@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
+import { Pill } from '@proton/atoms/Pill/Pill';
+import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, MimeIcon, usePopperAnchor } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
@@ -77,7 +78,7 @@ export const CreateButton = ({ token, linkId }: Props) => {
                                 })
                             }
                         >
-                            <Icon name="brand-proton-docs" />
+                            <MimeIcon name="proton-doc" className="mr-2" />
                             {c('Action').t`New document`}
                         </DropdownMenuButton>
                     )}
@@ -103,8 +104,9 @@ export const CreateButton = ({ token, linkId }: Props) => {
                                 })
                             }
                         >
-                            <Icon name="brand-proton-sheets" />
+                            <MimeIcon name="proton-sheet" />
                             {c('Action').t`New spreadsheet`}
+                            <Pill className="ml-2">{c('Label').t`New`}</Pill>
                         </DropdownMenuButton>
                     )}
                 </DropdownMenu>

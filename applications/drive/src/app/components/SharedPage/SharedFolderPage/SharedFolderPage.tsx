@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { FilePreview, NavigationControl, useActiveBreakpoint } from '@proton/components';
-import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
+import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSheet } from '../../../flags/useFlagsDriveSheet';
 import {
     type DecryptedLink,
     type useBookmarksPublicView,
@@ -67,10 +68,11 @@ function SharedPagePreviewContainer({
         videoStreaming,
     } = usePublicFileView(token, linkId, true, sortParams);
     const rootRef = useRef<HTMLDivElement>(null);
-    const isDocument = isProtonDocsDocument(loadedLink?.mimeType || '');
+    const openInDocsType = mimeTypeToOpenInDocsType(loadedLink?.mimeType || '');
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
     const [publicDetailsModal, showPublicDetailsModal] = usePublicDetailsModal();
     const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
+    const sheetsEnabled = useFlagsDriveSheet();
 
     return (
         <>
@@ -99,7 +101,7 @@ function SharedPagePreviewContainer({
                     )
                 }
                 onClose={onClose}
-                onDownload={isDocument ? undefined : onDownload}
+                onDownload={openInDocsType ? undefined : onDownload}
                 onDetails={
                     !viewOnly && loadedLink
                         ? () =>
@@ -110,7 +112,10 @@ function SharedPagePreviewContainer({
                         : undefined
                 }
                 isPublicDocsAvailable={isDocsPublicSharingEnabled}
-                onOpenInDocs={openInDocs && loadedLink && isDocument ? () => openInDocs(loadedLink.linkId) : undefined}
+                sheetsEnabled={sheetsEnabled}
+                onOpenInDocs={
+                    openInDocs && loadedLink && openInDocsType ? () => openInDocs(loadedLink.linkId) : undefined
+                }
             />
             {publicDetailsModal}
         </>
@@ -138,7 +143,8 @@ export default function SharedFolder({
     const { submitAbuseReport, getVirusReportInfo } = usePublicShare();
 
     const onItemOpen = (item: DecryptedLink) => {
-        if (isProtonDocsDocument(item.mimeType) && openInDocs) {
+        const itemOpenInDocsType = mimeTypeToOpenInDocsType(item.mimeType);
+        if (itemOpenInDocsType && openInDocs) {
             openInDocs(item.linkId);
             return;
         }

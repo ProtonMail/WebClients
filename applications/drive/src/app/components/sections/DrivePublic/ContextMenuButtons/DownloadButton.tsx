@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
-
 import usePublicToken from '../../../../hooks/drive/usePublicToken';
 import type { LinkDownload } from '../../../../store';
 import { useDownload } from '../../../../store';
@@ -14,29 +12,14 @@ interface SelectedBrowserItem extends Omit<LinkDownload, 'shareId'> {
 interface Props {
     selectedBrowserItems: SelectedBrowserItem[];
     close: () => void;
-    openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
     virusScan?: boolean;
 }
-export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusScan }: Props) => {
+export const DownloadButton = ({ selectedBrowserItems, close, virusScan }: Props) => {
     const { download } = useDownload();
     const { token } = usePublicToken();
     const count = selectedBrowserItems.length;
-    const isDoc = isProtonDocsDocument(selectedBrowserItems[0]?.mimeType);
 
     const onClick = async () => {
-        // Document downloads are handled in two ways:
-        //  1. single files are redirected to the Docs app using `downloadDocument`
-        //  2. multiple files are ignored, using `handleContainsDocument` in the queue
-        const documentLink = selectedBrowserItems.length === 1 && isDoc ? selectedBrowserItems[0] : undefined;
-
-        if (documentLink) {
-            // Should never happen to have openInDocs false as the button will be hidden in that case
-            if (openInDocs) {
-                void openInDocs(documentLink.linkId, { download: true });
-            }
-            return;
-        }
-
         void download(
             selectedBrowserItems.map((link) => ({
                 ...link,
@@ -51,7 +34,7 @@ export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusS
 
     return (
         <ContextMenuButton
-            name={virusScan || isDoc ? buttonTextWithScan : buttonTextWithoutScan}
+            name={virusScan ? buttonTextWithScan : buttonTextWithoutScan}
             icon="arrow-down-line"
             testId={`context-menu-download${virusScan ? '-scan' : ''}`}
             action={onClick}
@@ -59,3 +42,30 @@ export const DownloadButton = ({ selectedBrowserItems, close, openInDocs, virusS
         />
     );
 };
+
+// Document downloads are handled in two ways:
+//  1. single files are redirected to the Docs app using `downloadDocument`
+//  2. multiple files are ignored, using `handleContainsDocument` in the queue
+export function DownloadDocumentButton({
+    documentLink,
+    close,
+    openInDocs,
+}: {
+    documentLink: SelectedBrowserItem;
+    close: () => void;
+    openInDocs: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
+}) {
+    const onClick = async () => {
+        void openInDocs(documentLink.linkId, { download: true });
+    };
+
+    return (
+        <ContextMenuButton
+            name={c('Action').t`Download`}
+            icon="arrow-down-line"
+            testId="context-menu-download-document"
+            action={onClick}
+            close={close}
+        />
+    );
+}

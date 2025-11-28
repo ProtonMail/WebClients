@@ -1,8 +1,6 @@
 import { ContextSeparator, useConfirmActionModal } from '@proton/components';
-import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { type DecryptedLink, useDownloadScanFlag } from '../../../store';
+import type { DecryptedLink } from '../../../store';
 import { usePublicShareStore } from '../../../zustand/public/public-share.store';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { usePublicDetailsModal } from '../../modals/DetailsModal';
@@ -16,6 +14,8 @@ import {
     PreviewButton,
     RenameButton,
 } from './ContextMenuButtons';
+import { DownloadDocumentButton } from './ContextMenuButtons/DownloadButton';
+import { useContextMenuItemsVisibility } from './utils/useContextMenuItemsVisibility';
 import { usePublicLinksPermissions } from './utils/usePublicLinksPermissions';
 
 export function DrivePublicContextMenu({
@@ -36,57 +36,53 @@ export function DrivePublicContextMenu({
     openPreview: (item: DecryptedLink) => void;
     openInDocs?: (linkId: string, options?: { redirect?: boolean; download?: boolean }) => void;
 }) {
-    const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
-    const { canRename, canDelete } = usePublicLinksPermissions(selectedLinks);
-    const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
-    const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
-    const isOnlyOneFileItem = isOnlyOneItem && selectedLink.isFile;
-    const hasPreviewAvailable =
-        isOnlyOneFileItem && selectedLink.mimeType && isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
     const [publicRenameModal, showPublicRenameModal] = useRenameModal();
     const [publicDetailsModal, showPublicDetailsModal] = usePublicDetailsModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const isDocument = isProtonDocsDocument(selectedLink?.mimeType || '');
-    const isDownloadScanEnabled = useDownloadScanFlag();
 
-    const showPreviewButton = hasPreviewAvailable;
-    const showOpenInDocsButton = isOnlyOneFileItem && isDocument && openInDocs;
-    const showDownloadButton = isDocument ? isOnlyOneFileItem && openInDocs : true;
+    const { viewOnly } = usePublicShareStore((state) => ({ viewOnly: state.viewOnly }));
+    const { canRename, canDelete } = usePublicLinksPermissions(selectedLinks);
+
+    const { canShowPreview, canOpenInDocs, showDownloadDocument, showDownloadScanButton } =
+        useContextMenuItemsVisibility({
+            selectedLinks,
+        });
+
+    const firstLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
+    const isOnlyOneItem = selectedLinks.length === 1 && !!firstLink;
 
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-                {showPreviewButton && <PreviewButton link={selectedLink} openPreview={openPreview} close={close} />}
-                {showOpenInDocsButton && (
+                {canShowPreview && firstLink && (
+                    <PreviewButton link={firstLink} openPreview={openPreview} close={close} />
+                )}
+                {canOpenInDocs && openInDocs && (
                     <OpenInDocsButton
+                        // Safe to assume it's defined (available when shares are enabled)
                         openInDocs={openInDocs}
-                        linkId={selectedLink.linkId}
-                        mimeType={selectedLink.mimeType}
+                        linkId={selectedLinks[0].linkId}
+                        mimeType={selectedLinks[0].mimeType}
                         close={close}
                     />
                 )}
-                {(showPreviewButton || showOpenInDocsButton) && <ContextSeparator />}
-                {showDownloadButton && (
-                    <DownloadButton selectedBrowserItems={selectedLinks} openInDocs={openInDocs} close={close} />
+                {(canShowPreview || canOpenInDocs) && <ContextSeparator />}
+                {!showDownloadDocument && <DownloadButton selectedBrowserItems={selectedLinks} close={close} />}
+                {showDownloadDocument && openInDocs && (
+                    <DownloadDocumentButton documentLink={selectedLinks[0]} close={close} openInDocs={openInDocs} />
                 )}
-                {/* // Hide button with scan as docs can't be scanned */}
-                {isDownloadScanEnabled && showDownloadButton && !showOpenInDocsButton && (
-                    <DownloadButton
-                        selectedBrowserItems={selectedLinks}
-                        openInDocs={openInDocs}
-                        close={close}
-                        virusScan
-                    />
+                {showDownloadScanButton && (
+                    <DownloadButton selectedBrowserItems={selectedLinks} close={close} virusScan />
                 )}
                 {!viewOnly && isOnlyOneItem && (
                     <>
                         <ContextSeparator />
                         {!isActiveLinkReadOnly && canRename && (
-                            <RenameButton showRenameModal={showPublicRenameModal} link={selectedLink} close={close} />
+                            <RenameButton showRenameModal={showPublicRenameModal} link={firstLink} close={close} />
                         )}
                         <DetailsButton
                             showPublicDetailsModal={showPublicDetailsModal}
-                            linkId={selectedLink.linkId}
+                            linkId={firstLink.linkId}
                             close={close}
                         />
                     </>

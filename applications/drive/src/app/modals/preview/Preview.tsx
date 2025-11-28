@@ -5,6 +5,7 @@ import { splitNodeUid } from '@proton/drive';
 
 import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
+import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import { SignatureInformation, SignatureStatus } from './signatures';
 import { usePreviewState } from './usePreviewState';
 
@@ -24,6 +25,8 @@ export function Preview({
     onClose,
 }: PreviewProps) {
     const { volumeId, nodeId } = splitNodeUid(nodeUid);
+
+    const sheetsEnabled = useFlagsDriveSheet();
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
@@ -77,6 +80,7 @@ export function Preview({
                         <SignatureInformation contentSignatureIssue={preview.node.contentSignatureIssue} />
                     )
                 }
+                sheetsEnabled={sheetsEnabled}
             />
             {detailsModal}
             {linkSharingModal}
