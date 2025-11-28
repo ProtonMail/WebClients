@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { CryptoProxy } from '@proton/crypto';
 import { exportKey, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 
-import { decryptString as decryptContent, decryptUint8Array, encryptString } from '../../../crypto';
+import { decryptString as decryptContent, decryptUint8Array, encryptString, encryptUint8Array } from '../../../crypto';
 import type { AesGcmCryptoKey } from '../../../crypto/types';
 import { LUMO_GPG_PUB_KEY } from '../../../keys';
 import type { Base64, EncryptedTurn, RequestId, Turn } from './types';
@@ -32,6 +32,23 @@ export async function generateRequestKey(): Promise<AesGcmCryptoKey> {
     };
 }
 
+export function base64StringToUint8Array(base64: string): Uint8Array<ArrayBuffer> {
+    const binaryString = atob(base64);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+    }
+    return bytes;
+}
+
+export function uint8ArrayToBase64String(bytes: Uint8Array<ArrayBuffer>): string {
+    let binaryString = '';
+    for (let i = 0; i < bytes.length; i++) {
+        binaryString += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binaryString);
+}
+
 /**
  * Encrypt conversation turns for U2L encryption
  */
@@ -49,13 +66,18 @@ export async function encryptTurns(
 
         // Start encrypting images in parallel if present
         const imagePromises =
-            turn.images?.map((image) => {
-                const dataPromise = encryptString(image.data, requestKey, requestAd);
-                return dataPromise.then((encryptedData) => ({
+            turn.images?.map(async (image) => {
+                const data = base64StringToUint8Array(image.data);
+                console.log('image.data (truncated):', image.data.slice(0, 128));
+                console.log('decoded data (truncated):', data.slice(0, 128));
+                const dataPromise = encryptUint8Array(data, requestKey, requestAd);
+                const encryptedData = await dataPromise;
+                console.log('encryptedData (truncated):', encryptedData.slice(0, 128));
+                return {
                     ...image,
                     data: encryptedData,
                     encrypted: true,
-                }));
+                };
             }) || [];
 
         // Combine content and images promises
