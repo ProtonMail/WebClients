@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { FilePreviewContent, useActiveBreakpoint } from '@proton/components';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
+import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import type { DecryptedLink } from '../../store';
 import { type useBookmarksPublicView, useDownload, usePublicShare } from '../../store';
 import { useDriveDocsPublicSharingFF } from '../../store/_documents';
@@ -41,6 +42,7 @@ export default function SharedFilePage({
     const isDocument = isProtonDocsDocument(rootLink?.mimeType || '');
     const [reportAbuseModal, showReportAbuseModal] = useReportAbuseModal();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
+    const sheetsEnabled = useFlagsDriveSheet();
     const { submitAbuseReport, getVirusReportInfo } = usePublicShare();
     const { cancelDownloads } = useDownload();
 
@@ -88,6 +90,7 @@ export default function SharedFilePage({
                     isPublic
                     isSharedFile={true}
                     isPublicDocsAvailable={isDocsPublicSharingEnabled}
+                    sheetsEnabled={sheetsEnabled}
                     onOpenInDocs={rootLink && isDocument && openInDocs ? () => openInDocs(rootLink.linkId) : undefined}
                 />
                 {!viewportWidth['<=small'] && <ReportAbuseButton linkInfo={rootLink} />}

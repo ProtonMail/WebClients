@@ -90,6 +90,8 @@ export const isImage = (mimeType: string) => mimeType.startsWith('image/');
 
 export const isExcel = (mimeType: string) => mimeType.startsWith('application/vnd.ms-excel');
 
+export const isXlsx = (mimeType: string) => mimeType === SupportedMimeTypes.xlsx;
+
 export const isWordDocument = (mimeType: string) => mimeType === SupportedMimeTypes.docx;
 
 export const isFont = (mimeType: string) => mimeType.startsWith('font/');
