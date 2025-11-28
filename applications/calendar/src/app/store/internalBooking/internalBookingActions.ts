@@ -165,7 +165,7 @@ export const editBookingPage = createAsyncThunk<
         const editData = thunkExtra.getState().internalBookings.value?.bookingPageEditData;
         const bookingPage = thunkExtra
             .getState()
-            .internalBookings.value?.bookingPages.find((page) => page.bookingUID === editData?.bookingId);
+            .internalBookings.value?.bookingPages.find((page) => page.id === editData?.bookingId);
 
         if (!editData || !bookingPage) {
             throw new Error('No booking page edit data found');
