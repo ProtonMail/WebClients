@@ -152,13 +152,14 @@ export const computeEditFormData = ({
     const recurring = firstSlot ? !!firstSlot.rrule : DEFAULT_RECURRING;
     const ranges = generateRangeFromSlots(editData, timezone);
 
+    const locationType = bookingPage.withProtonMeetLink ? BookingLocation.MEET : BookingLocation.IN_PERSON;
+
     return {
         summary: bookingPage.summary,
         description: bookingPage.description,
         selectedCalendar: bookingPageCalendar.ID,
-        locationType:
-            bookingPage.location || !isMeetVideoConferenceEnabled ? BookingLocation.IN_PERSON : BookingLocation.MEET,
-        location: bookingPage.location,
+        locationType: isMeetVideoConferenceEnabled ? locationType : BookingLocation.IN_PERSON,
+        location: isMeetVideoConferenceEnabled && bookingPage.withProtonMeetLink ? undefined : bookingPage.location,
         timezone: timezone,
         recurring,
         duration,
