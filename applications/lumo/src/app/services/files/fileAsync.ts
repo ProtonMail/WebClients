@@ -80,83 +80,96 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
     let hasError = false;
     let isUnsupported = false;
 
-    try {
-        // Use the Web Worker service for file processing
-        const result = await fileProcessingService.processFile(file);
+    // Check if this is an image - images don't need worker processing
+    const isImage = file.type.startsWith('image/');
 
-        if (result.success && result.result) {
-            // All good - file processed successfully
-            processedAttachment = {
-                ...processedAttachment,
-                markdown: result.result.convertedContent,
-                truncated: result.result.truncated,
-                originalRowCount: result.result.originalRowCount,
-                processedRowCount: result.result.processedRowCount,
-            };
+    if (isImage) {
+        // Images bypass the worker - no conversion needed, just keep binary data
+        console.log(`Processing image file (no conversion needed): ${file.name} (${file.type})`);
+        processedAttachment = {
+            ...processedAttachment,
+            markdown: '', // No markdown for images
+        };
+    } else {
+        // Non-image files go through the worker for conversion
+        try {
+            // Use the Web Worker service for file processing
+            const result = await fileProcessingService.processFile(file);
 
-            // Calculate and cache token count for performance
-            // Only calculate if we have markdown content
-            if (processedAttachment.markdown) {
-                try {
-                    // Calculate token count directly (not using the cached function to avoid circular dependency)
-                    const filename = `Filename: ${processedAttachment.filename}`;
-                    const header = 'File contents:';
-                    const beginMarker = '----- BEGIN FILE CONTENTS -----';
-                    const endMarker = '----- END FILE CONTENTS -----';
-                    const content = processedAttachment.markdown.trim();
+            if (result.success && result.result) {
+                // All good - file processed successfully
+                processedAttachment = {
+                    ...processedAttachment,
+                    markdown: result.result.convertedContent,
+                    truncated: result.result.truncated,
+                    originalRowCount: result.result.originalRowCount,
+                    processedRowCount: result.result.processedRowCount,
+                };
 
-                    const fullContext = [filename, header, beginMarker, content, endMarker].join('\n');
-                    const tokenCount = getApproximateTokenCount(fullContext);
+                // Calculate and cache token count for performance
+                // Only calculate if we have markdown content
+                if (processedAttachment.markdown) {
+                    try {
+                        // Calculate token count directly (not using the cached function to avoid circular dependency)
+                        const filename = `Filename: ${processedAttachment.filename}`;
+                        const header = 'File contents:';
+                        const beginMarker = '----- BEGIN FILE CONTENTS -----';
+                        const endMarker = '----- END FILE CONTENTS -----';
+                        const content = processedAttachment.markdown.trim();
 
-                    processedAttachment.tokenCount = tokenCount;
-                    console.log(`Token count calculated for ${file.name}: ${tokenCount} tokens`);
-                } catch (error) {
-                    console.warn('Failed to calculate token count:', error);
-                    // Don't fail the entire process if token calculation fails
+                        const fullContext = [filename, header, beginMarker, content, endMarker].join('\n');
+                        const tokenCount = getApproximateTokenCount(fullContext);
+
+                        processedAttachment.tokenCount = tokenCount;
+                        console.log(`Token count calculated for ${file.name}: ${tokenCount} tokens`);
+                    } catch (error) {
+                        console.warn('Failed to calculate token count:', error);
+                        // Don't fail the entire process if token calculation fails
+                    }
                 }
+            } else if (result.isUnsupported) {
+                // Unsupported file type - don't store in Redux, just return info for caller to show notification
+                isUnsupported = true;
+
+                // Calculate processing duration for telemetry
+                const endTime = performance.now();
+                const processingDurationMs = Math.round(endTime - startTime);
+
+                // Send comprehensive telemetry with all file processing data
+                sendFileUploadFinishEvent(
+                    file.size,
+                    file.type,
+                    true, // processing completed (even though unsupported)
+                    isUnsupported,
+                    false, // not an error, just unsupported
+                    processingDurationMs
+                );
+
+                return {
+                    success: false,
+                    isUnsupported: true,
+                    fileName: file.name,
+                };
+            } else {
+                // Error during conversion
+                hasError = true;
+                console.error('Error during conversion:', result.error);
+                processedAttachment = {
+                    ...processedAttachment,
+                    error: true,
+                    errorMessage: result.error || 'Unknown error during file processing',
+                };
             }
-        } else if (result.isUnsupported) {
-            // Unsupported file type - don't store in Redux, just return info for caller to show notification
-            isUnsupported = true;
-            
-            // Calculate processing duration for telemetry
-            const endTime = performance.now();
-            const processingDurationMs = Math.round(endTime - startTime);
-
-            // Send comprehensive telemetry with all file processing data
-            sendFileUploadFinishEvent(
-                file.size,
-                file.type,
-                true, // processing completed (even though unsupported)
-                isUnsupported,
-                false, // not an error, just unsupported
-                processingDurationMs
-            );
-
-            return {
-                success: false,
-                isUnsupported: true,
-                fileName: file.name,
-            };
-        } else {
-            // Error during conversion
+        } catch (error) {
+            // Error during processing
             hasError = true;
-            console.error('Error during conversion:', result.error);
+            console.error('Error during file processing:', error);
             processedAttachment = {
                 ...processedAttachment,
                 error: true,
-                errorMessage: result.error || 'Unknown error during file processing',
+                errorMessage: error instanceof Error ? error.message : 'Unknown error during file processing',
             };
         }
-    } catch (error) {
-        // Error during processing
-        hasError = true;
-        console.error('Error during file processing:', error);
-        processedAttachment = {
-            ...processedAttachment,
-            error: true,
-            errorMessage: error instanceof Error ? error.message : 'Unknown error during file processing',
-        };
     }
 
     // Only store in Redux if not unsupported
@@ -166,12 +179,25 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
     };
 
     // Store in Redux initially with processing state (only for supported files)
-    const { data: initialData, ...attachmentForRedux } = attachment;
-    dispatch(upsertAttachment(attachmentForRedux));
+    // Note: isImage was already determined earlier to decide whether to use worker
+    if (isImage) {
+        // For images, keep the data field - it's needed for WireImage conversion
+        dispatch(upsertAttachment(attachment));
+    } else {
+        // For text files, remove data to avoid serialization issues
+        const { data: initialData, ...attachmentForRedux } = attachment;
+        dispatch(upsertAttachment(attachmentForRedux));
+    }
 
-    // Remove the data field before storing final state in Redux to avoid serialization issues
-    const { data, ...finalAttachmentForRedux } = processedAttachment;
-    dispatch(upsertAttachment(finalAttachmentForRedux));
+    // Update with final processed state
+    if (isImage) {
+        // For images, keep the data field
+        dispatch(upsertAttachment(processedAttachment));
+    } else {
+        // For text files, remove data field before storing final state
+        const { data, ...finalAttachmentForRedux } = processedAttachment;
+        dispatch(upsertAttachment(finalAttachmentForRedux));
+    }
 
     // Calculate processing duration
     const endTime = performance.now();
