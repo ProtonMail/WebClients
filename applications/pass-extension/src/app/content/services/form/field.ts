@@ -15,7 +15,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { DOM_SETTLE_MS, onNextTick } from '@proton/pass/utils/time/next-tick';
+import { DOM_SETTLE_MS, nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 import noop from '@proton/utils/noop';
 
 import { type FieldAnchor, createFieldAnchor } from './field.anchor';
@@ -151,7 +151,7 @@ export const createFieldHandles = ({
                 field.element.dispatchEvent(focusEvent);
             }
 
-            field.icon?.reposition();
+            nextTick(() => field.icon?.reposition());
         },
 
         autofill: (value, options) => {
