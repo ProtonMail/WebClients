@@ -22,7 +22,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
-        "@types/jasmine": "^5.1.12",
+        "@types/jasmine": "^5.1.13",
         "eslint": "^9.39.1",
         "eslint-plugin-jasmine": "^4.2.2",
         "jasmine": "^5.12.0",
@@ -34,6 +34,6 @@
         "playwright": "^1.56.1",
         "ts-loader": "^9.5.4",
         "typescript": "^5.9.3",
-        "webpack": "^5.102.1"
+        "webpack": "^5.103.0"
     }
 }

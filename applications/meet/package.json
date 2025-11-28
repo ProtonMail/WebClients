@@ -21,7 +21,7 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "@livekit/components-react": "^2.9.15",
+        "@livekit/components-react": "^2.9.16",
         "@livekit/krisp-noise-filter": "^0.3.4",
         "@livekit/track-processors": "^0.6.1",
         "@proton-meet/proton-meet-core": "0.5.1-2",
@@ -36,17 +36,17 @@
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
-        "@types/react": "^18.3.26",
+        "@types/react": "^18.3.27",
         "@types/react-dom": "^18.3.7",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^10.1.0",
-        "livekit-client": "2.15.14",
+        "livekit-client": "2.16.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.2.0",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12",
-        "webpack": "^5.102.1"
+        "webpack": "^5.103.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
