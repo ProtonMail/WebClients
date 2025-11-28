@@ -5,7 +5,6 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { SharedWithMeView } from '../sections/sharedWith/SharedWithMeView';
 import { useInvitationsLoader } from '../sections/sharedWith/loaders/useInvitationsLoader';
-import { useLegacyLoader } from '../sections/sharedWith/loaders/useLegacyLoader';
 import { useSharedWithMeNodesLoader } from '../sections/sharedWith/loaders/useSharedWithMeNodesLoader';
 import { useSharedWithMeListingStore } from '../zustand/sections/sharedWithMeListing.store';
 
@@ -19,7 +18,6 @@ const SharedWithMeContainer = () => {
 
     const { loadSharedWithMeNodes } = useSharedWithMeNodesLoader();
     const { loadInvitations } = useInvitationsLoader();
-    const { loadLegacySharedWithMeAlbums, loadLegacyInvitations } = useLegacyLoader();
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -28,8 +26,6 @@ const SharedWithMeContainer = () => {
                 await Promise.all([
                     loadSharedWithMeNodes(abortController.signal),
                     loadInvitations(abortController.signal),
-                    loadLegacySharedWithMeAlbums(abortController.signal),
-                    loadLegacyInvitations(abortController.signal),
                 ]);
             },
         });
@@ -37,14 +33,7 @@ const SharedWithMeContainer = () => {
             abortController.abort();
             void unsubscribeToEvents('sharedWithMeContainer');
         };
-    }, [
-        subscribeToEvents,
-        unsubscribeToEvents,
-        loadInvitations,
-        loadLegacyInvitations,
-        loadLegacySharedWithMeAlbums,
-        loadSharedWithMeNodes,
-    ]);
+    }, [subscribeToEvents, unsubscribeToEvents, loadInvitations, loadSharedWithMeNodes]);
     return (
         <Routes>
             <Route path="" element={<SharedWithMeView />} />
