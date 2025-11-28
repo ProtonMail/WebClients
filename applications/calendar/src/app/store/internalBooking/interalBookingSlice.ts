@@ -66,6 +66,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                 ]);
                 try {
                     const decrypted = await decryptAndVerifyBookingPageSecret({
+                        bookingUID: bookingPage.BookingUID,
                         encryptedSecret: bookingPage.EncryptedSecret,
                         selectedCalendar: bookingPage.CalendarID,
                         decryptionKeys,
