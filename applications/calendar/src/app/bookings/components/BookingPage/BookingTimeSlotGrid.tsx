@@ -22,6 +22,7 @@ export const BookingTimeSlotGrid = () => {
     const [timeslot, setTimeslot] = useState<BookingTimeslot>();
     const [slotsArray, setSlotsArray] = useState<BookingTimeslot[][] | undefined[][]>([]);
 
+    const isLoading = useBookingStore((state) => state.isLoading);
     const filterBookingSlotPerDay = useBookingStore((state) => state.filterBookingSlotPerDay);
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedDate = useBookingStore((state) => state.selectedDate);
@@ -31,12 +32,12 @@ export const BookingTimeSlotGrid = () => {
 
     const { activeBreakpoint } = useActiveBreakpoint();
     const gridSize = getGridCount(activeBreakpoint);
-    const canShowSlots = slotsArray.length > 0;
+    const canShowSlots = slotsArray.length > 0 && !isLoading;
 
     const [bookSlotModalProps, setBookSlotModalOpen, renderBookModal] = useModalState();
 
     useEffect(() => {
-        if (!bookingDetails) {
+        if (!bookingDetails || isLoading) {
             return;
         }
 
@@ -45,7 +46,7 @@ export const BookingTimeSlotGrid = () => {
 
         setRange(tmpRange);
         setSlotsArray(rangeBooking);
-    }, [gridSize, bookingDetails, selectedDate, filterBookingSlotPerDay, selectedTimezone]);
+    }, [gridSize, bookingDetails, selectedDate, filterBookingSlotPerDay, selectedTimezone, isLoading]);
 
     return (
         <main className="flex-1 w-full" aria-labelledby="booking-main-header-title">
@@ -120,7 +121,7 @@ export const BookingTimeSlotGrid = () => {
             </div>
             {!canShowSlots && (
                 <>
-                    {availabilityState === AvailabilityState.Loading && (
+                    {(availabilityState === AvailabilityState.Loading || isLoading) && (
                         <BookingEmptyRangeCard
                             message={
                                 <div className="flex justify-center items-center gap-2">
