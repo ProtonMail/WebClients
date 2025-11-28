@@ -38,8 +38,6 @@ export const decryptAndVerifyBookingPageSecret = async ({
         shouldCheckSignatureVerificationStatus(verificationPreferences) &&
         decrypted.verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
     ) {
-        // eslint-disable-next-line no-console
-        console.warn({ errors: decrypted.verificationErrors });
         traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
             type: 'encryptedSecret',
             verificationErrors: decrypted.verificationErrors,
@@ -122,8 +120,6 @@ export const decryptBookingContent = async ({
         shouldCheckSignatureVerificationStatus(verificationPreferences) &&
         verificationStatus !== VERIFICATION_STATUS.SIGNED_AND_VALID
     ) {
-        // eslint-disable-next-line no-console
-        console.warn({ verificationErrors });
         traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
             type: 'encryptedContent',
             verificationErrors,
