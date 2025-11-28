@@ -1,8 +1,7 @@
-import { resolveFieldSections } from 'proton-pass-extension/app/content/services/autofill/autofill.sections';
-import { getFrameScore } from 'proton-pass-extension/app/content/utils/frame';
 import { backgroundMessage, sendTabMessage } from 'proton-pass-extension/lib/message/send-message';
 import { isCCField } from 'proton-pass-extension/lib/utils/field';
-import type { AutofillableFrames } from 'proton-pass-extension/lib/utils/frames';
+import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
+import { type AutofillableFrames, getFrameScore } from 'proton-pass-extension/lib/utils/frames';
 import type { AutofillActionDTO } from 'proton-pass-extension/types/autofill';
 import type { AbstractField } from 'proton-pass-extension/types/field';
 import type { FrameAttributes, FrameField } from 'proton-pass-extension/types/frames';
@@ -215,14 +214,9 @@ export const clusterCCFormFields = (
     return result;
 };
 
-export const resolveCCFormFields = async (
-    frames: AutofillableFrames,
-    tabId: TabId,
-    payload: AutofillActionDTO
-): Promise<Map<FrameId, FrameField[]>> => {
+export const resolveFormClusters = async (tabId: TabId, frames: FrameId[]): Promise<Map<FrameId, ClusterFrame>> => {
     const clusters = new Map<FrameId, ClusterFrame>();
 
-    /** Get clusterable items for all autofillable frames */
     await Promise.all(
         frames.map(async (frameId) => {
             const message = backgroundMessage({ type: WorkerMessageType.FRAME_FORM_CLUSTER });
@@ -232,5 +226,15 @@ export const resolveCCFormFields = async (
         })
     );
 
+    return clusters;
+};
+
+export const resolveCCFormFields = async (
+    frames: AutofillableFrames,
+    tabId: TabId,
+    payload: AutofillActionDTO
+): Promise<Map<FrameId, FrameField[]>> => {
+    /** Get clusterable items for all autofillable frames */
+    const clusters = await resolveFormClusters(tabId, Array.from(frames.keys()));
     return clusterCCFormFields(frames, clusters, payload);
 };

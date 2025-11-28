@@ -147,3 +147,29 @@ export const isFrameContainedInParentForm = (parentFormID: string, options: Pare
     getFrameParentFormId(options)
         .then((formId) => formId === parentFormID)
         .catch(() => false);
+
+/** Iframes may get resized on focus if constrained
+ * by a wrapper's element content-box with borders */
+const IFRAME_SIZE_THRESHOLD = 4; /* px */
+
+export const getFrameScore = (match: FrameAttributes, candidate: FrameAttributes): number => {
+    let score = 0;
+    const { width, height, src, name, title, ariaLabel } = match;
+
+    /** direct attribute matches */
+    if (src && candidate.src === src) score += 1.5;
+    if (name && candidate.name === name) score++;
+    if (title && candidate.title === title) score++;
+    if (ariaLabel && candidate.ariaLabel === ariaLabel) score++;
+
+    /** size match with threshold */
+    if (width && Math.abs((candidate.width ?? 0) - width) < IFRAME_SIZE_THRESHOLD) score++;
+    if (height && Math.abs((candidate.height ?? 0) - height) < IFRAME_SIZE_THRESHOLD) score++;
+
+    /** cross-attribute scoring */
+    if (name && (name === candidate.title || name === candidate.ariaLabel)) score += 0.5;
+    if (title && (title === candidate.name || title === candidate.ariaLabel)) score += 0.5;
+    if (ariaLabel && (ariaLabel === candidate.title || ariaLabel === candidate.name)) score += 0.5;
+
+    return score;
+};

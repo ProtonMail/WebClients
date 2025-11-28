@@ -1,7 +1,8 @@
-import { isCCField, isEmailField, isIdentityField } from 'proton-pass-extension/lib/utils/field';
 import type { AbstractField } from 'proton-pass-extension/types/field';
 
 import { CCFieldType, FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
+
+import { isCCField, isEmailField, isIdentityField } from './field';
 
 export type FieldSubType = IdentityFieldType | CCFieldType;
 type FieldSection<T extends AbstractField<FieldType>> = {

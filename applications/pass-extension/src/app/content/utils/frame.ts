@@ -1,6 +1,6 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { FrameID } from 'proton-pass-extension/lib/utils/frames';
+import { type FrameID, getFrameScore } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -12,10 +12,6 @@ import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createWeakRefCache, maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import identity from '@proton/utils/identity';
-
-/** Iframes may get resized on focus if constrained
- * by a wrapper's element content-box with borders */
-const IFRAME_SIZE_THRESHOLD = 4; /* px */
 
 export const getFrameID = withContext<() => FrameID>((ctx) => {
     const frameId = ctx?.getExtensionContext()?.frameId;
@@ -61,28 +57,6 @@ export const getFrameAttributes = (): FrameAttributes => {
  * Used as a fast pre-check to avoid expensive visibility calculations on tiny frames
  * that are typically used for tracking, analytics, or other non-interactive purposes */
 export const isNegligableFrameRect = (width: number, height: number) => width < 40 || height < 15;
-
-export const getFrameScore = (match: FrameAttributes, candidate: FrameAttributes): number => {
-    let score = 0;
-    const { width, height, src, name, title, ariaLabel } = match;
-
-    /** direct attribute matches */
-    if (src && candidate.src === src) score += 1.5;
-    if (name && candidate.name === name) score++;
-    if (title && candidate.title === title) score++;
-    if (ariaLabel && candidate.ariaLabel === ariaLabel) score++;
-
-    /** size match with threshold */
-    if (width && Math.abs((candidate.width ?? 0) - width) < IFRAME_SIZE_THRESHOLD) score++;
-    if (height && Math.abs((candidate.height ?? 0) - height) < IFRAME_SIZE_THRESHOLD) score++;
-
-    /** cross-attribute scoring */
-    if (name && (name === candidate.title || name === candidate.ariaLabel)) score += 0.5;
-    if (title && (title === candidate.name || title === candidate.ariaLabel)) score += 0.5;
-    if (ariaLabel && (ariaLabel === candidate.title || ariaLabel === candidate.name)) score += 0.5;
-
-    return score;
-};
 
 export const getFrameElement = (frameId: number, frameAttributes: FrameAttributes): Maybe<HTMLIFrameElement> => {
     const iframes = document.getElementsByTagName('iframe');
