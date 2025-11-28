@@ -47,6 +47,7 @@ export const verifyBookingSlots = async ({
         // eslint-disable-next-line no-console
         console.warn('Error verifying booking slots');
         traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, {
+            type: 'bookingSlots',
             verificationStatusArray: results.map(({ verificationStatus }) => verificationStatus),
             bookingUID,
         });
