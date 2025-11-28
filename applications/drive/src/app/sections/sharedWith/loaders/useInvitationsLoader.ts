@@ -10,7 +10,7 @@ import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHand
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 
 export const useInvitationsLoader = () => {
-    const { drive } = useDrive();
+    const { drive, photos } = useDrive();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 
@@ -64,6 +64,39 @@ export const useInvitationsLoader = () => {
                     }
                 }
 
+                // TODO: Quick fix, we should combine with logic above
+                for await (const invitation of photos.iterateInvitations(abortSignal)) {
+                    const name = invitation.node.name.ok ? invitation.node.name.value : invitation.node.name.error.name;
+                    const sharedBy = invitation.addedByEmail.ok
+                        ? invitation.addedByEmail.value
+                        : invitation.addedByEmail.error.claimedAuthor || '';
+
+                    const { shareId } = splitInvitationUid(invitation.uid);
+
+                    try {
+                        loadedUids.add(invitation.node.uid);
+                        setSharedWithMeItemInStore({
+                            nodeUid: invitation.node.uid,
+                            name,
+                            type: invitation.node.type,
+                            mediaType: invitation.node.mediaType,
+                            itemType: ItemType.INVITATION,
+                            thumbnailId: undefined,
+                            size: undefined,
+                            invitation: {
+                                uid: invitation.uid,
+                                sharedBy,
+                            },
+                            shareId,
+                        });
+                    } catch (e) {
+                        handleError(e, {
+                            showNotification: false,
+                        });
+                        showErrorNotification = true;
+                    }
+                }
+
                 if (showErrorNotification) {
                     createNotification({
                         type: 'error',
@@ -81,7 +114,15 @@ export const useInvitationsLoader = () => {
                 setLoadingInvitations(false);
             }
         },
-        [drive, handleError, createNotification, setSharedWithMeItemInStore, setLoadingInvitations, cleanupStaleItems]
+        [
+            photos,
+            drive,
+            handleError,
+            createNotification,
+            setSharedWithMeItemInStore,
+            setLoadingInvitations,
+            cleanupStaleItems,
+        ]
     );
 
     return {

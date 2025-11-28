@@ -14,7 +14,6 @@ import SharedWithMe from './SharedWithMe';
 import SharedWithMeToolbar from './SharedWithMeToolbar';
 import { useBookmarksLoader } from './loaders/useBookmarksLoader';
 import { useInvitationsLoader } from './loaders/useInvitationsLoader';
-import { useLegacyLoader } from './loaders/useLegacyLoader';
 import { useSharedWithMeNodesLoader } from './loaders/useSharedWithMeNodesLoader';
 
 export const SharedWithMeView = () => {
@@ -24,7 +23,6 @@ export const SharedWithMeView = () => {
     const { loadSharedWithMeNodes } = useSharedWithMeNodesLoader();
     const { loadInvitations } = useInvitationsLoader();
     const { loadBookmarks } = useBookmarksLoader();
-    const { loadLegacySharedWithMeAlbums, loadLegacyInvitations } = useLegacyLoader();
     const { itemUids } = useSharedWithMeListingStore(
         useShallow((state) => ({
             itemUids: state.getItemUids(),
@@ -42,12 +40,10 @@ export const SharedWithMeView = () => {
         void loadSharedWithMeNodes(abortController.signal);
         void loadInvitations(abortController.signal);
         void loadBookmarks(abortController.signal);
-        void loadLegacySharedWithMeAlbums(abortController.signal);
-        void loadLegacyInvitations(abortController.signal);
         return () => {
             abortController.abort();
         };
-    }, [loadSharedWithMeNodes, loadInvitations, loadBookmarks, loadLegacySharedWithMeAlbums, loadLegacyInvitations]);
+    }, [loadSharedWithMeNodes, loadInvitations, loadBookmarks]);
 
     return (
         <FileBrowserStateProvider itemIds={itemUids}>
