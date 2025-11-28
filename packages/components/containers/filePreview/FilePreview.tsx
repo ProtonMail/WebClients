@@ -20,12 +20,14 @@ import {
     isSupportedText,
     isVideo,
     isWordDocument,
+    isXlsx,
 } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
 import AudioPreview from './AudioPreview';
 import CloseModal from './CloseModal';
+import { ExcelPreview } from './ExcelPreview';
 import type { SharedStatus } from './Header';
 import Header from './Header';
 import ImagePreview from './ImagePreview';
@@ -60,6 +62,7 @@ interface FilePreviewProps {
     isPublic?: boolean;
     /** Feature flag for public Docs */
     isPublicDocsAvailable?: boolean;
+    sheetsEnabled?: boolean;
 
     // For Video Streaming
     videoStreaming?: {
@@ -98,6 +101,7 @@ export const FilePreviewContent = ({
     isPublic,
     isSharedFile,
     isPublicDocsAvailable,
+    sheetsEnabled,
 
     videoStreaming,
 
@@ -121,6 +125,7 @@ export const FilePreviewContent = ({
     isPublic?: boolean;
     isSharedFile?: boolean;
     isPublicDocsAvailable?: boolean;
+    sheetsEnabled?: boolean;
 
     // For Video Streaming
     videoStreaming?: {
@@ -141,6 +146,7 @@ export const FilePreviewContent = ({
     };
 }) => {
     const [forcePreview, setForcePreview] = useState(false);
+
     const renderPreview = () => {
         if (error) {
             return <PreviewError error={error} />;
@@ -209,6 +215,10 @@ export const FilePreviewContent = ({
                     />
                 </Suspense>
             );
+        }
+
+        if (!!mimeType && isXlsx(mimeType) && sheetsEnabled) {
+            return <ExcelPreview onDownload={onDownload} onOpenInDocs={onOpenInDocs} />;
         }
 
         if (
@@ -286,6 +296,7 @@ const FilePreview = (
         contents,
         navigationControls,
         isPublicDocsAvailable,
+        sheetsEnabled,
         sharedStatus,
         signatureStatus,
         signatureConfirmation,
@@ -409,6 +420,7 @@ const FilePreview = (
                 videoStreaming={videoStreaming}
                 isPublic={isPublic}
                 isPublicDocsAvailable={isPublicDocsAvailable}
+                sheetsEnabled={sheetsEnabled}
                 onOpenInDocs={onOpenInDocs}
                 contents={contents}
                 onDownload={onDownload}

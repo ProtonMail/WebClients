@@ -15,6 +15,7 @@ import { useDetailsModal } from '../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import { useFlagsDriveSDKPreview } from '../flags/useFlagsDriveSDKPreview';
+import { useFlagsDriveSheet } from '../flags/useFlagsDriveSheet';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { Preview } from '../modals/preview';
@@ -111,6 +112,8 @@ function PreviewContainerDeprecated() {
     } = useFileView(shareId, linkId, useNavigation);
 
     const openInDocs = useOpenInDocs(link);
+
+    const sheetsEnabled = useFlagsDriveSheet();
 
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
@@ -271,6 +274,7 @@ function PreviewContainerDeprecated() {
                 }
                 signatureStatus={signatureStatus}
                 signatureConfirmation={signatureConfirmation}
+                sheetsEnabled={sheetsEnabled}
             />
             {detailsModal}
             {linkSharingModal}
