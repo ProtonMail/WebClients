@@ -239,6 +239,7 @@ enum MeetFeatureFlag {
     MeetSoundNotificationsEnabled = 'MeetSoundNotificationsEnabled',
     MeetNewJoinType = 'MeetNewJoinType',
     MeetSeamlessKeyRotationEnabled = 'MeetSeamlessKeyRotationEnabled',
+    MeetShowUpsellModalAfterMeeting = 'MeetShowUpsellModalAfterMeeting',
 }
 
 enum LumoFeatureFlag {
