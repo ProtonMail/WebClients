@@ -1,11 +1,9 @@
-import type { MutableRefObject } from 'react';
-
 import { addDays, isFriday, isMonday, isSameDay, isSaturday, isTuesday, isWeekend, set } from 'date-fns';
 
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 
-import type { BookingRange, Intersection } from '../../bookingsProvider/interface';
+import type { BookingRange } from '../../bookingsProvider/interface';
 import {
     createBookingRangeNextAvailableTime,
     generateDefaultBookingRange,
@@ -212,9 +210,7 @@ describe('Booking range helpers', () => {
     });
 
     describe('getIsBookingsIntersection', () => {
-        const createMockRef = (): MutableRefObject<Intersection | null> => ({ current: null });
-
-        it('should return false when no intersection exists', () => {
+        it('should return null when no intersection exists', () => {
             const bookingRanges: BookingRange[] = [
                 {
                     id: '1',
@@ -223,20 +219,17 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
             const result = getIsBookingsIntersection({
                 start: new Date('2025-11-25T11:00:00Z'),
                 end: new Date('2025-11-25T12:00:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
-            expect(result).toBe(false);
-            expect(intersectionRef.current).toBeNull();
+            expect(result).toBeNull();
         });
 
-        it('should return true and set intersection when ranges overlap', () => {
+        it('should return intersection when ranges overlap', () => {
             const bookingRanges: BookingRange[] = [
                 {
                     id: '1',
@@ -245,16 +238,14 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
             const result = getIsBookingsIntersection({
                 start: new Date('2025-11-25T09:30:00Z'),
                 end: new Date('2025-11-25T11:00:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
-            expect(result).toBe(true);
+            expect(result).not.toBeNull();
         });
 
         it('should adjust intersection at the end of existing range', () => {
@@ -266,18 +257,16 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
-            getIsBookingsIntersection({
+            const result = getIsBookingsIntersection({
                 start: new Date('2025-11-25T09:30:00Z'), // Starts within existing range
                 end: new Date('2025-11-25T11:00:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
-            expect(intersectionRef.current).not.toBeNull();
-            expect(intersectionRef.current?.start).toEqual(new Date('2025-11-25T10:00:00Z'));
-            expect(intersectionRef.current?.end).toEqual(new Date('2025-11-25T11:00:00Z'));
+            expect(result).not.toBeNull();
+            expect(result?.start).toEqual(new Date('2025-11-25T10:00:00Z'));
+            expect(result?.end).toEqual(new Date('2025-11-25T11:00:00Z'));
         });
 
         it('should adjust intersection at the start of existing range', () => {
@@ -289,24 +278,39 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
-            getIsBookingsIntersection({
+            const result = getIsBookingsIntersection({
                 start: new Date('2025-11-25T09:00:00Z'),
                 end: new Date('2025-11-25T10:30:00Z'), // Ends within existing range
                 bookingRanges,
-                intersectionRef,
             });
 
-            expect(intersectionRef.current).not.toBeNull();
-            expect(intersectionRef.current?.start).toEqual(new Date('2025-11-25T09:00:00Z'));
-            expect(intersectionRef.current?.end).toEqual(new Date('2025-11-25T10:00:00Z'));
+            expect(result).not.toBeNull();
+            expect(result?.start).toEqual(new Date('2025-11-25T09:00:00Z'));
+            expect(result?.end).toEqual(new Date('2025-11-25T10:00:00Z'));
+        });
+
+        it('should return null when new range completely engulfs existing range', () => {
+            const bookingRanges: BookingRange[] = [
+                {
+                    id: '1',
+                    start: new Date('2025-11-25T10:00:00Z'),
+                    end: new Date('2025-11-25T11:00:00Z'),
+                    timezone: 'Europe/Zurich',
+                },
+            ];
+
+            const result = getIsBookingsIntersection({
+                start: new Date('2025-11-25T09:00:00Z'),
+                end: new Date('2025-11-25T12:00:00Z'), // Completely contains existing range
+                bookingRanges,
+            });
+
+            expect(result).toBeNull();
         });
     });
 
     describe('getIsRecurringBookingsIntersection', () => {
-        const createMockRef = (): MutableRefObject<Intersection | null> => ({ current: null });
-
         beforeEach(() => {
             jest.useFakeTimers();
             // Set to Wednesday, Nov 27, 2025, 10:00 AM
@@ -317,7 +321,7 @@ describe('Booking range helpers', () => {
             jest.useRealTimers();
         });
 
-        it('should return false when no intersection on the same weekday', () => {
+        it('should return null when no intersection on the same weekday', () => {
             // Existing range: Monday this week, 9-10 AM
             const bookingRanges: BookingRange[] = [
                 {
@@ -327,21 +331,18 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
             // User tries to add: Tuesday next week, 11-12 AM (different day)
             const result = getIsRecurringBookingsIntersection({
                 start: new Date('2025-12-02T11:00:00Z'),
                 end: new Date('2025-12-02T12:00:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
-            expect(result).toBe(false);
-            expect(intersectionRef.current).toBeNull();
+            expect(result).toBeNull();
         });
 
-        it('should return false when adding range on future weekday with no overlap', () => {
+        it('should return null when adding range on future weekday with no overlap', () => {
             // Existing range: Monday this week, 9-10 AM
             const bookingRanges: BookingRange[] = [
                 {
@@ -351,18 +352,15 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
             // User tries to add: Monday next week, 11-12 AM (same day, no time overlap)
             const result = getIsRecurringBookingsIntersection({
                 start: new Date('2025-12-01T11:00:00Z'),
                 end: new Date('2025-12-01T12:00:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
-            expect(result).toBe(false);
-            expect(intersectionRef.current).toBeNull();
+            expect(result).toBeNull();
         });
 
         it('should detect intersection across different weeks with same weekday and overlapping times', () => {
@@ -375,17 +373,15 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
             // User tries to add: Monday next week, 9:30-11 AM
             const result = getIsRecurringBookingsIntersection({
                 start: new Date('2025-12-01T09:30:00Z'),
                 end: new Date('2025-12-01T11:00:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
-            expect(result).toBe(true);
+            expect(result).not.toBeNull();
         });
 
         it('should adjust intersection at the end of existing range, preserving original week', () => {
@@ -398,20 +394,18 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
             // User tries to add: Monday next week, 9:30-11 AM
-            getIsRecurringBookingsIntersection({
+            const result = getIsRecurringBookingsIntersection({
                 start: new Date('2025-12-01T09:30:00Z'),
                 end: new Date('2025-12-01T11:00:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
             // Should suggest: Monday Dec 1, 10:00-11:00 AM (same week as user's selection)
-            expect(intersectionRef.current).not.toBeNull();
-            expect(intersectionRef.current?.start.getTime()).toBe(new Date('2025-12-01T10:00:00Z').getTime());
-            expect(intersectionRef.current?.end.getTime()).toBe(new Date('2025-12-01T11:00:00Z').getTime());
+            expect(result).not.toBeNull();
+            expect(result?.start.getTime()).toBe(new Date('2025-12-01T10:00:00Z').getTime());
+            expect(result?.end.getTime()).toBe(new Date('2025-12-01T11:00:00Z').getTime());
         });
 
         it('should adjust intersection at the start of existing range, preserving original week', () => {
@@ -424,20 +418,18 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
             // User tries to add: Monday next week, 9-10:30 AM
-            getIsRecurringBookingsIntersection({
+            const result = getIsRecurringBookingsIntersection({
                 start: new Date('2025-12-01T09:00:00Z'),
                 end: new Date('2025-12-01T10:30:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
             // Should suggest: Monday Dec 1, 9:00-10:00 AM (same week as user's selection)
-            expect(intersectionRef.current).not.toBeNull();
-            expect(intersectionRef.current?.start.getTime()).toBe(new Date('2025-12-01T09:00:00Z').getTime());
-            expect(intersectionRef.current?.end.getTime()).toBe(new Date('2025-12-01T10:00:00Z').getTime());
+            expect(result).not.toBeNull();
+            expect(result?.start.getTime()).toBe(new Date('2025-12-01T09:00:00Z').getTime());
+            expect(result?.end.getTime()).toBe(new Date('2025-12-01T10:00:00Z').getTime());
         });
 
         it('should handle ranges from past weeks correctly', () => {
@@ -450,20 +442,39 @@ describe('Booking range helpers', () => {
                     timezone: 'Europe/Zurich',
                 },
             ];
-            const intersectionRef = createMockRef();
 
             // User tries to add: Monday last week, 9:30-11 AM
-            getIsRecurringBookingsIntersection({
+            const result = getIsRecurringBookingsIntersection({
                 start: new Date('2025-11-17T09:30:00Z'),
                 end: new Date('2025-11-17T11:00:00Z'),
                 bookingRanges,
-                intersectionRef,
             });
 
             // Should suggest: Monday Nov 17, 10:00-11:00 AM (preserves user's selected week)
-            expect(intersectionRef.current).not.toBeNull();
-            expect(intersectionRef.current?.start.getTime()).toBe(new Date('2025-11-17T10:00:00Z').getTime());
-            expect(intersectionRef.current?.end.getTime()).toBe(new Date('2025-11-17T11:00:00Z').getTime());
+            expect(result).not.toBeNull();
+            expect(result?.start.getTime()).toBe(new Date('2025-11-17T10:00:00Z').getTime());
+            expect(result?.end.getTime()).toBe(new Date('2025-11-17T11:00:00Z').getTime());
+        });
+
+        it('should return null when new range completely engulfs existing range', () => {
+            // Existing range: Monday this week, 10-11 AM
+            const bookingRanges: BookingRange[] = [
+                {
+                    id: '1',
+                    start: new Date('2025-11-24T10:00:00Z'),
+                    end: new Date('2025-11-24T11:00:00Z'),
+                    timezone: 'Europe/Zurich',
+                },
+            ];
+
+            // User tries to add: Monday next week, 9-12 PM (completely contains existing range)
+            const result = getIsRecurringBookingsIntersection({
+                start: new Date('2025-12-01T09:00:00Z'),
+                end: new Date('2025-12-01T12:00:00Z'),
+                bookingRanges,
+            });
+
+            expect(result).toBeNull();
         });
     });
 });
