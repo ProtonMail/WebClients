@@ -178,6 +178,8 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         const start = intersectionRef.current?.start || getRangeDateStart(formData, data.start);
         const end = intersectionRef.current?.end || data.end;
 
+        // In the recurring scenario, the user can try to add ranges in future weeks
+        // To add the new range properly, dates needs to be normalized so that range is added to the current week
         const isRecurring = formData.recurring;
         const normalizedStart = isRecurring ? normalizeBookingRangeToTimeOfWeek(start) : start;
         const normalizedEnd = isRecurring ? normalizeBookingRangeToTimeOfWeek(end) : end;
