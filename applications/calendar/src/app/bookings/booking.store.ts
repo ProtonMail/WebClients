@@ -54,6 +54,9 @@ interface BookingStore {
     setNextAvailableSlot: (slot: Omit<BookingTimeslot, 'tzDate'> | null) => void;
     getDateKeySet: () => Set<string>;
 
+    loadedRanges: { start: number; end: number }[];
+    setLoadedRanges: (newRange: { start: number; end: number }[]) => void;
+
     failedToVerify: boolean;
     setFailedToVerify: (value: boolean) => void;
 }
@@ -68,6 +71,8 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     bookingDetails: null,
     selectedBookingSlot: null,
     nextAvailableSlot: null,
+
+    loadedRanges: [],
 
     failedToVerify: false,
 
@@ -142,6 +147,12 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         }));
 
         set({ selectedTimezone: timezone, bookingSlots: newSlots });
+    },
+
+    setLoadedRanges: (newRanges: { start: number; end: number }[]) => {
+        set({
+            loadedRanges: [...get().loadedRanges, ...newRanges],
+        });
     },
 
     setFailedToVerify: (value: boolean) => {
