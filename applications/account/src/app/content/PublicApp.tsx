@@ -151,9 +151,6 @@ let started = false;
 const handleStartFlags = () => {
     if (!started) {
         const unleashClient = extraThunkArguments.unleashClient;
-        if (unleashClient.isReady() || unleashClient.getError()) {
-            return;
-        }
         unleashClient.start().catch(noop);
         started = true;
     }
