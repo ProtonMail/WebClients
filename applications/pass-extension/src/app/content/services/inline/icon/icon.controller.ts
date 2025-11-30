@@ -23,6 +23,7 @@ import noop from '@proton/utils/noop';
 
 import type { IconStyles } from './icon.utils';
 import {
+    ICON_MAX_SHIFT_RATIO,
     applyIconInjectionStyles,
     cleanupInputStyles,
     computeIconInjectionStyles,
@@ -138,14 +139,14 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
             if (!ctx || ctx.mainFrame || ctrl.signal.aborted) return;
 
             const frameAttributes = getFrameAttributes();
-            const maxWidth = anchor.element.offsetWidth;
-            const { top, left, radius } = styles.icon.overlay;
+            const { top, left, radius, dx } = styles.icon.overlay;
+            const maxShift = anchor.element.offsetWidth * ICON_MAX_SHIFT_RATIO - dx;
 
             await sendMessage
                 .onSuccess(
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_ICON_SHIFT,
-                        payload: { type: 'initial', top, left, radius, frameAttributes, maxWidth },
+                        payload: { type: 'initial', top, left, radius, frameAttributes, maxShift },
                     }),
                     ({ dx }) => {
                         if (ctrl.signal.aborted || dx <= 0) return;
