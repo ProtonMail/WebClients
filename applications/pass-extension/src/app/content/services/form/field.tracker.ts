@@ -113,8 +113,6 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
          * Non-filterable fields: closes dropdown immediately (user typing manually).
          * Filterable fields: sends filter updates to update dropdown results */
         const onInput = (_: Event) => {
-            if (state.timeout) clearTimeout(state.timeout);
-
             const { action } = field;
             const elementValue = field.element.value;
             const trackedValue = field.value;
@@ -122,7 +120,10 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
             /** Tooltips may appear when input value toggles from empty to
              * non-empty: schedule icon repositioning when this happens */
             const revalidate = (!trackedValue && elementValue) || (trackedValue && !elementValue);
-            if (revalidate && !field.actionPrevented) state.timeout = setTimeout(() => field.icon?.reposition(), 150);
+            if (revalidate && !field.actionPrevented) {
+                if (state.timeout) clearTimeout(state.timeout);
+                state.timeout = setTimeout(() => field.icon?.reposition(), 150);
+            }
 
             field.setValue(elementValue);
 
