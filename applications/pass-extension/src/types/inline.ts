@@ -35,6 +35,6 @@ export type DropdownClosedDTO = FrameRelay<InlineCloseOptions & Required<FrameFi
 
 export type IconShiftResult = { dx: number };
 export type IconShiftRequest = FrameRelay<
-    Coords & { maxWidth: number; radius: number; frameAttributes: FrameAttributes },
+    Coords & { maxShift: number; radius: number; frameAttributes: FrameAttributes },
     { frameId: FrameID }
 >;

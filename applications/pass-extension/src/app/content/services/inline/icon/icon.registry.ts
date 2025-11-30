@@ -51,8 +51,8 @@ export const createIconRegistry = ({ channel, dropdown, mainFrame, tag }: IconRe
 
                     const x = payload.left + rect.left + offsetX;
                     const y = payload.top + rect.top + offsetY;
-                    const { maxWidth, radius } = payload;
-                    const dx = computeIconShift({ x, y, maxWidth, radius, anchor });
+                    const { maxShift, radius } = payload;
+                    const dx = computeIconShift({ x, y, maxShift, radius, anchor });
                     sendResponse({ dx });
                 });
 

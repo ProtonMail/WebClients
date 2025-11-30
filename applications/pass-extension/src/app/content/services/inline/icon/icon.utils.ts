@@ -50,8 +50,10 @@ export type IconStyles = {
 
 type FieldOverrides = { ['padding-right']?: string };
 
-const FLICKER_TRESHOLD = 2;
-const MAX_OVERLAY_CHECKS = 2;
+export const ICON_FLICKER_TRESHOLD = 2;
+export const ICON_MAX_OVERLAY_CHECKS = 2;
+export const ICON_MAX_SHIFT_RATIO = 0.5;
+
 /** Calculates the maximum horizontal shift required for injected elements.
  * Determines the optimal positioning to avoid overlap with existing elements */
 export const computeIconShift = (
@@ -62,20 +64,21 @@ export const computeIconShift = (
         y: number;
         /** Radius of the circular icon (half of icon size) */
         radius: number;
-        /** Maximum width of the input field - limits shift to 50% of this value */
-        maxWidth: number;
+        /** Maximum allowed shift (going above likely means FP hit) */
+        maxShift: number;
         /** Bounding container element (form field wrapper or input itself) */
         anchor: HTMLElement;
         /** Container for filtering (optional) */
         container?: HTMLElement;
+        /** skip set */
+        skip?: Set<Element>;
     },
     iteration: number = 1
 ): number => {
     const restore: { el: HTMLElement; pointerEvents: string }[] = [];
 
     try {
-        const { x, y, maxWidth, anchor, container } = options;
-        const maxShift = options.maxWidth * 0.5; /* Maximum allowed shift */
+        const { x, y, maxShift, anchor, container } = options;
 
         if (Number.isNaN(x) || Number.isNaN(y)) return 0;
 
@@ -119,21 +122,17 @@ export const computeIconShift = (
 
         let maxDx: number = 0;
 
-        const skip = new Set();
+        const skip = options.skip ?? new Set();
 
         for (const el of overlays) {
             if (skip.has(el)) continue;
             if (el.classList.contains('protonpass-debug')) continue;
+            if (el === anchor) continue; /** overlays might be "behind" the anchor */
             if (el === anchor.parentElement) break; /* Stop at target element */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
             if (container && !container.contains(el)) continue; /* Skip elements outside parent element (form) */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
-
-            /** Skip large text elements. NOTE: The `isHTMLElement` check is loose in order to
-             * avoid heavy `instanceof` checks. In most cases it will correctly match an `HTMLElement`
-             * but can end-up flagging elements which lack `innerText` or `offsetWidth` properties */
-            if ((el.innerText?.length ?? 0) > 0 && (el.offsetWidth ?? 0) >= maxWidth * 0.8) continue;
 
             /** Skip hidden elements - if we match an invisible element:
              * heuristically skip all single-child containers wrapping it */
@@ -148,13 +147,21 @@ export const computeIconShift = (
                 continue;
             }
 
-            const { left } = el.getBoundingClientRect();
+            const { left, width } = el.getBoundingClientRect();
+
+            if (width >= maxShift) {
+                skip.add(el);
+                continue;
+            }
+
             const dx = Math.max(0, x + options.radius - left);
             if (dx > maxDx && dx < maxShift) maxDx = dx;
         }
 
-        if (maxDx > 0 && iteration <= MAX_OVERLAY_CHECKS) {
-            return maxDx + computeIconShift({ ...options, x: options.x - maxDx }, iteration++);
+        if (maxDx > 0 && iteration <= ICON_MAX_OVERLAY_CHECKS) {
+            const nextMaxShift = options.maxShift - maxDx;
+            const nextX = options.x - maxDx;
+            return maxDx + computeIconShift({ ...options, skip, maxShift: nextMaxShift, x: nextX }, iteration++);
         }
 
         return maxDx;
@@ -169,8 +176,8 @@ export const computeIconShift = (
  * threshold which would create flickering issues */
 export const hasIconInjectionStylesChanged = (a?: MaybeNull<IconStyles>, b?: MaybeNull<IconStyles>) => {
     if (!(a && b)) return true;
-    if (Math.abs(a.icon.right - b.icon.right) > FLICKER_TRESHOLD) return true;
-    if (Math.abs(a.icon.top - b.icon.top) > FLICKER_TRESHOLD) return true;
+    if (Math.abs(a.icon.right - b.icon.right) > ICON_FLICKER_TRESHOLD) return true;
+    if (Math.abs(a.icon.top - b.icon.top) > ICON_FLICKER_TRESHOLD) return true;
     return false;
 };
 
@@ -242,14 +249,14 @@ export const computeIconInjectionStyles = (options: Omit<IconElementRefs, 'icon'
 
     const overlayX = maxRight - (iconGapRight + radius);
     const overlayY = inputTop + inputHeight / 2;
-    const maxWidth = anchor.offsetWidth;
+    const maxShift = anchor.offsetWidth * ICON_MAX_SHIFT_RATIO;
 
     /* Look for any overlayed elements if we were to inject
      * the icon on the right hand-side of the input element */
     const overlayDx = computeIconShift({
         x: overlayX,
         y: overlayY,
-        maxWidth,
+        maxShift,
         radius,
         anchor,
         container: form,
