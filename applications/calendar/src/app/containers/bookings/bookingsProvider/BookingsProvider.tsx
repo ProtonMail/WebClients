@@ -29,6 +29,7 @@ import {
     wasBookingFormTouched,
 } from '../utils/provider/providerHelper';
 import {
+    computeRangeErrors,
     computeRangesErrors,
     convertBookingRangesToCalendarViewEvents,
     generateBookingRangeID,
@@ -201,9 +202,9 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             timezone: data.timezone,
         };
 
-        const newBookingRanges = [...internalForm.bookingRanges, newRange].sort(
-            (a, b) => a.start.getTime() - b.start.getTime()
-        );
+        const newBookingRanges = [...internalForm.bookingRanges, newRange]
+            .sort((a, b) => a.start.getTime() - b.start.getTime())
+            .map((range) => computeRangeErrors(range, internalForm.duration));
 
         setInternalForm((prev) => ({ ...prev, bookingRanges: newBookingRanges }));
         intersectionRef.current = null;
