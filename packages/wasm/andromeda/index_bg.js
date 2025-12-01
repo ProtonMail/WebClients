@@ -239,32 +239,16 @@ function passArrayJsValueToWasm0(array, malloc) {
     return ptr;
 }
 
-function _assertClass(instance, klass) {
-    if (!(instance instanceof klass)) {
-        throw new Error(`expected instance of ${klass.name}`);
-    }
-}
-
 function takeFromExternrefTable0(idx) {
     const value = wasm.__wbindgen_externrefs.get(idx);
     wasm.__externref_table_dealloc(idx);
     return value;
 }
-/**
- * @param {string} word_start
- * @returns {string[]}
- */
-export function getWordsAutocomplete(word_start) {
-    const ptr0 = passStringToWasm0(word_start, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    const ret = wasm.getWordsAutocomplete(ptr0, len0);
-    var v2 = getArrayJsValueFromWasm0(ret[0], ret[1]).slice();
-    wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
-    return v2;
-}
 
-export function setPanicHook() {
-    wasm.setPanicHook();
+function _assertClass(instance, klass) {
+    if (!(instance instanceof klass)) {
+        throw new Error(`expected instance of ${klass.name}`);
+    }
 }
 
 function passArray8ToWasm0(arg, malloc) {
@@ -286,11 +270,32 @@ export function createTransactionFromPsbt(psbt, account) {
 }
 
 /**
+ * @param {string} word_start
+ * @returns {string[]}
+ */
+export function getWordsAutocomplete(word_start) {
+    const ptr0 = passStringToWasm0(word_start, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.getWordsAutocomplete(ptr0, len0);
+    var v2 = getArrayJsValueFromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+    return v2;
+}
+
+export function setPanicHook() {
+    wasm.setPanicHook();
+}
+
+/**
  * @returns {number}
  */
 export function getDefaultStopGap() {
     const ret = wasm.getDefaultStopGap();
     return ret >>> 0;
+}
+
+function wasm_bindgen__convert__closures_____invoke__hececdd76946f4b26(arg0, arg1) {
+    wasm.wasm_bindgen__convert__closures_____invoke__hececdd76946f4b26(arg0, arg1);
 }
 
 function wasm_bindgen__convert__closures_____invoke__h433a80681c2c2209(arg0, arg1) {
@@ -299,10 +304,6 @@ function wasm_bindgen__convert__closures_____invoke__h433a80681c2c2209(arg0, arg
 
 function wasm_bindgen__convert__closures_____invoke__hbbbe380ae82899eb(arg0, arg1, arg2) {
     wasm.wasm_bindgen__convert__closures_____invoke__hbbbe380ae82899eb(arg0, arg1, arg2);
-}
-
-function wasm_bindgen__convert__closures_____invoke__hececdd76946f4b26(arg0, arg1) {
-    wasm.wasm_bindgen__convert__closures_____invoke__hececdd76946f4b26(arg0, arg1);
 }
 
 function wasm_bindgen__convert__closures_____invoke__h299d4b53c5e979ea(arg0, arg1, arg2, arg3) {
@@ -3766,7 +3767,7 @@ export class WasmPaymentGatewayClient {
      * @param {WasmPaymentMethod} payment_method
      * @param {WasmGatewayProvider} provider
      * @param {string} order_id
-     * @returns {Promise<string>}
+     * @returns {Promise<WasmCreateOnRampCheckoutResponseBody>}
      */
     createOnRampCheckout(amount, btc_address, fiat_currency, payment_method, provider, order_id) {
         const ptr0 = passStringToWasm0(amount, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
@@ -5447,14 +5448,14 @@ export class WasmUtxo {
      * @returns {bigint}
      */
     get value() {
-        const ret = wasm.__wbg_get_wasmtxout_value(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmutxo_value(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
      * @param {bigint} arg0
      */
     set value(arg0) {
-        wasm.__wbg_set_wasmtxout_value(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmutxo_value(this.__wbg_ptr, arg0);
     }
     /**
      * @returns {WasmOutPoint}
@@ -5469,7 +5470,7 @@ export class WasmUtxo {
     set outpoint(arg0) {
         _assertClass(arg0, WasmOutPoint);
         var ptr0 = arg0.__destroy_into_raw();
-        wasm.__wbg_set_wasmtxout_script_pubkey(this.__wbg_ptr, ptr0);
+        wasm.__wbg_set_wasmutxo_outpoint(this.__wbg_ptr, ptr0);
     }
     /**
      * @returns {WasmScript}

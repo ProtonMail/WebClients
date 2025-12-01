@@ -10,6 +10,7 @@ import { toWalletAccountSelectorOptions } from '@proton/wallet';
 import { resetQuotesByProvider, useWalletDispatch } from '@proton/wallet/store';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
+import { AZTECO } from '../../constants/buy';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isWalletAccountSet } from '../../utils';
 import type { Steps } from '../ModalHeaderWithStepper';
@@ -46,7 +47,7 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
     const [stepKey, setStepKey] = useState<StepKey>(StepKey.Location);
     const [country, setCountry] = useState<WasmApiCountry>();
     const [quote, setQuote] = useState<QuoteWithProvider>();
-    const [clientSecret, setClientSecret] = useState<string | null>(null);
+    const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
 
     const [openedModal, setOpenedModal] = useState<'buy' | 'confirm' | 'confirm-azteco' | 'in-progress'>('buy');
 
@@ -142,9 +143,9 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                                                 country={country}
                                                 preselectedQuote={quote}
                                                 btcAddress={bitcoinAddressHelper.receiveBitcoinAddress.address}
-                                                onConfirm={(quote, clientSecret) => {
+                                                onConfirm={(quote, checkoutUrl) => {
                                                     setQuote(quote);
-                                                    setClientSecret(clientSecret);
+                                                    setCheckoutUrl(checkoutUrl);
                                                     setStepKey(StepKey.Onramp);
                                                 }}
                                             />
@@ -171,22 +172,18 @@ export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
                                             <Checkout
                                                 quote={quote}
                                                 btcAddress={bitcoinAddressHelper.receiveBitcoinAddress.address}
-                                                clientSecret={clientSecret}
+                                                checkoutUrl={checkoutUrl}
                                                 onPurchaseComplete={() => {
                                                     reset();
                                                     setOpenedModal(
-                                                        quote.provider === 'Azteco' ? 'confirm-azteco' : 'confirm'
+                                                        quote.provider === AZTECO ? 'in-progress' : 'confirm'
                                                     );
                                                 }}
+                                                onPurchaseCancelled={() => {
+                                                    dispatch(resetQuotesByProvider());
+                                                    setStepKey(StepKey.Amount);
+                                                }}
                                                 onBack={() => {
-                                                    if (
-                                                        quote.PaymentMethod === 'BankTransfer' &&
-                                                        quote.provider === 'Azteco'
-                                                    ) {
-                                                        reset();
-                                                        setOpenedModal('in-progress');
-                                                        return;
-                                                    }
                                                     dispatch(resetQuotesByProvider());
                                                     setStepKey(StepKey.Amount);
                                                 }}
