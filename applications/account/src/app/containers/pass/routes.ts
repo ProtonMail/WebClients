@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
 import type { Subscription } from '@proton/payments';
-import { hasAnyBundlePro, hasPassBusiness } from '@proton/payments';
+import { hasAnyBundlePro, hasPassBusiness, hasVPNPassProfessional } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -29,8 +29,9 @@ export const getPassAppRoutes = ({
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
-    // passbiz2024 or bundlepro2024 or bundlepro2022
-    const hasPassOrBundleB2B = hasPassBusiness(subscription) || hasAnyBundlePro(subscription);
+    // passbiz2024 or bundlepro2024 or bundlepro2022 or vpnpassbiz2025
+    const hasPassOrBundleB2B =
+        hasPassBusiness(subscription) || hasAnyBundlePro(subscription) || hasVPNPassProfessional(subscription);
 
     return <const>{
         available: app === APPS.PROTONPASS,
