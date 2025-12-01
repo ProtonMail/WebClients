@@ -70,7 +70,7 @@ export class LumoApiClient {
             enableExternalTools = false,
             requestKey: providedRequestKey,
             requestId: providedRequestId,
-            requestTitle = false,
+            generateTitle = false,
             autoGenerateEncryption = true,
         } = options;
         const { enableU2LEncryption, endpoint } = this.config;
@@ -81,29 +81,16 @@ export class LumoApiClient {
             autoGenerateEncryption,
         });
 
-        // Encrypt request if needed
-        if (encryption) {
-            turns = await encryptTurns(turns, encryption);
-        }
-
-        // Determine request targets
-        const targets = this.getTargets(requestTitle);
-
         // Prepare the request
-        let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(
-            turns,
+        let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(turns, encryption, {
             enableExternalTools,
-            targets,
-            encryption
-        );
+            generateTitle,
+        });
 
-        const requestContext: RequestContext = {
-            requestId: uuidv4(), // do not use encryption.requestId, which is ONLY meant for cryptographic purposes (AEAD)
-            timestamp: Date.now(),
-            endpoint,
+        const requestContext: RequestContext = this.initializeRequestContext(endpoint, {
             enableU2LEncryption,
             enableExternalTools,
-        };
+        });
 
         // Run request interceptors
         request = await this.notifyRequestInterceptors(request, requestContext);
@@ -125,6 +112,23 @@ export class LumoApiClient {
             chunkCallback,
             finishCallback
         );
+    }
+
+    private initializeRequestContext(
+        endpoint: string,
+        flags: {
+            enableU2LEncryption: boolean;
+            enableExternalTools: boolean;
+        }
+    ) {
+        const { enableU2LEncryption, enableExternalTools } = flags;
+        return {
+            requestId: uuidv4(), // do not use encryption.requestId, which is ONLY meant for cryptographic purposes (AEAD)
+            timestamp: Date.now(),
+            endpoint,
+            enableU2LEncryption,
+            enableExternalTools,
+        };
     }
 
     private async runSseReceiveLoop(
@@ -209,20 +213,37 @@ export class LumoApiClient {
 
     private async prepareGenerationRequest(
         turns: Turn[],
-        enableExternalTools: boolean,
-        targets: RequestableGenerationTarget[],
-        encryption: RequestEncryptionParams | null
+        encryption: RequestEncryptionParams | null,
+        flags: {
+            enableExternalTools: boolean;
+            generateTitle: boolean;
+        }
     ): Promise<LumoApiGenerationRequest> {
-        const { lumoPubKey, internalTools, externalTools } = this.config;
-        const tools = enableExternalTools ? [...internalTools, ...externalTools] : internalTools;
+        const { lumoPubKey } = this.config;
+        const { enableExternalTools, generateTitle } = flags;
+
+        // Encrypt request if needed
+        if (encryption) {
+            turns = await encryptTurns(turns, encryption);
+        }
+
+        // Determine tools and targets
+        const tools = this.getTools(enableExternalTools);
+        const targets = this.getTargets(generateTitle);
+
         return {
             type: 'generation_request',
-            turns: turns,
+            turns,
             options: { tools },
             targets,
             request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
             request_id: encryption?.requestId,
         };
+    }
+
+    private getTools(enableExternalTools: boolean) {
+        const { internalTools, externalTools } = this.config;
+        return enableExternalTools ? [...internalTools, ...externalTools] : internalTools;
     }
 
     private getTargets(requestTitle: boolean): RequestableGenerationTarget[] {
