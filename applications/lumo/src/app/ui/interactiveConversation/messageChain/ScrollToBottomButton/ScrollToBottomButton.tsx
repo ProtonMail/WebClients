@@ -52,11 +52,11 @@ export const ScrollToBottomButton = ({
         <div
             className="absolute w-full z-50 flex justify-center"
             style={{
-                bottom: `${composerHeight + 36}px`,
+                bottom: `${composerHeight + 10}px`,
                 transform: show ? 'translateY(0)' : 'translateY(8px)',
                 transition: 'all 200ms ease-in-out',
                 opacity: show ? 1 : 0,
-                pointerEvents: show ? 'auto' : 'none',
+                pointerEvents: 'none',
             }}
         >
             <Tooltip title={c('Action').t`Scroll to bottom`}>
@@ -64,6 +64,9 @@ export const ScrollToBottomButton = ({
                     onClick={onClick}
                     className="scroll-to-bottom-button shadow-lifted hover:shadow-norm flex items-center justify-center cursor-pointer rounded-50 border border-weak bg-norm color-norm"
                     aria-label={c('Action').t`Scroll to bottom`}
+                    style={{
+                        pointerEvents: 'auto',
+                    }}
                 >
                     <IcChevronDown />
                 </button>
