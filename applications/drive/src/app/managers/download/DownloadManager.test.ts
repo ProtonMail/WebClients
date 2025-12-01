@@ -43,6 +43,8 @@ const fileSaverSaveAsFileMock = jest.fn();
 const loadCreateReadableStreamWrapperMock = jest.fn();
 const traverseNodeStructureMock = jest.fn();
 const hydrateAndCheckNodesMock = jest.fn();
+const hydrateAndCheckPhotosMock = jest.fn();
+const getDownloadSdkMock = jest.fn();
 
 jest.mock('../../store/_downloads/fileSaver/fileSaver', () => ({
     __esModule: true,
@@ -97,6 +99,11 @@ jest.mock('./utils/traverseNodeStructure', () => ({
 
 jest.mock('./utils/hydrateAndCheckNodes', () => ({
     hydrateAndCheckNodes: hydrateAndCheckNodesMock,
+    hydrateAndCheckPhotos: hydrateAndCheckPhotosMock,
+}));
+
+jest.mock('./utils/getDownloadSdk', () => ({
+    getDownloadSdk: getDownloadSdkMock,
 }));
 
 jest.mock('@proton/drive/index', () => {
@@ -114,6 +121,7 @@ jest.mock('@proton/drive/index', () => {
     };
     class AbortError extends Error {}
     const getDrive = jest.fn(() => driveMock);
+    const getDriveForPhotos = jest.fn(() => driveMock);
     const emitSDKEvent = (event: string, ...args: unknown[]) => {
         (listeners[event] || []).forEach((listener) => listener(...args));
     };
@@ -131,6 +139,7 @@ jest.mock('@proton/drive/index', () => {
             TransfersResumed: 'TransfersResumed',
         },
         getDrive,
+        getDriveForPhotos,
         driveMock,
         emitSDKEvent,
         resetSDKListeners,
@@ -148,6 +157,7 @@ const sdkMock = require('@proton/drive/index') as {
     AbortError: typeof Error;
     SDKEvent: { TransfersPaused: string; TransfersResumed: string };
     getDrive: jest.Mock;
+    getDriveForPhotos: jest.Mock;
     driveMock: {
         onMessage: jest.Mock;
         getFileDownloader: jest.Mock;
@@ -204,12 +214,16 @@ beforeEach(() => {
     fileSaverSaveAsFileMock.mockReset();
     traverseNodeStructureMock.mockReset();
     hydrateAndCheckNodesMock.mockReset();
+    hydrateAndCheckPhotosMock.mockReset();
+    getDownloadSdkMock.mockReset();
+    getDownloadSdkMock.mockReturnValue(sdkMock.driveMock);
 
     schedulerTracker.reset();
     archiveStreamGeneratorTracker.reset();
     archiveGeneratorTracker.reset();
 
     sdkMock.getDrive.mockClear();
+    sdkMock.getDriveForPhotos.mockClear();
     sdkMock.driveMock.getFileDownloader.mockReset();
     sdkMock.driveMock.onMessage.mockClear();
     sdkMock.resetSDKListeners();
@@ -278,6 +292,8 @@ describe('DownloadManager', () => {
             downloadedBytes: 0,
             status: DownloadStatus.Pending,
             nodeUids: [node.uid],
+            unsupportedFileDetected: undefined,
+            isPhoto: false,
         });
 
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
@@ -679,9 +695,8 @@ describe('DownloadManager', () => {
         storeMockState.getQueueItem.mockImplementation(() => ({ status: currentStatus }));
 
         manager.addListeners();
-        manager.addListeners();
 
-        expect(sdkMock.driveMock.onMessage).toHaveBeenCalledTimes(2);
+        expect(sdkMock.driveMock.onMessage).toHaveBeenCalledTimes(4);
 
         sdkMock.emitSDKEvent(sdkMock.SDKEvent.TransfersPaused);
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('job-7', {

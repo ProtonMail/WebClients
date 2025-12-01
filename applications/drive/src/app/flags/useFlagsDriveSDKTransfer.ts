@@ -4,7 +4,8 @@ import { getIsPublicContext } from '../utils/getIsPublicContext';
 
 export const useFlagsDriveSDKTransfer = ({ isForPhotos }: { isForPhotos?: boolean | undefined } = {}) => {
     const isSDKTransferEnabled = useFlag('DriveWebSDKTransfer');
+    const isSDKPhotosTransferEnabled = useFlag('DriveWebSDKPhotosTransfer');
     const isPublic = getIsPublicContext();
 
-    return isSDKTransferEnabled && !isPublic && !isForPhotos;
+    return isSDKTransferEnabled && !isPublic && (isSDKPhotosTransferEnabled || !isForPhotos);
 };

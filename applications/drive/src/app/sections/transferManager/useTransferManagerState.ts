@@ -96,23 +96,22 @@ export const useTransferManagerState = () => {
         const uploads = uploadQueue.map(mapUpload);
         const allTransfers = [...downloads, ...uploads];
         let status: TransferManagerStatus;
+        let sumOfTransferredBytes = 0;
+        let sumOfBytes = 0;
+        const transfersFinished = [];
 
         // XXX: This is 4 loops on the same list but it's the most elegant way i can think of
         // there's a test to make sure it stays under 20ms with 10k elements
-        const sumOfTransferredBytes = allTransfers.reduce((acc, transfer) => {
-            let size = 0;
-            if (!getShouldIgnoreTransferProgress(transfer.status)) {
-                size = transfer.transferredBytes;
+        for (const transfer of allTransfers) {
+            const shouldIgnore = getShouldIgnoreTransferProgress(transfer.status);
+            if (!shouldIgnore) {
+                sumOfTransferredBytes = transfer.transferredBytes;
+                sumOfBytes = transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize;
             }
-            return acc + size;
-        }, 0);
-        const sumOfBytes = allTransfers.reduce((acc, transfer) => {
-            let size = 0;
-            if (!getShouldIgnoreTransferProgress(transfer.status)) {
-                size = transfer.type === 'download' ? transfer.storageSize : transfer.clearTextSize;
+            if (shouldIgnore || transfer.status === BaseTransferStatus.Finished) {
+                transfersFinished.push(transfer);
             }
-            return acc + size;
-        }, 0);
+        }
 
         if (allTransfers.length === 0) {
             status = TransferManagerStatus.Empty;
@@ -122,11 +121,17 @@ export const useTransferManagerState = () => {
             status = TransferManagerStatus.Failed;
         } else if (allTransfers.some((t) => t.status === BaseTransferStatus.Cancelled)) {
             status = TransferManagerStatus.Cancelled;
+        } else if (allTransfers.some((t) => t.status === BaseTransferStatus.Pending)) {
+            status = TransferManagerStatus.InProgress;
         } else {
             status = TransferManagerStatus.Finished;
         }
 
-        const progressPercentage = sumOfBytes ? (sumOfTransferredBytes / sumOfBytes) * 100 : 0;
+        let progressPercentage = sumOfBytes ? (sumOfTransferredBytes / sumOfBytes) * 100 : 0;
+        // Edge case in which all transfers are cancelled/failed we should still show 100%
+        if (sumOfBytes === 0 && allTransfers.length && allTransfers.length === transfersFinished.length) {
+            progressPercentage = 100;
+        }
 
         let transferType: TransferType = 'empty';
         if (downloads.length && uploads.length) {

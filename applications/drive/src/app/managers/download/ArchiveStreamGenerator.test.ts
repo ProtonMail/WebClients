@@ -6,23 +6,11 @@ import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './Ar
 import type { DownloadQueueTask } from './downloadTypes';
 import { createDeferred, createMockNodeEntity, flushAsync, trackInstances } from './testUtils';
 
-const getDriveMock = jest.fn();
+const getDownloadSdkMock = jest.fn();
 
-jest.mock('@proton/drive', () => {
-    const actual = jest.requireActual('@proton/drive');
-    return {
-        ...(actual as {}),
-        getDrive: getDriveMock,
-    };
-});
-
-jest.mock('@proton/drive/index', () => {
-    const actual = jest.requireActual('@proton/drive/index');
-    return {
-        ...(actual as {}),
-        getDrive: getDriveMock,
-    };
-});
+jest.mock('./utils/getDownloadSdk', () => ({
+    getDownloadSdk: getDownloadSdkMock,
+}));
 
 const { ArchiveStreamGenerator } = require('./ArchiveStreamGenerator') as {
     ArchiveStreamGenerator: typeof ArchiveStreamGeneratorClass;
@@ -60,6 +48,7 @@ describe('ArchiveStreamGenerator', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         schedulerTracker.reset();
+        getDownloadSdkMock.mockReset();
     });
 
     it('should schedule file entries and expose generator/controller', async () => {
@@ -83,7 +72,7 @@ describe('ArchiveStreamGenerator', () => {
             getClaimedSizeInBytes: jest.fn(() => 1024),
         }));
 
-        getDriveMock.mockImplementation(() => ({
+        getDownloadSdkMock.mockImplementation(() => ({
             getFileDownloader,
         }));
 
@@ -147,7 +136,7 @@ describe('ArchiveStreamGenerator', () => {
 
     it('should enqueue folder entries without accessing downloader', async () => {
         const schedulerInstance = schedulerTracker.Mock();
-        getDriveMock.mockImplementation(() => ({
+        getDownloadSdkMock.mockImplementation(() => ({
             getFileDownloader: jest.fn(async () => undefined),
         }));
 
@@ -201,7 +190,7 @@ describe('ArchiveStreamGenerator', () => {
         const downloadToStream = jest.fn(
             (_writable: unknown, _onProgress: (bytes: number) => void) => downloadController
         );
-        getDriveMock.mockImplementation(() => ({
+        getDownloadSdkMock.mockImplementation(() => ({
             getFileDownloader: jest.fn(async () => ({
                 downloadToStream,
                 getClaimedSizeInBytes: jest.fn(() => 1024),

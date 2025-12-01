@@ -50,6 +50,7 @@ export type DownloadItem = {
     malwareDetected?: Map<string, IssueStatus>;
     unsupportedFileDetected?: IssueStatus;
     lastStatusUpdateTime: Date;
+    isPhoto?: boolean;
 };
 
 export type DownloadItemInput = Omit<DownloadItem, 'downloadId' | 'lastStatusUpdateTime'>;

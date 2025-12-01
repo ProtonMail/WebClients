@@ -4,9 +4,12 @@ import { useParams } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { generateNodeUid } from '@proton/drive/index';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
+import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
+import { DownloadManager } from '../../managers/download/DownloadManager';
 import type { LinkDownload } from '../../store/_downloads';
 import { useDownloadProvider } from '../../store/_downloads';
 import type { DriveEvent, DriveEvents } from '../../store/_events';
@@ -60,6 +63,7 @@ export const usePhotosWithAlbumsView = () => {
     const { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
     const eventsManager = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta } = useLinksListing();
+    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: true });
     const linkState = useLinksState();
     const {
         shareId,
@@ -468,12 +472,16 @@ export const usePhotosWithAlbumsView = () => {
 
             // if on album page and all links are selected, download the zip as the album name
             const album = albumLinkId && links.length === albumPhotos.length ? albums.get(albumLinkId) : undefined;
-
-            await download(links, {
-                zipName: album?.name ? `${album?.name}.zip` : undefined,
-            });
+            if (isSDKTransferEnabled && volumeId) {
+                const nodeUids = links.map((link) => generateNodeUid(volumeId, link.linkId));
+                await DownloadManager.getInstance().downloadPhotos(nodeUids, album?.name);
+            } else {
+                await download(links, {
+                    zipName: album?.name ? `${album?.name}.zip` : undefined,
+                });
+            }
         },
-        [albumLinkId, albumPhotos.length, albums, download, loadLinksMeta]
+        [albumLinkId, albumPhotos.length, albums, download, loadLinksMeta, isSDKTransferEnabled, volumeId]
     );
 
     const addAlbumPhoto = useCallback(
