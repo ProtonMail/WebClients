@@ -146,7 +146,7 @@ export interface AssistantCallOptions {
     enableExternalTools?: boolean;
     requestKey?: AesGcmCryptoKey;
     requestId?: RequestId;
-    requestTitle?: boolean;
+    generateTitle?: boolean;
     autoGenerateEncryption?: boolean;
 }
 
