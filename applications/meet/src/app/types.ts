@@ -103,3 +103,10 @@ export enum UpsellModalTypes {
     FreeAccount = 'freeAccount',
     PaidAccount = 'paidAccount',
 }
+
+export interface KeyRotationLog {
+    timestamp: number;
+    epoch: number;
+    type: 'log' | 'error';
+    message: string;
+}

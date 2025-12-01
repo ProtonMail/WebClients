@@ -5,7 +5,13 @@ import { VideoQuality } from 'livekit-client';
 import type { LocalParticipant, Participant, RemoteParticipant } from 'livekit-client';
 
 import { PAGE_SIZE } from '../constants';
-import type { MLSGroupState, MeetChatMessage, ParticipantEntity, ParticipantEventRecord } from '../types';
+import type {
+    KeyRotationLog,
+    MLSGroupState,
+    MeetChatMessage,
+    ParticipantEntity,
+    ParticipantEventRecord,
+} from '../types';
 
 export interface MeetContextValues {
     locked: boolean;
@@ -57,6 +63,7 @@ export interface MeetContextValues {
     preparePictureInPicture: () => void;
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
+    keyRotationLogs: KeyRotationLog[];
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -109,6 +116,7 @@ export const MeetContext = createContext<MeetContextValues>({
     preparePictureInPicture: () => {},
     instantMeeting: false,
     assignHost: () => Promise.resolve(),
+    keyRotationLogs: [],
 });
 
 export const useMeetContext = () => {
