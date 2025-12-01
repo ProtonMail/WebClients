@@ -13,13 +13,13 @@ import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { SignupType } from '../../../../../signup/interfaces';
-import Terms from '../../../../components/Terms';
 import { usePasswordInputInline } from '../../../../containers/password/usePasswordInput';
 import useEmailInput from '../../../../containers/username/useEmailInput';
 import { useSignup } from '../../../../context/SignupContext';
 import clubic from '../../assets/images/clubic.svg';
 import pcmag from '../../assets/images/pcmag.svg';
 import wired from '../../assets/images/wired.svg';
+import Terms from '../../components/Terms';
 
 type Step = 'email' | 'password';
 
