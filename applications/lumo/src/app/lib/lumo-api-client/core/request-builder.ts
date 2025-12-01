@@ -98,7 +98,7 @@ export class RequestBuilder {
      * @returns RequestBuilder for chaining
      */
     withTitle(enabled: boolean = true): RequestBuilder {
-        this.options.requestTitle = enabled;
+        this.options.generateTitle = enabled;
         return this;
     }
 
