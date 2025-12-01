@@ -42,7 +42,7 @@ export {
 } from './core/interceptors';
 
 // Utility exports
-export { encryptString, encryptTurns, decryptContent } from './core/encryption';
+export { encryptString, encryptTurns } from './core/encryption';
 
 export { StreamProcessor } from './core/streaming';
 
@@ -89,5 +89,6 @@ export async function quickChat(
         onChunk: chunkCallback,
     });
 }
+
 export { generateRequestKey } from './core/encryptionParams';
 export { generateRequestId } from './core/encryptionParams';

@@ -17,10 +17,7 @@ export const makeFinishSink = (
         async write(value: GenerationResponseMessageDecrypted) {
             const processedValue = await notifyResponse(value, responseContext);
             if (!chunkCallback) return;
-            const result = await chunkCallback(processedValue);
-            if (result?.error) {
-                throw result.error;
-            }
+            await chunkCallback(processedValue);
         },
     });
 };

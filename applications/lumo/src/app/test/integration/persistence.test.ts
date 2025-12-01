@@ -3,7 +3,7 @@ import { type SetupServer, setupServer } from 'msw/node';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { CONVERSATION_STORE, DbApi, MESSAGE_STORE, SPACE_STORE } from '../../indexedDb/db';
-import { getCallbacks } from '../../llm';
+import { _getCallbacks } from '../../llm';
 import { setRetryPushEveryMs } from '../../redux/sagas';
 import {
     selectAttachmentById,
@@ -556,7 +556,8 @@ describe('Lumo Persistence Integration Tests', () => {
                     { type: 'token_data', target: 'message', content: '.', count: 5 },
                     { type: 'done' },
                 ];
-                const { chunkCallback, finishCallback } = getCallbacks(spaceId, conversationId, answerMessageId);
+                // FIXME getCallbacks is no longer the real function!
+                const { chunkCallback, finishCallback } = _getCallbacks(spaceId, conversationId, answerMessageId);
                 for (const sse of sseMessages) {
                     await chunkCallback(sse, dispatch);
                     await sleep(50);
