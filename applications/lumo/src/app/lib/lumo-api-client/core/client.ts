@@ -68,15 +68,15 @@ export class LumoApiClient {
             finishCallback,
             signal,
             enableExternalTools = false,
-            requestKey: providedRequestKey,
-            requestId: providedRequestId,
+            requestKey,
+            requestId,
             generateTitle = false,
             autoGenerateEncryption = true,
         } = options;
         const { enableU2LEncryption, endpoint } = this.config;
 
         // Setup U2L encryption
-        const encryption = await RequestEncryptionParams.create(providedRequestKey, providedRequestId, {
+        const encryption = await RequestEncryptionParams.create(requestKey, requestId, {
             enableU2LEncryption,
             autoGenerateEncryption,
         });
@@ -87,24 +87,18 @@ export class LumoApiClient {
             generateTitle,
         });
 
+        // Prepare request context and run interceptors
         const requestContext: RequestContext = this.initializeRequestContext(endpoint, {
             enableU2LEncryption,
             enableExternalTools,
         });
-
-        // Run request interceptors
         request = await this.notifyRequestInterceptors(request, requestContext);
 
-        // Prepare payload
-        const postData = this.prepareChatEndpointPostData(request);
-
-        // Response context for interceptors
+        // Prepare response context and call server, then monitor the SSE stream until the end
         const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
-
-        // Call server and read the streamed result
         await this.runSseReceiveLoop(
             api,
-            postData,
+            request,
             endpoint,
             signal,
             encryption,
@@ -133,7 +127,7 @@ export class LumoApiClient {
 
     private async runSseReceiveLoop(
         api: Api,
-        postData: ChatEndpointGenerationRequest,
+        request: LumoApiGenerationRequest,
         endpoint: string,
         signal: AbortSignal | undefined,
         encryption: RequestEncryptionParams | null,
@@ -145,6 +139,9 @@ export class LumoApiClient {
 
         // Final status will be changed to succeeded on success
         let finalStatus: Status = 'failed';
+
+        // Prepare payload
+        const postData = this.prepareChatEndpointPostData(request);
 
         try {
             const responseBody = await callChatEndpoint(api, postData, {
