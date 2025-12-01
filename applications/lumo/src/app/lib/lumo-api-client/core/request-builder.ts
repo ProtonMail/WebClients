@@ -74,6 +74,8 @@ export class RequestBuilder {
     //       - internal tools (proton_info)
     //       - all tools: internal + external (web search, etc)
 
+    // todo: the todo above is even more relevant with image generation: api users likely don't want imgen
+
     /**
      * Enable or disable external tools (web search, weather, etc.)
      * @param enabled Whether to enable external tools
