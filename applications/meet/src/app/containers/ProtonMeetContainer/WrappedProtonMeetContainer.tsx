@@ -12,8 +12,6 @@ import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
-const keyProvider = new ProtonMeetKeyProvider();
-
 const worker = new Worker(new URL('livekit-client/e2ee-worker', import.meta.url));
 
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
@@ -22,6 +20,8 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const reportMeetError = useMeetErrorReporting();
 
     const isLogExtensionSetup = useRef(false);
+
+    const keyProviderRef = useRef(new ProtonMeetKeyProvider());
 
     useEffect(() => {
         if (!isLogExtensionSetup.current) {
@@ -42,7 +42,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     if (!roomRef.current) {
         roomRef.current = new Room({
             e2ee: {
-                keyProvider,
+                keyProvider: keyProviderRef.current,
                 worker,
             },
             videoCaptureDefaults: {
@@ -70,12 +70,16 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
             <MediaManagementProvider>
                 <UIStateProvider instantMeeting={false}>
                     {guestMode ? (
-                        <ProtonMeetContainer guestMode={true} room={roomRef.current} keyProvider={keyProvider} />
+                        <ProtonMeetContainer
+                            guestMode={true}
+                            room={roomRef.current}
+                            keyProvider={keyProviderRef.current}
+                        />
                     ) : (
                         <ProtonMeetContainerWithUser
                             guestMode={false}
                             room={roomRef.current}
-                            keyProvider={keyProvider}
+                            keyProvider={keyProviderRef.current}
                         />
                     )}
                 </UIStateProvider>
