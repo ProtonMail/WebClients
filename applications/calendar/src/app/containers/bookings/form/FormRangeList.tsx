@@ -71,7 +71,7 @@ export const FormRangeList = () => {
 
         const now = new Date();
         if (isBefore(newStart, now) || isBefore(newEnd, now)) {
-            createNotification({ text: c('Info').t`Cannot create booking range in the past` });
+            createNotification({ text: c('Info').t`Cannot create booking range in the past.` });
             return;
         }
 
