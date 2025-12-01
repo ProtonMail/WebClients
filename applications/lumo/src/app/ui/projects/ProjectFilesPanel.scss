@@ -1,13 +1,16 @@
 .project-files-panel {
-    width: 400px;
-    border-left: 1px solid var(--border-weak);
-    background-color: var(--background-norm);
+    height: 100%;
+    width: 33.333333%;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 24px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    flex-shrink: 0;
 
     @media (max-width: 1024px) {
-        width: 320px;
+        width: 50%;
     }
 
     @media (max-width: 768px) {
@@ -15,12 +18,27 @@
     }
 }
 
+.project-files-panel-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    border-radius: 12px;
+    background-color: var(--background-weak);
+    box-shadow: var(--shadow-lifted);
+    height: 100%;
+    padding: 16px;
+}
+
 .project-files-section {
-    padding: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     border-bottom: 1px solid var(--border-weak);
 
     &:last-child {
         border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -83,6 +101,61 @@
     align-items: center;
     justify-content: center;
     min-height: 120px;
+}
+
+.project-files-options {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 100%;
+}
+
+.project-files-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    flex: 1;
+    padding: 20px 16px;
+    background-color: var(--background-weak);
+    border: 1px dashed var(--border-norm);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    min-height: 140px;
+    text-align: center;
+
+    &:hover {
+        background-color: var(--background-strong);
+        border-color: var(--interaction-norm);
+    }
+
+    &:focus {
+        outline: 2px solid var(--focus-outline);
+        outline-offset: 2px;
+    }
+}
+
+.project-files-option-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.project-files-option-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-norm);
+}
+
+.project-files-option-subtext {
+    font-size: 12px;
+    color: var(--text-weak);
+    line-height: 1.4;
+    text-align: center;
 }
 
 .project-files-add {
