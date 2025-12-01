@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payment successful</title>
+        <link rel="stylesheet" href="checkout.css" />
+        <style>
+            .icon {
+                background: #10b981;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <h1>Payment successful</h1>
+            <p class="message">
+                We've received your order. Your Bitcoin will appear in your wallet once we confirm your payment. You can
+                now close this page and return to your wallet.
+            </p>
+
+            <p class="footer-text">A confirmation email has been sent to your Proton email address.</p>
+        </div>
+    </body>
+    <script type="application/javascript">
+        if (window.opener) {
+            window.opener.postMessage({ type: 'CheckoutCompleted' }, '*');
+        }
+    </script>
+</html>

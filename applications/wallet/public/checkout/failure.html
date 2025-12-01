@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payment failed</title>
+        <link rel="stylesheet" href="checkout.css" />
+        <style>
+            .icon {
+                background: #ef4444;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
+
+            <h1>Payment failed</h1>
+            <p class="message">
+                Something went wrong with your payment. Please check your payment details and try again. You can now
+                close this page and return to your wallet.
+            </p>
+
+            <p class="footer-text">
+                If you are experiencing issues, please contact our
+                <a target="_blank" href="https://proton.me/support/contact?topic=proton+wallet">support team</a>.
+            </p>
+        </div>
+    </body>
+    <script type="application/javascript">
+        if (window.opener) {
+            window.opener.postMessage({ type: 'CheckoutCancelled' }, '*');
+        }
+    </script>
+</html>
