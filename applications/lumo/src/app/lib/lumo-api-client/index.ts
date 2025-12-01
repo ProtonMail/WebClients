@@ -18,7 +18,7 @@ export type {
     RequestableGenerationTarget,
     GenerationTarget,
     LumoApiGenerationRequest,
-    GenerationToFrontendMessage,
+    GenerationResponseMessage,
     Status,
     LumoApiClientConfig,
     ChunkCallback,

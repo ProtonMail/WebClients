@@ -1,6 +1,6 @@
 // Types that are tied to the API backend.
 // See definitions in:
-// https://gitlab.protontech.ch/msa/machine-learning/Lumo-api/-/blob/main/src/types.rs
+// https://gitlab.protontech.ch/msa/machine-learning/lumo-infra/-/blob/main/src/types.rs
 import type { ConversationId, Message, RequestId, Turn } from './types';
 
 export type Tier = 'anonymous' | 'basic' | 'free';
