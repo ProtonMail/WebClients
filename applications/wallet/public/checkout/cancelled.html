@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payment cancelled</title>
+        <link rel="stylesheet" href="checkout.css" />
+        <style>
+            .icon {
+                background: #6b7280;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+            </div>
+
+            <h1>Payment cancelled</h1>
+            <p class="message">
+                Your payment has been cancelled. You can now close this page and return to your wallet.
+            </p>
+        </div>
+    </body>
+    <script type="application/javascript">
+        if (window.opener) {
+            window.opener.postMessage({ type: 'CheckoutCancelled' }, '*');
+        }
+    </script>
+</html>

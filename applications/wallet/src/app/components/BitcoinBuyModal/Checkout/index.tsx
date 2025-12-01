@@ -10,20 +10,23 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
+import { VOLT_WEBSITE } from '../../../constants/buy';
 import type { QuoteWithProvider } from '../AmountStep';
 
 import './Checkout.scss';
 
 enum StripeWidgetEventTypes {
     CHECKOUT_COMPLETED = 'CheckoutCompleted',
+    CHECKOUT_CANCELLED = 'CheckoutCancelled',
 }
 
 interface Props {
     quote: QuoteWithProvider;
     btcAddress: string;
+    checkoutUrl: string | null;
     onBack: () => void;
     onPurchaseComplete: () => void;
-    clientSecret: string | null;
+    onPurchaseCancelled: () => void;
 }
 
 const buildUrl = (
@@ -31,8 +34,7 @@ const buildUrl = (
     bitcoinAddress: string,
     currency: string,
     paymentMethod: WasmPaymentMethod,
-    provider: WasmGatewayProvider,
-    checkoutId: string | null
+    provider: WasmGatewayProvider
 ) => {
     const wasmPaymentMethodToNumber: Record<WasmPaymentMethod, number> = {
         ApplePay: 1,
@@ -52,33 +54,61 @@ const buildUrl = (
     url.searchParams.set('PaymentMethod', wasmPaymentMethodToNumber[paymentMethod].toString());
     url.searchParams.set('Provider', provider);
 
-    if (checkoutId) {
-        url.searchParams.set('ClientSecret', checkoutId);
-    }
-
     return url.toString();
 };
 
-export const Checkout = ({ quote, btcAddress, clientSecret, onBack, onPurchaseComplete }: Props) => {
+export const Checkout = ({
+    quote,
+    btcAddress,
+    checkoutUrl,
+    onBack,
+    onPurchaseComplete,
+    onPurchaseCancelled,
+}: Props) => {
     const [isLoading, setIsLoading] = useState(true);
 
+    const handleEvent = (event?: MessageEvent<any>) => {
+        if ([RampInstantEventTypes.WIDGET_CLOSE, 'onCloseOverlay'].includes(event?.data.type)) {
+            onBack();
+        }
+
+        if (event?.data.type === StripeWidgetEventTypes.CHECKOUT_COMPLETED) {
+            onPurchaseComplete();
+        }
+
+        if (event?.data.type === StripeWidgetEventTypes.CHECKOUT_CANCELLED) {
+            onPurchaseCancelled();
+        }
+    };
+
     useEffect(() => {
-        const handleEvent = (event?: MessageEvent<any>) => {
-            if ([RampInstantEventTypes.WIDGET_CLOSE, 'onCloseOverlay'].includes(event?.data.type)) {
+        if (!checkoutUrl?.includes(VOLT_WEBSITE)) {
+            return;
+        }
+
+        const popup = window.open(checkoutUrl, '_blank');
+        const timer = setInterval(() => {
+            if (!popup || popup.closed) {
+                clearInterval(timer);
+                window.removeEventListener('message', handleEvent);
                 onBack();
             }
+        }, 500);
 
-            if (event?.data.type === StripeWidgetEventTypes.CHECKOUT_COMPLETED) {
-                onPurchaseComplete();
-            }
+        return () => {
+            clearInterval(timer);
+            window.removeEventListener('message', handleEvent);
+            popup?.close();
         };
+    }, [checkoutUrl, onBack]);
 
+    useEffect(() => {
         window.addEventListener('message', handleEvent);
 
         return () => {
             window.removeEventListener('message', handleEvent);
         };
-    }, [onBack, onPurchaseComplete]);
+    }, [onBack, onPurchaseComplete, onPurchaseCancelled]);
 
     return (
         <div className="flex flex-column max-w-full justify-center items-center">
@@ -97,22 +127,31 @@ export const Checkout = ({ quote, btcAddress, clientSecret, onBack, onPurchaseCo
 
                 {isLoading && <CircleLoader className="onramp-loader color-primary" />}
 
-                <iframe
-                    className="onramp-iframe"
-                    allow="camera *;microphone *"
-                    src={buildUrl(
-                        Number(quote.FiatAmount),
-                        btcAddress,
-                        quote.FiatCurrencySymbol,
-                        quote.PaymentMethod,
-                        quote.provider,
-                        clientSecret
-                    )}
-                    title={c('Bitcoin buy').t`${quote.provider} checkout`}
-                    onLoad={() => {
-                        setIsLoading(false);
-                    }}
-                />
+                {checkoutUrl?.includes(VOLT_WEBSITE) ? (
+                    <p>
+                        {c('Info')
+                            .t`Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.`}
+                    </p>
+                ) : (
+                    <iframe
+                        className="onramp-iframe"
+                        allow="camera *; microphone *"
+                        src={
+                            checkoutUrl ??
+                            buildUrl(
+                                Number(quote.FiatAmount),
+                                btcAddress,
+                                quote.FiatCurrencySymbol,
+                                quote.PaymentMethod,
+                                quote.provider
+                            )
+                        }
+                        title={c('Bitcoin buy').t`${quote.provider} checkout`}
+                        onLoad={() => {
+                            setIsLoading(false);
+                        }}
+                    />
+                )}
             </div>
         </div>
     );
