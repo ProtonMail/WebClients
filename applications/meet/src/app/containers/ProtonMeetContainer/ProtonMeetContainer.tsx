@@ -41,7 +41,7 @@ import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureI
 import { useWakeLock } from '../../hooks/useWakeLock';
 import { useMeetDispatch } from '../../store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '../../store/slices/meetAppStateSlice';
-import type { MLSGroupState, MeetChatMessage } from '../../types';
+import type { KeyRotationLog, MLSGroupState, MeetChatMessage } from '../../types';
 import { LoadingState, UpsellModalTypes } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
@@ -150,11 +150,12 @@ export const ProtonMeetContainer = ({
     const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
 
     const joinBlockedRef = useRef(false);
-
+    const lastEpochRef = useRef<bigint | null>(null);
     const refetchedParticipantNameMapRef = useRef(false);
 
     const loadingStartTimeRef = useRef(0);
     const [mlsGroupState, setMlsGroupState] = useState<MLSGroupState | null>(null);
+    const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
 
     const wasmApp = useWasmApp();
 
@@ -169,7 +170,27 @@ export const ProtonMeetContainer = ({
     const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
 
+    const hasEpochError = (epoch: bigint | undefined) => {
+        if (epoch && (lastEpochRef.current ?? 0 > epoch)) {
+            return true;
+        }
+
+        if (epoch && lastEpochRef.current !== null && lastEpochRef.current + 1n !== epoch) {
+            return true;
+        }
+
+        return false;
+    };
+
     const reportMLSRelatedError = (key: string | undefined, epoch: bigint | undefined) => {
+        if (epoch && (lastEpochRef.current ?? 0 > epoch)) {
+            reportMeetError('Lower epoch than last epoch', { epoch });
+        }
+
+        if (epoch && lastEpochRef.current !== null && lastEpochRef.current + 1n !== epoch) {
+            reportMeetError('Epoch is not the next epoch', { epoch });
+        }
+
         if (!key) {
             reportMeetError('Key is undefined', { epoch });
         }
@@ -206,8 +227,31 @@ export const ProtonMeetContainer = ({
             }
 
             const displayCode = await wasmApp?.getGroupDisplayCode();
-            setMlsGroupState({ displayCode: displayCode?.full_code || null, epoch: epoch });
+            setMlsGroupState({
+                displayCode: displayCode?.full_code || null,
+                epoch: epoch,
+            });
+
+            const newLog = {
+                timestamp: Date.now(),
+                epoch: Number(epoch),
+                type: hasEpochError(epoch) ? 'error' : 'log',
+                message: 'Key rotation successful',
+            };
+
+            setKeyRotationLogs((prev) => [...prev, newLog as KeyRotationLog]);
+
+            lastEpochRef.current = epoch;
         } catch (err) {
+            setKeyRotationLogs((prev) => [
+                ...prev,
+                {
+                    timestamp: Date.now(),
+                    epoch: Number(epoch),
+                    type: 'error',
+                    message: 'Could not set new encryption key',
+                },
+            ]);
             reportMeetError('Could not set new encryption key', err);
         }
     };
@@ -416,6 +460,16 @@ export const ProtonMeetContainer = ({
             if (!groupKey || !epoch) {
                 throw new Error('Group key or epoch is missing');
             }
+
+            setKeyRotationLogs((prev) => [
+                ...prev,
+                {
+                    timestamp: Date.now(),
+                    epoch: Number(epoch),
+                    type: 'log',
+                    message: 'Key rotation successful',
+                },
+            ]);
 
             if (isMeetSeamlessKeyRotationEnabled) {
                 // eslint-disable-next-line no-console
@@ -811,6 +865,7 @@ export const ProtonMeetContainer = ({
                         instantMeeting={instantMeetingRef.current}
                         assignHost={assignHost}
                         paidUser={!!user?.hasPaidMeet}
+                        keyRotationLogs={keyRotationLogs}
                     />
                 ) : (
                     <PrejoinContainer

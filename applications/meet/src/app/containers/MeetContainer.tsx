@@ -13,7 +13,7 @@ import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
-import type { MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
+import type { KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
 
 interface MeetContainerProps {
     locked: boolean;
@@ -43,6 +43,7 @@ interface MeetContainerProps {
     preparePictureInPicture: () => void;
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
+    keyRotationLogs: KeyRotationLog[];
 }
 
 export const MeetContainer = ({
@@ -73,6 +74,7 @@ export const MeetContainer = ({
     preparePictureInPicture,
     instantMeeting,
     assignHost,
+    keyRotationLogs,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -170,6 +172,7 @@ export const MeetContainer = ({
                     instantMeeting,
                     assignHost,
                     paidUser,
+                    keyRotationLogs,
                 }}
             >
                 <MeetingBody
