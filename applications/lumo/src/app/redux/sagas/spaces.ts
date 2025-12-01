@@ -303,10 +303,12 @@ export function* pushSpace({ payload }: { payload: PushSpaceRequest }): SagaIter
         if (!space) throw new Error(`cannot find ${type} ${localId} in Redux`);
         const serializedSpace: SerializedSpace = yield call(serializeSpaceSaga, space);
 
-        // No PUT
+        // Check if space already exists remotely
         const remoteId = yield select(selectRemoteIdFromLocal(type, localId));
         if (remoteId) {
-            // Space was already posted, and we don't edit spaces for now
+            // Space was already posted, and we don't edit spaces remotely for now
+            // But we still need to save local changes (like linkedDriveFolder) to IndexedDB
+            yield call(saveDirtySpace, serializedSpace);
             yield put(pushSpaceNoop(payload));
             return;
         }
