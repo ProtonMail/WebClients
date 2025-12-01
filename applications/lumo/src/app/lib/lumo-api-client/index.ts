@@ -46,7 +46,7 @@ export { encryptString, encryptTurns } from './core/encryption';
 
 export { StreamProcessor } from './core/streaming';
 
-export { callEndpoint } from './core/network';
+export { callChatEndpoint } from './core/network';
 
 export {
     prepareTurns,
