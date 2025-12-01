@@ -19,8 +19,10 @@ export const getMailUpsellConfig = async (data: UpsellModalConfigParams): Promis
     if (isComposerAssistantUpsell) {
         return getUpsellModalComposerAssistantConfig(data);
     }
+
     const isBookingsUpsell = data.upsellRef?.includes(CALENDAR_UPSELL_PATHS.BOOKING_PAGE);
-    if (isBookingsUpsell) {
+    // Paid users of mail get upsell to the BUNDLE_BIZ_2025 plan, other get the regular upsell
+    if (isBookingsUpsell && data.user.hasPaidMail) {
         return getUpsellModalBookingsConfig(data);
     }
 
