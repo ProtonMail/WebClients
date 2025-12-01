@@ -1,5 +1,6 @@
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { addAttachment, pushAttachmentRequest } from '../../../redux/slices/core/attachments';
 import {
     changeConversationTitle,
     pushConversationRequest,
@@ -15,12 +16,11 @@ import {
     setToolCall,
     setToolResult,
 } from '../../../redux/slices/core/messages';
-import { addAttachment, pushAttachmentRequest } from '../../../redux/slices/core/attachments';
 import type { LumoDispatch } from '../../../redux/store';
 import { ConversationStatus, Role } from '../../../types';
 import { createImageAttachment, generateImageMarkdown } from '../../imageAttachment';
 import { LumoApiClient } from '../core/client';
-import type { AssistantCallOptions, GenerationToFrontendMessage, LumoApiClientConfig, Turn } from '../core/types';
+import type { AssistantCallOptions, GenerationResponseMessage, LumoApiClientConfig, Turn } from '../core/types';
 import { postProcessTitle } from '../utils';
 
 /**
@@ -35,7 +35,7 @@ export function sendMessageWithRedux(
         conversationId?: string;
         spaceId?: string;
         role?: Role;
-        errorHandler?: (message: GenerationToFrontendMessage, conversationId: string) => any;
+        errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
     } = {} as any
 ) {
     return async (dispatch: LumoDispatch): Promise<void> => {
@@ -57,7 +57,7 @@ export function sendMessageWithRedux(
 
         await client.callAssistant(api, turns, {
             ...assistantOptions,
-            chunkCallback: async (message: GenerationToFrontendMessage) => {
+            chunkCallback: async (message: GenerationResponseMessage) => {
                 switch (message.type) {
                     case 'error':
                     case 'timeout':
@@ -152,7 +152,9 @@ export function sendMessageWithRedux(
                     case 'image_data':
                         console.log('[IMAGE_DATA] Received in Redux integration', {
                             image_id: message.image_id,
-                            data: message.data ? `${message.data.substring(0, 50)}... (${message.data.length} chars)` : 'none',
+                            data: message.data
+                                ? `${message.data.substring(0, 50)}... (${message.data.length} chars)`
+                                : 'none',
                             is_final: message.is_final,
                             seed: message.seed,
                         });
@@ -255,7 +257,7 @@ export function createReduxCallbacks(
 
     return {
         // todo turn chunkCallback(message, dispatch) into dispatch(chunkCallback(message))
-        chunkCallback: async (message: GenerationToFrontendMessage, dispatch: LumoDispatch) => {
+        chunkCallback: async (message: GenerationResponseMessage, dispatch: LumoDispatch) => {
             if (message.type === 'token_data' && message.target === 'message') {
                 accumulatedContent += message.content;
 

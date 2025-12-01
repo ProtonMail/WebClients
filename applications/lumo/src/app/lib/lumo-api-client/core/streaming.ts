@@ -1,4 +1,4 @@
-import type { GenerationToFrontendMessage } from './types';
+import type { GenerationResponseMessage } from './types';
 import { isGenerationToFrontendMessage } from './types';
 
 /**
@@ -12,10 +12,10 @@ export class StreamProcessor {
      * @param chunk Raw string chunk from the stream
      * @returns Array of parsed messages
      */
-    processChunk(chunk: string): GenerationToFrontendMessage[] {
+    processChunk(chunk: string): GenerationResponseMessage[] {
         const lines = (this.leftover + chunk).split('\n');
         const lastLine = lines.pop() || '';
-        const parsedData: GenerationToFrontendMessage[] = [];
+        const parsedData: GenerationResponseMessage[] = [];
 
         for (const line of lines) {
             if (!line.match(/^data:\s*/)) continue;
@@ -58,7 +58,7 @@ export class StreamProcessor {
      * Finalize processing and return any remaining messages
      * @returns Array of any remaining parsed messages
      */
-    finalize(): GenerationToFrontendMessage[] {
+    finalize(): GenerationResponseMessage[] {
         if (!this.leftover || !this.leftover.match(/^data:\s*/)) return [];
 
         try {
