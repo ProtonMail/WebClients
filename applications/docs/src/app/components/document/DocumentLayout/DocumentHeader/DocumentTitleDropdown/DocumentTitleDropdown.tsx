@@ -43,7 +43,7 @@ import { WordCountIcon } from '../icons'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useSheetImportModal } from './SheetImportModal'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
-import { useEvent, useIsDownloadLogsAllowed } from '~/utils/misc'
+import { useEvent, useIsDownloadLogsAllowed, useIsSheetsEnabled } from '~/utils/misc'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
@@ -80,6 +80,7 @@ export function DocumentTitleDropdown({
     documentState.getProperty('documentTrashState'),
   )
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
+  const [isMakingNewSheetDocument, setIsMakingNewSheetDocument] = useState<boolean>(false)
   const [pdfModal, openPdfModal] = useExportToPDFModal()
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
   const [sheetImportModal, showSheetImportModal] = useSheetImportModal()
@@ -88,6 +89,7 @@ export function DocumentTitleDropdown({
   const { toggleDebugMode } = useDebugMode()
   const isDownloadLogsAllowed = useIsDownloadLogsAllowed()
   const { APP_VERSION } = useConfig()
+  const isSheetsEnabled = useIsSheetsEnabled()
 
   const [isRenaming, setIsRenaming] = useState(false)
   const [renameInputValue, setRenameInputValue] = useState(title)
@@ -199,14 +201,19 @@ export function DocumentTitleDropdown({
     )
   }, [documentState, authenticatedController])
 
-  const onNewDocument = useCallback(async () => {
-    setIsMakingNewDocument(true)
-    try {
-      await authenticatedController?.createNewDocument(documentType)
-    } finally {
-      setIsMakingNewDocument(false)
-    }
-  }, [authenticatedController, documentType])
+  const onNewDocument = useCallback(
+    // We default to creating the same type of document as the current one, but allow creating the other type too
+    async (docType: DocumentType = documentType) => {
+      const setIsLoading = docType === 'doc' ? setIsMakingNewDocument : setIsMakingNewSheetDocument
+      setIsLoading(true)
+      try {
+        await authenticatedController?.createNewDocument(docType)
+      } finally {
+        setIsLoading(false)
+      }
+    },
+    [authenticatedController, documentType],
+  )
 
   useEffect(() => {
     if (actionMode === 'history') {
@@ -309,7 +316,9 @@ export function DocumentTitleDropdown({
     return application.eventBus.addEventCallback(async (data: FileMenuAction) => {
       switch (data.type) {
         case 'new-spreadsheet':
-          return onNewDocument()
+          return onNewDocument('sheet')
+        case 'new-document':
+          return onNewDocument('doc')
         case 'import':
           openSheetImportModal()
           return
@@ -489,7 +498,7 @@ export function DocumentTitleDropdown({
               data-testid="dropdown-rename"
             >
               <Icon name="pencil" className="color-weak mr-2" />
-              {isSpreadsheet ? c('sheets_2025:Action').t`Rename spreadsheet` : c('Action').t`Rename document`}
+              {c('Action').t`Rename document`}
             </DropdownMenuButton>
           )}
 
@@ -504,11 +513,36 @@ export function DocumentTitleDropdown({
               }}
               data-testid="dropdown-new-document"
             >
-              <Icon name="file" className="color-weak mr-2" />
-              {isSpreadsheet ? c('sheets_2025:Action').t`New spreadsheet` : c('Action').t`New document`}
+              <Icon name="brand-proton-docs" className="color-weak mr-2" />
+              {c('Action').t`New document`}
               {isMakingNewDocument && <CircleLoader size="small" className="ml-auto" />}
             </DropdownMenuButton>
           )}
+
+          {!isPublicMode && isSheetsEnabled ? (
+            <DropdownMenuButton
+              disabled={isMakingNewSheetDocument}
+              className="flex items-center text-left"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                void onNewDocument('sheet')
+              }}
+            >
+              <Icon name="brand-proton-sheets" className="color-weak mr-2" />
+              {c('sheets_2025:Action').t`New spreadsheet`}
+              {isMakingNewSheetDocument ? (
+                <CircleLoader size="small" className="ml-auto" />
+              ) : (
+                <span
+                  className={clsx(
+                    'ml-auto flex h-4 shrink-0 items-center justify-center rounded-full bg-[--background-weak] px-1.5',
+                    'text-[0.625rem]/[1rem] font-semibold text-[--link-norm]',
+                  )}
+                >{c('Info').t`New`}</span>
+              )}
+            </DropdownMenuButton>
+          ) : null}
 
           {isSpreadsheet && documentState.getProperty('userRole').canEdit() && (
             <DropdownMenuButton

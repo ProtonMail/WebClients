@@ -3,27 +3,33 @@ import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
 import { InvitesTable } from './InvitesTable'
 import { ContextMenuProvider } from './DocContextMenu/context'
-import { Icon } from '@proton/components'
+import { Icon, useAuthentication } from '@proton/components'
 import { c } from 'ttag'
 import { useHomepageView } from '../../__utils/homepage-view'
-import { useEffect } from 'react'
-import { ContentSheet } from './shared'
+import { forwardRef, useEffect } from 'react'
+import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import emptyStateRecentsImage from './empty-state-recents.svg'
 import emptyStateImage from './empty-state.svg'
 import clsx from '@proton/utils/clsx'
 import * as Ariakit from '@ariakit/react'
-import { NewDocumentMenu } from './NewDocumentMenu'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { APPS } from '@proton/shared/lib/constants'
+import { useApplication } from '~/utils/application-context'
+import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
+import { useIsSheetsEnabled } from '~/utils/misc'
 
 export function HomepageContent() {
   return (
     <ContextMenuProvider>
       <PreloadImages urls={[emptyStateImage, emptyStateRecentsImage]} />
-      <div className="flex h-full w-full flex-col flex-nowrap gap-5 small:pr-2">{useRenderHomepageView()}</div>
+      <div className="flex h-full w-full flex-col flex-nowrap gap-5 small:pr-2">
+        <HomepageView />
+      </div>
     </ContextMenuProvider>
   )
 }
 
-function useRenderHomepageView(): JSX.Element | null {
+function HomepageView(): JSX.Element | null {
   const { state } = useHomepageView()
 
   switch (state.view) {
@@ -102,11 +108,18 @@ function useRenderHomepageView(): JSX.Element | null {
 
 type EmptyStateVariant = 'recents' | 'trash' | 'search'
 
-type EmptyStateProps = { variant: EmptyStateVariant }
-function getEmptyStateText(variant: EmptyStateVariant): string {
+type GetEmptyStateTextProps = {
+  variant: EmptyStateVariant
+  isSheetsEnabled: boolean
+}
+function getEmptyStateText(props: GetEmptyStateTextProps): string {
+  const { variant, isSheetsEnabled } = props
+
   switch (variant) {
     case 'recents':
-      return c('Info').t`Create an end-to-end encrypted document.`
+      return isSheetsEnabled
+        ? c('Info').t`Create end-to-end encrypted documents and spreadsheets.`
+        : c('Info').t`Create an end-to-end encrypted document.`
     case 'trash':
       return c('Info').t`There are no documents in the trash.`
     case 'search':
@@ -114,7 +127,77 @@ function getEmptyStateText(variant: EmptyStateVariant): string {
   }
 }
 
+const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
+
+const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(function HomepageButton(props, ref) {
+  return (
+    <Ariakit.Button
+      {...props}
+      className={clsx(
+        'inline-flex h-9 items-center justify-center gap-2 rounded pl-3 pr-4 text-sm no-underline',
+        '!text-[--text-norm] hover:bg-[#C2C1C0]/20 hover:text-[--text-norm]',
+        'border border-[#EAE7E4]',
+        '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
+        props.className,
+      )}
+      ref={ref}
+    />
+  )
+})
+
+function RecentsEmptyStateButtons() {
+  const application = useApplication()
+  const { getLocalID } = useAuthentication()
+  const { updateRecentDocuments } = useHomepageView()
+  const isSheetsEnabled = useIsSheetsEnabled()
+
+  return (
+    <div className="flex items-center justify-center gap-4">
+      <HomepageButton
+        render={<Ariakit.Role.a href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+        onClick={() => {
+          application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_created)
+          setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
+        }}
+      >
+        <Icon
+          name={ICON_BY_TYPE.document}
+          size={4}
+          className="shrink-0 text-[--icon-color]"
+          style={{ '--icon-color': COLOR_BY_TYPE.document }}
+        />
+        {c('Action').t`New document`}
+      </HomepageButton>
+
+      {isSheetsEnabled ? (
+        <HomepageButton
+          className="relative"
+          render={<Ariakit.Role.a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+        >
+          <Icon
+            name={ICON_BY_TYPE.spreadsheet}
+            size={4}
+            className="shrink-0 text-[--icon-color]"
+            style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
+          />
+          {c('sheets_2025:Action').t`New spreadsheet`}
+          <span
+            className={clsx(
+              'flex h-4 items-center justify-center rounded-full bg-[--background-weak] px-1.5',
+              'text-[0.625rem]/[1rem] font-semibold text-[--link-norm]',
+              'pointer-events-none absolute -right-5 -top-2',
+            )}
+          >{c('Info').t`New`}</span>
+        </HomepageButton>
+      ) : null}
+    </div>
+  )
+}
+
+type EmptyStateProps = { variant: EmptyStateVariant }
 function EmptyState({ variant }: EmptyStateProps) {
+  const isSheetsEnabled = useIsSheetsEnabled()
+
   return (
     <ContentSheet isBottom className="flex shrink-0 grow items-center justify-center">
       <div className="flex flex-col items-center gap-6 p-8">
@@ -124,18 +207,10 @@ function EmptyState({ variant }: EmptyStateProps) {
           src={variant === 'recents' ? emptyStateRecentsImage : emptyStateImage}
           alt="Empty state illustration"
         />
-        <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant)}</p>
-        <div className="flex justify-center">
-          {variant === 'recents' ? (
-            <Ariakit.MenuProvider placement="top">
-              <Ariakit.MenuButton className="flex items-center justify-center gap-2 rounded-[0.5rem] !bg-[--docs-blue-color] px-4 py-2.5 text-[#fff]">
-                <Icon name="plus" />
-                New
-              </Ariakit.MenuButton>
-              <NewDocumentMenu />
-            </Ariakit.MenuProvider>
-          ) : null}
-        </div>
+        <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">
+          {getEmptyStateText({ variant, isSheetsEnabled })}
+        </p>
+        {variant === 'recents' ? <RecentsEmptyStateButtons /> : null}
       </div>
     </ContentSheet>
   )
