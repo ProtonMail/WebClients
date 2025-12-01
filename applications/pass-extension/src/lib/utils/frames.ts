@@ -8,30 +8,39 @@ import type { FrameId, MaybeNull, TabId } from '@proton/pass/types';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { resolveDomain } from '@proton/pass/utils/url/utils';
 
+export type FrameData = {
+    parent: MaybeNull<FrameID>;
+    frameId: number;
+    origin: MaybeNull<string>;
+    secure: MaybeNull<boolean>;
+};
+
 export type FrameID = number;
-export type FrameData = { parent: MaybeNull<FrameID>; frameId: number; origin: MaybeNull<string> };
 export type Frames = Map<FrameID, FrameData>;
 export type FrameMapper<R> = (frame: WebNavigation.GetAllFramesCallbackDetailsItemType) => R;
 
 /** Frame hierarchy tracker: Creates parent-child relationship map
  * for all frames in a tab. Used by `getFrameCoords` to walk up the
  * frame tree. Excludes orphaned frames (missing parents). */
-export const getTabFrames = async (tabId: TabId, options?: { parseOrigin: boolean }): Promise<Frames> =>
+export const getTabFrames = async (tabId: TabId, options?: { parseUrl: boolean }): Promise<Frames> =>
     browser.webNavigation.getAllFrames({ tabId }).then((frames) => {
         return (frames ?? []).reduce<Frames>((res, frame) => {
             const { parentFrameId, frameId, url } = frame;
-            const origin = options?.parseOrigin ? resolveDomain(parseUrl(url)) : null;
+
+            const parsedUrl = options?.parseUrl ? parseUrl(url) : null;
+            const origin = parsedUrl ? resolveDomain(parsedUrl) : null;
+            const secure = parsedUrl?.isSecure ?? null;
 
             /** Main frame (frameId 0) or orphaned frame */
             if (frameId === 0 || parentFrameId === -1) {
-                res.set(frameId, { parent: null, frameId, origin });
+                res.set(frameId, { parent: null, frameId, origin, secure });
                 return res;
             }
 
             const parent = res.get(parentFrameId);
             if (!parent) return res;
 
-            res.set(frameId, { parent: parentFrameId, frameId, origin });
+            res.set(frameId, { parent: parentFrameId, frameId, origin, secure });
 
             return res;
         }, new Map());
@@ -54,14 +63,18 @@ export const getFramePath = (frames: Frames, frameId: FrameID): FrameID[] => {
 };
 
 /** Validates that all frames in the path from target frame to root contain
- * only allowed origins. Prevents cross-origin injection attacks by ensuring
- * no malicious intermediate frames in the ancestry chain. */
+ * only allowed origins and secure protocols. Prevents cross-origin injection
+ * attacks and protocol downgrade attacks by ensuring no malicious or insecure
+ * intermediate frames in the ancestry chain. */
 export const validateFramePath = (frames: Frames, frameID: FrameID, trustedOrigins: Set<string>): boolean => {
     const path = getFramePath(frames, frameID);
     return path.every((pathFrameID) => {
-        const frameOrigin = frames.get(pathFrameID)?.origin;
-        if (!frameOrigin) return false;
-        return trustedOrigins.has(frameOrigin);
+        const pathFrame = frames.get(pathFrameID);
+        const origin = pathFrame?.origin;
+        const secure = pathFrame?.secure;
+
+        if (!(origin && secure)) return false;
+        return trustedOrigins.has(origin);
     });
 };
 
@@ -74,26 +87,30 @@ export type AutofillableFrames = Map<FrameID, AutofillableFrame>;
  * - Rejects any frame with untrusted origins in its ancestry chain */
 export const getAutofillableFrames = async (
     tabId: TabId,
-    frameOrigin: string,
-    originFrameID: FrameID
+    sourceOrigin: string,
+    sourceFrameID: FrameID
 ): Promise<AutofillableFrames> => {
-    const frames = await getTabFrames(tabId, { parseOrigin: true });
+    const frames = await getTabFrames(tabId, { parseUrl: true });
     const trustedOrigins = new Set<string>();
     const autofillableOrigins = new Set<string>();
+    const autofillableFrames: AutofillableFrames = new Map();
+
+    const topFrame = frames.get(0);
+    const sourceFrame = frames.get(sourceFrameID);
+
+    /** If unsecure cross-frame context : do not allow autofilling */
+    const secureContext = Boolean(topFrame?.secure && sourceFrame?.secure);
+    if (!secureContext) return autofillableFrames;
 
     /** Always trust and autofill the origin that triggered autofill */
-    trustedOrigins.add(frameOrigin);
-    autofillableOrigins.add(frameOrigin);
+    trustedOrigins.add(sourceOrigin);
+    autofillableOrigins.add(sourceOrigin);
 
     /** Autofill policy: only trigger origin + top-level domain */
-    if (originFrameID !== 0) {
-        const topFrame = frames.get(0);
-        if (topFrame?.origin) autofillableOrigins.add(topFrame.origin);
-    }
+    if (sourceFrameID !== 0 && topFrame?.origin) autofillableOrigins.add(topFrame.origin);
 
     /** Build trusted ancestry chain by walking up to root frame */
-    const originFrame = frames.get(originFrameID);
-    let current = originFrame;
+    let current = sourceFrame;
 
     while (current && current.parent !== null) {
         const parent = frames.get(current.parent);
@@ -102,17 +119,18 @@ export const getAutofillableFrames = async (
         current = parent;
     }
 
-    const autofillableFrames: AutofillableFrames = new Map();
+    /** Validate that the source frame path is secure */
+    const securePath = sourceFrameID === 0 || validateFramePath(frames, sourceFrameID, trustedOrigins);
+    if (!securePath) return autofillableFrames;
 
     for (const [frameId, frame] of frames) {
-        if (!frame.origin) continue;
-
-        /** 1. Frame origin must be autofillable (policy)
-         *  2. Frame path must be valid (security) */
-        const isAutofillableOrigin = autofillableOrigins.has(frame.origin);
-
-        if (isAutofillableOrigin && validateFramePath(frames, frameId, trustedOrigins)) {
-            const crossOrigin = frame.origin !== frameOrigin;
+        /** 1. Frame must be secure */
+        if (!(frame.origin && frame.secure)) continue;
+        /** 2. Frame origin must be autofillable (policy) */
+        if (!autofillableOrigins.has(frame.origin)) continue;
+        /** 3. Frame path must be valid (security) */
+        if (validateFramePath(frames, frameId, trustedOrigins)) {
+            const crossOrigin = frame.origin !== sourceOrigin;
             autofillableFrames.set(frameId, { frame, crossOrigin, tabId });
         }
     }

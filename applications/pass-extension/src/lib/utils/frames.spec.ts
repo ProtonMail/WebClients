@@ -14,7 +14,9 @@ describe('inline service', () => {
     describe('getTabFrames', () => {
         test('should handle main frame only', async () => {
             getAllFrames.mockResolvedValue([{ frameId: 0, parentFrameId: -1 }]);
-            expect(await getTabFrames(tabId)).toEqual(new Map([[0, { parent: null, frameId: 0, origin: null }]]));
+            expect(await getTabFrames(tabId)).toEqual(
+                new Map([[0, { parent: null, frameId: 0, origin: null, secure: null }]])
+            );
             expect(getAllFrames).toHaveBeenCalledWith({ tabId });
         });
 
@@ -27,9 +29,9 @@ describe('inline service', () => {
 
             expect(await getTabFrames(tabId)).toEqual(
                 new Map([
-                    [0, { parent: null, frameId: 0, origin: null }],
-                    [1, { parent: 0, frameId: 1, origin: null }],
-                    [2, { parent: 1, frameId: 2, origin: null }],
+                    [0, { parent: null, frameId: 0, origin: null, secure: null }],
+                    [1, { parent: 0, frameId: 1, origin: null, secure: null }],
+                    [2, { parent: 1, frameId: 2, origin: null, secure: null }],
                 ])
             );
         });
@@ -44,10 +46,10 @@ describe('inline service', () => {
 
             expect(await getTabFrames(tabId)).toEqual(
                 new Map([
-                    [0, { parent: null, frameId: 0, origin: null }],
-                    [1, { parent: 0, frameId: 1, origin: null }],
-                    [2, { parent: 0, frameId: 2, origin: null }],
-                    [3, { parent: 0, frameId: 3, origin: null }],
+                    [0, { parent: null, frameId: 0, origin: null, secure: null }],
+                    [1, { parent: 0, frameId: 1, origin: null, secure: null }],
+                    [2, { parent: 0, frameId: 2, origin: null, secure: null }],
+                    [3, { parent: 0, frameId: 3, origin: null, secure: null }],
                 ])
             );
         });
@@ -63,14 +65,14 @@ describe('inline service', () => {
 
     describe('getFramePath', () => {
         test('should return `[0]` for root frame', () => {
-            const frames = new Map([[0, { parent: null, frameId: 0, origin: null }]]);
+            const frames = new Map([[0, { parent: null, frameId: 0, origin: null, secure: null }]]);
             expect(getFramePath(frames, 0)).toEqual([0]);
         });
 
         test('should return complete path for direct child', () => {
             const frames = new Map([
-                [0, { parent: null, frameId: 0, origin: null }],
-                [1, { parent: 0, frameId: 1, origin: null }],
+                [0, { parent: null, frameId: 0, origin: null, secure: null }],
+                [1, { parent: 0, frameId: 1, origin: null, secure: null }],
             ]);
 
             expect(getFramePath(frames, 1)).toEqual([1, 0]);
@@ -78,64 +80,130 @@ describe('inline service', () => {
 
         test('should handle complex frame hierarchy', () => {
             const frames = new Map([
-                [0, { parent: null, frameId: 0, origin: null }],
-                [1, { parent: 0, frameId: 1, origin: null }],
-                [2, { parent: 0, frameId: 2, origin: null }],
-                [3, { parent: 1, frameId: 3, origin: null }],
-                [4, { parent: 3, frameId: 4, origin: null }],
+                [0, { parent: null, frameId: 0, origin: null, secure: null }],
+                [1, { parent: 0, frameId: 1, origin: null, secure: null }],
+                [2, { parent: 0, frameId: 2, origin: null, secure: null }],
+                [3, { parent: 1, frameId: 3, origin: null, secure: null }],
+                [4, { parent: 3, frameId: 4, origin: null, secure: null }],
             ]);
             expect(getFramePath(frames, 4)).toEqual([4, 3, 1, 0]);
             expect(getFramePath(frames, 2)).toEqual([2, 0]);
         });
 
         test('should return empty array for non-existent frame', () => {
-            const frames = new Map([[0, { parent: null, frameId: 0, origin: null }]]);
+            const frames = new Map([[0, { parent: null, frameId: 0, origin: null, secure: null }]]);
             expect(getFramePath(frames, 999)).toEqual([]);
         });
 
         test('should return partial path for orphaned frame', () => {
             const frames = new Map([
-                [0, { parent: null, frameId: 0, origin: null }],
-                [5, { parent: 3, frameId: 5, origin: null }],
+                [0, { parent: null, frameId: 0, origin: null, secure: null }],
+                [5, { parent: 3, frameId: 5, origin: null, secure: null }],
             ]);
             expect(getFramePath(frames, 5)).toEqual([5]);
         });
     });
 
     describe('validateFramePath', () => {
-        /*
-        <frame origin="merchant.com">           <!-- frame0 -->
-            <frame origin="malicious.com">      <!-- frame1 -->
-                <frame origin="payment.com" />  <!-- frame2 -->
+        describe('origin validation', () => {
+            /*
+            <frame origin="merchant.com">           <!-- frame0 -->
+                <frame origin="malicious.com">      <!-- frame1 -->
+                    <frame origin="payment.com" />  <!-- frame2 -->
+                </frame>
+                <frame origin="payment.com" />      <!-- frame3 -->
             </frame>
-            <frame origin="payment.com" />      <!-- frame3 -->
-        </frame>
-        */
-        const frames = new Map([
-            [0, { parent: null, frameId: 0, origin: 'merchant.com' }],
-            [1, { parent: 0, frameId: 1, origin: 'malicious.com' }],
-            [2, { parent: 1, frameId: 2, origin: 'payment.com' }],
-            [3, { parent: 0, frameId: 3, origin: 'payment.com' }],
-        ]);
+            */
+            const frames = new Map([
+                [0, { parent: null, frameId: 0, origin: 'merchant.com', secure: true }],
+                [1, { parent: 0, frameId: 1, origin: 'malicious.com', secure: true }],
+                [2, { parent: 1, frameId: 2, origin: 'payment.com', secure: true }],
+                [3, { parent: 0, frameId: 3, origin: 'payment.com', secure: true }],
+            ]);
 
-        test('should allow frame with trusted path', () => {
-            const allowedOrigins = new Set(['payment.com', 'merchant.com']);
-            expect(validateFramePath(frames, 3, allowedOrigins)).toBe(true);
+            test('should allow frame with trusted path', () => {
+                const allowedOrigins = new Set(['payment.com', 'merchant.com']);
+                expect(validateFramePath(frames, 3, allowedOrigins)).toBe(true);
+            });
+
+            test('should reject frame with malicious intermediate origin', () => {
+                const allowedOrigins = new Set(['payment.com', 'merchant.com']);
+                expect(validateFramePath(frames, 2, allowedOrigins)).toBe(false);
+            });
+
+            test('should handle root frame validation', () => {
+                const allowedOrigins = new Set(['merchant.com']);
+                expect(validateFramePath(frames, 0, allowedOrigins)).toBe(true);
+            });
+
+            test('should reject frame with unknown origin in path', () => {
+                const allowedOrigins = new Set(['payment.com']);
+                expect(validateFramePath(frames, 3, allowedOrigins)).toBe(false);
+            });
         });
 
-        test('should reject frame with malicious intermediate origin', () => {
-            const allowedOrigins = new Set(['payment.com', 'merchant.com']);
-            expect(validateFramePath(frames, 2, allowedOrigins)).toBe(false);
-        });
+        describe('protocol security validation', () => {
+            test('should reject frames with insecure protocols', () => {
+                /*
+                <frame origin="merchant.com" protocol="http">    <!-- frame0 INSECURE -->
+                    <frame origin="payment.com" protocol="https" /> <!-- frame1 -->
+                </frame>
+                */
+                const frames = new Map([
+                    [0, { parent: null, frameId: 0, origin: 'merchant.com', secure: false }],
+                    [1, { parent: 0, frameId: 1, origin: 'payment.com', secure: true }],
+                ]);
+                const allowedOrigins = new Set(['merchant.com', 'payment.com']);
+                expect(validateFramePath(frames, 1, allowedOrigins)).toBe(false);
+            });
 
-        test('should handle root frame validation', () => {
-            const allowedOrigins = new Set(['merchant.com']);
-            expect(validateFramePath(frames, 0, allowedOrigins)).toBe(true);
-        });
+            test('should reject frames with mixed secure/insecure protocols in path', () => {
+                /*
+                <frame origin="merchant.com" protocol="https">      <!-- frame0 -->
+                    <frame origin="payment.com" protocol="http">    <!-- frame1 INSECURE -->
+                        <frame origin="payment.com" protocol="https" /> <!-- frame2 -->
+                    </frame>
+                </frame>
+                */
+                const frames = new Map([
+                    [0, { parent: null, frameId: 0, origin: 'merchant.com', secure: true }],
+                    [1, { parent: 0, frameId: 1, origin: 'payment.com', secure: false }],
+                    [2, { parent: 1, frameId: 2, origin: 'payment.com', secure: true }],
+                ]);
+                const allowedOrigins = new Set(['merchant.com', 'payment.com']);
+                expect(validateFramePath(frames, 2, allowedOrigins)).toBe(false);
+            });
 
-        test('should reject frame with unknown origin in path', () => {
-            const allowedOrigins = new Set(['payment.com']);
-            expect(validateFramePath(frames, 3, allowedOrigins)).toBe(false);
+            test('should reject frames with null secure property', () => {
+                /*
+                <frame origin="merchant.com" protocol="unknown">    <!-- frame0 NULL SECURE -->
+                    <frame origin="payment.com" protocol="https" />  <!-- frame1 -->
+                </frame>
+                */
+                const frames = new Map([
+                    [0, { parent: null, frameId: 0, origin: 'merchant.com', secure: null }],
+                    [1, { parent: 0, frameId: 1, origin: 'payment.com', secure: true }],
+                ]);
+                const allowedOrigins = new Set(['merchant.com', 'payment.com']);
+                expect(validateFramePath(frames, 1, allowedOrigins)).toBe(false);
+            });
+
+            test('should allow frames with all secure protocols', () => {
+                /*
+                <frame origin="merchant.com" protocol="https">      <!-- frame0 -->
+                    <frame origin="payment.com" protocol="https">   <!-- frame1 -->
+                        <frame origin="payment.com" protocol="https" /> <!-- frame2 -->
+                    </frame>
+                </frame>
+                */
+                const secureFrames = new Map([
+                    [0, { parent: null, frameId: 0, origin: 'merchant.com', secure: true }],
+                    [1, { parent: 0, frameId: 1, origin: 'payment.com', secure: true }],
+                    [2, { parent: 1, frameId: 2, origin: 'payment.com', secure: true }],
+                ]);
+                const allowedOrigins = new Set(['merchant.com', 'payment.com']);
+                expect(validateFramePath(secureFrames, 2, allowedOrigins)).toBe(true);
+            });
         });
     });
 
@@ -222,6 +290,71 @@ describe('inline service', () => {
 
             getAllFrames.mockResolvedValue([]);
             expect(formatResults(await getAutofillableFrames(tabId, 'example.com', 0))).toEqual([]);
+        });
+
+        test('should reject autofill when top frame is insecure', async () => {
+            /*
+            <frame origin="example.com" protocol="http">      <!-- frame0 INSECURE TOP -->
+                <frame origin="example.com" protocol="https" /> <!-- frame1 -->
+            </frame>
+            */
+            getAllFrames.mockResolvedValue([
+                { frameId: 0, parentFrameId: -1, url: 'http://example.com/page' },
+                { frameId: 1, parentFrameId: 0, url: 'https://example.com/secure' },
+            ]);
+
+            const result = await getAutofillableFrames(tabId, 'example.com', 1);
+            expect(formatResults(result)).toEqual([]);
+        });
+
+        test('should reject autofill when source frame is insecure', async () => {
+            /*
+            <frame origin="example.com" protocol="https">     <!-- frame0 -->
+                <frame origin="example.com" protocol="http" /> <!-- frame1 INSECURE SOURCE -->
+            </frame>
+            */
+            getAllFrames.mockResolvedValue([
+                { frameId: 0, parentFrameId: -1, url: 'https://example.com/page' },
+                { frameId: 1, parentFrameId: 0, url: 'http://example.com/insecure' },
+            ]);
+
+            const result = await getAutofillableFrames(tabId, 'example.com', 1);
+            expect(formatResults(result)).toEqual([]);
+        });
+
+        test('should reject autofill when both top and source frames are insecure', async () => {
+            /*
+            <frame origin="example.com" protocol="http">      <!-- frame0 INSECURE -->
+                <frame origin="example.com" protocol="http" /> <!-- frame1 INSECURE -->
+            </frame>
+            */
+            getAllFrames.mockResolvedValue([
+                { frameId: 0, parentFrameId: -1, url: 'http://example.com/page' },
+                { frameId: 1, parentFrameId: 0, url: 'http://example.com/insecure' },
+            ]);
+
+            const result = await getAutofillableFrames(tabId, 'example.com', 0);
+            expect(formatResults(result)).toEqual([]);
+        });
+
+        test('should filter out insecure frames from autofillable results', async () => {
+            /*
+            <frame origin="example.com" protocol="https">      <!-- frame0 SECURE -->
+                <frame origin="example.com" protocol="https" /> <!-- frame1 SECURE -->
+                <frame origin="example.com" protocol="http" />  <!-- frame2 INSECURE - FILTERED OUT -->
+            </frame>
+            */
+            getAllFrames.mockResolvedValue([
+                { frameId: 0, parentFrameId: -1, url: 'https://example.com/page' },
+                { frameId: 1, parentFrameId: 0, url: 'https://example.com/secure' },
+                { frameId: 2, parentFrameId: 0, url: 'http://example.com/insecure' },
+            ]);
+
+            const result = await getAutofillableFrames(tabId, 'example.com', 0);
+            expect(formatResults(result)).toEqual([
+                { frameId: 0, crossOrigin: false },
+                { frameId: 1, crossOrigin: false },
+            ]);
         });
 
         test('should handle complex nested frame hierarchy with mixed origins', async () => {
@@ -395,6 +528,73 @@ describe('inline service', () => {
             expect(formatResults(result)).toEqual([
                 { frameId: 0, crossOrigin: false },
                 { frameId: 1, crossOrigin: false },
+            ]);
+        });
+
+        test('should handle protocol downgrade attacks in frame chains', async () => {
+            /*
+            <frame origin="merchant.com" protocol="https">       <!-- frame0 SECURE -->
+                <frame origin="payment.com" protocol="http">      <!-- frame1 INSECURE -->
+                    <frame origin="payment.com" protocol="https"> <!-- frame2 SECURE but blocked by insecure parent -->
+                </frame>
+                <frame origin="payment.com" protocol="https">     <!-- frame3 SECURE and safe path -->
+            </frame>
+            */
+            getAllFrames.mockResolvedValue([
+                { frameId: 0, parentFrameId: -1, url: 'https://merchant.com/checkout' },
+                { frameId: 1, parentFrameId: 0, url: 'http://payment.com/insecure' },
+                { frameId: 2, parentFrameId: 1, url: 'https://payment.com/nested' },
+                { frameId: 3, parentFrameId: 0, url: 'https://payment.com/secure' },
+            ]);
+
+            const result = await getAutofillableFrames(tabId, 'payment.com', 3);
+
+            expect(formatResults(result)).toEqual([
+                { frameId: 0, crossOrigin: true },
+                { frameId: 3, crossOrigin: false },
+            ]);
+        });
+
+        test('should reject autofill when source frame has insecure ancestry', async () => {
+            /*
+            <frame origin="shop.com" protocol="https">           <!-- frame0 SECURE -->
+                <frame origin="shop.com" protocol="http">        <!-- frame1 INSECURE BREAKS CHAIN -->
+                    <frame origin="payment.com" protocol="https"> <!-- frame2 SOURCE - ancestry compromised -->
+                </frame>
+            </frame>
+            */
+            getAllFrames.mockResolvedValue([
+                { frameId: 0, parentFrameId: -1, url: 'https://shop.com/page' },
+                { frameId: 1, parentFrameId: 0, url: 'http://shop.com/insecure' },
+                { frameId: 2, parentFrameId: 1, url: 'https://payment.com/form' },
+            ]);
+
+            const result = await getAutofillableFrames(tabId, 'payment.com', 2);
+            expect(formatResults(result)).toEqual([]);
+        });
+
+        test('should handle null/undefined URL parsing edge cases', async () => {
+            /*
+            <frame origin="example.com" protocol="https">       <!-- frame0 VALID -->
+                <frame url="undefined" />                        <!-- frame1 INVALID URL -->
+                <frame url="null" />                             <!-- frame2 INVALID URL -->
+                <frame url="" />                                 <!-- frame3 INVALID URL -->
+                <frame origin="example.com" protocol="https" />  <!-- frame4 VALID -->
+            </frame>
+            */
+            getAllFrames.mockResolvedValue([
+                { frameId: 0, parentFrameId: -1, url: 'https://example.com/page' },
+                { frameId: 1, parentFrameId: 0, url: undefined },
+                { frameId: 2, parentFrameId: 0, url: null },
+                { frameId: 3, parentFrameId: 0, url: '' },
+                { frameId: 4, parentFrameId: 0, url: 'https://example.com/valid' },
+            ]);
+
+            const result = await getAutofillableFrames(tabId, 'example.com', 0);
+
+            expect(formatResults(result)).toEqual([
+                { frameId: 0, crossOrigin: false },
+                { frameId: 4, crossOrigin: false },
             ]);
         });
     });
