@@ -17,6 +17,7 @@ import { convertRefTokensToSpans, processForLatexMarkdown } from '../../../util/
 import LumoCopyButton from '../../interactiveConversation/messageChain/message/actionToolbar/LumoCopyButton';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
 import { SyntaxHighlighter } from './syntaxHighlighterConfig';
+import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
 
 /**
  * Progressive Markdown Renderer
@@ -356,10 +357,13 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
             return splitIntoBlocks(processedContent, isStreaming);
         }, [processedContent, isStreaming]);
 
+        const className = useMemo(() => {
+            return isIos() || isIpad() || isSafari() ? '' : 'content-visibility-auto';
+        }, [isIos(), isIpad(), isSafari()]);
         return (
             <div className="progressive-markdown-content">
                 {blocks.map((block) => (
-                    <div key={block.key} className="content-visibility-auto">
+                    <div key={block.key} className={className}>
                         <MarkdownBlock
                             content={block.content}
                             theme={theme}
