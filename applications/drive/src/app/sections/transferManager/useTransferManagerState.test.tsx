@@ -201,7 +201,7 @@ describe('useTransferManagerState', () => {
         expect(result.current.uploads[0].clearTextSize).toBe(0);
     });
 
-    it('should prioritize in-progress transfers and order by last status update', () => {
+    it('should prioritize in-progress transfers over failed and pending, then order by last status update', () => {
         const mostRecent = new Date('2024-03-01T00:00:00Z');
         const recent = new Date('2024-02-15T00:00:00Z');
         const older = new Date('2024-02-01T00:00:00Z');
@@ -240,6 +240,22 @@ describe('useTransferManagerState', () => {
                 status: UploadStatus.Finished,
                 type: NodeType.File,
                 lastStatusUpdateTime: oldest,
+            }),
+            createUploadItem({
+                uploadId: 'upload-failed',
+                name: 'Failed upload',
+                uploadedBytes: 50,
+                status: UploadStatus.Failed,
+                type: NodeType.File,
+                lastStatusUpdateTime: recent,
+            }),
+            createUploadItem({
+                uploadId: 'upload-pending',
+                name: 'Pending upload',
+                uploadedBytes: 10,
+                status: UploadStatus.Pending,
+                type: NodeType.File,
+                lastStatusUpdateTime: recent,
             })
         );
 
@@ -249,6 +265,8 @@ describe('useTransferManagerState', () => {
         expect(idsInOrder).toEqual([
             'download-in-progress',
             'upload-in-progress',
+            'upload-failed',
+            'upload-pending',
             'download-finished',
             'upload-finished',
         ]);
