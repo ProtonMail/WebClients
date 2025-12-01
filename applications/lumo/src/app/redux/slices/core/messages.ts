@@ -3,7 +3,14 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
 import type { IdMapEntry, RemoteMessage } from '../../../remote/types';
-import type { Attachment, ChunkAction, FinishMessageAction, Message, MessageId, MessagePub, ShallowAttachment } from '../../../types';
+import type {
+    ChunkAction,
+    FinishMessageAction,
+    Message,
+    MessageId,
+    MessagePub,
+    ShallowAttachment,
+} from '../../../types';
 
 export type PushMessageRequest = {
     id: MessageId;
