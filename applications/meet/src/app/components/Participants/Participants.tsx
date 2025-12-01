@@ -17,6 +17,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
@@ -41,6 +42,8 @@ export const Participants = () => {
         useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
+
+    const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
 
     const lowerCaseSearchExpression = searchExpression.toLowerCase();
 
@@ -114,9 +117,19 @@ export const Participants = () => {
 
                     const name = participantNameMap[participant.identity] ?? c('Info').t`Loading...`;
 
-                    const isParticipantVideoDisabled = participantsWithDisabledVideos.includes(participant.identity);
+                    const isParticipantVideoDisabled = participant.isLocal
+                        ? !isVideoEnabled
+                        : participantsWithDisabledVideos.includes(participant.identity);
 
                     const isSpeaking = activeSpeakers.find((p) => p.identity === participant.identity);
+
+                    const remoteParticipantLabel = isParticipantVideoDisabled
+                        ? c('Action').t`Receive video`
+                        : c('Action').t`Stop receiving video`;
+
+                    const localParticipantLabel = isVideoEnabled
+                        ? c('Action').t`Disable camera`
+                        : c('Action').t`Enable camera`;
 
                     return (
                         <div
@@ -144,7 +157,7 @@ export const Participants = () => {
                                 </div>
                             </div>
                             <div className="text-ellipsis my-auto flex-1" title={name}>
-                                {name}
+                                {name} {participant.isLocal ? c('Info').t`(You)` : null}
                             </div>
                             <div className="flex flex-nowrap items-center ml-auto gap-1 shrink-0">
                                 <div
@@ -158,13 +171,9 @@ export const Participants = () => {
                                     )}
                                 </div>
 
-                                {!!videoPub && !videoPub.isMuted ? (
+                                {!!videoPub && (!videoPub.isMuted || participant.isLocal) ? (
                                     <Tooltip
-                                        title={
-                                            isParticipantVideoDisabled
-                                                ? c('Action').t`Receive video`
-                                                : c('Action').t`Stop receiving video`
-                                        }
+                                        title={participant.isLocal ? localParticipantLabel : remoteParticipantLabel}
                                         tooltipClassName="participants-button-tooltip color-norm"
                                         originalPlacement="top-end"
                                     >
@@ -172,6 +181,10 @@ export const Participants = () => {
                                             className="participant-list-button-base participant-list-button-background p-2 flex items-center justify-center rounded-full w-custom h-custom border-none"
                                             onClick={() => {
                                                 if (participant.isLocal) {
+                                                    void toggleVideo({
+                                                        isEnabled: !isVideoEnabled,
+                                                        preserveCache: true,
+                                                    });
                                                     return;
                                                 }
 
