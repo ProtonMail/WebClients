@@ -16,7 +16,7 @@ import { useFilteredFiles } from '../../../../hooks';
 import type { DriveNode } from '../../../../hooks/useDriveSDK';
 import { useIsGuest } from '../../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../../redux/hooks';
-import { selectContextFilters } from '../../../../redux/selectors';
+import { selectContextFilters, selectSpaceById } from '../../../../redux/selectors';
 import { addContextFilter, removeContextFilter } from '../../../../redux/slices/contextFilters';
 import { deleteAttachment } from '../../../../redux/slices/core/attachments';
 import { handleFileAsync } from '../../../../services/files';
@@ -72,6 +72,10 @@ export const FilesPanel = ({
         filterMessage,
         spaceId
     );
+
+    // Get space to check for linked Drive folder
+    const space = useLumoSelector((state) => (spaceId ? selectSpaceById(spaceId)(state) : undefined));
+    const linkedDriveFolder = space?.linkedDriveFolder;
 
     const handleIncludeHistoricalFile = (file: any) => {
         dispatch(removeContextFilter({ messageId: file.messageId, filename: file.filename }));
@@ -365,6 +369,20 @@ export const FilesPanel = ({
                     {/* When not filtering, show normal view */}
                     {!filterMessage && (
                         <>
+                            {/* Linked Drive Folder Section */}
+                            {linkedDriveFolder && (
+                                <div className="mb-3 w-full p-4 bg-weak rounded border border-weak">
+                                    <h3 className="text-sm text-bold mb-2 flex items-center gap-2">
+                                        <Icon name="drive" size={4} className="color-primary" />
+                                        {c('collider_2025: Info').t`Linked Drive Folder`}
+                                    </h3>
+                                    <div className="text-sm color-weak mb-1">{linkedDriveFolder.folderName}</div>
+                                    <div className="text-xs color-weak">
+                                        {c('collider_2025: Info').t`All files in this folder are available in chat context`}
+                                    </div>
+                                </div>
+                            )}
+
                             {/* Project Files Section */}
                             {projectFiles && projectFiles.length > 0 && (
                                 <div className="mb-3 w-full p-4 project-files-area">
