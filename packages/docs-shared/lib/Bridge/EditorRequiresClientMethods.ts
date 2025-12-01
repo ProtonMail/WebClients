@@ -14,6 +14,9 @@ export type FileMenuAction =
       type: 'new-spreadsheet'
     }
   | {
+      type: 'new-document'
+    }
+  | {
       type: 'import'
     }
   | {

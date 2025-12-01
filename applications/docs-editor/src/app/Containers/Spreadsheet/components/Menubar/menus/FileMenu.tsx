@@ -61,7 +61,8 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
     <Ariakit.MenuProvider {...props}>
       <Ariakit.MenuButton render={renderMenuButton} />
       <UI.Menu unmountOnHide>
-        {!isPublicMode && <NewSpreadsheetOption triggerMenuAction={triggerMenuAction} />}
+        {!isPublicMode ? <NewSpreadsheetOption triggerMenuAction={triggerMenuAction} /> : null}
+        {!isPublicMode ? <NewDocumentOption triggerMenuAction={triggerMenuAction} /> : null}
         <UI.MenuItem
           leadingIconSlot={<UI.Icon legacyName="file-arrow-in-up" />}
           onClick={() => {
@@ -172,6 +173,28 @@ function NewSpreadsheetOption({ triggerMenuAction }: { triggerMenuAction: (actio
   )
 }
 
+function NewDocumentOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
+  const [loading, withLoading] = useLoading()
+  return (
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon legacyName="brand-proton-docs" />}
+      disabled={loading}
+      onClick={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        void withLoading(
+          triggerMenuAction({
+            type: 'new-document',
+          }),
+        )
+      }}
+      trailingIconSlot={loading && <CircleLoader size="small" className="ml-auto" />}
+    >
+      {s('New document')}
+    </UI.MenuItem>
+  )
+}
+
 function MakeACopyOption({ triggerMenuAction }: { triggerMenuAction: (action: FileMenuAction) => Promise<void> }) {
   const [loading, withLoading] = useLoading()
   return (
@@ -261,6 +284,7 @@ function DownloadSubmenu({ triggerMenuAction }: { triggerMenuAction: (action: Fi
 function strings() {
   return {
     'New spreadsheet': c('sheets_2025:Spreadsheet editor menubar file menu').t`New spreadsheet`,
+    'New document': c('sheets_2025:Spreadsheet editor menubar file menu').t`New document`,
     Import: c('sheets_2025:Spreadsheet editor menubar file menu').t`Import`,
     'Make a copy': c('sheets_2025:Spreadsheet editor menubar file menu').t`Make a copy`,
     'Move to folder': c('sheets_2025:Spreadsheet editor menubar file menu').t`Move to folder`,
