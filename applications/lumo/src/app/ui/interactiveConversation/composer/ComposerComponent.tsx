@@ -237,6 +237,8 @@ export const ComposerComponent = ({
                             isProcessingAttachment={isProcessingAttachment}
                             onAbort={onAbort}
                             onSubmit={handleSubmit}
+                            spaceId={spaceId}
+                            messageChain={messageChain}
                         />
                         <ComposerToolbar
                             fileInputRef={fileInputRef}

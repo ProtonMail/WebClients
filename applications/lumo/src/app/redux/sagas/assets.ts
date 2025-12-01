@@ -369,6 +369,11 @@ export function* handlePullAssetRequest({ payload: request }: { payload: PullAss
         if (!remoteAsset) {
             throw new Error('Asset not found on remote');
         }
+        
+        // Log asset ID mismatch for debugging
+        if (remoteAsset.id !== assetId) {
+            console.warn(`Asset ID mismatch: requested ${assetId}, got ${remoteAsset.id} from remote`);
+        }
 
         // Check if remote asset is deleted
         if (remoteAsset.deleted === true) {
@@ -377,7 +382,13 @@ export function* handlePullAssetRequest({ payload: request }: { payload: PullAss
             return;
         }
 
-        const asset: Asset = yield call(deserializeAsset, remoteAsset, dek);
+        const asset: Asset | null = yield call(deserializeAsset, remoteAsset, dek);
+        
+        if (!asset) {
+            console.error(`Failed to deserialize asset ${assetId}: decryption failed or asset is null`);
+            yield put(pullAssetFailure(assetId));
+            return;
+        }
         
         // Remove binary data before storing in Redux (but keep markdown for LLM context)
         // This avoids non-serializable Uint8Array in Redux state
