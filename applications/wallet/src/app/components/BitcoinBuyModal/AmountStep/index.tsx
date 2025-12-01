@@ -29,6 +29,7 @@ import { Button, Input, SearchableSelect, Select } from '../../../atoms';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
 import { Skeleton } from '../../../atoms/Skeleton';
 import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';
+import { AZTECO } from '../../../constants/buy';
 import { countDecimal, formatNumberForDisplay } from '../../../utils';
 import { AztecoPaymentDetailsModal } from './AztecoPaymentDetailsModal';
 import { DisclaimerModal } from './DisclaimerModal';
@@ -38,7 +39,7 @@ export type QuoteWithProvider = WasmQuote & {
     provider: WasmGatewayProvider;
 };
 interface Props {
-    onConfirm: (quote: QuoteWithProvider, checkoutId: string | null) => void;
+    onConfirm: (quote: QuoteWithProvider, checkoutUrl: string | null) => void;
     country: WasmApiCountry;
     preselectedQuote?: QuoteWithProvider;
     btcAddress: string;
@@ -170,6 +171,16 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
     const [openSubscriptionModal] = useSubscriptionModal();
 
     const { createNotification } = useNotifications();
+
+    const getContinueLabel = (providerName: string, selectedPaymentProvider?: WasmGatewayProvider) => {
+        if (!selectedPaymentProvider) {
+            return c('bitcoin buy').t`Continue`;
+        }
+        if (selectedPaymentProvider === 'Azteco') {
+            return c('bitcoin buy').t`Buy Azteco vouchers`;
+        }
+        return c('bitcoin buy').t`Continue with ${providerName}`;
+    };
 
     return (
         <>
@@ -395,11 +406,7 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                                 setDisclaimerModal(true);
                             }}
                         >
-                            {!!selectedPaymentProvider
-                                ? selectedPaymentProvider === 'Azteco'
-                                    ? c('bitcoin buy').t`Buy Azteco vouchers`
-                                    : c('bitcoin buy').t`Continue with ${providerName}`
-                                : c('bitcoin buy').t`Continue`}
+                            {getContinueLabel(providerName, selectedPaymentProvider)}
                         </Button>
                     </div>
                 </div>
@@ -414,19 +421,21 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                             (async () => {
                                 if (selectedQuote) {
                                     try {
-                                        const clientSecret =
-                                            selectedQuote.OrderID && selectedQuote?.provider === 'Azteco'
-                                                ? await walletApi.payment_gateway.createOnRampCheckout(
-                                                      selectedQuote.FiatAmount,
-                                                      btcAddress,
-                                                      selectedQuote.FiatCurrencySymbol,
-                                                      selectedQuote.PaymentMethod,
-                                                      'Azteco',
-                                                      selectedQuote.OrderID
-                                                  )
+                                        const checkoutUrl =
+                                            selectedQuote.OrderID && selectedQuote?.provider === AZTECO
+                                                ? (
+                                                      await walletApi.payment_gateway.createOnRampCheckout(
+                                                          selectedQuote.FiatAmount,
+                                                          btcAddress,
+                                                          selectedQuote.FiatCurrencySymbol,
+                                                          selectedQuote.PaymentMethod,
+                                                          AZTECO,
+                                                          selectedQuote.OrderID
+                                                      )
+                                                  ).CheckoutUrl
                                                 : null;
 
-                                        onConfirm(selectedQuote, clientSecret);
+                                        onConfirm(selectedQuote, checkoutUrl);
                                     } catch (error: any) {
                                         createNotification({
                                             type: 'error',

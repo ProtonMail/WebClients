@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Payment pending</title>
+        <link rel="stylesheet" href="checkout.css" />
+        <style>
+            .icon {
+                background: #f59e0b;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+
+            <h1>Payment pending</h1>
+            <p class="message">
+                Your payment is being processed. This may take a few moments. We'll notify you once it's complete. You
+                can now close this page and return to your wallet.
+            </p>
+
+            <p class="footer-text">A confirmation email has been sent to your Proton email address.</p>
+        </div>
+    </body>
+    <script type="application/javascript">
+        if (window.opener) {
+            window.opener.postMessage({ type: 'CheckoutCompleted' }, '*');
+        }
+    </script>
+</html>
