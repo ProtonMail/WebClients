@@ -55,6 +55,8 @@ export class LumoApiClient {
         this.config = { ...DEFAULT_CONFIG, ...config };
     }
 
+    /******* Toplevel logic *******/
+
     /**
      * Call the Lumo Assistant API
      * @param api - Proton API instance
@@ -106,23 +108,6 @@ export class LumoApiClient {
             chunkCallback,
             finishCallback
         );
-    }
-
-    private initializeRequestContext(
-        endpoint: string,
-        flags: {
-            enableU2LEncryption: boolean;
-            enableExternalTools: boolean;
-        }
-    ) {
-        const { enableU2LEncryption, enableExternalTools } = flags;
-        return {
-            requestId: uuidv4(), // do not use encryption.requestId, which is ONLY meant for cryptographic purposes (AEAD)
-            timestamp: Date.now(),
-            endpoint,
-            enableU2LEncryption,
-            enableExternalTools,
-        };
     }
 
     private async runSseReceiveLoop(
@@ -183,28 +168,11 @@ export class LumoApiClient {
         }
     }
 
-    private async notifyRequestInterceptors(request: LumoApiGenerationRequest, requestContext: RequestContext) {
-        try {
-            return await this.notifyRequest(request, requestContext);
-        } catch (error: any) {
-            // Run request error interceptors
-            await this.notifyRequestError(error, requestContext);
-            throw error;
-        }
-    }
+    /******* Request preparation methods *******/
 
     private prepareChatEndpointPostData(request: LumoApiGenerationRequest): ChatEndpointGenerationRequest {
         return {
             Prompt: request,
-        };
-    }
-
-    private initializeResponseContext(requestContext: RequestContext): ResponseContext {
-        return {
-            ...requestContext,
-            startTime: Date.now(),
-            chunkCount: 0,
-            totalContentLength: 0,
         };
     }
 
@@ -245,6 +213,44 @@ export class LumoApiClient {
 
     private getTargets(requestTitle: boolean): RequestableGenerationTarget[] {
         return requestTitle ? ['title', 'message'] : ['message'];
+    }
+
+    /******* Interceptor internal methods *******/
+
+    private initializeRequestContext(
+        endpoint: string,
+        flags: {
+            enableU2LEncryption: boolean;
+            enableExternalTools: boolean;
+        }
+    ) {
+        const { enableU2LEncryption, enableExternalTools } = flags;
+        return {
+            requestId: uuidv4(), // do not use encryption.requestId, which is ONLY meant for cryptographic purposes (AEAD)
+            timestamp: Date.now(),
+            endpoint,
+            enableU2LEncryption,
+            enableExternalTools,
+        };
+    }
+
+    private initializeResponseContext(requestContext: RequestContext): ResponseContext {
+        return {
+            ...requestContext,
+            startTime: Date.now(),
+            chunkCount: 0,
+            totalContentLength: 0,
+        };
+    }
+
+    private async notifyRequestInterceptors(request: LumoApiGenerationRequest, requestContext: RequestContext) {
+        try {
+            return await this.notifyRequest(request, requestContext);
+        } catch (error: any) {
+            // Run request error interceptors
+            await this.notifyRequestError(error, requestContext);
+            throw error;
+        }
     }
 
     private async notifyResponseComplete(finalStatus: 'failed' | 'succeeded', responseContext: ResponseContext) {
@@ -299,90 +305,7 @@ export class LumoApiClient {
         }
     }
 
-    /**
-     * Simplified method for quick conversations
-     */
-    async quickChat(
-        api: Api,
-        message: string,
-        options: {
-            enableWebSearch?: boolean;
-            onChunk?: (content: string) => void;
-            signal?: AbortSignal;
-        } = {}
-    ): Promise<string> {
-        const { enableWebSearch = false, onChunk, signal } = options;
-        let response = '';
-
-        await this.callAssistant(api, [{ role: 'user', content: message }], {
-            enableExternalTools: enableWebSearch,
-            signal,
-            chunkCallback: async (msg) => {
-                if (msg.type === 'token_data' && msg.target === 'message') {
-                    response += msg.content;
-                    onChunk?.(msg.content);
-                }
-            },
-        });
-
-        return response;
-    }
-
-    /**
-     * Create a new request builder for fluent API
-     * @returns RequestBuilder instance
-     */
-    createRequest(): RequestBuilder {
-        return new RequestBuilder();
-    }
-
-    /**
-     * Execute a request builder
-     * @param builder RequestBuilder instance
-     * @param api Proton API instance
-     * @returns Promise that resolves when the request completes
-     */
-    async executeRequest(builder: RequestBuilder, api: Api): Promise<void> {
-        const turns = builder.getTurns();
-        const options = builder.getOptions();
-        await this.callAssistant(api, turns, options as AssistantCallOptions);
-    }
-
-    /**
-     * Execute a quick chat request builder
-     * @param builder RequestBuilder instance
-     * @param api Proton API instance
-     * @returns Promise that resolves with the response content
-     */
-    async executeQuickRequest(builder: RequestBuilder, api: Api): Promise<string> {
-        const turns = builder.getTurns();
-
-        if (turns.length !== 1 || turns[0].role !== 'user') {
-            throw new Error('Quick requests must contain exactly one user message');
-        }
-
-        const options = builder.getOptions();
-        return this.quickChat(api, turns[0].content || '', {
-            enableWebSearch: options.enableExternalTools,
-            signal: options.signal,
-        });
-    }
-
-    /**
-     * Get the current configuration
-     * @returns Current client configuration
-     */
-    getConfig(): Readonly<Required<LumoApiClientConfig>> {
-        return { ...this.config };
-    }
-
-    /**
-     * Update the client configuration
-     * @param config Partial configuration to merge with current config
-     */
-    updateConfig(config: Partial<LumoApiClientConfig>): void {
-        this.config = { ...this.config, ...config };
-    }
+    /******* Interceptor external methods *******/
 
     /**
      * Add a request interceptor
@@ -426,5 +349,96 @@ export class LumoApiClient {
      */
     clearResponseInterceptors(): void {
         this.config.interceptors.response = [];
+    }
+
+    /******* Secondary entry points *******/
+
+    /**
+     * Simplified method for quick conversations
+     */
+    async quickChat(
+        api: Api,
+        message: string,
+        options: {
+            enableWebSearch?: boolean;
+            onChunk?: (content: string) => void;
+            signal?: AbortSignal;
+        } = {}
+    ): Promise<string> {
+        const { enableWebSearch = false, onChunk, signal } = options;
+        let response = '';
+
+        await this.callAssistant(api, [{ role: 'user', content: message }], {
+            enableExternalTools: enableWebSearch,
+            signal,
+            chunkCallback: async (msg) => {
+                if (msg.type === 'token_data' && msg.target === 'message') {
+                    response += msg.content;
+                    onChunk?.(msg.content);
+                }
+            },
+        });
+
+        return response;
+    }
+
+    /******* Request builder public methods *******/
+
+    /**
+     * Create a new request builder for fluent API
+     * @returns RequestBuilder instance
+     */
+    createRequest(): RequestBuilder {
+        return new RequestBuilder();
+    }
+
+    /**
+     * Execute a request builder
+     * @param builder RequestBuilder instance
+     * @param api Proton API instance
+     * @returns Promise that resolves when the request completes
+     */
+    async executeRequest(builder: RequestBuilder, api: Api): Promise<void> {
+        const turns = builder.getTurns();
+        const options = builder.getOptions();
+        await this.callAssistant(api, turns, options as AssistantCallOptions);
+    }
+
+    /**
+     * Execute a quick chat request builder
+     * @param builder RequestBuilder instance
+     * @param api Proton API instance
+     * @returns Promise that resolves with the response content
+     */
+    async executeQuickRequest(builder: RequestBuilder, api: Api): Promise<string> {
+        const turns = builder.getTurns();
+
+        if (turns.length !== 1 || turns[0].role !== 'user') {
+            throw new Error('Quick requests must contain exactly one user message');
+        }
+
+        const options = builder.getOptions();
+        return this.quickChat(api, turns[0].content || '', {
+            enableWebSearch: options.enableExternalTools,
+            signal: options.signal,
+        });
+    }
+
+    /******* Config getter/setter *******/
+
+    /**
+     * Get the current configuration
+     * @returns Current client configuration
+     */
+    getConfig(): Readonly<Required<LumoApiClientConfig>> {
+        return { ...this.config };
+    }
+
+    /**
+     * Update the client configuration
+     * @param config Partial configuration to merge with current config
+     */
+    updateConfig(config: Partial<LumoApiClientConfig>): void {
+        this.config = { ...this.config, ...config };
     }
 }
