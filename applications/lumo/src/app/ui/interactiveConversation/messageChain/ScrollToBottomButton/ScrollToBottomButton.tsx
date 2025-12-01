@@ -52,7 +52,7 @@ export const ScrollToBottomButton = ({
         <div
             className="absolute w-full z-50 flex justify-center"
             style={{
-                bottom: `${composerHeight + 10}px`,
+                bottom: `${composerHeight + 28}px`,
                 transform: show ? 'translateY(0)' : 'translateY(8px)',
                 transition: 'all 200ms ease-in-out',
                 opacity: show ? 1 : 0,
