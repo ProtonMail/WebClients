@@ -4,7 +4,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { DEFAULT_LUMO_PUB_KEY, encryptTurns } from './encryption';
 import { RequestEncryptionParams } from './encryptionParams';
-import { callEndpoint } from './network';
+import { LUMO_CHAT_ENDPOINT, callChatEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
 import { makeAbortTransformStream } from './transforms/abort';
 import { makeChunkParserTransformStream } from './transforms/chunks';
@@ -16,6 +16,7 @@ import { makeSmoothingTransformStream } from './transforms/smoothing';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
     AssistantCallOptions,
+    ChatEndpointGenerationRequest,
     GenerationResponseMessage,
     LumoApiClientConfig,
     LumoApiGenerationRequest,
@@ -29,10 +30,10 @@ import type {
 } from './types';
 
 // Default configuration
-const DEFAULT_CONFIG: Required<LumoApiClientConfig> = {
+const DEFAULT_CONFIG: LumoApiClientConfig = {
     enableU2LEncryption: true,
     enableSmoothing: true,
-    endpoint: '', // No custom endpoint by default
+    endpoint: LUMO_CHAT_ENDPOINT,
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
     externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency'],
     internalTools: ['proton_info', 'generate_image'],
@@ -46,9 +47,9 @@ const DEFAULT_CONFIG: Required<LumoApiClientConfig> = {
  * Main LLM API Client class
  */
 export class LumoApiClient {
-    private config: Required<LumoApiClientConfig>;
+    private config: LumoApiClientConfig;
 
-    constructor(config: LumoApiClientConfig = {}) {
+    constructor(config: Partial<LumoApiClientConfig> = {}) {
         this.config = { ...DEFAULT_CONFIG, ...config };
     }
 
@@ -70,13 +71,15 @@ export class LumoApiClient {
             requestTitle = false,
             autoGenerateEncryption = true,
         } = options;
-        const { enableU2LEncryption, lumoPubKey, internalTools, externalTools, endpoint } = this.config;
+        const { enableU2LEncryption, endpoint } = this.config;
 
         // Setup U2L encryption
         const encryption = await RequestEncryptionParams.create(providedRequestKey, providedRequestId, {
             enableU2LEncryption,
             autoGenerateEncryption,
         });
+
+        // Encrypt request if needed
         if (encryption) {
             turns = await encryptTurns(turns, encryption);
         }
@@ -85,19 +88,15 @@ export class LumoApiClient {
         const targets = this.getTargets(requestTitle);
 
         // Prepare the request
-        let request: LumoApiGenerationRequest = {
-            type: 'generation_request',
+        let request: LumoApiGenerationRequest = await this.prepareGenerationRequest(
             turns,
-            options: {
-                tools: enableExternalTools ? [...internalTools, ...externalTools] : internalTools,
-            },
+            enableExternalTools,
             targets,
-            request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
-            request_id: encryption?.requestId,
-        };
+            encryption
+        );
 
         const requestContext: RequestContext = {
-            requestId: uuidv4(), // encryption.requestId is ONLY meant for cryptographic purposes (AEAD)
+            requestId: uuidv4(), // do not use encryption.requestId, which is ONLY meant for cryptographic purposes (AEAD)
             timestamp: Date.now(),
             endpoint,
             enableU2LEncryption,
@@ -105,34 +104,21 @@ export class LumoApiClient {
         };
 
         // Run request interceptors
-        try {
-            request = await this.notifyRequest(request, requestContext);
-        } catch (error: any) {
-            // Run request error interceptors
-            await this.notifyRequestError(error, requestContext);
-            throw error;
-        }
+        request = await this.notifyRequestInterceptors(request, requestContext);
 
         // Prepare payload
-        const payload = {
-            Prompt: request,
-        };
+        const postData = this.prepareChatEndpointPostData(request);
 
         // Final status will be changed to succeeded on success
         let finalStatus: Status = 'failed';
 
         // Response context for interceptors
-        const responseContext: ResponseContext = {
-            ...requestContext,
-            startTime: Date.now(),
-            chunkCount: 0,
-            totalContentLength: 0,
-        };
+        const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
         const thisNotifyResponse = this.notifyResponse.bind(this);
 
         // Call server and read the streamed result
         try {
-            const responseBody = await callEndpoint(api, payload, {
+            const responseBody = await callChatEndpoint(api, postData, {
                 endpoint,
                 signal,
             });
@@ -165,6 +151,49 @@ export class LumoApiClient {
                 await finishCallback(finalStatus);
             }
         }
+    }
+
+    private async notifyRequestInterceptors(request: LumoApiGenerationRequest, requestContext: RequestContext) {
+        try {
+            return await this.notifyRequest(request, requestContext);
+        } catch (error: any) {
+            // Run request error interceptors
+            await this.notifyRequestError(error, requestContext);
+            throw error;
+        }
+    }
+
+    private prepareChatEndpointPostData(request: LumoApiGenerationRequest): ChatEndpointGenerationRequest {
+        return {
+            Prompt: request,
+        };
+    }
+
+    private initializeResponseContext(requestContext: RequestContext): ResponseContext {
+        return {
+            ...requestContext,
+            startTime: Date.now(),
+            chunkCount: 0,
+            totalContentLength: 0,
+        };
+    }
+
+    private async prepareGenerationRequest(
+        turns: Turn[],
+        enableExternalTools: boolean,
+        targets: RequestableGenerationTarget[],
+        encryption: RequestEncryptionParams | null
+    ): Promise<LumoApiGenerationRequest> {
+        const { lumoPubKey, internalTools, externalTools } = this.config;
+        const tools = enableExternalTools ? [...internalTools, ...externalTools] : internalTools;
+        return {
+            type: 'generation_request',
+            turns: turns,
+            options: { tools },
+            targets,
+            request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
+            request_id: encryption?.requestId,
+        };
     }
 
     private getTargets(requestTitle: boolean): RequestableGenerationTarget[] {
