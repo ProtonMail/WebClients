@@ -164,7 +164,7 @@ export const ProtonMeetContainer = ({
 
     const notifications = useNotifications();
 
-    const keyRotationScheduler = new KeyRotationScheduler(keyProvider);
+    const keyRotationSchedulerRef = useRef(new KeyRotationScheduler(keyProvider));
 
     const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
@@ -200,7 +200,7 @@ export const ProtonMeetContainer = ({
         try {
             reportMLSRelatedError(key, epoch);
             if (isMeetSeamlessKeyRotationEnabled) {
-                await keyRotationScheduler.schedule(key, epoch);
+                await keyRotationSchedulerRef.current.schedule(key, epoch);
             } else {
                 await keyProvider.setKeyWithEpoch(key, epoch);
             }
@@ -420,7 +420,7 @@ export const ProtonMeetContainer = ({
             if (isMeetSeamlessKeyRotationEnabled) {
                 // eslint-disable-next-line no-console
                 console.log('Enabled seamless key rotation');
-                await keyRotationScheduler.schedule(groupKey, epoch);
+                await keyRotationSchedulerRef.current.schedule(groupKey, epoch);
             } else {
                 await keyProvider.setKeyWithEpoch(groupKey, epoch);
             }
@@ -662,11 +662,13 @@ export const ProtonMeetContainer = ({
 
         if (isMeetSeamlessKeyRotationEnabled) {
             // clean the current key and epoch to avoid use them in next meeting
-            keyRotationScheduler.clean();
+            keyRotationSchedulerRef.current.clean();
         }
 
         setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);
+
+        keyProvider.cleanCurrent();
 
         prepareUpsell();
     };
@@ -688,6 +690,8 @@ export const ProtonMeetContainer = ({
         mlsSetupDone.current = false; // need to set mls again after leave meeting
         setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);
+
+        keyProvider.cleanCurrent();
 
         prepareUpsell();
     };
