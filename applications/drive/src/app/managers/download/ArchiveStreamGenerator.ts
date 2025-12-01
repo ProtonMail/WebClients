@@ -1,9 +1,10 @@
 import type { NodeEntity } from '@proton/drive/index';
-import { NodeType, getDrive } from '@proton/drive/index';
+import { NodeType } from '@proton/drive/index';
 
 import type { DownloadController } from './DownloadManager';
 import type { ArchiveItem, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import { createAsyncQueue } from './utils/asyncQueue';
+import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { getNodeModifiedTime } from './utils/nodeHelpers';
 
@@ -149,7 +150,7 @@ export class ArchiveStreamGenerator {
             };
         }
 
-        const drive = getDrive();
+        const drive = getDownloadSdk(this.downloadId);
         const downloader = await drive.getFileDownloader(node.uid, this.abortSignal);
         const claimedSize = downloader.getClaimedSizeInBytes();
 

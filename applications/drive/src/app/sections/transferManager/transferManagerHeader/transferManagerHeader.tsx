@@ -15,7 +15,7 @@ const PROGRESS_STATUS_BY_TRANSFER: Record<TransferManagerStatus, ProgressBarStat
     [TransferManagerStatus.Empty]: ProgressBarStatus.Disabled,
     [TransferManagerStatus.InProgress]: ProgressBarStatus.Running,
     [TransferManagerStatus.Failed]: ProgressBarStatus.Error,
-    [TransferManagerStatus.Cancelled]: ProgressBarStatus.Disabled,
+    [TransferManagerStatus.Cancelled]: ProgressBarStatus.Success,
     [TransferManagerStatus.Finished]: ProgressBarStatus.Success,
 };
 
