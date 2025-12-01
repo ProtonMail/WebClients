@@ -2,38 +2,31 @@ import { decryptUint8Array } from 'applications/lumo/src/app/crypto';
 import { consider } from 'applications/lumo/src/app/util/nullable';
 
 import { decryptContent } from '../encryption';
-import type { AesGcmCryptoKey, GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted } from '../types';
+import type { RequestEncryptionParams } from '../encryptionParams';
+import type { GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted } from '../types';
 
 export type DecryptionTransformerParams = {
-    enableU2LEncryption: boolean;
-    requestKey: AesGcmCryptoKey | undefined;
-    requestId: string | undefined;
+    encryption: RequestEncryptionParams | null
 };
 
 function makeResponseAd(requestId: string) {
     return `lumo.response.${requestId}.chunk`;
 }
 
-const makeDecryptionTransformer = ({
-    enableU2LEncryption,
-    requestKey,
-    requestId,
-}: DecryptionTransformerParams): Transformer<GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted> => {
-    const responseAd = consider(makeResponseAd)(requestId);
+const makeDecryptionTransformer = (encryption: RequestEncryptionParams | null): Transformer<GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted> => {
+    const responseAd = consider(makeResponseAd)(encryption?.requestId);
     return {
         async transform(value: GenerationToFrontendMessage, controller: TransformStreamDefaultController) {
             // Decrypt token_data (text chunks)
             const shouldDecryptText =
                 value.type === 'token_data' &&
                 value.encrypted &&
-                enableU2LEncryption &&
-                requestKey &&
-                requestId &&
+                encryption &&
                 responseAd;
 
             if (shouldDecryptText) {
                 try {
-                    const decryptedContent = await decryptContent(value.content, requestKey, responseAd);
+                    const decryptedContent = await decryptContent(value.content, encryption.requestKey, responseAd);
                     const decrypted = {
                         ...value,
                         content: decryptedContent,
@@ -53,15 +46,13 @@ const makeDecryptionTransformer = ({
                 value.type === 'image_data' &&
                 value.encrypted &&
                 value.data &&
-                enableU2LEncryption &&
-                requestKey &&
-                requestId &&
+                encryption &&
                 responseAd;
 
             if (shouldDecryptImage) {
                 try {
                     // Decrypt to binary image bytes (decryptUint8Array handles base64 decode internally)
-                    const imageBytes = await decryptUint8Array(value.data!, requestKey, responseAd);
+                    const imageBytes = await decryptUint8Array(value.data!, encryption.requestKey, responseAd);
                     // Re-encode to base64 for display
                     const decryptedData = imageBytes.toBase64();
                     const decrypted = {
@@ -85,6 +76,6 @@ const makeDecryptionTransformer = ({
 };
 
 export const makeDecryptionTransformStream = (
-    params: DecryptionTransformerParams
+    encryption: RequestEncryptionParams | null
 ): TransformStream<GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted> =>
-    new TransformStream(makeDecryptionTransformer(params));
+    new TransformStream(makeDecryptionTransformer(encryption));
