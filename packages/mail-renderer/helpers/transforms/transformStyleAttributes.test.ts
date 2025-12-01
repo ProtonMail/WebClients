@@ -161,6 +161,34 @@ describe('transformStyleAttributes', () => {
             expect(document.getElementById('c')?.style.whiteSpace).toBe('pre-line');
         });
     });
+
+    describe('replaceFixedPositionWithInherit', () => {
+        it('should replace fixed position with inherit', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="a" style="position : fixed;">
+                </div>
+            `;
+            transformStyleAttributes(document.body as unknown as Element);
+
+            const a = document.getElementById('a');
+            expect(a?.style.position).toBe('inherit');
+        });
+
+        it('should not change style content if there is no fixed position', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="a" style="position : absolute;"></div>
+                <div id="b" style="position : relative;"></div>
+                <div id="c" style="position : inherit;"></div>
+            `;
+            transformStyleAttributes(document.body as unknown as Element);
+
+            expect(document.getElementById('a')?.style.position).toBe('absolute');
+            expect(document.getElementById('b')?.style.position).toBe('relative');
+            expect(document.getElementById('c')?.style.position).toBe('inherit');
+        });
+    });
 });
 
 describe('startsByANegativeSign', () => {

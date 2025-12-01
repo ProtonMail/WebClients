@@ -165,6 +165,13 @@ const replaceWhiteSpacePre = (element: HTMLElement) => {
     }
 };
 
+const replaceFixedPositionWithInherit = (element: HTMLElement) => {
+    const position = element.style.position;
+    if (position === 'fixed') {
+        element.style.position = 'inherit';
+    }
+};
+
 export const transformStyleAttributes = (document: Element) => {
     const nodesWithStyleAttribute = document.querySelectorAll('[style]');
 
@@ -180,5 +187,7 @@ export const transformStyleAttributes = (document: Element) => {
         removeNegativeMargins(element);
 
         replaceWhiteSpacePre(element);
+
+        replaceFixedPositionWithInherit(element);
     }
 };
