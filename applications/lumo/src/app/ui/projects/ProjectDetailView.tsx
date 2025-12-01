@@ -28,6 +28,7 @@ import { selectAttachmentsBySpaceId, selectConversationsBySpaceId, selectProvisi
 import { sendMessage } from '../interactiveConversation/helper';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
 import { ComposerComponent } from '../interactiveConversation/composer/ComposerComponent';
+import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
 import { getProjectCategory } from './constants';
 import { useProjectActions } from './hooks/useProjectActions';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
@@ -54,6 +55,7 @@ const ProjectDetailViewInner = () => {
     const instructionsModal = useModalStateObject();
     const deleteModal = useModalStateObject();
     const sidebarModal = useModalStateObject();
+    const driveBrowserModal = useModalStateObject();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
@@ -75,6 +77,11 @@ const ProjectDetailViewInner = () => {
     }, []);
 
     const { createConversationInProject, deleteProject } = useProjectActions();
+
+    const handleShowDriveBrowser = useCallback(() => {
+        // Show Drive browser in a modal
+        driveBrowserModal.openModal(true);
+    }, [driveBrowserModal]);
 
     const handleSendInProject = useCallback(
         async (content: string) => {
@@ -146,7 +153,7 @@ const ProjectDetailViewInner = () => {
     const projectName = space.projectName || 'Untitled Project';
     const projectInstructions = space.projectInstructions || '';
     const category = getProjectCategory(space.projectIcon);
-    
+
     // Count files for this space
     const fileCount = Object.values(spaceAttachments).filter(
         (att) => !att.error
@@ -198,7 +205,7 @@ const ProjectDetailViewInner = () => {
     };
 
     const promptSuggestions = conversationList.length === 0 ? getPromptSuggestions() : [];
-    
+
     // Create a Project object for the delete modal
     const projectForModal: Project = {
         id: projectId,
@@ -220,19 +227,21 @@ const ProjectDetailViewInner = () => {
                 {isSmallScreen && (
                     <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5} />
                 )}
-                <Button
-                    icon
-                    shape="ghost"
-                    onClick={() => history.push('/projects')}
-                    title={c('collider_2025:Action').t`Back to projects`}
-                >
-                    <Icon name="arrow-left" />
-                </Button>
-                <div className="project-detail-title-section">
-                    <div className="project-detail-icon" style={{ backgroundColor: category.color }}>
-                        <Icon name={category.icon as any} size={6} className="color-white" />
+                <div className="project-detail-header-content">
+                    <Button
+                        icon
+                        shape="ghost"
+                        onClick={() => history.push('/projects')}
+                        className="project-detail-back-button"
+                        title={c('collider_2025:Action').t`Back to projects`}
+                    >
+                        <Icon name="arrow-left" className="mr-1" />
+                        <span className="project-detail-back-text">{c('collider_2025:Navigation').t`All projects`}</span>
+                    </Button>
+                    <div className="project-detail-title-section">
+                        <Icon name={category.icon as any} size={5} className="project-detail-title-icon" style={{ color: category.color }} />
+                        <h1 className="project-detail-title">{projectName}</h1>
                     </div>
-                    <h1 className="project-detail-title">{projectName}</h1>
                 </div>
                 <div className="project-detail-actions">
                     <Button
@@ -341,6 +350,7 @@ const ProjectDetailViewInner = () => {
                             canShowLumoUpsellToggle={false}
                             prefillQuery={suggestedPrompt}
                             spaceId={projectId}
+                            onShowDriveBrowser={handleShowDriveBrowser}
                         />
                         <p className="text-center color-weak text-xs mt-2">
                             {c('collider_2025: Disclosure')
@@ -349,7 +359,7 @@ const ProjectDetailViewInner = () => {
                     </div>
                 </div>
 
-                {/* Sidebar - Desktop only */}
+                {/* Sidepanel - Desktop only */}
                 {!isMobileViewport && showSidebar && (
                     <ProjectFilesPanel
                         projectId={projectId}
@@ -392,6 +402,18 @@ const ProjectDetailViewInner = () => {
                     {...deleteModal.modalProps}
                     project={projectForModal}
                     onConfirmDelete={handleDelete}
+                />
+            )}
+
+            {/* Drive Browser Modal */}
+            {driveBrowserModal.render && (
+                <FilesManagementView
+                    messageChain={[]}
+                    filesContainerRef={{ current: null }}
+                    onClose={() => driveBrowserModal.openModal(false)}
+                    initialShowDriveBrowser={true}
+                    forceModal={true}
+                    spaceId={projectId}
                 />
             )}
         </div>
