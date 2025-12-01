@@ -284,9 +284,13 @@ export const generateRangeFromSlots = (editData: BookingPageEditData, timezone: 
     return ranges;
 };
 
+export const computeRangeErrors = (range: BookingRange, duration: number): BookingRange => {
+    const isTooShort = differenceInMinutes(range.end, range.start) < duration;
+    return isTooShort ? { ...range, error: BookingRangeError.TOO_SHORT } : { ...range, error: undefined };
+};
+
 export const computeRangesErrors = (ranges: BookingRange[], duration: number): BookingRange[] => {
     return ranges.map((range) => {
-        const isTooShort = differenceInMinutes(range.end, range.start) < duration;
-        return isTooShort ? { ...range, error: BookingRangeError.TOO_SHORT } : { ...range, error: undefined };
+        return computeRangeErrors(range, duration);
     });
 };
