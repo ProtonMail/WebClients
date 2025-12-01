@@ -207,7 +207,7 @@ export const validateRangeOperation = ({
         const nowWithTz = fromUTCDateToLocalFakeUTCDate(now, false, timezone);
 
         if (isBefore(start, nowWithTz)) {
-            return BookingErrorMessages.BOOKING_IN_PAST;
+            return BookingErrorMessages.RANGE_IN_PAST;
         }
     }
 

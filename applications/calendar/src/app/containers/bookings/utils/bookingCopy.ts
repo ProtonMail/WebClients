@@ -9,9 +9,6 @@ export const BookingErrorMessages = {
     get RANGE_OVERLAP() {
         return c('Info').t`Range overlaps with an existing range.`;
     },
-    get BOOKING_IN_PAST() {
-        return c('Info').t`Booking cannot be added in the past.`;
-    },
     get RANGE_IN_PAST() {
         return c('Info').t`Cannot create a range in the past.`;
     },
