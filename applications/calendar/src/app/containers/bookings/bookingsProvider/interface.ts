@@ -88,6 +88,7 @@ export enum BookingFormValidationReasons {
     TIME_SLOT_REQUIRED = 'NO_TIME_SLOT',
     TITLE_REQUIRED = 'TITLE_REQUIRED',
     RANGE_ERROR = 'RANGE_ERROR',
+    MISSING_LOCATION = 'MISSING_LOCATION',
 }
 
 export type BookingFormValidation =
