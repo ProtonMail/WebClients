@@ -93,7 +93,7 @@ export const RemoveButton = ({ onClick, btnClassName }: ButtonProps) => {
 
 export const RangeErrors = ({ range }: { range: BookingRange }) => {
     if (range.error === BookingRangeError.TOO_SHORT) {
-        return <p className="color-danger m-0 mb-1">{c('Error').t`Periods is too short`}</p>;
+        return <p className="color-danger m-0 mb-1">{c('Error').t`Range is too short`}</p>;
     }
 
     return null;
