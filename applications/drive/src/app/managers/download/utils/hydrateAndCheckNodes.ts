@@ -1,5 +1,5 @@
 import type { NodeEntity } from '@proton/drive/index';
-import { getDrive } from '@proton/drive/index';
+import { getDrive, getDriveForPhotos } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
@@ -12,16 +12,27 @@ export const checkUnsupportedNode = (node: NodeEntity) => {
 export const hydrateAndCheckNodes = async (uids: string[]) => {
     const drive = getDrive();
     const nodes: NodeEntity[] = [];
-    let containsUnsupportedFile = false;
+    let containsUnsupportedFile;
     for (const uid of uids) {
         const maybeNode = await drive.getNode(uid);
         const { node } = getNodeEntity(maybeNode);
+        nodes.push(node);
         if (checkUnsupportedNode(node)) {
             containsUnsupportedFile = true;
-        } else {
-            nodes.push(node);
         }
     }
 
     return { nodes, containsUnsupportedFile };
+};
+
+export const hydratePhotos = async (uids: string[]) => {
+    const drive = getDriveForPhotos();
+    const nodes: NodeEntity[] = [];
+    for (const uid of uids) {
+        const maybeNode = await drive.getNode(uid);
+        const { node } = getNodeEntity(maybeNode);
+        nodes.push(node);
+    }
+
+    return { nodes };
 };

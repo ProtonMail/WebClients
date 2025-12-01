@@ -1,5 +1,5 @@
 import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
-import { AbortError, NodeType, SDKEvent, getDrive } from '@proton/drive/index';
+import { AbortError, NodeType, SDKEvent, getDrive, getDriveForPhotos } from '@proton/drive/index';
 import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
 import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
@@ -17,8 +17,9 @@ import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadScheduler } from './DownloadScheduler';
 import type { DownloadQueueTaskHandle } from './downloadTypes';
 import { downloadLogDebug } from './utils/downloadLogger';
+import { getDownloadSdk } from './utils/getDownloadSdk';
 import { getNodeStorageSize } from './utils/getNodeStorageSize';
-import { hydrateAndCheckNodes } from './utils/hydrateAndCheckNodes';
+import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
 import { traverseNodeStructure } from './utils/traverseNodeStructure';
 
 const DEFAULT_MIME_TYPE = 'application/octet-stream';
@@ -58,6 +59,7 @@ export class DownloadManager {
         }
         this.hasListeners = true;
         const drive = getDrive();
+        const drivePhotos = getDriveForPhotos();
 
         const { getQueueItem } = useDownloadManagerStore.getState();
 
@@ -75,23 +77,36 @@ export class DownloadManager {
                 }
             });
         });
+        drivePhotos.onMessage(SDKEvent.TransfersPaused, () => {
+            this.activeDownloads.forEach((_, downloadId) => {
+                if (getQueueItem(downloadId)?.status === DownloadStatus.InProgress) {
+                    this.updateStatus([downloadId], DownloadStatus.PausedServer);
+                }
+            });
+        });
+        drivePhotos.onMessage(SDKEvent.TransfersResumed, () => {
+            this.activeDownloads.forEach((_, downloadId) => {
+                if (getQueueItem(downloadId)?.status === DownloadStatus.PausedServer) {
+                    this.updateStatus([downloadId], DownloadStatus.InProgress);
+                }
+            });
+        });
     }
 
     onIntegrityIssue(downloadId: string) {
         console.warn('onIntegrityIssue not implemented', downloadId);
     }
 
-    async download(nodeUids: string[]) {
+    async downloadPhotos(nodeUids: string[], albumName?: string) {
         if (!nodeUids.length) {
             return;
         }
-
-        const { nodes, containsUnsupportedFile } = await hydrateAndCheckNodes(nodeUids);
+        const { nodes } = await hydratePhotos(nodeUids);
         if (!nodes.length) {
             return;
         }
-        this.addListeners();
         const { addDownloadItem } = useDownloadManagerStore.getState();
+        this.addListeners();
 
         const isSingleFileDownload = nodes.length === 1 && nodes[0].type === NodeType.File;
         let downloadId;
@@ -103,7 +118,60 @@ export class DownloadManager {
                 downloadedBytes: 0,
                 status: DownloadStatus.Pending,
                 nodeUids: [node.uid],
+                unsupportedFileDetected: undefined,
+                isPhoto: true,
+            });
+            this.requestedDownloads.set(downloadId, nodes);
+            void this.scheduleSingleFileDownload(downloadId, node);
+        } else {
+            const archiveName = albumName ? `${albumName}.zip` : this.getArchiveName(nodes);
+            downloadId = addDownloadItem({
+                name: archiveName,
+                storageSize: undefined,
+                downloadedBytes: 0,
+                status: DownloadStatus.Pending,
+                nodeUids: nodes.map(({ uid }) => uid),
+                unsupportedFileDetected: undefined,
+                isPhoto: true,
+            });
+            this.requestedDownloads.set(downloadId, nodes);
+            // While the single file can be immediately queued and scheduled, the archive first needs to be traversed
+            // then one by one all "discovered" files get scheduled for download
+            void this.scheduleArchiveDownload(downloadId, nodes);
+        }
+
+        downloadLogDebug('Queue photo download', {
+            downloadId,
+            fileMediaTypes: nodes.map((f) => f.mediaType),
+        });
+    }
+
+    async download(nodeUids: string[]) {
+        if (!nodeUids.length) {
+            return;
+        }
+        const { nodes, containsUnsupportedFile } = await hydrateAndCheckNodes(nodeUids);
+        if (!nodes.length) {
+            return;
+        }
+        const { addDownloadItem } = useDownloadManagerStore.getState();
+        this.addListeners();
+
+        const isSingleFileDownload = nodes.length === 1 && nodes[0].type === NodeType.File;
+        let downloadId;
+        if (isSingleFileDownload) {
+            if (containsUnsupportedFile) {
+                return;
+            }
+            const node = nodes[0];
+            downloadId = addDownloadItem({
+                name: node.name,
+                storageSize: getNodeStorageSize(node),
+                downloadedBytes: 0,
+                status: DownloadStatus.Pending,
+                nodeUids: [node.uid],
                 unsupportedFileDetected: containsUnsupportedFile ? 'detected' : undefined,
+                isPhoto: false,
             });
             this.requestedDownloads.set(downloadId, nodes);
             void this.scheduleSingleFileDownload(downloadId, node);
@@ -116,12 +184,14 @@ export class DownloadManager {
                 status: DownloadStatus.Pending,
                 nodeUids: nodes.map(({ uid }) => uid),
                 unsupportedFileDetected: containsUnsupportedFile ? 'detected' : undefined,
+                isPhoto: false,
             });
             this.requestedDownloads.set(downloadId, nodes);
             // While the single file can be immediately queued and scheduled, the archive first needs to be traversed
             // then one by one all "discovered" files get scheduled for download
             void this.scheduleArchiveDownload(downloadId, nodes);
         }
+
         downloadLogDebug('Queue download', {
             downloadId,
             containsUnsupportedFile,
@@ -141,7 +211,7 @@ export class DownloadManager {
 
     private async startSingleFileDownload(node: NodeEntity, downloadId: string): Promise<DownloadQueueTaskHandle> {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
-        const drive = getDrive();
+        const drive = getDownloadSdk(downloadId);
 
         const abortController = new AbortController();
         let fileDownloader: FileDownloader;
@@ -345,7 +415,7 @@ export class DownloadManager {
             return `${nodes[0].name}.zip`;
         }
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        return `Download-${timestamp}.zip`;
+        return `Download ${timestamp}.zip`;
     }
 
     resolveMalwareDetection(downloadId: string, resolution: MalawareDownloadResolution) {
@@ -404,10 +474,9 @@ export class DownloadManager {
             const requestedDownload = this.requestedDownloads.get(id);
             if (storeItem && requestedDownload) {
                 downloadLogDebug('Retry download', { downloadId: id });
-                if (requestedDownload.length === 1) {
+                if (requestedDownload.length === 1 && requestedDownload[0].type !== NodeType.Folder) {
                     void this.scheduleSingleFileDownload(id, requestedDownload[0]);
-                }
-                if (requestedDownload.length > 1) {
+                } else {
                     void this.scheduleArchiveDownload(id, requestedDownload);
                 }
             }
