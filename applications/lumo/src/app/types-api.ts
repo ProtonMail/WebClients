@@ -83,6 +83,9 @@ export type Tier = 'anonymous' | 'basic' | 'free';
 
 export type ToolName = 'proton_info' | 'web_search' | 'weather' | 'stock' | 'cryptocurrency' | 'generate_image';
 
+/*
+ * A generation request in the format that the scheduler backend expects.
+ */
 export type LumoApiGenerationRequest = {
     type: 'generation_request';
     turns: WireTurn[];
@@ -91,6 +94,14 @@ export type LumoApiGenerationRequest = {
     targets?: RequestableGenerationTarget[];
     request_key?: string; // aes-gcm-256, pgp-encrypted, base64
     request_id?: RequestId; // uuid used solely for AEAD encryption
+};
+
+/*
+ * Payload in the format that the PHP backend expects at `/chat`,
+ * with the actual data structure wrapped in a legacy `Prompt` field.
+ */
+export type ChatEndpointGenerationRequest = {
+    Prompt: LumoApiGenerationRequest;
 };
 
 export type Options = {
