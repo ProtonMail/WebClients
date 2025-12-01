@@ -82,6 +82,12 @@ export type SpacePriv = {
     projectInstructions?: string;
     isProject?: boolean; // Flag to indicate this space is being used as a project
     projectIcon?: string; // Icon identifier for the project (e.g., 'health', 'finance', 'legal')
+    // Linked Drive folder (optional - only for projects with linked Drive folders)
+    linkedDriveFolder?: {
+        folderId: string; // Drive folder nodeId
+        folderName: string;
+        folderPath: string;
+    };
     // do not remove
 };
 
@@ -132,8 +138,8 @@ export function isDeletedSpace(value: any): value is DeletedSpace {
 
 export function getSpacePriv(s: SpacePriv): SpacePriv {
     // Do not remove
-    const { projectName, projectInstructions, isProject, projectIcon } = s;
-    return { projectName, projectInstructions, isProject, projectIcon };
+    const { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } = s;
+    return { projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder };
 }
 
 export function getSpacePub(s: SpacePub): SpacePub {
@@ -159,7 +165,7 @@ export function splitSpace(s: Space): {
 }
 
 export function cleanSpace(space: Space): Space {
-    const { id, createdAt, spaceKey, projectName, projectInstructions, isProject, projectIcon } = space;
+    const { id, createdAt, spaceKey, projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } = space;
     return {
         id,
         createdAt,
@@ -168,6 +174,7 @@ export function cleanSpace(space: Space): Space {
         ...(projectInstructions !== undefined && { projectInstructions }),
         ...(isProject !== undefined && { isProject }),
         ...(projectIcon !== undefined && { projectIcon }),
+        ...(linkedDriveFolder !== undefined && { linkedDriveFolder }),
     };
 }
 
