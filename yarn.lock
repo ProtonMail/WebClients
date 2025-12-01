@@ -8311,9 +8311,11 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
     "@types/jest": "npm:^30.0.0"
+    "@types/lodash": "npm:^4.17.16"
     "@vercel/ncc": "npm:^0.38.4"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
+    lodash: "npm:^4.17.21"
     ts-jest: "npm:^29.4.5"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.20.6"
@@ -14128,7 +14130,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.175, @types/lodash@npm:^4.14.182, @types/lodash@npm:^4.17.17, @types/lodash@npm:^4.17.21":
+"@types/lodash@npm:^4.14.175, @types/lodash@npm:^4.14.182, @types/lodash@npm:^4.17.16, @types/lodash@npm:^4.17.17, @types/lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "@types/lodash@npm:4.17.21"
   checksum: 10/34920830a3bc82ba619cda05e606fef00c148a69b4f19f770645d2587ccdb8e42ef3ddfc174b7884c0c709fc0a1aeb48f7326da969bad12a1464a03efbbe414c
