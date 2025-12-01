@@ -1,9 +1,9 @@
 import { decryptUint8Array } from 'applications/lumo/src/app/crypto';
 import { consider } from 'applications/lumo/src/app/util/nullable';
 
-import { decryptContent } from '../encryption';
+import { decryptString } from '../encryption';
 import type { RequestEncryptionParams } from '../encryptionParams';
-import type { GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted } from '../types';
+import type { GenerationResponseMessage, GenerationResponseMessageDecrypted } from '../types';
 
 export type DecryptionTransformerParams = {
     encryption: RequestEncryptionParams | null
@@ -13,10 +13,10 @@ function makeResponseAd(requestId: string) {
     return `lumo.response.${requestId}.chunk`;
 }
 
-const makeDecryptionTransformer = (encryption: RequestEncryptionParams | null): Transformer<GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted> => {
+const makeDecryptionTransformer = (encryption: RequestEncryptionParams | null): Transformer<GenerationResponseMessage, GenerationResponseMessageDecrypted> => {
     const responseAd = consider(makeResponseAd)(encryption?.requestId);
     return {
-        async transform(value: GenerationToFrontendMessage, controller: TransformStreamDefaultController) {
+        async transform(value: GenerationResponseMessage, controller: TransformStreamDefaultController) {
             // Decrypt token_data (text chunks)
             const shouldDecryptText =
                 value.type === 'token_data' &&
@@ -26,7 +26,7 @@ const makeDecryptionTransformer = (encryption: RequestEncryptionParams | null): 
 
             if (shouldDecryptText) {
                 try {
-                    const decryptedContent = await decryptContent(value.content, encryption.requestKey, responseAd);
+                    const decryptedContent = await decryptString(value.content, encryption.requestKey, responseAd);
                     const decrypted = {
                         ...value,
                         content: decryptedContent,
@@ -77,5 +77,5 @@ const makeDecryptionTransformer = (encryption: RequestEncryptionParams | null): 
 
 export const makeDecryptionTransformStream = (
     encryption: RequestEncryptionParams | null
-): TransformStream<GenerationToFrontendMessage, GenerationToFrontendMessageDecrypted> =>
+): TransformStream<GenerationResponseMessage, GenerationResponseMessageDecrypted> =>
     new TransformStream(makeDecryptionTransformer(encryption));
