@@ -65,18 +65,18 @@ export function sendMessageWithRedux(
                     case 'harmful':
                         // Use custom error handler if provided, otherwise use generic Error
                         if (errorHandler && conversationId) {
-                            return { error: errorHandler(message, conversationId) };
+                            throw errorHandler(message, conversationId);
                         }
-                        return { error: new Error(`Generation failed: ${message.type}`) };
+                        throw new Error(`Generation failed: ${message.type}`);
 
                     case 'done':
                         // handle case for successful response with no content
                         if (!accumulatedContent.trim()) {
                             console.warn(`Generation completed with no content`);
                             if (errorHandler && conversationId) {
-                                return { error: errorHandler({ type: 'error' }, conversationId) };
+                                throw errorHandler({ type: 'error' }, conversationId);
                             }
-                            return { error: new Error('Generation failed: no content') };
+                            throw new Error('Generation failed: no content');
                         }
                         break;
 
@@ -179,8 +179,6 @@ export function sendMessageWithRedux(
                 if (assistantOptions.chunkCallback) {
                     return assistantOptions.chunkCallback(message);
                 }
-
-                return {};
             },
             finishCallback: async (status) => {
                 if (messageId && conversationId && spaceId) {
@@ -240,6 +238,7 @@ export function sendMessageWithRedux(
 /**
  * Create Redux callbacks for streaming responses
  */
+// TODO unused? consider removing
 export function createReduxCallbacks(
     messageId: string,
     conversationId: string,
