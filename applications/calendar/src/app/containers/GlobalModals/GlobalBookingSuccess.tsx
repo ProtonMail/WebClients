@@ -12,7 +12,7 @@ import { openLinkInBrowser } from '@proton/components/containers/desktop/openExt
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import bookingImage from '@proton/styles/assets/img/calendar/booking_page_example.png';
+import bookingImage from '@proton/styles/assets/img/calendar/booking_created.svg';
 
 import { useCalendarGlobalModals } from './GlobalModalProvider';
 import { type BookingPageCreationModalPayload, ModalType } from './interface';
@@ -77,17 +77,15 @@ export const GlobalBookingSuccess = () => {
                 >
                     <ModalHeader />
                     <ModalContent className="m-0">
+                        <div className="w-full text-center mb-2">
+                            <img src={bookingImage} alt={c('Info').t`Booking page example`} />
+                        </div>
+
                         <h2 className="mb-2 text-bold text-center text-lg">{c('Title')
                             .t`Your booking page is ready`}</h2>
                         <p className="color-weak m-0 mb-6 text-wrap-balance text-center">{c('Info')
                             .t`Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.`}</p>
-                        <img
-                            className="mb-6 rounded-xl"
-                            height={195}
-                            width={310}
-                            src={bookingImage}
-                            alt={c('Info').t`Booking page example`}
-                        />
+
                         <div className="mb-6 w-9/10 mx-auto justify-center text-ellipsis">
                             <Href
                                 href={bookingPageCreationProps.bookingLink}
