@@ -12,6 +12,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { type BookingRange, BookingRangeError } from '../bookingsProvider/interface';
 import { BookingErrorMessages } from '../utils/bookingCopy';
 import { roundToNextHalfHour } from '../utils/timeHelpers';
+import { FormErrorWrapper } from './BookingsFormComponents';
 
 export const RangeWrapper = ({ children }: PropsWithChildren) => {
     return <div className="flex flex-nowrap gap-2 justify-space-between mb-0.5">{children}</div>;
@@ -95,7 +96,7 @@ export const RemoveButton = ({ onClick, btnClassName }: ButtonProps) => {
 
 export const RangeErrors = ({ range }: { range: BookingRange }) => {
     if (range.error === BookingRangeError.TOO_SHORT) {
-        return <p className="color-danger m-0 mb-1">{BookingErrorMessages.RANGE_TOO_SHORT}</p>;
+        return <FormErrorWrapper wrapperClassName="mb-1">{BookingErrorMessages.RANGE_TOO_SHORT}</FormErrorWrapper>;
     }
 
     return null;
