@@ -6,8 +6,8 @@ import { getUpsellPlanMonthlyPrice } from '../helpers/getUpsellPlanMonthlyPrice'
 import type { UpsellModalConfigCase } from '../interface';
 
 export const getUpsellModalBookingsConfig: UpsellModalConfigCase = async (props) => {
-    const { currency, paymentsApi, plans, user } = props;
-    const plan = user.hasPaidMail ? PLANS.BUNDLE_BIZ_2025 : PLANS.MAIL;
+    const { currency, paymentsApi, plans } = props;
+    const plan = PLANS.BUNDLE_BIZ_2025;
     const planIDs = { [plan]: 1 };
     const cycle = CYCLE.YEARLY;
 
