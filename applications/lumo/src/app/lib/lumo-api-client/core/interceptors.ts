@@ -83,19 +83,22 @@ export const createLoggingInterceptor = (
     };
 };
 
+// todo try to unifiy with RequestContext
+type MetricsContext = {
+    requestId: string;
+    endpoint: string;
+    duration: number;
+    chunkCount: number;
+    contentLength: number;
+    status: Status;
+    error?: Error;
+};
+
 /**
  * Performance monitoring interceptor
  */
 export const createPerformanceInterceptor = (
-    onMetrics?: (metrics: {
-        requestId: string;
-        endpoint: string;
-        duration: number;
-        chunkCount: number;
-        contentLength: number;
-        status: Status;
-        error?: Error;
-    }) => void
+    onMetrics?: (metrics: MetricsContext) => void
 ): RequestInterceptor & ResponseInterceptor => {
     const requestTimes = new Map<string, number>();
 
