@@ -55,6 +55,7 @@ const createUploadItem = (overrides: Partial<UploadItem> = {}): UploadItem =>
         speedBytesPerSecond: undefined,
         batchId: 'batch-1',
         lastStatusUpdateTime: overrides.lastStatusUpdateTime ?? new Date('2024-01-01T00:00:00Z'),
+        type: NodeType.File,
         ...overrides,
     }) as UploadItem;
 

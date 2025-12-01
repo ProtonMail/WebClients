@@ -158,6 +158,7 @@ enum DriveFeatureFlag {
     DriveWebSDKSharedWithMe = 'DriveWebSDKSharedWithMe',
     DriveWebSDKSidebar = 'DriveWebSDKSidebar',
     DriveWebSDKTransfer = 'DriveWebSDKTransfer',
+    DriveWebSDKPhotosTransfer = 'DriveWebSDKPhotosTransfer',
     DriveWebSDKCopy = 'DriveWebSDKCopy',
     DriveWebSDKPreview = 'DriveWebSDKPreview',
     // Video Preview
