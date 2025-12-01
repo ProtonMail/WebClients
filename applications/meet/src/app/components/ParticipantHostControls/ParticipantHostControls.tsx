@@ -6,6 +6,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
@@ -33,6 +34,9 @@ export const ParticipantHostControls = ({
 }: ParticipantHostControlsProps) => {
     const { localParticipant } = useLocalParticipant();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    const { participantNameMap } = useMeetContext();
+    const participantName = participantNameMap[participant.identity] ?? c('Info').t`participant`;
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
@@ -76,10 +80,11 @@ export const ParticipantHostControls = ({
                 anchorRef={anchorRef}
                 onClose={close}
                 className="participant-host-controls-dropdown p-0 meet-radius border border-norm"
+                size={{ width: DropdownSizeUnit.Dynamic, maxWidth: '15rem' }}
             >
-                <DropdownMenu className="w-full h-full flex flex-column items-start py-2 px-4 flex-nowrap gap-2">
+                <DropdownMenu className="h-full flex flex-column items-start py-2 px-1 flex-nowrap gap-2">
                     <DropdownMenuButton
-                        className="text-left rounded flex flex-nowrap items-center gap-2 color-weak border-none w-full shrink-0"
+                        className="participant-host-controls-dropdown-item text-left rounded flex flex-nowrap items-center gap-2 border-none shrink-0 color-norm"
                         liClassName="w-full"
                         onClick={() =>
                             isVideoEnabled &&
@@ -89,13 +94,16 @@ export const ParticipantHostControls = ({
                                 ParticipantCapabilityPermission.NotAllowed
                             )
                         }
+                        disabled={!isVideoEnabled}
                     >
                         <IcMeetCameraOff size={5} className="shrink-0" />
-                        <span className="flex-1 text-ellipsis" title={c('Action').t`Disable video`}>{c('Action')
-                            .t`Disable video`}</span>
+                        <span
+                            className="flex-1 text-ellipsis"
+                            title={c('Action').t`Disable ${participantName}'s video`}
+                        >{c('Action').t`Disable ${participantName}'s video`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="rounded text-left flex flex-nowrap items-center gap-2 color-weak border-none w-full shrink-0"
+                        className="participant-host-controls-dropdown-item rounded text-left flex flex-nowrap items-center gap-2 border-none shrink-0 color-norm"
                         liClassName="w-full"
                         onClick={() =>
                             isAudioEnabled &&
@@ -105,19 +113,21 @@ export const ParticipantHostControls = ({
                                 null
                             )
                         }
+                        disabled={!isAudioEnabled}
                     >
                         <IcMeetMicrophoneOff size={5} className="shrink-0" />
-                        <span className="flex-1 text-ellipsis" title={c('Action').t`Mute participant`}>{c('Action')
-                            .t`Mute participant`}</span>
+                        <span className="flex-1 text-ellipsis" title={c('Action').t`Mute ${participantName}`}>{c(
+                            'Action'
+                        ).t`Mute ${participantName}`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="rounded text-left participant-host-controls-kick-button flex flex-nowrap items-center gap-2 border-none w-full shrink-0"
+                        className="participant-host-controls-dropdown-item rounded text-left participant-host-controls-kick-button flex flex-nowrap items-center gap-2 border-none shrink-0"
                         liClassName="w-full"
                         onClick={() => mls?.removeParticipant(participant.identity)}
                     >
                         <IcCrossCircle size={5} className="shrink-0" />
                         <span className="flex-1 text-ellipsis" title={c('Action').t`Kick out`}>{c('Action')
-                            .t`Kick out`}</span>
+                            .t`Kick out ${participantName}`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
