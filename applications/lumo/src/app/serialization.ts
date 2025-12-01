@@ -400,6 +400,8 @@ export async function deserializeAsset(
             console.log(`not deserializing ${serializedAsset.id}: asset has no encrypted data`);
             return null;
         }
+        // Log AD for debugging decryption issues
+        safeLogger.debug(`Deserializing asset ${serializedAsset.id} with AD:`, ad);
         const packed = await decryptUint8Array(encrypted, spaceDek, ad);
         const decodedWithNulls = msgpackDecode(packed);
         if (!isObject(decodedWithNulls)) {
