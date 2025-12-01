@@ -1,6 +1,5 @@
 import init, { App } from '@proton-meet/proton-meet-core';
 import { createBrowserHistory } from 'history';
-import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
 import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import { addressesThunk } from '@proton/account/addresses';
@@ -10,6 +9,7 @@ import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActio
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

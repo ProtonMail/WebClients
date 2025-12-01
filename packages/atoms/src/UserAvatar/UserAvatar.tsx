@@ -1,8 +1,7 @@
 import type { ElementType, Ref } from 'react';
 import { forwardRef, useMemo } from 'react';
 
-import type { PolymorphicPropsWithoutRef } from 'packages/react-polymorphic-types';
-
+import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import { type HueValue, getHue } from './getHue';
