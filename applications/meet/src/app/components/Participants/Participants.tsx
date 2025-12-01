@@ -219,8 +219,8 @@ export const Participants = () => {
 
                                 <ParticipantHostControls
                                     participant={participant}
-                                    isVideoEnabled={!!videoPub}
-                                    isAudioEnabled={!isMuted}
+                                    isVideoEnabled={!!videoPub && videoPub.isEnabled && !videoPub.isMuted}
+                                    isAudioEnabled={!isMuted && !audioPublication?.isMuted}
                                 />
                             </div>
                         </div>
