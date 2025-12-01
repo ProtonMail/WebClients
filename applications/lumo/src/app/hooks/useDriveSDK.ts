@@ -38,6 +38,7 @@ export interface DriveSDKMethods {
     browseFolderChildren: (folderId?: string, forceRefresh?: boolean) => Promise<DriveNode[]>;
     downloadFile: (nodeId: string, onProgress?: (progress: number) => void) => Promise<ArrayBuffer>;
     uploadFile: (folderId: string, file: File, onProgress?: (progress: number) => void) => Promise<string>;
+    createFolder: (parentFolderId: string, folderName: string) => Promise<DriveNode>;
     navigateToFolder: (folderId: string) => void;
     navigateUp: () => void;
     getRootFolder: () => Promise<DriveNode>;
@@ -434,6 +435,48 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
         [browseFolderChildren]
     );
 
+    const createFolder = useCallback(
+        async (parentFolderId: string, folderName: string): Promise<DriveNode> => {
+            const drive = driveClientRef.current;
+            if (!drive) {
+                throw new Error('Drive not initialized');
+            }
+
+            try {
+                console.log(`Creating folder "${folderName}" in parent folder ${parentFolderId}`);
+                const folder = await drive.createFolder(parentFolderId, folderName);
+                
+                // Handle MaybeNode structure
+                let folderNode;
+                if ('ok' in folder && folder.ok && folder.value) {
+                    folderNode = folder.value;
+                } else {
+                    folderNode = folder;
+                }
+
+                const nodeId = (folderNode as any).uid || (folderNode as any).linkId || (folderNode as any).nodeId;
+                if (!nodeId) {
+                    throw new Error('Could not extract node ID from created folder');
+                }
+
+                const driveNode: DriveNode = {
+                    nodeId,
+                    name: folderName,
+                    type: 'folder',
+                    parentNodeId: parentFolderId,
+                    modifiedTime: Date.now(),
+                };
+
+                console.log(`Successfully created folder "${folderName}" with ID ${nodeId}`);
+                return driveNode;
+            } catch (error) {
+                console.error('Failed to create folder:', error);
+                throw error;
+            }
+        },
+        []
+    );
+
     const navigateUp = useCallback(() => {
         if (state.currentFolder?.parentNodeId) {
             void browseFolderChildren(state.currentFolder.parentNodeId);
@@ -453,6 +496,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
         browseFolderChildren,
         downloadFile,
         uploadFile,
+        createFolder,
         navigateToFolder,
         navigateUp,
         getRootFolder,

@@ -43,10 +43,10 @@ export const handleFileAsync = (file: File, messageChain: Message[] = []) => asy
         }
     });
     
-    // Check if a file with the same name and size already exists in this conversation
+    // Check if a file with the same name already exists in this conversation (case-insensitive)
+    // We check by filename only since size might differ slightly or be unknown for Drive files
     const isDuplicate = conversationAttachments.some(attachment => 
-        attachment.filename === file.name && 
-        attachment.rawBytes === file.size
+        attachment.filename.toLowerCase() === file.name.toLowerCase()
     );
 
     if (isDuplicate) {
