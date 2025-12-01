@@ -142,8 +142,18 @@ export const useTransferManagerState = () => {
             transferType = 'uploading';
         }
 
-        const getPriority = (status: BaseTransferStatus | UploadStatus | DownloadItem['status']) =>
-            status === BaseTransferStatus.InProgress ? 1 : 0;
+        const getPriority = (status: BaseTransferStatus | UploadStatus | DownloadItem['status']) => {
+            switch (status) {
+                case BaseTransferStatus.InProgress:
+                    return 3;
+                case BaseTransferStatus.Failed:
+                    return 2;
+                case BaseTransferStatus.Pending:
+                    return 1;
+                default:
+                    return 0;
+            }
+        };
 
         const sortedTransfers = [...allTransfers].sort((a, b) => {
             const priorityDiff = getPriority(b.status) - getPriority(a.status);
