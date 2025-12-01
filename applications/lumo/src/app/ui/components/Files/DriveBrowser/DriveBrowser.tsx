@@ -34,6 +34,15 @@ interface DriveBrowserProps {
     initialShowDriveBrowser?: boolean;
     autoRefreshInterval?: number; // Auto-refresh interval in milliseconds (0 = disabled)
     existingFiles?: { filename: string; rawBytes?: number }[]; // Files already in knowledge base
+    // Folder selection mode - when provided, clicking folders calls this instead of navigating
+    onFolderSelect?: (folder: DriveNode) => void;
+    folderSelectionMode?: boolean; // When true, shows "Select this folder" button in header
+    initialFolderId?: string; // Optional folder ID to navigate to on initialization
+    initialFolderName?: string; // Optional folder name for initialFolderId
+    isLinkedFolder?: boolean; // When true, folder is linked to project - files are automatically active
+    hideHeader?: boolean; // When true, hides the header (for project view)
+    onUploadTriggerRef?: React.MutableRefObject<(() => void) | null>; // Ref to expose upload trigger function
+    onRefreshTriggerRef?: React.MutableRefObject<(() => void) | null>; // Ref to expose refresh trigger function
 }
 
 export const DriveBrowser: React.FC<DriveBrowserProps> = ({
@@ -44,11 +53,20 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
     isModal = false,
     initialShowDriveBrowser = true,
     existingFiles = [],
+    onFolderSelect,
+    folderSelectionMode = false,
+    initialFolderId,
+    initialFolderName,
+    isLinkedFolder = false,
+    hideHeader = false,
+    onUploadTriggerRef,
+    onRefreshTriggerRef,
 }) => {
-    const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile } = useDriveSDK();
+    const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile, createFolder } = useDriveSDK();
     const { createNotification } = useNotifications();
     const [currentFolder, setCurrentFolder] = useState<DriveNode | null>(null);
     const [children, setChildren] = useState<DriveNode[]>([]);
+    const [rootFolderId, setRootFolderId] = useState<string | null>(null);
 
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
     const [loading, setLoading] = useState(false);
@@ -100,18 +118,44 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
         return () => window.removeEventListener('focus', handleFocus);
     }, [currentFolder, loading, isRefreshing, handleRefresh]);
 
-    // Initialize with root folder
+    // Initialize with root folder or specific folder
     const initializeRoot = useCallback(async () => {
         try {
             setLoading(true);
             setLocalError(null); // Clear any previous local errors
             initializedRef.current = true;
+            
             const rootFolder = await getRootFolder();
-            setCurrentFolder(rootFolder);
-            setBreadcrumbs([{ node: rootFolder, index: 0 }]);
-
-            const rootChildren = await browseFolderChildren(rootFolder.nodeId);
-            setChildren(rootChildren);
+            setRootFolderId(rootFolder.nodeId);
+            
+            if (initialFolderId && initialFolderId !== rootFolder.nodeId) {
+                // Navigate to specific folder - this is the base/root for this browser
+                // Browse the folder to get its children
+                const folderChildren = await browseFolderChildren(initialFolderId);
+                setChildren(folderChildren);
+                
+                // Create a DriveNode for the target folder
+                // Use the provided name if available, otherwise use a default
+                const targetFolder: DriveNode = {
+                    nodeId: initialFolderId,
+                    name: initialFolderName || 'Folder',
+                    type: 'folder',
+                    parentNodeId: rootFolder.nodeId, // Store parent for reference, but don't show in breadcrumbs
+                };
+                setCurrentFolder(targetFolder);
+                
+                // Set breadcrumbs starting from the linked folder (not root)
+                // This prevents users from navigating back to root
+                setBreadcrumbs([
+                    { node: targetFolder, index: 0 },
+                ]);
+            } else {
+                // Start at root folder
+                setCurrentFolder(rootFolder);
+                setBreadcrumbs([{ node: rootFolder, index: 0 }]);
+                const rootChildren = await browseFolderChildren(rootFolder.nodeId);
+                setChildren(rootChildren);
+            }
         } catch (err) {
             console.error('Failed to initialize Drive browser:', err);
             initializedRef.current = false; // Reset on error so we can try again
@@ -132,7 +176,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
         } finally {
             setLoading(false);
         }
-    }, [getRootFolder, browseFolderChildren, onError]);
+    }, [getRootFolder, browseFolderChildren, onError, initialFolderId]);
 
     useEffect(() => {
         if (!isInitialized || error || initializedRef.current) {
@@ -148,6 +192,22 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 return;
             }
 
+            // In folder selection mode, clicking a folder selects it directly (except root)
+            if (folderSelectionMode && onFolderSelect) {
+                // Prevent selecting the root folder
+                if (rootFolderId && folder.nodeId === rootFolderId) {
+                    createNotification({
+                        text: c('collider_2025:Error').t`Cannot link the root folder. Please select a subfolder.`,
+                        type: 'error',
+                    });
+                    return;
+                }
+                // Select the folder directly
+                onFolderSelect(folder);
+                return;
+            }
+
+            // Normal mode: navigate into folders
             try {
                 setLoading(true);
                 const folderChildren = await browseFolderChildren(folder.nodeId);
@@ -155,11 +215,18 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 setCurrentFolder(folder);
 
                 // Add to breadcrumbs
+                // If we have an initialFolderId, start breadcrumbs from that folder (not root)
                 const newBreadcrumb: BreadcrumbItem = {
                     node: folder,
                     index: breadcrumbs.length,
                 };
-                setBreadcrumbs([...breadcrumbs, newBreadcrumb]);
+                
+                // If this is the first navigation and we have initialFolderId, replace root with initial folder
+                if (initialFolderId && breadcrumbs.length === 0 && folder.nodeId === initialFolderId) {
+                    setBreadcrumbs([newBreadcrumb]);
+                } else {
+                    setBreadcrumbs([...breadcrumbs, newBreadcrumb]);
+                }
             } catch (error) {
                 console.error('Failed to browse folder:', error);
                 onError?.(error instanceof Error ? error : new Error('Failed to browse folder'));
@@ -167,7 +234,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 setLoading(false);
             }
         },
-        [browseFolderChildren, breadcrumbs, onError]
+        [browseFolderChildren, breadcrumbs, onError, initialFolderId, folderSelectionMode, onFolderSelect, rootFolderId, createNotification]
     );
 
     const handleFileClick = useCallback(
@@ -226,6 +293,11 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 return;
             }
 
+            // Prevent navigating back to root if we have an initialFolderId
+            if (initialFolderId && breadcrumb.index === 0 && breadcrumb.node.nodeId === rootFolderId) {
+                return;
+            }
+
             try {
                 setLoading(true);
                 const folderChildren = await browseFolderChildren(breadcrumb.node.nodeId);
@@ -241,7 +313,7 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 setLoading(false);
             }
         },
-        [browseFolderChildren, breadcrumbs, currentFolder, onError]
+        [browseFolderChildren, breadcrumbs, currentFolder, onError, initialFolderId, rootFolderId]
     );
 
     // Upload functionality
@@ -276,43 +348,52 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
 
                     console.log(`Successfully uploaded ${file.name}`);
 
-                    // Automatically download and process the uploaded file for knowledge base
-                    try {
-                        console.log(`Auto-processing uploaded file: ${file.name}`);
+                    // If folder is linked, files are automatically active - don't process as assets
+                    if (!isLinkedFolder) {
+                        // Automatically download and process the uploaded file for knowledge base
+                        try {
+                            console.log(`Auto-processing uploaded file: ${file.name}`);
 
-                        // Update progress to show processing state
-                        setUploadProgress({ fileName: file.name, progress: 100, isProcessing: true });
+                            // Update progress to show processing state
+                            setUploadProgress({ fileName: file.name, progress: 100, isProcessing: true });
 
-                        // Create a DriveNode object for the uploaded file
-                        const uploadedFileNode: DriveNode = {
-                            nodeId: nodeUid,
-                            name: file.name,
-                            type: 'file',
-                            size: file.size,
-                            mimeType: file.type,
-                            modifiedTime: Date.now(),
-                            // Add other properties as needed
-                        };
+                            // Create a DriveNode object for the uploaded file
+                            const uploadedFileNode: DriveNode = {
+                                nodeId: nodeUid,
+                                name: file.name,
+                                type: 'file',
+                                size: file.size,
+                                mimeType: file.type,
+                                modifiedTime: Date.now(),
+                                // Add other properties as needed
+                            };
 
-                        // Read the file content directly from the uploaded file
-                        const fileContent = new Uint8Array(await file.arrayBuffer());
+                            // Read the file content directly from the uploaded file
+                            const fileContent = new Uint8Array(await file.arrayBuffer());
 
-                        // Process the file through the same pipeline as manual selection
-                        onFileSelect(uploadedFileNode, fileContent);
+                            // Process the file through the same pipeline as manual selection
+                            onFileSelect(uploadedFileNode, fileContent);
 
-                        // Show success notification
+                            // Show success notification
+                            createNotification({
+                                text: c('collider_2025: Success').t`File uploaded and added to knowledge base`,
+                                type: 'success',
+                            });
+
+                            console.log(`Auto-processed uploaded file: ${file.name}`);
+                        } catch (processingError) {
+                            console.error(`Failed to auto-process uploaded file ${file.name}:`, processingError);
+                            // Show error notification for processing failure
+                            createNotification({
+                                text: c('collider_2025: Error').t`File uploaded but failed to add to knowledge base`,
+                                type: 'error',
+                            });
+                        }
+                    } else {
+                        // Just show success notification - file is in Drive and will be available automatically
                         createNotification({
-                            text: c('collider_2025: Success').t`File uploaded and added to knowledge base`,
+                            text: c('collider_2025: Success').t`File uploaded to Drive folder`,
                             type: 'success',
-                        });
-
-                        console.log(`Auto-processed uploaded file: ${file.name}`);
-                    } catch (processingError) {
-                        console.error(`Failed to auto-process uploaded file ${file.name}:`, processingError);
-                        // Show error notification for processing failure
-                        createNotification({
-                            text: c('collider_2025: Error').t`File uploaded but failed to add to knowledge base`,
-                            type: 'error',
                         });
                     }
                 } catch (error) {
@@ -351,6 +432,30 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
         fileInputRef.current?.click();
     }, []);
 
+    // Expose upload trigger function via ref if provided
+    useEffect(() => {
+        if (onUploadTriggerRef) {
+            onUploadTriggerRef.current = handleUploadButtonClick;
+        }
+        return () => {
+            if (onUploadTriggerRef) {
+                onUploadTriggerRef.current = null;
+            }
+        };
+    }, [onUploadTriggerRef, handleUploadButtonClick]);
+
+    // Expose refresh trigger function via ref if provided
+    useEffect(() => {
+        if (onRefreshTriggerRef) {
+            onRefreshTriggerRef.current = handleRefresh;
+        }
+        return () => {
+            if (onRefreshTriggerRef) {
+                onRefreshTriggerRef.current = null;
+            }
+        };
+    }, [onRefreshTriggerRef, handleRefresh]);
+
     // Check for errors from both SDK and local initialization
     const displayError = error || localError;
     console.log('DriveBrowser render - SDK error:', error, 'localError:', localError, 'displayError:', displayError);
@@ -366,17 +471,36 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                 accept={getAcceptAttributeString()}
             />
 
-            <DriveBrowserHeader
-                onBack={onBack}
-                onClose={onClose}
-                onRefresh={handleRefresh}
-                onUpload={handleUploadButtonClick}
-                initialShowDriveBrowser={initialShowDriveBrowser}
-                displayError={!!displayError}
-                loading={loading}
-                isRefreshing={isRefreshing}
-                hasCurrentFolder={!!currentFolder}
-            />
+            {!hideHeader && (
+                <DriveBrowserHeader
+                    onBack={onBack}
+                    onClose={onClose}
+                    onRefresh={handleRefresh}
+                    onUpload={handleUploadButtonClick}
+                    initialShowDriveBrowser={initialShowDriveBrowser}
+                    displayError={!!displayError}
+                    loading={loading}
+                    isRefreshing={isRefreshing}
+                    hasCurrentFolder={!!currentFolder}
+                    folderSelectionMode={folderSelectionMode}
+                    onLinkCurrentFolder={
+                        currentFolder && folderSelectionMode && onFolderSelect && rootFolderId && currentFolder.nodeId !== rootFolderId
+                            ? () => {
+                                  // Prevent selecting the root folder
+                                  if (currentFolder.nodeId === rootFolderId) {
+                                      createNotification({
+                                          text: c('collider_2025:Error').t`Cannot link the root folder. Please select a subfolder.`,
+                                          type: 'error',
+                                      });
+                                      return;
+                                  }
+                                  onFolderSelect(currentFolder);
+                              }
+                            : undefined
+                    }
+                    currentFolderName={currentFolder?.name}
+                />
+            )}
 
             {displayError && (
                 <DriveErrorState
@@ -581,8 +705,9 @@ export const DriveBrowser: React.FC<DriveBrowserProps> = ({
                                                             return () => <IcPlusCircle />;
                                                         };
 
+                                                        // If folder is linked, files are automatically active - don't show "Add to active" button
                                                         const actions: any[] =
-                                                            child.type === 'file'
+                                                            child.type === 'file' && !isLinkedFolder
                                                                 ? [
                                                                       {
                                                                           icon: getActionIcon(),

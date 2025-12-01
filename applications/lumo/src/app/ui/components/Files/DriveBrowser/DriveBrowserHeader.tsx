@@ -18,6 +18,9 @@ interface DriveBrowserHeaderProps {
     loading: boolean;
     isRefreshing: boolean;
     hasCurrentFolder: boolean;
+    folderSelectionMode?: boolean;
+    onLinkCurrentFolder?: () => void;
+    currentFolderName?: string;
 }
 
 export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
@@ -30,6 +33,9 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
     loading,
     isRefreshing,
     hasCurrentFolder,
+    folderSelectionMode,
+    onLinkCurrentFolder,
+    currentFolderName,
 }) => {
     return (
         <div className="mb-4">
@@ -46,7 +52,7 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
 
                         <p className="m-0 text-lg text-bold">{DRIVE_APP_NAME}</p>
 
-                        {!displayError && (
+                        {!displayError && !folderSelectionMode && (
                             <>
                                 <Button
                                     onClick={onRefresh}
