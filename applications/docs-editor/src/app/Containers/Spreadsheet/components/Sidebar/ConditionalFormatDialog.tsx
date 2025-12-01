@@ -543,7 +543,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
             </div>
           </div>
 
-          <div className="mt-2 border-t-[0.5px] border-[#EAE7E4] py-2">
+          {/* <div className="mt-2 border-t-[0.5px] border-[#EAE7E4] py-2">
             <Button
               type="button"
               className="inline-flex h-[36px] items-center gap-1.5 rounded-lg border border-[#DEDBD9] px-4 text-[13px]"
@@ -552,7 +552,7 @@ function RuleEditor({ rule, sheetId, theme, onChange, onCancel, onSubmit, onNewR
               <Icon legacyName="plus" />
               {s('Add another rule')}
             </Button>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-auto flex shrink-0 items-center justify-end gap-2 border-t-[0.5px] border-[#EAE7E4] px-4 py-2">
@@ -650,11 +650,11 @@ function Rule({ rule, sheetId, onDeleteRule, theme, onSelect }: RuleProps) {
 
         <div className="flex min-w-0 grow flex-col gap-1">
           <p className="text-sm font-semibold">{title}</p>
-          <div className="flex min-w-0 !flex-wrap gap-1">
+          <div className="flex min-w-0 !flex-wrap gap-1 truncate">
             {rule.ranges.map((range, rangeIndex) => {
               const address = rangeToFormula(range)
               return (
-                <span key={`${address}${rangeIndex}`} className="shrink-0 whitespace-nowrap text-sm text-[#5C5958]">
+                <span key={`${address}${rangeIndex}`} className="shrink-0 text-sm text-[#5C5958]">
                   {address}
                 </span>
               )
