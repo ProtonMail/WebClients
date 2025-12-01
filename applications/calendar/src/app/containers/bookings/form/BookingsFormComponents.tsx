@@ -2,7 +2,9 @@ import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
+import clsx from '@proton/utils/clsx';
 
 import { BookingLocation } from '../bookingsProvider/interface';
 
@@ -57,5 +59,18 @@ export const FormLocationOptionContent = ({ value, text }: FormLocationOptionPro
             </span>
             {text}
         </span>
+    );
+};
+
+interface FormErrorProps extends PropsWithChildren {
+    wrapperClassName?: string;
+}
+
+export const FormErrorWrapper = ({ children, wrapperClassName }: FormErrorProps) => {
+    return (
+        <div className={clsx('flex flex-nowrap color-danger', wrapperClassName)}>
+            <IcExclamationCircleFilled className="shrink-0 mr-1" size={4} />
+            <span className="text-sm text-semibold">{children}</span>
+        </div>
     );
 };
