@@ -14,5 +14,12 @@
 
 	.dropdown-content {
 		background-color: var(--background-secondary);
+
+		--max-width: 25rem;
+		--min-width: 15rem;
 	}
+}
+
+.participant-host-controls-dropdown-item {
+	padding-inline: 0.5rem !important;
 }
