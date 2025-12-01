@@ -1838,7 +1838,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.6, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.24.7, @babel/runtime@npm:^7.24.8, @babel/runtime@npm:^7.25.7, @babel/runtime@npm:^7.26.0, @babel/runtime@npm:^7.26.9, @babel/runtime@npm:^7.28.4, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.1, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.11.1, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.6, @babel/runtime@npm:^7.23.8, @babel/runtime@npm:^7.23.9, @babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.24.7, @babel/runtime@npm:^7.24.8, @babel/runtime@npm:^7.25.7, @babel/runtime@npm:^7.26.0, @babel/runtime@npm:^7.26.9, @babel/runtime@npm:^7.28.4, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.7":
   version: 7.28.4
   resolution: "@babel/runtime@npm:7.28.4"
   checksum: 10/6c9a70452322ea80b3c9b2a412bcf60771819213a67576c8cec41e88a95bb7bf01fc983754cda35dc19603eef52df22203ccbf7777b9d6316932f9fb77c25163
@@ -10959,7 +10959,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rowsncolumns/calculation-worker@workspace:vendor/rowsncolumns/calculation-worker":
+"@rowsncolumns/calculation-worker@workspace:^, @rowsncolumns/calculation-worker@workspace:vendor/rowsncolumns/calculation-worker":
   version: 0.0.0-use.local
   resolution: "@rowsncolumns/calculation-worker@workspace:vendor/rowsncolumns/calculation-worker"
   dependencies:
@@ -10968,6 +10968,8 @@ __metadata:
     "@rowsncolumns/functions": "workspace:^"
     "@rowsncolumns/spreadsheet": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
+    "@types/lodash": "npm:^4.17.17"
+    lodash: "npm:^4.17.21"
     rxjs: "npm:^7.8.2"
   peerDependencies:
     "@rowsncolumns/spreadsheet": "workspace:^"
@@ -11145,6 +11147,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rowsncolumns/spreadsheet-state@workspace:vendor/rowsncolumns/spreadsheet-state"
   dependencies:
+    "@rowsncolumns/calculation-worker": "workspace:^"
     "@rowsncolumns/calculator": "workspace:^"
     "@rowsncolumns/common-types": "workspace:^"
     "@rowsncolumns/dag": "workspace:^"
@@ -11279,6 +11282,7 @@ __metadata:
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
     date-fns: "npm:^4.1.0"
+    match-sorter: "npm:^8.2.0"
     prosemirror-commands: "npm:^1.7.1"
     prosemirror-history: "npm:^1.4.1"
     prosemirror-keymap: "npm:^1.2.3"
@@ -32779,6 +32783,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"match-sorter@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "match-sorter@npm:8.2.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.8"
+    remove-accents: "npm:0.5.0"
+  checksum: 10/4f96acc9dd6b35f6e65cfff0462a6a0305206e5f9966cc08311c36ae4709da91ab7cc6aec6b541f7ca3305dcb9a0a92b2ac87b5844735a13d3345f829d618403
+  languageName: node
+  linkType: hard
+
 "matcher@npm:^3.0.0":
   version: 3.0.0
   resolution: "matcher@npm:3.0.0"
@@ -41142,6 +41156,13 @@ __metadata:
     mdast-util-to-markdown: "npm:^2.0.0"
     unified: "npm:^11.0.0"
   checksum: 10/32b2f6093ba08e713183629b37e633e0999b6981560eec41f04fe957f76fc6f56dcc14c87c6b45419863be844c6f1130eb2dc055085fc0adc0775b1df7340348
+  languageName: node
+  linkType: hard
+
+"remove-accents@npm:0.5.0":
+  version: 0.5.0
+  resolution: "remove-accents@npm:0.5.0"
+  checksum: 10/4aa1a9d0c18468515a33c6760b0f8e28dfbceddcb846fac90b2189445445b27b11cc1df9fbceb97b4449438bc13250d77b27d4ab325b2d69933acc156d6c5b50
   languageName: node
   linkType: hard
 
