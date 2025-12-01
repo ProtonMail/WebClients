@@ -17,6 +17,8 @@ import { makeUtf8DecodingTransformStream } from './transforms/utf8';
 import type {
     AssistantCallOptions,
     ChatEndpointGenerationRequest,
+    ChunkCallback,
+    FinishCallback,
     GenerationResponseMessage,
     LumoApiClientConfig,
     LumoApiGenerationRequest,
@@ -109,14 +111,37 @@ export class LumoApiClient {
         // Prepare payload
         const postData = this.prepareChatEndpointPostData(request);
 
+        // Response context for interceptors
+        const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
+
+        // Call server and read the streamed result
+        await this.runSseReceiveLoop(
+            api,
+            postData,
+            endpoint,
+            signal,
+            encryption,
+            responseContext,
+            chunkCallback,
+            finishCallback
+        );
+    }
+
+    private async runSseReceiveLoop(
+        api: Api,
+        postData: ChatEndpointGenerationRequest,
+        endpoint: string,
+        signal: AbortSignal | undefined,
+        encryption: RequestEncryptionParams | null,
+        responseContext: ResponseContext,
+        chunkCallback: ChunkCallback | undefined,
+        finishCallback: FinishCallback | undefined
+    ) {
+        const thisNotifyResponse = this.notifyResponse.bind(this);
+
         // Final status will be changed to succeeded on success
         let finalStatus: Status = 'failed';
 
-        // Response context for interceptors
-        const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
-        const thisNotifyResponse = this.notifyResponse.bind(this);
-
-        // Call server and read the streamed result
         try {
             const responseBody = await callChatEndpoint(api, postData, {
                 endpoint,
@@ -140,11 +165,15 @@ export class LumoApiClient {
         } catch (error: any) {
             // Run response error interceptors
             await this.notifyResponseError(error, responseContext);
+
+            // If the stop button was pressed, we finish gracefully
             if (error.name === 'AbortError') {
                 console.warn('Generation aborted');
                 finalStatus = 'succeeded';
-                return; // Don't re-throw AbortError, finish gracefully
+                return; // Don't re-throw
             }
+
+            // Bubble up
             throw error;
         } finally {
             if (finishCallback) {
