@@ -1,4 +1,4 @@
-import { decryptString as decryptContent, decryptUint8Array, encryptString } from '../../../crypto';
+import { decryptString, decryptUint8Array, encryptString } from '../../../crypto';
 import { LUMO_GPG_PUB_KEY } from '../../../keys';
 import type { WireImage } from '../../../types';
 import type { RequestEncryptionParams } from './encryptionParams';
@@ -7,7 +7,7 @@ import type { EncryptedTurn, Turn } from './types';
 // Default Lumo public key (uses production key or custom key from LUMO_PUB_KEY_PATH env var)
 export const DEFAULT_LUMO_PUB_KEY = LUMO_GPG_PUB_KEY;
 
-export { decryptContent, decryptUint8Array, encryptString };
+export { decryptString, decryptUint8Array, encryptString };
 
 export function base64StringToUint8Array(base64: string): Uint8Array<ArrayBuffer> {
     const binaryString = atob(base64);

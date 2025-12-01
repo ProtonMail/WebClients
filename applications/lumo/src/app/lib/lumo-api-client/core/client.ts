@@ -2,11 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import type { Api } from '@proton/shared/lib/interfaces';
 
-import type { GenerationToFrontendMessage } from '../../../types-api';
-import {
-    DEFAULT_LUMO_PUB_KEY,
-    encryptTurns,
-} from './encryption';
+import { DEFAULT_LUMO_PUB_KEY, encryptTurns } from './encryption';
 import { RequestEncryptionParams } from './encryptionParams';
 import { callEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
@@ -18,6 +14,7 @@ import { makeFinishSink } from './transforms/finish';
 import { makeImageLoggerTransformStream } from './transforms/image-logger';
 import { makeSmoothingTransformStream } from './transforms/smoothing';
 import { makeUtf8DecodingTransformStream } from './transforms/utf8';
+import type { GenerationResponseMessage } from './types';
 import type {
     AssistantCallOptions,
     LumoApiClientConfig,
@@ -182,7 +179,7 @@ export class LumoApiClient {
         }
     }
 
-    private async notifyResponse(value: GenerationToFrontendMessage, responseContext: ResponseContext) {
+    private async notifyResponse(value: GenerationResponseMessage, responseContext: ResponseContext) {
         // FIXME: The code supports modifying the response chunk, but I don't think we ever need to do it in
         //        fact. This is further highlighted by the fact that the function
         //        createContentTransformInterceptor() is never used.

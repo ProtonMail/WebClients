@@ -3,7 +3,7 @@ import { exportKey, generateKey, importKey } from '@proton/crypto/lib/subtle/aes
 import { v4 as uuidv4 } from 'uuid';
 
 import { encryptUint8Array } from '../../../crypto';
-import { encryptString } from './encryption';
+import { decryptString, decryptUint8Array, encryptString } from './encryption';
 import type { AesGcmCryptoKey, Base64, RequestId } from './types';
 
 /**
@@ -29,11 +29,13 @@ export class RequestEncryptionParams {
     public requestKey: AesGcmCryptoKey;
     public requestId: string;
     private requestAd: string;
+    private responseAd: string;
 
     constructor(requestKey: AesGcmCryptoKey, requestId: string) {
         this.requestKey = requestKey;
         this.requestId = requestId;
         this.requestAd = RequestEncryptionParams.getRequestAd(this.requestId);
+        this.responseAd = RequestEncryptionParams.getResponseAd(this.requestId);
     }
 
     public static async create(
@@ -90,12 +92,36 @@ export class RequestEncryptionParams {
     }
 
     /**
-     * Compute the request AD associated to this request ID.
-     * This is the only purpose of the request ID: to construct this AD string for AEAD encryption,
+     * Decrypt base64-encoded data into a string with these encryption parameters
+     */
+    public async decryptString(encryptedBase64: Base64): Promise<Base64> {
+        return decryptString(encryptedBase64, this.requestKey, this.responseAd);
+    }
+
+    /**
+     * Decrypt base64-encoded data into raw bytes with these encryption parameters
+     */
+    public async decryptUint8Array(encryptedBase64: Base64): Promise<Uint8Array<ArrayBuffer>> {
+        return decryptUint8Array(encryptedBase64, this.requestKey, this.responseAd);
+    }
+
+    /**
+     * Compute the request Associated Data string associated to this request ID.
+     * This is the only purpose of the request ID: to construct AD strings for AEAD encryption,
      * which prevents some substitution attacks.
      * The request ID is only used for this purpose and nothing else.
      */
     public static getRequestAd(requestId: string) {
         return `lumo.request.${requestId}.turn`;
+    }
+
+    /**
+     * Compute the response Associated Data string associated to this request ID.
+     * This is the only purpose of the request ID: to construct AD strings for AEAD encryption,
+     * which prevents some substitution attacks.
+     * The request ID is only used for this purpose and nothing else.
+     */
+    public static getResponseAd(requestId: string) {
+        return `lumo.response.${requestId}.chunk`;
     }
 }
