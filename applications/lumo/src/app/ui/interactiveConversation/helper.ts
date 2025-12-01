@@ -1172,7 +1172,7 @@ export async function fetchAssistantResponse({
             spaceId,
             signal,
             enableExternalTools,
-            requestTitle,
+            generateTitle: requestTitle,
             config: {
                 enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                 enableSmoothing,
