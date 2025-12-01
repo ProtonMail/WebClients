@@ -140,7 +140,7 @@ export interface LumoApiClientConfig {
 }
 
 // Callback types
-export type ChunkCallback = (message: GenerationResponseMessage) => Promise<{ error?: any }> | { error?: any };
+export type ChunkCallback = (message: GenerationResponseMessage) => Promise<void> | void; // TODO make sure chunk callbacks now throw their errors
 export type FinishCallback = (status: Status) => Promise<void> | void;
 
 // Options interface

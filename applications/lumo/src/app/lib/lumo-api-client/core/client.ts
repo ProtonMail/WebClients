@@ -179,7 +179,10 @@ export class LumoApiClient {
         }
     }
 
-    private async notifyResponse(value: GenerationResponseMessage, responseContext: ResponseContext) {
+    private async notifyResponse(
+        value: GenerationResponseMessage,
+        responseContext: ResponseContext
+    ): Promise<GenerationResponseMessage> {
         // FIXME: The code supports modifying the response chunk, but I don't think we ever need to do it in
         //        fact. This is further highlighted by the fact that the function
         //        createContentTransformInterceptor() is never used.
@@ -243,7 +246,6 @@ export class LumoApiClient {
                     response += msg.content;
                     onChunk?.(msg.content);
                 }
-                return {};
             },
         });
 
