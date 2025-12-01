@@ -7,8 +7,8 @@
  *
  * Most types are re-exported to avoid breaking existing imports within the library.
  */
-
-// *** Import and re-export from types-api.ts (Backend API types) ***
+import type { AesGcmCryptoKey } from '../../../crypto/types';
+import type { Base64, RequestId, Status } from '../../../types';
 import type {
     Decrypted,
     DecryptedImageDataMessage,
@@ -37,7 +37,6 @@ import type {
     WireImage,
     WireTurn,
 } from '../../../types-api';
-
 import {
     isDecrypted,
     isDecryptedImageDataMessage,
@@ -115,25 +114,21 @@ export const isEncryptedTurn = isEncryptedWireTurn;
 export const isUnencryptedTurn = isUnencryptedWireTurn;
 export const isTurn = isWireTurn;
 
-// *** Import and re-export from types.ts (App-wide types) ***
-import type { Base64, RequestId, Status } from '../../../types';
 export type { Base64, RequestId, Status };
 
-// *** Import and re-export from crypto/types.ts ***
-import type { AesGcmCryptoKey } from '../../../crypto/types';
 export type { AesGcmCryptoKey };
 
 // *** Library-internal types (lumo-api-client only) ***
 
 // Configuration interfaces
 export interface LumoApiClientConfig {
-    enableU2LEncryption?: boolean;
-    enableSmoothing?: boolean;
-    endpoint?: string;
-    lumoPubKey?: string;
-    externalTools?: ToolName[];
-    internalTools?: ToolName[];
-    interceptors?: {
+    enableU2LEncryption: boolean;
+    enableSmoothing: boolean;
+    endpoint: string;
+    lumoPubKey: string;
+    externalTools: ToolName[];
+    internalTools: ToolName[];
+    interceptors: {
         request?: RequestInterceptor[];
         response?: ResponseInterceptor[];
     };
