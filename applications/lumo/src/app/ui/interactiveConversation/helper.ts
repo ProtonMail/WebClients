@@ -10,6 +10,7 @@ import type { ContextFilter } from '../../llm';
 import { ENABLE_U2L_ENCRYPTION, getFilteredTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
+import { resolveFileReferences } from '../../util/fileReferences';
 import {
     addConversation,
     newConversationId,
@@ -136,9 +137,43 @@ export function sendMessage({
             }
         });
 
+        // Resolve file references (@file name) in message content
+        let processedContent = newMessageContent;
+        const space = spaceId ? state.spaces[spaceId] : undefined;
+        const linkedDriveFolder = space?.linkedDriveFolder;
+        
+        // Create file resolver function
+        const fileResolver = async (fileName: string): Promise<{ content: string; fileName: string } | null> => {
+            // First, try to find in space assets/attachments
+            const foundFile = allMessageAttachments.find(
+                (att) => att.filename.toLowerCase() === fileName.toLowerCase()
+            );
+            
+            if (foundFile && foundFile.markdown) {
+                return { content: foundFile.markdown, fileName: foundFile.filename };
+            }
+            
+            // TODO: If linkedDriveFolder exists, search in Drive folder
+            // This would require Drive SDK access, which we don't have in this context
+            // For now, we'll only support files that are already in space assets
+            
+            return null;
+        };
+        
+        const { content: resolvedContent, referencedFiles } = await resolveFileReferences(
+            newMessageContent,
+            fileResolver
+        );
+        processedContent = resolvedContent;
+        
+        // Log referenced files for debugging
+        if (referencedFiles.length > 0) {
+            console.log('Resolved file references:', referencedFiles.map(f => f.fileName));
+        }
+
         // Create the new messages (user and assistant) with all attachments
         const { userMessage, assistantMessage } = createMessagePair(
-            newMessageContent,
+            processedContent,
             allMessageAttachments,
             conversationId,
             lastMessage,
