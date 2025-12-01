@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import type { App } from '@proton-meet/proton-meet-core';
-import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
 import { ApiContext } from '@proton/components';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -10,6 +9,7 @@ import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/index';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
