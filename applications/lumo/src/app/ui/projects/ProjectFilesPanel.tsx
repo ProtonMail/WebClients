@@ -225,7 +225,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                 <div className="project-files-section-header">
                     <h3 className="project-files-section-title">{c('collider_2025:Title').t`Project knowledge`}</h3>
                     <div className="flex items-center gap-1">
-                        {linkedDriveFolder ? (
+                        {linkedDriveFolder && (
                             <Button
                                 icon
                                 shape="ghost"
@@ -233,31 +233,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                 onClick={() => linkDriveFolderModal.openModal(true)}
                                 title={c('collider_2025:Action').t`Manage Drive folder link`}
                             >
-                                <Icon name="drive" size={4} />
+                                <Icon name="meet-settings" size={4} />
                             </Button>
-                        ) : (
-                            <>
-                                {!hasExistingFiles && (
-                                    <Button
-                                        icon
-                                        shape="ghost"
-                                        size="small"
-                                        onClick={() => linkDriveFolderModal.openModal(true)}
-                                        title={c('collider_2025:Action').t`Link Drive folder`}
-                                    >
-                                        <Icon name="drive" size={4} />
-                                    </Button>
-                                )}
-                                <Button
-                                    icon
-                                    shape="ghost"
-                                    size="small"
-                                    onClick={handleAddFiles}
-                                    title={c('collider_2025:Action').t`Add files`}
-                                >
-                                    <Icon name="plus" size={4} />
-                                </Button>
-                            </>
                         )}
                     </div>
                 </div>
@@ -327,8 +304,8 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                         </span>
                                     </div>
                                 </button>
-                                <button 
-                                    className="project-files-option" 
+                                <button
+                                    className="project-files-option"
                                     onClick={() => linkDriveFolderModal.openModal(true)}
                                 >
                                     <IcBrandProtonDrive size={5} />
