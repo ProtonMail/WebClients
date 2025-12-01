@@ -186,6 +186,11 @@ export const validateRangeOperation = ({
     excludeRangeId?: string;
     recurring: boolean;
 }): string | null => {
+    // Check if invalid duration (this typically happens with overlaps)
+    if (recurring && start.getTime() >= end.getTime()) {
+        return c('Info').t`Booking overlaps with an existing booking.`;
+    }
+
     // Check if trying to add/update in the past, not relevant for recurring bookings
     if (operation === 'add' && !recurring) {
         const now = new Date();
