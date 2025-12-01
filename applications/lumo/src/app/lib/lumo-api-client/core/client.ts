@@ -1,14 +1,13 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { GenerationToFrontendMessage } from '../../../types-api';
 import {
     DEFAULT_LUMO_PUB_KEY,
     encryptTurns,
-    generateRequestId,
-    generateRequestKey,
-    prepareEncryptedRequestKey,
-    uint8ArrayToBase64String,
 } from './encryption';
+import { RequestEncryptionParams } from './encryptionParams';
 import { callEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
 import { makeAbortTransformStream } from './transforms/abort';
@@ -76,53 +75,32 @@ export class LumoApiClient {
         } = options;
         const { enableU2LEncryption, lumoPubKey, internalTools, externalTools, endpoint } = this.config;
 
-        // Auto-generate encryption keys if needed and not provided
-        let requestKey = providedRequestKey;
-        let requestId = providedRequestId;
-
-        // TODO Print warnings in case the caller uses an invalid combo of options.
-        //      The spec is that only these cases are allowed:
-        //      - requestKey set, requestid set, autoGenerateEncryption = false
-        //      - requestKey unset, requestid unset, autoGenerateEncryption = true or false
-        if (enableU2LEncryption && autoGenerateEncryption && (!requestKey || !requestId)) {
-            if (!requestKey) {
-                requestKey = await generateRequestKey();
-            }
-            if (!requestId) {
-                requestId = generateRequestId();
-            }
-        }
-
         // Setup U2L encryption
-        let requestKeyEncB64: string | undefined = undefined;
-        let processedTurns = turns;
-
-        if (enableU2LEncryption) {
-            if (!requestKey || !requestId) {
-                throw new Error('Cannot use U2L encryption without request key and request id');
-            }
-
-            requestKeyEncB64 = await prepareEncryptedRequestKey(requestKey, lumoPubKey);
-            processedTurns = await encryptTurns(turns, requestKey, requestId);
+        const encryption = await RequestEncryptionParams.create(providedRequestKey, providedRequestId, {
+            enableU2LEncryption,
+            autoGenerateEncryption,
+        });
+        if (encryption) {
+            turns = await encryptTurns(turns, encryption);
         }
 
         // Determine request targets
-        const targets: RequestableGenerationTarget[] = requestTitle ? ['title', 'message'] : ['message'];
+        const targets = this.getTargets(requestTitle);
 
         // Prepare the request
         let request: LumoApiGenerationRequest = {
             type: 'generation_request',
-            turns: processedTurns,
+            turns,
             options: {
                 tools: enableExternalTools ? [...internalTools, ...externalTools] : internalTools,
             },
             targets,
-            request_key: requestKeyEncB64,
-            request_id: requestId,
+            request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
+            request_id: encryption?.requestId,
         };
 
         const requestContext: RequestContext = {
-            requestId: requestId || '<none>',
+            requestId: uuidv4(), // encryption.requestId is ONLY meant for cryptographic purposes (AEAD)
             timestamp: Date.now(),
             endpoint,
             enableU2LEncryption,
@@ -167,14 +145,7 @@ export class LumoApiClient {
                 .pipeThrough(makeAbortTransformStream(signal)) // deals with AbortSignal
                 .pipeThrough(makeUtf8DecodingTransformStream()) // bytes -> utf8
                 .pipeThrough(makeChunkParserTransformStream()) // utf8 -> chunk objects
-                .pipeThrough(
-                    // U2L decryption
-                    makeDecryptionTransformStream({
-                        enableU2LEncryption,
-                        requestKey,
-                        requestId,
-                    })
-                )
+                .pipeThrough(makeDecryptionTransformStream(encryption)) // U2L decryption
                 .pipeThrough(makeImageLoggerTransformStream()) // noop - logs image_data
                 .pipeThrough(makeContextUpdaterTransformStream(responseContext)) // bookkeeping (read-only)
                 .pipeThrough(makeSmoothingTransformStream(this.config.enableSmoothing))
@@ -197,6 +168,10 @@ export class LumoApiClient {
                 await finishCallback(finalStatus);
             }
         }
+    }
+
+    private getTargets(requestTitle: boolean): RequestableGenerationTarget[] {
+        return requestTitle ? ['title', 'message'] : ['message'];
     }
 
     private async notifyResponseComplete(finalStatus: 'failed' | 'succeeded', responseContext: ResponseContext) {
@@ -360,8 +335,8 @@ export class LumoApiClient {
      * Remove all interceptors
      */
     clearInterceptors(): void {
-        this.config.interceptors.request = [];
-        this.config.interceptors.response = [];
+        this.clearRequestInterceptors();
+        this.clearResponseInterceptors();
     }
 
     /**
