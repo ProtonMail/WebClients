@@ -1,5 +1,5 @@
-import { PLANS, type Subscription, getPlan } from '@proton/payments';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import { PLANS } from '@proton/payments';
+import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { InternalBookingPage } from '../../../store/internalBooking/interface';
 import { MAX_BOOKING_PAGES, MAX_BOOKING_PAGE_MAIL_FREE, MAX_BOOKING_PAGE_MAIL_PAID } from '../interface';
@@ -10,8 +10,8 @@ import { MAX_BOOKING_PAGES, MAX_BOOKING_PAGE_MAIL_FREE, MAX_BOOKING_PAGE_MAIL_PA
  */
 export const hasUserReachPlanLimit = (
     user: UserModel,
-    subscription: Subscription,
-    bookingsPages?: InternalBookingPage[]
+    bookingsPages?: InternalBookingPage[],
+    organization?: OrganizationExtended
 ): boolean => {
     // Free mail users get no booking pages
     if (!user.hasPaidMail) {
@@ -23,7 +23,7 @@ export const hasUserReachPlanLimit = (
         return false;
     }
 
-    const planName = getPlan(subscription)?.Name;
+    const planName = organization?.PlanName;
     switch (planName) {
         // Those plans have the maximum number of booking pages
         case PLANS.VISIONARY:
