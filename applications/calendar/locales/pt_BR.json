@@ -2864,10 +2864,10 @@
       "Doesn't end": [
         "Não termina"
       ],
-      "End after": [
+      "Ends after": [
         "Termina depois de"
       ],
-      "End on": [
+      "Ends on": [
         "Termina em"
       ],
       "event": [
@@ -5249,9 +5249,6 @@
       "Cannot create booking range across days": [
         "Não é possível criar um intervalo de reserva que abranja vários dias"
       ],
-      "Cannot create booking range in the past": [
-        "Não foi possível criar um intervalo de reservas no passado"
-      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
       ],
@@ -5299,9 +5296,6 @@
       ],
       "Copy your referral link": [
         "Copiar seu link de referência"
-      ],
-      "Could not verify signature over booking page data": [
-        "Não foi possível verificar assinatura dos dados da página de agendamentos"
       ],
       "Country code": [
         "Código do país"
@@ -6006,6 +6000,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Esta página de agendamento não pode ser editada, o calendário associado está desativado"
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Esta reserva foi feita via ${ CALENDAR_APP_NAME }, parte do conjunto de produtos que priorizam a privacidade da ${ BRAND_NAME }."

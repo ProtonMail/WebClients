@@ -2864,11 +2864,11 @@
       "Doesn't end": [
         "Senza data di fine"
       ],
-      "End after": [
+      "Ends after": [
         "Termina dopo"
       ],
-      "End on": [
-        "Finisce il"
+      "Ends on": [
+        "Termina il"
       ],
       "event": [
         "evento",
@@ -3747,9 +3747,6 @@
       ],
       "Payment process not supported": [
         "Processo di pagamento non supportato"
-      ],
-      "Periods is too short": [
-        "Il periodo è troppo breve"
       ],
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
@@ -5252,9 +5249,6 @@
       "Cannot create booking range across days": [
         "Non puoi creare un intervallo di prenotazione su più giorni."
       ],
-      "Cannot create booking range in the past": [
-        "Non puoi creare un intervallo di prenotazione nel passato"
-      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Non ricordi la tua password? Possiamo aiutarti a cancellare i dati crittografati di tutti i contatti crittografati con questa chiave e nel processo ignorare l'avviso."
       ],
@@ -5302,9 +5296,6 @@
       ],
       "Copy your referral link": [
         "Copia il tuo link di riferimento"
-      ],
-      "Could not verify signature over booking page data": [
-        "Non è stato possibile verificare la firma sui dati della pagina di prenotazione."
       ],
       "Country code": [
         "Codice nazione"
@@ -5507,9 +5498,6 @@
       ],
       "Host": [
         "Host"
-      ],
-      "Host signature verification failed": [
-        "Verifica della firma non riuscita"
       ],
       "How long should an appointment last?": [
         "Quanto dovrebbe durare un appuntamento?"
@@ -6012,6 +6000,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Questa pagina di prenotazione non può essere modificata, il calendario associato è disattivato"
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Questa prenotazione è stata effettuata tramite ${ CALENDAR_APP_NAME }, che fa parte della suite di prodotti incentrati sulla privacy di ${ BRAND_NAME }."

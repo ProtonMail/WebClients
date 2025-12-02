@@ -2864,11 +2864,11 @@
       "Doesn't end": [
         "Bitmesin"
       ],
-      "End after": [
-        "Şu kadar sonra bitsin"
+      "Ends after": [
+        "Şu kadar sonra sona erer"
       ],
-      "End on": [
-        "Şu tarihte bitsin"
+      "Ends on": [
+        "Bitiş tarihi"
       ],
       "event": [
         "etkinlik",
@@ -3673,6 +3673,9 @@
       "Last name is too long": [
         "Soyad çok uzun"
       ],
+      "Location is required": [
+        "Konum bilgisi gereklidir"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
@@ -3748,9 +3751,6 @@
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
       ],
-      "Periods is too short": [
-        "Süreler çok kısa"
-      ],
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
       ],
@@ -3808,6 +3808,9 @@
       ],
       "Process aborted": [
         "İşlem iptal edildi"
+      ],
+      "Range is too short": [
+        "Aralık çok kısa"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Yinelenen alıcı kaldırıldı: ${ joinedRecipients }",
@@ -5252,8 +5255,8 @@
       "Cannot create booking range across days": [
         "Birden fazla güne yayılan bir rezervasyon aralığı oluşturulamaz"
       ],
-      "Cannot create booking range in the past": [
-        "Geçmişte bir rezervasyon aralığı oluşturulamaz"
+      "Cannot create booking range in the past.": [
+        "Geçmişte rezervasyon aralığı oluşturulamıyor."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -5302,9 +5305,6 @@
       ],
       "Copy your referral link": [
         "Öneri bağlantınızı kopyalayın"
-      ],
-      "Could not verify signature over booking page data": [
-        "Rezervasyon sayfası verilerinin imzası doğrulanamadı"
       ],
       "Country code": [
         "Ülke kodu"
@@ -5508,9 +5508,6 @@
       "Host": [
         "Sunucu"
       ],
-      "Host signature verification failed": [
-        "Ana bilgisayar imzası doğrulanamadı"
-      ],
       "How long should an appointment last?": [
         "Randevu ne kadar sürmeli?"
       ],
@@ -5693,7 +5690,7 @@
         "Bu hafta alınabilecek bir randevu yok"
       ],
       "No calendar available; please delete the booking page.": [
-        "Takvim mevcut değil; lütfen rezervasyon sayfasını silin."
+        "Kullanılabilecek bir takvim yok. Lütfen rezervasyon sayfasını silin."
       ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
@@ -6012,6 +6009,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Bu rezervasyon sayfası düzenlenemez, ilişkili takvim kullanımdan kaldırılmış."
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Bu rezervasyon, ${ BRAND_NAME } gizlilik odaklı ürünleri paketinin bir parçası olan ${ CALENDAR_APP_NAME } ile yapılmıştır."
@@ -6714,7 +6714,7 @@
         "Kopyala"
       ],
       "Copy the link or manage your page from here anytime.": [
-        "Dilediğiniz zaman buradan bağlantınızı paylaşın ya da sayfanızı yönetin"
+        "Buradan dilediğiniz zaman bağlantınızı paylaşın ya da sayfanızı yönetin"
       ],
       "Could you please let us know which provider?": [
         "Hangi hizmet sağlayıcı olduğunu belirtebilir misiniz?"
@@ -6729,7 +6729,7 @@
         "Ülke"
       ],
       "Create shareable pages where people can book time with you.": [
-        "İnsanların sizinle randevu oluşturabileceği paylaşılabilir sayfanızı oluşturun"
+        "İnsanların sizden randevu alabileceği paylaşılabilir sayfanızı oluşturun."
       ],
       "Credits": [
         "Kredi"
@@ -7953,7 +7953,7 @@
         "HTML imzalar"
       ],
       "Kill switch/always-on VPN": [
-        "Bağlantı kesici / Hep açık VPN"
+        "Bağlantı kesici / Her zaman açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
@@ -11633,7 +11633,7 @@
         "Veri sızıntısında açığa çıkan bilgiler"
       ],
       "Introducing booking pages": [
-        "İşte karşınızda randevu sayfaları"
+        "Randevu sayfaları ile tanışın"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"

@@ -2864,11 +2864,11 @@
       "Doesn't end": [
         "Δεν τελειώνει"
       ],
-      "End after": [
-        "Τέλος μετά"
+      "Ends after": [
+        "Τελειώνει μετά"
       ],
-      "End on": [
-        "Τέλος στις"
+      "Ends on": [
+        "Τελειώνει στις"
       ],
       "event": [
         "εκδήλωση",
@@ -3673,6 +3673,9 @@
       "Last name is too long": [
         "Το επώνυμο είναι πολύ μεγάλο"
       ],
+      "Location is required": [
+        "Η τοποθεσία είναι υποχρεωτική"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
@@ -3748,9 +3751,6 @@
       "Payment process not supported": [
         "Η διαδικασία πληρωμής δεν υποστηρίζεται"
       ],
-      "Periods is too short": [
-        "Οι περίοδοι είναι πολύ σύντομες"
-      ],
       "Please activate your search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτησή σας"
       ],
@@ -3808,6 +3808,9 @@
       ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
+      ],
+      "Range is too short": [
+        "Υπερβολικά μικρό εύρος"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Αφαιρέθηκε ο διπλότυπος παραλήπτης: ${ joinedRecipients }",
@@ -5252,8 +5255,8 @@
       "Cannot create booking range across days": [
         "Δεν είναι δυνατή η δημιουργία εύρους κράτησης για πολλαπλές ημέρες"
       ],
-      "Cannot create booking range in the past": [
-        "Δεν είναι δυνατή η δημιουργία εύρους κράτησης στο παρελθόν"
+      "Cannot create booking range in the past.": [
+        "Δεν είναι δυνατή η δημιουργία εύρους κράτησης στο παρελθόν."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
@@ -5302,9 +5305,6 @@
       ],
       "Copy your referral link": [
         "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
-      ],
-      "Could not verify signature over booking page data": [
-        "Δεν ήταν δυνατή η επαλήθευση υπογραφής για τα δεδομένα σελίδας κράτησης."
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -5507,9 +5507,6 @@
       ],
       "Host": [
         "Διακομιστής"
-      ],
-      "Host signature verification failed": [
-        "Η επαλήθευση υπογραφής του κεντρικού υπολογιστή απέτυχε"
       ],
       "How long should an appointment last?": [
         "Πόσο πρέπει να διαρκεί ένα ραντεβού;"
@@ -6012,6 +6009,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Αυτή η σελίδα κράτησης δεν μπορεί να επεξεργαστεί, το σχετικό ημερολόγιο είναι απενεργοποιημένο."
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Αυτή η κράτηση έγινε μέσω ${ CALENDAR_APP_NAME }, μέρος της σουίτας προϊόντων της ${ BRAND_NAME } που δίνουν προτεραιότητα στην ιδιωτικότητα."
