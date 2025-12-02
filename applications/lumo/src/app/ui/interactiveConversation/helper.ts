@@ -472,6 +472,11 @@ export type UiContext = {
     isGhostMode?: boolean;
 };
 
+export type SettingsContext = {
+    personalization:
+    const personalization = state.personalization;
+}
+
 export function sendMessage({
     applicationContext: a,
     newMessageData: m,
@@ -631,12 +636,8 @@ export function sendMessage({
             const shouldRequestTitle = c.messageChain.length === 0;
 
             // Get personalization prompt for all messages (not just new conversations)
-            let personalizationPrompt: string | undefined;
             const state = getState();
-            const personalization = state.personalization;
-            if (personalization?.enableForNewChats) {
-                personalizationPrompt = formatPersonalization(personalization);
-            }
+            const personalizationPrompt = formatPersonalization(state.personalization);
 
             // Get project instructions from space if this is a project conversation
             let projectInstructions: string | undefined;
