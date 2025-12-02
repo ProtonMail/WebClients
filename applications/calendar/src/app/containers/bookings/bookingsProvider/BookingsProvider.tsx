@@ -17,6 +17,7 @@ import type { BookingPageEditData, InternalBookingPage } from '../../../store/in
 import { createNewBookingPage, editBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
+import { BookingErrorMessages } from '../utils/bookingCopy';
 import { serializeFormData } from '../utils/form/formHelpers';
 import {
     computeEditFormData,
@@ -38,8 +39,8 @@ import {
     getRangeDateStart,
     normalizeBookingRangeToTimeOfWeek,
 } from '../utils/range/rangeHelpers';
-import type { BookingRange, BookingsContextValue, InternalBookingFrom, Intersection } from './interface';
-import { type BookingFormData, BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from './interface';
+import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from './interface';
+import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingFrom } from './interface';
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 
@@ -226,7 +227,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const openBookingSidebarEdition = (bookingPage: InternalBookingPage, editData: BookingPageEditData) => {
         const bookingPageCalendar = getBookingPageCalendar({ writeableCalendars, bookingPage });
         if (!bookingPageCalendar) {
-            createNotification({ text: c('Info').t`No calendar available; please delete the booking page.` });
+            createNotification({ text: BookingErrorMessages.NO_CALENDAR_AVAILABLE });
             return;
         }
 

@@ -10,6 +10,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { type BookingRange, BookingRangeError } from '../bookingsProvider/interface';
+import { BookingErrorMessages } from '../utils/bookingCopy';
 import { roundToNextHalfHour } from '../utils/timeHelpers';
 
 export const RangeWrapper = ({ children }: PropsWithChildren) => {
@@ -94,7 +95,7 @@ export const RemoveButton = ({ onClick, btnClassName }: ButtonProps) => {
 
 export const RangeErrors = ({ range }: { range: BookingRange }) => {
     if (range.error === BookingRangeError.TOO_SHORT) {
-        return <p className="color-danger m-0 mb-1">{c('Error').t`Range is too short`}</p>;
+        return <p className="color-danger m-0 mb-1">{BookingErrorMessages.RANGE_TOO_SHORT}</p>;
     }
 
     return null;
