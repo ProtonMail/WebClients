@@ -199,7 +199,6 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
 
         const dataId = generateBookingRangeID(normalizedStart, normalizedEnd);
 
-        // Validate the operation using pure function
         const validationError = validateRangeOperation({
             operation: 'add',
             start: normalizedStart,
