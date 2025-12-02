@@ -1,5 +1,4 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
 
 import { captureMessage } from '../helpers/sentry';
 
@@ -7,21 +6,56 @@ export const otherProductParamValues = ['generic', 'business'] as const;
 export type OtherProductParam = (typeof otherProductParamValues)[number];
 export type ProductParam = APP_NAMES | OtherProductParam | undefined;
 
+type AllowedProductHeaders =
+    | '' // Empty string is a placeholder for web apps that aren't supposed to be attributed with any BU and that
+    // aren't supposed to make any sales. If you're actually introducing a new product that should participate in
+    // revenue recognition, then make sure to create a new allowed value below.
+    | 'mail'
+    | 'calendar'
+    | 'drive'
+    | 'pass'
+    | 'wallet'
+    | 'lumo'
+    | 'meet'
+    | 'vpn'
+    | 'business'
+    | 'generic';
+
+export const productParamToHeader: { [key in NonNullable<ProductParam>]: AllowedProductHeaders } = {
+    'proton-account': '', // Account is intentionally not generic since we want to catch these cases
+    'proton-account-lite': '',
+    'proton-admin': '',
+    'proton-authenticator': 'pass',
+    'proton-calendar': 'calendar',
+    'proton-contacts': 'mail',
+    'proton-docs': 'drive',
+    'proton-docs-editor': 'drive',
+    'proton-drive': 'drive',
+    'proton-extension': 'pass',
+    'proton-lumo': 'lumo',
+    'proton-mail': 'mail',
+    'proton-meet': 'meet',
+    'proton-pass': 'pass',
+    'proton-pass-extension': 'pass',
+    'proton-sheets': 'drive',
+    'proton-sheets-editor': 'drive',
+    'proton-verify': '',
+    'proton-vpn-browser-extension': 'vpn',
+    'proton-vpn-settings': 'vpn',
+    'proton-wallet': 'wallet',
+    business: 'business',
+    generic: 'generic',
+};
+
 export const normalizeProduct = (product: ProductParam) => {
     if (!product) {
         return;
     }
-    // Converts:
-    // proton-mail -> mail
-    // proton-vpn-settings -> vpn
-    if (product === APPS.PROTONVPN_SETTINGS) {
-        return 'vpn';
+    const normalizedProduct = productParamToHeader[product];
+    if (!normalizedProduct) {
+        return;
     }
-    // Docs is a sub-product of drive and doesn't have its own attribution as of now, so use drive
-    if (product === APPS.PROTONDOCS) {
-        return 'drive';
-    }
-    return product.replace('proton-', '');
+    return normalizedProduct;
 };
 
 export interface ProductHeaderContext {
@@ -30,27 +64,22 @@ export interface ProductHeaderContext {
     emptyProduct?: boolean;
 }
 
-function notifySentry(normalizedProduct: string | undefined, context?: ProductHeaderContext) {
-    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business', 'pass', 'wallet', 'lumo'].includes(
-        '' + normalizedProduct
-    );
-    if (!isAllowed) {
-        captureMessage('Wrong product header', { level: 'error', extra: { normalizedProduct, context } });
+function notifySentry(
+    normalizedProduct: string | undefined,
+    productParam: ProductParam,
+    maybeContext?: ProductHeaderContext
+) {
+    let context = maybeContext;
+    if (!productParam) {
+        context = { ...context, emptyProduct: true };
     }
+    captureMessage('Wrong product header', { level: 'error', extra: { normalizedProduct, productParam, context } });
 }
 
 export const getProductHeaders = (product: ProductParam, context?: ProductHeaderContext) => {
-    if (!product) {
-        notifySentry(undefined, {
-            ...context,
-            emptyProduct: true,
-        });
-        return;
-    }
     const normalizedProduct = normalizeProduct(product);
-    notifySentry(normalizedProduct, context);
-
-    if (normalizedProduct === undefined) {
+    if (!normalizedProduct) {
+        notifySentry(normalizedProduct, product, context);
         return;
     }
     return { 'x-pm-product': normalizedProduct };
