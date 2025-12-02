@@ -8,7 +8,7 @@ export interface PersonalizationSettings {
     traits: string[];
     lumoTraits: string; // New field for Lumo-specific traits
     additionalContext: string;
-    enableForNewChats: boolean;
+    enableForNewChats: boolean; // TODO: I think this is never set to false, hence, unused. Double-check before removing.
 }
 
 export interface PersonalizationTrait {
