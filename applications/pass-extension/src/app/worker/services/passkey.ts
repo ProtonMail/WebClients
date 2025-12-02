@@ -26,12 +26,12 @@ export const createPasskeyService = () => {
         withContext(async (ctx, { payload: { domain, passkey: selectedPasskey, request } }) => {
             if (!selectedPasskey) throw new Error(c('Error').t`Missing passkey`);
 
-            const { shareId, itemId } = selectedPasskey;
+            const { shareId, itemId, credentialId } = selectedPasskey;
             const item = selectItem<'login'>(shareId, itemId)(ctx.service.store.getState());
             if (!item) throw new Error(c('Error').t`Unknown item`);
 
             const { passkeys } = item.data.content;
-            const passkey = passkeys?.find(({ credentialId }) => selectedPasskey.credentialId === credentialId);
+            const passkey = passkeys?.find((pk) => credentialId === pk.credentialId);
             if (!passkey) throw new Error(c('Error').t`Unknown passkey`);
 
             const content = Uint8Array.fromBase64(passkey.content);

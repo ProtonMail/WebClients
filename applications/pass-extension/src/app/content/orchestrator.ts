@@ -7,7 +7,7 @@
  * on inactive tabs, further improving performance and minimizing the
  * impact on the user's experience */
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import 'proton-pass-extension/lib/utils/polyfills';
+import 'proton-pass-extension/lib/polyfills/shim';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { waitForPageReady } from '@proton/pass/utils/dom/state';

@@ -13,7 +13,7 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
-import 'proton-pass-extension/lib/utils/polyfills';
+import 'proton-pass-extension/lib/polyfills/shim';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 

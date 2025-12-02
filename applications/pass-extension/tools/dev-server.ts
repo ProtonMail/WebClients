@@ -89,7 +89,7 @@ if (!compiler) throw new Error('webpack compiler is missing');
 
 const server = new WebpackDevServer(
     {
-        hot: true,
+        hot: !RUNTIME_RELOAD,
         client: false,
         liveReload: false,
         host: 'localhost',

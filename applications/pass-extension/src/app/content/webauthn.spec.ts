@@ -9,6 +9,8 @@ class PublicKeyCredential {}
 class AuthenticatorAttestationResponse {}
 class AuthenticatorAssertionResponse {}
 
+jest.mock('./bridge/message', () => ({ __esModule: true, ...jest.requireActual('./bridge/message') }));
+
 const mockBridge = {
     init: jest.fn(),
     sendMessage: jest.fn(),

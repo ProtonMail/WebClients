@@ -1,5 +1,5 @@
 import config from 'proton-pass-extension/app/config';
-import 'proton-pass-extension/lib/utils/polyfills';
+import 'proton-pass-extension/lib/polyfills/shim';
 import { isRuntimeActive, isRuntimeStale } from 'proton-pass-extension/lib/utils/runtime';
 
 import { logger } from '@proton/pass/utils/logger';
