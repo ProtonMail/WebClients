@@ -367,6 +367,8 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
 
     const currentUrl = viewMap.mail!.webContents.getURL();
     const hasValidLabelAndElement = labelID && elementID;
+
+    const localID = getCurrentLocalID();
     const url = hasValidLabelAndElement
         ? addHashToCurrentURL(
               currentUrl,
@@ -376,7 +378,10 @@ export const openMail = (labelID?: string, elementID?: string, messageID?: strin
                   ...(messageID ? { messageID } : {}),
               }).toString()}`,
           )
-        : getAppURL().mail + "/u/0/all-mail"; // localID will be fixed by showView
+        : // Case may occur when are grouped together by the OS.
+          getAppURL().mail + localID
+          ? `/u/${localID}/all-mail`
+          : "/u/0/all-mail"; // localID will be fixed by showView. It will force a reload if we don't have the localID.
 
     showView("mail", url);
 
