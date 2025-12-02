@@ -1,12 +1,36 @@
 module.exports = {
     collectCoverage: true,
+
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
+    transform: {
+        '^.+\\.(ts|js|mjs)x?$': [
+            '@swc/jest',
+            {
+                jsc: {
+                    transform: {
+                        react: {
+                            runtime: 'automatic',
+                        },
+                    },
+                    parser: {
+                        jsx: true,
+                        syntax: 'typescript',
+                        tsx: true,
+                    },
+                },
+                env: {
+                    mode: 'usage',
+                    shippedProposals: true,
+                    coreJs: require('core-js/package.json').version,
+                },
+            },
+        ],
+    },
     transformIgnorePatterns: [
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|pmcrypto|openpgp|@openpgp/web-stream-tools|otpauth|@protontech/pass-rust-core/ui)/)',
     ],
-    transform: { '^.+\\.(m?js|tsx?)$': 'babel-jest' },
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     testTimeout: 30000,

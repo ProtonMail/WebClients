@@ -17,13 +17,16 @@ import {
     messageValidator,
 } from './message';
 
-const uniqueId = jest.spyOn(stringUtils, 'uniqueId');
-const waitForPageReady = jest.spyOn(domUtils, 'waitForPageReady');
-let removeEventListenerSpy: jest.SpyInstance, addEventListenerSpy: jest.SpyInstance;
+jest.mock('@proton/pass/utils/string/unique-id', () => ({ uniqueId: jest.fn() }));
+jest.mock('@proton/pass/utils/dom/state', () => ({ waitForPageReady: jest.fn() }));
 
-let counter = 0;
+const uniqueId = stringUtils.uniqueId as jest.Mock;
+const waitForPageReady = domUtils.waitForPageReady as jest.Mock;
 
 describe('Bridge', () => {
+    let removeEventListenerSpy: jest.SpyInstance, addEventListenerSpy: jest.SpyInstance;
+    let counter = 0;
+
     beforeEach(() => {
         counter = 0;
         removeEventListenerSpy = jest.spyOn(window, 'removeEventListener');
@@ -38,6 +41,11 @@ describe('Bridge', () => {
         uniqueId.mockClear();
         waitForPageReady.mockReset();
         jest.useRealTimers();
+    });
+
+    afterAll(() => {
+        uniqueId.mockRestore();
+        waitForPageReady.mockRestore();
     });
 
     describe('message utils', () => {

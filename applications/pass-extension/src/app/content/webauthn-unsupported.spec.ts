@@ -1,5 +1,7 @@
 import * as bridge from './bridge/message';
 
+jest.mock('./bridge/message', () => ({ __esModule: true, ...jest.requireActual('./bridge/message') }));
+
 describe('webauthn [unsupported]', () => {
     let createMessageBridge: jest.SpyInstance;
 
