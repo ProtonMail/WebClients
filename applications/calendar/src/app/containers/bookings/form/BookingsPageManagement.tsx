@@ -47,6 +47,8 @@ export const Form = () => {
     const [writeableCalendars = []] = useWriteableCalendars({ canBeDisabled: false, canBeShared: false });
     const selectedCalendar = writeableCalendars.find((calendar) => calendar.ID === formData.selectedCalendar);
 
+    const isCalendarSelectDisabled = writeableCalendars.length === 1 || bookingsState === BookingState.EDIT_EXISTING;
+
     return (
         <form className="flex flex-column flex-nowrap">
             <FormIconRow icon={<IcTextTitle />} title={c('Info').t`What do you want to call this booking page?`}>
@@ -149,10 +151,14 @@ export const Form = () => {
                         updateFormData('selectedCalendar', value);
                     }}
                     assistContainerClassName="hidden"
-                    className="max-w-full"
+                    className={clsx(
+                        'max-w-full booking-sidebar-calendar-select',
+                        isCalendarSelectDisabled && 'booking-sidebar-calendar-select--disabled'
+                    )}
                     fullWidth={false}
-                    disabled={writeableCalendars.length === 1 || bookingsState === BookingState.EDIT_EXISTING}
+                    disabled={isCalendarSelectDisabled}
                     size={{ width: DropdownSizeUnit.Static }}
+                    noDropdownCaret={isCalendarSelectDisabled}
                 >
                     {writeableCalendars.map((calendar) => (
                         <Option key={calendar.ID} value={calendar.ID} title={calendar.Name}>
