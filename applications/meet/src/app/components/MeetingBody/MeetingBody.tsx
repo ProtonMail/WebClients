@@ -31,6 +31,7 @@ import { ParticipantGrid } from '../ParticipantGrid';
 import { ParticipantSidebar } from '../ParticipantSidebar/ParticipantSidebar';
 import { Participants } from '../Participants/Participants';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
+import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { ScreenShareHeading } from '../ScreenShareHeading/ScreenShareHeading';
 import { Settings } from '../Settings/Settings';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
@@ -190,6 +191,7 @@ export const MeetingBody = ({
             <NoPermissionInfo />
             <PermissionRequest />
             <MeetingReadyPopup meetingLink={meetingLink} />
+            <RecordingInProgressModal />
         </div>
     );
 };

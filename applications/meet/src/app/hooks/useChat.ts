@@ -45,6 +45,10 @@ export const useChat = () => {
 
                 const decodedMessage = JSON.parse(decodedPayload);
 
+                if (decodedMessage.type !== 'message') {
+                    return;
+                }
+
                 const decryptedMessage = await mls?.decryptMessage(stringToUint8Array(decodedMessage.message));
 
                 if (!decryptedMessage) {

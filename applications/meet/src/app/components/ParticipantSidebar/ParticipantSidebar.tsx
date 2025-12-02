@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
+import { SCREEN_SHARE_PAGE_SIZE } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
@@ -67,7 +68,7 @@ export const ParticipantSidebar = ({
                                 style={{
                                     aspectRatio: '16/9',
                                     width: 'auto',
-                                    '--h-custom': '16.66%',
+                                    '--h-custom': `${(100 / SCREEN_SHARE_PAGE_SIZE).toFixed(2)}%`,
                                     boxSizing: 'border-box',
                                     padding: '0.125rem',
                                     breakInside: 'avoid',
