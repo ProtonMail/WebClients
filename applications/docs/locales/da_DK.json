@@ -4313,6 +4313,9 @@
       "Create an end-to-end encrypted document.": [
         "Opret et end-to-end-krypteret dokument."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Opret end-to-end-krypterede dokumenter og regneark."
+      ],
       "Create in": [
         "Opret i"
       ],
@@ -4491,7 +4494,7 @@
         "Geoblokering"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Få e-mailopdateringer om kommentarer og forslag, der føjes til dine dokumenter."
+        "Få e-mailopdateringer, når der tilføjes kommentarer og forslag til dine dokumenter."
       ],
       "Get Notified About Comments": [
         "Få besked om kommentarer"
@@ -4633,7 +4636,7 @@
         "Lav prioritet"
       ],
       "Making a copy...": [
-        "Laver en kopi..."
+        "Kopierer..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maks. ${ MAX_SHARED_URL_PASSWORD_LENGTH } tegn",
@@ -4667,7 +4670,7 @@
         "Ingen kontakter tilføjet endnu"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Intet dokument angivet i URL. Gå tilbage til ${ DRIVE_APP_NAME }, og vælg et dokument."
+        "Intet dokument angivet i URL. Gå til ${ DRIVE_APP_NAME }, og vælg et dokument."
       ],
       "No email address": [
         "Ingen e-mailadresse"
@@ -4954,7 +4957,7 @@
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "URL'en, du indtastede, ser ud til at være blevet kopieret forkert fra Slack. Når du kopierer lange links fra Slack, højreklik da på linket, vælg så \"Kopiér link\" i stedet for at kopiere den afkortede URL-tekst direkte."
+        "URL'en du indtastede ser ud til at være kopieret forkert fra Slack.\nVed kopiering af lange links fra Slack, højreklik på linket, vælg \"Kopier link\" i stedet for at kopiere den afkortede URL-tekst direkte."
       ],
       "There are no documents in the trash.": [
         "Der er ingen dokumenter i papirkurven."
@@ -5562,7 +5565,7 @@
         "E-mails (seneste måned)"
       ],
       "Enable email notifications": [
-        "Aktivér e-mailnotifikationer"
+        "Slå e-mailnotifikationer til"
       ],
       "Encrypt emails": [
         "Kryptér e-mails"
@@ -8374,9 +8377,6 @@
       ],
       "New spreadsheet": [
         "Nyt regneark"
-      ],
-      "Rename spreadsheet": [
-        "Omdøb regneark"
       ],
       "Tab Separated Values (.tsv)": [
         "Tabulatorseparerede værdier (.tsv)"

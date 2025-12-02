@@ -4666,6 +4666,9 @@
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Aucun document n'est indiqué dans l'URL. Retournez dans ${ DRIVE_APP_NAME } et sélectionnez un document."
+      ],
       "No email address": [
         "Aucune adresse e-mail"
       ],
@@ -4949,6 +4952,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "L'URL que vous avez saisie semble avoir été mal copiée depuis Slack. Lorsque vous copiez des liens longs depuis Slack, faites un clic droit sur le lien, puis choisissez « Copier le lien » plutôt que de copier directement le texte tronqué de l’URL."
       ],
       "There are no documents in the trash.": [
         "Il n'y a aucun document dans la corbeille."
@@ -8425,9 +8431,6 @@
       ],
       "New spreadsheet": [
         "Nouvelle feuille de calcul"
-      ],
-      "Rename spreadsheet": [
-        "Modifier le nom de la feuille de calcul"
       ],
       "Tab Separated Values (.tsv)": [
         "Valeurs séparées par des tabulations (.tsv)"
