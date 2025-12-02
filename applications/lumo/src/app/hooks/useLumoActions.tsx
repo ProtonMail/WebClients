@@ -129,8 +129,8 @@ export const useLumoActions = ({
 
     const handleSendAction = async (
         actionParams: ActionParams,
-        finalConversationId: ConversationId,
-        finalSpaceId: SpaceId,
+        conversationId: ConversationId,
+        spaceId: SpaceId,
         spaceDek: any,
         signal: AbortSignal
     ) => {
@@ -157,8 +157,8 @@ export const useLumoActions = ({
                     attachments: provisionalAttachments,
                 },
                 conversationContext: {
-                    spaceId: finalSpaceId,
-                    conversationId: finalConversationId,
+                    spaceId: spaceId,
+                    conversationId: conversationId,
                     allConversationAttachments: allAttachments,
                     messageChain: messagesWithContext,
                     contextFilters,
@@ -413,10 +413,7 @@ export const useLumoActions = ({
             clearErrors();
         }
 
-        const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensureConversationAndSpace(
-            conversationId,
-            spaceId
-        );
+        const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensureConversationAndSpace();
 
         // Create error context with guaranteed conversationId
         const errorContext: ErrorContext = {
