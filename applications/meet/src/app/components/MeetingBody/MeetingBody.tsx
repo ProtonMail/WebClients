@@ -68,6 +68,8 @@ export const MeetingBody = ({
 
     const isEarlyAccess = useFlag('MeetEarlyAccess');
 
+    const meetUpsellEnabled = useFlag('MeetUpsell');
+
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
     const screenShareVideoRef = useRef<HTMLVideoElement>(null);
@@ -98,7 +100,15 @@ export const MeetingBody = ({
         >
             {!isNarrowHeight && (
                 <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
-                    {guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}
+                    {meetUpsellEnabled && (
+                        <>
+                            {guestMode || !paidUser ? (
+                                <UpgradeIcon />
+                            ) : (
+                                <IcMeetShieldStar className="shield-star" size={5} />
+                            )}
+                        </>
+                    )}
                     <div className="meeting-name flex-1 text-lg text-ellipsis overflow-hidden text-semibold">
                         {roomName}
                     </div>

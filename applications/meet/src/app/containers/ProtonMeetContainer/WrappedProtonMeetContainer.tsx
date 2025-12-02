@@ -74,6 +74,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                             guestMode={true}
                             room={roomRef.current}
                             keyProvider={keyProviderRef.current}
+                            hasSubscription={false}
                         />
                     ) : (
                         <ProtonMeetContainerWithUser

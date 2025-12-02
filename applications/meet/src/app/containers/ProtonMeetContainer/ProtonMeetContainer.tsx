@@ -5,12 +5,14 @@ import { ConnectionStateInfo, type GroupKeyInfo, MeetCoreErrorEnum } from '@prot
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
+import { hasVisionary } from '@proton/payments/index';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
@@ -61,6 +63,7 @@ interface ProtonMeetContainerProps {
     room: Room;
     keyProvider: ProtonMeetKeyProvider;
     user?: UserModel | null;
+    hasSubscription: boolean;
 }
 
 export const ProtonMeetContainer = ({
@@ -68,11 +71,13 @@ export const ProtonMeetContainer = ({
     room,
     keyProvider,
     user = null,
+    hasSubscription = false,
 }: ProtonMeetContainerProps) => {
     const dispatch = useMeetDispatch();
 
     const promptOnTabClose = useFlag('MeetPromptOnTabClose');
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
+    const meetUpsellEnabled = useFlag('MeetUpsell');
 
     useWakeLock();
 
@@ -172,6 +177,8 @@ export const ProtonMeetContainer = ({
 
     const isMeetNewJoinTypeEnabled = useFlag('MeetNewJoinType');
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
+
+    const treatedAsPaidUser = hasSubscription || !!user?.hasPaidMeet;
 
     const hasEpochError = (epoch: bigint | undefined) => {
         if (epoch && (lastEpochRef.current ?? 0 > epoch)) {
@@ -680,7 +687,7 @@ export const ProtonMeetContainer = ({
     }, []);
 
     const prepareUpsell = () => {
-        if (!showUpsellModalAfterMeeting) {
+        if (!showUpsellModalAfterMeeting || !meetUpsellEnabled) {
             if (guestMode) {
                 history.push(meetingLinkRef.current as string);
             } else {
@@ -697,11 +704,11 @@ export const ProtonMeetContainer = ({
             return;
         }
 
-        if (user && !user.hasPaidMeet) {
+        if (user && !treatedAsPaidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.FreeAccount));
         }
 
-        if (user && user.hasPaidMeet) {
+        if (user && treatedAsPaidUser) {
             dispatch(setUpsellModalType(UpsellModalTypes.PaidAccount));
         }
 
@@ -867,7 +874,7 @@ export const ProtonMeetContainer = ({
                         maxParticipants={meetingDetails.maxParticipants}
                         instantMeeting={instantMeetingRef.current}
                         assignHost={assignHost}
-                        paidUser={!!user?.hasPaidMeet}
+                        paidUser={treatedAsPaidUser}
                         keyRotationLogs={keyRotationLogs}
                         isRecordingInProgress={isRecordingInProgress}
                     />
@@ -906,8 +913,11 @@ export const ProtonMeetContainer = ({
     );
 };
 
-export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps, 'user'>) => {
+export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps, 'user' | 'hasSubscription'>) => {
     const [user] = useUser();
+    const [subscription] = useSubscription();
 
-    return <ProtonMeetContainer {...props} user={user} />;
+    const hasSubscription = hasVisionary(subscription);
+
+    return <ProtonMeetContainer {...props} user={user} hasSubscription={hasSubscription} />;
 };

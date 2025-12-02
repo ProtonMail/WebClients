@@ -1,20 +1,20 @@
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { SettingsLink } from '@proton/components';
-import { hasVisionary } from '@proton/payments';
 import { useFlag } from '@proton/unleash';
 
+import { useMeetContext } from '../../contexts/MeetContext';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 
 import './UpgradeButton.scss';
 
 export const UpgradeButton = () => {
-    const [subscription] = useSubscription();
     const meetUpsellEnabled = useFlag('MeetUpsell');
 
-    if (!meetUpsellEnabled || hasVisionary(subscription)) {
+    const { paidUser } = useMeetContext();
+
+    if (!meetUpsellEnabled || paidUser) {
         return null;
     }
 
