@@ -82,8 +82,8 @@ export const selectOTPCandidate = ({ submission, ...options }: SelectOTPAutofill
 
 export const selectPasskeys = (payload: PasskeyQueryPayload) =>
     createUncachedSelector(selectVisibleItems, (items): SelectedPasskey[] => {
-        const { credentialIds } = payload;
         const { domain } = parseUrl(payload.domain);
+        const credentialIds = payload.credentialIds.map((id) => new Uint8Array(id).toBase64());
 
         return domain
             ? items
@@ -92,11 +92,12 @@ export const selectPasskeys = (payload: PasskeyQueryPayload) =>
                       (item.data.content.passkeys ?? [])
                           .filter((passkey) => {
                               const passkeyDomain = parseUrl(passkey.domain).domain;
+                              const credentialId = passkey.credentialId;
 
                               return (
                                   passkeyDomain &&
                                   domain === passkeyDomain &&
-                                  (credentialIds.length === 0 || credentialIds.includes(passkey.credentialId))
+                                  (credentialIds.length === 0 || credentialIds.includes(credentialId))
                               );
                           })
                           .map((passkey) => ({

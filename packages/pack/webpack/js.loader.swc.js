@@ -14,6 +14,7 @@ const getSwcLoader = ({ browserslist, isProduction = false, hasReactRefresh = tr
     return {
         loader: require.resolve('swc-loader'),
         options: {
+            /** @type {import('@swc/core').EnvConfig} */
             env: {
                 coreJs: require('core-js/package.json').version,
                 mode: 'entry',

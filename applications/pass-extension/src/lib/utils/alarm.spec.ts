@@ -9,6 +9,11 @@ const { createExtensionAlarm, createBrowserAlarm } = extensionAlarms;
 
 const TEST_ALARM_NAME = 'test-alarm';
 
+jest.mock('@proton/pass/utils/time/alarm', () => ({
+    __esModule: true,
+    ...jest.requireActual('@proton/pass/utils/time/alarm'),
+}));
+
 describe('Alarm utilities', () => {
     const onAlarm = jest.fn();
 
@@ -90,16 +95,16 @@ describe('Alarm utilities', () => {
     });
 
     describe('createExtensionAlarm', () => {
-        const createTimeoutAlarmSpy = jest.spyOn(coreAlarms, 'createTimeoutAlarm');
-        const getTimeoutAlarm = () => createTimeoutAlarmSpy.mock.results[0].value;
+        const createTimeoutAlarm = jest.spyOn(coreAlarms, 'createTimeoutAlarm');
+        const getTimeoutAlarm = () => createTimeoutAlarm.mock.results[0].value;
 
         afterEach(() => {
-            createTimeoutAlarmSpy.mockClear();
+            createTimeoutAlarm.mockClear();
         });
 
         test('should create timeout and browser alarms on creation', () => {
             createExtensionAlarm(TEST_ALARM_NAME, onAlarm);
-            expect(createTimeoutAlarmSpy).toHaveBeenCalledWith(TEST_ALARM_NAME, onAlarm);
+            expect(createTimeoutAlarm).toHaveBeenCalledWith(TEST_ALARM_NAME, onAlarm);
             expect(browser.alarms.onAlarm.addListener).toHaveBeenCalledWith(expect.any(Function));
         });
 
