@@ -8,7 +8,6 @@ import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import {
-    DEFAULT_CURRENCY,
     Renew,
     type Subscription,
     getHasExternalMemberCapableB2BPlan,
@@ -224,7 +223,7 @@ export const getAccountAppRoutes = ({
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = isReferralExpansionEnabled
         ? referralInfo.maxRewardAmount
-        : getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
+        : getSimplePriceString(Currency, REFERRAL_PROGRAM_MAX_AMOUNT);
 
     // Used to determine if a user is on a family plan or a duo plan
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';

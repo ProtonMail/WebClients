@@ -16,7 +16,7 @@ import {
     type PLAN_SERVICES,
     PLAN_TYPES,
 } from '../constants';
-import { isRegionalCurrency } from '../helpers';
+import { isRegionalCurrency } from '../currencies';
 import type { Currency, FreeSubscription, PlanIDs } from '../interface';
 import { getSupportedAddons, hasLumoAddonFromPlanIDs, isIpAddon, isMemberAddon } from '../plan/addons';
 import { getIsB2BAudienceFromPlan, isForbiddenModification } from '../plan/helpers';

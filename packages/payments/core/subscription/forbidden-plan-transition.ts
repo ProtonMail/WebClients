@@ -1,11 +1,12 @@
 import isTruthy from '@proton/utils/isTruthy';
 
-import { type ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '../constants';
+import { type ADDON_NAMES, PLANS } from '../constants';
 import type { FreeSubscription, PlanIDs } from '../interface';
 import { getSupportedAddons, hasLumoAddonFromPlanIDs, isLumoAddon } from '../plan/addons';
 import { getHasPlusPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
 import type { PlansMap } from '../plan/interface';
 import { clearPlanIDs } from '../planIDs';
+import { isFreeSubscription } from '../type-guards';
 import { getPlan, getPlanIDs, hasVisionary, isManagedExternally } from './helpers';
 import type { Subscription } from './interface';
 import { SelectedPlan } from './selected-plan';
@@ -19,7 +20,7 @@ export function isForbiddenLumoPlus({
     newPlanName: PLANS | ADDON_NAMES | undefined;
     plansMap: PlansMap;
 }) {
-    if (!subscription || newPlanName !== PLANS.LUMO) {
+    if (!subscription || isFreeSubscription(subscription) || newPlanName !== PLANS.LUMO) {
         return false;
     }
     const currentPlanIDs = getPlanIDs(subscription);
@@ -44,8 +45,8 @@ export function isForbiddenLumoPlus({
         const currentPlanSelected = SelectedPlan.createNormalized(
             newPlanIDs,
             plansMap,
-            subscription.Cycle || CYCLE.MONTHLY,
-            subscription.Currency || DEFAULT_CURRENCY
+            subscription.Cycle,
+            subscription.Currency
         );
 
         return {

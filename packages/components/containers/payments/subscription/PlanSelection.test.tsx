@@ -3,10 +3,10 @@ import { renderHook } from '@testing-library/react';
 import {
     CYCLE,
     type Currency,
-    DEFAULT_CURRENCY,
     FREE_SUBSCRIPTION,
     PLANS,
     type Subscription,
+    getDefaultMainCurrency,
     getPlanByName,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
@@ -691,7 +691,7 @@ describe('getMaximumCycle', () => {
         const maximumCycle = undefined;
         const audience = Audience.B2B;
         const app = APPS.PROTONMAIL;
-        const currency = DEFAULT_CURRENCY;
+        const currency = getDefaultMainCurrency();
 
         expect(getMaximumCycle(maximumCycle, audience, app, currency)).toBe(CYCLE.YEARLY);
     });
@@ -700,7 +700,7 @@ describe('getMaximumCycle', () => {
         const maximumCycle = CYCLE.MONTHLY;
         const audience = Audience.B2B;
         const app = APPS.PROTONMAIL;
-        const currency = DEFAULT_CURRENCY;
+        const currency = getDefaultMainCurrency();
 
         expect(getMaximumCycle(maximumCycle, audience, app, currency)).toBe(CYCLE.MONTHLY);
     });
@@ -709,7 +709,7 @@ describe('getMaximumCycle', () => {
         const maximumCycle = undefined;
         const audience = Audience.B2C;
         const app = APPS.PROTONMAIL;
-        const currency = DEFAULT_CURRENCY;
+        const currency = getDefaultMainCurrency();
 
         expect(getMaximumCycle(maximumCycle, audience, app, currency)).toBe(CYCLE.TWO_YEARS);
     });
@@ -726,7 +726,7 @@ describe('getMaximumCycle', () => {
         const maximumCycle = undefined;
         const audience = Audience.B2C;
         const app = APPS.PROTONWALLET;
-        const currency = DEFAULT_CURRENCY;
+        const currency = getDefaultMainCurrency();
 
         expect(getMaximumCycle(maximumCycle, audience, app, currency)).toBe(CYCLE.YEARLY);
     });
@@ -735,7 +735,7 @@ describe('getMaximumCycle', () => {
         const maximumCycle = undefined;
         const audience = Audience.B2C;
         const app = APPS.PROTONPASS;
-        const currency = DEFAULT_CURRENCY;
+        const currency = getDefaultMainCurrency();
 
         expect(getMaximumCycle(maximumCycle, audience, app, currency)).toBe(CYCLE.YEARLY);
     });
