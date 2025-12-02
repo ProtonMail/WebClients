@@ -438,53 +438,57 @@ function getMimeTypeFromName(filename: string): string {
     return mimeTypes[ext] || 'application/octet-stream';
 }
 
-// // TODO: break up logic between send and edit and improve error handling
-export function sendMessage({
-    api,
-    newMessageContent,
-    newMessageAttachments,
-    allConversationAttachments,
-    messageChain,
-    conversationId,
-    spaceId,
-    signal,
-    navigateCallback,
-    isEdit,
-    updateSibling,
-    enableExternalToolsToggled,
-    enableSmoothing = true,
-    contextFilters = [],
-    datePair,
-}: {
+export type ApplicationContext = {
     api: Api;
-    newMessageContent: string;
-    newMessageAttachments: Attachment[];
+    signal: AbortSignal;
+};
+
+export type NewMessageData = {
+    content: string;
+    attachments: Attachment[];
+};
+
+export type ConversationContext = {
+    spaceId: SpaceId | undefined; // i want to make these mandatory
+    conversationId: ConversationId | undefined; // i want to make these mandatory
     allConversationAttachments: Attachment[];
     messageChain: Message[];
-    conversationId: ConversationId | undefined;
-    spaceId: SpaceId | undefined;
-    signal: AbortSignal;
-    navigateCallback?: (conversationId: ConversationId) => void;
+    contextFilters: ContextFilter[];
+};
+
+export type UiContext = {
     isEdit?: boolean;
     updateSibling?: (message: Message | undefined) => void;
     enableExternalToolsToggled: boolean;
     enableSmoothing?: boolean;
-    contextFilters?: any[];
-    datePair?: [string, string];
+    navigateCallback?: (conversationId: ConversationId) => void;
+};
+
+export function sendMessage({
+    applicationContext: a,
+    newMessageData: m,
+    conversationContext: c,
+    uiContext: ui,
+}: {
+    applicationContext: ApplicationContext;
+    newMessageData: NewMessageData;
+    conversationContext: ConversationContext;
+    uiContext: UiContext;
 }) {
     return async (dispatch: AppDispatch, getState: () => any): Promise<Message | undefined> => {
-        if (!newMessageContent.trim()) {
+        if (!m.content.trim()) {
             return undefined;
         }
 
-        const [date1, date2] = datePair || createDatePair();
-        const lastMessage = messageChain.at(-1);
+        const [date1, date2] = createDatePair();
+        const lastMessage = c.messageChain.at(-1);
 
-        // Check if phantom chat mode is enabled
+        // Check if ghost mode is enabled
         const state = getState();
         const isGhostMode = state.ghostChat?.isGhostChatMode || false;
 
         // TODO: check if this is needed, should be handled in useLumoActions
+        let { conversationId, spaceId } = c;
         if (!spaceId || !conversationId) {
             ({ conversationId, spaceId } = initializeNewSpaceAndConversation(dispatch, date1, isGhostMode));
         } else {
@@ -509,7 +513,7 @@ export function sendMessage({
 
         // Get attachments from current conversation messages - these should be available for @ references
         const conversationAttachments: Attachment[] = [];
-        messageChain.forEach((message) => {
+        c.messageChain.forEach((message) => {
             if (message.attachments) {
                 message.attachments.forEach((shallowAtt) => {
                     const fullAtt = allAttachmentsState[shallowAtt.id];
@@ -523,14 +527,14 @@ export function sendMessage({
         // Combine space assets, conversation attachments, and provisional attachments for @ references
         // Exclude space attachments from other conversations
         const allMessageAttachments: Attachment[] = [...spaceAssets, ...conversationAttachments];
-        allConversationAttachments.forEach((att) => {
+        c.allConversationAttachments.forEach((att) => {
             if (!allMessageAttachments.some((a) => a.id === att.id)) {
                 allMessageAttachments.push(att);
             }
         });
 
         // Parse file references from the message content
-        const fileReferences = parseFileReferences(newMessageContent);
+        const fileReferences = parseFileReferences(m.content);
         const referencedFileNames = new Set(fileReferences.map((ref) => ref.fileName.toLowerCase()));
 
         // Find attachments that match the referenced files
@@ -546,20 +550,20 @@ export function sendMessage({
 
         // For space assignment, only consider provisional attachments (those without spaceId)
         // Referenced files should not be assigned to space regardless of their source
-        const nonReferencedAttachments = newMessageAttachments.filter(
+        const nonReferencedAttachments = m.attachments.filter(
             (att) => !referencedFileNames.has(att.filename.toLowerCase())
         );
 
         // Identify provisional referenced attachments (from composer)
-        const provisionalReferencedAttachments = newMessageAttachments.filter((att) =>
+        const provisionalReferencedAttachments = m.attachments.filter((att) =>
             referencedFileNames.has(att.filename.toLowerCase())
         );
 
-        const processedContent: string = newMessageContent;
+        const processedContent: string = m.content;
 
         const { userMessage, assistantMessage } = createMessagePair(
             processedContent,
-            newMessageAttachments,
+            m.attachments,
             conversationId,
             lastMessage,
             date1,
@@ -581,17 +585,18 @@ export function sendMessage({
 
         // Define the sequence of message the assistant will respond to.
         // Obviously this must include the new user message containing the latest request.
-        const newLinearChain = [...messageChain, userMessage];
+        const newLinearChain = [...c.messageChain, userMessage];
 
         // Calculate which files will actually be used for the assistant response
         // Note: Project files are retrieved via RAG, so only message attachments are tracked here
-        const contextFilesForResponse = getContextFilesForMessage(newLinearChain, contextFilters);
+        const contextFilesForResponse = getContextFilesForMessage(newLinearChain, c.contextFilters);
 
         // Update the assistant message with the context files that will be used
         const assistantMessageWithContext: Message = {
             ...assistantMessage,
             ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
         };
+
         dispatch(addMessage(assistantMessageWithContext));
 
         // Only assign non-referenced attachments to the space
@@ -605,19 +610,19 @@ export function sendMessage({
         });
 
         // Navigate to /c/:conversationId
-        if (!isEdit && navigateCallback) navigateCallback(conversationId);
+        if (!ui.isEdit && ui.navigateCallback) ui.navigateCallback(conversationId);
 
         // In case of edit, pin the current message so it shows e.g. `< 2 / 2 >`.
         // If we didn't do this, the new message would be hidden, and we'd see `< 1 / 2 >`.
-        if (isEdit && updateSibling) updateSibling(userMessage);
+        if (ui.isEdit && ui.updateSibling) ui.updateSibling(userMessage);
 
         // When we attach files, disable web search, otherwise this feels awkward.
-        const noAttachment = newMessageAttachments.length === 0;
+        const noAttachment = m.attachments.length === 0;
 
         // Call the LLM.
         try {
             // Request title for new conversations (when messageChain is empty, it's the first message)
-            const shouldRequestTitle = messageChain.length === 0;
+            const shouldRequestTitle = c.messageChain.length === 0;
 
             // Get personalization prompt for all messages (not just new conversations)
             let personalizationPrompt: string | undefined;
@@ -644,24 +649,24 @@ export function sendMessage({
             const userId = state.user?.value?.ID;
 
             await fetchAssistantResponse({
-                api,
+                api: a.api,
                 dispatch,
                 linearChain: newLinearChain,
                 spaceId,
                 conversationId,
                 assistantMessageId: assistantMessageWithContext.id,
-                signal,
-                enableExternalTools: noAttachment && enableExternalToolsToggled,
-                enableSmoothing,
+                signal: a.signal,
+                enableExternalTools: noAttachment && ui.enableExternalToolsToggled,
+                enableSmoothing: ui.enableSmoothing,
                 requestTitle: shouldRequestTitle,
-                contextFilters,
+                contextFilters: c.contextFilters,
                 personalizationPrompt,
                 projectInstructions,
                 userId,
                 isProject,
                 allAttachments: state.attachments,
                 referencedFileNames,
-                attachments: allConversationAttachments,
+                attachments: c.allConversationAttachments,
             });
         } catch (error) {
             console.warn('error: ', error);
