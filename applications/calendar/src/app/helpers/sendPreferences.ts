@@ -3,8 +3,8 @@ import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 
-import type { AugmentedSendPreferences } from '../containers/calendar/interface';
 import type { InviteActions } from '../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../interfaces/Invite';
 
@@ -15,7 +15,7 @@ export const getCleanSendDataFromSendPref = ({
     vevent,
     cancelVevent,
 }: {
-    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
     inviteActions: InviteActions;
     vevent: VcalVeventComponent;
     cancelVevent?: VcalVeventComponent;
@@ -150,7 +150,7 @@ export const getCleanSendDataFromSendPref = ({
     return cleanData;
 };
 
-export const getSendPrefErrorMap = (sendPreferencesMap: SimpleMap<AugmentedSendPreferences>) => {
+export const getSendPrefErrorMap = (sendPreferencesMap: SimpleMap<SendPreferences>) => {
     return Object.entries(sendPreferencesMap).reduce<SimpleMap<string>>((acc, [email, sendPrefs]) => {
         const error = sendPrefs?.error;
         if (error) {

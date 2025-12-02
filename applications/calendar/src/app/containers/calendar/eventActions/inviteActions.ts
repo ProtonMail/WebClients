@@ -27,7 +27,6 @@ import unary from '@proton/utils/unary';
 
 import type { InviteActions } from '../../../interfaces/Invite';
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
-import type { AugmentedSendPreferences } from '../interface';
 import { withIncrementedSequence } from './sequence';
 
 type PmVcalVeventComponent = RequireSome<VcalVeventComponent, 'x-pm-shared-event-id' | 'x-pm-session-key'>;
@@ -133,7 +132,7 @@ export const getEquivalentAttendeesSend = (vevent: VcalVeventComponent, inviteAc
 
 export const getHasProtonAttendees = (
     veventComponent: VcalVeventComponent,
-    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>
+    sendPreferencesMap: SimpleMap<SendPreferences>
 ) => {
     const attendeeEmails = (veventComponent.attendee || []).map((attendee) => getAttendeeEmail(attendee));
     return attendeeEmails.some((email) => {
@@ -149,7 +148,7 @@ export const getHasProtonAttendees = (
     });
 };
 
-const extractProtonAttendeePublicKey = (email: string, sendPreferencesMap: SimpleMap<AugmentedSendPreferences>) => {
+const extractProtonAttendeePublicKey = (email: string, sendPreferencesMap: SimpleMap<SendPreferences>) => {
     const sendPreferences = sendPreferencesMap[email];
     if (!sendPreferences) {
         return;
@@ -195,7 +194,7 @@ export const getAddedAttendeesPublicKeysMap = ({
 }: {
     veventComponent: VcalVeventComponent;
     inviteActions: InviteActions;
-    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+    sendPreferencesMap: SimpleMap<SendPreferences>;
 }) => {
     const addedAttendeesEmails = extractNewInvitedAttendeeEmails(veventComponent, inviteActions);
     return addedAttendeesEmails.reduce<SimpleMap<PublicKeyReference>>((acc, email) => {

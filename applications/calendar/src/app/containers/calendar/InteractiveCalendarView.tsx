@@ -109,6 +109,7 @@ import type {
     VcalVeventComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
@@ -208,7 +209,6 @@ import type {
 import getSyncMultipleEventsPayload, { getIsUpdateSyncOperation } from './getSyncMultipleEventsPayload';
 import getUpdatePersonalEventPayload from './getUpdatePersonalEventPayload';
 import type {
-    AugmentedSendPreferences,
     CalendarViewEvent,
     CalendarViewEventData,
     CalendarViewEventTemporaryEvent,
@@ -239,7 +239,7 @@ const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCa
 
 type ModalsMap = {
     sendWithErrorsConfirmationModal: ModalWithProps<{
-        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+        sendPreferencesMap: SimpleMap<SendPreferences>;
         vevent: VcalVeventComponent;
         inviteActions: InviteActions;
         cancelVevent?: VcalVeventComponent;
@@ -1144,7 +1144,7 @@ const InteractiveCalendarView = ({
             return cleanSendData;
         }
         const { Sign } = await getMailSettings();
-        const sendPreferencesMap: SimpleMap<AugmentedSendPreferences> = {};
+        const sendPreferencesMap: SimpleMap<SendPreferences> = {};
         const emails = extractInviteEmails({ inviteActions, vevent, cancelVevent });
         await Promise.all(
             emails.map(async (email) => {
@@ -1153,11 +1153,10 @@ const InteractiveCalendarView = ({
                     lifetime: 10 * SECOND, // Increase encryption preference lifetime to 10s so that requests are cached when saving events (call is done twice)
                     contactEmailsMap,
                 });
-                const sendPreferences = getSendPreferences(encryptionPreferences, getIcsMessageWithPreferences(Sign));
-                sendPreferencesMap[email] = {
-                    ...sendPreferences,
-                    isInternal: encryptionPreferences.isInternal,
-                };
+                sendPreferencesMap[email] = getSendPreferences(
+                    encryptionPreferences,
+                    getIcsMessageWithPreferences(Sign)
+                );
             })
         );
 
