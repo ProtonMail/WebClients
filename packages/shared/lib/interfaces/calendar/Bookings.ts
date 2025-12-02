@@ -61,6 +61,7 @@ export interface BookingSlotConfirmationPayload {
     TimePart: string;
     AttendeeData: string;
     AttendeeToken: string;
+    AttendeeSharedKeyPacket?: string;
     EmailData: {
         Name: string;
         Email: string;
