@@ -127,7 +127,7 @@ export function prepareTurns(
 
     // Add personalization and project instructions to the LAST user message content
     // These are per-request instructions that should apply to the current question
-    if ((personalizationPrompt || projectInstructions) && turns.length > 0) {
+    if (personalizationPrompt || projectInstructions) {
         // Find the last user message
         let lastUserIndex = -1;
         for (let i = turns.length - 1; i >= 0; i--) {
