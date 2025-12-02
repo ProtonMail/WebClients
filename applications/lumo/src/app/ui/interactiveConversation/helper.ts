@@ -5,7 +5,13 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
 import type { ContextFilter } from '../../llm';
-import { ASSISTANT_TURN, ENABLE_U2L_ENCRYPTION, getFilteredTurnsWithImages, prepareTurnsWithImages } from '../../llm';
+import {
+    ASSISTANT_TURN,
+    ENABLE_U2L_ENCRYPTION,
+    enrichTurnWithImages,
+    getFilteredTurnsWithImages,
+    prepareTurns,
+} from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { calculateSingleAttachmentContextSize } from '../../llm/utils';
 import { newAttachmentId, pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
@@ -1161,15 +1167,23 @@ export async function fetchAssistantResponse({
         dispatch(pushMessageRequest({ id: lastUserMessage.id }));
     }
 
-    const turns = await prepareTurnsWithImages(
+    // First, get basic turns without images
+    let turns = prepareTurns(
         updatedLinearChain,
-        attachments,
         ASSISTANT_TURN,
         contextFilters,
         personalizationPrompt,
         projectInstructions,
         ragResult?.context
     );
+
+    // Now enrich user turns with images
+    if (attachments.length > 0) {
+        turns = await Promise.all(
+            turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, attachments))
+        );
+    }
+
     await dispatch(
         sendMessageWithRedux(api, turns, {
             messageId: assistantMessageId,

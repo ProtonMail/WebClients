@@ -225,7 +225,7 @@ function tryConvertToWireImage(attachment: Attachment): WireImage | null {
  * Enrich a single turn with image attachments by matching attachment IDs
  * Works for ALL user turns in the conversation
  */
-async function enrichTurnWithImages(
+export async function enrichTurnWithImages(
     turn: Turn,
     turnIndex: number,
     turns: Turn[],
