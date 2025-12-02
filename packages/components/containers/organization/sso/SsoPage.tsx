@@ -39,6 +39,7 @@ import ConfigureSamlEdugainModal from './ConfigureSamlEdugainModal';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
+import { OrganizationIdentityWarningBanner } from './OrganizationIdentityWarningBanner';
 import RemoveSSODomain from './RemoveSSODomain';
 import RemoveSSOSection from './RemoveSSOSection';
 import SSOInfoForm from './SSOInfoForm';
@@ -404,6 +405,10 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
             {renderVerifySSODomainModal && domain && (
                 <TXTRecordModal domain={domain} ssoAppInfo={ssoAppInfo} {...verifySSODOmainModalProps} />
             )}
+
+            <SettingsSectionWide>
+                <OrganizationIdentityWarningBanner />
+            </SettingsSectionWide>
 
             <SubSettingsSection
                 id="saml-authentication"

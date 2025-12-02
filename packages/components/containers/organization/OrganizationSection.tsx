@@ -12,8 +12,6 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Row from '@proton/components/components/container/Row';
-import { IcPen } from '@proton/icons/icons/IcPen';
-import { IcTrash } from '@proton/icons/icons/IcTrash';
 import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
@@ -30,7 +28,10 @@ import AuthModal, { type AuthModalResult } from '@proton/components/containers/p
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
 import useLoading from '@proton/hooks/useLoading';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getHasMemberCapablePlan, hasDuo, hasFamily, hasPassFamily } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -69,7 +70,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const [editOrganizationIdentityProps, setEditOrganizationIdentityModal, renderEditOrganizationIdentityModal] =
         useModalState();
     const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
-    const [setupOrganizationNameProps, /* setSetupOrganizationNameModal */, renderSetupOrganizationNameModal] = // TODO enable where needed
+    const [setupOrganizationNameProps /* setSetupOrganizationNameModal */, , renderSetupOrganizationNameModal] = // TODO enable where needed
         useModalState();
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const [setupOrganizationModalProps, setSetupOrganizationModal, renderSetupOrganizationModal] = useModalState();
@@ -90,6 +91,18 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const organizationIdentity = useOrganizationIdentity();
 
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
+
+    useSearchParamsEffect((params) => {
+        const action = params.get('action');
+        if (!action) {
+            return;
+        }
+        if (action === 'set-organization-identity') {
+            setEditOrganizationIdentityModal(true);
+            params.delete('action');
+            return params;
+        }
+    }, []);
 
     if (!organization || !user || !subscription || !customDomains) {
         return <Loader />;
