@@ -25,6 +25,7 @@ export interface ComposerEditorAreaProps {
     onSubmit: () => void;
     spaceId?: SpaceId;
     messageChain?: Message[];
+    onAutocompleteStateChange?: (isActive: boolean) => void;
 }
 
 export const ComposerEditorArea = ({
@@ -36,25 +37,35 @@ export const ComposerEditorArea = ({
     onAbort,
     onSubmit,
     spaceId,
+    onAutocompleteStateChange,
 }: ComposerEditorAreaProps) => {
     const { mentionState, files, selectFile, closeMention } = useFileMentionAutocomplete(editor, spaceId);
+    
+    // Notify parent when autocomplete state changes
+    useEffect(() => {
+        onAutocompleteStateChange?.(mentionState.isActive);
+    }, [mentionState.isActive, onAutocompleteStateChange]);
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     // Handle keyboard navigation for autocomplete
     useEffect(() => {
-        if (!mentionState.isActive) {
+        if (!mentionState.isActive || !editor) {
             setSelectedIndex(0);
             return;
         }
 
+        const editorElement = editor.view.dom;
+        
         const handleKeyDown = (e: KeyboardEvent) => {
             if (!mentionState.isActive) return;
 
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
+                e.stopPropagation();
                 setSelectedIndex((prev) => (prev < files.length - 1 ? prev + 1 : prev));
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
+                e.stopPropagation();
                 setSelectedIndex((prev) => (prev > 0 ? prev - 1 : 0));
             } else if (e.key === 'Enter' && files.length > 0) {
                 e.preventDefault();
@@ -64,13 +75,15 @@ export const ComposerEditorArea = ({
                 }
             } else if (e.key === 'Escape') {
                 e.preventDefault();
+                e.stopPropagation();
                 closeMention();
             }
         };
 
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [mentionState.isActive, files.length, selectedIndex, selectFile, closeMention]);
+        // Use capture phase to catch events before TipTap editor handles them
+        editorElement.addEventListener('keydown', handleKeyDown, true);
+        return () => editorElement.removeEventListener('keydown', handleKeyDown, true);
+    }, [editor, mentionState.isActive, files.length, selectedIndex, selectFile, closeMention]);
 
     // Reset selected index when files change or mention becomes active
     useEffect(() => {
