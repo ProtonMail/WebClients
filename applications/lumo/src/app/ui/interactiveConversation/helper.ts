@@ -23,6 +23,7 @@ import {
 } from '../../redux/slices/core/conversations';
 import {
     addMessage,
+    createDate,
     createDatePair,
     finishMessage,
     newMessageId,
@@ -886,7 +887,7 @@ export async function retrySendMessage({
     projectInstructions?: string;
     allAttachments?: Record<string, Attachment>;
 }) {
-    const [, date2] = createDatePair();
+    const date = createDate();
 
     // Update conversation status to generating
     dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
@@ -896,7 +897,7 @@ export async function retrySendMessage({
     const assistantMessage: Message = {
         id: assistantMessageId,
         parentId: lastUserMessage.id,
-        createdAt: date2,
+        createdAt: date,
         content: '',
         role: Role.Assistant,
         placeholder: true,
