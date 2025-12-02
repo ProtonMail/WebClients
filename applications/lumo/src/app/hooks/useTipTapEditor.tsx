@@ -15,6 +15,7 @@ interface UseTipTapEditorProps {
     hasTierErrors?: boolean;
     isGenerating?: boolean;
     isProcessingAttachment?: boolean;
+    isAutocompleteActive?: boolean;
     onFocus?: () => void;
     onBlur?: () => void;
 }
@@ -25,10 +26,16 @@ const useTipTapEditor = ({
     hasTierErrors,
     isGenerating,
     isProcessingAttachment,
+    isAutocompleteActive,
     onFocus,
     onBlur,
 }: UseTipTapEditorProps) => {
-    // Detect if we're on a mobile device
+    // Use ref to track autocomplete state so it's always current in event handlers
+    const isAutocompleteActiveRef = React.useRef(isAutocompleteActive ?? false);
+    
+    React.useEffect(() => {
+        isAutocompleteActiveRef.current = isAutocompleteActive ?? false;
+    }, [isAutocompleteActive]);
 
     const editor = useEditor({
         extensions: [
@@ -58,6 +65,11 @@ const useTipTapEditor = ({
                         return;
                     }
                     const isEnter = e.key === 'Enter';
+                    // If autocomplete is active and Enter is pressed, don't handle it at all
+                    // The autocomplete handler (attached in capture phase) will handle it
+                    if (isAutocompleteActiveRef.current && isEnter) {
+                        return false; // Don't handle, let autocomplete handler process it
+                    }
                     if (isMobile()) {
                         // Mobile behavior: Enter creates single line break, no submit on keyboard
                         if (isEnter) {
