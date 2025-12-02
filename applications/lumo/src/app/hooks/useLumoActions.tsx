@@ -17,8 +17,8 @@ import { useActionErrorHandler } from '../services/errors/useActionErrorHandler'
 import type { ActionParams, Attachment, ErrorContext, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
 import {
+    formatPersonalization,
     generateFakeConversationToShowTierError,
-    getPersonalizationPromptFromState,
     regenerateMessage,
     retrySendMessage,
     sendMessage,
@@ -208,7 +208,7 @@ export const useLumoActions = ({
         let personalizationPrompt: string | undefined;
 
         if (savedPersonalization?.enableForNewChats) {
-            personalizationPrompt = getPersonalizationPromptFromState(savedPersonalization);
+            personalizationPrompt = formatPersonalization(savedPersonalization);
             console.log('Retry: Generated personalization prompt from saved settings:', personalizationPrompt);
         } else {
             console.log('Retry: Personalization not enabled or no saved personalization data');
