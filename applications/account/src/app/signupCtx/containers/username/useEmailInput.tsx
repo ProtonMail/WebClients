@@ -18,6 +18,7 @@ interface Props {
     loading?: boolean;
     autoFocus?: boolean;
     bigger?: boolean;
+    inputClassName?: string;
 
     emailReadOnly?: boolean;
     emailDisabled?: boolean;
@@ -32,6 +33,7 @@ const useEmailInput = ({
     emailReadOnly,
     emailLabelHidden,
     bigger,
+    inputClassName,
 }: Props) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const accountDataContext = useAccountFormDataContext();
@@ -84,7 +86,7 @@ const useEmailInput = ({
                         setLoadingChallenge(false);
                     }}
                 >
-                    <div className={clsx(inputsWrapper, theme.dark && 'ui-prominent', 'bg-transparent')}>
+                    <div className={clsx(inputsWrapper, inputClassName, theme.dark && 'ui-prominent', 'bg-transparent')}>
                         {state.signupType === SignupType.External && (
                             <InputFieldTwo
                                 bigger={bigger}

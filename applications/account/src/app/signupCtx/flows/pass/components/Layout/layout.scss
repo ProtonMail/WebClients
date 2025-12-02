@@ -110,16 +110,18 @@ body {
 	.text-md {
 		font-size: 14px;
 	}
+
+	.button-outline-norm {
+		background-color: transparent;
+	}
 }
 
-/* Overrides */
-.input,
-.input:hover {
-	--field-background-color: transparent !important;
-	--field-focus-background-color: transparent !important;
-	--field-hover-background-color: transparent !important;
-}
-
-.button-outline-norm {
-	background-color: transparent;
+.pass-signup-input,
+.pass-signup {
+	.input,
+	.input:hover {
+		--field-background-color: transparent !important;
+		--field-focus-background-color: transparent !important;
+		--field-hover-background-color: transparent !important;
+	}
 }
