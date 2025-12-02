@@ -3,30 +3,31 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetEncryptionPreferences, useKeyTransparencyContext } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import type { PublicKeyReference } from '@proton/crypto';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { getAddressFromEmail } from 'proton-mail/helpers/addresses';
+
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
 import type { MapSendInfo } from '../models/crypto';
 import { STATUS_ICONS_FILLS } from '../models/crypto';
-import type { ContactsMap } from '../store/contacts/contactsTypes';
 import { useContactsMap } from './contact/useContacts';
 
 const getSignText = (n: number, contactNames: string, contactAddresses: string) => {
@@ -67,6 +68,45 @@ export const useMessageSendInfo = (message: MessageState) => {
     return messageSendInfo;
 };
 
+/**
+ * Override send preferences when sending from a BYOE address to a mixed set of recipients that includes external ones
+ */
+const getMaybeAlteredSendInfoForBYOE = (
+    isSenderBYOEAddress: boolean,
+    recipients: string[],
+    mapSendInfo: MapSendInfo
+) => {
+    // if all recipients are internal, the message is sent internally and encrypted; no changes needed.
+    if (!isSenderBYOEAddress || recipients.every((recipient) => mapSendInfo[recipient]?.sendPreferences?.isInternal)) {
+        return mapSendInfo;
+    }
+
+    // if all external recipients have e2ee, the BE does not have access to the plaintext to send over the third party
+    // provider, hence we leave the preferences (and icons) unchanged, and let the BE error
+    const hasE2EEForAllExternalRecipients = recipients
+        .filter((recipient) => !mapSendInfo[recipient]?.sendPreferences?.isInternal)
+        .every((recipient) => mapSendInfo[recipient]?.sendPreferences?.encrypt);
+    if (hasE2EEForAllExternalRecipients) {
+        return mapSendInfo;
+    }
+
+    // If at least an external recipient is not e2ee, the message can be sent externally to all recipients
+    return recipients.reduce<MapSendInfo>((acc, emailAddress) => {
+        const originalSendInfo = mapSendInfo[emailAddress];
+        // For internal recipients, as well as external ones with e2ee enabled, the BE enforces using encrypted package type,
+        // hence we have to preserve the existing send prefs.
+        // The lock icons will be hidden for all recipients, to avoid changing the `getSendStatusIcon` logic,
+        // since the final encryption status is no longer linked to the send prefs
+        acc[emailAddress] = originalSendInfo
+            ? {
+                  ...originalSendInfo,
+                  sendIcon: undefined,
+              }
+            : undefined;
+        return acc;
+    }, {});
+};
+
 export const useUpdateRecipientSendInfo = (
     messageSendInfo: MessageSendInfo | undefined,
     recipient: Recipient,
@@ -76,6 +116,7 @@ export const useUpdateRecipientSendInfo = (
     const contactsMap = useContactsMap();
     const emailAddress = recipient.Address;
     const { ktActivation } = useKeyTransparencyContext();
+    const getAddresses = useGetAddresses();
 
     const [askForKeyPinningModal, handleShowAskForKeyPinningModal] = useModalTwo(AskForKeyPinningModal);
 
@@ -182,18 +223,25 @@ export const useUpdateRecipientSendInfo = (
                 creationTime: encryptionPreferences.contactSignatureTimestamp,
             };
 
-            setMapSendInfo((mapSendInfo) => ({
-                ...mapSendInfo,
-                [emailAddress]: {
-                    sendPreferences,
-                    sendIcon,
-                    loading: false,
-                    emailValidation,
-                    encryptionPreferenceError: encryptionPreferences.error?.type,
-                    emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
-                    contactSignatureInfo,
-                },
-            }));
+            const addresses = await getAddresses();
+            const senderAddress = getAddressFromEmail(addresses, message.data?.Sender.Address);
+            const isBYOESender = senderAddress ? getIsBYOEAddress(senderAddress) : false;
+
+            setMapSendInfo((mapSendInfo) => {
+                const provisionalSendInfo = {
+                    ...mapSendInfo,
+                    [emailAddress]: {
+                        sendPreferences,
+                        sendIcon,
+                        loading: false,
+                        emailValidation,
+                        encryptionPreferenceError: encryptionPreferences.error?.type,
+                        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
+                        contactSignatureInfo,
+                    },
+                };
+                return getMaybeAlteredSendInfoForBYOE(isBYOESender, Object.keys(mapSendInfo), provisionalSendInfo);
+            });
         };
 
         void updateRecipientIcon();
@@ -217,6 +265,7 @@ export const useUpdateGroupSendInfo = (
     onRemove: () => void
 ) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const getAddresses = useGetAddresses();
     const contactsMap = useContactsMap();
     const emailsInGroup = contacts.map(({ Email }) => Email);
 
@@ -281,17 +330,24 @@ export const useUpdateGroupSendInfo = (
                 creationTime: encryptionPreferences.contactSignatureTimestamp,
             };
             if (!signal.aborted) {
-                setMapSendInfo((mapSendInfo) => ({
-                    ...mapSendInfo,
-                    [emailAddress]: {
-                        sendPreferences,
-                        sendIcon,
-                        loading: false,
-                        emailValidation,
-                        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
-                        contactSignatureInfo,
-                    },
-                }));
+                const addresses = await getAddresses();
+                const senderAddress = getAddressFromEmail(addresses, message.data?.Sender.Address);
+                const isBYOESender = senderAddress ? getIsBYOEAddress(senderAddress) : false;
+
+                setMapSendInfo((mapSendInfo) => {
+                    const provisionalSendInfo = {
+                        ...mapSendInfo,
+                        [emailAddress]: {
+                            sendPreferences,
+                            sendIcon,
+                            loading: false,
+                            emailValidation,
+                            emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
+                            contactSignatureInfo,
+                        },
+                    };
+                    return getMaybeAlteredSendInfoForBYOE(isBYOESender, Object.keys(mapSendInfo), provisionalSendInfo);
+                });
             }
             if (checkForError && sendPreferences.error) {
                 return {
@@ -374,48 +430,10 @@ export const useUpdateGroupSendInfo = (
     return { handleRemove, askForKeyPinningModal, contactResignModal };
 };
 
-const getUpdatedSendInfo = async (
-    emailAddress: string,
-    message: MessageState,
-    setMapSendInfo: Dispatch<SetStateAction<MapSendInfo>>,
-    getEncryptionPreferences: GetEncryptionPreferences,
-    ktActivation: KeyTransparencyActivation,
-    contactsMap: ContactsMap
-) => {
-    const encryptionPreferences = await getEncryptionPreferences({
-        email: emailAddress,
-        lifetime: 0,
-        contactEmailsMap: contactsMap,
-    });
-    const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
-    const sendIcon = getSendStatusIcon(sendPreferences);
-    const contactSignatureInfo = {
-        isVerified: encryptionPreferences.isContactSignatureVerified,
-        creationTime: encryptionPreferences.contactSignatureTimestamp,
-    };
-    const updatedSendInfo = {
-        sendPreferences,
-        sendIcon,
-        loading: false,
-        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
-        contactSignatureInfo,
-    };
-    setMapSendInfo((mapSendInfo) => {
-        const sendInfo = mapSendInfo[emailAddress];
-        if (!sendInfo) {
-            return { ...mapSendInfo };
-        }
-        return {
-            ...mapSendInfo,
-            [emailAddress]: { ...sendInfo, ...updatedSendInfo },
-        };
-    });
-};
-
 export const useReloadSendInfo = () => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const contactsMap = useContactsMap();
-    const { ktActivation } = useKeyTransparencyContext();
+    const getAddresses = useGetAddresses();
 
     return useCallback(
         async (messageSendInfo: MessageSendInfo | undefined, message: MessageState) => {
@@ -426,17 +444,30 @@ export const useReloadSendInfo = () => {
             }
 
             const recipients = getRecipientsAddresses(message.data);
-            const requests = recipients.map(
-                (emailAddress) => () =>
-                    getUpdatedSendInfo(
-                        emailAddress,
-                        message,
-                        setMapSendInfo,
-                        getEncryptionPreferences,
-                        ktActivation,
-                        contactsMap
-                    )
-            );
+            const sendInfoRequests = recipients.map((emailAddress) => async () => {
+                const encryptionPreferences = await getEncryptionPreferences({
+                    email: emailAddress,
+                    lifetime: 0,
+                    contactEmailsMap: contactsMap,
+                });
+                const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
+                const sendIcon = getSendStatusIcon(sendPreferences);
+                const contactSignatureInfo = {
+                    isVerified: encryptionPreferences.isContactSignatureVerified,
+                    creationTime: encryptionPreferences.contactSignatureTimestamp,
+                };
+                return {
+                    emailAddress,
+                    sendInfo: {
+                        sendPreferences,
+                        sendIcon,
+                        loading: false,
+                        emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
+                        contactSignatureInfo,
+                        emailValidation: validateEmailAddress(emailAddress),
+                    },
+                };
+            });
             const loadingMapSendInfo = recipients.reduce(
                 (acc, emailAddress) => {
                     const sendInfo = acc[emailAddress] || { emailValidation: validateEmailAddress(emailAddress) };
@@ -446,9 +477,22 @@ export const useReloadSendInfo = () => {
                 { ...mapSendInfo }
             );
             setMapSendInfo(loadingMapSendInfo);
+
             // the routes called in requests support 100 calls every 10 seconds
-            await processApiRequestsSafe(requests, 100, 10 * 1000);
+            const processedSendInfoRequests = await processApiRequestsSafe(sendInfoRequests, 100, 10 * 1000);
+            const provisionalSendInfoMap = processedSendInfoRequests.reduce<MapSendInfo>(
+                (acc, { emailAddress, sendInfo }) => {
+                    acc[emailAddress] = sendInfo;
+                    return acc;
+                },
+                {}
+            );
+
+            const addresses = await getAddresses();
+            const senderAddress = getAddressFromEmail(addresses, message.data?.Sender.Address);
+            const isBYOESender = senderAddress ? getIsBYOEAddress(senderAddress) : false;
+            setMapSendInfo(getMaybeAlteredSendInfoForBYOE(isBYOESender, recipients, provisionalSendInfoMap));
         },
-        [getEncryptionPreferences, contactsMap, ktActivation]
+        [getEncryptionPreferences, contactsMap, getAddresses]
     );
 };

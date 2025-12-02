@@ -46,6 +46,7 @@ const getSendPreferences = (
         error,
         ktVerificationResult,
         encryptionDisabled: isInternalWithDisabledE2EEForMail,
+        isInternal: encryptionPreferences.isInternal,
     };
 };
 

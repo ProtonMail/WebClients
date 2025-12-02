@@ -51,7 +51,7 @@ const useSendIcs = () => {
             to,
             subject,
             plainTextBody = '',
-            sendPreferencesMap = {},
+            sendPreferencesMap: cachedSendPreferencesMap = {},
             contactEmailsMap,
         }: SendIcsParams) => {
             if (!to.length) {
@@ -101,12 +101,14 @@ const useSendIcs = () => {
                 Attachments: [pick(attachment, ['Filename', 'MIMEType', 'Contents'])],
                 Flags: Sign ? MESSAGE_FLAGS.FLAG_SIGN : undefined,
             };
-            const sendPrefsMap: SimpleMap<SendPreferences> = {};
+
+            // NB: using calendar with a BYOE address is not supported, hence send preferences do not need to be altered
+            const sendPreferencesMap: SimpleMap<SendPreferences> = {};
             await Promise.all(
                 emails.map(async (email) => {
-                    const existingSendPreferences = sendPreferencesMap[email];
+                    const existingSendPreferences = cachedSendPreferencesMap[email];
                     if (existingSendPreferences) {
-                        sendPrefsMap[email] = existingSendPreferences;
+                        sendPreferencesMap[email] = existingSendPreferences;
                         return;
                     }
                     const encryptionPreferences = await getEncryptionPreferences({
@@ -114,20 +116,19 @@ const useSendIcs = () => {
                         lifetime: 0,
                         contactEmailsMap,
                     });
-                    const sendPreferences = getSendPreferences(encryptionPreferences, directMessage);
-                    sendPrefsMap[email] = sendPreferences;
+                    sendPreferencesMap[email] = getSendPreferences(encryptionPreferences, directMessage);
                 })
             );
             // throw if trying to send a reply to an organizer with send preferences error
             if (method === ICAL_METHOD.REPLY) {
-                const sendPrefError = sendPrefsMap[to[0].Address]?.error;
+                const sendPrefError = sendPreferencesMap[to[0].Address]?.error;
                 if (sendPrefError) {
                     throw sendPrefError;
                 }
             }
             const packages = await generatePackages({
                 message: directMessage,
-                sendPreferencesMap: sendPrefsMap,
+                sendPreferencesMap,
                 attachmentData,
                 attachments: [attachment],
                 emails,
