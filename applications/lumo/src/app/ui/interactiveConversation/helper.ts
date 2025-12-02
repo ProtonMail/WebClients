@@ -28,7 +28,7 @@ import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/s
 import type { LumoDispatch as AppDispatch, LumoDispatch } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { SearchService } from '../../services/search/searchService';
-import type { AttachmentId, MessageId, ShallowAttachment } from '../../types';
+import type { AttachmentId, MessageId, ShallowAttachment, Turn } from '../../types';
 import {
     type Attachment,
     type ConversationId,
@@ -469,6 +469,10 @@ export type SettingsContext = {
     personalization: PersonalizationSettings;
 };
 
+function removeEmptyAssistantTurns(turns: Turn[]) {
+    return turns.filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
+}
+
 export function sendMessage({
     applicationContext: a,
     newMessageData: m,
@@ -645,36 +649,6 @@ export function sendMessage({
         const userId = state.user?.value?.ID;
         // Call the LLM.
         try {
-            // await dispatch(
-            //     fetchAssistantResponse({
-            //         api: a.api,
-            //         linearChain: newLinearChain,
-            //         spaceId,
-            //         conversationId,
-            //         assistantMessageId: assistantMessageWithContext.id,
-            //         signal: a.signal,
-            //         enableExternalTools: noAttachment && ui.enableExternalToolsToggled,
-            //         requestTitle: shouldRequestTitle,
-            //         contextFilters: c.contextFilters,
-            //         personalizationPrompt,
-            //         attachments: c.allConversationAttachments,
-            //     })
-            // );
-
-            // --- BEGIN fetchAssistantResponse ---
-            // --- params: ---
-            // api,
-            // linearChain,
-            // spaceId,
-            // conversationId,
-            // assistantMessageId,
-            // signal,
-            // enableExternalTools,
-            // requestTitle = false,
-            // contextFilters = [],
-            // personalizationPrompt,
-            // attachments = [],
-
             const api = a.api;
             const linearChain = newLinearChain;
             const assistantMessageId = assistantMessageWithContext.id;
@@ -794,16 +768,7 @@ export function sendMessage({
                 turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, updatedLinearChain, attachments))
             );
 
-            turns = turns
-                // FIXME: I think the filter is useless? personalization isn't injected in System turns
-                // .filter((_turn) => {
-                //     // Keep system messages that contain personalization, filter out other system messages
-                //     if (turn.role === Role.System) {
-                //         return personalizationPrompt && turn.content === personalizationPrompt;
-                //     }
-                //     return true;
-                // })
-                .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
+            turns = removeEmptyAssistantTurns(turns);
 
             await dispatch(
                 sendMessageWithRedux(api, turns, {
