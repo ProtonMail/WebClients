@@ -1,10 +1,10 @@
 import { c } from 'ttag'
-import { createStringifier } from '../stringifier'
+import { createStringifier } from '../../stringifier'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { useApplication } from '../../ApplicationProvider'
+import { useApplication } from '../../../ApplicationProvider'
 import { useActiveBreakpoint } from '@proton/components'
 import { useEffect, useState } from 'react'
-import { Icon } from './ui'
+import { Icon } from '../ui'
 
 const { s } = createStringifier(strings)
 
@@ -34,7 +34,7 @@ export function EditingDisabledButton({ clientInvoker }: EditingButtonProps) {
     return () => {
       ignore = true
     }
-  }, [clientInvoker, setIsRunningInNativeMobileWeb])
+  }, [clientInvoker])
 
   const visible = isRunningInNativeMobileWeb && canEdit && isSmallViewport
   if (!visible) {
@@ -43,6 +43,7 @@ export function EditingDisabledButton({ clientInvoker }: EditingButtonProps) {
 
   return (
     <button
+      type="button"
       onClick={() => {
         clientInvoker.showGenericInfoModal({
           title: s('Mobile Editing Coming Soon'),
