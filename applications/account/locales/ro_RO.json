@@ -1056,6 +1056,9 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Deschideți ${ PASS_APP_NAME } în navigatorul web"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Deschidere în ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -1324,7 +1327,7 @@
         "Selectare fișiere"
       ],
       "Select language for invitation emails": [
-        "Selectare limbă pentru conținutul invitaților"
+        "Selectare limbă pentru conținutul invitațiilor"
       ],
       "Select time zone": [
         "Selectare fus orar"
@@ -1621,7 +1624,7 @@
         "Folosire adresă de e-mail actuală"
       ],
       "Use “${ label }” setting": [
-        "Folosire setarea „${ label }”"
+        "Utilizare setarea „${ label }”"
       ],
       "User": [
         "Utilizator"
@@ -1723,7 +1726,7 @@
     },
     "Action; decline invitation to share calendar": {
       "Decline": [
-        "Refuzare"
+        "Respingere"
       ]
     },
     "Addon": {
@@ -2884,7 +2887,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Creați o legătură web către calendar și partajați-o cu oricine din afara ${ BRAND_NAME }. Numai dvs. puteți adăuga sau elimina evenimente."
+        "Creați o legătură către calendar și partajați-o cu oricine din afara ${ BRAND_NAME }. Numai dvs. puteți adăuga sau elimina evenimente."
       ]
     },
     "Calendar settings private share description": {
@@ -4744,7 +4747,7 @@
         "Vă puteți personaliza lista de domenii în care anumite funcții automate din extensia de navigator web ${ PASS_APP_NAME } (autocompletare, autosugerare, autosalvare) nu ar trebui să fie executate."
       ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
-        "Puteți aplica regulile pentru parole pe care membrii organizației le vor folosi atunci când generează o parolă în ${ PASS_APP_NAME }."
+        "Puteți impune regulile pentru parolele pe care membrii organizației le vor folosi atunci când generează o parolă în ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
@@ -5487,7 +5490,7 @@
         "Reluare"
       ],
       "Save": [
-        "Salvare"
+        "Economisiți"
       ],
       "Send confirmation email": [
         "Trimitere e-mail de confirmare"
@@ -5568,19 +5571,19 @@
         "Pentru compatibilitate, criptarea post-cuantică va fi dezactivată și va fi generată o cheie de criptare pentru ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Destinatarul redirecționării este invitat și trebuie să accepte/refuze invitația sau să actualizeze."
+        "Destinatarul transferării este invitat și trebuie să accepte/refuze invitația sau să o actualizeze."
       ],
       "Forwarding is active": [
         "Transferarea este activă."
       ],
       "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
-        "Redirecționarea către ${ boldForwardeeEmail } va deveni activă după ce destinatarul acceptă solicitarea."
+        "Transferarea către ${ boldForwardeeEmail } va deveni activă după ce destinatarul acceptă solicitarea."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "Transferarea mesajelor către o adresă fără criptare bilaterală va dezactiva criptarea bilaterală pentru adresa proprie ${ boldForwarderEmail }, dar criptarea cu acces zero rămâne activată. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
-        "Redirecționarea către această adresă se va activa după ce destinatarul acceptă redirecționarea."
+        "Transferarea către această adresă se va activa după ce destinatarul o acceptă."
       ],
       "No incoming forwarding rules": [
         "Nu există reguli de intrare pentru transferare mesaje."
@@ -5612,10 +5615,10 @@
         "Transferat de la"
       ],
       "Forward to": [
-        "Redirecționare către"
+        "Transferare către"
       ],
       "or": [
-        "SAU"
+        "sau"
       ],
       "Or": [
         "SAU"
@@ -5664,7 +5667,7 @@
         "Criptarea bilaterală va fi reactivată pentru adresa de expediere."
       ],
       "Forwarding to the destination address will end.": [
-        "Transferarea mesajelor către adresa de destinație se va încheia."
+        "Transferarea mesajelor către adresa de destinație se va opri."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -5675,7 +5678,7 @@
         "Refuzată"
       ],
       "Outdated": [
-        "Învechită"
+        "Învechit"
       ],
       "Paused": [
         "Suspendată"
@@ -5695,7 +5698,7 @@
         "Transferare acceptată."
       ],
       "Forwarding declined": [
-        "Redirecționare refuzată."
+        "Transferare refuzată."
       ],
       "Forwarding deleted": [
         "Transferare ștearsă."
@@ -5704,12 +5707,12 @@
         "Transferare mesaje suspendată."
       ],
       "Forwarding resumed": [
-        "Redirecționare reluată."
+        "Transferare reluată."
       ]
     },
     "email_forwarding_2023: Title": {
       "Delete forwarding?": [
-        "Ștergere redirecționare?"
+        "Ștergeți transferarea?"
       ],
       "Email forwarding deactivated": [
         "Transferare mesaje dezactivată"
@@ -6956,9 +6959,9 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "S-a exportat ${ totalProcessed }/${ totalToProcess } eveniment.",
-        "S-au exportat ${ totalProcessed }/${ totalToProcess } evenimente.",
-        "S-au exportat ${ totalProcessed }/${ totalToProcess } de evenimente."
+        "Evenimente exportate: ${ totalProcessed }/${ totalToProcess }",
+        "Evenimente exportate: ${ totalProcessed }/${ totalToProcess }",
+        "Evenimente exportate: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Calendarul a fost exportat cu succes. Acum puteți salva fișierul ICS."
@@ -7761,7 +7764,7 @@
         "${ appName } din App Store"
       ],
       "${ appName } on Play Store": [
-        "${ appName } din Magazin Play"
+        "${ appName } în Magazin Play"
       ]
     },
     "Gmail forwarding": {
@@ -8017,7 +8020,7 @@
         "Acțiuni"
       ],
       "Created": [
-        "Creare"
+        "Creat"
       ],
       "Email address": [
         "Adresa de e-mail"
@@ -8034,7 +8037,7 @@
         "Sărbători"
       ],
       "Other": [
-        "Altul"
+        "Altă problemă"
       ],
       "Subscribed": [
         "Abonat"
@@ -8395,7 +8398,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Importați o cheie privată? Importarea unei chei private generate în mod nesigur sau care a fost compromisă poate afecta securitatea mesajelor.\n\nÎn plus, cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele complet) pe care nu doriți să le publicați, vă recomandăm să editați cheia înainte de a o importa."
+        "Sigur doriți să importați o cheie privată? Importarea unei chei private generate în mod nesigur sau care a fost compromisă poate afecta securitatea mesajelor.\n\nÎn plus, cheia publică corespunzătoare acestei chei private va fi disponibilă public pe serverul nostru de chei. Dacă cheia conține detalii personale (cum ar fi numele complet) pe care nu doriți să le publicați, vă recomandăm să editați cheia înainte de a o importa."
       ]
     },
     "Import provider": {
@@ -8487,7 +8490,7 @@
         "Dacă este reactivată, cheia va fi folosită pentru decriptare."
       ],
       "If reactivated, the key will be used for decryption and verification": [
-        "Dacă este reactivată, cheia va fi folosită pentru decriptare și verificare"
+        "Dacă este reactivată, cheia va fi folosită pentru decriptare și verificare."
       ]
     },
     "Info": {
@@ -8891,7 +8894,7 @@
         "activă"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
+        "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă „${ MAIL_APP_NAME }-ul meu” sau „Mesaj privat mie”."
       ],
       "add a recovery method": [
         "adăugat o metodă de recuperare"
@@ -9118,7 +9121,7 @@
         "Răspunsul automat este activ în fiecare lună între data de activare și de dezactivare."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Răspunsul automat este activ săptămânal între data de activare și de dezactivare."
+        "Autorăspunsul este activ săptămânal între ora de început și ora de sfârșit selectate."
       ],
       "Auto-reply is active from the start time to the end time.": [
         "Autorăspunsul este activ între ora de activare și ora de dezactivare."
@@ -9394,7 +9397,7 @@
         "Ștergeți orice alte înregistrări MX sau asigurați-vă că prioritatea pentru ${ MAIL_APP_NAME } are cel mai mic număr."
       ],
       "Delete link?": [
-        "Ștergeți legătura?"
+        "Ștergeți legătura web?"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Ștergeți mesajele din gunoi și cele nedorite după 30 de zile. Activând ștergerea automată, mesajele aflate deja în „Gunoi”/„Nedorite” vor avea o dată de ștergere în funcție de data mutării lor acolo."
@@ -9557,7 +9560,7 @@
         "Activați autentificarea unică pentru a vă menține organizația în siguranță."
       ],
       "Enable this address to join this calendar": [
-        "Permiteți acestei adrese să se alăture acestui calendar"
+        "Activare această adresă pentru alăturarea la acest calendar"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Activați TLS sau SSL în serviciul extern dacă se poate."
@@ -9683,7 +9686,7 @@
         "Eșuare preluare jurnale."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rapid și eficient. E-mail și calendar chiar de pe desktop."
+        "Rapid și eficient. E-mail și calendar chiar de desktop."
       ],
       "Featured in": [
         "Menționat în"
@@ -9800,7 +9803,7 @@
         "aici"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Ascunde informațiile de identificare prin încărcarea conținutului de la distanță prin intermediul unui proxy. Opțiunea de stocare a conținutului ca atașament."
+        "Ascunde informațiile de identificare încărcând conținutul de la distanță prin intermediul unui proxy. Opțiunea de stocare conținut ca atașament."
       ],
       "High Priority": [
         "Prioritate înaltă"
@@ -9812,7 +9815,7 @@
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
       ],
       "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Dacă e dezactivată, noii membri ai organizației vor avea nevoie de un administrator pentru a le crea manual primul seif (prin partajare) pentru a putea începe să-și creeze articolele."
+        "Dacă este dezactivată, noii membri ai organizației vor avea nevoie de un administrator pentru a le crea manual primul seif (prin partajare) pentru a putea începe să creeze elemente."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Dacă e dezactivată, doar administratorii vor putea să exporte date."
@@ -10122,7 +10125,7 @@
         "Legătura web a fost creată."
       ],
       "Link deleted": [
-        "Legătura a fost ștearsă."
+        "Legătura web a fost ștearsă."
       ],
       "Link expired": [
         "legătură web expirată."
@@ -10615,7 +10618,7 @@
         "Eliminați metadatele din imagini pentru a vă proteja confidențialitatea."
       ],
       "Remove one of your calendars to join this one": [
-        "Eliminați unul din calendare pentru a vă alătura acestuia"
+        "Eliminați unul din calendare pentru a vă alătura acestuia."
       ],
       "Report link expired": [
         "legătură web de raportare expirată."
@@ -10785,10 +10788,10 @@
         "Trimiterea prin SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "Trimiterea SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale. Pentru a solicita acces, trebuie să ${ createTicket } care vă descrie cazul de utilizare, ce domenii personale doriți să utilizați și volumul de mesaje orar și zilnic preconizat."
+        "Trimiterea prin SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale. Pentru a solicita acces, trebuie să ${ createTicket } care vă descrie cazul de utilizare, ce domenii personale doriți să utilizați și volumul de mesaje orar și zilnic preconizat."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Trimiterea SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale. Pentru a utiliza această caracteristică, începeți prin a genera un cod de acces nou."
+        "Trimiterea prin SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale. Pentru a utiliza această caracteristică, începeți prin a genera un cod de acces nou."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Amânați mesajele pentru mai târziu, astfel încât să apară în mesajele primite când doriți."
@@ -10861,7 +10864,7 @@
         "Asistența pentru monitorizarea domeniilor personale și a adreselor de e-mail care nu aparțin de ${ BRAND_NAME } va fi disponibilă în curând."
       ],
       "Support for post-quantum keys is enabled for your account.": [
-        "Suportul pentru cheile post-cuantice este activată pentru acest cont."
+        "Suportul pentru cheile post-cuantice este activat pentru acest cont."
       ],
       "support team": [
         "echipa de asistență"
@@ -10909,7 +10912,7 @@
         "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele de la ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "${ MAIL_APP_NAME } Export Tool vă permite să exportați e-mailuri decriptate din contul ${ MAIL_APP_NAME } pe dispozitiv. Apoi puteți vizualiza mesajele sau le puteți importa într-un alt cont sau client de e-mail."
+        "Unealta de exportare a ${ MAIL_APP_NAME } vă permite să exportați e-mailuri decriptate din contul ${ MAIL_APP_NAME } pe dispozitiv. Apoi puteți vizualiza mesajele sau le puteți importa într-un alt cont sau client de e-mail."
       ],
       "The calendar will be removed from your account.": [
         "Calendarul va fi eliminat din cont."
@@ -11251,7 +11254,7 @@
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
+        "Modificați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME }-ul meu” sau „Mesaj privat mie”."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
@@ -11356,7 +11359,7 @@
         "Versiunea ${ version }"
       ],
       "Version history": [
-        "Istoric versiuni"
+        "Istoric versiuni fișiere"
       ],
       "Version number successfully copied to clipboard": [
         "Numărul versiunii a fost copiat în memorie."
@@ -11527,7 +11530,7 @@
         "Cu grupuri, puteți trimite rapid și ușor mesaje tuturor persoanelor dintr-un anumit grup."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "Cu planul actual, puteți primi doar mesaje cu adresa @pm.me. Modernizați contul pentru a putea și trimite mesaje și a crea adrese suplimentare folosind @pm.me."
+        "Cu planul actual, puteți primi doar mesaje cu adresa @pm.me. Modificați tipul de abonament pentru a putea și trimite mesaje și a crea adrese suplimentare folosind @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
@@ -12109,7 +12112,7 @@
         "Dacă ați generat această cheie deoarece suspectați că cea anterioară a fost compromisă, marcați-o ca fiind compromisă în setări."
       ],
       "Key generation failed, please try again later.": [
-        "Generarea cheii a eșuat. Mai reîncercați."
+        "Generarea cheii a eșuat. Mai încercați."
       ],
       "Key successfully generated.": [
         "Cheia a fost generată."
@@ -12144,13 +12147,13 @@
         "Inactivă"
       ],
       "Invalid": [
-        "Nevalid"
+        "Nevalidă"
       ],
       "Obsolete": [
         "Nevalabilă"
       ],
       "Primary": [
-        "Primară"
+        "Primar"
       ]
     },
     "Key type hint": {
@@ -13001,7 +13004,7 @@
         "Activă"
       ],
       "End date": [
-        "Data sfârșit"
+        "Data de sfârșit"
       ],
       "End day of month": [
         "Ultima zi a lunii"
@@ -13163,7 +13166,7 @@
         "Păstrați-mă conectat"
       ],
       "Keep messages in Sent/Drafts": [
-        "Păstrare mesaje în Ciorne/Trimise"
+        "Păstrare mesaje în Trimise/Ciorne"
       ],
       "Key": [
         "Cheia"
@@ -13549,7 +13552,7 @@
         "Afișare imagini expeditori"
       ],
       "Show unread count in Favicon": [
-        "Afișare contor necitite pe Favicon"
+        "Afișare contor mesaje necitite pe pictograma web"
       ],
       "Show week numbers": [
         "Afișare număr săptămână"
@@ -13573,10 +13576,10 @@
         "Server SMTP"
       ],
       "SMTP token": [
-        "Cod acces SMTP"
+        "Cod de acces SMTP"
       ],
       "SMTP username": [
-        "Nume utilizator SMTP"
+        "Utilizator SMTP"
       ],
       "Spam": [
         "Nedorite"
@@ -13821,7 +13824,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Notificări eveniment toată ziua"
+        "Notificări evenimente toată ziua"
       ],
       "Notifications": [
         "Notificări"
@@ -13871,7 +13874,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Mare"
+        "Maximizat"
       ],
       "Normal": [
         "Normal"
@@ -14139,6 +14142,9 @@
       ],
       "Terms": [
         "Termeni"
+      ],
+      "terms of our referral program": [
+        "condițiile programului nostru de recomandare"
       ],
       "Trouble signing in?": [
         "Aveți probleme la autentificare?"
@@ -16026,7 +16032,7 @@
         "Cheia cu amprenta ${ fp } a fost ștearsă."
       ],
       "Key with fingerprint ${ fp } is now primary.": [
-        "Cheia cu amprentă ${ fp } este acum principală."
+        "Cheia cu amprenta ${ fp } este acum principală."
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
@@ -16462,7 +16468,7 @@
         "Arhivă"
       ],
       "Ask each time": [
-        "Întrebare de fiecare dată"
+        "Întreabă de fiecare dată"
       ],
       "Auto": [
         "Automat"
@@ -16516,7 +16522,7 @@
         "macOS"
       ],
       "Mark as read": [
-        "Marcare ca citit"
+        "Marcare - citit"
       ],
       "Move to...": [
         "Mutare în..."
@@ -16534,7 +16540,7 @@
         "Niciuna"
       ],
       "Normal": [
-        "Normal"
+        "Normală"
       ],
       "Not allowed": [
         "Nepermis"
@@ -16952,6 +16958,9 @@
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Continuând, sunteți de acord cu ${ termsAndConditionsLink } și cu ${ privacyPolicyLink }."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
+        "Continuând, sunteți de acord cu ${ termsAndConditionsLink }, cu ${ privacyPolicyLink } și cu ${ referralPolicyLink }."
       ],
       "Creating your account": [
         "Se creează contul"
@@ -17749,7 +17758,7 @@
         "Cod poştal"
       ],
       "Printer": [
-        "Imprimare"
+        "Imprimantă"
       ],
       "Search": [
         "Căutare"
@@ -17914,12 +17923,12 @@
     },
     "PQC account key generation": {
       "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Protecția post-cuantică a fost activată pentru acest cont., dar unele operațiuni nu au avut succes: generarea cheilor post-cuantice pentru cont și adresă a eșuat. Puteți genera manual aceste chei în secțiunea ${ encryptionAndKeysSettingsTitle } din setări."
+        "Protecția post-cuantică a fost activată pentru acest cont, dar unele operațiuni nu au avut succes: generarea cheilor post-cuantice pentru cont și adresă a eșuat. Puteți genera manual aceste chei în secțiunea ${ encryptionAndKeysSettingsTitle } din setări."
       ]
     },
     "PQC adress key generation": {
       "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Protecția post-cuantică a fost activată pentru acest cont., dar unele operațiuni nu au avut succes: generarea cheilor post-cuantice pentru una sau mai multe adrese a eșuat. Puteți genera manual aceste chei în secțiunea ${ encryptionAndKeysSettingsTitle } din setări."
+        "Protecția post-cuantică a fost activată pentru acest cont, dar unele operațiuni nu au avut succes: generarea cheilor post-cuantice pentru una sau mai multe adrese a eșuat. Puteți genera manual aceste chei în secțiunea ${ encryptionAndKeysSettingsTitle } din setări."
       ]
     },
     "PQC compatibility warning": {
@@ -18229,7 +18238,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Prin dezabonare, nu veți mai avea acces la acest calendar. Toate evenimentele din acest calendar vor fi șterse din cont, dar vor rămâne în legătura publică originală."
+        "Prin dezabonare, nu veți mai avea acces la acest calendar. Toate evenimentele din acest calendar vor fi șterse din cont, dar vor rămâne în legătura web publică originală."
       ],
       "You will no longer have access to this calendar.": [
         "Nu veți mai avea acces la acest calendar."
@@ -18245,16 +18254,16 @@
     },
     "Remove calendar section title": {
       "Delete calendar?": [
-        "Ștergere calendar?"
+        "Ștergeți calendarul?"
       ],
       "Leave calendar?": [
-        "Părăsire calendar?"
+        "Părăsiți calendarul?"
       ],
       "Remove calendar": [
         "Eliminare calendar"
       ],
       "Unsubscribe?": [
-        "Dezabonare?"
+        "Vă dezabonați?"
       ]
     },
     "Remove organization logo": {
@@ -19385,7 +19394,7 @@
         "Obținere actualizări despre comentarii prin e-mail"
       ],
       "Include document name in email notifications": [
-        "Includere nume document în notificările de pe e-mail"
+        "Includere nume documente în notificările de pe e-mail"
       ]
     },
     "Settings description": {
@@ -19416,7 +19425,7 @@
         "Acțiune"
       ],
       "Name": [
-        "Nume"
+        "Numele"
       ],
       "Order": [
         "Ordonare"
@@ -20690,7 +20699,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars.": [
-        "Adăugare calendare publice, externe sau partajate."
+        "Adăugați calendare publice, externe sau partajate."
       ]
     },
     "Subscription": {
@@ -21243,7 +21252,7 @@
         "Adresa a fost adăugată."
       ],
       "Address updated": [
-        "Adresă actualizată."
+        "Adresa a fost actualizată."
       ],
       "Administrator privileges restored": [
         "Privilegiile de administrator s-au restaurat."
@@ -21294,7 +21303,7 @@
         "Credite adăugate"
       ],
       "Default calendar updated": [
-        "Calendarul implicit a fost actualizat."
+        "Calendar implicit actualizat"
       ],
       "Device deleted": [
         "Dispozitivul a fost șters."
@@ -21402,7 +21411,7 @@
         "Preferințe salvate"
       ],
       "Premium address created": [
-        "Adresă premium creată."
+        "S-a creat adresa premium."
       ],
       "Problem reported": [
         "Problemă raportată"
@@ -21426,7 +21435,7 @@
         "Valoarea SPF a fost copiată în memorie"
       ],
       "Token copied to clipboard": [
-        "Cod de acces copiat în memorie."
+        "Codul de acces a fost copiat în memorie."
       ],
       "Undo in progress": [
         "Anulare în desfășurare"
@@ -21563,7 +21572,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Detalii despre evenimentele care nu au putut fi exportate."
+        "Detalii despre evenimentele care nu au putut fi exportate"
       ]
     },
     "summer2023: Tooltip": {
@@ -22514,7 +22523,7 @@
         "Generare frază nouă de recuperare?"
       ],
       "Generate SMTP token": [
-        "Generare cod acces SMTP"
+        "Generare cod de acces SMTP"
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Obțineți ${ planMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale cu ${ planName }. ${ upgradeButton }"
@@ -23171,6 +23180,9 @@
       "Time zone": [
         "Fus orar"
       ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Pentru a examina această foaie de calcul, deschideți-o în ${ SHEETS_APP_NAME } sau descărcați-o."
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Încercați ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -23487,7 +23499,7 @@
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Permite adăugarea fără probleme a legăturilor de conferințe video Zoom la invitațiile personale din calendar."
+        "Permite adăugarea fără probleme a legăturilor web de conferințe video Zoom la invitațiile personale din calendar."
       ],
       "Any protection applied to suspicious activity": [
         "Tipul de protecție aplicat activităților suspecte."
@@ -23511,7 +23523,7 @@
         "Modificare opțiuni de importare pentru a reduce numărul de etichete."
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Ștergeți mesajele din gunoi și nedorite după 30 de zile. Activând ștergerea automată, mesajele aflate deja în „Gunoi”/„Nedorite” vor avea o dată de ștergere în funcție de data mutării lor acolo."
+        "Ștergeți mesajele din gunoi și cele nedorite după 30 de zile. Activând ștergerea automată, mesajele aflate deja în „Gunoi”/„Nedorite” vor avea o dată de ștergere în funcție de data mutării lor acolo."
       ],
       "Device name and app version": [
         "Nume dispozitiv și versiune aplicație"
@@ -23562,7 +23574,7 @@
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Grupare mesaje din aceeași conversație sau afișare separată."
+        "Grupare mesaje primite din aceeași conversație sau afișarea lor separată."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Cheia publică a furnizorului de identitate pentru a semna declarațiile de autentificare. Obțineți hash-ul certificatului de la furnizorul propriu de identitate."
@@ -23673,7 +23685,7 @@
         "Această cheie este criptată cu o parolă veche."
       ],
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "Cheia este folosită de către ${ MAIL_APP_NAME } pentru a vă cripta datele contactelor."
+        "Această cheie este folosită de către ${ MAIL_APP_NAME } pentru a vă cripta datele contactelor."
       ],
       "This key is used for email forwarding": [
         "Această cheie este folosită pentru transferarea mesajelor."

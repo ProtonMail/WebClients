@@ -2898,11 +2898,11 @@
       "Doesn't end": [
         "Bez ukončenia"
       ],
-      "End after": [
-        "Ukončiť po"
+      "Ends after": [
+        "Skončí po"
       ],
-      "End on": [
-        "Koniec"
+      "Ends on": [
+        "Končí"
       ],
       "event": [
         "udalosť",
@@ -3729,6 +3729,9 @@
       "Last name is too long": [
         "Priezvisko je príliš dlhé"
       ],
+      "Location is required": [
+        "Poloha je povinná"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Zlúčte aspoň ${ calendarsToFixCount } kalendár s existujúcim ${ BRAND_NAME } kalendárom",
         "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi",
@@ -3810,9 +3813,6 @@
       "Payment process not supported": [
         "Proces platby nie je podporovaný"
       ],
-      "Periods is too short": [
-        "Obdobie je príliš krátke"
-      ],
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
       ],
@@ -3872,6 +3872,9 @@
       ],
       "Process aborted": [
         "Proces prerušený"
+      ],
+      "Range is too short": [
+        "Rozsah je príliš krátky"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Odstránený duplicitný príjemca: ${ joinedRecipients }",
@@ -5396,8 +5399,8 @@
       "Cannot create booking range across days": [
         "Nie je možné vytvoriť rezerváciu v rozsahu viacerých dní"
       ],
-      "Cannot create booking range in the past": [
-        "Nie je možné vytvoriť rozsah rezervácie v minulosti"
+      "Cannot create booking range in the past.": [
+        "Nie je možné vytvoriť rozsah rezervácie v minulosti."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
@@ -5446,9 +5449,6 @@
       ],
       "Copy your referral link": [
         "Kopírujte váš odporúčací odkaz"
-      ],
-      "Could not verify signature over booking page data": [
-        "Nepodarilo sa overiť podpis pre údaje stránky rezervácie"
       ],
       "Country code": [
         "Kód krajiny"
@@ -5659,9 +5659,6 @@
       ],
       "Host": [
         "Hostiteľ"
-      ],
-      "Host signature verification failed": [
-        "Overenie podpisu hostiteľa zlyhalo"
       ],
       "How long should an appointment last?": [
         "Ako dlho by mala trvať schôdzka?"
@@ -6172,6 +6169,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Táto adresa nie je povolená. Ak chcete odosielať správy na túto adresu, musí ju majiteľ najskôr povoliť."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Túto rezervačnú stránku nie je možné upraviť, pridružený kalendár je deaktivovaný"
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Táto rezervácia bola vykonaná prostredníctvom ${ CALENDAR_APP_NAME }, súčasti sady produktov ${ BRAND_NAME } zameraných na ochranu súkromia."

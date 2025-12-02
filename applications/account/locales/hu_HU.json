@@ -4,20 +4,9 @@
     "language": "hu_HU"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "Címke nélküli"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "Teljes megtekintés"
-      ],
       "Full view (see all event details)": [
         "Teljes megtekintés (az esemény összes adatának megtekintése)"
-      ],
-      "Limited view": [
-        "Korlátozott megtekintés"
       ],
       "Limited view (see only free/busy)": [
         "Korlátozott megtekintés (csak a szabad/elfoglalt állapot)"
@@ -79,9 +68,6 @@
       "Activate": [
         "Aktiválás"
       ],
-      "Activate ${ user.Name }@pm.me": [
-        "${ user.Name }@pm.me aktiválása"
-      ],
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
       ],
@@ -106,9 +92,6 @@
       "Add another account": [
         "Másik fiók hozzáadása"
       ],
-      "Add calendar from URL": [
-        "Naptár hozzáadása URL címről"
-      ],
       "Add condition": [
         "Új feltétel"
       ],
@@ -127,9 +110,6 @@
       "Add external address": [
         "Külső cím hozzáadása"
       ],
-      "Add filter": [
-        "Új szűrő"
-      ],
       "Add folder": [
         "Új mappa"
       ],
@@ -147,9 +127,6 @@
       ],
       "Add public holidays": [
         "Munkaszüneti napok hozzáadása"
-      ],
-      "Add sieve filter": [
-        "Új Sieve szűrő"
       ],
       "Add user": [
         "Felhasználó hozzáadása"
@@ -177,12 +154,6 @@
       ],
       "Apply": [
         "Alkalmazás"
-      ],
-      "Apply filter “${ Name }” to existing messages": [
-        "\"${ Name }\" szűrő alkalmazása a meglévő üzenetekre"
-      ],
-      "Apply to existing messages": [
-        "Alkalmazás a meglévő üzenetekre"
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
@@ -307,9 +278,6 @@
       "Connected": [
         "Csatlakoztatva"
       ],
-      "Contact sales": [
-        "Vegye fel a kapcsolatot értékesítőinkkel"
-      ],
       "Contact support": [
         "Kapcsolatfelvétel"
       ],
@@ -352,26 +320,11 @@
       "Copy password": [
         "Jelszó másolása"
       ],
-      "Copy SMTP port": [
-        "SMTP port másolása"
-      ],
-      "Copy SMTP server": [
-        "SMTP szerver másolása"
-      ],
-      "Copy SMTP token": [
-        "SMTP token másolása"
-      ],
-      "Copy SMTP username": [
-        "SMTP felhasználónév másolása"
-      ],
       "Copy version number to clipboard": [
         "A verziószám másolása a vágólapra"
       ],
       "Create": [
         "Létrehozás"
-      ],
-      "Create a link to share with anyone outside ${ BRAND_NAME }": [
-        "A ${ BRAND_NAME }on kívüli megosztáshoz hozzon létre egy hivatkozást"
       ],
       "Create account": [
         "Fiók létrehozása"
@@ -387,9 +340,6 @@
       ],
       "Create label": [
         "Címke létrehozása"
-      ],
-      "Create link": [
-        "Hivatkozás létrehozása"
       ],
       "Create new password": [
         "Új jelszó készítése"
@@ -430,20 +380,11 @@
       "Delete account": [
         "Fiók törlése"
       ],
-      "Delete and confirm": [
-        "Törlés és megerősítés"
-      ],
-      "Delete filter “${ Name }”": [
-        "„${ Name }” szűrő törlése"
-      ],
       "Delete Gateway": [
         "Átjáró törlése"
       ],
       "Delete group": [
         "Csoport törlése"
-      ],
-      "Delete link": [
-        "Hivatkozás törlése"
       ],
       "Delete logo": [
         "Logó törlése"
@@ -463,14 +404,8 @@
       "Delete record": [
         "Elem törlése"
       ],
-      "Delete token “${ token.Name }”": [
-        "“${ token.Name }” token törlése"
-      ],
       "Delete user": [
         "Felhasználó törlése"
-      ],
-      "Delete without exporting": [
-        "Törlés exportálás nélkül"
       ],
       "Delete your account": [
         "Fiók törlése"
@@ -532,14 +467,8 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
       ],
-      "Download Bridge for ${ platform }": [
-        "Bridge letöltése ${ platform } eszközökre"
-      ],
       "Download CSV sample": [
         "CSV minta letöltése"
-      ],
-      "Download ICS": [
-        "ICS letöltése"
       ],
       "Download logs": [
         "Naplók letöltése"
@@ -549,9 +478,6 @@
       ],
       "Download recovery file": [
         "Helyreállító fájl letöltése"
-      ],
-      "Download the ${ MAIL_APP_NAME } Export Tool": [
-        "${ MAIL_APP_NAME } Export Tool letöltése"
       ],
       "Download the desktop app": [
         "Asztali alkalmazás letöltése"
@@ -573,9 +499,6 @@
       ],
       "Edit email address": [
         "E-mail cím módosítása"
-      ],
-      "Edit filter “${ Name }”": [
-        "„${ Name }” szűrő szerkesztése"
       ],
       "Edit Gateway": [
         "Átjáró szerkesztése"
@@ -631,9 +554,6 @@
       "Enable multi-user support": [
         "Többfelhasználós mód engedélyezése"
       ],
-      "Encrypt and export": [
-        "Titkosítás és exportálás"
-      ],
       "Explore ${ target }": [
         "Fedezze fel a ${ target } szolgáltatást"
       ],
@@ -649,20 +569,8 @@
       "Export": [
         "Exportálás"
       ],
-      "Export as CSV": [
-        "Exportálás CSV-ként"
-      ],
-      "Export key": [
-        "Kulcs exportálása"
-      ],
-      "Export key before deleting": [
-        "Kulcs exportálása törlés előtt"
-      ],
       "Extend": [
         "Kiterjesztés"
-      ],
-      "Filters are being applied. This might take a few minutes.": [
-        "A szűrők alkalmazása folyamatban. Ez pár percig is eltarthat."
       ],
       "Fit to window": [
         "Ablakhoz illesztés"
@@ -676,12 +584,6 @@
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
       ],
-      "Generate": [
-        "Generálás"
-      ],
-      "Generate key": [
-        "Kulcs generálása"
-      ],
       "Generate new recovery phrase": [
         "Új helyreállító jelmondat létrehozása"
       ],
@@ -690,9 +592,6 @@
       ],
       "Generate recovery phrase": [
         "Helyreállító jelmondat létrehozása"
-      ],
-      "Generate token": [
-        "Token létrehozása"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "${ planName } csomag beszerzése ${ priceCoupon } áron"
@@ -717,9 +616,6 @@
       ],
       "Get more addresses": [
         "Több cím megszerzése"
-      ],
-      "Get more filters": [
-        "Több szűrő megszerzése"
       ],
       "Get more folders": [
         "Több mappa megszerzése"
@@ -808,14 +704,8 @@
       "Import from Google": [
         "Importálás a Google-ból"
       ],
-      "Import from ICS": [
-        "Importálás ICS fájlból"
-      ],
       "Import from Outlook": [
         "Importálás az Outlookból"
-      ],
-      "Import key": [
-        "Kulcs importálása"
       ],
       "Import new SAML metadata": [
         "Új SAML metaadatok importálása"
@@ -889,9 +779,6 @@
       "Make admin": [
         "Átállítás adminisztrátornak"
       ],
-      "Make key primary": [
-        "Legyen a kulcs elsődleges"
-      ],
       "Manage advanced account protections": [
         "A speciális fiókvédelmek kezelése"
       ],
@@ -939,9 +826,6 @@
       ],
       "More info: ${ safeTitle }": [
         "További információk: ${ safeTitle }"
-      ],
-      "More info: Keyboard shortcuts": [
-        "Több információ: gyorsbillentyűk"
       ],
       "More options": [
         "További lehetőségek"
@@ -1027,9 +911,6 @@
       "Quote": [
         "Idézet"
       ],
-      "Reactivate keys": [
-        "Kulcsok újraaktiválása"
-      ],
       "Reconnect": [
         "Újrakapcsolódás"
       ],
@@ -1069,9 +950,6 @@
       "Remove button": [
         "Gomb eltávolítása"
       ],
-      "Remove calendar": [
-        "Naptár eltávolítása"
-      ],
       "Remove domain": [
         "Domain név eltávolítása"
       ],
@@ -1083,9 +961,6 @@
       ],
       "Remove this label": [
         "Címke eltávolítása"
-      ],
-      "Remove this member": [
-        "Tag eltávolítása"
       ],
       "Remove this notification": [
         "Emlékeztető törlése"
@@ -1108,9 +983,6 @@
       "Request new code": [
         "Új kód kérése"
       ],
-      "Requires a verified recovery email address": [
-        "Egy ellenőrzött helyreállítási e-mail cím szükséges"
-      ],
       "Resend code": [
         "Kód újraküldése"
       ],
@@ -1125,9 +997,6 @@
       ],
       "Reset keys": [
         "Kulcsok visszaállítása"
-      ],
-      "Reset modifications": [
-        "Módosítások alaphelyzetbe állítása"
       ],
       "Reset password": [
         "Jelszó visszaállítása"
@@ -1165,9 +1034,6 @@
       "Revoke invitation": [
         "Meghívó visszavonása"
       ],
-      "Revoke this invitation": [
-        "Meghívó visszavonása"
-      ],
       "Save": [
         "Mentés"
       ],
@@ -1179,9 +1045,6 @@
       ],
       "Save changes": [
         "Módosítások mentése"
-      ],
-      "Save ICS file": [
-        "ICS fájl mentése"
       ],
       "Save SAML configuration": [
         "SAML konfiguráció mentése"
@@ -1207,9 +1070,6 @@
       "Select ${ planOrAppName }": [
         "${ planOrAppName } választása"
       ],
-      "Select a calendar to export": [
-        "Válasszon egy naptárat az exportáláshoz"
-      ],
       "Select billing cycle ${ billingText }": [
         "Számlázási ciklus kiválasztása: ${ billingText }"
       ],
@@ -1231,12 +1091,6 @@
       "select file": [
         "fájl kiválasztása"
       ],
-      "Select files": [
-        "Fájlok kiválasztása"
-      ],
-      "Select language for invitation emails": [
-        "A meghívók nyelvének kiválasztása"
-      ],
       "Select time zone": [
         "Időzóna kiválasztása"
       ],
@@ -1248,9 +1102,6 @@
       ],
       "Send email reminder": [
         "E-mail emlékeztető beállítása"
-      ],
-      "Send messages with @pm.me": [
-        "Üzenetek küldése @pm.me címmel"
       ],
       "Send my username": [
         "Felhasználónevem elküldése"
@@ -1266,9 +1117,6 @@
       ],
       "Set as default": [
         "Beállítás alapértelmezettként"
-      ],
-      "Set as default mail application": [
-        "Beállítás alapértelmezett levelező alkalmazásnak"
       ],
       "Set catch-all": [
         "Gyűjtő e-mail beállítása"
@@ -1504,9 +1352,6 @@
       "Use your current email instead": [
         "Inkább a jelenlegi e-mail cím használata"
       ],
-      "Use “${ label }” setting": [
-        "\"${ label }\" beállítás használata"
-      ],
       "User": [
         "Felhasználó"
       ],
@@ -1595,16 +1440,6 @@
     "Action subscription": {
       "Reactivate": [
         "Újraaktiválás"
-      ]
-    },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "Elfogadás"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "Elutasítás"
       ]
     },
     "Addon": {
@@ -1732,20 +1567,6 @@
         "A folyamat megszakítása esetén, bizonyos események nem kerülnek importálásra"
       ]
     },
-    "Alias promotion": {
-      "Get 10 aliases for free!": [
-        "Szerezzen 10 e-mail álnevet ingyen!"
-      ],
-      "Get unlimited aliases!": [
-        "Szerezzen korlátlan számú e-mail álnevet!"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } kipróbálása"
-      ],
-      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
-        "A ${ PASS_APP_NAME } használatával egyedi e-mail álneveket hozhat létre, hogy elrejtse kilétét és továbbítsa az e-mailjeit a beérkezett üzenetekhez."
-      ]
-    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Ez le fogja választani az összes routert és klienst, ami ezt a tanúsítvány használja."
@@ -1841,20 +1662,10 @@
         "Nem támogatott esemény"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "Adja a naptárhoz és állítsa be őket függőnek"
-      ]
-    },
     "Autocomplete": {
       "${ hiddenResultsCount } more result not shown": [
         "${ hiddenResultsCount } további eredmény nem látható",
         "${ hiddenResultsCount } további eredmény nem látható"
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Nem vagyok az irodában, ezért korlátozott a hozzáférésem az e-mailjeimhez."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -2217,16 +2028,6 @@
         "Érzékeny adatokkal dolgozik?"
       ]
     },
-    "breadcrumb": {
-      "Calendars": [
-        "Naptárak"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "Hiba a legutóbbi verzió megkeresésekor"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
@@ -2373,40 +2174,6 @@
         "Személyek vagy csoportok hozzáadása"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "Naptár szerkesztése"
-      ]
-    },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "Letölthet egy ICS fájlt a kiválasztott naptár összes eseményével."
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Más naptárakból kimentett ICS fájlokat importálhat a ${ CALENDAR_APP_NAME } naptárba. Így egy eseményt vagy akár az egész naptárat könnyedén áthozhatja."
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "Elutasítva"
-      ],
-      "Invite sent": [
-        "Meghívó elküldve"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Címke hozzáadva"
-      ],
-      "Label deleted": [
-        "Címke törölve"
-      ],
-      "Label edited": [
-        "Címke szerkesztve"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Csak ön láthatja a címkét"
@@ -2427,39 +2194,10 @@
         "Már rendelkezik hozzáféréssel ehhez a naptárhoz"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Hozzon létre egy hivatkozást a naptárra és ossza meg bárkivel a ${ BRAND_NAME }on kívül. Csak ön fog tudni eseményeket létrehozni vagy törölni."
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Ossza meg naptárát más ${ BRAND_NAME }-felhasználókkal. Ez lehetővé teszi az együttműködést, azáltal, hogy eseményeket adhatnak hozzá és szerkeszthetnek a naptárában. A felhasználói jogosultságokat bármikor módosíthatja."
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "Naptár megosztása"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "Megosztás ${ BRAND_NAME } felhasználókkal"
-      ],
-      "Share with anyone": [
-        "Megosztás bárkivel"
-      ]
-    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "${ remainingItems } további megjelenítése",
         "${ remainingItems } további megjelenítése"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "Esemény adatainak szerkesztése"
-      ],
-      "See all event details": [
-        "Az esemény összes részlete megtekinthető"
       ]
     },
     "Calendar sharing access option label": {
@@ -2475,21 +2213,7 @@
         "Nem sikerült a partner adatainak betöltése: ${ address }"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "${ email } jogosultsága megváltoztatva"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "Aktív"
-      ],
-      "Default": [
-        "Alapértelmezett"
-      ],
-      "Disabled": [
-        "Letiltva"
-      ],
       "Not synced": [
         "Nincs szinkronizálva"
       ],
@@ -2535,11 +2259,6 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Több mint 12 óra telt el a legutóbbi frissítés óta — a ${ CALENDAR_APP_NAME } néhány órán belül megpróbálja frissíteni a naptárat."
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "Beállítások megnyitása"
       ]
     },
     "Calendar view": {
@@ -2886,11 +2605,6 @@
       ],
       "matches": [
         "egyezik"
-      ]
-    },
-    "Condition label": {
-      "If": [
-        "Ha"
       ]
     },
     "Confirm modal title": {
@@ -3952,11 +3666,6 @@
         "Szerda"
       ]
     },
-    "Default calendar event settings section title": {
-      "Default event settings": [
-        "Események alapértelmezett beállításai"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Ismeretlen"
@@ -3993,14 +3702,6 @@
         "Nem törölhet több címet ennél a felhasználónál."
       ]
     },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "Ebben a naptárban szereplő összes esemény törlésre kerül."
-      ],
-      "You will no longer have access to this calendar.": [
-        "A továbbiakban nem lesz elérése ehhez a naptárhoz."
-      ]
-    },
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "Biztosan törölni szeretné ezt a domain nevet?"
@@ -4031,12 +3732,6 @@
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } a ${ DRIVE_APP_NAME }-ben lehetővé teszi, hogy másokkal együtt dolgozzon egy biztonságos, titkosított környezetben."
-      ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "A(z) ${ MAIL_APP_NAME } nem az alapértelmezett levelező alkalmazás."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "A(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás."
       ],
       "A checked box means the feature is disabled.": [
         "Egy bejelölt mező azt jelenti, hogy a funkció le van tiltva."
@@ -4131,9 +3826,6 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Azonnal hozzáadhat találkozó hivatkozásokat az esemény meghívásaihoz."
       ],
-      "Make your email footer your own — showcase your unique brand, not ours.": [
-        "Tegye egyedivé az e-mail láblécet – az Ön egyedi jelzése jelenjen meg, ne a miénk."
-      ],
       "No one in your organization can connect to shared servers.": [
         "A szervezeten belül senki sem csatlakozhat a megosztott szerverhez."
       ],
@@ -4142,9 +3834,6 @@
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Állítson be fiókokat minden felhasználó számára, és hívja meg őket, hogy csatlakozzanak a(z) ${ BRAND_NAME }-hoz/höz."
-      ],
-      "Set up auto-forwarding to redirect incoming emails to another email address.": [
-        "Állítsa be az automatikus továbbítást, hogy a bejövő e-maileket egy másik e-mail címre irányítsa."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Egyszerűsítse a szinkronizálást és az ütemezést megosztott naptárakkal."
@@ -4172,9 +3861,6 @@
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Folytathatja a barátok meghívását, de további krediteket nem fog tudni szerezni"
-      ],
-      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
-        "Kikényszerítheti azokat a jelszó szabályokat, amelyeket a szervezeti tagok a jelszó létrehozásakor használni fognak a ${ PASS_APP_NAME } alkalmazásban."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
@@ -4778,169 +4464,12 @@
         "Az ellenőrző e-mailt elküldtük erre a címre: ${ address }"
       ]
     },
-    "email_forwarding_2023: Action": {
-      "Accept": [
-        "Elfogadás"
-      ],
-      "Add condition": [
-        "Új feltétel"
-      ],
-      "Add forwarding rule": [
-        "Adjon hozzá továbbítási szabályt"
-      ],
-      "Back": [
-        "Vissza"
-      ],
-      "Cancel": [
-        "Mégsem"
-      ],
-      "Decline": [
-        "Elutasítás"
-      ],
-      "Delete": [
-        "Törlés"
-      ],
-      "Delete this condition": [
-        "Feltétel törlése"
-      ],
-      "Edit conditions": [
-        "Feltételek szerkesztése"
-      ],
-      "Got it": [
-        "Értem."
-      ],
-      "Next": [
-        "Következő"
-      ],
-      "Pause": [
-        "Szünet"
-      ],
-      "Re-enable": [
-        "Újra engedélyez"
-      ],
-      "Re-send confirmation email": [
-        "Megerősítő e-mail újraküldése"
-      ],
-      "Remove “${ value }”": [
-        "\"${ value }\" eltávolítása"
-      ],
-      "Request confirmation": [
-        "Megerősítés kérése"
-      ],
-      "Resume": [
-        "Folytatás"
-      ],
-      "Save": [
-        "Mentés"
-      ],
-      "Send confirmation email": [
-        "Megerősítő e-mail küldése"
-      ],
-      "Set up email forwarding": [
-        "E-mail továbbítás beállítása"
-      ]
-    },
-    "email_forwarding_2023: Error": {
-      "Condition incomplete, please add a token": [
-        "A feltétel nem teljes, kérjük, adjon hozzá egy tokent"
-      ],
-      "Token already exists": [
-        "Ez a token már létezik"
-      ]
-    },
     "email_forwarding_2023: Error message, recovery": {
       "Please try opening the link again.": [
         "Próbálja meg ismét megnyitni a hivatkozást."
       ]
     },
-    "email_forwarding_2023: Forwarding tooltip": {
-      "Emails forwarded to you are excluded and will not be forwarded.": [
-        "Az Önnek továbbított e-maileket figyelmen kívül hagyjuk, és nem továbbítjuk."
-      ]
-    },
-    "email_forwarding_2023: Header": {
-      "Actions": [
-        "Műveletek"
-      ],
-      "Forward from": [
-        "Továbbítva:"
-      ],
-      "Forward to": [
-        "Továbbítási cím"
-      ],
-      "From": [
-        "Forrás:"
-      ],
-      "Status": [
-        "Állapot"
-      ],
-      "To": [
-        "Címzett"
-      ]
-    },
-    "email_forwarding_2023: Incoming forwarding tab name": {
-      "From me": [
-        "Tőlem"
-      ]
-    },
     "email_forwarding_2023: Info": {
-      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
-        "Egy jóváhagyási e-mailt fog kapni a ${ boldForwardeeEmail } címre"
-      ],
-      "Automatically forward emails to another email address.": [
-        "E-mailek automatikus továbbítása másik e-mail címre."
-      ],
-      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "A végpontok közti titkosítás ki lett kapcsolva a ${ boldForwarderEmail } címéhez, de a zéró hozzáférésű titkosítás érvényben marad. ${ learnMoreLink }"
-      ],
-      "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "A kompatibilitás érdekében új titkosítási kulcsot hoztunk létre a ${ boldForwarderEmail } számára."
-      ],
-      "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Kompatibilitási okokból egy új titkosítási kulcs lesz létrehozva ehhez a címhez: ${ boldForwarderEmail }."
-      ],
-      "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "A kompatibilitás érdekében az utólagos kvantumtitkosítás le lett tiltva, és egy új titkosítási kulcs lett generálva a ${ boldForwarderEmail } számára."
-      ],
-      "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
-        "Kompatibilitási okokból a posztkvantum titkosítás le van tiltva a ${ boldForwarderEmail } számára."
-      ],
-      "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
-        "A kompatibilitás érdekében az utólagos kvantumtitkosítás le lesz tiltva a ${ boldForwarderEmail } esetében."
-      ],
-      "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "A kompatibilitás érdekében a posztkvantum titkosítás letiltásra kerül, és új titkosítási kulcs generálódik a(z) ${ boldForwarderEmail } számára."
-      ],
-      "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "A továbbító meghívásra került és el kell fogadnia vagy elvetnie a meghívást vagy frissítést"
-      ],
-      "Forwarding is active": [
-        "Továbbítás be van kapcsolva"
-      ],
-      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
-        "Továbbítás a(z) ${ boldForwardeeEmail } címre akkor lép életbe, ha a címzett elfogadja a kérést."
-      ],
-      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Egy végpontok közti titkosítás nélküli címre való továbbítás kikapcsolja a végpontok közti titkosítást a ${ boldForwarderEmail } címéhez, de a zéró hozzáférésű titkosítás érvényben marad. ${ learnMoreLink }"
-      ],
-      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
-        "A címre való továbbítás akkor lép életbe, ha a címzett elfogadja a továbbítást."
-      ],
-      "No incoming forwarding rules": [
-        "Nincs bejövő továbbítási szabály"
-      ],
-      "No outgoing forwarding rules": [
-        "Nincs kimenő továbbítási szabály"
-      ],
-      "Please update your forwarding keys": [
-        "Frissítse a továbbítási kulcsokat"
-      ],
-      "The forwardee rejected the forwarding request": [
-        "A továbbító elutasította a továbbítási kérést"
-      ],
-      "The forwarding is temporarily paused": [
-        "A továbbítás ideiglenesen fel van függesztve"
-      ],
       "You can safely close this tab.": [
         "Most már nyugodtan bezárhatja ezt az ablakot."
       ],
@@ -4948,135 +4477,12 @@
         "Nem fog automatikusan továbbított leveleket kapni a ${ boldForwarderEmail } címről."
       ]
     },
-    "email_forwarding_2023: Label": {
-      "And": [
-        "És"
-      ],
-      "Forward from": [
-        "Továbbítva:"
-      ],
-      "Forward to": [
-        "Továbbítási cím"
-      ],
-      "or": [
-        "vagy"
-      ],
-      "Or": [
-        "Vagy"
-      ],
-      "With attachment": [
-        "Mellékletet tartalmaz"
-      ],
-      "Without attachment": [
-        "Nem tartalmaz mellékletet"
-      ]
-    },
-    "email_forwarding_2023: Link": {
-      "Learn more": [
-        "További információk"
-      ]
-    },
-    "email_forwarding_2023: Outgoing forwarding tab name": {
-      "To me": [
-        "Hozzám"
-      ]
-    },
-    "email_forwarding_2023: Placeholder": {
-      "Condition:": [
-        "Feltétel:"
-      ],
-      "Enter email address": [
-        "Adja meg az e-mail címet"
-      ],
-      "Type text or keyword": [
-        "Írjon be szöveget"
-      ],
-      "Type text or keyword for this condition:": [
-        "Írja be a feltételhez tartozó szöveget vagy kulcsszót:"
-      ]
-    },
-    "email_forwarding_2023: Progress status": {
-      "Sending confirmation email": [
-        "Visszaigazoló e-mail küldése"
-      ],
-      "Setting up forwarding": [
-        "Továbbítás beállítása"
-      ]
-    },
-    "email_forwarding_2023: Prompt": {
-      "End-to-end encryption will be re-enabled for the sender address.": [
-        "A végpontok közti titkosítás újra engedélyezve lesz a feladó címéhez."
-      ],
-      "Forwarding to the destination address will end.": [
-        "A továbbítás a cél-címre meg fog szűnni."
-      ]
-    },
-    "email_forwarding_2023: Status": {
-      "Active": [
-        "Aktív"
-      ],
-      "Declined": [
-        "Elutasítva"
-      ],
-      "Outdated": [
-        "Elavult"
-      ],
-      "Paused": [
-        "Felfüggesztve"
-      ],
-      "Pending": [
-        "Függőben"
-      ]
-    },
-    "email_forwarding_2023: Success": {
-      "Changes saved": [
-        "Változtatások mentve"
-      ],
-      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
-        "Email elküldve ${ existingForwardingConfig.ForwardeeEmail }"
-      ],
-      "Forwarding accepted": [
-        "Továbbítás elfogadva"
-      ],
-      "Forwarding declined": [
-        "Továbbítás elutasítva"
-      ],
-      "Forwarding deleted": [
-        "Továbbítás törölve"
-      ],
-      "Forwarding paused": [
-        "Továbbítás felfüggesztve"
-      ],
-      "Forwarding resumed": [
-        "Továbbítás folytatva"
-      ]
-    },
     "email_forwarding_2023: Title": {
-      "Delete forwarding?": [
-        "Továbbítás törlése?"
-      ],
       "Email forwarding deactivated": [
         "E-mail továbbítás kikapcsolva"
       ],
       "Forwarding activated": [
         "Továbbítás bekapcsolva"
-      ],
-      "Request confirmation?": [
-        "Megerősítés kérése?"
-      ],
-      "Request sent": [
-        "Kérés elküldve"
-      ],
-      "Requesting confirmation": [
-        "Megerősítés kérése"
-      ],
-      "Set up forwarding": [
-        "Továbbítás beállítása"
-      ]
-    },
-    "email_forwarding_2023: Warning": {
-      "Warning": [
-        "Figyelem"
       ]
     },
     "emergency_access": {
@@ -5172,15 +4578,6 @@
       "Authentication error.": [
         "Hitelesítési hiba."
       ],
-      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
-        "Az automatikus válasz üzenet hosszabb a megengedettnél. Rövidítse le, hogy beleférjen a korlátba."
-      ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Az automatikus válasz egy fizetős funkció. Kérjük, váltson egy előfizetéses csomagra a lehetőség használatához."
-      ],
-      "Calendar cannot be found": [
-        "A naptár nem található"
-      ],
       "Calendar limit reached": [
         "Elérte a naptárak maximális számát"
       ],
@@ -5204,9 +4601,6 @@
       ],
       "Could not open updated vault": [
         "A frissített tároló megnyitása nem sikerült"
-      ],
-      "Could not save preference": [
-        "Nem sikerült menteni a preferenciát."
       ],
       "Couldn't load invoices. Please try again later.": [
         "A számlák betöltése nem sikerült. Próbálja meg később."
@@ -5351,12 +4745,6 @@
       "Invalid postal code": [
         "Érvénytelen irányítószám"
       ],
-      "Invalid private key file": [
-        "Érvénytelen privát-kulcs fájl"
-      ],
-      "Invalid Sieve code": [
-        "Érvénytelen Sieve kód"
-      ],
       "Invalid URL": [
         "Érvénytelen URL cím"
       ],
@@ -5484,9 +4872,6 @@
       ],
       "Please set a recovery phone number first": [
         "Először adja meg a helyreállítási telefonszámot"
-      ],
-      "Please set a recovery/notification email first": [
-        "Először állítson be egy helyreállítási és értesítési e-mailt"
       ],
       "Please try again in a few moments.": [
         "Néhány perc múlva próbálja meg újra."
@@ -5962,14 +5347,6 @@
         "Nincs kép kiválasztva"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Esemény @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Esemény ekkortól: ${ timeString }, ${ rruleString }"
-      ]
-    },
     "Event invistation error": {
       "Unexpected error": [
         "Váratlan hiba"
@@ -6019,54 +5396,6 @@
     "Event title": {
       "(no title)": [
         "(névtelen)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } esemény exportálva",
-        "${ totalProcessed }/${ totalToProcess } esemény exportálva"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "A naptár sikeresen exportálva. Most letöltheti az ICS fájlt."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Naptár események visszafejtése: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "A jelszó visszaállítás miatt, egyetlen eseményt sem lehet visszafejteni vagy exportálni."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "A jelszó visszaállítás miatt, néhány eseményt nem lehetett visszafejteni és exportálni."
-      ],
-      "Error decrypting event": [
-        "Hiba az esemény visszafejtésekor"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Ismerje meg hogyan állíthat vissza eseményeket régi jelszavával"
-      ],
-      "Loading events": [
-        "Események betöltése"
-      ],
-      "None of the events could be exported.": [
-        "Egyetlen eseményt sem sikerült exportálni."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Jelszó visszaállítás - az eseményt nem lehet visszafejteni"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Jelszó visszaállítás - több eseményt nem lehet visszafejteni"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Ne zárja be ezt a böngészőfület, amíg folyamatban van az exportálás."
-      ],
-      "Some of your events could not be exported.": [
-        "Néhány eseményt nem sikerült exportálni."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Az exportálási folyamat megszakadt az internetkapcsolat megszakadása miatt. Próbálja meg újra."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "A sikeresen exportált eseményeket tartalmazó ICS fájlt lementheti."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -6672,9 +6001,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Létrehozhat saját szűrőket, hogy olyan automatikus műveleteket hajtson végre a leveleken, mint például címkével ellátás, archiválás."
-      ],
       "Allow:": [
         "Engedélyezés:"
       ],
@@ -6878,12 +6204,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "Elérés"
-      ],
-      "Action": [
-        "Művelet"
-      ],
       "Actions": [
         "Műveletek"
       ],
@@ -6917,9 +6237,6 @@
       "Key type": [
         "Kulcs típusa"
       ],
-      "Label": [
-        "Címke"
-      ],
       "Location": [
         "Hely"
       ],
@@ -6940,9 +6257,6 @@
       ],
       "Payment details": [
         "Fizetés részletei"
-      ],
-      "Permissions": [
-        "Engedélyek"
       ],
       "Protection": [
         "Védelem"
@@ -7010,34 +6324,6 @@
       ],
       "Value / Data / Points to": [
         "Érték / Adat / Cél cím"
-      ]
-    },
-    "Header for table": {
-      "Actions": [
-        "Műveletek"
-      ],
-      "Created": [
-        "Létrehozva"
-      ],
-      "Email address": [
-        "E-mail cím"
-      ],
-      "Last used": [
-        "Utoljára használt"
-      ],
-      "Token name": [
-        "Token neve"
-      ]
-    },
-    "Header; Table with list of calendars arranged by type": {
-      "Holidays": [
-        "Szabadnapok"
-      ],
-      "Other": [
-        "Egyéb"
-      ],
-      "Subscribed": [
-        "Feliratkozva"
       ]
     },
     "Headline": {
@@ -7380,11 +6666,6 @@
         "Válassza az ${ boldExport } elemet a naptár ICS fájlként való exportálásához."
       ]
     },
-    "Import key": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Biztos benne, hogy importálni kíván egy privát kulcsot? Egy nem biztonságosan generált, vagy kiszivárgott privát kulcs árthat az üzenetei biztonságának.\n\nA privát kulcshoz tartozó nyilvános kulcs nyilvánosan elérhető lesz a kulcsszervereinken. Ha a kulcs tartalmaz személyes adatot (pl. az ön nevét) és ezt nem szeretné nyilvánosságra hozni, importálás előtt szerkessze át a kulcsot."
-      ]
-    },
     "Import provider": {
       "Import from ${ provider }": [
         "Importálás innen: ${ provider }"
@@ -7468,14 +6749,6 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
-    "Inactive key function info": {
-      "If reactivated, the key will be used for decryption": [
-        "Ha újra aktiválják, a kulcs a visszafejtéshez lesz használva."
-      ],
-      "If reactivated, the key will be used for decryption and verification": [
-        "Ha újraaktiválják, a kulcs visszafejtésre és ellenőrzésre lesz használva."
-      ]
-    },
     "Info": {
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } felhasználó rendelkezik jelenleg hozzáféréssel a megosztott szerverekhez.",
@@ -7483,9 +6756,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
-      ],
-      "${ boldName } will be set as default calendar.": [
-        "${ boldName } lesz az alapértelmezett naptár."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } A fiókjában lévő összes titkosított adathoz elveszti a hozzáférést ha folytatja."
@@ -7531,9 +6801,6 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% kedvezmény"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "A ${ DRIVE_APP_NAME } már nem fogja megőrizni a fájljaid korábbi verzióit."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } érvénytelen"
@@ -7780,9 +7047,6 @@
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
         "Hozzáférés több mint 6500 nagy sebességű szerverhez akár 10 eszközzel, hogy biztonságban tartsa böngészési adatait. Elérhető ${ ios }, ${ android }, ${ appleTV } és ${ desktop } platformokon."
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Férjen hozzá jelszavaihoz és védje online személyazonosságait zökkenőmentesen az eszközein. Töltse le és telepítse a releváns ${ PASS_APP_NAME } alkalmazásokat és bővítményeket."
-      ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
       ],
@@ -7795,9 +7059,6 @@
       "active": [
         "aktív"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
-      ],
       "add a recovery method": [
         "adjon hozzá egy helyreállítási módszert"
       ],
@@ -7806,9 +7067,6 @@
       ],
       "Add image URL": [
         "Kép URL megadása"
-      ],
-      "Add label": [
-        "Új címke"
       ],
       "Add multiple users to your organization at once.": [
         "Vegyen fel a szervezethez egyszerre több felhasználót."
@@ -7922,26 +7180,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "A hivatkozás birtokában bárki láthatja, hogy a naptára szerint elfoglalt vagy szabad. Nem láthatják viszont az események adatait, mint például címét, helyét vagy résztvevőit."
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "A hivatkozást ismerők nem fognak hozzáférni a naptár szinkronizálásához vagy további frissítéseihez. Ha ismét elérést szeretne biztosítani, új hivatkozást kell majd készítenie."
-      ],
       "Are you sure you want to cancel editing the group?": [
         "Megszakítja a csoport szerkesztését?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "Biztos, hogy törölni szeretné ezt a naptárat?"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Biztos, hogy törli ezt a naptárat? Minden olyan személy, akivel megosztotta, el fogja veszteni a hozzáférését."
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Biztos, hogy törli ezt a naptárat? Minden benne lévő esemény törlésre kerül."
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Biztos vagy benne, hogy törölni szeretnéd ezt a naptárt? Később visszaadhatsz munkaszüneti naptárat."
-      ],
-      "Are you sure you want to delete this filter?": [
-        "Biztosan törölni akarja ezt a szűrőt?"
       ],
       "Are you sure you want to delete this folder?": [
         "Biztos, hogy törölni szeretné ezt a mappát?"
@@ -7988,26 +7228,8 @@
       "Attention required": [
         "Figyelem szükséges"
       ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Az automatikus válasz minden hónapban aktív a kiválasztott kezdeti és befejezési időpont között."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Az automatikus válasz minden héten aktív a kiválasztott kezdeti és befejezési időpont között."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Az automatikus válasz aktív a kiválasztott kezdeti és befejezési időpont között."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Az automatikus válasz aktív, míg ki nem kapcsolja."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Az automatikus válasz mindig aktív a hét kiválasztott napjain a választott órák között."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatikusan üríti a 30 napnál régebbi, Lomtárba és levélszemétbe helyezett e-maileket."
-      ],
-      "Available on macOS, Windows, and Linux.": [
-        "Elérhető macOS, Windows és Linux rendszerekhez."
       ],
       "Awaiting transaction": [
         "Tranzakcióra várakozás."
@@ -8255,9 +7477,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
       ],
-      "Delete link?": [
-        "Hivatkozás törlése?"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "A 30 napnál régebbi üzenetek törlése a levélszemét és a lomtár mappából. Az automatikus törlés bekapcsolása, a már ezekben a mappákban lévő üzeneteknek a belekerülésük dátuma alapján ad meg törlési időpontot."
       ],
@@ -8341,9 +7560,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
       ],
-      "Download your PGP keys for use with other PGP-compatible services.": [
-        "Letöltheti a PGP kulcsát más PGP kompatibilis szolgáltatásokban való használathoz."
-      ],
       "Drop file here to upload": [
         "Húzza ide a fájlokat a feltöltéshez"
       ],
@@ -8361,9 +7577,6 @@
       ],
       "Edit email address": [
         "E-mail cím szerkesztése"
-      ],
-      "Edit label": [
-        "Címke szerkesztése"
       ],
       "Edit link": [
         "Hivatkozás szerkesztése"
@@ -8404,12 +7617,6 @@
       "Enable single sign-on to keep your organization safe": [
         "Engedélyezze az egyszeri bejelentkezést szervezete biztonsága érdekében"
       ],
-      "Enable this address to join this calendar": [
-        "Engedélyezze ezt a címet a naptárhoz való csatlakozáshoz"
-      ],
-      "Enable TLS or SSL on the external service if it is supported.": [
-        "Engedélyezze a TLS-t vagy az SSL-t a külső szolgáltatáson, ha az támogatott."
-      ],
       "Enabled countries": [
         "Engedélyezett országok"
       ],
@@ -8418,9 +7625,6 @@
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "A helyreállító jelmondat újra engedélyezése egy új helyreállító jelmondatot fog létrehozni."
-      ],
-      "Encryption setting updated": [
-        "Titkosítási beállítás frissítve"
       ],
       "End date": [
         "Befejező dátum"
@@ -8500,9 +7704,6 @@
       "Enter your recovery phrase to change your password now.": [
         "Add meg a helyreállítási kulcsmondatot a jelszó azonnali módosításához."
       ],
-      "Event invitations and responses will be sent in this language.": [
-        "Az esemény meghívók és válaszok ezen a nyelven lesznek elküldve."
-      ],
       "Everything in ${ planOrAppName }": [
         "Minden a következőben: ${ planOrAppName }"
       ],
@@ -8544,9 +7745,6 @@
       ],
       "finance": [
         "pénzügyi"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "10 éves verzióelőzményekhez kérjük, lépjen kapcsolatba az ügyfélszolgálattal."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Hogy bármikor hozzáférjen az e-mailekhez és optimalizált mobil élményt kapjon, töltse le a ${ androidAppLink } vagy ${ iosAppLink } alkalmazásunkat."
@@ -8590,12 +7788,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Értesüljön arról, ha jelszava vagy más személyes adatai kiszivárogtak. ${ learnMoreLinkNoBreach }"
       ],
-      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Adjon a tokennek egy leíró nevet, például annak a szolgáltatásnak, amellyel használni kívánja, és válassza ki az egyik aktív egyéni tartománycímet. Csak ez a cím tud majd e-mailt küldeni ezzel a tokennel."
-      ],
-      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Adja meg a publikus kulcsát a barátainak vagy tegye közzé az interneten, hogy mindenki tudjon magának végpontok között titkosított email-t küldeni!"
-      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Nyissa meg a személyazonosság-szolgáltatóját, kérje le az ${ appName } SAML-metaadatát, és importálja ide."
       ],
@@ -8617,9 +7809,6 @@
       "here": [
         "ide"
       ],
-      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Elrejti az azonosítható információkat, a távol tartalom egy proxy szerveren történő áttöltésével. Lehetőség a tartalom csatolmányként való tárolására."
-      ],
       "High Priority": [
         "Magas prioritású"
       ],
@@ -8629,26 +7818,11 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ha egy másik adminisztrátor megváltoztatná ezt a jelszót, el kell kérni tőle az új Szervezeti Jelszót."
       ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Ha le van tiltva, az új szervezeti tagoknak egy adminisztrátor manuálisan hozza létre az első tárolót (megosztással), hogy elkezdhessenek elemeket létrehozni."
-      ],
-      "If disabled, only administrators will be able to export data.": [
-        "Ha le van tiltva, csak a rendszergazdák exportálhatnak adatokat."
-      ],
-      "If disabled, organization members will only be able to share vaults or items within the organization.": [
-        "Ha le van tiltva, a szervezet tagjai csak a szervezeten belül tudnak tárolókat vagy elemeket megosztani."
-      ],
-      "If enabled, organization members will be able to share individual items in addition to vaults.": [
-        "Ha engedélyezve van, a szervezet tagjai a tárolókon kívül egyes elemeket is megoszthatnak."
-      ],
       "If it’s not right for you, we’ll refund you.": [
         "Ha nem felel meg önnek, visszafizetjük a pénzét."
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Ha a gyorsbillentyűk engedélyezve vannak, a következő billentyűkkel gyors műveleteket végezhet, illetve különböző nézetekre ugorhat. ${ metaKey } + K mindig engedélyezve van."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Amikor a rendszer időzónája eltér az aktuális időzóna beállításától, rákérdez, hogy frissítse-e a beállítást (maximum naponta egyszer)."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Ha ez egy régi jelszó visszaállításból adódik, megtilthatja az üzenet újbóli megjelenését"
@@ -8877,9 +8051,6 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Tartsa adatait biztonságban és kezelje bizalmasan ezekkel az útmutatókkal és tippekkel."
       ],
-      "Key deletion is irreversible!": [
-        "A kulcs törlése visszafordíthatatlan!"
-      ],
       "Keys created": [
         "Kulcsok létrehozva"
       ],
@@ -8904,9 +8075,6 @@
       "Learn more about Gateways": [
         "További információ az átjárókról"
       ],
-      "learn more about Sieve programming language": [
-        "tovább információk a Sieve programozási nyelvről"
-      ],
       "Learn more about single sign-on": [
         "További információ az egyszeri bejelentkezésről"
       ],
@@ -8915,9 +8083,6 @@
       ],
       "Left to Right": [
         "Balról jobbra"
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Tudassa kapcsolataival hogy Ön törődik személyes adataik védelmével!"
       ],
       "Let's get started by pressing the New group button above": [
         "Kezdjen a fentebbi Új csoport gomb megnyomásával"
@@ -8928,9 +8093,6 @@
       "Link created": [
         "Hivatkozás létrehozva"
       ],
-      "Link deleted": [
-        "Hivatkozás törölve"
-      ],
       "Link expired": [
         "A hivatkozás lejárt"
       ],
@@ -8939,9 +8101,6 @@
       ],
       "Live chat": [
         "élő csevegést"
-      ],
-      "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "A betöltött tartalmat a proxy szervereink védik, amennyiben a követés elleni védelem be van kapcsolva."
       ],
       "Loading": [
         "Betöltés"
@@ -9045,9 +8204,6 @@
       "Next billing date": [
         "Következő számlázási dátum"
       ],
-      "No account keys exist": [
-        "Nincsenek kulcsok a fiókhoz"
-      ],
       "No action selected": [
         "Nincs kiválasztva művelet"
       ],
@@ -9090,12 +8246,6 @@
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
       ],
-      "Number of items the user has access to (includes owned items + shared items)": [
-        "Azoknak az elemeknek a száma, amelyekhez a felhasználó hozzáfér (a saját elemek + a megosztott elemek is beleértve)"
-      ],
-      "Number of vaults the user has access to (includes owned vaults + shared vaults)": [
-        "A felhasználó által elérhető tárolók száma (beleértve a saját és a megosztott tárolókat)"
-      ],
       "Numbers": [
         "Számok"
       ],
@@ -9116,12 +8266,6 @@
       ],
       "One time import": [
         "Egyszeri import"
-      ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
-      ],
-      "Only you can see the label": [
-        "Csak ön láthatja a címkét"
       ],
       "Open source": [
         "Nyílt forráskódú"
@@ -9145,9 +8289,6 @@
       ],
       "Or select a particular server:": [
         "Vagy válasszon ki egy adott szervert:"
-      ],
-      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "A szervezeti tagoknak a ${ PASS_APP_NAME } alkalmazást a jelszavukkal, PIN-kódjukkal stb. kell feloldaniuk."
       ],
       "Organization size": [
         "Szervezet mérete"
@@ -9192,9 +8333,6 @@
       "Password copied to clipboard": [
         "Jelszó a vágólapra másolva"
       ],
-      "Password generator rules successfully saved": [
-        "Jelszógenerátor szabályok sikeresen elmentve"
-      ],
       "Password manager with extra account security": [
         "Jelszókezelő extra fiókbiztonsággal"
       ],
@@ -9215,9 +8353,6 @@
       ],
       "per month, billed at ${ price }": [
         "havonta, ${ price } számlázva"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "PGP-t használó címzettek valószínűbb, hogy automatikusan érzékelik az ön PGP kulcsait, ha a kimenő levelek aláírtak."
       ],
       "Phone number": [
         "Telefonszám"
@@ -9256,9 +8391,6 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Tartsa biztonságban. Szüksége lesz rá a fiókja eléréshez és adatai visszafejtéséhez, ha visszaállítaná a fiókja jelszavát."
-      ],
-      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Amennyiben törli ezt a szűrőt (${ nameDeleted }), minden ebből kiinduló automatikus feldolgozás megszűnik."
       ],
       "please open a support ticket": [
         "kérjük, nyisson egy ügyfélszolgálati jegyet"
@@ -9374,9 +8506,6 @@
       "Remove metadata from images to protect your privacy.": [
         "A képek metaadatainak eltávolítása az adatai védelme érdekében"
       ],
-      "Remove one of your calendars to join this one": [
-        "Töröljön egy naptárat, hogy ehhez csatlakozhasson"
-      ],
       "Report link expired": [
         "A jelentési hivatkozás lejárt"
       ],
@@ -9479,9 +8608,6 @@
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
       ],
-      "Setting successfully saved": [
-        "A beállítások sikeresen elmentve"
-      ],
       "Setting up ${ feature }…": [
         "${ feature } beállítása…"
       ],
@@ -9528,12 +8654,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "Az SMTP beküldés lehetővé teszi, hogy harmadik féltől származó szolgáltatások vagy eszközök e-mailt küldjenek a ${ MAIL_APP_NAME } alkalmazáson keresztül az Ön egyéni domaincímeire. Hozzáférés kéréséhez kérjük, ${ createTicket } írja le használati eseteit, milyen egyéni domaineket szeretne használni, valamint a várható óránkénti és napi e-mail mennyiséget."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Az SMTP beküldés lehetővé teszi, hogy harmadik féltől származó szolgáltatások vagy eszközök e-mailt küldjenek a ${ MAIL_APP_NAME } alkalmazáson keresztül az Ön egyéni domaincímeire. A funkció használatához kezdje egy új token létrehozásával."
-      ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Némítsa el az üzeneteket későbbre, hogy a beérkezett üzenetek tetején legyenek, amikor szeretné"
       ],
@@ -9570,9 +8690,6 @@
       ],
       "Storage used by this user": [
         "A felhasználó által használt tárhely"
-      ],
-      "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        "Tárolja a jelszót és a fájlt egy biztos helyen. Szüksége lesz rá később a kulcsa importálásához."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Küldje el a befizetést az alábbi címre, vagy olvassa be a QR-kódot. A befizetés a megerősítést követően megjelenik a számláján."
@@ -9644,12 +8761,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "A ${ boldDataLocked } üzenetet többé nem mutatjuk, de az adatait továbbra is feloldhatja ezen a hivatkozáson keresztül: ${ encryptionAndKeysLink } ."
       ],
-      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "A ${ MAIL_APP_NAME } Export Tool segítségével exportálhatja a visszafejtett e-mailjeit a ${ MAIL_APP_NAME } fiókjából a saját eszközére. Így megtekintheti, vagy más programba vagy e-mail fiókba importálhatja azokat."
-      ],
-      "The calendar will be removed from your account.": [
-        "Ez a naptár eltávolításra kerül a fiókjából."
-      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "A dark web az internet egy rejtett része, ahol lopott személyes adatokat, például személyazonosságokat lehet vásárolni és eladni."
       ],
@@ -9691,9 +8802,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "A hivatkozás annak jelentésére, hogy nem hozott létre egy ${ BRAND_NAME } fiókot, lejárt. Lépjen kapcsolatba támogatási csoportunkkal a probléma megoldásához."
-      ],
-      "The most recent data update, excluding breaches.": [
-        "A legutóbbi adatfrissítés, az adatvédelmi incidens kivételével."
       ],
       "The name will be visible to your users while they are signed in.": [
         "A név látható lesz a bejelentkezett felhasználóinak."
@@ -9779,9 +8887,6 @@
       "This service is not available to users signing in with single sign-on.": [
         "Ez a szolgáltatás nem elérhető az egyszeri bejelentkezéssel bejelentkező felhasználók számára."
       ],
-      "This token won’t be available after you close this window, and you should not share it with anyone.": [
-        "Ez a token az ablak bezárása után nem lesz elérhető, és ne ossza meg senkivel."
-      ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Ez a leiratkozási hivatkozás lejárt. Nyisson meg egy frissebb e-mailt erről a levelezési listáról."
       ],
@@ -9791,12 +8896,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Az ellenőrzés akár egy órát is igénybe vehet. A sikeres ellenőrzés után se távolítsa el a TXT rekordot, annak megerősítésére, hogy továbbra is öné a domain név."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Ez törölni fogja az összes ${ rententionLabel } -nál korábbi verzióját a fájljaidnak."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Ez törölni fogja az összes korábbi verzióját a fájljaidnak."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Ez megtiltja a hozzáférést **${ email }**-hoz. Biztos, hogy folytatni akarja?"
       ],
@@ -9805,9 +8904,6 @@
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Ez kikapcsolja a jelenlegi helyreállító jelmondatát. Nem fogja tudni használni a fiók elérésnek helyreállításához vagy titkosított adatai visszafejtéséhez."
-      ],
-      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "Ez le fog tölteni egy fájlt, amiben a privát kulcsa van. Védje ezt a fájlt azzal, hogy titkosítja egy jelszóval."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ez lehetővé teszi, hogy a ${ BRAND_NAME } előfizetését PayPallal fizesse. A tranzakció befejezéséhez átirányításra kerül a PayPalhoz egy új böngészőfülön. A folytatáshoz engedélyezze a felugró ablakokat."
@@ -9857,9 +8953,6 @@
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
         "Ahhoz, hogy a(z) **${ domainName }** domain név SAML SSO-t használhasson, meg kell erősíteniea tulajdonjogát az alábbi TXT rekord felvételével, a domain név szolgáltatójánál."
       ],
-      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "Az adatvesztés elkerülése érdekében csak akkor töröljön, ha tudja, mit csinál, vagy már exportált egy másolatot."
-      ],
       "To cancel your subscription, please reach out to us.": [
         "Az előfizetés lemondásához kérjük, lépjen kapcsolatba velünk."
       ],
@@ -9907,9 +9000,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "A ${ toAppName } használatához, szüksége van egy ${ MAIL_APP_NAME } címre."
-      ],
-      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "A megfelelő működéshez, minden szűrőhöz szükséges legalább egy név és egy érvényes Sieve parancsfájl. ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Töltse fel egyenlegét kreditekkel, melyből magasabb előfizetést vásárolhat, vagy meghosszabbíthatja jelenlegi előfizetését. Minden egyes ${ i18nCurrency } egy kreditet ér."
@@ -9977,14 +9067,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
       ],
-      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "Frissítsd a fiókodat egy rövidebb @pm.me cím hozzáadásához, amit könnyebb megosztani. Ez a \"Private Message me\" vagy “${ MAIL_APP_NAME } me” rövidítése."
-      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Váltson nagyobb csomagra, hogy megőrizze ${ planTitle } előnyeit."
-      ],
-      "Upgrade to unlock": [
-        "A feloldáshoz váltson nagyobb csomagra"
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -10018,9 +9102,6 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Használja az alábbi adatokat, amikor a ${ VPN_APP_NAME } szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
-      ],
-      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "Használja a kiválasztott e-mail címet SMTP-felhasználónévként a külső szolgáltatásban, és a generált tokent SMTP-jelszóként."
       ],
       "User activated": [
         "Felhasználó aktiválva"
@@ -10069,9 +9150,6 @@
       ],
       "Version ${ version }": [
         "Verzió: ${ version }"
-      ],
-      "Version history": [
-        "Verziótörténet"
       ],
       "Version number successfully copied to clipboard": [
         "A verziószám sikeresen másolva a vágólapra"
@@ -10181,14 +9259,8 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Ha engedélyezve van, megnézzük, hogy a(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás-e, és értesítjük, ha nem az."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Amikor engedélyezi a SAML-t a ${ appName } szolgáltatáshoz a személyazonosság-szolgáltatójában, a rendszer kérheti a visszahívási (ACS) URL-t és a kiállító azonosítóját. Másolja be az alábbi adatokat a személyazonosság-szolgáltatója mezőibe."
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Amennyiben engedélyezi az értesítéseket, a ${ MAIL_APP_NAME } fiókjába érkező új üzenetekről a helyreállítási/értesítési címén tájékoztatjuk."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Ha előfizetnek a csomagra, krediteket fog kapni, amelyeket felhasználhat az előfizetéséhez."
@@ -10225,9 +9297,6 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Csoportok segítségével könnyen küldhet egyszerre e-mailt egy adott csoportba tartozó személyeknek."
-      ],
-      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "A jelenlegi terveiddel csak fogadni tudsz üzeneteket a @pm.me címeden. Frissítsd a terveidet, hogy üzeneteket küldhess és létrehozhass további címeket a @pm.me használatával."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Aktiválás nélkül nem fog tudni új felhasználókat létrehozni, címeket felvenni meglévő felhasználókhoz, vagy nem-privát fiókokat elérni."
@@ -10296,9 +9365,6 @@
       "You can close the tab or browser in the meantime.": [
         "Közben bezárhatja a lapot vagy a böngészőt."
       ],
-      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
-        "A szervezet tagjai számára meghatározhatja a ${ PASS_APP_NAME } irányelveket."
-      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ezt egyszer szerkesztheti, hogy biztosítsa a helyes e-mail címet hitelesítéshez."
       ],
@@ -10333,9 +9399,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
-      ],
-      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "A ${ MAIL_APP_NAME } szolgáltatásait bármilyen e-mail kliens programmal használhatja, amik támogatják a IMAP/SMTP protokollt: ilyenek pl.: az Outlook, Apple Mail, és a Thunderbird alkalmazások."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Az alábbi bejelentkezéssel csatlakozhat a ${ VPN_APP_NAME } szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
@@ -10376,9 +9439,6 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Önnek próbaverziós ${ planTitle } előfizetése van. Egyelőre nem kell fizetnie. Az ön előfizetése automatikusan megújul a próbaidő befejezése után."
       ],
-      "You have no calendars to export.": [
-        "Önnek nincs exportálható naptára."
-      ],
       "You have no invoices.": [
         "Nincs számlája."
       ],
@@ -10406,15 +9466,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ahhoz, hogy felvehesse fizetési módként, a PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát."
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "Egy ICS fájlból való importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
-      ],
-      "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "Exportáljon egy biztonsági mentést erről a kulcsról, abban az esetben, ha szüksége lenne visszaállítani azokat az adatokat, amelyeket titkosított vele."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "Még válaszolnia kell a meghívókra, hogy a szervező lássa a válaszát."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "A felhasználót azután delegálhatja adminisztrátorrá, ha elfogadta a meghívót."
       ],
@@ -10429,9 +9480,6 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
-      ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
-        "NEM fogja tudni visszaejteni az ezzel a kulccsal titkosított üzeneteket, fájlokat és egyéb adatokat. A ${ BRAND_NAME } alkalmazások által nem lesz ellenőrizhető az ezzel a kulccsal aláírt adatok hitelessége."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
@@ -10738,45 +9786,6 @@
         "Előfizetés"
       ]
     },
-    "Key function description": {
-      "Decryption": [
-        "Visszafejtés"
-      ],
-      "Decryption, verification": [
-        "Visszafejtés, ellenőrzés"
-      ],
-      "Encryption, decryption, signing, verification": [
-        "Titkosítás, visszafejtés, aláírás, hitelesítés"
-      ]
-    },
-    "Key generation": {
-      "Generate key": [
-        "Kulcs generálása"
-      ],
-      "Key successfully generated.": [
-        "Kulcs sikeresen létrehozva."
-      ]
-    },
-    "Key state badge": {
-      "Compromised": [
-        "Kompromittált"
-      ],
-      "Disabled": [
-        "Letiltva"
-      ],
-      "Forwarding": [
-        "Továbbítás"
-      ],
-      "Inactive": [
-        "Kikapcsolva"
-      ],
-      "Obsolete": [
-        "Elavult"
-      ],
-      "Primary": [
-        "Elsődleges"
-      ]
-    },
     "Keyboard shortcut name": {
       "Add encryption": [
         "Titkosítás megadása"
@@ -10991,46 +10000,8 @@
         "Opciók megnézése"
       ]
     },
-    "Keys actions": {
-      "Delete": [
-        "Törlés"
-      ],
-      "Disables encryption with this key": [
-        "Letiltja ezzel a kulccsal való titkosítást"
-      ],
-      "Disables signature verification and encryption with this key": [
-        "Letiltja ezzel a kulccsal való aláírás ellenőrzést és titkosítást"
-      ],
-      "Enable encryption with this key": [
-        "Ezzel a kulccsal való titkosítás engedélyezése"
-      ],
-      "Enable signature verification and encryption with this key": [
-        "Engedélyezi ezzel a kulccsal való aláírás ellenőrzést és titkosítást"
-      ],
-      "Export private key": [
-        "Privát kulcs exportálása"
-      ],
-      "Export public key": [
-        "Nyilvános kulcs exportálása"
-      ],
-      "Mark compromised": [
-        "Megjelölés kompromittáltként"
-      ],
-      "Mark not compromised": [
-        "Megjelölés nem kompromittáltként"
-      ],
-      "Mark not obsolete": [
-        "Megjelölés nem elavultként"
-      ],
-      "Mark obsolete": [
-        "Megjelölés elavultként"
-      ]
-    },
     "Knowledge base link label": {
       "Here's how": [
-        "További információk"
-      ],
-      "Learn more": [
         "További információk"
       ]
     },
@@ -11053,9 +10024,6 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } cím"
-      ],
-      "${ MAIL_APP_NAME } footer": [
-        "${ MAIL_APP_NAME } lábléc"
       ],
       "${ n } month": [
         "${ n } hónap",
@@ -11102,9 +10070,6 @@
       "Account storage": [
         "Fiók tárhely"
       ],
-      "Action": [
-        "Művelet"
-      ],
       "Actions": [
         "Műveletek"
       ],
@@ -11138,24 +10103,6 @@
       "Allow": [
         "Engedélyezés"
       ],
-      "Allow all users to create vaults": [
-        "Minden felhasználó számára engedélyezett a tárolók létrehozása"
-      ],
-      "Allow data export for all users": [
-        "Adatexport engedélyezése minden felhasználó számára"
-      ],
-      "Allow individual item sharing": [
-        "Lehetőség egyedi elemek megosztására"
-      ],
-      "Allow memorable passwords": [
-        "Memorizálható jelszavak engedélyezése"
-      ],
-      "Allow notifications by email": [
-        "E-mailes értesítések engedélyezése"
-      ],
-      "Allow random passwords": [
-        "Véletlenszerű jelszavak engedélyezése"
-      ],
       "Allow recovery by email": [
         "Helyreállítás engedélyezése e-mail címmel"
       ],
@@ -11167,9 +10114,6 @@
       ],
       "Allow recovery using a trusted device": [
         "Helyreállítás engedélyezése egy megbízható eszközzel"
-      ],
-      "Allow sharing outside the organization": [
-        "A szervezeten kívüli megosztás engedélyezése"
       ],
       "Allowed Domain": [
         "Engedélyezett domain"
@@ -11213,9 +10157,6 @@
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
       ],
-      "Attach public key": [
-        "Nyilvános kulcs csatolása"
-      ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
@@ -11234,23 +10175,11 @@
       "Auto-delete unwanted messages": [
         "Nem kívánt üzenetek automatikus törlése"
       ],
-      "Auto-detect primary time zone": [
-        "Az elsődleges időzóna automatikus detektálása"
-      ],
-      "Auto-reply": [
-        "Automatikus válasz"
-      ],
-      "Auto-unsubscribe": [
-        "Automatikus leiratkozás"
-      ],
       "Autofill": [
         "Automatikus kitöltés"
       ],
       "Autofill 2FA": [
         "Kétlépcsős kód automatikus kitöltése"
-      ],
-      "Automatically save contacts": [
-        "Névjegyek automatikus mentése"
       ],
       "Autosave": [
         "Automatikus mentés"
@@ -11300,9 +10229,6 @@
       "Calendars": [
         "Naptárak"
       ],
-      "Capitalize words": [
-        "Nagybetűvel kezdődő szavak"
-      ],
       "Card details": [
         "Kártya adatai"
       ],
@@ -11351,15 +10277,6 @@
       "Composer": [
         "Szerkesztő"
       ],
-      "Composer default font/size": [
-        "Szerkesztő betűtípusa és mérete"
-      ],
-      "Composer mode": [
-        "Szerkesztő módja"
-      ],
-      "Composer text direction": [
-        "Szerkesztő szövegiránya"
-      ],
       "Conditions": [
         "Feltételek"
       ],
@@ -11393,14 +10310,8 @@
       "Conversation grouping": [
         "Beszélgetések csoportosítása"
       ],
-      "Conversations per page": [
-        "Beszélgetések oldalanként."
-      ],
       "Copy": [
         "Másolás"
-      ],
-      "Copy fingerprint": [
-        "Ujjlenyomat másolása"
       ],
       "Copy IP address to clipboard": [
         "IP cím másolása a vágólapra"
@@ -11420,9 +10331,6 @@
       "Country": [
         "Ország"
       ],
-      "Create password": [
-        "Jelszó létrehozása"
-      ],
       "Credit cards": [
         "Bankkártyák"
       ],
@@ -11438,26 +10346,14 @@
       "Current email": [
         "Jelenlegi e-mail"
       ],
-      "Daily email notifications": [
-        "Napi e-mail értesítések"
-      ],
       "Date": [
         "Dátum"
       ],
       "Date format": [
         "Dátumformátum"
       ],
-      "Days of the week": [
-        "A hét napjai"
-      ],
       "Default language": [
         "Alapértelmezett nyelv"
-      ],
-      "Default language (${ defaultLanguage })": [
-        "Alapértelmezett nyelv (${ defaultLanguage })"
-      ],
-      "Default PGP scheme": [
-        "Alapértelmezett PGP séma"
       ],
       "Default scrollbars": [
         "Alapértelmezett görgetősávok"
@@ -11507,14 +10403,8 @@
       "Don't ask again": [
         "Ne kérdezze újra"
       ],
-      "Don't keep versions": [
-        "Ne tartsa meg a korábbi változatokat"
-      ],
       "Don't show this again": [
         "Ne jelenjen meg többet"
-      ],
-      "Duration": [
-        "Időtartam"
       ],
       "e.g. example.com": [
         "pl. példa.hu"
@@ -11545,18 +10435,6 @@
       ],
       "Enabled": [
         "Elérhető"
-      ],
-      "End date": [
-        "Befejező dátum"
-      ],
-      "End day of month": [
-        "A hónap befejező napja"
-      ],
-      "End time": [
-        "Befejezés"
-      ],
-      "End weekday": [
-        "A hét befejező napja"
       ],
       "Enter password": [
         "Jelszó megadása"
@@ -11663,9 +10541,6 @@
       "Import to:": [
         "Importálás ide:"
       ],
-      "Inbox": [
-        "Beérkezett üzenetek"
-      ],
       "Include application logs in bug report": [
         "Alkalmazásnaplók mellékelése a hibajelentéshez"
       ],
@@ -11690,14 +10565,8 @@
       "Keep me signed in": [
         "Maradjon bejelentkezve"
       ],
-      "Keep messages in Sent/Drafts": [
-        "Üzenetek megőrzése az Elküldött és Piszkozatok mappában"
-      ],
       "Key": [
         "Kulcs"
-      ],
-      "Key strength": [
-        "Kulcs erőssége"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Gyorsbillentyű: ${ shortcut }"
@@ -11732,12 +10601,6 @@
       "Limited time": [
         "Korlátozott ideig"
       ],
-      "Link label (optional)": [
-        "Hivatkozás címkéje (opcionális)"
-      ],
-      "Lock app after inactivity": [
-        "Alkalmazás zárolása inaktivitás esetén"
-      ],
       "Logo": [
         "Logó"
       ],
@@ -11753,26 +10616,11 @@
       "Mark as": [
         "Megjelölés mint"
       ],
-      "Maximum number of characters": [
-        "Karakterek maximális száma"
-      ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "Karakterek maximális száma ${ MAX_CHARS }"
       ],
-      "Maximum number of words": [
-        "Szavak maximális száma"
-      ],
       "Members without 2FA": [
         "Tagok kétlépcsős hitelesítés nélkül"
-      ],
-      "Message": [
-        "Üzenet"
-      ],
-      "Message (auto-reply)": [
-        "Üzenet (automatikus válasz)"
-      ],
-      "Messages per page": [
-        "Üzenetek oldalanként."
       ],
       "Metadata file for ${ appName }": [
         "${ appName } metadata fájl"
@@ -11788,9 +10636,6 @@
       ],
       "Minimum number of characters is ${ MIN_CHARS }": [
         "Karakterek minimális száma: ${ MIN_CHARS }"
-      ],
-      "Minimum number of words": [
-        "Szavak minimális száma"
       ],
       "Moderate NAT": [
         "Mérsékelt NAT"
@@ -11930,9 +10775,6 @@
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Vegye fel a következő TXT rekordot. Megjegyzés: A DNS rekordok frissülése akár órákig is eltarthat."
       ],
-      "Please select files to upload": [
-        "Válassza ki a fájlokat a feltöltéshez"
-      ],
       "Please share any feedback to help us improve.": [
         "Kérjük, ossza meg ossza meg velünk visszajelzéseit, hogy segítsen nekünk fejlődni."
       ],
@@ -11948,14 +10790,8 @@
       "Previous password": [
         "Előző jelszó"
       ],
-      "Prompt to trust keys": [
-        "Kérdezzen rá a kulcsok megbízhatóként jelölésére"
-      ],
       "Proration": [
         "Arányosítás"
-      ],
-      "Protection mode": [
-        "Védelem módja"
       ],
       "Public certificate (X.509)": [
         "Nyilvános tanúsítvány (X.509)"
@@ -12014,17 +10850,11 @@
       "Second password": [
         "Második jelszó"
       ],
-      "Select Linux platform": [
-        "Válassza ki a Linux felületet"
-      ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
       ],
       "Send crash reports": [
         "Hibajelentések küldése"
-      ],
-      "Send in": [
-        "Küldés így:"
       ],
       "Sequences": [
         "Sorozatok"
@@ -12039,20 +10869,11 @@
       "Show others when I'm busy": [
         "Mutassa meg másoknak, ha elfoglalt vagyok"
       ],
-      "Show secondary time zone": [
-        "Másodlagos időzóna megjelenítése"
-      ],
       "Show sender images": [
         "Feladók képének megjelenítése"
       ],
-      "Show unread count in Favicon": [
-        "Olvasatlanok számának megjelenítése a favikonon"
-      ],
       "Show week numbers": [
         "Hetek sorszámának megjelenítése"
-      ],
-      "Sign external messages": [
-        "Külső üzenetek aláírása"
       ],
       "Signature": [
         "Aláírás"
@@ -12062,18 +10883,6 @@
       ],
       "Single sign-on URL": [
         "Egyszeri bejelentkezés URL"
-      ],
-      "SMTP port": [
-        "SMTP port"
-      ],
-      "SMTP server": [
-        "SMTP szerver"
-      ],
-      "SMTP token": [
-        "SMTP token"
-      ],
-      "SMTP username": [
-        "SMTP felhasználónév"
       ],
       "Spam": [
         "Levélszemét"
@@ -12087,23 +10896,11 @@
       "Start date": [
         "Kezdő dátum"
       ],
-      "Start day of month": [
-        "A hónap kezdőnapja"
-      ],
-      "Start time": [
-        "Kezdés"
-      ],
-      "Start weekday": [
-        "A hét kezdőnapja"
-      ],
       "State": [
         "Állam"
       ],
       "Statement": [
         "Feltétel"
-      ],
-      "Sticky labels": [
-        "Ragadós címkék"
       ],
       "Street address": [
         "Utca, házszám"
@@ -12144,17 +10941,11 @@
       "Time zone": [
         "Időzóna"
       ],
-      "Tips and insights": [
-        "Ötletek és javaslatok"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Kérjük, segítsen nekünk a fejlődésben, mondja el, miért távozik."
       ],
       "To: ${ toEmail }": [
         "Címzett: ${ toEmail }"
-      ],
-      "Token name": [
-        "Token neve"
       ],
       "Two-password mode": [
         "Két jelszavas mód"
@@ -12170,9 +10961,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Töltsön fel egy vagy több helyreállító fájlt vagy titkosítási kulcsot"
-      ],
-      "Uppercase": [
-        "Nagybetű"
       ],
       "Uppercase and lowercase letters": [
         "Kis- és nagybetűk"
@@ -12203,12 +10991,6 @@
       ],
       "Verification code": [
         "Ellenőrző kód"
-      ],
-      "Verify keys with Key Transparency": [
-        "Kulcsok verifikálása Kulcs Átláthatósággal"
-      ],
-      "Video conferencing with Zoom": [
-        "Videokonferencia a Zoom alkalmazással"
       ],
       "Vulnerable": [
         "Sebezhető"
@@ -12291,19 +11073,6 @@
         "Adjon hozzá saját domain nevet a ${ MAIL_APP_NAME } fiókjához."
       ]
     },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "Egész napos esemény emlékeztetők"
-      ],
-      "Notifications": [
-        "Emlékeztetők"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "Időtartam"
-      ]
-    },
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Vegye fel a következő TXT rekordot. Megjegyzés: A DNS rekordok frissülése akár órákig is eltarthat."
@@ -12334,35 +11103,6 @@
       ],
       "Expired": [
         "Lejárt"
-      ]
-    },
-    "Label to  inform a feature is only available on Beta": {
-      "Beta": [
-        "Béta"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Teljes méretű"
-      ],
-      "Normal": [
-        "Normál"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Kényelmes"
-      ],
-      "Compact": [
-        "Tömör"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Oszlop"
-      ],
-      "Row": [
-        "Sor"
       ]
     },
     "Label, credit card": {
@@ -12449,9 +11189,6 @@
       ],
       "Common sign up issues": [
         "Általános problémák a regisztrációval"
-      ],
-      "create a ticket": [
-        "hibajegyet létrehozása"
       ],
       "Create account": [
         "Fiók létrehozása"
@@ -12590,9 +11327,6 @@
       ],
       "Resume now": [
         "Folytatás most"
-      ],
-      "Set email address": [
-        "E-mail cím megadása"
       ],
       "settings": [
         "beállítások"
@@ -12861,18 +11595,6 @@
         "Ez a funkció átmenetileg nem elérhető."
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Egy naptárhoz maximum ${ MAX_LINKS_PER_CALENDAR } hivatkozást hozhat létre. Újabb hivatkozás létrehozásához, töröljön egyet az alábbi listáról.",
-        "Egy naptárhoz maximum ${ MAX_LINKS_PER_CALENDAR } hivatkozást hozhat létre. Újabb hivatkozás létrehozásához, töröljön egyet az alábbi listáról."
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Elérte a maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot.",
-        "Elérte a maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot."
-      ]
-    },
     "Member action": {
       "Activate user": [
         "Felhasználó aktiválása"
@@ -12912,9 +11634,6 @@
       ]
     },
     "Message": {
-      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
-        "Minden szűrőművelet alkalmazásra kerül a ${ MAIL_APP_NAME } fiókjában található összes levélre. Automatikus válasz e-mailek nem kerülnek kiküldésre."
-      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Kapcsolja saját domain nevét a ${ BRAND_NAME } fiókjához, hogy egyedi e-mail címeket hozhasson létre (pl. önneve@öncége.com). A beállítási varázsló végigvezeti a szükséges lépéseken."
       ],
@@ -13891,9 +12610,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Biztonságos e-mail, fejlett lehetőségekkel a mindennapi kommunikációjához."
       ],
-      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
-        "Állítson be automatikus válaszokat, hogy tájékoztassa a feladókat arról, hogy jelenleg az irodán kívül tartózkodik vagy nem tud válaszolni."
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A külön VPN megoldás, amely biztonságos, korlátlan és nagysebességű internet elérést biztosít."
       ],
@@ -14395,12 +13111,6 @@
       "Key copied to the clipboard": [
         "Kulcs a vágólapra másolva"
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Kulcs törölve ezzel az ujjlenyomattal: ${ fp }."
-      ],
-      "Key with fingerprint ${ fp } is now primary.": [
-        "Kulcs ezzel az ujjlenyomattal: ${ fp } mostantól elsődleges."
-      ],
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
       ],
@@ -14446,18 +13156,9 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "Meghívó törölve"
-      ],
-      "Invitation revoked": [
-        "Meghívó visszavonva"
-      ],
       "Member added": [
         "Tag hozzáadva",
         "Tagok hozzáadva"
-      ],
-      "Member deleted": [
-        "Tag törölve"
       ]
     },
     "Notification in shared calendar modal": {
@@ -14466,11 +13167,6 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Csatlakozott: ${ calendarName } (${ senderEmail })"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "Esemény alapértékek frissítve"
       ]
     },
     "Notification time input": {
@@ -14694,113 +13390,14 @@
       ]
     },
     "Option": {
-      "10th of the month": [
-        "a hónap 10-ik napja"
-      ],
-      "11th of the month": [
-        "a hónap 11-ik napja"
-      ],
-      "12th of the month": [
-        "a hónap 12-ik napja"
-      ],
-      "13th of the month": [
-        "a hónap 13-ik napja"
-      ],
-      "14th of the month": [
-        "a hónap 14-ik napja"
-      ],
-      "15th of the month": [
-        "a hónap 15-ik napja"
-      ],
-      "16th of the month": [
-        "a hónap 16-ik napja"
-      ],
-      "17th of the month": [
-        "a hónap 17-ik napja"
-      ],
-      "18th of the month": [
-        "a hónap 18-ik napja"
-      ],
-      "19th of the month": [
-        "a hónap 19-ik napja"
-      ],
-      "1st of the month": [
-        "a hónap első napja"
-      ],
-      "20th of the month": [
-        "a hónap 20-ik napja"
-      ],
-      "21st of the month": [
-        "a hónap 21-ik napja"
-      ],
-      "22nd of the month": [
-        "a hónap 22-ik napja"
-      ],
-      "23rd of the month": [
-        "a hónap 23-ik napja"
-      ],
-      "24th of the month": [
-        "a hónap 24-ik napja"
-      ],
-      "25th of the month": [
-        "a hónap 25-ik napja"
-      ],
-      "26th of the month": [
-        "a hónap 26-ik napja"
-      ],
-      "27th of the month": [
-        "a hónap 27-ik napja"
-      ],
-      "28th of the month": [
-        "a hónap 28-ik napja"
-      ],
-      "29th of the month": [
-        "a hónap 29-ik napja"
-      ],
-      "2nd of the month": [
-        "a hónap 2-ik napja"
-      ],
-      "30th of the month": [
-        "a hónap 30-ik napja"
-      ],
-      "31st of the month": [
-        "a hónap 31-ik napja"
-      ],
-      "3rd of the month": [
-        "a hónap 3-ik napja"
-      ],
-      "4th of the month": [
-        "a hónap 4-ik napja"
-      ],
-      "5th of the month": [
-        "a hónap 5-ik napja"
-      ],
-      "6th of the month": [
-        "a hónap 6-ik napja"
-      ],
-      "7th of the month": [
-        "a hónap 7-ik napja"
-      ],
-      "8th of the month": [
-        "a hónap 8-ik napja"
-      ],
-      "9th of the month": [
-        "a hónap 9-ik napja"
-      ],
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
       ],
       "Allowed ${ defaultLabel }": [
         "Engedélyezve ${ defaultLabel }"
       ],
-      "Allowed (default)": [
-        "Engedélyezve (alapértelmezett)"
-      ],
       "Archive": [
         "Archiválás"
-      ],
-      "Ask each time": [
-        "Mindig kérdezze"
       ],
       "Auto": [
         "Automatikus"
@@ -14813,9 +13410,6 @@
       ],
       "Create new group": [
         "Új csoport létrehozása"
-      ],
-      "Fixed duration": [
-        "Fix időtartam"
       ],
       "Free server configs": [
         "Ingyenes szerver konfigurációk"
@@ -14838,9 +13432,6 @@
       "It's too expensive": [
         "Túl drága"
       ],
-      "Left to Right": [
-        "Balról jobbra"
-      ],
       "Mark as read": [
         "Megjelölés olvasottként"
       ],
@@ -14856,17 +13447,8 @@
       "None": [
         "Nincs"
       ],
-      "Normal": [
-        "Normál"
-      ],
       "Not allowed": [
         "Nem engedélyezett"
-      ],
-      "Off": [
-        "Ki"
-      ],
-      "On": [
-        "Be"
       ],
       "Optional ${ defaultLabel }": [
         "Opcionális ${ defaultLabel }"
@@ -14874,29 +13456,11 @@
       "Organization only": [
         "Kizárólag szervezeti"
       ],
-      "Permanent": [
-        "Állandó"
-      ],
-      "Plain text": [
-        "Egyszerű szöveg"
-      ],
       "Receive from all": [
         "Fogadás bárkitől"
       ],
-      "Repeat daily": [
-        "Ismétlés naponta"
-      ],
-      "Repeat monthly": [
-        "Ismétlés havonta"
-      ],
-      "Repeat weekly": [
-        "Ismétlés hetente"
-      ],
       "Required": [
         "Kötelező"
-      ],
-      "Right to Left": [
-        "Jobbról balra"
       ],
       "Router": [
         "Router"
@@ -14971,14 +13535,6 @@
       ],
       "Merge with calendar": [
         "Összefőzés naptárral"
-      ]
-    },
-    "Option protection mode": {
-      "Load content via proxy (recommended)": [
-        "Tartalmak betöltése proxy szerveren keresztül (javasolt)"
-      ],
-      "Load content via proxy and store as attachments": [
-        "Tartalmak betöltése proxy szerveren keresztül és tárolás mellékletként"
       ]
     },
     "Organization capacity error": {
@@ -15065,23 +13621,6 @@
       ],
       "Verify your email address ${ email } to set organization identity.": [
         "A szervezeti személyazonosság beállításához ellenőrizze a(z) ${ email } e-mail címet."
-      ]
-    },
-    "OS compatibility": {
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (Debian/Ubuntu)"
-      ],
-      ".dmg (12.0 or later)": [
-        ".dmg (12.0 vagy újabb)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64 bit)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (más disztribúciókhoz)"
       ]
     },
     "Participant name": {
@@ -15839,11 +14378,6 @@
         "Beállítás nincs befejezve"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Hozzon létre egy naptárat, hogy egyszerűen nyilvántarthassa az időbeosztását, mégis biztonságban tarthassa adatait."
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
@@ -15951,9 +14485,6 @@
       ],
       "Postal code": [
         "Irányítószám"
-      ],
-      "Printer": [
-        "Nyomtató"
       ],
       "Search": [
         "Keresés"
@@ -16087,22 +14618,9 @@
         "Frissítés ${ upsellPlanTitle }"
       ]
     },
-    "pqc-optin: Action": {
-      "Got it": [
-        "Értem."
-      ]
-    },
     "Price": {
       "Free": [
         "Ingyenes"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Elsődleges időzóna"
-      ],
-      "Secondary time zone": [
-        "Másodlagos időzóna"
       ]
     },
     "Property type": {
@@ -16269,36 +14787,6 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Szerezzen akár **${ maxRewardAmount }** kreditet."
-      ]
-    },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "A leiratkozás után nem fog hozzáférni ehhez a naptárhoz. A naptárban található minden esemény törlődik a fiókjából, de elérhetők maradnak az eredeti nyilvános hivatkozáson."
-      ],
-      "You will no longer have access to this calendar.": [
-        "A továbbiakban nem lesz elérése ehhez a naptárhoz."
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Ha elhagyja ezt a naptárat, akkor a tulajdonosát kell majd megkérnie, hogy újra csatlakozhasson."
-      ],
-      "This calendar will be removed from your account.": [
-        "Ez a naptár eltávolításra kerül a fiókjából."
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "Naptár törlése?"
-      ],
-      "Leave calendar?": [
-        "Naptár elhagyása?"
-      ],
-      "Remove calendar": [
-        "Naptár eltávolítása"
-      ],
-      "Unsubscribe?": [
-        "Leiratkozás?"
       ]
     },
     "Remove organization logo": {
@@ -17170,17 +15658,6 @@
         "Jelszó visszaállítási kérés"
       ]
     },
-    "Setting": {
-      "Enable Photos section": [
-        "Fotók rész bekapcsolása"
-      ],
-      "Get updates about comments via email": [
-        "Frissítéseket kaphat a megjegyzésekről e-mailben"
-      ],
-      "Include document name in email notifications": [
-        "A dokumentum nevének feltüntetése az e-mail értesítésekben"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Rendszerezze a leveleit mappák és címkék használatával. ${ learnMoreLink }"
@@ -17197,22 +15674,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Beállítások frissítése sikertelen"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "Szűrők"
-      ]
-    },
-    "Settings/filters - table": {
-      "Action": [
-        "Művelet"
-      ],
-      "Name": [
-        "Név"
-      ],
-      "Order": [
-        "Sorrend"
       ]
     },
     "Settings/labels": {
@@ -17255,11 +15716,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Megosztás ${ BRAND_NAME } felhasználókkal"
-      ]
-    },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "Új címke"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -18279,11 +16735,6 @@
         "Olvassa el hogyan kaphat személyes naptár hivatkozást."
       ]
     },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars.": [
-        "Vegyen fel nyilvános, külső vagy megosztott naptárat."
-      ]
-    },
     "Subscription": {
       "Billed every 2 years": [
         "Kétéves számlázás"
@@ -18795,17 +17246,8 @@
       "Address added": [
         "Cím hozzáadva"
       ],
-      "Address updated": [
-        "Cím frissítve"
-      ],
       "Administrator privileges restored": [
         "Adminisztrátor jogok helyreállítva"
-      ],
-      "Auto-reply disabled": [
-        "Automatikus válasz kikapcsolva"
-      ],
-      "Auto-reply updated": [
-        "Automatikus válasz frissítve"
       ],
       "Backup password updated": [
         "Biztonsági jelszó frissítve"
@@ -18821,9 +17263,6 @@
       ],
       "Calendar information updated": [
         "Naptáradatok frissítve"
-      ],
-      "Calendar removed": [
-        "Naptár eltávolítva"
       ],
       "Calendar updated": [
         "Naptár frissítve"
@@ -18845,9 +17284,6 @@
       ],
       "Credits added": [
         "Kredit hozzáadva"
-      ],
-      "Default calendar updated": [
-        "Alapértelmezett naptár frissítve"
       ],
       "Device deleted": [
         "Eszköz törölve"
@@ -18945,14 +17381,8 @@
       "Policy deleted. It will take effect only after you publish the changes.": [
         "A házirend törölve lett. A változtatások csak a közzétételük után lépnek életbe."
       ],
-      "Port copied to clipboard": [
-        "Port a vágólapra másolva"
-      ],
       "Preference saved": [
         "Beállítások mentve"
-      ],
-      "Premium address created": [
-        "Prémium cím létrehozva"
       ],
       "Problem reported": [
         "Hiba bejelentve"
@@ -18960,23 +17390,14 @@
       "Resuming import": [
         "Importálás folytatása"
       ],
-      "Server copied to clipboard": [
-        "Szerver a vágólapra másolva"
-      ],
       "Session revoked": [
         "Munkafolyamat visszavonva"
       ],
       "Sessions revoked": [
         "Munkafolyamatok visszavonva"
       ],
-      "SMTP token deleted": [
-        "SMTP token törölve"
-      ],
       "SPF value copied to clipboard": [
         "Az SPF érték a vágólapra másolva"
-      ],
-      "Token copied to clipboard": [
-        "Token a vágólapra másolva"
       ],
       "Undo in progress": [
         "Visszavonás folyamatban"
@@ -19067,9 +17488,6 @@
       "Creating config file for ${ serverName }": [
         "Beállítás fájl létrehozása ehhez: ${ serverName }"
       ],
-      "Filter removed": [
-        "Szűrő eltávolítva"
-      ],
       "Group end-to-end email encryption disabled": [
         "A csoport végpontok közti e-mail titkosítás letiltva"
       ],
@@ -19084,9 +17502,6 @@
       ],
       "Resent invitation": [
         "Meghívó újraküldése"
-      ],
-      "Status updated": [
-        "Állapot frissítve"
       ]
     },
     "Suffix": {
@@ -19103,11 +17518,6 @@
       ],
       "per user per month": [
         "felhasználónként havonta"
-      ]
-    },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Azon események részletei, melyeket nem sikerült exportálni"
       ]
     },
     "summer2023: Tooltip": {
@@ -19138,11 +17548,6 @@
       ],
       "For individuals": [
         "Magánszemélyeknek"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "Velem megosztott"
       ]
     },
     "TableHeader": {
@@ -19208,11 +17613,6 @@
       ],
       "vCard field": [
         "vCard mező"
-      ]
-    },
-    "TableRow": {
-      "No SMTP tokens found": [
-        "Nem található SMTP token"
       ]
     },
     "Time unit": {
@@ -19282,9 +17682,6 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
-      "${ PASS_SHORT_APP_NAME } Monitor Report": [
-        "${ PASS_SHORT_APP_NAME } figyelési jelentés"
-      ],
       "(active)": [
         "(aktív)"
       ],
@@ -19320,12 +17717,6 @@
       ],
       "Accessibility": [
         "Kisegítő lehetőségek"
-      ],
-      "Accessible items": [
-        "Elérhető elemek"
-      ],
-      "Accessible vaults": [
-        "Elérhető tárolók"
       ],
       "Account and password": [
         "Fiók és jelszó"
@@ -19403,9 +17794,6 @@
       "Add pm.me subdomain": [
         "pm.me aldomain név hozzáadása"
       ],
-      "Add Sieve filter": [
-        "Új Sieve szűrő"
-      ],
       "Add to allow list": [
         "Hozzáadás az engedélyezett listához"
       ],
@@ -19457,9 +17845,6 @@
       "Appearance": [
         "Megjelenés"
       ],
-      "Apply filter to existing messages": [
-        "Szűrő alkalmazása a meglévő üzenetekre"
-      ],
       "Apply gift code": [
         "Ajándék kód hozzáadása"
       ],
@@ -19478,9 +17863,6 @@
       "Auto-reply": [
         "Automatikus válasz"
       ],
-      "Automatically sign outgoing messages?": [
-        "Automatikusan aláírja a kimenő üzeneteket?"
-      ],
       "Backup and export": [
         "Mentés és exportálás"
       ],
@@ -19489,12 +17871,6 @@
       ],
       "Block trackers and malware": [
         "Követők és kártevők blokkolása"
-      ],
-      "Bridge for ${ platform }": [
-        "Bridge ${ platform } eszközökre"
-      ],
-      "Browser extensions": [
-        "Böngésző bővítmények"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } előfizetés lemondása"
@@ -19529,17 +17905,11 @@
       "Change password": [
         "Jelszó megváltoztatása"
       ],
-      "Change primary key?": [
-        "Elsődleges kulcs módosítása?"
-      ],
       "Change role": [
         "Szerep megváltoztatása"
       ],
       "Change second password": [
         "Második jelszó megváltoztatása"
-      ],
-      "Check your default mail application": [
-        "Ellenőrizze az alapértelmezett levelező alkalmazását"
       ],
       "Choose an account": [
         "Válasszon egy fiókot"
@@ -19707,20 +18077,11 @@
       "Delete account": [
         "Fiók törlése"
       ],
-      "Delete calendar": [
-        "Naptár törlése"
-      ],
-      "Delete filter?": [
-        "Törli a szűrőt?"
-      ],
       "Delete folder?": [
         "Mappa törlése?"
       ],
       "Delete group?": [
         "Törli a csoportot?"
-      ],
-      "Delete key permanently?": [
-        "Kulcs végleges törlése?"
       ],
       "Delete label?": [
         "Címke törlése?"
@@ -19734,9 +18095,6 @@
       ],
       "Delete user?": [
         "Felhasználó törlése?"
-      ],
-      "Delete version history?": [
-        "Változatelőzmények törlése?"
       ],
       "Deny access to user?": [
         "Felhasználó hozzáférésének elutasítása?"
@@ -19834,9 +18192,6 @@
       "Edit servers": [
         "Szerverek szerkesztése"
       ],
-      "Edit Sieve filter": [
-        "Sieve szűrő szerkesztése"
-      ],
       "Edit the list of servers of the gateway": [
         "Az átjáró kiszolgálói listájának szerkesztése"
       ],
@@ -19851,9 +18206,6 @@
       ],
       "Email": [
         "E-mail"
-      ],
-      "Email breaches": [
-        "Email biztonsági incidensek"
       ],
       "Email composer": [
         "E-mail szerkesztő"
@@ -19899,15 +18251,6 @@
       ],
       "Export": [
         "Exportálás"
-      ],
-      "Export calendar": [
-        "Naptár exportálása"
-      ],
-      "Export private key": [
-        "Privát kulcs exportálása"
-      ],
-      "Export public key": [
-        "Nyilvános kulcs exportálása"
       ],
       "External PGP settings": [
         "Külső PGP beállítások"
@@ -19969,9 +18312,6 @@
       ],
       "Generate new recovery phrase?": [
         "Új helyreállító jelmondat létrehozása?"
-      ],
-      "Generate SMTP token": [
-        "SMTP token előállítása"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Fizessen elő ${ vpnPlus } csomagra az összes szerver használatához"
@@ -20055,9 +18395,6 @@
       "Import groups": [
         "Csoportok importálása"
       ],
-      "Import key": [
-        "Kulcs importálása"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importálás ${ PRODUCT_NAMES.EASY_SWITCH } segítségével"
       ],
@@ -20082,23 +18419,11 @@
       "IP": [
         "IP"
       ],
-      "Items owned": [
-        "Saját tulajdonú elemek"
-      ],
-      "Keyboard shortcuts": [
-        "Gyorsbillentyűk"
-      ],
       "Labels": [
         "Címkék"
       ],
       "Language and time": [
         "Nyelv és idő"
-      ],
-      "Last activity": [
-        "Legutóbbi tevékenység"
-      ],
-      "Last updated": [
-        "Utoljára frissítve"
       ],
       "Layout": [
         "Elrendezés"
@@ -20211,9 +18536,6 @@
       "Password": [
         "Jelszó"
       ],
-      "Password generator rules": [
-        "Jelszó létrehozási szabályok"
-      ],
       "Password reset settings": [
         "Jelszó visszaállítási beállítások"
       ],
@@ -20234,9 +18556,6 @@
       ],
       "PayPal verification failed": [
         "A PayPal ellenőrzés sikertelen"
-      ],
-      "Personalize your email footer": [
-        "E-mail lábléc testreszabása"
       ],
       "Phone": [
         "Telefonszám"
@@ -20268,9 +18587,6 @@
       "QR Code": [
         "QR-kód"
       ],
-      "Ready, set, forward": [
-        "Felkészülni, kész, rajt"
-      ],
       "Recommended": [
         "Javasolt"
       ],
@@ -20297,9 +18613,6 @@
       ],
       "Remove all members?": [
         "Eltávolít minden tagot?"
-      ],
-      "Remove calendar": [
-        "Naptár eltávolítása"
       ],
       "Remove device?": [
         "Eszköz eltávolítása?"
@@ -20508,9 +18821,6 @@
       "Subscription canceled": [
         "Előfizetés lemondva"
       ],
-      "Success": [
-        "Sikeres"
-      ],
       "Successfully created ${ n } user account": [
         "${ n } felhasználói fiók sikeresen létrehozva",
         "${ n } felhasználói fiók sikeresen létrehozva"
@@ -20602,9 +18912,6 @@
       "Upload your organization’s logo": [
         "A szervezet logójának feltöltése"
       ],
-      "Usage Report": [
-        "Használati jelentés"
-      ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatok védelmének biztosításához"
       ],
@@ -20619,12 +18926,6 @@
       ],
       "Users and addresses": [
         "Felhasználók és címek"
-      ],
-      "Vault owned": [
-        "Saját tárolók"
-      ],
-      "Vaults owned": [
-        "Saját tárolók"
       ],
       "Verification": [
         "Ellenőrzés"
@@ -20707,9 +19008,6 @@
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
       ],
-      "Your SMTP token": [
-        "SMTP token"
-      ],
       "Your storage": [
         "Tárhely"
       ],
@@ -20772,26 +19070,6 @@
         "Állapot"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "Műveletek"
-      ],
-      "Creation date": [
-        "Létrehozás dátuma"
-      ],
-      "Fingerprint": [
-        "Ujjlenyomat"
-      ],
-      "Function": [
-        "Funkció"
-      ],
-      "Status": [
-        "Állapot"
-      ],
-      "Type": [
-        "Típus"
-      ]
-    },
     "Title header for members table": {
       "Addresses": [
         "Címek"
@@ -20851,9 +19129,6 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatikus váltás az Ön által preferált nappali és éjszakai témák között a rendszer nappali és éjszakai üzemmódjával szinkronban."
       ],
-      "Click here to learn how to create a customized signature with HTML.": [
-        "Kattintson ide, ha meg szeretné tudni, hogyan hozhat létre egyéni aláírást a HTML használatával."
-      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Másolja be ezt az URL-t a személyazonosság-szolgáltató (ACS - Assertion Consumer Service) URL mezőjébe"
       ],
@@ -20865,9 +19140,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Módosítsa az importálás beállításait hogy kevesebb címkére legyen szükség"
-      ],
-      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "A 30 napnál régebbi üzenetek törlése a levélszemét és a lomtár mappából. Az automatikus törlés bekapcsolása, a már ezekben a mappákban lévő üzeneteknek a belekerülésük dátuma alapján ad meg törlési időpontot."
       ],
       "Device name and app version": [
         "Eszköz neve és alkalmazás verziója"
@@ -20908,14 +19180,8 @@
       "For example, **password, qwerty**, etc.": [
         "Például, **jelszó, qwerty**, stb."
       ],
-      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
-        "Hatékonysági és biztonsági tippek, hogy a legtöbbet hozhassa ki a ${ MAIL_APP_NAME } alkalmazásból."
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "A levelező csoportosítsa az e-maileket beszélgetésenként vagy jelenítse meg külön."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "A személyazonosság-szolgáltató nyilvános kulcsa a hitelesítési állítások aláírásához. Szerezze meg a tanúsítvány ellenőrző összegét a személyazonosság-szolgáltatótól."
@@ -20926,41 +19192,17 @@
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
         "Azok a tagok, akik nem használják a 2FA-t, kapnak egy e-mailt, amelyben arra kérjük őket, hogy a lehető leghamarabb engedélyezzék azt. Az egyszeri bejelentkezést használók nem kapnak emlékeztető e-mailt."
       ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Az üzenetek továbbra is megjelennek az Elküldött elemek és a Piszkozatok közt, akkor is, ha áthelyezi őket egy másik mappába."
-      ],
       "Not all information listed here was exposed for all users.": [
         "Nem minden itt felsorolt információt tettek közzé minden felhasználó esetén."
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Eredeti IP cím és Internetszolgáltató (ISP)"
       ],
-      "Remove metadata from images to protect your privacy.": [
-        "A képek metaadatainak eltávolítása az adatai védelme érdekében"
-      ],
-      "See number of unread messages in the tab icon": [
-        "Az olvasatlan üzenetek számának megjelenítése a lap ikonján"
-      ],
-      "Set how your list of messages looks like by default.": [
-        "Kiválasztja, hogy alapértelmezetten hogyan jelenjen meg az üzenetek listája."
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "A levél szerkesztő alapértelmezett méretének beállítása kicsire vagy teljes képernyősre."
-      ],
-      "Set the default layout for your Inbox.": [
-        "A levelező alapértelmezett elrendezésének beállítása."
-      ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Beállítja az alábbi láblécet az elküldött e-mailjeiben: ${ signature } A hivatkozás az ajánló hivatkozására mutat. A lábléc az aláírása alatt fog megjelenni. Az aláírását bármikor személyre szabhatja a beállítások között."
       ],
       "Shared server policies can be applied to individual users or groups": [
         "A megosztott szerverekre vonatkozó irányelvek alkalmazhatók egyéni felhasználókra vagy csoportokra"
-      ],
-      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "A feladók képének megjelenítése az üzenetek listáján. A feladó monogramja fog megjelenni, ha nincs kép."
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Az ezzel a kulccsal készült aláírások érvénytelenként lesznek kezelve és a kulcs nem használható titkosításra"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Adja meg azt a domain nevet, amely a SAML SSO-val hitelesíthető"
@@ -20986,41 +19228,14 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
       ],
-      "This address has been disabled": [
-        "Ez a cím van letiltva"
-      ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Ez lehet jelszó visszaállítás következménye, vagy a felhasználó még sosem lépett be."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Ez az e-mail cím a szervezet minden tagjának megjelenik, amikor fiókkezelési műveleteket végez."
       ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Ezzel késleltetheti az e-mailek elüldését, lehetőséget kapva, a kiválasztott időtartamon belül, a küldés visszavonására."
-      ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető el"
-      ],
-      "This feature is only available on Beta": [
-        "Ez a lehetőség csak a béta változaton érhető el"
-      ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Ez az az alapértelmezett kulcs, amelyet a többi ${ MAIL_APP_NAME } felhasználó használ a régebbi mobilalkalmazásokban az Önnek küldött adatok titkosítására"
-      ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
-        "Ez az az alapértelmezett kulcs, amelyet más ${ MAIL_APP_NAME } felhasználók használnak az Önnek küldött adatok titkosítására"
-      ],
-      "This key cannot be used for encryption": [
-        "Ez a kulcs nem használható titkosításhoz"
-      ],
-      "This key is encrypted with an old password": [
-        "Ez a kulcs egy régebbi jelszóval van titkosítva"
-      ],
-      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "Ezt a kulcsot használja a ${ MAIL_APP_NAME } a névjegyek adatainak titkosításához"
-      ],
-      "This key is used for email forwarding": [
-        "Ez a kulcs e-mail továbbításkor van használatban"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Hacsak nem fejtik meg őket, a titkosított jelszavak akkor is biztonságban maradnak, ha nyilvánosságra kerülnek."
@@ -21048,15 +19263,6 @@
       ],
       "When enabled, animations and transitions will not show": [
         "Bekapcsolásakor nem jelennek meg az animációk és átmenetek"
-      ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Ha egy beszélgetésben szereplő levélhez rendel címkét, akkor abban a beszélgetésben az összes fogadott és küldött új üzenetre érvényes lesz."
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "A csaló weboldalak elkerülése érdekében, egy jóváhagyás jelenik meg a teljes URL-lel, amikor egy hivatkozásra kattint."
-      ],
-      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "Egy levél a levélszemétbe helyezésekor, automatikusan leiratkozik a feladó levelezési listáiról."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "A ${ MAIL_APP_NAME } beérkező levelek mappája majdnem tele van"
@@ -21092,31 +19298,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Várakozás a meghívás elfogadására"
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Bekapcsolásakor a nyilvános kulcs automatikusan csatolásra kerül minden kimenő üzenethez. A címzettek ezt használhatják a levél hitelességének ellenőrzésére és titkosított üzenetek küldésére önnek."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Válassza ki a nem ${ BRAND_NAME } PGP felhasználók számára küldött üzenetek alapértelmezett PGP titkosítási és aláírási beállításait. Az Inline PGP csak egyszerű szöveges üzenetekkel működik."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Ha egy olyan ${ MAIL_APP_NAME } felhasználótól kap levelet, akinek még nincs megbízható kulcsa a névjegyei közt, egy kérdés fog megjelenni a kulcsok megbízhatóként megjelöléséhez."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Bekapcsolásakor a kimenő üzenetek automatikusan aláírásra kerülnek, így a címzettek ellenőrizhetik az üzenet hitelességét. Ez együtt működik a lentebb beállított alapértelmezett PGP beállításokkal."
-      ]
-    },
-    "Tooltip: PM signature locked": {
-      "This signature cannot be modified": [
-        "Ez az aláírás nem módosítható"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -21327,20 +19508,6 @@
       ],
       "Your default font will look like following:": [
         "Így fog kinézni az alapértelmezett betűtípus:"
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Váltson ${ passPlusPlanName } csomagra korlátlan számú hide-my-email e-mail álnévhez"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re",
-        "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "A naptár megosztásához váltson egy ${ MAIL_SHORT_APP_NAME } előfizetéses csomagra."
       ]
     },
     "Upsell": {
@@ -21754,18 +19921,6 @@
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Ha megszakítja az importálást, nem lehet folytatni. A ${ BRAND_NAME } már mentette az eddig feldolgozott adatokat a fiókjába. Megszakítja?"
       ],
-      "Maximum cannot be lower than minimum": [
-        "A maximum nem lehet kisebb a minimumnál"
-      ],
-      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
-        "${ minimumNumber } és ${ maximumNumber } között kell lennie"
-      ],
-      "Must be greater than or equal to ${ minimumNumber }": [
-        "Nagyobbnak vagy egyenlőnek kell lennie, mint: ${ minimumNumber }"
-      ],
-      "Must be lower than or equal to ${ maximumNumber }": [
-        "Kisebbnek vagy egyenlőnek kell lennie, mint ${ maximumNumber }"
-      ],
       "Please add at least one recipient.": [
         "Kérjük, adjon meg legalább egy címzettet."
       ],
@@ -21783,9 +19938,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Az eszközén a dátum és idő beállítása pontatlan. ${ learnMore }"
-      ],
-      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "Az ezt a tokent használó eszköz vagy szolgáltatás nem lesz képes e-mailt küldeni a ${ MAIL_APP_NAME } használatával."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Az importálás helyigénye meghaladhatja a ${ BRAND_NAME } fiókban rendelkezésre álló helyet. Fontolja meg a beállítások finomítását."
@@ -21827,11 +19979,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "A sikeres ellenőrzés után se távolítsa el a TXT rekordot, annak megerősítésére, hogy továbbra is öné a domain név."
-      ]
-    },
-    "Weak personal key warning": {
-      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        "Ez a kulcs már nem felel meg a mai biztonsági igényeknek. Javasoljuk, hogy jelölje meg elavultként és hozzon létre új kulcsot."
       ]
     },
     "Weekly recurring event, frequency": {

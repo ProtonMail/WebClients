@@ -2881,11 +2881,11 @@
       "Doesn't end": [
         "Nu se termină"
       ],
-      "End after": [
+      "Ends after": [
         "Se termină după"
       ],
-      "End on": [
-        "Se termină"
+      "Ends on": [
+        "Se termină la"
       ],
       "event": [
         "eveniment",
@@ -3701,6 +3701,9 @@
       "Last name is too long": [
         "Numele este prea lung."
       ],
+      "Location is required": [
+        "Locul este obligatoriu."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
         "Îmbinați cel puțin ${ calendarsToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
@@ -3779,9 +3782,6 @@
       "Payment process not supported": [
         "Metoda de plată nu este acceptată."
       ],
-      "Periods is too short": [
-        "Perioada este prea scurtă."
-      ],
       "Please activate your search again": [
         "Reactivați căutarea."
       ],
@@ -3840,6 +3840,9 @@
       ],
       "Process aborted": [
         "Proces abandonat"
+      ],
+      "Range is too short": [
+        "Intervalul este prea scurt."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "A fost eliminat un destinatar duplicat: ${ joinedRecipients }",
@@ -5324,7 +5327,7 @@
       "Cannot create booking range across days": [
         "Nu se poate crea un interval de rezervare pe parcursul mai multor zile."
       ],
-      "Cannot create booking range in the past": [
+      "Cannot create booking range in the past.": [
         "Nu se poate crea un interval de rezervare în trecut."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
@@ -5374,9 +5377,6 @@
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
-      ],
-      "Could not verify signature over booking page data": [
-        "Nu s-a putut verifica semnătura pentru datele paginii de rezervare."
       ],
       "Country code": [
         "Cod țară"
@@ -5583,9 +5583,6 @@
       ],
       "Host": [
         "Gazdă"
-      ],
-      "Host signature verification failed": [
-        "Eșuare verificare semnătură gazdă"
       ],
       "How long should an appointment last?": [
         "Cât ar trebui să dureze o întâlnire?"
@@ -6092,6 +6089,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Această pagină de rezervare nu poate fi editată, calendarul asociat este dezactivat."
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Această rezervare a fost făcută prin ${ CALENDAR_APP_NAME }, parte din suita de produse cu confidențialitate prioritară de la ${ BRAND_NAME }."

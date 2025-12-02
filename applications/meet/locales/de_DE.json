@@ -65,14 +65,14 @@
       "Copy link": [
         "Link kopieren"
       ],
+      "Create a free account": [
+        "Kostenloses Konto erstellen"
+      ],
       "Create meeting": [
         "Meeting erstellen"
       ],
       "Delete": [
         "Löschen"
-      ],
-      "Disable video": [
-        "Video deaktivieren"
       ],
       "Dismiss": [
         "Verwerfen"
@@ -97,6 +97,9 @@
       ],
       "Forgot password?": [
         "Passwort vergessen?"
+      ],
+      "Get Meet Professional": [
+        "Hol dir Meet Professional"
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
@@ -143,9 +146,6 @@
       "More options for accounts": [
         "Mehr Optionen für Konten"
       ],
-      "Mute participant": [
-        "Teilnehmer stummschalten"
-      ],
       "Next month": [
         "Nächster Monat"
       ],
@@ -175,6 +175,9 @@
       ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "Rejoin meeting": [
+        "Meeting wieder beitreten"
       ],
       "Report a problem": [
         "Ein Problem melden"
@@ -230,6 +233,9 @@
       "Start": [
         "Starten"
       ],
+      "Start a meeting": [
+        "Meeting starten"
+      ],
       "Start meeting": [
         "Meeting starten"
       ],
@@ -253,9 +259,6 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
-      ],
-      "Upgrade": [
-        "Wechseln"
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
@@ -1616,6 +1619,12 @@
       "Country code": [
         "Ländercode"
       ],
+      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
+        "Erstelle ein Konto, um Meet mit ${ CALENDAR_APP_NAME } zu verbinden und sofort Besprechungseinladungen zu senden."
+      ],
+      "Create an account to have a personal meeting link you can reuse for every call.": [
+        "Ein Konto erstellen, um einen persönlichen Meeting-Link zu haben, den du für jedes Meeting wiederverwenden kannst."
+      ],
       "Custom combination": [
         "Benutzerdefinierte Kombination"
       ],
@@ -1670,8 +1679,14 @@
       "Free meeting": [
         "Kostenloses Meeting"
       ],
+      "Get your personal meeting ID": [
+        "Deine persönliche Meeting-ID erhalten"
+      ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Gehe zu about:config, suche nach media.peerconnection.enabled, und setze es auf \"true\"."
+      ],
+      "Host your own secure meeting": [
+        "Dein eigenes sicheres Meeting veranstalten"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
@@ -1703,6 +1718,9 @@
       "Left": [
         "Verbleibend"
       ],
+      "Left by mistake?": [
+        "Aus Versehen verlassen?"
+      ],
       "Loading": [
         "Wird geladen"
       ],
@@ -1714,6 +1732,9 @@
       ],
       "Loading...": [
         "Wird geladen..."
+      ],
+      "Meet without restrictions": [
+        "Meet ohne Einschränkungen"
       ],
       "Meeting created": [
         "Besprechung erstellt"
@@ -1802,6 +1823,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Schedule your next meeting": [
+        "Dein nächstes Meeting planen"
+      ],
       "Secure meeting": [
         "Sicheres Meeting"
       ],
@@ -1832,6 +1856,9 @@
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Teile diesen Link, um andere einzuladen. Du findest ihn auch jederzeit, indem du auf das Info-Symbol in der Symbolleiste klickst."
       ],
+      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Einen Anruf in ${ MEET_APP_NAME } starten und den Link teilen, um jeden zum Mitmachen einzuladen. Einfach, sicher und kostenlos."
+      ],
       "Stop sharing your screen": [
         "Bildschirmfreigabe beenden"
       ],
@@ -1853,6 +1880,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
+        "Um deine Organisation zu schützen, lade dein Team ein, ${ MEET_APP_NAME } zu nutzen."
+      ],
       "Turn off camera": [
         "Kamera ausschalten"
       ],
@@ -1865,8 +1895,14 @@
       "Turn on microphone": [
         "Mikrofon einschalten"
       ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Upgrade, um das 1-Stunden-Limit zu entfernen und den Countdown zu überspringen. Genieße Meetings von bis zu 24 Stunden."
+      ],
       "Video effects": [
         "Videoeffekte"
+      ],
+      "We hope you enjoyed your secure meeting!": [
+        "Wir hoffen, du hast dein sicheres Meeting genossen."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"

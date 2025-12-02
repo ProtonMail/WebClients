@@ -668,6 +668,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Abrir no ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Abrir navegação"
       ],
@@ -1743,6 +1746,9 @@
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Alguém pode ver meu histórico de internet se usarmos o mesmo WiFi?"
+      ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Conecte ${ VPN_CONNECTIONS } dispositivos de uma só vez"
       ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Ative o kill switch e a conexão automática nas configurações da VPN."
@@ -4838,6 +4844,9 @@
       "15 GB storage": [
         "15 GB de armazenamento"
       ],
+      "4 more privacy services": [
+        "4 mais serviços de privacidade"
+      ],
       "@pm.me address": [
         "Endereço @pm.me"
       ],
@@ -5266,6 +5275,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Aproveitando o ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Desbloqueie quatro serviços de privacidade premium por apenas **${ priceString }** a mais por mês"
       ],
       "Upgrade your privacy": [
         "Faça um upgrade na sua privacidade"
@@ -5836,14 +5848,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importe seus códigos existentes** de outros aplicativos de A2F, como o Google Autenticador"
       ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Etapa 1: Convite seus amigos** para a ${ BRAND_NAME } com seu link de indicação."
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Passo 1:** Convide seus amigos para a ${ BRAND_NAME } com seu link de indicação."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Passo 2:** Seus amigos ganham **2 semanas grátis** no plano deles."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Passo 2:** Seus amigos ganham 2 semanas grátis no plano deles."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Passo 3:** Ganhe ${ referrerRewardAmount } em créditos para cada pessoa que se inscrever para um plano."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Passo 3:** Ganhe **${ referrerRewardAmount } em créditos** para cada pessoa que se inscrever para um plano."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** para todos os seus dispositivos"
@@ -7847,6 +7868,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ao cancelar, sua assinatura não começará, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Quando você remove um servidor de um Gateway, ele entra em um período de desativação de 10 dias. Esse servidor pode ser adicionado a um novo Gateway, mas seu país não pode ser alterado."
@@ -12230,6 +12254,9 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Dê 2 semanas, obtenha ${ referrerRewardAmount }"
+      ],
       "How your free trial works:": [
         "Como funciona seu teste gratuito:"
       ],
@@ -14854,6 +14881,9 @@
       "Connect organization": [
         "Conectar organização"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo com o ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência"
       ],
@@ -15512,6 +15542,9 @@
       "Start import process": [
         "Iniciar processo de importação"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Comece a proteger seus dispositivos com o aplicativo do ${ VPN_APP_NAME }."
+      ],
       "State": [
         "Estado"
       ],
@@ -15551,6 +15584,9 @@
       ],
       "Third-party apps and services": [
         "Aplicativos e serviços de terceiros"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Para pré-visualizar esta planilha, abra-a no ${ SHEETS_APP_NAME } ou faça o download."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Experimente ${ AUTHENTICATOR_APP_NAME }"

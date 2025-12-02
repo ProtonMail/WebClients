@@ -4313,6 +4313,9 @@
       "Create an end-to-end encrypted document.": [
         "Creeu un document xifrat d'extrem a extrem."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Creeu documents i fulls de càlcul xifrats d'extrem a extrem."
+      ],
       "Create in": [
         "Crear a"
       ],
@@ -4329,7 +4332,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant el nou document..."
+        "S'està creant un document nou..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4425,10 +4428,10 @@
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "S'ha produït un error en convertir el document: ${ errorMessage }"
+        "Hi ha hagut un error en convertir el document: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
-        "S'ha produït un error en carregar el document: ${ errorDetail }"
+        "Hi ha hagut un error en carregar el document: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Error de sincronització"
@@ -4494,7 +4497,7 @@
         "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
-        "Rebeu notificacions dels comentaris"
+        "Rebeu notificacions sobre els comentaris"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
@@ -8431,9 +8434,6 @@
       ],
       "New spreadsheet": [
         "Crea un full de càlcul"
-      ],
-      "Rename spreadsheet": [
-        "Canvia el nom del full de càlcul"
       ],
       "Tab Separated Values (.tsv)": [
         "Valors separats per pestanyes (.tsv)"

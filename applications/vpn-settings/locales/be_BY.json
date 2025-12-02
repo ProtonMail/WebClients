@@ -668,6 +668,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Адкрыць у ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
@@ -1770,6 +1773,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Ці можа нехта іншы ўбачыць маю гісторыю прагляду вэб-старонак, калі мы выкарыстоўваем аднолькавае падключэнне па Wi-Fi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Падключыце да ${ VPN_CONNECTIONS } прылад адначасова"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Уключыце Kill Switch і аўтаматычна падключайцеся ў наладах VPN"
       ],
@@ -1796,6 +1802,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Даведайцеся, як уключыць ${ VPN_APP_NAME } на вашым маршрутызатары."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Абараніце ўсе свае дамашнія прылады адначасова з ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Абараніце сваю кампанію ад уцечак даных і зрабіце аддаленую працу больш бяспечнай з карпаратыўным VPN."
@@ -4898,6 +4907,9 @@
       "15 GB storage": [
         "15 ГБ сховішча"
       ],
+      "4 more privacy services": [
+        "яшчэ 4 паслугі прыватнасці"
+      ],
       "@pm.me address": [
         "адрас @pm.me"
       ],
@@ -5342,6 +5354,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Разблакіруйце 4 прэміяльныя сэрвісы прыватнасці ўсяго за **${ priceString }** дадатковай платы ў месяц"
       ],
       "Upgrade your privacy": [
         "Паляпшэнне вашай прыватнасці"
@@ -8047,6 +8062,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Пасля скасавання ваша падпіска не будзе актывавана, але вы зможаце працягваць карыстацца перавагамі тарыфнага плана да завяршэння пробнага перыяду. Пасля яго завяршэння вы будзеце паніжаны да бясплатнага плана ${ BRAND_NAME }."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Сервер уступае ў 10-дзённы перыяд дэактывацыі, калі ён выдаляецца са шлюза. Гэты сервер можа быць дадзены ў новы шлюз, але яго краіна не можа быць зменена."
@@ -12544,6 +12562,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Вы будзеце паніжаны да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, калі скасуеце тарыфны план да завяршэння пробнага перыяду. Ваш поўны тарыфны план пачне дзейнічаць і вы атрымаеце **${ referrerRewardAmount }** у крэдытах, калі не зробіце гэтага."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Вы страціце сваю ўзнагароду ў выглядзе крэдытаў на суму **${ referrerRewardAmount }** пры скасаванні падпіскі."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Вы атрымаеце **${ referrerRewardAmount }** у крэдытах, калі падпішацеся на тарыфны план да гэтай даты. Вы будзеце паніжаны да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, калі не зробіце гэтага."
       ],
@@ -15286,6 +15307,9 @@
       "Connect organization": [
         "Падключэнне арганізацыі"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Падключайце да ${ VPN_CONNECTIONS } прылад адначасова з ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
       ],
@@ -15952,6 +15976,9 @@
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Пачніце абараняць свае прылады з праграмай ${ VPN_APP_NAME }."
+      ],
       "State": [
         "Стан"
       ],
@@ -15993,6 +16020,9 @@
       ],
       "Third-party apps and services": [
         "Староннія праграмы і сэрвісы"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Адкрыйце гэту электронную табліцу ў ${ SHEETS_APP_NAME } або спампуйце яе для папярэдняга прагляду."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Паспрабуйце ${ AUTHENTICATOR_APP_NAME }"
@@ -16552,6 +16582,12 @@
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Кошт платнай падпіскі складае ад ${ fallBackString } у месяц"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Усяго на **${ priceString }** больш штомесяц, чым вы плаціце цяпер."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ PLAN_NAMES[plan] }."

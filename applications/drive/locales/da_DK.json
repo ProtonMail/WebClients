@@ -279,6 +279,9 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create a spreadsheet": [
+        "Opret et regneark"
+      ],
       "Create album": [
         "Opret album"
       ],
@@ -740,11 +743,14 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åbn i ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Åbn navigation"
       ],
       "Pause all": [
-        "Sæt alle på pause"
+        "Sæt alt/alle på pause"
       ],
       "Pause download": [
         "Pause download"
@@ -3759,9 +3765,6 @@
       "We were not able to load some of your invitation to shared items": [
         "Vi kunne ikke indlæse nogle af dine invitationer til delte elementer."
       ],
-      "We were not able to load some of your invitations": [
-        "Vi kunne ikke indlæse nogle af dine invitationer"
-      ],
       "We were not able to load some of your saved shared links": [
         "Vi kunne ikke indlæse nogle af dine gemte delte link"
       ],
@@ -5942,7 +5945,7 @@
         "Registrerer dit abonnement…"
       ],
       "Report has been sent": [
-        "Anmeldelse sendt"
+        "Rapport sendt"
       ],
       "Request access, or switch to an account with access.": [
         "Anmod om adgang, eller skift til en konto med adgang."
@@ -6639,6 +6642,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Dine data forbliver dine. Opret og arbejd sammen med andre ved hjælp af funktionsrige regneark sikret med end-to-end kryptering."
+      ],
       "Your email address and password were leaked:": [
         "Din e-mailadresse og adgangskode er blevet lækket:"
       ],
@@ -6846,6 +6852,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Et skærmfoto af ${ SHEETS_APP_NAME }"
       ],
       "Account holder": [
         "Kontohaver"
@@ -7213,6 +7222,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "New": [
+        "Ny"
       ],
       "New password": [
         "Ny adgangskode"
@@ -12046,7 +12058,7 @@
         "Fildetaljer"
       ],
       "File recovery process": [
-        "Filgendannelse fremskridt"
+        "Filgendannelsesproces"
       ],
       "Folder": [
         "Mappe"
@@ -12124,6 +12136,9 @@
       ],
       "Information exposed in breach": [
         "Information afsløret i en datalækage"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Introducerer ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
@@ -12494,6 +12509,9 @@
       ],
       "Time": [
         "Tid"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Åbn dette regneark i ${ SHEETS_APP_NAME } eller download det for at forhåndsvise det."
       ],
       "Total size": [
         "Samlet størrelse"

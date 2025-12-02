@@ -15,10 +15,10 @@
         "Başka bir hesap ekle"
       ],
       "Assign ${ selectedParticipantName } as host": [
-        "${ selectedParticipantName } katılımcısını ev sahibi olarak atayın"
+        "${ selectedParticipantName } katılımcısını görüşme sahibi olarak ata"
       ],
       "Assign new host": [
-        "Yeni ev sahibi atayın"
+        "Yeni görüşme sahibi ata"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -65,14 +65,20 @@
       "Copy link": [
         "Bağlantıyı kopyala"
       ],
+      "Create a free account": [
+        "Ücretsiz hesap açın"
+      ],
       "Create meeting": [
         "Görüşme oluştur"
       ],
       "Delete": [
         "Sil"
       ],
-      "Disable video": [
-        "Görüntüyü kapat"
+      "Disable ${ participantName }'s video": [
+        "${ participantName } kişisinin videosunu kapat"
+      ],
+      "Disable camera": [
+        "Kamerayı devre dışı bırak"
       ],
       "Dismiss": [
         "Yok say"
@@ -89,6 +95,9 @@
       "Edit sign-in details": [
         "Oturum açma bilgilerini düzenle"
       ],
+      "Enable camera": [
+        "Kamerayı etkinleştir"
+      ],
       "Enable video": [
         "Görünütüyü aç"
       ],
@@ -97,6 +106,9 @@
       ],
       "Forgot password?": [
         "Parolamı unuttum"
+      ],
+      "Get Meet Professional": [
+        "Meet Professional sürümüne geç"
       ],
       "Get verification code": [
         "Doğrulama kodu alın"
@@ -128,6 +140,9 @@
       "Kick out": [
         "Çıkar"
       ],
+      "Kick out ${ participantName }": [
+        "${ participantName } kişisini kov"
+      ],
       "Leave": [
         "Ayrıl"
       ],
@@ -143,8 +158,8 @@
       "More options for accounts": [
         "Hesaplar için diğer seçenekler"
       ],
-      "Mute participant": [
-        "Katılımcının sesini kapat"
+      "Mute ${ participantName }": [
+        "${ participantName } kişisini sustur"
       ],
       "Next month": [
         "Sonraki ay"
@@ -175,6 +190,9 @@
       ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "Rejoin meeting": [
+        "Görüşmeye yeniden katıl"
       ],
       "Report a problem": [
         "Sorun bildirin"
@@ -230,6 +248,9 @@
       "Start": [
         "Başlangıç"
       ],
+      "Start a meeting": [
+        "Görüşme başlat"
+      ],
       "Start meeting": [
         "Görüşme başlat"
       ],
@@ -253,9 +274,6 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
       ],
       "Use authentication code": [
         "Kimlik doğrulama kodunu kullanın"
@@ -1348,7 +1366,7 @@
         "6 rakam yazın"
       ],
       "Failed to assign host": [
-        "Ev sahibi ataması başarısız oldu"
+        "Görüşme sahibi atanamadı"
       ],
       "Failed to create meeting": [
         "Görüşme oluşturulamadı"
@@ -1426,7 +1444,7 @@
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
-        "Bu toplantının sürümü eski. Sahibi onu sonlandırmalı ve Meet uygulamasının sürümünü güncelledikten sonra yeniden başlatmalı."
+        "Bu görüşmenin sürümü eski. Sahibi onu sonlandırmalı ve Meet uygulamasının sürümünü güncelledikten sonra yeniden başlatmalı."
       ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
@@ -1571,6 +1589,9 @@
       "${ user.DisplayName }'s Meeting": [
         "${ user.DisplayName } görüşmesi"
       ],
+      "(You)": [
+        "(Sen)"
+      ],
       "(you)": [
         "(siz)"
       ],
@@ -1618,6 +1639,12 @@
       ],
       "Country code": [
         "Ülke kodu"
+      ],
+      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
+        "Meet uygulamasını ${ CALENDAR_APP_NAME } ile bağlamak ve görüşme davetlerini anında göndermek için bir hesap açın."
+      ],
+      "Create an account to have a personal meeting link you can reuse for every call.": [
+        "Her çağrıda yeniden kullanabileceğiniz bir kişisel görüşme bağlantısı oluşturmak için bir hesap açın."
       ],
       "Custom combination": [
         "Özel kombinasyon"
@@ -1673,8 +1700,14 @@
       "Free meeting": [
         "Serbest görüşme"
       ],
+      "Get your personal meeting ID": [
+        "Kişisel görüşme kimliğinizi alın"
+      ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."
+      ],
+      "Host your own secure meeting": [
+        "Kendi güvenli görüşmenizi düzenleyin"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -1701,10 +1734,13 @@
         "Ayrıntılı bilgi alın"
       ],
       "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Ayrılmak ekran paylaşımınızı durduracaktır. Devam etmek istiyor musunuz?"
+        "Ayrılmanız ekran paylaşımınızı durduraca. İlerlemek istiyor musunuz?"
       ],
       "Left": [
         "Ayrıldı"
+      ],
+      "Left by mistake?": [
+        "Yanlışlıkla mı ayrıldınız?"
       ],
       "Loading": [
         "Yükleniyor"
@@ -1718,11 +1754,14 @@
       "Loading...": [
         "Yükleniyor..."
       ],
+      "Meet without restrictions": [
+        "Kısıtlama olmadan görüşme yapın"
+      ],
       "Meeting created": [
         "Görüşme oluşturuldu"
       ],
       "Meeting full (${ maxParticipants } participants)": [
-        "Toplantı dolu (${ maxParticipants } katılımcı)"
+        "Görüşme dolu (${ maxParticipants } katılımcı)"
       ],
       "Meeting ID: ${ id }": [
         "Görüşme kimliği: ${ id }"
@@ -1749,7 +1788,7 @@
         "Yeni"
       ],
       "New host": [
-        "Yeni ev sahibi"
+        "Yeni görüşme sahibi"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
         "${ microphoneLinkButton }${ andString }${ cameraLinkButton } bulunamadı."
@@ -1784,6 +1823,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Uçtan uca şifrelenmiş görüşmelerimiz gizliliği korur ve gerçek anlamda ifade özgürlüğü sağlar."
       ],
+      "participant": [
+        "katılımcı"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Güvenli bir görüşmeye katılmak için ${ MEET_APP_NAME } bağlantınızı yapıştırın."
       ],
@@ -1805,6 +1847,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
+      "Schedule your next meeting": [
+        "Bir sonraki görüşmenizi zamanlayın"
+      ],
       "Secure meeting": [
         "Güvenli görüşme"
       ],
@@ -1815,7 +1860,7 @@
         "Bir mikrofon seçin"
       ],
       "Select a participant to assign as the new host before you go: ": [
-        "Gitmeden önce yeni ev sahibi olarak atayacağınız katılımcıyı seçin: "
+        "Gitmeden önce yeni görüşme sahibi olarak atayacağınız katılımcıyı seçin: "
       ],
       "Select a speaker": [
         "Hoparlör seçin"
@@ -1834,6 +1879,9 @@
       ],
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Başkalarını davet etmek için bu bağlantıyı paylaşın. Bağlantıyı istediğiniz zaman araç çubuğundaki bilgiler simgesine tıklayarak görebilirsiniz."
+      ],
+      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "${ MEET_APP_NAME } uygulamasında bir görüşme başlatın ve bağlantıyı paylaşarak istediğiniz kişiyi davet edin. Basit, güvenli ve ücretsiz."
       ],
       "Stop sharing your screen": [
         "Ekran paylaşımını durdur"
@@ -1856,6 +1904,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
+        "Kuruluşunuzu korumak için ekibinizi ${ MEET_APP_NAME } kullanmaya davet edin."
+      ],
       "Turn off camera": [
         "Kamerayı kapat"
       ],
@@ -1868,8 +1919,14 @@
       "Turn on microphone": [
         "Mikrofonu aç"
       ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Tarifenizi yükselterek 1 saat sınırını kaldırın ve geri sayımı atlayın. 24 saatlik görüşmelerin tadını çıkarın."
+      ],
       "Video effects": [
         "Video etkileri"
+      ],
+      "We hope you enjoyed your secure meeting!": [
+        "Güvenli görüşmenizin tadını çıkardığınızı umuyoruz!"
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -2186,7 +2243,7 @@
     },
     "Success": {
       "Assigned new host": [
-        "Yeni ev sahibi atandı"
+        "Yeni görüşme sahibi atandı"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -2211,11 +2268,14 @@
       "Account temporarily locked": [
         "Hesap geçici olarak kilitlendi"
       ],
+      "Activity events": [
+        "Aktivite etkinlikleri"
+      ],
       "Are you sure?": [
         "Emin misiniz?"
       ],
       "Assign a new host": [
-        "Yeni bir ev sahibi atayın"
+        "Yeni bir görüşme sahibi ata"
       ],
       "Authenticator": [
         "Kimlik doğrulayıcı"
@@ -2231,6 +2291,12 @@
       ],
       "Epoch": [
         "Epoch"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Epoch ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "Epoch'ta hata ${ log.epoch }"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -2258,6 +2324,9 @@
       ],
       "Join with link": [
         "Bağlantı ile katılın"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "Epoch'a katıldı ${ log.epoch }"
       ],
       "Joining meeting with ${ participantCount } other participants…": [
         "${ participantCount } diğer kişiyle görüşmeye katılınıyor…"

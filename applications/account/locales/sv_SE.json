@@ -955,7 +955,7 @@
         "Gör till admin"
       ],
       "Make key primary": [
-        "Gör nyckeln primär"
+        "Gör nyckel primär"
       ],
       "Manage advanced account protections": [
         "Hantera avancerade kontoskydd"
@@ -1055,6 +1055,9 @@
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "Öppna ${ PASS_APP_NAME } i din webbläsare"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Öppna i ${ SHEETS_APP_NAME }"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -2011,7 +2014,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Lägg till i kalendern och markera som väntande"
+        "Lägg till i kalender och markera som väntande"
       ]
     },
     "Autocomplete": {
@@ -2391,6 +2394,9 @@
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
         "${ VPN_APP_NAME }:s policy om att inte logga bekräftas av en extern revision"
       ],
+      "**Auto-delete**, **snooze**, and **email scheduling** are included in your subscription.": [
+        "**Automatisk borttagning**, **snooze** och **e-postschemaläggning** är inkluderat i din prenumeration."
+      ],
       "**Streaming** is included in your subscription.": [
         "**Streaming** är inkluderat i din prenumeration."
       ],
@@ -2405,6 +2411,15 @@
       ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Kan någon se min internethistorik om vi använder samma WiFi?"
+      ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Anslut ${ VPN_CONNECTIONS } enheter samtidigt"
+      ],
+      "Create and edit with confidence": [
+        "Skapa och redigera med trygghet"
+      ],
+      "DeGoogle your life": [
+        "Frigör ditt liv från Google"
       ],
       "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
         "Upptäck våra tips för att effektivt hantera din inkorg så att du kan förbli produktiv och fokuserad."
@@ -2481,6 +2496,9 @@
       "Learn how many GB are in a TB and discover the best way to securely store and share your files — no matter their size.": [
         "Lär dig hur många GB det finns i ett TB och upptäck det bästa sättet att säkert lagra och dela dina filer – oavsett storlek."
       ],
+      "Learn how to back up your files to the cloud or on an external drive while keeping your data secure.": [
+        "Lär dig hur du säkerhetskopierar dina filer till molnet eller på en extern hårddisk samtidigt som du håller dina data säkra."
+      ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Lär dig hur man aktiverar ${ VPN_APP_NAME } på din router."
       ],
@@ -2489,6 +2507,9 @@
       ],
       "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
         "Lär dig hur man delar ett enskilt objekt, en krypterad länk eller ett valv via ${ PASS_APP_NAME }."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Skydda alla dina enheter i hushållet samtidigt med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Skydda din företagskommunikation"
@@ -2525,6 +2546,9 @@
       ],
       "Sign up for services without sharing your email with aliases.": [
         "Registrera dig för tjänster utan att dela din e-post med alias."
+      ],
+      "Storage capacity explained": [
+        "Lagringskapacitet förklaras"
       ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Streama från alla större plattformar med ${ PLAN_NAMES[PLANS.VPN2024] }."
@@ -2644,6 +2668,9 @@
       ],
       "Manual setup problem": [
         "Problem med manuell installation"
+      ],
+      "Meet problem": [
+        "Problem med Meet"
       ],
       "Other": [
         "Övrigt"
@@ -4601,7 +4628,7 @@
         "Ställ in konton för alla användare och bjud in dem att gå med i ${ BRAND_NAME }."
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
-        "Konfigurera automatisk vidarebefordran för att omdirigera inkommande e-post till en annan e-postadress."
+        "Ställ in automatisk vidarebefordran för att omdirigera inkommande e-post till en annan e-postadress."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Förenkla synkronisering och schemaläggning med delade kalendrar."
@@ -5354,7 +5381,7 @@
         "Nästa"
       ],
       "Pause": [
-        "Pausa"
+        "Paus"
       ],
       "Re-enable": [
         "Aktivera igen"
@@ -5378,7 +5405,7 @@
         "Skicka e-postbekräftelse"
       ],
       "Set up email forwarding": [
-        "Konfigurera vidarebefordran av e-post"
+        "Ställ in vidarebefordran av e-post"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -5609,7 +5636,7 @@
         "Begär bekräftelse"
       ],
       "Set up forwarding": [
-        "Konfigurera vidarebefordran"
+        "Ställ in vidarebefordran"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -6263,7 +6290,7 @@
         "Ange ett telefonnummer för återställning först"
       ],
       "Please set a recovery/notification email first": [
-        "Konfigurera en e-postadress för återställning/avisering först"
+        "Ställ in en e-postadress för återställning/avisering först"
       ],
       "Please try again in a few moments.": [
         "Försök igen om en stund."
@@ -6834,7 +6861,7 @@
         "Fel vid dekryptering av händelse"
       ],
       "Learn how to restore encrypted events with old password": [
-        "Lär dig hur du återställer krypterade händelser med gammalt lösenord"
+        "Lär dig hur man återställer krypterade händelser med gammalt lösenord"
       ],
       "Loading events": [
         "Laddar in händelser"
@@ -7223,6 +7250,9 @@
     "Features": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
+      ],
+      "4 more privacy services": [
+        "4 fler integritetstjänster"
       ],
       "@pm.me address": [
         "@pm.me-adress"
@@ -8313,9 +8343,6 @@
       ]
     },
     "Inactive key function info": {
-      "If reactivated, the key will be used for decryption": [
-        "Om den återaktiveras kommer nyckeln att användas för dekryptering."
-      ],
       "If reactivated, the key will be used for decryption and verification": [
         "Om den återaktiveras kommer nyckeln att användas för dekryptering och verifiering"
       ]
@@ -8537,7 +8564,7 @@
         "${ storage } lagringsutrymme"
       ],
       "${ url } added.": [
-        "${ url } tillagd"
+        "${ url } tillagd."
       ],
       "${ url } deleted.": [
         "${ url } borttagen."
@@ -8673,7 +8700,7 @@
         "Få åtkomst till 6 500+ höghastighetsservrar på upp till 10 enheter för att hålla din webbläsardata säker. Tillgängligt på ${ ios }, ${ android }, ${ appleTV } och ${ desktop }."
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Kom åt dina lösenord och skydda dina onlineidentiteter sömlöst på alla dina enheter. Ladda ner och installera relevanta ${ PASS_APP_NAME }-appar och utökningar."
+        "Kom åt dina lösenord och skydda dina identiteter online sömlöst på alla dina enheter. Ladda ner och installera relevanta ${ PASS_APP_NAME }-appar och utökningar."
       ],
       "Account monitor": [
         "Kontoövervakning"
@@ -8692,9 +8719,6 @@
       ],
       "active": [
         "aktiv"
-      ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Lägg till en @pm.me-e-postadress till ditt konto. Denna enkla, kortare domän står för \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
       ],
       "add a recovery method": [
         "lägg till en återställningsmetod"
@@ -9474,7 +9498,7 @@
         "Misslyckades att hämta loggar."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator."
+        "Snabb och fokuserad. E-post och kalender, direkt på din stationära dator"
       ],
       "Featured in": [
         "Som sett i"
@@ -9598,9 +9622,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Om en annan administratör har ändrat detta lösenord måste du be dem om det nya organisationslösenordet."
-      ],
-      "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Om detta alternativ är inaktiverat kräver nya organisationsmedlemmar att en admin manuellt skapar det första valvet åt dem (via delning) så att de kan börja skapa objekt."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Om det är inaktiverat kommer endast administratörer att kunna exportera data."
@@ -10561,12 +10582,6 @@
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
         "SMTP-inlämning tillåter tjänster från tredje part eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att använda denna funktion, börja med att generera en ny token."
-      ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Snooza meddelanden för senare så att de är högst upp i din inkorg när du vill"
       ],
@@ -11022,9 +11037,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
-      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
-      ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
       ],
@@ -11407,7 +11419,7 @@
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Du kan använda ${ MAIL_APP_NAME } med alla skrivbordsklienter för e-post som stöder IMAP/SMTP, inklusive Outlook, Apple Mail och Thunderbird."
+        "Du kan använda ${ MAIL_APP_NAME } med alla stationära e-postklienter som stöder IMAP/SMTP, inklusive Outlook, Apple Mail och Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan använda följande inloggningsuppgifter för att ansluta till en ${ VPN_APP_NAME }-server med en tredje parts VPN-app med öppen källkod, såsom Tunnelblick för macOS eller OpenVPN för GNU/Linux."
@@ -11853,7 +11865,7 @@
         "Ny nyckel genererad"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
-        "Detta kommer att generera en ny nyckel, som kommer att användas för att kryptera framtida kontaktuppgifter, e-postkrypteringsnycklar och annan data."
+        "Detta kommer att generera en ny nyckel, som kommer att användas för att kryptera framtida kontaktdetaljer, e-postkrypteringsnycklar och annan data."
       ],
       "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
         "Detta kommer generera en ny nyckel som kommer att användas för att kryptera framtida e-post och andra data för **${ emailAddress }**."
@@ -12152,7 +12164,7 @@
         "Markera inte föråldrat"
       ],
       "Mark obsolete": [
-        "Markering föråldrad"
+        "Markera föråldrad"
       ],
       "Use for encryption and signing": [
         "Använd för kryptering och signering"
@@ -12521,7 +12533,7 @@
         "Kompositör"
       ],
       "Composer default font/size": [
-        "Redigeringsfönstrets standardtypsnitt/textstorlek"
+        "Redigeringsfönstrets standardtypsnitt/storlek"
       ],
       "Composer mode": [
         "Skrivläge"
@@ -12887,7 +12899,7 @@
         "Håll mig inloggad"
       ],
       "Keep messages in Sent/Drafts": [
-        "Behåll meddelanden i Skickat/Utkast"
+        "Behåll meddelanden i skickat/utkast"
       ],
       "Key": [
         "Nyckel"
@@ -12989,7 +13001,7 @@
         "Minsta antalet tecken är ${ MIN_CHARS }"
       ],
       "Minimum number of words": [
-        "Minst antal ord"
+        "Minsta antal ord"
       ],
       "Moderate NAT": [
         "Måttlig NAT"
@@ -13543,7 +13555,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Avisering för heldagshändelse"
+        "Aviseringar för heldagshändelse"
       ],
       "Notifications": [
         "Aviseringar"
@@ -13861,6 +13873,9 @@
       ],
       "Terms": [
         "Villkor"
+      ],
+      "terms of our referral program": [
+        "villkoren för vårt hänvisningsprogram"
       ],
       "Trouble signing in?": [
         "Problem att logga in?"
@@ -14191,7 +14206,7 @@
     },
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
-        "Alla filteråtgärder kommer att tillämpas på alla meddelanden i ditt ${ MAIL_APP_NAME }-konto. Inget autosvar för e-post kommer att skickas."
+        "Alla filteråtgärder kommer att tillämpas på alla meddelanden i ditt ${ MAIL_APP_NAME }-konto. Inga automatiska e-postsvar kommer att skickas."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
@@ -16066,10 +16081,10 @@
         "20:e dagen i månaden"
       ],
       "21st of the month": [
-        "21:e dagen i månaden"
+        "21:a dagen i månaden"
       ],
       "22nd of the month": [
-        "22:e dagen i månaden"
+        "22:a dagen i månaden"
       ],
       "23rd of the month": [
         "23:e dagen i månaden"
@@ -16237,7 +16252,7 @@
         "Ta emot från alla"
       ],
       "Repeat daily": [
-        "Upprepa dagligen"
+        "Upprepa varje dag"
       ],
       "Repeat monthly": [
         "Upprepa varje månad"
@@ -16624,6 +16639,9 @@
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Genom att fortsätta så godkänner du våra ${ termsAndConditionsLink } och ${ privacyPolicyLink }."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
+        "Genom att fortsätta godkänner du våra ${ termsAndConditionsLink }, vår ${ privacyPolicyLink } och ${ referralPolicyLink }."
       ],
       "Creating your account": [
         "Skapar ditt konto"
@@ -17814,6 +17832,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Om du prenumererar före detta datum** får du **${ referrerRewardAmount }** i krediter."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Efter det datumet kommer ditt konto att nedgraderas till **${ BRAND_NAME } Free**. Om du ångrar dig kan du **återaktivera din prenumeration** för att behålla åtkomst till premiumfunktioner."
+      ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
       ],
@@ -17822,6 +17843,9 @@
       ],
       "How your free trial works:": [
         "Hur din gratis provperiod fungerar:"
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Om du avbryter, kommer du att förlora din **${ referrerRewardAmount }** kreditbelöning."
       ],
       "Invite friends. Get credits.": [
         "Bjud in vänner. Få krediter."
@@ -21157,7 +21181,7 @@
     },
     "Table header; invitations to share calendar": {
       "Shared with me": [
-        "Delad med mig"
+        "Delat med mig"
       ]
     },
     "TableHeader": {
@@ -21307,9 +21331,6 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportverktyg för ${ MAIL_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } Monitor Report": [
-        "${ PASS_SHORT_APP_NAME } Monitor-rapport"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } för organisationer"
@@ -21623,6 +21644,9 @@
       ],
       "Connect organization": [
         "Anslut organisation"
+      ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Anslut till ${ VPN_CONNECTIONS } enheter samtidigt med ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
@@ -22664,7 +22688,7 @@
         "Prenumeration avslutad"
       ],
       "Success": [
-        "Lyckades"
+        "Framgång"
       ],
       "Successfully created ${ n } user account": [
         "${ n } användarkonto skapades",
@@ -22711,6 +22735,9 @@
       ],
       "Time zone": [
         "Tidszon"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "För att förhandsgranska detta kalkylblad, öppna det i ${ SHEETS_APP_NAME } eller ladda ner det."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prova ${ AUTHENTICATOR_APP_NAME }"
@@ -23054,9 +23081,6 @@
       "Customize import to reduce the number of labels": [
         "Anpassa import för att minska antalet etiketter"
       ],
-      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Ta bort kastade och skräppostmeddelanden efter 30 dagar. Om du aktiverar automatisk borttagning får meddelanden som redan är i kastade/skräppost ett datum för borttagning baserat på datumet de flyttades dit."
-      ],
       "Device name and app version": [
         "Enhetsnamn och appversion"
       ],
@@ -23103,16 +23127,13 @@
         "Gmail kategoriserar automatiskt vissa e-postmeddelanden som sociala eller kampanjer. Du kan välja var du vill importera dessa e-postmeddelanden till."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Gruppera e-postmeddelanden i samma konversation tillsammans i din inkorg eller visa dem separat."
+        "Gruppera e-post i samma konversation tillsammans i din inkorg eller visa dem separat."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Identitetsleverantörens offentliga nyckel används för att signera autentiseringspåståenden. Hämta certifikathashen från din identitetsleverantör."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
-      ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Meddelanden i mappen “Skickat“ eller “Utkast“ kommer att fortsätta att visas i den mappen även om du flyttar dem till en annan mapp."
       ],
       "Not all information listed here was exposed for all users.": [
         "All information som anges här har inte exponerats för alla användare."
@@ -23139,7 +23160,7 @@
         "Ställ in standardstorleken för redigeringsfönstret som liten eller helskärm."
       ],
       "Set the default layout for your Inbox.": [
-        "Ange standardlayout för din inkorg."
+        "Ställ in standardlayout för din inkorg."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Ställer in följande sidfot för e-posten du skickar: ${ signature } Länken pekar på din hänvisningslänk. Sidfoten kommer att visas under din signatur. Du kan personifiera din signatur när som helst i inställningarna."
@@ -23148,7 +23169,7 @@
         "Delade serverpolicyer kan tillämpas på enskilda användare eller grupper"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte finns tillgängligt."
+        "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte är tillgängligt."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer skapade med denna nyckel behandlas som ogiltiga och den här nyckeln kan inte användas för kryptering"
@@ -23190,7 +23211,7 @@
         "Denna e-postadress kommer att visas för alla organisationsmedlemmar när de utför kontohanteringsåtgärder."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Denna funktion fördröjer sändningen av dina e-postmeddelanden, vilket ger dig möjlighet att ångra sändningen under den valda tidsramen."
+        "Denna funktion fördröjer sändning av din e-post, vilket ger dig möjlighet att ångra sändningen under den valda tidsramen."
       ],
       "This feature is only available for paid users": [
         "Denna funktion är endast tillgänglig för betalande användare"
@@ -23199,10 +23220,7 @@
         "Denna funktion är endast tillgänglig på Beta"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare i äldre mobilappar för att kryptera data som de skickar till dig"
-      ],
-      "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
-        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare för att kryptera data som de skickar till dig"
+        "Detta är standardnyckeln som används av andra ${ MAIL_APP_NAME }-användare på äldre mobilappar för att kryptera data de skickar till dig."
       ],
       "This key cannot be used for encryption": [
         "Denna nyckel kan inte användas för kryptering"
@@ -23211,7 +23229,7 @@
         "Denna nyckel är krypterad med ett gammalt lösenord"
       ],
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "Denna nyckel används av ${ MAIL_APP_NAME } for att kryptera din kontakts uppgifter"
+        "Denna nyckel används av ${ MAIL_APP_NAME } for att kryptera din kontakts data"
       ],
       "This key is used for email forwarding": [
         "Denna nyckel används för vidarebefordran av e-post"
@@ -23250,7 +23268,7 @@
         "När du lägger till en etikett på ett meddelande i en konversation kommer den automatiskt att tillämpas på alla framtida meddelanden du skickar eller tar emot i den konversationen."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "När du klickar på en länk så kommer funktionen mot nätfiske be dig att bekräfta webbsidans URL."
+        "När du klickar på en länk kommer denna funktion mot nätfiske be dig att bekräfta webbsidans URL."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "När du flyttar ett e-postmeddelande till skräppost kommer du automatiskt avsluta prenumeration från avsändarens e-postlistor."
@@ -23299,16 +23317,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Välj standardinställningarna för PGP som används för att signera eller kryptera meddelanden med icke-${ BRAND_NAME } PGP-användare Observera att Inline PGP tvingar fram oformaterade textmeddelanden."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "När du får ett e-postmeddelande från en annan ${ MAIL_APP_NAME }-användare som inte har betrodda nycklar i dina kontakter, kommer en banner att fråga om du vill aktivera betrodda nycklar."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Signera automatiskt alla dina utgående meddelanden så att användare kan verifiera äktheten av dina meddelanden. Detta görs i kombination med standardinställningarna för PGP som kan konfigureras nedan."
       ]
     },
     "Tooltip: PM signature locked": {
@@ -23528,7 +23536,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Uppgradera till ${ passPlusPlanName } för att få obegränsat antal Hide-my-email-alias"
+        "Uppgradera till ${ passPlusPlanName } för att få obegränsat antal hide-my-email-alias"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Uppgradera till ${ planName } för att ansluta till upp till ${ n } enhet till VPN samtidigt",
@@ -24021,7 +24029,7 @@
         "Om du avbryter denna import kommer du inte att kunna återuppta den. ${ BRAND_NAME } sparade alla framsteg på ditt konto. Avbryt ändå?"
       ],
       "Maximum cannot be lower than minimum": [
-        "Max kan inte vara mindre än minst"
+        "Maximalt kan inte vara mindre än minimum"
       ],
       "Must be between ${ minimumNumber } and ${ maximumNumber }": [
         "Måste vara mellan ${ minimumNumber } och ${ maximumNumber }"
@@ -24030,7 +24038,7 @@
         "Måste vara större eller lika med ${ minimumNumber }"
       ],
       "Must be lower than or equal to ${ maximumNumber }": [
-        "Måste vara mindre eller lika med ${ maximumNumber }"
+        "Måste vara lägre eller lika med ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Lägg till minst en mottagare."
