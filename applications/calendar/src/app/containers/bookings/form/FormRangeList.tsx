@@ -102,11 +102,6 @@ export const FormRangeList = () => {
         const newStart = addHours(lastBookingOfDay.end, 1);
         const newEnd = addMinutes(newStart, formData.duration);
 
-        if (!isSameDay(lastBookingOfDay.start, newStart)) {
-            createNotification({ text: c('Info').t`Cannot create booking range across days` });
-            return;
-        }
-
         const newBookingRange = {
             timezone: lastBookingOfDay.timezone,
             start: newStart,
