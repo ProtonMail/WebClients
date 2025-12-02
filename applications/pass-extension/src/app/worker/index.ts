@@ -6,8 +6,8 @@
  * side-effects such as directly executed statements and exported constants. */
 import config from 'proton-pass-extension/app/config';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import 'proton-pass-extension/lib/polyfills/shim';
 import { checkChromeRuntimeError } from 'proton-pass-extension/lib/utils/chrome';
-import 'proton-pass-extension/lib/utils/polyfills';
 import { devReload } from 'proton-pass-extension/lib/utils/reload';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
