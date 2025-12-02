@@ -132,8 +132,7 @@ export const useLumoActions = ({
         finalConversationId: ConversationId,
         finalSpaceId: SpaceId,
         spaceDek: any,
-        signal: AbortSignal,
-        datePair?: [string, string]
+        signal: AbortSignal
     ) => {
         const { newMessageContent, isWebSearchButtonToggled } = actionParams;
 
@@ -161,7 +160,6 @@ export const useLumoActions = ({
                 enableExternalToolsToggled: !!isWebSearchButtonToggled && isLumoToolingEnabled,
                 enableSmoothing,
                 contextFilters,
-                datePair,
             })
         );
 
@@ -397,11 +395,10 @@ export const useLumoActions = ({
             clearErrors();
         }
 
-        const {
-            conversationId: finalConversationId,
-            spaceId: finalSpaceId,
-            datePair,
-        } = ensureConversationAndSpace(conversationId, spaceId);
+        const { conversationId: finalConversationId, spaceId: finalSpaceId } = ensureConversationAndSpace(
+            conversationId,
+            spaceId
+        );
 
         // Create error context with guaranteed conversationId
         const errorContext: ErrorContext = {
@@ -423,7 +420,7 @@ export const useLumoActions = ({
             const spaceDek = space && (await getSpaceDek(space));
 
             if (actionType === 'send') {
-                await handleSendAction(actionParams, finalConversationId, finalSpaceId, spaceDek, signal, datePair);
+                await handleSendAction(actionParams, finalConversationId, finalSpaceId, spaceDek, signal);
             }
             if (actionType === 'edit') {
                 await handleEditAction(actionParams, originalMessage!, spaceDek, signal, isWebSearchButtonToggled);
