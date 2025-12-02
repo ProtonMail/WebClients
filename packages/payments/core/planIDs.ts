@@ -1,6 +1,7 @@
 import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
 
-import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from './constants';
+import { ADDON_NAMES, CYCLE, PLANS } from './constants';
+import { getDefaultMainCurrency } from './currencies';
 import type { FreeSubscription, PlanIDs } from './interface';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
 import { getPlanFeatureLimit } from './plan/feature-limits';
@@ -45,7 +46,7 @@ const getLumoWithEnoughSeats = ({
     const transferredLumoAddons = Math.max(lumoAddonsWithEnoughSeats, lumoAddons);
 
     // cycle and currency don't matter in this case, we care about normalizing the planIDs only
-    const currentPlan = SelectedPlan.createNormalized(planIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
+    const currentPlan = SelectedPlan.createNormalized(planIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
     const newPlan = currentPlan.changePlan(toPlan.Name as PLANS);
 
     const maxLumosInNewPlan = newPlan.getMaxLumos();
@@ -333,8 +334,8 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
 
         if (isIpAddon(addon) && plan && organization && !dontTransferAddons.has('ip')) {
             // cycle and currency don't matter in this case
-            const currentPlan = new SelectedPlan(currentPlanIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
-            const newPlan = new SelectedPlan(newPlanIDs, plans, CYCLE.MONTHLY, DEFAULT_CURRENCY);
+            const currentPlan = new SelectedPlan(currentPlanIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
+            const newPlan = new SelectedPlan(newPlanIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
 
             const totalIPs = currentPlan.getTotalIPs();
             const ipAddonsRequired = totalIPs - newPlan.getIncludedIPs();

@@ -4,11 +4,11 @@ import type { ThunkAction } from 'redux-thunk';
 import {
     CURRENCIES,
     type Currency,
-    DEFAULT_CURRENCY,
     type FreePlanDefault,
     NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     type Plan,
     getAvailableCurrencies,
+    getDefaultMainCurrency,
     getFreePlan,
     isRegionalCurrency,
     queryPlans,
@@ -75,7 +75,10 @@ const thunk = ({
     api?: Api;
 } = {}): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
-        const getRegionalCurrencies: () => Promise<Currency[]> = async () => {
+        const getRegionalCurrencies: () => Promise<{
+            regionalCurrencies: Currency[];
+            defaultMainCurrency: Currency;
+        }> = async () => {
             const user = selectUser(getState())?.value;
 
             const [status, subscription] = await Promise.all([
@@ -101,7 +104,10 @@ const thunk = ({
                 enableNewBatchCurrencies,
             });
 
-            return availableCurrencies.filter((currency) => isRegionalCurrency(currency));
+            return {
+                regionalCurrencies: availableCurrencies.filter((currency) => isRegionalCurrency(currency)),
+                defaultMainCurrency: getDefaultMainCurrency(status),
+            };
         };
 
         const select = () => {
@@ -117,7 +123,7 @@ const thunk = ({
                 const api = apiOverride ?? extraArgument.api;
                 const plansPromise: Promise<Plan[]> = api<{ Plans: Plan[] }>(queryPlans()).then(({ Plans }) => Plans);
 
-                const [plansResult, freePlan, regionalCurrencies] = await Promise.all([
+                const [plansResult, freePlan, { regionalCurrencies, defaultMainCurrency }] = await Promise.all([
                     plansPromise,
                     getFreePlan({ api }),
                     getRegionalCurrencies(),
@@ -134,7 +140,7 @@ const thunk = ({
                 // plans with the main currency and add them to the list
                 const hasMainCurrency = plansResult.some((plan) => !isRegionalCurrency(plan.Currency));
                 if (!hasMainCurrency) {
-                    missingCurrencies.push(DEFAULT_CURRENCY);
+                    missingCurrencies.push(defaultMainCurrency);
                 }
 
                 const missingPlans: Plan[] = (

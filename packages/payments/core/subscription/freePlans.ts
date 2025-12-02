@@ -1,4 +1,5 @@
-import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import { CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import { getDefaultMainCurrency } from '../currencies';
 import type { Currency, Cycle } from '../interface';
 import type { FreePlanDefault } from '../plan/interface';
 import { SubscriptionMode } from './constants';
@@ -15,7 +16,7 @@ export const FREE_PLAN: FreePlanDefault = {
     ParentMetaPlanID: '',
     Title: PLAN_NAMES[PLANS.FREE],
     Type: PLAN_TYPES.PLAN,
-    Currency: DEFAULT_CURRENCY,
+    Currency: getDefaultMainCurrency(),
     Cycle: DEFAULT_CYCLE,
     Amount: 0,
     MaxDomains: 0,
@@ -45,7 +46,7 @@ export const FREE_PLAN: FreePlanDefault = {
 };
 
 export const getFreeCheckResult = (
-    currency: Currency = DEFAULT_CURRENCY,
+    currency: Currency = getDefaultMainCurrency(),
     cycle: Cycle = DEFAULT_CYCLE
 ): EnrichedCheckResponse => {
     return {

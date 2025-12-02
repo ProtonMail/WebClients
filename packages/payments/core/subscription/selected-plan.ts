@@ -2,7 +2,8 @@ import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import isFunction from '@proton/utils/isFunction';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ADDON_NAMES, type ADDON_PREFIXES, CYCLE, DEFAULT_CURRENCY, PLANS } from '../constants';
+import { ADDON_NAMES, type ADDON_PREFIXES, CYCLE, PLANS } from '../constants';
+import { getDefaultMainCurrency } from '../currencies';
 import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import {
     type AddonGuard,
@@ -50,7 +51,7 @@ export class SelectedPlan {
             getPlanIDs(subscription),
             plans,
             subscription?.Cycle ?? CYCLE.MONTHLY,
-            subscription?.Currency ?? DEFAULT_CURRENCY
+            subscription?.Currency ?? getDefaultMainCurrency()
         );
     }
 

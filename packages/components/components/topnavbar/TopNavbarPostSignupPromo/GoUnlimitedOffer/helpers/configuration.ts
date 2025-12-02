@@ -7,7 +7,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { CYCLE, DEFAULT_CURRENCY, PLANS, getPlanByName } from '@proton/payments';
+import { CYCLE, PLANS, getPlanByName } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import {
@@ -75,7 +75,7 @@ export const useGoUnlimited2025Config = (): UnlimitedOfferConfig => {
     const [user] = useUser();
     const [plansResult] = usePlans();
 
-    const currency = user?.Currency || DEFAULT_CURRENCY;
+    const currency = user.Currency;
     const unlimitedPlan = getPlanByName(plansResult?.plans ?? [], PLANS.BUNDLE, currency);
     const price = (unlimitedPlan?.Pricing?.[CYCLE.YEARLY] || 0) / CYCLE.YEARLY;
 

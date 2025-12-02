@@ -1,6 +1,6 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { type Currency, DEFAULT_CURRENCY } from '@proton/payments';
+import { type Currency, getDefaultMainCurrency } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getReferralsStatus } from '@proton/shared/lib/api/core/referrals';
@@ -37,7 +37,7 @@ export const referralsDefaultValue: Referrals = {
         // rewardAmountLimit: 100000,
         // emailsAvailable: 0,
         hasReachedRewardLimit: false,
-        currency: DEFAULT_CURRENCY,
+        currency: getDefaultMainCurrency(),
     },
     total: 0,
     totalSubscribed: 0,

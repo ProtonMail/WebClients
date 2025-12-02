@@ -1,10 +1,10 @@
 import {
     CYCLE,
     type Cycle,
-    DEFAULT_CURRENCY,
     DEFAULT_TAX_BILLING_ADDRESS,
     FREE_PLAN,
     PLANS,
+    getDefaultMainCurrency,
     getFreeCheckResult,
 } from '@proton/payments';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -17,7 +17,7 @@ import { type SignupModelV2, Steps, type Upsell, UpsellTypes } from './interface
 const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
     return {
         skipUpsell: false,
-        currency: DEFAULT_CURRENCY,
+        currency: getDefaultMainCurrency(),
         cycle,
         planIDs: {},
         checkResult: getFreeCheckResult(),

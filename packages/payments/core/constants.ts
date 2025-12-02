@@ -1,4 +1,4 @@
-import type { Currency, FeatureLimitKey, PaymentMethodFlow } from './interface';
+import type { FeatureLimitKey, PaymentMethodFlow } from './interface';
 
 export enum PAYMENT_TOKEN_STATUS {
     PENDING = 0,
@@ -461,8 +461,6 @@ export enum CurrencySymbols {
 }
 
 export const CURRENCIES = Object.keys(CurrencySymbols) as readonly (keyof typeof CurrencySymbols)[];
-
-export const DEFAULT_CURRENCY = 'EUR' as Currency;
 
 export const MIN_CREDIT_AMOUNT = 500;
 export const MAX_CREDIT_AMOUNT = 4000000;
