@@ -2,7 +2,7 @@ import type {
     BookingPageEditData,
     InternalBookingPage,
 } from 'applications/calendar/src/app/store/internalBooking/interface';
-import { areIntervalsOverlapping, differenceInMinutes, isBefore } from 'date-fns';
+import { areIntervalsOverlapping, differenceInMinutes, isBefore, subMinutes } from 'date-fns';
 import { c } from 'ttag';
 
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
@@ -77,6 +77,16 @@ export const computeInitialFormData = ({
     const duration = calendarBootstrap?.CalendarSettings.DefaultEventDuration || DEFAULT_EVENT_DURATION;
     const bookingRanges = generateDefaultBookingRange(userSettings, currentUTCDate, timezone, recurring);
 
+    // Remove 30 minutes form the end of the booking range for 90 minutes calendars to have full slots
+    const fullSlotDuration =
+        duration === 90
+            ? bookingRanges.map((range) => ({
+                  ...range,
+                  start: range.start,
+                  end: subMinutes(range.end, 30),
+              }))
+            : bookingRanges;
+
     return {
         recurring,
         summary: '',
@@ -84,7 +94,7 @@ export const computeInitialFormData = ({
         locationType: isMeetVideoConferenceEnabled ? BookingLocation.MEET : BookingLocation.IN_PERSON,
         duration,
         timezone,
-        bookingRanges,
+        bookingRanges: fullSlotDuration,
     };
 };
 
