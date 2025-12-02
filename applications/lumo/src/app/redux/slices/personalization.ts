@@ -150,20 +150,21 @@ const personalizationReducer = createReducer(initialState, (builder) => {
 });
 
 // selectors
+// TODO: move to `selectors.ts`
 export const selectPersonalizationSettings = (state: LumoState) => state.personalization;
 
-export const selectHasModifiedPersonalization = (state: LumoState) => {
-    const currentSettings = selectPersonalizationSettings(state);
+export const selectHasModifiedPersonalization = (state: LumoState) =>
+    isNonEmptyPersonalization(selectPersonalizationSettings(state));
 
-    // Only check specific fields for modification
+export default personalizationReducer;
+
+// Helpers
+function isNonEmptyPersonalization(personalization: PersonalizationSettings) {
     const fieldsToCheck: (keyof PersonalizationSettings)[] = [
         'nickname',
         'jobRole',
         'personality',
         'additionalContext',
     ];
-
-    return fieldsToCheck.some((field) => currentSettings[field] !== initialState[field]);
-};
-
-export default personalizationReducer;
+    return fieldsToCheck.some((field) => personalization[field] !== initialState[field]);
+}
