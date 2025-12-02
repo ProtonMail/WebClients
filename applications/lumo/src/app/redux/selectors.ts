@@ -12,6 +12,7 @@ import { getInitials } from '../util/username';
 import { EMPTY_ATTACHMENT_MAP } from './slices/core/attachments';
 import { EMPTY_CONVERSATION_MAP } from './slices/core/conversations';
 import { EMPTY_MESSAGE_MAP } from './slices/core/messages';
+import { isNonEmptyPersonalization } from './slices/personalization';
 import type { LumoState, LumoState as RootState } from './store';
 
 export type LumoSelector<T> = Selector<LumoState, T>;
@@ -106,6 +107,10 @@ export const selectRemoteIdFromLocal =
     (type: ResourceType, localId: LocalId) =>
     (state: LumoState): RemoteId | undefined =>
         state.idmap.local2remote[type][localId];
+
+export const selectPersonalizationSettings = (state: LumoState) => state.personalization;
+export const selectHasModifiedPersonalization = (state: LumoState) =>
+    isNonEmptyPersonalization(selectPersonalizationSettings(state));
 
 export const selectContextFilters = (state: any) => state.contextFilters.filters;
 
