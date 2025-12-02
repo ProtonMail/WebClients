@@ -47,12 +47,13 @@ export const DisplayRegularRanges = ({
                 <div className="flex flex-1 items-center gap-0.5">
                     <label htmlFor={`range-date-input-${range.id}`} className="sr-only">{c('label')
                         .t`Date of the booking range`}</label>
-                    <div className="grow-custom flex-1 flex" style={{ '--grow-custom': '1.9' }}>
+                    <div className="grow-custom flex-1 flex" style={{ '--grow-custom': '1.5' }}>
                         <DateInputTwo
                             id={`range-date-input-${range.id}`}
                             value={range.start}
                             min={startOfToday()}
                             onChange={(value) => onDateChange(range.id, range, value)}
+                            className="booking-date-input"
                         />
                     </div>
                     <RangeStartTimeLabel htmlFor={`range-start-input-${range.id}`} />
