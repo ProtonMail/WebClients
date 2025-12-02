@@ -1,6 +1,7 @@
 import loudRejection from 'loud-rejection';
 
-import { MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import { ADDRESS_FLAGS, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import type { Address, Recipient } from '@proton/shared/lib/interfaces';
 import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
@@ -17,9 +18,27 @@ const createDocument = (content: string): Element => {
     return newDocument;
 };
 
-const createMessage: (emailAddress: string) => {} = (emailAddress) => ({
+const mockAddresses: Pick<Address, 'ID' | 'Email' | 'Signature' | 'Flags'>[] = [
+    {
+        ID: 'address-123',
+        Email: 'sender@test.email',
+        Signature: 'Best regards, John Smith, For attached files, please email support@example.com',
+    },
+    {
+        ID: 'address-byoe',
+        Email: 'byoe@test.email',
+        Signature: 'Best regards, John Smith, For attached files, please email support@example.com',
+        Flags: ADDRESS_FLAGS.BYOE,
+    },
+];
+
+const createMessage = (
+    recipientEmailAddresses: string[],
+    sender: Recipient = { Name: 'Sender', Address: mockAddresses[0].Email }
+) => ({
     data: {
-        ToList: [{ Address: emailAddress, Name: 'test' }],
+        Sender: sender,
+        ToList: recipientEmailAddresses.map((emailAddress, i) => ({ Address: emailAddress, Name: `test-${i}` })),
         CCList: [],
         BCCList: [],
     },
@@ -180,13 +199,6 @@ jest.mock('@proton/components/hooks/useModals', () => ({
         };
     },
 }));
-
-const mockAddresses = [
-    {
-        ID: 'address-123',
-        Signature: 'Best regards, John Smith, For attached files, please email support@example.com',
-    },
-];
 
 jest.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
@@ -399,6 +411,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
                     encryptionDisabled: false,
+                    isInternal: true,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -408,13 +421,13 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).toHaveBeenCalled(); // user was warned
             const lastMinutePreferences = mockEncryptionPreferences[recipient];
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(true);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(false);
@@ -432,6 +445,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
                     encryptionDisabled: false,
+                    isInternal: true,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -441,13 +455,13 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).toHaveBeenCalled(); // user was warned
             const lastMinutePreferences = mockEncryptionPreferences[recipient];
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(false);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(false);
@@ -466,6 +480,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
                     encryptionDisabled: false,
+                    isInternal: true,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -475,12 +490,12 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).toHaveBeenCalled(); // user was warned
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(false);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(true);
@@ -498,6 +513,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
                     encryptionDisabled: false,
+                    isInternal: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -507,13 +523,13 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
             const lastMinutePreferences = mockEncryptionPreferences[recipient];
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(false);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(false);
@@ -532,6 +548,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
                     encryptionDisabled: false,
+                    isInternal: true,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -541,12 +558,12 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(true);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(false);
@@ -565,6 +582,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
                     encryptionDisabled: false,
+                    isInternal: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -574,12 +592,12 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(false);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(true);
@@ -598,6 +616,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
                     encryptionDisabled: false,
+                    isInternal: true,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -607,7 +626,7 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
@@ -631,6 +650,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.DEFAULT,
                     encryptionDisabled: false,
+                    isInternal: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -640,7 +660,7 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
@@ -664,6 +684,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
                     encryptionDisabled: false,
+                    isInternal: true,
                 },
                 contactSignatureInfo: {
                     isVerified: undefined,
@@ -673,12 +694,12 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(true);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(true);
@@ -697,6 +718,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
                     encryptionDisabled: false,
+                    isInternal: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -706,12 +728,12 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(true);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(true);
@@ -730,6 +752,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
                     encryptionDisabled: false,
+                    isInternal: false,
                 },
                 contactSignatureInfo: {
                     isVerified: undefined,
@@ -739,12 +762,12 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(true);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(false);
@@ -763,6 +786,7 @@ describe('useSendVerifications', () => {
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
                     encryptionDisabled: false,
+                    isInternal: false,
                 },
                 contactSignatureInfo: {
                     isVerified: undefined,
@@ -772,12 +796,12 @@ describe('useSendVerifications', () => {
                 emailValidation: true,
             };
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const mapSendInfo = { [recipient]: cachedPreferences };
             const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
 
             expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(false);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(false);
@@ -788,14 +812,77 @@ describe('useSendVerifications', () => {
             const lastMinutePreferences = mockEncryptionPreferences[recipient];
 
             const extendedVerifications = await setup();
-            const message = createMessage(recipient);
+            const message = createMessage([recipient]);
             const { mapSendPrefs } = await extendedVerifications(message, {});
 
             expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
-            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message.data));
             // sanity checks
             expect(mapSendPrefs[recipient].encrypt).toBe(true);
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(true);
+        });
+
+        it('should silently send with cached prefs if BYOE sender with non-internal recipients', async () => {
+            const recipient1 = 'external.deleted@test.email';
+            const lastMinutePreferences1 = mockEncryptionPreferences[recipient1];
+            const cachedPreferences1: SendInfo = {
+                sendPreferences: {
+                    sign: true,
+                    encrypt: false,
+                    isPublicKeyPinned: false,
+                    hasApiKeys: false,
+                    hasPinnedKeys: false,
+                    pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
+                    mimeType: MIME_TYPES.MIME,
+                    encryptionDisabled: false,
+                    isInternal: false,
+                },
+                contactSignatureInfo: {
+                    isVerified: undefined,
+                    creationTime: undefined,
+                },
+                loading: false,
+                emailValidation: true,
+            };
+            const recipient2 = 'internal.pinned@test.email';
+            const lastMinutePreferences2 = mockEncryptionPreferences[recipient2];
+            const cachedPreferences2: SendInfo = {
+                sendPreferences: {
+                    sign: true,
+                    encrypt: true,
+                    isPublicKeyPinned: false,
+                    hasApiKeys: false,
+                    hasPinnedKeys: false,
+                    pgpScheme: PACKAGE_TYPE.SEND_PM,
+                    mimeType: MIME_TYPES.DEFAULT,
+                    encryptionDisabled: false,
+                    isInternal: true,
+                },
+                contactSignatureInfo: {
+                    isVerified: undefined,
+                    creationTime: undefined,
+                },
+                loading: false,
+                emailValidation: true,
+            };
+            const extendedVerifications = await setup();
+            const BYOESender = mockAddresses[1];
+            const message = createMessage([recipient1, recipient2], { Address: BYOESender.Email, Name: 'BYOESender' });
+            const mapSendInfo = { [recipient1]: cachedPreferences1, [recipient2]: cachedPreferences2 };
+            const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
+
+            expect(mockCreateModalSpy).not.toHaveBeenCalled(); // user was not warned
+            expect(mapSendPrefs[recipient1]).toStrictEqual(cachedPreferences1.sendPreferences);
+            expect(mapSendPrefs[recipient1]).not.toStrictEqual(
+                getSendPreferences(lastMinutePreferences1, message.data)
+            );
+            expect(mapSendPrefs[recipient2]).toStrictEqual(cachedPreferences2.sendPreferences);
+            expect(mapSendPrefs[recipient2]).not.toStrictEqual(
+                getSendPreferences(lastMinutePreferences2, message.data)
+            );
+            // sanity checks
+            expect(mapSendPrefs[recipient1].encrypt).toBe(false);
+            expect(mapSendPrefs[recipient1].isPublicKeyPinned).toBe(false);
         });
     });
 });
