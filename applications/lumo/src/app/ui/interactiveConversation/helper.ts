@@ -481,13 +481,15 @@ export function sendMessage({
     newMessageData: m,
     conversationContext: c,
     uiContext: ui,
+    settingsContext: s,
 }: {
     applicationContext: ApplicationContext;
     newMessageData: NewMessageData;
     conversationContext: ConversationContext;
     uiContext: UiContext;
+    settingsContext: SettingsContext;
 }) {
-    return async (dispatch: AppDispatch, getState: () => any): Promise<Message | undefined> => {
+    return async (dispatch: AppDispatch): Promise<Message | undefined> => {
         if (!m.content.trim()) {
             return undefined;
         }
@@ -629,31 +631,30 @@ export function sendMessage({
         // When we attach files, disable web search, otherwise this feels awkward.
         const noAttachment = m.attachments.length === 0;
 
-        // Call the LLM.
-        try {
-            // Request title for new conversations (when messageChain is empty, it's the first message)
-            const shouldRequestTitle = c.messageChain.length === 0;
+        // Request title for new conversations (when messageChain is empty, it's the first message)
+        const shouldRequestTitle = c.messageChain.length === 0;
 
-            // Get personalization prompt for all messages (not just new conversations)
-            const state = getState();
-            const personalizationPrompt = formatPersonalization(state.personalization);
+        // Get personalization prompt for all messages (not just new conversations)
+        const personalizationPrompt = formatPersonalization(s.personalization);
 
-            // Get project instructions from space if this is a project conversation
-            let projectInstructions: string | undefined;
-            let isProject = false;
-            if (spaceId) {
-                const space = state.spaces[spaceId];
-                if (space?.isProject) {
-                    isProject = true;
-                    if (space?.projectInstructions) {
-                        projectInstructions = space.projectInstructions;
-                    }
+        // Get project instructions from space if this is a project conversation
+        let projectInstructions: string | undefined;
+        let isProject = false;
+        if (spaceId) {
+            const space = state.spaces[spaceId];
+            if (space?.isProject) {
+                isProject = true;
+                if (space?.projectInstructions) {
+                    projectInstructions = space.projectInstructions;
                 }
             }
+        }
 
-            // Get user ID for RAG retrieval
-            const userId = state.user?.value?.ID;
+        // Get user ID for RAG retrieval
+        const userId = state.user?.value?.ID;
 
+        // Call the LLM.
+        try {
             await dispatch(
                 fetchAssistantResponse({
                     api: a.api,
