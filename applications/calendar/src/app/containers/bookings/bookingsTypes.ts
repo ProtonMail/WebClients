@@ -1,4 +1,4 @@
-import type { BookingLocation } from './bookingsProvider/interface';
+import type { BookingLocation } from './interface';
 
 export interface APISlot {
     ID: string;

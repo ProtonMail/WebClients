@@ -17,6 +17,8 @@ import type { BookingPageEditData, InternalBookingPage } from '../../../store/in
 import { createNewBookingPage, editBookingPage } from '../../../store/internalBooking/internalBookingActions';
 import { useCalendarGlobalModals } from '../../GlobalModals/GlobalModalProvider';
 import { ModalType } from '../../GlobalModals/interface';
+import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from '../interface';
+import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingFrom } from '../interface';
 import { BookingErrorMessages } from '../utils/bookingCopy';
 import { serializeFormData } from '../utils/form/formHelpers';
 import {
@@ -39,8 +41,6 @@ import {
     getRangeDateStart,
     normalizeBookingRangeToTimeOfWeek,
 } from '../utils/range/rangeHelpers';
-import type { BookingFormData, BookingRange, BookingsContextValue, Intersection } from './interface';
-import { BookingState, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING, type InternalBookingFrom } from './interface';
 
 const BookingsContext = createContext<BookingsContextValue | undefined>(undefined);
 

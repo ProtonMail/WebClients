@@ -1,7 +1,7 @@
 import type { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar';
 
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../../calendar/interface';
-import { BOOKING_SLOT_ID, TEMPORARY_BOOKING_SLOT } from '../../bookingsProvider/interface';
+import { BOOKING_SLOT_ID, TEMPORARY_BOOKING_SLOT } from '../../interface';
 
 export const isBookingSlotEvent = (event: CalendarViewEvent | CalendarViewBusyEvent): event is CalendarViewEvent => {
     return event.uniqueId.startsWith(BOOKING_SLOT_ID);

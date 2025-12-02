@@ -2,7 +2,7 @@ import { addDays, differenceInMinutes, endOfDay, isAfter, isBefore, startOfDay }
 
 import type { ActiveBreakpoint } from '@proton/components/hooks/useActiveBreakpoint';
 
-import { DEFAULT_EVENT_DURATION } from '../../containers/bookings/bookingsProvider/interface';
+import { DEFAULT_EVENT_DURATION } from '../../containers/bookings/interface';
 import type { BookingDetails, BookingTimeslot } from '../booking.store';
 
 const getTime = (date: Date) => {

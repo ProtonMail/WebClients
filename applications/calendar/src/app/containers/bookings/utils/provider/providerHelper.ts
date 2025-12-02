@@ -13,8 +13,8 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
-import type { BookingRange, InternalBookingFrom, Slot } from '../../bookingsProvider/interface';
-import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../bookingsProvider/interface';
+import type { BookingRange, InternalBookingFrom, Slot } from '../../interface';
+import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../interface';
 import { BookingErrorMessages } from '../bookingCopy';
 import { generateDefaultBookingRange, generateRangeFromSlots } from '../range/rangeHelpers';
 import { generateSlotsFromRange } from '../slot/slotHelpers';

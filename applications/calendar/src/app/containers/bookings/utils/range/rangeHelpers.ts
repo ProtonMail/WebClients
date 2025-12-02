@@ -29,18 +29,8 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { CalendarViewEvent } from '../../../calendar/interface';
-import type {
-    BookingFormData,
-    BookingRange,
-    Intersection,
-    RecurringRangeDisplay,
-} from '../../bookingsProvider/interface';
-import {
-    BOOKING_SLOT_ID,
-    BookingRangeError,
-    DEFAULT_RANGE_END_HOUR,
-    DEFAULT_RANGE_START_HOUR,
-} from '../../bookingsProvider/interface';
+import type { BookingFormData, BookingRange, Intersection, RecurringRangeDisplay } from '../../interface';
+import { BOOKING_SLOT_ID, BookingRangeError, DEFAULT_RANGE_END_HOUR, DEFAULT_RANGE_START_HOUR } from '../../interface';
 import { fromTimestampToUTCDate, roundToNextHalfHour } from '../timeHelpers';
 
 export const generateBookingRangeID = (start: Date, end: Date) => {

@@ -9,7 +9,7 @@ import TimeInput from '@proton/components/components/input/TimeInput';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
-import { type BookingRange, BookingRangeError } from '../bookingsProvider/interface';
+import { type BookingRange, BookingRangeError } from '../interface';
 import { BookingErrorMessages } from '../utils/bookingCopy';
 import { roundToNextHalfHour } from '../utils/timeHelpers';
 import { FormErrorWrapper } from './BookingsFormComponents';
