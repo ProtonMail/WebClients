@@ -86,7 +86,6 @@ export {
     CURRENCIES,
     CurrencySymbols,
     CYCLE,
-    DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
     ENTERPRISE_PLAN_TITLE,
     FREE_SUBSCRIPTION,
@@ -150,21 +149,24 @@ export {
     captureWrongPlanName,
     fixPlanIDs,
     fixPlanName,
+    isChargebeePaymentMethod,
+    isCreditNoteInvoice,
+    isCurrencyConversionInvoice,
+    isRegularInvoice,
+    isSignupFlow,
+} from './core/helpers';
+export {
+    getDefaultMainCurrency,
     getAvailableCurrencies,
     getCurrencyRate,
     getFallbackCurrency,
     getPreferredCurrency,
-    isChargebeePaymentMethod,
-    isCreditNoteInvoice,
-    isCurrencyConversionInvoice,
     isMainCurrency,
     isRegionalCurrency,
-    isRegularInvoice,
-    isSignupFlow,
     mainCurrencies,
     NEW_BATCH_CURRENCIES_FEATURE_FLAG,
     type GetPreferredCurrencyParams,
-} from './core/helpers';
+} from './core/currencies';
 export type {
     AmountAndCurrency,
     AvailablePaymentMethod,

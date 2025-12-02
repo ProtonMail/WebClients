@@ -30,7 +30,7 @@ import {
     getOptimisticCheckResult as innerGetOptimisticCheckResult,
 } from '../../core/checkout';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '../../core/constants';
-import { type getAvailableCurrencies, type getPreferredCurrency, mainCurrencies } from '../../core/helpers';
+import { type getAvailableCurrencies, type getPreferredCurrency, mainCurrencies } from '../../core/currencies';
 import type {
     Currency,
     Cycle,

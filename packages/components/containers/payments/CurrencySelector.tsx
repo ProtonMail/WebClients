@@ -5,12 +5,12 @@ import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Option from '@proton/components/components/option/Option';
 import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { type Currency, DEFAULT_CURRENCY, mainCurrencies } from '@proton/payments';
+import { type Currency, mainCurrencies } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 interface SharedProps {
     onSelect: (newCurrency: Currency) => void;
-    currency?: Currency;
+    currency: Currency;
     currencies: readonly Currency[];
 }
 
@@ -34,7 +34,7 @@ const CurrencySelector = (props: Props) => {
 
     if (props.mode === 'buttons') {
         // extracting `mode` and `currencies` in order to remove them from ...rest
-        const { currency = DEFAULT_CURRENCY, onSelect, loading, mode, currencies, ...rest } = props;
+        const { currency, onSelect, loading, mode, currencies, ...rest } = props;
         return (
             <ButtonGroup {...rest}>
                 {options.map(({ text, value }) => {
@@ -55,7 +55,7 @@ const CurrencySelector = (props: Props) => {
 
     if (props.mode === 'select-two') {
         // extracting `mode` and `currencies` in order to remove them from ...rest
-        const { currency = DEFAULT_CURRENCY, onSelect, loading, mode, currencies, ...rest } = props;
+        const { currency, onSelect, loading, mode, currencies, ...rest } = props;
         const handleChange = ({ value }: { value: Currency }) => onSelect(value);
         return (
             <SelectTwo
