@@ -180,6 +180,7 @@ export const getTotalContextSizeWarning = (
 };
 
 // Remove a specific file from a message's context (used for filtering at LLM call time)
+// FIXME: this is definitely not the right place to do it!
 export const removeFileFromMessageContext = (message: Message, filename: string): Message => {
     if (!message.context) return message;
 
