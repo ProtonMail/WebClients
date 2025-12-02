@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { isUrlPasswordValid } from '@proton/meet/utils/isUrlPasswordValid';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
@@ -49,6 +50,8 @@ export const PageHeader = ({
 
         handleSignIn(window.location.pathname.replace('/guest', '') + window.location.hash);
     };
+
+    const isJoinPage = window.location.pathname.includes('join');
 
     const buttons = (
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
@@ -104,20 +107,41 @@ export const PageHeader = ({
                     <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
                         {buttons}
                     </div>
-                    {guestMode ? (
-                        <Button
-                            className="action-button rounded-full mr-2 md:mr-0"
-                            onClick={handleSignInClick}
-                            size="large"
-                        >
-                            {c('Action').t`Sign in`}
-                        </Button>
-                    ) : (
+                    <div>
                         <div className="flex items-center gap-2 mr-2 md:mr-0">
-                            <UpgradeButton />
-                            <UserDropdown app={APPS.PROTONMEET} />
+                            {guestMode ? (
+                                <Button
+                                    className="action-button rounded-full mr-2 md:mr-0"
+                                    onClick={handleSignInClick}
+                                    size="large"
+                                >
+                                    {c('Action').t`Sign in`}
+                                </Button>
+                            ) : (
+                                <>
+                                    <UpgradeButton />
+                                    <UserDropdown app={APPS.PROTONMEET} />
+                                </>
+                            )}
+                            {isJoinPage && (
+                                <Button
+                                    className="action-button w-custom h-custom rounded-full shrink-0 flex items-center justify-center p-0"
+                                    onClick={() =>
+                                        guestMode ? history.push('/anonymous') : history.push('/dashboard')
+                                    }
+                                    size="large"
+                                    style={{
+                                        '--w-custom': '2.5rem',
+                                        '--h-custom': '2.5rem',
+                                    }}
+                                    icon
+                                    aria-label={c('Action').t`Close`}
+                                >
+                                    <IcCross className="color-hint" size={4} />
+                                </Button>
+                            )}
                         </div>
-                    )}
+                    </div>
                 </div>
             )}
         </div>
