@@ -1,6 +1,8 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { LumoState } from '../store';
+
 export interface PersonalizationSettings {
     nickname: string;
     jobRole: string;
@@ -148,9 +150,9 @@ const personalizationReducer = createReducer(initialState, (builder) => {
 });
 
 // selectors
-export const selectPersonalizationSettings = (state: any) => state.personalization;
+export const selectPersonalizationSettings = (state: LumoState) => state.personalization;
 
-export const selectHasModifiedPersonalization = (state: any) => {
+export const selectHasModifiedPersonalization = (state: LumoState) => {
     const currentSettings = selectPersonalizationSettings(state);
 
     // Only check specific fields for modification
