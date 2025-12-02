@@ -90,9 +90,6 @@
       "Apply": [
         "გადატარება"
       ],
-      "Ask me next time": [
-        "მკითხე შემდეგ ჯერზე"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -656,9 +653,6 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
-      ],
-      "Save preferences": [
-        "პარამეტრების შენახვა"
       ],
       "Search": [
         "ძებნა"
@@ -3055,6 +3049,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "შეცდომა დოკუმენტის განახლებების დამუშავებისას. გადატვირთეთ გვერდი და თავიდან სცადეთ."
+      ],
       "There was an error when exporting the contacts vCards": [
         "კონტაქტების vCard-ების გატანის შეცდომა"
       ],
@@ -4093,6 +4090,9 @@
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
       ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**ნაბიჯი 3:** მიიღეთ ${ referrerRewardAmount }-ის კრედიტები ყოველი მეგობრისთვის, რომელიც გამოიწერს გეგმას."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
       ],
@@ -4214,9 +4214,6 @@
       "Continue": [
         "გაგრძელება"
       ],
-      "Converting document...": [
-        "დოკუმენტის გადაყვანა..."
-      ],
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
@@ -4259,9 +4256,6 @@
       ],
       "Creating link to folder": [
         "საქაღალდემდე ბმულის შექმნა"
-      ],
-      "Creating new document...": [
-        "ახალი დოკუმენტის შექმნა..."
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
@@ -4353,12 +4347,6 @@
       "Enter your own password (as trusted contact).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "დოკუმენტის გადაყვანის შეცდომა: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "დოკუმენტის ჩატვირთვის შეცდომა. ${ errorDetail }"
-      ],
       "Error Syncing": [
         "სინქრონიზაციის შეცდომა"
       ],
@@ -4418,12 +4406,6 @@
       ],
       "Geoblocking": [
         "გეოდაბლოკვა"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "მიიღეთ ელფოსტის განახლებები კომენტარებისა და მინიშნებებისთვის, რომლებიც თქვენ დოკუმენტებს დაემატება."
-      ],
-      "Get Notified About Comments": [
-        "გაფრთხილებების მიღება კომენტარების შესახებ"
       ],
       "here": [
         "აქ"
@@ -4558,9 +4540,6 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
-      "Making a copy...": [
-        "ასლის შექმნა..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო"
@@ -4588,9 +4567,6 @@
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL-ში დოკუმენტი მითითებული არაა. დაბრუნდით ${ DRIVE_APP_NAME }-ზე და აირჩიეთ დოკუმენტი."
       ],
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
@@ -5436,9 +5412,6 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
-      "Enable email notifications": [
-        "ელფოსტის გაფრთხილებების ჩართვა"
-      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -5486,9 +5459,6 @@
       ],
       "Include application logs in bug report": [
         "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
-      ],
-      "Include document name in notification": [
-        "დოკუმენტის სახელის ჩასმა გაფრთხილებებში"
       ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
@@ -5879,6 +5849,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "თქვენს ანგარიშს წაშლის საფრთხე ემუქრება. მონაცემთა დაკარგვის თავიდან ასაცილებლად, სთხოვეთ თქვენს ადმინისტრატორს განახლება. ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძელებლად გაათავისუფლეთ ადგილი, ან ${ cta }."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
@@ -7861,6 +7834,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
+      ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "ისიამოვნეთ **${ planTitle }**-ით **${ textDate }**-მდე"
       ],
@@ -8193,9 +8169,6 @@
       ],
       "New spreadsheet": [
         "ახალი ელცხრილი"
-      ],
-      "Rename spreadsheet": [
-        "ელცხრილის სახელის გადარქმევა"
       ],
       "Tab Separated Values (.tsv)": [
         "ტაბით გამოყოფილი მნიშვნელობები (.tsv)"

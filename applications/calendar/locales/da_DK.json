@@ -2864,11 +2864,11 @@
       "Doesn't end": [
         "Slutter ikke"
       ],
-      "End after": [
+      "Ends after": [
         "Slutter efter"
       ],
-      "End on": [
-        "Slutter"
+      "Ends on": [
+        "Slutter den"
       ],
       "event": [
         "begivenhed",
@@ -3673,6 +3673,9 @@
       "Last name is too long": [
         "Efternavn er for langt"
       ],
+      "Location is required": [
+        "Placering er påkrævet"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
         "Flet mindst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
@@ -3748,9 +3751,6 @@
       "Payment process not supported": [
         "Betalingsprocessen understøttes ikke"
       ],
-      "Periods is too short": [
-        "Perioden er for kort"
-      ],
       "Please activate your search again": [
         "Aktiver venligst din søgning igen"
       ],
@@ -3808,6 +3808,9 @@
       ],
       "Process aborted": [
         "Proces afbrudt"
+      ],
+      "Range is too short": [
+        "Interval er for kort"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Fjernede dublet af modtager: ${ joinedRecipients }",
@@ -5252,8 +5255,8 @@
       "Cannot create booking range across days": [
         "Kan ikke oprette reservationsperiode på tværs af dage"
       ],
-      "Cannot create booking range in the past": [
-        "Kan ikke oprette reservationsperiode i fortiden"
+      "Cannot create booking range in the past.": [
+        "Kan ikke oprette reservationsperiode i fortiden."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
@@ -5302,9 +5305,6 @@
       ],
       "Copy your referral link": [
         "Kopier dit henvisningslink"
-      ],
-      "Could not verify signature over booking page data": [
-        "Kunne ikke bekræfte signatur ud fra data på bookingsiden"
       ],
       "Country code": [
         "Landekode"
@@ -5507,9 +5507,6 @@
       ],
       "Host": [
         "Vært"
-      ],
-      "Host signature verification failed": [
-        "Bekræftelse af værtssignatur mislykkedes"
       ],
       "How long should an appointment last?": [
         "Hvor længe skal en aftale vare?"
@@ -6012,6 +6009,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Booking siden kan ikke redigeres, den tilknyttede kalender er deaktiveret"
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Denne reservation blev foretaget via ${ CALENDAR_APP_NAME }, som er en del af ${ BRAND_NAME }'s suite af produkter, der prioriterer privatliv."

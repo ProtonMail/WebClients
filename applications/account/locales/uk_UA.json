@@ -4,20 +4,9 @@
     "language": "uk_UA"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "Без мітки"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "Повний перегляд"
-      ],
       "Full view (see all event details)": [
         "Повний перегляд (усі подробиці події)"
-      ],
-      "Limited view": [
-        "Обмежений перегляд"
       ],
       "Limited view (see only free/busy)": [
         "Обмежений перегляд (лише доступність)"
@@ -76,9 +65,6 @@
       "Activate": [
         "Активувати"
       ],
-      "Activate ${ user.Name }@pm.me": [
-        "Активувати ${ user.Name }@pm.me"
-      ],
       "Activate organization key": [
         "Активувати ключ організації"
       ],
@@ -100,9 +86,6 @@
       "Add address or domain": [
         "Додати адресу або домен"
       ],
-      "Add calendar from URL": [
-        "Додати календар з URL-адреси"
-      ],
       "Add condition": [
         "Додати умову"
       ],
@@ -121,9 +104,6 @@
       "Add external address": [
         "Додати зовнішню адресу"
       ],
-      "Add filter": [
-        "Додати фільтр"
-      ],
       "Add folder": [
         "Додати теку"
       ],
@@ -141,9 +121,6 @@
       ],
       "Add public holidays": [
         "Додати державні свята"
-      ],
-      "Add sieve filter": [
-        "Додати фільтр Sieve"
       ],
       "Add user": [
         "Додати користувача"
@@ -171,9 +148,6 @@
       ],
       "Apply": [
         "Застосувати"
-      ],
-      "Apply to existing messages": [
-        "Застосувати до наявних повідомлень"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -274,9 +248,6 @@
       "Connected": [
         "Під'єднано"
       ],
-      "Contact sales": [
-        "Зв'язатися з відділом продажів"
-      ],
       "Contact support": [
         "Зв'язатися з підтримкою"
       ],
@@ -325,9 +296,6 @@
       "Create": [
         "Створити"
       ],
-      "Create a link to share with anyone outside ${ BRAND_NAME }": [
-        "Створити посилання для будь-кого поза ${ BRAND_NAME }"
-      ],
       "Create account": [
         "Зареєструватися"
       ],
@@ -342,9 +310,6 @@
       ],
       "Create label": [
         "Створити мітку"
-      ],
-      "Create link": [
-        "Створити посилання"
       ],
       "Create new policy": [
         "Створити нову політику"
@@ -382,17 +347,11 @@
       "Delete account": [
         "Видалити обліковий запис"
       ],
-      "Delete and confirm": [
-        "Видалити й підтвердити"
-      ],
       "Delete Gateway": [
         "Видалити мережевий шлюз"
       ],
       "Delete group": [
         "Видалити групу"
-      ],
-      "Delete link": [
-        "Видалити посилання"
       ],
       "Delete logo": [
         "Видалити логотип"
@@ -411,9 +370,6 @@
       ],
       "Delete user": [
         "Видалити користувача"
-      ],
-      "Delete without exporting": [
-        "Видалити без експортування"
       ],
       "Delete your account": [
         "Видалити обліковий запис"
@@ -469,9 +425,6 @@
       "Download CSV sample": [
         "Завантажити зразок CSV"
       ],
-      "Download ICS": [
-        "Завантажити ICS"
-      ],
       "Download logs": [
         "Завантажити журнали"
       ],
@@ -480,9 +433,6 @@
       ],
       "Download recovery file": [
         "Завантажити файл відновлення"
-      ],
-      "Download the ${ MAIL_APP_NAME } Export Tool": [
-        "Завантажити ${ MAIL_APP_NAME } Export Tool"
       ],
       "Download the desktop app": [
         "Завантажити настільний додаток"
@@ -547,26 +497,14 @@
       "Enable multi-user support": [
         "Увімкнути підтримку декількох користувачів"
       ],
-      "Encrypt and export": [
-        "Зашифрувати й експортувати"
-      ],
       "Explore other ${ BRAND_NAME } plans": [
         "Переглянути інші тарифні плани ${ BRAND_NAME }"
       ],
       "Export": [
         "Експортувати"
       ],
-      "Export key": [
-        "Експортувати ключ"
-      ],
-      "Export key before deleting": [
-        "Експортувати ключ перед видаленням"
-      ],
       "Extend": [
         "Продовжити"
-      ],
-      "Filters are being applied. This might take a few minutes.": [
-        "Застосовуються фільтри. Це може тривати кілька хвилин."
       ],
       "Fit to window": [
         "Припасувати до вікна"
@@ -580,12 +518,6 @@
       "Forgot recovery method?": [
         "Забули спосіб відновлення?"
       ],
-      "Generate": [
-        "Згенерувати"
-      ],
-      "Generate key": [
-        "Генерувати ключ"
-      ],
       "Generate new recovery phrase": [
         "Згенерувати нову фразу відновлення"
       ],
@@ -594,9 +526,6 @@
       ],
       "Generate recovery phrase": [
         "Згенерувати фразу відновлення"
-      ],
-      "Generate token": [
-        "Згенерувати токен"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Отримайте ${ planName } за ${ priceCoupon }"
@@ -618,9 +547,6 @@
       ],
       "Get more addresses": [
         "Отримати більше адрес"
-      ],
-      "Get more filters": [
-        "Отримати більше фільтрів"
       ],
       "Get more folders": [
         "Отримати більше тек"
@@ -694,14 +620,8 @@
       "Import from Google": [
         "Імпортувати з Google"
       ],
-      "Import from ICS": [
-        "Імпортувати з ICS"
-      ],
       "Import from Outlook": [
         "Імпортувати з Outlook"
-      ],
-      "Import key": [
-        "Імпортувати ключ"
       ],
       "Import new SAML metadata": [
         "Імпортувати нові метадані SAML"
@@ -808,9 +728,6 @@
       "More info: ${ safeTitle }": [
         "Докладніше: ${ safeTitle }"
       ],
-      "More info: Keyboard shortcuts": [
-        "Більше інформації: Комбінації клавіш"
-      ],
       "More options": [
         "Додаткові параметри"
       ],
@@ -886,9 +803,6 @@
       "Quote": [
         "Цитувати"
       ],
-      "Reactivate keys": [
-        "Повторно активувати ключі"
-      ],
       "Reconnect": [
         "Відновити з'єднання"
       ],
@@ -925,9 +839,6 @@
       "Remove bonuses": [
         "Вилучити бонуси"
       ],
-      "Remove calendar": [
-        "Вилучити календар"
-      ],
       "Remove domain": [
         "Вилучити домен"
       ],
@@ -936,9 +847,6 @@
       ],
       "Remove this label": [
         "Вилучити цю мітку"
-      ],
-      "Remove this member": [
-        "Вилучити цього учасника"
       ],
       "Remove this notification": [
         "Вилучити це сповіщення"
@@ -958,9 +866,6 @@
       "Request new code": [
         "Запитати новий код"
       ],
-      "Requires a verified recovery email address": [
-        "Потрібна підтверджена адреса резервної електронної пошти"
-      ],
       "Resend code": [
         "Надіслати код повторно"
       ],
@@ -975,9 +880,6 @@
       ],
       "Reset keys": [
         "Скинути ключі"
-      ],
-      "Reset modifications": [
-        "Скинути модифікації"
       ],
       "Reset password": [
         "Скинути пароль"
@@ -1015,9 +917,6 @@
       "Revoke invitation": [
         "Відкликати запрошення"
       ],
-      "Revoke this invitation": [
-        "Відкликати це запрошення"
-      ],
       "Save": [
         "Зберегти"
       ],
@@ -1026,9 +925,6 @@
       ],
       "Save changes": [
         "Зберегти зміни"
-      ],
-      "Save ICS file": [
-        "Зберегти файл ICS"
       ],
       "Save SAML configuration": [
         "Зберегти конфігурацію SAML"
@@ -1054,9 +950,6 @@
       "Select ${ planOrAppName }": [
         "Оберіть ${ planOrAppName }"
       ],
-      "Select a calendar to export": [
-        "Виберіть календар для експорту"
-      ],
       "Select billing cycle ${ billingText }": [
         "Вибрати платіжний цикл ${ billingText }"
       ],
@@ -1072,12 +965,6 @@
       "select file": [
         "виберіть файл"
       ],
-      "Select files": [
-        "Вибрати файли"
-      ],
-      "Select language for invitation emails": [
-        "Виберіть мову для листів із запрошеннями"
-      ],
       "Select time zone": [
         "Вибрати часовий пояс"
       ],
@@ -1089,9 +976,6 @@
       ],
       "Send email reminder": [
         "Надіслати нагадування поштою"
-      ],
-      "Send messages with @pm.me": [
-        "Надсилайте повідомлення з адреси @pm.me"
       ],
       "Send my username": [
         "Надіслати моє ім'я користувача"
@@ -1315,9 +1199,6 @@
       "Use your current email instead": [
         "Використати натомість вашу поточну адресу е-пошти"
       ],
-      "Use “${ label }” setting": [
-        "Використовувати налаштування “${ label }”"
-      ],
       "User": [
         "Користувач"
       ],
@@ -1406,16 +1287,6 @@
     "Action subscription": {
       "Reactivate": [
         "Повторна активація"
-      ]
-    },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "Схвалити"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "Відхилити"
       ]
     },
     "Addon": {
@@ -1539,20 +1410,6 @@
         "Якщо ви зараз вийдете, деякі події можуть не імпортуватися"
       ]
     },
-    "Alias promotion": {
-      "Get 10 aliases for free!": [
-        "Отримайте 10 псевдонімів безплатно!"
-      ],
-      "Get unlimited aliases!": [
-        "Отримайте необмежену кількість псевдонімів!"
-      ],
-      "Try ${ PASS_APP_NAME }": [
-        "Спробуйте ${ PASS_APP_NAME }"
-      ],
-      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
-        "За допомогою ${ PASS_APP_NAME } ви можете створювати унікальні псевдоніми, щоб приховати свою особистість і пересилати листи на вашу основну поштову скриньку."
-      ]
-    },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Це від'єднає всі маршрутизатори та клієнти, котрі використовують цей сертифікат."
@@ -1646,16 +1503,6 @@
       ],
       "Unsupported event": [
         "Непідтримувана подія"
-      ]
-    },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "Додати до календаря та в чергу"
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Я не на робочому місці з обмеженим доступом до електронної пошти."
       ]
     },
     "b2b_trials_Action": {
@@ -1923,16 +1770,6 @@
         "Який VPN протокол найкращий?"
       ]
     },
-    "breadcrumb": {
-      "Calendars": [
-        "Календарі"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "Не вдалося знайти найновішу версію"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
@@ -2064,40 +1901,6 @@
         "Додати людей чи групи"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "Редагувати календар"
-      ]
-    },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "Завантажити файл ICS з усіма подіями з вибраного календаря."
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Ви можете імпортувати ICS файли з іншого календаря до ${ CALENDAR_APP_NAME }. Це дасть змогу швидко імпортувати одну подію або весь ваш порядок денний."
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "Відхилено"
-      ],
-      "Invite sent": [
-        "Запрошення надіслано"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Мітку додано"
-      ],
-      "Label deleted": [
-        "Мітку видалено"
-      ],
-      "Label edited": [
-        "Мітку змінено"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Лише ви можете бачити мітку"
@@ -2118,41 +1921,12 @@
         "Ви вже маєте доступ до цього календаря"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Створіть посилання на ваш календар і поділіться ним з будь-ким за межами ${ BRAND_NAME }. Лише ви можете додавати та вилучати події."
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Діліться своїм календарем з іншими користувачами ${ BRAND_NAME }. Увімкніть спільну роботу, дозволивши їм додавати та змінювати події у вашому календарі. Ви можете будь-коли змінити дозволи користувача."
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "Поширити календар"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "Поділитися з користувачами ${ BRAND_NAME }"
-      ],
-      "Share with anyone": [
-        "Поділіться з ким завгодно"
-      ]
-    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Показати ще ${ remainingItems }",
         "Показати ще ${ remainingItems }",
         "Показати ще ${ remainingItems }",
         "Показати ще ${ remainingItems }"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "Редагувати подію"
-      ],
-      "See all event details": [
-        "Переглянути всі подробиці події"
       ]
     },
     "Calendar sharing access option label": {
@@ -2168,21 +1942,7 @@
         "Не вдалося отримати інформацію про контакт для ${ address }"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "Змінено дозволи для ${ email }"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "Активний"
-      ],
-      "Default": [
-        "Типовий"
-      ],
-      "Disabled": [
-        "Вимкнено"
-      ],
       "Not synced": [
         "Не синхронізовано"
       ],
@@ -2228,11 +1988,6 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Від часу останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "Відкрити налаштування"
       ]
     },
     "Calendar view": {
@@ -2534,11 +2289,6 @@
       ],
       "matches": [
         "збігається з"
-      ]
-    },
-    "Condition label": {
-      "If": [
-        "Якщо"
       ]
     },
     "Confirm modal title": {
@@ -3612,11 +3362,6 @@
         "Середа"
       ]
     },
-    "Default calendar event settings section title": {
-      "Default event settings": [
-        "Типові налаштування події"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Невідомо"
@@ -3651,14 +3396,6 @@
       ],
       "You've reached the limit of address deletions for this user.": [
         "Ви досягли обмеження видалення адрес для цього користувача."
-      ]
-    },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "Усі події в цьому календарі будуть видалені."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Ви більше не матимете доступу до цього календаря."
       ]
     },
     "Delete domain prompt": {
@@ -3752,14 +3489,8 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Тримайте різні частини свого життя окремо, а поштову скриньку організуйте за допомогою додаткових адрес."
       ],
-      "Make your email footer your own — showcase your unique brand, not ours.": [
-        "Зробіть свою електронну пошту в колонтитулі - покажіть свій унікальний бренд, а не наш."
-      ],
       "No one in your organization can connect to shared servers.": [
         "Ніхто з вашої організації не може під'єднуватися до спільних серверів."
-      ],
-      "Set up auto-forwarding to redirect incoming emails to another email address.": [
-        "Налаштуйте автопереадресацію, щоб перенаправляти вхідні електронні листи на іншу адресу електронної пошти."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Щоб імпортувати з використанням файлів CSV і VCF, розмір файлу не має перевищувати ${ MAX_IMPORT_FILE_SIZE_STRING }, а кількість контактів – ${ MAX_IMPORT_CONTACTS_STRING }. Якщо ваш файл більший, розділіть його на декілька менших. ${ learnMoreLink }."
@@ -3778,9 +3509,6 @@
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Ви можете й надалі запрошувати друзів, але ви більше не отримуватимете за це кредити"
-      ],
-      "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
-        "Ви можете застосувати правила паролів, які члени організації будуть використовувати при створенні паролів у ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -4182,145 +3910,12 @@
         "Лист із підтвердженням надіслано на ${ address }"
       ]
     },
-    "email_forwarding_2023: Action": {
-      "Accept": [
-        "Схвалити"
-      ],
-      "Add condition": [
-        "Додати умову"
-      ],
-      "Add forwarding rule": [
-        "Додати правило пересилання"
-      ],
-      "Back": [
-        "Назад"
-      ],
-      "Cancel": [
-        "Скасувати"
-      ],
-      "Decline": [
-        "Відхилити"
-      ],
-      "Delete": [
-        "Видалити"
-      ],
-      "Delete this condition": [
-        "Видалити цю умову"
-      ],
-      "Edit conditions": [
-        "Редагувати умови"
-      ],
-      "Got it": [
-        "Зрозуміло"
-      ],
-      "Next": [
-        "Далі"
-      ],
-      "Pause": [
-        "Призупинити"
-      ],
-      "Re-enable": [
-        "Увімкнути знову"
-      ],
-      "Re-send confirmation email": [
-        "Надіслати новий лист для підтвердження"
-      ],
-      "Remove “${ value }”": [
-        "Вилучити “${ value }”"
-      ],
-      "Request confirmation": [
-        "Запитати підтвердження"
-      ],
-      "Resume": [
-        "Продовжити"
-      ],
-      "Save": [
-        "Зберегти"
-      ],
-      "Send confirmation email": [
-        "Надіслати лист для підтвердження"
-      ],
-      "Set up email forwarding": [
-        "Налаштувати пересилання пошти"
-      ]
-    },
-    "email_forwarding_2023: Error": {
-      "Condition incomplete, please add a token": [
-        "Умови незавершені, необхідно додати токен"
-      ],
-      "Token already exists": [
-        "Токен вже існує"
-      ]
-    },
     "email_forwarding_2023: Error message, recovery": {
       "Please try opening the link again.": [
         "Спробуйте відкрити посилання знову."
       ]
     },
-    "email_forwarding_2023: Forwarding tooltip": {
-      "Emails forwarded to you are excluded and will not be forwarded.": [
-        "Переслані вам листи не враховуються і не пересилатимуться."
-      ]
-    },
-    "email_forwarding_2023: Header": {
-      "Actions": [
-        "Дії"
-      ],
-      "Forward from": [
-        "Переслати з"
-      ],
-      "Forward to": [
-        "Переслати"
-      ],
-      "From": [
-        "Від"
-      ],
-      "Status": [
-        "Стан"
-      ],
-      "To": [
-        "Кому"
-      ]
-    },
-    "email_forwarding_2023: Incoming forwarding tab name": {
-      "From me": [
-        "Від мене"
-      ]
-    },
     "email_forwarding_2023: Info": {
-      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
-        "Підтвердження електронною поштою буде надіслано на ${ boldForwardeeEmail }"
-      ],
-      "Automatically forward emails to another email address.": [
-        "Автоматичне пересилання листів на іншу адресу."
-      ],
-      "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Адресат має схвалити/відхилити запрошення на пересилання, або оновити його"
-      ],
-      "Forwarding is active": [
-        "Пересилання активне"
-      ],
-      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Пересилання на адресу без наскрізного шифрування вимкне наскрізне шифрування для вашої адреси ${ boldForwarderEmail }, але шифрування нульового доступу залишиться увімкненим. ${ learnMoreLink }"
-      ],
-      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
-        "Пересилання на цю адресу активується після підтвердження отримувачем."
-      ],
-      "No incoming forwarding rules": [
-        "Немає правил пересилання вхідних повідомлень"
-      ],
-      "No outgoing forwarding rules": [
-        "Немає правил пересилання вихідних повідомлень"
-      ],
-      "Please update your forwarding keys": [
-        "Будь ласка, оновіть свої ключі пересилання"
-      ],
-      "The forwardee rejected the forwarding request": [
-        "Адресат відхилив запит на пересилання"
-      ],
-      "The forwarding is temporarily paused": [
-        "Пересилання тимчасово призупинено"
-      ],
       "You can safely close this tab.": [
         "Тепер ви можете закрити цю вкладку."
       ],
@@ -4328,124 +3923,12 @@
         "Ви не отримуватимете листи, автоматично переслані з ${ boldForwarderEmail }."
       ]
     },
-    "email_forwarding_2023: Label": {
-      "And": [
-        "І"
-      ],
-      "Forward from": [
-        "Переслати з"
-      ],
-      "Forward to": [
-        "Переслати"
-      ],
-      "or": [
-        "або"
-      ],
-      "Or": [
-        "Або"
-      ],
-      "With attachment": [
-        "Має вкладення"
-      ],
-      "Without attachment": [
-        "Без вкладення"
-      ]
-    },
-    "email_forwarding_2023: Link": {
-      "Learn more": [
-        "Докладніше"
-      ]
-    },
-    "email_forwarding_2023: Outgoing forwarding tab name": {
-      "To me": [
-        "Мені"
-      ]
-    },
-    "email_forwarding_2023: Placeholder": {
-      "Condition:": [
-        "Умова:"
-      ],
-      "Enter email address": [
-        "Введіть адресу е-пошти"
-      ],
-      "Type text or keyword": [
-        "Введіть текст чи ключове слово"
-      ],
-      "Type text or keyword for this condition:": [
-        "Введіть текст або ключове слово для цієї умови:"
-      ]
-    },
-    "email_forwarding_2023: Prompt": {
-      "End-to-end encryption will be re-enabled for the sender address.": [
-        "Для адреси відправника буде знову ввімкнено наскрізне шифрування."
-      ],
-      "Forwarding to the destination address will end.": [
-        "Пересилання на призначену адресу буде припинено."
-      ]
-    },
-    "email_forwarding_2023: Status": {
-      "Active": [
-        "Активно"
-      ],
-      "Declined": [
-        "Відхилено"
-      ],
-      "Outdated": [
-        "Застарілий"
-      ],
-      "Paused": [
-        "Призупинено"
-      ],
-      "Pending": [
-        "У черзі"
-      ]
-    },
-    "email_forwarding_2023: Success": {
-      "Changes saved": [
-        "Зміни збережено"
-      ],
-      "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
-        "Повідомлення надіслано на ${ existingForwardingConfig.ForwardeeEmail }"
-      ],
-      "Forwarding accepted": [
-        "Пересилання схвалено"
-      ],
-      "Forwarding declined": [
-        "Пересилання відхилено"
-      ],
-      "Forwarding deleted": [
-        "Пересилання видалено"
-      ],
-      "Forwarding paused": [
-        "Пересилання призупинено"
-      ],
-      "Forwarding resumed": [
-        "Пересилання відновлено"
-      ]
-    },
     "email_forwarding_2023: Title": {
-      "Delete forwarding?": [
-        "Видалити пересилання?"
-      ],
       "Email forwarding deactivated": [
         "Пересилання електронної пошти деактивовано"
       ],
       "Forwarding activated": [
         "Пересилання активовано"
-      ],
-      "Request confirmation?": [
-        "Запитати підтвердження?"
-      ],
-      "Request sent": [
-        "Запит надіслано"
-      ],
-      "Set up forwarding": [
-        "Налаштувати пересилання"
-      ]
-    },
-    "email_forwarding_2023: Warning": {
-      "Warning": [
-        "Попередження"
       ]
     },
     "emergency_access": {
@@ -4528,15 +4011,6 @@
       "Authentication error.": [
         "Помилка автентифікації."
       ],
-      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
-        "Повідомлення автовідповіді перевищує допустиму довжину. Будь ласка, скоротіть його, щоб вкластися в ліміт."
-      ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Автоматична відповідь є платною функцією. Будь ласка, передплатіть тарифний план для її використання."
-      ],
-      "Calendar cannot be found": [
-        "Не вдалося знайти календар"
-      ],
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
       ],
@@ -4560,9 +4034,6 @@
       ],
       "Could not open updated vault": [
         "Не вдалося відкрити оновлене сховище"
-      ],
-      "Could not save preference": [
-        "Не вдалося зберегти налаштування"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Не вдалося завантажити рахунки-фактури. Будь ласка, спробуйте ще раз пізніше."
@@ -4701,12 +4172,6 @@
       ],
       "Invalid postal code": [
         "Недійсний поштовий індекс"
-      ],
-      "Invalid private key file": [
-        "Недійсний файл приватного ключа"
-      ],
-      "Invalid Sieve code": [
-        "Неприпустимий код Sieve"
       ],
       "Invalid URL": [
         "Недійсна URL-адреса"
@@ -4848,9 +4313,6 @@
       ],
       "Please set a recovery phone number first": [
         "Спершу встановіть номер телефону для відновлення"
-      ],
-      "Please set a recovery/notification email first": [
-        "Спершу вкажіть е-пошту для відновлення/сповіщень"
       ],
       "Please try again in a few moments.": [
         "Будь ласка, спробуйте знову за хвильку."
@@ -5322,14 +4784,6 @@
         "Жодного зображення не вибрано"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Подія @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Подія від ${ timeString }, ${ rruleString }"
-      ]
-    },
     "Event invistation error": {
       "Unexpected error": [
         "Непередбачувана помилка"
@@ -5379,56 +4833,6 @@
     "Event title": {
       "(no title)": [
         "(без назви)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } подію експортовано",
-        "${ totalProcessed }/${ totalToProcess } події експортовано",
-        "${ totalProcessed }/${ totalToProcess } подій експортовано",
-        "${ totalProcessed }/${ totalToProcess } подій експортовано"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Календар успішно експортовано. Тепер ви можете зберегти ICS файл."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Розшифрування подій з вашого календаря: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Через скидання пароля жодна з ваших подій не може бути розшифрована та експортована."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Через скидання пароля деякі ваші події не можуть бути розшифровані та експортовані."
-      ],
-      "Error decrypting event": [
-        "Помилка розшифрування події"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Дізнайтеся, як відновити зашифровані події зі старим паролем"
-      ],
-      "Loading events": [
-        "Завантаження подій"
-      ],
-      "None of the events could be exported.": [
-        "Жодну з ваших подій не вдалося експортувати."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Скидання пароля – неможливо розшифрувати подію"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Скидання пароля – неможливо розшифрувати кілька подій"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Не закривайте цю вкладку доки не завершиться процес експортування."
-      ],
-      "Some of your events could not be exported.": [
-        "Деякі з ваших подій не вдалося експортувати."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Інтернет-з'єднання було перервано, внаслідок чого процес експорту зазнав невдачі. Повторіть спробу."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Ви можете зберегти ICS файл подій, які були успішно експортовані."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -6039,9 +5443,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Додайте власний фільтр для автоматичного виконання певних дій, як-от позначення міткою чи архівування повідомлень."
-      ],
       "Allow:": [
         "Дозволені:"
       ],
@@ -6247,12 +5648,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "Доступ"
-      ],
-      "Action": [
-        "Дія"
-      ],
       "Actions": [
         "Дії"
       ],
@@ -6283,9 +5678,6 @@
       "Key type": [
         "Тип ключа"
       ],
-      "Label": [
-        "Мітка"
-      ],
       "Location": [
         "Розташування"
       ],
@@ -6303,9 +5695,6 @@
       ],
       "Payment details": [
         "Подробиці платежу"
-      ],
-      "Permissions": [
-        "Дозволи"
       ],
       "Protection": [
         "захист"
@@ -6367,34 +5756,6 @@
       ],
       "Value / Data / Points to": [
         "Значення / Дані / Спрямування"
-      ]
-    },
-    "Header for table": {
-      "Actions": [
-        "Дії"
-      ],
-      "Created": [
-        "Створено"
-      ],
-      "Email address": [
-        "Адреса електронної пошти"
-      ],
-      "Last used": [
-        "Востаннє використано"
-      ],
-      "Token name": [
-        "Назва токена"
-      ]
-    },
-    "Header; Table with list of calendars arranged by type": {
-      "Holidays": [
-        "Свята"
-      ],
-      "Other": [
-        "Інше"
-      ],
-      "Subscribed": [
-        "Підписні"
       ]
     },
     "Headline": {
@@ -6742,11 +6103,6 @@
         "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
       ]
     },
-    "Import key": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Ви дійсно хочете імпортувати приватний ключ? Імпортування ненадійно згенерованого чи скомпрометованого приватного ключа може порушити безпеку вашої пошти.\n\nЗауважте, що відкритий ключ, пов'язаний з цим приватним ключем, буде загальнодоступним на нашому сервері ключів. Якщо ключ містить особисті дані (наприклад, ваше повне ім'я), які ви не хочете оприлюднювати, відредагуйте ключ перед імпортуванням."
-      ]
-    },
     "Import provider": {
       "Import from ${ provider }": [
         "Імпорт з ${ provider }"
@@ -6836,9 +6192,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
-      "${ boldName } will be set as default calendar.": [
-        "${ boldName } буде встановлено типовим календарем."
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
       ],
@@ -6883,9 +6236,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } з ${ total }"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } більше не зберігатиме попередні версії ваших файлів."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } е-пошти недійсна"
@@ -7133,9 +6483,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Отримайте доступ до своїх паролів і захистіть свої облікові дані в інтернеті на всіх пристроях. Завантажте та встановіть відповідні програми та розширення ${ PASS_APP_NAME }."
-      ],
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
@@ -7148,9 +6495,6 @@
       "active": [
         "активний"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Додайте адресу @pm.me до свого облікового запису. Цей простий короткий домен означає скорочення від \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
-      ],
       "add a recovery method": [
         "додайте спосіб відновлення"
       ],
@@ -7159,9 +6503,6 @@
       ],
       "Add image URL": [
         "Введіть URL-адресу зображення"
-      ],
-      "Add label": [
-        "Додати мітку"
       ],
       "Add multiple users to your organization at once.": [
         "Додавайте багатьох користувачів до своєї організації за один раз."
@@ -7286,26 +6627,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Будь-хто з цим посиланням може бачити вашу доступність чи зайнятість в календарі. Вони не можуть бачити подробиці подій, наприклад, назву, розташування та учасників."
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Ніхто за цим посиланням не зможе синхронізувати чи отримувати майбутні оновлення для вашого календаря. Якщо ви захочете знову надати їм доступ, необхідно створити нове посилання."
-      ],
       "Are you sure you want to cancel editing the group?": [
         "Ви дійсно бажаєте скасувати редагування групи?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "Ви дійсно хочете видалити цей календар?"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Ви впевнені, що хочете видалити цей календар? Усі адреси, з якими ви поділилися цим календарем, втратять до нього доступ."
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Ви впевнені, що хочете видалити цей календар? З нього будуть видалені всі події."
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Ви впевнені, що хочете видалити цей календар? Згодом ви зможете додати календар свят знову."
-      ],
-      "Are you sure you want to delete this filter?": [
-        "Ви дійсно хочете видалити цей фільтр?"
       ],
       "Are you sure you want to delete this folder?": [
         "Ви дійсно хочете видалити цю теку?"
@@ -7343,26 +6666,8 @@
       "Attention required": [
         "Потребує уваги"
       ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Автовідповідач активний щомісяця між заданим початковим та кінцевим часом."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Автовідповідач активний щотижня між заданим початковим та кінцевим часом."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Автовідповідач активний від початкового до кінцевого часу."
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "Автовідповідач активний, доки ви його не вимкнете."
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Автовідповідач завжди активний в обрані вами дні тижня та в обраний проміжок часу."
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Автоматично очищати листи, що переміщені в Кошик і Спам більше ніж 30 днів тому."
-      ],
-      "Available on macOS, Windows, and Linux.": [
-        "Доступно на macOS, Windows та Linux."
       ],
       "Awaiting transaction": [
         "Очікування транзакції"
@@ -7595,9 +6900,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету ${ MAIL_APP_NAME }."
       ],
-      "Delete link?": [
-        "Видалити посилання?"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Видаляти повідомлення зі спаму через 30 днів. Якщо ввімкнути автоматичне видалення, повідомлення, які вже знаходяться в смітнику/спамі, будуть видалені за датою їх переміщення туди."
       ],
@@ -7670,9 +6972,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
       ],
-      "Download your PGP keys for use with other PGP-compatible services.": [
-        "Завантажте свої ключі PGP для використання з іншими службами, сумісними з PGP."
-      ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
       ],
@@ -7690,9 +6989,6 @@
       ],
       "Edit email address": [
         "Змінити адресу електронної пошти"
-      ],
-      "Edit label": [
-        "Редагувати мітку"
       ],
       "Edit link": [
         "Редагувати посилання"
@@ -7724,17 +7020,8 @@
       "Enable single sign-on to keep your organization safe": [
         "Увімкніть єдиний вхід, щоб гарантувати безпеку вашої організації"
       ],
-      "Enable this address to join this calendar": [
-        "Дозвольте цій адресі приєднатися до цього календаря"
-      ],
-      "Enable TLS or SSL on the external service if it is supported.": [
-        "Увімкнути TLS або SSL на зовнішньому сервісі, якщо підтримується."
-      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Увімкнувши відновлення за фразою знову, буде згенерована нова фраза."
-      ],
-      "Encryption setting updated": [
-        "Налаштування шифрування оновлено"
       ],
       "End date": [
         "Дата завершення"
@@ -7808,9 +7095,6 @@
       "Enter your recovery phrase to change your password now.": [
         "Введіть фразу відновлення, щоб змінити пароль."
       ],
-      "Event invitations and responses will be sent in this language.": [
-        "Запрошення на заходи та відповіді на них будуть надіслані цією мовою."
-      ],
       "Everything in ${ planOrAppName }": [
         "Усе в ${ planOrAppName }"
       ],
@@ -7834,9 +7118,6 @@
       ],
       "finance": [
         "фінанси"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Для отримання інформації про 10-річну історію версій, будь ласка, зв'яжіться з нашим відділом продажів."
       ],
       "for choosing ${ product }": [
         "за вибір ${ product }"
@@ -7874,12 +7155,6 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Отримуйте сповіщення, якщо ваш пароль або інші персональні дані потрапили до витоку. ${ learnMoreLinkNoBreach }"
       ],
-      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Дайте токену описову назву, наприклад, службу, з якою ви плануєте його використовувати, і виберіть одну з ваших активних власних доменних адрес. Лише на цю адресу можна буде надсилати електронні листи з цим токеном."
-      ],
-      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Надайте свій відкритий ключ друзям, або оприлюдніть його в інтернеті, щоб кожен зміг надіслати вам наскрізно зашифроване повідомлення!"
-      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перейдіть до свого провайдера ідентифікації, отримайте метадані SAML для ${ appName } та імпортуйте їх тут."
       ],
@@ -7898,9 +7173,6 @@
       "here": [
         "тут"
       ],
-      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Приховує інформацію, що може вас ідентифікувати, завантажуючи зовнішній вміст через проксі. Можливість зберігати вміст у вигляді вкладень."
-      ],
       "High Priority": [
         "Високий пріоритет"
       ],
@@ -7912,9 +7184,6 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Якщо вам не сподобається, ми повернемо гроші."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Якщо часовий пояс системи не збігається з налаштуваннями поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж один раз на день)."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Якщо це пов'язано зі скиданням старого пароля, ви можете запобігти повторному показу повідомлення"
@@ -8135,9 +7404,6 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Скористайтеся цими настановами й порадами, щоб зберігати свою інформацію в безпеці та приватності."
       ],
-      "Key deletion is irreversible!": [
-        "Видалення ключа незворотне!"
-      ],
       "Keys created": [
         "Ключі створено"
       ],
@@ -8159,17 +7425,11 @@
       "Learn more about Gateways": [
         "Дізнайтеся більше про шлюзи"
       ],
-      "learn more about Sieve programming language": [
-        "дізнатися докладніше про мову програмування Sieve"
-      ],
       "Learn more about single sign-on": [
         "Дізнайтеся більше про єдиний вхід"
       ],
       "Left to Right": [
         "Зліва направо"
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Дозвольте вашим контактам знати, що ви цінуєте приватність."
       ],
       "Let's get started by pressing the New group button above": [
         "Почнімо, натиснувши кнопку «Нова група» вище"
@@ -8180,9 +7440,6 @@
       "Link created": [
         "Посилання створено"
       ],
-      "Link deleted": [
-        "Посилання видалено"
-      ],
       "Link expired": [
         "Посилання протерміноване"
       ],
@@ -8191,9 +7448,6 @@
       ],
       "Live chat": [
         "чат наживо"
-      ],
-      "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "Якщо увімкнено захист від стеження, завантажений вміст захищається нашим проксі."
       ],
       "Loading": [
         "Завантаження"
@@ -8285,9 +7539,6 @@
       "New VPN connection data will stop being collected and shown.": [
         "Нові дані про VPN-з'єднання перестануть збиратися і показуватися."
       ],
-      "No account keys exist": [
-        "Немає ключів облікового запису"
-      ],
       "No action selected": [
         "Жодної дії не вибрано"
       ],
@@ -8341,12 +7592,6 @@
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Один обліковий запис. Усі служби ${ BRAND_NAME }."
-      ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
-      ],
-      "Only you can see the label": [
-        "Лише ви можете бачити мітку"
       ],
       "Open source": [
         "Відкритий програмний код"
@@ -8411,9 +7656,6 @@
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
       ],
-      "Password generator rules successfully saved": [
-        "Правила генератора паролів успішно збережено"
-      ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "Пароль має містити ${ MIN_PASSWORD_LENGTH } символів або більше."
       ],
@@ -8425,9 +7667,6 @@
       ],
       "per month, billed at ${ price }": [
         "на місяць, до сплати ${ price }"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "PGP клієнти швидше за все автоматично виявляють ваші PGP ключі, якщо вихідні повідомлення підписані."
       ],
       "Phone number": [
         "Номер телефону"
@@ -8467,9 +7706,6 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Збережіть її в надійному місці. Вона знадобиться вам для доступу до облікового запису та розшифрування ваших даних у разі скидання пароля."
-      ],
-      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Зверніть увагу, що якщо ви видалите фільтр ${ nameDeleted }, ми припинимо обробку всіх автоматизованих дій, які він запускає."
       ],
       "please open a support ticket": [
         "будь ласка, відкрийте заявку служби підтримки"
@@ -8582,9 +7818,6 @@
       "Remove metadata from images to protect your privacy.": [
         "Вилучайте метадані з зображень, щоб захистити вашу приватність."
       ],
-      "Remove one of your calendars to join this one": [
-        "Вилучіть один з ваших календарів, щоб приєднатися до цього"
-      ],
       "Report link expired": [
         "Термін дії посилання на звіт закінчився"
       ],
@@ -8678,9 +7911,6 @@
       "Set up your organization": [
         "Налаштуйте свою організацію"
       ],
-      "Setting successfully saved": [
-        "Налаштування успішно збережено"
-      ],
       "Setting up your new address…": [
         "Налаштування вашої нової адреси…"
       ],
@@ -8720,12 +7950,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "Надсилання через SMTP дозволяє стороннім сервісам або пристроям надсилати електронну пошту через ${ MAIL_APP_NAME } для адрес ваших власних доменів. Щоб отримати доступ, створіть ${ createTicket }, описавши ваші сценарії використання, бажані власні домени для використання, а також очікуваний щогодинний та щоденний обсяг електронної пошти."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Надсилання SMTP дозволяє стороннім сервісам або пристроям надсилати електронну пошту через ${ MAIL_APP_NAME } для адрес ваших власних доменів. Щоб скористатися цією функцією, згенеруйте новий токен."
-      ],
       "Some keys successfully reactivated": [
         "Деякі ключі успішно повторно активовано"
       ],
@@ -8761,9 +7985,6 @@
       ],
       "Storage used by this user": [
         "Сховище, використане цим користувачем"
-      ],
-      "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        "Зберігайте цей пароль і файл у надійному місці. Вам потрібно буде знову імпортувати ваш ключ."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
@@ -8806,12 +8027,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Повідомлення ${ boldDataLocked } більше не буде показано, але ви все ще можете розблокувати свої дані в ${ encryptionAndKeysLink }."
-      ],
-      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "${ MAIL_APP_NAME } Export Tool дозволяє експортувати розшифровані електронні листи з вашого облікового запису ${ MAIL_APP_NAME } на пристрій. Після цього ви можете переглянути повідомлення або імпортувати їх до іншого облікового запису чи поштового клієнта."
-      ],
-      "The calendar will be removed from your account.": [
-        "Календар буде вилучено з вашого облікового запису."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web – це прихована частина інтернету, де можна купувати й продавати викрадену особисту інформацію, як-от облікові дані."
@@ -8933,9 +8148,6 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Це повідомлення не надійде до служби підтримки, якщо у вас виникли проблеми з нашим сервісом або вам потрібні подальші дії з нашого боку ${ supportLink }."
       ],
-      "This token won’t be available after you close this window, and you should not share it with anyone.": [
-        "Цей токен буде недоступний після того, як ви закриєте це вікно. Не діліться ним ні з ким."
-      ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Термін дії цього посилання для підтвердження завершився. Відкрийте новіше повідомлення з цього списку розсилки."
       ],
@@ -8945,12 +8157,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Ця перевірка може тривати до однієї години. Після успішної перевірки не видаляйте даний TXT запис, оскільки він потрібен для підтвердження того, що ви продовжуєте володіти даним доменом."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Це призведе до видалення всіх попередніх версій ваших файлів, що зберігаються понад ${ rententionLabel }"
-      ],
-      "This will delete all previous versions of your files.": [
-        "Це призведе до видалення всіх попередніх версій ваших файлів."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Це заборонить доступ до **${ email }**. Ви впевнені, що хочете продовжити?"
       ],
@@ -8959,9 +8165,6 @@
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Це вимкне вашу чинну фразу відновлення. Ви не зможете скористатися нею для доступу до облікового запису чи розшифрування своїх даних."
-      ],
-      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "Це завантажить файл, що містить ваш приватний ключ. Захистіть цей файл, зашифрувавши його паролем."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Це дасть змогу використовувати PayPal для вашої передплати ${ BRAND_NAME }. Вас буде перенаправлено до PayPal у новій вкладці браузера. Якщо ви користуєтесь блокувальниками вмісту, вимкніть їх перед продовженням."
@@ -9004,9 +8207,6 @@
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
         "Щоб дозволити домену **${ domainName }** використовувати SAML SSO, ви повинні підтвердити право власності на нього, додавши наступний DNS TXT запис до свого домену у вашого DNS постачальника."
-      ],
-      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "Щоб уникнути втрати даних, видаляйте його лише якщо впевнені у своїх діях або експортували копію."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Щоб скасувати передплату, зв'яжіться з нами."
@@ -9052,9 +8252,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
-      ],
-      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Для належної роботи кожен фільтр повинен містити принаймні назву та дійсний скрипт Sieve. Ви можете ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
@@ -9116,12 +8313,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
-      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "Передплатіть тарифний план, щоб додати до облікового запису коротку адресу @pm.me, якою легше ділитися. Вона розшифровується як \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
-      ],
-      "Upgrade to unlock": [
-        "Передплатіть для отримання доступу"
-      ],
       "Upload picture": [
         "Завантажити зображення"
       ],
@@ -9151,9 +8342,6 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без програми. Наприклад, Tunnelblick на macOS, або OpenVPN на GNU/Linux."
-      ],
-      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "Використовуйте обрану адресу електронної пошти як ім'я користувача SMTP у зовнішньому сервісі, а згенерований токен – як пароль SMTP."
       ],
       "User activated": [
         "Користувач активований"
@@ -9202,9 +8390,6 @@
       ],
       "Version ${ version }": [
         "Версія ${ version }"
-      ],
-      "Version history": [
-        "Історія версій"
       ],
       "Version number successfully copied to clipboard": [
         "Номер версії успішно скопійовано до буфера обміну"
@@ -9308,9 +8493,6 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Увімкнувши SAML для ${ appName } у свого провайдера ідентифікації, ви можете отримати запит на використання URL-адреси для зворотного виклику (ACS) та ID видавця. Просто скопіюйте і вставте наведені нижче дані в поля вашого провайдера ідентифікації."
       ],
-      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Якщо сповіщення увімкнено, ми надсилатимемо листи на вашу адресу резервної електронної пошти, якщо у вашій поштовій скриньці ${ MAIL_APP_NAME } з'являться нові повідомлення."
-      ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Якщо вони передплатять тарифний план, ви отримаєте кредити, які можна використати для передплати."
       ],
@@ -9346,9 +8528,6 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "За допомогою груп ви можете швидко і легко надсилати електронні листи всім людям у певній групі."
-      ],
-      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "З вашим поточним тарифним планом ви можете лише отримувати повідомлення на адресу @pm.me. Оновіть тариф, щоб надсилати повідомлення та створювати додаткові адреси за допомогою @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без активації ви не зможете створювати нових користувачів, додавати адреси для наявних користувачів або мати доступ до не приватних облікових записів."
@@ -9419,9 +8598,6 @@
       "You can close the tab or browser in the meantime.": [
         "Ви можете закрити вкладку або браузер."
       ],
-      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
-        "Ви можете визначити політику ${ PASS_APP_NAME } для членів організації."
-      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
       ],
@@ -9457,9 +8633,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
-      ],
-      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Ви можете використовувати ${ MAIL_APP_NAME } з будь-яким поштовим клієнтом для комп'ютера, який підтримує IMAP/SMTP, наприклад, Outlook, Apple Mail та Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ${ VPN_APP_NAME } через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
@@ -9500,9 +8673,6 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "У вас є пробний період передплати ${ planTitle }. Наразі оплата не вимагається. Передплату буде автоматично поновлено після завершення пробного періоду."
       ],
-      "You have no calendars to export.": [
-        "У вас немає календарів, які можна експортувати."
-      ],
       "You have no invoices.": [
         "У вас немає рахунків-фактур."
       ],
@@ -9527,15 +8697,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "У вас повинна бути кредитна картка чи банківський рахунок, пов'язаний з вашим обліковим записом PayPal, для можливості його використання, як спосіб оплати."
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "Необхідно мати активний особистий календар для імпортування ваших подій з файлу ICS."
-      ],
-      "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "Ви повинні експортувати резервну копію цього ключа, якщо вам потрібно відновити дані, які ним зашифровані."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "Вам усе одно необхідно відповісти на запрошення, щоб організатор побачив вашу відповідь."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Ви зможете підвищити користувача до адміністратора, як тільки він прийме запрошення."
       ],
@@ -9550,9 +8711,6 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
-      ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
-        "Ви НЕ зможете розшифрувати будь-які повідомлення, файли та інші дані, зашифровані цим ключем. Всі дані, підписані цим ключем, більше не перевірятимуться програмами ${ BRAND_NAME }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
@@ -9813,37 +8971,6 @@
         "Передплата"
       ]
     },
-    "Key generation": {
-      "Generate key": [
-        "Генерувати ключ"
-      ],
-      "Key successfully generated.": [
-        "Ключ успішно згенеровано."
-      ],
-      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
-        "Буде згенеровано новий ключ, який використовуватиметься для шифрування нових контактів, електронної пошти й інших даних."
-      ]
-    },
-    "Key state badge": {
-      "Compromised": [
-        "Скомпрометований"
-      ],
-      "Disabled": [
-        "Вимкнений"
-      ],
-      "Forwarding": [
-        "Пересилання"
-      ],
-      "Inactive": [
-        "Неактивний"
-      ],
-      "Obsolete": [
-        "Застарілий"
-      ],
-      "Primary": [
-        "Основний"
-      ]
-    },
     "Keyboard shortcut name": {
       "Add encryption": [
         "Додати шифрування"
@@ -10040,47 +9167,9 @@
         "Комбінації клавіш для повідомлення"
       ]
     },
-    "Keys actions": {
-      "Delete": [
-        "Видалити"
-      ],
-      "Disables encryption with this key": [
-        "Вимикає шифрування з цим ключем"
-      ],
-      "Disables signature verification and encryption with this key": [
-        "Вимикає перевірку підпису і шифрування з цим ключем"
-      ],
-      "Enable encryption with this key": [
-        "Увімкнути шифрування з цим ключем"
-      ],
-      "Enable signature verification and encryption with this key": [
-        "Увімкнути перевірку підпису і шифрування з цим ключем"
-      ],
-      "Export private key": [
-        "Експортувати приватний ключ"
-      ],
-      "Export public key": [
-        "Експортувати відкритий ключ"
-      ],
-      "Mark compromised": [
-        "Позначити скомпрометованим"
-      ],
-      "Mark not compromised": [
-        "Позначити не скомпрометованим"
-      ],
-      "Mark not obsolete": [
-        "Позначити не застарілим"
-      ],
-      "Mark obsolete": [
-        "Позначити застарілим"
-      ]
-    },
     "Knowledge base link label": {
       "Here's how": [
         "Ось, як це зробити"
-      ],
-      "Learn more": [
-        "Докладніше"
       ]
     },
     "Label": {
@@ -10104,9 +9193,6 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "Адреса ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } footer": [
-        "Колонтитул ${ MAIL_APP_NAME }"
       ],
       "${ n } month": [
         "${ n } місяць",
@@ -10192,15 +9278,6 @@
       "Allow": [
         "Дозволити"
       ],
-      "Allow memorable passwords": [
-        "Дозволити паролі, які можна запам'ятовувати"
-      ],
-      "Allow notifications by email": [
-        "Дозволити сповіщення електронною поштою"
-      ],
-      "Allow random passwords": [
-        "Дозволити випадкові паролі"
-      ],
       "Allow recovery by email": [
         "Дозволити відновлення за електронною поштою"
       ],
@@ -10212,9 +9289,6 @@
       ],
       "Allow recovery using a trusted device": [
         "Дозволити відновлення за допомогою довіреного пристрою"
-      ],
-      "Allow sharing outside the organization": [
-        "Дозволити спільний доступ за межами організації"
       ],
       "Allowed Domain": [
         "Дозволений домен"
@@ -10252,9 +9326,6 @@
       "Assertion Consumer Service URL": [
         "URL-адреса обслуговування клієнтів"
       ],
-      "Attach public key": [
-        "Приєднати відкритий ключ"
-      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -10273,23 +9344,11 @@
       "Auto-delete unwanted messages": [
         "Автовидалення небажаних повідомлень"
       ],
-      "Auto-detect primary time zone": [
-        "Автовизначення основного часового поясу"
-      ],
-      "Auto-reply": [
-        "Автовідповідь"
-      ],
-      "Auto-unsubscribe": [
-        "Автовідписування"
-      ],
       "Autofill": [
         "Автозаповнення"
       ],
       "Autofill 2FA": [
         "Автозаповнення 2FA"
-      ],
-      "Automatically save contacts": [
-        "Автоматично зберігати контакти"
       ],
       "Autosave": [
         "Автозбереження"
@@ -10336,9 +9395,6 @@
       "Calendars": [
         "Календарі"
       ],
-      "Capitalize words": [
-        "Слова з великої літери"
-      ],
       "Card details": [
         "Подробиці картки"
       ],
@@ -10384,15 +9440,6 @@
       "Composer": [
         "Редактор"
       ],
-      "Composer default font/size": [
-        "Типовий шрифт редактора"
-      ],
-      "Composer mode": [
-        "Режим редактора"
-      ],
-      "Composer text direction": [
-        "Напрямок тексту редактора"
-      ],
       "Conditions": [
         "Умови"
       ],
@@ -10426,9 +9473,6 @@
       "Conversation grouping": [
         "Групування розмов"
       ],
-      "Conversations per page": [
-        "Розмов на сторінку"
-      ],
       "Copy": [
         "Копіювати"
       ],
@@ -10447,9 +9491,6 @@
       "Country": [
         "Країна"
       ],
-      "Create password": [
-        "Створити пароль"
-      ],
       "Credit cards": [
         "Банківські картки"
       ],
@@ -10465,26 +9506,14 @@
       "Current email": [
         "Поточна адреса електронної пошти"
       ],
-      "Daily email notifications": [
-        "Щоденні сповіщення електронною поштою"
-      ],
       "Date": [
         "Дата"
       ],
       "Date format": [
         "Формат дати"
       ],
-      "Days of the week": [
-        "Дні тижня"
-      ],
       "Default language": [
         "Типова мова"
-      ],
-      "Default language (${ defaultLanguage })": [
-        "Типово (${ defaultLanguage })"
-      ],
-      "Default PGP scheme": [
-        "Типова схема PGP"
       ],
       "Default scrollbars": [
         "Типові смуги прокручування"
@@ -10534,14 +9563,8 @@
       "Don't ask again": [
         "Не питати знову"
       ],
-      "Don't keep versions": [
-        "Не зберігати версії"
-      ],
       "Don't show this again": [
         "Більше не показувати"
-      ],
-      "Duration": [
-        "Тривалість"
       ],
       "e.g. example.com": [
         "наприклад, example.com"
@@ -10572,18 +9595,6 @@
       ],
       "Enabled": [
         "Увімкнено"
-      ],
-      "End date": [
-        "Дата завершення"
-      ],
-      "End day of month": [
-        "Останній день місяця"
-      ],
-      "End time": [
-        "Час завершення"
-      ],
-      "End weekday": [
-        "Останній день тижня"
       ],
       "Enter password": [
         "Введіть пароль"
@@ -10684,9 +9695,6 @@
       "Import to:": [
         "Імпортувати до:"
       ],
-      "Inbox": [
-        "Вхідні"
-      ],
       "Inherit color from parent folder": [
         "Успадкувати колір теки вищого рівня"
       ],
@@ -10708,14 +9716,8 @@
       "Keep me signed in": [
         "Не виходити"
       ],
-      "Keep messages in Sent/Drafts": [
-        "Зберігати повідомлення у Надісланих/Чернетках"
-      ],
       "Key": [
         "Ключ"
-      ],
-      "Key strength": [
-        "Надійність ключа"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбінація клавіш: ${ shortcut }"
@@ -10747,12 +9749,6 @@
       "Level for NetShield blocker filtering": [
         "Рівень фільтрації блокувальника NetShield"
       ],
-      "Link label (optional)": [
-        "Мітка посилання (необов'язково)"
-      ],
-      "Lock app after inactivity": [
-        "Блокувати додаток після бездіяльності"
-      ],
       "Logo": [
         "Логотип"
       ],
@@ -10768,18 +9764,6 @@
       "Mark as": [
         "Позначити як"
       ],
-      "Maximum number of characters": [
-        "Максимальна кількість символів"
-      ],
-      "Maximum number of words": [
-        "Максимальна кількість слів"
-      ],
-      "Message": [
-        "Повідомлення"
-      ],
-      "Messages per page": [
-        "Повідомлень на сторінку"
-      ],
       "Metadata file for ${ appName }": [
         "Файл метаданих для ${ appName }"
       ],
@@ -10791,9 +9775,6 @@
       ],
       "Minimum number of characters": [
         "Мінімальна кількість символів"
-      ],
-      "Minimum number of words": [
-        "Мінімальна кількість слів"
       ],
       "Moderate NAT": [
         "Помірна NAT"
@@ -10927,9 +9908,6 @@
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Додайте зазначений запис TXT. Зауважте, що оновлення записів DNS може тривати кілька годин."
       ],
-      "Please select files to upload": [
-        "Оберіть файли для вивантаження"
-      ],
       "Please share any feedback to help us improve.": [
         "Поділіться своїм відгуком, щоб допомогти нам вдосконалюватися."
       ],
@@ -10942,14 +9920,8 @@
       "Previous password": [
         "Попередній пароль"
       ],
-      "Prompt to trust keys": [
-        "Запити на довіру ключам"
-      ],
       "Proration": [
         "Розподілення"
-      ],
-      "Protection mode": [
-        "Режим захисту"
       ],
       "Public certificate (X.509)": [
         "Відкритий сертифікат (X.509)"
@@ -11011,9 +9983,6 @@
       "Send crash reports": [
         "Надсилати звіти про збої"
       ],
-      "Send in": [
-        "Надсилати вибраною мовою"
-      ],
       "Server name": [
         "Ім'я сервера"
       ],
@@ -11026,20 +9995,11 @@
       "Show others when I'm busy": [
         "Показувати іншим мою зайнятість"
       ],
-      "Show secondary time zone": [
-        "Показати додатковий часовий пояс"
-      ],
       "Show sender images": [
         "Показувати зображення відправників"
       ],
-      "Show unread count in Favicon": [
-        "Кількість непрочитаних на піктограмі"
-      ],
       "Show week numbers": [
         "Показати номери тижня"
-      ],
-      "Sign external messages": [
-        "Підписувати зовнішні повідомлення"
       ],
       "Signature": [
         "Підпис"
@@ -11049,18 +10009,6 @@
       ],
       "Single sign-on URL": [
         "URL-адреса послуги єдиного входу (SSO)"
-      ],
-      "SMTP port": [
-        "Порт SMTP"
-      ],
-      "SMTP server": [
-        "Сервер SMTP"
-      ],
-      "SMTP token": [
-        "Токен SMTP"
-      ],
-      "SMTP username": [
-        "Ім'я користувача SMTP"
       ],
       "Spam": [
         "Спам"
@@ -11074,23 +10022,11 @@
       "Start date": [
         "Дата початку"
       ],
-      "Start day of month": [
-        "Перший день місяця"
-      ],
-      "Start time": [
-        "Час початку"
-      ],
-      "Start weekday": [
-        "Перший день тижня"
-      ],
       "State": [
         "Стан"
       ],
       "Statement": [
         "Відомість"
-      ],
-      "Sticky labels": [
-        "Липкі мітки"
       ],
       "Street address": [
         "Вулиця"
@@ -11125,14 +10061,8 @@
       "Time zone": [
         "Часовий пояс"
       ],
-      "Tips and insights": [
-        "Поради та інсайти"
-      ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
-      ],
-      "Token name": [
-        "Назва токена"
       ],
       "Two-password mode": [
         "Двопарольний режим"
@@ -11148,9 +10078,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Вивантажте 1 чи більше файлів відновлення чи ключів шифрування"
-      ],
-      "Uppercase": [
-        "Верхній регістр"
       ],
       "URL": [
         "URL-адреса"
@@ -11178,12 +10105,6 @@
       ],
       "Verification code": [
         "Код підтвердження"
-      ],
-      "Verify keys with Key Transparency": [
-        "Перевіряти ключі за допомогою Key Transparency"
-      ],
-      "Video conferencing with Zoom": [
-        "Відеоконференції із Zoom"
       ],
       "Vulnerable": [
         "Вразливий"
@@ -11260,19 +10181,6 @@
         "Додайте домен, яким ви володієте, до облікового запису ${ MAIL_APP_NAME }."
       ]
     },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "Сповіщення про події на цілий день"
-      ],
-      "Notifications": [
-        "Сповіщення"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "Тривалість"
-      ]
-    },
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Будь ласка, додайте зазначений TXT-запис. Примітка: оновлення записів DNS може тривати кілька годин."
@@ -11303,35 +10211,6 @@
       ],
       "Expired": [
         "Протерміновано"
-      ]
-    },
-    "Label to  inform a feature is only available on Beta": {
-      "Beta": [
-        "Бета"
-      ]
-    },
-    "Label to change composer mode": {
-      "Maximized": [
-        "Розгорнутий"
-      ],
-      "Normal": [
-        "Звичайний"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортно"
-      ],
-      "Compact": [
-        "Компактно"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
       ]
     },
     "Label, credit card": {
@@ -11419,9 +10298,6 @@
       "Common sign up issues": [
         "Поширені проблеми з реєстрацією"
       ],
-      "create a ticket": [
-        "створити запит"
-      ],
       "Create account": [
         "Зареєструватися"
       ],
@@ -11505,9 +10381,6 @@
       ],
       "Request an invite": [
         "Запитати запрошення"
-      ],
-      "Set email address": [
-        "Установити адресу е-пошти"
       ],
       "settings": [
         "налаштування"
@@ -11765,22 +10638,6 @@
         "Ця функція тимчасово недоступна"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилання на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу."
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Ви досягли максимальної кількості з ${ MAX_CALENDAR_MEMBERS } учасника.",
-        "Ви досягли максимальної кількості з ${ MAX_CALENDAR_MEMBERS } учасників.",
-        "Ви досягли максимальної кількості з ${ MAX_CALENDAR_MEMBERS } учасників.",
-        "Ви досягли максимальної кількості з ${ MAX_CALENDAR_MEMBERS } учасників."
-      ]
-    },
     "Member action": {
       "Activate user": [
         "Активувати користувача"
@@ -11820,9 +10677,6 @@
       ]
     },
     "Message": {
-      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
-        "Усі дії фільтра буде застосовано до всіх повідомлень у вашому обліковому записі ${ MAIL_APP_NAME }. Електронні листи з автоматичною відповіддю не надсилатимуться."
-      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Під'єднайте власний домен до ${ BRAND_NAME }, щоб налаштувати власні адреси електронної пошти (наприклад, you@yourcompany.com). Наш автоматичний помічник допоможе вам усе налаштувати."
       ],
@@ -12809,9 +11663,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."
       ],
-      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
-        "Налаштуйте автоматичні відповіді для інформування відправників, що ви поза офісом або не можете відповісти."
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Спеціалізоване VPN рішення, що забезпечує надійний, необмежений, високошвидкісний доступ до інтернету."
       ],
@@ -13313,9 +12164,6 @@
       "Key copied to the clipboard": [
         "Ключ скопійовано в буфер обміну"
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Ключ з відбитком ${ fp } було видалено."
-      ],
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
       ],
@@ -13361,20 +12209,11 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "Запрошення видалено"
-      ],
-      "Invitation revoked": [
-        "Запрошення відкликано"
-      ],
       "Member added": [
         "Учасника додано",
         "Учасників додано",
         "Учасників додано",
         "Учасників додано"
-      ],
-      "Member deleted": [
-        "Учасника видалено"
       ]
     },
     "Notification in shared calendar modal": {
@@ -13383,11 +12222,6 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Приєднується до ${ calendarName } (${ senderEmail })"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "Типові параметри події оновлено"
       ]
     },
     "Notification time input": {
@@ -13514,110 +12348,11 @@
       ]
     },
     "Option": {
-      "10th of the month": [
-        "10-е число місяця"
-      ],
-      "11th of the month": [
-        "11-е число місяця"
-      ],
-      "12th of the month": [
-        "12-е число місяця"
-      ],
-      "13th of the month": [
-        "13-е число місяця"
-      ],
-      "14th of the month": [
-        "14-е число місяця"
-      ],
-      "15th of the month": [
-        "15-е число місяця"
-      ],
-      "16th of the month": [
-        "16-е число місяця"
-      ],
-      "17th of the month": [
-        "17-е число місяця"
-      ],
-      "18th of the month": [
-        "18-е число місяця"
-      ],
-      "19th of the month": [
-        "19-е число місяця"
-      ],
-      "1st of the month": [
-        "1-е число місяця"
-      ],
-      "20th of the month": [
-        "20-е число місяця"
-      ],
-      "21st of the month": [
-        "21-е число місяця"
-      ],
-      "22nd of the month": [
-        "22-е число місяця"
-      ],
-      "23rd of the month": [
-        "23-є число місяця"
-      ],
-      "24th of the month": [
-        "24-е число місяця"
-      ],
-      "25th of the month": [
-        "25-е число місяця"
-      ],
-      "26th of the month": [
-        "26-е число місяця"
-      ],
-      "27th of the month": [
-        "27-е число місяця"
-      ],
-      "28th of the month": [
-        "28-е число місяця"
-      ],
-      "29th of the month": [
-        "29-е число місяця"
-      ],
-      "2nd of the month": [
-        "2-е число місяця"
-      ],
-      "30th of the month": [
-        "30-е число місяця"
-      ],
-      "31st of the month": [
-        "31-е число місяця"
-      ],
-      "3rd of the month": [
-        "3-є число місяця"
-      ],
-      "4th of the month": [
-        "4-е число місяця"
-      ],
-      "5th of the month": [
-        "5-е число місяця"
-      ],
-      "6th of the month": [
-        "6-е число місяця"
-      ],
-      "7th of the month": [
-        "7-е число місяця"
-      ],
-      "8th of the month": [
-        "8-е число місяця"
-      ],
-      "9th of the month": [
-        "9-е число місяця"
-      ],
       "Add to existing group": [
         "Додати до наявної групи"
       ],
-      "Allowed (default)": [
-        "Дозволено (за замовчуванням)"
-      ],
       "Archive": [
         "Архівувати"
-      ],
-      "Ask each time": [
-        "Запитувати щоразу"
       ],
       "Auto": [
         "Авто"
@@ -13630,9 +12365,6 @@
       ],
       "Create new group": [
         "Створити нову групу"
-      ],
-      "Fixed duration": [
-        "Фіксована тривалість"
       ],
       "Free server configs": [
         "Конфігурації безплатних серверів"
@@ -13652,9 +12384,6 @@
       "It's too expensive": [
         "Це занадто дорого"
       ],
-      "Left to Right": [
-        "Зліва направо"
-      ],
       "Mark as read": [
         "Позначити як прочитане"
       ],
@@ -13670,44 +12399,17 @@
       "None": [
         "Нічого"
       ],
-      "Normal": [
-        "Звичайний"
-      ],
       "Not allowed": [
         "Не дозволено"
-      ],
-      "Off": [
-        "Вимк"
-      ],
-      "On": [
-        "Увімк"
       ],
       "Organization only": [
         "Тільки організації"
       ],
-      "Permanent": [
-        "Постійно"
-      ],
-      "Plain text": [
-        "Звичайний текст"
-      ],
       "Receive from all": [
         "Отримувати від усіх"
       ],
-      "Repeat daily": [
-        "Повторювати щодня"
-      ],
-      "Repeat monthly": [
-        "Повторювати щомісяця"
-      ],
-      "Repeat weekly": [
-        "Повторювати щотижня"
-      ],
       "Required": [
         "Необхідно"
-      ],
-      "Right to Left": [
-        "Справа наліво"
       ],
       "Router": [
         "Маршрутизатор"
@@ -13782,14 +12484,6 @@
       ],
       "Merge with calendar": [
         "Об'єднати з календарем"
-      ]
-    },
-    "Option protection mode": {
-      "Load content via proxy (recommended)": [
-        "Завантажувати вміст через проксі (рекомендовано)"
-      ],
-      "Load content via proxy and store as attachments": [
-        "Завантажувати вміст через проксі та зберігати як вкладення"
       ]
     },
     "Organization capacity error": {
@@ -13879,23 +12573,6 @@
       ],
       "Organization identity updated": [
         "Оновлена ідентичність організації"
-      ]
-    },
-    "OS compatibility": {
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (для Debian/Ubuntu)"
-      ],
-      ".dmg (12.0 or later)": [
-        ".dmg (12.0 або новіше)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64-розрядна версія)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (для Fedora/openSUSE)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (для інших дистрибутивів)"
       ]
     },
     "Participant name": {
@@ -14484,11 +13161,6 @@
         "Налаштування не завершено"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Створіть календар, щоб контролювати свій розклад, зберігаючи при цьому свої дані в безпеці."
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
@@ -14594,9 +13266,6 @@
       "Postal code": [
         "Поштовий індекс"
       ],
-      "Printer": [
-        "Принтер"
-      ],
       "Search": [
         "Пошук"
       ],
@@ -14700,22 +13369,9 @@
         "Покращити до ${ upsellPlanTitle }"
       ]
     },
-    "pqc-optin: Action": {
-      "Got it": [
-        "Зрозуміло"
-      ]
-    },
     "Price": {
       "Free": [
         "Безплатно"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Основний часовий пояс"
-      ],
-      "Secondary time zone": [
-        "Другий часовий пояс"
       ]
     },
     "Property type": {
@@ -14848,41 +13504,6 @@
       ],
       "Show": [
         "Показати"
-      ]
-    },
-    "Remark about a key type option": {
-      "Classic": [
-        "Класика"
-      ]
-    },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Скасувавши підписку, ви більше не матимете доступу до цього календаря. Усі події в цьому календарі будуть видалені з вашого облікового запису, але вони залишаться в початковому загальнодоступному посиланні."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Ви більше не матимете доступу до цього календаря."
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Якщо ви покинете цей календар, вам доведеться просити власника про повторне приєднання."
-      ],
-      "This calendar will be removed from your account.": [
-        "Цей календар буде вилучено з вашого облікового запису."
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "Видалити календар?"
-      ],
-      "Leave calendar?": [
-        "Покинути календар?"
-      ],
-      "Remove calendar": [
-        "Вилучити календар"
-      ],
-      "Unsubscribe?": [
-        "Відписатися?"
       ]
     },
     "Remove organization logo": {
@@ -15769,17 +14390,6 @@
         "Запит на скидання пароля"
       ]
     },
-    "Setting": {
-      "Enable Photos section": [
-        "Увімкнути розділ фотографій"
-      ],
-      "Get updates about comments via email": [
-        "Отримувати оновлення про коментарі через електронну пошту"
-      ],
-      "Include document name in email notifications": [
-        "Включити назву документу в повідомлення електронною поштою"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Впорядковуйте свою поштову скриньку за допомогою тек і міток. ${ learnMoreLink }"
@@ -15796,22 +14406,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Не вдалося оновити налаштування"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "Фільтри"
-      ]
-    },
-    "Settings/filters - table": {
-      "Action": [
-        "Дія"
-      ],
-      "Name": [
-        "Назва"
-      ],
-      "Order": [
-        "Порядок"
       ]
     },
     "Settings/labels": {
@@ -15856,11 +14450,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Поділитися з користувачами ${ BRAND_NAME }"
-      ]
-    },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "Додати мітку"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -16782,11 +15371,6 @@
         "Дізнайтеся, як отримати приватне посилання для календаря."
       ]
     },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars.": [
-        "Додайте загальнодоступні, зовнішні чи спільні календарі."
-      ]
-    },
     "Subscription": {
       "Billed every 2 years": [
         "Сплачується кожні 2 роки"
@@ -17331,17 +15915,8 @@
       "Address added": [
         "Адресу додано"
       ],
-      "Address updated": [
-        "Адресу оновлено"
-      ],
       "Administrator privileges restored": [
         "Повноваження адміністратора відновлено"
-      ],
-      "Auto-reply disabled": [
-        "Автовідповідь вимкнено"
-      ],
-      "Auto-reply updated": [
-        "Автовідповідь оновлено"
       ],
       "Backup password updated": [
         "Резервний пароль оновлено"
@@ -17354,9 +15929,6 @@
       ],
       "Calendar information updated": [
         "Інформація календаря оновлена"
-      ],
-      "Calendar removed": [
-        "Календар вилучено"
       ],
       "Calendar updated": [
         "Календар оновлено"
@@ -17375,9 +15947,6 @@
       ],
       "Credits added": [
         "Кошти зараховано"
-      ],
-      "Default calendar updated": [
-        "Типовий календар оновлено"
       ],
       "Device deleted": [
         "Пристрій видалено"
@@ -17466,14 +16035,8 @@
       "Phone number updated": [
         "Номер телефону оновлено"
       ],
-      "Port copied to clipboard": [
-        "Порт скопійовано до буфера обміну"
-      ],
       "Preference saved": [
         "Налаштування збережено"
-      ],
-      "Premium address created": [
-        "Преміум адресу створено"
       ],
       "Problem reported": [
         "Про проблему повідомлено"
@@ -17481,23 +16044,14 @@
       "Resuming import": [
         "Відновлення імпорту"
       ],
-      "Server copied to clipboard": [
-        "Сервер скопійовано до буфера обміну"
-      ],
       "Session revoked": [
         "Сеанс відкликано"
       ],
       "Sessions revoked": [
         "Сеанси відкликано"
       ],
-      "SMTP token deleted": [
-        "SMTP-токен видалено"
-      ],
       "SPF value copied to clipboard": [
         "Значення SPF скопійовано в буфер обміну"
-      ],
-      "Token copied to clipboard": [
-        "Токен скопійовано до буфера обміну"
       ],
       "Undo in progress": [
         "Скасовується"
@@ -17588,9 +16142,6 @@
       "Creating config file for ${ serverName }": [
         "Створення файлу конфігурації для ${ serverName }"
       ],
-      "Filter removed": [
-        "Фільтр вилучено"
-      ],
       "Group end-to-end email encryption disabled": [
         "Групове наскрізне шифрування електронної пошти вимкнене"
       ],
@@ -17605,9 +16156,6 @@
       ],
       "Resent invitation": [
         "Повторно надіслати запрошення"
-      ],
-      "Status updated": [
-        "Стан оновлено"
       ]
     },
     "Suffix": {
@@ -17624,11 +16172,6 @@
       ],
       "per user per month": [
         "за користувача на місяць"
-      ]
-    },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Подробиці про події, які не вдалося експортувати"
       ]
     },
     "summer2023: Tooltip": {
@@ -17659,11 +16202,6 @@
       ],
       "For individuals": [
         "Особистий"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "Поширено для мене"
       ]
     },
     "TableHeader": {
@@ -17729,11 +16267,6 @@
       ],
       "vCard field": [
         "Поле vCard"
-      ]
-    },
-    "TableRow": {
-      "No SMTP tokens found": [
-        "SMTP-токенів не знайдено"
       ]
     },
     "Time unit": {
@@ -17916,9 +16449,6 @@
       "Add pm.me subdomain": [
         "Додати піддомен «pm.me»"
       ],
-      "Add Sieve filter": [
-        "Додати фільтр Sieve"
-      ],
       "Add to allow list": [
         "Додати до списку дозволених"
       ],
@@ -17964,9 +16494,6 @@
       "Appearance": [
         "Зовнішній вигляд"
       ],
-      "Apply filter to existing messages": [
-        "Застосувати фільтр до наявних повідомлень"
-      ],
       "Apply gift code": [
         "Застосувати подарунковий код"
       ],
@@ -17982,9 +16509,6 @@
       "Auto-reply": [
         "Автоматична відповідь"
       ],
-      "Automatically sign outgoing messages?": [
-        "Автоматично підписувати вихідні повідомлення?"
-      ],
       "Backup and export": [
         "Резервне копіювання та експорт"
       ],
@@ -17993,12 +16517,6 @@
       ],
       "Block trackers and malware": [
         "Блокування стеження і зловмисних програм"
-      ],
-      "Bridge for ${ platform }": [
-        "Bridge для ${ platform }"
-      ],
-      "Browser extensions": [
-        "Розширення браузера"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
@@ -18189,20 +16707,11 @@
       "Delete account": [
         "Видалити обліковий запис"
       ],
-      "Delete calendar": [
-        "Видалити календар"
-      ],
-      "Delete filter?": [
-        "Видалити фільтр?"
-      ],
       "Delete folder?": [
         "Видалити теку?"
       ],
       "Delete group?": [
         "Видалити групу?"
-      ],
-      "Delete key permanently?": [
-        "Видалити ключ остаточно?"
       ],
       "Delete label?": [
         "Видалити мітку?"
@@ -18218,9 +16727,6 @@
       ],
       "Delete user?": [
         "Видалити користувача?"
-      ],
-      "Delete version history?": [
-        "Видалити історію версій?"
       ],
       "Deny access to user?": [
         "Заборонити доступ користувачу?"
@@ -18303,9 +16809,6 @@
       "Edit servers": [
         "Редагувати сервери"
       ],
-      "Edit Sieve filter": [
-        "Редагувати фільтр Sieve"
-      ],
       "Edit the list of servers of the gateway": [
         "Редагувати список серверів мережевого шлюзу"
       ],
@@ -18359,15 +16862,6 @@
       ],
       "Export": [
         "Експорт"
-      ],
-      "Export calendar": [
-        "Експортувати календар"
-      ],
-      "Export private key": [
-        "Експортувати приватний ключ"
-      ],
-      "Export public key": [
-        "Експортувати відкритий ключ"
       ],
       "External PGP settings": [
         "Параметри зовнішнього PGP"
@@ -18431,9 +16925,6 @@
       ],
       "Generate new recovery phrase?": [
         "Згенерувати нову фразу відновлення?"
-      ],
-      "Generate SMTP token": [
-        "Згенерувати SMTP-токен"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Отримайте ${ vpnPlus } для доступу до всіх серверів"
@@ -18504,9 +16995,6 @@
       "Import groups": [
         "Імпорт груп"
       ],
-      "Import key": [
-        "Імпорт ключа"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпорт через ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -18528,17 +17016,11 @@
       "IP": [
         "IP-адреса"
       ],
-      "Keyboard shortcuts": [
-        "Комбінації клавіш"
-      ],
       "Labels": [
         "Мітки"
       ],
       "Language and time": [
         "Мова і час"
-      ],
-      "Last updated": [
-        "Востаннє оновлено"
       ],
       "Layout": [
         "Макет"
@@ -18642,9 +17124,6 @@
       "Password": [
         "Пароль"
       ],
-      "Password generator rules": [
-        "Правила генератора паролів"
-      ],
       "Password reset settings": [
         "Налаштування скидання пароля"
       ],
@@ -18665,9 +17144,6 @@
       ],
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
-      ],
-      "Personalize your email footer": [
-        "Налаштуйте свій підпис електронної пошти"
       ],
       "Phone": [
         "Телефон"
@@ -18699,9 +17175,6 @@
       "QR Code": [
         "QR-код"
       ],
-      "Ready, set, forward": [
-        "На старт, увага, марш!"
-      ],
       "Recommended": [
         "Рекомендовано"
       ],
@@ -18728,9 +17201,6 @@
       ],
       "Remove all members?": [
         "Видалити всіх учасників?"
-      ],
-      "Remove calendar": [
-        "Вилучити календар"
       ],
       "Remove device?": [
         "Вилучити пристрій?"
@@ -18924,9 +17394,6 @@
       "Subscription canceled": [
         "Передплату скасовано"
       ],
-      "Success": [
-        "Успішно"
-      ],
       "Successfully created ${ n } user account": [
         "Успішно створено ${ n } обліковий запис",
         "Успішно створено ${ n } облікові записи",
@@ -19089,9 +17556,6 @@
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
       ],
-      "Your SMTP token": [
-        "Ваш SMTP-токен"
-      ],
       "Your storage": [
         "Ваше сховище"
       ],
@@ -19154,20 +17618,6 @@
         "Стан"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "Дії"
-      ],
-      "Fingerprint": [
-        "Цифровий відбиток"
-      ],
-      "Status": [
-        "Стан"
-      ],
-      "Type": [
-        "Тип"
-      ]
-    },
     "Title header for members table": {
       "Addresses": [
         "Адреси"
@@ -19224,9 +17674,6 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
       ],
-      "Click here to learn how to create a customized signature with HTML.": [
-        "Натисніть тут, щоб дізнатися, як створити користувацький підпис за допомогою HTML."
-      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопіюйте і вставте цю URL-адресу в поле ACS (Assertion Consumer Service) вашого провайдера ідентифікації"
       ],
@@ -19238,9 +17685,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "Налаштуйте імпорт щоб зменшити кількість міток"
-      ],
-      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Видаляти повідомлення зі спаму через 30 днів. Якщо ввімкнути автоматичне видалення, повідомлення, які вже знаходяться в смітнику/спамі, будуть видалені за датою їх переміщення туди."
       ],
       "Display name for the entity in the eduGAIN database": [
         "Показувати назву об'єкту в базі даних eduGAIN"
@@ -19266,14 +17710,8 @@
       "Feature in early access": [
         "Функція в ранньому доступі"
       ],
-      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
-        "Отримайте поради щодо продуктивності та безпеки, які допоможуть вам максимально ефективно використовувати ${ MAIL_APP_NAME } і не тільки."
-      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматично присвоює категорії деяким електронним листам, як-от \"Соцмережі\" або \"Реклама\". Ви можете вибрати, куди імпортувати такі листи."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Групуйте повідомлення в одній розмові або переглядайте їх окремо."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Відкритий ключ провайдера ідентифікації для підпису твердження автентифікації. Отримайте хеш сертифіката у вашого провайдера ідентифікації."
@@ -19281,32 +17719,8 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
       ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Повідомлення в теці Надіслані або Чернетки й надалі з'являтимуться в тій теці, навіть якщо ви перемістите їх до іншої теки."
-      ],
-      "Remove metadata from images to protect your privacy.": [
-        "Вилучення метаданих із зображень для захисту вашої приватності."
-      ],
-      "See number of unread messages in the tab icon": [
-        "Показувати кількість непрочитаних повідомлень на піктограмі вкладки"
-      ],
-      "Set how your list of messages looks like by default.": [
-        "Установіть типовий вигляд списку повідомлень."
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "Встановіть звичайний чи розгорнутий типовий розмір редактора."
-      ],
-      "Set the default layout for your Inbox.": [
-        "Встановіть типовий макет поштової скриньки."
-      ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Встановлює наступний нижній колонтитул в електронних листах, які ви надсилаєте: ${ signature }. Посилання вказує на ваше перенаправлене посилання. Нижній колонтитул з'явиться під вашим підписом. Ви можете будь-коли персоналізувати свій підпис у налаштуваннях."
-      ],
-      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "Показувати зображення відправників у списку повідомлень. Якщо фото недоступне, показуватимуться ініціали відправника."
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Підписи, створені з цим ключем, вважаються недійсними, а цей ключ не можна використовувати для шифрування"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Вкажіть домен, якому дозволено автентифікацію з SAML SSO"
@@ -19332,35 +17746,14 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
       ],
-      "This address has been disabled": [
-        "Цю адресу було вимкнено"
-      ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Це може бути пов'язано зі зміною пароля або з тим, що користувач ще не ввійшов у систему."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Цю адресу електронної пошти буде показано всім членам організації під час виконання операцій з управлінням обліковим записом."
       ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Ця функція затримує надсилання ваших листів, дозволяючи скасувати надсилання протягом вказаного проміжку часу."
-      ],
       "This feature is only available for paid users": [
         "Ця функція доступна лише користувачам, які мають передплату"
-      ],
-      "This feature is only available on Beta": [
-        "Ця функція доступна лише в бета-версії"
-      ],
-      "This key cannot be used for encryption": [
-        "Цей ключ не можна використовувати для шифрування"
-      ],
-      "This key is encrypted with an old password": [
-        "Цей ключ зашифровано старим паролем"
-      ],
-      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "${ MAIL_APP_NAME } використовує цей ключ для шифрування ваших контактних даних"
-      ],
-      "This key is used for email forwarding": [
-        "Цей ключ використовується для пересилання пошти"
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Використовуйте стандартні смуги прокручування вашого браузера. Зазвичай вони більші та простіші для користування"
@@ -19382,15 +17775,6 @@
       ],
       "When enabled, animations and transitions will not show": [
         "Якщо ввімкнено, анімація та переходи не показуватимуться"
-      ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Коли ви додаєте мітку до повідомлення в розмові, вона автоматично застосується до всіх майбутніх повідомлень, які ви надсилаєте або отримуєте в цій розмові."
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Натискаючи на посилання, ви отримуватимете запит із URL-адресою вебсторінки для підтвердження перш ніж вона відкриється."
-      ],
-      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "Коли ви переміщуєте електронний лист у спам, ви автоматично будете вилучені зі списків розсилки відправника."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Ваша поштова скринька ${ MAIL_APP_NAME } майже заповнена"
@@ -19420,26 +17804,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Очікування на прийняття користувачем запрошення"
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Це автоматично додає ваш відкритий ключ до кожного повідомлення, яке ви надсилаєте. Отримувачі можуть використовувати його для перевірки надійності ваших повідомлень і надсилання вам зашифрованих повідомлень."
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Виберіть типові налаштування PGP, що використовуються для підписування чи шифрування повідомлень для отримувачів, які використовують PGP за межами ${ BRAND_NAME }. Зауважте, що вбудований PGP примусово перетворює вміст повідомлень у формат звичайного тексту."
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Отримавши листи від інших користувачів ${ MAIL_APP_NAME }, які не мають довірених ключів у ваших контактах, ви побачите банер із запитом про активацію довірених ключів."
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Автоматично підписуйте всі вихідні повідомлення, щоб користувачі могли перевірити їх надійність. Це виконується в комбінації з типовою конфігурацією PGP, яку можна налаштувати нижче."
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -19643,22 +18007,6 @@
       ],
       "Your default font will look like following:": [
         "Ваш типовий шрифт виглядатиме так:"
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Передплатіть ${ passPlusPlanName }, щоб отримати необмежену кількість псевдонімів Hide-my-email"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Передплатіть ${ planName }, щоб під'єднати ${ n } пристрій до VPN за раз",
-        "Передплатіть ${ planName }, щоб під'єднати ${ n } пристрої до VPN за раз",
-        "Передплатіть ${ planName }, щоб під'єднати ${ n } пристроїв до VPN за раз",
-        "Передплатіть ${ planName }, щоб під'єднати ${ n } пристроїв до VPN за раз"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Щоб поділитися своїм календарем, передплатіть тарифний план ${ MAIL_SHORT_APP_NAME }."
       ]
     },
     "upsell panel": {
@@ -20062,18 +18410,6 @@
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Якщо ви скасуєте це імпортування, ви не зможете його продовжити. ${ BRAND_NAME } зберіг перебіг процесу до вашого облікового запису. Усе одно скасувати?"
       ],
-      "Maximum cannot be lower than minimum": [
-        "Максимум не може бути меншим за мінімум"
-      ],
-      "Must be between ${ minimumNumber } and ${ maximumNumber }": [
-        "Має бути між ${ minimumNumber } та ${ maximumNumber }"
-      ],
-      "Must be greater than or equal to ${ minimumNumber }": [
-        "Має бути більше або дорівнювати ${ minimumNumber }"
-      ],
-      "Must be lower than or equal to ${ maximumNumber }": [
-        "Має бути менше або дорівнювати ${ maximumNumber }"
-      ],
       "Please add at least one recipient.": [
         "Додайте принаймні одного отримувача."
       ],
@@ -20091,9 +18427,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"
-      ],
-      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "Пристрій або служба, що використовує цей токен, більше не зможе надсилати електронну пошту через ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису ${ BRAND_NAME }. Розгляньте можливість налаштування вашого імпортування."
@@ -20132,11 +18465,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Після успішної перевірки не вилучайте цей TXT запис, оскільки він потрібен для підтвердження вашої власності домену."
-      ]
-    },
-    "Weak personal key warning": {
-      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        "Цей ключ більше не задовольняє наші стандарти безпеки. Ми пропонуємо вам позначити його застарілим і згенерувати новий."
       ]
     },
     "Weekly recurring event, frequency": {

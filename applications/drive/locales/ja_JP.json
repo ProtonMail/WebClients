@@ -276,6 +276,9 @@
       "Create a new contact group": [
         "新規連絡先グループを作成"
       ],
+      "Create a spreadsheet": [
+        "新しいシートを作成"
+      ],
       "Create album": [
         "アルバムを作成"
       ],
@@ -734,6 +737,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } で開く"
       ],
       "Open navigation": [
         "ナビゲーションを開く"
@@ -3736,9 +3742,6 @@
       "We were not able to load some of your invitation to shared items": [
         "共有アイテムへの招待の一部を読み込むことができませんでした"
       ],
-      "We were not able to load some of your invitations": [
-        "お客様の招待の一部を読み込めませんでした"
-      ],
       "We were not able to load some of your saved shared links": [
         "保存済みの共有リンクの一部を読み込むことができませんでした"
       ],
@@ -6544,6 +6547,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "お客様のデータはあなただけのものです。エンドツーエンド暗号化で保護された全機能のスプレッドシートを使用して、創造や共同作業を行ってください。"
+      ],
       "Your email address and password were leaked:": [
         "メールアドレスとパスワードが漏洩しました:"
       ],
@@ -6745,6 +6751,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } のスクリーンショット"
       ],
       "Account holder": [
         "アカウント所有者"
@@ -7111,6 +7120,9 @@
       ],
       "Never": [
         "なし"
+      ],
+      "New": [
+        "新しい"
       ],
       "New password": [
         "新しいパスワード"
@@ -11903,6 +11915,9 @@
       "Information exposed in breach": [
         "侵害で漏洩した情報"
       ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }のご紹介"
+      ],
       "Invalid verification code": [
         "無効な検証コードです"
       ],
@@ -12271,6 +12286,9 @@
       ],
       "Time": [
         "時間"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "このスプレッドシートを表示するには、 ${ SHEETS_APP_NAME } で開くか、ダウンロードしてください。"
       ],
       "Total size": [
         "合計サイズ"

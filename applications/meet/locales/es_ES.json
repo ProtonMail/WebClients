@@ -65,14 +65,20 @@
       "Copy link": [
         "Copiar enlace"
       ],
+      "Create a free account": [
+        "Crear una cuenta gratuita"
+      ],
       "Create meeting": [
         "Crear reunión"
       ],
       "Delete": [
         "Eliminar"
       ],
-      "Disable video": [
-        "Deshabilitar video"
+      "Disable ${ participantName }'s video": [
+        "Desactivar el vídeo de ${ participantName }"
+      ],
+      "Disable camera": [
+        "Desactivar la cámara"
       ],
       "Dismiss": [
         "Descartar"
@@ -89,6 +95,9 @@
       "Edit sign-in details": [
         "Editar datos de inicio de sesión"
       ],
+      "Enable camera": [
+        "Habilitar la cámara"
+      ],
       "Enable video": [
         "Habilitar video"
       ],
@@ -97,6 +106,9 @@
       ],
       "Forgot password?": [
         "¿Contraseña olvidada?"
+      ],
+      "Get Meet Professional": [
+        "Obtén Meet Profesional"
       ],
       "Get verification code": [
         "Obtener código de verificación"
@@ -128,6 +140,9 @@
       "Kick out": [
         "Expulsar"
       ],
+      "Kick out ${ participantName }": [
+        "Expulsar a ${ participantName }"
+      ],
       "Leave": [
         "Salir"
       ],
@@ -143,8 +158,8 @@
       "More options for accounts": [
         "Más opciones para las cuentas"
       ],
-      "Mute participant": [
-        "Silenciar usuario"
+      "Mute ${ participantName }": [
+        "Silenciar a ${ participantName }"
       ],
       "Next month": [
         "Mes siguiente"
@@ -175,6 +190,9 @@
       ],
       "Refresh the page": [
         "Actualizar la página"
+      ],
+      "Rejoin meeting": [
+        "Volver a unirse a la reunión"
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -230,6 +248,9 @@
       "Start": [
         "Iniciar"
       ],
+      "Start a meeting": [
+        "Iniciar una reunión"
+      ],
       "Start meeting": [
         "Comenzar la reunión"
       ],
@@ -253,9 +274,6 @@
       ],
       "Try another method": [
         "Intenta con otro método"
-      ],
-      "Upgrade": [
-        "Cambiar de plan"
       ],
       "Use authentication code": [
         "Usar un código de autenticación"
@@ -1571,6 +1589,9 @@
       "${ user.DisplayName }'s Meeting": [
         "Reunión de ${ user.DisplayName }"
       ],
+      "(You)": [
+        "(Tú)"
+      ],
       "(you)": [
         "(tú)"
       ],
@@ -1615,6 +1636,12 @@
       ],
       "Country code": [
         "Código de país"
+      ],
+      "Create an account to connect Meet with ${ CALENDAR_APP_NAME } and send meeting invites instantly.": [
+        "Crea una cuenta para conectar Meet con ${ CALENDAR_APP_NAME } y enviar invitaciones de reunión al instante."
+      ],
+      "Create an account to have a personal meeting link you can reuse for every call.": [
+        "Crea una cuenta para obtener un enlace de reunión personal que puedas reutilizar en cada llamada."
       ],
       "Custom combination": [
         "Combinación personalizada"
@@ -1670,6 +1697,12 @@
       "Free meeting": [
         "Reunión gratuita"
       ],
+      "Get your personal meeting ID": [
+        "Consigue tu ID personal de reunión"
+      ],
+      "Host your own secure meeting": [
+        "Inicia tu propia reunión en un entorno seguro."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
@@ -1700,6 +1733,9 @@
       "Left": [
         "Izquierda"
       ],
+      "Left by mistake?": [
+        "¿Te fuiste por error?"
+      ],
       "Loading": [
         "Cargando"
       ],
@@ -1711,6 +1747,9 @@
       ],
       "Loading...": [
         "Cargando..."
+      ],
+      "Meet without restrictions": [
+        "Reúnete sin restricciones"
       ],
       "Meeting created": [
         "Reunión creada"
@@ -1775,6 +1814,9 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Nuestras reuniones cifradas de extremo a extremo protegen la privacidad y facilitan la verdadera libertad de expresión."
       ],
+      "participant": [
+        "participante"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Pega tu enlace de ${ MEET_APP_NAME } para unirte a una reunión segura"
       ],
@@ -1795,6 +1837,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
+      ],
+      "Schedule your next meeting": [
+        "Programa tu próxima reunión"
       ],
       "Secure meeting": [
         "Reunión segura"
@@ -1826,6 +1871,9 @@
       "Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.": [
         "Comparte este enlace para invitar a otros. También puedes encontrarlo en cualquier momento haciendo clic en el icono de información en la barra de herramientas."
       ],
+      "Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
+        "Inicia una llamada en ${ MEET_APP_NAME } y comparte el enlace para que se una quien tú quieras. Simple, seguro y gratuito."
+      ],
       "Stop sharing your screen": [
         "Dejar de compartir tu pantalla"
       ],
@@ -1847,6 +1895,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
       ],
+      "To protect your organization, invite your team to use ${ MEET_APP_NAME }.": [
+        "Para proteger tu organización, invita a tu equipo a usar ${ MEET_APP_NAME }."
+      ],
       "Turn off camera": [
         "Apagar cámara"
       ],
@@ -1858,6 +1909,12 @@
       ],
       "Turn on microphone": [
         "Activar micrófono"
+      ],
+      "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
+        "Mejora tu plan para eliminar el límite de 1 hora y omitir la cuenta atrás. Disfruta de reuniones de hasta 24 horas."
+      ],
+      "We hope you enjoyed your secure meeting!": [
+        "¡Esperamos que hayas disfrutado de tu reunión en nuestro entorno seguro!"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
@@ -2199,6 +2256,9 @@
       "Account temporarily locked": [
         "Cuenta temporalmente bloqueada"
       ],
+      "Activity events": [
+        "Eventos de actividad"
+      ],
       "Are you sure?": [
         "¿Estás seguro?"
       ],
@@ -2219,6 +2279,12 @@
       ],
       "Epoch": [
         "Pausa"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Epoch ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "Error en el Epoch ${ log.epoch }"
       ],
       "Help and feedback": [
         "Ayuda y comentarios"
@@ -2246,6 +2312,9 @@
       ],
       "Join with link": [
         "Únete con enlace"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "Unido en el Epoch ${ log.epoch }"
       ],
       "Joining meeting with ${ participantCount } other participants…": [
         "Uniéndote a la reunión con ${ participantCount } participantes más…"

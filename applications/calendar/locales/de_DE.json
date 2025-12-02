@@ -2864,10 +2864,10 @@
       "Doesn't end": [
         "Endet nie"
       ],
-      "End after": [
+      "Ends after": [
         "Endet nach"
       ],
-      "End on": [
+      "Ends on": [
         "Endet am"
       ],
       "event": [
@@ -3747,9 +3747,6 @@
       ],
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
-      ],
-      "Periods is too short": [
-        "Zeitraum ist zu kurz"
       ],
       "Please activate your search again": [
         "Bitte aktiviere die Inhaltssuche erneut."
@@ -5252,9 +5249,6 @@
       "Cannot create booking range across days": [
         "Du kannst keinen Buchungszeitraum über mehrere Tage erstellen."
       ],
-      "Cannot create booking range in the past": [
-        "Du kannst keinen Buchungszeitraum in der Vergangenheit erstellen."
-      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
       ],
@@ -5302,9 +5296,6 @@
       ],
       "Copy your referral link": [
         "Einladungslink kopieren"
-      ],
-      "Could not verify signature over booking page data": [
-        "Die Signatur von Buchungsseiten-Daten konnte nicht überprüft werden."
       ],
       "Country code": [
         "Ländercode"
@@ -5507,9 +5498,6 @@
       ],
       "Host": [
         "Organisator"
-      ],
-      "Host signature verification failed": [
-        "Host-Signaturprüfung fehlgeschlagen"
       ],
       "How long should an appointment last?": [
         "Wie lange sollte ein Termin dauern?"
@@ -6012,6 +6000,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Diese Buchungsseite kann nicht bearbeitet werden, da der zugehörige Kalender deaktiviert ist."
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Diese Buchung wurde über ${ CALENDAR_APP_NAME } vorgenommen, einem Teil der datenschutzfreundlichen Produktpalette von ${ BRAND_NAME }."
