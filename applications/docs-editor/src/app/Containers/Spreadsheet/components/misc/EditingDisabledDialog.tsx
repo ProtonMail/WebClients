@@ -1,7 +1,7 @@
 import { c } from 'ttag'
-import { createStringifier } from '../stringifier'
+import { createStringifier } from '../../stringifier'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { useApplication } from '../../ApplicationProvider'
+import { useApplication } from '../../../ApplicationProvider'
 import { useActiveBreakpoint } from '@proton/components'
 import { useEffect, useRef } from 'react'
 

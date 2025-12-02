@@ -60,8 +60,10 @@ export const ColorPicker = forwardRef(function ColorPicker(
       <Button className="w-full px-4 py-2 text-xs" size="small" onClick={() => onChange(undefined)}>
         {s('Reset')}
       </Button>
-      <div className="py-1 text-xs text-[--text-weak]">{c('sheets_2025:Color picker')
-        .t`Theme colors (${theme.name})`}</div>
+      <div className="py-1 text-xs text-[--text-weak]">
+        {/* {c('sheets_2025:Color picker').t`Theme colors (${theme.name})`} */}
+        {c('sheets_2025:Color picker').t`Theme colors`}
+      </div>
       <div className="flex items-center gap-2">
         {themeColors.map((color) => (
           <ColorSwatch
@@ -96,18 +98,28 @@ export const ColorPicker = forwardRef(function ColorPicker(
       <div className="py-1 text-xs text-[--text-weak]">{s('Standard colors')}</div>
       <div className="flex items-center gap-2">
         {STANDARD_COLORS.map((color) => {
-          color = color.toLowerCase()
+          const lowerCaseColor = color.toLowerCase()
           return (
-            <ColorSwatch key={color} color={color} onClick={() => onChange(color)} isSelected={colorString === color} />
+            <ColorSwatch
+              key={lowerCaseColor}
+              color={lowerCaseColor}
+              onClick={() => onChange(lowerCaseColor)}
+              isSelected={colorString === lowerCaseColor}
+            />
           )
         })}
       </div>
       <div className="py-1 text-xs text-[--text-weak]">{s('Recent colors')}</div>
       <div className="grid grid-cols-[repeat(10,1rem)] items-center gap-2">
         {userDefinedColors.map((color) => {
-          color = color.toLowerCase()
+          const lowerCaseColor = color.toLowerCase()
           return (
-            <ColorSwatch key={color} color={color} onClick={() => onChange(color)} isSelected={colorString === color} />
+            <ColorSwatch
+              key={lowerCaseColor}
+              color={lowerCaseColor}
+              onClick={() => onChange(lowerCaseColor)}
+              isSelected={colorString === lowerCaseColor}
+            />
           )
         })}
         <HexColorPicker
