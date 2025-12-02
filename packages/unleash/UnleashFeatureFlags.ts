@@ -260,6 +260,7 @@ enum LumoFeatureFlag {
     LumoDarkMode = 'LumoDarkMode',
     WhatsNewV1p2 = 'WhatsNewV1p2',
     LumoSpecialTheme = 'LumoSpecialTheme',
+    LumoProjects = 'LumoProjects'
 }
 
 export type FeatureFlag =
