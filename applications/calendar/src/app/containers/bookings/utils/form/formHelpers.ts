@@ -1,10 +1,10 @@
-import { getUnixTime } from 'date-fns';
+import { addHours, getUnixTime, isSameDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 import { BookingFormValidationReasons, BookingLocation, MAX_BOOKING_SLOTS } from '../../bookingsProvider/interface';
-import type { BookingFormData, BookingFormValidation } from '../../bookingsProvider/interface';
+import type { BookingFormData, BookingFormValidation, BookingRange } from '../../bookingsProvider/interface';
 import type { SerializedFormData } from '../../bookingsTypes';
 
 export const validateFormData = (data: BookingFormData): BookingFormValidation | undefined => {
@@ -61,4 +61,9 @@ export const serializeFormData = (formData: BookingFormData): SerializedFormData
             end: range.end.getTime(),
         })),
     };
+};
+
+export const wouldOverflowDay = (range: BookingRange): boolean => {
+    const newStart = addHours(range.end, 1);
+    return !isSameDay(range.start, newStart);
 };

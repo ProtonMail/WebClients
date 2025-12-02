@@ -1,11 +1,12 @@
 import { Fragment } from 'react';
 
-import { startOfToday } from 'date-fns';
+import { isSameDay, startOfToday } from 'date-fns';
 import { c } from 'ttag';
 
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 
 import type { BookingFormData, BookingRange } from '../bookingsProvider/interface';
+import { wouldOverflowDay } from '../utils/form/formHelpers';
 import {
     AddButton,
     EndTimeInput,
@@ -36,6 +37,10 @@ export const DisplayRegularRanges = ({
     onDateChange,
     onPlusClick,
 }: Props) => {
+    const isPlusDisabled = (range: BookingRange) => {
+        return formData.bookingRanges.filter((r) => isSameDay(r.start, range.start)).some(wouldOverflowDay);
+    };
+
     return formData.bookingRanges.map((range) => (
         <Fragment key={range.id}>
             <RangeWrapper>
@@ -69,7 +74,7 @@ export const DisplayRegularRanges = ({
                     />
                 </div>
                 <div className="flex flex-nowrap shrink-0">
-                    <AddButton onClick={() => onPlusClick(range)} />
+                    <AddButton onClick={() => onPlusClick(range)} disabled={isPlusDisabled(range)} />
                     <RemoveButton onClick={() => removeBookingRange(range.id)} />
                 </div>
             </RangeWrapper>

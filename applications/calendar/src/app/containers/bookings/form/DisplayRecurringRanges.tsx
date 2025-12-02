@@ -7,7 +7,8 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import type { BookingFormData, BookingRange } from '../bookingsProvider/interface';
+import type { BookingFormData, BookingRange, RecurringRangeDisplay } from '../bookingsProvider/interface';
+import { wouldOverflowDay } from '../utils/form/formHelpers';
 import { generateRecurringRanges } from '../utils/range/rangeHelpers';
 import {
     AddButton,
@@ -47,6 +48,11 @@ export const DisplayRecurringRanges = ({
         weekday: 'short',
     });
 
+    const isPlusDisabled = (day: RecurringRangeDisplay) => {
+        const lastRange = day.ranges[day.ranges.length - 1];
+        return wouldOverflowDay(lastRange);
+    };
+
     return (
         <div>
             {ranges.map((day) => {
@@ -79,6 +85,7 @@ export const DisplayRecurringRanges = ({
                                 </div>
                                 <div className="flex flex-nowrap shrink-0">
                                     <AddButton
+                                        disabled={isPlusDisabled(day)}
                                         onClick={() => onPlusClick(range)}
                                         btnClassName={clsx(index !== 0 && 'visibility-hidden')}
                                     />

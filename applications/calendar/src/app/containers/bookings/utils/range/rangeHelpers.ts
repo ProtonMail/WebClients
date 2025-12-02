@@ -95,7 +95,9 @@ export const generateRecurringRanges = (
         end: endOfWeek(utc, { weekStartsOn }),
     }).map((day) => ({
         id: day.getTime(),
-        ranges: bookingRanges.filter((range) => range.start.getDay() === day.getDay()),
+        ranges: bookingRanges
+            .filter((range) => range.start.getDay() === day.getDay())
+            .sort((a, b) => a.start.getTime() - b.start.getTime()),
         date: day,
     }));
 };
