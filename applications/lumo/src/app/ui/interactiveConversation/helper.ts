@@ -24,8 +24,7 @@ import {
     pushMessageRequest,
 } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import type { PersonalizationSettings } from '../../redux/slices/personalization';
-import { PERSONALITY_OPTIONS } from '../../redux/slices/personalization';
+import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/slices/personalization';
 import type { LumoDispatch as AppDispatch, LumoDispatch } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { SearchService } from '../../services/search/searchService';
@@ -628,9 +627,6 @@ export function sendMessage({
         // Request title for new conversations (when messageChain is empty, it's the first message)
         const shouldRequestTitle = c.messageChain.length === 0;
 
-        // Get personalization prompt for all messages (not just new conversations)
-        const personalizationPrompt = formatPersonalization(s.personalization);
-
         // Get project instructions from space if this is a project conversation
         let projectInstructions: string | undefined;
         let isProject = false;
@@ -647,7 +643,6 @@ export function sendMessage({
 
         // Get user ID for RAG retrieval
         const userId = state.user?.value?.ID;
-
         // Call the LLM.
         try {
             // await dispatch(
@@ -706,6 +701,7 @@ export function sendMessage({
                 referencedFileNames
             );
 
+            const personalizationPrompt = formatPersonalization(s.personalization);
             console.log('[RAG] fetchAssistantResponse context:', {
                 personalizationPrompt: !!personalizationPrompt,
                 projectInstructions: !!projectInstructions,
@@ -788,7 +784,7 @@ export function sendMessage({
             let turns = prepareTurns(
                 updatedLinearChain,
                 contextFilters,
-                personalizationPrompt,
+                s.personalization,
                 projectInstructions,
                 ragResult?.context
             );
@@ -799,13 +795,14 @@ export function sendMessage({
             );
 
             turns = turns
-                .filter((turn) => {
-                    // Keep system messages that contain personalization, filter out other system messages
-                    if (turn.role === Role.System) {
-                        return personalizationPrompt && turn.content === personalizationPrompt;
-                    }
-                    return true;
-                })
+                // FIXME: I think the filter is useless? personalization isn't injected in System turns
+                // .filter((_turn) => {
+                //     // Keep system messages that contain personalization, filter out other system messages
+                //     if (turn.role === Role.System) {
+                //         return personalizationPrompt && turn.content === personalizationPrompt;
+                //     }
+                //     return true;
+                // })
                 .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
 
             await dispatch(
@@ -845,7 +842,8 @@ export function regenerateMessage(
     enableExternalTools: boolean,
     enableSmoothing: boolean = true,
     contextFilters: any[] = [],
-    retryInstructions?: string
+    retryInstructions: string | undefined,
+    personalization: PersonalizationSettings
 ) {
     return async (dispatch: AppDispatch, getState: () => any) => {
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
@@ -866,13 +864,6 @@ export function regenerateMessage(
         }
 
         try {
-            // Get personalization prompt for regeneration as well
-            const personalization = state.personalization;
-            let personalizationPrompt: string | undefined;
-            if (personalization?.enableForNewChats) {
-                personalizationPrompt = formatPersonalization(personalization);
-            }
-
             // Get project instructions from space if this is a project conversation
             let projectInstructions: string | undefined;
             let isProject = false;
@@ -899,6 +890,7 @@ export function regenerateMessage(
                 allAttachments
             );
 
+            const personalizationPrompt = formatPersonalization(personalization);
             console.log('[RAG] Context retrieval result:', {
                 personalizationPrompt: !!personalizationPrompt,
                 projectInstructions: !!projectInstructions,
@@ -965,12 +957,11 @@ export function regenerateMessage(
                     dispatch(addMessage(updatedAssistantMessage));
                 }
             }
-
             const turns = await getFilteredTurnsWithImages(
                 updatedMessagesWithContext,
                 attachments,
                 contextFilters,
-                personalizationPrompt,
+                personalization,
                 projectInstructions,
                 ragResult?.context
             );
@@ -1021,7 +1012,7 @@ export async function retrySendMessage({
     userId,
     enableSmoothing,
     contextFilters = [],
-    personalizationPrompt,
+    personalization,
     projectInstructions,
     allAttachments = {},
 }: {
@@ -1038,7 +1029,7 @@ export async function retrySendMessage({
     userId?: string;
     enableSmoothing?: boolean;
     contextFilters?: any[];
-    personalizationPrompt?: string;
+    personalization: PersonalizationSettings;
     projectInstructions?: string;
     allAttachments?: Record<string, Attachment>;
 }) {
@@ -1123,6 +1114,7 @@ export async function retrySendMessage({
             referencedFileNames
         );
 
+        const personalizationPrompt = formatPersonalization(personalization);
         console.log('[RAG] fetchAssistantResponse context:', {
             personalizationPrompt: !!personalizationPrompt,
             projectInstructions: !!projectInstructions,
@@ -1203,7 +1195,7 @@ export async function retrySendMessage({
         let turns = prepareTurns(
             updatedLinearChain,
             contextFilters,
-            personalizationPrompt,
+            personalization,
             projectInstructions,
             ragResult?.context
         );
@@ -1219,13 +1211,14 @@ export async function retrySendMessage({
         );
 
         turns = turns
-            .filter((turn) => {
-                // Keep system messages that contain personalization, filter out other system messages
-                if (turn.role === Role.System) {
-                    return personalizationPrompt && turn.content === personalizationPrompt;
-                }
-                return true;
-            })
+            // FIXME possibly useless
+            // .filter((turn) => {
+            //     // Keep system messages that contain personalization, filter out other system messages
+            //     if (turn.role === Role.System) {
+            //         return personalizationPrompt && turn.content === personalizationPrompt;
+            //     }
+            //     return true;
+            // })
             .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
 
         await dispatch(
@@ -1357,7 +1350,7 @@ export function fetchAssistantResponse({
     enableSmoothing = true,
     requestTitle = false,
     contextFilters = [],
-    personalizationPrompt,
+    personalization,
     projectInstructions,
     userId,
     isProject = false,
@@ -1375,7 +1368,7 @@ export function fetchAssistantResponse({
     enableSmoothing?: boolean;
     requestTitle?: boolean;
     contextFilters?: any[];
-    personalizationPrompt?: string;
+    personalization: PersonalizationSettings;
     projectInstructions?: string;
     userId?: string;
     isProject?: boolean;
@@ -1401,6 +1394,7 @@ export function fetchAssistantResponse({
             referencedFileNames
         );
 
+        const personalizationPrompt = formatPersonalization(personalization);
         console.log('[RAG] fetchAssistantResponse context:', {
             personalizationPrompt: !!personalizationPrompt,
             projectInstructions: !!projectInstructions,
@@ -1481,7 +1475,7 @@ export function fetchAssistantResponse({
         let turns = prepareTurns(
             updatedLinearChain,
             contextFilters,
-            personalizationPrompt,
+            personalization,
             projectInstructions,
             ragResult?.context
         );
@@ -1497,6 +1491,17 @@ export function fetchAssistantResponse({
                 turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, updatedLinearChain, attachments))
             );
         }
+
+        turns = turns
+            // FIXME possibly useless
+            // .filter((turn) => {
+            //     // Keep system messages that contain personalization, filter out other system messages
+            //     if (turn.role === Role.System) {
+            //         return personalizationPrompt && turn.content === personalizationPrompt;
+            //     }
+            //     return true;
+            // })
+            .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
 
         await dispatch(
             sendMessageWithRedux(api, turns, {
