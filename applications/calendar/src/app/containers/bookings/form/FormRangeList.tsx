@@ -11,7 +11,7 @@ import useFlag from '@proton/unleash/useFlag';
 
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
-import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
+import { BookingFormValidationReasons, type BookingRange } from '../interface';
 import { BookingErrorMessages } from '../utils/bookingCopy';
 import { validateFormData } from '../utils/form/formHelpers';
 import { createBookingRange, createBookingRangeNextAvailableTime } from '../utils/range/rangeHelpers';

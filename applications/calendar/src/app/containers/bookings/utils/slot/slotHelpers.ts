@@ -1,7 +1,7 @@
 import { addMinutes, isBefore } from 'date-fns';
 
-import type { Slot } from '../../bookingsProvider/interface';
-import { BOOKING_SLOT_ID } from '../../bookingsProvider/interface';
+import type { Slot } from '../../interface';
+import { BOOKING_SLOT_ID } from '../../interface';
 
 export const generateSlotsFromRange = ({
     rangeID,
