@@ -3,7 +3,7 @@ import { addDays, isFriday, isMonday, isSameDay, isSaturday, isTuesday, isWeeken
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 
-import type { BookingRange } from '../../bookingsProvider/interface';
+import type { BookingRange } from '../../interface';
 import {
     createBookingRangeNextAvailableTime,
     generateDefaultBookingRange,
