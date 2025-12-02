@@ -6,7 +6,7 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import clsx from '@proton/utils/clsx';
 
-import { BookingLocation } from '../bookingsProvider/interface';
+import { BookingLocation } from '../interface';
 
 interface FormIconRowProps extends PropsWithChildren {
     title: string;

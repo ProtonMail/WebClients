@@ -1,6 +1,6 @@
-import type { LayoutEvent } from '../../../components/calendar/layout';
-import type { BookingPageEditData, InternalBookingPage } from '../../../store/internalBooking/interface';
-import type { CalendarViewEvent } from '../../calendar/interface';
+import type { LayoutEvent } from '../../components/calendar/layout';
+import type { BookingPageEditData, InternalBookingPage } from '../../store/internalBooking/interface';
+import type { CalendarViewEvent } from '../calendar/interface';
 
 export const BOOKING_SLOT_ID = 'booking-slot-' as const;
 export const TEMPORARY_BOOKING_SLOT = 'temporary-booking-slot-' as const;

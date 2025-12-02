@@ -23,7 +23,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
-import { BookingLocation, BookingState } from '../bookingsProvider/interface';
+import { BookingLocation, BookingState } from '../interface';
 import { validateFormData } from '../utils/form/formHelpers';
 import { FormErrorWrapper, FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { FormRangeList } from './FormRangeList';

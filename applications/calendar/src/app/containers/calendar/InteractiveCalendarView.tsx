@@ -167,7 +167,7 @@ import { pendingUniqueIdsSelector, selectIsTmpEventSaving } from '../../store/ev
 import { type CalendarViewEventStore, eventsActions } from '../../store/events/eventsSlice';
 import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
-import { TEMPORARY_BOOKING_SLOT } from '../bookings/bookingsProvider/interface';
+import { TEMPORARY_BOOKING_SLOT } from '../bookings/interface';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 
-import type { BookingFormData, BookingRange } from '../bookingsProvider/interface';
+import type { BookingFormData, BookingRange } from '../interface';
 import { wouldOverflowDay } from '../utils/form/formHelpers';
 import {
     AddButton,

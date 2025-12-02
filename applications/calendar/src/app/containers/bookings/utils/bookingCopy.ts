@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MAX_BOOKING_SLOTS } from '../bookingsProvider/interface';
+import { MAX_BOOKING_SLOTS } from '../interface';
 
 export const BookingErrorMessages = {
     get RANGE_ALREADY_EXIST() {
