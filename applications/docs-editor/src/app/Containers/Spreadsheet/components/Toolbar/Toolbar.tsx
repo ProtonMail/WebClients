@@ -25,7 +25,7 @@ import type { IconName } from '@proton/icons/types'
 import { InsertFormulaMenu } from '../shared/InsertFormulaMenu'
 import { MergeMenuItems } from '../shared/MergeMenuItems'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { EditingDisabledButton } from '../EditingDisabledButton'
+import { EditingDisabledButton } from '../misc/EditingDisabledButton'
 import { ColorPicker } from '../shared/ColorPicker'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {

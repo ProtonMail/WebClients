@@ -37,7 +37,7 @@ import { Dialogs } from './components/Dialogs/Dialogs'
 import { Sidebar } from './components/Sidebar/Sidebar'
 import { useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { useActiveBreakpoint } from '@proton/components'
-import { EditingDisabledDialog } from './components/EditingDisabledDialog'
+import { EditingDisabledDialog } from './components/misc/EditingDisabledDialog'
 import type { SpreadsheetConversionType } from '@proton/shared/lib/docs/constants'
 
 export type SpreadsheetRef = {

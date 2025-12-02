@@ -88,8 +88,8 @@ export function CellTooltip({
     return null
   }
 
-  const posX = x + width - scrollLeft + 2
-  const posY = y - scrollTop
+  const posX = x - scrollLeft
+  const posY = y + height - scrollTop
 
   let contentTitle = title
   if (variant === 'error') {
