@@ -121,7 +121,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
 
     return (
         <div
-            className="bg-norm flex w-full gap-1 items-center p-2 h-full min-h-custom"
+            className="bg-norm flex w-full gap-1 items-center py-2 pl-3 pr-4 h-full min-h-custom"
             style={{ '--min-h-custom': '3.3rem' }}
             data-testid="transfer-item-row"
         >
@@ -159,7 +159,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                                 &middot;
                             </span>
                             <span
-                                className="text-ellipsis text-nowrap text-sm color-weak"
+                                className="text-ellipsis text-nowrap text-sm color-weak text-tabular-nums"
                                 data-testid="transfer-row:transferred-data"
                             >
                                 {transferredTotal}
@@ -168,7 +168,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                     )}
                 </div>
             </div>
-            <div className="w-1/6">
+            <div className="shrink-0">
                 {entry.status === BaseTransferStatus.Finished && entry.type === 'upload' && (
                     <Button color="weak" shape="solid" onClick={onShare}>
                         {c('Action').t`Share`}
