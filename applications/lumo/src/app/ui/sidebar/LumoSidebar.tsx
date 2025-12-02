@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
+import useFlag from '@proton/unleash/useFlag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
@@ -219,6 +220,7 @@ const LumoSidebarContent = () => {
     const { registerOpenFunction } = useSearchModal();
     const [searchValue, setSearchValue] = useState('');
     const { APP_NAME } = useConfig();
+    const isLumoProjectsEnabled = useFlag('LumoProjects');
 
     // Register search modal open function with context
     React.useEffect(() => {
@@ -254,8 +256,8 @@ const LumoSidebarContent = () => {
                 {/* Search Section - hide on mobile for guests */}
                 {!(isSmallScreen && isGuest) && (
                     <div className="sidebar-section">
-                        <SearchSection 
-                            showText={showText} 
+                        <SearchSection
+                            showText={showText}
                             onSearchChange={setSearchValue}
                             onSearchClick={() => searchModal.openModal(true)}
                             isSmallScreen={isSmallScreen}
@@ -271,11 +273,11 @@ const LumoSidebarContent = () => {
                 )}
 
                 {/* Projects Section */}
-                <div className="sidebar-section">
-                    <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
-                </div>
-
-
+                {isLumoProjectsEnabled &&
+                    <div className="sidebar-section">
+                        <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
+                    </div>
+                }
 
                 {/* Chat History Section */}
                 <ChatHistorySection searchValue={searchValue} showText={showText} />
