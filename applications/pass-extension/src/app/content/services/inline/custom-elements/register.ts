@@ -1,5 +1,5 @@
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import 'proton-pass-extension/lib/utils/polyfills';
+import 'proton-pass-extension/lib/polyfills/shim';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';

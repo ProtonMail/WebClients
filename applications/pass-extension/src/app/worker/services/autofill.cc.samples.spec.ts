@@ -12,7 +12,7 @@ const parseMap = <T>(json: SerializedMap<T>): Map<number, T> =>
     new Map<number, T>(Object.entries(json).map(([frameId, frame]) => [parseInt(frameId, 10), frame]));
 
 const samples = Object.fromEntries(
-    Object.entries(json as JsonSamples).map(([key, { frames, clusters }]) => [
+    Object.entries(json as unknown as JsonSamples).map(([key, { frames, clusters }]) => [
         key,
         { frames: parseMap(frames), clusters: parseMap(clusters) },
     ])
