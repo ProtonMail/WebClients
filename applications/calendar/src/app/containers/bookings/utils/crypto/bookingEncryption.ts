@@ -10,8 +10,8 @@ import type {
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 
-import { BookingLocation } from '../../bookingsProvider/interface';
 import type { SerializedFormData } from '../../bookingsTypes';
+import { BookingLocation } from '../../interface';
 import { JSONFormatData, JSONFormatTextData, createBookingLink } from './bookingEncryptionHelpers';
 import {
     bookingContentSignatureContextValue,

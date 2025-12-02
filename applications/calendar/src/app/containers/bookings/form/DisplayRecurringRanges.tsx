@@ -7,7 +7,7 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import type { BookingFormData, BookingRange, RecurringRangeDisplay } from '../bookingsProvider/interface';
+import type { BookingFormData, BookingRange, RecurringRangeDisplay } from '../interface';
 import { wouldOverflowDay } from '../utils/form/formHelpers';
 import { generateRecurringRanges } from '../utils/range/rangeHelpers';
 import {
