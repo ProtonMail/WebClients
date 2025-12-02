@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Progress } from '@proton/components';
+import { Icon, Progress, useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { ProgressBarStatus } from '../../../components/TransferManager/ProgressBar';
@@ -41,15 +41,16 @@ const getHeaderTextFromStatus = (status: TransferManagerStatus): string => {
 
 export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: Props) => {
     const { progressPercentage, status, items } = useTransferManagerState();
-    const { cancelAll, confirmModal } = useTransferManagerActions();
+    const { cancelAll, confirmModal, retryFailedTransfers } = useTransferManagerActions();
     const headerText = getHeaderTextFromStatus(status);
     const normalizedProgress = Math.min(100, Math.max(0, Math.round(progressPercentage)));
     const progressText = c('Info').t`${normalizedProgress}% completed`;
     const cancelText = c('Action').t`Cancel all`;
+    const retryAllText = c('Action').t`Retry failed items`;
     const pbStatus = getProgressBarStatus(status);
     const completedItems = items.filter((item) => item.status === BaseTransferStatus.Finished);
     const completedText = c('Info').t`${completedItems.length} of ${items.length} transfers completed`;
-
+    const { viewportWidth } = useActiveBreakpoint();
     return (
         <div
             className="flex w-full flex-column rounded-t-lg bg-weak px-4 py-4"
@@ -81,6 +82,22 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
                             data-testid="drive-transfers-manager:header-controls-cancel"
                         >
                             {cancelText}
+                        </Button>
+                    )}
+                    {status === TransferManagerStatus.Failed && (
+                        <Button
+                            icon={viewportWidth.xsmall}
+                            type="button"
+                            shape="outline"
+                            color="weak"
+                            onClick={() => retryFailedTransfers(items)}
+                            data-testid="drive-transfers-manager:header-controls-retry-failed"
+                        >
+                            {viewportWidth.xsmall ? (
+                                <Icon name="arrow-rotate-right" className="icon-size-4.5" />
+                            ) : (
+                                retryAllText
+                            )}
                         </Button>
                     )}
                     <MinimizeButton onClick={toggleMinimize} isMinimized={isMinimized} />
