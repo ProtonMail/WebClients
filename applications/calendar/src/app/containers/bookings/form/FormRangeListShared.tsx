@@ -65,12 +65,13 @@ export const EndTimeInput = ({ id, range, duration, onChange, className }: Input
 interface ButtonProps {
     onClick: () => void;
     btnClassName?: string;
+    disabled?: boolean;
 }
 
-export const AddButton = ({ onClick, btnClassName }: ButtonProps) => {
+export const AddButton = ({ onClick, btnClassName, disabled }: ButtonProps) => {
     return (
         <Tooltip title={c('Action').t`Add another booking range to this day`}>
-            <Button icon shape="ghost" onClick={onClick} className={btnClassName}>
+            <Button icon shape="ghost" onClick={onClick} className={btnClassName} disabled={disabled}>
                 <IcPlus
                     name="plus"
                     className="color-primary"
