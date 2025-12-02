@@ -19,7 +19,7 @@ export const useConversationState = (props: UseConversationStateProps) => {
         }
 
         const now = createDate();
-        const { conversationId, spaceId } = initializeNewSpaceAndConversation(dispatch, now, isGhostChatMode);
+        const { conversationId, spaceId } = dispatch(initializeNewSpaceAndConversation(now, isGhostChatMode));
 
         return {
             conversationId,
