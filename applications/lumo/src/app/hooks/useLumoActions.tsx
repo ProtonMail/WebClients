@@ -239,7 +239,7 @@ export const useLumoActions = ({
             userId: user?.ID,
             enableSmoothing,
             contextFilters,
-            personalizationPrompt,
+            personalization,
             projectInstructions,
             allAttachments,
         });
@@ -381,7 +381,8 @@ export const useLumoActions = ({
                 enableExternalTools,
                 enableSmoothing,
                 contextFilters,
-                retryInstructions
+                retryInstructions,
+                personalization
             )
         );
     };
