@@ -183,7 +183,7 @@ async function start(
             xattr,
             isForPhotos
                 ? {
-                      captureTime: Math.max(getUnixTime(getCaptureDateTime(file, exifInfo?.exif)), 0),
+                      captureTime: getUnixTime(getCaptureDateTime(file, exifInfo?.exif)) || 0,
                       contentHash: sha1 ? await generateLookupHash(sha1, parentHashKey) : undefined,
                       tags: await getPhotoTags(file, exifInfo),
                   }
