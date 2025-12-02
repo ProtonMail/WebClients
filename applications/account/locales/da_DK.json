@@ -6,7 +6,7 @@
   "contexts": {
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
-        "Uden etiket"
+        "Unavngivet"
       ]
     },
     "Access level": {
@@ -328,7 +328,7 @@
         "Forbundet"
       ],
       "Contact sales": [
-        "Kontakt salg"
+        "Kontakt salgsafdelingen"
       ],
       "Contact support": [
         "Kontakt support"
@@ -373,16 +373,16 @@
         "Kopiér adgangskode"
       ],
       "Copy SMTP port": [
-        "Kopier SMTP-port"
+        "Kopiér SMTP-port"
       ],
       "Copy SMTP server": [
         "Kopier SMTP-server"
       ],
       "Copy SMTP token": [
-        "Kopier SMTP-token"
+        "Kopiér SMTP-token"
       ],
       "Copy SMTP username": [
-        "Kopier SMTP-brugernavn"
+        "Kopiér SMTP-brugernavn"
       ],
       "Copy version number to clipboard": [
         "Kopier versionsnummer til udklipsholder"
@@ -613,7 +613,7 @@
         "Rediger e-mailadresse"
       ],
       "Edit filter “${ Name }”": [
-        "Rediger filter “${ Name }”"
+        "Rediger filter \"${ Name }\""
       ],
       "Edit Gateway": [
         "Redigér gateway"
@@ -643,7 +643,7 @@
         "Rediger servere"
       ],
       "Edit Sieve": [
-        "Redigér Sieve"
+        "Rediger Sieve"
       ],
       "Edit Sieve filter “${ Name }”": [
         "Redigér Sieve filter \"${ Name }\""
@@ -679,7 +679,7 @@
         "Aktivér post-quantum beskyttelse"
       ],
       "Encrypt and export": [
-        "Krypter og eksporter"
+        "Kryptér og eksportér"
       ],
       "Explore ${ target }": [
         "Opdag ${ target }"
@@ -700,13 +700,13 @@
         "Eksportér"
       ],
       "Export as CSV": [
-        "Eksporter som CSV"
+        "Eksportér som CSV"
       ],
       "Export key": [
-        "Eksporter nøgle"
+        "Eksportér nøgle"
       ],
       "Export key before deleting": [
-        "Eksporter nøgle før sletning"
+        "Eksportér nøgle før sletning"
       ],
       "Extend": [
         "Forlæng"
@@ -730,7 +730,7 @@
         "Generér"
       ],
       "Generate key": [
-        "Generer nøgle"
+        "Generér nøgle"
       ],
       "Generate new recovery phrase": [
         "Opret ny gendannelsessætning"
@@ -742,7 +742,7 @@
         "Opret gendannelsessætning"
       ],
       "Generate token": [
-        "Generér token"
+        "Generer token"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
         "Få ${ planName } til ${ priceCoupon }"
@@ -772,7 +772,7 @@
         "Få flere adresser"
       ],
       "Get more filters": [
-        "Få flere filtre"
+        "Hent flere filtre"
       ],
       "Get more folders": [
         "Få flere mapper"
@@ -880,7 +880,7 @@
         "Importér fra Outlook"
       ],
       "Import key": [
-        "Importer nøgle"
+        "Importér nøgle"
       ],
       "Import new SAML metadata": [
         "Importer nye SAML-metadata"
@@ -1006,7 +1006,7 @@
         "Yderligere information: ${ safeTitle }"
       ],
       "More info: Keyboard shortcuts": [
-        "Mere info: Tastaturgenveje"
+        "Yderligere oplysninger: Tastaturgenveje"
       ],
       "More options": [
         "Flere muligheder"
@@ -1055,6 +1055,9 @@
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "Åbn ${ PASS_APP_NAME } i din browser"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åbn i ${ SHEETS_APP_NAME }"
       ],
       "Open navigation": [
         "Åbn navigation"
@@ -1255,7 +1258,7 @@
         "Tilbagetræk invitation"
       ],
       "Revoke this invitation": [
-        "Tilbagetræk denne invitation"
+        "Fjern denne invitation"
       ],
       "Save": [
         "Gem"
@@ -1357,7 +1360,7 @@
         "Angiv som standard"
       ],
       "Set as default mail application": [
-        "Indstil som standard mail applikation"
+        "Indstil som standard mailapplikation"
       ],
       "Set catch-all": [
         "Vælg catch-all"
@@ -1718,12 +1721,12 @@
     },
     "Action; accept invitation to share calendar": {
       "Accept": [
-        "Acceptér"
+        "Accepter"
       ]
     },
     "Action; decline invitation to share calendar": {
       "Decline": [
-        "Afslå"
+        "Afvis"
       ]
     },
     "Addon": {
@@ -2022,7 +2025,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
+        "Jeg er ikke på kontoret i øjeblikket og har kun begrænset adgang til min e-mail."
       ]
     },
     "b2b_trials_2025: Header": {
@@ -2817,7 +2820,7 @@
     },
     "Calendar edit button tooltip": {
       "Edit calendar": [
-        "Redigér kalender"
+        "Rediger kalender"
       ]
     },
     "Calendar export section description": {
@@ -2827,7 +2830,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Du kan importere ICS-filer fra en anden kalender til ${ CALENDAR_APP_NAME }. Dette lader dig hurtigt importere en begivenhed eller hele din dagsorden."
+        "Du kan importere ICS-filer fra en anden kalender til ${ CALENDAR_APP_NAME }. Dette lader dig hurtigt importere en begivenhed eller hele din dagsplan."
       ]
     },
     "Calendar invite status label": {
@@ -2876,7 +2879,7 @@
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Del din kalender med andre brugere af ${ BRAND_NAME }. Gør det muligt at samarbejde ved at give dem mulighed for at tilføje og redigere begivenheder i din kalender. Du kan ændre brugertilladelserne når som helst."
+        "Del din kalender med andre brugere af ${ BRAND_NAME }. Giv jer selv mulighed for samarbejde ved at give dem tilladelse til at tilføje og redigere begivenheder i din kalender. Du kan ændre brugertilladelserne når som helst."
       ]
     },
     "Calendar settings section title": {
@@ -2887,7 +2890,7 @@
         "Del med ${ BRAND_NAME }-brugere"
       ],
       "Share with anyone": [
-        "Del med enhver"
+        "Del med hvem som helst"
       ]
     },
     "Calendar settings sidebar": {
@@ -2901,7 +2904,7 @@
         "Rediger begivenhedsdetaljer"
       ],
       "See all event details": [
-        "Se alle detaljer om begivenheden"
+        "Se alle begivenhedsdetaljer"
       ]
     },
     "Calendar sharing access option label": {
@@ -4570,10 +4573,10 @@
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } giver dig mulighed for at samarbejde med andre i et sikkert, krypteret miljø."
       ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } er ikke din standard mail applikation."
+        "${ MAIL_APP_NAME } er ikke din standard mailapplikation."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } er din standard-e-mailapplikation."
+        "${ MAIL_APP_NAME } er din standard mailapplikation."
       ],
       "A checked box means the feature is disabled.": [
         "Et afkrydset felt betyder, at funktionen er deaktiveret."
@@ -4676,7 +4679,7 @@
         "Giver dig mulighed for øjeblikkeligt at tilføje mødelinks til dine begivenhedsinvitationer."
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
-        "Gør din e-mail-fod til din egen – fremvis dit unikke brand, ikke vores."
+        "Gør din e-mail-sidefod til din egen – fremvis dit unikke brand, ikke vores."
       ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan forbinde til delte servere."
@@ -4688,7 +4691,7 @@
         "Konfigurer konti for alle brugere, og inviter dem til at tilmelde sig ${ BRAND_NAME }."
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
-        "Konfigurér automatisk videresendelse for at videresende indkommende e-mails til en anden e-mailadresse."
+        "Konfigurer automatisk videresendelse for at videresende indkommende e-mails til en anden e-mailadresse."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
@@ -4718,10 +4721,10 @@
         "Du kan fortsætte med at invitere venner, men du vil ikke kunne optjene flere kreditter"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Du kan tilpasse listen over domæner, hvor visse autofunktioner i ${ PASS_APP_NAME } -browserudvidelsen (Autofill, Autosuggest, Autosave) ikke bør afvikles."
+        "Du kan tilpasse listen over domæner, hvor visse automatiske funktioner i ${ PASS_APP_NAME }-browserudvidelsen (autofyld, autoforslag, automatisk lagring) ikke bør køres."
       ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
-        "Du kan håndhæve de adgangskoderegler, som organisationsmedlemmerne skal bruge, når de genererer en adgangskode i ${ PASS_APP_NAME }."
+        "Du kan håndhæve de adgangskoderegler, som organisationsmedlemmer skal bruge, når de genererer en adgangskode i ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
@@ -5027,7 +5030,7 @@
         ".deb til Debian/Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm til Fedora/Red Hat"
+        ".rpm for Fedora / Red Hat"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "Du kan også downloade appen via ${ linkSnapStore }."
@@ -5058,13 +5061,13 @@
         "**Sikret:** end-to-end-kryptering"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Enkel og brugervenlig:** importér dine filer og sæt dem op på få minutter"
+        "**Enkel og brugervenlig:** - importér dine filer og sæt dem op på få minutter"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Avanceret beskyttelse, der overgår industrielle standarder"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security"
+        "Join the 50,000+ organisationer der allerede drager fordel af ${ BRAND_NAME }'s sikkerhed"
       ],
       "Protect sensitive business information and collaborate securely": [
         "Beskyt følsomme erhvervsoplysninger, og samarbejd sikkert"
@@ -5426,7 +5429,7 @@
         "Annuller"
       ],
       "Decline": [
-        "Afslå"
+        "Afvis"
       ],
       "Delete": [
         "Slet"
@@ -5435,7 +5438,7 @@
         "Slet denne betingelse"
       ],
       "Edit conditions": [
-        "Rediger betingelse"
+        "Rediger betingelser"
       ],
       "Got it": [
         "Forstået"
@@ -5486,7 +5489,7 @@
     },
     "email_forwarding_2023: Forwarding tooltip": {
       "Emails forwarded to you are excluded and will not be forwarded.": [
-        "E-mails, der videresendes til dig, er ikke omfattet og vil ikke blive videresendt."
+        "Emails videresendt til dig ekskluderes og vil ikke blive videresendt."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -5537,13 +5540,13 @@
         "Af kompatibilitetshensyn er postkvantum-kryptering blevet deaktiveret for ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
-        "Af kompatibilitetshensyn deaktiveres postkvantum-kryptering for ${ boldForwarderEmail }."
+        "Af kompatibilitetshensyn deaktiveres postkvante-kryptering for ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Kompatibilitetshensyn gør, at post-kvantumkryptering deaktiveres, og en ny krypteringsnøgle vil blive genereret for ${ boldForwarderEmail }."
+        "Kompatibilitetshensyn gør at post-kvantumkryptering deaktiveres, og en ny krypteringsnøgle vil blive genereret for ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Modtageren af videresendelse er inviteret og skal acceptere/afvise invitationen eller opdatere."
+        "Modtageren af videresendelsen er inviteret og skal acceptere/afvise invitationen eller opdatere."
       ],
       "Forwarding is active": [
         "Videresending er aktiv"
@@ -5552,7 +5555,7 @@
         "Videresendelse til ${ boldForwardeeEmail } bliver aktiv, når modtageren accepterer anmodningen."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Videresendelse til en adresse uden end-to-end-kryptering vil deaktivere end-to-end-kryptering for din ${ boldForwarderEmail } adresse, men nuladgangskryptering forbliver aktiveret. ${ learnMoreLink }"
+        "Videresendelse til en adresse uden end-to-end kryptering deaktiverer end-to-end kryptering for din ${ boldForwarderEmail } adresse, men nuladgangskryptering forbliver aktiveret. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "Videresendelse til denne adresse bliver aktiv, når modtageren har accepteret videresendelsen."
@@ -5667,7 +5670,7 @@
         "E-mail sendt til ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
-        "Videresending godkendt"
+        "Videresendelse accepteret"
       ],
       "Forwarding declined": [
         "Videresending afvist"
@@ -5676,7 +5679,7 @@
         "Videresending slettet"
       ],
       "Forwarding paused": [
-        "Videresending sat på pause"
+        "Videresendelse sat på pause"
       ],
       "Forwarding resumed": [
         "Videresending genoptaget"
@@ -5684,7 +5687,7 @@
     },
     "email_forwarding_2023: Title": {
       "Delete forwarding?": [
-        "Slet videresending?"
+        "Slet videresendelse?"
       ],
       "Email forwarding deactivated": [
         "Videresending deaktiveret"
@@ -5702,7 +5705,7 @@
         "Anmoder om bekræftelse"
       ],
       "Set up forwarding": [
-        "Indstil videresendelse"
+        "Konfigurer videresendelse"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -6026,10 +6029,10 @@
         "Autosvar-beskeden overskrider den tilladte længde. Forkort den til at passe inden for grænsen."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatiske svar er en betalingsfunktion. Opgrader venligst til en betalt konto for at bruge denne funktion."
+        "Automatiske svar er en betalt funktion. Opgrader venligst til en betalt konto for at bruge denne funktion."
       ],
       "Calendar cannot be found": [
-        "Kalender kunne ikke findes"
+        "Kalenderen kunne ikke findes"
       ],
       "Calendar limit reached": [
         "Kalendergrænse nået"
@@ -6366,7 +6369,7 @@
         "Angiv først et gendannelsestelefonnummer"
       ],
       "Please set a recovery/notification email first": [
-        "Angiv en gendannelses-/notifikations-e-mail"
+        "Angiv en e-mail til gendannelse/notifikation først"
       ],
       "Please try again in a few moments.": [
         "Prøv venligst igen om et øjeblik."
@@ -6918,8 +6921,8 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } begivenhed eksporteret",
-        "${ totalProcessed }/${ totalToProcess } begivenheder eksporteret"
+        "${ totalProcessed } / ${ totalToProcess } begivenhed eksporteret",
+        "${ totalProcessed } / ${ totalToProcess } begivenheder eksporteret"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Kalender eksporteret. Du kan nu gemme ICS-filen."
@@ -6928,7 +6931,7 @@
         "Dekrypterer begivenheder fra din kalender: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "På grund af en nulstilling af adgangskoden, kunne nogle af dine begivenheder ikke dekrypteres og eksporteres."
+        "På grund af en nulstilling af adgangskoden kunne ingen af dine begivenheder dekrypteres og eksporteres."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "På grund af en nulstilling af adgangskoden, kunne nogle af dine begivenheder ikke dekrypteres og eksporteres."
@@ -6949,7 +6952,7 @@
         "Nulstilling af adgangskode - begivenhed kan ikke dekrypteres"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Nulstilling af adgangskode - flere begivenheder kan ikke dekrypteres"
+        "Adgangskode nulstillet – flere begivenheder kan ikke dekrypteres"
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "Luk ikke fanen før eksportprocessen er afsluttet."
@@ -6961,7 +6964,7 @@
         "Internetforbindelsen blev afbrudt, hvilket fik eksportprocessen til at mislykkes. Prøv venligst igen."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "Du kan gemme en ICS-fil med de begivenheder, der blev eksporteret."
+        "Du kan gemme en ICS-fil med de begivenheder, der blev eksporteret korrekt."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -7859,7 +7862,7 @@
         "Nøgletype"
       ],
       "Label": [
-        "Etikette"
+        "Etiket"
       ],
       "Location": [
         "Placering"
@@ -7970,7 +7973,7 @@
         "Oprettet"
       ],
       "Email address": [
-        "E-mailadresse"
+        "mailadresse"
       ],
       "Last used": [
         "Sidst brugt"
@@ -7984,10 +7987,10 @@
         "Helligdage"
       ],
       "Other": [
-        "Andre"
+        "Anden"
       ],
       "Subscribed": [
-        "Abonnerer"
+        "Abonneret"
       ]
     },
     "Headline": {
@@ -8426,7 +8429,7 @@
     },
     "Inactive key function info": {
       "If reactivated, the key will be used for decryption": [
-        "Hvis genaktiveret, vil nøglen blive brugt til dekryptering"
+        "Hvis genaktiveret, vil nøglen ikke blive brugt til dekryptering"
       ],
       "If reactivated, the key will be used for decryption and verification": [
         "Hvis genaktiveret, vil nøglen blive brugt til dekryptering og verifikation"
@@ -8785,7 +8788,7 @@
         "Få adgang til 6.500+ højhastighedsservere på op til 10 enheder for at holde dine browserdata sikre. Tilgængelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Tilgå dine adgangskoder og beskyt din online identitet problemfrit på tværs af dine enheder. Download og installer de relevante ${ PASS_APP_NAME } apps og udvidelser."
+        "Tilgå dine adgangskoder og beskyt din online identitet på tværs af dine enheder. Download og installer de relevante ${ PASS_APP_NAME } apps og udvidelser."
       ],
       "Account monitor": [
         "Kontoovervågning"
@@ -8806,7 +8809,7 @@
         "aktiv"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
+        "Tilføj en @pm.me e-mailadresse til din konto. Dette enkle, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
       ],
       "add a recovery method": [
         "tilføj en gendannelsesmetode"
@@ -8821,7 +8824,7 @@
         "Tilføj billed-URL"
       ],
       "Add label": [
-        "Tilføj etikette"
+        "Tilføj etiket"
       ],
       "Add multiple users to your organization at once.": [
         "Tilføj flere brugere til din organisation på én gang."
@@ -8942,7 +8945,7 @@
         "Alle med dette link kan se, om du er fri eller optaget på din kalender. De kan ikke se begivenhedsdetaljer, såsom titel, placering eller deltagere."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Alle med dette link vil ikke kunne synkronisere eller få fremtidige opdateringer til din kalender. Hvis du vil give dem adgang igen, skal du oprette et nyt link."
+        "Personer med dette link vil ikke kunne synkronisere eller få fremtidige opdateringer til din kalender. Hvis du vil give dem adgang igen, bliver du nødt til at oprette et nyt link."
       ],
       "Are you sure you want to cancel editing the group?": [
         "Er du sikker på, at du vil annullere ændringen af gruppen?"
@@ -8951,7 +8954,7 @@
         "Er du sikker på, at du vil slette denne kalender?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Er du sikker på, at du vil slette denne kalender? Alle adresser, som du har delt denne kalender med, vil miste adgangen til den."
+        "Er du sikker på at du vil slette denne kalender? Alle adresser, som du har delt denne kalender med, vil miste adgangen til den."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Er du sikker på, at du vil slette denne kalender? Alle begivenheder i den vil blive slettet."
@@ -9035,7 +9038,7 @@
         "Autosvar er aktiv, indtil du slår den fra."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Autosvar er altid aktiv på de ugedage, du vælger, mellem de valgte tidspunkter."
+        "Autosvar er altid aktiv på de ugedage og i det tidsrum, som du vælger."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Fjern automatisk e-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden."
@@ -9107,7 +9110,7 @@
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
       "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "Ved at aktivere post-kvantumbeskyttelse vil nøgler, der er modstandsdygtige over for kvantecomputere, blive genereret til din konto."
+        "Ved at aktivere post-kvantebeskyttelse vil nøgler, der er modstandsdygtige over for kvantecomputere, blive genereret til din konto."
       ],
       "By leaving now, changes may not be saved": [
         "Ved at forlade nu gemmes ændringer ikke"
@@ -9460,10 +9463,10 @@
         "Aktivér single sign-on for at holde din organisation sikker"
       ],
       "Enable this address to join this calendar": [
-        "Aktivér denne adresse for at blive medlem af denne kalender"
+        "Aktivér denne adresse for at deltage i denne kalender"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
-        "Aktiver TLS eller SSL på den eksterne service, hvis det er understøttet."
+        "Aktivér TLS eller SSL på den eksterne service, hvis den understøttes."
       ],
       "Enabled countries": [
         "Aktiverede lande"
@@ -9478,7 +9481,7 @@
         "Hvis du aktiverer gendannelse ved hjælp af en sætning igen, genereres der en ny gendannelsessætning."
       ],
       "Encryption setting updated": [
-        "Krypteringsindstilling opdateret"
+        "Krypteringsindstillinger opdateret"
       ],
       "End date": [
         "Slutdato"
@@ -9673,7 +9676,7 @@
         "Kom i gang med henvisningslinket ovenfor."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdefinerede domæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
+        "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdomæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Giv din offentlige nøgle til dine venner, eller offentliggør den online, så alle kan sende dig end-to-end krypterede e-mails!"
@@ -9703,7 +9706,7 @@
         "her"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Skjuler identifikationsoplysninger ved at indlæse eksternt indhold via en proxy. Mulighed for at gemme indhold som vedhæftninger."
+        "Skjuler identifikationsoplysninger ved at indlæse eksternt indhold via en proxy. Mulighed for at gemme indhold som vedhæftede filer."
       ],
       "High Priority": [
         "Høj prioritet"
@@ -9718,13 +9721,13 @@
         "Hvis deaktiveret, vil nye organisationsmedlemmer kræve, at en admin manuelt opretter den første boks til dem (via deling), så de kan begynde at oprette elementer."
       ],
       "If disabled, only administrators will be able to export data.": [
-        "Hvis deaktiveret, kun administratorer kan eksportere data."
+        "Hvis deaktiveret, kan administratorer kun eksportere data."
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Hvis deaktiveret, vil organisationsmedlemmer kun kunne dele bokse eller elementer internt i organisationen."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
-        "Når aktiveret: Organisationsmedlemmer vil være i stand til at dele individuelle elementer ud over bokse."
+        "Hvis aktiveret, vil organisationsmedlemmer være i stand til at dele individuelle elementer ud over hele bokse."
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Hvis det ikke er det rigtige for dig, refunderer vi beløbet."
@@ -9972,7 +9975,7 @@
         "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
       ],
       "Key deletion is irreversible!": [
-        "Sletning af nøgle er uigenkaldelig!"
+        "Sletning af nøgle kan ikke fortrydes!"
       ],
       "Keys created": [
         "Nøgler oprettet"
@@ -9999,7 +10002,7 @@
         "Lær mere om gateways"
       ],
       "learn more about Sieve programming language": [
-        "få mere at vide om programmeringssproget Sieve"
+        "Læs mere om programmeringssproget Sieve"
       ],
       "Learn more about single sign-on": [
         "Lær mere om single sign-on"
@@ -10011,7 +10014,7 @@
         "Venstre mod højre"
       ],
       "Let your contacts know you care about their privacy.": [
-        "Lad dine kontakter vide, at du bekymrer dig om beskyttelsen af deres privatliv."
+        "Lad dine kontakter vide, at du går op i deres privatlivsbeskyttelse."
       ],
       "Let's get started by pressing the New group button above": [
         "Lad os starte med at trykke på knappen Ny gruppe ovenfor."
@@ -10023,7 +10026,7 @@
         "Link oprettet"
       ],
       "Link deleted": [
-        "Linket er slettet"
+        "Link slettet"
       ],
       "Link expired": [
         "Link udløbet"
@@ -10233,7 +10236,7 @@
         "Engangsimport"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
+        "Ændr kun disse indstillinger, hvis du bruger PGP med modtagere der ikke bruger ${ BRAND_NAME }."
       ],
       "Only you can see the label": [
         "Det er kun dig, der kan se etiketten"
@@ -10674,13 +10677,13 @@
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
-        "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } fra dine brugerdomæne-adresser."
+        "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at anmode om adgang, skal du ${ createTicket } der beskriver dine brugsscenarier, hvilke brugerdomæner, du gerne vil bruge, og forventede timemæssige og daglige e-mailmængder."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at bruge denne funktion, skal du starte med at generere et nyt token."
+        "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at bruge denne funktion skal du starte med at generere et nyt token."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Udsæt beskeder til senere, så de ligger øverst i din indbakke, når du ønsker"
@@ -10751,7 +10754,7 @@
         "Monitorering af brugerdefinerede domæner og ikke-${ BRAND_NAME } e-mailadresser vil snart understøttes."
       ],
       "Support for post-quantum keys is enabled for your account.": [
-        "Support for post-kvantumnøgler er aktiveret for din konto."
+        "Support for post-kvantenøgler er aktiveret for din konto."
       ],
       "support team": [
         "supportteam"
@@ -10844,10 +10847,10 @@
         "Gruppefunktionen understøttes ikke af dit nuværende abonnement. Tidligere oprettede grupper er deaktiveret og kan kun slettes."
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Linket til rapportering, om at du ikke oprettede en ${ BRAND_NAME }-konto er udløbet. Kontakt venligst vores supportteam for at løse dette problem."
+        "Linket til rapportering, om at du ikke oprettede en ${ BRAND_NAME }-konto, er udløbet. Kontakt vores supportteam for at få løst dette problem."
       ],
       "The most recent data update, excluding breaches.": [
-        "Den seneste dataopdatering, eksklusive databrud."
+        "Den seneste dataopdatering, eksklusiv databrud."
       ],
       "The most secure and private two-factor authentication app, that's free and open-source.": [
         "Den mest sikre og private to-faktor-godkendelsesapp, som er gratis og open source."
@@ -11138,7 +11141,7 @@
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "Opgrader for at tilføje en kortere @pm.me adresse til din konto, som er lettere at dele. Det står for “${ MAIL_APP_NAME } me” eller “Private Message me”."
+        "Opgradér for at tilføje en kortere @pm.me adresse til din konto, som er nemmere at dele. Det står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Opgradér for at beholde dine ${ planTitle }-fordele."
@@ -11192,7 +11195,7 @@
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "Brug den valgte e-mailadresse som SMTP-brugernavn i den eksterne tjeneste, og det genererede token som SMTP-adgangskode."
+        "Brug den valgte e-mailadresse som SMTP-brugernavn i den eksterne service, og det genererede token som SMTP-adgangskode."
       ],
       "User activated": [
         "Bruger aktiveret"
@@ -11360,13 +11363,13 @@
         "Når deaktiveret, forhindrer dette eksterne billeder i at blive indlæst uden din viden."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Når aktiveret, vil vi tjekke, om ${ MAIL_APP_NAME } er din standardmailapplikation og give dig besked, hvis det ikke er tilfældet."
+        "Hvis aktiveret, vil vi tjekke, om ${ MAIL_APP_NAME } er din standard mailapplikation og give dig besked, hvis det ikke er tilfældet."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Når notifikationer er aktiveret, sender vi en advisering til din gendannelses-adresse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
+        "Når notifikationer er aktiveret, sender vi dig en advarsel til din e-mailadresse til gendannelse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Når de tegner et abonnement, får du kreditter, du kan bruge på dit abonnement."
@@ -11414,7 +11417,7 @@
         "Med grupper kan du hurtigt og nemt sende mails til alle personer i en bestemt gruppe."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "Med dit nuværende abonnement kan du kun modtage beskeder med din @pm.me-adresse. Opgrader for at sende beskeder og oprette yderligere adresser med @pm.me."
+        "Med dit nuværende abonnement kan du kun modtage beskeder med din @pm.me-adresse. Opgradér for at sende beskeder og oprette yderligere adresser med @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
@@ -11531,7 +11534,7 @@
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Du kan bruge ${ MAIL_APP_NAME } med enhver desktop e-mail-klient, der understøtter IMAP/SMTP, herunder Outlook, Apple Mail, og Thunderbird."
+        "Du kan bruge ${ MAIL_APP_NAME } med enhver desktop e-mail-klient, der understøtter IMAP/SMTP, herunder Outlook, Apple Mail og Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
@@ -11606,13 +11609,13 @@
         "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
-        "Du skal have en aktiv personlig kalender for at kunne importere dine begivenheder fra ICS."
+        "Du skal have en aktiv personlig kalender for at importere dine begivenheder fra ICS."
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "Du bør eksportere en sikkerhedskopi af denne nøgle, hvis du har brug for at gendanne data, som den krypterede nøgle har krypteret."
+        "Du bør eksportere en sikkerhedskopi af denne nøgle, hvis du har brug for at genoprette data, som den har krypteret."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Du bliver stadig nødt til at svare på invitationer, for at værten kan se dit svar."
+        "Du skal stadig svare på invitationer, for at værten kan se dit svar."
       ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Du vil kunne gøre brugeren til administrator, når han/hun har accepteret invitationen."
@@ -11630,7 +11633,7 @@
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
-        "Du vil IKKE kunne dekryptere meddelelser, filer og andre data, der er krypteret med denne nøgle. Alle data, der er signeret med denne nøgle, vil ikke længere være verificeret af ${ BRAND_NAME }-applikationer."
+        "Du vil IKKE kunne dekryptere meddelelser, filer og andre data, der er krypteret med denne nøgle. Alle data, der er signeret med denne nøgle, vil ikke længere være bekræftet af ${ BRAND_NAME }-applikationer."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
@@ -11990,7 +11993,7 @@
         "Ny nøgle genereret"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
-        "Dette vil generere en ny nøgle, som bruges til at kryptere fremtidige e-mails, blandt andre data."
+        "Dette vil generere en ny nøgle, som bruges til at kryptere fremtidige kontaktdetaljer, e-mail-krypteringsnøgler og andre data."
       ],
       "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
         "Dette vil generere en ny nøgle, som bruges til at kryptere fremtidige e-mails og andre data for **${ emailAddress }**."
@@ -12004,7 +12007,7 @@
         "Kompromitteret"
       ],
       "Disabled": [
-        "Deaktiveret"
+        "Slået fra"
       ],
       "Fallback": [
         "Reserve"
@@ -12265,10 +12268,10 @@
         "Slet"
       ],
       "Disables encryption with this key": [
-        "Deaktiverer kruptering med denne nøgle"
+        "Deaktiverer kryptering med denne nøgle"
       ],
       "Disables signature verification and encryption with this key": [
-        "Deaktiverer signaturverifikation og kryptering med denne nøgle"
+        "Deaktiverer signaturbekræftelse og kryptering med denne nøgle"
       ],
       "Enable encryption with this key": [
         "Aktivér kryptering med denne nøgle"
@@ -12277,7 +12280,7 @@
         "Aktivér signaturbekræftelse og kryptering med denne nøgle"
       ],
       "Export private key": [
-        "Importér privat nøgle"
+        "Eksportér privat nøgle"
       ],
       "Export public key": [
         "Eksportér offentlig nøgle"
@@ -12289,7 +12292,7 @@
         "Markér som kompromitteret"
       ],
       "Mark not compromised": [
-        "Markér ikke-kompromitteret"
+        "Markér som ikke-kompromitteret"
       ],
       "Mark not obsolete": [
         "Markér som ikke-forældet"
@@ -12448,7 +12451,7 @@
         "Tillad alle brugere at oprette bokse"
       ],
       "Allow data export for all users": [
-        "Tillad dataeksport for alle brugere"
+        "Tillad data eksport for alle brugere"
       ],
       "Allow individual item sharing": [
         "Tillad deling af individuelle elementer"
@@ -12613,7 +12616,7 @@
         "Kalendere"
       ],
       "Capitalize words": [
-        "Brug store bogstaver"
+        "Skriv ord med store begyndelsesbogstaver"
       ],
       "Card details": [
         "Kortoplysninger"
@@ -12670,7 +12673,7 @@
         "Skrivetilstand"
       ],
       "Composer text direction": [
-        "Skrivesession, tekstretning"
+        "Skrivevinduets tekstretning"
       ],
       "Conditions": [
         "Betingelser"
@@ -13093,7 +13096,7 @@
         "Markér som"
       ],
       "Maximum number of characters": [
-        "Maksimum antal tegn"
+        "Maksimalt antal tegn"
       ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "Maksimum antal tegn er ${ MAX_CHARS }"
@@ -13517,7 +13520,7 @@
         "Tidszone"
       ],
       "Tips and insights": [
-        "Tips og indblik"
+        "Tips og indsigt"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Hjælpe os med at forbedre os: Forklar, hvorfor du forlader os."
@@ -13550,7 +13553,7 @@
         "Upload 1 eller flere gendannelsesfiler eller krypteringsnøgler"
       ],
       "Uppercase": [
-        "Store bogstaver"
+        "Versaler"
       ],
       "Uppercase and lowercase letters": [
         "Store og små bogstaver"
@@ -14002,6 +14005,9 @@
       "Terms": [
         "Betingelser"
       ],
+      "terms of our referral program": [
+        "vilkårene for vores henvisningsprogram"
+      ],
       "Trouble signing in?": [
         "Problemer med at logge på?"
       ],
@@ -14280,14 +14286,14 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } link pr. kalender. For at oprette et nyt link til denne kalender, skal du slette et fra listen nedenfor.",
-        "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } links pr. kalender. For at oprette et nyt link til denne kalender, skal du slette et fra listen nedenfor."
+        "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } link per kalender. For at oprette et nyt link til denne kalender skal du slette et fra listen nedenfor.",
+        "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } links per kalender. For at oprette et nyt link til denne kalender skal du slette et fra listen nedenfor."
       ]
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem.",
-        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlemmer."
+        "Du har nået det maksimale på ${ MAX_CALENDAR_MEMBERS } medlem.",
+        "Du har nået det maksimale på ${ MAX_CALENDAR_MEMBERS } medlemmer."
       ]
     },
     "Member action": {
@@ -14336,7 +14342,7 @@
     },
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
-        "Alle filterhandlinger vil blive anvendt på alle beskeder i din ${ MAIL_APP_NAME }-konto. Ingen autosvar-e-mail vil blive sendt."
+        "Alle filterhandlinger vil blive anvendt på alle beskeder i din ${ MAIL_APP_NAME }-konto. Ingen autosvar-e-mails vil blive sendt."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Forbind dit brugerdomæne til ${ BRAND_NAME } for at oprette brugerdefinerede e-mailadresser (f.eks. dig@ditfirma.com). Vores guide leder dig gennem processen."
@@ -15849,7 +15855,7 @@
         "Nøgle med fingeraftryk ${ fp } slettet."
       ],
       "Key with fingerprint ${ fp } is now primary.": [
-        "Fingeraftryksnøgle ${ fp } er nu primær."
+        "Nøglen med fingeraftrykket ${ fp } er nu primær."
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
@@ -15909,7 +15915,7 @@
         "Invitation slettet"
       ],
       "Invitation revoked": [
-        "Invitation tilbagekaldt"
+        "Invitation annulleret"
       ],
       "Member added": [
         "Medlem tilføjet",
@@ -16202,7 +16208,7 @@
         "Månedligt d. 19."
       ],
       "1st of the month": [
-        "Månedligt d. 1."
+        "Den første i måneden"
       ],
       "20th of the month": [
         "Månedligt d. 20."
@@ -16214,7 +16220,7 @@
         "Månedligt d. 22."
       ],
       "23rd of the month": [
-        "Månedligt d. 23."
+        "d. 23 i måneden"
       ],
       "24th of the month": [
         "Månedligt d. 24."
@@ -16346,10 +16352,10 @@
         "Ikke tilladt"
       ],
       "Off": [
-        "Fra"
+        "Slået fra"
       ],
       "On": [
-        "Til"
+        "Slået til"
       ],
       "Optional ${ defaultLabel }": [
         "Valgfrit ${ defaultLabel }"
@@ -16361,7 +16367,7 @@
         "Permanent"
       ],
       "Plain text": [
-        "Simpel tekst"
+        "Almindelig tekst"
       ],
       "Receive from all": [
         "Modtag fra alle"
@@ -16379,7 +16385,7 @@
         "Påkrævet"
       ],
       "Right to Left": [
-        "Højre mod venstre"
+        "Højre mod Venstre"
       ],
       "Router": [
         "Router"
@@ -16745,6 +16751,9 @@
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Ved at fortsætte accepterer du vores ${ termsAndConditionsLink } og ${ privacyPolicyLink }."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
+        "Ved at fortsætte accepterer du vores ${ termsAndConditionsLink }, vores ${ privacyPolicyLink } og ${ referralPolicyLink }."
       ],
       "Creating your account": [
         "Opretter din konto"
@@ -17703,12 +17712,12 @@
     },
     "PQC adress key generation": {
       "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Post-kvantum-beskyttelse er blevet aktiveret på din konto, men nogle handlinger lykkedes ikke: Generering af post-kvantum-adressenøgler mislykkedes for en eller flere adresser. Du kan manuelt generere disse nøgler via ${ encryptionAndKeysSettingsTitle }-indstillingerne."
+        "Post-kvantebeskyttelse er blevet aktiveret på din konto, men nogle handlinger lykkedes ikke: Generering af post-kvante-adressenøgler mislykkedes for en eller flere adresser. Du kan manuelt generere disse nøgler via ${ encryptionAndKeysSettingsTitle }-indstillingerne."
       ]
     },
     "PQC compatibility warning": {
       "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Opdatér **alle dine ${ BRAND_NAME } mobilapps** til den seneste version."
+        "Opdater **alle dine ${ BRAND_NAME } mobilapps** til den seneste version."
       ]
     },
     "PQC key generation": {
@@ -17721,7 +17730,7 @@
         "Aktivér og generér nøgler"
       ],
       "Enable post-quantum protection": [
-        "Aktivér post-quantum beskyttelse"
+        "Aktivér post-kvantebeskyttelse"
       ],
       "Enable post-quantum protection?": [
         "Aktivér post-quantum beskyttelse?"
@@ -17737,7 +17746,7 @@
     },
     "pqc-optin: Info": {
       "Post-quantum protection has been enabled on your account!": [
-        "Postkvante-beskyttelse er blevet aktiveret på din konto!"
+        "Post-kvantebeskyttelse er blevet aktiveret på din konto!"
       ]
     },
     "pqc-optin: Progress status": {
@@ -18012,7 +18021,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Hvis du afmelder dig, vil du ikke længere have adgang til denne kalender. Alle begivenheder i denne kalender vil blive slettet fra din konto, men de vil forblive i det oprindelige offentlige link."
+        "Hvis du afmelder dig vil du ikke længere have adgang til denne kalender. Alle begivenheder i denne kalender vil blive slettet fra din konto, men de vil forblive i dit oprindelige offentlige link."
       ],
       "You will no longer have access to this calendar.": [
         "Du vil ikke længere have adgang til denne kalender."
@@ -19144,7 +19153,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Aktiver sektionen Fotos"
+        "Aktivér sektionen Fotos"
       ],
       "Get updates about comments via email": [
         "Få opdateringer om kommentarer via e-mail"
@@ -19231,7 +19240,7 @@
     },
     "Shared calendar label input placeholder": {
       "Add label": [
-        "Tilføj etikette"
+        "Tilføj etiket"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -19700,7 +19709,7 @@
         "E-mail-aliasser"
       ],
       "Email, calendar, password manager, and VPN included": [
-        "E-mail, kalender, adgangskodeadministrator og VPN"
+        "E-mail, kalender, adgangskodeadministrator og VPN er inkluderet"
       ],
       "End-to-end encrypted transactions": [
         "End-to-end krypterede transaktioner"
@@ -19736,7 +19745,7 @@
         "Den eneste erhvervsløsning, der er:"
       ],
       "The only cloud storage with:": [
-        "Den eneste cloud-storage-løsning med:"
+        "Den eneste sky-lagringsløsning med:"
       ],
       "The only email service with:": [
         "Den eneste e-mailtjeneste med:"
@@ -21126,7 +21135,7 @@
         "Genoptager import"
       ],
       "Server copied to clipboard": [
-        "Server kopieret til Udklipsholder."
+        "Server kopieret til udklipsholder"
       ],
       "Session revoked": [
         "Session tilbagekaldt"
@@ -21141,7 +21150,7 @@
         "SPF-værdi kopieret til udklipsholder"
       ],
       "Token copied to clipboard": [
-        "Token kopieret til udklipsholder."
+        "Token kopieret til udklipsholder"
       ],
       "Undo in progress": [
         "Annullering i gang"
@@ -21383,7 +21392,7 @@
     },
     "TableRow": {
       "No SMTP tokens found": [
-        "Ingen SMTP-token fundet"
+        "Ingen SMTP-tokens fundet"
       ]
     },
     "Time unit": {
@@ -21664,7 +21673,7 @@
         "Autosvar"
       ],
       "Automatically sign outgoing messages?": [
-        "Auto-signér udgående beskeder?"
+        "Auto-signer udgående beskeder?"
       ],
       "Backup and export": [
         "Sikkerhedskopiering og eksport"
@@ -22140,7 +22149,7 @@
         "Eksportér kalender"
       ],
       "Export private key": [
-        "Importér privat nøgle"
+        "Eksportér privat nøgle"
       ],
       "Export public key": [
         "Eksportér offentlig nøgle"
@@ -22319,7 +22328,7 @@
         "Importer grupper"
       ],
       "Import key": [
-        "Importer nøgle"
+        "Importér nøgle"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -22490,7 +22499,7 @@
         "Adgangskode"
       ],
       "Password generator rules": [
-        "Regler for adgangskodegenerator"
+        "Adgangskodegenerator regler"
       ],
       "Password reset settings": [
         "Indstillinger for nulstilling af adgangskode"
@@ -22499,7 +22508,7 @@
         "Adgangskoder på den nemme måde"
       ],
       "Pause list": [
-        "Sæt listen på pause"
+        "Pauseliste"
       ],
       "Pay invoice": [
         "Betal faktura"
@@ -22517,7 +22526,7 @@
         "PayPal-bekræftelse fejlede"
       ],
       "Personalize your email footer": [
-        "Personliggør din e-mail-sidefod"
+        "Gør din e-mail-sidefod personlig"
       ],
       "Phone": [
         "Telefon"
@@ -22667,7 +22676,7 @@
         "Sikkerhedsbegivenheder"
       ],
       "Security logs": [
-        "Sikkerhedslog"
+        "Sikkerhedslogge"
       ],
       "Select a plan": [
         "Vælg et abonnement"
@@ -22820,7 +22829,7 @@
         "Abonnement annulleret"
       ],
       "Success": [
-        "Lykkedes"
+        "Succes"
       ],
       "Successfully created ${ n } user account": [
         "Oprettede ${ n } brugerkonto",
@@ -22867,6 +22876,9 @@
       ],
       "Time zone": [
         "Tidszone"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Åbn dette regneark i ${ SHEETS_APP_NAME } eller download det for at forhåndsvise det."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prøv ${ AUTHENTICATOR_APP_NAME }"
@@ -22923,7 +22935,7 @@
         "Upload din organisations logo"
       ],
       "Usage Report": [
-        "Forbrugsrapport"
+        "Brugsrapport"
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
@@ -23184,7 +23196,7 @@
         "Administratorer kan administrere brugerkonti og give administratorrettigheder til andre brugere. Kun den primære administrator kan redigere abonnementet for organisationen."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Sømløst kan Zoom videokonferencelinks føjes til dine kalenderinvitationer."
+        "Giver mulighed for nemt at tilføje Zoom videokonferencelinks til din kalenderinvitation."
       ],
       "Any protection applied to suspicious activity": [
         "Enhver form for beskyttelse mod mistænkelig aktivitet"
@@ -23208,7 +23220,7 @@
         "Tilpas import for at reducere antallet af etiketter"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Slet papirkurven og spam-beskeder efter 30 dage. Hvis du slår automatisk sletning til, får beskeder, der allerede er i papirkurven/spam, en sletningsdato baseret på den dato, de blev flyttet dertil."
+        "Slet beskeder i papirkurven og spam efter 30 dage. Hvis du slår automatisk sletning til får beskeder, der allerede er i papirkurven/spam, en sletningsdato baseret på den dato de blev flyttet dertil."
       ],
       "Device name and app version": [
         "Enhedsnavn og app-version"
@@ -23259,7 +23271,7 @@
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Gruppér e-mails i den samme samtale sammen i din indbakke, eller vis dem separat."
+        "Gruppér e-mails i den samme samtale i din indbakke, eller vis dem separat."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Identitetsudbyderens offentlige nøgle til at underskrive godkendelsespåstande. Hent certifikathashen fra din identitetsudbyder."
@@ -23271,7 +23283,7 @@
         "Medlemmer, der ikke bruger 2FA, vil modtage en e-mail, der beder dem aktivere det hurtigst muligt. Single-sign-on-brugere vil ikke modtage e-mail-påmindelsen."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Beskeder i Sendt eller Kladder vil fortsætte med at blive vist i de mapper, selvom du flytter dem til en anden mappe."
+        "Beskeder i Sendt eller Kladder vil fortsat blive vist i den mappe, selvom du flytter dem til en anden mappe."
       ],
       "Not all information listed here was exposed for all users.": [
         "Ikke alle oplysninger på listen blev afsløret for alle brugere"
@@ -23295,7 +23307,7 @@
         "Vælg hvordan din liste over beskeder ser ud som standard."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Indstil standard-editorens popup-størrelse som lille eller fuld skærm."
+        "Indstil størrelsen på skrivevinduets standard popup som lille eller fuld skærm."
       ],
       "Set the default layout for your Inbox.": [
         "Indstil standardlayout for din indbakke."
@@ -23307,10 +23319,10 @@
         "Delte serverpolitikker kan anvendes på individuelle brugere eller grupper"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "Viser hver afsenders billede i meddelelseslisten. Afsenderens initialer vises, hvis der ikke er et billede til rådighed."
+        "Viser hver afsenders billede i beskedlisten. Afsenderens initialer vises når der ikke er et billede til rådighed."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Signaturer genereret af denne nøgle behandles som ugyldige, og denne nøgle kan ikke benyttes til kryptering"
+        "Signaturer produceret af denne nøgle behandles som ugyldige, og denne nøgle kan ikke bruges til kryptering"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
@@ -23349,7 +23361,7 @@
         "Denne e-mailadresse vises til alle organisationsmedlemmer, når de udfører administrative kontohandlinger."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Denne funktion forsinker afsendelse af dine e-mails. Du kan fortryde afsendelse inden for den valgte tidsramme."
+        "Denne funktion forsinker afsendelsen af dine e-mails, hvilket giver dig mulighed for at fortryde afsendelsen inden for den valgte tidsramme."
       ],
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"
@@ -23358,19 +23370,19 @@
         "Denne funktion er kun tilgængelig på Beta"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users on older mobile apps to encrypt data they send to you": [
-        "Dette er standardnøglen, der bruges af andre ${ MAIL_APP_NAME }-brugere på ældre mobilapps til at kryptere de data, de sender til dig"
+        "Dette er standardnøglen, der bruges af andre ${ MAIL_APP_NAME }-brugere på ældre mobilapps til at kryptere de data, som de sender til dig"
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
-        "Dette er standardnøglen, der bruges af andre ${ MAIL_APP_NAME }-brugere til at kryptere de data, de sender til dig"
+        "Dette er standardnøglen, der bruges af andre ${ MAIL_APP_NAME }-brugere til at kryptere de data, som de sender til dig"
       ],
       "This key cannot be used for encryption": [
-        "Nøglen kanm ikke benyttes til kryptering"
+        "Nøglen kan ikke benyttes til kryptering"
       ],
       "This key is encrypted with an old password": [
         "Denne nøgle er krypteret med en gammel adgangskode"
       ],
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "Denne nøgle bruges af ${ MAIL_APP_NAME } til at kryptere dine kontaktdata"
+        "Denne nøgle er brugt af ${ MAIL_APP_NAME } til at kryptere din kontakts data"
       ],
       "This key is used for email forwarding": [
         "Denne nøgle bruges til e-mail-videresendelse"
@@ -23409,7 +23421,7 @@
         "Når du tilføjer en etikette til en besked i en samtale, vil den automatisk blive anvendt på alle fremtidige beskeder, du sender eller modtager i denne samtale."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Ved klik på et link, vil denne anti-phishing-funktion bede dig om at bekræfte websidens URL."
+        "Når du klikker på et link, vil denne anti-phishing-funktion bede dig om at bekræfte websidens URL."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Når du flytter en e-mail til spam, bliver du automatisk afmeldt fra afsenderens mailinglister."
@@ -23452,7 +23464,7 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Dette føjer automatisk din offentlige nøgle til hver besked, du afsender. Modtagere kan benytte denne til at bekræfte ægtheden af dine beskeder og sende krypterede beskeder til dig."
+        "Dette føjer automatisk din offentlige nøgle til hver besked, som du sender. Modtagere kan bruge denne til at bekræfte ægtheden af dine beskeder og sende krypterede beskeder til dig."
       ]
     },
     "Tooltip default pgp scheme": {
@@ -23462,12 +23474,12 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Når du modtager en e-mail fra en anden bruger af ${ MAIL_APP_NAME }, som ikke har betroede nøgler i dine kontakter, vil et banner vil spørge, om du vil aktivere betroede nøgler."
+        "Når du modtager en e-mail fra en anden bruger af ${ MAIL_APP_NAME }, som ikke har betroede nøgler i dine kontakter, vil et banner spørge, om du vil aktivere betroede nøgler."
       ]
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Signér automatisk alle dine udgående beskeder, så brugerne kan bekræfte ægtheden af dine beskeder. Dette gøres i kombination med den standard PGP-konfiguration, der kan vælges nedenfor."
+        "Signér automatisk alle dine udgående beskeder, så brugerne kan bekræfte ægtheden af dine beskeder. Dette gøres i kombination med den standard PGP-konfiguration, der kan konfigureres nedenfor."
       ]
     },
     "Tooltip: PM signature locked": {
@@ -23687,7 +23699,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Opgradér til ${ passPlusPlanName } for at få ubegrænsede hide-my-email-aliasser"
+        "Opgradér til ${ passPlusPlanName } for at få ubegrænsede hide-my-email-aliasser."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Opgradér til ${ planName } for at forbinde op til ${ n } enhed til VPN'en samtidig",

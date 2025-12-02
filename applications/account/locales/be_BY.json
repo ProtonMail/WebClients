@@ -1056,6 +1056,9 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Адкрыць ${ PASS_APP_NAME } у вашым браўзеры"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Адкрыць у ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
@@ -1960,7 +1963,7 @@
         "Трымае ваш расклад у сакрэце"
       ],
       "Protect your passwords and identity": [
-        "Абарона вашых пароляў ідэнтычнасці"
+        "Абарона вашых пароляў і ідэнтычнасці"
       ],
       "Safeguard your files and photos": [
         "Абарона вашых файлаў і фатаграфій"
@@ -2447,6 +2450,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Ці можа нехта іншы ўбачыць маю гісторыю прагляду вэб-старонак, калі мы выкарыстоўваем аднолькавае падключэнне па Wi-Fi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Падключыце да ${ VPN_CONNECTIONS } прылад адначасова"
+      ],
       "Create and edit with confidence": [
         "Стварайце і рэдагуйце з упэўненасцю"
       ],
@@ -2560,6 +2566,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Перамяшчацца ў інтэрнэце, які запоўнены брокерскімі данымі, спамам, махлярствам і шкоднымі праграмамі, становіцца ўсё больш складана. Вось чаму ${ PASS_APP_NAME } не толькі дапамагае вам кіраваць, захоўваць і аўтаматычна запаўняць вашы паролі, але і забяспечвае вас інструментамі для кантролю прыватнасці і абароны паштовых скрынь з дапамогай псеўданімаў hide-my-email."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Абараніце ўсе свае дамашнія прылады адначасова з ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Абараніце свае дзелавыя зносіны"
@@ -2896,7 +2905,7 @@
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Абагуліце ваш каляндар з іншымі карыстальнікамі ${ BRAND_NAME }. Арганізуйце сумесную працу, дазволіўшы ім дадаваць і рэдагаваць падзеі ў сваім календары. Вы можаце змяніць дазволы карыстальніка ў любы момант."
+        "Абагуліце свой каляндар з іншымі карыстальнікамі ${ BRAND_NAME }. Арганізуйце сумесную працу, дазволіўшы ім дадаваць і рэдагаваць падзеі ў сваім календары. Вы можаце змяніць дазволы карыстальніка ў любы момант."
       ]
     },
     "Calendar settings section title": {
@@ -2952,7 +2961,7 @@
         "Прадвызначаны"
       ],
       "Disabled": [
-        "Адключаны"
+        "Адключана"
       ],
       "Not synced": [
         "Не сінхранізавана"
@@ -5506,7 +5515,7 @@
         "Узнавіць"
       ],
       "Save": [
-        "Захаваць"
+        "Эканомце"
       ],
       "Send confirmation email": [
         "Адправіць ліст з пацвярджэннем"
@@ -5530,7 +5539,7 @@
     },
     "email_forwarding_2023: Forwarding tooltip": {
       "Emails forwarded to you are excluded and will not be forwarded.": [
-        "Лісты перасланыя вам выключаюцца і больш перасылацца не будуць."
+        "Лісты, якія перасылаюцца вам, выключаюцца і больш перасылацца не будуць."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -5541,7 +5550,7 @@
         "Пераслана ад"
       ],
       "Forward to": [
-        "Пераслаць на"
+        "Перасылаць на"
       ],
       "From": [
         "Ад"
@@ -6081,7 +6090,7 @@
         "Памылка аўтэнтыфікацыі."
       ],
       "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
-        "Аўтадказ на паведамленне перавышае дазволеную даўжыню. Скараціце тэкст паведамлення, каб яно адпавядала ўстаноўленаму абмежаванню."
+        "Аўтаматычны адказ на паведамленне перавышае дазволеную даўжыню. Скараціце тэкст паведамлення, каб яно адпавядала ўстаноўленаму абмежаванню."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Аўтаматычныя адказы з'яўляюцца платнай функцыяй. Перайдзіце на платны ўліковы запіс, каб карыстацца імі."
@@ -7408,6 +7417,9 @@
       "15 GB storage": [
         "15 ГБ сховішча"
       ],
+      "4 more privacy services": [
+        "яшчэ 4 паслугі прыватнасці"
+      ],
       "@pm.me address": [
         "адрас @pm.me"
       ],
@@ -7693,7 +7705,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Дадайце ўласны фільтр для выканання такіх аўтаматычных дзеянняў, як пазначэнне меткай або архіваванне паведамленняў."
+        "Дадайце карыстальніцкі фільтр для выканання такіх аўтаматычных дзеянняў, як пазначэнне меткай або архіваванне паведамленняў."
       ],
       "Allow:": [
         "Дазволеныя:"
@@ -8067,7 +8079,7 @@
         "Адрас электроннай пошты"
       ],
       "Last used": [
-        "Апошні выкарыстаны"
+        "Апошняе выкарыстанне"
       ],
       "Token name": [
         "Назва токена"
@@ -8096,6 +8108,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Разблакіруйце 4 прэміяльныя сэрвісы прыватнасці ўсяго за **${ priceString }** дадатковай платы ў месяц"
       ],
       "Upgrade your privacy": [
         "Паляпшэнне вашай прыватнасці"
@@ -8536,7 +8551,7 @@
         "Ключ будзе выкарыстоўвацца для расшыфроўкі пры паўторнай актывацыі"
       ],
       "If reactivated, the key will be used for decryption and verification": [
-        "Ключ будзе выкарыстоўвацца для расшыфроўкі пры паўторнай актывацыі і праверцы"
+        "Ключ будзе выкарыстоўвацца для расшыфроўкі пры паўторнай актывацыі і спраўджванні"
       ]
     },
     "Info": {
@@ -8802,10 +8817,10 @@
         "${ storage } сховішча"
       ],
       "${ url } added.": [
-        "${ url } дададзена."
+        "Дададзены ${ url }."
       ],
       "${ url } deleted.": [
-        "${ url } выдалена."
+        "Выдалены ${ url }."
       ],
       "${ userFound } user found": [
         "Знойдзены ${ userFound } карыстальнік",
@@ -8967,7 +8982,7 @@
         "актыўна"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
+        "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"\"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
       ],
       "add a recovery method": [
         "дададзены спосаб аднаўлення"
@@ -9117,7 +9132,7 @@
         "Любы карыстальнік з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, такія як загаловак, размяшчэнне або ўдзельнікаў."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Любыя карыстальнікі з гэтай спасылкай не змогуць сінхранізаваць або атрымліваць будучыя абнаўленні для вашага календара. Калі вы зноў захочаце даць ім доступ, вам неабходна будзе стварыць новую спасылку."
+        "Любы карыстальнік з гэтай спасылкай не зможа сінхранізаваць або атрымліваць будучыя абнаўленні для вашага календара. Калі вы зноў захочаце даць ім доступ, вам неабходна будзе стварыць новую спасылку."
       ],
       "Are you sure you want to cancel editing the group?": [
         "Вы сапраўды хочаце скасаваць рэдагаванне групы?"
@@ -9198,19 +9213,19 @@
         "Праграма аўтэнтыфікацыі 2ФА уключана"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Аўтаадказ актыўны кожны месяц з пачатковага па канчатковы час."
+        "Аўтаматычны адказ актыўны кожны месяц з пачатковага па канчатковы час."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "Аўтаадказ актыўны кожны тыдзень з пачатковага па канчатковы час."
+        "Аўтаматычны адказ актыўны кожны тыдзень з пачатковага па канчатковы час."
       ],
       "Auto-reply is active from the start time to the end time.": [
-        "Аўтаадказ актыўны з пачатковага па канчатковы час."
+        "Аўтаматычны адказ актыўны з пачатковага па канчатковы час."
       ],
       "Auto-reply is active until you turn it off.": [
-        "Аўтаадказ актыўны да таго часу, пакуль вы не адключыце яго."
+        "Аўтаматычны адказ актыўны да таго часу, пакуль вы не адключыце яго."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Аўтаадказ заўсёды актыўны ў выбраныя вамі дні тыдня паміж выбранымі гадзінамі."
+        "Аўтаматычны адказ заўсёды актыўны ў выбраныя вамі дні тыдня паміж выбранымі гадзінамі."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
@@ -9582,7 +9597,7 @@
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "Спампуйце вашы ключы PGP, каб выкарыстоўваць іх з іншымі сумяшчальнымі сэрвісамі PGP."
+        "Спампуйце свае ключы PGP, каб выкарыстоўваць іх з іншымі сумяшчальнымі сэрвісамі PGP."
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -9861,7 +9876,7 @@
         "Дайце токену апісальную назву. Гэта можа быць назва паслугі, з якой вы плануеце яго выкарыстоўваць, і выберыце адзін з вашых актыўных адрасоў карыстальніцкіх даменаў. Толькі гэты адрас зможа адпраўляць лісты з гэтым токенам."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Падзяліцеся сваім публічным ключом з сябрамі або апублікуйце яго ў інтэрнэце, каб кожны мог адпраўляць вам лісты са скразным шыфраваннем!"
+        "Перадайце свой публічны ключ сябрам або апублікуйце яго ў інтэрнэце, каб кожны мог адпраўляць вам лісты са скразным шыфраваннем!"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
@@ -9888,7 +9903,7 @@
         "тут"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Хавае ідэнтыфікацыйныя звесткі шляхам загрузкі аддаленага змесціва праз проксі. Магчымасць захавання змесціва ў якасці далучэнняў."
+        "Хавае ідэнтыфікацыйную інфармацыю шляхам загрузкі аддаленага змесціва праз проксі. Магчымасць захавання змесціва ў якасці далучэнняў."
       ],
       "High Priority": [
         "Высокі прыярытэт"
@@ -9900,7 +9915,7 @@
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
       ],
       "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Новым удзельнікам арганізацыі спатрэбіцца, каб адміністратар уручную стварыў для іх першае сховішча (праз абагульванне) і толькі пасля гэтага яны змогуць пачаць ствараць элементы"
+        "Новым удзельнікам арганізацыі спатрэбіцца, каб адміністратар уручную стварыў для іх першае сховішча (праз абагульванне) і толькі пасля гэтага яны змогуць пачаць ствараць элементы, калі функцыя адключана."
       ],
       "If disabled, only administrators will be able to export data.": [
         "Толькі адміністратары будуць здольныя экспартаваць даныя, калі гэты параметр будзе адключаны."
@@ -10395,7 +10410,7 @@
         "Колькасць элементаў, да якіх у карыстальніка ёсць доступ (уключаючы элементы ва ўласнасці + абагуленыя элементы)"
       ],
       "Number of vaults the user has access to (includes owned vaults + shared vaults)": [
-        "Колькасць сховішчаў, да якіх у карыстальніка ёсць доступ (уключаючы сховішчы ва ўласнасці + абагуленыя сховішчы)"
+        "Колькасць сховішчаў, да якіх у карыстальніка ёсць доступ (уключаючы ўласныя сховішчы + абагуленыя сховішчы)"
       ],
       "Numbers": [
         "Лічбы"
@@ -10878,10 +10893,10 @@
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для вашых карыстальніцкіх адрасоў дамена."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў"
+        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб карыстацца гэтай функцый, згенерыруйце новы токен."
+        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Згенерыруйце новы токен, каб карыстацца гэта функцыяй."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Адкладайце паведамленні на потым, каб яны знаходзіліся ў верхняй частцы вашай паштовай скрыні, калі вам гэта неабходна"
@@ -11175,7 +11190,7 @@
         "Гэта адключыць вашу бягучую фразу аднаўлення. Вы не зможаце выкарыстоўваць яе для доступу да вашага ўліковага запісу або расшыфроўкі даных."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "Гэта спампуе файлы з вашым прыватным ключом. Абараніце гэты файл, зашыфраваўшы яго паролем."
+        "Гэта дзеянне прывядзе да спампоўвання файла з вашым прыватным ключом. Абараніце гэты файл, зашыфраваўшы яго паролем."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
@@ -11226,7 +11241,7 @@
         "Каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO, вы павінны спраўдзіць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "Каб не страціць даныя, выдаляйце іх толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях."
+        "Выдаляйце даныя толькі пасля экспартавання копіі або калі цалкам упэўнены ў сваіх дзеяннях, каб пазбегнуць іх страты."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Звяжыцеся з намі, каб скасаваць сваю падпіску"
@@ -11577,7 +11592,7 @@
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Калі апавяшчэнні ўключаны, то мы адпраўляем абвестку на ваш адрас аднаўлення, калі ў вашай паштовай скрыні ${ MAIL_APP_NAME } з'яўляюцца новыя паведамленні."
+        "Калі апавяшчэнні ўключаны, то будуць адпраўляцца абвесткі на ваш адрас аднаўлення, калі ў вашай паштовай скрыні ${ MAIL_APP_NAME } з'яўляюцца новыя паведамленні."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Калі яны падпішуцца на тарыфны план, вы атрымаеце крэдыты для выкарыстання на вашай падпісцы."
@@ -11587,6 +11602,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Пасля скасавання ваша падпіска не будзе актывавана, але вы зможаце працягваць карыстацца перавагамі тарыфнага плана да завяршэння пробнага перыяду. Пасля яго завяршэння вы будзеце паніжаны да бясплатнага плана ${ BRAND_NAME }."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Калі вы націсніце на спасылку, функцыя антыфішынгавай абароны папросіць вас пацвердзіць URL-адрас вэб-старонкі."
@@ -11856,7 +11874,7 @@
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
-        "Вы НЕ зможаце расшыфраваць ніякія паведамленні, файлы або іншыя даныя, якія былі зашыфраваны гэтым ключом. Усе даныя, падпісаныя гэтым ключом, больш не будуць правярацца праграмамі ${ BRAND_NAME }."
+        "Вы НЕ зможаце расшыфраваць ніякія паведамленні, файлы або іншыя даныя, якія былі зашыфраваны гэтым ключом. Усе даныя, падпісаныя гэтым ключом, больш не будуць спраўджвацца праграмамі ${ BRAND_NAME }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
@@ -12205,10 +12223,10 @@
         "Расшыфроўка"
       ],
       "Decryption, verification": [
-        "Расшыфроўка, праверка"
+        "Расшыфроўка, спраўджанне"
       ],
       "Encryption, decryption, signing, verification": [
-        "Шыфраванне, расшыфроўка, падпісанне, праверка"
+        "Шыфроўка, расшыфроўка, падпісанне, праверка"
       ]
     },
     "Key generation": {
@@ -12242,7 +12260,7 @@
         "Скампраметаваны"
       ],
       "Disabled": [
-        "Адключаны"
+        "Адключана"
       ],
       "Fallback": [
         "Запасны варыянт"
@@ -12693,7 +12711,7 @@
         "Дазволіць"
       ],
       "Allow all users to create vaults": [
-        "Дазволіць усім карыстальніка ствараць сховішчы"
+        "Дазволіць усім карыстальнікам ствараць сховішчы"
       ],
       "Allow data export for all users": [
         "Дазволіць экспартаванне даных для ўсіх карыстальнікаў"
@@ -12789,10 +12807,10 @@
         "Аўтавыдаленне непажаданых паведамленняў"
       ],
       "Auto-detect primary time zone": [
-        "Аўтавызначэнне асноўнага часавага пояса"
+        "Аўтаматычнае вызначэнне асноўнага часавага пояса"
       ],
       "Auto-reply": [
-        "Аўтаадказ"
+        "Аўтаматычны адказ"
       ],
       "Auto-unsubscribe": [
         "Аўтаскасаванне падпіскі"
@@ -13071,7 +13089,7 @@
         "Больш не пытаць"
       ],
       "Don't keep versions": [
-        "Не захоўваць версіі"
+        "Не пакідаць версіі"
       ],
       "Don't show this again": [
         "Больш не паказваць"
@@ -13278,7 +13296,7 @@
         "Заставацца ў сістэме"
       ],
       "Keep messages in Sent/Drafts": [
-        "Захоўваць паведамленні ў Адпраўленых/Чарнавіках"
+        "Пакідаць паведамленні ў Адпраўленых/Чарнавіках"
       ],
       "Key": [
         "Ключ"
@@ -13665,7 +13683,7 @@
         "Паказваць відарысы адпраўніка"
       ],
       "Show unread count in Favicon": [
-        "Паказваць колькасць непрачытаных у піктаграме сайта"
+        "Паказваць колькасць непрачытаных у значку сайта"
       ],
       "Show week numbers": [
         "Паказваць нумары тыдняў"
@@ -13988,7 +14006,7 @@
         "Разгорнуты"
       ],
       "Normal": [
-        "Звычайны"
+        "Звычайна"
       ]
     },
     "Label to change density": {
@@ -16680,7 +16698,7 @@
         "Няма"
       ],
       "Normal": [
-        "Звычайны"
+        "Звычайна"
       ],
       "Not allowed": [
         "Забаронена"
@@ -18064,7 +18082,7 @@
     },
     "PQC account key generation": {
       "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "Постквантавая абарона была ўключана ў вашым уліковым запісе, але некаторыя аперацыі не былі паспяхова выкананы: адбыўся збой пры генерацыі постквантавых ключоў уліковага запісу. Вы можаце ўручную згенерыраваць гэтыя ключы ў наладах ${ encryptionAndKeysSettingsTitle }."
+        "Постквантавая абарона была ўключана ў вашым уліковым запісе, але некаторыя аперацыі не былі паспяхова выкананы: адбыўся збой пры генерацыі постквантавых ключоў уліковага запісу і адраса. Вы можаце ўручную згенерыраваць гэтыя ключы ў наладах ${ encryptionAndKeysSettingsTitle }."
       ]
     },
     "PQC adress key generation": {
@@ -18079,7 +18097,7 @@
     },
     "PQC key generation": {
       "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Гэта дзеянне прывядзе да генерацыі новага ключа ўліковага запісу і новага ключа шыфравання электроннай пошты для кожнага адраса; яны будуць выкарыстоўвацца для шыфравання і расшыфравання будучых лістоў і іншых даных."
+        "Гэта дзеянне прывядзе да генерацыі новага ключа ўліковага запісу і новага ключа шыфравання электроннай пошты для кожнага адраса; яны будуць выкарыстоўвацца для шыфроўкі і расшыфроўкі будучых лістоў і іншых даных."
       ]
     },
     "PQC optin": {
@@ -18093,12 +18111,12 @@
         "Уключыць постквантавую абарону?"
       ],
       "Enabling post-quantum protection failed. Try again later.": [
-        "Уключэнне постквантавай абароны не атрымалася. Паспрабуйце яшчэ раз пазней."
+        "Збой уключэння постквантавай абароны. Паспрабуйце яшчэ раз пазней."
       ]
     },
     "pqc-optin: Action": {
       "Got it": [
-        "Зразумела"
+        "Добра"
       ]
     },
     "pqc-optin: Info": {
@@ -18127,7 +18145,7 @@
         "Асноўны часавы пояс"
       ],
       "Secondary time zone": [
-        "Дадатковы часавы пояс"
+        "Другі часавы пояс"
       ]
     },
     "Property type": {
@@ -18333,6 +18351,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Вы будзеце паніжаны да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, калі скасуеце тарыфны план да завяршэння пробнага перыяду. Ваш поўны тарыфны план пачне дзейнічаць і вы атрымаеце **${ referrerRewardAmount }** у крэдытах, калі не зробіце гэтага."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Вы страціце сваю ўзнагароду ў выглядзе крэдытаў на суму **${ referrerRewardAmount }** пры скасаванні падпіскі."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Вы атрымаеце **${ referrerRewardAmount }** у крэдытах, калі падпішацеся на тарыфны план да гэтай даты. Вы будзеце паніжаны да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, калі не зробіце гэтага."
       ],
@@ -18377,7 +18398,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Скасаваўшы падпіску, вы больш не зможаце атрымліваць доступ да гэтага календара. Усе падзеі ў гэтым календары будуць выдалены з вашага ўліковага запісу, але яны застануцца ў арыгінальнай публічнай спасылцы."
+        "Вы больш не зможаце атрымліваць доступ да гэтага календара, калі скасуеце падпіску. Усе падзеі ў гэтым календары будуць выдалены з вашага ўліковага запісу, але яны застануцца ў арыгінальнай публічнай спасылцы."
       ],
       "You will no longer have access to this calendar.": [
         "У вас больш не будзе доступу да гэтага календара."
@@ -18385,7 +18406,7 @@
     },
     "Remove calendar section text": {
       "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Калі вы выйдзіце з гэтага календара, вам давядзецца адпраўляць запыт на далучэнне ўладальніку яшчэ раз."
+        "Вам давядзецца адпраўляць запыт на далучэнне ўладальніку яшчэ раз, калі вы выйдзіце з гэтага календара."
       ],
       "This calendar will be removed from your account.": [
         "Гэты каляндар будзе выдалены з вашага ўліковага запісу."
@@ -21465,10 +21486,10 @@
         "Прывілеі адміністратара адноўлены"
       ],
       "Auto-reply disabled": [
-        "Аўтаадказ адключаны"
+        "Аўтаматычны адказ адключаны"
       ],
       "Auto-reply updated": [
-        "Аўтаадказ абноўлены"
+        "Аўтаматычны адказ абноўлены"
       ],
       "Backup password updated": [
         "Рэзервовы пароль абноўлены"
@@ -22304,6 +22325,9 @@
       "Connect organization": [
         "Падключэнне арганізацыі"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Падключайце да ${ VPN_CONNECTIONS } прылад адначасова з ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
       ],
@@ -22668,7 +22692,7 @@
         "Экспартаваць каляндар"
       ],
       "Export private key": [
-        "Экспартаваць прыватны ключ"
+        "Экспартаванне прыватнага ключа"
       ],
       "Export public key": [
         "Экспартаваць публічны ключ"
@@ -22743,7 +22767,7 @@
         "Згенерыраваць новую фразу аднаўлення?"
       ],
       "Generate SMTP token": [
-        "Згенерыраваць токен SMTP"
+        "Згенераваць токен SMTP"
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Атрымайце ${ planMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў з тарыфным планам ${ planName }. ${ upgradeButton }"
@@ -23333,6 +23357,9 @@
       "Start import process": [
         "Пачаць працэс імпартавання"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Пачніце абараняць свае прылады з праграмай ${ VPN_APP_NAME }."
+      ],
       "State": [
         "Стан"
       ],
@@ -23398,6 +23425,9 @@
       ],
       "Time zone": [
         "Часавы пояс"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Адкрыйце гэту электронную табліцу ў ${ SHEETS_APP_NAME } або спампуйце яе для папярэдняга прагляду."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Паспрабуйце ${ AUTHENTICATOR_APP_NAME }"
@@ -23715,7 +23745,7 @@
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцый Zoom у запрашэнні вашага календара."
+        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцыю Zoom у запрашэнні вашага календара."
       ],
       "Any protection applied to suspicious activity": [
         "Любая абарона ўжываецца да падазронай актыўнасці"
@@ -23790,7 +23820,7 @@
         "Пошта Gmail аўтаматычна класіфікуе некаторыя лісты, такія як \"Сацыяльныя\" і \"Рэклама\". Вы можаце выбраць куды імпартаваць гэтыя лісты."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Групуйце лісты ў адну размову ў папцы Уваходныя або адлюстроўвайце іх асобна."
+        "Групуйце лісты ў адну размову ў папцы з уваходнымі лістамі або адлюстроўвайце іх асобна."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
@@ -23802,7 +23832,7 @@
         "Удзельнікі, якія не выкарыстоўваюць 2ФА, атрымаюць ліст з просьбай уключыць яе як мага хутчэй. Карыстальнікі з адзіным уваходам напамін на сваю электронную пошту не атрымаюць."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Паведамленні ў папках Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
+        "Паведамленні ў папцы Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
       ],
       "Not all information listed here was exposed for all users.": [
         "Не ўсе пералічаныя тут звесткі былі скампраметаваны для ўсіх карыстальнікаў."
@@ -23817,7 +23847,7 @@
         "Зыходны IP-адрас і пастаўшчык паслуг інтэрнэту (ISP)"
       ],
       "Remove metadata from images to protect your privacy.": [
-        "Выдаліць метаданыя з відарысаў, каб абараніць вашу прыватнасць."
+        "Выдаляйце метаданыя з відарысаў, каб абараніць сваю прыватнасць."
       ],
       "See number of unread messages in the tab icon": [
         "Праглядайце колькасць непрачытаных паведамленняў у закладцы значка"
@@ -23880,7 +23910,7 @@
         "Гэты адрас электроннай пошты будзе паказаны ўсім удзельнікам арганізацыі пры выкананні аперацый па кіраванні ўліковым запісам."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Гэта функцыя затрымлівае адпраўку вашых паведамленняў, што дае вам магчымасць адрабіць адпраўку на працягу выбранага перыяду часу."
+        "Гэта функцыя затрымлівае адпраўку вашых лістоў, што дае вам магчымасць адрабіць адпраўку на працягу выбранага перыяду часу."
       ],
       "This feature is only available for paid users": [
         "Гэта функцыя даступна толькі для карыстальнікаў з платнымі тарыфнымі планамі"
@@ -23937,13 +23967,13 @@
         "Калі ўключана, то анімацыя і пераходы паказвацца не будуць"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Калі вы дабавіце метку да паведамлення ў размове, то яна будзе аўтаматычна ўжыта да ўсіх вашых наступных уваходных або выходных лістоў у гэтай размове."
+        "Пры дадаванні меткі да паведамлення ў размове, яна будзе аўтаматычна ўжыта да ўсіх вашых наступных уваходных або выходных лістоў у гэтай размове."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Калі вы націсніце на спасылку, функцыя антыфішынгавай абароны папросіць вас пацвердзіць URL-адрас вэб-старонкі."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "Калі вы перамясціце ліст у спам, ваша падпіска будзе скасавана аўтаматычна ў спісе рассылкі адпраўніка."
+        "Вы аўтаматычна будзеце адпісаны ад спіса рассылкі адпраўніка, калі вы перамясціце ліст у спам."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Ваша паштовая скрыня ${ MAIL_APP_NAME } амаль запоўнена"
@@ -23988,17 +24018,17 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Выберыце прадвызначаныя налады PGP, якія будуць выкарыстоўвацца для падпісання або шыфравання паведамленняў карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME } PGP. Звярніце ўвагу, што ўбудаваны PGP прымусова адпраўляе паведамленні як звычайны тэкст."
+        "Выберыце прадвызначаныя налады PGP, якія будуць выкарыстоўвацца для падпісання або шыфравання паведамленняў карыстальнікаў, якія не карыстаюцца PGP ад ${ BRAND_NAME }. Звярніце ўвагу, што ўбудаваны PGP прымусова адпраўляе паведамленні як звычайны тэкст."
       ]
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "У выпадку атрымання лістоў ад іншага карыстальніка ${ MAIL_APP_NAME }, які не мае давераных ключоў у вашых кантактах, вы ўбачыце банер з пытаннем пра актывацыю гэтых ключоў."
+        "Пры атрыманні лістоў ад іншага карыстальніка ${ MAIL_APP_NAME }, які не мае давераных ключоў у вашых кантактах, вы ўбачыце банер з пытаннем дазволу гэтых ключоў."
       ]
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі спраўдзіць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігураваць пазней."
+        "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі спраўдзіць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігурыраваць пазней."
       ]
     },
     "Tooltip: PM signature locked": {
@@ -24249,6 +24279,12 @@
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Атрымайце ${ drivePlusPlanMaxSpace } сховішча для вашых файлаў, фатаграфій і дакументаў, а таксама ў вас будзе магчымасць аднаўляць версіі файлаў за 10 гадоў."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Кошт платнай падпіскі складае ад ${ fallBackString } у месяц"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Набор прыватнасці з бяспечнай электроннай поштай, ${ VPN_SHORT_APP_NAME }, воблачным сховішчам і менеджарам пароляў у адным камплекце. Усяго на **${ priceString }** больш штомесяц, чым вы плаціце цяпер."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Абараніце сваю арганізацыю ад парушэнняў даных з дапамогай ${ PLAN_NAMES[plan] }."
@@ -24755,7 +24791,7 @@
         "Налады даты і часу на вашай прыладзе не сінхранізуюцца. ${ learnMore }"
       ],
       "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "Прылада або сэрвіс, якія выкарыстоўваюць гэты токен больш не змогуць адпраўляць лісты праз ${ MAIL_APP_NAME }."
+        "Прылада або сэрвіс, якія выкарыстоўваюць гэты токен, больш не змогуць адпраўляць лісты праз ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Гэта імпартаванне можа перавысіць ёмістасць сховішча, якое цяпер даступна для вашага ўліковага запісу ${ BRAND_NAME }. Змяніце налады імпартавання."
