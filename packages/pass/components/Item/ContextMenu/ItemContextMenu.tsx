@@ -23,7 +23,7 @@ import type { ItemState } from '@proton/pass/hooks/items/useItemState';
 import { useItemState } from '@proton/pass/hooks/items/useItemState';
 import { otpGenerationErrorNotifcation } from '@proton/pass/hooks/useOTPCode';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import type { Item, ItemRevision, Share } from '@proton/pass/types';
+import type { Item, ItemRevisionWithOptimistic, Share } from '@proton/pass/types';
 import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
@@ -206,7 +206,7 @@ const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): C
           ];
 };
 
-type Props = { item: ItemRevision; share: Share; anchorRef: RefObject<HTMLElement> };
+type Props = { item: ItemRevisionWithOptimistic; share: Share; anchorRef: RefObject<HTMLElement> };
 
 export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const id = getItemKey(item);
@@ -219,6 +219,8 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const itemActions = useItemActions(item);
 
     const elements: ContextMenuElement[] = useMemo(() => {
+        if (item.failed) return [];
+
         const getTotp = getTotpFactory(generateOTP, createNotification);
         const copyBtns: ContextMenuElement[] = getItemCopyButtons(item.data, getTotp).filter(({ copy }) => !!copy);
         const actionBtns = getItemActionButtons(itemState, itemActions);
