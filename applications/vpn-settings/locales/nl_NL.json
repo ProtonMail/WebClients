@@ -56,6 +56,9 @@
       "Add": [
         "Voeg toe"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Voeg ${ BRAND_NAME }-adres toe"
+      ],
       "Add account": [
         "Account toevoegen"
       ],
@@ -79,6 +82,9 @@
       ],
       "Add external address": [
         "Extern adres toevoegen"
+      ],
+      "add more seats": [
+        "meer licenties toevoegen"
       ],
       "Add PayPal": [
         "PayPal toevoegen"
@@ -479,6 +485,9 @@
       "Get a new encrypted email address": [
         "Verkrijg een nieuw versleuteld e-mailadres"
       ],
+      "Get Deal": [
+        "Neem deze aanbieding"
+      ],
       "Get in touch": [
         "Neem contact op"
       ],
@@ -656,11 +665,17 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Openen in ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Navigatie openen"
       ],
       "Or": [
         "Of"
+      ],
+      "Or use a different Gmail address": [
+        "Of gebruik een ander Gmail-adres"
       ],
       "Organization": [
         "Organisatie"
@@ -1076,6 +1091,9 @@
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
+      "Use this Gmail address": [
+        "Gebruik dit Gmail-adres"
+      ],
       "Use your current email instead": [
         "Gebruik in plaats daarvan uw huidige e-mailadres"
       ],
@@ -1156,6 +1174,13 @@
       ]
     },
     "Addon": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe Schrijfassistent"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant (for ${ quantity } user)": [
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruiker)",
+        "${ BRAND_NAME } Scribe schrijfassistent (voor ${ quantity } gebruikers)"
+      ],
       "${ domains } additional custom domain": [
         "${ domains } extra aangepast domein",
         "${ domains } extra aangepaste domeinen"
@@ -1166,6 +1191,10 @@
       ],
       "${ LUMO_APP_NAME } AI assistant": [
         "${ LUMO_APP_NAME } AI-assistent"
+      ],
+      "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
+        "${ LUMO_APP_NAME } AI assistent (voor ${ quantity } gebruiker)",
+        "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
       ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
@@ -1178,6 +1207,10 @@
       ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ quantity } custom domain": [
+        "${ quantity } aangepast domein",
+        "${ quantity } aangepaste domeinen"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
@@ -1213,6 +1246,12 @@
       ],
       "Disallow unsigned mail": [
         "Verbied ongetekende mail"
+      ],
+      "Disconnect": [
+        "Verbinding verbreken"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Adres “${ emailAddress }” loskoppelen"
       ],
       "Edit": [
         "Bewerken"
@@ -1373,6 +1412,9 @@
       ],
       "on ${ formattedDate }": [
         "op ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Probeer ${ selected } ${ freeForNDays }"
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Probeer het gratis voor ${ TRIAL_DURATION_DAYS } dagen"
@@ -1696,6 +1738,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Kan iemand mijn zoekgeschiedenis zien als we dezelfde WiFi gebruiken?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Verbind ${ VPN_CONNECTIONS } apparaten tegelijk"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Schakel IP-beveiliging en automatische verbinding in bij uw VPN-instellingen."
       ],
@@ -1723,6 +1768,9 @@
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Leer hoe u ${ VPN_APP_NAME } kunt inschakelen op uw router"
       ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Bescherm al uw huishoudelijke apparaten tegelijkertijd met ${ PLAN_NAMES[PLANS.BUNDLE] }."
+      ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Bescherm uw bedrijf tegen datalekken en maak werken op afstand veiliger met een zakelijke VPN."
       ],
@@ -1740,6 +1788,9 @@
       ],
       "Watch your favorite movies and TV shows": [
         "Bekijk uw favoriete films en tv-series"
+      ],
+      "We discuss how to change the external and local IP addresses of your Windows device.": [
+        "Wij bespreken hoe u de externe en lokale IP-adressen van uw Windows-apparaat kunt wijzigen."
       ],
       "Which VPN protocol is the best?": [
         "Welk VPN-protocol is het beste?"
@@ -1843,8 +1894,14 @@
       ]
     },
     "Button": {
+      "Add users manually": [
+        "Handmatig gebruikers toevoegen"
+      ],
       "Close": [
         "Sluiten"
+      ],
+      "Configure your network": [
+        "Configureer uw netwerk"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
@@ -1864,11 +1921,20 @@
       "Discover and set up features": [
         "Ontdek en configureer functies"
       ],
+      "Invite your team": [
+        "Nodig je team uit"
+      ],
+      "Manage global VPN permissions": [
+        "Globale VPN-machtigingen beheren"
+      ],
       "Maybe later": [
         "Misschien later"
       ],
       "Remind me later": [
         "Herinner mij later"
+      ],
+      "Secure your organization": [
+        "Beveilig uw organisatie"
       ],
       "Send": [
         "Verzenden"
@@ -3140,6 +3206,9 @@
       "Connect your CRM, website, printers, and more.": [
         "Verbind uw CRM, website, printers en meer."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Maak een Gateway aan om uw gebruikers toegang te geven tot uw IT-middelen via toegewijde servers."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Maak een Zoom vergadering en voeg aansluitgegevens met één klik toe aan uw evenement."
       ],
@@ -3193,6 +3262,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Help uw team om wachtwoorden veilig op te slaan voor gevoelige bedrijfs- en klantinformatie."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Als u dit nog niet heeft gedaan, schakel dan enkele herstelmethoden in om ervoor te zorgen dat u nooit de toegang verliest tot ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
@@ -4016,6 +4088,9 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "Server not found": [
+        "Server niet gevonden"
+      ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
@@ -4102,6 +4177,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Om niet-privé gebruikersaccounts en toegang tot hun accounts aan te maken, moet u uw beheerdersbevoegdheden herstellen."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Te veel verzoeken. Probeer het opnieuw na ${ date }"
+      ],
+      "Too many requests. Please try again later": [
+        "Te veel aanvragen. Probeer het later nog eens"
       ],
       "Try again later": [
         "Probeer het later opnieuw"
@@ -4745,6 +4826,9 @@
       "15 GB storage": [
         "15 GB opslagruimte"
       ],
+      "4 more privacy services": [
+        "4 extra privacy diensten"
+      ],
       "@pm.me address": [
         "@pm.me-adres"
       ],
@@ -5170,6 +5254,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Tevreden met ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Ontgrendel nog 4 premium privacydiensten voor slechts **${ priceString }** meer per maand"
       ],
       "Upgrade your privacy": [
         "Upgrade uw privacy"
@@ -5641,6 +5728,9 @@
       "${ planName } expires today.": [
         "${ planName } verloopt vandaag."
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect your organization from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } voor organisaties is een geavanceerd accountbeschermingsprogramma dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om uw organisatie te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } is een geavanceerd programma voor accountbescherming dat wordt aangedreven door geavanceerde AI-systemen en specialisten die de klok rond werken om u te beschermen tegen kwaadwillenden en beveiligingsbedreigingen."
       ],
@@ -5740,11 +5830,17 @@
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
       ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Stap 2:** Uw vrienden krijgen **2 weken gratis** op hun abonnement."
+      ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Stap 2:** Uw vrienden krijgen 2 weken gratis op hun abonnement."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke persoon die zich inschrijft voor een abonnement."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Stap 3:** Ontvang **${ referrerRewardAmount } tegoed** voor elke persoon die zich inschrijft voor een abonnement."
       ],
       "**Sync codes** to all your devices": [
         "**Synchroniseer codes** naar al uw apparaten"
@@ -5932,6 +6028,9 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Weet u zeker dat u het domein ${ boldDomain } wilt verwijderen?"
       ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Weet u zeker dat u certificaat **${ name }** wilt intrekken"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Vraag de beheerder van uw organisatie om Gateways in te stellen."
       ],
@@ -5949,6 +6048,9 @@
       ],
       "Authenticator app 2FA disabled": [
         "Authenticatie-app 2FA uitgeschakeld"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Authenticatie-app 2FA ingeschakeld"
       ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
@@ -6390,6 +6492,9 @@
       "Free forever": [
         "Altijd gratis"
       ],
+      "Free trial": [
+        "Gratis proefversie"
+      ],
       "Gain visibility across your organization": [
         "Krijg inzicht in uw organisatie"
       ],
@@ -6410,6 +6515,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Ontvang een melding als uw wachtwoord of andere persoonlijke gegevens gelekt zijn. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Aan de slag"
       ],
       "Get started with the referral link above.": [
         "Ga aan de slag met de verwijzingskoppeling hierboven."
@@ -6488,6 +6596,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Als u recent uw wachtwoord gereset heeft, kan u de data herstelmethode gebruiken om uw data te ontgrendelen"
+      ],
+      "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
+        "Als uw organisatie publieke figuren heeft, gevoelige gegevens verwerkt, of het doelwit kan zijn van cyberaanvallen, wordt u sterk aangeraden om ${ PROTON_SENTINEL_NAME } in te schakelen voor iedereen binnen uw organisatie."
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
         "Als u problemen hebt, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten, of open een ${ boldLiveChat } voor chatondersteuning."
@@ -6718,6 +6829,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Beheer welke ${ BRAND_NAME } applicaties toegankelijk zijn voor de leden van uw organisatie. Indien uitgeschakeld, hebben alleen beheerders toegang."
+      ],
+      "Manage which features the members of your organization can access.": [
+        "Beheer de functies waartoe de leden van uw organisatie toegang hebben."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Voer deze informatie handmatig in uw authenticatie-app in om uw account in te stellen. ${ switchButton }."
@@ -7080,6 +7194,9 @@
       "Scan QR code instead": [
         "Scan QR-code in plaats daarvan"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Scan deze QR-code met uw tweestapsverificatieapp om uw account in te stellen. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "SCIM-integratie uitgeschakeld"
       ],
@@ -7088,6 +7205,9 @@
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Beveilig uw ${ BRAND_NAME }-account"
+      ],
+      "Secure, end-to-end encrypted video conferencing": [
+        "Veilige, end-to-end versleutelde videoconferenties"
       ],
       "Securing your account": [
         "Beveiliging van uw account"
@@ -7137,6 +7257,9 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Stel uw organisatie in en begin met de bescherming van uw gegevens in een paar eenvoudige stappen."
+      ],
       "Setting up ${ feature }…": [
         "Instellen van ${ feature }…"
       ],
@@ -7173,6 +7296,9 @@
       ],
       "Some keys successfully reactivated": [
         "Sommige sleutels zijn succesvol geheractiveerd"
+      ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Sommige servers verschijnen mogelijk niet in de bovenstaande lijst. Zoek op servernaam (bijv. AT#62) om ze te vinden."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO."
@@ -7479,6 +7605,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Probeer ${ productName } volledig risicoloos - als u om een andere reden van gedachten verandert, krijgt u een volledige terugbetaling. Zonder vragen."
       ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
+      ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Twee wachtwoorden modus vereist twee wachtwoorden: één om in te loggen op uw account en één om uw gegevens te ontsleutelen. (Geavanceerd)"
       ],
@@ -7523,6 +7652,12 @@
       ],
       "Upgrade to Professional or a higher plan to unlock": [
         "Upgrade naar Professional of een hoger abonnement om te ontgrendelen"
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
+        "Upgrade uw abonnement naar ${ firstPlanNames } of ${ lastPlanName } om toegang te krijgen tot ${ PROTON_SENTINEL_NAME } voor organisaties."
+      ],
+      "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Upgrade naar ${ firstPlanNames }- of ${ lastPlanName }-abonnement om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
       ],
       "Upload your completed CSV file to create accounts": [
         "Upload uw voltooide CSV-bestand om accounts aan te maken"
@@ -7701,6 +7836,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, dan zal uw abonnement niet worden verlengd, maar u kunt nog steeds van de voordelen van uw abonnement genieten tot het einde van de abonnementsperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } Free abonnement."
       ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Wanneer u annuleert, zal uw abonnement niet starten, maar u kunt nog steeds genieten van de voordelen van uw abonnement tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } Free abonnement."
+      ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Wanneer u een server uit een Gateway verwijdert, voert deze een deactivatieperiode van 10 dagen in. Deze server kan worden toegevoegd aan een nieuwe gateway, maar zijn land kan niet worden veranderd."
       ],
@@ -7773,6 +7911,9 @@
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "U kunt geïmporteerde agenda's ook samenvoegen met bestaande ${ BRAND_NAME }-agenda's."
+      ],
+      "You can change storage allocation at **Users and addresses**": [
+        "U kunt de opslagtoewijzing wijzigen bij **Gebruikers en adressen**"
       ],
       "You can change this anytime in ${ settingsLink }.": [
         "U kunt dit op elk gewenst moment in ${ settingsLink } wijzigen."
@@ -7940,6 +8081,9 @@
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
+      "Your free trial includes 1 dedicated server.": [
+        "Uw gratis proefversie bevat toegewezen server."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
       ],
@@ -8088,6 +8232,11 @@
         "Geen geldig e-mailadres"
       ]
     },
+    "Input title": {
+      "What is your organization's name?": [
+        "Wat is de naam van uw organisatie?"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Afgewezen"
@@ -8164,6 +8313,10 @@
       ]
     },
     "Label": {
+      "${ addressesAvailable } of ${ maxAddresses } email address available": [
+        "${ addressesAvailable } van ${ maxAddresses } e-mailadres beschikbaar",
+        "${ addressesAvailable } van ${ maxAddresses } e-mailadressen beschikbaar"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
@@ -8187,6 +8340,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
+      ],
+      "0 of 1 email address available": [
+        "0 van 1 e-mailadres beschikbaar"
       ],
       "1 of 1 email address available": [
         "1 van 1 e-mailadres beschikbaar"
@@ -8506,6 +8662,9 @@
       "Folder location": [
         "Map locatie"
       ],
+      "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
+        "Voor ${ DRIVE_SHORT_APP_NAME } en ${ DOCS_SHORT_APP_NAME }."
+      ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
@@ -8616,6 +8775,9 @@
       ],
       "Method for importing metadata": [
         "Importeren metagegevens"
+      ],
+      "Minimum ${ MIN_CHARS } characters": [
+        "Maximum ${ MIN_CHARS } tekens"
       ],
       "Minimum number of characters": [
         "Minimaal aantal tekens"
@@ -8821,6 +8983,9 @@
       "Share your referral link": [
         "Deel uw verwijzingslink:"
       ],
+      "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
+        "Gedeeld tussen ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ WALLET_SHORT_APP_NAME }."
+      ],
       "Show ${ n } administrator": [
         "Toon ${ n } beheerder",
         "Toon ${ n } beheerders"
@@ -8965,6 +9130,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Naar"
+      ]
+    },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } van ${ maxBYOEAddresses } e-mailadres beschikbaar",
+        "${ byoeAddressesAvailableCount } van ${ maxBYOEAddresses } e-mailadressen beschikbaar"
       ]
     },
     "Label for adding a new custom domain": {
@@ -9450,6 +9621,9 @@
       ],
       "Edit": [
         "Bewerken"
+      ],
+      "Enable user": [
+        "Gebruiker activeren"
       ],
       "Remove": [
         "Verwijderen"
@@ -10678,6 +10852,9 @@
       "Key copied to the clipboard": [
         "Sleutel naar het klembord gekopieerd"
       ],
+      "Monitoring disabled": [
+        "Monitoring uitgeschakeld"
+      ],
       "Monitoring enabled": [
         "Monitoring ingeschakeld"
       ],
@@ -11487,7 +11664,7 @@
         "U bent reeds geabonneerd op dit abonnement."
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
-        "U hebt al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
+        "U heeft al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Via de geselecteerde betaalmethode wordt ${ amountToCharge } in rekening gebracht."
@@ -11539,6 +11716,14 @@
       ],
       "Credits will be added to your balance": [
         "Tegoed wordt toegevoegd aan uw saldo."
+      ]
+    },
+    "Payments.Lifetime Subscription": {
+      "Lifetime accounts can be transferred or sold": [
+        "Levenslange accounts kunnen worden overgedragen of verkocht."
+      ],
+      "Reach out to Customer Support to confirm ownership change": [
+        "Neem contact op met klantenondersteuning om de eigendomswijziging te bevestigen."
       ]
     },
     "Payments.Lifetime Subscription.Renewal time": {
@@ -11974,14 +12159,35 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per doorverwijzing"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Als u vóór deze datum annuleert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Als u zich niet abonneert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u zich vóór deze datum abonneert,** ontvangt u **${ referrerRewardAmount }** aan tegoed."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Geniet gratis van **${ planTitle }** tot **${ textDate }**."
+      ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Geef 2 weken, ontvang ${ referrerRewardAmount }"
+      ],
+      "How your free trial works:": [
+        "Hoe uw gratis proefperiode werkt:"
+      ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Als u daarvoor annuleert, wordt u gedowngraded naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt. Als u niet annuleert, start uw volledige abonnement en krijgt u **${ referrerRewardAmount }** aan tegoed."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Als u zich vóór deze datum abonneert, krijgt u **${ referrerRewardAmount }** aan tegoed. Als u zich niet abonneert, wordt u gedowngraded naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
       "Invite friends. Get credits.": [
         "Nodig vrienden uit. Ontvang tegoed."
@@ -12002,8 +12208,11 @@
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
-        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
-        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+        "U heeft nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U heeft **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+      ],
+      "Your friend will also get ${ refereeRewardAmount } to redeem on their next bill!": [
+        "Uw vriend ontvangt ook ${ refereeRewardAmount } om in te wisselen voor hun volgende factuur!"
       ],
       "your subscription": [
         "uw abonnement"
@@ -12258,6 +12467,9 @@
       ],
       "You are at risk of losing access to your data.": [
         "U loopt het risico de toegang tot uw gegevens te verliezen."
+      ],
+      "You have recommended actions to safeguard your account further.": [
+        "U heeft aanbevolen acties om uw account verder te beveiligen."
       ],
       "You have recommended actions.": [
         "U heeft aanbevolen acties."
@@ -14062,6 +14274,9 @@
       "Organization logo updated": [
         "Organisatielogo bijgewerkt"
       ],
+      "Organization name set": [
+        "Organisatienaam ingesteld"
+      ],
       "Organization name updated": [
         "Organisatienaam bijgewerkt"
       ],
@@ -14342,6 +14557,9 @@
         "${ friendsSubscribed } Vriend is geabonneerd",
         "${ friendsSubscribed } vrienden zijn geabonneerd"
       ],
+      "${ PROTON_SENTINEL_NAME } for organizations": [
+        "${ PROTON_SENTINEL_NAME } voor organisaties"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME }-clients"
       ],
@@ -14565,6 +14783,9 @@
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
       ],
+      "Connect a Gmail address": [
+        "Verbind een Gmail-adres"
+      ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
       ],
@@ -14573,6 +14794,9 @@
       ],
       "Connect organization": [
         "Connecteer organisatie"
+      ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Verbind met ${ VPN_CONNECTIONS } apparaten tegelijk met ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Verbinding maken met videoconferentie"
@@ -14729,6 +14953,9 @@
       "Discard changes?": [
         "Wijzigingen annuleren?"
       ],
+      "Dismiss setup checklist": [
+        "Setup-checklist negeren"
+      ],
       "Domain names": [
         "Domeinnamen"
       ],
@@ -14870,6 +15097,9 @@
       ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
+      ],
+      "Get started": [
+        "Aan de slag"
       ],
       "Get the apps": [
         "Verkrijg de apps"
@@ -15079,6 +15309,9 @@
       "Remove domain": [
         "Verwijder bestand"
       ],
+      "Remove forwarding address": [
+        "Doorschakeladres verwijderen"
+      ],
       "Remove server?": [
         "Server verwijderen?"
       ],
@@ -15112,11 +15345,17 @@
       "Restore administrator privileges": [
         "Herstel beheerdersbevoegdheden"
       ],
+      "Revoke certificate?": [
+        "Certificaat intrekken?"
+      ],
       "SAML authentication": [
         "SAML-authenticatie"
       ],
       "Schedule meetings in one click": [
         "Plan vergaderingen in één klik"
+      ],
+      "Search for additional servers": [
+        "Zoeken naar extra servers"
       ],
       "Security": [
         "Beveiliging"
@@ -15253,6 +15492,9 @@
       ],
       "Third-party apps and services": [
         "Apps en services van derden"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Om een voorbeeld van dit rekenblad te bekijken, opent u het in ${ SHEETS_APP_NAME } of downloadt u het."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Probeer ${ AUTHENTICATOR_APP_NAME }"
@@ -15460,6 +15702,12 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Een wijziging bij Gmail blokkeert ${ BRAND_NAME } om verbinding te maken. Verleen toestemming om de e-mailfunctionaliteit te herstellen."
+      ],
+      "Added to your plan: ${ mergedAddonTitles }": [
+        "Toegevoegd aan uw abonnement: ${ mergedAddonTitles }"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het abonnement van de organisatie bewerken."
       ],
@@ -15568,8 +15816,14 @@
       "This can be caused by a password reset or the user not logging in yet.": [
         "Dit kan worden veroorzaakt door een wachtwoordreset of de gebruiker die nog niet inlogt."
       ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Dit e-mailadres kan alleen worden gebruikt om in te loggen op uw ${ BRAND_NAME } account."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Dit e-mailadres zal worden getoond aan alle leden van de organisatie bij het uitvoeren van operaties binnen accountbeheer."
+      ],
+      "This setting is managed by your organization": [
+        "Deze instelling wordt beheerd door je organisatie."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
@@ -15790,6 +16044,15 @@
       "Did you know?": [
         "Wist u dat?"
       ],
+      "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
+        "Ontvang ${ drivePlusPlanMaxSpace } opslag voor uw bestanden, foto's en documenten, en herstel bestandsversies tot 10 jaar oud."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Privacy suite met beveiligde e-mail, ${ VPN_SHORT_APP_NAME }, cloudopslag en wachtwoordbeheerder in één bundel. Vanaf slechts ${ fallBackString } per maand"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Privacy suite met beveiligde e-mail, ${ VPN_SHORT_APP_NAME }, cloudopslag en wachtwoordbeheerder in één bundel. Slechts **${ priceString }** meer per maand."
+      ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Bescherm uw organisatie tegen dataschendingen met ${ PLAN_NAMES[plan] }."
       ],
@@ -15923,6 +16186,9 @@
       ],
       "User has enabled two-factor authentication with a security key.": [
         "De gebruiker heeft tweestapsverificatie ingeschakeld met een beveiligingssleutel."
+      ],
+      "User has enabled two-factor authentication with an authenticator app and a security key.": [
+        "De gebruiker heeft tweestapsverificatie ingeschakeld met een authenticatie-app."
       ],
       "User has enabled two-factor authentication with an authenticator app.": [
         "De gebruiker heeft tweestapsverificatie ingeschakeld met een authenticatie-app."

@@ -464,6 +464,9 @@
       "Get ${ planOrAppName }": [
         "Hanki ${ planOrAppName }"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
+      ],
       "Get a new encrypted email address": [
         "Hanki uusi salattu sähköpostiosoite"
       ],
@@ -640,6 +643,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -1317,6 +1323,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
       ],
@@ -1326,11 +1335,17 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Voit saada enintään ${ TRIAL_MAX_DEDICATED_IPS } omaa palvelinta kokeilujakson aikana."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada enintään ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-käyttäjäpaikkaa kokeilujakson aikana."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Voitte saada enintään ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-käyttäjäpaikkaa kokeilujakson aikana."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Sinulla voi olla jopa ${ TRIAL_MAX_USERS } käyttäjää kokeiluajalla."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Et voi lisätä mukautettuja verkkotunnuksia kokeilujakson aikana."
       ],
       "You have reached the trial limit.": [
         "Olet saavuttanut kokeilujakson enimmäisrajan."
@@ -1418,6 +1433,9 @@
       "1 user account": [
         "1 käyttäjätili"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40 kertaa enemmän nykyiseen tilaukseesi nähden"
+      ],
       "6 user accounts": [
         "Kuusi käyttäjätiliä"
       ],
@@ -1455,6 +1473,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
+      ],
+      "forever": [
+        "ikuisesti"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
@@ -1752,6 +1773,9 @@
       "Close": [
         "Sulje"
       ],
+      "Configure your network": [
+        "Määritä verkkosi"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
       ],
@@ -1770,6 +1794,12 @@
       "Discover and set up features": [
         "Tutustu ja määritä ominaisuuksia"
       ],
+      "Invite your team": [
+        "Kutsu tiimisi"
+      ],
+      "Manage global VPN permissions": [
+        "Hallinnoi globaaleja VPN-oikeuksia"
+      ],
       "Maybe later": [
         "Ehkä myöhemmin"
       ],
@@ -1784,6 +1814,9 @@
       ],
       "Set up other features": [
         "Määritä muut ominaisuudet"
+      ],
+      "Set up SSO": [
+        "Määritä SSO"
       ],
       "Take a tour": [
         "Katso esittely"
@@ -1878,8 +1911,14 @@
       "Full chat history with search": [
         "Täysi keskusteluhistoria haulla"
       ],
+      "Large file upload support": [
+        "Suurten tiedostojen lataustuki"
+      ],
       "Limited daily chats": [
         "Rajoitetusti päivittäisiä keskusteluja"
+      ],
+      "Limited favorites": [
+        "Rajoitettu määrä suosikkeja"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
@@ -1889,6 +1928,9 @@
       ],
       "Upload and query multiple large files": [
         "Lataa ja laita jonoon useita suuria tiedostoja"
+      ],
+      "Upload and query small files": [
+        "Lähetä ja laita jonoon pieniä tiedostoja"
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
@@ -1900,6 +1942,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lisää ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Edistyksellinen tilin ja verkon tietoturva yhdellä tilauksella"
       ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
@@ -3037,14 +3082,23 @@
       "Connect your CRM, website, printers, and more.": [
         "Yhdistä CRM:si, verkkosivustosi, tulostimesi ja muuta."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "Luo yhdyskäytävä, jonka avulla käyttäjät saavat pääsyn IT-resursseihisi dedikoitujen palvelimien kautta."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Luo Zoom-kokous ja lisää liittymistiedot tapahtumaan yhdellä klikkauksella."
       ],
       "Create groups you can email with a single address.": [
         "Luo ryhmiä, joille voit lähettää sähköpostia yhdellä osoitteella."
       ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "Luo uusia käyttäjätilejä tai tuo käyttäjiä SSO (kertakirjautuminen) SCIM-provisioinnin avulla."
+      ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Määritä käytännöt päättääksesi, kuka voi yhdistää jaettuihin palvelimiin kussakin maassa."
+      ],
+      "Decide which users can connect to each of our 120+ shared server locations.": [
+        "Määritä, mitkä käyttäjät voivat yhdistää kuhunkin yli 120 jaettuun palvelinsijaintiimme."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronoi tiedostot helposti pilveen työpöydältäsi ja käytä niitä mobiililaitteellasi."
@@ -3081,6 +3135,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Ansaitse jopa ${ credits } krediitteinä kutsumalla kavereita ${ BRAND_NAME }iin."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Jos et ole vielä tehnyt niin, ota käyttöön joitakin palautusmenetelmiä varmistaaksesi, että et koskaan menetä pääsyä ${ VPN_APP_NAME } -sovellukseen."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
@@ -3433,6 +3490,9 @@
       "Here's what changed:": [
         "Tehdyt muutokset:"
       ],
+      "LOCATION:": [
+        "SIJAINTI:"
+      ],
       "NOTE:": [
         "MUISTIINPANO:"
       ],
@@ -3450,6 +3510,9 @@
       ],
       "TITLE:": [
         "OTSIKKO:"
+      ],
+      "You are invited to": [
+        "Sinut on kutsuttu"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3629,6 +3692,9 @@
       ],
       "Failed to load the STL preview": [
         "STL-esikatselun lataus epäonnistui"
+      ],
+      "Failed to lookup server. Please try again": [
+        "Palvelimen haku epäonnistui. Yritä uudelleen."
       ],
       "Failed to process the logo": [
         "Logon käsittely epäonnistui"
@@ -3949,6 +4015,12 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Luodaksesi ei-yksityisiä käyttäjätilejä sinun on palautettava hallintaoikeutesi."
+      ],
+      "Too many requests. Please try again after ${ date }": [
+        "Liian monta pyyntöä. Yritä uudelleen ${ date } jälkeen"
+      ],
+      "Too many requests. Please try again later": [
+        "Liian monta pyyntöä. Yritä myöhemmin uudelleen"
       ],
       "Try again later": [
         "Kokeile myöhemmin uudelleen"
@@ -5377,6 +5449,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vaatii ${ BRAND_NAME } - osoitteen turvalliseen tapahtumien synkronointiin ja salaukseen. Lunasta ilmainen ${ claimAddressButton } -osoitteesi nyt."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } uusi kalenteri",
         "${ calendarsToBeCreatedCount } uutta kalenteria"
@@ -5739,6 +5814,9 @@
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
+      ],
+      "Are you sure you want to revoke certificate **${ name }**": [
+        "Haluatko varmasti mitätöidä varmenteen **${ name }**"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
@@ -6189,11 +6267,17 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started": [
+        "Aloita"
+      ],
       "Get started with the referral link above.": [
         "Aloita yllä olevalla suosittelulinkillä."
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Nouda ${ appName }:n SAML-metatiedot identiteetintarjoajastasi ja tuo ne tähän."
+      ],
+      "Google Pay mark": [
+        "Google Payn merkki"
       ],
       "Got it": [
         "Selvä"
@@ -6882,6 +6966,9 @@
       "Set up your organization": [
         "Määritä organisaatiosi"
       ],
+      "Set up your organization and start protecting your data in a few easy steps.": [
+        "Määritä organisaatiosi ja aloita tietojen suojaaminen muutamalla helpolla vaiheella."
+      ],
       "Setting up ${ feature }…": [
         "Määritetään ${ feature }…"
       ],
@@ -6921,6 +7008,9 @@
       ],
       "Some keys successfully reactivated": [
         "Joitakin avaimia aktivoitiin uudelleen"
+      ],
+      "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
+        "Jotkin palvelimet eivät välttämättä näy yllä olevassa luettelossa. Etsi ne palvelimen nimen (esim. AT#62) perusteella."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Määritä toimialue, joka saa todentaa SAML SSO:lla."
@@ -7160,6 +7250,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Vahvistaaksesi, syötä sen käyttäjän nimi, jonka haluat poistaa."
+      ],
+      "To continue to ${ product }": [
+        "jatkaaksesi palveluun ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Kehittääksemme palveluitamme edelleen keräämme ajoittain tietoja seurataksemme niiden normaalia toimintaa. Näitä tietoja ei jaeta ulkopuolisten tahojen kanssa."
@@ -10783,6 +10876,9 @@
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
       ],
+      "File attachments (up to 10GB)": [
+        "Liitetiedostot (enintään 10 Gt)"
+      ],
       "Team policies": [
         "Ryhmäkäytännöt"
       ]
@@ -10996,6 +11092,9 @@
       "Taxes": [
         "Verot"
       ],
+      "terms and conditions": [
+        "käyttöehdot"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
@@ -11029,6 +11128,9 @@
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tämä toiminto laajentaa olemassa olevaa tilausta. Sinua veloitetaan vain uusista lisäosista ja nykyisen laskutusjakson jäljellä olevasta ajasta. Tilauksesi uusimispäivä ei muutu."
+      ],
       "This offer is not available with your current plan.": [
         "Tämä tarjous ei ole saatavilla nykyiselle tilauksellesi."
       ],
@@ -11044,11 +11146,17 @@
       "You already have a subscription to this plan.": [
         "Sinulla on jo tämä tilaus."
       ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Sinulla on jo tilaus tähän tilaukseen. Voit muuttaa tilaustasi palvelussa ${ subscriptionPlatform }."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "${ amountToCharge } veloitetaan valitsemaltasi maksutavalta."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Sinut ohjataan pian maksun vahvistamiseen."
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"
@@ -11110,6 +11218,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11217,6 +11330,9 @@
       ],
       "E.g., ": [
         "Esim. "
+      ],
+      "e.g., AT#62": [
+        "esim. AT#62"
       ],
       "End date": [
         "Lopetuspäivä"
@@ -14099,6 +14215,9 @@
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
+      "Dismiss setup checklist": [
+        "Ohita asennustarkistuslista"
+      ],
       "Domain names": [
         "Verkkotunnukset"
       ],
@@ -14226,11 +14345,17 @@
       "Get ${ vpnPlus } to access all servers": [
         "Käytä kaikkia palvelimia hankkimalla ${ vpnPlus }"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Ansaitset **${ referralInfo.uiData.refereeRewardAmount }** krediitteinä ${ planTitle } -tilauksella"
+      ],
       "Get complete privacy coverage": [
         "Hanki täydellinen yksityisyyden suoja"
       ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
+      ],
+      "Get started": [
+        "Aloita"
       ],
       "Get the apps": [
         "Hanki sovellukset"
@@ -14470,11 +14595,17 @@
       "Restore administrator privileges": [
         "Palauta hallintaoikeudet"
       ],
+      "Revoke certificate?": [
+        "Mitätöi varmenne?"
+      ],
       "SAML authentication": [
         "SAML-todennus"
       ],
       "Schedule meetings in one click": [
         "Ajoita kokouksia yhdellä klikkauksella"
+      ],
+      "Search for additional servers": [
+        "Etsi lisää palvelimia"
       ],
       "Security and privacy": [
         "Suojaus ja yksityisyys"
@@ -14605,6 +14736,9 @@
       ],
       "Third-party apps and services": [
         "Kolmannen osapuolen sovellukset ja palvelut"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Esikatsellaksesi tätä laskentataulukkoa, avaa se ${ SHEETS_APP_NAME } -sovelluksessa tai lataa se."
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
