@@ -4,7 +4,8 @@ import { endOfDay, getUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
 import { useGetUser } from '@proton/account/user/hooks';
-import { useApi, useGetVerificationPreferences } from '@proton/components';
+import { useGetVerificationPreferences } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import type {
@@ -116,7 +117,7 @@ const fetchNextAvailableSlot = async ({
 };
 
 export const useExternalBookingLoader = () => {
-    const api = useApi();
+    const api = useSilentApi();
     const location = useLocation();
     const bookingSecretBase64Url = location.hash.substring(1);
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');

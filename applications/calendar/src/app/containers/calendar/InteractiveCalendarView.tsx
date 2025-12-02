@@ -54,6 +54,7 @@ import {
     getIsCalendarProbablyActive,
     getIsCalendarWritable,
     getIsOwnedCalendar,
+    getVisualCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import {
     ATTENDEE_COMMENT_ENCRYPTION_TYPE,
@@ -971,10 +972,19 @@ const InteractiveCalendarView = ({
                             return;
                         }
 
+                        const calendarData = getVisualCalendar(
+                            calendars.find((calendar) => calendar.ID === formData.selectedCalendar) ||
+                                createEventCalendar
+                        );
+
                         // Change the ID to have a specific style when dragging and creating a booking page
                         setInteractiveData({
                             temporaryEvent: {
                                 ...newTemporaryEvent,
+                                data: {
+                                    ...newTemporaryEvent.data,
+                                    calendarData,
+                                },
                                 uniqueId: TEMPORARY_BOOKING_SLOT + newTemporaryEvent.uniqueId,
                             },
                         });
