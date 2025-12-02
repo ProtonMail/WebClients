@@ -11,6 +11,7 @@ import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcMeetShieldStar } from '@proton/icons/icons/IcMeetShieldStar';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { useFlag } from '@proton/unleash/index';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
@@ -37,6 +38,7 @@ import { MenuButton } from './MenuButton';
 import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
+    const meetUpsellEnabled = useFlag('MeetUpsell');
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const { roomName, page, setPage, isScreenShare, guestMode, paidUser } = useMeetContext();
 
@@ -151,7 +153,16 @@ export const ParticipantControls = () => {
                         'lg:flex flex-1 justify-start h3 items-center gap-2 pl-4'
                     )}
                 >
-                    {guestMode || !paidUser ? <UpgradeIcon /> : <IcMeetShieldStar className="shield-star" size={5} />}
+                    {meetUpsellEnabled && (
+                        <>
+                            {guestMode || !paidUser ? (
+                                <UpgradeIcon />
+                            ) : (
+                                <IcMeetShieldStar className="shield-star" size={5} />
+                            )}
+                        </>
+                    )}
+
                     <span className="participant-controls-title">{roomName}</span>
                 </div>
                 <div className="participant-controls-buttons flex flex-nowrap gap-2">
