@@ -473,9 +473,8 @@ export type UiContext = {
 };
 
 export type SettingsContext = {
-    personalization:
-    const personalization = state.personalization;
-}
+    personalization: PersonalizationSettings;
+};
 
 export function sendMessage({
     applicationContext: a,
