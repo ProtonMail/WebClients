@@ -84,7 +84,7 @@ export const useLumoActions = ({
     const { handleActionError } = useActionErrorHandler();
 
     // Custom hooks
-    const { isGhostChatMode } = useGhostChat();
+    const { isGhostChatMode: isGhostMode } = useGhostChat();
     const { ensureConversationAndSpace } = useConversationState({
         conversationId,
         spaceId: space?.id,
@@ -167,6 +167,7 @@ export const useLumoActions = ({
                     enableExternalToolsToggled: !!isWebSearchButtonToggled && isLumoToolingEnabled,
                     navigateCallback,
                     enableSmoothing,
+                    isGhostMode,
                 },
             })
         );
@@ -280,6 +281,7 @@ export const useLumoActions = ({
                     enableExternalToolsToggled: isWebSearchButtonToggled && isLumoToolingEnabled,
                     navigateCallback,
                     enableSmoothing,
+                    isGhostMode,
                 },
             })
         );
@@ -429,7 +431,7 @@ export const useLumoActions = ({
             !conversationId, // isNewConversation when conversationId is undefined
             isWebSearchButtonToggled,
             provisionalAttachments.length > 0,
-            isGhostChatMode
+            isGhostMode
         );
 
         try {
