@@ -127,6 +127,14 @@ export const useTransferManagerActions = () => {
         }
     };
 
+    const retryFailedTransfers = (entries: TransferManagerEntry[]) => {
+        for (const entry of entries) {
+            if (entry.status === BaseTransferStatus.Failed) {
+                retryTransfer(entry);
+            }
+        }
+    };
+
     return {
         clearQueue,
         cancelTransfer,
@@ -136,5 +144,6 @@ export const useTransferManagerActions = () => {
         confirmModal,
         sharingModal,
         goToLocation,
+        retryFailedTransfers,
     };
 };
