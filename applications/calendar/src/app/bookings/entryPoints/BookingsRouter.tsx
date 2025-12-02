@@ -6,6 +6,7 @@ import { BookingPageLayout } from '../components/BookingPageLayout';
 import { BookingSuccess } from '../components/BookingSuccess';
 import { NoMatch, Reason } from '../components/NoMatch';
 import { useExternalBookingLoader } from '../useExternalBookingLoader';
+import { BookingExternalProvider } from './BookingsExternalProvider';
 
 interface Props {
     isGuest: boolean;
@@ -23,15 +24,17 @@ export const BookingsRouter = ({ isGuest }: Props) => {
     }, [loadPublicBooking]);
 
     return (
-        <BookingPageLayout>
-            <Switch>
-                {/* TODO how could we have a shared basename instead of the array */}
-                <Route path={['/bookings', '/bookings/guest']} exact component={BookingPage} />
-                <Route path="/bookings/success" exact render={() => <BookingSuccess isGuest={isGuest} />} />
-                <Route>
-                    <NoMatch reason={Reason.notFound} />
-                </Route>
-            </Switch>
-        </BookingPageLayout>
+        <BookingExternalProvider isGuest={isGuest}>
+            <BookingPageLayout>
+                <Switch>
+                    {/* TODO how could we have a shared basename instead of the array */}
+                    <Route path={['/bookings', '/bookings/guest']} exact component={BookingPage} />
+                    <Route path="/bookings/success" exact render={() => <BookingSuccess />} />
+                    <Route>
+                        <NoMatch reason={Reason.notFound} />
+                    </Route>
+                </Switch>
+            </BookingPageLayout>
+        </BookingExternalProvider>
     );
 };

@@ -25,6 +25,7 @@ import { getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../booking.store';
+import { useBookingsProvider } from '../entryPoints/BookingsExternalProvider';
 import { NoMatch, Reason } from './NoMatch';
 
 interface BookingSuccessItemProps {
@@ -52,14 +53,12 @@ const BookingSuccessItem = ({ icon, title, data }: BookingSuccessItemProps) => {
     );
 };
 
-interface Props {
-    isGuest: boolean;
-}
-
-export const BookingSuccess = ({ isGuest }: Props) => {
+export const BookingSuccess = () => {
     const bookingDetails = useBookingStore((state) => state.bookingDetails);
     const selectedBookingSlot = useBookingStore((state) => state.selectedBookingSlot);
     const selectedTimezone = useBookingStore((state) => state.selectedTimezone);
+
+    const { isGuest } = useBookingsProvider();
 
     if (!bookingDetails || !selectedBookingSlot) {
         return <NoMatch reason={Reason.notFound} />;
