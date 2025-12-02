@@ -154,11 +154,23 @@ export const useFileMentionAutocomplete = (
             if (match) {
                 const query = match[1] || '';
                 
+                // Calculate filtered files count to estimate dropdown height
+                const lowerQuery = query.toLowerCase();
+                const matchingFiles = query
+                    ? allFiles.filter((file) => file.name.toLowerCase().includes(lowerQuery)).slice(0, 10)
+                    : allFiles.slice(0, 10);
+                const fileCount = matchingFiles.length;
+                
+                // Estimate height: ~52px per item (py-2 = 16px + content ~36px) + container padding (py-1 = 8px)
+                // Cap at max-h-80 (320px)
+                const itemHeight = 52; // Approximate height per file item
+                const containerPadding = 8; // py-1 = 4px top + 4px bottom
+                const estimatedHeight = Math.min(fileCount * itemHeight + containerPadding, 320);
+                
                 // Get cursor position for dropdown (coordsAtPos returns viewport coordinates)
                 const coords = editor.view.coordsAtPos($from.pos);
                 const viewportHeight = window.innerHeight;
                 const viewportWidth = window.innerWidth;
-                const dropdownHeight = 320; // max-h-80 = 20rem = 320px
                 const dropdownWidth = 288; // min-w-72 = 18rem = 288px
                 
                 // For fixed positioning, coords are already relative to viewport
@@ -166,8 +178,8 @@ export const useFileMentionAutocomplete = (
                 let left = coords.left;
                 
                 // Flip above cursor if dropdown would overflow bottom of viewport
-                if (top + dropdownHeight > viewportHeight) {
-                    top = coords.top - dropdownHeight - 4;
+                if (top + estimatedHeight > viewportHeight) {
+                    top = coords.top - estimatedHeight - 4;
                     // Ensure it doesn't go above viewport
                     if (top < 8) {
                         top = 8;
@@ -205,7 +217,7 @@ export const useFileMentionAutocomplete = (
             editor.off('update', handleUpdate);
             editor.off('selectionUpdate', handleUpdate);
         };
-    }, [editor]);
+    }, [editor, allFiles]);
 
     // Filter files by query
     const filteredFiles = useMemo(() => {
@@ -267,12 +279,13 @@ export const useFileMentionAutocomplete = (
                 
                 dispatch(upsertAttachment(provisionalAttachment));
                 
-                // Remove the @ mention text from editor immediately
+                // Replace @query with @filename to keep the reference visible in the text
                 editor
                     .chain()
                     .focus()
                     .setTextSelection({ from: startPos, to: endPos })
                     .deleteSelection()
+                    .insertContent(`@${file.name}`)
                     .run();
 
                 setMentionState((prev) => ({ ...prev, isActive: false }));
@@ -409,12 +422,13 @@ export const useFileMentionAutocomplete = (
                 return;
             }
 
-            // Remove the @ mention text from editor
+            // Replace @query with @filename to keep the reference visible in the text
             editor
                 .chain()
                 .focus()
                 .setTextSelection({ from: startPos, to: endPos })
                 .deleteSelection()
+                .insertContent(`@${file.name}`)
                 .run();
 
             setMentionState((prev) => ({ ...prev, isActive: false }));

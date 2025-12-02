@@ -77,7 +77,7 @@ export const KnowledgeFileItem: React.FC<KnowledgeFileItemProps> = ({
 
     return (
         <div
-            className={`knowledge-file-item flex flex-row flex-nowrap items-center p-2 mb-3 rounded transition-all ${readonly ? 'opacity-75' : ''} ${
+            className={`knowledge-file-item flex flex-row flex-nowrap items-center p-1 mb-3 rounded transition-all ${readonly ? 'opacity-75' : ''} ${
                 canView ? 'hover:bg-weak cursor-pointer' : 'hover:bg-weak'
             }`}
             onClick={handleFileClick}
