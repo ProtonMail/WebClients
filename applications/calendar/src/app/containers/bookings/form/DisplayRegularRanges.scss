@@ -1,9 +1,17 @@
 @import '~@proton/styles/scss/lib';
 
 .booking {
+	&-time-input,
+	&-date-input {
+		.input-element {
+			padding-inline: em(8);
+			font-size: em(13);
+		}
+	}
+
 	&-time-input {
 		.input-element {
-			padding-inline: em(10);
+			padding-inline: em(6);
 		}
 	}
 }
