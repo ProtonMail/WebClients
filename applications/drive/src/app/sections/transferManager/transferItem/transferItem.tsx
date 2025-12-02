@@ -5,6 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components/index';
 import { UploadStatus } from '@proton/drive/modules/upload';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
@@ -121,7 +122,7 @@ export const TransferItem = ({ entry, onShare }: Props) => {
 
     return (
         <div
-            className="bg-norm flex w-full gap-1 items-center py-2 pl-3 pr-4 h-full min-h-custom"
+            className="bg-norm flex w-full gap-1 items-center py-2 pl-3 pr-4 h-full min-h-custom group-hover-opacity-container"
             style={{ '--min-h-custom': '3.3rem' }}
             data-testid="transfer-item-row"
         >
@@ -168,21 +169,25 @@ export const TransferItem = ({ entry, onShare }: Props) => {
                     )}
                 </div>
             </div>
-            <div className="shrink-0">
+            <div className="shrink-0 flex justify-end">
                 {entry.status === BaseTransferStatus.Finished && entry.type === 'upload' && (
                     <Button color="weak" shape="solid" onClick={onShare}>
                         {c('Action').t`Share`}
                     </Button>
                 )}
-                {entry.status === BaseTransferStatus.InProgress && (
-                    <Button
-                        color="weak"
-                        shape="outline"
-                        onClick={() => cancelTransfer(entry)}
-                        data-testid="drive-transfers-manager:item-controls-cancel"
-                    >
-                        {c('Action').t`Cancel`}
-                    </Button>
+                {(entry.status === BaseTransferStatus.InProgress || entry.status === BaseTransferStatus.Pending) && (
+                    <Tooltip title={c('Action').t`Cancel`}>
+                        <Button
+                            icon
+                            className="group-hover:opacity-100"
+                            color="weak"
+                            shape="outline"
+                            onClick={() => cancelTransfer(entry)}
+                            data-testid="drive-transfers-manager:item-controls-cancel"
+                        >
+                            <Icon name="cross-big" size={4} />
+                        </Button>
+                    </Tooltip>
                 )}
                 {(entry.status === BaseTransferStatus.Failed || entry.status === BaseTransferStatus.Cancelled) && (
                     <Button
