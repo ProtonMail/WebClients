@@ -668,6 +668,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Apri in ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Apri navigazione"
       ],
@@ -9146,6 +9149,12 @@
         "A"
       ]
     },
+    "Label BYOE": {
+      "${ byoeAddressesAvailableCount } of ${ maxBYOEAddresses } email address available": [
+        "${ byoeAddressesAvailableCount } di ${ maxBYOEAddresses } indirizzo email disponibile",
+        "${ byoeAddressesAvailableCount } di ${ maxBYOEAddresses } indirizzi email disponibili"
+      ]
+    },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Aggiungi un dominio che possiedi al tuo account ${ MAIL_APP_NAME }."
@@ -15540,6 +15549,9 @@
       ],
       "Third-party apps and services": [
         "App e servizi di terze parti"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Per visualizzare l'anteprima di questo foglio di calcolo, aprilo in ${ SHEETS_APP_NAME } o scaricalo."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prova ${ AUTHENTICATOR_APP_NAME }"

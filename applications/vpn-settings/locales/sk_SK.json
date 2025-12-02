@@ -668,6 +668,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Otvoriť v ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Otvoriť menu"
       ],
@@ -1770,6 +1773,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Môže niekto vidieť moju internetovú históriu, ak používame rovnakú Wi-Fi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Pripojte ${ VPN_CONNECTIONS } zariadení naraz"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "V nastaveniach VPN povoľte Kill Switch a automatické pripojenie."
       ],
@@ -1796,6 +1802,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Zistite, ako povoliť ${ VPN_APP_NAME } vo vašom routri."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Chráňte všetky svoje domáce zariadenia naraz s ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Chráňte svoju spoločnosť pred únikmi údajov a zabezpečte vzdialenú prácu pomocou podnikovej VPN."
@@ -4898,6 +4907,9 @@
       "15 GB storage": [
         "15 GB úložisko"
       ],
+      "4 more privacy services": [
+        "4 ďalšie služby na ochranu súkromia"
+      ],
       "@pm.me address": [
         "@pm.me adresa"
       ],
@@ -5342,6 +5354,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Páči sa vám ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Odomknite 4 prémiové služby ochrany súkromia len za **${ priceString }** naviac každý mesiac."
       ],
       "Upgrade your privacy": [
         "Zvýšte svoje súkromie"
@@ -8047,6 +8062,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
+      ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Po zrušení sa vaše predplatné nezačne, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Potom dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ak odstránite server z brány, začne plynúť desaťdňová deaktivačná lehota. Tento server je možné pridať do novej brány, ale jeho krajina sa nedá zmeniť."
@@ -12535,6 +12553,9 @@
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Ak zrušíte pred týmto termínom, po skončení skúšobnej doby dôjde k zníženiu na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }. Ak nezrušíte, začne platiť váš plný plán a získate **${ referrerRewardAmount }** v kreditoch."
       ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Zrušením prídete o svoju odmenu vo forme kreditu vo výške **${ referrerRewardAmount }**."
+      ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Ak si predplatíte pred týmto dátumom, získate **${ referrerRewardAmount }** kreditov. Ak si nepredplatíte dôjde k zníženiu na úroveň ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -15283,6 +15304,9 @@
       "Connect organization": [
         "Pripojiť organizáciu"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Pripojte ${ VPN_CONNECTIONS } zariadení naraz s ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "Pripojiť sa k videokonferencii"
       ],
@@ -15949,6 +15973,9 @@
       "Start import process": [
         "Zahájiť proces importu"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Začnite chrániť svoje zariadenia pomocou aplikácie ${ VPN_APP_NAME }."
+      ],
       "State": [
         "Stav"
       ],
@@ -15990,6 +16017,9 @@
       ],
       "Third-party apps and services": [
         "Aplikácie a služby tretích strán"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Ak chcete zobraziť náhľad tejto tabuľky, otvorte ju v aplikácii ${ SHEETS_APP_NAME } alebo si ju stiahnite."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Vyskúšajte ${ AUTHENTICATOR_APP_NAME }"
@@ -16549,6 +16579,12 @@
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Získajte úložisko s kapacitou ${ drivePlusPlanMaxSpace } pre svoje súbory, fotografie a dokumenty a obnovu verzií súborov s 10-ročnou zárukou obnovy súborov."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Balík na ochranu súkromia s bezpečným emailom, ${ VPN_SHORT_APP_NAME }, cloudovým úložiskom a správcom hesiel v jednom produkte. Už od ${ fallBackString } mesačne."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Balík na ochranu súkromia s bezpečným emailom, ${ VPN_SHORT_APP_NAME }, cloudovým úložiskom a správcom hesiel v jednom produkte. Len za **${ priceString }** mesačne."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Chráňte svoju organizáciu pred únikmi dát pomocou ${ PLAN_NAMES[plan] }."

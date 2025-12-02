@@ -668,6 +668,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Öppna i ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Öppna navigering"
       ],
@@ -1738,6 +1741,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "Kan någon se min internethistorik om vi använder samma WiFi?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Anslut ${ VPN_CONNECTIONS } enheter samtidigt"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Aktivera kill switch och automatisk anslutning i dina VPN-inställningar."
       ],
@@ -1764,6 +1770,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Lär dig hur man aktiverar ${ VPN_APP_NAME } på din router."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Skydda alla dina enheter i hushållet samtidigt med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Skydda ditt företag från dataintrång och gör fjärrarbete säkrare med en företags-VPN."
@@ -1846,6 +1855,9 @@
       ],
       "Manual setup problem": [
         "Problem med manuell installation"
+      ],
+      "Meet problem": [
+        "Problem med Meet"
       ],
       "Other": [
         "Övrigt"
@@ -4819,6 +4831,9 @@
     "Features": {
       "15 GB storage": [
         "15 GB lagringsutrymme"
+      ],
+      "4 more privacy services": [
+        "4 fler integritetstjänster"
       ],
       "@pm.me address": [
         "@pm.me-adress"
@@ -12182,6 +12197,9 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Om du prenumererar före detta datum** får du **${ referrerRewardAmount }** i krediter."
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Efter det datumet kommer ditt konto att nedgraderas till **${ BRAND_NAME } Free**. Om du ångrar dig kan du **återaktivera din prenumeration** för att behålla åtkomst till premiumfunktioner."
+      ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
       ],
@@ -12190,6 +12208,9 @@
       ],
       "How your free trial works:": [
         "Hur din gratis provperiod fungerar:"
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "Om du avbryter, kommer du att förlora din **${ referrerRewardAmount }** kreditbelöning."
       ],
       "Invite friends. Get credits.": [
         "Bjud in vänner. Få krediter."
@@ -14806,6 +14827,9 @@
       "Connect organization": [
         "Anslut organisation"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Anslut till ${ VPN_CONNECTIONS } enheter samtidigt med ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
       ],
@@ -15503,6 +15527,9 @@
       ],
       "Third-party apps and services": [
         "Tredjepartsappar och tjänster"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "För att förhandsgranska detta kalkylblad, öppna det i ${ SHEETS_APP_NAME } eller ladda ner det."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prova ${ AUTHENTICATOR_APP_NAME }"

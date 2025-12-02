@@ -1732,6 +1732,9 @@
       "Can someone see my internet history if we use the same WiFi?": [
         "შეუძლია ვინმეს ნახოს ჩემი ბრაუზერის ისტორია, თუ იგივე WiFi-ის ვიყენებთ?"
       ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "დააკავშირეთ ${ VPN_CONNECTIONS } მოწყობილობა ერთდროულად"
+      ],
       "Enable kill switch and auto-connect in your VPN settings.": [
         "ჩართეთ Kill Switch და ავტოკავშირი თქვენი VPN-ის პარამეტრებში."
       ],
@@ -1752,6 +1755,9 @@
       ],
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "ისწავლეთ, როგორ ჩართოთ ${ VPN_APP_NAME } თქვენს რაუტერზე."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "დაიცავით თქვენი ყველა საოჯახო მოწყობილობა ერთდროულად ${ PLAN_NAMES[PLANS.BUNDLE] }-ის საშუალებით."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "დაიცავით თქვენი კომპანია მონაცემების გაჟონვისგან და გახადეთ დისტანციურად მუსაობა უსაფრთხო საწარმოო VPN-თან ერთად."
@@ -3179,11 +3185,17 @@
       "Connect your CRM, website, printers, and more.": [
         "დააკავსირეთ თქვენი CRM, ვებგვერდი, პრინტერი და ა.შ."
       ],
+      "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
+        "შექმენით რაუტერი, რომ მისცეთ თქვენს მომხმარებლებს წვდომა თქვენი IT-ის რესურსებთან გამოყოფილი სერვერების გავლით."
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "შექმენით Zoom-ის შეხვედრა და დაამატეთ შესვლის დეტალები თქვენს მოვლენას ერთი წკაპით."
       ],
       "Create groups you can email with a single address.": [
         "შექმენით ჯგუფები, რომლებისთვისაც ელფოსტის მიწერა ერთი მისამართით შეგეძლებათ."
+      ],
+      "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
+        "შექმენით ახალი მომხმარებლის ანგარისები, ან შემოიტანეთ მომხმარებლები SSO (Single Sign-on) SCIM-ის სამუშაოდ მომზადებით."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "შექმენით პოლიტიკები, რომ გადაწყვიტოთ, ვის შეუძლია გაზიარებულ სერვერებთან დაკავშირება და რომელ ქვეყანაში."
@@ -4767,6 +4779,9 @@
       "15 GB storage": [
         "15 გბ საცავი"
       ],
+      "4 more privacy services": [
+        "კიდევ 4 კონფიდენციალობის სერვისი"
+      ],
       "@pm.me address": [
         "@pm.me მისამართი"
       ],
@@ -5195,6 +5210,9 @@
       ],
       "Enjoying ${ planName }?": [
         "მოგწონთ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "განბლოკეთ 4 ფასიანი კონფიდენფიალობის სერვისი, მხოლოდ, **${ priceString }**-ით მეტით თვეში"
       ],
       "Upgrade your privacy": [
         "გააუმჯობესეთ თქვენი კონფიდენციალობა"
@@ -9306,6 +9324,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "თქვენს ანგარიშს წაშლის საფრთხე ემუქრება. მონაცემთა დაკარგვის თავიდან ასაცილებლად, სთხოვეთ თქვენს ადმინისტრატორს განახლება. ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "თქვენი საცავი სავსეა. ${ BRAND_NAME }-ის პროდუქტების გამოყენების გასაგრძელებლად გაათავისუფლეთ ადგილი, ან ${ cta }."
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
       ]
@@ -11957,6 +11978,9 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } თითო რეფერალისთვის"
       ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**თუ ამ თარიღამდე გამოიწერთ,** თქვენ მიიღებთ **${ referrerRewardAmount }** კრედიტს."
+      ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "ისიამოვნეთ **${ planTitle }**-ით **${ textDate }**-მდე"
       ],
@@ -11965,6 +11989,9 @@
       ],
       "How your free trial works:": [
         "როგორ მუშაობს საცდელი ვერსია:"
+      ],
+      "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
+        "თუ გააუქმებთ, დაკარგავთ თქვენს **${ referrerRewardAmount }** საკრედიტო ჯილდოს."
       ],
       "Invite friends. Get credits.": [
         "მოიწვიეთ მეგობრები და მიიღეთ კრედიტები."
@@ -15217,6 +15244,9 @@
       "Start import process": [
         "შემოტანის დაწყება"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "დაიწყეთ თქვენი მოწყობილობების დაცვა ${ VPN_APP_NAME }-ის აპლიკაციით."
+      ],
       "State": [
         "მდგომარეობა"
       ],
@@ -15810,6 +15840,9 @@
       ],
       "Protect your organization from data breaches with ${ VPN_APP_NAME } for Business.": [
         "დაიცავით თქვენი ორგანიზაცია მონაცემების გაჟონვისგან ${ VPN_APP_NAME } for Business-ით."
+      ],
+      "Unlimited privacy for up to ${ FAMILY_MAX_USERS } people. From only ${ priceString }/month.": [
+        "შეუზღუდავი კონფიდენციალობა ${ FAMILY_MAX_USERS } ადამიანამდე. მხოლოდ, ${ priceString }-დან/თვეში."
       ],
       "Unlimited privacy for you and a loved one. From only ${ priceString }/month.": [
         "შეუზრუდავი კონფიდენციალობა თქვენი საყვარელი ადამიანისთვის. მხოლოდ ${ priceString }/თვეში."
