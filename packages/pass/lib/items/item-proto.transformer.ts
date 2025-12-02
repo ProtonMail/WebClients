@@ -19,7 +19,7 @@ import type {
     ItemSSHKey,
     ItemWifi,
 } from '@proton/pass/types/protobuf/item-v1';
-import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
+import { sanitizeBuffersB64 } from '@proton/pass/utils/buffer/sanitization';
 import { formatExpirationDateYYYYMM } from '@proton/pass/utils/time/expiration-date';
 import { omit } from '@proton/shared/lib/helpers/object';
 
@@ -120,7 +120,7 @@ export const protobufToItem = (item: SafeProtobufItem): DeobfuscatedItem => {
             return {
                 ...base,
                 type: 'login',
-                content: { ...data.login, passkeys: (data.login.passkeys ?? []).map(sanitizeBuffers) },
+                content: { ...data.login, passkeys: (data.login.passkeys ?? []).map(sanitizeBuffersB64) },
             };
         case 'note':
             return { ...base, type: 'note', content: data.note };
