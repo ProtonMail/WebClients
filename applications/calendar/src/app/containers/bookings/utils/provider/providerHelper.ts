@@ -3,7 +3,6 @@ import type {
     InternalBookingPage,
 } from 'applications/calendar/src/app/store/internalBooking/interface';
 import { areIntervalsOverlapping, differenceInMinutes, isBefore, subMinutes } from 'date-fns';
-import { c } from 'ttag';
 
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { fromUTCDateToLocalFakeUTCDate, getTimezone } from '@proton/shared/lib/date/timezone';
@@ -16,6 +15,7 @@ import type {
 
 import type { BookingRange, InternalBookingFrom, Slot } from '../../bookingsProvider/interface';
 import { BookingLocation, DEFAULT_EVENT_DURATION, DEFAULT_RECURRING } from '../../bookingsProvider/interface';
+import { BookingErrorMessages } from '../bookingCopy';
 import { generateDefaultBookingRange, generateRangeFromSlots } from '../range/rangeHelpers';
 import { generateSlotsFromRange } from '../slot/slotHelpers';
 import { fromTimestampToUTCDate } from '../timeHelpers';
@@ -198,7 +198,7 @@ export const validateRangeOperation = ({
 }): string | null => {
     // Check if invalid duration (this typically happens with overlaps)
     if (recurring && start.getTime() >= end.getTime()) {
-        return c('Info').t`Booking overlaps with an existing booking.`;
+        return BookingErrorMessages.RANGE_OVERLAP;
     }
 
     // Check if trying to add/update in the past, not relevant for recurring bookings
@@ -207,7 +207,7 @@ export const validateRangeOperation = ({
         const nowWithTz = fromUTCDateToLocalFakeUTCDate(now, false, timezone);
 
         if (isBefore(start, nowWithTz)) {
-            return c('Info').t`Booking cannot be added in the past.`;
+            return BookingErrorMessages.RANGE_IN_PAST;
         }
     }
 
@@ -217,11 +217,11 @@ export const validateRangeOperation = ({
         }
 
         if (range.id === rangeId) {
-            return c('Info').t`Booking already exists.`;
+            return BookingErrorMessages.RANGE_ALREADY_EXIST;
         }
 
         if (areIntervalsOverlapping({ start, end }, { start: range.start, end: range.end })) {
-            return c('Info').t`Booking overlaps with an existing booking.`;
+            return BookingErrorMessages.RANGE_OVERLAP;
         }
     }
 
