@@ -21,4 +21,14 @@
 		color: var(--interaction-norm-active);
 		background-color: color-mix(in srgb, var(--interaction-norm-active) 15%, transparent);
 	}
+
+	&-calendar-select {
+		&#{&} {
+			color: var(--text-weak);
+
+			&--disabled {
+				padding-inline-end: var(--space-4);
+			}
+		}
+	}
 }
