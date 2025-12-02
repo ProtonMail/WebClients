@@ -16,6 +16,8 @@ import { AvailabilityState } from '../../useBookingNextAvailableSlot';
 import { BookingMiniCalendar } from './BookingMiniCalendar';
 import { BookingNavigationButtons } from './BookingNavigationButtons';
 
+import './BookingMiniCalendar.scss';
+
 interface Props {
     gridSize: number;
     availabilityState: AvailabilityState;
@@ -71,7 +73,14 @@ export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
                         {format(selectedDate, 'MMMM Y', { locale: dateLocale })}
                         {isOpen ? <IcChevronUp /> : <IcChevronDown />}
                     </Button>
-                    <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} autoClose={false} autoCloseOutside>
+                    <Dropdown
+                        anchorRef={anchorRef}
+                        isOpen={isOpen}
+                        onClose={close}
+                        autoClose={false}
+                        autoCloseOutside
+                        className="p-2 rounded-xl booking-mini-calendar"
+                    >
                         <BookingMiniCalendar selectedDate={selectedDate} onSelectDate={handleSelectDate} />
                     </Dropdown>
                 </div>
