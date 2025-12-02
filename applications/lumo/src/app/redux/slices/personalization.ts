@@ -1,8 +1,6 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { LumoState } from '../store';
-
 export interface PersonalizationSettings {
     nickname: string;
     jobRole: string;
@@ -149,17 +147,8 @@ const personalizationReducer = createReducer(initialState, (builder) => {
         });
 });
 
-// selectors
-// TODO: move to `selectors.ts`
-export const selectPersonalizationSettings = (state: LumoState) => state.personalization;
-
-export const selectHasModifiedPersonalization = (state: LumoState) =>
-    isNonEmptyPersonalization(selectPersonalizationSettings(state));
-
-export default personalizationReducer;
-
 // Helpers
-function isNonEmptyPersonalization(personalization: PersonalizationSettings) {
+export function isNonEmptyPersonalization(personalization: PersonalizationSettings) {
     const fieldsToCheck: (keyof PersonalizationSettings)[] = [
         'nickname',
         'jobRole',
@@ -168,3 +157,6 @@ function isNonEmptyPersonalization(personalization: PersonalizationSettings) {
     ];
     return fieldsToCheck.some((field) => personalization[field] !== initialState[field]);
 }
+
+// Export Reducer
+export default personalizationReducer;
