@@ -635,7 +635,7 @@ export function sendMessage({
             const state = getState();
             const personalization = state.personalization;
             if (personalization?.enableForNewChats) {
-                personalizationPrompt = getPersonalizationPromptFromState(personalization);
+                personalizationPrompt = formatPersonalization(personalization);
             }
 
             // Get project instructions from space if this is a project conversation
@@ -721,7 +721,7 @@ export function regenerateMessage(
             const personalization = state.personalization;
             let personalizationPrompt: string | undefined;
             if (personalization?.enableForNewChats) {
-                personalizationPrompt = getPersonalizationPromptFromState(personalization);
+                personalizationPrompt = formatPersonalization(personalization);
             }
 
             // Get project instructions from space if this is a project conversation
@@ -1265,8 +1265,8 @@ export function generateFakeConversationToShowTierError({
     };
 }
 
-// Helper function to generate personalization prompt from state (without using hooks)
-export function getPersonalizationPromptFromState(personalization: PersonalizationSettings): string {
+// Helper function to generate personalization prompt from state
+export function formatPersonalization(personalization: PersonalizationSettings): string {
     if (!personalization.enableForNewChats) {
         return '';
     }
@@ -1297,5 +1297,5 @@ export function getPersonalizationPromptFromState(personalization: Personalizati
         parts.push(`Additional context: ${personalization.additionalContext}`);
     }
 
-    return parts.join(' ');
+    return parts.join('\n');
 }
