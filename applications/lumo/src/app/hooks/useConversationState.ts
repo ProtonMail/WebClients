@@ -1,6 +1,6 @@
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useLumoDispatch } from '../redux/hooks';
-import { createDatePair } from '../redux/slices/core/messages';
+import { createDate } from '../redux/slices/core/messages';
 import type { ConversationId, SpaceId } from '../types';
 import { initializeNewSpaceAndConversation } from '../ui/interactiveConversation/helper';
 
@@ -22,10 +22,10 @@ export const useConversationState = ({ conversationId, spaceId }: UseConversatio
             return { conversationId: inputConversationId, spaceId: inputSpaceId };
         }
 
-        const datePair = createDatePair();
+        const now = createDate();
         const { conversationId: newConversationId, spaceId: newSpaceId } = initializeNewSpaceAndConversation(
             dispatch,
-            datePair[0],
+            now,
             isGhostChatMode
         );
 
@@ -34,7 +34,6 @@ export const useConversationState = ({ conversationId, spaceId }: UseConversatio
         return {
             conversationId: newConversationId,
             spaceId: newSpaceId,
-            datePair,
         };
     };
 
