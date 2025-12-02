@@ -1032,6 +1032,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }에서 열기"
+      ],
       "Open navigation": [
         "탐색 열기"
       ],
@@ -6370,7 +6373,7 @@
         "${ elementsCount }개 메시지가 라벨 해제됩니다:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount }개의 삽입된 이미지"
+        "${ embeddedAttachmentsCount }개 이미지 첨부됨"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
@@ -7048,7 +7051,7 @@
         "라벨 ${ nameDeleted }로 태그된 이메일들은 삭제되지 않으며 해당하는 폴더에서 여전히 찾을 수 있습니다."
       ],
       "embedded image": [
-        "삽입된 이미지"
+        "개 이미지 첨부됨"
       ],
       "Enabling auto-deletion…": [
         "자동 삭제 활성화 중…"
@@ -10992,7 +10995,7 @@
         "${ priceLine }부터 시작"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고 나면 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
+        "할인된 가격인 ${ priceCoupon }은(는) 첫 달간 유효합니다. 그 이후 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
@@ -15180,6 +15183,9 @@
       ],
       "To": [
         "수신"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
       ],
       "Trash": [
         "휴지통"
