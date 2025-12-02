@@ -14,7 +14,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
-import { BookingLocation } from '../../containers/bookings/bookingsProvider/interface';
+import { BookingLocation } from '../../containers/bookings/interface';
 import { getCalendarAndOwner } from '../../containers/bookings/utils/calendar/calendarHelper';
 import {
     decryptAndVerifyBookingPageSecret,

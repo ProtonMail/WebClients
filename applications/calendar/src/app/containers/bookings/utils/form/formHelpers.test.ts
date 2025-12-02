@@ -1,4 +1,4 @@
-import { type BookingFormData, BookingFormValidationReasons, BookingLocation } from '../../bookingsProvider/interface';
+import { type BookingFormData, BookingFormValidationReasons, BookingLocation } from '../../interface';
 import { validateFormData } from './formHelpers';
 
 describe('booking helpers', () => {

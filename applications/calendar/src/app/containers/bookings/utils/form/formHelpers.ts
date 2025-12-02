@@ -2,9 +2,9 @@ import { addHours, getUnixTime, isSameDay } from 'date-fns';
 
 import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
-import { BookingFormValidationReasons, BookingLocation, MAX_BOOKING_SLOTS } from '../../bookingsProvider/interface';
-import type { BookingFormData, BookingFormValidation, BookingRange } from '../../bookingsProvider/interface';
 import type { SerializedFormData } from '../../bookingsTypes';
+import { BookingFormValidationReasons, BookingLocation, MAX_BOOKING_SLOTS } from '../../interface';
+import type { BookingFormData, BookingFormValidation, BookingRange } from '../../interface';
 import { BookingErrorMessages } from '../bookingCopy';
 
 export const validateFormData = (data: BookingFormData): BookingFormValidation | undefined => {
