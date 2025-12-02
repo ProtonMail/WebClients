@@ -24,6 +24,18 @@ const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manif
 const version = getManifestVersion();
 
 const options: Partial<ProtonPackOptions> = {
+    browserslist: (() => {
+        switch (BUILD_TARGET) {
+            case 'chrome':
+                return dev ? 'last 1 chrome version' : 'Chrome 102';
+            case 'firefox':
+                return dev ? 'last 1 firefox version' : 'Firefox 109';
+            case 'safari':
+                return dev ? 'last 1 safari version' : 'Safari 16';
+            default:
+                '';
+        }
+    })(),
     version: dev ? `${JSON.parse(version)}-dev` : JSON.parse(version),
     api: `https://pass.${apiEnv}/api`,
     apiProxy: false,

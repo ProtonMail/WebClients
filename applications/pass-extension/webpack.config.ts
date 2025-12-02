@@ -1,6 +1,5 @@
 import CircularDependencyPlugin from 'circular-dependency-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
-import ESLintPlugin from 'eslint-webpack-plugin';
 import fs from 'fs';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
@@ -8,9 +7,8 @@ import type { Configuration } from 'webpack';
 import webpack from 'webpack';
 
 import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
-import { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } from '@proton/pack/webpack/constants';
 import getCssLoaders from '@proton/pack/webpack/css.loader';
-import { createRegex, excludeFiles, excludeNodeModulesExcept } from '@proton/pack/webpack/helpers/regex';
+import { getJsLoader } from '@proton/pack/webpack/js.loader.swc.js';
 import getOptimizations from '@proton/pack/webpack/optimization';
 import ProtonIconsTreeShakePlugin from '@proton/pass/utils/webpack/icons/plugin';
 import { sideEffectsRule, zipJSRule } from '@proton/pass/utils/webpack/rules';
@@ -101,10 +99,17 @@ section('Proton Configuration', () => {
 const USE_IMPORT_SCRIPTS = BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari';
 const CHROME_STORE_RELEASE = BUILD_TARGET === 'chrome' && BUILD_STORE_TARGET !== 'edge';
 
-const JS_EXCLUDES = createRegex(
-    excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
-    excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
-);
+const hasReactRefresh = !webpackOptions.isProduction && !RUNTIME_RELOAD;
+
+/** Disables corejs polyfills in injected scripts */
+const scriptJSLoader = getJsLoader({ ...webpackOptions, hasReactRefresh: false });
+scriptJSLoader.use.options.env = {};
+
+/** Force "usage" mode for other extension components */
+const appJSLoader = getJsLoader({ ...webpackOptions, hasReactRefresh });
+appJSLoader.use.options.env.mode = 'usage';
+
+const layeredJSLoaders = { oneOf: [{ issuerLayer: 'injection', ...scriptJSLoader }, appJSLoader] };
 
 const nonAccessibleWebResource = (entry: string) => [entry, './src/lib/utils/web-accessible-resource.ts'];
 const disableBrowserTrap = (entry: string) => [entry, './src/lib/utils/disable-browser-trap.ts'];
@@ -176,25 +181,7 @@ const config: Configuration = {
         rules: [
             sideEffectsRule,
             zipJSRule,
-            {
-                oneOf: [
-                    {
-                        test: /\.js$|\.tsx?$/,
-                        issuerLayer: 'injection',
-                        exclude: JS_EXCLUDES,
-                        use: {
-                            loader: require.resolve('babel-loader'),
-                            options: { configFile: path.resolve(__dirname, 'babel.config.injection.js') },
-                        },
-                    },
-                    {
-                        test: /\.js$|\.tsx?$/,
-                        exclude: JS_EXCLUDES,
-                        use: require.resolve('babel-loader'),
-                    },
-                ],
-            },
-
+            layeredJSLoaders,
             ...getCssLoaders({ browserslist: undefined, logical: false }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],
@@ -287,15 +274,7 @@ const config: Configuration = {
                 ? getAppVersion()
                 : webpack.DefinePlugin.runtimeValue(getAppVersion, true),
         }),
-        new ESLintPlugin({
-            extensions: ['js', 'ts'],
-            overrideConfigFile: path.resolve(__dirname, 'eslint.config.mjs'),
-            failOnError: false,
-            failOnWarning: false,
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'styles/[name].css',
-        }),
+        new MiniCssExtractPlugin({ filename: 'styles/[name].css' }),
         new CopyPlugin({
             patterns: [
                 { from: 'public' },
