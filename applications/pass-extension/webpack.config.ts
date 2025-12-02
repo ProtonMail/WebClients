@@ -189,7 +189,19 @@ const config: Configuration = {
     optimization: {
         ...getOptimizations(webpackOptions),
         runtimeChunk: false,
-        splitChunks: false,
+        splitChunks: {
+            cacheGroups: {
+                default: false,
+                defaultVendors: false,
+                corejs: {
+                    test: /[\\/]node_modules[\\/]core-js[\\/]/,
+                    name: 'polyfills',
+                    /** Keep polyfills inlined in service-worker */
+                    chunks: (chunk) => chunk.canBeInitial() && chunk.name !== 'background',
+                    priority: 10,
+                },
+            },
+        },
         usedExports: true,
         chunkIds: 'named',
     },
@@ -232,6 +244,7 @@ const config: Configuration = {
                 if (chunk?.id && ARGON2_CHUNK_NAMES.includes(chunk.id.toString())) return 'chunk.crypto-argon2.js';
                 if (chunk?.id && NACL_CHUNK_NAME === chunk.id.toString()) return 'chunk.crypto-nacl.js';
                 if (chunk?.id && PQC_CHUNK_NAME === chunk.id.toString()) return 'chunk.crypto-pqc.js';
+
                 return 'chunk.[contenthash:8].js';
             }
 
