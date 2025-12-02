@@ -1,5 +1,6 @@
 import type { BookingPageEditData } from 'applications/calendar/src/app/store/internalBooking/interface';
 
+import type { SessionKey } from '@proton/crypto';
 import { CryptoProxy, type PublicKeyReference } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
@@ -8,7 +9,11 @@ import type {
     BookingPageSlotsPayload,
 } from '@proton/shared/lib/interfaces/calendar/Bookings';
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
-import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
+import {
+    type PrimaryAddressKeyForEncryption,
+    type PrimaryAddressKeysForSigning,
+    splitKeys,
+} from '@proton/shared/lib/keys';
 
 import type { SerializedFormData } from '../../bookingsTypes';
 import { BookingLocation } from '../../interface';
@@ -242,4 +247,25 @@ export const encryptBookingPageEdition = async ({
         EncryptedSecret: encryptedSecret.message.toBase64(),
         Slots,
     };
+};
+
+export const encryptSlotBookingSharedKeyPackets = async ({
+    calendarID,
+    getCalendarKeys,
+    sharedSessionKey,
+}: {
+    calendarID: string;
+    getCalendarKeys: (calendarID: string) => Promise<DecryptedCalendarKey[]>;
+    sharedSessionKey?: SessionKey;
+}) => {
+    if (!sharedSessionKey) {
+        return;
+    }
+
+    const calendarKeys = await getCalendarKeys(calendarID);
+    return CryptoProxy.encryptSessionKey({
+        ...sharedSessionKey,
+        encryptionKeys: splitKeys(calendarKeys).privateKeys,
+        format: 'binary',
+    });
 };
