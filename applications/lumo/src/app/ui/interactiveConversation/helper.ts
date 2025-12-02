@@ -473,6 +473,31 @@ function removeEmptyAssistantTurns(turns: Turn[]) {
     return turns.filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
 }
 
+async function prepareTurnsBetter(
+    linearChain: Message[],
+    contextFilters: ContextFilter[],
+    s: SettingsContext,
+    allConversationAttachments: Attachment[],
+    projectInstructions?: string,
+    documentContext?: string
+) {
+    // First, get basic turns without images
+    let turns = prepareTurns(
+        linearChain,
+        contextFilters,
+        s.personalization,
+        projectInstructions,
+        documentContext
+    );
+
+    // Now enrich user turns with images
+    turns = await Promise.all(
+        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, allConversationAttachments))
+    );
+
+    return removeEmptyAssistantTurns(turns);
+}
+
 export function sendMessage({
     applicationContext: a,
     newMessageData: m,
@@ -499,7 +524,7 @@ export function sendMessage({
         // TODO: check if this is needed, should be handled in useLumoActions
         let { conversationId, spaceId } = c;
         if (!spaceId || !conversationId) {
-            ({ conversationId, spaceId } = initializeNewSpaceAndConversation(dispatch, date1, ui.isGhostMode));
+            ({ conversationId, spaceId } = dispatch(initializeNewSpaceAndConversation(date1, ui.isGhostMode)));
         } else {
             dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         }
@@ -656,7 +681,7 @@ export function sendMessage({
             const enableExternalTools = noAttachment && ui.enableExternalToolsToggled;
             const requestTitle = shouldRequestTitle;
             const contextFilters = c.contextFilters;
-            const attachments = c.allConversationAttachments;
+            const allConversationAttachments = c.allConversationAttachments;
 
             // Extract the user's query from the last user message for RAG retrieval
             const lastUserMessage = linearChain.filter((m) => m.role === Role.User).pop();
@@ -754,21 +779,14 @@ export function sendMessage({
                 dispatch(pushMessageRequest({ id: lastUserMessage.id }));
             }
 
-            // First, get basic turns without images
-            let turns = prepareTurns(
+            const turns = await prepareTurnsBetter(
                 updatedLinearChain,
                 contextFilters,
-                s.personalization,
+                s,
+                allConversationAttachments,
                 projectInstructions,
                 ragResult?.context
             );
-
-            // Now enrich user turns with images
-            turns = await Promise.all(
-                turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, updatedLinearChain, attachments))
-            );
-
-            turns = removeEmptyAssistantTurns(turns);
 
             await dispatch(
                 sendMessageWithRedux(api, turns, {
@@ -1210,29 +1228,27 @@ export async function retrySendMessage({
     return assistantMessage;
 }
 
-export function initializeNewSpaceAndConversation(
-    dispatch: AppDispatch,
-    createdAt: string,
-    isGhostMode: boolean = false
-): { conversationId: ConversationId; spaceId: SpaceId } {
-    const spaceId = newSpaceId();
-    dispatch(addSpace({ id: spaceId, createdAt, spaceKey: generateSpaceKeyBase64() }));
-    dispatch(pushSpaceRequest({ id: spaceId }));
+export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode: boolean = false) {
+    return (dispatch: LumoDispatch): { conversationId: ConversationId; spaceId: SpaceId } => {
+        const spaceId = newSpaceId();
+        dispatch(addSpace({ id: spaceId, createdAt, spaceKey: generateSpaceKeyBase64() }));
+        dispatch(pushSpaceRequest({ id: spaceId }));
 
-    const conversationId = newConversationId();
-    dispatch(
-        addConversation({
-            id: conversationId,
-            spaceId,
-            title: c('collider_2025: Placeholder').t`New chat`,
-            createdAt,
-            status: ConversationStatus.GENERATING,
-            ...(isGhostMode && { ghost: true }),
-        })
-    );
-    dispatch(pushConversationRequest({ id: conversationId }));
+        const conversationId = newConversationId();
+        dispatch(
+            addConversation({
+                id: conversationId,
+                spaceId,
+                title: c('collider_2025: Placeholder').t`New chat`,
+                createdAt,
+                status: ConversationStatus.GENERATING,
+                ...(isGhostMode && { ghost: true }),
+            })
+        );
+        dispatch(pushConversationRequest({ id: conversationId }));
 
-    return { conversationId, spaceId };
+        return { conversationId, spaceId };
+    };
 }
 
 function createMessagePair(
@@ -1506,7 +1522,7 @@ export function generateFakeConversationToShowTierError({
         const [date1, date2] = createDatePair();
 
         // Create new space and conversation just like in sendMessage
-        const { conversationId, spaceId } = initializeNewSpaceAndConversation(dispatch, date1);
+        const { conversationId, spaceId } = dispatch(initializeNewSpaceAndConversation(date1));
 
         const { userMessage, assistantMessage } = createMessagePair(
             newMessageContent,
