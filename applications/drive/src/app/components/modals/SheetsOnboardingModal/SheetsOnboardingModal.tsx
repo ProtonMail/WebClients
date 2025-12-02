@@ -39,7 +39,7 @@ function SheetsOnboardingModal(modalProps: ModalProps) {
     };
 
     return (
-        <ModalTwo {...modalProps} size="xlarge" data-testid="drive-sheets-onboarding">
+        <ModalTwo {...modalProps} size="large" data-testid="drive-sheets-onboarding">
             <ModalTwoHeader />
             <ModalTwoContent>
                 <img src={screenshot} alt={c('Label').t`A screenshot of ${SHEETS_APP_NAME}`} />
