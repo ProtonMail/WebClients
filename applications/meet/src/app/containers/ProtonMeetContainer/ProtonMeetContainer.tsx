@@ -36,6 +36,7 @@ import { useAssignHost } from '../../hooks/useAssignHost';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useLockMeeting } from '../../hooks/useLockMeeting';
+import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
 import { useWakeLock } from '../../hooks/useWakeLock';
@@ -146,6 +147,8 @@ export const ProtonMeetContainer = ({
             participantNameMap,
             chatMessages,
         });
+
+    const isRecordingInProgress = useIsRecordingInProgress();
 
     const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
 
@@ -866,6 +869,7 @@ export const ProtonMeetContainer = ({
                         assignHost={assignHost}
                         paidUser={!!user?.hasPaidMeet}
                         keyRotationLogs={keyRotationLogs}
+                        isRecordingInProgress={isRecordingInProgress}
                     />
                 ) : (
                     <PrejoinContainer
