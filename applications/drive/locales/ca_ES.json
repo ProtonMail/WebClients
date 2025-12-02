@@ -279,6 +279,9 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
+      "Create a spreadsheet": [
+        "Creeu un full de càlcul"
+      ],
       "Create album": [
         "Crea un àlbum"
       ],
@@ -739,6 +742,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Obriu-ho a ${ SHEETS_APP_NAME }"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -3759,9 +3765,6 @@
       "We were not able to load some of your invitation to shared items": [
         "No s'han pogut carregar algunes de les vostres invitacions a elements compartits"
       ],
-      "We were not able to load some of your invitations": [
-        "No s'han pogut carregar algunes de les vostres invitacions"
-      ],
       "We were not able to load some of your saved shared links": [
         "No s'han pogut carregar alguns dels enllaços compartits que havíeu desat"
       ],
@@ -6639,6 +6642,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Les vostres dades són vostres. Creeu i col·laboreu utilitzant fulls de càlcul amb totes les funcionalitats i protegits amb xifratge d'extrem a extrem."
+      ],
       "Your email address and password were leaked:": [
         "La seva adreça de correu electrònic i contrasenya es van filtrar:"
       ],
@@ -6846,6 +6852,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Una captura de pantalla de ${ SHEETS_APP_NAME }"
       ],
       "Account holder": [
         "Titular del compte"
@@ -7216,6 +7225,9 @@
       ],
       "Never": [
         "Mai"
+      ],
+      "New": [
+        "Nou"
       ],
       "New password": [
         "Contrasenya nova"
@@ -11426,10 +11438,10 @@
         "Mantén el pagament automàtic"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu descarregar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot descarregar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
+        "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot baixar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu descarregar de categoria o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No podem descarregar-vos de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
+        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No us podem baixar de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
       ]
     },
     "Subscription saving": {
@@ -12185,6 +12197,9 @@
       "Information exposed in breach": [
         "Informació exposada en la filtració"
       ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Us presentem ${ SHEETS_APP_NAME }"
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
@@ -12554,6 +12569,9 @@
       ],
       "Time": [
         "Hora"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Per previsualitzar aquest full de càlcul, obriu-lo a ${ SHEETS_APP_NAME } o descarregueu-lo."
       ],
       "Total size": [
         "Mida total"

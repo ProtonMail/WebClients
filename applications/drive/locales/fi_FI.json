@@ -279,6 +279,9 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
+      "Create a spreadsheet": [
+        "Luo laskentataulukko"
+      ],
       "Create album": [
         "Luo albumi"
       ],
@@ -475,6 +478,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Hanki ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
       ],
       "Get in touch": [
         "Ota yhteyttä"
@@ -724,6 +730,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -1275,17 +1284,26 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Voit saada enintään ${ TRIAL_MAX_DEDICATED_IPS } omaa palvelinta kokeilujakson aikana."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada enintään ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-käyttäjäpaikkaa kokeilujakson aikana."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Voitte saada enintään ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-käyttäjäpaikkaa kokeilujakson aikana."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "Sinulla voi olla jopa ${ TRIAL_MAX_USERS } käyttäjää kokeiluajalla."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Et voi lisätä mukautettuja verkkotunnuksia kokeilujakson aikana."
       ],
       "You have reached the trial limit.": [
         "Olet saavuttanut kokeilujakson enimmäisrajan."
@@ -1329,6 +1347,9 @@
       "1 user account": [
         "1 käyttäjätili"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40 kertaa enemmän nykyiseen tilaukseesi nähden"
+      ],
       "6 user accounts": [
         "Kuusi käyttäjätiliä"
       ],
@@ -1366,6 +1387,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
+      ],
+      "forever": [
+        "ikuisesti"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
@@ -1712,8 +1736,14 @@
       "Full chat history with search": [
         "Täysi keskusteluhistoria haulla"
       ],
+      "Large file upload support": [
+        "Suurten tiedostojen lataustuki"
+      ],
       "Limited daily chats": [
         "Rajoitetusti päivittäisiä keskusteluja"
+      ],
+      "Limited favorites": [
+        "Rajoitettu määrä suosikkeja"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
@@ -1723,6 +1753,9 @@
       ],
       "Upload and query multiple large files": [
         "Lataa ja laita jonoon useita suuria tiedostoja"
+      ],
+      "Upload and query small files": [
+        "Lähetä ja laita jonoon pieniä tiedostoja"
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
@@ -1734,6 +1767,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Lisää ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Edistyksellinen tilin ja verkon tietoturva yhdellä tilauksella"
       ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
@@ -3025,6 +3061,9 @@
       "Here's what changed:": [
         "Tehdyt muutokset:"
       ],
+      "LOCATION:": [
+        "SIJAINTI:"
+      ],
       "NOTE:": [
         "MUISTIINPANO:"
       ],
@@ -3042,6 +3081,9 @@
       ],
       "TITLE:": [
         "OTSIKKO:"
+      ],
+      "You are invited to": [
+        "Sinut on kutsuttu"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4585,6 +4627,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vaatii ${ BRAND_NAME } - osoitteen turvalliseen tapahtumien synkronointiin ja salaukseen. Lunasta ilmainen ${ claimAddressButton } -osoitteesi nyt."
+      ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } vaatii ${ BRAND_NAME } - osoitteen turvalliseen tapahtumien synkronointiin ja salaukseen. Lunasta ilmainen ${ MAIL_APP_NAME } - osoitteesi nyt."
       ],
@@ -5270,6 +5315,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Avaa \"Omat tiedostot\" ja tallenna ensin joitakin tiedostoja."
+      ],
+      "Google Pay mark": [
+        "Google Payn merkki"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hallitukset ja Internet-palveluntarjoajat voivat valvoa verkkotoimintaasi. Piilottamalla oikean IP-osoitteensi ja salaamalla toimintasi, selaamisesi muuttuu yksityiseksi."
@@ -6407,6 +6455,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tietosi lähteestä ${ importedEmailAddressStrong } ovat valmiina ${ BRAND_NAME }-tilillesi tuontia varten."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Datasi säilyy sinulla. Luo ja tee yhteistyötä käyttämällä monipuolisilla ominaisuuksilla varusteluissa taulukoissa, jotka on suojattu päästä päähän -salauksella."
+      ],
       "Your email address and password were leaked:": [
         "Sähköpostiosoitteesi ja salasanasi paljastuivat:"
       ],
@@ -6605,6 +6656,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Ruutukaappaus ${ SHEETS_APP_NAME } -sovelluksesta"
       ],
       "Account holder": [
         "Tilinhaltija"
@@ -6963,6 +7017,9 @@
       ],
       "Never": [
         "Ei koskaan"
+      ],
+      "New": [
+        "Uusi"
       ],
       "New password": [
         "Uusi salasana"
@@ -9261,6 +9318,9 @@
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
       ],
+      "File attachments (up to 10GB)": [
+        "Liitetiedostot (enintään 10 Gt)"
+      ],
       "Team policies": [
         "Ryhmäkäytännöt"
       ]
@@ -9394,6 +9454,9 @@
       "Taxes": [
         "Verot"
       ],
+      "terms and conditions": [
+        "käyttöehdot"
+      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
@@ -9424,6 +9487,9 @@
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tämä toiminto laajentaa olemassa olevaa tilausta. Sinua veloitetaan vain uusista lisäosista ja nykyisen laskutusjakson jäljellä olevasta ajasta. Tilauksesi uusimispäivä ei muutu."
+      ],
       "This offer is not available with your current plan.": [
         "Tämä tarjous ei ole saatavilla nykyiselle tilauksellesi."
       ],
@@ -9439,8 +9505,14 @@
       "You already have a subscription to this plan.": [
         "Sinulla on jo tämä tilaus."
       ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Sinulla on jo tilaus tähän tilaukseen. Voit muuttaa tilaustasi palvelussa ${ subscriptionPlatform }."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Sinut ohjataan pian maksun vahvistamiseen."
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"
@@ -9502,6 +9574,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -11544,6 +11621,9 @@
         "Löytyi ${ searchView.numberOfResults } tulos",
         "Löytyi ${ searchView.numberOfResults } tulosta"
       ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Ansaitset **${ referralInfo.uiData.refereeRewardAmount }** krediitteinä ${ planTitle } -tilauksella"
+      ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Hanki kaikki ${ CALENDAR_APP_NAME } ominaisuudet käyttöösi"
       ],
@@ -11601,6 +11681,9 @@
       ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
+      ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Esittelyssä ${ SHEETS_APP_NAME }"
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
@@ -11959,6 +12042,9 @@
       ],
       "Time": [
         "Aika"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Esikatsellaksesi tätä laskentataulukkoa, avaa se ${ SHEETS_APP_NAME } -sovelluksessa tai lataa se."
       ],
       "Total size": [
         "Kokonaiskoko"

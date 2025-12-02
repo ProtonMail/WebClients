@@ -279,6 +279,9 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
+      "Create a spreadsheet": [
+        "Hesap tablosu oluştur"
+      ],
       "Create album": [
         "Albüm oluştur"
       ],
@@ -739,6 +742,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } ile aç"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -3759,9 +3765,6 @@
       "We were not able to load some of your invitation to shared items": [
         "Paylaşılan ögelere yaptığınız davetleriden bazıları yüklenemedi"
       ],
-      "We were not able to load some of your invitations": [
-        "Bazı davetleriniz yüklenemedi."
-      ],
       "We were not able to load some of your saved shared links": [
         "Kaydedilmiş paylaşılan bağlantılarınızdan bazıları yüklenemedi"
       ],
@@ -5963,7 +5966,7 @@
         "Tanılama yapılıyor..."
       ],
       "Same photo or video already exist": [
-        "Aynı fotoğraf veya video zaten mevcut"
+        "Aynı fotoğraf veya video zaten var"
       ],
       "Saving...": [
         "Kaydediliyor..."
@@ -6639,6 +6642,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Verileriniz sizin kalır. Uçtan uca şifreleme ile korunan, tam özellikli hesap tablolarını kullanarak oluşturun ve iş birliği yapın."
+      ],
       "Your email address and password were leaked:": [
         "E-posta adresiniz ve parolanız sızdırılmış:"
       ],
@@ -6846,6 +6852,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } ekran görüntüsü"
       ],
       "Account holder": [
         "Hesap sahibi"
@@ -7213,6 +7222,9 @@
       ],
       "Never": [
         "Asla"
+      ],
+      "New": [
+        "Yeni"
       ],
       "New password": [
         "Yeni parola"
@@ -8266,7 +8278,7 @@
         "HTML imzalar"
       ],
       "Kill switch/always-on VPN": [
-        "Bağlantı kesici / Hep açık VPN"
+        "Bağlantı kesici / Her zaman açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
@@ -12125,6 +12137,9 @@
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
       ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } ile tanışın"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
@@ -12494,6 +12509,9 @@
       ],
       "Time": [
         "Zaman"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
       "Total size": [
         "Toplam boyut"

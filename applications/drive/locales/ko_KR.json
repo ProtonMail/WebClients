@@ -276,6 +276,9 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
+      "Create a spreadsheet": [
+        "스프레드시트 생성"
+      ],
       "Create album": [
         "앨범 생성"
       ],
@@ -734,6 +737,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }에서 열기"
       ],
       "Open navigation": [
         "탐색 열기"
@@ -3736,9 +3742,6 @@
       "We were not able to load some of your invitation to shared items": [
         "공유된 항목에 대한 초대 일부를 가져올 수 없습니다"
       ],
-      "We were not able to load some of your invitations": [
-        "초대 중 일부를 불러올 수 없습니다"
-      ],
       "We were not able to load some of your saved shared links": [
         "저장된 링크 일부를 불러올 수 없었습니다"
       ],
@@ -5878,6 +5881,9 @@
       "Running diagnostics...": [
         "진단 중..."
       ],
+      "Same photo or video already exist": [
+        "동일한 사진 및 영상이 존재합니다."
+      ],
       "Saving...": [
         "저장 중..."
       ],
@@ -6544,6 +6550,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong }(에)서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 완료되었습니다."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "데이터는 온전히 개인의 것이여야 합니다. 모든 기능을 갖춘 스프레드시트를 사용해 생성 및 공동 작업하세요. 종단간 암호화로 데이터가 안전하게 보호됩니다."
+      ],
       "Your email address and password were leaked:": [
         "사용자의 이메일 주소 및 비밀번호가 유출되었습니다:"
       ],
@@ -6745,6 +6754,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }의 스크린샷"
       ],
       "Account holder": [
         "예금주"
@@ -7111,6 +7123,9 @@
       ],
       "Never": [
         "안 함"
+      ],
+      "New": [
+        "신규"
       ],
       "New password": [
         "새 비밀번호"
@@ -8451,7 +8466,7 @@
         "${ priceLine }부터 시작"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고 나면 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
+        "할인된 가격인 ${ priceCoupon }은(는) 첫 달간 유효합니다. 그 이후 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."
@@ -11903,6 +11918,9 @@
       "Information exposed in breach": [
         "유출 시 노출된 정보"
       ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME }를 소개합니다"
+      ],
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
@@ -12271,6 +12289,9 @@
       ],
       "Time": [
         "시간"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "이 스프레드시트를 미리보려면, ${ SHEETS_APP_NAME }에서 열거나 다운로드하세요."
       ],
       "Total size": [
         "총 크기"

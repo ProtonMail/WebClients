@@ -279,6 +279,9 @@
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
+      "Create a spreadsheet": [
+        "Rekenblad aanmaken"
+      ],
       "Create album": [
         "Creëer Album"
       ],
@@ -739,6 +742,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Openen in ${ SHEETS_APP_NAME }"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -3759,9 +3765,6 @@
       "We were not able to load some of your invitation to shared items": [
         "We konden sommige van uw uitnodigingen voor gedeelde items niet laden."
       ],
-      "We were not able to load some of your invitations": [
-        "We konden sommige van uw uitnodigingen niet laden."
-      ],
       "We were not able to load some of your saved shared links": [
         "We konden sommige van uw opgeslagen gedeelde koppelingen niet laden."
       ],
@@ -6639,6 +6642,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
       ],
+      "Your data stays yours. Create and collaborate using fully featured spreadsheets secured with end-to-end encryption.": [
+        "Uw gegevens blijven van u. Creëer en werk samen met volledig functionele spreadsheets die beveiligd zijn met end-to-end versleuteling."
+      ],
       "Your email address and password were leaked:": [
         "Uw emailadres en wachtwoorden werden gelekt:"
       ],
@@ -6846,6 +6852,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
+      ],
+      "A screenshot of ${ SHEETS_APP_NAME }": [
+        "Een schermafbeelding van ${ SHEETS_APP_NAME }"
       ],
       "Account holder": [
         "Rekeninghouder"
@@ -7213,6 +7222,9 @@
       ],
       "Never": [
         "Nooit"
+      ],
+      "New": [
+        "Nieuw"
       ],
       "New password": [
         "Nieuw wachtwoord"
@@ -8933,6 +8945,10 @@
         "${ count } item kon niet worden ontsleuteld",
         "${ count } items konden niet worden ontsleuteld"
       ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } item kon niet worden gekopieerd",
+        "${ errors.length } items konden niet gekopieerd worden"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } item kon niet in de prullenbak worden geplaatst",
         "${ errors.length } items konden niet naar de prullenbak worden verplaatst"
@@ -9512,7 +9528,7 @@
         "Werk samen"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "U hebt zojuist gratis data bemachtigd en uw bestanden beveiligd met end-to-end versleuteling — in recordtijd!"
+        "U heeft zojuist gratis data bemachtigd en uw bestanden beveiligd met end-to-end versleuteling — in recordtijd!"
       ],
       "Your storage limit won’t be affected": [
         "Uw opslaglimiet wordt niet beïnvloed."
@@ -9840,7 +9856,7 @@
         "U bent reeds geabonneerd op dit abonnement."
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
-        "U hebt al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
+        "U heeft al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -10223,8 +10239,17 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per doorverwijzing"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Als u vóór deze datum annuleert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Als u zich niet abonneert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u zich vóór deze datum abonneert,** ontvangt u **${ referrerRewardAmount }** aan tegoed."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
@@ -10268,8 +10293,8 @@
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
-        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
-        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+        "U heeft nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U heeft **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
       ],
       "your subscription": [
         "uw abonnement"
@@ -12109,6 +12134,9 @@
       "Information exposed in breach": [
         "Informatie die is blootgesteld bij datalek"
       ],
+      "Introducing ${ SHEETS_APP_NAME }": [
+        "Ontdek ${ SHEETS_APP_NAME }"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
@@ -12478,6 +12506,9 @@
       ],
       "Time": [
         "Tijd"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Om een voorbeeld van dit rekenblad te bekijken, opent u het in ${ SHEETS_APP_NAME } of downloadt u het."
       ],
       "Total size": [
         "Totale grootte"
