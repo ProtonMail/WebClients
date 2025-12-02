@@ -1,18 +1,18 @@
 import { addHours, getUnixTime, isSameDay } from 'date-fns';
-import { c } from 'ttag';
 
 import { convertZonedDateTimeToUTC, fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 import { BookingFormValidationReasons, BookingLocation, MAX_BOOKING_SLOTS } from '../../bookingsProvider/interface';
 import type { BookingFormData, BookingFormValidation, BookingRange } from '../../bookingsProvider/interface';
 import type { SerializedFormData } from '../../bookingsTypes';
+import { BookingErrorMessages } from '../bookingCopy';
 
 export const validateFormData = (data: BookingFormData): BookingFormValidation | undefined => {
     if (data.bookingSlots.length >= MAX_BOOKING_SLOTS) {
         return {
             type: 'error',
             reason: BookingFormValidationReasons.TIME_SLOT_LIMIT,
-            message: c('Info').t`You can’t have more than ${MAX_BOOKING_SLOTS} booking slots on a page.`,
+            message: BookingErrorMessages.RANGE_LIMIT_EXCEEDED,
         };
     }
 

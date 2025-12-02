@@ -12,6 +12,7 @@ import useFlag from '@proton/unleash/useFlag';
 import { fromUrlParams } from '../../calendar/getUrlHelper';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingFormValidationReasons, type BookingRange } from '../bookingsProvider/interface';
+import { BookingErrorMessages } from '../utils/bookingCopy';
 import { validateFormData } from '../utils/form/formHelpers';
 import { createBookingRange, createBookingRangeNextAvailableTime } from '../utils/range/rangeHelpers';
 import { DisplayRecurringRanges } from './DisplayRecurringRanges';
@@ -71,7 +72,7 @@ export const FormRangeList = () => {
 
         const now = new Date();
         if (isBefore(newStart, now) || isBefore(newEnd, now)) {
-            createNotification({ text: c('Info').t`Cannot create booking range in the past.` });
+            createNotification({ text: BookingErrorMessages.RANGE_IN_PAST });
             return;
         }
 

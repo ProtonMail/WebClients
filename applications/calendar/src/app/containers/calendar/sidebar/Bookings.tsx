@@ -68,7 +68,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                             testId="calendar-sidebar:bookings-pages-button"
                             headerRef={headerRef}
                             right={
-                                <Tooltip title={c('Action').t`Create a new bookings page`}>
+                                <Tooltip title={c('Action').t`Create a new booking page`}>
                                     <button
                                         type="button"
                                         disabled={disabled || !canCreateBooking}
@@ -76,7 +76,7 @@ export const Bookings = ({ headerRef, utcDate, disabled }: Props) => {
                                         onClick={handleCreate}
                                         data-testid="navigation-link:create-bookings-page"
                                     >
-                                        <IcPlus alt={c('Action').t`Create a new bookings page`} />
+                                        <IcPlus alt={c('Action').t`Create a new booking page`} />
                                     </button>
                                 </Tooltip>
                             }

@@ -25,7 +25,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useBookings } from '../bookingsProvider/BookingsProvider';
 import { BookingLocation, BookingState } from '../bookingsProvider/interface';
 import { validateFormData } from '../utils/form/formHelpers';
-import { FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
+import { FormErrorWrapper, FormIconRow, FormLocationOptionContent } from './BookingsFormComponents';
 import { FormRangeList } from './FormRangeList';
 
 import './BookingForms.scss';
@@ -209,7 +209,9 @@ const Buttons = () => {
 
     return (
         <>
-            {isError ? <p className="color-danger text-sm text-right m-0 mb-2">{validation.message}</p> : null}
+            {isError ? (
+                <FormErrorWrapper wrapperClassName="justify-end mb-3">{validation.message}</FormErrorWrapper>
+            ) : null}
             <div className="flex flex-column-reverse sm:flex-row justify-space-between gap-2">
                 <Button disabled={loading} onClick={() => closeBookingSidebar()}>{c('Action').t`Cancel`}</Button>
                 <Button disabled={!!validation} loading={loading} color="norm" type="submit" onClick={submitForm}>
