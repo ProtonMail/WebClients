@@ -473,6 +473,31 @@ function removeEmptyAssistantTurns(turns: Turn[]) {
     return turns.filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
 }
 
+async function prepareTurnsBetter(
+    linearChain: Message[],
+    contextFilters: ContextFilter[],
+    s: SettingsContext,
+    allConversationAttachments: Attachment[],
+    projectInstructions?: string,
+    documentContext?: string
+) {
+    // First, get basic turns without images
+    let turns = prepareTurns(
+        linearChain,
+        contextFilters,
+        s.personalization,
+        projectInstructions,
+        documentContext
+    );
+
+    // Now enrich user turns with images
+    turns = await Promise.all(
+        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, allConversationAttachments))
+    );
+
+    return removeEmptyAssistantTurns(turns);
+}
+
 export function sendMessage({
     applicationContext: a,
     newMessageData: m,
@@ -754,21 +779,14 @@ export function sendMessage({
                 dispatch(pushMessageRequest({ id: lastUserMessage.id }));
             }
 
-            // First, get basic turns without images
-            let turns = prepareTurns(
+            const turns = await prepareTurnsBetter(
                 updatedLinearChain,
                 contextFilters,
-                s.personalization,
+                s,
+                allConversationAttachments,
                 projectInstructions,
                 ragResult?.context
             );
-
-            // Now enrich user turns with images
-            turns = await Promise.all(
-                turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, updatedLinearChain, attachments))
-            );
-
-            turns = removeEmptyAssistantTurns(turns);
 
             await dispatch(
                 sendMessageWithRedux(api, turns, {
