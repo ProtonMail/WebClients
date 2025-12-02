@@ -53,11 +53,11 @@ export const FormLocationOptionContent = ({ value, text }: FormLocationOptionPro
     }
 
     return (
-        <span className="flex items-center gap-2">
+        <span className="flex flex-nowrap items-center gap-2">
             <span className="shrink-0 w-custom ratio-square" style={{ width: '1.25rem' }}>
                 {icon}
             </span>
-            {text}
+            <span className="text-pre">{text}</span>
         </span>
     );
 };

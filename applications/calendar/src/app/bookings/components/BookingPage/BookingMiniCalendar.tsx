@@ -9,8 +9,6 @@ import { WEEKS_IN_MINI_CALENDAR } from '../../constants';
 import { useExternalBookingLoader } from '../../useExternalBookingLoader';
 import { getDateKey } from '../../utils/bookingsHelpers';
 
-import './BookingMiniCalendar.scss';
-
 interface BookingMiniCalendarProps {
     selectedDate: Date;
     onSelectDate: (date: Date) => void;
@@ -61,6 +59,7 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
                     onMonthChange={handleMonthChange}
                     hasCursors
                     getDayClassName={getDayClassName}
+                    miniCalendarNextPrevButtonsColor="norm"
                 />
             </div>
         </div>
