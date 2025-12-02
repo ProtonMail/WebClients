@@ -90,6 +90,9 @@
       "Apply": [
         "Toteuta"
       ],
+      "Ask me next time": [
+        "Kysy seuraavalla kerralla"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -362,6 +365,9 @@
       ],
       "Get ${ planOrAppName }": [
         "Hanki ${ planOrAppName }"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
       ],
       "Get the apps": [
         "Hanki sovellukset"
@@ -645,6 +651,9 @@
       "Save changes": [
         "Tallenna muutokset"
       ],
+      "Save preferences": [
+        "Tallenna asetukset"
+      ],
       "Search": [
         "Hae"
       ],
@@ -925,6 +934,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
+      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
       ]
@@ -961,6 +973,9 @@
       ],
       "1 user account": [
         "1 käyttäjätili"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40 kertaa enemmän nykyiseen tilaukseesi nähden"
       ],
       "6 user accounts": [
         "Kuusi käyttäjätiliä"
@@ -999,6 +1014,9 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } kertaveloitus"
+      ],
+      "forever": [
+        "ikuisesti"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
@@ -1292,6 +1310,9 @@
       "Limited daily chats": [
         "Rajoitetusti päivittäisiä keskusteluja"
       ],
+      "Limited favorites": [
+        "Rajoitettu määrä suosikkeja"
+      ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
       ],
@@ -1301,11 +1322,17 @@
       "Upload and query multiple large files": [
         "Lataa ja laita jonoon useita suuria tiedostoja"
       ],
+      "Upload and query small files": [
+        "Lähetä ja laita jonoon pieniä tiedostoja"
+      ],
       "Web search access": [
         "Verkkohakuun pääsy"
       ]
     },
     "collider_2025: Info": {
+      "Advanced account and network security in one plan": [
+        "Edistyksellinen tilin ja verkon tietoturva yhdellä tilauksella"
+      ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
       ]
@@ -2580,6 +2607,9 @@
       "Here's what changed:": [
         "Tehdyt muutokset:"
       ],
+      "LOCATION:": [
+        "SIJAINTI:"
+      ],
       "NOTE:": [
         "MUISTIINPANO:"
       ],
@@ -2597,6 +2627,9 @@
       ],
       "TITLE:": [
         "OTSIKKO:"
+      ],
+      "You are invited to": [
+        "Sinut on kutsuttu"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3941,6 +3974,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vaatii ${ BRAND_NAME } - osoitteen turvalliseen tapahtumien synkronointiin ja salaukseen. Lunasta ilmainen ${ claimAddressButton } -osoitteesi nyt."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } uusi kalenteri",
         "${ calendarsToBeCreatedCount } uutta kalenteria"
@@ -4193,6 +4229,9 @@
       "Continue": [
         "Jatka"
       ],
+      "Converting document...": [
+        "Muunnetaan dokumenttia..."
+      ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
       ],
@@ -4221,6 +4260,9 @@
       "Create an end-to-end encrypted document.": [
         "Luo päästä päähän -salattu dokumentti."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Luo päästä päähän salattuja asiakirjoja ja laskentataulukoita."
+      ],
       "Create in": [
         "Luo kalenteriin"
       ],
@@ -4235,6 +4277,9 @@
       ],
       "Creating link to folder": [
         "Luodaan linkkiä kansioon"
+      ],
+      "Creating new document...": [
+        "Luodaan uutta dokumenttia..."
       ],
       "Current plan": [
         "Nykyinen tilaus"
@@ -4323,6 +4368,12 @@
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Virhe ladattaessa dokumenttia: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Synkronointivirhe"
       ],
@@ -4382,6 +4433,12 @@
       ],
       "Geoblocking": [
         "Geoblokkaus"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Saat sähköpostipäivityksiä dokumentteihisi lisätyistä kommenteista ja ehdotuksista."
+      ],
+      "Get Notified About Comments": [
+        "Saat ilmoituksia kommenteista"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hallitukset ja Internet-palveluntarjoajat voivat valvoa verkkotoimintaasi. Piilottamalla oikean IP-osoitteensi ja salaamalla toimintasi, selaamisesi muuttuu yksityiseksi."
@@ -4516,6 +4573,9 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
+      "Making a copy...": [
+        "Luodaan kopiota..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkkiä"
@@ -4546,6 +4606,9 @@
       ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Annetusta URL-osoitteesta ei löytynyt dokumenttia. Palaa ${ DRIVE_APP_NAME }en ja valitse dokumentti."
       ],
       "No email address": [
         "Ei sähköpostiosoitetta"
@@ -4821,6 +4884,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Syöttämäsi URL-osoite on ilmeisesti kopioitu Slackista virheellisesti. Kun kopioit pitkiä linkkejä Slackista, napsauta linkkiä hiiren kakkospainikkeella ja valitse sitten \"Kopioi linkki\" sen sijaan että kopioisit typistetyn URL-tekstin suoraan."
       ],
       "There are no documents in the trash.": [
         "Roskakorissa ei ole dokumentteja."
@@ -5418,6 +5484,9 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
+      "Enable email notifications": [
+        "Ota sähköposti-ilmoitukset käyttöön"
+      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -5462,6 +5531,9 @@
       ],
       "Import to:": [
         "Tuo kohteeseen:"
+      ],
+      "Include document name in notification": [
+        "Sisällytä dokumentin nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -7462,6 +7534,9 @@
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
       ],
+      "File attachments (up to 10GB)": [
+        "Liitetiedostot (enintään 10 Gt)"
+      ],
       "Team policies": [
         "Ryhmäkäytännöt"
       ]
@@ -7524,6 +7599,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
+      ],
+      "terms and conditions": [
+        "käyttöehdot"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
@@ -8111,9 +8189,6 @@
       ],
       "New spreadsheet": [
         "Uusi laskentataulukko"
-      ],
-      "Rename spreadsheet": [
-        "Nimeä laskentataulukko uudelleen"
       ],
       "Tab Separated Values (.tsv)": [
         "Sarkainerotetut arvot (.tsv)"
@@ -9072,6 +9147,9 @@
       ],
       "Exporting contacts": [
         "Yhteystietoja viedään"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Ansaitset **${ referralInfo.uiData.refereeRewardAmount }** krediitteinä ${ planTitle } -tilauksella"
       ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"

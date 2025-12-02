@@ -91,7 +91,7 @@
         "Použít"
       ],
       "Ask me next time": [
-        "Zeptat se příště"
+        "Zeptejte se mě příště"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
@@ -3177,6 +3177,9 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Máme potíže s ukládáním posledních úprav. Obnovte prosím stránku."
       ],
+      "We are having trouble syncing your document. Please refresh the page.": [
+        "Máme potíže se synchronizací vašeho dokumentu. Obnovte prosím stránku."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
@@ -4427,6 +4430,9 @@
       "Create an end-to-end encrypted document.": [
         "Vytvořte koncově šifrovaný dokument."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Vytvářejte koncově šifrované dokumenty a tabulky."
+      ],
       "Create in": [
         "Vytvořit v"
       ],
@@ -4605,10 +4611,10 @@
         "Zeměpisné blokování"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "Získejte e-mailem upozornění na nové komentáře a návrhy přidané k vašim dokumentům."
+        "Získejte e-mailová upozornění na komentáře a návrhy přidané k vašim dokumentům."
       ],
       "Get Notified About Comments": [
-        "Buďte upozorněni na komentáře"
+        "Dostávejte upozornění na komentáře"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
@@ -5076,7 +5082,7 @@
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Zadaná URL adresa byla zřejmě nesprávně zkopírována ze služby Slack. Při kopírování dlouhých odkazů ze služby Slack klikněte na odkaz pravým tlačítkem myši a vyberte možnost \"Kopírovat odkaz\", místo přímého kopírování zkráceného textu URL adresy."
+        "Zadaná adresa URL byla zřejmě nesprávně zkopírována ze služby Slack. Při kopírování dlouhých odkazů ze služby Slack klikněte na odkaz pravým tlačítkem myši a vyberte možnost \"Kopírovat odkaz\" namísto přímého kopírování zkráceného textu URL."
       ],
       "There are no documents in the trash.": [
         "V koši nejsou žádné dokumenty."
@@ -8654,9 +8660,6 @@
       ],
       "New spreadsheet": [
         "Nová tabulka"
-      ],
-      "Rename spreadsheet": [
-        "Přejmenovat tabulku"
       ],
       "Tab Separated Values (.tsv)": [
         "Hodnoty oddělené tabulátory (.tsv)"

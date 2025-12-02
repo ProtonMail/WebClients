@@ -90,9 +90,6 @@
       "Apply": [
         "Toepassen"
       ],
-      "Ask me next time": [
-        "Volgende keer vragen"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
         "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
@@ -656,9 +653,6 @@
       ],
       "Save changes": [
         "Wijzigingen opslaan"
-      ],
-      "Save preferences": [
-        "Voorkeuren opslaan"
       ],
       "Search": [
         "Zoeken"
@@ -4276,9 +4270,6 @@
       "Continue": [
         "Ga verder"
       ],
-      "Converting document...": [
-        "Document converteren..."
-      ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
       ],
@@ -4307,6 +4298,9 @@
       "Create an end-to-end encrypted document.": [
         "Maak een end-to-end versleuteld document."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Maak end-to-end versleutelde documenten en spreadsheets."
+      ],
       "Create in": [
         "Maak in"
       ],
@@ -4321,9 +4315,6 @@
       ],
       "Creating link to folder": [
         "Link naar map maken"
-      ],
-      "Creating new document...": [
-        "Nieuw document maken..."
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -4418,12 +4409,6 @@
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Fout bij het converteren van document: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Fout bij het laden van document: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Synchronisatiefout"
       ],
@@ -4483,12 +4468,6 @@
       ],
       "Geoblocking": [
         "Geoblocking"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Ontvang e-mailupdates voor opmerkingen en suggesties die aan uw documenten zijn toegevoegd."
-      ],
-      "Get Notified About Comments": [
-        "Krijg een melding bij reacties"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
@@ -4626,9 +4605,6 @@
       "Low Priority": [
         "Lage Prioriteit"
       ],
-      "Making a copy...": [
-        "Een kopie maken..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
@@ -4659,9 +4635,6 @@
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Er is geen document meegegeven in de URL. Ga terug naar ${ DRIVE_APP_NAME } en selecteer een document."
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -4943,9 +4916,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "De URL die u hebt ingevoegd, lijkt verkeerd te zijn gekopieerd uit Slack. Wanneer u lange koppelingen van Slack kopieert, klik met de rechtermuisknop op de link en kies dan \"Link kopiëren\" in plaats van de ingekorte URL-tekst direct te kopiëren."
       ],
       "There are no documents in the trash.": [
         "Er zijn geen documenten in de prullenbak."
@@ -5552,9 +5522,6 @@
       "Emails (last month)": [
         "E-mails (laatste maand)"
       ],
-      "Enable email notifications": [
-        "E-mailmeldingen inschakelen"
-      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -5602,9 +5569,6 @@
       ],
       "Include application logs in bug report": [
         "Applicatie logs toevoegen aan het foutenrapport"
-      ],
-      "Include document name in notification": [
-        "Documentnaam opnemen in melding"
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
@@ -8008,8 +7972,17 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per doorverwijzing"
       ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Als u vóór deze datum annuleert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Als u zich niet abonneert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "**Als u niet annuleert,** start uw volledige abonnement en ontvangt u **${ referrerRewardAmount }** aan tegoed."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u zich vóór deze datum abonneert,** ontvangt u **${ referrerRewardAmount }** aan tegoed."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
@@ -8053,8 +8026,8 @@
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
-        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
-        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+        "U heeft nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U heeft **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
       ],
       "your subscription": [
         "uw abonnement"
@@ -8356,9 +8329,6 @@
       ],
       "New spreadsheet": [
         "Nieuw werkblad"
-      ],
-      "Rename spreadsheet": [
-        "Spreadsheet hernoemen"
       ],
       "Tab Separated Values (.tsv)": [
         "Tab Separated Values (.tsv)"
