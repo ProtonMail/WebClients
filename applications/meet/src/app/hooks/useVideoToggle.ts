@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import type { LocalParticipant, LocalTrackPublication } from 'livekit-client';
+import type { LocalParticipant, LocalTrackPublication, LocalVideoTrack } from 'livekit-client';
 import { ConnectionState, Track } from 'livekit-client';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -10,6 +10,7 @@ import debounce from '@proton/utils/debounce';
 import { DEFAULT_DEVICE_ID } from '../constants';
 import {
     createBackgroundProcessor,
+    ensureBackgroundBlurProcessor,
     preloadBackgroundProcessorAssets,
 } from '../processors/background-processor/createBackgroundProcessor';
 import type { SwitchActiveDevice } from '../types';
@@ -35,6 +36,7 @@ export const useVideoToggle = (
     const [backgroundBlur, setBackgroundBlur] = useState(getPersistedBackgroundBlur());
 
     const toggleInProgress = useRef(false);
+    const blurToggleInProgress = useRef(false);
 
     const prevEnabled = useRef<boolean | null>(null);
     const preventAutoApplyingBlur = useRef(false);
@@ -46,7 +48,11 @@ export const useVideoToggle = (
     const getCurrentVideoTrack = () => {
         return getVideoTrackPublications(localParticipant).filter(
             (publication) => publication.source === Track.Source.Camera
-        )[0]?.track;
+        )[0]?.track as LocalVideoTrack | undefined;
+    };
+
+    const attachBackgroundBlurProcessor = async () => {
+        return ensureBackgroundBlurProcessor(getCurrentVideoTrack(), backgroundBlurProcessorInstance);
     };
 
     const toggleVideo = async (
@@ -115,7 +121,7 @@ export const useVideoToggle = (
 
         // We need to restart the video track on mobile to make sure the facing mode is applied
         if (customFacingMode) {
-            await newVideoTrack?.restartTrack({ facingMode: { exact: customFacingMode } });
+            await newVideoTrack?.restartTrack({ facingMode: customFacingMode });
         }
 
         toggleInProgress.current = false;
@@ -134,33 +140,34 @@ export const useVideoToggle = (
     };
 
     const turnOnBackgroundBlur = async () => {
-        if (!backgroundBlurProcessorInstance) {
-            return;
-        }
-
-        const currentVideoTrack = getCurrentVideoTrack();
-
-        await currentVideoTrack?.setProcessor(backgroundBlurProcessorInstance);
+        const processor = await attachBackgroundBlurProcessor();
+        processor?.enable();
     };
 
     const toggleBackgroundBlur = async () => {
-        if (!backgroundBlurProcessorInstance) {
+        if (!backgroundBlurProcessorInstance || blurToggleInProgress.current) {
             return;
         }
 
-        const currentVideoTrack = getCurrentVideoTrack();
+        blurToggleInProgress.current = true;
+
+        const shouldEnableBlur = !backgroundBlur;
 
         try {
-            if (backgroundBlur) {
-                await currentVideoTrack?.stopProcessor();
+            if (shouldEnableBlur) {
+                const processor = await attachBackgroundBlurProcessor();
+                processor?.enable?.();
             } else {
-                await currentVideoTrack?.setProcessor(backgroundBlurProcessorInstance);
+                backgroundBlurProcessorInstance?.disable?.();
             }
-            setBackgroundBlur((prevEnableBlur) => !prevEnableBlur);
-            persistBackgroundBlur(!backgroundBlur);
         } catch (error) {
             return;
+        } finally {
+            blurToggleInProgress.current = false;
         }
+
+        setBackgroundBlur(shouldEnableBlur);
+        persistBackgroundBlur(shouldEnableBlur);
     };
 
     useEffect(() => {
@@ -204,10 +211,12 @@ export const useVideoToggle = (
     }, [localParticipant, backgroundBlur]);
 
     // Too frequent toggling can freeze the page completely
-    const debouncedToggleBackgroundBlur = debounce(toggleBackgroundBlur, 500, { leading: true });
+    const debouncedToggleBackgroundBlur = debounce(toggleBackgroundBlur, 1000, { leading: true, trailing: false });
+
+    const debouncedToggleVideo = debounce(toggleVideo, 1000, { leading: true });
 
     return {
-        toggleVideo,
+        toggleVideo: debouncedToggleVideo,
         handleRotateCamera,
         backgroundBlur,
         toggleBackgroundBlur: debouncedToggleBackgroundBlur,

@@ -132,6 +132,18 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
         void this.update(opts);
     }
 
+    enable() {
+        this.isDisabled = false;
+    }
+
+    disable() {
+        this.isDisabled = true;
+    }
+
+    isEnabled() {
+        return !this.isDisabled;
+    }
+
     async init({ outputCanvas, inputElement: inputVideo }: VideoTransformerInitOptions) {
         await super.init({ outputCanvas, inputElement: inputVideo });
 
@@ -696,6 +708,12 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     }
 }
 
+export type BackgroundBlurProcessor = ProcessorWrapper<BackgroundOptions> & {
+    enable: () => void;
+    disable: () => void;
+    isEnabled: () => boolean;
+};
+
 export const BackgroundBlur = (
     blurRadius?: number,
     segmenterOptions?: SegmenterOptions,
@@ -706,9 +724,16 @@ export const BackgroundBlur = (
         segmenterOptions,
         ...processorOptions,
     };
-    return new ProcessorWrapper<BackgroundOptions>(
-        new MulticlassBackgroundProcessor(options),
+    const transformer = new MulticlassBackgroundProcessor(options);
+    const processor = new ProcessorWrapper<BackgroundOptions>(
+        transformer,
         'background-blur',
         processorOptions
-    );
+    ) as BackgroundBlurProcessor;
+
+    processor.enable = () => transformer.enable();
+    processor.disable = () => transformer.disable();
+    processor.isEnabled = () => transformer.isEnabled();
+
+    return processor;
 };
