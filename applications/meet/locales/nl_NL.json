@@ -41,6 +41,9 @@
       "Copy link": [
         "Link kopiëren"
       ],
+      "Create a free account": [
+        "Maak een gratis account aan"
+      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -148,9 +151,6 @@
       ],
       "Try another method": [
         "Andere methode proberen"
-      ],
-      "Upgrade": [
-        "Upgraden"
       ],
       "Use authentication code": [
         "Authenticatiecode gebruiken"
@@ -1625,6 +1625,9 @@
       "Account temporarily locked": [
         "Account tijdelijk geblokkeerd"
       ],
+      "Activity events": [
+        "Activiteitsafspraken"
+      ],
       "Are you sure?": [
         "Weet u het zeker?"
       ],
@@ -1633,6 +1636,12 @@
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
+      ],
+      "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
+        "Epoch ${ prevLog.epoch } → ${ log.epoch }"
+      ],
+      "Error at epoch ${ log.epoch }": [
+        "Fout bij epoch ${ log.epoch }"
       ],
       "Help and feedback": [
         "Hulp en feedback"
@@ -1645,6 +1654,9 @@
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Joined at epoch ${ log.epoch }": [
+        "Toegetreden op epoch ${ log.epoch }"
       ],
       "Minicalendar": [
         "Mini-agenda"
