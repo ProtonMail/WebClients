@@ -3,11 +3,16 @@ import {
     supportsBackgroundProcessors,
     supportsModernBackgroundProcessors,
 } from '@livekit/track-processors';
+import type { LocalVideoTrack } from 'livekit-client';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { isLowEndDevice } from '../../utils/isLowEndDevice';
-import { BackgroundBlur, preloadBackgroundBlurAssets } from './MulticlassBackgroundProcessor';
+import {
+    BackgroundBlur,
+    type BackgroundBlurProcessor,
+    preloadBackgroundBlurAssets,
+} from './MulticlassBackgroundProcessor';
 
 const backgroundProcessorOptions: BackgroundProcessorOptions = {
     assetPaths: {
@@ -18,7 +23,7 @@ const backgroundProcessorOptions: BackgroundProcessorOptions = {
     },
 };
 
-export const createBackgroundProcessor = () => {
+export const createBackgroundProcessor = (): BackgroundBlurProcessor | null => {
     if (!supportsBackgroundProcessors() || isMobile()) {
         return null;
     }
@@ -42,4 +47,25 @@ export const preloadBackgroundProcessorAssets = async () => {
     } catch (error) {
         // Preload failed, but don't block - will retry when user enables blur
     }
+};
+
+export const ensureBackgroundBlurProcessor = async (
+    videoTrack: LocalVideoTrack | null | undefined,
+    processor?: BackgroundBlurProcessor | null
+) => {
+    if (!videoTrack || !processor) {
+        return null;
+    }
+
+    if (videoTrack.getProcessor() === processor) {
+        return processor;
+    }
+
+    try {
+        await videoTrack.setProcessor(processor);
+    } catch {
+        return null;
+    }
+
+    return processor;
 };

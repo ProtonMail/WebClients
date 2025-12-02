@@ -6,7 +6,10 @@ import type { LocalVideoTrack } from 'livekit-client';
 import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
-import { createBackgroundProcessor } from '../../processors/background-processor/createBackgroundProcessor';
+import {
+    createBackgroundProcessor,
+    ensureBackgroundBlurProcessor,
+} from '../../processors/background-processor/createBackgroundProcessor';
 
 import './VideoPreview.scss';
 
@@ -23,12 +26,40 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
 
     const { isBackgroundBlurSupported, backgroundBlur } = useMediaManagementContext();
 
+    const applyBackgroundBlurPreference = async (enable: boolean) => {
+        const videoTrack = trackRef.current;
+
+        if (!backgroundBlurProcessorInstance || !videoTrack || !enable) {
+            backgroundBlurProcessorInstance?.disable?.();
+            return;
+        }
+
+        const processor = await ensureBackgroundBlurProcessor(videoTrack, backgroundBlurProcessorInstance);
+        processor?.enable?.();
+    };
+
     useEffect(() => {
-        const handleCameraToggle = async () => {
-            if (trackRef.current) {
-                trackRef.current.stop();
-                trackRef.current = null;
+        const cleanupTrack = async () => {
+            const track = trackRef.current;
+            if (!track) {
+                return;
             }
+
+            trackRef.current = null;
+
+            try {
+                if (track.getProcessor() === backgroundBlurProcessorInstance) {
+                    await track.stopProcessor();
+                }
+            } catch {
+                // ignore processor stop errors during cleanup
+            } finally {
+                track.stop();
+            }
+        };
+
+        const handleCameraToggle = async () => {
+            await cleanupTrack();
 
             try {
                 const videoTrack = await createLocalVideoTrack({
@@ -45,12 +76,14 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
                 });
 
                 if (videoRef.current && videoTrack) {
-                    if (backgroundBlurProcessorInstance && backgroundBlur && isBackgroundBlurSupported) {
-                        await videoTrack.setProcessor(backgroundBlurProcessorInstance);
-                    }
-
                     videoTrack.attach(videoRef.current);
                     trackRef.current = videoTrack;
+
+                    if (isBackgroundBlurSupported && backgroundBlur) {
+                        await applyBackgroundBlurPreference(true);
+                    } else {
+                        backgroundBlurProcessorInstance?.disable?.();
+                    }
                 }
             } catch (e) {
                 if (videoRef.current) {
@@ -60,13 +93,8 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
         };
 
         const cleanup = async () => {
-            if (trackRef.current) {
-                if (isBackgroundBlurSupported && backgroundBlur && backgroundBlurProcessorInstance) {
-                    await trackRef.current.stopProcessor();
-                }
-                trackRef.current.stop();
-                trackRef.current = null;
-            }
+            await cleanupTrack();
+            backgroundBlurProcessorInstance?.disable?.();
         };
 
         void handleCameraToggle();
@@ -74,7 +102,22 @@ export const VideoPreview = ({ selectedCameraId, facingMode }: VideoPreviewProps
         return () => {
             void cleanup();
         };
-    }, [selectedCameraId, facingMode, isBackgroundBlurSupported, backgroundBlur, backgroundBlurProcessorInstance]);
+    }, [selectedCameraId, facingMode]);
+
+    useEffect(() => {
+        if (!isBackgroundBlurSupported) {
+            backgroundBlurProcessorInstance?.disable?.();
+            return;
+        }
+
+        void applyBackgroundBlurPreference(backgroundBlur);
+
+        return () => {
+            if (!backgroundBlur) {
+                backgroundBlurProcessorInstance?.disable?.();
+            }
+        };
+    }, [backgroundBlur, isBackgroundBlurSupported]);
 
     return (
         <>
