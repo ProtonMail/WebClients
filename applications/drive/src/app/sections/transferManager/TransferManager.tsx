@@ -108,7 +108,7 @@ export const TransferManager = () => {
             id="transfer-manager"
             className="transfer-manager-fixed-position right-custom border border-weak"
             style={{
-                '--right-custom': `${drawerWidth + 32}px`, // 32 == 2rem
+                '--right-custom': `${(drawerWidth + 32) / 16}rem`, // 32 == 2rem
             }}
         >
             <section aria-label={c('Label').t`File transfer overview`}>
