@@ -5,7 +5,7 @@ export class KeyRotationScheduler {
 
     constructor(private keyProvider: ProtonMeetKeyProvider) {}
 
-    async schedule(key: string, epoch: bigint, delayMs = 1000) {
+    async schedule(key: string, epoch: bigint, delayMs = 3000) {
         const previousKey = this.keyProvider.getCurrentKey();
         const previousEpoch = this.keyProvider.getCurrentEpoch();
 
