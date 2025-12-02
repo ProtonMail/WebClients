@@ -790,15 +790,6 @@ export const markConversationsAsUnreadPending = (
                 }
             });
         }
-
-        // Update all messages attach to the same conversation in element state
-        const messagesElementState = Object.values(state.elements).filter(
-            (element) => (element as Message).ConversationID === selectedElement.ID
-        );
-
-        messagesElementState.forEach((messageElementState) => {
-            (messageElementState as Message).Unread = 1;
-        });
     });
 
     handleBypassFilter(state, elements, MARK_AS_STATUS.UNREAD, state.params.filter.Unread);
