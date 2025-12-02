@@ -15,6 +15,7 @@ import {
     setToolCall,
     setToolResult,
 } from '../redux/slices/core/messages';
+import type { PersonalizationSettings } from '../redux/slices/personalization';
 import type { LumoDispatch } from '../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../services/errors/errorHandling';
 import {
@@ -30,6 +31,7 @@ import {
     type Turn,
 } from '../types';
 import type { GenerationResponseMessage, WireImage } from '../types-api';
+import { formatPersonalization } from '../ui/interactiveConversation/helper';
 import { separateAttachmentsByType } from './attachments';
 import { removeFileFromMessageContext } from './utils';
 
@@ -78,7 +80,7 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
 export function prepareTurns(
     linearChain: Message[],
     contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string,
+    personalization: PersonalizationSettings,
     projectInstructions?: string,
     documentContext?: string
 ): Turn[] {
@@ -127,6 +129,7 @@ export function prepareTurns(
 
     // Add personalization and project instructions to the LAST user message content
     // These are per-request instructions that should apply to the current question
+    const personalizationPrompt = formatPersonalization(personalization);
     if (personalizationPrompt || projectInstructions) {
         // Find the last user message
         let lastUserIndex = -1;
@@ -142,6 +145,7 @@ export function prepareTurns(
             const originalContent = userTurn.content || '';
 
             // Build instruction parts
+            // todo: use injectPersonalization() instead
             const instructionParts: string[] = [];
             if (personalizationPrompt) {
                 instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
@@ -277,18 +281,12 @@ export async function prepareTurnsWithImages(
     linearChain: Message[],
     attachments: Attachment[],
     contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string,
+    personalization: PersonalizationSettings,
     projectInstructions?: string,
     documentContext?: string
 ): Promise<Turn[]> {
     // First, get basic turns without images
-    const turns = prepareTurns(
-        linearChain,
-        contextFilters,
-        personalizationPrompt,
-        projectInstructions,
-        documentContext
-    );
+    const turns = prepareTurns(linearChain, contextFilters, personalization, projectInstructions, documentContext);
 
     // If no attachments, nothing to add
     if (attachments.length === 0) {
@@ -311,19 +309,22 @@ export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN)
 export const getFilteredTurns = (
     linearChain: Message[],
     contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string,
+    personalization: PersonalizationSettings,
     projectInstructions?: string,
     documentContext?: string
 ) => {
-    return prepareTurns(linearChain, contextFilters, personalizationPrompt, projectInstructions, documentContext)
-        .filter((turn) => {
-            // Keep system messages that contain personalization, filter out other system messages
-            if (turn.role === Role.System) {
-                return personalizationPrompt && turn.content === personalizationPrompt;
-            }
-            return true;
-        })
-        .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
+    return (
+        prepareTurns(linearChain, contextFilters, personalization, projectInstructions, documentContext)
+            // FIXME: possibly useless
+            // .filter((turn) => {
+            //     // Keep system messages that contain personalization, filter out other system messages
+            //     if (turn.role === Role.System) {
+            //         return personalizationPrompt && turn.content === personalizationPrompt;
+            //     }
+            //     return true;
+            // })
+            .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''))
+    );
 };
 
 /**
@@ -333,7 +334,7 @@ export const getFilteredTurnsWithImages = async (
     linearChain: Message[],
     attachments: Attachment[],
     contextFilters: ContextFilter[] = [],
-    personalizationPrompt?: string,
+    personalization: PersonalizationSettings,
     projectInstructions?: string,
     documentContext?: string
 ): Promise<Turn[]> => {
@@ -341,19 +342,22 @@ export const getFilteredTurnsWithImages = async (
         linearChain,
         attachments,
         contextFilters,
-        personalizationPrompt,
+        personalization,
         projectInstructions,
         documentContext
     );
-    return turns
-        .filter((turn) => {
-            // Keep system messages that contain personalization, filter out other system messages
-            if (turn.role === Role.System) {
-                return personalizationPrompt && turn.content === personalizationPrompt;
-            }
-            return true;
-        })
-        .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
+    return (
+        turns
+            // FIXME: possibly useless
+            // .filter((turn) => {
+            //     // Keep system messages that contain personalization, filter out other system messages
+            //     if (turn.role === Role.System) {
+            //         return personalizationPrompt && turn.content === personalizationPrompt;
+            //     }
+            //     return true;
+            // })
+            .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''))
+    );
 };
 
 async function decryptContent(
@@ -519,4 +523,19 @@ export function _getCallbacks(
     };
 
     return { chunkCallback, finishCallback };
+}
+
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function injectPersonalization(turn: Turn, personalization: PersonalizationSettings): Turn {
+    const personalizationPrompt = formatPersonalization(personalization);
+    if (!personalizationPrompt) return turn;
+    const originalContent = turn.content || '';
+    const updatedContent = originalContent
+        ? `${originalContent}\n\n[Personal context: ${personalizationPrompt}]`
+        : `[Personal context: ${personalizationPrompt}]`;
+    return {
+        ...turn,
+        content: updatedContent,
+    };
 }
