@@ -238,44 +238,39 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                         )}
                     </div>
                 </div>
-                <div className="project-files-section-content">
+                <div className="project-files-section-content files-section">
                     {linkedDriveFolder ? (
                         <div className="project-drive-browser">
-                            <div className="mb-3 p-3 bg-weak rounded-lg border border-weak">
-                                <div className="flex items-start justify-between gap-3">
-                                    <div className="flex-1 min-w-0">
-                                        <div className="flex items-center gap-2 mb-1">
-                                            <IcBrandProtonDrive size={4} className="color-primary flex-shrink-0" />
-                                            <span className="text-sm font-semibold color-norm">{linkedDriveFolder.folderName}</span>
-                                            <span className="text-xs px-1.5 py-0.5 bg-primary/10 color-primary rounded">
-                                                {c('collider_2025:Badge').t`Proton Drive`}
-                                            </span>
-                                        </div>
-                                        <div className="text-xs color-weak">{linkedDriveFolder.folderPath}</div>
+                            <div className="flex items-start justify-between gap-3">
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <IcBrandProtonDrive size={4} className="color-primary flex-shrink-0" />
+                                        <span className="text-sm font-semibold">{linkedDriveFolder.folderName}</span>
                                     </div>
-                                    <div className="flex items-center gap-1 flex-shrink-0">
-                                        <Button
-                                            icon
-                                            shape="ghost"
-                                            size="small"
-                                            onClick={() => {
-                                                setFolderName('');
-                                                setCreateFolderModalOpen(true);
-                                            }}
-                                            title={c('collider_2025:Action').t`Create folder`}
-                                        >
-                                            <Icon name="folder-plus" size={4} />
-                                        </Button>
-                                        <Button
-                                            icon
-                                            shape="ghost"
-                                            size="small"
-                                            onClick={handleAddFiles}
-                                            title={c('collider_2025:Action').t`Upload file`}
-                                        >
-                                            <Icon name="arrow-up-line" size={4} />
-                                        </Button>
-                                    </div>
+                                    <div className="text-xs color-weak">/{linkedDriveFolder.folderPath}</div>
+                                </div>
+                                <div className="flex items-center gap-1 flex-shrink-0">
+                                    <Button
+                                        icon
+                                        shape="ghost"
+                                        size="small"
+                                        onClick={() => {
+                                            setFolderName('');
+                                            setCreateFolderModalOpen(true);
+                                        }}
+                                        title={c('collider_2025:Action').t`Create folder`}
+                                    >
+                                        <Icon name="folder-plus" size={4} />
+                                    </Button>
+                                    <Button
+                                        icon
+                                        shape="ghost"
+                                        size="small"
+                                        onClick={handleAddFiles}
+                                        title={c('collider_2025:Action').t`Upload file`}
+                                    >
+                                        <Icon name="arrow-up-line" size={4} />
+                                    </Button>
                                 </div>
                             </div>
                             <DriveBrowser
