@@ -193,11 +193,11 @@ export const ProtonMeetContainer = ({
     };
 
     const reportMLSRelatedError = (key: string | undefined, epoch: bigint | undefined) => {
-        if (epoch && (lastEpochRef.current ?? 0 > epoch)) {
+        if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
             reportMeetError('Lower epoch than last epoch', { epoch });
         }
 
-        if (epoch && lastEpochRef.current !== null && lastEpochRef.current + 1n !== epoch) {
+        if (epoch && lastEpochRef.current && lastEpochRef.current + 1n !== epoch) {
             reportMeetError('Epoch is not the next epoch', { epoch });
         }
 
