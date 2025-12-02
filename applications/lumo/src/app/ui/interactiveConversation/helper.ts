@@ -31,7 +31,7 @@ import {
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import type { PersonalizationSettings } from '../../redux/slices/personalization';
 import { PERSONALITY_OPTIONS } from '../../redux/slices/personalization';
-import type { LumoDispatch as AppDispatch } from '../../redux/store';
+import type { LumoDispatch as AppDispatch, LumoDispatch } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { SearchService } from '../../services/search/searchService';
 import type { AttachmentId, MessageId, ShallowAttachment } from '../../types';
@@ -653,26 +653,27 @@ export function sendMessage({
             // Get user ID for RAG retrieval
             const userId = state.user?.value?.ID;
 
-            await fetchAssistantResponse({
-                api: a.api,
-                dispatch,
-                linearChain: newLinearChain,
-                spaceId,
-                conversationId,
-                assistantMessageId: assistantMessageWithContext.id,
-                signal: a.signal,
-                enableExternalTools: noAttachment && ui.enableExternalToolsToggled,
-                enableSmoothing: ui.enableSmoothing,
-                requestTitle: shouldRequestTitle,
-                contextFilters: c.contextFilters,
-                personalizationPrompt,
-                projectInstructions,
-                userId,
-                isProject,
-                allAttachments: state.attachments,
-                referencedFileNames,
-                attachments: c.allConversationAttachments,
-            });
+            await dispatch(
+                fetchAssistantResponse({
+                    api: a.api,
+                    linearChain: newLinearChain,
+                    spaceId,
+                    conversationId,
+                    assistantMessageId: assistantMessageWithContext.id,
+                    signal: a.signal,
+                    enableExternalTools: noAttachment && ui.enableExternalToolsToggled,
+                    enableSmoothing: ui.enableSmoothing,
+                    requestTitle: shouldRequestTitle,
+                    contextFilters: c.contextFilters,
+                    personalizationPrompt,
+                    projectInstructions,
+                    userId,
+                    isProject,
+                    allAttachments: state.attachments,
+                    referencedFileNames,
+                    attachments: c.allConversationAttachments,
+                })
+            );
         } catch (error) {
             console.warn('error: ', error);
             throw error;
@@ -915,22 +916,23 @@ export async function retrySendMessage({
 
     // Call the LLM
     try {
-        await fetchAssistantResponse({
-            api,
-            dispatch,
-            linearChain: messageChain,
-            spaceId,
-            conversationId,
-            assistantMessageId,
-            signal,
-            enableExternalTools,
-            requestTitle: messageChain.length === 1, // only request title if retrying first message
-            contextFilters,
-            personalizationPrompt,
-            projectInstructions,
-            allAttachments,
-            attachments,
-        });
+        await dispatch(
+            fetchAssistantResponse({
+                api,
+                linearChain: messageChain,
+                spaceId,
+                conversationId,
+                assistantMessageId,
+                signal,
+                enableExternalTools,
+                requestTitle: messageChain.length === 1, // only request title if retrying first message
+                contextFilters,
+                personalizationPrompt,
+                projectInstructions,
+                allAttachments,
+                attachments,
+            })
+        );
     } catch (error) {
         console.warn('retry error: ', error);
         throw error;
@@ -1035,9 +1037,8 @@ function assignProvisionalAttachmentsToSpace(attachments: Attachment[], spaceId:
     };
 }
 
-export async function fetchAssistantResponse({
+export function fetchAssistantResponse({
     api,
-    dispatch,
     linearChain,
     spaceId,
     conversationId,
@@ -1056,7 +1057,6 @@ export async function fetchAssistantResponse({
     attachments = [],
 }: {
     api: Api;
-    dispatch: AppDispatch;
     linearChain: Message[];
     spaceId: SpaceId;
     conversationId: ConversationId;
@@ -1074,137 +1074,139 @@ export async function fetchAssistantResponse({
     referencedFileNames?: Set<string>;
     attachments?: Attachment[];
 }) {
-    // Extract the user's query from the last user message for RAG retrieval
-    const lastUserMessage = linearChain.filter((m) => m.role === Role.User).pop();
-    const userQuery = lastUserMessage?.content || '';
+    return async (dispatch: LumoDispatch) => {
+        // Extract the user's query from the last user message for RAG retrieval
+        const lastUserMessage = linearChain.filter((m) => m.role === Role.User).pop();
+        const userQuery = lastUserMessage?.content || '';
 
-    // Retrieve relevant documents from the project's indexed Drive folder (RAG)
-    // Pass allAttachments so we can filter out already-retrieved documents
-    // Pass referencedFileNames to exclude files that were explicitly @mentioned
-    const ragResult = await retrieveDocumentContextForProject(
-        userQuery,
-        spaceId,
-        userId,
-        isProject,
-        linearChain,
-        allAttachments || {},
-        referencedFileNames
-    );
+        // Retrieve relevant documents from the project's indexed Drive folder (RAG)
+        // Pass allAttachments so we can filter out already-retrieved documents
+        // Pass referencedFileNames to exclude files that were explicitly @mentioned
+        const ragResult = await retrieveDocumentContextForProject(
+            userQuery,
+            spaceId,
+            userId,
+            isProject,
+            linearChain,
+            allAttachments || {},
+            referencedFileNames
+        );
 
-    console.log('[RAG] fetchAssistantResponse context:', {
-        personalizationPrompt: !!personalizationPrompt,
-        projectInstructions: !!projectInstructions,
-        documentContext: !!ragResult?.context,
-        documentContextLength: ragResult?.context?.length || 0,
-        ragAttachments: ragResult?.attachments?.length || 0,
-        userQuery: userQuery.slice(0, 50),
-        spaceId,
-        isProject,
-    });
+        console.log('[RAG] fetchAssistantResponse context:', {
+            personalizationPrompt: !!personalizationPrompt,
+            projectInstructions: !!projectInstructions,
+            documentContext: !!ragResult?.context,
+            documentContextLength: ragResult?.context?.length || 0,
+            ragAttachments: ragResult?.attachments?.length || 0,
+            userQuery: userQuery.slice(0, 50),
+            spaceId,
+            isProject,
+        });
 
-    // If we have RAG attachments, store them and add to the user message
-    let updatedLinearChain = linearChain;
-    if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
-        // Store each attachment in Redux
-        // Skip uploaded project files (they're already in Redux)
-        // Don't persist auto-retrieved Drive files to server
-        for (const attachment of ragResult.attachments) {
-            if (attachment.isUploadedProjectFile) {
-                // Skip - uploaded files are already in Redux
-                console.log(`[RAG] Skipping upsert for uploaded project file: ${attachment.filename}`);
-                continue;
+        // If we have RAG attachments, store them and add to the user message
+        let updatedLinearChain = linearChain;
+        if (ragResult?.attachments && ragResult.attachments.length > 0 && lastUserMessage) {
+            // Store each attachment in Redux
+            // Skip uploaded project files (they're already in Redux)
+            // Don't persist auto-retrieved Drive files to server
+            for (const attachment of ragResult.attachments) {
+                if (attachment.isUploadedProjectFile) {
+                    // Skip - uploaded files are already in Redux
+                    console.log(`[RAG] Skipping upsert for uploaded project file: ${attachment.filename}`);
+                    continue;
+                }
+                dispatch(upsertAttachment(attachment));
+                if (!attachment.autoRetrieved) {
+                    dispatch(pushAttachmentRequest({ id: attachment.id }));
+                }
             }
-            dispatch(upsertAttachment(attachment));
-            if (!attachment.autoRetrieved) {
-                dispatch(pushAttachmentRequest({ id: attachment.id }));
-            }
+
+            // Create shallow attachment refs for the message
+            const existingAttachments = lastUserMessage.attachments || [];
+            const existingAttachmentIds = new Set(existingAttachments.map((att) => att.id));
+
+            // Only add new attachments that aren't already in the message (avoid duplicates when reusing IDs)
+            const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
+                .filter((att) => !existingAttachmentIds.has(att.id))
+                .map((att) => {
+                    const { data, markdown, ...shallow } = att;
+                    return shallow as ShallowAttachment;
+                });
+
+            const updatedUserMessage: Message = {
+                ...lastUserMessage,
+                attachments: [...existingAttachments, ...newShallowAttachments],
+            };
+            dispatch(addMessage(updatedUserMessage));
+            dispatch(pushMessageRequest({ id: lastUserMessage.id }));
+
+            // Update the linearChain with the updated user message
+            updatedLinearChain = linearChain.map((msg) => (msg.id === lastUserMessage.id ? updatedUserMessage : msg));
+
+            // Recalculate contextFiles to include the auto-retrieved attachments
+            const updatedContextFiles = getContextFilesForMessage(updatedLinearChain, contextFilters);
+
+            console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
+
+            // IMMEDIATELY update the assistant message's contextFiles BEFORE streaming starts
+            // This ensures the "X files" button appears right away
+            dispatch((innerDispatch: AppDispatch, getState: () => any) => {
+                const state = getState();
+                const assistantMessage = state.messages[assistantMessageId];
+                if (assistantMessage) {
+                    const updatedAssistantMessage: Message = {
+                        ...assistantMessage,
+                        contextFiles: updatedContextFiles,
+                    };
+                    innerDispatch(addMessage(updatedAssistantMessage));
+                    // Note: Don't push to server yet - the message is still being generated
+                }
+            });
+        } else if (lastUserMessage) {
+            // No RAG attachments, but still need to push the user message
+            // (it wasn't pushed earlier to allow for RAG attachments to be added first)
+            dispatch(pushMessageRequest({ id: lastUserMessage.id }));
         }
 
-        // Create shallow attachment refs for the message
-        const existingAttachments = lastUserMessage.attachments || [];
-        const existingAttachmentIds = new Set(existingAttachments.map((att) => att.id));
-
-        // Only add new attachments that aren't already in the message (avoid duplicates when reusing IDs)
-        const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
-            .filter((att) => !existingAttachmentIds.has(att.id))
-            .map((att) => {
-                const { data, markdown, ...shallow } = att;
-                return shallow as ShallowAttachment;
-            });
-
-        const updatedUserMessage: Message = {
-            ...lastUserMessage,
-            attachments: [...existingAttachments, ...newShallowAttachments],
-        };
-        dispatch(addMessage(updatedUserMessage));
-        dispatch(pushMessageRequest({ id: lastUserMessage.id }));
-
-        // Update the linearChain with the updated user message
-        updatedLinearChain = linearChain.map((msg) => (msg.id === lastUserMessage.id ? updatedUserMessage : msg));
-
-        // Recalculate contextFiles to include the auto-retrieved attachments
-        const updatedContextFiles = getContextFilesForMessage(updatedLinearChain, contextFilters);
-
-        console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
-
-        // IMMEDIATELY update the assistant message's contextFiles BEFORE streaming starts
-        // This ensures the "X files" button appears right away
-        dispatch((innerDispatch: AppDispatch, getState: () => any) => {
-            const state = getState();
-            const assistantMessage = state.messages[assistantMessageId];
-            if (assistantMessage) {
-                const updatedAssistantMessage: Message = {
-                    ...assistantMessage,
-                    contextFiles: updatedContextFiles,
-                };
-                innerDispatch(addMessage(updatedAssistantMessage));
-                // Note: Don't push to server yet - the message is still being generated
-            }
-        });
-    } else if (lastUserMessage) {
-        // No RAG attachments, but still need to push the user message
-        // (it wasn't pushed earlier to allow for RAG attachments to be added first)
-        dispatch(pushMessageRequest({ id: lastUserMessage.id }));
-    }
-
-    // First, get basic turns without images
-    let turns = prepareTurns(
-        updatedLinearChain,
-        ASSISTANT_TURN,
-        contextFilters,
-        personalizationPrompt,
-        projectInstructions,
-        ragResult?.context
-    );
-
-    // Now enrich user turns with images
-    if (attachments.length > 0) {
-        turns = await Promise.all(
-            turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, attachments))
+        // First, get basic turns without images
+        let turns = prepareTurns(
+            updatedLinearChain,
+            ASSISTANT_TURN,
+            contextFilters,
+            personalizationPrompt,
+            projectInstructions,
+            ragResult?.context
         );
-    }
 
-    await dispatch(
-        sendMessageWithRedux(api, turns, {
-            messageId: assistantMessageId,
-            conversationId,
-            spaceId,
-            signal,
-            enableExternalTools,
-            generateTitle: requestTitle,
-            config: {
-                enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
-                enableSmoothing,
-            },
-            errorHandler: createLumoErrorHandler(),
-        })
-    );
+        // Now enrich user turns with images
+        if (attachments.length > 0) {
+            turns = await Promise.all(
+                turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, attachments))
+            );
+        }
 
-    // After sending the message, persist the assistant message with contextFiles
-    if (ragResult?.attachments && ragResult.attachments.length > 0) {
-        // Persist the assistant message with its contextFiles after the stream completes
-        dispatch(pushMessageRequest({ id: assistantMessageId }));
-    }
+        await dispatch(
+            sendMessageWithRedux(api, turns, {
+                messageId: assistantMessageId,
+                conversationId,
+                spaceId,
+                signal,
+                enableExternalTools,
+                generateTitle: requestTitle,
+                config: {
+                    enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
+                    enableSmoothing,
+                },
+                errorHandler: createLumoErrorHandler(),
+            })
+        );
+
+        // After sending the message, persist the assistant message with contextFiles
+        if (ragResult?.attachments && ragResult.attachments.length > 0) {
+            // Persist the assistant message with its contextFiles after the stream completes
+            dispatch(pushMessageRequest({ id: assistantMessageId }));
+        }
+    };
 }
 
 export function generateFakeConversationToShowTierError({
