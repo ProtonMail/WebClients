@@ -15,7 +15,7 @@ import { roundToNextHalfHour } from '../utils/timeHelpers';
 import { FormErrorWrapper } from './BookingsFormComponents';
 
 export const RangeWrapper = ({ children }: PropsWithChildren) => {
-    return <div className="flex flex-nowrap gap-2 justify-space-between mb-0.5">{children}</div>;
+    return <div className="flex flex-nowrap gap-1 justify-space-between mb-0.5">{children}</div>;
 };
 
 export const RangeStartTimeLabel = ({ htmlFor }: { htmlFor: string }) => {
