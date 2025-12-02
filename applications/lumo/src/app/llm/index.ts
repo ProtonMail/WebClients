@@ -38,7 +38,7 @@ export type ContextFilter = {
     excludedFiles: string[]; // filenames to skip
 };
 
-export const ASSISTANT_TURN: Turn = {
+export const EMPTY_ASSISTANT_TURN: Turn = {
     role: Role.Assistant,
     content: '',
 };
@@ -77,7 +77,6 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
 
 export function prepareTurns(
     linearChain: Message[],
-    finalTurn = ASSISTANT_TURN,
     contextFilters: ContextFilter[] = [],
     personalizationPrompt?: string,
     projectInstructions?: string,
@@ -108,7 +107,7 @@ export function prepareTurns(
     };
 
     // Insert the final turn, which should be assistant normally
-    let turns: ExtraTurn[] = [...filteredMessageChain, finalTurn];
+    let turns: ExtraTurn[] = [...filteredMessageChain, EMPTY_ASSISTANT_TURN];
 
     // Add RAG document context to the FIRST user message's context field (like an attachment)
     // This ensures documents are included once and won't be duplicated across turns
@@ -277,7 +276,6 @@ export async function enrichTurnWithImages(
 export async function prepareTurnsWithImages(
     linearChain: Message[],
     attachments: Attachment[],
-    finalTurn = ASSISTANT_TURN,
     contextFilters: ContextFilter[] = [],
     personalizationPrompt?: string,
     projectInstructions?: string,
@@ -286,7 +284,6 @@ export async function prepareTurnsWithImages(
     // First, get basic turns without images
     const turns = prepareTurns(
         linearChain,
-        finalTurn,
         contextFilters,
         personalizationPrompt,
         projectInstructions,
@@ -306,7 +303,7 @@ export async function prepareTurnsWithImages(
     return enrichedTurns;
 }
 
-export function appendFinalTurn(turns: Turn[], finalTurn = ASSISTANT_TURN): Turn[] {
+export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN): Turn[] {
     return [...turns, finalTurn];
 }
 
@@ -318,14 +315,7 @@ export const getFilteredTurns = (
     projectInstructions?: string,
     documentContext?: string
 ) => {
-    return prepareTurns(
-        linearChain,
-        ASSISTANT_TURN,
-        contextFilters,
-        personalizationPrompt,
-        projectInstructions,
-        documentContext
-    )
+    return prepareTurns(linearChain, contextFilters, personalizationPrompt, projectInstructions, documentContext)
         .filter((turn) => {
             // Keep system messages that contain personalization, filter out other system messages
             if (turn.role === Role.System) {
@@ -350,7 +340,6 @@ export const getFilteredTurnsWithImages = async (
     const turns = await prepareTurnsWithImages(
         linearChain,
         attachments,
-        ASSISTANT_TURN,
         contextFilters,
         personalizationPrompt,
         projectInstructions,
