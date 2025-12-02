@@ -6,6 +6,7 @@ import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
 import { useMLSContext } from '../contexts/MLSContext';
 import { useMeetContext } from '../contexts/MeetContext';
+import { PublishableDataTypes } from '../types';
 import { trimMessage } from '../utils/trim-message';
 
 export const useChatMessage = () => {
@@ -27,10 +28,11 @@ export const useChatMessage = () => {
         try {
             const encryptedMessage = await mls?.encryptMessage(sanitizedContent);
 
-            const message: ChatMessage = {
+            const message: ChatMessage & { type: PublishableDataTypes.Message } = {
                 id: `${room.localParticipant.identity}-${Date.now()}`,
                 message: uint8ArrayToString(encryptedMessage as Uint8Array<ArrayBuffer>),
                 timestamp: Date.now(),
+                type: PublishableDataTypes.Message,
             };
 
             const encodedMessage = new TextEncoder().encode(JSON.stringify({ messageType: 'chat', ...message }));

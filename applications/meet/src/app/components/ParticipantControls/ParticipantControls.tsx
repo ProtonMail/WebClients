@@ -27,6 +27,7 @@ import { ChatButton } from '../ChatButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
 import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume';
 import { ParticipantsButton, WrappedParticipantsButton } from '../ParticipantsButton';
+import { RecordingControls } from '../RecordingControls/RecordingControls';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
@@ -288,7 +289,6 @@ export const ParticipantControls = () => {
                         ) : (
                             <WrappedParticipantsButton hasAdminPermission={hasAdminPermission} />
                         )}
-
                         <ChatButton />
                         <CircleButton
                             IconComponent={IcMeetSettings}
@@ -298,6 +298,7 @@ export const ParticipantControls = () => {
                             }}
                             ariaLabel={c('Alt').t`Toggle settings`}
                         />
+                        <RecordingControls />
                         <CircleButton
                             IconComponent={IcInfoCircle}
                             onClick={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
@@ -307,6 +308,7 @@ export const ParticipantControls = () => {
                     </div>
                     <div className="flex lg:hidden gap-2 flex-nowrap">
                         <ChatButton />
+                        <RecordingControls />
                         <MenuButton />
                     </div>
 

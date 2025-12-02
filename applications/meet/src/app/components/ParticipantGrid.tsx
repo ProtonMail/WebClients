@@ -1,7 +1,10 @@
+import { useMemo } from 'react';
+
 import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
+import { calculateGridLayout } from '../utils/calculateGridLayout';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
@@ -13,61 +16,14 @@ export const ParticipantGrid = () => {
 
     const isNarrowHeight = useIsNarrowHeight();
 
-    const gridTemplateColumns = (participantCount: number) => {
-        if (!isLargerThanMd && !isNarrowHeight) {
-            if (participantCount === 1 || participantCount === 2) {
-                return '1fr';
-            }
+    const actualPagedParticipantCount = selfView ? pagedParticipants.length : pagedParticipantsWithoutSelfView.length;
+    const { cols, rows } = useMemo(
+        () => calculateGridLayout(actualPagedParticipantCount, !isLargerThanMd || isNarrowHeight),
+        [actualPagedParticipantCount, isLargerThanMd, isNarrowHeight]
+    );
 
-            if (participantCount > 2) {
-                return 'repeat(2, 1fr)';
-            }
-        }
-
-        if (participantCount < 4) {
-            return `repeat(${participantCount}, 1fr)`;
-        }
-
-        if (participantCount === 4) {
-            return 'repeat(2, 1fr)';
-        }
-
-        if (participantCount > 4 && participantCount <= 6) {
-            return 'repeat(3, 1fr)';
-        }
-
-        if (participantCount > 6 && participantCount <= 12) {
-            return 'repeat(4, 1fr)';
-        }
-
-        return 'repeat(5, 1fr)';
-    };
-
-    const gridTemplateRows = (participantCount: number) => {
-        if (!isLargerThanMd && !isNarrowHeight) {
-            if (participantCount === 1) {
-                return '1fr';
-            }
-
-            if (participantCount === 2) {
-                return 'repeat(2, 1fr)';
-            }
-
-            if (participantCount > 2) {
-                return 'repeat(3, 1fr)';
-            }
-        }
-
-        if (participantCount < 4) {
-            return '1fr';
-        }
-
-        if (participantCount >= 4 && participantCount <= 8) {
-            return 'repeat(2, 1fr)';
-        }
-
-        return 'repeat(3, 1fr)';
-    };
+    const gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    const gridTemplateRows = `repeat(${rows}, 1fr)`;
 
     return (
         <div className="flex-1 min-h-0 overflow-y-auto h-full">
@@ -75,12 +31,8 @@ export const ParticipantGrid = () => {
                 className="w-full h-full"
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: gridTemplateColumns(
-                        selfView ? pagedParticipants.length : pagedParticipantsWithoutSelfView.length
-                    ),
-                    gridTemplateRows: gridTemplateRows(
-                        selfView ? pagedParticipants.length : pagedParticipantsWithoutSelfView.length
-                    ),
+                    gridTemplateColumns,
+                    gridTemplateRows,
                     gap: '0.6875rem',
                 }}
             >

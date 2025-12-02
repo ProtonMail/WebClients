@@ -306,6 +306,7 @@ export type IconName =
     | 'meet-speaker-alt'
     | 'meet-participants'
     | 'meet-record'
+    | 'meet-record-stop'
     | 'meet-rotate-camera'
     | 'meet-user'
     | 'minus'
