@@ -973,8 +973,7 @@ function createMessagePair(
     conversationId: ConversationId,
     lastMessage: Message | undefined,
     date1: string,
-    date2: string,
-    contextFiles: AttachmentId[] = [] // Files that will be used in LLM context for the assistant response
+    date2: string
 ) {
     const context = flattenAttachmentsForLlm(attachments);
     const shallowAttachments = stripDataFromAttachments(attachments);
@@ -999,7 +998,6 @@ function createMessagePair(
         role: Role.Assistant,
         placeholder: true,
         conversationId,
-        ...(contextFiles.length > 0 && { contextFiles }), // Record which files will be used
     };
 
     return { userMessage, assistantMessage };
