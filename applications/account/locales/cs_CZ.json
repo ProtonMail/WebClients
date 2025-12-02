@@ -163,7 +163,7 @@
         "Přidat doporučující odkaz k podpisu ${ MAIL_APP_NAME }"
       ],
       "Add sieve filter": [
-        "Přidat filtr Sieve"
+        "Přidat Sieve filtr"
       ],
       "Add user": [
         "Přidat uživatele"
@@ -1056,6 +1056,9 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Otevřete ${ PASS_APP_NAME } ve svém prohlížeči"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Otevřít v ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -1339,7 +1342,7 @@
         "Poslat připomenutí e-mailem"
       ],
       "Send messages with @pm.me": [
-        "Odesílat zprávy z @pm.me"
+        "Odesílat zprávy s @pm.me"
       ],
       "Send my username": [
         "Poslat mé uživatelské jméno"
@@ -1924,7 +1927,7 @@
         "Vyzkoušejte ${ PASS_APP_NAME }"
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
-        "Pomocí ${ PASS_APP_NAME } můžete vytvářet jedinečné aliasy pro skrytí své identity a přeposílat e-maily do hlavní e-mailové schránky."
+        "Pomocí ${ PASS_APP_NAME } můžete vytvářet jedinečné aliasy pro skrytí své identity a přeposílat e-maily do vaší hlavní e-mailové schránky."
       ]
     },
     "Alter": {
@@ -2441,8 +2444,14 @@
       "Automate recurring actions to sort and organize incoming emails.": [
         "Automatizujte opakující se akce pro třídění a organizaci příchozích e-mailů."
       ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Zálohování, organizace a bezpečně sdílení celoživotních vzpomínek."
+      ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Může někdo vidět mou historii na internetu, pokud používáme stejnou Wi-Fi?"
+      ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Připojte ${ VPN_CONNECTIONS } zařízení současně"
       ],
       "Create and edit with confidence": [
         "Vytvářejte a upravujte s jistotou"
@@ -2528,6 +2537,9 @@
       "Keep your email spam-free": [
         "Chraňte svou e-mailovou schránku před spamem"
       ],
+      "Keep your photos out of AI training": [
+        "Chraňte své fotky mimo dosah trénování AI"
+      ],
       "Keep your team’s files protected, accessible, and in sync with ${ DRIVE_APP_NAME } for Business.": [
         "Zabezpečte soubory svého týmu, zajistěte jejich dostupnost a synchronizaci pomocí aplikace ${ DRIVE_APP_NAME } pro firmy."
       ],
@@ -2554,6 +2566,9 @@
       ],
       "Navigating an internet full of data brokers, spam, scams, and malware feels increasingly difficult. That’s why ${ PASS_APP_NAME } goes beyond helping you manage, store, and autofill your passwords. We give you the tools to take control of your privacy and protect your inboxes with hide-my-email aliases.": [
         "Orientace na internetu plném datových brokerů, spamu, podvodů a malwaru je stále obtížnější. Proto vám ${ PASS_APP_NAME } pomáhá nejen spravovat, ukládat a automaticky vyplňovat hesla. Poskytujeme vám nástroje, díky kterým získáte kontrolu nad svým soukromím a ochráníte své e-mailové schránky pomocí aliasů hide-my-email."
+      ],
+      "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Chraňte všechna svá domácí zařízení zároveň s ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "Protect your business communications": [
         "Chraňte svou firemní komunikaci"
@@ -2656,6 +2671,9 @@
       ],
       "Worried about data breaches?": [
         "Obáváte se úniků informací?"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Pište, upravujte a spolupracujte na dokumentech bezpečně s ${ DOCS_APP_NAME }."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Vaše rodinné fotky trénují umělou inteligenci a zde je, jak tomu zabránit"
@@ -2898,7 +2916,7 @@
         "Sdílet s uživateli ${ BRAND_NAME }"
       ],
       "Share with anyone": [
-        "Sdílet s kýmkoli"
+        "Sdílení s kýmkoli"
       ]
     },
     "Calendar settings sidebar": {
@@ -2943,7 +2961,7 @@
         "Výchozí"
       ],
       "Disabled": [
-        "Neaktivní"
+        "Deaktivováno"
       ],
       "Not synced": [
         "Nesynchronizováno"
@@ -3421,7 +3439,7 @@
     },
     "Condition label": {
       "If": [
-        "Pokud"
+        "Když"
       ]
     },
     "Confirm modal title": {
@@ -4599,7 +4617,7 @@
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
       ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } není vaše výchozí e-mailová aplikace."
+        "${ MAIL_APP_NAME } není vaší výchozí e-mailovou aplikací."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } je vaše výchozí e-mailová aplikace."
@@ -5058,7 +5076,7 @@
         ".deb pro Debian / Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm pro Fedora / Red Hat"
+        ".rpm pro Fedoru / Red Hat"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "Můžete si také stáhnout aplikaci skrze ${ linkSnapStore }."
@@ -5488,7 +5506,7 @@
         "Znovu odeslat potvrzovací e-mail"
       ],
       "Remove “${ value }”": [
-        "Odstranit “${ value }”"
+        "Odebrat “${ value }”"
       ],
       "Request confirmation": [
         "Požádat o potvrzení"
@@ -5508,7 +5526,7 @@
     },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
-        "Podmínka je neúplná, přidejte token"
+        "Podmínka je neúplná, prosím přidejte token"
       ],
       "Token already exists": [
         "Token již existuje"
@@ -5578,7 +5596,7 @@
         "Kvůli kompatibilitě bude deaktivováno postkvantové šifrování a pro ${ boldForwarderEmail } bude vygenerován nový šifrovací klíč."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Příjemce přeposílání byl pozván a nyní musí přijmout/odmítnout pozvánku nebo aktualizaci"
+        "Příjemce přeposílání byl pozván a musí přijmout/odmítnout pozvánku nebo aktualizaci"
       ],
       "Forwarding is active": [
         "Přeposílání je aktivní"
@@ -5599,7 +5617,7 @@
         "Žádná odchozí pravidla přeposílání"
       ],
       "Please update your forwarding keys": [
-        "Prosím, aktualizujte své klíče pro přeposílání"
+        "Aktualizujte prosím své klíče pro přeposílání"
       ],
       "The forwardee rejected the forwarding request": [
         "Příjemce přeposílání odmítl žádost o přeposílání"
@@ -5616,7 +5634,7 @@
     },
     "email_forwarding_2023: Label": {
       "And": [
-        "A"
+        "a"
       ],
       "Forward from": [
         "Přeposlat z"
@@ -5702,13 +5720,13 @@
         "E-mail odeslán na ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
-        "Přeposílání bylo přijato"
+        "Přeposílání přijato"
       ],
       "Forwarding declined": [
-        "Přeposílání bylo zamítnuto"
+        "Přeposílání odmítnuto"
       ],
       "Forwarding deleted": [
-        "Přeposílání bylo smazáno"
+        "Přeposílání smazáno"
       ],
       "Forwarding paused": [
         "Přeposílání pozastaveno"
@@ -5734,7 +5752,7 @@
         "Požadavek odeslán"
       ],
       "Requesting confirmation": [
-        "Požadovat potvrzení"
+        "Požaduji potvrzení"
       ],
       "Set up forwarding": [
         "Nastavit přeposílání"
@@ -6362,6 +6380,9 @@
       "Permissions request failed.": [
         "Požadavek o oprávnění selhal."
       ],
+      "Please add a payment method before reactivating your subscription": [
+        "Před opětovnou aktivací předplatného přidejte platební metodu"
+      ],
       "Please configure a custom domain before adding addresses.": [
         "Před přidáním adres nastavte vlastní doménu."
       ],
@@ -6976,7 +6997,7 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } události exportována",
+        "${ totalProcessed }/${ totalToProcess } událostí exportována",
         "${ totalProcessed }/${ totalToProcess } událostí exportovány",
         "${ totalProcessed }/${ totalToProcess } událostí exportováno",
         "${ totalProcessed }/${ totalToProcess } událostí exportováno"
@@ -6985,13 +7006,13 @@
         "Kalendář úspěšně exportován. Můžete uložit ICS soubor."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Dešifrování událostí z kalendáře: ${ totalProcessed }/${ totalToProcess }"
+        "Dešifrování událostí z vašeho kalendáře: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
         "Z důvodu resetu hesla, nemohla být dešifrována a exportována ani jedna událost."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Z důvodu resetu hesla, nebylo možné některé události dešifrovat a exportovat."
+        "Z důvodu resetu hesla nebylo možné dešifrovat a exportovat některé vaše události."
       ],
       "Error decrypting event": [
         "Chyba při dešifrování události"
@@ -7009,13 +7030,13 @@
         "Reset hesla - událost nemůže být dešifrována"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Reset hesla - některé události nemohou být dešifrovány"
+        "Heslo bylo resetováno - nelze dešifrovat více událostí"
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "Nezavírejte prosím kartu před dokončením exportu."
       ],
       "Some of your events could not be exported.": [
-        "Některé události nemohly být exportovány."
+        "Některé vaše události nemohly být exportovány."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "Internetové připojení bylo přerušeno a export díky tomu selhal. Prosím, zkuste to znovu."
@@ -7395,6 +7416,9 @@
     "Features": {
       "15 GB storage": [
         "15 GB prostoru"
+      ],
+      "4 more privacy services": [
+        "4 další služby ochrany soukromí"
       ],
       "@pm.me address": [
         "@pm.me adresa"
@@ -8084,6 +8108,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Užíváte si ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Odemkněte 4 prémiové služby ochrany soukromí za pouhých **${ priceString }** měsíčně navíc"
       ],
       "Upgrade your privacy": [
         "Zvyšte své soukromí"
@@ -8855,6 +8882,9 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importujte vaše stávající kódy** z jiných 2FA aplikací, například Google Authenticator"
       ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1: Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Krok 1:** Pozvěte své přátele do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
       ],
@@ -9108,16 +9138,16 @@
         "Opravdu chcete zrušit úpravu skupiny?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Jste si jisti, že chcete tento kalendář smazat?"
+        "Opravdu chcete smazat tento kalendář?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Jste si jisti, že chcete tento kalendář smazat? Všechny adresy, se kterými jste tento kalendář sdíleli, k němu ztratí přístup."
+        "Opravdu chcete tento kalendář smazat? Všechny adresy, se kterými jste tento kalendář sdíleli, k němu ztratí přístup."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Jste si jisti, že chcete tento kalendář smazat? Všechny události v něm budou smazány."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Jste si jisti, že chcete tento kalendář smazat? Kalendář svátků můžete přidat později."
+        "Opravdu chcete tento kalendář smazat? Kalendář svátků můžete přidat později."
       ],
       "Are you sure you want to delete this filter?": [
         "Opravdu chcete smazat tento filtr?"
@@ -9204,7 +9234,7 @@
         "Automatické zobrazení dalšího e-mailu, pokud je otevřený e-mail smazán, archivován nebo přesunut."
       ],
       "Available on macOS, Windows, and Linux.": [
-        "Dostupné na macOS, Windows a Linuxu."
+        "K dispozici pro macOS, Windows a Linux."
       ],
       "Awaiting transaction": [
         "Čekání na transakci"
@@ -9648,7 +9678,7 @@
         "Opětovné povolení obnovení pomocí fráze vygeneruje novou frázi pro obnovení."
       ],
       "Encryption setting updated": [
-        "Nastavení šifrování bylo aktualizováno"
+        "Nastavení šifrování aktualizováno"
       ],
       "End date": [
         "Datum ukončení"
@@ -12213,7 +12243,7 @@
         "Generování klíče selhalo. Zkuste to prosím později."
       ],
       "Key successfully generated.": [
-        "Klíč byl úspěšně vygenerován."
+        "Klíč úspěšně vygenerován."
       ],
       "New key generated": [
         "Vygenerován nový klíč"
@@ -12233,7 +12263,7 @@
         "Kompromitovaný"
       ],
       "Disabled": [
-        "Deaktivovaný"
+        "Deaktivováno"
       ],
       "Fallback": [
         "Záložní"
@@ -12494,7 +12524,7 @@
         "Smazat"
       ],
       "Disables encryption with this key": [
-        "Vypne šifrování tímto klíčem"
+        "Deaktivuje šifrování tímto klíčem"
       ],
       "Disables signature verification and encryption with this key": [
         "Zakáže ověřování podpisu a šifrování pomocí tohoto klíče"
@@ -12515,7 +12545,7 @@
         "Nastaví tento klíč jako ${ keyStatusBadgeTitles.primary } nebo ${ keyStatusBadgeTitles.fallback } pro šifrování a podepisování."
       ],
       "Mark compromised": [
-        "Označit jako kompromitovaný/prolomený"
+        "Označit jako kompromitovaný"
       ],
       "Mark not compromised": [
         "Zrušit označení jako kompromitovaný"
@@ -12852,7 +12882,7 @@
         "Kalendáře"
       ],
       "Capitalize words": [
-        "Slova velkými písmeny"
+        "Slova s velkými prvními písmeny"
       ],
       "Card details": [
         "Podrobnosti karty"
@@ -12906,7 +12936,7 @@
         "Výchozí písmo/velikost při psaní"
       ],
       "Composer mode": [
-        "Režim psaní zpráv"
+        "Režim editace"
       ],
       "Composer text direction": [
         "Směr textu v editoru"
@@ -13518,7 +13548,7 @@
         "Přidejte prosím následující TXT záznam. Poznámka: Změna v DNS záznamech se může projevit až za několik hodin."
       ],
       "Please select files to upload": [
-        "Prosím vyberte soubory k nahrání"
+        "Vyberte prosím soubory k nahrání"
       ],
       "Please share any feedback to help us improve.": [
         "Podělte se s námi o jakoukoli zpětnou vazbu, která nám pomůže se zlepšit."
@@ -13626,7 +13656,7 @@
         "Odesílat hlášení pádů"
       ],
       "Send in": [
-        "Odeslat v jazyce"
+        "Odeslat v"
       ],
       "Sequences": [
         "Sekvence"
@@ -13979,7 +14009,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Maximální"
+        "Maximalizováno"
       ],
       "Normal": [
         "Normální"
@@ -14247,6 +14277,9 @@
       ],
       "Terms": [
         "Podmínky"
+      ],
+      "terms of our referral program": [
+        "podmínky našeho programu doporučení"
       ],
       "Trouble signing in?": [
         "Potíže s přihlášením?"
@@ -16170,7 +16203,7 @@
         "Klíč zkopírován do schránky"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
-        "Klíč s otiskem ${ fp } byl smazán."
+        "Klíč s digitálním otiskem ${ fp } byl smazán."
       ],
       "Key with fingerprint ${ fp } is now primary.": [
         "Klíč s digitálním otiskem ${ fp } je nyní primární."
@@ -16692,10 +16725,10 @@
         "Nepovoleno"
       ],
       "Off": [
-        "Vypnuto"
+        "Vyp."
       ],
       "On": [
-        "Zapnuto"
+        "Zap."
       ],
       "Optional ${ defaultLabel }": [
         "Volitelné ${ defaultLabel }"
@@ -16927,7 +16960,7 @@
         ".exe (64-bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
-        ".rpm (pro Fedora/openSUSE)"
+        ".rpm (pro Fedoru/openSUSE)"
       ],
       "PKGBUILD (for other distributions)": [
         "PKGBUILD (pro ostatní distribuce)"
@@ -17108,6 +17141,9 @@
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Pokračováním souhlasíte s našimi ${ termsAndConditionsLink } a ${ privacyPolicyLink }."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
+        "Pokračováním souhlasíte s našimi ${ termsAndConditionsLink }, ${ privacyPolicyLink } a ${ referralPolicyLink }."
       ],
       "Creating your account": [
         "Vytváření vašeho účtu"
@@ -18339,11 +18375,20 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užívejte si **${ planTitle }** zdarma až do **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Dejte 2 týdny, získejte ${ referrerRewardAmount }"
+      ],
       "How your free trial works:": [
         "Jak funguje bezplatná zkušební verze:"
       ],
+      "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "Pokud zrušíte před tímto datem, po skončení zkušební doby bude váš tarif snížen na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }. Pokud nezrušíte, začne platit váš plný tarif a získáte **${ referrerRewardAmount }** v kreditech."
+      ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
         "Pokud zrušíte předplatné, přijdete o svou odměnu **${ referrerRewardAmount }** kreditů."
+      ],
+      "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "Pokud si předplatíte tarif před tímto datem, získáte **${ referrerRewardAmount }** v kreditech. Pokud ne, bude vám tarif snížen na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
       "Invite friends. Get credits.": [
         "Pozvěte přátele. Získejte kredity."
@@ -18411,7 +18456,7 @@
         "Odebrat kalendář"
       ],
       "Unsubscribe?": [
-        "Odhlásit?"
+        "Odhlásit odběr?"
       ]
     },
     "Remove organization logo": {
@@ -21474,7 +21519,7 @@
         "Oprávnění správce obnovena"
       ],
       "Auto-reply disabled": [
-        "Automatická odpověď vypnuta"
+        "Automatická odpověď deaktivována"
       ],
       "Auto-reply updated": [
         "Automatická odpověď aktualizována"
@@ -21495,7 +21540,7 @@
         "Informace kalendáře aktualizovány"
       ],
       "Calendar removed": [
-        "Kalendář byl odebrán"
+        "Kalendář odebrán"
       ],
       "Calendar updated": [
         "Kalendář aktualizován"
@@ -21519,7 +21564,7 @@
         "Kredity byly přidány"
       ],
       "Default calendar updated": [
-        "Výchozí kalendář byl aktualizován"
+        "Výchozí kalendář aktualizován"
       ],
       "Device deleted": [
         "Zařízení smazáno"
@@ -21627,7 +21672,7 @@
         "Nastavení uloženo"
       ],
       "Premium address created": [
-        "Prémiová adresa byla vytvořena"
+        "Prémiová adresa vytvořena"
       ],
       "Problem reported": [
         "Problém nahlášen"
@@ -21645,7 +21690,7 @@
         "Relace byla zrušena"
       ],
       "SMTP token deleted": [
-        "SMTP token byl smazán"
+        "SMTP token smazán"
       ],
       "SPF value copied to clipboard": [
         "Hodnota SPF byla zkopírována do schránky"
@@ -21767,7 +21812,7 @@
         "Pozvánka znovu odeslána"
       ],
       "Status updated": [
-        "Stav byl aktualizován"
+        "Stav aktualizován"
       ]
     },
     "Suffix": {
@@ -22312,6 +22357,9 @@
       ],
       "Connect organization": [
         "Připojení organizace"
+      ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Připojte se k ${ VPN_CONNECTIONS } zařízením současně s ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
@@ -23342,6 +23390,9 @@
       "Start import process": [
         "Zahájit proces importu"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Začněte chránit svá zařízení pomocí aplikace ${ VPN_APP_NAME }."
+      ],
       "State": [
         "Stav"
       ],
@@ -23358,7 +23409,7 @@
         "Předplatné zrušeno"
       ],
       "Success": [
-        "Dokončeno"
+        "Úspěšné"
       ],
       "Successfully created ${ n } user account": [
         "Úspěšně vytvořen ${ n } uživatelský účet",
@@ -23407,6 +23458,9 @@
       ],
       "Time zone": [
         "Časové pásmo"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Chcete-li si tuto tabulku prohlédnout, otevřete ji v aplikaci ${ SHEETS_APP_NAME } nebo ji stáhněte."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Vyzkoušejte ${ AUTHENTICATOR_APP_NAME }"
@@ -23655,7 +23709,7 @@
         "Datum vytvoření"
       ],
       "Fingerprint": [
-        "Otisk"
+        "Digitální otisk"
       ],
       "Function": [
         "Funkce"
@@ -23997,7 +24051,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Vyberte výchozí nastavení PGP používané pro podepisování nebo šifrování zpráv s uživateli, kteří nepoužívají ${ BRAND_NAME } PGP. Všimněte si, že Inline PGP vynucuje zasílání zpráv ve formě prostého textu."
+        "Vyberte výchozí nastavení PGP používané pro podepisování nebo šifrování zpráv s jinými než ${ BRAND_NAME } PGP uživateli. Všimněte si, že Inline PGP vynucuje zasílání zpráv v prostém textu."
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -24258,6 +24312,12 @@
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your for files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Získejte úložiště o velikosti ${ drivePlusPlanMaxSpace } pro své soubory, fotky a dokumenty a obnovujte verze souborů díky 10letému obnovení souborů."
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
+        "Sada pro soukromí se zabezpečeným e-mailem, ${ VPN_SHORT_APP_NAME }, cloudovým úložištěm a správcem hesel v jednom balíčku. Již od ${ fallBackString } měsíčně"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
+        "Sada pro soukromí se zabezpečeným e-mailem, ${ VPN_SHORT_APP_NAME }, cloudovým úložištěm a správcem hesel v jednom balíčku. Pouze **${ priceString }** navíc každý měsíc."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "Chraňte svou organizaci před úniky informací pomocí ${ PLAN_NAMES[plan] }."

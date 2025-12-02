@@ -85,7 +85,7 @@
         "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
-        "Activa ${ user.Name }@pm.me"
+        "Activeu ${ user.Name }@pm.me"
       ],
       "Activate organization key": [
         "Activar la clau d'organització"
@@ -115,7 +115,7 @@
         "Afegeix un altre compte"
       ],
       "Add calendar from URL": [
-        "Afegeix un calendari des d'un URL"
+        "Afegiu un calendari des d'un URL"
       ],
       "Add condition": [
         "Afegeix una condició"
@@ -136,7 +136,7 @@
         "Afegeix una adreça externa"
       ],
       "Add filter": [
-        "Afegeix un filtre"
+        "Afegiu un filtre"
       ],
       "Add folder": [
         "Afegeix una carpeta"
@@ -163,7 +163,7 @@
         "Afegeix un enllaç de recomanació a la signatura de ${ MAIL_APP_NAME }"
       ],
       "Add sieve filter": [
-        "Afegeix un filtre Sieve"
+        "Afegiu un filtre Sieve"
       ],
       "Add user": [
         "Afegir usuari"
@@ -193,10 +193,10 @@
         "Aplica"
       ],
       "Apply filter “${ Name }” to existing messages": [
-        "Aplica el filtre «${ Name }» als missatges existents"
+        "Apliqueu el filtre \"${ Name }\" als missatges existents"
       ],
       "Apply to existing messages": [
-        "Aplica als missatges existents"
+        "Apliqueu als missatges existents"
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -328,7 +328,7 @@
         "Connectat"
       ],
       "Contact sales": [
-        "Contacta amb vendes"
+        "Contacteu amb vendes"
       ],
       "Contact support": [
         "Contactar amb el suport"
@@ -373,16 +373,16 @@
         "Copia la contrasenya"
       ],
       "Copy SMTP port": [
-        "Copia el port SMTP"
+        "Copieu el port SMTP"
       ],
       "Copy SMTP server": [
-        "Copia el servidor SMTP"
+        "Copieu el servidor SMTP"
       ],
       "Copy SMTP token": [
-        "Copia el testimoni SMTP"
+        "Copieu el testimoni SMTP"
       ],
       "Copy SMTP username": [
-        "Copia el nom d'usuari SMTP"
+        "Copieu el nom d'usuari SMTP"
       ],
       "Copy version number to clipboard": [
         "Copia el número de versió al porta-retalls"
@@ -391,7 +391,7 @@
         "Crear"
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
-        "Creeu un enllaç per a compartir amb qualsevol de fora de ${ BRAND_NAME }"
+        "Creeu un enllaç per compartir amb qualsevol persona de fora de ${ BRAND_NAME }"
       ],
       "Create account": [
         "Crea un compte"
@@ -412,7 +412,7 @@
         "Creu una etiqueta"
       ],
       "Create link": [
-        "Crear enllaç"
+        "Creeu un enllaç"
       ],
       "Create new password": [
         "Crea una contrasenya nova"
@@ -457,10 +457,10 @@
         "Elimina el compte"
       ],
       "Delete and confirm": [
-        "Elimina i confirma"
+        "Elimineu i confirmeu"
       ],
       "Delete filter “${ Name }”": [
-        "Elimina el filtre «${ Name }»"
+        "Voleu eliminar el filtre \"${ Name }\""
       ],
       "Delete Gateway": [
         "Elimina la passarel·la"
@@ -469,7 +469,7 @@
         "Elimina el grup"
       ],
       "Delete link": [
-        "Elimina l'enllaç"
+        "Elimineu l'enllaç"
       ],
       "Delete logo": [
         "Elimina el logo"
@@ -490,13 +490,13 @@
         "Suprimeix el registre"
       ],
       "Delete token “${ token.Name }”": [
-        "Elimina el testimoni «${ token.Name }»"
+        "Suprimiu el testimoni \"${ token.Name }\""
       ],
       "Delete user": [
         "Elimina un usuari"
       ],
       "Delete without exporting": [
-        "Elimina sense exportar"
+        "Elimineu sense exportar"
       ],
       "Delete your account": [
         "Elimineu el vostre compte"
@@ -565,19 +565,19 @@
         "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
       "Download Bridge for ${ platform }": [
-        "Descarrega Bridge per a ${ platform }"
+        "Descarregueu el Bridge per a ${ platform }"
       ],
       "Download CSV sample": [
         "Descarrega una mostra de CSV"
       ],
       "Download for macOS": [
-        "Descarrega per a macOS"
+        "Descarregueu per macOS"
       ],
       "Download for Windows": [
-        "Descarrega per a Windows"
+        "Descarregueu-lo per Windows"
       ],
       "Download ICS": [
-        "Descarrega el fitxer ICS"
+        "Descarregueu el fitxer ICS"
       ],
       "Download logs": [
         "Descarrega els registres"
@@ -589,7 +589,7 @@
         "Descarrega el fitxer de recuperació"
       ],
       "Download the ${ MAIL_APP_NAME } Export Tool": [
-        "Descarrega l'eina d'exportació de ${ MAIL_APP_NAME }"
+        "Descarregueu l'eina d'exportació de ${ MAIL_APP_NAME }"
       ],
       "Download the desktop app": [
         "Descarregueu l'aplicació d'escriptori"
@@ -613,7 +613,7 @@
         "Edita l'adreça de correu"
       ],
       "Edit filter “${ Name }”": [
-        "Edita el filtre «${ Name }»"
+        "Editeu el filtre \"${ Name }\""
       ],
       "Edit Gateway": [
         "Edita la passarel·la"
@@ -643,10 +643,10 @@
         "Edita els servidors"
       ],
       "Edit Sieve": [
-        "Edita el filtre Sieve"
+        "Editeu el filtre Sieve"
       ],
       "Edit Sieve filter “${ Name }”": [
-        "Editeu el filtre de Sieve «${ Name }»"
+        "Editeu el filtre Sieve \"${ Name }\""
       ],
       "Edit sign-in details": [
         "Edita detalls d'inici de sessió"
@@ -679,7 +679,7 @@
         "Habiliteu la protecció postquàntica"
       ],
       "Encrypt and export": [
-        "Xifra i exporta"
+        "Xifreu i exporteu"
       ],
       "Explore ${ target }": [
         "Descobriu ${ target }"
@@ -700,19 +700,19 @@
         "Exporta"
       ],
       "Export as CSV": [
-        "Exporta com a CSV"
+        "Exporteu-ho com a CSV"
       ],
       "Export key": [
-        "Exporta la clau"
+        "Exporteu la clau"
       ],
       "Export key before deleting": [
-        "Exporta la clau abans d'eliminar-la"
+        "Exporteu la clau abans d'eliminar-la"
       ],
       "Extend": [
         "Amplia"
       ],
       "Filters are being applied. This might take a few minutes.": [
-        "S'estan aplicant els filtres. Això pot trigar uns quants minuts."
+        "S'estan aplicant els filtres. Això pot trigar uns minuts."
       ],
       "Fit to window": [
         "Ajusta a la finestra"
@@ -727,10 +727,10 @@
         "Heu oblidat el mètode de recuperació?"
       ],
       "Generate": [
-        "Genera"
+        "Genereu"
       ],
       "Generate key": [
-        "Genera una clau"
+        "Genereu la clau"
       ],
       "Generate new recovery phrase": [
         "Genera una nova frase de recuperació "
@@ -772,7 +772,7 @@
         "Obteniu més adreces"
       ],
       "Get more filters": [
-        "Obteniu més filtres"
+        "Obtingueu més filtres"
       ],
       "Get more folders": [
         "Obteniu més carpetes"
@@ -874,13 +874,13 @@
         "Importa des del Google"
       ],
       "Import from ICS": [
-        "Importa des d'un fitxer ICS"
+        "Importeu des d'un fitxer ICS"
       ],
       "Import from Outlook": [
         "Importa des de l'Outlook"
       ],
       "Import key": [
-        "Importa una clau"
+        "Importeu la clau"
       ],
       "Import new SAML metadata": [
         "Importa les noves metadades SAML"
@@ -955,7 +955,7 @@
         "Estableix com a administrador"
       ],
       "Make key primary": [
-        "Marca la clau com a principal"
+        "Establiu la clau com a primària"
       ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
@@ -1056,6 +1056,9 @@
       "Open ${ PASS_APP_NAME } in your browser": [
         "Obriu ${ PASS_APP_NAME } al vostre navegador"
       ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Obriu-ho a ${ SHEETS_APP_NAME }"
+      ],
       "Open navigation": [
         "Obre la navegació"
       ],
@@ -1108,7 +1111,7 @@
         "Cita"
       ],
       "Reactivate keys": [
-        "Reactiva les claus"
+        "Reactiveu les claus"
       ],
       "Reconnect": [
         "Reconnecta"
@@ -1156,7 +1159,7 @@
         "Elimina el botó"
       ],
       "Remove calendar": [
-        "Esborra el calendari"
+        "Elimineu el calendari"
       ],
       "Remove domain": [
         "Esborra el domini"
@@ -1171,7 +1174,7 @@
         "Esborra aquesta etiqueta"
       ],
       "Remove this member": [
-        "Esborra aquest membre"
+        "Elimineu aquest membre"
       ],
       "Remove this notification": [
         "Esborra aquesta notificació"
@@ -1195,7 +1198,7 @@
         "Demana un nou codi"
       ],
       "Requires a verified recovery email address": [
-        "Requereix una adreça de correu electrònic de recuperació verificada"
+        "Requereix una adreça verificada de correu electrònic de recuperació"
       ],
       "Resend code": [
         "Reenvia el codi"
@@ -1213,7 +1216,7 @@
         "Restablir les claus"
       ],
       "Reset modifications": [
-        "Restableix les modificacions"
+        "Restabliu les modificacions"
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -1255,7 +1258,7 @@
         "Revoca la invitació"
       ],
       "Revoke this invitation": [
-        "Revoca aquesta invitació"
+        "Revoqueu aquesta invitació"
       ],
       "Save": [
         "Desa"
@@ -1270,7 +1273,7 @@
         "Desa els canvis"
       ],
       "Save ICS file": [
-        "Desa el fitxer ICS"
+        "Deseu el fitxer ICS"
       ],
       "Save SAML configuration": [
         "Desa la configuració SAML"
@@ -1321,10 +1324,10 @@
         "selecciona un fitxer"
       ],
       "Select files": [
-        "Selecciona els fitxers"
+        "Seleccioneu els fitxers"
       ],
       "Select language for invitation emails": [
-        "Seleccioneu l'idioma per als correus electrònics d'invitació."
+        "Seleccioneu l'idioma per als correus d'invitació"
       ],
       "Select time zone": [
         "Selecciona el fus horari"
@@ -1339,7 +1342,7 @@
         "Envia un recordatori per correu electrònic"
       ],
       "Send messages with @pm.me": [
-        "Envia missatges amb @pm.me"
+        "Envieu missatges amb @pm.me"
       ],
       "Send my username": [
         "Enviar el meu nom d'usuari"
@@ -1357,7 +1360,7 @@
         "Estableix com a predeterminat"
       ],
       "Set as default mail application": [
-        "Estableix com a aplicació de correu per defecte"
+        "Establiu com a aplicació de correu per defecte"
       ],
       "Set catch-all": [
         "Configura l'adreça d'arreplega"
@@ -1621,7 +1624,7 @@
         "Utilitzeu el vostre correu electrònic actual."
       ],
       "Use “${ label }” setting": [
-        "Utilitza la configuració \"${ label }\""
+        "Utilitzeu la configuració \"${ label }\""
       ],
       "User": [
         "Usuari"
@@ -1718,12 +1721,12 @@
     },
     "Action; accept invitation to share calendar": {
       "Accept": [
-        "Accepta"
+        "Accepteu"
       ]
     },
     "Action; decline invitation to share calendar": {
       "Decline": [
-        "Rebutja"
+        "Rebutgeu-ho"
       ]
     },
     "Addon": {
@@ -1899,16 +1902,16 @@
     },
     "Alias promotion": {
       "Get 10 aliases for free!": [
-        "Obteniu 10 àlies gratuïtament!"
+        "Obtingueu 10 àlies de franc!"
       ],
       "Get unlimited aliases!": [
-        "Obteniu un nombre il·limitat d'àlies!"
+        "Obtingueu àlies il·limitats!"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
-        "Amb ${ PASS_APP_NAME } podeu generar àlies únics per amagar la vostra identitat i reenviar correus a la vostra safata d'entrada principal."
+        "Amb ${ PASS_APP_NAME } podreu generar àlies únics per ocultar la vostra identitat i reenviar correus a la vostra safata d'entrada principal."
       ]
     },
     "Alter": {
@@ -2011,7 +2014,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Afegeix al calendari i marca com a pendent"
+        "Afegiu-ho al calendari i marqueu-ho com a pendent"
       ]
     },
     "Autocomplete": {
@@ -2022,7 +2025,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "Soc fora de l'oficina i amb accés limitat al meu correu electrònic."
+        "Soc fora de l'oficina i tinc accés limitat al correu electrònic."
       ]
     },
     "b2b_trials_2025: Header": {
@@ -2660,7 +2663,7 @@
     },
     "Bridge version load failed": {
       "Failed to find latest version": [
-        "No s'ha pogut trobar l'última versió."
+        "No s'ha pogut trobar la darrera versió"
       ]
     },
     "Browser": {
@@ -2817,7 +2820,7 @@
     },
     "Calendar edit button tooltip": {
       "Edit calendar": [
-        "Edita el calendari"
+        "Editeu el calendari"
       ]
     },
     "Calendar export section description": {
@@ -2827,7 +2830,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Podeu importar fitxers ICS d'un altre calendari a ${ CALENDAR_APP_NAME }. D'aquesta manera, podeu importar ràpidament un esdeveniment o tota la vostra agenda."
+        "Podeu importar fitxers ICS d'un altre calendari a ${ CALENDAR_APP_NAME }. Això us permet importar ràpidament un esdeveniment o tota l'agenda."
       ]
     },
     "Calendar invite status label": {
@@ -2835,18 +2838,18 @@
         "Rebutjat"
       ],
       "Invite sent": [
-        "S'ha enviat la invitació."
+        "S'ha enviat la invitació"
       ]
     },
     "Calendar link purpose update success message": {
       "Label added": [
-        "S'ha afegit l'etiqueta."
+        "S'ha afegit l'etiqueta"
       ],
       "Label deleted": [
-        "S'ha eliminat l'etiqueta."
+        "S'ha eliminat l'etiqueta"
       ],
       "Label edited": [
-        "S'ha editat l'etiqueta."
+        "S'ha editat l'etiqueta"
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -2871,23 +2874,23 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Creeu un enllaç al vostre calendari i compartiu-lo amb qualsevol de fora de ${ BRAND_NAME }. Sou l'única persona que pot afegir o esborrar esdeveniments."
+        "Creeu un enllaç al vostre calendari i compartiu-lo amb qualsevol persona fora de ${ BRAND_NAME }. Sou l'única persona que pot afegir o esborrar esdeveniments."
       ]
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Compartiu el calendari amb altres usuaris de ${ BRAND_NAME }. Habiliteu la col·laboració permetent-los afegir i editar esdeveniments al calendari. Podeu modificar els permisos d'un usuari en qualsevol moment."
+        "Compartiu el vostre calendari amb altres usuaris de ${ BRAND_NAME }. Habiliteu la col·laboració permetent-los afegir-hi i editar-hi esdeveniments. Podreu modificar els permisos d'un usuari en qualsevol moment."
       ]
     },
     "Calendar settings section title": {
       "Share calendar": [
-        "Comparteix el calendari"
+        "Compartiu el calendari"
       ],
       "Share with ${ BRAND_NAME } users": [
-        "Comparteix amb usuaris de ${ BRAND_NAME }"
+        "Compartiu-ho amb usuaris de ${ BRAND_NAME }"
       ],
       "Share with anyone": [
-        "Comparteix amb tothom"
+        "Compartiu-ho amb qualsevol"
       ]
     },
     "Calendar settings sidebar": {
@@ -2898,10 +2901,10 @@
     },
     "Calendar share permission label": {
       "Edit event details": [
-        "Edita els detalls de l'esdeveniment"
+        "Editeu els detalls de l'esdeveniment"
       ],
       "See all event details": [
-        "Mostra tots els detalls de l'esdeveniment"
+        "Vegeu tots els detalls de l'esdeveniment"
       ]
     },
     "Calendar sharing access option label": {
@@ -2919,7 +2922,7 @@
     },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
-        "S'han canviat els permisos per a ${ email }."
+        "S'han canviat els permisos per ${ email }"
       ]
     },
     "Calendar status": {
@@ -2981,7 +2984,7 @@
     },
     "Calendar table settings button tooltip": {
       "Open settings": [
-        "Obre les preferències"
+        "Obriu les preferències"
       ]
     },
     "Calendar view": {
@@ -4491,7 +4494,7 @@
     },
     "Default calendar event settings section title": {
       "Default event settings": [
-        "Configuració predeterminada dels esdeveniments"
+        "Configuració per defecte dels esdeveniments"
       ]
     },
     "Default display name vcard": {
@@ -4573,7 +4576,7 @@
         "${ MAIL_APP_NAME } no és la vostra aplicació de correu per defecte."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte."
+        "${ MAIL_APP_NAME } és la vostra aplicació de correu  electrònic per defecte."
       ],
       "A checked box means the feature is disabled.": [
         "Una casella marcada significa que la funció està desactivada."
@@ -4676,7 +4679,7 @@
         "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
-        "Feu que el peu de pàgina del vostre correu electrònic sigui un reflex distintiu de la vostra marca, no de la nostra."
+        "Personalitzeu el peu de pàgina del correu: mostreu la vostra marca única, no la nostra."
       ],
       "No one in your organization can connect to shared servers.": [
         "Ningú de la vostra organització no es pot connectar a servidors compartits."
@@ -4688,7 +4691,7 @@
         "Configureu comptes per a tots els usuaris i convideu-los a unir-se a ${ BRAND_NAME }."
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
-        "Configureu el reenviament automàtic per a redirigir els correus electrònics entrants a una altra adreça de correu electrònic."
+        "Configureu el reenviament automàtic per redirigir els correus entrants a una altra adreça electrònica."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
@@ -4718,10 +4721,10 @@
         "Podeu continuar convidant amics, però no podreu guanyar més crèdits"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Podeu personalitzar la llista de dominis on no s'han d'executar certes funcions automàtiques de l'extensió del navegador de ${ PASS_APP_NAME } (emplenament, suggeriment i desament automàtics)."
+        "Podeu personalitzar la llista de dominis on no s'han d'executar certes funcions automàtiques de l'extensió del navegador de ${ PASS_APP_NAME } (emplenament, suggeriment i desat automàtics)."
       ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
-        "Podeu fer complir les regles de contrasenya que els membres de l'organització utilitzaran quan generin una contrasenya a ${ PASS_APP_NAME }."
+        "Podreu fer complir les regles de contrasenya que els membres de l'organització utilitzaran quan generin una contrasenya a ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
@@ -5024,10 +5027,10 @@
     },
     "Download link": {
       ".deb for Debian / Ubuntu": [
-        ".deb per a Debian/Ubuntu"
+        ".deb per Debian / Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm per a Fedora / Red Hat"
+        ".rpm per Fedora / Red Hat"
       ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "També podeu descarregar l'aplicació a través de ${ linkSnapStore }."
@@ -5411,72 +5414,72 @@
     },
     "email_forwarding_2023: Action": {
       "Accept": [
-        "Accepta"
+        "Accepteu"
       ],
       "Add condition": [
-        "Afegeix una condició"
+        "Afegiu una condició"
       ],
       "Add forwarding rule": [
-        "Afegeix una regla de reenviament"
+        "Afegiu una regla de reenviament"
       ],
       "Back": [
-        "Torna"
+        "Enrere"
       ],
       "Cancel": [
-        "Cancel·la"
+        "Cancel·leu"
       ],
       "Decline": [
         "Rebutja"
       ],
       "Delete": [
-        "Elimina"
+        "Elimineu"
       ],
       "Delete this condition": [
-        "Elimina aquesta condició"
+        "Elimineu aquesta condició"
       ],
       "Edit conditions": [
-        "Edita les condicions"
+        "Editeu les condicions"
       ],
       "Got it": [
-        "D'acord"
+        "Entesos"
       ],
       "Next": [
         "Següent"
       ],
       "Pause": [
-        "Posa en pausa"
+        "Poseu en pausa"
       ],
       "Re-enable": [
-        "Torna a activar"
+        "Torneu-ho a activar"
       ],
       "Re-send confirmation email": [
-        "Torna a enviar el correu de confirmació"
+        "Torneu a enviar el correu de confirmació"
       ],
       "Remove “${ value }”": [
-        "Esborra \"${ value }”"
+        "Esborreu \"${ value }\""
       ],
       "Request confirmation": [
-        "Sol·licita una confirmació"
+        "Sol·liciteu confirmació"
       ],
       "Resume": [
-        "Reprèn"
+        "Repreneu"
       ],
       "Save": [
-        "Desa"
+        "Deseu-ho"
       ],
       "Send confirmation email": [
-        "Envia un correu electrònic de confirmació"
+        "Envieu un correu de confirmació"
       ],
       "Set up email forwarding": [
-        "Configura el reenviament de correu electrònic"
+        "Configureu el reenviament de correus"
       ]
     },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
-        "La condició està incompleta. Afegiu un testimoni."
+        "La condició està incompleta. Afegiu un testimoni"
       ],
       "Token already exists": [
-        "El testimoni ja existeix."
+        "El testimoni ja existeix"
       ]
     },
     "email_forwarding_2023: Error message, recovery": {
@@ -5486,7 +5489,7 @@
     },
     "email_forwarding_2023: Forwarding tooltip": {
       "Emails forwarded to you are excluded and will not be forwarded.": [
-        "Els correus electrònics que se us reenviïn queden exclosos i no es reenviaran."
+        "Els correus que se us reenviïn queden exclosos i no es tornaran a reenviar."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -5494,10 +5497,10 @@
         "Accions"
       ],
       "Forward from": [
-        "Reenvia des de"
+        "Reenvieu-ho des de"
       ],
       "Forward to": [
-        "Reenvia a"
+        "Reenvieu a"
       ],
       "From": [
         "De"
@@ -5519,16 +5522,16 @@
         "S'enviarà un correu de confirmació a ${ boldForwardeeEmail }"
       ],
       "Automatically forward emails to another email address.": [
-        "Reenvieu automàticament els correus electrònics a una altra adreça de correu electrònic."
+        "Reenvieu automàticament els correus a una altra adreça electrònica."
       ],
       "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "El xifratge d'extrem a extrem s'ha desactivat per a la vostra adreça ${ boldForwarderEmail }, però el xifratge d'accés zero continua habilitat. ${ learnMoreLink }"
+        "S'ha desactivat el xifratge d'extrem a extrem per la vostra adreça ${ boldForwarderEmail }, però el xifratge d'accés zero es manté habilitat. ${ learnMoreLink }"
       ],
       "For compatibility, a new encryption key has been generated for ${ boldForwarderEmail }.": [
         "Per compatibilitat, s'ha generat una nova clau de xifratge per a ${ boldForwarderEmail }."
       ],
       "For compatibility, a new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Per compatibilitat, es generarà una nova clau de xifratge per a ${ boldForwarderEmail }."
+        "Per compatibilitat, es generarà una nova clau de xifratge per ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
         "Per compatibilitat, s'ha desactivat el xifratge postquàntic i s'ha generat una nova clau de xifratge per a ${ boldForwarderEmail }."
@@ -5537,40 +5540,40 @@
         "Per compatibilitat, s'ha desactivat el xifratge postquàntic per a ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled for ${ boldForwarderEmail }.": [
-        "Per compatibilitat, el xifratge postquàntic es desactivarà per a ${ boldForwarderEmail }."
+        "Per compatibilitat, es desactivarà el xifratge postquàntic per a ${ boldForwarderEmail }."
       ],
       "For compatibility, post-quantum encryption will be disabled, and a new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Per compatibilitat, el xifratge postquàntic es desactivarà i es generarà una nova clau de xifratge per a ${ boldForwarderEmail }."
+        "Per compatibilitat, el xifratge postquàntic es desactivarà i es generarà una nova clau de xifratge per ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "El destinatari està convidat i ha d'acceptar/rebutjar la invitació o l'actualització"
+        "El destinatari del reenviament està convidat i cal que accepti o rebutgi la invitació o l'actualització"
       ],
       "Forwarding is active": [
-        "El reenviament està actiu."
+        "El reenviament està actiu"
       ],
       "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
         "El reenviament a ${ boldForwardeeEmail } s'activarà un cop el destinatari accepti la sol·licitud."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "El reenviament a una adreça sense xifratge d'extrem a extrem desactivarà l'encriptació d'extrem a extrem per a la vostra adreça ${ boldForwarderEmail }, però el xifratge d'accés zero continua activat. ${ learnMoreLink }"
+        "El reenviament a una adreça sense xifratge d'extrem a extrem desactivarà l'encriptació d'extrem a extrem per a la vostra adreça ${ boldForwarderEmail }, però el xifratge d'accés zero continuarà activat. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
-        "El reenviament a aquesta adreça s'activarà un cop el destinatari accepti el reenviament."
+        "El reenviament a aquesta adreça s'activarà un cop el destinatari l'accepti."
       ],
       "No incoming forwarding rules": [
-        "No hi ha regles de reenviament entrants."
+        "No hi ha regles de reenviament de correus entrants"
       ],
       "No outgoing forwarding rules": [
-        "No hi ha regles de reenviament de sortida."
+        "No hi ha regles de reenviament de sortida"
       ],
       "Please update your forwarding keys": [
-        "Actualitzeu les vostres claus de reenviament."
+        "Actualitzeu les vostres claus de reenviament"
       ],
       "The forwardee rejected the forwarding request": [
-        "El destinatari ha rebutjat la sol·licitud de reenviament."
+        "El destinatari del reenviament ha rebutjat la sol·licitud de reenviament"
       ],
       "The forwarding is temporarily paused": [
-        "El reenviament està temporalment en pausa."
+        "El reenviament està en pausa temporalment"
       ],
       "You can safely close this tab.": [
         "Podeu tancar aquesta pestanya amb seguretat."
@@ -5581,13 +5584,13 @@
     },
     "email_forwarding_2023: Label": {
       "And": [
-        "I"
+        "i"
       ],
       "Forward from": [
-        "Reenvia des de"
+        "Reenvieu des de"
       ],
       "Forward to": [
-        "Reenvia a"
+        "Reenvieu-ho a"
       ],
       "or": [
         "o"
@@ -5596,20 +5599,20 @@
         "O"
       ],
       "With attachment": [
-        "Amb adjunt"
+        "Amb fitxer adjunt"
       ],
       "Without attachment": [
-        "Sense adjunt"
+        "Sense fitxer adjunt"
       ]
     },
     "email_forwarding_2023: Link": {
       "Learn more": [
-        "Saber-ne més"
+        "Per saber-ne més"
       ]
     },
     "email_forwarding_2023: Outgoing forwarding tab name": {
       "To me": [
-        "Per a mi"
+        "Per mi"
       ]
     },
     "email_forwarding_2023: Placeholder": {
@@ -5617,18 +5620,18 @@
         "Condició:"
       ],
       "Enter email address": [
-        "Introduïu l'adreça de correu electrònic."
+        "Introduïu l'adreça de correu electrònic"
       ],
       "Type text or keyword": [
-        "Introduïu text o una paraula clau."
+        "Escriviu text o una paraula clau"
       ],
       "Type text or keyword for this condition:": [
-        "Introduïu text o una paraula clau per a aquesta condició:"
+        "Introduïu text o una paraula clau per aquesta condició:"
       ]
     },
     "email_forwarding_2023: Progress status": {
       "Sending confirmation email": [
-        "S'està enviant un correu de confirmació"
+        "S'està enviant el correu de confirmació"
       ],
       "Setting up forwarding": [
         "S'està configurant el reenviament"
@@ -5661,10 +5664,10 @@
     },
     "email_forwarding_2023: Success": {
       "Changes saved": [
-        "S'han desat els canvis."
+        "S'han desat els canvis"
       ],
       "Email sent to ${ existingForwardingConfig.ForwardeeEmail }": [
-        "S'ha enviat el correu a ${ existingForwardingConfig.ForwardeeEmail }"
+        "S'ha enviat un correu a ${ existingForwardingConfig.ForwardeeEmail }"
       ],
       "Forwarding accepted": [
         "S'ha acceptat el reenviament"
@@ -5673,18 +5676,18 @@
         "S'ha rebutjat el reenviament"
       ],
       "Forwarding deleted": [
-        "S'ha eliminat el reenviament."
+        "S'ha eliminat el reenviament"
       ],
       "Forwarding paused": [
-        "El reenviament està en pausa."
+        "El reenviament està en pausa"
       ],
       "Forwarding resumed": [
-        "S'ha reprès el reenviament."
+        "S'ha reprès el reenviament"
       ]
     },
     "email_forwarding_2023: Title": {
       "Delete forwarding?": [
-        "Elimina el reenviament?"
+        "Voleu eliminar el reenviament?"
       ],
       "Email forwarding deactivated": [
         "S'ha desactivat el reenviament de correu."
@@ -5696,13 +5699,13 @@
         "Voleu sol·licitar confirmació?"
       ],
       "Request sent": [
-        "S'ha enviat la sol·licitud."
+        "S'ha enviat la sol·licitud"
       ],
       "Requesting confirmation": [
-        "S'està sol·licitant la confirmació"
+        "S'està sol·licitant confirmació"
       ],
       "Set up forwarding": [
-        "Configura el reenviament"
+        "Configureu el reenviament"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -6023,13 +6026,13 @@
         "Error d'autenticació."
       ],
       "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
-        "El missatge de resposta automàtica supera la longitud permesa. Escurceu-lo perquè encaixi dins del límit."
+        "El missatge de resposta automàtica supera la longitud permesa. Escurceu-lo per ajustar-lo al límit."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Les respostes automàtiques són una característica de pagament. Milloreu a un compte de pagament per a utilitzar-la."
       ],
       "Calendar cannot be found": [
-        "No es pot trobar el calendari."
+        "No es pot trobar el calendari"
       ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
@@ -6056,7 +6059,7 @@
         "No s'ha pogut obrir la caixa forta actualitzada"
       ],
       "Could not save preference": [
-        "No s'ha pogut desar la preferència."
+        "No s'ha pogut desar la preferència"
       ],
       "Couldn't load invoices. Please try again later.": [
         "No s'han pogut carregar les factures. Torneu a provar més tard."
@@ -6208,10 +6211,10 @@
         "Codi de país invàlid"
       ],
       "Invalid private key file": [
-        "L'arxiu de clau privada no és vàlid."
+        "El fitxer de clau privada no és vàlid"
       ],
       "Invalid Sieve code": [
-        "El codi Sieve no és vàlid."
+        "El codi Sieve no és vàlid"
       ],
       "Invalid URL": [
         "L'URL no és vàlid."
@@ -6366,7 +6369,7 @@
         "Establiu primer un número de telèfon de recuperació"
       ],
       "Please set a recovery/notification email first": [
-        "Establiu primer un correu electrònic de recuperació/notificació."
+        "Establiu primer un correu electrònic de recuperació/notificació"
       ],
       "Please try again in a few moments.": [
         "Torneu-ho a provar d'aquí a uns moments."
@@ -6598,7 +6601,7 @@
         "Heu d'establir un nom"
       ],
       "You need to have an active custom domain address in order to generate an SMTP submission token.": [
-        "Heu de tenir una adreça de domini personalitzat activa per a generar un testimoni de tramesa SMTP."
+        "Heu de tenir una adreça de domini personalitzat activa per generar un testimoni d'enviament SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Heu arribat al nombre màxim de caràcters. Escurceu el missatge."
@@ -6862,7 +6865,7 @@
         "Esdeveniment a les ${ timeString }"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        "Esdeveniment a partir de ${ timeString }, ${ rruleString }"
+        "Esdeveniment de ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invistation error": {
@@ -6922,25 +6925,25 @@
         "S'han exportat ${ totalProcessed } esdeveniments de ${ totalToProcess }"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "S'ha exportat el calendari. Ja podeu desar el fitxer ICS."
+        "S'ha exportat el calendari correctament. Ara ja podeu desar el fitxer ICS."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "S'estan desxifrant esdeveniments del vostre calendari: ${ totalProcessed }/${ totalToProcess }"
+        "S'estan desxifrant els esdeveniments del vostre calendari: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "A causa del restabliment de contrasenya, cap dels vostres esdeveniments s'ha pogut desxifrar i exportar."
+        "A causa d'un restabliment de contrasenya, no s'ha pogut desxifrar ni exportar cap dels vostres esdeveniments."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "A causa del restabliment de contrasenya, alguns dels vostres esdeveniments no s'han pogut desxifrar i exportar."
+        "A causa d'un restabliment de contrasenya, alguns dels vostres esdeveniments no s'han pogut desxifrar ni exportar."
       ],
       "Error decrypting event": [
-        "S'ha produït un error en desxifrar l'esdeveniment."
+        "S'ha produït un error en desxifrar l'esdeveniment"
       ],
       "Learn how to restore encrypted events with old password": [
-        "Apreneu a restaurar esdeveniments xifrats amb l'antiga contrasenya."
+        "Apreneu a restaurar esdeveniments xifrats amb una contrasenya antiga"
       ],
       "Loading events": [
-        "S'estan carregant esdeveniments"
+        "S'estan carregant els esdeveniments"
       ],
       "None of the events could be exported.": [
         "No s'ha pogut exportar cap dels esdeveniments."
@@ -6949,19 +6952,19 @@
         "Restabliment de la contrasenya: no es pot desxifrar l'esdeveniment."
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Restabliment de la contrasenya: no es poden desxifrar diversos esdeveniments."
+        "Restabliment de contrasenya: no es poden desxifrar diversos esdeveniments"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "No tanqueu la pestanya abans de finalitzar el procés d'exportació."
+        "No tanqueu la pestanya fins que hagi finalitzat el procés d'exportació."
       ],
       "Some of your events could not be exported.": [
         "Alguns dels vostres esdeveniments no s'han pogut exportar."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "La connexió d'internet s'ha interromput i ha causat un error amb el procés d'exportació. Torneu-ho a intentar."
+        "S'ha interromput la connexió a Internet i el procés d'exportació ha fallat. Torneu-ho a provar."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "Podeu desar el fitxer ICS dels esdeveniments que han estat exportats."
+        "Podeu desar un fitxer ICS dels esdeveniments que s'han exportat correctament."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -7325,7 +7328,7 @@
         "15 GB d'emmagatzematge"
       ],
       "4 more privacy services": [
-        "4 serveis més de privacitat"
+        "4 serveis de Privacitat més"
       ],
       "@pm.me address": [
         "Adreça @pm.me"
@@ -7598,7 +7601,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Afegiu un filtre personalitzat per realitzar automàticament certes accions, com ara etiquetar o arxivar missatges."
+        "Afegiu un filtre personalitzat per realitzar automàticament determinades accions, com ara etiquetar o arxivar missatges."
       ],
       "Allow:": [
         "Adreces permeses:"
@@ -7679,7 +7682,7 @@
     },
     "Force upgrade safety review": {
       "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
-        "Entenc que ja no podré iniciar la sessió des de versions anteriors de les aplicacions mòbils de ${ BRAND_NAME }."
+        "Entenc que ja no podré iniciar la sessió des de versions antigues de les aplicacions mòbils de ${ BRAND_NAME }."
       ]
     },
     "Free trial dekstop": {
@@ -7964,24 +7967,24 @@
         "Accions"
       ],
       "Created": [
-        "Creació"
+        "Creat"
       ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
       "Last used": [
-        "Últim ús"
+        "Darrer ús"
       ],
       "Token name": [
-        "Nom del token"
+        "Nom del testimoni"
       ]
     },
     "Header; Table with list of calendars arranged by type": {
       "Holidays": [
-        "Dies festius"
+        "Festius"
       ],
       "Other": [
-        "Altres"
+        "Altra"
       ],
       "Subscribed": [
         "Subscrit"
@@ -8001,7 +8004,7 @@
         "Esteu gaudint de ${ planName }?"
       ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
-        "Desbloquegeu 4 serveis de privacitat prèmium per només **${ priceString }** més al mes"
+        "Desbloquegeu 4 serveis de privadesa prèmium per només **${ priceString }** més al mes"
       ],
       "Upgrade your privacy": [
         "Milloreu la vostra privacitat"
@@ -8335,7 +8338,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Segur que voleu importar una clau privada? Importar una clau privada generada de forma insegura o filtrada pot perjudicar la seguretat dels vostres correus electrònics.\n\nTingueu en compte que la clau pública corresponent a aquesta clau privada estarà disponible públicament des del nostre servidor de claus. Si la clau conté detalls personals (com el vostre nom complet) que no voleu publicar, editeu-la abans d'importar-la."
+        "Esteu segur que voleu importar una clau privada? Importar una clau privada generada de manera insegura o filtrada pot posar en risc la seguretat dels vostres correus.\n\nTingueu també en compte que la clau pública corresponent a aquesta clau privada estarà disponible públicament al nostre servidor de claus. Si la clau conté dades personals (com ara el vostre nom complet) que no voleu publicar, editeu-la abans d'importar-la."
       ]
     },
     "Import provider": {
@@ -8423,10 +8426,10 @@
     },
     "Inactive key function info": {
       "If reactivated, the key will be used for decryption": [
-        "Si es reactiva, la clau es farà servir per al desxifratge."
+        "Si es reactiva, la clau s'utilitzarà per al desxifratge"
       ],
       "If reactivated, the key will be used for decryption and verification": [
-        "Si es reactiva, la clau s'utilitzarà per al desxifratge i la verificació."
+        "Si es reactiva, la clau s'utilitzarà per al desxifratge i la verificació"
       ]
     },
     "Info": {
@@ -8441,7 +8444,7 @@
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
       "${ boldName } will be set as default calendar.": [
-        "${ boldName } s'establirà com a calendari per defecte."
+        "S'establirà ${ boldName } com a calendari per defecte."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
@@ -8489,7 +8492,7 @@
         "${ discountPercent }% de descompte"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } ja no mantindrà versions anteriors dels vostres fitxers."
+        "${ DRIVE_APP_NAME } ja no conservarà les versions anteriors dels vostres fitxers."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no és vàlida"
@@ -8782,7 +8785,7 @@
         "Accediu a més de 6,500 servidors d'alta velocitat en fins a 10 dispositius per mantenir les vostres dades de navegació segures. Disponible a ${ ios }, ${ android }, ${ appleTV } i ${ desktop }."
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Accediu a les vostres contrasenyes i protegiu les vostres identitats en línia fàcilment en tots els vostres dispositius. Descarregueu i instal·leu les aplicacions i extensions pertinents de ${ PASS_APP_NAME }."
+        "Accediu a les vostres contrasenyes i protegiu les vostres identitats en línia fàcilment en tots els vostres dispositius. Descarregueu i instal·leu les aplicacions i extensions de ${ PASS_APP_NAME } corresponents."
       ],
       "Account monitor": [
         "Monitor del compte"
@@ -8803,7 +8806,7 @@
         "activa"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
+        "Afegiu una adreça electrònica @pm.me al vostre compte. Aquest domini senzill i més curt significa \"Envieu-me un ${ MAIL_APP_NAME }\" o \"Envieu-me un missatge privat\"."
       ],
       "add a recovery method": [
         "afegir un mètode de recuperació"
@@ -8818,7 +8821,7 @@
         "Afegeix l'URL de la imatge"
       ],
       "Add label": [
-        "Afegeix una etiqueta"
+        "Afegiu una etiqueta"
       ],
       "Add multiple users to your organization at once.": [
         "Afegiu diversos usuaris alhora a la vostra organització."
@@ -8948,13 +8951,13 @@
         "Segur que voleu eliminar aquest calendari?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Segur que voleu eliminar aquest calendari? Totes les adreces amb què has compartit aquest calendari hi perdran l'accés."
+        "Esteu segur que voleu suprimir aquest calendari? Totes les adreces amb qui heu compartit aquest calendari hi perdran l'accés."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Segur que voleu eliminar aquest calendari? Se suprimiran tots els esdeveniments que hi hagi."
+        "Esteu segur que voleu suprimir aquest calendari? Se'n suprimiran tots els esdeveniments."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Segur que voleu eliminar aquest calendari? Podeu tornar a afegir el calendari de dies festius més tard."
+        "Segur que voleu eliminar aquest calendari? Podreu tornar a afegir el calendari de dies festius més tard."
       ],
       "Are you sure you want to delete this filter?": [
         "Segur que voleu eliminar aquest filtre?"
@@ -9020,19 +9023,19 @@
         "S'ha habilitat l'aplicació d'autenticació 2FA"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "La resposta automàtica està activa durant cada mes entre l'hora inicial i final seleccionada."
+        "La resposta automàtica està activa cada mes entre les hores d'inici i de finalització seleccionades."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
-        "La resposta automàtica està activa cada setmana entre l'hora inicial i final seleccionada."
+        "La resposta automàtica estarà activa cada setmana entre les hores d'inici i de finalització seleccionades."
       ],
       "Auto-reply is active from the start time to the end time.": [
         "La resposta automàtica està activa des de l'hora d'inici fins a la de finalització."
       ],
       "Auto-reply is active until you turn it off.": [
-        "La resposta automàtica està activa fins que l'usuari la desactivi."
+        "La resposta automàtica està activa fins que la desactiveu."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "La resposta automàtica està sempre activa durant els dies de la setmana seleccionats, entre les hores escollides."
+        "La resposta automàtica estarà sempre activa durant els dies de la setmana seleccionats, entre les hores escollides."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Esborreu automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
@@ -9041,7 +9044,7 @@
         "Quan se suprimeixi, s'arxivi o es mogui un correu obert, es mostrarà automàticament el correu següent."
       ],
       "Available on macOS, Windows, and Linux.": [
-        "Disponible per a macOS, Windows i Linux."
+        "Disponible a macOS, Windows i Linux."
       ],
       "Awaiting transaction": [
         "S'està esperant la transacció"
@@ -9104,7 +9107,7 @@
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
       "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
-        "En habilitar la protecció postquàntica, es generaran claus resistents als ordinadors quàntics per al vostre compte."
+        "Si habiliteu la protecció postquàntica, es generaran claus resistents als ordinadors quàntics per al vostre compte."
       ],
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
@@ -9415,7 +9418,7 @@
         "Edita l'adreça de correu"
       ],
       "Edit label": [
-        "Edita l'etiqueta"
+        "Editeu l'etiqueta"
       ],
       "Edit link": [
         "Edita l'enllaç"
@@ -9457,10 +9460,10 @@
         "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
       ],
       "Enable this address to join this calendar": [
-        "Habiliteu aquesta adreça per a unir-vos a aquest calendari."
+        "Habiliteu aquesta adreça per unir-vos a aquest calendari"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
-        "Activeu TLS o SSL al servei extern si és compatible."
+        "Habiliteu TLS o SSL al servei extern si és compatible."
       ],
       "Enabled countries": [
         "Països activats"
@@ -9562,7 +9565,7 @@
         "Introduïu la frase de recuperació per a canviar la contrasenya ara."
       ],
       "Event invitations and responses will be sent in this language.": [
-        "Les invitacions als esdeveniments i les respostes s'enviaran en aquest idioma."
+        "Les invitacions i respostes als esdeveniments s'enviaran en aquest idioma."
       ],
       "Everything in ${ planOrAppName }": [
         "Tot a ${ planOrAppName }"
@@ -9571,7 +9574,7 @@
         "Exemple: ${ spfExample }"
       ],
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
-        "Els reenviaments de correus electrònics xifrats d'extrem a extrem existents s'hauran de tornar a activar manualment a les preferències a **${ autoReplySettingsTitle }**."
+        "Els reenviaments de correus electrònics existents xifrats d'extrem a extrem s'hauran de tornar a activar manualment a les preferències a **${ autoReplySettingsTitle }**."
       ],
       "Expired": [
         "Caducat"
@@ -9583,7 +9586,7 @@
         "No s'han pogut obtenir els registres."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Ràpid i precís. Correu i calendari directament a l'escriptori."
+        "Ràpid i precís. Correu electrònic i calendari, directament a l'escriptori."
       ],
       "Featured in": [
         "Destacat a"
@@ -9613,7 +9616,7 @@
         "finances"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "Per obtenir un historial de versions de 10 anys, poseu-vos en contacte amb el nostre equip de vendes."
+        "Per obtenir un historial de versions de 10 anys, contacteu amb el nostre equip de vendes."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
@@ -9670,10 +9673,10 @@
         "Comenceu amb l'enllaç de recomanació anterior."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "Doneu al testimoni un nom descriptiu, com ara el servei amb el qual voleu utilitzar-lo, i seleccioneu una de les adreces de domini personalitzades actives. Només aquesta adreça podrà enviar correus electrònics amb aquest testimoni."
+        "Poseu un nom descriptiu al testimoni, com ara el servei amb què teniu previst utilitzar-lo, i seleccioneu una de les vostres adreces de domini personalitzat actives. Només aquesta adreça podrà enviar correus amb aquest testimoni."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Proporcioneu la vostra clau pública als vostres amics o publiqueu-la en línia perquè tothom us pugui enviar un missatge de correu electrònic xifrat d'extrem a extrem."
+        "Doneu la vostra clau pública a les amistats o publiqueu-la en línia perquè tothom us pugui enviar un missatge de correu electrònic xifrat d'extrem a extrem!"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aneu al vostre proveïdor d'identitat, obteniu les metadades SAML per a ${ appName } i importeu-les aquí."
@@ -9700,7 +9703,7 @@
         "aquí"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Amaga la informació d'identificació carregant contingut remot mitjançant un servidor intermediari. Hi ha l'opció d'emmagatzemar contingut com a fitxers adjunts."
+        "Amaga la informació d'identificació tot carregant el contingut remot a través d'un servidor intermediari. Hi ha l'opció de desar el contingut com a fitxers adjunts."
       ],
       "High Priority": [
         "Alta prioritat"
@@ -9712,13 +9715,13 @@
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
       ],
       "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "En deshabilitar-ho, els membres nous de l'organització necessitaran que un administrador els creï manualment la primera caixa forta (mitjançant compartició) perquè puguin afegir-hi elements."
+        "Si ho deshabiliteu, els nous membres de l'organització necessitaran que un administrador els creï manualment la primera caixa forta (mitjançant compartició) perquè hi puguin afegir elements."
       ],
       "If disabled, only administrators will be able to export data.": [
-        "En deshabilitar-ho, només els administradors podran exportar dades."
+        "Si es desactiva, només els administradors podran exportar dades."
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
-        "En deshabilitar-ho, els membres de l'organització només podran compartir caixes fortes o elements dins de l'organització."
+        "Si ho desactiveu, els membres de l'organització només podran compartir caixes fortes o elements dins de l'organització."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "En habilitar-ho, els membres de l'organització podran compartir elements individuals, a més de caixes fortes."
@@ -9730,7 +9733,7 @@
         "Si les tecles de drecera estan activades, podeu utilitzar les tecles següents per a accions ràpides o per anar a diferents vistes. La tecla de drecera ${ metaKey } + K sempre està activada."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Si el fus horari del sistema no coincideix amb la configuració del fus horari actual, us demanarem que l’actualitzeu (com a màxim una vegada al dia)."
+        "Si la zona horària del sistema no coincideix amb la preferència de zona horària actual, se us demanarà que l'actualitzeu (com a màxim un cop al dia)."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si això és a causa d'un restabliment antic de la contrasenya, podeu evitar que el missatge torni a aparèixer"
@@ -9969,7 +9972,7 @@
         "Manteniu la vostra informació més segura i privada amb aquestes guies i consells."
       ],
       "Key deletion is irreversible!": [
-        "L'eliminació de claus és irreversible."
+        "L'eliminació de claus és irreversible!"
       ],
       "Keys created": [
         "S'han creat les claus."
@@ -9996,7 +9999,7 @@
         "Més informació sobre les passarel·les"
       ],
       "learn more about Sieve programming language": [
-        "saber-ne més sobre el llenguatge de programació Sieve"
+        "obtingueu més informació sobre el llenguatge de programació Sieve"
       ],
       "Learn more about single sign-on": [
         "Obteniu més informació sobre l'inici de sessió únic"
@@ -10008,7 +10011,7 @@
         "D'esquerra a dreta"
       ],
       "Let your contacts know you care about their privacy.": [
-        "Feu que els vostres contactes coneguin que us preocupeu per la seva privadesa."
+        "Feu saber als vostres contactes que us preocupeu per la seva privacitat."
       ],
       "Let's get started by pressing the New group button above": [
         "Comencem prement el botó Nou grup de dalt."
@@ -10020,7 +10023,7 @@
         "S'ha creat l'enllaç"
       ],
       "Link deleted": [
-        "S'ha eliminat l'enllaç."
+        "S'ha eliminat l'enllaç"
       ],
       "Link expired": [
         "L’enllaç ha caducat."
@@ -10149,7 +10152,7 @@
         "Pròxima data de facturació"
       ],
       "No account keys exist": [
-        "No existeixen claus per a aquest compte"
+        "No hi ha claus de compte"
       ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
@@ -10200,10 +10203,10 @@
         "Nombre de servidors VPN dedicats a l'organització"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
-        "Nombre d'elements als quals l'usuari té accés (inclou els elements de la seva propietat i compartits)"
+        "Nombre d'elements als quals l'usuari té accés (inclou els elements de la seva propietat i els compartits)"
       ],
       "Number of vaults the user has access to (includes owned vaults + shared vaults)": [
-        "Nombre de caixes fortes als quals l'usuari té accés (inclou les caixes fortes de la seva propietat i compartides)"
+        "Nombre de caixes fortes a les quals l'usuari té accés (inclou les caixes fortes de la seva propietat i les compartides)"
       ],
       "Numbers": [
         "Números"
@@ -10230,10 +10233,10 @@
         "Importació única"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
+        "Canvieu aquesta configuració només si utilitzeu PGP amb destinataris que no siguin de ${ BRAND_NAME }."
       ],
       "Only you can see the label": [
-        "Sou l'única persona que pot veure l'etiqueta"
+        "Només vós podeu veure l'etiqueta"
       ],
       "Open source": [
         "Codi obert"
@@ -10262,7 +10265,7 @@
         "O seleccioneu un servidor concret:"
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
-        "Els membres de l'organització necessitaran desbloquejar ${ PASS_APP_NAME } amb la seva contrasenya, PIN, etc."
+        "Els membres de l'organització hauran de desbloquejar ${ PASS_APP_NAME } amb la seva contrasenya o PIN, etc."
       ],
       "Organization monitor": [
         "Monitor d'organització"
@@ -10320,7 +10323,7 @@
         "La contrasenya s'ha copiat al porta-retalls"
       ],
       "Password generator rules successfully saved": [
-        "Les regles del generador de contrasenyes s'han desat."
+        "Les regles del generador de contrasenyes s'han desat correctament"
       ],
       "Password manager with extra account security": [
         "Gestor de contrasenyes amb seguretat addicional del compte"
@@ -10505,7 +10508,7 @@
         "Elimineu les metadades de les imatges per protegir la vostra privadesa."
       ],
       "Remove one of your calendars to join this one": [
-        "Esborreu un dels vostres calendaris per a unir-vos a aquest."
+        "Suprimiu un dels vostres calendaris per unir-vos a aquest"
       ],
       "Report link expired": [
         "L'enllaç de notificació ha expirat"
@@ -10619,7 +10622,7 @@
         "Configuració de la vostra organització"
       ],
       "Setting successfully saved": [
-        "S'ha desat la preferència."
+        "S'ha desat la configuració correctament"
       ],
       "Setting up ${ feature }…": [
         "S'està configurant ${ feature }…"
@@ -10671,13 +10674,13 @@
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses.": [
-        "L'enviament SMTP permet que els serveis o dispositius de tercers enviïn correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzat."
+        "L'enviament SMTP permet que serveis o dispositius de tercers enviïn correus a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzat."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
+        "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per les adreces del vostre domini personalitzat. Per sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzat. Per a utilitzar aquesta característica, comenceu generant un testimoni."
+        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per les vostres adreces de domini personalitzades. Per utilitzar aquesta característica, comenceu generant un testimoni nou."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Ajorneu els missatges perquè estiguin a la part superior de la safata d'entrada quan vulgueu."
@@ -10748,7 +10751,7 @@
         "Aviat estarà disponible el suport per al monitoratge de dominis personalitzats i d'adreces electròniques que no siguin de ${ BRAND_NAME }."
       ],
       "Support for post-quantum keys is enabled for your account.": [
-        "S'ha habilitat el suport de claus postquàntiques per al vostre compte."
+        "S'ha habilitat la compatibilitat amb claus postquàntiques per al vostre compte."
       ],
       "support team": [
         "equip de suport"
@@ -10796,7 +10799,7 @@
         "El missatge ${ boldDataLocked } ja no es mostrarà, però encara podeu desbloquejar les vostres dades en ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "L'eina d'exportació de ${ MAIL_APP_NAME } us permet exportar correus electrònics desxifrats des del vostre compte de ${ MAIL_APP_NAME } al vostre dispositiu. A continuació, podeu veure els missatges o importar-los a un altre compte o client de correu electrònic."
+        "L'eina d'exportació de ${ MAIL_APP_NAME } us permet exportar al vostre dispositiu correus electrònics desxifrats des del vostre compte de ${ MAIL_APP_NAME }. A continuació, podreu veure els missatges o importar-los a un altre compte o client de correu electrònic."
       ],
       "The calendar will be removed from your account.": [
         "El calendari s'esborrarà del vostre compte."
@@ -10844,7 +10847,7 @@
         "L'enllaç per a notificar que no heu configurat un compte ${ BRAND_NAME } ha caducat. Contacteu amb el nostre equip de suport per a resoldre aquest problema."
       ],
       "The most recent data update, excluding breaches.": [
-        "L'actualització de dades més recent, sense incloure les filtracions."
+        "L'actualització de dades més recent, excloses les filtracions."
       ],
       "The most secure and private two-factor authentication app, that's free and open-source.": [
         "L'aplicació d'autenticació de doble factor més segura i privada que és gratuïta i de codi obert."
@@ -10934,7 +10937,7 @@
         "Aquest servei no està disponible per als usuaris que inicien la sessió amb l’inici de sessió únic."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
-        "Aquest testimoni no estarà disponible després de tancar aquesta finestra i no l'heu de compartir amb ningú."
+        "Aquest testimoni no estarà disponible després que tanqueu aquesta finestra, i no l'hauríeu de compartir amb ningú."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Aquest enllaç d'anul·lació de la subscripció ha caducat. Obriu un correu electrònic més recent des d'aquesta llista de correu."
@@ -10949,7 +10952,7 @@
         "Això eliminarà totes les versions anteriors dels vostres fitxers prèvies a ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
-        "Això eliminarà totes les versions anteriors dels vostres fitxers."
+        "Això suprimirà totes les versions anteriors dels vostres fitxers."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Això denegarà l'accés a **${ email }**. Segur que voleu continuar?"
@@ -11012,7 +11015,7 @@
         "Per a permetre que el domini **${ domainName }** utilitzi SAML SSO, heu de verificar-ne la propietat afegint el següent registre DNS TXT al vostre domini en el vostre proveïdor de DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "Per evitar la pèrdua de dades, elimineu-ho només si sabeu el que esteu fent o n'heu exportat una còpia."
+        "Per evitar la pèrdua de dades, elimineu-lo només si sabeu el que esteu fent o n'heu exportat una còpia."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Per a cancel·lar la vostra subscripció, contacteu amb nosaltres."
@@ -11063,7 +11066,7 @@
         "Per a utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Perquè funcioni correctament, cada filtre ha de contenir almenys un nom i un script Sieve vàlid. Podeu ${ link }."
+        "Per funcionar correctament, cada filtre ha de contenir com a mínim un nom i un script Sieve vàlid. Podeu ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregeu el vostre compte amb crèdits que podeu utilitzar per subscriure-us a un nou pla o per renovar el pla actual. Obteniu un crèdit per cada ${ i18nCurrency } gastat."
@@ -11135,7 +11138,7 @@
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
+        "Milloreu de pla per afegir al vostre compte una adreça @pm.me més curta que sigui més fàcil de compartir. Vol dir \"${ MAIL_APP_NAME } me\" o \"Private Message me\"."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
@@ -11144,7 +11147,7 @@
         "Milloreu al pla Professional o a un de superior per poder desbloquejar"
       ],
       "Upgrade to unlock": [
-        "Milloreu el vostre pla per a desbloquejar"
+        "Milloreu per desbloquejar"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Actualitzeu el vostre pla a ${ firstPlanNames } o ${ lastPlanName } per obtenir accés a ${ PROTON_SENTINEL_NAME } per organitzacions."
@@ -11171,7 +11174,7 @@
         "Enllaç de l'URL"
       ],
       "URL settings updated.": [
-        "S'han actualitzat les preferències de l'URL."
+        "S'ha actualitzat la configuració de l'URL."
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Utilitzeu un gestor de contrasenyes per a generar i emmagatzemar de forma segura les vostres contrasenyes, assegurant contrasenyes fortes i inicis de sessió més senzills."
@@ -11189,7 +11192,7 @@
         "Utilitzeu les següents credencials quan us connecteu a servidors ${ VPN_APP_NAME } sense aplicació. Exemple d'utilització: Tunnelblick a macOS, OpenVPN a GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "Utilitzeu l'adreça de correu electrònic seleccionada com a nom d'usuari SMTP al servei extern i el testimoni generat com a contrasenya SMTP."
+        "Utilitzeu l'adreça electrònica seleccionada com a nom d'usuari SMTP al servei extern i el testimoni generat com a contrasenya SMTP."
       ],
       "User activated": [
         "S'ha activat l'usuari."
@@ -11357,13 +11360,13 @@
         "Si s'inhabilita, s'evita que imatges remotes es carreguin sense el vostre coneixement.\t"
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Quan l'opció estigui activada, comprovarem si ${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte i us notificarem si no ho és."
+        "Quan l'opció estigui activada, comprovarem si ${ MAIL_APP_NAME } és la vostra aplicació de correu per defecte i us ho notificarem si no ho fos."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Quan les notificacions estiguin activades, enviarem una alerta a la vostra adreça de recuperació si teniu nous missatges al vostre compte de ${ MAIL_APP_NAME }."
+        "Quan les notificacions estiguin activades, enviarem una alerta a la vostra adreça de correu electrònic de recuperació si teniu nous missatges al vostre compte de ${ MAIL_APP_NAME }."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Quan les persones que recomaneu es registren per obtenir una subscripció, guanyeu crèdits per utilitzar-los per a la vostra subscripció."
@@ -11411,7 +11414,7 @@
         "Amb els grups, podeu enviar correus electrònics de manera ràpida i senzilla a totes les persones d'un grup determinat."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "Amb el vostre pla actual, només podeu rebre missatges amb la vostra adreça @pm.me. Milloreu per enviar missatges i crear adreces addicionals utilitzant @pm.me."
+        "Amb el vostre pla actual, només podeu rebre missatges amb la vostra adreça @pm.me. Milloreu per enviar missatges i crear adreces addicionals amb @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
@@ -11528,7 +11531,7 @@
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Podeu utilitzar ${ MAIL_APP_NAME } amb qualsevol client de correu electrònic d'escriptori compatible amb IMAP/SMTP, inclòs Outlook, Apple Mail i Thunderbird."
+        "Podeu utilitzar ${ MAIL_APP_NAME } amb qualsevol client de correu electrònic d\"escriptori compatible amb IMAP/SMTP, inclòs Outlook, Apple Mail i Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Podeu utilitzar les credencials següents per connectar-vos a un servidor ${ VPN_APP_NAME } utilitzant una aplicació VPN de codi obert de tercers, com ara Tunnelblick per a macOS o OpenVPN per a GNU/Linux."
@@ -11603,10 +11606,10 @@
         "Per afegir-lo com a mètode de pagament, heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
-        "Necessiteu tenir un calendari personal actiu per a importar els esdeveniments d'un fitxer ICS."
+        "Necessiteu tenir un calendari personal actiu per importar els esdeveniments d'un fitxer ICS."
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "És recomanable que exporteu una còpia de seguretat d'aquesta clau per si necessiteu restaurar les dades que va xifrar."
+        "Hauríeu d'exportar una còpia de seguretat d'aquesta clau per si heu de restaurar dades que hagi xifrat."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Encara heu de respondre a les invitacions perquè l'amfitrió vegi la vostra resposta."
@@ -11627,7 +11630,7 @@
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
-        "No podreu desxifrar cap missatge, fitxer ni altres dades xifrades amb aquesta clau. Totes les dades signades amb aquesta clau ja no seran verificades per les aplicacions de ${ BRAND_NAME }."
+        "NO podreu desxifrar cap missatge, fitxer ni altres dades xifrades amb aquesta clau. Totes les dades signades amb aquesta clau ja no seran verificades per les aplicacions de ${ BRAND_NAME }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
@@ -11972,7 +11975,7 @@
     },
     "Key generation": {
       "Generate key": [
-        "Genera una clau"
+        "Genereu la clau"
       ],
       "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
         "Si heu generat aquesta clau perquè sospiteu que l'anterior s'ha vist compromesa, marqueu-la com a compromesa a les preferències."
@@ -11981,16 +11984,16 @@
         "Ha fallat la generació de la clau. Torneu-ho a provar més tard."
       ],
       "Key successfully generated.": [
-        "S'ha generat la clau."
+        "S'ha generat la clau correctament."
       ],
       "New key generated": [
         "S'ha generat una nova clau"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
-        "Això generarà una nova clau, que s'utilitzarà per xifrar futures dades de contacte, claus de xifratge de correu electrònic i altres dades."
+        "Això generarà una nova clau que s'utilitzarà per xifrar futures dades de contacte, claus de xifratge de correu electrònic i altres dades."
       ],
       "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
-        "Això generarà una clau nova que servirà per a xifrar en el futur correus electrònics i altres dades per a **${ emailAddress }**."
+        "Això generarà una clau nova que servirà per a xifrar en el futur correus electrònics i altres dades per **${ emailAddress }**."
       ],
       "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
         "Ja disposeu d'una clau d'aquest tipus. Llevat que la clau hagi estat compromesa, generar **una nova clau podria alentir el compte**."
@@ -12001,7 +12004,7 @@
         "Compromesa"
       ],
       "Disabled": [
-        "Desactivada"
+        "Desactivat"
       ],
       "Fallback": [
         "Alternativa"
@@ -12016,10 +12019,10 @@
         "No és vàlid"
       ],
       "Obsolete": [
-        "Obsoleta"
+        "Obsolet"
       ],
       "Primary": [
-        "Principal"
+        "Primari"
       ]
     },
     "Key type hint": {
@@ -12027,7 +12030,7 @@
         "Més ràpid"
       ],
       "Slower, but stronger long-term security": [
-        "Més lent, però amb una seguretat a llarg termini més sòlida."
+        "Més lent, però amb una seguretat a llarg termini més forta"
       ]
     },
     "Key type option": {
@@ -12259,43 +12262,43 @@
     },
     "Keys actions": {
       "Delete": [
-        "Elimina"
+        "Elimineu"
       ],
       "Disables encryption with this key": [
-        "Desactiva el xifratge amb aquesta clau"
+        "Desactiveu el xifratge amb aquesta clau"
       ],
       "Disables signature verification and encryption with this key": [
-        "Desactiva la verificació i el xifratge de signatures amb aquesta clau"
+        "Desactiveu la verificació de signatura i el xifratge amb aquesta clau"
       ],
       "Enable encryption with this key": [
-        "Activa el xifratge amb aquesta clau"
+        "Habiliteu el xifratge amb aquesta clau"
       ],
       "Enable signature verification and encryption with this key": [
-        "Activa la verificació de la signatura i el xifratge amb aquesta clau."
+        "Habiliteu la verificació de signatura i el xifratge amb aquesta clau"
       ],
       "Export private key": [
-        "Exportar la clau privada"
+        "Exporteu la clau privada"
       ],
       "Export public key": [
-        "Exporta la clau pública"
+        "Exporteu la clau pública"
       ],
       "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
-        "Converteix aquesta en la clau ${ keyStatusBadgeTitles.primary } o ${ keyStatusBadgeTitles.fallback } per al xifratge i la signatura."
+        "Fa que aquesta sigui la clau ${ keyStatusBadgeTitles.primary } o ${ keyStatusBadgeTitles.fallback } per al xifratge i la signatura."
       ],
       "Mark compromised": [
-        "Marca com a compromès"
+        "Marqueu com a compromès"
       ],
       "Mark not compromised": [
         "Marca com a no compromès"
       ],
       "Mark not obsolete": [
-        "Marca com a no obsolet"
+        "Marqueu com a no obsolet"
       ],
       "Mark obsolete": [
-        "Marca com a obsolet"
+        "Marqueu com a obsolet"
       ],
       "Use for encryption and signing": [
-        "Utilitza-la per al xifratge i la signatura"
+        "Utilitzeu-la per al xifratge i la signatura"
       ]
     },
     "Knowledge base link label": {
@@ -12303,7 +12306,7 @@
         "Veieu com fer-ho"
       ],
       "Learn more": [
-        "Més informació"
+        "Per saber-ne més"
       ]
     },
     "Label": {
@@ -12442,22 +12445,22 @@
         "Adreces permeses"
       ],
       "Allow all users to create vaults": [
-        "Permet la creació de caixes fortes a tots els usuaris"
+        "Permeteu que tots els usuaris creïn caixes fortes"
       ],
       "Allow data export for all users": [
-        "Permet l'exportació de dades per a tots els usuaris"
+        "Permeteu l'exportació de dades per tots els usuaris"
       ],
       "Allow individual item sharing": [
-        "Permet la compartició d'elements individuals"
+        "Permeteu la compartició d'elements individuals"
       ],
       "Allow memorable passwords": [
-        "Permet les contrasenyes fàcils de recordar"
+        "Permeteu contrasenyes fàcils de recordar"
       ],
       "Allow notifications by email": [
-        "Permet notificacions per correu"
+        "Permeteu les notificacions per correu electrònic"
       ],
       "Allow random passwords": [
-        "Permet les contrasenyes aleatòries"
+        "Permeteu contrasenyes aleatòries"
       ],
       "Allow recovery by email": [
         "Permet la recuperació per correu electrònic"
@@ -12472,7 +12475,7 @@
         "Permet la recuperació amb un dispositiu de confiança"
       ],
       "Allow sharing outside the organization": [
-        "Permet la compartició fora de l'organització"
+        "Permeteu la compartició fora de l'organització"
       ],
       "Allowed Domain": [
         "Domini permès"
@@ -12517,7 +12520,7 @@
         "URL d'Assertion Consumer Service"
       ],
       "Attach public key": [
-        "Adjunta la clau pública"
+        "Adjunteu la clau pública"
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -12538,13 +12541,13 @@
         "Elimina automàticament els missatges no desitjats"
       ],
       "Auto-detect primary time zone": [
-        "Detecció automàtica del fus horari principal"
+        "Detecteu automàticament la zona horària primària"
       ],
       "Auto-reply": [
         "Resposta automàtica"
       ],
       "Auto-unsubscribe": [
-        "Anul·la la subscripció automàticament"
+        "Anul·leu la subscripció automàticament"
       ],
       "Autofill": [
         "Emplenament automàtic"
@@ -12553,7 +12556,7 @@
         "Emplena automàticament el 2FA"
       ],
       "Automatically save contacts": [
-        "Desa els contactes automàticament"
+        "Deseu els contactes automàticament"
       ],
       "Autosave": [
         "Desament automàtic"
@@ -12610,7 +12613,7 @@
         "Calendaris"
       ],
       "Capitalize words": [
-        "Paraules en majúscules"
+        "Poseu les paraules en majúscules"
       ],
       "Card details": [
         "Dades de la targeta"
@@ -12661,10 +12664,10 @@
         "Editor"
       ],
       "Composer default font/size": [
-        "Lletra/mida per defecte de l'editor"
+        "Tipus de lletra i mida per defecte de l'editor"
       ],
       "Composer mode": [
-        "Mode de l'editor"
+        "Mode editor"
       ],
       "Composer text direction": [
         "Direcció del text de l'editor"
@@ -12703,13 +12706,13 @@
         "Agrupació de conversa"
       ],
       "Conversations per page": [
-        "Conversacions per pàgina"
+        "Converses per pàgina"
       ],
       "Copy": [
         "Copia"
       ],
       "Copy fingerprint": [
-        "Copia l'empremta digital"
+        "Copieu l'empremta digital"
       ],
       "Copy IP address to clipboard": [
         "Copia l'adreça IP al porta-retalls"
@@ -12730,7 +12733,7 @@
         "País"
       ],
       "Create password": [
-        "Crea una contrasenya"
+        "Creeu una contrasenya"
       ],
       "Credit cards": [
         "Targetes de crèdit"
@@ -12748,7 +12751,7 @@
         "Correu electrònic actual"
       ],
       "Daily email notifications": [
-        "Notificacions diàries per correu electrònic"
+        "Notificacions de correu diàries"
       ],
       "Date": [
         "Data"
@@ -12820,7 +12823,7 @@
         "No tornis a preguntar"
       ],
       "Don't keep versions": [
-        "No mantinguis versions"
+        "No conserveu versions"
       ],
       "Don't show this again": [
         "No ho tornis a mostrar"
@@ -13027,7 +13030,7 @@
         "Mantén la sessió iniciada"
       ],
       "Keep messages in Sent/Drafts": [
-        "Mantén els missatges a Enviats/Esborranys"
+        "Conserveu els missatges a Enviats/Esborranys"
       ],
       "Key": [
         "Clau"
@@ -13072,7 +13075,7 @@
         "Etiqueta de l'enllaç (opcional)"
       ],
       "Lock app after inactivity": [
-        "Bloqueja l'aplicació després de la inactivitat"
+        "Bloquegeu l'aplicació després d'inactivitat"
       ],
       "Logo": [
         "Logo"
@@ -13294,7 +13297,7 @@
         "Contrasenya anterior"
       ],
       "Prompt to trust keys": [
-        "Sol·licita confiança en les claus"
+        "Sol·liciteu confiança en les claus"
       ],
       "Proration": [
         "Prorrateig"
@@ -13375,7 +13378,7 @@
         "Seleccioneu el format del paquet de Linux"
       ],
       "Select Linux platform": [
-        "Seleccioneu la distribució Linux"
+        "Seleccioneu la plataforma Linux"
       ],
       "Send auto-reply": [
         "Envia una resposta automàtica"
@@ -13384,7 +13387,7 @@
         "Envia informes d'error"
       ],
       "Send in": [
-        "Envia en"
+        "Envieu-ho en"
       ],
       "Sequences": [
         "Seqüències"
@@ -13406,19 +13409,19 @@
         "Mostra als altres quan estic ocupat"
       ],
       "Show secondary time zone": [
-        "Mostra el fus horari secundari"
+        "Mostreu la zona horària secundària"
       ],
       "Show sender images": [
         "Mostra les imatges del remitent"
       ],
       "Show unread count in Favicon": [
-        "Mostra el comptador de no llegits a la icona de web"
+        "Mostreu el recompte de no llegits al Favicon"
       ],
       "Show week numbers": [
         "Mostra el número de setmana"
       ],
       "Sign external messages": [
-        "Signa els missatges externs"
+        "Signeu els missatges externs"
       ],
       "Signature": [
         "Signatura"
@@ -13436,7 +13439,7 @@
         "Servidor SMTP"
       ],
       "SMTP token": [
-        "Token SMTP"
+        "Testimoni SMTP"
       ],
       "SMTP username": [
         "Nom d'usuari SMTP"
@@ -13472,7 +13475,7 @@
         "Declaració"
       ],
       "Sticky labels": [
-        "Etiquetes automàtiques"
+        "Etiquetes fixes"
       ],
       "Street address": [
         "Adreça de carrer"
@@ -13523,7 +13526,7 @@
         "Per a: ${ toEmail }"
       ],
       "Token name": [
-        "Nom del token"
+        "Nom del testimoni"
       ],
       "Two-password mode": [
         "Mode de dues contrasenyes"
@@ -13583,7 +13586,7 @@
         "Codi de verificació"
       ],
       "Verify keys with Key Transparency": [
-        "Verifica les claus amb Key Transparency"
+        "Verifiqueu les claus amb Key Transparency"
       ],
       "Video conferencing with Zoom": [
         "Videoconferència amb Zoom"
@@ -13725,7 +13728,7 @@
     },
     "Label to  inform a feature is only available on Beta": {
       "Beta": [
-        "Beta"
+        "Versió beta"
       ]
     },
     "Label to change composer mode": {
@@ -13982,7 +13985,7 @@
         "Reprèn ara"
       ],
       "Set email address": [
-        "Configura l'adreça de correu electrònic"
+        "Establiu l'adreça de correu electrònic"
       ],
       "settings": [
         "preferències"
@@ -13991,13 +13994,16 @@
         "Inicia la sessió"
       ],
       "Snap store": [
-        "Botiga Snap"
+        "Snap Store"
       ],
       "switch account": [
         "canvieu de compte"
       ],
       "Terms": [
         "Termes"
+      ],
+      "terms of our referral program": [
+        "termes del nostre programa de referència"
       ],
       "Trouble signing in?": [
         "Teniu problemes per iniciar la sessió?"
@@ -14277,13 +14283,13 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Podeu crear fins a ${ MAX_LINKS_PER_CALENDAR } enllaç per calendari. Per a crear un enllaç a aquest calendari, elimineu-ne un de la llista següent.",
-        "Podeu crear fins a ${ MAX_LINKS_PER_CALENDAR } enllaços per calendari. Per a crear un enllaç a aquest calendari, elimineu-ne un de la llista següent."
+        "Podeu crear fins a ${ MAX_LINKS_PER_CALENDAR } enllaç per calendari. Per crear un enllaç nou, elimineu-ne primer un de la llista de sota.",
+        "Podeu crear fins a ${ MAX_LINKS_PER_CALENDAR } enllaços per calendari. Per crear un enllaç nou, elimineu-ne primer un de la llista de sota."
       ]
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Heu assolit el màxim d'${ MAX_CALENDAR_MEMBERS } membre.",
+        "Heu assolit el màxim de ${ MAX_CALENDAR_MEMBERS } membre.",
         "Heu assolit el màxim de ${ MAX_CALENDAR_MEMBERS } membres."
       ]
     },
@@ -15843,10 +15849,10 @@
         "S'ha copiat la clau al porta-retalls."
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
-        "La clau amb empremta digital ${ fp } s'ha eliminat"
+        "La clau amb empremta digital ${ fp } s'ha eliminat."
       ],
       "Key with fingerprint ${ fp } is now primary.": [
-        "La clau amb l'empremta digital ${ fp } ara és la principal."
+        "La clau amb l'empremta ${ fp } ara és la principal."
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
@@ -15903,17 +15909,17 @@
     },
     "Notification in share calendar modal": {
       "Invitation deleted": [
-        "S'ha eliminat la invitació."
+        "S'ha eliminat la invitació"
       ],
       "Invitation revoked": [
-        "S'ha revocat la invitació."
+        "S'ha revocat la invitació"
       ],
       "Member added": [
         "Membre afegit",
         "Membres afegits"
       ],
       "Member deleted": [
-        "S'ha eliminat el membre."
+        "S'ha eliminat el membre"
       ]
     },
     "Notification in shared calendar modal": {
@@ -15926,7 +15932,7 @@
     },
     "Notification success": {
       "Event defaults updated": [
-        "S'han actualitzat els valors predeterminats dels esdeveniments."
+        "S'han actualitzat els valors predeterminats de l'esdeveniment"
       ]
     },
     "Notification time input": {
@@ -16169,97 +16175,97 @@
     },
     "Option": {
       "10th of the month": [
-        "10 del mes"
+        "el dia 10 del mes"
       ],
       "11th of the month": [
-        "11 del mes"
+        "el dia 11 del mes"
       ],
       "12th of the month": [
-        "12 del mes"
+        "dia 12 del mes"
       ],
       "13th of the month": [
-        "13 del mes"
+        "el dia 13 del mes"
       ],
       "14th of the month": [
-        "14 del mes"
+        "el dia 14 del mes"
       ],
       "15th of the month": [
-        "15 del mes"
+        "el dia 15 del mes"
       ],
       "16th of the month": [
-        "16 del mes"
+        "el dia 16 del mes"
       ],
       "17th of the month": [
-        "17 del mes"
+        "el dia 17 del mes"
       ],
       "18th of the month": [
-        "18 del mes"
+        "el dia 18 del mes"
       ],
       "19th of the month": [
-        "19 del mes"
+        "el dia 19 del mes"
       ],
       "1st of the month": [
-        "1 del mes"
+        "el dia 1 del mes"
       ],
       "20th of the month": [
-        "20 del mes"
+        "el dia 20 del mes"
       ],
       "21st of the month": [
-        "21 del mes"
+        "el dia 21 del mes"
       ],
       "22nd of the month": [
-        "22 del mes"
+        "el dia 22 del mes"
       ],
       "23rd of the month": [
-        "23 del mes"
+        "el dia 23 del mes"
       ],
       "24th of the month": [
-        "24 del mes"
+        "el dia 24 del mes"
       ],
       "25th of the month": [
         "25 del mes"
       ],
       "26th of the month": [
-        "26 del mes"
+        "el dia 26 del mes"
       ],
       "27th of the month": [
-        "27 del mes"
+        "el dia 27 del mes"
       ],
       "28th of the month": [
-        "28 del mes"
+        "el dia 28 del mes"
       ],
       "29th of the month": [
-        "29 del mes"
+        "el dia 29 del mes"
       ],
       "2nd of the month": [
-        "2 del mes"
+        "el dia 2 del mes"
       ],
       "30th of the month": [
-        "30 del mes"
+        "el dia 30 del mes"
       ],
       "31st of the month": [
-        "31 del mes"
+        "el dia 31 del mes"
       ],
       "3rd of the month": [
-        "3 del mes"
+        "el dia 3 del mes"
       ],
       "4th of the month": [
-        "4 del mes"
+        "el dia 4 del mes"
       ],
       "5th of the month": [
-        "5 del mes"
+        "el dia 5 del mes"
       ],
       "6th of the month": [
-        "6 del mes"
+        "el dia 6 del mes"
       ],
       "7th of the month": [
-        "7 del mes"
+        "el dia 7 del mes"
       ],
       "8th of the month": [
-        "8 del mes"
+        "el dia 8 del mes"
       ],
       "9th of the month": [
-        "9 del mes"
+        "el dia 9 del mes"
       ],
       "Add to existing group": [
         "Afegeix a un grup existent"
@@ -16274,7 +16280,7 @@
         "Arxiva"
       ],
       "Ask each time": [
-        "Pregunta cada vegada"
+        "Pregunteu-ho cada vegada"
       ],
       "Auto": [
         "Automàtic"
@@ -16316,7 +16322,7 @@
         "Etiqueta com a…"
       ],
       "Left to Right": [
-        "Esquerra a dreta"
+        "D'esquerra a dreta"
       ],
       "Mark as read": [
         "Marca com a llegit"
@@ -16364,19 +16370,19 @@
         "Rep de tots"
       ],
       "Repeat daily": [
-        "Repeteix cada dia"
+        "Repetiu-ho diàriament"
       ],
       "Repeat monthly": [
-        "Repeteix cada mesc"
+        "Repetiu-ho mensualment"
       ],
       "Repeat weekly": [
-        "Repeteix cada setmana"
+        "Repetiu-ho setmanalment"
       ],
       "Required": [
         "Requerit"
       ],
       "Right to Left": [
-        "Dreta a esquerra"
+        "De dreta a esquerra"
       ],
       "Router": [
         "Rúter"
@@ -16455,10 +16461,10 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        "Carrega el contingut a través del servidor intermediari (recomanat)"
+        "Carregueu el contingut a través del servidor intermediari (recomanat)"
       ],
       "Load content via proxy and store as attachments": [
-        "Carrega el contingut a través del servidor intermediari i emmagatzema com a adjunts"
+        "Carregueu el contingut a través d'un servidor intermediari i deseu-lo com a fitxers adjunts"
       ]
     },
     "Organization": {
@@ -16554,19 +16560,19 @@
     },
     "OS compatibility": {
       ".deb (for Debian/Ubuntu)": [
-        ".deb (per a Debian/Ubuntu)"
+        ".deb (per Debian/Ubuntu)"
       ],
       ".dmg (12.0 or later)": [
         ".dmg (12.0 o posterior)"
       ],
       ".exe (64-bit)": [
-        ".exe (64-bit)"
+        ".exe (64 bits)"
       ],
       ".rpm (for Fedora/openSUSE)": [
-        ".rpm (per a Fedora/openSUSE)"
+        ".rpm (per Fedora/openSUSE)"
       ],
       "PKGBUILD (for other distributions)": [
-        "PKGBUILD (per a altres distribucions)"
+        "PKGBUILD (per altres distribucions)"
       ]
     },
     "Participant name": {
@@ -16742,6 +16748,9 @@
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "En continuar, accepteu els nostres ${ termsAndConditionsLink } i ${ privacyPolicyLink }."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
+        "Si continueu, accepteu els nostres ${ termsAndConditionsLink }, la nostra ${ privacyPolicyLink } i la ${ referralPolicyLink }."
       ],
       "Creating your account": [
         "S'està creant el compte"
@@ -17414,7 +17423,7 @@
     },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Creeu un calendari per estar al dia de la planificació mentre manteniu les dades segures."
+        "Creeu un calendari per estar al dia de la vostra agenda mentre manteniu les dades segures."
       ]
     },
     "PGP key warning": {
@@ -17695,17 +17704,17 @@
     },
     "PQC account key generation": {
       "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "S'ha habilitat la protecció postquàntica al vostre compte, però algunes operacions no han reeixit: la generació de claus postquàntiques de compte i adreça ha fallat. Podeu generar manualment aquestes claus a les preferències de ${ encryptionAndKeysSettingsTitle }."
+        "S'ha habilitat la protecció postquàntica al vostre compte, però algunes operacions no han tingut èxit: ha fallat la generació de claus de compte i d'adreça postquàntiques. Podeu generar aquestes claus manualment a la configuració de ${ encryptionAndKeysSettingsTitle }."
       ]
     },
     "PQC adress key generation": {
       "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
-        "S'ha habilitat la protecció postquàntica al vostre compte, però algunes operacions no han reeixit: la generació de claus postquàntiques d'adreça per a una o més adreces ha fallat. Podeu generar manualment aquestes claus a les preferències de ${ encryptionAndKeysSettingsTitle }."
+        "S'ha habilitat la protecció postquàntica al vostre compte, però algunes operacions no han tingut èxit: ha fallat la generació de claus d'adreça postquàntiques per una o més adreces. Podeu generar aquestes claus manualment a la configuració de ${ encryptionAndKeysSettingsTitle }."
       ]
     },
     "PQC compatibility warning": {
       "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
-        "Actualitzeu **totes les vostres aplicacions mòbils de ${ BRAND_NAME }** a la versió més recent."
+        "Actualitzeu **totes les vostres aplicacions mòbils de ${ BRAND_NAME }** a la darrera versió."
       ]
     },
     "PQC key generation": {
@@ -17715,7 +17724,7 @@
     },
     "PQC optin": {
       "Enable and generate keys": [
-        "Habiliteu i genereu les claus"
+        "Habiliteu-ho i genereu les claus"
       ],
       "Enable post-quantum protection": [
         "Habiliteu la protecció postquàntica"
@@ -17724,7 +17733,7 @@
         "Voleu habilitar la protecció postquàntica?"
       ],
       "Enabling post-quantum protection failed. Try again later.": [
-        "L'habilitació de la protecció postquàntica ha fallat. Torneu-ho a provar més tard."
+        "Ha fallat l'habilitació de la protecció postquàntica. Torneu-ho a provar més tard."
       ]
     },
     "pqc-optin: Action": {
@@ -17739,13 +17748,13 @@
     },
     "pqc-optin: Progress status": {
       "Generating post-quantum account key": [
-        "S'està generant una clau de compte postquàntica"
+        "S'està generant la clau postquàntica del compte"
       ],
       "Generating post-quantum address keys for each address": [
-        "S'estan generant claus d'adreça postquàntiques per a cada adreça"
+        "S'estan generant les claus d'adreça postquàntiques per cada adreça"
       ],
       "Opting into post-quantum protection": [
-        "S'està optant per la protecció postquàntica"
+        "S'està activant la protecció postquàntica"
       ]
     },
     "Price": {
@@ -17755,10 +17764,10 @@
     },
     "Primary timezone": {
       "Primary time zone": [
-        "Fus horari principal"
+        "Franja d'horari principal"
       ],
       "Secondary time zone": [
-        "Fus horari secundari"
+        "Zona horària secundària"
       ]
     },
     "Property type": {
@@ -18017,7 +18026,7 @@
     },
     "Remove calendar section text": {
       "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Si abandoneu aquest calendari, haureu de demanar permís al propietari per tornar a unir-vos-hi."
+        "Si abandoneu aquest calendari, haureu de demanar permís al propietari per tornar-vos-hi a unir."
       ],
       "This calendar will be removed from your account.": [
         "Aquest calendari s'esborrarà del vostre compte."
@@ -18031,7 +18040,7 @@
         "Voleu sortir del calendari?"
       ],
       "Remove calendar": [
-        "Esborra el calendari"
+        "Elimineu el calendari"
       ],
       "Unsubscribe?": [
         "Voleu anul·lar la subscripció?"
@@ -19144,13 +19153,13 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Activa la secció de fotografies"
+        "Habiliteu la secció de Fotos"
       ],
       "Get updates about comments via email": [
-        "Rebeu actualitzacions sobre comentaris per correu electrònic"
+        "Obtingueu actualitzacions per correu electrònic sobre els comentaris"
       ],
       "Include document name in email notifications": [
-        "Inclou el nom del document a les notificacions de correu electrònic"
+        "Incloeu el nom del document a les notificacions per correu electrònic"
       ]
     },
     "Settings description": {
@@ -19184,7 +19193,7 @@
         "Nom"
       ],
       "Order": [
-        "Ordena"
+        "Ordre"
       ]
     },
     "Settings/labels": {
@@ -19231,7 +19240,7 @@
     },
     "Shared calendar label input placeholder": {
       "Add label": [
-        "Afegeix una etiqueta"
+        "Afegiu una etiqueta"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -20911,10 +20920,10 @@
         "Mantén el pagament automàtic"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu descarregar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot descarregar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
+        "El nostre sistema ja no us cobrarà automàticament amb aquest mètode de pagament, però la vostra subscripció es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la vostra subscripció, encara heu de fer-ho abans del final del període de facturació. A més, si oblideu fer un pagament manual i la facturació automàtica està desactivada per a tots els mètodes de pagament, es pot baixar la categoria del vostre compte automàticament, cosa que portarà a la pèrdua de moltes característiques."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu descarregar de categoria o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No podem descarregar-vos de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
+        "El nostre sistema ja no us cobrarà automàticament utilitzant aquest mètode de pagament, però la vostra subscripció encara es renovarà al final del cicle de facturació. Si voleu baixar de categoria o canviar la subscripció, haureu de fer-ho abans del final del període de facturació. No us podem baixar de categoria automàticament perquè, si esteu per sobre de la quota d'emmagatzematge del pla gratuït o utilitzant altres característiques de pagament, no podem suprimir automàticament fitxers, correus electrònics o altres dades. Si desactiveu el pagament automàtic, recordeu pagar la vostra pròxima factura de subscripció abans de la data de venciment per a evitar la suspensió del compte."
       ]
     },
     "Subscription saving": {
@@ -20964,10 +20973,10 @@
         "S'han restaurat els privilegis de l'administrador"
       ],
       "Auto-reply disabled": [
-        "S'ha desactivat la resposta automàtica."
+        "S'ha desactivat la resposta automàtica"
       ],
       "Auto-reply updated": [
-        "S'ha actualitzat la resposta automàtica."
+        "S'ha actualitzat la resposta automàtica"
       ],
       "Backup password updated": [
         "S'ha actualitzat la contrasenya de recuperació."
@@ -20985,7 +20994,7 @@
         "S'ha actualitzat la informació del calendari."
       ],
       "Calendar removed": [
-        "S'ha esborrat el calendari."
+        "S'ha eliminat el calendari"
       ],
       "Calendar updated": [
         "S'ha actualitzat el calendari."
@@ -21009,7 +21018,7 @@
         "Crèdits afegits"
       ],
       "Default calendar updated": [
-        "S'ha actualitzat el calendari per defecte."
+        "S'ha actualitzat el calendari per defecte"
       ],
       "Device deleted": [
         "S'ha eliminat el dispositiu."
@@ -21111,13 +21120,13 @@
         "S'ha eliminat la política. Això només tindrà efecte després que publiqueu els canvis."
       ],
       "Port copied to clipboard": [
-        "S'ha copiat el port al porta-retalls."
+        "S'ha copiat el port al porta-retalls"
       ],
       "Preference saved": [
         "S'ha desat la preferència."
       ],
       "Premium address created": [
-        "S'ha creat l'adreça prèmium."
+        "S'ha creat l'adreça prèmium"
       ],
       "Problem reported": [
         "S'ha notificat el problema."
@@ -21126,7 +21135,7 @@
         "Reactivant importació"
       ],
       "Server copied to clipboard": [
-        "S'ha copiat el servidor al porta-retalls."
+        "S'ha copiat el servidor al porta-retalls"
       ],
       "Session revoked": [
         "Sessió revocada"
@@ -21135,13 +21144,13 @@
         "Sessions revocades"
       ],
       "SMTP token deleted": [
-        "S'ha eliminat el testimoni SMTP."
+        "S'ha eliminat el testimoni SMTP"
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiat al portaretalls"
       ],
       "Token copied to clipboard": [
-        "S'ha copiat el testimoni al porta-retalls."
+        "S'ha copiat el testimoni al porta-retalls"
       ],
       "Undo in progress": [
         "S'està desfent"
@@ -21239,7 +21248,7 @@
         "S'està creant el fitxer de configuració per a ${ serverName }"
       ],
       "Filter removed": [
-        "S'ha esborrat el filtre."
+        "S'ha suprimit el filtre"
       ],
       "Group end-to-end email encryption disabled": [
         "El xifratge d'extrem a extrem de correu electrònic de grup està desactivat."
@@ -21383,7 +21392,7 @@
     },
     "TableRow": {
       "No SMTP tokens found": [
-        "No s'han trobat testimonis SMTP."
+        "No s'ha trobat cap testimoni SMTP"
       ]
     },
     "Time unit": {
@@ -21643,7 +21652,7 @@
         "Accés a l'aplicació"
       ],
       "Apply filter to existing messages": [
-        "Aplica el filtre als missatges existents"
+        "Apliqueu el filtre als missatges existents"
       ],
       "Apply gift code": [
         "Aplicar el codi regal"
@@ -21664,7 +21673,7 @@
         "Resposta automàtica"
       ],
       "Automatically sign outgoing messages?": [
-        "Signar automàticament els missatges de sortida?"
+        "Voleu signar automàticament els missatges sortints?"
       ],
       "Backup and export": [
         "Còpia de seguretat i exportació"
@@ -21715,7 +21724,7 @@
         "Canvia la contrasenya"
       ],
       "Change primary key?": [
-        "Voleu canviar la clau primària?"
+        "Voleu canviar la clau principal?"
       ],
       "Change role": [
         "Canvia privilegis"
@@ -21724,7 +21733,7 @@
         "Canvia la segona contrasenya"
       ],
       "Check your default mail application": [
-        "Comproveu l'aplicació de correu predeterminada"
+        "Comproveu la vostra aplicació de correu predeterminada"
       ],
       "Choose an account": [
         "Tria un compte"
@@ -21920,7 +21929,7 @@
         "Elimina el compte"
       ],
       "Delete calendar": [
-        "Elimina el calendari"
+        "Elimineu el calendari"
       ],
       "Delete filter?": [
         "Voleu eliminar el filtre?"
@@ -21932,7 +21941,7 @@
         "Voleu eliminar el grup?"
       ],
       "Delete key permanently?": [
-        "Voleu eliminar la clau de manera permanent?"
+        "Voleu eliminar la clau permanentment?"
       ],
       "Delete label?": [
         "Voleu eliminar l'etiqueta?"
@@ -22062,7 +22071,7 @@
         "Edita els servidors"
       ],
       "Edit Sieve filter": [
-        "Edita el filtre Sieve"
+        "Editeu el filtre Sieve"
       ],
       "Edit the list of servers of the gateway": [
         "Edita la llista de servidors de la passarel·la"
@@ -22080,7 +22089,7 @@
         "Correu electrònic"
       ],
       "Email breaches": [
-        "Filtracions del correu electrònic"
+        "Filtracions de correu electrònic"
       ],
       "Email categories": [
         "Categories de correu electrònic"
@@ -22137,13 +22146,13 @@
         "Exporta"
       ],
       "Export calendar": [
-        "Exporta el calendari"
+        "Exporteu el calendari"
       ],
       "Export private key": [
-        "Exportació de la clau privada"
+        "Exporteu la clau privada"
       ],
       "Export public key": [
-        "Exportació de la clau pública"
+        "Exporteu la clau pública"
       ],
       "External PGP settings": [
         "Configuració de PGP externa"
@@ -22213,7 +22222,7 @@
         "Voleu generar una nova frase de recuperació?"
       ],
       "Generate SMTP token": [
-        "Genera un token SMTP"
+        "Genereu un testimoni SMTP"
       ],
       "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
         "Obtingueu ${ planMaxSpace } d'emmagatzematge per als vostres fitxers, fotos i documents amb ${ planName }. ${ upgradeButton }"
@@ -22319,7 +22328,7 @@
         "Importa grups"
       ],
       "Import key": [
-        "Importa una clau"
+        "Importeu la clau"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importa via ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -22349,7 +22358,7 @@
         "IP"
       ],
       "Items owned": [
-        "Elements que posseïu"
+        "Elements en propietat"
       ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
@@ -22553,7 +22562,7 @@
         "Codi QR"
       ],
       "Ready, set, forward": [
-        "Llest, configurat i reenviat"
+        "Preparats, llestos, reenvieu"
       ],
       "Recommended": [
         "Recomanat"
@@ -22583,7 +22592,7 @@
         "Voleu suprimir tots els membres?"
       ],
       "Remove calendar": [
-        "Esborra el calendari"
+        "Elimineu el calendari"
       ],
       "Remove device?": [
         "Voleu esborrar el dispositiu?"
@@ -22820,7 +22829,7 @@
         "S'ha cancel·lat la subscripció"
       ],
       "Success": [
-        "Operació reeixida"
+        "Èxit"
       ],
       "Successfully created ${ n } user account": [
         "S'ha creat ${ n } compte d'usuari.",
@@ -22867,6 +22876,9 @@
       ],
       "Time zone": [
         "Zona horària"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Per previsualitzar aquest full de càlcul, obriu-lo a ${ SHEETS_APP_NAME } o descarregueu-lo."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Proveu ${ AUTHENTICATOR_APP_NAME }"
@@ -22941,10 +22953,10 @@
         "Usuaris i adreces"
       ],
       "Vault owned": [
-        "Caixa forta que posseïu"
+        "Caixa forta en propietat"
       ],
       "Vaults owned": [
-        "Caixes fortes que posseïu"
+        "Caixes fortes en propietat"
       ],
       "Verification": [
         "Verificació"
@@ -23043,7 +23055,7 @@
         "La vostra adreça més curta ja està a punt."
       ],
       "Your SMTP token": [
-        "El vostre token SMTP"
+        "El vostre testimoni SMTP"
       ],
       "Your storage": [
         "El vostre emmagatzematge"
@@ -23118,7 +23130,7 @@
         "Empremta digital"
       ],
       "Function": [
-        "Funció"
+        "Fiunció"
       ],
       "Status": [
         "Estat"
@@ -23184,7 +23196,7 @@
         "Els administradors poden gestionar els comptes d'usuari i donar privilegis d'administrador a altres usuaris. Només l'administrador principal pot editar el pla de l'organització."
       ],
       "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Permet afegir sense problemes enllaços de videoconferència de Zoom a les invitacions del calendari."
+        "Permet afegir sense problemes enllaços de videoconferència de Zoom a les invitacions del vostre calendari."
       ],
       "Any protection applied to suspicious activity": [
         "Qualsevol protecció aplicada a l'activitat sospitosa"
@@ -23208,7 +23220,7 @@
         "Personalitzeu la importació per reduir el nombre d'etiquetes"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Elimina els missatges de la paperera i el correu brossa després de 30 dies. Activant l'eliminació automàtica es dona als missatges que ja estan a la paperera o al correu brossa una data d'eliminació basada en la data en què s'hi han mogut."
+        "Elimina els missatges de la paperera i el correu brossa passats 30 dies. Activant l'eliminació automàtica, es donarà als missatges que ja estan a la paperera o al correu brossa una data d'eliminació basada en la data en què s'hi hagin mogut."
       ],
       "Device name and app version": [
         "Nom del dispositiu i versió de l'aplicació"
@@ -23226,7 +23238,7 @@
         "Editar el nom de les etiquetes"
       ],
       "Emails in your inbox are shown organized into categories": [
-        "Els correus electrònics a la vostra safata d'entrada es mostren organitzats en categories"
+        "Els correus de la safata d'entrada se us mostren organitzats en categories"
       ],
       "Enable/disable desktop and mobile notifications": [
         "Activa/desactiva les notificacions a l'escriptori i al mòbil"
@@ -23253,13 +23265,13 @@
         "Per exemple, **contrasenya, qwerty**, etc."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
-        "Obteniu consells sobre productivitat i seguretat per ajudar-vos a treure el màxim profit de ${ MAIL_APP_NAME } i més."
+        "Obtingueu consells sobre productivitat i seguretat per ajudar-vos a treure el màxim profit de ${ MAIL_APP_NAME } i més enllà."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Agrupeu correus electrònics a la mateixa conversa a la vostra safata d'entrada o mostreu-los separadament."
+        "Agrupeu els correus electrònics de la mateixa conversa a la safata d'entrada o mostreu-los separadament."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Obteniu l'empremta electrònica del certificat del proveïdor d'identitat."
@@ -23289,16 +23301,16 @@
         "Elimineu les metadades de les imatges per protegir la vostra privadesa."
       ],
       "See number of unread messages in the tab icon": [
-        "Mostra el nombre de missatges sense llegir a la icona de la pestanya"
+        "Vegeu el nombre de missatges no llegits a la icona de la pestanya"
       ],
       "Set how your list of messages looks like by default.": [
-        "Establiu com es mostra per defecte la vostra llista de missatges."
+        "Configureu l'aspecte per defecte de la vostra llista de missatges."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Establiu la mida per defecte de la finestra emergent de l'editor com a petita o a pantalla completa."
+        "Establiu la mida predeterminada de la finestra emergent de l'editor com a petita o de pantalla completa."
       ],
       "Set the default layout for your Inbox.": [
-        "Establiu el disseny per defecte de la vostra safata d'entrada."
+        "Establiu la disposició predeterminada de la vostra bústia d'entrada."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "S'estableix el peu de pàgina següent als correus que envieu: ${ signature } L'enllaç apunta al vostre enllaç de recomanació. El peu de pàgina apareixerà sota la vostra signatura. Podeu personalitzar la signatura en qualsevol moment a les preferències."
@@ -23307,7 +23319,7 @@
         "Les polítiques de servidor compartit es poden aplicar a cada usuari o a grups."
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "Mostra la imatge de cada remitent a la llista de missatges. Es mostraran les inicials del remitent si no hi ha una fotografia disponible."
+        "Mostreu la imatge de cada remitent a la llista de missatges. Es mostraran les inicials del remitent si no hi ha cap foto disponible."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Les signatures produïdes per aquesta clau es consideren invàlides i aquesta clau no es pot utilitzar per al xifratge"
@@ -23337,7 +23349,7 @@
         "El tema seleccionat s'activarà quan el sistema estigui en «mode clar»"
       ],
       "This address has been disabled": [
-        "Aquesta adreça s'ha desactivat"
+        "S'ha desactivat aquesta adreça"
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Això pot ser causat per un restabliment de la contrasenya o perquè l'usuari encara no ha iniciat la sessió."
@@ -23349,7 +23361,7 @@
         "Aquesta adreça de correu electrònic es mostrarà a tots els membres de l'organització quan realitzin operacions de gestió del compte."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Aquesta funció retarda l'enviament dels vostres correus electrònics, donant-vos l'oportunitat de desfer l'enviament durant el període de temps seleccionat."
+        "Aquesta característica retarda l'enviament dels vostres correus electrònics, donant-vos l'oportunitat de desfer l'enviament durant el període de temps seleccionat."
       ],
       "This feature is only available for paid users": [
         "Aquesta funció només està disponible per a usuaris de pagament"
@@ -23361,19 +23373,19 @@
         "Aquesta és la clau per defecte que fan servir altres usuaris de ${ MAIL_APP_NAME } a les aplicacions mòbils antigues per xifrar les dades que us envien."
       ],
       "This is the default key used by other ${ MAIL_APP_NAME } users to encrypt data they send to you": [
-        "Aquesta és la clau per defecte que utilitzen altres usuaris de ${ MAIL_APP_NAME } per xifrar les dades que us envien."
+        "Aquesta és la clau per defecte que utilitzen altres usuaris de ${ MAIL_APP_NAME } per xifrar les dades que us envien"
       ],
       "This key cannot be used for encryption": [
-        "Aquesta clau no es pot utilitzar per al xifratge."
+        "Aquesta clau no es pot utilitzar per al xifratge"
       ],
       "This key is encrypted with an old password": [
         "Aquesta clau està xifrada amb una contrasenya antiga"
       ],
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "Aquesta clau l'utilitza ${ MAIL_APP_NAME } per xifrar les dades dels vostres contactes"
+        "${ MAIL_APP_NAME } utilitza aquesta clau per xifrar les dades dels vostres contactes"
       ],
       "This key is used for email forwarding": [
-        "Aquesta clau s'utilitza per al reenviament de correu electrònic"
+        "Aquesta clau s'utilitza per al reenviament de correu"
       ],
       "This setting is managed by your organization": [
         "Aquesta preferència la gestiona la vostra organització"
@@ -23409,10 +23421,10 @@
         "Quan afegiu una etiqueta a un missatge d'una conversa, aquesta s'aplicarà automàticament a tots els missatges futurs que envieu o rebeu dins d'aquesta conversa."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Quan cliqueu en un enllaç, aquesta característica antipesca us demanarà que confirmeu l'URL de la pàgina web."
+        "Quan cliqueu en un enllaç, aquesta característica contra la pesca de credencials us demanarà que confirmeu l'URL de la pàgina web."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "Quan moveu un correu electrònic al correu brossa, automàticament se us cancel·larà la subscripció a les llistes de correu del remitent."
+        "Quan moveu un correu a la carpeta brossa, se us cancel·larà automàticament la subscripció a les llistes de distribució del remitent."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "La vostra safata d'entrada de ${ MAIL_APP_NAME } està gairebé plena."
@@ -23452,27 +23464,27 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Això afegeix automàticament la vostra clau pública a cada missatge que envieu. Els destinataris poden utilitzar-la per a verificar l'autenticitat dels vostres missatges i enviar-vos missatges xifrats."
+        "Això afegeix automàticament la vostra clau pública a cada missatge que envieu. Els destinataris poden utilitzar-la per verificar l'autenticitat dels vostres missatges i enviar-vos-en de xifrats."
       ]
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Seleccioneu les preferències PGP per defecte utilitzades per a signar o xifrar missatges amb usuaris PGP de fora de ${ BRAND_NAME }. Tingueu en compte que Inline PGP implica missatges de text sense format."
+        "Seleccioneu la configuració PGP per defecte per signar o xifrar missatges amb usuaris de PGP que no siguin de ${ BRAND_NAME }. Tingueu en compte que el PGP en línia obliga a l'ús de missatges de text sense format."
       ]
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "En rebre un correu electrònic d'un altre usuari de ${ MAIL_APP_NAME } que no tingui claus de confiança als vostres contactes, un avís us preguntarà si voleu activar les claus de confiança."
+        "En rebre un correu electrònic d'un altre usuari de ${ MAIL_APP_NAME } que no tingui claus de confiança als vostres contactes, se us demanarà si voleu activar les claus de confiança."
       ]
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar l'autenticitat dels vostres missatges. Això es fa en combinació amb les preferències PGP per defecte que es poden configurar a continuació."
+        "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar-ne l'autenticitat. Això es fa en combinació amb les preferències PGP per defecte que es poden configurar a continuació."
       ]
     },
     "Tooltip: PM signature locked": {
       "This signature cannot be modified": [
-        "Aquesta signatura no es pot modificar."
+        "No es pot modificar aquesta signatura"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -23687,16 +23699,16 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Millora a ${ passPlusPlanName } per obtenir àlies il·limitats de hide-my-email."
+        "Milloreu a ${ passPlusPlanName } per obtenir àlies il·limitats de hide-my-email"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Milloreu a ${ planName } per a connectar fins a ${ n } dispositiu alhora a la VPN",
-        "Milloreu a ${ planName } per a connectar fins a ${ n } dispositius alhora a la VPN"
+        "Milloreu a ${ planName } per connectar fins a ${ n } dispositiu alhora a la VPN",
+        "Milloreu a ${ planName } per connectar fins a ${ n } dispositius alhora a la VPN"
       ]
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Milloreu a un pla de pagament de ${ MAIL_SHORT_APP_NAME } per a compartir el vostre calendari."
+        "Milloreu a un pla de pagament de ${ MAIL_SHORT_APP_NAME } per compartir el vostre calendari."
       ]
     },
     "Upsell": {
@@ -24169,16 +24181,16 @@
         "Si cancel·leu aquesta importació, no la podreu reprendre. ${ BRAND_NAME } ha desat tot el progrés al vostre compte. Voleu cancel·lar-la de totes maneres?"
       ],
       "Maximum cannot be lower than minimum": [
-        "El valor màxim no pot ser inferior al valor mínim."
+        "El valor màxim no pot ser inferior al valor mínim"
       ],
       "Must be between ${ minimumNumber } and ${ maximumNumber }": [
-        "El valor ha de ser entre ${ minimumNumber } i ${ maximumNumber }."
+        "El valor ha de ser entre ${ minimumNumber } i ${ maximumNumber }"
       ],
       "Must be greater than or equal to ${ minimumNumber }": [
-        "El valor ha de ser superior o igual a ${ minimumNumber }."
+        "Ha de ser superior o igual a ${ minimumNumber }"
       ],
       "Must be lower than or equal to ${ maximumNumber }": [
-        "El valor ha de ser inferior o igual a ${ maximumNumber }."
+        "Ha de ser inferior o igual a ${ maximumNumber }"
       ],
       "Please add at least one recipient.": [
         "Afegiu almenys un destinatari."
@@ -24245,7 +24257,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        "Aquesta clau ja no compleix els nostres estàndards de seguretat. Us suggerim que la marqueu com a obsoleta i que genereu una clau nova."
+        "Aquesta clau ja no compleix els nostres estàndards de seguretat. Us suggerim que la marqueu com obsoleta i que genereu una clau nova."
       ]
     },
     "Weekly recurring event, frequency": {

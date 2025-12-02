@@ -6,7 +6,7 @@
   "contexts": {
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
-        "Etiketsiz"
+        "Etiketlenmemiş"
       ]
     },
     "Access level": {
@@ -460,7 +460,7 @@
         "Sil ve onayla"
       ],
       "Delete filter “${ Name }”": [
-        "“${ Name }” sizgecini sil"
+        "“${ Name }” süzgecini sil"
       ],
       "Delete Gateway": [
         "Ağ geçidini sil"
@@ -496,7 +496,7 @@
         "Kullanıcıyı sil"
       ],
       "Delete without exporting": [
-        "Anahtar dışarı aktarılmadan silinsin"
+        "Anahtar dışa aktarılmadan silinsin"
       ],
       "Delete your account": [
         "Hesabınızı silin"
@@ -703,7 +703,7 @@
         "CSV olarak dışa aktar"
       ],
       "Export key": [
-        "Anahtarı indir"
+        "Anahtarı dışa aktar"
       ],
       "Export key before deleting": [
         "Anahtar silinmeden önce dışa aktarılsın"
@@ -1055,6 +1055,9 @@
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "${ PASS_APP_NAME } uygulamasını tarayıcınızda açın"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } ile aç"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -2539,7 +2542,7 @@
         "Veri simsarları, istenmeyen iletiler, dolandırıcılık ve kötü amaçlı yazılımlarla dolu bir internette gezinmek giderek zorlaşıyor. Bu nedenle ${ PASS_APP_NAME } parolalarınızı yönetmenize, saklamanıza ve otomatik olarak doldurmanıza yardımcı olmanın ötesine geçiyor. Gizliliğinizi elinize almanızı ve hide-my-email takma adlarıyla e-posta kutularınızı korumanızı sağlayan araçlar sunuyoruz."
       ],
       "Protect all your household devices at the same time with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Tüm ev aygıtlarınızı ${ PLAN_NAMES[PLANS.BUNDLE] } ile aynı anda koruyun."
+        "${ PLAN_NAMES[PLANS.BUNDLE] } ile evinizdeki tüm aygıtları aynı anda koruyun."
       ],
       "Protect your business communications": [
         "İş iletişimlerinizi koruyun."
@@ -2660,7 +2663,7 @@
     },
     "Bridge version load failed": {
       "Failed to find latest version": [
-        "En son sürüm bulunamadı"
+        "Son sürüm bulunamadı"
       ]
     },
     "Browser": {
@@ -2887,7 +2890,7 @@
         "${ BRAND_NAME } kullanıcıları ile paylaş"
       ],
       "Share with anyone": [
-        "Herkes ile paylaş"
+        "Herhangi biri ile paylaşın"
       ]
     },
     "Calendar settings sidebar": {
@@ -2924,7 +2927,7 @@
     },
     "Calendar status": {
       "Active": [
-        "Etkin"
+        "Kullanımda"
       ],
       "Default": [
         "Varsayılan"
@@ -5456,7 +5459,7 @@
         "\"${ value }\" kaldır"
       ],
       "Request confirmation": [
-        "Onay isteğinde bulun"
+        "Onay istensin"
       ],
       "Resume": [
         "Sürdür"
@@ -5468,7 +5471,7 @@
         "Doğrulama e-postası gönder"
       ],
       "Set up email forwarding": [
-        "E-posta iletici kurun"
+        "E-posta iletmeyi ayarlayın"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -5486,7 +5489,7 @@
     },
     "email_forwarding_2023: Forwarding tooltip": {
       "Emails forwarded to you are excluded and will not be forwarded.": [
-        "Size iletilen e-postalar katılmaz ve iletilmez."
+        "Size iletilen e-postalar katılmayacak ve iletilmeyecek."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -5500,13 +5503,13 @@
         "Şuraya ilet"
       ],
       "From": [
-        "Kimden"
+        "Gönderici"
       ],
       "Status": [
         "Durum"
       ],
       "To": [
-        "Kime"
+        "Alıcı"
       ]
     },
     "email_forwarding_2023: Incoming forwarding tab name": {
@@ -5531,7 +5534,7 @@
         "Uyumluluk nedeniyle, ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturulacak."
       ],
       "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
-        "Uyumluluk nedeniyle, kuantum sonrası şifreleme kapatıldı ve ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturuldı."
+        "Uyumluluk nedeniyle, kuantum sonrası şifreleme kapatıldı ve ${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturuldu."
       ],
       "For compatibility, post-quantum encryption has been disabled for ${ boldForwarderEmail }.": [
         "Uyumluluk nedeniyle, ${ boldForwarderEmail } için kuantum sonrası şifreleme kapatıldı."
@@ -5555,7 +5558,7 @@
         "Uçtan uca şifreleme kullanmayan bir adrese iletmek, ${ boldForwarderEmail } adresiniz için uçtan uca şifrelemeyi kapatır ancak sıfır erişim şifrelemesi açık kalır. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
-        "Alıcı iletmeyi kabul ettiğinde bu adres ileticisi etkinleştirilecek."
+        "Alıcı iletmeyi kabul ettiğinde bu adres ileticisi kullanıma alınacak."
       ],
       "No incoming forwarding rules": [
         "Herhangi bir gelen iletici kuralı yok"
@@ -5590,10 +5593,10 @@
         "Şuraya ilet"
       ],
       "or": [
-        "veya"
+        "ya da"
       ],
       "Or": [
-        "Veya"
+        "Ya da"
       ],
       "With attachment": [
         "Ek dosyası olan"
@@ -5623,7 +5626,7 @@
         "Yazı ya da anahtar sözcük yazın"
       ],
       "Type text or keyword for this condition:": [
-        "Bu koşulun metnini ya da anahtar sözcüğünü yazın:"
+        "Bu koşulun içeriğini ya da anahtar sözcüğünü yazın:"
       ]
     },
     "email_forwarding_2023: Progress status": {
@@ -5644,7 +5647,7 @@
     },
     "email_forwarding_2023: Status": {
       "Active": [
-        "Etkin"
+        "Kullanımda"
       ],
       "Declined": [
         "Reddedildi"
@@ -5653,7 +5656,7 @@
         "Eski"
       ],
       "Paused": [
-        "Duraklatılmış"
+        "Duraklatıldı"
       ],
       "Pending": [
         "Bekliyor"
@@ -8001,7 +8004,7 @@
         "${ planName } hoşunuza gitti mi?"
       ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
-        "Ayda yalnızca **${ priceString }** daha fazla ödeyerek 4 ücretli gizlilik hizmetinin kilidini açın"
+        "Ayda yalnızca **${ priceString }** fazla ödeyerek 4 ücretli gizlilik hizmetine erişin"
       ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
@@ -8426,7 +8429,7 @@
         "Yeniden etkinleştirilirse, anahtar şifre çözme için kullanılır"
       ],
       "If reactivated, the key will be used for decryption and verification": [
-        "Yeniden etkinleştirilirse, anahtar şifre çözme ve doğrulama için kullanılır"
+        "Yeniden kullanıma alınırsa, anahtar şifre çözme ve doğrulama için kullanılır"
       ]
     },
     "Info": {
@@ -9020,7 +9023,7 @@
         "Kimlik doğrulama uygulaması ile iki adımlı doğrulama açıldı"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
-        "Otomatik yanıt, her ay seçilmiş başlangıç ve bitiş saatleri arasında açılır."
+        "Otomatik yanıtlama, her ay seçilmiş başlangıç ve bitiş saatleri arasında açılır."
       ],
       "Auto-reply is active each week between the selected start and end time.": [
         "Otomatik yanıt, her hafta seçilmiş başlangıç ​​ve bitiş saatleri arasında açılır."
@@ -9475,7 +9478,7 @@
         "İfade ile kurtarma seçeneğini yeniden açtığınızda, yeni bir kurtarma ifadesi oluşturulur."
       ],
       "Encryption setting updated": [
-        "Şifreleme ayarları güncellendi"
+        "Şifreleme ayarı güncellendi"
       ],
       "End date": [
         "Bitiş tarihi"
@@ -9715,7 +9718,7 @@
         "Bu seçenek kapatılırsa, yeni kuruluş üyelerinin öge oluşturmaya başlayabilmeleri için bir yöneticinin onlar için ilk kasayı el ile (paylaşarak) oluşturması gerekir."
       ],
       "If disabled, only administrators will be able to export data.": [
-        "Bu seçenek kapatılırsa, yalnızca yöneticiler verileri dışa aktarabilir."
+        "Bu seçenek kapatılırsa, verileri yalnızca yöneticiler dışa aktarabilir."
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Bu seçenek kapalıysa, kuruluş üyeleri kasaları veya ögeleri yalnızca kuruluş içinde paylaşabilir."
@@ -10961,7 +10964,7 @@
         "Bu işlem, geçerli kurtarma ifadenizi kapatır. Bu ifadeyi artık hesabınıza erişmek veya verilerinizin şifresini çözmek için kullanamazsınız."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "Bu işlem kişisel anahtarınızın bulunduğu bir dosyayı indirecek. Bu dosyayı bir parola ile şifreleyerek koruyun."
+        "Bu işlem kişisel anahtarınızın bulunduğu bir dosya indirecek. Bu dosyayı bir parola ile şifreleyerek koruyun."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için onu kapatın."
@@ -11363,7 +11366,7 @@
         "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "${ MAIL_APP_NAME } hesabınızdaki yeni iletiler için kurtarma/bildirim adresinize bir bildirim gönderir."
+        "Bildirimler etkinleştirildiğinde, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Bir tarifeye abone olduklarında, aboneliğiniz ile kullanabileceğiniz bir miktar kredi kazanacaksınız."
@@ -11375,7 +11378,7 @@
         "İptal ettiğinizde aboneliğiniz yenilenmez ancak abonelik süresinin sonuna kadar tarifenizin özelliklerinden yararlanmayı sürdürürsünüz. Bundan sonra ${ BRAND_NAME } Free tarifesine geçersiniz."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "İptal ettiğinizde aboneliğiniz başlamaz ancak deneme süresi sonuna kadar plan avantajlarından yararlanmaya devam edebilirsiniz. Deneme süresi sona erdikten sonra ${ BRAND_NAME } Free plan'a geçersiniz."
+        "İptal ettiğinizde aboneliğiniz başlamayacak ancak deneme süresinin sonuna kadar tarifenizin avantajlarından yararlanmayı sürdürebilirsiniz. Deneme süresi sona erdikten sonra ${ BRAND_NAME } Free tarifesine geçirileceksiniz."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Bir bağlantıya tıkladığınızda, bu kimlik avı girişimi önleme özelliği, site sayfasının adresini onaylamanızı ister."
@@ -12001,7 +12004,7 @@
         "Ele geçirilmiş"
       ],
       "Disabled": [
-        "Kullanım dışı"
+        "Kullanımdan kaldırılmış"
       ],
       "Fallback": [
         "Yedek"
@@ -12016,7 +12019,7 @@
         "Geçersiz"
       ],
       "Obsolete": [
-        "Eskimiş"
+        "Eski"
       ],
       "Primary": [
         "Birincil"
@@ -12277,7 +12280,7 @@
         "Kişisel anahtarı indir"
       ],
       "Export public key": [
-        "Herkese açık anahtarı indir"
+        "Herkese açık anahtarı dışa aktar"
       ],
       "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
         "Bu işlem, şifreleme ve imzalama için ${ keyStatusBadgeTitles.primary } ve ${ keyStatusBadgeTitles.fallback } anahtarlarını yapar."
@@ -12544,7 +12547,7 @@
         "Otomatik yanıtlama"
       ],
       "Auto-unsubscribe": [
-        "Otomatik abonelik sonlandırma"
+        "Otomatik abonelikten ayrılma"
       ],
       "Autofill": [
         "Otomatik doldurma"
@@ -12748,7 +12751,7 @@
         "Geçerli e-posta"
       ],
       "Daily email notifications": [
-        "E-postalar günlük olarak bildirilsin"
+        "Günlük e-posta bildirimleri"
       ],
       "Date": [
         "Tarih"
@@ -13072,7 +13075,7 @@
         "Bağlantı etiketi (isteğe bağlı)"
       ],
       "Lock app after inactivity": [
-        "Uygulama şu kadar etkileşimsizlikten sonra kilitlensin"
+        "Uygulama şu süreyle etkileşim olmadığında kilitlensin"
       ],
       "Logo": [
         "Logo"
@@ -13294,7 +13297,7 @@
         "Önceki parola"
       ],
       "Prompt to trust keys": [
-        "Güvenilen anahtarlar sorulsun"
+        "Anahtarlara güvenilmesi sorulsun"
       ],
       "Proration": [
         "Hesap bakiyesi"
@@ -13457,7 +13460,7 @@
         "Başlangıç tarihi"
       ],
       "Start day of month": [
-        "Ayın başlangıç günü"
+        "Ayın ilk günü"
       ],
       "Start time": [
         "Başlangıç saati"
@@ -13998,6 +14001,9 @@
       ],
       "Terms": [
         "Koşullar"
+      ],
+      "terms of our referral program": [
+        "referans programımızın şartları"
       ],
       "Trouble signing in?": [
         "Oturum açmakta sorun mu yaşıyorsunuz?"
@@ -14993,7 +14999,7 @@
         "HTML imzalar"
       ],
       "Kill switch/always-on VPN": [
-        "Bağlantı kesici / Hep açık VPN"
+        "Bağlantı kesici / Her zaman açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
@@ -16370,7 +16376,7 @@
         "Aylık yinelenen"
       ],
       "Repeat weekly": [
-        "Haftalık yinelenen"
+        "Haftalık yinelensin"
       ],
       "Required": [
         "Zorunlu"
@@ -16742,6 +16748,9 @@
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "İlerleyerek ${ termsAndConditionsLink } ve ${ privacyPolicyLink } metinlerini kabul etmiş olursunuz."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
+        "Devam ederek ${ termsAndConditionsLink }, ${ privacyPolicyLink } ve ${ referralPolicyLink } politikalarımızı kabul etmiş olursunuz."
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -17710,7 +17719,7 @@
     },
     "PQC key generation": {
       "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
-        "Bu işlem, her adres için yeni bir hesap anahtarı ve yeni bir e-posta şifreleme anahtarı oluşturur. Bunlar, gelecekteki e-postaları ve diğer verileri şifrelemek ve şifresini çözmek için kullanılır."
+        "Bu işlem, her adres için yeni bir hesap anahtarı ve yeni bir e-posta şifreleme anahtarı oluşturur. Bunlar, gelecekteki e-postaları ve diğer verileri şifrelemek ve şifrelerini çözmek için kullanılır."
       ]
     },
     "PQC optin": {
@@ -17965,7 +17974,7 @@
         "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
       ],
       "If you cancel, you will lose your **${ referrerRewardAmount }** credit reward.": [
-        "İptal ederseniz **${ referrerRewardAmount }** kredi ödülünüzü kaybedersiniz."
+        "İptal ederseniz **${ referrerRewardAmount }** kredi ödülünüzü kaybedeceksiniz."
       ],
       "If you subscribe before this date, you’ll get **${ referrerRewardAmount }** in credits. If you don’t subscribe, you’ll be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "Bu tarihten önce abone olursanız **${ referrerRewardAmount }** tutarında kredi kazanırsınız. Abone olmazsanız ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz."
@@ -20982,7 +20991,7 @@
         "Takvim bilgileri güncellendi"
       ],
       "Calendar removed": [
-        "Takvim silindi"
+        "Takvim kaldırıldı"
       ],
       "Calendar updated": [
         "Takvim güncellendi"
@@ -21114,7 +21123,7 @@
         "Ayar kaydedildi"
       ],
       "Premium address created": [
-        "Ücretli hesap eklendi"
+        "Ücretli adres oluşturuldu"
       ],
       "Problem reported": [
         "Sorun bildirildi"
@@ -21310,7 +21319,7 @@
     },
     "Table header; invitations to share calendar": {
       "Shared with me": [
-        "Benimle paylaşılan"
+        "Benimle paylaşılanlar"
       ]
     },
     "TableHeader": {
@@ -22137,7 +22146,7 @@
         "Takvimi dışa aktar"
       ],
       "Export private key": [
-        "Kişisel anahtarı indir"
+        "Kişisel anahtarı dışa aktar"
       ],
       "Export public key": [
         "Herkese açık anahtarı indir"
@@ -22361,7 +22370,7 @@
         "Son etkinlik"
       ],
       "Last updated": [
-        "Son güncelleme"
+        "Son güncellenme"
       ],
       "Layout": [
         "Görünüm"
@@ -22839,7 +22848,7 @@
         "İki parola kipini aç"
       ],
       "Text": [
-        "Yazı"
+        "Metin"
       ],
       "Theme": [
         "Tema"
@@ -22864,6 +22873,9 @@
       ],
       "Time zone": [
         "Saat dilimi"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "${ AUTHENTICATOR_APP_NAME } uygulamasını deneyin"
@@ -23205,7 +23217,7 @@
         "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri silebilirsiniz. Otomatik silmeyi açtığınızda, çöp ya da istenmeyen kutusundaki iletiler için, o kutuya kondukları tarihe göre bir silme tarihi belirlenir."
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri silebilirsiniz. Otomatik silme özelliğini açtığınızda, çöp ya da istenmeyen klasörlerindeki iletilere, o kutuya kondukları tarihe göre bir silinme tarihi belirlenir."
       ],
       "Device name and app version": [
         "Aygıt adı ve uygulama sürümü"
@@ -23256,7 +23268,7 @@
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Aynı yazışmadaki e-postaları Gelen kutunuzda gruplayın ya da ayrı ayrı görüntüleyin."
+        "Gelen kutunuzda aynı yazışmanın e-postalarının gruplanmış ya da ayrı ayrı görüntülenmesini ayarlayın."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Kimlik doğrulama hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamak için kullanacağı herkese açık anahtar. Kimlik hizmeti sağlayıcınızdan sertifika karmasını alın."
@@ -23295,7 +23307,7 @@
         "Oluşturucu açılan penceresinin varsayılan boyutunu küçük veya tam ekran olarak ayarlayın."
       ],
       "Set the default layout for your Inbox.": [
-        "Gelen kutunuzun varsayılan düzenini ayarlayın."
+        "Gelen kutunuzun varsayılan yerleşimini ayarlayın."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
         "Gönderdiğiniz e-postalara şu alt bilgi eklenir: ${ signature } Bağlantı, öneri bağlantınıza yönlenir. Alt bilgi, imzanızın altında görüntülenir. İmzanızı istediğiniz zaman ayarlar bölümünden kişiselleştirebilirsiniz."
@@ -23367,7 +23379,7 @@
         "Bu anahtar, eski bir parola ile şifrelenmiş"
       ],
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "Bu anahtar ${ MAIL_APP_NAME } tarafından kişinin verilerinin korunması için kullanılıyor"
+        "Bu anahtar, ${ MAIL_APP_NAME } tarafından kişinizin verilerini şifrelemek için kullanılır"
       ],
       "This key is used for email forwarding": [
         "Bu anahtar, e-posta iletimi için kullanılır"
@@ -23464,7 +23476,7 @@
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Alıcıların iletilerin sizden geldiğini doğrulayabilmesi için tüm giden iletilerinizi otomatik olarak imzalayabilirsiniz. Bunu, aşağıdan yapılandırılabilen varsayılan PGP ayarları ile birlikte yapabilirsiniz."
+        "Alıcıların iletilerin sizden geldiğini doğrulayabilmesi için tüm giden iletilerinizi otomatik olarak imzalayabilirsiniz. Bunu, aşağıdan yapılandırılabilen varsayılan PGP ayarları ile yapabilirsiniz."
       ]
     },
     "Tooltip: PM signature locked": {
@@ -23687,8 +23699,8 @@
         "Sınırsız sayıda hide-my-email takma adı edinmek için ${ passPlusPlanName } tarifesine yükseltin"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin",
-        "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin"
+        "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName } tarifesine yükseltin",
+        "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName } tarifesine yükseltin"
       ]
     },
     "Upgrade notice": {
@@ -23713,10 +23725,10 @@
         "Dosyalarınız, fotoğraflarınız ve belgeleriniz için ${ drivePlusPlanMaxSpace } depolama alanı edinin ve 10 yıl geriye dönük dosya kurtarma özelliği ile dosya sürümlerini kurtarın."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
-        "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini tek bir pakette sunan gizlilik paketi. Ayda sadece ${ fallBackString } karşılığında"
+        "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini bir arada sunan gizlilik paketi. Ayda yalnızca ${ fallBackString } ile başlayarak"
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. Only **${ priceString }** more each month.": [
-        "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini tek bir pakette sunan gizlilik paketi. Ayda sadece **${ priceString }** daha fazla."
+        "Güvenli e-posta, ${ VPN_SHORT_APP_NAME }, bulut depolama alanı ve parola yöneticisini bir arada sunan gizlilik paketi. Ayda yalnızca **${ priceString }** fazlasına."
       ],
       "Protect your organization from data breaches with ${ PLAN_NAMES[plan] }.": [
         "${ PLAN_NAMES[plan] } ile kuruluşunuzun verilerinin ele geçirilmesini engelleyin."

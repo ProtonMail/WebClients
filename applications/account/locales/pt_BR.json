@@ -490,7 +490,7 @@
         "Excluir registro"
       ],
       "Delete token “${ token.Name }”": [
-        "Deletar token “${ token.Name }”"
+        "Excluir token “${ token.Name }”"
       ],
       "Delete user": [
         "Excluir usuário"
@@ -1055,6 +1055,9 @@
       ],
       "Open ${ PASS_APP_NAME } in your browser": [
         "Abra o ${ PASS_APP_NAME } no seu navegador"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Abrir no ${ SHEETS_APP_NAME }"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -1902,7 +1905,7 @@
         "Tenha 10 aliases grátis!"
       ],
       "Get unlimited aliases!": [
-        "Tenha aliases ilimitados!"
+        "Obtenha aliases ilimitados!"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Experimente o ${ PASS_APP_NAME }"
@@ -2415,14 +2418,20 @@
       "Automate recurring actions to sort and organize incoming emails.": [
         "Automatize ações recorrentes para classificar e organizar e-mails recebidos."
       ],
+      "Backup, organize, and securely share a lifetime of memories.": [
+        "Faça backup, organize e compartilhe com segurança as memórias de uma vida inteira."
+      ],
       "Can someone see my internet history if we use the same WiFi?": [
         "Alguém pode ver meu histórico de internet se usarmos o mesmo WiFi?"
+      ],
+      "Connect ${ VPN_CONNECTIONS } devices at once": [
+        "Conecte ${ VPN_CONNECTIONS } dispositivos de uma só vez"
       ],
       "Create and edit with confidence": [
         "Crie e edite com confiança"
       ],
       "DeGoogle your life": [
-        "Desconecte sua vido do Google"
+        "Desconecte sua vida do Google"
       ],
       "Discover our tips for effectively managing your inbox so you can stay productive and focused.": [
         "Descubra nossas dicas para gerenciar sua caixa de entrada de forma eficaz e manter a produtividade e o foco."
@@ -2436,8 +2445,14 @@
       "Enable kill switch and auto-connect in your VPN settings.": [
         "Ative o kill switch e a conexão automática nas configurações da VPN."
       ],
+      "Find out how to delete photos from Google Photos and use a private cloud storage app instead.": [
+        "Descubra como excluir suas fotos do Google Fotos e usar o aplicativo de armazenamento em nuvem privado em vez disso."
+      ],
       "Get a clean inbox with filters": [
         "Tenha uma caixa de entrada limpa com filtros"
+      ],
+      "Get enough storage for over 40,000 photos.": [
+        "Obtenha armazenamento suficiente para mais de 40.000 fotos."
       ],
       "Get round-the-clock protection": [
         "Obtenha proteção 24 horas por dia"
@@ -2502,11 +2517,17 @@
       "Learn how to enable ${ VPN_APP_NAME } on your router.": [
         "Aprenda como ativar o ${ VPN_APP_NAME } no seu roteador."
       ],
+      "Learn how to make account sharing simple for any family member.": [
+        "Aprenda a simplificar o compartilhamento de conta para qualquer membro da família."
+      ],
       "Protect your business communications": [
         "Proteja as comunicações da sua empresa."
       ],
       "Protect your company from data breaches and make remote work safer with an enterprise VPN.": [
         "Proteja sua empresa contra violações de dados e torne o trabalho remoto mais seguro com uma VPN empresarial."
+      ],
+      "Protect your company with strong passwords and safe sharing.": [
+        "Proteja sua empresa com senhas fortes e compartilhamento seguro."
       ],
       "Protect your family online and make account sharing easy": [
         "Proteja sua família on-line e torne o compartilhamento de contas fácil"
@@ -2532,6 +2553,12 @@
       "Share your account details, without risking a hack": [
         "Compartilhe os detalhes da sua conta, sem arriscar de ser hackeado"
       ],
+      "Sign up for services without sharing your email with aliases.": [
+        "Inscreva-se em serviços sem compartilhar seu e-mail com aliases."
+      ],
+      "Storage capacity explained": [
+        "Capacidade de armazenamento explicada"
+      ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
         "Faça streaming para todas as grandes plataformas com ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
@@ -2543,6 +2570,9 @@
       ],
       "The most private and secure way to communicate online is by using end-to-end encryption. If you send an end-to-end encrypted email, it’s encrypted on your device (your iPhone, Android, or laptop) and isn’t decrypted until it reaches the device of the person you sent the message to.": [
         "A maneira mais privada e segura de se comunicar on-line é usando criptografia de ponta a ponta. Se você enviar um e-mail criptografado de ponta a ponta, ele é criptografado no seu dispositivo (seu iPhone, Android ou laptop) e não é descriptografado até chegar ao dispositivo da pessoa para quem você enviou a mensagem."
+      ],
+      "The most secure way to send pictures is with end-to-end encryption. Here are four ways to store and share photos privately.": [
+        "A maneira mais segura de enviar fotos é com criptografia de ponta a ponta. Aqui estão quatro maneiras de armazenar e compartilhar fotos de forma privada."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Este artigo foi atualizado para incluir os protocolos WireGuard e Stealth VPN."
@@ -2582,6 +2612,9 @@
       ],
       "Worried about data breaches?": [
         "Preocupado com violações de dados?"
+      ],
+      "Write, edit and collaborate on documents securely with ${ DOCS_APP_NAME }.": [
+        "Escreva, edite e colabore em documentos com segurança com o ${ DOCS_APP_NAME }."
       ],
       "Your family photos are training AI, and here’s how to stop it": [
         "Suas fotos de família estão treinando a IA e veja como impedir isso."
@@ -2769,10 +2802,10 @@
     },
     "Calendar invite status label": {
       "Declined": [
-        "Negou"
+        "Recusado"
       ],
       "Invite sent": [
-        "Enviar convite"
+        "Convite enviado"
       ]
     },
     "Calendar link purpose update success message": {
@@ -2808,7 +2841,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Crie um link para o seu calendário e compartilhe-o com qualquer pessoa fora da ${ BRAND_NAME }. Somente você pode adicionar ou remover eventos."
+        "Crie um link para o seu calendário e compartilhe-o com qualquer pessoa fora do ${ BRAND_NAME }. Somente você pode adicionar ou remover eventos."
       ]
     },
     "Calendar settings private share description": {
@@ -2824,7 +2857,7 @@
         "Compartilhar com usuários da ${ BRAND_NAME }"
       ],
       "Share with anyone": [
-        "Compartilhar com o qualquer pessoa"
+        "Compartilhar com qualquer pessoa"
       ]
     },
     "Calendar settings sidebar": {
@@ -5584,13 +5617,13 @@
         "Ativo"
       ],
       "Declined": [
-        "Negou"
+        "Recusado"
       ],
       "Outdated": [
         "Desatualizado"
       ],
       "Paused": [
-        "Em pausa"
+        "Pausado"
       ],
       "Pending": [
         "Pendente"
@@ -5644,7 +5677,7 @@
     },
     "email_forwarding_2023: Warning": {
       "Warning": [
-        "Alerta"
+        "Aviso"
       ]
     },
     "emergency_access": {
@@ -5963,7 +5996,7 @@
         "A mensagem de resposta automática excede o comprimento permitido. Encurte-a para caber no limite."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Respostas automáticas é um recurso pago. Atualizepara uma conta paga para usar este recurso."
+        "Respostas automáticas é um recurso pago. Atualize para uma conta paga para usar este recurso."
       ],
       "Calendar cannot be found": [
         "Não é possível encontrar o calendário."
@@ -6896,9 +6929,6 @@
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "A conexão com a internet foi interrompida causando erro no processo de exportação. Tente novamente."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Você pode salvar um arquivo ICS dos eventos exportados."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -7263,6 +7293,9 @@
     "Features": {
       "15 GB storage": [
         "15 GB de armazenamento"
+      ],
+      "4 more privacy services": [
+        "4 mais serviços de privacidade"
       ],
       "@pm.me address": [
         "Endereço @pm.me"
@@ -7936,6 +7969,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Aproveitando o ${ planName }?"
+      ],
+      "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
+        "Desbloqueie quatro serviços de privacidade premium por apenas **${ priceString }** a mais por mês"
       ],
       "Upgrade your privacy": [
         "Faça um upgrade na sua privacidade"
@@ -8641,14 +8677,23 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importe seus códigos existentes** de outros aplicativos de A2F, como o Google Autenticador"
       ],
+      "**Step 1: Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Etapa 1: Convite seus amigos** para a ${ BRAND_NAME } com seu link de indicação."
+      ],
       "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
         "**Passo 1:** Convide seus amigos para a ${ BRAND_NAME } com seu link de indicação."
+      ],
+      "**Step 2:** Your friends get **2 weeks for free** on their plan.": [
+        "**Passo 2:** Seus amigos ganham **2 semanas grátis** no plano deles."
       ],
       "**Step 2:** Your friends get 2 weeks for free on their plan.": [
         "**Passo 2:** Seus amigos ganham 2 semanas grátis no plano deles."
       ],
       "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
         "**Passo 3:** Ganhe ${ referrerRewardAmount } em créditos para cada pessoa que se inscrever para um plano."
+      ],
+      "**Step 3:** Get **${ referrerRewardAmount } in credits** for every person that subscribes to a plan.": [
+        "**Passo 3:** Ganhe **${ referrerRewardAmount } em créditos** para cada pessoa que se inscrever para um plano."
       ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** para todos os seus dispositivos"
@@ -8707,7 +8752,7 @@
         "Acesse mais de 6.500 servidores de alta velocidade em até 10 dispositivos para manter seus dados de navegação seguros. Disponível em ${ ios }, ${ android }, ${ appleTV } e ${ desktop }."
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Tenha acesse às suas senhas e proteja sua identidade online de forma integrada entre seus dispositivos. Instale o ${ PASS_APP_NAME } e suas extensões."
+        "Acesse suas senhas e proteja suas identidades online de forma integrada em seus dispositivos. Baixe e instale os aplicativos e extensões relevantes do ${ PASS_APP_NAME }."
       ],
       "Account monitor": [
         "Monitor da conta"
@@ -11302,6 +11347,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
       ],
+      "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ao cancelar, sua assinatura não começará, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
+      ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Quando você clicar em um link, este recurso anti-phishing pedirá que você confirme o URL da página web."
       ],
@@ -11935,7 +11983,7 @@
         "Encaminhamento"
       ],
       "Inactive": [
-        "Inativa"
+        "Inativo"
       ],
       "Invalid": [
         "Inválido"
@@ -12397,7 +12445,7 @@
         "Permitir recuperação usando dispositivo confiável"
       ],
       "Allow sharing outside the organization": [
-        "Ativar compartilhamento fora da organização"
+        "Permitir compartilhamento fora da organização"
       ],
       "Allowed Domain": [
         "Domínio permitido"
@@ -12493,7 +12541,7 @@
         "Senha de backup"
       ],
       "Beta": [
-        "Beta"
+        "Versão beta"
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
@@ -12790,7 +12838,7 @@
         "Ativado"
       ],
       "End date": [
-        "Data de término"
+        "Data final"
       ],
       "End day of month": [
         "Dia de término do mês"
@@ -13608,7 +13656,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Notificações para eventos de dia inteiro"
+        "Notificação de eventos de dia inteiro"
       ],
       "Notifications": [
         "Notificações"
@@ -13653,7 +13701,7 @@
     },
     "Label to  inform a feature is only available on Beta": {
       "Beta": [
-        "Beta"
+        "Versão beta"
       ]
     },
     "Label to change composer mode": {
@@ -16277,10 +16325,10 @@
         "Não permitido"
       ],
       "Off": [
-        "Desligado"
+        "Desativar"
       ],
       "On": [
-        "Ligado"
+        "Na"
       ],
       "Optional ${ defaultLabel }": [
         "${ defaultLabel } opcional"
@@ -16838,6 +16886,9 @@
       ],
       "Welcome to ${ plan }": [
         "Boas-vindas ao ${ plan }"
+      ],
+      "You already have a ${ BRAND_NAME } account and can start using ${ PASS_APP_NAME } right away.": [
+        "Você já tem uma conta da ${ BRAND_NAME } e pode começar a usar o ${ PASS_APP_NAME } imediatamente."
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Você já tem acesso aos recursos premium do ${ appName } - não é necessário comprar novamente."
@@ -17895,6 +17946,9 @@
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
       ],
+      "Give 2 weeks, get ${ referrerRewardAmount }": [
+        "Dê 2 semanas, obtenha ${ referrerRewardAmount }"
+      ],
       "How your free trial works:": [
         "Como funciona seu teste gratuito:"
       ],
@@ -17940,7 +17994,7 @@
         "Ao cancelar a inscrição, você não terá mais acesso a este calendário. Todos os eventos deste calendário serão excluídos de sua conta, mas permanecerão no link público original."
       ],
       "You will no longer have access to this calendar.": [
-        "Você não terá mais acesso a esse calendário."
+        "Você não tem mais acesso à esse calendário"
       ]
     },
     "Remove calendar section text": {
@@ -17956,7 +18010,7 @@
         "Excluir calendário?"
       ],
       "Leave calendar?": [
-        "Deixar calendário?"
+        "Sair do calendário?"
       ],
       "Remove calendar": [
         "Excluir calendário"
@@ -18496,6 +18550,9 @@
       ],
       "Your recovery email can **only recover access to your account**.": [
         "Seu e-mail de recuperação somente **pode recuperar o acesso à sua conta**."
+      ],
+      "Your recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Seu e-mail de recuperação pode ser usado indevidamente por invasores para assumir o controle de sua conta. ${ disableEmail } para aumentar sua segurança."
       ],
       "Your recovery email has been enabled": [
         "Seu e-mail de recuperação foi ativado"
@@ -21057,7 +21114,7 @@
         "Sessões revogadas"
       ],
       "SMTP token deleted": [
-        "Token SMTP excluido"
+        "Token SMTP excluído"
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiado para a área de transferência"
@@ -21702,6 +21759,9 @@
       "Connect organization": [
         "Conectar organização"
       ],
+      "Connect to ${ VPN_CONNECTIONS } devices at once with ${ vpnPlusOrUnlimited }. ${ upgradeButton }": [
+        "Conecte-se a ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo com o ${ vpnPlusOrUnlimited }. ${ upgradeButton }"
+      ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência"
       ],
@@ -21825,6 +21885,9 @@
       ],
       "Deep dive into email blog posts": [
         "Aprofunde-se nas postagens do blog sobre e-mail"
+      ],
+      "Deep dive into password manager blog posts": [
+        "Aprofunde-se nas postagens do blog sobre gerenciador de senhas"
       ],
       "Deep dive into VPN blog posts": [
         "Aprofunde-se nas postagens do blog sobre VPN"
@@ -22134,6 +22197,9 @@
       "Generate SMTP token": [
         "Gerar token SMTP"
       ],
+      "Get ${ planMaxSpace } storage for your files, photos and documents with ${ planName }. ${ upgradeButton }": [
+        "Obtenha ${ planMaxSpace } de armazenamento para seus arquivos, fotos e documentos com ${ planName }. ${ upgradeButton }"
+      ],
       "Get ${ vpnPlus } to access all servers": [
         "Obtenha o ${ vpnPlus } para acessar todos os servidores"
       ],
@@ -22280,7 +22346,7 @@
         "Última atividade"
       ],
       "Last updated": [
-        "Última atualização"
+        "Última atualização:"
       ],
       "Layout": [
         "Layout"
@@ -22299,6 +22365,9 @@
       ],
       "Main password": [
         "Senha principal"
+      ],
+      "Manage files across devices on Windows, Mac, Android, and iOS.": [
+        "Gerencie arquivos em dispositivos Windows, Mac, Android e iOS."
       ],
       "Messages": [
         "Mensagens"
@@ -22717,6 +22786,9 @@
       "Start import process": [
         "Iniciar processo de importação"
       ],
+      "Start protecting your devices with the ${ VPN_APP_NAME } app.": [
+        "Comece a proteger seus dispositivos com o aplicativo do ${ VPN_APP_NAME }."
+      ],
       "State": [
         "Estado"
       ],
@@ -22780,6 +22852,9 @@
       ],
       "Time zone": [
         "Fuso horário"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Para pré-visualizar esta planilha, abra-a no ${ SHEETS_APP_NAME } ou faça o download."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Experimente ${ AUTHENTICATOR_APP_NAME }"
@@ -23124,7 +23199,7 @@
         "Personalize a importação para reduzir a quantidade de marcadores"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Exclua as mensagens da lixeira e spam após 30 dias. Ativar a exclusão automática dá às mensagens que já estão na lixeira/spam uma data de exclusão com base na data em que foram movidas para lá"
+        "Exclua as mensagens da lixeira e spam após 30 dias. Ativar a exclusão automática dá às mensagens que já estão na lixeira/spam uma data de exclusão com base na data em que foram movidas para lá."
       ],
       "Device name and app version": [
         "Nome do dispositivo e versão do aplicativo"
@@ -23175,7 +23250,7 @@
         "Gmail automaticamente categoriza alguns e-mails como Social e Promoções. Você pode selecionar para onde importar esses e-mails."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Agrupe e-mails na mesma conversa junto em sua Caixa de Entrada ou os exiba separadamente."
+        "Agrupe e-mails na mesma conversa junto em sua Caixa de Entrada ou exiba-os separadamente."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Chave pública do provedor de identidade para assinar declarações de autenticação. Obtenha o hash do certificado do seu provedor de identidade."
@@ -23223,10 +23298,10 @@
         "As políticas de servidor compartilhado podem ser aplicadas a usuários ou grupos individuais"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "Mostrar a imagem de cada remetente na lista de mensagens. Em seguida, as iniciais do remetente será mostrada se uma foto não estiver disponível."
+        "Mostrar a imagem de cada remetente na lista de mensagens. As iniciais do remetente serão mostradas se uma foto não estiver disponível."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "As assinaturas criadas com esta chave são tratadas como incorretas. Por isso, não é possível usar essa chave para criptografar."
+        "As assinaturas efetuadas com esta chave são tratadas como inválidas. Por isso, não é possível usar essa chave para criptografar."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Especifique o domínio com permissão para autenticação SAML SSO"
@@ -23265,7 +23340,7 @@
         "Esse endereço de e-mail será mostrado a todos os membros da organização ao realizar operações de gerenciamento de contas."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Este recurso atrasa o envio dos seus e-mails, dando-lhe a oportunidade de desfazer o envio durante o período de tempo selecionado."
+        "Este recurso atrasa o envio dos seus e-mails, dando-lhe a oportunidade de desfazer o envio durante o tempo selecionado."
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"
@@ -23325,7 +23400,7 @@
         "Quando você adiciona uma etiqueta a uma mensagem em uma conversa, ela será aplicada automaticamente a todas as mensagens futuras que você enviar ou receber nessa conversa."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Quando você clicar em um link, este recurso anti-phishing pedirá que você confirme a URL da página web."
+        "Quando você clicar em um link, este recurso anti-phishing pedirá que você confirme o URL da página web."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Ao mover um e-mail para spam, você será automaticamente descadastrado das listas de e-mail do remetente."
@@ -23606,8 +23681,8 @@
         "Faça upgrade para o plano ${ passPlusPlanName } e tenha acesso a aliases do Hide-my-email ilimitados."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Atualize para ${ planName } para conectar até ${ n } dispositivo à VPN de uma só vez",
-        "Atualize para ${ planName } para conectar até ${ n } dispositivos à VPN de uma só vez"
+        "Faça upgrade para ${ planName } para conectar até ${ n } dispositivo à VPN de uma só vez",
+        "Faça upgrade para ${ planName } para conectar até ${ n } dispositivos à VPN de uma só vez"
       ]
     },
     "Upgrade notice": {
