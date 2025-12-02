@@ -30,7 +30,7 @@ export function sendMessageWithRedux(
     api: Api,
     turns: Turn[],
     options: AssistantCallOptions & {
-        config?: LumoApiClientConfig;
+        config?: Partial<LumoApiClientConfig>;
         messageId?: string;
         conversationId?: string;
         spaceId?: string;

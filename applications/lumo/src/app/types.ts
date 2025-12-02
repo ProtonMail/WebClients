@@ -884,6 +884,8 @@ export enum LUMO_API_ERRORS {
 
 export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';
 
+// TODO this type should be refactored in a union like:
+//    ({ type: 'send', ... } | { type: 'edit', ... }) | { type: 'regenerate' } & { ...common... }
 export interface ActionParams {
     actionType: 'send' | 'edit' | 'regenerate';
     newMessageContent?: string;
