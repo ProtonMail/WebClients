@@ -3052,6 +3052,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
+      "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
+        "Ödeme sayfanız yeni sekmede açıldı. Lütfen ödemenizi orada tamamlayın ve bittiğinde bu sayfaya geri dönün."
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -3741,7 +3744,7 @@
         "HTML imzalar"
       ],
       "Kill switch/always-on VPN": [
-        "Bağlantı kesici / Hep açık VPN"
+        "Bağlantı kesici / Her zaman açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
