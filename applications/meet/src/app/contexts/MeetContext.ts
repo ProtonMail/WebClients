@@ -64,6 +64,7 @@ export interface MeetContextValues {
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
     keyRotationLogs: KeyRotationLog[];
+    isRecordingInProgress: boolean;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -117,6 +118,7 @@ export const MeetContext = createContext<MeetContextValues>({
     instantMeeting: false,
     assignHost: () => Promise.resolve(),
     keyRotationLogs: [],
+    isRecordingInProgress: false,
 });
 
 export const useMeetContext = () => {

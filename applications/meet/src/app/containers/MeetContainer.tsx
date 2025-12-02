@@ -8,9 +8,12 @@ import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoC
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
+import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
+import { UIStateProvider } from '../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
+import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import type { KeyRotationLog, MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
@@ -44,6 +47,7 @@ interface MeetContainerProps {
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
     keyRotationLogs: KeyRotationLog[];
+    isRecordingInProgress: boolean;
 }
 
 export const MeetContainer = ({
@@ -75,6 +79,7 @@ export const MeetContainer = ({
     instantMeeting,
     assignHost,
     keyRotationLogs,
+    isRecordingInProgress,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -102,6 +107,11 @@ export const MeetContainer = ({
         pageSize,
     });
 
+    const { recordingState, startRecording, stopRecording, downloadRecording } = useMeetingRecorder(
+        participantNameMap,
+        pagedParticipants
+    );
+
     const {
         isScreenShare,
         isLocalScreenShare,
@@ -110,6 +120,16 @@ export const MeetContainer = ({
         screenShareParticipant,
         screenShareTrack,
     } = useCurrentScreenShare({ stopPiP, startPiP, preparePictureInPicture });
+
+    const leaveWithStopRecording = async () => {
+        await downloadRecording();
+        await handleLeave();
+    };
+
+    const endMeetingWithStopRecording = async () => {
+        await downloadRecording();
+        await handleEndMeeting();
+    };
 
     useEffect(() => {
         if (isSafari()) {
@@ -121,69 +141,76 @@ export const MeetContainer = ({
 
     return (
         <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
-            <MeetContext.Provider
-                value={{
-                    page,
-                    quality,
-                    setPage,
-                    setQuality,
-                    roomName,
-                    resolution,
-                    setResolution,
-                    meetingLink: shareLink,
-                    chatMessages,
-                    setChatMessages,
-                    participantEvents,
-                    pageSize,
-                    setPageSize,
-                    handleLeave,
-                    handleEndMeeting,
-                    participantsMap,
-                    participantNameMap,
-                    getParticipants,
-                    disableVideos,
-                    setDisableVideos,
-                    participantsWithDisabledVideos,
-                    setParticipantsWithDisabledVideos,
-                    displayName,
-                    sortedParticipants,
-                    pagedParticipants,
-                    pageCount,
-                    pagedParticipantsWithoutSelfView,
-                    pageCountWithoutSelfView,
-                    passphrase,
-                    guestMode,
-                    mlsGroupState,
-                    startScreenShare,
-                    stopScreenShare,
-                    isLocalScreenShare,
-                    isScreenShare,
-                    screenShareParticipant,
-                    screenShareTrack,
-                    handleMeetingLockToggle,
-                    isMeetingLocked,
-                    isDisconnected,
-                    startPiP,
-                    stopPiP,
-                    preparePictureInPicture,
-                    locked,
-                    maxDuration,
-                    maxParticipants,
-                    instantMeeting,
-                    assignHost,
-                    paidUser,
-                    keyRotationLogs,
-                }}
+            <MeetingRecorderContext.Provider
+                value={{ recordingState, startRecording, stopRecording, downloadRecording }}
             >
-                <MeetingBody
-                    isScreenShare={isScreenShare}
-                    isLocalScreenShare={isLocalScreenShare}
-                    stopScreenShare={stopScreenShare}
-                    screenShareTrack={screenShareTrack}
-                    screenShareParticipant={screenShareParticipant}
-                />
-            </MeetContext.Provider>
-            <AutoCloseMeetingModal onLeave={() => handleLeave()} />
+                <MeetContext.Provider
+                    value={{
+                        page,
+                        quality,
+                        setPage,
+                        setQuality,
+                        roomName,
+                        resolution,
+                        setResolution,
+                        meetingLink: shareLink,
+                        chatMessages,
+                        setChatMessages,
+                        participantEvents,
+                        pageSize,
+                        setPageSize,
+                        handleLeave: leaveWithStopRecording,
+                        handleEndMeeting: endMeetingWithStopRecording,
+                        participantsMap,
+                        participantNameMap,
+                        getParticipants,
+                        disableVideos,
+                        setDisableVideos,
+                        participantsWithDisabledVideos,
+                        setParticipantsWithDisabledVideos,
+                        displayName,
+                        sortedParticipants,
+                        pagedParticipants,
+                        pageCount,
+                        passphrase,
+                        guestMode,
+                        mlsGroupState,
+                        startScreenShare,
+                        stopScreenShare,
+                        isLocalScreenShare,
+                        isScreenShare,
+                        screenShareParticipant,
+                        screenShareTrack,
+                        handleMeetingLockToggle,
+                        isMeetingLocked,
+                        isDisconnected,
+                        startPiP,
+                        stopPiP,
+                        preparePictureInPicture,
+                        locked,
+                        maxDuration,
+                        maxParticipants,
+                        instantMeeting,
+                        pagedParticipantsWithoutSelfView,
+                        pageCountWithoutSelfView,
+                        assignHost,
+                        paidUser,
+                        keyRotationLogs,
+                        isRecordingInProgress,
+                    }}
+                >
+                    <UIStateProvider instantMeeting={instantMeeting}>
+                        <MeetingBody
+                            isScreenShare={isScreenShare}
+                            isLocalScreenShare={isLocalScreenShare}
+                            stopScreenShare={stopScreenShare}
+                            screenShareTrack={screenShareTrack}
+                            screenShareParticipant={screenShareParticipant}
+                        />
+                    </UIStateProvider>
+                </MeetContext.Provider>
+                <AutoCloseMeetingModal onLeave={() => handleLeave()} />
+            </MeetingRecorderContext.Provider>
         </div>
     );
 };

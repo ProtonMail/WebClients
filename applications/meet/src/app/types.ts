@@ -110,3 +110,13 @@ export interface KeyRotationLog {
     type: 'log' | 'error';
     message: string;
 }
+
+export enum RecordingStatus {
+    Started = 'started',
+    Stopped = 'stopped',
+}
+
+export enum PublishableDataTypes {
+    RecordingStatus = 'recordingStatus',
+    Message = 'message',
+}
