@@ -148,18 +148,26 @@ export const useLumoActions = ({
 
         await dispatch(
             sendMessage({
-                api,
-                newMessageContent,
-                newMessageAttachments: provisionalAttachments,
-                allConversationAttachments: allAttachments,
-                messageChain: messagesWithContext,
-                conversationId: finalConversationId,
-                spaceId: finalSpaceId,
-                signal,
-                navigateCallback,
-                enableExternalToolsToggled: !!isWebSearchButtonToggled && isLumoToolingEnabled,
-                enableSmoothing,
-                contextFilters,
+                applicationContext: {
+                    api,
+                    signal,
+                },
+                newMessageData: {
+                    content: newMessageContent,
+                    attachments: provisionalAttachments,
+                },
+                conversationContext: {
+                    spaceId: finalSpaceId,
+                    conversationId: finalConversationId,
+                    allConversationAttachments: allAttachments,
+                    messageChain: messagesWithContext,
+                    contextFilters,
+                },
+                uiContext: {
+                    enableExternalToolsToggled: !!isWebSearchButtonToggled && isLumoToolingEnabled,
+                    navigateCallback,
+                    enableSmoothing,
+                },
             })
         );
 
@@ -251,20 +259,28 @@ export const useLumoActions = ({
 
         await dispatch(
             sendMessage({
-                api,
-                newMessageContent,
-                newMessageAttachments: editedMessageAttachments,
-                allConversationAttachments: allAttachments,
-                messageChain: messagesWithContext,
-                conversationId,
-                spaceId,
-                signal,
-                navigateCallback,
-                isEdit: true,
-                updateSibling: preferSibling,
-                enableExternalToolsToggled: isWebSearchButtonToggled && isLumoToolingEnabled,
-                enableSmoothing,
-                contextFilters,
+                applicationContext: {
+                    api,
+                    signal,
+                },
+                newMessageData: {
+                    content: newMessageContent,
+                    attachments: editedMessageAttachments,
+                },
+                conversationContext: {
+                    spaceId,
+                    conversationId,
+                    allConversationAttachments: allAttachments,
+                    messageChain: messagesWithContext,
+                    contextFilters,
+                },
+                uiContext: {
+                    isEdit: true,
+                    updateSibling: preferSibling,
+                    enableExternalToolsToggled: isWebSearchButtonToggled && isLumoToolingEnabled,
+                    navigateCallback,
+                    enableSmoothing,
+                },
             })
         );
 
