@@ -1,10 +1,10 @@
 import { Notification, app, Event, nativeImage, WebContentsView } from "electron";
 import {
     bringWindowToFront,
-    openMail,
     openCalendar,
     getMainWindow,
     getCurrentLocalID,
+    openMail,
 } from "../utils/view/viewManagement";
 import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
@@ -27,29 +27,22 @@ const findNotificationID = (argv: string[]): string | undefined => {
     return params?.get(NOTIFICATION_ID_KEY) ?? undefined;
 };
 
+export const cleanupDeeplinkNotifications = (argv: string[], type: "deep-link" | "open-link") => {
+    const notificationID = findNotificationID(argv);
+    if (!notificationID) {
+        return;
+    }
+    notificationLogger.debug(`Clear notification from ${type}`, notificationID);
+    notifications.delete(notificationID);
+};
+
 export const handleWinNotification = () => {
-    app.on("second-instance", (_ev: Event, argv: string[]) => {
-        const notificationID = findNotificationID(argv);
-        if (!notificationID) {
-            return;
-        }
-
-        notificationLogger.debug("Clear notification from deep link", notificationID);
-        notifications.delete(notificationID);
-    });
-
     if (!isMac) {
         return;
     }
 
     app.on("open-url", (_ev: Event, url: string) => {
-        const notificationID = findNotificationID([url]);
-        if (!notificationID) {
-            return;
-        }
-
-        notificationLogger.debug("Clear notification from open link", notificationID);
-        notifications.delete(notificationID);
+        cleanupDeeplinkNotifications([url], "open-link");
     });
 };
 
@@ -194,23 +187,25 @@ export const showNotification = (payload: ElectronNotification) => {
     notification.on("click", () => {
         const clickLocalID = getCurrentLocalID();
         notificationLogger.info("Notification clicked", uuid, clickLocalID);
-        if (!isWindows) bringWindowToFront();
+        if (!isWindows) {
+            bringWindowToFront();
 
-        switch (app) {
-            case "mail":
-                if (localID !== clickLocalID) {
-                    notificationLogger.warn(`Wrong localID: ${app}, ${uuid}`);
-                    // INDA-440: switch account
-                } else {
-                    openMail(labelID, elementID, messageID);
-                }
-                break;
-            case "calendar":
-                openCalendar();
-                break;
-            default:
-                notificationLogger.error(`Wrong notification app: ${app}, ${uuid}`);
-                return;
+            switch (app) {
+                case "mail":
+                    if (localID !== clickLocalID) {
+                        notificationLogger.warn(`Wrong localID: ${app}, ${uuid}`);
+                        // INDA-440: switch account
+                    } else {
+                        openMail(labelID, elementID, messageID);
+                    }
+                    break;
+                case "calendar":
+                    openCalendar();
+                    break;
+                default:
+                    notificationLogger.error(`Wrong notification app: ${app}, ${uuid}`);
+                    return;
+            }
         }
 
         notifications.delete(uuid);

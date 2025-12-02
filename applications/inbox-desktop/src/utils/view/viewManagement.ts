@@ -20,7 +20,6 @@ import {
     isSameURL,
     trimLocalID,
 } from "../urls/urlTests";
-import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
@@ -36,6 +35,7 @@ import telemetry from "./../telemetry";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
 import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
+import { addHashToCurrentURL } from "../urls/urlHelpers";
 
 type ViewID = keyof URLConfig;
 
