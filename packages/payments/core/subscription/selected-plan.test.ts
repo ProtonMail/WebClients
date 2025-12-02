@@ -379,7 +379,7 @@ describe('SelectedPlan', () => {
             const selectedPlan = SelectedPlan.createFromSubscription(subscription, PLANS_MAP);
 
             expect(selectedPlan.cycle).toBe(CYCLE.MONTHLY);
-            expect(selectedPlan.currency).toBe('EUR');
+            expect(selectedPlan.currency).toBe('USD');
         });
 
         it.each([FREE_SUBSCRIPTION, null, undefined])('should return empty planIDs', (subscription) => {

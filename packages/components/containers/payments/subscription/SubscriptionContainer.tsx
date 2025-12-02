@@ -7,7 +7,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
-import { IcGift } from '@proton/icons/icons/IcGift';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import PlusToPlusUpsell from '@proton/components/containers/payments/subscription/PlusToPlusUpsell';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
@@ -21,6 +20,7 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
+import { IcGift } from '@proton/icons/icons/IcGift';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import {
@@ -30,7 +30,6 @@ import {
     type CheckSubscriptionData,
     type Currency,
     type Cycle,
-    DEFAULT_CURRENCY,
     DisplayablePaymentError,
     type EnrichedCheckResponse,
     type FreePlanDefault,
@@ -602,7 +601,7 @@ const SubscriptionContainerInner = ({
         paymentMethodValue: PaymentMethodType;
     };
 
-    const selectedPlanCurrency = checkResult?.Currency ?? DEFAULT_CURRENCY;
+    const selectedPlanCurrency = checkResult.Currency;
     const selectedPlanName = getPlanFromPlanIDs(plansMapRef.current, model.planIDs)?.Name;
 
     const paymentFacade = usePaymentFacade({

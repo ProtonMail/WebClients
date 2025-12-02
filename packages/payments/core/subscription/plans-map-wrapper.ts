@@ -1,5 +1,5 @@
 import { PLANS, PLAN_TYPES } from '../constants';
-import { getFallbackCurrency, isRegionalCurrency } from '../helpers';
+import { getFallbackCurrency, isRegionalCurrency } from '../currencies';
 import type { Currency, Cycle, PlanIDs } from '../interface';
 import { getPlanNameFromIDs } from '../plan/helpers';
 import type { Plan, StrictPlan } from '../plan/interface';

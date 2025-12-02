@@ -8,7 +8,6 @@ import {
     type Currency,
     type Cycle,
     type CycleMapping,
-    DEFAULT_CURRENCY,
     FREE_PLAN,
     FREE_SUBSCRIPTION,
     type FreeSubscription,
@@ -26,6 +25,7 @@ import {
     type SubscriptionCheckResponse,
     type SubscriptionPlan,
     getAddonsFromIDs,
+    getDefaultMainCurrency,
     getFreeCheckResult,
     getHas2025OfferCoupon,
     getHasPlusPlan,
@@ -836,7 +836,7 @@ export const getOptimisticPlanCardsSubscriptionData = ({
                 // make sure that the plan and all its addons exist
                 const plansToCheck = Object.keys(planIDs) as (PLANS | ADDON_NAMES)[];
                 // we extract the currency of the currently selected plan in plansMap.
-                const currency = plansMap[plansToCheck[0]]?.Currency ?? DEFAULT_CURRENCY;
+                const currency = plansMap[plansToCheck[0]]?.Currency ?? getDefaultMainCurrency(billingAddress);
                 return getOptimisticPlanCardSubscriptionData({ billingAddress, planIDs, cycle, plansMap, currency });
             })
     );
@@ -873,7 +873,7 @@ export const getPlanCardSubscriptionData = async ({
                     );
 
                     // we extract the currency of the currently selected plan in plansMap.
-                    const currency = plansMap[plansToCheck[0]]?.Currency ?? DEFAULT_CURRENCY;
+                    const currency = plansMap[plansToCheck[0]]?.Currency ?? getDefaultMainCurrency(billingAddress);
 
                     const coupon =
                         maybeCoupon === null

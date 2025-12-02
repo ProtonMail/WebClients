@@ -13,12 +13,12 @@ import metrics from '@proton/metrics';
 import {
     type BillingAddress,
     CYCLE,
-    DEFAULT_CURRENCY,
     DEFAULT_TAX_BILLING_ADDRESS,
     PLANS,
     PLAN_NAMES,
     type PaymentsApi,
     getBillingAddressFromPaymentStatus,
+    getDefaultMainCurrency,
 } from '@proton/payments';
 import { TaxCountrySelector, useTaxCountry } from '@proton/payments/ui';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -59,7 +59,7 @@ const ReferralStep = ({ paymentsApi, onSubscriptionData, onBack }: Props) => {
                     Plans: {
                         [plan]: 1,
                     },
-                    Currency: DEFAULT_CURRENCY,
+                    Currency: getDefaultMainCurrency(status),
                     Cycle: CYCLE.MONTHLY,
                     BillingAddress: newBillingAddress,
                     ValidateZipCode: true,
