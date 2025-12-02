@@ -27,6 +27,7 @@ import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessage
 import { useAbortController } from './useAbortController';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
+import { usePersonalization } from './usePersonalization';
 import usePreferredSiblings from './usePreferredSiblings';
 import { useTierErrors } from './useTierErrors';
 
@@ -82,6 +83,7 @@ export const useLumoActions = ({
     const allAttachments = useLumoSelector(selectAttachments);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
     const { handleActionError } = useActionErrorHandler();
+    const { personalization } = usePersonalization();
 
     // Custom hooks
     const { isGhostChatMode: isGhostMode } = useGhostChat();
@@ -168,6 +170,9 @@ export const useLumoActions = ({
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
+                },
+                settingsContext: {
+                    personalization,
                 },
             })
         );
@@ -282,6 +287,9 @@ export const useLumoActions = ({
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
+                },
+                settingsContext: {
+                    personalization,
                 },
             })
         );
