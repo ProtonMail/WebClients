@@ -20,9 +20,9 @@ describe('inline service', () => {
         test('should query parent frame correctly', async () => {
             const response = { ok: true, coords: { top: 25, left: 50 }, frameAttributes };
             tabsSendMessage.mockResolvedValue(response);
-            expect(await service.queryFrame(tabId, { frameId: 2, parent: 1, origin: null }, frameAttributes)).toBe(
-                response
-            );
+            expect(
+                await service.queryFrame(tabId, { frameId: 2, parent: 1, origin: null, secure: null }, frameAttributes)
+            ).toBe(response);
 
             expect(tabsSendMessage).toHaveBeenCalledWith(
                 tabId,
@@ -46,7 +46,7 @@ describe('inline service', () => {
         });
 
         test('should handle main frame (frameId 0)', async () => {
-            const frames = new Map([[0, { parent: null, frameId: 0, origin: null }]]);
+            const frames = new Map([[0, { parent: null, frameId: 0, origin: null, secure: null }]]);
             const result = await service.getFrameCoords(
                 tabId,
                 0,
@@ -55,7 +55,7 @@ describe('inline service', () => {
             );
 
             expect(result).toEqual({
-                frame: { parent: null, frameId: 0, origin: null },
+                frame: { parent: null, frameId: 0, origin: null, secure: null },
                 frameAttributes,
                 coords: { top: 110, left: 220 },
             });
@@ -70,9 +70,9 @@ describe('inline service', () => {
             </frame>
             */
             const frames = new Map([
-                [0, { parent: null, frameId: 0, origin: null }],
-                [1, { parent: 0, frameId: 1, origin: null }],
-                [2, { parent: 1, frameId: 2, origin: null }],
+                [0, { parent: null, frameId: 0, origin: null, secure: null }],
+                [1, { parent: 0, frameId: 1, origin: null, secure: null }],
+                [2, { parent: 1, frameId: 2, origin: null, secure: null }],
             ]);
 
             tabsSendMessage
@@ -102,7 +102,7 @@ describe('inline service', () => {
             /** Coordinate accumulation: 5+15+30=50, 10+25+35=70
              * Stops at Frame 1 (parent is Frame 0, the main frame) */
             expect(result).toEqual({
-                frame: { parent: 0, frameId: 1, origin: null },
+                frame: { parent: 0, frameId: 1, origin: null, secure: null },
                 frameAttributes,
                 coords: { top: 50, left: 70 },
             });
@@ -115,8 +115,8 @@ describe('inline service', () => {
             </frame>
             */
             const frames = new Map([
-                [0, { parent: null, frameId: 0, origin: null }],
-                [1, { parent: 0, frameId: 1, origin: null }],
+                [0, { parent: null, frameId: 0, origin: null, secure: null }],
+                [1, { parent: 0, frameId: 1, origin: null, secure: null }],
             ]);
 
             const query = { coords: { top: 50, left: 75 }, frameAttributes };
@@ -130,8 +130,8 @@ describe('inline service', () => {
             </frame>
             */
             const frames = new Map([
-                [0, { parent: null, frameId: 0, origin: null }],
-                [1, { parent: 0, frameId: 1, origin: null }],
+                [0, { parent: null, frameId: 0, origin: null, secure: null }],
+                [1, { parent: 0, frameId: 1, origin: null, secure: null }],
             ]);
 
             const query = { coords: { top: 50, left: 75 }, frameAttributes };

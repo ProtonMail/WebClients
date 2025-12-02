@@ -29,8 +29,8 @@ import {
     isSandboxedFrame,
 } from 'proton-pass-extension/app/content/utils/frame';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import 'proton-pass-extension/lib/polyfills/shim';
 import { getNodePosition } from 'proton-pass-extension/lib/utils/dom';
-import 'proton-pass-extension/lib/utils/polyfills';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { MaybeNull } from '@proton/pass/types';
