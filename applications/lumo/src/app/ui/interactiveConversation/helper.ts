@@ -462,6 +462,7 @@ export type UiContext = {
     enableExternalToolsToggled: boolean;
     enableSmoothing?: boolean;
     navigateCallback?: (conversationId: ConversationId) => void;
+    isGhostMode?: boolean;
 };
 
 export function sendMessage({
@@ -480,17 +481,15 @@ export function sendMessage({
             return undefined;
         }
 
+        const state = getState();
+
         const [date1, date2] = createDatePair();
         const lastMessage = c.messageChain.at(-1);
-
-        // Check if ghost mode is enabled
-        const state = getState();
-        const isGhostMode = state.ghostChat?.isGhostChatMode || false;
 
         // TODO: check if this is needed, should be handled in useLumoActions
         let { conversationId, spaceId } = c;
         if (!spaceId || !conversationId) {
-            ({ conversationId, spaceId } = initializeNewSpaceAndConversation(dispatch, date1, isGhostMode));
+            ({ conversationId, spaceId } = initializeNewSpaceAndConversation(dispatch, date1, ui.isGhostMode));
         } else {
             dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         }
