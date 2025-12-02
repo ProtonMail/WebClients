@@ -7,9 +7,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Vr } from '@proton/atoms/Vr/Vr';
+import TodayIcon from '@proton/components/components/icon/TodayIcon';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import TodayIcon from '@proton/components/components/icon/TodayIcon';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import clsx from '@proton/utils/clsx';
 
@@ -45,6 +45,7 @@ export interface Props {
     fixedSize?: boolean;
     preventLeaveFocus?: boolean;
     todayTitle?: string;
+    miniCalendarNextPrevButtonsColor?: 'weak' | 'norm';
 }
 
 const MiniCalendar = ({
@@ -85,6 +86,7 @@ const MiniCalendar = ({
     fixedSize = false,
     preventLeaveFocus = false,
     todayTitle,
+    miniCalendarNextPrevButtonsColor = 'weak',
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
     const [cellWidth, setCellWidth] = useState(0);
@@ -167,14 +169,14 @@ const MiniCalendar = ({
         <div className="minicalendar" onMouseDown={handleMouseDown} aria-label={monthLabel}>
             <h2 className="sr-only">{c('Title').t`Minicalendar`}</h2>
             <div className="flex items-center flex-nowrap p-3 pt-1">
-                <span className="text-bold flex-1 text-ellipsis">{monthLabel}</span>
+                <span className="text-bold flex-1 text-ellipsis minicalendar-month-label">{monthLabel}</span>
 
                 {hasToday ? (
                     <Tooltip title={todayTitle}>
                         <Button
                             icon
                             shape="ghost"
-                            color="weak"
+                            color={miniCalendarNextPrevButtonsColor}
                             size="small"
                             onClick={() => onSelectDate?.(now)}
                             disabled={(min && +now < +min) || (max && +now > +max)}
@@ -192,8 +194,8 @@ const MiniCalendar = ({
                             <Button
                                 icon
                                 shape="ghost"
-                                className="rtl:mirror"
-                                color="weak"
+                                className="rtl:mirror minicalendar-next-prev-button"
+                                color={miniCalendarNextPrevButtonsColor}
                                 size="small"
                                 disabled={min && startOfMonth(addMonths(activeDate, -1)) < startOfMonth(min)}
                                 onClick={() => handleSwitchMonth(-1)}
@@ -206,8 +208,8 @@ const MiniCalendar = ({
                             <Button
                                 icon
                                 shape="ghost"
-                                className="rtl:mirror"
-                                color="weak"
+                                className="rtl:mirror minicalendar-next-prev-button"
+                                color={miniCalendarNextPrevButtonsColor}
                                 size="small"
                                 disabled={max && endOfMonth(addMonths(activeDate, 1)) > endOfMonth(max)}
                                 onClick={() => handleSwitchMonth(1)}

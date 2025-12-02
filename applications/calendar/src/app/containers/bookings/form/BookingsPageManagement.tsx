@@ -112,6 +112,7 @@ export const Form = () => {
                         }}
                         assistContainerClassName="hidden"
                         fullWidth={false}
+                        dropdownClassName="w-fit-content"
                     >
                         {locationOptions.map((option) => (
                             <Option key={option.value} value={option.value} title={option.text}>
