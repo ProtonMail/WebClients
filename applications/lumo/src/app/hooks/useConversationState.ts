@@ -9,36 +9,25 @@ interface UseConversationStateProps {
     spaceId?: SpaceId;
 }
 
-export const useConversationState = ({ conversationId, spaceId }: UseConversationStateProps) => {
+export const useConversationState = (props: UseConversationStateProps) => {
     const dispatch = useLumoDispatch();
     const { isGhostChatMode } = useGhostChat();
-    // const generatedConversationIdRef = useRef<ConversationId | null>(null);
 
-    const ensureConversationAndSpace = (
-        inputConversationId?: ConversationId,
-        inputSpaceId?: SpaceId
-    ): { conversationId: ConversationId; spaceId: SpaceId; datePair?: [string, string] } => {
-        if (inputSpaceId && inputConversationId) {
-            return { conversationId: inputConversationId, spaceId: inputSpaceId };
+    const ensureConversationAndSpace = (): Required<UseConversationStateProps> => {
+        if (props.spaceId && props.conversationId) {
+            return { conversationId: props.conversationId, spaceId: props.spaceId };
         }
 
         const now = createDate();
-        const { conversationId: newConversationId, spaceId: newSpaceId } = initializeNewSpaceAndConversation(
-            dispatch,
-            now,
-            isGhostChatMode
-        );
-
-        // generatedConversationIdRef.current = newConversationId;
+        const { conversationId, spaceId } = initializeNewSpaceAndConversation(dispatch, now, isGhostChatMode);
 
         return {
-            conversationId: newConversationId,
-            spaceId: newSpaceId,
+            conversationId,
+            spaceId,
         };
     };
 
     return {
         ensureConversationAndSpace,
-        // generatedConversationIdRef,
     };
 };
