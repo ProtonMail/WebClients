@@ -2898,11 +2898,11 @@
       "Doesn't end": [
         "Neukončovat"
       ],
-      "End after": [
-        "Ukončit po"
+      "Ends after": [
+        "Končí po"
       ],
-      "End on": [
-        "Ukončit v"
+      "Ends on": [
+        "Končí"
       ],
       "event": [
         "událost",
@@ -3729,6 +3729,9 @@
       "Last name is too long": [
         "Příjmení je příliš dlouhé"
       ],
+      "Location is required": [
+        "Poloha je povinná"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
         "Sloučit alespoň ${ calendarsToFixCount } kalendáře se ${ BRAND_NAME } existujícími kalendáři",
@@ -3810,9 +3813,6 @@
       "Payment process not supported": [
         "Platební proces není podporován"
       ],
-      "Periods is too short": [
-        "Časové intervaly jsou příliš krátké"
-      ],
       "Please activate your search again": [
         "Prosím, aktivujte znovu vyhledávání"
       ],
@@ -3872,6 +3872,9 @@
       ],
       "Process aborted": [
         "Proces přerušen"
+      ],
+      "Range is too short": [
+        "Rozsah je příliš krátký"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Odstraněn duplicitní příjemce: ${ joinedRecipients }",
@@ -5396,8 +5399,8 @@
       "Cannot create booking range across days": [
         "Nelze vytvořit rozsah rezervace přesahující několik dní"
       ],
-      "Cannot create booking range in the past": [
-        "Nelze vytvořit rozsah rezervace v minulosti"
+      "Cannot create booking range in the past.": [
+        "Nelze vytvořit rozsah rezervace v minulosti."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
@@ -5446,9 +5449,6 @@
       ],
       "Copy your referral link": [
         "Kopírovat váš doporučující odkaz"
-      ],
-      "Could not verify signature over booking page data": [
-        "Nelze ověřit podpis nad údaji rezervační stránky"
       ],
       "Country code": [
         "Kód země"
@@ -5660,9 +5660,6 @@
       "Host": [
         "Hostitel"
       ],
-      "Host signature verification failed": [
-        "Selhalo ověření podpisu hostitele"
-      ],
       "How long should an appointment last?": [
         "Jak dlouho by měla trvat schůzka?"
       ],
@@ -5840,6 +5837,9 @@
       "New": [
         "Nově"
       ],
+      "No appointments available": [
+        "Žádné schůzky k dispozici"
+      ],
       "No appointments available this week": [
         "Na tento týden nejsou k dispozici žádné události"
       ],
@@ -5851,6 +5851,9 @@
       ],
       "No email address": [
         "Žádná e-mailová adresa"
+      ],
+      "No future appointments available": [
+        "Žádné budoucí schůzky k dispozici"
       ],
       "No group found": [
         "Nebyla nalezena žádná skupina"
@@ -6167,6 +6170,9 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji vlastník nejdříve povolit."
       ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Tuto rezervační stránku nelze upravovat, přidružený kalendář je deaktivován"
+      ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Tato rezervace byla provedena prostřednictvím aplikace ${ CALENDAR_APP_NAME }, která je součástí sady produktů ${ BRAND_NAME } zaměřených na ochranu soukromí."
       ],
@@ -6310,6 +6316,9 @@
       ],
       "What do you want to call this booking page?": [
         "Jak chcete pojmenovat tuto rezervační stránku?"
+      ],
+      "When can appointments be booked?": [
+        "Kdy je možné rezervovat schůzky?"
       ],
       "When working remotely": [
         "Při práci na dálku"

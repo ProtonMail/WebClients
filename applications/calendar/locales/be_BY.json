@@ -2898,11 +2898,11 @@
       "Doesn't end": [
         "Не завяршаць"
       ],
-      "End after": [
+      "Ends after": [
         "Завершыцца пасля"
       ],
-      "End on": [
-        "Завершыцца ў"
+      "Ends on": [
+        "Завершыцца"
       ],
       "event": [
         "падзея",
@@ -3729,6 +3729,9 @@
       "Last name is too long": [
         "Занадта доўгае прозвішча"
       ],
+      "Location is required": [
+        "Уключыце службы геалакацыі"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
         "Аб'яднайце прынамсі ${ calendarsToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
@@ -3810,9 +3813,6 @@
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
       ],
-      "Periods is too short": [
-        "Занадта кароткі перыяд"
-      ],
       "Please activate your search again": [
         "Актывуйце пошук яшчэ раз"
       ],
@@ -3872,6 +3872,9 @@
       ],
       "Process aborted": [
         "Працэс перарваны"
+      ],
+      "Range is too short": [
+        "Занадта кароткі дыяпазон"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Выдалены дублікат атрымальніка: ${ joinedRecipients }",
@@ -5396,9 +5399,6 @@
       "Cannot create booking range across days": [
         "Немагчыма стварыць дыяпазон браніравання на некалькі дзён"
       ],
-      "Cannot create booking range in the past": [
-        "Немагчыма стварыць дыяпазон браніравання ў мінулым"
-      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам адхіліць гэту абвестку."
       ],
@@ -5446,9 +5446,6 @@
       ],
       "Copy your referral link": [
         "Скапіяваць сваю рэферальную спасылку"
-      ],
-      "Could not verify signature over booking page data": [
-        "Не ўдалося праверыць подпіс дадзеных старонкі браніравання"
       ],
       "Country code": [
         "Код краіны"
@@ -5660,9 +5657,6 @@
       "Host": [
         "Вядучы"
       ],
-      "Host signature verification failed": [
-        "Збой спраўджання подпісу вядучага"
-      ],
       "How long should an appointment last?": [
         "Як доўга павінна доўжыцца сустрэча?"
       ],
@@ -5785,6 +5779,9 @@
       ],
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
+      ],
+      "Loading appointments...": [
+        "Загрузка сустрэчы..."
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
@@ -6169,6 +6166,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Гэта старонка браніравання не можа быць адрэдагавана. Звязаны каляндар адключаны."
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Гэта браніраванне было зроблена праз ${ CALENDAR_APP_NAME }, частка набору прадуктаў ${ BRAND_NAME }, якая арыентавана на прыватнасць."

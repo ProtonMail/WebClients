@@ -2847,11 +2847,11 @@
       "Doesn't end": [
         "끝나지 않음"
       ],
-      "End after": [
-        "다음 날짜 이후 종료:"
+      "Ends after": [
+        "이 날짜 이후 종료됨"
       ],
-      "End on": [
-        "다음 날짜에 종료:"
+      "Ends on": [
+        "다음 날짜에 종료됨"
       ],
       "event": [
         "이벤트"
@@ -3645,6 +3645,9 @@
       "Last name is too long": [
         "성(이름)이 너무 깁니다."
       ],
+      "Location is required": [
+        "위치가 필요합니다"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
       ],
@@ -3717,9 +3720,6 @@
       "Payment process not supported": [
         "지원하지 않는 결제수단"
       ],
-      "Periods is too short": [
-        "기간이 너무 짧습니다"
-      ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
       ],
@@ -3776,6 +3776,9 @@
       ],
       "Process aborted": [
         "과정 중단됨"
+      ],
+      "Range is too short": [
+        "기간이 너무 짧습니다"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "중복된 수신자를 삭제했습니다: ${ joinedRecipients }"
@@ -5180,9 +5183,6 @@
       "Cannot create booking range across days": [
         "여러 날에 걸쳐 예약 범위를 생성할 수 없습니다."
       ],
-      "Cannot create booking range in the past": [
-        "과거로 예약 범위를 설정할 수 없습니다"
-      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
       ],
@@ -5230,9 +5230,6 @@
       ],
       "Copy your referral link": [
         "당신의 추천인 링크를 공유하세요"
-      ],
-      "Could not verify signature over booking page data": [
-        "예약 페이지 데이터 이상으로 서명을 확인할 수 없습니다"
       ],
       "Country code": [
         "국가 코드"
@@ -5431,9 +5428,6 @@
       ],
       "Host": [
         "호스트"
-      ],
-      "Host signature verification failed": [
-        "주최자 서명 검증 실패"
       ],
       "How long should an appointment last?": [
         "일정 소요시간이 얼마입니까?"
@@ -5932,6 +5926,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "이 예야페이지는 수정할 수 없습니다. 연관된 캘린더가 비활성화되었습니다."
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "이 예약 페이지는 ${ BRAND_NAME }의 프라이버시 보호 우선 스위트 중 하나인 ${ CALENDAR_APP_NAME }로 생성되었습니다."
@@ -8147,7 +8144,7 @@
         "${ priceLine }부터 시작"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고 나면 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
+        "할인된 가격인 ${ priceCoupon }은(는) 첫 달간 유효합니다. 그 이후 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."

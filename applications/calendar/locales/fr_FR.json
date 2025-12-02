@@ -2864,11 +2864,11 @@
       "Doesn't end": [
         "Sans date de fin"
       ],
-      "End after": [
+      "Ends after": [
         "Se termine après"
       ],
-      "End on": [
-        "Termine le"
+      "Ends on": [
+        "Se termine le"
       ],
       "event": [
         "événement",
@@ -3670,6 +3670,9 @@
       "Last name is too long": [
         "Le nom de famille est trop long."
       ],
+      "Location is required": [
+        "L'emplacement est requis"
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
         "Fusionnez au moins ${ calendarsToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
@@ -3745,9 +3748,6 @@
       "Payment process not supported": [
         "Le traitement du paiement n'est pas pris en charge."
       ],
-      "Periods is too short": [
-        "La période est trop courte."
-      ],
       "Please activate your search again": [
         "Veuillez réactiver votre recherche."
       ],
@@ -3805,6 +3805,9 @@
       ],
       "Process aborted": [
         "Le processus a été abandonné."
+      ],
+      "Range is too short": [
+        "La plage est trop courte."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Le destinataire dupliqué a été retiré : ${ joinedRecipients }",
@@ -5249,8 +5252,8 @@
       "Cannot create booking range across days": [
         "Impossible de créer une plage de réservation s'étendant sur plusieurs jours"
       ],
-      "Cannot create booking range in the past": [
-        "Impossible de créer une plage de réservation dans le passé"
+      "Cannot create booking range in the past.": [
+        "Impossible de créer une plage de réservation dans le passé."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -5299,9 +5302,6 @@
       ],
       "Copy your referral link": [
         "Copiez votre lien de parrainage."
-      ],
-      "Could not verify signature over booking page data": [
-        "Impossible de vérifier la signature des données de la page de réservation"
       ],
       "Country code": [
         "Indicatif du pays"
@@ -5504,9 +5504,6 @@
       ],
       "Host": [
         "Hôte"
-      ],
-      "Host signature verification failed": [
-        "La signature de l'hôte n'a pas pu être vérifiée."
       ],
       "How long should an appointment last?": [
         "Combien de temps un rendez-vous doit-il durer ?"
@@ -6009,6 +6006,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Cette page de réservation ne peut pas être modifiée, le calendrier associé a été désactivé."
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
         "Cette réservation a été effectuée via ${ CALENDAR_APP_NAME }, qui fait partie de la suite de produits axés sur la protection de la vie privée de ${ BRAND_NAME }."
