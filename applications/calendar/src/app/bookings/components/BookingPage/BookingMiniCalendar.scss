@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 .booking-day-with-slots {
 	&::before {
 		background-color: var(--interaction-norm-minor-1);
@@ -5,5 +7,46 @@
 
 	&:hover::before {
 		background-color: var(--interaction-norm-minor-2);
+	}
+}
+
+/* Booking mini calendar dropdownoverrides, so we don't break mini-calendar styles */
+.booking-mini-calendar {
+	inline-size: rem(250);
+
+	&#{&} {
+		border: 0;
+	}
+
+	.minicalendar-month-label,
+	.minicalendar-weekdays {
+		font-size: rem(14);
+		font-weight: var(--font-weight-semibold);
+		color: var(--booking-color-title);
+
+		.text-strong {
+			font-weight: inherit;
+		}
+	}
+
+	.minicalendar-weekdays {
+		font-size: rem(12);
+	}
+
+	.minicalendar-grid {
+		padding-inline: var(--space-2);
+		padding-block: 0;
+		gap: rem(4);
+	}
+
+	.minicalendar-next-prev-button,
+	.minicalendar-day {
+		&,
+		&::before,
+		&::after {
+			border-radius: var(--border-radius-full);
+			inline-size: rem(28);
+			block-size: rem(28);
+		}
 	}
 }
