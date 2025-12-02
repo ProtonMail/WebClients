@@ -68,7 +68,7 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
     const [loading, setLoading] = useState(false);
 
     const handleRequestSubmit = () => signup.accountForm.refs.form.current?.requestSubmit();
-    const { emailInput, loadingChallenge } = useEmailInput({ autoFocus: true, onSubmit: handleRequestSubmit, loading });
+    const { emailInput, loadingChallenge } = useEmailInput({ autoFocus: true, onSubmit: handleRequestSubmit, loading, inputClassName: 'pass-signup-input' });
     const { passwordInputs } = usePasswordInputSpotlight({ loading });
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
