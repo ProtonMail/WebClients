@@ -55,12 +55,15 @@ export const useExternalBookingActions = () => {
                 getVTimezonesMap,
             });
 
+            const AttendeeSharedKeyPacket = undefined;
+
             await api(
                 confirmBookingSlot(bookingUidBase64Url, timeslot.id, {
                     ContentPart: submissionData.contentPart,
                     TimePart: submissionData.timePart,
                     AttendeeData: submissionData.attendeeData,
                     AttendeeToken: submissionData.attendeeToken,
+                    AttendeeSharedKeyPacket,
                     EmailData: {
                         Name: submissionData.emailData.name,
                         Email: submissionData.emailData.email,
