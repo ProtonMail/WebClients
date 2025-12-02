@@ -3,7 +3,6 @@
     width: 33.333333%;
     padding-top: 8px;
     padding-right: 16px;
-    padding-bottom: 24px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -24,16 +23,15 @@
     flex-wrap: nowrap;
     width: 100%;
     border-radius: 12px;
-    background-color: var(--background-weak);
-    box-shadow: var(--shadow-lifted);
-    height: 100%;
+    background-color: transparent;
+    height: 75vh;
+		overflow-y: hidden;
     padding: 16px;
 }
 
 .project-files-section {
     padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid var(--border-weak);
 
     &:last-child {
         border-bottom: none;
@@ -58,15 +56,25 @@
 
 .project-files-section-content {
     min-height: 60px;
+
+		&.files-section {
+			background-color: white;
+			border: 1px solid var(--border-weak);
+			border-radius: var(--border-radius-xl);
+			padding: 20px;
+		}
 }
 
 .project-instructions-text {
     font-size: 14px;
     line-height: 1.5;
-    color: var(--text-norm);
+    color: var(--text-weak);
     margin: 0;
     white-space: pre-wrap;
     word-wrap: break-word;
+		border: 1px solid var(--border-weak);
+		border-radius: var(--border-radius-xl);
+		padding: 15px;
 }
 
 .project-instructions-add {
@@ -76,7 +84,7 @@
     width: 100%;
     padding: 12px;
     background-color: var(--background-weak);
-    border: 1px dashed var(--border-norm);
+    border: 1px solid var(--border-norm);
     border-radius: 8px;
     cursor: pointer;
     font-size: 13px;

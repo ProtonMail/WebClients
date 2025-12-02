@@ -130,11 +130,14 @@ export const ComposerComponent = ({
         }
     }, []);
 
+    const [isAutocompleteActive, setIsAutocompleteActive] = useState(false);
+
     const { editor, handleSubmit } = useTipTapEditor({
         onSubmitCallback: sendGenerateMessage,
         hasTierErrors,
         isGenerating,
         isProcessingAttachment,
+        isAutocompleteActive,
         onFocus: () => setIsEditorFocused?.(true),
         onBlur: () => setIsEditorFocused?.(false),
     });
@@ -239,6 +242,7 @@ export const ComposerComponent = ({
                             onSubmit={handleSubmit}
                             spaceId={spaceId}
                             messageChain={messageChain}
+                            onAutocompleteStateChange={setIsAutocompleteActive}
                         />
                         <ComposerToolbar
                             fileInputRef={fileInputRef}
