@@ -8,6 +8,7 @@ import { TimeZoneSelector } from '@proton/components/components/timezoneSelector
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -54,6 +55,7 @@ export const BookingHeader = ({ gridSize, availabilityState }: Props) => {
                     timezone={selectedTimezone || bookingDetails?.timezone || getTimezone()}
                     onChange={setSelectedTimezone}
                     unstyledSelect
+                    prefixIcon={<IcGlobe className="mr-2" />}
                     // telemetrySource="temporary_timezone"
                     // abbreviatedTimezone={breakpoint === 'small' ? 'offset' : undefined}
                 />
