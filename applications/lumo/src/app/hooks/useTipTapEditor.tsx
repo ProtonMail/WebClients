@@ -16,6 +16,7 @@ interface UseTipTapEditorProps {
     isGenerating?: boolean;
     isProcessingAttachment?: boolean;
     isAutocompleteActive?: boolean;
+    isAutocompleteActiveRef?: React.MutableRefObject<boolean>;
     onFocus?: () => void;
     onBlur?: () => void;
 }
@@ -27,15 +28,20 @@ const useTipTapEditor = ({
     isGenerating,
     isProcessingAttachment,
     isAutocompleteActive,
+    isAutocompleteActiveRef: externalRef,
     onFocus,
     onBlur,
 }: UseTipTapEditorProps) => {
-    // Use ref to track autocomplete state so it's always current in event handlers
-    const isAutocompleteActiveRef = React.useRef(isAutocompleteActive ?? false);
+    // Use external ref if provided, otherwise create internal ref
+    const internalRef = React.useRef(isAutocompleteActive ?? false);
+    const isAutocompleteActiveRef = externalRef || internalRef;
     
+    // Update internal ref if external ref not provided
     React.useEffect(() => {
-        isAutocompleteActiveRef.current = isAutocompleteActive ?? false;
-    }, [isAutocompleteActive]);
+        if (!externalRef && isAutocompleteActive !== undefined) {
+            isAutocompleteActiveRef.current = isAutocompleteActive;
+        }
+    }, [isAutocompleteActive, externalRef, isAutocompleteActiveRef]);
 
     const editor = useEditor({
         extensions: [

@@ -29,6 +29,7 @@ import { sendMessage } from '../interactiveConversation/helper';
 import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
 import { ComposerComponent } from '../interactiveConversation/composer/ComposerComponent';
 import { FilesManagementView } from '../components/Files/KnowledgeBase/FilesManagementView';
+import { HeaderWrapper } from '../header/HeaderWrapper';
 import { getProjectCategory } from './constants';
 import { useProjectActions } from './hooks/useProjectActions';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
@@ -60,10 +61,42 @@ const ProjectDetailViewInner = () => {
 
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
     const conversations = useLumoSelector((state) => selectConversationsBySpaceId(projectId)(state));
-    const conversationList = Object.values(conversations);
+    const allConversations = Object.values(conversations);
+    
+    // Sort conversations by date (most recent first)
+    const sortedConversations = [...allConversations].sort((a, b) => {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    });
+    
+    // Group conversations by date sections
+    const now = new Date();
+    const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const sevenDaysAgo = new Date(todayStart);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    
+    const todayConversations: typeof sortedConversations = [];
+    const last7DaysConversations: typeof sortedConversations = [];
+    const olderConversations: typeof sortedConversations = [];
+    
+    sortedConversations.forEach((conversation) => {
+        const createdAt = new Date(conversation.createdAt);
+        const conversationDate = new Date(createdAt.getFullYear(), createdAt.getMonth(), createdAt.getDate());
+        const conversationTime = conversationDate.getTime();
+        const todayTime = todayStart.getTime();
+        const sevenDaysAgoTime = sevenDaysAgo.getTime();
+        
+        if (conversationTime === todayTime) {
+            todayConversations.push(conversation);
+        } else if (conversationTime >= sevenDaysAgoTime) {
+            last7DaysConversations.push(conversation);
+        } else {
+            olderConversations.push(conversation);
+        }
+    });
+    
     const spaceAttachments = useLumoSelector((state) => selectAttachmentsBySpaceId(projectId)(state));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
-    const { isVisible: isSideMenuOpen, toggle: toggleSideMenu, isSmallScreen } = useSidebar();
+    const { isSmallScreen } = useSidebar();
     const [isMobileViewport, setIsMobileViewport] = useState(false);
 
     // Check if viewport is <= 768px (matches CSS breakpoint)
@@ -147,9 +180,9 @@ const ProjectDetailViewInner = () => {
 
     if (!space || !space.isProject) {
         return (
-            <div className="project-detail-not-found">
+            <div className="project-detail-not-found flex flex-column items-center justify-center">
                 <Icon name="exclamation-circle" size={4} />
-                <h2>{c('collider_2025:Error').t`Project not found`}</h2>
+                <h2 className="text-lg">{c('collider_2025:Error').t`Project not found`}</h2>
                 <Button onClick={() => history.push('/projects')}>
                     {c('collider_2025:Button').t`Back to projects`}
                 </Button>
@@ -211,7 +244,7 @@ const ProjectDetailViewInner = () => {
         return [];
     };
 
-    const promptSuggestions = conversationList.length === 0 ? getPromptSuggestions() : [];
+    const promptSuggestions = sortedConversations.length === 0 ? getPromptSuggestions() : [];
 
     // Create a Project object for the delete modal
     const projectForModal: Project = {
@@ -219,7 +252,7 @@ const ProjectDetailViewInner = () => {
         name: projectName,
         description: projectInstructions,
         fileCount,
-        conversationCount: conversationList.length,
+        conversationCount: sortedConversations.length,
         spaceId: projectId,
     };
 
@@ -228,29 +261,75 @@ const ProjectDetailViewInner = () => {
     };
 
     return (
-        <div className="project-detail-view">
-            {/* Header */}
-            <div className={`project-detail-header ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}>
-                {isSmallScreen && (
-                    <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5} />
-                )}
-                <div className="project-detail-header-content">
-                    <Button
-                        icon
-                        shape="ghost"
-                        onClick={() => history.push('/projects')}
-                        className="project-detail-back-button"
-                        title={c('collider_2025:Action').t`Back to projects`}
-                    >
-                        <Icon name="arrow-left" className="mr-1" />
-                        <span className="project-detail-back-text">{c('collider_2025:Navigation').t`All projects`}</span>
-                    </Button>
-                    <div className="project-detail-title-section">
-                        <Icon name={category.icon as any} size={6} className="project-detail-title-icon" />
-                        <h1 className="project-detail-title">{projectName}</h1>
+        <div className="project-detail-view flex flex-column">
+            {isSmallScreen && (
+                <HeaderWrapper>
+                    <div className="flex flex-row items-center gap-1">
+                        {/* Empty - header actions can go here if needed */}
                     </div>
+                </HeaderWrapper>
+            )}
+            <div className={`project-detail-header flex flex-nowrap items-baseline ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}>
+                <div className="project-detail-header-content flex flex-column">
+                    {!isSmallScreen && (
+                        <Button
+                            icon
+                            shape="ghost"
+                            onClick={() => history.push('/projects')}
+                            className="project-detail-back-button flex items-center text-sm"
+                            title={c('collider_2025:Action').t`Back to projects`}
+                        >
+                            <Icon name="arrow-left" className="mr-1" />
+                            <span className="project-detail-back-text">{c('collider_2025:Navigation').t`All projects`}</span>
+                        </Button>
+                    )}
+                    <div className="project-detail-title-section flex items-center">
+                        <Icon name={category.icon as any} size={6} className="project-detail-title-icon shrink-0" />
+                        <h1 className="project-detail-title text-2xl">{projectName}</h1>
+                    </div>
+                    {isMobileViewport && (
+                        <div className="project-detail-actions-mobile flex items-end">
+                            <Button
+                                shape="ghost"
+                                onClick={() => {
+                                    sidebarModal.openModal(true);
+                                }}
+                                title={c('collider_2025:Action').t`Show instructions and files`}
+                                className="project-detail-settings-button flex items-center"
+                            >
+                                <Icon name="list-bullets" className="mr-1" />
+                                <span>
+                                    {c('collider_2025:Action').t`Show settings`}
+                                </span>
+                            </Button>
+                            <Button
+                                ref={anchorRef}
+                                icon
+                                shape="ghost"
+                                onClick={toggle}
+                                title={c('collider_2025:Action').t`More options`}
+                            >
+                                <Icon name="three-dots-vertical" />
+                            </Button>
+                            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+                                <DropdownMenu>
+                                    <DropdownMenuButton
+                                        className="text-left color-danger"
+                                        onClick={() => {
+                                            close();
+                                            deleteModal.openModal(true);
+                                        }}
+                                    >
+                                        <Icon name="trash" className="mr-2" />
+                                        {c('collider_2025:Action').t`Delete project`}
+                                    </DropdownMenuButton>
+                                </DropdownMenu>
+                            </Dropdown>
+                        </div>
+                    )}
                 </div>
-                <div className="project-detail-actions">
+                {!isMobileViewport && (
+                    <div className="project-detail-actions flex items-end">
                     <Button
                         shape="ghost"
                         onClick={() => {
@@ -267,7 +346,7 @@ const ProjectDetailViewInner = () => {
                                 ? c('collider_2025:Action').t`Hide sidebar`
                                 : c('collider_2025:Action').t`Show sidebar`
                         }
-                        className="project-detail-settings-button"
+                        className="project-detail-settings-button flex items-center"
                     >
                         <Icon name={isMobileViewport ? 'list-bullets' : showSidebar ? 'chevron-right' : 'meet-settings'} className="mr-1" />
                         <span>
@@ -300,26 +379,28 @@ const ProjectDetailViewInner = () => {
                             </DropdownMenuButton>
                         </DropdownMenu>
                     </Dropdown>
-                </div>
+                    </div>
+                )}
             </div>
 
-            <div className={`project-detail-content ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}>
-                {/* Main area */}
-                <div className="project-detail-main">
-                    {conversationList.length === 0 ? (
-                        <div className="project-detail-empty">
-                            <div className="project-detail-empty-icon">
+            <div className={`project-detail-content flex flex-row flex-nowrap flex-1 relative overflow-hidden ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}>
+                {/* Main area - similar to 'outer' in lumo-chat-container */}
+                <div className="outer flex flex-column flex-nowrap flex-1">
+                    <div className="project-detail-main flex flex-column justify-center items-center">
+                    {sortedConversations.length === 0 ? (
+                        <div className="project-detail-empty flex flex-column items-center justify-center flex-1">
+                            <div className="project-detail-empty-icon flex items-center justify-center">
                                 <Icon name="speech-bubble" size={12} />
                             </div>
-                            <h2 className="project-detail-empty-title">
+                            <h2 className="project-detail-empty-title text-lg">
                                 {c('collider_2025:Title').t`Start a new project conversation`}
                             </h2>
                             {promptSuggestions.length > 0 && (
-                                <div className="project-detail-prompt-suggestions">
+                                <div className="project-detail-prompt-suggestions flex flex-column">
                                     {promptSuggestions.map((suggestion, index) => (
                                         <button
                                             key={index}
-                                            className="project-detail-prompt-suggestion"
+                                            className="project-detail-prompt-suggestion text-sm"
                                             onClick={() => setSuggestedPrompt(suggestion)}
                                         >
                                             {suggestion}
@@ -329,40 +410,101 @@ const ProjectDetailViewInner = () => {
                             )}
                         </div>
                     ) : (
-                        <div className="project-detail-conversations pt-5">
+                        <div className="project-detail-conversations flex flex-column pt-5">
+                            <div className="project-detail-conversation-list flex flex-column">
+                                {todayConversations.length > 0 && (
+                                    <>
+                                        <h3 className="project-detail-section-title text-sm">
+                                            {c('collider_2025:Title').t`Today`}
+                                        </h3>
+                                        {todayConversations.map((conversation) => {
+                                            const createdAt = new Date(conversation.createdAt);
+                                            const formattedDate = createdAt.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
 
-                            <div className="project-detail-conversation-list">
-                                {conversationList.map((conversation) => {
-                                    const createdAt = new Date(conversation.createdAt);
-                                    const isToday = createdAt.toDateString() === new Date().toDateString();
-                                    const formattedDate = isToday
-                                        ? createdAt.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
-                                        : createdAt.toLocaleDateString([], { month: 'short', day: 'numeric' });
+                                            return (
+                                                <button
+                                                    key={conversation.id}
+                                                    className="project-detail-conversation-item flex items-center"
+                                                    onClick={() => history.push(`/c/${conversation.id}`)}
+                                                >
+                                                    <div className="project-detail-conversation-content flex flex-column flex-1">
+                                                        <span className="project-detail-conversation-title text-md">
+                                                            {conversation.title || c('collider_2025:Label').t`Untitled chat`}
+                                                        </span>
+                                                        <span className="project-detail-conversation-date text-xs">
+                                                            {formattedDate}
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            );
+                                        })}
+                                    </>
+                                )}
+                                
+                                {last7DaysConversations.length > 0 && (
+                                    <>
+                                        <h3 className="project-detail-section-title text-sm">
+                                            {c('collider_2025:Title').t`Last 7 days`}
+                                        </h3>
+                                        {last7DaysConversations.map((conversation) => {
+                                            const createdAt = new Date(conversation.createdAt);
+                                            const formattedDate = createdAt.toLocaleDateString([], { month: 'short', day: 'numeric' });
 
-                                    return (
-                                        <button
-                                            key={conversation.id}
-                                            className="project-detail-conversation-item"
-                                            onClick={() => history.push(`/c/${conversation.id}`)}
-                                        >
-                                            <div className="project-detail-conversation-content">
-                                                <span className="project-detail-conversation-title">
-                                                    {conversation.title || c('collider_2025:Label').t`Untitled chat`}
-                                                </span>
-                                                <span className="project-detail-conversation-date">
-                                                    {formattedDate}
-                                                </span>
-                                            </div>
-                                            <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow" />
-                                        </button>
-                                    );
-                                })}
+                                            return (
+                                                <button
+                                                    key={conversation.id}
+                                                    className="project-detail-conversation-item flex items-center"
+                                                    onClick={() => history.push(`/c/${conversation.id}`)}
+                                                >
+                                                    <div className="project-detail-conversation-content flex flex-column flex-1">
+                                                        <span className="project-detail-conversation-title text-md">
+                                                            {conversation.title || c('collider_2025:Label').t`Untitled chat`}
+                                                        </span>
+                                                        <span className="project-detail-conversation-date text-xs">
+                                                            {formattedDate}
+                                                        </span>
+                                                    </div>
+                                                    <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
+                                                </button>
+                                            );
+                                        })}
+                                    </>
+                                )}
+                                
+                                {olderConversations.length > 0 && (
+                                    <>
+                                        <h3 className="project-detail-section-title text-sm">
+                                            {c('collider_2025:Title').t`Older`}
+                                        </h3>
+                                        {olderConversations.map((conversation) => {
+                                            const createdAt = new Date(conversation.createdAt);
+                                            const formattedDate = createdAt.toLocaleDateString([], { month: 'short', day: 'numeric' });
+
+                                            return (
+                                                <button
+                                                    key={conversation.id}
+                                                    className="project-detail-conversation-item flex items-center"
+                                                    onClick={() => history.push(`/c/${conversation.id}`)}
+                                                >
+                                                    <div className="project-detail-conversation-content flex flex-column flex-1">
+                                                        <span className="project-detail-conversation-title text-md">
+                                                            {conversation.title || c('collider_2025:Label').t`Untitled chat`}
+                                                        </span>
+                                                        <span className="project-detail-conversation-date text-xs">
+                                                            {formattedDate}
+                                                        </span>
+                                                    </div>
+                                                    <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow shrink-0" />
+                                                </button>
+                                            );
+                                        })}
+                                    </>
+                                )}
                             </div>
                         </div>
                     )}
 
-                    {/* Composer area */}
-                    <div className="project-detail-composer">
+                    <div className="project-detail-composer flex flex-column items-center">
                         <ComposerComponent
                             handleSendMessage={handleSendInProject}
                             isProcessingAttachment={isProcessingAttachment}
@@ -379,6 +521,7 @@ const ProjectDetailViewInner = () => {
                             {c('collider_2025: Disclosure')
                                 .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
                         </p>
+                    </div>
                     </div>
                 </div>
 

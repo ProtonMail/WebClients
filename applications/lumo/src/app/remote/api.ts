@@ -101,12 +101,10 @@ export interface LumoApi {
     ): Promise<RemoteMessage | null>;
 
     postAttachment(attachmentArgs: NewAssetToApi, priority: Priority): Promise<RemoteId | null>;
-    putAttachment(attachmentArgs: NewAssetToApi, remoteId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     deleteAttachment(attachmentId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     getAttachment(attachmentId: RemoteId, spaceId: LocalId): Promise<RemoteAttachment | null>;
 
     postAsset(assetArgs: NewAssetToApi, priority: Priority): Promise<RemoteId | null>;
-    putAsset(assetArgs: NewAssetToApi, remoteId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     deleteAsset(assetId: RemoteId, priority: Priority): Promise<RemoteStatus>;
     getAsset(assetId: RemoteId, spaceId: LocalId): Promise<RemoteAsset | null>;
 
@@ -484,12 +482,6 @@ export class LumoApi {
 
     public postAttachment(attachmentArgs: NewAssetToApi, priority: Priority): Promise<RemoteId> {
         return this.postAsset(attachmentArgs, priority);
-    }
-
-    public putAttachment(attachmentArgs: NewAssetToApi, remoteId: RemoteId, priority: Priority): Promise<RemoteStatus> {
-        const asset = { ...attachmentArgs, ID: remoteId };
-        const fn = () => this.callPutJson('assets', asset);
-        return this.scheduler.schedule(fn, priority);
     }
 
     public deleteSpace(id: RemoteId, priority: Priority): Promise<RemoteStatus> {
