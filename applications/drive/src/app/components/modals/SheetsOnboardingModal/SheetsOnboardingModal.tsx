@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms/Button/Button';
 import {
     type ModalProps,
@@ -65,20 +66,33 @@ function SheetsOnboardingModal(modalProps: ModalProps) {
 
 export const useSheetsOnboardingModal = () => {
     const sheetsEnabled = useFlagsDriveSheet();
+    const { welcomeFlags } = useWelcomeFlags();
     const [sheetsOnboardingModal, showSheetsOnboardingModal] = useModalTwoStatic(SheetsOnboardingModal);
+    const [onboardingSchedule, setOnboardingSchedule] = useLocalState<undefined | number>(
+        undefined,
+        'modal_sheets_onboarding_schedule'
+    );
     const [alreadyShown, setAlreadyShown] = useLocalState(false, 'modal_sheets_onboarding_shown');
 
     const { viewportWidth } = useActiveBreakpoint();
     const isSmallViewport = viewportWidth['<=small'];
 
-    const shouldShow = sheetsEnabled && !alreadyShown && !isSmallViewport;
+    const shouldSchedule =
+        sheetsEnabled && !onboardingSchedule && !alreadyShown && !isSmallViewport && welcomeFlags.isDone;
+
+    // Delay onboarding by 20 minutes
+    useEffect(() => {
+        if (shouldSchedule) {
+            setOnboardingSchedule(Date.now() + 20 * 60 * 1000);
+        }
+    }, [setOnboardingSchedule, shouldSchedule]);
 
     useEffect(() => {
-        if (shouldShow) {
+        if (typeof onboardingSchedule === 'number' && Date.now() > onboardingSchedule) {
             showSheetsOnboardingModal({});
             setAlreadyShown(true);
         }
-    }, [alreadyShown, isSmallViewport, setAlreadyShown, sheetsEnabled, shouldShow, showSheetsOnboardingModal]);
+    }, [onboardingSchedule, setAlreadyShown, showSheetsOnboardingModal]);
 
     return sheetsOnboardingModal;
 };
