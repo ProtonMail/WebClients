@@ -79,9 +79,9 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
                                 listeners.removeAll();
                                 break;
                             case 'abort':
-                                if (matchesDropdownAnchor(registry.dropdown?.anchor, request)) {
-                                    listeners.removeAll();
-                                }
+                                const current = registry.dropdown?.anchor;
+                                const match = matchesDropdownAnchor(current, request);
+                                if (match) listeners.removeAll();
                                 break;
                         }
                     })
@@ -92,6 +92,7 @@ export const createDropdownHandler = (registry: InlineRegistry): DropdownHandler
         close: (target) => {
             const dropdown = registry.dropdown;
             const anchor = dropdown?.anchor;
+
             const activeAnchor = (() => {
                 switch (target?.type) {
                     case 'field':

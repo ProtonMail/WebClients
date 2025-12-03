@@ -13,8 +13,11 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { MaybeNull } from '@proton/pass/types';
+import { asyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
+import { DOM_SETTLE_MS } from '@proton/pass/utils/time/next-tick';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 import type { InlineFieldTarget, InlineFrameTarget } from './dropdown.abstract';
@@ -76,7 +79,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         }
     };
 
-    const onClose = (options: InlineCloseOptions) => {
+    const onClose = async (options: InlineCloseOptions) => {
         const target = anchor.current;
 
         switch (target?.type) {
@@ -87,6 +90,18 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
 
             case 'frame': {
                 const { formId, fieldId, frameId } = target;
+
+                if (options.refocus) {
+                    /** Cross-frame refocus coordination: Explicitly clear focus from the shadow DOM
+                     * and move it to a neutral location before allowing the iframe to reclaim it.
+                     * This helps the browser's focus management settle between realms (shadow DOM →
+                     * top frame → iframe) and prevents race conditions where the iframe gains
+                     * activeElement status but the window doesn't receive keyboard focus. */
+                    popover.root.customElement.blur();
+                    document.body.focus();
+                    await wait(DOM_SETTLE_MS);
+                }
+
                 void sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.INLINE_DROPDOWN_CLOSED,
@@ -109,7 +124,7 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
 
     const onAbort = (request: DropdownRequest) => {
         const match = matchesDropdownAnchor(anchor.current, request);
-        if (!match) anchor.current = null;
+        if (match) anchor.current = null;
         else logger.debug(`[DropdownApp] aborted but anchor changed`);
     };
 
@@ -245,22 +260,27 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         getState: () => iframe.state,
         init: iframe.init,
 
-        open: async (request, ctrl) => {
-            const payload = await intoDropdownAction(request).catch(noop);
-
-            if (!payload) return ctrl?.abort();
-            if (ctrl?.signal.aborted) return;
-
+        /** Serialize dropdown open requests through an async queue to prevent
+         * race conditions. Concurrent open calls could destabilize the dropdown
+         * anchor ref during simultaneous "open" requests. */
+        open: asyncQueue(async (request, ctrl) => {
             anchor.current =
                 request.type === 'field'
                     ? { type: 'field', field: request.field }
                     : { type: 'frame', fieldId: request.fieldId, formId: request.formId, frameId: request.frameId };
 
+            const payload = await intoDropdownAction(request).catch(noop);
+
+            if (!payload || ctrl?.signal.aborted) {
+                anchor.current = null;
+                return ctrl?.abort();
+            }
+
             iframe.sendPortMessage({ type: InlinePortMessageType.DROPDOWN_ACTION, payload });
             iframe.setPosition(getDropdownPosition(request));
 
             await iframe.open(request, ctrl);
-        },
+        }),
 
         sendMessage: iframe.sendPortMessage,
         subscribe: iframe.subscribe,
