@@ -111,7 +111,7 @@ export const BookSlotModal = ({ timeslot, ...rest }: BookingSlotModalProps) => {
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button pill>{c('Action').t`Cancel`}</Button>
+                <Button onClick={rest.onClose} pill>{c('Action').t`Cancel`}</Button>
                 <Button disabled={!name.trim() || !email.trim()} loading={isLoading} pill color="norm" type="submit">
                     {c('Action').t`Confirm booking`}
                 </Button>
