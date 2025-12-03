@@ -246,11 +246,8 @@ export const createAutoFillService = () => {
             if (!ctx.getState().authorized || tabId === undefined) throw new Error('Invalid autofill query');
 
             const state = ctx.service.store.getState();
-
-            /** CC autofill is a paid feature only */
-            const { shareIds, isPaid } = getAutofillOptions();
-            const needsUpgrade = !isPaid;
-            const items = needsUpgrade ? [] : selectAutofillCCCandidates(shareIds)(state).map(intoCCItemPreview);
+            const { shareIds, needsUpgrade } = getAutofillOptions();
+            const items = selectAutofillCCCandidates(shareIds)(state).map(intoCCItemPreview);
 
             return { items, needsUpgrade };
         })

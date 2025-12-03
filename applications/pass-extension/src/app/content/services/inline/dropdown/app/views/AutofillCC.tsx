@@ -63,57 +63,53 @@ export const AutofillCC: FC<Props> = (payload) => {
 
     const dropdownItems = useMemo(
         () =>
-            state
-                ? [
-                      state.needsUpgrade && (
-                          <ListItem
-                              key={'upgrade-autofill'}
-                              icon={{ type: 'icon', icon: 'arrow-out-square' }}
-                              title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
-                              subTitle={c('Warning').t`Your plan does not allow you to autofill credit-card items.`}
-                              onClick={navigateToUpgrade}
-                              autogrow
-                          />
-                      ),
-                      ...(!state.needsUpgrade
-                          ? state.items.map(({ shareId, itemId, name, obfuscatedNumber, expirationDate, cardType }) => (
-                                <ListItem
-                                    key={itemId}
-                                    title={
-                                        <div className="flex flex-nowrap gap-2 items-center">
-                                            <span className="text-ellipsis">{name}</span>
-                                            <span className="shrink-0 color-weak text-sm">
-                                                {obfuscatedNumber
-                                                    .replaceAll('*', '•')
-                                                    .slice(obfuscatedNumber.length - 8)}
-                                            </span>
-                                        </div>
-                                    }
-                                    subTitle={expirationDate.split('-').reverse().join('/')}
-                                    icon={{
-                                        type: 'icon',
-                                        icon: 'credit-card',
-                                        customIcon: getCreditCardIcon(cardType),
-                                    }}
-                                    onClick={() => {
-                                        controller.forwardMessage({
-                                            type: InlinePortMessageType.AUTOFILL_ACTION,
-                                            payload: {
-                                                ...payload,
-                                                itemId,
-                                                shareId,
-                                                crossFrame: true,
-                                                type: 'creditCard',
-                                            },
-                                        });
-                                        controller.close({ userAction: true });
-                                    }}
-                                    subTheme={SubTheme.LIME}
-                                />
-                            ))
-                          : []),
-                  ].filter(truthy)
-                : [],
+            [
+                state?.needsUpgrade && (
+                    <ListItem
+                        key="upgrade-autofill"
+                        icon={{ type: 'icon', icon: 'arrow-within-square' }}
+                        title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
+                        subTitle={c('Warning').t`Your plan only allows you to autofill from your first two vaults`}
+                        onClick={navigateToUpgrade}
+                        autogrow
+                    />
+                ),
+
+                ...(state?.items.map(({ shareId, itemId, name, obfuscatedNumber, expirationDate, cardType }) => (
+                    <ListItem
+                        key={itemId}
+                        title={
+                            <div className="flex flex-nowrap gap-2 items-center">
+                                <span className="text-ellipsis">{name}</span>
+                                <span className="shrink-0 color-weak text-sm">
+                                    {obfuscatedNumber.replaceAll('*', '•').slice(obfuscatedNumber.length - 8)}
+                                </span>
+                            </div>
+                        }
+                        subTitle={expirationDate.split('-').reverse().join('/')}
+                        icon={{
+                            type: 'icon',
+                            icon: 'credit-card',
+                            customIcon: getCreditCardIcon(cardType),
+                        }}
+                        onClick={() => {
+                            controller.forwardMessage({
+                                type: InlinePortMessageType.AUTOFILL_ACTION,
+                                payload: {
+                                    ...payload,
+                                    itemId,
+                                    shareId,
+                                    crossFrame: true,
+                                    type: 'creditCard',
+                                },
+                            });
+                            controller.close({ userAction: true });
+                        }}
+                        subTheme={SubTheme.LIME}
+                    />
+                )) ?? []),
+            ].filter(truthy),
+
         [state]
     );
 
