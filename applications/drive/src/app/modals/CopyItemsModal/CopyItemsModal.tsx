@@ -60,7 +60,7 @@ const CopyItemsModal = ({ open, onClose, onExit, itemsToCopy }: { itemsToCopy: C
         : undefined;
 
     const handleSelect = useCallback((treeItemId: string, targetItem: DirectoryTreeItem) => {
-        if (targetItem.type === NodeType.Folder) {
+        if ([NodeType.Folder, 'files-root'].includes(targetItem.type)) {
             setCopyTargetTreeId(treeItemId);
         }
     }, []);
