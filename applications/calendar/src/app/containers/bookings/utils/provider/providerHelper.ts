@@ -2,7 +2,7 @@ import type {
     BookingPageEditData,
     InternalBookingPage,
 } from 'applications/calendar/src/app/store/internalBooking/interface';
-import { areIntervalsOverlapping, differenceInMinutes, isBefore, subMinutes } from 'date-fns';
+import { areIntervalsOverlapping, differenceInMinutes, isBefore, isSameDay, subMinutes } from 'date-fns';
 
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezone, toLocalDate } from '@proton/shared/lib/date/timezone';
@@ -207,6 +207,12 @@ export const validateRangeOperation = ({
 
         if (isBefore(start, nowWithTz)) {
             return BookingErrorMessages.RANGE_IN_PAST;
+        }
+    }
+
+    if (operation === 'add') {
+        if (!isSameDay(start, end)) {
+            return BookingErrorMessages.RANGE_MULTIPLE_DAYS;
         }
     }
 
