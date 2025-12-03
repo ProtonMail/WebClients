@@ -64,6 +64,8 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useDocsContext } from '../context'
 import { useDebugMode } from '~/utils/debug-mode-context'
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
+import { useIsSheetsEditorEnabled } from '~/utils/misc'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -112,7 +114,16 @@ export function DocumentViewer({
   const [bridge, setBridge] = useState<ClientToEditorBridge | null>(null)
   const [initializing, setInitializing] = useState(false)
   const [ready, setReady] = useState(false)
-  const [error, setError] = useState<DocumentError | null>(null)
+  const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
+  const [error, setError] = useState<DocumentError | null>(() => {
+    const pathname = window.location.pathname
+    const type = stripLocalBasenameFromPathname(pathname).slice(1) as DocumentAction['type']
+    if (type === 'sheet' && !isSheetsEditorEnabled) {
+      return { message: '', code: DocsApiErrorCode.InsufficientPermissions, userUnderstandableMessage: false }
+    }
+
+    return null
+  })
   const [didLoadTitle, setDidLoadTitle] = useState(false)
   const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
 

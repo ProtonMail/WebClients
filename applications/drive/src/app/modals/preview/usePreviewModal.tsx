@@ -23,24 +23,27 @@ export function usePreviewModal() {
         }
     }, []);
 
-    const showPreviewModal = useCallback((props: PreviewPropsWithoutOnClose) => {
-        setProps(props);
-        setOpen(true);
+    const showPreviewModal = useCallback(
+        (props: PreviewPropsWithoutOnClose) => {
+            setProps(props);
+            setOpen(true);
 
-        const shareId = props.deprecatedContextShareId;
-        const linkId = splitNodeUid(props.nodeUid).nodeId;
+            const shareId = props.deprecatedContextShareId;
+            const linkId = splitNodeUid(props.nodeUid).nodeId;
 
-        previousLocationState.current = window.location.href;
+            previousLocationState.current = window.location.href;
 
-        // Use window.history directly instead of using Router to avoid
-        // re-rendering the entire app. We want to keep the previous
-        // location with the same state (selection etc.) as before opening.
-        // However, we need to change the URL so when user refreshes the page,
-        // it goes back to the preview of given node.
-        window.history.pushState(null, '', `/${shareId}/file/${linkId}`);
+            // Use window.history directly instead of using Router to avoid
+            // re-rendering the entire app. We want to keep the previous
+            // location with the same state (selection etc.) as before opening.
+            // However, we need to change the URL so when user refreshes the page,
+            // it goes back to the preview of given node.
+            window.history.pushState(null, '', `/${shareId}/file/${linkId}`);
 
-        window.addEventListener('popstate', handleLocationChange);
-    }, []);
+            window.addEventListener('popstate', handleLocationChange);
+        },
+        [handleLocationChange]
+    );
 
     const onClose = useCallback(() => {
         setOpen(false);
@@ -50,7 +53,7 @@ export function usePreviewModal() {
             window.history.pushState(null, '', previousLocationState.current);
             previousLocationState.current = null;
         }
-    }, []);
+    }, [handleLocationChange]);
 
     const onNodeChange = useCallback(
         (nodeUid: string) => {

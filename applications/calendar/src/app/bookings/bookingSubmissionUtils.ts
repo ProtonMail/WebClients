@@ -289,6 +289,7 @@ export const prepareBookingSubmission = async ({
     const emailBody = generateEmailBody(invitationInfo);
 
     return {
+        sharedSessionKey,
         contentPart: encryptedContentPart,
         timePart: timePartIcsRaw,
         attendeeData: encryptedAttendeePart,

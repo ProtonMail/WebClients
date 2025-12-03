@@ -1,4 +1,4 @@
-import { WebContents, shell } from "electron";
+import { WebContents, WindowOpenHandlerResponse, shell } from "electron";
 import {
     getLocalID,
     isAccount,
@@ -32,6 +32,7 @@ import {
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
+import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 
 export function handleWebContents(contents: WebContents) {
     const logger = () => {
@@ -189,41 +190,45 @@ export function handleWebContents(contents: WebContents) {
         const logWindowOpen = (status: "allowed" | "denied", description: string, level: "debug" | "error" = "debug") =>
             logger()[level](`Window open (${status}) ${description}`);
 
-        // We want to open booking URLs in the browser to avoid blocking the user
-        if (isBookingURL(url)) {
-            logWindowOpen("denied", `booking link in browser ${url}`);
+        const denyAndShowView = (
+            url: string,
+            view: CHANGE_VIEW_TARGET,
+            description: string,
+        ): WindowOpenHandlerResponse => {
+            logWindowOpen("denied", description);
+            showView(view, url);
+            return { action: "deny" };
+        };
+
+        const denyAndOpenExternal = (description: string): WindowOpenHandlerResponse => {
+            logWindowOpen("denied", description);
             shell.openExternal(url);
             return { action: "deny" };
+        };
+
+        const allow = (description: string): WindowOpenHandlerResponse => {
+            logWindowOpen("allowed", description);
+            return { action: "allow" };
+        };
+
+        if (isGoogleOAuthAuthorizationURL(url)) {
+            if (!global.oauthProcess) return denyAndOpenExternal(`oauth disabled, link in view ${url}`);
+            return allow(`oauth process enabled, opening in new electron window ${url}`);
         }
 
-        if (isCalendar(url)) {
-            logWindowOpen("denied", `calendar link in calendar view ${url}`);
-            showView("calendar", url);
-            return { action: "deny" };
-        }
+        // We want to open booking URLs in the browser to avoid blocking the user
+        if (isBookingURL(url)) return denyAndOpenExternal(`booking link in browser ${url}`);
 
-        if (isMail(url)) {
-            logWindowOpen("denied", `mail link in mail view ${url}`);
-            showView("mail", url);
-            return { action: "deny" };
-        }
+        if (isCalendar(url)) return denyAndShowView(url, "calendar", `calendar link in calendar view ${url}`);
 
-        if (isAccount(url) && !isGoogleOAuthAuthorizationURL(url)) {
-            if (isAccoutLite(url)) {
-                logWindowOpen("denied", `account lite in browser ${url}`);
-                shell.openExternal(url);
-                return { action: "deny" };
-            }
+        if (isMail(url)) return denyAndShowView(url, "mail", `mail link in mail view ${url}`);
 
-            if (isUpsellURL(url)) {
-                logWindowOpen("denied", `upsell in browser ${url}`);
-                shell.openExternal(url);
-                return { action: "deny" };
-            }
+        if (isAccount(url)) {
+            if (isAccoutLite(url)) return denyAndOpenExternal(`account lite in browser ${url}`);
 
-            logWindowOpen("denied", `account link in account view ${url}`);
-            showView("account", url);
-            return { action: "deny" };
+            if (isUpsellURL(url)) return denyAndOpenExternal(`upsell in browser ${url}`);
+
+            return denyAndShowView(url, "account", `account link in account view ${url}`);
         }
 
         if (isHostAllowed(url)) {
@@ -234,18 +239,10 @@ export function handleWebContents(contents: WebContents) {
             return { action: "allow" };
         }
 
-        if (global.oauthProcess) {
-            logWindowOpen("allowed", `oauth process enabled ${url}`);
-            return { action: "allow" };
-        }
-
         if (global.subscriptionProcess) {
-            logWindowOpen("allowed", `subscription process enabled ${url}`);
-            return { action: "allow" };
+            return allow(`subscription process enabled, opening in new electron window ${url}`);
         }
 
-        logWindowOpen("denied", `unknown link open in browser ${url}`);
-        shell.openExternal(url);
-        return { action: "deny" };
+        return denyAndOpenExternal(`unknown link open in browser ${url}`);
     });
 }

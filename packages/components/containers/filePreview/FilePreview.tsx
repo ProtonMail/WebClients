@@ -14,15 +14,15 @@ import {
     isCompatibleCBZ,
     isCompatibleSTL,
     isIWAD,
+    isImage,
     isPDF,
     isProtonDocsDocument,
-    isSupportedImage,
     isSupportedText,
     isVideo,
     isWordDocument,
     isXlsx,
 } from '@proton/shared/lib/helpers/mimetype';
-import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
+import { isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
 import AudioPreview from './AudioPreview';
@@ -147,18 +147,30 @@ export const FilePreviewContent = ({
 }) => {
     const [forcePreview, setForcePreview] = useState(false);
 
+    const shouldShowLoader = isLoading && !contents && !imgThumbnailUrl;
+    const isTooLarge = isPreviewTooLarge(mimeType, fileSize);
+
     const renderPreview = () => {
         if (error) {
             return <PreviewError error={error} />;
         }
 
-        if ((mimeType && !isSupportedImage(mimeType) && isLoading) || (!imgThumbnailUrl && isLoading)) {
+        if (shouldShowLoader) {
             return <PreviewLoader />;
         }
 
         if (signatureConfirmation && !forcePreview) {
             return (
                 <SignatureIssue signatureConfirmation={signatureConfirmation} onClick={() => setForcePreview(true)} />
+            );
+        }
+
+        // Check file size limit early for types that load content into memory
+        if (isTooLarge) {
+            return (
+                <div className="file-preview-container">
+                    <UnsupportedPreview onDownload={onDownload} tooLarge={true} />
+                </div>
             );
         }
 
@@ -195,6 +207,7 @@ export const FilePreviewContent = ({
                 </Suspense>
             );
         }
+
         if (contents && mimeType && fileName && isCompatibleSTL(mimeType, fileName) && isWebglSupported()) {
             return (
                 <Suspense fallback={<PreviewLoader />}>
@@ -221,19 +234,7 @@ export const FilePreviewContent = ({
             return <ExcelPreview onDownload={onDownload} onOpenInDocs={onOpenInDocs} />;
         }
 
-        if (
-            !mimeType ||
-            (!contents && !imgThumbnailUrl && !isSupportedText(mimeType)) ||
-            !isPreviewAvailable(mimeType, fileSize)
-        ) {
-            return (
-                <div className="file-preview-container">
-                    <UnsupportedPreview onDownload={onDownload} tooLarge={isPreviewTooLarge(mimeType, fileSize)} />
-                </div>
-            );
-        }
-
-        if (isSupportedImage(mimeType)) {
+        if (mimeType && isImage(mimeType) && (contents || imgThumbnailUrl)) {
             return (
                 <ImagePreview
                     isLoading={isLoading}
@@ -246,7 +247,8 @@ export const FilePreviewContent = ({
                 />
             );
         }
-        if (isVideo(mimeType)) {
+
+        if (mimeType && isVideo(mimeType) && contents) {
             return (
                 <VideoPreview
                     contents={contents}
@@ -256,16 +258,20 @@ export const FilePreviewContent = ({
                 />
             );
         }
-        if (isAudio(mimeType)) {
+
+        if (mimeType && contents && isAudio(mimeType)) {
             return <AudioPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
         }
-        if (isSupportedText(mimeType)) {
+
+        if (mimeType && isSupportedText(mimeType)) {
             return <TextPreview contents={contents} onNewContents={onNewContents} />;
         }
-        if (isPDF(mimeType) && contents) {
+
+        if (mimeType && isPDF(mimeType) && contents) {
             return <PDFPreview contents={contents} filename={fileName} />;
         }
-        if (isWordDocument(mimeType)) {
+
+        if (mimeType && isWordDocument(mimeType)) {
             if (isSafari() && !isMinimumSafariVersion(16)) {
                 return (
                     <div className="file-preview-container">
@@ -275,6 +281,12 @@ export const FilePreviewContent = ({
             }
             return <SandboxedPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
         }
+
+        return (
+            <div className="file-preview-container">
+                <UnsupportedPreview onDownload={onDownload} tooLarge={isTooLarge} />
+            </div>
+        );
     };
 
     return <>{isMetaLoading ? <PreviewLoader /> : renderPreview()}</>;
