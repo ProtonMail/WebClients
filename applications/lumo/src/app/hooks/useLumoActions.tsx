@@ -9,7 +9,7 @@ import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useGuestTracking } from '../providers/GuestTrackingProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
-import { selectAttachments, selectContextFilters } from '../redux/selectors';
+import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
@@ -84,6 +84,7 @@ export const useLumoActions = ({
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
     const { handleActionError } = useActionErrorHandler();
     const { personalization } = usePersonalization();
+    const attachmentMap = useLumoSelector(selectAttachmentsBySpaceId(space?.id));
 
     // Custom hooks
     const { isGhostChatMode: isGhostMode } = useGhostChat();
@@ -117,7 +118,7 @@ export const useLumoActions = ({
                 const unseenAttachments = message.attachments.filter((a) => !seenIds.has(a.id));
 
                 if (unseenAttachments.length > 0) {
-                    const filled = await fillAttachmentData(unseenAttachments, user, spaceDek);
+                    const filled = await fillAttachmentData(unseenAttachments, attachmentMap, user, spaceDek);
                     allAttachments.push(...filled);
 
                     // Mark as seen
@@ -209,6 +210,7 @@ export const useLumoActions = ({
         const historyAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
 
         // Get personalization data for retry from saved user settings (not unsaved Redux state)
+        // TODO can I delete this?
         const savedPersonalization = lumoUserSettings?.personalization;
         let personalizationPrompt: string | undefined;
 
@@ -276,7 +278,12 @@ export const useLumoActions = ({
 
         // Load all attachments from conversation history and combine with edited message attachments
         const historyAttachments = await loadAndDeduplicateAttachments(messagesWithContext, user, spaceDek);
-        const editedMessageAttachments = await fillAttachmentData(originalMessage.attachments ?? [], user, spaceDek);
+        const editedMessageAttachments = await fillAttachmentData(
+            originalMessage.attachments ?? [],
+            attachmentMap,
+            user,
+            spaceDek
+        );
         const allAttachments = [...historyAttachments, ...editedMessageAttachments];
 
         await dispatch(
