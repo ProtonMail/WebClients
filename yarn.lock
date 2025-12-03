@@ -3806,9 +3806,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "@eslint/eslintrc@npm:3.3.1"
+"@eslint/eslintrc@npm:^3.3.1, @eslint/eslintrc@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "@eslint/eslintrc@npm:3.3.3"
   dependencies:
     ajv: "npm:^6.12.4"
     debug: "npm:^4.3.2"
@@ -3816,10 +3816,10 @@ __metadata:
     globals: "npm:^14.0.0"
     ignore: "npm:^5.2.0"
     import-fresh: "npm:^3.2.1"
-    js-yaml: "npm:^4.1.0"
+    js-yaml: "npm:^4.1.1"
     minimatch: "npm:^3.1.2"
     strip-json-comments: "npm:^3.1.1"
-  checksum: 10/cc240addbab3c5fceaa65b2c8d5d4fd77ddbbf472c2f74f0270b9d33263dc9116840b6099c46b64c9680301146250439b044ed79278a1bcc557da412a4e3c1bb
+  checksum: 10/b586a364ff15ce1b68993aefc051ca330b1fece15fb5baf4a708d00113f9a14895cffd84a5f24c5a97bd4b4321130ab2314f90aa462a250f6b859c2da2cba1f3
   languageName: node
   linkType: hard
 
@@ -7932,9 +7932,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pmmmwh/react-refresh-webpack-plugin@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.6.1"
+"@pmmmwh/react-refresh-webpack-plugin@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.6.2"
   dependencies:
     anser: "npm:^2.1.1"
     core-js-pure: "npm:^3.23.3"
@@ -7946,7 +7946,7 @@ __metadata:
     "@types/webpack": 5.x
     react-refresh: ">=0.10.0 <1.0.0"
     sockjs-client: ^1.4.0
-    type-fest: ">=0.17.0 <5.0.0"
+    type-fest: ">=0.17.0 <6.0.0"
     webpack: ^5.0.0
     webpack-dev-server: ^4.8.0 || 5.x
     webpack-hot-middleware: 2.x
@@ -7964,7 +7964,7 @@ __metadata:
       optional: true
     webpack-plugin-serve:
       optional: true
-  checksum: 10/b72c50c26aacb7775929fb00871c180c5a6a7fd0450e20df6dd4a2407f770f6d7795e9eb214a026c3d9c1e692c0ddbfaf056711f76b1529f4ad578f637e2fb1f
+  checksum: 10/157a20464b0bdca39b31e09450f6ce1d91cbe32bcce882a02df797482b0226247d13e5a2c750a3fb2e2758bffc25d49a468b33b66d8364aa4e1ed785596453c8
   languageName: node
   linkType: hard
 
@@ -8141,7 +8141,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     msw: "npm:^2.12.3"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
@@ -8224,7 +8224,7 @@ __metadata:
     jest: "npm:^30.2.0"
     mustache: "npm:^4.2.0"
     netlify-cli: "npm:17.38.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     storybook: "npm:^8.6.14"
@@ -8299,7 +8299,7 @@ __metadata:
     ts-jest: "npm:^29.4.5"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.20.6"
-    yaml: "npm:^2.8.1"
+    yaml: "npm:^2.8.2"
   languageName: unknown
   linkType: soft
 
@@ -8311,7 +8311,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/gitlab": "workspace:^"
     "@types/jest": "npm:^30.0.0"
-    "@types/lodash": "npm:^4.17.16"
+    "@types/lodash": "npm:^4.17.21"
     "@vercel/ncc": "npm:^0.38.4"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
@@ -8366,7 +8366,7 @@ __metadata:
     css-tree: "npm:^2.3.1"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     tinycolor2: "npm:^1.6.0"
     ts-jest: "npm:^29.4.5"
     ts-loader: "npm:^9.5.4"
@@ -8447,7 +8447,7 @@ __metadata:
     linkify-it: "npm:^5.0.0"
     lottie-react: "npm:^2.4.1"
     markdown-it: "npm:^14.1.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     prop-types: "npm:^15.8.1"
     punycode.js: "npm:^2.3.1"
     qrcode.react: "npm:^4.2.0"
@@ -8506,7 +8506,7 @@ __metadata:
     karma-webpack: "npm:^5.0.1"
     playwright: "npm:^1.57.0"
     pmcrypto: "npm:@protontech/pmcrypto@^8.8.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     ts-loader: "npm:^9.5.4"
     typescript: "npm:^5.9.3"
     webpack: "npm:^5.103.0"
@@ -8550,7 +8550,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     jest-when: "npm:3.7.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     pretty-format: "npm:^30.2.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -8660,7 +8660,7 @@ __metadata:
     jest-when: "npm:3.7.0"
     mime-types: "npm:^2.1.35"
     path-browserify: "npm:^1.0.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     pretty-format: "npm:^30.2.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -8734,7 +8734,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/eslint-config-proton@workspace:packages/eslint-config-proton"
   dependencies:
-    "@eslint/eslintrc": "npm:^3.3.1"
+    "@eslint/eslintrc": "npm:^3.3.3"
     "@eslint/js": "npm:^9.39.1"
     "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "npm:^2.0.0"
     eslint: "npm:^9.39.1"
@@ -8752,7 +8752,7 @@ __metadata:
     eslint-plugin-testing-library: "npm:^7.13.5"
     typescript-eslint: "npm:^8.48.0"
   peerDependencies:
-    prettier: 3.6.2
+    prettier: 3.7.3
     typescript: ^5.9.3
   languageName: unknown
   linkType: soft
@@ -8813,7 +8813,7 @@ __metadata:
     execa: "npm:^5.1.1"
     gettext-parser: "npm:^7.0.1"
     glob: "npm:^12.0.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     ttag-cli: "npm:^1.11.2"
   bin:
     proton-i18n: index.js
@@ -8830,7 +8830,7 @@ __metadata:
     eslint: "npm:^9.39.1"
     jsdom: "npm:^27.2.0"
     mustache: "npm:^4.2.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     tsx: "npm:^4.20.6"
@@ -8941,7 +8941,7 @@ __metadata:
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     jest-environment-jsdom: "npm:^30.2.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
@@ -8967,8 +8967,8 @@ __metadata:
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.1"
-    happy-dom: "npm:^20.0.10"
-    prettier: "npm:^3.6.2"
+    happy-dom: "npm:^20.0.11"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
     typescript: "npm:^5.9.3"
@@ -8987,7 +8987,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-fetch-mock: "npm:^3.0.3"
     json-schema-to-typescript: "npm:^13.1.2"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     rimraf: "npm:^5.0.10"
     ts-jest: "npm:^29.4.5"
     ts-node: "npm:^10.9.2"
@@ -9006,7 +9006,7 @@ __metadata:
     "@babel/preset-react": "npm:^7.28.5"
     "@babel/preset-typescript": "npm:^7.28.5"
     "@babel/runtime": "npm:^7.28.4"
-    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.1"
+    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.2"
     "@sentry/webpack-plugin": "npm:^1.21.0"
     "@swc/core": "npm:^1.15.3"
     autoprefixer: "npm:^10.4.22"
@@ -9032,7 +9032,7 @@ __metadata:
     postcss-color-functional-notation: "npm:^6.0.14"
     postcss-loader: "npm:^8.2.0"
     postcss-logical: "npm:^8.1.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react-refresh: "npm:^0.18.0"
     resolve-url-loader: "npm:^5.0.0"
     sass: "npm:1.79.5"
@@ -9102,7 +9102,7 @@ __metadata:
     openapi-types: "npm:^12.1.3"
     otpauth: "npm:^9.4.1"
     papaparse: "npm:^5.5.3"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
@@ -9160,7 +9160,7 @@ __metadata:
   resolution: "@proton/prettier-config-proton@workspace:packages/prettier-config"
   dependencies:
     eslint: "npm:^9.39.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
   languageName: unknown
   linkType: soft
 
@@ -9309,7 +9309,7 @@ __metadata:
     loglevel: "npm:^1.9.2"
     papaparse: "npm:^5.5.3"
     playwright: "npm:^1.57.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     ts-loader: "npm:^9.5.4"
     ttag: "npm:^1.8.12"
     typescript: "npm:^5.9.3"
@@ -9328,7 +9328,7 @@ __metadata:
   dependencies:
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     typescript: "npm:^5.9.3"
   languageName: unknown
   linkType: soft
@@ -9346,7 +9346,7 @@ __metadata:
     core-js: "npm:^3.47.0"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     ts-jest: "npm:^29.4.5"
     typescript: "npm:^5.9.3"
   languageName: unknown
@@ -9369,7 +9369,7 @@ __metadata:
   dependencies:
     include-media: "npm:^2.0.0"
     inter-ui: "npm:^4.1.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     sass: "npm:1.79.5"
     stylelint: "npm:^15.11.0"
     stylelint-config-prettier-scss: "npm:^1.0.0"
@@ -9439,7 +9439,7 @@ __metadata:
     "@unleash/proxy-client-react": "npm:^5.0.1"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     typescript: "npm:^5.9.3"
     unleash-proxy-client: "npm:^3.7.8"
   peerDependencies:
@@ -14136,7 +14136,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.175, @types/lodash@npm:^4.14.182, @types/lodash@npm:^4.17.16, @types/lodash@npm:^4.17.17, @types/lodash@npm:^4.17.21":
+"@types/lodash@npm:^4.14.175, @types/lodash@npm:^4.14.182, @types/lodash@npm:^4.17.17, @types/lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "@types/lodash@npm:4.17.21"
   checksum: 10/34920830a3bc82ba619cda05e606fef00c148a69b4f19f770645d2587ccdb8e42ef3ddfc174b7884c0c709fc0a1aeb48f7326da969bad12a1464a03efbbe414c
@@ -23223,16 +23223,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:39.2.3":
-  version: 39.2.3
-  resolution: "electron@npm:39.2.3"
+"electron@npm:39.2.4":
+  version: 39.2.4
+  resolution: "electron@npm:39.2.4"
   dependencies:
     "@electron/get": "npm:^2.0.0"
     "@types/node": "npm:^22.7.7"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10/52e3af56a2a1796bbb681f532c6c2a62ccea3464550fd85caaa001abbc69a70d28e1e2760a17865a71e7840e91f3589694e01fe4420014d390c7424c69136189
+  checksum: 10/0acefebd1a26b1824e2fde0c80a6a603666fa0023e6e9e2130b226ce538fdf34e5f00cd89e5e4fc9fabdab0bb0eb7b7018532b4942bd0e2369390b1217a7a764
   languageName: node
   linkType: hard
 
@@ -27733,14 +27733,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:^20.0.10":
-  version: 20.0.10
-  resolution: "happy-dom@npm:20.0.10"
+"happy-dom@npm:^20.0.11":
+  version: 20.0.11
+  resolution: "happy-dom@npm:20.0.11"
   dependencies:
     "@types/node": "npm:^20.0.0"
     "@types/whatwg-mimetype": "npm:^3.0.2"
     whatwg-mimetype: "npm:^3.0.0"
-  checksum: 10/a39e11faa47b58ed722a32471277da90538101190c90569ed1c1525897193b9138f93945cb2b7cecf8ad3b8b87c44b9a36fb7c88a7ce49de4f7ad5b2ec3e4cca
+  checksum: 10/0f2cd2a2c394a79ce3ff15b5c00edd4071a5c5ece14f3ee810b954a1c3ee826a3920be37a349c7dc1b5bd3cd49b550f5e6291aa7e109ee4a27c3f6476f4b5d91
   languageName: node
   linkType: hard
 
@@ -30772,7 +30772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:4.1.0, js-yaml@npm:^4.0.0, js-yaml@npm:^4.1.0":
+"js-yaml@npm:4.1.0":
   version: 4.1.0
   resolution: "js-yaml@npm:4.1.0"
   dependencies:
@@ -30792,6 +30792,17 @@ __metadata:
   bin:
     js-yaml: bin/js-yaml.js
   checksum: 10/9e22d80b4d0105b9899135365f746d47466ed53ef4223c529b3c0f7a39907743fdbd3c4379f94f1106f02755b5e90b2faaf84801a891135544e1ea475d1a1379
+  languageName: node
+  linkType: hard
+
+"js-yaml@npm:^4.0.0, js-yaml@npm:^4.1.0, js-yaml@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "js-yaml@npm:4.1.1"
+  dependencies:
+    argparse: "npm:^2.0.1"
+  bin:
+    js-yaml: bin/js-yaml.js
+  checksum: 10/a52d0519f0f4ef5b4adc1cde466cb54c50d56e2b4a983b9d5c9c0f2f99462047007a6274d7e95617a21d3c91fde3ee6115536ed70991cd645ba8521058b78f77
   languageName: node
   linkType: hard
 
@@ -37286,12 +37297,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.6.2, prettier@npm:^3.1.1, prettier@npm:^3.6.2":
-  version: 3.6.2
-  resolution: "prettier@npm:3.6.2"
+"prettier@npm:3.7.3":
+  version: 3.7.3
+  resolution: "prettier@npm:3.7.3"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10/1213691706bcef1371d16ef72773c8111106c3533b660b1cc8ec158bd109cdf1462804125f87f981f23c4a3dba053b6efafda30ab0114cc5b4a725606bb9ff26
+  checksum: 10/f83ca7e3c69717c1e2f7a95af2d9700eea520c235dfc0f94727a550a4bf0f14eda956a9b2682991b4f1da4605247b3cd3c5547bf2ada4a3ca718bc9ca230040a
   languageName: node
   linkType: hard
 
@@ -37301,6 +37312,15 @@ __metadata:
   bin:
     prettier: bin-prettier.js
   checksum: 10/00cdb6ab0281f98306cd1847425c24cbaaa48a5ff03633945ab4c701901b8e96ad558eb0777364ffc312f437af9b5a07d0f45346266e8245beaf6247b9c62b24
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.1.1, prettier@npm:^3.7.3":
+  version: 3.7.4
+  resolution: "prettier@npm:3.7.4"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10/b4d00ea13baed813cb777c444506632fb10faaef52dea526cacd03085f01f6db11fc969ccebedf05bf7d93c3960900994c6adf1b150e28a31afd5cfe7089b313
   languageName: node
   linkType: hard
 
@@ -37803,7 +37823,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     lodash: "npm:^4.17.21"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
@@ -37848,7 +37868,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     moment: "npm:^2.30.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-hooks-testing-library: "npm:^0.6.0"
@@ -37865,7 +37885,7 @@ __metadata:
   dependencies:
     "@dnd-kit/core": "npm:^6.3.1"
     "@iarna/toml": "npm:^2.2.5"
-    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.1"
+    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.2"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
@@ -37973,7 +37993,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     lodash: "npm:^4.17.21"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router: "npm:^5.3.4"
@@ -37981,7 +38001,7 @@ __metadata:
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.12"
     typescript: "npm:^5.9.3"
-    zustand: "npm:^5.0.8"
+    zustand: "npm:^5.0.9"
   languageName: unknown
   linkType: soft
 
@@ -38062,11 +38082,11 @@ __metadata:
     jest-junit: "npm:^16.0.0"
     lexical: "npm:0.30.0"
     postcss: "npm:^8.5.6"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     prettier-plugin-tailwindcss: "npm:^0.7.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    react-hook-form: "npm:^7.66.1"
+    react-hook-form: "npm:^7.67.0"
     sass: "npm:1.79.5"
     tailwindcss: "npm:^3.4.18"
     typescript: "npm:^5.9.3"
@@ -38126,7 +38146,7 @@ __metadata:
     jest: "npm:^30.2.0"
     jest-junit: "npm:^16.0.0"
     postcss: "npm:^8.5.6"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     prettier-plugin-tailwindcss: "npm:^0.7.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -38211,7 +38231,7 @@ __metadata:
     jest-when: "npm:3.7.0"
     mime-types: "npm:^2.1.35"
     path-browserify: "npm:^1.0.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     pretty-format: "npm:^30.2.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -38266,7 +38286,7 @@ __metadata:
     moment: "npm:^2.30.1"
     node-stream-zip: "npm:^1.15.0"
     pdf-parse: "npm:^1.1.4"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     prom-client: "npm:^15.1.3"
     rimraf: "npm:^6.1.2"
     tinycolor2: "npm:^1.6.0"
@@ -38319,7 +38339,7 @@ __metadata:
     mac-appify: "npm:^2019.4.13"
     minimist: "npm:^1.2.8"
     node-loader: "npm:^2.1.0"
-    prettier: "npm:3.6.2"
+    prettier: "npm:3.7.3"
     style-loader: "npm:^4.0.0"
     ts-jest: "npm:^29.4.5"
     ts-loader: "npm:^9.5.4"
@@ -38389,7 +38409,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     react-syntax-highlighter: "npm:^15.6.6"
     react-textarea-autosize: "npm:^8.5.9"
-    react-virtuoso: "npm:^4.14.1"
+    react-virtuoso: "npm:^4.15.0"
     redux-saga: "npm:^1.4.2"
     rehype-katex: "npm:^7.0.1"
     remark-gfm: "npm:^4.0.1"
@@ -38425,7 +38445,7 @@ __metadata:
     glob: "npm:^12.0.0"
     include-media: "npm:^2.0.0"
     inter-ui: "npm:^4.1.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     sass: "npm:1.79.5"
@@ -38510,7 +38530,7 @@ __metadata:
     markdown-it: "npm:^14.1.0"
     msw: "npm:^2.12.3"
     path-to-regexp: "npm:^6.3.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
@@ -38564,7 +38584,7 @@ __metadata:
     lodash: "npm:^4.17.21"
     minimist: "npm:^1.2.8"
     node-loader: "npm:^2.1.0"
-    prettier: "npm:3.6.2"
+    prettier: "npm:3.7.3"
     style-loader: "npm:^4.0.0"
     ts-jest: "npm:^29.4.5"
     ts-loader: "npm:^9.5.4"
@@ -38609,9 +38629,9 @@ __metadata:
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.1"
-    happy-dom: "npm:^20.0.10"
+    happy-dom: "npm:^20.0.11"
     livekit-client: "npm:2.16.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
@@ -38646,13 +38666,13 @@ __metadata:
     "@proton/types": "workspace:^"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^10.1.0"
-    electron: "npm:39.2.3"
+    electron: "npm:39.2.4"
     electron-log: "npm:^5.4.3"
     electron-store: "npm:^8.2.0"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
     node-loader: "npm:^2.1.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     proton-pass-web: "workspace:applications/pass"
     ts-loader: "npm:^9.5.4"
     ts-node: "npm:^10.9.2"
@@ -38681,7 +38701,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react-helmet: "npm:^6.1.0"
     socketcluster-server: "npm:^19.2.2"
     string-replace-loader: "npm:^3.2.0"
@@ -38718,7 +38738,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.1"
     jest: "npm:^30.2.0"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     typescript: "npm:^5.9.3"
     webpack: "npm:^5.103.0"
     webpack-manifest-plugin: "npm:^6.0.1"
@@ -38735,7 +38755,7 @@ __metadata:
     docx-preview: "npm:^0.3.7"
     esbuild: "npm:^0.27.0"
     eslint: "npm:^9.39.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     typescript: "npm:^5.9.3"
   languageName: unknown
   linkType: soft
@@ -38765,7 +38785,7 @@ __metadata:
     eslint: "npm:^9.39.1"
     eslint-plugin-storybook: "npm:^0.12.0"
     netlify-cli: "npm:17.38.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     prop-types: "npm:15.8.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -38838,7 +38858,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.1"
     lodash: "npm:^4.17.21"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     proton-account: "workspace:^"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -38874,11 +38894,11 @@ __metadata:
     chart.js: "npm:^4.5.1"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.1"
-    happy-dom: "npm:^20.0.10"
+    happy-dom: "npm:^20.0.11"
     jsqr: "npm:^1.4.0"
     lodash: "npm:^4.17.21"
     path-browserify: "npm:^1.0.1"
-    prettier: "npm:^3.6.2"
+    prettier: "npm:^3.7.3"
     react: "npm:^18.3.1"
     react-chartjs-2: "npm:^5.3.1"
     react-dom: "npm:^18.3.1"
@@ -40000,12 +40020,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.66.1":
-  version: 7.66.1
-  resolution: "react-hook-form@npm:7.66.1"
+"react-hook-form@npm:^7.67.0":
+  version: 7.67.0
+  resolution: "react-hook-form@npm:7.67.0"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18 || ^19
-  checksum: 10/3b39276432de206ee37b3fb24c7d7b815fa1b641a179685392b9dc715edfa5ed3a5d57f7366429595f09c182bf25d7adc991c0c00101739d9efc977ecee22a53
+  checksum: 10/0e74a48b2da0f79166d5c6701f78a08fd5165e901e46ce5a578f0a2f25005e861023ffb35c1a96373c23701a84c3fce2111c4aced824d2ca08c9b2420a645551
   languageName: node
   linkType: hard
 
@@ -40394,13 +40414,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-virtuoso@npm:^4.14.1":
-  version: 4.14.1
-  resolution: "react-virtuoso@npm:4.14.1"
+"react-virtuoso@npm:^4.15.0":
+  version: 4.16.1
+  resolution: "react-virtuoso@npm:4.16.1"
   peerDependencies:
     react: ">=16 || >=17 || >= 18 || >= 19"
     react-dom: ">=16 || >=17 || >= 18 || >=19"
-  checksum: 10/1d59fb199555743d31e71f84f517a1b40a213e0023e82f4502480eae1bff41b6f92f95b5418fbe4fb72a410e9eba9ae4c3cb09f30fa1b7e35bbe74fb85c14f49
+  checksum: 10/d1eaf9befc10af5d9d9b2bb64fd4cc940abcf59155b6fc5c41ddff0b484c23b4e3c21d0e282f0a1e525cff6891f01241e5086eb56f4126da1a633f1a16b4e2eb
   languageName: node
   linkType: hard
 
@@ -41835,8 +41855,8 @@ __metadata:
     is-ci: "npm:^4.1.0"
     lint-staged: "npm:^16.2.7"
     nyc: "npm:^17.1.0"
-    prettier: "npm:^3.6.2"
-    sort-package-json: "npm:^3.4.0"
+    prettier: "npm:^3.7.3"
+    sort-package-json: "npm:^3.5.0"
     stylelint-config-standard-scss: "npm:^10.0.0"
     stylelint-use-logical-spec: "npm:^5.0.1"
     turbo: "npm:^2.6.1"
@@ -43011,27 +43031,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sort-object-keys@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "sort-object-keys@npm:1.1.3"
-  checksum: 10/abea944d6722a1710a1aa6e4f9509da085d93d5fc0db23947cb411eedc7731f80022ce8fa68ed83a53dd2ac7441fcf72a3f38c09b3d9bbc4ff80546aa2e151ad
+"sort-object-keys@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "sort-object-keys@npm:2.0.1"
+  checksum: 10/9ba59478af172f0081fd478057aa89e2eb5904f67b01f63002e0444d947f3a285d1a6c95c611097bfca625b675711842829f71b2101b2910db53e34bff7ce67a
   languageName: node
   linkType: hard
 
-"sort-package-json@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "sort-package-json@npm:3.4.0"
+"sort-package-json@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "sort-package-json@npm:3.5.0"
   dependencies:
     detect-indent: "npm:^7.0.1"
     detect-newline: "npm:^4.0.1"
     git-hooks-list: "npm:^4.0.0"
     is-plain-obj: "npm:^4.1.0"
     semver: "npm:^7.7.1"
-    sort-object-keys: "npm:^1.1.3"
+    sort-object-keys: "npm:^2.0.0"
     tinyglobby: "npm:^0.2.12"
   bin:
     sort-package-json: cli.js
-  checksum: 10/f8009b037d0e1ba48819ddf498a34500f778058833b962b5f0d481943def68e2633259e679f29dbb6356fbab2bbc9ffa18524bc6decdcfd4341ab1a6aadee571
+  checksum: 10/902ac1524c85a9c512170aad6e77e471e7237c91ba3d1e6653dcd0f05a6fd786efce276a79f82283828f2f7ee8ac28b8d17c97e3d5dfd688f629b4696a712d85
   languageName: node
   linkType: hard
 
@@ -48408,12 +48428,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.1.3, yaml@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "yaml@npm:2.8.1"
+"yaml@npm:^2.1.3, yaml@npm:^2.8.1, yaml@npm:^2.8.2":
+  version: 2.8.2
+  resolution: "yaml@npm:2.8.2"
   bin:
     yaml: bin.mjs
-  checksum: 10/eae07b3947d405012672ec17ce27348aea7d1fa0534143355d24a43a58f5e05652157ea2182c4fe0604f0540be71f99f1173f9d61018379404507790dff17665
+  checksum: 10/4eab0074da6bc5a5bffd25b9b359cf7061b771b95d1b3b571852098380db3b1b8f96e0f1f354b56cc7216aa97cea25163377ccbc33a2e9ce00316fe8d02f4539
   languageName: node
   linkType: hard
 
@@ -48686,9 +48706,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zustand@npm:^5.0.7, zustand@npm:^5.0.8":
-  version: 5.0.8
-  resolution: "zustand@npm:5.0.8"
+"zustand@npm:^5.0.7, zustand@npm:^5.0.9":
+  version: 5.0.9
+  resolution: "zustand@npm:5.0.9"
   peerDependencies:
     "@types/react": ">=18.0.0"
     immer: ">=9.0.6"
@@ -48703,7 +48723,7 @@ __metadata:
       optional: true
     use-sync-external-store:
       optional: true
-  checksum: 10/f824fbd0120bbb58c71e74599c7090fa81e9e94334b55a8bfc8964c57e6f1e1187d4be4771a93674755e798874eeb7612d6bde4c8c02a4fe47415fcd9f7407fc
+  checksum: 10/af24d8cc07383b85bf713d1be55a788d4559c5b20980852095c2352bfd0a3bc64d0ba1f08f2f440d5c298ea2856d34d67e5e74fafe29d8796e8b4a09781ca86c
   languageName: node
   linkType: hard
 
