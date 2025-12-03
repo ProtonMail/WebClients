@@ -30,6 +30,7 @@ export interface SearcheableSelectProps<V> extends SelectProps<V> {
     placeholder?: string;
     dropdownClassName?: string;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
+    prefixIcon?: ReactNode;
 }
 
 const SearchableSelect = <V extends any>({
@@ -56,6 +57,7 @@ const SearchableSelect = <V extends any>({
     caretIconName,
     caretClassName,
     anchorRef: maybeAnchorRef,
+    prefixIcon,
     ...rest
 }: SearcheableSelectProps<V>) => {
     const [searchValue, setSearchValue] = useState('');
@@ -164,6 +166,7 @@ const SearchableSelect = <V extends any>({
                 ref={anchorRef}
                 caretIconName={caretIconName}
                 caretClassName={caretClassName}
+                prefixIcon={prefixIcon}
                 {...rest}
             >
                 {renderSelected?.(value) ?? (
@@ -189,6 +192,7 @@ const SearchableSelect = <V extends any>({
                     dropdownClassName,
                 ])}
             >
+                {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
                 <div onKeyDown={handleDropdownContentKeyDown}>
                     <div className="dropdown-search z-up" ref={searchContainerRef}>
                         <SearchInput
