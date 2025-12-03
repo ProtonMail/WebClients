@@ -362,8 +362,8 @@ export function useAccessiblePlans({
         }
 
         const plans = isNewB2BPlanEnabled
-            ? [plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]]
-            : [plansMap[PLANS.MAIL_PRO], plansMap[bundleProPlan], plansMap[PLANS.BUNDLE_BIZ_2025]];
+            ? [plansMap[PLANS.MAIL_PRO], plansMap[bundleProPlan], plansMap[PLANS.BUNDLE_BIZ_2025]]
+            : [plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]];
 
         return filterPlans(plans);
     })();
