@@ -98,7 +98,7 @@ export const isGoogleOAuthAuthorizationURL = (urlString: string) => {
 
         const isAuthPath = url.pathname.startsWith(GOOGLE_OAUTH_PATH);
 
-        return isAccount(urlString) && isAuthPath;
+        return isHostAllowed(urlString) && isAuthPath;
     } catch (error) {
         return false;
     }

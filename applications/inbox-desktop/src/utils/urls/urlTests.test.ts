@@ -30,26 +30,34 @@ describe("urlTests", () => {
         });
 
         it("returns true for a valid Google OAuth URL", () => {
-            const validURL = `https://account.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
+            const validURLAccount = `https://account.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
+            expect(isGoogleOAuthAuthorizationURL(validURLAccount)).toBe(true);
 
-            expect(isGoogleOAuthAuthorizationURL(validURL)).toBe(true);
+            const validURLMail = `https://mail.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
+            expect(isGoogleOAuthAuthorizationURL(validURLMail)).toBe(true);
+
+            const validURLCalendar = `https://calendar.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
+            expect(isGoogleOAuthAuthorizationURL(validURLCalendar)).toBe(true);
         });
 
-        it("returns false for a different account path", () => {
-            const invalidURL = "https://account.proton.me/settings";
+        it("returns false for a different paths on proton.me domains", () => {
+            const invalidURLAccount = "https://account.proton.me/settings";
+            expect(isGoogleOAuthAuthorizationURL(invalidURLAccount)).toBe(false);
 
-            expect(isGoogleOAuthAuthorizationURL(invalidURL)).toBe(false);
+            const invalidURLMail = "https://mail.proton.me/inbox";
+            expect(isGoogleOAuthAuthorizationURL(invalidURLMail)).toBe(false);
+
+            const invalidURLCalendar = "https://calendar.proton.me/api/calendar/1";
+            expect(isGoogleOAuthAuthorizationURL(invalidURLCalendar)).toBe(false);
         });
 
-        it("returns false for same path on wrong domain", () => {
-            const wrongDomainURL = `https://calendar.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
-
+        it("returns false for same path on non-proton domain", () => {
+            const wrongDomainURL = `https://example.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
             expect(isGoogleOAuthAuthorizationURL(wrongDomainURL)).toBe(false);
         });
 
         it("returns false for a malformed URL", () => {
             const invalidUrl = "invalid url";
-
             expect(isGoogleOAuthAuthorizationURL(invalidUrl)).toBe(false);
         });
     });
