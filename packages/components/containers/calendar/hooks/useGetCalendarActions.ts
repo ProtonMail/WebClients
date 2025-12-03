@@ -106,6 +106,8 @@ const useGetCalendarActions = ({
                 const newDefaultCalendarID = ownedActiveCalendars?.length ? ownedActiveCalendars[0].ID : newCalendarID;
                 return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
             })(),
+            // We fetch the calendar bootstrap after it's creation so we have the latest data.
+            getCalendarBootstrap(newCalendarID),
         ]).catch(() => {
             createNotification({
                 type: 'warning',
