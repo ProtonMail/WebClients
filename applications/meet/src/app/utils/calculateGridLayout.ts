@@ -21,7 +21,7 @@ export const calculateGridLayout = (count: number, isSmallScreen: boolean) => {
     if (count <= 6) {
         return { cols: 3, rows: 2 };
     }
-    if (count <= 9) {
+    if (count <= 8) {
         return { cols: 4, rows: 2 };
     }
     if (count <= 12) {
