@@ -683,6 +683,41 @@ describe('DownloadManager', () => {
         expect(resumeSpy).toHaveBeenCalledWith(['job-6']);
     });
 
+    it('should download from buffer and add to download queue', async () => {
+        const manager = DownloadManager.getInstance();
+
+        const node: NodeEntity = createMockNodeEntity({
+            uid: 'buffer-file-1',
+            name: 'video.mp4',
+        });
+        const nodeSize = node.activeRevision?.storageSize ?? 0;
+
+        const buffer: Uint8Array<ArrayBuffer>[] = [new Uint8Array([1, 2, 3, 4])];
+        const mimeType = 'video/mp4';
+
+        fileSaverSaveAsFileMock.mockResolvedValue(undefined);
+
+        await manager.downloadFromBuffer(node, buffer, mimeType);
+
+        expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(
+            expect.any(ReadableStream),
+            {
+                filename: node.name,
+                mimeType: mimeType,
+            },
+            expect.any(Function)
+        );
+
+        expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
+            name: node.name,
+            storageSize: nodeSize,
+            status: DownloadStatus.Finished,
+            nodeUids: [node.uid],
+            downloadedBytes: nodeSize,
+            isPhoto: false,
+        });
+    });
+
     it('should subscribe to SDK events once and update status on pause/resume', () => {
         const manager = DownloadManager.getInstance();
         const activeDownload = {

@@ -6,7 +6,7 @@ import UnsupportedPreview from './UnsupportedPreview';
 
 interface Props {
     mimeType: string;
-    contents?: Uint8Array<ArrayBuffer>[];
+    contents: Uint8Array<ArrayBuffer>[];
     onDownload?: () => void;
 }
 
@@ -22,7 +22,7 @@ const AudioPreview = ({ contents, mimeType, onDownload }: Props) => {
                 URL.revokeObjectURL(newUrl);
             }
         };
-    }, [contents]);
+    }, [contents, mimeType]);
 
     const handleBrokenAudio = () => {
         setError(true);
@@ -38,7 +38,13 @@ const AudioPreview = ({ contents, mimeType, onDownload }: Props) => {
     return (
         <div className="flex w-full h-full">
             <div className="m-auto w-full md:w-1/2">
-                {url ? <audio className="w-full" onError={handleBrokenAudio} src={url} controls /> : <CircleLoader />}
+                {url ? (
+                    <audio className="w-full" onError={handleBrokenAudio} src={url} controls>
+                        <track kind="captions" />
+                    </audio>
+                ) : (
+                    <CircleLoader />
+                )}
             </div>
         </div>
     );
