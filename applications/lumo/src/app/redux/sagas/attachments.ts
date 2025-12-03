@@ -239,30 +239,6 @@ function* httpPostAttachment(serializedAttachment: SerializedAttachment, priorit
     return entry;
 }
 
-function* httpPutAttachment(
-    serializedAttachment: SerializedAttachment,
-    remoteId: RemoteId,
-    priority: Priority
-): SagaIterator<any> {
-    console.log('Saga triggered: httpPutAttachment', { serializedAttachment, remoteId });
-    const type: ResourceType = 'attachment';
-    const lumoApi: LumoApi = yield getContext('lumoApi');
-    const { id: localId, spaceId: localSpaceId } = serializedAttachment;
-
-    if (!localSpaceId) {
-        throw new Error(`httpPutAttachment ${localId}: attachment has no spaceId`);
-    }
-
-    const remoteSpaceId: RemoteId = yield call(waitForMapping, 'space', localSpaceId);
-    const attachmentToApi = convertNewAttachmentToApi(serializedAttachment, remoteSpaceId);
-    const status: RemoteStatus = yield call([lumoApi, lumoApi.putAttachment], attachmentToApi, remoteId, priority);
-    if (status === 'deleted') {
-        console.log(`PUT ${type}: ${localId} was deleted remotely, deleting also locally: ${localId} ${remoteId})`);
-        const deletedAttachment: DeletedAttachment = { ...serializedAttachment, deleted: true };
-        yield put(locallyDeleteAttachmentFromRemoteRequest(deletedAttachment.id));
-    }
-}
-
 function* httpDeleteAttachment(localId: LocalId, remoteId: RemoteId, priority: Priority): SagaIterator<RemoteStatus> {
     console.log('Saga triggered: httpDeleteAttachment', { localId, remoteId });
     const type: ResourceType = 'attachment';
@@ -330,15 +306,8 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
         // Save the attachment to IndexedDB with a dirty flag
         yield call(saveDirtyAttachment, serializedAttachment);
 
-        // Choose between POST or PUT
-        let entry: IdMapEntry | undefined;
-        if (!remoteId) {
-            // POST
-            entry = yield call(callWithRetry, httpPostAttachment, [serializedAttachment, priority]);
-        } else {
-            // PUT
-            yield call(callWithRetry, httpPutAttachment, [serializedAttachment, remoteId, priority]);
-        }
+        // Always use POST for attachments (which are assets), never PUT
+        const entry: IdMapEntry = yield call(callWithRetry, httpPostAttachment, [serializedAttachment, priority]);
 
         // Finish
         const updated: boolean = yield call(clearDirtyIfUnchanged, serializedAttachment);
