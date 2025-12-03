@@ -5,15 +5,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
 import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { useBookings } from './bookingsProvider/BookingsProvider';
-import { BookingsLimitReached } from './upsells/BookingsLimitReached';
-import { UpsellBookings } from './upsells/UpsellBookings';
-import { useBookingUpsell } from './upsells/useBookingUpsell';
 
 import './BookingSidebarAction.scss';
 
@@ -27,24 +23,8 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
     const [user] = useUser();
     const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
-    const { shouldShowLimitModal, loadingLimits } = useBookingUpsell();
-    const [upsellModalProps, setUpsellModalOpen, renderUpsellModal] = useModalState();
-    const [limitModalProps, setLimitModalOpen, renderLimitModal] = useModalState();
-
     const handleBookingPage = () => {
-        const userReachedBookingLimit = shouldShowLimitModal();
-
-        if (userReachedBookingLimit.booking) {
-            setLimitModalOpen(true);
-        } else if (userReachedBookingLimit.plan) {
-            if (user.canPay) {
-                setUpsellModalOpen(true);
-            } else {
-                setLimitModalOpen(true);
-            }
-        } else {
-            openBookingSidebarCreation(utcDate);
-        }
+        openBookingSidebarCreation(utcDate);
     };
 
     return (
@@ -67,7 +47,7 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
                             {c('Action').t`Create an event`}
                         </div>
                     </DropdownMenuButton>
-                    <DropdownMenuButton onClick={handleBookingPage} disabled={!canCreateBooking || loadingLimits}>
+                    <DropdownMenuButton onClick={handleBookingPage} disabled={!canCreateBooking}>
                         <div className="flex gap-8 items-center">
                             <div className="flex gap-2 items-center">
                                 <IcCalendarListCheck />
@@ -78,8 +58,6 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
                     </DropdownMenuButton>
                 </DropdownMenu>
             </SimpleDropdown>
-            {renderUpsellModal && <UpsellBookings {...upsellModalProps} />}
-            {renderLimitModal && <BookingsLimitReached {...limitModalProps} />}
         </>
     );
 };
