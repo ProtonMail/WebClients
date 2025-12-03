@@ -166,7 +166,7 @@ export const useLumoActions = ({
                     contextFilters,
                 },
                 uiContext: {
-                    enableExternalToolsToggled: !!isWebSearchButtonToggled && isLumoToolingEnabled,
+                    enableExternalTools: !!isWebSearchButtonToggled && isLumoToolingEnabled,
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
@@ -286,7 +286,7 @@ export const useLumoActions = ({
                 uiContext: {
                     isEdit: true,
                     updateSibling: preferSibling,
-                    enableExternalToolsToggled: isWebSearchButtonToggled && isLumoToolingEnabled,
+                    enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
