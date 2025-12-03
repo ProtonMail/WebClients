@@ -4,8 +4,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
-import type { ContextFilter } from '../../llm';
-import { ENABLE_U2L_ENCRYPTION, enrichTurnWithImages, getFilteredTurnsWithImages, prepareTurns } from '../../llm';
+import { type ContextFilter, ENABLE_U2L_ENCRYPTION, prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { calculateSingleAttachmentContextSize } from '../../llm/utils';
 import { newAttachmentId, pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
@@ -907,13 +906,24 @@ export function regenerateMessage(
                     dispatch(addMessage(updatedAssistantMessage));
                 }
             }
-            const turns = await getFilteredTurnsWithImages(
+
+            // Build conversation context (Δ₂ pattern)
+            const c: ConversationContext = {
+                spaceId,
+                conversationId,
+                allConversationAttachments: attachments,
+                messageChain: updatedMessagesWithContext,
+                contextFilters,
+            };
+
+            // Δ₁ + Δ₂: Use refactored API with RAG context
+            const turns = prepareTurns(
                 updatedMessagesWithContext,
-                attachments,
                 contextFilters,
                 personalization,
                 projectInstructions,
-                ragResult?.context
+                ragResult?.context,
+                c
             );
 
             // Add retry instructions if provided
@@ -1109,27 +1119,14 @@ export async function retrySendMessage({
         };
 
         // Prepare turns with images (prepareTurns handles enrichment internally when c is provided)
-        let turns = prepareTurns(
+        const turns = prepareTurns(
             updatedLinearChain,
             contextFilters,
             personalization,
             projectInstructions,
-            ragResult?.context
+            ragResult?.context,
+            c
         );
-
-        // If no attachments, nothing to add
-        if (attachments.length === 0) {
-            return turns;
-        }
-
-        // Note: Image enrichment already handled by prepareTurns via the c parameter
-        // The code below is legacy and should be considered for removal
-        turns = await Promise.all(
-            turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, updatedLinearChain, attachments))
-        );
-
-        turns = turns
-            .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
 
         await dispatch(
             sendMessageWithRedux(api, turns, {
