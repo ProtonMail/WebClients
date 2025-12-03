@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, KeyboardEvent } from 'react';
+import type { ComponentPropsWithRef, KeyboardEvent, ReactNode } from 'react';
 import { forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -18,6 +18,7 @@ interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value
     caretIconName?: IconName;
     caretClassName?: string;
     fullWidth?: boolean;
+    prefixIcon?: ReactNode;
 }
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
@@ -34,6 +35,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
             caretIconName,
             caretClassName,
             fullWidth = true,
+            prefixIcon,
             ...rest
         },
         ref
@@ -70,6 +72,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 ])}
                 {...rest}
             >
+                {prefixIcon && <span className="inline-flex">{prefixIcon}</span>}
                 <span className="flex-1 text-ellipsis text-left">{children}</span>
 
                 {
