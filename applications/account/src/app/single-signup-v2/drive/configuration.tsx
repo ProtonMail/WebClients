@@ -251,6 +251,7 @@ export const getDriveConfiguration = ({
     audience,
     toApp,
     signupParameters,
+    isNewB2BPlanEnabled,
 }: {
     hideFreePlan: boolean;
     audience: Audience.B2B | Audience.B2C;
@@ -261,6 +262,7 @@ export const getDriveConfiguration = ({
     freePlan: FreePlanDefault;
     toApp: typeof APPS.PROTONDRIVE | typeof APPS.PROTONDOCS;
     signupParameters?: { trial?: boolean };
+    isNewB2BPlanEnabled: boolean;
 }): SignupConfiguration => {
     const logo = <DriveLogo />;
     const title = c('drive_signup_2024: Info').t`Secure cloud storage that gives you control of your data`;
@@ -288,7 +290,7 @@ export const getDriveConfiguration = ({
                         }
                     />
                 ),
-                type: 'best' as const,
+                type: 'standard' as const,
                 guarantee: false,
             },
             {
@@ -305,6 +307,23 @@ export const getDriveConfiguration = ({
                         }
                     />
                 ),
+                type: 'best' as const,
+                guarantee: true,
+            },
+            isNewB2BPlanEnabled && {
+                plan: PLANS.BUNDLE_BIZ_2025,
+                subsection: (
+                    <FeatureListPlanCardSubSection
+                        description={c('mail_signup_2025: Info')
+                            .t`All ${BRAND_NAME} for Business apps and premium features to protect your entire business`}
+                        features={
+                            <PlanCardFeatureList
+                                {...planCardFeatureProps}
+                                features={getBundleProFeatures({ plan: plansMap?.[PLANS.BUNDLE_BIZ_2025], freePlan })}
+                            />
+                        }
+                    />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
             },
@@ -312,9 +331,9 @@ export const getDriveConfiguration = ({
                 subsection: <LetsTalkGenericSubSection app="drive" signupParameters={signupParameters} />,
                 type: 'standard' as const,
                 guarantee: true,
-                interactive: false,
+                interactive: false as const,
             },
-        ],
+        ].filter(isTruthy),
         [Audience.B2C]: [
             !hideFreePlan && {
                 plan: PLANS.FREE,
@@ -439,9 +458,9 @@ export const getDriveConfiguration = ({
                     pathname: SSO_PATHS.DRIVE_SIGNUP_B2B,
                 },
                 title: c('mail_signup_2024: title').t`For businesses`,
-                defaultPlan: PLANS.DRIVE_BUSINESS,
+                defaultPlan: isNewB2BPlanEnabled ? PLANS.BUNDLE_PRO_2024 : PLANS.DRIVE_BUSINESS,
             },
-        ].filter(isTruthy),
+        ],
         features,
         benefits,
         planCards,
@@ -454,7 +473,7 @@ export const getDriveConfiguration = ({
         defaults: {
             plan: (() => {
                 if (audience === Audience.B2B) {
-                    return PLANS.DRIVE_BUSINESS;
+                    return isNewB2BPlanEnabled ? PLANS.BUNDLE_PRO_2024 : PLANS.DRIVE_BUSINESS;
                 }
                 return PLANS.BUNDLE;
             })(),

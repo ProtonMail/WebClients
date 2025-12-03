@@ -20,6 +20,7 @@ export const getGenericConfiguration = ({
     vpnServersCountData,
     freePlan,
     signupParameters,
+    isNewB2BPlanEnabled,
 }: {
     theme: PublicTheme;
     audience: Audience.B2C | Audience.B2B;
@@ -31,6 +32,7 @@ export const getGenericConfiguration = ({
     plansMap?: PlansMap;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
+    isNewB2BPlanEnabled: boolean;
 }): SignupConfiguration => {
     const logo = <ProtonLogo color={theme.dark ? 'invert' : 'brand'} />;
 
@@ -44,6 +46,7 @@ export const getGenericConfiguration = ({
         signupParameters,
         freePlan,
         canUseBYOE: false,
+        isNewB2BPlanEnabled,
     });
 
     return {

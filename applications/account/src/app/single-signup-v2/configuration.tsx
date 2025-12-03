@@ -10,6 +10,7 @@ import { getPassAppFeature } from '@proton/components/containers/payments/featur
 import {
     getAllAppsFeature,
     getBundlePlan,
+    getBundlePremiumPlan,
     getBundleProPlan,
     getDrive1TBPlan,
     getDriveBusinessPlan,
@@ -275,6 +276,20 @@ export const getSummaryPlan = ({
 
     if (plan && plan?.Name === PLANS.BUNDLE_PRO_2024) {
         const shortPlan = getBundleProPlan(plan);
+        return {
+            logo: (
+                <div>
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={shortPlan.title} />
+                </div>
+            ),
+            ...shortPlan,
+            plan,
+            features: [],
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.BUNDLE_BIZ_2025) {
+        const shortPlan = getBundlePremiumPlan(plan);
         return {
             logo: (
                 <div>

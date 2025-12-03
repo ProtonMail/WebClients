@@ -226,8 +226,9 @@ export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomeP
 export const hasLumoBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.LUMO_BUSINESS);
 export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
 
-export const hasAnyBundlePro = (subscription: MaybeFreeSubscription) =>
-    hasBundlePro(subscription) || hasBundlePro2024(subscription);
+// including 2 versions of bundlepro + bundlebiz2025
+export const hasAnyB2bBundle = (subscription: MaybeFreeSubscription) =>
+    hasBundlePro(subscription) || hasBundlePro2024(subscription) || hasBundleBiz2025(subscription);
 
 export const hasFreeOrPlus = (subscription: MaybeFreeSubscription) =>
     hasFree(subscription) ||
@@ -419,7 +420,7 @@ export const getHasMailB2BPlan = (subscription: MaybeFreeSubscription) => {
 };
 
 export const getHasInboxB2BPlan = (subscription: MaybeFreeSubscription) => {
-    return hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
+    return hasAnyB2bBundle(subscription) || getHasMailB2BPlan(subscription);
 };
 
 export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs => {

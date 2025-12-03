@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Icon, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components';
+import { Icon } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
-import { PLANS, hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@proton/payments';
 
 import { Button } from '../../atoms';
+import { useUpsellModal } from '../../hooks/useUpsellModal';
 
 import './UpgradeButton.scss';
 
@@ -14,28 +14,11 @@ export const UpgradeButton = () => {
     const uid = useUid('linear-gradient');
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openUpsellModal] = useUpsellModal(subscription);
 
     if (user.isPaid) {
         return <></>;
     }
-
-    const upgradeToVisionaryOnly =
-        hasBundle(subscription) ||
-        hasFamily(subscription) ||
-        hasDuo(subscription) ||
-        hasBundlePro(subscription) ||
-        hasBundlePro2024(subscription);
-
-    const subscriptionProps = upgradeToVisionaryOnly
-        ? {
-              step: SUBSCRIPTION_STEPS.CHECKOUT,
-              disablePlanSelection: true,
-              plan: PLANS.VISIONARY,
-          }
-        : {
-              step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-          };
 
     return (
         <Button
@@ -43,14 +26,7 @@ export const UpgradeButton = () => {
             shape="ghost"
             color="norm"
             className="my-2 button-lighter button-promotion button-promotion--icon-gradient ml-2"
-            onClick={() => {
-                openSubscriptionModal({
-                    ...subscriptionProps,
-                    metrics: {
-                        source: 'upsells',
-                    },
-                });
-            }}
+            onClick={openUpsellModal}
         >
             <Icon
                 alt={c('Action').t`Upgrade`}

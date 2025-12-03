@@ -568,6 +568,32 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+export const getBundlePremiumPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.BUNDLE_BIZ_2025,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info')
+            .t`All ${BRAND_NAME} business apps and premium features to protect your entire business.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
+            getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
+            getNDomainsFeature({ n: plan.MaxDomains }),
+            getSentinel(true),
+            getFoldersAndLabelsFeature('unlimited'),
+            getContactGroupsManagement(),
+            getCalendarAppFeature(),
+            getDriveAppFeature(),
+            getPassAppFeature(),
+            getB2BHighSpeedVPNConnections(),
+            getNetShield(true),
+            getSecureCore(true),
+            getSMTPToken(true),
+        ],
+    };
+};
+
 export const getVisionaryPlan = ({
     serversCount,
     plan,
@@ -820,6 +846,8 @@ export const getShortPlan = (
         case PLANS.BUNDLE_PRO:
         case PLANS.BUNDLE_PRO_2024:
             return getBundleProPlan(planData);
+        case PLANS.BUNDLE_BIZ_2025:
+            return getBundlePremiumPlan(planData);
         case PLANS.VISIONARY:
             return getVisionaryPlan({ serversCount: vpnServers, plan: planData, freePlan });
         case PLANS.FAMILY:
