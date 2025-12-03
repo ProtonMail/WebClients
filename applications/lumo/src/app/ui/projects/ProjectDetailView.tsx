@@ -76,6 +76,13 @@ const ProjectDetailViewInner = () => {
         return () => window.removeEventListener('resize', checkViewport);
     }, []);
 
+    // Automatically hide sidebar on mobile to prevent CSS layout issues
+    useEffect(() => {
+        if (isMobileViewport) {
+            setShowSidebar(false);
+        }
+    }, [isMobileViewport]);
+
     const { createConversationInProject, deleteProject } = useProjectActions();
 
     const handleShowDriveBrowser = useCallback(() => {
@@ -162,7 +169,7 @@ const ProjectDetailViewInner = () => {
     // Get prompt suggestions based on project name (for newly created example projects)
     const getPromptSuggestions = (): string[] => {
         // Health/Medical
-        if (projectName.toLowerCase().includes('health') || projectName.toLowerCase().includes('medical')) {
+        if (category.id === 'health') {
             return [
                 'What do these lab values mean and are any outside normal ranges?',
                 'Help me prepare questions about this diagnosis for my doctor',
@@ -170,7 +177,7 @@ const ProjectDetailViewInner = () => {
             ];
         }
         // Financial
-        if (projectName.toLowerCase().includes('financ')) {
+        if (category.id === 'financial' || category.id === 'investing') {
             return [
                 'Analyze my spending patterns and suggest areas to reduce expenses',
                 'Review my investment portfolio allocation and suggest rebalancing',
@@ -178,7 +185,7 @@ const ProjectDetailViewInner = () => {
             ];
         }
         // Legal
-        if (projectName.toLowerCase().includes('legal') || projectName.toLowerCase().includes('contract')) {
+        if (category.id === 'legal') {
             return [
                 'Summarize the key obligations and rights in this contract',
                 'What are the termination clauses and notice requirements?',
@@ -186,7 +193,7 @@ const ProjectDetailViewInner = () => {
             ];
         }
         // Research
-        if (projectName.toLowerCase().includes('research')) {
+        if (category.id === 'research') {
             return [
                 'Compare the methodologies used across these studies',
                 'What are the main findings and how do they relate to each other?',
@@ -194,7 +201,7 @@ const ProjectDetailViewInner = () => {
             ];
         }
         // Writing
-        if (projectName.toLowerCase().includes('writ')) {
+        if (category.id === 'writing') {
             return [
                 'Help me refine this draft to be more concise and impactful',
                 'Suggest ways to improve the flow and structure of this text',
@@ -223,7 +230,7 @@ const ProjectDetailViewInner = () => {
     return (
         <div className="project-detail-view">
             {/* Header */}
-            <div className="project-detail-header">
+            <div className={`project-detail-header ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}>
                 {isSmallScreen && (
                     <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5} />
                 )}
@@ -239,13 +246,12 @@ const ProjectDetailViewInner = () => {
                         <span className="project-detail-back-text">{c('collider_2025:Navigation').t`All projects`}</span>
                     </Button>
                     <div className="project-detail-title-section">
-                        <Icon name={category.icon as any} size={5} className="project-detail-title-icon" style={{ color: category.color }} />
+                        <Icon name={category.icon as any} size={6} className="project-detail-title-icon" />
                         <h1 className="project-detail-title">{projectName}</h1>
                     </div>
                 </div>
                 <div className="project-detail-actions">
                     <Button
-                        icon
                         shape="ghost"
                         onClick={() => {
                             if (isMobileViewport) {
@@ -261,8 +267,15 @@ const ProjectDetailViewInner = () => {
                                 ? c('collider_2025:Action').t`Hide sidebar`
                                 : c('collider_2025:Action').t`Show sidebar`
                         }
+                        className="project-detail-settings-button"
                     >
-                        <Icon name={isMobileViewport ? 'list-bullets' : showSidebar ? 'chevron-right' : 'chevron-left'} />
+                        <Icon name={isMobileViewport ? 'list-bullets' : showSidebar ? 'chevron-right' : 'meet-settings'} className="mr-1" />
+                        <span>
+                            {showSidebar ?
+                                c('collider_2025:Action').t`Hide settings`
+                                : c('collider_2025:Action').t`Show settings`
+                            }
+                        </span>
                     </Button>
                     <Button
                         ref={anchorRef}
@@ -290,7 +303,7 @@ const ProjectDetailViewInner = () => {
                 </div>
             </div>
 
-            <div className="project-detail-content">
+            <div className={`project-detail-content ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}>
                 {/* Main area */}
                 <div className="project-detail-main">
                     {conversationList.length === 0 ? (
@@ -316,24 +329,37 @@ const ProjectDetailViewInner = () => {
                             )}
                         </div>
                     ) : (
-                        <div className="project-detail-conversations">
-                            <h3 className="project-detail-section-title">
-                                {c('collider_2025:Title').t`Conversations`} ({conversationList.length})
-                            </h3>
+                        <div className="project-detail-conversations pt-5">
+
                             <div className="project-detail-conversation-list">
-                                {conversationList.map((conversation) => (
-                                    <button
-                                        key={conversation.id}
-                                        className="project-detail-conversation-item"
-                                        onClick={() => history.push(`/c/${conversation.id}`)}
-                                    >
-                                        <Icon name="speech-bubble" size={4} />
-                                        <span className="project-detail-conversation-title">
-                                            {conversation.title || c('collider_2025:Label').t`Untitled chat`}
-                                        </span>
-                                        <Icon name="chevron-right" size={4} className="ml-auto" />
-                                    </button>
-                                ))}
+                                {conversationList.map((conversation) => {
+                                    const createdAt = new Date(conversation.createdAt);
+                                    const isToday = createdAt.toDateString() === new Date().toDateString();
+                                    const formattedDate = isToday
+                                        ? createdAt.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })
+                                        : createdAt.toLocaleDateString([], { month: 'short', day: 'numeric' });
+
+                                    return (
+                                        <button
+                                            key={conversation.id}
+                                            className="project-detail-conversation-item"
+                                            onClick={() => history.push(`/c/${conversation.id}`)}
+                                        >
+                                            <div className="project-detail-conversation-icon">
+                                                <Icon name="speech-bubble" size={4} />
+                                            </div>
+                                            <div className="project-detail-conversation-content">
+                                                <span className="project-detail-conversation-title">
+                                                    {conversation.title || c('collider_2025:Label').t`Untitled chat`}
+                                                </span>
+                                                <span className="project-detail-conversation-date">
+                                                    {formattedDate}
+                                                </span>
+                                            </div>
+                                            <Icon name="arrow-right" size={3} className="project-detail-conversation-arrow" />
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </div>
                     )}

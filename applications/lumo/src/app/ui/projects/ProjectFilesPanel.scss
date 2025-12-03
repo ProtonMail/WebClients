@@ -8,8 +8,17 @@
     overflow-y: auto;
     flex-shrink: 0;
 
+    // When sidebar is shown, give it more space
+    .project-detail-content.with-sidebar & {
+        width: 40%;
+    }
+
     @media (max-width: 1024px) {
         width: 50%;
+
+        .project-detail-content.with-sidebar & {
+            width: 50%;
+        }
     }
 
     @media (max-width: 768px) {
