@@ -27,7 +27,7 @@ export const useFileMentionAutocomplete = (
     messageChain: Message[] = []
 ): {
     mentionState: FileMentionState;
-    files: Array<{ id: string; name: string; source: 'local' | 'drive'; attachment?: Attachment; mimeType?: string }>;
+    files: { id: string; name: string; source: 'local' | 'drive'; attachment?: Attachment; mimeType?: string }[];
     selectFile: (file: { id: string; name: string; source: 'local' | 'drive'; attachment?: Attachment; mimeType?: string }) => void;
     closeMention: () => void;
 } => {
@@ -54,7 +54,7 @@ export const useFileMentionAutocomplete = (
         spaceId ? selectAttachmentsBySpaceId(spaceId)(state) : {}
     );
 
-    const [driveFiles, setDriveFiles] = useState<Array<{ id: string; name: string }>>([]);
+    const [driveFiles, setDriveFiles] = useState<{ id: string; name: string }[]>([]);
     const driveFilesLoadedRef = useRef(false);
 
     // Load Drive files once when folder is linked
@@ -86,7 +86,7 @@ export const useFileMentionAutocomplete = (
     
     // Get all available files with their attachment references
     // Use useMemo instead of useCallback to avoid dependency issues
-    const allFiles = useMemo((): Array<{ id: string; name: string; source: 'local' | 'drive'; attachment?: Attachment; mimeType?: string }> => {
+    const allFiles = useMemo((): { id: string; name: string; source: 'local' | 'drive'; attachment?: Attachment; mimeType?: string }[] => {
         // Get local files (space assets and attachments) - these already exist as attachments
         const localFiles = [
             ...spaceAssetIds.map((id) => spaceAssets[id]).filter((asset) => asset && !asset.error && !asset.processing),
