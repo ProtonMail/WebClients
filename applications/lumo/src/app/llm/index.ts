@@ -31,7 +31,7 @@ import {
     type Turn,
 } from '../types';
 import type { GenerationResponseMessage, WireImage } from '../types-api';
-import { formatPersonalization } from '../ui/interactiveConversation/helper';
+import { type ConversationContext, formatPersonalization } from '../ui/interactiveConversation/helper';
 import { separateAttachmentsByType } from './attachments';
 import { removeFileFromMessageContext } from './utils';
 
@@ -82,7 +82,8 @@ export function prepareTurns(
     contextFilters: ContextFilter[] = [],
     personalization: PersonalizationSettings,
     projectInstructions?: string,
-    documentContext?: string
+    documentContext?: string,
+    c?: ConversationContext
 ): Turn[] {
     // Apply context filters to the original message chain before processing
     const filteredMessageChain = linearChain.map((message) => {
@@ -190,7 +191,20 @@ export function prepareTurns(
         }
     });
 
+    // Enrich turns with images
+    if (c) {
+        turns = turns.map((turn, index) =>
+            enrichTurnWithImages(turn, index, turns, linearChain, c.allConversationAttachments)
+        );
+    }
+
+    turns = removeEmptyAssistantTurns(turns);
+
     return turns;
+}
+
+function removeEmptyAssistantTurns(turns: Turn[]) {
+    return turns.filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
 }
 
 /**
@@ -228,13 +242,13 @@ function tryConvertToWireImage(attachment: Attachment): WireImage | null {
  * Enrich a single turn with image attachments by matching attachment IDs
  * Works for ALL user turns in the conversation
  */
-export async function enrichTurnWithImages(
+export function enrichTurnWithImages(
     turn: Turn,
     turnIndex: number,
     turns: Turn[],
     linearChain: Message[],
     allAttachments: Attachment[]
-): Promise<Turn> {
+): Turn {
     // Only process user turns
     if (turn.role !== Role.User) {
         return turn;
@@ -283,22 +297,10 @@ export async function prepareTurnsWithImages(
     contextFilters: ContextFilter[] = [],
     personalization: PersonalizationSettings,
     projectInstructions?: string,
-    documentContext?: string
+    documentContext?: string,
+    c?: ConversationContext
 ): Promise<Turn[]> {
-    // First, get basic turns without images
-    const turns = prepareTurns(linearChain, contextFilters, personalization, projectInstructions, documentContext);
-
-    // If no attachments, nothing to add
-    if (attachments.length === 0) {
-        return turns;
-    }
-
-    // Now enrich user turns with images
-    const enrichedTurns = await Promise.all(
-        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, attachments))
-    );
-
-    return enrichedTurns;
+    return prepareTurns(linearChain, contextFilters, personalization, projectInstructions, documentContext, c);
 }
 
 export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN): Turn[] {
@@ -306,6 +308,7 @@ export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN)
 }
 
 // return turns that are either user or assistant where assistant turns are not empty
+// caution: unused
 export const getFilteredTurns = (
     linearChain: Message[],
     contextFilters: ContextFilter[] = [],
@@ -314,7 +317,7 @@ export const getFilteredTurns = (
     documentContext?: string
 ) => {
     return (
-        prepareTurns(linearChain, contextFilters, personalization, projectInstructions, documentContext)
+        prepareTurns(linearChain, contextFilters, personalization, projectInstructions, documentContext) // caution: missing `c`
             // FIXME: possibly useless
             // .filter((turn) => {
             //     // Keep system messages that contain personalization, filter out other system messages
@@ -336,7 +339,8 @@ export const getFilteredTurnsWithImages = async (
     contextFilters: ContextFilter[] = [],
     personalization: PersonalizationSettings,
     projectInstructions?: string,
-    documentContext?: string
+    documentContext?: string,
+    c?: ConversationContext
 ): Promise<Turn[]> => {
     const turns = await prepareTurnsWithImages(
         linearChain,
@@ -344,7 +348,8 @@ export const getFilteredTurnsWithImages = async (
         contextFilters,
         personalization,
         projectInstructions,
-        documentContext
+        documentContext,
+        c
     );
     return (
         turns
