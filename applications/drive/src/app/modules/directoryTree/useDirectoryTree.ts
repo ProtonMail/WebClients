@@ -47,13 +47,13 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
     const initializeTree = useCallback(async () => {
         // My files
         const myFilesRoot = await drive.getMyFilesRootFolder();
-        const { uid, type } = myFilesRoot.ok ? myFilesRoot.value : myFilesRoot.error;
+        const { uid } = myFilesRoot.ok ? myFilesRoot.value : myFilesRoot.error;
         addItem({
             nodeUid: uid,
             treeItemId: makeTreeItemId(null, uid),
             parentUid: null,
             name: c('Title').t`My files`,
-            type,
+            type: DirectoryTreeRootType.FilesRoot,
             expandable: true,
             isSharedWithMe: false,
             highestEffectiveRole: MemberRole.Admin,
