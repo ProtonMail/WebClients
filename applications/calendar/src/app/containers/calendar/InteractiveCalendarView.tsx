@@ -85,7 +85,7 @@ import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
-import { fromUTCDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { convertUTCDateTimeToZone, fromUTCDate, toLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
@@ -955,7 +955,7 @@ const InteractiveCalendarView = ({
                 });
                 newTemporaryEvent = getTemporaryEvent(newTemporaryEvent, newTemporaryModel, tzid);
 
-                const now = new Date();
+                const now = toLocalDate(convertUTCDateTimeToZone(fromUTCDate(new Date()), tzid));
                 const bookingStart = toLocalDate(fromUTCDate(start));
                 const bookingEnd = toLocalDate(fromUTCDate(end));
 
