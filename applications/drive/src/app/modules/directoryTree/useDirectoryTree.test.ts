@@ -88,7 +88,7 @@ describe('useDirectoryTree', () => {
             expect(myFilesRoot).toMatchObject({
                 parentUid: null,
                 name: 'My files',
-                type: NodeType.Folder,
+                type: 'files-root',
                 expandable: true,
                 children: null,
             });
@@ -133,7 +133,7 @@ describe('useDirectoryTree', () => {
             expect(degradedRoot).toMatchObject({
                 parentUid: null,
                 name: 'My files',
-                type: NodeType.Folder,
+                type: 'files-root',
             });
         });
     });
