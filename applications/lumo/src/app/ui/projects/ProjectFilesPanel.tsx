@@ -58,9 +58,10 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
         }
 
         try {
-            await createFolder(linkedDriveFolder.folderId, folderName.trim());
+            const trimmedFolderName = folderName.trim();
+            await createFolder(linkedDriveFolder.folderId, trimmedFolderName);
             createNotification({
-                text: c('collider_2025:Success').t`Folder "${folderName.trim()}" created successfully`,
+                text: c('collider_2025:Success').t`Folder "${trimmedFolderName}" created successfully`,
                 type: 'success',
             });
             setFolderName('');
