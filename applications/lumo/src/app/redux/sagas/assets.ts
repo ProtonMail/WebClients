@@ -160,13 +160,9 @@ export function* handlePushAssetRequest({ payload: request }: { payload: PushAss
     }
 
     try {
-        if (remoteId) {
-            const success: PushAssetSuccess = yield call(httpPutAsset, serializedAsset, remoteId, priority);
-            yield put(pushAssetSuccess(success));
-        } else {
-            const success: PushAssetSuccess = yield call(httpPostAsset, serializedAsset, priority);
-            yield put(pushAssetSuccess(success));
-        }
+        // Always use POST for assets, never PUT
+        const success: PushAssetSuccess = yield call(httpPostAsset, serializedAsset, priority);
+        yield put(pushAssetSuccess(success));
     } catch (e) {
         console.error(`Error pushing asset ${localId}:`, e);
         if (isClientError(e)) {
@@ -309,25 +305,6 @@ function* httpPostAsset(serializedAsset: SerializedAsset, priority: Priority): S
     const entry: IdMapEntry = { type, localId, remoteId };
     yield put(addIdMapEntry({ ...entry, saveToIdb: true }));
     return { id: localId, serializedAsset, entry };
-}
-
-function* httpPutAsset(
-    serializedAsset: SerializedAsset,
-    remoteId: RemoteId,
-    priority: Priority
-): SagaIterator<PushAssetSuccess> {
-    console.log('Saga triggered: httpPutAsset', serializedAsset, remoteId);
-    const type: ResourceType = 'asset';
-    const { id: localId, spaceId: localSpaceId } = serializedAsset;
-
-    const remoteSpaceId: RemoteId = yield call(waitForMapping, 'space', localSpaceId);
-    const assetToApi = convertNewAssetToApi(serializedAsset, remoteSpaceId);
-    const lumoApi: LumoApi = yield getContext('lumoApi');
-    const status: RemoteStatus = yield call([lumoApi, lumoApi.putAsset], assetToApi, remoteId, priority);
-    if (!status) {
-        throw new ClientError(`client error while putting ${type} ${localId}, not retrying`);
-    }
-    return { id: localId, serializedAsset };
 }
 
 function* httpDeleteAsset(localId: LocalId, remoteId: RemoteId, priority: Priority): SagaIterator<RemoteStatus> {

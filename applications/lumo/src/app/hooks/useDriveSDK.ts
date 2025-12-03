@@ -12,6 +12,8 @@ import { useSrpModule } from '@proton/drive/internal/useSrpModule';
 import { Logging } from '@proton/drive/modules/logging';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
+import { useIsGuest } from '../providers/IsGuestProvider';
+
 export interface DriveNode {
     nodeId: string;
     name: string;
@@ -56,6 +58,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
         lastRefreshTime: Date.now(),
     });
 
+    const isGuest = useIsGuest();
     const [user] = useUser();
     const [debug] = useLocalState(false, 'proton-drive-debug');
     const httpClient = useHttpClient([]);
@@ -69,6 +72,11 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
     const driveClientRef = useRef<ProtonDriveClient>();
 
     const initializeDriveSDK = useCallback(async () => {
+        // Don't initialize for guest users
+        if (isGuest || !user) {
+            return;
+        }
+        
         try {
             setState((prev) => ({ ...prev, isLoading: true, error: null }));
 
@@ -102,7 +110,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 error: error instanceof Error ? error.message : 'Failed to initialize Drive',
             }));
         }
-    }, [user, debug, httpClient, account, openPGPCryptoModule]);
+    }, [user, debug, httpClient, account, openPGPCryptoModule, isGuest]);
 
     const clearCaches = useCallback(() => {
         console.log('Clearing Drive SDK caches...');
@@ -178,6 +186,10 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
 
     const browseFolderChildren = useCallback(
         async (folderId?: string, forceRefresh?: boolean): Promise<DriveNode[]> => {
+            // Prevent Drive API calls for guest users
+            if (isGuest) {
+                throw new Error('Drive is not available for guest users');
+            }
             const drive = driveClientRef.current;
             if (!drive) {
                 throw new Error('Drive not initialized');
@@ -289,11 +301,15 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 throw error;
             }
         },
-        [clearCaches]
+        [clearCaches, isGuest]
     );
 
     const downloadFile = useCallback(
         async (nodeId: string, onProgress?: (progress: number) => void): Promise<ArrayBuffer> => {
+            // Prevent Drive API calls for guest users
+            if (isGuest) {
+                throw new Error('Drive is not available for guest users');
+            }
             const drive = driveClientRef.current;
             if (!drive) {
                 throw new Error('Drive not initialized');
@@ -374,11 +390,15 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 throw error;
             }
         },
-        []
+        [isGuest]
     );
 
     const uploadFile = useCallback(
         async (folderId: string, file: File, onProgress?: (progress: number) => void): Promise<string> => {
+            // Prevent Drive API calls for guest users
+            if (isGuest) {
+                throw new Error('Drive is not available for guest users');
+            }
             const drive = driveClientRef.current;
             if (!drive) {
                 throw new Error('Drive not initialized');
@@ -425,7 +445,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 throw error;
             }
         },
-        []
+        [isGuest]
     );
 
     const navigateToFolder = useCallback(
@@ -474,7 +494,7 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 throw error;
             }
         },
-        []
+        [isGuest]
     );
 
     const navigateUp = useCallback(() => {
@@ -486,10 +506,14 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
     }, [state.currentFolder, browseFolderChildren]);
 
     useEffect(() => {
+        // Skip initialization for guest users to avoid authenticated API requests
+        if (isGuest) {
+            return;
+        }
         if (!state.isInitialized && !state.isLoading && user) {
             void initializeDriveSDK();
         }
-    }, [initializeDriveSDK, state.isInitialized, state.isLoading, user]);
+    }, [initializeDriveSDK, state.isInitialized, state.isLoading, user, isGuest]);
 
     return {
         ...state,
