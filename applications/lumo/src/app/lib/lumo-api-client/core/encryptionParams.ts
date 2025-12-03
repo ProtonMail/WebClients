@@ -1,6 +1,7 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import { CryptoProxy } from '@proton/crypto/lib';
 import { exportKey, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { v4 as uuidv4 } from 'uuid';
 
 import { encryptUint8Array } from '../../../crypto';
 import { decryptString, decryptUint8Array, encryptString } from './encryption';
@@ -56,7 +57,7 @@ export class RequestEncryptionParams {
         if (requestKey && requestId) {
             return new RequestEncryptionParams(requestKey, requestId);
         }
-        assert(!requestKey && !requestId);
+        console.assert(!requestKey && !requestId);
         if (!autoGenerateEncryption) {
             return null;
         }
