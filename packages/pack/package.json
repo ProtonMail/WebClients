@@ -20,7 +20,7 @@
         "@babel/preset-react": "^7.28.5",
         "@babel/preset-typescript": "^7.28.5",
         "@babel/runtime": "^7.28.4",
-        "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.6.2",
         "@sentry/webpack-plugin": "^1.21.0",
         "@swc/core": "^1.15.3",
         "autoprefixer": "^10.4.22",
@@ -61,7 +61,7 @@
     },
     "devDependencies": {
         "eslint": "^9.39.1",
-        "prettier": "^3.6.2"
+        "prettier": "^3.7.3"
     },
     "peerDependencies": {
         "@proton/collect-metrics": "workspace:^"
