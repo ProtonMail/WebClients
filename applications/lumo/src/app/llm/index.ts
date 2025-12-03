@@ -26,6 +26,7 @@ import {
     type Message,
     type RequestId,
     Role,
+    type ShallowAttachment,
     type SpaceId,
     type Status,
     type Turn,
@@ -107,10 +108,32 @@ export function prepareTurns(
         context?: string;
         toolCall?: string;
         toolResult?: string;
+        images?: WireImage[];
     };
 
+    // Transform messages to turns, converting attachments to images in the same pass
+    let turns: ExtraTurn[] = filteredMessageChain.map((message) => {
+        const turn: ExtraTurn = {
+            role: message.role,
+            content: message.content,
+            context: message.context,
+            toolCall: message.toolCall,
+            toolResult: message.toolResult,
+        };
+
+        // Add images immediately when we have both the message and allAttachments
+        if (message.role === Role.User && message.attachments && c?.allConversationAttachments) {
+            const images = convertAttachmentsToImages(message.attachments, c.allConversationAttachments);
+            if (images.length > 0) {
+                turn.images = images;
+            }
+        }
+
+        return turn;
+    });
+
     // Insert the final turn, which should be assistant normally
-    let turns: ExtraTurn[] = [...filteredMessageChain, EMPTY_ASSISTANT_TURN];
+    turns.push(EMPTY_ASSISTANT_TURN);
 
     // Add RAG document context to the FIRST user message's context field (like an attachment)
     // This ensures documents are included once and won't be duplicated across turns
@@ -172,31 +195,27 @@ export function prepareTurns(
     }
 
     // Remove context and prepend it to the message content
-    turns = turns.map(({ role, content, context, toolCall, toolResult }) => ({
+    // Preserve images through the transformation
+    turns = turns.map(({ role, content, context, toolCall, toolResult, images }) => ({
         role,
         content: concat([context, content]),
         toolCall,
         toolResult,
+        ...(images && images.length > 0 && { images }),
     }));
 
     // If we see a tool call, we insert hidden turns representing tool call invocation and output.
     // If there are no tool calls, the turns will remain unchanged.
-    turns = turns.flatMap(({ toolCall, toolResult, ...message }) => {
+    // Note: images stay with the original user turn (tool calls don't have images)
+    turns = turns.flatMap(({ toolCall, toolResult, images, ...message }) => {
         if (toolCall || toolResult) {
             const turn1 = { role: Role.ToolCall, content: toolCall };
             const turn2 = { role: Role.ToolResult, content: toolResult };
-            return [turn1, turn2, message];
+            return [turn1, turn2, { ...message, ...(images && { images }) }];
         } else {
-            return [message];
+            return [{ ...message, ...(images && { images }) }];
         }
     });
-
-    // Enrich turns with images
-    if (c) {
-        turns = turns.map((turn, index) =>
-            enrichTurnWithImages(turn, index, turns, linearChain, c.allConversationAttachments)
-        );
-    }
 
     turns = removeEmptyAssistantTurns(turns);
 
@@ -218,25 +237,6 @@ function removeEmptyAssistantTurns(turns: Turn[]) {
 }
 
 /**
- * Find the corresponding message for a user turn
- */
-// FIXME this method is an abomination and should be removed asap
-function findCorrespondingUserMessage(
-    turn: Turn,
-    turnIndex: number,
-    turns: Turn[],
-    linearChain: Message[]
-): Message | undefined {
-    if (turn.role !== Role.User) {
-        return undefined;
-    }
-
-    const userMessages = linearChain.filter((m) => m.role === Role.User);
-    const userTurnIndex = turns.slice(0, turnIndex).filter((t) => t.role === Role.User).length;
-    return userMessages[userTurnIndex];
-}
-
-/**
  * Safely convert attachment to WireImage, returning null on error
  */
 function tryConvertToWireImage(attachment: Attachment): WireImage | null {
@@ -249,55 +249,36 @@ function tryConvertToWireImage(attachment: Attachment): WireImage | null {
 }
 
 /**
- * Enrich a single turn with image attachments if applicable
- * Enrich a single turn with image attachments by matching attachment IDs
- * Works for ALL user turns in the conversation
+ * Convert a message's attachments to WireImage format for inclusion in a turn
  */
-export function enrichTurnWithImages(
-    turn: Turn,
-    turnIndex: number,
-    turns: Turn[],
-    linearChain: Message[],
+function convertAttachmentsToImages(
+    messageAttachments: ShallowAttachment[] | undefined,
     allAttachments: Attachment[]
-): Turn {
-    // Only process user turns
-    if (turn.role !== Role.User) {
-        return turn;
-    }
-
-    // Find the corresponding message for this turn
-    // FIXME we should not have to find the corresponding message but rather pass it from above
-    const correspondingMessage = findCorrespondingUserMessage(turn, turnIndex, turns, linearChain);
-    if (!correspondingMessage || !correspondingMessage.attachments || correspondingMessage.attachments.length === 0) {
-        return turn;
+): WireImage[] {
+    if (!messageAttachments || messageAttachments.length === 0) {
+        return [];
     }
 
     // Match this message's attachments by ID from the allAttachments array
-    const messageAttachmentIds = correspondingMessage.attachments.map((a) => a.id);
-    const messageAttachments = allAttachments.filter((a) => messageAttachmentIds.includes(a.id));
-    if (messageAttachments.length === 0) {
-        return turn;
+    const messageAttachmentIds = messageAttachments.map((a) => a.id);
+    const fullAttachments = allAttachments.filter((a) => messageAttachmentIds.includes(a.id));
+
+    if (fullAttachments.length === 0) {
+        return [];
     }
 
     // Filter to get only image attachments, without text attachments
-    const { imageAttachments } = separateAttachmentsByType(messageAttachments);
+    const { imageAttachments } = separateAttachmentsByType(fullAttachments);
     if (imageAttachments.length === 0) {
-        return turn;
+        return [];
     }
 
     // Convert images to WireImage format
     const images: WireImage[] = imageAttachments
         .map(tryConvertToWireImage)
         .filter((img): img is WireImage => img !== null);
-    if (images.length === 0) {
-        return turn;
-    }
 
-    // Add images to turn
-    return {
-        ...turn,
-        images,
-    };
+    return images;
 }
 
 export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN): Turn[] {
