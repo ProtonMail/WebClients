@@ -13,7 +13,7 @@ import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
 
 import { useFileMentionAutocomplete } from './hooks/useFileMentionAutocomplete';
-import type { SpaceId, Message } from '../../../../types';
+import type { SpaceId, Message } from '../../../types';
 
 export interface ComposerEditorAreaProps {
     editor: any; // TipTap editor instance
@@ -118,15 +118,14 @@ export const ComposerEditorArea = ({
                         const mimeType = file.mimeType || (file.source === 'drive' ? getMimeTypeFromExtension(file.name) : undefined);
                         const query = mentionState.query.toLowerCase();
                         const fileName = file.name;
-                        const lowerFileName = fileName.toLowerCase();
                         
                         // Highlight matching text
-                        const highlightText = (text: string, query: string): Array<{ text: string; isMatch: boolean }> => {
+                        const highlightText = (text: string, query: string): { text: string; isMatch: boolean }[] => {
                             if (!query) {
                                 return [{ text, isMatch: false }];
                             }
                             
-                            const parts: Array<{ text: string; isMatch: boolean }> = [];
+                            const parts: { text: string; isMatch: boolean }[] = [];
                             let lastIndex = 0;
                             let searchIndex = 0;
                             
