@@ -208,13 +208,11 @@ export function prepareTurns(
     // If there are no tool calls, the turns will remain unchanged.
     // Note: images stay with the original user turn (tool calls don't have images)
     turns = turns.flatMap(({ toolCall, toolResult, images, ...message }) => {
-        if (toolCall || toolResult) {
-            const turn1 = { role: Role.ToolCall, content: toolCall };
-            const turn2 = { role: Role.ToolResult, content: toolResult };
-            return [turn1, turn2, { ...message, ...(images && { images }) }];
-        } else {
-            return [{ ...message, ...(images && { images }) }];
-        }
+        const turn = { ...message, ...(images && { images }) };
+        if (!toolCall && !toolResult) return [turn];
+        const tcTurn = { role: Role.ToolCall, content: toolCall };
+        const trTurn = { role: Role.ToolResult, content: toolResult };
+        return [tcTurn, trTurn, turn];
     });
 
     turns = removeEmptyAssistantTurns(turns);
