@@ -86,22 +86,6 @@ export function prepareTurns(
     documentContext?: string,
     c?: ConversationContext
 ): Turn[] {
-    // Apply context filters to the original message chain before processing
-    const filteredMessageChain = linearChain.map((message) => {
-        if (!message.context) return message;
-
-        const filter = (c?.contextFilters ?? []).find((f) => f.messageId === message.id);
-        if (!filter || filter.excludedFiles.length === 0) return message;
-
-        // Apply each file exclusion
-        let filteredMessage = message;
-        for (const filename of filter.excludedFiles) {
-            filteredMessage = removeFileFromMessageContext(filteredMessage, filename);
-        }
-
-        return filteredMessage;
-    });
-
     type ExtraTurn = {
         role: Role;
         content?: string;
@@ -110,6 +94,13 @@ export function prepareTurns(
         toolResult?: string;
         images?: WireImage[];
     };
+
+    // Apply context filters in ONE place to filter BOTH text content AND attachments
+    // This ensures text files and image files are filtered consistently
+    const filteredMessageChain = linearChain.map((message) => {
+        const filter = (c?.contextFilters ?? []).find((f) => f.messageId === message.id);
+        return applyContextFiltersToMessage(message, filter);
+    });
 
     // Transform messages to turns, converting attachments to images in the same pass
     let turns: ExtraTurn[] = filteredMessageChain.map((message) => {
@@ -121,7 +112,7 @@ export function prepareTurns(
             toolResult: message.toolResult,
         };
 
-        // Add images immediately when we have both the message and allAttachments
+        // Add images immediately while we have both the message and allAttachments
         if (message.role === Role.User && message.attachments && c?.allConversationAttachments) {
             const images = convertAttachmentsToImages(message.attachments, c.allConversationAttachments);
             if (images.length > 0) {
@@ -244,6 +235,44 @@ function tryConvertToWireImage(attachment: Attachment): WireImage | null {
         console.error(`Failed to convert attachment ${attachment.id} to WireImage:`, error);
         return null;
     }
+}
+
+/**
+ * Filter text content by removing excluded files
+ */
+function filterMessageContext(message: Message, excludedFiles: string[]): string | undefined {
+    if (!message.context) return message.context;
+
+    let filteredContext: string | undefined = message.context;
+    for (const filename of excludedFiles) {
+        filteredContext = removeFileFromMessageContext({ ...message, context: filteredContext }, filename).context;
+    }
+    return filteredContext;
+}
+
+/**
+ * Filter attachments by removing excluded files
+ */
+function filterMessageAttachments(
+    attachments: ShallowAttachment[] | undefined,
+    excludedFiles: string[]
+): ShallowAttachment[] | undefined {
+    if (!attachments || attachments.length === 0) return attachments;
+
+    return attachments.filter((att) => !excludedFiles.includes(att.filename));
+}
+
+/**
+ * Apply context filters to a message, filtering both text content and attachments
+ */
+function applyContextFiltersToMessage(message: Message, filter: ContextFilter | undefined): Message {
+    if (!filter || filter.excludedFiles.length === 0) return message;
+
+    return {
+        ...message,
+        context: filterMessageContext(message, filter.excludedFiles),
+        attachments: filterMessageAttachments(message.attachments, filter.excludedFiles),
+    };
 }
 
 /**
