@@ -196,13 +196,6 @@
         width: 100%;
         padding: 16px 0; // Remove horizontal padding, let children handle it
     }
-
-    // Mobile: full width
-    @media (max-width: 768px) {
-        max-width: 100%;
-        padding: 16px 0; // Remove horizontal padding, let children handle it
-        width: 100%;
-    }
 }
 
 .project-detail-empty {
