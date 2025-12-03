@@ -592,7 +592,7 @@
         "生成文本"
       ],
       "Get ${ planName } for ${ priceCoupon }": [
-        "以 ${ priceCoupon } 价格获取 ${ planName }"
+        "支付 ${ priceCoupon } 开通 ${ planName }"
       ],
       "Get ${ planOrAppName }": [
         "开通 ${ planOrAppName }"
@@ -1628,6 +1628,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Trust key": [
+        "信任密钥"
       ]
     },
     "action": {
@@ -6578,7 +6581,7 @@
         "关闭这个窗口以退出"
       ],
       "Composer:": [
-        "编写器:"
+        "编辑区："
       ],
       "Confirm phishing report": [
         "确认举报欺诈邮件"
@@ -8808,7 +8811,7 @@
         "公司名称"
       ],
       "Composer": [
-        "编写器"
+        "编辑区"
       ],
       "Conditions": [
         "条件"
@@ -11397,7 +11400,7 @@
         "仅向 ${ PASS_APP_NAME } 早期支持者提供独家优惠。"
       ],
       "Get it for ${ monthlyPrice }": [
-        "以 ${ monthlyPrice } 价格获取"
+        "支付 ${ monthlyPrice } 开通"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "${ passFamilyPlanName } 简介"
@@ -11523,6 +11526,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "terms and conditions": [
+        "服务条款"
       ]
     },
     "Payments.Error": {

@@ -1496,8 +1496,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1688,6 +1687,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Öppna i ${ SHEETS_APP_NAME }"
       ]
     },
     "action": {
@@ -2226,6 +2228,9 @@
       ],
       "Website access problem": [
         "Problem med åtkomst till webbplats"
+      ],
+      "Meet problem": [
+        "Problem med Meet"
       ]
     },
     "Button": {
@@ -12155,6 +12160,9 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
       ]
     },
     "Payments.Error": {
@@ -12670,6 +12678,9 @@
       ],
       "your subscription": [
         "din prenumeration"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Efter det datumet kommer ditt konto att nedgraderas till **${ BRAND_NAME } Free**. Om du ångrar dig kan du **återaktivera din prenumeration** för att behålla åtkomst till premiumfunktioner."
       ]
     },
     "Remaining days before the message expire": {
@@ -15550,6 +15561,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "För att förhandsgranska detta kalkylblad, öppna det i ${ SHEETS_APP_NAME } eller ladda ner det."
       ]
     },
     "Today icon tooltip in mini calendar": {

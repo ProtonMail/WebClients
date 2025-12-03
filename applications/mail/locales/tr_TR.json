@@ -1496,8 +1496,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1688,6 +1687,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "${ SHEETS_APP_NAME } ile aç"
       ]
     },
     "action": {
@@ -10856,7 +10858,7 @@
         "HTML imzalar"
       ],
       "Kill switch/always-on VPN": [
-        "Bağlantı kesici / Hep açık VPN"
+        "Bağlantı kesici / Her zaman açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
@@ -15597,6 +15599,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ]
     },
     "Today icon tooltip in mini calendar": {

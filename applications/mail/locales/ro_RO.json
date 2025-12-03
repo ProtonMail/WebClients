@@ -1694,6 +1694,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Deschidere în ${ SHEETS_APP_NAME }"
       ]
     },
     "action": {
@@ -3992,7 +3995,7 @@
         "Confortabilă"
       ],
       "Compact": [
-        "Compact"
+        "Compactă"
       ]
     },
     "Description": {
@@ -7017,7 +7020,7 @@
         "Ștergerea datelor din navigator dezactivează și căutarea în conținutul din mesaje pe acest dispozitiv. Toate mesajele vor trebui să fie descărcate din nou pentru a căuta în ele."
       ],
       "Clears browser data (including downloaded messages, …)": [
-        "Golește datele din navigatorul web (inclusiv mesaje descărcate etc)"
+        "Golește datele din navigatorul web (inclusiv mesaje descărcate etc.)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -7492,7 +7495,7 @@
         "Inclus gratuit cu planul actual"
       ],
       "Includes bills, receipts, orders, and bookings.": [
-        "Include facturi, confirmări de primire, comenzi și rezervări."
+        "Include facturi, chitanțe, comenzi și rezervări."
       ],
       "Includes invoices, purchase orders, and payment confirmations.": [
         "Include facturi, comenzi de achiziție și confirmări de plată."
@@ -7974,7 +7977,7 @@
         "Nu uitați să vă actualizați aceste date în managerul de parole sau oriunde vă păstrați datele contului și de autentificare."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "Elimină toate datele asociate cu această aplicație (inclusiv mesajele descărcate, …)"
+        "Elimină toate datele asociate cu această aplicație (inclusiv mesajele descărcate etc.)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Raportarea unui mesaj ca fiind o încercare de înșelăciune ne va trimite și nouă mesajul pentru a-l analiza și a îmbunătăți filtrele noastre. Aceasta înseamnă că vom putea vedea conținutul complet al mesajului."
@@ -15882,6 +15885,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Pentru a examina această foaie de calcul, deschideți-o în ${ SHEETS_APP_NAME } sau descărcați-o."
       ]
     },
     "Today icon tooltip in mini calendar": {
