@@ -496,12 +496,12 @@ function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: st
 function populateMessageContext(message: Message, messageChain: Message[], c: ConversationContext) {
     // Calculate which files will actually be used for the assistant response
     // Note: Project files are retrieved via RAG, so only message attachments are tracked here
-    const contextFilesForResponse = collectContextAttachmentIds(messageChain, c.contextFilters);
+    const contextFiles = collectContextAttachmentIds(messageChain, c.contextFilters);
 
     // Update the message with the context files that will be used
     return {
         ...message,
-        ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
+        ...(contextFiles.length > 0 && { contextFiles }),
     };
 }
 
@@ -817,14 +817,14 @@ export function regenerateMessage({
 
         // Calculate which files will actually be used for the regenerated response
         // Note: Project files are retrieved via RAG
-        const contextFilesForResponse = collectContextAttachmentIds(c.messageChain, c.contextFilters);
+        const contextFiles = collectContextAttachmentIds(c.messageChain, c.contextFilters);
 
         // Update the assistant message with context files before regenerating
         let assistantMessage = c.messageChain.find((m) => m.id === r.assistantMessageId);
         if (assistantMessage) {
             assistantMessage = {
                 ...assistantMessage,
-                ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
+                ...(contextFiles.length > 0 && { contextFiles }),
             };
             dispatch(addMessage(assistantMessage));
         }
@@ -1006,12 +1006,12 @@ export function retrySendMessage({
         };
 
         // Note: Project files are retrieved via RAG
-        const contextFilesForResponse = collectContextAttachmentIds(c.messageChain, c.contextFilters);
+        const contextFiles = collectContextAttachmentIds(c.messageChain, c.contextFilters);
 
         // Update the assistant message with the context files that will be used
         const assistantMessageWithContext: Message = {
             ...assistantMessage,
-            ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
+            ...(contextFiles.length > 0 && { contextFiles }),
         };
 
         dispatch(addMessage(assistantMessageWithContext));
