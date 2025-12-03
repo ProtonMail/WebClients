@@ -49,7 +49,7 @@ interface Props {
     navigateCallback: (conversationId: ConversationId) => void;
 }
 
-export type HandleSendMessage = (newMessage: string, enableExternalTools: boolean) => Promise<void>;
+export type HandleSendMessage = (newMessage: string, isWebSearchButtonToggled: boolean) => Promise<void>;
 export type HandleRegenerateMessage = (
     message: Message,
     isWebSearchButtonToggled: boolean,
@@ -159,14 +159,14 @@ export const useLumoActions = ({
                     attachments: provisionalAttachments,
                 },
                 conversationContext: {
-                    spaceId: spaceId,
-                    conversationId: conversationId,
+                    spaceId,
+                    conversationId,
                     allConversationAttachments: allAttachments,
                     messageChain: messagesWithContext,
                     contextFilters,
                 },
                 uiContext: {
-                    enableExternalTools: !!isWebSearchButtonToggled && isLumoToolingEnabled,
+                    enableExternalTools: isWebSearchButtonToggled && isLumoToolingEnabled,
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
@@ -260,18 +260,18 @@ export const useLumoActions = ({
 
     const handleEditAction = async (
         actionParams: ActionParams,
+        conversationId: ConversationId,
+        spaceId: SpaceId,
         originalMessage: Message,
         spaceDek: any,
-        signal: AbortSignal,
-        isWebSearchButtonToggled: boolean
+        signal: AbortSignal
     ) => {
-        const { newMessageContent } = actionParams;
+        const { newMessageContent, isWebSearchButtonToggled } = actionParams;
         if (!newMessageContent) {
             return;
         }
 
         const parentMessageChain = buildLinearChain(messageMap, originalMessage.parentId, preferredSiblings);
-        const conversationId = originalMessage.conversationId;
         const messagesWithContext = await addContextToMessages(parentMessageChain, user, spaceDek);
 
         // Load all attachments from conversation history and combine with edited message attachments
@@ -290,8 +290,8 @@ export const useLumoActions = ({
                     attachments: editedMessageAttachments,
                 },
                 conversationContext: {
-                    spaceId,
-                    conversationId,
+                    spaceId: spaceId,
+                    conversationId: conversationId,
                     allConversationAttachments: allAttachments,
                     messageChain: messagesWithContext,
                     contextFilters,
@@ -372,6 +372,7 @@ export const useLumoActions = ({
         };
 
         dispatch(addMessage(assistantMessage));
+
         // Set this message as preferred so it gets displayed instead of its earlier siblings
         preferSibling(assistantMessage);
 
@@ -475,7 +476,14 @@ export const useLumoActions = ({
                 await handleSendAction(actionParams, finalConversationId, finalSpaceId, spaceDek, signal);
             }
             if (actionType === 'edit') {
-                await handleEditAction(actionParams, originalMessage!, spaceDek, signal, isWebSearchButtonToggled);
+                await handleEditAction(
+                    actionParams,
+                    finalConversationId,
+                    finalSpaceId,
+                    originalMessage!,
+                    spaceDek,
+                    signal
+                );
             }
             if (actionType === 'regenerate') {
                 await handleRegenerateAction(
