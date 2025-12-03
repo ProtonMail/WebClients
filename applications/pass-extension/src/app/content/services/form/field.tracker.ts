@@ -1,8 +1,9 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
+import { isCCField } from 'proton-pass-extension/lib/utils/field';
 
-import { FieldType } from '@proton/pass/fathom/labels';
+import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { createRAFController } from '@proton/pass/utils/dom/raf';
@@ -77,7 +78,6 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
 
         const onFocus = (evt: Event) => {
             if (state.focused) return;
-
             raf.cancel();
             state.focused = true;
 
@@ -132,10 +132,12 @@ export const createFieldTracker = withContext<(field: FieldHandle, formTracker?:
             else syncAutofillFilter(elementValue);
         };
 
-        /* When the type attribute of a field changes : detach it from
-         * the tracked form and re-trigger the detection */
+        /* When the type attribute of a field changes: detach it from
+         * the tracked form and re-trigger detection. Skip for secure
+         * fields (passwords, CVV) as these are intentional toggles. */
         const onAttributeChange: MutationCallback = withContext<MutationCallback>((ctx, mutations) => {
             if ([FieldType.PASSWORD_CURRENT, FieldType.PASSWORD_NEW].includes(field.fieldType)) return;
+            if (isCCField(field) && field.fieldSubType === CCFieldType.CSC) return;
 
             mutations.forEach((mutation) => {
                 const target = mutation.target as HTMLInputElement;
