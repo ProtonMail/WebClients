@@ -7,7 +7,9 @@ import { useUserSettings } from '@proton/account/index';
 import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { Product } from '@proton/shared/lib/ProductEnum';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -54,11 +56,15 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [writeableCalendars = []] = useWriteableCalendars();
     const readCalendarBootstrap = useReadCalendarBootstrap();
 
+    const [allowedProducts] = useAllowedProducts();
+
     const [loading, setLoading] = useState(false);
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
 
     const isRecurringEnabled = useFlag('RecurringCalendarBookings');
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
+
+    const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
 
     const intersectionRef = useRef<Intersection | null>(null);
     const initialFormData = useRef<InternalBookingFrom | undefined>(undefined);
@@ -92,7 +98,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             currentUTCDate,
             preferredCalendarID: defaultCalendarID,
             recurring: isRecurringEnabled ? DEFAULT_RECURRING : false,
-            isMeetVideoConferenceEnabled,
+            canUseMeetLocation,
         });
 
         setInternalForm(formData);
@@ -176,7 +182,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const addBookingRange = (data: Omit<BookingRange, 'id'>) => {
-        const start = intersectionRef.current?.start || getRangeDateStart(formData, data.start);
+        const start = intersectionRef.current?.start || getRangeDateStart(formData, data.start, data.timezone);
         const end = intersectionRef.current?.end || data.end;
 
         // In the recurring scenario, the user can try to add ranges in future weeks
@@ -184,6 +190,12 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
         const isRecurring = formData.recurring;
         const normalizedStart = isRecurring ? normalizeBookingRangeToTimeOfWeek(start) : start;
         const normalizedEnd = isRecurring ? normalizeBookingRangeToTimeOfWeek(end) : end;
+
+        // Prevent adding timeslots with same start and end (and do not show an error in that case)
+        if (normalizedStart.getTime() === normalizedEnd.getTime()) {
+            intersectionRef.current = null;
+            return;
+        }
 
         const dataId = generateBookingRangeID(normalizedStart, normalizedEnd);
 
@@ -235,7 +247,7 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
             bookingPageCalendar,
             bookingPage,
             editData,
-            isMeetVideoConferenceEnabled,
+            canUseMeetLocation,
             calendarUserSettings,
         });
         setInternalForm(form);
