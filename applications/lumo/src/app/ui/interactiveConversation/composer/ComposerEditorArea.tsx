@@ -1,6 +1,6 @@
 import { EditorContent } from '@tiptap/react';
 import { c } from 'ttag';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -12,8 +12,9 @@ import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
 
-import { useFileMentionAutocomplete } from './hooks/useFileMentionAutocomplete';
+import { useFileMentionAutocomplete, type DriveSDKFunctions } from './hooks/useFileMentionAutocomplete';
 import type { SpaceId, Message } from '../../../types';
+import type { DriveNode } from '../../../hooks/useDriveSDK';
 
 export interface ComposerEditorAreaProps {
     editor: any; // TipTap editor instance
@@ -25,7 +26,10 @@ export interface ComposerEditorAreaProps {
     onSubmit: () => void;
     spaceId?: SpaceId;
     messageChain?: Message[];
-    onAutocompleteStateChange?: (isActive: boolean) => void;
+    isAutocompleteActiveRef?: React.MutableRefObject<boolean>;
+    // Optional Drive SDK functions - only provided for authenticated users
+    browseFolderChildren?: (folderId?: string) => Promise<DriveNode[]>;
+    downloadFile?: (nodeId: string) => Promise<ArrayBuffer>;
 }
 
 export const ComposerEditorArea = ({
@@ -37,20 +41,60 @@ export const ComposerEditorArea = ({
     onAbort,
     onSubmit,
     spaceId,
-    onAutocompleteStateChange,
+    messageChain = [],
+    isAutocompleteActiveRef,
+    browseFolderChildren,
+    downloadFile,
 }: ComposerEditorAreaProps) => {
-    const { mentionState, files, selectFile, closeMention } = useFileMentionAutocomplete(editor, spaceId);
+    // Create driveSDK object only if both functions are provided
+    const driveSDK: DriveSDKFunctions | undefined = useMemo(() => {
+        if (browseFolderChildren && downloadFile) {
+            return {
+                browseFolderChildren: async (folderId?: string) => {
+                    const nodes = await browseFolderChildren(folderId);
+                    return nodes.map(node => ({
+                        id: node.nodeId,
+                        name: node.name,
+                        type: node.type,
+                    }));
+                },
+                downloadFile,
+            };
+        }
+        return undefined;
+    }, [browseFolderChildren, downloadFile]);
+
+    const { mentionState, files, selectFile, closeMention } = useFileMentionAutocomplete(editor, spaceId, messageChain, driveSDK);
     
-    // Notify parent when autocomplete state changes
-    useEffect(() => {
-        onAutocompleteStateChange?.(mentionState.isActive);
-    }, [mentionState.isActive, onAutocompleteStateChange]);
     const [selectedIndex, setSelectedIndex] = useState(0);
+    
+    // Track previous isActive to detect when autocomplete opens
+    const prevIsActiveRef = useRef(false);
+    
+    // Update the external ref and reset selectedIndex when autocomplete state changes
+    useEffect(() => {
+        if (isAutocompleteActiveRef) {
+            isAutocompleteActiveRef.current = mentionState.isActive;
+        }
+        
+        // Reset selected index only when autocomplete opens (transitions from false to true)
+        if (mentionState.isActive && !prevIsActiveRef.current) {
+            setSelectedIndex(0);
+        }
+        
+        prevIsActiveRef.current = mentionState.isActive;
+    }, [mentionState.isActive, isAutocompleteActiveRef]);
+
+    // Keep selectedIndex in bounds when files change
+    useEffect(() => {
+        if (selectedIndex >= files.length && files.length > 0) {
+            setSelectedIndex(files.length - 1);
+        }
+    }, [files.length, selectedIndex]);
 
     // Handle keyboard navigation for autocomplete
     useEffect(() => {
         if (!mentionState.isActive || !editor) {
-            setSelectedIndex(0);
             return;
         }
 
@@ -80,17 +124,9 @@ export const ComposerEditorArea = ({
             }
         };
 
-        // Use capture phase to catch events before TipTap editor handles them
         editorElement.addEventListener('keydown', handleKeyDown, true);
         return () => editorElement.removeEventListener('keydown', handleKeyDown, true);
-    }, [editor, mentionState.isActive, files.length, selectedIndex, selectFile, closeMention]);
-
-    // Reset selected index when files change or mention becomes active
-    useEffect(() => {
-        if (mentionState.isActive) {
-            setSelectedIndex(0);
-        }
-    }, [files.length, mentionState.isActive]);
+    }, [editor, mentionState.isActive, files, selectedIndex, selectFile, closeMention]);
 
     return (
         <div

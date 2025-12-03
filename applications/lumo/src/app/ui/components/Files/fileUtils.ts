@@ -2,13 +2,16 @@ import React from 'react';
 
 import { calculateSingleAttachmentContextSize, getFileSizeLevel } from '../../../llm/utils';
 import { useLumoSelector } from '../../../redux/hooks';
-import { selectAttachmentById } from '../../../redux/selectors';
-import type { Attachment } from '../../../types';
+import { selectAttachmentById, selectAssetById } from '../../../redux/selectors';
+import type { Attachment, Asset } from '../../../types';
 import { mimeToHuman } from '../../../util/filetypes';
 
 // Shared hook for file item data
-export const useFileItemData = (file: any, attachment?: Attachment) => {
-    const fullAttachment = useLumoSelector(selectAttachmentById(file.id)) || attachment;
+export const useFileItemData = (file: any, attachment?: Attachment | Asset) => {
+    // Try to find as Attachment first, then Asset, then use provided attachment
+    const attachmentFromStore = useLumoSelector(selectAttachmentById(file.id));
+    const assetFromStore = useLumoSelector(selectAssetById(file.id));
+    const fullAttachment = attachmentFromStore || assetFromStore || attachment;
 
     const hasContent = fullAttachment?.markdown && fullAttachment.markdown.trim() !== '';
     const mimeTypeIcon = file.mimeType ?? fullAttachment?.mimeType ?? 'unknown';

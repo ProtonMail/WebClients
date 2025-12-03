@@ -1,25 +1,24 @@
+@import '~@proton/styles/scss/lib';
+
 .project-detail-view {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     background-color: var(--background-norm);
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 .project-detail-header {
-    display: flex;
-    align-items: baseline; // Align to baseline
     gap: 16px;
     width: 100%;
+    flex-wrap: nowrap;
 
     &.without-sidebar {
-        justify-content: center; // Center when sidebar is hidden
-        padding: 12px 0 0;
+        padding: 12px 14px 0;
     }
 
     &.with-sidebar {
-        // Match the flex layout of project-detail-content
-        // Main content takes 60%, sidebar takes 40%
-        padding: 12px 0 0;
+        padding: 12px 14px;
     }
 
     .project-detail-actions {
@@ -30,93 +29,68 @@
 
     @media (max-width: 768px) {
         padding: 16px 20px 12px;
-        flex-direction: column; // Stack vertically on mobile
-        align-items: flex-start;
         gap: 12px;
-
-        &.without-sidebar {
-            justify-content: flex-start; // Reset centering on mobile
-        }
-
-        &.with-sidebar {
-            justify-content: flex-start;
-        }
+        flex-wrap: wrap;
     }
 }
 
 .project-detail-header-content {
-    display: flex;
-    flex-direction: column;
     gap: 12px;
-    flex: 0 1 60%; // Match main content flex (60% when sidebar shown)
-    max-width: 48.25rem;
+    flex: 1;
     min-width: 0;
-    padding-left: 24px; // Match main content padding
-    &.project-detail-header {
-        max-width: 51.25rem; // Match main content max-width when centered
-        margin: 0 auto; // Center when sidebar is hidden
-        padding-left: 0; // No padding when centered
-    }
+    padding-left: 24px;
 
     &.project-detail-header.without-sidebar {
-        flex: 1;
-        max-width: 51.25rem; // Match main content max-width when centered
-        margin: 0 auto; // Center when sidebar is hidden
-        padding-left: 0; // No padding when centered
+        max-width: 51.25rem;
+        margin: 0 auto;
+        padding-left: 0;
     }
 
-    // At 1024px breakpoint, match content layout (50/50 split)
     @media (max-width: 1024px) {
         .project-detail-header.with-sidebar & {
-            flex: 0 1 50%; // Match main content at 1024px
+            flex: 0 1 50%;
         }
     }
 
-    // Mobile styles
     @media (max-width: 768px) {
         flex: 1 1 auto;
         max-width: 90%;
-        // padding-left: 20px; 
+        padding-left: 8px;
         order: 1;
     }
 }
 
 .project-detail-actions {
-    display: flex;
     gap: 8px;
-    align-items: end;
 
-    // When sidebar is shown, match sidebar width (40%)
     .project-detail-header.with-sidebar & {
-        flex: 0 0 40%; // Match sidebar width
-        padding-right: 16px; // Match sidebar padding
+        padding-right: 16px;
 
-        // At 1024px breakpoint, match content layout (50/50 split)
         @media (max-width: 1024px) {
-            flex: 0 0 50%; // Match sidebar at 1024px
+            flex: 0 0 50%;
         }
     }
 
-    // Mobile styles
     @media (max-width: 768px) {
-        flex: 0 0 auto !important; // Reset flex on mobile
-        width: 100%;
-        padding-left: 20px; // Match header content padding
-        padding-right: 20px; // Match header padding
-        justify-content: flex-start; // Align actions to left on mobile
-        order: 2; // Place actions below title (after header-content)
+        display: none;
     }
 }
 
+.project-detail-actions-mobile {
+    gap: 8px;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 8px;
+}
+
 .project-detail-back-button {
-    display: flex;
-    align-items: center;
     padding: 0;
     color: var(--text-weak);
-    font-size: 14px;
 
     &:hover {
         color: var(--text-norm);
+        background-color: transparent !important;
     }
 }
 
@@ -125,8 +99,6 @@
 }
 
 .project-detail-title-section {
-    display: flex;
-    align-items: center;
     gap: 12px;
 }
 
@@ -135,82 +107,48 @@
 }
 
 .project-detail-title {
-    font-size: 28px;
     font-weight: 600;
     margin: 0;
     color: var(--text-norm);
     line-height: 1.2;
 }
 
-.project-detail-actions {
-    display: flex;
-    gap: 8px;
-    align-items: end;
-}
-
 .project-detail-settings-button {
-    display: flex;
-    align-items: center;
     gap: 4px;
 }
 
 .project-detail-content {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-
     &.without-sidebar {
-        justify-content: center; // Center when sidebar is hidden
+        justify-content: center;
     }
 
-    &.with-sidebar {
-        .project-detail-main {
-            flex: 0 1 60%; // Take less space when sidebar is shown
-        }
+    .outer {
+        height: 100%;
+        min-height: 0;
     }
 }
 
 .project-detail-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    padding: 24px;
+    overflow: hidden;
+    padding: 8px 8px 0 6px;
     position: relative;
     min-width: 0;
-    max-width: 51.25rem; // Match header content max-width
+    min-height: 0;
+    height: 100%;
     width: 100%;
 
-    .project-detail-content.without-sidebar & {
-        margin: 0 auto; // Center when sidebar is hidden
-    }
-
-    .project-detail-content.with-sidebar & {
-        margin: 0; // Align left when sidebar is shown
-    }
-
-    // Mobile: full width
     @media (max-width: 768px) {
-        max-width: 100%;
-        width: 100%;
-        padding: 16px 0; // Remove horizontal padding, let children handle it
+        padding: 8px 8px 0 6px;
     }
 }
 
 .project-detail-empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
     text-align: center;
     padding: 60px 20px;
     width: 100%;
     max-width: 51.25rem;
     margin: 0 auto;
 
-    // Mobile: full width
     @media (max-width: 768px) {
         max-width: 100%;
         width: 100%;
@@ -223,15 +161,11 @@
     height: 100px;
     border-radius: 50%;
     background-color: var(--background-weak);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 24px;
     color: var(--text-weak);
 }
 
 .project-detail-empty-title {
-    font-size: 18px;
     font-weight: 600;
     margin: 0 0 24px;
     color: var(--text-norm);
@@ -239,7 +173,6 @@
 }
 
 .project-detail-empty-description {
-    font-size: 14px;
     color: var(--text-weak);
     margin: 0;
     max-width: 450px;
@@ -247,8 +180,6 @@
 }
 
 .project-detail-prompt-suggestions {
-    display: flex;
-    flex-direction: column;
     gap: 12px;
     max-width: 600px;
     width: 100%;
@@ -261,7 +192,6 @@
     border-radius: var(--border-radius-md);
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 14px;
     color: var(--text-norm);
     text-align: left;
 
@@ -279,41 +209,47 @@
 
 .project-detail-conversations {
     flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    overflow-x: hidden;
     margin-bottom: 24px;
     width: 100%;
-    max-width: 51.25rem; // Match composer max-width
+    max-width: 51.25rem;
     margin-left: auto;
     margin-right: auto;
+    align-items: stretch;
 
-    // Mobile: full width
     @media (max-width: 768px) {
         max-width: 100%;
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        padding: 0 20px; // Add horizontal padding
+        padding: 0 20px;
     }
 }
 
 .project-detail-section-title {
-    font-size: 14px;
     font-weight: 600;
     color: var(--text-weak);
     letter-spacing: 0.5px;
-    margin: 0 0 20px;
+    margin: 10px 0;
 }
 
 .project-detail-conversation-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+        padding: 0 0 0 30px;
+    }
+
+    @include media('<small') {
+	    padding: 0;
+	}
 }
 
 .project-detail-conversation-item {
-    display: flex;
-    align-items: center;
     gap: 16px;
-    padding: 16px 20px;
+    padding: 8px 10px;
     border-radius: var(--border-radius-lg);
     background: var(--background-norm);
     cursor: pointer;
@@ -338,9 +274,6 @@
 }
 
 .project-detail-conversation-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: var(--border-radius-md);
@@ -350,22 +283,18 @@
 }
 
 .project-detail-conversation-content {
-    display: flex;
-    flex-direction: column;
     gap: 4px;
     flex: 1;
     min-width: 0;
 }
 
 .project-detail-conversation-title {
-    font-size: 15px;
     font-weight: 500;
     color: var(--text-norm);
     line-height: 1.4;
 }
 
 .project-detail-conversation-date {
-    font-size: 13px;
     color: var(--text-weak);
     line-height: 1.3;
 }
@@ -380,31 +309,29 @@
 .project-detail-composer {
     position: sticky;
     bottom: 0;
-    padding: 24px 0 0;
     background: var(--background-norm);
+    z-index: 10;
+    padding: 24px 0 0;
+    margin-top: auto;
     width: 100%;
     max-width: 51.25rem;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
 
-    // Mobile: full width composer
     @media (max-width: 768px) {
         max-width: 100%;
-        padding: 24px 20px 0; // Add horizontal padding
+        padding: 24px 20px 0;
     }
 }
 
 .project-detail-not-found {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100%;
     gap: 16px;
     text-align: center;
     padding: 40px;
 
     h2 {
-        font-size: 18px;
         margin: 0;
         color: var(--text-norm);
     }
@@ -420,11 +347,10 @@
     }
 
     .project-detail-main {
-        padding: 16px;
+        padding: 8px 8px 0 16px;
     }
 }
 
-// Mobile modal styling for project files panel
 .project-files-modal {
     .project-files-panel {
         display: flex !important;
@@ -434,4 +360,3 @@
         overflow-y: auto;
     }
 }
-

@@ -1,20 +1,25 @@
 .project-files-panel {
+    // Match files-panel structure: h-full w-1/3 pt-2 pr-4 pb-6
     height: 100%;
-    width: 33.333333%;
-    padding-top: 8px;
-    padding-right: 16px;
+    width: 33.333333%; // w-1/3 equivalent
+    padding-top: 8px; // pt-2 equivalent
+    padding-right: 16px; // pr-4 equivalent
+    padding-bottom: 24px; // pb-6 equivalent
     display: flex;
     flex-direction: column;
     overflow-y: auto;
     flex-shrink: 0;
 
-    // When sidebar is shown, give it more space
+    // Smooth panel entrance animation
+    animation: slideInFromRight 0.3s ease-out;
+
+    // When sidebar is shown, give it more space (like files-panel)
     .project-detail-content.with-sidebar & {
-        width: 40%;
+        width: 40%; // Slightly wider when shown
     }
 
     @media (max-width: 1024px) {
-        width: 50%;
+        width: 50%; // w-1/2 at smaller screens
 
         .project-detail-content.with-sidebar & {
             width: 50%;
@@ -26,16 +31,30 @@
     }
 }
 
+// Panel entrance animation (same as files-panel)
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .project-files-panel-content {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 12px 0 0 12px; // Rounded left corners only, attach to right
     background-color: transparent;
     height: 75vh;
 		overflow-y: hidden;
     padding: 16px;
+    margin-right: 0; // Ensure no margin on right side
 }
 
 .project-files-section {
@@ -71,6 +90,53 @@
 			border: 1px solid var(--border-weak);
 			border-radius: var(--border-radius-xl);
 			padding: 20px;
+			padding-bottom: 20px; // Ensure bottom padding is explicit
+			max-height: calc(50vh - 100px); // Account for instructions section (50vh) and headers
+			overflow-y: auto;
+			overflow-x: hidden;
+			display: flex;
+			flex-direction: column;
+			position: relative; // Ensure border is visible
+			box-sizing: border-box; // Ensure padding is included in height calculation
+			
+			.project-files-progress-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(2px);
+				z-index: 10;
+				border-radius: var(--border-radius-xl);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			// Ensure border-radius is preserved with scrolling
+			&::-webkit-scrollbar {
+				width: 8px;
+			}
+			
+			&::-webkit-scrollbar-track {
+				background: transparent;
+				border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
+			}
+			
+			&::-webkit-scrollbar-thumb {
+				background: var(--border-norm);
+				border-radius: 4px;
+				
+				&:hover {
+					background: var(--border-strong);
+				}
+			}
+			
+			// Ensure content doesn't touch the bottom border
+			> *:last-child {
+				margin-bottom: 0;
+			}
 		}
 }
 
@@ -84,6 +150,9 @@
 		border: 1px solid var(--border-weak);
 		border-radius: var(--border-radius-xl);
 		padding: 15px;
+		max-height: 30vh;
+		overflow-y: auto;
+		overflow-x: hidden;
 }
 
 .project-instructions-add {
@@ -216,6 +285,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.project-files-add-header-button {
+    flex-shrink: 0;
 }
 
 .project-file-card {
