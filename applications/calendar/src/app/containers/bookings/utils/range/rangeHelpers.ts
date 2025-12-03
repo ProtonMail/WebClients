@@ -229,12 +229,14 @@ export const convertBookingRangesToCalendarViewEvents = (
 /**
  * Returns the initial start date when recurring. Alternatively, it rounds the date to the next half hour if the user dragged past the current time.
  */
-export const getRangeDateStart = (formData: BookingFormData, initialStartDate: Date) => {
+export const getRangeDateStart = (formData: BookingFormData, initialStartDate: Date, timezone: string) => {
     if (formData.recurring) {
         return initialStartDate;
     }
 
-    return isBefore(initialStartDate, new Date()) ? roundToNextHalfHour(new Date()) : initialStartDate;
+    const nowWithTz = toLocalDate(convertUTCDateTimeToZone(fromUTCDate(new Date()), timezone));
+
+    return isBefore(initialStartDate, nowWithTz) ? roundToNextHalfHour(nowWithTz) : initialStartDate;
 };
 
 export const generateRangeFromSlots = (editData: BookingPageEditData, timezone: string): BookingRange[] => {

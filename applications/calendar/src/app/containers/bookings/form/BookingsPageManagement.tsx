@@ -8,6 +8,7 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
+import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
 import { IcClock } from '@proton/icons/icons/IcClock';
@@ -15,6 +16,7 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
+import { Product } from '@proton/shared/lib/ProductEnum';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
@@ -39,8 +41,12 @@ export const getBookingLocationOption = (isMeetEnabled: boolean) => {
 
 export const Form = () => {
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
+    const [allowedProducts] = useAllowedProducts();
+
+    const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
+
     const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
-    const locationOptions = getBookingLocationOption(isMeetVideoConferenceEnabled);
+    const locationOptions = getBookingLocationOption(canUseMeetLocation);
 
     const { formData, updateFormData, bookingsState } = useBookings();
 
