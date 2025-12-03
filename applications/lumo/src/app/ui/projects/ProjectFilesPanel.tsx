@@ -17,6 +17,7 @@ import { locallyDeleteAssetFromLocalRequest } from '../../redux/slices/core/asse
 import { KnowledgeFileItem } from '../components/Files/KnowledgeBase/KnowledgeFileItem';
 import { FileContentModal } from '../components/Files/KnowledgeBase/FileContentModal';
 import { DriveBrowser } from '../components/Files/DriveBrowser/DriveBrowser';
+import { UploadProgressOverlay, type UploadProgress } from '../components/Files/DriveBrowser/UploadProgressOverlay';
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 
@@ -40,6 +41,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     const { createFolder } = useDriveSDK();
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
+    const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
 
     // Get space and check if Drive folder is linked
     const space = useLumoSelector((state) => selectSpaceById(projectId)(state));
@@ -48,9 +50,6 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     // Get space assets (persistent files) - only if no Drive folder is linked
     const spaceAssets = useLumoSelector((state) => selectAssetsBySpaceId(projectId)(state));
     const files = Object.values(spaceAssets).filter((asset) => !asset.error);
-
-    // Check if we should prevent linking (files already exist)
-    const hasExistingFiles = files.length > 0;
 
     const handleCreateFolder = useCallback(async () => {
         if (!linkedDriveFolder || !folderName.trim()) {
@@ -106,8 +105,14 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
         for (const file of selectedFiles) {
             try {
                 console.log('Processing file as space asset:', file.name, projectId);
+                
+                // Show processing indicator
+                setUploadProgress({ fileName: file.name, progress: 0, isProcessing: true });
 
                 const result = await dispatch(handleSpaceAssetFileAsync(file, projectId));
+                
+                // Clear progress indicator
+                setUploadProgress(null);
 
                 if (result.success) {
                     createNotification({
@@ -132,12 +137,16 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                 }
             } catch (error) {
                 console.error('Error uploading file:', error);
+                setUploadProgress(null);
                 createNotification({
                     text: c('collider_2025:Error').t`Error uploading file: ${file.name}`,
                     type: 'error',
                 });
             }
         }
+        
+        // Clear progress indicator after all files are processed
+        setUploadProgress(null);
 
         // Reset input
         if (fileInputRef.current) {
@@ -193,7 +202,7 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
     };
 
     return (
-        <div className="project-files-panel">
+        <div className="project-files-panel md:w-1/3">
             <div className="project-files-panel-content">
                 {/* Instructions Section */}
                 <div className="project-files-section">
@@ -226,6 +235,17 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                 <div className="project-files-section-header">
                     <h3 className="project-files-section-title">{c('collider_2025:Title').t`Project knowledge`}</h3>
                     <div className="flex items-center gap-1">
+                        {!linkedDriveFolder && (
+                            <Button
+                                shape="ghost"
+                                size="small"
+                                onClick={handleAddFiles}
+                                className="project-files-add-header-button"
+                                title={c('collider_2025:Action').t`Add files`}
+                            >
+                                <Icon name="paper-clip" size={4} />
+                            </Button>
+                        )}
                         {linkedDriveFolder && (
                             <Button
                                 icon
@@ -240,6 +260,12 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                     </div>
                 </div>
                 <div className="project-files-section-content files-section">
+                    {/* Upload progress overlay */}
+                    {uploadProgress && (
+                        <div className="project-files-progress-overlay">
+                            <UploadProgressOverlay uploadProgress={uploadProgress} />
+                        </div>
+                    )}
                     {linkedDriveFolder ? (
                         <div className="project-drive-browser">
                             <div className="flex items-start justify-between gap-3">
@@ -317,18 +343,20 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                             </div>
                         </div>
                     ) : (
-                        <div className="project-files-list">
-                            {files.map((file) => (
-                                <KnowledgeFileItem
-                                    key={file.id}
-                                    file={file}
-                                    onView={(file, fullAttachment) => handleViewFile(fullAttachment)}
-                                    onRemove={handleRemoveFile}
-                                    isActive={true}
-                                    showToggle={false}
-                                />
-                            ))}
-                        </div>
+                        <>
+                            <div className="project-files-list">
+                                {files.map((file) => (
+                                    <KnowledgeFileItem
+                                        key={file.id}
+                                        file={file}
+                                        onView={(file, fullAttachment) => handleViewFile(fullAttachment)}
+                                        onRemove={handleRemoveFile}
+                                        isActive={true}
+                                        showToggle={false}
+                                    />
+                                ))}
+                            </div>
+                        </>
                     )}
                 </div>
             </div>
