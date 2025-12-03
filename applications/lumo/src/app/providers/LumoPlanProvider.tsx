@@ -5,7 +5,13 @@ import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { hasBundlePro2024, hasLumoAddon, hasLumoBusiness, hasVisionary, isManagedExternally } from '@proton/payments';
+import {
+    hasAnyB2bBundle,
+    hasBundleBiz2025,
+    hasLumoBusiness,
+    hasVisionary,
+    isManagedExternally,
+} from '@proton/payments';
 import { isOrganization } from '@proton/shared/lib/organization/helper';
 import { canPay, isDelinquent, isFree, isMember, isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -134,9 +140,9 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
     const hasOrganization = organization ? isOrganization(organization) : false;
     const userCanPay = canPay(user) && !isDelinquent(user) && !isManagedExternally(subscription);
 
-    const hasLumoB2B =
-        hasLumoSeat &&
-        (hasLumoBusiness(subscription) || (hasLumoAddon(subscription) && hasBundlePro2024(subscription)));
+    // hasLumoSeat is on user's level, b2b checks are on subscription level
+    // so we only need to check: 1. if the user has a lumo seat 2. if the subscription belongs to any of b2b plans
+    const hasLumoB2B = hasLumoSeat && (hasLumoBusiness(subscription) || hasAnyB2bBundle(subscription));
 
     // Calculate user type
     const lumoUserType = getUserType(false, hasLumoSeat, isVisionary);
@@ -144,7 +150,8 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
     // Calculate upsell eligibility
     const showLumoUpsellFree = !hasLumoPlus && isFree(user) && userCanPay;
     const showLumoUpsellB2C = !hasLumoPlus && !hasOrganization && isPaid(user) && userCanPay;
-    const showLumoUpsellB2B = !hasLumoPlus && hasOrganization && userCanPay;
+    // bundlebiz2025 has all the lumo plus features included, so we don't need to show the upsell
+    const showLumoUpsellB2B = !hasLumoPlus && hasOrganization && userCanPay && !hasBundleBiz2025(subscription);
     const showTalkToAdminLumoUpsell = hasOrganization && isMember(user);
     const hasLumoAndCanManageSubscription = hasLumoPlus && canPay(user);
     const isB2BAudience = !hasLumoB2B && userCanPay;

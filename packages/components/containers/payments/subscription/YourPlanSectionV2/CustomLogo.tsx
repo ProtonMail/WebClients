@@ -26,6 +26,7 @@ interface Props extends ComponentPropsWithoutRef<'img'> {
         | PLANS.FAMILY
         | PLANS.VPN_BUSINESS
         | PLANS.BUNDLE_PRO_2024
+        | PLANS.BUNDLE_BIZ_2025
         | PLANS.VPN_PASS_BUNDLE
         | PLANS.PASS_FAMILY
         | PLANS.PASS_LIFETIME
@@ -53,7 +54,7 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     if (planName === PLANS.VPN_BUSINESS) {
         return <img {...rest} src={vpnBusiness} width={size} alt="" />;
     }
-    if (planName === PLANS.BUNDLE_PRO_2024) {
+    if (planName === PLANS.BUNDLE_PRO_2024 || planName === PLANS.BUNDLE_BIZ_2025) {
         return <img {...rest} src={protonBusinessSuite} width={size} alt="" />;
     }
     if ((planName === PLANS.VPN_PASS_BUNDLE || planName === PLANS.VPN_PASS_BUNDLE_BUSINESS) && dark) {

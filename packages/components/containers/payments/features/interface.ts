@@ -37,6 +37,7 @@ export interface PlanCardFeature {
         [PLANS.MAIL_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.BUNDLE_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.BUNDLE_PRO_2024]: PlanCardFeatureDefinition | null;
+        [PLANS.BUNDLE_BIZ_2025]: PlanCardFeatureDefinition | null;
         [PLANS.PASS_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.PASS_FAMILY]: PlanCardFeatureDefinition | null;
         [PLANS.PASS_BUSINESS]: PlanCardFeatureDefinition | null;

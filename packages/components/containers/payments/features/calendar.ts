@@ -146,6 +146,9 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.BUNDLE_PRO_2024]: getNCalendarsPerUserFeature(
                     MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_PRO_2024]?.MaxCalendars
                 ),
+                [PLANS.BUNDLE_BIZ_2025]: getNCalendarsPerUserFeature(
+                    MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_BIZ_2025]?.MaxCalendars
+                ),
                 [PLANS.MAIL_PRO]: getNCalendarsPerUserFeature(
                     MAX_CALENDARS_PAID || plansMap[PLANS.MAIL_PRO]?.MaxCalendars
                 ),
@@ -183,6 +186,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.DUO]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO_2024]: getEndToEndEncryption(),
+                [PLANS.BUNDLE_BIZ_2025]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
                 [PLANS.MAIL_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.PASS_PRO]: getEndToEndEncryption(),
@@ -212,6 +216,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.DUO]: getShareFeature(plansMap, PLANS.DUO),
                 [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, Audience.B2B),
                 [PLANS.BUNDLE_PRO_2024]: getShareFeature(plansMap, PLANS.BUNDLE_PRO_2024, Audience.B2B),
+                [PLANS.BUNDLE_BIZ_2025]: getShareFeature(plansMap, PLANS.BUNDLE_BIZ_2025, Audience.B2B),
                 [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, Audience.B2B),
                 [PLANS.MAIL_BUSINESS]: getShareFeature(plansMap, PLANS.MAIL_BUSINESS, Audience.B2B),
                 [PLANS.PASS_PRO]: getShareFeature(plansMap, PLANS.PASS_PRO, Audience.B2B),
@@ -241,6 +246,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.DUO]: getInvitation(),
                 [PLANS.BUNDLE_PRO]: getInvitation(),
                 [PLANS.BUNDLE_PRO_2024]: getInvitation(),
+                [PLANS.BUNDLE_BIZ_2025]: getInvitation(),
                 [PLANS.MAIL_PRO]: getInvitation(),
                 [PLANS.MAIL_BUSINESS]: getInvitation(),
                 [PLANS.PASS_PRO]: getInvitation(),
@@ -270,6 +276,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.DUO]: getTeamAvailability(),
                 [PLANS.BUNDLE_PRO]: getTeamAvailability(),
                 [PLANS.BUNDLE_PRO_2024]: getTeamAvailability(),
+                [PLANS.BUNDLE_BIZ_2025]: getTeamAvailability(),
                 [PLANS.MAIL_PRO]: getTeamAvailability(),
                 [PLANS.MAIL_BUSINESS]: getTeamAvailability(),
                 [PLANS.PASS_PRO]: null,

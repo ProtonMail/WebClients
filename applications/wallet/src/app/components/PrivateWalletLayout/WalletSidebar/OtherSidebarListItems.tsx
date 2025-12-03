@@ -9,7 +9,6 @@ import { useUser } from '@proton/account/user/hooks';
 import type { IconProps } from '@proton/components';
 import {
     AuthenticatedBugModal,
-    SUBSCRIPTION_STEPS,
     SettingsLink,
     SidebarExpandButton,
     SidebarListItem,
@@ -19,14 +18,14 @@ import {
     SidebarListItemLink,
     SidebarListItemSettingsLink,
     useModalState,
-    useSubscriptionModal,
     useToggle,
 } from '@proton/components';
-import { PLANS, hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@proton/payments';
+import { PLANS } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import clsx from '@proton/utils/clsx';
 
 import config from '../../../config';
+import { useUpsellModal } from '../../../hooks/useUpsellModal';
 
 interface Props {
     label: string;
@@ -54,11 +53,11 @@ const SidebarItemContent = ({ label, to, icon, ...props }: Props) => {
 
 export const OtherSidebarListItems = () => {
     const dispatch = useDispatch();
-    const [openSubscriptionModal] = useSubscriptionModal();
 
     const [organization, isLoadingOrganization] = useOrganization();
     const [user] = useUser();
     const [subscription] = useSubscription();
+    const [openUpsellModal] = useUpsellModal(subscription);
 
     const { state: showSettings, toggle: toggleShowSettings } = useToggle(false);
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
@@ -79,40 +78,13 @@ export const OtherSidebarListItems = () => {
     const supportLabel = c('Wallet Sidebar').t`Contact Support`;
     const signoutLabel = c('Wallet Sidebar').t`Sign out`;
 
-    const upgradeToVisionaryOnly =
-        hasBundle(subscription) ||
-        hasFamily(subscription) ||
-        hasDuo(subscription) ||
-        hasBundlePro(subscription) ||
-        hasBundlePro2024(subscription);
-
-    const subscriptionProps = upgradeToVisionaryOnly
-        ? {
-              step: SUBSCRIPTION_STEPS.CHECKOUT,
-              disablePlanSelection: true,
-              plan: PLANS.VISIONARY,
-          }
-        : {
-              step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-          };
-
     const canUpgrade = organization?.PlanName !== PLANS.VISIONARY && !isLoadingOrganization && user.canPay;
 
     return (
         <>
             {canUpgrade && (
                 <SidebarListItem>
-                    <SidebarListItemButton
-                        data-testid="wallet-sidebar:upgrade"
-                        onClick={() => {
-                            openSubscriptionModal({
-                                ...subscriptionProps,
-                                metrics: {
-                                    source: 'upsells',
-                                },
-                            });
-                        }}
-                    >
+                    <SidebarListItemButton data-testid="wallet-sidebar:upgrade" onClick={openUpsellModal}>
                         <SidebarListItemContent
                             left={<SidebarListItemContentIcon size={5} className="color-weak" name={'upgrade'} />}
                             className="sidebar-item-content flex gap-2 max-w-full"
