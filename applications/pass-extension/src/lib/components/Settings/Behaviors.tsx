@@ -10,7 +10,6 @@ import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -49,7 +48,6 @@ type SettingsSectionsOptions = {
 
 const getSettingsSections = ({
     features,
-    plan,
     settings,
     webReqPermissions,
     dispatch,
@@ -85,7 +83,6 @@ const getSettingsSections = ({
                     description: c('Info').t`Automatically fill in your saved payment information.`,
                     checked: settings.autofill.cc ?? false,
                     hidden: !features?.PassCreditCardWebAutofill,
-                    disabled: !isPaidPlan(plan),
                     onChange: (checked) => onSettingsUpdate({ autofill: { cc: checked } }),
                 },
                 {
