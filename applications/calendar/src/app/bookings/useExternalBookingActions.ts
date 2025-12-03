@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
+import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useApi } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
@@ -8,10 +10,14 @@ import { useSaveMeeting } from '@proton/meet';
 import { confirmBookingSlot } from '@proton/shared/lib/api/calendarBookings';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { extractBookingUidFromSecret } from '../containers/bookings/utils/crypto/bookingEncryption';
+import {
+    encryptSlotBookingSharedKeyPackets,
+    extractBookingUidFromSecret,
+} from '../containers/bookings/utils/crypto/bookingEncryption';
 import { useBookingStore } from './booking.store';
 import type { BookingTimeslot } from './booking.store';
 import { prepareBookingSubmission } from './bookingSubmissionUtils';
+import { useBookingsProvider } from './entryPoints/BookingsExternalProvider';
 
 interface AttendeeInfo {
     name: string;
@@ -28,6 +34,10 @@ export const useExternalBookingActions = () => {
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
 
     const history = useHistory();
+    const { isGuest } = useBookingsProvider();
+
+    const getCalendarKeys = useGetCalendarKeys();
+    const getCalendarUserSettings = useGetCalendarUserSettings();
 
     const bookingSecretBase64Url = location.hash.substring(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,7 +65,24 @@ export const useExternalBookingActions = () => {
                 getVTimezonesMap,
             });
 
-            const AttendeeSharedKeyPacket = undefined;
+            let AttendeeSharedKeyPacket = undefined;
+            if (!isGuest) {
+                const calendarSettings = await getCalendarUserSettings();
+                if (!calendarSettings.DefaultCalendarID) {
+                    throw new Error('Default calendar ID not found');
+                }
+
+                const sharedKeyPacket = await encryptSlotBookingSharedKeyPackets({
+                    calendarID: calendarSettings.DefaultCalendarID,
+                    getCalendarKeys,
+                    sharedSessionKey: submissionData.sharedSessionKey,
+                });
+
+                AttendeeSharedKeyPacket = sharedKeyPacket ? sharedKeyPacket.toBase64() : undefined;
+
+                try {
+                } catch (e) {}
+            }
 
             await api(
                 confirmBookingSlot(bookingUidBase64Url, timeslot.id, {
