@@ -43,9 +43,9 @@ export function parseFileReferences(content: string): FileReference[] {
 export async function resolveFileReferences(
     content: string,
     fileResolver: (fileName: string) => Promise<{ content: string; fileName: string } | null>
-): Promise<{ content: string; referencedFiles: Array<{ fileName: string; content: string }> }> {
+): Promise<{ content: string; referencedFiles: { fileName: string; content: string }[] }> {
     const references = parseFileReferences(content);
-    const referencedFiles: Array<{ fileName: string; content: string }> = [];
+    const referencedFiles: { fileName: string; content: string }[] = [];
     
     if (references.length === 0) {
         return { content, referencedFiles: [] };
