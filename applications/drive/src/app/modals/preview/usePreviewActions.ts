@@ -8,10 +8,9 @@ import {
 
 import { downloadManager } from '../../managers/download/DownloadManager';
 import { useDocumentActions } from '../../store/_documents';
-import fileSaverSingleton from '../../store/_downloads/fileSaver/fileSaver';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { bufferToStream } from '../../utils/stream';
-import { logger } from './logger';
-import { getNodeMimeType, getNodeName } from './nodeUtils';
+import { getNodeMimeType } from './nodeUtils';
 
 export default function usePreviewActions({
     nodeUid,
@@ -45,17 +44,11 @@ export default function usePreviewActions({
                   return;
               }
 
+              // TODO: Add support for Live photos and Burst (related photos)
+              // In case we have related photos we should use the standard download
               if (nodeData) {
-                  const stream = bufferToStream(nodeData);
-
-                  await fileSaverSingleton.instance.saveAsFile(
-                      stream,
-                      {
-                          filename: getNodeName(node),
-                          mimeType: getNodeMimeType(node) ?? 'application/octet-stream',
-                      },
-                      (message) => logger.debug(message)
-                  );
+                  const { node: nodeEntity } = getNodeEntity(node);
+                  await downloadManager.downloadFromBuffer(nodeEntity, nodeData, getNodeMimeType(node));
                   return;
               }
 
