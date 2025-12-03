@@ -181,11 +181,11 @@ export const ProtonMeetContainer = ({
     const treatedAsPaidUser = hasSubscription || !!user?.hasPaidMeet;
 
     const hasEpochError = (epoch: bigint | undefined) => {
-        if (epoch && (lastEpochRef.current ?? 0 > epoch)) {
+        if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
             return true;
         }
 
-        if (epoch && lastEpochRef.current !== null && lastEpochRef.current + 1n !== epoch) {
+        if (epoch && lastEpochRef.current && lastEpochRef.current + 1n !== epoch) {
             return true;
         }
 
