@@ -884,7 +884,7 @@ export interface ActionParams {
     actionType: 'send' | 'edit' | 'regenerate';
     newMessageContent?: string;
     originalMessage?: Message;
-    isWebSearchButtonToggled?: boolean;
+    isWebSearchButtonToggled: boolean;
     retryStrategy?: RetryStrategy;
     customRetryInstructions?: string;
 }
