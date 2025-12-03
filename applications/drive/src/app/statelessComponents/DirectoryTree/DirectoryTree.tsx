@@ -13,7 +13,7 @@ export interface DirectoryTreeItem {
     treeItemId: string;
     name: string;
     expandable: boolean;
-    type: 'devices-root' | 'device' | 'shares-root' | 'folder' | string;
+    type: 'files-root' | 'devices-root' | 'device' | 'shares-root' | 'folder' | string;
     children: Record<string, DirectoryTreeItem> | null;
 }
 
@@ -156,6 +156,9 @@ function DirectoryTreeBranch({
 }
 
 function TreeItemIcon({ type }: { type: string }) {
+    if (type === 'files-root') {
+        return <Icon name="inbox" />;
+    }
     if (type === 'devices-root' || type === 'device') {
         return <Icon name="tv" />;
     }
