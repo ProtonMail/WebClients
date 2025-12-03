@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
@@ -30,6 +31,7 @@ interface Props extends Omit<SelectTwoProps<string>, 'onChange' | 'children'> {
     unstyledSelect?: boolean;
     selectMaxHeight?: DropdownSizeUnit.Viewport | Unit;
     tooltip?: boolean;
+    prefixIcon?: ReactNode;
 }
 export const TimeZoneSelector = ({
     loading = false,
@@ -42,6 +44,7 @@ export const TimeZoneSelector = ({
     unstyledSelect,
     selectMaxHeight,
     tooltip = false,
+    prefixIcon,
     ...rest
 }: Props) => {
     const api = useApi();
@@ -98,11 +101,11 @@ export const TimeZoneSelector = ({
             {tooltip ? (
                 <Tooltip title={getTimezoneAndOffset(timezone || '')} isOpen={selectIsOpen ? false : undefined}>
                     <div>
-                        <SearchableSelect {...searchableSelectProps} />
+                        <SearchableSelect {...searchableSelectProps} prefixIcon={prefixIcon} />
                     </div>
                 </Tooltip>
             ) : (
-                <SearchableSelect {...searchableSelectProps} />
+                <SearchableSelect {...searchableSelectProps} prefixIcon={prefixIcon} />
             )}
         </>
     );
