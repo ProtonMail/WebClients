@@ -345,9 +345,6 @@ const ProjectDetailViewInner = () => {
                                             className="project-detail-conversation-item"
                                             onClick={() => history.push(`/c/${conversation.id}`)}
                                         >
-                                            <div className="project-detail-conversation-icon">
-                                                <Icon name="speech-bubble" size={4} />
-                                            </div>
                                             <div className="project-detail-conversation-content">
                                                 <span className="project-detail-conversation-title">
                                                     {conversation.title || c('collider_2025:Label').t`Untitled chat`}
