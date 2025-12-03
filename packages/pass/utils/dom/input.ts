@@ -87,6 +87,7 @@ export const findInputBoundingElement = (
             for (let i = 0; i < MAX_DEPTH && candidate; i++) {
                 const borderWidth = pixelParser(getComputedStyle(candidate).borderBottomWidth);
                 if (borderWidth > 0 && !containsTextNode(candidate)) return candidate;
+                if (candidate === document.body) return null;
                 candidate = candidate.parentElement;
             }
 
@@ -127,7 +128,7 @@ export const findInputBoundingElement = (
 
     /* Analyze the parent element next */
     const parent = curr.parentElement;
-    if (!parent) return curr;
+    if (!parent || parent === document.body) return curr;
 
     /* Exclude unsuitable elements (e.g., table-related, forms) */
     if (INVALID_BOUNDING_TAGS.includes(parent.tagName)) return curr;
