@@ -6,10 +6,12 @@ import { c } from 'ttag';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { HandleSendMessage } from '../../../hooks/useLumoActions';
+import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import { useTierErrors } from '../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../hooks/useTipTapEditor';
 import { useDragArea } from '../../../providers/DragAreaProvider';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments } from '../../../redux/selectors';
@@ -18,12 +20,28 @@ import { sendVoiceEntryClickEvent } from '../../../util/telemetry';
 import { AttachmentArea, FileContentModal } from '../../components/Files';
 import GuestDisclaimer from '../../components/GuestDisclaimer';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
-import { ComposerEditorArea } from './ComposerEditorArea';
+import { ComposerEditorArea, type ComposerEditorAreaProps } from './ComposerEditorArea';
 import { ComposerToolbar } from './ComposerToolbar';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useFileHandling } from './hooks/useFileHandling';
 
 import './ComposerComponent.scss';
+
+/**
+ * Wrapper component that provides Drive SDK functions to ComposerEditorArea.
+ * This is a separate component so we can conditionally render it only for authenticated users.
+ */
+const ComposerEditorAreaWithDrive = (props: Omit<ComposerEditorAreaProps, 'browseFolderChildren' | 'downloadFile'>) => {
+    const { browseFolderChildren, downloadFile } = useDriveSDK();
+    
+    return (
+        <ComposerEditorArea
+            {...props}
+            browseFolderChildren={browseFolderChildren}
+            downloadFile={downloadFile}
+        />
+    );
+};
 
 export type ComposerComponentProps = {
     handleSendMessage: HandleSendMessage;
@@ -68,6 +86,7 @@ export const ComposerComponent = ({
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { hasTierErrors } = useTierErrors();
     const { isWebSearchButtonToggled } = useWebSearch();
+    const isGuest = useIsGuest();
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
@@ -130,16 +149,25 @@ export const ComposerComponent = ({
         }
     }, []);
 
-    const [isAutocompleteActive, setIsAutocompleteActive] = useState(false);
-
+    // Use a ref instead of state to avoid infinite loops
+    // useTipTapEditor reads this via a ref internally, so we can pass a ref directly
+    const isAutocompleteActiveRef = useRef(false);
+    const handleFocus = useCallback(() => {
+        setIsEditorFocused?.(true);
+    }, [setIsEditorFocused]);
+    
+    const handleBlur = useCallback(() => {
+        setIsEditorFocused?.(false);
+    }, [setIsEditorFocused]);
+    
     const { editor, handleSubmit } = useTipTapEditor({
         onSubmitCallback: sendGenerateMessage,
         hasTierErrors,
         isGenerating,
         isProcessingAttachment,
-        isAutocompleteActive,
-        onFocus: () => setIsEditorFocused?.(true),
-        onBlur: () => setIsEditorFocused?.(false),
+        isAutocompleteActiveRef: isAutocompleteActiveRef,
+        onFocus: handleFocus,
+        onBlur: handleBlur,
     });
     const isEditorEmpty = editor?.isEmpty;
     const sendIsDisabled = !(isGenerating ?? false) && (isEditorEmpty || isProcessingAttachment);
@@ -232,18 +260,33 @@ export const ComposerComponent = ({
                                 onOpenFiles={handleOpenFiles}
                             />
                         )}
-                        <ComposerEditorArea
-                            editor={editor}
-                            canShowSendButton={canShowSendButton}
-                            sendIsDisabled={sendIsDisabled}
-                            isGenerating={isGenerating ?? false}
-                            isProcessingAttachment={isProcessingAttachment}
-                            onAbort={onAbort}
-                            onSubmit={handleSubmit}
-                            spaceId={spaceId}
-                            messageChain={messageChain}
-                            onAutocompleteStateChange={setIsAutocompleteActive}
-                        />
+                        {isGuest ? (
+                            <ComposerEditorArea
+                                editor={editor}
+                                canShowSendButton={canShowSendButton}
+                                sendIsDisabled={sendIsDisabled}
+                                isGenerating={isGenerating ?? false}
+                                isProcessingAttachment={isProcessingAttachment}
+                                onAbort={onAbort}
+                                onSubmit={handleSubmit}
+                                spaceId={spaceId}
+                                messageChain={messageChain}
+                                isAutocompleteActiveRef={isAutocompleteActiveRef}
+                            />
+                        ) : (
+                            <ComposerEditorAreaWithDrive
+                                editor={editor}
+                                canShowSendButton={canShowSendButton}
+                                sendIsDisabled={sendIsDisabled}
+                                isGenerating={isGenerating ?? false}
+                                isProcessingAttachment={isProcessingAttachment}
+                                onAbort={onAbort}
+                                onSubmit={handleSubmit}
+                                spaceId={spaceId}
+                                messageChain={messageChain}
+                                isAutocompleteActiveRef={isAutocompleteActiveRef}
+                            />
+                        )}
                         <ComposerToolbar
                             fileInputRef={fileInputRef}
                             handleFileInputChange={handleFileInputChange}
