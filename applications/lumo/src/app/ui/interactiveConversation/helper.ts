@@ -474,28 +474,44 @@ function removeEmptyAssistantTurns(turns: Turn[]) {
 }
 
 async function prepareTurnsBetter(
-    linearChain: Message[],
-    contextFilters: ContextFilter[],
+    messageChain: Message[],
     s: SettingsContext,
-    allConversationAttachments: Attachment[],
-    projectInstructions?: string,
-    documentContext?: string
+    c: ConversationContext,
+    projectInstructions?: string, // todo: inject in context objects (this is a residue of a conflict resolution)
+    documentContext?: string // todo: same
 ) {
     // First, get basic turns without images
-    let turns = prepareTurns(
-        linearChain,
-        contextFilters,
-        s.personalization,
-        projectInstructions,
-        documentContext
-    );
+    let turns = prepareTurns(messageChain, c.contextFilters, s.personalization, projectInstructions, documentContext);
 
     // Now enrich user turns with images
     turns = await Promise.all(
-        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, linearChain, allConversationAttachments))
+        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, messageChain, c.allConversationAttachments))
     );
 
     return removeEmptyAssistantTurns(turns);
+}
+
+function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: string) {
+    return (dispatch: LumoDispatch) => {
+        const { conversationId, spaceId } = c;
+        if (!spaceId || !conversationId) {
+            return dispatch(initializeNewSpaceAndConversation(createdAt, ui.isGhostMode));
+        }
+        dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
+        return { spaceId, conversationId };
+    };
+}
+
+function populateMessageContext(message: Message, messageChain: Message[], c: ConversationContext) {
+    // Calculate which files will actually be used for the assistant response
+    // Note: Project files are retrieved via RAG, so only message attachments are tracked here
+    const contextFilesForResponse = getContextFilesForMessages(messageChain, c.contextFilters);
+
+    // Update the message with the context files that will be used
+    return {
+        ...message,
+        ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
+    };
 }
 
 export function sendMessage({
@@ -528,6 +544,7 @@ export function sendMessage({
         } else {
             dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
         }
+        const { conversationId, spaceId } = dispatch(ensureConversation(c, ui, date1));
 
         // Get space-level attachments (project files) and include them with the message
         const allAttachmentsState = state.attachments;
@@ -595,7 +612,7 @@ export function sendMessage({
 
         const processedContent: string = m.content;
 
-        const { userMessage, assistantMessage } = createMessagePair(
+        let { userMessage, assistantMessage } = createMessagePair(
             processedContent,
             m.attachments,
             conversationId,
@@ -603,6 +620,8 @@ export function sendMessage({
             date1,
             date2
         );
+
+        // Save the user message to Redux and request push to persistence HTTP API
         dispatch(addMessage(userMessage));
         dispatch(
             finishMessage({
@@ -619,20 +638,15 @@ export function sendMessage({
 
         // Define the sequence of message the assistant will respond to.
         // Obviously this must include the new user message containing the latest request.
-        const newLinearChain = [...c.messageChain, userMessage];
+        const newMessageChain = [...c.messageChain, userMessage];
 
-        // Calculate which files will actually be used for the assistant response
-        // Note: Project files are retrieved via RAG, so only message attachments are tracked here
-        const contextFilesForResponse = getContextFilesForMessage(newLinearChain, c.contextFilters);
+        // Fill in context files (attachment ids)
+        assistantMessage = populateMessageContext(assistantMessage, newMessageChain, c);
 
-        // Update the assistant message with the context files that will be used
-        const assistantMessageWithContext: Message = {
-            ...assistantMessage,
-            ...(contextFilesForResponse.length > 0 && { contextFiles: contextFilesForResponse }),
-        };
+        // Save the assistant message to Redux
+        dispatch(addMessage(assistantMessage));
 
-        dispatch(addMessage(assistantMessageWithContext));
-
+        // Detach attachments from the composer area and attach them to the space permanently
         // Only assign non-referenced attachments to the space
         // Referenced files (from @ mentions) should remain conversation-specific
         dispatch(assignProvisionalAttachmentsToSpace(nonReferencedAttachments, spaceId));
@@ -672,6 +686,11 @@ export function sendMessage({
 
         // Get user ID for RAG retrieval
         const userId = state.user?.value?.ID;
+
+        const signal = a.signal;
+        const requestTitle = shouldRequestTitle;
+        const linearChain = newMessageChain;
+
         // Call the LLM.
         try {
             const api = a.api;
@@ -755,46 +774,33 @@ export function sendMessage({
                 );
 
                 // Recalculate contextFiles to include the auto-retrieved attachments
-                const updatedContextFiles = getContextFilesForMessage(updatedLinearChain, contextFilters);
+                const updatedContextFiles = getContextFilesForMessages(updatedLinearChain, c.contextFilters);
 
                 console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
 
                 // IMMEDIATELY update the assistant message's contextFiles BEFORE streaming starts
                 // This ensures the "X files" button appears right away
-                dispatch((innerDispatch: AppDispatch, getState: () => any) => {
-                    const state = getState();
-                    const assistantMessage = state.messages[assistantMessageId];
-                    if (assistantMessage) {
-                        const updatedAssistantMessage: Message = {
-                            ...assistantMessage,
-                            contextFiles: updatedContextFiles,
-                        };
-                        innerDispatch(addMessage(updatedAssistantMessage));
-                        // Note: Don't push to server yet - the message is still being generated
-                    }
-                });
+                const updatedAssistantMessage: Message = {
+                    ...assistantMessage,
+                    contextFiles: updatedContextFiles,
+                };
+                dispatch(addMessage(updatedAssistantMessage));
+                // Note: Don't push to server yet - the message is still being generated
             } else if (lastUserMessage) {
                 // No RAG attachments, but still need to push the user message
                 // (it wasn't pushed earlier to allow for RAG attachments to be added first)
                 dispatch(pushMessageRequest({ id: lastUserMessage.id }));
             }
 
-            const turns = await prepareTurnsBetter(
-                updatedLinearChain,
-                contextFilters,
-                s,
-                allConversationAttachments,
-                projectInstructions,
-                ragResult?.context
-            );
+            const turns = await prepareTurnsBetter(updatedLinearChain, s, c, projectInstructions, ragResult?.context);
 
             await dispatch(
-                sendMessageWithRedux(api, turns, {
-                    messageId: assistantMessageId,
+                sendMessageWithRedux(a.api, turns, {
+                    messageId: assistantMessage.id,
                     conversationId,
                     spaceId,
                     signal,
-                    enableExternalTools,
+                    enableExternalTools: noAttachment && ui.enableExternalToolsToggled,
                     generateTitle: requestTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
@@ -803,7 +809,6 @@ export function sendMessage({
                     errorHandler: createLumoErrorHandler(),
                 })
             );
-            // --- END fetchAssistantResponse ---
         } catch (error) {
             console.warn('error: ', error);
             throw error;
@@ -831,10 +836,11 @@ export function regenerateMessage(
     return async (dispatch: AppDispatch, getState: () => any) => {
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
 
+        const state = getState();
+
         // Calculate which files will actually be used for the regenerated response
         // Note: Project files are retrieved via RAG
-        const state = getState();
-        const contextFilesForResponse = getContextFilesForMessage(messagesWithContext, contextFilters);
+        const contextFilesForResponse = getContextFilesForMessages(messagesWithContext, contextFilters);
 
         // Update the assistant message with context files before regenerating
         const assistantMessage = messagesWithContext.find((m) => m.id === assistantMessageId);
@@ -928,7 +934,7 @@ export function regenerateMessage(
                 );
 
                 // Recalculate contextFiles to include the auto-retrieved attachments
-                const updatedContextFiles = getContextFilesForMessage(updatedMessagesWithContext, contextFilters);
+                const updatedContextFiles = getContextFilesForMessages(updatedMessagesWithContext, contextFilters);
 
                 // Update the assistant message's contextFiles
                 const assistantMessage = state.messages[assistantMessageId];
@@ -1034,7 +1040,7 @@ export async function retrySendMessage({
     };
 
     // Note: Project files are retrieved via RAG
-    const contextFilesForResponse = getContextFilesForMessage(messageChain, contextFilters);
+    const contextFilesForResponse = getContextFilesForMessages(messageChain, contextFilters);
 
     // Update the assistant message with the context files that will be used
     const assistantMessageWithContext: Message = {
@@ -1150,7 +1156,7 @@ export async function retrySendMessage({
             updatedLinearChain = linearChain.map((msg) => (msg.id === lastUserMessage.id ? updatedUserMessage : msg));
 
             // Recalculate contextFiles to include the auto-retrieved attachments
-            const updatedContextFiles = getContextFilesForMessage(updatedLinearChain, contextFilters);
+            const updatedContextFiles = getContextFilesForMessages(updatedLinearChain, contextFilters);
 
             console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
 
@@ -1228,30 +1234,28 @@ export async function retrySendMessage({
     return assistantMessage;
 }
 
-export function initializeNewSpaceAndConversation(
-    dispatch: AppDispatch,
-    createdAt: string,
-    isGhostMode: boolean = false
-): { conversationId: ConversationId; spaceId: SpaceId } {
-    const spaceId = newSpaceId();
-    dispatch(addSpace({ id: spaceId, createdAt, updatedAt: createdAt, spaceKey: generateSpaceKeyBase64() }));
-    dispatch(pushSpaceRequest({ id: spaceId }));
+export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode: boolean = false) {
+    return (dispatch: LumoDispatch): { conversationId: ConversationId; spaceId: SpaceId } => {
+        const spaceId = newSpaceId();
+        dispatch(addSpace({ id: spaceId, createdAt, updatedAt: createdAt, spaceKey: generateSpaceKeyBase64() }));
+        dispatch(pushSpaceRequest({ id: spaceId }));
 
-    const conversationId = newConversationId();
-    dispatch(
-        addConversation({
-            id: conversationId,
-            spaceId,
-            title: c('collider_2025: Placeholder').t`New chat`,
-            createdAt,
-            updatedAt: createdAt,
-            status: ConversationStatus.GENERATING,
-            ...(isGhostMode && { ghost: true }),
-        })
-    );
-    dispatch(pushConversationRequest({ id: conversationId }));
+        const conversationId = newConversationId();
+        dispatch(
+            addConversation({
+                id: conversationId,
+                spaceId,
+                title: c('collider_2025: Placeholder').t`New chat`,
+                createdAt,
+                updatedAt: createdAt,
+                status: ConversationStatus.GENERATING,
+                ...(isGhostMode && { ghost: true }),
+            })
+        );
+        dispatch(pushConversationRequest({ id: conversationId }));
 
-    return { conversationId, spaceId };
+        return { conversationId, spaceId };
+    };
 }
 
 function createMessagePair(
@@ -1430,7 +1434,7 @@ export function fetchAssistantResponse({
             updatedLinearChain = linearChain.map((msg) => (msg.id === lastUserMessage.id ? updatedUserMessage : msg));
 
             // Recalculate contextFiles to include the auto-retrieved attachments
-            const updatedContextFiles = getContextFilesForMessage(updatedLinearChain, contextFilters);
+            const updatedContextFiles = getContextFilesForMessages(updatedLinearChain, contextFilters);
 
             console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
 
@@ -1525,7 +1529,7 @@ export function generateFakeConversationToShowTierError({
         const [date1, date2] = createDatePair();
 
         // Create new space and conversation just like in sendMessage
-        const { conversationId, spaceId } = initializeNewSpaceAndConversation(dispatch, date1);
+        const { conversationId, spaceId } = dispatch(initializeNewSpaceAndConversation(date1));
 
         const { userMessage, assistantMessage } = createMessagePair(
             newMessageContent,
