@@ -12,7 +12,7 @@ export const validateFormData = (data: BookingFormData): BookingFormValidation |
         return {
             type: 'error',
             reason: BookingFormValidationReasons.TIME_SLOT_LIMIT,
-            message: BookingErrorMessages.RANGE_LIMIT_EXCEEDED,
+            message: BookingErrorMessages.maxSlotsReached(data.bookingSlots.length),
         };
     }
 
