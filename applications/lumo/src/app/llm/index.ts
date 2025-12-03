@@ -204,7 +204,17 @@ export function prepareTurns(
 }
 
 function removeEmptyAssistantTurns(turns: Turn[]) {
-    return turns.filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
+    return (
+        turns
+            // .filter((turn) => {
+            //     // Keep system messages that contain personalization, filter out other system messages
+            //     if (turn.role === Role.System) {
+            //         return personalizationPrompt && turn.content === personalizationPrompt;
+            //     }
+            //     return true;
+            // })
+            .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''))
+    );
 }
 
 /**
@@ -288,82 +298,9 @@ export function enrichTurnWithImages(
     };
 }
 
-/**
- * Async version of prepareTurns that extracts images from provided attachments
- */
-export async function prepareTurnsWithImages(
-    linearChain: Message[],
-    attachments: Attachment[],
-    contextFilters: ContextFilter[] = [],
-    personalization: PersonalizationSettings,
-    projectInstructions?: string,
-    documentContext?: string,
-    c?: ConversationContext
-): Promise<Turn[]> {
-    return prepareTurns(linearChain, contextFilters, personalization, projectInstructions, documentContext, c);
-}
-
 export function appendFinalTurn(turns: Turn[], finalTurn = EMPTY_ASSISTANT_TURN): Turn[] {
     return [...turns, finalTurn];
 }
-
-// return turns that are either user or assistant where assistant turns are not empty
-// caution: unused
-export const getFilteredTurns = (
-    linearChain: Message[],
-    contextFilters: ContextFilter[] = [],
-    personalization: PersonalizationSettings,
-    projectInstructions?: string,
-    documentContext?: string
-) => {
-    return (
-        prepareTurns(linearChain, contextFilters, personalization, projectInstructions, documentContext) // caution: missing `c`
-            // FIXME: possibly useless
-            // .filter((turn) => {
-            //     // Keep system messages that contain personalization, filter out other system messages
-            //     if (turn.role === Role.System) {
-            //         return personalizationPrompt && turn.content === personalizationPrompt;
-            //     }
-            //     return true;
-            // })
-            .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''))
-    );
-};
-
-/**
- * Async version of getFilteredTurns that includes image attachments
- */
-export const getFilteredTurnsWithImages = async (
-    linearChain: Message[],
-    attachments: Attachment[],
-    contextFilters: ContextFilter[] = [],
-    personalization: PersonalizationSettings,
-    projectInstructions?: string,
-    documentContext?: string,
-    c?: ConversationContext
-): Promise<Turn[]> => {
-    const turns = await prepareTurnsWithImages(
-        linearChain,
-        attachments,
-        contextFilters,
-        personalization,
-        projectInstructions,
-        documentContext,
-        c
-    );
-    return (
-        turns
-            // FIXME: possibly useless
-            // .filter((turn) => {
-            //     // Keep system messages that contain personalization, filter out other system messages
-            //     if (turn.role === Role.System) {
-            //         return personalizationPrompt && turn.content === personalizationPrompt;
-            //     }
-            //     return true;
-            // })
-            .filter((turn) => !(turn.role === Role.Assistant && turn.content === ''))
-    );
-};
 
 async function decryptContent(
     content: Base64,
