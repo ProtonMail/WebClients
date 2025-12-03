@@ -2,7 +2,6 @@ import { useCallback, useMemo, useState } from 'react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { type PasswordPolicies, PasswordPolicyState } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 
 import { useLoadPasswordStrengthIndicatorWasm } from '../passwordStrengthIndicator/PasswordStrengthIndicator';
 import type { PasswordPolicyValidationResult } from './interface';
@@ -88,7 +87,6 @@ export const usePasswordPolicyValidation = (
     password: string,
     passwordPolicies: PasswordPolicies | undefined
 ): PasswordPolicyValidationHookResult => {
-    const featureEnabled = useFlag('PasswordPolicy');
     const passwordStrengthIndicator = useLoadPasswordStrengthIndicatorWasm();
     const { viewportWidth } = useActiveBreakpoint();
     const [inputFocused, setInputFocus] = useState(false);
@@ -103,7 +101,7 @@ export const usePasswordPolicyValidation = (
         return getResult(password, parsedPolicies);
     }, [password, parsedPolicies]);
 
-    const enabled = featureEnabled && hasActivePolicies;
+    const enabled = hasActivePolicies;
 
     return {
         enabled,

@@ -171,7 +171,6 @@ const MainContainer = () => {
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
-    const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
@@ -263,7 +262,6 @@ const MainContainer = () => {
         isProtonMeetIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isCryptoPostQuantumOptInEnabled,
-        isPasswordPolicyEnabled,
         isB2BTrial,
         isReferralExpansionEnabled,
         isRetentionPoliciesEnabled,
