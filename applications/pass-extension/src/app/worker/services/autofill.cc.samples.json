@@ -871,5 +871,151 @@
                 }
             }
         }
+    },
+    "hellofresh.es/checkout": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "hellofresh.es", "secure": true },
+                "crossOrigin": true,
+                "tabId": 16
+            },
+            "1552630677585": {
+                "frame": { "parent": 0, "frameId": 1552630677585, "origin": "hellofresh.es", "secure": true },
+                "crossOrigin": true,
+                "tabId": 16
+            },
+            "1552630677587": {
+                "frame": { "parent": 0, "frameId": 1552630677587, "origin": "processout.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 16
+            },
+            "1552630677588": {
+                "frame": { "parent": 0, "frameId": 1552630677588, "origin": "processout.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 16
+            },
+            "1552630677589": {
+                "frame": { "parent": 0, "frameId": 1552630677589, "origin": "processout.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 16
+            }
+        },
+        "clusters": {
+            "0": { "forms": [], "frameAttributes": {} },
+            "1552630677587": {
+                "forms": [
+                    {
+                        "formId": "d696ff52",
+                        "fields": [
+                            { "type": "field", "fieldId": "b896b1aa", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "1552630677588": {
+                "forms": [
+                    {
+                        "formId": "5358104b",
+                        "fields": [
+                            { "type": "field", "fieldId": "8329b4e1", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "1552630677589": {
+                "forms": [
+                    {
+                        "formId": "3cdd4a28",
+                        "fields": [
+                            { "type": "field", "fieldId": "b22cd546", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            }
+        }
+    },
+    "coolblue.de/cc": {
+        "frames": {
+            "0": {
+                "frame": { "parent": null, "frameId": 0, "origin": "coolblue.de", "secure": true },
+                "crossOrigin": true,
+                "tabId": 22
+            },
+            "1584842932264": {
+                "frame": { "parent": 0, "frameId": 1584842932264, "origin": "adyen.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 22
+            },
+            "1584842932265": {
+                "frame": { "parent": 0, "frameId": 1584842932265, "origin": "adyen.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 22
+            },
+            "1584842932269": {
+                "frame": { "parent": 0, "frameId": 1584842932269, "origin": "adyen.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 22
+            },
+            "1584842932270": {
+                "frame": { "parent": 0, "frameId": 1584842932270, "origin": "adyen.com", "secure": true },
+                "crossOrigin": false,
+                "tabId": 22
+            }
+        },
+        "clusters": {
+            "0": { "forms": [], "frameAttributes": {} },
+            "1584842932264": {
+                "forms": [
+                    {
+                        "formId": "940b8101",
+                        "fields": [
+                            { "type": "field", "fieldId": "6c98c294", "fieldType": "cc", "fieldSubType": "cc:number" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "1584842932265": {
+                "forms": [
+                    {
+                        "formId": "f3ea5041",
+                        "fields": [
+                            {
+                                "type": "field",
+                                "fieldId": "2f858f8f",
+                                "fieldType": "cc",
+                                "fieldSubType": "cc:exp-month"
+                            }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "1584842932269": {
+                "forms": [
+                    {
+                        "formId": "1686dbee",
+                        "fields": [
+                            { "type": "field", "fieldId": "faa45926", "fieldType": "cc", "fieldSubType": "cc:exp-year" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            },
+            "1584842932270": {
+                "forms": [
+                    {
+                        "formId": "70143f3e",
+                        "fields": [
+                            { "type": "field", "fieldId": "dd9b1cb1", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                        ]
+                    }
+                ],
+                "frameAttributes": {}
+            }
+        }
     }
 }
