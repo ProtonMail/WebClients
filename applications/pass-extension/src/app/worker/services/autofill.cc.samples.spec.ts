@@ -415,4 +415,87 @@ describe('CC form clustering', () => {
             );
         });
     });
+
+    describe('coolblue.de/cc > payment form', () => {
+        const { frames, clusters } = samples['coolblue.de/cc'];
+
+        test('resolves from cc-number in sub-frame', () => {
+            const payload = { frameId: 1584842932264, formId: '940b8101', fieldId: '6c98c294' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1584842932264, [{ fieldId: '6c98c294', frameId: 1584842932264, formId: '940b8101' }]],
+                    [1584842932265, [{ fieldId: '2f858f8f', frameId: 1584842932265, formId: 'f3ea5041' }]],
+                    [1584842932269, [{ fieldId: 'faa45926', frameId: 1584842932269, formId: '1686dbee' }]],
+                    [1584842932270, [{ fieldId: 'dd9b1cb1', frameId: 1584842932270, formId: '70143f3e' }]],
+                ])
+            );
+        });
+
+        test('resolves from cc-exp-month in sub-frame', () => {
+            const payload = { frameId: 1584842932265, formId: 'f3ea5041', fieldId: '2f858f8f' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1584842932264, [{ fieldId: '6c98c294', frameId: 1584842932264, formId: '940b8101' }]],
+                    [1584842932265, [{ fieldId: '2f858f8f', frameId: 1584842932265, formId: 'f3ea5041' }]],
+                    [1584842932269, [{ fieldId: 'faa45926', frameId: 1584842932269, formId: '1686dbee' }]],
+                    [1584842932270, [{ fieldId: 'dd9b1cb1', frameId: 1584842932270, formId: '70143f3e' }]],
+                ])
+            );
+        });
+
+        test('resolves from cc-cvc in sub-frame', () => {
+            const payload = { frameId: 1584842932270, formId: '70143f3e', fieldId: 'dd9b1cb1' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1584842932264, [{ fieldId: '6c98c294', frameId: 1584842932264, formId: '940b8101' }]],
+                    [1584842932265, [{ fieldId: '2f858f8f', frameId: 1584842932265, formId: 'f3ea5041' }]],
+                    [1584842932269, [{ fieldId: 'faa45926', frameId: 1584842932269, formId: '1686dbee' }]],
+                    [1584842932270, [{ fieldId: 'dd9b1cb1', frameId: 1584842932270, formId: '70143f3e' }]],
+                ])
+            );
+        });
+    });
+
+    describe('hellofresh.es/checkout > payment form', () => {
+        const { frames, clusters } = samples['hellofresh.es/checkout'];
+
+        test('resolves from cc-number in sub-frame', () => {
+            const payload = { frameId: 1552630677587, formId: 'd696ff52', fieldId: 'b896b1aa' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1552630677587, [{ fieldId: 'b896b1aa', frameId: 1552630677587, formId: 'd696ff52' }]],
+                    [1552630677588, [{ fieldId: '8329b4e1', frameId: 1552630677588, formId: '5358104b' }]],
+                    [1552630677589, [{ fieldId: 'b22cd546', frameId: 1552630677589, formId: '3cdd4a28' }]],
+                ])
+            );
+        });
+
+        test('resolves from cc-cvc in sub-frame', () => {
+            const payload = { frameId: 1552630677588, formId: '5358104b', fieldId: '8329b4e1' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1552630677587, [{ fieldId: 'b896b1aa', frameId: 1552630677587, formId: 'd696ff52' }]],
+                    [1552630677588, [{ fieldId: '8329b4e1', frameId: 1552630677588, formId: '5358104b' }]],
+                    [1552630677589, [{ fieldId: 'b22cd546', frameId: 1552630677589, formId: '3cdd4a28' }]],
+                ])
+            );
+        });
+
+        test('resolves from cc-exp in sub-frame', () => {
+            const payload = { frameId: 1552630677589, formId: '3cdd4a28', fieldId: 'b22cd546' } as AutofillActionDTO;
+            const result = clusterCCFormFields(frames, clusters, payload);
+            expect(result).toEqual(
+                new Map([
+                    [1552630677587, [{ fieldId: 'b896b1aa', frameId: 1552630677587, formId: 'd696ff52' }]],
+                    [1552630677588, [{ fieldId: '8329b4e1', frameId: 1552630677588, formId: '5358104b' }]],
+                    [1552630677589, [{ fieldId: 'b22cd546', frameId: 1552630677589, formId: '3cdd4a28' }]],
+                ])
+            );
+        });
+    });
 });

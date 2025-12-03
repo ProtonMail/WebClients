@@ -7,7 +7,7 @@ import type { AbstractField } from 'proton-pass-extension/types/field';
 import type { FrameAttributes, FrameField } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import type { FieldType } from '@proton/pass/fathom/labels';
+import type { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
 import type { FrameId, MaybeNull, TabId } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -129,30 +129,66 @@ export const clusterCCFormFields = (
         return null;
     };
 
+    type FrameRoot = { frameId: FrameId; formId: string };
+
+    /** Handles edge-case where no parent form could be resolved but child
+     * frames at depth=1 contain complete, non-overlapping CC forms. Returns
+     * candidate roots when cross-frame autofilling is unambiguous. */
+    const findUnambiguousChildRoots = (parentFrameId: FrameId): FrameRoot[] => {
+        const parentCluster = clusters.get(parentFrameId);
+        if (parentCluster?.forms.length !== 0) return [];
+
+        const seen = new Set<CCFieldType>();
+        const roots: FrameRoot[] = [];
+
+        for (const childFrameId of getFrameChildren(parentFrameId)) {
+            for (const form of clusters.get(childFrameId)?.forms ?? []) {
+                for (const field of form.fields) {
+                    if (field.type === 'frame') return [];
+                    if (!isCCField(field)) continue;
+                    if (seen.has(field.fieldSubType)) return [];
+                    seen.add(field.fieldSubType);
+                }
+
+                roots.push({ frameId: childFrameId, formId: form.formId });
+            }
+        }
+
+        return seen.size > 0 ? roots : [];
+    };
+
     /** Walks up the frame hierarchy to find the root containing form.
      * Starting from the source frame, and walk UP through the frame
      * hierarchy to find the top-most form that contains the original frame.
      * This determines the root of our clustering scope. */
-    const findRootFrame = (startFrameId: FrameId): { frameId: FrameId; formId?: string } => {
+    const findFrameRoots = (startFrameId: FrameId): FrameRoot[] => {
         let currentFrameId = startFrameId;
         let currentFormId = sourceFormId;
 
         /** If top-frame: no need to traverse */
-        if (currentFrameId === 0) return { frameId: 0, formId: currentFormId };
+        if (currentFrameId === 0) return [{ frameId: 0, formId: currentFormId }];
 
         while (true) {
+            const formId = currentFormId;
             const cluster = clusters.get(currentFrameId);
-            if (!cluster) break;
+            if (!cluster || !cluster.forms.some((form) => form.formId === formId)) break;
 
             const parentForm = resolveFrameParentForm(currentFrameId, cluster.frameAttributes);
             const parent = getParentFrameId(currentFrameId);
-            if (!parentForm || parent === null) break;
+
+            if (parent === null) break;
+
+            if (!parentForm) {
+                const childRoots = findUnambiguousChildRoots(parent);
+                if (childRoots.length > 0) return childRoots;
+                break;
+            }
 
             currentFrameId = parent;
-            currentFormId = parentForm.formId;
+            currentFormId = parentForm?.formId;
         }
 
-        return { frameId: currentFrameId, formId: currentFormId };
+        return [{ frameId: currentFrameId, formId: currentFormId }];
     };
 
     /** Recursively collects all credit card fields in document order.
@@ -191,8 +227,8 @@ export const clusterCCFormFields = (
     };
 
     /** 1. Find root and collect all fields in document order */
-    const root = findRootFrame(sourceFrameId);
-    collectFrameItems(root.frameId, root.formId);
+    const roots = findFrameRoots(sourceFrameId);
+    roots.forEach((root) => collectFrameItems(root.frameId, root.formId));
 
     /** 2. Resolve field sections to group related fields. This analyzes
      * all collected fields and groups them into logical sections. */
