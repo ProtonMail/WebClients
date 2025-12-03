@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
@@ -49,9 +49,16 @@ const ComingSoonWrapper = ({ children }: { children: React.ReactNode }) => {
 
 const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     const isGuest = window.location.pathname.includes('guest');
+    const hasInitialized = useRef(false);
 
     const history = useHistory();
     const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname.length < 2 && hasInitialized.current) {
+            history.push('/dashboard');
+        }
+    }, [location.pathname]);
 
     useEffect(() => {
         if (isGuest && isElectronApp) {
@@ -93,6 +100,8 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
         ) {
             history.push(isGuest ? '/join' : '/dashboard');
         }
+
+        hasInitialized.current = true;
     }, []);
 
     return children;
