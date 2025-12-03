@@ -481,7 +481,7 @@
         "Download applikationslogs"
       ],
       "Download logs": [
-        "Download-logfiler"
+        "Download logfiler"
       ],
       "Download now": [
         "Download nu"
@@ -935,7 +935,7 @@
         "Flere søgemuligheder"
       ],
       "Most frequent": [
-        "Mest hyppige"
+        "Hyppigst"
       ],
       "Most read": [
         "Mest læste"
@@ -1684,6 +1684,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Åbn i ${ SHEETS_APP_NAME }"
+      ],
+      "Subscribe now": [
+        "Abonnér nu"
       ]
     },
     "action": {
@@ -3072,7 +3078,7 @@
         "Rediger og planlæg igen"
       ],
       "Message saved to Drafts": [
-        "Besked gemt i Kladder"
+        "Besked gemt i kladder"
       ],
       "Quit import customization?": [
         "Afslut importtilpasning?"
@@ -3218,7 +3224,7 @@
         "Aruba"
       ],
       "Ascension Island": [
-        "Ascension"
+        "Ascension Island"
       ],
       "Australia": [
         "Australien"
@@ -3959,7 +3965,7 @@
         "Jomfruøerne, britiske"
       ],
       "Virgin Islands, U.S.": [
-        "Jomfruøerne, Amerika."
+        "Jomfruøerne (de amerikanske, USVI)"
       ],
       "Wallis and Futuna": [
         "Wallis og Futuna"
@@ -4583,7 +4589,7 @@
         "En gruppe med dette navn findes allerede"
       ],
       "A problem occurred, please try again.": [
-        "Der opstod et problem. Prøv venligst igen."
+        "Der opstod et problem. Prøv igen."
       ],
       "Add at least one action": [
         "Tilføj mindst én handling"
@@ -5036,7 +5042,7 @@
         "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne med et program som for eksempel GnuPG."
       ],
       "The email addresses do not match": [
-        "E-Mailadresserne stemmer ikke overens"
+        "E-mailadresserne stemmer ikke overens"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
@@ -5171,6 +5177,15 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Editing billing address is not available at the moment. Please try again later.": [
+        "Redigering af faktureringsadresse er ikke tilgængelig i øjeblikket. Prøv igen senere."
+      ],
+      "Failed to load the STL preview": [
+        "Indlæsning af STL-forhåndsvisningen mislykkedes"
+      ],
+      "Postal code is required": [
+        "Postnummer kræves"
       ]
     },
     "error": {
@@ -5864,7 +5879,7 @@
         "Prøv den nye desktop-app"
       ],
       "Upgrade now": [
-        "Opgradere dit plan nu"
+        "Opgrader nu"
       ]
     },
     "Get started checklist instructions": {
@@ -7518,8 +7533,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7904,7 +7918,7 @@
         "Brug en anden browser eller download filen."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Vent venligst, indtil dine ændringer er synkroniseret med serveren."
+        "Vent indtil dine ændringer er synkroniseret med serveren."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
@@ -7925,7 +7939,7 @@
         "Forhåndsvisning af denne filtype er ikke understøttet"
       ],
       "Preview of documents is not yet supported.": [
-        "Smugkig af dokumenter understøttes ikke endnu."
+        "Forhåndsvisning af dokumenter understøttes ikke endnu."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
@@ -8267,7 +8281,7 @@
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+        "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download filen."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Denne samtale indeholder en planlagt besked. Afsendelsen af denne besked vil blive annulleret."
@@ -11844,7 +11858,7 @@
         "browser"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Tøm slettede og spam e-mails efter 30 dage"
+        "Slet slettede e-mails og spam-e-mails efter 30 dage."
       ],
       "Continue": [
         "Forsæt"
@@ -12822,6 +12836,21 @@
       ],
       "your subscription": [
         "Dit abonnement"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Hvis du annullerer før denne dato,** vil du blive **nedgraderet** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveversionen udløber."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Hvis du ikke abonnerer,** bliver du **nedgraderet** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du ikke annullerer,** starter dit fulde abonnement, og du får **${ referrerRewardAmount }** i kreditter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du abonnerer før denne dato,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "Last chance to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Sidste chance for at udforske alle de kraftfulde funktioner, som **${ planTitle }** har at tilbyde."
       ]
     },
     "Remaining days before the message expire": {
@@ -14186,8 +14215,8 @@
         "${ elementsCount } samtaler flyttet til ${ labelName } og afsendere tilføjet din ikke-spam-liste."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
-        "${ elementsCount } Konversation flyttet til ${ labelName }.",
-        "${ elementsCount } Konversationer er flyttet til ${ labelName }."
+        "${ elementsCount } samtale flyttet til ${ labelName }.",
+        "${ elementsCount } samtaler flyttet til ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } samtale flyttet til spam og afsender tilføjet din spam-liste.",
@@ -14223,14 +14252,14 @@
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } besked markeret som ulæst.",
-        "${ elementsCount } beskeder markeret som ulæst."
+        "${ elementsCount } beskeder markeret som ulæste"
       ],
       "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
         "${ elementsCount } besked flyttet til ${ labelName } og afsender tilføjet til din ikke-spam-liste.",
         "${ elementsCount } beskeder flyttet til ${ labelName } og afsendere tilføjet til din ikke-spam-liste."
       ],
       "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } Besked flyttet til ${ labelName }.",
+        "${ elementsCount } besked flyttet til ${ labelName }.",
         "${ elementsCount } beskeder flyttet til ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
@@ -15702,6 +15731,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier er på vej!"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Åbn dette regneark i ${ SHEETS_APP_NAME } eller download det for at forhåndsvise det."
       ]
     },
     "Today icon tooltip in mini calendar": {

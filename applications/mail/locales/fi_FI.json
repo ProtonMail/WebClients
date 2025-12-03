@@ -1642,6 +1642,42 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
+      ],
+      "Claim this address": [
+        "Valitse tämä osoite"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Liity ${ MEET_APP_NAME }llä"
+      ],
+      "Keep inbox as before": [
+        "Säilytä saapuneet ennallaan"
+      ],
+      "Most frequent": [
+        "Yleisimmät"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
+      ],
+      "Recently read": [
+        "Viimeksi luetut"
+      ],
+      "Remove video conference": [
+        "Poista videokonferenssi"
+      ],
+      "Toggle notifications": [
+        "Näytä tai piilota ilmoitukset"
+      ],
+      "Toggle referral": [
+        "Kytke suositus päälle tai pois"
       ]
     },
     "action": {
@@ -1988,6 +2024,12 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40 kertaa enemmän nykyiseen tilaukseesi nähden"
+      ],
+      "Recover previous file versions": [
+        "Palauta aikaisempia versioita tiedostoista."
       ]
     },
     "BF2024: Offers": {
@@ -1996,6 +2038,9 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
+      ],
+      "forever": [
+        "ikuisesti"
       ]
     },
     "BF2024: Tooltip": {
@@ -2213,6 +2258,9 @@
       ],
       "Website access problem": [
         "Verkkosivuston avautumisongelma"
+      ],
+      "Authenticator problem": [
+        "Todennusvirhe"
       ]
     },
     "Button": {
@@ -2577,6 +2625,9 @@
       ],
       "Ultra fast and private VPN": [
         "Huippunopea ja yksityinen VPN"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Kaikki premium-ominaisuudet palveluista ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Checkout row": {
@@ -2612,11 +2663,41 @@
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
+      ],
+      "Access to advanced AI models": [
+        "Pääsy kehittyneisiin tekoälymalleihin"
+      ],
+      "Large file upload support": [
+        "Suurten tiedostojen lataustuki"
+      ],
+      "Limited favorites": [
+        "Rajoitettu määrä suosikkeja"
+      ],
+      "Unlimited favorites for quick access": [
+        "Loputtomasti suosikkeja nopean pääsyn takaamiseksi"
+      ],
+      "Upload and query multiple large files": [
+        "Lataa ja laita jonoon useita suuria tiedostoja"
+      ],
+      "Upload and query small files": [
+        "Lähetä ja laita jonoon pieniä tiedostoja"
+      ],
+      "Web search access": [
+        "Verkkohakuun pääsy"
       ]
     },
     "collider_2025: Info": {
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
+      ],
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } on yksityisyyteen keskittyvä tekoäly, joka auttaa sinua saamaan enemmän aikaan pitäen samalla tietosi turvassa. Avaa sen täysi potentiaali ja nauti varhaisesta pääsystä uusiin ominaisuuksiin kun niitä julkaistaan."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Lisää ${ LUMO_APP_NAME }"
+      ],
+      "Advanced account and network security in one plan": [
+        "Edistyksellinen tilin ja verkon tietoturva yhdellä tilauksella"
       ]
     },
     "color": {
@@ -4200,6 +4281,18 @@
     "Duo offer": {
       "Only": [
         "Vain"
+      ],
+      "/month": [
+        "kuukaudessa"
+      ],
+      "2 TB of storage to share": [
+        "2 Tt tallennustilaa jaettavaksi"
+      ],
+      "2 user accounts": [
+        "2 käyttäjätiliä"
+      ],
+      "All premium features from your current plan": [
+        "Kaikki nykyisen tilauksesi premium-ominaisuudet"
       ]
     },
     "Email body for invitation": {
@@ -4229,6 +4322,15 @@
       ],
       "TIME:": [
         "AIKA:"
+      ],
+      "LOCATION:": [
+        "SIJAINTI:"
+      ],
+      "TITLE:": [
+        "OTSIKKO:"
+      ],
+      "You are invited to": [
+        "Sinut on kutsuttu"
       ]
     },
     "Email body for invitation (date part)": {
@@ -4931,6 +5033,12 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Failed to update secret passphrase": [
+        "Salaisen salalauseen päivittäminen epäonnistui"
+      ],
+      "Passphrase unavailable": [
+        "Salalause ei ole käytettävissä"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5292,6 +5400,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Perhetilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5346,6 +5457,12 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
+      ],
+      "Encrypted cloud storage for files, photos and documents": [
+        "Salattu pilvipalvelu tiedostoillesi, kuvillesi ja asiakirjoillesi"
+      ],
+      "More premium features": [
+        "Lisää premium-ominaisuuksia"
       ]
     },
     "Features": {
@@ -5729,6 +5846,9 @@
       ],
       "You've unlocked 1 GB": [
         "Olet vapauttanut 1 Gt"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
       ]
     },
     "Gmail forwarding": {
@@ -5821,6 +5941,9 @@
       ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "Password ends with": [
+        "Salasana päättyy"
       ]
     },
     "Hint": {
@@ -7192,8 +7315,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8561,6 +8683,93 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vaatii ${ BRAND_NAME } - osoitteen turvalliseen tapahtumien synkronointiin ja salaukseen. Lunasta ilmainen ${ claimAddressButton } -osoitteesi nyt."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
+        "${ CALENDAR_APP_NAME } vaatii ${ BRAND_NAME } - osoitteen turvalliseen tapahtumien synkronointiin ja salaukseen. Lunasta ilmainen ${ MAIL_APP_NAME } - osoitteesi nyt."
+      ],
+      "Addresses settings": [
+        "Osoiteasetukset"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Kaikki viestit tullaan näyttämään saapuneissa, eikä kategorioiden välikehtiä tai tägejä enää näytetä. "
+      ],
+      "Categories work just like spam filters. ${ MAIL_APP_NAME } never reads your emails or shares your data.": [
+        "Kategoriat toimivat roskapostisuodattimien tapaan. ${ MAIL_APP_NAME } ei koskaan lue sähköpostejasi tai jaa tietojasi."
+      ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Ktegoriat toimivat roskapostisuodattimien tapaan. Tarkistamme ainoastaan salaamattoman otsikon ja tekniset tiedot tiettyjen kuvioiden löytämiseksi. Emme lue sähköpostisi sisältöä, jaa tietojasi tai loukkaa yksityisyyttäsi."
+      ],
+      "Choose a plan that works best for you.": [
+        "Valitse tilaus, joka sopii sinulle parhaiten."
+      ],
+      "Dedicated VPN servers": [
+        "Erilliset VPN-palvelimet"
+      ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Varmistu täysin yksityisestä ja salatusta viestinnästä. Hanki ilmainen ${ BRAND_NAME } -sähköpostiosoitteesi nyt."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Paremman tietoturvan saamiseksi voit asettaa salalauseen. Sitä ei sisällytetä kalenterikutsuun, joten muistathan jakaa sen vieraille erikseen."
+      ],
+      "Google Pay mark": [
+        "Google Payn merkki"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Sisältää laskut, kuitit, tilaukset ja varaukset."
+      ],
+      "Includes invoices, purchase orders, and payment confirmations.": [
+        "Sisältää laskut, tilaus- ja maksuvahvistukset"
+      ],
+      "Includes marketing emails and non-urgent app notifications.": [
+        "Sisältää markkinointisähköpostit ja ei-kiireelliset sovellusilmoitukset."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Sisältää markkinointisähköposteja, kuten tarjouksia ja tuotejulkistuksia."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Sisältää uutiskatsauksia ja muita ei mainoksellista sisältöä. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Sisältää päivitykset someverkostoista ja median jakamissivustoilta."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Pidä kirjautumis- ja luottokorttitietosi turvassa ja aina käsilläsi lisäämällä ne ${ PASS_APP_NAME }iin. Se on ilmainen ja sisältyy ${ BRAND_NAME }-tiliisi."
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Tee ${ MAIL_APP_NAME }stä oletussähköpostisovelluksesi."
+      ],
+      "Saving draft": [
+        "Tallennetaan luonnosta"
+      ],
+      "Scheduling message": [
+        "Ajoitetaan viestiä"
+      ],
+      "Sending message": [
+        "Lähetetään viestiä"
+      ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Nämä keskustelut säilytetään organisaatiosi tietojen säilytyskäytännön mukaisesti."
+      ],
+      "Upgrade to keep your ${ planTitle } benefits.": [
+        "Päivitä säilyttääksesi ${ planTitle } tilauksesi edut."
+      ],
+      "We’ve upgraded your ${ DRIVE_APP_NAME } storage to 5GB. Keep your important files and photos encrypted.": [
+        "Olemme nostaneet ${ DRIVE_APP_NAME }-tallennustilasi 5 gigatavuun. Pidä tärkeät tiedostosi ja valokuvasi salattuina."
+      ],
+      "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
+        "Uusilla sähköpostikategorioilla vain tärkeät viestit päätyvät pääasialliseen postilaatikkoosi. Kaikki muu lajitellaan kategorioihin."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Olet nyt kirjautuneena ${ username } tilille."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Sinua ei laskuteta, jos peruutat ennen päivää ${ trialEndsOnFormatted }"
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Tilauksesi päättyy ajassa ${ timeRemaining }."
       ]
     },
     "info": {
@@ -9557,6 +9766,60 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Always label sender's emails": [
+        "Merkitse lähettäjän viestit aina tunnisteella"
+      ],
+      "Always move sender's emails": [
+        "Siirrä lähettäjän viestit aina"
+      ],
+      "Automated confirmations and alerts": [
+        "Automaattiset vahvistukset ja hälytykset"
+      ],
+      "Bookings, billings, and orders": [
+        "Varaukset, laskutukset ja tilaukset"
+      ],
+      "Deals, offers, marketing emails": [
+        "Tarjoukset, edut ja markkinointiviestit"
+      ],
+      "Discussion board posts and threads": [
+        "Keskustelualueen julkaisut ja keskustelut"
+      ],
+      "Go to Primary": [
+        "Siirry Ensisijaisiin"
+      ],
+      "Go to Promotions": [
+        "Siirry Kampanjoihin"
+      ],
+      "Go to Social": [
+        "Mene sosiaaliseen mediaan"
+      ],
+      "Go to Transactions": [
+        "Siirry Maksutapahtumiin"
+      ],
+      "Move messages to": [
+        "Siirrä viestit kansioon"
+      ],
+      "Non-promotional content and news": [
+        "Ei-mainoksellinen sisältö ja uutiset"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Poista ${ MEET_APP_NAME } videokonferenssi"
+      ],
+      "Remove Zoom video conference": [
+        "Poista Zoom-videokonferenssi"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Valitse sisällytettävät kategoriat ja salli ilmoitukset jotta sinulle voidaan ilmoittaa kategorian uusista viesteistä."
+      ],
+      "Social media updates and activity": [
+        "Sosiaalisen median päivitykset ja toiminta"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "Tämä kategoria on päivitetty, kiitos palautteestasi!"
+      ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Parannamme sähköpostien luokittelua. Palautteesi auttaa tekemään siitä älykkäämmän ja tarkemman."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9892,6 +10155,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Sinun on aktivoitava avaimesi uudelleen nähdäksesi päivitetyn kutsun"
+      ],
+      "Reactivate subscription": [
+        "Aktivoi tilaus uudelleen"
       ]
     },
     "Link to calendar event": {
@@ -9952,6 +10218,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Jatkaaksesi ${ BRAND_NAME } -palvelun käyttöä varmista, että tilauksesi premium-ominaisuudet eivät ole enää käytössä tai päivitä tilaustasi."
       ]
     },
     "Log preference": {
@@ -10017,6 +10286,9 @@
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
+      ],
+      "Your free trial has ended. ${ nonAutoRenewalAction }": [
+        "Ilmainen kokeilusi on päättynyt. ${ nonAutoRenewalAction }"
       ]
     },
     "Message display when a new app version is available": {
@@ -10700,6 +10972,19 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "Existing ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } benefits": [
+        "Nykyiset ${ PLAN_NAMES[PLANS.VPN_BUSINESS] } -edut"
+      ],
+      "Proofread and refine your emails": [
+        "Oikolue ja paranna sähköpostejasi"
+      ],
+      "Short domain (@pm.me)": [
+        "Lyhyt verkkotunnus (@pm.me)"
+      ],
+      "Vault sharing with up to ${ n } person": [
+        "Holvin jakaminen enintään ${ n } henkilölle",
+        "Holvin jakaminen enintään ${ n } henkilölle"
       ]
     },
     "new_plans: feature highlight": {
@@ -10806,6 +11091,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 Gt pilvitallennustilaa jolla voit säilyttää, synkronoida ja jakaa tiedostoja helposti. Suojattu päästä päähän -salauksella."
       ]
     },
     "new_plans: Subtext": {
@@ -11234,6 +11522,15 @@
       ],
       "Your subscription renews soon": [
         "Tilauksesi uusiutuu pian"
+      ],
+      "Don't show this again": [
+        "Älä näytä tätä uudestaan"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Tilaa ${ BRAND_NAME } Duo"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Rajoitetun ajan tarjous, voimassa ensimmäisen kuukautesi ajan"
       ]
     },
     "Offer fearue": {
@@ -11282,6 +11579,9 @@
       ],
       "Social media": [
         "Sosiaalinen media"
+      ],
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Vaihda sähköpostiosoitteesi suosituissa palveluissa nyt välttääksesi seurannan ja profiloinnin. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11556,6 +11856,9 @@
       ],
       "Team policies": [
         "Ryhmäkäytännöt"
+      ],
+      "File attachments (up to 10GB)": [
+        "Liitetiedostot (enintään 10 Gt)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11699,6 +12002,59 @@
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Maksu erääntyy kokeilun jälkeen ${ formattedDate }"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%:n ${ taxName } poisluettuna: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ilman ${ taxRate }% veroja: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } sisältäen: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Sisältää ${ taxRate }% veroja: ${ taxAmount }"
+      ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Maksutapa vaaditaan tilauksen aktivoimiseksi kokeilun päätyttyä."
+      ],
+      "terms and conditions": [
+        "käyttöehdot"
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan.",
+        "Alennushinta on voimassa ${ subscriptionLength } kuukauden ajan."
+      ],
+      "The specially discounted price is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusiminen sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa.",
+        "Eirtyishinta on voimassa ensimmäisen kuukauden ajan. ${ couponRedemptions } uusimista sallitaan. Sen jälkeen se uusiutuu automaattisesti hintaan ${ renewPriceStr } yhdeksi kuukaudeksi. Voit perua tilauksen milloin tahansa."
+      ],
+      "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Erityishinta on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tämä toiminto laajentaa olemassa olevaa tilausta. Sinua veloitetaan vain uusista lisäosista ja nykyisen laskutusjakson jäljellä olevasta ajasta. Tilauksesi uusimispäivä ei muutu."
+      ],
+      "This offer is not available with your current plan.": [
+        "Tämä tarjous ei ole saatavilla nykyiselle tilauksellesi."
+      ],
+      "You already have a subscription to this plan.": [
+        "Sinulla on jo tämä tilaus."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Sinulla on jo tilaus tähän tilaukseen. Voit muuttaa tilaustasi palvelussa ${ subscriptionPlatform }."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Sinut ohjataan pian maksun vahvistamiseen."
+      ],
+      "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
+        "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
       ]
     },
     "Payments.Error": {
@@ -11729,6 +12085,9 @@
     "Payments.Sepa": {
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Vahvistamalla tämän maksun valtuutat yritykset ${ BRAND_NAME } ja Stripe, maksupalveluiden tarjoajamme, pyytämään pankkiasi laskuttamaan tiliäsi sopimuksen mukaisesti. Voit saada rahasi takaisin 8 viikon kuluessa laskusta pankin kanssa tekemäsi sopimuksen mukaisesti."
       ]
     },
     "Payments.VAT number name": {
@@ -12123,6 +12482,20 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "Voit ansaita jopa **${ maxRewardAmount }** krediitteinä."
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "Tämän päivän jälkeen tilisi alennetaan **${ BRAND_NAME } Free -tilaukseen**. Jos muutat mieltäsi, voit **uudelleenaktivoida tilauksesi** säilyttääksesi pääsyn premium-ominaisuuksiin."
+      ],
+      "Friend joined": [
+        "Kaveri liittyi",
+        "Kaveria liittyi"
+      ],
+      "Friend subscribed": [
+        "Kaveri on tilannut",
+        "Kaverit tilasivat"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "Kun täysi tilauksenne alkaa, voitte edelleen peruuttaa sen 30 päivän kuluessa ja saada suhteutetun hyvityksen."
       ]
     },
     "Remaining days before the message expire": {
@@ -12721,6 +13094,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Päivitä hintaan ${ pricingTitle }"
+      ],
+      "Unblock streaming content": [
+        "Poista suoratoistosisällön esto"
       ]
     },
     "specialoffer: Offers": {
@@ -12798,6 +13174,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
+      ],
+      "Access content on streaming services worldwide": [
+        "Maailmanlaajuinen pääsy suoratoistopalveluihin"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13010,6 +13389,12 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Menetät oikeuden käyttää rajattomasti kirjautumistunnuksia ja muistiinpanoja, rajattomasti hide-my-email-aliaksia, 20 holvia sekä ensisijaista tukea."
+      ],
+      "${ app } storage used": [
+        "${ app } tallennustilaa käytössä"
+      ],
+      "Storage used": [
+        "Tallennustilaa käytetty"
       ]
     },
     "Subscription": {
@@ -14931,6 +15316,33 @@
       ],
       "✨ Categories are coming!": [
         "✨ Luokat ovat tulossa!"
+      ],
+      "Built for privacy": [
+        "Luotu yksityisyys mielessä"
+      ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "Lunasta ${ MAIL_APP_NAME } osoitteesi"
+      ],
+      "Create folder \"${ search }\"": [
+        "Luo kansio \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Luo tunniste \"${ search }\""
+      ],
+      "Fewer distractions, more focus": [
+        "Vähemmän häiriötekijöitä, enemmän keskittymistä"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Ansaitset **${ referralInfo.uiData.refereeRewardAmount }** krediitteinä ${ planTitle } -tilauksella"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "Hanki kaikki ${ CALENDAR_APP_NAME } ominaisuudet käyttöösi"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Esikatsellaksesi tätä laskentataulukkoa, avaa se ${ SHEETS_APP_NAME } -sovelluksessa tai lataa se."
+      ],
+      "Upgrade to keep your premium benefits.": [
+        "Päivitä säilyttääksesi premium-etusi."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15030,6 +15442,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Tekoälyavustaja, joka kunnioittaa yksityisyyttäsi"
       ]
     },
     "Tor out of date": {
@@ -15227,6 +15642,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ilmainen kokeilusi päättyy ${ textDate }. ${ action }"
+      ],
+      "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
+        "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
       ]
     },
     "WeekDay": {
@@ -15496,6 +15914,97 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Näytä ${ hiddenResultsCount } piilotettu tulos",
+        "Näytä ${ hiddenResultsCount } piilotettua tulosta"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Voit saada enintään ${ TRIAL_MAX_DEDICATED_IPS } omaa palvelinta kokeilujakson aikana."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada enintään ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-käyttäjäpaikkaa kokeilujakson aikana."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Voitte saada enintään ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-käyttäjäpaikkaa kokeilujakson aikana."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Sinulla voi olla jopa ${ TRIAL_MAX_USERS } käyttäjää kokeiluajalla."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Et voi lisätä mukautettuja verkkotunnuksia kokeilujakson aikana."
+      ],
+      "You have reached the trial limit.": [
+        "Olet saavuttanut kokeilujakson enimmäisrajan."
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Hanki lisää tallennustilaa"
+      ],
+      "Share your plan": [
+        "Jaa tilauksesi"
+      ]
+    },
+    "Duo offer: Title": {
+      "Get 4x more storage with ${ BRAND_NAME } Duo": [
+        "Hanki neljä kertaa enemmän tallennustilaa ${ BRAND_NAME } Duolla."
+      ],
+      "Share your plan benefits with ${ BRAND_NAME } Duo": [
+        "Jaa tilausetusi ${ BRAND_NAME } Duon kanssa"
+      ]
+    },
+    "error": {
+      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
+        "Kirjaudu sisään Gmail-osoitteella, joka jo välittää kohteeseen ${ MAIL_APP_NAME }"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "Kirjaudu sisään samalla Gmail-osoitteella, jonka alunperin yhdistit"
+      ]
+    },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Jotain meni pieleen. Google Pay -vahvistus epäonnistui."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
+      ],
+      "Credits will be added to your balance": [
+        "Krediitit lisätään tilillesi"
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "Are you sure you want to proceed?": [
+        "Haluatko varmasti jatkaa?"
+      ],
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Jos päätät muuttaa ${ planTitle } -tilaustasi, saatat menettää pääsyn joihinkin ominaisuuksiin."
+      ],
+      "Keep ${ planTitle }": [
+        "Pidä ${ planTitle }"
+      ],
+      "Yes, I'm sure": [
+        "Kyllä, olen varma"
+      ],
+      "Your plan includes this feature already.": [
+        "Tilauksesi sisältää tämän ominaisuuden jo."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
       ]
     }
   }

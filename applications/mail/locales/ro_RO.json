@@ -6,10 +6,10 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Redirecționarea va începe curând. Noile mesaje vor apărea în folderul «Primite»."
+        "Transferarea va începe în curând. Noile mesaje vor apărea în folderul «Primite»."
       ],
       "Mail forward stopped": [
-        "Redirecționare mesaje oprită"
+        "Transferare mesaje oprită"
       ]
     },
     "Account Settings - Info": {
@@ -607,7 +607,7 @@
         "Formalizare"
       ],
       "Forward as attachment": [
-        "Redirecționare ca atașament"
+        "Transferare ca atașament"
       ],
       "Generate password": [
         "Generare parolă"
@@ -1332,7 +1332,7 @@
         "Configurați un domeniu personal"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Settings": [
         "Setări"
@@ -1689,6 +1689,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Deschidere în ${ SHEETS_APP_NAME }"
       ]
     },
     "action": {
@@ -1778,7 +1781,7 @@
     },
     "Alt": {
       "Forwarded": [
-        "Redirecționat"
+        "Transferat"
       ],
       "Replied to": [
         "Răspuns la"
@@ -1815,7 +1818,7 @@
         "5 urmăritori eliminați"
       ],
       "Auto forwarded": [
-        "Redirecționat automat"
+        "Transferat automat"
       ],
       "Email received": [
         "Mesaj primit"
@@ -4120,7 +4123,7 @@
         "Confortabilă"
       ],
       "Compact": [
-        "Compact"
+        "Compactă"
       ]
     },
     "Description": {
@@ -4146,7 +4149,7 @@
         "Ștergeți automat mesajele mutate în folderul „Gunoi” și „Nedorite” mai vechi de 30 de zile."
       ],
       "Automatically forward incoming email to another email address.": [
-        "Redirecționați automat mesajele primite către o altă adresă de e-mail."
+        "Transferați automat mesajele primite către o altă adresă de e-mail."
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortați automat mesajele primite înainte ca acestea să vă ajungă în contul de e-mail."
@@ -4777,7 +4780,7 @@
         "Numele folderului nu poate fi gol."
       ],
       "Forward address is required": [
-        "Adresa de redirecționare este obligatorie."
+        "Adresa de transferare este obligatorie."
       ],
       "Image upload failed": [
         "Eșuare încărcare imagine"
@@ -5218,7 +5221,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Conectați-vă cu o adresă Gmail care deja se redirecționează către ${ MAIL_APP_NAME }"
+        "Conectați-vă cu o adresă Gmail care deja se transferă mesaje către ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
@@ -5942,10 +5945,10 @@
         "autentificarea în cont"
       ],
       "Auto-forward Gmail": [
-        "Redirecționare automată din Gmail"
+        "Transferare automată din Gmail"
       ],
       "auto-forwarding": [
-        "redirecționare automată"
+        "transferarea automată"
       ],
       "Block email communications from scammers permanently.": [
         "Blocați permanent comunicațiile prin e-mail de la escroci."
@@ -6046,7 +6049,7 @@
     },
     "Gmail forwarding": {
       "Automatically forward": [
-        "Redirecționați automat"
+        "Transferare automată"
       ],
       "Gmail messages to your inbox": [
         "mesajele Gmail către adresa de primire"
@@ -7145,7 +7148,7 @@
         "Ștergerea datelor din navigator dezactivează și căutarea în conținutul din mesaje pe acest dispozitiv. Toate mesajele vor trebui să fie descărcate din nou pentru a căuta în ele."
       ],
       "Clears browser data (including downloaded messages, …)": [
-        "Golește datele din navigatorul web (inclusiv mesaje descărcate etc)"
+        "Golește datele din navigatorul web (inclusiv mesaje descărcate etc.)"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -7379,7 +7382,7 @@
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "Mesajele sunt redirecționate în contul de e-mail real; adresa de e-mail reală rămâne ascunsă."
+        "Mesajele sunt transferate în contul de e-mail real; adresa de e-mail reală rămâne ascunsă."
       ],
       "Email tracker protection is disabled": [
         "Protecția de urmărire a e-mailurilor este dezactivată"
@@ -7620,7 +7623,7 @@
         "Inclus gratuit cu planul actual"
       ],
       "Includes bills, receipts, orders, and bookings.": [
-        "Include facturi, confirmări de primire, comenzi și rezervări."
+        "Include facturi, chitanțe, comenzi și rezervări."
       ],
       "Includes invoices, purchase orders, and payment confirmations.": [
         "Include facturi, comenzi de achiziție și confirmări de plată."
@@ -7644,9 +7647,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8104,7 +8105,7 @@
         "Nu uitați să vă actualizați aceste date în managerul de parole sau oriunde vă păstrați datele contului și de autentificare."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "Elimină toate datele asociate cu această aplicație (inclusiv mesajele descărcate, …)"
+        "Elimină toate datele asociate cu această aplicație (inclusiv mesajele descărcate etc.)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Raportarea unui mesaj ca fiind o încercare de înșelăciune ne va trimite și nouă mesajul pentru a-l analiza și a îmbunătăți filtrele noastre. Aceasta înseamnă că vom putea vedea conținutul complet al mesajului."
@@ -8357,7 +8358,7 @@
         "Mesajul a expirat."
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
-        "Mesajul original pe care încercați să-l redirecționați/să-i răspundeți este în curs de a fi trimis. Dacă veți continua, nu veți mai putea anula trimiterea mesajului original."
+        "Mesajul original pe care încercați să-l trasnferați/să-i răspundeți este în curs de a fi trimis. Dacă veți continua, nu veți mai putea anula trimiterea mesajului original."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Expeditorul original al acestui mesaj nu mai este valid. Mesajul va fi trimis de la adresa implicită ${ defaultEmail }."
@@ -8418,7 +8419,7 @@
         "Aceste conversații vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Acest e-mail nu respectă cerințele de autentificare ale domeniul său. Ar putea fi falsificat sau redirecționat eronat."
+        "Acest e-mail nu respectă cerințele de autentificare ale domeniul său. Ar putea fi falsificat sau transferat eronat."
       ],
       "This file is too large to preview": [
         "Acest fișier este prea mare pentru a fi examinat."
@@ -9695,7 +9696,7 @@
         "Forumuri"
       ],
       "Forwards to": [
-        "Redirecționare către"
+        "Transferare către"
       ],
       "Frequency": [
         "Frecvența"
@@ -10363,7 +10364,7 @@
         "Cum să utilizați ${ PASS_APP_NAME } for Business"
       ],
       "How to use email forwarding": [
-        "Cum se utilizează redirecționarea mesajelor"
+        "Cum se utilizează transferarea mesajelor"
       ],
       "How to use Groups": [
         "Cum să utilizați grupurile"
@@ -11053,7 +11054,7 @@
         "Autocompletare carduri de credit (în curând)"
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
@@ -14168,7 +14169,7 @@
         "Orice domeniu de e-mail personal va fi dezactivat."
       ],
       "Automatic email forwarding": [
-        "Redirecționare automată mesaje"
+        "Transferare automată mesaje"
       ],
       "Back up photos from your devices": [
         "Conservați fotografiile de pe dispozitive"
@@ -14341,7 +14342,7 @@
         "și încă alte 15 funcții premium"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Redirecționare automată mesaje ${ strongText }"
+        "Transferare automată mesaje ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Alerte divulgări date ${ strongArgument }"
@@ -15375,7 +15376,7 @@
         "Opțiuni foldere"
       ],
       "Forward": [
-        "Redirecționare"
+        "Transferare"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Obțineți **${ referralInfo.uiData.refereeRewardAmount }** în credite cu ${ planTitle }"
@@ -15806,7 +15807,7 @@
         "Setare ${ protonDuoPlanName }"
       ],
       "Set up email forwarding": [
-        "Setare redirecționare mesaje"
+        "Setare transferare mesaje"
       ],
       "Set up your family account": [
         "Configurare cont de familie"
@@ -16012,6 +16013,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Pentru a examina această foaie de calcul, deschideți-o în ${ SHEETS_APP_NAME } sau descărcați-o."
       ]
     },
     "Today icon tooltip in mini calendar": {

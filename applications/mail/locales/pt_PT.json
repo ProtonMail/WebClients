@@ -2494,7 +2494,7 @@
         "Esta resposta está desactualizada. O evento já não existe no seu calendário."
       ],
       "This response is out of date. You have no calendars.": [
-        "Esta resposta está desactualizada. Não tem calendários."
+        "Esta resposta está desatualizada. Não tem calendários."
       ],
       "You already accepted this invitation.": [
         "Já aceitou este convite."
@@ -6597,8 +6597,8 @@
         "Tem a certeza de que pretende mover todas as mensagens desta localização para o lixo?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Tem a certeza de que pretende eliminar permanentemente esta ${ count } conversa?",
-        "Tem a certeza de que pretende eliminar permanentemente estas ${ count } conversas?"
+        "Tem a certeza de que pretende eliminar permanentemente ${ count } conversa?",
+        "Tem a certeza de que pretende eliminar permanentemente ${ count } conversas?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
         "Tem a certeza de que deseja eliminar permanentemente ${ count } rascunho?",
@@ -7163,8 +7163,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -9737,7 +9736,7 @@
         "Abrir no ${ CALENDAR_APP_NAME }"
       ],
       "Open updated event in ${ CALENDAR_APP_NAME }": [
-        "Abrir evento actualizado em ${ CALENDAR_APP_NAME }"
+        "Abrir evento atualizado em ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Ou pode eliminar um dos seus calendários e criar um vinculado a um e-mail ativo."
@@ -11449,7 +11448,7 @@
     },
     "Online Accounts Name": {
       "Banking": [
-        "Transações bancárias"
+        "Bancário"
       ],
       "Crypto": [
         "Cripto"

@@ -1687,6 +1687,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Open in ${ SHEETS_APP_NAME }": [
+        "Openen in ${ SHEETS_APP_NAME }"
       ]
     },
     "action": {
@@ -7530,8 +7533,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -12315,7 +12317,7 @@
         "U bent reeds geabonneerd op dit abonnement."
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
-        "U hebt al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
+        "U heeft al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -12835,11 +12837,20 @@
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
-        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
-        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+        "U heeft nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U heeft **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
       ],
       "your subscription": [
         "uw abonnement"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Als u vóór deze datum annuleert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Als u zich niet abonneert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u zich vóór deze datum abonneert,** ontvangt u **${ referrerRewardAmount }** aan tegoed."
       ]
     },
     "Remaining days before the message expire": {
@@ -15717,6 +15728,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorieën komen eraan!"
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "Om een voorbeeld van dit rekenblad te bekijken, opent u het in ${ SHEETS_APP_NAME } of downloadt u het."
       ]
     },
     "Today icon tooltip in mini calendar": {

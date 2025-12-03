@@ -1165,6 +1165,57 @@
       ],
       "Zoom out": [
         "Smanji"
+      ],
+      "Add Cc recipients": [
+        "Dodaj primatelje kopije"
+      ],
+      "Claim this address": [
+        "Preuzmi ovu adresu"
+      ],
+      "Collapse URL": [
+        "Sažmi URL"
+      ],
+      "Continue with categories": [
+        "Nastavi s kategorijama"
+      ],
+      "Copy password to clipboard": [
+        "Kopiraj lozinku u međuspremnik"
+      ],
+      "Edit categories": [
+        "Uredi kategorije"
+      ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Istražite ${ VPN_APP_NAME }"
+      ],
+      "External encryption": [
+        "Vanjsko šifriranje"
+      ],
+      "Is this private?": [
+        "Je li ovo privatno?"
+      ],
+      "Move all to archive": [
+        "Premjesti sve u arhivu"
+      ],
+      "Recently received": [
+        "Nedavno primljeno"
+      ],
+      "Refine it": [
+        "Precizirajte ju"
+      ],
+      "Scroll to bottom": [
+        "Pomakni se na dno"
+      ],
+      "Select date and time": [
+        "Odaberi datum i vrijeme"
+      ],
+      "Stop marking as read": [
+        "Zaustavi označavanje kao pročitano"
+      ],
+      "Try categories": [
+        "Isprobaj kategorije"
+      ],
+      "Your email writing assistant": [
+        "Vaš asistent za pisanje e-pošte"
       ]
     },
     "action": {
@@ -1541,6 +1592,9 @@
       ],
       "Website access problem": [
         "Problem s pristupom web stanici"
+      ],
+      "Black Friday": [
+        "Crni petak"
       ]
     },
     "Button": {
@@ -1730,6 +1784,9 @@
       ],
       "This response is out of date. You have no calendars.": [
         "Ovaj je odgovor zastario. Nemate kalendara."
+      ],
+      "(Attendance optional)": [
+        "(Prisutnost neobavezna)"
       ]
     },
     "Cancel expiration of the message": {
@@ -1756,8 +1813,8 @@
       ],
       "Total for ${ n } month": [
         "Ukupno za ${ n } mjesec",
-        "Ukupno za ${ n } mjeseci",
-        "Ukupno za ${ n } mjeseca"
+        "Ukupno za ${ n } mjeseca",
+        "Ukupno za ${ n } mjeseci"
       ]
     },
     "Collapsible tooltip": {
@@ -3071,6 +3128,9 @@
       ],
       "Download for macOS": [
         "Učitaj za macOS"
+      ],
+      "Download for Windows": [
+        "Preuzmi za Windows"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3086,6 +3146,12 @@
     "Email body for invitation": {
       "NOTE:": [
         "BILJEŠKA:"
+      ],
+      "DESCRIPTION:": [
+        "OPIS:"
+      ],
+      "LOCATION:": [
+        "MJESTO:"
       ]
     },
     "Email body for invitation (event details part)": {
@@ -3096,6 +3162,9 @@
     "Email reminder banner": {
       "Event is tomorrow": [
         "Događaj je sutra"
+      ],
+      "Event starts tomorrow": [
+        "Događaj počinje sutra"
       ]
     },
     "Email subject": {
@@ -3428,11 +3497,20 @@
       ],
       "ZIP code is required": [
         "Poštanski broj je obavezan"
+      ],
+      "Aliases could not be loaded": [
+        "Nije moguće učitati pseudonime"
+      ],
+      "Thanks for the feedback!": [
+        "Hvala na povratnim informacijama!"
       ]
     },
     "Error display when performing invalid move on message": {
       "This action cannot be performed": [
         "Ova radnja se ne može izvršiti"
+      ],
+      "Drafts cannot be moved to Inbox": [
+        "Skice se ne mogu premjestiti u ulaznu poštu"
       ]
     },
     "Error importing calendar": {
@@ -3655,6 +3733,9 @@
     "Feature": {
       "Unlimited hide-my-email aliases": [
         "Neograničen broj hide-my-email pseudonima"
+      ],
+      "More premium features": [
+        "Više premium značajki"
       ]
     },
     "fido2: Error": {
@@ -3876,6 +3957,9 @@
       ],
       "To: ${ toString }": [
         "Za: ${ toString }"
+      ],
+      "Date: On ${ date }": [
+        "Datum: ${ date }"
       ]
     },
     "Free trial desktop": {
@@ -3890,6 +3974,9 @@
       ],
       "Upgrade now": [
         "Nadogradi sada"
+      ],
+      "Try the new desktop app": [
+        "Isprobajte novu aplikaciju za računala"
       ]
     },
     "Get started checklist instructions": {
@@ -3921,6 +4008,14 @@
       ],
       "privacy features": [
         "značajke privatnosti"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Još ${ remainingDaysCount } dan",
+        "Još ${ remainingDaysCount } dana",
+        "Još ${ remainingDaysCount } dana"
+      ],
+      "Get more storage": [
+        "Nabavite više pohrane"
       ]
     },
     "Gmail forwarding": {
@@ -3995,6 +4090,12 @@
       ],
       "Username": [
         "Korisničko ime"
+      ],
+      "Resume downloading": [
+        "Nastavi preuzimanje"
+      ],
+      "Tell us more": [
+        "Recite nam više"
       ]
     },
     "Hint": {
@@ -4531,7 +4632,7 @@
         "zadana adresa e-pošte"
       ],
       "Discover ProtectBuy logo": [
-        "Otkrij ProtectBuy logotip"
+        "Discover ProtectBuy logotip"
       ],
       "Do you want to download this attachment anyway?": [
         "Želite li svejedno preuzeti ovaj privitak?",
@@ -4701,9 +4802,7 @@
         "Nasljedno iz roditeljske mape"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -5253,6 +5352,121 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } član)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } člana)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } članova)"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } poveznica očišćena",
+        "${ numberOfUTMTrackers } poveznice očišćene",
+        "${ numberOfUTMTrackers } poveznica očišćeno"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } program za praćenje blokiran",
+        "${ trackersCount } programa za praćenje blokirana",
+        "${ trackersCount } programa za praćenje blokirano"
+      ],
+      "Ad targeting": [
+        "Ciljanje oglasa"
+      ],
+      "Addresses settings": [
+        "Postavke adresa"
+      ],
+      "Archive existing messages": [
+        "Arhiviraj postojeće poruke"
+      ],
+      "Browser not supported": [
+        "Preglednik nije podržan"
+      ],
+      "Continue": [
+        "Nastavi"
+      ],
+      "Download on the App Store": [
+        "Preuzmite na App Storeu"
+      ],
+      "Edit expiration time": [
+        "Uredi vrijeme isteka"
+      ],
+      "Encrypt message": [
+        "Šifriraj poruku"
+      ],
+      "Expand selection": [
+        "Proširi odabrano"
+      ],
+      "Include Spam/Trash.": [
+        "Uključi neželjenu poštu/otpad."
+      ],
+      "Mark all as read": [
+        "Označi sve kao pročitano"
+      ],
+      "No links cleaned": [
+        "Nema očišćenih poveznica"
+      ],
+      "Not connected": [
+        "Nije povezano"
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Naš je sustav označio ovu poruku kao pokušaj krađe identiteta. Provjerite je li ona legitimna."
+      ],
+      "Preferences updated": [
+        "Postavke su ažurirane"
+      ],
+      "Request read receipt": [
+        "Zatraži potvrdu o čitanju"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sub, ${ formatTime }"
+      ],
+      "Scheduled send of this message will be canceled.": [
+        "Zakazano slanje ove poruke bit će otkazano."
+      ],
+      "Shorten selection": [
+        "Skrati označeno"
+      ],
+      "Surveillance": [
+        "Nadzor"
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Ovaj razgovor bit će označen kao neželjena pošta. Želite li također poništiti pretplatu na buduće poruke e-pošte?",
+        "Ovi razgovori bit će označeni kao neželjena pošta. Želite li također poništiti pretplatu na buduće poruke e-pošte?",
+        "Ovi razgovori bit će označeni kao neželjena pošta. Želite li također poništiti pretplatu na buduće poruke e-pošte?"
+      ],
+      "Trackers blocked:": [
+        "Blokirani programi za praćenje:"
+      ],
+      "Unread conversations": [
+        "Nepročitani razgovori"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Odabrali ste **${ elementsCount } razgovor** u ${ location }",
+        "Odabrali ste **${ elementsCount } razgovora** u ${ location }",
+        "Odabrali ste **${ elementsCount } razgovora** u ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Odabrali ste **${ elementsCount } razgovor**.",
+        "Odabrali ste **${ elementsCount } razgovora**.",
+        "Odabrali ste **${ elementsCount } razgovora**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Odabrali ste **${ elementsCount } poruku** u ${ location }",
+        "Odabrali ste **${ elementsCount } poruke** u ${ location }",
+        "Odabrali ste **${ elementsCount } poruka** u ${ location }"
+      ],
+      "Your IP": [
+        "Vaš IP"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Vaša poruka istječe za ${ numberOfDays } dan.",
+        "Vaša poruka istječe za ${ numberOfDays } dana.",
+        "Vaša poruka istječe za ${ numberOfDays } dana."
+      ],
+      "Your message will expire today.": [
+        "Vaša poruka će istječi danas."
+      ],
+      "Your message will expire tomorrow.": [
+        "Vaša poruka će istječi sutra."
       ]
     },
     "info": {
@@ -6063,6 +6277,45 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "Enable filter": [
+        "Omogući filter"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Stvaranje mape „${ newFolderName }” nije uspjelo"
+      ],
+      "Go to Forums": [
+        "Idi na Forume"
+      ],
+      "Go to Newsletters": [
+        "Idi na Newslettere"
+      ],
+      "Go to Promotions": [
+        "Idi na Promocije"
+      ],
+      "Go to Social": [
+        "Idi na Društveno"
+      ],
+      "Move ${ sidebarElementName }": [
+        "Premjesti ${ sidebarElementName }"
+      ],
+      "Move messages to": [
+        "Premjesti poruke u"
+      ],
+      "Not factually correct": [
+        "Nije činjenično točno"
+      ],
+      "Remove metadata": [
+        "Ukloni metapodatke"
+      ],
+      "Your ISP": [
+        "Vaš ISP"
+      ],
+      "Your location": [
+        "Vaša lokacija"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6296,6 +6549,18 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Morate ponovno aktivirati vaše ključeve da biste vidjeli ažuriranu pozivnicu"
+      ],
+      "Create a new calendar to add this event": [
+        "Stvorite novi kalendar za dodavanje ovog događaja"
+      ],
+      "Manage blocked email addresses": [
+        "Upravljaj blokiranim adresama e-pošte"
+      ],
+      "Reactivate subscription": [
+        "Ponovno aktiviraj pretplatu"
+      ],
+      "Resume now": [
+        "Nastavi sada"
       ]
     },
     "Link to calendar event": {
@@ -6367,6 +6632,9 @@
     "Message notification": {
       "Sending undone": [
         "Slanje je poništeno"
+      ],
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Zakazivanje je otkazano. Poruka je premještena u skice."
       ]
     },
     "MIME type": {
@@ -6734,7 +7002,7 @@
         "Prioritetna podrška"
       ],
       "Priority support & live chat": [
-        "Prioritetna podrška i chat uživo"
+        "Prioritetna podrška i čavrljanje uživo"
       ],
       "Require 2FA for organization": [
         "Zahtijevajte 2FA za organizaciju"
@@ -7027,6 +7295,9 @@
       ],
       "Social media": [
         "Društveni mediji"
+      ],
+      "Maybe later": [
+        "Možda kasnije"
       ]
     },
     "Onboarding modal": {
@@ -7062,6 +7333,15 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Dobrodošli u ${ MAIL_APP_NAME }"
+      ],
+      "Ad-free promise": [
+        "Obećanje „bez oglasa”"
+      ],
+      "Advanced encryption": [
+        "Napredna zaštita"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Onboarding Proton": {
@@ -7076,6 +7356,9 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "Upotrijebite birač aplikacija u gornjem lijevom kutu za pristup svim uslugama ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Make it your own": [
+        "Učinite ga svojim"
       ]
     },
     "Onboarding Trial": {
@@ -7107,6 +7390,9 @@
       ],
       "Travel": [
         "Putovanja"
+      ],
+      "Utilities": [
+        "Alati"
       ]
     },
     "Option": {
@@ -7189,6 +7475,9 @@
       ],
       "New credit/debit card": [
         "Nova kreditna/debitna kartica"
+      ],
+      "Google Pay": [
+        "Google Pay"
       ]
     },
     "Payments": {
@@ -7224,6 +7513,9 @@
       ],
       "VAT": [
         "Porez"
+      ],
+      "Amount due after trial on ${ formattedDate }": [
+        "Iznos za plaćanje nakon završetka probe dana ${ formattedDate }"
       ]
     },
     "Payments.Error": {
@@ -7259,6 +7551,12 @@
       ],
       "VAT number": [
         "PDV broj"
+      ],
+      "Edit ABN": [
+        "Uredi ABN"
+      ],
+      "Edit EIN": [
+        "Uredi EIN"
       ]
     },
     "PGP key encryption warning": {
@@ -7394,6 +7692,9 @@
       ],
       "ZIP code": [
         "Poštanski broj"
+      ],
+      "Select country": [
+        "Odaberi državu"
       ]
     },
     "Placeholder for contact group name": {
@@ -7513,6 +7814,9 @@
       ],
       "your subscription": [
         "Vaša pretplata"
+      ],
+      "More sharing options": [
+        "Više opcija dijeljenja"
       ]
     },
     "Remaining days before the message expire": {
@@ -7938,6 +8242,9 @@
       ],
       "Schedule send": [
         "Zakaži slanje"
+      ],
+      "Email tracking protection": [
+        "Zaštita od praćenja u e-pošti"
       ]
     },
     "sso": {
@@ -8377,11 +8684,29 @@
       ],
       "You have successfully unsubscribed": [
         "Uspješno ste poništili pretplatu"
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } razgovor premješten u neželjenu poštu i pošiljatelj dodan na Vaš popis neželjene pošte.",
+        "${ elementsCount } razgovora premještena u neželjenu poštu i pošiljatelji dodani na Vaš popis neželjene pošte.",
+        "${ elementsCount } razgovora premješteno u neželjenu poštu i pošiljatelji dodani na Vaš popis neželjene pošte."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } poruka je označena kao nepročitana.",
+        "${ elementsCount } poruke su označene kao nepročitane.",
+        "${ elementsCount } poruke su označene kao nepročitane."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } poruka uklonjena iz oznake Sa zvjezdicom.",
+        "${ elementsCount } poruke uklonjene iz oznake Sa zvjezdicom.",
+        "${ elementsCount } poruka uklonjeno iz oznake Sa zvjezdicom."
       ]
     },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } uklonjeno"
+      ],
+      "The filter is active again": [
+        "Filter je ponovno omogućen"
       ]
     },
     "Suffix": {
@@ -8527,6 +8852,12 @@
       ],
       "Open ": [
         "Otvori "
+      ],
+      "Download Desktop app": [
+        "Preuzmi aplikaciju za računala"
+      ],
+      "Show me how": [
+        "Pokaži mi kako"
       ]
     },
     "Title": {
@@ -9152,6 +9483,69 @@
       ],
       "✨ Categories are coming!": [
         "✨Kategorije stižu!"
+      ],
+      "A filter name is required": [
+        "Potreban je naziv filtra"
+      ],
+      "Archive all messages?": [
+        "Arhivirati sve poruke?"
+      ],
+      "Create folder \"${ search }\"": [
+        "Stvori mapu „${ search }”"
+      ],
+      "Create label \"${ search }\"": [
+        "Stvori oznaku „${ search }”"
+      ],
+      "Download the app": [
+        "Preuzmite aplikaciju"
+      ],
+      "How does it all work?": [
+        "Kako to sve funkcionira?"
+      ],
+      "Label options": [
+        "Opcije oznaka"
+      ],
+      "Mark all messages as read": [
+        "Označi sve poruke kao pročitane"
+      ],
+      "Mark conversations as read": [
+        "Označi razgovore kao pročitane"
+      ],
+      "Mark messages as unread": [
+        "Označi poruke kao nepročitane"
+      ],
+      "Message will expire": [
+        "Poruka će istječi"
+      ],
+      "Move all messages": [
+        "Premjesti sve poruke"
+      ],
+      "No active newsletters": [
+        "Nema aktivnih newslettera"
+      ],
+      "Private browsing vs VPN": [
+        "Privatno pretraživanje protiv VPN-a"
+      ],
+      "Schedule now, send later": [
+        "Zakažite sada, pošaljite kasnije"
+      ],
+      "Send with encryption disabled?": [
+        "Poslati s onemogućenim šifriranjem?"
+      ],
+      "Sending error": [
+        "Greška slanja"
+      ],
+      "Share your link": [
+        "Podijeli svoju poveznicu"
+      ],
+      "Subject missing": [
+        "Nedostaje predmet"
+      ],
+      "Unsubscribe request sent": [
+        "Zahtjev za otkazivanje pretplate je poslan"
+      ],
+      "VPN explained": [
+        "VPN objašnjen"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9209,6 +9603,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sigurno prijavljivanje na svim vašim uređajima. Uključuje neograničen broj aliasa, dijeljenje, integriranu dvofaktorsku autentikaciju i još mnogo toga."
+      ],
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: asistent umjetne inteligencije koji poštuje Vašu privatnost"
       ]
     },
     "Unlimited offer": {
@@ -9601,6 +9998,65 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID sastanka:"
+      ]
+    },
+    "Add participant to calendar event": {
+      "Participant added": [
+        "Sudionik dodan"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Pristup naprednim modelima umjetne inteligencije"
+      ],
+      "Basic chat history": [
+        "Osnovna povijest razgovora"
+      ]
+    },
+    "Duo offer": {
+      "/month": [
+        "/mjesec"
+      ],
+      "2 user accounts": [
+        "2 korisnička računa"
+      ]
+    },
+    "Duo offer: Link": {
+      "Get 4x more storage": [
+        "Dobijte 4x više pohrane"
+      ],
+      "Share your plan": [
+        "Podijelite svoju pretplatu"
+      ]
+    },
+    "Email reminder error": {
+      "Event is no longer in your calendar": [
+        "Događaj više nije u Vašem kalendaru"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Ima privitke"
+      ]
+    },
+    "Footer": {
+      "${ BRAND_NAME }. Privacy by default.": [
+        "${ BRAND_NAME }. Privatnost zadana."
+      ]
+    },
+    "Message image": {
+      "Image could not be loaded.": [
+        "Sliku nije bilo moguće učitati."
+      ]
+    },
+    "Payments.error": {
+      "Something went wrong. Google Pay verification failed.": [
+        "Nešto je pošlo po zlu. Provjera Google Paya nije uspjela."
+      ]
+    },
+    "Payments.ModificationWarning": {
+      "If you choose to modify your ${ planTitle } plan, you may lose access to some features.": [
+        "Ako odlučite izmijeniti svoju pretplatu ${ planTitle }, možda ćete izgubiti pristup nekim značajkama."
       ]
     }
   }
