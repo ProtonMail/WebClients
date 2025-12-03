@@ -2,14 +2,12 @@ import { useCallback } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { ThumbnailType, splitNodeRevisionUid, useDrive } from '@proton/drive';
+import { ThumbnailType, getDrive, splitNodeRevisionUid } from '@proton/drive';
 
 import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 
 export function useThumbnailLoader() {
-    const { drive } = useDrive();
-
     const { loadThumbnail } = useBatchThumbnailLoader();
     const { getThumbnail } = useThumbnailStore(
         useShallow((state) => ({
@@ -37,27 +35,25 @@ export function useThumbnailLoader() {
         [loadThumbnail, getThumbnail]
     );
 
-    // Contrary to the getSmallThumbnailUrl function, this one should be called
-    // only once. It doesn't reuse any cache itself.
-    const getLargeThumbnail = async (
-        nodeUid: string
-    ): Promise<{ url: string; data: Uint8Array<ArrayBuffer>[] } | undefined> => {
-        // TODO: Add support of HD thumbnails to thumbnail provider.
-        for await (const thumbnailResult of drive.iterateThumbnails([nodeUid], ThumbnailType.Type2)) {
-            if (thumbnailResult.ok) {
-                const data = [thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>];
-                const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
-
-                return {
-                    url,
-                    data,
-                };
-            }
-        }
-    };
-
     return {
         getSmallThumbnailUrl,
-        getLargeThumbnail,
     };
 }
+
+export const getLargeThumbnail = async (
+    nodeUid: string
+): Promise<{ url: string; data: Uint8Array<ArrayBuffer>[] } | undefined> => {
+    // TODO: Add support of HD thumbnails to thumbnail provider.
+    const drive = getDrive();
+    for await (const thumbnailResult of drive.iterateThumbnails([nodeUid], ThumbnailType.Type2)) {
+        if (thumbnailResult.ok) {
+            const data = [thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>];
+            const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
+
+            return {
+                url,
+                data,
+            };
+        }
+    }
+};
