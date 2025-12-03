@@ -28,7 +28,7 @@ import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/s
 import type { LumoDispatch as AppDispatch, LumoDispatch } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import { SearchService } from '../../services/search/searchService';
-import type { AttachmentId, MessageId, ShallowAttachment, Turn } from '../../types';
+import type { AttachmentId, MessageId, ShallowAttachment } from '../../types';
 import {
     type Attachment,
     type ConversationId,
@@ -45,6 +45,7 @@ import { parseFileReferences } from '../../util/fileReferences';
 const SMALL_FILE_SET_TOKEN_THRESHOLD = 30000; // ~45k tokens threshold to include all uploaded files in the first message
 const MAX_SINGLE_FILE_TOKENS = 15000; // Max tokens for a single file when including all files (prevents one large file from dominating context)
 
+// FIXME: I doubt we need to look at attachments for the whole message chain, just the last one should be enough?
 function getContextFilesForMessages(messageChain: Message[], contextFilters: ContextFilter[] = []): AttachmentId[] {
     const contextFiles: AttachmentId[] = [];
     const seenIds = new Set<AttachmentId>();
@@ -459,7 +460,7 @@ export type ConversationContext = {
 export type UiContext = {
     isEdit?: boolean;
     updateSibling?: (message: Message | undefined) => void;
-    enableExternalToolsToggled: boolean;
+    enableExternalTools: boolean;
     enableSmoothing?: boolean;
     navigateCallback?: (conversationId: ConversationId) => void;
     isGhostMode?: boolean;
@@ -468,28 +469,6 @@ export type UiContext = {
 export type SettingsContext = {
     personalization: PersonalizationSettings;
 };
-
-function removeEmptyAssistantTurns(turns: Turn[]) {
-    return turns.filter((turn) => !(turn.role === Role.Assistant && turn.content === ''));
-}
-
-async function prepareTurnsBetter(
-    messageChain: Message[],
-    s: SettingsContext,
-    c: ConversationContext,
-    projectInstructions?: string, // todo: inject in context objects (this is a residue of a conflict resolution)
-    documentContext?: string // todo: same
-) {
-    // First, get basic turns without images
-    let turns = prepareTurns(messageChain, c.contextFilters, s.personalization, projectInstructions, documentContext);
-
-    // Now enrich user turns with images
-    turns = await Promise.all(
-        turns.map((turn, index) => enrichTurnWithImages(turn, index, turns, messageChain, c.allConversationAttachments))
-    );
-
-    return removeEmptyAssistantTurns(turns);
-}
 
 function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: string) {
     return (dispatch: LumoDispatch) => {
@@ -514,6 +493,15 @@ function populateMessageContext(message: Message, messageChain: Message[], c: Co
     };
 }
 
+function updateUi(userMessage: Message, conversationId: ConversationId, ui: UiContext) {
+    // Navigate to /c/:conversationId
+    if (!ui.isEdit && ui.navigateCallback) ui.navigateCallback(conversationId);
+
+    // In case of edit, pin the current message so it shows e.g. `< 2 / 2 >`.
+    // If we didn't do this, the new message would be hidden, and we'd see `< 1 / 2 >`.
+    if (ui.isEdit && ui.updateSibling) ui.updateSibling(userMessage);
+}
+
 export function sendMessage({
     applicationContext: a,
     newMessageData: m,
@@ -534,9 +522,8 @@ export function sendMessage({
 
         const state = getState();
 
+        // Initialize
         const [date1, date2] = createDatePair();
-        const lastMessage = c.messageChain.at(-1);
-
         const { conversationId, spaceId } = dispatch(ensureConversation(c, ui, date1));
 
         // Get space-level attachments (project files) and include them with the message
@@ -605,6 +592,8 @@ export function sendMessage({
 
         const processedContent: string = m.content;
 
+        // Create the new messages (user and assistant)
+        const lastMessage = c.messageChain.at(-1);
         let { userMessage, assistantMessage } = createMessagePair(
             processedContent,
             m.attachments,
@@ -650,18 +639,10 @@ export function sendMessage({
             dispatch(pushAttachmentRequest({ id: attachment.id }));
         });
 
-        // Navigate to /c/:conversationId
-        if (!ui.isEdit && ui.navigateCallback) ui.navigateCallback(conversationId);
+        // Update navigation and siblings preference
+        updateUi(userMessage, conversationId, ui);
 
-        // In case of edit, pin the current message so it shows e.g. `< 2 / 2 >`.
-        // If we didn't do this, the new message would be hidden, and we'd see `< 1 / 2 >`.
-        if (ui.isEdit && ui.updateSibling) ui.updateSibling(userMessage);
-
-        // When we attach files, disable web search, otherwise this feels awkward.
         const noAttachment = m.attachments.length === 0;
-
-        // Request title for new conversations (when messageChain is empty, it's the first message)
-        const shouldRequestTitle = c.messageChain.length === 0;
 
         // Get project instructions from space if this is a project conversation
         let projectInstructions: string | undefined;
@@ -680,8 +661,7 @@ export function sendMessage({
         // Get user ID for RAG retrieval
         const userId = state.user?.value?.ID;
 
-        const signal = a.signal;
-        const requestTitle = shouldRequestTitle;
+        const generateTitle = c.messageChain.length === 0;
         const linearChain = newMessageChain;
 
         // Call the LLM.
@@ -776,16 +756,23 @@ export function sendMessage({
                 dispatch(pushMessageRequest({ id: lastUserMessage.id }));
             }
 
-            const turns = await prepareTurnsBetter(updatedLinearChain, s, c, projectInstructions, ragResult?.context);
+            const turns = prepareTurns(
+                updatedLinearChain,
+                c.contextFilters,
+                s.personalization,
+                projectInstructions,
+                ragResult?.context,
+                c
+            );
 
             await dispatch(
                 sendMessageWithRedux(a.api, turns, {
                     messageId: assistantMessage.id,
                     conversationId,
                     spaceId,
-                    signal,
-                    enableExternalTools: noAttachment && ui.enableExternalToolsToggled,
-                    generateTitle: requestTitle,
+                    signal: a.signal,
+                    enableExternalTools: noAttachment && ui.enableExternalTools,
+                    generateTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                         enableSmoothing: ui.enableSmoothing,
@@ -1171,7 +1158,7 @@ export async function retrySendMessage({
             personalization,
             projectInstructions,
             ragResult?.context
-        );
+        ); // caution: missing `c`
 
         // If no attachments, nothing to add
         if (attachments.length === 0) {
@@ -1448,7 +1435,7 @@ export function fetchAssistantResponse({
             personalization,
             projectInstructions,
             ragResult?.context
-        );
+        ); // caution: missing `c`
 
         // If no attachments, nothing to add
         if (attachments.length === 0) {
