@@ -1015,6 +1015,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Vytvoriť novú stránku pre rezervácie"
       ]
     },
     "action": {
@@ -2909,6 +2912,12 @@
         "udalosti",
         "udalostí",
         "udalostí"
+      ],
+      "Ends after": [
+        "Skončí po"
+      ],
+      "Ends on": [
+        "Končí"
       ]
     },
     "customer_support.feature.all": {
@@ -4034,6 +4043,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Location is required": [
+        "Poloha je povinná"
       ]
     },
     "error": {
@@ -6589,6 +6601,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Cannot create a range across days.": [
+        "Nie je možné vytvoriť rozsah zahŕňajúci viacero dní."
+      ],
+      "Cannot create a range in the past.": [
+        "Nie je možné vytvoriť rozsah v minulosti."
+      ],
+      "Range already exists.": [
+        "Rozsah už existuje."
+      ],
+      "Range is too short.": [
+        "Rozsah je príliš krátky."
+      ],
+      "Range overlaps with an existing range.": [
+        "Rozsah sa prekrýva s existujúcim rozsahom."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Túto rezervačnú stránku nie je možné upraviť, pridružený kalendár je deaktivovaný"
       ]
     },
     "info": {

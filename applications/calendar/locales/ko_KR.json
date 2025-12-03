@@ -1003,6 +1003,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "새 예약 페이지 생성"
       ]
     },
     "action": {
@@ -2855,6 +2858,12 @@
       ],
       "event": [
         "이벤트"
+      ],
+      "Ends after": [
+        "이 날짜 이후 종료됨"
+      ],
+      "Ends on": [
+        "다음 날짜에 종료됨"
       ]
     },
     "customer_support.feature.all": {
@@ -3932,6 +3941,9 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Location is required": [
+        "위치가 필요합니다"
       ]
     },
     "error": {
@@ -6337,6 +6349,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Range already exists.": [
+        "기간이 이미 존재합니다."
+      ],
+      "Range is too short.": [
+        "기간이 너무 짧습니다."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "이 예야페이지는 수정할 수 없습니다. 연관된 캘린더가 비활성화되었습니다."
       ]
     },
     "info": {
@@ -8147,7 +8168,7 @@
         "${ priceLine }부터 시작"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
-        "할인된 가격인 ${ priceCoupon }은 첫 달간 유효합니다. 그러고 나면 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
+        "할인된 가격인 ${ priceCoupon }은(는) 첫 달간 유효합니다. 그 이후 자동으로 ${ priceLine }에 갱신됩니다. 언제든지 취소하실 수 있습니다."
       ],
       "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
         "모든 ${ BRAND_NAME } 프리미엄 제품 및 기능을 단돈 ${ priceLine }에 누리세요. 언제든지 취소하세요."

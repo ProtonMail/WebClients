@@ -2873,6 +2873,12 @@
       "event": [
         "gebeurtenis",
         "gebeurtenissen"
+      ],
+      "Ends after": [
+        "Eindigt na"
+      ],
+      "Ends on": [
+        "Eindigt op"
       ]
     },
     "customer_support.feature.all": {
@@ -3963,6 +3969,9 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Location is required": [
+        "Locatie is verplicht"
       ]
     },
     "error": {
@@ -6403,6 +6412,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "Booking updated successfully": [
+        "Boeking succesvol bijgewerkt"
+      ],
+      "Loading appointments...": [
+        "Afspraken worden geladen..."
+      ],
+      "No calendar available; please delete the booking page.": [
+        "Geen agenda beschikbaar; gelieve de boekingspagina te verwijderen."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Deze boekingspagina kan niet worden bewerkt, de bijbehorende agenda is uitgeschakeld"
       ]
     },
     "info": {
@@ -7100,6 +7121,12 @@
       ],
       "Zoom meeting": [
         "Zoom-vergadering"
+      ],
+      "Copy the link or manage your page from here anytime.": [
+        "Kopieer de koppeling of beheer uw pagina op elk gewenst moment van hier."
+      ],
+      "Create shareable pages where people can book time with you.": [
+        "Maak deelbare pagina's waar personen tijd met u kunnen boeken."
       ]
     },
     "label": {
@@ -9261,7 +9288,7 @@
         "U bent reeds geabonneerd op dit abonnement."
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
-        "U hebt al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
+        "U heeft al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -9715,11 +9742,20 @@
         "U kunt tot wel **${ maxRewardAmount }** tegoed krijgen."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
-        "U hebt nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
-        "U hebt **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
+        "U heeft nog **${ daysRemaining } dag** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft.",
+        "U heeft **${ daysRemaining } dagen over** om alle krachtige functies te verkennen die **${ planTitle }** te bieden heeft."
       ],
       "your subscription": [
         "uw abonnement"
+      ],
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Als u vóór deze datum annuleert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Als u zich niet abonneert,** wordt u **gedowngraded** naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Als u zich vóór deze datum abonneert,** ontvangt u **${ referrerRewardAmount }** aan tegoed."
       ]
     },
     "Reload event button tooltip": {
@@ -11952,6 +11988,12 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Introducing booking pages": [
+        "Maak kennis met boekingspagina's"
+      ],
+      "Your booking pages live here": [
+        "Uw boekingspagina's bevinden zich hier"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1007,6 +1007,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Create a new booking page": [
+        "Opret en ny bookingside"
       ]
     },
     "action": {
@@ -2873,6 +2876,12 @@
       "event": [
         "begivenhed",
         "begivenheder"
+      ],
+      "Ends after": [
+        "Slutter efter"
+      ],
+      "Ends on": [
+        "Slutter den"
       ]
     },
     "customer_support.feature.all": {
@@ -3966,6 +3975,9 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Location is required": [
+        "Placering er påkrævet"
       ]
     },
     "error": {
@@ -6421,6 +6433,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Cannot create a range across days.": [
+        "Kan ikke oprette reservationsperiode på tværs af dage."
+      ],
+      "Cannot create a range in the past.": [
+        "Kan ikke oprette reservationsperiode i fortiden."
+      ],
+      "Range already exists.": [
+        "Intervallet findes allerede."
+      ],
+      "Range is too short.": [
+        "Interval er for kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Din reservation overlapper med en eksisterende reservation."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Booking siden kan ikke redigeres, den tilknyttede kalender er deaktiveret"
       ]
     },
     "info": {

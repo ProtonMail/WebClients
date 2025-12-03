@@ -1007,6 +1007,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Opprett en ny bestillingsside"
       ]
     },
     "action": {
@@ -2873,6 +2876,12 @@
       "event": [
         "hendelse",
         "hendelser"
+      ],
+      "Ends after": [
+        "Avsluttes etter"
+      ],
+      "Ends on": [
+        "Slutter på"
       ]
     },
     "customer_support.feature.all": {
@@ -3966,6 +3975,9 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Location is required": [
+        "Plassering kreves"
       ]
     },
     "error": {
@@ -6421,6 +6433,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Cannot create a range across days.": [
+        "Kan ikke opprette et intervall som strekker seg over flere dager."
+      ],
+      "Cannot create a range in the past.": [
+        "Kan ikke opprette et tidsintervall bakover i tid."
+      ],
+      "Range already exists.": [
+        "Tidsrommet finnes allerede."
+      ],
+      "Range is too short.": [
+        "Intervallet er for kort."
+      ],
+      "Range overlaps with an existing range.": [
+        "Tidsrommet overlapper med et eksisterende tidsrom."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Denne bestillingssiden kan ikke redigeres. Den tilhørende kalenderen er deaktivert."
       ]
     },
     "info": {

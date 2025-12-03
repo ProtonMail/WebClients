@@ -1015,6 +1015,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Стварыць новую старонку браніравання"
       ]
     },
     "action": {
@@ -2909,6 +2912,12 @@
         "падзеі",
         "падзей",
         "падзей"
+      ],
+      "Ends after": [
+        "Завершыцца пасля"
+      ],
+      "Ends on": [
+        "Завершыцца"
       ]
     },
     "customer_support.feature.all": {
@@ -4034,6 +4043,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Location is required": [
+        "Уключыце службы геалакацыі"
       ]
     },
     "error": {
@@ -6586,6 +6598,27 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Cannot create a range across days.": [
+        "Немагчыма стварыць дыяпазон браніравання на некалькі дзён."
+      ],
+      "Cannot create a range in the past.": [
+        "Немагчыма стварыць дыяпазон браніравання ў мінулым."
+      ],
+      "Loading appointments...": [
+        "Загрузка сустрэчы..."
+      ],
+      "Range already exists.": [
+        "Дыяпазон ужо існуе."
+      ],
+      "Range is too short.": [
+        "Занадта кароткі дыяпазон."
+      ],
+      "Range overlaps with an existing range.": [
+        "Дыяпазон перакрываецца з існуючым дыяпазонам."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Гэта старонка браніравання не можа быць адрэдагавана. Звязаны каляндар адключаны."
       ]
     },
     "info": {

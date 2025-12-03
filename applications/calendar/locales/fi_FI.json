@@ -938,6 +938,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Luo uusi varaussivu"
+      ],
+      "Delete booking page": [
+        "Poista varaussivu"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "Hanki oma ${ BRAND_NAME }-osoite"
+      ],
+      "Remove video conference": [
+        "Poista videokonferenssi"
       ]
     },
     "action": {
@@ -1120,6 +1132,15 @@
       ],
       "You have reached the trial limit.": [
         "Olet saavuttanut kokeilujakson enimmäisrajan."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Kun kokeilu päättyy ${ formattedDate }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Voitte saada enintään ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-käyttäjäpaikkaa kokeilujakson aikana."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Et voi lisätä mukautettuja verkkotunnuksia kokeilujakson aikana."
       ]
     },
     "b2b_trials_Action": {
@@ -1192,6 +1213,9 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40 kertaa enemmän nykyiseen tilaukseesi nähden"
       ]
     },
     "BF2024: Offers": {
@@ -1200,6 +1224,9 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
+      ],
+      "forever": [
+        "ikuisesti"
       ]
     },
     "BF2024: Tooltip": {
@@ -1735,6 +1762,15 @@
       ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ],
+      "Large file upload support": [
+        "Suurten tiedostojen lataustuki"
+      ],
+      "Limited favorites": [
+        "Rajoitettu määrä suosikkeja"
+      ],
+      "Upload and query small files": [
+        "Lähetä ja laita jonoon pieniä tiedostoja"
       ]
     },
     "collider_2025: Info": {
@@ -1746,6 +1782,9 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Nopeita keskusteluja ja edistyneitä tekoälyominaisuuksia."
+      ],
+      "Advanced account and network security in one plan": [
+        "Edistyksellinen tilin ja verkon tietoturva yhdellä tilauksella"
       ]
     },
     "colon": {
@@ -2763,6 +2802,12 @@
       "event": [
         "tapahtuma",
         "tapahtumaa"
+      ],
+      "Ends after": [
+        "Päättyy"
+      ],
+      "Ends on": [
+        "Päättyy"
       ]
     },
     "customer_support.feature.all": {
@@ -3221,6 +3266,12 @@
       ],
       "TITLE:": [
         "OTSIKKO:"
+      ],
+      "LOCATION:": [
+        "SIJAINTI:"
+      ],
+      "You are invited to": [
+        "Sinut on kutsuttu"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3806,6 +3857,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Location is required": [
+        "Sijainti vaaditaan"
       ]
     },
     "error": {
@@ -6120,6 +6174,27 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } vaatii ${ BRAND_NAME } - osoitteen turvalliseen tapahtumien synkronointiin ja salaukseen. Lunasta ilmainen ${ claimAddressButton } -osoitteesi nyt."
+      ],
+      "Cannot create a range across days.": [
+        "Jaksoa ei voi luoda usean päivän yli."
+      ],
+      "Cannot create a range in the past.": [
+        "Väliä ei voi luoda menneisyyteen."
+      ],
+      "Google Pay mark": [
+        "Google Payn merkki"
+      ],
+      "Range already exists.": [
+        "Väli on jo olemassa."
+      ],
+      "Range is too short.": [
+        "Väli on liian lyhyt."
+      ],
+      "Range overlaps with an existing range.": [
+        "Väli on päällekkäin toisen välin kanssa."
       ]
     },
     "info": {
@@ -6805,6 +6880,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokous"
+      ],
+      "Remove Zoom video conference": [
+        "Poista Zoom-videokonferenssi"
       ]
     },
     "Label for contact group color": {
@@ -8674,6 +8752,9 @@
       ],
       "Team policies": [
         "Ryhmäkäytännöt"
+      ],
+      "File attachments (up to 10GB)": [
+        "Liitetiedostot (enintään 10 Gt)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8858,6 +8939,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "terms and conditions": [
+        "käyttöehdot"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tämä toiminto laajentaa olemassa olevaa tilausta. Sinua veloitetaan vain uusista lisäosista ja nykyisen laskutusjakson jäljellä olevasta ajasta. Tilauksesi uusimispäivä ei muutu."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Sinulla on jo tilaus tähän tilaukseen. Voit muuttaa tilaustasi palvelussa ${ subscriptionPlatform }."
+      ],
+      "You will soon be redirected to verify your payment.": [
+        "Sinut ohjataan pian maksun vahvistamiseen."
       ]
     },
     "Payments.Error": {
@@ -11420,6 +11513,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
+        "Ansaitset **${ referralInfo.uiData.refereeRewardAmount }** krediitteinä ${ planTitle } -tilauksella"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11987,6 +12083,11 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Google Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
       ]
     }
   }

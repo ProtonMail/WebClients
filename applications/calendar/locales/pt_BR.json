@@ -1007,6 +1007,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Criar nova página de agendamento"
       ]
     },
     "action": {
@@ -2873,6 +2876,12 @@
       "event": [
         "evento",
         "eventos"
+      ],
+      "Ends after": [
+        "Termina depois de"
+      ],
+      "Ends on": [
+        "Termina em"
       ]
     },
     "customer_support.feature.all": {
@@ -3963,6 +3972,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Location is required": [
+        "A localização é obrigatória"
       ]
     },
     "error": {
@@ -6415,6 +6427,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Cannot create a range across days.": [
+        "Não é possível criar um intervalo que abranja vários dias."
+      ],
+      "Cannot create a range in the past.": [
+        "Não foi possível criar um intervalo no passado."
+      ],
+      "Range already exists.": [
+        "O intervalo já existe."
+      ],
+      "Range is too short.": [
+        "O intervalo é muito curto."
+      ],
+      "Range overlaps with an existing range.": [
+        "O intervalo coincide com um intervalo existente."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Esta página de agendamento não pode ser editada, o calendário associado está desativado"
       ]
     },
     "info": {

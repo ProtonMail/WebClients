@@ -1003,6 +1003,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "新しい予約ページを作成"
       ]
     },
     "action": {
@@ -3929,6 +3932,9 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Location is required": [
+        "位置情報は必須です"
       ]
     },
     "error": {
@@ -6322,6 +6328,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "Cannot create a range across days.": [
+        "複数日にまたがる範囲は作成できません。"
+      ],
+      "Cannot create a range in the past.": [
+        "過去の日付に範囲を作成することはできません。"
+      ],
+      "Range already exists.": [
+        "その範囲は既に存在します。"
+      ],
+      "Range is too short.": [
+        "範囲が短すぎます。"
+      ],
+      "Range overlaps with an existing range.": [
+        "範囲が既存の範囲と重複しています。"
       ]
     },
     "info": {

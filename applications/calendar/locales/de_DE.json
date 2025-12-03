@@ -1007,6 +1007,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Eine neue Buchungsseite erstellen"
       ]
     },
     "action": {
@@ -2873,6 +2876,12 @@
       "event": [
         "Termin",
         "Termine"
+      ],
+      "Ends after": [
+        "Endet nach"
+      ],
+      "Ends on": [
+        "Endet am"
       ]
     },
     "customer_support.feature.all": {
@@ -3966,6 +3975,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Location is required": [
+        "Ort erforderlich"
       ]
     },
     "error": {
@@ -6421,6 +6433,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Cannot create a range across days.": [
+        "Zeitraum über mehrere Tage kann nicht erstellt werden."
+      ],
+      "Cannot create a range in the past.": [
+        "Zeitraum in der Vergangenheit kann nicht erstellt werden."
+      ],
+      "Range already exists.": [
+        "Bereich existiert bereits."
+      ],
+      "Range is too short.": [
+        "Zeitraum ist zu kurz."
+      ],
+      "Range overlaps with an existing range.": [
+        "Zeitraum überschneidet sich mit einem bestehenden Zeitraum."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Diese Buchungsseite kann nicht bearbeitet werden, da der zugehörige Kalender deaktiviert ist."
       ]
     },
     "info": {

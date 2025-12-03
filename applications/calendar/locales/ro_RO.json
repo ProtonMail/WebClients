@@ -1011,6 +1011,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Creare pagină de rezervări"
       ]
     },
     "action": {
@@ -2891,6 +2894,12 @@
         "eveniment",
         "evenimente",
         "evenimente"
+      ],
+      "Ends after": [
+        "Se termină după"
+      ],
+      "Ends on": [
+        "Se termină la"
       ]
     },
     "customer_support.feature.all": {
@@ -4000,6 +4009,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Location is required": [
+        "Locul este obligatoriu."
       ]
     },
     "error": {
@@ -6505,6 +6517,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Cannot create a range across days.": [
+        "Nu se poate crea un interval pe parcursul mai multor zile."
+      ],
+      "Cannot create a range in the past.": [
+        "Nu se poate crea un interval în trecut."
+      ],
+      "Range already exists.": [
+        "Intervalul există deja."
+      ],
+      "Range is too short.": [
+        "Intervalul este prea scurt."
+      ],
+      "Range overlaps with an existing range.": [
+        "Intervalul se suprapune cu un interval existent."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Această pagină de rezervare nu poate fi editată, calendarul asociat este dezactivat."
       ]
     },
     "info": {

@@ -1007,6 +1007,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Crear una nueva página de reservas"
       ]
     },
     "action": {
@@ -2873,6 +2876,12 @@
       "event": [
         "evento",
         "eventos"
+      ],
+      "Ends after": [
+        "Finaliza después de"
+      ],
+      "Ends on": [
+        "Finaliza el"
       ]
     },
     "customer_support.feature.all": {
@@ -3966,6 +3975,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Location is required": [
+        "Se requiere una ubicación."
       ]
     },
     "error": {
@@ -6418,6 +6430,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "Cannot create a range across days.": [
+        "No puedes crear un rango de reserva que abarque varios días."
+      ],
+      "Cannot create a range in the past.": [
+        "No se puede crear una reserva en el pasado."
+      ],
+      "Range is too short.": [
+        "El rango es demasiado corto."
+      ],
+      "Range overlaps with an existing range.": [
+        "La reserva se superpone con otra existente."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "No se puede editar esta página de reservas, el calendario asociado está deshabilitado."
       ]
     },
     "info": {

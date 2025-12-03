@@ -1007,6 +1007,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Δημιουργήστε μια νέα σελίδα κρατήσεων"
       ]
     },
     "action": {
@@ -2873,6 +2876,12 @@
       "event": [
         "εκδήλωση",
         "εκδηλώσεις"
+      ],
+      "Ends after": [
+        "Τελειώνει μετά"
+      ],
+      "Ends on": [
+        "Τελειώνει στις"
       ]
     },
     "customer_support.feature.all": {
@@ -3966,6 +3975,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Location is required": [
+        "Η τοποθεσία είναι υποχρεωτική"
       ]
     },
     "error": {
@@ -6421,6 +6433,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Cannot create a range across days.": [
+        "Δεν είναι δυνατή η δημιουργία εύρους που να εκτείνεται σε πολλές ημέρες."
+      ],
+      "Cannot create a range in the past.": [
+        "Δεν είναι δυνατή η δημιουργία εύρους στο παρελθόν."
+      ],
+      "Range already exists.": [
+        "Το εύρος υπάρχει ήδη."
+      ],
+      "Range is too short.": [
+        "Υπερβολικά μικρό εύρος."
+      ],
+      "Range overlaps with an existing range.": [
+        "Το εύρος επικαλύπτεται με μια υπάρχον εύρος."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Αυτή η σελίδα κράτησης δεν μπορεί να επεξεργαστεί, το σχετικό ημερολόγιο είναι απενεργοποιημένο."
       ]
     },
     "info": {

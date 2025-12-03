@@ -1015,6 +1015,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Create a new booking page": [
+        "Vytvořit novou rezervační stránku"
       ]
     },
     "action": {
@@ -2909,6 +2912,12 @@
         "události",
         "událostí",
         "událostí"
+      ],
+      "Ends after": [
+        "Končí po"
+      ],
+      "Ends on": [
+        "Končí"
       ]
     },
     "customer_support.feature.all": {
@@ -4034,6 +4043,9 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Location is required": [
+        "Poloha je povinná"
       ]
     },
     "error": {
@@ -6580,6 +6592,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "Cannot create a range across days.": [
+        "Nelze vytvořit rozsah rezervace zahrnující několik dní."
+      ],
+      "Cannot create a range in the past.": [
+        "Nelze vytvořit rozsah rezervace v minulosti."
+      ],
+      "No appointments available": [
+        "Žádné schůzky k dispozici"
+      ],
+      "No future appointments available": [
+        "Žádné budoucí schůzky k dispozici"
+      ],
+      "Range already exists.": [
+        "Rozsah již existuje."
+      ],
+      "Range is too short.": [
+        "Rozsah je příliš krátký."
+      ],
+      "Range overlaps with an existing range.": [
+        "Rozsah se překrývá s existujícím rozsahem."
+      ],
+      "This booking page cannot be edited, the associated calendar is disabled": [
+        "Tuto rezervační stránku nelze upravovat, přidružený kalendář je deaktivován"
+      ],
+      "When can appointments be booked?": [
+        "Kdy je možné rezervovat schůzky?"
       ]
     },
     "info": {
