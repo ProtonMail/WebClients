@@ -44,8 +44,21 @@ import { parseFileReferences } from '../../util/fileReferences';
 const SMALL_FILE_SET_TOKEN_THRESHOLD = 30000; // ~45k tokens threshold to include all uploaded files in the first message
 const MAX_SINGLE_FILE_TOKENS = 15000; // Max tokens for a single file when including all files (prevents one large file from dominating context)
 
-// FIXME: I doubt we need to look at attachments for the whole message chain, just the last one should be enough?
-function getContextFilesForMessages(messageChain: Message[], contextFilters: ContextFilter[] = []): AttachmentId[] {
+/**
+ * Collect all attachment IDs that will be in the LLM context for this generation.
+ *
+ * This includes attachments from ALL messages in the chain (unless filtered) because
+ * when we call prepareTurns(), the LLM sees the entire conversation history with each
+ * message's file content embedded. For example:
+ * - Message 1 with file A → Turn 1 includes A's content
+ * - Response 1
+ * - Message 2 with file B → Turn 2 includes B's content
+ * - Response 2 (being generated) → Sees BOTH A and B
+ *
+ * This function returns the IDs to store in assistantMessage.contextFiles for
+ * historical tracking and UI display purposes.
+ */
+function collectContextAttachmentIds(messageChain: Message[], contextFilters: ContextFilter[] = []): AttachmentId[] {
     const contextFiles: AttachmentId[] = [];
     const seenIds = new Set<AttachmentId>();
 
@@ -483,7 +496,7 @@ function ensureConversation(c: ConversationContext, ui: UiContext, createdAt: st
 function populateMessageContext(message: Message, messageChain: Message[], c: ConversationContext) {
     // Calculate which files will actually be used for the assistant response
     // Note: Project files are retrieved via RAG, so only message attachments are tracked here
-    const contextFilesForResponse = getContextFilesForMessages(messageChain, c.contextFilters);
+    const contextFilesForResponse = collectContextAttachmentIds(messageChain, c.contextFilters);
 
     // Update the message with the context files that will be used
     return {
@@ -727,7 +740,7 @@ export function sendMessage({
                 );
 
                 // Recalculate contextFiles to include the auto-retrieved attachments
-                const updatedContextFiles = getContextFilesForMessages(updatedLinearChain, c.contextFilters);
+                const updatedContextFiles = collectContextAttachmentIds(updatedLinearChain, c.contextFilters);
 
                 console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
 
@@ -804,7 +817,7 @@ export function regenerateMessage({
 
         // Calculate which files will actually be used for the regenerated response
         // Note: Project files are retrieved via RAG
-        const contextFilesForResponse = getContextFilesForMessages(c.messageChain, c.contextFilters);
+        const contextFilesForResponse = collectContextAttachmentIds(c.messageChain, c.contextFilters);
 
         // Update the assistant message with context files before regenerating
         let assistantMessage = c.messageChain.find((m) => m.id === r.assistantMessageId);
@@ -889,7 +902,7 @@ export function regenerateMessage({
                 );
 
                 // Recalculate contextFiles to include the auto-retrieved attachments
-                const updatedContextFiles = getContextFilesForMessages(updatedMessagesWithContext, c.contextFilters);
+                const updatedContextFiles = collectContextAttachmentIds(updatedMessagesWithContext, c.contextFilters);
 
                 // Update the assistant message's contextFiles
                 if (assistantMessage) {
@@ -993,7 +1006,7 @@ export function retrySendMessage({
         };
 
         // Note: Project files are retrieved via RAG
-        const contextFilesForResponse = getContextFilesForMessages(c.messageChain, c.contextFilters);
+        const contextFilesForResponse = collectContextAttachmentIds(c.messageChain, c.contextFilters);
 
         // Update the assistant message with the context files that will be used
         const assistantMessageWithContext: Message = {
@@ -1066,12 +1079,13 @@ export function retrySendMessage({
             updatedLinearChain = linearChain.map((msg) => (msg.id === lastUserMessage.id ? updatedUserMessage : msg));
 
             // Recalculate contextFiles to include the auto-retrieved attachments
-            const updatedContextFiles = getContextFilesForMessages(updatedLinearChain, c.contextFilters);
+            const updatedContextFiles = collectContextAttachmentIds(updatedLinearChain, c.contextFilters);
 
             console.log(`[RAG] Updated contextFiles after adding auto-retrieved attachments:`, updatedContextFiles);
 
             // IMMEDIATELY update the assistant message's contextFiles BEFORE streaming starts
             // This ensures the "X files" button appears right away
+            // todo: simplify, since `assistantMessage` is known the dispatch/innerDispatch/getState can disappear
             dispatch((innerDispatch: AppDispatch, getState: () => any) => {
                 const state = getState();
                 const assistantMessage = state.messages[assistantMessageId];
