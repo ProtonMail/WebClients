@@ -39,7 +39,6 @@ import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
 import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/OnboardingChecklistSidebar';
-import { DriveSpotlight } from './DriveSpotlight';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 
@@ -87,11 +86,7 @@ const MailSidebar = ({ labelID }: Props) => {
     return (
         <Sidebar
             app={APPS.PROTONMAIL}
-            appsDropdown={
-                <DriveSpotlight>
-                    <AppsDropdown app={APPS.PROTONMAIL} />
-                </DriveSpotlight>
-            }
+            appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
             expanded={expanded}
             onToggleExpand={() => {
                 dispatch(layoutActions.toggleSidebarExpand());

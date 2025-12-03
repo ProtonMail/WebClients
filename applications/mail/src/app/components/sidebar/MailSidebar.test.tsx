@@ -7,7 +7,6 @@ import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { getModelState } from '@proton/account/test';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useFeature } from '@proton/features';
 import { conversationCountsActions } from '@proton/mail';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -31,13 +30,6 @@ const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 
 jest.mock('@proton/account/retentionPolicies/hooks');
 const mockedUseRetentionPolicies = useRetentionPolicies as jest.MockedFunction<any>;
-
-jest.mock('@proton/features/useFeature');
-const mockedUseFeature = useFeature as jest.MockedFunction<any>;
-
-jest.mock('./DriveSpotlight', () => ({
-    DriveSpotlight: ({ children }: { children: React.ReactNode }) => <>{children}</>,
-}));
 
 loudRejection();
 
@@ -117,12 +109,6 @@ describe('MailSidebar', () => {
         mockedUseGetStartedChecklist = jest.spyOn(GetStartedChecklistProviderModule, 'useGetStartedChecklist');
         mockedUserSettings.mockReturnValue([{}]);
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
-
-        // Mock DriveSpotlight dependencies
-        mockedUseFeature.mockReturnValue({
-            feature: { Value: true },
-            update: jest.fn(() => Promise.resolve()),
-        });
     });
 
     const setupTest = () => {
@@ -563,12 +549,6 @@ describe('Sidebar checklist display', () => {
         mockedUseGetStartedChecklist = jest.spyOn(GetStartedChecklistProviderModule, 'useGetStartedChecklist');
         mockedUserSettings.mockReturnValue([{ Checklists: ['get-started-checklist'] }]);
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
-
-        // Mock DriveSpotlight dependencies
-        mockedUseFeature.mockReturnValue({
-            feature: { Value: true },
-            update: jest.fn(() => Promise.resolve()),
-        });
     });
 
     it('Should display the checklist if state is reduced', async () => {
