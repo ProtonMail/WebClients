@@ -200,6 +200,8 @@ export const useExternalBookingLoader = () => {
                         verificationPreferences,
                     });
 
+                document.title = summary;
+
                 setBookingDetails({
                     calendarId: bookingPageData.CalendarID,
                     bookingUid: bookingPageData.BookingUID,
