@@ -89,7 +89,6 @@ enum AccountFlag {
     PassB2BPauseList = 'PassB2BPauseList',
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',
-    PasswordPolicy = 'PasswordPolicy',
     SsoForPbs = 'SsoForPbs',
     DataRetentionPolicy = 'DataRetentionPolicy',
     UserGroupsNoCustomDomain = 'UserGroupsNoCustomDomain',

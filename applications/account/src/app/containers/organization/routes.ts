@@ -44,7 +44,6 @@ interface Props {
     isZoomIntegrationEnabled: boolean;
     isProtonMeetIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
-    isPasswordPolicyEnabled: boolean;
     isSsoForPbsEnabled: boolean;
     isRetentionPoliciesEnabled: boolean;
 }
@@ -66,7 +65,6 @@ export const getOrganizationAppRoutes = ({
     isZoomIntegrationEnabled,
     isProtonMeetIntegrationEnabled,
     isSharedServerFeatureEnabled,
-    isPasswordPolicyEnabled,
     isSsoForPbsEnabled,
     isRetentionPoliciesEnabled,
 }: Props): SidebarConfig => {
@@ -128,11 +126,11 @@ export const getOrganizationAppRoutes = ({
 
     const canShowScribeSection = Boolean(
         isScribeEnabled &&
-            // Some b2b accounts do not support scribe
-            isScribeSupported(organization, user) &&
-            // The user must have a plan that supports multi-user
-            hasMemberCapablePlan &&
-            scribeValidApplications.has(app)
+        // Some b2b accounts do not support scribe
+        isScribeSupported(organization, user) &&
+        // The user must have a plan that supports multi-user
+        hasMemberCapablePlan &&
+        scribeValidApplications.has(app)
     );
 
     // add test to only show if org is elligible for zoom
@@ -350,7 +348,6 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`${BRAND_NAME} Account password rules`,
                         id: 'proton-account-password-rules',
-                        available: isPasswordPolicyEnabled,
                     },
                     {
                         text: c('Title').t`Two-factor authentication reminders`,

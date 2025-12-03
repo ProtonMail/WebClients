@@ -123,7 +123,6 @@ const MainContainer: FunctionComponent = () => {
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
-    const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
@@ -166,7 +165,6 @@ const MainContainer: FunctionComponent = () => {
         groups,
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
-        isPasswordPolicyEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
         isProtonMeetIntegrationEnabled,
