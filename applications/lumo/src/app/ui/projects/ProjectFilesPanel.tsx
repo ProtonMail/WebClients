@@ -7,6 +7,7 @@ import { Icon, useNotifications, InputFieldTwo, ModalTwo, ModalTwoContent, Modal
 import { useModalStateObject } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { Asset } from '../../types';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
@@ -20,7 +21,6 @@ import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 
 import './ProjectFilesPanel.scss';
-import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 interface ProjectFilesPanelProps {
     projectId: string;
@@ -306,10 +306,10 @@ export const ProjectFilesPanel = ({ projectId, instructions, onEditInstructions 
                                     <IcBrandProtonDrive size={5} />
                                     <div className="project-files-option-content">
                                         <span className="project-files-option-text">
-                                            {c('collider_2025:Button').t`Link Proton Drive`}
+                                            {c('collider_2025:Button').t`Link ${DRIVE_APP_NAME}`}
                                         </span>
                                         <span className="project-files-option-subtext">
-                                            {c('collider_2025:Info').t`Link a folder in your Proton Drive which will be indexed locally and usable by ${LUMO_SHORT_APP_NAME} when generating answers`}
+                                            {c('collider_2025:Info').t`Link a folder in your ${DRIVE_APP_NAME} which will be indexed locally and usable by ${LUMO_SHORT_APP_NAME} when generating answers`}
                                         </span>
                                     </div>
                                 </button>
