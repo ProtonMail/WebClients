@@ -73,7 +73,6 @@ button {
 		position: absolute !important;
 		inset: 0 !important;
 		margin: auto !important;
-		inline-size: var(--control-lineheight) !important;
 		color: white !important;
 		text-align: center !important;
 		font-family: system-ui, sans-serif !important;
@@ -83,6 +82,7 @@ button {
 		font-weight: bold !important;
 		text-shadow: 0 0.5px 3px #320dc5 !important;
 		opacity: 0;
+		inline-size: 0;
 	}
 
 	&:hover {
@@ -105,9 +105,11 @@ button {
 @keyframes counter-fade-in {
 	from {
 		opacity: 0;
+		inline-size: 0;
 	}
 
 	to {
 		opacity: 1;
+		inline-size: var(--control-lineheight);
 	}
 }
