@@ -75,8 +75,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -134,8 +134,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -193,8 +193,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -290,8 +290,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -347,8 +347,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -410,8 +410,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: true,
             isVpnSettingsApp: false,
@@ -470,8 +470,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -530,8 +530,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
@@ -584,8 +584,8 @@ describe('useAccessiblePlans', () => {
             ],
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             alreadyHasMaxCycle: false,
             isVpnSettingsApp: false,
