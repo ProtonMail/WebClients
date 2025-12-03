@@ -26,8 +26,7 @@ const modelThunk = createAsyncModelThunk<Model, AuthState, ProtonThunkArguments>
     expiry: 7 * DAY,
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
-        const isEnabled = extraArgument.unleashClient.isEnabled('PasswordPolicy');
-        if (!getShouldUsePasswordPolicies(user) || !isEnabled) {
+        if (!getShouldUsePasswordPolicies(user)) {
             return [];
         }
         const silentApi = getSilentApi(extraArgument.api);
