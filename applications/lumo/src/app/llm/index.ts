@@ -79,7 +79,7 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
 
 export function prepareTurns(
     linearChain: Message[],
-    contextFilters: ContextFilter[] = [],
+    contextFilters: ContextFilter[] = [], // todo remove - it is included in `c`
     personalization: PersonalizationSettings,
     projectInstructions?: string,
     documentContext?: string,
@@ -89,7 +89,7 @@ export function prepareTurns(
     const filteredMessageChain = linearChain.map((message) => {
         if (!message.context) return message;
 
-        const filter = contextFilters.find((f) => f.messageId === message.id);
+        const filter = (c?.contextFilters ?? []).find((f) => f.messageId === message.id);
         if (!filter || filter.excludedFiles.length === 0) return message;
 
         // Apply each file exclusion
