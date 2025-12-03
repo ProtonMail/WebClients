@@ -5,6 +5,7 @@ import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 import fileSaver from '../../store/_downloads/fileSaver/fileSaver';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { bufferToStream } from '../../utils/stream';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
 import type { DownloadItem } from '../../zustand/download/downloadManager.store';
 import {
@@ -146,6 +147,32 @@ export class DownloadManager {
         });
     }
 
+    // TODO: Add possibility to just pass the uid instead of whole node
+    async downloadFromBuffer(node: NodeEntity, buffer: Uint8Array<ArrayBuffer>[], mimeType?: string) {
+        const stream = bufferToStream(buffer);
+        const storageSize = getNodeStorageSize(node);
+
+        const log = (message: string) => downloadLogDebug('FileSaver', message);
+        await fileSaver.instance.saveAsFile(
+            stream,
+            {
+                filename: node.name,
+                mimeType: mimeType ?? DEFAULT_MIME_TYPE,
+            },
+            log
+        );
+
+        const { addDownloadItem } = useDownloadManagerStore.getState();
+        addDownloadItem({
+            name: node.name,
+            storageSize,
+            status: DownloadStatus.Finished,
+            nodeUids: [node.uid],
+            downloadedBytes: storageSize,
+            isPhoto: false,
+        });
+    }
+
     async download(nodeUids: string[]) {
         if (!nodeUids.length) {
             return;
@@ -171,6 +198,7 @@ export class DownloadManager {
                 status: DownloadStatus.Pending,
                 nodeUids: [node.uid],
                 unsupportedFileDetected: containsUnsupportedFile ? 'detected' : undefined,
+                // TODO: Add support for photos
                 isPhoto: false,
             });
             this.requestedDownloads.set(downloadId, nodes);

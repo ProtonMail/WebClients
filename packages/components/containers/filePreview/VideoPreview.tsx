@@ -7,7 +7,7 @@ import UnsupportedPreview from './UnsupportedPreview';
 
 interface Props {
     mimeType: string;
-    contents?: Uint8Array<ArrayBuffer>[];
+    contents: Uint8Array<ArrayBuffer>[];
     onDownload?: () => void;
     isSharedFile?: boolean;
 }
@@ -26,7 +26,7 @@ const VideoPreview = ({ contents, mimeType, onDownload, isSharedFile }: Props) =
                 URL.revokeObjectURL(newUrl);
             }
         };
-    }, [contents]);
+    }, [contents, mimeType]);
 
     const handleBrokenVideo = () => {
         setError(true);
@@ -52,7 +52,9 @@ const VideoPreview = ({ contents, mimeType, onDownload, isSharedFile }: Props) =
                     className="max-w-full max-h-full object-contain"
                     controls
                     muted={videoAutoPlay?.muted}
-                />
+                >
+                    <track kind="captions" />
+                </video>
             ) : (
                 <CircleLoader />
             )}
